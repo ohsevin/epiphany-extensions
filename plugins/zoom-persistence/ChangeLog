@@ -1,3 +1,11 @@
+2003-08-23  Christian Persch  <chpe@cvs.gnome.org>
+
+	* zoom-persistence.c: (set_zoom), (net_state_cb), (address_cb),
+	(tab_added_cb):
+
+	Work around a mozilla bug so we can set the zoom even for newly opened
+	tabs (esp. on crash recovery).
+
 2003-08-04  Christian Persch  <chpe@cvs.gnome.org>
 
 	* zoom-persistence.c: (get_host_node):

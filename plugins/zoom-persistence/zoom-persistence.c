@@ -54,6 +54,8 @@
 
 #define HISTORY_HOST_OBSOLETE_DAYS	180
 
+#define TAB_TAG	"zoom-persistence-tab-tag"
+
 enum
 {
 	EPHY_NODE_HOST_PROP_HOST	= 0,
@@ -310,16 +312,23 @@ zoom_cb (EphyTab *tab, GParamSpec *pspec, EphyEmbed *embed)
 }
 
 static void
-address_cb (EphyEmbed *embed, const char *address, EphyTab *tab)
+set_zoom (EphyTab *tab, const char *address, gboolean reflow)
 {
+	EphyEmbed *embed;
 	EphyNode *host;
 	float zoom, current_zoom;
 	gresult rv;
 
 	g_return_if_fail (address != NULL);
 
+	embed = ephy_tab_get_embed (tab);
+
 	rv = ephy_embed_zoom_get (embed, &current_zoom);
-	if (rv != G_OK) return;
+	if (rv != G_OK) 
+	{
+		LOG ("embed_zoom_get failed, tab %p embed %p", tab, embed);
+		return;
+	}
 
 	host = get_host_node (address, FALSE);
 
@@ -341,14 +350,40 @@ address_cb (EphyEmbed *embed, const char *address, EphyTab *tab)
 
 	if (zoom != current_zoom)
 	{
-		ephy_embed_zoom_set (embed, zoom, FALSE);
+		ephy_embed_zoom_set (embed, zoom, reflow);
 	}
+}
+
+static void
+net_state_cb (EphyEmbed *embed, const char *uri, EmbedState state, EphyTab *tab)
+{
+	LOG ("net_state_cb tab %p embed %p state 0x%x uri '%s'",
+		 tab, embed, state, uri)
+
+	if ((uri && strcmp (uri, "about:layout-dummy-request") &&
+	    (state & EMBED_STATE_STOP)) ||
+	    state == (EMBED_STATE_IS_NETWORK | EMBED_STATE_STOP))
+	{
+		const char *address;
+
+		g_signal_handlers_disconnect_by_func (embed, G_CALLBACK (net_state_cb), tab);
+
+		address = ephy_tab_get_location (tab);
+		set_zoom (tab, address, TRUE);
+	}
+}
+
+static void
+address_cb (EphyEmbed *embed, const char *address, EphyTab *tab)
+{
+	set_zoom (tab, address, FALSE);
 }
 
 static void
 tab_added_cb (GtkWidget *notebook, GtkWidget *embed)
 {
 	EphyTab *tab;
+	gboolean is_tagged;
 
 	tab = EPHY_TAB (g_object_get_data (G_OBJECT (embed), "EphyTab"));
 	g_return_if_fail (IS_EPHY_TAB (tab));
@@ -357,6 +392,19 @@ tab_added_cb (GtkWidget *notebook, GtkWidget *embed)
 			  G_CALLBACK (zoom_cb), embed);
 	g_signal_connect (G_OBJECT (embed), "ge_location",
 			  G_CALLBACK (address_cb), tab);
+
+	/**
+	 * work around an ephy/mozilla bug where we cannot set the zoom of a
+	 * newly opened tab
+	 */
+	is_tagged = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (tab), TAB_TAG));
+	if (is_tagged == FALSE)
+	{
+		g_signal_connect (G_OBJECT (embed), "ge_net_state",
+				  G_CALLBACK (net_state_cb), tab);
+
+		g_object_set_data (G_OBJECT (tab), TAB_TAG, GINT_TO_POINTER (TRUE));
+	}
 }
 
 static void
