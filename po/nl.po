@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNOME 2.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-12 03:18+0100\n"
-"PO-Revision-Date: 2004-03-12 12:16+0100\n"
+"POT-Creation-Date: 2004-03-14 19:16+0100\n"
+"PO-Revision-Date: 2004-03-15 00:35+0100\n"
 "Last-Translator: Reinout van Schouwen <reinout@cs.vu.nl>\n"
 "Language-Team: nl <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
@@ -179,23 +179,18 @@ msgstr ""
 "Geen geldig doctype opgegeven."
 
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
-msgid "Blo_ck Popups from this Site"
-msgstr "O_pduikvensters van deze site blokkeren"
+msgid "Popup _Windows"
+msgstr "_Opduikvensters"
 
 #. shortcut key
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
-msgid "Block or unblock popup windows"
-msgstr "Opduikvensters blokkeren of deblokkeren"
+msgid "Show or hide unrequested popup windows from this site"
+msgstr "Ongevraagde opduikvensters van deze webstek tonen of weren"
 
-#: extensions/popup-blocker/ephy-popup-blocker-icon.c:295
+#: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
 #, c-format
-msgid "Open %s"
-msgstr "%s openen"
-
-#: extensions/popup-blocker/ephy-popup-blocker-icon.c:342
-#, c-format
-msgid "%d popup blocked"
-msgid_plural "%d popups blocked"
+msgid "%d popup window blocked"
+msgid_plural "%d popup windows blocked"
 msgstr[0] "%d opduikvenster geblokkerd"
 msgstr[1] "%d opduikvensters geblokkeerd"
 
@@ -213,6 +208,15 @@ msgstr "Tabblad verplaatsen naar venster"
 #: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
 msgstr "Het huidige tabblad naar een ander venster verplaatsen"
+
+#~ msgid "Blo_ck Popups from this Site"
+#~ msgstr "O_pduikvensters van deze site blokkeren"
+
+#~ msgid "Block or unblock popup windows"
+#~ msgstr "Opduikvensters blokkeren of deblokkeren"
+
+#~ msgid "Open %s"
+#~ msgstr "%s openen"
 
 #, fuzzy
 #~ msgid ""
