@@ -65,7 +65,7 @@ mozilla_register_popup_listener (EphyEmbed *embed)
 	nsCOMPtr<nsPIDOMWindow> piWin(do_QueryInterface (domWindow, &rv));
 	NS_ENSURE_SUCCESS (rv, NULL);
 
-#if MOZILLA_SNAPSHOT > 15
+#if MOZILLA_SNAPSHOT >= 18
 	nsIChromeEventHandler* chromeHandler;
 	chromeHandler = piWin->GetChromeEventHandler ();
 #else
