@@ -1,6 +1,12 @@
 2004-07-06  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
+
+	Post-release version bump.
+
+2004-07-06  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
 	* extensions/Makefile.am:
 
 	=== Release 1.1.1 ===
