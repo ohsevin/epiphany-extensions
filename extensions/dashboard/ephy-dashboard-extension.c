@@ -25,6 +25,8 @@
 #endif
 
 #include "ephy-dashboard-extension.h"
+#include "dashboard-frontend-xmlwriter.h"
+
 #include "ephy-debug.h"
 
 #include <epiphany/ephy-extension.h>
@@ -34,13 +36,14 @@
 #include <epiphany/ephy-bookmarks.h>
 
 #include <gmodule.h>
-#include "dashboard-frontend.c"
 
 #define EPHY_DASHBOARD_EXTENSION_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_DASHBOARD_EXTENSION, EphyDashboardExtensionPrivate))
 
 struct EphyDashboardExtensionPrivate
 {
 };
+
+#define EPIPHANY_FRONTEND_IDENTIFIER	"Web Browser"
 
 static void ephy_dashboard_extension_class_init	(EphyDashboardExtensionClass *klass);
 static void ephy_dashboard_extension_iface_init	(EphyExtensionClass *iface);
@@ -101,86 +104,81 @@ load_status_cb (EphyTab *tab,
 	
 	load_status = ephy_tab_get_load_status(tab);
 
-	if (!load_status)
+	/* FALSE means load is finished */
+	if (load_status == FALSE)
 	{
-		char *cluepacket;
-		const char *location;
-		const char *page_title;
 		EphyEmbed *embed;
 		EphyEmbedPersist *persist;
 		EphyBookmarks *bookmarks;
-		char *content;
+		char *location;
+		const char *page_title;
+		gboolean is_bookmarked;
 
-		/* Get URL & page title */
-		location = ephy_tab_get_location(tab);
+		embed = ephy_tab_get_embed (tab);
+		g_return_if_fail (EPHY_IS_EMBED (embed));
+
+		/* Get the URL from the embed, since tab may contains modified url */
+		location = ephy_embed_get_location (embed, TRUE);
+
+		/* Get page title */
 		page_title = ephy_tab_get_title(tab);
-		LOG ("Got page location and title")
 
 		/* See if the page is bookmarked */
-		embed = ephy_tab_get_embed (tab);
 		bookmarks = ephy_shell_get_bookmarks (ephy_shell);
+		is_bookmarked = ephy_bookmarks_find_bookmark (bookmarks, location) != NULL;
 
 		/* Get the page content if the page is bookmarked */
-		LOG ("Title ::%s::", page_title)
-		LOG ("URL ::%s::", location)
-		if (embed && ephy_bookmarks_find_bookmark (bookmarks,location))
+		if (is_bookmarked)
 		{
-			LOG ("Page exists in bookmark - sending full content")
-			persist = EPHY_EMBED_PERSIST (ephy_embed_factory_new_object ("EphyEmbedPersist"));
+			char *content;
 
+			LOG ("Page is bookmarked, sending full content")
+
+			persist = EPHY_EMBED_PERSIST (ephy_embed_factory_new_object ("EphyEmbedPersist"));
 			ephy_embed_persist_set_embed (persist, embed);
 			ephy_embed_persist_set_flags (persist, EMBED_PERSIST_NO_VIEW);
-			
 			content = ephy_embed_persist_to_string (persist);
-
 			g_object_unref (persist);
-		
-			LOG ("Content ::%s::", content)
-			cluepacket = dashboard_build_cluepacket_then_free_clues (
-	             		"Web Browser",
-	             		ephy_tab_get_visibility(tab),
-	             		dashboard_xml_quote(location),
-	             		dashboard_build_clue (location, "url", 10),
-	             		dashboard_build_clue (page_title, "title", 10),
-	             		dashboard_build_clue (content, "htmlblock", 10),
-	             		NULL);
+
+			DashboardSendCluePacket (
+				EPIPHANY_FRONTEND_IDENTIFIER,
+				ephy_tab_get_visibility(tab), /* focused */
+				location, /* context */
+				location, "url", 10,
+				page_title, "title", 10,
+				content, "htmlblock", 10,
+				NULL);
 
 			g_free (content);
 		}
 		else
 		{
-			LOG ("Page not in bookmark, sending only location and title")
+			LOG ("Page not bookmarked, sending only location and title")
 
-			cluepacket = dashboard_build_cluepacket_then_free_clues (
-	             		"Web Browser",
-	             		ephy_tab_get_visibility(tab),
-	             		dashboard_xml_quote(location),
-	             		dashboard_build_clue (location, "url", 10),
-	             		dashboard_build_clue (page_title, "title", 10),
-	             		NULL);
+			DashboardSendCluePacket (
+				EPIPHANY_FRONTEND_IDENTIFIER,
+				ephy_tab_get_visibility(tab), /* focused */
+				location, /* context */
+				location, "url", 10,
+				page_title, "title", 10,
+				NULL);
 		}
 
-		/* Send dashboard packet */
-		dashboard_send_raw_cluepacket (cluepacket);
-
-		g_free (cluepacket);
-
+		g_free (location);
 	} 
 }
 
 static void
 tab_added_cb (GtkWidget *notebook,
-              EphyEmbed *embed,
+	      EphyEmbed *embed,
 	      EphyDashboardExtension *extension)
 {
 	EphyTab *tab;
 
-	LOG ("In tab_added_cb")
-
 	tab = ephy_tab_for_embed (embed);
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
-	g_signal_connect_after (G_OBJECT (tab), "notify::load-status",
+	g_signal_connect_after (tab, "notify::load-status",
 				G_CALLBACK (load_status_cb), extension);
 }
 
@@ -191,13 +189,11 @@ tab_removed_cb (EphyEmbed *notebook,
 {
 	EphyTab *tab;
 
-	LOG ("In tab_removed_cb")
-
 	tab = ephy_tab_for_embed (embed);
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
 	g_signal_handlers_disconnect_by_func
-		(G_OBJECT (embed), G_CALLBACK (load_status_cb), tab);
+		(tab, G_CALLBACK (load_status_cb), extension);
 }
 
 static void
@@ -205,8 +201,6 @@ impl_attach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
 	GtkWidget *notebook;
-
-	LOG ("EphyDashboardExtension attach_window")
 
 	notebook = ephy_window_get_notebook (window);
 
@@ -222,8 +216,6 @@ impl_detach_window (EphyExtension *ext,
 {
 	GtkWidget *notebook;
 
-	LOG ("EphyDashboardExtension detach_window")
-	
 	notebook = ephy_window_get_notebook (window);
 
 	g_signal_handlers_disconnect_by_func

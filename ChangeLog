@@ -1,5 +1,23 @@
 2004-01-14  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/dashboard/Makefile.am:
+	* extensions/dashboard/dashboard-frontend-xmlwriter.c:
+	(dashboard_connect_with_timeout), (NewTextWriterDashboard),
+	(FreeTextWriterDashboard), (DashboardSendClue),
+	(DashboardSendCluePacket):
+	* extensions/dashboard/dashboard-frontend-xmlwriter.h:
+
+	Better dashboard frontend.
+
+	* extensions/dashboard/ephy-dashboard-extension.c:
+	(load_status_cb), (tab_added_cb), (tab_removed_cb),
+	(impl_attach_window), (impl_detach_window):
+
+	Use the new frontend.
+	General code cleanup & bugfix.
+
+2004-01-14  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/dashboard/ephy-dashboard-extension.c:
 	(load_status_cb):
 
