@@ -1,9 +1,0 @@
-Tabs Plugin
-===========
-
-This plugin is not completely self-contained, you need to apply the
-patch in file "epiphany.diff" to epiphany in order to use this plugin.
-
-You can apply the patch either to the epiphany source tree (remember to
-'make install'), or to the installed epiphany ui file (usually
-/usr/share/epiphany/epiphany-ui.xml).
