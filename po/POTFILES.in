@@ -12,6 +12,7 @@ extensions/error-viewer/sgml-validator.c
 extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c
 extensions/extensions-manager-ui/extensions-manager-ui.c
 extensions/extensions-manager-ui/extensions-manager-ui.glade
+extensions/find/eggfindbar.c
 extensions/page-info/ephy-page-info-extension.c
 extensions/page-info/page-info-dialog.c
 extensions/page-info/page-info.glade
@@ -20,5 +21,4 @@ extensions/select-stylesheet/mozilla/mozilla-helpers.cpp
 extensions/sidebar/ephy-sidebar-extension.c
 extensions/sidebar/ephy-sidebar.c
 extensions/smart-bookmarks/smart-bookmarks-extension.c
-extensions/smart-bookmarks/smart-bookmarks.glade
 extensions/tabsmenu/ephy-tab-move-menu.c
