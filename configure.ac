@@ -137,8 +137,8 @@ dnl *******************************
 
 AC_MSG_CHECKING([extensions to build])
 
-all_extensions="adblock,certificates,dashboard,error-viewer,gestures,page-info,sample,sample-mozilla,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups"
-all_useful_extensions="adblock,certificates,dashboard,error-viewer,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tab-groups,tabsmenu"
+all_extensions="adblock,certificates,dashboard,error-viewer,extensions-manager-ui,gestures,page-info,sample,sample-mozilla,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups"
+all_useful_extensions="adblock,certificates,dashboard,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tab-groups,tabsmenu"
 default_extensions="adblock,certificates,error-viewer,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups"
 mozilla_dependent_extensions="adblock,certificates,error-viewer,page-info,sample-mozilla,select-stylesheet,sidebar,smart-bookmarks"
 
@@ -188,6 +188,7 @@ IFS="$ephyext_save_ifs"
 AM_CONDITIONAL(ENABLE_ADBLOCK_EXTENSION, echo "$extensions" | egrep '(^|,)adblock($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_CERTIFICATES_EXTENSION, echo "$extensions" | egrep '(^|,)certificates($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_DASHBOARD_EXTENSION, echo "$extensions" | egrep '(^|,)dashboard($|,)' > /dev/null)
+AM_CONDITIONAL(ENABLE_EXTENSIONS_MANAGER_UI_EXTENSION, echo "$extensions" | egrep '(^|,)extensions-manager-ui($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_ERROR_VIEWER_EXTENSION, echo "$extensions" | egrep '(^|,)error-viewer($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_GESTURES_EXTENSION, echo "$extensions" | egrep '(^|,)gestures($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_PAGE_INFO_EXTENSION, echo "$extensions" | egrep '(^|,)page-info($|,)' > /dev/null)
@@ -364,6 +365,7 @@ extensions/gestures/Makefile
 extensions/error-viewer/Makefile
 extensions/error-viewer/mozilla/Makefile
 extensions/error-viewer/opensp/Makefile
+extensions/extensions-manager-ui/Makefile
 extensions/page-info/Makefile
 extensions/page-info/mozilla/Makefile
 extensions/sample/Makefile

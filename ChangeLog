@@ -1,3 +1,35 @@
+2004-10-13  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/Makefile.am:
+	* extensions/extensions-manager-ui/.cvsignore:
+	* extensions/extensions-manager-ui/Makefile.am:
+	* extensions/extensions-manager-ui/ephy-extensions-manager-ui-exten
+	sion.c: (ephy_extensions_manager_ui_extension_get_type),
+	(ephy_extensions_manager_ui_extension_register_type),
+	(ephy_extensions_manager_ui_extension_init),
+	(ephy_extensions_manager_ui_extension_finalize),
+	(free_window_data), (display_cb), (impl_attach_window),
+	(impl_detach_window),
+	(ephy_extensions_manager_ui_extension_iface_init),
+	(ephy_extensions_manager_ui_extension_class_init):
+	* extensions/extensions-manager-ui/ephy-extensions-manager-ui-exten
+	sion.h:
+	* extensions/extensions-manager-ui/extension.c: (register_module):
+	* extensions/extensions-manager-ui/extensions-manager-ui.c:
+	(extensions_manager_ui_get_type),
+	(extensions_manager_ui_register_type), (extensions_manager_ui_new),
+	(fill_list_store), (extension_toggle_cb), (active_sync),
+	(build_ui), (extensions_manager_ui_init),
+	(extensions_manager_ui_class_init),
+	(extensions_manager_ui_finalize), (extensions_manager_ui_close_cb):
+	* extensions/extensions-manager-ui/extensions-manager-ui.glade:
+	* extensions/extensions-manager-ui/extensions-manager-ui.h:
+	* extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in:
+
+	Added extensions-manager-ui extension (though it's not enabled by
+	default since it requires Christian's patch to Epiphany).
+
 2004-10-13  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/adblock/Makefile.am:

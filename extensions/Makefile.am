@@ -16,6 +16,10 @@ if ENABLE_ERROR_VIEWER_EXTENSION
 SUBDIRS += error-viewer
 endif
 
+if ENABLE_EXTENSIONS_MANAGER_UI_EXTENSION
+SUBDIRS += extensions-manager-ui
+endif
+
 if ENABLE_GESTURES_EXTENSION
 SUBDIRS += gestures
 endif
