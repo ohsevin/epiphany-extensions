@@ -1,5 +1,12 @@
 2005-03-19  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:
+	(ephy_bookmarks_tray_extension_init):
+
+	Typo fix.
+			
+2005-03-19  Christian Persch  <chpe@cvs.gnome.org>
+
         * extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:
         (ephy_bookmarks_tray_extension_init):
 	
