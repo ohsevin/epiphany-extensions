@@ -1,3 +1,27 @@
+2004-06-30  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* README:
+	* configure.ac:
+	* extensions/Makefile.am:
+	* extensions/popup-blocker/.cvsignore:
+	* extensions/popup-blocker/Makefile.am:
+	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
+	* extensions/popup-blocker/ephy-popup-blocker-extension.h:
+	* extensions/popup-blocker/ephy-popup-blocker-icon.c:
+	* extensions/popup-blocker/ephy-popup-blocker-icon.h:
+	* extensions/popup-blocker/ephy-popup-blocker-list.c:
+	* extensions/popup-blocker/ephy-popup-blocker-list.h:
+	* extensions/popup-blocker/mozilla/.cvsignore:
+	* extensions/popup-blocker/mozilla/Makefile.am:
+	* extensions/popup-blocker/mozilla/PopupBlockerListener.cpp:
+	* extensions/popup-blocker/mozilla/PopupBlockerListener.h:
+	* extensions/popup-blocker/mozilla/mozilla-helpers.cpp:
+	* extensions/popup-blocker/mozilla/mozilla-helpers.h:
+	* extensions/popup-blocker/popup-blocker.c:
+	* extensions/popup-blocker/popup-blocker.svg:
+
+	Removed the popup blocker extension: it's now part of Epiphany
+
 2004-06-24  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
