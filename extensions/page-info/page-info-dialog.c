@@ -69,10 +69,6 @@
 /* FIXME: ephy-embed-factory.h isn't released with Epiphany 1.4 */
 GObject *ephy_embed_factory_new_object (const char *object_id);
 
-/*
-#define STATE_PAGE_INFO_IMAGE_PANED_SIZE "page_info_dialog/page_info_image_pane_size"
-*/
-
 #define COLUMN_KEY "PageInfoURLColumn"
 
 /* Glade callbacks */
@@ -595,11 +591,11 @@ page_info_set_text (PageInfoDialog *dialog,
 
 	if (GTK_IS_ENTRY(widget))
 	{
-		gtk_entry_set_text(GTK_ENTRY(widget), text);
+		gtk_entry_set_text (GTK_ENTRY (widget), text);
 	}
 	else
 	{
-		gtk_label_set_markup(GTK_LABEL(widget), text);
+		gtk_label_set_markup (GTK_LABEL (widget), text);
 	}
 }
 
@@ -613,7 +609,7 @@ general_info_page_fill (InfoPage *page)
 	GList *i;
 	const char *text;
 	const char *date_hack = "%c"; /* quiet gcc */
-	char date[64];
+	char date[128];
 	char *val;
 	struct tm tm;
 	time_t t;
@@ -652,6 +648,7 @@ general_info_page_fill (InfoPage *page)
 			text = _("Undetermined");
 			break;
 	}
+
 	page_info_set_text (dialog, properties[PROP_GENERAL_RENDER_MODE].id, text);
 
 	switch (props->page_source)
@@ -708,7 +705,7 @@ general_info_page_fill (InfoPage *page)
 	if (props->expiration_time)
 	{
 		t = props->expiration_time;
-		strftime (date, sizeof(date), date_hack, localtime_r (&t, &tm));
+		strftime (date, sizeof (date), date_hack, localtime_r (&t, &tm));
 		val = g_locale_to_utf8 (date, -1, NULL, NULL, NULL);
 
 		page_info_set_text (dialog, properties[PROP_GENERAL_EXPIRES].id, val);
