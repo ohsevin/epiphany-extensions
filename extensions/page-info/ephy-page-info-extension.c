@@ -119,7 +119,7 @@ ephy_page_info_extension_init (EphyPageInfoExtension *extension)
 {
 	LOG ("EphyPageInfoExtension initialising")
 
-	extension->priv = EPHY_PAGE_INFO_EXTENSION_GET_PRIVATE (extension);
+/*	extension->priv = EPHY_PAGE_INFO_EXTENSION_GET_PRIVATE (extension);*/
 }
 
 static void
