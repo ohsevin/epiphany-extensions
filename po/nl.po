@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNOME 2.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-02 03:22+0100\n"
-"PO-Revision-Date: 2004-02-02 12:23+0100\n"
+"POT-Creation-Date: 2004-02-19 19:17+0100\n"
+"PO-Revision-Date: 2004-02-19 23:02+0100\n"
 "Last-Translator: Tino Meinen <a.t.meinen@chello.nl>\n"
 "Language-Team: nl <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,17 @@ msgstr "_Wissen"
 msgid "Error Viewer"
 msgstr "Foutweergave"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:106
+#. Don't bother looking for source lines -- they're not there
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:76
+#, c-format
+msgid ""
+"Error:\n"
+"%s"
+msgstr ""
+"Fout:\n"
+"%s"
+
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:91
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -83,7 +93,11 @@ msgid_plural ""
 "HTML Validation of %s complete\n"
 "Found %d errors"
 msgstr[0] ""
+"HTML validatie van %s voltooid\n"
+"%d fout gevonden"
 msgstr[1] ""
+"HTML validatie van %s voltooid\n"
+"%d fouten gevonden"
 
 #: extensions/error-viewer/sgml-validator.c:216
 #, c-format
@@ -93,7 +107,8 @@ msgid ""
 "instead."
 msgstr ""
 "HTML fout in %s:\n"
-"Doctype is XHTML maar type inhoud is text/html.  Gebruik in plaats daarvan application/xhtml+xml."
+"Doctype is XHTML maar type inhoud is text/html.  Gebruik in plaats daarvan "
+"application/xhtml+xml."
 
 #: extensions/error-viewer/sgml-validator.c:231
 #, c-format
@@ -103,7 +118,8 @@ msgid ""
 "instead."
 msgstr ""
 "HTML waarschuwing in %s:\n"
-"Doctype is XHTML maar type inhoud is text/html.  Gebruik in plaats daarvan application/xhtml+xml."
+"Doctype is XHTML maar type inhoud is text/html.  Gebruik in plaats daarvan "
+"application/xhtml+xml."
 
 #: extensions/error-viewer/sgml-validator.c:368
 #, c-format
@@ -144,9 +160,6 @@ msgstr "Tab naar venster verplaatsen"
 #: extensions/tabsmenu/ephy-tab-move-menu.c:284
 msgid "Move the current tab to a different window"
 msgstr "Het huidige tabblad naar een ander venster verplaatsen"
-
-#~ msgid "Errors"
-#~ msgstr "Fouten"
 
 #~ msgid "Found %d HTML error"
 #~ msgid_plural "Found %d HTML errors"
