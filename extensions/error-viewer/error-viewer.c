@@ -253,6 +253,7 @@ build_ui (ErrorViewer *dialog)
 				       GTK_ICON_SIZE_MENU,
 				       NULL);
 	gtk_window_set_icon (GTK_WINDOW (priv->window), icon);
+	g_object_unref (icon);
 }
 
 static void
