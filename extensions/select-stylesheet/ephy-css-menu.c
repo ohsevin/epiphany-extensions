@@ -298,7 +298,7 @@ ephy_css_menu_set_window (EphyCSSMenu *menu, EphyWindow *window)
 	p->window = window;
 	
 	/* Create the Action Group */
-	p->manager = g_object_ref (GTK_UI_MANAGER (window->ui_merge));
+	p->manager = GTK_UI_MANAGER (window->ui_merge);
 	p->menu_action_group = gtk_action_group_new ("EphyCSSMenuActions");
 	gtk_action_group_set_translation_domain (p->menu_action_group, GETTEXT_PACKAGE);
 	gtk_ui_manager_insert_action_group(p->manager, p->menu_action_group, -1);
