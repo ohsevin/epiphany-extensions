@@ -43,8 +43,7 @@ toString (SGMLApplication::CharString s)
 {
 	string r = "";
 
-	/* XXX: What's with the damned 200-character limit? OpenSP? */
-	for (size_t i = 0; i < s.len && i < 200; i++)
+	for (size_t i = 0; i < s.len; i++)
 	{
 		r += (char) s.ptr[i];
 	}
@@ -140,8 +139,11 @@ HtmlErrorFinder::error (const ErrorEvent &err)
 	 * two-line errors *don't* have a :W: or :E: on the second line
 	 * and they *shouldn't* be errors because we want them to be "info"
 	 */
+	string msg = toString (err.message);
 
-	const char *raw_msg = toString(err.message).c_str();
+	const char *raw_msg = msg.c_str ();
+
+	cout << raw_msg << endl;
 
 	char **messages = g_strsplit (raw_msg, "\n", 0);
 

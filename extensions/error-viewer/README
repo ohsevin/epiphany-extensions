@@ -11,8 +11,6 @@ This also requires Epiphany newer than Jan 25 2004, because it
 adds an entry to the Tools menu.
 
 TODO:
-- There's an annoying 200-character limit somewhere between each error message and our error viewer.
-
 - Disable the action if we're not viewing an HTML file
 
 - When MIME type doesn't match doctype it should add 1 to the error count.

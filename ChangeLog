@@ -1,3 +1,15 @@
+2004-01-30  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	(free_error_viewer_cb_data):
+
+	GTK Bug #132447 was fixed, so free our callback data here.
+
+	* extensions/error-viewer/README:
+	* extensions/error-viewer/opensp/validate.cpp:
+
+	Fixed my 200-character-limit bug.
+
 2004-01-29  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:

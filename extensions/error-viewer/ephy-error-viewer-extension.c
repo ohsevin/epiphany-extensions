@@ -214,13 +214,10 @@ ephy_error_viewer_extension_show_viewer (GtkAction *action,
 static void
 free_error_viewer_cb_data (gpointer data)
 {
-	/* Pending GTK+ bug #132447 */
-	/*
 	if (data)
 	{
 		g_free (data);
 	}
-	*/
 }
 
 static void
