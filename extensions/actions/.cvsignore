@@ -2,6 +2,7 @@
 *.lo
 *.la
 *.so
+*.gladep
 Makefile
 Makefile.in
 .deps
