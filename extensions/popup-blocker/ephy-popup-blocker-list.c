@@ -141,16 +141,6 @@ ephy_popup_blocker_list_insert (EphyPopupBlockerList *list,
 static void ephy_popup_blocker_list_remove_window (EphyPopupBlockerList *list, EphyWindow *window);
 
 static gboolean
-is_visible (GtkWidget *widget)
-{
-	gboolean visible = FALSE;
-
-	g_object_get (G_OBJECT (widget), "visible", &visible, NULL);
-
-	return visible;
-}
-
-static gboolean
 window_destroy_cb (EphyWindow *window,
 		   EphyPopupBlockerList *list)
 {
@@ -176,7 +166,7 @@ free_blocked_popup (BlockedPopup *popup)
 			(popup->window, G_SIGNAL_MATCH_FUNC, 0, 0, NULL,
 			 window_destroy_cb, NULL);
 
-		if (is_visible (GTK_WIDGET (popup->window)) == FALSE)
+		if (GTK_WIDGET_VISIBLE (popup->window) == FALSE)
 		{
 			gtk_widget_destroy (GTK_WIDGET (popup->window));
 		}
@@ -298,7 +288,7 @@ count_popups (EphyPopupBlockerList *list)
 		/* Hidden windows */
 		if (popup->window != NULL
 		    && EPHY_IS_WINDOW (popup->window)
-		    && is_visible (GTK_WIDGET (popup->window)) == FALSE)
+		    && GTK_WIDGET_VISIBLE (popup->window) == FALSE)
 		{
 			count++;
 			continue;
@@ -376,7 +366,7 @@ ephy_popup_blocker_list_show_all (EphyPopupBlockerList *list)
 			embed = ephy_window_get_active_embed (popup->window);
 			g_return_if_fail (EPHY_IS_EMBED (embed));
 
-			gtk_widget_show (GTK_WIDGET (popup->window));
+			gtk_window_present (GTK_WINDOW (popup->window));
 			if (popup->x != -1 && popup->y != -1)
 			{
 				gtk_window_move (GTK_WINDOW (popup->window),

@@ -1,5 +1,14 @@
 2004-03-15  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/popup-blocker/ephy-popup-blocker-list.c:
+	(free_blocked_popup), (count_popups),
+	(ephy_popup_blocker_list_show_all):
+
+	Newbie that I am, I just discovered GTK_WIDGET_VISIBLE (). Replaced my
+	own is_visible function with that.
+
+2004-03-15  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/error-viewer/link-checker.c:
 	(link_checker_update_progress):
 	* extensions/error-viewer/mozilla/mozilla-link-checker.cpp:
