@@ -72,12 +72,12 @@ void page_info_dialog_close_button_clicked_cb	  (GtkWidget *button,
 						   PageInfoDialog *dialog);
 void page_info_dialog_view_cert_button_clicked_cb (GtkWidget *button,
 						   PageInfoDialog *dialog);
-void page_info_image_box_realize_cb		  (GtkContainer *box,
+void page_info_media_box_realize_cb		  (GtkContainer *box,
 						   PageInfoDialog *dialog);
 
 enum {
 	GENERAL_PAGE,
-	IMAGES_PAGE,
+	MEDIA_PAGE,
 	LINKS_PAGE,
 	FORMS_PAGE,
 	/*
@@ -145,10 +145,10 @@ enum
 
 	PROP_LINKS_LINK_TREEVIEW,
 
-	PROP_IMAGES_IMAGE_TREEVIEW,
-	PROP_IMAGES_IMAGE_BOX,
-	PROP_IMAGES_IMAGE_VPANED,
-	PROP_IMAGES_SAVE_BUTTON,
+	PROP_MEDIA_MEDIUM_TREEVIEW,
+	PROP_MEDIA_MEDIUM_BOX,
+	PROP_MEDIA_MEDIUM_VPANED,
+	PROP_MEDIA_SAVE_BUTTON,
 
 /*
 	PROP_SECURITY_CERT_TITLE,
@@ -182,10 +182,10 @@ EphyDialogProperty properties [] =
 
 	{ "page_info_link_list",	NULL, PT_NORMAL, 0 },
 
-	{ "page_info_image_list",	NULL, PT_NORMAL, 0 },
-	{ "page_info_image_box",	NULL, PT_NORMAL, 0 },
-	{ "page_info_image_vpaned",	NULL, PT_NORMAL, 0 },
-	{ "page_info_image_save",	NULL, PT_NORMAL, 0 },
+	{ "page_info_media_list",	NULL, PT_NORMAL, 0 },
+	{ "page_info_media_box",	NULL, PT_NORMAL, 0 },
+	{ "page_info_media_vpaned",	NULL, PT_NORMAL, 0 },
+	{ "page_info_media_save",	NULL, PT_NORMAL, 0 },
 
 	/*
 	{ PROP_SECURITY_CERT_TITLE,     "page_info_security_title", NULL, PT_NORMAL, NULL },
@@ -484,7 +484,9 @@ page_info_dialog_view_cert_button_clicked_cb (GtkWidget *button,
 /* a generic treeview info page */
 
 typedef struct _TreeviewInfoPage TreeviewInfoPage;
-	
+
+typedef void (* TreeviewInfoPageFilterFunc)  (TreeviewInfoPage *);
+
 struct _TreeviewInfoPage
 {
 	InfoPage page;
@@ -495,6 +497,7 @@ struct _TreeviewInfoPage
 	GtkActionEntry *action_entries;
 	guint n_action_entries;
 	const char *popup_path;
+        TreeviewInfoPageFilterFunc filter_func;
 };
 
 static gboolean
@@ -512,26 +515,6 @@ treeview_info_page_show_popup (TreeviewInfoPage *page)
 	gtk_menu_shell_select_first (GTK_MENU_SHELL (widget), FALSE);
 
 	return TRUE;
-}
-
-static void
-treeview_filter_popup (TreeviewInfoPage *page, GtkTreeSelection *selection)
-{
-	/* In case of a multiple image selection, we must reduce popup to Save As only */
-	if (strcmp (page->popup_path, "/ImagesPopup") == 0)
-	{
-		InfoPage *ipage = (InfoPage *) page;
-		PageInfoDialog *dialog = ipage->dialog;
-		GtkAction *action;
-		gboolean visible = (gtk_tree_selection_count_selected_rows (selection) == 1);
-		
-		action = gtk_action_group_get_action (dialog->priv->action_group,
-				                      "CopyImageAddress");
-		g_object_set (action, "visible", visible, NULL);
-		action = gtk_action_group_get_action (dialog->priv->action_group,
-				                      "SetImageAsBackground");
-		g_object_set (action, "visible", visible, NULL);
-	}
 }
 
 static gboolean
@@ -575,7 +558,11 @@ treeview_info_page_button_pressed_cb (GtkTreeView *treeview,
 		gtk_tree_selection_select_path (selection, path);
 		gtk_tree_path_free (path);
 	}
-	treeview_filter_popup (page, selection);
+
+        if (page->filter_func)
+        {
+		page->filter_func (page);
+        }
        
 	/* now popup the menu */
 	widget = gtk_ui_manager_get_widget (dialog->priv->manager,
@@ -769,15 +756,15 @@ general_info_page_new (PageInfoDialog *dialog)
 	return ipage;
 }
 
-/* "Images" page */
+/* "Media" page */
 
-#define IMAGE_PANED_POSITION_DEFAULT	250
+#define MEDIUM_PANED_POSITION_DEFAULT	250
 #define CONF_DESKTOP_BG_PICTURE		"/desktop/gnome/background/picture_filename"
 #define CONF_DESKTOP_BG_TYPE		"/desktop/gnome/background/picture_options"
 
-typedef struct _ImagesInfoPage ImagesInfoPage;
+typedef struct _MediaInfoPage MediaInfoPage;
 
-struct _ImagesInfoPage
+struct _MediaInfoPage
 {
 	TreeviewInfoPage tpage;
 
@@ -787,16 +774,82 @@ struct _ImagesInfoPage
 
 enum
 {
-	COL_IMAGE_URL,
-	COL_IMAGE_ALT,
-	COL_IMAGE_TITLE,
-	COL_IMAGE_WIDTH,
-	COL_IMAGE_HEIGHT
+	COL_MEDIUM_URL,
+	COL_MEDIUM_TYPE,
+        COL_MEDIUM_TYPE_TEXT,
+	COL_MEDIUM_ALT,
+	COL_MEDIUM_TITLE,
+	COL_MEDIUM_WIDTH,
+	COL_MEDIUM_HEIGHT
 };
+
+enum
+{
+	TV_COL_MEDIUM_URL,
+        TV_COL_MEDIUM_TYPE_TEXT,
+	TV_COL_MEDIUM_ALT,
+	TV_COL_MEDIUM_TITLE,
+	TV_COL_MEDIUM_WIDTH,
+	TV_COL_MEDIUM_HEIGHT,
+};
+
+static const char *
+mozilla_embed_type_to_string (EmbedPageMediumType type)
+{
+	const char *s_type;
+
+	switch (type)
+	{
+		case MEDIUM_IMAGE: 
+			s_type = _("Image");
+			break;
+		case MEDIUM_EMBED:
+			s_type = _("Embed");
+			break;
+		case MEDIUM_OBJECT:
+			s_type = _("Object");
+			break;
+		case MEDIUM_APPLET:
+			s_type = _("Applet");
+			break;
+		case MEDIUM_ICON:
+			s_type = _("Icon");
+			break;
+		default:
+			s_type = _("Unknown");
+	}
+
+	return s_type;
+}
+
+static EmbedPageMediumType
+media_get_selected_medium_type (GtkTreeSelection *selection)
+{
+	GtkTreeModel *model;
+	GList *selected_row;
+	GtkTreeIter iter;
+	EmbedPageMediumType type = 0;
+
+	selected_row = gtk_tree_selection_get_selected_rows (selection, &model);
+
+	if (gtk_tree_model_get_iter (model, &iter, (GtkTreePath *)(selected_row->data)))
+	{
+		gtk_tree_model_get (model, &iter, COL_MEDIUM_TYPE, &type, -1);
+	}
+	g_list_free (selected_row);
+
+	return type;
+}
+
+static gboolean
+media_is_embedded_medium (EmbedPageMediumType type)
+{
+	return type == MEDIUM_OBJECT || type == MEDIUM_EMBED;
+}
 
 /* Return a list of selected addresses (char *) */
 static GList *
-images_get_selected_image_url (ImagesInfoPage *page)
+media_get_selected_medium_url (MediaInfoPage *page)
 {
 	TreeviewInfoPage *tpage = (TreeviewInfoPage *) page;
 	GtkTreeModel *model;
@@ -813,7 +866,7 @@ images_get_selected_image_url (ImagesInfoPage *page)
 		if (gtk_tree_model_get_iter (model, &iter, 
 					     (GtkTreePath *)(l->data)))
 		{
-			gtk_tree_model_get (model, &iter, COL_IMAGE_URL, &address, -1);
+			gtk_tree_model_get (model, &iter, COL_MEDIUM_URL, &address, -1);
 
 			ret = g_list_prepend (ret, address);
 		}
@@ -824,9 +877,9 @@ images_get_selected_image_url (ImagesInfoPage *page)
 	return ret;
 }
 
-/* Save an image given the destination directory */
+/* Save a medium given the destination directory */
 static void
-save_an_image (const char *source, const char *dir)
+save_a_medium (const char *source, const char *dir)
 {
 	GnomeVFSURI *uri;
 	EphyEmbedPersist *persist;
@@ -860,7 +913,7 @@ save_an_image (const char *source, const char *dir)
 	}
 }
 
-/* Download at the same time all the selelected images (rows) */
+/* Download at the same time all the selelected medium (rows) */
 static void
 download_path_response_cb (GtkDialog *fc, gint response, GList *rows)
 {
@@ -875,7 +928,7 @@ download_path_response_cb (GtkDialog *fc, gint response, GList *rows)
 		{
 			for (l = rows; l != NULL; l = l->next)
 			{
-				save_an_image ((char *)l->data, dir);
+				save_a_medium ((char *)l->data, dir);
 			}
 		}
 		g_free (dir);
@@ -888,23 +941,23 @@ download_path_response_cb (GtkDialog *fc, gint response, GList *rows)
 }
 
 static void
-images_open_image_cb (GtkAction *action,
-		      ImagesInfoPage *page)
+media_open_medium_cb (GtkAction *action,
+		      MediaInfoPage *page)
 {
 	/* FIXME: write me! :) */
 }
 
 
 static void
-images_save_image_cb (gpointer ptr,
-		      ImagesInfoPage *page)
+media_save_medium_cb (gpointer ptr,
+		      MediaInfoPage *page)
 {
 	InfoPage *ipage = (InfoPage *) page;
 	PageInfoDialog *dialog = ipage->dialog;
 	EphyEmbedPersist *persist;
 	GList *rows;
 
-	rows = images_get_selected_image_url (page);
+	rows = media_get_selected_medium_url (page);
 	if (g_list_length (rows) == 1)
 	{
 		char *address = (gchar *)(rows->data); 
@@ -916,7 +969,7 @@ images_save_image_cb (gpointer ptr,
 
 		ephy_embed_persist_set_source (persist, address);
 		ephy_embed_persist_set_flags (persist, EMBED_PERSIST_ASK_DESTINATION);
-		ephy_embed_persist_set_fc_title (persist, _("Save Image As..."));
+		ephy_embed_persist_set_fc_title (persist, _("Save Medium As..."));
 		ephy_embed_persist_set_fc_parent (persist, GTK_WINDOW (dialog->priv->window));
 
 		ephy_embed_persist_save (persist);
@@ -966,15 +1019,15 @@ background_download_completed_cb (EphyEmbedPersist *persist)
 }
 
 static void
-images_set_image_as_background_cb (GtkAction *action,
-				   ImagesInfoPage *page)
+media_set_image_as_background_cb (GtkAction *action,
+				  MediaInfoPage *page)
 {
 	EphyEmbedPersist *persist;
 	char *address;
 	char *dest, *base, *base_converted;
 	GList *rows;
 
-	rows = images_get_selected_image_url (page);
+	rows = media_get_selected_medium_url (page);
 	if (g_list_length (rows) != 1) return;
 
 	address = (gchar *)(rows->data); 
@@ -1005,13 +1058,13 @@ images_set_image_as_background_cb (GtkAction *action,
 }
 
 static void
-images_copy_image_address_cb (GtkAction *action,
-			      ImagesInfoPage *page)
+media_copy_medium_address_cb (GtkAction *action,
+			      MediaInfoPage *page)
 {
 	char *address;
 	GList *rows;
 
-	rows = images_get_selected_image_url (page);
+	rows = media_get_selected_medium_url (page);
 	if (g_list_length (rows) != 1) return;
 
 	address = (gchar *)(rows->data); 
@@ -1025,46 +1078,46 @@ images_copy_image_address_cb (GtkAction *action,
 	g_free (address);
 }
 
-static GtkActionEntry images_action_entries[] =
+static GtkActionEntry media_action_entries[] =
 {
-	{ "OpenImage",
+	{ "Open",
 	  GTK_STOCK_OPEN,
-	  N_("_Open Image"),
+	  N_("_Open"),
 	  NULL,
 	  NULL,
-	  G_CALLBACK (images_open_image_cb) },
-	{ "CopyImageAddress", 
+	  G_CALLBACK (media_open_medium_cb) },
+	{ "CopyLinkAddress", 
 	  GTK_STOCK_COPY,
-	  N_("_Copy Image Address"),
+	  N_("_Copy Link Address"),
 	  NULL,
 	  NULL,
-	  G_CALLBACK (images_copy_image_address_cb) },
-	{ "SetImageAsBackground",
+	  G_CALLBACK (media_copy_medium_address_cb) },
+	{ "SetAsBackground",
 	  NULL,
-	  N_("_Use Image as Background"),
+	  N_("_Use as Background"),
 	  NULL,
 	  NULL,
-	  G_CALLBACK (images_set_image_as_background_cb) },
+	  G_CALLBACK (media_set_image_as_background_cb) },
 	{ "SaveAs", 
 	  GTK_STOCK_SAVE_AS,
-	  N_("_Save Image As..."),
+	  N_("_Save As..."),
 	  NULL,
 	  NULL,
-	  G_CALLBACK (images_save_image_cb) }
+	  G_CALLBACK (media_save_medium_cb) }
 };
 
 void
-page_info_image_box_realize_cb (GtkContainer *box,
+page_info_media_box_realize_cb (GtkContainer *box,
 				PageInfoDialog *dialog)
 {
-	TreeviewInfoPage *tpage = (TreeviewInfoPage *) dialog->priv->pages[IMAGES_PAGE];
-	ImagesInfoPage *page = (ImagesInfoPage *) tpage;
+	TreeviewInfoPage *tpage = (TreeviewInfoPage *) dialog->priv->pages[MEDIA_PAGE];
+	MediaInfoPage *page = (MediaInfoPage *) tpage;
 	EphyEmbed *embed;
 
 	page->embed = embed = EPHY_EMBED (ephy_embed_factory_new_object (EPHY_TYPE_EMBED));
 
 	/* FIXME: this doesn't seem to work!? */
-	/* When the image has loaded grab the focus for the treeview
+	/* When the media has loaded grab the focus for the treeview
 	 * again. This means that you can navigate in the treeview
 	 * using the arrow keys */
 	g_signal_connect_swapped (embed, "net_stop",
@@ -1079,27 +1132,31 @@ page_info_image_box_realize_cb (GtkContainer *box,
 }
 
 static gboolean 
-images_treeview_selection_changed_cb (GtkTreeSelection *selection,
-                                      GtkTreeModel *model,
-                                      GtkTreePath *path,
-                                      gboolean path_currently_selected,
-                                      ImagesInfoPage *page)
+media_treeview_selection_changed_cb (GtkTreeSelection *selection,
+                                     GtkTreeModel *model,
+                                     GtkTreePath *path,
+                                     gboolean path_currently_selected,
+                                     MediaInfoPage *page)
 {
 	if (path_currently_selected) return TRUE;
 
-	/* Display image if only one selected */
+	/* Display medium if only one selected and medium is not an embed */
 	if (gtk_tree_selection_count_selected_rows (selection) == 0)
 	{
-		char *url;
 		GtkTreeIter iter;
+		EmbedPageMediumType type;
+		char *url;
 
 		if (gtk_tree_model_get_iter (model, &iter, path))
 		{
-			gtk_tree_model_get (model, &iter, COL_IMAGE_URL, &url, -1);
+			gtk_tree_model_get (model, &iter,
+					    COL_MEDIUM_URL, &url,
+					    COL_MEDIUM_TYPE, &type,
+					    -1);
 
 		}
 
-		if (url != NULL)
+		if (url != NULL && !media_is_embedded_medium (type))
 		{
 			ephy_embed_load_url (page->embed, url);
 		}
@@ -1107,19 +1164,50 @@ images_treeview_selection_changed_cb (GtkTreeSelection *selection,
 		{
 			ephy_embed_load_url (page->embed, "about:blank");
 		}
-
 		gtk_widget_set_sensitive (page->save_button, url != NULL);
 
 		g_free (url);
+	}
+	else
+	{
+		ephy_embed_load_url (page->embed, "about:blank");
 	}
 	return TRUE;
 }
 
 static void
-images_info_page_construct (InfoPage *ipage)
+media_info_page_filter (TreeviewInfoPage *page)
+{
+	InfoPage *ipage = (InfoPage *) page;
+	PageInfoDialog *dialog = ipage->dialog;
+	GtkAction *action;
+	gboolean one_col, can_set_as_background = TRUE;
+	EmbedPageMediumType type = MEDIUM_IMAGE;
+
+	/* In case of a multiple medium selection, we must reduce popup to Save As
+	 * only. Other point is that Embeds and Objects cannot be used as background!
+         */
+	one_col = (gtk_tree_selection_count_selected_rows (page->selection) == 1);
+
+        if (one_col)
+	{
+		media_get_selected_medium_type (page->selection);
+
+		can_set_as_background = ! media_is_embedded_medium (type);
+	}
+	action = gtk_action_group_get_action (dialog->priv->action_group,
+					      "CopyLinkAddress");
+	g_object_set (action, "visible", one_col, NULL);
+	action = gtk_action_group_get_action (dialog->priv->action_group,
+					      "SetAsBackground");
+	g_object_set (action, "visible", one_col && can_set_as_background, NULL);
+}
+
+static void
+media_info_page_construct (InfoPage *ipage)
 {
 	TreeviewInfoPage *tpage = (TreeviewInfoPage *) ipage;
-	ImagesInfoPage *page = (ImagesInfoPage *) ipage;
+	MediaInfoPage *page = (MediaInfoPage *) ipage;
 	PageInfoDialog *dialog = ipage->dialog;
 	GtkTreeView *treeview;
 	GtkListStore *liststore;
@@ -1130,14 +1218,16 @@ images_info_page_construct (InfoPage *ipage)
 	GtkAction *action;
 
 	treeview = GTK_TREE_VIEW (ephy_dialog_get_control
-		(EPHY_DIALOG (dialog), properties[PROP_IMAGES_IMAGE_TREEVIEW].id));
+		(EPHY_DIALOG (dialog), properties[PROP_MEDIA_MEDIUM_TREEVIEW].id));
 
-	liststore = gtk_list_store_new (5,
+	liststore = gtk_list_store_new (7,
+					G_TYPE_STRING,
+					G_TYPE_INT,
 					G_TYPE_STRING,
 					G_TYPE_STRING,
 					G_TYPE_STRING,
 					G_TYPE_INT,
-					G_TYPE_INT);
+                                        G_TYPE_INT);
 	gtk_tree_view_set_model (treeview, GTK_TREE_MODEL (liststore));
 	g_object_unref (liststore);
 
@@ -1145,80 +1235,92 @@ images_info_page_construct (InfoPage *ipage)
 	gtk_tree_selection_set_mode (selection, GTK_SELECTION_MULTIPLE);
 	gtk_tree_selection_set_select_function (selection,
 						(GtkTreeSelectionFunc)
-							images_treeview_selection_changed_cb,
+							media_treeview_selection_changed_cb,
 						page, NULL);
 
 	renderer = gtk_cell_renderer_text_new ();
 	gtk_tree_view_insert_column_with_attributes (treeview,
-						     COL_IMAGE_URL,
+						     TV_COL_MEDIUM_URL,
 						     _("URL"),
 						     renderer,
-						     "text", COL_IMAGE_URL,
+						     "text", COL_MEDIUM_URL,
 						     NULL);
-	column = gtk_tree_view_get_column (treeview, COL_IMAGE_URL);
+	column = gtk_tree_view_get_column (treeview, TV_COL_MEDIUM_URL);
 	gtk_tree_view_column_set_resizable (column, TRUE);
 	gtk_tree_view_column_set_reorderable (column, TRUE);
 	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
-	gtk_tree_view_column_set_sort_column_id (column, COL_IMAGE_URL);
+	gtk_tree_view_column_set_sort_column_id (column, TV_COL_MEDIUM_URL);
 
 	gtk_tree_view_insert_column_with_attributes (treeview,
-						     COL_IMAGE_ALT, 
+						     TV_COL_MEDIUM_TYPE_TEXT,
+						     _("Type"),
+						     renderer,
+						     "text", COL_MEDIUM_TYPE_TEXT,
+						     NULL);
+	column = gtk_tree_view_get_column (treeview, TV_COL_MEDIUM_TYPE_TEXT);
+	gtk_tree_view_column_set_resizable (column, TRUE);
+	gtk_tree_view_column_set_reorderable (column, TRUE);
+	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
+	gtk_tree_view_column_set_sort_column_id (column, COL_MEDIUM_TYPE_TEXT);
+
+	gtk_tree_view_insert_column_with_attributes (treeview,
+						     TV_COL_MEDIUM_ALT, 
 						     _("Alt Text"),
 						     renderer,
-						     "text", COL_IMAGE_ALT,
+						     "text", COL_MEDIUM_ALT,
 						     NULL);
-	column = gtk_tree_view_get_column (treeview, COL_IMAGE_ALT);
+	column = gtk_tree_view_get_column (treeview, TV_COL_MEDIUM_ALT);
 	gtk_tree_view_column_set_resizable (column, TRUE);
 	gtk_tree_view_column_set_reorderable (column, TRUE);
 	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
-	gtk_tree_view_column_set_sort_column_id (column, COL_IMAGE_ALT);
+	gtk_tree_view_column_set_sort_column_id (column, COL_MEDIUM_ALT);
 
 	gtk_tree_view_insert_column_with_attributes (treeview,
-						     COL_IMAGE_TITLE, 
+						     TV_COL_MEDIUM_TITLE, 
 						     _("Title"),
 						     renderer,
-						     "text", COL_IMAGE_TITLE,
+						     "text", COL_MEDIUM_TITLE,
 						     NULL);
-	column = gtk_tree_view_get_column (treeview, COL_IMAGE_TITLE);
+	column = gtk_tree_view_get_column (treeview, TV_COL_MEDIUM_TITLE);
 	gtk_tree_view_column_set_resizable (column, TRUE);
 	gtk_tree_view_column_set_reorderable (column, TRUE);
 	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
-	gtk_tree_view_column_set_sort_column_id (column, COL_IMAGE_TITLE);
+	gtk_tree_view_column_set_sort_column_id (column, COL_MEDIUM_TITLE);
 
 	gtk_tree_view_insert_column_with_attributes (treeview,
-						     COL_IMAGE_WIDTH, 
+						     TV_COL_MEDIUM_WIDTH, 
 						     _("Width"),
 						     renderer,
-						     "text", COL_IMAGE_WIDTH,
+						     "text", COL_MEDIUM_WIDTH,
 						     NULL);
-	column = gtk_tree_view_get_column (treeview, COL_IMAGE_WIDTH);
+	column = gtk_tree_view_get_column (treeview, TV_COL_MEDIUM_WIDTH);
 	gtk_tree_view_column_set_resizable (column, TRUE);
 	gtk_tree_view_column_set_reorderable (column, TRUE);
 	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
-	gtk_tree_view_column_set_sort_column_id (column, COL_IMAGE_WIDTH);
+	gtk_tree_view_column_set_sort_column_id (column, COL_MEDIUM_WIDTH);
 
 	gtk_tree_view_insert_column_with_attributes (treeview,
-						     COL_IMAGE_HEIGHT, 
+						     TV_COL_MEDIUM_HEIGHT, 
 						     _("Height"),
 						     renderer,
-						     "text", COL_IMAGE_HEIGHT,
+						     "text", COL_MEDIUM_HEIGHT,
 						     NULL);
-	column = gtk_tree_view_get_column (treeview, COL_IMAGE_HEIGHT);
+	column = gtk_tree_view_get_column (treeview, TV_COL_MEDIUM_HEIGHT);
 	gtk_tree_view_column_set_resizable (column, TRUE);
 	gtk_tree_view_column_set_reorderable (column, TRUE);
 	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
-	gtk_tree_view_column_set_sort_column_id (column, COL_IMAGE_HEIGHT);
+	gtk_tree_view_column_set_sort_column_id (column, COL_MEDIUM_HEIGHT);
 
 	button = ephy_dialog_get_control (EPHY_DIALOG (dialog),
-					  properties[PROP_IMAGES_SAVE_BUTTON].id);
+					  properties[PROP_MEDIA_SAVE_BUTTON].id);
 	g_signal_connect (button, "clicked",
-			  G_CALLBACK (images_save_image_cb), page);
+			  G_CALLBACK (media_save_medium_cb), page);
 
 	vpaned = ephy_dialog_get_control (EPHY_DIALOG (dialog),
-					  properties[PROP_IMAGES_IMAGE_VPANED].id);
+					  properties[PROP_MEDIA_MEDIUM_VPANED].id);
 
-	ephy_state_add_paned (vpaned, "PageInfoDialog::ImagesPage::VPaned",
-			      IMAGE_PANED_POSITION_DEFAULT);
+	ephy_state_add_paned (vpaned, "PageInfoDialog::MediaPage::VPaned",
+			      MEDIUM_PANED_POSITION_DEFAULT);
 
 	tpage->store = liststore;
 	tpage->selection = selection;
@@ -1229,50 +1331,53 @@ images_info_page_construct (InfoPage *ipage)
 
 	/* FIXME: implement "Open", then remove this */
 	action = gtk_action_group_get_action (dialog->priv->action_group,
-					      "OpenImage");
+					      "Open");
 	g_object_set (action, "visible", FALSE, NULL);
 }
 
 static void
-images_info_page_fill (InfoPage *ipage)
+media_info_page_fill (InfoPage *ipage)
 {
 	TreeviewInfoPage *tpage = (TreeviewInfoPage *) ipage;
 	PageInfoDialog *dialog = ipage->dialog;
 	GtkListStore *store = tpage->store;
 	GtkTreeIter iter;
-	GList *images, *l;
+	GList *media, *l;
 
-	images = dialog->priv->page_info->images;
+	media = dialog->priv->page_info->media;
 
-	for (l = images; l != NULL; l = l->next)
+	for (l = media; l != NULL; l = l->next)
 	{
-		EmbedPageImage *image = (EmbedPageImage *) l->data;
+		EmbedPageMedium *media = (EmbedPageMedium *) l->data;
 
 		gtk_list_store_append (store, &iter);
 		gtk_list_store_set (store, &iter,
-				    COL_IMAGE_URL, image->url,
-				    COL_IMAGE_ALT, image->alt,
-				    COL_IMAGE_TITLE, image->title,
-				    COL_IMAGE_WIDTH, image->width,
-				    COL_IMAGE_HEIGHT, image->height,
+				    COL_MEDIUM_URL, media->url,
+				    COL_MEDIUM_TYPE_TEXT, mozilla_embed_type_to_string (media->type),
+				    COL_MEDIUM_ALT, media->alt,
+				    COL_MEDIUM_TITLE, media->title,
+				    COL_MEDIUM_WIDTH, media->width,
+				    COL_MEDIUM_HEIGHT, media->height,
+				    COL_MEDIUM_TYPE, media->type,
 				    -1);
 	}
 }
 
 static InfoPage *
-images_info_page_new (PageInfoDialog *dialog)
+media_info_page_new (PageInfoDialog *dialog)
 {
-	ImagesInfoPage *page = g_new0 (ImagesInfoPage, 1);
+	MediaInfoPage *page = g_new0 (MediaInfoPage, 1);
 	TreeviewInfoPage *tpage = (TreeviewInfoPage *) page;
 	InfoPage *ipage = (InfoPage *) page;
 
 	ipage->dialog = dialog;
-	ipage->construct = images_info_page_construct;
-	ipage->fill = images_info_page_fill;
+	ipage->construct = media_info_page_construct;
+	ipage->fill = media_info_page_fill;
 
-	tpage->popup_path = "/ImagesPopup";
-	tpage->action_entries = images_action_entries;
-	tpage->n_action_entries = G_N_ELEMENTS (images_action_entries);
+	tpage->popup_path = "/MediaPopup";
+	tpage->action_entries = media_action_entries;
+	tpage->n_action_entries = G_N_ELEMENTS (media_action_entries);
+	tpage->filter_func = media_info_page_filter;
 
 	return ipage;
 }
@@ -1589,7 +1694,7 @@ page_info_dialog_init (PageInfoDialog *dialog)
 	dialog->priv = PAGE_INFO_DIALOG_GET_PRIVATE (dialog);
 
 	dialog->priv->pages[GENERAL_PAGE] = general_info_page_new (dialog);
-	dialog->priv->pages[IMAGES_PAGE] = images_info_page_new (dialog);
+	dialog->priv->pages[MEDIA_PAGE] = media_info_page_new (dialog);
 	dialog->priv->pages[LINKS_PAGE] = links_info_page_new (dialog);
 	dialog->priv->pages[FORMS_PAGE] = forms_info_page_new (dialog);
 

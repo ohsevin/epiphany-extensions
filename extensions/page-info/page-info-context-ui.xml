@@ -1,10 +1,10 @@
 <ui>
 
-<popup name="ImagesPopup" action="PopupAction">
-	<menuitem name="OpenImageIP" action="OpenImage"/>
+<popup name="MediaPopup" action="PopupAction">
+	<menuitem name="OpenIP" action="Open"/>
 	<menuitem name="SaveAsIP" action="SaveAs"/>
-	<menuitem name="SetImageAsBackgroundIP" action="SetImageAsBackground"/>
-	<menuitem name="CopyImageAddressIP" action="CopyImageAddress"/>
+	<menuitem name="SetAsBackgroundIP" action="SetAsBackground"/>
+	<menuitem name="CopyLinkAddressIP" action="CopyLinkAddress"/>
 </popup>
 
 <popup name="ImagesEmbedPopup" action="PopupAction">

@@ -75,23 +75,25 @@ typedef struct
 //	GList *stylesheets; /* url, title */
 } EmbedPageProperties;
 
-typedef struct
+typedef enum 
 {
-  char *url;
-  char *alt;
-  char *title;
-  int width;
-  int height;
-} EmbedPageImage; 
+  MEDIUM_IMAGE,
+  MEDIUM_EMBED,
+  MEDIUM_OBJECT,
+  MEDIUM_APPLET,
+  MEDIUM_ICON,
+  LAST_MEDIUM
+} EmbedPageMediumType;
 
 typedef struct
 {
   char *url;
-  char *name;
-  char *type;
+  EmbedPageMediumType type;
+  char *alt;
+  char *title;
   int width;
   int height;
-} EmbedPageMedia;
+} EmbedPageMedium; 
 
 typedef struct
 {
@@ -111,7 +113,7 @@ typedef struct
 typedef struct
 {
   EmbedPageProperties *props;
-  GList *images;
+  GList *media;
   GList *links;
   GList *forms;
 } EmbedPageInfo;
@@ -124,3 +126,4 @@ void           mozilla_free_embed_page_info (EmbedPageInfo *info);
 G_END_DECLS
 
 #endif /* PAGE_INFO_MOZILLA_HELPERS_H */
+

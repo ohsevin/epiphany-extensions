@@ -801,7 +801,7 @@
 	  </child>
 
 	  <child>
-	    <widget class="GtkVPaned" id="page_info_image_vpaned">
+	    <widget class="GtkVPaned" id="page_info_media_vpaned">
 	      <property name="visible">True</property>
 	      <property name="can_focus">True</property>
 	      <property name="position">250</property>
@@ -816,7 +816,7 @@
 		  <child>
 		    <widget class="GtkLabel" id="label1277">
 		      <property name="visible">True</property>
-		      <property name="label" translatable="yes">&lt;b&gt;Images In Page&lt;/b&gt;</property>
+		      <property name="label" translatable="yes">&lt;b&gt;Media In Page&lt;/b&gt;</property>
 		      <property name="use_underline">False</property>
 		      <property name="use_markup">True</property>
 		      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -844,7 +844,7 @@
 		      <property name="window_placement">GTK_CORNER_TOP_LEFT</property>
 
 		      <child>
-			<widget class="GtkTreeView" id="page_info_image_list">
+			<widget class="GtkTreeView" id="page_info_media_list">
 			  <property name="visible">True</property>
 			  <property name="can_focus">True</property>
 			  <property name="headers_visible">True</property>
@@ -881,7 +881,7 @@
 		      <property name="spacing">0</property>
 
 		      <child>
-			<widget class="GtkButton" id="page_info_image_save">
+			<widget class="GtkButton" id="page_info_media_save">
 			  <property name="visible">True</property>
 			  <property name="sensitive">False</property>
 			  <property name="can_default">True</property>
@@ -908,7 +908,7 @@
 				  <property name="spacing">2</property>
 
 				  <child>
-				    <widget class="GtkImage" id="image15">
+				    <widget class="GtkImage" id="media15">
 				      <property name="visible">True</property>
 				      <property name="stock">gtk-save-as</property>
 				      <property name="icon_size">4</property>
@@ -927,7 +927,7 @@
 				  <child>
 				    <widget class="GtkLabel" id="label123130">
 				      <property name="visible">True</property>
-				      <property name="label" translatable="yes">_Save Image As...</property>
+				      <property name="label" translatable="yes">_Save Media As...</property>
 				      <property name="use_underline">True</property>
 				      <property name="use_markup">False</property>
 				      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -962,7 +962,7 @@
 		  <child>
 		    <widget class="GtkLabel" id="label1278">
 		      <property name="visible">True</property>
-		      <property name="label" translatable="yes">&lt;b&gt;Image View&lt;/b&gt;</property>
+		      <property name="label" translatable="yes">&lt;b&gt;Medium View&lt;/b&gt;</property>
 		      <property name="use_underline">False</property>
 		      <property name="use_markup">True</property>
 		      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -981,10 +981,10 @@
 		  </child>
 
 		  <child>
-		    <widget class="GtkViewport" id="page_info_image_box">
+		    <widget class="GtkViewport" id="page_info_media_box">
 		      <property name="visible">True</property>
 		      <property name="shadow_type">GTK_SHADOW_IN</property>
-		      <signal name="realize" handler="page_info_image_box_realize_cb" last_modification_time="Fri, 10 Sep 2004 20:04:26 GMT"/>
+		      <signal name="realize" handler="page_info_media_box_realize_cb" last_modification_time="Fri, 10 Sep 2004 20:04:26 GMT"/>
 
 		      <child>
 			<placeholder/>
@@ -1012,7 +1012,7 @@
 	  <child>
 	    <widget class="GtkLabel" id="label1274">
 	      <property name="visible">True</property>
-	      <property name="label" translatable="yes">Images</property>
+	      <property name="label" translatable="yes">Media</property>
 	      <property name="use_underline">False</property>
 	      <property name="use_markup">False</property>
 	      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -1199,3 +1199,4 @@
 </widget>
 
 </glade-interface>
+

@@ -52,6 +52,9 @@
 #include <nsIDOMDocumentTraversal.h>
 #include <nsIDOMDocumentView.h>
 #include <nsIDOMElement.h>
+#include <nsIDOMCSSStyleDeclaration.h>
+#include <nsIDOMCSSPrimitiveValue.h>
+#include <nsIDOMCSSValue.h>
 #include <nsIDOMHTMLAnchorElement.h>
 #include <nsIDOMHTMLAppletElement.h>
 #include <nsIDOMHTMLAreaElement.h>
@@ -130,7 +133,7 @@ private:
   PRBool mJavaEnabled;
   nsCOMPtr<nsITextToSubURI> mTextToSubURI;
 
-  GHashTable *mImgHash;
+  GHashTable *mMediaHash;
   GHashTable *mLinkHash;
   GHashTable *mFormHash;
   
@@ -141,14 +144,14 @@ private:
 
 PageInfoHelper::PageInfoHelper ()
 {
-  mImgHash = g_hash_table_new (g_str_hash, g_str_equal);
+  mMediaHash = g_hash_table_new (g_str_hash, g_str_equal);
   mLinkHash = g_hash_table_new (g_str_hash, g_str_equal);
   mFormHash = g_hash_table_new (g_str_hash, g_str_equal);
 }
 
 PageInfoHelper::~PageInfoHelper ()
 {
-  g_hash_table_destroy (mImgHash);
+  g_hash_table_destroy (mMediaHash);
   g_hash_table_destroy (mLinkHash);
   g_hash_table_destroy (mFormHash);
 }
@@ -227,7 +230,7 @@ PageInfoHelper::GetInfo ()
   EmbedPageInfo *info = g_new0 (EmbedPageInfo, 1);
 
   info->props = GetProperties ();
-  g_hash_table_foreach (mImgHash, (GHFunc) make_list, &info->images);
+  g_hash_table_foreach (mMediaHash, (GHFunc) make_list, &info->media);
   g_hash_table_foreach (mLinkHash, (GHFunc) make_list, &info->links);
   g_hash_table_foreach (mFormHash, (GHFunc) make_list, &info->forms);
 
@@ -454,23 +457,24 @@ PageInfoHelper::ProcessAppletNode (nsIDOMHTMLAppletElement *aElement)
   rv = Resolve (tmp, cUrl);
   if (NS_FAILED (rv) || !cUrl.Length()) return;
   
-  if (g_hash_table_lookup (mImgHash, cUrl.get())) return;
+  if (g_hash_table_lookup (mMediaHash, cUrl.get())) return;
 
-  /* FIXME: link or image('media') ? */
-  EmbedPageImage *image = g_new0 (EmbedPageImage, 1);
-  image->url = g_strdup (cUrl.get());
-  g_hash_table_insert (mImgHash, image->url, image);
+  /* FIXME: link or medium('media') ? */
+  EmbedPageMedium *medium = g_new0 (EmbedPageMedium, 1);
+  medium->type = MEDIUM_APPLET;
+  medium->url = g_strdup (cUrl.get());
+  g_hash_table_insert (mMediaHash, medium->url, medium);
 
   rv = aElement->GetAlt (tmp);
   if (NS_SUCCEEDED (rv))
     {
-      image->alt = ToCString (tmp);
+      medium->alt = ToCString (tmp);
     }
 
   rv = aElement->GetTitle (tmp);
   if (NS_SUCCEEDED (rv))
     {
-      image->title = ToCString (tmp);
+      medium->title = ToCString (tmp);
     }
 }
 
@@ -513,16 +517,17 @@ PageInfoHelper::ProcessEmbedNode (nsIDOMHTMLEmbedElement *aElement)
   rv = Resolve (tmp, cUrl);
   if (NS_FAILED (rv) || !cUrl.Length()) return;
 
-  if (g_hash_table_lookup (mImgHash, cUrl.get())) return;
+  if (g_hash_table_lookup (mMediaHash, cUrl.get())) return;
 
-  EmbedPageImage *image = g_new0 (EmbedPageImage, 1);
-  image->url = g_strdup (cUrl.get());
-  g_hash_table_insert (mImgHash, image->url, image);
+  EmbedPageMedium *medium = g_new0 (EmbedPageMedium, 1);
+  medium->type = MEDIUM_EMBED;
+  medium->url = g_strdup (cUrl.get());
+  g_hash_table_insert (mMediaHash, medium->url, medium);
 
   rv = aElement->GetTitle (tmp);
   if (NS_SUCCEEDED (rv))
     {
-      image->title = ToCString (tmp);
+      medium->title = ToCString (tmp);
     }
 }
 
@@ -568,26 +573,27 @@ PageInfoHelper::ProcessImageNode (nsIDOMHTMLImageElement *aElement)
   rv = Resolve (tmp, cUrl);
   if (NS_FAILED (rv) || !cUrl.Length()) return;
 
-  if (g_hash_table_lookup (mImgHash, cUrl.get())) return;
+  if (g_hash_table_lookup (mMediaHash, cUrl.get())) return;
 
-  EmbedPageImage *image = g_new0 (EmbedPageImage, 1);
-  image->url = g_strdup (cUrl.get());
-  g_hash_table_insert (mImgHash, image->url, image);
+  EmbedPageMedium *medium = g_new0 (EmbedPageMedium, 1);
+  medium->type = MEDIUM_IMAGE;
+  medium->url = g_strdup (cUrl.get());
+  g_hash_table_insert (mMediaHash, medium->url, medium);
 
   rv = aElement->GetAlt (tmp);
   if (NS_SUCCEEDED (rv))
     {
-      image->alt = ToCString (tmp);
+      medium->alt = ToCString (tmp);
     }
 
   rv = aElement->GetTitle (tmp);
   if (NS_SUCCEEDED (rv))
     {
-      image->title = ToCString (tmp);
+      medium->title = ToCString (tmp);
     }
 
-  aElement->GetWidth (&image->width);
-  aElement->GetHeight (&image->height);
+  aElement->GetWidth (&medium->width);
+  aElement->GetHeight (&medium->height);
 }
 
 void
@@ -602,23 +608,24 @@ PageInfoHelper::ProcessObjectNode (nsIDOMHTMLObjectElement *aElement)
   rv = Resolve (tmp, cUrl);
   if (NS_FAILED (rv) || !cUrl.Length()) return;
 
-  if (g_hash_table_lookup (mImgHash, cUrl.get())) return;
+  if (g_hash_table_lookup (mMediaHash, cUrl.get())) return;
 
-  EmbedPageImage *image = g_new0 (EmbedPageImage, 1);
-  image->url = g_strdup (cUrl.get());
-  g_hash_table_insert (mImgHash, image->url, image);
+  EmbedPageMedium *medium = g_new0 (EmbedPageMedium, 1);
+  medium->type = MEDIUM_OBJECT;
+  medium->url = g_strdup (cUrl.get());
+  g_hash_table_insert (mMediaHash, medium->url, medium);
 
   rv = aElement->GetTitle (tmp);
   if (NS_SUCCEEDED (rv))
     {
-      image->title = ToCString (tmp);
+      medium->title = ToCString (tmp);
     }
 }
 
 void
 PageInfoHelper::ProcessInputNode (nsIDOMHTMLInputElement *aElement)
 {
-  /* We are searching for input of type image only */
+  /* We are searching for input of type medium only */
   nsresult rv;
   nsEmbedString tmp;
   rv = aElement->GetType (tmp);
@@ -639,16 +646,17 @@ PageInfoHelper::ProcessInputNode (nsIDOMHTMLInputElement *aElement)
   if (NS_FAILED (rv) || !cUrl.Length()) return;
 
   /* is already listed ? */
-  if (g_hash_table_lookup (mImgHash, cUrl.get())) return;
+  if (g_hash_table_lookup (mMediaHash, cUrl.get())) return;
 
-  EmbedPageImage *image = g_new0 (EmbedPageImage, 1);
-  image->url = g_strdup (cUrl.get());
-  g_hash_table_insert (mImgHash, image->url, image);
+  EmbedPageMedium *medium = g_new0 (EmbedPageMedium, 1);
+  medium->type = MEDIUM_IMAGE;
+  medium->url = g_strdup (cUrl.get());
+  g_hash_table_insert (mMediaHash, medium->url, medium);
 
   rv = aElement->GetAlt(tmp);
   if (NS_SUCCEEDED(rv))
     {
-      image->alt = ToCString (tmp);
+      medium->alt = ToCString (tmp);
     }
 }
 
@@ -715,9 +723,10 @@ PageInfoHelper::ProcessLinkNode (nsIDOMNode *aNode)
   if (rel.Length() && (g_ascii_strcasecmp (rel.get(), "icon") == 0 ||
       g_ascii_strcasecmp (rel.get(), "shortcut icon") == 0))
     {
-      EmbedPageImage *image = g_new0 (EmbedPageImage, 1);
-      image->url = g_strdup (cUrl.get());
-      g_hash_table_insert (mImgHash, image->url, image);
+      EmbedPageMedium *medium = g_new0 (EmbedPageMedium, 1);
+      medium->type = MEDIUM_ICON;
+      medium->url = g_strdup (cUrl.get());
+      g_hash_table_insert (mMediaHash, medium->url, medium);
 
       return;
     }
@@ -808,25 +817,28 @@ PageInfoHelper::WalkTree (nsIDOMDocument *aDocument)
   
           if (computedStyle)
             {
-              nsEmbedString value;
-              computedStyle->GetPropertyValue(mBgImageAttr, value);
+	      nsCOMPtr<nsIDOMCSSValue> value;
+	      computedStyle->GetPropertyCSSValue(mBgImageAttr, getter_AddRefs (value));
 
-              nsEmbedCString cValue;
-              NS_UTF16ToCString (value, NS_CSTRING_ENCODING_UTF8, cValue);
-              if (g_ascii_strcasecmp (cValue.get(), "none") != 0)
-                {
-                  /* Format is url(http://...) */
-                  gchar **tab = g_strsplit_set (cValue.get(), "()", 0);
-                  guint counter = g_strv_length (tab);
-
-                  if (counter > 2 && !g_hash_table_lookup (mImgHash, tab[1]))
-                    {
-                      EmbedPageImage *image = g_new0 (EmbedPageImage, 1);
-                      image->url = g_strdup (tab[1]);
-                      g_hash_table_insert(mImgHash, image->url, image);
-                    }
-                  g_strfreev (tab);
-                }
+	      nsCOMPtr<nsIDOMCSSPrimitiveValue> primitiveValue (do_QueryInterface (value));
+	      if (primitiveValue)
+	      	{
+		  PRUint16 primitiveType = 0;
+		  rv = primitiveValue->GetPrimitiveType (&primitiveType);
+		  if (NS_SUCCEEDED (rv) && primitiveType == nsIDOMCSSPrimitiveValue::CSS_URI)
+		    {
+		      nsEmbedString stringValue;
+		      rv = primitiveValue->GetStringValue (stringValue);
+		      if (NS_SUCCEEDED (rv) && stringValue.Length())
+		      	{
+                          EmbedPageMedium *medium = g_new0 (EmbedPageMedium, 1);
+                          medium->type = MEDIUM_IMAGE;
+                          medium->url = ToCString (stringValue);
+                          g_hash_table_insert(mMediaHash, medium->url, medium);
+			}
+		    }
+		  
+		}
             }
         }
 
@@ -942,12 +954,12 @@ free_embed_page_link (EmbedPageLink *link)
 }
 
 static void
-free_embed_page_image (EmbedPageImage *image)
+free_embed_page_medium (EmbedPageMedium *medium)
 {
-  g_free (image->url);
-  g_free (image->alt);
-  g_free (image->title);
-  g_free (image);
+  g_free (medium->url);
+  g_free (medium->alt);
+  g_free (medium->title);
+  g_free (medium);
 }
 
 static void
@@ -977,8 +989,8 @@ mozilla_free_embed_page_info (EmbedPageInfo *info)
   g_list_foreach (info->links, (GFunc) free_embed_page_link, NULL);
   g_list_free (info->links);
 
-  g_list_foreach (info->images, (GFunc) free_embed_page_image, NULL);
-  g_list_free (info->images);
+  g_list_foreach (info->media, (GFunc) free_embed_page_medium, NULL);
+  g_list_free (info->media);
 
   g_free (info);
 }

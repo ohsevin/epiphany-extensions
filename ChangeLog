@@ -1,3 +1,25 @@
+2004-12-12  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+	* extensions/page-info/mozilla/mozilla-helpers.h:
+	* extensions/page-info/page-info-context-ui.xml:
+	* extensions/page-info/page-info-dialog.c:
+	(treeview_info_page_button_pressed_cb),
+	(mozilla_embed_type_to_string), (media_get_selected_medium_type),
+	(media_is_embedded_medium), (media_get_selected_medium_url),
+	(save_a_medium), (download_path_response_cb),
+	(media_open_medium_cb), (media_save_medium_cb),
+	(media_set_image_as_background_cb), (media_copy_medium_address_cb),
+	(page_info_media_box_realize_cb),
+	(media_treeview_selection_changed_cb), (media_info_page_filter),
+	(media_info_page_construct), (media_info_page_fill),
+	(media_info_page_new), (page_info_dialog_init):
+	* extensions/page-info/page-info.glade:
+
+	Add "Media" tab and remove "Images" tab. Add medium type column.
+	Don't show embeds and objects.
+	Patch by Jean-François Rameau.
+ 	
 2004-12-08  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
