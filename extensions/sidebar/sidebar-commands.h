@@ -39,6 +39,10 @@ void sidebar_cmd_download_link_as	(GtkAction *action,
 					 EphySidebarEmbed *window);
 void sidebar_cmd_save_image_as		(GtkAction *action,
 					 EphySidebarEmbed *window);
+void sidebar_cmd_copy_email_address	(GtkAction *action,
+				   	 EphySidebarEmbed *window);
+void sidebar_cmd_open_email_link	(GtkAction *action,
+					 EphySidebarEmbed *sbembed);
 
 G_END_DECLS
 

@@ -32,6 +32,7 @@
 #include "ephy-prefs.h"
 
 #include <gtk/gtkwindow.h>
+#include <gtk/gtkclipboard.h>
 
 /* NOTE: we include gi18n.h instead of gi18n-lib.h since all string here
  * are the same as in epiphany. If that ever changes, fix this include!
@@ -166,4 +167,51 @@ sidebar_cmd_save_image_as (GtkAction *action,
 {
 	save_property_url (action, _("Save Image As"),
 			   sidebar, TRUE, "image");
+}
+
+void
+sidebar_cmd_open_email_link (GtkAction *action,
+			     EphySidebarEmbed *sbembed)
+{
+	EphyWindow *window;
+	EphyEmbedEvent *info;
+	const char *location;
+	const GValue *value;
+	EphyEmbed *embed;
+
+	window = ephy_sidebar_embed_get_window (sbembed);
+	embed = ephy_sidebar_embed_get_embed (sbembed);
+	g_return_if_fail (embed != NULL);
+
+	info = get_event_info (window);
+	ephy_embed_event_get_property (info, "link", &value);
+	location = g_value_get_string (value);
+
+	ephy_embed_load_url (embed, location);
+}
+
+void
+sidebar_cmd_copy_email_address (GtkAction *action,
+				EphySidebarEmbed *sbembed)
+{
+	EphyWindow *window;
+	EphyEmbedEvent *event;
+	EmbedEventContext context;
+	const char *address;
+	const GValue *value;
+
+	window = ephy_sidebar_embed_get_window (sbembed);
+
+	event = get_event_info (window);
+	g_return_if_fail (EPHY_IS_EMBED_EVENT (event));
+
+	context = ephy_embed_event_get_context (event);
+
+	ephy_embed_event_get_property (event, "email", &value);
+	address = g_value_get_string (value);
+
+        gtk_clipboard_set_text (gtk_clipboard_get (GDK_NONE),
+                                address, -1);
+        gtk_clipboard_set_text (gtk_clipboard_get (GDK_SELECTION_PRIMARY),
+                                address, -1);
 }

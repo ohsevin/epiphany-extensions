@@ -1,5 +1,16 @@
 2004-09-27  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/sidebar/ephy-sidebar-embed.c:
+	* extensions/sidebar/epiphany-sidebar-ui.xml:
+	* extensions/sidebar/sidebar-commands.c:
+	(sidebar_cmd_save_image_as), (sidebar_cmd_open_email_link),
+	(sidebar_cmd_copy_email_address):
+	* extensions/sidebar/sidebar-commands.h:
+
+	Make it work on 1.4.x.
+
+2004-09-27  Christian Persch  <chpe@cvs.gnome.org>
+
 	* AUTHORS:
 	* configure.ac:
 	* extensions/Makefile.am:

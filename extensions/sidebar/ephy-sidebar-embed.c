@@ -479,6 +479,10 @@ static GtkActionEntry action_entries [] =
 	  NULL, G_CALLBACK (sidebar_cmd_download_link_as) },
 	{ "SidebarSaveImageAs", GTK_STOCK_SAVE_AS, N_("_Save Image As..."), NULL,
 	  NULL, G_CALLBACK (sidebar_cmd_save_image_as) },
+        { "SidebarSendEmail", GTK_STOCK_OPEN, N_("_Send Email..."),
+          NULL, NULL, G_CALLBACK (sidebar_cmd_open_email_link) },
+        { "SidebarCopyEmailAddress", NULL, N_("_Copy Email Address"), NULL,
+          NULL, G_CALLBACK (sidebar_cmd_copy_email_address) },
 };
 
 static void

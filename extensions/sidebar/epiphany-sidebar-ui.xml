@@ -51,8 +51,8 @@
 </popup>
 
 <popup name="EphySidebarImageEmailLinkPopup" action="PopupAction">
-	<menuitem name="SendEmailItem" action="SendEmail"/>
-	<menuitem name="CopyEmailAddressItem" action="CopyEmailAddress"/>
+	<menuitem name="SendEmailItem" action="SidebarSendEmail"/>
+	<menuitem name="CopyEmailAddressItem" action="SidebarCopyEmailAddress"/>
 	<separator name="IELPSep1"/>
 	<menuitem name="OpenImageIELP" action="OpenImage"/>
 	<menuitem name="SaveImageAsIELP" action="SidebarSaveImageAs"/>
