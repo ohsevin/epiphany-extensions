@@ -25,20 +25,20 @@
 #include "config.h"
 #endif
 
-#include <glib/gi18n-lib.h>
+#include "ephy-css-menu.h"
+
+#include <epiphany/ephy-window.h>
+#include <epiphany/ephy-embed.h>
+#include "ephy-string.h"
+#include "ephy-debug.h"
+
+#include "mozilla/mozilla-helpers.h"
 
 #include <gtk/gtkuimanager.h>
 #include <gtk/gtkactiongroup.h>
 #include <gtk/gtkradioaction.h>
 
-#include <epiphany/ephy-window.h>
-#include <epiphany/ephy-embed.h>
-
-#include "mozilla/mozilla-helpers.h"
-#include "ephy-css-menu.h"
-
-#include "ephy-debug.h"
-#include "ephy-string.h"
+#include <glib/gi18n-lib.h>
 
 #define EPHY_CSS_MENU_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_CSS_MENU, EphyCSSMenuPrivate))
 
@@ -69,7 +69,9 @@ enum
 };
 
 static void ephy_css_menu_class_init	(EphyCSSMenuClass *klass);
-static void ephy_css_menu_init		(EphyCSSMenu *m);
+static void ephy_css_menu_init		(EphyCSSMenu *menu);
+static void ephy_css_menu_rebuild	(EphyCSSMenu *menu);
+
 
 static GObjectClass *parent_class = NULL;
 
@@ -105,14 +107,12 @@ ephy_css_menu_register_type (GTypeModule *module)
 	return type;
 }
 
-static void ephy_css_menu_rebuild (EphyCSSMenu *menu);
-
 static void
 activate_stylesheet_cb (GtkAction *action,
 			EphyCSSMenu *menu)
 {
 	EphyCSSMenuPrivate *p = menu->priv;
-	EmbedStyleSheet *style;
+	MozillaStyleSheet *style;
 
 	if (menu->priv->updating) return;
 
@@ -127,15 +127,17 @@ activate_stylesheet_cb (GtkAction *action,
 
 static GtkAction *
 create_stylesheet_action (EphyCSSMenu *menu,
-			  EmbedStyleSheet *style,
+			  MozillaStyleSheet *style,
 			  const char *verb)
 {
 	GtkAction  *action;
 	char *tooltip, *label;
+	const char *name;
 
-	label = ephy_string_double_underscores (style->name);
+	name = mozilla_stylesheet_get_name (style);
+	label = ephy_string_double_underscores (name);
 
-	switch (style->type)
+	switch (mozilla_stylesheet_get_type (style))
 	{
 		case STYLESHEET_NONE:
 			tooltip = g_strdup (_("Render the page without using a style"));
@@ -145,7 +147,7 @@ create_stylesheet_action (EphyCSSMenu *menu,
 			break;
 		default:
 			tooltip = g_strdup_printf (_("Render the page using the \"%s\" style"), 
-						   style->name);
+						   name);
 			break;
 	}
 
@@ -156,7 +158,7 @@ create_stylesheet_action (EphyCSSMenu *menu,
 			       NULL);
 
 	g_object_set_data_full (G_OBJECT(action), STYLESHEET_KEY, style,
-				(GDestroyNotify) mozilla_free_stylesheet);
+				(GDestroyNotify) mozilla_stylesheet_free);
 
 	g_signal_connect_object (action, "activate",
 				 G_CALLBACK (activate_stylesheet_cb),
@@ -177,7 +179,7 @@ ephy_css_menu_rebuild (EphyCSSMenu *menu)
 	EphyCSSMenuPrivate *p = menu->priv;
 	GList *stylesheets = NULL, *l;
 	GtkAction *action;
-	EmbedStyleSheet *current = NULL;
+	MozillaStyleSheet *current = NULL;
 	GSList *radio_group = NULL;
 	char verb[ACTION_VERB_FORMAT_LENGTH];
 	int i;
@@ -214,7 +216,7 @@ ephy_css_menu_rebuild (EphyCSSMenu *menu)
 	
 	for (l = stylesheets, i = 0; l != NULL; l = l->next, i++)
 	{
-		EmbedStyleSheet *style = (EmbedStyleSheet*) l->data;
+		MozillaStyleSheet *style = (MozillaStyleSheet*) l->data;
 
 		g_snprintf (verb, sizeof (verb), ACTION_VERB_FORMAT, i);
 

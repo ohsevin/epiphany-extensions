@@ -1,6 +1,16 @@
 2004-09-13  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/select-stylesheet/ephy-css-menu.c:
+	(activate_stylesheet_cb), (create_stylesheet_action),
+	(ephy_css_menu_rebuild):
+	* extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:
+	* extensions/select-stylesheet/mozilla/mozilla-helpers.h:
+
+	Cleanup of mozilla stylesheet handling.
+
+2004-09-13  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/select-stylesheet/ephy-css-menu.c:
 	(ephy_css_menu_set_window):
 
 	Don't ref the UI manager.
