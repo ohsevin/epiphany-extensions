@@ -1,4 +1,4 @@
-SUBDIRS = mozilla
+SUBDIRS =
 
 extensiondir = $(EXTENSIONS_DIR)
 
@@ -20,10 +20,6 @@ libcertificatesextension_la_SOURCES = \
 	ephy-certificates-extension.c	\
 	ephy-certificates-extension.h	\
 	extension.c
-
-libcertificatesextension_la_LIBADD = \
-	mozilla/libmozillacertificates.la	\
-	$(MOZILLA_COMPONENT_LIBS)
 
 extensionxmldir = $(extensiondir)
 extensionxml_in_files = certificates.xml.in.in

@@ -25,8 +25,6 @@
 
 #include "ephy-certificates-extension.h"
 
-#include "mozilla-embed-certificate.h"
-
 #include "ephy-debug.h"
 
 #include <epiphany/ephy-window.h>
@@ -174,7 +172,7 @@ view_certificate_cb (GtkAction *action,
 	embed = ephy_window_get_active_embed (window);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
-	mozilla_embed_view_certificate (embed);
+	ephy_embed_show_page_certificate (embed);
 }
 
 static void
@@ -211,8 +209,6 @@ tab_added_cb (GtkWidget *notebook,
 	embed = ephy_tab_get_embed (tab);	
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
-	mozilla_embed_certificate_attach (embed);
-
 	g_signal_connect_after (tab, "notify::security-level",
 				G_CALLBACK (sync_security_status), window);
 }
@@ -228,8 +224,6 @@ tab_removed_cb (GtkWidget *notebook,
 
 	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
-
-	mozilla_embed_certificate_detach (embed);
 
 	g_signal_handlers_disconnect_by_func
 		(tab, G_CALLBACK (sync_security_status), window);
@@ -258,7 +252,7 @@ padlock_button_press_cb (GtkWidget *ebox,
 		embed = ephy_window_get_active_embed (window);
 		g_return_if_fail (EPHY_IS_EMBED (embed));
 	
-		mozilla_embed_view_certificate (embed);
+		ephy_embed_show_page_certificate (embed);
 	}
 }
 
