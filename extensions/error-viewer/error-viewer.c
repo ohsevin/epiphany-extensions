@@ -281,6 +281,8 @@ error_viewer_clear_cb (GtkWidget *button,
 		       ErrorViewer *dialog)
 {
 	gtk_list_store_clear (GTK_LIST_STORE (dialog->priv->model));
+
+	gtk_tree_view_columns_autosize (GTK_TREE_VIEW (dialog->priv->treeview));
 }
 
 void

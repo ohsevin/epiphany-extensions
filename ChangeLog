@@ -1,3 +1,14 @@
+2004-04-25  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/error-viewer/error-viewer.c: (error_viewer_clear_cb):
+
+	Reset column width when clearing.
+
+	* extensions/error-viewer/sgml-validator.c: (convert_to_utf8),
+	(save_source_completed_cb):
+
+	Handle invalid encoding/charset errors gracefully.
+
 2004-04-18  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/error-viewer/link-checker.c: (link_checker_unuse):

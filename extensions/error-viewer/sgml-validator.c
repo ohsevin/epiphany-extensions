@@ -260,10 +260,11 @@ check_doctype (SgmlValidator *validator,
 	return;
 }
 
-static char *
-convert_to_utf8 (const char *file, EphyEmbed *embed)
+static GError *
+convert_to_utf8 (const char *file,
+		 char **new_file,
+		 EphyEmbed *embed)
 {
-	char *ret;
 	const char *static_tmp_dir;
 	EphyEncodingInfo *encoding_info;
 	char *base;
@@ -273,27 +274,29 @@ convert_to_utf8 (const char *file, EphyEmbed *embed)
 	GIOChannel *in;
 	GIOChannel *out;
 	GIOStatus status;
+	GError *err = NULL;
 
 	static_tmp_dir = ephy_file_tmp_dir ();
 	g_return_val_if_fail (static_tmp_dir != NULL, NULL);
 
 	base = g_build_filename (static_tmp_dir, "validateXXXXXX", NULL);
-	ret = ephy_file_tmp_filename (base, "html");
+	*new_file = ephy_file_tmp_filename (base, "html");
 	g_free (base);
-	g_return_val_if_fail (ret != NULL, NULL);
+	g_return_val_if_fail (*new_file != NULL, NULL);
 
 	encoding_info = ephy_embed_get_encoding_info (embed);
 
 	in = g_io_channel_new_file (file, "r", NULL);
 	g_return_val_if_fail (in != NULL, NULL);
-	status = g_io_channel_set_encoding (in, encoding_info->encoding, NULL);
-	g_return_val_if_fail (status == G_IO_STATUS_NORMAL, NULL);
+	status = g_io_channel_set_encoding (in, encoding_info->encoding, &err);
+	g_return_val_if_fail (status == G_IO_STATUS_NORMAL, err);
 
 	ephy_encoding_info_free (encoding_info); 
-	out = g_io_channel_new_file (ret, "w", NULL);
+
+	out = g_io_channel_new_file (*new_file, "w", NULL);
 	g_return_val_if_fail (out != NULL, NULL);
-	status = g_io_channel_set_encoding (out, "UTF-8", NULL);
-	g_return_val_if_fail (status == G_IO_STATUS_NORMAL, NULL);
+	status = g_io_channel_set_encoding (out, "UTF-8", &err);
+	g_return_val_if_fail (status == G_IO_STATUS_NORMAL, err);
 
 	buf = g_malloc0 (sizeof (char) * buf_size);
 	g_return_val_if_fail (buf != NULL, NULL);
@@ -301,13 +304,12 @@ convert_to_utf8 (const char *file, EphyEmbed *embed)
 	while (TRUE)
 	{
 		status = g_io_channel_read_chars (in, buf, buf_size, &len,
-						  NULL);
-		g_return_val_if_fail (status != G_IO_STATUS_ERROR, NULL);
+						  &err);
+		if (status == G_IO_STATUS_EOF
+		    || status == G_IO_STATUS_ERROR) break;
 
-		if (status == G_IO_STATUS_EOF) break;
-
-		status = g_io_channel_write_chars (out, buf, len, NULL, NULL);
-		g_return_val_if_fail (status != G_IO_STATUS_ERROR, NULL);
+		status = g_io_channel_write_chars (out, buf, len, NULL, &err);
+		if (status == G_IO_STATUS_ERROR) break;
 	}
 
 	g_free (buf);
@@ -315,7 +317,7 @@ convert_to_utf8 (const char *file, EphyEmbed *embed)
 	g_io_channel_unref (in);
 	g_io_channel_unref (out);
 
-	return ret;
+	return err;
 }
 
 static void
@@ -323,11 +325,13 @@ save_source_completed_cb (EphyEmbedPersist *persist,
 			  SgmlValidator *validator)
 {
 	const char *dest;
+	const char *location;
 	char *dest_utf8;
 	gboolean is_xml;
 	unsigned int num_errors = 0;
 	OpenSPThreadCBData *data;
 	EphyEmbed *embed;
+	GError *err = NULL;
 
 	g_return_if_fail (EPHY_IS_EMBED_PERSIST (persist));
 	g_return_if_fail (IS_SGML_VALIDATOR (validator));
@@ -338,12 +342,62 @@ save_source_completed_cb (EphyEmbedPersist *persist,
 	embed = ephy_embed_persist_get_embed (persist);
 	check_doctype (validator, embed, &is_xml, &num_errors);
 
+	location = ephy_embed_get_location (embed, FALSE);
+
 	/*
 	 * Convert to UTF-8.
 	 * We use a second temp file because I don't trust Mozilla to convert
-	 * and not change any of the HTML.
+	 * and not change any of the HTML. Not to mention, it's as good a
+	 * chance as any to catch encoding errors.
 	 */
-	dest_utf8 = convert_to_utf8 (dest, embed);
+	err = convert_to_utf8 (dest, &dest_utf8, embed);
+	if (err != NULL)
+	{
+		char *msg;
+		char *err_head;
+		char *err_desc;
+
+		err_head = g_strdup_printf (_("HTML error in %s:"),
+					    location);
+
+		if (g_error_matches (err,
+				     G_CONVERT_ERROR,
+				     G_CONVERT_ERROR_ILLEGAL_SEQUENCE))
+		{
+			err_desc = g_strdup_printf (
+				_("Invalid character encoding"));
+		}
+		else
+		{
+			err_desc = g_strdup_printf (
+				_("Unknown error while converting to UTF-8"));
+		}
+
+		msg = g_strconcat (err_head, "\n", err_desc, NULL);
+
+		sgml_validator_append (validator, ERROR_VIEWER_ERROR,
+				       msg);
+
+		g_free (msg);
+		g_free (err_head);
+		g_free (err_desc);
+
+		g_error_free (err);
+
+		error_viewer_unuse (validator->priv->error_viewer);
+
+		unlink (dest);
+
+		if (dest_utf8 != NULL
+		    && g_file_test (dest_utf8, G_FILE_TEST_EXISTS))
+		{
+			unlink (dest_utf8);
+		}
+
+		g_free (dest_utf8);
+
+		return;
+	}
 	g_return_if_fail (dest_utf8 != NULL);
 
 	unlink (dest);
