@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany Plugins 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-01-25 11:33+0100\n"
+"POT-Creation-Date: 2004-02-24 19:26+0100\n"
 "PO-Revision-Date: 2003-08-03 18:28+0000\n"
 "Last-Translator: Christian Persch <chpe+ephyplugins@stud.uni-saarland.de>\n"
 "Language-Team: British English\n"
@@ -19,21 +19,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:80
-msgid "_Validate"
-msgstr "_Validate"
+#: extensions/certificates/ephy-certificates-extension.c:159
+msgid "Certificate Manager"
+msgstr "Certificate Manager"
+
+#. stock icon
+#: extensions/certificates/ephy-certificates-extension.c:276
+msgid "Manage _Certificates"
+msgstr "Manage _Certificates"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:82
+#: extensions/certificates/ephy-certificates-extension.c:278
+msgid "Manage your certificates"
+msgstr "Manage your certificates"
+
+#. stock icon
+#: extensions/certificates/ephy-certificates-extension.c:286
+msgid "Server _Certificate"
+msgstr "Server _Certificate"
+
+#. shortcut key
+#: extensions/certificates/ephy-certificates-extension.c:288
+msgid "Display the web server's certificate"
+msgstr "Display the web server's certificate"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:88
+msgid "Check _HTML"
+msgstr "Check _HTML"
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "Display HTML errors in the Error Viewer dialogue"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:87
-msgid "Errors"
-msgstr "Errors"
+#: extensions/error-viewer/ephy-error-viewer-extension.c:95
+msgid "Check _Links"
+msgstr "Check _Links"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:89
+#: extensions/error-viewer/ephy-error-viewer-extension.c:97
+msgid "Display invalid hyperlinks in the Error Viewer dialog"
+msgstr "Display invalid hyperlinks in the Error Viewer dialog"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:101
+msgid "_Error Viewer"
+msgstr "_Error Viewer"
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:103
 msgid "Display web page errors"
 msgstr "Display web page errors"
 
@@ -45,18 +78,101 @@ msgstr "C_lear"
 msgid "Error Viewer"
 msgstr "Error Viewer"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:106
+#: extensions/error-viewer/link-checker.c:231
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "Found %d invalid link"
+msgstr[1] "Found %d invalid links"
+
+#. Don't bother looking for source lines -- they're not there
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
 #, c-format
 msgid ""
-"Error in %s, Line %d:\n"
+"Error:\n"
 "%s"
 msgstr ""
-"Error in %s, Line %d:\n"
+"Error:\n"
 "%s"
 
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:90
+#, c-format
+msgid ""
+"Javascript error in %s on line %d:\n"
+"%s"
+msgstr ""
+"Javascript error in %s on line %d:\n"
+"%s"
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:77
+#, c-format
+msgid ""
+"Link error in %s:\n"
+"%s is unavailable."
+msgstr ""
+"Link error in %s:\n"
+"%s is unavailable."
+
+#: extensions/error-viewer/opensp/validate.cpp:167
+#, c-format
+msgid ""
+"HTML error in %s on line %s:\n"
+"%s"
+msgstr ""
+"HTML error in %s on line %s:\n"
+"%s"
+
+#: extensions/error-viewer/sgml-validator.c:165
+#, c-format
+msgid "Found %d error"
+msgid_plural "Found %d errors"
+msgstr[0] "Found %d error"
+msgstr[1] "Found %d errors"
+
+#: extensions/error-viewer/sgml-validator.c:169
+#, c-format
+msgid "HTML Validation of %s complete"
+msgstr "HTML Validation of %s complete"
+
+#: extensions/error-viewer/sgml-validator.c:227
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"%s"
+msgstr ""
+"HTML error in %s:\n"
+"%s"
+
+#: extensions/error-viewer/sgml-validator.c:229
+#: extensions/error-viewer/sgml-validator.c:245
+msgid ""
+"Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
+"xhtml+xml\" instead."
+msgstr ""
+"Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
+"xhtml+xml\" instead."
+
+#: extensions/error-viewer/sgml-validator.c:243
+#, c-format
+msgid ""
+"HTML warning in %s:\n"
+"%s"
+msgstr ""
+"HTML warning in %s:\n"
+"%s"
+
+#: extensions/error-viewer/sgml-validator.c:381
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"No valid doctype specified."
+msgstr ""
+"HTML error in %s:\n"
+"No valid doctype specified."
+
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
-msgid "Block _Popups from this Site"
-msgstr "Block _Popups from this Site"
+msgid "Blo_ck Popups from this Site"
+msgstr "Blo_ck Popups from this Site"
 
 #. shortcut key
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:64
@@ -70,20 +186,23 @@ msgid_plural "%d popups blocked"
 msgstr[0] "%d popup blocked"
 msgstr[1] "%d popups blocked"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:181
+#: extensions/tabsmenu/ephy-tab-move-menu.c:183
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"
 msgstr[0] "Window '%s' (%d tab)"
 msgstr[1] "Window '%s' (%d tabs)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:272
+#: extensions/tabsmenu/ephy-tab-move-menu.c:282
 msgid "Move Tab To Window"
-msgstr "_Move Tab To Window"
+msgstr "fMove Tab To Window"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:273
+#: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
 msgstr "Move the current tab to a different window"
+
+#~ msgid "_Validate"
+#~ msgstr "_Validate"
 
 #~ msgid "_Clone Tab"
 #~ msgstr "_Clone Tab"
