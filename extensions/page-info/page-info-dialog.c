@@ -492,6 +492,94 @@ page_info_dialog_view_cert_button_clicked_cb (GtkWidget *button,
 	*/
 }
 
+/* a generic treeview info page */
+
+typedef struct _TreeviewInfoPage TreeviewInfoPage;
+	
+struct _TreeviewInfoPage
+{
+	InfoPage page;
+
+	GtkListStore *store;
+	GtkTreeView *treeview;
+	GtkActionEntry *action_entries;
+	guint n_action_entries;
+	const char *popup_path;
+};
+
+static gboolean
+treeview_info_page_show_popup (TreeviewInfoPage *page)
+{
+	InfoPage *ipage = (InfoPage *) page;
+	PageInfoDialog *dialog = ipage->dialog;
+	GtkWidget *widget;
+
+	widget = gtk_ui_manager_get_widget (dialog->priv->manager,
+					    page->popup_path);
+	gtk_menu_popup (GTK_MENU (widget), NULL, NULL, NULL, NULL, 2,
+			gtk_get_current_event_time ());
+
+	return TRUE;
+}
+
+static gboolean
+treeview_info_page_button_pressed_cb (GtkTreeView *treeview,
+				      GdkEventButton *event,
+				      TreeviewInfoPage *page)
+{
+	GtkTreeModel *model = GTK_TREE_MODEL (page->store);
+	GtkTreeSelection *selection;
+	GtkTreeIter iter;
+	GtkTreePath *path = NULL;
+
+	/* right-click? */
+	if (event->button != 3)
+	{
+	       return FALSE;
+	}
+
+	/* Get tree path for row that was clicked */
+	if (!gtk_tree_view_get_path_at_pos (treeview,
+					    event->x, event->y,
+					    &path, NULL, NULL, NULL))
+	{
+	       return FALSE;
+	}
+
+	if (!gtk_tree_model_get_iter (model, &iter, path))
+	{
+	       gtk_tree_path_free(path);
+	       return FALSE;
+	}
+
+	/* Select the row the user clicked on */
+	selection = gtk_tree_view_get_selection (treeview);
+	gtk_tree_selection_unselect_all (selection);
+	gtk_tree_selection_select_path (selection, path);
+	gtk_tree_path_free (path);
+
+	return treeview_info_page_show_popup (page);
+}
+
+static void
+treeview_info_page_construct (InfoPage *ipage)
+{
+	TreeviewInfoPage *page = (TreeviewInfoPage *) ipage;
+	PageInfoDialog *dialog = ipage->dialog;
+
+	gtk_action_group_add_actions (dialog->priv->action_group,
+				      page->action_entries,
+				      page->n_action_entries,
+				      page);
+
+	g_signal_connect (page->treeview, "button-press-event", 
+			  G_CALLBACK (treeview_info_page_button_pressed_cb), 
+			  page);
+	g_signal_connect_swapped (page->treeview, "popup-menu", 
+				  G_CALLBACK (treeview_info_page_show_popup),
+				  page);
+}
+
 /* "General" page */
 
 static void
@@ -647,16 +735,25 @@ general_info_page_fill (InfoPage *page)
 	mozilla_free_page_properties (props);
 }
 
+static InfoPage *
+general_info_page_new (PageInfoDialog *dialog)
+{
+	InfoPage *ipage = g_new0 (InfoPage, 1);
+
+	ipage->dialog = dialog;
+	ipage->fill = general_info_page_fill;
+
+	return ipage;
+}
+
 /* "Images" page */
 
 typedef struct _ImagesInfoPage ImagesInfoPage;
 
 struct _ImagesInfoPage
 {
-	InfoPage page;
+	TreeviewInfoPage tpage;
 
-	GtkListStore *store;
-	GtkTreeView *treeview;
 	GtkWidget *save_button;
 	EphyEmbed *embed;
 };
@@ -677,11 +774,19 @@ images_save_image_cb (GtkAction *action,
 	g_print ("save image!\n");
 }
 
+static GtkActionEntry images_action_entries[] =
+{
+	{ "SaveAs", GTK_STOCK_SAVE_AS, N_("_Save Image As..."), NULL,
+	  N_("Save image"),
+	  G_CALLBACK (images_save_image_cb) },
+};
+
 void
 page_info_image_box_realize_cb (GtkContainer *box,
 				PageInfoDialog *dialog)
 {
-	ImagesInfoPage *page = (ImagesInfoPage *) dialog->priv->pages[IMAGES_PAGE];
+	TreeviewInfoPage *tpage = (TreeviewInfoPage *) dialog->priv->pages[IMAGES_PAGE];
+	ImagesInfoPage *page = (ImagesInfoPage *) tpage;
 	EphyEmbed *embed;
 	GtkWidget *treeview;
 
@@ -692,7 +797,7 @@ page_info_image_box_realize_cb (GtkContainer *box,
 	 * using the arrow keys */
 	g_signal_connect_swapped (embed, "net_stop",
 				  G_CALLBACK (gtk_widget_grab_focus),
-				  page->treeview);
+				  tpage->treeview);
 
 	ephy_embed_load_url (embed, "about:blank");
 
@@ -750,71 +855,9 @@ images_treeview_selection_changed_cb (GtkTreeSelection *selection,
 }
 
 static void
-images_page_show_popup (ImagesInfoPage *page)
-{
-	InfoPage *ipage = (InfoPage *) page;
-	PageInfoDialog *dialog = ipage->dialog;
-	GtkWidget *widget;
-
-	widget = gtk_ui_manager_get_widget (dialog->priv->manager,
-					    "/ImagesPopup");
-	gtk_menu_popup (GTK_MENU (widget), NULL, NULL, NULL, NULL, 2,
-			gtk_get_current_event_time ());
-}
-
-static gboolean
-images_treeview_button_pressed_cb (GtkTreeView *treeview,
-				   GdkEventButton *event,
-				   ImagesInfoPage *page)
-{
-	GtkTreeModel *model = GTK_TREE_MODEL (page->store);
-	GtkTreeSelection *selection;
-	GtkTreeIter iter;
-	GtkTreePath *path = NULL;
-
-	/* right-click? */
-	if (event->button != 3)
-	{
-	       return FALSE;
-	}
-
-	/* Get tree path for row that was clicked */
-	if (!gtk_tree_view_get_path_at_pos (treeview,
-					    event->x, event->y,
-					    &path, NULL, NULL, NULL))
-	{
-	       return FALSE;
-	}
-
-	if (!gtk_tree_model_get_iter (model, &iter, path))
-	{
-	       gtk_tree_path_free(path);
-	       return FALSE;
-	}
-
-	/* Select the row the user clicked on */
-	selection = gtk_tree_view_get_selection (treeview);
-	gtk_tree_selection_unselect_all (selection);
-	gtk_tree_selection_select_path (selection, path);
-	gtk_tree_path_free (path);
-
-	images_page_show_popup (page);
-	
-	return TRUE;
-}
-
-static gboolean
-images_treeview_popup_menu_cb (GtkTreeView *treeview,
-			       ImagesInfoPage *page)
-{
-	images_page_show_popup (page);
-
-	return TRUE;
-}
-
-static void
 images_info_page_construct (InfoPage *ipage)
 {
+	TreeviewInfoPage *tpage = (TreeviewInfoPage *) ipage;
 	ImagesInfoPage *page = (ImagesInfoPage *) ipage;
 	PageInfoDialog *dialog = ipage->dialog;
 	GtkTreeView *treeview;
@@ -841,13 +884,6 @@ images_info_page_construct (InfoPage *ipage)
 
 	g_signal_connect (selection, "changed",
 			  G_CALLBACK (images_treeview_selection_changed_cb),
-			  page);
-
-	g_signal_connect (treeview, "button-press-event", 
-			  G_CALLBACK (images_treeview_button_pressed_cb), 
-			  page);
-	g_signal_connect (treeview, "popup-menu", 
-			  G_CALLBACK (images_treeview_popup_menu_cb),
 			  page);
 
 	renderer = gtk_cell_renderer_text_new ();
@@ -914,17 +950,20 @@ images_info_page_construct (InfoPage *ipage)
 	button = ephy_dialog_get_control (EPHY_DIALOG (dialog),
 					  properties[PROP_IMAGES_SAVE_BUTTON].id);
 
-	page->store = liststore;
-	page->treeview = treeview;
+	tpage->store = liststore;
+	tpage->treeview = treeview;
 	page->save_button = button;
+
+	treeview_info_page_construct (ipage);
 }
 
 static void
 images_info_page_fill (InfoPage *ipage)
 {
+	TreeviewInfoPage *tpage = (TreeviewInfoPage *) ipage;
 	ImagesInfoPage *page = (ImagesInfoPage *) ipage;
 	PageInfoDialog *dialog = ipage->dialog;
-	GtkListStore *store = page->store;
+	GtkListStore *store = tpage->store;
 	GtkTreeIter iter;
 	GList *images, *l;
 
@@ -948,16 +987,31 @@ images_info_page_fill (InfoPage *ipage)
 	g_list_free (images);
 }
 
+static InfoPage *
+images_info_page_new (PageInfoDialog *dialog)
+{
+	ImagesInfoPage *page = g_new0 (ImagesInfoPage, 1);
+	TreeviewInfoPage *tpage = (TreeviewInfoPage *) page;
+	InfoPage *ipage = (InfoPage *) page;
+
+	ipage->dialog = dialog;
+	ipage->construct = images_info_page_construct;
+	ipage->fill = images_info_page_fill;
+
+	tpage->popup_path = "/ImagesPopup";
+	tpage->action_entries = images_action_entries;
+	tpage->n_action_entries = G_N_ELEMENTS (images_action_entries);
+
+	return ipage;
+}
+
 /* "Links" page */
 
 typedef struct _LinksInfoPage LinksInfoPage;
 
 struct _LinksInfoPage
 {
-	InfoPage page;
-
-	GtkListStore *store;
-	GtkTreeView *treeview;
+	TreeviewInfoPage tpage;
 };
 
 enum
@@ -967,9 +1021,14 @@ enum
 	COL_LINK_REL
 };
 
+static GtkActionEntry links_action_entries[] =
+{
+};
+
 static void
 links_info_page_construct (InfoPage *ipage)
 {
+	TreeviewInfoPage *tpage = (TreeviewInfoPage *) ipage;
 	LinksInfoPage *page = (LinksInfoPage *) ipage;
 	PageInfoDialog *dialog = ipage->dialog;
 	GtkTreeView *treeview;
@@ -1032,16 +1091,19 @@ links_info_page_construct (InfoPage *ipage)
 	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
 	gtk_tree_view_column_set_sort_column_id (column, COL_LINK_REL);
 
-	page->store = liststore;
-	page->treeview = treeview;
+	tpage->store = liststore;
+	tpage->treeview = treeview;
+
+	treeview_info_page_construct (ipage);
 }
 
 static void
 links_info_page_fill (InfoPage *ipage)
 {
+	TreeviewInfoPage *tpage = (TreeviewInfoPage *) ipage;
 	LinksInfoPage *page = (LinksInfoPage *) ipage;
 	PageInfoDialog *dialog = ipage->dialog;
-	GtkListStore *store = page->store;
+	GtkListStore *store = tpage->store;
 	GtkTreeIter iter;
 	GList *links, *l;
 
@@ -1063,16 +1125,31 @@ links_info_page_fill (InfoPage *ipage)
 	g_list_free (links);
 }
 
+static InfoPage *
+links_info_page_new (PageInfoDialog *dialog)
+{
+	LinksInfoPage *page = g_new0 (LinksInfoPage, 1);
+	TreeviewInfoPage *tpage = (TreeviewInfoPage *) page;
+	InfoPage *ipage = (InfoPage *) page;
+
+	ipage->dialog = dialog;
+	ipage->construct = links_info_page_construct;
+	ipage->fill = links_info_page_fill;
+
+	tpage->popup_path = "/LinksPopup";
+	tpage->action_entries = links_action_entries;
+	tpage->n_action_entries = G_N_ELEMENTS (links_action_entries);
+
+	return ipage;
+}
+
 /* "Forms" page */
 
 typedef struct _FormsInfoPage FormsInfoPage;
 
 struct _FormsInfoPage
 {
-	InfoPage page;
-
-	GtkListStore *store;
-	GtkTreeView *treeview;
+	TreeviewInfoPage tpage;
 };
 
 enum
@@ -1082,9 +1159,14 @@ enum
 	COL_FORM_ACTION
 };
 
+static GtkActionEntry forms_action_entries[] =
+{
+};
+
 static void
 forms_info_page_construct (InfoPage *ipage)
 {
+	TreeviewInfoPage *tpage = (TreeviewInfoPage *) ipage;
 	FormsInfoPage *page = (FormsInfoPage *) ipage;
 	PageInfoDialog *dialog = ipage->dialog;
 
@@ -1147,16 +1229,19 @@ forms_info_page_construct (InfoPage *ipage)
 	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
 	gtk_tree_view_column_set_sort_column_id (column, COL_FORM_ACTION);
 
-	page->store = liststore;
-	page->treeview = treeview;
+	tpage->store = liststore;
+	tpage->treeview = treeview;
+
+	treeview_info_page_construct (ipage);
 }
 
 static void
 forms_info_page_fill (InfoPage *ipage)
 {
+	TreeviewInfoPage *tpage = (TreeviewInfoPage *) ipage;
 	ImagesInfoPage *page = (ImagesInfoPage *) ipage;
 	PageInfoDialog *dialog = ipage->dialog;
-	GtkListStore *store = page->store;
+	GtkListStore *store = tpage->store;
 	GtkTreeIter iter;
 	GList *forms, *l;
 
@@ -1178,22 +1263,25 @@ forms_info_page_fill (InfoPage *ipage)
 	g_list_free (forms);
 }
 
-/* object stuff */
-
-static GtkActionEntry context_entries [] =
+static InfoPage *
+forms_info_page_new (PageInfoDialog *dialog)
 {
-	/* dummy popup action */
-	{ "PopupAction", NULL, "" },
+	FormsInfoPage *page = g_new0 (FormsInfoPage, 1);
+	TreeviewInfoPage *tpage = (TreeviewInfoPage *) page;
+	InfoPage *ipage = (InfoPage *) page;
 
-	/* "Images" page */
+	ipage->dialog = dialog;
+	ipage->construct = forms_info_page_construct;
+	ipage->fill = forms_info_page_fill;
 
-	{ "SaveAs", GTK_STOCK_SAVE_AS, N_("_Save Image As..."), NULL,
-	  N_("Save image"),
-	  G_CALLBACK (images_save_image_cb) },
+	tpage->popup_path = "/FormsPopup";
+	tpage->action_entries = forms_action_entries;
+	tpage->n_action_entries = G_N_ELEMENTS (forms_action_entries);
 
-	/* "Links" page */
-	/* "Forms" page */
-};
+	return ipage;
+}
+
+/* object stuff */
 
 static void
 page_info_dialog_init (PageInfoDialog *dialog)
@@ -1202,24 +1290,10 @@ page_info_dialog_init (PageInfoDialog *dialog)
 
 	dialog->priv = PAGE_INFO_DIALOG_GET_PRIVATE (dialog);
 
-	page = dialog->priv->pages[GENERAL_PAGE] = g_new0 (InfoPage, 1);
-	page->dialog = dialog;
-	page->fill = general_info_page_fill;
-
-	page = dialog->priv->pages[IMAGES_PAGE] = (InfoPage *) g_new0 (ImagesInfoPage, 1);
-	page->dialog = dialog;
-	page->construct = images_info_page_construct;
-	page->fill = images_info_page_fill;
-
-	page = dialog->priv->pages[LINKS_PAGE] = (InfoPage *) g_new0 (LinksInfoPage, 1);
-	page->dialog = dialog;
-	page->construct = links_info_page_construct;
-	page->fill = links_info_page_fill;
-
-	page = dialog->priv->pages[FORMS_PAGE] = (InfoPage *) g_new0 (FormsInfoPage, 1);
-	page->dialog = dialog;
-	page->construct = forms_info_page_construct;
-	page->fill = forms_info_page_fill;
+	dialog->priv->pages[GENERAL_PAGE] = general_info_page_new (dialog);
+	dialog->priv->pages[IMAGES_PAGE] = images_info_page_new (dialog);
+	dialog->priv->pages[LINKS_PAGE] = links_info_page_new (dialog);
+	dialog->priv->pages[FORMS_PAGE] = forms_info_page_new (dialog);
 
 	/* same for:
 	setup_page_security (PAGE_INFO_DIALOG(dialog), props);
@@ -1235,6 +1309,7 @@ page_info_dialog_constructor (GType type,
 	PageInfoDialog *dialog;
 	EphyDialog *edialog;
 	GtkWidget *notebook;
+	GtkAction *action;
 	InfoPage *page;
 	GError *error = NULL;
 	int i;
@@ -1263,9 +1338,11 @@ page_info_dialog_constructor (GType type,
 	dialog->priv->action_group = gtk_action_group_new ("PageInfoContextActions");
 	gtk_action_group_set_translation_domain (dialog->priv->action_group,
 						 GETTEXT_PACKAGE);
-	gtk_action_group_add_actions (dialog->priv->action_group,
-				      context_entries,
-				      G_N_ELEMENTS (context_entries), dialog);
+	action = g_object_new (GTK_TYPE_ACTION,
+			       "name", "PopupAction",
+			       NULL);
+	gtk_action_group_add_action (dialog->priv->action_group, action);
+	g_object_unref (action);
 
 	gtk_ui_manager_insert_action_group (dialog->priv->manager,
 					    dialog->priv->action_group, -1);
