@@ -1,5 +1,12 @@
 2004-08-30  Christian Persch  <chpe@cvs.gnome.org>
 
+	* NEWS:
+	* configure.ac:
+
+	=== Release 1.1.4 ===
+
+2004-08-30  Christian Persch  <chpe@cvs.gnome.org>
+
 	* include/eel-gconf-extensions.h:
 	* include/egg-editable-toolbar.h:
 	* include/ephy-debug.h:
