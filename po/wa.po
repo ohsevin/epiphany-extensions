@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-05-31 13:15+0200\n"
-"PO-Revision-Date: 2004-04-02 17:38+0200\n"
+"POT-Creation-Date: 2004-12-06 10:53+0100\n"
+"PO-Revision-Date: 2004-12-06 15:14+0100\n"
 "Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,54 +17,50 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: KBabel 1.0.2\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:160
-msgid "Certificate Manager"
-msgstr "Manaedjeu d' acertineures"
-
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:276
+#: extensions/certificates/ephy-certificates-extension.c:263
 msgid "Manage _Certificates"
 msgstr "Manaedjî ls a_certineures"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:278
+#: extensions/certificates/ephy-certificates-extension.c:265
 msgid "Manage your certificates"
 msgstr "Manaedjî vos acertineures"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:286
+#: extensions/certificates/ephy-certificates-extension.c:273
 msgid "Server _Certificate"
 msgstr "A_certineure do sierveu"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:288
+#: extensions/certificates/ephy-certificates-extension.c:275
 msgid "Display the web server's certificate"
 msgstr "Håyner l' acertineure del waibe"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:88
+#: extensions/error-viewer/ephy-error-viewer-extension.c:98
 msgid "Check _HTML"
 msgstr "Verifyî _HTML"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:90
+#: extensions/error-viewer/ephy-error-viewer-extension.c:100
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "Håyner les arokes HTML el purnea håyneu d' arokes"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:95
+#: extensions/error-viewer/ephy-error-viewer-extension.c:105
 msgid "Check _Links"
 msgstr "Verifyî _loyéns"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:97
+#: extensions/error-viewer/ephy-error-viewer-extension.c:107
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr "Håyner les hårdêyes nén valides el purnea håyneu d' arokes"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:101
+#: extensions/error-viewer/ephy-error-viewer-extension.c:111
 msgid "_Error Viewer"
 msgstr "Håyneu d' _arokes"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:103
+#: extensions/error-viewer/ephy-error-viewer-extension.c:113
 msgid "Display web page errors"
 msgstr "Håyner les arokes des pådjes waibe"
 
@@ -77,7 +73,7 @@ msgid "Error Viewer"
 msgstr "Håyneu d' arokes"
 
 #. Don't bother looking for source lines -- they're not there
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:87
 #, c-format
 msgid ""
 "Error:\n"
@@ -86,7 +82,7 @@ msgstr ""
 "Aroke:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:90
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:112
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -95,14 +91,14 @@ msgstr ""
 "Aroke Javascript dins %s el roye %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
 msgstr[0] "Trové %d loyén nén valide"
 msgstr[1] "Trové %d loyéns nén valides"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -111,14 +107,14 @@ msgstr ""
 "Aroke di loyén dins %s:\n"
 "%s n' est nén disponibe."
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
 msgstr[0] "Verifiant %d loyén so %s"
 msgstr[1] "Verifiant %d loyéns so %s"
 
-#: extensions/error-viewer/opensp/validate.cpp:167
+#: extensions/error-viewer/opensp/validate.cpp:169
 #, c-format
 msgid ""
 "HTML error in %s on line %s:\n"
@@ -127,19 +123,19 @@ msgstr ""
 "Aroke HTML dins %s el roye %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:165
+#: extensions/error-viewer/sgml-validator.c:167
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
 msgstr[0] "%d aroke di trovêye"
 msgstr[1] "%d arokes di trovêyes"
 
-#: extensions/error-viewer/sgml-validator.c:169
+#: extensions/error-viewer/sgml-validator.c:171
 #, c-format
 msgid "HTML Validation of %s complete"
 msgstr "Li verifiaedje HTML di %s a fini"
 
-#: extensions/error-viewer/sgml-validator.c:227
+#: extensions/error-viewer/sgml-validator.c:229
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -148,8 +144,8 @@ msgstr ""
 "Aroke HTML dins %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:229
-#: extensions/error-viewer/sgml-validator.c:245
+#: extensions/error-viewer/sgml-validator.c:231
+#: extensions/error-viewer/sgml-validator.c:247
 msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
@@ -157,7 +153,7 @@ msgstr ""
 "Li sôre di documint est «XHTML» mins li sôre di contnou est «text/html».  "
 "Eployîz purade «application/xhtml+xml»."
 
-#: extensions/error-viewer/sgml-validator.c:243
+#: extensions/error-viewer/sgml-validator.c:245
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
@@ -166,22 +162,20 @@ msgstr ""
 "Adviertixhmint HTML dins %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:360
-#, fuzzy, c-format
+#: extensions/error-viewer/sgml-validator.c:362
+#, c-format
 msgid "HTML error in %s:"
-msgstr ""
-"Aroke HTML dins %s:\n"
-"%s"
+msgstr "Aroke HTML dins %s:"
 
-#: extensions/error-viewer/sgml-validator.c:368
+#: extensions/error-viewer/sgml-validator.c:370
 msgid "Invalid character encoding"
 msgstr ""
 
-#: extensions/error-viewer/sgml-validator.c:373
+#: extensions/error-viewer/sgml-validator.c:375
 msgid "Unknown error while converting to UTF-8"
 msgstr ""
 
-#: extensions/error-viewer/sgml-validator.c:435
+#: extensions/error-viewer/sgml-validator.c:437
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -190,22 +184,308 @@ msgstr ""
 "Aroke HTML dins %s:\n"
 "Nole sôre di documint (doctype) valide di dnêye."
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
-msgid "Popup _Windows"
-msgstr "Aspitants _purneas"
+#: extensions/page-info/ephy-page-info-extension.c:65
+msgid "_Page Info"
+msgstr ""
+
+#: extensions/page-info/ephy-page-info-extension.c:67
+msgid "Display page information in a dialog"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:627
+msgid "Unknown type"
+msgstr "Sôre nén cnoxhowe"
+
+#: extensions/page-info/page-info-dialog.c:632
+msgid "Full standards compliance"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:635
+msgid "Almost standards compliance"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:638
+msgid "Compatibility"
+msgstr "Copatibilité"
+
+#: extensions/page-info/page-info-dialog.c:641
+msgid "Undetermined"
+msgstr "Nén cnoxhou"
+
+#: extensions/page-info/page-info-dialog.c:650
+msgid "Not cached"
+msgstr "Nén el muchete"
+
+#: extensions/page-info/page-info-dialog.c:653
+msgid "Disk cache"
+msgstr "Muchete el deure plake"
+
+#: extensions/page-info/page-info-dialog.c:656
+msgid "Memory cache"
+msgstr "Muchete e memwere"
+
+#: extensions/page-info/page-info-dialog.c:659
+msgid "Unknown cache"
+msgstr "Muchete nén cnoxhowe"
+
+#: extensions/page-info/page-info-dialog.c:675
+msgid "Unknown"
+msgstr "Nén cnoxhou"
+
+#: extensions/page-info/page-info-dialog.c:680
+msgid "No referrer"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:694
+#: extensions/page-info/page-info-dialog.c:710
+msgid "Not specified"
+msgstr "Nén specifyî"
+
+#: extensions/page-info/page-info-dialog.c:804
+msgid "Save Image As..."
+msgstr "Schaper et rlomer imådje..."
+
+#: extensions/page-info/page-info-dialog.c:886
+msgid "_Open Image"
+msgstr "_Drovi imådje"
+
+#: extensions/page-info/page-info-dialog.c:892
+msgid "_Copy Image Address"
+msgstr "_Copyî adresse di l' imådje"
+
+#: extensions/page-info/page-info-dialog.c:898
+msgid "_Use Image as Background"
+msgstr "_Eployî imådje come tapisreye"
+
+#: extensions/page-info/page-info-dialog.c:904
+#: extensions/page-info/page-info.glade.h:26
+msgid "_Save Image As..."
+msgstr "_Schaper eyet rlomer l' imådje..."
+
+#: extensions/page-info/page-info-dialog.c:993
+#: extensions/page-info/page-info-dialog.c:1211
+msgid "URL"
+msgstr "Hårdêye"
+
+#: extensions/page-info/page-info-dialog.c:1005
+msgid "Alt Text"
+msgstr "Tecse di rawete (etikete ALT)"
+
+#: extensions/page-info/page-info-dialog.c:1017
+#: extensions/page-info/page-info-dialog.c:1223
+msgid "Title"
+msgstr "Tite"
+
+#: extensions/page-info/page-info-dialog.c:1029
+msgid "Width"
+msgstr "Lårdjeu"
+
+#: extensions/page-info/page-info-dialog.c:1041
+msgid "Height"
+msgstr "Hôteu"
+
+#: extensions/page-info/page-info-dialog.c:1177
+msgid "_Copy Link Address"
+msgstr "_Copyî l' adresse del hårdêye"
+
+#: extensions/page-info/page-info-dialog.c:1235
+msgid "Relation"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:1346
+msgid "Name"
+msgstr "No"
+
+#: extensions/page-info/page-info-dialog.c:1358
+msgid "Method"
+msgstr "Metôde"
+
+#: extensions/page-info/page-info-dialog.c:1370
+msgid "Action"
+msgstr "Accion"
+
+#: extensions/page-info/page-info.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: extensions/page-info/page-info.glade.h:2
+msgid "<b>Forms In Page</b>"
+msgstr "<b>Formulaires el pådje</b>"
+
+#: extensions/page-info/page-info.glade.h:3
+msgid "<b>Image View</b>"
+msgstr "<b>Vuwe imådje</b>"
+
+#: extensions/page-info/page-info.glade.h:4
+msgid "<b>Images In Page</b>"
+msgstr "<b>Imådjes el pådje</b>"
+
+#: extensions/page-info/page-info.glade.h:5
+msgid "<b>Links In Page</b>"
+msgstr "<b>Loyéns el pådje</b>"
+
+#: extensions/page-info/page-info.glade.h:6
+msgid "<b>Rendering</b>"
+msgstr "<b>Rindou</b>"
+
+#: extensions/page-info/page-info.glade.h:7
+msgid "<b>Source File</b>"
+msgstr "<B>Fitchî sourdant</b>"
+
+#: extensions/page-info/page-info.glade.h:8
+msgid "<b>Web Page</b>"
+msgstr "<b>Pådje waibe</b>"
+
+#: extensions/page-info/page-info.glade.h:9
+msgid "DYNAMIC"
+msgstr "DINAMIKE"
+
+#: extensions/page-info/page-info.glade.h:10
+msgid "Encoding:"
+msgstr "Ecôdaedje:"
+
+#: extensions/page-info/page-info.glade.h:11
+msgid "Expires:"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:12
+msgid "Forms"
+msgstr "Formulaires"
+
+#: extensions/page-info/page-info.glade.h:13
+msgid "General"
+msgstr "Djenerå"
+
+#: extensions/page-info/page-info.glade.h:14
+msgid "Images"
+msgstr "Imådjes"
+
+#: extensions/page-info/page-info.glade.h:15
+msgid "Links"
+msgstr "Loyéns"
+
+#: extensions/page-info/page-info.glade.h:16
+msgid "Location:"
+msgstr "Eplaeçmint:"
+
+#: extensions/page-info/page-info.glade.h:17
+msgid "MIME type:"
+msgstr "Sôre MIME:"
+
+#: extensions/page-info/page-info.glade.h:18
+msgid "Mode:"
+msgstr "Môde:"
+
+#: extensions/page-info/page-info.glade.h:19
+msgid "Modified:"
+msgstr "Candjî:"
+
+#: extensions/page-info/page-info.glade.h:20
+msgid "Page Properties"
+msgstr "Prôpietés del pådje"
+
+#: extensions/page-info/page-info.glade.h:21
+msgid "Referrer:"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:22
+msgid "Size:"
+msgstr "Grandeu:"
+
+#: extensions/page-info/page-info.glade.h:23
+msgid "Source:"
+msgstr "Sourdant:"
+
+#: extensions/page-info/page-info.glade.h:24
+msgid "Title:"
+msgstr "Tite:"
+
+#: extensions/page-info/page-info.glade.h:25
+msgid "Type:"
+msgstr "Sôre:"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:149
+msgid "Render the page without using a style"
+msgstr "Håyner l' pådje sins eployî on stîle"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:152
+msgid "Render the page using the default style"
+msgstr "Håyner l' pådje tot-z eployant li prémetou stîle"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:155
+#, c-format
+msgid "Render the page using the \"%s\" style"
+msgstr "Håyner l' pådje tot-z eployant li stîle «%s»"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:296
+msgid "St_yle"
+msgstr "Estî_le"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:297
+msgid "Select a different style for this page"
+msgstr "Tchoezi on stîle diferin po cisse pådje chal"
+
+#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
+msgid "Default"
+msgstr "Prémetou"
+
+#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
+msgid "None"
+msgstr "Nouk"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:107
+msgid "_Sidebar"
+msgstr "Bår di _costé"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:108
+msgid "Show or hide the sidebar"
+msgstr "Mostrer ou catchî l' bår di costé"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:368
+msgid "_Add Sidebar"
+msgstr "_Radjouter bår di costé"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:395
+#, c-format
+msgid "Add \"%s\" to the Sidebar?"
+msgstr "Radjouter «%s» al bår di costé?"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:398
+msgid "The source to the new sidebar page is:"
+msgstr "Li sourdant pol pådje del nouve bår di costé est:"
+
+#: extensions/sidebar/ephy-sidebar.c:178
+msgid "No Sidebars installed"
+msgstr "Nole bår di costé d' astalêye"
+
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:547
+msgid "_Look Up"
+msgstr ""
+
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:554
+msgid "_GNOME Dictionary"
+msgstr "Diccionaire di _Gnome"
+
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:561
+msgid "Loo_k-Up Preferences"
+msgstr ""
 
 #. shortcut key
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
-msgid "Show or hide unrequested popup windows from this site"
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:563
+msgid "Look up your selection"
 msgstr ""
-"Mostrer ou catchî les aspitants purneas nén dmandés vnant di cisse waibe ci"
 
-#: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
-#, c-format
-msgid "%d popup window blocked"
-msgid_plural "%d popup windows blocked"
-msgstr[0] "%d aspitant purnea di bloké"
-msgstr[1] "%d aspitants purneas di blokés"
+#: extensions/smart-bookmarks/smart-bookmarks.glade.h:1
+msgid "Add Gnome Dictionary to the menu"
+msgstr "Radjouter l' diccionaire di Gnome å menu"
+
+#: extensions/smart-bookmarks/smart-bookmarks.glade.h:2
+msgid "Look Up Preferences"
+msgstr ""
+
+#: extensions/smart-bookmarks/smart-bookmarks.glade.h:3
+msgid "Open search results in a new tab"
+msgstr ""
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:183
 #, c-format
@@ -221,3 +501,20 @@ msgstr "Bodjî l' linwete viè on purnea"
 #: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
 msgstr "Bodjî l' linwete do moumint viè èn ôte purnea"
+
+#~ msgid "Certificate Manager"
+#~ msgstr "Manaedjeu d' acertineures"
+
+#~ msgid "Popup _Windows"
+#~ msgstr "Aspitants _purneas"
+
+#~ msgid "Show or hide unrequested popup windows from this site"
+#~ msgstr ""
+#~ "Mostrer ou catchî les aspitants purneas nén dmandés vnant di cisse waibe "
+#~ "ci"
+
+#~ msgid "%d popup window blocked"
+#~ msgid_plural "%d popup windows blocked"
+#~ msgstr[0] "%d aspitant purnea di bloké"
+#~ msgstr[1] "%d aspitants purneas di blokés"
+
