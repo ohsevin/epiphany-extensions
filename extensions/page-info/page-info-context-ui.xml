@@ -1,20 +1,24 @@
 <ui>
 
 <popup name="MediaPopup" action="PopupAction">
-	<menuitem name="OpenIP" action="Open"/>
-	<menuitem name="SaveAsIP" action="SaveAs"/>
-	<menuitem name="SetAsBackgroundIP" action="SetAsBackground"/>
-	<menuitem name="CopyMediumAddressIP" action="CopyMediumAddress"/>
+	<menuitem name="Open" action="Open"/>
+	<menuitem name="SaveAs" action="SaveAs"/>
+	<menuitem name="SetAsBackground" action="SetAsBackground"/>
+	<menuitem name="CopyMediumAddress" action="CopyMediumAddress"/>
 </popup>
 
 <popup name="ImagesEmbedPopup" action="PopupAction">
 </popup>
 
 <popup name="LinksPopup" action="PopupAction">
-	<menuitem name="CopyLinkAddressLP" action="CopyLinkAddress"/>
+	<menuitem name="CopyLinkAddress" action="CopyLinkAddress"/>
 </popup>
 
 <popup name="FormsPopup" action="PopupAction">
+</popup>
+
+<popup name="MetadataPopup" action="PopupAction">
+	<menuitem name="CopyMetadata" action="CopyMetadata"/>
 </popup>
 
 </ui>

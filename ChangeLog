@@ -1,5 +1,24 @@
 2005-03-02  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/page-info/mozilla/mozilla-helpers.h:
+	* extensions/page-info/page-info-context-ui.xml:
+	* extensions/page-info/page-info-dialog.c:
+	(page_info_drag_begin_cb), (treeview_info_page_get_selected_rows),
+	(treeview_info_page_get_selected_data),
+	(treeview_info_page_copy_selected), (treeview_info_page_filter),
+	(general_info_page_fill), (media_get_selected_medium_type),
+	(save_a_medium), (download_path_response_cb),
+	(media_save_medium_cb), (background_download_completed_cb),
+	(media_set_image_as_background_cb), (media_drag_data_get_cb),
+	(media_info_page_new), (links_drag_data_get_cb),
+	(links_info_page_new), (forms_info_page_new),
+	(metadata_info_page_construct), (metadata_info_page_new):
+
+	Refactor context menu copy code, and add context menu Copy to the
+	metadata treeview.
+
+2005-03-02  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/page-info/page-info.glade:
 
 	Put the media view embed in a frame instead of a viewport,

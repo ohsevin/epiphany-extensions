@@ -219,7 +219,8 @@ EphyDialogProperty properties [] =
 
 static GtkTargetEntry drag_targets[] =
 {
-	{ EPHY_DND_URL_TYPE, 0, 0 }
+	{ EPHY_DND_URL_TYPE,	  0, 0 }//,
+	//{ EPHY_DND_URI_LIST_TYPE, 0, 1}
 };
 static int n_drag_targets = G_N_ELEMENTS (drag_targets);
 
@@ -433,6 +434,15 @@ page_info_set_text (PageInfoDialog *dialog,
 	gtk_label_set_text (GTK_LABEL (widget), text ? text : "");
 }
 
+/* Set dnd cursor to the default dnd Gtk one and not the GtktreeView one */
+static void 
+page_info_drag_begin_cb (GtkWidget *widget, 
+		         GdkDragContext *dc, 
+		         gpointer user_data)
+{
+	gtk_drag_set_icon_default (dc);
+}
+
 /* a generic treeview info page */
 
 typedef struct _TreeviewInfoPage TreeviewInfoPage;
@@ -446,11 +456,95 @@ struct _TreeviewInfoPage
 	GtkListStore *store;
 	GtkTreeSelection *selection;
 	GtkTreeView *treeview;
+	TreeviewInfoPageFilterFunc filter_func;
 	GtkActionEntry *action_entries;
 	guint n_action_entries;
 	const char *popup_path;
-        TreeviewInfoPageFilterFunc filter_func;
+	const char *copy_action;
+	int copy_data_col;
 };
+
+/* Return a list of selected data rows (char *) */
+static GList *
+treeview_info_page_get_selected_rows (TreeviewInfoPage *page)
+{
+	GtkTreeModel *model;
+	char *data = NULL;
+	GList *rows, *l, *ret = NULL;
+
+	rows = gtk_tree_selection_get_selected_rows (page->selection, &model);
+
+	for (l = rows; l != NULL; l = l->next)
+	{
+		GtkTreePath *path = (GtkTreePath *) l->data;
+		GtkTreeIter iter;
+
+		if (gtk_tree_model_get_iter (model, &iter, path))
+		{
+			gtk_tree_model_get (model, &iter,
+					    page->copy_data_col, &data,
+					    -1);
+
+			ret = g_list_prepend (ret, data);
+		}
+	}
+
+	g_list_foreach (rows, (GFunc) gtk_tree_path_free, NULL);
+	g_list_free (rows);
+
+	return g_list_reverse (ret);
+}
+
+static char *
+treeview_info_page_get_selected_data (TreeviewInfoPage *page)
+{
+	GList *rows;
+	char *data;
+
+	g_return_val_if_fail (gtk_tree_selection_count_selected_rows (page->selection) == 1, NULL);
+
+	rows = treeview_info_page_get_selected_rows (page);
+	g_return_val_if_fail (rows != NULL, NULL);
+
+	data = (char *) rows->data;
+	g_list_free (rows);
+
+	return data;
+}
+
+static void
+treeview_info_page_copy_selected (GtkAction *action,
+				  TreeviewInfoPage *page)
+{
+	char *data;
+
+	data = treeview_info_page_get_selected_data (page);
+	if (data == NULL) return;
+		
+	gtk_clipboard_set_text (gtk_clipboard_get (GDK_NONE),
+				data, -1);
+	gtk_clipboard_set_text (gtk_clipboard_get (GDK_SELECTION_PRIMARY),
+				data, -1);
+
+	g_free (data);
+}				  
+
+static void
+treeview_info_page_filter (TreeviewInfoPage *page)
+{
+	InfoPage *ipage = (InfoPage *) page;
+	PageInfoDialog *dialog = ipage->dialog;
+	GtkTreeSelection *selection = page->selection;
+	GtkAction *action;
+	int count;
+
+	action = gtk_action_group_get_action (dialog->priv->action_group,
+					      page->copy_action);
+	g_return_if_fail (action != NULL);
+
+	count = gtk_tree_selection_count_selected_rows (selection);
+	g_object_set (G_OBJECT (action), "sensitive", count == 1, NULL);
+}
 
 static gboolean
 treeview_info_page_show_popup (TreeviewInfoPage *page)
@@ -635,7 +729,7 @@ general_info_page_fill (InfoPage *page)
 	if (props->modification_time)
 	{
 		t = props->modification_time;
-		strftime (date, sizeof(date), date_hack, localtime_r (&t, &tm));
+		strftime (date, sizeof (date), date_hack, localtime_r (&t, &tm));
 		val = g_locale_to_utf8 (date, -1, NULL, NULL, NULL);
 		
 		page_info_set_text (dialog, properties[PROP_GENERAL_MODIFIED].id, val);
@@ -674,15 +768,6 @@ general_info_page_new (PageInfoDialog *dialog)
 	ipage->fill = general_info_page_fill;
 
 	return ipage;
-}
-
-/* Set dnd cursor to the default dnd Gtk one and not the GtktreeView one */
-static void 
-page_info_drag_begin_cb(GtkWidget *widget, 
-		        GdkDragContext *dc, 
-		        gpointer dummy)
-{
-	gtk_drag_set_icon_default (dc);
 }
 
 /* "Media" page */
@@ -761,7 +846,7 @@ media_get_selected_medium_type (GtkTreeSelection *selection)
 
 	selected_row = gtk_tree_selection_get_selected_rows (selection, &model);
 
-	if (gtk_tree_model_get_iter (model, &iter, (GtkTreePath *)(selected_row->data)))
+	if (gtk_tree_model_get_iter (model, &iter, (GtkTreePath *) selected_row->data))
 	{
 		gtk_tree_model_get (model, &iter, COL_MEDIUM_TYPE, &type, -1);
 	}
@@ -776,75 +861,47 @@ media_is_embedded_medium (EmbedPageMediumType type)
 	return type == MEDIUM_OBJECT || type == MEDIUM_EMBED;
 }
 
-/* Return a list of selected addresses (char *) */
-static GList *
-media_get_selected_medium_url (MediaInfoPage *page)
-{
-	TreeviewInfoPage *tpage = (TreeviewInfoPage *) page;
-	GtkTreeModel *model;
-	char *address = NULL;
-	GList *selected_rows;
-	GList *ret = NULL, *l;
-
-	selected_rows = gtk_tree_selection_get_selected_rows (tpage->selection, &model);
-
-	for (l=selected_rows; l != NULL; l = l->next)
-	{
-		GtkTreeIter iter;
-
-		if (gtk_tree_model_get_iter (model, &iter, 
-					     (GtkTreePath *)(l->data)))
-		{
-			gtk_tree_model_get (model, &iter, COL_MEDIUM_URL, &address, -1);
-
-			ret = g_list_prepend (ret, address);
-		}
-	}
-
-	g_list_free (selected_rows);
-
-	return ret;
-}
-
 /* Save a medium given the destination directory */
 static void
-save_a_medium (const char *source, const char *dir)
+save_a_medium (const char *source,
+	       const char *dir)
 {
 	GnomeVFSURI *uri;
 	EphyEmbedPersist *persist;
 
 	uri = gnome_vfs_uri_new (source);
-
-	if (uri) 
+	if (uri != NULL)
 	{	
 		char *file_name;
 
 		file_name = gnome_vfs_uri_extract_short_name (uri);
-
 		if (file_name != NULL)
 		{
 			char *dest;
 
 			/* Persist needs a full path */
-			dest = g_strconcat (dir, "/", file_name, NULL);
+			dest = g_build_filename (dir, file_name, NULL);
 
 			persist = EPHY_EMBED_PERSIST (
 					ephy_embed_factory_new_object (EPHY_TYPE_EMBED_PERSIST));
 			ephy_embed_persist_set_source (persist, source);
-			ephy_embed_persist_set_dest   (persist, dest);
+			ephy_embed_persist_set_dest (persist, dest);
 			ephy_embed_persist_save (persist);
 
 			g_object_unref (persist);
-			gnome_vfs_uri_unref (uri);
 			g_free(dest);
 		}
-		g_free(file_name);
+
+		g_free (file_name);
+		gnome_vfs_uri_unref (uri);
 	}
 }
 
 /* Download at the same time all the selelected medium (rows) */
 static void
-download_path_response_cb (GtkDialog *fc, gint response, GList *rows)
+download_path_response_cb (GtkDialog *fc,
+			   int response,
+			   GList *rows)
 {
 	if (response == GTK_RESPONSE_ACCEPT)
 	{
@@ -876,20 +933,20 @@ media_open_medium_cb (GtkAction *action,
 	/* FIXME: write me! :) */
 }
 
-
 static void
 media_save_medium_cb (gpointer ptr,
 		      MediaInfoPage *page)
 {
 	InfoPage *ipage = (InfoPage *) page;
+	TreeviewInfoPage *tpage = (TreeviewInfoPage *) page;
 	PageInfoDialog *dialog = ipage->dialog;
 	EphyEmbedPersist *persist;
 	GList *rows;
 
-	rows = media_get_selected_medium_url (page);
+	rows = treeview_info_page_get_selected_rows (tpage);
 	if (g_list_length (rows) == 1)
 	{
-		char *address = (gchar *)(rows->data); 
+		char *address = (char *) rows->data;
 
 		if (address != NULL)
 		{
@@ -908,7 +965,7 @@ media_save_medium_cb (gpointer ptr,
 		g_list_foreach (rows, (GFunc) g_free, NULL);
 		g_list_free (rows);
 	}
-	else
+	else if (rows != NULL)
 	{
 		EphyFileChooser *fc;
 		GtkWidget *parent;
@@ -936,6 +993,9 @@ background_download_completed_cb (EphyEmbedPersist *persist)
 {
 	const char *bg;
 	char *type;
+	guint32 user_time;
+
+	user_time = ephy_embed_persist_get_user_time (persist);
 
 	bg = ephy_embed_persist_get_dest (persist);
 	eel_gconf_set_string (CONF_DESKTOP_BG_PICTURE, bg);
@@ -947,26 +1007,28 @@ background_download_completed_cb (EphyEmbedPersist *persist)
 	}
 	g_free (type);
 
-	/* FIXME launch bg applet */
+	g_object_unref (persist);
+
+        /* open the "Background Properties" capplet */
+        ephy_file_launch_desktop_file ("background.desktop", user_time);
 }
 
 static void
 media_set_image_as_background_cb (GtkAction *action,
 				  MediaInfoPage *page)
 {
+	TreeviewInfoPage *tpage = (TreeviewInfoPage *) page;
 	EphyEmbedPersist *persist;
 	char *address;
 	char *dest, *base, *base_converted;
-	GList *rows;
 
-	rows = media_get_selected_medium_url (page);
-	g_return_if_fail (g_list_length (rows) == 1);
+	address = treeview_info_page_get_selected_data (tpage);
+	if (address == NULL) return;
 
-	address = (gchar *)(rows->data); 
-	if (address != NULL)
-	{
 	base = g_path_get_basename (address);
 	base_converted = g_filename_from_utf8 (base, -1, NULL, NULL, NULL);
+	if (base_converted == NULL) return;
+
 	dest = g_build_filename (ephy_dot_dir (), base_converted, NULL);
 
 	persist = EPHY_EMBED_PERSIST
@@ -986,32 +1048,6 @@ media_set_image_as_background_cb (GtkAction *action,
 	g_free (dest);
 	g_free (base);
 	g_free (base_converted);
-	}
-	g_list_foreach (rows, (GFunc) g_free, NULL);
-	g_list_free (rows);
-}
-
-static void
-media_copy_medium_address_cb (GtkAction *action,
-			      MediaInfoPage *page)
-{
-	char *address;
-	GList *rows;
-
-	rows = media_get_selected_medium_url (page);
-	g_return_if_fail (g_list_length (rows) == 1);
-
-	address = (gchar *)(rows->data);
-	g_return_if_fail (address != NULL);
-	if (address != NULL)
-	{
-	gtk_clipboard_set_text (gtk_clipboard_get (GDK_NONE),
-				address, -1);
-	gtk_clipboard_set_text (gtk_clipboard_get (GDK_SELECTION_PRIMARY),
-				address, -1);
-	}
-	g_list_foreach (rows, (GFunc) g_free, NULL);
-	g_list_free (rows);
 }
 
 static GtkActionEntry media_action_entries[] =
@@ -1027,7 +1063,7 @@ static GtkActionEntry media_action_entries[] =
 	  N_("_Copy Link Address"),
 	  NULL,
 	  NULL,
-	  G_CALLBACK (media_copy_medium_address_cb) },
+	  G_CALLBACK (treeview_info_page_copy_selected) },
 	{ "SetAsBackground",
 	  NULL,
 	  N_("_Use as Background"),
@@ -1147,25 +1183,17 @@ media_drag_data_get_cb (GtkWidget *widget,
                         guint32 time,
                         MediaInfoPage *page)
 {
+	TreeviewInfoPage *tpage = (TreeviewInfoPage *) page;
 	char *address;
-	GList *rows;
 
-	g_assert (widget != NULL);
-	g_return_if_fail (context != NULL);
-
-	rows = media_get_selected_medium_url (page);
-	g_return_if_fail (rows != NULL);
-
-	address = (gchar *)(rows->data);
-	g_return_if_fail (address != NULL);
+	address = treeview_info_page_get_selected_data (tpage);
+	if (address == NULL) return;
 
 	gtk_selection_data_set (selection_data,
 			selection_data->target,
 			8,
 			address,
 			strlen(address));
-	g_list_foreach (rows, (GFunc) g_free, NULL);
-	g_list_free (rows);
 }
 
 static void
@@ -1355,6 +1383,8 @@ media_info_page_new (PageInfoDialog *dialog)
 	ipage->fill = media_info_page_fill;
 
 	tpage->popup_path = "/MediaPopup";
+	tpage->copy_action = "CopyMediumAddress";
+	tpage->copy_data_col = COL_MEDIUM_URL;
 	tpage->action_entries = media_action_entries;
 	tpage->n_action_entries = G_N_ELEMENTS (media_action_entries);
 	tpage->filter_func = media_info_page_filter;
@@ -1378,41 +1408,6 @@ enum
 	COL_LINK_REL
 };
 
-static char *
-links_get_selected_link_url (LinksInfoPage *page)
-{
-	TreeviewInfoPage *tpage = (TreeviewInfoPage *) page;
-	GtkTreeModel *model;
-	GtkTreeIter iter;
-	char *address = NULL;
-
-	if (gtk_tree_selection_get_selected (tpage->selection, &model, &iter))
-	{
-		gtk_tree_model_get (model, &iter,
-				    COL_LINK_URL, &address,
-				    -1);
-	}
-
-	return address;
-}
-
-static void
-links_copy_link_address_cb (GtkAction *action,
-			    LinksInfoPage *page)
-{
-	char *address;
-
-	address = links_get_selected_link_url (page);
-	if (address == NULL) return;
-
-	gtk_clipboard_set_text (gtk_clipboard_get (GDK_NONE),
-				address, -1);
-	gtk_clipboard_set_text (gtk_clipboard_get (GDK_SELECTION_PRIMARY),
-				address, -1);
-
-	g_free (address);
-}
-
 static GtkActionEntry links_action_entries[] =
 {
 	{ "CopyLinkAddress", 
@@ -1420,7 +1415,7 @@ static GtkActionEntry links_action_entries[] =
 	  N_("_Copy Link Address"),
 	  NULL,
 	  NULL,
-	  G_CALLBACK (links_copy_link_address_cb) },
+	  G_CALLBACK (treeview_info_page_copy_selected) },
 };
 
 static void
@@ -1431,12 +1426,10 @@ links_drag_data_get_cb (GtkWidget *widget,
                         guint32 time,
                         LinksInfoPage *page)
 {
+	TreeviewInfoPage *tpage = (TreeviewInfoPage *) page;
 	char *address;
 
-	g_assert (widget != NULL);
-	g_return_if_fail (context != NULL);
-
-	address = links_get_selected_link_url (page);
+	address = treeview_info_page_get_selected_data (tpage);
 	if (address == NULL) return;
 
 	gtk_selection_data_set (selection_data,
@@ -1568,8 +1561,11 @@ links_info_page_new (PageInfoDialog *dialog)
 	ipage->fill = links_info_page_fill;
 
 	tpage->popup_path = "/LinksPopup";
+	tpage->copy_action = "CopyLinkAddress";
+	tpage->copy_data_col = COL_LINK_URL;
 	tpage->action_entries = links_action_entries;
 	tpage->n_action_entries = G_N_ELEMENTS (links_action_entries);
+	tpage->filter_func = treeview_info_page_filter;
 
 	return ipage;
 }
@@ -1590,9 +1586,11 @@ enum
 	COL_FORM_ACTION
 };
 
+/*
 static GtkActionEntry forms_action_entries[] =
 {
 };
+*/
 
 static void
 forms_info_page_construct (InfoPage *ipage)
@@ -1699,9 +1697,10 @@ forms_info_page_new (PageInfoDialog *dialog)
 	ipage->fill = forms_info_page_fill;
 
 	tpage->popup_path = "/FormsPopup";
+/*
 	tpage->action_entries = forms_action_entries;
 	tpage->n_action_entries = G_N_ELEMENTS (forms_action_entries);
-
+*/
 	return ipage;
 }
 
@@ -1720,11 +1719,16 @@ enum
 	COL_META_CONTENT
 };
 
-/*
 static GtkActionEntry metadata_action_entries[] =
 {
+	{ "CopyMetadata", 
+	  GTK_STOCK_COPY,
+	  N_("_Copy"),
+	  NULL,
+	  NULL,
+	  G_CALLBACK (treeview_info_page_copy_selected) },
 };
-*/
+
 
 static void
 metadata_info_page_construct (InfoPage *ipage)
@@ -1786,7 +1790,7 @@ metadata_info_page_construct (InfoPage *ipage)
 	tpage->selection = selection;
 	tpage->treeview = treeview;
 
-//	treeview_info_page_construct (ipage);
+	treeview_info_page_construct (ipage);
 }
 
 static gboolean 
@@ -1874,16 +1878,19 @@ static InfoPage *
 metadata_info_page_new (PageInfoDialog *dialog)
 {
 	MetadataInfoPage *page = g_new0 (MetadataInfoPage, 1);
-//	TreeviewInfoPage *tpage = (TreeviewInfoPage *) page;
+	TreeviewInfoPage *tpage = (TreeviewInfoPage *) page;
 	InfoPage *ipage = (InfoPage *) page;
 
 	ipage->dialog = dialog;
 	ipage->construct = metadata_info_page_construct;
 	ipage->fill = metadata_info_page_fill;
 
-//	tpage->popup_path = "/FormsPopup";
-//	tpage->action_entries = forms_action_entries;
-//	tpage->n_action_entries = G_N_ELEMENTS (forms_action_entries);
+	tpage->popup_path = "/MetadataPopup";
+	tpage->copy_action = "CopyMetadata";
+	tpage->copy_data_col = COL_META_CONTENT;
+	tpage->action_entries = metadata_action_entries;
+	tpage->n_action_entries = G_N_ELEMENTS (metadata_action_entries);
+	tpage->filter_func = treeview_info_page_filter;
 
 	return ipage;
 }
