@@ -1,5 +1,13 @@
 2005-02-13  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:
+	(ephy_bookmarks_tray_extension_init),
+	(ephy_bookmarks_tray_extension_finalize):
+
+	Ref the tray icon. Should fix bug #163819.
+
+2005-02-13  Christian Persch  <chpe@cvs.gnome.org>
+
 	* configure.ac:
 	* extensions/find/mozilla/Makefile.am:
 

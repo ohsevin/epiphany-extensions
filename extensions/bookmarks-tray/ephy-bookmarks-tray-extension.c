@@ -523,6 +523,8 @@ ephy_bookmarks_tray_extension_init (EphyBookmarksTrayExtension *extension)
 	gtk_object_sink (GTK_OBJECT (priv->tray_tips));
 
 	priv->tray = GTK_WIDGET (egg_tray_icon_new (NULL));
+	g_object_ref (priv->tray);
+	gtk_object_sink (GTK_OBJECT (priv->tray));
 	gtk_container_add (GTK_CONTAINER (priv->tray), priv->tray_button);
 
 	gtk_widget_show (priv->tray);
@@ -542,6 +544,7 @@ ephy_bookmarks_tray_extension_finalize (GObject *object)
 
 	g_object_unref (priv->tray_tips);
 	gtk_widget_destroy (GTK_WIDGET (priv->tray));
+	g_object_unref (priv->tray);
 
 	g_object_unref (priv->menu);
 	g_object_unref (priv->manager);
