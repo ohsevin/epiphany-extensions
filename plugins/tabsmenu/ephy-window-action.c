@@ -34,6 +34,7 @@
 #include <epiphany/ephy-tab.h>
 
 #include <glib-object.h>
+#include <gtk/gtknotebook.h>
 
 struct _EphyWindowActionPrivate {
 	EphyWindow *window;
@@ -167,11 +168,6 @@ sync_title (EphyTab *tab, GParamSpec *pspec, EphyWindowAction *action)
 
 	num = (guint) action->priv->num_tabs;
 
-	if (tab == NULL && action->priv->num_tabs > 0)
-	{
-		tab = ephy_window_get_active_tab (action->priv->window);
-	}
-
 	if (tab)
 	{
 		win_title = ephy_string_shorten (ephy_tab_get_title (tab), MAX_LENGTH);
@@ -191,17 +187,23 @@ sync_title (EphyTab *tab, GParamSpec *pspec, EphyWindowAction *action)
 static void
 tab_num_changed_cb (GtkWidget *notebook, GtkWidget *child, EphyWindowAction *action)
 {
-	LOG ("tabs num changed action %p", action)
-
 	action->priv->num_tabs = gtk_notebook_get_n_pages (GTK_NOTEBOOK (notebook));
 
-	sync_title (NULL, NULL, action);
+	sync_title (action->priv->old_tab, NULL, action);
 }
 
 static void
-sync_active_tab (EphyWindow *window, GParamSpec *pspec, EphyWindowAction *action)
+set_active_tab (EphyWindowAction *action)
 {
 	EphyTab *tab;
+
+	if (action->priv->window == NULL) return;
+
+	tab = ephy_window_get_active_tab (action->priv->window);
+	g_return_if_fail (IS_EPHY_TAB (tab));
+
+	/* shouldn't happen but who knows */
+ 	if (tab == action->priv->old_tab) return;
 
 	if (action->priv->old_tab != NULL)
 	{
@@ -210,17 +212,18 @@ sync_active_tab (EphyWindow *window, GParamSpec *pspec, EphyWindowAction *action
 						      action);
 	}
 
-	tab = ephy_window_get_active_tab (window);
+	action->priv->old_tab = tab;
+
+	g_signal_connect_object (G_OBJECT (tab), "notify::title",
+				 G_CALLBACK (sync_title), action, 0);
 
 	sync_title (tab, NULL, action);
+}
 
-	if (tab != NULL)
-	{
-		g_signal_connect_object (G_OBJECT (tab), "notify::title",
-					 G_CALLBACK (sync_title), action, 0);
-
-		action->priv->old_tab = tab;
-	}
+static void
+switch_page_cb (GtkNotebook *notebook, GtkNotebookPage *page, guint page_num, EphyWindowAction *action)
+{
+	set_active_tab (action);
 }
 
 static void
@@ -240,14 +243,19 @@ ephy_window_action_set_window (EphyWindowAction *action, EphyWindow *window)
 
 	action->priv->num_tabs = gtk_notebook_get_n_pages (GTK_NOTEBOOK (notebook));
 
-	sync_active_tab (window, NULL, action);
-	g_signal_connect_object (window, "notify::active-tab",
-				 G_CALLBACK (sync_active_tab), action, 0);
+	if (action->priv->num_tabs > 0)
+	{
+		set_active_tab (action);
+	}
 
+	g_signal_connect_after (notebook, "switch_page",
+				G_CALLBACK (switch_page_cb), action);
 	g_signal_connect_after (notebook, "tab_added",
 				G_CALLBACK (tab_num_changed_cb), action);	
 	g_signal_connect_after (notebook, "tab_removed",
 				G_CALLBACK (tab_num_changed_cb), action);
+
+	sync_title (action->priv->old_tab, NULL, action);
 }
 
 EphyWindow *

@@ -475,9 +475,7 @@ ephy_tabs_plugin_menu_update (EphyTabsPluginMenu *menu)
 	xml = g_string_sized_new (1024);
 
 	g_string_append (xml, "<Root><menu><submenu name=\"TabsMenu\">"
-			      "<placeholder name=\"TabsPluginPlaceholder\">"
-			      "<menuitem name=\"EphyTabsPluginCloneItem\" "
-			      "verb=\"EphyTabsPluginClone\"/>\n"
+			      "<placeholder name=\"TabsMenuAfterMovePlaceholder\">"
 			      "<submenu name=\"EphyTabsPluginMoveMenu\" "
 			      "verb=\"EphyTabsPluginMove\">\n");		
 
@@ -490,7 +488,12 @@ ephy_tabs_plugin_menu_update (EphyTabsPluginMenu *menu)
 					window, window);
 	}
 
-	g_string_append (xml, "</submenu></placeholder></submenu></menu></Root>");
+	g_string_append (xml, "</submenu><separator name=\"EphyTabsPluginSep1\"/>"
+			      "</placeholder>\n"
+			      "<placeholder name=\"TabsMenuAfterDetachPlaceholder\">"
+			      "<menuitem name=\"EphyTabsPluginCloneItem\" "
+			      "verb=\"EphyTabsPluginClone\"/>\n"
+			      "</placeholder></submenu></menu></Root>");
 
 	p->ui_id = egg_menu_merge_add_ui_from_string
 				(merge, xml->str, -1, &error);	

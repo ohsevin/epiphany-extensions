@@ -1,9 +1,26 @@
 2003-08-04  Christian Persch  <chpe@cvs.gnome.org>
 
+	* ephy-window-action.c: (sync_title), (tab_num_changed_cb),
+	(sync_active_tab), (set_active_tab), (switch_page_cb),
+	(ephy_window_action_set_window):
+
+	Reworked to minimise the epiphany patch, which now solely consists
+	of the ui file patch to add the necessary placeholders.
+
+	* epiphany.diff:
+
+	Updated.
+
+	* ephy-tabs-plugin-menu.c: (ephy_tabs_plugin_menu_update):
+
+	Changed position and order of menu entries.
+
+2003-08-04  Christian Persch  <chpe@cvs.gnome.org>
+
 	* ephy-window-action.c: (sync_title):
 	* ephy-tabs-plugin.c: (plugin_init):
 
-	Make i18n work really
+	Make i18n really work.
 
 2003-08-04  Christian Persch  <chpe@cvs.gnome.org>
 
