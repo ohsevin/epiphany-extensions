@@ -505,8 +505,9 @@ treeview_info_page_show_popup (TreeviewInfoPage *page)
 	widget = gtk_ui_manager_get_widget (dialog->priv->manager,
 					    page->popup_path);
 	gtk_menu_popup (GTK_MENU (widget), NULL, NULL,
-			ephy_gui_menu_position_tree_selection, page->treeview, 2,
+			ephy_gui_menu_position_tree_selection, page->treeview, 0,
 			gtk_get_current_event_time ());
+	gtk_menu_shell_select_first (GTK_MENU_SHELL (widget), FALSE);
 
 	return TRUE;
 }

@@ -1,3 +1,10 @@
+2004-11-07  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/page-info/page-info-dialog.c:
+	(treeview_info_page_show_popup):
+
+	Select first menu item when popping the menu up with keyboard.
+
 2004-11-04  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/tab-groups/ephy-tab-grouper.c: (reset_last_tab):
