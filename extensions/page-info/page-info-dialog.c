@@ -33,7 +33,7 @@
 #include "ephy-debug.h"
 
 #include <epiphany/ephy-embed-persist.h>
-// #include <epiphany/ephy-embed-factory.h>
+#include <epiphany/ephy-embed-factory.h>
 
 /* non-installed ephy headers */
 #include "ephy-state.h"
@@ -62,11 +62,6 @@
 #include <glib/gconvert.h>
 
 #include <time.h>
-
-/* FIXME: ephy-embed-factory.h isn't released with Epiphany 1.4 */
-GObject *ephy_embed_factory_new_object (const char *object_id);
-
-#define COLUMN_KEY "PageInfoURLColumn"
 
 /* Glade callbacks */
 void page_info_dialog_close_button_clicked_cb	  (GtkWidget *button,
