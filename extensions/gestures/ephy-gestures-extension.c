@@ -276,18 +276,23 @@ gesture_performed_cb (EphyGesture *gesture,
 		GtkUIManager *manager;
 		GtkAction *action = NULL;
 		GList *action_groups, *l;
-
+		gboolean sensitive;
+		
 		manager = GTK_UI_MANAGER (window->ui_merge);
-
+		
 		action = gtk_ui_manager_get_action (manager, path);
-
-		if (action != NULL)
-		{
-			gtk_action_activate (action);
-		}
-		else
+		
+		if (action == NULL)
 		{
 			g_warning ("Action for path '%s' not found!\n", path);
+			return;
+		}
+		
+		g_object_get (action, "sensitive", &sensitive, NULL);
+		
+		if (sensitive)
+		{
+			gtk_action_activate (action);
 		}
 	}
 }
