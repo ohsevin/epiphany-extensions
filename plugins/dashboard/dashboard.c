@@ -77,7 +77,15 @@ send_cluepacket (EphyTab *tab, gboolean send_content)
 	dashboard_send_raw_cluepacket (cluepacket);
 
 	g_free (cluepacket);
-	g_free (&content);  /* Hmmmm...  Is this right?  */
+
+	/*
+	 * The following g_free makes Ephy lock up.  But surely we need to
+	 * free this memory?
+	 */
+        /*
+	g_free (content);
+        */
+
 	g_object_unref (G_OBJECT (persist));
 	
 	LOG ( "Leaving send_cluepacket" )
@@ -101,6 +109,10 @@ load_status_cb (EphyTab *tab, GParamSpec *pspec, EphyWindow *window)
 
 /*
  * Well, a tab is now visible, let Dashboard know.
+ *
+ * This callback is currently not being registered.  It causes a number of
+ * of CluePackets to be sent out for each page is loaded.  It doesn't seem to
+ * work how I expect.
  */
 static void
 visible_cb (EphyTab *tab, GParamSpec *pspec, EphyWindow *window)
@@ -124,8 +136,10 @@ tab_added_cb (GtkWidget *notebook, GtkWidget *embed)
 
 	g_signal_connect (G_OBJECT (tab), "notify::load-progress",
 	                  G_CALLBACK (load_status_cb), embed);
+	/*
 	g_signal_connect (G_OBJECT (tab), "notify::visible",
 	                  G_CALLBACK (visible_cb), embed);
+	*/
 }
 
 /*
@@ -143,9 +157,11 @@ tab_removed_cb (GtkWidget *notebook, GtkWidget *embed)
 	g_signal_handlers_disconnect_by_func (G_OBJECT (tab),
 	                                      G_CALLBACK (load_status_cb),
 	                                      embed);
+	/*
 	g_signal_handlers_disconnect_by_func (G_OBJECT (tab),
 	                                      G_CALLBACK (visible_cb),
 	                                      embed);
+	*/
 }
 
 /*

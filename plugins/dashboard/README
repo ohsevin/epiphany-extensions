@@ -7,8 +7,8 @@ never now.  Things have been reasonably stable for me.
 *** EXPERIMENTAL PLUGIN ***
 
 For this plugin to work you need to apply the epiphany-1.0.3.diff patch to
-the code base.  This hasn't been tested with releases newer than 1.0.3 yet.
-A patch for 1.1.0 will be coming soon.
+the code base.  This is known to work against 1.0.2, 1.0.3 and 1.0.6.  Other
+versions are unknown.  A patch for 1.1.0 will be coming soon.
 
 For information on Dashboard either see the above page, or go to
 http://www.nat.org/dashboard .

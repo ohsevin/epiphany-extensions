@@ -11,8 +11,6 @@
 #include <errno.h>
 #include <stdlib.h>
 #include <glib.h>
-#include <strings.h>
-#include <string.h>
 
 #if GLIB_CHECK_VERSION (2,0,0)
 #include <glib/giochannel.h>
@@ -45,6 +43,11 @@ dashboard_connect_with_timeout (int  *fd,
 	 */
 	if (fcntl (*fd, F_SETFL, O_NONBLOCK) < 0) {
 		perror ("Dashboard: setting O_NONBLOCK");
+
+		if (close(*fd) < 0) {
+			perror ("Dashboard: closing socket (1)");
+		}
+		
 		return 0;
 	}
 
@@ -67,6 +70,11 @@ dashboard_connect_with_timeout (int  *fd,
 			if (errno != EAGAIN &&
 			    errno != EINPROGRESS) {
 				perror ("Dashboard: connect");
+
+				if (close(*fd) < 0) {
+					perror ("Dashboard: closing socket (2)");
+				}
+
 				return 0;
 			}
 				
@@ -84,12 +92,22 @@ dashboard_connect_with_timeout (int  *fd,
 		while (select (getdtablesize (), NULL, &write_fds, NULL, &timeout) < 0) {
 			if (errno != EINTR) {
 				perror ("Dashboard: select");
+
+				if (close(*fd) < 0) {
+					perror ("Dashboard: closing socket (3)");
+				}
+		
 				return 0;
 			}
 		}
 
 		if (timeout.tv_sec == 0 && timeout.tv_usec == 0) {
 			fprintf (stderr, "Dashboard: Connection timed out.\n");
+
+			if (close(*fd) < 0) {
+				perror ("Dashboard: closing socket (4)");
+			}
+		
 			return 0;
 		}
 		
