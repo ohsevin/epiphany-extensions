@@ -933,7 +933,6 @@
 	  </child>
 -->
 
-<!-- Unfinished: images
 	  <child>
 	    <widget class="GtkVPaned" id="page_info_image_vpaned">
 	      <property name="visible">True</property>
@@ -1162,7 +1161,6 @@
 	      <property name="type">tab</property>
 	    </packing>
 	  </child>
--->
 
 <!-- Unfinished: security
 	  <child>

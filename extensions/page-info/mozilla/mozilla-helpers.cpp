@@ -37,7 +37,9 @@
 #include <nsICacheService.h>
 #include <nsICacheSession.h>
 #include <nsIDOMDocument.h>
+#include <nsIDOMHTMLCollection.h>
 #include <nsIDOMHTMLDocument.h>
+#include <nsIDOMHTMLImageElement.h>
 #include <nsIDOMLocation.h>
 #include <nsIDOMNSDocument.h>
 #include <nsIDOMNSHTMLDocument.h>
@@ -58,7 +60,7 @@ mozilla_free_page_properties (EmbedPageProperties *props)
 }
 
 static char *
-embed_string_to_c_string (nsEmbedString embed_string)
+embed_string_to_c_string (const nsEmbedString& embed_string)
 {
 	nsEmbedCString c_string;
 	NS_UTF16ToCString (embed_string, NS_CSTRING_ENCODING_UTF8, c_string);
@@ -217,4 +219,90 @@ mozilla_get_page_properties (EphyEmbed *embed)
         }
 
 	return props;
+}
+
+extern "C" void
+mozilla_free_embed_page_image (EmbedPageImage *image)
+{
+	g_free (image->url);
+	g_free (image->alt);
+	g_free (image->title);
+	g_free (image);
+}
+
+extern "C" GList *
+mozilla_get_images (EphyEmbed *embed)
+{
+	nsresult rv;
+        GHashTable *hash = g_hash_table_new(g_str_hash, g_str_equal);
+	GList *ret = NULL;
+
+	nsCOMPtr<nsIWebBrowser> browser;
+	gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (embed),
+					 getter_AddRefs (browser));
+	NS_ENSURE_TRUE (browser, NULL);
+
+	nsCOMPtr<nsIDOMWindow> dom_window;
+	browser->GetContentDOMWindow (getter_AddRefs (dom_window));
+	NS_ENSURE_TRUE (dom_window, NULL);
+
+	nsCOMPtr<nsIDOMDocument> doc;
+	dom_window->GetDocument (getter_AddRefs (doc));
+	NS_ENSURE_TRUE (doc, NULL);
+
+        nsCOMPtr<nsIDOMHTMLDocument> htmlDoc = do_QueryInterface(doc);
+        NS_ENSURE_TRUE (htmlDoc, NULL);
+
+        nsCOMPtr<nsIDOMHTMLCollection> nodes;
+        htmlDoc->GetImages(getter_AddRefs(nodes));
+
+        PRUint32 count(0);
+        nodes->GetLength(&count);
+        for (PRUint32 i = 0; i < count; i++)
+        {
+                nsCOMPtr<nsIDOMNode> node;
+                rv = nodes->Item(i, getter_AddRefs(node));
+                if (NS_FAILED(rv) || !node) continue;
+
+                nsCOMPtr<nsIDOMHTMLImageElement> element;
+                element = do_QueryInterface(node, &rv);
+                if (NS_FAILED(rv) || !element) continue;
+
+                EmbedPageImage *image = g_new0(EmbedPageImage, 1);
+
+                nsEmbedString tmp;
+                rv = element->GetSrc(tmp);
+                if (NS_SUCCEEDED(rv))
+                {
+			char *c = embed_string_to_c_string (tmp);
+                        if (g_hash_table_lookup(hash, c))
+                        {
+                                g_free (image);
+				g_free (c);
+                                continue;
+                        }
+                        image->url = c;
+                        g_hash_table_insert(hash, image->url,
+                                            GINT_TO_POINTER(TRUE));
+                }
+
+                rv = element->GetAlt(tmp);
+                if (NS_SUCCEEDED(rv))
+                {
+			image->alt = embed_string_to_c_string (tmp);
+                }
+                rv = element->GetTitle(tmp);
+                if (NS_SUCCEEDED(rv))
+                {
+                        image->title = embed_string_to_c_string (tmp);
+                }
+                rv = element->GetWidth(&(image->width));
+                rv = element->GetHeight(&(image->height));
+
+                ret = g_list_append(ret, image);
+        }
+
+        g_hash_table_destroy (hash);
+
+        return ret;
 }

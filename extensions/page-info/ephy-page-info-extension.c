@@ -160,11 +160,7 @@ display_page_info (GtkWidget *window)
 
 	dialog = page_info_dialog_new (window, embed);
 
-	LOG ("Showing page info dialog")
-
 	ephy_dialog_show (EPHY_DIALOG (dialog));
-
-	LOG ("Here")
 }
 
 static void

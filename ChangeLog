@@ -1,5 +1,21 @@
 2004-09-11  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/page-info/ephy-page-info-extension.c:
+	(display_page_info):
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+	* extensions/page-info/mozilla/mozilla-helpers.h:
+	* extensions/page-info/page-info-dialog.c: (setup_image_treeview),
+	(setup_page_images_add_image), (setup_page_images),
+	(page_info_dialog_new),
+	(page_info_dialog_imagesave_button_clicked_cb),
+	(images_treeview_selection_changed_cb),
+	(page_info_image_box_realize_cb):
+	* extensions/page-info/page-info.glade:
+
+	Add Images tab to page-info dialog.
+
+2004-09-11  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* configure.ac:
 	* extensions/Makefile.am:
 	* extensions/page-info/.cvsignore:

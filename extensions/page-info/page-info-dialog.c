@@ -28,11 +28,14 @@
 #include "page-info-dialog.h"
 #include "ephy-debug.h"
 
+#include <epiphany/ephy-embed-persist.h>
+
 #include <gtk/gtkentry.h>
 #include <gtk/gtklabel.h>
 #include <gtk/gtktreeview.h>
 #include <gtk/gtktreeselection.h>
 #include <gtk/gtkcellrenderertext.h>
+
 
 #include <libgnomevfs/gnome-vfs-utils.h>
 #include <libgnomevfs/gnome-vfs-mime-handlers.h>
@@ -55,6 +58,9 @@
 #endif
 
 #include <time.h>
+
+/* FIXME: ephy-embed-factory.h isn't released with Epiphany 1.4 */
+GObject *ephy_embed_factory_new_object (const char *object_id);
 
 /*
 #define STATE_PAGE_INFO_IMAGE_PANED_SIZE "page_info_dialog/page_info_image_pane_size"
@@ -86,11 +92,9 @@ page_info_image_box_realize_cb(GtkContainer *box,
 			       PageInfoDialog *dialog);
 
 /* Selection callbacks */
-/*
 static void
 images_treeview_selection_changed_cb(GtkTreeSelection *selection,
 				     PageInfoDialog *dialog);
-*/
 
 static GObjectClass *parent_class = NULL;
 static GType type = 0;
@@ -101,7 +105,7 @@ static GType type = 0;
 
 struct PageInfoDialogPrivate
 {
-	EphyEmbed *embed;
+	EphyEmbed *image_embed;
 };
 
 enum
@@ -125,12 +129,14 @@ enum
 	PROP_FORMS_FORM_TREEVIEW,
 
 	PROP_LINKS_LINK_TREEVIEW,
+*/
 
 	PROP_IMAGES_IMAGE_TREEVIEW,
 	PROP_IMAGES_IMAGE_BOX,
 	PROP_IMAGES_IMAGE_VPANED,
 	PROP_IMAGES_SAVE_BUTTON,
 
+/*
 	PROP_SECURITY_CERT_TITLE,
 	PROP_SECURITY_CERT_INFO,
 	PROP_SECURITY_CIPHER_TITLE,
@@ -190,12 +196,14 @@ EphyDialogProperty properties [] =
 	{ PROP_FORMS_FORM_TREEVIEW, "page_info_form_list", NULL, PT_NORMAL, NULL },
 
 	{ PROP_LINKS_LINK_TREEVIEW, "page_info_link_list", NULL, PT_NORMAL, NULL },
+	*/
 
-	{ PROP_IMAGES_IMAGE_TREEVIEW, "page_info_image_list",   NULL, PT_NORMAL, NULL },
-	{ PROP_IMAGES_IMAGE_BOX,      "page_info_image_box",    NULL, PT_NORMAL, NULL },
-	{ PROP_IMAGES_IMAGE_VPANED,   "page_info_image_vpaned", NULL, PT_NORMAL, NULL },
-	{ PROP_IMAGES_SAVE_BUTTON,    "page_info_image_save",   NULL, PT_NORMAL, NULL },
+	{ "page_info_image_list",	NULL, PT_NORMAL, 0 },
+	{ "page_info_image_box",	NULL, PT_NORMAL, 0 },
+	{ "page_info_image_vpaned",	NULL, PT_NORMAL, 0 },
+	{ "page_info_image_save",	NULL, PT_NORMAL, 0 },
 
+	/*
 	{ PROP_SECURITY_CERT_TITLE,     "page_info_security_title", NULL, PT_NORMAL, NULL },
 	{ PROP_SECURITY_CERT_INFO,      "page_info_security_info",  NULL, PT_NORMAL, NULL },
 	{ PROP_SECURITY_CIPHER_TITLE,   "page_info_cipher_title",   NULL, PT_NORMAL, NULL },
@@ -715,7 +723,6 @@ setup_link_treeview (PageInfoDialog *dialog)
 }
 */
 
-/*
 static GtkTreeView *
 setup_image_treeview (PageInfoDialog *dialog)
 {
@@ -726,13 +733,10 @@ setup_image_treeview (PageInfoDialog *dialog)
         GtkTreeViewColumn *column;
 	GtkTreeSelection *selection;
 
-	treeview = GTK_TREE_VIEW(galeon_dialog_get_control 
-				 (GALEON_DIALOG(dialog),
-				 PROP_IMAGES_IMAGE_TREEVIEW));
+	treeview = GTK_TREE_VIEW (ephy_dialog_get_control
+			(EPHY_DIALOG(dialog), "page_info_image_list"));
 	
-*/
         /* set tree model */
-/*
         liststore = gtk_list_store_new (5,
                                         G_TYPE_STRING,
                                         G_TYPE_STRING,
@@ -750,12 +754,14 @@ setup_image_treeview (PageInfoDialog *dialog)
 	g_signal_connect (selection, "changed",
 			  G_CALLBACK(images_treeview_selection_changed_cb),
 			  dialog);
+	/*
 	g_signal_connect (treeview, "button-press-event", 
 			  G_CALLBACK (image_treeview_button_pressed_cb), 
 			  dialog);
 	g_signal_connect (treeview, "popup-menu", 
 			  G_CALLBACK (treeview_onpopupmenu_cb),
 			  dialog);
+	*/
 	g_object_set_data (G_OBJECT (treeview), COLUMN_KEY, 
 			   GINT_TO_POINTER (COL_IMAGE_URL));
 
@@ -823,7 +829,6 @@ setup_image_treeview (PageInfoDialog *dialog)
 
 	return treeview;
 }
-*/
 
 static void
 page_info_set_text (PageInfoDialog *dialog,
@@ -965,7 +970,6 @@ setup_page_security (PageInfoDialog *dialog, EmbedPageProperties *props)
 }
 */
 
-/*
 static void
 setup_page_images_add_image(GtkTreeView *treeView, EmbedPageImage *image)
 {
@@ -985,29 +989,25 @@ setup_page_images_add_image(GtkTreeView *treeView, EmbedPageImage *image)
 			   COL_IMAGE_HEIGHT, image->height,
                             -1);
 }
-*/
 
-/*
 static void
-setup_page_images(PageInfoDialog *dialog, EmbedPageProperties *props)
+setup_page_images(PageInfoDialog *dialog, EphyEmbed *embed)
 {
-	GList *i;
+	GList *images, *i;
 	GtkTreeView *page_info_image_list = setup_image_treeview(dialog);
 	GtkWidget *paned;
 
-	for (i=props->images ; i ; i = i->next)
+	images = mozilla_get_images (embed);
+
+	for (i = images; i != NULL; i = g_list_next (i))
 	{
 		setup_page_images_add_image(page_info_image_list,
 					    (EmbedPageImage*)i->data);
 	}
 
-	paned = galeon_dialog_get_control(GALEON_DIALOG(dialog),
-					  PROP_IMAGES_IMAGE_VPANED);
-
-	gul_state_monitor_paned(paned, STATE_PAGE_INFO_IMAGE_PANED_SIZE,
-				STATE_PAGE_INFO_IMAGE_PANED_SIZE_DEFAULT);
+	g_list_foreach (images, (GFunc) mozilla_free_embed_page_image, NULL);
+	g_list_free (images);
 }
-*/
 
 /*
 static void
@@ -1245,10 +1245,10 @@ page_info_dialog_new (GtkWidget *window,
 						NULL));
 
 	setup_page_general (PAGE_INFO_DIALOG(dialog), embed);
+	setup_page_images (PAGE_INFO_DIALOG(dialog), embed);
 	/*
 	setup_page_forms (PAGE_INFO_DIALOG(dialog), props);
 	setup_page_links (PAGE_INFO_DIALOG(dialog), props);
-	setup_page_images (PAGE_INFO_DIALOG(dialog), props);
 	setup_page_security (PAGE_INFO_DIALOG(dialog), props);
 	*/
 
@@ -1297,47 +1297,44 @@ void
 page_info_dialog_imagesave_button_clicked_cb(GtkWidget *button,
 					     PageInfoDialog *dialog)
 {
-	/*
-	GaleonEmbed *embed;
-	GaleonEmbedPersist *persist;
-	char *location = NULL;
-	embed = dialog->priv->image_embed;
-	galeon_embed_get_location (embed, TRUE, FALSE, &location);
+	EphyEmbed *embed;
+	EphyEmbedPersist *persist;
 
-	persist = galeon_embed_persist_new (embed);
-	galeon_embed_persist_set_source (persist, location);
-	galeon_embed_persist_set_flags (persist, EMBED_PERSIST_ASK_DESTINATION);
-	galeon_embed_persist_set_fc_title (persist, _("Save Image As..."));
-	galeon_embed_persist_set_fc_parent (persist, 
-					    gtk_widget_get_toplevel (GTK_WIDGET(embed)));
-	galeon_embed_persist_save (persist);
+	persist = EPHY_EMBED_PERSIST
+		(ephy_embed_factory_new_object ("EphyEmbedPersist"));
+
+	embed = dialog->priv->image_embed;
+
+	ephy_embed_persist_set_embed (persist, embed);
+	ephy_embed_persist_set_flags (persist, EMBED_PERSIST_COPY_PAGE |
+					       EMBED_PERSIST_ASK_DESTINATION);
+	ephy_embed_persist_set_fc_title (persist, _("Save Image As..."));
+	ephy_embed_persist_set_fc_parent (persist, GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (embed))));
+
+	ephy_embed_persist_save (persist);
 
 	g_object_unref (persist);
-	g_free (location);
-	*/
 }
 
 static void
 images_treeview_selection_changed_cb(GtkTreeSelection *selection,
 				     PageInfoDialog *dialog)
 {
-	/*
 	GtkTreeModel *model;
 	GtkTreeIter iter;
 	GtkWidget *treeview;
-	GaleonEmbed *embed;
+	EphyEmbed *embed;
 	gchar *url;
 	gboolean has_selected;
 	GtkWidget *save_button;
 
-	treeview = galeon_dialog_get_control(GALEON_DIALOG(dialog),
-					     PROP_IMAGES_IMAGE_TREEVIEW);
+	treeview = ephy_dialog_get_control (EPHY_DIALOG(dialog),
+					    "page_info_image_list");
 
-	save_button = galeon_dialog_get_control(GALEON_DIALOG(dialog),
-						PROP_IMAGES_SAVE_BUTTON);
+	save_button = ephy_dialog_get_control (EPHY_DIALOG(dialog),
+					       "page_info_image_save");
 
 	embed = dialog->priv->image_embed;
-
 
 	has_selected = gtk_tree_selection_get_selected(selection,
 						       &model,
@@ -1347,46 +1344,40 @@ images_treeview_selection_changed_cb(GtkTreeSelection *selection,
 	{
 		gtk_tree_model_get(model, &iter,
 				   COL_IMAGE_URL, &url, -1);
-		galeon_embed_load_url(embed, url);
+		ephy_embed_load_url(embed, url);
 		g_free (url);
 	}
 	else
 	{
-		galeon_embed_load_url(embed, "about:blank");
+		ephy_embed_load_url(embed, "about:blank");
 	}
 
 	gtk_widget_set_sensitive (save_button, has_selected);
-	*/
 }
 
 void
-page_info_image_box_realize_cb(GtkContainer *box,
-			       PageInfoDialog *dialog)
+page_info_image_box_realize_cb (GtkContainer *box,
+				PageInfoDialog *dialog)
 {
-	/*
-	GaleonEmbed *embed;
+	EphyEmbed *embed;
 	GtkWidget *treeview;
-	GaleonEmbedShell *shell = galeon_shell_get_embed_shell(galeon_shell);
 
-        embed = galeon_embed_new(G_OBJECT(shell));
-	treeview = galeon_dialog_get_control(GALEON_DIALOG(dialog),
-					     PROP_IMAGES_IMAGE_TREEVIEW);
+	embed = EPHY_EMBED (ephy_embed_factory_new_object ("EphyEmbed"));
+	treeview = ephy_dialog_get_control (EPHY_DIALOG (dialog),
+					    "page_info_image_list");
 
 	dialog->priv->image_embed = embed;
-*/
 	/* When the image has loaded grab the focus for the treeview
 	 * again. This means that you can navigate in the treeview
 	 * using the arrow keys */
-/*
-	g_signal_connect_swapped (embed, "ge_net_stop",
+	g_signal_connect_swapped (embed, "net_stop",
 				  G_CALLBACK (gtk_widget_grab_focus),
 				  treeview);
 
 
-	galeon_embed_load_url(embed, "about:blank");
+	ephy_embed_load_url(embed, "about:blank");
 
 	gtk_widget_show(GTK_WIDGET(embed));
 
 	gtk_container_add(box, GTK_WIDGET(embed));
-	*/
 }

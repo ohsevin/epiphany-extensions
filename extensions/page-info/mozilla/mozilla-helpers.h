@@ -71,9 +71,22 @@ typedef struct
 //	GList *stylesheets; /* url, title */
 } EmbedPageProperties;
 
+typedef struct
+{
+	char *url;
+	char *alt;
+	char *title;
+	gint width;
+	gint height;
+} EmbedPageImage; 
+
 void			 mozilla_free_page_properties	(EmbedPageProperties *props);
 
 EmbedPageProperties	*mozilla_get_page_properties	(EphyEmbed *embed);
+
+void			 mozilla_free_embed_page_image	(EmbedPageImage *image);
+
+GList			*mozilla_get_images		(EphyEmbed *embed);
 
 G_END_DECLS
 
