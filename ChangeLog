@@ -1,5 +1,11 @@
 2004-11-21  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+
+	Fix a couple of warnings.
+
+2004-11-21  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/page-info/mozilla/Makefile.am:
 	* extensions/page-info/mozilla/mozilla-helpers.cpp:
 	* extensions/page-info/mozilla/mozilla-helpers.h:

@@ -321,16 +321,13 @@ process_input_node (nsIDOMHTMLInputElement *element,
 		    GHashTable *hash, 
 		    GList **ret)
 {
-	nsresult rv;
-	EmbedPageImage *image = NULL;
-
-	nsEmbedString tmp;
-	nsEmbedCString c_tmp;
-
 	/* We are searching for input of type image only */
+	nsresult rv;
+	nsEmbedString tmp;
 	rv = element->GetType (tmp);
 	if (NS_SUCCEEDED(rv))
 	{
+		nsEmbedCString c_tmp;
 		NS_UTF16ToCString (tmp, NS_CSTRING_ENCODING_UTF8, c_tmp);
 
 		/* Is it an image ? */
@@ -757,17 +754,23 @@ mozilla_walk_tree (nsIDOMDocument *doc,
 		nsCOMPtr<nsIDOMHTMLFrameElement> nodeAsFrame = do_QueryInterface(aNode);
 		if (nodeAsFrame)
 		{
-			nsCOMPtr<nsIDOMDocument> doc;
-			nodeAsFrame->GetContentDocument (getter_AddRefs (doc));
-			if (doc) mozilla_walk_tree (doc, encoding, page_info, img_hash, lnk_hash);
+			nsCOMPtr<nsIDOMDocument> frameDoc;
+			nodeAsFrame->GetContentDocument (getter_AddRefs (frameDoc));
+			if (frameDoc)
+			{
+				mozilla_walk_tree (frameDoc, encoding, page_info, img_hash, lnk_hash);
+			}
 		}
 
 		nsCOMPtr<nsIDOMHTMLIFrameElement> nodeAsIFrame = do_QueryInterface(aNode);
 		if (nodeAsIFrame)
 		{
-			nsCOMPtr<nsIDOMDocument> doc;
-			nodeAsIFrame->GetContentDocument (getter_AddRefs (doc));
-			if (doc) mozilla_walk_tree (doc, encoding, page_info, img_hash, lnk_hash);
+			nsCOMPtr<nsIDOMDocument> frameDoc;
+			nodeAsIFrame->GetContentDocument (getter_AddRefs (frameDoc));
+			if (frameDoc)
+			{
+				mozilla_walk_tree (frameDoc, encoding, page_info, img_hash, lnk_hash);
+			}
 		}
 
 		walker->NextNode(getter_AddRefs(aNode));
