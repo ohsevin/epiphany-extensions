@@ -147,15 +147,13 @@ AC_ARG_WITH([extensions],
 			  error-viewer, extensions-manager-ui, gestures, net-monitor,
 			  page-info, sample, sampls-mozilla, select-stylesheet,
 			  sidebar, smart-bookmarks, tab-groups, and tabsmenu,
-			  as well as the aliases default, all, and really-all])
+			  as well as the aliases default, all, and really-all],
+			  [extensions=$with_extensions],
+			  [extensions="default"])
 
 if test "x$with_extensions" = xyes; then
   extensions="default"
-else
-  extensions="$with_extensions"
 fi
-
-AC_MSG_RESULT($extensions)
 
 EXTENSIONS=
 IFS="${IFS=	}"; ephyext_save_ifs="$IFS"; IFS=","
@@ -176,6 +174,8 @@ IFS="$ephyext_save_ifs"
 
 AC_SUBST([ALL_EXTENSIONS])
 AC_SUBST([BUILD_EXTENSIONS],[`echo $EXTENSIONS | tr ' ' '\n' | sort | uniq | tr '\n' ' '`])
+
+AC_MSG_RESULT([$EXTENSIONS])
 
 dnl ****
 dnl DBUS
