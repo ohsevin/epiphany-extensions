@@ -1,3 +1,8 @@
+2005-02-01  Christian Persch  <chpe@cvs.gnome.org>
+
+	* POTFILES.in:
+	* POTFILES.skip: Updated.
+
 2005-01-30  Francisco Javier F. Serrador  <serrador@cvs.gnome.org>
 
 	* es.po: Updated Spanish translation.

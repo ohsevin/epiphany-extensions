@@ -10,6 +10,7 @@ extensions/sidebar/ephy-sidebar-embed.c
 extensions/sidebar/sidebar-commands.c
 
 #don't translate those, until we've reviewed the strings:
+extensions/actions/actions.xml.in.in
 extensions/adblock/adblock.xml.in.in
 extensions/bookmarks-tray/bookmarks-tray.xml.in.in
 extensions/certificates/certificates.xml.in.in

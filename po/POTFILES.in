@@ -1,5 +1,7 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
+extensions/actions/action-properties.glade
+extensions/actions/actions-editor.glade
 extensions/actions/ephy-actions-extension-editor-dialog.c
 extensions/actions/ephy-actions-extension-properties-dialog.c
 extensions/actions/ephy-actions-extension.c
