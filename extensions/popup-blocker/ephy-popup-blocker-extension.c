@@ -142,6 +142,22 @@ get_icon_for_embed (EphyEmbed *embed)
 }
 
 static void
+set_action_sensitive (EphyWindow *window,
+		      gboolean sensitive)
+{
+	GtkAction *action;
+
+	g_return_if_fail (EPHY_IS_WINDOW (window));
+
+	action = gtk_ui_manager_get_action (GTK_UI_MANAGER (window->ui_merge),
+					    "/menubar/ViewMenu/PopupBlocker");
+
+	g_return_if_fail (GTK_IS_ACTION (action));
+
+	g_object_set (G_OBJECT (action), "sensitive", sensitive, NULL);
+}
+
+static void
 update_action (EphyWindow *window, const char *address)
 {
 	EphyPermissionManager *permission_manager;
@@ -328,6 +344,7 @@ location_cb (EphyEmbed *embed,
 	g_return_if_fail (EPHY_IS_WINDOW (window));
 
 	update_action (window, address);
+	set_action_sensitive (window, FALSE);
 
 	popups = g_object_get_data (G_OBJECT (embed), "popup-blocker-list");
 	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (popups));
@@ -471,15 +488,37 @@ new_window_cb (EphyEmbed *embed,
 }
 
 static void
+load_status_cb (EphyTab *tab,
+		GParamSpec *pspec,
+		EphyWindow *window)
+{
+	gboolean sensitive = FALSE;
+
+	g_return_if_fail (EPHY_IS_TAB (tab));
+	g_return_if_fail (EPHY_IS_WINDOW (window));
+
+	LOG ("load_status_cb: tab %p, window %p\n", tab, window)
+
+	if (ephy_tab_get_load_status (tab) == FALSE)
+	{
+		sensitive = TRUE;
+	}
+
+	set_action_sensitive (window, sensitive);
+}
+
+static void
 tab_added_cb (GtkWidget *notebook,
 	      EphyTab *tab,
-	      EphyPopupBlockerExtension *extension)
+	      EphyWindow *window)
 {
 	EphyEmbed *embed;
 	EphyPopupBlockerList *popups;
 	EphyPopupBlockerIcon *icon;
 
 	g_return_if_fail (EPHY_IS_TAB (tab));
+
+	LOG ("tab_added_cb: tab %p, window %p\n", tab, window)
 
 	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
@@ -497,6 +536,8 @@ tab_added_cb (GtkWidget *notebook,
 
 	register_mozilla (embed);
 
+	g_signal_connect_after (tab, "notify::load-status",
+				G_CALLBACK (load_status_cb), window);
 	g_signal_connect (embed, "ge_location",
 			  G_CALLBACK (location_cb), tab);
 	g_signal_connect_object (embed, "ge_new_window",
@@ -507,12 +548,14 @@ tab_added_cb (GtkWidget *notebook,
 static void
 tab_removed_cb (GtkWidget *notebook,
 		EphyTab *tab,
-		EphyPopupBlockerExtension *extension)
+		EphyWindow *window)
 {
 	EphyEmbed *embed;
 	EphyPopupBlockerList *popups;
 
 	g_return_if_fail (EPHY_IS_TAB (tab));
+
+	LOG ("tab_removed_cb: tab %p, window %p\n", tab, window)
 
 	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
@@ -520,6 +563,8 @@ tab_removed_cb (GtkWidget *notebook,
 	popups = g_object_get_data (G_OBJECT (embed), "popup-blocker-list");
 	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (popups));
 
+	g_signal_handlers_disconnect_by_func
+		(tab, G_CALLBACK (load_status_cb), window);
 	g_signal_handlers_disconnect_by_func
 		(embed, G_CALLBACK (location_cb), tab);
 	g_signal_handlers_disconnect_by_func
@@ -530,20 +575,19 @@ static void
 switch_page_cb (GtkNotebook *notebook,
 		GtkNotebookPage *page,
 		guint page_num,
-		EphyPopupBlockerExtension *extension)
+		EphyWindow *window)
 {
-	GtkWidget *toplevel;
 	EphyEmbed *embed;
 	EphyPopupBlockerIcon *icon;
 	EphyPopupBlockerList *popups;
 
 	LOG ("switch_page_cb: page %x", page)
 
-	toplevel = gtk_widget_get_toplevel (GTK_WIDGET (notebook));
-	g_return_if_fail (EPHY_IS_WINDOW (toplevel));
-	if (GTK_WIDGET_REALIZED (toplevel) == FALSE) return; /* on startup */
+	g_return_if_fail (EPHY_IS_WINDOW (window));
 
-	embed = ephy_window_get_active_embed (EPHY_WINDOW (toplevel));
+	if (GTK_WIDGET_REALIZED (window) == FALSE) return; /* on startup */
+
+	embed = ephy_window_get_active_embed (window);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	icon = get_icon_for_embed (embed);
@@ -553,7 +597,7 @@ switch_page_cb (GtkNotebook *notebook,
 
 	ephy_popup_blocker_icon_set_popups (icon, popups);
 
-	update_action_without_address (EPHY_WINDOW (toplevel));
+	update_action_without_address (window);
 }
 
 static void
@@ -607,11 +651,11 @@ impl_attach_window (EphyExtension *extension,
 	notebook = ephy_window_get_notebook (window);
 
 	g_signal_connect_after (notebook, "tab_added",
-				G_CALLBACK (tab_added_cb), extension);
+				G_CALLBACK (tab_added_cb), window);
 	g_signal_connect_after (notebook, "tab_removed",
-				G_CALLBACK (tab_removed_cb), extension);
+				G_CALLBACK (tab_removed_cb), window);
 	g_signal_connect_after (notebook, "switch_page",
-				G_CALLBACK (switch_page_cb), extension);
+				G_CALLBACK (switch_page_cb), window);
 }
 
 static void
@@ -625,11 +669,11 @@ impl_detach_window (EphyExtension *extension,
 	notebook = ephy_window_get_notebook (window);
 
 	g_signal_handlers_disconnect_by_func
-		(notebook, G_CALLBACK (tab_added_cb), extension);
+		(notebook, G_CALLBACK (tab_added_cb), window);
 	g_signal_handlers_disconnect_by_func
-		(notebook, G_CALLBACK (tab_removed_cb), extension);
+		(notebook, G_CALLBACK (tab_removed_cb), window);
 	g_signal_handlers_disconnect_by_func
-		(notebook, G_CALLBACK (switch_page_cb), extension);
+		(notebook, G_CALLBACK (switch_page_cb), window);
 }
 
 static void
