@@ -107,10 +107,10 @@ dnl *******************************
 
 AC_MSG_CHECKING(extensions to build)
 
-all_extensions="dashboard,gestures,popup-blocker,sample,tabsmenu"
+all_extensions="dashboard,gestures,popup-blocker,sample,sample-mozilla,tabsmenu"
 all_useful_extensions="dashboard,gestures,popup-blocker,tabsmenu"
 default_extensions="gestures,popup-blocker,tabsmenu"
-mozilla_dependent_extensions=""
+mozilla_dependent_extensions="sample-mozilla"
 
 dnl due to an autoconf bug, commas in the first arg to
 dnl AC_HELP_STRING cause problems.
@@ -152,6 +152,7 @@ AM_CONDITIONAL(ENABLE_DASHBOARD_EXTENSION, echo "$extensions" | egrep '(^|,)dash
 AM_CONDITIONAL(ENABLE_GESTURES_EXTENSION, echo "$extensions" | egrep '(^|,)gestures($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_POPUP_BLOCKER_EXTENSION, echo "$extensions" | egrep '(^|,)popup-blocker($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SAMPLE_EXTENSION, echo "$extensions" | egrep '(^|,)sample($|,)' > /dev/null)
+AM_CONDITIONAL(ENABLE_SAMPLE_MOZILLA_EXTENSION, echo "$extensions" | egrep '(^|,)sample-mozilla($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_TABSMENU_EXTENSION, echo "$extensions" | egrep '(^|,)tabsmenu($|,)' > /dev/null)
 dnl AM_CONDITIONAL(ENABLE_SECURITY_EXTENSION, echo "$extensions" | egrep '(^|,)security($|,)' > /dev/null)
 dnl AM_CONDITIONAL(ENABLE_TOOLBAR_EXTRAS_EXTENSION, echo "$extensions" | egrep '(^|,)toolbar-extras($|,)' > /dev/null)
@@ -171,6 +172,29 @@ done
 IFS="$ephyext_save_ifs"
 
 if test x"$need_mozilla_check" = xyes; then
+
+PKG_CHECK_MODULES(MOZILLA_COMPONENT, mozilla-gtkmozembed)
+AC_SUBST(MOZILLA_COMPONENT_CFLAGS)
+AC_SUBST(MOZILLA_COMPONENT_LIBS)
+
+MOZILLA_INCLUDE_ROOT="`$PKG_CONFIG --variable=includedir mozilla-gtkmozembed`"
+AC_SUBST(MOZILLA_INCLUDE_ROOT)
+
+MOZILLA_HOME="`$PKG_CONFIG --variable=libdir mozilla-gtkmozembed`"
+AC_SUBST(MOZILLA_HOME)
+
+dnl whether to build with DEBUG defined
+AC_ARG_WITH(mozilla-debug,
+        [  --with-mozilla-debug        Use a debug mozilla build],
+        AM_CXXFLAGS="-DDEBUG $AM_CXXFLAGS",)
+
+AC_ARG_ENABLE(cpp-rtti,
+        [  --enable-cpp-rtti       Enable C++ RTTI (for cvs gcc)],,
+        enable_cpp_rtti=no)
+
+if test "x$enable_cpp_rtti" = "xno"; then
+  AM_CXXFLAGS="-fno-rtti $AM_CXXFLAGS"
+fi
 
 dnl This is from Mozilla's configure.in. They set almost all the config stuff
 dnl they need in mozilla-config.h Except for this compiler flag, which can't
@@ -280,6 +304,8 @@ extensions/dashboard/Makefile
 extensions/gestures/Makefile
 extensions/popup-blocker/Makefile
 extensions/sample/Makefile
+extensions/sample-mozilla/Makefile
+extensions/sample-mozilla/mozilla/Makefile
 extensions/tabsmenu/Makefile
 po/Makefile.in
 ],

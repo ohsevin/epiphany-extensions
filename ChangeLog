@@ -1,5 +1,27 @@
 2004-01-15  Christian Persch  <chpe@cvs.gnome.org>
 
+	* configure.ac:
+	* extensions/Makefile.am:
+	* extensions/sample-mozilla/.cvsignore:
+	* extensions/sample-mozilla/Makefile.am:
+	* extensions/sample-mozilla/ephy-sample2-extension.c:
+	(ephy_sample2_extension_get_type),
+	(ephy_sample2_extension_register_type),
+	(ephy_sample2_extension_init), (ephy_sample2_extension_finalize),
+	(dom_mouse_down_cb), (tab_added_cb), (tab_removed_cb),
+	(impl_attach_window), (impl_detach_window),
+	(ephy_sample2_extension_iface_init),
+	(ephy_sample2_extension_class_init):
+	* extensions/sample-mozilla/ephy-sample2-extension.h:
+	* extensions/sample-mozilla/mozilla/.cvsignore:
+	* extensions/sample-mozilla/mozilla/mozilla-sample.cpp:
+	* extensions/sample-mozilla/mozilla/mozilla-sample.h:
+	* extensions/sample-mozilla/sample-mozilla.c: (register_module):
+
+	A sample extension which uses mozilla apis.
+
+2004-01-15  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/dashboard/dashboard-frontend-xmlwriter.c:
 	* extensions/dashboard/dashboard-frontend-xmlwriter.h:
 

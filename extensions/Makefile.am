@@ -16,6 +16,10 @@ if ENABLE_SAMPLE_EXTENSION
 SUBDIRS += sample
 endif
 
+if ENABLE_SAMPLE_MOZILLA_EXTENSION
+SUBDIRS += sample-mozilla
+endif
+
 if ENABLE_TABSMENU_EXTENSION
 SUBDIRS += tabsmenu
 endif
