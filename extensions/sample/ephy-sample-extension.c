@@ -45,14 +45,14 @@ enum
 	PROP_0
 };
 
-static GObjectClass *parent_class = NULL;
+static GObjectClass *sample_extension_parent_class = NULL;
 
-GType type = 0;
+static GType sample_extension_type = 0;
 
 GType
 ephy_sample_extension_get_type (void)
 {
-	return type;
+	return sample_extension_type;
 }
 
 GType
@@ -78,16 +78,17 @@ ephy_sample_extension_register_type (GTypeModule *module)
 		NULL
 	};
 
-	type = g_type_module_register_type (module,
-					    G_TYPE_OBJECT,
-					    "EphySampleExtension",
-					    &our_info, 0);
+	sample_extension_type =
+		g_type_module_register_type (module,
+					     G_TYPE_OBJECT,
+					     "EphySampleExtension",
+					     &our_info, 0);
 
 	g_type_module_add_interface (module,
-				     type,
+				     sample_extension_type,
 				     EPHY_TYPE_EXTENSION,
 				     &extension_info);
-	return type;
+	return sample_extension_type;
 }
 
 static void
@@ -106,7 +107,7 @@ ephy_sample_extension_finalize (GObject *object)
 */
 	LOG ("EphySampleExtension finalising")
 
-	G_OBJECT_CLASS (parent_class)->finalize (object);
+	G_OBJECT_CLASS (sample_extension_parent_class)->finalize (object);
 }
 
 static void
@@ -167,7 +168,7 @@ ephy_sample_extension_class_init (EphySampleExtensionClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-	parent_class = g_type_class_peek_parent (klass);
+	sample_extension_parent_class = g_type_class_peek_parent (klass);
 
 	object_class->finalize = ephy_sample_extension_finalize;
 	object_class->get_property = ephy_sample_extension_get_property;

@@ -10,7 +10,8 @@ How to choose which extensions to build:
 
 where ext1, ext2 ... are one of the following:
 
-gestures		Gestures extensions
+gestures		Gestures extension
+popup-blocker		Popup blocker extension
 tabsmenu		Tabs Menu extension
 all			All of the above extensions
 sample			Sample extensions [not very useful]

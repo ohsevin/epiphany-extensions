@@ -25,6 +25,8 @@
 
 #include "ephy-gestures-extension.h"
 #include "ephy-gesture.h"
+
+#include "ephy-file-helpers.h"
 #include "ephy-debug.h"
 
 #include <epiphany/ephy-embed.h>
@@ -150,18 +152,15 @@ load_one_gesture (EphyGesturesExtension *extension,
 }
 
 static void
-load_gestures (EphyGesturesExtension *extension)
+load_gestures (EphyGesturesExtension *extension,
+	       const char *filename)
 {
-	char *filename;
 	xmlDocPtr doc;
 	xmlNodePtr root, child;
 	xmlChar *tmp;
 
-	filename = g_build_filename (SHARE_DIR, EPHY_GESTURES_XML_FILE, NULL);
-
 	if (g_file_test (filename, G_FILE_TEST_EXISTS) == FALSE)
 	{
-		g_free (filename);
 		return;
 	}
 
@@ -170,14 +169,14 @@ load_gestures (EphyGesturesExtension *extension)
 	{
 		g_warning ("Failed to load the gestures definitions from %s\n",
 			   filename);
-		g_free (filename);
 		return;
 	}
 
 	root = xmlDocGetRootElement (doc);
 	if (root == NULL || strcmp (root->name, EPHY_GESTURES_XML_ROOT) != 0)
 	{
-		g_warning ("Gestures definitions file %s has wrong format %s\n",
+		g_warning ("Gestures definitions file %s has wrong format '%s'"
+		           "(expected " EPHY_GESTURES_XML_ROOT ")\n",
 			   filename, root ? (char*) root->name : "(unknown)");
 		goto out;
 	}
@@ -185,7 +184,8 @@ load_gestures (EphyGesturesExtension *extension)
 	tmp = xmlGetProp (root, "version");
 	if (tmp  == NULL || strcmp (tmp, EPHY_GESTURES_XML_VERSION) != 0)
 	{
-		g_warning ("Gestures definitions file %s has wrong format version %s\n",
+		g_warning ("Gestures definitions file %s has wrong format version %s"
+			   "(expected " EPHY_GESTURES_XML_VERSION ")\n",
 			   filename, tmp ? (char*) tmp : "(unknown)");
 		goto out;
 	}
@@ -202,24 +202,32 @@ out:
 	xmlFreeDoc (doc);
 
 	xmlFree (tmp);
-	g_free (filename);
 }
 
 static void
 ephy_gestures_extension_init (EphyGesturesExtension *extension)
 {
+	char *filename;
+
 	extension->priv = EPHY_GESTURES_EXTENSION_GET_PRIVATE (extension);
 
 	extension->priv->gestures =
 		g_hash_table_new_full (g_str_hash, g_str_equal, g_free, g_free);
 
-	load_gestures (extension);
+	/* load the system gestures definitions */
+	filename = g_build_filename (SHARE_DIR, EPHY_GESTURES_XML_FILE, NULL);
+	load_gestures (extension, filename);
+	g_free (filename);
+
+	/* now load the user's gestures definitions */
+	filename = g_build_filename (ephy_dot_dir (), EPHY_GESTURES_XML_FILE, NULL);
+	load_gestures (extension, filename);
+	g_free (filename);
 }
 
 static void
 ephy_gestures_extension_finalize (GObject *object)
 {
-
 	EphyGesturesExtension *extension = EPHY_GESTURES_EXTENSION (object);
 
 	g_hash_table_destroy (extension->priv->gestures);

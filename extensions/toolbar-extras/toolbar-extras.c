@@ -19,32 +19,18 @@
  *  $Id$
  */
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
-
-#include "ephy-tabs-menu-extension.h"
-#include "ephy-tab-move-menu.h"
-
+#include "ephy-toolbar-extras-extension.h"
+#include "ephy-multi-smart-action.h"
 #include "ephy-debug.h"
 
 #include <gmodule.h>
-#include <glib/gi18n-lib.h>
 
 G_MODULE_EXPORT GType
 register_module (GTypeModule *module)
 {
-	GType extension_type;
+	LOG ("Registering EphyToolbarExtrasExtension")
 
-	ephy_tab_move_menu_register_type (module);
+	ephy_multi_smart_action_register_type (module);
 
-	extension_type = ephy_tabs_menu_extension_register_type (module);
-	
-#ifdef ENABLE_NLS
-       /* Initialise the i18n stuff */
-        bindtextdomain (GETTEXT_PACKAGE, EPHY_PLUGINS_LOCALEDIR);
-        bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");	
-#endif /* ENABLE_NLS */
-
-	return extension_type;
+	return ephy_toolbar_extras_extension_register_type (module);
 }

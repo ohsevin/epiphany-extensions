@@ -1,5 +1,4 @@
 /*
- *  Copyright (C) 2003 David Bordoley
  *  Copyright (C) 2003 Christian Persch
  *
  *  This program is free software; you can redistribute it and/or modify
@@ -46,8 +45,6 @@ struct _EphyTabsMenuExtensionClass
 struct _EphyTabsMenuExtension
 {
 	GObject parent_object;
-
-	EphyTabsMenuExtensionPrivate *priv;
 };
 
 GType	ephy_tabs_menu_extension_get_type	(void);

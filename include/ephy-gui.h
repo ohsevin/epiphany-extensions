@@ -1,6 +1,5 @@
 /*
- *  Copyright (C) 2003 Marco Pesenti Gritti
- *  Copyright (C) 2003 Christian Persch
+ *  Copyright (C) 2002 Marco Pesenti Gritti
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -15,36 +14,30 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
- *
- *  $Id$
  */
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
+#ifndef EPHY_GUI_H
+#define EPHY_GUI_H
+
+#include <gtk/gtk.h>
+#include <gdk-pixbuf/gdk-pixbuf.h>
+#include <gdk/gdkkeysyms.h>
+
+G_BEGIN_DECLS
+
+void		ephy_gui_menu_position_under_widget	 (GtkMenu   *menu,
+							  gint      *x,
+							  gint      *y,
+							  gboolean  *push_in,
+							  gpointer  user_data);
+
+gboolean	ephy_gui_confirm_overwrite_file	         (GtkWidget *parent,
+							  const char *filename);
+
+void		ephy_gui_help				 (GtkWindow *parent,
+							  const char *file_name,
+							  const char *link_id);
+
+G_END_DECLS
+
 #endif
-
-#include "ephy-tabs-menu-extension.h"
-#include "ephy-tab-move-menu.h"
-
-#include "ephy-debug.h"
-
-#include <gmodule.h>
-#include <glib/gi18n-lib.h>
-
-G_MODULE_EXPORT GType
-register_module (GTypeModule *module)
-{
-	GType extension_type;
-
-	ephy_tab_move_menu_register_type (module);
-
-	extension_type = ephy_tabs_menu_extension_register_type (module);
-	
-#ifdef ENABLE_NLS
-       /* Initialise the i18n stuff */
-        bindtextdomain (GETTEXT_PACKAGE, EPHY_PLUGINS_LOCALEDIR);
-        bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");	
-#endif /* ENABLE_NLS */
-
-	return extension_type;
-}

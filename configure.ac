@@ -18,7 +18,7 @@ dnl $Id$
 
 AC_PREREQ(2.52)
 
-AC_INIT(epiphany-extensions, 0.5.0, [no bug tracker yet])
+AC_INIT(epiphany-extensions, 0.6, [http://lists.gnome.org/mailman/listinfo/epiphany-list])
 
 AC_CONFIG_SRCDIR(extensions)
 AM_CONFIG_HEADER(config.h)
@@ -63,10 +63,10 @@ dnl ********************************
 dnl pkg config checks
 dnl ********************************
 
-EPIPHANY_REQUIRED=1.1.0
+EPIPHANY_REQUIRED=1.1.2
 LIBXML_REQUIRED=2.6.0
-LIBGLIB_REQUIRED=2.3.0
-LIBGTK_REQUIRED=2.3.0
+LIBGLIB_REQUIRED=2.3.1
+LIBGTK_REQUIRED=2.3.1
 
 AC_SUBST(EPIPHANY_REQUIRED)
 AC_SUBST(LIBXML_REQUIRED)
@@ -107,9 +107,9 @@ dnl *******************************
 
 AC_MSG_CHECKING(extensions to build)
 
-all_extensions="sample,gestures,tabsmenu"
-all_useful_extensions="gestures,tabsmenu"
-default_extensions="gestures"
+all_extensions="sample,gestures,popup-blocker,tabsmenu"
+all_useful_extensions="gestures,popup-blocker,tabsmenu"
+default_extensions="gestures,popup-blocker,tabsmenu"
 
 dnl due to an autoconf bug, commas in the first arg to
 dnl AC_HELP_STRING cause problems.
@@ -118,7 +118,7 @@ dnl AC_HELP_STRING([--with-extensions=ext1,ext2,...],[build the specified extens
 AC_ARG_WITH(extensions,
 [  --with-extensions=extension1,extension2,...
 			  build the specified extensions. Available:
-			  gestures, sample, tabsmenu, all])
+			  gestures, popup-blocker, sample, tabsmenu, all])
 
 dnl If no extensions specified, build the default set
 if test "x$with_extensions" = xyes; then
@@ -149,8 +149,9 @@ IFS="$ephyext_save_ifs"
 
 AM_CONDITIONAL(ENABLE_GESTURES_EXTENSION, echo "$extensions" | egrep '(^|,)gestures($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SAMPLE_EXTENSION, echo "$extensions" | egrep '(^|,)sample($|,)' > /dev/null)
-dnl tabsmenu extension isn't functional atm
-dnl AM_CONDITIONAL(ENABLE_TABSMENU_EXTENSION, echo "$extensions" | egrep '(^|,)tabsmenu($|,)' > /dev/null)
+AM_CONDITIONAL(ENABLE_POPUP_BLOCKER_EXTENSION, echo "$extensions" | egrep '(^|,)popup-blocker($|,)' > /dev/null)
+AM_CONDITIONAL(ENABLE_TABSMENU_EXTENSION, echo "$extensions" | egrep '(^|,)tabsmenu($|,)' > /dev/null)
+dnl AM_CONDITIONAL(ENABLE_TOOLBAR_EXTRAS_EXTENSION, echo "$extensions" | egrep '(^|,)toolbar-extras($|,)' > /dev/null)
 
 dnl *******************************
 dnl Misc things
@@ -187,6 +188,7 @@ extensions/Makefile
 extensions/sample/Makefile
 extensions/gestures/Makefile
 extensions/tabsmenu/Makefile
+extensions/popup-blocker/Makefile
 po/Makefile.in
 ],
 [])

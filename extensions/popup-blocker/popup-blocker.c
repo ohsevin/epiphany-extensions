@@ -1,6 +1,7 @@
 /*
  *  Copyright (C) 2003 Marco Pesenti Gritti
  *  Copyright (C) 2003 Christian Persch
+ *  Copyright (C) 2003 Adam Hooper
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -19,13 +20,7 @@
  *  $Id$
  */
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
-
-#include "ephy-tabs-menu-extension.h"
-#include "ephy-tab-move-menu.h"
-
+#include "ephy-popup-blocker-extension.h"
 #include "ephy-debug.h"
 
 #include <gmodule.h>
@@ -34,17 +29,14 @@
 G_MODULE_EXPORT GType
 register_module (GTypeModule *module)
 {
-	GType extension_type;
+	LOG ("Registering EphyPopupBlockerExtension")
 
-	ephy_tab_move_menu_register_type (module);
-
-	extension_type = ephy_tabs_menu_extension_register_type (module);
-	
 #ifdef ENABLE_NLS
-       /* Initialise the i18n stuff */
-        bindtextdomain (GETTEXT_PACKAGE, EPHY_PLUGINS_LOCALEDIR);
-        bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");	
+	/* Initialise the i18n stuff */
+	bindtextdomain (GETTEXT_PACKAGE, EPHY_EXTENSIONS_LOCALEDIR);
+	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 #endif /* ENABLE_NLS */
 
-	return extension_type;
+	return ephy_popup_blocker_extension_register_type (module);
 }
+

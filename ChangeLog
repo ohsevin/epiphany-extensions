@@ -1,6 +1,237 @@
+2004-01-02  Christian Persch  <chpe@cvs.gnome.org>
+
+	Merge outstanding cvs updates from savannah.
+
 2004-01-02  Christian Rose  <menthos@menthos.com>
 
 	* configure.ac: Added "sv" to ALL_LINGUAS.
+
+2004-01-02  Adam Hooper  <adamh@densi.com>
+
+	* doc/writing-epiphany-extensions.xml:
+
+	s/return type/return foo_extension_type: same compile error as I fixed
+	earlier today in the sample extension.
+
+	* extensions/popup-blocker/.cvsignore:
+
+	Added .cvsignore
+
+2004-01-01  Adam Hooper  <adamh@densi.com>
+
+	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
+	(update_action), (update_all_actions):
+
+	Patch by Lee Willis: move LOG ()'s after variable declarations.
+
+2004-01-01  Adam Hooper  <adamh@densi.com>
+
+	* doc/writing-epiphany-extensions.xml:
+
+	<chpe> tab_added_cb (GtkWidget *notebook, GtkWidget *child,
+	EphyFooExtension *extension)
+	<chpe> you could simply say "EphyEmbed *embed" instead of "GtkWidget
+	*child"
+
+2004-01-01  Adam Hooper  <adamh@densi.com>
+
+	* doc/writing-epiphany-extensions.xml:
+
+	Fix typo: remove a const which gave a compile warning (and would break any
+	extension using get_property).
+
+2004-01-01  Adam Hooper  <adamh@densi.com>
+
+	* extensions/sample/ephy-sample-extension.c:
+	(ephy_sample_extension_register_type):
+
+	Fixed typo which prevented it from compiling.
+
+2004-01-01  Adam Hooper  <adamh@densi.com>
+
+	* doc/writing-epiphany-extensions.xml:
+
+	attach_window and detach_window argument names inconsistency fixed.
+
+2004-01-01  Adam Hooper  <adamh@densi.com>
+
+	* doc/writing-epiphany-extensions.xml:
+
+	Revised according to chpe's and lwillis's suggestions on IRC.
+	Basically, typo fixes and a new translations section.
+
+	* extensions/popup-blocker/Makefile.am:
+	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
+	* extensions/popup-blocker/popup-blocker.c: (register_module):
+
+	Now that I understand translation, I've fixed it here.
+
+2004-01-01  Adam Hooper  <adamh@densi.com>
+
+	* doc/writing-epiphany-extensions.xml:
+
+	Added a "Writing Epiphany Extensions" HOWTO. It's not perfect (I don't
+	think).
+
+2003-12-30  Christian Persch  <chpe@cvs.gnome.org>
+
+	* include/Makefile.am:
+
+	Added files to EXTRA_DIST.
+
+2003-12-30  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/gestures/ephy-gestures-extension.c: (load_gestures),
+	(ephy_gestures_extension_init), (ephy_gestures_extension_finalize):
+
+	Load gestures definitions from both system directory and the user's
+	profile.
+
+2003-12-30  Christian Persch  <chpe@cvs.gnome.org>
+
+	* Makefile.am:
+	* autogen.sh:
+	* configure.ac:
+	* extensions/Makefile.am:
+	* po/POTFILES.in:
+	* po/de.po:
+	* po/en_GB.po:
+	* po/fr.po:
+	* po/ja.po:
+
+	Release 0.6.
+
+2003-12-28  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
+	Set epiphany version dependency to 1.1.2.
+
+2003-12-27  Adam Hooper <adamh@densi.com>
+
+	* include/Makefile.am:
+
+	Added eel-gconf-extensions.h to EXTRA_DIST
+
+	* README:
+	* configure.ac:
+	* po/POTFILES.in:
+	* extensions/Makefile.am:
+	* extensions/popup-blocker/.cvsignore:
+	* extensions/popup-blocker/Makefile.am
+	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
+	* extensions/popup-blocker/ephy-popup-blocker-extension.h:
+	* extensions/popup-blocker/popup-blocker.c:
+
+	Added popup blocker extension. MAY NOT WORK -- I edited over a 56k
+	modem and while it compiles, I can't test it.
+
+2003-12-26  Christian Persch  <chpe@cvs.gnome.org>
+
+	* po/POTFILES.in:
+	* po/POTFILES.skip:
+
+	Updated.
+
+2003-12-26  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/Makefile.am:
+	* extensions/toolbar-extras/.cvsignore:
+	* extensions/toolbar-extras/Makefile.am:
+	* extensions/toolbar-extras/ephy-multi-smart-action.c:
+	(ephy_multi_smart_action_get_type),
+	(ephy_multi_smart_action_register_type), (menu_activate_find_cb),
+	(menu_case_sensitive_toggled_cb),
+	(menu_clean_after_use_toggled_cb), (menu_activate_node_cb),
+	(sort_bookmarks), (build_menu), (create_tool_item),
+	(create_menu_item), (sync_smartbookmark_id), (sync_mode),
+	(create_menu_proxy), (menu_deactivate_cb), (button_toggled_cb),
+	(button_pressed_cb), (entry_activate_cb), (connect_proxy),
+	(disconnect_proxy), (smartbookmarks_child_changed_cb),
+	(smartbookmarks_child_removed_cb), (ephy_multi_smart_action_init),
+	(ephy_multi_smart_action_finalize),
+	(ephy_multi_smart_action_set_mode),
+	(ephy_multi_smart_action_set_id), (smart_address_notifier),
+	(mode_notifier), (clean_after_use_notifier),
+	(case_sensitive_notifier), (ephy_multi_smart_action_set_window),
+	(ephy_multi_smart_action_set_property),
+	(ephy_multi_smart_action_get_property),
+	(ephy_multi_smart_action_class_init):
+	* extensions/toolbar-extras/ephy-multi-smart-action.h:
+	* extensions/toolbar-extras/ephy-toolbar-extras-extension.c:
+	(ephy_toolbar_extras_extension_get_type),
+	(ephy_toolbar_extras_extension_register_type),
+	(ephy_toolbar_extras_extension_init),
+	(ephy_toolbar_extras_extension_finalize), (find_name),
+	(find_action_group), (action_request_cb), (impl_attach_window),
+	(impl_detach_window), (ephy_toolbar_extras_extension_set_property),
+	(ephy_toolbar_extras_extension_get_property),
+	(ephy_toolbar_extras_extension_iface_init),
+	(ephy_toolbar_extras_extension_class_init):
+	* extensions/toolbar-extras/ephy-toolbar-extras-extension.h:
+	* extensions/toolbar-extras/toolbar-extras.c: (register_module):
+
+	New toolbar-extras extension. DOES NOT WORK YET -- needs modifications to
+	epiphany.
+
+2003-12-25  Christian Persch  <chpe@cvs.gnome.org>
+
+	* include/ephy-favicon-cache.h:
+	* include/ephy-gui.h:
+
+	Added.
+
+	* include/ephy-string.h:
+
+	Synchronised with epiphany.
+
+2003-12-25  Christian Persch  <chpe@cvs.ngome.org>
+
+	* include/egg-toolbars-model.h:
+
+	Added.
+
+2003-12-25  Christian Persch  <chpe@cvs.gnome.org>
+
+	* include/egg-editable-toolbar.h:
+
+	Added.
+
+2003-12-25  Christian Persch  <chpe@cvs.gnome.org>
+
+	* include/eel-gconf-extensions.h:
+
+	Added.
+
+2003-12-24  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/Makefile.am:
+
+	Enable tabsmenu extension again.
+
+	* extensions/tabsmenu/Makefile.am:
+	* extensions/tabsmenu/ephy-tabs-menu-extension.c:
+	(ephy_tabs_menu_extension_get_type),
+	(ephy_tabs_menu_extension_register_type), (impl_attach_window),
+	(impl_detach_window), (ephy_tabs_menu_extension_init),
+	(ephy_tabs_menu_extension_finalize),
+	(ephy_tabs_menu_extension_class_init):
+	* extensions/tabsmenu/ephy-tabs-menu-extension.h:
+	* extensions/tabsmenu/ephy-window-action.c:
+	* extensions/tabsmenu/ephy-window-action.h:
+	* extensions/tabsmenu/tabs-menu.c: (register_module):
+
+	"Move Tab To Window" tabs menu extension completely rewritten.
+
+2003-12-23  Christian Persch  <chpe@cvs.gnome.org>
+
+	* Verified the integrity of the code.
+
+2003-12-23  Christian Persch  <chpe@cvs.gnome.org>
+
+	Test commit.
 
 2003-11-20  Adam Hooper  <adamh@densi.com>
 	extensions/gestures/ephy-gestures-extension.c (gesture_performed_cb):

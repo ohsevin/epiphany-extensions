@@ -16,6 +16,6 @@ extension_LTLIBRARIES = libtabsmenuextension.la
 libtabsmenuextension_la_SOURCES = \
 	ephy-tabs-menu-extension.c	\
 	ephy-tabs-menu-extension.h	\
-	ephy-window-action.c		\
-	ephy-window-action.h		\
+	ephy-tab-move-menu.c		\
+	ephy-tab-move-menu.h		\
 	tabs-menu.c
