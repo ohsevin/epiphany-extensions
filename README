@@ -17,7 +17,7 @@ gestures		Mouse gestures
 page-info		Show information about the current page
 select-stylesheet	Switch between alternate stylesheets
 smart-bookmarks		Right-click on selected text to search the Web for it
-tabs-groups		Open new tabs to the right of the current one
+tab-groups		Open new tabs to the right of the current one
 tabsmenu		Tabs menu entries to move tabs across windows
 
 all			All of the above extensions
