@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-27 01:00+0100\n"
-"PO-Revision-Date: 2004-02-27 01:04+0100\n"
+"POT-Creation-Date: 2004-02-28 19:55+0100\n"
+"PO-Revision-Date: 2004-02-28 19:57+0100\n"
 "Last-Translator: Francisco Javier F. Serrador <serrador@cvs.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -80,8 +80,8 @@ msgstr "Visor de errores"
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Se encontró %d enlace inválido"
+msgstr[1] "Se encontraron %d enlaces inválidos"
 
 #. Don't bother looking for source lines -- they're not there
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
@@ -124,8 +124,8 @@ msgstr ""
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Se encontró %d error"
+msgstr[1] "Se encontraron %d errores"
 
 #: extensions/error-viewer/sgml-validator.c:169
 #, c-format
@@ -146,7 +146,9 @@ msgstr ""
 msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
-msgstr "Doctype es XHTML pero el tipo de contenido es text/html. Use application/xhtml+xml en su lugar."
+msgstr ""
+"Doctype es XHTML pero el tipo de contenido es text/html. Use application/"
+"xhtml+xml en su lugar."
 
 #: extensions/error-viewer/sgml-validator.c:243
 #, c-format
@@ -208,3 +210,4 @@ msgstr "Mueve la solapa actual a una ventana diferente"
 #~ "Aviso HTML en %s\n"
 #~ "Doctype es XHTML pero el tipo de contenido es text/html.  Use application/"
 #~ "xhtml+xml en su lugar."
+
