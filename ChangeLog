@@ -1,5 +1,11 @@
 2004-02-21  Christian Persch  <chpe@cvs.gnome.org>
 
+	* configure.ac:
+
+	Depend on epiphany >= 1.1.10.
+
+2004-02-21  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/certificates/ephy-certificates-extension.c:
 	(ephy_certificates_extension_finalize),
 	(cert_manager_visibility_cb), (manage_certificates_cb),
