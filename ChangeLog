@@ -1,5 +1,13 @@
 2004-09-12  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/page-info/page-info-dialog.c:
+	(page_info_image_box_realize_cb), (links_info_page_construct),
+	(page_info_dialog_finalize):
+
+	Misc. cleanup. Free the info pages in finalize.
+
+2004-09-12  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/page-info/page-info-dialog.c: (images_save_image_cb),
 	(images_info_page_construct):
 

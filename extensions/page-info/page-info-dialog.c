@@ -792,6 +792,7 @@ page_info_image_box_realize_cb (GtkContainer *box,
 
 	page->embed = embed = EPHY_EMBED (ephy_embed_factory_new_object ("EphyEmbed"));
 
+	/* FIXME: this doesn't seem to work!? */
 	/* When the image has loaded grab the focus for the treeview
 	 * again. This means that you can navigate in the treeview
 	 * using the arrow keys */
@@ -1054,8 +1055,7 @@ links_info_page_construct (InfoPage *ipage)
 
 	gtk_tree_view_set_headers_visible (treeview, TRUE);
 	selection = gtk_tree_view_get_selection (treeview);
-	gtk_tree_selection_set_mode (selection,
-				     GTK_SELECTION_SINGLE);
+	gtk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
 
 	renderer = gtk_cell_renderer_text_new ();
 	gtk_tree_view_insert_column_with_attributes (treeview,
@@ -1378,8 +1378,14 @@ static void
 page_info_dialog_finalize (GObject *object)
 {
 	PageInfoDialog *dialog = PAGE_INFO_DIALOG (object);
+	int i;
 
 	LOG ("PageInfoDialog finalizing")
+
+	for (i = GENERAL_PAGE; i < LAST_PAGE; i++)
+	{
+		g_free (dialog->priv->pages[i]);
+	}
 
 	G_OBJECT_CLASS(parent_class)->finalize (object);
 }
