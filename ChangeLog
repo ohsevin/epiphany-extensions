@@ -2,6 +2,12 @@
 
 	* configure.ac:
 
+	Recognise mozilla 1.8a1 and 1.8a2.
+
+2004-05-29  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
 	Version 0.9.1.
 	Depend on Epiphany >= 1.2.6 because of the fix for bug #142078.
 
