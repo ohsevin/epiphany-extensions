@@ -15,6 +15,7 @@ INCLUDES = \
 	-I$(MOZILLA_INCLUDE_ROOT)/necko			\
 	-I$(MOZILLA_INCLUDE_ROOT)/layout		\
 	-I$(MOZILLA_INCLUDE_ROOT)/gfx			\
+	-I$(MOZILLA_INCLUDE_ROOT)/string		\
 	$(EPIPHANY_DEPENDENCY_CFLAGS)			\
 	-DSHARE_DIR=\"$(pkgdatadir)\"			\
 	-include $(MOZILLA_INCLUDE_ROOT)/mozilla-config.h
