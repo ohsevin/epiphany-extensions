@@ -290,6 +290,8 @@ fi
 dnl Changed in 1.8a1 and again in 1.8a3 to its present form (variant 2);
 dnl variant 1 is on 1.7 branch. Aviary branch also has variant 2.
 
+CXXFLAGS="$_SAVE_CXXFLAGS $AM_CXXFLAGS -I$MOZILLA_INCLUDE_ROOT `pkg-config --cflags $MOZILLA-xpcom`"
+
 AC_MSG_CHECKING([for nsIContentPolicy API])
 
 AC_COMPILE_IFELSE(

@@ -24,8 +24,6 @@
 
 #include "ad-blocker.h"
 
-#include "mozilla-version.h"
-
 #include <nsEmbedString.h>
 #include <nsIURI.h>
 
