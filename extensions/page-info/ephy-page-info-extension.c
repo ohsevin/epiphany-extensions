@@ -125,7 +125,7 @@ ephy_page_info_extension_init (EphyPageInfoExtension *extension)
 static void
 ephy_page_info_extension_finalize (GObject *object)
 {
-	EphyPageInfoExtension *extension = EPHY_PAGE_INFO_EXTENSION (object);
+//	EphyPageInfoExtension *extension = EPHY_PAGE_INFO_EXTENSION (object);
 
 	LOG ("EphyPageInfoExtension finalizing")
 

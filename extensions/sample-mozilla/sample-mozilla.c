@@ -19,6 +19,10 @@
  *  $Id$
  */
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 #include "ephy-sample2-extension.h"
 #include "ephy-debug.h"
 

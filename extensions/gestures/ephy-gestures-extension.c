@@ -41,6 +41,8 @@
 #include <gmodule.h>
 #include <libxml/tree.h>
 
+#include <string.h>
+
 #define EPHY_GESTURES_EXTENSION_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_GESTURES_EXTENSION, EphyGesturesExtensionPrivate))
 
 struct EphyGesturesExtensionPrivate
@@ -157,7 +159,7 @@ load_gestures (EphyGesturesExtension *extension,
 {
 	xmlDocPtr doc;
 	xmlNodePtr root, child;
-	xmlChar *tmp;
+	xmlChar *tmp = NULL;
 
 	if (g_file_test (filename, G_FILE_TEST_EXISTS) == FALSE)
 	{
@@ -282,8 +284,7 @@ gesture_performed_cb (EphyGesture *gesture,
 	else
 	{
 		GtkUIManager *manager;
-		GtkAction *action = NULL;
-		GList *action_groups, *l;
+		GtkAction *action;
 		
 		manager = GTK_UI_MANAGER (window->ui_merge);
 		
@@ -299,12 +300,11 @@ gesture_performed_cb (EphyGesture *gesture,
 	}
 }
 
-static gint
+static gboolean
 dom_mouse_down_cb (EphyEmbed *embed,
 		   EphyEmbedEvent *event,
 		   EphyGesturesExtension *extension)
 {
-	EphyTab *tab;
         EmbedEventContext context;
 	EphyEmbedEventType type;
 	gint handled = FALSE;
@@ -318,13 +318,12 @@ dom_mouse_down_cb (EphyEmbed *embed,
 		EphyGesture *gesture;
 		GtkWidget *toplevel;
 		EphyTab *tab;
-		guint x, y;
 
 		tab = ephy_tab_for_embed (embed);
-		g_return_if_fail (EPHY_IS_TAB (tab));
+		g_return_val_if_fail (EPHY_IS_TAB (tab), handled);
 
 		toplevel = gtk_widget_get_toplevel (GTK_WIDGET (tab));
-		g_return_if_fail (toplevel != NULL);
+		g_return_val_if_fail (toplevel != NULL, handled);
 
 		gesture = ephy_gesture_new (toplevel, event);
 

@@ -19,12 +19,18 @@
  *  $Id$
  */
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 #include "ephy-gestures-extension.h"
 #include "ephy-gesture.h"
 #include "ephy-debug.h"
 
 #include <glib-object.h>
 #include <gmodule.h>
+
+G_MODULE_EXPORT GType register_module (GTypeModule *module);
 
 G_MODULE_EXPORT GType
 register_module (GTypeModule *module)

@@ -63,9 +63,9 @@ struct MozillaStyleSheet
 		g_free (mName);
 	}
 
-	nsCOMPtr<nsIDOMStyleSheet> mStyleSheet;
 	char *mName;
 	StyleSheetType mType;
+	nsCOMPtr<nsIDOMStyleSheet> mStyleSheet;
 };
 
 extern "C" StyleSheetType

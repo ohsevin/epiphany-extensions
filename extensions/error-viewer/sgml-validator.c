@@ -35,6 +35,7 @@
 #include "mozilla-helpers.h"
 
 #include <unistd.h>
+#include <string.h>
 
 #include <glib/gi18n-lib.h>
 
@@ -134,7 +135,7 @@ sgml_validator_class_init (SgmlValidatorClass *klass)
 static void
 sgml_validator_init (SgmlValidator *validator)
 {
-	LOG ("SgmlValidator initializing %x", validator)
+	LOG ("SgmlValidator initializing %p", validator)
 
 	validator->priv = SGML_VALIDATOR_GET_PRIVATE (validator);
 }
@@ -144,7 +145,7 @@ sgml_validator_finalize (GObject *object)
 {
 	SgmlValidatorPrivate *priv = SGML_VALIDATOR_GET_PRIVATE (SGML_VALIDATOR (object));
 
-	LOG ("SgmlValidator finalizing %x", object)
+	LOG ("SgmlValidator finalizing %p", object)
 
 	g_object_unref (priv->error_viewer);
 
@@ -326,7 +327,7 @@ save_source_completed_cb (EphyEmbedPersist *persist,
 			  SgmlValidator *validator)
 {
 	const char *dest;
-	const char *location;
+	char *location;
 	char *dest_utf8;
 	gboolean is_xml;
 	unsigned int num_errors = 0;
@@ -493,7 +494,7 @@ sgml_validator_append_internal (gpointer data)
 {
 	SgmlValidatorAppendCBData *append_data;
 
-	g_return_if_fail (data != NULL);
+	g_return_val_if_fail (data != NULL, FALSE);
 
 	append_data = (SgmlValidatorAppendCBData *) data;
 

@@ -302,7 +302,7 @@ impl_attach_window (EphyExtension *ext,
 	guint ui_id;
 	WindowData *win_data;
 	GtkWidget *notebook;
-	GtkWidget *statusbar, *frame, *ebox;
+	GtkWidget *statusbar, *ebox;
 	GList *tabs, *l;
 
 	LOG ("EphyCertificatesExtension attach_window")

@@ -55,6 +55,7 @@ AC_SUBST(AM_CXXFLAGS)
 
 GNOME_DEBUG_CHECK
 GNOME_COMPILE_WARNINGS(error)
+GNOME_CXX_WARNINGS
 
 dnl ********************************
 dnl Internationalisation
@@ -137,7 +138,7 @@ AC_MSG_CHECKING([extensions to build])
 
 all_extensions="certificates,dashboard,error-viewer,gestures,page-info,sample,sample-mozilla,select-stylesheet,smart-bookmarks,tabsmenu,tab-groups"
 all_useful_extensions="certificates,dashboard,error-viewer,gestures,page-info,select-stylesheet,smart-bookmarks,tabsmenu,tab-groups"
-default_extensions="certificates,error-viewer,gestures,page-info,select-stylesheet,smart-bookmarks,tabsmenu"
+default_extensions="certificates,error-viewer,gestures,page-info,select-stylesheet,smart-bookmarks,tabsmenu,tab-groups"
 mozilla_dependent_extensions="certificates,error-viewer,page-info,sample-mozilla,select-stylesheet,smart-bookmarks"
 
 dnl due to an autoconf bug, commas in the first arg to
@@ -287,6 +288,10 @@ dnl insert mozilla API checks here
 
 CXXFLAGS=$_SAVE_CXXFLAGS
 AC_LANG_POP(C++)
+
+dnl set warning flags
+CFLAGS="$CFLAGS $WARN_CFLAGS"
+CXXFLAGS="$CXXFLAGS $WARN_CXXFLAGS -Wconversion -Wpointer-arith -Wcast-align -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor"
 
 dnl *******************************
 dnl Misc things

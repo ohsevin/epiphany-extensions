@@ -45,6 +45,8 @@
 
 #include <glib/gi18n-lib.h>
 
+#include <string.h>
+
 #define SMART_BOOKMARKS_EXTENSION_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), TYPE_SMART_BOOKMARKS_EXTENSION, SmartBookmarksExtensionPrivate))
 
 #define SMB_ACTION		"SmbExt%x"
@@ -131,7 +133,6 @@ search_gnome_dict_cb (GtkAction *action,
 		      EphyWindow *window)
 {
 	EphyEmbed *embed;
-	char *text;
 	char *argv[3] = { "gnome-dictionary", NULL, NULL };
 	GError *error = NULL;
 
@@ -222,7 +223,7 @@ context_menu_cb (EphyEmbed *embed,
 	WindowData *data;
 
 	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
-	g_return_if_fail (data != NULL);
+	g_return_val_if_fail (data != NULL, FALSE);
 
 	/* Is there some selection? */
 	can_copy = ephy_command_manager_can_do_command
@@ -526,7 +527,7 @@ tab_added_cb (GtkWidget *notebook,
 }
 
 static void
-tab_removed_cb (EphyEmbed *notebook,
+tab_removed_cb (GtkWidget *notebook,
 		EphyTab *tab,
 		EphyWindow *window)
 {
@@ -677,7 +678,7 @@ smart_bookmarks_extension_init (SmartBookmarksExtension *extension)
 static void
 smart_bookmarks_extension_finalize (GObject *object)
 {
-	SmartBookmarksExtension *extension = SMART_BOOKMARKS_EXTENSION (object);
+//	SmartBookmarksExtension *extension = SMART_BOOKMARKS_EXTENSION (object);
 
 	LOG ("SmartBookmarksExtension finalising")
 

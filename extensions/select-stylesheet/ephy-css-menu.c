@@ -40,6 +40,8 @@
 
 #include <glib/gi18n-lib.h>
 
+#include <string.h>
+
 #define EPHY_CSS_MENU_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_CSS_MENU, EphyCSSMenuPrivate))
 
 struct _EphyCSSMenuPrivate
@@ -126,6 +128,8 @@ activate_stylesheet_cb (GtkAction *action,
 	mozilla_set_stylesheet (p->embed, style);
 }
 
+#define MAX_LENGTH 32
+
 static GtkAction *
 create_stylesheet_action (EphyCSSMenu *menu,
 			  MozillaStyleSheet *style,
@@ -136,7 +140,7 @@ create_stylesheet_action (EphyCSSMenu *menu,
 	const char *name;
 
 	name = mozilla_stylesheet_get_name (style);
-	label_temp = ephy_string_shorten (name);
+	label_temp = ephy_string_shorten (name, MAX_LENGTH);
 	label = ephy_string_double_underscores (label_temp);
 
 	switch (mozilla_stylesheet_get_type (style))

@@ -59,7 +59,7 @@ smart_bookmarks_show_prefs_ui_cb (GtkAction *action,
 	if (dialog == NULL)
 	{
 		dialog = ephy_dialog_new ();
-		g_object_add_weak_pointer (G_OBJECT (dialog), (gpointer *) &dialog);
+		g_object_add_weak_pointer (G_OBJECT (dialog), (gpointer *) (EphyDialog **) dialog);
 
 		ephy_dialog_construct (dialog, properties,
 				       SHARE_DIR "/glade/smart-bookmarks.glade",
