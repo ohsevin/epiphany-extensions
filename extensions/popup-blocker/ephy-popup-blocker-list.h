@@ -39,12 +39,6 @@ typedef struct EphyPopupBlockerList		EphyPopupBlockerList;
 typedef struct EphyPopupBlockerListClass	EphyPopupBlockerListClass;
 typedef struct EphyPopupBlockerListPrivate	EphyPopupBlockerListPrivate;
 
-typedef struct
-{
-	char *url;
-	char *features;
-} BlockedPopup;
-
 struct EphyPopupBlockerListClass
 {
 	GObjectClass parent_class;
@@ -57,20 +51,21 @@ struct EphyPopupBlockerList
 	EphyPopupBlockerListPrivate *priv;
 };
 
-GType			ephy_popup_blocker_list_get_type		(void);
+GType			ephy_popup_blocker_list_get_type	(void);
 
-GType			ephy_popup_blocker_list_register_type		(GTypeModule *module);
+GType			ephy_popup_blocker_list_register_type	(GTypeModule *module);
 
-EphyPopupBlockerList	*ephy_popup_blocker_list_new			(EphyEmbed *embed);
+EphyPopupBlockerList	*ephy_popup_blocker_list_new		(EphyEmbed *embed);
 
-void			ephy_popup_blocker_list_reset			(EphyPopupBlockerList *list);
+void			ephy_popup_blocker_list_reset		(EphyPopupBlockerList *list);
 
-void			ephy_popup_blocker_list_insert			(EphyPopupBlockerList *list,
-									 const char *url,
-									 const char *features);
+void			ephy_popup_blocker_list_insert		(EphyPopupBlockerList *list,
+								 const char *url,
+								 const char *features);
 
-void			ephy_popup_blocker_list_open			(EphyPopupBlockerList *list,
-									 BlockedPopup *popup);
+void			ephy_popup_blocker_list_open_all	(EphyPopupBlockerList *list);
+
+void			ephy_popup_blocker_list_close_all	(EphyPopupBlockerList *list);
 
 G_END_DECLS
 

@@ -35,14 +35,19 @@ struct EphyPopupBlockerListPrivate
 	GSList *blocked_popups;
 };
 
+typedef struct
+{
+	char *url;
+	char *features;
+} BlockedPopup;
+
 static void ephy_popup_blocker_list_class_init	(EphyPopupBlockerListClass *klass);
 static void ephy_popup_blocker_list_init	(EphyPopupBlockerList *popup);
 
 enum
 {
 	PROP_0,
-	PROP_COUNT,
-	PROP_BLOCKED_POPUPS
+	PROP_COUNT
 };
 
 static GObjectClass *parent_class = NULL;
@@ -159,22 +164,6 @@ ephy_popup_blocker_list_insert (EphyPopupBlockerList *list,
 	g_object_notify (G_OBJECT (list), "count");
 }
 
-void
-ephy_popup_blocker_list_open (EphyPopupBlockerList *list,
-			      BlockedPopup *popup)
-{
-	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (list));
-
-	mozilla_open_popup (list->priv->embed, popup->url, popup->features);
-
-	list->priv->blocked_popups =
-		g_slist_remove (list->priv->blocked_popups, popup);
-
-	free_blocked_popup (popup);
-
-	g_object_notify (G_OBJECT (list), "count");
-}
-
 static void
 ephy_popup_blocker_list_finalize (GObject *object)
 {
@@ -198,7 +187,6 @@ ephy_popup_blocker_list_set_property (GObject *object,
 	switch (prop_id)
 	{
 		case PROP_COUNT:
-		case PROP_BLOCKED_POPUPS:
 			/* read only */
 			break;
 	}
@@ -218,9 +206,6 @@ ephy_popup_blocker_list_get_property (GObject *object,
 			g_value_set_uint
 				(value,
 				 g_slist_length (list->priv->blocked_popups));
-			break;
-		case PROP_BLOCKED_POPUPS:
-			g_value_set_pointer (value, list->priv->blocked_popups);
 			break;
 	}
 }
@@ -245,13 +230,6 @@ ephy_popup_blocker_list_class_init (EphyPopupBlockerListClass *klass)
 							    G_MAXUINT,
 							    0,
 							    G_PARAM_READABLE));
-	g_object_class_install_property (object_class,
-					 PROP_BLOCKED_POPUPS,
-					 g_param_spec_pointer
-					 	("blocked-popups",
-						 "Blocked Popups",
-						 "GSList of blocked popups",
-						 G_PARAM_READABLE));
 
 	g_type_class_add_private (object_class, sizeof (EphyPopupBlockerListPrivate));
 }

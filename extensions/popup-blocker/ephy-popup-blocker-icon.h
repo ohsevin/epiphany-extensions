@@ -57,8 +57,7 @@ GType	ephy_popup_blocker_icon_get_type	(void);
 
 GType	ephy_popup_blocker_icon_register_type	(GTypeModule *module);
 
-EphyPopupBlockerIcon	*ephy_popup_blocker_icon_new	(GtkWidget *statusbar,
-							 GObject *ui_merge);
+EphyPopupBlockerIcon	*ephy_popup_blocker_icon_new	(GtkWidget *statusbar);
 
 void	ephy_popup_blocker_icon_set_popups	(EphyPopupBlockerIcon *icon,
 						 EphyPopupBlockerList *popups);

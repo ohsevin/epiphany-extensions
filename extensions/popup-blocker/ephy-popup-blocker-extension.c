@@ -402,7 +402,7 @@ create_statusbar_icon (EphyWindow *window)
 	statusbar = ephy_window_get_statusbar (window);
 	g_return_if_fail (EPHY_IS_STATUSBAR (statusbar));
 
-	icon = ephy_popup_blocker_icon_new (statusbar, window->ui_merge);
+	icon = ephy_popup_blocker_icon_new (statusbar);
 	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_ICON (icon));
 
 	g_object_set_data (G_OBJECT (statusbar), "popup-blocker-icon", icon);
@@ -449,6 +449,15 @@ register_mozilla (EphyEmbed *embed)
 }
 
 static void
+new_window_cb (EphyEmbed *embed,
+	       EphyEmbed **new_embed,
+	       EmbedChromeMask chromemask,
+	       EphyPopupBlockerList *popups)
+{
+	/* FIXME: Put some code here */
+}
+
+static void
 tab_added_cb (GtkWidget *notebook,
 	      EphyTab *tab,
 	      EphyPopupBlockerExtension *extension)
@@ -477,6 +486,9 @@ tab_added_cb (GtkWidget *notebook,
 
 	g_signal_connect (embed, "ge_location",
 			  G_CALLBACK (location_cb), tab);
+	g_signal_connect_object (embed, "ge_new_window",
+				 G_CALLBACK (new_window_cb), popups,
+				 G_CONNECT_AFTER);
 }
 
 static void
@@ -485,18 +497,20 @@ tab_removed_cb (GtkWidget *notebook,
 		EphyPopupBlockerExtension *extension)
 {
 	EphyEmbed *embed;
-	EphyPopupBlockerIcon *icon;
+	EphyPopupBlockerList *popups;
 
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
 	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
-	icon = get_icon_for_embed (embed);
-	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_ICON (icon));
+	popups = g_object_get_data (G_OBJECT (embed), "popup-blocker-list");
+	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (popups));
 
 	g_signal_handlers_disconnect_by_func
 		(embed, G_CALLBACK (location_cb), tab);
+	g_signal_handlers_disconnect_by_func
+		(embed, G_CALLBACK (new_window_cb), popups);
 }
 
 static void
@@ -610,9 +624,6 @@ ephy_popup_blocker_extension_iface_init (EphyExtensionIface *iface)
 {
 	iface->attach_window = impl_attach_window;
 	iface->detach_window = impl_detach_window;
-
-	g_print ("Warning: The popup blocker extension is undergoing changes. "
-		 "You WILL see warnings and errors.");
 }
 
 static void
