@@ -1,5 +1,12 @@
 2004-02-01  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/certificates/ephy-certificates-extension.c:
+	(impl_attach_window):
+
+	Remove debug output.
+
+2004-02-01  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/tabsmenu/ephy-tab-move-menu.c:
 	(update_tab_move_menu_cb):
 
