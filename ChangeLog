@@ -1,3 +1,7 @@
+2004-03-10  Gustavo Maciel Dias Vieira  <gdvieira@zaz.com.br>
+
+	* configure.ac: Added pt_BR to ALL_LINGUAS.
+
 2004-03-09  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* NEWS:
