@@ -11,7 +11,7 @@ chpe@gnome.org, or to the epiphany mailing list at
 http://lists.gnome.org/mailman/listinfo/epiphany-list
 
 Send patches for the individual extensions to the maintainer listed in the 
-MAINTAINERS file.
+AUTHORS file.
 
 If you are a translator feel free to add new translations, mark strings for
 translation, fix typos, etc.
