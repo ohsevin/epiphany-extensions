@@ -1,3 +1,9 @@
+2004-01-13  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* doc/writing-epiphany-extensions.xml:
+
+	s/Firdbird/Firebird/
+
 2004-01-06  Christian Persch  <chpe@cvs.gnome.org>
 
 	* Makefile.am:

@@ -17,6 +17,14 @@
 
 		<revhistory>
 			<revision>
+				<revnumber>0.03</revnumber>
+				<date>13-Jan-2004</date>
+				<authorinitials>ah</authorinitials>
+				<revremark>
+					s/Firdbird/Firebird/
+				</revremark>
+			</revision>
+			<revision>
 				<revnumber>0.02</revnumber>
 				<date>03-Jan-2004</date>
 				<authorinitials>ah</authorinitials>
@@ -41,7 +49,7 @@
 		<sect1>
 			<title>What Epiphany Extensions Are</title>
 			<para>Epiphany extensions are similar to <ulink url="http://texturizer.net/firebird/extensions/">Mozilla Firebird extensions</ulink>: they are entirely optional and change the way the browser works (usually by expanding its feature set). For example, an Epiphany extension could provide mouse gestures, track your browsing behavior, or even replace the entire Bookmarks system (though such an extension would be rather messy).</para>
-			<para>Epiphany extensions are <emphasis>different</emphasis> from Mozilla Firdbird's because they are implemented in C as opposed to Javascript. This gives enormous flexibility and a bit of added challenge, but it should be no problem for even a beginner to develop an extension which crashes Epiphany on startup.</para>
+			<para>Epiphany extensions are <emphasis>different</emphasis> from Mozilla Firebird's because they are implemented in C as opposed to Javascript. This gives enormous flexibility and a bit of added challenge, but it should be no problem for even a beginner to develop an extension which crashes Epiphany on startup.</para>
 			<para>Epiphany extensions are at a lower level code-wise than Mozilla Firebird's; there is no simple way to convert a Mozilla Firebird extension to an Epiphany one, and Epiphany cannot load Mozilla Firebird extensions.</para>
 		</sect1>
 		<sect1>
