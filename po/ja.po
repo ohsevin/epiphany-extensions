@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-12-05 01:26+0900\n"
-"PO-Revision-Date: 2004-12-05 01:23+0900\n"
+"POT-Creation-Date: 2004-12-21 12:14+0900\n"
+"PO-Revision-Date: 2004-12-21 12:10+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -152,7 +152,7 @@ msgid_plural "Checking %d Links on %s"
 msgstr[0] "%d 個のリンク (%s) のチェック中"
 msgstr[1] "%d 個のリンク (%s) のチェック中"
 
-#: extensions/error-viewer/opensp/validate.cpp:169
+#: extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
 msgid ""
 "HTML error in %s on line %s:\n"
@@ -230,17 +230,11 @@ msgstr "拡張機能(_E)"
 msgid "Load and unload extensions"
 msgstr "Epiphany 拡張機能の有効/無効を設定します"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.c:227
-msgid "Author:"
-msgid_plural "Authors:"
-msgstr[0] "開発担当"
-msgstr[1] "開発担当"
-
-#: extensions/extensions-manager-ui/extensions-manager-ui.c:410
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:357
 msgid "Enabled"
 msgstr "有効"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.c:417
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:364
 msgid "Description"
 msgstr "説明"
 
@@ -249,29 +243,8 @@ msgid "<b>Loaded Extensions</b>"
 msgstr "<b>ロードした拡張機能の一覧</b>"
 
 #: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
-#: extensions/page-info/page-info.glade.h:9
-msgid "DYNAMIC"
-msgstr "DYNAMIC"
-
-#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:3
-msgid "Description:"
-msgstr "説明:"
-
-#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:4
-msgid "Extension Information"
-msgstr "拡張機能の情報"
-
-#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:5
 msgid "Extensions"
 msgstr "Epiphany 拡張機能"
-
-#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:6
-msgid "Name:"
-msgstr "名前:"
-
-#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:7
-msgid "URL:"
-msgstr "URL:"
 
 #: extensions/page-info/ephy-page-info-extension.c:66
 msgid "_Page Info"
@@ -281,217 +254,242 @@ msgstr "ページ情報(_P)"
 msgid "Display page information in a dialog"
 msgstr "ページ情報をダイアログに表示します"
 
-#: extensions/page-info/page-info-dialog.c:655
+#: extensions/page-info/page-info-dialog.c:640
 msgid "Unknown type"
 msgstr "種類を特定できません"
 
-#: extensions/page-info/page-info-dialog.c:660
+#: extensions/page-info/page-info-dialog.c:645
 msgid "Full standards compliance"
 msgstr "完全に標準互換"
 
-#: extensions/page-info/page-info-dialog.c:663
+#: extensions/page-info/page-info-dialog.c:648
 msgid "Almost standards compliance"
 msgstr "ほぼ標準互換"
 
-#: extensions/page-info/page-info-dialog.c:666
+#: extensions/page-info/page-info-dialog.c:651
 msgid "Compatibility"
 msgstr "互換性"
 
-#: extensions/page-info/page-info-dialog.c:669
+#: extensions/page-info/page-info-dialog.c:654
 msgid "Undetermined"
 msgstr "未確認"
 
-#: extensions/page-info/page-info-dialog.c:678
+#: extensions/page-info/page-info-dialog.c:663
 msgid "Not cached"
 msgstr "キャッシュされていない"
 
-#: extensions/page-info/page-info-dialog.c:681
+#: extensions/page-info/page-info-dialog.c:666
 msgid "Disk cache"
 msgstr "ディスクへキャッシュ済"
 
-#: extensions/page-info/page-info-dialog.c:684
+#: extensions/page-info/page-info-dialog.c:669
 msgid "Memory cache"
 msgstr "メモリへキャッシュ済"
 
-#: extensions/page-info/page-info-dialog.c:687
+#: extensions/page-info/page-info-dialog.c:672
 msgid "Unknown cache"
 msgstr "キャッシュを特定できません"
 
-#: extensions/page-info/page-info-dialog.c:703
+#: extensions/page-info/page-info-dialog.c:688
+#: extensions/page-info/page-info-dialog.c:808
 msgid "Unknown"
 msgstr "不明"
 
-#: extensions/page-info/page-info-dialog.c:708
+#: extensions/page-info/page-info-dialog.c:693
 msgid "No referrer"
 msgstr "照会者なし"
 
-#: extensions/page-info/page-info-dialog.c:722
-#: extensions/page-info/page-info-dialog.c:738
+#: extensions/page-info/page-info-dialog.c:707
+#: extensions/page-info/page-info-dialog.c:723
 msgid "Not specified"
 msgstr "指定なし"
 
-#: extensions/page-info/page-info-dialog.c:912
-msgid "Save Image As..."
-msgstr "画像に名前を付けて保存..."
+#: extensions/page-info/page-info-dialog.c:793
+msgid "Image"
+msgstr "画像"
 
-#: extensions/page-info/page-info-dialog.c:927
+#: extensions/page-info/page-info-dialog.c:796
+msgid "Embed"
+msgstr "埋め込み"
+
+#: extensions/page-info/page-info-dialog.c:799
+msgid "Object"
+msgstr "オブジェクト"
+
+#: extensions/page-info/page-info-dialog.c:802
+msgid "Applet"
+msgstr "アプレット"
+
+#: extensions/page-info/page-info-dialog.c:805
+msgid "Icon"
+msgstr "アイコン"
+
+#: extensions/page-info/page-info-dialog.c:961
+msgid "Save Medium As..."
+msgstr "メディアを別名で保存..."
+
+#: extensions/page-info/page-info-dialog.c:976
 msgid "Select a directory"
 msgstr "フォルダの選択"
 
-#: extensions/page-info/page-info-dialog.c:1025
-msgid "_Open Image"
-msgstr "画像を開く(_O)"
+#: extensions/page-info/page-info-dialog.c:1074
+msgid "_Open"
+msgstr "開く(_O)"
 
-#: extensions/page-info/page-info-dialog.c:1031
-msgid "_Copy Image Address"
-msgstr "画像のアドレスのコピー(_C)"
-
-#: extensions/page-info/page-info-dialog.c:1037
-msgid "_Use Image as Background"
-msgstr "画像を背景として使用(_U)"
-
-#: extensions/page-info/page-info-dialog.c:1043
-#: extensions/page-info/page-info.glade.h:26
-msgid "_Save Image As..."
-msgstr "画像を別名で保存(_S)..."
-
-#: extensions/page-info/page-info-dialog.c:1147
-#: extensions/page-info/page-info-dialog.c:1362
-msgid "URL"
-msgstr "URL"
-
-#: extensions/page-info/page-info-dialog.c:1159
-msgid "Alt Text"
-msgstr "代替文字列"
-
-#: extensions/page-info/page-info-dialog.c:1171
-#: extensions/page-info/page-info-dialog.c:1374
-msgid "Title"
-msgstr "タイトル"
-
-#: extensions/page-info/page-info-dialog.c:1183
-msgid "Width"
-msgstr "幅"
-
-#: extensions/page-info/page-info-dialog.c:1195
-msgid "Height"
-msgstr "高さ"
-
-#: extensions/page-info/page-info-dialog.c:1328
+#: extensions/page-info/page-info-dialog.c:1080
+#: extensions/page-info/page-info-dialog.c:1429
 msgid "_Copy Link Address"
 msgstr "リンク先のコピー(_C)"
 
-#: extensions/page-info/page-info-dialog.c:1386
+#: extensions/page-info/page-info-dialog.c:1086
+msgid "_Use as Background"
+msgstr "背景として使用(_U)"
+
+#: extensions/page-info/page-info-dialog.c:1092
+msgid "_Save As..."
+msgstr "別名で保存(_S)..."
+
+#: extensions/page-info/page-info-dialog.c:1233
+#: extensions/page-info/page-info-dialog.c:1463
+msgid "URL"
+msgstr "URL"
+
+#: extensions/page-info/page-info-dialog.c:1245
+msgid "Type"
+msgstr "種類"
+
+#: extensions/page-info/page-info-dialog.c:1257
+msgid "Alt Text"
+msgstr "代替文字列"
+
+#: extensions/page-info/page-info-dialog.c:1269
+#: extensions/page-info/page-info-dialog.c:1475
+msgid "Title"
+msgstr "タイトル"
+
+#: extensions/page-info/page-info-dialog.c:1281
+msgid "Width"
+msgstr "幅"
+
+#: extensions/page-info/page-info-dialog.c:1293
+msgid "Height"
+msgstr "高さ"
+
+#: extensions/page-info/page-info-dialog.c:1487
 msgid "Relation"
 msgstr "関係"
 
-#: extensions/page-info/page-info-dialog.c:1494
+#: extensions/page-info/page-info-dialog.c:1595
 msgid "Name"
 msgstr "名前"
 
-#: extensions/page-info/page-info-dialog.c:1506
+#: extensions/page-info/page-info-dialog.c:1607
 msgid "Method"
 msgstr "メソッド"
 
-#: extensions/page-info/page-info-dialog.c:1518
+#: extensions/page-info/page-info-dialog.c:1619
 msgid "Action"
 msgstr "アクション"
 
 #: extensions/page-info/page-info.glade.h:1
-msgid "*"
-msgstr "*"
-
-#: extensions/page-info/page-info.glade.h:2
 msgid "<b>Forms In Page</b>"
 msgstr "<b>ページのフォーム</b>"
 
-#: extensions/page-info/page-info.glade.h:3
-msgid "<b>Image View</b>"
-msgstr "<b>画像のプレビュー</b>"
-
-#: extensions/page-info/page-info.glade.h:4
-msgid "<b>Images In Page</b>"
-msgstr "<b>ページにある画像</b>"
-
-#: extensions/page-info/page-info.glade.h:5
+#: extensions/page-info/page-info.glade.h:2
 msgid "<b>Links In Page</b>"
 msgstr "<b>ページにあるリンク</b>"
 
-#: extensions/page-info/page-info.glade.h:6
+#: extensions/page-info/page-info.glade.h:3
+msgid "<b>Media In Page</b>"
+msgstr "<b>ページにあるメディア</b>"
+
+#: extensions/page-info/page-info.glade.h:4
+msgid "<b>Medium View</b>"
+msgstr "<b>メディアのプレビュー</b>"
+
+#: extensions/page-info/page-info.glade.h:5
 msgid "<b>Rendering</b>"
 msgstr "<b>レンダリング</b>"
 
-#: extensions/page-info/page-info.glade.h:7
+#: extensions/page-info/page-info.glade.h:6
 msgid "<b>Source File</b>"
 msgstr "<b>ソース・ファイル</b>"
 
-#: extensions/page-info/page-info.glade.h:8
+#: extensions/page-info/page-info.glade.h:7
 msgid "<b>Web Page</b>"
 msgstr "<b>ウェブ・ページ</b>"
 
-#: extensions/page-info/page-info.glade.h:10
+#: extensions/page-info/page-info.glade.h:8
+msgid "DYNAMIC"
+msgstr "DYNAMIC"
+
+#: extensions/page-info/page-info.glade.h:9
 msgid "Encoding:"
 msgstr "エンコーディング:"
 
-#: extensions/page-info/page-info.glade.h:11
+#: extensions/page-info/page-info.glade.h:10
 msgid "Expires:"
 msgstr "有効期限:"
 
-#: extensions/page-info/page-info.glade.h:12
+#: extensions/page-info/page-info.glade.h:11
 msgid "Forms"
 msgstr "フォーム"
 
-#: extensions/page-info/page-info.glade.h:13
+#: extensions/page-info/page-info.glade.h:12
 msgid "General"
 msgstr "全般"
 
-#: extensions/page-info/page-info.glade.h:14
-msgid "Images"
-msgstr "画像"
-
-#: extensions/page-info/page-info.glade.h:15
+#: extensions/page-info/page-info.glade.h:13
 msgid "Links"
 msgstr "リンク"
 
-#: extensions/page-info/page-info.glade.h:16
+#: extensions/page-info/page-info.glade.h:14
 msgid "Location:"
 msgstr "場所:"
 
-#: extensions/page-info/page-info.glade.h:17
+#: extensions/page-info/page-info.glade.h:15
 msgid "MIME type:"
 msgstr "MIME 型:"
 
-#: extensions/page-info/page-info.glade.h:18
+#: extensions/page-info/page-info.glade.h:16
+msgid "Media"
+msgstr "メディア"
+
+#: extensions/page-info/page-info.glade.h:17
 msgid "Mode:"
 msgstr "モード:"
 
-#: extensions/page-info/page-info.glade.h:19
+#: extensions/page-info/page-info.glade.h:18
 msgid "Modified:"
 msgstr "変更日時:"
 
-#: extensions/page-info/page-info.glade.h:20
+#: extensions/page-info/page-info.glade.h:19
 msgid "Page Properties"
 msgstr "ページのプロパティ"
 
-#: extensions/page-info/page-info.glade.h:21
+#: extensions/page-info/page-info.glade.h:20
 msgid "Referrer:"
 msgstr "照会者:"
 
-#: extensions/page-info/page-info.glade.h:22
+#: extensions/page-info/page-info.glade.h:21
 msgid "Size:"
 msgstr "サイズ:"
 
-#: extensions/page-info/page-info.glade.h:23
+#: extensions/page-info/page-info.glade.h:22
 msgid "Source:"
 msgstr "ソース:"
 
-#: extensions/page-info/page-info.glade.h:24
+#: extensions/page-info/page-info.glade.h:23
 msgid "Title:"
 msgstr "タイトル:"
 
-#: extensions/page-info/page-info.glade.h:25
+#: extensions/page-info/page-info.glade.h:24
 msgid "Type:"
 msgstr "種類:"
+
+#: extensions/page-info/page-info.glade.h:25
+msgid "_Save Media As..."
+msgstr "メディアを別名で保存(_S)..."
 
 #: extensions/select-stylesheet/ephy-css-menu.c:147
 msgid "Render the page without using a style"
@@ -506,11 +504,11 @@ msgstr "デフォルトのスタイルでページをレンダリングします
 msgid "Render the page using the \"%s\" style"
 msgstr "スタイル \"%s\" でページをレンダリングします"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:293
+#: extensions/select-stylesheet/ephy-css-menu.c:311
 msgid "St_yle"
 msgstr "スタイル(_Y)"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:294
+#: extensions/select-stylesheet/ephy-css-menu.c:312
 msgid "Select a different style for this page"
 msgstr "このページをレンダリングする別のスタイルを選択して下さい"
 
@@ -552,20 +550,20 @@ msgstr "サイドバーの追加(_A)"
 msgid "No Sidebars installed"
 msgstr "サイドバーは未インストール"
 
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:553
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:570
 msgid "_Look Up"
 msgstr "検索(_L)"
 
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:560
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:577
 msgid "_GNOME Dictionary"
 msgstr "GNOME 辞書(_G)"
 
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:567
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:584
 msgid "Loo_k-Up Preferences"
 msgstr "検索の設定(_K)"
 
 #. shortcut key
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:569
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:586
 msgid "Look up your selection"
 msgstr "選択範囲を検索します"
 
@@ -581,17 +579,17 @@ msgstr "検索の設定"
 msgid "Open search results in a new tab"
 msgstr "新しいタブの中に検索結果を開く"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:183
+#: extensions/tabsmenu/ephy-tab-move-menu.c:181
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"
 msgstr[0] "ウィンドウ '%s' (%d 個のタブ)"
 msgstr[1] "ウィンドウ '%s' (%d 個のタブ)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:282
+#: extensions/tabsmenu/ephy-tab-move-menu.c:296
 msgid "Move Tab To Window"
 msgstr "タブの移動"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:283
+#: extensions/tabsmenu/ephy-tab-move-menu.c:297
 msgid "Move the current tab to a different window"
 msgstr "このタブを他のウインドウへ移動します"
