@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: epiphany-extensions.HEAD\n"
+"Project-Id-Version: epiphany-extensions HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-05-31 13:15+0200\n"
-"PO-Revision-Date: 2004-07-01 19:29+0200\n"
+"PO-Revision-Date: 2004-07-29 11:21+0200\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: Albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -200,7 +200,7 @@ msgstr "Shfaq ose fshih dritaret e pakërkuara popup nga ky sit"
 #, c-format
 msgid "%d popup window blocked"
 msgid_plural "%d popup windows blocked"
-msgstr[0] ""
+msgstr[0] "%d dritare popup e bllokuar"
 msgstr[1] "%d dritare popup të bllokuara"
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:183
