@@ -1,4 +1,33 @@
 =========================
+Epiphany Extensions 1.1.1
+=========================
+
+Removed features:
+
+	* Popup blocker. It is now integrated in Epiphany. (Adam)
+	* Removed support for mozilla < 1.7 (Christian)
+
+Code changes
+
+	* Ported to mozilla embed strings (Christian) [#144237]
+	* Fix C99-ism in error viewer (Adam) [#144053]
+
+Bug fixes
+
+	* Fix crash when closing the last window (Christian) [#144850]
+	* Fix includes (Adam) [#143818]
+
+
+Translations
+
+	* Rostislav Raykov (bg)
+	* 相花 毅 (ja)
+	* Estêvão Samuel Procópio (pt_BR)
+	* Marcel Telka (sk)
+	* Laurent Dhima (sq)
+
+
+=========================
 Epiphany Extensions 1.1.0
 =========================
 

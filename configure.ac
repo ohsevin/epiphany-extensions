@@ -16,7 +16,8 @@ dnl 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 dnl
 dnl $Id$
 
-AC_INIT([Epiphany Extensions], [1.1.0.90], [http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+AC_INIT([Epiphany Extensions], [1.1.1], [http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+GNOME_COMMON_INIT
 
 EPIPHANY_EXTENSIONS_MAJOR=1.1
 AC_SUBST(EPIPHANY_EXTENSIONS_MAJOR)
@@ -31,9 +32,6 @@ AM_CONFIG_HEADER(config.h)
 AM_INIT_AUTOMAKE
 
 AM_MAINTAINER_MODE
-
-ACLOCAL_AMFLAGS="\${ACLOCAL_FLAGS}"
-AC_SUBST(ACLOCAL_AMFLAGS)
 
 AC_PROG_INTLTOOL([0.29])
 
@@ -73,7 +71,7 @@ dnl ********************************
 dnl pkg config checks
 dnl ********************************
 
-EPIPHANY_REQUIRED=1.3.0
+EPIPHANY_REQUIRED=1.3.1
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.4.0
 LIBGTK_REQUIRED=2.4.0
@@ -137,8 +135,8 @@ dnl *******************************
 
 AC_MSG_CHECKING([extensions to build])
 
-all_extensions="certificates,dashboard,error-viewer,gestures,sample,sample-mozilla,tabsmenu,toolbar-extras"
-all_useful_extensions="certificates,dashboard,error-viewer,gestures,tabsmenu,toolbar-extras"
+all_extensions="certificates,dashboard,error-viewer,gestures,sample,sample-mozilla,tabsmenu"
+all_useful_extensions="certificates,dashboard,error-viewer,gestures,tabsmenu"
 default_extensions="certificates,error-viewer,gestures,tabsmenu"
 mozilla_dependent_extensions="certificates,error-viewer,sample-mozilla"
 
@@ -189,7 +187,7 @@ AM_CONDITIONAL(ENABLE_GESTURES_EXTENSION, echo "$extensions" | egrep '(^|,)gestu
 AM_CONDITIONAL(ENABLE_SAMPLE_EXTENSION, echo "$extensions" | egrep '(^|,)sample($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SAMPLE_MOZILLA_EXTENSION, echo "$extensions" | egrep '(^|,)sample-mozilla($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_TABSMENU_EXTENSION, echo "$extensions" | egrep '(^|,)tabsmenu($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_TOOLBAR_EXTRAS_EXTENSION, echo "$extensions" | egrep '(^|,)toolbar-extras($|,)' > /dev/null)
+dnl AM_CONDITIONAL(ENABLE_TOOLBAR_EXTRAS_EXTENSION, echo "$extensions" | egrep '(^|,)toolbar-extras($|,)' > /dev/null)
 
 dnl *******************************************
 dnl Mozilla (copied from epiphany configure.in)
