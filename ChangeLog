@@ -28,6 +28,17 @@
 
 2004-03-07  Christian Persch  <chpe@cvs.gnome.org>
 
+	* Makefile.am:
+	* NEWS:
+
+	Updated.
+
+	* extensions/sample-mozilla/Makefile.am:
+
+	Make it pass make distcheck.
+
+2004-03-07  Christian Persch  <chpe@cvs.gnome.org>
+
 	* configure.ac:
 
 	Update Epiphany dependency to >= 1.1.11.

@@ -1,3 +1,50 @@
+==========================
+Epiphany Extensions 0.7.90
+==========================
+
+New features:
+	* Add menu item to access the XUL certificate manager
+	  from the "Tools" menu (Christian)
+	* Display busy-cursor while validating (Adam)
+	* Link checker (Adam)
+	* Add icon to statusbar when there are blocked popups (Adam)
+
+Code changes
+	* Adapt to changes in Epiphany API (Christian)
+
+Bugfixes
+	* Fix crash in tabs move menu (Christian)
+	* Don't label non-JS errors as "Javascript" (Adam)
+	* Set link checker timeout (Adam)
+
+Translations
+	* Amanpreet Singh Alam (pa)
+	* Francisco Javier F. Serrador (es)
+	* Funda Wang (zh_CN)
+	* Kjartan Maraas (no)
+	* Kostas Papadimas (el)
+	* ? (hr)
+	* Laszlo Dvornik (hu)
+	* Laurent Dhima (sq)
+	* Miloslav Trmac (cs)
+	* Reinout van Schouwen (nl)
+	* Yukihiro Nakai (ja)
+	* Žygimantas Beručka (lt)
+	* Данило Шеган (sr, sr@Latn)
+
+
+=========================
+Epiphany Extensions 0.7.2
+=========================
+
+	* Fix compilation with epiphany 1.1.9
+
+=========================
+Epiphany Extensions 0.7.1
+=========================
+
+	* Fix compilation with epiphany 1.1.7
+
 =========================
 Epiphany Extensions 0.7.0
 =========================

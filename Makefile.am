@@ -16,5 +16,5 @@ DISTCLEANFILES = 		\
 	intltool-merge 		\
 	intltool-update
 
-DISTCHECK_CONFIGURE_FLAGS = --with-extensions=all
+DISTCHECK_CONFIGURE_FLAGS = --with-extensions=really-all
 
