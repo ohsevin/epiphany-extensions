@@ -1,5 +1,16 @@
 2004-02-01  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/Makefile.am:
+
+	Fix DIST_SUBDIRS.
+
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	(impl_attach_window):
+
+	Fix the mem leak with a different method (idea by Crispin).
+
+2004-02-01  Christian Persch  <chpe@cvs.gnome.org>
+
 	* configure.ac:
 
 	Bump epiphany dependency to 1.1.6, and increase version to 0.7.

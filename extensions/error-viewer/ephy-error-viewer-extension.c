@@ -333,12 +333,11 @@ impl_attach_window (EphyExtension *extension,
 
 	action_group = gtk_action_group_new ("EphyErrorViewerExtensionActions");
 
-	/* NOTICE: we leak the cb_data on purpose, since freeing it depends on
-	 * a gtk+ bugfix which hasn't been in a gtk+ release yet.
-	 */
 	gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
 	gtk_action_group_add_actions (action_group, action_entries,
-					   n_action_entries, cb_data);
+				      n_action_entries, cb_data);
+	g_object_set_data_full (G_OBJECT (action_group), "CallbackData",
+				cb_data, (GDestroyNotify) g_free);
 
 	gtk_ui_manager_insert_action_group (manager, action_group, 0);
 	g_object_unref (action_group);
