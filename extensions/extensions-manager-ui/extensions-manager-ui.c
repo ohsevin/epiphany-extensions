@@ -184,18 +184,15 @@ show_extension_info (ExtensionsManagerUI *parent_dialog,
 
 	ephy_dialog_show (dialog);
 
-	name_label = ephy_dialog_get_control
-		(dialog, info_properties[INFO_PROP_NAME].id);
-	description_label = ephy_dialog_get_control
-		(dialog, info_properties[INFO_PROP_DESCRIPTION].id);
-	author_label = ephy_dialog_get_control
-		(dialog, info_properties[INFO_PROP_AUTHOR].id);
-	url_label = ephy_dialog_get_control
-		(dialog, info_properties[INFO_PROP_URL].id);
-	author_title_label = ephy_dialog_get_control
-		(dialog, info_properties[INFO_PROP_AUTHOR_TITLE].id);
-	url_title_label = ephy_dialog_get_control
-		(dialog, info_properties[INFO_PROP_URL_TITLE].id);
+	ephy_dialog_get_controls
+		(dialog,
+		 info_properties[INFO_PROP_NAME].id, &name_label,
+		 info_properties[INFO_PROP_DESCRIPTION].id, &description_label,
+		 info_properties[INFO_PROP_AUTHOR].id, &author_label,
+		 info_properties[INFO_PROP_URL].id, &url_label,
+		 info_properties[INFO_PROP_AUTHOR_TITLE].id, &author_title_label,
+		 info_properties[INFO_PROP_URL_TITLE].id, &url_title_label,
+		 NULL);
 
 	gtk_label_set_text (GTK_LABEL (name_label), info->name);
 	gtk_label_set_text (GTK_LABEL (description_label), info->description);
