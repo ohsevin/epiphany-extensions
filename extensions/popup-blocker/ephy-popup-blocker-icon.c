@@ -100,7 +100,10 @@ create_ui (EphyPopupBlockerIcon *icon)
 	pixbuf = gdk_pixbuf_new_from_file_at_size
 		(SHARE_DIR "/icons/popup-blocker.svg", width, height, NULL);
 	icon->priv->image = gtk_image_new_from_pixbuf (pixbuf);
-	g_object_unref (G_OBJECT (pixbuf));
+	if (pixbuf != NULL)
+	{
+		g_object_unref (G_OBJECT (pixbuf));
+	}
 
 	icon->priv->evbox = gtk_event_box_new ();
 
