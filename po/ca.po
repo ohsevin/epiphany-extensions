@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-05-31 13:15+0200\n"
-"PO-Revision-Date: 2004-03-18 17:13+0100\n"
+"POT-Creation-Date: 2004-08-21 19:20+0200\n"
+"PO-Revision-Date: 2004-08-21 19:22+0200\n"
 "Last-Translator: Xavier Conde Rueda <xaviconde@eresmas.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,27 +16,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n!=1;\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:160
-msgid "Certificate Manager"
-msgstr "Gestor de certificats"
-
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:276
+#: extensions/certificates/ephy-certificates-extension.c:253
 msgid "Manage _Certificates"
 msgstr "Gestiona els _certificats"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:278
+#: extensions/certificates/ephy-certificates-extension.c:255
 msgid "Manage your certificates"
 msgstr "Gestioneu els vostres certificats"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:286
+#: extensions/certificates/ephy-certificates-extension.c:263
 msgid "Server _Certificate"
 msgstr "_Certificat del servidor"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:288
+#: extensions/certificates/ephy-certificates-extension.c:265
 msgid "Display the web server's certificate"
 msgstr "Visualitza el certificat del servidor web"
 
@@ -77,7 +73,7 @@ msgid "Error Viewer"
 msgstr "Visualitzador d'errors"
 
 #. Don't bother looking for source lines -- they're not there
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:85
 #, c-format
 msgid ""
 "Error:\n"
@@ -86,7 +82,7 @@ msgstr ""
 "S'ha produït un error:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:90
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:110
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -95,14 +91,14 @@ msgstr ""
 "S'ha produït un error de Javascript en %s a la línia %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:60
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
 msgstr[0] "S'ha trobat %d enllaç invàlid"
 msgstr[1] "S'han trobat %d enllaços invàlids"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:117
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -111,14 +107,14 @@ msgstr ""
 "S'ha produït un error en l'enllaç %s:\n"
 "%s no està disponible."
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:198
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
 msgstr[0] "S'està comprovant %d enllaç a %s"
 msgstr[1] "S'estan comprovant %d enllaços a %s"
 
-#: extensions/error-viewer/opensp/validate.cpp:167
+#: extensions/error-viewer/opensp/validate.cpp:168
 #, c-format
 msgid ""
 "HTML error in %s on line %s:\n"
@@ -167,19 +163,17 @@ msgstr ""
 "%s"
 
 #: extensions/error-viewer/sgml-validator.c:360
-#, fuzzy, c-format
+#, c-format
 msgid "HTML error in %s:"
-msgstr ""
-"S'ha produït un error d'HTML a %s:\n"
-"%s"
+msgstr "S'ha produït un error d'HTML a %s:"
 
 #: extensions/error-viewer/sgml-validator.c:368
 msgid "Invalid character encoding"
-msgstr ""
+msgstr "La codificació de caràcters és invàlida"
 
 #: extensions/error-viewer/sgml-validator.c:373
 msgid "Unknown error while converting to UTF-8"
-msgstr ""
+msgstr "S'ha produït un error desconegut en convertir a UTF-8"
 
 #: extensions/error-viewer/sgml-validator.c:435
 #, c-format
@@ -189,22 +183,6 @@ msgid ""
 msgstr ""
 "S'ha produït un error HTML a %s:\n"
 "No s'ha especificat cap tipus de document vàlid."
-
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
-msgid "Popup _Windows"
-msgstr "_Finestres emergents"
-
-#. shortcut key
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
-msgid "Show or hide unrequested popup windows from this site"
-msgstr "Mostra o amaga les finestres emergents no demanades d'aquest lloc"
-
-#: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
-#, c-format
-msgid "%d popup window blocked"
-msgid_plural "%d popup windows blocked"
-msgstr[0] "S'ha bloquejat %d finestra emergent"
-msgstr[1] "S'han bloquejat %d finestres emergents"
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:183
 #, c-format
@@ -220,3 +198,17 @@ msgstr "Mou la pestanya a la finestra"
 #: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
 msgstr "Mou la pestanya actual a una finestra diferent"
+
+#~ msgid "Certificate Manager"
+#~ msgstr "Gestor de certificats"
+
+#~ msgid "Popup _Windows"
+#~ msgstr "_Finestres emergents"
+
+#~ msgid "Show or hide unrequested popup windows from this site"
+#~ msgstr "Mostra o amaga les finestres emergents no demanades d'aquest lloc"
+
+#~ msgid "%d popup window blocked"
+#~ msgid_plural "%d popup windows blocked"
+#~ msgstr[0] "S'ha bloquejat %d finestra emergent"
+#~ msgstr[1] "S'han bloquejat %d finestres emergents"
