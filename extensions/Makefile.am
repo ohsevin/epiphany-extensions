@@ -1,5 +1,9 @@
 SUBDIRS =
 
+if ENABLE_ADBLOCK_EXTENSION
+SUBDIRS += adblock
+endif
+
 if ENABLE_CERTIFICATES_EXTENSION
 SUBDIRS += certificates
 endif

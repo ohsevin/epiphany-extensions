@@ -1,3 +1,34 @@
+2004-09-19  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/Makefile.am:
+	* extensions/adblock/.cvsignore:
+	* extensions/adblock/Makefile.am:
+	* extensions/adblock/ad-blocker.c: (ad_blocker_get_type),
+	(ad_blocker_register_type), (ad_blocker_new),
+	(ad_blocker_class_init), (ad_blocker_test_uri),
+	(load_patterns_file), (load_patterns), (ad_blocker_init),
+	(ad_blocker_finalize):
+	* extensions/adblock/ad-blocker.h:
+	* extensions/adblock/adblock-patterns:
+	* extensions/adblock/ephy-adblock-extension.c:
+	(ephy_adblock_extension_get_type),
+	(ephy_adblock_extension_register_type),
+	(ephy_adblock_extension_init), (ephy_adblock_extension_finalize),
+	(impl_attach_window), (impl_detach_window),
+	(ephy_adblock_extension_iface_init),
+	(ephy_adblock_extension_class_init):
+	* extensions/adblock/ephy-adblock-extension.h:
+	* extensions/adblock/extension.c: (register_module):
+	* extensions/adblock/mozilla/.cvsignore:
+	* extensions/adblock/mozilla/Makefile.am:
+	* extensions/adblock/mozilla/MozAdBlocker.cpp:
+	* extensions/adblock/mozilla/MozAdBlocker.h:
+	* extensions/adblock/mozilla/mozilla-helpers.cpp:
+	* extensions/adblock/mozilla/mozilla-helpers.h:
+
+	Created preliminary "adblock" extension.
+
 2004-09-18  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/sample-mozilla/sample-mozilla.c: (register_module):

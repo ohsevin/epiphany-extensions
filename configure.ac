@@ -135,10 +135,10 @@ dnl *******************************
 
 AC_MSG_CHECKING([extensions to build])
 
-all_extensions="certificates,dashboard,error-viewer,gestures,page-info,sample,sample-mozilla,select-stylesheet,smart-bookmarks,tabsmenu,tab-groups"
-all_useful_extensions="certificates,dashboard,error-viewer,gestures,page-info,select-stylesheet,smart-bookmarks,tab-groups,tabsmenu"
-default_extensions="certificates,error-viewer,gestures,page-info,select-stylesheet,smart-bookmarks,tab-groups,tabsmenu"
-mozilla_dependent_extensions="certificates,error-viewer,page-info,sample-mozilla,select-stylesheet,smart-bookmarks"
+all_extensions="adblock,certificates,dashboard,error-viewer,gestures,page-info,sample,sample-mozilla,select-stylesheet,smart-bookmarks,tabsmenu,tab-groups"
+all_useful_extensions="adblock,certificates,dashboard,error-viewer,gestures,page-info,select-stylesheet,smart-bookmarks,tab-groups,tabsmenu"
+default_extensions="adblock,certificates,error-viewer,gestures,page-info,select-stylesheet,smart-bookmarks,tab-groups,tabsmenu"
+mozilla_dependent_extensions="adblock,certificates,error-viewer,page-info,sample-mozilla,select-stylesheet,smart-bookmarks"
 
 dnl due to an autoconf bug, commas in the first arg to
 dnl AC_HELP_STRING cause problems.
@@ -147,9 +147,10 @@ dnl AC_HELP_STRING([--with-extensions=ext1,ext2,...],[build the specified extens
 AC_ARG_WITH([extensions],
 [  --with-extensions=extension1,extension2,...
 			  build the specified extensions. Available:
-			  certificates, dashboard, error-viewer, gestures,
-			  page-info, select-stylesheet, smart-bookmarks,
-			  tabs-groups, tabsmenu, all, really-all])
+			  adblock, certificates, dashboard, error-viewer,
+			  gestures, page-info, select-stylesheet,
+			  smart-bookmarks, tabs-groups, tabsmenu, all,
+			  really-all])
 
 dnl If no extensions specified, build the default set
 if test "x$with_extensions" = xyes; then
@@ -182,6 +183,7 @@ for ext in $extensions; do
 done
 IFS="$ephyext_save_ifs"
 
+AM_CONDITIONAL(ENABLE_ADBLOCK_EXTENSION, echo "$extensions" | egrep '(^|,)adblock($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_CERTIFICATES_EXTENSION, echo "$extensions" | egrep '(^|,)certificates($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_DASHBOARD_EXTENSION, echo "$extensions" | egrep '(^|,)dashboard($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_ERROR_VIEWER_EXTENSION, echo "$extensions" | egrep '(^|,)error-viewer($|,)' > /dev/null)
@@ -375,6 +377,8 @@ AC_CONFIG_FILES([
 Makefile
 include/Makefile
 extensions/Makefile
+extensions/adblock/Makefile
+extensions/adblock/mozilla/Makefile
 extensions/certificates/Makefile
 extensions/certificates/mozilla/Makefile
 extensions/dashboard/Makefile

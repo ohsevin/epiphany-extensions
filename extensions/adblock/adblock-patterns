@@ -1,0 +1,18 @@
+# Each line of this file should be a "glob"-style pattern to match. If a
+# requested URL matches any line in this file, it will not be loaded.
+#
+# For example, to block (almost) all images:
+#
+# *.gif
+# *.jpg
+# *.png
+#
+# What follows is a good default:
+
+*/ad/*
+*/ads/*
+*/banner/*
+*adtech*
+*annonce*
+*banners*
+*doubleclick*
