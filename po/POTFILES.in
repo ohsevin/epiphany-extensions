@@ -1,5 +1,6 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
+extensions/certificates/ephy-certificates-extension.c
 extensions/error-viewer/ephy-error-viewer-extension.c
 extensions/error-viewer/error-viewer.glade
 extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp
