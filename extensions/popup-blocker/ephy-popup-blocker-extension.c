@@ -217,13 +217,6 @@ update_action_without_address (EphyWindow *window)
 }
 
 static void
-update_all_actions_foreach_func (gpointer data,
-				 gpointer user_data)
-{
-	update_action_without_address (EPHY_WINDOW (data));
-}
-
-static void
 update_all_actions (GConfClient *client,
 		    guint cnxn_id,
 		    GConfEntry *entry,
@@ -238,7 +231,7 @@ update_all_actions (GConfClient *client,
 	session = EPHY_SESSION (ephy_shell_get_session (ephy_shell));
 	windows = ephy_session_get_windows (session);
 
-	g_list_foreach (windows, (GFunc) update_all_actions_foreach_func, NULL);
+	g_list_foreach (windows, (GFunc) update_action_without_address, NULL);
 }
 
 static void
@@ -363,21 +356,16 @@ action_activate_cb (GtkAction *action,
 		    EphyWindow *window)
 {
 	const char *address;
-	EphyTab *tab;
 	EphyEmbed *embed;
 	EphyPopupBlockerList *list;
 	EphyPermissionManager *permission_manager;
 	EphyPermission allow;
 
-	tab = ephy_window_get_active_tab (window);
-	g_return_if_fail (EPHY_IS_TAB (tab));
-
-	/* FIXME: Can we use ephy_embed_get_location() *here*? */
-	address = ephy_tab_get_location (tab);
-	g_return_if_fail (address != NULL);
-
-	embed = ephy_tab_get_embed (tab);
+	embed = ephy_window_get_active_embed(window);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
+
+	address = ephy_embed_get_location (embed, TRUE);
+	g_return_if_fail (address != NULL);
 
 	list = g_object_get_data (G_OBJECT (embed), "popup-blocker-list");
 	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (list));

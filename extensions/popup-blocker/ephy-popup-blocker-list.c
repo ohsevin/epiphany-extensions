@@ -138,7 +138,17 @@ ephy_popup_blocker_list_insert (EphyPopupBlockerList *list,
  * each other recursively */
 static void ephy_popup_blocker_list_remove_window (EphyPopupBlockerList *list, EphyWindow *window);
 
-static void
+static gboolean
+is_visible (GtkWidget *widget)
+{
+	gboolean visible = FALSE;
+
+	g_object_get (G_OBJECT (widget), "visible", &visible, NULL);
+
+	return visible;
+}
+
+static gboolean
 window_deleted_cb (EphyWindow *window,
 		   GdkEvent *event,
 		   EphyPopupBlockerList *list)
@@ -149,25 +159,23 @@ window_deleted_cb (EphyWindow *window,
 	LOG ("window_deleted_cb on window %p with list %p\n", window, list)
 
 	ephy_popup_blocker_list_remove_window (list, window);
+
+	return FALSE;
 }
 
 static void
 free_blocked_popup (BlockedPopup *popup)
 {
 	/* Destroy hidden popups */
-	gboolean is_visible;
-
-	if (popup->window != NULL
-	    && EPHY_IS_WINDOW (popup->window))
+	if (popup->window != NULL)
 	{
+		g_return_if_fail (EPHY_IS_WINDOW (popup->window));
+
 		g_signal_handlers_disconnect_matched
 			(popup->window, G_SIGNAL_MATCH_FUNC, 0, 0, NULL,
 			 window_deleted_cb, NULL);
 
-		g_object_get (G_OBJECT (popup->window), "visible", &is_visible,
-			      NULL);
-
-		if (is_visible == FALSE)
+		if (is_visible (GTK_WIDGET (popup->window)) == FALSE)
 		{
 			gtk_widget_destroy (GTK_WIDGET (popup->window));
 		}
@@ -194,6 +202,8 @@ ephy_popup_blocker_list_remove_window (EphyPopupBlockerList *list,
 
 		if (popup->window == window)
 		{
+			LOG ("Removing window %p from list %p\n", window, list)
+
 			list->priv->popups = g_slist_delete_link
 				(list->priv->popups, t);
 			free_blocked_popup (popup);
@@ -221,7 +231,7 @@ ephy_popup_blocker_list_insert_window (EphyPopupBlockerList *list,
 	g_signal_connect (window, "delete-event",
 			  G_CALLBACK (window_deleted_cb), list);
 
-	LOG ("Added allowed popup to list %p: %s\n", list, popup->url);
+	LOG ("Added allowed popup to list %p: window %p\n", list, window)
 
 	g_object_notify (G_OBJECT (list), "count");
 }
@@ -269,6 +279,39 @@ ephy_popup_blocker_list_set_property (GObject *object,
 	}
 }
 
+static guint
+count_popups (EphyPopupBlockerList *list)
+{
+	GSList *t;
+	BlockedPopup *popup;
+	guint count = 0;
+
+	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (list));
+
+	for (t = list->priv->popups; t; t = g_slist_next (t))
+	{
+		popup = (BlockedPopup *) t->data;
+
+		/* Hidden windows */
+		if (popup->window != NULL
+		    && EPHY_IS_WINDOW (popup->window)
+		    && is_visible (GTK_WIDGET (popup->window)) == FALSE)
+		{
+			count++;
+			continue;
+		}
+
+		/* If there's no window, it can't be visible */
+		if (popup->window == NULL)
+		{
+			count++;
+			continue;
+		}
+	}
+
+	return count;
+}
+
 static void
 ephy_popup_blocker_list_get_property (GObject *object,
 				      guint prop_id,
@@ -280,10 +323,7 @@ ephy_popup_blocker_list_get_property (GObject *object,
 	switch (prop_id)
 	{
 		case PROP_COUNT:
-			/* FIXME: Don't count unblocked popups */
-			g_value_set_uint
-				(value,
-				 g_slist_length (list->priv->popups));
+			g_value_set_uint (value, count_popups (list));
 			break;
 	}
 }

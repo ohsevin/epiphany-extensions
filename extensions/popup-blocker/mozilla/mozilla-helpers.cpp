@@ -104,7 +104,6 @@ mozilla_register_popup_listener (EphyEmbed *embed)
 extern "C" void
 mozilla_unregister_popup_listener (PopupListenerFreeData *data)
 {
-	/* FIXME: Error checking? */
 	PopupBlockerListener *listener =
 		(PopupBlockerListener *) data->listener;
 	nsIDOMEventTarget *target = (nsIDOMEventTarget *) data->eventTarget;

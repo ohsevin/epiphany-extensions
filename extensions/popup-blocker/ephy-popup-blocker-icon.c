@@ -38,8 +38,6 @@
 
 #include <glib/gi18n-lib.h>
 
-#define MAX_MENU_LENGTH 60
-
 #define EPHY_POPUP_BLOCKER_ICON_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_POPUP_BLOCKER_ICON, EphyPopupBlockerIconPrivate))
 
 struct EphyPopupBlockerIconPrivate
@@ -49,7 +47,6 @@ struct EphyPopupBlockerIconPrivate
 	GtkTooltips *tooltips;
 
 	GtkWidget *evbox;
-	/* FIXME: use the same pixbuf/image for all icons? */
 	GtkWidget *image;
 };
 

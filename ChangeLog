@@ -1,6 +1,22 @@
 2004-03-13  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
+	(update_all_actions), (action_activate_cb):
+	* extensions/popup-blocker/ephy-popup-blocker-icon.c:
+	* extensions/popup-blocker/ephy-popup-blocker-list.c: (is_visible),
+	(window_deleted_cb), (free_blocked_popup),
+	(ephy_popup_blocker_list_remove_window),
+	(ephy_popup_blocker_list_insert_window), (count_popups),
+	(ephy_popup_blocker_list_get_property):
+	* extensions/popup-blocker/mozilla/mozilla-helpers.cpp:
+
+	Got rid of most of my FIXMEs, and fixed a stupid bug: closed windows
+	weren't being removed from their parents' lists because the
+	"delete-event" function prototype I attached to its signal was wrong.
+
+2004-03-13  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
 	(get_icon_for_embed), (action_activate_cb), (new_window_cb):
 	* extensions/popup-blocker/ephy-popup-blocker-icon.c: (update_ui):
 	* extensions/popup-blocker/ephy-popup-blocker-list.c:
