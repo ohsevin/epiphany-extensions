@@ -33,29 +33,35 @@ G_BEGIN_DECLS
 
 typedef enum
 {
-	EMBED_RENDER_FULL_STANDARDS	= 1,
-	EMBED_RENDER_ALMOST_STANDARDS	= 2,
-	EMBED_RENDER_QUIRKS		= 3
+  EMBED_RENDER_FULL_STANDARDS	= 1,
+  EMBED_RENDER_ALMOST_STANDARDS	= 2,
+  EMBED_RENDER_QUIRKS		= 3
 } EmbedPageRenderMode;
 
 typedef enum
 {
-	EMBED_SOURCE_NOT_CACHED    = 0,
-	EMBED_SOURCE_DISK_CACHE    = 1,
-	EMBED_SOURCE_MEMORY_CACHE  = 2,
-	EMBED_SOURCE_UNKNOWN_CACHE = 3
+  EMBED_SOURCE_NOT_CACHED    = 0,
+  EMBED_SOURCE_DISK_CACHE    = 1,
+  EMBED_SOURCE_MEMORY_CACHE  = 2,
+  EMBED_SOURCE_UNKNOWN_CACHE = 3
 } EmbedPageSource;
+
+typedef enum
+{
+  EMBED_LINK_TYPE_MAIL,
+  EMBED_LINK_TYPE_NORMAL
+} EmbedPageLinkType;
 
 typedef struct
 {
-	char *content_type;
-	char *encoding;
-	char *referring_url;
-	int size;
-	GTime expiration_time;
-	GTime modification_time;
-	EmbedPageRenderMode rendering_mode;
-	EmbedPageSource page_source;
+  char *content_type;
+  char *encoding;
+  char *referring_url;
+  int size;
+  GTime expiration_time;
+  GTime modification_time;
+  EmbedPageRenderMode rendering_mode;
+  EmbedPageSource page_source;
 
 	/*
 	char *cipher_name;
@@ -71,41 +77,49 @@ typedef struct
 
 typedef struct
 {
-	char *url;
-	char *alt;
-	char *title;
-	int width;
-	int height;
+  char *url;
+  char *alt;
+  char *title;
+  int width;
+  int height;
 } EmbedPageImage; 
 
 typedef struct
 {
-	char *url;
-	char *title;
-	char *rel;
+  char *url;
+  char *name;
+  char *type;
+  int width;
+  int height;
+} EmbedPageMedia;
+
+typedef struct
+{
+  EmbedPageLinkType type;
+  char *url;
+  char *title;
+  char *rel;
 } EmbedPageLink;
 
 typedef struct
 {
-	char *name;
-	char *method;
-	char *action;
+  char *name;
+  char *method;
+  char *action;
 } EmbedPageForm;
 
 typedef struct
 {
-	GList *images;
-	GList *links;
-	GList *forms;
+  EmbedPageProperties *props;
+  GList *images;
+  GList *links;
+  GList *forms;
 } EmbedPageInfo;
 
-void			 mozilla_free_page_properties	(EmbedPageProperties *props);
 
-EmbedPageProperties	*mozilla_get_page_properties	(EphyEmbed *embed);
+EmbedPageInfo *mozilla_get_page_info        (EphyEmbed *embed);
 
-EmbedPageInfo    	*mozilla_get_page_info          (EphyEmbed *embed);
-
-void			 mozilla_free_embed_page_info	(EmbedPageInfo *page_info);
+void           mozilla_free_embed_page_info (EmbedPageInfo *info);
 
 G_END_DECLS
 

@@ -539,10 +539,13 @@ treeview_info_page_button_pressed_cb (GtkTreeView *treeview,
 				      GdkEventButton *event,
 				      TreeviewInfoPage *page)
 {
+	InfoPage *ipage = (InfoPage *) page;
+	PageInfoDialog *dialog = ipage->dialog;
 	GtkTreeModel *model = GTK_TREE_MODEL (page->store);
 	GtkTreeSelection *selection;
 	GtkTreeIter iter;
 	GtkTreePath *path = NULL;
+	GtkWidget *widget;
 
 	/* right-click? */
 	if (event->button != 3)
@@ -573,8 +576,14 @@ treeview_info_page_button_pressed_cb (GtkTreeView *treeview,
 		gtk_tree_path_free (path);
 	}
 	treeview_filter_popup (page, selection);
+       
+	/* now popup the menu */
+	widget = gtk_ui_manager_get_widget (dialog->priv->manager,
+					    page->popup_path);
+	gtk_menu_popup (GTK_MENU (widget), NULL, NULL, NULL, NULL,
+			event->button, event->time);
 
-	return treeview_info_page_show_popup (page);
+	return TRUE;
 }
 
 static void
@@ -637,7 +646,7 @@ general_info_page_fill (InfoPage *page)
 
 	LOG ("general_info_page_fill")
 
-	props = mozilla_get_page_properties (embed);
+	props = dialog->priv->page_info->props;
 	g_return_if_fail (props != NULL);
 
 	val = ephy_embed_get_title (embed);
@@ -747,8 +756,6 @@ general_info_page_fill (InfoPage *page)
 						(EmbedPageMetaTag*)i->data);
 	}	
 	*/
-
-	mozilla_free_page_properties (props);
 }
 
 static InfoPage *
@@ -1650,6 +1657,7 @@ page_info_dialog_constructor (GType type,
 	}
 
 	dialog->priv->page_info = mozilla_get_page_info (dialog->priv->embed);
+	g_return_val_if_fail (dialog->priv->page_info != NULL, object);
 
 	for (i = GENERAL_PAGE; i < LAST_PAGE; i++)
 	{

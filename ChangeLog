@@ -1,5 +1,21 @@
 2004-12-06  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+	* extensions/page-info/mozilla/mozilla-helpers.h:
+	* extensions/page-info/page-info-dialog.c:
+	(treeview_info_page_button_pressed_cb), (general_info_page_fill),
+	(page_info_dialog_constructor):
+	* extensions/page-info/page-info.glade:
+	* extensions/sample/ephy-sample-extension.c: (tray_icon_added_cb),
+	(tray_icon_removed_cb), (message_sent_cb), (message_cancelled_cb),
+	(lost_selection_cb), (ephy_sample_extension_init),
+	(ephy_sample_extension_finalize):
+	* include/EphyUtils.h:
+
+	Also list applet, embed and object elements. Work in progress.
+
+2004-12-06  Christian Persch  <chpe@cvs.gnome.org>
+
 	* include/EphyUtils.h:
 
 	Update from Epiphany.
