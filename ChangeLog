@@ -1,3 +1,7 @@
+2004-03-04  Kostas Papadimas <pkst@gnome.org>
+
+        * configure.ac: Added "el" (Greek) to ALL_LINGUAS.
+
 2004-03-04  Guntupalli Karunakar  <karunakar@freedomink.org>
 
 	* configure.ac: Added "pa" to ALL_LINGUAS.
