@@ -271,8 +271,8 @@ convert_to_utf8 (const char *file,
 	char *encoding;
 	char *base;
 	char *buf;
-	int buf_size = 4096;
-	int len;
+	gsize buf_size = 4096;
+	gsize len;
 	GIOChannel *in;
 	GIOChannel *out;
 	GIOStatus status;

@@ -1,5 +1,11 @@
 2004-10-11  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/error-viewer/sgml-validator.c: (convert_to_utf8):
+
+	64-bit fix. Patch by Andrzej Dopierała.
+
+2004-10-11  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/adblock/Makefile.am:
 	* extensions/certificates/Makefile.am:
 	* extensions/dashboard/Makefile.am:
