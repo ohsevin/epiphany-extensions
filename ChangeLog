@@ -1,3 +1,11 @@
+2004-06-23  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/certificates/mozilla/mozilla-embed-certificate.cpp:
+
+	Destroy our helper class on ::destroy on the embed, not on
+	::finalize. Fixes a crash when closing the last window.
+	Fixes bug #144850.
+
 2004-06-14  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:
