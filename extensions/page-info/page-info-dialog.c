@@ -40,7 +40,10 @@
 #include <gtk/gtktreeview.h>
 #include <gtk/gtktreeselection.h>
 #include <gtk/gtkcellrenderertext.h>
-
+#include <gtk/gtkaction.h>
+#include <gtk/gtkactiongroup.h>
+#include <gtk/gtkuimanager.h>
+#include <gtk/gtkstock.h>
 
 #include <libgnomevfs/gnome-vfs-utils.h>
 #include <libgnomevfs/gnome-vfs-mime-handlers.h>
@@ -116,14 +119,18 @@ struct _InfoPage
 struct _PageInfoDialogPrivate
 {
 	InfoPage *pages[LAST_PAGE];
-	GtkWidget *window;
+	GtkWidget *dialog;
+	EphyWindow *window;
 	EphyEmbed *embed;
+	GtkUIManager *manager;
+	GtkActionGroup *action_group;
 };
 
 enum
 {
 	PROP_0,
-	PROP_EMBED
+	PROP_EMBED,
+	PROP_WINDOW
 };
 
 enum
@@ -663,6 +670,13 @@ enum
 	COL_IMAGE_HEIGHT
 };
 
+static void
+images_save_image_cb (GtkAction *action,
+		      ImagesInfoPage *page)
+{
+	g_print ("save image!\n");
+}
+
 void
 page_info_image_box_realize_cb (GtkContainer *box,
 				PageInfoDialog *dialog)
@@ -736,6 +750,69 @@ images_treeview_selection_changed_cb (GtkTreeSelection *selection,
 }
 
 static void
+images_page_show_popup (ImagesInfoPage *page)
+{
+	InfoPage *ipage = (InfoPage *) page;
+	PageInfoDialog *dialog = ipage->dialog;
+	GtkWidget *widget;
+
+	widget = gtk_ui_manager_get_widget (dialog->priv->manager,
+					    "/ImagesPopup");
+	gtk_menu_popup (GTK_MENU (widget), NULL, NULL, NULL, NULL, 2,
+			gtk_get_current_event_time ());
+}
+
+static gboolean
+images_treeview_button_pressed_cb (GtkTreeView *treeview,
+				   GdkEventButton *event,
+				   ImagesInfoPage *page)
+{
+	GtkTreeModel *model = GTK_TREE_MODEL (page->store);
+	GtkTreeSelection *selection;
+	GtkTreeIter iter;
+	GtkTreePath *path = NULL;
+
+	/* right-click? */
+	if (event->button != 3)
+	{
+	       return FALSE;
+	}
+
+	/* Get tree path for row that was clicked */
+	if (!gtk_tree_view_get_path_at_pos (treeview,
+					    event->x, event->y,
+					    &path, NULL, NULL, NULL))
+	{
+	       return FALSE;
+	}
+
+	if (!gtk_tree_model_get_iter (model, &iter, path))
+	{
+	       gtk_tree_path_free(path);
+	       return FALSE;
+	}
+
+	/* Select the row the user clicked on */
+	selection = gtk_tree_view_get_selection (treeview);
+	gtk_tree_selection_unselect_all (selection);
+	gtk_tree_selection_select_path (selection, path);
+	gtk_tree_path_free (path);
+
+	images_page_show_popup (page);
+	
+	return TRUE;
+}
+
+static gboolean
+images_treeview_popup_menu_cb (GtkTreeView *treeview,
+			       ImagesInfoPage *page)
+{
+	images_page_show_popup (page);
+
+	return TRUE;
+}
+
+static void
 images_info_page_construct (InfoPage *ipage)
 {
 	ImagesInfoPage *page = (ImagesInfoPage *) ipage;
@@ -759,27 +836,21 @@ images_info_page_construct (InfoPage *ipage)
 	gtk_tree_view_set_model (treeview, GTK_TREE_MODEL (liststore));
 	g_object_unref (liststore);
 
-	gtk_tree_view_set_headers_visible (treeview, TRUE);
 	selection = gtk_tree_view_get_selection (treeview);
 	gtk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
 
 	g_signal_connect (selection, "changed",
-			  G_CALLBACK(images_treeview_selection_changed_cb),
+			  G_CALLBACK (images_treeview_selection_changed_cb),
 			  page);
-	/*
+
 	g_signal_connect (treeview, "button-press-event", 
-			  G_CALLBACK (image_treeview_button_pressed_cb), 
-			  dialog);
+			  G_CALLBACK (images_treeview_button_pressed_cb), 
+			  page);
 	g_signal_connect (treeview, "popup-menu", 
-			  G_CALLBACK (treeview_onpopupmenu_cb),
-			  dialog);
-	*/
-	g_object_set_data (G_OBJECT (treeview), COLUMN_KEY, 
-			   GINT_TO_POINTER (COL_IMAGE_URL));
+			  G_CALLBACK (images_treeview_popup_menu_cb),
+			  page);
 
-	/* FIXME: Do we leak this? */
 	renderer = gtk_cell_renderer_text_new ();
-
 	gtk_tree_view_insert_column_with_attributes (treeview,
 						     COL_IMAGE_URL,
 						     _("URL"),
@@ -870,7 +941,7 @@ images_info_page_fill (InfoPage *ipage)
 				   COL_IMAGE_TITLE, image->title,
 				   COL_IMAGE_WIDTH, image->width,
 				   COL_IMAGE_HEIGHT, image->height,
-				    -1);
+				   -1);
 	}
 
 	g_list_foreach (images, (GFunc) mozilla_free_embed_page_image, NULL);
@@ -1100,7 +1171,7 @@ forms_info_page_fill (InfoPage *ipage)
 				   COL_FORM_NAME, form->name,
 				   COL_FORM_METHOD, form->method,
 				   COL_FORM_ACTION, form->action,
-				    -1);
+				   -1);
 	}
 
 	g_list_foreach (forms, (GFunc) mozilla_free_embed_page_form, NULL);
@@ -1108,6 +1179,21 @@ forms_info_page_fill (InfoPage *ipage)
 }
 
 /* object stuff */
+
+static GtkActionEntry context_entries [] =
+{
+	/* dummy popup action */
+	{ "PopupAction", NULL, "" },
+
+	/* "Images" page */
+
+	{ "SaveAs", GTK_STOCK_SAVE_AS, N_("_Save Image As..."), NULL,
+	  N_("Save image"),
+	  G_CALLBACK (images_save_image_cb) },
+
+	/* "Links" page */
+	/* "Forms" page */
+};
 
 static void
 page_info_dialog_init (PageInfoDialog *dialog)
@@ -1150,6 +1236,7 @@ page_info_dialog_constructor (GType type,
 	EphyDialog *edialog;
 	GtkWidget *notebook;
 	InfoPage *page;
+	GError *error = NULL;
 	int i;
 
 	object = parent_class->constructor (type, n_construct_properties,
@@ -1170,8 +1257,28 @@ page_info_dialog_constructor (GType type,
 				G_CALLBACK (sync_notebook_page), dialog);
 	*/
 
-	dialog->priv->window = ephy_dialog_get_control (edialog, properties[PROP_DIALOG].id);
-	
+	dialog->priv->dialog = ephy_dialog_get_control (edialog, properties[PROP_DIALOG].id);
+
+	dialog->priv->manager = gtk_ui_manager_new ();
+	dialog->priv->action_group = gtk_action_group_new ("PageInfoContextActions");
+	gtk_action_group_set_translation_domain (dialog->priv->action_group,
+						 GETTEXT_PACKAGE);
+	gtk_action_group_add_actions (dialog->priv->action_group,
+				      context_entries,
+				      G_N_ELEMENTS (context_entries), dialog);
+
+	gtk_ui_manager_insert_action_group (dialog->priv->manager,
+					    dialog->priv->action_group, -1);
+
+	gtk_ui_manager_add_ui_from_file (dialog->priv->manager,
+					 SHARE_DIR "/xml/page-info-context-ui.xml",
+					 &error);
+	if (error != NULL)
+	{
+		g_warning ("Context Menu UI not loaded!\n");
+		g_error_free (error);
+	}
+
 	for (i = GENERAL_PAGE; i < LAST_PAGE; i++)
 	{
 		page = dialog->priv->pages[i];
@@ -1222,6 +1329,9 @@ page_info_dialog_set_property (GObject *object,
 		case PROP_EMBED:
 			dialog->priv->embed = g_value_get_object (value);
 			break;
+		case PROP_WINDOW:
+			dialog->priv->window = g_value_get_object (value);
+			break;
 	}
 }
 
@@ -1246,15 +1356,25 @@ page_info_dialog_class_init (PageInfoDialogClass *klass)
 				      G_TYPE_OBJECT,
 				      G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
 
+	g_object_class_install_property
+		(object_class,
+		 PROP_WINDOW,
+		 g_param_spec_object ("window",
+				      "Window",
+				      "Window",
+				      EPHY_TYPE_WINDOW,
+				      G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
+
 	g_type_class_add_private (object_class, sizeof (PageInfoDialogPrivate));
 }
 
 PageInfoDialog *
-page_info_dialog_new (GtkWidget *parent,
+page_info_dialog_new (EphyWindow *window,
 		      EphyEmbed *embed)
 {
 	return g_object_new (TYPE_PAGE_INFO_DIALOG,
-			     "parent-window", parent,
+			     "parent-window", window,
+			     "window", window,
 			     "embed", embed,
 			     NULL);
 }

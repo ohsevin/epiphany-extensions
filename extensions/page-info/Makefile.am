@@ -32,4 +32,8 @@ glade_DATA = page-info.glade
 
 gladedir = $(pkgdatadir)/glade
 
-EXTRA_DIST = $(glade_DATA)
+ui_xml_DATA = page-info-context-ui.xml
+
+ui_xmldir = $(pkgdatadir)/xml
+
+EXTRA_DIST = $(glade_DATA) $(ui_xml_DATA)

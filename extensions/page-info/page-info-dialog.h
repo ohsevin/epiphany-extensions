@@ -26,6 +26,7 @@
 
 #include <epiphany/ephy-dialog.h>
 #include <epiphany/ephy-embed.h>
+#include <epiphany/ephy-window.h>
 
 #include <glib.h>
 
@@ -59,7 +60,7 @@ GType		 page_info_dialog_get_type	(void);
 
 GType		 page_info_dialog_register_type	(GTypeModule *module);
 
-PageInfoDialog	*page_info_dialog_new		(GtkWidget *parent,
+PageInfoDialog	*page_info_dialog_new		(EphyWindow *window,
 						 EphyEmbed *embed);
 
 /*

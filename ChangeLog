@@ -1,3 +1,17 @@
+2004-09-12  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/page-info/Makefile.am:
+	A extensions/page-info/page-info-context-ui.xml:
+	* extensions/page-info/page-info-dialog.c: (images_save_image_cb),
+	(images_page_show_popup), (images_treeview_button_pressed_cb),
+	(images_treeview_popup_menu_cb), (images_info_page_construct),
+	(images_info_page_fill), (forms_info_page_fill),
+	(page_info_dialog_constructor), (page_info_dialog_set_property),
+	(page_info_dialog_class_init), (page_info_dialog_new):
+	* extensions/page-info/page-info-dialog.h:
+
+	Add context menu for "Images" page.
+
 2004-09-12  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/page-info/mozilla/mozilla-helpers.cpp:

@@ -1,0 +1,10 @@
+<ui>
+
+<popup name="ImagesPopup" action="PopupAction">
+	<menuitem name="SaveAsIP" action="SaveAs"/>
+</popup>
+
+<popup name="ImagesEmbedPopup" action="PopupAction">
+</popup>
+
+</ui>
