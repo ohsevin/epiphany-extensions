@@ -1,3 +1,9 @@
+2003-10-27  Christian Persch  <chpe@cvs.gnome.org>
+
+	* ephy-tabs-plugin-menu.c: (clone_cb):
+
+	Remove cloning of session history, epiphany does no longer support it.
+
 2003-09-12  Christian Persch  <chpe@cvs.gnome.org>
 
 	* ephy-tabs-plugin-menu.c: (ephy_tabs_plugin_menu_finalize):

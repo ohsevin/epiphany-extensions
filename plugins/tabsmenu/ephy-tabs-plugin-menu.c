@@ -276,16 +276,6 @@ clone_cb (GtkAction *action, EphyTabsPluginMenu *menu)
 				      EPHY_NEW_TAB_IN_EXISTING_WINDOW |
 				      EPHY_NEW_TAB_APPEND_AFTER |
 				      EPHY_NEW_TAB_CLONE_PAGE);
-
-	/* clone session history, until ephy does this itself -- bug #113694 */
-	g_return_if_fail (EPHY_IS_TAB (new_tab));
-
-	embed = ephy_tab_get_embed (tab);
-	new_embed = ephy_tab_get_embed (new_tab);
-	g_return_if_fail (EPHY_IS_EMBED (embed));
-	g_return_if_fail (EPHY_IS_EMBED (new_embed));
-
-	ephy_embed_shistory_copy (embed, new_embed);
 }
 
 static void
