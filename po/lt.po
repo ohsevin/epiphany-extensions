@@ -1,47 +1,70 @@
 # Lithuanian translation of epiphany-extensions.
 # Copyright (C) 2004 Free Software Foundation, Inc.
 # This file is distributed under the same license as the epiphany-extensions package.
-# Žygimantas Beručka <uid0@tuxfamily.org>, 2004.
+# Žygimantas Beručka <uid0@akl.lt>, 2004.
 # 
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-01 17:52+0200\n"
-"PO-Revision-Date: 2004-02-01 17:47+0200\n"
-"Last-Translator: Žygimantas Beručka <uid0@tuxfamily.org>\n"
+"POT-Creation-Date: 2004-03-07 17:36+0200\n"
+"PO-Revision-Date: 2004-03-07 17:36+0200\n"
+"Last-Translator: Žygimantas Beručka <uid0@akl.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
+#: extensions/certificates/ephy-certificates-extension.c:159
+msgid "Certificate Manager"
+msgstr "Sertifikatų tvarkyklė"
+
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:214
+#: extensions/certificates/ephy-certificates-extension.c:276
+msgid "Manage _Certificates"
+msgstr "Tvarkyti _sertifikatus"
+
+#. shortcut key
+#: extensions/certificates/ephy-certificates-extension.c:278
+msgid "Manage your certificates"
+msgstr "Tvarkykik Jūsų sertifikatus"
+
+#. stock icon
+#: extensions/certificates/ephy-certificates-extension.c:286
 msgid "Server _Certificate"
 msgstr "Serverio _sertifikatas"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:216
+#: extensions/certificates/ephy-certificates-extension.c:288
 msgid "Display the web server's certificate"
 msgstr "Rodyti web serverio sertifikatą"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:83
-msgid "_Validate"
-msgstr "_Patvirtinti"
+#: extensions/error-viewer/ephy-error-viewer-extension.c:88
+msgid "Check _HTML"
+msgstr "Tikrinti HTML"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:85
+#: extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "Rodyti HTML klaidas klaidų žiūrėjimo programos lange"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:90
+#: extensions/error-viewer/ephy-error-viewer-extension.c:95
+msgid "Check _Links"
+msgstr "Tikrinti _nuorodas"
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:97
+msgid "Display invalid hyperlinks in the Error Viewer dialog"
+msgstr "Rodyti klaidingas nuorodas klaidų žiūrėjimo programos lange"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:101
 msgid "_Error Viewer"
 msgstr "_Klaidų žiūrėjimo programa"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:92
+#: extensions/error-viewer/ephy-error-viewer-extension.c:103
 msgid "Display web page errors"
 msgstr "Rodyti tinklapio klaidas"
 
@@ -53,7 +76,25 @@ msgstr "Išva_lyti"
 msgid "Error Viewer"
 msgstr "Klaidų žiūrėjimo programa"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:106
+#: extensions/error-viewer/link-checker.c:231
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "Rasta %d klaidinga nuoroda"
+msgstr[1] "Rastos %d klaidingos nuorodos"
+msgstr[2] "Rasta %d klaidingų nuorodų"
+
+#. Don't bother looking for source lines -- they're not there
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
+#, c-format
+msgid ""
+"Error:\n"
+"%s"
+msgstr ""
+"Klaida:\n"
+"%s"
+
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:90
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -62,7 +103,23 @@ msgstr ""
 "Javascript klaida esanti %s elutėje %d:\n"
 "%s"
 
-#: extensions/error-viewer/opensp/validate.cpp:152
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:77
+#, c-format
+msgid ""
+"Link error in %s:\n"
+"%s is unavailable."
+msgstr "Nuorodos klaida esanti %s:\n"
+"%s yra neprieinamas."
+
+#: extensions/error-viewer/mozilla/mozilla-link-checker.cpp:174
+#, c-format
+msgid "Checking %d Link on %s"
+msgid_plural "Checking %d Links on %s"
+msgstr[0] "Tikrinama %d nuoroda esanti %s"
+msgstr[1] "Tikrinamos %d nuorodos esančios %s"
+msgstr[2] "Tikrinama %d nuorodų esančių %s"
+
+#: extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
 msgid ""
 "HTML error in %s on line %s:\n"
@@ -71,43 +128,47 @@ msgstr ""
 "HTML klaida esanti %s eilutėje %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:162
+#: extensions/error-viewer/sgml-validator.c:165
 #, c-format
-msgid ""
-"HTML Validation of %s complete\n"
-"Found %d error"
-msgid_plural ""
-"HTML Validation of %s complete\n"
-"Found %d errors"
-msgstr[0] ""
-"%s HTML patvirtinimas baigtas\n"
-"Rasta %d klaida"
-msgstr[1] ""
-"%s HTML patvirtinimas baigtas\n"
-"Rastos %d klaidos"
-msgstr[2] ""
-"%s HTML patvirtinimas baigtas\n"
-"Rasta %d klaidų"
+msgid "Found %d error"
+msgid_plural "Found %d errors"
+msgstr[0] "Rasta %d klaida"
+msgstr[1] "Rastos %d klaidos"
+msgstr[2] "Rasta %d klaidų"
 
-#: extensions/error-viewer/sgml-validator.c:216
+#: extensions/error-viewer/sgml-validator.c:169
+#, c-format
+msgid "HTML Validation of %s complete"
+msgstr "%s HTML patikrinimas baigtas"
+
+#: extensions/error-viewer/sgml-validator.c:227
 #, c-format
 msgid ""
 "HTML error in %s:\n"
-"Doctype is XHTML but content type is text/html"
+"%s"
 msgstr ""
 "HTML klaida esanti %s:\n"
-"Dokumento tipas yra XHTML, bet turinio tipas yra text/html"
+"%s"
 
-#: extensions/error-viewer/sgml-validator.c:230
+#: extensions/error-viewer/sgml-validator.c:229
+#: extensions/error-viewer/sgml-validator.c:245
+msgid ""
+"Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
+"xhtml+xml\" instead."
+msgstr ""
+"Dokumento tipas yra „XHTML“, bet turinio tipas yra „text/html“. Geriau "
+"naudokite „application/xhtml+xml“."
+
+#: extensions/error-viewer/sgml-validator.c:243
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
-"Doctype is XHTML but content type is text/html"
+"%s"
 msgstr ""
 "HTML įspėjimas esantis %s:\n"
-"Dokumento tipas yra XHTML, bet turinio tipas yra text/html"
+"%s"
 
-#: extensions/error-viewer/sgml-validator.c:366
+#: extensions/error-viewer/sgml-validator.c:381
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -116,24 +177,16 @@ msgstr ""
 "HTML klaida esanti %s:\n"
 "Nenurodytas tinkamas dokumento tipas."
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
 msgid "Blo_ck Popups from this Site"
 msgstr "Blo_kuoti iššokančius langus iš šios svetainės"
 
 #. shortcut key
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:64
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
 msgid "Block or unblock popup windows"
 msgstr "Blokuoti arba atblokuoti iššokančius langus"
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:324
-#, c-format
-msgid "%d popup blocked"
-msgid_plural "%d popups blocked"
-msgstr[0] "užblokuotas %d iššokantis langas"
-msgstr[1] "užblokuoti %d iššokantys langai"
-msgstr[2] "užblokuota %d iššokančių langų"
-
-#: extensions/tabsmenu/ephy-tab-move-menu.c:185
+#: extensions/tabsmenu/ephy-tab-move-menu.c:183
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"
@@ -141,10 +194,10 @@ msgstr[0] "Langas '%s' (%d kortelė)"
 msgstr[1] "Langas '%s' (%d kortelės)"
 msgstr[2] "Langas '%s' (%d kortelių)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:283
+#: extensions/tabsmenu/ephy-tab-move-menu.c:282
 msgid "Move Tab To Window"
 msgstr "Perkelti kortelę į langą"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:284
+#: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
 msgstr "Perkelti šią kortelę į kitą langą"
