@@ -3,39 +3,76 @@
 # This file is distributed under the same license as the Epiphany Plugins package.
 # Christian Persch <chpe+ephyplugins@stud.uni-saarland.de>, 2003.
 # Christian Neumair <chris@gnome-de.org>, 2004.
-#
-# $Id$
-#
+# Hendrik Brandt <heb@gnome-de.org>, 2004.
+# Christian Neumair <chris@gnome-de.org>, 2004.
+# 
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: Epiphany Extension 0.7.91\n"
+"Project-Id-Version: Epiphany Extension HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-22 16:56+0200\n"
-"PO-Revision-Date: 2004-10-22 16:59+0200\n"
-"Last-Translator: Christian Neumair <chris@gnome-de.org>\n"
+"POT-Creation-Date: 2004-12-09 16:44+0100\n"
+"PO-Revision-Date: 2004-12-09 16:52+0100\n"
+"Last-Translator: Hendrik Brandt <heb@gnome-de.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);"
 
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
+msgid "_Edit Bookmarks"
+msgstr "Lesezeichen _bearbeiten"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
+msgid "Open the bookmarks window"
+msgstr "Das Lesezeichenverwaltung öffnen"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
+msgid "Open in _Current Tab"
+msgstr "Im _aktuellen Reiter öffnen"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:446
+msgid "Open bookmarks in the current tab of the active window"
+msgstr "Die Lesezeichen im aktuellen Reiter des Fensters öffnen"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:448
+msgid "Open in New _Tab"
+msgstr "In _neuem Reiter öffnen"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:449
+msgid "Open bookmarks in a new tab of the active window"
+msgstr "Die Lesezeichen in einem neuen Reiter des aktuellen Fensters öffnen"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:451
+msgid "Open in New _Window"
+msgstr "In neuem _Fenster öffnen"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:452
+msgid "Open bookmarks in new a window"
+msgstr "Die Lesezeichen in einem neuen Fenster öffnen"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:520
+msgid "Bookmarks"
+msgstr "Lesezeichen"
+
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:269
+#: extensions/certificates/ephy-certificates-extension.c:263
 msgid "Manage _Certificates"
 msgstr "_Zertifikate verwalten"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:271
+#: extensions/certificates/ephy-certificates-extension.c:265
 msgid "Manage your certificates"
 msgstr "Ihre Zertifikate verwalten"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:279
+#: extensions/certificates/ephy-certificates-extension.c:273
 msgid "Server _Certificate"
 msgstr "Server-Z_ertifikat"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:281
+#: extensions/certificates/ephy-certificates-extension.c:275
 msgid "Display the web server's certificate"
 msgstr "Das Zertifikat des Web-Servers anzeigen"
 
@@ -75,7 +112,7 @@ msgid "Error Viewer"
 msgstr "Fehleransicht"
 
 #. Don't bother looking for source lines -- they're not there
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:85
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:87
 #, c-format
 msgid ""
 "Error:\n"
@@ -84,7 +121,7 @@ msgstr ""
 "Fehler:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:110
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:112
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -93,14 +130,14 @@ msgstr ""
 "JavaScript-Fehler in %s, Zeile %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:60
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
 msgstr[0] "%d ungültiger Link gefunden"
 msgstr[1] "%d ungültige Links gefunden"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:117
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -109,14 +146,14 @@ msgstr ""
 "Link-Fehler in %s:\n"
 "%s ist nicht verfügbar."
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:198
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
 msgstr[0] "%d Link auf %s wird überprüft"
 msgstr[1] "%d Links auf %s werden überprüft"
 
-#: extensions/error-viewer/opensp/validate.cpp:169
+#: extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
 msgid ""
 "HTML error in %s on line %s:\n"
@@ -194,17 +231,17 @@ msgstr "_Erweiterungen"
 msgid "Load and unload extensions"
 msgstr "Erweiterungen laden und entladen"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.c:218
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:227
 msgid "Author:"
 msgid_plural "Authors:"
 msgstr[0] "Autor:"
 msgstr[1] "Autoren:"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.c:397
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:410
 msgid "Enabled"
 msgstr "Aktiviert"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.c:404
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:417
 msgid "Description"
 msgstr "Beschreibung"
 
@@ -237,123 +274,127 @@ msgstr "Name:"
 msgid "URL:"
 msgstr "Adresse:"
 
-#: extensions/page-info/ephy-page-info-extension.c:65
+#: extensions/page-info/ephy-page-info-extension.c:66
 msgid "_Page Info"
 msgstr "_Seiteninformationen"
 
-#: extensions/page-info/ephy-page-info-extension.c:67
+#: extensions/page-info/ephy-page-info-extension.c:68
 msgid "Display page information in a dialog"
 msgstr "Die Informationen zu dieser Seite in einem Dialog anzeigen"
 
-#: extensions/page-info/page-info-dialog.c:637
+#: extensions/page-info/page-info-dialog.c:664
 msgid "Unknown type"
 msgstr "Unbekannter Typ"
 
-#: extensions/page-info/page-info-dialog.c:642
+#: extensions/page-info/page-info-dialog.c:669
 msgid "Full standards compliance"
 msgstr "Vollständig Standardkonform"
 
-#: extensions/page-info/page-info-dialog.c:645
+#: extensions/page-info/page-info-dialog.c:672
 msgid "Almost standards compliance"
 msgstr "Größtenteils Standardkonform"
 
-#: extensions/page-info/page-info-dialog.c:648
+#: extensions/page-info/page-info-dialog.c:675
 msgid "Compatibility"
 msgstr "Kompatibilität"
 
-#: extensions/page-info/page-info-dialog.c:651
+#: extensions/page-info/page-info-dialog.c:678
 msgid "Undetermined"
 msgstr "Unbestimmt"
 
-#: extensions/page-info/page-info-dialog.c:660
+#: extensions/page-info/page-info-dialog.c:687
 msgid "Not cached"
 msgstr "Nicht gepuffert"
 
-#: extensions/page-info/page-info-dialog.c:663
+#: extensions/page-info/page-info-dialog.c:690
 msgid "Disk cache"
 msgstr "Festplattenpuffer"
 
-#: extensions/page-info/page-info-dialog.c:666
+#: extensions/page-info/page-info-dialog.c:693
 msgid "Memory cache"
 msgstr "Hauptspeicherpuffer"
 
-#: extensions/page-info/page-info-dialog.c:669
+#: extensions/page-info/page-info-dialog.c:696
 msgid "Unknown cache"
 msgstr "Unbekannter Puffer"
 
-#: extensions/page-info/page-info-dialog.c:685
+#: extensions/page-info/page-info-dialog.c:712
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: extensions/page-info/page-info-dialog.c:690
+#: extensions/page-info/page-info-dialog.c:717
 msgid "No referrer"
 msgstr "Kein Bezug"
 
-#: extensions/page-info/page-info-dialog.c:704
-#: extensions/page-info/page-info-dialog.c:720
+#: extensions/page-info/page-info-dialog.c:731
+#: extensions/page-info/page-info-dialog.c:747
 msgid "Not specified"
 msgstr "Nicht festgelegt"
 
-#: extensions/page-info/page-info-dialog.c:814
+#: extensions/page-info/page-info-dialog.c:919
 msgid "Save Image As..."
 msgstr "Bild speichern unter..."
 
-#: extensions/page-info/page-info-dialog.c:896
+#: extensions/page-info/page-info-dialog.c:934
+msgid "Select a directory"
+msgstr "Ordner auswählen"
+
+#: extensions/page-info/page-info-dialog.c:1032
 msgid "_Open Image"
 msgstr "Bild ö_ffnen"
 
-#: extensions/page-info/page-info-dialog.c:902
+#: extensions/page-info/page-info-dialog.c:1038
 msgid "_Copy Image Address"
 msgstr "_Bildadresse kopieren"
 
-#: extensions/page-info/page-info-dialog.c:908
+#: extensions/page-info/page-info-dialog.c:1044
 msgid "_Use Image as Background"
 msgstr "Bild als _Hintergrund verwenden"
 
-#: extensions/page-info/page-info-dialog.c:914
+#: extensions/page-info/page-info-dialog.c:1050
 #: extensions/page-info/page-info.glade.h:26
 msgid "_Save Image As..."
 msgstr "Bild _speichern unter..."
 
-#: extensions/page-info/page-info-dialog.c:1003
-#: extensions/page-info/page-info-dialog.c:1221
+#: extensions/page-info/page-info-dialog.c:1154
+#: extensions/page-info/page-info-dialog.c:1369
 msgid "URL"
 msgstr "Adresse"
 
-#: extensions/page-info/page-info-dialog.c:1015
+#: extensions/page-info/page-info-dialog.c:1166
 msgid "Alt Text"
 msgstr "Alternativer Text"
 
-#: extensions/page-info/page-info-dialog.c:1027
-#: extensions/page-info/page-info-dialog.c:1233
+#: extensions/page-info/page-info-dialog.c:1178
+#: extensions/page-info/page-info-dialog.c:1381
 msgid "Title"
 msgstr "Titel"
 
-#: extensions/page-info/page-info-dialog.c:1039
+#: extensions/page-info/page-info-dialog.c:1190
 msgid "Width"
 msgstr "Breite"
 
-#: extensions/page-info/page-info-dialog.c:1051
+#: extensions/page-info/page-info-dialog.c:1202
 msgid "Height"
 msgstr "Höhe"
 
-#: extensions/page-info/page-info-dialog.c:1187
+#: extensions/page-info/page-info-dialog.c:1335
 msgid "_Copy Link Address"
 msgstr "_Link-Adresse kopieren"
 
-#: extensions/page-info/page-info-dialog.c:1245
+#: extensions/page-info/page-info-dialog.c:1393
 msgid "Relation"
 msgstr "Bezug"
 
-#: extensions/page-info/page-info-dialog.c:1356
+#: extensions/page-info/page-info-dialog.c:1501
 msgid "Name"
 msgstr "Name"
 
-#: extensions/page-info/page-info-dialog.c:1368
+#: extensions/page-info/page-info-dialog.c:1513
 msgid "Method"
 msgstr "Methode"
 
-#: extensions/page-info/page-info-dialog.c:1380
+#: extensions/page-info/page-info-dialog.c:1525
 msgid "Action"
 msgstr "Aktion"
 
@@ -474,34 +515,39 @@ msgstr "St_yle"
 msgid "Select a different style for this page"
 msgstr "Einen anderen Style für diese Seite auswählen"
 
-#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
+#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
 msgid "Default"
 msgstr "Vorgabe"
 
-#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
+#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
 msgid "None"
 msgstr "Keiner"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:107
+#: extensions/sidebar/ephy-sidebar-extension.c:108
 msgid "_Sidebar"
 msgstr "_Seitenleiste"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:108
+#: extensions/sidebar/ephy-sidebar-extension.c:109
 msgid "Show or hide the sidebar"
 msgstr "Die Seitenleiste anzeigen oder ausblenden"
 
 #: extensions/sidebar/ephy-sidebar-extension.c:396
-msgid "_Add Sidebar"
-msgstr "Seitenleiste _hinzufügen"
-
-#: extensions/sidebar/ephy-sidebar-extension.c:423
 #, c-format
 msgid "Add \"%s\" to the Sidebar?"
 msgstr "Möchten Sie »%s« zur Seitenleiste hinzufügen?"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:426
-msgid "The source to the new sidebar page is:"
-msgstr "Die Quelle der neuen Seitenleistenseite ist:"
+#: extensions/sidebar/ephy-sidebar-extension.c:400
+#, c-format
+msgid "The source to the new sidebar page is %s."
+msgstr "Die Quelle der neuen Seitenleistenseite ist %s."
+
+#: extensions/sidebar/ephy-sidebar-extension.c:402
+msgid "Add Sidebar"
+msgstr "Seitenleiste hinzufügen"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:406
+msgid "_Add Sidebar"
+msgstr "Seitenleiste _hinzufügen"
 
 #: extensions/sidebar/ephy-sidebar.c:178
 msgid "No Sidebars installed"
@@ -525,7 +571,7 @@ msgid "Look up your selection"
 msgstr "Den markierten Text nachschlagen"
 
 #: extensions/smart-bookmarks/smart-bookmarks.glade.h:1
-msgid "Add Gnome Dictionary to the menu"
+msgid "Add GNOME Dictionary to the menu"
 msgstr "Das GNOME-Wörterbuch zum Menü hinzufügen"
 
 #: extensions/smart-bookmarks/smart-bookmarks.glade.h:2
