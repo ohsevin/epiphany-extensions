@@ -55,7 +55,6 @@ MozillaEmbedCertificate::SetCertificateFromRequest (nsIRequest *request)
 	nsCOMPtr<nsISSLStatusProvider> sp = do_QueryInterface (info);
 	if (!sp)
 	{
-		g_print ("no security info, setting cert to null \n");
 		mServerCert = nsnull;
 
 		return NS_OK;
