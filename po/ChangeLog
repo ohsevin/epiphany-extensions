@@ -1,3 +1,10 @@
+2004-10-16  Christian Persch  <chpe@cvs.gnome.org>
+
+	* POTFILES.in:
+	* POTFILES.skip:
+
+	Updated with extensions manager UI files.
+
 2004-10-14  Hendrik Brandt  <hebra@cvs.gnome.org>
 
 	* de.po: Updated German translation.

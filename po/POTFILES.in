@@ -8,6 +8,9 @@ extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp
 extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp
 extensions/error-viewer/opensp/validate.cpp
 extensions/error-viewer/sgml-validator.c
+extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c
+extensions/extensions-manager-ui/extensions-manager-ui.c
+extensions/extensions-manager-ui/extensions-manager-ui.glade
 extensions/page-info/ephy-page-info-extension.c
 extensions/page-info/page-info-dialog.c
 extensions/page-info/page-info.glade

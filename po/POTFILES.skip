@@ -25,4 +25,5 @@ extensions/smart-bookmarks/smart-bookmarks.xml.in.in
 extensions/tab-groups/tab-groups.xml.in.in
 extensions/tabsmenu/tabsmenu.xml.in.in
 extensions/toolbar-extras/toolbar-extras.xml.in.in
+extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in
 
