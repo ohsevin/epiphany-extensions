@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions 0.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-05-31 13:15+0200\n"
-"PO-Revision-Date: 2004-03-19 23:26+0100\n"
+"POT-Creation-Date: 2004-09-15 23:19+0200\n"
+"PO-Revision-Date: 2004-09-15 23:19+0200\n"
 "Last-Translator: Francesco Marletta <francesco.marletta@tiscali.it>\n"
 "Language-Team: italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
@@ -17,58 +17,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:160
-msgid "Certificate Manager"
-msgstr "Gestore certificati"
-
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:276
+#: extensions/certificates/ephy-certificates-extension.c:269
 msgid "Manage _Certificates"
 msgstr "Gestisci _certificati"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:278
+#: extensions/certificates/ephy-certificates-extension.c:271
 msgid "Manage your certificates"
 msgstr "Gestisce i certificati personali"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:286
+#: extensions/certificates/ephy-certificates-extension.c:279
 msgid "Server _Certificate"
 msgstr "_Certificato server"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:288
+#: extensions/certificates/ephy-certificates-extension.c:281
 msgid "Display the web server's certificate"
 msgstr "Visualizza il certificato del web server"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:88
+#: extensions/error-viewer/ephy-error-viewer-extension.c:96
 msgid "Check _HTML"
 msgstr "Controlla _HTML"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:90
+#: extensions/error-viewer/ephy-error-viewer-extension.c:98
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr ""
 "Visualizza gli errori HTML nella finestra di dialogo \"Visualizzatore errori"
 "\""
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:95
+#: extensions/error-viewer/ephy-error-viewer-extension.c:103
 msgid "Check _Links"
 msgstr "Controlla co_llegamenti"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:97
+#: extensions/error-viewer/ephy-error-viewer-extension.c:105
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr ""
 "Visualizza i collegamenti ipertestuali non validi nella finestra di dialogo "
 "\"Visualizzatore errori\""
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:101
+#: extensions/error-viewer/ephy-error-viewer-extension.c:109
 msgid "_Error Viewer"
 msgstr "Visualizzatore _errori"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:103
+#: extensions/error-viewer/ephy-error-viewer-extension.c:111
 msgid "Display web page errors"
 msgstr "Visualizza gli errori della pagina web"
 
@@ -81,7 +77,7 @@ msgid "Error Viewer"
 msgstr "Visualizzatore errori"
 
 #. Don't bother looking for source lines -- they're not there
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:85
 #, c-format
 msgid ""
 "Error:\n"
@@ -90,7 +86,7 @@ msgstr ""
 "Errore:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:90
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:110
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -99,14 +95,14 @@ msgstr ""
 "Errore Javascript in %s alla riga %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:60
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
 msgstr[0] "Trovato %d collegamento non valido"
 msgstr[1] "Trovati %d collegamenti non validi"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:117
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -115,14 +111,14 @@ msgstr ""
 "Errore di collegamento in %s:\n"
 "%s non è disponibile."
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:198
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
 msgstr[0] "Controllo di %d collegamento su %s in corso"
 msgstr[1] "Controllo di %d collegamenti su %s in corso"
 
-#: extensions/error-viewer/opensp/validate.cpp:167
+#: extensions/error-viewer/opensp/validate.cpp:168
 #, c-format
 msgid ""
 "HTML error in %s on line %s:\n"
@@ -131,19 +127,19 @@ msgstr ""
 "Errore HTML in %s alla riga %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:165
+#: extensions/error-viewer/sgml-validator.c:167
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
 msgstr[0] "È stato trovato %d errore"
 msgstr[1] "Sono stati trovati %d errori"
 
-#: extensions/error-viewer/sgml-validator.c:169
+#: extensions/error-viewer/sgml-validator.c:171
 #, c-format
 msgid "HTML Validation of %s complete"
 msgstr "Validazione HTML di %s completa"
 
-#: extensions/error-viewer/sgml-validator.c:227
+#: extensions/error-viewer/sgml-validator.c:229
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -152,8 +148,8 @@ msgstr ""
 "Errore HTML in %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:229
-#: extensions/error-viewer/sgml-validator.c:245
+#: extensions/error-viewer/sgml-validator.c:231
+#: extensions/error-viewer/sgml-validator.c:247
 msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
@@ -161,7 +157,7 @@ msgstr ""
 "Il doctype è \"XHTML\" ma il tipo di contenuto è \"text/html\". Usare invece "
 "\"application/xhtml+xml\"."
 
-#: extensions/error-viewer/sgml-validator.c:243
+#: extensions/error-viewer/sgml-validator.c:245
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
@@ -170,22 +166,20 @@ msgstr ""
 "Avviso HTML in %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:360
-#, fuzzy, c-format
+#: extensions/error-viewer/sgml-validator.c:362
+#, c-format
 msgid "HTML error in %s:"
-msgstr ""
-"Errore HTML in %s:\n"
-"%s"
+msgstr "Errore HTML in %s:"
 
-#: extensions/error-viewer/sgml-validator.c:368
+#: extensions/error-viewer/sgml-validator.c:370
 msgid "Invalid character encoding"
-msgstr ""
+msgstr "Codifica dei caratteri non valida"
 
-#: extensions/error-viewer/sgml-validator.c:373
+#: extensions/error-viewer/sgml-validator.c:375
 msgid "Unknown error while converting to UTF-8"
-msgstr ""
+msgstr "Errore sconosciuto durante la conversione in UTF-8"
 
-#: extensions/error-viewer/sgml-validator.c:435
+#: extensions/error-viewer/sgml-validator.c:437
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -194,21 +188,279 @@ msgstr ""
 "Errore HTML in %s:\n"
 "Il doctype specificato non è valido."
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
-msgid "Popup _Windows"
-msgstr "Finestre a _comparsa"
+#: extensions/page-info/ephy-page-info-extension.c:65
+msgid "_Page Info"
+msgstr ""
+
+#: extensions/page-info/ephy-page-info-extension.c:67
+msgid "Display page information in a dialog"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:636
+msgid "Unknown type"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:641
+msgid "Full standards compliance"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:644
+msgid "Almost standards compliance"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:647
+msgid "Compatibility"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:650
+msgid "Undetermined"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:659
+msgid "Not cached"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:662
+msgid "Disk cache"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:665
+msgid "Memory cache"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:668
+msgid "Unknown cache"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:684
+msgid "Unknown"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:689
+msgid "No referrer"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:703
+#: extensions/page-info/page-info-dialog.c:719
+msgid "Not specified"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:813
+msgid "Save Image As..."
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:895
+msgid "_Open Image"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:901
+msgid "_Copy Image Address"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:907
+msgid "_Use Image as Background"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:913
+#: extensions/page-info/page-info.glade.h:26
+msgid "_Save Image As..."
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:1006
+#: extensions/page-info/page-info-dialog.c:1185
+msgid "URL"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:1018
+msgid "Alt Text"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:1030
+#: extensions/page-info/page-info-dialog.c:1197
+msgid "Title"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:1042
+msgid "Width"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:1054
+msgid "Height"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:1209
+msgid "Relation"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:1322
+msgid "Name"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:1334
+msgid "Method"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:1346
+msgid "Action"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:1
+msgid "*"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:2
+msgid "<b>Forms In Page</b>"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:3
+msgid "<b>Image View</b>"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:4
+msgid "<b>Images In Page</b>"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:5
+msgid "<b>Links In Page</b>"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:6
+msgid "<b>Rendering</b>"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:7
+msgid "<b>Source File</b>"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:8
+msgid "<b>Web Page</b>"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:9
+msgid "DYNAMIC"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:10
+msgid "Encoding:"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:11
+msgid "Expires:"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:12
+msgid "Forms"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:13
+msgid "General"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:14
+msgid "Images"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:15
+msgid "Links"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:16
+msgid "Location:"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:17
+msgid "MIME type:"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:18
+msgid "Mode:"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:19
+msgid "Modified:"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:20
+msgid "Page Properties"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:21
+msgid "Referrer:"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:22
+msgid "Size:"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:23
+msgid "Source:"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:24
+msgid "Title:"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:25
+msgid "Type:"
+msgstr ""
+
+#: extensions/select-stylesheet/ephy-css-menu.c:143
+msgid "Render the page without using a style"
+msgstr ""
+
+#: extensions/select-stylesheet/ephy-css-menu.c:146
+msgid "Render the page using the default style"
+msgstr ""
+
+#: extensions/select-stylesheet/ephy-css-menu.c:149
+#, c-format
+msgid "Render the page using the \"%s\" style"
+msgstr ""
+
+#: extensions/select-stylesheet/ephy-css-menu.c:289
+msgid "St_yle"
+msgstr ""
+
+#: extensions/select-stylesheet/ephy-css-menu.c:290
+msgid "Select a different style for this page"
+msgstr ""
+
+#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:223
+msgid "Default"
+msgstr ""
+
+#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:234
+msgid "None"
+msgstr ""
+
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:546
+msgid "_Look Up"
+msgstr ""
+
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:553
+msgid "_GNOME Dictionary"
+msgstr ""
+
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:560
+msgid "Loo_k-Up Preferences"
+msgstr ""
 
 #. shortcut key
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
-msgid "Show or hide unrequested popup windows from this site"
-msgstr "Mostra o nasconde le finestre a comparsa non richieste da questo sito"
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:562
+msgid "Look up your selection"
+msgstr ""
 
-#: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
-#, c-format
-msgid "%d popup window blocked"
-msgid_plural "%d popup windows blocked"
-msgstr[0] "%d finestra a comparsa bloccata"
-msgstr[1] "%d finestre a comparsa bloccate"
+#: extensions/smart-bookmarks/smart-bookmarks.glade.h:1
+msgid "Add Gnome Dictionary to the menu"
+msgstr ""
+
+#: extensions/smart-bookmarks/smart-bookmarks.glade.h:2
+msgid "Look Up Preferences"
+msgstr ""
+
+#: extensions/smart-bookmarks/smart-bookmarks.glade.h:3
+msgid "Open search results in a new tab"
+msgstr ""
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:183
 #, c-format
