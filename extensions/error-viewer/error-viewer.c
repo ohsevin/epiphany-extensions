@@ -28,6 +28,8 @@
 
 #define ERROR_VIEWER_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), TYPE_ERROR_VIEWER, ErrorViewerPrivate))
 
+#define MAX_NUM_ROWS 50
+
 static void error_viewer_class_init (ErrorViewerClass *klass);
 static void error_viewer_init (ErrorViewer *dialog);
 static void error_viewer_finalize (GObject *object);
@@ -116,7 +118,11 @@ error_viewer_append (ErrorViewer *dialog,
 		     const char *text)
 {
 	GtkTreeIter iter;
+	GtkTreeModel *model;
+	GtkTreePath *path;
 	const char *stock_id;
+	gint num_rows;
+	gint max_num_rows = MAX_NUM_ROWS;
 
 	switch (type)
 	{
@@ -133,37 +139,65 @@ error_viewer_append (ErrorViewer *dialog,
 		g_return_if_reached ();
 	}
 
-	gtk_list_store_append (GTK_LIST_STORE (dialog->priv->model), &iter);
+	model = dialog->priv->model;
 
-	gtk_list_store_set (GTK_LIST_STORE (dialog->priv->model), &iter,
+	gtk_list_store_append (GTK_LIST_STORE (model), &iter);
+
+	gtk_list_store_set (GTK_LIST_STORE (model), &iter,
 			    COL_ICON, stock_id,
 			    COL_TEXT, text,
 			    -1);
+
+	num_rows = gtk_tree_model_iter_n_children (model, NULL);
+	if (num_rows > max_num_rows)
+	{
+		gtk_tree_model_get_iter_first (model, &iter);
+
+		gtk_list_store_remove (GTK_LIST_STORE (model), &iter);
+
+		num_rows--;
+	}
+
+	gtk_tree_model_iter_nth_child (model, &iter, NULL, num_rows - 1);
+
+	path = gtk_tree_model_get_path (model, &iter);
+
+	gtk_tree_view_scroll_to_cell (GTK_TREE_VIEW (dialog->priv->treeview),
+				      path,
+				      NULL, FALSE, 0, 0);
+
+	gtk_tree_path_free (path);
 }
 
 static void
 build_ui (ErrorViewer *dialog)
 {
 	GtkListStore *store;
+	GtkTreeView *treeview;
+	GtkTreeViewColumn *col;
 	GtkCellRenderer *renderer;
+	ErrorViewerPrivate *priv = dialog->priv;
 
-	dialog->priv->window = ephy_dialog_get_control (EPHY_DIALOG (dialog),
-							properties[PROP_WINDOW].id);
-	dialog->priv->treeview = ephy_dialog_get_control (EPHY_DIALOG (dialog),
-							  properties[PROP_TREEVIEW].id);
-	/*
-	g_object_unref (store);
-	*/
+	priv->window = ephy_dialog_get_control (EPHY_DIALOG (dialog),
+						properties[PROP_WINDOW].id);
+	priv->treeview = ephy_dialog_get_control (EPHY_DIALOG (dialog),
+						  properties[PROP_TREEVIEW].id);
+
+	treeview = GTK_TREE_VIEW (priv->treeview);
 
 	renderer = gtk_cell_renderer_pixbuf_new ();
-	gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (dialog->priv->treeview),
+	g_object_set (G_OBJECT (renderer),
+		      "stock-size", GTK_ICON_SIZE_BUTTON,
+		      "xpad", 6,
+		      NULL);
+	gtk_tree_view_insert_column_with_attributes (treeview,
 						     COL_ICON, "Icon",
 						     renderer,
 						     "stock-id", COL_ICON,
 						     NULL);
 
 	renderer = gtk_cell_renderer_text_new ();
-	gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (dialog->priv->treeview),
+	gtk_tree_view_insert_column_with_attributes (treeview,
 						     COL_TEXT, "Text",
 						     renderer,
 						     "text", COL_TEXT,
@@ -174,10 +208,10 @@ build_ui (ErrorViewer *dialog)
 				    G_TYPE_STRING,
 				    G_TYPE_STRING);
 
-	gtk_tree_view_set_model (GTK_TREE_VIEW (dialog->priv->treeview),
+	gtk_tree_view_set_model (treeview,
 				 GTK_TREE_MODEL (store));
 
-	dialog->priv->model = GTK_TREE_MODEL (store);
+	priv->model = GTK_TREE_MODEL (store);
 }
 
 static void

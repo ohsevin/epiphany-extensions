@@ -1,8 +1,6 @@
 The goal for this extension is to be part of the Web Development extension, which will contain plenty of CSS and page information goodies. In the meantime, enjoy.
 
 TODO:
-- The list is never truncated unless the Clear button is pressed. That means that running Epiphany for days without pressing the Clear button (even if the window isn't shown) will do Bad Things. I think I'll have to keep a running count and either #define a maximum number of lines or store it in gconf. In the meantime... this extension will eat memory on every awfully-coded web page, and it won't free it automatically.
-
 - Also, I've gotta look into HTML validation. I could make it a Mozilla service, which would make it portable across all Mozilla-ness and it'd be extremely easy to drop into this error-viewer.
 
 - Saying where the error comes from would be nice, too. It's not all Javascript errors.

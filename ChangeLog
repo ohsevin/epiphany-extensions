@@ -1,5 +1,28 @@
 2004-01-22  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/error-viewer/README:
+	* extensions/error-viewer/error-viewer.c: (error_viewer_append),
+	(build_ui):
+
+	Make it a queue: the first message will be deleted whenever the
+	51st is added (#define MAX_NUM_ROWS). No more "memory leak". 
+
+	Put spacing around the error icons, and make them bigger.
+
+	Auto-scroll to the last-added error.
+
+	* extensions/error-viewer/error-viewer.glade:
+
+	Spacing fixes, and make Close the default action
+
+	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:
+
+	Give source file and line, making error messages 2 lines now (which
+	looks way better). Also, actually calculate whether it's error or
+	warning or info instead of just making everything an error.
+
+2004-01-22  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/error-viewer/ephy-error-viewer-extension.c:
 	(ephy_error_viewer_extension_init),
 	(ephy_error_viewer_extension_finalize), (impl_attach_window):
