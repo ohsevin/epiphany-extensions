@@ -4,10 +4,11 @@ Epiphany Extensions 1.4.3
 
 Changes
 
-	* Fix tab closing with tab-grouper extension (Christian)
-	* Select first menu item when popping up context menu with keyboard (Christian)
-	* Fix compilation with latest mozilla trunk (Christian)
-	* Simplify certificates extension (Christian)
+	* Fix tab closing with tab-grouper extension
+	* Select first menu item when popping up context menu with keyboard
+	* Fix compilation with latest mozilla trunk
+	* Simplify certificates extension
+	* Fix build with latest mozilla trunk
 
 Updated translations
 
