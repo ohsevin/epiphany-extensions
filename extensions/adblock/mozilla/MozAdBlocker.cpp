@@ -27,19 +27,25 @@
 #include <nsEmbedString.h>
 #include <nsIURI.h>
 
+AdBlocker *MozAdBlocker::mBlocker = NULL;
+
 NS_IMPL_ISUPPORTS1(MozAdBlocker, nsIContentPolicy)
 
 MozAdBlocker::MozAdBlocker()
 {
-	mBlocker = ad_blocker_new ();
 }
 
-MozAdBlocker::~MozAdBlocker()
+void
+MozAdBlocker::SetAdBlocker (AdBlocker* blocker)
 {
 	if (mBlocker)
 	{
 		g_object_unref (mBlocker);
-		mBlocker = NULL;
+	}
+	mBlocker = blocker;
+	if (mBlocker)
+	{
+		g_object_ref (mBlocker);
 	}
 }
 

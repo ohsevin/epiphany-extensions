@@ -23,12 +23,15 @@
 #define MOZILLA_HELPERS_H
 
 #include <glib.h>
+#include "ad-blocker.h"
 
 G_BEGIN_DECLS
 
 void	mozilla_register_ad_blocker	(void);
 
 void	mozilla_unregister_ad_blocker	(void);
+
+void	mozilla_set_ad_blocker		(AdBlocker*);
 
 G_END_DECLS
 

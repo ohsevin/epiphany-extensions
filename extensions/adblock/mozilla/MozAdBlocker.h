@@ -34,13 +34,14 @@ public:
 	NS_DECL_NSICONTENTPOLICY
 
 	MozAdBlocker();
-	virtual ~MozAdBlocker();
+
+        static void SetAdBlocker (AdBlocker* );
 
 	/* additional members */
 private:
 	nsresult ShouldLoadURI(nsIURI *uri, PRBool *_retval);
 
-	AdBlocker *mBlocker;
+	static AdBlocker *mBlocker;
 };
 
 #define G_MOZADBLOCKER_CONTRACTID "@gnome.org/projects/epiphany/epiphany-extensions/adblock/moz-add-blocker;1"

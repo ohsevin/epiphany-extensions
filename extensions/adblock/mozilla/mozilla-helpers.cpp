@@ -41,50 +41,12 @@ NS_GENERIC_FACTORY_CONSTRUCTOR(MozAdBlocker)
 static gboolean is_registered = FALSE;
 static nsCOMPtr<nsIGenericFactory> factory = 0;
 
-static NS_METHOD
-RegisterContentPolicy(nsIComponentManager *aCompMgr, nsIFile *aPath,
-		      const char *registryLocation, const char *componentType,
-		      const nsModuleComponentInfo *info)
-{
-	nsresult rv;
-
-	nsCOMPtr<nsICategoryManager> cm =
-		do_GetService(NS_CATEGORYMANAGER_CONTRACTID);
-	NS_ENSURE_TRUE (cm, NS_ERROR_FAILURE);
-
-	rv = cm->AddCategoryEntry("content-policy",
-				  G_MOZADBLOCKER_CONTRACTID,
-				  G_MOZADBLOCKER_CONTRACTID,
-				  PR_TRUE, PR_FALSE, nsnull);
-
-	return rv;
-}
-
-static NS_METHOD
-UnregisterContentPolicy(nsIComponentManager *aCompMgr, nsIFile *aPath,
-			const char *aLoaderStr,
-			const nsModuleComponentInfo *aInfo)
-{
-	nsresult rv;
-
-	nsCOMPtr<nsICategoryManager> cm =
-		do_GetService(NS_CATEGORYMANAGER_CONTRACTID);
-	NS_ENSURE_TRUE (cm, NS_ERROR_FAILURE);
-
-	rv = cm->DeleteCategoryEntry("content-policy",
-				     G_MOZADBLOCKER_CONTRACTID,
-				     PR_FALSE);
-
-	return rv;
-}
-
 static const nsModuleComponentInfo sAppComp =
 {
 	G_MOZADBLOCKER_CLASSNAME,
 	G_MOZADBLOCKER_CID,
 	G_MOZADBLOCKER_CONTRACTID,
-	MozAdBlockerConstructor,
-	RegisterContentPolicy, UnregisterContentPolicy
+	MozAdBlockerConstructor
 };
 
 extern "C" void
@@ -114,6 +76,20 @@ mozilla_register_ad_blocker (void)
 		return;
 	}
 
+	nsCOMPtr<nsICategoryManager> cm =
+		do_GetService(NS_CATEGORYMANAGER_CONTRACTID);
+	g_return_if_fail (cm != NULL);
+
+	rv = cm->AddCategoryEntry("content-policy",
+				  G_MOZADBLOCKER_CONTRACTID,
+				  G_MOZADBLOCKER_CONTRACTID,
+				  PR_TRUE, PR_FALSE, nsnull);
+	if (NS_FAILED (rv))
+	{
+		g_warning ("Failed to register content policy\n");
+		return;
+	}
+
 	is_registered = TRUE;
 }
 
@@ -124,6 +100,15 @@ mozilla_unregister_ad_blocker (void)
 
 	g_return_if_fail (is_registered == TRUE);
 
+	nsCOMPtr<nsICategoryManager> cm =
+		do_GetService(NS_CATEGORYMANAGER_CONTRACTID);
+	g_return_if_fail (cm != NULL);
+
+	rv = cm->DeleteCategoryEntry("content-policy",
+				     G_MOZADBLOCKER_CONTRACTID,
+				     PR_FALSE);
+	g_return_if_fail (NS_SUCCEEDED (rv));
+
 	nsCOMPtr<nsIComponentRegistrar> cr;
 	rv = NS_GetComponentRegistrar (getter_AddRefs (cr));
 	g_return_if_fail (NS_SUCCEEDED (rv));
@@ -132,4 +117,10 @@ mozilla_unregister_ad_blocker (void)
 	g_return_if_fail (NS_SUCCEEDED (rv));
 
 	is_registered = FALSE;
+}
+
+extern "C" void
+mozilla_set_ad_blocker (AdBlocker* blocker)
+{
+   MozAdBlocker::SetAdBlocker (blocker);
 }

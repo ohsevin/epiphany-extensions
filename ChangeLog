@@ -1,3 +1,17 @@
+2004-10-02  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/adblock/ephy-adblock-extension.c:
+	(ephy_adblock_extension_init), (ephy_adblock_extension_finalize):
+	* extensions/adblock/mozilla/MozAdBlocker.cpp:
+	* extensions/adblock/mozilla/MozAdBlocker.h:
+	* extensions/adblock/mozilla/mozilla-helpers.cpp:
+	* extensions/adblock/mozilla/mozilla-helpers.h:
+
+	Actually register/unregister, and don't crash on Epiphany close.
+	However, we're forced to crash on page load after the extension is
+	unloaded. Obviously, this code isn't final. Thanks to Crispin for the
+	static-ness in MozAdBlocker.
+
 2004-09-27  Crispin Flowerday  <gnome@flowerday.cx>
 
 	* extensions/sidebar/ephy-sidebar-embed.c 
