@@ -488,7 +488,7 @@ ephy_bookmarks_tray_extension_init (EphyBookmarksTrayExtension *extension)
 
 	priv->tray_button = gtk_toggle_button_new ();
         gtk_container_set_resize_mode (GTK_CONTAINER (priv->tray_button), GTK_RESIZE_IMMEDIATE);
-	gtk_container_set_border_width (GTK_CONTAINER (priv->tray), 0);
+	gtk_container_set_border_width (GTK_CONTAINER (priv->tray_button), 0);
         gtk_button_set_relief (GTK_BUTTON (priv->tray_button), GTK_RELIEF_NONE);
 
 	gtk_button_set_relief (GTK_BUTTON (priv->tray_button), GTK_RELIEF_NONE);
