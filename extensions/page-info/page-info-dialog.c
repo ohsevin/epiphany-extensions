@@ -2075,5 +2075,7 @@ page_info_dialog_new (EphyWindow *window,
 			     "parent-window", window,
 			     "window", window,
 			     "embed", embed,
+			     "default-width", 500,
+			     "default-height", 400,
 			     NULL);
 }
