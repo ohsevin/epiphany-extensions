@@ -1,0 +1,21 @@
+
+*** EXPERIMENTAL PLUGIN ***
+
+Your Epiphany may crash!  Your house probably won't burn down, but you
+never now.  Things have been reasonably stable for me.
+
+*** EXPERIMENTAL PLUGIN ***
+
+For this plugin to work you need to apply the epiphany-1.0.3.diff patch to
+the code base.  This hasn't been tested with 1.0.4 or 1.0.5 yet.  A patch
+for 1.1.0 will be coming soon.
+
+For information on Dashboard either see the above page, or go to
+http://www.nat.org/dashboard .
+
+See http://www.etc.gen.nz/projects/dashboard for the rest of my modifications
+to Dashboard.
+
+Andrew Ruthven
+andrew@etc.gen.nz
+puck on #epiphany and #dashboard on GimpNet.

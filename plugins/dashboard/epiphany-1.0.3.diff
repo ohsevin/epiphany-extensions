@@ -1,0 +1,113 @@
+diff -u -r epiphany-1.0.3.orig/embed/ephy-embed-persist.c epiphany-1.0.3/embed/ephy-embed-persist.c
+--- epiphany-1.0.3.orig/embed/ephy-embed-persist.c	2003-05-18 00:43:23.000000000 +1200
++++ epiphany-1.0.3/embed/ephy-embed-persist.c	2003-11-06 20:43:14.000000000 +1300
+@@ -380,6 +380,14 @@
+ }
+ 
+ gresult
++ephy_embed_persist_get_content (EphyEmbedPersist *persist,
++				const char **content)
++{
++	EphyEmbedPersistClass *klass = EPHY_EMBED_PERSIST_GET_CLASS (persist);
++	return klass->get_content (persist, content);
++}
++
++gresult
+ ephy_embed_persist_set_max_size (EphyEmbedPersist *persist,
+ 			           int kb_size)
+ {
+Only in epiphany-1.0.3/embed: ephy-embed-persist.c~
+diff -u -r epiphany-1.0.3.orig/embed/ephy-embed-persist.h epiphany-1.0.3/embed/ephy-embed-persist.h
+--- epiphany-1.0.3.orig/embed/ephy-embed-persist.h	2003-01-12 01:56:53.000000000 +1300
++++ epiphany-1.0.3/embed/ephy-embed-persist.h	2003-10-31 15:25:34.000000000 +1300
+@@ -73,6 +73,9 @@
+ 	gresult (* set_dest)     (EphyEmbedPersist *persist,
+ 				  const char *dir);
+ 
++	gresult (* get_content)  (EphyEmbedPersist *persist,
++				  const char **content);
++
+ 	gresult (* save)         (EphyEmbedPersist *persist);
+ 
+ 	gresult (* cancel)       (EphyEmbedPersist *persist);
+@@ -128,6 +131,9 @@
+ 
+ gresult		    ephy_embed_persist_save        (EphyEmbedPersist *persist);
+ 
++gresult             ephy_embed_persist_get_content (EphyEmbedPersist *persist,
++						    const char **content);
++
+ gresult		    ephy_embed_persist_cancel      (EphyEmbedPersist *persist);
+ 
+ G_END_DECLS
+diff -u -r epiphany-1.0.3.orig/embed/mozilla/mozilla-embed-persist.cpp epiphany-1.0.3/embed/mozilla/mozilla-embed-persist.cpp
+--- epiphany-1.0.3.orig/embed/mozilla/mozilla-embed-persist.cpp	2003-08-21 05:45:42.000000000 +1200
++++ epiphany-1.0.3/embed/mozilla/mozilla-embed-persist.cpp	2003-10-31 18:52:16.000000000 +1300
+@@ -26,6 +26,7 @@
+ #include <nsString.h>
+ #include <nsCWebBrowserPersist.h>
+ #include <nsNetUtil.h>
++#include <nsIDocumentEncoder.h>
+ 
+ static void
+ mozilla_embed_persist_class_init (MozillaEmbedPersistClass *klass);
+@@ -36,6 +37,9 @@
+ 
+ static gresult 
+ impl_save (EphyEmbedPersist *persist);
++gresult
++impl_get_content (EphyEmbedPersist *persist,
++		  const char **content);
+ static gresult 
+ impl_cancel (EphyEmbedPersist *persist);
+ 
+@@ -87,6 +91,7 @@
+ 	
+         object_class->finalize = mozilla_embed_persist_finalize;
+ 
++	persist_class->get_content = impl_get_content;
+ 	persist_class->save = impl_save;
+ 	persist_class->cancel = impl_cancel;
+ }
+@@ -145,6 +150,41 @@
+ 	return G_OK;
+ }
+ 
++gresult
++impl_get_content (EphyEmbedPersist *persist,
++		  const char **content)
++{
++	nsresult rv = NS_OK;
++	EphyEmbed *embed;
++	EphyWrapper *wrapper;
++	nsCOMPtr<nsIDOMDocument> DOMDocument;
++
++	g_object_get (persist, "embed", &embed, NULL);
++
++	g_return_val_if_fail (embed != NULL, G_FAILED);
++
++	wrapper = (EphyWrapper *) mozilla_embed_get_ephy_wrapper (MOZILLA_EMBED(embed));
++
++	rv = wrapper->GetMainDOMDocument (getter_AddRefs(DOMDocument));
++	if (NS_FAILED(rv) || !DOMDocument) return G_FAILED;
++
++	nsCOMPtr<nsIDocument> doc = do_QueryInterface(DOMDocument);
++	if(!doc) return G_FAILED;
++
++	nsCOMPtr<nsIDocumentEncoder> encoder = do_CreateInstance(NS_DOC_ENCODER_CONTRACTID_BASE "text/html");
++	NS_ENSURE_SUCCESS(rv, G_FAILED);
++
++	rv = encoder->Init(doc, NS_LITERAL_STRING("text/html"), 0);
++	NS_ENSURE_SUCCESS(rv, G_FAILED);
++
++	nsAutoString aOutputString;
++	encoder->EncodeToString(aOutputString);
++
++	*content = g_strdup (NS_ConvertUCS2toUTF8(aOutputString).get());
++
++	return G_OK;
++}
++
+ static gresult 
+ impl_save (EphyEmbedPersist *persist)
+ {
