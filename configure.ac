@@ -16,7 +16,7 @@ dnl 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 dnl
 dnl $Id$
 
-AC_INIT([Epiphany Extensions], [1.4.3.90], [http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions], [epiphany-extensions])
+AC_INIT([Epiphany Extensions], [1.4.4], [http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions], [epiphany-extensions])
 GNOME_COMMON_INIT
 
 EPIPHANY_EXTENSIONS_MAJOR=1.4
@@ -151,9 +151,10 @@ AC_ARG_WITH([extensions],
 [  --with-extensions=extension1,extension2,...
 			  build the specified extensions. Available:
 			  certificates, dashboard, error-viewer, gestures,
-			  page-info, select-stylesheet, smart-bookmarks,
-			  tabs-groups, tabsmenu, all, really-all])
-
+			  page-info, sample, sampls-mozilla,
+			  select-stylesheet, sidebar, smart-bookmarks, tab-groups, tabsmenu, all,
+  			  really-all])
+  
 dnl If no extensions specified, build the default set
 if test "x$with_extensions" = xyes; then
   extensions="$default_extensions"
