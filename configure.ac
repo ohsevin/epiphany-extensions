@@ -157,8 +157,12 @@ if test "x$extensions" = x; then
   extensions="$default_extensions"
 fi
 
-if test "x$extensions" = xall; then
-  extensions="$all_useful_extensions"
+if echo "$extensions" | egrep '(^|,)default($|,)' > /dev/null; then
+  extensions="$all_useful_extensions,$extensions"
+fi
+
+if echo "$extensions" | egrep '(^|,)all($|,)' > /dev/null; then
+  extensions="$all_useful_extensions,$extensions"
 fi
 
 if test "x$extensions" = "xreally-all"; then
@@ -166,16 +170,6 @@ if test "x$extensions" = "xreally-all"; then
 fi
 
 AC_MSG_RESULT($extensions)
-
-IFS="${IFS=	}"; ephyext_save_ifs="$IFS"; IFS=","
-for ext in $extensions; do
- if echo "$all_extensions" | egrep "(^|,)$ext(\$|,)" > /dev/null; then
-   :
- else
-   AC_MSG_ERROR([the specified extension $ext does not exist])
- fi
-done
-IFS="$ephyext_save_ifs"
 
 AM_CONDITIONAL(ENABLE_ADBLOCK_EXTENSION, echo "$extensions" | egrep '(^|,)adblock($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_BOOKMARKS_TRAY_EXTENSION, echo "$extensions" | egrep '(^|,)bookmarks-tray($|,)' > /dev/null)
@@ -195,6 +189,23 @@ AM_CONDITIONAL(ENABLE_TABSMENU_EXTENSION, echo "$extensions" | egrep '(^|,)tabsm
 AM_CONDITIONAL(ENABLE_TAB_GROUPS_EXTENSION, echo "$extensions" | egrep '(^|,)tab-groups($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_TAB_STATES_EXTENSION, echo "$extensions" | egrep '(^|,)tab-states($|,)' > /dev/null)
 dnl AM_CONDITIONAL(ENABLE_TOOLBAR_EXTRAS_EXTENSION, echo "$extensions" | egrep '(^|,)toolbar-extras($|,)' > /dev/null)
+
+dnl ****
+dnl PCRE
+dnl ****
+
+if echo "$extensions" | egrep '(^|,)adblock($|,)' > /dev/null; then
+	AC_PATH_PROG([PCRE_CONFIG], [pcre-config], [no])
+
+	if test "x$PCRE_CONFIG" = "xno"; then
+		AC_ERROR([pcre development files not found])
+	fi
+
+	PCRE_CFLAGS="`$PCRE_CONFIG --cflags`"
+	AC_SUBST([PCRE_CFLAGS])
+	PCRE_LIBS="`$PCRE_CONFIG --libs`"
+	AC_SUBST([PCRE_LIBS])
+fi
 
 dnl ******************
 dnl Mozilla name check
