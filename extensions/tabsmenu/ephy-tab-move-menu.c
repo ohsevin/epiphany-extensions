@@ -162,7 +162,7 @@ add_action_and_menu_item (EphyWindow *window, EphyTabMoveMenu *menu)
 	GtkWidget *notebook;
 	guint num;
 	const char *text;
-	char *title, *win_title = NULL;
+	char *title, *win_title_doubled, *win_title;
 	char verb[VERB_FMT_SIZE], name[VERB_FMT_SIZE + 4];
 
 	LOG ("add_action_and_menu_item for window %p", window)
@@ -177,11 +177,12 @@ add_action_and_menu_item (EphyWindow *window, EphyTabMoveMenu *menu)
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
 	win_title = ephy_string_shorten (ephy_tab_get_title (tab), MAX_LENGTH);
+	win_title_doubled = ephy_string_double_underscores (win_title);
 
 	text = dngettext (GETTEXT_PACKAGE, "Window '%s' (%d tab)",
 					   "Window '%s' (%d tabs)", num);
 	
-	title = g_strdup_printf (text, win_title, num);
+	title = g_strdup_printf (text, win_title_doubled, num);
 
 	action = g_object_new (GTK_TYPE_ACTION,
 			       "name", verb,
@@ -199,6 +200,7 @@ add_action_and_menu_item (EphyWindow *window, EphyTabMoveMenu *menu)
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
 
 	g_free (win_title);
+	g_free (win_title_doubled);
 	g_free (title);
 }
 

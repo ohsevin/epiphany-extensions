@@ -1,5 +1,13 @@
 2004-01-25  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/tabsmenu/ephy-tab-move-menu.c:
+	(add_action_and_menu_item):
+
+	Double underscores in titles, otherwise the menu will
+	display them as mnemonics.
+
+2004-01-25  Christian Persch  <chpe@cvs.gnome.org>
+
 	* include/ephy-file-helpers.h:
 	* include/ephy-string.h:
 
