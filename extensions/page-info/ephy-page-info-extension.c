@@ -62,7 +62,7 @@ static GtkActionEntry action_entries [] =
 {
 	{ "PageInfo",
 	  NULL,
-	  N_("Page _Info"),
+	  N_("_Page Info"),
 	  NULL,
 	  N_("Display page information in a dialog"),
 	  G_CALLBACK (ephy_page_info_extension_display_cb) },

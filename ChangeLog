@@ -1,3 +1,11 @@
+2004-09-12  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/page-info/ephy-page-info-extension.c:
+	* extensions/page-info/page-info.glade:
+
+	Move "Source" to "Source File" section and underline "P" instead of
+	"I" in menu entry
+
 2004-09-12  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/page-info/page-info-dialog.c: (images_save_image_cb),
