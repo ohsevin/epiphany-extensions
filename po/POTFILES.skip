@@ -2,4 +2,7 @@ plugins/gestures/gestures.c
 plugins/gestures/ephy-gestures.h
 plugins/gestures/ephy-gestures.c
 plugins/gestures/ephy-gestures.xml
-include/ephy-dnd.h
+include/ephy-debug.h
+include/ephy-file-helpers.h
+include/ephy-string.h
+include/ephy-plugins-i18n.h

@@ -9,7 +9,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany Plugins 1.0\n"
-"POT-Creation-Date: 2003-08-16 11:53+0200\n"
+"POT-Creation-Date: 2003-09-05 13:51+0200\n"
 "PO-Revision-Date: 2003-08-03 18:28+0000\n"
 "Last-Translator: Christian Persch <chpe+ephyplugins@stud.uni-saarland.de>\n"
 "Language-Team: British English\n"
@@ -18,23 +18,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: plugins/tabsmenu/ephy-tabs-plugin-menu.c:331
+#: plugins/tabsmenu/ephy-tabs-plugin-menu.c:364
 msgid "_Clone Tab"
 msgstr "_Clone Tab"
 
-#: plugins/tabsmenu/ephy-tabs-plugin-menu.c:332
+#: plugins/tabsmenu/ephy-tabs-plugin-menu.c:365
 msgid "Create a copy of the current tab"
 msgstr "Create a copy of the current tab"
 
-#: plugins/tabsmenu/ephy-tabs-plugin-menu.c:342
+#: plugins/tabsmenu/ephy-tabs-plugin-menu.c:368
 msgid "_Move Tab To"
 msgstr "_Move Tab To"
 
-#: plugins/tabsmenu/ephy-tabs-plugin-menu.c:343
+#: plugins/tabsmenu/ephy-tabs-plugin-menu.c:369
 msgid "Move the current tab to a different window"
 msgstr "Move the current tab to a different window"
 
-#: plugins/tabsmenu/ephy-window-action.c:175
+#: plugins/tabsmenu/ephy-window-action.c:179
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"

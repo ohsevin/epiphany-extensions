@@ -115,14 +115,15 @@ fi
 
 AC_MSG_RESULT($extensions)
 
-dnl FIXME!!!
-dnl for ext in $extensions; do
-dnl  if echo "$all_extensions" | egrep "(^|,)$ext(\$|,)" > /dev/null; then
-dnl    :
-dnl  else
-dnl    AC_MSG_ERROR([the specified extension $ext does not exist])
-dnl  fi
-dnl done
+IFS="${IFS=	}"; ephyext_save_ifs="$IFS"; IFS=","
+for ext in $extensions; do
+ if echo "$all_extensions" | egrep "(^|,)$ext(\$|,)" > /dev/null; then
+   :
+ else
+   AC_MSG_ERROR([the specified extension $ext does not exist])
+ fi
+done
+IFS="$ephyext_save_ifs"
 
 AM_CONDITIONAL(ENABLE_PLUGIN_GESTURES, echo "$extensions" | egrep '(^|,)gestures($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_PLUGIN_MSM, echo "$extensions" | egrep '(^|,)msm($|,)' > /dev/null)

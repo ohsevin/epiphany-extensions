@@ -20,6 +20,6 @@ if ENABLE_PLUGIN_MSM
 SUBDIRS += msm
 endif
 
-DIST_SUBDIRS = sample gestures tabsmenu zoom-persistence mycroft
+DIST_SUBDIRS = sample gestures tabsmenu zoom-persistence
 
 EXTRA_DIST =

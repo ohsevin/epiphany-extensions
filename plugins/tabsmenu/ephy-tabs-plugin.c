@@ -51,7 +51,7 @@ plugin_init (GTypeModule *module)
 	LOG ("Plugin initialising")
 
 #ifdef ENABLE_NLS
-       /* Initialize the i18n stuff */
+       /* Initialise the i18n stuff */
         bindtextdomain (GETTEXT_PACKAGE, EPHY_PLUGINS_LOCALEDIR);
         bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");	
 #endif /* ENABLE_NLS */

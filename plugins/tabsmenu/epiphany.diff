@@ -1,19 +1,15 @@
 Index: data/ui/epiphany-ui.xml.in
 ===================================================================
 RCS file: /cvs/gnome/epiphany/data/ui/epiphany-ui.xml.in,v
-retrieving revision 1.24
-diff -u -p -r1.24 epiphany-ui.xml.in
---- data/ui/epiphany-ui.xml.in	18 Jun 2003 12:17:16 -0000	1.24
-+++ data/ui/epiphany-ui.xml.in	4 Aug 2003 13:33:25 -0000
-@@ -70,7 +71,11 @@
+retrieving revision 1.27
+diff -u -p -r1.27 epiphany-ui.xml.in
+--- data/ui/epiphany-ui.xml.in	31 Aug 2003 18:09:40 -0000	1.27
++++ data/ui/epiphany-ui.xml.in	5 Sep 2003 11:28:39 -0000
+@@ -70,6 +70,7 @@
  	<separator name="TabsSep1"/>
- 	<menuitem name="TabsMoveLeftMenu" verb="TabsMoveLeft"/>
- 	<menuitem name="TabsMoveRightMenu" verb="TabsMoveRight"/>
-+	<placeholder name="TabsMenuAfterMovePlaceholder">
-+	</placeholder>
-         <menuitem name="TabsDetachMenu" verb="TabsDetach"/>
-+	<placeholder name="TabsMenuAfterDetachPlaceholder">
-+	</placeholder>
+ 	<menuitem name="TabsMoveLeftMenu" action="TabsMoveLeft"/>
+ 	<menuitem name="TabsMoveRightMenu" action="TabsMoveRight"/>
++	<placeholder name="TabsPluginMenuPlaceholder"/>
+         <menuitem name="TabsDetachMenu" action="TabsDetach"/>
  	<placeholder name="TabsOpen">
  	<separator name="TabsSep2"/>
- 	</placeholder>

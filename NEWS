@@ -1,4 +1,17 @@
 =========================
+Epiphany Extensions 0.4.0
+=========================
+
+What's News ?
+=============
+
+Code changes:
+
+	* Port to gtk+ 2.4 api. Requires gtk+ >= 2.3.0 and epiphany 1.1.0
+	  or epiphany cvs HEAD.
+
+
+=========================
 Epiphany Extensions 0.2.4
 =========================
 
