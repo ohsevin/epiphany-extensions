@@ -6,7 +6,6 @@
 
 <widget class="GtkWindow" id="error_viewer">
   <property name="border_width">12</property>
-  <property name="visible">True</property>
   <property name="title" translatable="yes">Error Viewer</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
@@ -53,7 +52,7 @@
 	<widget class="GtkHButtonBox" id="hbuttonbox14">
 	  <property name="visible">True</property>
 	  <property name="layout_style">GTK_BUTTONBOX_END</property>
-	  <property name="spacing">0</property>
+	  <property name="spacing">6</property>
 
 	  <child>
 	    <widget class="GtkButton" id="clear_button">

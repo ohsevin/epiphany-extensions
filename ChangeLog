@@ -1,5 +1,21 @@
 2004-01-22  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/error-viewer/README:
+
+	Add a few suggestions from spark on IRC
+
+	* extensions/error-viewer/error-viewer.glade:
+
+	Fix spacing between buttons
+
+2004-01-22  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/error-viewer/error-viewer.glade:
+
+	Don't show the error viewer on Ephy startup
+
+2004-01-22  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* MAINTAINERS:
 	* README:
 	* autogen.sh:
