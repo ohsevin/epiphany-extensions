@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions gnome-2-8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-30 20:26+0900\n"
-"PO-Revision-Date: 2004-09-30 20:25+0900\n"
+"POT-Creation-Date: 2004-10-12 17:52+0900\n"
+"PO-Revision-Date: 2004-10-12 17:50+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -265,7 +265,7 @@ msgid "_Save Image As..."
 msgstr "画像を別名で保存(_S)..."
 
 #: extensions/page-info/page-info-dialog.c:992
-#: extensions/page-info/page-info-dialog.c:1169
+#: extensions/page-info/page-info-dialog.c:1210
 msgid "URL"
 msgstr "URL"
 
@@ -274,7 +274,7 @@ msgid "Alt Text"
 msgstr "代替えテキスト"
 
 #: extensions/page-info/page-info-dialog.c:1016
-#: extensions/page-info/page-info-dialog.c:1181
+#: extensions/page-info/page-info-dialog.c:1222
 msgid "Title"
 msgstr "タイトル"
 
@@ -286,19 +286,23 @@ msgstr "幅"
 msgid "Height"
 msgstr "高さ"
 
-#: extensions/page-info/page-info-dialog.c:1193
+#: extensions/page-info/page-info-dialog.c:1176
+msgid "_Copy Link Address"
+msgstr "リンク先のアドレスのコピー(_C)"
+
+#: extensions/page-info/page-info-dialog.c:1234
 msgid "Relation"
 msgstr "関連性"
 
-#: extensions/page-info/page-info-dialog.c:1304
+#: extensions/page-info/page-info-dialog.c:1345
 msgid "Name"
 msgstr "名前"
 
-#: extensions/page-info/page-info-dialog.c:1316
+#: extensions/page-info/page-info-dialog.c:1357
 msgid "Method"
 msgstr "メソッド"
 
-#: extensions/page-info/page-info-dialog.c:1328
+#: extensions/page-info/page-info-dialog.c:1369
 msgid "Action"
 msgstr "アクション"
 
