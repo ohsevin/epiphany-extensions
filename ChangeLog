@@ -1,3 +1,10 @@
+2004-03-19  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/certificates/ephy-certificates-extension.c:
+	(manage_certificates_cb):
+
+	Connect to "realize" signal with g_signal_connect_after.
+
 2004-03-17  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/error-viewer/mozilla/mozilla-link-checker.cpp:

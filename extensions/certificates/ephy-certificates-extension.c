@@ -168,9 +168,9 @@ manage_certificates_cb (GtkAction *action,
 	g_signal_connect_object (embed, "visibility",
 				 G_CALLBACK (cert_manager_visibility_cb),
 				 window, (GConnectFlags) 0);
-	g_signal_connect (embed, "realize",
-			  G_CALLBACK (ephy_embed_load_url),
-			  "chrome://pippki/content/certManager.xul");
+	g_signal_connect_after (embed, "realize",
+				G_CALLBACK (ephy_embed_load_url),
+				"chrome://pippki/content/certManager.xul");
 
 	gtk_window_set_default_size (GTK_WINDOW (window), 600, 360);
 	gtk_window_present (GTK_WINDOW (window));
