@@ -107,12 +107,18 @@ typedef struct
 
 typedef struct
 {
+  char *name;
+  char *content;
+} EmbedPageMetaTag;
+
+typedef struct
+{
   EmbedPageProperties *props;
   GList *media;
   GList *links;
   GList *forms;
+  GList *metatags;
 } EmbedPageInfo;
-
 
 EmbedPageInfo *mozilla_get_page_info        (EphyEmbed *embed);
 

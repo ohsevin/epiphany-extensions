@@ -1,5 +1,24 @@
 2005-03-02  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/page-info/page-info.glade:
+
+	Put the media view embed in a frame instead of a viewport,
+	to work around gtk+ bug 168966.
+
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+	* extensions/page-info/mozilla/mozilla-helpers.h:
+	* extensions/page-info/page-info-dialog.c: (page_info_set_text),
+	(general_info_page_fill), (background_download_completed_cb),
+	(forms_info_page_construct), (metadata_info_page_construct),
+	(metadata_add_dc_tag), (metadata_info_page_fill),
+	(metadata_info_page_new), (page_info_dialog_init),
+	(page_info_dialog_new):
+	* extensions/page-info/page-info.glade:
+
+	Implement Metadata tab, written by Jean-François Rameau.
+
+2005-03-02  Christian Persch  <chpe@cvs.gnome.org>
+
 	* include/EphyUtils.h:
 	* include/eel-gconf-extensions.h:
 	* include/egg-editable-toolbar.h:

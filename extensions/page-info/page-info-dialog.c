@@ -1,6 +1,7 @@
 /*
  *  Copyright (C) 2004 Adam Hooper
- *  Copyright (C) 2004 Christian Persch
+ *  Copyright (C) 2004, 2005 Christian Persch
+ *  Copyright (C) 2004, 2005 Jean-François Rameau
  *
  *  Heavily based on Galeon's:
  *      Copyright (C) 2003 Philip Langdale
@@ -66,6 +67,11 @@
 #include <time.h>
 #include <string.h>
 
+/* Forward declarations */
+static void page_info_set_text (PageInfoDialog *dialog,
+		    		const char *prop,
+		    		const char *text);
+
 /* Glade callbacks */
 void page_info_dialog_close_button_clicked_cb	  (GtkWidget *button,
 						   PageInfoDialog *dialog);
@@ -79,6 +85,7 @@ enum {
 	MEDIA_PAGE,
 	LINKS_PAGE,
 	FORMS_PAGE,
+	METADATA_PAGE,
 	/*
 	PAGE_INFO_MEDIA,
 	*/
@@ -137,10 +144,6 @@ enum
 	PROP_GENERAL_REFERRING_URL,
 	PROP_GENERAL_MODIFIED,
 	PROP_GENERAL_EXPIRES,
-/*
-	PROP_GENERAL_META_TREEVIEW,
-*/
-	PROP_FORMS_FORM_TREEVIEW,
 
 	PROP_LINKS_LINK_TREEVIEW,
 
@@ -149,6 +152,16 @@ enum
 	PROP_MEDIA_MEDIUM_VPANED,
 	PROP_MEDIA_SAVE_BUTTON,
 
+	PROP_FORMS_FORM_TREEVIEW,
+
+	PROP_META_DC_BOX,
+	PROP_META_DC_TITLE,
+	PROP_META_DC_DESC,
+	PROP_META_DC_DATE,
+	PROP_META_DC_FORMAT,
+	PROP_META_OTHER_LABEL,
+	PROP_META_TREEVIEW,
+	
 /*
 	PROP_SECURITY_CERT_TITLE,
 	PROP_SECURITY_CERT_INFO,
@@ -175,9 +188,6 @@ EphyDialogProperty properties [] =
 	{ "page_info_referring_url",	NULL, PT_NORMAL, 0 },
 	{ "page_info_modified",		NULL, PT_NORMAL, 0 },
 	{ "page_info_expires",		NULL, PT_NORMAL, 0 },
-	/*{ "page_info_meta_list",	NULL, PT_NORMAL, 0 },*/
-
-	{ "page_info_form_list",	NULL, PT_NORMAL, 0 },
 
 	{ "page_info_link_list",	NULL, PT_NORMAL, 0 },
 
@@ -185,6 +195,16 @@ EphyDialogProperty properties [] =
 	{ "page_info_media_box",	NULL, PT_NORMAL, 0 },
 	{ "page_info_media_vpaned",	NULL, PT_NORMAL, 0 },
 	{ "page_info_media_save",	NULL, PT_NORMAL, 0 },
+
+	{ "page_info_form_list",	NULL, PT_NORMAL, 0 },
+
+	{ "page_meta_dc_box",		NULL, PT_NORMAL, 0 },
+	{ "page_meta_dc_title",		NULL, PT_NORMAL, 0 },
+	{ "page_meta_dc_desc",		NULL, PT_NORMAL, 0 },
+	{ "page_meta_dc_date",		NULL, PT_NORMAL, 0 },
+	{ "page_meta_dc_format",	NULL, PT_NORMAL, 0 },
+	{ "page_meta_other_label",	NULL, PT_NORMAL, 0 },
+	{ "page_meta_list",		NULL, PT_NORMAL, 0 },
 
 	/*
 	{ PROP_SECURITY_CERT_TITLE,     "page_info_security_title", NULL, PT_NORMAL, NULL },
@@ -202,14 +222,6 @@ static GtkTargetEntry drag_targets[] =
 	{ EPHY_DND_URL_TYPE, 0, 0 }
 };
 static int n_drag_targets = G_N_ELEMENTS (drag_targets);
-
-/*
-enum
-{
-	COL_META_NAME,
-	COL_META_CONTENT
-};
-*/
 
 static void page_info_dialog_class_init	(PageInfoDialogClass *klass);
 static void page_info_dialog_init	(PageInfoDialog *dialog);
@@ -247,66 +259,6 @@ page_info_dialog_register_type (GTypeModule *module)
 
 	return type;
 }
-
-/* not-yet ported stuff */
-
-/*
-static GtkTreeView *
-setup_meta_treeview (PageInfoDialog *dialog)
-{
-	GtkTreeView *treeview;
-	GtkListStore *liststore;
-	GtkCellRenderer *renderer;
-	GtkTreeViewColumn *column;
-	GtkTreeSelection *selection;
-
-	treeview = GTK_TREE_VIEW(galeon_dialog_get_control 
-				 (GALEON_DIALOG(dialog),
-				 PROP_GENERAL_META_TREEVIEW));
-	
-*/
-	/* set tree model */
-/*
-	liststore = gtk_list_store_new (2,
-					G_TYPE_STRING,
-					G_TYPE_STRING);
-	gtk_tree_view_set_model (treeview, GTK_TREE_MODEL(liststore));
-	g_object_unref (liststore);
-
-	gtk_tree_view_set_headers_visible (treeview, TRUE);
-	selection = gtk_tree_view_get_selection (treeview);
-	gtk_tree_selection_set_mode (selection,
-				     GTK_SELECTION_SINGLE);
-	
-	renderer = gtk_cell_renderer_text_new ();
-
-	gtk_tree_view_insert_column_with_attributes (treeview,
-						     COL_META_NAME,
-						     _("Name"),
-						     renderer,
-						     "text", COL_META_NAME,
-						     NULL);
-	column = gtk_tree_view_get_column (treeview, COL_META_NAME);
-	gtk_tree_view_column_set_resizable (column, TRUE);
-	gtk_tree_view_column_set_reorderable (column, TRUE);
-	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
-	gtk_tree_view_column_set_sort_column_id (column, COL_META_NAME);
-
-	gtk_tree_view_insert_column_with_attributes (treeview,
-						     COL_META_CONTENT, 
-						     _("Content"),
-						     renderer,
-						     "text", COL_META_CONTENT,
-						     NULL);
-	column = gtk_tree_view_get_column (treeview, COL_META_CONTENT);
-	gtk_tree_view_column_set_resizable (column, TRUE);
-	gtk_tree_view_column_set_reorderable (column, TRUE);
-	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
-	gtk_tree_view_column_set_sort_column_id (column, COL_META_CONTENT);
-
-	return treeview;
-}
-*/
 
 /*
 static void
@@ -430,25 +382,6 @@ setup_page_security (PageInfoDialog *dialog, EmbedPageProperties *props)
 */
 
 /*
-static void
-setup_page_general_add_meta_tag(GtkTreeView *treeView, EmbedPageMetaTag *tag)
-{
-	GtkListStore *store;
-	GtkTreeIter iter;
-
-	store = GTK_LIST_STORE(gtk_tree_view_get_model
-			       (GTK_TREE_VIEW(treeView)));
-
-	gtk_list_store_append(store, &iter);
-	gtk_list_store_set(store,
-			   &iter,
-			   COL_META_NAME, tag->name,
-			   COL_META_CONTENT, tag->content,
-			    -1);
-}
-*/
-
-/*
 void
 page_info_dialog_set_current_page (PageInfoDialog *dialog, PageInfoDialogPage page)
 {
@@ -484,6 +417,20 @@ page_info_dialog_view_cert_button_clicked_cb (GtkWidget *button,
 	GaleonEmbed *embed = galeon_tab_get_embed (dialog->priv->tab);
 	galeon_embed_show_page_certificate (embed);
 	*/
+}
+
+/* Helper functions */
+
+static void
+page_info_set_text (PageInfoDialog *dialog,
+		    const char *prop,
+		    const char *text)
+{
+	GtkWidget *widget;
+
+	widget = ephy_dialog_get_control (EPHY_DIALOG (dialog), prop);
+
+	gtk_label_set_text (GTK_LABEL (widget), text ? text : "");
 }
 
 /* a generic treeview info page */
@@ -600,24 +547,11 @@ treeview_info_page_construct (InfoPage *ipage)
 /* "General" page */
 
 static void
-page_info_set_text (PageInfoDialog *dialog,
-		    const char *prop,
-		    const char *text)
-{
-	GtkWidget *widget;
-	/* FIXME: Switch to prop strings instead of enum */
-	widget = ephy_dialog_get_control (EPHY_DIALOG (dialog), prop);
-
-	gtk_label_set_text (GTK_LABEL (widget), text ? text : "");
-}
-
-static void
 general_info_page_fill (InfoPage *page)
 {
 	PageInfoDialog *dialog = page->dialog;
 	EphyEmbed *embed = dialog->priv->embed;
 	EmbedPageProperties *props;
-	/* GtkTreeView *page_info_meta_list; */
 	const char *text;
 	const char *date_hack = "%c"; /* quiet gcc */
 	char date[128];
@@ -729,15 +663,6 @@ general_info_page_fill (InfoPage *page)
 				    _("Not specified"));
 
 	}
-
-	/*
-	page_info_meta_list = setup_meta_treeview(dialog);
-	for (i=props->metatags ; i ; i = i->next)
-	{
-		setup_page_general_add_meta_tag(page_info_meta_list,
-						(EmbedPageMetaTag*)i->data);
-	}	
-	*/
 }
 
 static InfoPage *
@@ -1021,6 +946,8 @@ background_download_completed_cb (EphyEmbedPersist *persist)
 		eel_gconf_set_string (CONF_DESKTOP_BG_TYPE, "wallpaper");
 	}
 	g_free (type);
+
+	/* FIXME launch bg applet */
 }
 
 static void
@@ -1672,7 +1599,6 @@ forms_info_page_construct (InfoPage *ipage)
 {
 	TreeviewInfoPage *tpage = (TreeviewInfoPage *) ipage;
 	PageInfoDialog *dialog = ipage->dialog;
-
 	GtkTreeView *treeview;
 	GtkListStore *liststore;
 	GtkCellRenderer *renderer;
@@ -1779,6 +1705,189 @@ forms_info_page_new (PageInfoDialog *dialog)
 	return ipage;
 }
 
+/* "Metadata" page */
+
+typedef struct _MetadataInfoPage MetadataInfoPage;
+
+struct _MetadataInfoPage
+{
+	TreeviewInfoPage tpage;
+};
+
+enum
+{
+	COL_META_NAME,
+	COL_META_CONTENT
+};
+
+/*
+static GtkActionEntry metadata_action_entries[] =
+{
+};
+*/
+
+static void
+metadata_info_page_construct (InfoPage *ipage)
+{
+	TreeviewInfoPage *tpage = (TreeviewInfoPage *) ipage;
+	PageInfoDialog *dialog = ipage->dialog;
+	GtkTreeView *treeview;
+	GtkListStore *liststore;
+	GtkCellRenderer *renderer;
+	GtkTreeViewColumn *column;
+	GtkTreeSelection *selection;
+
+	treeview = GTK_TREE_VIEW (ephy_dialog_get_control
+		(EPHY_DIALOG (dialog), properties[PROP_META_TREEVIEW].id));
+
+	liststore = gtk_list_store_new (2,
+					G_TYPE_STRING,
+					G_TYPE_STRING);
+	gtk_tree_view_set_model (treeview, GTK_TREE_MODEL(liststore));
+	g_object_unref (liststore);
+
+	gtk_tree_view_set_headers_visible (treeview, TRUE);
+	selection = gtk_tree_view_get_selection (treeview);
+	gtk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
+
+	renderer = gtk_cell_renderer_text_new ();
+	gtk_tree_view_insert_column_with_attributes (treeview,
+						     COL_META_NAME,
+						     _("Name"),
+						     renderer,
+						     "text", COL_META_NAME,
+						     NULL);
+	column = gtk_tree_view_get_column (treeview, COL_META_NAME);
+	gtk_tree_view_column_set_resizable (column, TRUE);
+	gtk_tree_view_column_set_reorderable (column, TRUE);
+	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
+	gtk_tree_view_column_set_sort_column_id (column, COL_META_NAME);
+
+	gtk_tree_view_insert_column_with_attributes (treeview,
+						     COL_META_CONTENT, 
+						     _("Content"),
+						     renderer,
+						     "text", COL_META_CONTENT,
+						     NULL);
+	column = gtk_tree_view_get_column (treeview, COL_META_CONTENT);
+	gtk_tree_view_column_set_resizable (column, TRUE);
+	gtk_tree_view_column_set_reorderable (column, TRUE);
+	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
+	gtk_tree_view_column_set_sort_column_id (column, COL_META_CONTENT);
+
+
+	/* empty all the DCM fields */
+	page_info_set_text (dialog, properties[PROP_META_DC_TITLE].id, "");
+	page_info_set_text (dialog, properties[PROP_META_DC_DESC].id, "");
+	page_info_set_text (dialog, properties[PROP_META_DC_DATE].id, "");
+	page_info_set_text (dialog, properties[PROP_META_DC_FORMAT].id, "");
+
+	tpage->store = liststore;
+	tpage->selection = selection;
+	tpage->treeview = treeview;
+
+//	treeview_info_page_construct (ipage);
+}
+
+static gboolean 
+metadata_add_dc_tag (MetadataInfoPage *page,
+		     EmbedPageMetaTag *tag)
+{
+	InfoPage *ipage = (InfoPage *) page;
+	PageInfoDialog *dialog = ipage->dialog;
+	gboolean added = TRUE;
+
+	if (strcmp (tag->name, "DC.title") == 0)
+	{
+		page_info_set_text (dialog, properties[PROP_META_DC_TITLE].id, tag->content);
+	}
+	else if (strcmp (tag->name, "DC.description") == 0)
+	{
+		page_info_set_text (dialog, properties[PROP_META_DC_DESC].id, tag->content);
+	}
+	else if (strcmp (tag->name, "DC.date") == 0)
+	{
+		page_info_set_text (dialog, properties[PROP_META_DC_DATE].id, tag->content);
+	}
+	else if (strcmp (tag->name, "DC.format") == 0)
+	{
+		page_info_set_text (dialog, properties[PROP_META_DC_FORMAT].id, tag->content);
+	}
+	else
+	{
+		added = FALSE;
+	}
+
+	return added;
+}
+
+static void
+metadata_info_page_fill (InfoPage *ipage)
+{
+	MetadataInfoPage *page = (MetadataInfoPage *) ipage;
+	TreeviewInfoPage *tpage = (TreeviewInfoPage *) ipage;
+	PageInfoDialog *dialog = ipage->dialog;
+	GtkListStore *store = tpage->store;
+	GtkTreeIter iter;
+	GList *tags, *l;
+	GtkWidget *widget;
+	gboolean have_dc = FALSE;
+	char *text;
+
+	tags = dialog->priv->page_info->metatags;
+
+	for (l = tags; l != NULL; l = l->next)
+	{
+		EmbedPageMetaTag *tag = (EmbedPageMetaTag *) l->data;
+
+		if (g_str_has_prefix (tag->name, "DC.") &&
+		    metadata_add_dc_tag (page, tag))
+		{
+			have_dc = TRUE;
+		}
+		else
+		{
+			gtk_list_store_append (store, &iter);
+			gtk_list_store_set (store, &iter,
+					    COL_META_NAME, tag->name,
+					    COL_META_CONTENT, tag->content,
+					    -1);
+		}
+	}
+
+	/* Hide the DC widgets if there's no DC metadata */
+	if (!have_dc)
+	{
+		widget = ephy_dialog_get_control (EPHY_DIALOG (dialog), 
+						  properties[PROP_META_DC_BOX].id);
+		gtk_widget_hide (widget);
+
+		widget = ephy_dialog_get_control (EPHY_DIALOG (dialog), 
+						  properties[PROP_META_OTHER_LABEL].id);
+		text = g_strconcat ("<b>", _("Page Metadata"), "</b>", NULL);
+		gtk_label_set_markup (GTK_LABEL (widget), text);
+		g_free (text);
+	}
+}
+
+static InfoPage *
+metadata_info_page_new (PageInfoDialog *dialog)
+{
+	MetadataInfoPage *page = g_new0 (MetadataInfoPage, 1);
+//	TreeviewInfoPage *tpage = (TreeviewInfoPage *) page;
+	InfoPage *ipage = (InfoPage *) page;
+
+	ipage->dialog = dialog;
+	ipage->construct = metadata_info_page_construct;
+	ipage->fill = metadata_info_page_fill;
+
+//	tpage->popup_path = "/FormsPopup";
+//	tpage->action_entries = forms_action_entries;
+//	tpage->n_action_entries = G_N_ELEMENTS (forms_action_entries);
+
+	return ipage;
+}
+
 /* object stuff */
 
 static void
@@ -1790,7 +1899,7 @@ page_info_dialog_init (PageInfoDialog *dialog)
 	dialog->priv->pages[MEDIA_PAGE] = media_info_page_new (dialog);
 	dialog->priv->pages[LINKS_PAGE] = links_info_page_new (dialog);
 	dialog->priv->pages[FORMS_PAGE] = forms_info_page_new (dialog);
-
+	dialog->priv->pages[METADATA_PAGE] = metadata_info_page_new (dialog);
 	/*
 	dialog->priv->pages[SECURITY_PAGE] = security_info_page_new (dialog);
 	*/
@@ -1963,4 +2072,3 @@ page_info_dialog_new (EphyWindow *window,
 			     "embed", embed,
 			     NULL);
 }
-

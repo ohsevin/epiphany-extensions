@@ -1,7 +1,7 @@
 /*
  *  Copyright (C) 2004 Adam Hooper
- *  Copyright (C) 2004 Jean-François Rameau
- *  Copyright (C) 2004 Christian Persch
+ *  Copyright (C) 2004, 2005 Jean-François Rameau
+ *  Copyright (C) 2004, 2005 Christian Persch
  *
  *  Ripped from GaleonWrapper.cpp, which has no copyright info besides Marco...
  *
@@ -68,6 +68,7 @@
 #include <nsIDOMHTMLImageElement.h>
 #include <nsIDOMHTMLInputElement.h>
 #include <nsIDOMHTMLLinkElement.h>
+#include <nsIDOMHTMLMetaElement.h>
 #include <nsIDOMHTMLObjectElement.h>
 #include <nsIDOMLocation.h>
 #include <nsIDOMNodeFilter.h>
@@ -115,6 +116,7 @@ private:
   void ProcessEmbedNode (nsIDOMHTMLEmbedElement *aElement);
   void ProcessFormNode (nsIDOMHTMLFormElement *aElement);
   void ProcessImageNode (nsIDOMHTMLImageElement *aElement);
+  void ProcessMetaNode (nsIDOMHTMLMetaElement *aElement);
   void ProcessInputNode (nsIDOMHTMLInputElement *aElement);
   template <class T> void ProcessLinkNode (nsIDOMNode *aNode);
   void ProcessObjectNode (nsIDOMHTMLObjectElement *aElement);
@@ -136,6 +138,7 @@ private:
   GHashTable *mMediaHash;
   GHashTable *mLinkHash;
   GHashTable *mFormHash;
+  GList      *mMetaTagsList;
   
   /* these two are used by the walker: */
   nsEmbedCString mDocCharset;
@@ -144,9 +147,11 @@ private:
 
 PageInfoHelper::PageInfoHelper ()
 {
-  mMediaHash = g_hash_table_new (g_str_hash, g_str_equal);
-  mLinkHash = g_hash_table_new (g_str_hash, g_str_equal);
-  mFormHash = g_hash_table_new (g_str_hash, g_str_equal);
+  mMediaHash     = g_hash_table_new (g_str_hash, g_str_equal);
+  mLinkHash      = g_hash_table_new (g_str_hash, g_str_equal);
+  mFormHash      = g_hash_table_new (g_str_hash, g_str_equal);
+  /* list of (name,content) */
+  mMetaTagsList  = NULL;
 }
 
 PageInfoHelper::~PageInfoHelper ()
@@ -232,6 +237,7 @@ PageInfoHelper::GetInfo ()
   g_hash_table_foreach (mMediaHash, (GHFunc) make_list, &info->media);
   g_hash_table_foreach (mLinkHash, (GHFunc) make_list, &info->links);
   g_hash_table_foreach (mFormHash, (GHFunc) make_list, &info->forms);
+  info->metatags = mMetaTagsList;
 
   return info;
 }
@@ -632,6 +638,30 @@ PageInfoHelper::ProcessObjectNode (nsIDOMHTMLObjectElement *aElement)
 }
 
 void
+PageInfoHelper::ProcessMetaNode (nsIDOMHTMLMetaElement *aElement)
+{
+  nsresult rv;
+  nsEmbedString key;
+  /* if we have a http-equiv in the page */
+  rv = aElement->GetHttpEquiv (key);
+  if (NS_FAILED (rv) || !key.Length())
+  {
+    rv = aElement->GetName (key);
+    if (NS_FAILED (rv) || !key.Length()) return;
+  }
+
+  nsEmbedString content;
+  rv = aElement->GetContent (content);
+  if (NS_FAILED (rv) || !content.Length ()) return;
+
+  EmbedPageMetaTag *tag = g_new0 (EmbedPageMetaTag, 1);
+  tag->name = ToCString (key);
+  tag->content =  ToCString (content);
+
+  mMetaTagsList = g_list_prepend (mMetaTagsList, tag);
+}
+
+void
 PageInfoHelper::ProcessInputNode (nsIDOMHTMLInputElement *aElement)
 {
   /* We are searching for input of type medium only */
@@ -885,6 +915,12 @@ PageInfoHelper::WalkTree (nsIDOMDocument *aDocument)
           ProcessFormNode (nodeAsForm);
         }
 
+      nsCOMPtr<nsIDOMHTMLMetaElement> nodeAsMeta (do_QueryInterface(aNode));
+      if (nodeAsMeta)
+        {
+          ProcessMetaNode (nodeAsMeta);
+        }
+
       nsCOMPtr<nsIDOMHTMLInputElement> nodeAsInput (do_QueryInterface(aNode));
       if (nodeAsInput)
         {
@@ -988,6 +1024,14 @@ free_embed_page_form (EmbedPageForm *form)
 }
 
 static void
+free_embed_page_metatags (EmbedPageMetaTag *meta)
+{
+  g_free (meta->name);
+  g_free (meta->content);
+  g_free (meta);
+}
+
+static void
 mozilla_free_page_properties (EmbedPageProperties *props)
 {
   g_free (props->content_type);
@@ -1007,6 +1051,9 @@ mozilla_free_embed_page_info (EmbedPageInfo *info)
 
   g_list_foreach (info->media, (GFunc) free_embed_page_medium, NULL);
   g_list_free (info->media);
+
+  g_list_foreach (info->metatags, (GFunc) free_embed_page_metatags, NULL);
+  g_list_free (info->metatags);
 
   mozilla_free_page_properties (info->props);
 
