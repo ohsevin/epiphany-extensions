@@ -1,5 +1,3 @@
-SUBDIRS = mozilla
-
 extensiondir = $(EXTENSIONS_DIR)
 extension_LTLIBRARIES = libadblockextension.la
 
@@ -12,7 +10,6 @@ libadblockextension_la_SOURCES = \
 
 libadblockextension_la_CPPFLAGS = \
         -I$(top_srcdir)/include				\
-	-I$(top_srcdir)/extensions/adblock/mozilla	\
 	-DSHARE_DIR=\"$(pkgdatadir)\"			\
 	-DEPHY_EXTENSIONS_LOCALEDIR=\"$(datadir)/locale\"  \
 	$(AM_CPPFLAGS)
@@ -21,9 +18,6 @@ libadblockextension_la_CFLAGS = \
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
 	$(AM_CFLAGS)
 
-libadblockextension_la_LIBADD = \
-	mozilla/libadblockmozilla.la	\
-	$(MOZILLA_COMPONENT_LIBS)
 libadblockextension_la_LDFLAGS = -module -avoid-version
 
 patterns_DATA = adblock-patterns

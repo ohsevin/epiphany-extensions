@@ -31,20 +31,28 @@
 #include "ephy-debug.h"
 
 #define AD_BLOCKER_PATTERN_FILE "adblock-patterns"
+#define BUFFER_SIZE		1024
 
 #define AD_BLOCKER_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), TYPE_AD_BLOCKER, AdBlockerPrivate))
 
 static void ad_blocker_class_init (AdBlockerClass *klass);
 static void ad_blocker_init (AdBlocker *dialog);
-static void ad_blocker_finalize (GObject *object);
 
 static GObjectClass *parent_class = NULL;
 
 static GType type = 0;
 
-struct AdBlockerPrivate
+struct _AdBlockerPrivate
 {
+	EphyEmbedSingle *embed_single;
+	guint signal;
 	GSList *patterns;
+};
+
+enum
+{
+	PROP_0,
+	PROP_EMBED_SINGLE
 };
 
 GType
@@ -78,33 +86,27 @@ ad_blocker_register_type (GTypeModule *module)
 }
 
 AdBlocker *
-ad_blocker_new (void)
+ad_blocker_new (EphyEmbedSingle *embed_single)
 {
-	return g_object_new (TYPE_AD_BLOCKER, NULL);
+	return g_object_new (TYPE_AD_BLOCKER,
+			     "embed-single", embed_single,
+			     NULL);
 }
 
-static void
-ad_blocker_class_init (AdBlockerClass *klass)
-{
-	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-
-	parent_class = g_type_class_peek_parent (klass);
-
-	object_class->finalize = ad_blocker_finalize;
-
-	g_type_class_add_private (object_class, sizeof (AdBlockerPrivate));
-}
-
-gboolean
+static gboolean
 ad_blocker_test_uri (AdBlocker *blocker,
-		     const char *url)
+		     EphyContentCheckType type,
+		     const char *url,
+		     const char *referrer,
+		     const char *mime_type,
+		     EphyEmbedSingle *single)
 {
 	GSList *l;
 	char *rev;
 	guint len;
 	gboolean ret;
 
-	ret = TRUE;
+	ret = FALSE;
 
 	len = strlen (url);
 	rev = g_utf8_strreverse (url, -1);
@@ -115,7 +117,7 @@ ad_blocker_test_uri (AdBlocker *blocker,
 		{
 			LOG ("Blocking %s", url)
 
-			ret = FALSE;
+			ret = TRUE;
 			break;
 		}
 	}
@@ -130,8 +132,7 @@ load_patterns_file (const char *filename)
 {
 	GSList *ret = NULL;
 	FILE *f;
-	char *line = NULL;
-	size_t buf_size = 0;
+	char *line = malloc (sizeof (char) * BUFFER_SIZE);
 
 	LOG ("Loading patterns from %s", filename)
 
@@ -139,7 +140,7 @@ load_patterns_file (const char *filename)
 
 	g_return_val_if_fail (f != NULL, NULL);
 
-	while (getline (&line, &buf_size, f) != -1)
+	while (fgets (line, BUFFER_SIZE, f) != NULL)
 	{
 		if (*line == '#') continue; /* comment */
 
@@ -196,6 +197,32 @@ load_patterns (void)
 }
 
 static void
+ad_blocker_get_property (GObject *object,
+			 guint prop_id,
+			 GValue *value,
+			 GParamSpec *pspec)
+{
+	/* no readable properties */
+	g_return_if_reached ();
+}
+
+static void
+ad_blocker_set_property (GObject *object,
+			 guint prop_id,
+			 const GValue *value,
+			 GParamSpec *pspec)
+{
+	AdBlocker *blocker = AD_BLOCKER (object);
+
+	switch (prop_id)
+	{
+		case PROP_EMBED_SINGLE:
+			blocker->priv->embed_single = g_value_get_object (value);
+			break;
+	}
+}
+
+static void
 ad_blocker_init (AdBlocker *blocker)
 {
 	LOG ("AdBlocker initializing %p", blocker)
@@ -205,6 +232,28 @@ ad_blocker_init (AdBlocker *blocker)
 	blocker->priv->patterns = load_patterns ();
 }
 
+static GObject *
+ad_blocker_constructor (GType type,
+			guint n_construct_properties,
+			GObjectConstructParam *construct_params)
+{
+	GObject *object;
+	AdBlocker *blocker;
+
+	object = parent_class->constructor (type, n_construct_properties,
+					    construct_params);
+
+	blocker = AD_BLOCKER (object);
+
+	blocker->priv->signal =
+		g_signal_connect_object (blocker->priv->embed_single,
+					 "check-content",
+					 (GCallback) ad_blocker_test_uri,
+					 blocker, G_CONNECT_SWAPPED);
+
+	return object;
+}
+
 static void
 ad_blocker_finalize (GObject *object)
 {
@@ -212,8 +261,37 @@ ad_blocker_finalize (GObject *object)
 
 	LOG ("AdBlocker finalizing %p", object)
 
+	if (g_signal_handler_is_connected (priv->embed_single, priv->signal))
+	{
+		g_signal_handler_disconnect (priv->embed_single, priv->signal);
+	}
+
 	g_slist_foreach (priv->patterns, (GFunc) g_pattern_spec_free, NULL);
 	g_slist_free (priv->patterns);
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
+}
+
+static void
+ad_blocker_class_init (AdBlockerClass *klass)
+{
+	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+
+	parent_class = g_type_class_peek_parent (klass);
+
+	object_class->finalize = ad_blocker_finalize;
+	object_class->constructor = ad_blocker_constructor;
+	object_class->get_property = ad_blocker_get_property;
+	object_class->set_property = ad_blocker_set_property;
+
+	g_object_class_install_property
+		(object_class,
+		 PROP_EMBED_SINGLE,
+		 g_param_spec_object ("embed-single",
+				      "Embed Single",
+				      "Embed Single",
+				      G_TYPE_OBJECT,
+				      G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
+
+	g_type_class_add_private (object_class, sizeof (AdBlockerPrivate));
 }

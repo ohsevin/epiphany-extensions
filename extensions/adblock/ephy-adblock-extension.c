@@ -24,11 +24,11 @@
 #endif
 
 #include "ephy-adblock-extension.h"
-#include "mozilla-helpers.h"
 #include "ephy-debug.h"
 #include "ad-blocker.h"
 
 #include <epiphany/ephy-embed-shell.h>
+#include <epiphany/ephy-embed-single.h>
 #include <epiphany/ephy-extension.h>
 
 #include <gmodule.h>
@@ -37,6 +37,7 @@
 
 struct EphyAdblockExtensionPrivate
 {
+	AdBlocker *blocker;
 };
 
 static void ephy_adblock_extension_class_init	(EphyAdblockExtensionClass *klass);
@@ -97,31 +98,24 @@ ephy_adblock_extension_register_type (GTypeModule *module)
 static void
 ephy_adblock_extension_init (EphyAdblockExtension *extension)
 {
-	AdBlocker *blocker;
-/*
-	extension->priv = EPHY_ADBLOCK_EXTENSION_GET_PRIVATE (extension);
-*/
+	EphyEmbedSingle *single;
+
 	LOG ("EphyAdblockExtension initialising")
 
-	ephy_embed_shell_get_embed_single (embed_shell); /* Fire up Mozilla */
+	extension->priv = EPHY_ADBLOCK_EXTENSION_GET_PRIVATE (extension);
 
-	mozilla_register_ad_blocker ();
-
-	blocker = ad_blocker_new();
-        mozilla_set_ad_blocker (blocker);
-	g_object_unref (blocker);
+	single = EPHY_EMBED_SINGLE (ephy_embed_shell_get_embed_single (embed_shell));
+	extension->priv->blocker = ad_blocker_new (single);
 }
 
 static void
 ephy_adblock_extension_finalize (GObject *object)
 {
-/*
 	EphyAdblockExtension *extension = EPHY_ADBLOCK_EXTENSION (object);
-*/
+
 	LOG ("EphyAdblockExtension finalising")
 
-	mozilla_unregister_ad_blocker ();
-        mozilla_set_ad_blocker (NULL);
+	g_object_unref (extension->priv->blocker);
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
 }

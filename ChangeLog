@@ -1,3 +1,24 @@
+2005-01-11  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/adblock/Makefile.am:
+	* extensions/adblock/ad-blocker.c: (ad_blocker_new),
+	(ad_blocker_test_uri), (load_patterns_file),
+	(ad_blocker_get_property), (ad_blocker_set_property),
+	(ad_blocker_constructor), (ad_blocker_finalize),
+	(ad_blocker_class_init):
+	* extensions/adblock/ad-blocker.h:
+	* extensions/adblock/ephy-adblock-extension.c:
+	(ephy_adblock_extension_init), (ephy_adblock_extension_finalize):
+	* extensions/adblock/mozilla/.cvsignore:
+	* extensions/adblock/mozilla/Makefile.am:
+	* extensions/adblock/mozilla/MozAdBlocker.cpp:
+	* extensions/adblock/mozilla/MozAdBlocker.h:
+	* extensions/adblock/mozilla/mozilla-helpers.cpp:
+	* extensions/adblock/mozilla/mozilla-helpers.h:
+
+	Hook adblock extension onto "check-content" signal.
+
 2005-01-11  Tomasz Kłoczko <kloczek@pld.org.pl>
 
 	* extensions/adblock/Makefile.am:

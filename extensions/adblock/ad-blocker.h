@@ -23,6 +23,8 @@
 #include <glib-object.h>
 #include <gmodule.h>
 
+#include <epiphany/ephy-embed-single.h>
+
 G_BEGIN_DECLS
 
 #define TYPE_AD_BLOCKER		(ad_blocker_get_type ())
@@ -32,11 +34,11 @@ G_BEGIN_DECLS
 #define IS_AD_BLOCKER_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), TYPE_AD_BLOCKER))
 #define AD_BLOCKER_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), TYPE_AD_BLOCKER, AdBlockerClass))
 
-typedef struct AdBlocker	AdBlocker;
-typedef struct AdBlockerClass	AdBlockerClass;
-typedef struct AdBlockerPrivate	AdBlockerPrivate;
+typedef struct _AdBlocker		AdBlocker;
+typedef struct _AdBlockerClass		AdBlockerClass;
+typedef struct _AdBlockerPrivate	AdBlockerPrivate;
 
-struct AdBlocker
+struct _AdBlocker
 {
 	GObject parent_instance;
 
@@ -44,7 +46,7 @@ struct AdBlocker
 	AdBlockerPrivate *priv;
 };
 
-struct AdBlockerClass
+struct _AdBlockerClass
 {
 	GObjectClass parent_class;
 };
@@ -53,10 +55,7 @@ GType		 ad_blocker_get_type		(void);
 
 GType		 ad_blocker_register_type	(GTypeModule *module);
 
-AdBlocker	*ad_blocker_new			(void);
-
-gboolean	 ad_blocker_test_uri		(AdBlocker *blocker,
-						 const char *url);
+AdBlocker	*ad_blocker_new			(EphyEmbedSingle *embed_single);
 
 G_END_DECLS
 

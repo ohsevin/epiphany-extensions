@@ -130,9 +130,9 @@ dnl *******************************
 AC_MSG_CHECKING([extensions to build])
 
 all_extensions="adblock,bookmarks-tray,certificates,dashboard,error-viewer,extensions-manager-ui,gestures,page-info,sample,sample-mozilla,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups"
-all_useful_extensions="bookmarks-tray,certificates,dashboard,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tab-groups,tabsmenu"
-default_extensions="bookmarks-tray,certificates,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups"
-mozilla_dependent_extensions="adblock,error-viewer,page-info,sample-mozilla,select-stylesheet,smart-bookmarks"
+all_useful_extensions="adblock,bookmarks-tray,certificates,dashboard,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tab-groups,tabsmenu"
+default_extensions="adblock,bookmarks-tray,certificates,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups"
+mozilla_dependent_extensions="error-viewer,page-info,sample-mozilla,select-stylesheet,smart-bookmarks"
 
 dnl due to an autoconf bug, commas in the first arg to
 dnl AS_HELP_STRING() cause problems.
@@ -345,7 +345,6 @@ Makefile
 include/Makefile
 extensions/Makefile
 extensions/adblock/Makefile
-extensions/adblock/mozilla/Makefile
 extensions/bookmarks-tray/Makefile
 extensions/certificates/Makefile
 extensions/dashboard/Makefile
