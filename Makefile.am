@@ -9,7 +9,8 @@ EXTRA_DIST =			\
 	TODO 			\
 	intltool-extract.in 	\
 	intltool-merge.in 	\
-	intltool-update.in
+	intltool-update.in	\
+	tools/copy-template
 
 DISTCLEANFILES = 		\
 	intltool-extract 	\
