@@ -1,0 +1,107 @@
+Index: data/ui/epiphany-ui.xml.in
+===================================================================
+RCS file: /cvs/gnome/epiphany/data/ui/epiphany-ui.xml.in,v
+retrieving revision 1.24
+diff -u -p -r1.24 epiphany-ui.xml.in
+--- data/ui/epiphany-ui.xml.in	18 Jun 2003 12:17:16 -0000	1.24
++++ data/ui/epiphany-ui.xml.in	3 Aug 2003 17:58:30 -0000
+@@ -71,6 +72,8 @@
+ 	<menuitem name="TabsMoveLeftMenu" verb="TabsMoveLeft"/>
+ 	<menuitem name="TabsMoveRightMenu" verb="TabsMoveRight"/>
+         <menuitem name="TabsDetachMenu" verb="TabsDetach"/>
++	<placeholder name="TabsPluginPlaceholder">
++	</placeholder>
+ 	<placeholder name="TabsOpen">
+ 	<separator name="TabsSep2"/>
+ 	</placeholder>
+Index: src/ephy-window.c
+===================================================================
+RCS file: /cvs/gnome/epiphany/src/ephy-window.c,v
+retrieving revision 1.99
+diff -u -p -r1.99 ephy-window.c
+--- src/ephy-window.c	2 Aug 2003 13:11:02 -0000	1.99
++++ src/ephy-window.c	3 Aug 2003 17:58:41 -0000
+@@ -302,6 +302,12 @@ ephy_window_notebook_switch_page_cb (Gtk
+ 				     guint page_num,
+ 				     EphyWindow *window);
+ 
++enum
++{
++	PROP_0,
++	PROP_ACTIVE_TAB
++};
++
+ static GObjectClass *parent_class = NULL;
+ 
+ GType
+@@ -366,6 +372,38 @@ ephy_window_destroy (GtkObject *gtkobjec
+ }
+ 
+ static void
++ephy_window_set_property (GObject *object,
++			  guint prop_id,
++			  const GValue *value,
++			  GParamSpec *pspec)
++{
++	switch (prop_id)
++
++	{
++		case PROP_ACTIVE_TAB:
++			/* read only */
++			break;
++	}
++}
++
++static void
++ephy_window_get_property (GObject *object,
++			  guint prop_id,
++			  GValue *value,
++			  GParamSpec *pspec)
++{
++	EphyWindow *window = EPHY_WINDOW (object);
++
++	switch (prop_id)
++
++	{
++		case PROP_ACTIVE_TAB:
++			g_value_set_object (value, ephy_window_get_active_tab (window));
++			break;
++	}
++}
++
++static void
+ ephy_window_class_init (EphyWindowClass *klass)
+ {
+ 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+@@ -375,10 +413,20 @@ ephy_window_class_init (EphyWindowClass 
+         parent_class = g_type_class_peek_parent (klass);
+ 
+         object_class->finalize = ephy_window_finalize;
++	object_class->set_property = ephy_window_set_property;
++	object_class->get_property = ephy_window_get_property;
+ 
+ 	widget_class->show = ephy_window_show;
+ 
+ 	gtkobject_class->destroy = ephy_window_destroy;
++
++	g_object_class_install_property (object_class,
++					 PROP_ACTIVE_TAB,
++					 g_param_spec_object ("active-tab",
++							      "Active tab",
++							      "The window's active tab",
++							      EPHY_TAB_TYPE,
++							      G_PARAM_READABLE));
+ }
+ 
+ static void
+@@ -1247,6 +1295,10 @@ ephy_window_set_active_tab (EphyWindow *
+ 					 G_CALLBACK (tab_context_menu_cb),
+ 					 window, 0);
+ 	}
++
++	if (window->priv->closing) return;
++
++	g_object_notify (G_OBJECT (window), "active-tab");
+ }
+ 
+ static void
