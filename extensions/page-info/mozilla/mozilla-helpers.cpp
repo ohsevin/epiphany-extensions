@@ -260,12 +260,10 @@ PageInfoHelper::GetCacheEntryDescriptor (const nsAString &aUrl,
   nsEmbedCString cUrl;
   NS_UTF16ToCString (aUrl, NS_CSTRING_ENCODING_UTF8, cUrl);
 
-#ifdef MOZ_NSICACHESESSION_OPENCACHEENTRY_NSACSTRING_
-  g_strdelimit (cUrl.BeginWriting (), "#", '\0');
-  g_print ("truncated: %s\n", cUrl.get()));
-#else
   char *url = g_strdup (cUrl.get ());
   g_strdelimit (url, "#", '\0'); /* snip fragment, see bug #161201 */
+#ifdef MOZ_NSICACHESESSION_OPENCACHEENTRY_NSACSTRING_
+  nsEmbedCString truncatedUrl (url);
 #endif
 
   const char *cacheTypes[] = { "HTTP", "FTP" };

@@ -301,7 +301,7 @@ fi
 dnl Changed in 1.8a1 and again in 1.8a3 to its present form (variant 2);
 dnl variant 1 is on 1.7 branch. Aviary branch also has variant 2.
 
-CXXFLAGS="$_SAVE_CXXFLAGS $AM_CXXFLAGS -I$MOZILLA_INCLUDE_ROOT `pkg-config --cflags $MOZILLA-xpcom` -DMOZILLA_STRICT_API"
+CXXFLAGS="$_SAVE_CXXFLAGS $AM_CXXFLAGS -I$MOZILLA_INCLUDE_ROOT `pkg-config --cflags $MOZILLA-xpcom` -I$MOZILLA_INCLUDE_ROOT/necko -DMOZILLA_STRICT_API"
 
 AC_MSG_CHECKING([for nsIContentPolicy API])
 
@@ -326,7 +326,6 @@ AC_MSG_CHECKING([whether nsICacheSession::OpenCacheEntry takes nsACString&])
 AC_COMPILE_IFELSE(
 	[AC_LANG_PROGRAM(
 		[[#include <nsEmbedString.h>
-		  #include <necko/nsNetError.h>
 		  #include <nkcache/nsICacheSession.h>]],
 		[[nsICacheSession *p;
 		  nsEmbedCString arg1;

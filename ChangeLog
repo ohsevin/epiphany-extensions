@@ -3,6 +3,13 @@
 	* configure.ac:
 	* extensions/page-info/mozilla/mozilla-helpers.cpp:
 
+	Fix the fix fo the API change.
+
+2005-01-13  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+
 	Mozilla API change.
 
 	* extensions/adblock/ad-blocker.c:
