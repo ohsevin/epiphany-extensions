@@ -1,5 +1,12 @@
 2004-05-30  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/sample-mozilla/ephy-sample2-extension.c:
+	(dom_mouse_down_cb):
+
+	Don't consume the event.
+
+2004-05-30  Christian Persch  <chpe@cvs.gnome.org>
+
 	* configure.ac:
 
 	Fix ACLOCAL flags.
