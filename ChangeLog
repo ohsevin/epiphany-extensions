@@ -1,3 +1,22 @@
+2004-11-16  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
+	Update Epiphany dependency.
+
+	* extensions/certificates/Makefile.am:
+	* extensions/certificates/ephy-certificates-extension.c:
+	(view_certificate_cb), (tab_added_cb), (tab_removed_cb),
+	(padlock_button_press_cb):
+	* extensions/certificates/mozilla/.cvsignore:
+	* extensions/certificates/mozilla/Makefile.am:
+	* extensions/certificates/mozilla/MozillaEmbedCertificate.cpp:
+	* extensions/certificates/mozilla/MozillaEmbedCertificate.h:
+	* extensions/certificates/mozilla/mozilla-embed-certificate.cpp:
+	* extensions/certificates/mozilla/mozilla-embed-certificate.h:
+
+	Use ephy_embed_show_page_certificate ().
+
 2004-11-15  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:

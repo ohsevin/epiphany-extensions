@@ -1,4 +1,4 @@
-SUBDIRS = mozilla
+SUBDIRS =
 
 extensiondir = $(EXTENSIONS_DIR)
 

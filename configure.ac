@@ -74,7 +74,7 @@ dnl ********************************
 dnl pkg config checks
 dnl ********************************
 
-EPIPHANY_REQUIRED=1.4.1
+EPIPHANY_REQUIRED=1.4.5.90
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.4.0
 LIBGTK_REQUIRED=2.4.0
@@ -141,7 +141,7 @@ AC_MSG_CHECKING([extensions to build])
 all_extensions="certificates,dashboard,error-viewer,gestures,page-info,sample,sample-mozilla,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups"
 all_useful_extensions="certificates,dashboard,error-viewer,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups"
 default_extensions="certificates,error-viewer,gestures,page-info,select-stylesheet,smart-bookmarks,tabsmenu,tab-groups"
-mozilla_dependent_extensions="certificates,error-viewer,page-info,sample-mozilla,select-stylesheet,sidebar,smart-bookmarks"
+mozilla_dependent_extensions="error-viewer,page-info,sample-mozilla,select-stylesheet,sidebar,smart-bookmarks"
 
 dnl due to an autoconf bug, commas in the first arg to
 dnl AC_HELP_STRING cause problems.
@@ -334,7 +334,6 @@ Makefile
 include/Makefile
 extensions/Makefile
 extensions/certificates/Makefile
-extensions/certificates/mozilla/Makefile
 extensions/dashboard/Makefile
 extensions/gestures/Makefile
 extensions/error-viewer/Makefile
