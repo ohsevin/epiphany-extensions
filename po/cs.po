@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-12 03:18+0100\n"
-"PO-Revision-Date: 2004-03-12 14:45+0100\n"
+"POT-Creation-Date: 2004-03-15 03:14+0100\n"
+"PO-Revision-Date: 2004-03-15 10:26+0100\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -180,23 +180,18 @@ msgstr ""
 "Nebyl určen platný doctype."
 
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
-msgid "Blo_ck Popups from this Site"
-msgstr "_Blokovat vyskakovací okna z tohoto serveru"
+msgid "Popup _Windows"
+msgstr "Vyskakovací _okna"
 
 #. shortcut key
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
-msgid "Block or unblock popup windows"
-msgstr "Zablokovat nebo odblokovat vyskakovací okna"
+msgid "Show or hide unrequested popup windows from this site"
+msgstr "Zobrazit nebo skrýt nevyžádaná vyskakovací okna z tohoto serveru"
 
-#: extensions/popup-blocker/ephy-popup-blocker-icon.c:295
+#: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
 #, c-format
-msgid "Open %s"
-msgstr "Otevřít %s"
-
-#: extensions/popup-blocker/ephy-popup-blocker-icon.c:342
-#, c-format
-msgid "%d popup blocked"
-msgid_plural "%d popups blocked"
+msgid "%d popup window blocked"
+msgid_plural "%d popup windows blocked"
 msgstr[0] "Zablokováno %d vyskakovací okno"
 msgstr[1] "Zablokována %d vyskakovací okna"
 msgstr[2] "Zablokováno %d vyskakovacích oken"
@@ -216,3 +211,6 @@ msgstr "Přesunout kartu do okna"
 #: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
 msgstr "Přesunout aktuální kartu do jiného okna"
+
+#~ msgid "Open %s"
+#~ msgstr "Otevřít %s"
