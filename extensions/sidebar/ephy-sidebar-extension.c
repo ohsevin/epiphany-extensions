@@ -48,6 +48,7 @@
 #include <gtk/gtktoggleaction.h>
 #include <gtk/gtkhpaned.h>
 #include <gtk/gtkdialog.h>
+#include <gtk/gtkmessagedialog.h>
 #include <gtk/gtkstock.h>
 #include <gtk/gtkhbox.h>
 #include <gtk/gtkimage.h>
@@ -337,7 +338,7 @@ add_dialog_response_cb (GtkDialog *dialog,
 			int response, 
 			struct ResponseCallbackData *data)
 {
-	if (response == GTK_RESPONSE_OK)
+	if (response == GTK_RESPONSE_ACCEPT)
 	{
 		EphyNode *node;
 		GValue value = { 0, };
@@ -368,8 +369,6 @@ impl_add_sidebar (EphySidebarExtension *extension,
 	EphySession *session;
 	EphyWindow *window;
 	GtkWidget *dialog;
-	GtkWidget *hbox, *vbox, *label, *image;
-	char *text, *primary;
 	struct ResponseCallbackData *cb_data;
 	int i;
 	
@@ -389,48 +388,23 @@ impl_add_sidebar (EphySidebarExtension *extension,
 	session = EPHY_SESSION (ephy_shell_get_session (ephy_shell));
 	window = ephy_session_get_active_window (session);
 
-	dialog = gtk_dialog_new_with_buttons ("",
-					      GTK_WINDOW (window),
-					      GTK_DIALOG_NO_SEPARATOR,
-					      GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-					      _("_Add Sidebar"), GTK_RESPONSE_OK,
-					      NULL);
-	
-	gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
-	gtk_container_set_border_width (GTK_CONTAINER (dialog), 5);
-	gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (dialog)->vbox), 14);
+	dialog = gtk_message_dialog_new
+		(GTK_WINDOW (window),
+		 GTK_DIALOG_DESTROY_WITH_PARENT,
+		 GTK_MESSAGE_QUESTION,
+		 GTK_BUTTONS_CANCEL,
+		 _("Add \"%s\" to the Sidebar?"), title);
 
-	hbox = gtk_hbox_new (FALSE, 6);
-	gtk_widget_show (hbox);
-	gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), hbox,
-			    TRUE, TRUE, 0);
+	gtk_message_dialog_format_secondary_text
+		(GTK_MESSAGE_DIALOG (dialog),
+		 _("The source to the new sidebar page is %s."), url);
 
-	image = gtk_image_new_from_stock (GTK_STOCK_DIALOG_WARNING,
-					  GTK_ICON_SIZE_DIALOG);
-	gtk_misc_set_alignment (GTK_MISC (image), 0.5, 0.0);
-	gtk_widget_show (image);
-	gtk_box_pack_start (GTK_BOX (hbox), image, TRUE, TRUE, 0);
+	gtk_window_set_title (GTK_WINDOW (dialog), _("Add Sidebar"));
+	gtk_window_set_icon_name (GTK_WINDOW (dialog), "web-browser");
 
-	vbox = gtk_vbox_new (FALSE, 6);
-	gtk_widget_show (vbox);
-	gtk_box_pack_start (GTK_BOX (hbox), vbox, TRUE, TRUE, 0);
-
-	label = gtk_label_new (NULL);
-	gtk_label_set_selectable (GTK_LABEL (label), TRUE);
-	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
-	gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
-
-	primary = g_markup_printf_escaped (_("Add \"%s\" to the Sidebar?"), title);
-
-	text = g_strdup_printf ("<span weight=\"bold\" size=\"larger\">%s</span>\n\n%s\n<tt>%s</tt>",
-				primary, _("The source to the new sidebar page is:"), url);
-
-	gtk_label_set_markup (GTK_LABEL (label), text);
-	g_free (text);
-	g_free (primary);
-
-	gtk_box_pack_start (GTK_BOX (vbox), label, TRUE, TRUE, 0);
-	gtk_widget_show (label);
+	gtk_dialog_add_button (GTK_DIALOG (dialog),
+			       _("_Add Sidebar"), GTK_RESPONSE_ACCEPT);
+	gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_ACCEPT);
 
 	cb_data = g_new (struct ResponseCallbackData, 1);
 	cb_data->url = g_strdup (url);

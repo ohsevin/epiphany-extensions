@@ -1,3 +1,10 @@
+2004-10-26  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/sidebar/ephy-sidebar-extension.c:
+	(add_dialog_response_cb), (impl_add_sidebar):
+
+	Use new gtk+ HIG message dialogue API.
+
 2004-10-25  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* tools/copy-template:
