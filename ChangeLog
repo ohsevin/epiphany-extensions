@@ -1,3 +1,7 @@
+2004-03-24  Alessio Frusciante  <algol@firenze.linux.it>
+
+	* configure.ac: Added "it" (Italian) to ALL_LINGUAS.
+
 2004-03-24  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/sample/Makefile.am:
