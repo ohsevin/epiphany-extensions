@@ -1145,8 +1145,49 @@ enum
 	COL_LINK_REL
 };
 
+static char *
+links_get_selected_link_url (LinksInfoPage *page)
+{
+	TreeviewInfoPage *tpage = (TreeviewInfoPage *) page;
+	GtkTreeModel *model;
+	GtkTreeIter iter;
+	char *address = NULL;
+
+	if (gtk_tree_selection_get_selected (tpage->selection, &model, &iter))
+	{
+		gtk_tree_model_get (model, &iter,
+				    COL_LINK_URL, &address,
+				    -1);
+	}
+
+	return address;
+}
+
+static void
+links_copy_link_address_cb (GtkAction *action,
+			    LinksInfoPage *page)
+{
+	char *address;
+
+	address = links_get_selected_link_url (page);
+	if (address == NULL) return;
+
+	gtk_clipboard_set_text (gtk_clipboard_get (GDK_NONE),
+				address, -1);
+	gtk_clipboard_set_text (gtk_clipboard_get (GDK_SELECTION_PRIMARY),
+				address, -1);
+
+	g_free (address);
+}
+
 static GtkActionEntry links_action_entries[] =
 {
+	{ "CopyLinkAddress", 
+	  GTK_STOCK_COPY,
+	  N_("_Copy Link Address"),
+	  NULL,
+	  NULL,
+	  G_CALLBACK (links_copy_link_address_cb) },
 };
 
 static void
@@ -1215,7 +1256,7 @@ links_info_page_construct (InfoPage *ipage)
 	tpage->selection = selection;
 	tpage->treeview = treeview;
 
-//	treeview_info_page_construct (ipage);
+	treeview_info_page_construct (ipage);
 }
 
 static void
