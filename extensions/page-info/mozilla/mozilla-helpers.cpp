@@ -37,29 +37,25 @@
 #include <nsICacheService.h>
 #include <nsICacheSession.h>
 #include <nsIDOMDocument.h>
+#include <nsIDOMHTMLAnchorElement.h>
 #include <nsIDOMHTMLCollection.h>
 #include <nsIDOMHTMLDocument.h>
 #include <nsIDOMHTMLImageElement.h>
+#include <nsIDOMHTMLLinkElement.h>
 #include <nsIDOMLocation.h>
+#include <nsIDOMNode.h>
+#include <nsIDOMNodeList.h>
 #include <nsIDOMNSDocument.h>
 #include <nsIDOMNSHTMLDocument.h>
 #include <nsIDOMWindow.h>
 #include <nsMemory.h>
 #include <nsNetCID.h>
 #include <nsIServiceManagerUtils.h>
+#include <nsIURI.h>
 #include <nsIWebBrowser.h>
 #include <nsTime.h>
 #include <nsIHTMLDocument.h>
 #include <nsCompatibility.h>
-
-extern "C" void
-mozilla_free_page_properties (EmbedPageProperties *props)
-{
-	g_free (props->content_type);
-	g_free (props->encoding);
-	g_free (props->referring_url);
-	g_free (props);
-}
 
 static char *
 embed_string_to_c_string (const nsEmbedString& embed_string)
@@ -68,6 +64,15 @@ embed_string_to_c_string (const nsEmbedString& embed_string)
 	NS_UTF16ToCString (embed_string, NS_CSTRING_ENCODING_UTF8, c_string);
 
 	return g_strdup (c_string.get());
+}
+
+extern "C" void
+mozilla_free_page_properties (EmbedPageProperties *props)
+{
+	g_free (props->content_type);
+	g_free (props->encoding);
+	g_free (props->referring_url);
+	g_free (props);
 }
 
 static nsresult
@@ -253,6 +258,7 @@ mozilla_get_images (EphyEmbed *embed)
 	NS_ENSURE_TRUE (htmlDoc, NULL);
 
 	nsCOMPtr<nsIDOMHTMLCollection> nodes;
+	/* FIXME: DOM spec recomments searching by name for "img", "object" */
 	htmlDoc->GetImages(getter_AddRefs(nodes));
 
 	PRUint32 count(0);
@@ -302,6 +308,126 @@ mozilla_get_images (EphyEmbed *embed)
 	}
 
 	g_hash_table_destroy (hash);
+
+	return ret;
+}
+
+extern "C" void
+mozilla_free_embed_page_link (EmbedPageLink *link)
+{
+	g_free (link->url);
+	g_free (link->title);
+	g_free (link->rel);
+	g_free (link);
+}
+
+template <class T>
+static nsresult
+process_link_node (nsIDOMNode *node,
+		   nsIDOMDocument *doc,
+		   GList **ret)
+{
+	nsresult rv;
+
+	nsCOMPtr<T> element = do_QueryInterface(node);
+	NS_ENSURE_TRUE (element, NS_ERROR_FAILURE);
+
+	nsEmbedString tmp;
+
+	EmbedPageLink *link = g_new0 (EmbedPageLink, 1);
+
+	rv = element->GetHref(tmp);
+	NS_ENSURE_SUCCESS (rv, rv);
+	link->url = embed_string_to_c_string (tmp);
+
+	rv = element->GetTitle(tmp);
+	NS_ENSURE_SUCCESS (rv, rv);
+	if (tmp.Length())
+	{
+		link->title = embed_string_to_c_string (tmp);
+	}
+
+	rv = element->GetRel(tmp);
+	NS_ENSURE_SUCCESS (rv, rv);
+	if (tmp.Length())
+	{
+		link->rel = embed_string_to_c_string (tmp);
+	}
+	if (!link->rel)
+	{
+		rv = element->GetRev(tmp);
+		NS_ENSURE_SUCCESS (rv, rv);
+		if (tmp.Length())
+		{
+			link->rel = embed_string_to_c_string (tmp);
+		}
+	}
+
+	*ret = g_list_prepend(*ret, link);
+
+	return NS_OK;
+}
+
+extern "C" GList *
+mozilla_get_links (EphyEmbed *embed)
+{
+	nsresult rv;
+	GList *ret = NULL;
+
+	nsCOMPtr<nsIWebBrowser> browser;
+	gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (embed),
+					 getter_AddRefs (browser));
+	NS_ENSURE_TRUE (browser, ret);
+
+	nsCOMPtr<nsIDOMWindow> dom_window;
+	browser->GetContentDOMWindow (getter_AddRefs (dom_window));
+	NS_ENSURE_TRUE (dom_window, ret);
+
+	nsCOMPtr<nsIDOMDocument> doc;
+	dom_window->GetDocument (getter_AddRefs (doc));
+	NS_ENSURE_TRUE (doc, ret);
+
+	/* first, get a list of <link> elements */
+	nsCOMPtr<nsIDOMNodeList> links;
+	nsEmbedString str_link;
+	NS_CStringToUTF16 (nsEmbedCString("link"), NS_CSTRING_ENCODING_UTF8,
+			   str_link);
+	rv = doc->GetElementsByTagName (str_link, getter_AddRefs(links));
+	NS_ENSURE_SUCCESS (rv, ret);
+
+	PRUint32 links_count;
+	rv = links->GetLength(&links_count);
+	NS_ENSURE_SUCCESS (rv, ret);
+
+	for (PRUint32 i = 0; i < links_count; i++)
+	{
+		nsCOMPtr<nsIDOMNode> node;
+		rv = links->Item(i, getter_AddRefs(node));
+		if (NS_FAILED(rv) || !node) continue;
+
+		process_link_node<nsIDOMHTMLLinkElement>(node, doc, &ret);
+	}
+
+	/* next, get a list of anchors */
+	nsCOMPtr<nsIDOMHTMLDocument> htmlDoc = do_QueryInterface(doc);
+	NS_ENSURE_TRUE (htmlDoc, ret);
+
+	nsCOMPtr<nsIDOMHTMLCollection> anchors;
+	rv = htmlDoc->GetLinks(getter_AddRefs(anchors));
+	NS_ENSURE_SUCCESS (rv, ret);
+
+	PRUint32 anchor_count;
+	anchors->GetLength(&anchor_count);
+	for (PRUint32 i = 0; i < anchor_count; i++)
+	{
+		nsCOMPtr<nsIDOMNode> node;
+		rv = anchors->Item(i, getter_AddRefs(node));
+		if (NS_FAILED(rv) || !node) continue;
+
+		process_link_node<nsIDOMHTMLAnchorElement>(node, doc, &ret);
+	}
+
+	ret = g_list_reverse (ret);
 
 	return ret;
 }

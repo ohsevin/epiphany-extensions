@@ -66,9 +66,7 @@ typedef struct
 
 //	/* lists of hashtables with gvalues */
 //	GList *metatags;    /* name, value */
-//	GList *images;      /* url, alt, title, width, height */
 //	GList *forms;       /* name, method, action */
-//	GList *links;       /* url, title, relation */
 //	GList *stylesheets; /* url, title */
 } EmbedPageProperties;
 
@@ -81,6 +79,13 @@ typedef struct
 	int height;
 } EmbedPageImage; 
 
+typedef struct
+{
+	char *url;
+	char *title;
+	char *rel;
+} EmbedPageLink;
+
 void			 mozilla_free_page_properties	(EmbedPageProperties *props);
 
 EmbedPageProperties	*mozilla_get_page_properties	(EphyEmbed *embed);
@@ -88,6 +93,10 @@ EmbedPageProperties	*mozilla_get_page_properties	(EphyEmbed *embed);
 void			 mozilla_free_embed_page_image	(EmbedPageImage *image);
 
 GList			*mozilla_get_images		(EphyEmbed *embed);
+
+void			 mozilla_free_embed_page_link	(EmbedPageLink *link);
+
+GList			*mozilla_get_links		(EphyEmbed *embed);
 
 G_END_DECLS
 
