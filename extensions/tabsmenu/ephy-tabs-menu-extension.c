@@ -29,7 +29,7 @@
 #include <epiphany/ephy-extension.h>
 
 static void ephy_tabs_menu_extension_class_init	(EphyTabsMenuExtensionClass *class);
-static void ephy_tabs_menu_extension_iface_init (EphyExtensionClass *iface);
+static void ephy_tabs_menu_extension_iface_init (EphyExtensionIface *iface);
 static void ephy_tabs_menu_extension_init	(EphyTabsMenuExtension *menu);
 
 GObjectClass *tabs_menu_extension_parent_class = NULL;
@@ -114,7 +114,7 @@ ephy_tabs_menu_extension_finalize (GObject *object)
 }
 
 static void
-ephy_tabs_menu_extension_iface_init (EphyExtensionClass *iface)
+ephy_tabs_menu_extension_iface_init (EphyExtensionIface *iface)
 {
 	iface->attach_window = impl_attach_window;
 	iface->detach_window = impl_detach_window;

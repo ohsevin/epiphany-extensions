@@ -55,7 +55,7 @@ struct EphyGesturesExtensionPrivate
 static GObjectClass *parent_class = NULL;
 
 static void ephy_gestures_extension_class_init	(EphyGesturesExtensionClass *klass);
-static void ephy_gestures_extension_iface_init	(EphyExtensionClass *iface);
+static void ephy_gestures_extension_iface_init	(EphyExtensionIface *iface);
 static void ephy_gestures_extension_init	(EphyGesturesExtension *extension);
 
 static GType type = 0;
@@ -395,7 +395,7 @@ impl_detach_window (EphyExtension *extension,
 }
 
 static void
-ephy_gestures_extension_iface_init (EphyExtensionClass *iface)
+ephy_gestures_extension_iface_init (EphyExtensionIface *iface)
 {
 	iface->attach_window = impl_attach_window;
 	iface->detach_window = impl_detach_window;

@@ -18,7 +18,7 @@ dnl $Id$
 
 AC_PREREQ(2.52)
 
-AC_INIT(epiphany-extensions, 0.7.1, [http://lists.gnome.org/mailman/listinfo/epiphany-list])
+AC_INIT(epiphany-extensions, 0.7.2, [http://lists.gnome.org/mailman/listinfo/epiphany-list])
 
 AC_CONFIG_SRCDIR(extensions)
 AM_CONFIG_HEADER(config.h)
@@ -66,7 +66,7 @@ dnl ********************************
 dnl pkg config checks
 dnl ********************************
 
-EPIPHANY_REQUIRED=1.1.8
+EPIPHANY_REQUIRED=1.1.10
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.3.1
 LIBGTK_REQUIRED=2.3.2

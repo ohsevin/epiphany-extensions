@@ -51,7 +51,7 @@ struct EphyCertificatesExtensionPrivate
 };
 
 static void ephy_certificates_extension_class_init	 (EphyCertificatesExtensionClass *klass);
-static void ephy_certificates_extension_iface_init	 (EphyExtensionClass *iface);
+static void ephy_certificates_extension_iface_init	 (EphyExtensionIface *iface);
 static void ephy_certificates_extension_init		 (EphyCertificatesExtension *extension);
 
 static GObjectClass *parent_class = NULL;
@@ -292,7 +292,7 @@ impl_detach_window (EphyExtension *ext,
 }
 
 static void
-ephy_certificates_extension_iface_init (EphyExtensionClass *iface)
+ephy_certificates_extension_iface_init (EphyExtensionIface *iface)
 {
 	iface->attach_window = impl_attach_window;
 	iface->detach_window = impl_detach_window;
