@@ -152,7 +152,7 @@ sgml_validator_finalize (GObject *object)
 static gpointer
 opensp_thread (gpointer data)
 {
-	char *summary;
+	char *summary, *complete, *errors;
 	char *real_dest;
 	OpenSPThreadCBData *osp_data;
 
@@ -162,15 +162,20 @@ opensp_thread (gpointer data)
 		validate (osp_data->dest, osp_data->location,
 			  osp_data->validator, osp_data->is_xml);
 
-	summary = g_strdup_printf
-		(ngettext ("HTML Validation of %s complete\nFound %d error",
-			   "HTML Validation of %s complete\nFound %d errors",
-			   osp_data->num_errors),
-		 osp_data->location, osp_data->num_errors);
+	errors = g_strdup_printf (ngettext ("Found %d error",
+					    "Found %d errors",
+					    osp_data->num_errors),
+				  osp_data->num_errors);
+	complete = g_strdup_printf (_("HTML Validation of %s complete"),
+				    osp_data->location);
+
+	summary = g_strconcat (complete, "\n", errors, NULL);
 
 	sgml_validator_append (osp_data->validator, ERROR_VIEWER_INFO, summary);
 
 	g_free (summary);
+	g_free (complete);
+	g_free (errors);
 
 	error_viewer_unuse (osp_data->validator->priv->error_viewer);
 
@@ -219,10 +224,11 @@ check_doctype (SgmlValidator *validator,
 		if (strstr (doctype, "XHTML 1.1"))
 		{
 			t = g_strdup_printf
-				(_("HTML error in %s:\nDoctype is XHTML"
-				   " but content type is text/html. "
-				   " Use application/xhtml+xml instead."),
-				 location);
+				(_("HTML error in %s:\n%s"),
+				 location,
+				 _("Doctype is \"XHTML\""
+				   " but content type is \"text/html\". "
+				   " Use \"application/xhtml+xml\" instead."));
 
 			sgml_validator_append (validator,
 					       ERROR_VIEWER_ERROR, t);
@@ -234,10 +240,11 @@ check_doctype (SgmlValidator *validator,
 		else
 		{
 			t = g_strdup_printf
-				(_("HTML warning in %s:\nDoctype is XHTML"
-				   " but content type is text/html. "
-				   " Use application/xhtml+xml instead."),
-				 location);
+				(_("HTML warning in %s:\n%s"),
+				 location,
+				 _("Doctype is \"XHTML\""
+				   " but content type is \"text/html\". "
+				   " Use \"application/xhtml+xml\" instead."));
 
 			sgml_validator_append (validator,
 					       ERROR_VIEWER_WARNING, t);
