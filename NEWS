@@ -1,4 +1,25 @@
 =========================
+Epiphany Extensions 1.5.5
+=========================
+
+Changes
+
+	* Fix fox bookmarks with underscore in their names [#161832]
+	* Adapt to changes Epiphany APIs
+	* Add DND to Media and Links tabs, and plug a few mem leaks
+	* Fix page info for pages with # in the url [#161201]
+	* Update sample extensions
+	* Hook into the "add-sidebar" signal in epiphany and remove mozilla dependency
+	  from the sidebar extension [#156849, #157088]
+
+Contributors to this release: Jean-François Rameau, Crispin Flowerday
+and the translators: Miloslav Trmac (cs), Hendrik Brandt (de),
+Adam Weinberger (en_CA), Francisco Javier F. Serrador (es),
+Gabor Kelemen (hu), Takeshi AIHANA (ja), Reinout van Schouwen (nl),
+Marcel Telka (sk)
+
+
+=========================
 Epiphany Extensions 1.5.4
 =========================
 

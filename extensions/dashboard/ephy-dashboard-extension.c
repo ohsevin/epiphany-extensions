@@ -137,7 +137,7 @@ load_status_cb (EphyTab *tab,
 
 			persist = EPHY_EMBED_PERSIST (ephy_embed_factory_new_object (EPHY_TYPE_EMBED_PERSIST));
 			ephy_embed_persist_set_embed (persist, embed);
-			ephy_embed_persist_set_flags (persist, EMBED_PERSIST_NO_VIEW);
+			ephy_embed_persist_set_flags (persist, EPHY_EMBED_PERSIST_NO_VIEW);
 			content = ephy_embed_persist_to_string (persist);
 			g_object_unref (persist);
 

@@ -40,6 +40,7 @@
 #include <gtk/gtkactiongroup.h>
 #include <gtk/gtkuimanager.h>
 #include <gtk/gtkstock.h>
+#include <gtk/gtknotebook.h>
 
 #include <glib/gi18n-lib.h>
 
