@@ -1,14 +1,14 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Brazilian Portuguese translation of epiphany-extensions.
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# This file is distributed under the same license as the epiphany-extensions package.
+# Estêvão Samuel Procópio <tevaum@ig.com.br>, 2004.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-05-31 13:15+0200\n"
-"PO-Revision-Date: 2004-03-10 16:27-0500\n"
+"PO-Revision-Date: 2004-06-18 19:08-0300\n"
 "Last-Translator: Estêvão Samuel Procópio <tevaum@ig.com.br>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgstr "Verificar _HTML"
 #. shortcut key
 #: extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Display HTML errors in the Error Viewer dialog"
-msgstr "Mostrar erros HTM na caixa de diálogo Vizualização de Erros"
+msgstr "Mostra erros HTML na caixa de diálogo Vizualização de Erros"
 
 #: extensions/error-viewer/ephy-error-viewer-extension.c:95
 msgid "Check _Links"
@@ -56,16 +56,16 @@ msgstr "Verificar _Links"
 #. shortcut key
 #: extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
-msgstr "Mostrar hiperlinks inválidos na caixa de diálogo Vizualização de Erros"
+msgstr "Mostra hiperlinks inválidos na caixa de diálogo Vizualização de Erros"
 
 #: extensions/error-viewer/ephy-error-viewer-extension.c:101
 msgid "_Error Viewer"
-msgstr "Vizualizar _Erros"
+msgstr "Visualizador de _Erros"
 
 #. shortcut key
 #: extensions/error-viewer/ephy-error-viewer-extension.c:103
 msgid "Display web page errors"
-msgstr "Mostrar erros nas páginas web"
+msgstr "Mostra erros nas páginas web"
 
 #: extensions/error-viewer/error-viewer.glade.h:1
 msgid "C_lear"
@@ -73,7 +73,7 @@ msgstr "_Limpar"
 
 #: extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
-msgstr "Vizualização de Erros"
+msgstr "Visualizador de Erros"
 
 #. Don't bother looking for source lines -- they're not there
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
@@ -108,7 +108,7 @@ msgid ""
 "%s is unavailable."
 msgstr ""
 "Erro de link em %s:\n"
-"%s não está disponível"
+"%s não está disponível."
 
 #: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
 #, c-format
@@ -136,7 +136,7 @@ msgstr[1] "%d erros encontrados"
 #: extensions/error-viewer/sgml-validator.c:169
 #, c-format
 msgid "HTML Validation of %s complete"
-msgstr "Validação HTML de %s completa"
+msgstr "Validação do HTML de %s completa"
 
 #: extensions/error-viewer/sgml-validator.c:227
 #, c-format
@@ -144,7 +144,7 @@ msgid ""
 "HTML error in %s:\n"
 "%s"
 msgstr ""
-"Erro HTML em %s\n"
+"Erro de HTML em %s:\n"
 "%s"
 
 #: extensions/error-viewer/sgml-validator.c:229
@@ -152,10 +152,7 @@ msgstr ""
 msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
-msgstr ""
-"O tipo do documento é \\\"XHTML\\\", mas o tipo do conteúdo é \\\"text/html\\"
-"\".\n"
-"Use \\\"application/xhtml+xml\\\"."
+msgstr "O tipo do documento é \"XHTML\", mas o tipo do conteúdo é \"text/html\". Use \"application/xhtml+xml\"."
 
 #: extensions/error-viewer/sgml-validator.c:243
 #, c-format
@@ -167,19 +164,17 @@ msgstr ""
 "%s"
 
 #: extensions/error-viewer/sgml-validator.c:360
-#, fuzzy, c-format
+#, c-format
 msgid "HTML error in %s:"
-msgstr ""
-"Erro HTML em %s\n"
-"%s"
+msgstr "Erro de HTML em %s:"
 
 #: extensions/error-viewer/sgml-validator.c:368
 msgid "Invalid character encoding"
-msgstr ""
+msgstr "Codificação de caracteres inválida"
 
 #: extensions/error-viewer/sgml-validator.c:373
 msgid "Unknown error while converting to UTF-8"
-msgstr ""
+msgstr "Erro desconhecido ao converter para UTF-8"
 
 #: extensions/error-viewer/sgml-validator.c:435
 #, c-format
@@ -187,24 +182,24 @@ msgid ""
 "HTML error in %s:\n"
 "No valid doctype specified."
 msgstr ""
-"Erro HTML em %s:\n"
+"Erro de HTML em %s:\n"
 "Tipo de documento inválido."
 
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
 msgid "Popup _Windows"
-msgstr ""
+msgstr "_Janelas Popup"
 
 #. shortcut key
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
 msgid "Show or hide unrequested popup windows from this site"
-msgstr ""
+msgstr "Exibe ou oculta janelas popup não solicitadas deste site"
 
 #: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
 #, c-format
 msgid "%d popup window blocked"
 msgid_plural "%d popup windows blocked"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d janela popup bloqueada"
+msgstr[1] "%d janelas popup bloqueadas"
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:183
 #, c-format
@@ -220,9 +215,3 @@ msgstr "Destacar aba"
 #: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
 msgstr "Destaca a aba atual para uma nova janela"
-
-#~ msgid "Blo_ck Popups from this Site"
-#~ msgstr "Bloquear Popups desse sítio"
-
-#~ msgid "Block or unblock popup windows"
-#~ msgstr "Bloquear ou desbloquear janelas popup"
