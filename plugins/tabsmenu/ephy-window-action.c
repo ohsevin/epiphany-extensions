@@ -34,6 +34,9 @@
 
 #include <glib-object.h>
 #include <gtk/gtknotebook.h>
+#include <gtk/gtkmenuitem.h>
+
+#define EPHY_WINDOW_ACTION_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_WINDOW_ACTION, EphyWindowActionPrivate))
 
 struct _EphyWindowActionPrivate {
 	EphyWindow *window;
@@ -75,7 +78,7 @@ ephy_window_action_get_type (void)
 				(GInstanceInitFunc) ephy_window_action_init,
 			};
 
-                ephy_window_action_type = g_type_register_static (EGG_TYPE_ACTION,
+                ephy_window_action_type = g_type_register_static (GTK_TYPE_ACTION,
 								  "EphyWindowAction",
 								  &our_info, 0);
         }
@@ -122,15 +125,14 @@ ephy_window_action_get_property (GObject *object,
 static void
 ephy_window_action_class_init (EphyWindowActionClass *class)
 {
-	EggActionClass *action_class;
 	GObjectClass *object_class = G_OBJECT_CLASS (class);
+	GtkActionClass *action_class = GTK_ACTION_CLASS (class);
 
 	object_class->set_property = ephy_window_action_set_property;
 	object_class->get_property = ephy_window_action_get_property;
 	object_class->finalize = ephy_window_action_finalize;
 
 	parent_class = g_type_class_peek_parent (class);
-	action_class = EGG_ACTION_CLASS (class);
 
 	action_class->menu_item_type = GTK_TYPE_MENU_ITEM;
 
@@ -139,15 +141,17 @@ ephy_window_action_class_init (EphyWindowActionClass *class)
 					 g_param_spec_object ("window",
 							      "Window",
 							      "The window this action reflects",
-							      EPHY_WINDOW_TYPE,
+							      EPHY_TYPE_WINDOW,
 							      G_PARAM_READWRITE |
 							      G_PARAM_CONSTRUCT_ONLY));
+
+	g_type_class_add_private (object_class, sizeof (EphyWindowActionPrivate));
 }
 
 static void
 ephy_window_action_init (EphyWindowAction *action)
 {
-	action->priv = g_new0 (EphyWindowActionPrivate, 1);
+	action->priv = EPHY_WINDOW_ACTION_GET_PRIVATE (action);
 
 	action->priv->window = NULL;
 	action->priv->num_tabs = 0;
@@ -199,7 +203,7 @@ set_active_tab (EphyWindowAction *action)
 	if (action->priv->window == NULL) return;
 
 	tab = ephy_window_get_active_tab (action->priv->window);
-	g_return_if_fail (IS_EPHY_TAB (tab));
+	g_return_if_fail (EPHY_IS_TAB (tab));
 
 	/* shouldn't happen but who knows */
  	if (tab == action->priv->old_tab) return;
@@ -231,7 +235,7 @@ ephy_window_action_set_window (EphyWindowAction *action, EphyWindow *window)
 	GtkWidget *notebook;
 
 	g_return_if_fail (EPHY_IS_WINDOW_ACTION (action));
-	g_return_if_fail (IS_EPHY_WINDOW (window));
+	g_return_if_fail (EPHY_IS_WINDOW (window));
 
 	action->priv->window = window;
 
@@ -282,8 +286,6 @@ ephy_window_action_finalize (GObject *object)
 		g_object_remove_weak_pointer (G_OBJECT (action->priv->window),
 					      (gpointer *) &action->priv->window);
 	}
-
-	g_free (action->priv);
 
 	LOG ("EphyWindowAction finalised %p", object)
 

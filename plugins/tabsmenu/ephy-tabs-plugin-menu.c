@@ -26,11 +26,11 @@
 #include "ephy-tabs-plugin-menu.h"
 #include "ephy-window-action.h"
 #include "ephy-plugins-i18n.h"
-
-#include "egg-menu-merge.h"
-#include "egg-action.h"
-#include "egg-action-group.h"
 #include "ephy-debug.h"
+
+#include <gtk/gtkaction.h>
+#include <gtk/gtkactiongroup.h>
+#include <gtk/gtkuimanager.h>
 
 #include <epiphany/ephy-embed.h>
 #include <epiphany/ephy-tab.h>
@@ -42,13 +42,12 @@
 #include <stdlib.h>
 #include <libxml/entities.h>
 
-/**
- * Private data
- */
+#define EPHY_TABS_PLUGIN_MENU_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_TABS_PLUGIN_MENU, EphyTabsPluginMenuPrivate))
+
 struct _EphyTabsPluginMenuPrivate
 {
 	EphyWindow *window;
-	EggActionGroup *action_group;
+	GtkActionGroup *action_group;
 	guint ui_id;
 };
 
@@ -152,13 +151,15 @@ ephy_tabs_plugin_menu_class_init (EphyTabsPluginMenuClass *klass)
                                          g_param_spec_object ("window",
                                                               "Window",
                                                               "Parent window",
-                                                              EPHY_WINDOW_TYPE,
+                                                              EPHY_TYPE_WINDOW,
                                                               G_PARAM_READWRITE |
 							      G_PARAM_CONSTRUCT_ONLY));
+
+	g_type_class_add_private (object_class, sizeof (EphyTabsPluginMenuPrivate));
 }
 
 static void
-move_to_window_cb (EggAction *a, EphyTabsPluginMenu *menu)
+move_to_window_cb (GtkAction *a, EphyTabsPluginMenu *menu)
 {
 	EphyWindowAction *action = EPHY_WINDOW_ACTION (a);
 	EphyWindow *src_win, *dest_win;
@@ -177,7 +178,7 @@ move_to_window_cb (EggAction *a, EphyTabsPluginMenu *menu)
 	if (src_win == dest_win) return;
 
 	tab = ephy_window_get_active_tab (src_win);
-	g_return_if_fail (IS_EPHY_TAB (tab));
+	g_return_if_fail (EPHY_IS_TAB (tab));
 	embed = ephy_tab_get_embed (tab);
 
 	src_nb = ephy_window_get_notebook (src_win);
@@ -192,12 +193,12 @@ move_to_window_cb (EggAction *a, EphyTabsPluginMenu *menu)
 static void
 add_action_for_window (EphyWindow *window, EphyTabsPluginMenu *menu)
 {
-	EggAction *action;
+	GtkAction *action;
 	char *verb;
 
 	verb = g_strdup_printf (VERB_STRING, window);
 
-	action = EGG_ACTION (g_object_new (EPHY_TYPE_WINDOW_ACTION,
+	action = GTK_ACTION (g_object_new (EPHY_TYPE_WINDOW_ACTION,
 					   "name", verb,
 					   "window", window,
 					   NULL));
@@ -205,7 +206,7 @@ add_action_for_window (EphyWindow *window, EphyTabsPluginMenu *menu)
 	g_signal_connect (action, "activate",
 			  G_CALLBACK (move_to_window_cb), menu);
 
-	egg_action_group_add_action (menu->priv->action_group, action);
+	gtk_action_group_add_action (menu->priv->action_group, action);
 
 	g_object_unref (action);
 	g_free (verb);
@@ -224,18 +225,22 @@ window_opened_cb (Session *session, EphyWindow *window, EphyTabsPluginMenu *menu
 static void
 remove_action_for_window (EphyWindow *window, EphyTabsPluginMenu *menu)
 {
-	EggAction *action;
+	GtkAction *action;
 	char *verb;
 
 	if (menu->priv->window == NULL) return;
 
 	verb = g_strdup_printf (VERB_STRING, window);
 
-	action = egg_action_group_get_action (menu->priv->action_group, verb);
+	action = gtk_action_group_get_action (menu->priv->action_group, verb);
 
 	if (action != NULL)
 	{
-		egg_action_group_remove_action (menu->priv->action_group, action);
+		gtk_action_group_remove_action (menu->priv->action_group, action);
+	}
+	else
+	{
+		g_warning ("Action to remove not found (window=%p)", window);
 	}
 
 	g_free (verb);
@@ -255,7 +260,7 @@ window_closed_cb (Session *session, EphyWindow *window, EphyTabsPluginMenu *menu
 }
 
 static void
-clone_cb (EggAction *action, EphyTabsPluginMenu *menu)
+clone_cb (GtkAction *action, EphyTabsPluginMenu *menu)
 {
 	EphyWindow *window;
 	EphyTab *tab, *new_tab;
@@ -265,7 +270,7 @@ clone_cb (EggAction *action, EphyTabsPluginMenu *menu)
 	g_return_if_fail (window != NULL);
 
 	tab = ephy_window_get_active_tab (window);
-	g_return_if_fail (IS_EPHY_TAB (tab));
+	g_return_if_fail (EPHY_IS_TAB (tab));
 
 	new_tab = ephy_shell_new_tab (ephy_shell, window, tab, NULL,
 				      EPHY_NEW_TAB_IN_EXISTING_WINDOW |
@@ -273,79 +278,34 @@ clone_cb (EggAction *action, EphyTabsPluginMenu *menu)
 				      EPHY_NEW_TAB_CLONE_PAGE);
 
 	/* clone session history, until ephy does this itself -- bug #113694 */
-	g_return_if_fail (IS_EPHY_TAB (new_tab));
+	g_return_if_fail (EPHY_IS_TAB (new_tab));
 
 	embed = ephy_tab_get_embed (tab);
 	new_embed = ephy_tab_get_embed (new_tab);
-	g_return_if_fail (IS_EPHY_EMBED (embed));
-	g_return_if_fail (IS_EPHY_EMBED (new_embed));
+	g_return_if_fail (EPHY_IS_EMBED (embed));
+	g_return_if_fail (EPHY_IS_EMBED (new_embed));
 
 	ephy_embed_shistory_copy (embed, new_embed);
-}
-
-static void
-set_action_accelerator (EggActionGroup *action_group,
-			EggAction *action,
-			const char *accel)
-{
-	char *accel_path = NULL;
-	guint accel_key = 0;
-	GdkModifierType accel_mods;
-
-	/* set the accel path for the menu item */
-	accel_path = g_strconcat ("<Actions>/", action_group->name, "/",
-				  action->name, NULL);
-
-	gtk_accelerator_parse (accel, &accel_key, &accel_mods);
-
-	if (accel_key != 0)
-	{
-		gtk_accel_map_change_entry (accel_path, accel_key,
-					    accel_mods, TRUE);
-	}
-
-	action->accel_quark = g_quark_from_string (accel_path);
-	g_free (accel_path);
 }
 
 static void
 ephy_tabs_plugin_menu_init (EphyTabsPluginMenu *menu)
 {
 	EphyTabsPluginMenuPrivate *p;
-	EggAction *action;
 	Session *session;
 	const GList *wins;
 
-	LOG ("EphyTabsPluginMenu initialising %p", menu)
-	
-	p = g_new0 (EphyTabsPluginMenuPrivate, 1);
+	p = EPHY_TABS_PLUGIN_MENU_GET_PRIVATE (menu);
 	menu->priv = p;
+
+	LOG ("EphyTabsPluginMenu initialising %p", menu)	
 
 	p->ui_id = 0;
 
-	/* construct action group */
-	p->action_group = egg_action_group_new ("EphyTabsPluginActions");
+	p->action_group = gtk_action_group_new ("EphyTabsPluginActions");
+	gtk_action_group_set_translation_domain (p->action_group, GETTEXT_PACKAGE);
 
-	action = g_object_new (EGG_TYPE_ACTION,
-				"name", "EphyTabsPluginClone",
-				"label", _("_Clone Tab"),
-				"tooltip", _("Create a copy of the current tab"),
-				NULL);
-	egg_action_group_add_action (p->action_group, action);
-	g_signal_connect (action, "activate",
-			  G_CALLBACK (clone_cb), menu);
-	set_action_accelerator (p->action_group, action, "<shift><control>C");
-	g_object_unref (action);
-
-	action = g_object_new (EGG_TYPE_ACTION,
-				"name", "EphyTabsPluginMove",
-				"label", _("_Move Tab To"),
-				"tooltip", _("Move the current tab to a different window"),
-				NULL);
-	egg_action_group_add_action (p->action_group, action);
-	g_object_unref (action);
-
-	session = SESSION (ephy_shell_get_session (ephy_shell));
+	session = EPHY_SESSION (ephy_shell_get_session (ephy_shell));
 
 	wins = session_get_windows (session);
 	g_list_foreach ((GList *) wins, (GFunc) add_action_for_window, menu);
@@ -374,15 +334,15 @@ ephy_tabs_plugin_menu_finalize (GObject *o)
 	{
 		if (window != NULL)
 		{
-			egg_menu_merge_remove_action_group
-				(EGG_MENU_MERGE (window->ui_merge),
+			gtk_ui_manager_remove_action_group
+				(GTK_UI_MANAGER (window->ui_merge),
 				 p->action_group);
 		}
 
 		g_object_unref (p->action_group);
 	}
 
-	session = SESSION (ephy_shell_get_session (ephy_shell));
+	session = EPHY_SESSION (ephy_shell_get_session (ephy_shell));
 	g_signal_handlers_disconnect_by_func (G_OBJECT (session),
 					      G_CALLBACK (window_opened_cb), menu);
 	g_signal_handlers_disconnect_by_func (G_OBJECT (session),
@@ -394,34 +354,49 @@ ephy_tabs_plugin_menu_finalize (GObject *o)
 					      (gpointer *) &menu->priv->window);
 	}
 
-	g_free (p);
-
 	LOG ("EphyTabsPluginMenu finalised %p", o)
 
 	parent_class->finalize (o);
 }
 
+static GtkActionEntry action_entries [] =
+{
+	{ "EphyTabsPluginClone", NULL, N_("_Clone Tab"), "<shift><control>C",
+	  N_("Create a copy of the current tab"),
+	  G_CALLBACK (clone_cb)
+	},
+	{ "TabsMoveTo", NULL, N_("_Move Tab To"), NULL,
+	  N_("Move the current tab to a different window"),
+	  NULL
+	}
+};
+static const guint n_action_entries = G_N_ELEMENTS (action_entries);
+
 static void
 ephy_tabs_plugin_menu_set_window (EphyTabsPluginMenu *menu, EphyWindow *window)
 {
-	EggAction *action;
+	GtkAction *action;
 	char *verb;
 
 	g_return_if_fail (EPHY_IS_TABS_PLUGIN_MENU (menu));
-	g_return_if_fail (IS_EPHY_WINDOW (window));
+	g_return_if_fail (EPHY_IS_WINDOW (window));
 
 	menu->priv->window = window;
 
 	g_object_add_weak_pointer (G_OBJECT (window),
 				   (gpointer *) &menu->priv->window);
 
+	gtk_action_group_add_actions (menu->priv->action_group,
+				      action_entries, n_action_entries,
+				      window);
+
 	/* you can't move a tab to the window it's already in */
 	verb = g_strdup_printf (VERB_STRING, window);
-	action = egg_action_group_get_action (menu->priv->action_group, verb);
+	action = gtk_action_group_get_action (menu->priv->action_group, verb);
 	g_object_set (action, "sensitive", FALSE, NULL);
 	g_free (verb);
 
-	egg_menu_merge_insert_action_group (EGG_MENU_MERGE (window->ui_merge),
+	gtk_ui_manager_insert_action_group (GTK_UI_MANAGER (window->ui_merge),
 					    menu->priv->action_group, 0);
 
 	ephy_tabs_plugin_menu_update (menu);
@@ -430,18 +405,13 @@ ephy_tabs_plugin_menu_set_window (EphyTabsPluginMenu *menu, EphyWindow *window)
 static void
 ephy_tabs_plugin_menu_clean (EphyTabsPluginMenu *menu)
 {
-	EphyTabsPluginMenuPrivate *p;
-	EggMenuMerge *merge;
+	GtkUIManager *manager = GTK_UI_MANAGER (menu->priv->window->ui_merge);
 
-	p = menu->priv;
-
-	merge = EGG_MENU_MERGE (p->window->ui_merge);
-
-	if (p->ui_id > 0)
+	if (menu->priv->ui_id != 0)
 	{
-		egg_menu_merge_remove_ui (merge, p->ui_id);
-		egg_menu_merge_ensure_update (merge);
-		p->ui_id = 0;
+		gtk_ui_manager_remove_ui (manager, menu->priv->ui_id);
+//		egg_menu_merge_ensure_update (merge);
+		menu->priv->ui_id = 0;
 	}
 }
 
@@ -457,13 +427,13 @@ void
 ephy_tabs_plugin_menu_update (EphyTabsPluginMenu *menu)
 {
 	EphyTabsPluginMenuPrivate *p;
-	EggMenuMerge *merge;
-	EggAction *action;
+	GtkUIManager *manager;
+	GtkAction *action;
 	Session *session;
-	GString *xml;
 	const GList *wins = NULL;
 	GList *l;
-	GError *error = NULL;
+	GString *xml;
+	GError *err;
 
 	g_return_if_fail (EPHY_IS_TABS_PLUGIN_MENU (menu));
 
@@ -471,9 +441,9 @@ ephy_tabs_plugin_menu_update (EphyTabsPluginMenu *menu)
 
 	if (p->window == NULL) return;
 
-	merge = EGG_MENU_MERGE (p->window->ui_merge);
+	manager = GTK_UI_MANAGER (p->window->ui_merge);
 
-	session = SESSION (ephy_shell_get_session (ephy_shell));
+	session = EPHY_SESSION (ephy_shell_get_session (ephy_shell));
 
 	LOG ("Rebuilding tabs plugin menu %p", menu)
 
@@ -481,35 +451,37 @@ ephy_tabs_plugin_menu_update (EphyTabsPluginMenu *menu)
 
 	ephy_tabs_plugin_menu_clean (menu);
 
+	p->ui_id = gtk_ui_manager_new_merge_id (manager);
+
+	gtk_ui_manager_add_ui (manager, p->ui_id,
+			       "/menubar/TabsMenu/TabsPluginMenuPlaceholder",
+			       "TabsMoveToMenu",
+			       "TabsMoveTo",
+			       GTK_UI_MANAGER_MENU, FALSE);
+
 	wins = session_get_windows (session);
-
-	xml = g_string_sized_new (1024);
-
-	g_string_append (xml, "<Root><menu><submenu name=\"TabsMenu\">"
-			      "<placeholder name=\"TabsMenuAfterMovePlaceholder\">"
-			      "<submenu name=\"EphyTabsPluginMoveMenu\" "
-			      "verb=\"EphyTabsPluginMove\">\n");		
-
 	for (l = (GList *) wins; l != NULL; l = l->next)
 	{
 		EphyWindow *window =(EphyWindow *) l->data;
+		char name[32], action[32];
 
-		g_string_append_printf (xml, "<menuitem name=\"" VERB_STRING
-					"Item\" verb=\"" VERB_STRING "\"/>\n",
-					window, window);
+		g_snprintf (action, 32, VERB_STRING, window);
+LOG ("ADDING %s", action)
+		gtk_ui_manager_add_ui (manager, p->ui_id,
+				       "/menubar/TabsMenu/TabsPluginMenuPlaceholder/TabsMoveToMenu",
+				       action, action, GTK_UI_MANAGER_MENUITEM, FALSE);
 	}
 
-	g_string_append (xml, "</submenu><separator name=\"EphyTabsPluginSep1\"/>"
-			      "</placeholder>\n"
-			      "<placeholder name=\"TabsMenuAfterDetachPlaceholder\">"
-			      "<menuitem name=\"EphyTabsPluginCloneItem\" "
-			      "verb=\"EphyTabsPluginClone\"/>\n"
-			      "</placeholder></submenu></menu></Root>");
+	gtk_ui_manager_add_ui (manager, p->ui_id,
+			       "/menubar/TabsMenu/TabsPluginMenuPlaceholder",
+			       "EphyTabsPluginSep", NULL,
+			       GTK_UI_MANAGER_SEPARATOR, FALSE);
 
-	p->ui_id = egg_menu_merge_add_ui_from_string
-				(merge, xml->str, -1, &error);	
-
-	g_string_free (xml, TRUE);
+	gtk_ui_manager_add_ui (manager, p->ui_id,
+			       "/menubar/TabsMenu/TabsPluginMenuPlaceholder",
+			       "EphyTabsPluginCloneItem",
+			       "EphyTabsPluginClone",
+			       GTK_UI_MANAGER_MENUITEM, FALSE);
 
 	STOP_PROFILER ("Rebuilding tabs plugin menu")
 }

@@ -1,3 +1,16 @@
+2003-09-04  Christian Persch  <chpe@cvs.gnome.org>
+
+	* Makefile.am:
+	* configure.in:
+
+	Bumped version to 0.4.0 for epiphany 1.1 branch.
+
+	* include/egg-action-group.h:
+	* include/egg-action.h:
+	* include/egg-menu-merge.h:
+
+	Removed.
+
 2003-08-23  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.in:

@@ -1,3 +1,21 @@
+2003-09-04  Christian Persch  <chpe@cvs.gnome.org>
+
+	* ephy-tabs-plugin-menu.c: (ephy_tabs_plugin_menu_class_init),
+	(move_to_window_cb), (add_action_for_window),
+	(remove_action_for_window), (clone_cb),
+	(ephy_tabs_plugin_menu_init), (ephy_tabs_plugin_menu_finalize),
+	(ephy_tabs_plugin_menu_set_window), (ephy_tabs_plugin_menu_clean),
+	(ephy_tabs_plugin_menu_update):
+	* ephy-tabs-plugin-menu.h:
+	* ephy-tabs-plugin.c: (plugin_init):
+	* ephy-window-action.c: (ephy_window_action_get_type),
+	(ephy_window_action_class_init), (ephy_window_action_init),
+	(set_active_tab), (ephy_window_action_set_window),
+	(ephy_window_action_finalize):
+	* ephy-window-action.h:
+
+	Port to gtk+ 2.4 api.
+
 2003-08-05  Christian Persch  <chpe@cvs.gnome.org>
 
 	* ephy-tabs-plugin-menu.c: (clone_cb):

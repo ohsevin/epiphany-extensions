@@ -1,3 +1,14 @@
+2003-09-04  Christian Persch  <chpe@cvs.gnome.org>
+
+	* ephy-gestures.c: (ephy_gestures_class_init),
+	(ephy_gestures_init), (ephy_gestures_finalize),
+	(ephy_gestures_new):
+	* gestures.c: (load_one_gesture), (tab_gesture_performed_cb),
+	(reload_bypass_cb), (clone_window_cb), (clone_tab_cb),
+	(setup_actions), (plugin_init):
+
+	Port to gtk+ 2.4 api.
+
 2003-08-10  Adam Hooper <adamh@densi.com>
 
 	* gestures.c: (load_one_gesture):

@@ -37,6 +37,9 @@
 /**
  * Private data
  */
+ 
+#define EPHY_GESTURES_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_GESTURES, EphyGesturesPrivate))
+
 struct _EphyGesturesPrivate {
 	GtkWidget *widget;
 	guint button;
@@ -138,28 +141,25 @@ ephy_gestures_class_init (EphyGesturesClass *klass)
 			      g_cclosure_marshal_VOID__VOID,
 			      G_TYPE_NONE,
 			      0);
+
+	g_type_class_add_private (object_class, sizeof (EphyGesturesPrivate));
 }
 
 static void 
-ephy_gestures_init (EphyGestures *e)
+ephy_gestures_init (EphyGestures *eg)
 {
-	EphyGesturesPrivate *p = g_new0 (EphyGesturesPrivate, 1);
-
-	e->priv = p;
+	eg->priv = EPHY_GESTURES_GET_PRIVATE (eg);
 }
 
 static void
 ephy_gestures_finalize (GObject *o)
 {
 	EphyGestures *eg = EPHY_GESTURES (o);
-	EphyGesturesPrivate *p = eg->priv;
 	
-	if (p->autocancel_timeout)
+	if (eg->priv->autocancel_timeout)
 	{
-		g_source_remove (p->autocancel_timeout);
+		g_source_remove (eg->priv->autocancel_timeout);
 	}
-
-	g_free (p);
 
 	LOG ("EphyGestures finalised %p", o)
 
@@ -169,9 +169,7 @@ ephy_gestures_finalize (GObject *o)
 EphyGestures *
 ephy_gestures_new (void)
 {
-	EphyGestures *ret = g_object_new (EPHY_TYPE_GESTURES, NULL);
-
-	return ret;
+	return g_object_new (EPHY_TYPE_GESTURES, NULL);
 }
 
 void

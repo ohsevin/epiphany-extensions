@@ -22,15 +22,9 @@
 #ifndef EPHY_TABS_PLUGIN_MENU_H
 #define EPHY_TABS_PLUGIN_MENU_H
 
-#include "egg-action-group.h"
-
 #include <epiphany/ephy-window.h>
 
 G_BEGIN_DECLS
-
-typedef struct _EphyTabsPluginMenu		EphyTabsPluginMenu;
-typedef struct _EphyTabsPluginMenuClass		EphyTabsPluginMenuClass;
-typedef struct _EphyTabsPluginMenuPrivate	EphyTabsPluginMenuPrivate;
 
 #define EPHY_TYPE_TABS_PLUGIN_MENU		(ephy_tabs_plugin_menu_get_type())
 #define EPHY_TABS_PLUGIN_MENU(object)		(G_TYPE_CHECK_INSTANCE_CAST((object), EPHY_TYPE_TABS_PLUGIN_MENU, EphyTabsPluginMenu))
@@ -38,6 +32,10 @@ typedef struct _EphyTabsPluginMenuPrivate	EphyTabsPluginMenuPrivate;
 #define EPHY_IS_TABS_PLUGIN_MENU(object)	(G_TYPE_CHECK_INSTANCE_TYPE((object), EPHY_TYPE_TABS_PLUGIN_MENU))
 #define EPHY_IS_TABS_PLUGIN_MENU_CLASS(klass)	(G_TYPE_CHECK_CLASS_TYPE((klass), EPHY_TYPE_TABS_PLUGIN_MENU))
 #define EPHY_TABS_PLUGIN_MENU_GET_CLASS(obj)	(G_TYPE_INSTANCE_GET_CLASS((obj), EPHY_TYPE_TABS_PLUGIN_MENU, EphyTabsPluginMenuClass))
+
+typedef struct _EphyTabsPluginMenu		EphyTabsPluginMenu;
+typedef struct _EphyTabsPluginMenuClass		EphyTabsPluginMenuClass;
+typedef struct _EphyTabsPluginMenuPrivate	EphyTabsPluginMenuPrivate;
 
 struct _EphyTabsPluginMenuClass
 {

@@ -27,9 +27,9 @@
 #include "ephy-gestures.h"
 #include "ephy-debug.h"
 
-#include "egg-action.h"
-#include "egg-action-group.h"
-#include "egg-menu-merge.h"
+#include <gtk/gtkaction.h>
+#include <gtk/gtkactiongroup.h>
+#include <gtk/gtkuimanager.h>
 
 #include <epiphany/ephy-shell.h>
 #include <epiphany/session.h>
@@ -57,13 +57,13 @@ load_one_gesture (xmlNodePtr node)
 
 	for (child = node->children; child != NULL; child = child->next)
 	{
-		if (strcmp (child->name, "sequence") == 0)
+		if (xmlStrEqual (child->name, "sequence"))
 		{
 			t = xmlNodeGetContent (child);
 
 			sequence = g_slist_prepend (sequence, t);
 		}
-		else if (strcmp (child->name, "action") == 0)
+		else if (xmlStrEqual (child->name, "action"))
 		{
 			g_return_if_fail (action == NULL);
 
@@ -111,41 +111,23 @@ load_gestures (void)
 	xmlFreeDoc (doc);
 }
 
-EggAction *
-find_action (EphyWindow *window, const char *verb)
-{
-	EggAction *action = NULL;
-	GList *action_groups, *l;
-
-	action_groups = EGG_MENU_MERGE (window->ui_merge)->action_groups;
-
-	for (l = action_groups; action == NULL && l != NULL; l = l->next)
-	{
-		EggActionGroup *group = EGG_ACTION_GROUP (l->data);
-
-		action = egg_action_group_get_action (group, verb);
-	}
-
-	return action;
-}
-
 static void
 tab_gesture_performed_cb (EphyGestures *eg, const char *sequence, EphyTab *tab)
 {
 	EphyWindow *window;
-	const char *verb;
+	const char *path;
 
 	LOG ("Gesture: sequence '%s'", sequence)
 
-	verb = g_hash_table_lookup (gestures, sequence);
-	if (verb == NULL) return;
+	path = g_hash_table_lookup (gestures, sequence);
+	if (path == NULL) return;
 
-	LOG ("Gesture: verb is '%s'", verb)
+	LOG ("Gesture: path is '%s'", path)
 
 	window = ephy_tab_get_window (tab);
-	g_return_if_fail (IS_EPHY_WINDOW (window));
+	g_return_if_fail (EPHY_IS_WINDOW (window));
 
-	if (strcmp (verb, "fallback") == 0)
+	if (strcmp (path, "fallback") == 0)
 	{
 		/* Fall back to normal click */
 		EphyEmbed *embed;
@@ -155,7 +137,7 @@ tab_gesture_performed_cb (EphyGestures *eg, const char *sequence, EphyTab *tab)
 
 		embed = ephy_tab_get_embed (tab);
 
-		event = g_object_get_data (G_OBJECT(eg), "embed_event");
+		event = g_object_get_data (G_OBJECT (eg), "embed_event");
 
 		ephy_embed_event_get_event_type (event, &type);
 
@@ -170,17 +152,29 @@ tab_gesture_performed_cb (EphyGestures *eg, const char *sequence, EphyTab *tab)
 	}
 	else
 	{
-		EggAction *action;
+		GtkUIManager *manager;
+		GtkAction *action = NULL;
+		GList *action_groups, *l;
 
-		action = find_action (window, verb);
+		manager = GTK_UI_MANAGER (window->ui_merge);
+		action_groups = gtk_ui_manager_get_action_groups (manager);
+
+//		action = gtk_ui_manager_get_action (manager, path);
+
+		for (l = action_groups; l != NULL && action == NULL; l = l->next)
+		{
+			GtkActionGroup *group = GTK_ACTION_GROUP (l->data);
+
+			action = gtk_action_group_get_action (group, path);
+		}
 
 		if (action != NULL)
 		{
-			egg_action_activate (action);
+			gtk_action_activate (action);
 		}
 		else
 		{
-			g_warning ("Action for verb '%s' not found!\n", verb);
+			g_warning ("Action for path '%s' not found!\n", path);
 		}
 	}
 }
@@ -251,23 +245,23 @@ tab_removed_cb (GtkWidget *nb, GtkWidget *child)
 }
 
 static void
-reload_bypass_cb (EggAction *action, EphyWindow *window)
+reload_bypass_cb (GtkAction *action, EphyWindow *window)
 {
 	EphyEmbed *embed;
 
 	embed = ephy_window_get_active_embed (window);
-	g_return_if_fail (IS_EPHY_EMBED (embed));
+	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	ephy_embed_reload (embed, EMBED_RELOAD_BYPASSCACHE);
 }
 
 static void
-clone_window_cb (EggAction *action, EphyWindow *window)
+clone_window_cb (GtkAction *action, EphyWindow *window)
 {
 	EphyTab *tab;
 
 	tab = ephy_window_get_active_tab (window);
-	g_return_if_fail (IS_EPHY_TAB (tab));
+	g_return_if_fail (EPHY_IS_TAB (tab));
 
 	ephy_shell_new_tab (ephy_shell, window, tab, NULL,
 			    EPHY_NEW_TAB_CLONE_PAGE |
@@ -275,53 +269,46 @@ clone_window_cb (EggAction *action, EphyWindow *window)
 }
 
 static void
-clone_tab_cb (EggAction *action, EphyWindow *window)
+clone_tab_cb (GtkAction *action, EphyWindow *window)
 {
 	EphyTab *tab;
 
 	tab = ephy_window_get_active_tab (window);
-	g_return_if_fail (IS_EPHY_TAB (tab));
+	g_return_if_fail (EPHY_IS_TAB (tab));
 
 	ephy_shell_new_tab (ephy_shell, window, tab, NULL,
 			    EPHY_NEW_TAB_CLONE_PAGE |
 			    EPHY_NEW_TAB_IN_EXISTING_WINDOW);
 }
 
+static GtkActionEntry action_entries [] =
+{
+	{ "EphyGesturesPluginReloadBypass", "", NULL, NULL, NULL,
+	  G_CALLBACK (reload_bypass_cb)
+	},
+	{ "EphyGesturesPluginCloneWindow", "", NULL, NULL, NULL,
+	  G_CALLBACK (clone_window_cb)
+	},
+	{ "EphyGesturesPluginCloneTab", "", NULL, NULL, NULL,
+	  G_CALLBACK (clone_tab_cb)
+	}
+};
+static const guint n_action_entries = G_N_ELEMENTS (action_entries);
+
 static void
 setup_actions (EphyWindow *window)
 {
-	EggMenuMerge *merge;
-	EggActionGroup *action_group;
-	EggAction *action;
+	GtkUIManager *manager;
+	GtkActionGroup *action_group;
 
-	merge = EGG_MENU_MERGE (window->ui_merge);
-	action_group = egg_action_group_new ("EphyGesturesPluginActions");
+	manager = GTK_UI_MANAGER (window->ui_merge);
 
-	action = g_object_new (EGG_TYPE_ACTION,
-				"name", "EphyGesturesPluginReloadBypass",
-				NULL);
-	g_signal_connect (action, "activate",
-			  G_CALLBACK (reload_bypass_cb), window);
-	egg_action_group_add_action (action_group, action);
-	g_object_unref (action);
-	
-	action = g_object_new (EGG_TYPE_ACTION,
-				"name", "EphyGesturesPluginCloneWindow",
-				NULL);
-	g_signal_connect (action, "activate",
-			  G_CALLBACK (clone_window_cb), window);
-	egg_action_group_add_action (action_group, action);
-	g_object_unref (action);
+	action_group = gtk_action_group_new ("EphyGesturesPluginActions");
 
-	action = g_object_new (EGG_TYPE_ACTION,
-				"name", "EphyGesturesPluginCloneTab",
-				NULL);
-	g_signal_connect (action, "activate",
-			  G_CALLBACK (clone_tab_cb), window);
-	egg_action_group_add_action (action_group, action);
-	g_object_unref (action);
+	gtk_action_group_add_actions (action_group, action_entries,
+				      n_action_entries, window);
 
-	egg_menu_merge_insert_action_group (merge, action_group, 0);
+	gtk_ui_manager_insert_action_group (manager, action_group, 0);
 
 	g_object_unref (action_group);
 }
@@ -353,7 +340,7 @@ plugin_init (GTypeModule *module)
 
 	load_gestures ();
 
-	session = SESSION (ephy_shell_get_session (ephy_shell));
+	session = EPHY_SESSION (ephy_shell_get_session (ephy_shell));
 	g_signal_connect (session, "new_window",
 			  G_CALLBACK (new_window_cb), NULL);
 }

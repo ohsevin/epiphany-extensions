@@ -22,8 +22,7 @@
 #ifndef EPHY_WINDOW_ACTION_H
 #define EPHY_WINDOW_ACTION_H
 
-#include "egg-action.h"
-
+#include <gtk/gtkaction.h>
 #include <epiphany/ephy-window.h>
 
 G_BEGIN_DECLS
@@ -41,14 +40,14 @@ typedef struct _EphyWindowActionPrivate	EphyWindowActionPrivate;
 
 struct _EphyWindowAction
 {
-	EggAction parent;
+	GtkAction parent;
 	
 	EphyWindowActionPrivate *priv;
 };
 
 struct _EphyWindowActionClass
 {
-	EggActionClass parent_class;
+	GtkActionClass parent_class;
 };
 
 GType		ephy_window_action_get_type	(void);

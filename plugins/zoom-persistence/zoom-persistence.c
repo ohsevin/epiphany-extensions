@@ -386,7 +386,7 @@ tab_added_cb (GtkWidget *notebook, GtkWidget *embed)
 	gboolean is_tagged;
 
 	tab = EPHY_TAB (g_object_get_data (G_OBJECT (embed), "EphyTab"));
-	g_return_if_fail (IS_EPHY_TAB (tab));
+	g_return_if_fail (EPHY_IS_TAB (tab));
 
 	g_signal_connect (G_OBJECT (tab), "notify::zoom",
 			  G_CALLBACK (zoom_cb), embed);
@@ -413,7 +413,7 @@ tab_removed_cb (GtkWidget *notebook, GtkWidget *embed)
 	EphyTab *tab;
 
 	tab = EPHY_TAB (g_object_get_data (G_OBJECT (embed), "EphyTab"));
-	g_return_if_fail (IS_EPHY_TAB (tab));
+	g_return_if_fail (EPHY_IS_TAB (tab));
 
 	g_signal_handlers_disconnect_by_func (G_OBJECT (tab),
 					      G_CALLBACK (zoom_cb),
@@ -502,7 +502,7 @@ plugin_init (GTypeModule *module)
 						(GSourceFunc) periodic_save_cb,
 						NULL);
 
-	session = SESSION (ephy_shell_get_session (ephy_shell));
+	session = EPHY_SESSION (ephy_shell_get_session (ephy_shell));
 	g_signal_connect (session, "new_window",
 			  G_CALLBACK (new_window_cb), NULL);
 }
