@@ -110,7 +110,7 @@ plugin_init (GTypeModule *module)
 	ephy_node_signal_connect_object (bmks, EPHY_NODE_CHILD_REMOVED,
 				         (EphyNodeCallback) bmk_removed, NULL);
 
-	session = SESSION (ephy_shell_get_session (ephy_shell));
+	session = EPHY_SESSION (ephy_shell_get_session (ephy_shell));
 	g_signal_connect (session, "new_window",
 			  G_CALLBACK (new_window_cb), NULL);
 }
