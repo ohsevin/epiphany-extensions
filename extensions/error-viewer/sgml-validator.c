@@ -155,7 +155,6 @@ static gpointer
 opensp_thread (gpointer data)
 {
 	char *summary, *complete, *errors;
-	char *real_dest;
 	OpenSPThreadCBData *osp_data;
 
 	osp_data = (OpenSPThreadCBData *) data;
@@ -408,7 +407,7 @@ save_source_completed_cb (EphyEmbedPersist *persist,
 
 	data = g_new0 (OpenSPThreadCBData, 1);
 	data->dest = dest_utf8;
-	data->location = ephy_embed_get_location (embed, FALSE);
+	data->location = location;
 	g_object_ref (validator);
 	data->validator = validator;
 	data->is_xml = is_xml;

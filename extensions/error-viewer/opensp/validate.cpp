@@ -108,6 +108,7 @@ HtmlErrorFinder::~HtmlErrorFinder (void)
 	if (this->mErrRegex)
 	{
 		regfree (this->mErrRegex);
+		g_free (this->mErrRegex);
 	}
 }
 
