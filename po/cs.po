@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-01 03:15+0100\n"
-"PO-Revision-Date: 2004-02-25 07:29+0100\n"
+"POT-Creation-Date: 2004-03-12 03:18+0100\n"
+"PO-Revision-Date: 2004-03-12 14:45+0100\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -179,16 +179,21 @@ msgstr ""
 "Chyba HTML v %s:\n"
 "Nebyl určen platný doctype."
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
 msgid "Blo_ck Popups from this Site"
 msgstr "_Blokovat vyskakovací okna z tohoto serveru"
 
 #. shortcut key
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:64
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
 msgid "Block or unblock popup windows"
 msgstr "Zablokovat nebo odblokovat vyskakovací okna"
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:324
+#: extensions/popup-blocker/ephy-popup-blocker-icon.c:295
+#, c-format
+msgid "Open %s"
+msgstr "Otevřít %s"
+
+#: extensions/popup-blocker/ephy-popup-blocker-icon.c:342
 #, c-format
 msgid "%d popup blocked"
 msgid_plural "%d popups blocked"
@@ -211,12 +216,3 @@ msgstr "Přesunout kartu do okna"
 #: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
 msgstr "Přesunout aktuální kartu do jiného okna"
-
-#~ msgid ""
-#~ "HTML warning in %s:\n"
-#~ "Doctype is XHTML but content type is text/html.  Use application/xhtml"
-#~ "+xml instead."
-#~ msgstr ""
-#~ "Chyba HTML v %s:\n"
-#~ "Doctype je XHTML, ale typ obsahu je text/html. Použijte místo něj "
-#~ "application/xhtml+xml."
