@@ -1,5 +1,11 @@
 2004-12-13  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/page-info/page-info.glade:
+
+	Make url and referrer ellipsised in the middle, not at the end.
+
+2004-12-13  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/page-info/mozilla/mozilla-helpers.cpp:
 	* extensions/page-info/page-info-dialog.c: (page_info_set_text),
 	(general_info_page_fill):
