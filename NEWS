@@ -1,4 +1,17 @@
 =========================
+Epiphany Extensions 1.4.4
+=========================
+
+Changes
+
+	* Abort gestures when unmapping the window [#160228]
+
+Updated translations
+
+	* Pablo Saratxaga (wa)
+
+
+=========================
 Epiphany Extensions 1.4.3
 =========================
 
