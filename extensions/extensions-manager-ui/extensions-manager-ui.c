@@ -72,6 +72,7 @@ EphyDialogProperty properties [] =
 enum
 {
 	COL_INFO,	/* EphyExtensionInfo* */
+	COL_NAME,	/* Search column */
 	COL_TOGGLE,	/* enabled? */
 	COL_DISPLAY,	/* String representation */
 	N_COLUMNS
@@ -221,6 +222,7 @@ fill_list_store (EphyExtensionsManager *manager,
 
 		gtk_list_store_set (store, &iter,
 				    COL_INFO, info,
+				    COL_NAME, info->name,
 				    COL_TOGGLE, info->active,
 				    COL_DISPLAY, display,
 				    -1);
@@ -366,6 +368,7 @@ build_ui (ExtensionsManagerUI *dialog)
 
 	store = gtk_list_store_new (N_COLUMNS,
 				    G_TYPE_POINTER,
+				    G_TYPE_STRING,
 				    G_TYPE_BOOLEAN,
 				    G_TYPE_STRING);
 	fill_list_store (dialog->priv->manager, store);
@@ -373,6 +376,8 @@ build_ui (ExtensionsManagerUI *dialog)
 					      COL_DISPLAY, GTK_SORT_ASCENDING);
 
 	gtk_tree_view_set_model (treeview, GTK_TREE_MODEL (store));
+
+	gtk_tree_view_set_search_column (treeview, COL_NAME);
 
 	priv->model = GTK_TREE_MODEL (store);
 	g_object_unref (store);
@@ -400,6 +405,7 @@ extension_added_cb (EphyExtensionsManager *manager,
 
 	gtk_list_store_set (store, &iter,
 			    COL_INFO, info,
+			    COL_NAME, info->name,
 			    COL_TOGGLE, info->active,
 			    COL_DISPLAY, display,
 			    -1);
