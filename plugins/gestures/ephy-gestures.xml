@@ -15,7 +15,7 @@
 	<gesture>
 		<sequence>852</sequence>
 		<action>FileNewWindow</action>
-		</gesture>
+	</gesture>
 
 	<!-- up-down -->
 	<gesture>
