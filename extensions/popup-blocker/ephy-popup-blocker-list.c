@@ -151,14 +151,13 @@ is_visible (GtkWidget *widget)
 }
 
 static gboolean
-window_deleted_cb (EphyWindow *window,
-		   GdkEvent *event,
+window_destroy_cb (EphyWindow *window,
 		   EphyPopupBlockerList *list)
 {
 	g_return_if_fail (EPHY_IS_WINDOW (window));
 	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (list));
 
-	LOG ("window_deleted_cb on window %p with list %p\n", window, list)
+	LOG ("window_destroy_cb on window %p with list %p\n", window, list)
 
 	ephy_popup_blocker_list_remove_window (list, window);
 
@@ -175,7 +174,7 @@ free_blocked_popup (BlockedPopup *popup)
 
 		g_signal_handlers_disconnect_matched
 			(popup->window, G_SIGNAL_MATCH_FUNC, 0, 0, NULL,
-			 window_deleted_cb, NULL);
+			 window_destroy_cb, NULL);
 
 		if (is_visible (GTK_WIDGET (popup->window)) == FALSE)
 		{
@@ -232,8 +231,8 @@ ephy_popup_blocker_list_insert_window (EphyPopupBlockerList *list,
 
 	list->priv->popups = g_slist_prepend (list->priv->popups, popup);
 
-	g_signal_connect (window, "delete-event",
-			  G_CALLBACK (window_deleted_cb), list);
+	g_signal_connect (window, "destroy",
+			  G_CALLBACK (window_destroy_cb), list);
 
 	LOG ("Added allowed popup to list %p: window %p\n", list, window)
 

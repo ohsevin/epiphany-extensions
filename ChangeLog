@@ -1,6 +1,16 @@
 2004-03-14  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/popup-blocker/ephy-popup-blocker-list.c:
+	(window_destroy_cb), (free_blocked_popup),
+	(ephy_popup_blocker_list_insert_window):
+
+	Connect to "destroy-event" signal, not "delete-event" --
+	javascript:close() bypasses "delete-event". This just may fix bug
+	#137175
+
+2004-03-14  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/popup-blocker/ephy-popup-blocker-list.c:
 	(ephy_popup_blocker_list_insert_window),
 	(ephy_popup_blocker_list_show_all),
 	(ephy_popup_blocker_list_hide_all):
