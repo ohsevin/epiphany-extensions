@@ -19,29 +19,18 @@
  *  $Id$
  */
 
-#include "config.h"
+#ifndef MOZILLA_HELPERS_H
+#define MOZILLA_HELPERS_H
 
-#include "ephy-adblock-extension.h"
+#include <glib.h>
 #include "ad-blocker.h"
-#include "ephy-debug.h"
 
-#include <gmodule.h>
-#include <glib/gi18n-lib.h>
+G_BEGIN_DECLS
 
-G_MODULE_EXPORT GType register_module (GTypeModule *module);
+void	mozilla_register_ad_blocker	(void);
 
-G_MODULE_EXPORT GType
-register_module (GTypeModule *module)
-{
-	LOG ("Registering EphyAdblockExtension")
+void	mozilla_unregister_ad_blocker	(void);
 
-#ifdef ENABLE_NLS
-       /* Initialise the i18n stuff */
-	bindtextdomain (GETTEXT_PACKAGE, EPHY_EXTENSIONS_LOCALEDIR);
-	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");	
-#endif /* ENABLE_NLS */
+G_END_DECLS
 
-	ad_blocker_register_type (module);
-	ad_uri_tester_register_type (module);
-	return ephy_adblock_extension_register_type (module);
-}
+#endif

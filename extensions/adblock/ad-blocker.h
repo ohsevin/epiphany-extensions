@@ -23,16 +23,21 @@
 #include <glib-object.h>
 #include <gmodule.h>
 
-#include <epiphany/ephy-embed-single.h>
+#include <epiphany/ephy-embed.h>
+
+#include "ad-uri-tester.h"
 
 G_BEGIN_DECLS
 
 #define TYPE_AD_BLOCKER		(ad_blocker_get_type ())
-#define AD_BLOCKER(o)			(G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_AD_BLOCKER, AdBlocker))
-#define AD_BLOCKER_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), TYPE_AD_BLOCKER, AdBlockerClass))
-#define IS_AD_BLOCKER(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_AD_BLOCKER))
+#define AD_BLOCKER(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_AD_BLOCKER, AdBlocker))
+#define AD_BLOCKER_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), TYPE_AD_BLOCKER, AdBlockerClass))
+#define IS_AD_BLOCKER(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_AD_BLOCKER))
 #define IS_AD_BLOCKER_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), TYPE_AD_BLOCKER))
 #define AD_BLOCKER_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), TYPE_AD_BLOCKER, AdBlockerClass))
+
+/* FIXME: Move from ..._extension.c into ad-blocker.c */
+#define AD_BLOCKER_KEY		"EphyAdblockExtensionBlocker"
 
 typedef struct _AdBlocker		AdBlocker;
 typedef struct _AdBlockerClass		AdBlockerClass;
@@ -49,13 +54,21 @@ struct _AdBlocker
 struct _AdBlockerClass
 {
 	GObjectClass parent_class;
+
+	/* Signals */
+	void	(* ad_blocked)	(AdBlocker *blocker,
+				 const char *url);
 };
 
 GType		 ad_blocker_get_type		(void);
 
 GType		 ad_blocker_register_type	(GTypeModule *module);
 
-AdBlocker	*ad_blocker_new			(EphyEmbedSingle *embed_single);
+AdBlocker	*ad_blocker_new			(AdUriTester *uri_tester);
+
+gboolean	 ad_blocker_test_uri		(AdBlocker *blocker,
+						 const char *uri,
+						 AdUriCheckType type);
 
 G_END_DECLS
 

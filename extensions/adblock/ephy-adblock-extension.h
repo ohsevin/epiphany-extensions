@@ -25,6 +25,8 @@
 #include <glib.h>
 #include <glib-object.h>
 
+#include <epiphany/ephy-embed.h>
+
 G_BEGIN_DECLS
 
 #define EPHY_TYPE_ADBLOCK_EXTENSION		(ephy_adblock_extension_get_type ())
@@ -41,6 +43,10 @@ typedef struct EphyAdblockExtensionPrivate	EphyAdblockExtensionPrivate;
 struct EphyAdblockExtensionClass
 {
 	GObjectClass parent_class;
+
+	/* Signals */
+	void	(* num_ads_changed)	(EphyAdblockExtension *extension,
+					 EphyEmbed *embed);
 };
 
 struct EphyAdblockExtension

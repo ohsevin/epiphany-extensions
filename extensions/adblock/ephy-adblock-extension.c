@@ -21,31 +21,44 @@
 
 #include "config.h"
 
-#include "ephy-adblock-extension.h"
-#include "ephy-debug.h"
-#include "ad-blocker.h"
-
 #include <epiphany/ephy-embed-shell.h>
 #include <epiphany/ephy-embed-single.h>
 #include <epiphany/ephy-extension.h>
+#include <epiphany/ephy-tab.h>
+#include <epiphany/ephy-window.h>
+#include <epiphany/ephy-statusbar.h>
+
+#include "ephy-adblock-extension.h"
+#include "ephy-debug.h"
+
+#include "ad-blocker.h"
+#include "ad-uri-tester.h"
+
+#include "mozilla/mozilla-helpers.h"
+
+#include <gtk/gtkeventbox.h>
+#include <gtk/gtkframe.h>
+#include <gtk/gtkiconfactory.h>
+#include <gtk/gtkimage.h>
 
 #include <gmodule.h>
 
+#include <glib/gi18n-lib.h>
+
 #define EPHY_ADBLOCK_EXTENSION_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_ADBLOCK_EXTENSION, EphyAdblockExtensionPrivate))
+
+#define STATUSBAR_FRAME_KEY	"EphyAdblockExtensionStatusbarFrame"
+#define STATUSBAR_EVBOX_KEY	"EphyAdblockExtensionStatusbarEvbox"
+#define ICON_FILENAME		"adblock-statusbar-icon.svg"
 
 struct EphyAdblockExtensionPrivate
 {
-	AdBlocker *blocker;
+	AdUriTester *tester;
 };
 
 static void ephy_adblock_extension_class_init	(EphyAdblockExtensionClass *klass);
 static void ephy_adblock_extension_iface_init	(EphyExtensionIface *iface);
 static void ephy_adblock_extension_init		(EphyAdblockExtension *extension);
-
-enum
-{
-	PROP_0
-};
 
 static GObjectClass *parent_class = NULL;
 
@@ -96,14 +109,15 @@ ephy_adblock_extension_register_type (GTypeModule *module)
 static void
 ephy_adblock_extension_init (EphyAdblockExtension *extension)
 {
-	EphyEmbedSingle *single;
-
 	LOG ("EphyAdblockExtension initialising")
+
+	ephy_embed_shell_get_embed_single (embed_shell); /* Fire up Mozilla */
+
+	mozilla_register_ad_blocker ();
 
 	extension->priv = EPHY_ADBLOCK_EXTENSION_GET_PRIVATE (extension);
 
-	single = EPHY_EMBED_SINGLE (ephy_embed_shell_get_embed_single (embed_shell));
-	extension->priv->blocker = ad_blocker_new (single);
+	extension->priv->tester = ad_uri_tester_new ();
 }
 
 static void
@@ -113,21 +127,237 @@ ephy_adblock_extension_finalize (GObject *object)
 
 	LOG ("EphyAdblockExtension finalising")
 
-	g_object_unref (extension->priv->blocker);
+	mozilla_unregister_ad_blocker ();
+
+	g_object_unref (extension->priv->tester);
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
+}
+
+#if 0
+static void
+update_statusbar (EphyAdblockExtension *extension,
+		  EphyWindow *window,
+		  EphyEmbed *embed)
+{
+	AdBlocker *blocker;
+	GObject *statusbar;
+	GtkWidget *evbox;
+	GtkWidget *frame;
+	int num_blocked;
+
+	blocker = g_object_get_data (G_OBJECT (embed), AD_BLOCKER_KEY);
+
+	num_blocked = ad_blocker_num_blocked (blocker);
+
+	statusbar = G_OBJECT (ephy_window_get_statusbar (window));
+	g_return_if_fail (statusbar != NULL);
+
+	frame = g_object_get_data (statusbar, STATUSBAR_FRAME_KEY);
+	g_return_if_fail (frame != NULL);
+
+	evbox = g_object_get_data (statusbar, STATUSBAR_EVBOX_KEY);
+	g_return_if_fail (evbox != NULL);
+
+	if (num_blocked == 0)
+	{
+		gtk_widget_hide (frame);
+	}
+	else
+	{
+		char *tooltip;
+
+		tooltip = g_strdup_printf (ngettext ("%d hidden advertisement",
+						     "%d hidden advertisements",
+						     num_blocked),
+					   num_blocked);
+
+		gtk_tooltips_set_tip ((EPHY_STATUSBAR(statusbar))->tooltips,
+				      evbox, tooltip, NULL);
+
+		g_free (tooltip);
+
+		gtk_widget_show (frame);
+	}
+}
+#endif
+
+static void
+create_statusbar_icon (EphyWindow *window)
+{
+	EphyStatusbar *statusbar;
+	char *filename;
+	GdkPixbuf *pixbuf;
+	GtkWidget *frame;
+	GtkWidget *icon;
+	GtkWidget *evbox;
+	int w, h;
+
+	gtk_icon_size_lookup (GTK_ICON_SIZE_MENU, &w, &h);
+
+	filename = g_build_filename (SHARE_DIR, ICON_FILENAME, NULL);
+	pixbuf = gdk_pixbuf_new_from_file_at_size (filename, w, h, NULL);
+	g_free (filename);
+	g_return_if_fail (pixbuf != NULL);
+
+	statusbar = EPHY_STATUSBAR (ephy_window_get_statusbar (window));
+	g_return_if_fail (statusbar != NULL);
+
+	frame = gtk_frame_new (NULL);
+
+	icon = gtk_image_new_from_pixbuf (pixbuf);
+
+	evbox = gtk_event_box_new ();
+
+	/*
+	 * FIXME: I haven't bothered to mark for translation because we want
+	 * to make the icon do much more (at least a count...).
+	 */
+	gtk_tooltips_set_tip (statusbar->tooltips, evbox,
+			      "Advertisement(s) blocked", NULL);
+
+	gtk_event_box_set_visible_window (GTK_EVENT_BOX (evbox), FALSE);
+
+	gtk_container_add (GTK_CONTAINER (frame), evbox);
+	gtk_container_add (GTK_CONTAINER (evbox), icon);
+
+	gtk_widget_show (evbox);
+	gtk_widget_show (icon);
+	/* don't show the frame */
+
+	ephy_statusbar_add_widget (statusbar, frame);
+
+	g_object_set_data (G_OBJECT (statusbar), STATUSBAR_FRAME_KEY, frame);
+	g_object_set_data (G_OBJECT (statusbar), STATUSBAR_EVBOX_KEY, evbox);
+
+	g_object_unref (pixbuf);
+}
+
+static void
+destroy_statusbar_icon (EphyWindow *window)
+{
+	EphyStatusbar *statusbar;
+	GtkWidget *frame;
+	GtkWidget *evbox;
+
+	statusbar = EPHY_STATUSBAR (ephy_window_get_statusbar (window));
+	g_return_if_fail (statusbar != NULL);
+
+	frame = g_object_get_data (G_OBJECT (statusbar), STATUSBAR_FRAME_KEY);
+	evbox = g_object_get_data (G_OBJECT (statusbar), STATUSBAR_EVBOX_KEY);
+
+	g_object_set_data (G_OBJECT (statusbar), STATUSBAR_FRAME_KEY, NULL);
+	g_object_set_data (G_OBJECT (statusbar), STATUSBAR_EVBOX_KEY, NULL);
+
+	g_return_if_fail (frame != NULL);
+	g_return_if_fail (evbox != NULL);
+
+	gtk_tooltips_set_tip (statusbar->tooltips, evbox, NULL, NULL);
+
+	ephy_statusbar_remove_widget (statusbar, frame);
 }
 
 static void
 impl_attach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
+	create_statusbar_icon (window);
 }
 
 static void
 impl_detach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
+	destroy_statusbar_icon (window);
+}
+
+static GtkWidget *
+get_icon_frame_for_embed (EphyEmbed *embed)
+{
+	EphyTab *tab;
+	EphyWindow *window;
+	GtkWidget *statusbar;
+	GtkWidget *frame;
+
+	tab = ephy_tab_for_embed (embed);
+	g_return_val_if_fail (EPHY_IS_TAB (tab), NULL);
+
+	window = EPHY_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (tab)));
+	g_return_val_if_fail (EPHY_IS_WINDOW (window), NULL);
+
+	statusbar = ephy_window_get_statusbar (window);
+	g_return_val_if_fail (EPHY_IS_STATUSBAR (statusbar), NULL);
+
+	frame = g_object_get_data (G_OBJECT (statusbar), STATUSBAR_FRAME_KEY);
+	g_return_val_if_fail (GTK_IS_FRAME (frame), NULL);
+
+	return frame;
+}
+
+static void
+location_changed_cb (EphyEmbed *embed,
+		     const char *address,
+		     AdBlocker *blocker)
+{
+	GtkWidget *frame = get_icon_frame_for_embed (embed);
+	g_return_if_fail (frame != NULL);
+
+	gtk_widget_hide (frame);
+}
+
+static void
+ad_blocked_cb (AdBlocker *blocker,
+	       const char *url,
+	       EphyEmbed *embed)
+{
+	GtkWidget *frame = get_icon_frame_for_embed (embed);
+	g_return_if_fail (frame != NULL);
+
+	gtk_widget_show (frame);
+}
+
+static void
+impl_attach_tab (EphyExtension *ext,
+		 EphyWindow *window,
+		 EphyTab *tab)
+{
+	EphyAdblockExtension *extension = EPHY_ADBLOCK_EXTENSION (ext);
+	AdBlocker *blocker;
+	EphyEmbed *embed;
+	
+	embed = ephy_tab_get_embed (tab);
+
+	blocker = ad_blocker_new (extension->priv->tester);
+	g_return_if_fail (blocker != NULL);
+
+	g_object_set_data (G_OBJECT (embed), AD_BLOCKER_KEY, blocker);
+
+	g_signal_connect (G_OBJECT (embed), "ge-location",
+			  G_CALLBACK (location_changed_cb), blocker);
+
+	g_signal_connect (G_OBJECT (blocker), "ad-blocked",
+			  G_CALLBACK (ad_blocked_cb), embed);
+}
+
+static void
+impl_detach_tab (EphyExtension *ext,
+		 EphyWindow *window,
+		 EphyTab *tab)
+{
+	AdBlocker *blocker;
+	EphyEmbed *embed;
+	
+	embed = ephy_tab_get_embed (tab);
+
+	blocker = g_object_get_data (G_OBJECT (embed), AD_BLOCKER_KEY);
+	g_return_if_fail (blocker != NULL);
+
+	g_signal_handlers_disconnect_by_func
+		(G_OBJECT (embed), G_CALLBACK (location_changed_cb), blocker);
+	g_signal_handlers_disconnect_by_func
+		(G_OBJECT (blocker), G_CALLBACK (ad_blocked_cb), blocker);
+
+	g_object_unref (blocker);
 }
 
 static void
@@ -135,6 +365,8 @@ ephy_adblock_extension_iface_init (EphyExtensionIface *iface)
 {
 	iface->attach_window = impl_attach_window;
 	iface->detach_window = impl_detach_window;
+	iface->attach_tab = impl_attach_tab;
+	iface->detach_tab = impl_detach_tab;
 }
 
 static void

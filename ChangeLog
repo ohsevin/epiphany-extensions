@@ -1,3 +1,43 @@
+2005-01-20  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/adblock/Makefile.am:
+	* extensions/adblock/ad-blocker.c: (ad_blocker_new),
+	(ad_blocker_test_uri), (ad_blocker_set_property),
+	(ad_blocker_init), (ad_blocker_finalize), (ad_blocker_class_init):
+	* extensions/adblock/ad-blocker.h:
+	* extensions/adblock/ad-uri-tester.c: (ad_uri_tester_get_type),
+	(ad_uri_tester_register_type), (ad_uri_tester_new),
+	(handle_reg_error), (match_uri), (ad_uri_tester_test_uri),
+	(load_patterns_file), (load_patterns), (free_regex),
+	(ad_uri_tester_init), (ad_uri_tester_finalize),
+	(ad_uri_tester_class_init):
+	* extensions/adblock/ad-uri-tester.h:
+	* extensions/adblock/ephy-adblock-extension.c:
+	(ephy_adblock_extension_init), (ephy_adblock_extension_finalize),
+	(update_statusbar), (create_statusbar_icon),
+	(destroy_statusbar_icon), (impl_attach_window),
+	(impl_detach_window), (get_icon_frame_for_embed),
+	(location_changed_cb), (ad_blocked_cb), (impl_attach_tab),
+	(impl_detach_tab), (ephy_adblock_extension_iface_init):
+	* extensions/adblock/ephy-adblock-extension.h:
+	* extensions/adblock/extension.c: (register_module):
+	* extensions/adblock/mozilla/.cvsignore:
+	* extensions/adblock/mozilla/Makefile.am:
+	* extensions/adblock/mozilla/MozAdBlocker.cpp:
+	* extensions/adblock/mozilla/MozAdBlocker.h:
+	* extensions/adblock/mozilla/mozilla-helpers.cpp:
+	* extensions/adblock/mozilla/mozilla-helpers.h:
+
+	Work-in-progress: huge refactoring of adblock. Now there's an
+	AdUriTester singleton (instantiated in ephy-adblock-extension).
+	There is one AdBlocker per EphyEmbed. The Mozilla component is brought
+	back, which means Ephy crashes on close, but that should be fixed by
+	Christian's patch in Mozilla bug #246092 (I think). There's a
+	preliminary statusbar icon, but it barely works. Perl regular
+	expressions have been implemented, making my previous adblock-patterns
+	commit work; but I hard-coded "-lpcreposix" in Makefile.am....
+
 2005-01-20  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/dashboard/dashboard-frontend-xmlwriter.c:

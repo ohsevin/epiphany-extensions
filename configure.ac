@@ -373,6 +373,7 @@ Makefile
 include/Makefile
 extensions/Makefile
 extensions/adblock/Makefile
+extensions/adblock/mozilla/Makefile
 extensions/bookmarks-tray/Makefile
 extensions/certificates/Makefile
 extensions/dashboard/Makefile

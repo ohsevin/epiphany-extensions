@@ -1,3 +1,5 @@
+SUBDIRS = mozilla
+
 extensiondir = $(EXTENSIONS_DIR)
 extension_LTLIBRARIES = libadblockextension.la
 
@@ -6,6 +8,8 @@ libadblockextension_la_SOURCES = \
 	ephy-adblock-extension.h	\
 	ad-blocker.h			\
 	ad-blocker.c			\
+	ad-uri-tester.h			\
+	ad-uri-tester.c			\
 	extension.c
 
 libadblockextension_la_CPPFLAGS = \
@@ -17,6 +21,10 @@ libadblockextension_la_CPPFLAGS = \
 libadblockextension_la_CFLAGS = \
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
 	$(AM_CFLAGS)
+
+libadblockextension_la_LIBADD = \
+	mozilla/libadblockmozilla.la	\
+	$(MOZILLA_COMPONENT_LIBS)
 
 libadblockextension_la_LDFLAGS = -module -avoid-version -lpcreposix #FIXME
 
