@@ -3,6 +3,7 @@
 extensions/certificates/ephy-certificates-extension.c
 extensions/error-viewer/ephy-error-viewer-extension.c
 extensions/error-viewer/error-viewer.glade
+extensions/error-viewer/link-checker.c
 extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp
 extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp
 extensions/error-viewer/opensp/validate.cpp

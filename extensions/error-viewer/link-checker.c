@@ -26,6 +26,8 @@
 
 #include "ephy-debug.h"
 
+#include <glib/gi18n-lib.h>
+
 #define NUM_THREADS 10
 
 #define LINK_CHECKER_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), TYPE_LINK_CHECKER, LinkCheckerPrivate))
@@ -216,11 +218,25 @@ link_checker_check (LinkChecker *checker,
 
 void
 link_checker_update_progress (LinkChecker *checker,
+			      const char *filename,
 			      int num_checked,
+			      int num_invalid,
 			      int num_total)
 {
 	if (num_checked == num_total)
 	{
+		char *msg = g_strdup_printf (
+			ngettext("Link check of %s complete\n"
+				 "Found %d invalid link",
+				 "Link check of %s complete\n"
+				 "Found %d invalid links",
+				 num_invalid),
+			filename, num_invalid);
+
+		link_checker_append (checker, ERROR_VIEWER_INFO, msg);
+
+		g_free (msg);
+
 		error_viewer_unuse (checker->priv->error_viewer);
 	}
 }

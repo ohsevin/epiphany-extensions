@@ -88,23 +88,8 @@ NS_IMETHODIMP ErrorViewerURICheckerObserver::OnStopRequest(nsIRequest *aRequest,
 	mNumLinksChecked++;
 
 	link_checker_update_progress (LINK_CHECKER (mChecker),
-				      mNumLinksChecked, mNumLinksTotal);
-
-	if (mNumLinksChecked >= mNumLinksTotal)
-	{
-		char *msg = g_strdup_printf (
-			ngettext("Link check of %s complete\n"
-				 "Found %d invalid link",
-				 "Link check of %s complete\n"
-				 "Found %d invalid links",
-				 mNumLinksInvalid),
-			mFilename, mNumLinksInvalid);
-
-		link_checker_append (LINK_CHECKER (mChecker),
-				     ERROR_VIEWER_INFO, msg);
-
-		g_free (msg);
-	}
+				      mFilename, mNumLinksChecked,
+				      mNumLinksInvalid, mNumLinksTotal);
 
 	return NS_OK;
 }

@@ -68,7 +68,9 @@ void		link_checker_append		(LinkChecker *checker,
 						 const char *message);
 
 void		link_checker_update_progress	(LinkChecker *checker,
+						 const char *filename,
 						 int num_checked,
+						 int num_invalid,
 						 int num_total);
 
 G_END_DECLS

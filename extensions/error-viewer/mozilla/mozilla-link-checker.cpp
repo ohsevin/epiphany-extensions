@@ -168,7 +168,8 @@ mozilla_check_links (LinkChecker *checker,
 
 	links->GetLength (&observer->mNumLinksTotal);
 
-	link_checker_update_progress (checker, 0, observer->mNumLinksTotal);
+	link_checker_update_progress (checker, observer->mFilename,
+				      0, 0, observer->mNumLinksTotal);
 
 	for (PRUint32 i = 0; i < observer->mNumLinksTotal; i++)
 	{

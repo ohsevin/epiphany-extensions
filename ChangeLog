@@ -1,5 +1,17 @@
 2004-02-22  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/error-viewer/link-checker.c:
+	(link_checker_update_progress):
+	* extensions/error-viewer/link-checker.h:
+	* extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp
+	:
+	* extensions/error-viewer/mozilla/mozilla-link-checker.cpp:
+	* po/POTFILES.in:
+
+	Display an "operation complete" message even when a page has 0 links.
+
+2004-02-22  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp
 
 	Got rid of a big line full of whitespace
