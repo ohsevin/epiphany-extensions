@@ -1,5 +1,5 @@
 # Hungarian translation of epiphany-extensions.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Copyright (C) 2004 Free Software Foundation, Inc.
 # This file is distributed under the same license as the epiphany-extensions package.
 # Laszlo Dvornik <dvornikl@mailbox.hu>, 2004.
 #
@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-26 14:20+0100\n"
-"PO-Revision-Date: 2004-02-26 17:53+0100\n"
+"POT-Creation-Date: 2004-03-21 03:29+0100\n"
+"PO-Revision-Date: 2004-03-21 16:14+0100\n"
 "Last-Translator: Laszlo Dvornik <dvornikl@mailbox.hu>\n"
 "Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -75,7 +75,7 @@ msgstr "_Törlés"
 msgid "Error Viewer"
 msgstr "Hibanéző"
 
-#: extensions/error-viewer/link-checker.c:231
+#: extensions/error-viewer/link-checker.c:235
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
@@ -109,6 +109,13 @@ msgid ""
 msgstr ""
 "Hivatkozás hiba a(z) %s fájlban:\n"
 "%s nem elérhető."
+
+#: extensions/error-viewer/mozilla/mozilla-link-checker.cpp:152
+#, c-format
+msgid "Checking %d Link on %s"
+msgid_plural "Checking %d Links on %s"
+msgstr[0] "%d hivatkozás ellenőrzése a(z) %s címen"
+msgstr[1] "%d hivatkozás ellenőrzése a(z) %s címen"
 
 #: extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
@@ -167,19 +174,19 @@ msgstr ""
 "HTML hiba a(z) %s fájlban:\n"
 "Nincs érvényes doctype megadva."
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
-msgid "Blo_ck Popups from this Site"
-msgstr "Felbukkanó ablakok _blokkolása erről a webhelyről"
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
+msgid "Popup _Windows"
+msgstr "Felbukkanó _ablakok"
 
 #. shortcut key
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:64
-msgid "Block or unblock popup windows"
-msgstr "Felbukkanó ablakok blokkolása vagy engedélyezése"
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
+msgid "Show or hide unrequested popup windows from this site"
+msgstr "Kéretlenül megjelenő ablakok engedélyezése vagy blokkolása erről a webhelyről"
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:324
+#: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
 #, c-format
-msgid "%d popup blocked"
-msgid_plural "%d popups blocked"
+msgid "%d popup window blocked"
+msgid_plural "%d popup windows blocked"
 msgstr[0] "%d felbukkanó ablak blokkolva"
 msgstr[1] "%d felbukkanó ablak blokkolva"
 
