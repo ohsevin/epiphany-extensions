@@ -1,3 +1,7 @@
+2004-01-04  Miloslav Trmac  <mitr@volny.cz>
+
+	* configure.ac: Added Czech (cs) to ALL_LINGUAS.
+
 2004-01-03  Francisco Javier F. Serrador  <serrador@cvs.gnome.org>
 
 	* configure.ac: Added spanish (es) to ALL_LINGUAS
