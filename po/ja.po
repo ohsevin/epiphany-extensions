@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-06-05 13:22+0900\n"
-"PO-Revision-Date: 2004-06-05 13:19+0900\n"
+"POT-Creation-Date: 2004-11-04 14:54+0900\n"
+"PO-Revision-Date: 2004-11-04 14:47+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -19,54 +19,86 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:160
-msgid "Certificate Manager"
-msgstr "証明書マネージャ"
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
+msgid "_Edit Bookmarks"
+msgstr "ブックマークの編集(_E)"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
+msgid "Open the bookmarks window"
+msgstr "ブックマーク・ウィンドウを開きます"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
+msgid "Open in _Current Tab"
+msgstr "このタブの中に開く(_C)"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
+msgid "Opens bookmarks in the current tab of the active window"
+msgstr "このタブの中にブックマークを開きます"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
+msgid "Open in New _Tab"
+msgstr "新しいタブの中に開く(_T)"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
+msgid "Opens bookmarks in a newt tab of the active window"
+msgstr "新しいタブの中にブックマークを開きます"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
+msgid "Open in New _Window"
+msgstr "新しいウィンドウの中に開く(_W)"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
+msgid "Opens bookmarks in a new window"
+msgstr "新しいウィンドウの中にブックマークを開きます"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:513
+msgid "Bookmarks"
+msgstr "ブックマーク"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:276
+#: extensions/certificates/ephy-certificates-extension.c:269
 msgid "Manage _Certificates"
 msgstr "証明書の管理(_C)"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:278
+#: extensions/certificates/ephy-certificates-extension.c:271
 msgid "Manage your certificates"
 msgstr "お使いの証明書を管理します"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:286
+#: extensions/certificates/ephy-certificates-extension.c:279
 msgid "Server _Certificate"
 msgstr "サーバ証明書(_C)"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:288
+#: extensions/certificates/ephy-certificates-extension.c:281
 msgid "Display the web server's certificate"
 msgstr "ウェブ・サーバの証明書を表示します"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:88
+#: extensions/error-viewer/ephy-error-viewer-extension.c:98
 msgid "Check _HTML"
 msgstr "HTML のチェック(_H)"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:90
+#: extensions/error-viewer/ephy-error-viewer-extension.c:100
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "HTML のエラーをエラー表示ダイアログの中に表示します"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:95
+#: extensions/error-viewer/ephy-error-viewer-extension.c:105
 msgid "Check _Links"
 msgstr "リンクのチェック(_L)"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:97
+#: extensions/error-viewer/ephy-error-viewer-extension.c:107
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr "おかしなハイパーリンクをエラー表示ダイアログの中に表示します"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:101
+#: extensions/error-viewer/ephy-error-viewer-extension.c:111
 msgid "_Error Viewer"
 msgstr "エラー・ビューア(_E)"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:103
+#: extensions/error-viewer/ephy-error-viewer-extension.c:113
 msgid "Display web page errors"
 msgstr "ウェブ・ページのエラーを表示します"
 
@@ -79,7 +111,7 @@ msgid "Error Viewer"
 msgstr "エラー・ビューア"
 
 #. Don't bother looking for source lines -- they're not there
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:85
 #, c-format
 msgid ""
 "Error:\n"
@@ -88,7 +120,7 @@ msgstr ""
 "エラー:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:90
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:110
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -97,14 +129,14 @@ msgstr ""
 "%s の %d 行目に Javascript エラー:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:60
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
 msgstr[0] "%d 個の不正なリンクが見つかりました"
 msgstr[1] "%d 個の不正なリンクが見つかりました"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:117
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -113,14 +145,14 @@ msgstr ""
 "%s の中にリンク・エラー:\n"
 "%s は利用できません。"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:198
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
 msgstr[0] "%d 個のリンク (%s) のチェック中"
 msgstr[1] "%d 個のリンク (%s) のチェック中"
 
-#: extensions/error-viewer/opensp/validate.cpp:167
+#: extensions/error-viewer/opensp/validate.cpp:169
 #, c-format
 msgid ""
 "HTML error in %s on line %s:\n"
@@ -129,19 +161,19 @@ msgstr ""
 "%s の %s 行目に HTML エラー:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:165
+#: extensions/error-viewer/sgml-validator.c:167
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
 msgstr[0] "%d 個のエラーが見つかりました"
 msgstr[1] "%d 個のエラーが見つかりました"
 
-#: extensions/error-viewer/sgml-validator.c:169
+#: extensions/error-viewer/sgml-validator.c:171
 #, c-format
 msgid "HTML Validation of %s complete"
 msgstr "%s の HTML 検証が完了しました"
 
-#: extensions/error-viewer/sgml-validator.c:227
+#: extensions/error-viewer/sgml-validator.c:229
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -150,8 +182,8 @@ msgstr ""
 "%s の中に HTML エラー:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:229
-#: extensions/error-viewer/sgml-validator.c:245
+#: extensions/error-viewer/sgml-validator.c:231
+#: extensions/error-viewer/sgml-validator.c:247
 msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
@@ -159,7 +191,7 @@ msgstr ""
 "DOCTYPE は \"XHTML\" ですが、CONTENTESTYPE は \"text/html\" になっています。"
 "代わりに \"application/xhtml+xml\" を使って下さい。"
 
-#: extensions/error-viewer/sgml-validator.c:243
+#: extensions/error-viewer/sgml-validator.c:245
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
@@ -168,20 +200,20 @@ msgstr ""
 "%s の中に HTML ワーニング:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:360
+#: extensions/error-viewer/sgml-validator.c:362
 #, c-format
 msgid "HTML error in %s:"
 msgstr "%s の中に HTML エラー:"
 
-#: extensions/error-viewer/sgml-validator.c:368
+#: extensions/error-viewer/sgml-validator.c:370
 msgid "Invalid character encoding"
 msgstr "文字エンコーディングが間違っています"
 
-#: extensions/error-viewer/sgml-validator.c:373
+#: extensions/error-viewer/sgml-validator.c:375
 msgid "Unknown error while converting to UTF-8"
 msgstr "UTF-8 へ変換する際に不明なエラーが発生しました"
 
-#: extensions/error-viewer/sgml-validator.c:435
+#: extensions/error-viewer/sgml-validator.c:437
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -190,21 +222,360 @@ msgstr ""
 "%s の中に HTML エラー:\n"
 "正しい DOCTYPE が指定されていません。"
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
-msgid "Popup _Windows"
-msgstr "ウィンドウのポップアップ(_W)"
+#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+msgid "_Extensions"
+msgstr "拡張機能(_E)"
+
+#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
+msgid "Load and unload extensions"
+msgstr "Epiphany 拡張機能の有効/無効を設定します"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:227
+msgid "Author:"
+msgid_plural "Authors:"
+msgstr[0] "開発担当"
+msgstr[1] "開発担当"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:410
+msgid "Enabled"
+msgstr "有効"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:417
+msgid "Description"
+msgstr "説明"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+msgid "<b>Loaded Extensions</b>"
+msgstr "<b>ロードした拡張機能の一覧</b>"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+#: extensions/page-info/page-info.glade.h:9
+msgid "DYNAMIC"
+msgstr "DYNAMIC"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:3
+msgid "Description:"
+msgstr "説明:"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:4
+msgid "Extension Information"
+msgstr "拡張機能の情報"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:5
+msgid "Extensions"
+msgstr "Epiphany 拡張機能"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:6
+msgid "Name:"
+msgstr "名前:"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:7
+msgid "URL:"
+msgstr "URL:"
+
+#: extensions/page-info/ephy-page-info-extension.c:66
+msgid "_Page Info"
+msgstr "ページ情報(_P)"
+
+#: extensions/page-info/ephy-page-info-extension.c:68
+msgid "Display page information in a dialog"
+msgstr "ページ情報をダイアログに表示します"
+
+#: extensions/page-info/page-info-dialog.c:637
+msgid "Unknown type"
+msgstr "種類を特定できません"
+
+#: extensions/page-info/page-info-dialog.c:642
+msgid "Full standards compliance"
+msgstr "完全に標準互換"
+
+#: extensions/page-info/page-info-dialog.c:645
+msgid "Almost standards compliance"
+msgstr "ほぼ標準互換"
+
+#: extensions/page-info/page-info-dialog.c:648
+msgid "Compatibility"
+msgstr "互換性"
+
+#: extensions/page-info/page-info-dialog.c:651
+msgid "Undetermined"
+msgstr "未確認"
+
+#: extensions/page-info/page-info-dialog.c:660
+msgid "Not cached"
+msgstr "キャッシュされていない"
+
+#: extensions/page-info/page-info-dialog.c:663
+msgid "Disk cache"
+msgstr "ディスクへキャッシュ済"
+
+#: extensions/page-info/page-info-dialog.c:666
+msgid "Memory cache"
+msgstr "メモリへキャッシュ済"
+
+#: extensions/page-info/page-info-dialog.c:669
+msgid "Unknown cache"
+msgstr "キャッシュを特定できません"
+
+#: extensions/page-info/page-info-dialog.c:685
+msgid "Unknown"
+msgstr "不明"
+
+#: extensions/page-info/page-info-dialog.c:690
+msgid "No referrer"
+msgstr "照会者なし"
+
+#: extensions/page-info/page-info-dialog.c:704
+#: extensions/page-info/page-info-dialog.c:720
+msgid "Not specified"
+msgstr "指定なし"
+
+#: extensions/page-info/page-info-dialog.c:814
+msgid "Save Image As..."
+msgstr "画像に名前を付けて保存..."
+
+#: extensions/page-info/page-info-dialog.c:896
+msgid "_Open Image"
+msgstr "画像を開く(_O)"
+
+#: extensions/page-info/page-info-dialog.c:902
+msgid "_Copy Image Address"
+msgstr "画像のアドレスのコピー(_C)"
+
+#: extensions/page-info/page-info-dialog.c:908
+msgid "_Use Image as Background"
+msgstr "画像を背景として使用(_U)"
+
+#: extensions/page-info/page-info-dialog.c:914
+#: extensions/page-info/page-info.glade.h:26
+msgid "_Save Image As..."
+msgstr "画像を別名で保存(_S)..."
+
+#: extensions/page-info/page-info-dialog.c:1003
+#: extensions/page-info/page-info-dialog.c:1221
+msgid "URL"
+msgstr "URL"
+
+#: extensions/page-info/page-info-dialog.c:1015
+msgid "Alt Text"
+msgstr "代替文字列"
+
+#: extensions/page-info/page-info-dialog.c:1027
+#: extensions/page-info/page-info-dialog.c:1233
+msgid "Title"
+msgstr "タイトル"
+
+#: extensions/page-info/page-info-dialog.c:1039
+msgid "Width"
+msgstr "幅"
+
+#: extensions/page-info/page-info-dialog.c:1051
+msgid "Height"
+msgstr "高さ"
+
+#: extensions/page-info/page-info-dialog.c:1187
+msgid "_Copy Link Address"
+msgstr "リンク先のコピー(_C)"
+
+#: extensions/page-info/page-info-dialog.c:1245
+msgid "Relation"
+msgstr "関係"
+
+#: extensions/page-info/page-info-dialog.c:1356
+msgid "Name"
+msgstr "名前"
+
+#: extensions/page-info/page-info-dialog.c:1368
+msgid "Method"
+msgstr "メソッド"
+
+#: extensions/page-info/page-info-dialog.c:1380
+msgid "Action"
+msgstr "アクション"
+
+#: extensions/page-info/page-info.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: extensions/page-info/page-info.glade.h:2
+msgid "<b>Forms In Page</b>"
+msgstr "<b>ページのフォーム</b>"
+
+#: extensions/page-info/page-info.glade.h:3
+msgid "<b>Image View</b>"
+msgstr "<b>画像のプレビュー</b>"
+
+#: extensions/page-info/page-info.glade.h:4
+msgid "<b>Images In Page</b>"
+msgstr "<b>ページにある画像</b>"
+
+#: extensions/page-info/page-info.glade.h:5
+msgid "<b>Links In Page</b>"
+msgstr "<b>ページにあるリンク</b>"
+
+#: extensions/page-info/page-info.glade.h:6
+msgid "<b>Rendering</b>"
+msgstr "<b>レンダリング</b>"
+
+#: extensions/page-info/page-info.glade.h:7
+msgid "<b>Source File</b>"
+msgstr "<b>ソース・ファイル</b>"
+
+#: extensions/page-info/page-info.glade.h:8
+msgid "<b>Web Page</b>"
+msgstr "<b>ウェブ・ページ</b>"
+
+#: extensions/page-info/page-info.glade.h:10
+msgid "Encoding:"
+msgstr "エンコーディング:"
+
+#: extensions/page-info/page-info.glade.h:11
+msgid "Expires:"
+msgstr "有効期限:"
+
+#: extensions/page-info/page-info.glade.h:12
+msgid "Forms"
+msgstr "フォーム"
+
+#: extensions/page-info/page-info.glade.h:13
+msgid "General"
+msgstr "全般"
+
+#: extensions/page-info/page-info.glade.h:14
+msgid "Images"
+msgstr "画像"
+
+#: extensions/page-info/page-info.glade.h:15
+msgid "Links"
+msgstr "リンク"
+
+#: extensions/page-info/page-info.glade.h:16
+msgid "Location:"
+msgstr "場所:"
+
+#: extensions/page-info/page-info.glade.h:17
+msgid "MIME type:"
+msgstr "MIME 型:"
+
+#: extensions/page-info/page-info.glade.h:18
+msgid "Mode:"
+msgstr "モード:"
+
+#: extensions/page-info/page-info.glade.h:19
+msgid "Modified:"
+msgstr "変更日時:"
+
+#: extensions/page-info/page-info.glade.h:20
+msgid "Page Properties"
+msgstr "ページのプロパティ"
+
+#: extensions/page-info/page-info.glade.h:21
+msgid "Referrer:"
+msgstr "照会者:"
+
+#: extensions/page-info/page-info.glade.h:22
+msgid "Size:"
+msgstr "サイズ:"
+
+#: extensions/page-info/page-info.glade.h:23
+msgid "Source:"
+msgstr "ソース:"
+
+#: extensions/page-info/page-info.glade.h:24
+msgid "Title:"
+msgstr "タイトル:"
+
+#: extensions/page-info/page-info.glade.h:25
+msgid "Type:"
+msgstr "種類:"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:147
+msgid "Render the page without using a style"
+msgstr "スタイルを使用せずにページをレンダリングします"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:150
+msgid "Render the page using the default style"
+msgstr "デフォルトのスタイルでページをレンダリングします"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:153
+#, c-format
+msgid "Render the page using the \"%s\" style"
+msgstr "スタイル \"%s\" でページをレンダリングします"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:293
+msgid "St_yle"
+msgstr "スタイル(_Y)"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:294
+msgid "Select a different style for this page"
+msgstr "このページをレンダリングする別のスタイルを選択して下さい"
+
+#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
+msgid "Default"
+msgstr "デフォルト"
+
+#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
+msgid "None"
+msgstr "なし"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:108
+msgid "_Sidebar"
+msgstr "サイドバー(_S)"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:109
+msgid "Show or hide the sidebar"
+msgstr "サイドバーの表示/非表示を切り替えます"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:396
+#, c-format
+msgid "Add \"%s\" to the Sidebar?"
+msgstr "\"%s\" をサイドバーへ追加しますか？"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:400
+#, c-format
+msgid "The source to the new sidebar page is %s."
+msgstr "新しいサイドバー・ページのソースは %s です"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:402
+msgid "Add Sidebar"
+msgstr "サイドバーを追加します"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:406
+msgid "_Add Sidebar"
+msgstr "サイドバーの追加(_A)"
+
+#: extensions/sidebar/ephy-sidebar.c:178
+msgid "No Sidebars installed"
+msgstr "サイドバーは未インストール"
+
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:553
+msgid "_Look Up"
+msgstr "検索(_L)"
+
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:560
+msgid "_GNOME Dictionary"
+msgstr "GNOME 辞書(_G)"
+
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:567
+msgid "Loo_k-Up Preferences"
+msgstr "検索の設定(_K)"
 
 #. shortcut key
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
-msgid "Show or hide unrequested popup windows from this site"
-msgstr "このサイトからの無用なポップアップ・ウィンドウを制御します"
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:569
+msgid "Look up your selection"
+msgstr "選択範囲を検索します"
 
-#: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
-#, c-format
-msgid "%d popup window blocked"
-msgid_plural "%d popup windows blocked"
-msgstr[0] "%d 個のポップアップ・ウィンドウを拒否しました"
-msgstr[1] "%d 個のポップアップ・ウィンドウを拒否しました"
+#: extensions/smart-bookmarks/smart-bookmarks.glade.h:1
+msgid "Add Gnome Dictionary to the menu"
+msgstr "GNOME 辞書をメニューへ追加する"
+
+#: extensions/smart-bookmarks/smart-bookmarks.glade.h:2
+msgid "Look Up Preferences"
+msgstr "検索の設定"
+
+#: extensions/smart-bookmarks/smart-bookmarks.glade.h:3
+msgid "Open search results in a new tab"
+msgstr "新しいタブの中に検索結果を開く"
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:183
 #, c-format
