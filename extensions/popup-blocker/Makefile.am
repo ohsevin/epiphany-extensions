@@ -21,8 +21,8 @@ libpopupblockerextension_la_SOURCES = \
 	ephy-popup-blocker-extension.h	\
 	ephy-popup-blocker-icon.c	\
 	ephy-popup-blocker-icon.h	\
-	ephy-popup-blocker-popup.c	\
-	ephy-popup-blocker-popup.h	\
+	ephy-popup-blocker-list.c	\
+	ephy-popup-blocker-list.h	\
 	popup-blocker.c
 
 libpopupblockerextension_la_LIBADD = \

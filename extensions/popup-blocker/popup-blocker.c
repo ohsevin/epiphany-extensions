@@ -22,7 +22,7 @@
 
 #include "ephy-popup-blocker-extension.h"
 #include "ephy-popup-blocker-icon.h"
-#include "ephy-popup-blocker-popup.h"
+#include "ephy-popup-blocker-list.h"
 
 #include "ephy-debug.h"
 
@@ -41,7 +41,7 @@ register_module (GTypeModule *module)
 #endif /* ENABLE_NLS */
 
 	ephy_popup_blocker_icon_register_type (module);
-	ephy_popup_blocker_popup_register_type (module);
+	ephy_popup_blocker_list_register_type (module);
 
 	return ephy_popup_blocker_extension_register_type (module);
 }

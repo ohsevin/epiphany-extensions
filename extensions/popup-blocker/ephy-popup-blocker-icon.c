@@ -45,7 +45,7 @@
 struct EphyPopupBlockerIconPrivate
 {
 	EphyWindow *window;
-	GSList *popups;
+	EphyPopupBlockerList *popups;
 	GtkTooltips *tooltips;
 
 	GtkWidget *frame;
@@ -151,8 +151,6 @@ ephy_popup_blocker_icon_init (EphyPopupBlockerIcon *icon)
 	g_object_ref (G_OBJECT (icon->priv->tooltips));
 	gtk_object_sink (GTK_OBJECT (icon->priv->tooltips));
 
-	icon->priv->popups = NULL;
-
 	create_ui (icon);
 }
 
@@ -193,7 +191,9 @@ update_ui (EphyPopupBlockerIcon *icon)
 	guint num_blocked;
 	char *tooltip;
 
-	num_blocked = g_slist_length (icon->priv->popups);
+	if (icon->priv->popups == NULL) return;
+
+	num_blocked = ephy_popup_blocker_list_length (icon->priv->popups);
 
 	tooltip = g_strdup_printf (ngettext("%d popup blocked",
 					    "%d popups blocked",
@@ -217,9 +217,9 @@ update_ui (EphyPopupBlockerIcon *icon)
 
 void
 ephy_popup_blocker_icon_set_popups (EphyPopupBlockerIcon *icon,
-				    GSList *blocked_list)
+				    EphyPopupBlockerList *popups)
 {
-	icon->priv->popups = blocked_list;
+	icon->priv->popups = popups;
 
 	update_ui (icon);
 }

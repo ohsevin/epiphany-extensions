@@ -21,6 +21,8 @@
 #ifndef EPHY_POPUP_BLOCKER_ICON_H
 #define EPHY_POPUP_BLOCKER_ICON_H
 
+#include "ephy-popup-blocker-list.h"
+
 #include <epiphany/ephy-window.h>
 
 #include <glib.h>
@@ -58,7 +60,7 @@ GType	ephy_popup_blocker_icon_register_type	(GTypeModule *module);
 EphyPopupBlockerIcon	*ephy_popup_blocker_icon_new	(EphyWindow *window);
 
 void	ephy_popup_blocker_icon_set_popups	(EphyPopupBlockerIcon *icon,
-						 GSList *blocked_list);
+						 EphyPopupBlockerList *popups);
 
 G_END_DECLS
 
