@@ -80,6 +80,6 @@ if ENABLE_TAB_STATES_EXTENSION
 SUBDIRS += tab-states
 endif
 
-DIST_SUBDIRS = actions adblock bookmarks-tray certificates dashboard error-viewer extensions-manager-ui find gestures page-info sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu net-monitor
+DIST_SUBDIRS = actions adblock bookmarks-tray certificates dashboard error-viewer extensions-manager-ui find gestures net-monitor page-info sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu
 
 EXTRA_DIST =

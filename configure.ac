@@ -16,7 +16,7 @@ dnl 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 dnl
 dnl $Id$
 
-AC_INIT([Epiphany Extensions],[1.5.6.90],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+AC_INIT([Epiphany Extensions],[1.5.7],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 GNOME_COMMON_INIT
 
 EPIPHANY_EXTENSIONS_MAJOR=1.5
@@ -83,7 +83,7 @@ dnl ********************************
 dnl pkg config checks
 dnl ********************************
 
-EPIPHANY_REQUIRED=1.5.5
+EPIPHANY_REQUIRED=1.5.6
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.6.0
 LIBGTK_REQUIRED=2.6.0
@@ -129,10 +129,9 @@ dnl *******************************
 
 AC_MSG_CHECKING([extensions to build])
 
-all_extensions="actions,adblock,bookmarks-tray,certificates,dashboard,error-viewer,extensions-manager-ui,find,gestures,page-info,sample,sample-mozilla,select-stylesheet,sidebar,smart-bookmarks,tab-groups,tab-states,tabsmenu,net-monitor"
+all_extensions="actions,adblock,bookmarks-tray,certificates,dashboard,error-viewer,extensions-manager-ui,find,gestures,net-monitor,page-info,sample,sample-mozilla,select-stylesheet,sidebar,smart-bookmarks,tab-groups,tab-states,tabsmenu"
 all_useful_extensions="actions,bookmarks-tray,certificates,dashboard,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tab-groups,tab-states,tabsmenu"
 default_extensions="actions,bookmarks-tray,certificates,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups,tab-states"
-mozilla_dependent_extensions="adblock,error-viewer,find,page-info,sample-mozilla,select-stylesheet,smart-bookmarks"
 
 dnl due to an autoconf bug, commas in the first arg to
 dnl AS_HELP_STRING() cause problems.
