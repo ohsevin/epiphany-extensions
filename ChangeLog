@@ -1,5 +1,14 @@
 2004-09-25  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/select-stylesheet/ephy-css-menu.c:
+	(create_stylesheet_action):
+	* extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:
+
+	Don't block stylesheets without "media" attribute. Shorten menu
+	entries to 32 chars max. Fixes bug #153710.
+
+2004-09-25  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:
 
 	Always load unnamed stylesheets. (Bug #153739, misunderstanding when
