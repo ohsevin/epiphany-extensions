@@ -15,7 +15,10 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ *
+ *  $Id$
  */
+
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
@@ -29,12 +32,6 @@
 #define ERROR_VIEWER_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), TYPE_ERROR_VIEWER, ErrorViewerPrivate))
 
 #define MAX_NUM_ROWS 50
-
-static void error_viewer_class_init (ErrorViewerClass *klass);
-static void error_viewer_init (ErrorViewer *dialog);
-static void error_viewer_finalize (GObject *object);
-
-static GObjectClass *parent_class = NULL;
 
 struct ErrorViewerPrivate
 {
@@ -66,32 +63,42 @@ enum
 	N_COLUMNS
 };
 
+static void error_viewer_class_init	(ErrorViewerClass *klass);
+static void error_viewer_init		(ErrorViewer *dialog);
+static void error_viewer_finalize	(GObject *object);
+
+static GObjectClass *parent_class = NULL;
+
+static GType type = 0;
+
 GType 
 error_viewer_get_type (void)
 {
-	static GType error_viewer_type = 0;
-	
-	if (error_viewer_type == 0)
-	{
-		static const GTypeInfo our_info =
-		{
-			sizeof (ErrorViewerClass),
-			NULL, /* base_init */
-			NULL, /* base_finalize */
-			(GClassInitFunc) error_viewer_class_init,
-			NULL,
-			NULL, /* class_data */
-			sizeof (ErrorViewer),
-			0, /* n_preallocs */
-			(GInstanceInitFunc) error_viewer_init
-		};
+	return type;
+}
 
-		error_viewer_type = g_type_register_static (EPHY_TYPE_DIALOG,
-							    "ErrorViewer",
-							    &our_info, 0);
-	}
-	
-	return error_viewer_type;
+GType
+error_viewer_register_type (GTypeModule *module)
+{
+	static const GTypeInfo our_info =
+	{
+		sizeof (ErrorViewerClass),
+		NULL, /* base_init */
+		NULL, /* base_finalize */
+		(GClassInitFunc) error_viewer_class_init,
+		NULL,
+		NULL, /* class_data */
+		sizeof (ErrorViewer),
+		0, /* n_preallocs */
+		(GInstanceInitFunc) error_viewer_init
+	};
+
+	type = g_type_module_register_type (module,
+					    EPHY_TYPE_DIALOG,
+					    "ErrorViewer",
+					    &our_info, 0);
+
+	return type;
 }
 
 ErrorViewer *
@@ -126,17 +133,17 @@ error_viewer_append (ErrorViewer *dialog,
 
 	switch (type)
 	{
-	case ERROR_VIEWER_ERROR:
-		stock_id = GTK_STOCK_DIALOG_ERROR;
-		break;
-	case ERROR_VIEWER_WARNING:
-		stock_id = GTK_STOCK_DIALOG_WARNING;
-		break;
-	case ERROR_VIEWER_INFO:
-		stock_id = GTK_STOCK_DIALOG_INFO;
-		break;
-	default:
-		g_return_if_reached ();
+		case ERROR_VIEWER_ERROR:
+			stock_id = GTK_STOCK_DIALOG_ERROR;
+			break;
+		case ERROR_VIEWER_WARNING:
+			stock_id = GTK_STOCK_DIALOG_WARNING;
+			break;
+		case ERROR_VIEWER_INFO:
+			stock_id = GTK_STOCK_DIALOG_INFO;
+			break;
+		default:
+			g_return_if_reached ();
 	}
 
 	model = dialog->priv->model;
@@ -222,7 +229,8 @@ error_viewer_init (ErrorViewer *dialog)
 	ephy_dialog_construct (EPHY_DIALOG (dialog),
 			       properties,
 			       SHARE_DIR "/glade/error-viewer.glade",
-			       "error_viewer");
+			       "error_viewer",
+			       GETTEXT_PACKAGE);
 
 	build_ui (dialog);
 }
@@ -239,11 +247,9 @@ error_viewer_finalize (GObject *object)
 
 void
 error_viewer_clear_cb (GtkWidget *button,
-		       EphyDialog *dialog)
+		       ErrorViewer *dialog)
 {
-	ErrorViewerPrivate *priv = ERROR_VIEWER_GET_PRIVATE (dialog);
-
-	gtk_list_store_clear (GTK_LIST_STORE (priv->model));
+	gtk_list_store_clear (GTK_LIST_STORE (dialog->priv->model));
 }
 
 void

@@ -48,11 +48,11 @@ struct EphyErrorViewerExtensionPrivate
 	void *listener;
 };
 
-static void ephy_error_viewer_extension_class_init (EphyErrorViewerExtensionClass *klass);
-static void ephy_error_viewer_extension_iface_init (EphyExtensionClass *iface);
-static void ephy_error_viewer_extension_init (EphyErrorViewerExtension *extension);
-
-static void ephy_error_viewer_extension_show_viewer (GtkAction *action, EphyErrorViewerExtension *window);
+static void ephy_error_viewer_extension_class_init	(EphyErrorViewerExtensionClass *klass);
+static void ephy_error_viewer_extension_iface_init	(EphyExtensionClass *iface);
+static void ephy_error_viewer_extension_init		(EphyErrorViewerExtension *extension);
+static void ephy_error_viewer_extension_show_viewer	(GtkAction *action,
+							 EphyErrorViewerExtension *window);
 
 static GtkActionEntry action_entries [] =
 {
@@ -65,14 +65,14 @@ static GtkActionEntry action_entries [] =
 };
 static const guint n_action_entries = G_N_ELEMENTS (action_entries);
 
-static GObjectClass *error_viewer_extension_parent_class = NULL;
+static GObjectClass *parent_class = NULL;
 
-static GType error_viewer_extension_type = 0;
+static GType type = 0;
 
 GType
 ephy_error_viewer_extension_get_type (void)
 {
-	return error_viewer_extension_type;
+	return type;
 }
 
 GType
@@ -98,12 +98,17 @@ ephy_error_viewer_extension_register_type (GTypeModule *module)
 		NULL
 	};
 
-	error_viewer_extension_type =
-		g_type_module_register_type (module, G_TYPE_OBJECT, "EphyErrorViewerExtension", &our_info, 0);
+	type = g_type_module_register_type (module,
+					    G_TYPE_OBJECT,
+					    "EphyErrorViewerExtension",
+					    &our_info, 0);
 	
-	g_type_module_add_interface (module, error_viewer_extension_type, EPHY_TYPE_EXTENSION, &extension_info);
+	g_type_module_add_interface (module,
+				     type,
+				     EPHY_TYPE_EXTENSION,
+				     &extension_info);
 
-	return error_viewer_extension_type;
+	return type;
 }
 
 static void
@@ -132,7 +137,7 @@ ephy_error_viewer_extension_finalize (GObject *object)
 
 	g_object_unref (G_OBJECT (extension->priv->dialog));
 
-	G_OBJECT_CLASS (error_viewer_extension_parent_class)->finalize (object);
+	G_OBJECT_CLASS (parent_class)->finalize (object);
 }
 
 static void
@@ -140,7 +145,7 @@ ephy_error_viewer_extension_class_init (EphyErrorViewerExtensionClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-	error_viewer_extension_parent_class = g_type_class_peek_parent (klass);
+	parent_class = g_type_class_peek_parent (klass);
 
 	object_class->finalize = ephy_error_viewer_extension_finalize;
 

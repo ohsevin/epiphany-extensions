@@ -20,7 +20,12 @@
  *  $Id$
  */
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 #include "ephy-error-viewer-extension.h"
+#include "error-viewer.h"
 #include "ephy-debug.h"
 
 #include <gmodule.h>
@@ -36,6 +41,8 @@ register_module (GTypeModule *module)
 	bindtextdomain (GETTEXT_PACKAGE, EPHY_EXTENSIONS_LOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 #endif /* ENABLE_NLS */
+
+	error_viewer_register_type (module);
 
 	return ephy_error_viewer_extension_register_type (module);
 }

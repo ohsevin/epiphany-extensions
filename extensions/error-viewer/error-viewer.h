@@ -17,22 +17,23 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#ifndef JAVASCRIPT_CONSOLE_H
-#define JAVASCRIPT_CONSOLE_H
+#ifndef ERROR_VIEWER_H
+#define ERROR_VIEWER_H
 
 #include <glib.h>
 #include <glib-object.h>
+#include <gmodule.h>
 
 #include <epiphany/ephy-dialog.h>
 
 G_BEGIN_DECLS
 
-#define TYPE_ERROR_VIEWER (error_viewer_get_type ())
-#define ERROR_VIEWER(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_ERROR_VIEWER, ErrorViewer))
-#define ERROR_VIEWER_CLASS(k) (G_TYPE_CHECK_CLASS_CAST((k), TYPE_ERROR_VIEWER, ErrorViewerClass))
-#define IS_ERROR_VIEWER(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_ERROR_VIEWER))
-#define IS_ERROR_VIEWER_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), TYPE_ERROR_VIEWER))
-#define ERROR_VIEWER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), TYPE_ERROR_VIEWER, ErrorViewerClass))
+#define TYPE_ERROR_VIEWER		(error_viewer_get_type ())
+#define ERROR_VIEWER(o)			(G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_ERROR_VIEWER, ErrorViewer))
+#define ERROR_VIEWER_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), TYPE_ERROR_VIEWER, ErrorViewerClass))
+#define IS_ERROR_VIEWER(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_ERROR_VIEWER))
+#define IS_ERROR_VIEWER_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), TYPE_ERROR_VIEWER))
+#define ERROR_VIEWER_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), TYPE_ERROR_VIEWER, ErrorViewerClass))
 
 typedef struct ErrorViewer		ErrorViewer;
 typedef struct ErrorViewerClass		ErrorViewerClass;
@@ -41,6 +42,8 @@ typedef struct ErrorViewerPrivate	ErrorViewerPrivate;
 struct ErrorViewer
 {
 	EphyDialog parent;
+
+	/*< private >*/
 	ErrorViewerPrivate *priv;
 };
 
@@ -56,15 +59,16 @@ typedef enum
 	ERROR_VIEWER_INFO
 } ErrorViewerErrorType;
 
-GType		error_viewer_get_type	(void);
+GType		error_viewer_get_type		(void);
 
-ErrorViewer	*error_viewer_new	(void);
+GType		error_viewer_register_type	(GTypeModule *module);
 
-void		error_viewer_append	(ErrorViewer *dialog,
-					 ErrorViewerErrorType type,
-					 const gchar *text);
+ErrorViewer    *error_viewer_new		(void);
+
+void		error_viewer_append		(ErrorViewer *dialog,
+						 ErrorViewerErrorType type,
+						 const char *text);
 
 G_END_DECLS
 
 #endif
-
