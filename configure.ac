@@ -161,18 +161,6 @@ dnl *******************************************
 dnl Mozilla (copied from epiphany configure.in)
 dnl *******************************************
 
-need_mozilla_check=no
-
-IFS="${IFS=	}"; ephyext_save_ifs="$IFS"; IFS=","
-for ext in $extensions; do
- if echo "$mozilla_dependent_extensions" | egrep "(^|,)$ext(\$|,)" > /dev/null; then
-   need_mozilla_check=yes
- fi
-done
-IFS="$ephyext_save_ifs"
-
-if test x"$need_mozilla_check" = xyes; then
-
 PKG_CHECK_MODULES(MOZILLA_COMPONENT, mozilla-gtkmozembed)
 AC_SUBST(MOZILLA_COMPONENT_CFLAGS)
 AC_SUBST(MOZILLA_COMPONENT_LIBS)
@@ -265,8 +253,6 @@ resources of the Epiphany team to support non-release Mozilla snapshots.
 esac
 
 AC_DEFINE_UNQUOTED(MOZILLA_SNAPSHOT, $MOZILLA_SNAPSHOT, [Define mozilla snapshot])
-
-fi
 
 dnl *******************************
 dnl Misc things
