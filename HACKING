@@ -1,0 +1,36 @@
+CVS guidelines for ephy-plugins
+*******************************
+
+DO NOT commit to the CVS unless you have been given explicit permission from
+me (chpe+epiphany@stud.uni-saarland.de) or, if you want to check in to
+plugins/someplugin/ directory, from the plugin maintainer.
+(This doesn't apply to certain people, but they know who they are :)
+
+Please send patches for the build & configure infrastructure to me at
+chpe+epiphany@stud.uni-saarland.de.
+
+Send patches for the individual plugins to the maintainer listed in the 
+MAINTAINERS file.
+
+If you are a translator feel free to add new translations, mark strings for
+translation, fix typos in the code, etc.
+
+Coding style
+************
+
+We adhere to the epiphany coding style. For your convenience, here are a few
+guidelines, from epiphany's HACKING file:
+
+In order to keep the code nice and clean we have a few requirements you'll
+need to stick to in order to get your patch accepted:
+
+- use 8-space tabs for indentation
+- curly brackets are on a new line
+- please compare with NULL or FALSE instead of using "!"
+- callback functions have a suffix _cb
+
+  Comment blocks are written like this:
+  
+/**
+ * bla_bla_cb: This is an example comment block
+ */

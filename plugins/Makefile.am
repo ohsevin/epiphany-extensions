@@ -1,0 +1,13 @@
+SUBDIRS =
+
+if ENABLE_PLUGIN_SAMPLE
+SUBDIRS += sample
+endif
+
+#if ENABLE_PLUGIN_GESTURES
+#SUBDIRS += gestures
+#endif
+
+DIST_SUBDIRS = sample
+
+EXTRA_DIST =
