@@ -1,5 +1,11 @@
 2004-03-09  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* NEWS:
+
+	Updated for 0.7.91 release.
+
+2004-03-09  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/popup-blocker/ephy-popup-blocker-list.c: (popup_cmp),
 	(ephy_popup_blocker_list_insert):
 	* extensions/popup-blocker/mozilla/PopupBlockerListener.cpp:

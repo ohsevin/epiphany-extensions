@@ -1,4 +1,11 @@
 ==========================
+Epiphany Extensions 0.7.91
+==========================
+
+Bugfixes
+	* Fix popup-blocker compilation and interaction with Mozilla 1.6 (Adam)
+
+==========================
 Epiphany Extensions 0.7.90
 ==========================
 
