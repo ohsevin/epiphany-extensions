@@ -14,7 +14,7 @@ mozilla_include_subdirs = \
 	xpcom
 
 libadblockmozilla_la_CPPFLAGS = \
-	-I..			\
+	-I$(top_srcdir)/extensions/adblock		\
 	-I$(top_srcdir)/include	\
 	$(addprefix -I$(MOZILLA_INCLUDE_ROOT)/,$(mozilla_include_subdirs))	\
 	-DALLOW_PRIVATE_API		\

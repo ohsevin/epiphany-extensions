@@ -201,9 +201,9 @@ if echo "$extensions" | egrep '(^|,)adblock($|,)' > /dev/null; then
 		AC_ERROR([pcre development files not found])
 	fi
 
-	PCRE_CFLAGS="`$PCRE_CONFIG --cflags`"
+	PCRE_CFLAGS="`$PCRE_CONFIG --cflags-posix`"
 	AC_SUBST([PCRE_CFLAGS])
-	PCRE_LIBS="`$PCRE_CONFIG --libs`"
+	PCRE_LIBS="`$PCRE_CONFIG --libs-posix`"
 	AC_SUBST([PCRE_LIBS])
 fi
 

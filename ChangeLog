@@ -1,3 +1,22 @@
+2005-01-21  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
+	Get CFLAGS and LIBS for POSIX PCRE.
+
+	* extensions/adblock/Makefile.am:
+
+	Use PCRE CFLAGS and LIBS instead of hardcoding things.
+
+	* extensions/adblock/mozilla/Makefile.am:
+
+	Fix builddir != srcdir build.
+
+	* extensions/adblock/mozilla/MozAdBlocker.cpp:
+	* extensions/adblock/mozilla/mozilla-helpers.cpp:
+
+	Fix includes.
+
 2005-01-20  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* configure.ac:

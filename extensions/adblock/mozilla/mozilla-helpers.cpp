@@ -30,7 +30,7 @@
 #include <nsICategoryManager.h>
 #include <nsIComponentRegistrar.h>
 #include <nsIGenericFactory.h>
-#include <nsIServiceManagerUtils.h>
+#include <nsIServiceManager.h>
 #include <nsXPCOM.h>
 
 #include <glib.h>

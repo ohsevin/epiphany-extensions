@@ -29,7 +29,9 @@
 #include <epiphany/ephy-embed.h>
 
 #include <nsCOMPtr.h>
+#define MOZILLA_STRICT_API
 #include <nsEmbedString.h>
+#undef MOZILLA_STRICT_API
 #include <nsIDOMAbstractView.h>
 #include <nsIDOMDocument.h>
 #include <nsIDOMDocumentView.h>
