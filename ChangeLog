@@ -1,5 +1,12 @@
 2004-03-17  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
+	(register_mozilla), (tab_added_cb):
+
+	Don't forget about popups when moving tabs.
+
+2004-03-17  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/popup-blocker/ephy-popup-blocker-list.c:
 	(ephy_popup_blocker_list_remove_window):
 

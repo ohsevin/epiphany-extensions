@@ -442,6 +442,11 @@ register_mozilla (EphyEmbed *embed)
 
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
+	if (g_object_get_data (G_OBJECT (embed), "popup-blocker-listener-data"))
+	{
+		return;
+	}
+
 	data = mozilla_register_popup_listener (embed);
 	g_return_if_fail (data != NULL);
 
@@ -490,11 +495,17 @@ tab_added_cb (GtkWidget *notebook,
 	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
-	popups = ephy_popup_blocker_list_new (embed);
-	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (popups));
+	popups = g_object_get_data (G_OBJECT (embed), "popup-blocker-list");
 
-	g_object_set_data_full (G_OBJECT (embed), "popup-blocker-list", popups,
-				(GDestroyNotify) g_object_unref);
+	if (popups == NULL)
+	{
+		popups = ephy_popup_blocker_list_new (embed);
+		g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (popups));
+
+		g_object_set_data_full (G_OBJECT (embed),
+					"popup-blocker-list", popups,
+					(GDestroyNotify) g_object_unref);
+	}
 
 	icon = get_icon_for_embed (embed);
 	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_ICON (icon));
