@@ -170,12 +170,9 @@ load_status_cb (EphyTab *tab,
 
 static void
 tab_added_cb (GtkWidget *notebook,
-	      EphyEmbed *embed,
+	      EphyTab *tab,
 	      EphyDashboardExtension *extension)
 {
-	EphyTab *tab;
-
-	tab = ephy_tab_for_embed (embed);
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
 	g_signal_connect_after (tab, "notify::load-status",
@@ -183,13 +180,10 @@ tab_added_cb (GtkWidget *notebook,
 }
 
 static void
-tab_removed_cb (EphyEmbed *notebook,
-		EphyEmbed *embed,
+tab_removed_cb (GtkWidget *notebook,
+		EphyTab *tab,
 		EphyDashboardExtension *extension)
 {
-	EphyTab *tab;
-
-	tab = ephy_tab_for_embed (embed);
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
 	g_signal_handlers_disconnect_by_func

@@ -421,12 +421,15 @@ action_activate_cb (GtkAction *action,
 
 static void
 tab_added_cb (GtkWidget *notebook,
-	      EphyEmbed *embed,
+	      EphyTab *tab,
 	      EphyPopupBlockerExtension *extension)
 {
-	EphyTab *tab;
+	EphyEmbed *embed;
 
-	tab = ephy_tab_for_embed (embed);
+	g_return_if_fail (EPHY_IS_TAB (tab));
+
+	embed = ephy_tab_get_embed (tab);
+	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	g_signal_connect (embed, "ge_location",
 			  G_CALLBACK (location_cb), tab);
@@ -437,12 +440,15 @@ tab_added_cb (GtkWidget *notebook,
 
 static void
 tab_removed_cb (GtkWidget *notebook,
-		EphyEmbed *embed,
+		EphyTab *tab,
 		EphyPopupBlockerExtension *extension)
 {
-	EphyTab *tab;
+	EphyEmbed *embed;
 
-	tab = ephy_tab_for_embed (embed);
+	g_return_if_fail (EPHY_IS_TAB (tab));
+
+	embed = ephy_tab_get_embed (tab);
+	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	g_signal_handlers_disconnect_by_func
 		(embed, G_CALLBACK (location_cb), tab);

@@ -214,16 +214,17 @@ sync_security_status (EphyTab *tab,
 
 static void
 tab_added_cb (GtkWidget *notebook,
-	      EphyEmbed *embed,
+	      EphyTab *tab,
 	      EphyWindow *window)
 {
-	EphyTab *tab;
+	EphyEmbed *embed;
 
-	g_return_if_fail (EPHY_IS_EMBED (embed));
-	mozilla_embed_certificate_attach (embed);
-
-	tab = ephy_tab_for_embed (embed);
 	g_return_if_fail (EPHY_IS_TAB (tab));
+
+	embed = ephy_tab_get_embed (tab);	
+	g_return_if_fail (EPHY_IS_EMBED (embed));
+
+	mozilla_embed_certificate_attach (embed);
 
 	g_signal_connect_after (tab, "notify::security-level",
 				G_CALLBACK (sync_security_status), window);
@@ -231,12 +232,9 @@ tab_added_cb (GtkWidget *notebook,
 
 static void
 tab_removed_cb (GtkWidget *notebook,
-		EphyEmbed *embed,
+		EphyTab *tab,
 		EphyWindow *window)
 {
-	EphyTab *tab;
-
-	tab = ephy_tab_for_embed (embed);
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
 	g_signal_handlers_disconnect_by_func
@@ -254,7 +252,6 @@ switch_page_cb (GtkNotebook *notebook,
 	tab = ephy_window_get_active_tab (window);
 	sync_security_status (tab, NULL, window);
 }
-
 
 static void
 padlock_button_press_cb (GtkWidget *ebox,

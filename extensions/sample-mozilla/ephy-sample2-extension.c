@@ -126,18 +126,32 @@ dom_mouse_down_cb (EphyEmbed *embed,
 
 static void
 tab_added_cb (GtkWidget *notebook,
-	      EphyEmbed *embed,
+	      EphyTab *tab,
 	      EphySample2Extension *extension)
 {
+	EphyEmbed *embed;
+
+	g_return_if_fail (EPHY_IS_TAB (tab));
+
+	embed = ephy_tab_get_embed (tab);
+	g_return_if_fail (EPHY_IS_EMBED (embed));
+
 	g_signal_connect (embed, "ge_dom_mouse_down",
 			  G_CALLBACK (dom_mouse_down_cb), extension);
 }
 
 static void
 tab_removed_cb (EphyEmbed *notebook,
-		EphyEmbed *embed,
+		EphyTab *tab,
 		EphySample2Extension *extension)
 {
+	EphyEmbed *embed;
+
+	g_return_if_fail (EPHY_IS_TAB (tab));
+
+	embed = ephy_tab_get_embed (tab);
+	g_return_if_fail (EPHY_IS_EMBED (embed));
+
 	g_signal_handlers_disconnect_by_func
 		(embed, G_CALLBACK (dom_mouse_down_cb), extension);
 }

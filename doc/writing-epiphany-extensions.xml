@@ -437,12 +437,14 @@ location_cb (EphyEmbed *embed, char *address, EphyTab *tab)
 }
 
 static void
-tab_added_cb (GtkWidget *notebook, EphyEmbed *embed, Ephy<replaceable>Foo</replaceable>Extension *extension)
+tab_added_cb (GtkWidget *notebook, EphyTab *tab, Ephy<replaceable>Foo</replaceable>Extension *extension)
 {
-	EphyTab *tab;
+	EphyEmbed *embed;
 
-	tab = ephy_tab_for_embed (embed);
 	g_return_if_fail (EPHY_IS_TAB (tab));
+
+	embed = ephy_tab_get_embed (tab);
+	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	g_signal_connect (G_OBJECT (embed), &quot;ge_location&quot;, G_CALLBACK (location_cb), tab);
 }
@@ -451,12 +453,14 @@ tab_added_cb (GtkWidget *notebook, EphyEmbed *embed, Ephy<replaceable>Foo</repla
 				<para>Free all memory and disconnect all signals when they're not needed. In the case of this <literal>ge_location</literal> signal connection, disconnect the signal when the tab is removed:</para>
 				<programlisting>
 static void
-tab_removed_cb (GtkWidget *notebook, EphyEmbed *embed, Ephy<replaceable>Foo</replaceable>Extension *extension)
+tab_removed_cb (GtkWidget *notebook, EphyTab *tab, Ephy<replaceable>Foo</replaceable>Extension *extension)
 {
-	EphyTab *tab;
+	EphyEmbed *embed;
 
-	tab = ephy_tab_for_embed (embed);
 	g_return_if_fail (EPHY_IS_TAB (tab));
+
+	embed = ephy_tab_get_embed (tab);
+	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	g_signal_handlers_disconnect_by_func
 		(embed, G_CALLBACK (location_cb), tab);

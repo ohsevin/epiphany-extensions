@@ -1,6 +1,6 @@
 /*
- *  Copyright (C) 2003  Marco Pesenti Gritti
- *  Copyright (C) 2003  Christian Persch
+ *  Copyright (C) 2003 Marco Pesenti Gritti
+ *  Copyright (C) 2003, 2004 Christian Persch
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -133,7 +133,6 @@ move_cb (GtkAction *action,
 	EphyWindow *src_win = menu->priv->window;
 	EphyWindow *dest_win;
 	EphyTab *tab;
-	EphyEmbed *embed;
 	GtkWidget *src_nb, *dest_nb;
 
 	dest_win = get_window_from_action (action);
@@ -143,13 +142,12 @@ move_cb (GtkAction *action,
 
 	tab = ephy_window_get_active_tab (src_win);
 	g_return_if_fail (EPHY_IS_TAB (tab));
-	embed = ephy_tab_get_embed (tab);
 
 	src_nb = ephy_window_get_notebook (src_win);
 	dest_nb = ephy_window_get_notebook (dest_win);
 
-	ephy_notebook_move_page (EPHY_NOTEBOOK (src_nb), EPHY_NOTEBOOK (dest_nb),
-				 GTK_WIDGET (embed), -1);
+	ephy_notebook_move_tab (EPHY_NOTEBOOK (src_nb), EPHY_NOTEBOOK (dest_nb),
+				tab, -1);
 
 	ephy_window_jump_to_tab (dest_win, tab);
 }
@@ -266,7 +264,8 @@ update_tab_move_menu_cb (GtkAction *dummy,
 }
 
 static void
-ephy_tab_move_menu_set_window (EphyTabMoveMenu *menu, EphyWindow *window)
+ephy_tab_move_menu_set_window (EphyTabMoveMenu *menu,
+			       EphyWindow *window)
 {
 	GtkAction *action;
 	GtkActionGroup *action_group;
