@@ -1,0 +1,50 @@
+# Slovak translations for epiphany-extensions package.
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# This file is distributed under the same license as the epiphany-extensions package.
+# Marcel Telka <marcel@telka.sk>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: epiphany-extensions\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-01-05 12:41+0100\n"
+"PO-Revision-Date: 2004-01-05 13:02+0100\n"
+"Last-Translator: Marcel Telka <marcel@telka.sk>\n"
+"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural= (n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
+
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
+msgid "Block _Popups from this Site"
+msgstr "Blokovať _vyskakovacie okná z tohoto servera"
+
+#. shortcut key
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:64
+msgid "Block or unblock popup windows"
+msgstr "Zablokovať alebo odblokovať vyskakovacie okná"
+
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:324
+#, c-format
+msgid "%d popup blocked"
+msgid_plural "%d popups blocked"
+msgstr[0] "%d vyskakovacích oknien blokovaných"
+msgstr[1] "%d vyskakovacie okno blokované"
+msgstr[2] "%d vyskakovacie okná blokované"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:181
+#, c-format
+msgid "Window '%s' (%d tab)"
+msgid_plural "Window '%s' (%d tabs)"
+msgstr[0] "Okno '%s' (%d kariet)"
+msgstr[1] "Okno '%s' (%d karta)"
+msgstr[2] "Okno '%s' (%d karty)"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:272
+msgid "Move Tab To Window"
+msgstr "Presunúť kartu do okna"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:273
+msgid "Move the current tab to a different window"
+msgstr "Presunúť aktuálnu kartu do iného okna"
