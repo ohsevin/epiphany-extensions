@@ -79,7 +79,7 @@ dnl *******************************
 
 AC_MSG_CHECKING(extensions to build)
 
-all_extensions="sample,gestures,tabsmenu,zoom-persistence"
+all_extensions="sample,gestures,tabsmenu,zoom-persistence,dashboard"
 all_useful_extensions="gestures,tabsmenu,zoom-persistence"
 default_extensions="gestures"
 
@@ -89,7 +89,8 @@ dnl AC_HELP_STRING([--with-extensions=ext1,ext2,...],[build the specified extens
 AC_ARG_WITH(extensions,
 [  --with-extensions=extension1,extension2,...
 			  build the specified extensions. Available:
-			  sample, gestures, tabsmenu, zoom-persistence, all])
+			  sample, gestures, tabsmenu, zoom-persistence,
+			  dashboard, all])
 
 dnl If no extensions specified, build the default set
 if test "x$with_extensions" = xyes; then
@@ -122,6 +123,7 @@ AM_CONDITIONAL(ENABLE_PLUGIN_SAMPLE, echo "$extensions" | egrep '(^|,)sample($|,
 AM_CONDITIONAL(ENABLE_PLUGIN_GESTURES, echo "$extensions" | egrep '(^|,)gestures($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_PLUGIN_TABSMENU, echo "$extensions" | egrep '(^|,)tabsmenu($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_PLUGIN_ZOOM_PERSISTENCE, echo "$extensions" | egrep '(^|,)zoom-persistence($|,)' > /dev/null)
+AM_CONDITIONAL(ENABLE_PLUGIN_DASHBOARD, echo "$extensions" | egrep '(^|,)dashboard($|,)' > /dev/null)
 
 dnl *******************************
 dnl Misc things
@@ -159,6 +161,7 @@ plugins/sample/Makefile
 plugins/gestures/Makefile
 plugins/tabsmenu/Makefile
 plugins/zoom-persistence/Makefile
+plugins/dashboard/Makefile
 po/Makefile.in
 ],
 [])

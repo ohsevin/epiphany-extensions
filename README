@@ -13,8 +13,12 @@ where ext1, ext2 ... are one of the following:
 gestures		Gestures extensions
 tabsmenu		Tabs Menu extension
 zoom-persistence	Zoom persistence extension
+dashboard		Dashboard extension (http://www.nat.org/dashboard)
 all			All of the above extensions
 sample			Sample extensions [not very useful]
 
 Remember that for the tabsmenu plugin to work, you need to apply the patch in
 plugins/tabsmenu/epiphany.diff, see plugins/tabsmenu/README.
+
+For the dashboard plugin to work, you need to apply the patch in
+plugins/dashboard/epiphany.diff.  See plugins/dashboard/README.
