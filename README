@@ -1,2 +1,5 @@
+For the moment, you have to ./configure with --prefix=same prefix as you configured
+epiphany with.
+
 Please see the README files in the plugin subdirs for information about the
 plugins.

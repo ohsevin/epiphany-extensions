@@ -1,0 +1,5 @@
+plugins/gestures/gestures.c
+plugins/gestures/ephy-gestures.h
+plugins/gestures/ephy-gestures.c
+plugins/gestures/ephy-gestures.xml
+include/ephy-dnd.h

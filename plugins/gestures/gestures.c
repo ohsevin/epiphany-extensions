@@ -34,7 +34,6 @@
 
 #include <gmodule.h>
 #include <glib-object.h>
-#include <gconf/gconf.h>
 #include <libxml/tree.h>
 
 static GHashTable *gestures = NULL;
@@ -322,15 +321,15 @@ setup_actions (EphyWindow *window)
 static void
 new_window_cb (Session *session, EphyWindow *window)
 {
-	GtkWidget *nb;
+	GtkWidget *notebook;
 
 	setup_actions (window);
 
-	nb = ephy_window_get_notebook (window);
+	notebook = ephy_window_get_notebook (window);
 
-	g_signal_connect (nb, "tab_added",
+	g_signal_connect (notebook, "tab_added",
 			  G_CALLBACK (tab_added_cb), NULL);
-	g_signal_connect (nb, "tab_removed",
+	g_signal_connect (notebook, "tab_removed",
 			  G_CALLBACK (tab_removed_cb), NULL);
 }
 

@@ -1,5 +1,12 @@
 2003-08-01  Christian Persch  <chpe@cvs.gnome.org>
 
+	* NEWS:
+	* configure.in:
+
+	Update for 0.1.0 release.
+
+2003-08-01  Christian Persch  <chpe@cvs.gnome.org>
+
 	* include/:
 
 	Include some egg headers from epiphany.	
