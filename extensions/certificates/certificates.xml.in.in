@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <extension>
 	<_name>Certificates</_name>
-	<_description>View the current page's certificate, and access the certificates manager</_description>
+	<_description>View the page certificate and manage the certificates</_description>
 	<author>Christian Persch &lt;chpe@gnome.org&gt;</author>
 	<url>http://www.gnome.org/projects/epiphany/extensions.html</url>
 	<version>1</version>

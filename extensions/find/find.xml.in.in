@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <extension>
 	<_name>Find</_name>
-	<_description>Find toolbar playground</_description>
+	<_description>Replace the find dialog with a find toolbar</_description>
 	<author>Christian Persch &lt;chpe@gnome.org&gt;</author>
 	<url>http://www.gnome.org/projects/epiphany/extensions.html</url>
 	<version>1</version>

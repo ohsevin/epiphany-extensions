@@ -1,5 +1,20 @@
 2005-02-27  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/actions/actions.xml.in.in:
+	* extensions/bookmarks-tray/bookmarks-tray.xml.in.in:
+	* extensions/certificates/certificates.xml.in.in:
+	* extensions/find/find.xml.in.in:
+	* extensions/net-monitor/net-monitor.xml.in.in:
+	* extensions/page-info/page-info.xml.in.in:
+	* extensions/select-stylesheet/select-stylesheet.xml.in.in:
+	* extensions/sidebar/sidebar.xml.in.in:
+	* po/POTFILES.in:
+	* po/POTFILES.skip:
+
+	Enable extension description translations.
+
+2005-02-27  Christian Persch  <chpe@cvs.gnome.org>
+
 	* configure.ac:
 
 	Post-release version bump.

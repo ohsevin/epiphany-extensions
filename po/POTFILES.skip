@@ -10,24 +10,6 @@ extensions/sidebar/ephy-sidebar-embed.c
 extensions/sidebar/sidebar-commands.c
 
 #don't translate those, until we've reviewed the strings:
-extensions/actions/actions.xml.in.in
 extensions/adblock/adblock.xml.in.in
-extensions/bookmarks-tray/bookmarks-tray.xml.in.in
-extensions/certificates/certificates.xml.in.in
-extensions/dashboard/dashboard.xml.in.in
-extensions/error-viewer/error-viewer.xml.in.in
-extensions/find/find.xml.in.in
-extensions/gestures/gestures.xml.in.in
-extensions/net-monitor/net-monitor.xml.in.in
-extensions/page-info/page-info.xml.in.in
-extensions/sample-mozilla/sample-mozilla.xml.in.in
-extensions/sample/sample.xml.in.in
-extensions/select-stylesheet/select-stylesheet.xml.in.in
-extensions/sidebar/sidebar.xml.in.in
-extensions/smart-bookmarks/smart-bookmarks.xml.in.in
-extensions/tab-groups/tab-groups.xml.in.in
-extensions/tab-states/tab-states.xml.in.in
-extensions/tabsmenu/tabsmenu.xml.in.in
 extensions/toolbar-extras/toolbar-extras.xml.in.in
-extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in
 

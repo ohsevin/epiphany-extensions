@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <extension>
 	<_name>Page Info</_name>
-	<_description>Display information and links from web pages</_description>
+	<_description>Display information about and links and media from the current page</_description>
 	<author>Adam Hooper &lt;adamh@cvs.gnome.org&gt;</author>
 	<author>Christian Persch &lt;chpe@gnome.org&gt;</author>
 	<url>http://www.gnome.org/projects/epiphany/extensions.html</url>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <extension>
 	<_name>Actions</_name>
-	<_description>Associate commands to pages, links and images</_description>
+	<_description>Execute arbitrary commands from the context menu</_description>
 	<author>Jean-Yves Lefort &lt;jylefort@brutele.be&gt;</author>
 	<url>http://www.gnome.org/projects/epiphany/extensions.html</url>
 	<version>1</version>
