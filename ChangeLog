@@ -1,5 +1,12 @@
 2004-04-05  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/error-viewer/link-checker.c:
+	(link_checker_append_internal):
+
+	Fix compilation with gcc 2.95 (patch taken from FreeBSD ports).
+
+2004-04-05  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/dashboard/dashboard-frontend-xmlwriter.c:
 
 	Include sys/time.h (patch taken from FreeBSD ports).
