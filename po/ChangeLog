@@ -1,3 +1,10 @@
+2004-01-23  Danilo Šegan  <dsegan@gmx.net>
+
+	* sr.po, sr@Latn.po: Updated Serbian translation.
+
+	* POTFILES.in: Added
+	extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp.
+
 2004-01-22  Christian Persch  <chpe@cvs.gnome.org>
 
 	* POTFILES.in: Added error-viewer glade file.

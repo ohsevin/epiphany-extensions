@@ -2,5 +2,6 @@
 # Please keep this file sorted alphabetically.
 extensions/error-viewer/ephy-error-viewer-extension.c
 extensions/error-viewer/error-viewer.glade
+extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp
 extensions/popup-blocker/ephy-popup-blocker-extension.c
 extensions/tabsmenu/ephy-tab-move-menu.c
