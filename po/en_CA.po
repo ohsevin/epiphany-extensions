@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-18 17:51-0500\n"
-"PO-Revision-Date: 2004-11-18 16:10-0400\n"
+"POT-Creation-Date: 2004-12-22 21:31-0500\n"
+"PO-Revision-Date: 2004-12-22 16:10-0400\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: English/Canada <adamw@FreeBSD.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,39 +17,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
 msgid "_Edit Bookmarks"
 msgstr "_Edit Bookmarks"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
 msgid "Open the bookmarks window"
 msgstr "Open the bookmarks window"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
 msgid "Open in _Current Tab"
 msgstr "Open in _Current Tab"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
-msgid "Opens bookmarks in the current tab of the active window"
-msgstr "Opens bookmarks in the current tab of the active window"
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:446
+msgid "Open bookmarks in the current tab of the active window"
+msgstr "Open bookmarks in the current tab of the active window"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:448
 msgid "Open in New _Tab"
 msgstr "Open in New _Tab"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
-msgid "Opens bookmarks in a newt tab of the active window"
-msgstr "Opens bookmarks in a new tab of the active window"
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:449
+msgid "Open bookmarks in a new tab of the active window"
+msgstr "Open bookmarks in a new tab of the active window"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:451
 msgid "Open in New _Window"
 msgstr "Open in New _Window"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
-msgid "Opens bookmarks in a new window"
-msgstr "Opens bookmarks in a new window"
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:452
+msgid "Open bookmarks in new a window"
+msgstr "Open bookmarks in new a window"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:513
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:520
 msgid "Bookmarks"
 msgstr "Bookmarks"
 
@@ -150,7 +150,7 @@ msgid_plural "Checking %d Links on %s"
 msgstr[0] "Checking %d Link on %s"
 msgstr[1] "Checking %d Links on %s"
 
-#: extensions/error-viewer/opensp/validate.cpp:169
+#: extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
 msgid ""
 "HTML error in %s on line %s:\n"
@@ -228,17 +228,11 @@ msgstr "_Extensions"
 msgid "Load and unload extensions"
 msgstr "Load and unload extensions"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.c:227
-msgid "Author:"
-msgid_plural "Authors:"
-msgstr[0] "Author:"
-msgstr[1] "Authors:"
-
-#: extensions/extensions-manager-ui/extensions-manager-ui.c:410
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:357
 msgid "Enabled"
 msgstr "Enabled"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.c:417
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:364
 msgid "Description"
 msgstr "Description"
 
@@ -247,29 +241,8 @@ msgid "<b>Loaded Extensions</b>"
 msgstr "<b>Loaded Extensions</b>"
 
 #: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
-#: extensions/page-info/page-info.glade.h:9
-msgid "DYNAMIC"
-msgstr "DYNAMIC"
-
-#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:3
-msgid "Description:"
-msgstr "Description:"
-
-#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:4
-msgid "Extension Information"
-msgstr "Extension Information"
-
-#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:5
 msgid "Extensions"
 msgstr "Extensions"
-
-#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:6
-msgid "Name:"
-msgstr "Name:"
-
-#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:7
-msgid "URL:"
-msgstr "URL:"
 
 #: extensions/page-info/ephy-page-info-extension.c:66
 msgid "_Page Info"
@@ -279,213 +252,242 @@ msgstr "_Page Info"
 msgid "Display page information in a dialog"
 msgstr "Display page information in a dialogue"
 
-#: extensions/page-info/page-info-dialog.c:638
+#: extensions/page-info/page-info-dialog.c:640
 msgid "Unknown type"
 msgstr "Unknown type"
 
-#: extensions/page-info/page-info-dialog.c:643
+#: extensions/page-info/page-info-dialog.c:645
 msgid "Full standards compliance"
 msgstr "Full standards compliance"
 
-#: extensions/page-info/page-info-dialog.c:646
+#: extensions/page-info/page-info-dialog.c:648
 msgid "Almost standards compliance"
 msgstr "Almost standards compliance"
 
-#: extensions/page-info/page-info-dialog.c:649
+#: extensions/page-info/page-info-dialog.c:651
 msgid "Compatibility"
 msgstr "Compatibility"
 
-#: extensions/page-info/page-info-dialog.c:652
+#: extensions/page-info/page-info-dialog.c:654
 msgid "Undetermined"
 msgstr "Undetermined"
 
-#: extensions/page-info/page-info-dialog.c:661
+#: extensions/page-info/page-info-dialog.c:663
 msgid "Not cached"
 msgstr "Not cached"
 
-#: extensions/page-info/page-info-dialog.c:664
+#: extensions/page-info/page-info-dialog.c:666
 msgid "Disk cache"
 msgstr "Disk cache"
 
-#: extensions/page-info/page-info-dialog.c:667
+#: extensions/page-info/page-info-dialog.c:669
 msgid "Memory cache"
 msgstr "Memory cache"
 
-#: extensions/page-info/page-info-dialog.c:670
+#: extensions/page-info/page-info-dialog.c:672
 msgid "Unknown cache"
 msgstr "Unknown cache"
 
-#: extensions/page-info/page-info-dialog.c:686
+#: extensions/page-info/page-info-dialog.c:688
+#: extensions/page-info/page-info-dialog.c:808
 msgid "Unknown"
 msgstr "Unknown"
 
-#: extensions/page-info/page-info-dialog.c:691
+#: extensions/page-info/page-info-dialog.c:693
 msgid "No referrer"
 msgstr "No referrer"
 
-#: extensions/page-info/page-info-dialog.c:705
-#: extensions/page-info/page-info-dialog.c:721
+#: extensions/page-info/page-info-dialog.c:707
+#: extensions/page-info/page-info-dialog.c:723
 msgid "Not specified"
 msgstr "Not specified"
 
-#: extensions/page-info/page-info-dialog.c:815
-msgid "Save Image As..."
-msgstr "Save Image As..."
+#: extensions/page-info/page-info-dialog.c:793
+msgid "Image"
+msgstr "Image"
 
-#: extensions/page-info/page-info-dialog.c:897
-msgid "_Open Image"
-msgstr "_Open Image"
+#: extensions/page-info/page-info-dialog.c:796
+msgid "Embed"
+msgstr "Embed"
 
-#: extensions/page-info/page-info-dialog.c:903
-msgid "_Copy Image Address"
-msgstr "_Copy Image Address"
+#: extensions/page-info/page-info-dialog.c:799
+msgid "Object"
+msgstr "Object"
 
-#: extensions/page-info/page-info-dialog.c:909
-msgid "_Use Image as Background"
-msgstr "_Use Image as Background"
+#: extensions/page-info/page-info-dialog.c:802
+msgid "Applet"
+msgstr "Applet"
 
-#: extensions/page-info/page-info-dialog.c:915
-#: extensions/page-info/page-info.glade.h:26
-msgid "_Save Image As..."
-msgstr "_Save Image As..."
+#: extensions/page-info/page-info-dialog.c:805
+msgid "Icon"
+msgstr "Icon"
 
-#: extensions/page-info/page-info-dialog.c:1004
-#: extensions/page-info/page-info-dialog.c:1222
-msgid "URL"
-msgstr "URL"
+#: extensions/page-info/page-info-dialog.c:961
+msgid "Save Medium As..."
+msgstr "Save Medium As..."
 
-#: extensions/page-info/page-info-dialog.c:1016
-msgid "Alt Text"
-msgstr "Alt Text"
+#: extensions/page-info/page-info-dialog.c:976
+msgid "Select a directory"
+msgstr "Select a directory"
 
-#: extensions/page-info/page-info-dialog.c:1028
-#: extensions/page-info/page-info-dialog.c:1234
-msgid "Title"
-msgstr "Title"
+#: extensions/page-info/page-info-dialog.c:1074
+msgid "_Open"
+msgstr "_Open"
 
-#: extensions/page-info/page-info-dialog.c:1040
-msgid "Width"
-msgstr "Width"
-
-#: extensions/page-info/page-info-dialog.c:1052
-msgid "Height"
-msgstr "Height"
-
-#: extensions/page-info/page-info-dialog.c:1188
+#: extensions/page-info/page-info-dialog.c:1080
+#: extensions/page-info/page-info-dialog.c:1429
 msgid "_Copy Link Address"
 msgstr "_Copy Link Address"
 
-#: extensions/page-info/page-info-dialog.c:1246
+#: extensions/page-info/page-info-dialog.c:1086
+msgid "_Use as Background"
+msgstr "_Use as Background"
+
+#: extensions/page-info/page-info-dialog.c:1092
+msgid "_Save As..."
+msgstr "_Save As..."
+
+#: extensions/page-info/page-info-dialog.c:1233
+#: extensions/page-info/page-info-dialog.c:1463
+msgid "URL"
+msgstr "URL"
+
+#: extensions/page-info/page-info-dialog.c:1245
+msgid "Type"
+msgstr "Type"
+
+#: extensions/page-info/page-info-dialog.c:1257
+msgid "Alt Text"
+msgstr "Alt Text"
+
+#: extensions/page-info/page-info-dialog.c:1269
+#: extensions/page-info/page-info-dialog.c:1475
+msgid "Title"
+msgstr "Title"
+
+#: extensions/page-info/page-info-dialog.c:1281
+msgid "Width"
+msgstr "Width"
+
+#: extensions/page-info/page-info-dialog.c:1293
+msgid "Height"
+msgstr "Height"
+
+#: extensions/page-info/page-info-dialog.c:1487
 msgid "Relation"
 msgstr "Relation"
 
-#: extensions/page-info/page-info-dialog.c:1357
+#: extensions/page-info/page-info-dialog.c:1595
 msgid "Name"
 msgstr "Name"
 
-#: extensions/page-info/page-info-dialog.c:1369
+#: extensions/page-info/page-info-dialog.c:1607
 msgid "Method"
 msgstr "Method"
 
-#: extensions/page-info/page-info-dialog.c:1381
+#: extensions/page-info/page-info-dialog.c:1619
 msgid "Action"
 msgstr "Action"
 
 #: extensions/page-info/page-info.glade.h:1
-msgid "*"
-msgstr "*"
-
-#: extensions/page-info/page-info.glade.h:2
 msgid "<b>Forms In Page</b>"
 msgstr "<b>Forms In Page</b>"
 
-#: extensions/page-info/page-info.glade.h:3
-msgid "<b>Image View</b>"
-msgstr "<b>Image View</b>"
-
-#: extensions/page-info/page-info.glade.h:4
-msgid "<b>Images In Page</b>"
-msgstr "<b>Images In Page</b>"
-
-#: extensions/page-info/page-info.glade.h:5
+#: extensions/page-info/page-info.glade.h:2
 msgid "<b>Links In Page</b>"
 msgstr "<b>Links In Page</b>"
 
-#: extensions/page-info/page-info.glade.h:6
+#: extensions/page-info/page-info.glade.h:3
+msgid "<b>Media In Page</b>"
+msgstr "<b>Media In Page</b>"
+
+#: extensions/page-info/page-info.glade.h:4
+msgid "<b>Medium View</b>"
+msgstr "<b>Medium View</b>"
+
+#: extensions/page-info/page-info.glade.h:5
 msgid "<b>Rendering</b>"
 msgstr "<b>Rendering</b>"
 
-#: extensions/page-info/page-info.glade.h:7
+#: extensions/page-info/page-info.glade.h:6
 msgid "<b>Source File</b>"
 msgstr "<b>Source File</b>"
 
-#: extensions/page-info/page-info.glade.h:8
+#: extensions/page-info/page-info.glade.h:7
 msgid "<b>Web Page</b>"
 msgstr "<b>Web Page</b>"
 
-#: extensions/page-info/page-info.glade.h:10
+#: extensions/page-info/page-info.glade.h:8
+msgid "DYNAMIC"
+msgstr "DYNAMIC"
+
+#: extensions/page-info/page-info.glade.h:9
 msgid "Encoding:"
 msgstr "Encoding:"
 
-#: extensions/page-info/page-info.glade.h:11
+#: extensions/page-info/page-info.glade.h:10
 msgid "Expires:"
 msgstr "Expires:"
 
-#: extensions/page-info/page-info.glade.h:12
+#: extensions/page-info/page-info.glade.h:11
 msgid "Forms"
 msgstr "Forms"
 
-#: extensions/page-info/page-info.glade.h:13
+#: extensions/page-info/page-info.glade.h:12
 msgid "General"
 msgstr "General"
 
-#: extensions/page-info/page-info.glade.h:14
-msgid "Images"
-msgstr "Images"
-
-#: extensions/page-info/page-info.glade.h:15
+#: extensions/page-info/page-info.glade.h:13
 msgid "Links"
 msgstr "Links"
 
-#: extensions/page-info/page-info.glade.h:16
+#: extensions/page-info/page-info.glade.h:14
 msgid "Location:"
 msgstr "Location:"
 
-#: extensions/page-info/page-info.glade.h:17
+#: extensions/page-info/page-info.glade.h:15
 msgid "MIME type:"
 msgstr "MIME type:"
 
-#: extensions/page-info/page-info.glade.h:18
+#: extensions/page-info/page-info.glade.h:16
+msgid "Media"
+msgstr "Media"
+
+#: extensions/page-info/page-info.glade.h:17
 msgid "Mode:"
 msgstr "Mode:"
 
-#: extensions/page-info/page-info.glade.h:19
+#: extensions/page-info/page-info.glade.h:18
 msgid "Modified:"
 msgstr "Modified:"
 
-#: extensions/page-info/page-info.glade.h:20
+#: extensions/page-info/page-info.glade.h:19
 msgid "Page Properties"
 msgstr "Page Properties"
 
-#: extensions/page-info/page-info.glade.h:21
+#: extensions/page-info/page-info.glade.h:20
 msgid "Referrer:"
 msgstr "Referrer:"
 
-#: extensions/page-info/page-info.glade.h:22
+#: extensions/page-info/page-info.glade.h:21
 msgid "Size:"
 msgstr "Size:"
 
-#: extensions/page-info/page-info.glade.h:23
+#: extensions/page-info/page-info.glade.h:22
 msgid "Source:"
 msgstr "Source:"
 
-#: extensions/page-info/page-info.glade.h:24
+#: extensions/page-info/page-info.glade.h:23
 msgid "Title:"
 msgstr "Title:"
 
-#: extensions/page-info/page-info.glade.h:25
+#: extensions/page-info/page-info.glade.h:24
 msgid "Type:"
 msgstr "Type:"
+
+#: extensions/page-info/page-info.glade.h:25
+msgid "_Save Media As..."
+msgstr "_Save Media As..."
 
 #: extensions/select-stylesheet/ephy-css-menu.c:147
 msgid "Render the page without using a style"
@@ -500,11 +502,11 @@ msgstr "Render the page using the default style"
 msgid "Render the page using the \"%s\" style"
 msgstr "Render the page using the \"%s\" style"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:293
+#: extensions/select-stylesheet/ephy-css-menu.c:311
 msgid "St_yle"
 msgstr "St_yle"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:294
+#: extensions/select-stylesheet/ephy-css-menu.c:312
 msgid "Select a different style for this page"
 msgstr "Select a different style for this page"
 
@@ -546,25 +548,25 @@ msgstr "_Add Sidebar"
 msgid "No Sidebars installed"
 msgstr "No Sidebars installed"
 
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:553
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:570
 msgid "_Look Up"
 msgstr "_Look Up"
 
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:560
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:577
 msgid "_GNOME Dictionary"
 msgstr "_GNOME Dictionary"
 
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:567
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:584
 msgid "Loo_k-Up Preferences"
 msgstr "Loo_k-Up Preferences"
 
 #. shortcut key
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:569
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:586
 msgid "Look up your selection"
 msgstr "Look up your selection"
 
 #: extensions/smart-bookmarks/smart-bookmarks.glade.h:1
-msgid "Add Gnome Dictionary to the menu"
+msgid "Add GNOME Dictionary to the menu"
 msgstr "Add GNOME Dictionary to the menu"
 
 #: extensions/smart-bookmarks/smart-bookmarks.glade.h:2
@@ -575,17 +577,17 @@ msgstr "Look Up Preferences"
 msgid "Open search results in a new tab"
 msgstr "Open search results in a new tab"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:183
+#: extensions/tabsmenu/ephy-tab-move-menu.c:181
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"
 msgstr[0] "Window '%s' (%d tab)"
 msgstr[1] "Window '%s' (%d tabs)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:282
+#: extensions/tabsmenu/ephy-tab-move-menu.c:296
 msgid "Move Tab To Window"
 msgstr "Move Tab To Window"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:283
+#: extensions/tabsmenu/ephy-tab-move-menu.c:297
 msgid "Move the current tab to a different window"
 msgstr "Move the current tab to a different window"
