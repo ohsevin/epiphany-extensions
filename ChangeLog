@@ -1,5 +1,12 @@
 2004-02-01  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/tabsmenu/ephy-tab-move-menu.c:
+	(update_tab_move_menu_cb):
+
+	NULL terminate the arg list of g_object_set().
+
+2004-02-01  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/Makefile.am:
 
 	Fix DIST_SUBDIRS.

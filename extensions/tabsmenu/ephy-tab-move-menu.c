@@ -258,7 +258,7 @@ update_tab_move_menu_cb (GtkAction *dummy,
 	g_list_foreach (windows, (GFunc) add_action_and_menu_item, menu);
 
 	action = gtk_ui_manager_get_action (p->manager, SUBMENU_PATH);
-	g_object_set (G_OBJECT (action), "sensitive", g_list_length (windows) > 1);
+	g_object_set (G_OBJECT (action), "sensitive", g_list_length (windows) > 1, NULL);
 
 	g_list_free (windows);
 
