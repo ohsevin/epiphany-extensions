@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany Plugins 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-01-23 23:11+0100\n"
+"POT-Creation-Date: 2004-01-25 11:33+0100\n"
 "PO-Revision-Date: 2004-01-23 21:59+0200\n"
 "Last-Translator: Christian Persch  <chpe@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
@@ -18,12 +18,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:61
+#: extensions/error-viewer/ephy-error-viewer-extension.c:80
+msgid "_Validate"
+msgstr "_Validieren"
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:82
+msgid "Display HTML errors in the Error Viewer dialog"
+msgstr "Zeight HTML-Fehler im Fehlerbetracher an"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:87
 msgid "Errors"
 msgstr "Fehler"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:63
+#: extensions/error-viewer/ephy-error-viewer-extension.c:89
 msgid "Display web page errors"
 msgstr "Zeigt Fehler in der Seite an"
 

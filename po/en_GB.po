@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany Plugins 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-01-23 23:10+0100\n"
+"POT-Creation-Date: 2004-01-25 11:33+0100\n"
 "PO-Revision-Date: 2003-08-03 18:28+0000\n"
 "Last-Translator: Christian Persch <chpe+ephyplugins@stud.uni-saarland.de>\n"
 "Language-Team: British English\n"
@@ -19,12 +19,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:61
+#: extensions/error-viewer/ephy-error-viewer-extension.c:80
+msgid "_Validate"
+msgstr "_Validate"
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:82
+msgid "Display HTML errors in the Error Viewer dialog"
+msgstr "Display HTML errors in the Error Viewer dialogue"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:87
 msgid "Errors"
 msgstr "Errors"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:63
+#: extensions/error-viewer/ephy-error-viewer-extension.c:89
 msgid "Display web page errors"
 msgstr "Display web page errors"
 
