@@ -1,3 +1,11 @@
+2004-03-21  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
+	Version 1.1.0.
+	Update Epiphany dependency to >= 1.3.0, and glib/gtk+ dependency
+	to >= 2.4.0.
+
 2004-03-20  Anders Carlsson  <andersca@gnome.org>
 
 	* extensions/popup-blocker/ephy-popup-blocker-extension.c:

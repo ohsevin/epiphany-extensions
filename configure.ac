@@ -16,7 +16,7 @@ dnl 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 dnl
 dnl $Id$
 
-AC_INIT([Epiphany Extensions], [0.7.91], [http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+AC_INIT([Epiphany Extensions], [1.1.0], [http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 
 AC_PREREQ(2.57)
 
@@ -70,10 +70,10 @@ dnl ********************************
 dnl pkg config checks
 dnl ********************************
 
-EPIPHANY_REQUIRED=1.1.11
+EPIPHANY_REQUIRED=1.3.0
 LIBXML_REQUIRED=2.6.0
-LIBGLIB_REQUIRED=2.3.3
-LIBGTK_REQUIRED=2.3.4
+LIBGLIB_REQUIRED=2.4.0
+LIBGTK_REQUIRED=2.4.0
 
 AC_SUBST(EPIPHANY_REQUIRED)
 AC_SUBST(LIBXML_REQUIRED)
@@ -87,7 +87,7 @@ PKG_CHECK_MODULES(EPIPHANY_DEPENDENCY, \
 		  glib-2.0 >= $LIBGLIB_REQUIRED \
 		  gmodule-2.0 \
 		  gtk+-2.0 >= $LIBGTK_REQUIRED \
-		  epiphany-1.2 >= $EPIPHANY_REQUIRED)
+		  epiphany-1.4 >= $EPIPHANY_REQUIRED)
 AC_SUBST(EPIPHANY_DEPENDENCY_CFLAGS)
 AC_SUBST(EPIPHANY_DEPENDENCY_LIBS)
 
