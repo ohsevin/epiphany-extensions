@@ -1,21 +1,3 @@
-INCLUDES = \
-	-I..						\
-	-I$(top_srcdir)/include				\
-	$(MOZILLA_COMPONENT_CFLAGS)			\
-	-I$(MOZILLA_INCLUDE_ROOT)/content		\
-	-I$(MOZILLA_INCLUDE_ROOT)/docshell		\
-	-I$(MOZILLA_INCLUDE_ROOT)/dom			\
-	-I$(MOZILLA_INCLUDE_ROOT)/xpcom			\
-	-I$(MOZILLA_INCLUDE_ROOT)			\
-	$(EPIPHANY_DEPENDENCY_CFLAGS) 			\
-	-DSHARE_DIR=\"$(pkgdatadir)\"   		\
-	-include $(MOZILLA_INCLUDE_ROOT)/mozilla-config.h
-
-if MAINTAINER_MODE
-INCLUDES += -DGTK_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGDK_PIXBUF_DISABLE_DEPRECATED \
-	-DGNOME_DISABLE_DEPRECATED -DBONOBO_DISABLE_DEPRECATED $(WARN_CXXFLAGS)
-endif
-
 noinst_LTLIBRARIES = libadblockmozilla.la
 
 libadblockmozilla_la_SOURCES = 	\
@@ -23,3 +5,23 @@ libadblockmozilla_la_SOURCES = 	\
 	MozAdBlocker.h		\
 	mozilla-helpers.cpp	\
 	mozilla-helpers.h
+
+mozilla_include_subdirs = \
+	.		\
+	content		\
+	docshell	\
+	dom		\
+	xpcom
+
+libadblockmozilla_la_CPPFLAGS = \
+	-I..			\
+	-I$(top_srcdir)/include	\
+	$(addprefix -I$(MOZILLA_INCLUDE_ROOT)/,$(mozilla_include_subdirs))	\
+	-DALLOW_PRIVATE_API		\
+	-DSHARE_DIR=\"$(pkgdatadir)\"   \
+	$(AM_CPPFLAGS)
+
+libadblockmozilla_la_CXXFLAGS = \
+	$(MOZILLA_COMPONENT_CFLAGS)	\
+	$(EPIPHANY_DEPENDENCY_CFLAGS) 	\
+	$(AM_CXXFLAGS)

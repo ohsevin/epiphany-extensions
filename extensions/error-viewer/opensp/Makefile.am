@@ -1,18 +1,16 @@
-INCLUDES = \
-	-I..					\
-	-I$(top_srcdir)/include			\
-	-I$(top_srcdir)/extensions/error-viewer	\
-	$(EPIPHANY_DEPENDENCY_CFLAGS)		\
-	-DSHARE_DIR=\"$(pkgdatadir)\"		\
-	-include $(MOZILLA_INCLUDE_ROOT)/mozilla-config.h
-
-if MAINTAINER_MODE
-INCLUDES += -DGTK_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGDK_PIXBUF_DISABLE_DEPRECATED \
-	-DGNOME_DISABLE_DEPRECATED -DBONOBO_DISABLE_DEPRECATED $(WARN_CXXFLAGS)
-endif
-
 noinst_LTLIBRARIES = liberrorvieweropensp.la
 
 liberrorvieweropensp_la_SOURCES = \
 	validate.cpp	\
 	validate.h
+
+liberrorvieweropensp_la_CPPFLAGS = \
+	-I..						\
+	-I$(top_srcdir)/include				\
+	-I$(top_srcdir)/extensions/error-viewer		\
+	-DSHARE_DIR=\"$(pkgdatadir)\"   \
+	$(AM_CPPFLAGS)
+
+liberrorvieweropensp_la_CXXFLAGS = \
+	$(EPIPHANY_DEPENDENCY_CFLAGS) 	\
+	$(AM_CXXFLAGS)

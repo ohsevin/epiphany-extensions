@@ -1,15 +1,4 @@
 extensiondir = $(EXTENSIONS_DIR)
-
-INCLUDES = 				\
-	-I$(top_srcdir)/include		\
-	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
-	-DSHARE_DIR=\"$(pkgdatadir)\"	\
-	-DG_DISABLE_DEPRECATED		\
-	-DGDK_DISABLE_DEPRECATED	\
-	-DGTK_DISABLE_DEPRECATED	\
-	-DGDK_PIXBUF_DISABLE_DEPRECATED	\
-	-DGNOME_DISABLE_DEPRECATED
-
 extension_LTLIBRARIES = libgesturesextension.la
 
 libgesturesextension_la_SOURCES = 	\
@@ -21,9 +10,18 @@ libgesturesextension_la_SOURCES = 	\
 	stroke.c			\
 	stroke.h
 
+libgesturesextension_la_CPPFLAGS = \
+        -I$(top_srcdir)/include				\
+	-DSHARE_DIR=\"$(pkgdatadir)\"			\
+	-DEPHY_EXTENSIONS_LOCALEDIR=\"$(datadir)/locale\"  \
+	$(AM_CPPFLAGS)
+
+libgesturesextension_la_CFLAGS = \
+	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
+	$(AM_CFLAGS)
+
 gesturesdir = $(pkgdatadir)
-gestures_DATA =				\
-	ephy-gestures.xml
+gestures_DATA =	ephy-gestures.xml
 
 extensionxmldir = $(extensiondir)
 extensionxml_in_files = gestures.xml.in.in

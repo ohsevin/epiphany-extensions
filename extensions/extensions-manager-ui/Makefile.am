@@ -1,16 +1,4 @@
 extensiondir = $(EXTENSIONS_DIR)
-
-INCLUDES = \
-        -I$(top_srcdir)/include		\
-	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
-	-DSHARE_DIR=\"$(pkgdatadir)\"	\
-	-DEPHY_PLUGINS_LOCALEDIR=\"$(datadir)/locale\"  \
-	-DG_DISABLE_DEPRECATED		\
-	-DGDK_DISABLE_DEPRECATED	\
-	-DGTK_DISABLE_DEPRECATED	\
-	-DGDK_PIXBUF_DISABLE_DEPRECATED	\
-	-DGNOME_DISABLE_DEPRECATED
-
 extension_LTLIBRARIES = libextensionsmanageruiextension.la
 
 libextensionsmanageruiextension_la_SOURCES = \
@@ -19,6 +7,16 @@ libextensionsmanageruiextension_la_SOURCES = \
 	ephy-extensions-manager-ui-extension.c	\
 	ephy-extensions-manager-ui-extension.h	\
 	extension.c
+
+libextensionsmanageruiextension_la_CPPFLAGS = \
+        -I$(top_srcdir)/include				\
+	-DSHARE_DIR=\"$(pkgdatadir)\"			\
+	-DEPHY_EXTENSIONS_LOCALEDIR=\"$(datadir)/locale\"  \
+	$(AM_CPPFLAGS)
+
+libextensionsmanageruiextension_la_CFLAGS = \
+	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
+	$(AM_CFLAGS)
 
 gladedir = $(pkgdatadir)/glade
 glade_DATA = extensions-manager-ui.glade

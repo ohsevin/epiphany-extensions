@@ -1,16 +1,4 @@
 extensiondir = $(EXTENSIONS_DIR)
-
-INCLUDES = \
-        -I$(top_srcdir)/include		\
-	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
-	-DSHARE_DIR=\"$(pkgdatadir)\"	\
-        -DEPHY_EXTENSIONS_LOCALEDIR=\"$(datadir)/locale\"       \
-	-DG_DISABLE_DEPRECATED		\
-	-DGDK_DISABLE_DEPRECATED	\
-	-DGTK_DISABLE_DEPRECATED	\
-	-DGDK_PIXBUF_DISABLE_DEPRECATED	\
-	-DGNOME_DISABLE_DEPRECATED
-
 extension_LTLIBRARIES = libtoolbarextrasextension.la
 
 libtoolbarextrasextension_la_SOURCES = \
@@ -21,6 +9,16 @@ libtoolbarextrasextension_la_SOURCES = \
 	galago-gtk-icon-entry.c		\
 	galago-gtk-icon-entry.h		\
 	toolbar-extras.c
+
+libtoolbarextrasextension_la_CPPFLAGS = \
+        -I$(top_srcdir)/include				\
+	-DSHARE_DIR=\"$(pkgdatadir)\"			\
+	-DEPHY_EXTENSIONS_LOCALEDIR=\"$(datadir)/locale\"  \
+	$(AM_CPPFLAGS)
+
+libtoolbarextrasextension_la_CFLAGS = \
+	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
+	$(AM_CFLAGS)
 
 extensionxmldir = $(extensiondir)
 extensionxml_in_files = toolbar-extras.xml.in.in

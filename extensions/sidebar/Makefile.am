@@ -1,20 +1,6 @@
 SUBDIRS = mozilla
 
 extensiondir = $(EXTENSIONS_DIR)
-
-INCLUDES = \
-	$(WARN_CFLAGS) \
-	-I$(top_srcdir)/extensions/sidebar/mozilla	\
-	-I$(top_srcdir)/include		\
-	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
-	-DSHARE_DIR=\"$(pkgdatadir)\"	\
-	-DEPHY_EXTENSIONS_LOCALEDIR=\"$(datadir)/locale\"  \
-	-DG_DISABLE_DEPRECATED		\
-	-DGDK_DISABLE_DEPRECATED	\
-	-DGTK_DISABLE_DEPRECATED	\
-	-DGDK_PIXBUF_DISABLE_DEPRECATED	\
-	-DGNOME_DISABLE_DEPRECATED
-
 extension_LTLIBRARIES = libsidebarextension.la
 
 nodist_libsidebarextension_la_SOURCES =	\
@@ -31,6 +17,17 @@ libsidebarextension_la_SOURCES = \
 	sidebar-commands.c		\
 	sidebar-commands.h		\
 	extension.c
+
+libsidebarextension_la_CPPFLAGS = \
+        -I$(top_srcdir)/include				\
+	-I$(top_srcdir)/extensions/sidebar/mozilla	\
+	-DSHARE_DIR=\"$(pkgdatadir)\"			\
+	-DEPHY_EXTENSIONS_LOCALEDIR=\"$(datadir)/locale\"  \
+	$(AM_CPPFLAGS)
+
+libsidebarextension_la_CFLAGS = \
+	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
+	$(AM_CFLAGS)
 
 libsidebarextension_la_LIBADD = \
 	mozilla/libsidebarmozilla.la	\

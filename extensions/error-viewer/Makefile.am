@@ -5,25 +5,6 @@ SUBDIRS += opensp
 endif
 
 extensiondir = $(EXTENSIONS_DIR)
-
-INCLUDES = \
-	-I$(top_srcdir)/extensions/error-viewer/mozilla		\
-	-I$(top_srcdir)/extensions/error-viewer/opensp		\
-	-I$(top_srcdir)/extensions/error-viewer			\
-	-I$(top_srcdir)/include					\
-	$(EPIPHANY_DEPENDENCY_CFLAGS)				\
-	-DSHARE_DIR=\"$(pkgdatadir)\"				\
-	-DEPHY_EXTENSIONS_LOCALEDIR=\"$(datadir)/locale\"	\
-	-DG_DISABLE_DEPRECATED					\
-	-DGDK_DISABLE_DEPRECATED				\
-	-DGTK_DISABLE_DEPRECATED				\
-	-DGDK_PIXBUF_DISABLE_DEPRECATED				\
-	-DGNOME_DISABLE_DEPRECATED
-
-if HAVE_OPENSP
-INCLUDES += -DHAVE_OPENSP
-endif
-
 extension_LTLIBRARIES = liberrorviewerextension.la
 
 liberrorviewerextension_la_SOURCES = \
@@ -36,15 +17,36 @@ liberrorviewerextension_la_SOURCES = \
 	extension.c
 
 if HAVE_OPENSP
-liberrorviewerextension_la_SOURCES += sgml-validator.h sgml-validator.c
+liberrorviewerextension_la_SOURCES += \
+	 sgml-validator.c	\
+	 sgml-validator.h
 endif
+
+liberrorviewerextension_la_CPPFLAGS = \
+        -I$(top_srcdir)/include				\
+	-I$(top_srcdir)/extensions/error-viewer/mozilla	\
+	-I$(top_srcdir)/extensions/error-viewer/opensp	\
+	-DSHARE_DIR=\"$(pkgdatadir)\"			\
+	-DEPHY_EXTENSIONS_LOCALEDIR=\"$(datadir)/locale\"  \
+	$(AM_CPPFLAGS)
+
+if HAVE_OPENSP
+liberrorviewerextension_la_CPPFLAGS += \
+	-DHAVE_OPENSP
+endif
+
+liberrorviewerextension_la_CFLAGS = \
+	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
+	$(AM_CFLAGS)
 
 liberrorviewerextension_la_LIBADD = \
 	mozilla/liberrorviewermozilla.la	\
 	$(MOZILLA_COMPONENT_LIBS)
 
 if HAVE_OPENSP
-liberrorviewerextension_la_LIBADD += opensp/liberrorvieweropensp.la -losp
+liberrorviewerextension_la_LIBADD += \
+	opensp/liberrorvieweropensp.la	\
+	-losp
 endif
 
 glade_DATA = error-viewer.glade

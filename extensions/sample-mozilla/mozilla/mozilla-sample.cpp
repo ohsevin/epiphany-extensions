@@ -19,6 +19,10 @@
  *  $Id$
  */
 
+#include "mozilla-config.h"
+
+#include "config.h"
+
 #include "mozilla-sample.h"
 
 #include <glib.h>

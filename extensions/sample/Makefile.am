@@ -1,22 +1,20 @@
 extensiondir = $(EXTENSIONS_DIR)
-
-INCLUDES = \
-        -I$(top_srcdir)/include		\
-	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
-	-DSHARE_DIR=\"$(pkgdatadir)\"	\
-	-DEPHY_PLUGINS_LOCALEDIR=\"$(datadir)/locale\"  \
-	-DG_DISABLE_DEPRECATED		\
-	-DGDK_DISABLE_DEPRECATED	\
-	-DGTK_DISABLE_DEPRECATED	\
-	-DGDK_PIXBUF_DISABLE_DEPRECATED	\
-	-DGNOME_DISABLE_DEPRECATED
-
 extension_LTLIBRARIES = libsampleextension.la
 
 libsampleextension_la_SOURCES = \
 	ephy-sample-extension.c	\
 	ephy-sample-extension.h	\
 	sample.c
+
+libsampleextension_la_CPPFLAGS = \
+        -I$(top_srcdir)/include				\
+	-DSHARE_DIR=\"$(pkgdatadir)\"			\
+	-DEPHY_EXTENSIONS_LOCALEDIR=\"$(datadir)/locale\"  \
+	$(AM_CPPFLAGS)
+
+libsampleextension_la_CFLAGS = \
+	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
+	$(AM_CFLAGS)
 
 extensionxmldir = $(extensiondir)
 extensionxml_in_files = sample.xml.in.in

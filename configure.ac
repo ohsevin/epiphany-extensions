@@ -35,6 +35,12 @@ dnl AC_SUBST([ACLOCAL_AMFLAGS], ["-I $ac_macro_dir \${ACLOCAL_FLAGS}"])
 dnl AC_SUBST([ACLOCAL_AMFLAGS], ["\${ACLOCAL_FLAGS}"])
 
 AM_MAINTAINER_MODE
+if test "x$enable_maintainer_mode" = "xyes"; then
+	AC_DEFINE([MAINTAINER_MODE],[1],[Define to enable 'maintainer-only' behaviour])
+	enable_debug=yes
+	DEPRECATION_FLAGS="-DG_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGDK_PIXBUF_DISABLE_DEPRECATED -DGCONF_DISABLE_DEPRECATED -DGNOME_VFS_DISABLE_DEPRECATED -DBONOBO_UI_DISABLE_DEPRECATED -DBONOBO_DISABLE_DEPRECATED -DLIBGLADE_DISABLE_DEPRECATED -DPANGO_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED -DGNOME_DISABLE_DEPRECATED"
+	MOZILLA_WARN_CXXFLAGS="-Wall -Wconversion -Wpointer-arith -Wcast-align -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor"
+fi
 
 AC_PROG_INTLTOOL([0.29])
 
@@ -281,7 +287,7 @@ fi
 dnl Changed in 1.8a1 and again in 1.8a3 to its present form (variant 2);
 dnl variant 1 is on 1.7 branch. Aviary branch also has variant 2.
 
-CXXFLAGS="$_SAVE_CXXFLAGS $AM_CXXFLAGS -I$MOZILLA_INCLUDE_ROOT `pkg-config --cflags $MOZILLA-xpcom`"
+CXXFLAGS="$_SAVE_CXXFLAGS $AM_CXXFLAGS -I$MOZILLA_INCLUDE_ROOT `pkg-config --cflags $MOZILLA-xpcom` -DMOZILLA_STRICT_API"
 
 AC_MSG_CHECKING([for nsIContentPolicy API])
 
@@ -304,9 +310,14 @@ AC_MSG_RESULT([variant $variant])
 CXXFLAGS=$_SAVE_CXXFLAGS
 AC_LANG_POP([C++])
 
-dnl set warning flags
-CFLAGS="$CFLAGS $WARN_CFLAGS"
-CXXFLAGS="$CXXFLAGS $WARN_CXXFLAGS -Wconversion -Wpointer-arith -Wcast-align -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor"
+dnl Add warning flags
+
+AM_CPPFLAGS="$AM_CPPFLAGS $DEPRECATION_FLAGS"
+AM_CFLAGS="$AM_CFLAGS $WARN_CFLAGS"
+AM_CXXFLAGS="$AM_CXXFLAGS $WARN_CXXFLAGS $MOZILLA_WARN_CXXFLAGS"
+AC_SUBST([AM_CPPFLAGS])
+AC_SUBST([AM_CFLAGS])
+AC_SUBST([AM_CXXFLAGS])
 
 dnl *******************************
 dnl share/data dir

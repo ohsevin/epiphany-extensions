@@ -22,6 +22,8 @@
  *  $Id$
  */
 
+#include "mozilla-config.h"
+
 #include "config.h"
 
 #include "mozilla-helpers.h"

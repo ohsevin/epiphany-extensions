@@ -1,19 +1,6 @@
-extensiondir = $(EXTENSIONS_DIR)
-
 SUBDIRS = mozilla
 
-INCLUDES = \
-        -I$(top_srcdir)/include					\
-	-I$(top_srcdir)/extensions/smart-bookmarks/mozilla	\
-	$(EPIPHANY_DEPENDENCY_CFLAGS)				\
-	-DSHARE_DIR=\"$(pkgdatadir)\"				\
-        -DEPHY_EXTENSIONS_LOCALEDIR=\"$(datadir)/locale\"	\
-	-DG_DISABLE_DEPRECATED					\
-	-DGDK_DISABLE_DEPRECATED				\
-	-DGTK_DISABLE_DEPRECATED				\
-	-DGDK_PIXBUF_DISABLE_DEPRECATED				\
-	-DGNOME_DISABLE_DEPRECATED
-
+extensiondir = $(EXTENSIONS_DIR)
 extension_LTLIBRARIES = libsmartbookmarksextension.la
 
 libsmartbookmarksextension_la_SOURCES =	\
@@ -23,9 +10,20 @@ libsmartbookmarksextension_la_SOURCES =	\
 	smart-bookmarks-prefs-ui.c	\
 	smart-bookmarks-prefs-ui.h	\
         smart-bookmarks.c
-	
+
+libsmartbookmarksextension_la_CPPFLAGS = \
+        -I$(top_srcdir)/include					\
+	-I$(top_srcdir)/extensions/smart-bookmarks/mozilla	\
+	-DSHARE_DIR=\"$(pkgdatadir)\"				\
+        -DEPHY_EXTENSIONS_LOCALEDIR=\"$(datadir)/locale\"	\
+	$(AM_CPPFLAGS)
+
+libsmartbookmarksextension_la_CFLAGS = \
+	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
+	$(AM_CFLAGS)
+
 libsmartbookmarksextension_la_LIBADD =	\
-	mozilla/libsbmozilla.la		\
+	$(top_builddir)/extensions/smart-bookmarks/mozilla/libsbmozilla.la	\
 	$(MOZILLA_COMPONENT_LIBS)
 
 glade_DATA = smart-bookmarks.glade

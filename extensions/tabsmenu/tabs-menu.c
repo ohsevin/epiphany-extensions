@@ -44,7 +44,7 @@ register_module (GTypeModule *module)
 
 #ifdef ENABLE_NLS
        /* Initialise the i18n stuff */
-        bindtextdomain (GETTEXT_PACKAGE, EPHY_PLUGINS_LOCALEDIR);
+        bindtextdomain (GETTEXT_PACKAGE, EPHY_EXTENSIONS_LOCALEDIR);
         bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");	
 #endif /* ENABLE_NLS */
 

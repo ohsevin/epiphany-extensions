@@ -19,9 +19,9 @@
  *  $Id$
  */
 
-#ifdef HAVE_CONFIG_H
+#include "mozilla-config.h"
+
 #include "config.h"
-#endif
 
 #include "error-viewer.h"
 

@@ -1,3 +1,66 @@
+2004-12-08  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
+	Add deprecation flags in maintainer mode.
+
+	* Makefile.am:
+	* extensions/adblock/Makefile.am:
+	* extensions/adblock/mozilla/Makefile.am:
+	* extensions/bookmarks-tray/Makefile.am:
+	* extensions/certificates/Makefile.am:
+	* extensions/dashboard/Makefile.am:
+	* extensions/error-viewer/Makefile.am:
+	* extensions/error-viewer/mozilla/Makefile.am:
+	* extensions/error-viewer/opensp/Makefile.am:
+	* extensions/extensions-manager-ui/Makefile.am:
+	* extensions/gestures/Makefile.am:
+	* extensions/page-info/Makefile.am:
+	* extensions/page-info/mozilla/Makefile.am:
+	* extensions/sample-mozilla/Makefile.am:
+	* extensions/sample-mozilla/mozilla/Makefile.am:
+	* extensions/sample/Makefile.am:
+	* extensions/select-stylesheet/Makefile.am:
+	* extensions/select-stylesheet/mozilla/Makefile.am:
+	* extensions/sidebar/Makefile.am:
+	* extensions/sidebar/mozilla/Makefile.am:
+	* extensions/smart-bookmarks/Makefile.am:
+	* extensions/smart-bookmarks/mozilla/Makefile.am:
+	* extensions/tab-groups/Makefile.am:
+	* extensions/tabsmenu/Makefile.am:
+	* extensions/toolbar-extras/Makefile.am:
+
+	INCLUDES is deprecated. Split into target_CPPFLAGS and target_CFLAGS
+	or target_CXXFLAGS.
+
+	* extensions/adblock/extension.c: (register_module):
+	* extensions/certificates/extension.c: (register_module):
+	* extensions/extensions-manager-ui/extension.c: (register_module):
+	* extensions/sample-mozilla/sample-mozilla.c: (register_module):
+	* extensions/sample/sample.c: (register_module):
+	* extensions/tab-groups/tab-groups.c: (register_module):
+	* extensions/tabsmenu/tabs-menu.c: (register_module):
+
+	Use EPHY_EXTENSIONS_LOCALEDIR throughout.
+
+	* extensions/adblock/mozilla/MozAdBlocker.cpp:
+	* extensions/adblock/mozilla/mozilla-helpers.cpp:
+	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:
+	* extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:
+	* extensions/error-viewer/mozilla/mozilla-helpers.cpp:
+	* extensions/error-viewer/mozilla/mozilla-link-checker.cpp:
+	* extensions/error-viewer/mozilla/register-listener.cpp:
+	* extensions/error-viewer/opensp/validate.cpp:
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+	* extensions/sample-mozilla/mozilla/mozilla-sample.cpp:
+	* extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:
+	* extensions/sidebar/mozilla/Sidebar.cpp:
+	* extensions/sidebar/mozilla/register-component.cpp:
+	* extensions/smart-bookmarks/mozilla/mozilla-selection.cpp:
+
+	Include mozilla-config.h, and don't #ifdef HAVE_CONFIG_H
+	the config.h inclusion.
+
 2004-12-06  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/page-info/mozilla/mozilla-helpers.cpp:

@@ -18,9 +18,9 @@
  *  $Id$
  */
 
-#ifdef HAVE_CONFIG_H
+#include "mozilla-config.h"
+
 #include "config.h"
-#endif
 
 #include "link-checker.h"
 
