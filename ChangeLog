@@ -1,3 +1,10 @@
+2005-03-05  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/net-monitor/ephy-net-monitor-extension.c:
+	(ephy_net_monitor_network_status)
+
+	Epiphany doesn't default to offline when Network Manager is not alive.
+
 2005-03-03  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c

@@ -37,6 +37,9 @@
 #define NM_OBJECT_PATH "/org/freedesktop/NetworkManager"
 #define NM_INTERFACE   "org.freedesktop.NetworkManager"
 
+// Network Manager's states
+#define NM_NO_ACTIVE_DEVICE "org.freedesktop.NetworkManager.NoActiveDevice"
+
 #define EPHY_NET_MONITOR_EXTENSION_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_NET_MONITOR_EXTENSION, EphyNetMonitorExtensionPrivate))
 
 struct _EphyNetMonitorExtensionPrivate
@@ -96,8 +99,20 @@ ephy_net_monitor_network_status (EphyNetMonitorExtension *net_monitor)
 							   &error);
 	if (dbus_error_is_set (&error))
 	{
-		/* no active device atm */
-		net_status = NETWORK_DOWN;
+		if (dbus_error_has_name (&error, NM_NO_ACTIVE_DEVICE))
+		{
+			LOG ("EphyNetMonitorExtension: Network Manager says - No Active Device -");
+
+			net_status = NETWORK_DOWN;
+		}
+		else
+		{
+			LOG ("EphyNetMonitorExtension can't talk to Network Manager: %s: %s", 
+			     error.name, error.message);
+
+			/* fallback */
+			net_status = NETWORK_UP;
+		}
 	}
 	else
 	{
