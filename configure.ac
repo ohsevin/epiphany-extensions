@@ -263,16 +263,16 @@ case "$MOZILLA_VERSION" in
   1.4) MOZILLA_SNAPSHOT=8 ;;
 1.4.1) MOZILLA_SNAPSHOT=9 ;;
 1.4.2) MOZILLA_SNAPSHOT=9 ;;
- 1.5a) MOZILLA_SNAPSHOT=10 ;;
- 1.5b) MOZILLA_SNAPSHOT=11 ;;
   1.5) MOZILLA_SNAPSHOT=11 ;;
- 1.6a) MOZILLA_SNAPSHOT=12 ;;
- 1.6b) MOZILLA_SNAPSHOT=13 ;;
   1.6) MOZILLA_SNAPSHOT=13 ;;
  1.7a) MOZILLA_SNAPSHOT=14 ;;
  1.7b) MOZILLA_SNAPSHOT=15 ;;
-  1.7) MOZILLA_SNAPSHOT=15 ;;
-trunk) MOZILLA_SNAPSHOT=15 ;;
+1.7rc1) MOZILLA_SNAPSHOT=16 ;;
+1.7rc2) MOZILLA_SNAPSHOT=16 ;;
+  1.7) MOZILLA_SNAPSHOT=16 ;;
+branch1.7) MOZILLA_SNAPSHOT=16 ;;
+ 1.8a) MOZILLA_SNAPSHOT=18 ;;
+trunk) MOZILLA_SNAPSHOT=18 ;;
     *) AC_ERROR([
 *******************************************************************************
 Epiphany Extensions  can be built using Mozilla 1.4, 1.4.1, 1.5, 1.6, 1.7a or 
