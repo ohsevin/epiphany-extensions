@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions gnome-2-8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-30 20:21+0900\n"
-"PO-Revision-Date: 2004-09-30 20:19+0900\n"
+"POT-Creation-Date: 2004-09-30 20:26+0900\n"
+"PO-Revision-Date: 2004-09-30 20:25+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -475,7 +475,7 @@ msgstr "選択した部分を検索します"
 
 #: extensions/smart-bookmarks/smart-bookmarks.glade.h:1
 msgid "Add Gnome Dictionary to the menu"
-msgstr "GNOME ディレクトリをメニューに追加する"
+msgstr "GNOME フォルダをメニューに追加する"
 
 #: extensions/smart-bookmarks/smart-bookmarks.glade.h:2
 msgid "Look Up Preferences"
