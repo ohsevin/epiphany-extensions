@@ -185,7 +185,9 @@ mozilla_get_stylesheets (EphyEmbed *aEmbed,
 	
 			nsEmbedCString cMedia;
 			NS_UTF16ToCString (media, NS_CSTRING_ENCODING_UTF8, cMedia);
-			if (strstr (cMedia.get(), "screen") == NULL &&
+
+			if (media.Length() > 0 &&
+			    strstr (cMedia.get(), "screen") == NULL &&
 			    strstr (cMedia.get(), "all") == NULL) continue;
 		}
 
