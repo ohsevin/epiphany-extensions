@@ -44,11 +44,17 @@ struct _EphyTabMoveMenuPrivate
 	EphyWindow *window;
 	GtkUIManager *manager;
 	GtkActionGroup *action_group;
-	guint merge_id;
+	GtkAction *menu_action;
+	guint static_merge_id;
+	guint dynamic_merge_id;
 };
 
-#define MENU_PATH	"/menubar/TabsMenu/TabsOpen"
-#define SUBMENU_PATH	"/menubar/TabsMenu/TabsOpen/TabMoveToMenu"
+#define MENU_ACTION_NAME	"TabMoveTo"
+#define MENU_PATH		"/menubar/TabsMenu/TabsMoveGroup"
+#define CONTEXT_MENU_PATH	"/EphyNotebookPopup/TabsMoveGroupENP"
+#define SUBMENU_PATH		"/menubar/TabsMenu/TabsMoveGroup/" MENU_ACTION_NAME "Menu"
+#define CONTEXT_SUBMENU_PATH	"/EphyNotebookPopup/TabsMoveGroupENP/" MENU_ACTION_NAME "ENP"
+
 #define VERB_FMT	"MoveTo%p"
 #define VERB_FMT_SIZE	(sizeof (VERB_FMT) + 18)
 #define WINDOW_KEY	"dest-window"
@@ -98,7 +104,8 @@ ephy_tab_move_menu_register_type (GTypeModule *module)
 }
 
 static int
-find_name (GtkActionGroup *action_group, const char *name)
+find_name (GtkActionGroup *action_group,
+	   const char *name)
 {
 	return strcmp (gtk_action_group_get_name (action_group), name);
 }
@@ -131,7 +138,8 @@ static void
 move_cb (GtkAction *action,
 	 EphyTabMoveMenu *menu)
 {
-	EphyWindow *src_win = menu->priv->window;
+	EphyTabMoveMenuPrivate *priv = menu->priv;
+	EphyWindow *src_win = priv->window;
 	EphyWindow *dest_win;
 	EphyTab *tab;
 	GtkWidget *src_nb, *dest_nb;
@@ -154,8 +162,10 @@ move_cb (GtkAction *action,
 }
 
 static void
-add_action_and_menu_item (EphyWindow *window, EphyTabMoveMenu *menu)
+add_action_and_menu_item (EphyWindow *window,
+			  EphyTabMoveMenu *menu)
 {
+	EphyTabMoveMenuPrivate *priv = menu->priv;
 	EphyTab *tab;
 	GtkAction *action;
 	GtkWidget *notebook;
@@ -185,15 +195,20 @@ add_action_and_menu_item (EphyWindow *window, EphyTabMoveMenu *menu)
 	action = g_object_new (GTK_TYPE_ACTION,
 			       "name", verb,
 			       "label", title,
-			       "sensitive", window != menu->priv->window,
+			       "sensitive", window != priv->window,
 			       NULL);
 	g_signal_connect (action, "activate", G_CALLBACK (move_cb), menu);
 	g_object_set_data (G_OBJECT (action), WINDOW_KEY, window);
-	gtk_action_group_add_action (menu->priv->action_group, action);
+	gtk_action_group_add_action (priv->action_group, action);
 	g_object_unref (action);
 
-	gtk_ui_manager_add_ui (menu->priv->manager, menu->priv->merge_id,
+	gtk_ui_manager_add_ui (priv->manager, priv->dynamic_merge_id,
 			       SUBMENU_PATH,
+			       name, verb,
+			       GTK_UI_MANAGER_MENUITEM, FALSE);
+
+	gtk_ui_manager_add_ui (priv->manager, priv->dynamic_merge_id,
+			       CONTEXT_SUBMENU_PATH,
 			       name, verb,
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
 
@@ -221,9 +236,8 @@ static void
 update_tab_move_menu_cb (GtkAction *dummy,
 			 EphyTabMoveMenu *menu)
 {
-	EphyTabMoveMenuPrivate *p = menu->priv;
+	EphyTabMoveMenuPrivate *priv = menu->priv;
 	EphySession *session;
-	GtkAction *action;
 	GList *windows;
 
 	LOG ("update_tab_move_menu_cb")
@@ -231,36 +245,25 @@ update_tab_move_menu_cb (GtkAction *dummy,
 	START_PROFILER ("Rebuilding tab move menu")
 
 	/* clear the menu */
-	if (p->merge_id != 0)
+	if (priv->dynamic_merge_id != 0)
 	{
-		gtk_ui_manager_remove_ui (p->manager, p->merge_id);
-		gtk_ui_manager_ensure_update (p->manager);
+		gtk_ui_manager_remove_ui (priv->manager, priv->dynamic_merge_id);
+		gtk_ui_manager_ensure_update (priv->manager);
 	}
 
-	if (p->action_group != NULL)
+	if (priv->action_group != NULL)
 	{
-		gtk_ui_manager_remove_action_group (p->manager, p->action_group);
-		g_object_unref (p->action_group);
+		gtk_ui_manager_remove_action_group (priv->manager, priv->action_group);
+		g_object_unref (priv->action_group);
 	}
 
 	/* build the new menu */
-	p->action_group = gtk_action_group_new ("TabMoveToActions");
-	g_signal_connect (p->action_group, "connect-proxy",
+	priv->action_group = gtk_action_group_new ("TabMoveToActions");
+	g_signal_connect (priv->action_group, "connect-proxy",
 			  G_CALLBACK (connect_proxy_cb), NULL);
-	gtk_ui_manager_insert_action_group (p->manager, p->action_group, 0);
+	gtk_ui_manager_insert_action_group (priv->manager, priv->action_group, 0);
 
-	p->merge_id = gtk_ui_manager_new_merge_id (p->manager);
-
-	gtk_ui_manager_add_ui (p->manager, p->merge_id,
-			       MENU_PATH,
-			       "TabMoveToMenu",
-			       "TabMoveTo",
-			       GTK_UI_MANAGER_MENU, TRUE);
-
-	gtk_ui_manager_add_ui (p->manager, p->merge_id,
-			       MENU_PATH,
-			       "TabMoveToSep1Item", "TabMoveToSep1",
-			       GTK_UI_MANAGER_SEPARATOR, TRUE);
+	priv->dynamic_merge_id = gtk_ui_manager_new_merge_id (priv->manager);
 
 	session = EPHY_SESSION (ephy_shell_get_session (ephy_shell));
 	g_return_if_fail (EPHY_IS_SESSION (session));
@@ -269,8 +272,8 @@ update_tab_move_menu_cb (GtkAction *dummy,
 
 	g_list_foreach (windows, (GFunc) add_action_and_menu_item, menu);
 
-	action = gtk_ui_manager_get_action (p->manager, SUBMENU_PATH);
-	g_object_set (G_OBJECT (action), "sensitive", g_list_length (windows) > 1, NULL);
+	g_object_set (G_OBJECT (priv->menu_action), "sensitive",
+		      g_list_length (windows) > 1, NULL);
 
 	g_list_free (windows);
 
@@ -281,41 +284,66 @@ static void
 ephy_tab_move_menu_set_window (EphyTabMoveMenu *menu,
 			       EphyWindow *window)
 {
-	GtkAction *action;
+	EphyTabMoveMenuPrivate *priv = menu->priv;
 	GtkActionGroup *action_group;
+	GtkAction *action;
+
+	LOG ("set_window window %p", window)
 
 	g_return_if_fail (EPHY_IS_WINDOW (window));
 
-	menu->priv->window = window;
-	menu->priv->manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
+	priv->window = window;
+	priv->manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
 
-	action_group = find_action_group (menu->priv->manager);
+	action_group = find_action_group (priv->manager);
 
-	action = g_object_new (GTK_TYPE_ACTION,
-			       "name", "TabMoveTo",
+	priv->menu_action =
+		 g_object_new (GTK_TYPE_ACTION,
+			       "name", MENU_ACTION_NAME,
 			       "label", _("Move Tab To Window"),
 			       "tooltip", _("Move the current tab to a different window"),
 			       "hide_if_empty", FALSE,
 			       NULL);
-	gtk_action_group_add_action (action_group, action);
-	g_object_unref (action);
+	gtk_action_group_add_action (action_group, priv->menu_action);
+	g_object_unref (priv->menu_action);
 
-	action = gtk_ui_manager_get_action (menu->priv->manager, "/menubar/TabsMenu");
+	action = gtk_ui_manager_get_action (priv->manager, "/menubar/TabsMenu");
 	g_return_if_fail (action != NULL);
-
 	g_signal_connect_object (action, "activate",
 				 G_CALLBACK (update_tab_move_menu_cb), menu, 0);
+
+	action = gtk_ui_manager_get_action (priv->manager, "/EphyNotebookPopup");
+	g_return_if_fail (action != NULL);
+	g_signal_connect_object (action, "activate",
+				 G_CALLBACK (update_tab_move_menu_cb), menu, 0);
+
+	priv->static_merge_id = gtk_ui_manager_new_merge_id (priv->manager);
+
+	gtk_ui_manager_add_ui (priv->manager, priv->static_merge_id,
+			       MENU_PATH,
+			       MENU_ACTION_NAME "Menu",
+			       MENU_ACTION_NAME,
+			       GTK_UI_MANAGER_MENU, FALSE);
+
+	gtk_ui_manager_add_ui (priv->manager, priv->static_merge_id,
+			       CONTEXT_MENU_PATH,
+			       MENU_ACTION_NAME "ENP",
+			       MENU_ACTION_NAME,
+			       GTK_UI_MANAGER_MENU, FALSE);
 }
 
 static void
 ephy_tab_move_menu_init (EphyTabMoveMenu *menu)
 {
-	menu->priv = EPHY_TAB_MOVE_MENU_GET_PRIVATE (menu);
+	EphyTabMoveMenuPrivate *priv;
 
-	menu->priv->window = NULL;
-	menu->priv->manager = NULL;
-	menu->priv->action_group = NULL;
-	menu->priv->merge_id = 0;
+	priv = menu->priv = EPHY_TAB_MOVE_MENU_GET_PRIVATE (menu);
+
+	priv->window = NULL;
+	priv->manager = NULL;
+	priv->action_group = NULL;
+	priv->static_merge_id = 0;
+	priv->dynamic_merge_id = 0;
 }
 
 static void
@@ -340,45 +368,46 @@ ephy_tab_move_menu_get_property (GObject *object,
 				 GValue *value,
 				 GParamSpec *pspec)
 {
-	EphyTabMoveMenu *menu = EPHY_TAB_MOVE_MENU (object);
-
-	switch (prop_id)
-	{
-		case PROP_WINDOW:
-			g_value_set_object (value, menu->priv->window);
-			break;
-	}
+	/* no readable properties */
+	g_return_if_reached ();
 }
 
 static void
 ephy_tab_move_menu_finalize (GObject *object)
 {
-	EphyTabMoveMenu *menu = EPHY_TAB_MOVE_MENU (object); 
-
-	GtkActionGroup *action_group;
+	EphyTabMoveMenu *menu = EPHY_TAB_MOVE_MENU (object);
+	EphyTabMoveMenuPrivate *priv = menu->priv;
+	GtkActionGroup *action_group = NULL;
 	GtkAction *action;
 
-	if (menu->priv->merge_id != 0)
+	if (priv->dynamic_merge_id != 0)
 	{
-		gtk_ui_manager_remove_ui (menu->priv->manager,
-					  menu->priv->merge_id);
+		gtk_ui_manager_remove_ui (priv->manager,
+					  priv->dynamic_merge_id);
 	}
-	if (menu->priv->action_group != NULL)
+	if (priv->static_merge_id != 0)
 	{
-		g_object_unref (menu->priv->action_group);
+		gtk_ui_manager_remove_ui (priv->manager,
+					  priv->static_merge_id);
+	}
+	if (priv->action_group != NULL)
+	{
+		g_object_unref (priv->action_group);
 	}
 
-	gtk_ui_manager_ensure_update (menu->priv->manager);
+	gtk_ui_manager_ensure_update (priv->manager);
 
-	action_group = find_action_group (menu->priv->manager);
+	g_object_get (G_OBJECT (priv->menu_action), "action-group", &action_group, NULL);
 	g_return_if_fail (action_group != NULL);
 
-	action = gtk_action_group_get_action (action_group, "TabMoveTo");
+	gtk_action_group_remove_action (action_group, priv->menu_action);
+
+	action = gtk_ui_manager_get_action (priv->manager, "/menubar/TabsMenu");
 	g_return_if_fail (action != NULL);
 
-	gtk_action_group_remove_action (action_group, action);
+	g_signal_handlers_disconnect_by_func (action, G_CALLBACK (update_tab_move_menu_cb), menu);
 
-	action = gtk_ui_manager_get_action (menu->priv->manager, "/menubar/TabsMenu");
+	action = gtk_ui_manager_get_action (priv->manager, "/EphyNotebookPopup");
 	g_return_if_fail (action != NULL);
 
 	g_signal_handlers_disconnect_by_func (action, G_CALLBACK (update_tab_move_menu_cb), menu);
@@ -403,7 +432,7 @@ ephy_tab_move_menu_class_init (EphyTabMoveMenuClass *klass)
 							      "Window",
 							      "Parent window",
 							      EPHY_TYPE_WINDOW,
-							      G_PARAM_READWRITE |
+							      G_PARAM_WRITABLE |
 							      G_PARAM_CONSTRUCT_ONLY));
 
 	g_type_class_add_private (object_class, sizeof (EphyTabMoveMenuPrivate));

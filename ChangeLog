@@ -1,3 +1,18 @@
+2005-01-06  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/tabsmenu/ephy-tab-move-menu.c: (find_name), (move_cb),
+	(add_action_and_menu_item), (update_tab_move_menu_cb),
+	(ephy_tab_move_menu_set_window), (ephy_tab_move_menu_init),
+	(ephy_tab_move_menu_get_property), (ephy_tab_move_menu_finalize),
+	(ephy_tab_move_menu_class_init):
+
+	Update UI path, and also merge the UI to the notebook context menu.
+
+2005-01-06  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/Makefile.am:
+
 2005-01-05  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/certificates/ephy-certificates-extension.c:
