@@ -39,7 +39,6 @@ NS_IMPL_ISUPPORTS1(ErrorViewerConsoleListener, nsIConsoleListener)
 
 ErrorViewerConsoleListener::ErrorViewerConsoleListener()
 {
-  NS_INIT_ISUPPORTS();
   /* member initializers and constructor code */
 }
 
@@ -77,7 +76,7 @@ get_message_from_error (nsIScriptError *ns_error)
 				       NS_ConvertUCS2toUTF8(message).get());
 
 		nsMemory::Free (message);
-		g_free (category);
+		nsMemory::Free (category);
 
 		return ret;
 	}
@@ -95,7 +94,7 @@ get_message_from_error (nsIScriptError *ns_error)
 
 	nsMemory::Free (message);
 	nsMemory::Free (source_name);
-	g_free (category);
+	nsMemory::Free (category);
 
 	return ret;
 }

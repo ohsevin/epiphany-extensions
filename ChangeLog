@@ -1,5 +1,12 @@
 2004-02-24  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:
+
+	Use the right function to free the strings.
+	Remove NS_INIT_ISUPPORTS(), it's unneeded since mozilla 1.3.
+
+2004-02-24  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/error-viewer/link-checker.c:
 	(link_checker_update_progress):
 	* extensions/error-viewer/sgml-validator.c: (opensp_thread),
