@@ -1,3 +1,31 @@
+2004-02-01  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/Makefile.am:
+	* extensions/certificates/.cvsignore:
+	* extensions/certificates/Makefile.am:
+	* extensions/certificates/ephy-certificates-extension.c:
+	(ephy_certificates_extension_get_type),
+	(ephy_certificates_extension_register_type),
+	(ephy_certificates_extension_init),
+	(ephy_certificates_extension_finalize),
+	(ephy_certificates_extension_view_certificate_cb),
+	(sync_security_status), (tab_added_cb), (tab_removed_cb),
+	(switch_page_cb), (impl_attach_window), (impl_detach_window),
+	(ephy_certificates_extension_iface_init),
+	(ephy_certificates_extension_class_init):
+	* extensions/certificates/ephy-certificates-extension.h:
+	* extensions/certificates/extension.c: (register_module):
+	* extensions/certificates/mozilla/.cvsignore:
+	* extensions/certificates/mozilla/Makefile.am:
+	* extensions/certificates/mozilla/MozillaEmbedCertificate.cpp:
+	* extensions/certificates/mozilla/MozillaEmbedCertificate.h:
+	* extensions/certificates/mozilla/mozilla-embed-certificate.cpp:
+	* extensions/certificates/mozilla/mozilla-embed-certificate.h:
+
+	New extension: add a menu item for showing the server certificate
+	on secure connections.
+
 2004-01-31  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/error-viewer/ephy-error-viewer-extension.c:

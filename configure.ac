@@ -130,10 +130,10 @@ dnl *******************************
 
 AC_MSG_CHECKING(extensions to build)
 
-all_extensions="dashboard,error-viewer,gestures,popup-blocker,sample,sample-mozilla,tabsmenu"
-all_useful_extensions="dashboard,error-viewer,gestures,popup-blocker,tabsmenu"
-default_extensions="error-viewer,gestures,popup-blocker,tabsmenu"
-mozilla_dependent_extensions="error-viewer,sample-mozilla"
+all_extensions="certificates,dashboard,error-viewer,gestures,popup-blocker,sample,sample-mozilla,tabsmenu"
+all_useful_extensions="certificates,dashboard,error-viewer,gestures,popup-blocker,tabsmenu"
+default_extensions="certificates,error-viewer,gestures,popup-blocker,tabsmenu"
+mozilla_dependent_extensions="certificates,error-viewer,sample-mozilla"
 
 dnl due to an autoconf bug, commas in the first arg to
 dnl AC_HELP_STRING cause problems.
@@ -171,6 +171,7 @@ for ext in $extensions; do
 done
 IFS="$ephyext_save_ifs"
 
+AM_CONDITIONAL(ENABLE_CERTIFICATES_EXTENSION, echo "$extensions" | egrep '(^|,)certificates($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_DASHBOARD_EXTENSION, echo "$extensions" | egrep '(^|,)dashboard($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_GESTURES_EXTENSION, echo "$extensions" | egrep '(^|,)gestures($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_ERROR_VIEWER_EXTENSION, echo "$extensions" | egrep '(^|,)error-viewer($|,)' > /dev/null)
@@ -178,7 +179,6 @@ AM_CONDITIONAL(ENABLE_POPUP_BLOCKER_EXTENSION, echo "$extensions" | egrep '(^|,)
 AM_CONDITIONAL(ENABLE_SAMPLE_EXTENSION, echo "$extensions" | egrep '(^|,)sample($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SAMPLE_MOZILLA_EXTENSION, echo "$extensions" | egrep '(^|,)sample-mozilla($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_TABSMENU_EXTENSION, echo "$extensions" | egrep '(^|,)tabsmenu($|,)' > /dev/null)
-dnl AM_CONDITIONAL(ENABLE_SECURITY_EXTENSION, echo "$extensions" | egrep '(^|,)security($|,)' > /dev/null)
 dnl AM_CONDITIONAL(ENABLE_TOOLBAR_EXTRAS_EXTENSION, echo "$extensions" | egrep '(^|,)toolbar-extras($|,)' > /dev/null)
 
 dnl *******************************************
@@ -310,6 +310,8 @@ AC_OUTPUT([
 Makefile
 include/Makefile
 extensions/Makefile
+extensions/certificates/Makefile
+extensions/certificates/mozilla/Makefile
 extensions/dashboard/Makefile
 extensions/gestures/Makefile
 extensions/error-viewer/Makefile

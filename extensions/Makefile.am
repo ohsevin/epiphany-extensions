@@ -1,5 +1,9 @@
 SUBDIRS =
 
+if ENABLE_CERTIFICATES_EXTENSION
+SUBDIRS += certificates
+endif
+
 if ENABLE_DASHBOARD_EXTENSION
 SUBDIRS += dashboard
 endif
@@ -30,10 +34,6 @@ endif
 
 #if ENABLE_TOOLBAR_EXTRAS_EXTENSION
 #SUBDIRS += toolbar-extras
-#endif
-
-#if ENABLE_SECURITY_EXTENSION
-#SUBDIRS += security
 #endif
 
 DIST_SUBDIRS = dashboard error-viewer gestures popup-blocker sample tabsmenu
