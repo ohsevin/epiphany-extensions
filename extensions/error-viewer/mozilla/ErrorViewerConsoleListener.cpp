@@ -109,6 +109,7 @@ NS_IMETHODIMP ErrorViewerConsoleListener::Observe(nsIConsoleMessage *aMessage)
 					       t);
 
 			g_free (t);
+			g_free (source_name);
 		}
 	}
 
