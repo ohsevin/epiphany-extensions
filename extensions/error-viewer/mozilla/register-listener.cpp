@@ -47,7 +47,7 @@ mozilla_register_error_listener (GObject *dialog)
 	listener = new ErrorViewerConsoleListener ();
 	consoleService->RegisterListener (listener);
 
-	listener->dialog = dialog;
+	listener->mDialog = dialog;
 
 	return (void *) listener;
 }

@@ -32,6 +32,8 @@
 
 #include <glib/gi18n-lib.h>
 
+#include <string.h>
+
 /* Implementation file */
 NS_IMPL_ISUPPORTS1(ErrorViewerConsoleListener, nsIConsoleListener)
 
@@ -46,72 +48,107 @@ ErrorViewerConsoleListener::~ErrorViewerConsoleListener()
   /* destructor code */
 }
 
+static char *
+get_message_from_error (nsIScriptError *ns_error)
+{
+	char *ret;
+	PRUnichar* message;
+	char* category;
+	PRUnichar* source_name;
+	PRUint32 line_number;
+
+	ns_error->GetMessage (&message);
+
+	ns_error->GetCategory (&category);
+	/*
+	 * No docs on category, but some are listed in:
+	 * http://lxr.mozilla.org/seamonkey/source/dom/src/base/nsJSEnvironment.cpp#208
+	 *
+	 * XUL javascript
+	 * content javascript
+	 * component javascript
+	 *
+	 * Some errors are none of the above. GNOME Bugzilla #134438
+	 */
+	if (strstr (category, "javascript") == NULL)
+	{
+		/* Don't bother looking for source lines -- they're not there */
+		ret = g_strdup_printf (_("Error:\n%s"),
+				       NS_ConvertUCS2toUTF8(message).get());
+
+		nsMemory::Free (message);
+		g_free (category);
+
+		return ret;
+	}
+
+	ns_error->GetLineNumber (&line_number);
+
+	ns_error->GetSourceName (&source_name);
+	g_return_val_if_fail (source_name != NULL, NS_OK);
+
+	ret = g_strdup_printf (
+		_("Javascript error in %s on line %d:\n%s"),
+		NS_ConvertUCS2toUTF8(source_name).get(),
+		line_number,
+		NS_ConvertUCS2toUTF8(message).get());
+
+	nsMemory::Free (message);
+	nsMemory::Free (source_name);
+	g_free (category);
+
+	return ret;
+}
+
 /* void observe (in nsIConsoleMessage aMessage); */
 NS_IMETHODIMP ErrorViewerConsoleListener::Observe(nsIConsoleMessage *aMessage)
 {
-	PRUnichar *utmp;
-	char *msg;
+	nsresult rv;
+	PRUint32 flags;
 	ErrorViewerErrorType error_type = ERROR_VIEWER_ERROR;
 	ErrorViewer *dialog;
+	char *msg;
 
-	g_return_val_if_fail (IS_ERROR_VIEWER (this->dialog),
+	g_return_val_if_fail (IS_ERROR_VIEWER (this->mDialog),
 					       NS_ERROR_FAILURE);
 
-	dialog = ERROR_VIEWER (this->dialog);
+	dialog = ERROR_VIEWER (this->mDialog);
 
-	aMessage->GetMessage (&utmp);
-
-	msg = g_strchomp (g_strdup (NS_ConvertUCS2toUTF8(utmp).get()));
-	nsMemory::Free (utmp);
-
-	nsCOMPtr<nsIScriptError> js_error = do_QueryInterface (aMessage);
-	if (js_error)
+	nsCOMPtr<nsIScriptError> ns_error = do_QueryInterface (aMessage, &rv);
+	/* Mozilla at this point will *always* give a nsIScriptError */
+	if (NS_FAILED (rv) || aMessage == NULL)
 	{
-		PRUint32 flags;
-		char *t;
-		char *source_name = NULL;
-		char *category = NULL;
-		PRUint32 line_number;
+		PRUnichar* ns_message;
 
-		js_error->GetFlags (&flags);
-		if (flags == nsIScriptError::errorFlag ||
-		    flags == nsIScriptError::exceptionFlag ||
-		    flags == nsIScriptError::strictFlag)
-		{
-			error_type = ERROR_VIEWER_ERROR;
-		}
-		else if (flags == nsIScriptError::warningFlag)
-		{
-			error_type = ERROR_VIEWER_WARNING;
-		}
-		else
-		{
-			error_type = ERROR_VIEWER_INFO;
-		}
+		g_warning ("Could not get nsIScriptError");
 
-		js_error->GetSourceName (&utmp);
-		if (utmp)
-		{
-			source_name = g_strdup (NS_ConvertUCS2toUTF8(utmp).get());
+		aMessage->GetMessage (&ns_message);
 
-			nsMemory::Free (utmp);
-		}
+		error_viewer_append (dialog, error_type,
+				     NS_ConvertUCS2toUTF8(ns_message).get());
 
-		js_error->GetLineNumber (&line_number);
+		nsMemory::Free (ns_message);
 
-		if (source_name)
-		{
-			t = msg;
-
-			msg = g_strdup_printf (_("Javascript error in %s on line %d:\n%s"),
-					       source_name,
-					       line_number,
-					       t);
-
-			g_free (t);
-			g_free (source_name);
-		}
+		return NS_OK;
 	}
+
+	ns_error->GetFlags (&flags);
+	if (flags == nsIScriptError::errorFlag ||
+	    flags == nsIScriptError::exceptionFlag ||
+	    flags == nsIScriptError::strictFlag)
+	{
+		error_type = ERROR_VIEWER_ERROR;
+	}
+	else if (flags == nsIScriptError::warningFlag)
+	{
+		error_type = ERROR_VIEWER_WARNING;
+	}
+	else
+	{
+		error_type = ERROR_VIEWER_INFO;
+	}
+
+	msg = get_message_from_error (ns_error);
 
 	error_viewer_append (dialog, error_type, msg);
 

@@ -1,3 +1,12 @@
+2004-02-16  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:
+	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.h:
+	* extensions/error-viewer/mozilla/register-listener.cpp:
+
+	- Don't label non-Javascript errors as "Javascript". Fixes bug #134438
+	- Rename member variable "dialog" to "mDialog"
+
 2004-02-17  Laurent Dhima  <laurenti@alblinux.net>
 
 	* configure.ac: Added "sq" to ALL_LINGUAS.

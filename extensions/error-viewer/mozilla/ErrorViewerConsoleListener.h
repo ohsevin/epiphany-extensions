@@ -30,5 +30,5 @@ public:
   virtual ~ErrorViewerConsoleListener();
   /* additional members */
 
-  GObject *dialog; /* FIXME */
+  GObject *mDialog; /* FIXME */
 };
