@@ -1,5 +1,11 @@
 2004-01-03  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* doc/writing-epiphany-extensions.xml:
+
+	Follow API change like Christian.
+
+2004-01-03  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* AUTHORS:
 	* MAINTAINERS:
 

@@ -425,7 +425,7 @@ tab_added_cb (GtkWidget *notebook, EphyEmbed *embed, Ephy<replaceable>Foo</repla
 {
 	EphyTab *tab;
 
-	tab = EPHY_TAB (g_object_get_data (G_OBJECT (embed), &quot;EphyTab&quot;));
+	tab = ephy_tab_for_embed (embed);
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
 	g_signal_connect (G_OBJECT (embed), &quot;ge_location&quot;, G_CALLBACK (location_cb), tab);
@@ -439,7 +439,7 @@ tab_removed_cb (GtkWidget *notebook, EphyEmbed *embed, Ephy<replaceable>Foo</rep
 {
 	EphyTab *tab;
 
-	tab = EPHY_TAB (g_object_get_data (G_OBJECT (embed), &quot;EphyTab&quot;));
+	tab = ephy_tab_for_embed (embed);
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
 	g_signal_handlers_disconnect_by_func
