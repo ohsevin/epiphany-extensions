@@ -103,7 +103,7 @@ NS_IMETHODIMP ErrorViewerConsoleListener::Observe(nsIConsoleMessage *aMessage)
 		{
 			t = msg;
 
-			msg = g_strdup_printf (_("Error in %s, Line %d:\n%s"),
+			msg = g_strdup_printf (_("Javascript error in %s on line %d:\n%s"),
 					       source_name,
 					       line_number,
 					       t);

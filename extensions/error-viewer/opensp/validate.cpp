@@ -18,22 +18,33 @@
  *  $Id$
  */
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 #include <OpenSP/config.h> // Necessary for multi-byte support
 #include <OpenSP/ParserEventGeneratorKit.h>
 
 #include "error-viewer.h"
 
+#include <sys/types.h>
+#include <regex.h>
+
+#include <glib.h>
+#include <glib/gi18n-lib.h>
+
 #include <iostream>
 
 using namespace std;
 
-string toString (SGMLApplication::CharString s)
+static string
+toString (SGMLApplication::CharString s)
 {
 	string r = "";
 
 	for (size_t i = 0; i < s.len; i++)
 	{
-		r += char(s.ptr[i]);
+		r += (char) s.ptr[i];
 	}
 
 	return r;
@@ -41,38 +52,113 @@ string toString (SGMLApplication::CharString s)
 
 class HtmlErrorFinder : public SGMLApplication
 {
+private:
+	void handle_line (const char *msg);
+
 public:
 	ErrorViewer *error_viewer;
 
-	void error (const ErrorEvent &err)
-	{
-		ErrorViewerErrorType error_type;
-		const char *message;
-
-		if (!this->error_viewer) return;
-		
-		switch (err.type)
-		{
-			case err.info:
-				error_type = ERROR_VIEWER_INFO;
-				break;
-			case err.warning:
-				error_type = ERROR_VIEWER_WARNING;
-				break;
-			default:
-				error_type = ERROR_VIEWER_ERROR;
-		}
-
-		message = toString(err.message).c_str();
-
-		error_viewer_append (this->error_viewer, error_type, message);
-	}
+	void error (const ErrorEvent &err);
 };
+
+void
+HtmlErrorFinder::handle_line (const char *msg)
+{
+	ErrorViewerErrorType error_type;
+	char *source_name;
+	char *line_number;
+	char *verbose_msg;
+	const char *description;
+
+	regex_t *regex;
+	regmatch_t matches[5];
+	int regex_ret;
+
+	if (!this->error_viewer) return;
+
+	regex = g_new0 (regex_t, 1);
+	regex_ret = regcomp (regex,
+			     "([^/:]+):([0-9]+):[0-9]+:([A-Z]?):? (.*)$",
+			     REG_EXTENDED);
+	g_return_if_fail (regex_ret == 0);
+
+	regex_ret = regexec (regex, msg, G_N_ELEMENTS (matches), matches, 0);
+	if (regex_ret != 0)
+	{
+		g_warning ("Could not parse OpenSP string.: %s\n", msg);
+		error_viewer_append (this->error_viewer,
+				     ERROR_VIEWER_ERROR,
+				     msg);
+
+		regfree (regex);
+		return;
+	}
+
+	source_name = g_strndup (msg + matches[1].rm_so,
+				 matches[1].rm_eo - matches[1].rm_so);
+
+	line_number = g_strndup (msg + matches[2].rm_so,
+				 matches[2].rm_eo - matches[2].rm_so);
+
+	switch (*(msg + matches[3].rm_so))
+	{
+		case 'W':
+			error_type = ERROR_VIEWER_WARNING;
+			break;
+		case 'E':
+			error_type = ERROR_VIEWER_ERROR;
+			break;
+		default:
+			error_type = ERROR_VIEWER_INFO;
+	}
+
+	description = msg + matches[4].rm_so;
+
+	verbose_msg =
+		g_strdup_printf (_("HTML error in %s on line %s:\n%s"),
+				 source_name, line_number, description);
+
+	error_viewer_append (this->error_viewer, error_type,
+			     verbose_msg);
+
+	g_free (source_name);
+	g_free (line_number);
+	g_free (verbose_msg);
+	regfree (regex);
+}
+
+void
+HtmlErrorFinder::error (const ErrorEvent &err)
+{
+	/* Don't listen to OpenSP's err.type. Each line comes with
+	 * a ":W:" or ":E:" and err.type is redundant. Not to mention,
+	 * two-line errors *don't* have a :W: or :E: on the second line
+	 * and they *shouldn't* be errors because we want them to be "info"
+	 */
+
+	const char *raw_msg = toString(err.message).c_str();
+
+	char **messages = g_strsplit (raw_msg, "\n", 0);
+
+	char **i;
+
+	for (i = messages; *i; i++)
+	{
+		if (**i == '\0') continue;
+
+		handle_line (*i);
+	}
+
+	g_strfreev (messages);
+}
 
 extern "C" void
 validate (const char *filename,
 	  ErrorViewer *error_viewer)
 {
+	unsigned int num_errors;
+	char *summary;
+
 	ParserEventGeneratorKit parserKit;
 	parserKit.setOption (ParserEventGeneratorKit::enableWarning,
 			     "valid");
@@ -89,7 +175,16 @@ validate (const char *filename,
 	HtmlErrorFinder app;
 	app.error_viewer = error_viewer;
 
-	egp->run (app);
+	num_errors = egp->run (app);
 
 	delete egp;
+
+	summary = g_strdup_printf (ngettext ("Found %d HTML error",
+					     "Found %d HTML errors",
+					     num_errors),
+				   num_errors);
+
+	error_viewer_append (error_viewer, ERROR_VIEWER_INFO, summary);
+
+	g_free (summary);
 }

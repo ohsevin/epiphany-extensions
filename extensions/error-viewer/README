@@ -11,8 +11,14 @@ This also requires Epiphany newer than Jan 25 2004, because it
 adds an entry to the Tools menu.
 
 TODO:
-- Clean up the HTML validation stuff. It works but doesn't look nice.
+- Show the real URL, not our temp file url
 
-- Saying where the error comes from would be nice, too. It's not all Javascript errors. ("HTML Error in [blah] on line [blah]...")
+- Clean up the HTML validation stuff. Sometimes it spouts out garbage characters after the 200th character in a single message.
+
+- Once in a while a garbage message is passed from OpenSP. Fix that.
+
+- Disable the action if we're not viewing an HTML file
+
+- Only handles XHTML correctly, I think. Copy some behavior off validator.w3.org
 
 - Make text selectable

@@ -1,3 +1,21 @@
+2004-01-25  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/error-viewer/README:
+	* extensions/error-viewer/error-viewer.c:
+	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:
+	* extensions/error-viewer/opensp/validate.cpp:
+	* po/POTFILES.in:
+
+	- Parse OpenSP's error messages to make output pretty. It displays
+	  the wrong filename though.
+
+	- Use messages "Javascript error" and "HTML error"
+
+	- Display HTML error count when validation is finished (particularly
+	  important when there are 0 errors)
+
+	- Bump up max error count to 150 (some pages have lots of problems)
+
 2004-01-25  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/tabsmenu/ephy-tab-move-menu.c:
