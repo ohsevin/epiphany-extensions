@@ -1,6 +1,12 @@
 2004-05-15  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
+
+	Post-release version bump.
+
+2004-05-15  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
 	* NEWS:
 
 	Version 0.9.0.
