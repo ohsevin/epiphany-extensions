@@ -1,6 +1,12 @@
 2004-03-06  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/popup-blocker/ephy-popup-blocker-icon.c: (create_ui):
+
+	Remove hard-coded 16x16 and put in GTK_ICON_SIZE_MENU lookup
+
+2004-03-06  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/popup-blocker/ephy-popup-blocker-icon.c: (create_ui):
 	* extensions/popup-blocker/popup-blocker.svg:
 
 	Get rid of whitespace in the SVG file and set the proper icon size.

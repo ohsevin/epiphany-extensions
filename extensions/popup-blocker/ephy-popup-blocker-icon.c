@@ -117,13 +117,15 @@ static void
 create_ui (EphyPopupBlockerIcon *icon)
 {
 	GdkPixbuf *pixbuf;
+	int width = 0, height = 0;
 
 	icon->priv->frame = gtk_frame_new (NULL);
 	gtk_frame_set_shadow_type (GTK_FRAME (icon->priv->frame),
 				   GTK_SHADOW_IN);
 
+	gtk_icon_size_lookup (GTK_ICON_SIZE_MENU, &width, &height);
 	pixbuf = gdk_pixbuf_new_from_file_at_size
-		(SHARE_DIR "/icons/popup-blocker.svg", 16, 16, NULL);
+		(SHARE_DIR "/icons/popup-blocker.svg", width, height, NULL);
 	icon->priv->image = gtk_image_new_from_pixbuf (pixbuf);
 	g_object_unref (G_OBJECT (pixbuf));
 
