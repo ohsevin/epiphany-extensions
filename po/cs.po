@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-01-23 03:27+0100\n"
-"PO-Revision-Date: 2004-01-23 16:59+0100\n"
+"POT-Creation-Date: 2004-01-24 03:29+0100\n"
+"PO-Revision-Date: 2004-01-27 21:40+0100\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -35,9 +35,18 @@ msgstr "_Vymazat"
 msgid "Error Viewer"
 msgstr "Prohlížeč chyb"
 
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:106
+#, c-format
+msgid ""
+"Error in %s, Line %d:\n"
+"%s"
+msgstr ""
+"Chyba v %s, řádek %d:\n"
+"%s"
+
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
 msgid "Block _Popups from this Site"
-msgstr "Blokovat _vyskakovací okna z tohoto serveru"
+msgstr "_Blokovat vyskakovací okna z tohoto serveru"
 
 #. shortcut key
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:64
