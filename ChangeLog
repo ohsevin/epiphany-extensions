@@ -1,6 +1,27 @@
 2004-05-31  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
+	* extensions/popup-blocker/mozilla/PopupBlockerListener.cpp:
+	* extensions/popup-blocker/mozilla/mozilla-helpers.cpp:
+        * include/Makefile.am:
+	A include/mozilla-version.h:
+
+	Better mozilla version check macros, ported from Epiphany.
+	Drop mozilla < 1.7 support.
+
+	* include/eel-gconf-extensions.h:
+	* include/egg-editable-toolbar.h:
+	* include/ephy-debug.h:
+	* include/ephy-favicon-cache.h:
+	* include/ephy-file-helpers.h:
+	* include/ephy-gui.h:
+	* include/ephy-string.h:
+
+	Sync'd with Epiphany.
+
+2004-05-31  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
 
 	Post-release version bump.
 

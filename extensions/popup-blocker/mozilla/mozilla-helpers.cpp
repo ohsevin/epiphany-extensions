@@ -23,6 +23,8 @@
 #include "config.h"
 #endif
 
+#include "mozilla-version.h"
+
 #include "mozilla-helpers.h"
 #include "PopupBlockerListener.h"
 
@@ -65,7 +67,7 @@ mozilla_register_popup_listener (EphyEmbed *embed)
 	nsCOMPtr<nsPIDOMWindow> piWin(do_QueryInterface (domWindow, &rv));
 	NS_ENSURE_SUCCESS (rv, NULL);
 
-#if MOZILLA_SNAPSHOT >= 18
+#if MOZILLA_CHECK_VERSION4 (1, 8, MOZILLA_ALPHA, 1)
 	nsIChromeEventHandler* chromeHandler;
 	chromeHandler = piWin->GetChromeEventHandler ();
 #else
@@ -164,14 +166,8 @@ mozilla_open_popup (EphyEmbed *embed,
 	globalObject = do_QueryInterface (DOMWindow, &rv);
 	g_return_if_fail (NS_SUCCEEDED (rv));
 
-#if MOZILLA_SNAPSHOT >= 14
 	nsIScriptContext *context = globalObject->GetContext ();
 	g_return_if_fail (context != NULL);
-#else
-	nsCOMPtr<nsIScriptContext> context;
-	rv = globalObject->GetContext (getter_AddRefs (context));
-	g_return_if_fail (NS_SUCCEEDED (rv));
-#endif
 
 	context->SetProcessingScriptTag (PR_TRUE);
 
