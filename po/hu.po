@@ -1,16 +1,17 @@
 # Hungarian translation of epiphany-extensions.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Copyright (C) 2004 Free Software Foundation, Inc.
 # This file is distributed under the same license as the epiphany-extensions package.
-# Laszlo Dvornik <dvornikl@mailbox.hu>, 2004.
+# Laszlo Dvornik <dvornik@gnome.hu>, 2004.
+# Gabor Kelemen <kelemeng@gnome.hu>, 2004.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-05-31 13:15+0200\n"
-"PO-Revision-Date: 2004-02-26 17:53+0100\n"
-"Last-Translator: Laszlo Dvornik <dvornikl@mailbox.hu>\n"
-"Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
+"PO-Revision-Date: 2004-07-31 13:10+0200\n"
+"Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
+"Language-Team: Hungarian <gnome@gnome.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,7 +29,7 @@ msgstr "_Tanúsítványok kezelése"
 #. shortcut key
 #: extensions/certificates/ephy-certificates-extension.c:278
 msgid "Manage your certificates"
-msgstr "Az ön tanúsítványainak kezelése"
+msgstr "Az Ön tanúsítványainak kezelése"
 
 #. stock icon
 #: extensions/certificates/ephy-certificates-extension.c:286
@@ -111,10 +112,11 @@ msgstr ""
 "%s nem elérhető."
 
 #: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
-#, fuzzy, c-format
+#, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
-msgstr[0] "H_ivatkozások ellenőrzése"
+msgstr[0] "%d hivatkozás ellenőrzése itt: %s"
+msgstr[1] "%d hivatkozás ellenőrzése itt: %s"
 
 #: extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
@@ -161,23 +163,21 @@ msgid ""
 "HTML warning in %s:\n"
 "%s"
 msgstr ""
-"HTML hiba a(z) %s fájlban:\n"
+"HTML figyelmeztetés a(z) %s fájlban:\n"
 "%s"
 
 #: extensions/error-viewer/sgml-validator.c:360
-#, fuzzy, c-format
+#, c-format
 msgid "HTML error in %s:"
-msgstr ""
-"HTML hiba a(z) %s fájlban:\n"
-"%s"
+msgstr "HTML hiba a(z) %s fájlban:"
 
 #: extensions/error-viewer/sgml-validator.c:368
 msgid "Invalid character encoding"
-msgstr ""
+msgstr "Érvénytelen karakterkódolás"
 
 #: extensions/error-viewer/sgml-validator.c:373
 msgid "Unknown error while converting to UTF-8"
-msgstr ""
+msgstr "Ismeretlen hiba UTF-8-ra konvertálás közben"
 
 #: extensions/error-viewer/sgml-validator.c:435
 #, c-format
@@ -190,15 +190,16 @@ msgstr ""
 
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
 msgid "Popup _Windows"
-msgstr ""
+msgstr "Felugró _ablakok"
 
 #. shortcut key
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
 msgid "Show or hide unrequested popup windows from this site"
 msgstr ""
+"Erről az oldalról kéretlenül felbukkanó ablakok megjelenítése vagy elrejtése"
 
 #: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
-#, fuzzy, c-format
+#, c-format
 msgid "%d popup window blocked"
 msgid_plural "%d popup windows blocked"
 msgstr[0] "%d felbukkanó ablak blokkolva"
@@ -218,9 +219,3 @@ msgstr "Böngészőlap mozgatása ablakba"
 #: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
 msgstr "Böngészőlap mozgatása egy másik ablakba"
-
-#~ msgid "Blo_ck Popups from this Site"
-#~ msgstr "Felbukkanó ablakok _blokkolása erről a webhelyről"
-
-#~ msgid "Block or unblock popup windows"
-#~ msgstr "Felbukkanó ablakok blokkolása vagy engedélyezése"
