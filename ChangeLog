@@ -1,3 +1,12 @@
+2004-08-05  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/gestures/ephy-gestures-extension.c:
+	(impl_attach_window), (impl_detach_window):
+
+	Make the extension support loading/unloading. (Yeah, this is
+	pre-emtive to Epiphany's actually supporting it, but I can't be
+	bothered to keep a diff until that happens.)
+
 2004-08-01  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:

@@ -377,6 +377,17 @@ impl_attach_window (EphyExtension *extension,
 		    EphyWindow *window)
 {
 	GtkWidget *notebook;
+	GList *tabs, *l;
+
+	tabs = ephy_window_get_tabs (window);
+
+	for (l = tabs; l != NULL; l = g_list_next (l))
+	{
+		tab_added_cb (NULL, l->data,
+			      (EphyGesturesExtension *) extension);
+	}
+
+	g_list_free (tabs);
 
 	notebook = ephy_window_get_notebook (window);
 
@@ -391,6 +402,7 @@ impl_detach_window (EphyExtension *extension,
 		    EphyWindow *window)
 {
 	GtkWidget *notebook;
+	GList *tabs, *l;
 
 	notebook = ephy_window_get_notebook (window);
 
@@ -398,6 +410,16 @@ impl_detach_window (EphyExtension *extension,
 		(notebook, G_CALLBACK (tab_added_cb), extension);
 	g_signal_handlers_disconnect_by_func
 		(notebook, G_CALLBACK (tab_removed_cb), extension);
+
+	tabs = ephy_window_get_tabs (window);
+
+	for (l = tabs; l != NULL; l = g_list_next (l))
+	{
+		tab_removed_cb (NULL, l->data,
+				(EphyGesturesExtension *) extension);
+	}
+
+	g_list_free (tabs);
 }
 
 static void
