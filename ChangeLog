@@ -1,3 +1,17 @@
+2004-01-31  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/error-viewer/opensp/validate.cpp:
+
+	toString() returns utf-8 now, like it should.
+
+	* extensions/error-viewer/sgml-validator.c:
+	(sgml_validator_register_type), (opensp_thread), (check_doctype),
+	(convert_to_utf8), (save_source_completed_cb),
+	(sgml_validator_validate):
+
+	Re-encode the document to UTF-8 and set OpenSP to use UTF-8 through
+	its environment variables. This should make all encodings work.
+
 2004-01-31  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:

@@ -96,6 +96,10 @@ sgml_validator_register_type (GTypeModule *module)
 					    "SgmlValidator",
 					    &our_info, 0);
 
+	g_setenv ("SP_CHARSET_FIXED", "YES", TRUE);
+	g_setenv ("SP_SYSTEM_CHARSET", "utf-8", TRUE);
+	g_setenv ("SP_ENCODING", "utf-8", TRUE);
+
 	return type;
 }
 
@@ -145,6 +149,7 @@ static gpointer
 opensp_thread (gpointer data)
 {
 	char *summary;
+	char *real_dest;
 	OpenSPThreadCBData *osp_data;
 
 	osp_data = (OpenSPThreadCBData *) data;
@@ -173,16 +178,139 @@ opensp_thread (gpointer data)
 }
 
 static void
-save_source_completed_cb (EphyEmbedPersist *persist,
-			  SgmlValidator *validator)
+check_doctype (SgmlValidator *validator,
+	       EphyEmbed *embed,
+	       gboolean *is_xml,
+	       unsigned int *num_errors)
 {
-	const char *dest;
-	gboolean is_xml = FALSE;
-	int num_errors = 0;
 	char *doctype;
 	char *location;
 	char *content_type;
 	char *t;
+
+	*is_xml = FALSE;
+
+	doctype = mozilla_get_doctype (embed);
+
+	/* If it's HTML, ignore content type (it won't be wrong) */
+	if (strstr (doctype, "XHTML") == NULL)
+	{
+		g_free (doctype);
+		return;
+	}
+
+	content_type = mozilla_get_content_type (embed);
+
+	if (strcmp (content_type, "text/html") != 0)
+	{
+		*is_xml = TRUE;
+	}
+	else
+	{
+		/* Follow specs, people! w3's validator doesn't warn as much */
+		location = ephy_embed_get_location (embed, FALSE);
+
+		if (strstr (doctype, "XHTML 1.1"))
+		{
+			t = g_strdup_printf
+				(_("HTML error in %s:\nDoctype is XHTML"
+				   " but content type is text/html"),
+				 location);
+
+			sgml_validator_append (validator,
+					       ERROR_VIEWER_ERROR, t);
+
+			g_free (t);
+
+			*num_errors++;
+		}
+		else
+		{
+			t = g_strdup_printf
+				(_("HTML warning in %s:\nDoctype is XHTML"
+				   " but content type is text/html"),
+				 location);
+
+			sgml_validator_append (validator,
+					       ERROR_VIEWER_WARNING, t);
+
+			g_free (t);
+		}
+
+		g_free (location);
+	}
+
+	g_free (content_type);
+	g_free (doctype);
+	return;
+}
+
+static char *
+convert_to_utf8 (const char *file, EphyEmbed *embed)
+{
+	char *ret;
+	const char *static_tmp_dir;
+	EphyEncodingInfo *encoding_info;
+	char *base;
+	char *buf;
+	int buf_size = 4096;
+	int len;
+	GIOChannel *in;
+	GIOChannel *out;
+	GIOStatus status;
+
+	static_tmp_dir = ephy_file_tmp_dir ();
+	g_return_val_if_fail (static_tmp_dir != NULL, NULL);
+
+	base = g_build_filename (static_tmp_dir, "validateXXXXXX", NULL);
+	ret = ephy_file_tmp_filename (base, "html");
+	g_free (base);
+	g_return_val_if_fail (ret != NULL, NULL);
+
+	encoding_info = ephy_embed_get_encoding_info (embed);
+
+	in = g_io_channel_new_file (file, "r", NULL);
+	g_return_val_if_fail (in != NULL, NULL);
+	status = g_io_channel_set_encoding (in, encoding_info->encoding, NULL);
+	g_return_val_if_fail (status == G_IO_STATUS_NORMAL, NULL);
+
+	ephy_encoding_info_free (encoding_info); 
+	out = g_io_channel_new_file (ret, "w", NULL);
+	g_return_val_if_fail (out != NULL, NULL);
+	status = g_io_channel_set_encoding (out, "UTF-8", NULL);
+	g_return_val_if_fail (status == G_IO_STATUS_NORMAL, NULL);
+
+	buf = g_malloc0 (sizeof (char) * buf_size);
+	g_return_val_if_fail (buf != NULL, NULL);
+
+	while (TRUE)
+	{
+		status = g_io_channel_read_chars (in, buf, buf_size, &len,
+						  NULL);
+		g_return_val_if_fail (status != G_IO_STATUS_ERROR, NULL);
+
+		if (status == G_IO_STATUS_EOF) break;
+
+		status = g_io_channel_write_chars (out, buf, len, NULL, NULL);
+		g_return_val_if_fail (status != G_IO_STATUS_ERROR, NULL);
+	}
+
+	g_free (buf);
+
+	g_io_channel_unref (in);
+	g_io_channel_unref (out);
+
+	return ret;
+}
+
+static void
+save_source_completed_cb (EphyEmbedPersist *persist,
+			  SgmlValidator *validator)
+{
+	const char *dest;
+	char *dest_utf8;
+	gboolean is_xml;
+	unsigned int num_errors = 0;
 	OpenSPThreadCBData *data;
 	EphyEmbed *embed;
 
@@ -193,73 +321,22 @@ save_source_completed_cb (EphyEmbedPersist *persist,
 	g_return_if_fail (dest != NULL);
 
 	embed = ephy_embed_persist_get_embed (persist);
-	doctype = mozilla_get_doctype (embed);
-	if (!doctype)
-	{
-		location = ephy_embed_get_location (embed, FALSE);
+	check_doctype (validator, embed, &is_xml, &num_errors);
 
-		t = g_strdup_printf
-			(_("HTML error in %s:\nNo valid doctype specified."),
-			 location);
+	/*
+	 * Convert to UTF-8.
+	 * We use a second temp file because I don't trust Mozilla to convert
+	 * and not change any of the HTML.
+	 */
+	dest_utf8 = convert_to_utf8 (dest, embed);
+	g_return_if_fail (dest_utf8 != NULL);
 
-		g_free (location);
-
-		sgml_validator_append (validator, ERROR_VIEWER_ERROR, t);
-
-		g_free (t);
-		return;
-	}
-	if (strstr (doctype, "XHTML"))
-	{
-		content_type = mozilla_get_content_type (embed);
-
-		if (strcmp (content_type, "text/html") == 0)
-		{
-			location = ephy_embed_get_location (embed, FALSE);
-
-			if (strstr (doctype, "XHTML 1.1"))
-			{
-				t = g_strdup_printf
-					(_("HTML error in %s:\nDoctype is XHTML"
-					   " but content type is text/html"),
-					 location);
-
-				sgml_validator_append (validator,
-						       ERROR_VIEWER_ERROR, t);
-
-				g_free (t);
-
-				num_errors++;
-			}
-			else
-			{
-				t = g_strdup_printf
-					(_("HTML warning in %s:\nDoctype is "
-					   "XHTML but content type is "
-					   "text/html"),
-					 location);
-
-				sgml_validator_append (validator,
-						       ERROR_VIEWER_WARNING, t);
-
-				g_free (t);
-			}
-
-			g_free (location);
-		}
-		else
-		{
-			is_xml = TRUE;
-		}
-
-		g_free (content_type);
-	}
-	g_free (doctype);
+	unlink (dest);
 
 	if (!g_thread_supported ()) g_thread_init (NULL);
 
 	data = g_new0 (OpenSPThreadCBData, 1);
-	data->dest = g_strdup (dest);
+	data->dest = dest_utf8;
 	data->location = ephy_embed_get_location (embed, FALSE);
 	g_object_ref (validator);
 	data->validator = validator;
@@ -275,8 +352,30 @@ sgml_validator_validate (SgmlValidator *validator,
 {
 	EphyEmbedPersist *persist;
 	char *tmp, *base;
+	char *doctype, *location, *t;
 	const char *static_tmp_dir;
 
+	/* If there's no doctype, don't validate. */
+	doctype = mozilla_get_doctype (embed);
+
+	if (!doctype)
+	{
+		location = ephy_embed_get_location (embed, FALSE);
+
+		t = g_strdup_printf
+			(_("HTML error in %s:\nNo valid doctype specified."),
+			 location);
+
+		sgml_validator_append (validator, ERROR_VIEWER_ERROR, t);
+
+		g_free (location);
+		g_free (t);
+		return;
+	}
+
+	g_free (doctype);
+
+	/* Okay, save to a temp file and validate. */
 	static_tmp_dir = ephy_file_tmp_dir ();
 	g_return_if_fail (static_tmp_dir != NULL);
 
