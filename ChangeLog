@@ -1,5 +1,11 @@
 2004-09-19  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* README:
+
+	Added README note about adblock
+
+2004-09-19  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* configure.ac:
 	* extensions/Makefile.am:
 	* extensions/adblock/.cvsignore:

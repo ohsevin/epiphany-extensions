@@ -10,6 +10,7 @@ How to choose which extensions to build:
 
 where ext1, ext2 ... are one of the following:
 
+adblock			Block content based on its URL
 certificates		Display SSL certificates
 dashboard		Send cluepackets to Dashboard
 error-viewer		Error Viewer dialog [i.e., Javascript, HTML errors]
