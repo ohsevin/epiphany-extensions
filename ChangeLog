@@ -1,5 +1,16 @@
 2004-10-14  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/extensions-manager-ui/extensions-manager-ui.c:
+	(extensions_manager_ui_response_cb), (fill_list_store),
+	(active_sync), (build_ui), (extensions_manager_ui_init),
+	(extensions_manager_ui_finalize),
+	(extensions_manager_ui_class_init), (extensions_manager_ui_new):
+	* extensions/extensions-manager-ui/extensions-manager-ui.glade:
+
+	Fix dialogue to actually be a GtkDialog.
+
+2004-10-14  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/extensions-manager-ui/ephy-extensions-manager-ui-exten
 	sion.c: (ephy_extensions_manager_ui_extension_get_type),
 	(ephy_extensions_manager_ui_extension_register_type),

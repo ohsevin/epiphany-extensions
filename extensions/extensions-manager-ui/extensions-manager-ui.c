@@ -22,8 +22,8 @@
 #include "config.h"
 #endif
 
-#include "ephy-debug.h"
 #include "extensions-manager-ui.h"
+#include "ephy-debug.h"
 
 #include <epiphany/ephy-extensions-manager.h>
 #include <epiphany/ephy-shell.h>
@@ -33,8 +33,11 @@
 #include <gtk/gtktreeselection.h>
 #include <gtk/gtktreemodel.h>
 #include <gtk/gtkliststore.h>
+#include <gtk/gtkstock.h>
 
 #include <string.h>
+
+#include <glib/gi18n-lib.h>
 
 #define IGNORE_SELF /* Don't display *this* extension in the list */
 
@@ -55,12 +58,6 @@ enum
 	PROP_TREEVIEW,
 };
 
-enum
-{
-	PROP_0,
-	PROP_EXTENSIONS_MANAGER
-};
-
 static const
 EphyDialogProperty properties [] =
 {
@@ -79,12 +76,12 @@ enum
 };
 
 /* glade callbacks */
-void extensions_manager_ui_close_cb (GtkWidget *button,
-				     ExtensionsManagerUI *dialog);
+void extensions_manager_ui_response_cb (GtkWidget *button,
+					int response,
+				  	GObject *dialog);
 
 static void extensions_manager_ui_class_init	(ExtensionsManagerUIClass *klass);
 static void extensions_manager_ui_init		(ExtensionsManagerUI *dialog);
-static void extensions_manager_ui_finalize	(GObject *object);
 
 static GObjectClass *parent_class = NULL;
 
@@ -120,19 +117,19 @@ extensions_manager_ui_register_type (GTypeModule *module)
 	return type;
 }
 
-ExtensionsManagerUI *
-extensions_manager_ui_new (void)
+void
+extensions_manager_ui_response_cb (GtkWidget *widget,
+				   int response,
+				   GObject *dialog)
 {
-	return EXTENSIONS_MANAGER_UI (g_object_new (TYPE_EXTENSIONS_MANAGER_UI,
-				      "persist-position", TRUE,
-				      NULL));
+	g_object_unref (dialog);
 }
 
 static void
 fill_list_store (EphyExtensionsManager *manager,
 		 GtkListStore *store)
 {
-	GList *extensions;
+	GList *extensions, *l;
 	EphyExtensionInfo *info;
 	GtkTreeIter iter;
 	char *display;
@@ -141,9 +138,9 @@ fill_list_store (EphyExtensionsManager *manager,
 
 	extensions = ephy_extensions_manager_get_extensions (manager);
 
-	for (; extensions; extensions = extensions->next)
+	for (l = extensions; l != NULL; l = l->next)
 	{
-		info = (EphyExtensionInfo *) extensions->data;
+		info = (EphyExtensionInfo *) l->data;
 
 #ifdef IGNORE_SELF
 		if (strcmp (info->identifier, "extensions-manager-ui") == 0)
@@ -242,7 +239,8 @@ active_sync (EphyExtensionsManager *manager,
 		g_free (id);
 
 		if (match) return;
-	} while (gtk_tree_model_iter_next (model, &iter));
+	}
+	while (gtk_tree_model_iter_next (model, &iter));
 }
 
 static void
@@ -258,13 +256,15 @@ build_ui (ExtensionsManagerUI *dialog)
 	priv->treeview = ephy_dialog_get_control (EPHY_DIALOG (dialog),
 						  properties[PROP_TREEVIEW].id);
 
+	gtk_window_set_icon_name (GTK_WINDOW (priv->window), GTK_STOCK_PREFERENCES);
+
 	treeview = GTK_TREE_VIEW (priv->treeview);
 
 	renderer = gtk_cell_renderer_toggle_new ();
 	g_signal_connect (G_OBJECT (renderer), "toggled",
 			  G_CALLBACK (extension_toggle_cb), dialog);
 	gtk_tree_view_insert_column_with_attributes (treeview,
-						     COL_TOGGLE, "Enabled",
+						     COL_TOGGLE, _("Enabled"),
 						     renderer,
 						     "active", COL_TOGGLE,
 						     NULL);
@@ -275,7 +275,7 @@ build_ui (ExtensionsManagerUI *dialog)
 		      "editable", TRUE,
 		      NULL);
 	gtk_tree_view_insert_column_with_attributes (treeview,
-						     COL_DISPLAY, "Text",
+						     COL_DISPLAY, _("Description"),
 						     renderer,
 						     "markup", COL_DISPLAY,
 						     NULL);
@@ -291,6 +291,7 @@ build_ui (ExtensionsManagerUI *dialog)
 	gtk_tree_view_set_model (treeview, GTK_TREE_MODEL (store));
 
 	priv->model = GTK_TREE_MODEL (store);
+	g_object_unref (store);
 }
 
 static void
@@ -302,7 +303,6 @@ extensions_manager_ui_init (ExtensionsManagerUI *dialog)
 
 	dialog->priv->manager = EPHY_EXTENSIONS_MANAGER
 		(ephy_shell_get_extensions_manager (ephy_shell));
-	g_object_ref (dialog->priv->manager);
 
 	ephy_dialog_construct (EPHY_DIALOG (dialog),
 			       properties,
@@ -318,6 +318,19 @@ extensions_manager_ui_init (ExtensionsManagerUI *dialog)
 }
 
 static void
+extensions_manager_ui_finalize (GObject *object)
+{
+	ExtensionsManagerUI *dialog = EXTENSIONS_MANAGER_UI (object);
+
+	LOG ("ExtensionsManagerUI finalising")
+
+	g_signal_handler_disconnect (G_OBJECT (dialog->priv->manager),
+				     dialog->priv->manager_signal);
+
+	parent_class->finalize (object);
+}
+
+static void
 extensions_manager_ui_class_init (ExtensionsManagerUIClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
@@ -329,26 +342,12 @@ extensions_manager_ui_class_init (ExtensionsManagerUIClass *klass)
 	g_type_class_add_private (object_class, sizeof (ExtensionsManagerUIPrivate));
 }
 
-static void
-extensions_manager_ui_finalize (GObject *object)
+ExtensionsManagerUI *
+extensions_manager_ui_new (void)
 {
-	ExtensionsManagerUI *dialog = EXTENSIONS_MANAGER_UI (object);
-
-	g_signal_handler_disconnect (G_OBJECT (dialog->priv->manager),
-				     dialog->priv->manager_signal);
-
-	g_object_unref (G_OBJECT (dialog->priv->manager));
-
-	/* FIXME: Free TreeView stuff? */
-
-	LOG ("ExtensionsManagerUI finalizing")
-
-	G_OBJECT_CLASS (parent_class)->finalize (object);
-}
-
-void
-extensions_manager_ui_close_cb (GtkWidget *button,
-				ExtensionsManagerUI *dialog)
-{
-	gtk_widget_hide (dialog->priv->window);
+	return g_object_new (TYPE_EXTENSIONS_MANAGER_UI,
+			     "persist-position", TRUE,
+			     "default-width", 300,
+			     "default-height", 400,
+			     NULL);
 }
