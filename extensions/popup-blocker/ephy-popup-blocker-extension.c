@@ -459,7 +459,7 @@ register_mozilla (EphyEmbed *embed)
 static void
 new_window_cb (EphyEmbed *embed,
 	       EphyEmbed **new_embed,
-	       EmbedChromeMask chromemask,
+	       guint chromemask,
 	       EphyPopupBlockerList *popups)
 {
 	EphyWindow *window;
