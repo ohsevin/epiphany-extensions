@@ -37,8 +37,9 @@ extensionxml_DATA = $(extensionxml_in_files:.xml.in.in=.xml)
 
 %.xml.in: %.xml.in.in
 	sed -e "s|%GETTEXT_PACKAGE%|$(GETTEXT_PACKAGE)|" \
-	    -e "s|%LOCALE_DIR%|$(LOCALE_DIR)|" \
+	    -e "s|%LOCALE_DIR%|$(datadir)/locale|" \
 	    -e "s|%LIBRARY%|`source $(extension_LTLIBRARIES) && echo $$dlname`|" \
+	    -e "s|%EXTENSION_DIR%|$(extensiondir)|" \
 	$< > $@
 
 @INTLTOOL_XML_RULE@

@@ -1,3 +1,36 @@
+2004-10-13  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/adblock/Makefile.am:
+	* extensions/adblock/adblock.xml.in.in:
+	* extensions/certificates/Makefile.am:
+	* extensions/certificates/certificates.xml.in.in:
+	* extensions/dashboard/Makefile.am:
+	* extensions/dashboard/dashboard.xml.in.in:
+	* extensions/error-viewer/Makefile.am:
+	* extensions/error-viewer/error-viewer.xml.in.in:
+	* extensions/gestures/Makefile.am:
+	* extensions/gestures/gestures.xml.in.in:
+	* extensions/page-info/Makefile.am:
+	* extensions/page-info/page-info.xml.in.in:
+	* extensions/sample-mozilla/Makefile.am:
+	* extensions/sample-mozilla/sample-mozilla.xml.in.in:
+	* extensions/sample/Makefile.am:
+	* extensions/sample/sample.xml.in.in:
+	* extensions/select-stylesheet/Makefile.am:
+	* extensions/select-stylesheet/select-stylesheet.xml.in.in:
+	* extensions/sidebar/Makefile.am:
+	* extensions/sidebar/sidebar.xml.in.in:
+	* extensions/smart-bookmarks/Makefile.am:
+	* extensions/smart-bookmarks/smart-bookmarks.xml.in.in:
+	* extensions/tab-groups/Makefile.am:
+	* extensions/tab-groups/tab-groups.xml.in.in:
+	* extensions/tabsmenu/Makefile.am:
+	* extensions/tabsmenu/tabsmenu.xml.in.in:
+	* extensions/toolbar-extras/Makefile.am:
+	* extensions/toolbar-extras/toolbar-extras.xml.in.in:
+
+	Fix the .xml files.
+
 2004-10-11  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/error-viewer/sgml-validator.c: (convert_to_utf8):

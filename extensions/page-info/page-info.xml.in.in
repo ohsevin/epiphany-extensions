@@ -9,6 +9,6 @@
 	<gettext-domain>%GETTEXT_PACKAGE%</gettext-domain>
 	<locale-directory>%LOCALE_DIR%</locale-directory>
 	<loader type="shlib">
-		<attribute name="library">%LIBRARY%</attribute>
+		<attribute name="library">%EXTENSION_DIR%/%LIBRARY%</attribute>
 	</loader>
 </extension>
