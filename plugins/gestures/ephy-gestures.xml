@@ -136,6 +136,16 @@
 		<action>ViewPageSource</action>
 	</gesture>
 
+  <!-- up-right-down (Firebird does 'view source' with this) -->
+	<gesture>
+		<sequence>7412369</sequence>
+		<sequence>412369</sequence>
+		<sequence>741236</sequence>
+		<sequence>741269</sequence>
+		<sequence>741369</sequence>
+		<action>ViewPageSource</action>
+	</gesture>
+
 	<!-- left-up -->
 	<gesture>
 		<sequence>98741</sequence>

@@ -1,3 +1,12 @@
+2003-09-05  Adam Hooper <adamh@densi.com>
+	* ephy-gestures.xml:
+
+	Added an up-right-down gesture for 'View Source' because Firebird's
+	gestures allow it and it's a lot easier than an "S." Firebird has plenty
+	of gestures we still don't support, but I personally never see a need to
+	use 'em :P. The full list is at
+	http://optimoz.mozdev.org/gestures/defaultmappings.html.
+
 2003-09-04  Christian Persch  <chpe@cvs.gnome.org>
 
 	* ephy-gestures.c: (ephy_gestures_class_init),
