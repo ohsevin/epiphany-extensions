@@ -1,3 +1,7 @@
+2004-02-01  Robert Sedak  <robert.sedak@sk.htnet.hr>
+
+        * configure.ac: Added "hr" (Croatian) to ALL_LINGUAS.
+
 2004-02-01  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/error-viewer/error-viewer.c:
