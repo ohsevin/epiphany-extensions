@@ -443,7 +443,6 @@ extern "C" GList *
 mozilla_get_forms (EphyEmbed *embed)
 {
 	nsresult rv;
-	GHashTable *hash = g_hash_table_new(g_str_hash, g_str_equal);
 	GList *ret = NULL;
 
 	nsCOMPtr<nsIWebBrowser> browser;

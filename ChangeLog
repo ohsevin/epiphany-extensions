@@ -1,3 +1,12 @@
+2004-09-22  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/error-viewer/opensp/validate.cpp:
+	* extensions/error-viewer/sgml-validator.c: (opensp_thread),
+	(save_source_completed_cb):
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+
+	Fix mem leaks reported by chpe. Bugs #153470, 153471, 153473.
+
 2004-09-22  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
