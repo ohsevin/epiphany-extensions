@@ -1,3 +1,9 @@
+2003-10-28  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.in:
+
+	Up libxml2 requirement to 2.6.0.
+
 2003-09-05  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.in:
