@@ -142,22 +142,6 @@ get_icon_for_embed (EphyEmbed *embed)
 }
 
 static void
-set_action_sensitive (EphyWindow *window,
-		      gboolean sensitive)
-{
-	GtkAction *action;
-
-	g_return_if_fail (EPHY_IS_WINDOW (window));
-
-	action = gtk_ui_manager_get_action (GTK_UI_MANAGER (window->ui_merge),
-					    "/menubar/ViewMenu/PopupBlocker");
-
-	g_return_if_fail (GTK_IS_ACTION (action));
-
-	g_object_set (G_OBJECT (action), "sensitive", sensitive, NULL);
-}
-
-static void
 update_action (EphyWindow *window, const char *address)
 {
 	EphyPermissionManager *permission_manager;
@@ -344,7 +328,6 @@ location_cb (EphyEmbed *embed,
 	g_return_if_fail (EPHY_IS_WINDOW (window));
 
 	update_action (window, address);
-	set_action_sensitive (window, FALSE);
 
 	popups = g_object_get_data (G_OBJECT (embed), "popup-blocker-list");
 	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (popups));
@@ -392,12 +375,10 @@ action_activate_cb (GtkAction *action,
 	if (gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action)) == TRUE)
 	{
 		allow = EPHY_PERMISSION_ALLOWED;
-		ephy_popup_blocker_list_show_all (list);
 	}
 	else
 	{
 		allow = EPHY_PERMISSION_DENIED;
-		ephy_popup_blocker_list_hide_all (list);
 	}
 
 	LOG ("from now on, address '%s' will %s popups", address,
@@ -405,6 +386,15 @@ action_activate_cb (GtkAction *action,
 
 	ephy_permission_manager_add (permission_manager, address,
 				     EPT_POPUP, allow); 
+
+	if (allow == EPHY_PERMISSION_ALLOWED)
+	{
+		ephy_popup_blocker_list_show_all (list);
+	}
+	else
+	{
+		ephy_popup_blocker_list_hide_all (list);
+	}
 }
 
 static void
@@ -488,26 +478,6 @@ new_window_cb (EphyEmbed *embed,
 }
 
 static void
-load_status_cb (EphyTab *tab,
-		GParamSpec *pspec,
-		EphyWindow *window)
-{
-	gboolean sensitive = FALSE;
-
-	g_return_if_fail (EPHY_IS_TAB (tab));
-	g_return_if_fail (EPHY_IS_WINDOW (window));
-
-	LOG ("load_status_cb: tab %p, window %p\n", tab, window)
-
-	if (ephy_tab_get_load_status (tab) == FALSE)
-	{
-		sensitive = TRUE;
-	}
-
-	set_action_sensitive (window, sensitive);
-}
-
-static void
 tab_added_cb (GtkWidget *notebook,
 	      EphyTab *tab,
 	      EphyWindow *window)
@@ -536,8 +506,6 @@ tab_added_cb (GtkWidget *notebook,
 
 	register_mozilla (embed);
 
-	g_signal_connect_after (tab, "notify::load-status",
-				G_CALLBACK (load_status_cb), window);
 	g_signal_connect (embed, "ge_location",
 			  G_CALLBACK (location_cb), tab);
 	g_signal_connect_object (embed, "ge_new_window",
@@ -563,8 +531,6 @@ tab_removed_cb (GtkWidget *notebook,
 	popups = g_object_get_data (G_OBJECT (embed), "popup-blocker-list");
 	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (popups));
 
-	g_signal_handlers_disconnect_by_func
-		(tab, G_CALLBACK (load_status_cb), window);
 	g_signal_handlers_disconnect_by_func
 		(embed, G_CALLBACK (location_cb), tab);
 	g_signal_handlers_disconnect_by_func

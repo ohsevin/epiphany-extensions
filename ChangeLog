@@ -1,6 +1,15 @@
 2004-03-14  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
+	(location_cb), (action_activate_cb), (tab_added_cb),
+	(tab_removed_cb):
+
+	The infinite loop was because it was trying to open popups before
+	allowing them. A good night's sleep fixed this one.
+
+2004-03-14  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
 	(set_action_sensitive), (location_cb), (load_status_cb),
 	(tab_added_cb), (tab_removed_cb), (switch_page_cb),
 	(impl_attach_window), (impl_detach_window):
