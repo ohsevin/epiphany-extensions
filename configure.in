@@ -34,7 +34,7 @@ dnl ********************************
 dnl Internationalisation
 dnl ********************************
 
-ALL_LINGUAS="de en_GB fr"
+ALL_LINGUAS="de en_GB fr ja"
 
 AC_PROG_INTLTOOL([0.22])
 
