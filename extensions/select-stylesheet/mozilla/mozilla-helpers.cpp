@@ -47,8 +47,6 @@
 
 #include <glib/gi18n-lib.h>
 
-#define MAGIC	0xDEADBEEF
-
 struct MozillaStyleSheet
 {
 	MozillaStyleSheet(StyleSheetType aType,
@@ -57,7 +55,6 @@ struct MozillaStyleSheet
 	: mName(g_strdup (aName))
 	, mType(aType)
 	, mStyleSheet(aStyleSheet)
-	, mMagic(MAGIC)
 	{
 	}
 
@@ -66,7 +63,6 @@ struct MozillaStyleSheet
 		g_free (mName);
 	}
 
-	PRUint32 mMagic;
 	nsCOMPtr<nsIDOMStyleSheet> mStyleSheet;
 	char *mName;
 	StyleSheetType mType;
@@ -75,16 +71,12 @@ struct MozillaStyleSheet
 extern "C" StyleSheetType
 mozilla_stylesheet_get_type (MozillaStyleSheet *aStyle)
 {
-	g_return_val_if_fail (aStyle->mMagic == MAGIC, STYLESHEET_NONE);
-
 	return aStyle->mType;
 }
 
 extern "C" const char *
 mozilla_stylesheet_get_name (MozillaStyleSheet *aStyle)
 {
-	g_return_val_if_fail (aStyle->mMagic == MAGIC, "");
-
 	return aStyle->mName;
 }
 
@@ -92,9 +84,6 @@ extern "C" void
 mozilla_stylesheet_free (MozillaStyleSheet *aStyle)
 {
 	g_return_if_fail (aStyle != NULL);
-	g_return_if_fail (aStyle->mMagic == MAGIC);
-
-	aStyle->mMagic = ~MAGIC;
 
 	delete aStyle;
 }
@@ -104,8 +93,6 @@ stylesheet_find_func (gconstpointer a, gconstpointer b)
 {
 	const MozillaStyleSheet *sheet = (const MozillaStyleSheet *) a;
 	const char *name = (const char *) b;
-
-	g_return_val_if_fail (sheet->mMagic == MAGIC, -1);
 
 	return strcmp (sheet->mName, name);
 }
@@ -256,8 +243,6 @@ extern "C" void
 mozilla_set_stylesheet (EphyEmbed *aEmbed,
 			MozillaStyleSheet *aSelected)
 {
-	g_return_if_fail (aSelected->mMagic == MAGIC);
-
 	nsCOMPtr<nsIDOMStyleSheetList> list;
 	GetStylesheets (aEmbed, getter_AddRefs (list));
 	NS_ENSURE_TRUE (list, );
