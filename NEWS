@@ -2,6 +2,31 @@
 Epiphany Extensions 1.5.1
 =========================
 
+Changes
+
+	* Select first menu item when popping the menu up with keyboard
+	* Fix compilation with latest mozilla trunk
+	* Use ephy_embed_show_page_certificate
+	* Sync headers with Epiphany
+	* Also list CSS background images and mailto links in the 
+	  page info dialogue (Jean-François Rameau)
+	* Fix out-of-srcdir build
+
+Bug fixes
+
+	* Fix tab closing with tab-groups extension
+
+Translation updates
+
+	* Adam Weinberger (en_CA)
+	* Yannick Tailliez (fr)
+	* Takeshi AIHANA (ja)
+
+
+=========================
+Epiphany Extensions 1.5.1
+=========================
+
 New features
 
 	* Created copy-template script
