@@ -1,5 +1,18 @@
 2004-12-30  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/sample/ephy-sample-extension.c:
+	(ephy_sample_extension_finalize), (impl_attach_tab),
+	(impl_detach_tab), (ephy_sample_extension_iface_init),
+	(ephy_sample_extension_class_init),
+	(ephy_sample_extension_get_type),
+	(ephy_sample_extension_register_type):
+	* extensions/sample/ephy-sample-extension.h:
+	* extensions/sample/sample.c:
+
+	Add stubs for attach/detach_tab, and fix a few annoyances.
+
+2004-12-30  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/page-info/mozilla/mozilla-helpers.cpp:
 	* extensions/page-info/mozilla/mozilla-helpers.h:
 

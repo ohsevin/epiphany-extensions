@@ -19,9 +19,7 @@
  *  $Id$
  */
 
-#ifdef HAVE_CONFIG_H
 #include "config.h"
-#endif
 
 #include "ephy-sample-extension.h"
 #include "ephy-debug.h"
@@ -32,64 +30,19 @@
 
 #define EPHY_SAMPLE_EXTENSION_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_SAMPLE_EXTENSION, EphySampleExtensionPrivate))
 
-struct EphySampleExtensionPrivate
+struct _EphySampleExtensionPrivate
 {
+	gpointer dummy;
 };
-
-static void ephy_sample_extension_class_init	(EphySampleExtensionClass *klass);
-static void ephy_sample_extension_iface_init	(EphyExtensionIface *iface);
-static void ephy_sample_extension_init		(EphySampleExtension *extension);
 
 enum
 {
 	PROP_0
 };
 
-static GObjectClass *sample_extension_parent_class = NULL;
+static GObjectClass *parent_class = NULL;
 
-static GType sample_extension_type = 0;
-
-GType
-ephy_sample_extension_get_type (void)
-{
-	return sample_extension_type;
-}
-
-GType
-ephy_sample_extension_register_type (GTypeModule *module)
-{
-	static const GTypeInfo our_info =
-	{
-		sizeof (EphySampleExtensionClass),
-		NULL, /* base_init */
-		NULL, /* base_finalize */
-		(GClassInitFunc) ephy_sample_extension_class_init,
-		NULL,
-		NULL, /* class_data */
-		sizeof (EphySampleExtension),
-		0, /* n_preallocs */
-		(GInstanceInitFunc) ephy_sample_extension_init
-	};
-
-	static const GInterfaceInfo extension_info =
-	{
-		(GInterfaceInitFunc) ephy_sample_extension_iface_init,
-		NULL,
-		NULL
-	};
-
-	sample_extension_type =
-		g_type_module_register_type (module,
-					     G_TYPE_OBJECT,
-					     "EphySampleExtension",
-					     &our_info, 0);
-
-	g_type_module_add_interface (module,
-				     sample_extension_type,
-				     EPHY_TYPE_EXTENSION,
-				     &extension_info);
-	return sample_extension_type;
-}
+static GType type = 0;
 
 static void
 ephy_sample_extension_init (EphySampleExtension *extension)
@@ -107,7 +60,7 @@ ephy_sample_extension_finalize (GObject *object)
 */
 	LOG ("EphySampleExtension finalising")
 
-	G_OBJECT_CLASS (sample_extension_parent_class)->finalize (object);
+	G_OBJECT_CLASS (parent_class)->finalize (object);
 }
 
 static void
@@ -124,6 +77,22 @@ impl_detach_window (EphyExtension *ext,
 {
 //	EphySampleExtension *extension = EPHY_SAMPLE_EXTENSION (ext);
 	LOG ("EphySampleExtension detach_window")
+}
+
+static void
+impl_attach_tab (EphyExtension *ext,
+		 EphyWindow *window,
+		 EphyTab *tab)
+{
+	LOG ("attach_tab")
+}
+
+static void
+impl_detach_tab (EphyExtension *ext,
+		 EphyWindow *window,
+		 EphyTab *tab)
+{
+	LOG ("detach_tab")
 }
 
 static void
@@ -161,6 +130,8 @@ ephy_sample_extension_iface_init (EphyExtensionIface *iface)
 {
 	iface->attach_window = impl_attach_window;
 	iface->detach_window = impl_detach_window;
+	iface->attach_tab = impl_attach_tab;
+	iface->detach_tab = impl_detach_tab;
 }
 
 static void
@@ -168,11 +139,53 @@ ephy_sample_extension_class_init (EphySampleExtensionClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-	sample_extension_parent_class = g_type_class_peek_parent (klass);
+	parent_class = g_type_class_peek_parent (klass);
 
 	object_class->finalize = ephy_sample_extension_finalize;
 	object_class->get_property = ephy_sample_extension_get_property;
 	object_class->set_property = ephy_sample_extension_set_property;
 
 	g_type_class_add_private (object_class, sizeof (EphySampleExtensionPrivate));
+}
+
+GType
+ephy_sample_extension_get_type (void)
+{
+	return type;
+}
+
+GType
+ephy_sample_extension_register_type (GTypeModule *module)
+{
+	static const GTypeInfo our_info =
+	{
+		sizeof (EphySampleExtensionClass),
+		NULL, /* base_init */
+		NULL, /* base_finalize */
+		(GClassInitFunc) ephy_sample_extension_class_init,
+		NULL,
+		NULL, /* class_data */
+		sizeof (EphySampleExtension),
+		0, /* n_preallocs */
+		(GInstanceInitFunc) ephy_sample_extension_init
+	};
+
+	static const GInterfaceInfo extension_info =
+	{
+		(GInterfaceInitFunc) ephy_sample_extension_iface_init,
+		NULL,
+		NULL
+	};
+
+	type = g_type_module_register_type (module,
+					    G_TYPE_OBJECT,
+					    "EphySampleExtension",
+					    &our_info, 0);
+
+	g_type_module_add_interface (module,
+				     type,
+				     EPHY_TYPE_EXTENSION,
+				     &extension_info);
+
+	return type;
 }

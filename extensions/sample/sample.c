@@ -1,6 +1,6 @@
 /*
  *  Copyright (C) 2003 Marco Pesenti Gritti
- *  Copyright (C) 2003 Christian Persch
+ *  Copyright (C) 2003, 2004 Christian Persch
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -19,15 +19,13 @@
  *  $Id$
  */
 
-#ifdef HAVE_CONFIG_H
 #include "config.h"
-#endif
 
 #include "ephy-sample-extension.h"
 #include "ephy-debug.h"
 
-#include <gmodule.h>
 #include <glib/gi18n-lib.h>
+#include <gmodule.h>
 
 G_MODULE_EXPORT GType register_module (GTypeModule *module);
 
