@@ -1,3 +1,10 @@
+2004-01-02  Christian Persch  <chpe@cvs.gnome.org>
+
+	* README:
+
+	The tabs menu extension now works without a patch to epiphany,
+	so removed mention of the patch.
+
 2004-01-02  Danilo Šegan  <dsegan@gmx.net>
 
 	* configure.ac: Added "sr" and "sr@Latn" to ALL_LINGUAS.
