@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany Extension 0.7.91\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-14 23:29+0200\n"
-"PO-Revision-Date: 2004-10-14 23:55+0200\n"
+"POT-Creation-Date: 2004-10-22 16:56+0200\n"
+"PO-Revision-Date: 2004-10-22 16:59+0200\n"
 "Last-Translator: Christian Neumair <chris@gnome-de.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -186,6 +186,57 @@ msgstr ""
 "HTML-Fehler in %s:\n"
 "Kein gültiger doctype-Dokumententyp angegeben."
 
+#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+msgid "_Extensions"
+msgstr "_Erweiterungen"
+
+#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
+msgid "Load and unload extensions"
+msgstr "Erweiterungen laden und entladen"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:218
+msgid "Author:"
+msgid_plural "Authors:"
+msgstr[0] "Autor:"
+msgstr[1] "Autoren:"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:397
+msgid "Enabled"
+msgstr "Aktiviert"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:404
+msgid "Description"
+msgstr "Beschreibung"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+msgid "<b>Loaded Extensions</b>"
+msgstr "<b>Geladene Erweiterungen</b>"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+#: extensions/page-info/page-info.glade.h:9
+msgid "DYNAMIC"
+msgstr "DYNAMISCH"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:3
+msgid "Description:"
+msgstr "Beschreibung:"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:4
+msgid "Extension Information"
+msgstr "Informationen zur Erweiterung"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:5
+msgid "Extensions"
+msgstr "Erweiterungen"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:6
+msgid "Name:"
+msgstr "Name:"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:7
+msgid "URL:"
+msgstr "Adresse:"
+
 #: extensions/page-info/ephy-page-info-extension.c:65
 msgid "_Page Info"
 msgstr "_Seiteninformationen"
@@ -337,10 +388,6 @@ msgstr "<b>Quelldatei</b>"
 #: extensions/page-info/page-info.glade.h:8
 msgid "<b>Web Page</b>"
 msgstr "<b>Internet-Seite</b>"
-
-#: extensions/page-info/page-info.glade.h:9
-msgid "DYNAMIC"
-msgstr "DYNAMISCH"
 
 #: extensions/page-info/page-info.glade.h:10
 msgid "Encoding:"
