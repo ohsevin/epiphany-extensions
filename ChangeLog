@@ -1,3 +1,7 @@
+2004-04-05  Yuriy Syrota  <rasta@cvs.gnome.org>
+
+	* configure.ac: Added Ukrainian (uk) to ALL_LINGUAS
+
 2004-04-02  Pablo Saratxaga  <pablo@mandrakesoft.com>
 
 	* configure.ac: Added Walloon (wa) to ALL_LINGUAS
