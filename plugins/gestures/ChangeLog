@@ -1,5 +1,19 @@
 2003-08-01  Christian Persch  <chpe@cvs.gnome.org>
 
+	* gestures.c: (load_one_gesture), (find_action),
+	(tab_gesture_performed_cb), (dom_mouse_down_cb), (reload_bypass_cb),
+	(clone_window_cb), (clone_tab_cb), (setup_actions), (new_window_cb):
+
+	Call the EphyWindow's actions instead of duplicating the code here.
+
+2003-08-01  Christian Persch  <chpe@cvs.gnome.org>
+
+	* gestures.c: (tab_removed_cb):
+
+	Fix signal leak.
+
+2003-08-01  Christian Persch  <chpe@cvs.gnome.org>
+
 	* gestures.c: (load_gestures), (load_one_gesture),
 	(tab_update_gestures), (tab_gesture_performed_cb),
 	(plugin_init), (plugin_exit):

@@ -1,236 +1,236 @@
- <epiphany_gestures version="0.1">
+ <epiphany_gestures version="0.2">
   <!-- none -->
   <gesture>
-   <stroke>5</stroke>
-   <action>none</action>
+   <sequence>5</sequence>
+   <action>fallback</action>
   </gesture>
   <!-- down -->
   <gesture>
-   <stroke>258</stroke>
-   <action>new_tab</action>
+   <sequence>258</sequence>
+   <action>FileNewTab</action>
   </gesture>
   <!-- up -->
   <gesture>
-   <stroke>852</stroke>
-   <action>new_window</action>
+   <sequence>852</sequence>
+   <action>FileNewWindow</action>
   </gesture>
   <!--  up-down -->
   <gesture>
-   <stroke>85258</stroke>
-   <action>reload</action>
+   <sequence>85258</sequence>
+   <action>ViewReload</action>
   </gesture>
   <gesture>
-   <stroke>8525</stroke>
-   <action>reload</action>
+   <sequence>8525</sequence>
+   <action>ViewReload</action>
   </gesture>
   <gesture>
-   <stroke>5258</stroke>
-   <action>reload</action>
+   <sequence>5258</sequence>
+   <action>ViewReload</action>
   </gesture>
   <!-- up-down-up -->
   <gesture>
-   <stroke>8525852</stroke>
-   <action>reload_bypass</action>
+   <sequence>8525852</sequence>
+   <action>EphyGesturesPluginReloadBypass</action>
   </gesture>
   <gesture>
-   <stroke>852585</stroke>
-   <action>reload_bypass</action>
+   <sequence>852585</sequence>
+   <action>EphyGesturesPluginReloadBypass</action>
   </gesture>
   <gesture>
-   <stroke>85252</stroke>
-   <action>reload_bypass</action>
+   <sequence>85252</sequence>
+   <action>EphyGesturesPluginReloadBypass</action>
   </gesture>
   <gesture>
-   <stroke>85852</stroke>
-   <action>reload_bypass</action>
+   <sequence>85852</sequence>
+   <action>EphyGesturesPluginReloadBypass</action>
   </gesture>
   <gesture>
-   <stroke>525852</stroke>
-   <action>reload_bypass</action>
+   <sequence>525852</sequence>
+   <action>EphyGesturesPluginReloadBypass</action>
   </gesture>
   <gesture>
-   <stroke>52585</stroke>
-   <action>reload_bypass</action>
+   <sequence>52585</sequence>
+   <action>EphyGesturesPluginReloadBypass</action>
   </gesture>
   <!-- up-left-down -->
   <gesture>
-   <stroke>9632147</stroke>
-   <action>homepage</action>
+   <sequence>9632147</sequence>
+   <action>GoHome</action>
   </gesture>
   <gesture>
-   <stroke>963214</stroke>
-   <action>homepage</action>
+   <sequence>963214</sequence>
+   <action>GoHome</action>
   </gesture>
   <gesture>
-   <stroke>632147</stroke>
-   <action>homepage</action>
+   <sequence>632147</sequence>
+   <action>GoHome</action>
   </gesture>
   <gesture>
-   <stroke>962147</stroke>
-   <action>homepage</action>
+   <sequence>962147</sequence>
+   <action>GoHome</action>
   </gesture>
   <gesture>
-   <stroke>963147</stroke>
-   <action>homepage</action>
+   <sequence>963147</sequence>
+   <action>GoHome</action>
   </gesture>
   <!-- down-up -->
   <gesture>
-   <stroke>25852</stroke>
-   <action>clone_window</action>
+   <sequence>25852</sequence>
+   <action>EphyGesturesPluginCloneWindow</action>
   </gesture>
   <gesture>
-   <stroke>2585</stroke>
-   <action>clone_window</action>
+   <sequence>2585</sequence>
+   <action>EphyGesturesPluginCloneWindow</action>
   </gesture>
   <gesture>
-   <stroke>5852</stroke>
-   <action>clone_window</action>
+   <sequence>5852</sequence>
+   <action>EphyGesturesPluginCloneWindow</action>
   </gesture>
   <!-- down-up-down -->
   <gesture>
-   <stroke>2585258</stroke>
-   <action>clone_tab</action>
+   <sequence>2585258</sequence>
+   <action>EphyGesturesPluginCloneTab</action>
   </gesture>
   <gesture>
-   <stroke>258525</stroke>
-   <action>clone_tab</action>
+   <sequence>258525</sequence>
+   <action>EphyGesturesPluginCloneTab</action>
   </gesture>
   <gesture>
-   <stroke>25858</stroke>
-   <action>clone_tab</action>
+   <sequence>25858</sequence>
+   <action>EphyGesturesPluginCloneTab</action>
   </gesture>
   <gesture>
-   <stroke>25258</stroke>
-   <action>clone_tab</action>
+   <sequence>25258</sequence>
+   <action>EphyGesturesPluginCloneTab</action>
   </gesture>
   <gesture>
-   <stroke>585258</stroke>
-   <action>clone_tab</action>
+   <sequence>585258</sequence>
+   <action>EphyGesturesPluginCloneTab</action>
   </gesture>
   <gesture>
-   <stroke>58525</stroke>
-   <action>clone_tab</action>
+   <sequence>58525</sequence>
+   <action>EphyGesturesPluginCloneTab</action>
   </gesture>
   <!-- up-left-up -->
   <gesture>
-   <stroke>96541</stroke>
-   <action>up</action>
+   <sequence>96541</sequence>
+   <action>GoUp</action>
   </gesture>
   <gesture>
-   <stroke>9651</stroke>
-   <action>up</action>
+   <sequence>9651</sequence>
+   <action>GoUp</action>
   </gesture>
   <gesture>
-   <stroke>9541</stroke>
-   <action>up</action>
+   <sequence>9541</sequence>
+   <action>GoUp</action>
   </gesture>
   <!-- right-left-right -->
   <gesture>
-   <stroke>4565456</stroke>
-   <action>close</action>
+   <sequence>4565456</sequence>
+   <action>FileCloseWindow</action>
   </gesture>
   <gesture>
-   <stroke>456545</stroke>
-   <action>close</action>
+   <sequence>456545</sequence>
+   <action>FileCloseWindow</action>
   </gesture>
   <gesture>
-   <stroke>45656</stroke>
-   <action>close</action>
+   <sequence>45656</sequence>
+   <action>FileCloseWindow</action>
   </gesture>
   <gesture>
-   <stroke>45456</stroke>
-   <action>close</action>
+   <sequence>45456</sequence>
+   <action>FileCloseWindow</action>
   </gesture>
   <gesture>
-   <stroke>565456</stroke>
-   <action>close</action>
+   <sequence>565456</sequence>
+   <action>FileCloseWindow</action>
   </gesture>
   <gesture>
-   <stroke>56545</stroke>
-   <action>close</action>
+   <sequence>56545</sequence>
+   <action>FileCloseWindow</action>
   </gesture>
   <!-- down-right -->
   <gesture>
-   <stroke>14789</stroke>
-   <action>close</action>
+   <sequence>14789</sequence>
+   <action>FileCloseWindow</action>
   </gesture>
   <gesture>
-   <stroke>1489</stroke>
-   <action>close</action>
+   <sequence>1489</sequence>
+   <action>FileCloseWindow</action>
   </gesture>
   <!-- left -->
   <gesture>
-   <stroke>654</stroke>
-   <action>back</action>
+   <sequence>654</sequence>
+   <action>GoBack</action>
   </gesture>
   <!-- right -->
   <gesture>
-   <stroke>456</stroke>
-   <action>forward</action>
+   <sequence>456</sequence>
+   <action>GoForward</action>
   </gesture>
   <!-- down-left -->
   <gesture>
-   <stroke>36987</stroke>
-   <action>fullscreen</action>
+   <sequence>36987</sequence>
+   <action>ViewFullscreen</action>
   </gesture>
   <gesture>
-   <stroke>3687</stroke>
-   <action>fullscreen</action>
+   <sequence>3687</sequence>
+   <action>ViewFullscreen</action>
   </gesture>
   <!-- up-right -->
   <gesture>
-   <stroke>74123</stroke>
-   <action>next_tab</action>
+   <sequence>74123</sequence>
+   <action>TabsNext</action>
   </gesture>
   <gesture>
-   <stroke>7423</stroke>
-   <action>next_tab</action>
+   <sequence>7423</sequence>
+   <action>TabsNext</action>
   </gesture>
   <!-- up-left -->
   <gesture>
-   <stroke>96321</stroke>
-   <action>prev_tab</action>
+   <sequence>96321</sequence>
+   <action>TabsPrevious</action>
   </gesture>
   <gesture>
-   <stroke>9621</stroke>
-   <action>prev_tab</action>
+   <sequence>9621</sequence>
+   <action>TabsPrevious</action>
   </gesture>
   <!-- "S" -->
   <gesture>
-   <stroke>321456987</stroke>
-   <action>view_source</action>
+   <sequence>321456987</sequence>
+   <action>ViewPageSource</action>
   </gesture>
   <gesture>
-   <stroke>21456987</stroke>
-   <action>view_source</action>
+   <sequence>21456987</sequence>
+   <action>ViewPageSource</action>
   </gesture>
   <gesture>
-   <stroke>32145698</stroke>
-   <action>view_source</action>
+   <sequence>32145698</sequence>
+   <action>ViewPageSource</action>
   </gesture>
   <gesture>
-   <stroke>3256987</stroke>
-   <action>view_source</action>
+   <sequence>3256987</sequence>
+   <action>ViewPageSource</action>
   </gesture>
   <gesture>
-   <stroke>3214587</stroke>
-   <action>view_source</action>
+   <sequence>3214587</sequence>
+   <action>ViewPageSource</action>
   </gesture>
   <gesture>
-   <stroke>32145987</stroke>
-   <action>view_source</action>
+   <sequence>32145987</sequence>
+   <action>ViewPageSource</action>
   </gesture>
   <gesture>
-   <stroke>32156987</stroke>
-   <action>view_source</action>
+   <sequence>32156987</sequence>
+   <action>ViewPageSource</action>
   </gesture>
   <!-- left-up -->
   <gesture>
-   <stroke>98741</stroke>
-   <action>stop</action>
+   <sequence>98741</sequence>
+   <action>ViewStop</action>
   </gesture>
   <gesture>
-   <stroke>9841</stroke>
-   <action>stop</action>
+   <sequence>9841</sequence>
+   <action>ViewStop</action>
   </gesture>
  </epiphany_gestures>

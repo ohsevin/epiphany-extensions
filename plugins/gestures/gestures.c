@@ -1,5 +1,7 @@
 /*
  *  Copyright (C) 2003 Marco Pesenti Gritti
+ *  Copyright (C) 2003 Adam Hooper
+ *  Copyright (C) 2003 Christian Persch
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -23,6 +25,10 @@
 #include "ephy-gestures.h"
 #include "ephy-debug.h"
 
+#include "egg-action.h"
+#include "egg-action-group.h"
+#include "egg-menu-merge.h"
+
 #include <epiphany/ephy-shell.h>
 #include <epiphany/session.h>
 
@@ -35,13 +41,13 @@ static GHashTable *gestures = NULL;
 
 #define EPHY_GESTURES_XML_FILE		SHARE_DIR "/ephy-gestures.xml"
 #define EPHY_GESTURES_XML_ROOT		"epiphany_gestures"
-#define EPHY_GESTURES_XML_VERSION	"0.1"
+#define EPHY_GESTURES_XML_VERSION	"0.2"
 
 static void
 load_one_gesture (xmlNodePtr node)
 {
 	xmlNodePtr child;
-	xmlChar *stroke = NULL, *action = NULL;
+	xmlChar *sequence = NULL, *action = NULL;
 
 	g_return_if_fail (node != NULL);
 
@@ -49,11 +55,11 @@ load_one_gesture (xmlNodePtr node)
 
 	for (child = node->children; child != NULL; child = child->next)
 	{
-		if (strcmp (child->name, "stroke") == 0)
+		if (strcmp (child->name, "sequence") == 0)
 		{
-			g_return_if_fail (stroke == NULL);
+			g_return_if_fail (sequence == NULL);
 
-			stroke = xmlNodeGetContent (child);
+			sequence = xmlNodeGetContent (child);
 		}
 		else if (strcmp (child->name, "action") == 0)
 		{
@@ -63,13 +69,11 @@ load_one_gesture (xmlNodePtr node)
 		}
 	}
 
-	g_return_if_fail (stroke != NULL && action != NULL);
+	g_return_if_fail (sequence != NULL && action != NULL);
 
-	g_hash_table_insert (gestures, g_strdup (stroke), g_strdup (action));
+	g_hash_table_insert (gestures, g_strdup (sequence), g_strdup (action));
 
-	LOG ("added gesture: stroke '%s' action '%s'", stroke, action)
-
-	xmlFree (stroke);
+	xmlFree (sequence);
 	xmlFree (action);
 }
 
@@ -78,7 +82,7 @@ load_gestures (void)
 {
 	xmlDocPtr doc;
 	xmlNodePtr root, child;
-	char *tmp;
+	xmlChar *tmp;
 
 	g_return_if_fail (g_file_test (EPHY_GESTURES_XML_FILE, G_FILE_TEST_EXISTS));
 
@@ -89,14 +93,8 @@ load_gestures (void)
 	g_return_if_fail (root && strcmp (root->name, EPHY_GESTURES_XML_ROOT) == 0);
 
 	tmp = xmlGetProp (root, "version");
-	if (tmp != NULL && strcmp (tmp, EPHY_GESTURES_XML_VERSION) != 0)
-	{
-		g_warning ("Unsupported gestures file version detected\n");
-
-		xmlFreeDoc (doc);
-		return;
-	}
-	g_free (tmp);
+	g_return_if_fail (tmp && strcmp (tmp, EPHY_GESTURES_XML_VERSION) == 0);
+	xmlFree (tmp);
 
 	for (child = root->children; child != NULL; child = child->next)
 	{
@@ -106,155 +104,77 @@ load_gestures (void)
 	xmlFreeDoc (doc);
 }
 
+EggAction *
+find_action (EphyWindow *window, const char *verb)
+{
+	EggAction *action = NULL;
+	GList *action_groups, *l;
+
+	action_groups = EGG_MENU_MERGE (window->ui_merge)->action_groups;
+
+	for (l = action_groups; action == NULL && l != NULL; l = l->next)
+	{
+		EggActionGroup *group = EGG_ACTION_GROUP (l->data);
+
+		action = egg_action_group_get_action (group, verb);
+	}
+
+	return action;
+}
+
 static void
 tab_gesture_performed_cb (EphyGestures *eg, const char *sequence, EphyTab *tab)
 {
-	const char  *action;
 	EphyWindow *window;
-	EphyEmbed  *embed;
+	const char *verb;
 
-	action = g_hash_table_lookup (gestures, sequence);
+	LOG ("Gesture: sequence '%s'", sequence)
 
-	if (action == NULL) return;
+	verb = g_hash_table_lookup (gestures, sequence);
+	if (verb == NULL) return;
 
-	LOG ("Sequence: %s; Action: %s", sequence, action)
+	LOG ("Gesture: verb is '%s'", verb)
 
 	window = ephy_tab_get_window (tab);
-	embed = ephy_tab_get_embed (tab);
+	g_return_if_fail (IS_EPHY_WINDOW (window));
 
-	if (!strcmp (action, "none"))
+	if (strcmp (verb, "fallback") == 0)
 	{
 		/* Fall back to normal click */
-		gint return_val;
-		EphyEmbedEvent *event = g_object_get_data(G_OBJECT(eg), "embed_event");
+		EphyEmbed *embed;
+		EphyEmbedEvent *event;
+		gint handled = FALSE;
+		guint type;
+
+		embed = ephy_tab_get_embed (tab);
+
+		event = g_object_get_data (G_OBJECT(eg), "embed_event");
+
+		ephy_embed_event_get_event_type (event, &type);
+
 		g_signal_emit_by_name (embed, "ge_dom_mouse_click", event,
-				       &return_val);
-	}
-	else if (!strcmp (action, "new_tab"))
-	{
-		ephy_shell_new_tab (ephy_shell, window, tab, NULL,
-				    EPHY_NEW_TAB_NEW_PAGE |
-				    EPHY_NEW_TAB_IN_EXISTING_WINDOW |
-				    EPHY_NEW_TAB_JUMP);
-	}
-	else if (!strcmp (action, "new_window"))
-	{
-		ephy_shell_new_tab (ephy_shell, NULL, tab, NULL,
-				    EPHY_NEW_TAB_NEW_PAGE |
-				    EPHY_NEW_TAB_IN_NEW_WINDOW);
-	}
-	else if (!strcmp (action, "reload"))
-	{
-		ephy_embed_reload (embed, EMBED_RELOAD_NORMAL);
-	}
-	else if (!strcmp (action, "reload_bypass"))
-	{
-		ephy_embed_reload (embed,
-				   EMBED_RELOAD_BYPASSCACHE |
-				   EMBED_RELOAD_BYPASSPROXY);
-	}
-	else if (!strcmp (action, "homepage"))
-	{
-		GConfEngine *engine;
-		char *location;
+				       &handled);
 
-		engine = gconf_engine_get_default ();
-		location = gconf_engine_get_string (engine,
-						    "/apps/epiphany/general/homepage",
-						    NULL);
-
-		ephy_window_load_url (window,
-				      location ? location : "about:blank");
-
-		gconf_engine_unref(engine);
-		g_free (location);
-	}
-	else if (!strcmp (action, "clone_window"))
-	{
-		ephy_shell_new_tab (ephy_shell, window, tab, NULL,
-				    EPHY_NEW_TAB_CLONE_PAGE |
-				    EPHY_NEW_TAB_IN_NEW_WINDOW);
-	}
-	else if (!strcmp (action, "clone_tab"))
-	{
-		ephy_shell_new_tab (ephy_shell, window, tab, NULL,
-				    EPHY_NEW_TAB_CLONE_PAGE |
-				    EPHY_NEW_TAB_IN_EXISTING_WINDOW);
-	}
-	else if (!strcmp (action, "up"))
-	{
-		ephy_embed_go_up (embed);
-	}
-	else if (!strcmp (action, "close"))
-	{
-		ephy_window_remove_tab (window, tab);
-	}
-	else if (!strcmp (action, "back"))
-	{
-		ephy_embed_go_back (embed);
-	}
-	else if (!strcmp (action, "forward"))
-	{
-		ephy_embed_go_forward (embed);
-	}
-	else if (!strcmp (action, "fullscreen"))
-	{
-		if (gdk_window_get_state (GTK_WIDGET (window)->window) & GDK_WINDOW_STATE_FULLSCREEN)
+		if (handled == FALSE && type == EPHY_EMBED_EVENT_MOUSE_BUTTON3)
 		{
-			gtk_window_unfullscreen (GTK_WINDOW (window));
+			g_signal_emit_by_name (embed, "ge_context_menu",
+					       event, &handled);
 		}
-		else
-		{
-			gtk_window_fullscreen (GTK_WINDOW (window));
-		}
-
-	}
-	else if (!strcmp (action, "next_tab"))
-	{
-		GtkNotebook *nb;
-		gint page;
-
-		nb = GTK_NOTEBOOK (ephy_window_get_notebook (window));
-		g_return_if_fail (nb != NULL);
-
-		page = gtk_notebook_get_current_page (nb);
-		g_return_if_fail (page != -1);
-
-		if (page < gtk_notebook_get_n_pages (nb) - 1)
-		{
-			gtk_notebook_set_current_page (nb, page + 1);
-		}
-	}
-	else if (!strcmp (action, "prev_tab"))
-	{
-		GtkNotebook *nb;
-		gint page;
-
-		nb = GTK_NOTEBOOK (ephy_window_get_notebook (window));
-		g_return_if_fail (nb != NULL);
-
-		page = gtk_notebook_get_current_page (nb);
-		g_return_if_fail (page != -1);
-
-		if (page > 0)
-		{
-			gtk_notebook_set_current_page (nb, page - 1);
-		}
-	}
-	else if (!strcmp (action, "view_source"))
-	{
-		ephy_shell_new_tab (ephy_shell, window, tab, NULL,
-				    EPHY_NEW_TAB_CLONE_PAGE |
-				    EPHY_NEW_TAB_SOURCE_MODE);
-	}
-	else if (!strcmp (action, "stop"))
-	{
-		ephy_embed_stop_load (embed);
 	}
 	else
 	{
-		/* unrecognized */
-		LOG ("Unrecognized gesture: %s", sequence)
+		EggAction *action;
+
+		action = find_action (window, verb);
+
+		if (action != NULL)
+		{
+			egg_action_activate (action);
+		}
+		else
+		{
+			g_warning ("Action for verb '%s' not found!\n", verb);
+		}
 	}
 }
 
@@ -263,14 +183,16 @@ dom_mouse_down_cb  (EphyEmbed *embed,
 		    EphyEmbedEvent *event,
 		    EphyTab *tab)
 {
-	guint button;
         EmbedEventContext context;
+	gint handled = FALSE;
+	guint button;
 
 	ephy_embed_event_get_event_type (event, &button);
         ephy_embed_event_get_context (event, &context);
 
 	if (button == EPHY_EMBED_EVENT_MOUSE_BUTTON2 &&
-            !(context & EMBED_CONTEXT_INPUT)) {
+            !(context & EMBED_CONTEXT_INPUT))
+	{
 		EphyGestures *eg;
 		EphyWindow *window;
 		guint x, y;
@@ -291,7 +213,11 @@ dom_mouse_down_cb  (EphyEmbed *embed,
 		ephy_gestures_start (eg, GTK_WIDGET (window), button, x, y);
 
 		g_object_unref (eg);
+
+		handled = TRUE;
 	}
+
+	return handled;
 }
 
 static void
@@ -301,9 +227,96 @@ tab_added_cb (GtkWidget *nb, GtkWidget *child)
 
 	tab = EPHY_TAB (g_object_get_data (G_OBJECT (child), "EphyTab"));
 
-	g_signal_connect (EPHY_EMBED (child), "ge_dom_mouse_down",
-			  G_CALLBACK (dom_mouse_down_cb),
-			  tab);
+	g_signal_connect (G_OBJECT (child), "ge_dom_mouse_down",
+			  G_CALLBACK (dom_mouse_down_cb), tab);
+}
+
+static void
+tab_removed_cb (GtkWidget *nb, GtkWidget *child)
+{
+	EphyTab *tab;
+
+	tab = EPHY_TAB (g_object_get_data (G_OBJECT (child), "EphyTab"));
+
+	g_signal_handlers_disconnect_by_func (G_OBJECT (child),
+					      G_CALLBACK (dom_mouse_down_cb),
+					      tab);
+}
+
+static void
+reload_bypass_cb (EggAction *action, EphyWindow *window)
+{
+	EphyEmbed *embed;
+
+	embed = ephy_window_get_active_embed (window);
+	g_return_if_fail (IS_EPHY_EMBED (embed));
+
+	ephy_embed_reload (embed, EMBED_RELOAD_BYPASSCACHE);
+}
+
+static void
+clone_window_cb (EggAction *action, EphyWindow *window)
+{
+	EphyTab *tab;
+
+	tab = ephy_window_get_active_tab (window);
+	g_return_if_fail (IS_EPHY_TAB (tab));
+
+	ephy_shell_new_tab (ephy_shell, window, tab, NULL,
+			    EPHY_NEW_TAB_CLONE_PAGE |
+			    EPHY_NEW_TAB_IN_NEW_WINDOW);
+}
+
+static void
+clone_tab_cb (EggAction *action, EphyWindow *window)
+{
+	EphyTab *tab;
+
+	tab = ephy_window_get_active_tab (window);
+	g_return_if_fail (IS_EPHY_TAB (tab));
+
+	ephy_shell_new_tab (ephy_shell, window, tab, NULL,
+			    EPHY_NEW_TAB_CLONE_PAGE |
+			    EPHY_NEW_TAB_IN_EXISTING_WINDOW);
+}
+
+static void
+setup_actions (EphyWindow *window)
+{
+	EggMenuMerge *merge;
+	EggActionGroup *action_group;
+	EggAction *action;
+
+	merge = EGG_MENU_MERGE (window->ui_merge);
+	action_group = egg_action_group_new ("EphyGesturesPluginActions");
+
+	action = g_object_new (EGG_TYPE_ACTION,
+				"name", "EphyGesturesPluginReloadBypass",
+				NULL);
+	g_signal_connect (action, "activate",
+			  G_CALLBACK (reload_bypass_cb), window);
+	egg_action_group_add_action (action_group, action);
+	g_object_unref (action);
+	
+	action = g_object_new (EGG_TYPE_ACTION,
+				"name", "EphyGesturesPluginCloneWindow",
+				NULL);
+	g_signal_connect (action, "activate",
+			  G_CALLBACK (clone_window_cb), window);
+	egg_action_group_add_action (action_group, action);
+	g_object_unref (action);
+
+	action = g_object_new (EGG_TYPE_ACTION,
+				"name", "EphyGesturesPluginCloneTab",
+				NULL);
+	g_signal_connect (action, "activate",
+			  G_CALLBACK (clone_tab_cb), window);
+	egg_action_group_add_action (action_group, action);
+	g_object_unref (action);
+
+	egg_menu_merge_insert_action_group (merge, action_group, 0);
+
+	g_object_unref (action_group);
 }
 
 static void
@@ -311,10 +324,14 @@ new_window_cb (Session *session, EphyWindow *window)
 {
 	GtkWidget *nb;
 
+	setup_actions (window);
+
 	nb = ephy_window_get_notebook (window);
 
 	g_signal_connect (nb, "tab_added",
 			  G_CALLBACK (tab_added_cb), NULL);
+	g_signal_connect (nb, "tab_removed",
+			  G_CALLBACK (tab_removed_cb), NULL);
 }
 
 G_MODULE_EXPORT void
