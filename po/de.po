@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany Plugins 1.0\n"
-"POT-Creation-Date: 2003-08-04 12:38+0200\n"
+"POT-Creation-Date: 2003-08-04 15:47+0200\n"
 "PO-Revision-Date: 2003-08-03 20:29+0200\n"
 "Last-Translator: Christian Persch  <chpe+ephyplugins@stud.uni-saarland.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
@@ -33,7 +33,7 @@ msgstr "Reiter _verschieben"
 msgid "Move the current tab to a different window"
 msgstr "Den momentan angezeigten Reiter in ein anderes Fenster verschieben"
 
-#: plugins/tabsmenu/ephy-window-action.c:180
+#: plugins/tabsmenu/ephy-window-action.c:176
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"
