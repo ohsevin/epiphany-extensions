@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany Extension HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-02-02 09:10+0100\n"
-"PO-Revision-Date: 2005-02-02 09:10+0100\n"
+"POT-Creation-Date: 2005-02-03 07:29+0100\n"
+"PO-Revision-Date: 2005-02-03 03:05+0100\n"
 "Last-Translator: Frank Arnold <frank@scirocco-5v-turbo.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -52,20 +52,12 @@ msgstr "Die Aktionsbeschreibung"
 #: ../extensions/actions/action-properties.glade.h:6
 msgid ""
 "The action name. If a character is preceded by an underscore, that character "
-"will be used as the accelerator key for the menu item."
-msgstr ""
-"Der Aktionsname. Wenn einem Zeichen ein Unterstrich vorangestellt ist, wird "
-"dieses Zeichen als Tastenkombination für den Menüeintrag verwendet."
-
-#: ../extensions/actions/action-properties.glade.h:7
-msgid ""
-"The action name. If a character is preceded by an underscore, that character "
 "will be used as the access key for the menu item."
 msgstr ""
 "Der·Aktionsname.·Wenn·einem·Zeichen·ein·Unterstrich·vorangestellt·ist,"
 "·wird·dieses·Zeichen·als·Tastenkombination·für·den·Menüeintrag·verwendet."
 
-#: ../extensions/actions/action-properties.glade.h:8
+#: ../extensions/actions/action-properties.glade.h:7
 msgid ""
 "The command to execute when the action is activated. The URL of the link, "
 "image or page will be appended to the command."
@@ -73,23 +65,23 @@ msgstr ""
 "Der auszuführende Befehl, wenn die Aktion gewählt wird. Die Adresse des "
 "Links, des Bilds oder der Seite wird an den Befehl angehängt."
 
-#: ../extensions/actions/action-properties.glade.h:9
+#: ../extensions/actions/action-properties.glade.h:8
 msgid "_Command:"
 msgstr "_Befehl:"
 
-#: ../extensions/actions/action-properties.glade.h:10
+#: ../extensions/actions/action-properties.glade.h:9
 msgid "_Description:"
 msgstr "Besch_reibung:"
 
-#: ../extensions/actions/action-properties.glade.h:11
+#: ../extensions/actions/action-properties.glade.h:10
 msgid "_Images"
 msgstr "B_ilder"
 
-#: ../extensions/actions/action-properties.glade.h:12
+#: ../extensions/actions/action-properties.glade.h:11
 msgid "_Name:"
 msgstr "_Name:"
 
-#: ../extensions/actions/action-properties.glade.h:13
+#: ../extensions/actions/action-properties.glade.h:12
 msgid "_Pages"
 msgstr "_Seiten"
 
@@ -130,9 +122,12 @@ msgid "Customize actions"
 msgstr "Aktionen einrichten"
 
 #: ../extensions/actions/ephy-actions-extension.c:409
-#, c-format
-msgid "Could not run command: %s"
-msgstr "Befehl konnte nicht ausgeführt werden: %s"
+msgid "Could not run command"
+msgstr "Der Befehl konnte nicht ausgeführt werden"
+
+#: ../extensions/actions/ephy-actions-extension.c:412
+msgid "Could not Run Command"
+msgstr "Befehl konnte nicht ausgeführt werden"
 
 #: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
 msgid "_Edit Bookmarks"
@@ -735,18 +730,3 @@ msgstr "Reiter in anderes _Fenster verschieben"
 #: ../extensions/tabsmenu/ephy-tab-move-menu.c:303
 msgid "Move the current tab to a different window"
 msgstr "Den momentan angezeigten Reiter in ein anderes Fenster verschieben"
-
-#~ msgid "Loo_k-Up Preferences"
-#~ msgstr "_Einstellungen des Nachschlagens"
-
-#~ msgid "Look up your selection"
-#~ msgstr "Den markierten Text nachschlagen"
-
-#~ msgid "Add GNOME Dictionary to the menu"
-#~ msgstr "Das GNOME-Wörterbuch zum Menü hinzufügen"
-
-#~ msgid "Look Up Preferences"
-#~ msgstr "Einstellungen des Nachschlagens"
-
-#~ msgid "Open search results in a new tab"
-#~ msgstr "Suchergebnisse in einem neuen Reiter öffnen"
