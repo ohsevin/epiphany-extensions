@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-26 06:15+0100\n"
-"PO-Revision-Date: 2005-01-26 06:19+0100\n"
+"POT-Creation-Date: 2005-02-02 07:17+0100\n"
+"PO-Revision-Date: 2005-02-02 07:24+0100\n"
 "Last-Translator: Marcel Telka <marcel@telka.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
@@ -18,59 +18,171 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural= (n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
+#: extensions/actions/action-properties.glade.h:1
+msgid "<span weight=\"bold\">Applies to</span>"
+msgstr "<span weight=\"bold\">Platí pre</span>"
+
+#: extensions/actions/action-properties.glade.h:2
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">Všeobecné</span>"
+
+#: extensions/actions/action-properties.glade.h:3
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"images."
+msgstr ""
+"Ak je táto voľba povolená, akcia bude zahrnutá vo vyskakovacom menu obrázkov."
+
+#: extensions/actions/action-properties.glade.h:4
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"links and pages."
+msgstr ""
+"Ak je táto voľba povolená, akcia bude zahrnutá vo vyskakovacom menu odkazov a stránok."
+
+#: extensions/actions/action-properties.glade.h:5
+msgid "The action description."
+msgstr "Popis akcie."
+
+#: extensions/actions/action-properties.glade.h:6
+msgid ""
+"The action name. If a character is preceded by an underscore, that character "
+"will be used as the accelerator key for the menu item."
+msgstr ""
+"Názov akcie. Ak je pred znakom podčiarknutie, bude tento znak použitý ako "
+"akceleračný kláves pre položku menu."
+
+#: extensions/actions/action-properties.glade.h:7
+msgid ""
+"The action name. If a character is preceded by an underscore, that character "
+"will be used as the access key for the menu item."
+msgstr ""
+"Názov akcie. Ak je pred znakom podčiarknutie, bude tento znak použitý ako "
+"prístupový kláves pre položku menu."
+
+#: extensions/actions/action-properties.glade.h:8
+msgid ""
+"The command to execute when the action is activated. The URL of the link, "
+"image or page will be appended to the command."
+msgstr ""
+"Príkaz, ktorý bude spustený pri aktivácii akcie. URL odkazu, obrázku alebo "
+"stránky bude pridané k príkazu."
+
+#: extensions/actions/action-properties.glade.h:9
+msgid "_Command:"
+msgstr "_Príkaz:"
+
+#: extensions/actions/action-properties.glade.h:10
+msgid "_Description:"
+msgstr "_Popis:"
+
+#: extensions/actions/action-properties.glade.h:11
+msgid "_Images"
+msgstr "_Obrázky"
+
+#: extensions/actions/action-properties.glade.h:12
+msgid "_Name:"
+msgstr "_Názov:"
+
+#: extensions/actions/action-properties.glade.h:13
+msgid "_Pages"
+msgstr "_Stránky"
+
+#: extensions/actions/actions-editor.glade.h:1
+msgid "Actions"
+msgstr "Akcie"
+
+#: extensions/actions/ephy-actions-extension-editor-dialog.c:490
+msgid "No action selected."
+msgstr "Akcia nebola vybratá."
+
+#: extensions/actions/ephy-actions-extension-editor-dialog.c:500
+#, c-format
+msgid "%i action selected."
+msgid_plural "%i actions selected."
+msgstr[0] "Zvolených %i akcií."
+msgstr[1] "Zvolená %i akcia."
+msgstr[2] "Zvolené %i akcie."
+
+#: extensions/actions/ephy-actions-extension-properties-dialog.c:312
+msgid "Add Action"
+msgstr "Pridať akciu"
+
+#: extensions/actions/ephy-actions-extension-properties-dialog.c:421
+#, c-format
+msgid "%s Properties"
+msgstr "Vlastnosti %s"
+
+#: extensions/actions/ephy-actions-extension-properties-dialog.c:426
+msgid "Action Properties"
+msgstr "Vlastnosti akcie"
+
+#: extensions/actions/ephy-actions-extension.c:97
+msgid "_Actions"
+msgstr "_Akcie"
+
+#: extensions/actions/ephy-actions-extension.c:98
+msgid "Customize actions"
+msgstr "Prispôsobiť akcie"
+
+#: extensions/actions/ephy-actions-extension.c:409
+#, c-format
+msgid "Could not run command: %s"
+msgstr "Nepodarilo sa spustiť príkaz: %s"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
 msgid "_Edit Bookmarks"
 msgstr "_Upraviť záložky"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
 msgid "Open the bookmarks window"
 msgstr "Otvoriť okno so záložkami"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:451
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
 msgid "Open in _Current Tab"
 msgstr "Otvoriť na _aktuálnej karte"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:452
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
 msgid "Open bookmarks in the current tab of the active window"
 msgstr "Otvoriť záložky na aktuálnej karte aktívneho okna"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:454
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
 msgid "Open in New _Tab"
 msgstr "Otvoriť na novej _karte"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:455
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
 msgid "Open bookmarks in a new tab of the active window"
 msgstr "Otvoriť záložky na novej karte aktívneho okna"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:457
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
 msgid "Open in New _Window"
 msgstr "Otvoriť v novom _okne"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:458
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
 msgid "Open bookmarks in new a window"
 msgstr "Otvoriť záložky v novom okne"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:526
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:513
 msgid "Bookmarks"
 msgstr "Záložky"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:265
+#: extensions/certificates/ephy-certificates-extension.c:269
 msgid "Manage _Certificates"
 msgstr "Spravovať _certifikáty"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:267
+#: extensions/certificates/ephy-certificates-extension.c:271
 msgid "Manage your certificates"
 msgstr "Spravovať vaše certifikáty"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:275
+#: extensions/certificates/ephy-certificates-extension.c:279
 msgid "Server _Certificate"
 msgstr "_Certifikát servera"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:277
+#: extensions/certificates/ephy-certificates-extension.c:281
 msgid "Display the web server's certificate"
 msgstr "Zobraziť cerifikát www servera"
 
