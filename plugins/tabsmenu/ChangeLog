@@ -1,3 +1,10 @@
 2003-08-04  Christian Persch  <chpe@cvs.gnome.org>
 
+	* ephy-window-action.c: (sync_title):
+	* ephy-tabs-plugin.c: (plugin_init):
+
+	Make i18n work really
+
+2003-08-04  Christian Persch  <chpe@cvs.gnome.org>
+
 	* Initial checkin.

@@ -51,6 +51,12 @@ plugin_init (GTypeModule *module)
 
 	LOG ("Plugin initialising")
 
+#ifdef ENABLE_NLS
+       /* Initialize the i18n stuff */
+        bindtextdomain(GETTEXT_PACKAGE, EPHY_PLUGINS_LOCALEDIR);
+        bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");	
+#endif /* ENABLE_NLS */
+
 	session = SESSION (ephy_shell_get_session (ephy_shell));
 	g_signal_connect (session, "new_window",
 			  G_CALLBACK (new_window_cb), NULL);

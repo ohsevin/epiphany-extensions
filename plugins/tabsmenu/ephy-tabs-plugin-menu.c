@@ -26,6 +26,7 @@
 
 #include "ephy-tabs-plugin-menu.h"
 #include "ephy-window-action.h"
+#include "ephy-plugins-i18n.h"
 
 #include "egg-menu-merge.h"
 #include "egg-action.h"
@@ -40,7 +41,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include <libxml/entities.h>
-#include <bonobo/bonobo-i18n.h>
 
 /**
  * Private data

@@ -25,6 +25,7 @@
 #endif
 
 #include "ephy-window-action.h"
+#include "ephy-plugins-i18n.h"
 
 #include "ephy-string.h"
 #include "ephy-debug.h"
@@ -33,7 +34,6 @@
 #include <epiphany/ephy-tab.h>
 
 #include <glib-object.h>
-#include <bonobo/bonobo-i18n.h>
 
 struct _EphyWindowActionPrivate {
 	EphyWindow *window;
@@ -177,7 +177,8 @@ sync_title (EphyTab *tab, GParamSpec *pspec, EphyWindowAction *action)
 		win_title = ephy_string_shorten (ephy_tab_get_title (tab), MAX_LENGTH);
 	}
 
-	text = ngettext ("Window '%s' (%d tab)", "Window '%s' (%d tabs)", num);
+	text = dngettext (GETTEXT_PACKAGE, "Window '%s' (%d tab)",
+					   "Window '%s' (%d tabs)", num);
 	
 	title = g_strdup_printf (text, win_title, num);
 
