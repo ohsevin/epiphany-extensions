@@ -32,11 +32,15 @@
 struct EphyPopupBlockerListPrivate
 {
 	EphyEmbed *embed;
-	GSList *blocked_popups;
+	GSList *popups;
 };
 
 typedef struct
 {
+	/* For open popups (or popups which were opened at one point) */
+	EphyWindow *window;
+
+	/* For never-opened popups */
 	char *url;
 	char *features;
 } BlockedPopup;
@@ -104,42 +108,8 @@ ephy_popup_blocker_list_init (EphyPopupBlockerList *list)
 
 	list->priv = EPHY_POPUP_BLOCKER_LIST_GET_PRIVATE (list);
 
-	list->priv->blocked_popups = NULL;
+	list->priv->popups = NULL;
 	list->priv->embed = NULL;
-}
-
-static void
-free_blocked_popup (BlockedPopup *popup)
-{
-	g_free (popup->url);
-	g_free (popup->features);
-	g_free (popup);
-}
-
-void
-ephy_popup_blocker_list_reset (EphyPopupBlockerList *list)
-{
-	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (list));
-
-	g_slist_foreach (list->priv->blocked_popups,
-			 (GFunc) free_blocked_popup, NULL);
-
-	g_slist_free (list->priv->blocked_popups);
-
-	list->priv->blocked_popups = NULL;
-
-	g_object_notify (G_OBJECT (list), "count");
-}
-
-static int
-popup_cmp (BlockedPopup *a,
-	   BlockedPopup *b)
-{
-	if (a->url == NULL && b->url == NULL) return 0;
-	if (a->url != NULL && b->url == NULL) return 1;
-	if (a->url == NULL && b->url != NULL) return -1;
-
-	return g_utf8_collate (a->url, b->url);
 }
 
 void
@@ -153,13 +123,120 @@ ephy_popup_blocker_list_insert (EphyPopupBlockerList *list,
 
 	popup = g_new0 (BlockedPopup, 1);
 
+	popup->window = NULL;
 	popup->url = g_strdup (url);
 	popup->features = g_strdup (features);
 
-	list->priv->blocked_popups = g_slist_insert_sorted
-		(list->priv->blocked_popups, popup, (GCompareFunc) popup_cmp);
+	list->priv->popups = g_slist_prepend (list->priv->popups, popup);
 
 	LOG ("Added blocked popup to list %p: %s\n", list, popup->url);
+
+	g_object_notify (G_OBJECT (list), "count");
+}
+
+/* FIXME: Have to declare a function here, the next three functions depend on
+ * each other recursively */
+static void ephy_popup_blocker_list_remove_window (EphyPopupBlockerList *list, EphyWindow *window);
+
+static void
+window_deleted_cb (EphyWindow *window,
+		   GdkEvent *event,
+		   EphyPopupBlockerList *list)
+{
+	g_return_if_fail (EPHY_IS_WINDOW (window));
+	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (list));
+
+	LOG ("window_deleted_cb on window %p with list %p\n", window, list)
+
+	ephy_popup_blocker_list_remove_window (list, window);
+}
+
+static void
+free_blocked_popup (BlockedPopup *popup)
+{
+	/* Destroy hidden popups */
+	gboolean is_visible;
+
+	if (popup->window != NULL
+	    && EPHY_IS_WINDOW (popup->window))
+	{
+		g_signal_handlers_disconnect_matched
+			(popup->window, G_SIGNAL_MATCH_FUNC, 0, 0, NULL,
+			 window_deleted_cb, NULL);
+
+		g_object_get (G_OBJECT (popup->window), "visible", &is_visible,
+			      NULL);
+
+		if (is_visible == FALSE)
+		{
+			gtk_widget_destroy (GTK_WIDGET (popup->window));
+		}
+	}
+
+	g_free (popup->url);
+	g_free (popup->features);
+	g_free (popup);
+}
+
+static void
+ephy_popup_blocker_list_remove_window (EphyPopupBlockerList *list,
+				       EphyWindow *window)
+{
+	GSList *t;
+	BlockedPopup *popup;
+
+	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (list));
+	g_return_if_fail (EPHY_IS_WINDOW (window));
+
+	for (t = list->priv->popups; t; t = g_slist_next (t))
+	{
+		popup = (BlockedPopup *) t->data;
+
+		if (popup->window == window)
+		{
+			list->priv->popups = g_slist_delete_link
+				(list->priv->popups, t);
+			free_blocked_popup (popup);
+			break;
+		}
+	}
+}
+
+void
+ephy_popup_blocker_list_insert_window (EphyPopupBlockerList *list,
+				       EphyWindow *window)
+{
+	BlockedPopup *popup;
+
+	g_return_if_fail (EPHY_IS_WINDOW (window));
+
+	popup = g_new0 (BlockedPopup, 1);
+
+	popup->window = window;
+	popup->url = NULL;
+	popup->features = NULL;
+
+	list->priv->popups = g_slist_prepend (list->priv->popups, popup);
+
+	g_signal_connect (window, "delete-event",
+			  G_CALLBACK (window_deleted_cb), list);
+
+	LOG ("Added allowed popup to list %p: %s\n", list, popup->url);
+
+	g_object_notify (G_OBJECT (list), "count");
+}
+
+void
+ephy_popup_blocker_list_reset (EphyPopupBlockerList *list)
+{
+	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (list));
+
+	g_slist_foreach (list->priv->popups,
+			 (GFunc) free_blocked_popup, NULL);
+
+	g_slist_free (list->priv->popups);
+
+	list->priv->popups = NULL;
 
 	g_object_notify (G_OBJECT (list), "count");
 }
@@ -203,9 +280,10 @@ ephy_popup_blocker_list_get_property (GObject *object,
 	switch (prop_id)
 	{
 		case PROP_COUNT:
+			/* FIXME: Don't count unblocked popups */
 			g_value_set_uint
 				(value,
-				 g_slist_length (list->priv->blocked_popups));
+				 g_slist_length (list->priv->popups));
 			break;
 	}
 }
@@ -232,4 +310,68 @@ ephy_popup_blocker_list_class_init (EphyPopupBlockerListClass *klass)
 							    G_PARAM_READABLE));
 
 	g_type_class_add_private (object_class, sizeof (EphyPopupBlockerListPrivate));
+}
+
+void
+ephy_popup_blocker_list_show_all (EphyPopupBlockerList *list)
+{
+	GSList *t;
+	BlockedPopup *popup;
+	EphyEmbed *embed;
+
+	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (list));
+
+	t = list->priv->popups;
+	while (t != NULL)
+	{
+		popup = (BlockedPopup *) t->data;
+
+		if (popup->window != NULL)
+		{
+			g_return_if_fail (EPHY_IS_WINDOW (popup->window));
+
+			embed = ephy_window_get_active_embed (popup->window);
+			g_return_if_fail (EPHY_IS_EMBED (embed));
+
+			gtk_widget_show (GTK_WIDGET (popup->window));
+			mozilla_enable_javascript (embed, TRUE);
+
+			t = t->next;
+		}
+		else if (popup->url != NULL)
+		{
+			mozilla_open_popup (list->priv->embed, popup->url,
+					    popup->features);
+
+			t = g_slist_delete_link (list->priv->popups, t);
+
+			free_blocked_popup (popup);
+		}
+	}
+}
+
+void
+ephy_popup_blocker_list_hide_all (EphyPopupBlockerList *list)
+{
+	GSList *t;
+	BlockedPopup *popup;
+	EphyEmbed *embed;
+
+	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (list));
+
+	for (t = list->priv->popups; t; t = g_slist_next (t))
+	{
+		popup = (BlockedPopup *) t->data;
+
+		if (popup->window != NULL)
+		{
+			g_return_if_fail (EPHY_IS_WINDOW (popup->window));
+
+			embed = ephy_window_get_active_embed (popup->window);
+			g_return_if_fail (EPHY_IS_EMBED (embed));
+
+			mozilla_enable_javascript (embed, FALSE);
+			gtk_widget_hide (GTK_WIDGET (popup->window));
+		}
+	}
 }

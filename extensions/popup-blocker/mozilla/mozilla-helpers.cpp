@@ -32,6 +32,8 @@
 #include <nsIDOMEventTarget.h>
 #include <nsIDOMWindow.h>
 #include <nsIDOMWindowInternal.h>
+#include <nsIDocShell.h>
+#include <nsNetUtil.h>
 #include <nsIScriptGlobalObject.h>
 #include <nsIScriptContext.h>
 #include <nsIWebBrowser.h>
@@ -113,6 +115,30 @@ mozilla_unregister_popup_listener (PopupListenerFreeData *data)
 	NS_RELEASE (target);
 	//delete listener;
 }
+
+extern "C" void
+mozilla_enable_javascript (EphyEmbed *embed,
+			   gboolean enable)
+{
+	nsresult rv;
+
+	g_return_if_fail (GTK_IS_MOZ_EMBED (embed));
+
+	nsCOMPtr<nsIWebBrowser> browser;
+	gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (embed),
+					 getter_AddRefs (browser));
+	g_return_if_fail (browser != NULL);
+
+	nsCOMPtr<nsIDocShell> docShell;
+	docShell = do_GetInterface (browser, &rv);
+	g_return_if_fail (docShell != NULL);
+
+	PRBool nsEnable = enable;
+
+	rv = docShell->SetAllowJavascript (enable);
+	g_return_if_fail (NS_SUCCEEDED (rv));
+}
+
 
 extern "C" void
 mozilla_open_popup (EphyEmbed *embed,

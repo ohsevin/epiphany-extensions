@@ -116,6 +116,31 @@ ephy_popup_blocker_extension_register_type (GTypeModule *module)
 	return type;
 }
 
+EphyPopupBlockerIcon *
+get_icon_for_embed (EphyEmbed *embed)
+{
+	EphyWindow *window;
+	EphyTab *tab;
+	GtkWidget *statusbar;
+	gpointer icon;
+
+	g_return_val_if_fail (EPHY_IS_EMBED (embed), NULL);
+
+	tab = ephy_tab_for_embed (embed);
+	g_return_val_if_fail (EPHY_IS_TAB (tab), NULL);
+
+	window = ephy_tab_get_window (tab);
+	g_return_val_if_fail (EPHY_IS_WINDOW (window), NULL);
+
+	statusbar = ephy_window_get_statusbar (window);
+	g_return_val_if_fail (EPHY_IS_STATUSBAR (statusbar), NULL);
+
+	icon = g_object_get_data (G_OBJECT (statusbar), "popup-blocker-icon");
+	g_return_val_if_fail (EPHY_IS_POPUP_BLOCKER_ICON (icon), NULL);
+
+	return (EphyPopupBlockerIcon *) icon;
+}
+
 static void
 update_action (EphyWindow *window, const char *address)
 {
@@ -293,31 +318,6 @@ clear_popup_permissions (void)
 	g_list_free (list);
 }
 
-EphyPopupBlockerIcon *
-get_icon_for_embed (EphyEmbed *embed)
-{
-	EphyWindow *window;
-	EphyTab *tab;
-	GtkWidget *statusbar;
-	gpointer icon;
-
-	g_return_val_if_fail (EPHY_IS_EMBED (embed), NULL);
-
-	tab = ephy_tab_for_embed (embed);
-	g_return_val_if_fail (EPHY_IS_TAB (tab), NULL);
-
-	window = ephy_tab_get_window (tab);
-	g_return_val_if_fail (EPHY_IS_WINDOW (window), NULL);
-
-	statusbar = ephy_window_get_statusbar (window);
-	g_return_val_if_fail (EPHY_IS_STATUSBAR (statusbar), NULL);
-
-	icon = g_object_get_data (G_OBJECT (statusbar), "popup-blocker-icon");
-	g_return_val_if_fail (EPHY_IS_POPUP_BLOCKER_ICON (icon), NULL);
-
-	return (EphyPopupBlockerIcon *) icon;
-}
-
 static void
 location_cb (EphyEmbed *embed,
 	     const char *address,
@@ -364,24 +364,35 @@ action_activate_cb (GtkAction *action,
 {
 	const char *address;
 	EphyTab *tab;
+	EphyEmbed *embed;
+	EphyPopupBlockerList *list;
 	EphyPermissionManager *permission_manager;
 	EphyPermission allow;
 
 	tab = ephy_window_get_active_tab (window);
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
+	/* FIXME: Can we use ephy_embed_get_location() *here*? */
 	address = ephy_tab_get_location (tab);
 	g_return_if_fail (address != NULL);
+
+	embed = ephy_tab_get_embed (tab);
+	g_return_if_fail (EPHY_IS_EMBED (embed));
+
+	list = g_object_get_data (G_OBJECT (embed), "popup-blocker-list");
+	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (list));
 
 	permission_manager = EPHY_PERMISSION_MANAGER (ephy_embed_shell_get_embed_single (EPHY_EMBED_SHELL (ephy_shell)));
 
 	if (gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action)) == TRUE)
 	{
 		allow = EPHY_PERMISSION_ALLOWED;
+		ephy_popup_blocker_list_show_all (list);
 	}
 	else
 	{
 		allow = EPHY_PERMISSION_DENIED;
+		ephy_popup_blocker_list_hide_all (list);
 	}
 
 	LOG ("from now on, address '%s' will %s popups", address,
@@ -454,7 +465,21 @@ new_window_cb (EphyEmbed *embed,
 	       EmbedChromeMask chromemask,
 	       EphyPopupBlockerList *popups)
 {
-	/* FIXME: Put some code here */
+	EphyWindow *window;
+	EphyTab *tab;
+
+	g_return_if_fail (EPHY_IS_EMBED (embed));
+	g_return_if_fail (new_embed != NULL);
+	g_return_if_fail (EPHY_IS_EMBED (*new_embed));
+	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (popups));
+
+	tab = ephy_tab_for_embed (*new_embed);
+	g_return_if_fail (EPHY_IS_TAB (tab));
+
+	window = ephy_tab_get_window (tab);
+	g_return_if_fail (EPHY_IS_WINDOW (window));
+
+	ephy_popup_blocker_list_insert_window (popups, window);
 }
 
 static void

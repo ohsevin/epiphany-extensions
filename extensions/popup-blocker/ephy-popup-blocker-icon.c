@@ -36,6 +36,8 @@
 
 #include <gdk/gdkpixbuf.h>
 
+#include <glib/gi18n-lib.h>
+
 #define MAX_MENU_LENGTH 60
 
 #define EPHY_POPUP_BLOCKER_ICON_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_POPUP_BLOCKER_ICON, EphyPopupBlockerIconPrivate))
@@ -150,8 +152,8 @@ update_ui (EphyPopupBlockerIcon *icon)
 	LOG ("update_ui: Number of popups on list %p in icon %p: %d\n",
 	     icon->priv->popups, icon, num_blocked)
 
-	tooltip = g_strdup_printf (ngettext("%d popup blocked",
-					    "%d popups blocked",
+	tooltip = g_strdup_printf (ngettext("%d popup window blocked",
+					    "%d popup windows blocked",
 					    num_blocked),
 				   num_blocked);
 

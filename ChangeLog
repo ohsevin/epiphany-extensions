@@ -1,6 +1,31 @@
 2004-03-13  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
+	(get_icon_for_embed), (action_activate_cb), (new_window_cb):
+	* extensions/popup-blocker/ephy-popup-blocker-icon.c: (update_ui):
+	* extensions/popup-blocker/ephy-popup-blocker-list.c:
+	(ephy_popup_blocker_list_init), (ephy_popup_blocker_list_insert),
+	(window_deleted_cb), (free_blocked_popup),
+	(ephy_popup_blocker_list_remove_window),
+	(ephy_popup_blocker_list_insert_window),
+	(ephy_popup_blocker_list_reset),
+	(ephy_popup_blocker_list_get_property),
+	(ephy_popup_blocker_list_show_all),
+	(ephy_popup_blocker_list_hide_all):
+	* extensions/popup-blocker/ephy-popup-blocker-list.h:
+	* extensions/popup-blocker/mozilla/mozilla-helpers.cpp:
+	* extensions/popup-blocker/mozilla/mozilla-helpers.h:
+	* po/POTFILES.in:
+
+	Make 'View -> [ ] Popup Windows' behave as you'd expect (i.e., show or
+	hide unrequested windows, just like the tooltip says). Also, rename
+	the string "%d popups blocked" to "%d popup windows blocked" for
+	consistency, and mark the file for translation. (I'd previously
+	removed it by accident).
+
+2004-03-13  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
 	(create_statusbar_icon), (new_window_cb), (tab_added_cb),
 	(tab_removed_cb), (ephy_popup_blocker_extension_iface_init):
 	* extensions/popup-blocker/ephy-popup-blocker-icon.c: (create_ui),

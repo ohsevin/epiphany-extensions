@@ -22,6 +22,7 @@
 #define EPHY_POPUP_BLOCKER_LIST_H
 
 #include <epiphany/ephy-embed.h>
+#include <epiphany/ephy-window.h>
 
 #include <glib.h>
 #include <glib-object.h>
@@ -63,9 +64,12 @@ void			ephy_popup_blocker_list_insert		(EphyPopupBlockerList *list,
 								 const char *url,
 								 const char *features);
 
-void			ephy_popup_blocker_list_open_all	(EphyPopupBlockerList *list);
+void			ephy_popup_blocker_list_insert_window	(EphyPopupBlockerList *list,
+								 EphyWindow *window);
 
-void			ephy_popup_blocker_list_close_all	(EphyPopupBlockerList *list);
+void			ephy_popup_blocker_list_show_all	(EphyPopupBlockerList *list);
+
+void			ephy_popup_blocker_list_hide_all	(EphyPopupBlockerList *list);
 
 G_END_DECLS
 

@@ -41,6 +41,9 @@ PopupListenerFreeData	*mozilla_register_popup_listener	(EphyEmbed *embed);
 
 void			mozilla_unregister_popup_listener	(PopupListenerFreeData *data);
 
+void			mozilla_enable_javascript		(EphyEmbed *embed,
+								 gboolean enable);
+
 void			mozilla_open_popup			(EphyEmbed *embed,
 								 const char *url,
 								 const char *features);
