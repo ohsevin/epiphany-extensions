@@ -32,7 +32,7 @@ AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([dist-bzip2 no-dist-gzip check-news])
 
 dnl AC_SUBST([ACLOCAL_AMFLAGS], ["-I $ac_macro_dir \${ACLOCAL_FLAGS}"])
-dnl AC_SUBST([ACLOCAL_AMFLAGS], ["\${ACLOCAL_FLAGS}"])
+AC_SUBST([ACLOCAL_AMFLAGS], ["\${ACLOCAL_FLAGS}"])
 
 AM_MAINTAINER_MODE
 if test "x$enable_maintainer_mode" = "xyes"; then
@@ -86,7 +86,7 @@ dnl ********************************
 dnl pkg config checks
 dnl ********************************
 
-EPIPHANY_REQUIRED=1.5.6
+EPIPHANY_REQUIRED=1.5.6.90
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.6.0
 LIBGTK_REQUIRED=2.6.0
@@ -130,11 +130,11 @@ dnl *******************************
 dnl Extensions
 dnl *******************************
 
-AC_MSG_CHECKING([extensions to build])
+AC_MSG_CHECKING([which extensions to build])
 
-all_extensions="actions,adblock,bookmarks-tray,certificates,dashboard,error-viewer,extensions-manager-ui,find,gestures,net-monitor,page-info,sample,sample-mozilla,select-stylesheet,sidebar,smart-bookmarks,tab-groups,tab-states,tabsmenu"
-all_useful_extensions="actions,bookmarks-tray,certificates,dashboard,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tab-groups,tab-states,tabsmenu"
-default_extensions="actions,bookmarks-tray,certificates,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups,tab-states"
+ALL_EXTENSIONS="actions adblock bookmarks-tray certificates dashboard error-viewer extensions-manager-ui find gestures net-monitor page-info sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu"
+USEFUL_EXTENSIONS="actions bookmarks-tray certificates dashboard error-viewer extensions-manager-ui gestures page-info select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu"
+DEFAULT_EXTENSIONS="actions bookmarks-tray certificates error-viewer extensions-manager-ui gestures page-info select-stylesheet sidebar smart-bookmarks tabsmenu tab-groups tab-states"
 
 dnl due to an autoconf bug, commas in the first arg to
 dnl AS_HELP_STRING() cause problems.
@@ -144,56 +144,38 @@ AC_ARG_WITH([extensions],
 [  --with-extensions=extension1,extension2,...
 			  build the specified extensions. Available:
 			  actions, adblock, bookmarks-tray, certificates, dashboard,
-			  error-viewer, extensions-manager-ui, gestures,
+			  error-viewer, extensions-manager-ui, gestures, net-monitor,
 			  page-info, sample, sampls-mozilla, select-stylesheet,
-			  sidebar, smart-bookmarks, tab-groups, tabsmenu, net-monitor,
-			  all, really-all])
+			  sidebar, smart-bookmarks, tab-groups, and tabsmenu,
+			  as well as the aliases default, all, and really-all])
 
-dnl If no extensions specified, build the default set
 if test "x$with_extensions" = xyes; then
-  extensions="$default_extensions"
+  extensions="default"
 else
   extensions="$with_extensions"
 fi
 
-if test "x$extensions" = x; then
-  extensions="$default_extensions"
-fi
-
-if echo "$extensions" | egrep '(^|,)default($|,)' > /dev/null; then
-  extensions="$default_extensions,$extensions"
-fi
-
-if echo "$extensions" | egrep '(^|,)all($|,)' > /dev/null; then
-  extensions="$all_useful_extensions,$extensions"
-fi
-
-if test "x$extensions" = "xreally-all"; then
-  extensions="$all_extensions"
-fi
-
 AC_MSG_RESULT($extensions)
 
-AM_CONDITIONAL(ENABLE_ACTIONS_EXTENSION, echo "$extensions" | egrep '(^|,)actions($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_ADBLOCK_EXTENSION, echo "$extensions" | egrep '(^|,)adblock($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_BOOKMARKS_TRAY_EXTENSION, echo "$extensions" | egrep '(^|,)bookmarks-tray($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_CERTIFICATES_EXTENSION, echo "$extensions" | egrep '(^|,)certificates($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_DASHBOARD_EXTENSION, echo "$extensions" | egrep '(^|,)dashboard($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_EXTENSIONS_MANAGER_UI_EXTENSION, echo "$extensions" | egrep '(^|,)extensions-manager-ui($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_ERROR_VIEWER_EXTENSION, echo "$extensions" | egrep '(^|,)error-viewer($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_FIND_EXTENSION, echo "$extensions" | egrep '(^|,)find($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_GESTURES_EXTENSION, echo "$extensions" | egrep '(^|,)gestures($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_NET_MONITOR_EXTENSION, echo "$extensions" | egrep '(^|,)net-monitor($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_PAGE_INFO_EXTENSION, echo "$extensions" | egrep '(^|,)page-info($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_SAMPLE_EXTENSION, echo "$extensions" | egrep '(^|,)sample($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_SAMPLE_MOZILLA_EXTENSION, echo "$extensions" | egrep '(^|,)sample-mozilla($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_SELECT_STYLESHEET_EXTENSION, echo "$extensions" | egrep '(^|,)select-stylesheet($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_SIDEBAR_EXTENSION, echo "$extensions" | egrep '(^|,)sidebar($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_SMART_BOOKMARKS_EXTENSION, echo "$extensions" | egrep '(^|,)smart-bookmarks($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_TABSMENU_EXTENSION, echo "$extensions" | egrep '(^|,)tabsmenu($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_TAB_GROUPS_EXTENSION, echo "$extensions" | egrep '(^|,)tab-groups($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_TAB_STATES_EXTENSION, echo "$extensions" | egrep '(^|,)tab-states($|,)' > /dev/null)
-dnl AM_CONDITIONAL(ENABLE_TOOLBAR_EXTRAS_EXTENSION, echo "$extensions" | egrep '(^|,)toolbar-extras($|,)' > /dev/null)
+EXTENSIONS=
+IFS="${IFS=	}"; ephyext_save_ifs="$IFS"; IFS=","
+for ext in $extensions; do
+ if echo "$ALL_EXTENSIONS" | egrep "(^| )$ext(\$| )" > /dev/null; then
+   EXTENSIONS="$EXTENSIONS $ext"
+ elif test "x$ext" = "xdefault"; then
+   EXTENSIONS="$EXTENSIONS $DEFAULT_EXTENSIONS"
+ elif test "x$ext" = "xall"; then
+   EXTENSIONS="$EXTENSIONS $USEFUL_EXTENSIONS"
+ elif test "x$ext" = "xreally-all"; then
+   EXTENSIONS="$EXTENSIONS $ALL_EXTENSIONS"
+ else
+   AC_MSG_ERROR([the specified extension $ext does not exist])
+ fi
+done
+IFS="$ephyext_save_ifs"
+
+AC_SUBST([ALL_EXTENSIONS])
+AC_SUBST([BUILD_EXTENSIONS],[`echo $EXTENSIONS | tr ' ' '\n' | sort | uniq | tr '\n' ' '`])
 
 dnl ****
 dnl DBUS
