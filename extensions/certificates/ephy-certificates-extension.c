@@ -196,11 +196,13 @@ sync_security_status (EphyTab *tab,
 }
 
 static void
-tab_added_cb (GtkWidget *notebook,
-	      EphyTab *tab,
-	      EphyWindow *window)
+impl_attach_tab (EphyExtension *ext,
+		 EphyWindow *window,
+		 EphyTab *tab)
 {
 	EphyEmbed *embed;
+
+	LOG ("EphyCertificatesExtension attach_tab")
 
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
@@ -212,11 +214,13 @@ tab_added_cb (GtkWidget *notebook,
 }
 
 static void
-tab_removed_cb (GtkWidget *notebook,
-		EphyTab *tab,
-		EphyWindow *window)
+impl_detach_tab (EphyExtension *ext,
+		 EphyWindow *window,
+		 EphyTab *tab)
 {
 	EphyEmbed *embed;
+
+	LOG ("EphyCertificatesExtension detach_tab")
 
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
@@ -297,28 +301,11 @@ impl_attach_window (EphyExtension *ext,
 	GtkActionGroup *action_group;
 	guint ui_id;
 	WindowData *win_data;
-	GtkWidget *notebook;
 	GtkWidget *statusbar, *ebox;
-	GList *tabs, *l;
 
 	LOG ("EphyCertificatesExtension attach_window")
 
-	/* catch tab added/removed/switched */
-	notebook = ephy_window_get_notebook (window);
-
-	tabs = ephy_window_get_tabs (window);
-
-	for (l = tabs; l != NULL; l = g_list_next (l))
-	{
-		tab_added_cb (notebook, l->data, window);
-	}
-
-	g_list_free (tabs);
-
-	g_signal_connect_after (notebook, "tab_added",
-				G_CALLBACK (tab_added_cb), window);
-	g_signal_connect_after (notebook, "tab_removed",
-				G_CALLBACK (tab_removed_cb), window);
+	/* catch tab switched */
 	g_signal_connect (window, "notify::active-tab",
 			  G_CALLBACK (sync_active_tab_cb), extension);
 
@@ -382,28 +369,13 @@ impl_detach_window (EphyExtension *ext,
 {
 	GtkUIManager *manager;
 	WindowData *win_data;
-	GtkWidget *notebook;
 	GtkWidget *statusbar, *ebox;
-	GList *tabs, *l;
 
 	LOG ("EphyCertificatesExtension detach_window")
 
-	/* Disconnect added/removed/switched signals */
-	notebook = ephy_window_get_notebook (window);
-
-	g_signal_handlers_disconnect_by_func
-		(notebook, G_CALLBACK (tab_added_cb), window);
-	g_signal_handlers_disconnect_by_func
-		(notebook, G_CALLBACK (tab_removed_cb), window);
+	/* Disconnect switched signal */
 	g_signal_handlers_disconnect_by_func
 		(window, G_CALLBACK (sync_active_tab_cb), ext);
-
-	tabs = ephy_window_get_tabs (window);
-	for (l = tabs; l != NULL; l = g_list_next (l))
-	{
-		tab_removed_cb (notebook, l->data, window);
-	}
-	g_list_free (tabs);
 
 	/* un-make padlock icon clickable */
 	statusbar = ephy_window_get_statusbar (window);
@@ -429,6 +401,8 @@ ephy_certificates_extension_iface_init (EphyExtensionIface *iface)
 {
 	iface->attach_window = impl_attach_window;
 	iface->detach_window = impl_detach_window;
+	iface->attach_tab = impl_attach_tab;
+	iface->detach_tab = impl_detach_tab;
 }
 
 static void
