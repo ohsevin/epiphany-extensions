@@ -84,7 +84,7 @@ static GtkActionEntry action_entries [] =
 #endif /* HAVE_OPENSP */
 	{ "ErrorViewer",
 	  GTK_STOCK_DIALOG_ERROR,
-	  N_("Errors"),
+	  N_("_Error Viewer"),
 	  NULL, /* shortcut key */
 	  N_("Display web page errors"),
 	  G_CALLBACK (ephy_error_viewer_extension_show_viewer) }

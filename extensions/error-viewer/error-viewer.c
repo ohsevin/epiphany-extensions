@@ -128,8 +128,8 @@ error_viewer_append (ErrorViewer *dialog,
 	GtkTreeModel *model;
 	GtkTreePath *path;
 	const char *stock_id;
-	gint num_rows;
-	gint max_num_rows = MAX_NUM_ROWS;
+	static int num_rows = 0;
+	static GStaticMutex mutex = G_STATIC_MUTEX_INIT;
 
 	switch (type)
 	{
@@ -155,8 +155,12 @@ error_viewer_append (ErrorViewer *dialog,
 			    COL_TEXT, text,
 			    -1);
 
-	num_rows = gtk_tree_model_iter_n_children (model, NULL);
-	if (num_rows > max_num_rows)
+	g_static_mutex_lock (&mutex);
+
+	/* FIXME: Not thread-safe (why?) */
+	/*
+	num_rows++;
+	while (num_rows > MAX_NUM_ROWS)
 	{
 		gtk_tree_model_get_iter_first (model, &iter);
 
@@ -164,7 +168,12 @@ error_viewer_append (ErrorViewer *dialog,
 
 		num_rows--;
 	}
+	*/
 
+	g_static_mutex_unlock (&mutex);
+
+	/* XXX: Only do this sometimes? (i.e., not when validating HTML */
+	/*
 	gtk_tree_model_iter_nth_child (model, &iter, NULL, num_rows - 1);
 
 	path = gtk_tree_model_get_path (model, &iter);
@@ -174,6 +183,7 @@ error_viewer_append (ErrorViewer *dialog,
 				      NULL, FALSE, 0, 0);
 
 	gtk_tree_path_free (path);
+	*/
 }
 
 static void
@@ -204,6 +214,10 @@ build_ui (ErrorViewer *dialog)
 						     NULL);
 
 	renderer = gtk_cell_renderer_text_new ();
+	g_object_set (G_OBJECT (renderer),
+		      "mode", GTK_CELL_RENDERER_MODE_INERT,
+		      "editable", TRUE,
+		      NULL);
 	gtk_tree_view_insert_column_with_attributes (treeview,
 						     COL_TEXT, "Text",
 						     renderer,

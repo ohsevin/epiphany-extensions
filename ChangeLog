@@ -1,3 +1,42 @@
+2004-01-27  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/error-viewer/README:
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	* extensions/error-viewer/error-viewer.c: (error_viewer_append),
+	(build_ui):
+	* extensions/error-viewer/mozilla/Makefile.am:
+	* extensions/error-viewer/mozilla/get-doctype.cpp:
+	* extensions/error-viewer/mozilla/get-doctype.h:
+	* extensions/error-viewer/mozilla/register-listener.h:
+	* extensions/error-viewer/opensp/validate.cpp:
+	* extensions/error-viewer/opensp/validate.h:
+	* extensions/error-viewer/sgml-validator.c: (opensp_thread),
+	(save_source_completed_cb):
+
+	Numerous bugfixes, enhancements, and regressions :P
+
+	Bugfixes:
+	- Crop all strings from OpenSP at 200 characters. This is, of course,
+	  temporary.
+
+	Enhancements:
+	- Find the doctype from Mozilla, so OpenSP knows whether it should
+	  do XML checking or not. Also, show an error when XHTML is served
+	  as "text/html"
+	- Don't bother validating a document with no doctype
+	- Changed "Errors" to "_Error Viewer"
+	- Make Error Viewer text selectable (there's a catch: Gtk bug #132686)
+
+	Regressions:
+	- Removed MAX_NUM_ROWS from error viewer because I couldn't figure out
+	  why its usage wasn't thread safe (but Epiphany acted weird)
+	- Error viewer doesn't scroll to the bottom on new messages (though
+	  I'm not so sure I was a big fan of that behavior anyway)
+
+	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
+
+	Change shortcut key
+
 2004-01-25  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/tabsmenu/ephy-tab-move-menu.c:

@@ -28,3 +28,7 @@ liberrorviewermozilla_la_SOURCES = \
 	ErrorViewerConsoleListener.h	\
 	register-listener.cpp	\
 	register-listener.h
+
+if HAVE_OPENSP
+liberrorviewermozilla_la_SOURCES += get-doctype.cpp get-doctype.h
+endif

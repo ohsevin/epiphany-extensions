@@ -22,6 +22,8 @@
 #include "config.h"
 #endif
 
+#include "validate.h"
+
 #include <OpenSP/config.h> // Necessary for multi-byte support
 #include <OpenSP/ParserEventGeneratorKit.h>
 
@@ -30,7 +32,6 @@
 #include <sys/types.h>
 #include <regex.h>
 
-#include <glib.h>
 #include <glib/gi18n-lib.h>
 
 #include <iostream>
@@ -42,7 +43,8 @@ toString (SGMLApplication::CharString s)
 {
 	string r = "";
 
-	for (size_t i = 0; i < s.len; i++)
+	/* XXX: What's with the damned 200-character limit? OpenSP? */
+	for (size_t i = 0; i < s.len && i < 200; i++)
 	{
 		r += (char) s.ptr[i];
 	}
@@ -57,6 +59,7 @@ private:
 
 public:
 	ErrorViewer *error_viewer;
+	const char *location;
 
 	void error (const ErrorEvent &err);
 };
@@ -65,7 +68,7 @@ void
 HtmlErrorFinder::handle_line (const char *msg)
 {
 	ErrorViewerErrorType error_type;
-	char *source_name;
+	/* char *source_name; */
 	char *line_number;
 	char *verbose_msg;
 	const char *description;
@@ -94,8 +97,10 @@ HtmlErrorFinder::handle_line (const char *msg)
 		return;
 	}
 
+	/*
 	source_name = g_strndup (msg + matches[1].rm_so,
 				 matches[1].rm_eo - matches[1].rm_so);
+	*/
 
 	line_number = g_strndup (msg + matches[2].rm_so,
 				 matches[2].rm_eo - matches[2].rm_so);
@@ -116,12 +121,12 @@ HtmlErrorFinder::handle_line (const char *msg)
 
 	verbose_msg =
 		g_strdup_printf (_("HTML error in %s on line %s:\n%s"),
-				 source_name, line_number, description);
+				 this->location, line_number, description);
 
 	error_viewer_append (this->error_viewer, error_type,
 			     verbose_msg);
 
-	g_free (source_name);
+	/* g_free (source_name); */
 	g_free (line_number);
 	g_free (verbose_msg);
 	regfree (regex);
@@ -152,12 +157,13 @@ HtmlErrorFinder::error (const ErrorEvent &err)
 	g_strfreev (messages);
 }
 
-extern "C" void
+extern "C" unsigned int
 validate (const char *filename,
-	  ErrorViewer *error_viewer)
+	  const char *location,
+	  ErrorViewer *error_viewer,
+	  gboolean is_xml)
 {
 	unsigned int num_errors;
-	char *summary;
 
 	ParserEventGeneratorKit parserKit;
 	parserKit.setOption (ParserEventGeneratorKit::enableWarning,
@@ -166,25 +172,23 @@ validate (const char *filename,
 			     "non-sgml-char-ref");
 	parserKit.setOption (ParserEventGeneratorKit::enableWarning,
 			     "no-duplicate");
-	// TODO: Figure out when it's XML
-	parserKit.setOption (ParserEventGeneratorKit::enableWarning, "xml");
+
+	if (is_xml)
+	{
+		parserKit.setOption (ParserEventGeneratorKit::enableWarning,
+				     "xml");
+	}
 
 	EventGenerator *egp = parserKit.makeEventGenerator (1, (char* const*) &filename);
 	egp->inhibitMessages (true);
 
 	HtmlErrorFinder app;
 	app.error_viewer = error_viewer;
+	app.location = location;
 
 	num_errors = egp->run (app);
 
 	delete egp;
 
-	summary = g_strdup_printf (ngettext ("Found %d HTML error",
-					     "Found %d HTML errors",
-					     num_errors),
-				   num_errors);
-
-	error_viewer_append (error_viewer, ERROR_VIEWER_INFO, summary);
-
-	g_free (summary);
+	return num_errors;
 }

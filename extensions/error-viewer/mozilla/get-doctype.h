@@ -18,22 +18,23 @@
  *  $Id$
  */
 
-#ifndef ERROR_VIEWER_VALIDATE_H
-#define ERROR_VIEWER_VALIDATE_H
+#ifndef MOZ_FIND_DOCTYPE_H
+#define MOZ_FIND_DOCTYPE_H
+
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
 
 #include <glib.h>
-#include <glib-object.h>
 
-#include "error-viewer.h"
+#include <epiphany/ephy-embed.h>
 
 G_BEGIN_DECLS
 
-unsigned int validate (const char *filename,
-		       const char *location,
-		       ErrorViewer *error_viewer,
-		       gboolean is_xml);
+char	*mozilla_get_doctype		(EphyEmbed *embed);
+
+char	*mozilla_get_content_type	(EphyEmbed *embed);
 
 G_END_DECLS
 
 #endif
-

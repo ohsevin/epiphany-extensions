@@ -20,8 +20,8 @@
  *  $Id$
  */
 
-#ifndef MOZ_REGISTER_JS_CONSOLE_COMPONENT_H
-#define MOZ_REGISTER_JS_CONSOLE_COMPONENT_H
+#ifndef MOZ_REGISTER_LISTENER_H
+#define MOZ_REGISTER_LISTENER_H
 
 #include <glib.h>
 #include <glib-object.h>

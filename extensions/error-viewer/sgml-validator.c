@@ -30,7 +30,11 @@
 #include "ephy-file-helpers.h"
 #include "ephy-debug.h"
 
+#include "get-doctype.h"
+
 #include <unistd.h>
+
+#include <glib/gi18n-lib.h>
 
 #define SGML_VALIDATOR_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), TYPE_SGML_VALIDATOR, SgmlValidatorPrivate))
 
@@ -43,6 +47,14 @@ static void sgml_validator_finalize (GObject *object);
 static GObjectClass *parent_class = NULL;
 
 static GType type = 0;
+
+typedef struct
+{
+	char *dest;
+	char *location;
+	SgmlValidator *validator;
+	gboolean is_xml;
+} OpenSPThreadCBData;
 
 struct SgmlValidatorPrivate
 {
@@ -121,11 +133,52 @@ sgml_validator_finalize (GObject *object)
 	G_OBJECT_CLASS (parent_class)->finalize (object);
 }
 
+static gpointer
+opensp_thread (gpointer data)
+{
+	guint num_errors;
+	char *summary;
+	OpenSPThreadCBData *osp_data;
+
+	osp_data = (OpenSPThreadCBData *) data;
+
+	num_errors = validate (osp_data->dest,
+			       osp_data->location,
+			       osp_data->validator->priv->error_viewer,
+			       osp_data->is_xml);
+
+	summary = g_strdup_printf
+		(ngettext ("HTML Validation of %s complete\nFound %d error",
+			   "HTML Validation of %s complete\nFound %d errors",
+			   num_errors),
+		 osp_data->location, num_errors);
+
+	error_viewer_append (osp_data->validator->priv->error_viewer,
+			     ERROR_VIEWER_INFO, summary);
+
+	g_free (summary);
+
+	unlink (osp_data->dest);
+	g_free (osp_data->dest);
+	g_free (osp_data->location);
+	g_object_unref (osp_data->validator);
+	g_free (osp_data);
+
+	return NULL;
+}
+
 static void
 save_source_completed_cb (EphyEmbedPersist *persist,
 			  SgmlValidator *validator)
 {
 	const char *dest;
+	gboolean is_xml = FALSE;
+	char *doctype;
+	char *location;
+	char *content_type;
+	char *t;
+	OpenSPThreadCBData *data;
+	EphyEmbed *embed;
 
 	g_return_if_fail (EPHY_IS_EMBED_PERSIST (persist));
 	g_return_if_fail (IS_SGML_VALIDATOR (validator));
@@ -133,9 +186,59 @@ save_source_completed_cb (EphyEmbedPersist *persist,
 	dest = ephy_embed_persist_get_dest (persist);
 	g_return_if_fail (dest != NULL);
 
-	validate (dest, validator->priv->error_viewer);
+	embed = ephy_embed_persist_get_embed (persist);
+	doctype = mozilla_get_doctype (embed);
+	if (!doctype)
+	{
+		location = ephy_embed_get_location (embed, FALSE);
 
-	unlink (dest);
+		t = g_strdup_printf
+			(_("HTML error in %s:\nNo valid doctype specified."),
+			 location);
+
+		g_free (location);
+
+		error_viewer_append (validator->priv->error_viewer,
+				     ERROR_VIEWER_ERROR, t);
+
+		g_free (t);
+		return;
+	}
+	if (strstr (doctype, "XHTML"))
+	{
+		content_type = mozilla_get_content_type (embed);
+
+		if (strcmp (content_type, "text/html") == 0)
+		{
+			location = ephy_embed_get_location (embed, FALSE);
+
+			t = g_strdup_printf
+				(_("HTML error in %s:\nDoctype is XHTML "
+				   "but content type is text/html"),
+				 location);
+
+			g_free (location);
+
+			error_viewer_append (validator->priv->error_viewer,
+					     ERROR_VIEWER_ERROR, t);
+		}
+
+		g_free (content_type);
+
+		is_xml = TRUE;
+	}
+	g_free (doctype);
+
+	if (!g_thread_supported ()) g_thread_init (NULL);
+
+	data = g_new0 (OpenSPThreadCBData, 1);
+	data->dest = g_strdup (dest);
+	data->location = ephy_embed_get_location (embed, FALSE);
+	g_object_ref (validator);
+	data->validator = validator;
+	data->is_xml = is_xml;
+
+	g_thread_create (opensp_thread, data, FALSE, NULL);
 }
 
 void

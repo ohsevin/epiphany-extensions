@@ -59,7 +59,7 @@ static void clear_popup_permissions (void);
 
 static GtkToggleActionEntry action_entries [] =
 {
-	{ "PopupBlocker", NULL, N_("Block _Popups from this Site"),
+	{ "PopupBlocker", NULL, N_("Blo_ck Popups from this Site"),
 	  NULL, /* shortcut key */
 	  N_("Block or unblock popup windows"),
 	  NULL, TRUE }
