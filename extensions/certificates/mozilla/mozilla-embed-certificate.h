@@ -28,6 +28,8 @@ G_BEGIN_DECLS
 
 void		mozilla_embed_certificate_attach	(EphyEmbed *embed);
 
+void		mozilla_embed_certificate_detach	(EphyEmbed *embed);
+
 void		mozilla_embed_view_certificate		(EphyEmbed *embed);
 
 gboolean	mozilla_embed_has_certificate		(EphyEmbed *embed);

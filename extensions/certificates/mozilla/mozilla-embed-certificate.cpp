@@ -42,8 +42,8 @@ embed_security_change_cb (GObject *embed_object,
 }
 
 static void
-embed_destroy_cb (GtkObject *object,
-		  MozillaEmbedCertificate *cert)
+embed_detach_cert (GObject *object,
+		   MozillaEmbedCertificate *cert)
 {
 	g_return_if_fail (cert);
         if (!cert) return;
@@ -70,10 +70,26 @@ mozilla_embed_certificate_attach (EphyEmbed *embed)
 		g_object_set_data (embed_object, DATA_KEY, cert);
 
 		g_signal_connect (embed_object, "destroy",
-				  G_CALLBACK (embed_destroy_cb), cert);
+				  G_CALLBACK (embed_detach_cert), cert);
 
 		g_signal_connect (G_OBJECT (embed), "security_change",
 				  G_CALLBACK (embed_security_change_cb), cert);
+	}
+}
+
+extern "C" void
+mozilla_embed_certificate_detach (EphyEmbed *embed)
+{
+	GObject *embed_object = G_OBJECT (embed);
+	MozillaEmbedCertificate *cert;
+
+	cert = (MozillaEmbedCertificate *) g_object_get_data (embed_object, DATA_KEY);
+	if (cert)
+	{
+		g_signal_handlers_disconnect_by_func
+			(embed_object, (void *) embed_detach_cert, cert);
+
+		embed_detach_cert (embed_object, cert);
 	}
 }
 

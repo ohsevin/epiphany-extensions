@@ -1,5 +1,19 @@
 2004-09-09  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/certificates/ephy-certificates-extension.c:
+	(sync_security_status), (tab_removed_cb), (free_window_data),
+	(impl_attach_window), (impl_detach_window):
+	* extensions/certificates/mozilla/mozilla-embed-certificate.cpp:
+	* extensions/certificates/mozilla/mozilla-embed-certificate.h:
+
+	Allow load/unload. Christian, you may want to double-check this.
+
+	Note: after loading, any pages with SSL certificates will have to be
+	reloaded before their certificates can be viewed -- the certificates
+	are only found on page load.
+
+2004-09-09  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/error-viewer/ephy-error-viewer-extension.c:
 	(free_window_data), (impl_attach_window), (impl_detach_window):
 

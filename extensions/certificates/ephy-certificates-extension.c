@@ -56,7 +56,14 @@ struct EphyCertificatesExtensionPrivate
 	GtkWidget *cert_manager;
 };
 
+typedef struct
+{
+	GtkActionGroup *action_group;
+	guint ui_id;
+} WindowData;
+
 #define CERT_MANAGER_URL	"chrome://pippki/content/certManager.xul"
+#define WINDOW_DATA_KEY "EphyCertificatesExtensionWindowData"
 
 static void ephy_certificates_extension_class_init	 (EphyCertificatesExtensionClass *klass);
 static void ephy_certificates_extension_iface_init	 (EphyExtensionIface *iface);
@@ -179,6 +186,8 @@ sync_security_status (EphyTab *tab,
 	GtkAction *action;
 	gboolean is_secure;
 
+	LOG ("sync_security_status: tab %p, window %p", tab, window)
+
 	if (ephy_window_get_active_tab (window) != tab) return;
 
 	manager = GTK_UI_MANAGER (window->ui_merge);
@@ -213,7 +222,14 @@ tab_removed_cb (GtkWidget *notebook,
 		EphyTab *tab,
 		EphyWindow *window)
 {
+	EphyEmbed *embed;
+
 	g_return_if_fail (EPHY_IS_TAB (tab));
+
+	embed = ephy_tab_get_embed (tab);
+	g_return_if_fail (EPHY_IS_EMBED (embed));
+
+	mozilla_embed_certificate_detach (embed);
 
 	g_signal_handlers_disconnect_by_func
 		(tab, G_CALLBACK (sync_security_status), window);
@@ -268,6 +284,15 @@ static GtkActionEntry action_entries_2 [] =
 static const guint n_action_entries_2 = G_N_ELEMENTS (action_entries_2);
 
 static void
+free_window_data (WindowData *data)
+{
+	if (data) {
+		g_object_unref (data->action_group);
+		g_free (data);
+	}
+}
+
+static void
 impl_attach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
@@ -275,13 +300,23 @@ impl_attach_window (EphyExtension *ext,
 	GtkUIManager *manager;
 	GtkActionGroup *action_group;
 	guint ui_id;
+	WindowData *win_data;
 	GtkWidget *notebook;
 	GtkWidget *statusbar, *frame, *ebox;
+	GList *tabs, *l;
 
 	LOG ("EphyCertificatesExtension attach_window")
 
 	/* catch tab added/removed/switched */
 	notebook = ephy_window_get_notebook (window);
+
+	tabs = ephy_window_get_tabs (window);
+
+	for (l = tabs; l != NULL; l = g_list_next (l))
+	{
+		tab_added_cb (notebook, l->data, window);
+	}
+
 	g_signal_connect_after (notebook, "tab_added",
 				G_CALLBACK (tab_added_cb), window);
 	g_signal_connect_after (notebook, "tab_removed",
@@ -298,9 +333,12 @@ impl_attach_window (EphyExtension *ext,
 			  G_CALLBACK (padlock_button_press_cb), window);
 
 	/* add UI */
+	win_data = g_new (WindowData, 1);
+
 	manager = GTK_UI_MANAGER (window->ui_merge);
 
-	action_group = gtk_action_group_new ("CertificatesExtensionActions");
+	win_data->action_group = action_group = gtk_action_group_new
+		("CertificatesExtensionActions");
 	gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
 
 	gtk_action_group_add_actions (action_group, action_entries_1,
@@ -309,9 +347,8 @@ impl_attach_window (EphyExtension *ext,
 				      n_action_entries_2, window);
 
 	gtk_ui_manager_insert_action_group (manager, action_group, 0);
-	g_object_unref (action_group);
 
-	ui_id = gtk_ui_manager_new_merge_id (manager);
+	win_data->ui_id = ui_id = gtk_ui_manager_new_merge_id (manager);
 
 	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ViewMenu",
 			       "ViewSCSep1", NULL,
@@ -324,13 +361,63 @@ impl_attach_window (EphyExtension *ext,
 			       "ToolsCertificateManagerItem",
 			       "ToolsCertificateManager",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
+
+	g_object_set_data_full (G_OBJECT (window), WINDOW_DATA_KEY, win_data,
+				(GDestroyNotify) free_window_data);
+
+	/* Synchronize */
+	if (GTK_WIDGET_REALIZED (window))
+	{
+		sync_active_tab_cb (window, NULL, extension);
+	}
 }
 
 static void
 impl_detach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
+	GtkUIManager *manager;
+	WindowData *win_data;
+	GtkWidget *notebook;
+	GtkWidget *statusbar, *ebox;
+	GList *tabs, *l;
+
 	LOG ("EphyCertificatesExtension detach_window")
+
+	/* Disconnect added/removed/switched signals */
+	notebook = ephy_window_get_notebook (window);
+
+	g_signal_handlers_disconnect_by_func
+		(notebook, G_CALLBACK (tab_added_cb), window);
+	g_signal_handlers_disconnect_by_func
+		(notebook, G_CALLBACK (tab_removed_cb), window);
+	g_signal_handlers_disconnect_by_func
+		(window, G_CALLBACK (sync_active_tab_cb), ext);
+
+	tabs = ephy_window_get_tabs (window);
+
+	for (l = tabs; l != NULL; l = g_list_next (l))
+	{
+		tab_removed_cb (notebook, l->data, window);
+	}
+
+	/* un-make padlock icon clickable */
+	statusbar = ephy_window_get_statusbar (window);
+	ebox = GTK_BIN (EPHY_STATUSBAR (statusbar)->security_frame)->child;
+	g_signal_handlers_disconnect_by_func
+		(ebox, G_CALLBACK (padlock_button_press_cb), window);
+
+	/* remove UI */
+	manager = GTK_UI_MANAGER (window->ui_merge);
+
+	win_data = (WindowData *) g_object_get_data (G_OBJECT (window),
+						     WINDOW_DATA_KEY);
+	g_return_if_fail (win_data != NULL);
+
+	gtk_ui_manager_remove_ui (manager, win_data->ui_id);
+	gtk_ui_manager_remove_action_group (manager, win_data->action_group);
+
+	g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, NULL);
 }
 
 static void
