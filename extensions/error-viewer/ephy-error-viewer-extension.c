@@ -363,6 +363,15 @@ tab_removed_cb (GtkWidget *notebook,
 #endif /* HAVE_OPENSP */
 
 static void
+free_window_data (WindowData *data)
+{
+	if (data) {
+		g_object_unref (data->action_group);
+		g_free (data);
+	}
+}
+
+static void
 impl_attach_window (EphyExtension *extension,
 		    EphyWindow *window)
 {
@@ -397,7 +406,7 @@ impl_attach_window (EphyExtension *extension,
 	data->ui_id = merge_id = gtk_ui_manager_new_merge_id (manager);
 
 	g_object_set_data_full (G_OBJECT (window), WINDOW_DATA_KEY, data,
-				(GDestroyNotify) g_free);
+				(GDestroyNotify) free_window_data);
 
 	gtk_ui_manager_add_ui (manager, merge_id, "/menubar/ToolsMenu",
 			       "ErrorViewerSep", NULL,
@@ -444,9 +453,6 @@ impl_detach_window (EphyExtension *extension,
 
 	gtk_ui_manager_remove_ui (manager, data->ui_id);
 	gtk_ui_manager_remove_action_group (manager, data->action_group);
-
-	/* FIXME: Why does this crash? Am I (or is GTK) making a mistake? */
-	/* g_object_unref (action_group); */
 
 	g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, NULL);
 

@@ -1,3 +1,10 @@
+2004-09-09  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	(free_window_data), (impl_attach_window), (impl_detach_window):
+
+	Fix mem leak with Christian's latest fix ;)
+
 2004-09-08  Christian Persch  <chpe@cvs.gnome.org>
 
 	* AUTHORS:
