@@ -18,7 +18,6 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  *
  *  $Id$
- * 
  */
 
 #ifdef HAVE_CONFIG_H
@@ -74,7 +73,8 @@ load_one_gesture (xmlNodePtr node)
 
 	g_return_if_fail (sequence != NULL && action != NULL);
 
-	for (cur = sequence; cur; cur = g_slist_next (cur)) {
+	for (cur = sequence; cur != NULL ; cur = cur->next)
+	{
 		g_hash_table_insert (gestures, g_strdup (cur->data),
 				     g_strdup (action));
 		xmlFree (cur->data);

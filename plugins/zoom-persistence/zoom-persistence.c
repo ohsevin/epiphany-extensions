@@ -17,7 +17,6 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  *
  *  $Id$
- * 
  */
 
 #ifdef HAVE_CONFIG_H
@@ -204,7 +203,7 @@ host_visited (EphyNode *host, GTime now)
 }
 
 static EphyNode *
-get_host_node (const char *url)
+get_host_node (const char *url, gboolean create_if_not_found)
 {
 	GnomeVFSURI *vfs_uri = NULL;
 	EphyNode *host = NULL;
@@ -255,7 +254,14 @@ get_host_node (const char *url)
 	host = g_hash_table_lookup (priv->hosts_hash, host_url);
 	g_static_rw_lock_reader_unlock (priv->hosts_hash_lock);
 
-	if (!host)
+	if (!EPHY_IS_NODE (host) && create_if_not_found == FALSE)
+	{
+		g_free (host_url);
+
+		return NULL;
+	}
+
+	if (!EPHY_IS_NODE (host))
 	{
 		GValue value = { 0, };
 
@@ -287,16 +293,18 @@ zoom_cb (EphyTab *tab, GParamSpec *pspec, EphyEmbed *embed)
 	EphyNode *host;
 	const char *address;
 	GValue value = { 0, };
+	float zoom;
 
 	address = ephy_tab_get_location (tab);
+	zoom = ephy_tab_get_zoom (tab);
 
-	LOG ("zoom_cb address '%s' zoom %f", address, ephy_tab_get_zoom (tab))
+	LOG ("zoom_cb address '%s' zoom %f", address, zoom)
 
-	host = get_host_node (address);
+	host = get_host_node (address, (zoom != 1.0));
 	if (host == NULL) return;
 
 	g_value_init (&value, G_TYPE_FLOAT);
-	g_value_set_float (&value, ephy_tab_get_zoom (tab));
+	g_value_set_float (&value, zoom);
 	ephy_node_set_property (host, EPHY_NODE_HOST_PROP_ZOOM, &value);
 	g_value_unset (&value);
 }
@@ -313,10 +321,17 @@ address_cb (EphyEmbed *embed, const char *address, EphyTab *tab)
 	rv = ephy_embed_zoom_get (embed, &current_zoom);
 	if (rv != G_OK) return;
 
-	host = get_host_node (address);
-	if (host == NULL) return;
+	host = get_host_node (address, FALSE);
 
-	zoom = ephy_node_get_property_float (host, EPHY_NODE_HOST_PROP_ZOOM);
+	if (host != NULL)
+	{
+		zoom = ephy_node_get_property_float (host, EPHY_NODE_HOST_PROP_ZOOM);
+	}
+	else
+	{
+		zoom = 1.0;
+	}
+	
 	if (zoom < 0.0)
 	{
 		zoom = 1.0;

@@ -1,5 +1,6 @@
 /*
  *  Copyright (C) 2002  Ricardo Fernández Pascual
+ *  Copright  (C) 2003  Christian Persch
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -18,17 +19,16 @@
  *  This file is based on work of Daniel Erat for galeon 1.
  *
  *  $Id$
- * 
  */
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
 
-#include "stroke.h"
-
 #include "ephy-gestures.h"
 #include "ephy-debug.h"
+
+#include "stroke.h"
 
 #include <gtk/gtkmain.h>
 #include <gtk/gtkdnd.h>
@@ -112,8 +112,6 @@ ephy_gestures_get_type (void)
 static void
 ephy_gestures_class_init (EphyGesturesClass *klass)
 {
-	g_printf("Gestures plugin init\n");
-
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
 	parent_class = g_type_class_peek_parent (klass);

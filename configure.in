@@ -2,7 +2,7 @@ dnl Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.52)
 
-AC_INIT(ephy-plugins, 0.1.2, [http://savannah.nongnu.org/bugs/?func=addbug&group=ephyplugins])
+AC_INIT(ephy-plugins, 0.2.0, [http://savannah.nongnu.org/bugs/?func=addbug&group=ephyplugins])
 
 AC_CONFIG_SRCDIR(plugins)
 AM_CONFIG_HEADER(config.h)
@@ -47,7 +47,7 @@ dnl ********************************
 dnl pkg config checks
 dnl ********************************
 
-EPIPHANY_REQUIRED=0.8.2
+EPIPHANY_REQUIRED=0.8.4
 
 AC_SUBST(EPIPHANY_REQUIRED)
 
