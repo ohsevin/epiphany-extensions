@@ -31,7 +31,6 @@ extensions/page-info/ephy-page-info-extension.c
 extensions/page-info/page-info-dialog.c
 extensions/page-info/page-info.glade
 extensions/page-info/page-info.xml.in.in
-extensions/portefeuille/portefeuille.xml.in.in
 extensions/sample-mozilla/sample-mozilla.xml.in.in
 extensions/sample/sample.xml.in.in
 extensions/select-stylesheet/ephy-css-menu.c
