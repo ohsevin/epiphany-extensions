@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-25 11:08-0500\n"
-"PO-Revision-Date: 2005-01-25 16:10-0400\n"
+"POT-Creation-Date: 2005-02-02 00:39-0500\n"
+"PO-Revision-Date: 2005-02-02 16:10-0400\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: English/Canada <adamw@FreeBSD.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,59 +17,172 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
+#: extensions/actions/action-properties.glade.h:1
+msgid "<span weight=\"bold\">Applies to</span>"
+msgstr "<span weight=\"bold\">Applies to</span>"
+
+#: extensions/actions/action-properties.glade.h:2
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">General</span>"
+
+#: extensions/actions/action-properties.glade.h:3
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"images."
+msgstr ""
+"If this option is enabled, the action will be included in the popup menu of "
+"images."
+
+#: extensions/actions/action-properties.glade.h:4
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"links and pages."
+msgstr ""
+"If this option is enabled, the action will be included in the popup menu of "
+"links and pages."
+
+#: extensions/actions/action-properties.glade.h:5
+msgid "The action description."
+msgstr "The action description."
+
+#: extensions/actions/action-properties.glade.h:6
+msgid ""
+"The action name. If a character is preceded by an underscore, that character "
+"will be used as the accelerator key for the menu item."
+msgstr ""
+"The action name. If a character is preceded by an underscore, that character "
+"will be used as the accelerator key for the menu item."
+
+#: extensions/actions/action-properties.glade.h:7
+msgid ""
+"The action name. If a character is preceded by an underscore, that character "
+"will be used as the access key for the menu item."
+msgstr ""
+"The action name. If a character is preceded by an underscore, that character "
+"will be used as the access key for the menu item."
+
+#: extensions/actions/action-properties.glade.h:8
+msgid ""
+"The command to execute when the action is activated. The URL of the link, "
+"image or page will be appended to the command."
+msgstr ""
+"The command to execute when the action is activated. The URL of the link, "
+"image or page will be appended to the command."
+
+#: extensions/actions/action-properties.glade.h:9
+msgid "_Command:"
+msgstr "_Command:"
+
+#: extensions/actions/action-properties.glade.h:10
+msgid "_Description:"
+msgstr "_Description:"
+
+#: extensions/actions/action-properties.glade.h:11
+msgid "_Images"
+msgstr "_Images"
+
+#: extensions/actions/action-properties.glade.h:12
+msgid "_Name:"
+msgstr "_Name:"
+
+#: extensions/actions/action-properties.glade.h:13
+msgid "_Pages"
+msgstr "_Pages"
+
+#: extensions/actions/actions-editor.glade.h:1
+msgid "Actions"
+msgstr "Actions"
+
+#: extensions/actions/ephy-actions-extension-editor-dialog.c:490
+msgid "No action selected."
+msgstr "No action selected."
+
+#: extensions/actions/ephy-actions-extension-editor-dialog.c:500
+#, c-format
+msgid "%i action selected."
+msgid_plural "%i actions selected."
+msgstr[0] "%i action selected."
+msgstr[1] "%i actions selected."
+
+#: extensions/actions/ephy-actions-extension-properties-dialog.c:312
+msgid "Add Action"
+msgstr "Add Action"
+
+#: extensions/actions/ephy-actions-extension-properties-dialog.c:421
+#, c-format
+msgid "%s Properties"
+msgstr "%s Properties"
+
+#: extensions/actions/ephy-actions-extension-properties-dialog.c:426
+msgid "Action Properties"
+msgstr "Action Properties"
+
+#: extensions/actions/ephy-actions-extension.c:97
+msgid "_Actions"
+msgstr "_Actions"
+
+#: extensions/actions/ephy-actions-extension.c:98
+msgid "Customize actions"
+msgstr "Customize actions"
+
+#: extensions/actions/ephy-actions-extension.c:409
+#, c-format
+msgid "Could not run command: %s"
+msgstr "Could not run command: %s"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
 msgid "_Edit Bookmarks"
 msgstr "_Edit Bookmarks"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
 msgid "Open the bookmarks window"
 msgstr "Open the bookmarks window"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:451
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
 msgid "Open in _Current Tab"
 msgstr "Open in _Current Tab"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:452
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
 msgid "Open bookmarks in the current tab of the active window"
 msgstr "Open bookmarks in the current tab of the active window"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:454
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
 msgid "Open in New _Tab"
 msgstr "Open in New _Tab"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:455
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
 msgid "Open bookmarks in a new tab of the active window"
 msgstr "Open bookmarks in a new tab of the active window"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:457
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
 msgid "Open in New _Window"
 msgstr "Open in New _Window"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:458
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
 msgid "Open bookmarks in new a window"
 msgstr "Open bookmarks in new a window"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:526
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:513
 msgid "Bookmarks"
 msgstr "Bookmarks"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:265
+#: extensions/certificates/ephy-certificates-extension.c:269
 msgid "Manage _Certificates"
 msgstr "Manage _Certificates"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:267
+#: extensions/certificates/ephy-certificates-extension.c:271
 msgid "Manage your certificates"
 msgstr "Manage your certificates"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:275
+#: extensions/certificates/ephy-certificates-extension.c:279
 msgid "Server _Certificate"
 msgstr "Server _Certificate"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:277
+#: extensions/certificates/ephy-certificates-extension.c:281
 msgid "Display the web server's certificate"
 msgstr "Display the web server's certificate"
 
