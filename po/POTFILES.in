@@ -8,4 +8,6 @@ extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp
 extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp
 extensions/error-viewer/opensp/validate.cpp
 extensions/error-viewer/sgml-validator.c
+extensions/smart-bookmarks/smart-bookmarks-extension.c
+extensions/smart-bookmarks/smart-bookmarks.glade
 extensions/tabsmenu/ephy-tab-move-menu.c
