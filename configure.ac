@@ -16,7 +16,7 @@ dnl 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 dnl
 dnl $Id$
 
-AC_INIT([Epiphany Extensions],[1.5.0],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+AC_INIT([Epiphany Extensions],[1.5.1],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 GNOME_COMMON_INIT
 
 EPIPHANY_EXTENSIONS_MAJOR=1.5
@@ -30,6 +30,8 @@ AC_CONFIG_SRCDIR([extensions])
 AC_CONFIG_HEADERS([config.h])
 
 AM_INIT_AUTOMAKE([dist-bzip2 check-news])
+
+AC_SUBST([ACLOCAL_AMFLAGS], ["-I $ac_macro_dir \${ACLOCAL_FLAGS}"])
 
 AM_MAINTAINER_MODE
 
@@ -73,17 +75,16 @@ dnl ********************************
 dnl pkg config checks
 dnl ********************************
 
-EPIPHANY_REQUIRED=1.5.0
+EPIPHANY_REQUIRED=1.5.1
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.4.0
-LIBGTK_REQUIRED=2.4.0
+LIBGTK_REQUIRED=2.5.4
 
 AC_SUBST([EPIPHANY_REQUIRED])
 AC_SUBST([LIBXML_REQUIRED])
 AC_SUBST([LIBGLIB_REQUIRED])
 AC_SUBST([LIBGTK_REQUIRED])
 
-dnl fixme -- combine the dependencies of only the enabled plugins
 PKG_CHECK_MODULES([EPIPHANY_DEPENDENCY], [\
 		  libxml-2.0 >= $LIBXML_REQUIRED \
 		  libglade-2.0 \

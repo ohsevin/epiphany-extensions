@@ -1,3 +1,13 @@
+2004-11-01  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
+	Bump version number.
+
+	* extensions/sample-mozilla/sample-mozilla.c:
+
+	Fix warning.
+
 2004-10-30  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* tools/copy-template:
