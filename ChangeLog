@@ -1,3 +1,12 @@
+2004-12-14  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/page-info/page-info-context-ui.xml:
+	* extensions/page-info/page-info-dialog.c:
+	(media_set_image_as_background_cb), (media_copy_medium_address_cb),
+	(media_info_page_filter):
+
+	Fix context menu on Media page.
+
 2004-12-13  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/page-info/page-info.glade:

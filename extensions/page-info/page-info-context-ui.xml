@@ -4,7 +4,7 @@
 	<menuitem name="OpenIP" action="Open"/>
 	<menuitem name="SaveAsIP" action="SaveAs"/>
 	<menuitem name="SetAsBackgroundIP" action="SetAsBackground"/>
-	<menuitem name="CopyLinkAddressIP" action="CopyLinkAddress"/>
+	<menuitem name="CopyMediumAddressIP" action="CopyMediumAddress"/>
 </popup>
 
 <popup name="ImagesEmbedPopup" action="PopupAction">

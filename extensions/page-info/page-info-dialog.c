@@ -989,7 +989,6 @@ media_save_medium_cb (gpointer ptr,
 	}
 }
 
-
 static void
 background_download_completed_cb (EphyEmbedPersist *persist)
 {
@@ -1017,7 +1016,7 @@ media_set_image_as_background_cb (GtkAction *action,
 	GList *rows;
 
 	rows = media_get_selected_medium_url (page);
-	if (g_list_length (rows) != 1) return;
+	g_return_if_fail (g_list_length (rows) == 1);
 
 	address = (gchar *)(rows->data); 
 	if (address == NULL) return;
@@ -1054,9 +1053,10 @@ media_copy_medium_address_cb (GtkAction *action,
 	GList *rows;
 
 	rows = media_get_selected_medium_url (page);
-	if (g_list_length (rows) != 1) return;
+	g_return_if_fail (g_list_length (rows) == 1);
 
-	address = (gchar *)(rows->data); 
+	address = (gchar *)(rows->data);
+	g_return_if_fail (address != NULL);
 	if (address == NULL) return;
 
 	gtk_clipboard_set_text (gtk_clipboard_get (GDK_NONE),
@@ -1075,7 +1075,7 @@ static GtkActionEntry media_action_entries[] =
 	  NULL,
 	  NULL,
 	  G_CALLBACK (media_open_medium_cb) },
-	{ "CopyLinkAddress", 
+	{ "CopyMediumAddress",
 	  GTK_STOCK_COPY,
 	  N_("_Copy Link Address"),
 	  NULL,
@@ -1170,7 +1170,7 @@ media_info_page_filter (TreeviewInfoPage *page)
 	InfoPage *ipage = (InfoPage *) page;
 	PageInfoDialog *dialog = ipage->dialog;
 	GtkAction *action;
-	gboolean one_col, can_set_as_background = TRUE;
+	gboolean one_col, can_set_as_background = FALSE;
 	EmbedPageMediumType type = MEDIUM_IMAGE;
 
 	/* In case of a multiple medium selection, we must reduce popup to Save As
@@ -1178,14 +1178,14 @@ media_info_page_filter (TreeviewInfoPage *page)
          */
 	one_col = (gtk_tree_selection_count_selected_rows (page->selection) == 1);
 
-        if (one_col)
+	if (one_col)
 	{
-		media_get_selected_medium_type (page->selection);
+		type = media_get_selected_medium_type (page->selection);
 
 		can_set_as_background = ! media_is_embedded_medium (type);
 	}
 	action = gtk_action_group_get_action (dialog->priv->action_group,
-					      "CopyLinkAddress");
+					      "CopyMediumAddress");
 	g_object_set (action, "visible", one_col, NULL);
 	action = gtk_action_group_get_action (dialog->priv->action_group,
 					      "SetAsBackground");
