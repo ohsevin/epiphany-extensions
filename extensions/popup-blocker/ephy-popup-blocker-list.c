@@ -387,6 +387,10 @@ ephy_popup_blocker_list_show_all (EphyPopupBlockerList *list)
 
 			free_blocked_popup (popup);
 		}
+		else
+		{
+			t = t->next;
+		}
 	}
 
 	g_object_notify (G_OBJECT (list), "count");
