@@ -1,3 +1,17 @@
+2005-01-20  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/dashboard/dashboard-frontend-xmlwriter.c:
+	(NewTextWriterDashboard), (DashboardSendClue):
+	* extensions/dashboard/ephy-dashboard-extension.c:
+	(load_status_cb):
+	* extensions/error-viewer/sgml-validator.c:
+	(save_source_completed_cb):
+	* extensions/gestures/ephy-gestures-extension.c:
+	(load_one_gesture), (load_gestures):
+	* extensions/smart-bookmarks/mozilla/Makefile.am:
+
+	Fix signed/unsigned int confusion. Patch by Andreas Jochens.
+
 2004-12-20  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:

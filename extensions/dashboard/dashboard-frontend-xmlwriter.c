@@ -163,17 +163,17 @@ NewTextWriterDashboard (const xmlChar *frontend,
 	ret = xmlTextWriterStartDocument (writer, NULL, NULL, NULL);
 	if (ret < 0) goto error;
 
-	ret = xmlTextWriterStartElement (writer, "CluePacket");
+	ret = xmlTextWriterStartElement (writer, (const xmlChar*) "CluePacket");
 	if (ret < 0) goto error;
 
-	ret = xmlTextWriterWriteElement (writer, "Frontend", frontend);
+	ret = xmlTextWriterWriteElement (writer, (const xmlChar*) "Frontend", frontend);
 	if (ret < 0) goto error;
 
-	ret = xmlTextWriterWriteElement (writer, "Context", context);
+	ret = xmlTextWriterWriteElement (writer, (const xmlChar*) "Context", context);
 	if (ret < 0) goto error;
 
-	ret = xmlTextWriterWriteElement (writer, "Focused",
-					 focused ? "true" : "false");
+	ret = xmlTextWriterWriteElement (writer, (const xmlChar*) "Focused",
+					 focused ? (const xmlChar*) "true" : (const xmlChar*) "false");
 	if (ret < 0) goto error;
 
 error:
@@ -216,13 +216,13 @@ DashboardSendClue (xmlTextWriterPtr writer,
 	if (!writer)
 		return -1;
 
-	ret = xmlTextWriterStartElement (writer, "Clue");
+	ret = xmlTextWriterStartElement (writer, (const xmlChar*) "Clue");
 	if (ret < 0) return ret;
 
-	ret = xmlTextWriterWriteAttribute (writer, "Type", type);
+	ret = xmlTextWriterWriteAttribute (writer, (const xmlChar*) "Type", type);
 	if (ret < 0) return ret;
 
-	ret = xmlTextWriterWriteFormatAttribute (writer, "Relevance", "%d", relevance);
+	ret = xmlTextWriterWriteFormatAttribute (writer, (const xmlChar*) "Relevance", "%d", relevance);
 	if (ret < 0) return ret;
 
 	ret = xmlTextWriterWriteString (writer, text);

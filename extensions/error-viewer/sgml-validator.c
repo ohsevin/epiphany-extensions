@@ -328,7 +328,7 @@ save_source_completed_cb (EphyEmbedPersist *persist,
 {
 	const char *dest;
 	char *location;
-	char *dest_utf8;
+	char *dest_utf8 = NULL;
 	gboolean is_xml;
 	unsigned int num_errors = 0;
 	OpenSPThreadCBData *data;
