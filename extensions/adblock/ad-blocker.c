@@ -24,8 +24,8 @@
 
 #include "ad-blocker.h"
 
-#include <stdio.h>
-#include <string.h>
+#include <sys/types.h>
+#include <regex.h>
 
 #include "ephy-file-helpers.h"
 #include "ephy-debug.h"
@@ -46,7 +46,7 @@ struct _AdBlockerPrivate
 {
 	EphyEmbedSingle *embed_single;
 	guint signal;
-	GSList *patterns;
+	GHashTable *patterns;
 };
 
 enum
@@ -93,58 +93,92 @@ ad_blocker_new (EphyEmbedSingle *embed_single)
 			     NULL);
 }
 
+static void
+handle_reg_error (const regex_t *preg,
+		  int err)
+{
+	size_t len;
+	char *s;
+
+	len = regerror (err, preg, NULL, 0);
+	s = g_malloc (len);
+
+	regerror (err, preg, s, len);
+
+	g_warning ("%s", s);
+
+	g_free (s);
+}
+
+static gboolean
+match_uri (const char *pattern,
+	   const regex_t *preg,
+	   const char *uri)
+{
+	int ret;
+
+	ret = regexec (preg, uri, 0, NULL, 0);
+
+	if (ret == 0)
+	{
+		LOG ("Blocking '%s' with pattern '%s'", uri, pattern)
+
+		return TRUE;
+	}
+
+	if (ret != REG_NOMATCH)
+	{
+		handle_reg_error (preg, ret);
+	}
+
+	return FALSE;
+}
+
 static gboolean
 ad_blocker_test_uri (AdBlocker *blocker,
 		     EphyContentCheckType type,
-		     const char *url,
-		     const char *referrer,
-		     const char *mime_type,
+		     char *uri,
+		     char *referrer,
+		     char *mime_type,
 		     EphyEmbedSingle *single)
 {
-	GSList *l;
-	char *rev;
-	guint len;
-	gboolean ret;
+	const char *pattern;
 
-	ret = FALSE;
+	pattern = g_hash_table_find (blocker->priv->patterns,
+				     (GHRFunc) match_uri, uri);
 
-	len = strlen (url);
-	rev = g_utf8_strreverse (url, -1);
-
-	for (l = blocker->priv->patterns; l != NULL; l = l->next)
-	{
-		if (g_pattern_match (l->data, len, url, rev))
-		{
-			LOG ("Blocking %s", url)
-
-			ret = TRUE;
-			break;
-		}
-	}
-
-	g_free (rev);
-
-	return ret;
+	return pattern != NULL;
 }
 
-static GSList *
-load_patterns_file (const char *filename)
+static void
+load_patterns_file (GHashTable *patterns,
+		    const char *filename)
 {
-	GSList *ret = NULL;
-	FILE *f;
-	char *line = malloc (sizeof (char) * BUFFER_SIZE);
+	char *contents;
+	char **lines;
+	char **t;
+	char *line;
+	regex_t *preg;
+	int err;
 
-	LOG ("Loading patterns from %s", filename)
-
-	f = fopen (filename, "r");
-
-	g_return_val_if_fail (f != NULL, NULL);
-
-	while (fgets (line, BUFFER_SIZE, f) != NULL)
+	if (!g_file_get_contents (filename, &contents, NULL, NULL))
 	{
+		g_warning ("Could not read from file '%s'", filename);
+		return;
+	}
+
+	t = lines = g_strsplit (contents, "\n", 0);
+
+	while (TRUE)
+	{
+		line = *t++;
+		if (line == NULL) break;
+
 		if (*line == '#') continue; /* comment */
 
 		g_strstrip (line);
+
+		if (*line == '\0') continue; /* empty line */
 
 		if (g_utf8_validate (line, -1, NULL) == FALSE)
 		{
@@ -153,22 +187,28 @@ load_patterns_file (const char *filename)
 			continue;
 		}
 
-		if (strlen (line) > 0)
+		preg = g_malloc (sizeof (regex_t));
+
+		err = regcomp (preg, line, REG_EXTENDED | REG_NOSUB);
+
+		if (err != 0)
 		{
-			/* TODO: use regex from libegg */
-			ret = g_slist_prepend (ret, g_pattern_spec_new (line));
+			handle_reg_error (preg, err);
+			regfree (preg);
+			g_free (preg);
+			continue;
 		}
+
+		g_hash_table_insert (patterns, g_strdup (line), preg);
 	}
 
-	fclose (f);
-
-	return ret;
+	g_strfreev (lines);
+	g_free (contents);
 }
 
-static GSList *
-load_patterns (void)
+static void
+load_patterns (AdBlocker *blocker)
 {
-	GSList *ret;
 	char *filename;
 
 	filename = g_build_filename (ephy_dot_dir (), "extensions", "data",
@@ -185,15 +225,13 @@ load_patterns (void)
 		{
 			g_warning ("Could not find " AD_BLOCKER_PATTERN_FILE);
 			g_free (filename);
-			return NULL;
+			return;
 		}
 	}
 
-	ret = load_patterns_file (filename);
+	load_patterns_file (blocker->priv->patterns, filename);
 
 	g_free (filename);
-
-	return ret;
 }
 
 static void
@@ -223,13 +261,27 @@ ad_blocker_set_property (GObject *object,
 }
 
 static void
+free_regex (gpointer preg)
+{
+	if (preg != NULL)
+	{
+		regfree (preg);
+		g_free (preg);
+	}
+}
+
+static void
 ad_blocker_init (AdBlocker *blocker)
 {
 	LOG ("AdBlocker initializing %p", blocker)
 
 	blocker->priv = AD_BLOCKER_GET_PRIVATE (blocker);
 
-	blocker->priv->patterns = load_patterns ();
+	blocker->priv->patterns = g_hash_table_new_full (g_str_hash,
+							 g_str_equal,
+							 g_free,
+							 free_regex);
+	load_patterns (blocker);
 }
 
 static GObject *
@@ -266,8 +318,7 @@ ad_blocker_finalize (GObject *object)
 		g_signal_handler_disconnect (priv->embed_single, priv->signal);
 	}
 
-	g_slist_foreach (priv->patterns, (GFunc) g_pattern_spec_free, NULL);
-	g_slist_free (priv->patterns);
+	g_hash_table_destroy (priv->patterns);
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
 }

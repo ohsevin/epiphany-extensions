@@ -1,3 +1,12 @@
+2005-01-12  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/adblock/ad-blocker.c: (handle_reg_error), (match_uri),
+	(ad_blocker_test_uri), (load_patterns_file), (load_patterns),
+	(free_regex), (ad_blocker_init), (ad_blocker_finalize):
+
+	Use POSIX regexes. Store them in a hash table and use
+	g_hash_table_find as a marshaller.
+
 2005-01-11  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* configure.ac:
