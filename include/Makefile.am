@@ -11,6 +11,4 @@ EXTRA_DIST =				\
 	ephy-favicon-cache.h		\
 	ephy-gui.h			\
 	ephy-string.h			\
-	ephy-state.h			\
-	mozilla-version.h
-
+	ephy-state.h
