@@ -372,7 +372,8 @@ embed_key_press_event_cb (EphyEmbed *embed,
 	/* don't acccept the keypress if find is disabled (f.e. for image embeds) */
 	if (!gtk_action_is_sensitive (priv->find_action) || priv->ppv_mode) return FALSE;
 
-	LOG ("embed_key_press_event_cb, find bar is %svisible", GTK_WIDGET_VISIBLE (widget) ? "" : "in");
+	/* don't open on space, we want space to toggle checkboxes in the page instead */
+	if (event->keyval == GDK_space) return FALSE;
 
 	g_print ("keyval '%c'\n", event->keyval);
 	if (event->keyval == GDK_slash || event->keyval == GDK_apostrophe)
