@@ -1,3 +1,9 @@
-2003-07-27  Christian Persch  <chpe@cvs.gnome.org>
+2003-07-30  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.in:
+
+	Fixed AC_OUTPUT, as per Manny's hint.
+
+2003-07-30  Christian Persch  <chpe@cvs.gnome.org>
 
 	* Checked in initial codebase.

@@ -118,6 +118,5 @@ Makefile
 po/Makefile.in
 plugins/Makefile
 plugins/sample/Makefile
-plugins/gestures/Makefile
 ],
 [])
