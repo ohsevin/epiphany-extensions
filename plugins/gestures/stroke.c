@@ -49,6 +49,8 @@
    and trimmed down for Galeon.
 */
 
+/* $Id$ */
+
 #include "stroke.h"
 
 #include <unistd.h>

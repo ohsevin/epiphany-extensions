@@ -3,7 +3,7 @@
 # add 'po' when we get some translatable strings
 SUBDIRS = include plugins
 
-EXTRA_DIST =
+EXTRA_DIST =			\
 	COPYING.README		\
 	ChangeLog  		\
 	README 			\

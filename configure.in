@@ -2,7 +2,7 @@ dnl Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.52)
 
-AC_INIT(ephy-plugins, 0.1.0, [http://savannah.nongnu.org/bugs/?func=addbug&group=ephyplugins])
+AC_INIT(ephy-plugins, 0.1.2, [http://savannah.nongnu.org/bugs/?func=addbug&group=ephyplugins])
 
 AC_CONFIG_SRCDIR(plugins)
 AM_CONFIG_HEADER(config.h)
@@ -47,7 +47,7 @@ dnl ********************************
 dnl pkg config checks
 dnl ********************************
 
-EPIPHANY_REQUIRED=0.8.0
+EPIPHANY_REQUIRED=0.8.2
 
 AC_SUBST(EPIPHANY_REQUIRED)
 
@@ -84,6 +84,10 @@ AM_CONDITIONAL(ENABLE_PLUGIN_SAMPLE, test "x$enable_plugin_sample" = "xyes")
 AC_ARG_ENABLE(plugin-gestures, [  --enable-plugin-gestures  (yes,no)
  	      	Enable gestures plugin])
 AM_CONDITIONAL(ENABLE_PLUGIN_GESTURES, test "x$enable_plugin_gestures" = "xyes")
+
+dnl AC_ARG_ENABLE(plugin-tabsmenu, [ --enable-plugin-tabsmenu  (yes,no)
+dnl 		Enable tabs menu plugin])
+dnl AM_CONDITIONAL(ENABLE_PLUGIN_TABSMENU, test "x$enable_plugin_tabsmenu" = "xyes")
 
 dnl *******************************
 dnl Misc things

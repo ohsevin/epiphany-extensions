@@ -16,6 +16,9 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ *
+ *  $Id$
+ * 
  */
 
 #ifdef HAVE_CONFIG_H
@@ -183,13 +186,13 @@ dom_mouse_down_cb  (EphyEmbed *embed,
 		    EphyTab *tab)
 {
         EmbedEventContext context;
+	EphyEmbedEventType type;
 	gint handled = FALSE;
-	guint button;
 
-	ephy_embed_event_get_event_type (event, &button);
+	ephy_embed_event_get_event_type (event, &type);
         ephy_embed_event_get_context (event, &context);
 
-	if (button == EPHY_EMBED_EVENT_MOUSE_BUTTON2 &&
+	if (type == EPHY_EMBED_EVENT_MOUSE_BUTTON2 &&
             !(context & EMBED_CONTEXT_INPUT))
 	{
 		EphyGestures *eg;
@@ -209,7 +212,7 @@ dom_mouse_down_cb  (EphyEmbed *embed,
 		g_signal_connect (eg, "gesture-performed",
 				  G_CALLBACK (tab_gesture_performed_cb), tab);
 
-		ephy_gestures_start (eg, GTK_WIDGET (window), button, x, y);
+		ephy_gestures_start (eg, GTK_WIDGET (window), /* button */ 1, x, y);
 
 		g_object_unref (eg);
 

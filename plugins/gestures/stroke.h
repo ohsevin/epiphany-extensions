@@ -49,6 +49,8 @@
    and trimmed down for Galeon.
 */
 
+/* $Id$ */
+
 /* largest number of points allowed to be sampled */
 #define STROKE_MAX_POINTS 10000
 
