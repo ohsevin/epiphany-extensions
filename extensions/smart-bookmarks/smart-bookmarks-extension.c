@@ -304,8 +304,14 @@ rebuild_ui (WindowData *data)
 
 	/* Add prefs UI */
 	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
+			       "ToolsSmartBookmarksSep1", NULL,
+			       GTK_UI_MANAGER_SEPARATOR, FALSE);
+	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
 			       "SmartBookmarksPrefsItem", "SmartBookmarksPrefs",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
+	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
+			       "ToolsSmartBookmarksSep2", NULL,
+			       GTK_UI_MANAGER_SEPARATOR, FALSE);
 
 	/* Add bookmarks to popup context (normal document) */
 	gtk_ui_manager_add_ui (manager, ui_id, "/EphyDocumentPopup",

@@ -1,3 +1,12 @@
+2004-10-13  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/certificates/ephy-certificates-extension.c:
+	(impl_attach_window):
+	* extensions/smart-bookmarks/smart-bookmarks-extension.c:
+	(rebuild_ui):
+
+	Add separators in the Tools menu.
+
 2004-10-14  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/extensions-manager-ui/extensions-manager-ui.c:

@@ -360,9 +360,15 @@ impl_attach_window (EphyExtension *ext,
 			       "ViewServerCertificate",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
 	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
+			       "ToolsSCSep1", NULL,
+			       GTK_UI_MANAGER_SEPARATOR, FALSE);
+	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
 			       "ToolsCertificateManagerItem",
 			       "ToolsCertificateManager",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
+	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
+			       "ToolsSCSep2", NULL,
+			       GTK_UI_MANAGER_SEPARATOR, FALSE);
 
 	g_object_set_data_full (G_OBJECT (window), WINDOW_DATA_KEY, win_data,
 				(GDestroyNotify) free_window_data);
