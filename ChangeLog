@@ -1,5 +1,29 @@
 2004-01-23  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	(ephy_error_viewer_extension_get_type),
+	(ephy_error_viewer_extension_register_type),
+	(ephy_error_viewer_extension_finalize),
+	(ephy_error_viewer_extension_class_init):
+
+	Minor global variable renaming.
+
+	* extensions/error-viewer/error-viewer.c: (error_viewer_get_type),
+	(error_viewer_register_type), (error_viewer_append),
+	(error_viewer_init), (error_viewer_clear_cb):
+	* extensions/error-viewer/error-viewer.h:
+	* extensions/error-viewer/extension.c: (register_module):
+
+	Split error_viewer_get_type into the get_type part, and the
+	made the register part register using g_type_module_register_type(),
+	not g_type_register_static().
+
+	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:
+
+	Include config.h, otherwise the translation won't work.
+
+2004-01-23  Christian Persch  <chpe@cvs.gnome.org>
+
 	* autogen.sh:
 
 	Don't call gnome-autogen.sh with full path.
