@@ -437,6 +437,14 @@ ephy_sidebar_extension_add_sidebar_cb (EphyEmbedSingle *single,
 	return TRUE;
 }
 
+/* work-around for http://bugzilla.gnome.org/show_bug.cgi?id=169116 */
+static void
+fixup (GtkWidget *widget)
+{
+	gtk_widget_hide (widget);
+	gtk_widget_show (widget);
+}
+
 static void
 impl_attach_window (EphyExtension *ext,
 		    EphyWindow *window)
@@ -502,6 +510,9 @@ impl_attach_window (EphyExtension *ext,
 	gtk_container_remove (GTK_CONTAINER (parent), notebook);
 	gtk_paned_add2 (GTK_PANED(hpaned), notebook);
 	g_object_unref (notebook);
+
+	/* work-around for http://bugzilla.gnome.org/show_bug.cgi?id=169116 */
+	fixup (ephy_window_get_notebook (window));
 
 	gtk_container_add (GTK_CONTAINER (parent), hpaned);
 	gtk_container_child_set_property (GTK_CONTAINER (parent),
@@ -598,6 +609,9 @@ impl_detach_window (EphyExtension *ext,
 	gtk_container_add (GTK_CONTAINER (parent), notebook);
 	g_object_unref (notebook);
 
+	/* work-around for http://bugzilla.gnome.org/show_bug.cgi?id=169116 */
+	fixup (ephy_window_get_notebook (window));
+
 	gtk_container_child_set_property (GTK_CONTAINER (parent),
 					  notebook, "position", &position);
 
@@ -606,6 +620,14 @@ impl_detach_window (EphyExtension *ext,
 	g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, NULL);
 }
 
+static void
+impl_fixup_tab (EphyExtension *extension,
+		EphyWindow *window,
+		EphyTab *tab)
+{
+	fixup (GTK_WIDGET (tab));
+}
+		
 static void
 ephy_sidebar_extension_init (EphySidebarExtension *extension)
 {
@@ -687,6 +709,8 @@ ephy_sidebar_extension_iface_init (EphyExtensionIface *iface)
 {
 	iface->attach_window = impl_attach_window;
 	iface->detach_window = impl_detach_window;
+	iface->attach_tab = impl_fixup_tab;
+	iface->detach_tab = impl_fixup_tab;
 }
 
 static void

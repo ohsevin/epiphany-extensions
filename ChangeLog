@@ -1,3 +1,18 @@
+2005-03-07  Christian Persch  <chpe@cvs.gnome.org>
+
+	=== Release 1.6.0 ===
+
+	* NEWS:
+	* configure.ac:
+
+	Update for 1.6.0.
+
+	* extensions/sidebar/ephy-sidebar-extension.c: (fixup),
+	(impl_attach_window), (impl_detach_window), (impl_fixup_tab),
+	(ephy_sidebar_extension_iface_init):
+
+	Work around gtk+ bug 169116.
+
 2005-03-05  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/net-monitor/ephy-net-monitor-extension.c:

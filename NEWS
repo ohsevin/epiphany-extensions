@@ -1,4 +1,21 @@
 =========================
+Epiphany Extensions 1.6.0
+=========================
+
+Changes
+
+	* Enable extension description translations.
+	* Make sure mozilla is started before setting the prefs
+	* Sync headers with Epiphany
+	* Implement Metadata tab in Page Info dialogue
+	* Don't start off-line if NetworkManager is unavailable
+
+Contributors:
+Christian Persch and Jean-François Rameau, and the translators
+Frank Arnold (de), Adam Weinberger (en_CA) and Gabor Kelemen (hu).
+
+
+=========================
 Epiphany Extensions 1.5.8
 =========================
 
