@@ -1,3 +1,13 @@
+2005-02-02  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* AUTHORS:
+	* doc/writing-epiphany-extensions.xml:
+	* extensions/net-monitor/net-monitor.xml.in.in:
+
+	Add Adam Hooper as author of adblock
+	Fix a tiny typo in the extensions guide
+	Change the title and description of net-monitor
+
 2005-02-02  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* AUTHORS:
