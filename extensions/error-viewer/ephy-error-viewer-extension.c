@@ -283,16 +283,10 @@ static void
 switch_page_cb (GtkNotebook *notebook,
 		GtkNotebookPage *page,
 		guint page_num,
-		EphyErrorViewerExtension *extension)
+		EphyWindow *window)
 {
-	GtkWidget *toplevel;
-	EphyWindow *window;
-
-	toplevel = gtk_widget_get_toplevel (GTK_WIDGET (notebook));
-	g_return_if_fail (EPHY_IS_WINDOW (toplevel));
-	if (GTK_WIDGET_REALIZED (toplevel) == FALSE) return; /* on startup */
-
-	window = EPHY_WINDOW (toplevel);
+	g_return_if_fail (EPHY_IS_WINDOW (window));
+	if (GTK_WIDGET_REALIZED (window) == FALSE) return; /* on startup */
 
 	update_sgml_validator_action (window);
 }

@@ -1,5 +1,14 @@
 2004-01-31  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	(switch_page_cb):
+
+	impl_attach_window attaches "window" as the callback data, but
+	switch_page_cb expected "extension" and got the window in a roundabout
+	way. Fixed.
+
+2004-01-31  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/error-viewer/opensp/validate.cpp:
 
 	Use a char[7] instead of a char *
