@@ -2,6 +2,12 @@
 
 	* configure.ac:
 
+	Add default extensions when given --with-extensions=default.
+
+2005-01-13  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
 	Add check for PCRE if the adblock extension is enabled.
 
 2005-01-13  Christian Persch  <chpe@cvs.gnome.org>

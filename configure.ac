@@ -158,7 +158,7 @@ if test "x$extensions" = x; then
 fi
 
 if echo "$extensions" | egrep '(^|,)default($|,)' > /dev/null; then
-  extensions="$all_useful_extensions,$extensions"
+  extensions="$default_extensions,$extensions"
 fi
 
 if echo "$extensions" | egrep '(^|,)all($|,)' > /dev/null; then
