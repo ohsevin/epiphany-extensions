@@ -1,5 +1,12 @@
 2005-01-13  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/certificates/ephy-certificates-extension.c:
+	(padlock_button_press_cb):
+
+	Consume the button press.
+
+2005-01-13  Christian Persch  <chpe@cvs.gnome.org>
+
 	* NEWS:
 	* configure.ac:
 	* extensions/Makefile.am:

@@ -240,7 +240,7 @@ sync_active_tab_cb (EphyWindow *window,
 	sync_security_status (tab, NULL, window);
 }
 
-static void
+static gboolean
 padlock_button_press_cb (GtkWidget *ebox,
 			 GdkEventButton *event,
 			 EphyWindow *window)
@@ -253,7 +253,11 @@ padlock_button_press_cb (GtkWidget *ebox,
 		g_return_if_fail (EPHY_IS_EMBED (embed));
 	
 		ephy_embed_show_page_certificate (embed);
+
+		return TRUE;
 	}
+
+	return FALSE;
 }
 
 static GtkActionEntry action_entries_1 [] =
