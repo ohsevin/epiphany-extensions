@@ -39,7 +39,7 @@ register_module (GTypeModule *module)
 	ephy_tab_move_menu_register_type (module);
 
 	extension_type = ephy_tabs_menu_extension_register_type (module);
-	
+
 #ifdef ENABLE_NLS
        /* Initialise the i18n stuff */
         bindtextdomain (GETTEXT_PACKAGE, EPHY_PLUGINS_LOCALEDIR);
