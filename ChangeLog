@@ -1,3 +1,9 @@
+2004-05-22  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
+	Bump epiphany dependency version.
+
 2004-05-19  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/certificates/ephy-certificates-extension.c:
