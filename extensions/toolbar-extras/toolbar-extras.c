@@ -19,9 +19,7 @@
  *  $Id$
  */
 
-#ifdef HAVE_CONFIG_H
 #include "config.h"
-#endif
 
 #include "ephy-toolbar-extras-extension.h"
 #include "ephy-multi-smart-action.h"

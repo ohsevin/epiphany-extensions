@@ -20,9 +20,7 @@
  *  $Id$
  */
 
-#ifdef HAVE_CONFIG_H
 #include "config.h"
-#endif
 
 #include "register-listener.h"
 #include "ephy-error-viewer-extension.h"

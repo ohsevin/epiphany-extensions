@@ -21,9 +21,7 @@
 #ifndef PAGE_INFO_MOZILLA_HELPERS_H
 #define PAGE_INFO_MOZILLA_HELPERS_H
 
-#ifdef HAVE_CONFIG_H
 #include "config.h"
-#endif
 
 #include <glib.h>
 

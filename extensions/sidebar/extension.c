@@ -20,9 +20,7 @@
  *  $Id$
  */
 
-#ifdef HAVE_CONFIG_H
 #include "config.h"
-#endif
 
 #include "ephy-sidebar-extension.h"
 #include "ephy-sidebar-embed.h"

@@ -19,9 +19,7 @@
 #ifndef ERROR_VIEWER_MOZILLA_LINK_CHECKER_H
 #define ERROR_VIEWER_MOZILLA_LINK_CHECKER_H
 
-#ifdef HAVE_CONFIG_H
 #include "config.h"
-#endif
 
 #include "link-checker.h"
 #include <epiphany/ephy-embed.h>

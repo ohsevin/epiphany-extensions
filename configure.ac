@@ -321,6 +321,22 @@ AC_DEFINE_UNQUOTED([MOZ_NSICONTENTPOLICY_VARIANT], [$variant], [Define the nsICo
 
 AC_MSG_RESULT([variant $variant])
 
+AC_MSG_CHECKING([whether nsICacheSession::OpenCacheEntry takes nsACString&])
+
+AC_COMPILE_IFELSE(
+	[AC_LANG_PROGRAM(
+		[[#include <nsEmbedString.h>
+		  #include <necko/nsNetError.h>
+		  #include <nkcache/nsICacheSession.h>]],
+		[[nsICacheSession *p;
+		  nsEmbedCString arg1;
+		  p->OpenCacheEntry(arg1, 0, 0, nsnull);]]
+	)],
+	[AC_DEFINE([MOZ_NSICACHESESSION_OPENCACHEENTRY_NSACSTRING_],[1],[Define if nsICacheSession::OpenCacheEntry takes nsACString&]) result=yes],
+	[result=no])
+
+AC_MSG_RESULT([$result])
+
 CXXFLAGS=$_SAVE_CXXFLAGS
 AC_LANG_POP([C++])
 

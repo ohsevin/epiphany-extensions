@@ -20,9 +20,7 @@
  *  $Id$
  */
 
-#ifdef HAVE_CONFIG_H
 #include "config.h"
-#endif
 
 #include "ephy-tab-groups-extension.h"
 #include "ephy-tab-grouper.h"

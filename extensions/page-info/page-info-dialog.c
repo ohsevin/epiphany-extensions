@@ -25,9 +25,7 @@
  *  $Id$
  */
 
-#ifdef HAVE_CONFIG_H
 #include "config.h"
-#endif
 
 #include "page-info-dialog.h"
 #include "ephy-debug.h"

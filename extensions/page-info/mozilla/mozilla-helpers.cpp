@@ -260,8 +260,13 @@ PageInfoHelper::GetCacheEntryDescriptor (const nsAString &aUrl,
   nsEmbedCString cUrl;
   NS_UTF16ToCString (aUrl, NS_CSTRING_ENCODING_UTF8, cUrl);
 
+#ifdef MOZ_NSICACHESESSION_OPENCACHEENTRY_NSACSTRING_
+  g_strdelimit (cUrl.BeginWriting (), "#", '\0');
+  g_print ("truncated: %s\n", cUrl.get()));
+#else
   char *url = g_strdup (cUrl.get ());
   g_strdelimit (url, "#", '\0'); /* snip fragment, see bug #161201 */
+#endif
 
   const char *cacheTypes[] = { "HTTP", "FTP" };
   for (unsigned int i = 0 ; i < G_N_ELEMENTS (cacheTypes); i++)
@@ -277,9 +282,14 @@ PageInfoHelper::GetCacheEntryDescriptor (const nsAString &aUrl,
   
       nsCOMPtr<nsICacheEntryDescriptor> cacheEntryDescriptor;
   
+#ifdef MOZ_NSICACHESESSION_OPENCACHEENTRY_NSACSTRING_
+      rv = cacheSession->OpenCacheEntry (truncatedUrl, nsICache::ACCESS_READ,
+                                         PR_FALSE, aEntry);
+#else
       rv = cacheSession->OpenCacheEntry (url, nsICache::ACCESS_READ,
                                          PR_FALSE, aEntry);
-  
+#endif
+
       if (NS_SUCCEEDED (rv)) break;
     }
 

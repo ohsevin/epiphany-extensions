@@ -18,9 +18,7 @@
  *  $Id$
  */
 
-#ifdef HAVE_CONFIG_H
 #include "config.h"
-#endif
 
 #include "ephy-tabs-menu-extension.h"
 #include "ephy-tab-move-menu.h"

@@ -18,9 +18,7 @@
  *  $Id$
  */
 
-#ifdef HAVE_CONFIG_H
 #include "config.h"
-#endif
 
 #include "smart-bookmarks-prefs-ui.h"
 #include "smart-bookmarks-prefs.h"

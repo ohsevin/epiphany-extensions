@@ -21,9 +21,7 @@
  *  $Id$
  */
 
-#ifdef HAVE_CONFIG_H
 #include "config.h"
-#endif
 
 #include "ephy-gesture.h"
 #include "ephy-debug.h"

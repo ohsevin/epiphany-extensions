@@ -19,9 +19,7 @@
  *  $Id$
  */
 
-#ifdef HAVE_CONFIG_H
 #include "config.h"
-#endif
 
 #include "ephy-extensions-manager-ui-extension.h"
 #include "extensions-manager-ui.h"

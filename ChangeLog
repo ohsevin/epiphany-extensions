@@ -1,6 +1,68 @@
 2005-01-13  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+
+	Mozilla API change.
+
+	* extensions/adblock/ad-blocker.c:
+	* extensions/adblock/ephy-adblock-extension.c:
+	* extensions/adblock/extension.c:
+	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:
+	* extensions/bookmarks-tray/extension.c:
+	* extensions/certificates/ephy-certificates-extension.c:
+	* extensions/certificates/extension.c:
+	* extensions/dashboard/ephy-dashboard-extension.c:
+	* extensions/dashboard/ephy-dashboard.c:
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	* extensions/error-viewer/error-viewer.c:
+	* extensions/error-viewer/extension.c:
+	* extensions/error-viewer/link-checker.c:
+	* extensions/error-viewer/mozilla/mozilla-helpers.h:
+	* extensions/error-viewer/mozilla/mozilla-link-checker.h:
+	* extensions/error-viewer/sgml-validator.c:
+	* extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:
+	* extensions/extensions-manager-ui/extension.c:
+	* extensions/extensions-manager-ui/extensions-manager-ui.c:
+	* extensions/find/ephy-find-extension.c:
+	* extensions/gestures/ephy-gesture.c:
+	* extensions/gestures/ephy-gestures-extension.c:
+	* extensions/gestures/gestures.c:
+	* extensions/page-info/ephy-page-info-extension.c:
+	* extensions/page-info/extension.c:
+	* extensions/page-info/mozilla/mozilla-helpers.h:
+	* extensions/page-info/page-info-dialog.c:
+	* extensions/select-stylesheet/ephy-css-menu.c:
+	* extensions/select-stylesheet/ephy-select-stylesheet-extension.c:
+	* extensions/select-stylesheet/extension.c:
+	* extensions/sidebar/ephy-sidebar-embed.c:
+	* extensions/sidebar/ephy-sidebar-extension.c:
+	* extensions/sidebar/ephy-sidebar.c:
+	* extensions/sidebar/extension.c:
+	* extensions/sidebar/sidebar-commands.c:
+	* extensions/smart-bookmarks/mozilla/mozilla-selection.h:
+	* extensions/smart-bookmarks/smart-bookmarks-extension.c:
+	* extensions/smart-bookmarks/smart-bookmarks-prefs-ui.c:
+	* extensions/smart-bookmarks/smart-bookmarks.c:
+	* extensions/tab-groups/ephy-tab-grouper.c:
+	* extensions/tab-groups/ephy-tab-groups-extension.c:
+	* extensions/tab-groups/tab-groups.c:
+	* extensions/tab-states/ephy-tab-states-extension.c:
+	* extensions/tab-states/extension.c:
+	* extensions/tabsmenu/ephy-tab-move-menu.c:
+	* extensions/tabsmenu/ephy-tabs-menu-extension.c:
+	* extensions/tabsmenu/tabs-menu.c:
+	* extensions/toolbar-extras/ephy-multi-smart-action.c:
+	* extensions/toolbar-extras/ephy-toolbar-extras-extension.c:
+	* extensions/toolbar-extras/galago-gtk-icon-entry.c:
+	* extensions/toolbar-extras/toolbar-extras.c:
+	* include/ephy-debug.h:
+
+	We always have config.h.
+
+2005-01-13  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
 
 	Add default extensions when given --with-extensions=default.
 
