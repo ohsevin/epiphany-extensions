@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNOME 2.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-01-26 03:26+0100\n"
-"PO-Revision-Date: 2004-01-26 11:40+0100\n"
+"POT-Creation-Date: 2004-01-30 19:23+0100\n"
+"PO-Revision-Date: 2004-01-31 00:43+0100\n"
 "Last-Translator: Tino Meinen <a.t.meinen@chello.nl>\n"
 "Language-Team: nl <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,16 +24,17 @@ msgstr "_Valideren"
 #. shortcut key
 #: extensions/error-viewer/ephy-error-viewer-extension.c:82
 msgid "Display HTML errors in the Error Viewer dialog"
-msgstr "HTML fouten tonen in het Foutenweergave dialoogvenster"
+msgstr "HTML-fouten weergeven in het Fouten-dialoogvenster"
 
+# weergever is lelijk
 #: extensions/error-viewer/ephy-error-viewer-extension.c:87
-msgid "Errors"
-msgstr "Fouten"
+msgid "_Error Viewer"
+msgstr "_Foutenweergave"
 
 #. shortcut key
 #: extensions/error-viewer/ephy-error-viewer-extension.c:89
 msgid "Display web page errors"
-msgstr "Fouten van de webpagina tonen"
+msgstr "Fouten van de webpagina weergeven"
 
 #: extensions/error-viewer/error-viewer.glade.h:1
 msgid "C_lear"
@@ -54,7 +55,7 @@ msgstr ""
 "%s"
 
 # format fout in Engels: 'on line %s' moet zijn 'on line %d'
-#: extensions/error-viewer/opensp/validate.cpp:118
+#: extensions/error-viewer/opensp/validate.cpp:123
 #, c-format
 msgid ""
 "HTML error in %s on line %s:\n"
@@ -63,15 +64,37 @@ msgstr ""
 "HTML fout in %s op regel %s:\n"
 "%s"
 
-#: extensions/error-viewer/opensp/validate.cpp:182
+#: extensions/error-viewer/sgml-validator.c:151
 #, c-format
-msgid "Found %d HTML error"
-msgid_plural "Found %d HTML errors"
-msgstr[0] "%d HTML fout gevonden"
-msgstr[1] "%d HTML fouten gevonden"
+msgid ""
+"HTML Validation of %s complete\n"
+"Found %d error"
+msgid_plural ""
+"HTML Validation of %s complete\n"
+"Found %d errors"
+msgstr[0] ""
+msgstr[1] ""
+
+#: extensions/error-viewer/sgml-validator.c:196
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"No valid doctype specified."
+msgstr ""
+"HTML fout in %s:\n"
+"Geen geldig doctype opgegeven."
+
+#: extensions/error-viewer/sgml-validator.c:216
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"Doctype is XHTML but content type is text/html"
+msgstr ""
+"HTML fout in %s:\n"
+"Doctype is XHTML maar type inhoud is text/html"
 
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
-msgid "Block _Popups from this Site"
+msgid "Blo_ck Popups from this Site"
 msgstr "_Popups van deze site blokkeren"
 
 #. shortcut key
@@ -100,3 +123,11 @@ msgstr "Tab naar venster verplaatsen"
 #: extensions/tabsmenu/ephy-tab-move-menu.c:278
 msgid "Move the current tab to a different window"
 msgstr "Het huidige tabblad naar een ander venster verplaatsen"
+
+#~ msgid "Errors"
+#~ msgstr "Fouten"
+
+#~ msgid "Found %d HTML error"
+#~ msgid_plural "Found %d HTML errors"
+#~ msgstr[0] "%d HTML fout gevonden"
+#~ msgstr[1] "%d HTML fouten gevonden"
