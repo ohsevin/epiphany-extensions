@@ -1,5 +1,26 @@
 2004-09-25  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/certificates/ephy-certificates-extension.c:
+	(impl_attach_window), (impl_detach_window):
+	* extensions/dashboard/ephy-dashboard-extension.c:
+	(impl_detach_window):
+	* extensions/gestures/ephy-gestures-extension.c:
+	(impl_attach_window), (impl_detach_window):
+	* extensions/page-info/ephy-page-info-extension.c:
+	(impl_attach_window), (impl_detach_window):
+	* extensions/select-stylesheet/ephy-css-menu.c:
+	(ephy_css_menu_set_embed), (sync_active_tab_cb),
+	(ephy_css_menu_set_window), (ephy_css_menu_finalize),
+	(ephy_css_menu_set_property):
+	* extensions/smart-bookmarks/smart-bookmarks-extension.c:
+	(impl_attach_window), (impl_detach_window):
+	* extensions/tabsmenu/ephy-tab-move-menu.c:
+	(ephy_tab_move_menu_finalize):
+
+	Make all extensions unload-proof.
+
+2004-09-25  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/error-viewer/ephy-error-viewer-extension.c:
 	(impl_detach_window):
 

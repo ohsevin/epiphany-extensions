@@ -269,7 +269,7 @@ impl_attach_window (EphyExtension *extension,
 	tabs = ephy_window_get_tabs (window);
 	for (l = tabs; l != NULL; l = l->next)
 	{
-		tab_added_cb (notebook, l->data, window);
+		tab_added_cb (notebook, (EphyTab *) l->data, window);
 	}
 	g_list_free (tabs);
 
@@ -312,7 +312,7 @@ impl_detach_window (EphyExtension *extension,
 	tabs = ephy_window_get_tabs (window);
 	for (l = tabs; l != NULL; l = l->next)
 	{
-		tab_removed_cb (notebook, l->data, window);
+		tab_removed_cb (notebook, (EphyTab *) l->data, window);
 	}
 	g_list_free (tabs);
 }

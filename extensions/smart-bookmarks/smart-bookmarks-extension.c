@@ -575,6 +575,7 @@ impl_attach_window (EphyExtension *ext,
 	EphyBookmarks *bookmarks;
 	GPtrArray *children;
 	EphyNode *smart_bmks, *bmk;
+	GList *tabs, *l;
 	int i;
 
 	LOG ("SmartBookmarksExtension attach_window %p", window)
@@ -614,7 +615,15 @@ impl_attach_window (EphyExtension *ext,
 	/* Action group completed */
 	gtk_ui_manager_insert_action_group (data->manager, action_group, 0),
 	g_object_unref (action_group);
-	
+
+	/* Sync open tabs */
+	tabs = ephy_window_get_tabs (window);
+	for (l = tabs; l != NULL; l = l->next)
+	{
+		tab_added_cb (notebook, (EphyTab *) l->data, window);
+	}
+	g_list_free (tabs);
+
 	/* now add the UI to the window */
 	rebuild_ui (data);
 }
@@ -624,6 +633,7 @@ impl_detach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
 	GtkWidget *notebook;
+	GList *tabs, *l;
 
 	LOG ("SmartBookmarksExtension detach_window")
 
@@ -633,6 +643,13 @@ impl_detach_window (EphyExtension *ext,
 		(notebook, G_CALLBACK (tab_added_cb), window);
 	g_signal_handlers_disconnect_by_func
 		(notebook, G_CALLBACK (tab_removed_cb), window);
+
+	tabs = ephy_window_get_tabs (window);
+	for (l = tabs; l != NULL; l = l->next)
+	{
+		tab_removed_cb (notebook, (EphyTab *) l->data, window);
+	}
+	g_list_free (tabs);
 }
 
 static void

@@ -344,7 +344,18 @@ ephy_tab_move_menu_finalize (GObject *object)
 	GtkActionGroup *action_group;
 	GtkAction *action;
 
-/*
+	if (menu->priv->merge_id != 0)
+	{
+		gtk_ui_manager_remove_ui (menu->priv->manager,
+					  menu->priv->merge_id);
+	}
+	if (menu->priv->action_group != NULL)
+	{
+		g_object_unref (menu->priv->action_group);
+	}
+
+	gtk_ui_manager_ensure_update (menu->priv->manager);
+
 	action_group = find_action_group (menu->priv->manager);
 	g_return_if_fail (action_group != NULL);
 
@@ -357,16 +368,6 @@ ephy_tab_move_menu_finalize (GObject *object)
 	g_return_if_fail (action != NULL);
 
 	g_signal_handlers_disconnect_by_func (action, G_CALLBACK (update_tab_move_menu_cb), menu);
-*/
-	if (menu->priv->merge_id != 0)
-	{
-		gtk_ui_manager_remove_ui (menu->priv->manager,
-					  menu->priv->merge_id);
-	}
-	if (menu->priv->action_group != NULL)
-	{
-		g_object_unref (menu->priv->action_group);
-	}
 
 	G_OBJECT_CLASS (tab_move_menu_parent_class)->finalize (object);
 }

@@ -317,6 +317,8 @@ impl_attach_window (EphyExtension *ext,
 		tab_added_cb (notebook, l->data, window);
 	}
 
+	g_list_free (tabs);
+
 	g_signal_connect_after (notebook, "tab_added",
 				G_CALLBACK (tab_added_cb), window);
 	g_signal_connect_after (notebook, "tab_removed",
@@ -395,11 +397,11 @@ impl_detach_window (EphyExtension *ext,
 		(window, G_CALLBACK (sync_active_tab_cb), ext);
 
 	tabs = ephy_window_get_tabs (window);
-
 	for (l = tabs; l != NULL; l = g_list_next (l))
 	{
 		tab_removed_cb (notebook, l->data, window);
 	}
+	g_list_free (tabs);
 
 	/* un-make padlock icon clickable */
 	statusbar = ephy_window_get_statusbar (window);

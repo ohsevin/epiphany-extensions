@@ -267,8 +267,6 @@ ephy_css_menu_set_embed (EphyCSSMenu *menu,
 					 G_CALLBACK (ephy_css_menu_rebuild),
 					 menu, G_CONNECT_SWAPPED);
 	}
-
-	ephy_css_menu_rebuild (menu);
 }
 
 static void
@@ -282,6 +280,7 @@ sync_active_tab_cb (EphyWindow *window,
 	g_return_if_fail (embed != NULL);
 
 	ephy_css_menu_set_embed (menu, embed);
+	ephy_css_menu_rebuild (menu);
 }
 
 static GtkActionEntry entries[] =
@@ -334,6 +333,7 @@ ephy_css_menu_set_window (EphyCSSMenu *menu, EphyWindow *window)
 	{
 		embed = ephy_window_get_active_embed (window);
 		ephy_css_menu_set_embed (menu, embed);
+		ephy_css_menu_rebuild (menu);
 	}
 }
 
@@ -342,6 +342,11 @@ ephy_css_menu_finalize (GObject *object)
 {
 	EphyCSSMenu *menu = EPHY_CSS_MENU(object);
 	EphyCSSMenuPrivate *p = menu->priv;
+
+	g_signal_handlers_disconnect_by_func	
+		(p->window, G_CALLBACK (sync_active_tab_cb), menu);
+
+	ephy_css_menu_set_embed (menu, NULL);
 
 	if (p->ui_id != 0)
 	{
@@ -402,7 +407,7 @@ ephy_css_menu_set_property (GObject *object,
 	{
 		case PROP_WINDOW:
 			ephy_css_menu_set_window (menu, g_value_get_object (value));
-		break;
+			break;
 	}
 }
 

@@ -373,23 +373,23 @@ tab_removed_cb (GtkWidget *notebook,
 }
 
 static void
-impl_attach_window (EphyExtension *extension,
+impl_attach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
+	EphyGesturesExtension *extension = EPHY_GESTURES_EXTENSION (extension);
 	GtkWidget *notebook;
 	GList *tabs, *l;
 
+	notebook = ephy_window_get_notebook (window);
+
 	tabs = ephy_window_get_tabs (window);
 
-	for (l = tabs; l != NULL; l = g_list_next (l))
+	for (l = tabs; l != NULL; l = l->next)
 	{
-		tab_added_cb (NULL, l->data,
-			      (EphyGesturesExtension *) extension);
+		tab_added_cb (notebook, (EphyTab *) l->data, extension);
 	}
 
 	g_list_free (tabs);
-
-	notebook = ephy_window_get_notebook (window);
 
 	g_signal_connect (notebook, "tab_added",
 			  G_CALLBACK (tab_added_cb), extension);
@@ -398,9 +398,10 @@ impl_attach_window (EphyExtension *extension,
 }
 
 static void
-impl_detach_window (EphyExtension *extension,
+impl_detach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
+	EphyGesturesExtension *extension = EPHY_GESTURES_EXTENSION (ext);
 	GtkWidget *notebook;
 	GList *tabs, *l;
 
@@ -415,8 +416,7 @@ impl_detach_window (EphyExtension *extension,
 
 	for (l = tabs; l != NULL; l = g_list_next (l))
 	{
-		tab_removed_cb (NULL, l->data,
-				(EphyGesturesExtension *) extension);
+		tab_removed_cb (notebook, (EphyTab *) l->data, extension);
 	}
 
 	g_list_free (tabs);
