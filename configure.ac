@@ -181,7 +181,7 @@ dnl ****
 dnl DBUS
 dnl ****
 
-if echo "$extensions" | egrep '(^|,)net-monitor($|,)' > /dev/null; then
+if echo "$EXTENSIONS" | egrep '(^| )net-monitor($| )' > /dev/null; then
 
 	DBUS_REQUIRED=0.22
 	DBUS_GLIB_REQUIRED=0.22
@@ -195,7 +195,7 @@ dnl ****
 dnl PCRE
 dnl ****
 
-if echo "$extensions" | egrep '(^|,)adblock($|,)' > /dev/null; then
+if echo "$EXTENSIONS" | egrep '(^| )adblock($| )' > /dev/null; then
 	AC_PATH_PROG([PCRE_CONFIG], [pcre-config], [no])
 
 	if test "x$PCRE_CONFIG" = "xno"; then
