@@ -3,3 +3,18 @@ epiphany with.
 
 Please see the README files in the plugin subdirs for information about the
 plugins.
+
+How to choose which extensions to build:
+
+./configure --with-extensions=ext1,ext2,...
+
+where ext1, ext2 ... are one of the following:
+
+gestures		Gestures extensions
+tabsmenu		Tabs Menu extension
+zoom-persistence	Zoom persistence extension
+all			All of the above extensions
+sample			Sample extensions [not very useful]
+
+Remember that for the tabsmenu plugin to work, you need to apply the patch in
+plugins/tabsmenu/epiphany.diff, see plugins/tabsmenu/README.
