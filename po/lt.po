@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-07 17:36+0200\n"
-"PO-Revision-Date: 2004-03-07 17:36+0200\n"
+"POT-Creation-Date: 2004-05-31 10:26+0300\n"
+"PO-Revision-Date: 2004-05-31 10:29+0300\n"
 "Last-Translator: Žygimantas Beručka <uid0@akl.lt>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:159
+#: extensions/certificates/ephy-certificates-extension.c:160
 msgid "Certificate Manager"
 msgstr "Sertifikatų tvarkyklė"
 
@@ -76,14 +76,6 @@ msgstr "Išva_lyti"
 msgid "Error Viewer"
 msgstr "Klaidų žiūrėjimo programa"
 
-#: extensions/error-viewer/link-checker.c:231
-#, c-format
-msgid "Found %d invalid link"
-msgid_plural "Found %d invalid links"
-msgstr[0] "Rasta %d klaidinga nuoroda"
-msgstr[1] "Rastos %d klaidingos nuorodos"
-msgstr[2] "Rasta %d klaidingų nuorodų"
-
 #. Don't bother looking for source lines -- they're not there
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
 #, c-format
@@ -103,15 +95,24 @@ msgstr ""
 "Javascript klaida esanti %s elutėje %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:77
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "Rasta %d klaidinga nuoroda"
+msgstr[1] "Rastos %d klaidingos nuorodos"
+msgstr[2] "Rasta %d klaidingų nuorodų"
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
 #, c-format
 msgid ""
 "Link error in %s:\n"
 "%s is unavailable."
-msgstr "Nuorodos klaida esanti %s:\n"
+msgstr ""
+"Nuorodos klaida esanti %s:\n"
 "%s yra neprieinamas."
 
-#: extensions/error-viewer/mozilla/mozilla-link-checker.cpp:174
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
@@ -168,7 +169,20 @@ msgstr ""
 "HTML įspėjimas esantis %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:381
+#: extensions/error-viewer/sgml-validator.c:360
+#, c-format
+msgid "HTML error in %s:"
+msgstr "HTML klaida esanti %s:"
+
+#: extensions/error-viewer/sgml-validator.c:368
+msgid "Invalid character encoding"
+msgstr "Neteisinga simbolių koduotė"
+
+#: extensions/error-viewer/sgml-validator.c:373
+msgid "Unknown error while converting to UTF-8"
+msgstr "Konvertuojant į UTF-8, įvyko nežinoma klaida"
+
+#: extensions/error-viewer/sgml-validator.c:435
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -178,13 +192,21 @@ msgstr ""
 "Nenurodytas tinkamas dokumento tipas."
 
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
-msgid "Blo_ck Popups from this Site"
-msgstr "Blo_kuoti iššokančius langus iš šios svetainės"
+msgid "Popup _Windows"
+msgstr "Iššokantys _langai"
 
 #. shortcut key
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
-msgid "Block or unblock popup windows"
-msgstr "Blokuoti arba atblokuoti iššokančius langus"
+msgid "Show or hide unrequested popup windows from this site"
+msgstr "Rodyti arba paslėpti neprašytus iššokančius langus iš šios svetainės"
+
+#: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
+#, c-format
+msgid "%d popup window blocked"
+msgid_plural "%d popup windows blocked"
+msgstr[0] "užblokuotas %d iššokantis langas"
+msgstr[1] "užblokuoti %d iššokantys langai"
+msgstr[2] "užblokuota %d iššokančių langų"
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:183
 #, c-format
