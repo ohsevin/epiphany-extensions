@@ -5,20 +5,21 @@
 # Christian Neumair <chris@gnome-de.org>, 2004.
 # Hendrik Brandt <heb@gnome-de.org>, 2004.
 # Christian Neumair <chris@gnome-de.org>, 2004.
+# Hendrik Brandt <heb@gnome-de.org>, 2005.
 # 
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany Extension HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-12-28 18:05+0100\n"
-"PO-Revision-Date: 2004-12-28 18:08+0100\n"
-"Last-Translator: Hendrik Brandt <heb@gnome-de.org>\n"
+"POT-Creation-Date: 2005-01-11 23:51+0100\n"
+"PO-Revision-Date: 2005-01-11 23:50+0100\n"
+"Last-Translator: Frank Arnold <frank@scirocco-5v-turbo.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:446
 msgid "_Edit Bookmarks"
@@ -76,36 +77,36 @@ msgstr "Server-Z_ertifikat"
 msgid "Display the web server's certificate"
 msgstr "Das Zertifikat des Web-Servers anzeigen"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:98
+#: extensions/error-viewer/ephy-error-viewer-extension.c:99
 msgid "Check _HTML"
 msgstr "_HTML überprüfen"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:100
+#: extensions/error-viewer/ephy-error-viewer-extension.c:101
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "HTML-Fehler im Fehleransichtsdialog anzeigen"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:105
+#: extensions/error-viewer/ephy-error-viewer-extension.c:106
 msgid "Check _Links"
 msgstr "_Links überprüfen"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:107
+#: extensions/error-viewer/ephy-error-viewer-extension.c:108
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr "Ungültige Hyperlinks im Fehleransichtsdialog anzeigen"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:111
+#: extensions/error-viewer/ephy-error-viewer-extension.c:112
 msgid "_Error Viewer"
 msgstr "_Fehleransicht"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:113
+#: extensions/error-viewer/ephy-error-viewer-extension.c:114
 msgid "Display web page errors"
 msgstr "Fehler in der Internetseite anzeigen"
 
 #: extensions/error-viewer/error-viewer.glade.h:1
-msgid "C_lear"
-msgstr "_Leeren"
+msgid "Cl_ear"
+msgstr "L_eeren"
 
 #: extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
@@ -247,148 +248,148 @@ msgstr "<b>Geladene Erweiterungen</b>"
 msgid "Extensions"
 msgstr "Erweiterungen"
 
-#: extensions/page-info/ephy-page-info-extension.c:66
+#: extensions/page-info/ephy-page-info-extension.c:67
 msgid "_Page Info"
 msgstr "_Seiteninformationen"
 
-#: extensions/page-info/ephy-page-info-extension.c:68
+#: extensions/page-info/ephy-page-info-extension.c:69
 msgid "Display page information in a dialog"
 msgstr "Die Informationen zu dieser Seite in einem Dialog anzeigen"
 
-#: extensions/page-info/page-info-dialog.c:640
+#: extensions/page-info/page-info-dialog.c:647
 msgid "Unknown type"
 msgstr "Unbekannter Typ"
 
-#: extensions/page-info/page-info-dialog.c:645
+#: extensions/page-info/page-info-dialog.c:652
 msgid "Full standards compliance"
 msgstr "Vollständig Standardkonform"
 
-#: extensions/page-info/page-info-dialog.c:648
+#: extensions/page-info/page-info-dialog.c:655
 msgid "Almost standards compliance"
 msgstr "Größtenteils Standardkonform"
 
-#: extensions/page-info/page-info-dialog.c:651
+#: extensions/page-info/page-info-dialog.c:658
 msgid "Compatibility"
 msgstr "Kompatibilität"
 
-#: extensions/page-info/page-info-dialog.c:654
+#: extensions/page-info/page-info-dialog.c:661
 msgid "Undetermined"
 msgstr "Unbestimmt"
 
-#: extensions/page-info/page-info-dialog.c:663
+#: extensions/page-info/page-info-dialog.c:670
 msgid "Not cached"
 msgstr "Nicht gepuffert"
 
-#: extensions/page-info/page-info-dialog.c:666
+#: extensions/page-info/page-info-dialog.c:673
 msgid "Disk cache"
 msgstr "Festplattenpuffer"
 
-#: extensions/page-info/page-info-dialog.c:669
+#: extensions/page-info/page-info-dialog.c:676
 msgid "Memory cache"
 msgstr "Hauptspeicherpuffer"
 
-#: extensions/page-info/page-info-dialog.c:672
+#: extensions/page-info/page-info-dialog.c:679
 msgid "Unknown cache"
 msgstr "Unbekannter Puffer"
 
-#: extensions/page-info/page-info-dialog.c:688
-#: extensions/page-info/page-info-dialog.c:808
+#: extensions/page-info/page-info-dialog.c:695
+#: extensions/page-info/page-info-dialog.c:824
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: extensions/page-info/page-info-dialog.c:693
+#: extensions/page-info/page-info-dialog.c:700
 msgid "No referrer"
 msgstr "Kein Bezug"
 
-#: extensions/page-info/page-info-dialog.c:707
-#: extensions/page-info/page-info-dialog.c:723
+#: extensions/page-info/page-info-dialog.c:714
+#: extensions/page-info/page-info-dialog.c:730
 msgid "Not specified"
 msgstr "Nicht festgelegt"
 
-#: extensions/page-info/page-info-dialog.c:793
+#: extensions/page-info/page-info-dialog.c:809
 msgid "Image"
 msgstr "Bild"
 
-#: extensions/page-info/page-info-dialog.c:796
+#: extensions/page-info/page-info-dialog.c:812
 msgid "Embed"
 msgstr "Eingebettet"
 
-#: extensions/page-info/page-info-dialog.c:799
+#: extensions/page-info/page-info-dialog.c:815
 msgid "Object"
 msgstr "Objekt"
 
-#: extensions/page-info/page-info-dialog.c:802
+#: extensions/page-info/page-info-dialog.c:818
 msgid "Applet"
 msgstr "Applet"
 
-#: extensions/page-info/page-info-dialog.c:805
+#: extensions/page-info/page-info-dialog.c:821
 msgid "Icon"
 msgstr "Symbol"
 
-#: extensions/page-info/page-info-dialog.c:961
+#: extensions/page-info/page-info-dialog.c:977
 msgid "Save Medium As..."
 msgstr "Medium speichern unter..."
 
-#: extensions/page-info/page-info-dialog.c:976
+#: extensions/page-info/page-info-dialog.c:994
 msgid "Select a directory"
 msgstr "Ordner auswählen"
 
-#: extensions/page-info/page-info-dialog.c:1074
+#: extensions/page-info/page-info-dialog.c:1095
 msgid "_Open"
 msgstr "Ö_ffnen"
 
-#: extensions/page-info/page-info-dialog.c:1080
-#: extensions/page-info/page-info-dialog.c:1429
+#: extensions/page-info/page-info-dialog.c:1101
+#: extensions/page-info/page-info-dialog.c:1494
 msgid "_Copy Link Address"
 msgstr "_Link-Adresse kopieren"
 
-#: extensions/page-info/page-info-dialog.c:1086
+#: extensions/page-info/page-info-dialog.c:1107
 msgid "_Use as Background"
 msgstr "Als _Hintergrund verwenden"
 
-#: extensions/page-info/page-info-dialog.c:1092
+#: extensions/page-info/page-info-dialog.c:1113
 msgid "_Save As..."
 msgstr "_Speichern unter..."
 
-#: extensions/page-info/page-info-dialog.c:1233
-#: extensions/page-info/page-info-dialog.c:1463
+#: extensions/page-info/page-info-dialog.c:1298
+#: extensions/page-info/page-info-dialog.c:1568
 msgid "URL"
 msgstr "Adresse"
 
-#: extensions/page-info/page-info-dialog.c:1245
+#: extensions/page-info/page-info-dialog.c:1310
 msgid "Type"
 msgstr "Typ"
 
-#: extensions/page-info/page-info-dialog.c:1257
+#: extensions/page-info/page-info-dialog.c:1322
 msgid "Alt Text"
 msgstr "Alternativer Text"
 
-#: extensions/page-info/page-info-dialog.c:1269
-#: extensions/page-info/page-info-dialog.c:1475
+#: extensions/page-info/page-info-dialog.c:1334
+#: extensions/page-info/page-info-dialog.c:1580
 msgid "Title"
 msgstr "Titel"
 
-#: extensions/page-info/page-info-dialog.c:1281
+#: extensions/page-info/page-info-dialog.c:1346
 msgid "Width"
 msgstr "Breite"
 
-#: extensions/page-info/page-info-dialog.c:1293
+#: extensions/page-info/page-info-dialog.c:1358
 msgid "Height"
 msgstr "Höhe"
 
-#: extensions/page-info/page-info-dialog.c:1487
+#: extensions/page-info/page-info-dialog.c:1592
 msgid "Relation"
 msgstr "Bezug"
 
-#: extensions/page-info/page-info-dialog.c:1595
+#: extensions/page-info/page-info-dialog.c:1700
 msgid "Name"
 msgstr "Name"
 
-#: extensions/page-info/page-info-dialog.c:1607
+#: extensions/page-info/page-info-dialog.c:1712
 msgid "Method"
 msgstr "Methode"
 
-#: extensions/page-info/page-info-dialog.c:1619
+#: extensions/page-info/page-info-dialog.c:1724
 msgid "Action"
 msgstr "Aktion"
 
@@ -521,29 +522,29 @@ msgstr "Vorgabe"
 msgid "None"
 msgstr "Keiner"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:108
+#: extensions/sidebar/ephy-sidebar-extension.c:106
 msgid "_Sidebar"
 msgstr "_Seitenleiste"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:109
+#: extensions/sidebar/ephy-sidebar-extension.c:107
 msgid "Show or hide the sidebar"
 msgstr "Die Seitenleiste anzeigen oder ausblenden"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:396
+#: extensions/sidebar/ephy-sidebar-extension.c:387
 #, c-format
 msgid "Add \"%s\" to the Sidebar?"
 msgstr "Möchten Sie »%s« zur Seitenleiste hinzufügen?"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:400
+#: extensions/sidebar/ephy-sidebar-extension.c:391
 #, c-format
 msgid "The source to the new sidebar page is %s."
 msgstr "Die Quelle der neuen Seitenleistenseite ist %s."
 
-#: extensions/sidebar/ephy-sidebar-extension.c:402
+#: extensions/sidebar/ephy-sidebar-extension.c:393
 msgid "Add Sidebar"
 msgstr "Seitenleiste hinzufügen"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:406
+#: extensions/sidebar/ephy-sidebar-extension.c:397
 msgid "_Add Sidebar"
 msgstr "Seitenleiste _hinzufügen"
 
@@ -580,18 +581,17 @@ msgstr "Einstellungen des Nachschlagens"
 msgid "Open search results in a new tab"
 msgstr "Suchergebnisse in einem neuen Reiter öffnen"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:181
+#: extensions/tabsmenu/ephy-tab-move-menu.c:192
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"
 msgstr[0] "Fenster »%s« (%d Reiter)"
 msgstr[1] "Fenster »%s« (%d Reiter)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:296
+#: extensions/tabsmenu/ephy-tab-move-menu.c:304
 msgid "Move Tab To Window"
 msgstr "Reiter in anderes _Fenster verschieben"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:297
+#: extensions/tabsmenu/ephy-tab-move-menu.c:305
 msgid "Move the current tab to a different window"
 msgstr "Den momentan angezeigten Reiter in ein anderes Fenster verschieben"
-
