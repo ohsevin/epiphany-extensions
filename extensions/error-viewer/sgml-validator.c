@@ -237,7 +237,7 @@ check_doctype (SgmlValidator *validator,
 
 			g_free (t);
 
-			*num_errors++;
+			(*num_errors)++;
 		}
 		else
 		{
