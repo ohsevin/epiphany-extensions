@@ -1,5 +1,11 @@
 2004-03-17  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/error-viewer/mozilla/mozilla-link-checker.cpp:
+
+	Remove timeout completely. It just doesn't work.
+
+2004-03-17  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
 	(register_mozilla), (tab_added_cb):
 

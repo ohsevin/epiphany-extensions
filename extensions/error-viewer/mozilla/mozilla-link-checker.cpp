@@ -48,8 +48,6 @@
 
 #include <glib/gi18n-lib.h>
 
-#define LINK_CHECK_TIMEOUT 15000
-
 NS_GENERIC_FACTORY_CONSTRUCTOR(ErrorViewerURICheckerObserver)
 
 /* Globals are evil. This code is evil. */
@@ -110,30 +108,6 @@ mozilla_unregister_link_checker_component (void)
 	g_return_if_fail (NS_SUCCEEDED (rv));
 
 	is_registered = FALSE;
-}
-
-static gboolean
-link_check_timeout_callback (gpointer data)
-{
-	nsIURIChecker *uri_checker = (nsIURIChecker *) data;
-
-	if (uri_checker)
-	{
-		uri_checker->Cancel (NS_BINDING_ABORTED);
-	}
-
-	return FALSE;
-}
-
-static void
-free_uri_checker (gpointer data)
-{
-	nsIURIChecker *uri_checker = (nsIURIChecker *) data;
-
-	if (uri_checker)
-	{
-		NS_RELEASE (uri_checker);
-	}
 }
 
 extern "C" void
@@ -239,15 +213,5 @@ mozilla_check_links (LinkChecker *checker,
 		}
 
 		uri_checker->AsyncCheck (observer, NULL);
-
-		nsIURIChecker *hack = uri_checker.get();
-
-		NS_ADDREF (hack);
-
-		g_timeout_add_full (G_PRIORITY_DEFAULT_IDLE,
-				    LINK_CHECK_TIMEOUT,
-				    link_check_timeout_callback,
-				    hack,
-				    free_uri_checker);
 	}
 }
