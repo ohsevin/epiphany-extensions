@@ -1,3 +1,9 @@
+2004-08-06  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
+	Recognise 1.7.[123].
+
 2004-08-01  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
