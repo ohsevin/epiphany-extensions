@@ -19,9 +19,7 @@
  *  $Id$
  */
 
-#ifdef HAVE_CONFIG_H
 #include "config.h"
-#endif
 
 #include "ephy-sample2-extension.h"
 #include "mozilla-sample.h"
@@ -29,17 +27,15 @@
 
 #include <epiphany/ephy-extension.h>
 
+#include <glib/gi18n-lib.h>
 #include <gmodule.h>
 
 #define EPHY_SAMPLE2_EXTENSION_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_SAMPLE2_EXTENSION, EphySample2ExtensionPrivate))
 
-struct EphySample2ExtensionPrivate
+struct _EphySample2ExtensionPrivate
 {
+	gpointer dummy;
 };
-
-static void ephy_sample2_extension_class_init	(EphySample2ExtensionClass *klass);
-static void ephy_sample2_extension_iface_init	(EphyExtensionIface *iface);
-static void ephy_sample2_extension_init		(EphySample2Extension *extension);
 
 enum
 {
@@ -49,48 +45,6 @@ enum
 static GObjectClass *parent_class = NULL;
 
 static GType type = 0;
-
-GType
-ephy_sample2_extension_get_type (void)
-{
-	return type;
-}
-
-GType
-ephy_sample2_extension_register_type (GTypeModule *module)
-{
-	static const GTypeInfo our_info =
-	{
-		sizeof (EphySample2ExtensionClass),
-		NULL, /* base_init */
-		NULL, /* base_finalize */
-		(GClassInitFunc) ephy_sample2_extension_class_init,
-		NULL,
-		NULL, /* class_data */
-		sizeof (EphySample2Extension),
-		0, /* n_preallocs */
-		(GInstanceInitFunc) ephy_sample2_extension_init
-	};
-
-	static const GInterfaceInfo extension_info =
-	{
-		(GInterfaceInitFunc) ephy_sample2_extension_iface_init,
-		NULL,
-		NULL
-	};
-
-	type = g_type_module_register_type (module,
-					    G_TYPE_OBJECT,
-					    "EphySample2Extension",
-					    &our_info, 0);
-
-	g_type_module_add_interface (module,
-				     type,
-				     EPHY_TYPE_EXTENSION,
-				     &extension_info);
-
-	return type;
-}
 
 static void
 ephy_sample2_extension_init (EphySample2Extension *extension)
@@ -191,10 +145,28 @@ impl_detach_window (EphyExtension *ext,
 }
 
 static void
+impl_attach_tab (EphyExtension *ext,
+		 EphyWindow *window,
+		 EphyTab *tab)
+{
+	LOG ("attach_tab")
+}
+
+static void
+impl_detach_tab (EphyExtension *ext,
+		 EphyWindow *window,
+		 EphyTab *tab)
+{
+	LOG ("detach_tab")
+}
+
+static void
 ephy_sample2_extension_iface_init (EphyExtensionIface *iface)
 {
 	iface->attach_window = impl_attach_window;
 	iface->detach_window = impl_detach_window;
+	iface->attach_tab = impl_attach_tab;
+	iface->detach_tab = impl_detach_tab;
 }
 
 static void
@@ -207,4 +179,46 @@ ephy_sample2_extension_class_init (EphySample2ExtensionClass *klass)
 	object_class->finalize = ephy_sample2_extension_finalize;
 
 	g_type_class_add_private (object_class, sizeof (EphySample2ExtensionPrivate));
+}
+
+GType
+ephy_sample2_extension_get_type (void)
+{
+	return type;
+}
+
+GType
+ephy_sample2_extension_register_type (GTypeModule *module)
+{
+	static const GTypeInfo our_info =
+	{
+		sizeof (EphySample2ExtensionClass),
+		NULL, /* base_init */
+		NULL, /* base_finalize */
+		(GClassInitFunc) ephy_sample2_extension_class_init,
+		NULL,
+		NULL, /* class_data */
+		sizeof (EphySample2Extension),
+		0, /* n_preallocs */
+		(GInstanceInitFunc) ephy_sample2_extension_init
+	};
+
+	static const GInterfaceInfo extension_info =
+	{
+		(GInterfaceInitFunc) ephy_sample2_extension_iface_init,
+		NULL,
+		NULL
+	};
+
+	type = g_type_module_register_type (module,
+					    G_TYPE_OBJECT,
+					    "EphySample2Extension",
+					    &our_info, 0);
+
+	g_type_module_add_interface (module,
+				     type,
+				     EPHY_TYPE_EXTENSION,
+				     &extension_info);
+
+	return type;
 }

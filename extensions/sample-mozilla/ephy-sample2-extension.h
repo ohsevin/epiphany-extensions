@@ -34,19 +34,20 @@ G_BEGIN_DECLS
 #define EPHY_IS_SAMPLE2_EXTENSION_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), EPHY_TYPE_SAMPLE2_EXTENSION))
 #define EPHY_SAMPLE2_EXTENSION_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), EPHY_TYPE_SAMPLE2_EXTENSION, EphySample2ExtensionClass))
 
-typedef struct EphySample2Extension		EphySample2Extension;
-typedef struct EphySample2ExtensionClass	EphySample2ExtensionClass;
-typedef struct EphySample2ExtensionPrivate	EphySample2ExtensionPrivate;
+typedef struct _EphySample2Extension		EphySample2Extension;
+typedef struct _EphySample2ExtensionClass	EphySample2ExtensionClass;
+typedef struct _EphySample2ExtensionPrivate	EphySample2ExtensionPrivate;
 
-struct EphySample2ExtensionClass
+struct _EphySample2ExtensionClass
 {
 	GObjectClass parent_class;
 };
 
-struct EphySample2Extension
+struct _EphySample2Extension
 {
 	GObject parent_instance;
 
+	/*< private >*/
 	EphySample2ExtensionPrivate *priv;
 };
 
