@@ -1,3 +1,75 @@
+2005-01-13  Christian Persch  <chpe@cvs.gnome.org>
+
+	* NEWS:
+	* configure.ac:
+	* extensions/Makefile.am:
+	* extensions/find/Makefile.am:
+	* extensions/find/eggfindbar.c: (egg_find_bar_class_init),
+	(egg_find_bar_emit_next), (egg_find_bar_emit_previous),
+	(egg_find_bar_emit_close), (close_clicked_callback),
+	(next_clicked_callback), (previous_clicked_callback),
+	(case_sensitive_toggled_callback), (entry_activate_callback),
+	(entry_changed_timeout_cb), (entry_changed_callback),
+	(egg_find_bar_init), (egg_find_bar_finalize),
+	(egg_find_bar_set_property), (egg_find_bar_get_property),
+	(egg_find_bar_size_request), (egg_find_bar_size_allocate),
+	(egg_find_bar_new), (egg_find_bar_set_search_string),
+	(egg_find_bar_get_search_string),
+	(egg_find_bar_set_case_sensitive),
+	(egg_find_bar_get_case_sensitive), (get_style_color),
+	(egg_find_bar_get_all_matches_color),
+	(egg_find_bar_get_current_match_color), (egg_find_bar_grab_focus),
+	(egg_find_bar_set_status_text), (egg_find_bar_get_type),
+	(egg_find_bar_register_type):
+	* extensions/find/eggfindbar.h:
+	* extensions/find/eggfindbarprivate.h:
+	* extensions/find/ephy-find-bar.c: (ensure_offscren_window),
+	(update_navigation_controls), (check_text_case), (set_status_text),
+	(update_find_properties), (sync_search_string_cb),
+	(sync_case_sensitive_cb), (find_entry_key_press_event_cb),
+	(entry_preedit_changed_cb), (embed_net_stop_cb),
+	(send_focus_change), (embed_key_press_event_cb), (set_focus_cb),
+	(unset_embed), (update_find_bar), (sync_active_tab),
+	(sync_print_preview_mode), (find_cb), (get_action),
+	(ephy_find_bar_set_window), (ephy_find_bar_show),
+	(ephy_find_bar_hide), (ephy_find_bar_screen_changed),
+	(ephy_find_bar_next), (ephy_find_bar_previous),
+	(ephy_find_bar_close), (ephy_find_bar_init),
+	(ephy_find_bar_finalize), (ephy_find_bar_set_property),
+	(ephy_find_bar_get_property), (ephy_find_bar_class_init),
+	(ephy_find_bar_get_type), (ephy_find_bar_register_type),
+	(ephy_find_bar_new):
+	* extensions/find/ephy-find-bar.h:
+	* extensions/find/ephy-find-extension.c:
+	(ephy_find_extension_get_type),
+	(ephy_find_extension_register_type), (ephy_find_extension_init),
+	(ephy_find_extension_finalize), (toolbar_weak_unref_cb),
+	(impl_attach_window), (impl_detach_window), (impl_detach_tab),
+	(ephy_find_extension_iface_init), (ephy_find_extension_class_init):
+	* extensions/find/ephy-find-extension.h:
+	* extensions/find/extension.c: (register_module):
+	* extensions/find/find.xml.in.in:
+	* extensions/find/mozilla/Makefile.am:
+	* extensions/find/mozilla/mozilla-find.cpp:
+	* extensions/find/mozilla/mozilla-find.h:
+	* extensions/smart-bookmarks/mozilla/Makefile.am:
+	* extensions/tab-states/.cvsignore:
+	* extensions/tab-states/Makefile.am:
+	* extensions/tab-states/ephy-tab-states-extension.c:
+	(ephy_tab_states_extension_get_type),
+	(ephy_tab_states_extension_register_type),
+	(ephy_tab_states_extension_init),
+	(ephy_tab_states_extension_finalize), (get_real_tab_label),
+	(set_label_colour), (sync_active_tab), (sync_load_status),
+	(impl_attach_window), (impl_detach_window), (impl_attach_tab),
+	(impl_detach_tab), (ephy_tab_states_extension_iface_init),
+	(ephy_tab_states_extension_class_init):
+	* extensions/tab-states/ephy-tab-states-extension.h:
+	* extensions/tab-states/extension.c: (register_module):
+	* extensions/tab-states/tab-states.xml.in.in:
+
+	Add 'find' and 'tab-states' extensions.
+
 2005-01-12  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/adblock/ad-blocker.c: (handle_reg_error), (match_uri),

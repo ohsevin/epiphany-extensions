@@ -129,10 +129,10 @@ dnl *******************************
 
 AC_MSG_CHECKING([extensions to build])
 
-all_extensions="adblock,bookmarks-tray,certificates,dashboard,error-viewer,extensions-manager-ui,gestures,page-info,sample,sample-mozilla,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups"
-all_useful_extensions="adblock,bookmarks-tray,certificates,dashboard,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tab-groups,tabsmenu"
-default_extensions="adblock,bookmarks-tray,certificates,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups"
-mozilla_dependent_extensions="error-viewer,page-info,sample-mozilla,select-stylesheet,smart-bookmarks"
+all_extensions="adblock,bookmarks-tray,certificates,dashboard,error-viewer,extensions-manager-ui,find,gestures,page-info,sample,sample-mozilla,select-stylesheet,sidebar,smart-bookmarks,tab-groups,tab-states,tabsmenu"
+all_useful_extensions="bookmarks-tray,certificates,dashboard,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tab-groups,tab-states,tabsmenu"
+default_extensions="bookmarks-tray,certificates,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups,tab-states"
+mozilla_dependent_extensions="adblock,error-viewer,find,page-info,sample-mozilla,select-stylesheet,smart-bookmarks"
 
 dnl due to an autoconf bug, commas in the first arg to
 dnl AS_HELP_STRING() cause problems.
@@ -183,6 +183,7 @@ AM_CONDITIONAL(ENABLE_CERTIFICATES_EXTENSION, echo "$extensions" | egrep '(^|,)c
 AM_CONDITIONAL(ENABLE_DASHBOARD_EXTENSION, echo "$extensions" | egrep '(^|,)dashboard($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_EXTENSIONS_MANAGER_UI_EXTENSION, echo "$extensions" | egrep '(^|,)extensions-manager-ui($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_ERROR_VIEWER_EXTENSION, echo "$extensions" | egrep '(^|,)error-viewer($|,)' > /dev/null)
+AM_CONDITIONAL(ENABLE_FIND_EXTENSION, echo "$extensions" | egrep '(^|,)find($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_GESTURES_EXTENSION, echo "$extensions" | egrep '(^|,)gestures($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_PAGE_INFO_EXTENSION, echo "$extensions" | egrep '(^|,)page-info($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SAMPLE_EXTENSION, echo "$extensions" | egrep '(^|,)sample($|,)' > /dev/null)
@@ -192,6 +193,7 @@ AM_CONDITIONAL(ENABLE_SIDEBAR_EXTENSION, echo "$extensions" | egrep '(^|,)sideba
 AM_CONDITIONAL(ENABLE_SMART_BOOKMARKS_EXTENSION, echo "$extensions" | egrep '(^|,)smart-bookmarks($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_TABSMENU_EXTENSION, echo "$extensions" | egrep '(^|,)tabsmenu($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_TAB_GROUPS_EXTENSION, echo "$extensions" | egrep '(^|,)tab-groups($|,)' > /dev/null)
+AM_CONDITIONAL(ENABLE_TAB_STATES_EXTENSION, echo "$extensions" | egrep '(^|,)tab-states($|,)' > /dev/null)
 dnl AM_CONDITIONAL(ENABLE_TOOLBAR_EXTRAS_EXTENSION, echo "$extensions" | egrep '(^|,)toolbar-extras($|,)' > /dev/null)
 
 dnl ******************
@@ -348,6 +350,8 @@ extensions/adblock/Makefile
 extensions/bookmarks-tray/Makefile
 extensions/certificates/Makefile
 extensions/dashboard/Makefile
+extensions/find/Makefile
+extensions/find/mozilla/Makefile
 extensions/gestures/Makefile
 extensions/error-viewer/Makefile
 extensions/error-viewer/mozilla/Makefile
@@ -363,6 +367,7 @@ extensions/select-stylesheet/mozilla/Makefile
 extensions/sidebar/Makefile
 extensions/smart-bookmarks/Makefile
 extensions/smart-bookmarks/mozilla/Makefile
+extensions/tab-states/Makefile
 extensions/tabsmenu/Makefile
 extensions/tab-groups/Makefile
 po/Makefile.in
