@@ -1,3 +1,9 @@
+2004-01-23  Christian Persch  <chpe@cvs.gnome.org>
+
+	* autogen.sh:
+
+	Don't call gnome-autogen.sh with full path.
+
 2004-01-22  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/error-viewer/README:
