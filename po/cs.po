@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-28 10:52+0100\n"
-"PO-Revision-Date: 2005-01-28 13:39+0100\n"
+"POT-Creation-Date: 2005-02-02 19:05+0100\n"
+"PO-Revision-Date: 2005-02-02 21:18+0100\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,6 +17,107 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: extensions/actions/action-properties.glade.h:1
+msgid "<span weight=\"bold\">Applies to</span>"
+msgstr "<span weight=\"bold\">Týká se</span>"
+
+#: extensions/actions/action-properties.glade.h:2
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">Obecné</span>"
+
+#: extensions/actions/action-properties.glade.h:3
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"images."
+msgstr "Je-li tato možnost povolena, bude akce obsažena v kontextovém menu obrázků."
+
+#: extensions/actions/action-properties.glade.h:4
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"links and pages."
+msgstr "Je-li tato možnost povolena, bude akce obsažena v kontextovém menu odkazů a stránek."
+
+#: extensions/actions/action-properties.glade.h:5
+msgid "The action description."
+msgstr "Popis akce."
+
+#: extensions/actions/action-properties.glade.h:6
+msgid ""
+"The action name. If a character is preceded by an underscore, that character "
+"will be used as the access key for the menu item."
+msgstr "Název akce. Je-li před znakem podtržítko, bude se tento znak používat jako klávesová zkratka pro položku menu."
+
+#: extensions/actions/action-properties.glade.h:7
+msgid ""
+"The command to execute when the action is activated. The URL of the link, "
+"image or page will be appended to the command."
+msgstr "Příkaz, který spustit, když je akce aktivována. K příkazu bude připojeno URL odkazu, obrázku nebo stránky."
+
+#: extensions/actions/action-properties.glade.h:8
+msgid "_Command:"
+msgstr "_Příkaz:"
+
+#: extensions/actions/action-properties.glade.h:9
+msgid "_Description:"
+msgstr "_Popis:"
+
+#: extensions/actions/action-properties.glade.h:10
+msgid "_Images"
+msgstr "_Obrázky"
+
+#: extensions/actions/action-properties.glade.h:11
+msgid "_Name:"
+msgstr "_Název:"
+
+#: extensions/actions/action-properties.glade.h:12
+msgid "_Pages"
+msgstr "_Stránky"
+
+#: extensions/actions/actions-editor.glade.h:1
+msgid "Actions"
+msgstr "Akce"
+
+#: extensions/actions/ephy-actions-extension-editor-dialog.c:490
+msgid "No action selected."
+msgstr "Nevybrána žádná akce."
+
+#: extensions/actions/ephy-actions-extension-editor-dialog.c:500
+#, c-format
+msgid "%i action selected."
+msgid_plural "%i actions selected."
+msgstr[0] "vybrána %i akce."
+msgstr[1] "vybrány %i akce."
+msgstr[2] "vybráno %i akcí."
+
+#: extensions/actions/ephy-actions-extension-properties-dialog.c:312
+msgid "Add Action"
+msgstr "Přidat akci"
+
+#: extensions/actions/ephy-actions-extension-properties-dialog.c:421
+#, c-format
+msgid "%s Properties"
+msgstr "Vlastnosti %s"
+
+#: extensions/actions/ephy-actions-extension-properties-dialog.c:426
+msgid "Action Properties"
+msgstr "Vlastnosti akce"
+
+#: extensions/actions/ephy-actions-extension.c:97
+msgid "_Actions"
+msgstr "_Akce"
+
+#: extensions/actions/ephy-actions-extension.c:98
+msgid "Customize actions"
+msgstr "Upravit akce"
+
+#: extensions/actions/ephy-actions-extension.c:409
+msgid "Could not run command"
+msgstr "Nemohu spustit příkaz"
+
+#: extensions/actions/ephy-actions-extension.c:412
+msgid "Could not Run Command"
+msgstr "Nemohu spustit příkaz"
 
 #: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
 msgid "_Edit Bookmarks"
