@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-26 10:52+0100\n"
-"PO-Revision-Date: 2005-01-26 14:54+0100\n"
+"POT-Creation-Date: 2005-02-19 12:03+0100\n"
+"PO-Revision-Date: 2005-02-19 22:07+0100\n"
 "Last-Translator: Reinout van Schouwen <reinout@cs.vu.nl>\n"
 "Language-Team: nl <vertaling@vrijschrift.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,59 +18,167 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
+#: extensions/actions/action-properties.glade.h:1
+msgid "<span weight=\"bold\">Applies to</span>"
+msgstr "<span weight=\"bold\">Van toepassing op</span>"
+
+#: extensions/actions/action-properties.glade.h:2
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">Algemeen</span>"
+
+#: extensions/actions/action-properties.glade.h:3
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"images."
+msgstr ""
+"Als deze optie is ingeschakeld, wordt de actie opgenomen in het contextmenu "
+"van afbeeldingen."
+
+#: extensions/actions/action-properties.glade.h:4
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"links and pages."
+msgstr ""
+"Als deze optie is ingeschakeld, wordt de actie opgeneomen in het contextmenu "
+"van verwijzingen en pagina's."
+
+#: extensions/actions/action-properties.glade.h:5
+msgid "The action description."
+msgstr "Omschrijving van de actie"
+
+#: extensions/actions/action-properties.glade.h:6
+msgid ""
+"The action name. If a character is preceded by an underscore, that character "
+"will be used as the access key for the menu item."
+msgstr ""
+"Naam van de actie. Als een teken vooraf wordt gegaan door een liggend "
+"streepje, dan is dat teken de sneltoets voor het menu-item."
+
+#: extensions/actions/action-properties.glade.h:7
+msgid ""
+"The command to execute when the action is activated. The URL of the link, "
+"image or page will be appended to the command."
+msgstr ""
+"De uit te voeren opdracht wanneer de actie geactiveerd wordt. De URL van "
+"de verwijzing, afbeelding of pagina wordt achter de opdracht geplakt."
+
+#: extensions/actions/action-properties.glade.h:8
+msgid "_Command:"
+msgstr "_Opdracht:"
+
+#: extensions/actions/action-properties.glade.h:9
+msgid "_Description:"
+msgstr "Om_schrijving:"
+
+#: extensions/actions/action-properties.glade.h:10
+msgid "_Images"
+msgstr "_Afbeeldingen"
+
+#: extensions/actions/action-properties.glade.h:11
+msgid "_Name:"
+msgstr "_Naam:"
+
+#: extensions/actions/action-properties.glade.h:12
+msgid "_Pages"
+msgstr "_Pagina's"
+
+#: extensions/actions/actions-editor.glade.h:1
+msgid "Actions"
+msgstr "Acties"
+
+#: extensions/actions/ephy-actions-extension-editor-dialog.c:490
+msgid "No action selected."
+msgstr "Geen actie geselecteerd."
+
+#: extensions/actions/ephy-actions-extension-editor-dialog.c:500
+#, c-format
+msgid "%i action selected."
+msgid_plural "%i actions selected."
+msgstr[0] "%i actie geselecteerd."
+msgstr[1] "%i acties geselecteerd."
+
+#: extensions/actions/ephy-actions-extension-properties-dialog.c:312
+msgid "Add Action"
+msgstr "Actie toevoegen"
+
+#: extensions/actions/ephy-actions-extension-properties-dialog.c:421
+#, c-format
+msgid "%s Properties"
+msgstr "Eigenschappen van %s"
+
+#: extensions/actions/ephy-actions-extension-properties-dialog.c:426
+msgid "Action Properties"
+msgstr "Actie-eigenschappen"
+
+#: extensions/actions/ephy-actions-extension.c:97
+msgid "_Actions"
+msgstr "_Acties"
+
+#: extensions/actions/ephy-actions-extension.c:98
+msgid "Customize actions"
+msgstr "Acties aanpassen"
+
+#: extensions/actions/ephy-actions-extension.c:409
+msgid "Could not run command"
+msgstr "Kon opdracht niet uitvoeren"
+
+#: extensions/actions/ephy-actions-extension.c:412
+msgid "Could not Run Command"
+msgstr "Kon opdracht niet uitvoeren"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
 msgid "_Edit Bookmarks"
 msgstr "Bladwijzers be_werken"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
 msgid "Open the bookmarks window"
 msgstr "Bladwijzervenster openen"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:451
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
 msgid "Open in _Current Tab"
 msgstr "Openen in _huidig tabblad"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:452
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
 msgid "Open bookmarks in the current tab of the active window"
 msgstr "Bladwijzers openen in het huidige tabblad van het actieve venster"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:454
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
 msgid "Open in New _Tab"
 msgstr "Openen in nieuw _tabblad"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:455
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
 msgid "Open bookmarks in a new tab of the active window"
 msgstr "Bladwijzers openen in een nieuw tabblad van het actieve venster"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:457
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
 msgid "Open in New _Window"
 msgstr "Openen in _nieuw venster"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:458
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
 msgid "Open bookmarks in new a window"
 msgstr "Bladwijzers openen in een nieuw venster"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:526
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:513
 msgid "Bookmarks"
 msgstr "Bladwijzers"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:265
+#: extensions/certificates/ephy-certificates-extension.c:275
 msgid "Manage _Certificates"
 msgstr "_Certificaten beheren"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:267
+#: extensions/certificates/ephy-certificates-extension.c:277
 msgid "Manage your certificates"
 msgstr "Uw certificaten beheren"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:275
+#: extensions/certificates/ephy-certificates-extension.c:285
 msgid "Server _Certificate"
 msgstr "Server_certificaat"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:277
+#: extensions/certificates/ephy-certificates-extension.c:287
 msgid "Display the web server's certificate"
 msgstr "Het certificaat van de webserver weergeven"
 
@@ -247,51 +355,51 @@ msgstr "<b>Geladen uitbreidingen</b>"
 msgid "Extensions"
 msgstr "Uitbreidingen"
 
-#: extensions/find/eggfindbar.c:133
+#: extensions/find/eggfindbar.c:132
 msgid "Search string"
 msgstr "Zoekreeks"
 
-#: extensions/find/eggfindbar.c:134
+#: extensions/find/eggfindbar.c:133
 msgid "The name of the string to be found"
 msgstr "De naam van de te vinden tekenreeks"
 
-#: extensions/find/eggfindbar.c:147
+#: extensions/find/eggfindbar.c:146
 msgid "Case sensitive"
 msgstr "Hoofdlettergevoelig"
 
-#: extensions/find/eggfindbar.c:148
+#: extensions/find/eggfindbar.c:147
 msgid "TRUE for a case sensitive search"
 msgstr "TRUE voor een hoofdlettergevoelige zoekactie"
 
-#: extensions/find/eggfindbar.c:155
+#: extensions/find/eggfindbar.c:154
 msgid "Highlight color"
 msgstr "Markeerkleur"
 
-#: extensions/find/eggfindbar.c:156
+#: extensions/find/eggfindbar.c:155
 msgid "Color of highlight for all matches"
 msgstr "Kleur van de markering voor alle overeenkomsten"
 
-#: extensions/find/eggfindbar.c:162
+#: extensions/find/eggfindbar.c:161
 msgid "Current color"
 msgstr "Huidige kleur"
 
-#: extensions/find/eggfindbar.c:163
+#: extensions/find/eggfindbar.c:162
 msgid "Color of highlight for the current match"
 msgstr "Kleur van de markering voor de huidige overeenkomst"
 
-#: extensions/find/eggfindbar.c:302
+#: extensions/find/eggfindbar.c:286
 msgid "F_ind:"
 msgstr "_Zoeken:"
 
-#: extensions/find/eggfindbar.c:320
+#: extensions/find/eggfindbar.c:306
 msgid "_Previous"
+msgstr "_Vorige"
+
+#: extensions/find/eggfindbar.c:308
+msgid "_Next"
 msgstr "V_olgende"
 
 #: extensions/find/eggfindbar.c:321
-msgid "_Next"
-msgstr "Vo_rige"
-
-#: extensions/find/eggfindbar.c:333
 msgid "C_ase Sensitive"
 msgstr "Hoo_fdlettergevoelig"
 
@@ -319,124 +427,124 @@ msgstr "Voldoet bijna aan alle standaarden"
 msgid "Compatibility"
 msgstr "Compatibiliteit"
 
-#: extensions/page-info/page-info-dialog.c:659
+#: extensions/page-info/page-info-dialog.c:660
 msgid "Undetermined"
 msgstr "Onbepaald"
 
-#: extensions/page-info/page-info-dialog.c:668
+#: extensions/page-info/page-info-dialog.c:669
 msgid "Not cached"
 msgstr "Niet gebufferd"
 
-#: extensions/page-info/page-info-dialog.c:671
+#: extensions/page-info/page-info-dialog.c:672
 msgid "Disk cache"
 msgstr "Schijfbuffer"
 
-#: extensions/page-info/page-info-dialog.c:674
+#: extensions/page-info/page-info-dialog.c:675
 msgid "Memory cache"
 msgstr "Geheugenbuffer"
 
-#: extensions/page-info/page-info-dialog.c:677
+#: extensions/page-info/page-info-dialog.c:678
 msgid "Unknown cache"
 msgstr "Onbekende buffer"
 
-#: extensions/page-info/page-info-dialog.c:693
-#: extensions/page-info/page-info-dialog.c:822
+#: extensions/page-info/page-info-dialog.c:694
+#: extensions/page-info/page-info-dialog.c:823
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: extensions/page-info/page-info-dialog.c:698
+#: extensions/page-info/page-info-dialog.c:699
 msgid "No referrer"
 msgstr "Geen doorverwijzer"
 
-#: extensions/page-info/page-info-dialog.c:712
-#: extensions/page-info/page-info-dialog.c:728
+#: extensions/page-info/page-info-dialog.c:713
+#: extensions/page-info/page-info-dialog.c:729
 msgid "Not specified"
 msgstr "Niet gespecificeerd"
 
-#: extensions/page-info/page-info-dialog.c:807
+#: extensions/page-info/page-info-dialog.c:808
 msgid "Image"
 msgstr "Afbeelding"
 
-#: extensions/page-info/page-info-dialog.c:810
+#: extensions/page-info/page-info-dialog.c:811
 msgid "Embed"
 msgstr "Ingebed"
 
-#: extensions/page-info/page-info-dialog.c:813
+#: extensions/page-info/page-info-dialog.c:814
 msgid "Object"
 msgstr "object"
 
-#: extensions/page-info/page-info-dialog.c:816
+#: extensions/page-info/page-info-dialog.c:817
 msgid "Applet"
 msgstr "applet"
 
-#: extensions/page-info/page-info-dialog.c:819
+#: extensions/page-info/page-info-dialog.c:820
 msgid "Icon"
 msgstr "Pictogram"
 
-#: extensions/page-info/page-info-dialog.c:975
+#: extensions/page-info/page-info-dialog.c:976
 msgid "Save Medium As..."
 msgstr "Media opslaan als..."
 
-#: extensions/page-info/page-info-dialog.c:992
+#: extensions/page-info/page-info-dialog.c:993
 msgid "Select a directory"
 msgstr "Kies een map"
 
-#: extensions/page-info/page-info-dialog.c:1093
+#: extensions/page-info/page-info-dialog.c:1094
 msgid "_Open"
 msgstr "_Openen"
 
-#: extensions/page-info/page-info-dialog.c:1099
-#: extensions/page-info/page-info-dialog.c:1492
+#: extensions/page-info/page-info-dialog.c:1100
+#: extensions/page-info/page-info-dialog.c:1493
 msgid "_Copy Link Address"
 msgstr "Verwij_zingsadres kopiëren"
 
-#: extensions/page-info/page-info-dialog.c:1105
+#: extensions/page-info/page-info-dialog.c:1106
 msgid "_Use as Background"
 msgstr "Als a_chtergrond gebruiken"
 
-#: extensions/page-info/page-info-dialog.c:1111
+#: extensions/page-info/page-info-dialog.c:1112
 msgid "_Save As..."
 msgstr "Op_slaan als..."
 
-#: extensions/page-info/page-info-dialog.c:1296
-#: extensions/page-info/page-info-dialog.c:1566
+#: extensions/page-info/page-info-dialog.c:1297
+#: extensions/page-info/page-info-dialog.c:1567
 msgid "URL"
 msgstr "URL"
 
-#: extensions/page-info/page-info-dialog.c:1308
+#: extensions/page-info/page-info-dialog.c:1309
 msgid "Type"
 msgstr "Type"
 
-#: extensions/page-info/page-info-dialog.c:1320
+#: extensions/page-info/page-info-dialog.c:1321
 msgid "Alt Text"
 msgstr "Alt-tekst"
 
-#: extensions/page-info/page-info-dialog.c:1332
-#: extensions/page-info/page-info-dialog.c:1578
+#: extensions/page-info/page-info-dialog.c:1333
+#: extensions/page-info/page-info-dialog.c:1579
 msgid "Title"
 msgstr "Titel"
 
-#: extensions/page-info/page-info-dialog.c:1344
+#: extensions/page-info/page-info-dialog.c:1345
 msgid "Width"
 msgstr "Breedte"
 
-#: extensions/page-info/page-info-dialog.c:1356
+#: extensions/page-info/page-info-dialog.c:1357
 msgid "Height"
 msgstr "Hoogte"
 
-#: extensions/page-info/page-info-dialog.c:1590
+#: extensions/page-info/page-info-dialog.c:1591
 msgid "Relation"
 msgstr "Relatie"
 
-#: extensions/page-info/page-info-dialog.c:1698
+#: extensions/page-info/page-info-dialog.c:1699
 msgid "Name"
 msgstr "Naam"
 
-#: extensions/page-info/page-info-dialog.c:1710
+#: extensions/page-info/page-info-dialog.c:1711
 msgid "Method"
 msgstr "Methode"
 
-#: extensions/page-info/page-info-dialog.c:1722
+#: extensions/page-info/page-info-dialog.c:1723
 msgid "Action"
 msgstr "Actie"
 
@@ -577,21 +685,21 @@ msgstr "_Zijbalk"
 msgid "Show or hide the sidebar"
 msgstr "Zijbalk tonen of verbergen"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:385
+#: extensions/sidebar/ephy-sidebar-extension.c:407
 #, c-format
 msgid "Add \"%s\" to the Sidebar?"
 msgstr "\"%s\" toevoegen aan de zijbalk?"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:389
+#: extensions/sidebar/ephy-sidebar-extension.c:411
 #, c-format
 msgid "The source to the new sidebar page is %s."
 msgstr "De bron van de nieuwe zijbalk-pagina is %s."
 
-#: extensions/sidebar/ephy-sidebar-extension.c:391
+#: extensions/sidebar/ephy-sidebar-extension.c:413
 msgid "Add Sidebar"
 msgstr "Zijbalk toevoegen"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:395
+#: extensions/sidebar/ephy-sidebar-extension.c:417
 msgid "_Add Sidebar"
 msgstr "Zijbalk _toevoegen"
 
