@@ -24,6 +24,10 @@ if ENABLE_SAMPLE_EXTENSION
 SUBDIRS += sample
 endif
 
+if ENABLE_SELECT_STYLESHEET_EXTENSION
+SUBDIRS += select-stylesheet
+endif
+
 if ENABLE_SAMPLE_MOZILLA_EXTENSION
 SUBDIRS += sample-mozilla
 endif

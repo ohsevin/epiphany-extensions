@@ -135,10 +135,10 @@ dnl *******************************
 
 AC_MSG_CHECKING([extensions to build])
 
-all_extensions="certificates,dashboard,error-viewer,gestures,page-info,sample,sample-mozilla,smart-bookmarks,tabsmenu,tab-groups"
-all_useful_extensions="certificates,dashboard,error-viewer,gestures,page-info,smart-bookmarks,tabsmenu,tab-groups"
-default_extensions="certificates,error-viewer,page-info,smart-bookmarks,tabsmenu"
-mozilla_dependent_extensions="certificates,error-viewer,page-info,sample-mozilla,smart-bookmarks"
+all_extensions="certificates,dashboard,error-viewer,gestures,page-info,sample,sample-mozilla,select-stylesheet,smart-bookmarks,tabsmenu,tab-groups"
+all_useful_extensions="certificates,dashboard,error-viewer,gestures,page-info,select-stylesheet,smart-bookmarks,tabsmenu,tab-groups"
+default_extensions="certificates,error-viewer,gestures,page-info,select-stylesheet,smart-bookmarks,tabsmenu"
+mozilla_dependent_extensions="certificates,error-viewer,page-info,sample-mozilla,select-stylesheet,smart-bookmarks"
 
 dnl due to an autoconf bug, commas in the first arg to
 dnl AC_HELP_STRING cause problems.
@@ -147,7 +147,9 @@ dnl AC_HELP_STRING([--with-extensions=ext1,ext2,...],[build the specified extens
 AC_ARG_WITH([extensions],
 [  --with-extensions=extension1,extension2,...
 			  build the specified extensions. Available:
-			  gestures, sample, tabsmenu, tab-groups, all])
+			  certificates, dashboard, error-viewer, gestures,
+			  page-info, select-stylesheet, smart-bookmarks,
+			  tabs-groups, tabsmenu, all, really-all])
 
 dnl If no extensions specified, build the default set
 if test "x$with_extensions" = xyes; then
@@ -187,6 +189,7 @@ AM_CONDITIONAL(ENABLE_GESTURES_EXTENSION, echo "$extensions" | egrep '(^|,)gestu
 AM_CONDITIONAL(ENABLE_PAGE_INFO_EXTENSION, echo "$extensions" | egrep '(^|,)page-info($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SAMPLE_EXTENSION, echo "$extensions" | egrep '(^|,)sample($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SAMPLE_MOZILLA_EXTENSION, echo "$extensions" | egrep '(^|,)sample-mozilla($|,)' > /dev/null)
+AM_CONDITIONAL(ENABLE_SELECT_STYLESHEET_EXTENSION, echo "$extensions" | egrep '(^|,)select-stylesheet($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SMART_BOOKMARKS_EXTENSION, echo "$extensions" | egrep '(^|,)smart-bookmarks($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_TABSMENU_EXTENSION, echo "$extensions" | egrep '(^|,)tabsmenu($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_TAB_GROUPS_EXTENSION, echo "$extensions" | egrep '(^|,)tab-groups($|,)' > /dev/null)
@@ -384,6 +387,8 @@ extensions/page-info/mozilla/Makefile
 extensions/sample/Makefile
 extensions/sample-mozilla/Makefile
 extensions/sample-mozilla/mozilla/Makefile
+extensions/select-stylesheet/Makefile
+extensions/select-stylesheet/mozilla/Makefile
 extensions/smart-bookmarks/Makefile
 extensions/smart-bookmarks/mozilla/Makefile
 extensions/tabsmenu/Makefile

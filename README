@@ -1,5 +1,5 @@
-For the moment, you have to ./configure with --prefix=same prefix as you configured
-epiphany with.
+For the moment, you have to ./configure with --prefix=same prefix as you
+configured epiphany with.
 
 Please see the README files in each extension subdirectory for more specific
 information.
@@ -10,9 +10,19 @@ How to choose which extensions to build:
 
 where ext1, ext2 ... are one of the following:
 
-error-viewer		Error viewer extension [i.e., Javascript, HTML errors]
-gestures		Gestures extension
-tabsmenu		Tabs Menu extension
+certificates		Display SSL certificates
+dashboard		Send cluepackets to Dashboard
+error-viewer		Error Viewer dialog [i.e., Javascript, HTML errors]
+gestures		Mouse gestures
+page-info		Show information about the current page
+select-stylesheet	Switch between alternate stylesheets
+smart-bookmarks		Right-click on selected text to search the Web for it
+tabs-groups		Open new tabs to the right of the current one
+tabsmenu		Tabs menu entries to move tabs across windows
+
 all			All of the above extensions
+
 sample			Sample extension [use this as a template]
-sample-mozilla		Sample extension which uses mozilla api [use as a template]
+sample-mozilla		Sample extension using Mozilla API [use as a template]
+
+really-all		All of the above extensions (including samples)
