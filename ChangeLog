@@ -1,3 +1,10 @@
+2004-05-19  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/certificates/ephy-certificates-extension.c:
+	(impl_attach_window):
+
+	Connect the tab_removed_cb handler to the "tab-removed" signal, duh :P
+
 2004-05-15  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:

@@ -309,7 +309,7 @@ impl_attach_window (EphyExtension *ext,
 	g_signal_connect_after (notebook, "tab_added",
 				G_CALLBACK (tab_added_cb), window);
 	g_signal_connect_after (notebook, "tab_removed",
-				G_CALLBACK (tab_added_cb), window);
+				G_CALLBACK (tab_removed_cb), window);
 	g_signal_connect_after (notebook, "switch_page",
 				G_CALLBACK (switch_page_cb), window);
 
