@@ -1,6 +1,14 @@
 2004-03-11  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/popup-blocker/ephy-popup-blocker-icon.c:
+	(popup_menu_detach), (icon_button_press_cb),
+	(ephy_popup_blocker_icon_init):
+
+	Don't free the menu, numbskull!
+
+2004-03-11  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/popup-blocker/ephy-popup-blocker-icon.c:
 	(ephy_popup_blocker_icon_finalize):
 
 	Don't leak the GtkActionGroup and its GtkActions.

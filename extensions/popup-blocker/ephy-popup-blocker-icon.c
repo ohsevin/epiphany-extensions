@@ -59,7 +59,6 @@ struct EphyPopupBlockerIconPrivate
 	GtkUIManager *ui;
 	guint ui_merge_id;
 	GtkActionGroup *actions;
-	GtkWidget *popup_menu;
 };
 
 typedef struct
@@ -109,7 +108,7 @@ static void
 popup_menu_detach (GtkWidget *widget,
 		   GtkMenu *menu)
 {
-	EPHY_POPUP_BLOCKER_ICON (widget)->priv->popup_menu = NULL;
+	/* There is no point to this function. */
 }
 
 static void
@@ -124,11 +123,6 @@ icon_button_press_cb (GtkWidget *evbox,
 
 	if (event->type != GDK_BUTTON_PRESS || event->button != 1) return;
 
-	if (icon->priv->popup_menu)
-	{
-		gtk_widget_destroy (icon->priv->popup_menu);
-	}
-
 	path = g_strdup_printf ("/EphyPopupBlockerPopup-%p", icon);
 
 	menu = gtk_ui_manager_get_widget (icon->priv->ui, path);
@@ -137,10 +131,12 @@ icon_button_press_cb (GtkWidget *evbox,
 
 	g_return_if_fail (GTK_IS_MENU (menu) && menu != NULL);
 
-	icon->priv->popup_menu = menu;
+	if (gtk_menu_get_attach_widget (GTK_MENU (menu)) != icon)
+	{
+		gtk_menu_attach_to_widget (GTK_MENU (menu), GTK_WIDGET (icon),
+					   popup_menu_detach);
+	}
 
-	gtk_menu_attach_to_widget (GTK_MENU (menu), GTK_WIDGET (icon),
-				   popup_menu_detach);
 	gtk_widget_show_all (GTK_WIDGET (menu));
 	gtk_menu_popup (GTK_MENU (menu), NULL, NULL, NULL, NULL, event->button,
 			event->time);
@@ -204,7 +200,6 @@ ephy_popup_blocker_icon_init (EphyPopupBlockerIcon *icon)
 	icon->priv->ui = NULL;
 	icon->priv->ui_merge_id = 0;
 	icon->priv->actions = NULL;
-	icon->priv->popup_menu = NULL;
 }
 
 static void
