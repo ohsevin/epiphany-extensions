@@ -1,3 +1,9 @@
+2004-12-06  Christian Persch  <chpe@cvs.gnome.org>
+
+	* include/EphyUtils.h:
+
+	Update from Epiphany.
+
 2004-12-05  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/gestures/ephy-gesture.c: (unmap_event_cb),
