@@ -1,3 +1,13 @@
+2004-10-30  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/extensions-manager-ui/extensions-manager-ui.c:
+	(display_from_info), (fill_list_store), (extension_toggle_cb),
+	(active_sync), (extension_added_cb), (extension_removed_cb),
+	(extensions_manager_ui_init), (extensions_manager_ui_finalize):
+
+	Listen to ephy-extension-manager's added/removed signals to add/remove
+	extensions from the list.
+
 2004-10-29  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:

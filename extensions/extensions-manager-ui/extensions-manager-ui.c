@@ -51,7 +51,9 @@ struct ExtensionsManagerUIPrivate
 	GtkWidget *window;
 	GtkWidget *treeview;
 	EphyExtensionsManager *manager;
-	gulong manager_signal;
+	gulong added_signal;
+	gulong changed_signal;
+	gulong removed_signal;
 };
 
 enum
@@ -236,6 +238,14 @@ show_extension_info (ExtensionsManagerUI *parent_dialog,
 	}
 }
 
+static char *
+display_from_info (EphyExtensionInfo *info)
+{
+	return g_strdup_printf ("<b>%s</b>\n%s",
+				info->name,
+				info->description);
+}
+
 static void
 fill_list_store (EphyExtensionsManager *manager,
 		 GtkListStore *store)
@@ -262,9 +272,7 @@ fill_list_store (EphyExtensionsManager *manager,
 
 		gtk_list_store_append (store, &iter);
 
-		display = g_strdup_printf ("<b>%s</b>\n%s",
-					   info->name,
-					   info->description);
+		display = display_from_info (info);
 
 		gtk_list_store_set (store, &iter,
 				    COL_INFO, info,
@@ -291,7 +299,6 @@ extension_toggle_cb (GtkCellRendererToggle *celltoggle,
 	EphyExtensionInfo *info;
 
 	treeview = GTK_TREE_VIEW (dialog->priv->treeview);
-
 	g_return_if_fail (GTK_IS_TREE_VIEW (treeview));
 
 	model = gtk_tree_view_get_model (treeview);
@@ -332,7 +339,6 @@ active_sync (EphyExtensionsManager *manager,
 	GtkTreeModel *model;
 	GtkTreeIter iter;
 	EphyExtensionInfo *row_info;
-	gboolean match = FALSE;
 
 	model = dialog->priv->model;
 
@@ -344,13 +350,13 @@ active_sync (EphyExtensionsManager *manager,
 
 		if (row_info == info)
 		{
-			match = TRUE;
 			gtk_list_store_set (GTK_LIST_STORE (model), &iter,
 					    COL_TOGGLE, info->active,
 					    -1);
+			break;
 		}
 	}
-	while (gtk_tree_model_iter_next (model, &iter) && match == FALSE);
+	while (gtk_tree_model_iter_next (model, &iter));
 }
 
 static void
@@ -428,6 +434,61 @@ build_ui (ExtensionsManagerUI *dialog)
 }
 
 static void
+extension_added_cb (EphyExtensionsManager *manager,
+		    EphyExtensionInfo *info,
+		    ExtensionsManagerUI *dialog)
+{
+	GtkTreeView *treeview;
+	GtkListStore *store;
+	GtkTreeIter iter;
+	char *display;
+
+	treeview = GTK_TREE_VIEW (dialog->priv->treeview);
+	g_return_if_fail (GTK_IS_TREE_VIEW (treeview));
+
+	store = GTK_LIST_STORE (gtk_tree_view_get_model (treeview));
+	g_return_if_fail (GTK_IS_LIST_STORE (store));
+
+	gtk_list_store_append (store, &iter);
+
+	display = display_from_info (info);
+
+	gtk_list_store_set (store, &iter,
+			    COL_INFO, info,
+			    COL_TOGGLE, info->active,
+			    COL_DISPLAY, display,
+			    -1);
+
+	g_free (display);
+}
+
+static void
+extension_removed_cb (EphyExtensionsManager *manager,
+		      EphyExtensionInfo *info,
+		      ExtensionsManagerUI *dialog)
+{
+	GtkTreeModel *model;
+	GtkTreeIter iter;
+	EphyExtensionInfo *row_info;
+
+	model = dialog->priv->model;
+
+	if (gtk_tree_model_get_iter_first (model, &iter) == FALSE) return;
+
+	do
+	{
+		gtk_tree_model_get (model, &iter, COL_INFO, &row_info, -1);
+
+		if (row_info == info)
+		{
+			gtk_list_store_remove (GTK_LIST_STORE (model), &iter);
+			break;
+		}
+	}
+	while (gtk_tree_model_iter_next (model, &iter));
+}
+
+static void
 extensions_manager_ui_init (ExtensionsManagerUI *dialog)
 {		
 	LOG ("ExtensionsManagerUI initializing")
@@ -445,9 +506,15 @@ extensions_manager_ui_init (ExtensionsManagerUI *dialog)
 
 	build_ui (dialog);
 
-	dialog->priv->manager_signal =
+	dialog->priv->added_signal =
+		g_signal_connect (G_OBJECT (dialog->priv->manager), "added",
+				  G_CALLBACK (extension_added_cb), dialog);
+	dialog->priv->changed_signal =
 		g_signal_connect (G_OBJECT (dialog->priv->manager), "changed",
 				  G_CALLBACK (active_sync), dialog);
+	dialog->priv->removed_signal =
+		g_signal_connect (G_OBJECT (dialog->priv->manager), "removed",
+				  G_CALLBACK (extension_removed_cb), dialog);
 }
 
 static void
@@ -458,7 +525,11 @@ extensions_manager_ui_finalize (GObject *object)
 	LOG ("ExtensionsManagerUI finalising")
 
 	g_signal_handler_disconnect (G_OBJECT (dialog->priv->manager),
-				     dialog->priv->manager_signal);
+				     dialog->priv->changed_signal);
+	g_signal_handler_disconnect (G_OBJECT (dialog->priv->manager),
+				     dialog->priv->added_signal);
+	g_signal_handler_disconnect (G_OBJECT (dialog->priv->manager),
+				     dialog->priv->removed_signal);
 
 	parent_class->finalize (object);
 }
