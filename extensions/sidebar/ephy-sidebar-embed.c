@@ -170,7 +170,7 @@ show_context_menu (EphySidebarEmbed *sbembed,
 {
 	GtkUIManager *manager;
 	GtkAction *action;
-	EmbedEventContext context;
+	EphyEmbedEventContext context;
 	const char *popup;
 	const GValue *value;
 	gboolean framed, has_background, can_open_in_new;
@@ -309,7 +309,7 @@ embed_mouse_click_cb (EphyEmbed *embed,
 		      EphySidebarEmbed *sbembed)
 {
 	EphyEmbedEventType type;
-	EmbedEventContext context;
+	EphyEmbedEventContext context;
 	guint modifier;
 	gboolean handled = TRUE;
 	gboolean with_control, with_shift, is_left_click, is_middle_click;

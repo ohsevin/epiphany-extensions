@@ -1,3 +1,12 @@
+2005-01-04  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/gestures/ephy-gestures-extension.c:
+	(dom_mouse_down_cb):
+	* extensions/sidebar/ephy-sidebar-embed.c: (show_context_menu),
+	(embed_mouse_click_cb):
+
+	Fix for ephy enum and flags name changes.
+
 2005-01-04  Crispin Flowerday  <gnome@flowerday.cx>
 
 	* configure.ac: Remove wrongly committed dbus/Makefile.am

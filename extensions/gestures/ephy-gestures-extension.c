@@ -305,7 +305,7 @@ dom_mouse_down_cb (EphyEmbed *embed,
 		   EphyEmbedEvent *event,
 		   EphyGesturesExtension *extension)
 {
-        EmbedEventContext context;
+        EphyEmbedEventContext context;
 	EphyEmbedEventType type;
 	gint handled = FALSE;
 
