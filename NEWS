@@ -2,22 +2,24 @@
 Epiphany Extensions 0.7.0
 =========================
 
-Code changes:
-
-	*
-
 New Features:
 
 	* Error Viewer extension (Adam Hooper)
 	* Dashboard extension (Lee Willis)
-
-Bugfixes:
-
-	*
+	* Certificate Viewer (Christian)
 
 Translations:
 
-	*
+	* Christian Rose (sv)
+	* Duarte Loreto (pt)
+	* Francisco Javier F. Serrador (es)
+	* Kjartan Maraas (no)
+	* Laurent Richard (fr)	
+	* Marcel Telka (sk)
+	* Miloslav Trmac (cs)
+	* Ole Laursen (da)
+	* Tino Meinen (nl)
+	* Данило Шеган (sr, sr@Latn)
 
 
 =========================
@@ -26,7 +28,14 @@ Epiphany Extensions 0.6.0
 
 Code changes:
 
-	* Ported to new epiphany extensions API. Imported into GNOME CVS.
+	* Ported to new epiphany extensions API
+	* Mouse gestures: cleaned up code cruft
+	* Tabsmenu: re-written to be much simpler
+
+New features:
+
+	* Popup Blocker
+
 
 =========================
 Epiphany Extensions 0.4.0
