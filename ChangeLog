@@ -1,3 +1,9 @@
+2004-03-30  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
+	Post-release version bump.
+
 2004-03-29  Christian Persch  <chpe@cvs.gnome.org>
 
 	* NEWS:
