@@ -5,43 +5,65 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: epiphany-extensions.HEAD\n"
+"Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-16 20:57+0100\n"
-"PO-Revision-Date: 2004-02-17 00:49+0100\n"
+"POT-Creation-Date: 2004-03-06 16:53+0100\n"
+"PO-Revision-Date: 2004-03-06 17:02+0100\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: Albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: KBabel 1.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: extensions/certificates/ephy-certificates-extension.c:159
+msgid "Certificate Manager"
+msgstr "Organizuesi i çertifikatave"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:214
+#: extensions/certificates/ephy-certificates-extension.c:276
+msgid "Manage _Certificates"
+msgstr "Organizo _çertifikatat"
+
+#. shortcut key
+#: extensions/certificates/ephy-certificates-extension.c:278
+msgid "Manage your certificates"
+msgstr "Organizo çertifikatat tuaja"
+
+#. stock icon
+#: extensions/certificates/ephy-certificates-extension.c:286
 msgid "Server _Certificate"
-msgstr "_Certifikata e Server-it"
+msgstr "_Çertifikata e Server-it"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:216
+#: extensions/certificates/ephy-certificates-extension.c:288
 msgid "Display the web server's certificate"
-msgstr "Shiko certifikatën e serverit web"
+msgstr "Shfaq çertifikatën e serverit web"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:83
-msgid "_Validate"
-msgstr "_Vleftëso"
+#: extensions/error-viewer/ephy-error-viewer-extension.c:88
+msgid "Check _HTML"
+msgstr "Kontrollo _HTML"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:85
+#: extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "Shfaq gabimet HTML tek dritarja e dilogut të Shikuesit të Gabimeve"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:90
+#: extensions/error-viewer/ephy-error-viewer-extension.c:95
+msgid "Check _Links"
+msgstr "Kontrollo _Lidhjet"
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:97
+msgid "Display invalid hyperlinks in the Error Viewer dialog"
+msgstr "Shfaq lidhjet e pavlefshme tek dritarja e dialogut të Shikuesit të Gabimeve"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:101
 msgid "_Error Viewer"
 msgstr "_Shikuesi i Gabimeve"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:92
+#: extensions/error-viewer/ephy-error-viewer-extension.c:103
 msgid "Display web page errors"
 msgstr "Shfaq gabimet e faqeve web"
 
@@ -53,7 +75,24 @@ msgstr "P_astro"
 msgid "Error Viewer"
 msgstr "Shikuesi i Gabimeve"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:106
+#: extensions/error-viewer/link-checker.c:231
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "U gjet %d lidhje e pavlefshme"
+msgstr[1] "U gjetën %d lidhje të pavlefshme"
+
+#. Don't bother looking for source lines -- they're not there
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
+#, c-format
+msgid ""
+"Error:\n"
+"%s"
+msgstr ""
+"Gabim:\n"
+"%s"
+
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:90
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -61,6 +100,22 @@ msgid ""
 msgstr ""
 "Gabim Javascript tek %s në rreshtin %d:\n"
 "%s"
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:77
+#, c-format
+msgid ""
+"Link error in %s:\n"
+"%s is unavailable."
+msgstr ""
+"Lidhje e gabuar tek %s:\n"
+"%s nuk përgjigjet."
+
+#: extensions/error-viewer/mozilla/mozilla-link-checker.cpp:174
+#, c-format
+msgid "Checking %d Link on %s"
+msgid_plural "Checking %d Links on %s"
+msgstr[0] "Duke kontrolluar %d Lidhje në %s"
+msgstr[1] "Duke kontrolluar %d Lidhje në %s"
 
 #: extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
@@ -71,42 +126,46 @@ msgstr ""
 "Gabim HTML tek %s në rreshtin %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:162
+#: extensions/error-viewer/sgml-validator.c:165
 #, c-format
-msgid ""
-"HTML Validation of %s complete\n"
-"Found %d error"
-msgid_plural ""
-"HTML Validation of %s complete\n"
-"Found %d errors"
-msgstr[0] ""
-"Vleftësimi HTML i %s u plotësua\n"
-"U gjet %d gabim"
-msgstr[1] ""
-"Vleftësimi HTML i %s u plotësua\n"
-"U gjet %d gabim"
+msgid "Found %d error"
+msgid_plural "Found %d errors"
+msgstr[0] "U gjet %d gabim"
+msgstr[1] "U gjetën %d gabime"
 
-#: extensions/error-viewer/sgml-validator.c:216
+#: extensions/error-viewer/sgml-validator.c:169
+#, c-format
+msgid "HTML Validation of %s complete"
+msgstr "Vleftësimi HTML i %s u plotësua"
+
+#: extensions/error-viewer/sgml-validator.c:227
 #, c-format
 msgid ""
 "HTML error in %s:\n"
-"Doctype is XHTML but content type is text/html.  Use application/xhtml+xml "
-"instead."
+"%s"
 msgstr ""
 "Gabim HTML tek %s:\n"
-"Lloji i dokumentit është XHTML por lloji i përmbajtjes është text/html.  Përdor application/xhtml+xml në vend të tij."
+"%s"
 
-#: extensions/error-viewer/sgml-validator.c:231
+#: extensions/error-viewer/sgml-validator.c:229
+#: extensions/error-viewer/sgml-validator.c:245
+msgid ""
+"Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
+"xhtml+xml\" instead."
+msgstr ""
+"Lloji i dokumentit është \"XHTML\" por lloji i përmbajtjes është \"text/html\".  "
+"Përdor \"application/xhtml+xml\" në vend të tij."
+
+#: extensions/error-viewer/sgml-validator.c:243
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
-"Doctype is XHTML but content type is text/html.  Use application/xhtml+xml "
-"instead."
+"%s"
 msgstr ""
 "Paralajmërime HTML tek %s:\n"
-"Lloji i dokumentit është XHTML por lloji i përmbajtjes është text/html.  Përdor application/xhtml+xml në vend të tij."
+"%s"
 
-#: extensions/error-viewer/sgml-validator.c:368
+#: extensions/error-viewer/sgml-validator.c:381
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -115,34 +174,27 @@ msgstr ""
 "Gabim HTML tek %s:\n"
 "Nuk është specifikuar asnjë lloj i vlefshëm dokumenti."
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
 msgid "Blo_ck Popups from this Site"
 msgstr "Bllo_ko Popups nga ky sit"
 
 #. shortcut key
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:64
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
 msgid "Block or unblock popup windows"
 msgstr "Blloko ose ç'blloko dritaret popup"
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:324
-#, c-format
-msgid "%d popup blocked"
-msgid_plural "%d popups blocked"
-msgstr[0] "%d popup u bllokua"
-msgstr[1] "%d popup u bllokua"
-
-#: extensions/tabsmenu/ephy-tab-move-menu.c:185
+#: extensions/tabsmenu/ephy-tab-move-menu.c:183
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"
 msgstr[0] "Dritarja '%s' (%d skedë)"
-msgstr[1] "Dritarja '%s' (%d skedë)"
+msgstr[1] "Dritarja '%s' (%d skeda)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:283
+#: extensions/tabsmenu/ephy-tab-move-menu.c:282
 msgid "Move Tab To Window"
 msgstr "Lëviz skedën tek dritarja"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:284
+#: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
 msgstr "Lëviz skedën aktuale në një dritare tjetër"
 
