@@ -285,15 +285,14 @@ static void
 zoom_cb (EphyTab *tab, GParamSpec *pspec, EphyEmbed *embed)
 {
 	EphyNode *host;
-	char *address;
+	const char *address;
 	GValue value = { 0, };
 
-	ephy_embed_get_location (embed, TRUE, &address);
+	address = ephy_tab_get_location (tab);
 
 	LOG ("zoom_cb address '%s' zoom %f", address, ephy_tab_get_zoom (tab))
 
 	host = get_host_node (address);
-	g_free (address);
 	if (host == NULL) return;
 
 	g_value_init (&value, G_TYPE_FLOAT);

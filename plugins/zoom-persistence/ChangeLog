@@ -1,3 +1,11 @@
 2003-08-04  Christian Persch  <chpe@cvs.gnome.org>
 
+	* zoom-persistence.c: (zoom_cb):
+
+	Use ephy_tab_get_location() instead of ephy_embed_get_location(), because
+	for some reason the embed still returns the old address even after the
+	ge_location signal delivered a new address.
+
+2003-08-04  Christian Persch  <chpe@cvs.gnome.org>
+
 	* Initial checkin.
