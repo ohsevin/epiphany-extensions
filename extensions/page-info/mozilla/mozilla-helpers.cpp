@@ -795,8 +795,11 @@ PageInfoHelper::WalkTree (nsIDOMDocument *aDocument)
   rv = EphyUtils::NewURI (getter_AddRefs (mBaseURI), spec, mDocCharset.get(), nsnull);
   if (NS_FAILED (rv) || !mBaseURI) return;
 
+  nsCOMPtr<nsIDOMNode> rootNode (do_QueryInterface (htmlDoc));
+  if (!rootNode) return;
+
   nsCOMPtr<nsIDOMTreeWalker> walker;
-  rv = trav->CreateTreeWalker(htmlDoc,
+  rv = trav->CreateTreeWalker(rootNode,
                               nsIDOMNodeFilter::SHOW_ELEMENT,
                               nsnull,
                               PR_TRUE,
