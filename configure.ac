@@ -66,10 +66,10 @@ dnl ********************************
 dnl pkg config checks
 dnl ********************************
 
-EPIPHANY_REQUIRED=1.1.3
+EPIPHANY_REQUIRED=1.1.5
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.3.1
-LIBGTK_REQUIRED=2.3.1
+LIBGTK_REQUIRED=2.3.2
 
 AC_SUBST(EPIPHANY_REQUIRED)
 AC_SUBST(LIBXML_REQUIRED)

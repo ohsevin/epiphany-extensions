@@ -1,5 +1,11 @@
 2004-01-31  Christian Persch  <chpe@cvs.gnome.org>
 
+	* configure.ac:
+
+	Up gtk+ dependency to 2.3.2, and epiphany dependency to 1.1.5.
+
+2004-01-31  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/error-viewer/ephy-error-viewer-extension.c:
 	(update_sgml_validator_action):
 
