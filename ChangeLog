@@ -1,5 +1,11 @@
 2004-08-08  Christian Persch  <chpe@cvs.gnome.org>
 
+	* configure.ac:
+
+	Depend on Epiphany latest cvs version.
+
+2004-08-08  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/certificates/ephy-certificates-extension.c:
 	(manage_certificates_cb):
 

@@ -71,7 +71,7 @@ dnl ********************************
 dnl pkg config checks
 dnl ********************************
 
-EPIPHANY_REQUIRED=1.3.1
+EPIPHANY_REQUIRED=1.3.4.90
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.4.0
 LIBGTK_REQUIRED=2.4.0
