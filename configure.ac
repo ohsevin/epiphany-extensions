@@ -54,7 +54,8 @@ dnl AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 AC_SUBST(AM_CXXFLAGS)
 
 GNOME_DEBUG_CHECK
-GNOME_COMPILE_WARNINGS(error)
+GNOME_COMPILE_WARNINGS([error])
+GNOME_CXX_WARNINGS
 
 dnl ********************************
 dnl Internationalisation
@@ -312,6 +313,10 @@ AC_MSG_RESULT([variant $variant])
 
 CXXFLAGS=$_SAVE_CXXFLAGS
 AC_LANG_POP(C++)
+
+dnl set warning flags
+CFLAGS="$CFLAGS $WARN_CFLAGS"
+CXXFLAGS="$CXXFLAGS $WARN_CXXFLAGS -Wconversion -Wpointer-arith -Wcast-align -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor"
 
 dnl *******************************
 dnl Misc things
