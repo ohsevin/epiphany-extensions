@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-05-31 13:15+0200\n"
-"PO-Revision-Date: 2004-02-01 10:01+0100\n"
+"POT-Creation-Date: 2004-06-13 09:37+0200\n"
+"PO-Revision-Date: 2004-06-13 09:49+0200\n"
 "Last-Translator: Marcel Telka <marcel@telka.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
@@ -18,19 +18,17 @@ msgstr ""
 
 #: extensions/certificates/ephy-certificates-extension.c:160
 msgid "Certificate Manager"
-msgstr ""
+msgstr "Správca certifikátov"
 
 #. stock icon
 #: extensions/certificates/ephy-certificates-extension.c:276
-#, fuzzy
 msgid "Manage _Certificates"
-msgstr "_Certifikát servera"
+msgstr "Spravovať _certifikáty"
 
 #. shortcut key
 #: extensions/certificates/ephy-certificates-extension.c:278
-#, fuzzy
 msgid "Manage your certificates"
-msgstr "_Certifikát servera"
+msgstr "Spravovať vaše certifikáty"
 
 #. stock icon
 #: extensions/certificates/ephy-certificates-extension.c:286
@@ -44,7 +42,7 @@ msgstr "Zobraziť cerifikát www servera"
 
 #: extensions/error-viewer/ephy-error-viewer-extension.c:88
 msgid "Check _HTML"
-msgstr ""
+msgstr "Kontrolovať _HTML"
 
 #. shortcut key
 #: extensions/error-viewer/ephy-error-viewer-extension.c:90
@@ -53,13 +51,12 @@ msgstr "Zobraziť HTML chyby v dialógovom okne zobrazovača chýb"
 
 #: extensions/error-viewer/ephy-error-viewer-extension.c:95
 msgid "Check _Links"
-msgstr ""
+msgstr "Kontrolovať _odkazy"
 
 #. shortcut key
 #: extensions/error-viewer/ephy-error-viewer-extension.c:97
-#, fuzzy
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
-msgstr "Zobraziť HTML chyby v dialógovom okne zobrazovača chýb"
+msgstr "Zobraziť neplatné hypertextové odkazy v dialógovom okne zobrazovača chýb"
 
 #: extensions/error-viewer/ephy-error-viewer-extension.c:101
 msgid "_Error Viewer"
@@ -85,6 +82,8 @@ msgid ""
 "Error:\n"
 "%s"
 msgstr ""
+"Chyba:\n"
+"%s"
 
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:90
 #, c-format
@@ -99,8 +98,9 @@ msgstr ""
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Nájdených %d neplatných odkazov"
+msgstr[1] "Nájdený %d neplatný odkaz"
+msgstr[2] "Nájdené %d neplanté odkazy"
 
 #: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
 #, c-format
@@ -108,15 +108,18 @@ msgid ""
 "Link error in %s:\n"
 "%s is unavailable."
 msgstr ""
+"Chyba odkazu v %s:\n"
+"%s je nedostupné."
 
 #: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Kontrolujem %d odkazov na %s"
+msgstr[1] "Kontrolujem %d odkaz na %s"
+msgstr[2] "Kontrolujem %d odkazy na %s"
 
-#: extensions/error-viewer/opensp/validate.cpp:167
+#: extensions/error-viewer/opensp/validate.cpp:168
 #, c-format
 msgid ""
 "HTML error in %s on line %s:\n"
@@ -129,58 +132,54 @@ msgstr ""
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Nájdených %d chýb"
+msgstr[1] "Nájdená %d chyba"
+msgstr[2] "Nájdené %d chyby"
 
 #: extensions/error-viewer/sgml-validator.c:169
-#, fuzzy, c-format
+#, c-format
 msgid "HTML Validation of %s complete"
-msgstr ""
-"Overenie HTML pre %s ukončené\n"
-"Nájdených %d chýb"
+msgstr "Overenie HTML pre %s ukončené"
 
 #: extensions/error-viewer/sgml-validator.c:227
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "HTML error in %s:\n"
 "%s"
 msgstr ""
-"HTML chyba v %s na riadku %s:\n"
+"HTML chyba v %s:\n"
 "%s"
 
 #: extensions/error-viewer/sgml-validator.c:229
 #: extensions/error-viewer/sgml-validator.c:245
-#, fuzzy
 msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
 msgstr ""
-"HTML chyba v %s:\n"
-"Doctype je XHTML, ale typ obsahu je text/html"
+"Typ dokumentu (Doctype) je \"XHTML\", ale typ obsahu je \"text/html\". Použite "
+"namiesto toho \"application/xhtml+xml\"."
 
 #: extensions/error-viewer/sgml-validator.c:243
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "HTML warning in %s:\n"
 "%s"
 msgstr ""
-"HTML chyba v %s na riadku %s:\n"
+"HTML upozornenie v %s:\n"
 "%s"
 
 #: extensions/error-viewer/sgml-validator.c:360
-#, fuzzy, c-format
+#, c-format
 msgid "HTML error in %s:"
-msgstr ""
-"HTML chyba v %s na riadku %s:\n"
-"%s"
+msgstr "HTML chyba v %s:"
 
 #: extensions/error-viewer/sgml-validator.c:368
 msgid "Invalid character encoding"
-msgstr ""
+msgstr "Neplatné kódovanie znakov"
 
 #: extensions/error-viewer/sgml-validator.c:373
 msgid "Unknown error while converting to UTF-8"
-msgstr ""
+msgstr "Neznáma chyba pri konverzii na UTF-8"
 
 #: extensions/error-viewer/sgml-validator.c:435
 #, c-format
@@ -189,22 +188,22 @@ msgid ""
 "No valid doctype specified."
 msgstr ""
 "HTML chyba v %s:\n"
-"Nebol zadany platný doctype."
+"Nebol zadany platný typ dokumentu (doctype)."
 
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
 msgid "Popup _Windows"
-msgstr ""
+msgstr "Vyskakovacie _okná"
 
 #. shortcut key
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
 msgid "Show or hide unrequested popup windows from this site"
-msgstr ""
+msgstr "Zobraziť alebo skryť nevyžiadané vyskakovacie okná z tejto stránky"
 
 #: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
-#, fuzzy, c-format
+#, c-format
 msgid "%d popup window blocked"
 msgid_plural "%d popup windows blocked"
-msgstr[0] "%d vyskakovacích oknien blokovaných"
+msgstr[0] "%d vyskakovacích okien blokovaných"
 msgstr[1] "%d vyskakovacie okno blokované"
 msgstr[2] "%d vyskakovacie okná blokované"
 
@@ -223,19 +222,3 @@ msgstr "Presunúť kartu do okna"
 #: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
 msgstr "Presunúť aktuálnu kartu do iného okna"
-
-#~ msgid "_Validate"
-#~ msgstr "_Overiť"
-
-#~ msgid ""
-#~ "HTML warning in %s:\n"
-#~ "Doctype is XHTML but content type is text/html"
-#~ msgstr ""
-#~ "HTML upozornenie v %s:\n"
-#~ "Doctype je XHTML, ale typ obsahu je text/html"
-
-#~ msgid "Blo_ck Popups from this Site"
-#~ msgstr "Blokovať _vyskakovacie okná z tohoto servera"
-
-#~ msgid "Block or unblock popup windows"
-#~ msgstr "Zablokovať alebo odblokovať vyskakovacie okná"
