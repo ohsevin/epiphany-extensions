@@ -1,6 +1,11 @@
 NOTE: Please also update the translations on "gnome-2-10" branch,
 NOTE: and keep this note at the top of this file.
 	
+2005-04-01  Steve Murphy  <murf@e-tools.com>
+
+        * rw.po: Added Kinyarwanda translation.
+	* LINGUAS: Added "rw" to the list.
+
 2005-04-201 Pablo Saratxaga  <pablo@mandrakesoft.com>
 
 	* wa.po: Updated Walloon file
