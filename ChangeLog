@@ -1,3 +1,14 @@
+2005-03-03  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c
+
+	Bad ephy-link.h include. Use the Epiphany's include directory instead.
+
+	* extensions/adblock/mozilla/MozAdBlocker.cpp:
+	(MozAdBlocker::ShouldLoad)
+
+	Fix typo.
+	
 2005-03-03  Christian Persch  <chpe@cvs.gnome.org>
 
 	* include/Makefile.am:

@@ -164,9 +164,9 @@ NS_IMETHODIMP MozAdBlocker::ShouldLoad(PRInt32 contentType,
 				       nsIDOMWindow *window,
 				       PRBool *_retval)
 {
-	NS_ENSURE_ARG (aContentLocation);
+	NS_ENSURE_ARG (contentLocation);
 
-	return ShouldLoadURI(contentLocation, ctxt, _retval);
+	return ShouldLoadURI(contentLocation, ctxt, contentType, _retval);
 }
 
 /* boolean shouldProcess (in PRInt32 contentType, in nsIURI documentLocation, in nsISupports ctxt, in nsIDOMWindow window); */
