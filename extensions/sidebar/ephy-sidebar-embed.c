@@ -173,10 +173,10 @@ show_context_menu (EphySidebarEmbed *sbembed,
 	const GValue *value;
 	gboolean framed, has_background, can_open_in_new;
 	GtkWidget *widget;
-	EphyEmbedEventType type;
 	EphyWindow *window = sbembed->priv->window;
 	gboolean hide_edit_actions = TRUE;
 	gboolean can_copy, can_cut, can_paste;
+	guint button;
 
 	ephy_embed_event_get_property (event, "framed_page", &value);
 	framed = g_value_get_int (value);
@@ -250,17 +250,18 @@ show_context_menu (EphySidebarEmbed *sbembed,
 	g_signal_connect (widget, "hide",
 			  G_CALLBACK (hide_embed_popup_cb), manager);
 
-	type = ephy_embed_event_get_event_type (event);
-	if (type == EPHY_EMBED_EVENT_KEY)
+	button = ephy_embed_event_get_button (event);
+	if (button == 0)
 	{
 		gtk_menu_popup (GTK_MENU (widget), NULL, NULL,
 				popup_menu_at_coords, event, 2,
 				gtk_get_current_event_time ());
+		gtk_menu_shell_select_first (GTK_MENU_SHELL (widget), FALSE);
 	}
 	else
 	{
 		gtk_menu_popup (GTK_MENU (widget), NULL, NULL,
-				NULL, NULL, 2,
+				NULL, NULL, button,
 				gtk_get_current_event_time ());
 	}
 }
@@ -306,9 +307,8 @@ embed_mouse_click_cb (EphyEmbed *embed,
 		      EphyEmbedEvent *event,
 		      EphySidebarEmbed *sbembed)
 {
-	EphyEmbedEventType type;
 	EphyEmbedEventContext context;
-	guint modifier;
+	guint button, modifier;
 	gboolean handled = TRUE;
 	gboolean with_control, with_shift, is_left_click, is_middle_click;
 	gboolean is_link, is_image, is_middle_clickable;
@@ -317,17 +317,17 @@ embed_mouse_click_cb (EphyEmbed *embed,
 
 	g_return_val_if_fail (EPHY_IS_EMBED_EVENT(event), FALSE);
 
-	type = ephy_embed_event_get_event_type (event);
+	button = ephy_embed_event_get_button (event);
 	context = ephy_embed_event_get_context (event);
 	modifier = ephy_embed_event_get_modifier (event);
 
 	LOG ("ephy_sidebar_mouse_click_cb: type %d, context %x, modifier %x",
-	     type, context, modifier)
+	     button, context, modifier)
 
 	with_control = (modifier & GDK_CONTROL_MASK) != 0;
 	with_shift = (modifier & GDK_SHIFT_MASK) != 0;
-	is_left_click = (type == EPHY_EMBED_EVENT_MOUSE_BUTTON1);
-	is_middle_click = (type == EPHY_EMBED_EVENT_MOUSE_BUTTON2);
+	is_left_click = (button == 1);
+	is_middle_click = (button == 2);
 
 	is_link = (context & EPHY_EMBED_CONTEXT_LINK) != 0;
 	is_image = (context & EPHY_EMBED_CONTEXT_IMAGE) != 0;

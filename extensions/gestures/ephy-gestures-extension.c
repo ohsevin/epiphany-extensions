@@ -260,7 +260,6 @@ gesture_performed_cb (EphyGesture *gesture,
 		EphyEmbed *embed;
 		EphyEmbedEvent *event;
 		gint handled = FALSE;
-		guint type;
 
 		embed = ephy_window_get_active_embed (window);
 		g_return_if_fail (EPHY_IS_EMBED (embed));
@@ -268,16 +267,8 @@ gesture_performed_cb (EphyGesture *gesture,
 		event = ephy_gesture_get_event (gesture);
 		g_return_if_fail (EPHY_IS_EMBED_EVENT (event));
 
-		type = ephy_embed_event_get_event_type (event);
-
 		g_signal_emit_by_name (embed, "ge_dom_mouse_click", event,
 				       &handled);
-
-		if (handled == FALSE && type == EPHY_EMBED_EVENT_MOUSE_BUTTON3)
-		{
-			g_signal_emit_by_name (embed, "ge_context_menu",
-					       event, &handled);
-		}
 	}
 	else
 	{
@@ -304,14 +295,13 @@ dom_mouse_down_cb (EphyEmbed *embed,
 		   EphyGesturesExtension *extension)
 {
         EphyEmbedEventContext context;
-	EphyEmbedEventType type;
+	guint button;
 	gint handled = FALSE;
 
-	type = ephy_embed_event_get_event_type (event);
+	button = ephy_embed_event_get_button (event);
         context = ephy_embed_event_get_context (event);
 
-	if (type == EPHY_EMBED_EVENT_MOUSE_BUTTON2 &&
-            !(context & EPHY_EMBED_CONTEXT_INPUT))
+	if (button == 2 && !(context & EPHY_EMBED_CONTEXT_INPUT))
 	{
 		EphyGesture *gesture;
 		GtkWidget *toplevel;
