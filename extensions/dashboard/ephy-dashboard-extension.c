@@ -34,6 +34,7 @@
 #include <epiphany/ephy-shell.h>
 #include <epiphany/ephy-node.h>
 #include <epiphany/ephy-bookmarks.h>
+#include <epiphany/ephy-embed-factory.h>
 
 #include <gmodule.h>
 
