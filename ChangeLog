@@ -1,5 +1,12 @@
 2004-06-23  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
+	(unregister_mozilla), (register_mozilla):
+
+	Same thing for the popup-blocker extension.
+
+2004-06-23  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/certificates/mozilla/mozilla-embed-certificate.cpp:
 
 	Destroy our helper class on ::destroy on the embed, not on

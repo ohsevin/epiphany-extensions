@@ -390,11 +390,13 @@ create_statusbar_icon (EphyWindow *window)
 }
 
 static void
-unregister_mozilla (PopupListenerFreeData *data)
+unregister_mozilla (GtkObject *embed, PopupListenerFreeData *data)
 {
 	LOG ("unregister_mozilla with freeing data %p", data)
 
 	g_return_if_fail (data != NULL);
+
+	g_object_set_data (G_OBJECT (embed),  "popup-blocker-listener-data", NULL);
 
 	mozilla_unregister_popup_listener (data);
 }
@@ -430,8 +432,10 @@ register_mozilla (EphyEmbed *embed)
 
 	LOG ("Registered listener; freeing data is at %p", data)
 
-	g_object_set_data_full (G_OBJECT (embed), "popup-blocker-listener-data",
-				data, (GDestroyNotify) unregister_mozilla);
+	g_signal_connect (embed, "destroy",
+			  G_CALLBACK (unregister_mozilla), data);
+
+	g_object_set_data (G_OBJECT (embed), "popup-blocker-listener-data", data);
 }
 
 static void
