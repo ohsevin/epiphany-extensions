@@ -316,17 +316,17 @@ dom_mouse_down_cb (EphyEmbed *embed,
             !(context & EMBED_CONTEXT_INPUT))
 	{
 		EphyGesture *gesture;
-		EphyWindow *window;
+		GtkWidget *toplevel;
 		EphyTab *tab;
 		guint x, y;
 
 		tab = ephy_tab_for_embed (embed);
 		g_return_if_fail (EPHY_IS_TAB (tab));
 
-		window = ephy_tab_get_window (tab);
-		g_return_if_fail (EPHY_IS_WINDOW (window));
+		toplevel = gtk_widget_get_toplevel (GTK_WIDGET (tab));
+		g_return_if_fail (toplevel != NULL);
 
-		gesture = ephy_gesture_new (GTK_WIDGET (window), event);
+		gesture = ephy_gesture_new (toplevel, event);
 
 		g_signal_connect (gesture, "gesture-performed",
 				  G_CALLBACK (gesture_performed_cb),

@@ -1,3 +1,36 @@
+2004-04-19  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/certificates/Makefile.am:
+	* extensions/dashboard/Makefile.am:
+	* extensions/dashboard/dashboard-frontend-xmlwriter.c:
+	* extensions/error-viewer/Makefile.am:
+	* extensions/error-viewer/error-viewer.c: (error_viewer_use),
+	(error_viewer_unuse):
+	* extensions/error-viewer/link-checker.c: (link_checker_check),
+	(link_checker_use), (link_checker_unuse):
+	* extensions/error-viewer/link-checker.h:
+	* extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp
+	:
+	* extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.h:
+	* extensions/error-viewer/mozilla/mozilla-link-checker.cpp:
+	* extensions/gestures/Makefile.am:
+	* extensions/gestures/ephy-gestures-extension.c:
+	(dom_mouse_down_cb):
+	* extensions/popup-blocker/Makefile.am:
+	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
+	(get_icon_for_window), (update_action), (update_all_actions),
+	(clear_one_permission_info), (clear_popup_permissions),
+	(location_cb), (action_activate_cb), (unregister_mozilla),
+	(register_mozilla), (new_window_cb), (tab_added_cb),
+	(tab_removed_cb), (sync_active_tab_cb), (impl_attach_window),
+	(impl_detach_window):
+	* extensions/sample-mozilla/Makefile.am:
+	* extensions/sample/Makefile.am:
+	* extensions/tabsmenu/Makefile.am:
+	* extensions/toolbar-extras/Makefile.am:
+
+	Merged all changes from HEAD.
+
 2004-04-14  Artur Flinta  <aflinta@cvs.gnome.org>
                                                                                 
         * configure.ac: 

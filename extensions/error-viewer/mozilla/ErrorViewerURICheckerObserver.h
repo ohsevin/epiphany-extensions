@@ -18,8 +18,10 @@
  *  $Id$
  */
 
+#include "link-checker.h"
+
+#include <nsIDOMNode.h>
 #include <nsIRequestObserver.h>
-#include <glib-object.h>
 
 /* Header file */
 class ErrorViewerURICheckerObserver : public nsIRequestObserver
@@ -32,7 +34,12 @@ public:
   virtual ~ErrorViewerURICheckerObserver();
   /* additional members */
 
-  GObject *mChecker;
+  nsresult Init (LinkChecker *aChecker, const char *aFilename);
+  nsresult AddNode (nsIDOMNode *node);
+  nsresult DoneAdding (void);
+
+private:
+  LinkChecker *mChecker;
   char *mFilename;
   PRUint32 mNumLinksChecked;
   PRUint32 mNumLinksInvalid;

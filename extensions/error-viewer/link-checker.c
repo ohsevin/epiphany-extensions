@@ -212,38 +212,21 @@ link_checker_check (LinkChecker *checker,
 	g_return_if_fail (IS_LINK_CHECKER (checker));
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
-	error_viewer_use (checker->priv->error_viewer);
-
 	mozilla_check_links (checker, embed);
 }
 
 void
-link_checker_update_progress (LinkChecker *checker,
-			      const char *filename,
-			      int num_checked,
-			      int num_invalid,
-			      int num_total)
+link_checker_use (LinkChecker *checker)
 {
-	if (num_checked == num_total)
-	{
-		char *msg, *part1, *part2;
+	g_return_if_fail (IS_LINK_CHECKER (checker));
 
-		error_viewer_unuse (checker->priv->error_viewer);
+	error_viewer_use (checker->priv->error_viewer);
+}
 
-		if (num_checked == 0) return;
+void
+link_checker_unuse (LinkChecker *checker)
+{
+	g_return_if_fail (IS_LINK_CHECKER (checker));
 
-		part1 = g_strdup_printf ("Link check of %s complete", filename);
-		part2 = g_strdup_printf (ngettext ("Found %d invalid link",
-						   "Found %d invalid links",
-						   num_invalid),
-					 num_invalid);
-
-		msg = g_strconcat (part1, "\n", part2, NULL);
-
-		link_checker_append (checker, ERROR_VIEWER_INFO, msg);
-
-		g_free (msg);
-		g_free (part1);
-		g_free (part2);
-	}
+	error_viewer_unuse (checker->priv->error_viewer);
 }

@@ -309,12 +309,16 @@ update_cursor (ErrorViewer *dialog)
 
 void error_viewer_use (ErrorViewer *dialog)
 {
+	g_return_if_fail (IS_ERROR_VIEWER (dialog));
+
 	dialog->priv->num_active++;
 	update_cursor (dialog);
 }
 
 void error_viewer_unuse (ErrorViewer *dialog)
 {
+	g_return_if_fail (IS_ERROR_VIEWER (dialog));
+
 	dialog->priv->num_active--;
 	update_cursor (dialog);
 }
