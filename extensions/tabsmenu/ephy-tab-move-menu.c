@@ -27,6 +27,7 @@
 
 #include <epiphany/ephy-session.h>
 #include <epiphany/ephy-shell.h>
+#include <epiphany/ephy-notebook.h>
 
 #include "ephy-debug.h"
 

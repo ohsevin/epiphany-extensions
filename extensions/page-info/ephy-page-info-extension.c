@@ -29,6 +29,7 @@
 #include <epiphany/ephy-extension.h>
 #include <epiphany/ephy-window.h>
 #include <epiphany/ephy-embed.h>
+#include <epiphany/ephy-notebook.h>
 
 #include <gtk/gtkaction.h>
 #include <gtk/gtkactiongroup.h>
