@@ -1,6 +1,5 @@
 /*
  *  Copyright (C) 2003 Marco Pesenti Gritti
- *  Copyright (C) 2003 Sun Microsystems, Inc. (parts copied from eggstatusicon.c)
  *  Copyright (C) 2003, 2004 Christian Persch
  *
  *  This program is free software; you can redistribute it and/or modify
@@ -372,11 +371,24 @@ button_popup_menu_cb (GtkWidget *button,
 	return TRUE;
 }
 
-static GtkActionEntry action_entries [] =
+static void
+edit_bookmarks_cb (GtkAction *action,
+		   EphyBookmarksTrayExtension *extension)
 {
-	{ "Bookmarks", NULL, "" },
-	{ "Context", NULL, "" },
-};
+        GtkWidget *editor;
+
+        editor = ephy_shell_get_bookmarks_editor (ephy_shell);
+	/* FIXME set parent:
+	EphySession *session;
+	EphyWindow *window;
+	session = EPHY_SESSION (ephy_shell_get_session (ephy_shell));
+	window = ephy_session_get_active_window (session);
+
+        ephy_bookmarks_editor_set_parent (EPHY_BOOKMARKS_EDITOR (editor),
+                                          window ? GTK_WIDGET (window) : NULL);
+	*/
+        gtk_window_present (GTK_WINDOW (editor));
+}
 
 static OpenInType
 type_from_prefs (void)
@@ -411,6 +423,15 @@ open_in_changed_cb (GtkAction *action,
 	eel_gconf_set_string (CONF_OPEN_IN,
 			      types[extension->priv->open_in].text);
 }
+
+static GtkActionEntry action_entries [] =
+{
+	{ "Bookmarks", NULL, "" },
+	{ "Context", NULL, "" },
+	{ "EditBookmarks", EPHY_STOCK_BOOKMARKS, N_("_Edit Bookmarks"), NULL,
+          N_("Open the bookmarks window"),
+          G_CALLBACK (edit_bookmarks_cb) },
+};
 
 static GtkRadioActionEntry radio_entries [] =
 {

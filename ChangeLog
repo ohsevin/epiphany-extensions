@@ -1,3 +1,12 @@
+2004-10-29  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/bookmarks-tray/Makefile.am:
+	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:
+	(edit_bookmarks_cb):
+	* extensions/bookmarks-tray/ephy-bookmarks-tray-ui.xml:
+
+	Add "Edit Bookmarks" to context menu.
+
 2004-10-28  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/extensions-manager-ui/extensions-manager-ui.c:

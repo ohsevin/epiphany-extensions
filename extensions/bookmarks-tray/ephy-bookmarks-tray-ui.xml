@@ -6,6 +6,8 @@
 	<menuitem name="OpenInCurrentItem" action="OpenInCurrent"/>
 	<menuitem name="OpenInNewTabItem" action="OpenInNewTab"/>
 	<menuitem name="OpenInNewWindowItem" action="OpenInNewWindow"/>
+	<separator name="Sep0"/>
+	<menuitem name="EditBookmarksItem" action="EditBookmarks"/>
 </popup>
 
 </ui>

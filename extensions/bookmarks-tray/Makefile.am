@@ -37,4 +37,8 @@ extensionxml_DATA = $(extensionxml_in_files:.xml.in.in=.xml)
 CLEANFILES = $(extensionxml_DATA)
 DISTCLEANFILES = $(extensionxml_DATA)
 
-EXTRA_DIST = $(ui_xml_DATA) $(extensionxml_in_files)
+EXTRA_DIST = \
+	$(ui_xml_DATA)			\
+	$(extensionxml_in_files)	\
+	README				\
+	patch.diff
