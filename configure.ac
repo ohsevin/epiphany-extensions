@@ -62,7 +62,7 @@ dnl ********************************
 dnl Internationalisation
 dnl ********************************
 
-ALL_LINGUAS="ca cs da de el en_GB es fr hr hu it ja lt nl no pa pt pt_BR ru sk sq sr sr@Latn sv zh_CN"
+ALL_LINGUAS="ca cs da de el en_GB es fr hr hu it ja lt nl no pa pt pt_BR ru sk sq sr sr@Latn sv wa zh_CN"
 
 GETTEXT_PACKAGE=epiphany-extensions-1.0
 AC_SUBST(GETTEXT_PACKAGE)
