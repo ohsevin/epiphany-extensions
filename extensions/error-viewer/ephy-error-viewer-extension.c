@@ -382,9 +382,15 @@ impl_attach_window (EphyExtension *extension,
 					   free_error_viewer_cb_data);
 
 	gtk_ui_manager_insert_action_group (manager, action_group, 0);
-	g_object_unref (action_group);
 
 	merge_id = gtk_ui_manager_new_merge_id (manager);
+
+	g_object_set_data (G_OBJECT (window),
+			   "ephy_error_viewer_extension_action_group",
+			   action_group);
+	g_object_set_data (G_OBJECT (window),
+			   "ephy_error_viewer_extension_merge_id",
+			   GUINT_TO_POINTER (merge_id));
 
 	gtk_ui_manager_add_ui (manager, merge_id, "/menubar/ToolsMenu",
 			       "ErrorViewerSep", NULL,
@@ -417,9 +423,41 @@ static void
 impl_detach_window (EphyExtension *extension,
 		    EphyWindow *window)
 {
+	GtkUIManager *manager;
+	GtkActionGroup *action_group;
+	guint merge_id;
 #ifdef HAVE_OPENSP
 	GtkWidget *notebook;
+#endif /* HAVE_OPENSP */
 
+	/* Remove UI */
+	manager = GTK_UI_MANAGER (window->ui_merge);
+
+	action_group = g_object_get_data
+		(G_OBJECT (window),
+		 "ephy_error_viewer_extension_action_group");
+	merge_id = GPOINTER_TO_UINT (g_object_get_data
+		(G_OBJECT (window), "ephy_error_viewer_extension_merge_id"));
+
+	g_return_if_fail (GTK_IS_ACTION_GROUP (action_group));
+	g_return_if_fail (merge_id != 0);
+
+	gtk_ui_manager_remove_ui (manager, merge_id);
+	gtk_ui_manager_remove_action_group (manager, action_group);
+
+	/* FIXME: Why does this crash? Am I (or is GTK) making a mistake? */
+	/* g_object_unref (action_group); */
+
+	g_object_set_data (G_OBJECT (window),
+			   "ephy_error_viewer_extension_action_group",
+			   NULL);
+
+	g_object_set_data (G_OBJECT (window),
+			   "ephy_error_viewer_extension_merge_id",
+			   NULL);
+
+#ifdef HAVE_OPENSP
+	/* Remove notification signals for HTML/link checking */
 	notebook = ephy_window_get_notebook (window);
 
 	g_signal_handlers_disconnect_by_func
