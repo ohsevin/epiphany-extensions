@@ -10,6 +10,7 @@ How to choose which extensions to build:
 
 where ext1, ext2 ... are one of the following:
 
+error-viewer		Error viewer extension [i.e., Javascript errors]
 gestures		Gestures extension
 popup-blocker		Popup blocker extension
 tabsmenu		Tabs Menu extension

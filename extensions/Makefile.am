@@ -4,6 +4,10 @@ if ENABLE_DASHBOARD_EXTENSION
 SUBDIRS += dashboard
 endif
 
+if ENABLE_ERROR_VIEWER_EXTENSION
+SUBDIRS += error-viewer
+endif
+
 if ENABLE_GESTURES_EXTENSION
 SUBDIRS += gestures
 endif
@@ -32,6 +36,6 @@ endif
 #SUBDIRS += security
 #endif
 
-DIST_SUBDIRS = dashboard gestures popup-blocker sample tabsmenu
+DIST_SUBDIRS = dashboard error-viewer gestures popup-blocker sample tabsmenu
 
 EXTRA_DIST =

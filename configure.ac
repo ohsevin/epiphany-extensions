@@ -18,7 +18,7 @@ dnl $Id$
 
 AC_PREREQ(2.52)
 
-AC_INIT(epiphany-extensions, 0.6.90, [http://lists.gnome.org/mailman/listinfo/epiphany-list])
+AC_INIT(epiphany-extensions, 0.6.91, [http://lists.gnome.org/mailman/listinfo/epiphany-list])
 
 AC_CONFIG_SRCDIR(extensions)
 AM_CONFIG_HEADER(config.h)
@@ -45,6 +45,7 @@ AC_PROG_MAKE_SET
 
 dnl AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 
+AC_SUBST(AM_CXXFLAGS)
 GNOME_DEBUG_CHECK
 GNOME_COMPILE_WARNINGS(error)
 
@@ -107,10 +108,10 @@ dnl *******************************
 
 AC_MSG_CHECKING(extensions to build)
 
-all_extensions="dashboard,gestures,popup-blocker,sample,sample-mozilla,tabsmenu"
-all_useful_extensions="dashboard,gestures,popup-blocker,tabsmenu"
-default_extensions="gestures,popup-blocker,tabsmenu"
-mozilla_dependent_extensions="sample-mozilla"
+all_extensions="dashboard,error-viewer,gestures,popup-blocker,sample,sample-mozilla,tabsmenu"
+all_useful_extensions="dashboard,error-viewer,gestures,popup-blocker,tabsmenu"
+default_extensions="error-viewer,gestures,popup-blocker,tabsmenu"
+mozilla_dependent_extensions="error-viewer,sample-mozilla"
 
 dnl due to an autoconf bug, commas in the first arg to
 dnl AC_HELP_STRING cause problems.
@@ -150,6 +151,7 @@ IFS="$ephyext_save_ifs"
 
 AM_CONDITIONAL(ENABLE_DASHBOARD_EXTENSION, echo "$extensions" | egrep '(^|,)dashboard($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_GESTURES_EXTENSION, echo "$extensions" | egrep '(^|,)gestures($|,)' > /dev/null)
+AM_CONDITIONAL(ENABLE_ERROR_VIEWER_EXTENSION, echo "$extensions" | egrep '(^|,)error-viewer($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_POPUP_BLOCKER_EXTENSION, echo "$extensions" | egrep '(^|,)popup-blocker($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SAMPLE_EXTENSION, echo "$extensions" | egrep '(^|,)sample($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SAMPLE_MOZILLA_EXTENSION, echo "$extensions" | egrep '(^|,)sample-mozilla($|,)' > /dev/null)
@@ -288,6 +290,8 @@ include/Makefile
 extensions/Makefile
 extensions/dashboard/Makefile
 extensions/gestures/Makefile
+extensions/error-viewer/Makefile
+extensions/error-viewer/mozilla/Makefile
 extensions/popup-blocker/Makefile
 extensions/sample/Makefile
 extensions/sample-mozilla/Makefile

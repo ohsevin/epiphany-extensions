@@ -1,3 +1,45 @@
+2004-01-22  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* MAINTAINERS:
+	* README:
+	* autogen.sh:
+	* configure.ac:
+	* extensions/Makefile.am:
+	* extensions/error-viewer/.cvsignore:
+	* extensions/error-viewer/Makefile.am:
+	* extensions/error-viewer/README:
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	(ephy_error_viewer_extension_get_type),
+	(ephy_error_viewer_extension_register_type),
+	(ephy_error_viewer_extension_init),
+	(ephy_error_viewer_extension_finalize),
+	(ephy_error_viewer_extension_class_init),
+	(ephy_error_viewer_extension_show_viewer), (impl_attach_window),
+	(impl_detach_window), (ephy_error_viewer_extension_iface_init):
+	* extensions/error-viewer/ephy-error-viewer-extension.h:
+	* extensions/error-viewer/error-viewer.c: (error_viewer_get_type),
+	(error_viewer_new), (error_viewer_class_init),
+	(error_viewer_append), (build_ui), (error_viewer_init),
+	(error_viewer_finalize), (error_viewer_clear_cb),
+	(error_viewer_close_cb):
+	* extensions/error-viewer/error-viewer.glade:
+	* extensions/error-viewer/error-viewer.h:
+	* extensions/error-viewer/extension.c: (register_module):
+	* extensions/error-viewer/mozilla/.cvsignore:
+	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:
+	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.h:
+	* extensions/error-viewer/mozilla/Makefile.am:
+	* extensions/error-viewer/mozilla/register-listener.cpp:
+	* extensions/error-viewer/mozilla/register-listener.h:
+	* po/POTFILES.in:
+
+	New Error Viewer extension. Will eventually be merged into the
+	much-needed Web Devel extension, whenever I find time to code it.
+
+	TODO: The extension never stops listening and it doesn't automatically
+	clear old GtkTreeView entries. So it's kind of like a memory leak.
+	Gotta fix that.
+
 2004-01-17  Kjartan Maraas  <kmaraas@gnome.org>
 
 	* configure.ac: Added "no" to ALL_LINGUAS.
