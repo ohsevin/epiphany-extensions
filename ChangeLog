@@ -1,3 +1,11 @@
+2004-09-18  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/sample-mozilla/sample-mozilla.c: (register_module):
+	* tools/copy-template:
+
+	Created copy-template script.
+	Renamed a 'Sample' to 'Sample2' in the sample-mozilla extension.
+
 2004-09-14  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/page-info/page-info-dialog.c:
