@@ -1,3 +1,18 @@
+2005-04-06  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/adblock/mozilla/MozAdBlocker.cpp:
+	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:
+	* extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:
+	* extensions/error-viewer/mozilla/mozilla-helpers.cpp:
+	* extensions/find/TypeAheadFind.cpp:
+	* extensions/find/mozilla/mozilla-find.cpp:
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+	* extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:
+	* extensions/smart-bookmarks/mozilla/mozilla-selection.cpp:
+
+	Fix for MOZILLA_INTERNAL_API change.
+
 2005-04-02  Christian Persch  <chpe@cvs.gnome.org>
 
 	* Makefile.am:
