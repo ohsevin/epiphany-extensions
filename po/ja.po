@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-02-13 14:16+0900\n"
-"PO-Revision-Date: 2005-02-13 14:08+0900\n"
+"POT-Creation-Date: 2005-04-02 23:33+0900\n"
+"PO-Revision-Date: 2005-04-02 23:30+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -84,8 +84,29 @@ msgid "_Pages"
 msgstr "ページ(_P)"
 
 #: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions.xml.in.in.h:1
 msgid "Actions"
 msgstr "アクション"
+
+#: ../extensions/actions/actions.xml.in.in.h:2
+msgid "Execute arbitrary commands from the context menu"
+msgstr "コンテキスト・メニューから任意のコマンドを実行します"
+
+#: ../extensions/actions/ephy-actions-extension.c:97
+msgid "_Actions"
+msgstr "アクション(_A)"
+
+#: ../extensions/actions/ephy-actions-extension.c:98
+msgid "Customize actions"
+msgstr "アクションをカスタマイズします"
+
+#: ../extensions/actions/ephy-actions-extension.c:409
+msgid "Could not run command"
+msgstr "コマンドを実行できませんでした"
+
+#: ../extensions/actions/ephy-actions-extension.c:412
+msgid "Could not Run Command"
+msgstr "コマンドを実行できませんでした"
 
 #: ../extensions/actions/ephy-actions-extension-editor-dialog.c:490
 msgid "No action selected."
@@ -111,21 +132,13 @@ msgstr "%s のプロパティ"
 msgid "Action Properties"
 msgstr "アクションのプロパティ"
 
-#: ../extensions/actions/ephy-actions-extension.c:97
-msgid "_Actions"
-msgstr "アクション(_A)"
+#: ../extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:1
+msgid "Add a bookmarks menu to the panel's notification area"
+msgstr "ブックマーク・メニューを GNOME パネルの通知スペースへ追加します"
 
-#: ../extensions/actions/ephy-actions-extension.c:98
-msgid "Customize actions"
-msgstr "アクションをカスタマイズします"
-
-#: ../extensions/actions/ephy-actions-extension.c:409
-msgid "Could not run command"
-msgstr "コマンドを実行できませんでした"
-
-#: ../extensions/actions/ephy-actions-extension.c:412
-msgid "Could not Run Command"
-msgstr "コマンドを実行できませんでした"
+#: ../extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:2
+msgid "Bookmarks Tray"
+msgstr "ブックマーク・トレイ"
 
 #: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
 msgid "_Edit Bookmarks"
@@ -159,9 +172,17 @@ msgstr "新しいウィンドウの中に開く(_W)"
 msgid "Open bookmarks in new a window"
 msgstr "新しいウィンドウの中にブックマークを開きます"
 
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:513
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:531
 msgid "Bookmarks"
 msgstr "ブックマーク"
+
+#: ../extensions/certificates/certificates.xml.in.in.h:1
+msgid "Certificates"
+msgstr "証明書の管理"
+
+#: ../extensions/certificates/certificates.xml.in.in.h:2
+msgid "View the page certificate and manage the certificates"
+msgstr "ページの証明書を表示したり管理します"
 
 #. stock icon
 #: ../extensions/certificates/ephy-certificates-extension.c:275
@@ -182,6 +203,14 @@ msgstr "サーバ証明書(_C)"
 #: ../extensions/certificates/ephy-certificates-extension.c:287
 msgid "Display the web server's certificate"
 msgstr "ウェブ・サーバの証明書を表示します"
+
+#: ../extensions/dashboard/dashboard.xml.in.in.h:1
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: ../extensions/dashboard/dashboard.xml.in.in.h:2
+msgid "Send browsing information to Dashboard"
+msgstr "ブラウザで表示した情報を Dashboard へ送信します"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
@@ -218,8 +247,16 @@ msgstr "クリア(_E)"
 msgid "Error Viewer"
 msgstr "エラー・ビューア"
 
+#: ../extensions/error-viewer/error-viewer.xml.in.in.h:1
+msgid "Error viewer"
+msgstr "エラー・ビューア"
+
+#: ../extensions/error-viewer/error-viewer.xml.in.in.h:2
+msgid "View error in web pages, validate web pages and check links"
+msgstr "ウエブ・ページのエラーを表示したり、リンクなどの妥当性を確認します"
+
 #. Don't bother looking for source lines -- they're not there
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:87
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:107
 #, c-format
 msgid ""
 "Error:\n"
@@ -228,7 +265,7 @@ msgstr ""
 "エラー:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:112
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:137
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -338,69 +375,103 @@ msgstr "拡張機能(_E)"
 msgid "Load and unload extensions"
 msgstr "Epiphany 拡張機能の有効/無効を設定します"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:357
 msgid "Enabled"
 msgstr "有効"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:362
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
 msgid "Description"
 msgstr "説明"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
 msgid "<b>Loaded Extensions</b>"
-msgstr "<b>ロードした拡張機能の一覧</b>"
+msgstr "<b>読み込んだ拡張機能の一覧</b>"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
 msgid "Extensions"
 msgstr "Epiphany 拡張機能"
 
-#: ../extensions/find/eggfindbar.c:133
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:1
+msgid "Activate and deactivate extensions"
+msgstr "拡張機能を有効/無効を設定します"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:2
+msgid "Extensions Manager"
+msgstr "拡張機能のマネージャ"
+
+#: ../extensions/find/eggfindbar.c:132
 msgid "Search string"
 msgstr "検索する文字列"
 
-#: ../extensions/find/eggfindbar.c:134
+#: ../extensions/find/eggfindbar.c:133
 msgid "The name of the string to be found"
 msgstr "検索する文字列の名前"
 
-#: ../extensions/find/eggfindbar.c:147
+#: ../extensions/find/eggfindbar.c:146
 msgid "Case sensitive"
 msgstr "大/小文字の区別"
 
-#: ../extensions/find/eggfindbar.c:148
+#: ../extensions/find/eggfindbar.c:147
 msgid "TRUE for a case sensitive search"
 msgstr "大/小文字を区別して検索する場合は TRUE"
 
-#: ../extensions/find/eggfindbar.c:155
+#: ../extensions/find/eggfindbar.c:154
 msgid "Highlight color"
 msgstr "強調色"
 
-#: ../extensions/find/eggfindbar.c:156
+#: ../extensions/find/eggfindbar.c:155
 msgid "Color of highlight for all matches"
 msgstr "検索で一致したものを強調表示する際の色"
 
-#: ../extensions/find/eggfindbar.c:162
+#: ../extensions/find/eggfindbar.c:161
 msgid "Current color"
 msgstr "現在の色"
 
-#: ../extensions/find/eggfindbar.c:163
+#: ../extensions/find/eggfindbar.c:162
 msgid "Color of highlight for the current match"
 msgstr "現在、検索で一致したものを強調表示する際の色"
 
-#: ../extensions/find/eggfindbar.c:302
+#: ../extensions/find/eggfindbar.c:286
 msgid "F_ind:"
 msgstr "検索(_I):"
 
-#: ../extensions/find/eggfindbar.c:320
+#: ../extensions/find/eggfindbar.c:306
 msgid "_Previous"
 msgstr "前へ(_P)"
 
-#: ../extensions/find/eggfindbar.c:321
+#: ../extensions/find/eggfindbar.c:308
 msgid "_Next"
 msgstr "次へ(_N)"
 
-#: ../extensions/find/eggfindbar.c:333
+#: ../extensions/find/eggfindbar.c:321
 msgid "C_ase Sensitive"
 msgstr "大/小文字を区別する(_A)"
+
+#: ../extensions/find/find.xml.in.in.h:1
+msgid "Find"
+msgstr "検索ツールバー"
+
+#: ../extensions/find/find.xml.in.in.h:2
+msgid "Replace the find dialog with a find toolbar"
+msgstr "検索ダイアログを検索ツールバーに変更します"
+
+#: ../extensions/gestures/gestures.xml.in.in.h:1
+msgid "Gestures"
+msgstr "ジェスチャ"
+
+#: ../extensions/gestures/gestures.xml.in.in.h:2
+msgid "Perform actions with mouse gestures"
+msgstr "マウスを使ったジェスチャでブラウザを操作します"
+
+#. How to describe this? It makes Epiphany "Just Work"
+#: ../extensions/net-monitor/net-monitor.xml.in.in.h:2
+msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
+msgstr ""
+"自動的にネットワークのオンライン/オフライン状態を操作します (EXPERIMENTAL!)"
+
+#: ../extensions/net-monitor/net-monitor.xml.in.in.h:3
+msgid "Network Connection Monitor"
+msgstr "ネットワーク接続の監視"
 
 #: ../extensions/page-info/ephy-page-info-extension.c:65
 msgid "_Page Info"
@@ -410,242 +481,303 @@ msgstr "ページ情報(_P)"
 msgid "Display page information in a dialog"
 msgstr "ページ情報をダイアログに表示します"
 
-#: ../extensions/page-info/page-info-dialog.c:645
+#: ../extensions/page-info/page-info-dialog.c:673
 msgid "Unknown type"
 msgstr "種類を特定できません"
 
-#: ../extensions/page-info/page-info-dialog.c:650
+#: ../extensions/page-info/page-info-dialog.c:678
 msgid "Full standards compliance"
 msgstr "完全に標準互換"
 
-#: ../extensions/page-info/page-info-dialog.c:653
+#: ../extensions/page-info/page-info-dialog.c:681
 msgid "Almost standards compliance"
 msgstr "ほぼ標準互換"
 
-#: ../extensions/page-info/page-info-dialog.c:656
+#: ../extensions/page-info/page-info-dialog.c:684
 msgid "Compatibility"
 msgstr "互換性"
 
-#: ../extensions/page-info/page-info-dialog.c:660
+#: ../extensions/page-info/page-info-dialog.c:688
 msgid "Undetermined"
 msgstr "未確認"
 
-#: ../extensions/page-info/page-info-dialog.c:669
+#: ../extensions/page-info/page-info-dialog.c:697
 msgid "Not cached"
 msgstr "キャッシュされていない"
 
-#: ../extensions/page-info/page-info-dialog.c:672
+#: ../extensions/page-info/page-info-dialog.c:700
 msgid "Disk cache"
 msgstr "ディスクへキャッシュ済"
 
-#: ../extensions/page-info/page-info-dialog.c:675
+#: ../extensions/page-info/page-info-dialog.c:703
 msgid "Memory cache"
 msgstr "メモリへキャッシュ済"
 
-#: ../extensions/page-info/page-info-dialog.c:678
+#: ../extensions/page-info/page-info-dialog.c:706
 msgid "Unknown cache"
 msgstr "キャッシュを特定できません"
 
-#: ../extensions/page-info/page-info-dialog.c:694
-#: ../extensions/page-info/page-info-dialog.c:823
+#: ../extensions/page-info/page-info-dialog.c:722
+#: ../extensions/page-info/page-info-dialog.c:833
 msgid "Unknown"
 msgstr "不明"
 
-#: ../extensions/page-info/page-info-dialog.c:699
+#: ../extensions/page-info/page-info-dialog.c:727
 msgid "No referrer"
 msgstr "照会者なし"
 
-#: ../extensions/page-info/page-info-dialog.c:713
-#: ../extensions/page-info/page-info-dialog.c:729
+#: ../extensions/page-info/page-info-dialog.c:741
+#: ../extensions/page-info/page-info-dialog.c:757
 msgid "Not specified"
 msgstr "指定なし"
 
-#: ../extensions/page-info/page-info-dialog.c:808
+#: ../extensions/page-info/page-info-dialog.c:818
 msgid "Image"
 msgstr "画像"
 
-#: ../extensions/page-info/page-info-dialog.c:811
+#: ../extensions/page-info/page-info-dialog.c:821
 msgid "Embed"
 msgstr "埋め込み"
 
-#: ../extensions/page-info/page-info-dialog.c:814
+#: ../extensions/page-info/page-info-dialog.c:824
 msgid "Object"
 msgstr "オブジェクト"
 
-#: ../extensions/page-info/page-info-dialog.c:817
+#: ../extensions/page-info/page-info-dialog.c:827
 msgid "Applet"
 msgstr "アプレット"
 
-#: ../extensions/page-info/page-info-dialog.c:820
+#: ../extensions/page-info/page-info-dialog.c:830
 msgid "Icon"
 msgstr "アイコン"
 
-#: ../extensions/page-info/page-info-dialog.c:976
+#: ../extensions/page-info/page-info-dialog.c:958
 msgid "Save Medium As..."
 msgstr "メディアを別名で保存..."
 
-#: ../extensions/page-info/page-info-dialog.c:993
+#: ../extensions/page-info/page-info-dialog.c:975
 msgid "Select a directory"
 msgstr "フォルダの選択"
 
-#: ../extensions/page-info/page-info-dialog.c:1094
+#: ../extensions/page-info/page-info-dialog.c:1055
 msgid "_Open"
 msgstr "開く(_O)"
 
-#: ../extensions/page-info/page-info-dialog.c:1100
-#: ../extensions/page-info/page-info-dialog.c:1493
+#: ../extensions/page-info/page-info-dialog.c:1061
+#: ../extensions/page-info/page-info-dialog.c:1413
 msgid "_Copy Link Address"
 msgstr "リンク先のコピー(_C)"
 
-#: ../extensions/page-info/page-info-dialog.c:1106
+#: ../extensions/page-info/page-info-dialog.c:1067
 msgid "_Use as Background"
 msgstr "背景として使用(_U)"
 
-#: ../extensions/page-info/page-info-dialog.c:1112
+#: ../extensions/page-info/page-info-dialog.c:1073
 msgid "_Save As..."
 msgstr "別名で保存(_S)..."
 
-#: ../extensions/page-info/page-info-dialog.c:1297
-#: ../extensions/page-info/page-info-dialog.c:1567
+#: ../extensions/page-info/page-info-dialog.c:1250
+#: ../extensions/page-info/page-info-dialog.c:1485
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1309
+#: ../extensions/page-info/page-info-dialog.c:1262
 msgid "Type"
 msgstr "種類"
 
-#: ../extensions/page-info/page-info-dialog.c:1321
+#: ../extensions/page-info/page-info-dialog.c:1274
 msgid "Alt Text"
 msgstr "代替文字列"
 
-#: ../extensions/page-info/page-info-dialog.c:1333
-#: ../extensions/page-info/page-info-dialog.c:1579
+#: ../extensions/page-info/page-info-dialog.c:1286
+#: ../extensions/page-info/page-info-dialog.c:1497
 msgid "Title"
 msgstr "タイトル"
 
-#: ../extensions/page-info/page-info-dialog.c:1345
+#: ../extensions/page-info/page-info-dialog.c:1298
 msgid "Width"
 msgstr "幅"
 
-#: ../extensions/page-info/page-info-dialog.c:1357
+#: ../extensions/page-info/page-info-dialog.c:1310
 msgid "Height"
 msgstr "高さ"
 
-#: ../extensions/page-info/page-info-dialog.c:1591
+#: ../extensions/page-info/page-info-dialog.c:1509
 msgid "Relation"
 msgstr "関係"
 
-#: ../extensions/page-info/page-info-dialog.c:1699
+#: ../extensions/page-info/page-info-dialog.c:1621
+#: ../extensions/page-info/page-info-dialog.c:1758
 msgid "Name"
 msgstr "名前"
 
-#: ../extensions/page-info/page-info-dialog.c:1711
+#: ../extensions/page-info/page-info-dialog.c:1633
 msgid "Method"
 msgstr "メソッド"
 
-#: ../extensions/page-info/page-info-dialog.c:1723
+#: ../extensions/page-info/page-info-dialog.c:1645
 msgid "Action"
 msgstr "アクション"
 
+#: ../extensions/page-info/page-info-dialog.c:1724
+msgid "_Copy"
+msgstr "コピー(_C)"
+
+#: ../extensions/page-info/page-info-dialog.c:1770
+msgid "Content"
+msgstr "コンテンツ"
+
+#: ../extensions/page-info/page-info-dialog.c:1869
+msgid "Page Metadata"
+msgstr "ページのメタデータ"
+
 #: ../extensions/page-info/page-info.glade.h:1
+msgid "<b>Dublin Core Metadata</b>"
+msgstr "<b>Dublin Core Metadata</b>"
+
+#: ../extensions/page-info/page-info.glade.h:2
 msgid "<b>Forms In Page</b>"
 msgstr "<b>ページのフォーム</b>"
 
-#: ../extensions/page-info/page-info.glade.h:2
+#: ../extensions/page-info/page-info.glade.h:3
 msgid "<b>Links In Page</b>"
 msgstr "<b>ページにあるリンク</b>"
 
-#: ../extensions/page-info/page-info.glade.h:3
+#: ../extensions/page-info/page-info.glade.h:4
 msgid "<b>Media In Page</b>"
 msgstr "<b>ページにあるメディア</b>"
 
-#: ../extensions/page-info/page-info.glade.h:4
+#: ../extensions/page-info/page-info.glade.h:5
 msgid "<b>Medium View</b>"
 msgstr "<b>メディアのプレビュー</b>"
 
-#: ../extensions/page-info/page-info.glade.h:5
+#: ../extensions/page-info/page-info.glade.h:6
+msgid "<b>Other Metadata</b>"
+msgstr "<b>その他のメタデータ</b>"
+
+#: ../extensions/page-info/page-info.glade.h:7
 msgid "<b>Rendering</b>"
 msgstr "<b>レンダリング</b>"
 
-#: ../extensions/page-info/page-info.glade.h:6
+#: ../extensions/page-info/page-info.glade.h:8
 msgid "<b>Source File</b>"
 msgstr "<b>ソース・ファイル</b>"
 
-#: ../extensions/page-info/page-info.glade.h:7
+#: ../extensions/page-info/page-info.glade.h:9
 msgid "<b>Web Page</b>"
 msgstr "<b>ウェブ・ページ</b>"
 
-#: ../extensions/page-info/page-info.glade.h:8
+#: ../extensions/page-info/page-info.glade.h:10
 msgid "DYNAMIC"
 msgstr "DYNAMIC"
 
-#: ../extensions/page-info/page-info.glade.h:9
+#: ../extensions/page-info/page-info.glade.h:11
+msgid "Date:"
+msgstr "日付:"
+
+#: ../extensions/page-info/page-info.glade.h:12
+msgid "Description:"
+msgstr "説明:"
+
+#: ../extensions/page-info/page-info.glade.h:13
 msgid "Encoding:"
 msgstr "エンコーディング:"
 
-#: ../extensions/page-info/page-info.glade.h:10
+#: ../extensions/page-info/page-info.glade.h:14
 msgid "Expires:"
 msgstr "有効期限:"
 
-#: ../extensions/page-info/page-info.glade.h:11
+#: ../extensions/page-info/page-info.glade.h:15
+msgid "Format:"
+msgstr "書式:"
+
+#: ../extensions/page-info/page-info.glade.h:16
 msgid "Forms"
 msgstr "フォーム"
 
-#: ../extensions/page-info/page-info.glade.h:12
+#: ../extensions/page-info/page-info.glade.h:17
 msgid "General"
 msgstr "全般"
 
-#: ../extensions/page-info/page-info.glade.h:13
+#: ../extensions/page-info/page-info.glade.h:18
 msgid "Links"
 msgstr "リンク"
 
-#: ../extensions/page-info/page-info.glade.h:14
+#: ../extensions/page-info/page-info.glade.h:19
 msgid "Location:"
 msgstr "場所:"
 
-#: ../extensions/page-info/page-info.glade.h:15
+#: ../extensions/page-info/page-info.glade.h:20
 msgid "MIME type:"
 msgstr "MIME 型:"
 
-#: ../extensions/page-info/page-info.glade.h:16
+#: ../extensions/page-info/page-info.glade.h:21
 msgid "Media"
 msgstr "メディア"
 
-#: ../extensions/page-info/page-info.glade.h:17
+#: ../extensions/page-info/page-info.glade.h:22
+msgid "Metadata"
+msgstr "メタデータ"
+
+#: ../extensions/page-info/page-info.glade.h:23
 msgid "Mode:"
 msgstr "モード:"
 
-#: ../extensions/page-info/page-info.glade.h:18
+#: ../extensions/page-info/page-info.glade.h:24
 msgid "Modified:"
 msgstr "変更日時:"
 
-#: ../extensions/page-info/page-info.glade.h:19
+#: ../extensions/page-info/page-info.glade.h:25
 msgid "Page Properties"
 msgstr "ページのプロパティ"
 
-#: ../extensions/page-info/page-info.glade.h:20
+#: ../extensions/page-info/page-info.glade.h:26
 msgid "Referrer:"
 msgstr "照会者:"
 
-#: ../extensions/page-info/page-info.glade.h:21
+#: ../extensions/page-info/page-info.glade.h:27
 msgid "Size:"
 msgstr "サイズ:"
 
-#: ../extensions/page-info/page-info.glade.h:22
+#: ../extensions/page-info/page-info.glade.h:28
 msgid "Source:"
 msgstr "ソース:"
 
-#: ../extensions/page-info/page-info.glade.h:23
+#: ../extensions/page-info/page-info.glade.h:29
 msgid "Title:"
 msgstr "タイトル:"
 
-#: ../extensions/page-info/page-info.glade.h:24
+#: ../extensions/page-info/page-info.glade.h:30
 msgid "Type:"
 msgstr "種類:"
 
-#: ../extensions/page-info/page-info.glade.h:25
+#: ../extensions/page-info/page-info.glade.h:31
 msgid "_Save Media As..."
 msgstr "メディアを別名で保存(_S)..."
+
+#: ../extensions/page-info/page-info.xml.in.in.h:1
+msgid "Display information about and links and media from the current page"
+msgstr "ウェブ・ページに関連する情報やリンク、メディアの詳細を表示します"
+
+#: ../extensions/page-info/page-info.xml.in.in.h:2
+msgid "Page Info"
+msgstr "ページ情報"
+
+#: ../extensions/sample-mozilla/sample-mozilla.xml.in.in.h:1
+msgid "A sample extension with mozilla backend"
+msgstr "Mozilla バックエンドを利用した拡張機能のサンプルです"
+
+#: ../extensions/sample-mozilla/sample-mozilla.xml.in.in.h:2
+msgid "Sample (Mozilla)"
+msgstr "サンプル (Mozilla)"
+
+#: ../extensions/sample/sample.xml.in.in.h:1
+msgid "A sample extension"
+msgstr "拡張機能のサンプル"
+
+#: ../extensions/sample/sample.xml.in.in.h:2
+msgid "Sample"
+msgstr "サンプル"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:145
 msgid "Render the page without using a style"
@@ -676,6 +808,18 @@ msgstr "デフォルト"
 msgid "None"
 msgstr "なし"
 
+#: ../extensions/select-stylesheet/select-stylesheet.xml.in.in.h:1
+msgid "Select Stylesheet"
+msgstr "スタイルシートの選択"
+
+#: ../extensions/select-stylesheet/select-stylesheet.xml.in.in.h:2
+msgid "Select between different stylesheets offered by the web page"
+msgstr "ウェブ・ページが提供している別のスタイルシートに切り替えます"
+
+#: ../extensions/sidebar/ephy-sidebar.c:176
+msgid "No Sidebars installed"
+msgstr "サイドバーは未インストール"
+
 #: ../extensions/sidebar/ephy-sidebar-extension.c:104
 msgid "_Sidebar"
 msgstr "サイドバー(_S)"
@@ -684,27 +828,31 @@ msgstr "サイドバー(_S)"
 msgid "Show or hide the sidebar"
 msgstr "サイドバーの表示/非表示を切り替えます"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:385
+#: ../extensions/sidebar/ephy-sidebar-extension.c:407
 #, c-format
 msgid "Add \"%s\" to the Sidebar?"
 msgstr "\"%s\" をサイドバーへ追加しますか？"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:389
+#: ../extensions/sidebar/ephy-sidebar-extension.c:411
 #, c-format
 msgid "The source to the new sidebar page is %s."
 msgstr "新しいサイドバー・ページのソースは %s です"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:391
+#: ../extensions/sidebar/ephy-sidebar-extension.c:413
 msgid "Add Sidebar"
 msgstr "サイドバーを追加します"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:395
+#: ../extensions/sidebar/ephy-sidebar-extension.c:417
 msgid "_Add Sidebar"
 msgstr "サイドバーの追加(_A)"
 
-#: ../extensions/sidebar/ephy-sidebar.c:176
-msgid "No Sidebars installed"
-msgstr "サイドバーは未インストール"
+#: ../extensions/sidebar/sidebar.xml.in.in.h:1
+msgid "Adds a sidebar to windows"
+msgstr "サイドバーをウィンドウへ追加します"
+
+#: ../extensions/sidebar/sidebar.xml.in.in.h:2
+msgid "Sidebar"
+msgstr "サイドバー"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:578
 msgid "_Look Up"
@@ -713,6 +861,22 @@ msgstr "検索(_L)"
 #: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:585
 msgid "_GNOME Dictionary"
 msgstr "GNOME 辞書(_G)"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:1
+msgid "Look up the selected text with a smart bookmark"
+msgstr "スマート・ブックマークを使って選択した文字列を検索します"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:2
+msgid "Smart Bookmarks"
+msgstr "スマート・ブックマーク"
+
+#: ../extensions/tab-groups/tab-groups.xml.in.in.h:1
+msgid "Groups newly opened tabs"
+msgstr "新たに開いた複数のタブをグループ化します"
+
+#: ../extensions/tab-groups/tab-groups.xml.in.in.h:2
+msgid "Tab Groups"
+msgstr "タブのグループ化"
 
 #: ../extensions/tabsmenu/ephy-tab-move-menu.c:190
 #, c-format
@@ -728,3 +892,19 @@ msgstr "タブの移動"
 #: ../extensions/tabsmenu/ephy-tab-move-menu.c:303
 msgid "Move the current tab to a different window"
 msgstr "このタブを他のウインドウへ移動します"
+
+#: ../extensions/tabsmenu/tabsmenu.xml.in.in.h:1
+msgid "Move tabs between windows"
+msgstr "ウィンドウとウィンドウの間でタブの移動を可能にします"
+
+#: ../extensions/tabsmenu/tabsmenu.xml.in.in.h:2
+msgid "Tabsmenu"
+msgstr "タブメニュー"
+
+#: ../extensions/tab-states/tab-states.xml.in.in.h:1
+msgid "Indicates new content in background tabs"
+msgstr "バックグラウンドのタブの中に新しいコンテンツを提示します"
+
+#: ../extensions/tab-states/tab-states.xml.in.in.h:2
+msgid "Tab States"
+msgstr "タブの状態"
