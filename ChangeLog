@@ -1,5 +1,11 @@
 2004-10-02  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/adblock/extension.c: (register_module):
+
+	:s/        /^I/g
+
+2004-10-02  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/adblock/ephy-adblock-extension.c:
 	(ephy_adblock_extension_init), (ephy_adblock_extension_finalize):
 	* extensions/adblock/mozilla/MozAdBlocker.cpp:
