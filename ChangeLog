@@ -1,5 +1,11 @@
 2004-03-24  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/sample/Makefile.am:
+
+	Add spinner-ex-extension.diff to EXTRA_DIST.
+
+2004-03-24  Christian Persch  <chpe@cvs.gnome.org>
+
 	* configure.ac:
 
 	Post-release version bump.

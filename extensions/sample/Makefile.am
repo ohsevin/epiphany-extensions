@@ -16,3 +16,6 @@ libsampleextension_la_SOURCES = \
 	ephy-sample-extension.c	\
 	ephy-sample-extension.h	\
 	sample.c
+
+EXTRA_DIST = spinner-ex-extension.diff
+
