@@ -12,7 +12,3 @@ adds an entry to the Tools menu.
 
 TODO:
 - Disable the action if we're not viewing an HTML file
-
-- When MIME type doesn't match doctype it should add 1 to the error count.
-
-- Cleanup. Functions are too big and should be split.

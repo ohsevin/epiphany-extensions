@@ -54,6 +54,7 @@ typedef struct
 	char *location;
 	SgmlValidator *validator;
 	gboolean is_xml;
+	int num_errors;
 } OpenSPThreadCBData;
 
 typedef struct
@@ -143,22 +144,20 @@ sgml_validator_finalize (GObject *object)
 static gpointer
 opensp_thread (gpointer data)
 {
-	guint num_errors;
 	char *summary;
 	OpenSPThreadCBData *osp_data;
 
 	osp_data = (OpenSPThreadCBData *) data;
 
-	num_errors = validate (osp_data->dest,
-			       osp_data->location,
-			       osp_data->validator,
-			       osp_data->is_xml);
+	osp_data->num_errors +=
+		validate (osp_data->dest, osp_data->location,
+			  osp_data->validator, osp_data->is_xml);
 
 	summary = g_strdup_printf
 		(ngettext ("HTML Validation of %s complete\nFound %d error",
 			   "HTML Validation of %s complete\nFound %d errors",
-			   num_errors),
-		 osp_data->location, num_errors);
+			   osp_data->num_errors),
+		 osp_data->location, osp_data->num_errors);
 
 	sgml_validator_append (osp_data->validator, ERROR_VIEWER_INFO, summary);
 
@@ -179,6 +178,7 @@ save_source_completed_cb (EphyEmbedPersist *persist,
 {
 	const char *dest;
 	gboolean is_xml = FALSE;
+	int num_errors = 0;
 	char *doctype;
 	char *location;
 	char *content_type;
@@ -231,6 +231,7 @@ save_source_completed_cb (EphyEmbedPersist *persist,
 		g_free (content_type);
 
 		is_xml = TRUE;
+		num_errors++;
 	}
 	g_free (doctype);
 
@@ -242,6 +243,7 @@ save_source_completed_cb (EphyEmbedPersist *persist,
 	g_object_ref (validator);
 	data->validator = validator;
 	data->is_xml = is_xml;
+	data->num_errors = num_errors;
 
 	g_thread_create (opensp_thread, data, FALSE, NULL);
 }

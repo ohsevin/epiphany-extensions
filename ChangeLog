@@ -1,6 +1,14 @@
 2004-01-30  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/error-viewer/README:
+	* extensions/error-viewer/sgml-validator.c: (opensp_thread),
+	(save_source_completed_cb):
+
+	Add one to the error count when there's a doctype/mimetype mismatch.
+
+2004-01-30  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/error-viewer/README:
 	* extensions/error-viewer/error-viewer.c: (error_viewer_append):
 	* extensions/error-viewer/opensp/validate.cpp:
 	* extensions/error-viewer/opensp/validate.h:
