@@ -1,3 +1,10 @@
+2004-12-20  Christian Persch  <chpe@cvs.gnome.org>
+
+	* NEWS:
+	* configure.ac:
+
+	Updated for version 1.5.3.
+
 2004-12-17  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/page-info/mozilla/mozilla-helpers.cpp:

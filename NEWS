@@ -1,4 +1,29 @@
 =========================
+Epiphany Extensions 1.5.3
+=========================
+
+Changes
+
+	* Sync headers with Epiphany
+	* List applet, embed and object elements in the Page Info dialogue,
+	  add Media tab, only preview images (Jean-François Rameau, Christian)
+	* Makefile.am modernisations
+	* Use ellipsised labels instead of shortening strings
+	* Use GtkAboutDialog (Adam Hooper) [#161519]
+
+Bug fixes
+
+	* Abort gesture on unmap (ported from galeon) [#160228]
+	* Fix context menu on Media page of Page Info dialogue
+
+Translation updates
+
+	* Hendrik Brandt (de)
+	* Takeshi AIHANA (ja)
+	* Pablo Saratxaga (wa)
+
+
+=========================
 Epiphany Extensions 1.5.2
 =========================
 
