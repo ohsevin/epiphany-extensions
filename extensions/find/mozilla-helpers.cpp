@@ -114,7 +114,7 @@ mozilla_push_prefs (void)
 
   rv  = prefBranch->GetBoolPref (PREFNAME, &gEnabled);
   rv |= prefBranch->SetBoolPref (PREFNAME, PR_FALSE);
-  rv |= prefBranch->GetBoolPref (PREFNAME SEA_SUFFIX, &gEnabled);
+  rv |= prefBranch->GetBoolPref (PREFNAME SEA_SUFFIX, &gEnabledSea);
   rv |= prefBranch->SetBoolPref (PREFNAME SEA_SUFFIX, PR_FALSE);
   g_return_if_fail (NS_SUCCEEDED (rv));
   NS_ENSURE_SUCCESS (rv, );
