@@ -17,6 +17,14 @@
 
 		<revhistory>
 			<revision>
+				<revnumber>0.06</revnumber>
+				<date>30-Oct-2004</date>
+				<authorinitials>ah</authorinitials>
+				<revremark>
+					Put titles on examples, and ensure all examples work with unloading.
+				</revremark>
+			</revision>
+			<revision>
 				<revnumber>0.05</revnumber>
 				<date>30-Oct-2004</date>
 				<authorinitials>ah</authorinitials>
