@@ -34,9 +34,9 @@
 
 #include <epiphany/ephy-embed-persist.h>
 #include <epiphany/ephy-embed-factory.h>
+#include <epiphany/ephy-state.h>
 
 /* non-installed ephy headers */
-#include "ephy-state.h"
 #include "ephy-gui.h"
 #include "eel-gconf-extensions.h"
 #include "ephy-file-helpers.h"

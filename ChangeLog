@@ -1,3 +1,11 @@
+2004-09-27  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/page-info/page-info-dialog.c:
+	* include/Makefile.am:
+	* include/ephy-state.h:
+
+	Remove ephy-state, it's now installed by epiphany.
+
 2004-09-26  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/smart-bookmarks/smart-bookmarks-prefs-ui.c:
