@@ -1,3 +1,20 @@
+2005-01-21  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* configure.ac:
+
+	Re-space extensions list
+
+	* extensions/adblock/ad-blocker.c: (ad_blocker_test_uri),
+	(ad_blocker_reset), (ad_blocker_get_property), (ad_blocker_init),
+	(ad_blocker_class_init):
+	* extensions/adblock/ad-blocker.h:
+	* extensions/adblock/ephy-adblock-extension.c: (update_statusbar),
+	(create_statusbar_icon), (switch_page_cb), (impl_attach_window),
+	(impl_detach_window), (location_changed_cb), (num_blocked_cb),
+	(impl_attach_tab), (impl_detach_tab):
+
+	Fix statusbar icon behavior
+
 2005-01-21  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:

@@ -32,21 +32,16 @@ static void ad_blocker_init (AdBlocker *dialog);
 struct _AdBlockerPrivate
 {
 	AdUriTester *uri_tester;
+
+	int num_blocked;
 };
 
 enum
 {
 	PROP_0,
-	PROP_URI_TESTER
+	PROP_URI_TESTER,
+	PROP_NUM_BLOCKED
 };
-
-enum
-{
-	AD_BLOCKED,
-	LAST_SIGNAL
-};
-
-static guint signals[LAST_SIGNAL] = { 0 };
 
 static GObjectClass *parent_class = NULL;
 
@@ -101,10 +96,20 @@ ad_blocker_test_uri (AdBlocker *blocker,
 
 	if (ret == TRUE)
 	{
-		g_signal_emit (G_OBJECT (blocker), signals[AD_BLOCKED], 0, uri);
+		blocker->priv->num_blocked++;
+
+		g_object_notify (G_OBJECT (blocker), "num-blocked");
 	}
 
 	return ret;
+}
+
+void
+ad_blocker_reset (AdBlocker *blocker)
+{
+	blocker->priv->num_blocked = 0;
+
+	g_object_notify (G_OBJECT (blocker), "num-blocked");
 }
 
 static void
@@ -113,8 +118,16 @@ ad_blocker_get_property (GObject *object,
 			 GValue *value,
 			 GParamSpec *pspec)
 {
-	/* no readable properties */
-	g_return_if_reached ();
+	AdBlocker *blocker = AD_BLOCKER (object);
+
+	switch (prop_id)
+	{
+		case PROP_NUM_BLOCKED:
+			g_value_set_int (value, blocker->priv->num_blocked);
+			break;
+		default:
+			g_return_if_reached ();
+	}
 }
 
 static void
@@ -141,6 +154,8 @@ ad_blocker_init (AdBlocker *blocker)
 	LOG ("AdBlocker initializing %p", blocker)
 
 	blocker->priv = AD_BLOCKER_GET_PRIVATE (blocker);
+
+	blocker->priv->num_blocked = 0;
 }
 
 static void
@@ -175,16 +190,14 @@ ad_blocker_class_init (AdBlockerClass *klass)
 				      G_TYPE_OBJECT,
 				      G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
 
-	signals[AD_BLOCKED] =
-		g_signal_new ("ad_blocked",
-			      G_OBJECT_CLASS_TYPE (object_class),
-			      G_SIGNAL_RUN_FIRST,
-			      G_STRUCT_OFFSET (AdBlockerClass, ad_blocked),
-			      NULL, NULL,
-			      g_cclosure_marshal_VOID__STRING,
-			      G_TYPE_NONE,
-			      1,
-			      G_TYPE_STRING);
+	g_object_class_install_property
+		(object_class,
+		 PROP_NUM_BLOCKED,
+		 g_param_spec_int ("num-blocked",
+				   "Number of blocked advertisements",
+				   "Number of blocked advertisements",
+				   0, G_MAXINT,
+				   0, G_PARAM_READABLE));
 
 	g_type_class_add_private (object_class, sizeof (AdBlockerPrivate));
 }

@@ -70,6 +70,8 @@ gboolean	 ad_blocker_test_uri		(AdBlocker *blocker,
 						 const char *uri,
 						 AdUriCheckType type);
 
+void		 ad_blocker_reset		(AdBlocker *blocker);
+
 G_END_DECLS
 
 #endif /* AD_BLOCKER_H */

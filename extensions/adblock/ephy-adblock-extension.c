@@ -25,8 +25,8 @@
 #include <epiphany/ephy-embed-single.h>
 #include <epiphany/ephy-extension.h>
 #include <epiphany/ephy-tab.h>
-#include <epiphany/ephy-window.h>
 #include <epiphany/ephy-statusbar.h>
+#include <epiphany/ephy-window.h>
 
 #include "ephy-adblock-extension.h"
 #include "ephy-debug.h"
@@ -40,6 +40,7 @@
 #include <gtk/gtkframe.h>
 #include <gtk/gtkiconfactory.h>
 #include <gtk/gtkimage.h>
+#include <gtk/gtknotebook.h>
 
 #include <gmodule.h>
 
@@ -134,21 +135,21 @@ ephy_adblock_extension_finalize (GObject *object)
 	G_OBJECT_CLASS (parent_class)->finalize (object);
 }
 
-#if 0
 static void
-update_statusbar (EphyAdblockExtension *extension,
-		  EphyWindow *window,
-		  EphyEmbed *embed)
+update_statusbar (EphyWindow *window)
 {
 	AdBlocker *blocker;
+	EphyEmbed *embed;
 	GObject *statusbar;
 	GtkWidget *evbox;
 	GtkWidget *frame;
 	int num_blocked;
 
-	blocker = g_object_get_data (G_OBJECT (embed), AD_BLOCKER_KEY);
+	embed = ephy_window_get_active_embed (window);
+	g_return_if_fail (embed != NULL);
 
-	num_blocked = ad_blocker_num_blocked (blocker);
+	blocker = g_object_get_data (G_OBJECT (embed), AD_BLOCKER_KEY);
+	g_return_if_fail (blocker != NULL);
 
 	statusbar = G_OBJECT (ephy_window_get_statusbar (window));
 	g_return_if_fail (statusbar != NULL);
@@ -158,6 +159,8 @@ update_statusbar (EphyAdblockExtension *extension,
 
 	evbox = g_object_get_data (statusbar, STATUSBAR_EVBOX_KEY);
 	g_return_if_fail (evbox != NULL);
+
+	g_object_get (G_OBJECT (blocker), "num-blocked", &num_blocked, NULL);
 
 	if (num_blocked == 0)
 	{
@@ -180,7 +183,6 @@ update_statusbar (EphyAdblockExtension *extension,
 		gtk_widget_show (frame);
 	}
 }
-#endif
 
 static void
 create_statusbar_icon (EphyWindow *window)
@@ -208,14 +210,6 @@ create_statusbar_icon (EphyWindow *window)
 	icon = gtk_image_new_from_pixbuf (pixbuf);
 
 	evbox = gtk_event_box_new ();
-
-	/*
-	 * FIXME: I haven't bothered to mark for translation because we want
-	 * to make the icon do much more (at least a count...).
-	 */
-	gtk_tooltips_set_tip (statusbar->tooltips, evbox,
-			      "Advertisement(s) blocked", NULL);
-
 	gtk_event_box_set_visible_window (GTK_EVENT_BOX (evbox), FALSE);
 
 	gtk_container_add (GTK_CONTAINER (frame), evbox);
@@ -258,40 +252,42 @@ destroy_statusbar_icon (EphyWindow *window)
 }
 
 static void
+switch_page_cb (GtkNotebook *notebook,
+		GtkNotebookPage *page,
+		guint page_num,
+		EphyWindow *window)
+{
+	if (GTK_WIDGET_REALIZED (window) == FALSE) return; /* on startup */
+
+	update_statusbar (window);
+}
+
+static void
 impl_attach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
+	GtkWidget *notebook;
+
 	create_statusbar_icon (window);
+
+	notebook = ephy_window_get_notebook (window);
+
+	g_signal_connect_after (notebook, "switch_page",
+				G_CALLBACK (switch_page_cb), window);
 }
 
 static void
 impl_detach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
+	GtkWidget *notebook;
+
+	notebook = ephy_window_get_notebook (window);
+
+	g_signal_handlers_disconnect_by_func
+		(notebook, G_CALLBACK (switch_page_cb), window);
+
 	destroy_statusbar_icon (window);
-}
-
-static GtkWidget *
-get_icon_frame_for_embed (EphyEmbed *embed)
-{
-	EphyTab *tab;
-	EphyWindow *window;
-	GtkWidget *statusbar;
-	GtkWidget *frame;
-
-	tab = ephy_tab_for_embed (embed);
-	g_return_val_if_fail (EPHY_IS_TAB (tab), NULL);
-
-	window = EPHY_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (tab)));
-	g_return_val_if_fail (EPHY_IS_WINDOW (window), NULL);
-
-	statusbar = ephy_window_get_statusbar (window);
-	g_return_val_if_fail (EPHY_IS_STATUSBAR (statusbar), NULL);
-
-	frame = g_object_get_data (G_OBJECT (statusbar), STATUSBAR_FRAME_KEY);
-	g_return_val_if_fail (GTK_IS_FRAME (frame), NULL);
-
-	return frame;
 }
 
 static void
@@ -299,21 +295,27 @@ location_changed_cb (EphyEmbed *embed,
 		     const char *address,
 		     AdBlocker *blocker)
 {
-	GtkWidget *frame = get_icon_frame_for_embed (embed);
-	g_return_if_fail (frame != NULL);
-
-	gtk_widget_hide (frame);
+	ad_blocker_reset (blocker);
 }
 
 static void
-ad_blocked_cb (AdBlocker *blocker,
-	       const char *url,
-	       EphyEmbed *embed)
+num_blocked_cb (AdBlocker *blocker,
+		GParamSpec *pspec,
+		EphyEmbed *embed)
 {
-	GtkWidget *frame = get_icon_frame_for_embed (embed);
-	g_return_if_fail (frame != NULL);
+	EphyTab *tab;
+	EphyWindow *window;
 
-	gtk_widget_show (frame);
+	tab = ephy_tab_for_embed (embed);
+	g_return_if_fail (tab != NULL);
+
+	window = EPHY_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (tab)));
+	g_return_if_fail (window != NULL);
+
+	if (embed == ephy_window_get_active_embed (window))
+	{
+		update_statusbar (window);
+	}
 }
 
 static void
@@ -335,8 +337,8 @@ impl_attach_tab (EphyExtension *ext,
 	g_signal_connect (G_OBJECT (embed), "ge-location",
 			  G_CALLBACK (location_changed_cb), blocker);
 
-	g_signal_connect (G_OBJECT (blocker), "ad-blocked",
-			  G_CALLBACK (ad_blocked_cb), embed);
+	g_signal_connect (G_OBJECT (blocker), "notify::num-blocked",
+			  G_CALLBACK (num_blocked_cb), embed);
 }
 
 static void
@@ -355,7 +357,7 @@ impl_detach_tab (EphyExtension *ext,
 	g_signal_handlers_disconnect_by_func
 		(G_OBJECT (embed), G_CALLBACK (location_changed_cb), blocker);
 	g_signal_handlers_disconnect_by_func
-		(G_OBJECT (blocker), G_CALLBACK (ad_blocked_cb), blocker);
+		(G_OBJECT (blocker), G_CALLBACK (num_blocked_cb), blocker);
 
 	g_object_unref (blocker);
 }

@@ -141,9 +141,10 @@ dnl AS_HELP_STRING(--with-extensions=ext1,ext2,...,build the specified extension
 AC_ARG_WITH([extensions],
 [  --with-extensions=extension1,extension2,...
 			  build the specified extensions. Available:
-			  adblock, bookmarks-tray, certificates, dashboard, error-viewer,
-			  extensions-manager-ui, gestures, page-info, sample, sampls-mozilla,
-			  select-stylesheet, sidebar, smart-bookmarks, tab-groups, tabsmenu, all,
+			  adblock, bookmarks-tray, certificates, dashboard,
+			  error-viewer, extensions-manager-ui, gestures,
+			  page-info, sample, sampls-mozilla, select-stylesheet,
+			  sidebar, smart-bookmarks, tab-groups, tabsmenu, all,
 			  really-all])
 
 dnl If no extensions specified, build the default set
