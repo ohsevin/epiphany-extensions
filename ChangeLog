@@ -1,3 +1,32 @@
+2004-01-14  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/Makefile.am:
+	* extensions/dashboard/.cvsignore:
+	* extensions/dashboard/Makefile.am:
+	* extensions/dashboard/dashboard-frontend.c:
+	(dashboard_connect_with_timeout), (cluepacket_write_cb),
+	(dashboard_send_raw_cluepacket),
+	(dashboard_send_raw_cluepacket_sync), (lame_xml_quote),
+	(dashboard_xml_quote), (dashboard_build_clue),
+	(dashboard_build_cluepacket_from_cluelist),
+	(dashboard_build_cluepacket_v), (dashboard_build_cluepacket),
+	(dashboard_build_cluepacket_then_free_clues):
+	* extensions/dashboard/ephy-dashboard-extension.c:
+	(ephy_dashboard_extension_get_type),
+	(ephy_dashboard_extension_register_type),
+	(ephy_dashboard_extension_init),
+	(ephy_dashboard_extension_finalize),
+	(ephy_dashboard_extension_set_property),
+	(ephy_dashboard_extension_get_property),
+	(ephy_dashboard_extension_class_init), (load_status_cb),
+	(tab_added_cb), (tab_removed_cb), (impl_attach_window),
+	(impl_detach_window), (ephy_dashboard_extension_iface_init):
+	* extensions/dashboard/ephy-dashboard-extension.h:
+	* extensions/dashboard/ephy-dashboard.c: (register_module):
+
+	Add dashboard extension, from Lee Willis <lee@leewillis.co.uk>.
+
 2004-01-13  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* doc/writing-epiphany-extensions.xml:

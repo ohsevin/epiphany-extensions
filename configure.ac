@@ -18,7 +18,7 @@ dnl $Id$
 
 AC_PREREQ(2.52)
 
-AC_INIT(epiphany-extensions, 0.6, [http://lists.gnome.org/mailman/listinfo/epiphany-list])
+AC_INIT(epiphany-extensions, 0.6.90, [http://lists.gnome.org/mailman/listinfo/epiphany-list])
 
 AC_CONFIG_SRCDIR(extensions)
 AM_CONFIG_HEADER(config.h)
@@ -54,8 +54,6 @@ dnl ********************************
 
 ALL_LINGUAS="cs de en_GB es fr ja pt sk sr sr@Latn sv"
 
-AC_PROG_INTLTOOL([0.22])
-
 GETTEXT_PACKAGE=epiphany-extensions-1.0
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
@@ -65,7 +63,7 @@ dnl ********************************
 dnl pkg config checks
 dnl ********************************
 
-EPIPHANY_REQUIRED=1.1.2
+EPIPHANY_REQUIRED=1.1.3
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.3.1
 LIBGTK_REQUIRED=2.3.1
@@ -109,9 +107,10 @@ dnl *******************************
 
 AC_MSG_CHECKING(extensions to build)
 
-all_extensions="sample,gestures,popup-blocker,tabsmenu"
-all_useful_extensions="gestures,popup-blocker,tabsmenu"
+all_extensions="dashboard,gestures,popup-blocker,sample,tabsmenu"
+all_useful_extensions="dashboard,gestures,popup-blocker,tabsmenu"
 default_extensions="gestures,popup-blocker,tabsmenu"
+mozilla_dependent_extensions=""
 
 dnl due to an autoconf bug, commas in the first arg to
 dnl AC_HELP_STRING cause problems.
@@ -149,11 +148,101 @@ for ext in $extensions; do
 done
 IFS="$ephyext_save_ifs"
 
+AM_CONDITIONAL(ENABLE_DASHBOARD_EXTENSION, echo "$extensions" | egrep '(^|,)dashboard($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_GESTURES_EXTENSION, echo "$extensions" | egrep '(^|,)gestures($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_SAMPLE_EXTENSION, echo "$extensions" | egrep '(^|,)sample($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_POPUP_BLOCKER_EXTENSION, echo "$extensions" | egrep '(^|,)popup-blocker($|,)' > /dev/null)
+AM_CONDITIONAL(ENABLE_SAMPLE_EXTENSION, echo "$extensions" | egrep '(^|,)sample($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_TABSMENU_EXTENSION, echo "$extensions" | egrep '(^|,)tabsmenu($|,)' > /dev/null)
+dnl AM_CONDITIONAL(ENABLE_SECURITY_EXTENSION, echo "$extensions" | egrep '(^|,)security($|,)' > /dev/null)
 dnl AM_CONDITIONAL(ENABLE_TOOLBAR_EXTRAS_EXTENSION, echo "$extensions" | egrep '(^|,)toolbar-extras($|,)' > /dev/null)
+
+dnl *******************************************
+dnl Mozilla (copied from epiphany configure.in)
+dnl *******************************************
+
+need_mozilla_check=no
+
+IFS="${IFS=	}"; ephyext_save_ifs="$IFS"; IFS=","
+for ext in $extensions; do
+ if echo "$mozilla_dependent_extensions" | egrep "(^|,)$ext(\$|,)" > /dev/null; then
+   need_mozilla_check=yes
+ fi
+done
+IFS="$ephyext_save_ifs"
+
+if test x"$need_mozilla_check" = xyes; then
+
+dnl This is from Mozilla's configure.in. They set almost all the config stuff
+dnl they need in mozilla-config.h Except for this compiler flag, which can't
+dnl go in mozilla-config.h So we check the flag too and now we can include
+dnl mozilla-config.h without breaking epiphany.
+dnl This is really gcc-only
+dnl Do this test using CXX only since some versions of gcc
+dnl 2.95-2.97 have a signed wchar_t in c++ only and some versions
+dnl only have short-wchar support for c++.
+AC_LANG_PUSH(C++)
+_SAVE_CXXFLAGS=$CXXFLAGS
+_SAVE_AM_CXXFLAGS=$AM_CXXFLAGS
+AM_CXXFLAGS="$AM_CXXFLAGS -fshort-wchar"
+CXXFLAGS="$CXXFLAGS $AM_CXXFLAGS"
+
+AC_CACHE_CHECK(for compiler -fshort-wchar option,
+    ac_cv_have_usable_wchar_option,
+    [AC_TRY_RUN([#include <stddef.h>
+                 int main () {
+                   return (sizeof(wchar_t) != 2) ||
+                          (wchar_t)-1 < (wchar_t) 0 ; } ],
+                ac_cv_have_usable_wchar_option="yes",
+                ac_cv_have_usable_wchar_option="no",
+                ac_cv_have_usable_wchar_option="maybe")])
+
+if test "$ac_cv_have_usable_wchar_option" != "yes"; then
+    AM_CXXFLAGS=$_SAVE_AM_CXXFLAGS
+fi
+CXXFLAGS=$_SAVE_CXXFLAGS
+AC_LANG_POP(C++)
+
+AC_MSG_CHECKING(for mozilla version)
+MOZILLA_VERSION="`$PKG_CONFIG --modversion mozilla-gtkmozembed`"
+
+dnl allow user to override the autodetected mozilla version
+dnl     - without arguments for cvs head
+AC_ARG_WITH(mozilla-snapshot,
+  AC_HELP_STRING([--with-mozilla-snapshot@<:@=1.4|1.4.1|1.5|1.6|trunk@:>@],
+		 [Whether to try building against mozilla 1.4|1.4.1|1.5|1.6|1.7a|trunk
+		  snapshot. @<:@guessed@:>@]),
+  [autodetect=" (guessed: $MOZILLA_VERSION)"; MOZILLA_VERSION="$withval"])
+
+AC_MSG_RESULT($MOZILLA_VERSION$autodetect)
+
+case "$MOZILLA_VERSION" in
+  1.4) MOZILLA_SNAPSHOT=8 ;;
+1.4.1) MOZILLA_SNAPSHOT=9 ;;
+1.4.2) MOZILLA_SNAPSHOT=9 ;;
+ 1.5a) MOZILLA_SNAPSHOT=10 ;;
+ 1.5b) MOZILLA_SNAPSHOT=11 ;;
+  1.5) MOZILLA_SNAPSHOT=11 ;;
+ 1.6a) MOZILLA_SNAPSHOT=12 ;;
+ 1.6b) MOZILLA_SNAPSHOT=13 ;;
+  1.6) MOZILLA_SNAPSHOT=13 ;;
+ 1.7a) MOZILLA_SNAPSHOT=14 ;;
+ 1.7b) MOZILLA_SNAPSHOT=14 ;;
+  1.7) MOZILLA_SNAPSHOT=14 ;;
+trunk) MOZILLA_SNAPSHOT=14 ;;
+    *) AC_ERROR([
+*******************************************************************************
+Epiphany Extensions  can be built using Mozilla 1.4, 1.4.1, 1.5, 1.6, 1.7a or 
+trunk snapshot, but the version available is $MOZILLA_VERSION.  
+
+When using Mozilla trunk snapshot, a successful build is not guaranteed due 
+to the frequently changing state of the Mozilla interfaces and the limited
+resources of the Epiphany team to support non-release Mozilla snapshots.
+*******************************************************************************])
+esac
+
+AC_DEFINE_UNQUOTED(MOZILLA_SNAPSHOT, $MOZILLA_SNAPSHOT, [Define mozilla snapshot])
+
+fi
 
 dnl *******************************
 dnl Misc things
@@ -187,10 +276,11 @@ AC_OUTPUT([
 Makefile
 include/Makefile
 extensions/Makefile
-extensions/sample/Makefile
+extensions/dashboard/Makefile
 extensions/gestures/Makefile
-extensions/tabsmenu/Makefile
 extensions/popup-blocker/Makefile
+extensions/sample/Makefile
+extensions/tabsmenu/Makefile
 po/Makefile.in
 ],
 [])
