@@ -1,3 +1,11 @@
+2004-09-25  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	(impl_detach_window):
+
+	Fix crash after unloading the error-viewer extension.
+	Fixes bug #153712.
+
 2004-09-22  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/error-viewer/opensp/validate.cpp:
