@@ -1,5 +1,12 @@
 2004-09-12  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/page-info/page-info-dialog.c: (images_save_image_cb),
+	(images_info_page_construct):
+
+	Make default VPaned position a #define.
+
+2004-09-12  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/page-info/page-info-dialog.c:
 	(images_info_page_construct), (images_info_page_fill),
 	(links_info_page_construct), (forms_info_page_construct),

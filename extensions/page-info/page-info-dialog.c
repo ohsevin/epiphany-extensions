@@ -40,6 +40,7 @@
 
 #include <gtk/gtkentry.h>
 #include <gtk/gtklabel.h>
+#include <gtk/gtkliststore.h>
 #include <gtk/gtktreeview.h>
 #include <gtk/gtktreeselection.h>
 #include <gtk/gtkcellrenderertext.h>
@@ -56,13 +57,8 @@
 #include <glib/gi18n.h>
 
 #if 0
-#include <gtk/gtkliststore.h>
 #include <gtk/gtksizegroup.h>
-#include <gtk/gtkdialog.h>
-#include <gtk/gtkstock.h>
 #include <gtk/gtkclipboard.h>
-#include <gtk/gtkimage.h>
-#include <gtk/gtkimagemenuitem.h>
 #include <gdk/gdkdisplay.h>
 #include <gtk/gtkmain.h>
 #include <glib/gconvert.h>
@@ -75,7 +71,6 @@ GObject *ephy_embed_factory_new_object (const char *object_id);
 
 /*
 #define STATE_PAGE_INFO_IMAGE_PANED_SIZE "page_info_dialog/page_info_image_pane_size"
-#define STATE_PAGE_INFO_IMAGE_PANED_SIZE_DEFAULT 250
 */
 
 #define COLUMN_KEY "PageInfoURLColumn"
@@ -751,6 +746,8 @@ general_info_page_new (PageInfoDialog *dialog)
 
 /* "Images" page */
 
+#define IMAGE_PANED_POSITION_DEFAULT 250
+
 typedef struct _ImagesInfoPage ImagesInfoPage;
 
 struct _ImagesInfoPage
@@ -774,7 +771,7 @@ static void
 images_save_image_cb (GtkAction *action,
 		      ImagesInfoPage *page)
 {
-	g_print ("save image!\n");
+	/* FIXME: write me! :) */
 }
 
 static GtkActionEntry images_action_entries[] =
@@ -955,7 +952,8 @@ images_info_page_construct (InfoPage *ipage)
 	vpaned = ephy_dialog_get_control (EPHY_DIALOG (dialog),
 					  properties[PROP_IMAGES_IMAGE_VPANED].id);
 
-	ephy_state_add_paned (vpaned, "PageInfoDialog::ImagesPage::VPaned", 250);
+	ephy_state_add_paned (vpaned, "PageInfoDialog::ImagesPage::VPaned",
+			      IMAGE_PANED_POSITION_DEFAULT);
 
 	tpage->store = liststore;
 	tpage->treeview = treeview;
