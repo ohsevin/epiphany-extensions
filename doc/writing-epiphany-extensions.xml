@@ -17,6 +17,14 @@
 
 		<revhistory>
 			<revision>
+				<revnumber>0.07</revnumber>
+				<date>39-Jan-2005</date>
+				<authorinitials>ah</authorinitials>
+				<revremark>
+					Inaugurate Pyphany.
+				</revremark>
+			</revision>
+			<revision>
 				<revnumber>0.06</revnumber>
 				<date>30-Oct-2004</date>
 				<authorinitials>ah</authorinitials>
@@ -73,12 +81,12 @@
 		<sect1>
 			<title>What Epiphany Extensions Are</title>
 			<para>Epiphany extensions are similar to <ulink url="http://texturizer.net/firebird/extensions/">Mozilla Firefox extensions</ulink>: they are entirely optional and change the way the browser works (usually by expanding its feature set). For example, an Epiphany extension could provide mouse gestures, track your browsing behavior, or even replace the entire Bookmarks system (though such an extension would be rather complicated).</para>
-			<para>Epiphany extensions are <emphasis>different</emphasis> from Mozilla Firefox's because they are implemented in C as opposed to Javascript. This gives enormous flexibility and a bit of added challenge, but it should be no problem for even a beginner to develop an extension which crashes Epiphany on startup.</para>
+			<para>Epiphany extensions are <emphasis>different</emphasis> from Mozilla Firefox's because they are implemented in C or Python as opposed to Javascript. This gives enormous flexibility and a bit of added challenge, but it should be no problem for even a beginner to develop an extension which crashes Epiphany on startup.</para>
 			<para>Epiphany extensions are at a lower level code-wise than Mozilla Firefox's; there is no simple way to convert a Mozilla Firefox extension to an Epiphany one. This should be repeated: <emphasis>Epiphany extensions are not interchangeable with Firefox extensions</emphasis>.</para>
 		</sect1>
 		<sect1>
 			<title>Document Scope</title>
-			<para>This document is <emphasis>not</emphasis> a C programming tutorial. It is also not a guide to the Epiphany source code. It is just a basic guide to begin writing an extension.</para>
+			<para>This document is <emphasis>not</emphasis> a C or Python programming tutorial. It is also not a guide to the Epiphany source code. It is just a basic guide to begin writing an extension.</para>
 			<para>The document is written under the assumption that the reader wants to write an extension. The document will be an aid, but it does not replace reading actual source code from existing extensions. Many extensions are available at <ulink url="http://www.gnome.org/projects/epiphany/extensions.html"/>.</para>
 		</sect1>
 		<sect1 id="getting-help">
@@ -99,13 +107,15 @@
 		<title>Preparation</title>
 		<sect1>
 			<title>Required Experience</title>
-			<para>Knowledge of C is required. Familiarity with GTK+ and Glib (especially GObjects and signals) can also be quite important. Familiarity with the Epiphany source code would be fantastic, but if you don't have it&hellip; you will before you're finished writing your extension!</para>
+			<para>Knowledge of C or Python is required. Familiarity with GTK+ and Glib (especially GObjects and signals) can also be quite important. Familiarity with the Epiphany source code would be fantastic, but if you don't have it&hellip; you will before you're finished writing your extension!</para>
 		</sect1>
 		<sect1>
 			<title>Required Programs</title>
-			<para>Obviously, you will need <ulink url="http://www.gnome.org/projects/epiphany">Epiphany</ulink> installed, and all of its required libraries. Development headers must be installed, too (for most distributions, you must install both the regular library and the <filename>-dev</filename> or <filename>-devel</filename> packages &mdash; but if you don't know this already, just give up now and save yourself the confusion). You will typically need GTK, GLib and Epiphany development headers as a minimum; depending on what your extension does, this list may be much larger.</para>
+			<para>Obviously, you will need <ulink url="http://www.gnome.org/projects/epiphany">Epiphany</ulink> installed, and all of its required libraries. Development headers must be installed, too (for most distributions, you must install both the regular library and the <filename>-dev</filename> or <filename>-devel</filename> packages&mdash; but if you don't know this already, just give up now and save yourself the confusion). You will typically need GTK, GLib and Epiphany development headers as a minimum; depending on what your extension does, this list may be much larger.</para>
 			<para>This document suggests features only found in Epiphany CVS; if a particular feature does not work for you, it could be that your version of Epiphany is too old.</para>
-			<para>To compile your extension with the existing infrastructure, you will need <application>GNU autoconf</application>, <application>GNU automake</application>, <application>libtool</application>, <application>gettext</application>, etc. Basically, you must be able to compile Epiphany from CVS. In fact, you might as well install Epiphany from CVS before coding.</para>
+			<para>It is highly recommended that you install <application>epiphany-extensions</application> as well. Besides providing a user interface to enable and disable extensions (so you don't have to edit the GConf keys manually), it also provides a C build framework.</para>
+			<para>To compile your extension with the existing C build framework, you will need <application>GNU autoconf</application>, <application>GNU automake</application>, <application>libtool</application>, <application>gettext</application>, etc. Basically, you must be able to compile Epiphany from CVS. In fact, you might as well install Epiphany from CVS before coding.</para>
+			<para>If you want to write your extension using Python, you should still install <application>epiphany-extensions</application> for its extension enabling user interface. You must also install <application>pyphany</application>, which includes Python bindings, a Python script loader, and some sample extensions.</para>
 		</sect1>
 		<sect1>
 			<title>Required Source Code</title>
@@ -132,6 +142,7 @@
 	<!-- {{{ Build-Framework -->
 	<chapter id="Build-Framework">
 		<title>Build Framework</title>
+		<para>If you are coding your extension in C, you will have to build it at some point; this chapter will detail a simple way to do so. If you are coding your extension in Python, you can skip this chapter entirely.</para>
 		<para>To avoid autoconf/automake hell, you could simply code your extension in the existing epiphany-extensions framework (download the source from <ulink url="http://www.gnome.org/projects/epiphany/extensions.html"/>). To do so:</para>
 		<orderedlist>
 			<listitem>
@@ -173,14 +184,16 @@ endif</programlisting>
 	<chapter id="Coding">
 		<title>Coding</title>
 		<note>
-			<para>In any conflict between Epiphany's coding style and this document's, Epiphany's is right and this document's is wrong. Particularly, tabs are 8 spaces wide and are <emphasis>tabs</emphasis>, and in each function declaration, each argument should appear on its own line, in line with the argument above it.</para>
+			<para>In any conflict between Epiphany's C coding style and this document's, Epiphany's is right and this document's is wrong. Particularly, tabs are 8 spaces wide and are <emphasis>tabs</emphasis>, and in each function declaration, each argument should appear on its own line, in line with the argument above it.</para>
+			<para>There is no coding standard for Python extensions.</para>
 		</note>
 		<tip>
-			<para><function>LOG</function> is included in <filename>ephy-debug.h</filename>. If you use <userinput>--enable-debug</userinput> while running <command>configure</command> or <command>autogen.sh</command> from within the <filename class="directory">epiphany-extensions/</filename> directory, the messages will be printed with <function>g_print</function>, which uses a <function>printf</function>-like syntax.</para>
+			<para>The C <function>LOG</function> macro is included in <filename>ephy-debug.h</filename>. If you use <userinput>--enable-debug</userinput> while running <command>configure</command> or <command>autogen.sh</command> from within the <filename class="directory">epiphany-extensions/</filename> directory, the messages will be printed with <function>g_print</function>, which uses a <function>printf</function>-like syntax.</para>
 		</tip>
 		<sect1 id="register-module">
 			<title><function>register_module</function></title>
-			<para>Epiphany will look for a <function>register_module</function> function. This function is defined in <filename>extension.c</filename> if you used the <filename>copy-template</filename> script.</para>
+			<para>This function is only necessary for C extensions; Python coders may skip this section.</para>
+			<para>Epiphany will look for a <function>register_module</function> function when loading the extension. This function is defined in <filename>extension.c</filename> if you used the <filename>copy-template</filename> script.</para>
 			<para>Read over the default example to understand what is expected: <function>register_module</function> must return a GObject type. Almost always, this GObject should implement the <interface>EphyExtension</interface> interface. In the template extension, this is described in the last line of the function: <programlisting>return ephy_<replaceable>foo</replaceable>_extension_register_type (module);</programlisting>. If you wish to register other GObject types, simply put their register_type calls above this one.</para>
 			<warning>
 				<para>Extensions may be loaded or unloaded at any time. This means they must be registered using <function>g_type_module_register_type</function>. Also, due to a limitation in that function, if you update your extension to change the parent class of a particular GObject, unload the extension and then reload it within Epiphany, the new GObject class will fail to register. To avoid problems, when changing the parent class of a GObject in your extension, increment the <literal>version</literal> in the extension's XML description file.</para>
@@ -204,7 +217,6 @@ endif</programlisting>
 					<term>detach_window</term>
 					<listitem><para>Called when a window is being finalized. Passed the <literal>EphyExtension</literal> and <literal>EphyWindow</literal>.</para></listitem>
 				</varlistentry>
-				<!--
 				<varlistentry>
 					<term>attach_tab</term>
 					<listitem><para>Called when a new tab is created. Passed the <literal>EphyExtension</literal>, the <literal>EphyWindow</literal> and the <literal>EphyTab</literal>.</para></listitem>
@@ -213,74 +225,49 @@ endif</programlisting>
 					<term>detach_tab</term>
 					<listitem><para>Called before a tab is finalized. Passed the <literal>EphyExtension</literal>, the <literal>EphyWindow</literal> and the <literal>EphyTab</literal>.</para></listitem>
 				</varlistentry>
-				-->
 			</variablelist>
 			<para>The template file will contain empty <function>impl_attach_window</function> and <function>impl_detach_window</function> when it is first created.</para>
+			<para>Python extensions may use these same functions. When using Python, the <literal>EphyExtension</literal> argument is never passed (just store data structures as globals in the Python module).</para>
 		</sect1>
 		<sect1>
 			<title>Connecting Signals</title>
-			<para>GLib has a very flexible signals system. Use it. The <function>impl_attach_window</function> function has an <literal>EphyWindow</literal> argument. As an example, the <literal>tab_added</literal> signal will be fired whenever a tab is added to that window. Put the following in <function>impl_attach_window</function> to hook the <literal>tab_added</literal> signal to your own callback:</para>
+			<para>GLib has a very flexible signals system. Use it. The <function>attach_window</function> function has an <literal>EphyWindow</literal> argument. As an example, the <literal>switch_page</literal> signal will be fired on a window's tab whenever the tab changes. Put the following in <function>attach_window</function> to hook the <literal>switch_page</literal> signal to your own callback:</para>
 			<example>
-				<title>Connecting the tab_added signal</title>
-				<programlisting>GtkWidget *notebook;
+				<title>Connecting the switch_page signal</title>
+				<programlisting language="python">def _switch_page_cb(notebook, page, page_num, data):
+	print data
 
-	notebook = ephy_window_get_notebook (window);
+def attach_window(window):
+	notebook = window.get_notebook()
+	sig = notebook.connect('switch_page', _switch_page_cb, 'Foo')
+	notebook._example_extension_sig = sig
 
-	g_signal_connect_after (notebook, &quot;tab_added&quot;, G_CALLBACK (tab_added_cb), extension);
-	g_signal_connect_after (notebook, &quot;tab_removed&quot;, G_CALLBACK (tab_removed_cb), extension);</programlisting>
+def detach_window(window):
+	notebook = window.get_notebook()
+	sig = notebook._example_extension_sig
+	notebook.disconnect(sig)
+	del notebook._example_extension_sig</programlisting>
 			</example>
-			<para><function>tab_added_cb</function> can connect signals of its own. Of particular interest are the <literal>EphyEmbed</literal> signals (prefixed by <literal>ge_</literal>). These signals are listed in <filename>epiphany/embed/ephy-embed.c</filename>. For example, to call a function when the browser changes to a new location:</para>
+			<para><function>tab_added</function> can connect signals of its own. Of particular interest are the <literal>EphyEmbed</literal> signals (prefixed by <literal>ge_</literal>). These signals are listed in <filename>epiphany/embed/ephy-embed.c</filename>. For example, to call a function when the browser changes to a new location:</para>
 			<example>
 				<title>Listening to location changes</title>
-				<programlisting>static void
-location_cb (EphyEmbed *embed, char *address, EphyTab *tab)
-{
-	/* Actions to perform on location change */
-}
+				<programlisting language="python">def _location_cb(embed, address):
+	print 'New location: %s' % address
 
-static void
-tab_added_cb (GtkWidget *notebook, EphyTab *tab, Ephy<replaceable>Foo</replaceable>Extension *extension)
-{
-	EphyEmbed *embed;
+def attach_tab(window, tab):
+	embed = tab.get_embed()
+	sig = embed.connect('ge-location', _location_cb)
+	embed._python_sample_location_sig = sig
 
-	g_return_if_fail (EPHY_IS_TAB (tab));
-
-	embed = ephy_tab_get_embed (tab);
-	g_return_if_fail (EPHY_IS_EMBED (embed));
-
-	g_signal_connect (G_OBJECT (embed), &quot;ge_location&quot;, G_CALLBACK (location_cb), tab);
-}</programlisting>
+def detach_tab(window, tab):
+	embed = tab.get_embed()
+	sig = embed._python_sample_location_sig
+	del embed._python_sample_location_sig
+	embed.disconnect(sig)</programlisting>
 			</example>
 			<warning>
-				<para>Free all memory and disconnect all signals when they're not needed. In the case of this <literal>ge_location</literal> signal connection, disconnect the signal when the tab is removed:</para>
-				<programlisting>
-static void
-tab_removed_cb (GtkWidget *notebook, EphyTab *tab, Ephy<replaceable>Foo</replaceable>Extension *extension)
-{
-	EphyEmbed *embed;
-
-	g_return_if_fail (EPHY_IS_TAB (tab));
-
-	embed = ephy_tab_get_embed (tab);
-	g_return_if_fail (EPHY_IS_EMBED (embed));
-
-	g_signal_handlers_disconnect_by_func
-		(embed, G_CALLBACK (location_cb), tab);
-}
-				</programlisting>
-				<para>Likewise, clean up in <function>impl_detach_window</function>. In our example:</para>
-				<programlisting>
-	GtkWidget *notebook;
-
-	notebook = ephy_window_get_notebook (window);
-
-	g_signal_handlers_disconnect_by_func
-		(notebook, G_CALLBACK (tab_added_cb), extension);
-	g_signal_handlers_disconnect_by_func
-		(notebook, G_CALLBACK (tab_removed_cb), extension);
-				</programlisting>
-	
-
+				<para>Free all memory and disconnect all signals when they're not needed. In the case of this <literal>ge_location</literal> signal connection, disconnect the signal when the tab is removed.</para>
+				<para>Python's garbage collector frees memory properly, but it does not disconnect signals; you <emphasis>must</emphasis> disconnect signals.</para>
 			</warning>
 		</sect1>
 		<sect1 id="translation">
@@ -308,7 +295,7 @@ g_print (ngettext (&quot;%d cow jumped over the moon&quot;, &quot;%d cows jumped
 			<para>The <classname>GtkUIManager</classname> functions allow you to add new user interface elements. Epiphany's <function>ephy_window_get_ui_manager</function> will return the appropriate <classname>GtkUIManager</classname> for an <classname>EphyWindow</classname>. Use <classname>GtkAction</classname>s to represent actions. For example, an extension could place an action at the bottom of the <guimenu>Go</guimenu> menu of Epiphany. To do so, write the following in <filename>ephy-<replaceable>foo</replaceable>-extension.c</filename>:</para>
 			<example>
 				<title>Adding menu entries</title>
-				<programlisting>#include &lt;gtk/gtkaction.&gt;
+				<programlisting language="C">#include &lt;gtk/gtkaction.&gt;
 #include &lt;gtk/gtkactiongroup&gt;
 #include &lt;gtk/gtkuimanager.h&gt;
 
@@ -407,6 +394,47 @@ impl_detach_window (EphyExtension *extension,
 
 	g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, NULL);
 }</programlisting>
+			</example>
+			<example>
+				<title>Adding menu entries (Python)</title>
+				<programlisting language="python"><![CDATA[import gtk
+
+_ui_str = """
+<ui>
+	<menubar name="menubar">
+		<menu name="GoMenu" action="Go">
+			<separator/>
+			<menuitem name="SampleMenuEntry"
+				action="SampleMenuEntry"/>
+			<separator/>
+		</menu>
+	</menubar>
+</ui>
+"""
+
+def _menu_entry_cb(action, data):
+	print data
+
+_actions = [('SampleMenuEntry', None, 'Sample Menu Entry',
+	     None, None, _menu_entry_cb)]
+
+def attach_window(window):
+	ui_manager = window.get_ui_manager()
+	group = gtk.ActionGroup('SampleMenu')
+	group.add_actions(_actions, 'Data')
+	ui_manager.insert_action_group(group, 0)
+	ui_id = ui_manager.add_ui_from_string(_ui_str)
+
+	window._sample_menu_entry_data = (group, ui_id)
+
+def detach_window(window):
+	group, ui_id = window._sample_menu_entry_data
+	del window._sample_menu_entry_data
+
+	ui_manager = window.get_ui_manager()
+	ui_manager.remove_ui(ui_id)
+	ui_manager.remove_action_group(group)
+	ui_manager.ensure_update()]]></programlisting>
 			</example>
 			<tip>
 				<para>The existing epiphany menu hierarchy is described in <filename>epiphany/data/ui/epiphany-ui.xml</filename>.</para>
@@ -540,6 +568,7 @@ ephy_<replaceable>foo</replaceable>_extension_finalize (Ephy<replaceable>Foo</re
 			</example>
 			<para>Voila! <function>my_gconf_cb</function> will be called when the GConf key is modified from within any program. Isn't GConf great?</para>
 			<para>Read <filename>epiphany-extensions/include/eel-gconf-extensions.h</filename> for a full list of functions.</para>
+			<para>If your extension is written in Python, you may use <application>gnome-python</application>'s GConf bindings.</para>
 		</sect1>
 		<sect1>
 			<title>Your Own Ideas</title>
@@ -558,7 +587,7 @@ ephy_<replaceable>foo</replaceable>_extension_finalize (Ephy<replaceable>Foo</re
 					<para>Note: Some such JavaScript-heavy, UI-free extensions actually work fine with Epiphany already (flashblock is one such extension).</para>
 				</listitem>
 				<listitem>
-					<para>A C# extension loader. Look at <filename>epiphany/src/ephy-extensions-manager.c</filename> and <filename>epiphany/lib/ephy-shlib-loader.c</filename> to begin your quest. Note that C# Epiphany bindings have not yet been written.</para>
+					<para>A C# extension loader. The <application>epiphany-mono</application> directory in GNOME CVS has the beginnings of such a system. There are a few bugs, and there is no documentation (this document, for instance, should be updated to include C#).</para>
 				</listitem>
 				<listitem>
 					<para>[Insert your favourite Firefox extension here. Then make it better.]</para>
