@@ -1,3 +1,43 @@
+=========================
+Epiphany Extensions 0.2.1
+=========================
+
+What is it?
+===========
+
+A collection of extensions for Epiphany, the GNOME web browser.
+
+What's New ?
+============
+
+New features:
+
+	* Tabs Menu Extension:
+
+	  This extension adds the following functionality to the tabs menu:
+	  - Clone current tab
+	  - Move current tab to a different window
+
+	  Important!
+	  You need to apply the supplied patch to epiphany
+	  for this extension to work, see plugins/tabsmenu/README.
+
+	* Zoom Persistence Extension:
+
+	  Saves zoom levels per host, and restores them when you visit
+	  a page on that host later again.
+
+
+Code changes:
+
+	* Gestures Extension:
+	
+	  Simplified the gestures xml file format.
+
+New or updated translation:
+
+	* de, en_GB, fr, ja (chpe)
+
 ======================
 Epiphany Plugins 0.1.0
 ======================

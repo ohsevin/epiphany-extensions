@@ -2,7 +2,7 @@ dnl Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.52)
 
-AC_INIT(ephy-plugins, 0.2.0, [http://savannah.nongnu.org/bugs/?func=addbug&group=ephyplugins])
+AC_INIT(ephy-extensions, 0.2.1, [http://savannah.nongnu.org/bugs/?func=addbug&group=ephyplugins])
 
 AC_CONFIG_SRCDIR(plugins)
 AM_CONFIG_HEADER(config.h)
@@ -38,7 +38,7 @@ ALL_LINGUAS="de en_GB fr ja"
 
 AC_PROG_INTLTOOL([0.22])
 
-GETTEXT_PACKAGE=ephy-plugins-1.0
+GETTEXT_PACKAGE=ephy-extensions-1.0
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
 AM_GLIB_GNU_GETTEXT
@@ -74,20 +74,52 @@ dnl fi
 dnl AM_GCONF_SOURCE_2
 
 dnl *******************************
-dnl Plugins
+dnl Extensions
 dnl *******************************
 
-AC_ARG_ENABLE(plugin-sample, [  --enable-plugin-sample  (yes,no)      	Enable sample plugin])
-AM_CONDITIONAL(ENABLE_PLUGIN_SAMPLE, test "x$enable_plugin_sample" = "xyes")
- 
-AC_ARG_ENABLE(plugin-gestures,	[  --enable-plugin-gestures  (yes,no)	Enable gestures plugin])
-AM_CONDITIONAL(ENABLE_PLUGIN_GESTURES, test "x$enable_plugin_gestures" = "xyes")
+AC_MSG_CHECKING(extensions to build)
 
-AC_ARG_ENABLE(plugin-tabsmenu,	[ --enable-plugin-tabsmenu  (yes,no)	Enable tabs menu plugin])
-AM_CONDITIONAL(ENABLE_PLUGIN_TABSMENU, test "x$enable_plugin_tabsmenu" = "xyes")
+all_extensions="sample,gestures,tabsmenu,zoom-persistence"
+all_useful_extensions="gestures,tabsmenu,zoom-persistence"
+default_extensions="gestures"
 
-AC_ARG_ENABLE(plugin-zoom,	[ --enable-plugin-zoom-persistence  (yes,no)	Enable zoom persistence plugin])
-AM_CONDITIONAL(ENABLE_PLUGIN_ZOOM_PERSISTENCE, test "x$enable_plugin_zoom_persistence" = "xyes")
+dnl due to an autoconf bug, commas in the first arg to
+dnl AC_HELP_STRING cause problems.
+dnl AC_HELP_STRING([--with-extensions=ext1,ext2,...],[build the specified extensions])
+AC_ARG_WITH(extensions,
+[  --with-extensions=extension1,extension2,...
+			  build the specified extensions. Available:
+			  sample, gestures, tabsmenu, zoom-persistence, all])
+
+dnl If no extensions specified, build the default set
+if test "x$with_extensions" = xyes; then
+  extensions="$default_extensions"
+else
+  extensions="$with_extensions"
+fi
+
+if test "x$extensions" = x; then
+  extensions="$default_extensions"
+fi
+
+if test "x$extensions" = xall; then
+  extensions="$all_useful_extensions"
+fi
+
+AC_MSG_RESULT($extensions)
+
+for ext in $extensions; do
+ if echo "$all_extensions" | egrep "(^|,)$ext(\$|,)" > /dev/null; then
+   :
+ else
+   AC_MSG_ERROR([the specified extension $ext does not exist])
+ fi
+done
+
+AM_CONDITIONAL(ENABLE_PLUGIN_SAMPLE, echo "$extensions" | egrep '(^|,)sample($|,)' > /dev/null)
+AM_CONDITIONAL(ENABLE_PLUGIN_GESTURES, echo "$extensions" | egrep '(^|,)gestures($|,)' > /dev/null)
+AM_CONDITIONAL(ENABLE_PLUGIN_TABSMENU, echo "$extensions" | egrep '(^|,)tabsmenu($|,)' > /dev/null)
+AM_CONDITIONAL(ENABLE_PLUGIN_ZOOM_PERSISTENCE, echo "$extensions" | egrep '(^|,)zoom-persistence($|,)' > /dev/null)
 
 dnl *******************************
 dnl Misc things

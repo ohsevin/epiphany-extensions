@@ -2,7 +2,7 @@ SUBDIRS =
 
 EXTRA_DIST =				\
 	ephy-debug.h			\
-	ephy-file-helpers.helpers	\
+	ephy-file-helpers.h		\
 	ephy-string.h			\
 	egg-menu-merge.h		\
 	egg-action.h			\
