@@ -37,6 +37,7 @@
 
 /* non-installed ephy headers */
 #include "ephy-state.h"
+#include "ephy-gui.h"
 #include "eel-gconf-extensions.h"
 #include "ephy-file-helpers.h"
 
@@ -501,7 +502,8 @@ treeview_info_page_show_popup (TreeviewInfoPage *page)
 
 	widget = gtk_ui_manager_get_widget (dialog->priv->manager,
 					    page->popup_path);
-	gtk_menu_popup (GTK_MENU (widget), NULL, NULL, NULL, NULL, 2,
+	gtk_menu_popup (GTK_MENU (widget), NULL, NULL,
+			ephy_gui_menu_position_tree_selection, page->treeview, 2,
 			gtk_get_current_event_time ());
 
 	return TRUE;
@@ -512,10 +514,13 @@ treeview_info_page_button_pressed_cb (GtkTreeView *treeview,
 				      GdkEventButton *event,
 				      TreeviewInfoPage *page)
 {
+	InfoPage *ipage = (InfoPage *) page;
+	PageInfoDialog *dialog = ipage->dialog;
 	GtkTreeModel *model = GTK_TREE_MODEL (page->store);
 	GtkTreeSelection *selection;
 	GtkTreeIter iter;
 	GtkTreePath *path = NULL;
+	GtkWidget *widget;
 
 	/* right-click? */
 	if (event->button != 3)
@@ -543,7 +548,13 @@ treeview_info_page_button_pressed_cb (GtkTreeView *treeview,
 	gtk_tree_selection_select_path (selection, path);
 	gtk_tree_path_free (path);
 
-	return treeview_info_page_show_popup (page);
+	/* now popup the menu */
+	widget = gtk_ui_manager_get_widget (dialog->priv->manager,
+					    page->popup_path);
+	gtk_menu_popup (GTK_MENU (widget), NULL, NULL, NULL, NULL, 2,
+			gtk_get_current_event_time ());
+
+	return TRUE;
 }
 
 static void

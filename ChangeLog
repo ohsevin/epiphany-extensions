@@ -1,3 +1,15 @@
+2004-09-14  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/page-info/page-info-dialog.c:
+	(treeview_info_page_show_popup),
+	(treeview_info_page_button_pressed_cb):
+
+	Fix context menu positioning.
+
+	* include/ephy-gui.h:
+
+	Update from Epiphany.
+
 2004-09-13  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* README:
