@@ -1,5 +1,5 @@
 # Serbian translation of epiphany-extensions
-# Courtesy of Prevod.org team (http://www.prevod.org/) -- 2003, 2004.
+# Courtesy of Prevod.org team (http://prevod.org/) -- 2003, 2004.
 #
 # This file is distributed under the same license as the epiphany-extensions package.
 #
@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-01-23 12:05+0100\n"
-"PO-Revision-Date: 2004-01-23 12:05+0100\n"
+"POT-Creation-Date: 2004-02-12 06:24+0100\n"
+"PO-Revision-Date: 2004-02-12 06:28+0100\n"
 "Last-Translator: Данило Шеган <danilo@prevod.org>\n"
 "Language-Team: Serbian (sr) <serbiangnome-lista@nongnu.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,12 +19,31 @@ msgstr ""
 "Plural-Forms: nplurals=3;    plural=n%10==1 && n%100!=11 ? 0 :    n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:61
-msgid "Errors"
-msgstr "Грешке"
+#. stock icon
+#: extensions/certificates/ephy-certificates-extension.c:214
+msgid "Server _Certificate"
+msgstr "_Сертификат сервера"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:63
+#: extensions/certificates/ephy-certificates-extension.c:216
+msgid "Display the web server's certificate"
+msgstr "Прикажи сертификат веб сервера"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:83
+msgid "_Validate"
+msgstr "_Провери"
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:85
+msgid "Display HTML errors in the Error Viewer dialog"
+msgstr "Прикажи HTML грешке у прозорчету за преглед грешака"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:90
+msgid "_Error Viewer"
+msgstr "Преглед _грешака"
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:92
 msgid "Display web page errors"
 msgstr "Прикажи грешке на веб страници"
 
@@ -36,17 +55,73 @@ msgstr "_Очисти"
 msgid "Error Viewer"
 msgstr "Преглед грешака"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:100
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:106
 #, c-format
 msgid ""
-"Error in %s, Line %d:\n"
+"Javascript error in %s on line %d:\n"
 "%s"
 msgstr ""
-"Грешка у %s, ред %d:\n"
+"Грешка у ЈаваСкрипту у %s, у %d. реду:\n"
 "%s"
 
+#: extensions/error-viewer/opensp/validate.cpp:167
+#, c-format
+msgid ""
+"HTML error in %s on line %s:\n"
+"%s"
+msgstr ""
+"Грешка у HTML-у у %s, у %s. реду:\n"
+"%s"
+
+#: extensions/error-viewer/sgml-validator.c:162
+#, c-format
+msgid ""
+"HTML Validation of %s complete\n"
+"Found %d error"
+msgid_plural ""
+"HTML Validation of %s complete\n"
+"Found %d errors"
+msgstr[0] ""
+"HTML провера је %s готова\n"
+"Нађох %d грешку"
+msgstr[1] ""
+"HTML провера је %s готова\n"
+"Нађох %d грешке"
+msgstr[2] ""
+"HTML провера је %s готова\n"
+"Нађох %d грешака"
+
+#: extensions/error-viewer/sgml-validator.c:216
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"Doctype is XHTML but content type is text/html.  Use application/xhtml+xml "
+"instead."
+msgstr ""
+"HTML грешка у %s:\n"
+"Врста документа је XHTML али врста садржаја је text/html.  Користите уместо тога application/xhtml+xml."
+
+#: extensions/error-viewer/sgml-validator.c:231
+#, c-format
+msgid ""
+"HTML warning in %s:\n"
+"Doctype is XHTML but content type is text/html.  Use application/xhtml+xml "
+"instead."
+msgstr ""
+"HTML упозорење у %s:\n"
+"Врста документа је XHTML али врста садржаја је text/html.  Користите уместо тога application/xhtml+xml."
+
+#: extensions/error-viewer/sgml-validator.c:368
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"No valid doctype specified."
+msgstr ""
+"HTML грешка у %s:\n"
+"Није наведена исправна врста документа."
+
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
-msgid "Block _Popups from this Site"
+msgid "Blo_ck Popups from this Site"
 msgstr "Забрани _искачуће прозоре са ове странице"
 
 #. shortcut key
@@ -62,7 +137,7 @@ msgstr[0] "Забрањен %d искачући прозор"
 msgstr[1] "Забрањена %d искачућа прозора"
 msgstr[2] "Забрањено %d искачућих прозора"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:181
+#: extensions/tabsmenu/ephy-tab-move-menu.c:185
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"
@@ -70,10 +145,13 @@ msgstr[0] "Прозор „%s“ (%d лист)"
 msgstr[1] "Прозор „%s“ (%d листа)"
 msgstr[2] "Прозор „%s“ (%d листова)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:272
+#: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move Tab To Window"
 msgstr "Премести лист у прозор"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:273
+#: extensions/tabsmenu/ephy-tab-move-menu.c:284
 msgid "Move the current tab to a different window"
 msgstr "Премести текући лист у други прозор"
+
+#~ msgid "Errors"
+#~ msgstr "Грешке"
