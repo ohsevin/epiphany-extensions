@@ -8,9 +8,10 @@ if ENABLE_SAMPLE_EXTENSION
 SUBDIRS += sample
 endif
 
-if ENABLE_TABSMENU_EXTENSION
-SUBDIRS += tabsmenu
-endif
+#tabsmenu isn't functional atm
+#if ENABLE_TABSMENU_EXTENSION
+#SUBDIRS += tabsmenu
+#endif
 
 DIST_SUBDIRS = sample gestures tabsmenu
 
