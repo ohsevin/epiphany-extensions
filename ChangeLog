@@ -1,3 +1,13 @@
+2004-03-12  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
+	(update_action), (action_activate_cb), (impl_attach_window):
+
+	Change UI: The entry is now at the bottom of the View menu (it should
+	be somewhere in the middle) and it's simply "[ ] Popup _Windows". Soon
+	I'll make activating/deactivating the menu entry show/hide all the
+	site's popups.
+
 2004-03-11  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/popup-blocker/mozilla/mozilla-helpers.cpp:

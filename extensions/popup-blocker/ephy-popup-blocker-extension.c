@@ -60,9 +60,9 @@ static void clear_popup_permissions (void);
 
 static GtkToggleActionEntry action_entries [] =
 {
-	{ "PopupBlocker", NULL, N_("Blo_ck Popups from this Site"),
+	{ "PopupBlocker", NULL, N_("Popup _Windows"),
 	  NULL, /* shortcut key */
-	  N_("Block or unblock popup windows"),
+	  N_("Show or hide unrequested popup windows from this site"),
 	  NULL, TRUE }
 };
 static const guint n_action_entries = G_N_ELEMENTS (action_entries);
@@ -152,8 +152,7 @@ update_action (EphyWindow *window, const char *address)
 					 G_CALLBACK (action_activate_cb),
 					 window);
 
-	gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (action),
-				      allow == FALSE);
+	gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (action), allow);
 
 	g_signal_handlers_unblock_by_func (G_OBJECT (action),
 					   G_CALLBACK (action_activate_cb),
@@ -378,11 +377,11 @@ action_activate_cb (GtkAction *action,
 
 	if (gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action)) == TRUE)
 	{
-		allow = EPHY_PERMISSION_DENIED;
+		allow = EPHY_PERMISSION_ALLOWED;
 	}
 	else
 	{
-		allow = EPHY_PERMISSION_ALLOWED;
+		allow = EPHY_PERMISSION_DENIED;
 	}
 
 	LOG ("from now on, address '%s' will %s popups", address,
@@ -559,10 +558,10 @@ impl_attach_window (EphyExtension *extension,
 
 	gtk_ui_manager_add_ui (manager, merge_id, "/menubar/ViewMenu",
 			       "PopupBlockerSep", NULL,
-			       GTK_UI_MANAGER_SEPARATOR, TRUE);
+			       GTK_UI_MANAGER_SEPARATOR, FALSE);
 	gtk_ui_manager_add_ui (manager, merge_id, "/menubar/ViewMenu",
 			       "PopupBlocker", "PopupBlocker",
-			       GTK_UI_MANAGER_MENUITEM, TRUE);
+			       GTK_UI_MANAGER_MENUITEM, FALSE);
 
 	/*
 	 * Connect the GtkToggleAction's activate signal
