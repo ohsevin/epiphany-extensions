@@ -27,6 +27,9 @@
 
 #include <glib.h>
 
+#define MOZILLA_STRICT_API
+#include <nsEmbedString.h>
+#undef MOZILLA_STRICT_API
 #include <nsCOMPtr.h>
 #include <nsISelection.h>
 #include <gtkmozembed.h>
@@ -34,7 +37,6 @@
 #include <nsIDOMWindow.h>
 #include <nsIWebBrowserFocus.h>
 #include <gtkmozembed_internal.h>
-#include <nsEmbedString.h>
 #include <nsMemory.h>
 
 extern "C" char *
