@@ -1,3 +1,23 @@
+2004-10-11  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/adblock/Makefile.am:
+	* extensions/certificates/Makefile.am:
+	* extensions/dashboard/Makefile.am:
+	* extensions/error-viewer/Makefile.am:
+	* extensions/gestures/Makefile.am:
+	* extensions/page-info/Makefile.am:
+	* extensions/sample-mozilla/Makefile.am:
+	* extensions/sample/Makefile.am:
+	* extensions/select-stylesheet/Makefile.am:
+	* extensions/sidebar/Makefile.am:
+	* extensions/smart-bookmarks/Makefile.am:
+	* extensions/tab-groups/Makefile.am:
+	* extensions/tabsmenu/Makefile.am:
+	* extensions/toolbar-extras/Makefile.am:
+
+	Substitute library name. Still doesn't work when building from clean,
+	since the .xml is built first, not after lib*.la.
+
 2004-10-10  Christian Persch  <chpe@cvs.gnome.org>
 
 	* autogen.sh:
