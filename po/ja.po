@@ -1,17 +1,17 @@
 # Japanese Epiphany Plugins translation
-# Copyright (C) 2003-2004 Christian Persch 
+# Copyright (C) 2003-2005 Christian Persch 
 # This file is distributed under the same license as the Epiphany Plugins package.
-# Christian Persch <chpe+ephyplugins@stud.uni-saarland.de>, 2003
-# Yukhiro Nakai <nakai@gnome.gr.jp>, 2004
-# Takeshi AIHANA <aihana@gnome.gr.jp>, 2004
+# Christian Persch <chpe+ephyplugins@stud.uni-saarland.de>, 2003.
+# Yukhiro Nakai <nakai@gnome.gr.jp>, 2004.
+# Takeshi AIHANA <aihana@gnome.gr.jp>, 2004,2005.
 #
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-12-21 12:14+0900\n"
-"PO-Revision-Date: 2004-12-21 12:10+0900\n"
+"POT-Creation-Date: 2005-01-15 02:31+0900\n"
+"PO-Revision-Date: 2005-01-15 02:30+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -19,92 +19,92 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
 msgid "_Edit Bookmarks"
 msgstr "ブックマークの編集(_E)"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
 msgid "Open the bookmarks window"
 msgstr "ブックマーク・ウィンドウを開きます"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:451
 msgid "Open in _Current Tab"
 msgstr "このタブの中に開く(_C)"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:446
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:452
 msgid "Open bookmarks in the current tab of the active window"
 msgstr "アクティブなウィンドウのタブの中にブックマークを開きます"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:448
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:454
 msgid "Open in New _Tab"
 msgstr "新しいタブの中に開く(_T)"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:449
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:455
 msgid "Open bookmarks in a new tab of the active window"
 msgstr "アクティブなウィンドウの新しいタブの中にブックマークを開きます"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:451
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:457
 msgid "Open in New _Window"
 msgstr "新しいウィンドウの中に開く(_W)"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:452
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:458
 msgid "Open bookmarks in new a window"
 msgstr "新しいウィンドウの中にブックマークを開きます"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:520
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:526
 msgid "Bookmarks"
 msgstr "ブックマーク"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:263
+#: extensions/certificates/ephy-certificates-extension.c:265
 msgid "Manage _Certificates"
 msgstr "証明書の管理(_C)"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:265
+#: extensions/certificates/ephy-certificates-extension.c:267
 msgid "Manage your certificates"
 msgstr "お使いの証明書を管理します"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:273
+#: extensions/certificates/ephy-certificates-extension.c:275
 msgid "Server _Certificate"
 msgstr "サーバ証明書(_C)"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:275
+#: extensions/certificates/ephy-certificates-extension.c:277
 msgid "Display the web server's certificate"
 msgstr "ウェブ・サーバの証明書を表示します"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:98
+#: extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
 msgstr "HTML のチェック(_H)"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:100
+#: extensions/error-viewer/ephy-error-viewer-extension.c:99
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "HTML のエラーをエラー表示ダイアログの中に表示します"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:105
+#: extensions/error-viewer/ephy-error-viewer-extension.c:104
 msgid "Check _Links"
 msgstr "リンクのチェック(_L)"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:107
+#: extensions/error-viewer/ephy-error-viewer-extension.c:106
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr "おかしなハイパーリンクをエラー表示ダイアログの中に表示します"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:111
+#: extensions/error-viewer/ephy-error-viewer-extension.c:110
 msgid "_Error Viewer"
 msgstr "エラー・ビューア(_E)"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:113
+#: extensions/error-viewer/ephy-error-viewer-extension.c:112
 msgid "Display web page errors"
 msgstr "ウェブ・ページのエラーを表示します"
 
 #: extensions/error-viewer/error-viewer.glade.h:1
-msgid "C_lear"
-msgstr "クリア(_L)"
+msgid "Cl_ear"
+msgstr "クリア(_E)"
 
 #: extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
@@ -161,19 +161,19 @@ msgstr ""
 "%s の %s 行目に HTML エラー:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:167
+#: extensions/error-viewer/sgml-validator.c:165
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
 msgstr[0] "%d 個のエラーが見つかりました"
 msgstr[1] "%d 個のエラーが見つかりました"
 
-#: extensions/error-viewer/sgml-validator.c:171
+#: extensions/error-viewer/sgml-validator.c:169
 #, c-format
 msgid "HTML Validation of %s complete"
 msgstr "%s の HTML 検証が完了しました"
 
-#: extensions/error-viewer/sgml-validator.c:229
+#: extensions/error-viewer/sgml-validator.c:227
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -182,8 +182,8 @@ msgstr ""
 "%s の中に HTML エラー:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:231
-#: extensions/error-viewer/sgml-validator.c:247
+#: extensions/error-viewer/sgml-validator.c:229
+#: extensions/error-viewer/sgml-validator.c:245
 msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
@@ -191,7 +191,7 @@ msgstr ""
 "DOCTYPE は \"XHTML\" ですが、CONTENTESTYPE は \"text/html\" になっています。"
 "代わりに \"application/xhtml+xml\" を使って下さい。"
 
-#: extensions/error-viewer/sgml-validator.c:245
+#: extensions/error-viewer/sgml-validator.c:243
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
@@ -200,20 +200,20 @@ msgstr ""
 "%s の中に HTML ワーニング:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:362
+#: extensions/error-viewer/sgml-validator.c:360
 #, c-format
 msgid "HTML error in %s:"
 msgstr "%s の中に HTML エラー:"
 
-#: extensions/error-viewer/sgml-validator.c:370
+#: extensions/error-viewer/sgml-validator.c:368
 msgid "Invalid character encoding"
 msgstr "文字エンコーディングが間違っています"
 
-#: extensions/error-viewer/sgml-validator.c:375
+#: extensions/error-viewer/sgml-validator.c:373
 msgid "Unknown error while converting to UTF-8"
 msgstr "UTF-8 へ変換する際に不明なエラーが発生しました"
 
-#: extensions/error-viewer/sgml-validator.c:437
+#: extensions/error-viewer/sgml-validator.c:435
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -222,19 +222,19 @@ msgstr ""
 "%s の中に HTML エラー:\n"
 "正しい DOCTYPE が指定されていません。"
 
-#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
 msgid "_Extensions"
 msgstr "拡張機能(_E)"
 
-#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
+#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
 msgid "Load and unload extensions"
 msgstr "Epiphany 拡張機能の有効/無効を設定します"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.c:357
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:355
 msgid "Enabled"
 msgstr "有効"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:362
 msgid "Description"
 msgstr "説明"
 
@@ -246,148 +246,148 @@ msgstr "<b>ロードした拡張機能の一覧</b>"
 msgid "Extensions"
 msgstr "Epiphany 拡張機能"
 
-#: extensions/page-info/ephy-page-info-extension.c:66
+#: extensions/page-info/ephy-page-info-extension.c:65
 msgid "_Page Info"
 msgstr "ページ情報(_P)"
 
-#: extensions/page-info/ephy-page-info-extension.c:68
+#: extensions/page-info/ephy-page-info-extension.c:67
 msgid "Display page information in a dialog"
 msgstr "ページ情報をダイアログに表示します"
 
-#: extensions/page-info/page-info-dialog.c:640
+#: extensions/page-info/page-info-dialog.c:645
 msgid "Unknown type"
 msgstr "種類を特定できません"
 
-#: extensions/page-info/page-info-dialog.c:645
+#: extensions/page-info/page-info-dialog.c:650
 msgid "Full standards compliance"
 msgstr "完全に標準互換"
 
-#: extensions/page-info/page-info-dialog.c:648
+#: extensions/page-info/page-info-dialog.c:653
 msgid "Almost standards compliance"
 msgstr "ほぼ標準互換"
 
-#: extensions/page-info/page-info-dialog.c:651
+#: extensions/page-info/page-info-dialog.c:656
 msgid "Compatibility"
 msgstr "互換性"
 
-#: extensions/page-info/page-info-dialog.c:654
+#: extensions/page-info/page-info-dialog.c:659
 msgid "Undetermined"
 msgstr "未確認"
 
-#: extensions/page-info/page-info-dialog.c:663
+#: extensions/page-info/page-info-dialog.c:668
 msgid "Not cached"
 msgstr "キャッシュされていない"
 
-#: extensions/page-info/page-info-dialog.c:666
+#: extensions/page-info/page-info-dialog.c:671
 msgid "Disk cache"
 msgstr "ディスクへキャッシュ済"
 
-#: extensions/page-info/page-info-dialog.c:669
+#: extensions/page-info/page-info-dialog.c:674
 msgid "Memory cache"
 msgstr "メモリへキャッシュ済"
 
-#: extensions/page-info/page-info-dialog.c:672
+#: extensions/page-info/page-info-dialog.c:677
 msgid "Unknown cache"
 msgstr "キャッシュを特定できません"
 
-#: extensions/page-info/page-info-dialog.c:688
-#: extensions/page-info/page-info-dialog.c:808
+#: extensions/page-info/page-info-dialog.c:693
+#: extensions/page-info/page-info-dialog.c:822
 msgid "Unknown"
 msgstr "不明"
 
-#: extensions/page-info/page-info-dialog.c:693
+#: extensions/page-info/page-info-dialog.c:698
 msgid "No referrer"
 msgstr "照会者なし"
 
-#: extensions/page-info/page-info-dialog.c:707
-#: extensions/page-info/page-info-dialog.c:723
+#: extensions/page-info/page-info-dialog.c:712
+#: extensions/page-info/page-info-dialog.c:728
 msgid "Not specified"
 msgstr "指定なし"
 
-#: extensions/page-info/page-info-dialog.c:793
+#: extensions/page-info/page-info-dialog.c:807
 msgid "Image"
 msgstr "画像"
 
-#: extensions/page-info/page-info-dialog.c:796
+#: extensions/page-info/page-info-dialog.c:810
 msgid "Embed"
 msgstr "埋め込み"
 
-#: extensions/page-info/page-info-dialog.c:799
+#: extensions/page-info/page-info-dialog.c:813
 msgid "Object"
 msgstr "オブジェクト"
 
-#: extensions/page-info/page-info-dialog.c:802
+#: extensions/page-info/page-info-dialog.c:816
 msgid "Applet"
 msgstr "アプレット"
 
-#: extensions/page-info/page-info-dialog.c:805
+#: extensions/page-info/page-info-dialog.c:819
 msgid "Icon"
 msgstr "アイコン"
 
-#: extensions/page-info/page-info-dialog.c:961
+#: extensions/page-info/page-info-dialog.c:975
 msgid "Save Medium As..."
 msgstr "メディアを別名で保存..."
 
-#: extensions/page-info/page-info-dialog.c:976
+#: extensions/page-info/page-info-dialog.c:992
 msgid "Select a directory"
 msgstr "フォルダの選択"
 
-#: extensions/page-info/page-info-dialog.c:1074
+#: extensions/page-info/page-info-dialog.c:1093
 msgid "_Open"
 msgstr "開く(_O)"
 
-#: extensions/page-info/page-info-dialog.c:1080
-#: extensions/page-info/page-info-dialog.c:1429
+#: extensions/page-info/page-info-dialog.c:1099
+#: extensions/page-info/page-info-dialog.c:1492
 msgid "_Copy Link Address"
 msgstr "リンク先のコピー(_C)"
 
-#: extensions/page-info/page-info-dialog.c:1086
+#: extensions/page-info/page-info-dialog.c:1105
 msgid "_Use as Background"
 msgstr "背景として使用(_U)"
 
-#: extensions/page-info/page-info-dialog.c:1092
+#: extensions/page-info/page-info-dialog.c:1111
 msgid "_Save As..."
 msgstr "別名で保存(_S)..."
 
-#: extensions/page-info/page-info-dialog.c:1233
-#: extensions/page-info/page-info-dialog.c:1463
+#: extensions/page-info/page-info-dialog.c:1296
+#: extensions/page-info/page-info-dialog.c:1566
 msgid "URL"
 msgstr "URL"
 
-#: extensions/page-info/page-info-dialog.c:1245
+#: extensions/page-info/page-info-dialog.c:1308
 msgid "Type"
 msgstr "種類"
 
-#: extensions/page-info/page-info-dialog.c:1257
+#: extensions/page-info/page-info-dialog.c:1320
 msgid "Alt Text"
 msgstr "代替文字列"
 
-#: extensions/page-info/page-info-dialog.c:1269
-#: extensions/page-info/page-info-dialog.c:1475
+#: extensions/page-info/page-info-dialog.c:1332
+#: extensions/page-info/page-info-dialog.c:1578
 msgid "Title"
 msgstr "タイトル"
 
-#: extensions/page-info/page-info-dialog.c:1281
+#: extensions/page-info/page-info-dialog.c:1344
 msgid "Width"
 msgstr "幅"
 
-#: extensions/page-info/page-info-dialog.c:1293
+#: extensions/page-info/page-info-dialog.c:1356
 msgid "Height"
 msgstr "高さ"
 
-#: extensions/page-info/page-info-dialog.c:1487
+#: extensions/page-info/page-info-dialog.c:1590
 msgid "Relation"
 msgstr "関係"
 
-#: extensions/page-info/page-info-dialog.c:1595
+#: extensions/page-info/page-info-dialog.c:1698
 msgid "Name"
 msgstr "名前"
 
-#: extensions/page-info/page-info-dialog.c:1607
+#: extensions/page-info/page-info-dialog.c:1710
 msgid "Method"
 msgstr "メソッド"
 
-#: extensions/page-info/page-info-dialog.c:1619
+#: extensions/page-info/page-info-dialog.c:1722
 msgid "Action"
 msgstr "アクション"
 
@@ -491,24 +491,24 @@ msgstr "種類:"
 msgid "_Save Media As..."
 msgstr "メディアを別名で保存(_S)..."
 
-#: extensions/select-stylesheet/ephy-css-menu.c:147
+#: extensions/select-stylesheet/ephy-css-menu.c:145
 msgid "Render the page without using a style"
 msgstr "スタイルを使用せずにページをレンダリングします"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:150
+#: extensions/select-stylesheet/ephy-css-menu.c:148
 msgid "Render the page using the default style"
 msgstr "デフォルトのスタイルでページをレンダリングします"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:153
+#: extensions/select-stylesheet/ephy-css-menu.c:151
 #, c-format
 msgid "Render the page using the \"%s\" style"
 msgstr "スタイル \"%s\" でページをレンダリングします"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:311
+#: extensions/select-stylesheet/ephy-css-menu.c:309
 msgid "St_yle"
 msgstr "スタイル(_Y)"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:312
+#: extensions/select-stylesheet/ephy-css-menu.c:310
 msgid "Select a different style for this page"
 msgstr "このページをレンダリングする別のスタイルを選択して下さい"
 
@@ -520,52 +520,43 @@ msgstr "デフォルト"
 msgid "None"
 msgstr "なし"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:108
+#: extensions/sidebar/ephy-sidebar-extension.c:104
 msgid "_Sidebar"
 msgstr "サイドバー(_S)"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:109
+#: extensions/sidebar/ephy-sidebar-extension.c:105
 msgid "Show or hide the sidebar"
 msgstr "サイドバーの表示/非表示を切り替えます"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:396
+#: extensions/sidebar/ephy-sidebar-extension.c:385
 #, c-format
 msgid "Add \"%s\" to the Sidebar?"
 msgstr "\"%s\" をサイドバーへ追加しますか？"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:400
+#: extensions/sidebar/ephy-sidebar-extension.c:389
 #, c-format
 msgid "The source to the new sidebar page is %s."
 msgstr "新しいサイドバー・ページのソースは %s です"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:402
+#: extensions/sidebar/ephy-sidebar-extension.c:391
 msgid "Add Sidebar"
 msgstr "サイドバーを追加します"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:406
+#: extensions/sidebar/ephy-sidebar-extension.c:395
 msgid "_Add Sidebar"
 msgstr "サイドバーの追加(_A)"
 
-#: extensions/sidebar/ephy-sidebar.c:178
+#: extensions/sidebar/ephy-sidebar.c:176
 msgid "No Sidebars installed"
 msgstr "サイドバーは未インストール"
 
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:570
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:578
 msgid "_Look Up"
 msgstr "検索(_L)"
 
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:577
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:585
 msgid "_GNOME Dictionary"
 msgstr "GNOME 辞書(_G)"
-
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:584
-msgid "Loo_k-Up Preferences"
-msgstr "検索の設定(_K)"
-
-#. shortcut key
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:586
-msgid "Look up your selection"
-msgstr "選択範囲を検索します"
 
 #: extensions/smart-bookmarks/smart-bookmarks.glade.h:1
 msgid "Add GNOME Dictionary to the menu"
@@ -579,17 +570,17 @@ msgstr "検索の設定"
 msgid "Open search results in a new tab"
 msgstr "新しいタブの中に検索結果を開く"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:181
+#: extensions/tabsmenu/ephy-tab-move-menu.c:190
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"
 msgstr[0] "ウィンドウ '%s' (%d 個のタブ)"
 msgstr[1] "ウィンドウ '%s' (%d 個のタブ)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:296
+#: extensions/tabsmenu/ephy-tab-move-menu.c:302
 msgid "Move Tab To Window"
 msgstr "タブの移動"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:297
+#: extensions/tabsmenu/ephy-tab-move-menu.c:303
 msgid "Move the current tab to a different window"
 msgstr "このタブを他のウインドウへ移動します"
