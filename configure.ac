@@ -435,7 +435,6 @@ extensions/bookmarks-tray/Makefile
 extensions/certificates/Makefile
 extensions/dashboard/Makefile
 extensions/find/Makefile
-extensions/find/mozilla/Makefile
 extensions/gestures/Makefile
 extensions/error-viewer/Makefile
 extensions/error-viewer/mozilla/Makefile

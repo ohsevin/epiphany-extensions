@@ -1,6 +1,13 @@
 2005-02-13  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
+	* extensions/find/mozilla/Makefile.am:
+
+	Removed unnecessary file.
+
+2005-02-13  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
 
 	Check for toolkit nsITypeAheadFind.
 
