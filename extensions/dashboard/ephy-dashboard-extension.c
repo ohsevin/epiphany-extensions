@@ -1,7 +1,7 @@
 /*
  *  Copyright (C) 2003 Marco Pesenti Gritti
- *  Copyright (C) 2003 Christian Persch
- *  Copyright (C) 2003 Lee Willis
+ *  Copyright (C) 2003, 2004 Christian Persch
+ *  Copyright (C) 2003, 2004 Lee Willis
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -42,27 +42,18 @@ struct EphyDashboardExtensionPrivate
 {
 };
 
-static void ephy_dashboard_extension_class_init (EphyDashboardExtensionClass *klass);
-static void ephy_dashboard_extension_iface_init (EphyExtensionClass *iface);
-static void ephy_dashboard_extension_init (EphyDashboardExtension *extension);
+static void ephy_dashboard_extension_class_init	(EphyDashboardExtensionClass *klass);
+static void ephy_dashboard_extension_iface_init	(EphyExtensionClass *iface);
+static void ephy_dashboard_extension_init	(EphyDashboardExtension *extension);
 
-enum
-{
-	PROP_0
-	/* Extension-specific properties go here, to be added using
-	 * g_object_class_install_property in the
-	 * class_init function.
-	 */
-};
+static GObjectClass *parent_class = NULL;
 
-static GObjectClass *dashboard_extension_parent_class = NULL;
-
-static GType dashboard_extension_type = 0;
+static GType type = 0;
 
 GType
 ephy_dashboard_extension_get_type (void)
 {
-	return dashboard_extension_type;
+	return type;
 }
 
 GType
@@ -71,14 +62,14 @@ ephy_dashboard_extension_register_type (GTypeModule *module)
 	static const GTypeInfo our_info =
 	{
 		sizeof (EphyDashboardExtensionClass),
-			NULL, /* base_init */
-			NULL, /* base_finalize */
-			(GClassInitFunc) ephy_dashboard_extension_class_init,
-			NULL,
-			NULL, /* class_data */
-			sizeof (EphyDashboardExtension),
-			0, /* n_preallocs */
-			(GInstanceInitFunc) ephy_dashboard_extension_init
+		NULL, /* base_init */
+		NULL, /* base_finalize */
+		(GClassInitFunc) ephy_dashboard_extension_class_init,
+		NULL,
+		NULL, /* class_data */
+		sizeof (EphyDashboardExtension),
+		0, /* n_preallocs */
+		(GInstanceInitFunc) ephy_dashboard_extension_init
 	};
 
 	static const GInterfaceInfo extension_info =
@@ -88,72 +79,17 @@ ephy_dashboard_extension_register_type (GTypeModule *module)
 		NULL
 	};
 
-	dashboard_extension_type =
-		g_type_module_register_type (module, G_TYPE_OBJECT, "EphyDashboardExtension", &our_info, 0);
+	type = g_type_module_register_type (module,
+					    G_TYPE_OBJECT,
+					    "EphyDashboardExtension",
+					    &our_info, 0);
 
-	g_type_module_add_interface (module, dashboard_extension_type, EPHY_TYPE_EXTENSION, &extension_info);
+	g_type_module_add_interface (module,
+				     type,
+				     EPHY_TYPE_EXTENSION,
+				     &extension_info);
 
-	return dashboard_extension_type;
-}
-
-static void
-ephy_dashboard_extension_init (EphyDashboardExtension *extension)
-{
-	extension->priv = EPHY_DASHBOARD_EXTENSION_GET_PRIVATE (extension);
-	LOG ("EphyDashboardExtension initialising\n");
-}
-
-static void
-ephy_dashboard_extension_finalize (GObject *object)
-{
-	/* If needed,
-	 * EphyDashboardExtension *extension = EPHY_DASHBOARD_EXTENSION (object);
-	 * ...followed by, say, some g_free calls.
-	 */
-		
-	LOG ("EphyDashboardExtension finalizing\n");
-
-	G_OBJECT_CLASS (dashboard_extension_parent_class)->finalize (object);
-}
-
-static void
-ephy_dashboard_extension_set_property (GObject *object, guint prop_id, const GValue *value, GParamSpec *pspec)
-{
-	/* Code this function if anything was placed after PROP_0 in the enum above. */
-	/*
-	 *	EphyDashboardExtension *extension = EPHY_DASHBOARD_EXTENSION (object);
-	 *
-	 * 	switch (prop_id)
-	 * 	{
-	 * 	}
-	 */
-}
-
-static void
-ephy_dashboard_extension_get_property (GObject *object, guint prop_id, GValue *value, GParamSpec *pspec)
-{
-	/* Code this function if anything was placed after PROP_0 in the enum above. */
-	/*
-	 * 	EphyDashboardExtension *extension = EPHY_DASHBOARD_EXTENSION (object);
-	 *
-	 * 	switch (prop_id)
-	 * 	{
-	 * 	}
-	 */
-}
-
-static void
-ephy_dashboard_extension_class_init (EphyDashboardExtensionClass *klass)
-{
-	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-
-	dashboard_extension_parent_class = g_type_class_peek_parent (klass);
-
-	object_class->finalize = ephy_dashboard_extension_finalize;
-	object_class->get_property = ephy_dashboard_extension_get_property;
-	object_class->set_property = ephy_dashboard_extension_set_property;
-
-	g_type_class_add_private (object_class, sizeof (EphyDashboardExtensionPrivate));
+	return type;
 }
 
 static void
@@ -178,18 +114,18 @@ load_status_cb (EphyTab *tab,
 		// Get URL & page title
 		location = ephy_tab_get_location(tab);
 		page_title = ephy_tab_get_title(tab);
-		LOG ("Got page location and title\n");
+		LOG ("Got page location and title")
 
 		// See if the page is bookmarked
 		embed = ephy_tab_get_embed (tab);
 		bookmarks = ephy_shell_get_bookmarks (ephy_shell);
 
 		// Get the page content if the page is bookmarked
-		LOG ("Title ::%s::", page_title);
-		LOG ("URL ::%s::", location);
+		LOG ("Title ::%s::", page_title)
+		LOG ("URL ::%s::", location)
 		if (embed && ephy_bookmarks_find_bookmark (bookmarks,location))
 		{
-			LOG ("Page exists in bookmark - sending full content");
+			LOG ("Page exists in bookmark - sending full content")
 			persist = EPHY_EMBED_PERSIST (ephy_embed_factory_new_object ("EphyEmbedPersist"));
 
 			ephy_embed_persist_set_embed (persist, embed);
@@ -199,7 +135,7 @@ load_status_cb (EphyTab *tab,
 
 			g_object_unref (persist);
 		
-			LOG ("Content ::%s::", content);
+			LOG ("Content ::%s::", content)
 			cluepacket = dashboard_build_cluepacket_then_free_clues (
 	             		"Web Browser",
 	             		ephy_tab_get_visibility(tab),
@@ -211,7 +147,7 @@ load_status_cb (EphyTab *tab,
 		}
 		else
 		{
-			LOG ("Page not in bookmark, sending only location and title");
+			LOG ("Page not in bookmark, sending only location and title")
 
 			cluepacket = dashboard_build_cluepacket_then_free_clues (
 	             		"Web Browser",
@@ -237,48 +173,71 @@ tab_added_cb (GtkWidget *notebook,
 {
 	EphyTab *tab;
 
-	LOG ("In tab_added_cb \n");
+	LOG ("In tab_added_cb")
+
 	tab = ephy_tab_for_embed (embed);
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
-	g_signal_connect_after (G_OBJECT (tab), "notify::load-status", G_CALLBACK (load_status_cb), extension);
+	g_signal_connect_after (G_OBJECT (tab), "notify::load-status",
+				G_CALLBACK (load_status_cb), extension);
 }
 
 static void
-tab_removed_cb (EphyEmbed *notebook, GtkWidget *child, EphyDashboardExtension *extension)
+tab_removed_cb (EphyEmbed *notebook,
+		EphyEmbed *embed,
+		EphyDashboardExtension *extension)
 {
 	EphyTab *tab;
 
-	LOG ("In tab_removed_cb \n");
-	tab = EPHY_TAB (g_object_get_data (G_OBJECT (child), "EphyTab"));
+	LOG ("In tab_removed_cb")
+
+	tab = ephy_tab_for_embed (embed);
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
-	g_signal_handlers_disconnect_by_func (G_OBJECT (child), G_CALLBACK (load_status_cb), tab);
+	g_signal_handlers_disconnect_by_func
+		(G_OBJECT (embed), G_CALLBACK (load_status_cb), tab);
 }
 
 static void
-impl_attach_window (EphyExtension *ext, EphyWindow *window)
+impl_attach_window (EphyExtension *ext,
+		    EphyWindow *window)
 {
 	GtkWidget *notebook;
-	LOG ("EphyDashboardExtension attach_window\n");
+
+	LOG ("EphyDashboardExtension attach_window")
 
 	notebook = ephy_window_get_notebook (window);
 
-	g_signal_connect_after (notebook, "tab_added", G_CALLBACK (tab_added_cb), ext);
-	g_signal_connect_after (notebook, "tab_removed", G_CALLBACK (tab_removed_cb), ext);
+	g_signal_connect_after (notebook, "tab_added",
+				G_CALLBACK (tab_added_cb), ext);
+	g_signal_connect_after (notebook, "tab_removed",
+				G_CALLBACK (tab_removed_cb), ext);
 }
 
 static void
-impl_detach_window (EphyExtension *ext, EphyWindow *window)
+impl_detach_window (EphyExtension *ext,
+		    EphyWindow *window)
 {
 	GtkWidget *notebook;
-	LOG ("EphyDashboardExtension detach_window\n");
 
+	LOG ("EphyDashboardExtension detach_window")
+	
 	notebook = ephy_window_get_notebook (window);
 
-	g_signal_handlers_disconnect_by_func (notebook, G_CALLBACK (tab_added_cb), ext);
-	g_signal_handlers_disconnect_by_func (notebook, G_CALLBACK (tab_removed_cb), ext);
-	g_signal_handlers_disconnect_by_func (notebook, G_CALLBACK (load_status_cb), ext);
+	g_signal_handlers_disconnect_by_func
+		(notebook, G_CALLBACK (tab_added_cb), ext);
+	g_signal_handlers_disconnect_by_func
+		(notebook, G_CALLBACK (tab_removed_cb), ext);
+	g_signal_handlers_disconnect_by_func
+		(notebook, G_CALLBACK (load_status_cb), ext);
+}
+
+static void
+ephy_dashboard_extension_init (EphyDashboardExtension *extension)
+{
+	extension->priv = EPHY_DASHBOARD_EXTENSION_GET_PRIVATE (extension);
+
+	LOG ("EphyDashboardExtension initialising")
 }
 
 static void
@@ -288,3 +247,12 @@ ephy_dashboard_extension_iface_init (EphyExtensionClass *iface)
 	iface->detach_window = impl_detach_window;
 }
 
+static void
+ephy_dashboard_extension_class_init (EphyDashboardExtensionClass *klass)
+{
+	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+
+	parent_class = g_type_class_peek_parent (klass);
+
+	//g_type_class_add_private (object_class, sizeof (EphyDashboardExtensionPrivate));
+}
