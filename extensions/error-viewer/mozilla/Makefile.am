@@ -1,6 +1,8 @@
 INCLUDES = \
 	-I..					\
 	-I$(top_srcdir)/include			\
+	-I$(top_srcdir)/extensions/error-viewer/mozilla	\
+	-I$(top_srcdir)/extensions/error-viewer	\
 	$(MOZILLA_COMPONENT_CFLAGS)		\
 	-I$(MOZILLA_INCLUDE_ROOT)		\
 	-I$(MOZILLA_INCLUDE_ROOT)/webbrwsr	\

@@ -1,5 +1,17 @@
 2004-02-01  Christian Persch  <chpe@cvs.gnome.org>
 
+	* configure.ac:
+	* extensions/certificates/Makefile.am:
+	* extensions/certificates/ephy-certificates-extension.c:
+	(impl_attach_window):
+	* extensions/error-viewer/Makefile.am:
+	* extensions/error-viewer/mozilla/Makefile.am:
+	* extensions/error-viewer/opensp/Makefile.am:
+
+	Make it pass make distcheck.
+
+2004-02-01  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/certificates/ephy-certificates-extension.c:
 	(impl_attach_window):
 
