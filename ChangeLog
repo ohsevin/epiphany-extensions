@@ -1,3 +1,11 @@
+2005-01-27  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	(impl_attach_tab), (impl_detach_tab), (impl_attach_window),
+	(impl_detach_window), (ephy_error_viewer_extension_iface_init):
+
+	Use attach_tab/detach_tab
+
 2005-01-27  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:
