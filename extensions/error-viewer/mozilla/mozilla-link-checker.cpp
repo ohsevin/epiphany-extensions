@@ -142,6 +142,8 @@ mozilla_check_links (LinkChecker *checker,
 
 	links->GetLength (&observer->mNumLinksTotal);
 
+	link_checker_update_progress (checker, 0, observer->mNumLinksTotal);
+
 	for (PRUint32 i = 0; i < observer->mNumLinksTotal; i++)
 	{
 		nsCOMPtr<nsIDOMNode> node;
@@ -161,12 +163,12 @@ mozilla_check_links (LinkChecker *checker,
 				NS_ConvertUCS2toUTF8 (href));
 		if (NS_FAILED (rv)) continue;
 
-		nsCOMPtr<nsIURIChecker> checker = do_CreateInstance
+		nsCOMPtr<nsIURIChecker> uri_checker = do_CreateInstance
 			(NS_URICHECKER_CONTRACT_ID);
 
-		rv = checker->Init (uri);
+		rv = uri_checker->Init (uri);
 		if (NS_FAILED (rv)) continue;
 
-		checker->AsyncCheck (observer, NULL);
+		uri_checker->AsyncCheck (observer, NULL);
 	}
 }
