@@ -247,11 +247,11 @@ AC_ARG_WITH([mozilla],
 
 dnl try to autodetect: if mozilla exists, use it, else try firefox, then thunderbird
 if test "x$MOZILLA" = "x"; then
-  if pkg-config --exists mozilla-gtkmozembed; then
+  if $PKG_CONFIG --exists mozilla-gtkmozembed; then
     MOZILLA=mozilla
-  elif pkg-config --exists firefox-gtkmozembed; then
+  elif $PKG_CONFIG --exists firefox-gtkmozembed; then
     MOZILLA=firefox
-  elif pkg-config --exists thunderbird-gtkmozembed; then
+  elif $PKG_CONFIG --exists thunderbird-gtkmozembed; then
     MOZILLA=thunderbird
   else
     AC_MSG_ERROR([no mozilla installation found])
@@ -328,7 +328,7 @@ fi
 dnl Changed in 1.8a1 and again in 1.8a3 to its present form (variant 2);
 dnl variant 1 is on 1.7 branch. Aviary branch also has variant 2.
 
-CXXFLAGS="$_SAVE_CXXFLAGS $AM_CXXFLAGS -I$MOZILLA_INCLUDE_ROOT `pkg-config --cflags $MOZILLA-xpcom` -I$MOZILLA_INCLUDE_ROOT/necko -DMOZILLA_STRICT_API"
+CXXFLAGS="$_SAVE_CXXFLAGS $AM_CXXFLAGS -I$MOZILLA_INCLUDE_ROOT `$PKG_CONFIG --cflags $MOZILLA-xpcom` -I$MOZILLA_INCLUDE_ROOT/necko -DMOZILLA_STRICT_API"
 
 AC_MSG_CHECKING([for nsIContentPolicy API])
 
