@@ -1,3 +1,10 @@
+2004-10-16  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/extensions-manager-ui/extensions-manager-ui.c:
+	(active_sync), (build_ui):
+
+	Don't make the extensions description ediable. Fixes bug #155389.
+
 2004-10-13  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/certificates/ephy-certificates-extension.c:

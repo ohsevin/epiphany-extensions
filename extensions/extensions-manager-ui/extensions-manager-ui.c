@@ -227,20 +227,21 @@ active_sync (EphyExtensionsManager *manager,
 
 	if (gtk_tree_model_get_iter_first (model, &iter) == FALSE) return;
 
-	do {
+	do
+	{
 		gtk_tree_model_get (model, &iter, COL_ID, &id, -1);
 
-		if (strcmp (id, info->identifier) == 0) {
+		if (strcmp (id, info->identifier) == 0)
+		{
 			match = TRUE;
 			gtk_list_store_set (GTK_LIST_STORE (model), &iter,
-					    COL_TOGGLE, info->active, -1);
+					    COL_TOGGLE, info->active,
+					    -1);
 		}
 
 		g_free (id);
-
-		if (match) return;
 	}
-	while (gtk_tree_model_iter_next (model, &iter));
+	while (gtk_tree_model_iter_next (model, &iter) && match == FALSE);
 }
 
 static void
@@ -272,7 +273,6 @@ build_ui (ExtensionsManagerUI *dialog)
 	renderer = gtk_cell_renderer_text_new ();
 	g_object_set (G_OBJECT (renderer),
 		      "mode", GTK_CELL_RENDERER_MODE_INERT,
-		      "editable", TRUE,
 		      NULL);
 	gtk_tree_view_insert_column_with_attributes (treeview,
 						     COL_DISPLAY, _("Description"),
