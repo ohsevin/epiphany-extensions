@@ -16,7 +16,7 @@ dnl 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 dnl
 dnl $Id$
 
-AC_INIT([Epiphany Extensions],[1.5.3],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+AC_INIT([Epiphany Extensions],[1.5.3.90],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 GNOME_COMMON_INIT
 
 EPIPHANY_EXTENSIONS_MAJOR=1.5
@@ -29,7 +29,7 @@ AC_REVISION([$Revision$])
 AC_CONFIG_SRCDIR([extensions])
 AC_CONFIG_HEADERS([config.h])
 
-AM_INIT_AUTOMAKE([dist-bzip2 check-news])
+AM_INIT_AUTOMAKE([dist-bzip2 no-dist-gzip check-news])
 
 dnl AC_SUBST([ACLOCAL_AMFLAGS], ["-I $ac_macro_dir \${ACLOCAL_FLAGS}"])
 dnl AC_SUBST([ACLOCAL_AMFLAGS], ["\${ACLOCAL_FLAGS}"])
