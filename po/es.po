@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-01-03 23:29+0100\n"
-"PO-Revision-Date: 2004-01-03 23:33+0100\n"
+"POT-Creation-Date: 2004-01-24 02:03+0100\n"
+"PO-Revision-Date: 2004-01-24 02:04+0100\n"
 "Last-Translator: Francisco Javier F. Serrador <serrador@cvs.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "X-Generator: KBabel 1.0.2\n"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:61
+msgid "Errors"
+msgstr "Errores"
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:63
+msgid "Display web page errors"
+msgstr "Mostrar los errores de la página web"
+
+#: extensions/error-viewer/error-viewer.glade.h:1
+msgid "C_lear"
+msgstr "Vaciar"
+
+#: extensions/error-viewer/error-viewer.glade.h:2
+msgid "Error Viewer"
+msgstr "Visor de errores"
+
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:106
+#, c-format
+msgid ""
+"Error in %s, Line %d:\n"
+"%s"
+msgstr ""
+"Error en %s, Línea %d:\n"
+"%s"
 
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
 msgid "Block _Popups from this Site"
@@ -47,4 +73,3 @@ msgstr "Mover solapa a la ventana"
 #: extensions/tabsmenu/ephy-tab-move-menu.c:273
 msgid "Move the current tab to a different window"
 msgstr "Mueve la solapa actual a una ventana diferente"
-
