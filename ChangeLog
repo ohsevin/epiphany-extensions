@@ -1,5 +1,12 @@
 2005-03-19  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+
+	Page Info gets href attribute for embed elements.
+	Fix bug #170786 (merged from HEAD).
+
+2005-03-19  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:
 	(ephy_bookmarks_tray_extension_init):
 
