@@ -1,5 +1,14 @@
 2004-09-07  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/tabsmenu/ephy-tab-move-menu.c:
+	(ephy_tab_move_menu_finalize):
+	* extensions/tabsmenu/ephy-tabs-menu-extension.c:
+	(impl_detach_window):
+
+	Allow load/unload of Tabs Menu extension.
+
+2004-09-07  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/error-viewer/ephy-error-viewer-extension.c:
 	(impl_attach_window), (impl_detach_window):
 

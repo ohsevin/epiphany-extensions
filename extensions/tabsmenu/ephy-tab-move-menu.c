@@ -340,6 +340,7 @@ static void
 ephy_tab_move_menu_finalize (GObject *object)
 {
 	EphyTabMoveMenu *menu = EPHY_TAB_MOVE_MENU (object); 
+
 	GtkActionGroup *action_group;
 	GtkAction *action;
 
@@ -357,6 +358,11 @@ ephy_tab_move_menu_finalize (GObject *object)
 
 	g_signal_handlers_disconnect_by_func (action, G_CALLBACK (update_tab_move_menu_cb), menu);
 */
+	if (menu->priv->merge_id != 0)
+	{
+		gtk_ui_manager_remove_ui (menu->priv->manager,
+					  menu->priv->merge_id);
+	}
 	if (menu->priv->action_group != NULL)
 	{
 		g_object_unref (menu->priv->action_group);

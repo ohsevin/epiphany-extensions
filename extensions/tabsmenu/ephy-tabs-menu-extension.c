@@ -94,7 +94,7 @@ static void
 impl_detach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
-	/* nothing to do */
+	g_object_set_data (G_OBJECT (window), "ephy-tab-move-menu", NULL);
 }
 
 static void
