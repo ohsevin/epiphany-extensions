@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-02 14:25+0100\n"
-"PO-Revision-Date: 2004-02-02 18:34+0100\n"
+"POT-Creation-Date: 2004-02-17 14:19+0100\n"
+"PO-Revision-Date: 2004-02-17 16:45+0100\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -54,7 +54,17 @@ msgstr "_Vymazat"
 msgid "Error Viewer"
 msgstr "Prohlížeč chyb"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:106
+#. Don't bother looking for source lines -- they're not there
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:76
+#, c-format
+msgid ""
+"Error:\n"
+"%s"
+msgstr ""
+"Chyba:\n"
+"%s"
+
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:91
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -98,7 +108,8 @@ msgid ""
 "instead."
 msgstr ""
 "Chyba HTML v %s:\n"
-"Doctype je XHTML, ale typ obsahu je text/html. Použijte místo něj application/xhtml+xml."
+"Doctype je XHTML, ale typ obsahu je text/html. Použijte místo něj "
+"application/xhtml+xml."
 
 #: extensions/error-viewer/sgml-validator.c:231
 #, c-format
@@ -108,7 +119,8 @@ msgid ""
 "instead."
 msgstr ""
 "Chyba HTML v %s:\n"
-"Doctype je XHTML, ale typ obsahu je text/html. Použijte místo něj application/xhtml+xml."
+"Doctype je XHTML, ale typ obsahu je text/html. Použijte místo něj "
+"application/xhtml+xml."
 
 #: extensions/error-viewer/sgml-validator.c:368
 #, c-format
@@ -151,6 +163,3 @@ msgstr "Přesunout kartu do okna"
 #: extensions/tabsmenu/ephy-tab-move-menu.c:284
 msgid "Move the current tab to a different window"
 msgstr "Přesunout aktuální kartu do jiného okna"
-
-#~ msgid "Errors"
-#~ msgstr "Chyby"
