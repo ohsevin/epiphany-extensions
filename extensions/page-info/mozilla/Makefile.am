@@ -11,8 +11,9 @@ INCLUDES = \
 	-I$(MOZILLA_INCLUDE_ROOT)/docshell	\
 	-I$(MOZILLA_INCLUDE_ROOT)/dom		\
 	-I$(MOZILLA_INCLUDE_ROOT)/xpcom		\
-	-I$(MOZILLA_INCLUDE_ROOT)/necko		\
 	-I$(MOZILLA_INCLUDE_ROOT)/nkcache	\
+	-I$(MOZILLA_INCLUDE_ROOT)/necko		\
+	-I$(MOZILLA_INCLUDE_ROOT)/layout	\
 	-I$(MOZILLA_INCLUDE_ROOT)/string	\
 	$(EPIPHANY_DEPENDENCY_CFLAGS)		\
 	-DSHARE_DIR=\"$(pkgdatadir)\"		\

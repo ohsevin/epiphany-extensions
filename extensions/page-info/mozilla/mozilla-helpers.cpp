@@ -49,6 +49,8 @@
 #include <nsIServiceManagerUtils.h>
 #include <nsIWebBrowser.h>
 #include <nsTime.h>
+#include <nsIHTMLDocument.h>
+#include <nsCompatibility.h>
 
 extern "C" void
 mozilla_free_page_properties (EmbedPageProperties *props)
@@ -158,15 +160,11 @@ mozilla_get_page_properties (EphyEmbed *embed)
 	}
 
 	/* Might not work on XUL pages */
-	nsCOMPtr<nsIDOMNSHTMLDocument> ns_html_doc = do_QueryInterface (doc);
-	if (ns_html_doc)
+	nsCOMPtr<nsIHTMLDocument> htmlDoc = do_QueryInterface (doc);
+	if (htmlDoc)
 	{
-		rv = ns_html_doc->GetCompatMode (value);
-		char *c_value = embed_string_to_c_string (value);
-		props->rendering_mode = (strcmp (c_value, "CSS1Compat") == 0 ?
-					 EMBED_RENDER_STANDARDS :
-					 EMBED_RENDER_QUIRKS);
-		g_free (c_value);
+		nsCompatibility compat = htmlDoc->GetCompatibilityMode();
+		props->rendering_mode = (EmbedPageRenderMode) compat;
 	}
 
 	/* Get the URL so we can look in the cache for this page */

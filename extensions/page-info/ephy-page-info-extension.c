@@ -275,7 +275,7 @@ impl_attach_window (EphyExtension *extension,
 	gtk_action_group_add_actions (action_group, action_entries,
 				      n_action_entries, window);
 
-	gtk_ui_manager_insert_action_group (manager, action_group, 0);
+	gtk_ui_manager_insert_action_group (manager, action_group, -1);
 
 	data->ui_id = ui_id = gtk_ui_manager_new_merge_id (manager);
 

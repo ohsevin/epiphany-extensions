@@ -20,7 +20,10 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ *
+ *  $Id$
  */
+
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
@@ -29,6 +32,7 @@
 #include "ephy-debug.h"
 
 #include <epiphany/ephy-embed-persist.h>
+// #include <epiphany/ephy-embed-factory.h>
 
 #include <gtk/gtkentry.h>
 #include <gtk/gtklabel.h>
@@ -1129,10 +1133,22 @@ setup_page_general (PageInfoDialog *dialog, EphyEmbed *embed)
 	page_info_set_text (dialog, "page_info_type",
 			    text ? text : _("Unknown type"));
 
-	page_info_set_text (dialog, "page_info_render_mode",
-			    (props->rendering_mode == EMBED_RENDER_QUIRKS) ? 
-			    _("Quirks mode" ) :
-			    _("Standards compliance mode"));
+	switch (props->rendering_mode)
+	{
+		case EMBED_RENDER_FULL_STANDARDS:
+			text = _("Full standards compliance");
+			break;
+		case EMBED_RENDER_ALMOST_STANDARDS:
+			text = _("Almost standards compliance");
+			break;
+		case EMBED_RENDER_QUIRKS:
+			text = _("Compatibility");
+			break;
+		default:
+			g_return_if_reached ();
+			break;
+	}
+	page_info_set_text (dialog, "page_info_render_mode", text);
 
 	switch (props->page_source)
 	{

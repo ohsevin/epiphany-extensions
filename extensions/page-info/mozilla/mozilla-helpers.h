@@ -33,8 +33,9 @@ G_BEGIN_DECLS
 
 typedef enum
 {
-	EMBED_RENDER_QUIRKS    = 1,
-	EMBED_RENDER_STANDARDS = 2
+	EMBED_RENDER_FULL_STANDARDS	= 1,
+	EMBED_RENDER_ALMOST_STANDARDS	= 2,
+	EMBED_RENDER_QUIRKS		= 3
 } EmbedPageRenderMode;
 
 typedef enum
@@ -50,7 +51,7 @@ typedef struct
 	char *content_type;
 	char *encoding;
 	char *referring_url;
-	gint size;
+	int size;
 	GTime expiration_time;
 	GTime modification_time;
 	EmbedPageRenderMode rendering_mode;
@@ -76,8 +77,8 @@ typedef struct
 	char *url;
 	char *alt;
 	char *title;
-	gint width;
-	gint height;
+	int width;
+	int height;
 } EmbedPageImage; 
 
 void			 mozilla_free_page_properties	(EmbedPageProperties *props);
