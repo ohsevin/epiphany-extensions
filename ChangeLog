@@ -1,3 +1,9 @@
+2005-01-01  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/error-viewer/error-viewer.glade:
+
+	Change C_lear to Cl_ear. Fixes Bug #162689.
+
 2005-01-01  Crispin Flowerday  <gnome@flowerday.cx>
 
 	* configure.ac:
