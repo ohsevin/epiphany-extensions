@@ -51,4 +51,20 @@ glade_DATA = error-viewer.glade
 
 gladedir = $(pkgdatadir)/glade
 
-EXTRA_DIST = $(glade_DATA)
+extensionxmldir = $(extensiondir)
+extensionxml_in_files = error-viewer.xml.in.in
+extensionxml_DATA = $(extensionxml_in_files:.xml.in.in=.xml)
+
+%.xml.in: %.xml.in.in
+	sed -e "s|%GETTEXT_PACKAGE%|$(GETTEXT_PACKAGE)|" \
+	    -e "s|%LOCALE_DIR%|$(LOCALE_DIR)|" \
+	    -e "s|%LIBRARY%|FIXME|" \
+	$< > $@
+
+@INTLTOOL_XML_RULE@
+
+BUILT_SOURCES = $(extensionxml_DATA)
+
+DISTCLEANFILES = $(BUILT_SOURCES)
+
+EXTRA_DIST = $(glade_DATA) $(extensionxml_in_files)

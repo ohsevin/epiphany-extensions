@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<extension>
+	<_name>Sidebar</_name>
+	<_description>Adds a Sidebar to windows</_description>
+	<author>Crispin Flowerday &lt;gnome@flowerday.cx&gt;</author>
+	<url>http://www.gnome.org/projects/epiphany/extensions.html</url>
+	<version>1</version>
+	<gettext-domain>%GETTEXT_PACKAGE%</gettext-domain>
+	<locale-directory>%LOCALE_DIR%</locale-directory>
+	<loader type="shlib">
+		<attribute name="library">%LIBRARY%</attribute>
+	</loader>
+</extension>

@@ -67,6 +67,7 @@ GETTEXT_PACKAGE=epiphany-extensions-1.6
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
 AM_GLIB_GNU_GETTEXT
+AM_GLIB_DEFINE_LOCALEDIR([LOCALE_DIR])
 
 dnl ********************************
 dnl pkg config checks

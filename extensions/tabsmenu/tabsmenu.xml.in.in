@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<extension>
+	<_name>Tabsmenu</_name>
+	<_description>Move tabs between windows</_description>
+	<author>Christian Persch &lt;chpe@gnome.org&gt;</author>
+	<url>http://www.gnome.org/projects/epiphany/extensions.html</url>
+	<version>1</version>
+	<gettext-domain>%GETTEXT_PACKAGE%</gettext-domain>
+	<locale-directory>%LOCALE_DIR%</locale-directory>
+	<loader type="shlib">
+		<attribute name="library">%LIBRARY%</attribute>
+	</loader>
+</extension>

@@ -1,3 +1,53 @@
+2004-10-10  Christian Persch  <chpe@cvs.gnome.org>
+
+	* autogen.sh:
+	* configure.ac:
+	* extensions/adblock/.cvsignore:
+	* extensions/adblock/Makefile.am:
+	* extensions/adblock/adblock.xml.in.in:
+	* extensions/certificates/.cvsignore:
+	* extensions/certificates/Makefile.am:
+	* extensions/certificates/certificates.xml.in.in:
+	* extensions/dashboard/.cvsignore:
+	* extensions/dashboard/Makefile.am:
+	* extensions/dashboard/dashboard.xml.in.in:
+	* extensions/error-viewer/.cvsignore:
+	* extensions/error-viewer/Makefile.am:
+	* extensions/error-viewer/error-viewer.xml.in.in:
+	* extensions/gestures/.cvsignore:
+	* extensions/gestures/Makefile.am:
+	* extensions/gestures/gestures.xml.in.in:
+	* extensions/page-info/.cvsignore:
+	* extensions/page-info/Makefile.am:
+	* extensions/page-info/page-info.xml.in.in:
+	* extensions/sample-mozilla/.cvsignore:
+	* extensions/sample-mozilla/Makefile.am:
+	* extensions/sample-mozilla/sample-mozilla.xml.in.in:
+	* extensions/sample/.cvsignore:
+	* extensions/sample/Makefile.am:
+	* extensions/sample/sample.xml.in.in:
+	* extensions/select-stylesheet/.cvsignore:
+	* extensions/select-stylesheet/Makefile.am:
+	* extensions/select-stylesheet/select-stylesheet.xml.in.in:
+	* extensions/sidebar/.cvsignore:
+	* extensions/sidebar/Makefile.am:
+	* extensions/sidebar/sidebar.xml.in.in:
+	* extensions/smart-bookmarks/.cvsignore:
+	* extensions/smart-bookmarks/Makefile.am:
+	* extensions/smart-bookmarks/smart-bookmarks.xml.in.in:
+	* extensions/tab-groups/.cvsignore:
+	* extensions/tab-groups/Makefile.am:
+	* extensions/tab-groups/tab-groups.xml.in.in:
+	* extensions/tabsmenu/.cvsignore:
+	* extensions/tabsmenu/Makefile.am:
+	* extensions/tabsmenu/tabsmenu.xml.in.in:
+	* extensions/toolbar-extras/.cvsignore:
+	* extensions/toolbar-extras/Makefile.am:
+	* extensions/toolbar-extras/toolbar-extras.xml.in.in:
+	* po/POTFILES.skip:
+
+	Add extension description files.
+
 2004-10-08  Crispin Flowerday  <gnome@flowerday.cx>
 
 	* extensions/sidebar/mozilla/Sidebar.cpp
@@ -2979,4 +3029,3 @@
 
 	Reorganised for import into GNOME CVS.
 	Ported to new epiphany extensions API.
-

@@ -36,13 +36,6 @@ libsidebarextension_la_LIBADD = \
 	mozilla/libsidebarmozilla.la	\
 	$(MOZILLA_COMPONENT_LIBS)
 
-BUILT_SOURCES = \
-	ephy-sidebar-marshal.c	\
-	ephy-sidebar-marshal.h
-
-CLEANFILES = \
-	$(BUILT_SOURCES)
-
 ephy-sidebar-marshal.c: ephy-sidebar-marshal.list
 	$(GLIB_GENMARSHAL) --prefix=ephy_sidebar_marshal $(srcdir)/ephy-sidebar-marshal.list --header --body >  ephy-sidebar-marshal.c
 
@@ -54,6 +47,26 @@ uimanager_DATA = epiphany-sidebar-ui.xml
 
 uimanagerdir = $(pkgdatadir)/xml
 
+extensionxmldir = $(extensiondir)
+extensionxml_in_files = sidebar.xml.in.in
+extensionxml_DATA = $(extensionxml_in_files:.xml.in.in=.xml)
+
+%.xml.in: %.xml.in.in
+	sed -e "s|%GETTEXT_PACKAGE%|$(GETTEXT_PACKAGE)|" \
+	    -e "s|%LOCALE_DIR%|$(LOCALE_DIR)|" \
+	    -e "s|%LIBRARY%|FIXME|" \
+	$< > $@
+
+@INTLTOOL_XML_RULE@
+
+BUILT_SOURCES = \
+	ephy-sidebar-marshal.c	\
+	ephy-sidebar-marshal.h	\
+	$(extensionxml_DATA)
+
+DISTCLEANFILES = $(BUILT_SOURCES)
+
 EXTRA_DIST = \
 	ephy-sidebar-marshal.list	\
-	$(uimanager_DATA)
+	$(uimanager_DATA)		\
+	$(extensionxml_in_files)

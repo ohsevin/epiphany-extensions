@@ -27,3 +27,21 @@ libselectstylesheetextension_la_SOURCES = \
 libselectstylesheetextension_la_LIBADD = \
 	mozilla/libselectstylesheetmozilla.la	\
 	$(MOZILLA_COMPONENT_LIBS)
+
+extensionxmldir = $(extensiondir)
+extensionxml_in_files = select-stylesheet.xml.in.in
+extensionxml_DATA = $(extensionxml_in_files:.xml.in.in=.xml)
+
+%.xml.in: %.xml.in.in
+	sed -e "s|%GETTEXT_PACKAGE%|$(GETTEXT_PACKAGE)|" \
+	    -e "s|%LOCALE_DIR%|$(LOCALE_DIR)|" \
+	    -e "s|%LIBRARY%|FIXME|" \
+	$< > $@
+
+@INTLTOOL_XML_RULE@
+
+BUILT_SOURCES = $(extensionxml_DATA)
+
+DISTCLEANFILES = $(BUILT_SOURCES)
+
+EXTRA_DIST = $(extensionxml_in_files)

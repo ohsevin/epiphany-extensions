@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<extension>
+	<_name>Smart Bookmarks</_name>
+	<_description>Look up the selected text with a smart bookmark</_description>
+	<author>Jean-François Rameau &lt;jf.rameau@wanadoo.fr&gt;</author>
+	<url>http://www.gnome.org/projects/epiphany/extensions.html</url>
+	<version>1</version>
+	<gettext-domain>%GETTEXT_PACKAGE%</gettext-domain>
+	<locale-directory>%LOCALE_DIR%</locale-directory>
+	<loader type="shlib">
+		<attribute name="library">%LIBRARY%</attribute>
+	</loader>
+</extension>
