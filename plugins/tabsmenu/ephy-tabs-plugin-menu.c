@@ -259,6 +259,7 @@ window_closed_cb (Session *session, EphyWindow *window, EphyTabsPluginMenu *menu
 	ephy_tabs_plugin_menu_update (menu);
 }
 
+/*
 static void
 clone_cb (GtkAction *action, EphyTabsPluginMenu *menu)
 {
@@ -277,6 +278,7 @@ clone_cb (GtkAction *action, EphyTabsPluginMenu *menu)
 				      EPHY_NEW_TAB_APPEND_AFTER |
 				      EPHY_NEW_TAB_CLONE_PAGE);
 }
+*/
 
 static void
 ephy_tabs_plugin_menu_init (EphyTabsPluginMenu *menu)
@@ -351,10 +353,12 @@ ephy_tabs_plugin_menu_finalize (GObject *o)
 
 static GtkActionEntry action_entries [] =
 {
+/*
 	{ "EphyTabsPluginClone", NULL, N_("_Clone Tab"), "<shift><control>C",
 	  N_("Create a copy of the current tab"),
 	  G_CALLBACK (clone_cb)
 	},
+*/
 	{ "TabsMoveTo", NULL, N_("_Move Tab To"), NULL,
 	  N_("Move the current tab to a different window"),
 	  NULL
@@ -400,7 +404,7 @@ ephy_tabs_plugin_menu_clean (EphyTabsPluginMenu *menu)
 	if (menu->priv->ui_id != 0)
 	{
 		gtk_ui_manager_remove_ui (manager, menu->priv->ui_id);
-//		egg_menu_merge_ensure_update (merge);
+		gtk_ui_manager_ensure_update (manager);
 		menu->priv->ui_id = 0;
 	}
 }

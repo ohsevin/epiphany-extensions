@@ -1,3 +1,9 @@
+2003-11-05  Christian Persch  <chpe@cvs.gnome.org>
+
+	* ephy-tabs-plugin-menu.c: (ephy_tabs_plugin_menu_clean):
+
+	Adapt to epiphany API changes.
+
 2003-10-27  Christian Persch  <chpe@cvs.gnome.org>
 
 	* ephy-tabs-plugin-menu.c: (clone_cb):
