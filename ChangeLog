@@ -1,3 +1,11 @@
+2004-11-28  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/tab-groups/ephy-tab-grouper.c: (reset_last_tab),
+	(tab_added_cb), (ephy_tab_grouper_finalize):
+
+	Use ephy_notebook_move_tab instead of gtk_notebook_reorder_child,
+	and simplify the code a bit.
+
 2004-11-25  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/error-viewer/mozilla/register-listener.cpp:
