@@ -1,4 +1,16 @@
 =========================
+Epiphany Extensions 0.2.5
+=========================
+
+What's New ?
+============
+
+Bugfixes
+
+	* Fix a problem with the --with-extensions detection logic.
+
+
+=========================
 Epiphany Extensions 0.2.4
 =========================
 
@@ -9,6 +21,7 @@ Bugfixes
 
 	* Include the patch for the tabsmenu extension in the tarball. (Christian)
 	* Zoom now set also for newly opened tabs, and on crash recovery. (Christian)
+
 
 =========================
 Epiphany Extensions 0.2.1
