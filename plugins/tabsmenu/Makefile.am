@@ -20,3 +20,5 @@ libtabsplugin_la_SOURCES = \
 	ephy-window-action.c		\
 	ephy-window-action.h
 
+
+EXTRA_DIST = epiphany.diff
