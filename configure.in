@@ -87,7 +87,7 @@ AC_ARG_ENABLE(plugin-tabsmenu,	[ --enable-plugin-tabsmenu  (yes,no)	Enable tabs 
 AM_CONDITIONAL(ENABLE_PLUGIN_TABSMENU, test "x$enable_plugin_tabsmenu" = "xyes")
 
 AC_ARG_ENABLE(plugin-zoom,	[ --enable-plugin-zoom-persistence  (yes,no)	Enable zoom persistence plugin])
-AM_CONDITIONAL(ENABLE_PLUGIN_ZOOM, test "x$enable_plugin_zoom_persistence" = "xyes")
+AM_CONDITIONAL(ENABLE_PLUGIN_ZOOM_PERSISTENCE, test "x$enable_plugin_zoom_persistence" = "xyes")
 
 dnl *******************************
 dnl Misc things
