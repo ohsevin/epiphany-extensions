@@ -1,3 +1,11 @@
+2004-01-25  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/tabsmenu/ephy-tab-move-menu.c:
+	(add_action_and_menu_item):
+
+	Check if the window is an EphyWindow (it could also be the bme or
+	the history window).
+
 2004-01-25  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/error-viewer/README:

@@ -165,6 +165,9 @@ add_action_and_menu_item (EphyWindow *window, EphyTabMoveMenu *menu)
 	char *title, *win_title_doubled, *win_title;
 	char verb[VERB_FMT_SIZE], name[VERB_FMT_SIZE + 4];
 
+	/* the list may also contain the bookmarks and history window */
+	if (!EPHY_IS_WINDOW (window)) return;
+
 	LOG ("add_action_and_menu_item for window %p", window)
 
 	g_snprintf (verb, sizeof (verb), VERB_FMT, window);
