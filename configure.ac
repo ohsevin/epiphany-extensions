@@ -129,7 +129,7 @@ dnl *******************************
 
 AC_MSG_CHECKING([extensions to build])
 
-all_extensions="actions,adblock,bookmarks-tray,certificates,dashboard,error-viewer,extensions-manager-ui,find,gestures,page-info,sample,sample-mozilla,select-stylesheet,sidebar,smart-bookmarks,tab-groups,tab-states,tabsmenu"
+all_extensions="actions,adblock,bookmarks-tray,certificates,dashboard,error-viewer,extensions-manager-ui,find,gestures,page-info,sample,sample-mozilla,select-stylesheet,sidebar,smart-bookmarks,tab-groups,tab-states,tabsmenu,net-monitor"
 all_useful_extensions="actions,bookmarks-tray,certificates,dashboard,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tab-groups,tab-states,tabsmenu"
 default_extensions="actions,bookmarks-tray,certificates,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups,tab-states"
 mozilla_dependent_extensions="adblock,error-viewer,find,page-info,sample-mozilla,select-stylesheet,smart-bookmarks"
@@ -144,8 +144,8 @@ AC_ARG_WITH([extensions],
 			  actions, adblock, bookmarks-tray, certificates, dashboard,
 			  error-viewer, extensions-manager-ui, gestures,
 			  page-info, sample, sampls-mozilla, select-stylesheet,
-			  sidebar, smart-bookmarks, tab-groups, tabsmenu, all,
-			  really-all])
+			  sidebar, smart-bookmarks, tab-groups, tabsmenu, net-monitor,
+			  all, really-all])
 
 dnl If no extensions specified, build the default set
 if test "x$with_extensions" = xyes; then
@@ -181,6 +181,7 @@ AM_CONDITIONAL(ENABLE_EXTENSIONS_MANAGER_UI_EXTENSION, echo "$extensions" | egre
 AM_CONDITIONAL(ENABLE_ERROR_VIEWER_EXTENSION, echo "$extensions" | egrep '(^|,)error-viewer($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_FIND_EXTENSION, echo "$extensions" | egrep '(^|,)find($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_GESTURES_EXTENSION, echo "$extensions" | egrep '(^|,)gestures($|,)' > /dev/null)
+AM_CONDITIONAL(ENABLE_NET_MONITOR_EXTENSION, echo "$extensions" | egrep '(^|,)net-monitor($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_PAGE_INFO_EXTENSION, echo "$extensions" | egrep '(^|,)page-info($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SAMPLE_EXTENSION, echo "$extensions" | egrep '(^|,)sample($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SAMPLE_MOZILLA_EXTENSION, echo "$extensions" | egrep '(^|,)sample-mozilla($|,)' > /dev/null)
@@ -191,6 +192,18 @@ AM_CONDITIONAL(ENABLE_TABSMENU_EXTENSION, echo "$extensions" | egrep '(^|,)tabsm
 AM_CONDITIONAL(ENABLE_TAB_GROUPS_EXTENSION, echo "$extensions" | egrep '(^|,)tab-groups($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_TAB_STATES_EXTENSION, echo "$extensions" | egrep '(^|,)tab-states($|,)' > /dev/null)
 dnl AM_CONDITIONAL(ENABLE_TOOLBAR_EXTRAS_EXTENSION, echo "$extensions" | egrep '(^|,)toolbar-extras($|,)' > /dev/null)
+
+dnl ****
+dnl DBUS
+dnl ****
+
+if echo "$extensions" | egrep '(^|,)net-monitor($|,)' > /dev/null; then
+
+	DBUS_REQUIRED=0.22
+	DBUS_GLIB_REQUIRED=0.22
+
+	PKG_CHECK_MODULES([DBUS], [dbus-1 >= $DBUS_REQUIRED dbus-glib-1 >= $DBUS_GLIB_REQUIRED])
+fi
 
 dnl ****
 dnl PCRE
@@ -413,6 +426,7 @@ extensions/error-viewer/Makefile
 extensions/error-viewer/mozilla/Makefile
 extensions/error-viewer/opensp/Makefile
 extensions/extensions-manager-ui/Makefile
+extensions/net-monitor/Makefile
 extensions/page-info/Makefile
 extensions/page-info/mozilla/Makefile
 extensions/sample/Makefile

@@ -1,5 +1,19 @@
 2005-02-02  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
+	* AUTHORS:
+	* configure.ac:
+	* extensions/Makefile.am:
+	A extensions/net-monitor/.cvsignore:
+	A extensions/net-monitor/Makefile.am:
+	A extensions/net-monitor/ephy-net-monitor-extension.c:
+	A extensions/net-monitor/ephy-net-monitor-extension.h:
+	A extensions/net-monitor/extension.c:
+	A extensions/net-monitor/net-monitor.xml.in.in
+
+	Add "Net Monitor" extension, written by Jean-François Rameau
+
+2005-02-02  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
 	* extensions/actions/ephy-actions-extension.c: 
 	(ephy_actions_extension_run_action):
 

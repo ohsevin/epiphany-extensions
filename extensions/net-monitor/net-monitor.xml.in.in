@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<extension>
+	<_name>NetMonitor</_name>
+	<_description>Monitor the network with Network Manager</_description>
+	<author>Jean-François Rameau &lt;jf.rameau@wanadoo.fr&gt;</author>
+	<url>http://www.gnome.org/projects/epiphany/extensions.html</url>
+	<version>1</version>
+	<gettext-domain>%GETTEXT_PACKAGE%</gettext-domain>
+	<locale-directory>%LOCALE_DIR%</locale-directory>
+	<loader type="shlib">
+		<attribute name="library">%EXTENSION_DIR%/%LIBRARY%</attribute>
+	</loader>
+</extension>
