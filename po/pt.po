@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.6\n"
 "Report-Msgid-Bugs-To: Duarte Loreto <happyguy_pt@hotmail.com>\n"
-"POT-Creation-Date: 2004-03-21 14:20+0000\n"
-"PO-Revision-Date: 2004-03-21 14:30+0000\n"
+"POT-Creation-Date: 2004-05-16 18:02+0100\n"
+"PO-Revision-Date: 2004-05-16 18:05+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -16,27 +16,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:159
+#: extensions/certificates/ephy-certificates-extension.c:160
 msgid "Certificate Manager"
 msgstr "Gestor de Certificados"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:276
+#: extensions/certificates/ephy-certificates-extension.c:277
 msgid "Manage _Certificates"
 msgstr "Gerir _Certificados"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:278
+#: extensions/certificates/ephy-certificates-extension.c:279
 msgid "Manage your certificates"
 msgstr "Efectue a gestão dos seus certificados"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:286
+#: extensions/certificates/ephy-certificates-extension.c:287
 msgid "Server _Certificate"
 msgstr "Servidor de _Certificados"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:288
+#: extensions/certificates/ephy-certificates-extension.c:289
 msgid "Display the web server's certificate"
 msgstr "Apresentar o certificado do servidor web"
 
@@ -75,13 +75,6 @@ msgstr "_Limpar"
 msgid "Error Viewer"
 msgstr "Visualização de Erros"
 
-#: extensions/error-viewer/link-checker.c:235
-#, c-format
-msgid "Found %d invalid link"
-msgid_plural "Found %d invalid links"
-msgstr[0] "Encontrado %d link inválido"
-msgstr[1] "Encontrados %d links inválidos"
-
 #. Don't bother looking for source lines -- they're not there
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
 #, c-format
@@ -101,7 +94,14 @@ msgstr ""
 "Erro de Javascript em %s na linha %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:77
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "Encontrado %d link inválido"
+msgstr[1] "Encontrados %d links inválidos"
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -110,7 +110,7 @@ msgstr ""
 "Erro de link em %s:\n"
 "%s não está disponível."
 
-#: extensions/error-viewer/mozilla/mozilla-link-checker.cpp:152
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
@@ -153,8 +153,8 @@ msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
 msgstr ""
-"Tipo de documento é \"XHTML\" mas o tipo do conteúdo é \"text/html\".  Utilize "
-"antes \"application/xhtml+xml\"."
+"Tipo de documento é \"XHTML\" mas o tipo do conteúdo é \"text/html\".  "
+"Utilize antes \"application/xhtml+xml\"."
 
 #: extensions/error-viewer/sgml-validator.c:243
 #, c-format
@@ -165,7 +165,20 @@ msgstr ""
 "Aviso HTML em %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:381
+#: extensions/error-viewer/sgml-validator.c:360
+#, c-format
+msgid "HTML error in %s:"
+msgstr "Erro HTML em %s:"
+
+#: extensions/error-viewer/sgml-validator.c:368
+msgid "Invalid character encoding"
+msgstr "Codificação de caracteres inválida"
+
+#: extensions/error-viewer/sgml-validator.c:373
+msgid "Unknown error while converting to UTF-8"
+msgstr "Erro desconhecido ao converter para UTF-8"
+
+#: extensions/error-viewer/sgml-validator.c:435
 #, c-format
 msgid ""
 "HTML error in %s:\n"
