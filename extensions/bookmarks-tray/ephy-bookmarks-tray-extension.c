@@ -33,7 +33,7 @@
 #include <epiphany/ephy-tab.h>
 #include <epiphany/ephy-window.h>
 #include <epiphany/ephy-extension.h>
-#include "ephy-bookmarks-menu.h"
+#include <epiphany/ephy-bookmarks-menu.h>
 #include "ephy-gui.h"
 #include "eel-gconf-extensions.h"
 #include "ephy-debug.h"
@@ -151,15 +151,6 @@ ephy_bookmarks_tray_extension_register_type (GTypeModule *module)
 }
 
 #if 0
-static gboolean
-tray_button_press_cb (EggTrayIcon *tray,
-		      GdkEventButton *event,
-		      EphyBookmarksTrayExtension *extension)
-{
-	g_print("tray_button_press_cb button %d\n", event->button);
-	return FALSE;
-}
-
 static void
 button_size_allocate_cb (GtkWidget *button,
 			 GtkAllocation  *allocation,
@@ -190,7 +181,6 @@ button_size_allocate_cb (GtkWidget *button,
 	}
 
 }
-
 #endif
 
 static void
@@ -428,17 +418,7 @@ ephy_bookmarks_tray_extension_init (EphyBookmarksTrayExtension *extension)
 	g_signal_connect (priv->menu, "open",
 			  G_CALLBACK (open_bookmark_cb), extension);
 
-	priv->tray = GTK_WIDGET (egg_tray_icon_new (NULL));
-#if 0
-	gtk_widget_add_events (GTK_WIDGET (priv->tray),
-			       GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK);
-	
-	g_signal_connect (priv->tray, "button-press-event",
-			  G_CALLBACK (tray_button_press_cb), extension);
-#endif
-
 	priv->tray_button = gtk_toggle_button_new ();
-	gtk_container_add (GTK_CONTAINER (priv->tray), priv->tray_button);
 
 	gtk_button_set_relief (GTK_BUTTON (priv->tray_button), GTK_RELIEF_NONE);
  
@@ -469,11 +449,15 @@ ephy_bookmarks_tray_extension_init (EphyBookmarksTrayExtension *extension)
 	gtk_widget_show (image);
 	gtk_widget_show (hbox);
 	gtk_widget_show (priv->tray_button);
-	gtk_widget_show (priv->tray);
 	
 	priv->tray_tips = gtk_tooltips_new ();
 	g_object_ref (priv->tray_tips);
 	gtk_object_sink (GTK_OBJECT (priv->tray_tips));
+
+	priv->tray = GTK_WIDGET (egg_tray_icon_new (NULL));
+	gtk_container_add (GTK_CONTAINER (priv->tray), priv->tray_button);
+
+	gtk_widget_show (priv->tray);
 
 	eel_gconf_monitor_add (CONF_DIR);
 }
@@ -491,7 +475,7 @@ ephy_bookmarks_tray_extension_finalize (GObject *object)
 	g_object_unref (priv->tray_tips);
 	gtk_widget_destroy (GTK_WIDGET (priv->tray));
 
-//	g_object_unref (priv->menu);
+	g_object_unref (priv->menu);
 	g_object_unref (priv->manager);
 
 	parent_class->finalize (object);
