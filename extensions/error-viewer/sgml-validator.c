@@ -436,10 +436,11 @@ free_sgml_validator_append_cb_data (gpointer data)
 static gboolean
 sgml_validator_append_internal (gpointer data)
 {
+	SgmlValidatorAppendCBData *append_data;
+
 	g_return_if_fail (data != NULL);
 
-	SgmlValidatorAppendCBData *append_data =
-		(SgmlValidatorAppendCBData *) data;
+	append_data = (SgmlValidatorAppendCBData *) data;
 
 	error_viewer_append (append_data->validator->priv->error_viewer,
 			     append_data->error_type,
