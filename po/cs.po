@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-25 03:14+0100\n"
+"POT-Creation-Date: 2004-03-01 03:15+0100\n"
 "PO-Revision-Date: 2004-02-25 07:29+0100\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -81,12 +81,9 @@ msgstr "Prohlížeč chyb"
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
-msgstr[0] ""
-"Nalezen %d neplatný odkaz"
-msgstr[1] ""
-"Nalezeny %d neplatné odkazy"
-msgstr[2] ""
-"Nalezeno %d neplatných odkazů"
+msgstr[0] "Nalezen %d neplatný odkaz"
+msgstr[1] "Nalezeny %d neplatné odkazy"
+msgstr[2] "Nalezeno %d neplatných odkazů"
 
 #. Don't bother looking for source lines -- they're not there
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
@@ -115,6 +112,14 @@ msgid ""
 msgstr ""
 "Chyba odkazu v %s:\n"
 "%s není k dispozici."
+
+#: extensions/error-viewer/mozilla/mozilla-link-checker.cpp:174
+#, c-format
+msgid "Checking %d Link on %s"
+msgid_plural "Checking %d Links on %s"
+msgstr[0] "Kontroluji %d odkaz v %s"
+msgstr[1] "Kontroluji %d odkazy v %s"
+msgstr[2] "Kontroluji %d odkazů v %s"
 
 #: extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
@@ -152,7 +157,9 @@ msgstr ""
 msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
-msgstr "Doctype je \"XHTML\", ale typ obsahu je \"text/html\". Použijte místo něj \"application/xhtml+xml\"."
+msgstr ""
+"Doctype je \"XHTML\", ale typ obsahu je \"text/html\". Použijte místo něj "
+"\"application/xhtml+xml\"."
 
 #: extensions/error-viewer/sgml-validator.c:243
 #, c-format
