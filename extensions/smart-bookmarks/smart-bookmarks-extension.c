@@ -620,7 +620,7 @@ impl_attach_window (EphyExtension *ext,
 	}
 
 	/* Action group completed */
-	gtk_ui_manager_insert_action_group (data->manager, action_group, 0),
+	gtk_ui_manager_insert_action_group (data->manager, action_group, -1),
 	g_object_unref (action_group);
 
 	/* Sync open tabs */
@@ -641,8 +641,16 @@ impl_detach_window (EphyExtension *ext,
 {
 	GtkWidget *notebook;
 	GList *tabs, *l;
+	WindowData *data;
 
 	LOG ("SmartBookmarksExtension detach_window")
+
+	data = g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
+	g_return_if_fail (data != NULL);
+
+	gtk_ui_manager_remove_ui (data->manager, data->ui_id);
+	gtk_ui_manager_ensure_update (data->manager);
+	gtk_ui_manager_remove_action_group (data->manager, data->action_group);
 
 	notebook = ephy_window_get_notebook (window);
 
@@ -657,6 +665,8 @@ impl_detach_window (EphyExtension *ext,
 		tab_removed_cb (notebook, (EphyTab *) l->data, window);
 	}
 	g_list_free (tabs);
+
+	g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, NULL);
 }
 
 static void

@@ -1,5 +1,12 @@
 2004-10-17  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/smart-bookmarks/smart-bookmarks-extension.c:
+	(impl_attach_window), (impl_detach_window):
+
+	Detach correctly from the window. Fixes bug #155388.
+
+2004-10-17  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/adblock/Makefile.am:
 	* extensions/certificates/Makefile.am:
 	* extensions/dashboard/Makefile.am:
