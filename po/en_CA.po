@@ -1,6 +1,6 @@
 # English/Canada translation of epiphany-extensions.
-# Copyright (C) 2004 THE epiphany-extensions'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the epiphany-extensions package.
+# Copyright (C) 2004 Adam Weinberger and the GNOME Foundation
+# This file is distributed under the same licence as the epiphany-extensions package.
 # Adam Weinberger <adamw@gnome.org>, 2004.
 # 
 # 
@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-27 17:57-0400\n"
-"PO-Revision-Date: 2004-09-27 16:10-0400\n"
+"POT-Creation-Date: 2004-10-09 11:08-0400\n"
+"PO-Revision-Date: 2004-10-09 16:10-0400\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: English/Canada <adamw@FreeBSD.org>\n"
 "MIME-Version: 1.0\n"
@@ -44,7 +44,7 @@ msgstr "Check _HTML"
 #. shortcut key
 #: extensions/error-viewer/ephy-error-viewer-extension.c:100
 msgid "Display HTML errors in the Error Viewer dialog"
-msgstr "Display HTML errors in the Error Viewer dialog"
+msgstr "Display HTML errors in the Error Viewer dialogue"
 
 #: extensions/error-viewer/ephy-error-viewer-extension.c:105
 msgid "Check _Links"
@@ -53,7 +53,7 @@ msgstr "Check _Links"
 #. shortcut key
 #: extensions/error-viewer/ephy-error-viewer-extension.c:107
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
-msgstr "Display invalid hyperlinks in the Error Viewer dialog"
+msgstr "Display invalid hyperlinks in the Error Viewer dialogue"
 
 #: extensions/error-viewer/ephy-error-viewer-extension.c:111
 msgid "_Error Viewer"
@@ -190,7 +190,7 @@ msgstr "_Page Info"
 
 #: extensions/page-info/ephy-page-info-extension.c:67
 msgid "Display page information in a dialog"
-msgstr "Display page information in a dialog"
+msgstr "Display page information in a dialogue"
 
 #: extensions/page-info/page-info-dialog.c:637
 msgid "Unknown type"
@@ -263,7 +263,7 @@ msgid "_Save Image As..."
 msgstr "_Save Image As..."
 
 #: extensions/page-info/page-info-dialog.c:1003
-#: extensions/page-info/page-info-dialog.c:1180
+#: extensions/page-info/page-info-dialog.c:1221
 msgid "URL"
 msgstr "URL"
 
@@ -272,7 +272,7 @@ msgid "Alt Text"
 msgstr "Alt Text"
 
 #: extensions/page-info/page-info-dialog.c:1027
-#: extensions/page-info/page-info-dialog.c:1192
+#: extensions/page-info/page-info-dialog.c:1233
 msgid "Title"
 msgstr "Title"
 
@@ -284,19 +284,23 @@ msgstr "Width"
 msgid "Height"
 msgstr "Height"
 
-#: extensions/page-info/page-info-dialog.c:1204
+#: extensions/page-info/page-info-dialog.c:1187
+msgid "_Copy Link Address"
+msgstr "_Copy Link Address"
+
+#: extensions/page-info/page-info-dialog.c:1245
 msgid "Relation"
 msgstr "Relation"
 
-#: extensions/page-info/page-info-dialog.c:1315
+#: extensions/page-info/page-info-dialog.c:1356
 msgid "Name"
 msgstr "Name"
 
-#: extensions/page-info/page-info-dialog.c:1327
+#: extensions/page-info/page-info-dialog.c:1368
 msgid "Method"
 msgstr "Method"
 
-#: extensions/page-info/page-info-dialog.c:1339
+#: extensions/page-info/page-info-dialog.c:1380
 msgid "Action"
 msgstr "Action"
 
@@ -437,16 +441,16 @@ msgstr "_Sidebar"
 msgid "Show or hide the sidebar"
 msgstr "Show or hide the sidebar"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:368
+#: extensions/sidebar/ephy-sidebar-extension.c:396
 msgid "_Add Sidebar"
 msgstr "_Add Sidebar"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:395
+#: extensions/sidebar/ephy-sidebar-extension.c:423
 #, c-format
 msgid "Add \"%s\" to the Sidebar?"
 msgstr "Add \"%s\" to the Sidebar?"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:398
+#: extensions/sidebar/ephy-sidebar-extension.c:426
 msgid "The source to the new sidebar page is:"
 msgstr "The source to the new sidebar page is:"
 
