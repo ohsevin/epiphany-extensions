@@ -181,6 +181,16 @@ error_viewer_append (ErrorViewer *dialog,
 	gtk_tree_path_free (path);
 }
 
+static gboolean
+delete_window_cb (GtkWidget *widget,
+		  GdkEvent *event,
+		  gpointer data)
+{
+	gtk_widget_hide (widget);
+
+	return TRUE;
+}
+
 static void
 build_ui (ErrorViewer *dialog)
 {
@@ -195,6 +205,9 @@ build_ui (ErrorViewer *dialog)
 						properties[PROP_WINDOW].id);
 	priv->treeview = ephy_dialog_get_control (EPHY_DIALOG (dialog),
 						  properties[PROP_TREEVIEW].id);
+
+	g_signal_connect (priv->window, "delete-event",
+			  G_CALLBACK (delete_window_cb), NULL);
 
 	treeview = GTK_TREE_VIEW (priv->treeview);
 

@@ -1,5 +1,12 @@
 2004-03-15  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/error-viewer/error-viewer.c: (delete_window_cb),
+	(build_ui):
+
+	Make closing the dialog with the window manager's 'X' only hide it.
+
+2004-03-15  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/error-viewer/error-viewer.c: (error_viewer_new):
 
 	Persist position. Fixes bug #137186
