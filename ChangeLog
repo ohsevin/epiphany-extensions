@@ -1,3 +1,19 @@
+2005-03-02  Christian Persch  <chpe@cvs.gnome.org>
+
+	* include/EphyUtils.h:
+	* include/eel-gconf-extensions.h:
+	* include/egg-editable-toolbar.h:
+	* include/egg-toolbars-model.h:
+	* include/ephy-debug.h:
+	* include/ephy-dnd.h:
+	* include/ephy-file-chooser.h:
+	* include/ephy-file-helpers.h:
+	* include/ephy-gui.h:
+	* include/ephy-link.h:
+	* include/ephy-prefs.h:
+
+	Sync with Epiphany.
+
 2005-03-01  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/find/ephy-find-extension.c:
