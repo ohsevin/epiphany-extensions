@@ -26,6 +26,7 @@
 
 #include <epiphany/ephy-extension.h>
 #include <epiphany/ephy-window.h>
+#include <epiphany/ephy-embed-shell.h>
 #include "ephy-debug.h"
 
 #include <gtk/gtkwidget.h>
@@ -101,6 +102,8 @@ ephy_find_extension_register_type (GTypeModule *module)
 static void
 ephy_find_extension_init (EphyFindExtension *extension)
 {
+        ephy_embed_shell_get_embed_single (embed_shell); /* Fire up Mozilla */
+	
 	extension->priv = EPHY_FIND_EXTENSION_GET_PRIVATE (extension);
 
 	LOG ("EphyFindExtension initialising");

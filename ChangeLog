@@ -1,3 +1,11 @@
+2005-03-01  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/find/ephy-find-extension.c:
+	(ephy_find_extension_init):
+	* extensions/find/mozilla-helpers.cpp:
+
+	Make sure mozilla is started before setting the prefs.
+
 2005-02-27  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/actions/actions.xml.in.in:
