@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-06 19:35+0100\n"
-"PO-Revision-Date: 2004-10-06 19:38+0100\n"
+"POT-Creation-Date: 2004-10-13 22:54+0100\n"
+"PO-Revision-Date: 2004-10-13 22:54+0100\n"
 "Last-Translator: David Lodge <dave@cirt.net>\n"
 "Language-Team: British English\n"
 "MIME-Version: 1.0\n"
@@ -261,7 +261,7 @@ msgid "_Save Image As..."
 msgstr "_Save Image As..."
 
 #: extensions/page-info/page-info-dialog.c:992
-#: extensions/page-info/page-info-dialog.c:1169
+#: extensions/page-info/page-info-dialog.c:1210
 msgid "URL"
 msgstr "URL"
 
@@ -270,7 +270,7 @@ msgid "Alt Text"
 msgstr "Alt Text"
 
 #: extensions/page-info/page-info-dialog.c:1016
-#: extensions/page-info/page-info-dialog.c:1181
+#: extensions/page-info/page-info-dialog.c:1222
 msgid "Title"
 msgstr "Title"
 
@@ -282,19 +282,23 @@ msgstr "Width"
 msgid "Height"
 msgstr "Height"
 
-#: extensions/page-info/page-info-dialog.c:1193
+#: extensions/page-info/page-info-dialog.c:1176
+msgid "_Copy Link Address"
+msgstr "_Copy Link Address"
+
+#: extensions/page-info/page-info-dialog.c:1234
 msgid "Relation"
 msgstr "Relation"
 
-#: extensions/page-info/page-info-dialog.c:1304
+#: extensions/page-info/page-info-dialog.c:1345
 msgid "Name"
 msgstr "Name"
 
-#: extensions/page-info/page-info-dialog.c:1316
+#: extensions/page-info/page-info-dialog.c:1357
 msgid "Method"
 msgstr "Method"
 
-#: extensions/page-info/page-info-dialog.c:1328
+#: extensions/page-info/page-info-dialog.c:1369
 msgid "Action"
 msgstr "Action"
 
