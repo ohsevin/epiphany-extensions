@@ -1,5 +1,11 @@
 2005-01-13  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+
+	Simplify the fix a bit.
+
+2005-01-13  Christian Persch  <chpe@cvs.gnome.org>
+
 	* configure.ac:
 	* extensions/page-info/mozilla/mozilla-helpers.cpp:
 
