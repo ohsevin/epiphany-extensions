@@ -3,6 +3,14 @@
 	* extensions/tabsmenu/ephy-tab-move-menu.c:
 	(update_tab_move_menu_cb):
 
+	Fix a silly bug, NULL terminate the argument list of
+	g_object_set().
+
+2004-02-01  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/tabsmenu/ephy-tab-move-menu.c:
+	(update_tab_move_menu_cb):
+
 	Set the menu insensitive when there's only one window.
 
 2004-02-01  Christian Persch  <chpe@cvs.gnome.org>
