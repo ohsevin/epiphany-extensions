@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany Plugins 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-01-02 08:15+0100\n"
+"POT-Creation-Date: 2004-01-23 23:10+0100\n"
 "PO-Revision-Date: 2003-08-03 18:28+0000\n"
 "Last-Translator: Christian Persch <chpe+ephyplugins@stud.uni-saarland.de>\n"
 "Language-Team: British English\n"
@@ -19,21 +19,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: extensions/error-viewer/ephy-error-viewer-extension.c:61
+msgid "Errors"
+msgstr "Errors"
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:63
+msgid "Display web page errors"
+msgstr "Display web page errors"
+
+#: extensions/error-viewer/error-viewer.glade.h:1
+msgid "C_lear"
+msgstr "C_lear"
+
+#: extensions/error-viewer/error-viewer.glade.h:2
+msgid "Error Viewer"
+msgstr "Error Viewer"
+
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:106
+#, c-format
+msgid ""
+"Error in %s, Line %d:\n"
+"%s"
+msgstr ""
+"Error in %s, Line %d:\n"
+"%s"
+
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
 msgid "Block _Popups from this Site"
-msgstr ""
+msgstr "Block _Popups from this Site"
 
 #. shortcut key
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:64
 msgid "Block or unblock popup windows"
-msgstr ""
+msgstr "Block or unblock popup windows"
 
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:324
 #, c-format
 msgid "%d popup blocked"
 msgid_plural "%d popups blocked"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d popup blocked"
+msgstr[1] "%d popups blocked"
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:181
 #, c-format
@@ -43,9 +69,8 @@ msgstr[0] "Window '%s' (%d tab)"
 msgstr[1] "Window '%s' (%d tabs)"
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:272
-#, fuzzy
 msgid "Move Tab To Window"
-msgstr "_Move Tab To"
+msgstr "_Move Tab To Window"
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:273
 msgid "Move the current tab to a different window"
