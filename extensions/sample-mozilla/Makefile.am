@@ -22,6 +22,7 @@ libsamplemozillaextension_la_CFLAGS = \
 libsamplemozillaextension_la_LIBADD = \
 	mozilla/libsamplemozillamozilla.la	\
 	$(MOZILLA_COMPONENT_LIBS)
+libsamplemozillaextension_la_LDFLAGS = -module -avoid-version
 
 extensionxmldir = $(extensiondir)
 extensionxml_in_files = sample-mozilla.xml.in.in

@@ -7,6 +7,7 @@ libtabsmenuextension_la_SOURCES = \
 	ephy-tab-move-menu.c		\
 	ephy-tab-move-menu.h		\
 	tabs-menu.c
+libtabsmenuextension_la_LDFLAGS = -module -avoid-version
 
 libtabsmenuextension_la_CPPFLAGS = \
         -I$(top_srcdir)/include				\

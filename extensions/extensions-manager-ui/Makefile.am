@@ -7,6 +7,7 @@ libextensionsmanageruiextension_la_SOURCES = \
 	ephy-extensions-manager-ui-extension.c	\
 	ephy-extensions-manager-ui-extension.h	\
 	extension.c
+libextensionsmanageruiextension_la_LDFLAGS = -module -avoid-version
 
 libextensionsmanageruiextension_la_CPPFLAGS = \
         -I$(top_srcdir)/include				\

@@ -5,6 +5,7 @@ libbookmarkstrayextension_la_SOURCES = \
 	ephy-bookmarks-tray-extension.c	\
 	ephy-bookmarks-tray-extension.h	\
 	extension.c
+libbookmarkstrayextension_la_LDFLAGS = -module -avoid-version
 
 libbookmarkstrayextension_la_CPPFLAGS = \
         -I$(top_srcdir)/include					\

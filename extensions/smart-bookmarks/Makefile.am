@@ -26,6 +26,8 @@ libsmartbookmarksextension_la_LIBADD =	\
 	$(top_builddir)/extensions/smart-bookmarks/mozilla/libsbmozilla.la	\
 	$(MOZILLA_COMPONENT_LIBS)
 
+libsmartbookmarksextension_la_LDFLAGS = -module -avoid-version
+
 glade_DATA = smart-bookmarks.glade
 
 gladedir = $(pkgdatadir)/glade

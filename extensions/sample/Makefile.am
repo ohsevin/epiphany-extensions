@@ -5,6 +5,7 @@ libsampleextension_la_SOURCES = \
 	ephy-sample-extension.c	\
 	ephy-sample-extension.h	\
 	sample.c
+libsampleextension_la_LDFLAGS = -module -avoid-version
 
 libsampleextension_la_CPPFLAGS = \
         -I$(top_srcdir)/include				\

@@ -24,6 +24,7 @@ libselectstylesheetextension_la_CFLAGS = \
 libselectstylesheetextension_la_LIBADD = \
 	mozilla/libselectstylesheetmozilla.la	\
 	$(MOZILLA_COMPONENT_LIBS)
+libselectstylesheetextension_la_LDFLAGS = -module -avoid-version
 
 extensionxmldir = $(extensiondir)
 extensionxml_in_files = select-stylesheet.xml.in.in

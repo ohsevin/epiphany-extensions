@@ -20,6 +20,8 @@ libtoolbarextrasextension_la_CFLAGS = \
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
 	$(AM_CFLAGS)
 
+libtoolbarextrasextension_la_LDFLAGS = -module -avoid-version
+
 extensionxmldir = $(extensiondir)
 extensionxml_in_files = toolbar-extras.xml.in.in
 extensionxml_DATA = $(extensionxml_in_files:.xml.in.in=.xml)

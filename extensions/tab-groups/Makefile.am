@@ -7,6 +7,7 @@ libtabgroupsextension_la_SOURCES = \
 	ephy-tab-grouper.c		\
 	ephy-tab-grouper.h		\
 	tab-groups.c
+libtabgroupsextension_la_LDFLAGS = -module -avoid-version
 
 libtabgroupsextension_la_CPPFLAGS = \
         -I$(top_srcdir)/include				\

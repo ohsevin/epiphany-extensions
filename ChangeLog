@@ -1,3 +1,24 @@
+2005-01-11  Tomasz Kłoczko <kloczek@pld.org.pl>
+
+	* extensions/adblock/Makefile.am:
+	* extensions/bookmarks-tray/Makefile.am:
+	* extensions/certificates/Makefile.am:
+	* extensions/dashboard/Makefile.am:
+	* extensions/error-viewer/Makefile.am:
+	* extensions/extensions-manager-ui/Makefile.am:
+	* extensions/gestures/Makefile.am:
+	* extensions/page-info/Makefile.am:
+	* extensions/sample/Makefile.am:
+	* extensions/sample-mozilla/Makefile.am:
+	* extensions/select-stylesheet/Makefile.am:
+	* extensions/sidebar/Makefile.am:
+	* extensions/smart-bookmarks/Makefile.am:
+	* extensions/tab-groups/Makefile.am:
+	* extensions/tabsmenu/Makefile.am:
+	* extensions/toolbar-extras/Makefile.am:
+	Build extensions modules as not versioned DSO by add to *_la_LDFLAGS
+	-module -avoid-version.
+
 2005-01-11  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:

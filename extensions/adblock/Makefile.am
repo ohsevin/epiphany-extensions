@@ -24,6 +24,7 @@ libadblockextension_la_CFLAGS = \
 libadblockextension_la_LIBADD = \
 	mozilla/libadblockmozilla.la	\
 	$(MOZILLA_COMPONENT_LIBS)
+libadblockextension_la_LDFLAGS = -module -avoid-version
 
 patterns_DATA = adblock-patterns
 patternsdir = $(pkgdatadir)

@@ -48,6 +48,7 @@ liberrorviewerextension_la_LIBADD += \
 	opensp/liberrorvieweropensp.la	\
 	-losp
 endif
+liberrorviewerextension_la_LDFLAGS = -module -avoid-version
 
 glade_DATA = error-viewer.glade
 

@@ -25,6 +25,7 @@ libpageinfoextension_la_CFLAGS = \
 libpageinfoextension_la_LIBADD = \
 	mozilla/libpageinfomozilla.la	\
 	$(MOZILLA_COMPONENT_LIBS)
+libpageinfoextension_la_LDFLAGS = -module -avoid-version
 
 glade_DATA = page-info.glade
 gladedir = $(pkgdatadir)/glade

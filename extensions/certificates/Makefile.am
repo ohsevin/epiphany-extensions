@@ -7,6 +7,7 @@ libcertificatesextension_la_SOURCES = \
 	ephy-certificates-extension.c	\
 	ephy-certificates-extension.h	\
 	extension.c
+libcertificatesextension_la_LDFLAGS = -module -avoid-version
 
 libcertificatesextension_la_CPPFLAGS = \
         -I$(top_srcdir)/include				\

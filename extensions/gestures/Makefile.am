@@ -9,6 +9,7 @@ libgesturesextension_la_SOURCES = 	\
 	gestures.c			\
 	stroke.c			\
 	stroke.h
+libgesturesextension_la_LDFLAGS = -module -avoid-version
 
 libgesturesextension_la_CPPFLAGS = \
         -I$(top_srcdir)/include				\

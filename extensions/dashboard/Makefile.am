@@ -7,6 +7,7 @@ libdashboardextension_la_SOURCES =	\
 	ephy-dashboard-extension.h	\
 	dashboard-frontend-xmlwriter.h	\
 	dashboard-frontend-xmlwriter.c
+libdashboardextension_la_LDFLAGS = -module -avoid-version
 
 libdashboardextension_la_CPPFLAGS = \
         -I$(top_srcdir)/include				\
