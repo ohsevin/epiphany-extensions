@@ -1,3 +1,30 @@
+2004-06-10  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/Makefile.am:
+	* extensions/toolbar-extras/Makefile.am:
+	* extensions/toolbar-extras/ephy-multi-smart-action.c:
+	(ephy_multi_smart_action_get_type),
+	(ephy_multi_smart_action_register_type), (menu_activate_find_cb),
+	(menu_case_sensitive_toggled_cb),
+	(menu_clean_after_use_toggled_cb), (menu_activate_node_cb),
+	(sort_bookmarks), (build_menu), (create_tool_item),
+	(create_menu_item), (sync_smartbookmark_id), (sync_mode),
+	(create_menu_proxy), (icon_clicked_cb), (entry_activate_cb),
+	(connect_proxy), (disconnect_proxy),
+	(ephy_multi_smart_action_finalize), (smart_address_notifier),
+	(ephy_multi_smart_action_class_init):
+	* extensions/toolbar-extras/ephy-toolbar-extras-extension.c:
+	(ephy_toolbar_extras_extension_get_type),
+	(ephy_toolbar_extras_extension_register_type),
+	(ephy_toolbar_extras_extension_init),
+	(ephy_toolbar_extras_extension_finalize), (action_request_cb),
+	(impl_attach_window), (impl_detach_window),
+	(ephy_toolbar_extras_extension_class_init):
+	* extensions/toolbar-extras/toolbar-extras.c: (register_module):
+
+	Cleanup, still not ready for production use.
+
 2004-06-09  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/error-viewer/sgml-validator.c:

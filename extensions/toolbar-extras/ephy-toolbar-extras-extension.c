@@ -25,9 +25,9 @@
 
 #include "ephy-toolbar-extras-extension.h"
 #include "ephy-multi-smart-action.h"
-#include "ephy-debug.h"
 
-#include "egg-editable-toolbar.h"
+#include "eel-gconf-extensions.h"
+#include "ephy-debug.h"
 
 #include <epiphany/ephy-extension.h>
 #include <epiphany/ephy-window.h>
@@ -55,12 +55,12 @@ static void ephy_toolbar_extras_extension_class_init	(EphyToolbarExtrasExtension
 static void ephy_toolbar_extras_extension_iface_init	(EphyExtensionIface *iface);
 static void ephy_toolbar_extras_extension_init		(EphyToolbarExtrasExtension *extension);
 
-static GType ephy_toolbar_extras_type = 0;
+static GType type = 0;
 
 GType
 ephy_toolbar_extras_extension_get_type (void)
 {
-	return ephy_toolbar_extras_type;
+	return type;
 }
 
 GType
@@ -86,18 +86,17 @@ ephy_toolbar_extras_extension_register_type (GTypeModule *module)
 		NULL
 	};
 
-	ephy_toolbar_extras_type =
-		g_type_module_register_type (module,
-					     G_TYPE_OBJECT,
-					     "EphyToolbarExtrasExtension",
-					     &our_info, 0);
+	type = g_type_module_register_type (module,
+					    G_TYPE_OBJECT,
+					    "EphyToolbarExtrasExtension",
+					    &our_info, 0);
 
 	g_type_module_add_interface (module,
-				     ephy_toolbar_extras_type,
+				     type,
 				     EPHY_TYPE_EXTENSION,
 				     &extension_info);
 
-	return ephy_toolbar_extras_type;
+	return type;
 }
 
 static void
@@ -105,16 +104,17 @@ ephy_toolbar_extras_extension_init (EphyToolbarExtrasExtension *extension)
 {
 	extension->priv = EPHY_TOOLBAR_EXTRAS_EXTENSION_GET_PRIVATE (extension);
 
+	eel_gconf_monitor_add ("/apps/epiphany/extensions/multi-smart");
+
 	LOG ("EphyToolbarExtrasExtension initialising")
 }
 
 static void
 ephy_toolbar_extras_extension_finalize (GObject *object)
 {
-/*
-	EphyToolbarExtrasExtension *extension = EPHY_TOOLBAR_EXTRAS_EXTENSION (object);
-*/
 	LOG ("EphyToolbarExtrasExtension finalising")
+
+	eel_gconf_monitor_remove ("/apps/epiphany/extensions/multi-smart");
 
 	G_OBJECT_CLASS (ephy_toolbar_extras_parent_class)->finalize (object);
 }
@@ -141,16 +141,18 @@ find_action_group (EphyWindow *window)
 }
 
 static void
-action_request_cb (EggEditableToolbar *etoolbar,
+action_request_cb (GtkWidget *etoolbar,
                    char *action_name,
                    EphyToolbarExtrasExtension *extension)
 {
 	EphyWindow *window;
-	GtkAction *action = NULL;
+	GtkActionGroup *action_group;
+	GtkAction *action;
 
 	LOG ("action_request_cb for %s", action_name)
 
-	g_object_get (G_OBJECT (etoolbar), "window", &window, NULL);
+	window = EPHY_WINDOW (gtk_widget_get_toplevel (etoolbar));
+	g_return_if_fail (window != NULL);
 
 	if (strcmp (action_name, "MultiSmartSearch") == 0)
 	{
@@ -158,12 +160,7 @@ action_request_cb (EggEditableToolbar *etoolbar,
 				       "name", "MultiSmartSearch",
 				       "label", _("Smart Search"),
 				       "window", window,
-				       NULL);					
-	}
-
-	if (action != NULL)
-	{
-		GtkActionGroup *action_group;
+				       NULL);
 
 		action_group = find_action_group (window);
 		g_return_if_fail (action_group != NULL);
@@ -171,63 +168,32 @@ action_request_cb (EggEditableToolbar *etoolbar,
 		gtk_action_group_add_action (action_group, action);
 		g_object_unref (action);
 	}
-
-	g_object_unref (window);
 }
 
 static void
-impl_attach_window (EphyExtension *ext,
+impl_attach_window (EphyExtension *extension,
 		    EphyWindow *window)
 {
-	EphyToolbarExtrasExtension *extension = EPHY_TOOLBAR_EXTRAS_EXTENSION (ext);
 	GtkWidget *toolbar;
-
-	LOG ("EphyToolbarExtrasExtension attach_window")
 
 	toolbar = ephy_window_get_toolbar (window);
 	g_return_if_fail (toolbar != NULL);
 
 	g_signal_connect (toolbar, "action_request",
-			  G_CALLBACK (action_request_cb),
-			  extension);
+			  G_CALLBACK (action_request_cb), extension);
 }
 
 static void
-impl_detach_window (EphyExtension *ext,
+impl_detach_window (EphyExtension *extension,
 		    EphyWindow *window)
 {
-//	EphyToolbarExtrasExtension *extension = EPHY_TOOLBAR_EXTRAS_EXTENSION (ext);
-	LOG ("EphyToolbarExtrasExtension detach_window")
-}
+	GtkWidget *toolbar;
 
-static void
-ephy_toolbar_extras_extension_set_property (GObject *object,
-				    guint prop_id,
-				    const GValue *value,
-				    GParamSpec *pspec)
-{
-/*
-	EphyToolbarExtrasExtension *extension = EPHY_TOOLBAR_EXTRAS_EXTENSION (object);
+	toolbar = ephy_window_get_toolbar (window);
+	g_return_if_fail (toolbar != NULL);
 
-	switch (prop_id)
-	{
-	}
-*/
-}
-
-static void
-ephy_toolbar_extras_extension_get_property (GObject *object,
-				    guint prop_id,
-				    GValue *value,
-				    GParamSpec *pspec)
-{
-/*
-	EphyToolbarExtrasExtension *extension = EPHY_TOOLBAR_EXTRAS_EXTENSION (object);
-
-	switch (prop_id)
-	{
-	}
-*/
+	g_signal_handlers_disconnect_by_func
+		(toolbar, G_CALLBACK (action_request_cb), extension);
 }
 
 static void
@@ -245,8 +211,6 @@ ephy_toolbar_extras_extension_class_init (EphyToolbarExtrasExtensionClass *klass
 	ephy_toolbar_extras_parent_class = g_type_class_peek_parent (klass);
 
 	object_class->finalize = ephy_toolbar_extras_extension_finalize;
-	object_class->get_property = ephy_toolbar_extras_extension_get_property;
-	object_class->set_property = ephy_toolbar_extras_extension_set_property;
 
 	g_type_class_add_private (object_class, sizeof (EphyToolbarExtrasExtensionPrivate));
 }

@@ -1,6 +1,6 @@
 /*
  *  Copyright (C) 2003 Marco Pesenti Gritti
- *  Copyright (C) 2003 Christian Persch
+ *  Copyright (C) 2003, 2004 Christian Persch
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -35,6 +35,7 @@
 #include <epiphany/ephy-shell.h>
 #include <epiphany/ephy-node.h>
 #include <epiphany/ephy-bookmarks.h>
+#include <epiphany/ephy-history.h>
 
 #include <gtk/gtkmenu.h>
 #include <gtk/gtkmenuitem.h>
@@ -45,13 +46,15 @@
 #include <gtk/gtkaction.h>
 #include <glib/gi18n-lib.h>
 
+#include "galago-gtk-icon-entry.h"
+
 typedef enum
 {
 	EPHY_MSM_MODE_FIND,
 	EPHY_MSM_MODE_SMART
 } EphyMultiSmartMode;
 
-static const char * mode_strings [] =
+static const char *mode_strings [] =
 {
 	"find",
 	"smart"
@@ -93,17 +96,17 @@ enum
 #define CONF_CLEAN_AFTER_USE	"/apps/epiphany/extensions/multi-smart/clean_after_use"
 #define CONF_CASE_SENSITIVE	"/apps/epiphany/dialogs/find_match_case"
 
-static GObjectClass *ephy_multi_smart_action_parent_class = NULL;
+static GObjectClass *parent_class = NULL;
 
 static void ephy_multi_smart_action_init	(EphyMultiSmartAction *action);
 static void ephy_multi_smart_action_class_init	(EphyMultiSmartActionClass *class);
 
-static GType epy_multi_smart_action_type = 0;
+static GType type = 0;
 
 GType
 ephy_multi_smart_action_get_type (void)
 {
-	return epy_multi_smart_action_type;
+	return type;
 }
 
 GType
@@ -122,23 +125,24 @@ ephy_multi_smart_action_register_type (GTypeModule *module)
 		(GInstanceInitFunc) ephy_multi_smart_action_init,
 	};
 
-	epy_multi_smart_action_type =
-		g_type_module_register_type (module,
-					     GTK_TYPE_ACTION,
-					     "EphyMultiSmartAction",
-					     &type_info, 0);
+	type = g_type_module_register_type (module,
+					    GTK_TYPE_ACTION,
+					    "EphyMultiSmartAction",
+					    &type_info, 0);
 
-	return epy_multi_smart_action_type;
+	return type;
 }
 
 static void
-menu_activate_find_cb (GtkWidget *item, EphyMultiSmartAction *action)
+menu_activate_find_cb (GtkWidget *item,
+		       EphyMultiSmartAction *action)
 {
 	eel_gconf_set_string (CONF_MODE, mode_strings[EPHY_MSM_MODE_FIND]);
 }
 
 static void
-menu_case_sensitive_toggled_cb (GtkWidget *item, EphyMultiSmartAction *action)
+menu_case_sensitive_toggled_cb (GtkWidget *item,
+				EphyMultiSmartAction *action)
 {
 	eel_gconf_set_boolean
 		(CONF_CASE_SENSITIVE,
@@ -146,7 +150,8 @@ menu_case_sensitive_toggled_cb (GtkWidget *item, EphyMultiSmartAction *action)
 }
 
 static void
-menu_clean_after_use_toggled_cb (GtkWidget *item, EphyMultiSmartAction *action)
+menu_clean_after_use_toggled_cb (GtkWidget *item,
+				 EphyMultiSmartAction *action)
 {
 	eel_gconf_set_boolean
 		(CONF_CLEAN_AFTER_USE,
@@ -154,18 +159,19 @@ menu_clean_after_use_toggled_cb (GtkWidget *item, EphyMultiSmartAction *action)
 }
 
 static void
-menu_activate_node_cb (GtkWidget *item, EphyMultiSmartAction *action)
+menu_activate_node_cb (GtkWidget *item,
+		       EphyMultiSmartAction *action)
 {
 	EphyBookmarks *bookmarks;
 	EphyNode *node;
-	gulong *id;
+	gulong id;
 	const char *address;
 
-	id = (gulong *) g_object_get_data (G_OBJECT (item), "node-id");
-	g_return_if_fail (id != NULL);
+	id = GPOINTER_TO_UINT (g_object_get_data (G_OBJECT (item), "node-id"));
+	g_return_if_fail (id != 0);
 
 	bookmarks = ephy_shell_get_bookmarks (ephy_shell);
-	node = ephy_bookmarks_get_from_id (bookmarks, *id);
+	node = ephy_bookmarks_get_from_id (bookmarks, id);
 	if (!EPHY_IS_NODE (node)) return;
 
 	address = ephy_node_get_property_string (node, EPHY_NODE_BMK_PROP_LOCATION);
@@ -178,7 +184,8 @@ menu_activate_node_cb (GtkWidget *item, EphyMultiSmartAction *action)
 #define MAX_LENGTH 32
 
 static int
-sort_bookmarks (gconstpointer a, gconstpointer b)
+sort_bookmarks (gconstpointer a,
+		gconstpointer b)
 {
 	EphyNode *node_a = (EphyNode *)a;
 	EphyNode *node_b = (EphyNode *)b;
@@ -214,6 +221,7 @@ static GtkWidget *
 build_menu (EphyMultiSmartAction *action)
 {
 	EphyBookmarks *bookmarks;
+	EphyHistory *history;
 	EphyFaviconCache *cache;
 	EphyNode *smartbookmarks;
 	GtkWidget *menu, *item;
@@ -221,9 +229,11 @@ build_menu (EphyMultiSmartAction *action)
 	GList *node_list = NULL, *l = NULL;
 	int i;
 
-	LOG ("BUILD_MENU")
 	bookmarks = ephy_shell_get_bookmarks (ephy_shell);
 	smartbookmarks = ephy_bookmarks_get_smart_bookmarks (bookmarks);
+	history = EPHY_HISTORY (ephy_embed_shell_get_global_history (embed_shell));
+	cache = EPHY_FAVICON_CACHE (ephy_embed_shell_get_favicon_cache
+					(EPHY_EMBED_SHELL (ephy_shell)));
 
 	menu = gtk_menu_new ();
 
@@ -259,14 +269,10 @@ build_menu (EphyMultiSmartAction *action)
 
 	node_list = g_list_sort (node_list, (GCompareFunc) sort_bookmarks);
 
-	cache = EPHY_FAVICON_CACHE (ephy_embed_shell_get_favicon_cache
-					(EPHY_EMBED_SHELL (ephy_shell)));
-
 	for (l = node_list; l != NULL; l = l->next)
 	{
 		EphyNode *node = (EphyNode *) l->data;
-		gulong *id;
-		const char *title, *icon_location;
+		const char *title, *location, *icon_location;
 		char *short_title, *escaped_title;
 
 		title = ephy_node_get_property_string
@@ -280,8 +286,10 @@ build_menu (EphyMultiSmartAction *action)
 		gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
 		gtk_widget_show (item);
 
-		icon_location = ephy_node_get_property_string
-					(node, EPHY_NODE_BMK_PROP_ICON);
+		location = ephy_node_get_property_string
+					(node, EPHY_NODE_BMK_PROP_LOCATION);
+		icon_location = ephy_history_get_icon (history, location);
+
 		if (icon_location)
 		{
 			GdkPixbuf *icon;
@@ -298,10 +306,8 @@ build_menu (EphyMultiSmartAction *action)
 			}
 		}
 
-		id = g_new (gulong, 1);
-		*id = ephy_node_get_id (node);
-		g_object_set_data_full (G_OBJECT (item), "node-id", id,
-					(GDestroyNotify) g_free);
+		g_object_set_data (G_OBJECT (item), "node-id",
+				   GUINT_TO_POINTER (ephy_node_get_id (node)));
 
 		g_signal_connect (item, "activate",
 				  G_CALLBACK (menu_activate_node_cb), action);
@@ -329,57 +335,23 @@ build_menu (EphyMultiSmartAction *action)
 static GtkWidget *
 create_tool_item (GtkAction *action)
 {
-	GtkWidget *item, *image, *arrow, *hbox, *entry, *hbox2, *button;
+	GtkWidget *item, *image, *entry;
 
 	item = GTK_WIDGET (gtk_tool_item_new ());
 
-	hbox = gtk_hbox_new (FALSE, 0);
-	gtk_widget_show (hbox);
-	gtk_container_add (GTK_CONTAINER (item), hbox);
-
 	image = gtk_image_new ();
-	gtk_widget_show (image);
-	gtk_container_add (GTK_CONTAINER (hbox), image);
-	g_object_set_data (G_OBJECT (item), "icon", image);
 
-	entry = gtk_entry_new ();
-	gtk_widget_show (entry);
+	entry = galago_gtk_icon_entry_new ();
+	galago_gtk_icon_entry_set_icon (GALAGO_GTK_ICON_ENTRY (entry), image);
+
 	gtk_widget_set_size_request (entry, 120, -1);
-	gtk_box_pack_start (GTK_BOX (hbox), entry, TRUE, TRUE, 0);
+	gtk_container_add (GTK_CONTAINER (item), entry);
+
+	gtk_widget_show (image);
+	gtk_widget_show (entry);
+
+	g_object_set_data (G_OBJECT (item), "icon", image);
 	g_object_set_data (G_OBJECT (item), "entry", entry);
-
-	button = gtk_toggle_button_new ();
-	gtk_button_set_relief (GTK_BUTTON (button), GTK_RELIEF_NONE);
-	gtk_widget_show (button);
-	g_object_set_data (G_OBJECT (item), "arrow-button", button);
-	gtk_box_pack_start (GTK_BOX (hbox), button, TRUE, TRUE, 0);
-
-	arrow = gtk_arrow_new (GTK_ARROW_DOWN, GTK_SHADOW_NONE);
-	gtk_widget_show (arrow);
-	gtk_container_add (GTK_CONTAINER (button), arrow);
-
-	hbox2 = gtk_hbox_new (FALSE, 0);
-	gtk_box_pack_start (GTK_BOX (hbox), hbox2, TRUE, TRUE, 0);
-	g_object_set_data (G_OBJECT (item), "find-buttons", hbox2);
-
-	button = gtk_button_new ();
-	image = gtk_image_new_from_stock (GTK_STOCK_GO_BACK,
-					  GTK_ICON_SIZE_SMALL_TOOLBAR);
-	gtk_container_add (GTK_CONTAINER (button), image);
-	gtk_widget_show (image);
-	gtk_widget_show (button);
-	gtk_box_pack_start (GTK_BOX (hbox2), button, TRUE, TRUE, 0);
-	g_object_set_data (G_OBJECT (item), "find-backward", button);
-
-	button = gtk_button_new ();
-	image = gtk_image_new_from_stock (GTK_STOCK_GO_FORWARD,
-					  GTK_ICON_SIZE_SMALL_TOOLBAR);
-	gtk_container_add (GTK_CONTAINER (button), image);
-	gtk_widget_show (image);
-	gtk_widget_show (button);
-	gtk_box_pack_start (GTK_BOX (hbox2), button, TRUE, TRUE, 0);
-	g_object_set_data (G_OBJECT (item), "find-forward", button);
-
 
 	return item;
 }
@@ -391,7 +363,7 @@ create_menu_item (GtkAction *action)
 	GValue value = { 0, };
 	const char *label_text;
 
-	menu_item = GTK_ACTION_CLASS (ephy_multi_smart_action_parent_class)->create_menu_item (action);
+	menu_item = GTK_ACTION_CLASS (parent_class)->create_menu_item (action);
 /*	g_value_init (&value, G_TYPE_STRING);
 	g_object_get_property (G_OBJECT (action), "label", &value);
 
@@ -412,13 +384,16 @@ create_menu_item (GtkAction *action)
 }
 
 static void
-sync_smartbookmark_id (EphyMultiSmartAction *action, GParamSpec *pspec, GtkWidget *proxy)
+sync_smartbookmark_id (EphyMultiSmartAction *action,
+		       GParamSpec *pspec,
+		       GtkWidget *proxy)
 {
 	EphyFaviconCache *cache;
 	EphyBookmarks *bookmarks;
+	EphyHistory *history;
 	EphyNode *node;
-	const char *icon_location;
-	GdkPixbuf *pixbuf;
+	const char *location, *icon_location;
+	GdkPixbuf *pixbuf = NULL;
 	GtkWidget *icon;
 
 	if (action->priv->mode != EPHY_MSM_MODE_SMART) return;
@@ -427,15 +402,21 @@ sync_smartbookmark_id (EphyMultiSmartAction *action, GParamSpec *pspec, GtkWidge
 	g_return_if_fail (icon != NULL);
 
 	bookmarks = ephy_shell_get_bookmarks (ephy_shell);
+	history = EPHY_HISTORY (ephy_embed_shell_get_global_history (embed_shell));
+
 	node = ephy_bookmarks_get_from_id (bookmarks, action->priv->id);
 	if (!EPHY_IS_NODE (node)) return;
 
 	icon_location = ephy_node_get_property_string
-				(node, EPHY_NODE_BMK_PROP_ICON);
+				(node, EPHY_NODE_BMK_PROP_LOCATION);
+	icon_location = ephy_history_get_icon (history, location);
 
-	cache = EPHY_FAVICON_CACHE (ephy_embed_shell_get_favicon_cache
-					EPHY_EMBED_SHELL (ephy_shell));
-	pixbuf = ephy_favicon_cache_get (cache, icon_location);
+	if (icon_location != NULL)
+	{
+		cache = EPHY_FAVICON_CACHE (ephy_embed_shell_get_favicon_cache (embed_shell));
+		pixbuf = ephy_favicon_cache_get (cache, icon_location);
+	}
+
 	if (pixbuf != NULL)
 	{
 		gtk_image_set_from_pixbuf (GTK_IMAGE (icon), pixbuf);
@@ -450,12 +431,11 @@ sync_smartbookmark_id (EphyMultiSmartAction *action, GParamSpec *pspec, GtkWidge
 }
 
 static void
-sync_mode (EphyMultiSmartAction *action, GParamSpec *pspec, GtkWidget *proxy)
+sync_mode (EphyMultiSmartAction *action,
+	   GParamSpec *pspec,
+	   GtkWidget *proxy)
 {
 	GtkWidget *hbox;
-
-	hbox = GTK_WIDGET (g_object_get_data (G_OBJECT (proxy), "find-buttons"));
-	g_return_if_fail (hbox != NULL);
 
 	if (action->priv->mode == EPHY_MSM_MODE_FIND)
 	{
@@ -468,58 +448,42 @@ sync_mode (EphyMultiSmartAction *action, GParamSpec *pspec, GtkWidget *proxy)
 					  GTK_STOCK_FIND,
 					  GTK_ICON_SIZE_SMALL_TOOLBAR);
 
-		gtk_widget_show (hbox);
-	}
-	else
-	{
-		gtk_widget_hide (hbox);
 	}
 }
 
 static gboolean
-create_menu_proxy (GtkToolItem *item, GtkAction *action)
+create_menu_proxy (GtkToolItem *item,
+		   GtkAction *action)
 {
-	GtkWidget *menu_item;
-
-	menu_item = create_menu_item (action);
-
-	gtk_tool_item_set_proxy_menu_item (item, "ephy-multi-smart-action-menu-id", menu_item);
+	/* don't show in the overflow menu, it's useless */
+	gtk_tool_item_set_proxy_menu_item (item, "ephy-multi-smart-action-menu-id", NULL);
 
 	return TRUE;
 }
 
+extern void
+ephy_gui_menu_position_under_widget (GtkMenu *menu,
+				     gint *x,
+				     gint *y,
+				     gboolean *push_in,
+				     gpointer user_data);
+
 static void
-menu_deactivate_cb (GtkMenuShell *ms, GtkWidget *button)
+icon_clicked_cb (GtkWidget *entry,
+		 int button,
+		 EphyMultiSmartAction *action)
 {
-	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (button), FALSE);
-	gtk_button_released (GTK_BUTTON (button));
+	GtkWidget *menu;
+
+	menu = build_menu (action);
+	gtk_menu_popup (GTK_MENU (menu), NULL, NULL,
+			ephy_gui_menu_position_under_widget, (gpointer) entry,
+			button, gtk_get_current_event_time ());
 }
 
 static void
-button_toggled_cb (GtkWidget *button, EphyMultiSmartAction *action)
-{
-	if (gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (button)))
-	{
-		GtkWidget *menu;
-
-		menu = build_menu (action);
-		g_signal_connect (menu, "deactivate",
-				  G_CALLBACK (menu_deactivate_cb), button);
-		gtk_menu_popup (GTK_MENU (menu), NULL, NULL,
-				ephy_gui_menu_position_under_widget,
-				button, 1, gtk_get_current_event_time ());
-	}
-}
-
-static void
-button_pressed_cb (GtkWidget *button,
+entry_activate_cb (GtkWidget *widget,
 		   EphyMultiSmartAction *action)
-{
-	 gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (button), TRUE);
-}
-
-static void
-entry_activate_cb (GtkWidget *widget, EphyMultiSmartAction *action)
 {
 	char *text = NULL;
 
@@ -622,11 +586,12 @@ entry_activate_cb (GtkWidget *widget, EphyMultiSmartAction *action)
 }
 
 static void
-connect_proxy (GtkAction *gaction, GtkWidget *proxy)
+connect_proxy (GtkAction *gaction,
+	       GtkWidget *proxy)
 {
 	EphyMultiSmartAction *action = EPHY_MULTI_SMART_ACTION (gaction);
 
-	(* GTK_ACTION_CLASS (ephy_multi_smart_action_parent_class)->connect_proxy) (gaction, proxy);
+	GTK_ACTION_CLASS (parent_class)->connect_proxy (gaction, proxy);
 
 	sync_mode (action, NULL, proxy);
 	g_signal_connect_object (action, "notify::mode",
@@ -646,25 +611,15 @@ connect_proxy (GtkAction *gaction, GtkWidget *proxy)
 
 		entry = GTK_WIDGET (g_object_get_data (G_OBJECT (proxy), "entry"));
 		g_signal_connect (entry, "activate", G_CALLBACK (entry_activate_cb), action);
-
-		button = GTK_WIDGET (g_object_get_data (G_OBJECT (proxy), "arrow-button"));
-		g_signal_connect_object (button, "toggled",
-					 G_CALLBACK (button_toggled_cb), action, 0);
-
-		/* We want the menu to popup up on mouse down */
-		g_signal_connect_object (button, "pressed",
-					 G_CALLBACK (button_pressed_cb), action, 0);
-	}
-	else if (GTK_IS_MENU_ITEM (proxy))
-	{
-		/* do nothing */
+		g_signal_connect (entry, "icon_clicked", G_CALLBACK (icon_clicked_cb), action);
 	}
 }
 
 static void
-disconnect_proxy (GtkAction *action, GtkWidget *proxy)
+disconnect_proxy (GtkAction *action,
+		  GtkWidget *proxy)
 {
-	(* GTK_ACTION_CLASS (ephy_multi_smart_action_parent_class)->disconnect_proxy) (action, proxy);
+	GTK_ACTION_CLASS (parent_class)->disconnect_proxy (action, proxy);
 
 	g_signal_handlers_disconnect_by_func (action,
 					      G_CALLBACK (sync_mode),
@@ -675,7 +630,7 @@ disconnect_proxy (GtkAction *action, GtkWidget *proxy)
 
 	if (GTK_IS_TOOL_ITEM (proxy))
 	{
-		GtkWidget *button, *entry;
+		GtkWidget *entry;
 
 		g_signal_handlers_disconnect_by_func (proxy,
 						      G_CALLBACK (create_menu_proxy),
@@ -685,14 +640,8 @@ disconnect_proxy (GtkAction *action, GtkWidget *proxy)
 		g_signal_handlers_disconnect_by_func (entry,
 						      G_CALLBACK (entry_activate_cb),
 						      action);
-
-		button = GTK_WIDGET (g_object_get_data (G_OBJECT (proxy), "arrow-button"));
-		g_signal_handlers_disconnect_by_func (button,
-						      G_CALLBACK (button_toggled_cb),
-						      action);
-
-		g_signal_handlers_disconnect_by_func (button,
-						      G_CALLBACK (button_pressed_cb),
+		g_signal_handlers_disconnect_by_func (entry,
+						      G_CALLBACK (icon_clicked_cb),
 						      action);
 	}
 }
@@ -751,7 +700,7 @@ ephy_multi_smart_action_finalize (GObject *object)
 		eel_gconf_notification_remove (action->priv->notifier_id[i]);
 	}
 
-	G_OBJECT_CLASS (ephy_multi_smart_action_parent_class)->finalize (object);
+	G_OBJECT_CLASS (parent_class)->finalize (object);
 }
 
 static void
@@ -788,6 +737,12 @@ smart_address_notifier (GConfClient *client,
 	char *address;
 
 	address = eel_gconf_get_string (CONF_SMART_ADDRESS);
+	if (address == NULL)
+	{
+		/* fall back to "find" mode */
+		ephy_multi_smart_action_set_mode (action, EPHY_MSM_MODE_FIND);
+		return;
+	}
 
 	LOG ("smart_address_notifier (%s)", address)
 
@@ -956,7 +911,7 @@ ephy_multi_smart_action_class_init (EphyMultiSmartActionClass *class)
 	GObjectClass *object_class = G_OBJECT_CLASS (class);
 	GtkActionClass *action_class = GTK_ACTION_CLASS (class);
 
-	ephy_multi_smart_action_parent_class = g_type_class_peek_parent (class);
+	parent_class = g_type_class_peek_parent (class);
 
 	action_class->toolbar_item_type = GTK_TYPE_TOOL_ITEM;
 	action_class->create_tool_item = create_tool_item;
