@@ -1,4 +1,26 @@
 =========================
+Epiphany Extensions 1.5.8
+=========================
+
+Changes
+	* Fix build for sh != bash [Grzegorz Golawski, #167011]
+	* Adapt to mozilla API change
+	* Improved Find extension
+	* Ref the tray icon [#163819]
+	* Destroy open "Add to sidebar" dialogues when unloading the extension [#156523]
+	* Don't activate find bar when pressing Space [#167415]
+	* Focus links while finding
+	* Disable gestures while print preview mode [Jean-François Rameau]
+
+Contributors:
+Grzegorz Golawski, Christian Persch and Jean-François Rameau; and the
+translators David Lodge (en_GB), Francisco Javier F. Serrador (es),
+Francesco Marletta (it), Takeshi AIHANA (ja), Changwoo Ryu (ko),
+Reinout van Schouwen (nl), Estêvão Samuel Procópio (pt_BR) and
+Marcel Telka (sk).
+
+
+=========================
 Epiphany Extensions 1.5.7
 =========================
 

@@ -1,3 +1,10 @@
+2005-02-27  Christian Persch  <chpe@cvs.gnome.org>
+
+	* NEWS:
+	* configure.ac:
+
+	Version 1.5.8.
+
 2005-02-21  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/find/mozilla-helpers.cpp:
