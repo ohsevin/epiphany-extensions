@@ -1,3 +1,7 @@
+2004-02-28  Andras Timar  <timar@gnome.hu>
+
+	* configure.ac: Added "hu" to ALL_LINGUAS.
+
 2004-02-25  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
