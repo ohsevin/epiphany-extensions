@@ -40,6 +40,7 @@
 #include <nsIDOMHTMLAnchorElement.h>
 #include <nsIDOMHTMLCollection.h>
 #include <nsIDOMHTMLDocument.h>
+#include <nsIDOMHTMLFormElement.h>
 #include <nsIDOMHTMLImageElement.h>
 #include <nsIDOMHTMLLinkElement.h>
 #include <nsIDOMLocation.h>
@@ -425,6 +426,105 @@ mozilla_get_links (EphyEmbed *embed)
 		if (NS_FAILED(rv) || !node) continue;
 
 		process_link_node<nsIDOMHTMLAnchorElement>(node, doc, &ret);
+	}
+
+	ret = g_list_reverse (ret);
+
+	return ret;
+}
+
+extern "C" void
+mozilla_free_embed_page_form (EmbedPageForm *form)
+{
+	g_free (form->name);
+	g_free (form->method);
+	g_free (form->action);
+	g_free (form);
+}
+
+extern "C" GList *
+mozilla_get_forms (EphyEmbed *embed)
+{
+	nsresult rv;
+	GHashTable *hash = g_hash_table_new(g_str_hash, g_str_equal);
+	GList *ret = NULL;
+
+	nsCOMPtr<nsIWebBrowser> browser;
+	gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (embed),
+					 getter_AddRefs (browser));
+	NS_ENSURE_TRUE (browser, NULL);
+
+	nsCOMPtr<nsIDOMWindow> dom_window;
+	browser->GetContentDOMWindow (getter_AddRefs (dom_window));
+	NS_ENSURE_TRUE (dom_window, NULL);
+
+	nsCOMPtr<nsIDOMDocument> doc;
+	dom_window->GetDocument (getter_AddRefs (doc));
+	NS_ENSURE_TRUE (doc, NULL);
+
+	nsCOMPtr<nsIDOMHTMLDocument> htmlDoc = do_QueryInterface(doc);
+	NS_ENSURE_TRUE (htmlDoc, NULL);
+
+	nsCOMPtr<nsIDOMHTMLCollection> nodes;
+	rv = htmlDoc->GetForms(getter_AddRefs(nodes));
+	NS_ENSURE_SUCCESS (rv, NULL);
+
+	PRUint32 count(0);
+	rv = nodes->GetLength(&count);
+	NS_ENSURE_SUCCESS (rv, NULL);
+
+	for (PRUint32 i = 0; i < count; i++)
+	{
+		nsCOMPtr<nsIDOMNode> node;
+		rv = nodes->Item(i, getter_AddRefs(node));
+		if (NS_FAILED(rv) || !node) continue;
+
+		nsCOMPtr<nsIDOMHTMLFormElement> element;
+		element = do_QueryInterface(node, &rv);
+		if (NS_FAILED(rv) || !element) continue;
+
+		EmbedPageForm *form = g_new0 (EmbedPageForm, 1);
+
+		nsEmbedString tmp;
+
+		rv = element->GetAction(tmp);
+		if (NS_SUCCEEDED(rv) && tmp.Length())
+		{
+			/*
+			nsCOMPtr<nsIDocument> document;
+			document = do_QueryInterface(doc, &rv);
+			if (NS_FAILED(rv))
+			{
+				g_free(form);
+				continue;
+			}
+
+			nsIURI *uri = document->GetDocumentURI();
+
+			const nsACString &s = NS_ConvertUCS2toUTF8(tmp);
+			nsCAutoString c;
+			rv = uri->Resolve(s, c);
+
+			form->action = c.Length() ?
+				       g_strdup (c.get()) :
+				       g_strdup (PromiseFlatCString(s).get());
+			*/
+			form->action = embed_string_to_c_string (tmp);
+		}
+
+		rv = element->GetName(tmp);
+		if (NS_SUCCEEDED(rv) && tmp.Length())
+		{
+			form->name = embed_string_to_c_string (tmp);
+		}
+
+		rv = element->GetMethod(tmp);
+		if (NS_SUCCEEDED(rv) && tmp.Length())
+		{
+			form->method = embed_string_to_c_string (tmp);
+		}
+
+		ret = g_list_prepend (ret, form);
 	}
 
 	ret = g_list_reverse (ret);

@@ -88,8 +88,8 @@ enum {
 	GENERAL_PAGE,
 	IMAGES_PAGE,
 	LINKS_PAGE,
+	FORMS_PAGE,
 	/*
-	PAGE_INFO_FORMS,
 	PAGE_INFO_MEDIA,
 	*/
 	/* PAGE_INFO_STYLESHEETS, */
@@ -145,10 +145,8 @@ enum
 /*
 	PROP_GENERAL_META_TREEVIEW,
 */
-/*
 	PROP_FORMS_FORM_TREEVIEW,
 
-*/
 	PROP_LINKS_LINK_TREEVIEW,
 
 	PROP_IMAGES_IMAGE_TREEVIEW,
@@ -184,9 +182,7 @@ EphyDialogProperty properties [] =
 	{ "page_info_expires",		NULL, PT_NORMAL, 0 },
 	/*{ "page_info_meta_list",	NULL, PT_NORMAL, 0 },*/
 
-	/*
-	{ PROP_FORMS_FORM_TREEVIEW, "page_info_form_list", NULL, PT_NORMAL, NULL },
-	*/
+	{ "page_info_form_list",	NULL, PT_NORMAL, 0 },
 
 	{ "page_info_link_list",	NULL, PT_NORMAL, 0 },
 
@@ -211,13 +207,6 @@ enum
 {
 	COL_META_NAME,
 	COL_META_CONTENT
-};
-
-enum
-{
-	COL_FORM_NAME,
-	COL_FORM_METHOD,
-	COL_FORM_ACTION
 };
 */
 
@@ -259,263 +248,6 @@ page_info_dialog_register_type (GTypeModule *module)
 }
 
 /* not-yet ported stuff */
-
-/*
-typedef struct
-{
-	PageInfoDialog *dialog;
-	gchar *url;
-} MenuItemCallbackData;
-
-static void
-free_menu_item_callback_data ( MenuItemCallbackData*data)
-{
-	g_free (data->url);
-	g_free (data);
-}
-*/
-
-/*
-static void
-menu_item_open_in_new_tab_cb (GtkWidget *item,  MenuItemCallbackData *data)
-{
-	GaleonWindow *window;
-	g_object_get (G_OBJECT (data->dialog), "ParentWindow", &window, NULL);
-		      
-	galeon_shell_new_tab (galeon_shell, window, NULL, data->url,
-			      GALEON_NEW_TAB_IN_EXISTING_WINDOW);
-
-	g_object_unref (window);
-}
-*/
-
-/*
-static void
-menu_item_open_in_new_window_cb (GtkWidget *item,  MenuItemCallbackData *data)
-{
-	GaleonWindow *window;
-	g_object_get (G_OBJECT (data->dialog), "ParentWindow", &window, NULL);
-		      
-	galeon_shell_new_tab (galeon_shell, window, NULL, data->url,
-			      GALEON_NEW_TAB_IN_NEW_WINDOW);
-
-	g_object_unref (window);
-}
-*/
-
-/*
-static void
-menu_item_copy_location_cb (GtkWidget *item,  MenuItemCallbackData *data)
-{
-	GdkDisplay *display = gtk_widget_get_display (item);
-
-	gtk_clipboard_set_text (gtk_clipboard_get_for_display (display, 
-						       GDK_SELECTION_CLIPBOARD),
-				data->url, -1);
-	gtk_clipboard_set_text (gtk_clipboard_get_for_display (display, 
-						       GDK_SELECTION_PRIMARY),
-				data->url, -1);
-}
-*/
-
-/*
-static GtkWidget*
-create_image_menu_item (const char *label, const char *stock_id,
-			GCallback callback, gpointer userdata)
-{
-	GtkWidget *menuitem, *image;
-
-	menuitem = gtk_image_menu_item_new_with_label (label);
-	image = gtk_image_new_from_stock (stock_id, GTK_ICON_SIZE_MENU);
-	gtk_widget_show (image);
-	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menuitem), image);
-
-	g_signal_connect (menuitem, "activate", callback, userdata);
-	return menuitem;
-}
-*/
-
-/*
-static void
-treeview_show_popup_for_url (GtkWidget *treeview, GdkEventButton *event, 
-			     GtkMenuPositionFunc func, gpointer userdata,
-			     GWeakNotify notify,
-			     PageInfoDialog *dialog, const gchar *url)
-{
-	GtkWidget *menu, *menuitem;
-	MenuItemCallbackData *data;
-	guint32 activate_time;
-
-	menu = gtk_menu_new();
-
-	data = g_new (MenuItemCallbackData, 1);
-	data->url = g_strdup (url);
-	data->dialog = dialog;
-
-*/
-	/* Set a data item for our callback, so it gets free'd */
-/*
-	g_object_weak_ref (G_OBJECT (menu), 
-			   (GWeakNotify)free_menu_item_callback_data,
-			   data);
-
-	menuitem = create_image_menu_item (_("Open in New _Tab"), STOCK_NEW_TAB,
-				G_CALLBACK(menu_item_open_in_new_tab_cb), data);
-	gtk_menu_shell_append (GTK_MENU_SHELL(menu), menuitem);
-
-	menuitem = create_image_menu_item (_("Open in New _Window"), GTK_STOCK_NEW,
-				G_CALLBACK(menu_item_open_in_new_window_cb), data);
-	gtk_menu_shell_append (GTK_MENU_SHELL(menu), menuitem);
-
-	menuitem = create_image_menu_item (_("Copy Address"), GTK_STOCK_COPY,
-				G_CALLBACK(menu_item_copy_location_cb), data);
-	gtk_menu_shell_append (GTK_MENU_SHELL(menu), menuitem);
-
-	gtk_widget_show_all(menu);
-	
-	if (notify && userdata)
-	{
-		g_object_weak_ref (G_OBJECT (menu), notify, userdata);
-	}
-
-	activate_time = event ? gdk_event_get_time((GdkEvent*)event) :
-		gtk_get_current_event_time();
-
-	gtk_menu_popup(GTK_MENU(menu), NULL, NULL, func, userdata,
-		       event ? event->button : 0,
-		       activate_time);
-}
-*/
-
-/*
-static gboolean
-image_treeview_button_pressed_cb (GtkTreeView *treeview, GdkEventButton *event,
-				  PageInfoDialog *dialog)
-{
-	GtkTreeModel *model;
-	GtkTreeIter iter;
-	gchar *url;
-	GtkTreePath *path;
-	GtkTreeSelection *selection;
-	gint column = GPOINTER_TO_INT (g_object_get_data 
-					 (G_OBJECT (treeview), COLUMN_KEY));
-
-	if (event->button != 3)
-	{
-		return FALSE;
-	}
-
-*/
-	/* Get tree path for row that was clicked */
-/*
-	if (!gtk_tree_view_get_path_at_pos (treeview,
-					    event->x, event->y,
-					    &path, NULL, NULL, NULL))
-	{
-		return FALSE;
-	}
-
-	model = gtk_tree_view_get_model (treeview);
-	if (!gtk_tree_model_get_iter (model, &iter, path))
-	{
-		gtk_tree_path_free(path);
-		return FALSE;
-	}
-
-*/
-	/* Select the row the user clicked on */
-/*
-	selection = gtk_tree_view_get_selection (treeview);
-	gtk_tree_selection_unselect_all (selection);
-	gtk_tree_selection_select_path (selection, path);
-	gtk_tree_path_free(path);
-
-	gtk_tree_model_get (model, &iter, column, &url, -1);
-
-	treeview_show_popup_for_url (GTK_WIDGET (treeview), event, 
-				     NULL, NULL, NULL,
-				     dialog, url);
-
-	g_free (url);
-
-	return TRUE;
-}
-*/
-
-/*
-static void
-popup_menu_position_cb (GtkMenu *menu, gint *x, gint *y, 
-			gboolean *push_in, GdkPoint *point)
-{
-	*x = point->x;
-	*y = point->y;
-	*push_in = FALSE;
-}
-*/
-
-/*
-static gboolean
-treeview_onpopupmenu_cb (GtkTreeView *treeview, PageInfoDialog *dialog)
-{
-	GtkTreeSelection *selection;
-	GtkTreeModel *model;
-	GtkTreeIter iter;
-	GtkTreePath* path;
-	gchar *url;
-	GdkRectangle rect, visible;
-	GtkTreeViewColumn *tv_column;
-	gint x,y, window_x, window_y;
-	GdkPoint *point;
-	gint column = GPOINTER_TO_INT (g_object_get_data 
-					 (G_OBJECT (treeview), COLUMN_KEY));
-
-	selection = gtk_tree_view_get_selection (treeview);
-
-	if (!gtk_tree_selection_get_selected (selection, &model, &iter))
-	{
-		return FALSE;
-	}
-	
-	path = gtk_tree_model_get_path (model, &iter);
-
-	tv_column = gtk_tree_view_get_column (treeview, column);
-
-	gtk_tree_view_get_background_area (treeview, path, tv_column, &rect);
-	LOG ("cell: %d x %d", rect.x, rect.y);
-
-	gtk_tree_view_get_visible_rect (treeview, &visible);
-	LOG ("visible: %dx%d+%d+%d", visible.x, visible.y, visible.width,visible.height);
-
-	x = CLAMP (rect.x, 0, visible.width);
-	y = CLAMP (rect.y + rect.height, 0, visible.height);
-	LOG ("Position in treeview: %d x %d", x, y);
-
-	gdk_window_get_origin (GTK_WIDGET (treeview)->window, &window_x, &window_y);
-	x += window_x;
-*/
-	/* Add on the height that is saved for the headers */
-/*
-	y += window_y + (GTK_WIDGET (treeview)->allocation.height - visible.height);
-
-	LOG( "Screen coords: %d x %d", x, y);
-	point = g_new (GdkPoint, 1);
-	point->x = x;
-	point->y = y;
-
-	gtk_tree_path_free(path);
-
-	gtk_tree_model_get (model, &iter, column, &url, -1);
-
-	treeview_show_popup_for_url (GTK_WIDGET (treeview), NULL, 
-				     (GtkMenuPositionFunc)popup_menu_position_cb, 
-				     point,  (GWeakNotify)g_free,
-				     dialog, url);
-
-	g_free (url);
-	
-	return TRUE;
-}
-*/
 
 /*
 static GtkTreeView *
@@ -570,77 +302,6 @@ setup_meta_treeview (PageInfoDialog *dialog)
 	gtk_tree_view_column_set_reorderable (column, TRUE);
 	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
 	gtk_tree_view_column_set_sort_column_id (column, COL_META_CONTENT);
-
-	return treeview;
-}
-*/
-
-/*
-static GtkTreeView *
-setup_form_treeview (PageInfoDialog *dialog)
-{
-
-	GtkTreeView *treeview;
-	GtkListStore *liststore;
-	GtkCellRenderer *renderer;
-	GtkTreeViewColumn *column;
-	GtkTreeSelection *selection;
-
-	treeview = GTK_TREE_VIEW(galeon_dialog_get_control 
-				 (GALEON_DIALOG(dialog),
-				 PROP_FORMS_FORM_TREEVIEW));
-*/	
-	/* set tree model */
-/*
-	liststore = gtk_list_store_new (3,
-					G_TYPE_STRING,
-					G_TYPE_STRING,
-					G_TYPE_STRING);
-	gtk_tree_view_set_model (treeview, GTK_TREE_MODEL(liststore));
-	g_object_unref (liststore);
-
-	gtk_tree_view_set_headers_visible (treeview, TRUE);
-	selection = gtk_tree_view_get_selection (treeview);
-	gtk_tree_selection_set_mode (selection,
-				     GTK_SELECTION_SINGLE);
-	
-	renderer = gtk_cell_renderer_text_new ();
-
-	gtk_tree_view_insert_column_with_attributes (treeview,
-						     COL_FORM_NAME,
-						     _("Name"),
-						     renderer,
-						     "text", COL_FORM_NAME,
-						     NULL);
-	column = gtk_tree_view_get_column (treeview, COL_FORM_NAME);
-	gtk_tree_view_column_set_resizable (column, TRUE);
-	gtk_tree_view_column_set_reorderable (column, TRUE);
-	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
-	gtk_tree_view_column_set_sort_column_id (column, COL_FORM_NAME);
-
-	gtk_tree_view_insert_column_with_attributes (treeview,
-						     COL_FORM_METHOD, 
-						     _("Method"),
-						     renderer,
-						     "text", COL_FORM_METHOD,
-						     NULL);
-	column = gtk_tree_view_get_column (treeview, COL_FORM_METHOD);
-	gtk_tree_view_column_set_resizable (column, TRUE);
-	gtk_tree_view_column_set_reorderable (column, TRUE);
-	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
-	gtk_tree_view_column_set_sort_column_id (column, COL_FORM_METHOD);
-
-	gtk_tree_view_insert_column_with_attributes (treeview,
-						     COL_FORM_ACTION, 
-						     _("Action"),
-						     renderer,
-						     "text", COL_FORM_ACTION,
-						     NULL);
-	column = gtk_tree_view_get_column (treeview, COL_FORM_ACTION);
-	gtk_tree_view_column_set_resizable (column, TRUE);
-	gtk_tree_view_column_set_reorderable (column, TRUE);
-	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
-	gtk_tree_view_column_set_sort_column_id (column, COL_FORM_ACTION);
 
 	return treeview;
 }
@@ -764,41 +425,6 @@ setup_page_security (PageInfoDialog *dialog, EmbedPageProperties *props)
 	g_free (title);
 	g_free (msg1);
 	g_free (host);
-}
-*/
-
-/*
-static void
-setup_page_forms_add_form(GtkTreeView *treeView, EmbedPageForm *form)
-{
-	GtkListStore *store;
-	GtkTreeIter iter;
-
-	store = GTK_LIST_STORE(gtk_tree_view_get_model
-			       (GTK_TREE_VIEW(treeView)));
-
-	gtk_list_store_append(store, &iter);
-	gtk_list_store_set(store,
-			   &iter,
-			   COL_FORM_NAME, form->name,
-			   COL_FORM_METHOD, form->method,
-			   COL_FORM_ACTION, form->action,
-			    -1);
-}
-*/
-
-/*
-static void
-setup_page_forms (PageInfoDialog *dialog, EmbedPageProperties *props)
-{
-	GList *i;
-	GtkTreeView *page_info_form_list = setup_form_treeview(dialog);
-
-	for (i=props->forms ; i ; i = i->next)
-	{
-		setup_page_forms_add_form(page_info_form_list,
-					  (EmbedPageForm*)i->data);
-	}	
 }
 */
 
@@ -1366,6 +992,121 @@ links_info_page_fill (InfoPage *ipage)
 	g_list_free (links);
 }
 
+/* "Forms" page */
+
+typedef struct _FormsInfoPage FormsInfoPage;
+
+struct _FormsInfoPage
+{
+	InfoPage page;
+
+	GtkListStore *store;
+	GtkTreeView *treeview;
+};
+
+enum
+{
+	COL_FORM_NAME,
+	COL_FORM_METHOD,
+	COL_FORM_ACTION
+};
+
+static void
+forms_info_page_construct (InfoPage *ipage)
+{
+	FormsInfoPage *page = (FormsInfoPage *) ipage;
+	PageInfoDialog *dialog = ipage->dialog;
+
+	GtkTreeView *treeview;
+	GtkListStore *liststore;
+	GtkCellRenderer *renderer;
+	GtkTreeViewColumn *column;
+	GtkTreeSelection *selection;
+
+	treeview = GTK_TREE_VIEW (ephy_dialog_get_control
+		(EPHY_DIALOG (dialog), properties[PROP_FORMS_FORM_TREEVIEW].id));
+
+	liststore = gtk_list_store_new (3,
+					G_TYPE_STRING,
+					G_TYPE_STRING,
+					G_TYPE_STRING);
+	gtk_tree_view_set_model (treeview, GTK_TREE_MODEL(liststore));
+	g_object_unref (liststore);
+
+	gtk_tree_view_set_headers_visible (treeview, TRUE);
+	selection = gtk_tree_view_get_selection (treeview);
+	gtk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
+
+	/* FIXME: Do we leak this? */
+	renderer = gtk_cell_renderer_text_new ();
+
+	gtk_tree_view_insert_column_with_attributes (treeview,
+						     COL_FORM_NAME,
+						     _("Name"),
+						     renderer,
+						     "text", COL_FORM_NAME,
+						     NULL);
+	column = gtk_tree_view_get_column (treeview, COL_FORM_NAME);
+	gtk_tree_view_column_set_resizable (column, TRUE);
+	gtk_tree_view_column_set_reorderable (column, TRUE);
+	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
+	gtk_tree_view_column_set_sort_column_id (column, COL_FORM_NAME);
+
+	gtk_tree_view_insert_column_with_attributes (treeview,
+						     COL_FORM_METHOD, 
+						     _("Method"),
+						     renderer,
+						     "text", COL_FORM_METHOD,
+						     NULL);
+	column = gtk_tree_view_get_column (treeview, COL_FORM_METHOD);
+	gtk_tree_view_column_set_resizable (column, TRUE);
+	gtk_tree_view_column_set_reorderable (column, TRUE);
+	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
+	gtk_tree_view_column_set_sort_column_id (column, COL_FORM_METHOD);
+
+	gtk_tree_view_insert_column_with_attributes (treeview,
+						     COL_FORM_ACTION, 
+						     _("Action"),
+						     renderer,
+						     "text", COL_FORM_ACTION,
+						     NULL);
+	column = gtk_tree_view_get_column (treeview, COL_FORM_ACTION);
+	gtk_tree_view_column_set_resizable (column, TRUE);
+	gtk_tree_view_column_set_reorderable (column, TRUE);
+	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
+	gtk_tree_view_column_set_sort_column_id (column, COL_FORM_ACTION);
+
+	page->store = liststore;
+	page->treeview = treeview;
+}
+
+static void
+forms_info_page_fill (InfoPage *ipage)
+{
+	ImagesInfoPage *page = (ImagesInfoPage *) ipage;
+	PageInfoDialog *dialog = ipage->dialog;
+	GtkListStore *store = page->store;
+	GtkTreeIter iter;
+	GList *forms, *l;
+
+	forms = mozilla_get_forms (dialog->priv->embed);
+
+	for (l = forms; l != NULL; l = l->next)
+	{
+		EmbedPageForm *form = (EmbedPageForm *) l->data;
+
+		gtk_list_store_append (store, &iter);
+		gtk_list_store_set(store, &iter,
+				   COL_FORM_NAME, form->name,
+				   COL_FORM_METHOD, form->method,
+				   COL_FORM_ACTION, form->action,
+				    -1);
+	}
+
+	g_list_foreach (forms, (GFunc) mozilla_free_embed_page_form, NULL);
+	g_list_free (forms);
+}
+
 /* object stuff */
 
 static void
@@ -1389,8 +1130,12 @@ page_info_dialog_init (PageInfoDialog *dialog)
 	page->construct = links_info_page_construct;
 	page->fill = links_info_page_fill;
 
+	page = dialog->priv->pages[FORMS_PAGE] = (InfoPage *) g_new0 (FormsInfoPage, 1);
+	page->dialog = dialog;
+	page->construct = forms_info_page_construct;
+	page->fill = forms_info_page_fill;
+
 	/* same for:
-	setup_page_forms (PAGE_INFO_DIALOG(dialog), props);
 	setup_page_security (PAGE_INFO_DIALOG(dialog), props);
 	*/
 }
