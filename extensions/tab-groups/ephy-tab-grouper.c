@@ -29,13 +29,14 @@
 
 #include <epiphany/ephy-tab.h>
 #include <epiphany/ephy-window.h>
+#include <epiphany/ephy-notebook.h>
 
 #define EPHY_TAB_GROUPER_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_TAB_GROUPER, EphyTabGrouperPrivate))
 
 struct _EphyTabGrouperPrivate
 {
 	GtkWidget *notebook;
-	EphyTab *last_opened_tab;
+	int last_pos;
 };
 
 static void ephy_tab_grouper_class_init (EphyTabGrouperClass *klass);
@@ -87,42 +88,33 @@ ephy_tab_grouper_register_type (GTypeModule *module)
 static gboolean
 reset_last_tab (EphyTabGrouper *grouper)
 {
-	if (grouper->priv->last_opened_tab != NULL)
-	{
-		g_object_unref (grouper->priv->last_opened_tab);
-		grouper->priv->last_opened_tab = NULL;
-	}
+	grouper->priv->last_pos = -1;
 
+	/* needed for tab-delete signal */
 	return FALSE;
 }
 
 static void
-tab_added_cb (GtkWidget *notebook,
+tab_added_cb (EphyNotebook *notebook,
 	      EphyTab *tab,
 	      EphyTabGrouper *grouper)
 {
-	guint position = -1;
+	EphyTabGrouperPrivate *priv = grouper->priv;
+	int position;
 
 	/* Calculate the appropriate position for the tab */
-	if (grouper->priv->last_opened_tab != NULL)
+	if (priv->last_pos != -1)
 	{
-		position = gtk_notebook_page_num
-			(GTK_NOTEBOOK (notebook),
-			 GTK_WIDGET (grouper->priv->last_opened_tab)) + 1;
+		position = priv->last_pos + 1;
 	}
 	else
 	{
-		position = gtk_notebook_get_current_page
-				(GTK_NOTEBOOK (notebook)) + 1;
+		position = gtk_notebook_get_current_page (GTK_NOTEBOOK (notebook)) + 1;
 	}
 
-	gtk_notebook_reorder_child
-		(GTK_NOTEBOOK (notebook), GTK_WIDGET (tab), position);
-		
-	/* Clear the last tab so we can set it to the new tab */
-	reset_last_tab (grouper);
+	ephy_notebook_move_tab (notebook, notebook, tab, position);
 
-	grouper->priv->last_opened_tab = g_object_ref (tab);
+	grouper->priv->last_pos = position;
 }
 
 static void
@@ -161,11 +153,10 @@ ephy_tab_grouper_finalize (GObject *object)
 {
 	EphyTabGrouper *grouper = EPHY_TAB_GROUPER (object);
 
-	reset_last_tab (grouper);
-
 	/* Disconnect the signal handlers */
 	g_signal_handlers_disconnect_matched
-		(grouper->priv->notebook, G_SIGNAL_MATCH_DATA, 0, 0, NULL, NULL, grouper);
+		(grouper->priv->notebook, G_SIGNAL_MATCH_DATA,
+		 0, 0, NULL, NULL, grouper);
 
 	LOG ("EphyTabGrouper finalised")
 
