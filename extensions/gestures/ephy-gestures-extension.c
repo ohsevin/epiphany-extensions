@@ -320,7 +320,7 @@ dom_mouse_down_cb (EphyEmbed *embed,
 		EphyTab *tab;
 		guint x, y;
 
-		tab = EPHY_TAB (g_object_get_data (G_OBJECT (embed), "EphyTab"));
+		tab = ephy_tab_for_embed (embed);
 		g_return_if_fail (EPHY_IS_TAB (tab));
 
 		window = ephy_tab_get_window (tab);
@@ -342,12 +342,12 @@ dom_mouse_down_cb (EphyEmbed *embed,
 
 static void
 tab_added_cb (GtkWidget *notebook,
-	      GtkWidget *child,
+	      EphyEmbed *embed,
 	      EphyGesturesExtension *extension)
 {
 	EphyTab *tab;
 
-	tab = EPHY_TAB (g_object_get_data (G_OBJECT (child), "EphyTab"));
+	tab = ephy_tab_for_embed (embed);
 
 	g_signal_connect (G_OBJECT (child), "ge_dom_mouse_down",
 			  G_CALLBACK (dom_mouse_down_cb), extension);
@@ -355,12 +355,12 @@ tab_added_cb (GtkWidget *notebook,
 
 static void
 tab_removed_cb (GtkWidget *notebook,
-		GtkWidget *child,
+		EphyEmbed *embed,
 		EphyGesturesExtension *extension)
 {
 	EphyTab *tab;
 
-	tab = EPHY_TAB (g_object_get_data (G_OBJECT (child), "EphyTab"));
+	tab = ephy_tab_for_embed (embed);
 
 	g_signal_handlers_disconnect_by_func
 		(child, G_CALLBACK (dom_mouse_down_cb), extension);
