@@ -48,6 +48,8 @@ void			mozilla_open_popup			(EphyEmbed *embed,
 								 const char *url,
 								 const char *features);
 
+char *			mozilla_get_location			(EphyEmbed *embed);
+
 G_END_DECLS
 
 #endif /* POPUP_BLOCKER_MOZILLA_HELPERS_H */

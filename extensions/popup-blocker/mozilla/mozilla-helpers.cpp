@@ -138,7 +138,6 @@ mozilla_enable_javascript (EphyEmbed *embed,
 	g_return_if_fail (NS_SUCCEEDED (rv));
 }
 
-
 extern "C" void
 mozilla_open_popup (EphyEmbed *embed,
 		    const char *url,
@@ -187,4 +186,12 @@ mozilla_open_popup (EphyEmbed *embed,
 				 nsnull, ret, &isUndefined);
 
 	context->SetProcessingScriptTag (PR_FALSE); // Is this "right"?
+}
+
+extern "C" char *
+mozilla_get_location (EphyEmbed *embed)
+{
+	g_return_val_if_fail (GTK_IS_MOZ_EMBED (embed), NULL);
+
+	return gtk_moz_embed_get_location (GTK_MOZ_EMBED (embed));
 }

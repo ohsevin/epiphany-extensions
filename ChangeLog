@@ -1,5 +1,17 @@
 2004-03-15  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
+	(update_action_without_address):
+	* extensions/popup-blocker/mozilla/mozilla-helpers.cpp:
+	* extensions/popup-blocker/mozilla/mozilla-helpers.h:
+
+	Use mozilla to find the address of a window properly. Previously we'd
+	used ephy_tab_get_address which could be wrong, and we couldn't use
+	ephy_embed_get_location because it's not always right.
+	gtk_moz_embed_get_location is perfect.
+
+2004-03-15  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/popup-blocker/ephy-popup-blocker-list.c:
 	(free_blocked_popup), (count_popups),
 	(ephy_popup_blocker_list_show_all):

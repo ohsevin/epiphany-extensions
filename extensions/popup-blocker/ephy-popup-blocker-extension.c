@@ -196,24 +196,21 @@ update_action (EphyWindow *window, const char *address)
 static void
 update_action_without_address (EphyWindow *window)
 {
-	/*
-	 * FIXME: The address used to update_action could be inaccurate.
-	 * We can't use ephy_tab_get_embed() because of bug #119047
-	 */
+	EphyEmbed *embed;
+	char *address;
 
-	EphyTab *tab;
-	const char *address;
+	embed = ephy_window_get_active_embed (window);
 
-	tab = ephy_window_get_active_tab (window);
+	if (embed == NULL) return; /* Happens on startup */
 
-	if (tab == NULL) return; /* Happens on startup */
+	g_return_if_fail (EPHY_IS_EMBED (embed));
 
-	g_return_if_fail (EPHY_IS_TAB (tab));
-
-	address = ephy_tab_get_location (tab);
+	address = mozilla_get_location (embed);
 	g_return_if_fail (address != NULL);
 
 	update_action (window, address);
+
+	g_free (address);
 }
 
 static void
