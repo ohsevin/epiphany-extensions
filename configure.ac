@@ -135,10 +135,10 @@ dnl *******************************
 
 AC_MSG_CHECKING([extensions to build])
 
-all_extensions="certificates,dashboard,error-viewer,gestures,sample,sample-mozilla,tabsmenu,tab-groups"
-all_useful_extensions="certificates,dashboard,error-viewer,gestures,tabsmenu,tab-groups"
-default_extensions="certificates,error-viewer,gestures,tabsmenu"
-mozilla_dependent_extensions="certificates,error-viewer,sample-mozilla"
+all_extensions="certificates,dashboard,error-viewer,gestures,sample,sample-mozilla,smart-bookmarks,tabsmenu,tab-groups"
+all_useful_extensions="certificates,dashboard,error-viewer,gestures,smart-bookmarks,tabsmenu,tab-groups"
+default_extensions="certificates,error-viewer,smart-bookmarks,tabsmenu"
+mozilla_dependent_extensions="certificates,error-viewer,sample-mozilla,smart-bookmarks"
 
 dnl due to an autoconf bug, commas in the first arg to
 dnl AC_HELP_STRING cause problems.
@@ -186,6 +186,7 @@ AM_CONDITIONAL(ENABLE_ERROR_VIEWER_EXTENSION, echo "$extensions" | egrep '(^|,)e
 AM_CONDITIONAL(ENABLE_GESTURES_EXTENSION, echo "$extensions" | egrep '(^|,)gestures($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SAMPLE_EXTENSION, echo "$extensions" | egrep '(^|,)sample($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SAMPLE_MOZILLA_EXTENSION, echo "$extensions" | egrep '(^|,)sample-mozilla($|,)' > /dev/null)
+AM_CONDITIONAL(ENABLE_SMART_BOOKMARKS_EXTENSION, echo "$extensions" | egrep '(^|,)smart-bookmarks($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_TABSMENU_EXTENSION, echo "$extensions" | egrep '(^|,)tabsmenu($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_TAB_GROUPS_EXTENSION, echo "$extensions" | egrep '(^|,)tab-groups($|,)' > /dev/null)
 dnl AM_CONDITIONAL(ENABLE_TOOLBAR_EXTRAS_EXTENSION, echo "$extensions" | egrep '(^|,)toolbar-extras($|,)' > /dev/null)
@@ -380,6 +381,8 @@ extensions/error-viewer/opensp/Makefile
 extensions/sample/Makefile
 extensions/sample-mozilla/Makefile
 extensions/sample-mozilla/mozilla/Makefile
+extensions/smart-bookmarks/Makefile
+extensions/smart-bookmarks/mozilla/Makefile
 extensions/tabsmenu/Makefile
 extensions/tab-groups/Makefile
 po/Makefile.in

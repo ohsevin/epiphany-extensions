@@ -1,3 +1,27 @@
+2004-09-08  Christian Persch  <chpe@cvs.gnome.org>
+
+	* AUTHORS:
+	* configure.ac:
+	* extensions/Makefile.am:
+	A extensions/smart-bookmarks/.cvsignore:
+	A extensions/smart-bookmarks/Makefile.am:
+	A extensions/smart-bookmarks/mozilla/.cvsignore:
+	A extensions/smart-bookmarks/mozilla/Makefile.am:
+	A extensions/smart-bookmarks/mozilla/mozilla-selection.cpp:
+	A extensions/smart-bookmarks/mozilla/mozilla-selection.h:
+	A extensions/smart-bookmarks/smart-bookmarks-extension.c:
+	A extensions/smart-bookmarks/smart-bookmarks-extension.h:
+	A extensions/smart-bookmarks/smart-bookmarks-prefs-ui.c:
+	A extensions/smart-bookmarks/smart-bookmarks-prefs-ui.h:
+	A extensions/smart-bookmarks/smart-bookmarks-prefs.h:
+	A extensions/smart-bookmarks/smart-bookmarks.c: 
+	A extensions/smart-bookmarks/smart-bookmarks.glade:
+
+	New "smart-bookmarks" extension: search for the selected text
+	using a smart bookmark.
+	Written by Jean-François Rameau, with a bit of code refactoring
+	by me.
+
 2004-09-07  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/error-viewer/ephy-error-viewer-extension.c:

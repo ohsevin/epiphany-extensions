@@ -24,6 +24,10 @@ if ENABLE_SAMPLE_MOZILLA_EXTENSION
 SUBDIRS += sample-mozilla
 endif
 
+if ENABLE_SMART_BOOKMARKS_EXTENSION
+SUBDIRS += smart-bookmarks
+endif
+
 if ENABLE_TABSMENU_EXTENSION
 SUBDIRS += tabsmenu
 endif
@@ -36,6 +40,6 @@ endif
 #SUBDIRS += toolbar-extras
 #endif
 
-DIST_SUBDIRS = certificates dashboard error-viewer gestures sample sample-mozilla tabsmenu tab-groups
+DIST_SUBDIRS = certificates dashboard error-viewer gestures sample sample-mozilla smart-bookmarks tabsmenu tab-groups
 
 EXTRA_DIST =
