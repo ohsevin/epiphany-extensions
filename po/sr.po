@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-25 18:22+0100\n"
-"PO-Revision-Date: 2004-02-25 18:24+0100\n"
+"POT-Creation-Date: 2004-03-01 17:49+0100\n"
+"PO-Revision-Date: 2004-03-01 17:49+0100\n"
 "Last-Translator: Данило Шеган <danilo@prevod.org>\n"
 "Language-Team: Serbian (sr) <serbiangnome-lista@nongnu.org>\n"
 "MIME-Version: 1.0\n"
@@ -114,6 +114,14 @@ msgstr ""
 "Грешка у вези у  %s:\n"
 "%s је недоступно."
 
+#: extensions/error-viewer/mozilla/mozilla-link-checker.cpp:174
+#, c-format
+msgid "Checking %d Link on %s"
+msgid_plural "Checking %d Links on %s"
+msgstr[0] "Проверавам %d везу са %s"
+msgstr[1] "Проверавам %d везе са %s"
+msgstr[2] "Проверавам %d веза са %s"
+
 #: extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
 msgid ""
@@ -150,7 +158,9 @@ msgstr ""
 msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
-msgstr "Врста документа је „XHTML“ али врста садржаја је „text/html“.  Користите уместо тога „application/xhtml+xml“."
+msgstr ""
+"Врста документа је „XHTML“ али врста садржаја је „text/html“.  Користите "
+"уместо тога „application/xhtml+xml“."
 
 #: extensions/error-viewer/sgml-validator.c:243
 #, c-format
