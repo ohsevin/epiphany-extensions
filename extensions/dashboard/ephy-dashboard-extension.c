@@ -111,16 +111,16 @@ load_status_cb (EphyTab *tab,
 		EphyBookmarks *bookmarks;
 		char *content;
 
-		// Get URL & page title
+		/* Get URL & page title */
 		location = ephy_tab_get_location(tab);
 		page_title = ephy_tab_get_title(tab);
 		LOG ("Got page location and title")
 
-		// See if the page is bookmarked
+		/* See if the page is bookmarked */
 		embed = ephy_tab_get_embed (tab);
 		bookmarks = ephy_shell_get_bookmarks (ephy_shell);
 
-		// Get the page content if the page is bookmarked
+		/* Get the page content if the page is bookmarked */
 		LOG ("Title ::%s::", page_title)
 		LOG ("URL ::%s::", location)
 		if (embed && ephy_bookmarks_find_bookmark (bookmarks,location))
@@ -131,7 +131,7 @@ load_status_cb (EphyTab *tab,
 			ephy_embed_persist_set_embed (persist, embed);
 			ephy_embed_persist_set_flags (persist, EMBED_PERSIST_NO_VIEW);
 			
-			content = ephy_embed_persist_to_string(persist);
+			content = ephy_embed_persist_to_string (persist);
 
 			g_object_unref (persist);
 		
@@ -144,6 +144,8 @@ load_status_cb (EphyTab *tab,
 	             		dashboard_build_clue (page_title, "title", 10),
 	             		dashboard_build_clue (content, "htmlblock", 10),
 	             		NULL);
+
+			g_free (content);
 		}
 		else
 		{
@@ -158,7 +160,7 @@ load_status_cb (EphyTab *tab,
 	             		NULL);
 		}
 
-		// Send dashboard packet
+		/* Send dashboard packet */
 		dashboard_send_raw_cluepacket (cluepacket);
 
 		g_free (cluepacket);
