@@ -1,5 +1,20 @@
 2005-02-11  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/page-info/mozilla/Makefile.am:
+	* extensions/page-info/mozilla/PageInfoPrivate.cpp:
+	* extensions/page-info/mozilla/PageInfoPrivate.h:
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+	* extensions/page-info/mozilla/mozilla-helpers.h:
+	* extensions/page-info/page-info-dialog.c:
+	(general_info_page_fill):
+
+	Better fix for mozilla API change: split getting the
+	render mode into a different file where we can include
+	internal strings. That way we can still distinguish
+	all three modes.
+
+2005-02-11  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/actions/Makefile.am:
 	* extensions/adblock/Makefile.am:
 	* extensions/bookmarks-tray/Makefile.am:

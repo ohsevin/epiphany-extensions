@@ -27,6 +27,7 @@
 #include "config.h"
 
 #include "mozilla-helpers.h"
+#include "PageInfoPrivate.h"
 
 #include "EphyUtils.h"
 
@@ -367,29 +368,8 @@ PageInfoHelper::GetProperties ()
 	}
     }
 
-  /* Might not work on XUL pages */
-  /* FIXME doesn't get almost-standards mode. Use method from
-   * bug https://bugzilla.mozilla.org/show_bug.cgi?id=154359 when available.
-   */
-  nsCOMPtr<nsIDOMNSHTMLDocument> htmlDoc (do_QueryInterface (mDOMDocument));
-  if (htmlDoc)
-    {
-      nsEmbedString mode;
-      rv = htmlDoc->GetCompatMode (mode);
-      if (NS_SUCCEEDED (rv) && mode.Length ())
-        {
-	  nsEmbedCString cMode;
-	  NS_UTF16ToCString (mode, NS_CSTRING_ENCODING_UTF8, cMode);
-	  if (strcmp (cMode.get(), "CSS1Compat") == 0)
-	    {
-	      props->rendering_mode = EMBED_RENDER_FULL_STANDARDS;
-	    }
-	  else
-	    {
-	      props->rendering_mode = EMBED_RENDER_QUIRKS;
-	    }
-	}
-    }
+  /* Until https://bugzilla.mozilla.org/show_bug.cgi?id=154359 is fixed */
+  props->rendering_mode = PageInfoPrivate::GetRenderMode (mDOMDocument);
 
   /* Get the URL so we can look in the cache for this page */
   nsCOMPtr<nsIDOMLocation> domLocation;

@@ -655,6 +655,7 @@ general_info_page_fill (InfoPage *page)
 		case EMBED_RENDER_QUIRKS:
 			text = _("Compatibility");
 			break;
+		case EMBED_RENDER_UNKNOWN:
 		default:
 			text = _("Undetermined");
 			break;

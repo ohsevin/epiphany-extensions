@@ -2,7 +2,9 @@ noinst_LTLIBRARIES = libpageinfomozilla.la
 
 libpageinfomozilla_la_SOURCES = \
 	mozilla-helpers.cpp	\
-	mozilla-helpers.h
+	mozilla-helpers.h	\
+	PageInfoPrivate.cpp	\
+	PageInfoPrivate.h
 
 mozilla_include_subdirs = \
 	.		\
