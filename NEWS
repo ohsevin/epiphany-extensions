@@ -1,4 +1,32 @@
 =========================
+Epiphany Extensions 1.5.7
+=========================
+
+New extensions
+
+	* "Actions" extension, written by Jean-Yves Lefort
+	* "Net Monitor" extension, written by Jean-François Rameau
+	  (experimental; requires Epiphany compiled with --enable-dbus)
+
+Changes
+
+	* Implement EphyExtension's attach_window/detach_window interface
+	  instead of simulating them
+	* Fix LOG() statements in non-gcc varargs case
+	* Updated HOWTO to include some Python
+	* Add missing QI in page info helper
+	* Remove tooltip from window [#166010]
+	* Better error dialog when command failed in actions extension
+
+
+Contributors to this release: Adam Hooper, Jean-Yves Lefort, Christian Persch,
+Jean-François Rameau, and the translators Rostislav Raykov (bg),
+Miloslav Trmac (cs), Frank Arnold (de), Adam Weinberger (en_CA),
+Francisco Javier F. Serrador (es), Takeshi AIHANA (ja), Žygimantas Beručka (lt),
+Reinout van Schouwen (nl) and Marcel Telka (sk).
+
+
+=========================
 Epiphany Extensions 1.5.6
 =========================
 
