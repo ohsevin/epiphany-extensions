@@ -184,6 +184,8 @@ update_action_without_address (EphyWindow *window)
 	EphyEmbed *embed;
 	char *address;
 
+	if (GTK_WIDGET_REALIZED (window) == FALSE) return;
+
 	embed = ephy_window_get_active_embed (window);
 
 	if (embed == NULL) return; /* Happens on startup */

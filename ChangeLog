@@ -1,3 +1,11 @@
+2004-06-01  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
+	(update_action_without_address):
+
+	=== Release 0.9.1 ===
+
 2004-05-30  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/sample-mozilla/ephy-sample2-extension.c:
