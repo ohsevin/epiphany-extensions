@@ -52,7 +52,7 @@ enum
 static GObjectClass *ephy_toolbar_extras_parent_class = NULL;
 
 static void ephy_toolbar_extras_extension_class_init	(EphyToolbarExtrasExtensionClass *klass);
-static void ephy_toolbar_extras_extension_iface_init	(EphyExtensionClass *iface);
+static void ephy_toolbar_extras_extension_iface_init	(EphyExtensionIface *iface);
 static void ephy_toolbar_extras_extension_init		(EphyToolbarExtrasExtension *extension);
 
 static GType ephy_toolbar_extras_type = 0;
@@ -231,7 +231,7 @@ ephy_toolbar_extras_extension_get_property (GObject *object,
 }
 
 static void
-ephy_toolbar_extras_extension_iface_init (EphyExtensionClass *iface)
+ephy_toolbar_extras_extension_iface_init (EphyExtensionIface *iface)
 {
 	iface->attach_window = impl_attach_window;
 	iface->detach_window = impl_detach_window;

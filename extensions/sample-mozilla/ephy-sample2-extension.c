@@ -38,7 +38,7 @@ struct EphySample2ExtensionPrivate
 };
 
 static void ephy_sample2_extension_class_init	(EphySample2ExtensionClass *klass);
-static void ephy_sample2_extension_iface_init	(EphyExtensionClass *iface);
+static void ephy_sample2_extension_iface_init	(EphyExtensionIface *iface);
 static void ephy_sample2_extension_init		(EphySample2Extension *extension);
 
 enum
@@ -175,7 +175,7 @@ impl_detach_window (EphyExtension *ext,
 }
 
 static void
-ephy_sample2_extension_iface_init (EphyExtensionClass *iface)
+ephy_sample2_extension_iface_init (EphyExtensionIface *iface)
 {
 	iface->attach_window = impl_attach_window;
 	iface->detach_window = impl_detach_window;

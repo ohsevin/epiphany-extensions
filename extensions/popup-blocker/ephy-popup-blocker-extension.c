@@ -67,7 +67,7 @@ static GtkToggleActionEntry action_entries [] =
 static const guint n_action_entries = G_N_ELEMENTS (action_entries);
 
 static void ephy_popup_blocker_extension_class_init	(EphyPopupBlockerExtensionClass *klass);
-static void ephy_popup_blocker_extension_iface_init	(EphyExtensionClass *iface);
+static void ephy_popup_blocker_extension_iface_init	(EphyExtensionIface *iface);
 static void ephy_popup_blocker_extension_init		(EphyPopupBlockerExtension *extension);
 
 static GObjectClass *parent_class = NULL;
@@ -556,7 +556,7 @@ impl_detach_window (EphyExtension *extension,
 }
 
 static void
-ephy_popup_blocker_extension_iface_init (EphyExtensionClass *iface)
+ephy_popup_blocker_extension_iface_init (EphyExtensionIface *iface)
 {
 	iface->attach_window = impl_attach_window;
 	iface->detach_window = impl_detach_window;

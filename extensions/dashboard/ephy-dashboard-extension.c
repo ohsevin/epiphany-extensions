@@ -46,7 +46,7 @@ struct EphyDashboardExtensionPrivate
 #define EPIPHANY_FRONTEND_IDENTIFIER	"Web Browser"
 
 static void ephy_dashboard_extension_class_init	(EphyDashboardExtensionClass *klass);
-static void ephy_dashboard_extension_iface_init	(EphyExtensionClass *iface);
+static void ephy_dashboard_extension_iface_init	(EphyExtensionIface *iface);
 static void ephy_dashboard_extension_init	(EphyDashboardExtension *extension);
 
 static GObjectClass *parent_class = NULL;
@@ -233,7 +233,7 @@ ephy_dashboard_extension_init (EphyDashboardExtension *extension)
 }
 
 static void
-ephy_dashboard_extension_iface_init (EphyExtensionClass *iface)
+ephy_dashboard_extension_iface_init (EphyExtensionIface *iface)
 {
 	iface->attach_window = impl_attach_window;
 	iface->detach_window = impl_detach_window;

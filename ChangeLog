@@ -1,3 +1,27 @@
+2004-02-17  Christian Persch  <chpe@cvs.gnome.org>
+
+	* doc/writing-epiphany-extensions.xml:
+	* extensions/certificates/ephy-certificates-extension.c:
+	(ephy_certificates_extension_iface_init):
+	* extensions/dashboard/ephy-dashboard-extension.c:
+	(ephy_dashboard_extension_iface_init):
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	(ephy_error_viewer_extension_iface_init):
+	* extensions/gestures/ephy-gestures-extension.c:
+	(ephy_gestures_extension_iface_init):
+	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
+	(ephy_popup_blocker_extension_iface_init):
+	* extensions/sample-mozilla/ephy-sample2-extension.c:
+	(ephy_sample2_extension_iface_init):
+	* extensions/sample/ephy-sample-extension.c:
+	(ephy_sample_extension_iface_init):
+	* extensions/tabsmenu/ephy-tabs-menu-extension.c:
+	(ephy_tabs_menu_extension_iface_init):
+	* extensions/toolbar-extras/ephy-toolbar-extras-extension.c:
+	(ephy_toolbar_extras_extension_iface_init):
+
+	s/EphyExtensionClass/EphyExtensionIface/g
+
 2004-02-16  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:

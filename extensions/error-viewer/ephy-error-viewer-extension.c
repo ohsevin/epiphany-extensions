@@ -65,7 +65,7 @@ typedef struct
 } ErrorViewerCBData;
 
 static void ephy_error_viewer_extension_class_init	(EphyErrorViewerExtensionClass *klass);
-static void ephy_error_viewer_extension_iface_init	(EphyExtensionClass *iface);
+static void ephy_error_viewer_extension_iface_init	(EphyExtensionIface *iface);
 static void ephy_error_viewer_extension_init		(EphyErrorViewerExtension *extension);
 
 static void ephy_error_viewer_extension_show_viewer	(GtkAction *action,
@@ -395,7 +395,7 @@ impl_detach_window (EphyExtension *extension,
 }
 
 static void
-ephy_error_viewer_extension_iface_init (EphyExtensionClass *iface)
+ephy_error_viewer_extension_iface_init (EphyExtensionIface *iface)
 {
 	iface->attach_window = impl_attach_window;
 	iface->detach_window = impl_detach_window;

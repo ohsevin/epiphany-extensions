@@ -276,7 +276,7 @@ struct Ephy<replaceable>Foo</replaceable>ExtensionPrivate
 };
 
 static void ephy_<replaceable>foo</replaceable>_extension_class_init (Ephy<replaceable>Foo</replaceable>ExtensionClass *klass);
-static void ephy_<replaceable>foo</replaceable>_extension_iface_init (EphyExtensionClass *iface);
+static void ephy_<replaceable>foo</replaceable>_extension_iface_init (EphyExtensionIface *iface);
 static void ephy_<replaceable>foo</replaceable>_extension_init (Ephy<replaceable>Foo</replaceable>Extension *extension);
 
 enum
@@ -409,7 +409,7 @@ impl_detach_window (EphyExtension *extension, EphyWindow *window)
 }
 
 static void
-ephy_<replaceable>foo</replaceable>_extension_iface_init (EphyExtensionClass *iface)
+ephy_<replaceable>foo</replaceable>_extension_iface_init (EphyExtensionIface *iface)
 {
 	iface->attach_window = impl_attach_window;
 	iface->detach_window = impl_detach_window;
