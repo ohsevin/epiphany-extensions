@@ -15,6 +15,7 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  *
+ *  $Id$
  */
 
 #ifndef EPHY_UTILS_H
@@ -22,14 +23,27 @@
 
 #include <nsIIOService.h>
 #include <nsIURI.h>
+#include <nsIDOMWindow.h>
+#include <gtk/gtkwidget.h>
+
+class nsIPrintSettings;
+struct _EmbedPrintInfo;
 
 namespace EphyUtils
 {
-	nsresult GetIOService (nsIIOService **ioService);
+	nsresult	GetIOService		(nsIIOService **ioService);
 
-	nsresult NewURI       (nsIURI **result, const nsAString &spec);
+	nsresult	NewURI			(nsIURI **result, const nsAString &spec);
 
-	nsresult NewURI       (nsIURI **result, const nsACString &spec);
+	nsresult	NewURI			(nsIURI **result, const nsACString &spec);
+
+	GtkWidget      *FindEmbed		(nsIDOMWindow *aDOMWindow);
+
+	GtkWidget      *FindGtkParent		(nsIDOMWindow *aDOMWindow);
+
+	nsresult        CollatePrintSettings	(const _EmbedPrintInfo *info,
+						 nsIPrintSettings *settings,
+						 gboolean preview);
 }
 
 #endif
