@@ -1,3 +1,7 @@
+2004-01-17  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* configure.ac: Added "no" to ALL_LINGUAS.
+
 2004-01-16  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
