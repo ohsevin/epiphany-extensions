@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany Plugins 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-24 19:41+0100\n"
-"PO-Revision-Date: 2003-08-03 18:28+0000\n"
+"POT-Creation-Date: 2004-03-29 15:58+0200\n"
+"PO-Revision-Date: 2004-03-29 16:28+0000\n"
 "Last-Translator: Christian Persch <chpe+ephyplugins@stud.uni-saarland.de>\n"
 "Language-Team: British English\n"
 "MIME-Version: 1.0\n"
@@ -78,7 +78,7 @@ msgstr "C_lear"
 msgid "Error Viewer"
 msgstr "Error Viewer"
 
-#: extensions/error-viewer/link-checker.c:231
+#: extensions/error-viewer/link-checker.c:235
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
@@ -112,6 +112,13 @@ msgid ""
 msgstr ""
 "Link error in %s:\n"
 "%s is unavailable."
+
+#: extensions/error-viewer/mozilla/mozilla-link-checker.cpp:152
+#, c-format
+msgid "Checking %d Link on %s"
+msgid_plural "Checking %d Links on %s"
+msgstr[0] "Checking %d Link on %s"
+msgstr[1] "Checking %d Links on %s"
 
 #: extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
@@ -170,21 +177,21 @@ msgstr ""
 "HTML error in %s:\n"
 "No valid doctype specified."
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
-msgid "Blo_ck Popups from this Site"
-msgstr "Blo_ck Popups from this Site"
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
+msgid "Popup _Windows"
+msgstr "Popup _Windows"
 
 #. shortcut key
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:64
-msgid "Block or unblock popup windows"
-msgstr "Block or unblock popup windows"
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
+msgid "Show or hide unrequested popup windows from this site"
+msgstr "Show or hide unrequested popup windows from this site"
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:324
+#: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
 #, c-format
-msgid "%d popup blocked"
-msgid_plural "%d popups blocked"
-msgstr[0] "%d popup blocked"
-msgstr[1] "%d popups blocked"
+msgid "%d popup window blocked"
+msgid_plural "%d popup windows blocked"
+msgstr[0] "%d popup window blocked"
+msgstr[1] "%d popup windows blocked"
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:183
 #, c-format
@@ -200,6 +207,12 @@ msgstr "Move Tab To Window"
 #: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
 msgstr "Move the current tab to a different window"
+
+#~ msgid "Blo_ck Popups from this Site"
+#~ msgstr "Blo_ck Popups from this Site"
+
+#~ msgid "Block or unblock popup windows"
+#~ msgstr "Block or unblock popup windows"
 
 #~ msgid "_Validate"
 #~ msgstr "_Validate"
