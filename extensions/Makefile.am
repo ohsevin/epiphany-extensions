@@ -32,6 +32,6 @@ endif
 #SUBDIRS += toolbar-extras
 #endif
 
-DIST_SUBDIRS = certificates dashboard error-viewer gestures popup-blocker sample sample-mozilla tabsmenu
+DIST_SUBDIRS = certificates dashboard error-viewer gestures sample sample-mozilla tabsmenu
 
 EXTRA_DIST =

@@ -380,7 +380,6 @@ extensions/sample/Makefile
 extensions/sample-mozilla/Makefile
 extensions/sample-mozilla/mozilla/Makefile
 extensions/tabsmenu/Makefile
-extensions/toolbar-extras/Makefile
 po/Makefile.in
 ])
 
