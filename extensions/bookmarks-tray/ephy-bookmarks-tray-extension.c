@@ -451,7 +451,7 @@ ephy_bookmarks_tray_extension_init (EphyBookmarksTrayExtension *extension)
 {
 	EphyBookmarksTrayExtensionPrivate *priv;
 	GError *error = NULL;
-	GtkWidget *hbox, *image, *label;
+	GtkWidget *hbox, *image;
 
 	LOG ("EphyBookmarksTrayExtension initialising");
 
@@ -487,6 +487,9 @@ ephy_bookmarks_tray_extension_init (EphyBookmarksTrayExtension *extension)
 			  G_CALLBACK (open_bookmark_cb), extension);
 
 	priv->tray_button = gtk_toggle_button_new ();
+        gtk_container_set_resize_mode (GTK_CONTAINER (priv->tray_button), GTK_RESIZE_IMMEDIATE);
+	gtk_container_set_border_width (GTK_CONTAINER (priv->tray), 0);
+        gtk_button_set_relief (GTK_BUTTON (priv->tray_button), GTK_RELIEF_NONE);
 
 	gtk_button_set_relief (GTK_BUTTON (priv->tray_button), GTK_RELIEF_NONE);
  
@@ -510,10 +513,6 @@ ephy_bookmarks_tray_extension_init (EphyBookmarksTrayExtension *extension)
 	image = gtk_image_new_from_stock (EPHY_STOCK_BOOKMARKS, GTK_ICON_SIZE_MENU);
 	gtk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
 
-	label = gtk_label_new (_("Bookmarks"));
-	gtk_box_pack_start (GTK_BOX (hbox), label, FALSE, FALSE, 0);
-
-	gtk_widget_show (label);
 	gtk_widget_show (image);
 	gtk_widget_show (hbox);
 	gtk_widget_show (priv->tray_button);
@@ -525,7 +524,11 @@ ephy_bookmarks_tray_extension_init (EphyBookmarksTrayExtension *extension)
 	priv->tray = GTK_WIDGET (egg_tray_icon_new (NULL));
 	g_object_ref (priv->tray);
 	gtk_object_sink (GTK_OBJECT (priv->tray));
+	gtk_container_set_border_width (GTK_CONTAINER (priv->tray), 0);
 	gtk_container_add (GTK_CONTAINER (priv->tray), priv->tray_button);
+
+	gtk_tooltips_set_tip (priv->tray_tips, priv->tray_button,
+			      _("Bookmarks"), NULL);
 
 	gtk_widget_show (priv->tray);
 
