@@ -38,6 +38,7 @@
 #include <glib/gi18n-lib.h>
 
 #define WINDOW_DATA_KEY "EphyPageInfoExtensionWindowData"
+#define MENU_PATH "/menubar/ToolsMenu"
 
 #define EPHY_PAGE_INFO_EXTENSION_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_PAGE_INFO_EXTENSION, EphyPageInfoExtensionPrivate))
 
@@ -169,7 +170,7 @@ update_action (EphyWindow *window,
 	gboolean loading = TRUE;
 
 	action = gtk_ui_manager_get_action (GTK_UI_MANAGER (ephy_window_get_ui_manager (window)),
-					    "/menubar/ToolsMenu/PageInfo");
+					    MENU_PATH "/PageInfo");
 
 	g_object_get (G_OBJECT (tab), "load-status", &loading, NULL);
 	g_object_set (G_OBJECT (action), "sensitive", !loading, NULL);
@@ -254,13 +255,13 @@ impl_attach_window (EphyExtension *extension,
 	g_object_set_data_full (G_OBJECT (window), WINDOW_DATA_KEY, data,
 				(GDestroyNotify) free_window_data);
 
-	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
+	gtk_ui_manager_add_ui (manager, ui_id, MENU_PATH,
 			       "PageInfoSep", NULL,
 			       GTK_UI_MANAGER_SEPARATOR, FALSE);
-	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
+	gtk_ui_manager_add_ui (manager, ui_id, MENU_PATH,
 			       "PageInfo", "PageInfo",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
-	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
+	gtk_ui_manager_add_ui (manager, ui_id, MENU_PATH,
 			       "PageInfoSep2", NULL,
 			       GTK_UI_MANAGER_SEPARATOR, FALSE);
 

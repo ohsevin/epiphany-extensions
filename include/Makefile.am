@@ -8,6 +8,7 @@ EXTRA_DIST =				\
 	eel-gconf-extensions.h		\
 	egg-editable-toolbar.h		\
 	egg-toolbars-model.h		\
+	eggtrayicon.h			\
 	ephy-favicon-cache.h		\
 	ephy-gui.h			\
 	ephy-prefs.h			\

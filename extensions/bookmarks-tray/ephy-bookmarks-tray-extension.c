@@ -260,7 +260,7 @@ menu_position_func (GtkMenu *menu,
 		*y = button_y + panel_h;
 	}
 
-	*push_in = FALSE; //TRUE;
+	*push_in = FALSE;
 }
 
 static void

@@ -120,9 +120,9 @@ dnl *******************************
 
 AC_MSG_CHECKING([extensions to build])
 
-all_extensions="adblock,certificates,dashboard,error-viewer,extensions-manager-ui,gestures,page-info,sample,sample-mozilla,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups"
-all_useful_extensions="certificates,dashboard,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tab-groups,tabsmenu"
-default_extensions="certificates,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups"
+all_extensions="adblock,bookmarks-tray,certificates,dashboard,error-viewer,extensions-manager-ui,gestures,page-info,sample,sample-mozilla,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups"
+all_useful_extensions="bookmarks-tray,certificates,dashboard,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tab-groups,tabsmenu"
+default_extensions="bookmarks-tray,certificates,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups"
 mozilla_dependent_extensions="adblock,certificates,error-viewer,page-info,sample-mozilla,select-stylesheet,sidebar,smart-bookmarks"
 
 dnl due to an autoconf bug, commas in the first arg to
@@ -169,6 +169,7 @@ done
 IFS="$ephyext_save_ifs"
 
 AM_CONDITIONAL(ENABLE_ADBLOCK_EXTENSION, echo "$extensions" | egrep '(^|,)adblock($|,)' > /dev/null)
+AM_CONDITIONAL(ENABLE_BOOKMARKS_TRAY_EXTENSION, echo "$extensions" | egrep '(^|,)bookmarks-tray($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_CERTIFICATES_EXTENSION, echo "$extensions" | egrep '(^|,)certificates($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_DASHBOARD_EXTENSION, echo "$extensions" | egrep '(^|,)dashboard($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_EXTENSIONS_MANAGER_UI_EXTENSION, echo "$extensions" | egrep '(^|,)extensions-manager-ui($|,)' > /dev/null)
@@ -331,6 +332,7 @@ include/Makefile
 extensions/Makefile
 extensions/adblock/Makefile
 extensions/adblock/mozilla/Makefile
+extensions/bookmarks-tray/Makefile
 extensions/certificates/Makefile
 extensions/certificates/mozilla/Makefile
 extensions/dashboard/Makefile

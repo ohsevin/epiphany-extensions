@@ -4,6 +4,10 @@ if ENABLE_ADBLOCK_EXTENSION
 SUBDIRS += adblock
 endif
 
+if ENABLE_BOOKMARKS_TRAY_EXTENSION
+SUBDIRS += bookmarks-tray
+endif
+
 if ENABLE_CERTIFICATES_EXTENSION
 SUBDIRS += certificates
 endif
