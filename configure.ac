@@ -363,6 +363,23 @@ AC_COMPILE_IFELSE(
 
 AC_MSG_RESULT([$result])
 
+dnl Since 1.8b2
+
+AC_MSG_CHECKING([whether nsIScriptError has nsAString& properties])
+
+AC_COMPILE_IFELSE(
+	[AC_LANG_PROGRAM(
+		[[#include <nsEmbedString.h>
+		  #include <xpconnect/nsIScriptError.h>]],
+		[[nsIScriptError *p;
+		  nsEmbedString arg1;
+		  p->GetErrorMessage(arg1);]]
+	)],
+	[AC_DEFINE([MOZ_NSISCRIPTERROR_NSASTRING_],[1],[Define if nsIScriptError has nsAString& properties]) result=yes],
+	[result=no])
+
+AC_MSG_RESULT([$result])
+
 dnl Find extension needs toolkit nsITypeAheadFind
 
 if echo "$EXTENSIONS" | egrep '(^| )find($| )' > /dev/null; then

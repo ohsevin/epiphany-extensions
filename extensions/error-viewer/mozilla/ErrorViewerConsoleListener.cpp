@@ -56,37 +56,56 @@ nsresult
 ErrorViewerConsoleListener::GetMessageFromError (nsIScriptError *aError,
 						 char **aMessage)
 {
+	NS_ENSURE_ARG (aError);
 	NS_ENSURE_ARG_POINTER (aMessage);
 
 	nsresult rv;
-	PRUnichar *message = nsnull;
-	rv = aError->GetMessage (&message);
-	NS_ENSURE_TRUE (NS_SUCCEEDED (rv) && message, NS_ERROR_FAILURE);
-
 	char *category = nsnull;
 	rv = aError->GetCategory (&category);
 	NS_ENSURE_TRUE (NS_SUCCEEDED (rv) && category, NS_ERROR_FAILURE);
 
-	/*
-	 * No docs on category, but some are listed in:
-	 * http://lxr.mozilla.org/seamonkey/source/dom/src/base/nsJSEnvironment.cpp#208
-	 *
-	 * XUL javascript
-	 * content javascript
-	 * component javascript
-	 *
-	 * Some errors are none of the above. GNOME Bugzilla #134438
-	 */
-	if (strstr (category, "javascript") == NULL)
-	{
-		nsEmbedCString cMessage;
-		NS_UTF16ToCString (nsEmbedString (message),
-				   NS_CSTRING_ENCODING_UTF8, cMessage);
+	nsEmbedString message;
+#ifdef MOZ_NSISCRIPTERROR_NSASTRING_
+	rv = aError->GetErrorMessage (message);
+#else
+	PRUnichar *msg = nsnull;
+	rv = aError->GetMessage (&msg);
+	NS_ENSURE_TRUE (NS_SUCCEEDED (rv) && msg, NS_ERROR_FAILURE);
+	message.Assign (msg);
+	nsMemory::Free (msg);
+#endif
+	NS_ENSURE_SUCCESS (rv, rv);
 
+	nsEmbedCString cMessage;
+	NS_UTF16ToCString (nsEmbedString (message),
+				NS_CSTRING_ENCODING_UTF8, cMessage);
+
+	/*
+	 * FIXME: file bug to document all of these in
+	 * http://lxr.mozilla.org/seamonkey/source/js/src/xpconnect/idl/nsIScriptError.idl
+	 *
+	 * With line and/or col # info:
+	 * "xbl javascript" (nsXBLDocumentInfo.cpp:)
+	 * "chrome javascript" and "content javascript" (nsJSEnvironment.cpp)
+	 * "CSS Parser" (nsCSSScanner.cpp)
+	 * "DOM::HTML" (nsDOMClassInfo.cpp: line # only)
+	 * "XBL Content Sink" (nsXBLContentSink.cpp: line # only)
+	 *
+	 * Without line and col # info:
+	 * "HTML" (nsFormSubmission.cpp)
+	 * "XUL Document" (nsXULDocument.cpp)
+	 * "ImageMap" (nsImageMap.cpp: has source line info)
+	 * "CSS Loader" (nsCSSLoader.cpp)
+	 */
+	/* FIXME FIXME FIXME */
+	if (strstr (category, "javascript") == NULL &&
+	    strcmp (category, "CSS Parser") != 0 &&
+	    strcmp (category, "DOM::HTML") != 0 &&
+	    strcmp (category, "XBL Content Sink") != 0)
+	{
 		/* Don't bother looking for source lines -- they're not there */
 		*aMessage = g_strdup_printf (_("Error:\n%s"), cMessage.get());
 
-		nsMemory::Free (message);
 		nsMemory::Free (category);
 
 		return NS_OK;
@@ -96,24 +115,29 @@ ErrorViewerConsoleListener::GetMessageFromError (nsIScriptError *aError,
 	rv = aError->GetLineNumber (&lineNumber);
 	NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
 
-	PRUnichar *sourceName = nsnull;
-	rv = aError->GetSourceName (&sourceName);
-	NS_ENSURE_TRUE (NS_SUCCEEDED (rv) && sourceName, NS_ERROR_FAILURE);
-
-	nsEmbedCString cMessage;
-	NS_UTF16ToCString (nsEmbedString (message),
-			   NS_CSTRING_ENCODING_UTF8, cMessage);
+#ifdef MOZ_NSISCRIPTERROR_NSASTRING_
+	nsEmbedString sourceName;
+	rv = aError->GetSourceName (sourceName);
+	NS_ENSURE_SUCCESS (rv, rv);
 
 	nsEmbedCString cSourceName;
 	NS_UTF16ToCString (nsEmbedString (sourceName),
 			   NS_CSTRING_ENCODING_UTF8, cSourceName);
+#else
+	PRUnichar *sourceName = nsnull;
+	rv = aError->GetSourceName (&sourceName);
+	NS_ENSURE_TRUE (NS_SUCCEEDED (rv) && sourceName, NS_ERROR_FAILURE);
+
+	nsEmbedCString cSourceName;
+	NS_UTF16ToCString (nsEmbedString (sourceName),
+			   NS_CSTRING_ENCODING_UTF8, cSourceName);
+	nsMemory::Free (sourceName);
+#endif
 
 	*aMessage = g_strdup_printf (
 			_("Javascript error in %s on line %d:\n%s"),
 			cSourceName.get(), lineNumber, cMessage.get());
 
-	nsMemory::Free (message);
-	nsMemory::Free (sourceName);
 	nsMemory::Free (category);
 
 	return NS_OK;
