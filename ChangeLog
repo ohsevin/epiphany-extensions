@@ -1,3 +1,11 @@
+2004-10-19  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* configure.ac:
+
+	Don't compile adblock by default: Mozilla support sucks and we have to
+	decide whether to change EphyContentPolicy, support only loading
+	extensions on Ephy start, or wait for Mozilla's Bug #246092.
+
 2004-10-18  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
