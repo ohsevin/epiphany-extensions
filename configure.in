@@ -85,7 +85,7 @@ dnl *******************************
 
 AC_MSG_CHECKING(extensions to build)
 
-all_extensions="sample,gestures,msm,tabsmenu,zoom-persistence"
+all_extensions="sample,gestures,tabsmenu,zoom-persistence"
 all_useful_extensions="gestures,tabsmenu,zoom-persistence"
 default_extensions="gestures,zoom-persistence"
 
@@ -96,7 +96,7 @@ dnl AC_HELP_STRING([--with-extensions=ext1,ext2,...],[build the specified extens
 AC_ARG_WITH(extensions,
 [  --with-extensions=extension1,extension2,...
 			  build the specified extensions. Available:
-			  gestures, msm, sample, tabsmenu, zoom-persistence, all])
+			  gestures, sample, tabsmenu, zoom-persistence, all])
 
 dnl If no extensions specified, build the default set
 if test "x$with_extensions" = xyes; then
@@ -126,7 +126,6 @@ done
 IFS="$ephyext_save_ifs"
 
 AM_CONDITIONAL(ENABLE_PLUGIN_GESTURES, echo "$extensions" | egrep '(^|,)gestures($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_PLUGIN_MSM, echo "$extensions" | egrep '(^|,)msm($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_PLUGIN_SAMPLE, echo "$extensions" | egrep '(^|,)sample($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_PLUGIN_TABSMENU, echo "$extensions" | egrep '(^|,)tabsmenu($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_PLUGIN_ZOOM_PERSISTENCE, echo "$extensions" | egrep '(^|,)zoom-persistence($|,)' > /dev/null)

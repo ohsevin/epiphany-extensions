@@ -16,10 +16,6 @@ if ENABLE_PLUGIN_ZOOM_PERSISTENCE
 SUBDIRS += zoom-persistence
 endif
 
-if ENABLE_PLUGIN_MSM
-SUBDIRS += msm
-endif
-
 DIST_SUBDIRS = sample gestures tabsmenu zoom-persistence
 
 EXTRA_DIST =
