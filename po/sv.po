@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
-"POT-Creation-Date: 2004-01-02 19:45+0100\n"
-"PO-Revision-Date: 2004-01-02 19:45+0100\n"
+"POT-Creation-Date: 2004-03-21 13:09+0100\n"
+"PO-Revision-Date: 2004-03-21 13:09+0100\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,36 +16,226 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
-msgid "Block _Popups from this Site"
-msgstr "Blockera _popupfönster från denna webbplats"
+#: extensions/certificates/ephy-certificates-extension.c:159
+msgid "Certificate Manager"
+msgstr "Certifikathanterare"
+
+#. stock icon
+#: extensions/certificates/ephy-certificates-extension.c:276
+msgid "Manage _Certificates"
+msgstr "Hantera _certifikat"
 
 #. shortcut key
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:64
-msgid "Block or unblock popup windows"
-msgstr "Blockera eller avblockera popupfönster"
+#: extensions/certificates/ephy-certificates-extension.c:278
+msgid "Manage your certificates"
+msgstr "Hantera dina certifikat"
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:324
+#. stock icon
+#: extensions/certificates/ephy-certificates-extension.c:286
+msgid "Server _Certificate"
+msgstr "Server_certifikat"
+
+#. shortcut key
+#: extensions/certificates/ephy-certificates-extension.c:288
+msgid "Display the web server's certificate"
+msgstr "Visa webbserverns certifikat"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:88
+msgid "Check _HTML"
+msgstr "Kontrollera _HTML"
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:90
+msgid "Display HTML errors in the Error Viewer dialog"
+msgstr "Visa HTML-fel i felvisardialogen"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:95
+msgid "Check _Links"
+msgstr "Kontrollera _länkar"
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:97
+msgid "Display invalid hyperlinks in the Error Viewer dialog"
+msgstr "Visa ogiltiga länkar i felvisardialogen"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:101
+msgid "_Error Viewer"
+msgstr "_Felvisare"
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:103
+msgid "Display web page errors"
+msgstr "Visa fel i webbsidor"
+
+#: extensions/error-viewer/error-viewer.glade.h:1
+msgid "C_lear"
+msgstr "T_öm"
+
+#: extensions/error-viewer/error-viewer.glade.h:2
+msgid "Error Viewer"
+msgstr "Felvisare"
+
+#: extensions/error-viewer/link-checker.c:235
 #, c-format
-msgid "%d popup blocked"
-msgid_plural "%d popups blocked"
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "Hittade %d ogiltig länk"
+msgstr[1] "Hittade %d ogiltiga länkar"
+
+#. Don't bother looking for source lines -- they're not there
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
+#, c-format
+msgid ""
+"Error:\n"
+"%s"
+msgstr ""
+"Fel:\n"
+"%s"
+
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:90
+#, c-format
+msgid ""
+"Javascript error in %s on line %d:\n"
+"%s"
+msgstr ""
+"Javascript-fel i %s på rad %d:\n"
+"%s"
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:77
+#, c-format
+msgid ""
+"Link error in %s:\n"
+"%s is unavailable."
+msgstr ""
+"Länkfel i %s:\n"
+"%s är inte tillgänglig."
+
+#: extensions/error-viewer/mozilla/mozilla-link-checker.cpp:152
+#, c-format
+msgid "Checking %d Link on %s"
+msgid_plural "Checking %d Links on %s"
+msgstr[0] "Kontrollerar %d länk på %s"
+msgstr[1] "Kontrollerar %d länkar på %s"
+
+#: extensions/error-viewer/opensp/validate.cpp:167
+#, c-format
+msgid ""
+"HTML error in %s on line %s:\n"
+"%s"
+msgstr ""
+"HTML-fel i %s på rad %s:\n"
+"%s"
+
+#: extensions/error-viewer/sgml-validator.c:165
+#, c-format
+msgid "Found %d error"
+msgid_plural "Found %d errors"
+msgstr[0] "Hittade %d fel"
+msgstr[1] "Hittade %d fel"
+
+#: extensions/error-viewer/sgml-validator.c:169
+#, c-format
+msgid "HTML Validation of %s complete"
+msgstr "HTML-validering av %s är klar"
+
+#: extensions/error-viewer/sgml-validator.c:227
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"%s"
+msgstr ""
+"HTML-fel i %s:\n"
+"%s"
+
+#: extensions/error-viewer/sgml-validator.c:229
+#: extensions/error-viewer/sgml-validator.c:245
+msgid ""
+"Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
+"xhtml+xml\" instead."
+msgstr ""
+"Dokumenttypen är \"XHTML\" men innehållstypen är \"text/html\". Använd "
+"\"application/xhtml+xml\" istället."
+
+#: extensions/error-viewer/sgml-validator.c:243
+#, c-format
+msgid ""
+"HTML warning in %s:\n"
+"%s"
+msgstr ""
+"HTML-varning i %s:\n"
+"%s"
+
+#: extensions/error-viewer/sgml-validator.c:381
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"No valid doctype specified."
+msgstr ""
+"HTML-fel i %s:\n"
+"Ingen giltig dokumenttyp angiven."
+
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
+msgid "Popup _Windows"
+msgstr "Popup_fönster"
+
+#. shortcut key
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
+msgid "Show or hide unrequested popup windows from this site"
+msgstr "Visa eller dölj obegärda popupfönster från denna webbplats"
+
+#: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
+#, c-format
+msgid "%d popup window blocked"
+msgid_plural "%d popup windows blocked"
 msgstr[0] "%d popupfönster blockerat"
 msgstr[1] "%d popupfönster blockerade"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:181
+#: extensions/tabsmenu/ephy-tab-move-menu.c:183
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"
 msgstr[0] "Fönster \"%s\" (%d flik)"
 msgstr[1] "Fönster \"%s\" (%d flikar)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:272
+#: extensions/tabsmenu/ephy-tab-move-menu.c:282
 msgid "Move Tab To Window"
 msgstr "Flytta flik till fönster"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:273
+#: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
 msgstr "Flytta den aktuella fliken till ett annat fönster"
+
+#~ msgid "Certificate"
+#~ msgstr "Certifikat"
+
+#~ msgid "Manage Certificates"
+#~ msgstr "Hantera certifikat"
+
+#~ msgid "Manage Certificates..."
+#~ msgstr "Hantera certifikat..."
+
+#~ msgid "_Links"
+#~ msgstr "_Länkar"
+
+#~ msgid "Error"
+#~ msgstr "Fel"
+
+#~ msgid "Error:"
+#~ msgstr "Fel:"
+
+#~ msgid "Checking %d link on %s"
+#~ msgid_plural "Checking %d links on %s"
+#~ msgstr[0] "Kontrollerar %d länk på %s"
+#~ msgstr[1] "Kontrollerar %d länkar på %s"
+
+#~ msgid "Window"
+#~ msgstr "Fönster"
+
+#~ msgid "Block _Popups from this Site"
+#~ msgstr "Blockera _popupfönster från denna webbplats"
+
+#~ msgid "Block or unblock popup windows"
+#~ msgstr "Blockera eller avblockera popupfönster"
 
 #~ msgid "Block Popups from this Site"
 #~ msgstr "Blockera popupfönster från denna webbplats"
@@ -1415,9 +1605,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "Clear history"
 #~ msgstr "Töm historik"
 
-#~ msgid "C_lear"
-#~ msgstr "T_öm"
-
 #~ msgid "Clear browsing history?"
 #~ msgstr "Töm bläddringshistorik?"
 
@@ -1753,9 +1940,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "Detach current tab"
 #~ msgstr "Ta loss den aktuella fliken"
-
-#~ msgid "Display web browser help"
-#~ msgstr "Visa hjälp för webbläsaren"
 
 #~ msgid "_Save Background As..."
 #~ msgstr "_Spara bakgrund som..."
@@ -4021,9 +4205,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "Untitled folder"
 #~ msgstr "Namnlös mapp"
 
-#~ msgid "Error: "
-#~ msgstr "Fel: "
-
 #~ msgid "Warning: "
 #~ msgstr "Varning: "
 
@@ -5224,9 +5405,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "Images on this page:"
 #~ msgstr "Bilder på denna sida:"
 
-#~ msgid "Javascript console"
-#~ msgstr "Javascript-konsoll"
-
 #~ msgid "L_ocation"
 #~ msgstr "_Plats"
 
@@ -5289,9 +5467,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "_Link properties"
 #~ msgstr "_Länkegenskaper"
-
-#~ msgid "_Links"
-#~ msgstr "_Länkar"
 
 #~ msgid "_Relation"
 #~ msgstr "_Relation"
@@ -6925,9 +7100,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "Enable autoreload"
 #~ msgstr "Använd automatisk omläsning"
 
-#~ msgid "Errors"
-#~ msgstr "Fel"
-
 #~ msgid "Hours"
 #~ msgstr "timme"
 
@@ -7029,9 +7201,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "Bottom"
 #~ msgstr "Nederkant"
 
-#~ msgid "Certificates"
-#~ msgstr "Certifikat"
-
 #~ msgid "Charsets"
 #~ msgstr "Teckentabeller"
 
@@ -7094,9 +7263,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "Mailer"
 #~ msgstr "E-postprogram"
-
-#~ msgid "Manage Certificates ..."
-#~ msgstr "Hantera certifikat..."
 
 #~ msgid "Min. Size"
 #~ msgstr "Min. storlek"
@@ -7507,9 +7673,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "%dK of %sK bytes at %sK bytes/sec"
 #~ msgstr "%d kB av %s kB med %s kB/s"
-
-#~ msgid "Windows"
-#~ msgstr "Fönster"
 
 #~ msgid "Mouse"
 #~ msgstr "Mus"
@@ -8087,13 +8250,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "Something went wrong while saving the file to a temporary location"
 #~ msgstr "Någonting gick fel när filen skulle sparas på en temporär plats"
-
-#~ msgid ""
-#~ "Error executing `%s': \n"
-#~ "%s"
-#~ msgstr ""
-#~ "Fel vid körning av \"%s\": \n"
-#~ "%s"
 
 #~ msgid " not found\n"
 #~ msgstr " kunde inte hittas\n"
