@@ -1,3 +1,42 @@
+2004-10-28  Christian Persch  <chpe@cvs.gnome.org>
+
+	* include/Makefile.am:
+	* include/eggtrayicon.h:
+
+	Add eggtrayicon header from epiphany.
+
+	* configure.ac:
+	* extensions/Makefile.am:
+	* extensions/bookmarks-tray/.cvsignore:
+	* extensions/bookmarks-tray/Makefile.am:
+	* extensions/bookmarks-tray/README:
+	* extensions/bookmarks-tray/patch.diff:
+	* extensions/bookmarks-tray/bookmarks-tray.xml.in.in:
+	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:
+	(ephy_bookmarks_tray_extension_get_type),
+	(ephy_bookmarks_tray_extension_register_type),
+	(tray_button_press_cb), (button_size_allocate_cb),
+	(open_bookmark_cb), (show_context_menu), (menu_deactivate_cb),
+	(show_menu), (button_toggled_cb), (button_pressed_cb),
+	(button_button_press_cb), (button_popup_menu_cb),
+	(type_from_prefs), (open_in_changed_cb),
+	(ephy_bookmarks_tray_extension_init),
+	(ephy_bookmarks_tray_extension_finalize), (impl_attach_window),
+	(impl_detach_window), (ephy_bookmarks_tray_extension_iface_init),
+	(ephy_bookmarks_tray_extension_class_init):
+	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.h:
+	* extensions/bookmarks-tray/ephy-bookmarks-tray-ui.xml:
+	* extensions/bookmarks-tray/extension.c: (register_module):
+	* extensions/page-info/ephy-page-info-extension.c: (update_action),
+	(impl_attach_window):
+
+	Add "Bookmarks Tray" extension.
+
+	* po/POTFILES.in:
+	* po/POTFILES.skip:
+
+	Updated.
+
 2004-10-26  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/sidebar/ephy-sidebar-extension.c:
