@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-04 14:54+0900\n"
-"PO-Revision-Date: 2004-11-04 14:47+0900\n"
+"POT-Creation-Date: 2004-12-05 01:26+0900\n"
+"PO-Revision-Date: 2004-12-05 01:23+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -19,59 +19,59 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
 msgid "_Edit Bookmarks"
 msgstr "ブックマークの編集(_E)"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
 msgid "Open the bookmarks window"
 msgstr "ブックマーク・ウィンドウを開きます"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
 msgid "Open in _Current Tab"
 msgstr "このタブの中に開く(_C)"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
-msgid "Opens bookmarks in the current tab of the active window"
-msgstr "このタブの中にブックマークを開きます"
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:446
+msgid "Open bookmarks in the current tab of the active window"
+msgstr "アクティブなウィンドウのタブの中にブックマークを開きます"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:448
 msgid "Open in New _Tab"
 msgstr "新しいタブの中に開く(_T)"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
-msgid "Opens bookmarks in a newt tab of the active window"
-msgstr "新しいタブの中にブックマークを開きます"
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:449
+msgid "Open bookmarks in a new tab of the active window"
+msgstr "アクティブなウィンドウの新しいタブの中にブックマークを開きます"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:451
 msgid "Open in New _Window"
 msgstr "新しいウィンドウの中に開く(_W)"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
-msgid "Opens bookmarks in a new window"
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:452
+msgid "Open bookmarks in new a window"
 msgstr "新しいウィンドウの中にブックマークを開きます"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:513
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:520
 msgid "Bookmarks"
 msgstr "ブックマーク"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:269
+#: extensions/certificates/ephy-certificates-extension.c:263
 msgid "Manage _Certificates"
 msgstr "証明書の管理(_C)"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:271
+#: extensions/certificates/ephy-certificates-extension.c:265
 msgid "Manage your certificates"
 msgstr "お使いの証明書を管理します"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:279
+#: extensions/certificates/ephy-certificates-extension.c:273
 msgid "Server _Certificate"
 msgstr "サーバ証明書(_C)"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:281
+#: extensions/certificates/ephy-certificates-extension.c:275
 msgid "Display the web server's certificate"
 msgstr "ウェブ・サーバの証明書を表示します"
 
@@ -111,7 +111,7 @@ msgid "Error Viewer"
 msgstr "エラー・ビューア"
 
 #. Don't bother looking for source lines -- they're not there
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:85
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:87
 #, c-format
 msgid ""
 "Error:\n"
@@ -120,7 +120,7 @@ msgstr ""
 "エラー:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:110
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:112
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -129,14 +129,14 @@ msgstr ""
 "%s の %d 行目に Javascript エラー:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:60
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
 msgstr[0] "%d 個の不正なリンクが見つかりました"
 msgstr[1] "%d 個の不正なリンクが見つかりました"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:117
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -145,7 +145,7 @@ msgstr ""
 "%s の中にリンク・エラー:\n"
 "%s は利用できません。"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:198
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
@@ -281,115 +281,119 @@ msgstr "ページ情報(_P)"
 msgid "Display page information in a dialog"
 msgstr "ページ情報をダイアログに表示します"
 
-#: extensions/page-info/page-info-dialog.c:637
+#: extensions/page-info/page-info-dialog.c:655
 msgid "Unknown type"
 msgstr "種類を特定できません"
 
-#: extensions/page-info/page-info-dialog.c:642
+#: extensions/page-info/page-info-dialog.c:660
 msgid "Full standards compliance"
 msgstr "完全に標準互換"
 
-#: extensions/page-info/page-info-dialog.c:645
+#: extensions/page-info/page-info-dialog.c:663
 msgid "Almost standards compliance"
 msgstr "ほぼ標準互換"
 
-#: extensions/page-info/page-info-dialog.c:648
+#: extensions/page-info/page-info-dialog.c:666
 msgid "Compatibility"
 msgstr "互換性"
 
-#: extensions/page-info/page-info-dialog.c:651
+#: extensions/page-info/page-info-dialog.c:669
 msgid "Undetermined"
 msgstr "未確認"
 
-#: extensions/page-info/page-info-dialog.c:660
+#: extensions/page-info/page-info-dialog.c:678
 msgid "Not cached"
 msgstr "キャッシュされていない"
 
-#: extensions/page-info/page-info-dialog.c:663
+#: extensions/page-info/page-info-dialog.c:681
 msgid "Disk cache"
 msgstr "ディスクへキャッシュ済"
 
-#: extensions/page-info/page-info-dialog.c:666
+#: extensions/page-info/page-info-dialog.c:684
 msgid "Memory cache"
 msgstr "メモリへキャッシュ済"
 
-#: extensions/page-info/page-info-dialog.c:669
+#: extensions/page-info/page-info-dialog.c:687
 msgid "Unknown cache"
 msgstr "キャッシュを特定できません"
 
-#: extensions/page-info/page-info-dialog.c:685
+#: extensions/page-info/page-info-dialog.c:703
 msgid "Unknown"
 msgstr "不明"
 
-#: extensions/page-info/page-info-dialog.c:690
+#: extensions/page-info/page-info-dialog.c:708
 msgid "No referrer"
 msgstr "照会者なし"
 
-#: extensions/page-info/page-info-dialog.c:704
-#: extensions/page-info/page-info-dialog.c:720
+#: extensions/page-info/page-info-dialog.c:722
+#: extensions/page-info/page-info-dialog.c:738
 msgid "Not specified"
 msgstr "指定なし"
 
-#: extensions/page-info/page-info-dialog.c:814
+#: extensions/page-info/page-info-dialog.c:912
 msgid "Save Image As..."
 msgstr "画像に名前を付けて保存..."
 
-#: extensions/page-info/page-info-dialog.c:896
+#: extensions/page-info/page-info-dialog.c:927
+msgid "Select a directory"
+msgstr "フォルダの選択"
+
+#: extensions/page-info/page-info-dialog.c:1025
 msgid "_Open Image"
 msgstr "画像を開く(_O)"
 
-#: extensions/page-info/page-info-dialog.c:902
+#: extensions/page-info/page-info-dialog.c:1031
 msgid "_Copy Image Address"
 msgstr "画像のアドレスのコピー(_C)"
 
-#: extensions/page-info/page-info-dialog.c:908
+#: extensions/page-info/page-info-dialog.c:1037
 msgid "_Use Image as Background"
 msgstr "画像を背景として使用(_U)"
 
-#: extensions/page-info/page-info-dialog.c:914
+#: extensions/page-info/page-info-dialog.c:1043
 #: extensions/page-info/page-info.glade.h:26
 msgid "_Save Image As..."
 msgstr "画像を別名で保存(_S)..."
 
-#: extensions/page-info/page-info-dialog.c:1003
-#: extensions/page-info/page-info-dialog.c:1221
+#: extensions/page-info/page-info-dialog.c:1147
+#: extensions/page-info/page-info-dialog.c:1362
 msgid "URL"
 msgstr "URL"
 
-#: extensions/page-info/page-info-dialog.c:1015
+#: extensions/page-info/page-info-dialog.c:1159
 msgid "Alt Text"
 msgstr "代替文字列"
 
-#: extensions/page-info/page-info-dialog.c:1027
-#: extensions/page-info/page-info-dialog.c:1233
+#: extensions/page-info/page-info-dialog.c:1171
+#: extensions/page-info/page-info-dialog.c:1374
 msgid "Title"
 msgstr "タイトル"
 
-#: extensions/page-info/page-info-dialog.c:1039
+#: extensions/page-info/page-info-dialog.c:1183
 msgid "Width"
 msgstr "幅"
 
-#: extensions/page-info/page-info-dialog.c:1051
+#: extensions/page-info/page-info-dialog.c:1195
 msgid "Height"
 msgstr "高さ"
 
-#: extensions/page-info/page-info-dialog.c:1187
+#: extensions/page-info/page-info-dialog.c:1328
 msgid "_Copy Link Address"
 msgstr "リンク先のコピー(_C)"
 
-#: extensions/page-info/page-info-dialog.c:1245
+#: extensions/page-info/page-info-dialog.c:1386
 msgid "Relation"
 msgstr "関係"
 
-#: extensions/page-info/page-info-dialog.c:1356
+#: extensions/page-info/page-info-dialog.c:1494
 msgid "Name"
 msgstr "名前"
 
-#: extensions/page-info/page-info-dialog.c:1368
+#: extensions/page-info/page-info-dialog.c:1506
 msgid "Method"
 msgstr "メソッド"
 
-#: extensions/page-info/page-info-dialog.c:1380
+#: extensions/page-info/page-info-dialog.c:1518
 msgid "Action"
 msgstr "アクション"
 
@@ -510,11 +514,11 @@ msgstr "スタイル(_Y)"
 msgid "Select a different style for this page"
 msgstr "このページをレンダリングする別のスタイルを選択して下さい"
 
-#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
+#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
 msgid "Default"
 msgstr "デフォルト"
 
-#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
+#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
 msgid "None"
 msgstr "なし"
 
@@ -566,7 +570,7 @@ msgid "Look up your selection"
 msgstr "選択範囲を検索します"
 
 #: extensions/smart-bookmarks/smart-bookmarks.glade.h:1
-msgid "Add Gnome Dictionary to the menu"
+msgid "Add GNOME Dictionary to the menu"
 msgstr "GNOME 辞書をメニューへ追加する"
 
 #: extensions/smart-bookmarks/smart-bookmarks.glade.h:2
