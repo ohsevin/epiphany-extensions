@@ -49,6 +49,8 @@
 
 #include "link-checker.h"
 
+#define WINDOW_DATA_KEY	"EphyErrorViewerExtWindowData"
+
 #define EPHY_ERROR_VIEWER_EXTENSION_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_ERROR_VIEWER_EXTENSION, EphyErrorViewerExtensionPrivate))
 
 struct EphyErrorViewerExtensionPrivate
@@ -66,6 +68,12 @@ typedef struct
 	EphyErrorViewerExtension *extension;
 	EphyWindow *window;
 } ErrorViewerCBData;
+
+typedef struct
+{
+	GtkActionGroup *action_group;
+	guint ui_id;
+} WindowData;
 
 static void ephy_error_viewer_extension_class_init	(EphyErrorViewerExtensionClass *klass);
 static void ephy_error_viewer_extension_iface_init	(EphyExtensionIface *iface);
@@ -365,17 +373,20 @@ impl_attach_window (EphyExtension *extension,
 	GtkWidget *notebook;
 #endif /* HAVE_OPENSP */
 	guint merge_id;
+	WindowData *data;
 
 	LOG ("EphyErrorViewerExtension attach_window")
 
-	cb_data = g_new0 (ErrorViewerCBData, 1);
+	cb_data = g_new (ErrorViewerCBData, 1);
 	cb_data->extension = EPHY_ERROR_VIEWER_EXTENSION (extension);
 	cb_data->window = window;
 
+	data = g_new (WindowData, 1);
+
 	manager = GTK_UI_MANAGER (window->ui_merge);
 
-	action_group = gtk_action_group_new ("EphyErrorViewerExtensionActions");
-
+	data->action_group = action_group =
+		gtk_action_group_new ("EphyErrorViewerExtensionActions");
 	gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
 	gtk_action_group_add_actions_full (action_group, action_entries,
 					   n_action_entries, cb_data,
@@ -383,14 +394,10 @@ impl_attach_window (EphyExtension *extension,
 
 	gtk_ui_manager_insert_action_group (manager, action_group, 0);
 
-	merge_id = gtk_ui_manager_new_merge_id (manager);
+	data->ui_id = merge_id = gtk_ui_manager_new_merge_id (manager);
 
-	g_object_set_data (G_OBJECT (window),
-			   "ephy_error_viewer_extension_action_group",
-			   action_group);
-	g_object_set_data (G_OBJECT (window),
-			   "ephy_error_viewer_extension_merge_id",
-			   GUINT_TO_POINTER (merge_id));
+	g_object_set_data_full (G_OBJECT (window), WINDOW_DATA_KEY, data,
+				(GDestroyNotify) g_free);
 
 	gtk_ui_manager_add_ui (manager, merge_id, "/menubar/ToolsMenu",
 			       "ErrorViewerSep", NULL,
@@ -424,8 +431,7 @@ impl_detach_window (EphyExtension *extension,
 		    EphyWindow *window)
 {
 	GtkUIManager *manager;
-	GtkActionGroup *action_group;
-	guint merge_id;
+	WindowData *data;
 #ifdef HAVE_OPENSP
 	GtkWidget *notebook;
 #endif /* HAVE_OPENSP */
@@ -433,28 +439,16 @@ impl_detach_window (EphyExtension *extension,
 	/* Remove UI */
 	manager = GTK_UI_MANAGER (window->ui_merge);
 
-	action_group = g_object_get_data
-		(G_OBJECT (window),
-		 "ephy_error_viewer_extension_action_group");
-	merge_id = GPOINTER_TO_UINT (g_object_get_data
-		(G_OBJECT (window), "ephy_error_viewer_extension_merge_id"));
+	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
+	g_return_if_fail (data != NULL);
 
-	g_return_if_fail (GTK_IS_ACTION_GROUP (action_group));
-	g_return_if_fail (merge_id != 0);
-
-	gtk_ui_manager_remove_ui (manager, merge_id);
-	gtk_ui_manager_remove_action_group (manager, action_group);
+	gtk_ui_manager_remove_ui (manager, data->ui_id);
+	gtk_ui_manager_remove_action_group (manager, data->action_group);
 
 	/* FIXME: Why does this crash? Am I (or is GTK) making a mistake? */
 	/* g_object_unref (action_group); */
 
-	g_object_set_data (G_OBJECT (window),
-			   "ephy_error_viewer_extension_action_group",
-			   NULL);
-
-	g_object_set_data (G_OBJECT (window),
-			   "ephy_error_viewer_extension_merge_id",
-			   NULL);
+	g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, NULL);
 
 #ifdef HAVE_OPENSP
 	/* Remove notification signals for HTML/link checking */

@@ -1,5 +1,13 @@
 2004-09-07  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	(impl_attach_window), (impl_detach_window):
+
+	Allocate a struct to store action group and merge ID
+	on the window.
+
+2004-09-07  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/error-viewer/mozilla/mozilla-link-checker.cpp:
 
 	Fix mem leak.
