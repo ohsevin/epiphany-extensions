@@ -2,6 +2,12 @@
 
 	* ephy-tabs-plugin-menu.c: (ephy_tabs_plugin_menu_finalize):
 
+	Revert previous change; it caused crashes. 
+
+2003-09-12  Christian Persch  <chpe@cvs.gnome.org>
+
+	* ephy-tabs-plugin-menu.c: (ephy_tabs_plugin_menu_finalize):
+
 	No need to remove the action group from the ui manager on finalize.
 
 2003-09-04  Christian Persch  <chpe@cvs.gnome.org>
