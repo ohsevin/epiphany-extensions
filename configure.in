@@ -85,9 +85,9 @@ dnl *******************************
 
 AC_MSG_CHECKING(extensions to build)
 
-all_extensions="sample,gestures,tabsmenu,zoom-persistence"
-all_useful_extensions="gestures,tabsmenu,zoom-persistence"
-default_extensions="gestures,zoom-persistence"
+all_extensions="sample,gestures,tabsmenu"
+all_useful_extensions="gestures,tabsmenu"
+default_extensions="gestures"
 
 dnl due to an autoconf bug, commas in the first arg to
 dnl AC_HELP_STRING cause problems.
@@ -96,7 +96,7 @@ dnl AC_HELP_STRING([--with-extensions=ext1,ext2,...],[build the specified extens
 AC_ARG_WITH(extensions,
 [  --with-extensions=extension1,extension2,...
 			  build the specified extensions. Available:
-			  gestures, sample, tabsmenu, zoom-persistence, all])
+			  gestures, sample, tabsmenu, all])
 
 dnl If no extensions specified, build the default set
 if test "x$with_extensions" = xyes; then
@@ -128,7 +128,6 @@ IFS="$ephyext_save_ifs"
 AM_CONDITIONAL(ENABLE_PLUGIN_GESTURES, echo "$extensions" | egrep '(^|,)gestures($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_PLUGIN_SAMPLE, echo "$extensions" | egrep '(^|,)sample($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_PLUGIN_TABSMENU, echo "$extensions" | egrep '(^|,)tabsmenu($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_PLUGIN_ZOOM_PERSISTENCE, echo "$extensions" | egrep '(^|,)zoom-persistence($|,)' > /dev/null)
 
 dnl *******************************
 dnl Misc things
@@ -165,7 +164,6 @@ plugins/Makefile
 plugins/sample/Makefile
 plugins/gestures/Makefile
 plugins/tabsmenu/Makefile
-plugins/zoom-persistence/Makefile
 po/Makefile.in
 ],
 [])

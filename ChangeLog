@@ -1,3 +1,17 @@
+2003-10-29  Christian Persch  <chpe@cvs.gnome.org>
+
+	* MAINTAINERS:
+	* README:
+	* configure.in:
+	* plugins/Makefile.am:
+	* plugins/zoom-persistence/Makefile.am:
+	* plugins/zoom-persistence/zoom-persistence.c:
+
+	Removed the zoom persistence plugin; epiphany now includes
+	this functionality out-of-the-box.
+
+	If you had it installed, you _must_ uninstall it!
+
 2003-10-28  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.in:

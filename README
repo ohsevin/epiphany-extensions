@@ -18,3 +18,7 @@ sample			Sample extensions [not very useful]
 
 Remember that for the tabsmenu plugin to work, you need to apply the patch in
 plugins/tabsmenu/epiphany.diff, see plugins/tabsmenu/README.
+
+Note for users of the zoom persistence plugin:
+Epiphany now includes this functionality; you HAVE to remove the installed plugin
+files before running epiphany!
