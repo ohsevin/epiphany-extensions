@@ -1,3 +1,16 @@
+2004-11-15  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:
+	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.h:
+	* extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:
+	* extensions/error-viewer/mozilla/mozilla-helpers.cpp:
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+	* extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:
+	* extensions/sidebar/mozilla/Sidebar.cpp:
+	* extensions/smart-bookmarks/mozilla/mozilla-selection.cpp:
+
+	Fix compilation with latest mozilla trunk.
+
 2004-11-07  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/page-info/page-info-dialog.c:

@@ -26,7 +26,9 @@
 
 #include "ErrorViewerURICheckerObserver.h"
 
+#define MOZILLA_STRICT_API
 #include <nsEmbedString.h>
+#undef MOZILLA_STRICT_API
 #include <nsCOMPtr.h>
 #include <nsIChannel.h>
 #include <nsIDOMHTMLAnchorElement.h>

@@ -32,7 +32,9 @@
 #include <nsCRT.h>
 #include <nsIDOMWindowInternal.h>
 #include <nsIProgrammingLanguage.h>
+#define MOZILLA_STRICT_API
 #include <nsEmbedString.h>
+#undef MOZILLA_STRICT_API
 
 #include <glib.h>
 

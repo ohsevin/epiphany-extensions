@@ -20,7 +20,6 @@
 #define ERROR_VIEWER_CONSOLE_LISTENER_H
 
 #include <nsIConsoleListener.h>
-#include <nsEmbedString.h>
 
 #include <glib-object.h>
 
