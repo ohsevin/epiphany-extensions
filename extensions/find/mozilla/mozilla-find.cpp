@@ -349,7 +349,7 @@ FindHelper::DOMSearchForeach (nsIDOMDocument *aDocument,
 					 getter_AddRefs (range))) &&
 	       range)
 	{			     
-		++*aCount;
+		++(*aCount);
 
 		nsCOMPtr<nsIDOMNode> node;
 		aCallback (spanTemplate, range, getter_AddRefs (node));

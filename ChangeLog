@@ -3,6 +3,21 @@
 	* extensions/certificates/ephy-certificates-extension.c:
 	(padlock_button_press_cb):
 
+	Change a g_return_if_fail to g_return_val_if_fail.
+
+	* extensions/find/mozilla/mozilla-find.cpp:
+
+	Change operator precedence error.
+
+	* extensions/tab-states/ephy-tab-states-extension.c:
+
+	Fix build.
+
+2005-01-13  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/certificates/ephy-certificates-extension.c:
+	(padlock_button_press_cb):
+
 	Consume the button press.
 
 2005-01-13  Christian Persch  <chpe@cvs.gnome.org>

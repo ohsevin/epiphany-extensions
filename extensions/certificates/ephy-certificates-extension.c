@@ -250,7 +250,7 @@ padlock_button_press_cb (GtkWidget *ebox,
 	if (event->type == GDK_BUTTON_PRESS && event->button == 1 /* left */)
 	{
 		embed = ephy_window_get_active_embed (window);
-		g_return_if_fail (EPHY_IS_EMBED (embed));
+		g_return_val_if_fail (EPHY_IS_EMBED (embed), FALSE);
 	
 		ephy_embed_show_page_certificate (embed);
 
