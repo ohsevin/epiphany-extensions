@@ -1,0 +1,686 @@
+/*
+ *  Copyright (C) 2003 Marco Pesenti Gritti
+ *  Copyright (C) 2003 Christian Persch
+ *  Copyright (C) 2004 Crispin Flowerday
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2, or (at your option)
+ *  any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ *
+ *  $Id$
+ */
+
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
+#include "ephy-sidebar-extension.h"
+#include "ephy-sidebar-marshal.h"
+#include "ephy-sidebar-embed.h"
+#include "ephy-sidebar.h"
+
+#include "register-component.h"
+
+#include <epiphany/ephy-extension.h>
+#include <epiphany/ephy-embed-shell.h>
+#include <epiphany/ephy-shell.h>
+#include <epiphany/ephy-session.h>
+#include <epiphany/ephy-node.h>
+#include <epiphany/ephy-node-db.h>
+
+#include "ephy-file-helpers.h"
+#include "ephy-state.h"
+#include "ephy-debug.h"
+
+#include <gtk/gtkactiongroup.h>
+#include <gtk/gtkuimanager.h>
+#include <gtk/gtkaction.h>
+#include <gtk/gtktoggleaction.h>
+#include <gtk/gtkhpaned.h>
+#include <gtk/gtkdialog.h>
+#include <gtk/gtkstock.h>
+#include <gtk/gtkhbox.h>
+#include <gtk/gtkimage.h>
+#include <gtk/gtklabel.h>
+
+#include <glib/gi18n-lib.h>
+
+#include <gmodule.h>
+#include <string.h>
+
+#define EPHY_SIDEBAR_EXTENSION_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_SIDEBAR_EXTENSION, EphySidebarExtensionPrivate))
+
+struct EphySidebarExtensionPrivate
+{
+	char *xml_file;
+	EphyNodeDb *db;
+	EphyNode *sidebars;
+	EphyNode *state_parent;
+	EphyNode *state;
+};
+
+#define SIDEBARS_NODE_ID		16
+#define STATE_NODE_ID			17
+#define EPHY_SIDEBARS_XML_ROOT		"ephy_sidebars"
+#define EPHY_SIDEBARS_XML_VERSION	"1.0"
+#define EPHY_NODE_DB_SIDEBARS		"EphySideBars"
+
+enum
+{
+	SIDEBAR_NODE_PROP_URL	= 1,
+	SIDEBAR_NODE_PROP_TITLE,
+	
+	/* For State */
+	SIDEBAR_NODE_PROP_VISIBLE,
+	SIDEBAR_NODE_PROP_SELECTED
+};
+
+#define WINDOW_DATA_KEY "EphySideBarExtensionWindowData"
+
+typedef struct
+{
+	EphySidebarExtension *extension;
+
+	GtkActionGroup *action_group;
+	guint merge_id;
+
+	GtkWidget *sidebar;
+	GtkWidget *hpaned;
+	GtkWidget *embed;
+} WindowData;
+
+static void cmd_view_sidebar	(GtkAction *action,
+				 WindowData *data);
+
+static GtkToggleActionEntry toggle_action_entries [] =
+{
+	{ "ViewSidebar", NULL, N_("_Sidebar"), "F9", 
+	  N_("Show or hide the sidebar"), G_CALLBACK(cmd_view_sidebar), FALSE }
+};
+
+enum
+{
+	ADD_SIDEBAR,
+	LAST_SIGNAL
+};
+
+static guint signals[LAST_SIGNAL] = { 0 };
+
+static void ephy_sidebar_extension_class_init	(EphySidebarExtensionClass *klass);
+static void ephy_sidebar_extension_iface_init	(EphyExtensionIface *iface);
+static void ephy_sidebar_extension_init		(EphySidebarExtension *extension);
+
+static GObjectClass *parent_class = NULL;
+
+static GType type = 0;
+
+GType
+ephy_sidebar_extension_get_type (void)
+{
+	return type;
+}
+
+GType
+ephy_sidebar_extension_register_type (GTypeModule *module)
+{
+	static const GTypeInfo our_info =
+	{
+		sizeof (EphySidebarExtensionClass),
+		NULL, /* base_init */
+		NULL, /* base_finalize */
+		(GClassInitFunc) ephy_sidebar_extension_class_init,
+		NULL,
+		NULL, /* class_data */
+		sizeof (EphySidebarExtension),
+		0, /* n_preallocs */
+		(GInstanceInitFunc) ephy_sidebar_extension_init
+	};
+
+	static const GInterfaceInfo extension_info =
+	{
+		(GInterfaceInitFunc) ephy_sidebar_extension_iface_init,
+		NULL,
+		NULL
+	};
+
+	type = g_type_module_register_type (module,
+					    G_TYPE_OBJECT,
+					    "EphySidebarExtension",
+					    &our_info, 0);
+
+	g_type_module_add_interface (module,
+				     type,
+				     EPHY_TYPE_EXTENSION,
+				     &extension_info);
+
+	return type;
+}
+
+static void 
+cmd_view_sidebar (GtkAction *action,
+		  WindowData *data)
+{
+	GValue value = { 0, };
+	g_value_init (&value, G_TYPE_BOOLEAN);
+
+	if (gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action)))
+	{
+		gtk_widget_show (data->sidebar);
+		g_value_set_boolean (&value, TRUE);
+	}
+	else
+	{
+		gtk_widget_hide (data->sidebar);
+		g_value_set_boolean (&value, FALSE);
+	}
+
+	ephy_node_set_property (data->extension->priv->state,
+				SIDEBAR_NODE_PROP_VISIBLE, &value);
+	g_value_unset (&value);
+}
+
+static void
+sidebar_page_changed_cb (GtkWidget* sidebar,
+			 const char * page_id, 
+			 WindowData *data)
+{
+	GValue value = { 0, };
+
+	/* If you want to show custom stuff in the sidebar, here
+	 * is where you set the content for the sidebar:
+	 * if (!strcmp (page_id, "MyPage"))
+	 * {
+	 *      ephy_sidebar_embed_set_url (data->embed, NULL);
+	 *      ephy_sidebar_set_content (data->sidebar, mycontentwidget);
+	 * } else { .... }
+	 */
+	
+	ephy_sidebar_embed_set_url (EPHY_SIDEBAR_EMBED (data->embed), page_id);
+	ephy_sidebar_set_content (EPHY_SIDEBAR (data->sidebar),
+				  GTK_WIDGET (data->embed));
+	gtk_widget_show (GTK_WIDGET (data->embed));
+
+	/* Remeber the current page */
+	g_value_init (&value, G_TYPE_STRING);
+	g_value_set_string (&value, page_id ? page_id : "");
+	ephy_node_set_property (data->extension->priv->state, SIDEBAR_NODE_PROP_SELECTED, &value);
+	g_value_unset (&value);
+}
+
+static void
+sidebar_close_requested_cb (GtkWidget *sidebar,
+			    GtkAction *action)
+{
+	g_return_if_fail (GTK_IS_TOGGLE_ACTION (action));
+
+	gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (action), FALSE);
+}
+
+static void
+sidebar_page_remove_requested_cb (GtkWidget *sidebar,
+				  const char * page_id,
+				  EphySidebarExtension *extension)
+{
+	EphyNode *removeNode = NULL, *node;
+	const char *url;
+	int i;
+
+	g_return_if_fail (EPHY_IS_SIDEBAR (sidebar));
+	g_return_if_fail (page_id != NULL);
+
+	for (i = 0 ; i < ephy_node_get_n_children (extension->priv->sidebars); i++)
+	{
+		node = ephy_node_get_nth_child (extension->priv->sidebars, i);
+		url = ephy_node_get_property_string (node, SIDEBAR_NODE_PROP_URL);
+		
+		if (strcmp (page_id, url) == 0)
+		{
+			removeNode = node;
+			break;
+		}
+	}
+
+	if (removeNode == NULL)
+	{
+		g_warning ("Remove requested for Sidebar not in EphyNodeDB");
+		return;
+	}
+
+	ephy_node_remove_child (extension->priv->sidebars, removeNode);
+}
+
+static void
+node_child_added_cb (EphyNode *node,
+		     EphyNode *child, 
+		     EphySidebar *sidebar)
+{
+	const char * url, *title;
+
+	g_return_if_fail (EPHY_IS_SIDEBAR (sidebar));
+
+	url   = ephy_node_get_property_string (child, SIDEBAR_NODE_PROP_URL);
+	title = ephy_node_get_property_string (child, SIDEBAR_NODE_PROP_TITLE);
+
+	ephy_sidebar_add_page (sidebar, title, url, TRUE);
+}
+
+static void
+node_child_removed_cb (EphyNode *node,
+		       EphyNode *child, 
+		       guint old_index,
+		       EphySidebar *sidebar)
+{
+	const char * url;
+
+	g_return_if_fail (EPHY_IS_SIDEBAR (sidebar));
+
+	url = ephy_node_get_property_string (child, SIDEBAR_NODE_PROP_URL);
+	
+	ephy_sidebar_remove_page (sidebar, url);
+}
+
+struct ResponseCallbackData
+{
+	char *url;
+	char *title;
+	EphySidebarExtension *extension;
+};
+
+static void
+free_response_data (struct ResponseCallbackData *data)
+{
+	g_free (data->url);
+	g_free (data->title);
+	g_free (data);
+}
+
+static void
+add_dialog_response_cb (GtkDialog *dialog,
+			int response, 
+			struct ResponseCallbackData *data)
+{
+	if (response == GTK_RESPONSE_OK)
+	{
+		EphyNode *node;
+		GValue value = { 0, };
+
+		node = ephy_node_new (data->extension->priv->db);
+
+		g_value_init (&value, G_TYPE_STRING);
+		g_value_set_string (&value, data->url);
+		ephy_node_set_property (node, SIDEBAR_NODE_PROP_URL, &value);
+		g_value_unset (&value);
+
+		g_value_init (&value, G_TYPE_STRING);
+		g_value_set_string (&value, data->title);
+		ephy_node_set_property (node, SIDEBAR_NODE_PROP_TITLE, &value);
+		g_value_unset (&value);
+
+		ephy_node_add_child (data->extension->priv->sidebars, node);
+	}
+
+	gtk_widget_destroy (GTK_WIDGET (dialog));
+}
+
+static void
+impl_add_sidebar (EphySidebarExtension *extension,
+		  const char *url,
+		  const char *title)
+{
+	EphySession *session;
+	EphyWindow *window;
+	GtkWidget *dialog;
+	GtkWidget *hbox, *vbox, *label, *image;
+	char *text, *primary;
+	struct ResponseCallbackData *cb_data;
+	int i;
+	
+	/* See if the Sidebar is already added */
+	for (i = 0 ; i < ephy_node_get_n_children (extension->priv->sidebars); i++)
+	{
+		EphyNode *node = ephy_node_get_nth_child (extension->priv->sidebars, i);
+		const char * node_url = ephy_node_get_property_string (node, SIDEBAR_NODE_PROP_URL);
+		
+		if (strcmp (node_url, url) == 0)
+		{
+			/* TODO Should we raise a dialog or perform an action here */
+			return;
+		}
+	}
+
+	session = EPHY_SESSION (ephy_shell_get_session (ephy_shell));
+	window = ephy_session_get_active_window (session);
+
+	dialog = gtk_dialog_new_with_buttons ("",
+					      GTK_WINDOW (window),
+					      GTK_DIALOG_NO_SEPARATOR,
+					      GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+					      _("_Add Sidebar"), GTK_RESPONSE_OK,
+					      NULL);
+	
+	gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
+	gtk_container_set_border_width (GTK_CONTAINER (dialog), 5);
+	gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (dialog)->vbox), 14);
+
+	hbox = gtk_hbox_new (FALSE, 6);
+	gtk_widget_show (hbox);
+	gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), hbox,
+			    TRUE, TRUE, 0);
+
+	image = gtk_image_new_from_stock (GTK_STOCK_DIALOG_WARNING,
+					  GTK_ICON_SIZE_DIALOG);
+	gtk_misc_set_alignment (GTK_MISC (image), 0.5, 0.0);
+	gtk_widget_show (image);
+	gtk_box_pack_start (GTK_BOX (hbox), image, TRUE, TRUE, 0);
+
+	vbox = gtk_vbox_new (FALSE, 6);
+	gtk_widget_show (vbox);
+	gtk_box_pack_start (GTK_BOX (hbox), vbox, TRUE, TRUE, 0);
+
+	label = gtk_label_new (NULL);
+	gtk_label_set_selectable (GTK_LABEL (label), TRUE);
+	gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+	gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
+
+	primary = g_markup_printf_escaped (_("Add \"%s\" to the Sidebar?"), title);
+
+	text = g_strdup_printf ("<span weight=\"bold\" size=\"larger\">%s</span>\n\n%s\n<tt>%s</tt>",
+				primary, _("The source to the new sidebar page is:"), url);
+
+	gtk_label_set_markup (GTK_LABEL (label), text);
+	g_free (text);
+	g_free (primary);
+
+	gtk_box_pack_start (GTK_BOX (vbox), label, TRUE, TRUE, 0);
+	gtk_widget_show (label);
+
+	cb_data = g_new (struct ResponseCallbackData, 1);
+	cb_data->url = g_strdup (url);
+	cb_data->title = g_strdup (title);
+	cb_data->extension = extension;
+
+	g_signal_connect_data (dialog, "response", 
+			       G_CALLBACK (add_dialog_response_cb),
+			       cb_data, (GClosureNotify) free_response_data,
+			       0);
+
+	gtk_widget_show (GTK_WIDGET (dialog));
+}
+
+static void
+impl_attach_window (EphyExtension *ext,
+		    EphyWindow *window)
+{
+	EphySidebarExtension *extension = EPHY_SIDEBAR_EXTENSION (ext);
+	WindowData *data;
+	GtkActionGroup *action_group;
+	GtkAction *action;
+	guint merge_id;
+	GtkUIManager *manager;
+	GtkWidget *sidebar, *notebook, *parent, *hpaned;
+	GValue position = { 0, };
+	int i;
+	const char * current_page;
+	gboolean show_sidebar;
+
+	LOG ("EphySidebarExtension attach_window")
+	
+	manager = GTK_UI_MANAGER (window->ui_merge);
+
+	data = g_new (WindowData, 1);
+	g_object_set_data_full (G_OBJECT (window), WINDOW_DATA_KEY, data,
+				(GDestroyNotify) g_free);
+
+	data->extension = extension;
+	data->sidebar = sidebar = ephy_sidebar_new();
+
+	data->action_group = action_group =
+		gtk_action_group_new ("EphySidebarExtensionActions");
+	gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
+
+	gtk_action_group_add_toggle_actions (action_group, toggle_action_entries,
+					     G_N_ELEMENTS (toggle_action_entries),
+					     data);
+	gtk_ui_manager_insert_action_group (manager, action_group, -1);
+	g_object_unref (action_group);
+
+	data->merge_id = merge_id = gtk_ui_manager_new_merge_id (manager);
+
+	gtk_ui_manager_add_ui (manager, merge_id,
+			       "/menubar/ViewMenu/ViewTogglesGroup",
+			       "ViewSidebar", "ViewSidebar",
+			       GTK_UI_MANAGER_MENUITEM, FALSE);
+
+//	gtk_ui_manager_ensure_update (manager);
+
+	/* Add the sidebar and the current notebook to a
+	 * GtkHPaned, and add the hpaned to where the notebook
+	 * currently is */
+	notebook = ephy_window_get_notebook (window);
+	parent = gtk_widget_get_parent (notebook);
+
+	g_value_init (&position, G_TYPE_INT);
+	gtk_container_child_get_property (GTK_CONTAINER (parent),
+					  notebook, "position", &position);
+
+	hpaned = data->hpaned = gtk_hpaned_new ();
+	gtk_widget_show (hpaned);
+	gtk_paned_add1 (GTK_PANED(hpaned), sidebar);
+
+	g_object_ref (notebook);
+	gtk_container_remove (GTK_CONTAINER (parent), notebook);
+	gtk_paned_add2 (GTK_PANED(hpaned), notebook);
+	g_object_unref (notebook);
+
+	gtk_container_add (GTK_CONTAINER (parent), hpaned);
+	gtk_container_child_set_property (GTK_CONTAINER (parent),
+					  hpaned, "position", &position);
+	g_value_unset (&position);
+
+	ephy_state_add_paned (hpaned, "EphySidebarExtension::HPaned", 220);
+
+	data->embed = ephy_sidebar_embed_new (window);
+	g_object_ref (data->embed);
+	gtk_object_sink (GTK_OBJECT (data->embed));
+
+	g_signal_connect (sidebar, "page_changed", 
+			  G_CALLBACK(sidebar_page_changed_cb), data);
+
+	/* Add the current sidebar pages */
+	for (i = 0 ; i < ephy_node_get_n_children (extension->priv->sidebars); i++)
+	{
+		EphyNode *node;
+
+		node = ephy_node_get_nth_child (extension->priv->sidebars, i);
+		node_child_added_cb (extension->priv->sidebars, node,
+				     EPHY_SIDEBAR (data->sidebar));
+	}
+
+	/* And keep it all in-sync */
+	g_signal_connect (sidebar, "remove_requested",
+			  G_CALLBACK (sidebar_page_remove_requested_cb), ext);
+	ephy_node_signal_connect_object (extension->priv->sidebars,
+					 EPHY_NODE_CHILD_ADDED,
+					 (EphyNodeCallback)node_child_added_cb, 
+					 G_OBJECT(sidebar));
+	ephy_node_signal_connect_object (extension->priv->sidebars,
+					 EPHY_NODE_CHILD_REMOVED,
+					 (EphyNodeCallback)node_child_removed_cb, 
+					 G_OBJECT(sidebar));
+
+	action = gtk_action_group_get_action (action_group, "ViewSidebar");
+	g_signal_connect (sidebar, "close_requested",
+			  G_CALLBACK (sidebar_close_requested_cb),
+			  action);
+
+	/* Persist page */
+	current_page = ephy_node_get_property_string (extension->priv->state, 
+						      SIDEBAR_NODE_PROP_SELECTED);
+	if (current_page && current_page[0])
+	{
+		ephy_sidebar_select_page (EPHY_SIDEBAR(sidebar), current_page);
+	}
+
+	/* Persist visibility */
+	show_sidebar = ephy_node_get_property_boolean (extension->priv->state, 
+						       SIDEBAR_NODE_PROP_VISIBLE);
+	gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (action), show_sidebar);
+}
+
+static void
+impl_detach_window (EphyExtension *ext,
+		    EphyWindow *window)
+{
+	GtkUIManager *manager;
+	WindowData *data;
+	GtkWidget *notebook, *parent;
+	GValue position = {0,};
+
+	LOG ("EphySidebarExtension detach_window")
+
+	/* Remove UI */
+	manager = GTK_UI_MANAGER (window->ui_merge);
+
+	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
+	g_return_if_fail (data != NULL);
+
+	gtk_ui_manager_remove_ui (manager, data->merge_id);
+	gtk_ui_manager_remove_action_group (manager, data->action_group);
+
+	/* Remove the Sidebar, replacing our hpaned with the
+	 * notebook itself */
+	notebook = ephy_window_get_notebook (window);
+	parent = gtk_widget_get_parent (data->hpaned);
+
+	g_value_init (&position, G_TYPE_INT);
+	gtk_container_child_get_property (GTK_CONTAINER (parent),
+					  data->hpaned, "position", &position);
+
+	g_object_ref (notebook);
+	gtk_container_remove (GTK_CONTAINER (data->hpaned), notebook);
+	
+	gtk_container_remove (GTK_CONTAINER (parent), data->hpaned);
+	
+	gtk_container_add (GTK_CONTAINER (parent), notebook);
+	g_object_unref (notebook);
+
+	gtk_container_child_set_property (GTK_CONTAINER (parent),
+					  notebook, "position", &position);
+
+	g_object_unref (data->embed);
+
+	g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, NULL);
+}
+
+static void
+ephy_sidebar_extension_init (EphySidebarExtension *extension)
+{
+	EphyNodeDb *db;
+
+	LOG ("EphySidebarExtension initialising");
+
+	extension->priv = EPHY_SIDEBAR_EXTENSION_GET_PRIVATE (extension);
+
+	db = ephy_node_db_new (EPHY_NODE_DB_SIDEBARS);
+	extension->priv->db = db;
+
+	extension->priv->xml_file = g_build_filename (ephy_dot_dir (),
+						      "ephy-sidebars.xml",
+						      NULL);
+
+	extension->priv->sidebars = ephy_node_new_with_id (db, SIDEBARS_NODE_ID);
+	extension->priv->state_parent = ephy_node_new_with_id (db, STATE_NODE_ID);
+
+	ephy_node_db_load_from_file (extension->priv->db,
+				     extension->priv->xml_file,
+				     EPHY_SIDEBARS_XML_ROOT,
+				     EPHY_SIDEBARS_XML_VERSION);
+	
+	if (ephy_node_get_n_children (extension->priv->state_parent))
+	{
+		extension->priv->state = 
+			ephy_node_get_nth_child (extension->priv->state_parent, 0);
+	}
+	else
+	{
+		extension->priv->state = ephy_node_new (db);
+		ephy_node_add_child (extension->priv->state_parent,
+				     extension->priv->state);
+	}
+
+	ephy_embed_shell_get_embed_single (embed_shell); /* Fire up Mozilla */
+
+	mozilla_register_component (G_OBJECT (extension));
+}
+
+static void
+ephy_sidebar_extension_finalize (GObject *object)
+{
+	EphySidebarExtension *extension = EPHY_SIDEBAR_EXTENSION (object);
+
+	LOG ("EphySidebarExtension finalising")
+
+	mozilla_unregister_component();
+	
+	ephy_node_db_write_to_xml_safe
+		(extension->priv->db, 
+		 extension->priv->xml_file,
+		 EPHY_SIDEBARS_XML_ROOT,
+		 EPHY_SIDEBARS_XML_VERSION,
+		 NULL,
+		 extension->priv->sidebars, 0, 
+		 extension->priv->state_parent, 0, 
+		 NULL);
+
+	g_free (extension->priv->xml_file);
+	ephy_node_unref (extension->priv->sidebars);
+	ephy_node_unref (extension->priv->state_parent);
+	ephy_node_unref (extension->priv->state);
+
+	g_object_unref (extension->priv->db);
+
+	G_OBJECT_CLASS (parent_class)->finalize (object);
+}
+
+static void
+ephy_sidebar_extension_iface_init (EphyExtensionIface *iface)
+{
+	iface->attach_window = impl_attach_window;
+	iface->detach_window = impl_detach_window;
+}
+
+static void
+ephy_sidebar_extension_class_init (EphySidebarExtensionClass *klass)
+{
+	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+
+	parent_class = g_type_class_peek_parent (klass);
+
+	object_class->finalize = ephy_sidebar_extension_finalize;
+
+	klass->add_sidebar = impl_add_sidebar;
+
+	signals[ADD_SIDEBAR] =
+		g_signal_new ("add_sidebar",
+			      G_OBJECT_CLASS_TYPE (object_class),
+			      G_SIGNAL_RUN_FIRST,
+			      G_STRUCT_OFFSET (EphySidebarExtensionClass, add_sidebar),
+			      NULL, NULL,
+			      ephy_sidebar_marshal_VOID__STRING_STRING,
+			      G_TYPE_NONE,
+			      2,
+			      G_TYPE_STRING,
+			      G_TYPE_STRING);
+
+	g_type_class_add_private (object_class, sizeof (EphySidebarExtensionPrivate));
+}

@@ -1,3 +1,32 @@
+2004-09-27  Christian Persch  <chpe@cvs.gnome.org>
+
+	* AUTHORS:
+	* configure.ac:
+	* extensions/Makefile.am:
+	A extensions/sidebar/Makefile.am:
+	A extensions/sidebar/ephy-sidebar-embed.c:
+	A extensions/sidebar/ephy-sidebar-embed.h:
+	A extensions/sidebar/ephy-sidebar-extension.c:
+	A extensions/sidebar/ephy-sidebar-extension.h:
+	A extensions/sidebar/ephy-sidebar-marshal.list:
+	A extensions/sidebar/ephy-sidebar.c: 
+	A extensions/sidebar/ephy-sidebar.h:
+	A extensions/sidebar/epiphany-sidebar-ui.xml:
+	A extensions/sidebar/extension.c: (register_module):
+	A extensions/sidebar/mozilla/Makefile.am:
+	A extensions/sidebar/mozilla/Sidebar.cpp:
+	A extensions/sidebar/mozilla/Sidebar.h:
+	A extensions/sidebar/mozilla/register-component.cpp:
+	A extensions/sidebar/mozilla/register-component.h:
+	A extensions/sidebar/sidebar-commands.c: (get_event_info),
+	A extensions/sidebar/sidebar-commands.h:
+	A include/ephy-prefs.h:
+	* include/Makefile.am:
+	* po/POTFILES.in:
+	* po/POTFILES.skip:
+
+	Merge from HEAD.
+
 2004-09-26  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/smart-bookmarks/smart-bookmarks-prefs-ui.c:

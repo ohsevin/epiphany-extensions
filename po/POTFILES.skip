@@ -6,3 +6,7 @@ include/ephy-gui.h
 include/ephy-string.h
 extensions/toolbar-extras/ephy-multi-smart-action.c
 extensions/toolbar-extras/ephy-toolbar-extras-extension.c
+# those strings are ALL the same like in epiphany, so we can skip them
+extensions/sidebar/ephy-sidebar-embed.c
+extensions/sidebar/sidebar-commands.c
+

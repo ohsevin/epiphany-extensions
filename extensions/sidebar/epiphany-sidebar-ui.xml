@@ -1,0 +1,62 @@
+<ui>
+
+<popup name="EphySidebarDocumentPopup" action="PopupAction">
+	<menuitem name="EditCopyDP" action="EditCopy"/>
+	<separator name="DPSep2"/>
+	<menuitem name="SavePageAsDP" action="SidebarSaveAs"/>
+	<menuitem name="SaveBackgroundAsDP" action="SidebarSaveBackgroundAs"/>
+</popup>
+
+<popup name="EphySidebarFramedDocumentPopup" action="PopupAction">
+	<menuitem name="EditCopyFDP" action="EditCopy"/>
+	<separator name="FDPSep2"/>
+	<menuitem name="SavePageAsFDP" action="SidebarSaveAs"/>
+	<menuitem name="SaveBackgroundAsFDP" action="SidebarSaveBackgroundAs"/>
+	<separator name="FDBSep3"/>
+	<menuitem name="OpenFrameFDP" action="OpenFrame"/>
+</popup>
+
+<popup name="EphySidebarLinkPopup" action="PopupAction">
+	<menuitem name="OpenLinkLP" action="OpenLink"/>
+	<menuitem name="OpenLinkInNewWindowLP" action="OpenLinkInNewWindow"/>
+	<menuitem name="OpenLinkInNewTabLP" action="OpenLinkInNewTab"/>
+	<separator name="LPSep1"/>
+	<menuitem name="EditCopyLP" action="EditCopy"/>
+	<separator name="LPSep2"/>
+	<menuitem name="DownloadLinkLP" action="SidebarDownloadLink"/>
+	<menuitem name="DownloadLinkAsLP" action="SidebarDownloadLinkAs"/>
+	<menuitem name="BookmarkLinkLP" action="BookmarkLink"/>
+	<menuitem name="CopyLinkAddressLP" action="CopyLinkAddress"/>
+</popup>
+
+<popup name="EphySidebarImagePopup" action="PopupAction">
+	<menuitem name="OpenImageIP" action="OpenImage"/>
+	<menuitem name="SaveImageAsIP" action="SidebarSaveImageAs"/>
+	<menuitem name="CopyImageLocationIP" action="CopyImageLocation"/>
+</popup>
+
+<popup name="EphySidebarImageLinkPopup" action="PopupAction">
+	<menuitem name="OpenLinkILP" action="OpenLink"/>
+	<menuitem name="OpenLinkInNewWindowILP" action="OpenLinkInNewWindow"/>
+	<menuitem name="OpenLinkInNewTabILP" action="OpenLinkInNewTab"/>
+	<separator name="ILPSep1"/>
+	<menuitem name="DownloadLinkILP" action="SidebarDownloadLink"/>
+	<menuitem name="DownloadLinkAsILP" action="SidebarDownloadLinkAs"/>
+	<menuitem name="BookmarkLinkILP" action="BookmarkLink"/>
+	<menuitem name="CopyLinkAddressILP" action="CopyLinkAddress"/>
+	<separator name="ILPSep2"/>
+	<menuitem name="OpenImageILP" action="OpenImage"/>
+	<menuitem name="SaveImageAsILP" action="SidebarSaveImageAs"/>
+	<menuitem name="CopyImageLocationILP" action="CopyImageLocation"/>
+</popup>
+
+<popup name="EphySidebarImageEmailLinkPopup" action="PopupAction">
+	<menuitem name="SendEmailItem" action="SendEmail"/>
+	<menuitem name="CopyEmailAddressItem" action="CopyEmailAddress"/>
+	<separator name="IELPSep1"/>
+	<menuitem name="OpenImageIELP" action="OpenImage"/>
+	<menuitem name="SaveImageAsIELP" action="SidebarSaveImageAs"/>
+	<menuitem name="CopyImageLocationIELP" action="CopyImageLocation"/>
+</popup>
+
+</ui>
