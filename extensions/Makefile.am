@@ -1,8 +1,12 @@
 SUBDIRS =
 
-#if ENABLE_ADBLOCK_EXTENSION
-#SUBDIRS += adblock
-#endif
+if ENABLE_ACTIONS_EXTENSION
+SUBDIRS += actions
+endif
+
+if ENABLE_ADBLOCK_EXTENSION
+SUBDIRS += adblock
+endif
 
 if ENABLE_BOOKMARKS_TRAY_EXTENSION
 SUBDIRS += bookmarks-tray
@@ -72,6 +76,6 @@ if ENABLE_TAB_STATES_EXTENSION
 SUBDIRS += tab-states
 endif
 
-DIST_SUBDIRS = adblock bookmarks-tray certificates dashboard error-viewer extensions-manager-ui find gestures page-info sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu
+DIST_SUBDIRS = actions adblock bookmarks-tray certificates dashboard error-viewer extensions-manager-ui find gestures page-info sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu
 
 EXTRA_DIST =

@@ -1,3 +1,33 @@
+2005-02-01  Christian Persch  <chpe@cvs.gnome.org>
+
+	* AUTHORS:
+	* configure.ac:
+	* extensions/Makefile.am:
+	A extensions/actions/.cvsignore:
+	A extensions/actions/Makefile.am:
+	A extensions/actions/action-properties.glade:
+	A extensions/actions/actions-editor.glade:
+	A extensions/actions/actions.xml.in.in:
+	A extensions/actions/ephy-actions-extension-editor-dialog.c:
+	A extensions/actions/ephy-actions-extension-editor-dialog.h:
+	A extensions/actions/ephy-actions-extension-properties-dialog.c:
+	A extensions/actions/ephy-actions-extension-properties-dialog.h:
+	A extensions/actions/ephy-actions-extension-util.c:
+	A extensions/actions/ephy-actions-extension-util.h:
+	A extensions/actions/ephy-actions-extension.c:
+	A extensions/actions/ephy-actions-extension.h:
+	A extensions/actions/extension.c: (register_module):
+
+	Add "Actions" extension, written by Jean-Yves Lefort.
+
+	* extensions/adblock/ad-uri-tester.c: (match_uri):
+
+	Fix build.
+
+	* po/POTFILES.in:
+
+	Updated.
+
 2005-01-30  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/page-info/mozilla/mozilla-helpers.cpp:

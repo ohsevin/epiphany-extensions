@@ -100,8 +100,8 @@ match_uri (const char *pattern,
 
 	if (ret >= 0)
 	{
-		LOG ("Blocking '%s' with pattern '%s'",;
-		     uri_with_len->uri, pattern)
+		LOG ("Blocking '%s' with pattern '%s'",
+		     uri_with_len->uri, pattern);
 
 		return TRUE;
 	}

@@ -1,5 +1,8 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
+extensions/actions/ephy-actions-extension-editor-dialog.c
+extensions/actions/ephy-actions-extension-properties-dialog.c
+extensions/actions/ephy-actions-extension.c
 extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c
 extensions/certificates/ephy-certificates-extension.c
 extensions/error-viewer/ephy-error-viewer-extension.c

@@ -129,9 +129,9 @@ dnl *******************************
 
 AC_MSG_CHECKING([extensions to build])
 
-all_extensions="adblock,bookmarks-tray,certificates,dashboard,error-viewer,extensions-manager-ui,find,gestures,page-info,sample,sample-mozilla,select-stylesheet,sidebar,smart-bookmarks,tab-groups,tab-states,tabsmenu"
-all_useful_extensions="bookmarks-tray,certificates,dashboard,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tab-groups,tab-states,tabsmenu"
-default_extensions="bookmarks-tray,certificates,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups,tab-states"
+all_extensions="actions,adblock,bookmarks-tray,certificates,dashboard,error-viewer,extensions-manager-ui,find,gestures,page-info,sample,sample-mozilla,select-stylesheet,sidebar,smart-bookmarks,tab-groups,tab-states,tabsmenu"
+all_useful_extensions="actions,bookmarks-tray,certificates,dashboard,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tab-groups,tab-states,tabsmenu"
+default_extensions="actions,bookmarks-tray,certificates,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups,tab-states"
 mozilla_dependent_extensions="adblock,error-viewer,find,page-info,sample-mozilla,select-stylesheet,smart-bookmarks"
 
 dnl due to an autoconf bug, commas in the first arg to
@@ -141,7 +141,7 @@ dnl AS_HELP_STRING(--with-extensions=ext1,ext2,...,build the specified extension
 AC_ARG_WITH([extensions],
 [  --with-extensions=extension1,extension2,...
 			  build the specified extensions. Available:
-			  adblock, bookmarks-tray, certificates, dashboard,
+			  actions, adblock, bookmarks-tray, certificates, dashboard,
 			  error-viewer, extensions-manager-ui, gestures,
 			  page-info, sample, sampls-mozilla, select-stylesheet,
 			  sidebar, smart-bookmarks, tab-groups, tabsmenu, all,
@@ -172,6 +172,7 @@ fi
 
 AC_MSG_RESULT($extensions)
 
+AM_CONDITIONAL(ENABLE_ACTIONS_EXTENSION, echo "$extensions" | egrep '(^|,)actions($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_ADBLOCK_EXTENSION, echo "$extensions" | egrep '(^|,)adblock($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_BOOKMARKS_TRAY_EXTENSION, echo "$extensions" | egrep '(^|,)bookmarks-tray($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_CERTIFICATES_EXTENSION, echo "$extensions" | egrep '(^|,)certificates($|,)' > /dev/null)
@@ -399,6 +400,7 @@ AC_CONFIG_FILES([
 Makefile
 include/Makefile
 extensions/Makefile
+extensions/actions/Makefile
 extensions/adblock/Makefile
 extensions/adblock/mozilla/Makefile
 extensions/bookmarks-tray/Makefile
