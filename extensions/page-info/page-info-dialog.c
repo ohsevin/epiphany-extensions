@@ -35,6 +35,9 @@
 #include <epiphany/ephy-embed-persist.h>
 // #include <epiphany/ephy-embed-factory.h>
 
+/* non-installed ephy headers */
+#include "ephy-state.h"
+
 #include <gtk/gtkentry.h>
 #include <gtk/gtklabel.h>
 #include <gtk/gtktreeview.h>
@@ -865,7 +868,7 @@ images_info_page_construct (InfoPage *ipage)
 	GtkCellRenderer *renderer;
 	GtkTreeViewColumn *column;
 	GtkTreeSelection *selection;
-	GtkWidget *button;
+	GtkWidget *button, *vpaned;
 
 	treeview = GTK_TREE_VIEW (ephy_dialog_get_control
 		(EPHY_DIALOG (dialog), properties[PROP_IMAGES_IMAGE_TREEVIEW].id));
@@ -949,6 +952,10 @@ images_info_page_construct (InfoPage *ipage)
 
 	button = ephy_dialog_get_control (EPHY_DIALOG (dialog),
 					  properties[PROP_IMAGES_SAVE_BUTTON].id);
+	vpaned = ephy_dialog_get_control (EPHY_DIALOG (dialog),
+					  properties[PROP_IMAGES_IMAGE_VPANED].id);
+
+	ephy_state_add_paned (vpaned, "PageInfoDialog::ImagesPage::VPaned", 250);
 
 	tpage->store = liststore;
 	tpage->treeview = treeview;
@@ -974,13 +981,13 @@ images_info_page_fill (InfoPage *ipage)
 		EmbedPageImage *image = (EmbedPageImage *) l->data;
 
 		gtk_list_store_append (store, &iter);
-		gtk_list_store_set(store, &iter,
-				   COL_IMAGE_URL, image->url,
-				   COL_IMAGE_ALT, image->alt,
-				   COL_IMAGE_TITLE, image->title,
-				   COL_IMAGE_WIDTH, image->width,
-				   COL_IMAGE_HEIGHT, image->height,
-				   -1);
+		gtk_list_store_set (store, &iter,
+				    COL_IMAGE_URL, image->url,
+				    COL_IMAGE_ALT, image->alt,
+				    COL_IMAGE_TITLE, image->title,
+				    COL_IMAGE_WIDTH, image->width,
+				    COL_IMAGE_HEIGHT, image->height,
+				    -1);
 	}
 
 	g_list_foreach (images, (GFunc) mozilla_free_embed_page_image, NULL);
@@ -1052,9 +1059,7 @@ links_info_page_construct (InfoPage *ipage)
 	gtk_tree_selection_set_mode (selection,
 				     GTK_SELECTION_SINGLE);
 
-	/* FIXME: Do we leak this? */
 	renderer = gtk_cell_renderer_text_new ();
-
 	gtk_tree_view_insert_column_with_attributes (treeview,
 						     COL_LINK_URL,
 						     _("URL"),
@@ -1094,7 +1099,7 @@ links_info_page_construct (InfoPage *ipage)
 	tpage->store = liststore;
 	tpage->treeview = treeview;
 
-	treeview_info_page_construct (ipage);
+//	treeview_info_page_construct (ipage);
 }
 
 static void
@@ -1190,9 +1195,7 @@ forms_info_page_construct (InfoPage *ipage)
 	selection = gtk_tree_view_get_selection (treeview);
 	gtk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
 
-	/* FIXME: Do we leak this? */
 	renderer = gtk_cell_renderer_text_new ();
-
 	gtk_tree_view_insert_column_with_attributes (treeview,
 						     COL_FORM_NAME,
 						     _("Name"),
@@ -1232,7 +1235,7 @@ forms_info_page_construct (InfoPage *ipage)
 	tpage->store = liststore;
 	tpage->treeview = treeview;
 
-	treeview_info_page_construct (ipage);
+//	treeview_info_page_construct (ipage);
 }
 
 static void
@@ -1252,11 +1255,11 @@ forms_info_page_fill (InfoPage *ipage)
 		EmbedPageForm *form = (EmbedPageForm *) l->data;
 
 		gtk_list_store_append (store, &iter);
-		gtk_list_store_set(store, &iter,
-				   COL_FORM_NAME, form->name,
-				   COL_FORM_METHOD, form->method,
-				   COL_FORM_ACTION, form->action,
-				   -1);
+		gtk_list_store_set (store, &iter,
+				    COL_FORM_NAME, form->name,
+				    COL_FORM_METHOD, form->method,
+				    COL_FORM_ACTION, form->action,
+				    -1);
 	}
 
 	g_list_foreach (forms, (GFunc) mozilla_free_embed_page_form, NULL);
@@ -1295,8 +1298,8 @@ page_info_dialog_init (PageInfoDialog *dialog)
 	dialog->priv->pages[LINKS_PAGE] = links_info_page_new (dialog);
 	dialog->priv->pages[FORMS_PAGE] = forms_info_page_new (dialog);
 
-	/* same for:
-	setup_page_security (PAGE_INFO_DIALOG(dialog), props);
+	/*
+	dialog->priv->pages[SECURITY_PAGE] = security_info_page_new (dialog);
 	*/
 }
 
