@@ -1,3 +1,11 @@
+2005-01-27  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:
+	(ephy_bookmarks_tray_extension_register_type),
+	(ephy_bookmarks_tray_extension_finalize):
+
+	This doesn't need to implement EphyExtensionIface.
+
 2005-01-26  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/certificates/ephy-certificates-extension.c

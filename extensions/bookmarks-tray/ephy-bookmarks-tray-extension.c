@@ -99,7 +99,6 @@ struct _EphyBookmarksTrayExtensionPrivate
 #define STOCK_NEW_TAB		"stock_new-tab"
 
 static void ephy_bookmarks_tray_extension_class_init	(EphyBookmarksTrayExtensionClass *klass);
-static void ephy_bookmarks_tray_extension_iface_init	(EphyExtensionIface *iface);
 static void ephy_bookmarks_tray_extension_init		(EphyBookmarksTrayExtension *extension);
 
 static GObjectClass *parent_class = NULL;
@@ -128,22 +127,10 @@ ephy_bookmarks_tray_extension_register_type (GTypeModule *module)
 		(GInstanceInitFunc) ephy_bookmarks_tray_extension_init
 	};
 
-	static const GInterfaceInfo extension_info =
-	{
-		(GInterfaceInitFunc) ephy_bookmarks_tray_extension_iface_init,
-		NULL,
-		NULL
-	};
-
 	type = g_type_module_register_type (module,
 					    G_TYPE_OBJECT,
 					    "EphyBookmarksTrayExtension",
 					    &our_info, 0);
-
-	g_type_module_add_interface (module,
-				     type,
-				     EPHY_TYPE_EXTENSION,
-				     &extension_info);
 
 	return type;
 }
@@ -560,29 +547,6 @@ ephy_bookmarks_tray_extension_finalize (GObject *object)
 	g_object_unref (priv->manager);
 
 	parent_class->finalize (object);
-}
-
-static void
-impl_attach_window (EphyExtension *ext,
-		    EphyWindow *window)
-{
-//	EphyBookmarksTrayExtension *extension = EPHY_BOOKMARKS_TRAY_EXTENSION (ext);
-	LOG ("EphyBookmarksTrayExtension attach_window")
-}
-
-static void
-impl_detach_window (EphyExtension *ext,
-		    EphyWindow *window)
-{
-//	EphyBookmarksTrayExtension *extension = EPHY_BOOKMARKS_TRAY_EXTENSION (ext);
-	LOG ("EphyBookmarksTrayExtension detach_window")
-}
-
-static void
-ephy_bookmarks_tray_extension_iface_init (EphyExtensionIface *iface)
-{
-	iface->attach_window = impl_attach_window;
-	iface->detach_window = impl_detach_window;
 }
 
 static void
