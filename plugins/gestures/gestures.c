@@ -43,13 +43,14 @@ static GHashTable *gestures = NULL;
 
 #define EPHY_GESTURES_XML_FILE		SHARE_DIR "/ephy-gestures.xml"
 #define EPHY_GESTURES_XML_ROOT		"epiphany_gestures"
-#define EPHY_GESTURES_XML_VERSION	"0.2"
+#define EPHY_GESTURES_XML_VERSION	"0.3"
 
 static void
 load_one_gesture (xmlNodePtr node)
 {
 	xmlNodePtr child;
-	xmlChar *sequence = NULL, *action = NULL;
+	GSList *sequence = NULL, *cur = NULL;
+	xmlChar *t = NULL, *action = NULL;
 
 	g_return_if_fail (node != NULL);
 
@@ -59,9 +60,9 @@ load_one_gesture (xmlNodePtr node)
 	{
 		if (strcmp (child->name, "sequence") == 0)
 		{
-			g_return_if_fail (sequence == NULL);
+			t = xmlNodeGetContent (child);
 
-			sequence = xmlNodeGetContent (child);
+			sequence = g_slist_append (sequence, t);
 		}
 		else if (strcmp (child->name, "action") == 0)
 		{
@@ -73,9 +74,13 @@ load_one_gesture (xmlNodePtr node)
 
 	g_return_if_fail (sequence != NULL && action != NULL);
 
-	g_hash_table_insert (gestures, g_strdup (sequence), g_strdup (action));
+	for (cur = sequence; cur; cur = g_slist_next (cur)) {
+		g_hash_table_insert (gestures, g_strdup (cur->data),
+				     g_strdup (action));
+		xmlFree (cur->data);
+	}
 
-	xmlFree (sequence);
+	g_slist_free (sequence);
 	xmlFree (action);
 }
 

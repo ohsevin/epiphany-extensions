@@ -112,6 +112,8 @@ ephy_gestures_get_type (void)
 static void
 ephy_gestures_class_init (EphyGesturesClass *klass)
 {
+	g_printf("Gestures plugin init\n");
+
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
 	parent_class = g_type_class_peek_parent (klass);

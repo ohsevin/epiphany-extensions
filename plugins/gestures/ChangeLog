@@ -1,3 +1,15 @@
+2003-08-10  Adam Hooper <adamh@densi.com>
+
+	* gestures.c: (load_one_gesture):
+
+	Use a GSList of sequences, so in the XML file many sequences can be
+	bound to the same <gesture>. Bump EPHY_GESTURES_XML_VERSION to "0.3"
+
+	* ephy-gestures.xml:
+
+	Put many <sequence>'s to the same <gesture>'s. Use tabs instead of
+	spaces. Bump version to "0.3"
+
 2003-08-01  Christian Persch  <chpe@cvs.gnome.org>
 
 	* gestures.c: (load_one_gesture), (find_action),
