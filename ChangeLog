@@ -1,5 +1,15 @@
 2004-09-12  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+
+	Minor cleanup.
+
+	* extensions/page-info/page-info.glade:
+
+	Set "expand" to false on the general page's frames.
+
+2004-09-12  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/page-info/page-info-dialog.c:
 	(page_info_dialog_close_button_clicked_cb),
 	(page_info_dialog_view_cert_button_clicked_cb),

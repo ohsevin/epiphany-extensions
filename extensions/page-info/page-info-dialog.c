@@ -1359,8 +1359,7 @@ images_info_page_fill (InfoPage *ipage)
 		EmbedPageImage *image = (EmbedPageImage *) l->data;
 
 		gtk_list_store_append (store, &iter);
-		gtk_list_store_set(store,
-				   &iter,
+		gtk_list_store_set(store, &iter,
 				   COL_IMAGE_URL, image->url,
 				   COL_IMAGE_ALT, image->alt,
 				   COL_IMAGE_TITLE, image->title,

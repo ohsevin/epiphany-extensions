@@ -76,39 +76,38 @@ get_cache_entry_descriptor (const char *url,
 {
 	nsresult rv;
 
-        nsCOMPtr<nsICacheService> cacheService =
-                do_GetService(NS_CACHESERVICE_CONTRACTID);
-        NS_ENSURE_TRUE (cacheService, NS_ERROR_FAILURE);
+	nsCOMPtr<nsICacheService> cacheService =
+		do_GetService(NS_CACHESERVICE_CONTRACTID);
+	NS_ENSURE_TRUE (cacheService, NS_ERROR_FAILURE);
 
-        const char *cacheTypes[] = { "HTTP", "FTP" };
-        for (unsigned int i = 0 ; i < G_N_ELEMENTS (cacheTypes); i++)
-        {
-                nsCOMPtr<nsICacheSession> cacheSession;
-                cacheService->CreateSession(cacheTypes[i],
-                                            nsICache::STORE_ANYWHERE,
-                                            PR_TRUE,
-                                            getter_AddRefs(cacheSession));
-                NS_ENSURE_TRUE (cacheSession, NS_ERROR_FAILURE);
+	const char *cacheTypes[] = { "HTTP", "FTP" };
+	for (unsigned int i = 0 ; i < G_N_ELEMENTS (cacheTypes); i++)
+	{
+		nsCOMPtr<nsICacheSession> cacheSession;
+		cacheService->CreateSession(cacheTypes[i],
+					    nsICache::STORE_ANYWHERE,
+					    PR_TRUE,
+					    getter_AddRefs(cacheSession));
+		NS_ENSURE_TRUE (cacheSession, NS_ERROR_FAILURE);
 
-                cacheSession->SetDoomEntriesIfExpired(PR_FALSE);
+		cacheSession->SetDoomEntriesIfExpired(PR_FALSE);
 
-                nsCOMPtr<nsICacheEntryDescriptor> cacheEntryDescriptor;
+		nsCOMPtr<nsICacheEntryDescriptor> cacheEntryDescriptor;
 
-                rv = cacheSession->OpenCacheEntry(url,
-                                                  nsICache::ACCESS_READ,
+		rv = cacheSession->OpenCacheEntry(url,
+						  nsICache::ACCESS_READ,
 						  PR_FALSE,
-                                                  aCacheEntryDescriptor);
+						  aCacheEntryDescriptor);
 
-                if (NS_SUCCEEDED (rv)) return NS_OK;
-        }
+		if (NS_SUCCEEDED (rv)) return NS_OK;
+	}
 	*aCacheEntryDescriptor = NULL;
-        return NS_ERROR_FAILURE;
+	return NS_ERROR_FAILURE;
 }
 
 extern "C" EmbedPageProperties *
 mozilla_get_page_properties (EphyEmbed *embed)
 {
-	nsresult rv;
 	EmbedPageProperties *props;
 
 	nsCOMPtr<nsIWebBrowser> browser;
@@ -116,43 +115,44 @@ mozilla_get_page_properties (EphyEmbed *embed)
 					 getter_AddRefs (browser));
 	NS_ENSURE_TRUE (browser, NULL);
 
-	nsCOMPtr<nsIDOMWindow> dom_window;
-	browser->GetContentDOMWindow (getter_AddRefs (dom_window));
-	NS_ENSURE_TRUE (dom_window, NULL);
+	nsCOMPtr<nsIDOMWindow> domWindow;
+	browser->GetContentDOMWindow (getter_AddRefs (domWindow));
+	NS_ENSURE_TRUE (domWindow, NULL);
 
 	nsCOMPtr<nsIDOMDocument> doc;
-	dom_window->GetDocument (getter_AddRefs (doc));
+	domWindow->GetDocument (getter_AddRefs (doc));
 	NS_ENSURE_TRUE (doc, NULL);
 
-	nsCOMPtr<nsIDOMNSDocument> ns_doc = do_QueryInterface (doc);
-	NS_ENSURE_TRUE (ns_doc, NULL);
+	nsCOMPtr<nsIDOMNSDocument> domNSDoc = do_QueryInterface (doc);
+	NS_ENSURE_TRUE (domNSDoc, NULL);
 
 	nsEmbedString value;
 
 	props = g_new0 (EmbedPageProperties, 1);
 
-	rv = ns_doc->GetLastModified (value);
+	nsresult rv;
+	rv = domNSDoc->GetLastModified (value);
 	NS_ENSURE_SUCCESS (rv, props);
+
 	char *c_time = embed_string_to_c_string (value);
 	nsTime last_modified (c_time, PR_TRUE);
 	LL_DIV (props->modification_time,
 		NS_STATIC_CAST(PRTime, last_modified), PR_USEC_PER_SEC);
 	g_free (c_time);
 
-	rv = ns_doc->GetContentType (value);
+	rv = domNSDoc->GetContentType (value);
 	NS_ENSURE_SUCCESS (rv, props;);
 	props->content_type = embed_string_to_c_string (value);
 
-	rv = ns_doc->GetCharacterSet (value);
+	rv = domNSDoc->GetCharacterSet (value);
 	NS_ENSURE_SUCCESS (rv, props;);
 	props->encoding = embed_string_to_c_string (value);
 
 	/* Might not work on XUL pages */
-	nsCOMPtr<nsIDOMHTMLDocument> html_doc = do_QueryInterface (doc);
-	if (html_doc)
+	nsCOMPtr<nsIDOMHTMLDocument> domHtmlDoc = do_QueryInterface (doc);
+	if (domHtmlDoc)
 	{
-		rv = html_doc->GetReferrer (value);
-		NS_ENSURE_SUCCESS (rv, props);
+		domHtmlDoc->GetReferrer (value);
 		if (value.Length())
 		{
 			props->referring_url = embed_string_to_c_string (value);
@@ -168,12 +168,12 @@ mozilla_get_page_properties (EphyEmbed *embed)
 	}
 
 	/* Get the URL so we can look in the cache for this page */
-	nsCOMPtr<nsIDOMLocation> dom_location;
-	rv = ns_doc->GetLocation (getter_AddRefs (dom_location));
-	NS_ENSURE_SUCCESS (rv, props);
+	nsCOMPtr<nsIDOMLocation> domLocation;
+	domNSDoc->GetLocation (getter_AddRefs (domLocation));
+	NS_ENSURE_TRUE (domLocation, props);
 
 	nsEmbedString url;
-	dom_location->ToString (url);
+	domLocation->ToString (url);
 
 	nsCOMPtr<nsICacheEntryDescriptor> cacheEntryDescriptor;
 	char *c_url = embed_string_to_c_string (url);
@@ -182,39 +182,40 @@ mozilla_get_page_properties (EphyEmbed *embed)
 	g_free (c_url);
 	NS_ENSURE_SUCCESS (rv, props);
 
-        if (cacheEntryDescriptor)
-        {
-                PRUint32 expiry = 0, dataSize = 0;
-		char *source;
+	if (cacheEntryDescriptor)
+	{
+		PRUint32 expiry = 0, dataSize = 0;
+		char *source = nsnull;
 
-                cacheEntryDescriptor->GetExpirationTime (&expiry);
-                cacheEntryDescriptor->GetDataSize (&dataSize);
-                cacheEntryDescriptor->GetDeviceID (&source);
+		cacheEntryDescriptor->GetExpirationTime (&expiry);
+		cacheEntryDescriptor->GetDataSize (&dataSize);
+		cacheEntryDescriptor->GetDeviceID (&source);
+		NS_ENSURE_TRUE (source, props);
 
-                props->expiration_time = expiry;
-                props->size = dataSize;
+		props->expiration_time = expiry;
+		props->size = dataSize;
 
 		if (strcmp (source, "disk") == 0)
-                {
-                        props->page_source = EMBED_SOURCE_DISK_CACHE;
-                }
+		{
+			props->page_source = EMBED_SOURCE_DISK_CACHE;
+		}
 		else if (strcmp (source, "memory") == 0)
-                {
-                        props->page_source = EMBED_SOURCE_MEMORY_CACHE;
-                }
-                else
-                {
-                        props->page_source = EMBED_SOURCE_UNKNOWN_CACHE;
-                }
+		{
+			props->page_source = EMBED_SOURCE_MEMORY_CACHE;
+		}
+		else
+		{
+			props->page_source = EMBED_SOURCE_UNKNOWN_CACHE;
+		}
 
 		nsMemory::Free (source);
-        }
-        else
-        {
-                props->page_source = EMBED_SOURCE_NOT_CACHED;
-                props->size = -1;
-                props->expiration_time = 0;
-        }
+	}
+	else
+	{
+		props->page_source = EMBED_SOURCE_NOT_CACHED;
+		props->size = -1;
+		props->expiration_time = 0;
+	}
 
 	return props;
 }
@@ -232,7 +233,7 @@ extern "C" GList *
 mozilla_get_images (EphyEmbed *embed)
 {
 	nsresult rv;
-        GHashTable *hash = g_hash_table_new(g_str_hash, g_str_equal);
+	GHashTable *hash = g_hash_table_new(g_str_hash, g_str_equal);
 	GList *ret = NULL;
 
 	nsCOMPtr<nsIWebBrowser> browser;
@@ -248,59 +249,59 @@ mozilla_get_images (EphyEmbed *embed)
 	dom_window->GetDocument (getter_AddRefs (doc));
 	NS_ENSURE_TRUE (doc, NULL);
 
-        nsCOMPtr<nsIDOMHTMLDocument> htmlDoc = do_QueryInterface(doc);
-        NS_ENSURE_TRUE (htmlDoc, NULL);
+	nsCOMPtr<nsIDOMHTMLDocument> htmlDoc = do_QueryInterface(doc);
+	NS_ENSURE_TRUE (htmlDoc, NULL);
 
-        nsCOMPtr<nsIDOMHTMLCollection> nodes;
-        htmlDoc->GetImages(getter_AddRefs(nodes));
+	nsCOMPtr<nsIDOMHTMLCollection> nodes;
+	htmlDoc->GetImages(getter_AddRefs(nodes));
 
-        PRUint32 count(0);
-        nodes->GetLength(&count);
-        for (PRUint32 i = 0; i < count; i++)
-        {
-                nsCOMPtr<nsIDOMNode> node;
-                rv = nodes->Item(i, getter_AddRefs(node));
-                if (NS_FAILED(rv) || !node) continue;
+	PRUint32 count(0);
+	nodes->GetLength(&count);
+	for (PRUint32 i = 0; i < count; i++)
+	{
+		nsCOMPtr<nsIDOMNode> node;
+		rv = nodes->Item(i, getter_AddRefs(node));
+		if (NS_FAILED(rv) || !node) continue;
 
-                nsCOMPtr<nsIDOMHTMLImageElement> element;
-                element = do_QueryInterface(node, &rv);
-                if (NS_FAILED(rv) || !element) continue;
+		nsCOMPtr<nsIDOMHTMLImageElement> element;
+		element = do_QueryInterface(node, &rv);
+		if (NS_FAILED(rv) || !element) continue;
 
-                EmbedPageImage *image = g_new0(EmbedPageImage, 1);
+		EmbedPageImage *image = g_new0(EmbedPageImage, 1);
 
-                nsEmbedString tmp;
-                rv = element->GetSrc(tmp);
-                if (NS_SUCCEEDED(rv))
-                {
+		nsEmbedString tmp;
+		rv = element->GetSrc(tmp);
+		if (NS_SUCCEEDED(rv))
+		{
 			char *c = embed_string_to_c_string (tmp);
-                        if (g_hash_table_lookup(hash, c))
-                        {
-                                g_free (image);
+			if (g_hash_table_lookup(hash, c))
+			{
+				g_free (image);
 				g_free (c);
-                                continue;
-                        }
-                        image->url = c;
-                        g_hash_table_insert(hash, image->url,
-                                            GINT_TO_POINTER(TRUE));
-                }
+				continue;
+			}
+			image->url = c;
+			g_hash_table_insert(hash, image->url,
+					    GINT_TO_POINTER(TRUE));
+		}
 
-                rv = element->GetAlt(tmp);
-                if (NS_SUCCEEDED(rv))
-                {
+		rv = element->GetAlt(tmp);
+		if (NS_SUCCEEDED(rv))
+		{
 			image->alt = embed_string_to_c_string (tmp);
-                }
-                rv = element->GetTitle(tmp);
-                if (NS_SUCCEEDED(rv))
-                {
-                        image->title = embed_string_to_c_string (tmp);
-                }
-                rv = element->GetWidth(&(image->width));
-                rv = element->GetHeight(&(image->height));
+		}
+		rv = element->GetTitle(tmp);
+		if (NS_SUCCEEDED(rv))
+		{
+			image->title = embed_string_to_c_string (tmp);
+		}
+		rv = element->GetWidth(&(image->width));
+		rv = element->GetHeight(&(image->height));
 
-                ret = g_list_append(ret, image);
-        }
+		ret = g_list_append(ret, image);
+	}
 
-        g_hash_table_destroy (hash);
+	g_hash_table_destroy (hash);
 
-        return ret;
+	return ret;
 }
