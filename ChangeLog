@@ -1,3 +1,10 @@
+2004-09-28  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/sidebar/ephy-sidebar-embed.c: (show_context_menu):
+	* extensions/sidebar/epiphany-sidebar-ui.xml:
+
+	Bring in line with 1.4.x context menus, which have no EmailLinkPopup.
+
 2004-09-27  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/sidebar/.cvsignore:
