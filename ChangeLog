@@ -1,3 +1,9 @@
+2003-11-05  Christian Persch  <chpe@cvs.gnome.org>
+
+	* include/ephy-plugins-i18n.h:
+
+	Removed. We can now use glib's gi18n-lib.h header.
+
 2003-10-29  Christian Persch  <chpe@cvs.gnome.org>
 
 	* MAINTAINERS:
