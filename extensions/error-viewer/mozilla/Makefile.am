@@ -26,11 +26,13 @@ endif
 noinst_LTLIBRARIES = liberrorviewermozilla.la
 
 liberrorviewermozilla_la_SOURCES = \
-	ErrorViewerConsoleListener.cpp	\
-	ErrorViewerConsoleListener.h	\
-	register-listener.cpp	\
-	register-listener.h
-
-if HAVE_OPENSP
-liberrorviewermozilla_la_SOURCES += get-doctype.cpp get-doctype.h
-endif
+	ErrorViewerConsoleListener.cpp		\
+	ErrorViewerConsoleListener.h		\
+	ErrorViewerURICheckerObserver.cpp	\
+	ErrorViewerURICheckerObserver.h		\
+	register-listener.cpp			\
+	register-listener.h			\
+	mozilla-helpers.cpp			\
+	mozilla-helpers.h			\
+	mozilla-link-checker.cpp		\
+	mozilla-link-checker.h

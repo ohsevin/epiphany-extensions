@@ -62,4 +62,6 @@ mozilla_unregister_error_listener (void *listener)
 	g_return_if_fail (NS_SUCCEEDED (rv));
 
 	consoleService->UnregisterListener ((ErrorViewerConsoleListener *) listener);
+
+	/* FIXME: Are we leaking the listener? */
 }

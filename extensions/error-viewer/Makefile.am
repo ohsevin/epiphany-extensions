@@ -31,6 +31,8 @@ liberrorviewerextension_la_SOURCES = \
 	ephy-error-viewer-extension.h	\
 	error-viewer.c			\
 	error-viewer.h			\
+	link-checker.c			\
+	link-checker.h			\
 	extension.c
 
 if HAVE_OPENSP

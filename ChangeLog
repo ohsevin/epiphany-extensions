@@ -1,3 +1,60 @@
+2004-02-22  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/error-viewer/Makefile.am:
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	(ephy_error_viewer_extension_init),
+	(ephy_error_viewer_extension_finalize),
+	(ephy_error_viewer_extension_check_links), (update_actions),
+	(load_status_cb), (switch_page_cb), (impl_attach_window):
+	* extensions/error-viewer/link-checker.c: (link_checker_get_type),
+	(link_checker_register_type), (free_link_checker_append_cb_data),
+	(link_checker_append_internal), (link_checker_append),
+	(link_checker_new), (link_checker_class_init),
+	(link_checker_class_finalize), (link_checker_init),
+	(link_checker_finalize), (link_checker_check),
+	(link_checker_update_progress):
+	* extensions/error-viewer/link-checker.h:
+	* extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp
+	:
+	* extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.h:
+	* extensions/error-viewer/mozilla/Makefile.am:
+	* extensions/error-viewer/mozilla/mozilla-link-checker.cpp:
+	* extensions/error-viewer/mozilla/mozilla-link-checker.h:
+	* extensions/error-viewer/extension.c: (register_module):
+
+	- Added a Link Checker. It doesn't give enough feedback, but it does
+	  work quite well.
+	- Changed "_Validate" to "Check _HTML" to conform with "Check _Links"
+
+	* extensions/error-viewer/error-viewer.c: (error_viewer_init),
+	(update_cursor), (error_viewer_use), (error_viewer_unuse):
+
+	Keep a counter of how many "actions" are running (i.e., an SGML
+	validation thread). When it's more than 0, display an hourglass.
+
+	* extensions/error-viewer/mozilla/get-doctype.cpp:
+	* extensions/error-viewer/mozilla/get-doctype.h:
+	* extensions/error-viewer/mozilla/mozilla-helpers.cpp:
+	* extensions/error-viewer/mozilla/mozilla-helpers.h:
+
+	Renamed files.
+
+	* extensions/error-viewer/mozilla/register-listener.cpp:
+
+	Comment about possible leak.
+
+	* extensions/error-viewer/sgml-validator.c:
+	(sgml_validator_register_type), (sgml_validator_class_init),
+	(sgml_validator_init), (sgml_validator_finalize), (opensp_thread),
+	(sgml_validator_validate):
+
+	- Put in some LOG statements
+	- Display a busy cursor while validating
+
+	* po/POTFILES.in:
+
+	Mark file for translation.
+
 2004-02-21  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:

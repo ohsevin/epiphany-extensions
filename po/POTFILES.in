@@ -4,6 +4,7 @@ extensions/certificates/ephy-certificates-extension.c
 extensions/error-viewer/ephy-error-viewer-extension.c
 extensions/error-viewer/error-viewer.glade
 extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp
+extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp
 extensions/error-viewer/opensp/validate.cpp
 extensions/error-viewer/sgml-validator.c
 extensions/popup-blocker/ephy-popup-blocker-extension.c

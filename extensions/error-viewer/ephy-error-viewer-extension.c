@@ -29,7 +29,7 @@
 #include "error-viewer.h"
 #include "ephy-debug.h"
 
-#include "mozilla/get-doctype.h"
+#include "mozilla/mozilla-helpers.h"
 
 #include <epiphany/ephy-extension.h>
 #include <epiphany/ephy-window.h>
@@ -47,6 +47,8 @@
 #include "sgml-validator.h"
 #endif /* HAVE_OPENSP */
 
+#include "link-checker.h"
+
 #define EPHY_ERROR_VIEWER_EXTENSION_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_ERROR_VIEWER_EXTENSION, EphyErrorViewerExtensionPrivate))
 
 struct EphyErrorViewerExtensionPrivate
@@ -55,6 +57,7 @@ struct EphyErrorViewerExtensionPrivate
 #if HAVE_OPENSP
 	SgmlValidator *validator;
 #endif /* HAVE_OPENSP */
+	LinkChecker *link_checker;
 	void *listener;
 };
 
@@ -74,17 +77,25 @@ static void ephy_error_viewer_extension_show_viewer	(GtkAction *action,
 static void ephy_error_viewer_extension_validate	(GtkAction *action,
 							 ErrorViewerCBData *data);
 #endif /* HAVE_OPENSP */
+static void ephy_error_viewer_extension_check_links	(GtkAction *action,
+							 ErrorViewerCBData *data);
 
 static GtkActionEntry action_entries [] =
 {
 #ifdef HAVE_OPENSP
 	{ "SgmlValidate",
 	  NULL,
-	  N_("_Validate"),
+	  N_("Check _HTML"),
 	  NULL, /* shortcut key */
 	  N_("Display HTML errors in the Error Viewer dialog"),
 	  G_CALLBACK (ephy_error_viewer_extension_validate) },
 #endif /* HAVE_OPENSP */
+	{ "CheckLinks",
+	  NULL,
+	  N_("Check _Links"),
+	  NULL, /* shortcut key */
+	  N_("Display invalid hyperlinks in the Error Viewer dialog"),
+	  G_CALLBACK (ephy_error_viewer_extension_check_links) },
 	{ "ErrorViewer",
 	  GTK_STOCK_DIALOG_ERROR,
 	  N_("_Error Viewer"),
@@ -151,11 +162,16 @@ ephy_error_viewer_extension_init (EphyErrorViewerExtension *extension)
 
 	extension->priv->dialog = error_viewer_new ();
 
+	extension->priv->link_checker = link_checker_new
+		(extension->priv->dialog);
+
 #ifdef HAVE_OPENSP
-	extension->priv->validator = sgml_validator_new (extension->priv->dialog);
+	extension->priv->validator = sgml_validator_new
+		(extension->priv->dialog);
 #endif /* HAVE_OPENSP */
 
-	extension->priv->listener = mozilla_register_error_listener (G_OBJECT (extension->priv->dialog));
+	extension->priv->listener = mozilla_register_error_listener
+		(G_OBJECT (extension->priv->dialog));
 }
 
 static void
@@ -171,6 +187,8 @@ ephy_error_viewer_extension_finalize (GObject *object)
 #ifdef HAVE_OPENSP
 	g_object_unref (G_OBJECT (extension->priv->validator));
 #endif /* HAVE_OPENSP */
+
+	g_object_unref (G_OBJECT (extension->priv->link_checker));
 
 	g_object_unref (G_OBJECT (extension->priv->dialog));
 
@@ -208,6 +226,22 @@ ephy_error_viewer_extension_validate (GtkAction *action,
 #endif /* HAVE_OPENSP */
 
 static void
+ephy_error_viewer_extension_check_links	(GtkAction *action,
+					 ErrorViewerCBData *data)
+{
+	ErrorViewer *dialog;
+	EphyEmbed *embed;
+
+	dialog = data->extension->priv->dialog;
+
+	embed = ephy_window_get_active_embed (data->window);
+
+	ephy_dialog_show (EPHY_DIALOG (dialog));
+
+	link_checker_check (data->extension->priv->link_checker, embed);
+}
+
+static void
 ephy_error_viewer_extension_show_viewer (GtkAction *action,
 					 ErrorViewerCBData *data)
 {
@@ -225,11 +259,12 @@ free_error_viewer_cb_data (gpointer data)
 
 #ifdef HAVE_OPENSP
 static void
-update_sgml_validator_action (EphyWindow *window)
+update_actions (EphyWindow *window)
 {
 	EphyTab *tab;
 	EphyEmbed *embed;
-	GtkAction *action;
+	GtkAction *action1;
+	GtkAction *action2; /* You can tell I didn't want to think... */
 	char *content_type;
 	GValue sensitive = { 0, };
 
@@ -238,15 +273,19 @@ update_sgml_validator_action (EphyWindow *window)
 	g_value_init (&sensitive, G_TYPE_BOOLEAN);
 	g_value_set_boolean (&sensitive, FALSE);
 
-	action = gtk_ui_manager_get_action (GTK_UI_MANAGER (window->ui_merge),
-					    "/menubar/ToolsMenu/SgmlValidate");
+	action1 = gtk_ui_manager_get_action (GTK_UI_MANAGER (window->ui_merge),
+					     "/menubar/ToolsMenu/SgmlValidate");
+	action2 = gtk_ui_manager_get_action (GTK_UI_MANAGER (window->ui_merge),
+					     "/menubar/ToolsMenu/CheckLinks");
 
 	tab = ephy_window_get_active_tab (window);
 
 	/* Not finished loading? */
 	if (ephy_tab_get_load_status (tab) == TRUE)
 	{
-		g_object_set_property (G_OBJECT (action),
+		g_object_set_property (G_OBJECT (action1),
+				       "sensitive", &sensitive);
+		g_object_set_property (G_OBJECT (action2),
 				       "sensitive", &sensitive);
 		g_value_unset (&sensitive);
 		return;
@@ -266,7 +305,8 @@ update_sgml_validator_action (EphyWindow *window)
 
 	g_free (content_type);
 
-	g_object_set_property (G_OBJECT (action), "sensitive", &sensitive);
+	g_object_set_property (G_OBJECT (action1), "sensitive", &sensitive);
+	g_object_set_property (G_OBJECT (action2), "sensitive", &sensitive);
 
 	g_value_unset (&sensitive);
 }
@@ -276,7 +316,7 @@ load_status_cb (EphyTab *tab,
 		GParamSpec *pspec,
 		EphyWindow *window)
 {
-	update_sgml_validator_action (window);
+	update_actions (window);
 }
 
 static void
@@ -288,7 +328,7 @@ switch_page_cb (GtkNotebook *notebook,
 	g_return_if_fail (EPHY_IS_WINDOW (window));
 	if (GTK_WIDGET_REALIZED (window) == FALSE) return; /* on startup */
 
-	update_sgml_validator_action (window);
+	update_actions (window);
 }
 
 static void
@@ -355,6 +395,9 @@ impl_attach_window (EphyExtension *extension,
 	gtk_ui_manager_add_ui (manager, merge_id, "/menubar/ToolsMenu",
 			       "ErrorViewerSep", NULL,
 			       GTK_UI_MANAGER_SEPARATOR, FALSE);
+	gtk_ui_manager_add_ui (manager, merge_id, "/menubar/ToolsMenu",
+			       "CheckLinks", "CheckLinks",
+			       GTK_UI_MANAGER_MENUITEM, FALSE);
 #ifdef HAVE_OPENSP
 	gtk_ui_manager_add_ui (manager, merge_id, "/menubar/ToolsMenu",
 			       "SgmlValidate", "SgmlValidate",

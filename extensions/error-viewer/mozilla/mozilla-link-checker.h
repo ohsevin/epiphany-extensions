@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2004 Adam Hooper
+ *  Copyright (C) 2000 Marco Pesenti Gritti
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -14,26 +14,26 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
- *
- *  $Id$
  */
 
-#ifndef MOZ_FIND_DOCTYPE_H
-#define MOZ_FIND_DOCTYPE_H
+#ifndef ERROR_VIEWER_MOZILLA_LINK_CHECKER_H
+#define ERROR_VIEWER_MOZILLA_LINK_CHECKER_H
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
 
-#include <glib.h>
-
+#include "link-checker.h"
 #include <epiphany/ephy-embed.h>
 
 G_BEGIN_DECLS
 
-char	*mozilla_get_doctype		(EphyEmbed *embed);
+void	mozilla_register_link_checker_component		(void);
 
-char	*mozilla_get_content_type	(EphyEmbed *embed);
+void	mozilla_unregister_link_checker_component	(void);
+
+void	mozilla_check_links				(LinkChecker *checker,
+							 EphyEmbed *embed);
 
 G_END_DECLS
 

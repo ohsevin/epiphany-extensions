@@ -39,6 +39,7 @@ struct ErrorViewerPrivate
 
 	GtkWidget *window;
 	GtkWidget *treeview;
+	gint num_active;
 };
 
 enum
@@ -239,6 +240,8 @@ error_viewer_init (ErrorViewer *dialog)
 {		
 	dialog->priv = ERROR_VIEWER_GET_PRIVATE (dialog);
 
+	dialog->priv->num_active = 0;
+
 	ephy_dialog_construct (EPHY_DIALOG (dialog),
 			       properties,
 			       SHARE_DIR "/glade/error-viewer.glade",
@@ -270,4 +273,33 @@ error_viewer_close_cb (GtkWidget *button,
 		       ErrorViewer *dialog)
 {
 	gtk_widget_hide (dialog->priv->window);
+}
+
+static void
+update_cursor (ErrorViewer *dialog)
+{
+	if (dialog->priv->num_active > 0)
+	{
+		GdkCursor *cursor;
+
+		cursor = gdk_cursor_new (GDK_WATCH);
+		gdk_window_set_cursor (dialog->priv->window->window, cursor);
+		gdk_cursor_unref (cursor);
+	}
+	else
+	{
+		gdk_window_set_cursor (dialog->priv->window->window, NULL);
+	}
+}
+
+void error_viewer_use (ErrorViewer *dialog)
+{
+	dialog->priv->num_active++;
+	update_cursor (dialog);
+}
+
+void error_viewer_unuse (ErrorViewer *dialog)
+{
+	dialog->priv->num_active--;
+	update_cursor (dialog);
 }

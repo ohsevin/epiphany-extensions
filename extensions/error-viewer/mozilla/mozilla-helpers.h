@@ -1,6 +1,4 @@
 /*
- *  Copyright (C) 2003 Marco Pesenti Gritti
- *  Copyright (C) 2003 Christian Persch
  *  Copyright (C) 2004 Adam Hooper
  *
  *  This program is free software; you can redistribute it and/or modify
@@ -20,35 +18,27 @@
  *  $Id$
  */
 
+#ifndef ERROR_VIEWER_MOZILLA_HELPERS_H
+#define ERROR_VIEWER_MOZILLA_HELPERS_H
+
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
 
-#include "ephy-error-viewer-extension.h"
-#include "error-viewer.h"
-#include "ephy-debug.h"
+#include <glib.h>
 
-#include <gmodule.h>
-#include <glib/gi18n-lib.h>
+#include <epiphany/ephy-embed.h>
 
-G_MODULE_EXPORT GType
-register_module (GTypeModule *module)
-{
-	LOG ("Registering EphyErrorViewerExtension")
+G_BEGIN_DECLS
 
-#ifdef ENABLE_NLS
-	/* Initialize the i18n stuff */
-	bindtextdomain (GETTEXT_PACKAGE, EPHY_EXTENSIONS_LOCALEDIR);
-	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
-#endif /* ENABLE_NLS */
+char		*mozilla_get_doctype		(EphyEmbed *embed);
 
-	link_checker_register_type (module);
+char		*mozilla_get_content_type	(EphyEmbed *embed);
 
-#ifdef HAVE_OPENSP
-	sgml_validator_register_type (module);
-#endif /* HAVE_OPENSP */
+GSList		*mozilla_get_links		(EphyEmbed *embed);
 
-	error_viewer_register_type (module);
+gboolean	mozilla_check_url		(EphyEmbed *embed, char *url);
 
-	return ephy_error_viewer_extension_register_type (module);
-}
+G_END_DECLS
+
+#endif

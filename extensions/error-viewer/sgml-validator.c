@@ -30,7 +30,7 @@
 #include "ephy-file-helpers.h"
 #include "ephy-debug.h"
 
-#include "get-doctype.h"
+#include "mozilla-helpers.h"
 
 #include <unistd.h>
 
@@ -96,10 +96,6 @@ sgml_validator_register_type (GTypeModule *module)
 					    "SgmlValidator",
 					    &our_info, 0);
 
-	g_setenv ("SP_CHARSET_FIXED", "YES", TRUE);
-	g_setenv ("SP_SYSTEM_CHARSET", "utf-8", TRUE);
-	g_setenv ("SP_ENCODING", "utf-8", TRUE);
-
 	return type;
 }
 
@@ -127,11 +123,17 @@ sgml_validator_class_init (SgmlValidatorClass *klass)
 	object_class->finalize = sgml_validator_finalize;
 
 	g_type_class_add_private (object_class, sizeof (SgmlValidatorPrivate));
+
+	g_setenv ("SP_CHARSET_FIXED", "YES", TRUE);
+	g_setenv ("SP_SYSTEM_CHARSET", "utf-8", TRUE);
+	g_setenv ("SP_ENCODING", "utf-8", TRUE);
 }
 
 static void
 sgml_validator_init (SgmlValidator *validator)
 {
+	LOG ("SgmlValidator initializing %x", validator)
+
 	validator->priv = SGML_VALIDATOR_GET_PRIVATE (validator);
 }
 
@@ -139,6 +141,8 @@ static void
 sgml_validator_finalize (GObject *object)
 {
 	SgmlValidatorPrivate *priv = SGML_VALIDATOR_GET_PRIVATE (SGML_VALIDATOR (object));
+
+	LOG ("SgmlValidator finalizing %x", object)
 
 	g_object_unref (priv->error_viewer);
 
@@ -167,6 +171,8 @@ opensp_thread (gpointer data)
 	sgml_validator_append (osp_data->validator, ERROR_VIEWER_INFO, summary);
 
 	g_free (summary);
+
+	error_viewer_unuse (osp_data->validator->priv->error_viewer);
 
 	unlink (osp_data->dest);
 	g_free (osp_data->dest);
@@ -376,6 +382,8 @@ sgml_validator_validate (SgmlValidator *validator,
 	}
 
 	g_free (doctype);
+
+	error_viewer_use (validator->priv->error_viewer);
 
 	/* Okay, save to a temp file and validate. */
 	static_tmp_dir = ephy_file_tmp_dir ();
