@@ -12,18 +12,12 @@ def insert_template_in_configure_ac(name, is_mozilla = False):
 	new = tempfile.TemporaryFile()
 
 	in_extensions = False
-	in_conditionals = False
-	done_conditionals = False
 	in_config_files = False
 	done_config_files = False
 
-	re_extensions = re.compile('all_extensions="(?P<extensions>.*)"')
-
-	re_conditional = re.compile('AM_CONDITIONAL\(ENABLE_.*_EXTENSION')
+	re_extensions = re.compile('ALL_EXTENSIONS="(?P<extensions>.*)"')
 
 	re_config_files = re.compile('AC_CONFIG_FILES\(\[')
-
-	conditional_line = 'AM_CONDITIONAL(ENABLE_%s_EXTENSION, echo "$extensions" | egrep \'(^|,)%s($|,)\' > /dev/null)\n' % (name.upper().replace('-', '_'), name)
 
 	config_files_line = 'extensions/%s/Makefile\n' % name
 	config_files_line2 = 'extensions/%s/mozilla/Makefile\n' % name
@@ -33,7 +27,7 @@ def insert_template_in_configure_ac(name, is_mozilla = False):
 
 		match = re_extensions.match(line)
 		if match:
-			extensions = match.group('extensions').split(',')
+			extensions = match.group('extensions').split(' ')
 			if name in extensions:
 				# This occurs if we use --force and the
 				# extension has already been inserted.
@@ -41,20 +35,8 @@ def insert_template_in_configure_ac(name, is_mozilla = False):
 				return
 			extensions.append(name)
 			extensions.sort()
-			new.write('all_extensions="%s"\n' % ','.join(extensions))
+			new.write('ALL_EXTENSIONS="%s"\n' % ' '.join(extensions))
 			line_written = True
-
-		if not done_conditionals:
-			if re_conditional.match(line):
-				in_conditionals = True
-
-		if in_conditionals:
-			if (len(line.strip()) == 0 and not done_conditionals) \
-					or line > conditional_line:
-
-				new.write(conditional_line)
-				done_conditionals = True
-				in_conditionals = False
 
 		if re_config_files.match(line):
 			in_config_files = True
@@ -71,64 +53,6 @@ def insert_template_in_configure_ac(name, is_mozilla = False):
 			new.write(line)
 
 	old.close()
-
-	new.seek(0)
-
-	open(path, 'w').write(new.read())
-
-def insert_template_in_makefile_am(name):
-	"""Edits extensions/Makefile.am, inserting the name extension."""
-	import os.path
-	import re
-	import tempfile
-
-	path = os.path.join(os.path.dirname(__file__), '..', 'extensions',
-			    'Makefile.am')
-
-	old = open(path)
-	new = tempfile.TemporaryFile()
-
-	enable_line = 'if ENABLE_%s_EXTENSION' % name.upper().replace('-', '_')
-
-	if_regex = re.compile('if ENABLE_.*_EXTENSION')
-	dist_regex = re.compile('DIST_SUBDIRS = (?P<extensions>.*)')
-
-	done = False
-
-	for line in old:
-		if not done:
-			match = if_regex.match(line)
-			if match:
-				if line.strip() == enable_line:
-					# This occurs if we're on --force and
-					# the extension is already here
-					return
-
-				if line > enable_line:
-					new.writelines((enable_line + '\n',
-						        'SUBDIRS += %s\n'
-							% name,
-						        'endif\n',
-						        '\n'))
-					done = True
-
-		match = dist_regex.match(line)
-		if match:
-			if not done:
-				new.writelines((enable_line + '\n',
-					        'SUBDIRS += %s\n' % name,
-					        'endif\n',
-					        '\n'))
-				done = True
-
-			extensions = match.group('extensions').strip().split(' ')
-			if name not in extensions:
-				extensions.append(name)
-			extensions.sort()
-			
-			new.write('DIST_SUBDIRS = %s\n' % ' '.join(extensions))
-		else:
-			new.write(line)
 
 	new.seek(0)
 
@@ -204,7 +128,6 @@ def copy_sample_template(new_name):
 	copy_template_files (paths, replacements)
 
 	insert_template_in_configure_ac(new_name)
-	insert_template_in_makefile_am(new_name)
 
 def copy_sample_mozilla_template(new_name):
 	"""Copies the extension in extensions/sample-mozilla to new_name.
@@ -249,7 +172,6 @@ def copy_sample_mozilla_template(new_name):
 	copy_template_files (paths, replacements)
 
 	insert_template_in_configure_ac(new_name, True)
-	insert_template_in_makefile_am(new_name)
 
 if __name__ == '__main__':
 	from optparse import OptionParser
