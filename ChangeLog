@@ -1,3 +1,17 @@
+2004-06-14  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:
+	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.h:
+	* extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:
+	* extensions/error-viewer/mozilla/mozilla-helpers.cpp:
+
+	Port error viewer to embed strings. Fixes bug #144237.
+
+	* include/EphyUtils.h:
+	* include/Makefile.am:
+
+	Include EphyUtils from epiphany.
+
 2004-06-10  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:

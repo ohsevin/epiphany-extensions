@@ -26,39 +26,45 @@
 #include "error-viewer.h"
 
 #include "ErrorViewerConsoleListener.h"
+
+#include <nsEmbedString.h>
 #include <nsCOMPtr.h>
+#include <nsMemory.h>
+
 #include <xpconnect/nsIScriptError.h>
-#include <nsString.h>
 
 #include <glib/gi18n-lib.h>
 
 #include <string.h>
 
-/* Implementation file */
+#include "ephy-debug.h"
+
 NS_IMPL_ISUPPORTS1(ErrorViewerConsoleListener, nsIConsoleListener)
 
 ErrorViewerConsoleListener::ErrorViewerConsoleListener()
 {
-  /* member initializers and constructor code */
 }
 
 ErrorViewerConsoleListener::~ErrorViewerConsoleListener()
 {
-  /* destructor code */
+	LOG ("ErrorViewerConsoleListener dtor %p", this)
 }
 
-static char *
-get_message_from_error (nsIScriptError *ns_error)
+nsresult
+ErrorViewerConsoleListener::GetMessageFromError (nsIScriptError *aError,
+						 char **aMessage)
 {
-	char *ret;
-	PRUnichar* message;
-	char* category;
-	PRUnichar* source_name;
-	PRUint32 line_number;
+	NS_ENSURE_ARG_POINTER (aMessage);
 
-	ns_error->GetMessage (&message);
+	nsresult rv;
+	PRUnichar *message = nsnull;
+	rv = aError->GetMessage (&message);
+	NS_ENSURE_TRUE (NS_SUCCEEDED (rv) && message, NS_ERROR_FAILURE);
 
-	ns_error->GetCategory (&category);
+	char *category = nsnull;
+	rv = aError->GetCategory (&category);
+	NS_ENSURE_TRUE (NS_SUCCEEDED (rv) && category, NS_ERROR_FAILURE);
+
 	/*
 	 * No docs on category, but some are listed in:
 	 * http://lxr.mozilla.org/seamonkey/source/dom/src/base/nsJSEnvironment.cpp#208
@@ -71,85 +77,106 @@ get_message_from_error (nsIScriptError *ns_error)
 	 */
 	if (strstr (category, "javascript") == NULL)
 	{
+		nsEmbedCString cMessage;
+		NS_UTF16ToCString (nsEmbedString (message),
+				   NS_CSTRING_ENCODING_UTF8, cMessage);
+
 		/* Don't bother looking for source lines -- they're not there */
-		ret = g_strdup_printf (_("Error:\n%s"),
-				       NS_ConvertUCS2toUTF8(message).get());
+		*aMessage = g_strdup_printf (_("Error:\n%s"), cMessage.get());
 
 		nsMemory::Free (message);
 		nsMemory::Free (category);
 
-		return ret;
+		return NS_OK;
 	}
 
-	ns_error->GetLineNumber (&line_number);
+	PRUint32 lineNumber;
+	rv = aError->GetLineNumber (&lineNumber);
+	NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
 
-	ns_error->GetSourceName (&source_name);
-	g_return_val_if_fail (source_name != NULL, NS_OK);
+	PRUnichar *sourceName = nsnull;
+	rv = aError->GetSourceName (&sourceName);
+	NS_ENSURE_TRUE (NS_SUCCEEDED (rv) && sourceName, NS_ERROR_FAILURE);
 
-	ret = g_strdup_printf (
-		_("Javascript error in %s on line %d:\n%s"),
-		NS_ConvertUCS2toUTF8(source_name).get(),
-		line_number,
-		NS_ConvertUCS2toUTF8(message).get());
+	nsEmbedCString cMessage;
+	NS_UTF16ToCString (nsEmbedString (message),
+			   NS_CSTRING_ENCODING_UTF8, cMessage);
+
+	nsEmbedCString cSourceName;
+	NS_UTF16ToCString (nsEmbedString (sourceName),
+			   NS_CSTRING_ENCODING_UTF8, cSourceName);
+
+	*aMessage = g_strdup_printf (
+			_("Javascript error in %s on line %d:\n%s"),
+			cSourceName.get(), lineNumber, cMessage.get());
 
 	nsMemory::Free (message);
-	nsMemory::Free (source_name);
+	nsMemory::Free (sourceName);
 	nsMemory::Free (category);
 
-	return ret;
+	return NS_OK;
 }
 
 /* void observe (in nsIConsoleMessage aMessage); */
 NS_IMETHODIMP ErrorViewerConsoleListener::Observe(nsIConsoleMessage *aMessage)
 {
 	nsresult rv;
-	PRUint32 flags;
-	ErrorViewerErrorType error_type = ERROR_VIEWER_ERROR;
 	ErrorViewer *dialog;
-	char *msg;
+
+	NS_ENSURE_ARG (aMessage);
 
 	g_return_val_if_fail (IS_ERROR_VIEWER (this->mDialog),
 					       NS_ERROR_FAILURE);
 
 	dialog = ERROR_VIEWER (this->mDialog);
 
-	nsCOMPtr<nsIScriptError> ns_error = do_QueryInterface (aMessage, &rv);
+	nsCOMPtr<nsIScriptError> error = do_QueryInterface (aMessage, &rv);
 	/* Mozilla at this point will *always* give a nsIScriptError */
-	if (NS_FAILED (rv) || aMessage == NULL)
+	if (NS_FAILED (rv) || !error)
 	{
-		PRUnichar* ns_message;
+		PRUnichar* message;
 
 		g_warning ("Could not get nsIScriptError");
 
-		aMessage->GetMessage (&ns_message);
+		rv = aMessage->GetMessage (&message);
+		NS_ENSURE_TRUE (NS_SUCCEEDED (rv) && message, NS_ERROR_FAILURE);
 
-		error_viewer_append (dialog, error_type,
-				     NS_ConvertUCS2toUTF8(ns_message).get());
+		nsEmbedCString cMessage;
+		NS_UTF16ToCString (nsEmbedString (message),
+				   NS_CSTRING_ENCODING_UTF8, cMessage);
 
-		nsMemory::Free (ns_message);
+		error_viewer_append (dialog, ERROR_VIEWER_ERROR, cMessage.get());
+
+		nsMemory::Free (message);
 
 		return NS_OK;
 	}
 
-	ns_error->GetFlags (&flags);
+	PRUint32 flags;
+	rv = error->GetFlags (&flags);
+	NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
+
+	ErrorViewerErrorType errorType;
 	if (flags == nsIScriptError::errorFlag ||
 	    flags == nsIScriptError::exceptionFlag ||
 	    flags == nsIScriptError::strictFlag)
 	{
-		error_type = ERROR_VIEWER_ERROR;
+		errorType = ERROR_VIEWER_ERROR;
 	}
 	else if (flags == nsIScriptError::warningFlag)
 	{
-		error_type = ERROR_VIEWER_WARNING;
+		errorType = ERROR_VIEWER_WARNING;
 	}
 	else
 	{
-		error_type = ERROR_VIEWER_INFO;
+		errorType = ERROR_VIEWER_INFO;
 	}
 
-	msg = get_message_from_error (ns_error);
+	char *msg = nsnull;
+	rv = GetMessageFromError (error, &msg);
+	NS_ENSURE_TRUE (NS_SUCCEEDED (rv) && msg, NS_ERROR_FAILURE);
 
-	error_viewer_append (dialog, error_type, msg);
+	error_viewer_append (dialog, errorType, msg);
 
 	g_free (msg);
 

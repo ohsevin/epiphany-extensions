@@ -16,19 +16,28 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
+#ifndef ERROR_VIEWER_CONSOLE_LISTENER_H
+#define ERROR_VIEWER_CONSOLE_LISTENER_H
+
 #include <nsIConsoleListener.h>
+#include <nsEmbedString.h>
+
 #include <glib-object.h>
 
-/* Header file */
+class nsIScriptError;
+
 class ErrorViewerConsoleListener : public nsIConsoleListener
 {
 public:
-  NS_DECL_ISUPPORTS
-  NS_DECL_NSICONSOLELISTENER
+	NS_DECL_ISUPPORTS
+	NS_DECL_NSICONSOLELISTENER
 
-  ErrorViewerConsoleListener();
-  virtual ~ErrorViewerConsoleListener();
-  /* additional members */
+	ErrorViewerConsoleListener();
+	virtual ~ErrorViewerConsoleListener();
 
-  GObject *mDialog; /* FIXME */
+	GObject *mDialog; /* FIXME */
+private:
+	nsresult GetMessageFromError (nsIScriptError *aError, char **aMessage);
 };
+
+#endif /* ERROR_VIEWER_CONSOLE_LISTENER_H */

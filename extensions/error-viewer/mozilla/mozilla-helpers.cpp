@@ -26,6 +26,7 @@
 #include <gtkmozembed.h>
 #include <gtkmozembed_internal.h>
 
+#include <nsEmbedString.h>
 #include <nsCOMPtr.h>
 #include <nsIChannel.h>
 #include <nsIHttpChannel.h>
@@ -34,7 +35,6 @@
 #include <nsIDOMNSDocument.h>
 #include <nsIDOMWindow.h>
 #include <nsIWebBrowser.h>
-#include <nsString.h>
 
 extern "C" char *
 mozilla_get_doctype (EphyEmbed *embed)
@@ -56,10 +56,15 @@ mozilla_get_doctype (EphyEmbed *embed)
 	doc->GetDoctype (getter_AddRefs (doctype));
 	NS_ENSURE_TRUE (doctype, NULL);
 
-	nsAutoString name;
-	doctype->GetPublicId (name);
+	nsresult rv;
+	nsEmbedString name;
+	rv = doctype->GetPublicId (name);
+	NS_ENSURE_SUCCESS (rv, NULL);
 
-	return ToNewUTF8String (name);
+	nsEmbedCString cName;
+	NS_UTF16ToCString (name, NS_CSTRING_ENCODING_UTF8, cName);
+
+	return g_strdup (cName.get());
 }
 
 extern "C" char *
@@ -81,9 +86,12 @@ mozilla_get_content_type (EphyEmbed *embed)
 	nsCOMPtr<nsIDOMNSDocument> ns_doc = do_QueryInterface (doc);
 	NS_ENSURE_TRUE (ns_doc, NULL);
 
-	nsAutoString content_type;
+	nsresult rv;
+	nsEmbedString contentType;
+	rv = ns_doc->GetContentType (contentType);
 
-	ns_doc->GetContentType (content_type);
+	nsEmbedCString cType;
+	NS_UTF16ToCString (contentType, NS_CSTRING_ENCODING_UTF8, cType);
 
-	return ToNewUTF8String (content_type);
+	return g_strdup (cType.get());
 }

@@ -26,24 +26,24 @@
 
 #include "ErrorViewerURICheckerObserver.h"
 
+#include <nsEmbedString.h>
 #include <nsCOMPtr.h>
 #include <nsIChannel.h>
 #include <nsIDOMHTMLAnchorElement.h>
 #include <nsIDOMHTMLAreaElement.h>
 #include <nsIURI.h>
+#include <nsIServiceManager.h>
+
 #include <nsIURIChecker.h>
 #include <nsNetError.h>
-#include <nsNetUtil.h>
-#include <nsString.h>
+#include "EphyUtils.h"
 
 #include <glib/gi18n-lib.h>
 
-/* Implementation file */
 NS_IMPL_ISUPPORTS1(ErrorViewerURICheckerObserver, nsIRequestObserver)
 
 ErrorViewerURICheckerObserver::ErrorViewerURICheckerObserver()
 {
-	  /* member initializers and constructor code */
 	mNumLinksTotal = 0;
 	mNumLinksChecked = 0;
 	mNumLinksInvalid = 0;
@@ -51,7 +51,6 @@ ErrorViewerURICheckerObserver::ErrorViewerURICheckerObserver()
                                                                                 
 ErrorViewerURICheckerObserver::~ErrorViewerURICheckerObserver()
 {
-	  /* destructor code */
 	if (mNumLinksTotal > 0)
 	{
 		char *msg, *part1, *part2;
@@ -108,7 +107,7 @@ NS_IMETHODIMP ErrorViewerURICheckerObserver::OnStopRequest(nsIRequest *aRequest,
 	{
 		nsresult rv;
 
-		nsCAutoString uri;
+		nsEmbedCString uri;
 		rv = aRequest->GetName(uri);
 		NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
 
@@ -131,8 +130,7 @@ NS_IMETHODIMP ErrorViewerURICheckerObserver::OnStopRequest(nsIRequest *aRequest,
 nsresult ErrorViewerURICheckerObserver::AddNode (nsIDOMNode *node)
 {
 	nsresult rv;
-	/* Get href */
-	nsAutoString href;
+	nsEmbedString href;
 
 	nsCOMPtr<nsIDOMHTMLAnchorElement> anchor;
 	anchor = do_QueryInterface (node, &rv);
@@ -153,28 +151,26 @@ nsresult ErrorViewerURICheckerObserver::AddNode (nsIDOMNode *node)
 
 	/* Get the URI from the href string. Ignore mailto:, etc URIs */
 	nsCOMPtr<nsIURI> uri;
-	rv = NS_NewURI (getter_AddRefs (uri), NS_ConvertUCS2toUTF8 (href));
+	rv = EphyUtils::NewURI (getter_AddRefs (uri), href);
+	NS_ENSURE_TRUE (NS_SUCCEEDED (rv) && uri, NS_ERROR_FAILURE);
+
+	PRBool isHttp, isHttps, isFtp;
+	rv = uri->SchemeIs ("http", &isHttp);
+	rv |= uri->SchemeIs ("https", &isHttps);
+	rv |= uri->SchemeIs ("ftp", &isFtp);
 	NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
 
-	nsCAutoString scheme;
-	rv = uri->GetScheme (scheme);
-	NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
-
-	if (!scheme.Equals ("http")
-	    && !scheme.Equals ("https")
-	    && !scheme.Equals ("ftp"))
-	{
-		return NS_OK;
-	}
+	if (!isHttp && !isHttps && !isFtp) return NS_OK;
 
 	/* Check the URI */
-	nsCOMPtr<nsIURIChecker> uri_checker = do_CreateInstance
-		(NS_URICHECKER_CONTRACT_ID);
+	nsCOMPtr<nsIURIChecker> uriChecker = do_CreateInstance
+		("@mozilla.org/network/urichecker;1");
+	NS_ENSURE_TRUE (uriChecker, NS_ERROR_FAILURE);
 
-	rv = uri_checker->Init (uri);
+	rv = uriChecker->Init (uri);
 	NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
 
-	rv = uri_checker->AsyncCheck (this, NULL);
+	rv = uriChecker->AsyncCheck (this, NULL);
 	NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
 
 	mNumLinksTotal++;
