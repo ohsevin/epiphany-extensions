@@ -297,6 +297,23 @@ dom_mouse_down_cb (EphyEmbed *embed,
         EphyEmbedEventContext context;
 	guint button;
 	gint handled = FALSE;
+	EphyTab *tab;
+	EphyWindow *window;
+	GtkWidget *toplevel;
+	gboolean ppv_mode;
+
+	tab = ephy_tab_for_embed (embed);
+	g_return_val_if_fail (EPHY_IS_TAB (tab), handled);
+		
+	toplevel = gtk_widget_get_toplevel (GTK_WIDGET (tab));
+	g_return_val_if_fail (toplevel != NULL, handled);
+
+	/* disable gestures while print preview mode */
+	window = EPHY_WINDOW (toplevel);
+	g_return_val_if_fail (EPHY_IS_WINDOW (window), handled);
+
+	g_object_get (window, "print-preview-mode", &ppv_mode, NULL);
+	if (ppv_mode) return handled;
 
 	button = ephy_embed_event_get_button (event);
         context = ephy_embed_event_get_context (event);
@@ -304,14 +321,6 @@ dom_mouse_down_cb (EphyEmbed *embed,
 	if (button == 2 && !(context & EPHY_EMBED_CONTEXT_INPUT))
 	{
 		EphyGesture *gesture;
-		GtkWidget *toplevel;
-		EphyTab *tab;
-
-		tab = ephy_tab_for_embed (embed);
-		g_return_val_if_fail (EPHY_IS_TAB (tab), handled);
-
-		toplevel = gtk_widget_get_toplevel (GTK_WIDGET (tab));
-		g_return_val_if_fail (toplevel != NULL, handled);
 
 		gesture = ephy_gesture_new (toplevel, event);
 
