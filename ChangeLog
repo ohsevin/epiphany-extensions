@@ -1,5 +1,11 @@
 2004-09-13  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/page-info/page-info-dialog.c:
+
+	Include gi18n-lib.h, not gi18n.h.
+
+2004-09-13  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/select-stylesheet/ephy-css-menu.c:
 	(activate_stylesheet_cb), (create_stylesheet_action),
 	(ephy_css_menu_rebuild):

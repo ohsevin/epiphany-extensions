@@ -58,7 +58,7 @@
 
 #include "mozilla/mozilla-helpers.h"
 
-#include <glib/gi18n.h>
+#include <glib/gi18n-lib.h>
 #include <glib/gconvert.h>
 
 #include <time.h>
