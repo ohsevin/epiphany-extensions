@@ -443,6 +443,7 @@ impl_detach_window (EphyExtension *extension,
 	WindowData *data;
 #ifdef HAVE_OPENSP
 	GtkWidget *notebook;
+	GList *tabs, *l;
 #endif /* HAVE_OPENSP */
 
 	/* Remove UI */
@@ -466,6 +467,13 @@ impl_detach_window (EphyExtension *extension,
 		(notebook, G_CALLBACK (tab_removed_cb), window);
 	g_signal_handlers_disconnect_by_func
 		(notebook, G_CALLBACK (switch_page_cb), window);
+
+	tabs = ephy_window_get_tabs (window);
+	for (l = tabs; l != NULL; l = l->next)
+	{
+		tab_removed_cb (notebook, (EphyTab *) l->data, window);
+	}
+	g_list_free (tabs);
 #endif /* HAVE_OPENSP */
 }
 
