@@ -1,3 +1,9 @@
+2004-03-06  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
+	Re-sync MOZILLA_SNAPSHOT with epiphany values for 1.7b.
+
 2004-03-05  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* configure.ac:
