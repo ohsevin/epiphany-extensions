@@ -83,7 +83,7 @@ mozilla_register_ad_blocker (void)
 	rv = cm->AddCategoryEntry("content-policy",
 				  G_MOZADBLOCKER_CONTRACTID,
 				  G_MOZADBLOCKER_CONTRACTID,
-				  PR_TRUE, PR_FALSE, nsnull);
+				  PR_FALSE, PR_FALSE, nsnull);
 	if (NS_FAILED (rv))
 	{
 		g_warning ("Failed to register content policy\n");
@@ -106,7 +106,7 @@ mozilla_unregister_ad_blocker (void)
 
 	rv = cm->DeleteCategoryEntry("content-policy",
 				     G_MOZADBLOCKER_CONTRACTID,
-				     PR_FALSE);
+				     PR_TRUE);
 	g_return_if_fail (NS_SUCCEEDED (rv));
 
 	nsCOMPtr<nsIComponentRegistrar> cr;

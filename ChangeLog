@@ -1,5 +1,12 @@
 2004-10-02  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/adblock/mozilla/mozilla-helpers.cpp:
+
+	crispin: noda: btw, I think you want (PR_FALSE, PR_FALSE) in the the
+	AddCategoryEntry call, and PR_TRUE in the DeleteCategoryEntry call
+
+2004-10-02  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/adblock/extension.c: (register_module):
 
 	:s/        /^I/g
