@@ -1,3 +1,15 @@
+2004-04-18  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/error-viewer/link-checker.c: (link_checker_unuse):
+	* extensions/error-viewer/link-checker.h:
+	* extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp
+	:
+	* extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.h:
+	* extensions/error-viewer/mozilla/mozilla-link-checker.cpp:
+	* po/POTFILES.in:
+
+	Reorganized code. Messages are all sane now. It's Better (tm).
+
 2004-04-17  Artur Flinta  <aflinta@cvs.gnome.org>
 	* configure.ac:
 	Restored Polish translation from gnome-2-6 branch

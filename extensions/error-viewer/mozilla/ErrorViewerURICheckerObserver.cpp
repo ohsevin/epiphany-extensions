@@ -28,9 +28,12 @@
 
 #include <nsCOMPtr.h>
 #include <nsIChannel.h>
+#include <nsIDOMHTMLAnchorElement.h>
+#include <nsIDOMHTMLAreaElement.h>
 #include <nsIURI.h>
 #include <nsIURIChecker.h>
 #include <nsNetError.h>
+#include <nsNetUtil.h>
 #include <nsString.h>
 
 #include <glib/gi18n-lib.h>
@@ -41,6 +44,7 @@ NS_IMPL_ISUPPORTS1(ErrorViewerURICheckerObserver, nsIRequestObserver)
 ErrorViewerURICheckerObserver::ErrorViewerURICheckerObserver()
 {
 	  /* member initializers and constructor code */
+	mNumLinksTotal = 0;
 	mNumLinksChecked = 0;
 	mNumLinksInvalid = 0;
 }
@@ -48,19 +52,40 @@ ErrorViewerURICheckerObserver::ErrorViewerURICheckerObserver()
 ErrorViewerURICheckerObserver::~ErrorViewerURICheckerObserver()
 {
 	  /* destructor code */
+	if (mNumLinksTotal > 0)
+	{
+		char *msg, *part1, *part2;
+
+		part1 = g_strdup_printf ("Link check of %s complete",
+					 mFilename);
+		part2 = g_strdup_printf (ngettext ("Found %d invalid link",
+						   "Found %d invalid links",
+						   mNumLinksInvalid),
+					 mNumLinksInvalid);
+
+		msg = g_strconcat (part1, "\n", part2, NULL);
+
+		link_checker_append (mChecker, ERROR_VIEWER_INFO, msg);
+
+		g_free (msg);
+		g_free (part1);
+		g_free (part2);
+	}
+
 	link_checker_unuse (mChecker);
 	g_object_unref (mChecker);
+	g_free (mFilename);
 }
 
 nsresult ErrorViewerURICheckerObserver::Init (LinkChecker *aChecker, const char *aFilename)
 {
-	g_return_val_if_fail (IS_LINK_CHECKER (aChecker), NS_ERROR_FAILURE);
+	NS_ENSURE_TRUE (IS_LINK_CHECKER (aChecker), NS_ERROR_FAILURE);
 
+	g_object_ref (aChecker);
+	link_checker_use (aChecker);
 	mChecker = aChecker;
-	mFilename = g_strdup (aFilename);
 
-	g_object_ref (mChecker);
-	link_checker_use (mChecker);
+	mFilename = g_strdup (aFilename);
 
 	return NS_OK;
 }
@@ -74,6 +99,8 @@ NS_IMETHODIMP ErrorViewerURICheckerObserver::OnStartRequest(nsIRequest *aRequest
 /* void onStopRequest (in nsIRequest aRequest, in nsISupports aContext, in nsresult aStatusCode); */
 NS_IMETHODIMP ErrorViewerURICheckerObserver::OnStopRequest(nsIRequest *aRequest, nsISupports *aContext, nsresult aStatusCode)
 {
+	mNumLinksChecked++;
+
 	if (aStatusCode == NS_BINDING_SUCCEEDED)
 	{
 	}
@@ -98,11 +125,89 @@ NS_IMETHODIMP ErrorViewerURICheckerObserver::OnStopRequest(nsIRequest *aRequest,
 		mNumLinksInvalid++;
 	}
 
-	mNumLinksChecked++;
+	return NS_OK;
+}
 
-	link_checker_update_progress (mChecker,
-				      mFilename, mNumLinksChecked,
-				      mNumLinksInvalid, mNumLinksTotal);
+nsresult ErrorViewerURICheckerObserver::AddNode (nsIDOMNode *node)
+{
+	nsresult rv;
+	/* Get href */
+	nsAutoString href;
+
+	nsCOMPtr<nsIDOMHTMLAnchorElement> anchor;
+	anchor = do_QueryInterface (node, &rv);
+	if (NS_SUCCEEDED (rv))
+	{
+		rv = anchor->GetHref (href);
+		NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
+	}
+	else
+	{
+		nsCOMPtr<nsIDOMHTMLAreaElement> area;
+		area = do_QueryInterface (node, &rv);
+		NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
+
+		rv = area->GetHref (href);
+		NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
+	}
+
+	/* Get the URI from the href string. Ignore mailto:, etc URIs */
+	nsCOMPtr<nsIURI> uri;
+	rv = NS_NewURI (getter_AddRefs (uri), NS_ConvertUCS2toUTF8 (href));
+	NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
+
+	nsCAutoString scheme;
+	rv = uri->GetScheme (scheme);
+	NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
+
+	if (!scheme.Equals ("http")
+	    && !scheme.Equals ("https")
+	    && !scheme.Equals ("ftp"))
+	{
+		return NS_OK;
+	}
+
+	/* Check the URI */
+	nsCOMPtr<nsIURIChecker> uri_checker = do_CreateInstance
+		(NS_URICHECKER_CONTRACT_ID);
+
+	rv = uri_checker->Init (uri);
+	NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
+
+	rv = uri_checker->AsyncCheck (this, NULL);
+	NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
+
+	mNumLinksTotal++;
+
+	return NS_OK;
+}
+
+nsresult ErrorViewerURICheckerObserver::DoneAdding (void)
+{
+	char *msg;
+
+	if (mNumLinksChecked == mNumLinksTotal && mNumLinksTotal > 0)
+	{
+		/* No links on page */
+		return NS_OK;
+	}
+
+	if (mNumLinksTotal == 0)
+	{
+		msg = g_strdup_printf ("No links to check on %s", mFilename);
+	}
+	else
+	{
+		msg = g_strdup_printf
+		        (ngettext("Checking %d Link on %s",
+		                  "Checking %d Links on %s",
+		                  mNumLinksTotal),
+		         mNumLinksTotal, mFilename);
+	}
+
+	link_checker_append (mChecker, ERROR_VIEWER_INFO, msg);
+
+	g_free (msg);
 
 	return NS_OK;
 }

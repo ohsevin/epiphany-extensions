@@ -33,20 +33,13 @@
 #include <nsIComponentManager.h>
 #include <nsIComponentRegistrar.h>
 #include <nsIDOMDocument.h>
-#include <nsIDOMHTMLAnchorElement.h>
 #include <nsIDOMHTMLCollection.h>
 #include <nsIDOMHTMLDocument.h>
 #include <nsIDOMNode.h>
 #include <nsIDOMWindow.h>
 #include <nsIGenericFactory.h>
-#include <nsIURI.h>
-#include <nsIURIChecker.h>
 #include <nsIWebBrowser.h>
 #include <nsNetCID.h>
-#include <nsNetUtil.h>
-#include <nsString.h>
-
-#include <glib/gi18n-lib.h>
 
 NS_GENERIC_FACTORY_CONSTRUCTOR(ErrorViewerURICheckerObserver)
 
@@ -115,10 +108,6 @@ mozilla_check_links (LinkChecker *checker,
 		     EphyEmbed *embed)
 {
 	nsresult rv;
-	
-	nsCOMPtr<ErrorViewerURICheckerObserver> observer = do_CreateInstance
-		(G_ERRORVIEWERURICHECKEROBSERVER_CONTRACTID);
-	observer->Init (checker, ephy_embed_get_location (embed, FALSE));
 
 	nsCOMPtr<nsIWebBrowser> browser;
 	gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (embed),
@@ -141,87 +130,22 @@ mozilla_check_links (LinkChecker *checker,
 	rv = html->GetLinks (getter_AddRefs (links));
 	g_return_if_fail (NS_SUCCEEDED (rv));
 
-	links->GetLength (&observer->mNumLinksTotal);
+	nsCOMPtr<ErrorViewerURICheckerObserver> observer = do_CreateInstance
+		(G_ERRORVIEWERURICHECKEROBSERVER_CONTRACTID);
+	observer->Init (checker, ephy_embed_get_location (embed, FALSE));
 
-	if (observer->mNumLinksTotal == 0)
-	{
-		char *msg;
+	PRUint32 numLinks;
+	rv = links->GetLength (&numLinks);
+	g_return_if_fail (NS_SUCCEEDED (rv));
 
-		msg = g_strdup_printf ("No links to check on %s",
-				       observer->mFilename);
-
-		link_checker_append (checker, ERROR_VIEWER_INFO, msg);
-
-		g_free (msg);
-
-		return;
-	}
-
-	char *msg;
-	
-	msg = g_strdup_printf
-		(ngettext("Checking %d Link on %s",
-			  "Checking %d Links on %s",
-			  observer->mNumLinksTotal),
-		 observer->mNumLinksTotal, observer->mFilename);
-
-	link_checker_append (checker, ERROR_VIEWER_INFO, msg);
-
-	g_free (msg);
-
-	link_checker_update_progress (checker, observer->mFilename,
-				      0, 0, observer->mNumLinksTotal);
-
-	for (PRUint32 i = 0; i < observer->mNumLinksTotal; i++)
+	for (PRUint32 i = 0; i < numLinks; i++)
 	{
 		nsCOMPtr<nsIDOMNode> node;
 		rv = links->Item (i, getter_AddRefs (node));
 		g_return_if_fail (NS_SUCCEEDED (rv));
 
-		nsCOMPtr<nsIDOMHTMLAnchorElement> anchor;
-		anchor = do_QueryInterface (node, &rv);
-		if (NS_FAILED (rv))
-		{
-			g_warning ("Cannot check <area> tag: assumed valid");
-			observer->mNumLinksChecked++;
-			continue;
-		}
-
-		nsAutoString href;
-		rv = anchor->GetHref (href);
-		if (NS_FAILED (rv))
-		{
-			g_warning ("Could not retrieve link's href attribute");
-			observer->mNumLinksChecked++;
-			observer->mNumLinksInvalid++;
-			continue;
-		}
-
-		nsCOMPtr<nsIURI> uri;
-		rv = NS_NewURI (getter_AddRefs (uri),
-				NS_ConvertUCS2toUTF8 (href));
-		if (NS_FAILED (rv))
-		{
-			g_warning ("Could not retrieve uri from href %s",
-				   NS_ConvertUCS2toUTF8 (href).get ());
-			observer->mNumLinksChecked++;
-			observer->mNumLinksInvalid++;
-			continue;
-		}
-
-		nsCOMPtr<nsIURIChecker> uri_checker = do_CreateInstance
-			(NS_URICHECKER_CONTRACT_ID);
-
-		rv = uri_checker->Init (uri);
-		if (NS_FAILED (rv))
-		{
-			g_warning ("Couldn't init with URI pointed to %s",
-				   NS_ConvertUCS2toUTF8 (href).get ());
-			observer->mNumLinksChecked++;
-			observer->mNumLinksInvalid++;
-			continue;
-		}
-
-		uri_checker->AsyncCheck (observer, NULL);
+		observer->AddNode (node);
 	}
+
+	observer->DoneAdding ();
 }

@@ -20,6 +20,7 @@
 
 #include "link-checker.h"
 
+#include <nsIDOMNode.h>
 #include <nsIRequestObserver.h>
 
 /* Header file */
@@ -34,14 +35,15 @@ public:
   /* additional members */
 
   nsresult Init (LinkChecker *aChecker, const char *aFilename);
+  nsresult AddNode (nsIDOMNode *node);
+  nsresult DoneAdding (void);
 
+private:
+  LinkChecker *mChecker;
   char *mFilename;
   PRUint32 mNumLinksChecked;
   PRUint32 mNumLinksInvalid;
   PRUint32 mNumLinksTotal;
-
-private:
-  LinkChecker *mChecker;
 };
 
 #define G_ERRORVIEWERURICHECKEROBSERVER_CONTRACTID "@gnome.org/projects/epiphany/epiphany-extensions/error-viewer/error-viewer-uri-checker-observer;1"
