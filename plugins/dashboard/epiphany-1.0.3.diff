@@ -16,7 +16,6 @@ diff -u -r epiphany-1.0.3.orig/embed/ephy-embed-persist.c epiphany-1.0.3/embed/e
  ephy_embed_persist_set_max_size (EphyEmbedPersist *persist,
  			           int kb_size)
  {
-Only in epiphany-1.0.3/embed: ephy-embed-persist.c~
 diff -u -r epiphany-1.0.3.orig/embed/ephy-embed-persist.h epiphany-1.0.3/embed/ephy-embed-persist.h
 --- epiphany-1.0.3.orig/embed/ephy-embed-persist.h	2003-01-12 01:56:53.000000000 +1300
 +++ epiphany-1.0.3/embed/ephy-embed-persist.h	2003-10-31 15:25:34.000000000 +1300
