@@ -1,3 +1,9 @@
+2004-07-03  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* po/POTFILES.in:
+
+	Removed popup-blocker
+
 2004-06-30  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* README:
