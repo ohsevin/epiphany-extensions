@@ -1,6 +1,7 @@
 plugindir = $(libdir)/epiphany/plugins
 
 INCLUDES = \
+	-I$(top_srcdir)/include		\
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
 	-DSHARE_DIR=\"$(pkgdatadir)\"	\
 	-DG_DISABLE_DEPRECATED		\
@@ -13,8 +14,7 @@ plugin_LTLIBRARIES = libgestures.la
 
 libgestures_la_SOURCES = 	\
 	gestures.c		\
-	gul-gestures.c		\
-	gul-gestures.h		\
-	gul-gobject-misc.h	\
+	ephy-gestures.c		\
+	ephy-gestures.h		\
 	stroke.c		\
 	stroke.h

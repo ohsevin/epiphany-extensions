@@ -1,8 +1,49 @@
 /*
-   libstroke - an X11 stroke interface library
-   Copyright (c) 1996,1997,1998,1999  Mark F. Willey, ETLA Technical
+   LibStroke - a stroke interface library
+   Copyright (c) 1996,1997,1998,1999,2000  Mark F. Willey, ETLA Technical
 
-   See the files COPYRIGHT and LICENSE for distribution information.
+   Permission is hereby granted, free of charge, to any person obtaining
+   a copy of this software and associated documentation files (the
+   "Software"), to deal in the Software, including the rights to use, copy,
+   modify, merge, publish, and distribute copies of the Software, and to
+   permit persons to whom the Software is furnished to do so, subject to
+   the following conditions:
+
+   This program is free software; you can redistribute it and/or
+   modify it under the terms of the GNU General Public License
+   as published by the Free Software Foundation; version 2.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+
+   The above copyright notice and this permission notice shall be included
+   in all copies or substantial portions of the Software.
+
+   See the file "COPYING" for a copy of the GNU GPL terms.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+   OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+   IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR
+   OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+   OTHER DEALINGS IN THE SOFTWARE.
+
+   Except as contained in this notice, the name of the author shall
+   name be used in advertising or otherwise to promote the sale, use or
+   other dealings in this Software without prior written authorization
+   from the author.
+
+   Non-GPL commercial use licenses are available - contact copyright holder.
+
+   Author: Mark F. Willey  --  willey@etla.net
+   http://www.etla.net/
 
    This file pulled from libstroke-0.5.1 (http://www.etla.net/libstroke/)
    and trimmed down for Galeon.

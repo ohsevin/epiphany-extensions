@@ -1,4 +1,14 @@
-2003-07-31  Christian Persch
+2003-08-01  Christian Persch  <chpe@cvs.gnome.org>
+
+	* gestures.c:
+	* ephy-gestures.h:
+	* ephy-gestures.c:
+	* gul-gestures.h:
+	* gul-gestures.c:
+
+	De-gul-ised gestures.
+
+2003-07-31  Christian Persch  <chpe@cvs.gnome.org>
 
 	* gul-gestures.h:
 	* gul-gestures.c:

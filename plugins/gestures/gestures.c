@@ -16,14 +16,19 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
+#include "ephy-gestures.h"
+#include "ephy-debug.h"
+
+#include <epiphany/ephy-shell.h>
+#include <epiphany/session.h>
 
 #include <gmodule.h>
 #include <glib-object.h>
-
 #include <gconf/gconf.h>
-#include <epiphany/ephy-shell.h>
-#include <epiphany/session.h>
-#include "gul-gestures.h"
 
 static GHashTable *gestures_actions = NULL;
 
@@ -149,7 +154,7 @@ tab_update_gestures (void)
 }
 
 static void
-tab_gesture_performed_cb (GulGestures *g, const gchar *sequence, EphyTab *tab)
+tab_gesture_performed_cb (EphyGestures *eg, const gchar *sequence, EphyTab *tab)
 {
 	const char  *action;
 	EphyWindow *window;
@@ -167,7 +172,7 @@ tab_gesture_performed_cb (GulGestures *g, const gchar *sequence, EphyTab *tab)
 		return;
 	}
 
-	g_print("Sequence: %s; Action: %s\n", sequence, action);
+	LOG ("Sequence: %s; Action: %s", sequence, action)
 
 	window = ephy_tab_get_window (tab);
 	embed = ephy_tab_get_embed (tab);
@@ -176,7 +181,7 @@ tab_gesture_performed_cb (GulGestures *g, const gchar *sequence, EphyTab *tab)
 	{
 		/* Fall back to normal click */
 		gint return_val;
-		EphyEmbedEvent *event = g_object_get_data(G_OBJECT(g), "embed_event");
+		EphyEmbedEvent *event = g_object_get_data(G_OBJECT(eg), "embed_event");
 		g_signal_emit_by_name (embed, "ge_dom_mouse_click", event,
 				       &return_val);
 	}
@@ -304,7 +309,7 @@ tab_gesture_performed_cb (GulGestures *g, const gchar *sequence, EphyTab *tab)
 	else
 	{
 		/* unrecognized */
-		g_print("Unrecognized gesture: %s\n", sequence);
+		LOG ("Unrecognized gesture: %s", sequence)
 	}
 }
 
@@ -315,29 +320,32 @@ dom_mouse_down_cb  (EphyEmbed *embed,
 {
 	guint button;
         EmbedEventContext context;
+
 	ephy_embed_event_get_event_type (event, &button);
         ephy_embed_event_get_context (event, &context);
 
 	if (button == EPHY_EMBED_EVENT_MOUSE_BUTTON2 &&
             !(context & EMBED_CONTEXT_INPUT)) {
-		GulGestures *g = gul_gestures_new ();
+		EphyGestures *eg;
 		EphyWindow *window;
 		guint x, y;
 
 		window = ephy_tab_get_window (tab);
 
-		g_object_set_data_full (G_OBJECT(g), "embed_event",
+		ephy_embed_event_get_coords (event, &x, &y);
+
+		eg = ephy_gestures_new ();
+
+		g_object_set_data_full (G_OBJECT(eg), "embed_event",
 					g_object_ref (event),
 					g_object_unref);
 
-		ephy_embed_event_get_coords (event, &x, &y);
-
-		gul_gestures_start (g, GTK_WIDGET (window), button, x, y);
-
-		g_signal_connect (g, "gesture-performed",
+		g_signal_connect (eg, "gesture-performed",
 				  G_CALLBACK (tab_gesture_performed_cb), tab);
 
-		g_object_unref (g);
+		gul_gestures_start (eg, GTK_WIDGET (window), button, x, y);
+
+		g_object_unref (eg);
 	}
 }
 
@@ -377,5 +385,5 @@ plugin_init (GTypeModule *module)
 G_MODULE_EXPORT void
 plugin_exit (void)
 {
-	g_print ("Gestures plugin exit\n");
+	LOG ("Gestures plugin exit")
 }
