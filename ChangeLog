@@ -1,3 +1,11 @@
+2005-02-04  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/net-monitor/ephy-net-monitor-extension.c:
+	(connect_to_system_bus_cb, disconnect_from_system_bus_cb,
+	ephy_net_monitor_startup):
+
+	Bad signal/connect/callback implementation.
+
 2005-02-02  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* AUTHORS:

@@ -199,24 +199,35 @@ ephy_net_monitor_attach_to_dbus (EphyNetMonitorExtension *net_monitor)
 			g_warning("EphyNetMonitorExtension cannot register signal handler: %s: %s", 
 				  error.name, error.message);
 		}
+		LOG ("EphyNetMonitorExtension attached to SYSTEM bus");
 	}
 }
 
 static void
-connect_to_system_bus_cb (EphyDbus *dbus, EphyNetMonitorExtension *net_monitor)
+connect_to_system_bus_cb (EphyDbus *dbus,
+			  EphyDbusBus kind,
+			  EphyNetMonitorExtension *net_monitor)
 {
-	LOG ("EphyNetMonitorExtension connecting to SYSTEM bus");
+	if (kind == EPHY_DBUS_SYSTEM)
+	{
+		LOG ("EphyNetMonitorExtension connecting to SYSTEM bus");
 
-	ephy_net_monitor_attach_to_dbus (net_monitor);
+		ephy_net_monitor_attach_to_dbus (net_monitor);
+	}
 }
 
 static void
-disconnect_from_system_bus_cb (EphyDbus *dbus, EphyNetMonitorExtension *net_monitor)
+disconnect_from_system_bus_cb (EphyDbus *dbus,
+			       EphyDbusBus kind,
+			       EphyNetMonitorExtension *net_monitor)
 {
-	LOG ("EphyNetMonitorExtension disconnected from SYSTEM bus");
+	if (kind == EPHY_DBUS_SYSTEM)
+	{
+		LOG ("EphyNetMonitorExtension disconnected from SYSTEM bus");
 
-	/* no bus anymore */
-	net_monitor->priv->bus = NULL;
+		/* no bus anymore */
+		net_monitor->priv->bus = NULL;
+	}
 }
 
 
@@ -224,20 +235,20 @@ static void
 ephy_net_monitor_startup (EphyNetMonitorExtension *net_monitor)
 {
 	EphyDbus *bus = EPHY_DBUS (ephy_shell_get_dbus_service (ephy_shell));
-	
+
 	LOG ("EphyNetMonitorExtension starting up");
 
 	ephy_net_monitor_attach_to_dbus (net_monitor);
 
 	/* DBUS may disconnect us at any time. So listen carefully to it */
-	g_object_connect (bus, 
-			"signal::connected", 
-			G_CALLBACK (connect_to_system_bus_cb), 
-			EPHY_DBUS_SYSTEM,
-			"signal::disconnected", 
-			G_CALLBACK (disconnect_from_system_bus_cb), 
-			EPHY_DBUS_SYSTEM,
-			NULL);
+	g_signal_connect (bus, 
+			  "connected",  
+			  G_CALLBACK (connect_to_system_bus_cb), 
+			  net_monitor);
+	g_signal_connect (bus, 
+			  "disconnected",  
+			  G_CALLBACK (disconnect_from_system_bus_cb), 
+			  net_monitor);
 
 	ephy_net_monitor_check_network (net_monitor);
 }
