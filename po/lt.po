@@ -1,0 +1,150 @@
+# Lithuanian translation of epiphany-extensions.
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# This file is distributed under the same license as the epiphany-extensions package.
+# Žygimantas Beručka <uid0@tuxfamily.org>, 2004.
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: epiphany-extensions HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-02-01 17:52+0200\n"
+"PO-Revision-Date: 2004-02-01 17:47+0200\n"
+"Last-Translator: Žygimantas Beručka <uid0@tuxfamily.org>\n"
+"Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#. stock icon
+#: extensions/certificates/ephy-certificates-extension.c:214
+msgid "Server _Certificate"
+msgstr "Serverio _sertifikatas"
+
+#. shortcut key
+#: extensions/certificates/ephy-certificates-extension.c:216
+msgid "Display the web server's certificate"
+msgstr "Rodyti web serverio sertifikatą"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:83
+msgid "_Validate"
+msgstr "_Patvirtinti"
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:85
+msgid "Display HTML errors in the Error Viewer dialog"
+msgstr "Rodyti HTML klaidas klaidų žiūrėjimo programos lange"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:90
+msgid "_Error Viewer"
+msgstr "_Klaidų žiūrėjimo programa"
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:92
+msgid "Display web page errors"
+msgstr "Rodyti tinklapio klaidas"
+
+#: extensions/error-viewer/error-viewer.glade.h:1
+msgid "C_lear"
+msgstr "Išva_lyti"
+
+#: extensions/error-viewer/error-viewer.glade.h:2
+msgid "Error Viewer"
+msgstr "Klaidų žiūrėjimo programa"
+
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:106
+#, c-format
+msgid ""
+"Javascript error in %s on line %d:\n"
+"%s"
+msgstr ""
+"Javascript klaida esanti %s elutėje %d:\n"
+"%s"
+
+#: extensions/error-viewer/opensp/validate.cpp:152
+#, c-format
+msgid ""
+"HTML error in %s on line %s:\n"
+"%s"
+msgstr ""
+"HTML klaida esanti %s eilutėje %s:\n"
+"%s"
+
+#: extensions/error-viewer/sgml-validator.c:162
+#, c-format
+msgid ""
+"HTML Validation of %s complete\n"
+"Found %d error"
+msgid_plural ""
+"HTML Validation of %s complete\n"
+"Found %d errors"
+msgstr[0] ""
+"%s HTML patvirtinimas baigtas\n"
+"Rasta %d klaida"
+msgstr[1] ""
+"%s HTML patvirtinimas baigtas\n"
+"Rastos %d klaidos"
+msgstr[2] ""
+"%s HTML patvirtinimas baigtas\n"
+"Rasta %d klaidų"
+
+#: extensions/error-viewer/sgml-validator.c:216
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"Doctype is XHTML but content type is text/html"
+msgstr ""
+"HTML klaida esanti %s:\n"
+"Dokumento tipas yra XHTML, bet turinio tipas yra text/html"
+
+#: extensions/error-viewer/sgml-validator.c:230
+#, c-format
+msgid ""
+"HTML warning in %s:\n"
+"Doctype is XHTML but content type is text/html"
+msgstr ""
+"HTML įspėjimas esantis %s:\n"
+"Dokumento tipas yra XHTML, bet turinio tipas yra text/html"
+
+#: extensions/error-viewer/sgml-validator.c:366
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"No valid doctype specified."
+msgstr ""
+"HTML klaida esanti %s:\n"
+"Nenurodytas tinkamas dokumento tipas."
+
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
+msgid "Blo_ck Popups from this Site"
+msgstr "Blo_kuoti iššokančius langus iš šios svetainės"
+
+#. shortcut key
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:64
+msgid "Block or unblock popup windows"
+msgstr "Blokuoti arba atblokuoti iššokančius langus"
+
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:324
+#, c-format
+msgid "%d popup blocked"
+msgid_plural "%d popups blocked"
+msgstr[0] "užblokuotas %d iššokantis langas"
+msgstr[1] "užblokuoti %d iššokantys langai"
+msgstr[2] "užblokuota %d iššokančių langų"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:185
+#, c-format
+msgid "Window '%s' (%d tab)"
+msgid_plural "Window '%s' (%d tabs)"
+msgstr[0] "Langas '%s' (%d kortelė)"
+msgstr[1] "Langas '%s' (%d kortelės)"
+msgstr[2] "Langas '%s' (%d kortelių)"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:283
+msgid "Move Tab To Window"
+msgstr "Perkelti kortelę į langą"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:284
+msgid "Move the current tab to a different window"
+msgstr "Perkelti šią kortelę į kitą langą"
