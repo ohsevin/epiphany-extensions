@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-26 22:17+0200\n"
-"PO-Revision-Date: 2004-05-22 16:05+0100\n"
+"POT-Creation-Date: 2004-10-30 18:45+0200\n"
+"PO-Revision-Date: 2004-10-30 22:30+0100\n"
 "Last-Translator: Reinout van Schouwen <reinout@cs.vu.nl>\n"
 "Language-Team: nl <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
@@ -266,7 +266,7 @@ msgid "_Save Image As..."
 msgstr "Afbeelding op_slaan als..."
 
 #: extensions/page-info/page-info-dialog.c:992
-#: extensions/page-info/page-info-dialog.c:1169
+#: extensions/page-info/page-info-dialog.c:1210
 msgid "URL"
 msgstr "URL"
 
@@ -275,7 +275,7 @@ msgid "Alt Text"
 msgstr "Alt-tekst"
 
 #: extensions/page-info/page-info-dialog.c:1016
-#: extensions/page-info/page-info-dialog.c:1181
+#: extensions/page-info/page-info-dialog.c:1222
 msgid "Title"
 msgstr "Titel"
 
@@ -287,19 +287,23 @@ msgstr "Breedte"
 msgid "Height"
 msgstr "Hoogte"
 
-#: extensions/page-info/page-info-dialog.c:1193
+#: extensions/page-info/page-info-dialog.c:1176
+msgid "_Copy Link Address"
+msgstr "Verwij_zingsadres kopiëren"
+
+#: extensions/page-info/page-info-dialog.c:1234
 msgid "Relation"
 msgstr "Relatie"
 
-#: extensions/page-info/page-info-dialog.c:1304
+#: extensions/page-info/page-info-dialog.c:1345
 msgid "Name"
 msgstr "Naam"
 
-#: extensions/page-info/page-info-dialog.c:1316
+#: extensions/page-info/page-info-dialog.c:1357
 msgid "Method"
 msgstr "Methode"
 
-#: extensions/page-info/page-info-dialog.c:1328
+#: extensions/page-info/page-info-dialog.c:1369
 msgid "Action"
 msgstr "Actie"
 
@@ -431,6 +435,31 @@ msgstr "Standaard"
 #: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
 msgid "None"
 msgstr "Geen"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:107
+msgid "_Sidebar"
+msgstr "_Zijbalk"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:108
+msgid "Show or hide the sidebar"
+msgstr "Zijbalk tonen of verbergen"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:368
+msgid "_Add Sidebar"
+msgstr "Zijbalk _toevoegen"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:395
+#, c-format
+msgid "Add \"%s\" to the Sidebar?"
+msgstr "\"%s\" toevoegen aan de zijbalk?"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:398
+msgid "The source to the new sidebar page is:"
+msgstr "De bron van de nieuwe zijbalk-pagina is:"
+
+#: extensions/sidebar/ephy-sidebar.c:178
+msgid "No Sidebars installed"
+msgstr "Geen zijbalken geïnstalleerd"
 
 #: extensions/smart-bookmarks/smart-bookmarks-extension.c:547
 msgid "_Look Up"
