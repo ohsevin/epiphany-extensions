@@ -42,18 +42,6 @@ typedef struct _PageInfoDialog		PageInfoDialog;
 typedef struct _PageInfoDialogPrivate	PageInfoDialogPrivate;
 typedef struct _PageInfoDialogClass	PageInfoDialogClass;
 
-typedef enum {
-	PAGE_INFO_GENERAL,
-	/*
-	PAGE_INFO_FORMS,
-	PAGE_INFO_LINKS,
-	PAGE_INFO_MEDIA,
-	*/
-	/* PAGE_INFO_STYLESHEETS, */
-	/* PAGE_INFO_PRIVACY, */
-	/*PAGE_INFO_SECURITY*/
-} PageInfoDialogPage;
-
 struct _PageInfoDialog
 {
 	EphyDialog parent;

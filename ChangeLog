@@ -1,3 +1,19 @@
+2004-09-12  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/page-info/page-info-dialog.c:
+	(page_info_dialog_close_button_clicked_cb),
+	(page_info_dialog_view_cert_button_clicked_cb),
+	(page_info_set_text), (general_info_page_fill),
+	(page_info_image_box_realize_cb),
+	(page_info_dialog_imagesave_button_clicked_cb),
+	(images_treeview_selection_changed_cb),
+	(images_info_page_construct), (images_info_page_fill),
+	(page_info_dialog_init), (page_info_dialog_constructor),
+	(page_info_dialog_finalize), (page_info_dialog_class_init):
+	* extensions/page-info/page-info-dialog.h:
+
+	More code restructuring.
+
 2004-09-11  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/page-info/mozilla/mozilla-helpers.cpp:
