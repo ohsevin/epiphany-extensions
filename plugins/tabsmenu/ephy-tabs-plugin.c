@@ -19,6 +19,10 @@
  *  $Id$
  */
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 #include "ephy-tabs-plugin-menu.h"
 
 #include "ephy-debug.h"
@@ -29,6 +33,7 @@
 
 #include <gmodule.h>
 #include <glib-object.h>
+#include <glib/gi18n-lib.h>
 
 static void
 new_window_cb (Session *session, EphyWindow *window)

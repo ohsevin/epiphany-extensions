@@ -25,7 +25,6 @@
 
 #include "ephy-tabs-plugin-menu.h"
 #include "ephy-window-action.h"
-#include "ephy-plugins-i18n.h"
 #include "ephy-debug.h"
 
 #include <gtk/gtkaction.h>
@@ -41,6 +40,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <libxml/entities.h>
+#include <glib/gi18n-lib.h>
 
 #define EPHY_TABS_PLUGIN_MENU_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_TABS_PLUGIN_MENU, EphyTabsPluginMenuPrivate))
 

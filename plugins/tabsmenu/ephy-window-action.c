@@ -24,7 +24,6 @@
 #endif
 
 #include "ephy-window-action.h"
-#include "ephy-plugins-i18n.h"
 
 #include "ephy-string.h"
 #include "ephy-debug.h"
@@ -35,6 +34,7 @@
 #include <glib-object.h>
 #include <gtk/gtknotebook.h>
 #include <gtk/gtkmenuitem.h>
+#include <glib/gi18n-lib.h>
 
 #define EPHY_WINDOW_ACTION_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_WINDOW_ACTION, EphyWindowActionPrivate))
 

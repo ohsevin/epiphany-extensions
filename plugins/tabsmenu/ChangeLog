@@ -1,5 +1,13 @@
 2003-11-05  Christian Persch  <chpe@cvs.gnome.org>
 
+	* ephy-tabs-plugin-menu.c:
+	* ephy-tabs-plugin.c:
+	* ephy-window-action.c:
+
+	Use glib i18n header.
+
+2003-11-05  Christian Persch  <chpe@cvs.gnome.org>
+
 	* ephy-tabs-plugin-menu.c: (ephy_tabs_plugin_menu_clean):
 
 	Adapt to epiphany API changes.
