@@ -61,8 +61,6 @@ void			ephy_popup_blocker_list_insert			(EphyPopupBlockerList *list,
 									 const char *url,
 									 const char *features);
 
-int			ephy_popup_blocker_list_length			(EphyPopupBlockerList *list);
-
 const char		*ephy_popup_blocker_list_get_popup_string	(EphyPopupBlockerList *list,
 									 int index);
 

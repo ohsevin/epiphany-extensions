@@ -294,11 +294,13 @@ clear_popup_permissions (void)
 	g_list_free (list);
 }
 
-EphyWindow *
-get_window_for_embed (EphyEmbed *embed)
+EphyPopupBlockerIcon *
+get_icon_for_embed (EphyEmbed *embed)
 {
-	EphyTab *tab;
 	EphyWindow *window;
+	EphyTab *tab;
+	GtkWidget *statusbar;
+	gpointer icon;
 
 	g_return_val_if_fail (EPHY_IS_EMBED (embed), NULL);
 
@@ -308,21 +310,10 @@ get_window_for_embed (EphyEmbed *embed)
 	window = ephy_tab_get_window (tab);
 	g_return_val_if_fail (EPHY_IS_WINDOW (window), NULL);
 
-	return window;
-}
+	statusbar = ephy_window_get_statusbar (window);
+	g_return_val_if_fail (EPHY_IS_STATUSBAR (statusbar), NULL);
 
-EphyPopupBlockerIcon *
-get_icon_for_embed (EphyEmbed *embed)
-{
-	EphyWindow *window;
-	gpointer icon;
-
-	g_return_val_if_fail (EPHY_IS_EMBED (embed), NULL);
-
-	window = get_window_for_embed (embed);
-	g_return_val_if_fail (EPHY_IS_WINDOW (window), NULL);
-
-	icon = g_object_get_data (G_OBJECT (window), "popup-blocker-icon");
+	icon = g_object_get_data (G_OBJECT (statusbar), "popup-blocker-icon");
 	g_return_val_if_fail (EPHY_IS_POPUP_BLOCKER_ICON (icon), NULL);
 
 	return (EphyPopupBlockerIcon *) icon;
@@ -334,7 +325,6 @@ location_cb (EphyEmbed *embed,
 	     EphyTab *tab)
 {
 	EphyWindow *window;
-	EphyPopupBlockerIcon *icon;
 	GtkWidget *statusbar;
 	EphyPopupBlockerList *popups;
 
@@ -347,18 +337,10 @@ location_cb (EphyEmbed *embed,
 
 	update_action (window, address);
 
-	icon = get_icon_for_embed (embed);
-	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_ICON (icon));
-
-	ephy_popup_blocker_icon_set_popups (icon, NULL);
-
 	popups = g_object_get_data (G_OBJECT (embed), "popup-blocker-list");
 	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (popups));
 
 	ephy_popup_blocker_list_reset (popups);
-
-	/* FIXME: use signals instead */
-	ephy_popup_blocker_icon_set_popups (icon, popups);
 }
 
 void
@@ -368,7 +350,6 @@ ephy_popup_blocker_extension_block (EphyEmbed *embed,
 {
 	EphyWindow *window;
 	EphyPopupBlockerList *popups;
-	EphyPopupBlockerIcon *icon;
 
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
@@ -376,11 +357,6 @@ ephy_popup_blocker_extension_block (EphyEmbed *embed,
 	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (popups));
 
 	ephy_popup_blocker_list_insert (popups, uri, features);
-
-	/* FIXME: use signals instead */
-	icon = get_icon_for_embed (embed);
-
-	ephy_popup_blocker_icon_set_popups (icon, popups);
 }
 
 static void
@@ -420,13 +396,17 @@ static void
 create_statusbar_icon (EphyWindow *window)
 {
 	EphyPopupBlockerIcon *icon;
+	GtkWidget *statusbar;
 
 	g_return_if_fail (EPHY_IS_WINDOW (window));
 
-	icon = ephy_popup_blocker_icon_new (window);
+	statusbar = ephy_window_get_statusbar (window);
+	g_return_if_fail (EPHY_IS_STATUSBAR (statusbar));
+
+	icon = ephy_popup_blocker_icon_new (statusbar);
 	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_ICON (icon));
 
-	g_object_set_data (G_OBJECT (window), "popup-blocker-icon", icon);
+	g_object_set_data (G_OBJECT (statusbar), "popup-blocker-icon", icon);
 }
 
 static void
@@ -444,10 +424,21 @@ register_mozilla (EphyEmbed *embed)
 {
 	PopupListenerFreeData *data;
 
+	if (GTK_WIDGET_REALIZED (embed) == FALSE)
+	{
+		g_signal_connect (embed, "realize",
+				  G_CALLBACK (register_mozilla), NULL);
+		return;
+	}
+	else
+	{
+		g_signal_handlers_disconnect_by_func
+			(embed, G_CALLBACK (register_mozilla), NULL);
+	}
+
 	LOG ("register_mozilla with EphyEmbed at %x", embed)
 
 	g_return_if_fail (EPHY_IS_EMBED (embed));
-	g_return_if_fail (GTK_WIDGET_REALIZED (embed));
 
 	data = mozilla_register_popup_listener (embed);
 	g_return_if_fail (data != NULL);
@@ -465,6 +456,7 @@ tab_added_cb (GtkWidget *notebook,
 {
 	EphyEmbed *embed;
 	EphyPopupBlockerList *popups;
+	EphyPopupBlockerIcon *icon;
 
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
@@ -474,10 +466,15 @@ tab_added_cb (GtkWidget *notebook,
 	popups = ephy_popup_blocker_list_new ();
 	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (popups));
 
-	g_object_set_data (G_OBJECT (embed), "popup-blocker-list", popups);
+	g_object_set_data_full (G_OBJECT (embed), "popup-blocker-list", popups,
+				(GDestroyNotify) g_object_unref);
 
-	g_signal_connect (embed, "realize",
-			  G_CALLBACK (register_mozilla), NULL);
+	icon = get_icon_for_embed (embed);
+	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_ICON (icon));
+
+	ephy_popup_blocker_icon_set_popups (icon, popups);
+
+	register_mozilla (embed);
 
 	g_signal_connect (embed, "ge_location",
 			  G_CALLBACK (location_cb), tab);
@@ -490,7 +487,6 @@ tab_removed_cb (GtkWidget *notebook,
 {
 	EphyEmbed *embed;
 	EphyPopupBlockerIcon *icon;
-	EphyPopupBlockerList *popups;
 
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
@@ -500,15 +496,8 @@ tab_removed_cb (GtkWidget *notebook,
 	icon = get_icon_for_embed (embed);
 	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_ICON (icon));
 
-	ephy_popup_blocker_icon_set_popups (icon, NULL);
-
-	popups = g_object_get_data (G_OBJECT (embed), "popup-blocker-list");
-	g_object_unref (popups);
-
 	g_signal_handlers_disconnect_by_func
 		(embed, G_CALLBACK (location_cb), tab);
-	g_signal_handlers_disconnect_by_func
-		(embed, G_CALLBACK (register_mozilla), NULL);
 }
 
 static void
@@ -531,8 +520,7 @@ switch_page_cb (GtkNotebook *notebook,
 	embed = ephy_window_get_active_embed (EPHY_WINDOW (toplevel));
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
-	icon = EPHY_POPUP_BLOCKER_ICON (g_object_get_data
-			(G_OBJECT (toplevel), "popup-blocker-icon"));
+	icon = get_icon_for_embed (embed);
 	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_ICON (icon));
 
 	popups = g_object_get_data (G_OBJECT (embed), "popup-blocker-list");
@@ -552,8 +540,6 @@ impl_attach_window (EphyExtension *extension,
 	guint context_id;
 	GtkUIManager *manager;
 	guint merge_id;
-
-	g_object_ref (window);
 
 	create_statusbar_icon (window);
 
@@ -606,7 +592,6 @@ static void
 impl_detach_window (EphyExtension *extension,
 		    EphyWindow *window)
 {
-	EphyPopupBlockerIcon *icon;
 	GtkWidget *notebook;
 
 	g_return_if_fail (EPHY_IS_WINDOW (window));
@@ -619,13 +604,6 @@ impl_detach_window (EphyExtension *extension,
 		(notebook, G_CALLBACK (tab_removed_cb), extension);
 	g_signal_handlers_disconnect_by_func
 		(notebook, G_CALLBACK (switch_page_cb), extension);
-
-	icon = g_object_get_data (G_OBJECT (window), "popup-blocker-icon");
-	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_ICON (icon));
-
-	g_object_unref (icon);
-
-	g_object_unref (window);
 }
 
 static void

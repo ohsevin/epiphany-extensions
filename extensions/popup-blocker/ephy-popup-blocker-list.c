@@ -42,6 +42,12 @@ struct EphyPopupBlockerListPrivate
 static void ephy_popup_blocker_list_class_init	(EphyPopupBlockerListClass *klass);
 static void ephy_popup_blocker_list_init	(EphyPopupBlockerList *popup);
 
+enum
+{
+	PROP_0,
+	PROP_COUNT
+};
+
 static GObjectClass *parent_class = NULL;
 
 static GType type = 0;
@@ -97,14 +103,6 @@ ephy_popup_blocker_list_init (EphyPopupBlockerList *list)
 	list->priv->blocked_popups = NULL;
 }
 
-int
-ephy_popup_blocker_list_length (EphyPopupBlockerList *list)
-{
-	g_return_val_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (list), 0);
-
-	return g_slist_length (list->priv->blocked_popups);
-}
-
 static void
 free_blocked_popup (BlockedPopup *popup)
 {
@@ -124,6 +122,8 @@ ephy_popup_blocker_list_reset (EphyPopupBlockerList *list)
 	g_slist_free (list->priv->blocked_popups);
 
 	list->priv->blocked_popups = NULL;
+
+	g_object_notify (G_OBJECT (list), "count");
 }
 
 static int
@@ -150,6 +150,10 @@ ephy_popup_blocker_list_insert (EphyPopupBlockerList *list,
 
 	list->priv->blocked_popups = g_slist_insert_sorted
 		(list->priv->blocked_popups, popup, (GCompareFunc) popup_cmp);
+
+	LOG ("Added blocked popup to list %p: %s\n", list, popup->url);
+
+	g_object_notify (G_OBJECT (list), "count");
 }
 
 static void
@@ -165,6 +169,40 @@ ephy_popup_blocker_list_finalize (GObject *object)
 }
 
 static void
+ephy_popup_blocker_list_set_property (GObject *object,
+				      guint prop_id,
+				      const GValue *value,
+				      GParamSpec *pspec)
+{
+	EphyPopupBlockerList *list = EPHY_POPUP_BLOCKER_LIST (object);
+
+	switch (prop_id)
+	{
+		case PROP_COUNT:
+			/* read only */
+			break;
+	}
+}
+
+static void
+ephy_popup_blocker_list_get_property (GObject *object,
+				      guint prop_id,
+				      GValue *value,
+				      GParamSpec *pspec)
+{
+	EphyPopupBlockerList *list = EPHY_POPUP_BLOCKER_LIST (object);
+
+	switch (prop_id)
+	{
+		case PROP_COUNT:
+			g_value_set_uint
+				(value,
+				 g_slist_length (list->priv->blocked_popups));
+			break;
+	}
+}
+
+static void
 ephy_popup_blocker_list_class_init (EphyPopupBlockerListClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
@@ -172,6 +210,18 @@ ephy_popup_blocker_list_class_init (EphyPopupBlockerListClass *klass)
 	parent_class = g_type_class_peek_parent (klass);
 
 	object_class->finalize = ephy_popup_blocker_list_finalize;
+	object_class->get_property = ephy_popup_blocker_list_get_property;
+	object_class->set_property = ephy_popup_blocker_list_set_property;
+
+	g_object_class_install_property (object_class,
+					 PROP_COUNT,
+					 g_param_spec_uint ("count",
+						 	    "Count",
+							    "Number of popups",
+							    0,
+							    G_MAXUINT,
+							    0,
+							    G_PARAM_READABLE));
 
 	g_type_class_add_private (object_class, sizeof (EphyPopupBlockerListPrivate));
 }

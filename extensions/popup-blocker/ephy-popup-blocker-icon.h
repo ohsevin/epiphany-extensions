@@ -23,7 +23,7 @@
 
 #include "ephy-popup-blocker-list.h"
 
-#include <epiphany/ephy-window.h>
+#include <gtk/gtkframe.h>
 
 #include <glib.h>
 #include <glib-object.h>
@@ -43,12 +43,12 @@ typedef struct EphyPopupBlockerIconPrivate	EphyPopupBlockerIconPrivate;
 
 struct EphyPopupBlockerIconClass
 {
-	GObjectClass parent_class;
+	GtkFrameClass parent_class;
 };
 
 struct EphyPopupBlockerIcon
 {
-	GObject parent_instance;
+	GtkFrame parent_instance;
 
 	EphyPopupBlockerIconPrivate *priv;
 };
@@ -57,7 +57,7 @@ GType	ephy_popup_blocker_icon_get_type	(void);
 
 GType	ephy_popup_blocker_icon_register_type	(GTypeModule *module);
 
-EphyPopupBlockerIcon	*ephy_popup_blocker_icon_new	(EphyWindow *window);
+EphyPopupBlockerIcon	*ephy_popup_blocker_icon_new	(GtkWidget *statusbar);
 
 void	ephy_popup_blocker_icon_set_popups	(EphyPopupBlockerIcon *icon,
 						 EphyPopupBlockerList *popups);
