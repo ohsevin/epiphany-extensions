@@ -1,3 +1,10 @@
+2005-02-02  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/actions/ephy-actions-extension.c: 
+	(ephy_actions_extension_run_action):
+
+	Better error dialog when command failed.	
+
 2005-02-02  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/actions/action-properties.glade:

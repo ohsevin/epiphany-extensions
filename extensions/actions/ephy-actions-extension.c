@@ -406,13 +406,14 @@ ephy_actions_extension_run_action (GtkAction *ui_action,
 		dialog = gtk_message_dialog_new
 			(GTK_WINDOW (window), GTK_DIALOG_DESTROY_WITH_PARENT,
 			 GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
-			 _("Could not run command: %s"),
-			 err->message);
+			 _("Could not run command"));
+		gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG(dialog), err->message);
+		gtk_window_set_icon_name (GTK_WINDOW (dialog), "web-browser");
+		gtk_window_set_title (GTK_WINDOW(window), _("Could not Run Command"));
 		g_error_free (err);
 
 		g_signal_connect (dialog, "response",
 				  G_CALLBACK (gtk_widget_destroy), NULL);
-		gtk_dialog_set_has_separator (GTK_DIALOG (dialog), FALSE);
 		gtk_widget_show (dialog);
 	}
 	g_free (full_command);
