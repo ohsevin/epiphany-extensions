@@ -1,0 +1,199 @@
+# Hungarian translation of epiphany-extensions.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the epiphany-extensions package.
+# Laszlo Dvornik <dvornikl@mailbox.hu>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: epiphany-extensions\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-02-26 14:20+0100\n"
+"PO-Revision-Date: 2004-02-26 17:53+0100\n"
+"Last-Translator: Laszlo Dvornik <dvornikl@mailbox.hu>\n"
+"Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: extensions/certificates/ephy-certificates-extension.c:159
+msgid "Certificate Manager"
+msgstr "Tanúsítványkezelő"
+
+#. stock icon
+#: extensions/certificates/ephy-certificates-extension.c:276
+msgid "Manage _Certificates"
+msgstr "_Tanúsítványok kezelése"
+
+#. shortcut key
+#: extensions/certificates/ephy-certificates-extension.c:278
+msgid "Manage your certificates"
+msgstr "Az ön tanúsítványainak kezelése"
+
+#. stock icon
+#: extensions/certificates/ephy-certificates-extension.c:286
+msgid "Server _Certificate"
+msgstr "_Kiszolgáló tanúsítványa"
+
+#. shortcut key
+#: extensions/certificates/ephy-certificates-extension.c:288
+msgid "Display the web server's certificate"
+msgstr "A kiszolgáló tanúsítványának megjelenítése"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:88
+msgid "Check _HTML"
+msgstr "_HTML ellenőrzése"
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:90
+msgid "Display HTML errors in the Error Viewer dialog"
+msgstr "HTML hibák megjelenítése a Hibanéző párbeszédablakban"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:95
+msgid "Check _Links"
+msgstr "H_ivatkozások ellenőrzése"
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:97
+msgid "Display invalid hyperlinks in the Error Viewer dialog"
+msgstr "Érvénytelen hivatkozások megjelenítése a Hibanéző párbeszédablakban"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:101
+msgid "_Error Viewer"
+msgstr "Hiba_néző"
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:103
+msgid "Display web page errors"
+msgstr "Weboldal hibák megjelenítése"
+
+#: extensions/error-viewer/error-viewer.glade.h:1
+msgid "C_lear"
+msgstr "_Törlés"
+
+#: extensions/error-viewer/error-viewer.glade.h:2
+msgid "Error Viewer"
+msgstr "Hibanéző"
+
+#: extensions/error-viewer/link-checker.c:231
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "%d érvénytelen hivatkozás"
+msgstr[1] "%d érvénytelen hivatkozás"
+
+#. Don't bother looking for source lines -- they're not there
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
+#, c-format
+msgid ""
+"Error:\n"
+"%s"
+msgstr ""
+"Hiba:\n"
+"%s"
+
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:90
+#, c-format
+msgid ""
+"Javascript error in %s on line %d:\n"
+"%s"
+msgstr ""
+"Javascript hiba a(z) %s fájl %d. sorában:\n"
+"%s"
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:77
+#, c-format
+msgid ""
+"Link error in %s:\n"
+"%s is unavailable."
+msgstr ""
+"Hivatkozás hiba a(z) %s fájlban:\n"
+"%s nem elérhető."
+
+#: extensions/error-viewer/opensp/validate.cpp:167
+#, c-format
+msgid ""
+"HTML error in %s on line %s:\n"
+"%s"
+msgstr ""
+"HTML hiba a(z) %s fájl %s. sorában:\n"
+"%s"
+
+#: extensions/error-viewer/sgml-validator.c:165
+#, c-format
+msgid "Found %d error"
+msgid_plural "Found %d errors"
+msgstr[0] "%d hiba"
+msgstr[1] "%d hiba"
+
+#: extensions/error-viewer/sgml-validator.c:169
+#, c-format
+msgid "HTML Validation of %s complete"
+msgstr "%s HTML jóváhagyása kész"
+
+#: extensions/error-viewer/sgml-validator.c:227
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"%s"
+msgstr ""
+"HTML hiba a(z) %s fájlban:\n"
+"%s"
+
+#: extensions/error-viewer/sgml-validator.c:229
+#: extensions/error-viewer/sgml-validator.c:245
+msgid ""
+"Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
+"xhtml+xml\" instead."
+msgstr ""
+"A doctype \"XHTML\", de a content type \"text/html\". Inkább használjon "
+"\"application/xhtml+xml\"-t."
+
+#: extensions/error-viewer/sgml-validator.c:243
+#, c-format
+msgid ""
+"HTML warning in %s:\n"
+"%s"
+msgstr ""
+"HTML hiba a(z) %s fájlban:\n"
+"%s"
+
+#: extensions/error-viewer/sgml-validator.c:381
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"No valid doctype specified."
+msgstr ""
+"HTML hiba a(z) %s fájlban:\n"
+"Nincs érvényes doctype megadva."
+
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
+msgid "Blo_ck Popups from this Site"
+msgstr "Felbukkanó ablakok _blokkolása erről a webhelyről"
+
+#. shortcut key
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:64
+msgid "Block or unblock popup windows"
+msgstr "Felbukkanó ablakok blokkolása vagy engedélyezése"
+
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:324
+#, c-format
+msgid "%d popup blocked"
+msgid_plural "%d popups blocked"
+msgstr[0] "%d felbukkanó ablak blokkolva"
+msgstr[1] "%d felbukkanó ablak blokkolva"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:183
+#, c-format
+msgid "Window '%s' (%d tab)"
+msgid_plural "Window '%s' (%d tabs)"
+msgstr[0] "'%s' ablak (%d böngészőlap)"
+msgstr[1] "'%s' ablak (%d böngészőlap)"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:282
+msgid "Move Tab To Window"
+msgstr "Böngészőlap mozgatása ablakba"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:283
+msgid "Move the current tab to a different window"
+msgstr "Böngészőlap mozgatása egy másik ablakba"
