@@ -1,5 +1,12 @@
 2005-02-06  Christian Persch  <chpe@cvs.gnome.org>
 
+	* configure.ac:
+
+	Make sure epiphany was compiled with dbus support when
+	the net-monitor extension is requested.
+
+2005-02-06  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/certificates/ephy-certificates-extension.c:
 	(show_page_certificate), (padlock_button_press_cb),
 	(impl_attach_window), (impl_detach_window):

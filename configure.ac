@@ -203,6 +203,8 @@ if echo "$extensions" | egrep '(^|,)net-monitor($|,)' > /dev/null; then
 	DBUS_GLIB_REQUIRED=0.22
 
 	PKG_CHECK_MODULES([DBUS], [dbus-1 >= $DBUS_REQUIRED dbus-glib-1 >= $DBUS_GLIB_REQUIRED])
+	INCLUDE_DIR="`$PKG_CONFIG --variable=includedir epiphany-1.6`"
+	AC_CHECK_FILE([$INCLUDE_DIR/epiphany/ephy-dbus.h],,[AC_MSG_ERROR([Epiphany was not compiled with dbus support])])
 fi
 
 dnl ****
