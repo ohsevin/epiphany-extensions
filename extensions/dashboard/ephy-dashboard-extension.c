@@ -228,8 +228,6 @@ impl_detach_window (EphyExtension *ext,
 		(notebook, G_CALLBACK (tab_added_cb), ext);
 	g_signal_handlers_disconnect_by_func
 		(notebook, G_CALLBACK (tab_removed_cb), ext);
-	g_signal_handlers_disconnect_by_func
-		(notebook, G_CALLBACK (load_status_cb), ext);
 }
 
 static void
@@ -254,5 +252,5 @@ ephy_dashboard_extension_class_init (EphyDashboardExtensionClass *klass)
 
 	parent_class = g_type_class_peek_parent (klass);
 
-	//g_type_class_add_private (object_class, sizeof (EphyDashboardExtensionPrivate));
+	g_type_class_add_private (object_class, sizeof (EphyDashboardExtensionPrivate));
 }

@@ -1,6 +1,13 @@
 2004-01-14  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/dashboard/ephy-dashboard-extension.c:
+	(impl_detach_window):
+
+	Don't disconnect from non-existing signals.
+
+2004-01-14  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/dashboard/ephy-dashboard-extension.c:
 	(ephy_dashboard_extension_get_type),
 	(ephy_dashboard_extension_register_type), (load_status_cb),
 	(tab_added_cb), (tab_removed_cb), (impl_attach_window),
