@@ -1,3 +1,28 @@
+2005-02-11  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/actions/Makefile.am:
+	* extensions/adblock/Makefile.am:
+	* extensions/bookmarks-tray/Makefile.am:
+	* extensions/certificates/Makefile.am:
+	* extensions/dashboard/Makefile.am:
+	* extensions/error-viewer/Makefile.am:
+	* extensions/extensions-manager-ui/Makefile.am:
+	* extensions/find/Makefile.am:
+	* extensions/gestures/Makefile.am:
+	* extensions/net-monitor/Makefile.am:
+	* extensions/page-info/Makefile.am:
+	* extensions/sample-mozilla/Makefile.am:
+	* extensions/sample/Makefile.am:
+	* extensions/select-stylesheet/Makefile.am:
+	* extensions/sidebar/Makefile.am:
+	* extensions/smart-bookmarks/Makefile.am:
+	* extensions/tab-groups/Makefile.am:
+	* extensions/tab-states/Makefile.am:
+	* extensions/tabsmenu/Makefile.am:
+
+	Fix build for sh != bash. Patch by Grzegorz Golawski,
+	fixes bug #167011.
+
 2005-02-09  Christian Persch  <chpe@cvs.gnome.org>
 
 	* Makefile.am:
