@@ -1,5 +1,11 @@
 2003-08-04  Christian Persch  <chpe@cvs.gnome.org>
 
+	* configure.in:
+
+	Added "fr" to ALL_LINGUAS.
+
+2003-08-04  Christian Persch  <chpe@cvs.gnome.org>
+
 	* include/ephy-plugins-i18n.h:
 
 	New. Enable i18n in plugins.
