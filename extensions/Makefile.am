@@ -28,10 +28,10 @@ if ENABLE_TABSMENU_EXTENSION
 SUBDIRS += tabsmenu
 endif
 
-if ENABLE_TOOLBAR_EXTRAS_EXTENSION
-SUBDIRS += toolbar-extras
-endif
+#if ENABLE_TOOLBAR_EXTRAS_EXTENSION
+#SUBDIRS += toolbar-extras
+#endif
 
-DIST_SUBDIRS = certificates dashboard error-viewer gestures popup-blocker sample sample-mozilla tabsmenu toolbar-extras
+DIST_SUBDIRS = certificates dashboard error-viewer gestures popup-blocker sample sample-mozilla tabsmenu
 
 EXTRA_DIST =
