@@ -1,3 +1,9 @@
+2004-09-22  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
+	Make API checks really work.
+
 2004-09-21  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:

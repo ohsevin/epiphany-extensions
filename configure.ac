@@ -281,6 +281,8 @@ if test "$ac_cv_have_usable_wchar_option" != "yes"; then
     AM_CXXFLAGS=$_SAVE_AM_CXXFLAGS
 fi
 
+CXXFLAGS="$_SAVE_CXXFLAGS $AM_CXXFLAGS -I$MOZILLA_INCLUDE_ROOT `pkg-config --cflags $MOZILLA-xpcom`"
+
 dnl insert mozilla API checks here
 
 CXXFLAGS=$_SAVE_CXXFLAGS
