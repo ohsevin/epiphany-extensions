@@ -9,10 +9,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: epiphany-extensions 1.5.0\n"
+"Project-Id-Version: epiphany-extensions 1.5.1.90\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-03 23:44+0200\n"
-"PO-Revision-Date: 2004-10-03 23:22+0200\n"
+"POT-Creation-Date: 2004-11-13 14:50+0100\n"
+"PO-Revision-Date: 2004-11-13 14:39+0100\n"
 "Last-Translator: Yannick Tailliez <ytdispatch-libre@yahoo.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,11 +20,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
 
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
+msgid "_Edit Bookmarks"
+msgstr ""
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
+msgid "Open the bookmarks window"
+msgstr ""
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
+msgid "Open in _Current Tab"
+msgstr ""
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
+#, fuzzy
+msgid "Opens bookmarks in the current tab of the active window"
+msgstr "Déplace l'onglet courant vers une autre fenêtre"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
+msgid "Open in New _Tab"
+msgstr ""
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
+msgid "Opens bookmarks in a newt tab of the active window"
+msgstr ""
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
+msgid "Open in New _Window"
+msgstr ""
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
+msgid "Opens bookmarks in a new window"
+msgstr ""
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:513
+msgid "Bookmarks"
+msgstr ""
+
 #. stock icon
 #: extensions/certificates/ephy-certificates-extension.c:269
-#, fuzzy
 msgid "Manage _Certificates"
-msgstr "Gére les _Certificats"
+msgstr "Gére les _certificats"
 
 #. shortcut key
 #: extensions/certificates/ephy-certificates-extension.c:271
@@ -39,34 +75,34 @@ msgstr "_Certificat du serveur"
 #. shortcut key
 #: extensions/certificates/ephy-certificates-extension.c:281
 msgid "Display the web server's certificate"
-msgstr "Afficher le certificat du serveur web"
+msgstr "Afficher le certificat du serveur Web"
 
 #: extensions/error-viewer/ephy-error-viewer-extension.c:98
 msgid "Check _HTML"
-msgstr "Vérifier le _HTML"
+msgstr "Vérifier le code _HTML"
 
 #. shortcut key
 #: extensions/error-viewer/ephy-error-viewer-extension.c:100
 msgid "Display HTML errors in the Error Viewer dialog"
-msgstr "Afficher les erreurs HTML dans le Visualisateur d'erreur"
+msgstr "Afficher les erreurs HTML dans le visionneur d'erreurs"
 
 #: extensions/error-viewer/ephy-error-viewer-extension.c:105
 msgid "Check _Links"
-msgstr "Vérifier les liens"
+msgstr "Vérifier les _liens"
 
 #. shortcut key
 #: extensions/error-viewer/ephy-error-viewer-extension.c:107
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
-msgstr "Afficher les liens invalides dans le Visualisateur d'erreur"
+msgstr "Afficher les liens non valides dans le visionneur d'erreurs"
 
 #: extensions/error-viewer/ephy-error-viewer-extension.c:111
 msgid "_Error Viewer"
-msgstr "Visualisateur d'_erreur"
+msgstr "Visionneur d'_erreurs"
 
 #. shortcut key
 #: extensions/error-viewer/ephy-error-viewer-extension.c:113
 msgid "Display web page errors"
-msgstr "Afficher les erreurs de la page web"
+msgstr "Afficher les erreurs de la page Web"
 
 #: extensions/error-viewer/error-viewer.glade.h:1
 msgid "C_lear"
@@ -74,7 +110,7 @@ msgstr "Effa_cer"
 
 #: extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
-msgstr "Visualisateur d'erreur"
+msgstr "Visionneur d'erreurs"
 
 #. Don't bother looking for source lines -- they're not there
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:85
@@ -83,7 +119,7 @@ msgid ""
 "Error:\n"
 "%s"
 msgstr ""
-"Erreur :\n"
+"Erreur :\n"
 "%s"
 
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:110
@@ -92,15 +128,15 @@ msgid ""
 "Javascript error in %s on line %d:\n"
 "%s"
 msgstr ""
-"Erreur javascript dans %s à la ligne %d :\n"
+"Erreur JavaScript dans %s à la ligne %d :\n"
 "%s"
 
 #: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:60
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
-msgstr[0] "%d lien invalide trouvé"
-msgstr[1] "%d liens invalides trouvés"
+msgstr[0] "%d lien non valide trouvé"
+msgstr[1] "%d liens non valides trouvés"
 
 #: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:117
 #, c-format
@@ -108,7 +144,7 @@ msgid ""
 "Link error in %s:\n"
 "%s is unavailable."
 msgstr ""
-"Erreur de lien dans %s :\n"
+"Erreur de lien dans %s :\n"
 "%s est inaccessible."
 
 #: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:198
@@ -124,7 +160,7 @@ msgid ""
 "HTML error in %s on line %s:\n"
 "%s"
 msgstr ""
-"Erreur HTML dans %s à la ligne %s :\n"
+"Erreur HTML dans %s à la ligne %s :\n"
 "%s"
 
 #: extensions/error-viewer/sgml-validator.c:167
@@ -145,17 +181,16 @@ msgid ""
 "HTML error in %s:\n"
 "%s"
 msgstr ""
-"Erreur HTML dans %s :\n"
+"Erreur HTML dans %s :\n"
 "%s"
 
 #: extensions/error-viewer/sgml-validator.c:231
 #: extensions/error-viewer/sgml-validator.c:247
-#, fuzzy
 msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
 msgstr ""
-"Le doctype est « XHTML » mais le content type et « text/html ».Utilisez "
+"Le doctype est « XHTML » mais le type de contenu est « text/html ». Utilisez "
 "« application/xhtml+xml » à la place."
 
 #: extensions/error-viewer/sgml-validator.c:245
@@ -170,7 +205,7 @@ msgstr ""
 #: extensions/error-viewer/sgml-validator.c:362
 #, c-format
 msgid "HTML error in %s:"
-msgstr "Erreur HTML dans %s :"
+msgstr "Erreur HTML dans %s :"
 
 #: extensions/error-viewer/sgml-validator.c:370
 msgid "Invalid character encoding"
@@ -181,127 +216,185 @@ msgid "Unknown error while converting to UTF-8"
 msgstr "Erreur inconnue durant la convertion en UTF-8"
 
 #: extensions/error-viewer/sgml-validator.c:437
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "HTML error in %s:\n"
 "No valid doctype specified."
 msgstr ""
-"Erreur HTML dans %s :\n"
-"Un doctype invalide n'a pas été indiqué"
+"Erreur HTML dans %s :\n"
+"Un doctype non valide a été indiqué"
 
-#: extensions/page-info/ephy-page-info-extension.c:65
+#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+msgid "_Extensions"
+msgstr ""
+
+#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
+msgid "Load and unload extensions"
+msgstr ""
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:227
+msgid "Author:"
+msgid_plural "Authors:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:410
+msgid "Enabled"
+msgstr ""
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:417
+msgid "Description"
+msgstr ""
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+#, fuzzy
+msgid "<b>Loaded Extensions</b>"
+msgstr "<b>Rendu</b>"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+#: extensions/page-info/page-info.glade.h:9
+msgid "DYNAMIC"
+msgstr "DYNAMIQUE"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:3
+msgid "Description:"
+msgstr ""
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:4
+msgid "Extension Information"
+msgstr ""
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:5
+msgid "Extensions"
+msgstr ""
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:6
+#, fuzzy
+msgid "Name:"
+msgstr "Nom"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:7
+#, fuzzy
+msgid "URL:"
+msgstr "URL"
+
+#: extensions/page-info/ephy-page-info-extension.c:66
 msgid "_Page Info"
-msgstr ""
+msgstr "_Page d'information"
 
-#: extensions/page-info/ephy-page-info-extension.c:67
+#: extensions/page-info/ephy-page-info-extension.c:68
 msgid "Display page information in a dialog"
-msgstr ""
+msgstr "Affiche la page d'information dans une fenêtre"
 
-#: extensions/page-info/page-info-dialog.c:637
+#: extensions/page-info/page-info-dialog.c:638
 msgid "Unknown type"
-msgstr ""
+msgstr "Type inconnu"
 
-#: extensions/page-info/page-info-dialog.c:642
+#: extensions/page-info/page-info-dialog.c:643
 msgid "Full standards compliance"
-msgstr ""
+msgstr "Completement conforme aux normes"
 
-#: extensions/page-info/page-info-dialog.c:645
+#: extensions/page-info/page-info-dialog.c:646
 msgid "Almost standards compliance"
-msgstr ""
+msgstr "Presque conforme aux normes"
 
-#: extensions/page-info/page-info-dialog.c:648
+#: extensions/page-info/page-info-dialog.c:649
 msgid "Compatibility"
 msgstr "Compatibilité"
 
-#: extensions/page-info/page-info-dialog.c:651
+#: extensions/page-info/page-info-dialog.c:652
 msgid "Undetermined"
-msgstr ""
+msgstr "Indeterminé"
 
-#: extensions/page-info/page-info-dialog.c:660
+#: extensions/page-info/page-info-dialog.c:661
 msgid "Not cached"
-msgstr ""
+msgstr "Non caché"
 
-#: extensions/page-info/page-info-dialog.c:663
+#: extensions/page-info/page-info-dialog.c:664
 msgid "Disk cache"
-msgstr ""
+msgstr "Tampon disque"
 
-#: extensions/page-info/page-info-dialog.c:666
+#: extensions/page-info/page-info-dialog.c:667
 msgid "Memory cache"
-msgstr ""
+msgstr "Mémoire tampon"
 
-#: extensions/page-info/page-info-dialog.c:669
+#: extensions/page-info/page-info-dialog.c:670
 msgid "Unknown cache"
-msgstr ""
+msgstr "Tampon inconnu"
 
-#: extensions/page-info/page-info-dialog.c:685
+#: extensions/page-info/page-info-dialog.c:686
 msgid "Unknown"
 msgstr "Inconnu"
 
-#: extensions/page-info/page-info-dialog.c:690
+#: extensions/page-info/page-info-dialog.c:691
 msgid "No referrer"
-msgstr ""
+msgstr "Aucun référent"
 
-#: extensions/page-info/page-info-dialog.c:704
-#: extensions/page-info/page-info-dialog.c:720
+#: extensions/page-info/page-info-dialog.c:705
+#: extensions/page-info/page-info-dialog.c:721
 msgid "Not specified"
-msgstr ""
+msgstr "Non spécifié"
 
-#: extensions/page-info/page-info-dialog.c:814
+#: extensions/page-info/page-info-dialog.c:815
 msgid "Save Image As..."
-msgstr ""
+msgstr "Enregistrer l'image sous..."
 
-#: extensions/page-info/page-info-dialog.c:896
+#: extensions/page-info/page-info-dialog.c:897
 msgid "_Open Image"
-msgstr ""
+msgstr "_Ouvrir une image"
 
-#: extensions/page-info/page-info-dialog.c:902
+#: extensions/page-info/page-info-dialog.c:903
 msgid "_Copy Image Address"
-msgstr ""
+msgstr "_Copier l'adresse de l'image"
 
-#: extensions/page-info/page-info-dialog.c:908
+#: extensions/page-info/page-info-dialog.c:909
 msgid "_Use Image as Background"
-msgstr ""
+msgstr "_Utiliser l'image comme fond"
 
-#: extensions/page-info/page-info-dialog.c:914
+#: extensions/page-info/page-info-dialog.c:915
 #: extensions/page-info/page-info.glade.h:26
 msgid "_Save Image As..."
-msgstr ""
+msgstr "_Enregistrer l'image sous..."
 
-#: extensions/page-info/page-info-dialog.c:1003
-#: extensions/page-info/page-info-dialog.c:1180
+#: extensions/page-info/page-info-dialog.c:1004
+#: extensions/page-info/page-info-dialog.c:1222
 msgid "URL"
 msgstr "URL"
 
-#: extensions/page-info/page-info-dialog.c:1015
+#: extensions/page-info/page-info-dialog.c:1016
 msgid "Alt Text"
 msgstr "Texte alternatif"
 
-#: extensions/page-info/page-info-dialog.c:1027
-#: extensions/page-info/page-info-dialog.c:1192
+#: extensions/page-info/page-info-dialog.c:1028
+#: extensions/page-info/page-info-dialog.c:1234
 msgid "Title"
 msgstr "Titre"
 
-#: extensions/page-info/page-info-dialog.c:1039
+#: extensions/page-info/page-info-dialog.c:1040
 msgid "Width"
 msgstr "Largeur"
 
-#: extensions/page-info/page-info-dialog.c:1051
+#: extensions/page-info/page-info-dialog.c:1052
 msgid "Height"
 msgstr "Hauteur"
 
-#: extensions/page-info/page-info-dialog.c:1204
+#: extensions/page-info/page-info-dialog.c:1188
+msgid "_Copy Link Address"
+msgstr "_Copier l'adresse du lien"
+
+#: extensions/page-info/page-info-dialog.c:1246
 msgid "Relation"
 msgstr "Relation"
 
-#: extensions/page-info/page-info-dialog.c:1315
+#: extensions/page-info/page-info-dialog.c:1357
 msgid "Name"
 msgstr "Nom"
 
-#: extensions/page-info/page-info-dialog.c:1327
+#: extensions/page-info/page-info-dialog.c:1369
 msgid "Method"
 msgstr "Méthode"
 
-#: extensions/page-info/page-info-dialog.c:1339
+#: extensions/page-info/page-info-dialog.c:1381
 msgid "Action"
 msgstr "Action"
 
@@ -311,35 +404,31 @@ msgstr "*"
 
 #: extensions/page-info/page-info.glade.h:2
 msgid "<b>Forms In Page</b>"
-msgstr ""
+msgstr "<b>Formulaires dans la page</b>"
 
 #: extensions/page-info/page-info.glade.h:3
 msgid "<b>Image View</b>"
-msgstr ""
+msgstr "<b>Vue image</b>"
 
 #: extensions/page-info/page-info.glade.h:4
 msgid "<b>Images In Page</b>"
-msgstr ""
+msgstr "<b>Images dans la page</b>"
 
 #: extensions/page-info/page-info.glade.h:5
 msgid "<b>Links In Page</b>"
-msgstr ""
+msgstr "<b>Liens dans la page</b>"
 
 #: extensions/page-info/page-info.glade.h:6
 msgid "<b>Rendering</b>"
-msgstr ""
+msgstr "<b>Rendu</b>"
 
 #: extensions/page-info/page-info.glade.h:7
 msgid "<b>Source File</b>"
-msgstr ""
+msgstr "<b>Fichier source</b>"
 
 #: extensions/page-info/page-info.glade.h:8
 msgid "<b>Web Page</b>"
 msgstr "<b>Page Web</b>"
-
-#: extensions/page-info/page-info.glade.h:9
-msgid "DYNAMIC"
-msgstr ""
 
 #: extensions/page-info/page-info.glade.h:10
 msgid "Encoding:"
@@ -347,7 +436,7 @@ msgstr "Codage :"
 
 #: extensions/page-info/page-info.glade.h:11
 msgid "Expires:"
-msgstr ""
+msgstr "Expire :"
 
 #: extensions/page-info/page-info.glade.h:12
 msgid "Forms"
@@ -379,15 +468,16 @@ msgstr "Mode :"
 
 #: extensions/page-info/page-info.glade.h:19
 msgid "Modified:"
-msgstr ""
+msgstr "Modifier :"
 
 #: extensions/page-info/page-info.glade.h:20
 msgid "Page Properties"
 msgstr "Propriétés de la page"
 
+# fuzzy
 #: extensions/page-info/page-info.glade.h:21
 msgid "Referrer:"
-msgstr ""
+msgstr "Référence :"
 
 #: extensions/page-info/page-info.glade.h:22
 msgid "Size:"
@@ -407,16 +497,16 @@ msgstr "Type :"
 
 #: extensions/select-stylesheet/ephy-css-menu.c:147
 msgid "Render the page without using a style"
-msgstr ""
+msgstr "Afficher la page sans utiliser de style"
 
 #: extensions/select-stylesheet/ephy-css-menu.c:150
 msgid "Render the page using the default style"
-msgstr ""
+msgstr "Afficher la page en utilisant le style par défaut"
 
 #: extensions/select-stylesheet/ephy-css-menu.c:153
 #, c-format
 msgid "Render the page using the \"%s\" style"
-msgstr ""
+msgstr "Affiche la page en utilisant le style \"%s\""
 
 #: extensions/select-stylesheet/ephy-css-menu.c:293
 msgid "St_yle"
@@ -424,7 +514,7 @@ msgstr "St_yle"
 
 #: extensions/select-stylesheet/ephy-css-menu.c:294
 msgid "Select a different style for this page"
-msgstr ""
+msgstr "Sélectionner un style different pour cette page"
 
 #: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
 msgid "Default"
@@ -432,61 +522,67 @@ msgstr "Défaut"
 
 #: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
 msgid "None"
-msgstr ""
-
-#: extensions/sidebar/ephy-sidebar-extension.c:107
-msgid "_Sidebar"
-msgstr ""
+msgstr "Aucun"
 
 #: extensions/sidebar/ephy-sidebar-extension.c:108
-msgid "Show or hide the sidebar"
-msgstr ""
+msgid "_Sidebar"
+msgstr "_Panneau latéral"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:368
+#: extensions/sidebar/ephy-sidebar-extension.c:109
+msgid "Show or hide the sidebar"
+msgstr "Affiche ou masque le panneau latéral"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:396
+#, c-format
+msgid "Add \"%s\" to the Sidebar?"
+msgstr "Ajouter « %s » au panneau latéral ?"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:400
+#, fuzzy, c-format
+msgid "The source to the new sidebar page is %s."
+msgstr "La source du nouveau panneau latéral est :"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:402
+#, fuzzy
+msgid "Add Sidebar"
+msgstr "A_jouter un panneau latéral"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:406
 msgid "_Add Sidebar"
 msgstr "A_jouter un panneau latéral"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:395
-#, c-format
-msgid "Add \"%s\" to the Sidebar?"
-msgstr ""
-
-#: extensions/sidebar/ephy-sidebar-extension.c:398
-msgid "The source to the new sidebar page is:"
-msgstr ""
-
 #: extensions/sidebar/ephy-sidebar.c:178
 msgid "No Sidebars installed"
-msgstr ""
+msgstr "Pas de panneau latéral installé"
 
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:547
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:553
 msgid "_Look Up"
-msgstr ""
+msgstr "_Rechecher"
 
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:554
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:560
 msgid "_GNOME Dictionary"
 msgstr "Dictionnaire _GNOME"
 
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:561
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:567
 msgid "Loo_k-Up Preferences"
-msgstr ""
+msgstr "_Préférences des recherches"
 
 #. shortcut key
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:563
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:569
 msgid "Look up your selection"
-msgstr ""
+msgstr "Recherche votre sélection"
 
 #: extensions/smart-bookmarks/smart-bookmarks.glade.h:1
 msgid "Add Gnome Dictionary to the menu"
-msgstr ""
+msgstr "Ajouter le dictionnaire Gnome au menu"
 
 #: extensions/smart-bookmarks/smart-bookmarks.glade.h:2
 msgid "Look Up Preferences"
-msgstr ""
+msgstr "Préférences des recherches"
 
 #: extensions/smart-bookmarks/smart-bookmarks.glade.h:3
 msgid "Open search results in a new tab"
-msgstr ""
+msgstr "Ouvrir les résultats de la recherche dans un nouvel onglet"
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:183
 #, c-format
