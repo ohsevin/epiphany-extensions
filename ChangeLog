@@ -1,5 +1,12 @@
 2004-03-11  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/popup-blocker/ephy-popup-blocker-icon.c:
+	(ephy_popup_blocker_icon_finalize):
+
+	Don't leak the GtkActionGroup and its GtkActions.
+
+2004-03-11  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
 	(create_statusbar_icon), (ephy_popup_blocker_extension_iface_init):
 	* extensions/popup-blocker/ephy-popup-blocker-icon.c:

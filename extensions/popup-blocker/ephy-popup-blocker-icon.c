@@ -406,7 +406,6 @@ ephy_popup_blocker_icon_finalize (GObject *object)
 	LOG ("EphyPopupBlockerIcon finalizing")
 
 	g_object_unref (icon->priv->tooltips);
-	g_object_unref (G_OBJECT (icon->priv->ui));
 
 	if (icon->priv->popups)
 	{
@@ -417,6 +416,11 @@ ephy_popup_blocker_icon_finalize (GObject *object)
 
 		g_object_unref (icon->priv->popups);
 	}
+
+	clear_actions (icon);
+
+	g_object_unref (G_OBJECT (icon->priv->actions));
+	g_object_unref (G_OBJECT (icon->priv->ui));
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
 }
