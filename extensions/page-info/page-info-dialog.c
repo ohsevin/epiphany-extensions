@@ -107,7 +107,7 @@ static GType type = 0;
 				       TYPE_PAGE_INFO_DIALOG, PageInfoDialogPrivate))
 
 
-struct PageInfoDialogPrivate
+struct _PageInfoDialogPrivate
 {
 	EphyEmbed *image_embed;
 };

@@ -28,30 +28,31 @@
 
 G_BEGIN_DECLS
 
-#define EPHY_TYPE_PAGE_INFO_EXTENSION (ephy_page_info_extension_get_type ())
-#define EPHY_PAGE_INFO_EXTENSION(o)	(G_TYPE_CHECK_INSTANCE_CAST ((o), EPHY_TYPE_PAGE_INFO_EXTENSION, EphyPageInfoExtension))
-#define EPHY_PAGE_INFO_EXTENSION_CLASS(k) (G_TYPE_CHECK_CLASS_CAST((k), EPHY_TYPE_PAGE_INFO_EXTENSION, EphyPageInfoExtensionClass))
-#define EPHY_IS_PAGE_INFO_EXTENSION(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), EPHY_TYPE_PAGE_INFO_EXTENSION))
-#define EPHY_IS_PAGE_INFO_EXTENSION_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), EPHY_TYPE_PAGE_INFO_EXTENSION))
-#define EPHY_PAGE_INFO_EXTENSION_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), EPHY_TYPE_PAGE_INFO_EXTENSION, EphyPageInfoExtensionClass))
+#define EPHY_TYPE_PAGE_INFO_EXTENSION		(ephy_page_info_extension_get_type ())
+#define EPHY_PAGE_INFO_EXTENSION(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), EPHY_TYPE_PAGE_INFO_EXTENSION, EphyPageInfoExtension))
+#define EPHY_PAGE_INFO_EXTENSION_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), EPHY_TYPE_PAGE_INFO_EXTENSION, EphyPageInfoExtensionClass))
+#define EPHY_IS_PAGE_INFO_EXTENSION(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), EPHY_TYPE_PAGE_INFO_EXTENSION))
+#define EPHY_IS_PAGE_INFO_EXTENSION_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), EPHY_TYPE_PAGE_INFO_EXTENSION))
+#define EPHY_PAGE_INFO_EXTENSION_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), EPHY_TYPE_PAGE_INFO_EXTENSION, EphyPageInfoExtensionClass))
 
-typedef struct EphyPageInfoExtension		EphyPageInfoExtension;
-typedef struct EphyPageInfoExtensionClass	EphyPageInfoExtensionClass;
-typedef struct EphyPageInfoExtensionPrivate	EphyPageInfoExtensionPrivate;
+typedef struct _EphyPageInfoExtension		EphyPageInfoExtension;
+typedef struct _EphyPageInfoExtensionClass	EphyPageInfoExtensionClass;
+typedef struct _EphyPageInfoExtensionPrivate	EphyPageInfoExtensionPrivate;
 
-struct EphyPageInfoExtensionClass
+struct _EphyPageInfoExtensionClass
 {
 	GObjectClass parent_class;
 };
 
-struct EphyPageInfoExtension
+struct _EphyPageInfoExtension
 {
 	GObject parent_instance;
 
+	/*< private >*/
 	EphyPageInfoExtensionPrivate *priv;
 };
 
-GType	ephy_page_info_extension_get_type		(void);
+GType	ephy_page_info_extension_get_type	(void);
 
 GType	ephy_page_info_extension_register_type	(GTypeModule *module);
 

@@ -41,7 +41,7 @@
 
 #define EPHY_PAGE_INFO_EXTENSION_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_PAGE_INFO_EXTENSION, EphyPageInfoExtensionPrivate))
 
-struct EphyPageInfoExtensionPrivate
+struct _EphyPageInfoExtensionPrivate
 {
 	gpointer dummy;
 };

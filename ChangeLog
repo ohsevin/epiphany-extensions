@@ -1,6 +1,15 @@
 2004-09-11  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/page-info/ephy-page-info-extension.c:
+	* extensions/page-info/ephy-page-info-extension.h:
+	* extensions/page-info/page-info-dialog.c:
+	* extensions/page-info/page-info-dialog.h:
+
+	Don't use the pre-historic gtk type check macros.
+
+2004-09-11  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/page-info/ephy-page-info-extension.c:
 	(impl_attach_window):
 	* extensions/page-info/mozilla/Makefile.am:
 	* extensions/page-info/mozilla/mozilla-helpers.cpp:

@@ -31,16 +31,16 @@
 
 G_BEGIN_DECLS
 
-typedef struct PageInfoDialog PageInfoDialog;
-typedef struct PageInfoDialogClass PageInfoDialogClass;
+#define TYPE_PAGE_INFO_DIALOG		(page_info_extension_get_type ())
+#define PAGE_INFO_DIALOG(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_PAGE_INFO_DIALOG, PageInfoDialog))
+#define PAGE_INFO_DIALOG_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), TYPE_PAGE_INFO_DIALOG, PageInfoDialogClass))
+#define IS_PAGE_INFO_DIALOG(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_PAGE_INFO_DIALOG))
+#define IS_PAGE_INFO_DIALOG_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), TYPE_PAGE_INFO_DIALOG))
+#define PAGE_INFO_DIALOG_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), TYPE_PAGE_INFO_DIALOG, PageInfoDialogClass))
 
-#define TYPE_PAGE_INFO_DIALOG             (page_info_dialog_get_type ())
-#define PAGE_INFO_DIALOG(obj)             (GTK_CHECK_CAST ((obj), TYPE_PAGE_INFO_DIALOG, PageInfoDialog))
-#define PAGE_INFO_DIALOG_CLASS(klass)     (GTK_CHECK_CLASS_CAST ((klass), PAGE_INFO_DIALOG, PageInfoDialogClass))
-#define IS_PAGE_INFO_DIALOG(obj)          (GTK_CHECK_TYPE ((obj), TYPE_PAGE_INFO_DIALOG))
-#define IS_PAGE_INFO_DIALOG_CLASS(klass)  (GTK_CHECK_CLASS_TYPE ((klass), PAGE_INFO_DIALOG))
-
-typedef struct PageInfoDialogPrivate PageInfoDialogPrivate;
+typedef struct _PageInfoDialog		PageInfoDialog;
+typedef struct _PageInfoDialogPrivate	PageInfoDialogPrivate;
+typedef struct _PageInfoDialogClass	PageInfoDialogClass;
 
 typedef enum {
 	PAGE_INFO_GENERAL,
@@ -54,13 +54,15 @@ typedef enum {
 	/*PAGE_INFO_SECURITY*/
 } PageInfoDialogPage;
 
-struct PageInfoDialog
+struct _PageInfoDialog
 {
 	EphyDialog parent;
+
+	/*< private >*/
 	PageInfoDialogPrivate *priv;
 };
 
-struct PageInfoDialogClass
+struct _PageInfoDialogClass
 {
 	EphyDialogClass parent_class;
 };
@@ -69,8 +71,8 @@ GType		 page_info_dialog_get_type	(void);
 
 GType		 page_info_dialog_register_type	(GTypeModule *module);
 
-PageInfoDialog	*page_info_dialog_new              (GtkWidget *window,
-						    EphyEmbed *embed);
+PageInfoDialog	*page_info_dialog_new		(GtkWidget *window,
+						 EphyEmbed *embed);
 
 /*
 void		 page_info_dialog_set_current_page (PageInfoDialog     *dialog,
