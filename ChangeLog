@@ -1,3 +1,17 @@
+2004-02-29  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/error-viewer/mozilla/mozilla-link-checker.cpp:
+	* po/POTFILES.in:
+
+	Print a message to the error viewer when starting link checking. Still
+	needs a progress bar, but I'm too lazy to code one.
+
+	Also, assume un-manageable links are valid. This fixes problems with
+	hrefs which don't point to http:// urls; I *assume* that my Link
+	Checker was never ending on sites with mailto: links or something
+	strange like that. It seems to be at least marginally stable at this
+	point.
+
 2004-02-28  Andras Timar  <timar@gnome.hu>
 
 	* configure.ac: Added "hu" to ALL_LINGUAS.

@@ -46,6 +46,8 @@
 #include <nsNetUtil.h>
 #include <nsString.h>
 
+#include <glib/gi18n-lib.h>
+
 #define LINK_CHECK_TIMEOUT 15000
 
 NS_GENERIC_FACTORY_CONSTRUCTOR(ErrorViewerURICheckerObserver)
@@ -168,6 +170,15 @@ mozilla_check_links (LinkChecker *checker,
 
 	links->GetLength (&observer->mNumLinksTotal);
 
+	char *msg = g_strdup_printf
+		(ngettext("Checking %d Link on %s",
+			  "Checking %d Links on %s", observer->mNumLinksTotal),
+		 observer->mNumLinksTotal, observer->mFilename);
+
+	link_checker_append (checker, ERROR_VIEWER_INFO, msg);
+
+	g_free (msg);
+
 	link_checker_update_progress (checker, observer->mFilename,
 				      0, 0, observer->mNumLinksTotal);
 
@@ -179,22 +190,40 @@ mozilla_check_links (LinkChecker *checker,
 
 		nsCOMPtr<nsIDOMHTMLAnchorElement> anchor;
 		anchor = do_QueryInterface (node, &rv);
-		if (NS_FAILED (rv)) continue;
+		if (NS_FAILED (rv))
+		{
+			observer->mNumLinksChecked++;
+			continue;
+		}
 
 		nsAutoString href;
 		rv = anchor->GetHref (href);
-		if (NS_FAILED (rv)) continue;
+		if (NS_FAILED (rv))
+		{
+			observer->mNumLinksChecked++;
+			continue;
+		}
 
 		nsCOMPtr<nsIURI> uri;
 		rv = NS_NewURI (getter_AddRefs (uri),
 				NS_ConvertUCS2toUTF8 (href));
-		if (NS_FAILED (rv)) continue;
+		if (NS_FAILED (rv))
+		{
+			observer->mNumLinksChecked++;
+			continue;
+		}
 
 		nsCOMPtr<nsIURIChecker> uri_checker = do_CreateInstance
 			(NS_URICHECKER_CONTRACT_ID);
 
 		rv = uri_checker->Init (uri);
-		if (NS_FAILED (rv)) continue;
+		if (NS_FAILED (rv))
+		{
+			g_warning ("Couldn't init with URI pointed to %s",
+				   NS_ConvertUCS2toUTF8 (href).get ());
+			observer->mNumLinksChecked++;
+			continue;
+		}
 
 		uri_checker->AsyncCheck (observer, NULL);
 
