@@ -426,7 +426,7 @@ impl_attach_window (EphyExtension *ext,
 	const char * current_page;
 	gboolean show_sidebar;
 
-	LOG ("EphySidebarExtension attach_window")
+	LOG ("EphySidebarExtension attach_window");
 	
 	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
 
@@ -540,7 +540,7 @@ impl_detach_window (EphyExtension *ext,
 	GtkWidget *notebook, *parent;
 	GValue position = {0,};
 
-	LOG ("EphySidebarExtension detach_window")
+	LOG ("EphySidebarExtension detach_window");
 
 	/* Remove UI */
 	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
@@ -628,7 +628,7 @@ ephy_sidebar_extension_finalize (GObject *object)
 	EphySidebarExtension *extension = EPHY_SIDEBAR_EXTENSION (object);
 	GObject *single;
 
-	LOG ("EphySidebarExtension finalising")
+	LOG ("EphySidebarExtension finalising");
 
 	ephy_node_db_write_to_xml_safe
 		(extension->priv->db, 

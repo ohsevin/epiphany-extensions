@@ -367,7 +367,7 @@ create_menu_item (GtkAction *action)
 
 	label_text = g_value_get_string (&value);
 
-	LOG ("create_menu_item action %p", action)
+	LOG ("create_menu_item action %p", action);
 
 	menu_item = gtk_menu_item_new_with_label (label_text);
 
@@ -489,7 +489,7 @@ entry_activate_cb (GtkWidget *widget,
 
 	text = gtk_editable_get_chars (GTK_EDITABLE (widget), 0, -1);
 
-	LOG ("entry_activate_cb text='%s'", text)
+	LOG ("entry_activate_cb text='%s'", text);
 
 	if (text == NULL || text[0] == '\0')
 	{
@@ -676,7 +676,7 @@ ephy_multi_smart_action_init (EphyMultiSmartAction *action)
 {
 	action->priv = EPHY_MULTI_SMART_ACTION_GET_PRIVATE (action);
 
-	LOG ("EphyMultiSmartAction initialising %p", action)
+	LOG ("EphyMultiSmartAction initialising %p", action);
 
 	action->priv->window = NULL;
 	action->priv->mode = EPHY_MSM_MODE_FIND;
@@ -691,7 +691,7 @@ ephy_multi_smart_action_finalize (GObject *object)
 	EphyMultiSmartAction *action = EPHY_MULTI_SMART_ACTION (object);
 	guint i;
 
-	LOG ("EphyMultiSmartAction finalising %p", object)
+	LOG ("EphyMultiSmartAction finalising %p", object);
 
 	for (i = 0; i < LAST_NOTIF; i++)
 	{
@@ -705,7 +705,7 @@ static void
 ephy_multi_smart_action_set_mode (EphyMultiSmartAction *action,
 				  EphyMultiSmartMode mode)
 {
-	LOG ("set_mode %d", mode)
+	LOG ("set_mode %d", mode);
 
 	action->priv->mode = mode;
 
@@ -717,7 +717,7 @@ static void
 ephy_multi_smart_action_set_id (EphyMultiSmartAction *action,
 				gulong id)
 {
-	LOG ("set_id %l", id)
+	LOG ("set_id %l", id);
 
 	action->priv->id = id;
 
@@ -742,7 +742,7 @@ smart_address_notifier (GConfClient *client,
 		return;
 	}
 
-	LOG ("smart_address_notifier (%s)", address)
+	LOG ("smart_address_notifier (%s)", address);
 
 	bookmarks = ephy_shell_get_bookmarks (ephy_shell);
 	node = ephy_bookmarks_find_bookmark (bookmarks, address);
@@ -770,7 +770,7 @@ mode_notifier (GConfClient *client,
 
 	mode = eel_gconf_get_string (CONF_MODE);
 
-	LOG ("mode_notifier (mode %s)", mode)
+	LOG ("mode_notifier (mode %s)", mode);
 
 	if (mode && strcmp (mode, mode_strings[EPHY_MSM_MODE_FIND]) == 0)
 	{
@@ -795,7 +795,7 @@ clean_after_use_notifier (GConfClient *client,
 		          EphyMultiSmartAction *action)
 
 {
-	LOG ("clean_after_use_notifier")
+	LOG ("clean_after_use_notifier");
 
 	action->priv->clean_after_use = eel_gconf_get_boolean (CONF_CLEAN_AFTER_USE);
 }
@@ -806,7 +806,7 @@ case_sensitive_notifier (GConfClient *client,
 			 GConfEntry *entry,
 			 EphyMultiSmartAction *action)
 {
-	LOG ("case_sensitive_notifier")
+	LOG ("case_sensitive_notifier");
 
 	action->priv->case_sensitive = eel_gconf_get_boolean (CONF_CASE_SENSITIVE);
 }

@@ -33,7 +33,7 @@ G_MODULE_EXPORT GType register_module (GTypeModule *module);
 G_MODULE_EXPORT GType
 register_module (GTypeModule *module)
 {
-	LOG ("Registering EphyAdblockExtension")
+	LOG ("Registering EphyAdblockExtension");
 
 #ifdef ENABLE_NLS
        /* Initialise the i18n stuff */

@@ -186,7 +186,7 @@ show_context_menu (EphySidebarEmbed *sbembed,
 
 	context = ephy_embed_event_get_context (event);
 
-	LOG ("show_embed_popup context %x", context)
+	LOG ("show_embed_popup context %x", context);
 
 	if ((context & EPHY_EMBED_CONTEXT_EMAIL_LINK) &&
 	    (context & EPHY_EMBED_CONTEXT_IMAGE))
@@ -322,7 +322,7 @@ embed_mouse_click_cb (EphyEmbed *embed,
 	modifier = ephy_embed_event_get_modifier (event);
 
 	LOG ("ephy_sidebar_mouse_click_cb: type %d, context %x, modifier %x",
-	     button, context, modifier)
+	     button, context, modifier);
 
 	with_control = (modifier & GDK_CONTROL_MASK) != 0;
 	with_shift = (modifier & GDK_SHIFT_MASK) != 0;

@@ -87,7 +87,7 @@ ephy_select_stylesheet_extension_register_type (GTypeModule *module)
 static void
 ephy_select_stylesheet_extension_init (EphySelectStylesheetExtension *extension)
 {
-	LOG ("EphySelectStylesheetExtension initialising")
+	LOG ("EphySelectStylesheetExtension initialising");
 }
 
 static void
@@ -102,7 +102,7 @@ impl_attach_window (EphyExtension *extension,
 {
 	EphyCSSMenu *menu;
 
-	LOG ("EphySelectStylesheetExtension attach_window")
+	LOG ("EphySelectStylesheetExtension attach_window");
 
 	menu = ephy_css_menu_new (window);
 

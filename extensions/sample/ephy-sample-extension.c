@@ -49,7 +49,7 @@ ephy_sample_extension_init (EphySampleExtension *extension)
 {
 	extension->priv = EPHY_SAMPLE_EXTENSION_GET_PRIVATE (extension);
 
-	LOG ("EphySampleExtension initialising")
+	LOG ("EphySampleExtension initialising");
 }
 
 static void
@@ -58,7 +58,7 @@ ephy_sample_extension_finalize (GObject *object)
 /*
 	EphySampleExtension *extension = EPHY_SAMPLE_EXTENSION (object);
 */
-	LOG ("EphySampleExtension finalising")
+	LOG ("EphySampleExtension finalising");
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
 }
@@ -68,7 +68,7 @@ impl_attach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
 //	EphySampleExtension *extension = EPHY_SAMPLE_EXTENSION (ext);
-	LOG ("EphySampleExtension attach_window")
+	LOG ("EphySampleExtension attach_window");
 }
 
 static void
@@ -76,7 +76,7 @@ impl_detach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
 //	EphySampleExtension *extension = EPHY_SAMPLE_EXTENSION (ext);
-	LOG ("EphySampleExtension detach_window")
+	LOG ("EphySampleExtension detach_window");
 }
 
 static void
@@ -84,7 +84,7 @@ impl_attach_tab (EphyExtension *ext,
 		 EphyWindow *window,
 		 EphyTab *tab)
 {
-	LOG ("attach_tab")
+	LOG ("attach_tab");
 }
 
 static void
@@ -92,7 +92,7 @@ impl_detach_tab (EphyExtension *ext,
 		 EphyWindow *window,
 		 EphyTab *tab)
 {
-	LOG ("detach_tab")
+	LOG ("detach_tab");
 }
 
 static void

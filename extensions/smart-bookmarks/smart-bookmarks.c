@@ -31,7 +31,7 @@ G_MODULE_EXPORT GType register_module (GTypeModule *module);
 G_MODULE_EXPORT GType
 register_module (GTypeModule *module)
 {
-	LOG ("Registering Smart Bookmarks Extension")
+	LOG ("Registering Smart Bookmarks Extension");
 
 #ifdef ENABLE_NLS
 	/* Initialise the i18n stuff */

@@ -176,7 +176,7 @@ add_action_and_menu_item (EphyWindow *window,
 	/* the list may also contain the bookmarks and history window */
 	if (!EPHY_IS_WINDOW (window)) return;
 
-	LOG ("add_action_and_menu_item for window %p", window)
+	LOG ("add_action_and_menu_item for window %p", window);
 
 	g_snprintf (verb, sizeof (verb), VERB_FMT, window);
 	g_snprintf (name, sizeof (name), "%sItem", verb);
@@ -239,7 +239,7 @@ update_tab_move_menu_cb (GtkAction *dummy,
 	EphySession *session;
 	GList *windows;
 
-	LOG ("update_tab_move_menu_cb")
+	LOG ("update_tab_move_menu_cb");
 
 	START_PROFILER ("Rebuilding tab move menu")
 
@@ -287,7 +287,7 @@ ephy_tab_move_menu_set_window (EphyTabMoveMenu *menu,
 	GtkActionGroup *action_group;
 	GtkAction *action;
 
-	LOG ("set_window window %p", window)
+	LOG ("set_window window %p", window);
 
 	g_return_if_fail (EPHY_IS_WINDOW (window));
 

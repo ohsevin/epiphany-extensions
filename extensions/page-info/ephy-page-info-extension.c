@@ -117,7 +117,7 @@ ephy_page_info_extension_register_type (GTypeModule *module)
 static void
 ephy_page_info_extension_init (EphyPageInfoExtension *extension)
 {
-	LOG ("EphyPageInfoExtension initialising")
+	LOG ("EphyPageInfoExtension initialising");
 
 /*	extension->priv = EPHY_PAGE_INFO_EXTENSION_GET_PRIVATE (extension);*/
 }
@@ -127,7 +127,7 @@ ephy_page_info_extension_finalize (GObject *object)
 {
 //	EphyPageInfoExtension *extension = EPHY_PAGE_INFO_EXTENSION (object);
 
-	LOG ("EphyPageInfoExtension finalizing")
+	LOG ("EphyPageInfoExtension finalizing");
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
 }
@@ -151,7 +151,7 @@ ephy_page_info_extension_display_cb (GtkAction *action,
 	EphyEmbed *embed;
 	PageInfoDialog *dialog;
 
-	LOG ("Creating page info dialog")
+	LOG ("Creating page info dialog");
 
 	embed = ephy_window_get_active_embed (window);
 	g_return_if_fail (embed != NULL);
@@ -234,7 +234,7 @@ impl_attach_window (EphyExtension *extension,
 	WindowData *data;
 	GtkWidget *notebook;
 
-	LOG ("EphyPageInfoExtension attach_window")
+	LOG ("EphyPageInfoExtension attach_window");
 
 	data = g_new (WindowData, 1);
 

@@ -49,7 +49,7 @@ ErrorViewerConsoleListener::ErrorViewerConsoleListener()
 
 ErrorViewerConsoleListener::~ErrorViewerConsoleListener()
 {
-	LOG ("ErrorViewerConsoleListener dtor %p", this)
+	LOG ("ErrorViewerConsoleListener dtor %p", this);
 }
 
 nsresult

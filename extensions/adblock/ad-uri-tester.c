@@ -100,7 +100,7 @@ match_uri (const char *pattern,
 
 	if (ret >= 0)
 	{
-		LOG ("Blocking '%s' with pattern '%s'",
+		LOG ("Blocking '%s' with pattern '%s'",;
 		     uri_with_len->uri, pattern)
 
 		return TRUE;
@@ -231,7 +231,7 @@ load_patterns (AdUriTester *tester)
 static void
 ad_uri_tester_init (AdUriTester *tester)
 {
-	LOG ("AdUriTester initializing %p", tester)
+	LOG ("AdUriTester initializing %p", tester);
 
 	tester->priv = AD_URI_TESTER_GET_PRIVATE (tester);
 
@@ -252,7 +252,7 @@ ad_uri_tester_finalize (GObject *object)
 {
 	AdUriTesterPrivate *priv = AD_URI_TESTER_GET_PRIVATE (AD_URI_TESTER (object));
 
-	LOG ("AdUriTester finalizing %p", object)
+	LOG ("AdUriTester finalizing %p", object);
 
 	g_hash_table_destroy (priv->blacklist);
 	g_hash_table_destroy (priv->whitelist);

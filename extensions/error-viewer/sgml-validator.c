@@ -133,7 +133,7 @@ sgml_validator_class_init (SgmlValidatorClass *klass)
 static void
 sgml_validator_init (SgmlValidator *validator)
 {
-	LOG ("SgmlValidator initializing %p", validator)
+	LOG ("SgmlValidator initializing %p", validator);
 
 	validator->priv = SGML_VALIDATOR_GET_PRIVATE (validator);
 }
@@ -143,7 +143,7 @@ sgml_validator_finalize (GObject *object)
 {
 	SgmlValidatorPrivate *priv = SGML_VALIDATOR_GET_PRIVATE (SGML_VALIDATOR (object));
 
-	LOG ("SgmlValidator finalizing %p", object)
+	LOG ("SgmlValidator finalizing %p", object);
 
 	g_object_unref (priv->error_viewer);
 

@@ -187,7 +187,7 @@ link_checker_class_finalize (LinkCheckerClass *klass)
 static void
 link_checker_init (LinkChecker *checker)
 {
-	LOG ("LinkChecker initializing %p", checker)
+	LOG ("LinkChecker initializing %p", checker);
 
 	checker->priv = LINK_CHECKER_GET_PRIVATE (checker);
 }
@@ -197,7 +197,7 @@ link_checker_finalize (GObject *object)
 {
 	LinkCheckerPrivate *priv = LINK_CHECKER_GET_PRIVATE (LINK_CHECKER (object));
 
-	LOG ("LinkChecker finalizing %p", object)
+	LOG ("LinkChecker finalizing %p", object);
 
 	g_object_unref (priv->error_viewer);
 

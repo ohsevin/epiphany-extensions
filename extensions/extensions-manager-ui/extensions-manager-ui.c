@@ -436,7 +436,7 @@ extension_removed_cb (EphyExtensionsManager *manager,
 static void
 extensions_manager_ui_init (ExtensionsManagerUI *dialog)
 {		
-	LOG ("ExtensionsManagerUI initializing")
+	LOG ("ExtensionsManagerUI initializing");
 
 	dialog->priv = EXTENSIONS_MANAGER_UI_GET_PRIVATE (dialog);
 
@@ -467,7 +467,7 @@ extensions_manager_ui_finalize (GObject *object)
 {
 	ExtensionsManagerUI *dialog = EXTENSIONS_MANAGER_UI (object);
 
-	LOG ("ExtensionsManagerUI finalising")
+	LOG ("ExtensionsManagerUI finalising");
 
 	g_signal_handler_disconnect (G_OBJECT (dialog->priv->manager),
 				     dialog->priv->changed_signal);

@@ -237,7 +237,7 @@ ephy_gesture_finalize (GObject *object)
 	g_object_unref (gesture->priv->window);
 	g_object_unref (gesture->priv->event);
 
-	LOG ("EphyGesture finalised %p", object)
+	LOG ("EphyGesture finalised %p", object);
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
 }

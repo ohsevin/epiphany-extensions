@@ -625,7 +625,7 @@ general_info_page_fill (InfoPage *page)
 	struct tm tm;
 	time_t t;
 
-	LOG ("general_info_page_fill")
+	LOG ("general_info_page_fill");
 
 	props = dialog->priv->page_info->props;
 	g_return_if_fail (props != NULL);
@@ -1879,7 +1879,7 @@ page_info_dialog_finalize (GObject *object)
 	PageInfoDialog *dialog = PAGE_INFO_DIALOG (object);
 	int i;
 
-	LOG ("PageInfoDialog finalizing")
+	LOG ("PageInfoDialog finalizing");
 
 	mozilla_free_embed_page_info (dialog->priv->page_info);
 	for (i = GENERAL_PAGE; i < LAST_PAGE; i++)

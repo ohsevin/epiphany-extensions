@@ -103,7 +103,7 @@ ephy_tab_states_extension_init (EphyTabStatesExtension *extension)
 
 	priv = extension->priv = EPHY_TAB_STATES_EXTENSION_GET_PRIVATE (extension);
 
-	LOG ("EphyTabStatesExtension initialising")
+	LOG ("EphyTabStatesExtension initialising");
 
 	colour = eel_gconf_get_string (CONF_TABS_LOADING_COLOUR);
 	gdk_color_parse (colour, &priv->tab_loading_colour);
@@ -122,7 +122,7 @@ ephy_tab_states_extension_finalize (GObject *object)
 {
 	EphyTabStatesExtensionPrivate *priv = EPHY_TAB_STATES_EXTENSION (object)->priv;
 
-	LOG ("EphyTabStatesExtension finalising")
+	LOG ("EphyTabStatesExtension finalising");
 
 	pango_font_description_free (priv->bold_font_desc);
 
@@ -210,7 +210,7 @@ impl_attach_window (EphyExtension *ext,
 {
 	EphyTabStatesExtension *extension = EPHY_TAB_STATES_EXTENSION (ext);
 
-	LOG ("attach_window window %p", window)
+	LOG ("attach_window window %p", window);
 
 	g_signal_connect (window, "notify::active-tab",
 			  G_CALLBACK (sync_active_tab), extension);
@@ -222,7 +222,7 @@ impl_detach_window (EphyExtension *ext,
 {
 	EphyTabStatesExtension *extension = EPHY_TAB_STATES_EXTENSION (ext);
 
-	LOG ("Edetach_window window %p", window)
+	LOG ("Edetach_window window %p", window);
 
 	g_signal_handlers_disconnect_by_func
 		(window, G_CALLBACK (sync_active_tab), extension);
@@ -236,7 +236,7 @@ impl_attach_tab (EphyExtension *ext,
 {
 	EphyTabStatesExtension *extension = EPHY_TAB_STATES_EXTENSION (ext);
 
-	LOG ("impl_attach_tab window %p tab %p", window, tab)
+	LOG ("impl_attach_tab window %p tab %p", window, tab);
 
 	sync_load_status (tab, NULL, extension);
 	g_signal_connect (tab, "notify::load-status",
@@ -250,7 +250,7 @@ impl_detach_tab (EphyExtension *ext,
 {
 	EphyTabStatesExtension *extension = EPHY_TAB_STATES_EXTENSION (ext);
 
-	LOG ("impl_detach_tab window %p tab %p", window, tab)
+	LOG ("impl_detach_tab window %p tab %p", window, tab);
 
 	g_signal_handlers_disconnect_by_func
 		(tab, G_CALLBACK (sync_load_status), extension);

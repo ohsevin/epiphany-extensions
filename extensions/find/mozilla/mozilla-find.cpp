@@ -124,12 +124,12 @@ FindHelper::FindHelper (EphyEmbed *aEmbed)
 , mShowHighlight(PR_FALSE)
 , mUniqueId(kUniqueIdLiteral)
 {
-	LOG ("FindHelper ctor [%p]", this)
+	LOG ("FindHelper ctor [%p]", this);
 }
 
 FindHelper::~FindHelper ()
 {
-	LOG ("FindHelper dtor [%p]", this)
+	LOG ("FindHelper dtor [%p]", this);
 }
 
 nsresult
@@ -189,7 +189,7 @@ FindHelper::HighlightRange (nsIDOMNode *aSpanTemplate,
 			    nsIDOMRange *aRange,
 			    nsIDOMNode **_retval)
 {
-	LOG ("HighlightRange")
+	LOG ("HighlightRange");
 
 	nsCOMPtr<nsIDOMNode> dummy;
 	aSpanTemplate->CloneNode (PR_TRUE, getter_AddRefs (dummy));
@@ -227,7 +227,7 @@ FindHelper::UnhighlightRange (nsIDOMNode *aSpanTemplate,
 			      nsIDOMRange *aRange,
 			      nsIDOMNode **_retval)
 {
-	LOG ("UnhighlightRange")
+	LOG ("UnhighlightRange");
 
 	nsresult rv;
 	nsCOMPtr<nsIDOMNode> container;
@@ -365,7 +365,7 @@ void
 FindHelper::HighlightDocument (nsIDOMDocument *aDocument,
 			       PRUint32 *aCount)
 {
-	LOG ("HighlightDocument")
+	LOG ("HighlightDocument");
 
 	DOMSearchForeach (aDocument, (DOMSearchForeachFunc) HighlightRange, aCount);
 }
@@ -384,7 +384,7 @@ FindHelper::Highlight (PRUint32 *aCount)
 {
         NS_ENSURE_TRUE (mWebBrowser, );
 
-	LOG ("Highlight")
+	LOG ("Highlight");
 
         nsCOMPtr<nsIDocShell> rootDocShell (do_GetInterface (mWebBrowser));
         NS_ENSURE_TRUE (rootDocShell, );
@@ -584,7 +584,7 @@ mozilla_find_next (EphyEmbed *embed,
 {
 	FindHelper *helper;
 
-	LOG ("mozilla_find_next")
+	LOG ("mozilla_find_next");
 
 	helper = ensure_find_helper (embed);
 	g_return_val_if_fail (helper != NULL, FALSE);
@@ -606,7 +606,7 @@ mozilla_find_set_properties (EphyEmbed *embed,
 
 	g_return_val_if_fail (search_string != NULL, 0);
 
-	LOG ("mozilla_find_set_properties search_string:%s", search_string)
+	LOG ("mozilla_find_set_properties search_string:%s", search_string);
 
 	helper = ensure_find_helper (embed);
 	g_return_val_if_fail (helper != NULL, 0);
@@ -625,7 +625,7 @@ mozilla_find_set_highlight (EphyEmbed *embed,
 {
 	FindHelper *helper;
 
-	LOG ("mozilla_find_set_highlight")
+	LOG ("mozilla_find_set_highlight");
 
 	helper = ensure_find_helper (embed);
 	g_return_val_if_fail (helper != NULL, 0);

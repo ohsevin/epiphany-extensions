@@ -32,7 +32,7 @@ G_MODULE_EXPORT GType register_module (GTypeModule *module);
 G_MODULE_EXPORT GType
 register_module (GTypeModule *module)
 {
-	LOG ("Registering EphySample2Extension")
+	LOG ("Registering EphySample2Extension");
 
 #ifdef ENABLE_NLS
        /* Initialise the i18n stuff */

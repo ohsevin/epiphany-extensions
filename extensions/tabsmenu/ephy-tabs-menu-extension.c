@@ -98,13 +98,13 @@ impl_detach_window (EphyExtension *ext,
 static void
 ephy_tabs_menu_extension_init (EphyTabsMenuExtension *extension)
 {
-	LOG ("EphyTabsMenuExtension initialising")
+	LOG ("EphyTabsMenuExtension initialising");
 }
 
 static void
 ephy_tabs_menu_extension_finalize (GObject *object)
 {
-	LOG ("EphyTabsMenuExtension finalising")
+	LOG ("EphyTabsMenuExtension finalising");
 
 	G_OBJECT_CLASS (tabs_menu_extension_parent_class)->finalize (object);
 }

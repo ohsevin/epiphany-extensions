@@ -104,13 +104,13 @@ ephy_toolbar_extras_extension_init (EphyToolbarExtrasExtension *extension)
 
 	eel_gconf_monitor_add ("/apps/epiphany/extensions/multi-smart");
 
-	LOG ("EphyToolbarExtrasExtension initialising")
+	LOG ("EphyToolbarExtrasExtension initialising");
 }
 
 static void
 ephy_toolbar_extras_extension_finalize (GObject *object)
 {
-	LOG ("EphyToolbarExtrasExtension finalising")
+	LOG ("EphyToolbarExtrasExtension finalising");
 
 	eel_gconf_monitor_remove ("/apps/epiphany/extensions/multi-smart");
 
@@ -147,7 +147,7 @@ action_request_cb (GtkWidget *etoolbar,
 	GtkActionGroup *action_group;
 	GtkAction *action;
 
-	LOG ("action_request_cb for %s", action_name)
+	LOG ("action_request_cb for %s", action_name);
 
 	window = EPHY_WINDOW (gtk_widget_get_toplevel (etoolbar));
 	g_return_if_fail (window != NULL);

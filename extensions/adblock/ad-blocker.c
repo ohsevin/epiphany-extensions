@@ -151,7 +151,7 @@ ad_blocker_set_property (GObject *object,
 static void
 ad_blocker_init (AdBlocker *blocker)
 {
-	LOG ("AdBlocker initializing %p", blocker)
+	LOG ("AdBlocker initializing %p", blocker);
 
 	blocker->priv = AD_BLOCKER_GET_PRIVATE (blocker);
 
@@ -165,7 +165,7 @@ ad_blocker_finalize (GObject *object)
 	AdBlockerPrivate *priv = AD_BLOCKER_GET_PRIVATE (AD_BLOCKER (object));
 	*/
 
-	LOG ("AdBlocker finalizing %p", object)
+	LOG ("AdBlocker finalizing %p", object);
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
 }

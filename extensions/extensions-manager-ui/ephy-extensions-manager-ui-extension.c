@@ -116,7 +116,7 @@ ephy_extensions_manager_ui_extension_register_type (GTypeModule *module)
 static void
 ephy_extensions_manager_ui_extension_init (EphyExtensionsManagerUIExtension *extension)
 {
-	LOG ("EphyExtensionsManagerUIExtension initialising")
+	LOG ("EphyExtensionsManagerUIExtension initialising");
 
 	extension->priv = EPHY_EXTENSIONS_MANAGER_UI_EXTENSION_GET_PRIVATE (extension);
 
@@ -128,7 +128,7 @@ ephy_extensions_manager_ui_extension_finalize (GObject *object)
 {
 	EphyExtensionsManagerUIExtension *extension = EPHY_EXTENSIONS_MANAGER_UI_EXTENSION (object);
 
-	LOG ("EphyExtensionsManagerUIExtension finalising")
+	LOG ("EphyExtensionsManagerUIExtension finalising");
 
 	if (extension->priv->dialog != NULL)
 	{
@@ -201,7 +201,7 @@ impl_attach_window (EphyExtension *ext,
 			       "ExtensionsManagerUISep2", NULL,
 			       GTK_UI_MANAGER_SEPARATOR, FALSE);
 
-	LOG ("EphyExtensionsManagerUIExtension attach_window")
+	LOG ("EphyExtensionsManagerUIExtension attach_window");
 }
 
 static void
@@ -222,7 +222,7 @@ impl_detach_window (EphyExtension *ext,
 
 	g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, NULL);
 
-	LOG ("EphyExtensionsManagerUIExtension detach_window")
+	LOG ("EphyExtensionsManagerUIExtension detach_window");
 }
 
 static void

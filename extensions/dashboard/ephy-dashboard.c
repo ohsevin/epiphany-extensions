@@ -32,7 +32,7 @@ G_MODULE_EXPORT GType register_module (GTypeModule *module);
 G_MODULE_EXPORT GType
 register_module (GTypeModule *module)
 {
-	LOG ("Registering DashboardExtension")
+	LOG ("Registering DashboardExtension");
 
 	return ephy_dashboard_extension_register_type (module);
 }

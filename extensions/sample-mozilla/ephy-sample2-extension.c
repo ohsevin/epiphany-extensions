@@ -51,7 +51,7 @@ ephy_sample2_extension_init (EphySample2Extension *extension)
 {
 	extension->priv = EPHY_SAMPLE2_EXTENSION_GET_PRIVATE (extension);
 
-	LOG ("EphySample2Extension initialising")
+	LOG ("EphySample2Extension initialising");
 }
 
 static void
@@ -60,7 +60,7 @@ ephy_sample2_extension_finalize (GObject *object)
 /*
 	EphySample2Extension *extension = EPHY_SAMPLE2_EXTENSION (object);
 */
-	LOG ("EphySample2Extension finalising")
+	LOG ("EphySample2Extension finalising");
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
 }
@@ -74,7 +74,7 @@ dom_mouse_down_cb (EphyEmbed *embed,
 
 	dom_event = ephy_embed_event_get_dom_event (event);
 
-	LOG ("DOM Event %p", dom_event)
+	LOG ("DOM Event %p", dom_event);
 
 	mozilla_do_something (dom_event);
 
@@ -87,7 +87,7 @@ impl_attach_window (EphyExtension *ext,
 {
 	GtkWidget *notebook;
 
-	LOG ("EphySample2Extension attach_window")
+	LOG ("EphySample2Extension attach_window");
 
 	notebook = ephy_window_get_notebook (window);
 }
@@ -98,7 +98,7 @@ impl_detach_window (EphyExtension *ext,
 {
 	GtkWidget *notebook;
 
-	LOG ("EphySample2Extension detach_window")
+	LOG ("EphySample2Extension detach_window");
 
 	notebook = ephy_window_get_notebook (window);
 }
@@ -110,7 +110,7 @@ impl_attach_tab (EphyExtension *ext,
 {
 	EphyEmbed *embed;
 
-	LOG ("impl_attach_tab")
+	LOG ("impl_attach_tab");
 
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
@@ -128,7 +128,7 @@ impl_detach_tab (EphyExtension *ext,
 {
 	EphyEmbed *embed;
 
-	LOG ("impl_detach_tab")
+	LOG ("impl_detach_tab");
 
 	g_return_if_fail (EPHY_IS_TAB (tab));
 

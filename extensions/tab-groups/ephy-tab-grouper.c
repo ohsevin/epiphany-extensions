@@ -143,7 +143,7 @@ ephy_tab_grouper_init (EphyTabGrouper *grouper)
 {
 	grouper->priv = EPHY_TAB_GROUPER_GET_PRIVATE (grouper);
 
-	LOG ("EphyTabGrouper initialised")
+	LOG ("EphyTabGrouper initialised");
 }
 
 static void
@@ -156,7 +156,7 @@ ephy_tab_grouper_finalize (GObject *object)
 		(grouper->priv->notebook, G_SIGNAL_MATCH_DATA,
 		 0, 0, NULL, NULL, grouper);
 
-	LOG ("EphyTabGrouper finalised")
+	LOG ("EphyTabGrouper finalised");
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
 }

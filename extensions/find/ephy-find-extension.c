@@ -104,7 +104,7 @@ ephy_find_extension_init (EphyFindExtension *extension)
 {
 	extension->priv = EPHY_FIND_EXTENSION_GET_PRIVATE (extension);
 
-	LOG ("EphyFindExtension initialising")
+	LOG ("EphyFindExtension initialising");
 }
 
 static void
@@ -113,7 +113,7 @@ ephy_find_extension_finalize (GObject *object)
 /*
 	EphyFindExtension *extension = EPHY_FIND_EXTENSION (object);
 */
-	LOG ("EphyFindExtension finalising")
+	LOG ("EphyFindExtension finalising");
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
 }
@@ -122,7 +122,7 @@ static void
 toolbar_weak_unref_cb (EphyWindow *window,
 		       GtkWidget *zombie)
 {
-	LOG ("weak unref window %p", window)
+	LOG ("weak unref window %p", window);
 
 	g_object_set_data (G_OBJECT (window), TOOLBAR_DATA_KEY, NULL);
 }
@@ -134,7 +134,7 @@ impl_attach_window (EphyExtension *ext,
 	GtkWidget *toolbar, *notebook, *parent;
 //	GValue value = { 0, };
 
-	LOG ("attach_window")
+	LOG ("attach_window");
 
 	/* create find toolbar */
 	toolbar = ephy_find_bar_new (window);
@@ -166,7 +166,7 @@ impl_detach_window (EphyExtension *ext,
 {
 	GtkWidget *toolbar;
 
-	LOG ("detach_window")
+	LOG ("detach_window");
 
 	/* remove the find toolbar */
 	toolbar = g_object_get_data (G_OBJECT (window), TOOLBAR_DATA_KEY);
@@ -183,7 +183,7 @@ impl_detach_tab (EphyExtension *extension,
 {
 	EphyEmbed *embed;
 
-	LOG ("detach_tab")
+	LOG ("detach_tab");
 
 	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (embed != NULL);

@@ -115,7 +115,7 @@ ephy_certificates_extension_init (EphyCertificatesExtension *extension)
 {
 	extension->priv = EPHY_CERTIFICATES_EXTENSION_GET_PRIVATE (extension);
 
-	LOG ("EphyCertificatesExtension initialising")
+	LOG ("EphyCertificatesExtension initialising");
 }
 
 static void
@@ -123,7 +123,7 @@ ephy_certificates_extension_finalize (GObject *object)
 {
 	EphyCertificatesExtension *extension = EPHY_CERTIFICATES_EXTENSION (object);
 
-	LOG ("EphyCertificatesExtension finalising")
+	LOG ("EphyCertificatesExtension finalising");
 
 	if (extension->priv->cert_manager)
 	{
@@ -182,7 +182,7 @@ sync_security_status (EphyTab *tab,
 	GtkAction *action;
 	gboolean is_secure;
 
-	LOG ("sync_security_status: tab %p, window %p", tab, window)
+	LOG ("sync_security_status: tab %p, window %p", tab, window);
 
 	if (ephy_window_get_active_tab (window) != tab) return;
 
@@ -202,7 +202,7 @@ impl_attach_tab (EphyExtension *ext,
 {
 	EphyEmbed *embed;
 
-	LOG ("EphyCertificatesExtension attach_tab")
+	LOG ("EphyCertificatesExtension attach_tab");
 
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
@@ -220,7 +220,7 @@ impl_detach_tab (EphyExtension *ext,
 {
 	EphyEmbed *embed;
 
-	LOG ("EphyCertificatesExtension detach_tab")
+	LOG ("EphyCertificatesExtension detach_tab");
 
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
@@ -303,7 +303,7 @@ impl_attach_window (EphyExtension *ext,
 	WindowData *win_data;
 	GtkWidget *statusbar, *ebox;
 
-	LOG ("EphyCertificatesExtension attach_window")
+	LOG ("EphyCertificatesExtension attach_window");
 
 	/* catch tab switched */
 	g_signal_connect (window, "notify::active-tab",
@@ -371,7 +371,7 @@ impl_detach_window (EphyExtension *ext,
 	WindowData *win_data;
 	GtkWidget *statusbar, *ebox;
 
-	LOG ("EphyCertificatesExtension detach_window")
+	LOG ("EphyCertificatesExtension detach_window");
 
 	/* Disconnect switched signal */
 	g_signal_handlers_disconnect_by_func

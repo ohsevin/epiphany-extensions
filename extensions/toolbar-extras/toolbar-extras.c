@@ -30,7 +30,7 @@
 G_MODULE_EXPORT GType
 register_module (GTypeModule *module)
 {
-	LOG ("Registering EphyToolbarExtrasExtension")
+	LOG ("Registering EphyToolbarExtrasExtension");
 
 #ifdef ENABLE_NLS
         /* Initialise the i18n stuff */

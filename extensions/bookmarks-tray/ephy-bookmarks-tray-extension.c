@@ -270,7 +270,7 @@ show_context_menu (EphyBookmarksTrayExtension *extension,
 	EphyBookmarksTrayExtensionPrivate *priv = extension->priv;
 	GtkWidget *menu;
 
-	LOG ("show_context_menu")
+	LOG ("show_context_menu");
 
 	menu = gtk_ui_manager_get_widget (priv->manager, "/ContextMenu");
 	g_return_if_fail (menu != NULL);
@@ -328,7 +328,7 @@ static void
 button_toggled_cb (GtkToggleButton *button,
 		   EphyBookmarksTrayExtension *extension)
 {
-	LOG ("button_toggled_cb")
+	LOG ("button_toggled_cb");
 
 	if (gtk_toggle_button_get_active (button))
 	{
@@ -348,7 +348,7 @@ button_button_press_cb (GtkWidget *button,
 			GdkEventButton *event,
 			EphyBookmarksTrayExtension *extension)
 {
-	LOG ("button_button_press_cb")
+	LOG ("button_button_press_cb");
 
 	if (event->button == 3)
         {
@@ -364,7 +364,7 @@ static gboolean
 button_popup_menu_cb (GtkWidget *button,
 		      EphyBookmarksTrayExtension *extension)
 {
-	LOG ("button_popup_menu_cb")
+	LOG ("button_popup_menu_cb");
 
 	show_context_menu (extension, button, NULL);
 
@@ -453,7 +453,7 @@ ephy_bookmarks_tray_extension_init (EphyBookmarksTrayExtension *extension)
 	GError *error = NULL;
 	GtkWidget *hbox, *image, *label;
 
-	LOG ("EphyBookmarksTrayExtension initialising")
+	LOG ("EphyBookmarksTrayExtension initialising");
 
 	priv = extension->priv = EPHY_BOOKMARKS_TRAY_EXTENSION_GET_PRIVATE (extension);
 
@@ -536,7 +536,7 @@ ephy_bookmarks_tray_extension_finalize (GObject *object)
 	EphyBookmarksTrayExtension *extension = EPHY_BOOKMARKS_TRAY_EXTENSION (object);
 	EphyBookmarksTrayExtensionPrivate *priv = extension->priv;
 
-	LOG ("EphyBookmarksTrayExtension finalising")
+	LOG ("EphyBookmarksTrayExtension finalising");
 
 	eel_gconf_monitor_remove (CONF_DIR);
 

@@ -35,7 +35,7 @@ register_module (GTypeModule *module)
 {
 	GType extension_type;
 
-	LOG ("Registering EphyGesturesExtension")
+	LOG ("Registering EphyGesturesExtension");
 
 	ephy_gesture_register_type (module);
 

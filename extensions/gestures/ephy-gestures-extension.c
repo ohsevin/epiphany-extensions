@@ -243,7 +243,7 @@ gesture_performed_cb (EphyGesture *gesture,
 	EphyWindow *window;
 	const char *path;
 
-	LOG ("Gesture: sequence '%s'", sequence)
+	LOG ("Gesture: sequence '%s'", sequence);
 
 	path = g_hash_table_lookup (extension->priv->gestures, sequence);
 	if (path == NULL)
@@ -334,7 +334,7 @@ impl_attach_tab (EphyExtension *extension,
 {
 	EphyEmbed *embed;
 
-	LOG ("Attach tab")
+	LOG ("Attach tab");
 
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
@@ -352,7 +352,7 @@ impl_detach_tab (EphyExtension *extension,
 {
 	EphyEmbed *embed;
 
-	LOG ("Detach tab")
+	LOG ("Detach tab");
 
 	g_return_if_fail (EPHY_IS_TAB (tab));
 

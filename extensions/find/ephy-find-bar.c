@@ -68,11 +68,11 @@ ensure_offscren_window (EphyFindBar *bar)
 	EphyFindBarPrivate *priv = bar->priv;
 	GdkScreen *screen;
 
-	LOG ("ensure_offscren_window")
+	LOG ("ensure_offscren_window");
 
 	if (priv->offscreen_window == NULL)
 	{
-		LOG ("creating off-screen window")
+		LOG ("creating off-screen window");
 
 		priv->offscreen_window = gtk_window_new (GTK_WINDOW_POPUP);
 		gtk_window_set_modal (GTK_WINDOW (priv->offscreen_window), TRUE);
@@ -146,7 +146,7 @@ update_find_properties (EphyFindBar *bar)
 
 	text = egg_find_bar_get_search_string (ebar);
 
-	LOG ("update_find_properties text:%s", text ? text : "")
+	LOG ("update_find_properties text:%s", text ? text : "");
 
 	if (text == NULL || text[0] == '\0')
 	{
@@ -202,7 +202,7 @@ find_entry_key_press_event_cb (GtkEntry *entry,
 	guint mask = gtk_accelerator_get_default_mod_mask ();
 	gboolean handled = FALSE;
 
-	LOG ("find_entry_key_press_event_cb")
+	LOG ("find_entry_key_press_event_cb");
 
 	/* Hide the bar when ESC is pressed */
 	if ((event->state & mask) == 0)
@@ -235,7 +235,7 @@ static void
 entry_preedit_changed_cb (GtkIMContext *context,
 			  EphyFindBar *bar)
 {
-	LOG ("entry_preedit_changed_cb")
+	LOG ("entry_preedit_changed_cb");
 
 	bar->priv->preedit_changed = TRUE;
 }
@@ -253,7 +253,7 @@ embed_net_stop_cb (EphyEmbed *embed,
 	{
 		guint32 count;
 
-		LOG ("embed_net_stop_cb")
+		LOG ("embed_net_stop_cb");
 
 		mozilla_find_set_highlight (priv->embed, FALSE);
 		count = mozilla_find_set_highlight (priv->embed, TRUE);
@@ -310,12 +310,12 @@ embed_key_press_event_cb (EphyEmbed *embed,
 	/* don't acccept the keypress if find is disabled (f.e. for image embeds) */
 	if (!gtk_action_is_sensitive (priv->find_action) || priv->ppv_mode) return FALSE;
 
-	LOG ("embed_key_press_event_cb, find bar is %svisible", GTK_WIDGET_VISIBLE (widget) ? "" : "in")
+	LOG ("embed_key_press_event_cb, find bar is %svisible", GTK_WIDGET_VISIBLE (widget) ? "" : "in");
 
 	/* if the bar is invisible, show the offscreen window and add the entry to it */
 	if (!GTK_WIDGET_VISIBLE (widget))
 	{
-		LOG ("using off-screen window")
+		LOG ("using off-screen window");
 		ensure_offscren_window (bar);
 		g_return_val_if_fail (priv->offscreen_window != NULL, FALSE);
 
@@ -348,7 +348,7 @@ embed_key_press_event_cb (EphyEmbed *embed,
 	{
 		g_return_val_if_fail (priv->offscreen_window != NULL, FALSE);
 
-		LOG ("hiding off-screen window again")
+		LOG ("hiding off-screen window again");
 
 		gtk_widget_hide (priv->offscreen_window);
 		gtk_widget_reparent (ebar->priv->find_entry,
@@ -395,7 +395,7 @@ set_focus_cb (EphyWindow *window,
 {
 	GtkWidget *wbar = GTK_WIDGET (bar);
 
-	LOG ("set_focus")
+	LOG ("set_focus");
 
 	while (widget != NULL && widget != wbar)
 	{
@@ -416,7 +416,7 @@ unset_embed (EphyFindBar *bar)
 {
 	EphyFindBarPrivate *priv = bar->priv;
 
-	LOG ("unset_embed")
+	LOG ("unset_embed");
 
 	if (priv->embed != NULL)
 	{
@@ -438,7 +438,7 @@ update_find_bar (EphyFindBar *bar)
 {
 	EphyFindBarPrivate *priv = bar->priv;
 
-	LOG ("embed realized!")
+	LOG ("embed realized!");
 
 	update_find_properties (bar);
 
@@ -455,7 +455,7 @@ sync_active_tab (EphyWindow *window,
 //	EphyEmbed *embed;
 	EphyEmbed **embedptr;
 
-	LOG ("sync_active_tab")
+	LOG ("sync_active_tab");
 
 	unset_embed (bar);
 
@@ -559,7 +559,7 @@ ephy_find_bar_show (GtkWidget *widget)
 	EphyFindBarPrivate *priv = bar->priv;
 	guint32 count;
 
-	LOG ("ephy_find_bar_show")
+	LOG ("ephy_find_bar_show");
 
 	GTK_WIDGET_CLASS (parent_class)->show (widget);
 
@@ -584,7 +584,7 @@ ephy_find_bar_hide (GtkWidget *widget)
 	EphyFindBar *bar = EPHY_FIND_BAR (widget);
 	EphyFindBarPrivate *priv = bar->priv;
 
-	LOG ("ephy_find_bar_hide")
+	LOG ("ephy_find_bar_hide");
 
 	if (priv->set_focus_handler != 0)
 	{
@@ -629,7 +629,7 @@ ephy_find_bar_next (EggFindBar *ebar)
 	EphyFindBar *bar = EPHY_FIND_BAR (ebar);
 	gboolean found;
 
-	LOG ("ephy_find_bar_next")
+	LOG ("ephy_find_bar_next");
 
 	found = mozilla_find_next (bar->priv->embed, FALSE);
 	update_navigation_controls (bar, found, TRUE);
@@ -641,7 +641,7 @@ ephy_find_bar_previous (EggFindBar *ebar)
 	EphyFindBar *bar = EPHY_FIND_BAR (ebar);
 	gboolean found;
 
-	LOG ("ephy_find_bar_previous")
+	LOG ("ephy_find_bar_previous");
 
 	found = mozilla_find_next (bar->priv->embed, TRUE);
 	update_navigation_controls (bar, TRUE, found);
@@ -652,7 +652,7 @@ ephy_find_bar_close (EggFindBar *ebar)
 {
 	EphyFindBar *bar = EPHY_FIND_BAR (ebar);
 
-	LOG ("ephy_find_bar_close")
+	LOG ("ephy_find_bar_close");
 
 	g_return_if_fail (bar->priv->embed != NULL);
 

@@ -110,7 +110,7 @@ ephy_adblock_extension_register_type (GTypeModule *module)
 static void
 ephy_adblock_extension_init (EphyAdblockExtension *extension)
 {
-	LOG ("EphyAdblockExtension initialising")
+	LOG ("EphyAdblockExtension initialising");
 
 	ephy_embed_shell_get_embed_single (embed_shell); /* Fire up Mozilla */
 
@@ -126,7 +126,7 @@ ephy_adblock_extension_finalize (GObject *object)
 {
 	EphyAdblockExtension *extension = EPHY_ADBLOCK_EXTENSION (object);
 
-	LOG ("EphyAdblockExtension finalising")
+	LOG ("EphyAdblockExtension finalising");
 
 	mozilla_unregister_ad_blocker ();
 

@@ -102,7 +102,7 @@ impl_detach_window (EphyExtension *ext,
 static void
 ephy_tab_groups_extension_init (EphyTabGroupsExtension *extension)
 {
-	LOG ("EphyTabGroupsExtension initialising")
+	LOG ("EphyTabGroupsExtension initialising");
 }
 
 static void

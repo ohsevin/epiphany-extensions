@@ -131,7 +131,7 @@ load_status_cb (EphyTab *tab,
 		{
 			char *content;
 
-			LOG ("Page is bookmarked, sending full content")
+			LOG ("Page is bookmarked, sending full content");
 
 			persist = EPHY_EMBED_PERSIST (ephy_embed_factory_new_object (EPHY_TYPE_EMBED_PERSIST));
 			ephy_embed_persist_set_embed (persist, embed);
@@ -152,7 +152,7 @@ load_status_cb (EphyTab *tab,
 		}
 		else
 		{
-			LOG ("Page not bookmarked, sending only location and title")
+			LOG ("Page not bookmarked, sending only location and title");
 
 			DashboardSendCluePacket (
 				(const xmlChar*) EPIPHANY_FRONTEND_IDENTIFIER,
@@ -190,7 +190,7 @@ ephy_dashboard_extension_init (EphyDashboardExtension *extension)
 {
 /*	extension->priv = EPHY_DASHBOARD_EXTENSION_GET_PRIVATE (extension);*/
 
-	LOG ("EphyDashboardExtension initialising")
+	LOG ("EphyDashboardExtension initialising");
 }
 
 static void

@@ -163,7 +163,7 @@ ephy_error_viewer_extension_register_type (GTypeModule *module)
 static void
 ephy_error_viewer_extension_init (EphyErrorViewerExtension *extension)
 {
-	LOG ("EphyErrorViewerExtension initialising")
+	LOG ("EphyErrorViewerExtension initialising");
 
 	ephy_embed_shell_get_embed_single (embed_shell); /* Fire up Mozilla */
 
@@ -189,7 +189,7 @@ ephy_error_viewer_extension_finalize (GObject *object)
 	EphyErrorViewerExtension *extension =
 		EPHY_ERROR_VIEWER_EXTENSION (object);
 
-	LOG ("EphyErrorViewerExtension finalizing")
+	LOG ("EphyErrorViewerExtension finalizing");
 
 	mozilla_unregister_error_listener (extension->priv->listener);
 
@@ -381,7 +381,7 @@ impl_attach_window (EphyExtension *extension,
 	guint merge_id;
 	WindowData *data;
 
-	LOG ("EphyErrorViewerExtension attach_window")
+	LOG ("EphyErrorViewerExtension attach_window");
 
 	cb_data = g_new (ErrorViewerCBData, 1);
 	cb_data->extension = EPHY_ERROR_VIEWER_EXTENSION (extension);

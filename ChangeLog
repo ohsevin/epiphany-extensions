@@ -1,3 +1,122 @@
+2005-01-28  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/adblock/ad-blocker.c: (ad_blocker_init),
+	(ad_blocker_finalize):
+	* extensions/adblock/ad-uri-tester.c: (match_uri),
+	(ad_uri_tester_init), (ad_uri_tester_finalize):
+	* extensions/adblock/ephy-adblock-extension.c:
+	(ephy_adblock_extension_init), (ephy_adblock_extension_finalize):
+	* extensions/adblock/extension.c: (register_module):
+	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:
+	(show_context_menu), (button_toggled_cb), (button_button_press_cb),
+	(button_popup_menu_cb), (ephy_bookmarks_tray_extension_init),
+	(ephy_bookmarks_tray_extension_finalize):
+	* extensions/bookmarks-tray/extension.c: (register_module):
+	* extensions/certificates/ephy-certificates-extension.c:
+	(ephy_certificates_extension_init),
+	(ephy_certificates_extension_finalize), (sync_security_status),
+	(impl_attach_tab), (impl_detach_tab), (impl_attach_window),
+	(impl_detach_window):
+	* extensions/certificates/extension.c: (register_module):
+	* extensions/dashboard/ephy-dashboard-extension.c:
+	(load_status_cb), (ephy_dashboard_extension_init):
+	* extensions/dashboard/ephy-dashboard.c: (register_module):
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	(ephy_error_viewer_extension_init),
+	(ephy_error_viewer_extension_finalize), (impl_attach_window):
+	* extensions/error-viewer/extension.c: (register_module):
+	* extensions/error-viewer/link-checker.c: (link_checker_init),
+	(link_checker_finalize):
+	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:
+	* extensions/error-viewer/sgml-validator.c: (sgml_validator_init),
+	(sgml_validator_finalize):
+	* extensions/extensions-manager-ui/ephy-extensions-manager-ui-exten
+	sion.c: (ephy_extensions_manager_ui_extension_init),
+	(ephy_extensions_manager_ui_extension_finalize),
+	(impl_attach_window), (impl_detach_window):
+	* extensions/extensions-manager-ui/extension.c: (register_module):
+	* extensions/extensions-manager-ui/extensions-manager-ui.c:
+	(extensions_manager_ui_init), (extensions_manager_ui_finalize):
+	* extensions/find/ephy-find-bar.c: (ensure_offscren_window),
+	(update_find_properties), (find_entry_key_press_event_cb),
+	(entry_preedit_changed_cb), (embed_net_stop_cb),
+	(embed_key_press_event_cb), (set_focus_cb), (unset_embed),
+	(update_find_bar), (sync_active_tab), (ephy_find_bar_show),
+	(ephy_find_bar_hide), (ephy_find_bar_next),
+	(ephy_find_bar_previous), (ephy_find_bar_close):
+	* extensions/find/ephy-find-extension.c:
+	(ephy_find_extension_init), (ephy_find_extension_finalize),
+	(toolbar_weak_unref_cb), (impl_attach_window),
+	(impl_detach_window), (impl_detach_tab):
+	* extensions/find/extension.c: (register_module):
+	* extensions/find/mozilla/mozilla-find.cpp:
+	* extensions/gestures/ephy-gesture.c: (ephy_gesture_finalize):
+	* extensions/gestures/ephy-gestures-extension.c:
+	(gesture_performed_cb), (impl_attach_tab), (impl_detach_tab):
+	* extensions/gestures/gestures.c: (register_module):
+	* extensions/page-info/ephy-page-info-extension.c:
+	(ephy_page_info_extension_init),
+	(ephy_page_info_extension_finalize),
+	(ephy_page_info_extension_display_cb), (impl_attach_window):
+	* extensions/page-info/extension.c: (register_module):
+	* extensions/page-info/page-info-dialog.c:
+	(general_info_page_fill), (page_info_dialog_finalize):
+	* extensions/sample-mozilla/ephy-sample2-extension.c:
+	(ephy_sample2_extension_init), (ephy_sample2_extension_finalize),
+	(dom_mouse_down_cb), (impl_attach_window), (impl_detach_window),
+	(impl_attach_tab), (impl_detach_tab):
+	* extensions/sample-mozilla/sample-mozilla.c: (register_module):
+	* extensions/sample/ephy-sample-extension.c:
+	(ephy_sample_extension_init), (ephy_sample_extension_finalize),
+	(impl_attach_window), (impl_detach_window), (impl_attach_tab),
+	(impl_detach_tab):
+	* extensions/sample/sample.c: (register_module):
+	* extensions/select-stylesheet/ephy-select-stylesheet-extension.c:
+	(ephy_select_stylesheet_extension_init), (impl_attach_window):
+	* extensions/select-stylesheet/extension.c: (register_module):
+	* extensions/sidebar/ephy-sidebar-embed.c: (show_context_menu),
+	(embed_mouse_click_cb):
+	* extensions/sidebar/ephy-sidebar-extension.c:
+	(impl_attach_window), (impl_detach_window),
+	(ephy_sidebar_extension_finalize):
+	* extensions/sidebar/extension.c: (register_module):
+	* extensions/smart-bookmarks/smart-bookmarks-extension.c:
+	(rebuild_ui), (smart_bookmark_added_cb),
+	(smart_bookmark_removed_cb), (smart_bookmark_changed_cb),
+	(impl_attach_window), (impl_detach_window),
+	(smart_bookmarks_extension_init):
+	* extensions/smart-bookmarks/smart-bookmarks.c: (register_module):
+	* extensions/tab-groups/ephy-tab-grouper.c:
+	(ephy_tab_grouper_init), (ephy_tab_grouper_finalize):
+	* extensions/tab-groups/ephy-tab-groups-extension.c:
+	(ephy_tab_groups_extension_init):
+	* extensions/tab-states/ephy-tab-states-extension.c:
+	(ephy_tab_states_extension_init),
+	(ephy_tab_states_extension_finalize), (impl_attach_window),
+	(impl_detach_window), (impl_attach_tab), (impl_detach_tab):
+	* extensions/tab-states/extension.c: (register_module):
+	* extensions/tabsmenu/ephy-tab-move-menu.c:
+	(add_action_and_menu_item), (update_tab_move_menu_cb),
+	(ephy_tab_move_menu_set_window):
+	* extensions/tabsmenu/ephy-tabs-menu-extension.c:
+	(ephy_tabs_menu_extension_init),
+	(ephy_tabs_menu_extension_finalize):
+	* extensions/toolbar-extras/ephy-multi-smart-action.c:
+	(create_menu_item), (entry_activate_cb),
+	(ephy_multi_smart_action_init), (ephy_multi_smart_action_finalize),
+	(ephy_multi_smart_action_set_mode),
+	(ephy_multi_smart_action_set_id), (smart_address_notifier),
+	(mode_notifier), (clean_after_use_notifier),
+	(case_sensitive_notifier):
+	* extensions/toolbar-extras/ephy-toolbar-extras-extension.c:
+	(ephy_toolbar_extras_extension_init),
+	(ephy_toolbar_extras_extension_finalize), (action_request_cb):
+	* extensions/toolbar-extras/toolbar-extras.c: (register_module):
+	* include/ephy-debug.h:
+
+	Add ; to all LOG statements, and adapt ephy-debug.h for
+	non-GNUC-varargs case.
+
 2005-01-27  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/dashboard/ephy-dashboard-extension.c:

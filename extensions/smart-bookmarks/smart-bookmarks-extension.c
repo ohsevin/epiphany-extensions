@@ -285,7 +285,7 @@ rebuild_ui (WindowData *data)
 	char verb[SMB_ACTION_LENGTH];
 	int i;
 
-	LOG ("Rebuilding UI")
+	LOG ("Rebuilding UI");
 
 	/* clean UI */
 	if (data->ui_id != 0)
@@ -492,7 +492,7 @@ smart_bookmark_added_cb (EphyNode *keywords,
 			 EphyNode *bmk,
 			 SmartBookmarksExtension *extension)
 {
-	LOG ("SmartBookmarksExtension smart bookmarks added")
+	LOG ("SmartBookmarksExtension smart bookmarks added");
 
 	foreach_window ((GFunc) add_bookmark_to_window, bmk);
 }
@@ -503,7 +503,7 @@ smart_bookmark_removed_cb (EphyNode *keywords,
 			   guint old_index,
 			   SmartBookmarksExtension *extension)
 {
-	LOG ("SmartBookmarksExtension smart bookmarks removed")
+	LOG ("SmartBookmarksExtension smart bookmarks removed");
 
 	foreach_window ((GFunc) remove_bookmark_from_window, bmk);
 }
@@ -514,7 +514,7 @@ smart_bookmark_changed_cb (EphyNode *node,
 			   guint property_id,
 			   SmartBookmarksExtension *extension)
 {
-	LOG ("SmartBookmarksExtension smart bookmarks changed")
+	LOG ("SmartBookmarksExtension smart bookmarks changed");
 
 	if (property_id == EPHY_NODE_BMK_PROP_TITLE)
 	{
@@ -600,7 +600,7 @@ impl_attach_window (EphyExtension *ext,
 	EphyNode *smart_bmks, *bmk;
 	int i;
 
-	LOG ("SmartBookmarksExtension attach_window %p", window)
+	LOG ("SmartBookmarksExtension attach_window %p", window);
 
 	/* Attach ui infos to the window */
 	data = g_new0 (WindowData, 1);
@@ -643,7 +643,7 @@ impl_detach_window (EphyExtension *ext,
 {
 	WindowData *data;
 
-	LOG ("SmartBookmarksExtension detach_window")
+	LOG ("SmartBookmarksExtension detach_window");
 
 	data = g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 	g_return_if_fail (data != NULL);
@@ -670,7 +670,7 @@ smart_bookmarks_extension_init (SmartBookmarksExtension *extension)
 	EphyBookmarks *bookmarks;
 	EphyNode *smart_bmks;
 
-	LOG ("SmartBookmarksExtension initialising")
+	LOG ("SmartBookmarksExtension initialising");
 
 	extension->priv = SMART_BOOKMARKS_EXTENSION_GET_PRIVATE (extension);
 
