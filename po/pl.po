@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-04-14 21:45+0200\n"
+"POT-Creation-Date: 2004-04-27 09:56+0200\n"
 "PO-Revision-Date: 2003-07-28 01:29+0100\n"
 "Last-Translator: GNOME PL Team <translators@gnome.pl>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -79,14 +79,6 @@ msgstr "_Wyczyść"
 msgid "Error Viewer"
 msgstr "Przeglądarka błędów"
 
-#: extensions/error-viewer/link-checker.c:236
-#, c-format
-msgid "Found %d invalid link"
-msgid_plural "Found %d invalid links"
-msgstr[0] "Znaleziono %d niepoprawny odnośnik"
-msgstr[1] "Znaleziono %d niepoprawne odnośniki"
-msgstr[2] "Znaleziono %d niepoprawnych odnośników"
-
 #. Don't bother looking for source lines -- they're not there
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
 #, c-format
@@ -106,7 +98,15 @@ msgstr ""
 "Błąd JavaScript w %s w linii %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:77
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "Znaleziono %d niepoprawny odnośnik"
+msgstr[1] "Znaleziono %d niepoprawne odnośniki"
+msgstr[2] "Znaleziono %d niepoprawnych odnośników"
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -115,7 +115,7 @@ msgstr ""
 "Błąd odnośnika w %s:\n"
 "%s nie jest dostępne."
 
-#: extensions/error-viewer/mozilla/mozilla-link-checker.cpp:152
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
@@ -172,7 +172,20 @@ msgstr ""
 "Ostrzeżenie HTML w %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:381
+#: extensions/error-viewer/sgml-validator.c:360
+#, c-format
+msgid "HTML error in %s:"
+msgstr "Błąd HTML w %s:"
+
+#: extensions/error-viewer/sgml-validator.c:368
+msgid "Invalid character encoding"
+msgstr "Błędne kodowanie znaków"
+
+#: extensions/error-viewer/sgml-validator.c:373
+msgid "Unknown error while converting to UTF-8"
+msgstr "Nieznany błąd podczas konwersji do UTF-8"
+
+#: extensions/error-viewer/sgml-validator.c:435
 #, c-format
 msgid ""
 "HTML error in %s:\n"
