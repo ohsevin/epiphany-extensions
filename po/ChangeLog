@@ -1,5 +1,9 @@
 2004-01-02  Christian Rose  <menthos@menthos.com>
 
+	* sv.po: Added Swedish translation.
+
+2004-01-02  Christian Rose  <menthos@menthos.com>
+
 	* .cvsignore: Added an entry for "notexist".
 	* POTFILES.in: Removed missing files and added one that wasn't
 	listed.
