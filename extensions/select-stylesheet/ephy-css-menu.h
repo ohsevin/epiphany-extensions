@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2002  Ricardo Fern·ndez Pascual
+ *  Copyright (C) 2002  Ricardo Fern√°ndez Pascual
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -14,49 +14,48 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ *
+ *  $Id$
  */
 
-#ifndef __ephy_altenate_css_menu_
-#define __ephy_altenate_css_menu_
+#ifndef EPHY_CSS_MENU_H
+#define EPHY_CSS_MENU_H
 
 #include <glib-object.h>
 #include <epiphany/ephy-window.h>
 
-/* object forward declarations */
+G_BEGIN_DECLS
 
-typedef struct _EphyCssMenu EphyCssMenu;
-typedef struct _EphyCssMenuClass EphyCssMenuClass;
-typedef struct _EphyCssMenuPrivate EphyCssMenuPrivate;
+#define EPHY_TYPE_CSS_MENU			(ephy_css_menu_get_type())
+#define EPHY_CSS_MENU(object)			(G_TYPE_CHECK_INSTANCE_CAST((object), EPHY_TYPE_CSS_MENU, EphyCSSMenu))
+#define EPHY_CSS_MENU_CLASS(klass)		(G_TYPE_CHECK_CLASS_CAST((klass), EPHY_TYPE_CSS_MENU, EphyCSSMenuClass))
+#define EPHY_IS_CSS_MENU(object)		(G_TYPE_CHECK_INSTANCE_TYPE((object), EPHY_TYPE_CSS_MENU))
+#define EPHY_IS_CSS_MENU_ITEM_CLASS(klass)	(G_TYPE_CHECK_CLASS_TYPE((klass), EPHY_TYPE_CSS_MENU))
+#define EPHY_CSS_MENU_GET_CLASS(obj) 		(G_TYPE_INSTANCE_GET_CLASS((obj), EPHY_TYPE_CSS_MENU, EphyCSSMenuClass))
 
-/**
- * EphyCssMenu object
- */
+typedef struct _EphyCSSMenu		EphyCSSMenu;
+typedef struct _EphyCSSMenuClass	EphyCSSMenuClass;
+typedef struct _EphyCSSMenuPrivate	EphyCSSMenuPrivate;
 
-#define EPHY_TYPE_CSS_MENU		(ephy_css_menu_get_type())
-#define EPHY_CSS_MENU(object)		(G_TYPE_CHECK_INSTANCE_CAST((object), EPHY_TYPE_CSS_MENU,\
-					 EphyCssMenu))
-#define EPHY_CSS_MENU_CLASS(klass)	(G_TYPE_CHECK_CLASS_CAST((klass), EPHY_TYPE_CSS_MENU,\
-					 EphyCssMenuClass))
-#define EPHY_IS_CSS_MENU(object)	(G_TYPE_CHECK_INSTANCE_TYPE((object), EPHY_TYPE_CSS_MENU))
-#define EPHY_IS_CSS_MENU_ITEM_CLASS(klass) \
- 					(G_TYPE_CHECK_CLASS_TYPE((klass), EPHY_TYPE_CSS_MENU))
-#define EPHY_CSS_MENU_GET_CLASS(obj) 	(G_TYPE_INSTANCE_GET_CLASS((obj), EPHY_TYPE_CSS_MENU,\
-					 EphyCssMenuClass))
-
-struct _EphyCssMenuClass
+struct _EphyCSSMenuClass
 {
 	GObjectClass parent_class;
 };
 
-/* Remember: fields are public read-only */
-struct _EphyCssMenu
+struct _EphyCSSMenu
 {
 	GObject parent_object;
-	
-	EphyCssMenuPrivate *priv;
+
+	/*< private >*/
+	EphyCSSMenuPrivate *priv;
 };
 
-GType		ephy_css_menu_get_type			(void);
-EphyCssMenu *	ephy_css_menu_new			(EphyWindow *window);
+GType		ephy_css_menu_get_type		(void);
+
+GType		ephy_css_menu_register_type	(GTypeModule *module);
+
+EphyCSSMenu *	ephy_css_menu_new		(EphyWindow *window);
+
+G_END_DECLS
 
 #endif

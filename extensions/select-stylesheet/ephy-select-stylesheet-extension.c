@@ -33,22 +33,15 @@
 #include <epiphany/ephy-extension.h>
 #include <epiphany/ephy-window.h>
 
-#include <glib/gi18n-lib.h>
-
-#define WINDOW_DATA_KEY "EphySelectStylesheetExtensionWindowData"
-#define CSS_MENU_KEY "EphySelectStyelesheetExtensionMenu"
-
-#define EPHY_SELECT_STYLESHEET_EXTENSION_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_SELECT_STYLESHEET_EXTENSION, EphySelectStylesheetExtensionPrivate))
-
-struct _EphySelectStylesheetExtensionPrivate
-{
-};
+#define WINDOW_DATA_KEY	"EphyCSSMenuExtensionWindowData"
+#define CSS_MENU_KEY	"EphyCSSMenu"
 
 static void ephy_select_stylesheet_extension_class_init	(EphySelectStylesheetExtensionClass *klass);
 static void ephy_select_stylesheet_extension_iface_init	(EphyExtensionIface *iface);
 static void ephy_select_stylesheet_extension_init	(EphySelectStylesheetExtension *extension);
 
 static GObjectClass *parent_class = NULL;
+
 static GType type = 0;
 
 GType
@@ -97,39 +90,21 @@ static void
 ephy_select_stylesheet_extension_init (EphySelectStylesheetExtension *extension)
 {
 	LOG ("EphySelectStylesheetExtension initialising")
-
-	/* extension->priv = EPHY_SELECT_STYLESHEET_EXTENSION_GET_PRIVATE (extension); */
-}
-
-static void
-ephy_select_stylesheet_extension_finalize (GObject *object)
-{
-	EphySelectStylesheetExtension *extension = EPHY_SELECT_STYLESHEET_EXTENSION (object);
-
-	LOG ("EphySelectStylesheetExtension finalizing")
-
-	G_OBJECT_CLASS (parent_class)->finalize (object);
 }
 
 static void
 ephy_select_stylesheet_extension_class_init (EphySelectStylesheetExtensionClass *klass)
 {
-	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-
 	parent_class = g_type_class_peek_parent (klass);
-
-	object_class->finalize = ephy_select_stylesheet_extension_finalize;
-
-/*	g_type_class_add_private (object_class, sizeof (EphySelectStylesheetExtensionPrivate)); */
 }
 
 static void
 impl_attach_window (EphyExtension *extension,
 		    EphyWindow *window)
 {
-	LOG ("EphySelectStylesheetExtension attach_window")
+	EphyCSSMenu *menu;
 
-	EphyCssMenu *menu;
+	LOG ("EphySelectStylesheetExtension attach_window")
 
 	menu = ephy_css_menu_new (window);
 

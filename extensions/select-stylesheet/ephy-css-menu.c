@@ -1,7 +1,8 @@
 /*
- *  Copyright (C) 2002  Ricardo Fern·ndez Pascual
+ *  Copyright (C) 2002  Ricardo Fern√°ndez Pascual
  *  Copyright (C) 2004  Crispin Flowerday
  *  Copyright (C) 2004  Adam Hooper
+ *  Copyright (C) 2004  Christian Persch
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -16,13 +17,15 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ *
+ *  $Id$
  */
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
 
-#include <glib/gi18n.h>
+#include <glib/gi18n-lib.h>
 
 #include <gtk/gtkuimanager.h>
 #include <gtk/gtkactiongroup.h>
@@ -37,27 +40,27 @@
 #include "ephy-debug.h"
 #include "ephy-string.h"
 
-/**
- * Private data
- */
-#define EPHY_CSS_MENU_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_CSS_MENU, EphyCssMenuPrivate))
-#define CSS_MENU_PLACEHOLDER_PATH "/menubar/ViewMenu"
+#define EPHY_CSS_MENU_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_CSS_MENU, EphyCSSMenuPrivate))
 
-
-struct _EphyCssMenuPrivate
+struct _EphyCSSMenuPrivate
 {
 	EphyWindow *window;
-	GtkUIManager *merge;
+	GtkUIManager *manager;
 	EphyEmbed *embed;
 
 	GtkActionGroup *item_action_group;
-	guint merge_id;
+	guint ui_id;
 
 	GtkActionGroup *menu_action_group;
-	guint menu_merge_id;
+	guint menu_ui_id;
 
-	gboolean block_signals;
+	gboolean updating;
 };
+
+#define CSS_MENU_PLACEHOLDER_PATH	"/menubar/ViewMenu"
+#define STYLESHEET_KEY			"ECStyleSheet"
+#define ACTION_VERB_FORMAT		"ECSSSwitchStyle%x"
+#define ACTION_VERB_FORMAT_LENGTH	strlen (ACTION_VERB_FORMAT) + 14 + 1
 
 enum
 {
@@ -65,10 +68,11 @@ enum
 	PROP_WINDOW
 };
 
-static void ephy_css_menu_init (EphyCssMenu *m);
-static void ephy_css_menu_class_init (EphyCssMenuClass *klass);
+static void ephy_css_menu_class_init	(EphyCSSMenuClass *klass);
+static void ephy_css_menu_init		(EphyCSSMenu *m);
 
 static GObjectClass *parent_class = NULL;
+
 static GType type = 0;
 
 GType
@@ -82,76 +86,71 @@ ephy_css_menu_register_type (GTypeModule *module)
 {
 	static const GTypeInfo our_info =
 	{
-		sizeof (EphyCssMenuClass),
+		sizeof (EphyCSSMenuClass),
 		NULL, /* base_init */
 		NULL, /* base_finalize */
 		(GClassInitFunc) ephy_css_menu_class_init,
 		NULL,
 		NULL, /* class_data */
-		sizeof (EphyCssMenu),
+		sizeof (EphyCSSMenu),
 		0, /* n_preallocs */
 		(GInstanceInitFunc) ephy_css_menu_init
 	};
 
 	type = g_type_module_register_type (module,
 					    G_TYPE_OBJECT,
-					    "EphyCssMenu",
+					    "EphyCSSMenu",
 					    &our_info, 0);
 
 	return type;
 }
 
-static void ephy_css_menu_rebuild (EphyCssMenu *menu);
-
-#define STYLESHEET_KEY "ephy-stylesheet"
+static void ephy_css_menu_rebuild (EphyCSSMenu *menu);
 
 static void
 activate_stylesheet_cb (GtkAction *action,
-			EphyCssMenu *menu)
+			EphyCSSMenu *menu)
 {
-	EphyCssMenuPrivate *p = menu->priv;
+	EphyCSSMenuPrivate *p = menu->priv;
 	EmbedStyleSheet *style;
 
-	if (menu->priv->block_signals) return;
+	if (menu->priv->updating) return;
 
 	g_return_if_fail (EPHY_IS_EMBED (p->embed));
+	g_return_if_fail (ephy_window_get_active_embed (p->window) == p->embed);
 
 	style = g_object_get_data (G_OBJECT (action), STYLESHEET_KEY);
+	g_return_if_fail (style != NULL);
 
 	mozilla_set_stylesheet (p->embed, style);
 }
 
 static GtkAction *
-create_stylesheet_action (EphyCssMenu *menu,
-			  EmbedStyleSheet *style)
+create_stylesheet_action (EphyCSSMenu *menu,
+			  EmbedStyleSheet *style,
+			  const char *verb)
 {
 	GtkAction  *action;
-	gchar *name, *tooltip, *label;
-	/* Use different naming schemes for different style sources, to avoid
-	 * action name collisions */
-	const gchar *name_extra = "";
+	char *tooltip, *label;
 
 	label = ephy_string_double_underscores (style->name);
 
 	switch (style->type)
 	{
-	case STYLESHEET_NONE:
-		tooltip = g_strdup (_("Render the page without using a style"));
-		name_extra = "None";
-		break;
-	case STYLESHEET_BASIC:
-		tooltip = g_strdup (_("Render the page using the default style"));
-		name_extra = "Basic";
-		break;
-	default:
-		tooltip = g_strdup_printf (_("Render the page using the \"%s\" style"), 
-					   style->name);
-		break;
+		case STYLESHEET_NONE:
+			tooltip = g_strdup (_("Render the page without using a style"));
+			break;
+		case STYLESHEET_BASIC:
+			tooltip = g_strdup (_("Render the page using the default style"));
+			break;
+		default:
+			tooltip = g_strdup_printf (_("Render the page using the \"%s\" style"), 
+						   style->name);
+			break;
 	}
 
-	name = g_strdup_printf ("Ephy%sCSSAction%p", name_extra, style);
 	action = g_object_new (GTK_TYPE_RADIO_ACTION,
-			       "name", name,
+			       "name", verb,
 			       "label", label,
 			       "tooltip", tooltip,
 			       NULL);
@@ -166,65 +165,64 @@ create_stylesheet_action (EphyCssMenu *menu,
 	gtk_action_group_add_action (menu->priv->item_action_group, action);
 	g_object_unref (action);
 
-	g_free (name);
 	g_free (label);
 	g_free (tooltip);
+
 	return action;
 }
 
 static void
-ephy_css_menu_rebuild (EphyCssMenu *menu)
+ephy_css_menu_rebuild (EphyCSSMenu *menu)
 {
-	EphyCssMenuPrivate *p = menu->priv;
-	GList *stylesheets = 0, *l;
+	EphyCSSMenuPrivate *p = menu->priv;
+	GList *stylesheets = NULL, *l;
 	GtkAction *action;
 	EmbedStyleSheet *current = NULL;
 	GSList *radio_group = NULL;
+	char verb[ACTION_VERB_FORMAT_LENGTH];
+	int i;
 
-	if (p->merge_id > 0)
+	p->updating = TRUE;
+
+	if (p->ui_id != 0)
 	{
-		gtk_ui_manager_remove_ui (p->merge, p->merge_id);
-		gtk_ui_manager_ensure_update (p->merge);
-		p->merge_id = 0;
+		gtk_ui_manager_remove_ui (p->manager, p->ui_id);
+		gtk_ui_manager_ensure_update (p->manager);
 	}
 
-	if (p->item_action_group)
+	if (p->item_action_group != NULL)
 	{
-		gtk_ui_manager_remove_action_group (p->merge, p->item_action_group);
+		gtk_ui_manager_remove_action_group (p->manager, p->item_action_group);
 		g_object_unref (p->item_action_group);
-		p->item_action_group = 0;
 	}
 
 	LOG ("Rebuilding stylesheet menu");
 
 	stylesheets = mozilla_get_stylesheets (p->embed, &current);
 
-	p->block_signals = TRUE;
-
 	/* Create the new action group */
 	p->item_action_group = 
 		gtk_action_group_new ("SelectStylesheetMenuDynamicActions");
 	gtk_action_group_set_translation_domain (p->item_action_group, NULL);
-	gtk_ui_manager_insert_action_group (p->merge, p->item_action_group, 0);
+	gtk_ui_manager_insert_action_group (p->manager, p->item_action_group, -1);
 
-	p->merge_id = gtk_ui_manager_new_merge_id (p->merge);
+	p->ui_id = gtk_ui_manager_new_merge_id (p->manager);
 
 	action = gtk_action_group_get_action (p->menu_action_group,
-					      "StyleMenuAction");
-	g_object_set (G_OBJECT (action),
-		      "sensitive", stylesheets != NULL, NULL);
+					      "ECSSMenuAction");
+	g_object_set (G_OBJECT (action), "sensitive", stylesheets != NULL, NULL);
 	
-	for (l = stylesheets; l ; l = l->next)
+	for (l = stylesheets, i = 0; l != NULL; l = l->next, i++)
 	{
-		gchar name[16];
-		EmbedStyleSheet *style = (EmbedStyleSheet*) (l->data);
-		action = create_stylesheet_action (menu, style);
+		EmbedStyleSheet *style = (EmbedStyleSheet*) l->data;
 
-		g_snprintf (name, sizeof(name), "Style%p", style);
+		g_snprintf (verb, sizeof (verb), ACTION_VERB_FORMAT, i);
 
-		gtk_ui_manager_add_ui (p->merge, p->merge_id,
+		action = create_stylesheet_action (menu, style, verb);
+
+		gtk_ui_manager_add_ui (p->manager, p->ui_id,
 				       CSS_MENU_PLACEHOLDER_PATH "/StyleMenu",
-				       name, gtk_action_get_name (action),
+				       verb, verb,
 				       GTK_UI_MANAGER_MENUITEM, FALSE);
 
 		/* Make sure all widgets are in the same radio_group */
@@ -236,21 +234,21 @@ ephy_css_menu_rebuild (EphyCssMenu *menu)
 					      style == current);
 	}
 
-	/* Don't need to free the contents, they are held as weak ref's
-	 * against their action */
+	/* Don't need to free the contents, the refs are held on the actions */
 	g_list_free (stylesheets);
 
-	p->block_signals = FALSE;
+	p->updating = FALSE;
 
-	gtk_ui_manager_ensure_update (p->merge);
+	gtk_ui_manager_ensure_update (p->manager);
 }
 
 static void
-ephy_css_menu_set_embed (EphyCssMenu *menu, EphyEmbed *embed)
+ephy_css_menu_set_embed (EphyCSSMenu *menu,
+			 EphyEmbed *embed)
 {
-	EphyCssMenuPrivate *p = menu->priv;
+	EphyCSSMenuPrivate *p = menu->priv;
 
-	if (p->embed)
+	if (p->embed != NULL)
 	{
 		g_signal_handlers_disconnect_matched
 			(p->embed, G_SIGNAL_MATCH_DATA, 
@@ -259,7 +257,8 @@ ephy_css_menu_set_embed (EphyCssMenu *menu, EphyEmbed *embed)
 	}
 
 	p->embed = embed;
-	if (p->embed)
+
+	if (p->embed != NULL)
 	{
 		g_object_ref (p->embed);
 		g_signal_connect_object (p->embed, "net_stop",
@@ -273,7 +272,7 @@ ephy_css_menu_set_embed (EphyCssMenu *menu, EphyEmbed *embed)
 static void
 sync_active_tab_cb (EphyWindow *window,
 		    GParamSpec *pspec,
-		    EphyCssMenu *menu)
+		    EphyCSSMenu *menu)
 {
 	EphyEmbed *embed;
 
@@ -283,48 +282,46 @@ sync_active_tab_cb (EphyWindow *window,
 	ephy_css_menu_set_embed (menu, embed);
 }
 
-static GtkActionEntry entries[] = {
-	{ "StyleMenuAction", NULL, N_("St_yle"), NULL,
+static GtkActionEntry entries[] =
+{
+	{ "ECSSMenuAction", NULL, N_("St_yle"), NULL,
 	  N_("Select a different style for this page"), NULL }
 };
-static guint n_entries = G_N_ELEMENTS(entries);
 
 static void
-ephy_css_menu_set_window (EphyCssMenu *menu, EphyWindow *window)
+ephy_css_menu_set_window (EphyCSSMenu *menu, EphyWindow *window)
 {
-	EphyCssMenuPrivate *p = menu->priv;
+	EphyCSSMenuPrivate *p = menu->priv;
 	EphyEmbed *embed;
 	GtkAction *action;
 
 	p->window = window;
 	
 	/* Create the Action Group */
-	p->merge = g_object_ref (GTK_UI_MANAGER (window->ui_merge));
-	p->menu_action_group = gtk_action_group_new
-		("EphySelectStylesheetExtensionActions");
-	gtk_action_group_set_translation_domain
-		(p->menu_action_group, GETTEXT_PACKAGE);
-	gtk_ui_manager_insert_action_group(p->merge, p->menu_action_group, 0);
+	p->manager = g_object_ref (GTK_UI_MANAGER (window->ui_merge));
+	p->menu_action_group = gtk_action_group_new ("EphyCSSMenuActions");
+	gtk_action_group_set_translation_domain (p->menu_action_group, GETTEXT_PACKAGE);
+	gtk_ui_manager_insert_action_group(p->manager, p->menu_action_group, -1);
 	gtk_action_group_add_actions (p->menu_action_group, entries,
-				      n_entries, window);
+				      G_N_ELEMENTS (entries), window);
 
 	action = gtk_action_group_get_action (p->menu_action_group,
-					      "StyleMenuAction");
+					      "ECSSMenuAction");
 	g_object_set (G_OBJECT (action), "hide_if_empty", FALSE, NULL);
 
-	p->menu_merge_id = gtk_ui_manager_new_merge_id (p->merge);
+	p->menu_ui_id = gtk_ui_manager_new_merge_id (p->manager);
 
-	gtk_ui_manager_add_ui (p->merge, p->menu_merge_id,
+	gtk_ui_manager_add_ui (p->manager, p->menu_ui_id,
+			       CSS_MENU_PLACEHOLDER_PATH,
+			       "StyleSep0", NULL,
+			       GTK_UI_MANAGER_SEPARATOR, FALSE);
+	gtk_ui_manager_add_ui (p->manager, p->menu_ui_id,
+			       CSS_MENU_PLACEHOLDER_PATH,
+			       "StyleMenu", "ECSSMenuAction",
+			       GTK_UI_MANAGER_MENU, FALSE);
+	gtk_ui_manager_add_ui (p->manager, p->menu_ui_id,
 			       CSS_MENU_PLACEHOLDER_PATH,
 			       "StyleSep1", NULL,
-			       GTK_UI_MANAGER_SEPARATOR, FALSE);
-	gtk_ui_manager_add_ui (p->merge, p->menu_merge_id,
-			       CSS_MENU_PLACEHOLDER_PATH,
-			       "StyleMenu", "StyleMenuAction",
-			       GTK_UI_MANAGER_MENU, FALSE);
-	gtk_ui_manager_add_ui (p->merge, p->menu_merge_id,
-			       CSS_MENU_PLACEHOLDER_PATH,
-			       "StyleSep2", NULL,
 			       GTK_UI_MANAGER_SEPARATOR, FALSE);
 
 	/* Attach the signals to the window */
@@ -339,71 +336,31 @@ ephy_css_menu_set_window (EphyCssMenu *menu, EphyWindow *window)
 }
 
 static void
-ephy_css_menu_set_property (GObject *object,
-			      guint prop_id,
-			      const GValue *value,
-			      GParamSpec *pspec)
+ephy_css_menu_finalize (GObject *object)
 {
-	EphyCssMenu *m = EPHY_CSS_MENU (object);
+	EphyCSSMenu *menu = EPHY_CSS_MENU(object);
+	EphyCSSMenuPrivate *p = menu->priv;
 
-	switch (prop_id)
+	if (p->ui_id != 0)
 	{
-	case PROP_WINDOW:
-		{
-			ephy_css_menu_set_window 
-				(m, EPHY_WINDOW (g_value_get_object (value)));
-		}
-		break;
-	default: 
-		break;
-	}
-}
-
-static void
-ephy_css_menu_get_property (GObject *object,
-			      guint prop_id,
-			      GValue *value,
-			      GParamSpec *pspec)
-{
-	EphyCssMenu *m = EPHY_CSS_MENU (object);
-	
-	switch (prop_id)
-	{
-	case PROP_WINDOW:
-		g_value_set_object (value, m->priv->window);
-		break;
-	default: 
-		break;
-	}
-}
-
-static void
-ephy_css_menu_finalize_impl(GObject *o)
-{
-	EphyCssMenu *gm = EPHY_CSS_MENU(o);
-	EphyCssMenuPrivate *p = gm->priv;
-
-	if (p->merge_id > 0)
-	{
-		gtk_ui_manager_remove_ui (p->merge, p->merge_id);
+		gtk_ui_manager_remove_ui (p->manager, p->ui_id);
 	}
 
-	if (p->menu_merge_id > 0)
+	if (p->menu_ui_id != 0)
 	{
-		gtk_ui_manager_remove_ui (p->merge, p->menu_merge_id);
+		gtk_ui_manager_remove_ui (p->manager, p->menu_ui_id);
 	}
 
 	if (p->menu_action_group)
 	{
 		gtk_ui_manager_remove_action_group
-			(p->merge, p->menu_action_group);
+			(p->manager, p->menu_action_group);
 		g_object_unref (p->menu_action_group);
 	}
 
 	if (p->item_action_group)
 	{
-		gtk_ui_manager_remove_action_group
-			(p->merge, p->item_action_group);
+		gtk_ui_manager_remove_action_group (p->manager, p->item_action_group);
 		g_object_unref (p->item_action_group);
 	}
 
@@ -412,20 +369,43 @@ ephy_css_menu_finalize_impl(GObject *o)
 		g_object_unref (p->embed);
 	}
 
-	g_object_unref (p->merge);
-
-	G_OBJECT_CLASS(parent_class)->finalize (o);
+	G_OBJECT_CLASS(parent_class)->finalize (object);
 }
 
 static void 
-ephy_css_menu_init(EphyCssMenu *m)
+ephy_css_menu_init(EphyCSSMenu *menu)
 {
-	EphyCssMenuPrivate *p = EPHY_CSS_MENU_GET_PRIVATE (m);
-	m->priv = p;
+	menu->priv = EPHY_CSS_MENU_GET_PRIVATE (menu);
 }
 
 static void
-ephy_css_menu_class_init(EphyCssMenuClass *klass)
+ephy_css_menu_get_property (GObject *object,
+			      guint prop_id,
+			      GValue *value,
+			      GParamSpec *pspec)
+{
+	/* no readable properties */
+	g_return_if_reached ();
+}
+
+static void
+ephy_css_menu_set_property (GObject *object,
+			      guint prop_id,
+			      const GValue *value,
+			      GParamSpec *pspec)
+{
+	EphyCSSMenu *menu = EPHY_CSS_MENU (object);
+
+	switch (prop_id)
+	{
+		case PROP_WINDOW:
+			ephy_css_menu_set_window (menu, g_value_get_object (value));
+		break;
+	}
+}
+
+static void
+ephy_css_menu_class_init(EphyCSSMenuClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
@@ -433,25 +413,24 @@ ephy_css_menu_class_init(EphyCssMenuClass *klass)
 
 	object_class->set_property = ephy_css_menu_set_property;
 	object_class->get_property = ephy_css_menu_get_property;
-	object_class->finalize = ephy_css_menu_finalize_impl;
+	object_class->finalize = ephy_css_menu_finalize;
 
 	g_object_class_install_property (object_class,
 					 PROP_WINDOW,
-					 g_param_spec_object ("EphyWindow",
-							      "EphyWindow",
+					 g_param_spec_object ("window",
+							      "Window",
 							      "Parent window",
 							      EPHY_TYPE_WINDOW,
-							      G_PARAM_READWRITE |
+							      G_PARAM_WRITABLE |
 							      G_PARAM_CONSTRUCT_ONLY));
 
-	g_type_class_add_private (klass, sizeof (EphyCssMenuPrivate));
+	g_type_class_add_private (klass, sizeof (EphyCSSMenuPrivate));
 }
 
-
-EphyCssMenu *
+EphyCSSMenu *
 ephy_css_menu_new (EphyWindow *window)
 {
-	EphyCssMenu *ret = g_object_new (EPHY_TYPE_CSS_MENU, 
-					 "EphyWindow", window, NULL);
-	return ret;
+	return g_object_new (EPHY_TYPE_CSS_MENU, 
+			     "window", window,
+			     NULL);
 }
