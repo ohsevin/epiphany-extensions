@@ -197,18 +197,49 @@ AM_CONDITIONAL(ENABLE_TABSMENU_EXTENSION, echo "$extensions" | egrep '(^|,)tabsm
 AM_CONDITIONAL(ENABLE_TAB_GROUPS_EXTENSION, echo "$extensions" | egrep '(^|,)tab-groups($|,)' > /dev/null)
 dnl AM_CONDITIONAL(ENABLE_TOOLBAR_EXTRAS_EXTENSION, echo "$extensions" | egrep '(^|,)toolbar-extras($|,)' > /dev/null)
 
-dnl *******************************************
-dnl Mozilla (copied from epiphany configure.in)
-dnl *******************************************
+dnl ******************
+dnl Mozilla name check
+dnl ******************
 
-PKG_CHECK_MODULES(MOZILLA_COMPONENT, mozilla-gtkmozembed)
+AC_MSG_CHECKING([which mozilla to use])
+
+MOZILLA=
+AC_ARG_WITH([mozilla],
+	AC_HELP_STRING([--with-mozilla@<:@=mozilla|firefox|thunderbird@:>@],
+		       [Whether to use mozilla, firefox or thunderbird gtkmozembed (default: mozilla)]),
+	[MOZILLA="$withval"])
+
+dnl try to autodetect: if mozilla exists, use it, else try firefox, then thunderbird
+if test "x$MOZILLA" = "x"; then
+  if pkg-config --exists mozilla-gtkmozembed; then
+    MOZILLA=mozilla
+  elif pkg-config --exists firefox-gtkmozembed; then
+    MOZILLA=firefox
+  elif pkg-config --exists thunderbird-gtkmozembed; then
+    MOZILLA=thunderbird
+  else
+    AC_MSG_ERROR([no mozilla installation found])
+  fi
+elif test "x$with_mozilla" != "xmozilla" -a "x$with_mozilla" != "xfirefox" -a "x$with_mozilla" != "xthunderbird"; then
+  AC_MSG_ERROR([unknown mozilla name ($MOZILLA)])
+fi
+
+AC_MSG_RESULT([$MOZILLA])
+
+case "$MOZILLA" in
+mozilla) min_version=1.7 ;;
+firefox) min_version=0.10 ;;
+thunderbird) min_version=0.8 ;;
+esac
+
+PKG_CHECK_MODULES(MOZILLA_COMPONENT, $MOZILLA-gtkmozembed >= $min_version)
 AC_SUBST(MOZILLA_COMPONENT_CFLAGS)
 AC_SUBST(MOZILLA_COMPONENT_LIBS)
 
-MOZILLA_INCLUDE_ROOT="`$PKG_CONFIG --variable=includedir mozilla-gtkmozembed`"
+MOZILLA_INCLUDE_ROOT="`$PKG_CONFIG --variable=includedir $MOZILLA-gtkmozembed`"
 AC_SUBST(MOZILLA_INCLUDE_ROOT)
 
-MOZILLA_HOME="`$PKG_CONFIG --variable=libdir mozilla-gtkmozembed`"
+MOZILLA_HOME="`$PKG_CONFIG --variable=libdir $MOZILLA-gtkmozembed`"
 AC_SUBST(MOZILLA_HOME)
 
 dnl whether to build with DEBUG defined
@@ -251,6 +282,26 @@ AC_CACHE_CHECK([for compiler -fshort-wchar option],
 if test "$ac_cv_have_usable_wchar_option" != "yes"; then
     AM_CXXFLAGS=$_SAVE_AM_CXXFLAGS
 fi
+
+dnl Changed in 1.8a1 and again in 1.8a3 to its present form (variant 2);
+dnl variant 1 is on 1.7 branch. Aviary branch also has variant 2.
+
+AC_MSG_CHECKING([for nsIContentPolicy API])
+
+AC_COMPILE_IFELSE(
+	[AC_LANG_PROGRAM(
+		[[#include <nsEmbedString.h>
+		  #include <nsIURI.h>
+		  #include <content/nsIContentPolicy.h>]],
+		[[nsIContentPolicy *p;
+		  nsISupports *arg4;
+		  p->ShouldLoad(0,nsnull,nsnull,arg4,nsEmbedCString(),nsnull,nsnull);]]
+	)],
+	[AC_DEFINE([MOZ_NSICONTENTPOLICY_VARIANT_2],[1],[dummy]) result=2],
+	[AC_DEFINE([MOZ_NSICONTENTPOLICY_VARIANT_1],[1],[dummy]) result=1])
+
+AC_MSG_RESULT([variant $result])
+
 CXXFLAGS=$_SAVE_CXXFLAGS
 AC_LANG_POP(C++)
 

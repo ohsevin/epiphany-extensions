@@ -1,3 +1,12 @@
+2004-09-21  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/adblock/mozilla/MozAdBlocker.cpp:
+	* include/Makefile.am:
+	* include/mozilla-version.h:
+
+	New-style mozilla API checks.
+
 2004-09-19  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* README:

@@ -64,16 +64,12 @@ nsresult MozAdBlocker::ShouldLoadURI(nsIURI *uri,
 	return NS_OK;
 }
 
-#if MOZILLA_CHECK_VERSION4 (1, 8, MOZILLA_ALPHA, 1)
+#ifdef MOZ_NSICONTENTPOLICY_VARIANT_2
 NS_IMETHODIMP
 MozAdBlocker::ShouldLoad(PRUint32 aContentType,
 			 nsIURI *aContentLocation,
 			 nsIURI *aRequestingLocation,
-#if MOZILLA_CHECK_VERSION4 (1, 8, MOZILLA_ALPHA, 3)
 			 nsISupports *aContext,
-#else
-			 nsIDOMNode *aRequestingNode,
-#endif
 			 const nsACString &aMimeTypeGuess,
 			 nsISupports *aExtra,
 			 PRInt16 *aDecision)
@@ -98,11 +94,7 @@ NS_IMETHODIMP
 MozAdBlocker::ShouldProcess(PRUint32 aContentType,
 			    nsIURI *aContentLocation,
 			    nsIURI *aRequestingLocation,
-#if MOZILLA_CHECK_VERSION4 (1, 8, MOZILLA_ALPHA, 3)
 			    nsISupports *aContext,
-#else
-			    nsIDOMNode *aRequestingNode,
-#endif
 			    const nsACString &aMimeType,
 			    nsISupports *aExtra,
 			    PRInt16 *aDecision)
@@ -133,5 +125,4 @@ NS_IMETHODIMP MozAdBlocker::ShouldProcess(PRInt32 contentType,
 	*_retval = PR_TRUE;
 	return NS_OK;
 }
-#endif /* MOZILLA_CHECK_VERSION4 (1, 8, MOZILLA_ALPHA, 1) */
-
+#endif /* MOZ_NSICONTENTPOLICY_VARIANT_2 */
