@@ -183,10 +183,8 @@ mozilla_get_page_properties (EphyEmbed *embed)
 
 	nsCOMPtr<nsICacheEntryDescriptor> cacheEntryDescriptor;
 	char *c_url = embed_string_to_c_string (url);
-	rv = get_cache_entry_descriptor (c_url,
-					 getter_AddRefs (cacheEntryDescriptor));
+	get_cache_entry_descriptor (c_url, getter_AddRefs (cacheEntryDescriptor));
 	g_free (c_url);
-	NS_ENSURE_SUCCESS (rv, props);
 
 	if (cacheEntryDescriptor)
 	{
@@ -270,11 +268,10 @@ mozilla_get_images (EphyEmbed *embed)
 		rv = nodes->Item(i, getter_AddRefs(node));
 		if (NS_FAILED(rv) || !node) continue;
 
-		nsCOMPtr<nsIDOMHTMLImageElement> element;
-		element = do_QueryInterface(node, &rv);
-		if (NS_FAILED(rv) || !element) continue;
+		nsCOMPtr<nsIDOMHTMLImageElement> element (do_QueryInterface (node));
+		if (!element) continue;
 
-		EmbedPageImage *image = g_new0(EmbedPageImage, 1);
+		EmbedPageImage *image = g_new0 (EmbedPageImage, 1);
 
 		nsEmbedString tmp;
 		rv = element->GetSrc(tmp);
@@ -330,7 +327,7 @@ process_link_node (nsIDOMNode *node,
 {
 	nsresult rv;
 
-	nsCOMPtr<T> element = do_QueryInterface(node);
+	nsCOMPtr<T> element (do_QueryInterface(node));
 	NS_ENSURE_TRUE (element, NS_ERROR_FAILURE);
 
 	nsEmbedString tmp;

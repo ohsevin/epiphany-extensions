@@ -1,3 +1,10 @@
+2004-09-13  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+	* extensions/page-info/page-info-dialog.c:
+
+	Misc cleanups.
+
 2004-09-12  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/dashboard/ephy-dashboard-extension.c:

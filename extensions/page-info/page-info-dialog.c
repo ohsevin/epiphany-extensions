@@ -59,13 +59,7 @@
 #include "mozilla/mozilla-helpers.h"
 
 #include <glib/gi18n.h>
-
-#if 0
-#include <gtk/gtksizegroup.h>
-#include <gdk/gdkdisplay.h>
-#include <gtk/gtkmain.h>
 #include <glib/gconvert.h>
-#endif
 
 #include <time.h>
 
