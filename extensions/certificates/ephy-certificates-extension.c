@@ -33,6 +33,7 @@
 #include <epiphany/ephy-extension.h>
 #include <epiphany/ephy-embed.h>
 #include <epiphany/ephy-tab.h>
+#include <epiphany/ephy-statusbar.h>
 
 #include <gtk/gtkaction.h>
 #include <gtk/gtkactiongroup.h>
@@ -300,7 +301,6 @@ impl_attach_window (EphyExtension *ext,
 	guint ui_id;
 	GtkWidget *notebook;
 	GtkWidget *statusbar, *frame, *ebox;
-	GList *children, *l;
 
 	LOG ("EphyCertificatesExtension attach_window")
 
@@ -316,19 +316,7 @@ impl_attach_window (EphyExtension *ext,
 	/* make padlock icon clickable */
 	statusbar = ephy_window_get_statusbar (window);
 
-	/* FIXME: find a better method to get the security icon frame :) */
-	children = gtk_container_get_children (GTK_CONTAINER (statusbar));
-	for (l = children; l != NULL; l = l->next)
-	{
-		if (GTK_IS_FRAME (l->data) && GTK_IS_EVENT_BOX (GTK_BIN (l->data)->child)) break;
-	}
-	g_return_if_fail (l != NULL);
-
-	ebox = GTK_BIN (l->data)->child;
-	g_list_free (children);
-
-	ebox = GTK_WIDGET (l->data);
-
+	ebox = GTK_BIN (EPHY_STATUSBAR (statusbar)->security_frame)->child;
 	gtk_widget_add_events (ebox, GDK_BUTTON_PRESS_MASK);
 	g_signal_connect (ebox, "button-press-event",
 			  G_CALLBACK (padlock_button_press_cb), window);
