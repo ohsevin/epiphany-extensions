@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-28 11:10+0200\n"
-"PO-Revision-Date: 2004-09-28 07:21-0300\n"
+"POT-Creation-Date: 2004-10-10 02:47+0200\n"
+"PO-Revision-Date: 2004-10-11 10:19-0300\n"
 "Last-Translator: Raphael Higino <raphaelh@uai.com.br>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
@@ -263,7 +263,7 @@ msgid "_Save Image As..."
 msgstr "_Salvar Imagem Como..."
 
 #: extensions/page-info/page-info-dialog.c:992
-#: extensions/page-info/page-info-dialog.c:1169
+#: extensions/page-info/page-info-dialog.c:1210
 msgid "URL"
 msgstr "URL"
 
@@ -272,7 +272,7 @@ msgid "Alt Text"
 msgstr "Texto Alt"
 
 #: extensions/page-info/page-info-dialog.c:1016
-#: extensions/page-info/page-info-dialog.c:1181
+#: extensions/page-info/page-info-dialog.c:1222
 msgid "Title"
 msgstr "Título"
 
@@ -284,19 +284,23 @@ msgstr "Largura"
 msgid "Height"
 msgstr "Altura"
 
-#: extensions/page-info/page-info-dialog.c:1193
+#: extensions/page-info/page-info-dialog.c:1176
+msgid "_Copy Link Address"
+msgstr "_Copiar Endereço do Link"
+
+#: extensions/page-info/page-info-dialog.c:1234
 msgid "Relation"
 msgstr "Relação"
 
-#: extensions/page-info/page-info-dialog.c:1304
+#: extensions/page-info/page-info-dialog.c:1345
 msgid "Name"
 msgstr "Nome"
 
-#: extensions/page-info/page-info-dialog.c:1316
+#: extensions/page-info/page-info-dialog.c:1357
 msgid "Method"
 msgstr "Método"
 
-#: extensions/page-info/page-info-dialog.c:1328
+#: extensions/page-info/page-info-dialog.c:1369
 msgid "Action"
 msgstr "Ação"
 
