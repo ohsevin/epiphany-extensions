@@ -1,4 +1,12 @@
 =========================
+Epiphany Extensions 1.5.4
+=========================
+
+Bug fixes
+
+	* Fix crash when going to Media tab in Page Info dialog [#161815]
+
+
 Epiphany Extensions 1.5.3
 =========================
 

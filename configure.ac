@@ -16,7 +16,7 @@ dnl 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 dnl
 dnl $Id$
 
-AC_INIT([Epiphany Extensions],[1.5.3.90],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+AC_INIT([Epiphany Extensions],[1.5.4],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 GNOME_COMMON_INIT
 
 EPIPHANY_EXTENSIONS_MAJOR=1.5
@@ -39,8 +39,9 @@ if test "x$enable_maintainer_mode" = "xyes"; then
 	AC_DEFINE([MAINTAINER_MODE],[1],[Define to enable 'maintainer-only' behaviour])
 	enable_debug=yes
 	DEPRECATION_FLAGS="-DG_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGDK_PIXBUF_DISABLE_DEPRECATED -DGCONF_DISABLE_DEPRECATED -DGNOME_VFS_DISABLE_DEPRECATED -DBONOBO_UI_DISABLE_DEPRECATED -DBONOBO_DISABLE_DEPRECATED -DLIBGLADE_DISABLE_DEPRECATED -DPANGO_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED -DGNOME_DISABLE_DEPRECATED"
-	MOZILLA_WARN_CXXFLAGS="-Wall -Wconversion -Wpointer-arith -Wcast-align -Woverloaded-virtual -Wsynth -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor"
+	MOZILLA_WARN_CXXFLAGS="-Wall -Wconversion -Wpointer-arith -Wcast-align -Woverloaded-virtual -Wsynth"
 fi
+MOZILLA_WARN_CXXFLAGS="$MOZILLA_WARN_CXXFLAGS -Wno-ctor-dtor-privacy -Wno-non-virtual-dtor"
 
 AC_PROG_INTLTOOL([0.29])
 

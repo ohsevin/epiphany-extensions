@@ -1,5 +1,16 @@
 2004-12-20  Christian Persch  <chpe@cvs.gnome.org>
 
+	=== Release 1.5.4 ===
+
+	* NEWS:
+	* configure.ac:
+	* extensions/page-info/page-info-dialog.c:
+	(page_info_media_box_realize_cb):
+
+	Don't load pages while the embed isn't realised yet. Fixes bug #161815.
+
+2004-12-20  Christian Persch  <chpe@cvs.gnome.org>
+
 	* configure.ac:
 
 	Post-release version bump.
