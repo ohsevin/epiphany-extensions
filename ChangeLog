@@ -1,5 +1,11 @@
 2004-05-30  Christian Persch  <chpe@cvs.gnome.org>
 
+	* configure.ac:
+
+	Don't use AC_CONFIG_MACRO_DIR(m4). Fixes bug #143399.
+
+2004-05-30  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/sample-mozilla/ephy-sample2-extension.c:
 	(dom_mouse_down_cb):
 
