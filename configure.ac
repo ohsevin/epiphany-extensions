@@ -139,7 +139,7 @@ AC_MSG_CHECKING([extensions to build])
 
 all_extensions="adblock,certificates,dashboard,error-viewer,extensions-manager-ui,gestures,page-info,sample,sample-mozilla,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups"
 all_useful_extensions="adblock,certificates,dashboard,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tab-groups,tabsmenu"
-default_extensions="adblock,certificates,error-viewer,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups"
+default_extensions="adblock,certificates,error-viewer,extensions-manager-ui,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups"
 mozilla_dependent_extensions="adblock,certificates,error-viewer,page-info,sample-mozilla,select-stylesheet,sidebar,smart-bookmarks"
 
 dnl due to an autoconf bug, commas in the first arg to
