@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-22 05:32+0100\n"
-"PO-Revision-Date: 2004-02-22 05:33+0100\n"
+"POT-Creation-Date: 2004-02-25 18:22+0100\n"
+"PO-Revision-Date: 2004-02-25 18:24+0100\n"
 "Last-Translator: Данило Шеган <danilo@prevod.org>\n"
 "Language-Team: Serbian (sr) <serbiangnome-lista@nongnu.org>\n"
 "MIME-Version: 1.0\n"
@@ -24,40 +24,49 @@ msgid "Certificate Manager"
 msgstr "Управљач сертификатима"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:279
+#: extensions/certificates/ephy-certificates-extension.c:276
 msgid "Manage _Certificates"
 msgstr "Управљај _сертификатима"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:281
+#: extensions/certificates/ephy-certificates-extension.c:278
 msgid "Manage your certificates"
 msgstr "Управљајте својим _сертификатима"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:289
+#: extensions/certificates/ephy-certificates-extension.c:286
 msgid "Server _Certificate"
 msgstr "_Сертификат сервера"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:291
+#: extensions/certificates/ephy-certificates-extension.c:288
 msgid "Display the web server's certificate"
 msgstr "Прикажи сертификат веб сервера"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:83
-msgid "_Validate"
-msgstr "_Провери"
+#: extensions/error-viewer/ephy-error-viewer-extension.c:88
+msgid "Check _HTML"
+msgstr "Про_вери HTML"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:85
+#: extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "Прикажи HTML грешке у прозорчету за преглед грешака"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:90
+#: extensions/error-viewer/ephy-error-viewer-extension.c:95
+msgid "Check _Links"
+msgstr "Провери ве_зе"
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:97
+msgid "Display invalid hyperlinks in the Error Viewer dialog"
+msgstr "Прикажи неисправне надвезе у прозорчету за преглед грешака"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:101
 msgid "_Error Viewer"
 msgstr "Преглед _грешака"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:92
+#: extensions/error-viewer/ephy-error-viewer-extension.c:103
 msgid "Display web page errors"
 msgstr "Прикажи грешке на веб страници"
 
@@ -69,8 +78,16 @@ msgstr "_Очисти"
 msgid "Error Viewer"
 msgstr "Преглед грешака"
 
+#: extensions/error-viewer/link-checker.c:231
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "Нађох %d неисправну везу"
+msgstr[1] "Нађох %d неисправне везе"
+msgstr[2] "Нађох %d неисправних веза"
+
 #. Don't bother looking for source lines -- they're not there
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:76
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
 #, c-format
 msgid ""
 "Error:\n"
@@ -79,7 +96,7 @@ msgstr ""
 "Грешка:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:91
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:90
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -87,6 +104,15 @@ msgid ""
 msgstr ""
 "Грешка у ЈаваСкрипту у %s, у %d. реду:\n"
 "%s"
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:77
+#, c-format
+msgid ""
+"Link error in %s:\n"
+"%s is unavailable."
+msgstr ""
+"Грешка у вези у  %s:\n"
+"%s је недоступно."
 
 #: extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
@@ -97,47 +123,45 @@ msgstr ""
 "Грешка у HTML-у у %s, у %s. реду:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:162
+#: extensions/error-viewer/sgml-validator.c:165
 #, c-format
-msgid ""
-"HTML Validation of %s complete\n"
-"Found %d error"
-msgid_plural ""
-"HTML Validation of %s complete\n"
-"Found %d errors"
-msgstr[0] ""
-"HTML провера је %s готова\n"
-"Нађох %d грешку"
-msgstr[1] ""
-"HTML провера је %s готова\n"
-"Нађох %d грешке"
-msgstr[2] ""
-"HTML провера је %s готова\n"
-"Нађох %d грешака"
+msgid "Found %d error"
+msgid_plural "Found %d errors"
+msgstr[0] "Нађох %d грешку"
+msgstr[1] "Нађох %d грешке"
+msgstr[2] "Нађох %d грешака"
 
-#: extensions/error-viewer/sgml-validator.c:216
+#: extensions/error-viewer/sgml-validator.c:169
+#, c-format
+msgid "HTML Validation of %s complete"
+msgstr "HTML провера је %s готова"
+
+#: extensions/error-viewer/sgml-validator.c:227
 #, c-format
 msgid ""
 "HTML error in %s:\n"
-"Doctype is XHTML but content type is text/html.  Use application/xhtml+xml "
-"instead."
+"%s"
 msgstr ""
-"HTML грешка у %s:\n"
-"Врста документа је XHTML али врста садржаја је text/html.  Користите уместо "
-"тога application/xhtml+xml."
+"Грешка у HTML-у у %s:\n"
+"%s"
 
-#: extensions/error-viewer/sgml-validator.c:231
+#: extensions/error-viewer/sgml-validator.c:229
+#: extensions/error-viewer/sgml-validator.c:245
+msgid ""
+"Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
+"xhtml+xml\" instead."
+msgstr "Врста документа је „XHTML“ али врста садржаја је „text/html“.  Користите уместо тога „application/xhtml+xml“."
+
+#: extensions/error-viewer/sgml-validator.c:243
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
-"Doctype is XHTML but content type is text/html.  Use application/xhtml+xml "
-"instead."
+"%s"
 msgstr ""
-"HTML упозорење у %s:\n"
-"Врста документа је XHTML али врста садржаја је text/html.  Користите уместо "
-"тога application/xhtml+xml."
+"Упозорење за HTML у %s:\n"
+"%s"
 
-#: extensions/error-viewer/sgml-validator.c:368
+#: extensions/error-viewer/sgml-validator.c:381
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -163,7 +187,7 @@ msgstr[0] "Забрањен %d искачући прозор"
 msgstr[1] "Забрањена %d искачућа прозора"
 msgstr[2] "Забрањено %d искачућих прозора"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:185
+#: extensions/tabsmenu/ephy-tab-move-menu.c:183
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"
@@ -171,10 +195,22 @@ msgstr[0] "Прозор „%s“ (%d лист)"
 msgstr[1] "Прозор „%s“ (%d листа)"
 msgstr[2] "Прозор „%s“ (%d листова)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:283
+#: extensions/tabsmenu/ephy-tab-move-menu.c:282
 msgid "Move Tab To Window"
 msgstr "Премести лист у прозор"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:284
+#: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
 msgstr "Премести текући лист у други прозор"
+
+#~ msgid "_Validate"
+#~ msgstr "_Провери"
+
+#~ msgid ""
+#~ "HTML warning in %s:\n"
+#~ "Doctype is XHTML but content type is text/html.  Use application/xhtml"
+#~ "+xml instead."
+#~ msgstr ""
+#~ "HTML упозорење у %s:\n"
+#~ "Врста документа је XHTML али врста садржаја је text/html.  Користите "
+#~ "уместо тога application/xhtml+xml."
