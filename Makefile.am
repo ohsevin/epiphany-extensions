@@ -9,7 +9,8 @@ EXTRA_DIST =			\
 	intltool-extract.in 	\
 	intltool-merge.in 	\
 	intltool-update.in	\
-	tools/copy-template
+	tools/copy-template	\
+	doc/writing-epiphany-extensions.xml
 
 DISTCLEANFILES = 		\
 	intltool-extract 	\
