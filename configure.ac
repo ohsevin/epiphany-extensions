@@ -18,6 +18,9 @@ dnl $Id$
 
 AC_INIT([Epiphany Extensions], [1.1.0], [http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 
+EPIPHANY_EXTENSIONS_MAJOR=1.1
+AC_SUBST(EPIPHANY_EXTENSIONS_MAJOR)
+
 AC_PREREQ(2.57)
 
 AC_REVISION($Revision$)
@@ -303,13 +306,16 @@ dnl *******************************
 
 if test "x${datadir}" = 'x${prefix}/share'; then
   if test "x${prefix}" = "xNONE"; then
-    AC_DEFINE_UNQUOTED(EXTENSIONS_DATA_DIR, "${ac_default_prefix}/share/${PACKAGE}", [Directory of data files])
+    AC_DEFINE_UNQUOTED(EXTENSIONS_DATA_DIR, "${ac_default_prefix}/share/${PACKAGE}-${EPIPHANY_EXTENSIONS_MAJOR}", [Directory of data files])
   else
-    AC_DEFINE_UNQUOTED(EXTENSIONS_DATA_DIR, "${prefix}/share/${PACKAGE}", [Directory of data files])
+    AC_DEFINE_UNQUOTED(EXTENSIONS_DATA_DIR, "${prefix}/share/${PACKAGE}-${EPIPHANY_EXTENSIONS_MAJOR}", [Directory of data files])
   fi
 else
-  AC_DEFINE_UNQUOTED(EXTENSIONS_DATA_DIR, "${datadir}/${PACKAGE}", [Directory of data files])
+  AC_DEFINE_UNQUOTED(EXTENSIONS_DATA_DIR, "${datadir}/${PACKAGE}-${EPIPHANY_EXTENSIONS_MAJOR}", [Directory of data files])
 fi
+
+EXTENSIONS_DIR="`$PKG_CONFIG --variable=extensionsdir epiphany-1.4`"
+AC_SUBST(EXTENSIONS_DIR)
 
 dnl *******************************
 dnl *******************************

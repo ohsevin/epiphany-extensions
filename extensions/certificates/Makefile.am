@@ -1,6 +1,6 @@
 SUBDIRS = mozilla
 
-extensiondir = $(libdir)/epiphany/extensions
+extensiondir = $(EXTENSIONS_DIR)
 
 INCLUDES = \
 	-I$(top_srcdir)/extensions/certificates/mozilla		\

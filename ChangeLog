@@ -1,6 +1,21 @@
 2004-03-21  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
+	* extensions/certificates/Makefile.am:
+	* extensions/dashboard/Makefile.am:
+	* extensions/error-viewer/Makefile.am:
+	* extensions/gestures/Makefile.am:
+	* extensions/popup-blocker/Makefile.am:
+	* extensions/sample-mozilla/Makefile.am:
+	* extensions/sample/Makefile.am:
+	* extensions/tabsmenu/Makefile.am:
+	* extensions/toolbar-extras/Makefile.am:
+
+	Use pkg-config to get the location to install the extensions into.
+
+2004-03-21  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
 
 	Version 1.1.0.
 	Update Epiphany dependency to >= 1.3.0, and glib/gtk+ dependency

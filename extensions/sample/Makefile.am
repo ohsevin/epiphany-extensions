@@ -1,4 +1,4 @@
-extensiondir = $(libdir)/epiphany/extensions
+extensiondir = $(EXTENSIONS_DIR)
 
 INCLUDES = \
         -I$(top_srcdir)/include		\
