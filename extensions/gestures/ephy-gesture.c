@@ -298,7 +298,7 @@ ephy_gesture_class_init (EphyGestureClass *klass)
 					 g_param_spec_object ("event",
 							      "Event",
 							      "Event",
-							      EPHY_TYPE_EMBED_EVENT,
+							      G_TYPE_OBJECT,
 							      G_PARAM_READWRITE |
 							      G_PARAM_CONSTRUCT_ONLY));
 
