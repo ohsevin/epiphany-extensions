@@ -973,7 +973,7 @@ media_save_medium_cb (gpointer ptr,
 					(ephy_embed_factory_new_object (EPHY_TYPE_EMBED_PERSIST));
 
 		ephy_embed_persist_set_source (persist, address);
-		ephy_embed_persist_set_flags (persist, EMBED_PERSIST_ASK_DESTINATION);
+		ephy_embed_persist_set_flags (persist, EPHY_EMBED_PERSIST_ASK_DESTINATION);
 		ephy_embed_persist_set_fc_title (persist, _("Save Medium As..."));
 		ephy_embed_persist_set_fc_parent (persist, GTK_WINDOW (dialog->priv->window));
 
@@ -1048,7 +1048,7 @@ media_set_image_as_background_cb (GtkAction *action,
 
 	ephy_embed_persist_set_source (persist, address);
 	ephy_embed_persist_set_dest (persist, dest);
-	ephy_embed_persist_set_flags (persist, EMBED_PERSIST_NO_VIEW);
+	ephy_embed_persist_set_flags (persist, EPHY_EMBED_PERSIST_NO_VIEW);
 
 	g_signal_connect (persist, "completed",
 			  G_CALLBACK (background_download_completed_cb), NULL);

@@ -313,7 +313,7 @@ dom_mouse_down_cb (EphyEmbed *embed,
         context = ephy_embed_event_get_context (event);
 
 	if (type == EPHY_EMBED_EVENT_MOUSE_BUTTON2 &&
-            !(context & EMBED_CONTEXT_INPUT))
+            !(context & EPHY_EMBED_CONTEXT_INPUT))
 	{
 		EphyGesture *gesture;
 		GtkWidget *toplevel;

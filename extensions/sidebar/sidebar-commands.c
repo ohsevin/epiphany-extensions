@@ -71,7 +71,7 @@ sidebar_cmd_file_save_as (GtkAction *action,
 	ephy_embed_persist_set_fc_title (persist, _("Save As"));
 	ephy_embed_persist_set_fc_parent (persist, GTK_WINDOW (window));
 	ephy_embed_persist_set_flags
-		(persist, EMBED_PERSIST_MAINDOC | EMBED_PERSIST_ASK_DESTINATION);
+		(persist, EPHY_EMBED_PERSIST_MAINDOC | EPHY_EMBED_PERSIST_ASK_DESTINATION);
 	ephy_embed_persist_set_persist_key
 		(persist, CONF_STATE_SAVE_DIR);
 
@@ -110,7 +110,7 @@ save_property_url (GtkAction *action,
 	ephy_embed_persist_set_fc_title (persist, title);
 	ephy_embed_persist_set_fc_parent (persist, GTK_WINDOW (window));
 	ephy_embed_persist_set_flags
-		(persist, ask_dest ? EMBED_PERSIST_ASK_DESTINATION : 0);
+		(persist, ask_dest ? EPHY_EMBED_PERSIST_ASK_DESTINATION : 0);
 	ephy_embed_persist_set_persist_key
 		(persist, CONF_STATE_SAVE_DIR);
 	ephy_embed_persist_set_source (persist, location);

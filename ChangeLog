@@ -1,3 +1,13 @@
+2005-01-05  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/certificates/ephy-certificates-extension.c:
+	* extensions/gestures/ephy-gestures-extension.c:
+	* extensions/page-info/page-info-dialog.c:
+	* extensions/sidebar/ephy-sidebar-embed.c:
+	* extensions/sidebar/sidebar-commands.c:
+
+	Re-sync with Epiphany (EphyEmbed's enum names start with EPHY_)
+
 2005-01-04  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/gestures/ephy-gestures-extension.c:

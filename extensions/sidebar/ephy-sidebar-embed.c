@@ -190,29 +190,29 @@ show_context_menu (EphySidebarEmbed *sbembed,
 
 	LOG ("show_embed_popup context %x", context)
 
-	if ((context & EMBED_CONTEXT_EMAIL_LINK) &&
-	    (context & EMBED_CONTEXT_IMAGE))
+	if ((context & EPHY_EMBED_CONTEXT_EMAIL_LINK) &&
+	    (context & EPHY_EMBED_CONTEXT_IMAGE))
 	{
 		popup = "/EphyImageEmailLinkPopup";
 	}
-	else if (context & EMBED_CONTEXT_EMAIL_LINK)
+	else if (context & EPHY_EMBED_CONTEXT_EMAIL_LINK)
 	{
 		popup = "/EphyEmailLinkPopup";
 	}
-	else if ((context & EMBED_CONTEXT_LINK) &&
-		 (context & EMBED_CONTEXT_IMAGE))
+	else if ((context & EPHY_EMBED_CONTEXT_LINK) &&
+		 (context & EPHY_EMBED_CONTEXT_IMAGE))
 	{
 		popup = "/EphySidebarImageLinkPopup";
 	}
-	else if (context & EMBED_CONTEXT_LINK)
+	else if (context & EPHY_EMBED_CONTEXT_LINK)
 	{
 		popup = "/EphySidebarLinkPopup";
 	}
-	else if (context & EMBED_CONTEXT_IMAGE)
+	else if (context & EPHY_EMBED_CONTEXT_IMAGE)
 	{
 		popup = "/EphySidebarImagePopup";
 	}
-	else if (context & EMBED_CONTEXT_INPUT)
+	else if (context & EPHY_EMBED_CONTEXT_INPUT)
 	{
 		popup = "/EphyInputPopup";
 		hide_edit_actions = FALSE;
@@ -331,12 +331,12 @@ embed_mouse_click_cb (EphyEmbed *embed,
 	is_left_click = (type == EPHY_EMBED_EVENT_MOUSE_BUTTON1);
 	is_middle_click = (type == EPHY_EMBED_EVENT_MOUSE_BUTTON2);
 
-	is_link = (context & EMBED_CONTEXT_LINK) != 0;
-	is_image = (context & EMBED_CONTEXT_IMAGE) != 0;
-	is_middle_clickable = !((context & EMBED_CONTEXT_LINK)
-				|| (context & EMBED_CONTEXT_INPUT)
-				|| (context & EMBED_CONTEXT_EMAIL_LINK));
-	is_input = (context & EMBED_CONTEXT_INPUT) != 0;
+	is_link = (context & EPHY_EMBED_CONTEXT_LINK) != 0;
+	is_image = (context & EPHY_EMBED_CONTEXT_IMAGE) != 0;
+	is_middle_clickable = !((context & EPHY_EMBED_CONTEXT_LINK)
+				|| (context & EPHY_EMBED_CONTEXT_INPUT)
+				|| (context & EPHY_EMBED_CONTEXT_EMAIL_LINK));
+	is_input = (context & EPHY_EMBED_CONTEXT_INPUT) != 0;
 
 	ephy_embed_event_get_property (event, "link_target", &targetValue);
 

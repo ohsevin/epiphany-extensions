@@ -193,7 +193,7 @@ sync_security_status (EphyTab *tab,
 	action = gtk_ui_manager_get_action (manager, "/menubar/ViewMenu/ViewServerCertificateItem");
 	g_return_if_fail (action != NULL);
 
-	is_secure = ephy_tab_get_security_level (tab) > STATE_IS_INSECURE;
+	is_secure = ephy_tab_get_security_level (tab) > EPHY_EMBED_STATE_IS_INSECURE;
 	g_object_set (action, "sensitive", is_secure, NULL);
 }
 
