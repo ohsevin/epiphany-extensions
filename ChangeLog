@@ -1,3 +1,9 @@
+2005-02-02  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/actions/action-properties.glade:
+
+	Remove tooltip from window. Fixes bug #166010.
+
 2005-02-01  Christian Persch  <chpe@cvs.gnome.org>
 
 	* AUTHORS:

@@ -6,7 +6,6 @@
 
 <widget class="GtkDialog" id="action_properties">
   <property name="border_width">6</property>
-  <property name="tooltip" translatable="yes">The action name. If a character is preceded by an underscore, that character will be used as the accelerator key for the menu item.</property>
   <property name="title" translatable="yes"></property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
