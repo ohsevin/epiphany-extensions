@@ -1,6 +1,20 @@
 2004-01-30  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/error-viewer/README:
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	(update_sgml_validator_action), (load_status_cb), (switch_page_cb),
+	(tab_added_cb), (tab_removed_cb), (impl_attach_window),
+	(impl_detach_window):
+
+	Make the SGML Validation sensitive only when it should be.
+
+	* extensions/error-viewer/error-viewer.c: (build_ui):
+
+	Give the window an icon.
+
+2004-01-30  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/error-viewer/README:
 	* extensions/error-viewer/sgml-validator.c: (opensp_thread),
 	(save_source_completed_cb):
 

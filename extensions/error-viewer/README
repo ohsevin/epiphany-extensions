@@ -9,6 +9,3 @@ Without OpenSP installed, the error viewer will simply not
 contain that functionality (which is darned cool).
 This also requires Epiphany newer than Jan 25 2004, because it
 adds an entry to the Tools menu.
-
-TODO:
-- Disable the action if we're not viewing an HTML file

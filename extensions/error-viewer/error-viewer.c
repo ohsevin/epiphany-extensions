@@ -181,6 +181,7 @@ error_viewer_append (ErrorViewer *dialog,
 static void
 build_ui (ErrorViewer *dialog)
 {
+	GdkPixbuf *icon;
 	GtkListStore *store;
 	GtkTreeView *treeview;
 	GtkTreeViewColumn *col;
@@ -225,6 +226,12 @@ build_ui (ErrorViewer *dialog)
 				 GTK_TREE_MODEL (store));
 
 	priv->model = GTK_TREE_MODEL (store);
+
+	icon = gtk_widget_render_icon (GTK_WIDGET (priv->window),
+				       GTK_STOCK_DIALOG_ERROR,
+				       GTK_ICON_SIZE_MENU,
+				       NULL);
+	gtk_window_set_icon (GTK_WINDOW (priv->window), icon);
 }
 
 static void

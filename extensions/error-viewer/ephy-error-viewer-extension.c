@@ -29,9 +29,12 @@
 #include "error-viewer.h"
 #include "ephy-debug.h"
 
+#include "mozilla/get-doctype.h"
+
 #include <epiphany/ephy-extension.h>
 #include <epiphany/ephy-window.h>
 #include <epiphany/ephy-embed-shell.h>
+#include <epiphany/ephy-embed.h>
 
 #include <gtk/gtkaction.h>
 #include <gtk/gtkactiongroup.h>
@@ -220,6 +223,108 @@ free_error_viewer_cb_data (gpointer data)
 	}
 }
 
+#ifdef HAVE_OPENSP
+static void
+update_sgml_validator_action (EphyWindow *window)
+{
+	EphyTab *tab;
+	EphyEmbed *embed;
+	GtkAction *action;
+	char *content_type;
+	GValue *sensitive;
+
+	g_return_if_fail (EPHY_IS_WINDOW (window));
+
+	sensitive = g_new0 (GValue, 1);
+	g_value_init (sensitive, G_TYPE_BOOLEAN);
+	g_value_set_boolean (sensitive, FALSE);
+
+	action = gtk_ui_manager_get_action (GTK_UI_MANAGER (window->ui_merge),
+					    "/menubar/ToolsMenu/SgmlValidate");
+
+	tab = ephy_window_get_active_tab (window);
+
+	/* Not finished loading? */
+	if (ephy_tab_get_load_status (tab) == TRUE)
+	{
+		g_object_set_property (G_OBJECT (action),
+				       "sensitive", sensitive);
+		g_free (sensitive);
+		return;
+	}
+
+	embed = ephy_tab_get_embed (tab);
+
+	content_type = mozilla_get_content_type (embed);
+
+	if ((strcmp (content_type, "text/html") == 0)
+	    || (strcmp (content_type, "application/xhtml+xml") == 0))
+	{
+		g_value_set_boolean (sensitive, TRUE);
+	}
+
+	g_free (content_type);
+
+	g_object_set_property (G_OBJECT (action), "sensitive", sensitive);
+
+	g_free (sensitive);
+}
+
+static void
+load_status_cb (EphyTab *tab,
+		GParamSpec *pspec,
+		EphyWindow *window)
+{
+	update_sgml_validator_action (window);
+}
+
+static void
+switch_page_cb (GtkNotebook *notebook,
+		GtkNotebookPage *page,
+		guint page_num,
+		EphyErrorViewerExtension *extension)
+{
+	GtkWidget *toplevel;
+	EphyWindow *window;
+
+	toplevel = gtk_widget_get_toplevel (GTK_WIDGET (notebook));
+	g_return_if_fail (EPHY_IS_WINDOW (toplevel));
+	if (GTK_WIDGET_REALIZED (toplevel) == FALSE) return; /* on startup */
+
+	window = EPHY_WINDOW (toplevel);
+
+	update_sgml_validator_action (window);
+}
+
+static void
+tab_added_cb (GtkWidget *notebook,
+	      EphyEmbed *embed,
+	      EphyWindow *window)
+{
+	EphyTab *tab;
+
+	tab = ephy_tab_for_embed (embed);
+	g_return_if_fail (EPHY_IS_TAB (tab));
+
+	g_signal_connect_after (tab, "notify::load-status",
+				G_CALLBACK (load_status_cb), window);
+}
+
+static void
+tab_removed_cb (GtkWidget *notebook,
+		EphyEmbed *embed,
+		EphyWindow *window)
+{
+	EphyTab *tab;
+
+	tab = ephy_tab_for_embed (embed);
+	g_return_if_fail (EPHY_IS_TAB (tab));
+
+	g_signal_handlers_disconnect_by_func
+		(tab, G_CALLBACK (load_status_cb), window);
+}
+#endif /* HAVE_OPENSP */
+
 static void
 impl_attach_window (EphyExtension *extension,
 		    EphyWindow *window)
@@ -227,6 +332,9 @@ impl_attach_window (EphyExtension *extension,
 	ErrorViewerCBData *cb_data;
 	GtkActionGroup *action_group;
 	GtkUIManager *manager;
+#ifdef HAVE_OPENSP
+	GtkWidget *notebook;
+#endif /* HAVE_OPENSP */
 	guint merge_id;
 
 	LOG ("EphyErrorViewerExtension attach_window")
@@ -260,13 +368,35 @@ impl_attach_window (EphyExtension *extension,
 	gtk_ui_manager_add_ui (manager, merge_id, "/menubar/ToolsMenu",
 			       "ErrorViewer", "ErrorViewer",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
+
+#ifdef HAVE_OPENSP
+	notebook = ephy_window_get_notebook (window);
+
+	g_signal_connect_after (notebook, "tab_added",
+				G_CALLBACK (tab_added_cb), window);
+	g_signal_connect_after (notebook, "tab_removed",
+				G_CALLBACK (tab_removed_cb), window);
+	g_signal_connect_after (notebook, "switch_page",
+				G_CALLBACK (switch_page_cb), window);
+#endif /* HAVE_OPENSP */
 }
 
 static void
 impl_detach_window (EphyExtension *extension,
 		    EphyWindow *window)
 {
-	LOG ("EphyErrorViewerExtension detach_window")
+#ifdef HAVE_OPENSP
+	GtkWidget *notebook;
+
+	notebook = ephy_window_get_notebook (window);
+
+	g_signal_handlers_disconnect_by_func
+		(notebook, G_CALLBACK (tab_added_cb), window);
+	g_signal_handlers_disconnect_by_func
+		(notebook, G_CALLBACK (tab_removed_cb), window);
+	g_signal_handlers_disconnect_by_func
+		(notebook, G_CALLBACK (switch_page_cb), window);
+#endif /* HAVE_OPENSP */
 }
 
 static void
