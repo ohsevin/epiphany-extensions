@@ -2,6 +2,22 @@
 
 	* configure.ac:
 
+	Check for epiphany-1.6, not -1.4.
+
+	* extensions/dashboard/ephy-dashboard-extension.c:
+	(load_status_cb):
+	* extensions/error-viewer/sgml-validator.c:
+	(sgml_validator_validate):
+	* extensions/page-info/page-info-dialog.c: (images_save_image_cb),
+	(images_set_image_as_background_cb),
+	(page_info_image_box_realize_cb):
+
+	Include ephy-embed-factory.h, and adapt to epiphany API change.
+
+2004-09-13  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
 	Updated for Epiphany 1.5.
 
 2004-09-13  Christian Persch  <chpe@cvs.gnome.org>

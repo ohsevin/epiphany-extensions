@@ -34,6 +34,7 @@
 #include <epiphany/ephy-shell.h>
 #include <epiphany/ephy-node.h>
 #include <epiphany/ephy-bookmarks.h>
+#include <epiphany/ephy-embed-factory.h>
 
 #include <gmodule.h>
 
@@ -134,7 +135,7 @@ load_status_cb (EphyTab *tab,
 
 			LOG ("Page is bookmarked, sending full content")
 
-			persist = EPHY_EMBED_PERSIST (ephy_embed_factory_new_object ("EphyEmbedPersist"));
+			persist = EPHY_EMBED_PERSIST (ephy_embed_factory_new_object (EPHY_TYPE_EMBED_PERSIST));
 			ephy_embed_persist_set_embed (persist, embed);
 			ephy_embed_persist_set_flags (persist, EMBED_PERSIST_NO_VIEW);
 			content = ephy_embed_persist_to_string (persist);

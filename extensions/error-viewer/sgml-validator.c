@@ -27,6 +27,8 @@
 #include "opensp/validate.h"
 
 #include <epiphany/ephy-embed-persist.h>
+#include <epiphany/ephy-embed-factory.h>
+
 #include "ephy-file-helpers.h"
 #include "ephy-debug.h"
 
@@ -456,7 +458,7 @@ sgml_validator_validate (SgmlValidator *validator,
 	g_return_if_fail (tmp != NULL);
 
 	persist = EPHY_EMBED_PERSIST
-		(ephy_embed_factory_new_object ("EphyEmbedPersist"));
+		(ephy_embed_factory_new_object (EPHY_TYPE_EMBED_PERSIST));
 
 	ephy_embed_persist_set_embed (persist, embed);
 	ephy_embed_persist_set_flags (persist, EMBED_PERSIST_NO_VIEW |

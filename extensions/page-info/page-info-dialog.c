@@ -795,7 +795,7 @@ images_save_image_cb (gpointer ptr,
 	if (address == NULL) return;
 
 	persist = EPHY_EMBED_PERSIST
-		(ephy_embed_factory_new_object ("EphyEmbedPersist"));
+		(ephy_embed_factory_new_object (EPHY_TYPE_EMBED_PERSIST));
 
 	ephy_embed_persist_set_source (persist, address);
 	ephy_embed_persist_set_flags (persist, EMBED_PERSIST_ASK_DESTINATION);
@@ -841,7 +841,7 @@ images_set_image_as_background_cb (GtkAction *action,
 	dest = g_build_filename (ephy_dot_dir (), base_converted, NULL);
 
 	persist = EPHY_EMBED_PERSIST
-		(ephy_embed_factory_new_object ("EphyEmbedPersist"));
+		(ephy_embed_factory_new_object (EPHY_TYPE_EMBED_PERSIST));
 
 	ephy_embed_persist_set_source (persist, address);
 	ephy_embed_persist_set_dest (persist, dest);
@@ -914,7 +914,7 @@ page_info_image_box_realize_cb (GtkContainer *box,
 	EphyEmbed *embed;
 	GtkWidget *treeview;
 
-	page->embed = embed = EPHY_EMBED (ephy_embed_factory_new_object ("EphyEmbed"));
+	page->embed = embed = EPHY_EMBED (ephy_embed_factory_new_object (EPHY_TYPE_EMBED));
 
 	/* FIXME: this doesn't seem to work!? */
 	/* When the image has loaded grab the focus for the treeview
