@@ -26,7 +26,7 @@
 
 #include "ErrorViewerConsoleListener.h"
 
-#include <nsIServiceManagerUtils.h>
+#include <nsIServiceManager.h>
 #include <nsIConsoleService.h>
 #include <nsCOMPtr.h>
 #include <nsXPCOM.h>

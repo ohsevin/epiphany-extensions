@@ -1,3 +1,11 @@
+2004-11-25  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/error-viewer/mozilla/register-listener.cpp:
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+	* extensions/sidebar/mozilla/register-component.cpp:
+
+	Fix build with latest mozilla trunk.
+
 2004-11-16  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:

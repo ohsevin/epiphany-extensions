@@ -53,7 +53,7 @@
 #include <nsIDOMWindow.h>
 #include <nsMemory.h>
 #include <nsNetCID.h>
-#include <nsIServiceManagerUtils.h>
+#include <nsIServiceManager.h>
 #include <nsIURI.h>
 #include <nsIWebBrowser.h>
 #include <nsTime.h>
