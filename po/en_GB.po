@@ -9,7 +9,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany Plugins 1.0\n"
-"POT-Creation-Date: 2003-09-05 13:51+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-01-02 08:15+0100\n"
 "PO-Revision-Date: 2003-08-03 18:28+0000\n"
 "Last-Translator: Christian Persch <chpe+ephyplugins@stud.uni-saarland.de>\n"
 "Language-Team: British English\n"
@@ -18,25 +19,40 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: plugins/tabsmenu/ephy-tabs-plugin-menu.c:364
-msgid "_Clone Tab"
-msgstr "_Clone Tab"
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
+msgid "Block _Popups from this Site"
+msgstr ""
 
-#: plugins/tabsmenu/ephy-tabs-plugin-menu.c:365
-msgid "Create a copy of the current tab"
-msgstr "Create a copy of the current tab"
+#. shortcut key
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:64
+msgid "Block or unblock popup windows"
+msgstr ""
 
-#: plugins/tabsmenu/ephy-tabs-plugin-menu.c:368
-msgid "_Move Tab To"
-msgstr "_Move Tab To"
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:324
+#, c-format
+msgid "%d popup blocked"
+msgid_plural "%d popups blocked"
+msgstr[0] ""
+msgstr[1] ""
 
-#: plugins/tabsmenu/ephy-tabs-plugin-menu.c:369
-msgid "Move the current tab to a different window"
-msgstr "Move the current tab to a different window"
-
-#: plugins/tabsmenu/ephy-window-action.c:179
+#: extensions/tabsmenu/ephy-tab-move-menu.c:181
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"
 msgstr[0] "Window '%s' (%d tab)"
 msgstr[1] "Window '%s' (%d tabs)"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:272
+#, fuzzy
+msgid "Move Tab To Window"
+msgstr "_Move Tab To"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:273
+msgid "Move the current tab to a different window"
+msgstr "Move the current tab to a different window"
+
+#~ msgid "_Clone Tab"
+#~ msgstr "_Clone Tab"
+
+#~ msgid "Create a copy of the current tab"
+#~ msgstr "Create a copy of the current tab"

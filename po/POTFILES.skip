@@ -1,3 +1,8 @@
+include/egg-editable-toolbar.h
+include/egg-toolbars-model.h
 include/ephy-debug.h
 include/ephy-file-helpers.h
+include/ephy-gui.h
 include/ephy-string.h
+extensions/toolbar-extras/ephy-multi-smart-action.c
+extensions/toolbar-extras/ephy-toolbar-extras-extension.c
