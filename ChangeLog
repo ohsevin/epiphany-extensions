@@ -1,3 +1,9 @@
+2004-03-09  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
+	Version 0.7.91, and correct bug reports address.
+
 2004-03-08  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/popup-blocker/ephy-popup-blocker-extension.c:

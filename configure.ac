@@ -16,7 +16,7 @@ dnl 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 dnl
 dnl $Id$
 
-AC_INIT([Epiphany Extensions], [0.7.90], [http://lists.gnome.org/mailman/listinfo/epiphany-list],[epiphany-extensions])
+AC_INIT([Epiphany Extensions], [0.7.91], [http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 
 AC_PREREQ(2.57)
 
