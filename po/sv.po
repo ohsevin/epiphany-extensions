@@ -7,27 +7,47 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
-"POT-Creation-Date: 2004-01-02 01:59+0100\n"
-"PO-Revision-Date: 2004-01-02 01:59+0100\n"
+"POT-Creation-Date: 2004-01-02 19:43+0100\n"
+"PO-Revision-Date: 2004-01-02 19:44+0100\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#.
-#. { "EphyTabsPluginClone", NULL, N_("_Clone Tab"), "<shift><control>C",
-#. N_("Create a copy of the current tab"),
-#. G_CALLBACK (clone_cb)
-#. },
-#.
-#: extensions/tabsmenu/ephy-tabs-menu-extension.c:69
-msgid "_Move Tab To"
-msgstr "_Flytta flik till"
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
+msgid "Block _Popups from this Site"
+msgstr "Blockera _popupfönster från denna webbplats"
 
-#: extensions/tabsmenu/ephy-tabs-menu-extension.c:70
+#. shortcut key
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:64
+msgid "Block or unblock popup windows"
+msgstr "Blockera eller avblockera popupfönster"
+
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:324
+#, c-format
+msgid "%d popup blocked"
+msgid_plural "%d popups blocked"
+msgstr[0] "%d popupfönster blockerat"
+msgstr[1] "%d popupfönster blockerade"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:181
+#, c-format
+msgid "Window '%s' (%d tab)"
+msgid_plural "Window '%s' (%d tabs)"
+msgstr[0] "Fönster \"%s\" (%d flik)"
+msgstr[1] "Fönster \"%s\" (%d flikar)"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:272
+msgid "Move Tab To Window"
+msgstr "Flytta flik till fönster"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:273
 msgid "Move the current tab to a different window"
 msgstr "Flytta den aktuella fliken till ett annat fönster"
+
+#~ msgid "Block Popups from this Site"
+#~ msgstr "Blockera popupfönster från denna webbplats"
 
 #~ msgid "Epiphany automation"
 #~ msgstr "Epiphany-automation"
@@ -2949,9 +2969,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "%02u:%02u"
 #~ msgstr "%02u.%02u"
-
-#~ msgid "Allow popup windows"
-#~ msgstr "Tillåt popupfönster"
 
 #~ msgid "L_anguage:"
 #~ msgstr "Spr_åk:"
@@ -6591,9 +6608,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "_Block cookies from this site"
 #~ msgstr "_Blockera kakor från denna webbplats"
 
-#~ msgid "Block cookies from this site"
-#~ msgstr "Blockera kakor från denna webbplats"
-
 #~ msgid "_Allow cookies from this site"
 #~ msgstr "_Tillåt kakor från denna webbplats"
 
@@ -6882,9 +6896,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "Close other tabs"
 #~ msgstr "Stäng andra flikar"
-
-#~ msgid "%s (%d tabs)"
-#~ msgstr "%s (%d flikar)"
 
 #~ msgid "%s (1 tab)"
 #~ msgstr "%s (1 flik)"
@@ -8300,9 +8311,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "Download link with Built-in Handler"
 #~ msgstr "Hämta länken med inbyggd hanterare"
-
-#~ msgid "Popup blocked"
-#~ msgstr "Popupfönster blockerat"
 
 #~ msgid "Cancel"
 #~ msgstr "Avbryt"
