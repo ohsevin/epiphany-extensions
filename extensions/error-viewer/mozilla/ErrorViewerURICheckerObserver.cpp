@@ -38,7 +38,7 @@
 
 /* Implementation file */
 NS_IMPL_ISUPPORTS1(ErrorViewerURICheckerObserver, nsIRequestObserver)
-	                                                                                
+
 ErrorViewerURICheckerObserver::ErrorViewerURICheckerObserver()
 {
 	  /* member initializers and constructor code */

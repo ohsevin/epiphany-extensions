@@ -1,5 +1,16 @@
 2004-02-22  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp
+
+	Got rid of a big line full of whitespace
+
+	* extensions/error-viewer/mozilla/mozilla-link-checker.cpp:
+
+	Set a timeout on link checking. If you can't get it in 15 seconds,
+	it's not worth getting. This is temporary... I hope....
+
+2004-02-22  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/error-viewer/mozilla/mozilla-link-checker.cpp:
 
 	Don't keep an hourglass cursor forever on a page without links.
