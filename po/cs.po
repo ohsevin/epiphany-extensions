@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-22 14:18+0100\n"
-"PO-Revision-Date: 2004-02-22 16:56+0100\n"
+"POT-Creation-Date: 2004-02-24 03:49+0100\n"
+"PO-Revision-Date: 2004-02-24 13:09+0100\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -42,21 +42,30 @@ msgstr "_Certifikát serveru"
 msgid "Display the web server's certificate"
 msgstr "Zobrazit certifikát WWW serveru"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:83
-msgid "_Validate"
-msgstr "_Ověřit platnost"
+#: extensions/error-viewer/ephy-error-viewer-extension.c:88
+msgid "Check _HTML"
+msgstr "Zkontrolovat _HTML"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:85
+#: extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "Zobrazit chyby HTML v dialogu Prohlížeče chyb"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:90
+#: extensions/error-viewer/ephy-error-viewer-extension.c:95
+msgid "Check _Links"
+msgstr "Zkontrolovat _odkazy"
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:97
+msgid "Display invalid hyperlinks in the Error Viewer dialog"
+msgstr "Zobrazit neplatné odkazy v dialogu Prohlížeče chyb"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:101
 msgid "_Error Viewer"
 msgstr "_Prohlížeč chyb"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:92
+#: extensions/error-viewer/ephy-error-viewer-extension.c:103
 msgid "Display web page errors"
 msgstr "Zobrazovat chyby WWW stránek"
 
@@ -67,6 +76,24 @@ msgstr "_Vymazat"
 #: extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
 msgstr "Prohlížeč chyb"
+
+#: extensions/error-viewer/link-checker.c:229
+#, c-format
+msgid ""
+"Link check of %s complete\n"
+"Found %d invalid link"
+msgid_plural ""
+"Link check of %s complete\n"
+"Found %d invalid links"
+msgstr[0] ""
+"Kontrola odkazů v %s dokončena\n"
+"Nalezen %d neplatný odkaz"
+msgstr[1] ""
+"Kontrola odkazů v %s dokončena\n"
+"Nalezeny %d neplatné odkazy"
+msgstr[2] ""
+"Kontrola odkazů v %s dokončena\n"
+"Nalezeno %d neplatných odkazů"
 
 #. Don't bother looking for source lines -- they're not there
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:76
@@ -87,6 +114,15 @@ msgstr ""
 "Chyba Javascriptu v %s na řádku %d:\n"
 "%s"
 
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:77
+#, c-format
+msgid ""
+"Link error in %s:\n"
+"%s is unavailable."
+msgstr ""
+"Chyba odkazu v %s:\n"
+"%s není k dispozici."
+
 #: extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
 msgid ""
@@ -96,7 +132,7 @@ msgstr ""
 "Chyba HTML v %s na řádku %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:162
+#: extensions/error-viewer/sgml-validator.c:166
 #, c-format
 msgid ""
 "HTML Validation of %s complete\n"
@@ -105,16 +141,16 @@ msgid_plural ""
 "HTML Validation of %s complete\n"
 "Found %d errors"
 msgstr[0] ""
-"Ověření platnosti HTML v %s dokočeno\n"
+"Ověření platnosti HTML v %s dokončeno\n"
 "Nalezena %d chyba"
 msgstr[1] ""
-"Ověření platnosti HTML v %s dokočeno\n"
+"Ověření platnosti HTML v %s dokončeno\n"
 "Nalezeny %d chyby"
 msgstr[2] ""
-"Ověření platnosti HTML v %s dokočeno\n"
+"Ověření platnosti HTML v %s dokončeno\n"
 "Nalezeno %d chyb"
 
-#: extensions/error-viewer/sgml-validator.c:216
+#: extensions/error-viewer/sgml-validator.c:222
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -125,7 +161,7 @@ msgstr ""
 "Doctype je XHTML, ale typ obsahu je text/html. Použijte místo něj "
 "application/xhtml+xml."
 
-#: extensions/error-viewer/sgml-validator.c:231
+#: extensions/error-viewer/sgml-validator.c:237
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
@@ -136,7 +172,7 @@ msgstr ""
 "Doctype je XHTML, ale typ obsahu je text/html. Použijte místo něj "
 "application/xhtml+xml."
 
-#: extensions/error-viewer/sgml-validator.c:368
+#: extensions/error-viewer/sgml-validator.c:374
 #, c-format
 msgid ""
 "HTML error in %s:\n"
