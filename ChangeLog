@@ -1,5 +1,12 @@
 2004-09-26  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/smart-bookmarks/smart-bookmarks-prefs-ui.c:
+	(smart_bookmarks_show_prefs_ui_cb):
+
+	Fix crash.
+
+2004-09-26  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/adblock/Makefile.am:
 	* extensions/adblock/ad-blocker.c: (ad_blocker_init),
 	(ad_blocker_finalize):
