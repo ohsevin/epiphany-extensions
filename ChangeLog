@@ -1,6 +1,12 @@
 2004-09-21  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
+
+	Remove obsolete mozilla version checks.
+
+2004-09-21  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
 	* include/Makefile.am:
 	* include/mozilla-version.h:
 
