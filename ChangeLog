@@ -1,3 +1,8 @@
+2005-01-04  Crispin Flowerday  <gnome@flowerday.cx>
+
+	* configure.ac: Remove wrongly committed dbus/Makefile.am
+	line, thanks to jfr for spotting it.
+
 2005-01-01  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/error-viewer/error-viewer.glade:

@@ -366,7 +366,6 @@ extensions/smart-bookmarks/Makefile
 extensions/smart-bookmarks/mozilla/Makefile
 extensions/tabsmenu/Makefile
 extensions/tab-groups/Makefile
-extensions/dbus/Makefile
 po/Makefile.in
 ])
 
