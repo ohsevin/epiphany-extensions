@@ -1,46 +1,70 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the epiphany-extensions package.
 # Funda Wang <fundawang@linux.net.cn>, 2004.
+# Liu Songhe <jackliu9999@263.net>, 2004.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-12 03:14+0100\n"
-"PO-Revision-Date: 2004-02-11 23:10+0800\n"
-"Last-Translator: Funda Wang <fundawang@linux.net.cn>\n"
+"POT-Creation-Date: 2004-03-22 03:24+0100\n"
+"PO-Revision-Date: 2004-03-21 20:50+0800\n"
+"Last-Translator: Liu Songhe <jackliu9999@263.net>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Report-Msgid-Bugs-To: \n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#: extensions/certificates/ephy-certificates-extension.c:159
+msgid "Certificate Manager"
+msgstr "证书管理器"
+
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:214
+#: extensions/certificates/ephy-certificates-extension.c:276
+msgid "Manage _Certificates"
+msgstr "管理证书(_C)"
+
+#. shortcut key
+#: extensions/certificates/ephy-certificates-extension.c:278
+msgid "Manage your certificates"
+msgstr "管理您的证书"
+
+#. stock icon
+#: extensions/certificates/ephy-certificates-extension.c:286
 msgid "Server _Certificate"
 msgstr "服务器证书(_C)"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:216
+#: extensions/certificates/ephy-certificates-extension.c:288
 msgid "Display the web server's certificate"
 msgstr "显示 Web 服务器的证书"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:83
-msgid "_Validate"
-msgstr "校验(_V)"
+#: extensions/error-viewer/ephy-error-viewer-extension.c:88
+msgid "Check _HTML"
+msgstr "检查 _HTML"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:85
+#: extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "在错误查看器对话框中显示 HTML 错误"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:90
+#: extensions/error-viewer/ephy-error-viewer-extension.c:95
+msgid "Check _Links"
+msgstr "检查链接(_L)"
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:97
+msgid "Display invalid hyperlinks in the Error Viewer dialog"
+msgstr "在错误查看器对话框中显示无效的超链接"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:101
 msgid "_Error Viewer"
 msgstr "错误查看器(_E)"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:92
+#: extensions/error-viewer/ephy-error-viewer-extension.c:103
 msgid "Display web page errors"
 msgstr "显示网页错误"
 
@@ -52,14 +76,43 @@ msgstr "清除(_L)"
 msgid "Error Viewer"
 msgstr "错误查看器"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:106
+#: extensions/error-viewer/link-checker.c:235
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "发现 %d 个无效链接"
+
+#. Don't bother looking for source lines -- they're not there
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
+#, c-format
+msgid ""
+"Error:\n"
+"%s"
+msgstr ""
+"错误：\n"
+"%s"
+
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:90
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
 "%s"
 msgstr ""
-"在 %s 的第%d行中有 Javascript 错误：\n"
+"在 %s 的第 %d 行中有 Javascript 错误：\n"
 "%s"
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:77
+#, c-format
+msgid ""
+"Link error in %s:\n"
+"%s is unavailable."
+msgstr "%s 中有链接错误：%s 无法访问。"
+
+#: extensions/error-viewer/mozilla/mozilla-link-checker.cpp:152
+#, c-format
+msgid "Checking %d Link on %s"
+msgid_plural "Checking %d Links on %s"
+msgstr[0] "正在检查 %2$s 上的 %1$d 个链接"
 
 #: extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
@@ -67,75 +120,81 @@ msgid ""
 "HTML error in %s on line %s:\n"
 "%s"
 msgstr ""
-"在 %s 的第%s行中有 HTML 错误：\n"
+"在 %s 的第 %s 行中有 HTML 错误：\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:162
+#: extensions/error-viewer/sgml-validator.c:165
 #, c-format
-msgid ""
-"HTML Validation of %s complete\n"
-"Found %d error"
-msgid_plural ""
-"HTML Validation of %s complete\n"
-"Found %d errors"
-msgstr[0] ""
-"%s 的 HTML 校验完成\n"
-"找到了 %d 处错误"
+msgid "Found %d error"
+msgid_plural "Found %d errors"
+msgstr[0] "发现 %d 个错误"
 
-#: extensions/error-viewer/sgml-validator.c:216
+#: extensions/error-viewer/sgml-validator.c:169
+#, c-format
+msgid "HTML Validation of %s complete"
+msgstr "%s 的 HTML 校验完成"
+
+#: extensions/error-viewer/sgml-validator.c:227
 #, c-format
 msgid ""
 "HTML error in %s:\n"
-"Doctype is XHTML but content type is text/html.  Use application/xhtml+xml "
-"instead."
+"%s"
 msgstr ""
-"%s 中有 HTML 错误：\n"
-"Doctype 是 XHTML，但是内容类型却为 text/html。请换用 application/xhtml+xml。"
+"%s 的 HTML 错误：\n"
+"%s"
 
-#: extensions/error-viewer/sgml-validator.c:231
+#: extensions/error-viewer/sgml-validator.c:229
+#: extensions/error-viewer/sgml-validator.c:245
+msgid ""
+"Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
+"xhtml+xml\" instead."
+msgstr ""
+"文档类型是“XHTML”，但是内容类型却为“text/html”。请换用“application/xhtml"
+"+xml”。"
+
+#: extensions/error-viewer/sgml-validator.c:243
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
-"Doctype is XHTML but content type is text/html.  Use application/xhtml+xml "
-"instead."
+"%s"
 msgstr ""
-"%s 中有 HTML 警告：\n"
-"Doctype 是 XHTML，但是内容类型却为 text/html。请换用 application/xhtml+xml。"
+"%s 的 HTML 警告：\n"
+"%s"
 
-#: extensions/error-viewer/sgml-validator.c:368
+#: extensions/error-viewer/sgml-validator.c:381
 #, c-format
 msgid ""
 "HTML error in %s:\n"
 "No valid doctype specified."
 msgstr ""
 "%s 中有 HTML 错误：\n"
-"没有指定有效的 doctype。"
+"没有指定有效的文档类型。"
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
-msgid "Blo_ck Popups from this Site"
-msgstr "屏蔽来自此网站的弹出窗口(_C)"
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
+msgid "Popup _Windows"
+msgstr "弹出式窗口(_W)"
 
 #. shortcut key
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:64
-msgid "Block or unblock popup windows"
-msgstr "屏蔽或取消屏蔽弹出窗口"
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
+msgid "Show or hide unrequested popup windows from this site"
+msgstr "显示或隐藏未请求的来自此站点的弹出式窗口"
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:324
+#: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
 #, c-format
-msgid "%d popup blocked"
-msgid_plural "%d popups blocked"
-msgstr[0] "屏蔽了 %d 个弹出窗口"
+msgid "%d popup window blocked"
+msgid_plural "%d popup windows blocked"
+msgstr[0] "屏蔽了 %d 个弹出式窗口"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:185
+#: extensions/tabsmenu/ephy-tab-move-menu.c:183
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"
 msgstr[0] "窗口“%s”(%d 个标签)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:283
+#: extensions/tabsmenu/ephy-tab-move-menu.c:282
 msgid "Move Tab To Window"
 msgstr "将标签移至窗口"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:284
+#: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
 msgstr "将当前标签移至不同的窗口"
