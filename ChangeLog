@@ -1,3 +1,7 @@
+2004-04-02  Pablo Saratxaga  <pablo@mandrakesoft.com>
+
+	* configure.ac: Added Walloon (wa) to ALL_LINGUAS.
+
 2004-04-01  Dmitry G. Mastrukov  <dmitry@taurussoft.org>
 
 	* configure.ac: Added Russian to ALL_LINGUAS.
