@@ -29,148 +29,93 @@
 #include <gmodule.h>
 #include <glib-object.h>
 #include <gconf/gconf.h>
+#include <libxml/tree.h>
 
-static GHashTable *gestures_actions = NULL;
+static GHashTable *gestures = NULL;
+
+#define EPHY_GESTURES_XML_FILE		SHARE_DIR "/ephy-gestures.xml"
+#define EPHY_GESTURES_XML_ROOT		"epiphany_gestures"
+#define EPHY_GESTURES_XML_VERSION	"0.1"
 
 static void
-tab_update_gestures (void)
+load_one_gesture (xmlNodePtr node)
 {
-	/* this should read a pref, parse it, setup a listener, etc */
-	/* for now, just hardcode some */
+	xmlNodePtr child;
+	xmlChar *stroke = NULL, *action = NULL;
 
-	int i;
-	static const struct
+	g_return_if_fail (node != NULL);
+
+	if (strcmp (node->name, "gesture") != 0) return;
+
+	for (child = node->children; child != NULL; child = child->next)
 	{
-		gchar *sequence;
-		gchar *action;
-	} default_gestures[] = {
-                /* none */
-                { "5"           , "none"          },
+		if (strcmp (child->name, "stroke") == 0)
+		{
+			g_return_if_fail (stroke == NULL);
 
-		/* down */
-                { "258"         , "new_tab"       },
+			stroke = xmlNodeGetContent (child);
+		}
+		else if (strcmp (child->name, "action") == 0)
+		{
+			g_return_if_fail (action == NULL);
 
-                /* up */
-                { "852"         , "new_window"    },
-
-                /* up-down */
-                { "85258"       , "reload"        },
-                { "8525"        , "reload"        },
-                { "5258"        , "reload"        },
-
-                /* up-down-up */
-                { "8525852"     , "reload_bypass" },
-                { "852585"      , "reload_bypass" },
-                { "85252"       , "reload_bypass" },
-                { "85852"       , "reload_bypass" },
-                { "525852"      , "reload_bypass" },
-                { "52585"       , "reload_bypass" },
-
-                /* up-left-down */
-                { "9632147"     , "homepage"      },
-                { "963214"      , "homepage"      },
-                { "632147"      , "homepage"      },
-                { "962147"      , "homepage"      },
-                { "963147"      , "homepage"      },
-
-                /* down-up */
-                { "25852"       , "clone_window"  },
-                { "2585"        , "clone_window"  },
-                { "5852"        , "clone_window"  },
-
-                /* down-up-down */
-                { "2585258"     , "clone_tab"     },
-                { "258525"      , "clone_tab"     },
-                { "25858"       , "clone_tab"     },
-                { "25258"       , "clone_tab"     },
-                { "585258"      , "clone_tab"     },
-                { "58525"       , "clone_tab"     },
-
-                /* up-left-up */
-                { "96541"       , "up"            },
-                { "9651"        , "up"            },
-                { "9541"        , "up"            },
-
-                /* right-left-right */
-                { "4565456"     , "close"         },
-                { "456545"      , "close"         },
-                { "45656"       , "close"         },
-                { "45456"       , "close"         },
-                { "565456"      , "close"         },
-                { "56545"       , "close"         },
-
-                /* down-right */
-                { "14789"       , "close"         },
-                { "1489"        , "close"         },
-
-                /* left */
-                { "654"         , "back"          },
-
-                /* right */
-                { "456"         , "forward"       },
-
-                /* down-left */
-                { "36987"       , "fullscreen"    },
-                { "3687"        , "fullscreen"    },
-
-                /* up-right */
-                { "74123"       , "next_tab"      },
-                { "7423"        , "next_tab"      },
-
-                /* up-left */
-                { "96321"       , "prev_tab"      },
-                { "9621"        , "prev_tab"      },
-
-                /* s */
-                { "321456987"   , "view_source"   },
-                { "21456987"    , "view_source"   },
-                { "32145698"    , "view_source"   },
-                { "3256987"     , "view_source"   },
-                { "3214587"     , "view_source"   },
-                { "32145987"    , "view_source"   },
-                { "32156987"    , "view_source"   },
-
-                /* left-up */
-                { "98741"       , "stop"          },
-                { "9841"        , "stop"          },
-
-		{ NULL		, NULL		  }
-
-	};
-
-	if (gestures_actions)
-	{
-		g_hash_table_destroy (gestures_actions);
+			action = xmlNodeGetContent (child);
+		}
 	}
 
-	gestures_actions = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, g_free);
+	g_return_if_fail (stroke != NULL && action != NULL);
 
-	for (i = 0; default_gestures[i].sequence; ++i)
-	{
-		g_hash_table_insert (gestures_actions,
-				     g_strdup (default_gestures[i].sequence),
-				     g_strdup (default_gestures[i].action));
-	}
+	g_hash_table_insert (gestures, g_strdup (stroke), g_strdup (action));
+
+	LOG ("added gesture: stroke '%s' action '%s'", stroke, action)
+
+	xmlFree (stroke);
+	xmlFree (action);
 }
 
 static void
-tab_gesture_performed_cb (EphyGestures *eg, const gchar *sequence, EphyTab *tab)
+load_gestures (void)
+{
+	xmlDocPtr doc;
+	xmlNodePtr root, child;
+	char *tmp;
+
+	g_return_if_fail (g_file_test (EPHY_GESTURES_XML_FILE, G_FILE_TEST_EXISTS));
+
+	doc = xmlParseFile (EPHY_GESTURES_XML_FILE);
+	g_return_if_fail (doc != NULL);
+
+	root = xmlDocGetRootElement (doc);
+	g_return_if_fail (root && strcmp (root->name, EPHY_GESTURES_XML_ROOT) == 0);
+
+	tmp = xmlGetProp (root, "version");
+	if (tmp != NULL && strcmp (tmp, EPHY_GESTURES_XML_VERSION) != 0)
+	{
+		g_warning ("Unsupported gestures file version detected\n");
+
+		xmlFreeDoc (doc);
+		return;
+	}
+	g_free (tmp);
+
+	for (child = root->children; child != NULL; child = child->next)
+	{
+		load_one_gesture (child);
+	}
+
+	xmlFreeDoc (doc);
+}
+
+static void
+tab_gesture_performed_cb (EphyGestures *eg, const char *sequence, EphyTab *tab)
 {
 	const char  *action;
 	EphyWindow *window;
 	EphyEmbed  *embed;
 
-	if (!gestures_actions)
-	{
-		tab_update_gestures ();
-	}
+	action = g_hash_table_lookup (gestures, sequence);
 
-	action = g_hash_table_lookup (gestures_actions, sequence);
-
-	if (!action)
-	{
-		return;
-	}
+	if (action == NULL) return;
 
 	LOG ("Sequence: %s; Action: %s", sequence, action)
 
@@ -377,6 +322,11 @@ plugin_init (GTypeModule *module)
 {
 	Session *session;
 
+	gestures = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, g_free);
+	g_assert (gestures != NULL);
+
+	load_gestures ();
+
 	session = SESSION (ephy_shell_get_session (ephy_shell));
 	g_signal_connect (session, "new_window",
 			  G_CALLBACK (new_window_cb), NULL);
@@ -386,4 +336,7 @@ G_MODULE_EXPORT void
 plugin_exit (void)
 {
 	LOG ("Gestures plugin exit")
+
+	g_hash_table_destroy (gestures);
+	gestures = NULL;
 }

@@ -1,5 +1,13 @@
 2003-08-01  Christian Persch  <chpe@cvs.gnome.org>
 
+	* gestures.c: (load_gestures), (load_one_gestures),
+	(tab_update_gestures), (tab_gesture_performed_cb),
+	(plugin_init), (plugin_exit):
+
+	Load gestures from xml instead of hardcoding them.
+
+2003-08-01  Christian Persch  <chpe@cvs.gnome.org>
+
 	* gestures.c:
 	* ephy-gestures.h:
 	* ephy-gestures.c:

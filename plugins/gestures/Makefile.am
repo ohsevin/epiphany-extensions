@@ -18,3 +18,9 @@ libgestures_la_SOURCES = 	\
 	ephy-gestures.h		\
 	stroke.c		\
 	stroke.h
+
+gesturesdir = $(pkgdatadir)
+gestures_DATA =			\
+	ephy-gestures.xml
+
+EXTRA_DIST = $(gestures_DATA)
