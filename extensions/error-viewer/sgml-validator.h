@@ -63,6 +63,10 @@ SgmlValidator	*sgml_validator_new		(ErrorViewer *viewer);
 void		sgml_validator_validate		(SgmlValidator *validator,
 						 EphyEmbed *embed);
 
+void		sgml_validator_append		(SgmlValidator *validator,
+						 ErrorViewerErrorType error_type,
+						 const char *message);
+
 G_END_DECLS
 
 #endif

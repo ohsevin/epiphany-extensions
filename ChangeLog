@@ -1,3 +1,17 @@
+2004-01-30  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/error-viewer/README:
+	* extensions/error-viewer/error-viewer.c: (error_viewer_append):
+	* extensions/error-viewer/opensp/validate.cpp:
+	* extensions/error-viewer/opensp/validate.h:
+	* extensions/error-viewer/sgml-validator.c: (opensp_thread),
+	(save_source_completed_cb), (free_sgml_validator_append_cb_data),
+	(sgml_validator_append_internal), (sgml_validator_append):
+	* extensions/error-viewer/sgml-validator.h:
+
+	Fixed use of threads. Error viewer is now very fast, and it's got its
+	150-entry limit back.
+
 2004-01-30  Ole Laursen  <olau@hardworking.dk>
 
 	* configure.ac: Added "da" (Danish) to ALL_LINGUAS.

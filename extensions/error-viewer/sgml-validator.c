@@ -56,6 +56,13 @@ typedef struct
 	gboolean is_xml;
 } OpenSPThreadCBData;
 
+typedef struct
+{
+	SgmlValidator *validator;
+	ErrorViewerErrorType error_type;
+	char *message;
+} SgmlValidatorAppendCBData;
+
 struct SgmlValidatorPrivate
 {
 	ErrorViewer *error_viewer;
@@ -144,7 +151,7 @@ opensp_thread (gpointer data)
 
 	num_errors = validate (osp_data->dest,
 			       osp_data->location,
-			       osp_data->validator->priv->error_viewer,
+			       osp_data->validator,
 			       osp_data->is_xml);
 
 	summary = g_strdup_printf
@@ -153,8 +160,7 @@ opensp_thread (gpointer data)
 			   num_errors),
 		 osp_data->location, num_errors);
 
-	error_viewer_append (osp_data->validator->priv->error_viewer,
-			     ERROR_VIEWER_INFO, summary);
+	sgml_validator_append (osp_data->validator, ERROR_VIEWER_INFO, summary);
 
 	g_free (summary);
 
@@ -198,8 +204,7 @@ save_source_completed_cb (EphyEmbedPersist *persist,
 
 		g_free (location);
 
-		error_viewer_append (validator->priv->error_viewer,
-				     ERROR_VIEWER_ERROR, t);
+		sgml_validator_append (validator, ERROR_VIEWER_ERROR, t);
 
 		g_free (t);
 		return;
@@ -219,8 +224,8 @@ save_source_completed_cb (EphyEmbedPersist *persist,
 
 			g_free (location);
 
-			error_viewer_append (validator->priv->error_viewer,
-					     ERROR_VIEWER_ERROR, t);
+			sgml_validator_append (validator, ERROR_VIEWER_ERROR,
+					       t);
 		}
 
 		g_free (content_type);
@@ -272,4 +277,56 @@ sgml_validator_validate (SgmlValidator *validator,
 
 	g_object_unref (persist);
 	g_free (tmp);
+}
+
+static void
+free_sgml_validator_append_cb_data (gpointer data)
+{
+	SgmlValidatorAppendCBData *cb_data;
+
+	if (data)
+	{
+		cb_data = (SgmlValidatorAppendCBData *) data;
+
+		g_object_unref (cb_data->validator);
+		g_free (cb_data->message);
+		g_free (cb_data);
+	}
+}
+
+static gboolean
+sgml_validator_append_internal (gpointer data)
+{
+	g_return_if_fail (data != NULL);
+
+	SgmlValidatorAppendCBData *append_data =
+		(SgmlValidatorAppendCBData *) data;
+
+	error_viewer_append (append_data->validator->priv->error_viewer,
+			     append_data->error_type,
+			     append_data->message);
+
+	return FALSE;
+}
+
+void
+sgml_validator_append (SgmlValidator *validator,
+		       ErrorViewerErrorType error_type,
+		       const char *message)
+{
+	SgmlValidatorAppendCBData *cb_data;
+
+	g_return_if_fail (IS_SGML_VALIDATOR (validator));
+	g_return_if_fail (message != NULL);
+
+	/* GTK interaction must be done in the main thread */
+	cb_data = g_new0 (SgmlValidatorAppendCBData, 1);
+	g_object_ref (validator);
+	cb_data->validator = validator;
+	cb_data->error_type = error_type;
+	cb_data->message = g_strdup (message);
+
+	g_idle_add_full (G_PRIORITY_DEFAULT_IDLE,
+			 sgml_validator_append_internal, cb_data,
+			 free_sgml_validator_append_cb_data);
 }

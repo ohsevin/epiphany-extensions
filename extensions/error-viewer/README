@@ -16,5 +16,3 @@ TODO:
 - When MIME type doesn't match doctype it should add 1 to the error count.
 
 - Cleanup. Functions are too big and should be split.
-
-- Show some sort of notification that validation is happening (change mouse pointer?)

@@ -24,13 +24,13 @@
 #include <glib.h>
 #include <glib-object.h>
 
-#include "error-viewer.h"
+#include "sgml-validator.h"
 
 G_BEGIN_DECLS
 
 unsigned int validate (const char *filename,
 		       const char *location,
-		       ErrorViewer *error_viewer,
+		       SgmlValidator *validator,
 		       gboolean is_xml);
 
 G_END_DECLS

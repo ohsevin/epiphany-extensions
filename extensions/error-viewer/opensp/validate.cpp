@@ -53,58 +53,82 @@ toString (SGMLApplication::CharString s)
 
 class HtmlErrorFinder : public SGMLApplication
 {
+public:
+	HtmlErrorFinder (SgmlValidator *validator, const char *location);
+	~HtmlErrorFinder (void);
+	void error (const ErrorEvent &err);
+
 private:
 	void handle_line (const char *msg);
-
-public:
-	ErrorViewer *error_viewer;
+	regex_t *err_regex;
+	SgmlValidator *validator;
 	const char *location;
-
-	void error (const ErrorEvent &err);
 };
+
+HtmlErrorFinder::HtmlErrorFinder (SgmlValidator *validator,
+				  const char *location)
+{
+	int regex_ret;
+
+	g_return_if_fail (IS_SGML_VALIDATOR (validator));
+	g_return_if_fail (location != NULL);
+
+	g_object_ref (validator);
+	this->validator = validator;
+	this->location = location;
+
+	this->err_regex = g_new0 (regex_t, 1);
+	regex_ret = regcomp (this->err_regex,
+			     "^[^:]+:([0-9]+):[0-9]+:([A-Z]?):? (.*)$",
+			     REG_EXTENDED);
+	if (regex_ret != 0)
+	{
+		g_warning ("Could not compile HTML error regex. "
+			   "This is bad.\n");
+		g_free (this->err_regex);
+		this->err_regex = NULL;
+	}
+}
+
+HtmlErrorFinder::~HtmlErrorFinder (void)
+{
+	g_object_unref (this->validator);
+
+	if (this->err_regex)
+	{
+		regfree (this->err_regex);
+	}
+}
 
 void
 HtmlErrorFinder::handle_line (const char *msg)
 {
 	ErrorViewerErrorType error_type;
-	/* char *source_name; */
 	char *line_number;
 	char *verbose_msg;
 	const char *description;
 
-	regex_t *regex;
-	regmatch_t matches[5];
+	regmatch_t matches[4];
 	int regex_ret;
 
-	if (!this->error_viewer) return;
+	g_return_if_fail (IS_SGML_VALIDATOR (this->validator));
+	g_return_if_fail (this->err_regex != NULL);
 
-	regex = g_new0 (regex_t, 1);
-	regex_ret = regcomp (regex,
-			     "([^/:]+):([0-9]+):[0-9]+:([A-Z]?):? (.*)$",
-			     REG_EXTENDED);
-	g_return_if_fail (regex_ret == 0);
-
-	regex_ret = regexec (regex, msg, G_N_ELEMENTS (matches), matches, 0);
+	regex_ret = regexec (err_regex, msg, G_N_ELEMENTS (matches), matches,
+			     0);
 	if (regex_ret != 0)
 	{
 		g_warning ("Could not parse OpenSP string.: %s\n", msg);
-		error_viewer_append (this->error_viewer,
-				     ERROR_VIEWER_ERROR,
-				     msg);
-
-		regfree (regex);
+		sgml_validator_append (this->validator,
+				       ERROR_VIEWER_ERROR,
+				       msg);
 		return;
 	}
 
-	/*
-	source_name = g_strndup (msg + matches[1].rm_so,
+	line_number = g_strndup (msg + matches[1].rm_so,
 				 matches[1].rm_eo - matches[1].rm_so);
-	*/
 
-	line_number = g_strndup (msg + matches[2].rm_so,
-				 matches[2].rm_eo - matches[2].rm_so);
-
-	switch (*(msg + matches[3].rm_so))
+	switch (*(msg + matches[2].rm_so))
 	{
 		case 'W':
 			error_type = ERROR_VIEWER_WARNING;
@@ -116,19 +140,16 @@ HtmlErrorFinder::handle_line (const char *msg)
 			error_type = ERROR_VIEWER_INFO;
 	}
 
-	description = msg + matches[4].rm_so;
+	description = msg + matches[3].rm_so;
 
 	verbose_msg =
 		g_strdup_printf (_("HTML error in %s on line %s:\n%s"),
 				 this->location, line_number, description);
 
-	error_viewer_append (this->error_viewer, error_type,
-			     verbose_msg);
+	sgml_validator_append (this->validator, error_type, verbose_msg);
 
-	/* g_free (source_name); */
 	g_free (line_number);
 	g_free (verbose_msg);
-	regfree (regex);
 }
 
 void
@@ -160,7 +181,7 @@ HtmlErrorFinder::error (const ErrorEvent &err)
 extern "C" unsigned int
 validate (const char *filename,
 	  const char *location,
-	  ErrorViewer *error_viewer,
+	  SgmlValidator *validator,
 	  gboolean is_xml)
 {
 	unsigned int num_errors;
@@ -179,16 +200,17 @@ validate (const char *filename,
 				     "xml");
 	}
 
-	EventGenerator *egp = parserKit.makeEventGenerator (1, (char* const*) &filename);
+	EventGenerator *egp = parserKit.makeEventGenerator
+		(1, (char* const*) &filename);
+
 	egp->inhibitMessages (true);
 
-	HtmlErrorFinder app;
-	app.error_viewer = error_viewer;
-	app.location = location;
+	HtmlErrorFinder *app = new HtmlErrorFinder (validator, location);
 
-	num_errors = egp->run (app);
+	num_errors = egp->run (*app);
 
 	delete egp;
+	delete app;
 
 	return num_errors;
 }
