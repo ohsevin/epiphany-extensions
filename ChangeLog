@@ -1,3 +1,13 @@
+2004-10-05  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/error-viewer/error-viewer.c: (build_ui):
+	* extensions/page-info/page-info-dialog.c:
+	(page_info_dialog_constructor):
+	* extensions/smart-bookmarks/smart-bookmarks-prefs-ui.c:
+	(smart_bookmarks_show_prefs_ui_cb):
+
+	Set window icon.
+
 2004-10-02  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/adblock/mozilla/mozilla-helpers.cpp:

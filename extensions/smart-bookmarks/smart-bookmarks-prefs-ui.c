@@ -27,6 +27,8 @@
 #include "ephy-debug.h"
 
 #include <gtk/gtkwidget.h>
+#include <gtk/gtkwindow.h>
+#include <gtk/gtkstock.h>
 #include <epiphany/ephy-dialog.h>
 
 enum
@@ -59,6 +61,7 @@ smart_bookmarks_show_prefs_ui_cb (GtkAction *action,
 	if (dialog == NULL)
 	{
 		EphyDialog **ptr;
+		GtkWidget *window;
 
 		dialog = ephy_dialog_new ();
 		ptr = &dialog;
@@ -68,6 +71,11 @@ smart_bookmarks_show_prefs_ui_cb (GtkAction *action,
 				       SHARE_DIR "/glade/smart-bookmarks.glade",
 				       properties[PROP_WINDOW].id,
 				       GETTEXT_PACKAGE);
+
+		window = ephy_dialog_get_control (dialog,
+						  properties[PROP_WINDOW].id);
+		gtk_window_set_icon_name (GTK_WINDOW (window),
+					  GTK_STOCK_PREFERENCES);
 
 	}
 

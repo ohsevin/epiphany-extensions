@@ -1448,6 +1448,9 @@ page_info_dialog_constructor (GType type,
 
 	dialog->priv->dialog = ephy_dialog_get_control (edialog, properties[PROP_DIALOG].id);
 
+	gtk_window_set_icon_name (GTK_WINDOW (dialog->priv->dialog),
+				  GTK_STOCK_PROPERTIES);
+
 	dialog->priv->manager = gtk_ui_manager_new ();
 	dialog->priv->action_group = gtk_action_group_new ("PageInfoContextActions");
 	gtk_action_group_set_translation_domain (dialog->priv->action_group,
