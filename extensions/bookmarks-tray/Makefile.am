@@ -39,6 +39,4 @@ DISTCLEANFILES = $(extensionxml_DATA)
 
 EXTRA_DIST = \
 	$(ui_xml_DATA)			\
-	$(extensionxml_in_files)	\
-	README				\
-	patch.diff
+	$(extensionxml_in_files)

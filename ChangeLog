@@ -1,5 +1,17 @@
 2004-11-01  Christian Persch  <chpe@cvs.gnome.org>
 
+	=== Release 1.5.1 ===
+
+	* extensions/Makefile.am:
+
+	Add missing extensions to DIST_SUBDIRS, and comment out adblock extension.
+
+	* extensions/bookmarks-tray/Makefile.am:
+
+	Fix EXTRA_DIST.
+
+2004-11-01  Christian Persch  <chpe@cvs.gnome.org>
+
 	* configure.ac:
 
 	Fix aclocal flags.
