@@ -1,3 +1,11 @@
+2004-01-15  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/dashboard/dashboard-frontend-xmlwriter.c:
+	* extensions/dashboard/dashboard-frontend-xmlwriter.h:
+
+	Use the license text from dashboard/COPYING for the
+	dashboard-frontend.
+
 2004-01-14  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/dashboard:
