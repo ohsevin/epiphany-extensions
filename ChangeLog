@@ -1,5 +1,12 @@
 2005-03-03  Christian Persch  <chpe@cvs.gnome.org>
 
+	* include/Makefile.am:
+	* include/ephy-link.h:
+
+	Remove ephy-link.h, it's installed by Epiphany.
+
+2005-03-03  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/page-info/page-info-dialog.c:
 	(background_download_completed_cb):
 
