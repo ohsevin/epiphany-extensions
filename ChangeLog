@@ -2,6 +2,12 @@
 
 	* configure.ac:
 
+	Fix aclocal flags.
+
+2004-11-01  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
 	Bump version number.
 
 	* extensions/sample-mozilla/sample-mozilla.c:
