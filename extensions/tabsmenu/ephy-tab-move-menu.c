@@ -213,6 +213,7 @@ update_tab_move_menu_cb (GtkAction *dummy,
 {
 	EphyTabMoveMenuPrivate *p = menu->priv;
 	EphySession *session;
+	GtkAction *action;
 	GList *windows, *l;
 
 	LOG ("update_tab_move_menu_cb")
@@ -253,7 +254,12 @@ update_tab_move_menu_cb (GtkAction *dummy,
 	g_return_if_fail (EPHY_IS_SESSION (session));
 
 	windows = ephy_session_get_windows (session);
+
 	g_list_foreach (windows, (GFunc) add_action_and_menu_item, menu);
+
+	action = gtk_ui_manager_get_action (p->manager, SUBMENU_PATH);
+	g_object_set (G_OBJECT (action), "sensitive", g_list_length (windows) > 1);
+
 	g_list_free (windows);
 
 	STOP_PROFILER ("Rebuilding tab move menu")
