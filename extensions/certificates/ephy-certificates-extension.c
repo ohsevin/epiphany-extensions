@@ -248,7 +248,6 @@ impl_attach_window (EphyExtension *ext,
 	children = gtk_container_get_children (GTK_CONTAINER (statusbar));
 	for (l = children; l != NULL; l = l->next)
 	{
-		g_print ("type name %s\n", g_type_name (((GTypeInstance *) l->data)->g_class->g_type));
 		if (GTK_IS_FRAME (l->data) && GTK_IS_EVENT_BOX (GTK_BIN (l->data)->child)) break;
 	}
 	g_return_if_fail (l != NULL);
