@@ -268,24 +268,6 @@ show_context_menu (EphySidebarEmbed *sbembed,
 }
 
 static gboolean
-embed_mouse_down_cb (EphyEmbed *embed,
-		     EphyEmbedEvent *event,
-		     EphySidebarEmbed *sbembed)
-{
-/*	EphyEmbedEventType type;
-
-	type = ephy_embed_event_get_event_type (event);
-
-	if (type == EPHY_EMBED_EVENT_MOUSE_BUTTON3)
-	{
-		show_context_menu (sbembed, embed, event);
-		return TRUE;
-	}
-*/
-	return FALSE;
-}
-
-static gboolean
 embed_contextmenu_cb (EphyEmbed *embed,
 		      EphyEmbedEvent *event,
 		      EphySidebarEmbed *sbembed)
@@ -450,10 +432,6 @@ ephy_sidebar_embed_create_embed (EphySidebarEmbed *sbembed)
 		g_signal_connect (G_OBJECT (embed),
 				  "ge_dom_mouse_click",
 				  G_CALLBACK(embed_mouse_click_cb),
-				  sbembed);
-		g_signal_connect (G_OBJECT (embed),
-				  "ge_dom_mouse_down",
-				  G_CALLBACK(embed_mouse_down_cb),
 				  sbembed);
 		g_signal_connect (G_OBJECT (embed),
 				  "ge_context_menu",
