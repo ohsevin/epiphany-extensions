@@ -130,6 +130,10 @@ static int
 popup_cmp (BlockedPopup *a,
 	   BlockedPopup *b)
 {
+	if (a->url == NULL && b->url == NULL) return 0;
+	if (a->url != NULL && b->url == NULL) return 1;
+	if (a->url == NULL && b->url != NULL) return -1;
+
 	return g_utf8_collate (a->url, b->url);
 }
 
@@ -141,7 +145,6 @@ ephy_popup_blocker_list_insert (EphyPopupBlockerList *list,
 	BlockedPopup *popup;
 
 	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (list));
-	g_return_if_fail (url != NULL);
 
 	popup = g_new0 (BlockedPopup, 1);
 

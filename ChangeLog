@@ -1,3 +1,12 @@
+2004-03-09  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/popup-blocker/ephy-popup-blocker-list.c: (popup_cmp),
+	(ephy_popup_blocker_list_insert):
+	* extensions/popup-blocker/mozilla/PopupBlockerListener.cpp:
+
+	Mozilla 1.6 returns NULL URLs when they're popups with relative paths.
+	Handle this; fixes bug #136608.
+
 2004-03-09  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:

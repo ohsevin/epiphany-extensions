@@ -58,6 +58,12 @@ NS_IMETHODIMP PopupBlockerListener::HandleEvent(nsIDOMEvent *event)
 	rv = popupEvent->GetPopupWindowURI (getter_AddRefs (popupWindowURI));
 	NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
 
+	if (popupWindowURI == NULL) /* Mozilla bug #212460 */
+	{
+		ephy_popup_blocker_extension_block (mOwner, NULL, NULL);
+		return NS_OK;
+	}
+
 	nsCAutoString popupWindowURIString;
 	rv = popupWindowURI->GetSpec (popupWindowURIString);
 	NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
@@ -74,6 +80,8 @@ NS_IMETHODIMP PopupBlockerListener::HandleEvent(nsIDOMEvent *event)
 	ephy_popup_blocker_extension_block (mOwner, popupWindowURIString.get (),
 					    NULL);
 #endif
+
+	return NS_OK;
 }
 
 nsresult
