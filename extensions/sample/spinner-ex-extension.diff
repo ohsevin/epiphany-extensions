@@ -1,0 +1,59 @@
+Index: ephy-sample-extension.c
+===================================================================
+RCS file: /cvs/gnome/epiphany-extensions/extensions/sample/ephy-sample-extension.c,v
+retrieving revision 1.3
+diff -u -p -r1.3 ephy-sample-extension.c
+--- ephy-sample-extension.c	17 Feb 2004 12:07:25 -0000	1.3
++++ ephy-sample-extension.c	24 Mar 2004 15:49:02 -0000
+@@ -110,12 +110,51 @@ ephy_sample_extension_finalize (GObject 
+ 	G_OBJECT_CLASS (sample_extension_parent_class)->finalize (object);
+ }
+ 
++static GtkWidget *
++get_nth_child (GtkWidget *container,
++               int position)
++{
++  GList *l;
++  GtkWidget *result;
++
++  l = gtk_container_get_children (GTK_CONTAINER (container));
++  result = g_list_nth_data (l, position);
++  g_list_free (l);
++
++  return result;
++}
++
++static void
++try_hide_spinner (GtkWidget *etoolbar)
++{
++	GtkWidget *t;
++
++	t = get_nth_child (etoolbar, 0);
++	if (t != NULL)
++	{
++		GtkWidget *fixed;
++		
++		fixed = get_nth_child (t, 1);
++		if (fixed != NULL)
++		{
++			g_signal_connect (fixed, "show", G_CALLBACK (gtk_widget_hide), NULL);
++			gtk_widget_hide (fixed);
++		}
++	}
++}
++
+ static void
+ impl_attach_window (EphyExtension *ext,
+ 		    EphyWindow *window)
+ {
+ //	EphySampleExtension *extension = EPHY_SAMPLE_EXTENSION (ext);
+ 	LOG ("EphySampleExtension attach_window")
++
++	GtkWidget *toolbar;
++
++	toolbar = ephy_window_get_toolbar (window);
++
++	try_hide_spinner (toolbar);
+ }
+ 
+ static void
