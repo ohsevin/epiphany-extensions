@@ -1,8 +1,14 @@
+2003-08-01  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.in:
+
+	Define share data dir.
+
 2003-07-31  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.in:
 
-	Added gconf dependency.
+	Added gconf dependency.	
 
 2003-07-30  Christian Persch  <chpe@cvs.gnome.org>
 

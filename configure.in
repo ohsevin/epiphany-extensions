@@ -100,15 +100,15 @@ dnl *******************************
 dnl share/data dir
 dnl *******************************
 
-dnl if test "x${datadir}" = 'x${prefix}/share'; then
-dnl   if test "x${prefix}" = "xNONE"; then
-dnl     AC_DEFINE_UNQUOTED(PLUGINS_DATA_DIR, "${ac_default_prefix}/share/${PACKAGE}", [Directory of data files])
-dnl   else
-dnl     AC_DEFINE_UNQUOTED(PLUGINS_DATA_DIR, "${prefix}/share/${PACKAGE}", [Directory of data files])
-dnl   fi
-dnl else
-dnl   AC_DEFINE_UNQUOTED(PLUGINS_DATA_DIR, "${datadir}/${PACKAGE}", [Directory of data files])
-dnl fi
+if test "x${datadir}" = 'x${prefix}/share'; then
+  if test "x${prefix}" = "xNONE"; then
+    AC_DEFINE_UNQUOTED(PLUGINS_DATA_DIR, "${ac_default_prefix}/share/${PACKAGE}", [Directory of data files])
+  else
+    AC_DEFINE_UNQUOTED(PLUGINS_DATA_DIR, "${prefix}/share/${PACKAGE}", [Directory of data files])
+  fi
+else
+  AC_DEFINE_UNQUOTED(PLUGINS_DATA_DIR, "${datadir}/${PACKAGE}", [Directory of data files])
+fi
 
 dnl *******************************
 dnl *******************************
