@@ -62,7 +62,7 @@ load_one_gesture (xmlNodePtr node)
 		{
 			t = xmlNodeGetContent (child);
 
-			sequence = g_slist_append (sequence, t);
+			sequence = g_slist_prepend (sequence, t);
 		}
 		else if (strcmp (child->name, "action") == 0)
 		{
