@@ -1116,6 +1116,8 @@ page_info_media_box_realize_cb (GtkContainer *box,
 	gtk_widget_show (GTK_WIDGET(embed));
 
 	gtk_container_add (box, GTK_WIDGET (embed));
+
+	ephy_embed_load_url (embed, "about:blank");
 }
 
 static gboolean 
