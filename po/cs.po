@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-01-30 03:15+0100\n"
-"PO-Revision-Date: 2004-01-30 11:55+0100\n"
+"POT-Creation-Date: 2004-02-02 14:25+0100\n"
+"PO-Revision-Date: 2004-02-02 18:34+0100\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,21 +18,31 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:80
+#. stock icon
+#: extensions/certificates/ephy-certificates-extension.c:214
+msgid "Server _Certificate"
+msgstr "_Certifikát serveru"
+
+#. shortcut key
+#: extensions/certificates/ephy-certificates-extension.c:216
+msgid "Display the web server's certificate"
+msgstr "Zobrazit certifikát WWW serveru"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:83
 msgid "_Validate"
 msgstr "_Ověřit platnost"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:82
+#: extensions/error-viewer/ephy-error-viewer-extension.c:85
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "Zobrazit chyby HTML v dialogu Prohlížeče chyb"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:87
+#: extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "_Error Viewer"
 msgstr "_Prohlížeč chyb"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:89
+#: extensions/error-viewer/ephy-error-viewer-extension.c:92
 msgid "Display web page errors"
 msgstr "Zobrazovat chyby WWW stránek"
 
@@ -53,7 +63,7 @@ msgstr ""
 "Chyba Javascriptu v %s na řádku %d:\n"
 "%s"
 
-#: extensions/error-viewer/opensp/validate.cpp:123
+#: extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
 msgid ""
 "HTML error in %s on line %s:\n"
@@ -62,7 +72,7 @@ msgstr ""
 "Chyba HTML v %s na řádku %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:151
+#: extensions/error-viewer/sgml-validator.c:162
 #, c-format
 msgid ""
 "HTML Validation of %s complete\n"
@@ -70,14 +80,37 @@ msgid ""
 msgid_plural ""
 "HTML Validation of %s complete\n"
 "Found %d errors"
-msgstr[0] "Ověření platnosti HTML v %s dokočeno\n"
+msgstr[0] ""
+"Ověření platnosti HTML v %s dokočeno\n"
 "Nalezena %d chyba"
-msgstr[1] "Ověření platnosti HTML v %s dokočeno\n"
+msgstr[1] ""
+"Ověření platnosti HTML v %s dokočeno\n"
 "Nalezeny %d chyby"
-msgstr[2] "Ověření platnosti HTML v %s dokočeno\n"
+msgstr[2] ""
+"Ověření platnosti HTML v %s dokočeno\n"
 "Nalezeno %d chyb"
 
-#: extensions/error-viewer/sgml-validator.c:196
+#: extensions/error-viewer/sgml-validator.c:216
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"Doctype is XHTML but content type is text/html.  Use application/xhtml+xml "
+"instead."
+msgstr ""
+"Chyba HTML v %s:\n"
+"Doctype je XHTML, ale typ obsahu je text/html. Použijte místo něj application/xhtml+xml."
+
+#: extensions/error-viewer/sgml-validator.c:231
+#, c-format
+msgid ""
+"HTML warning in %s:\n"
+"Doctype is XHTML but content type is text/html.  Use application/xhtml+xml "
+"instead."
+msgstr ""
+"Chyba HTML v %s:\n"
+"Doctype je XHTML, ale typ obsahu je text/html. Použijte místo něj application/xhtml+xml."
+
+#: extensions/error-viewer/sgml-validator.c:368
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -85,15 +118,6 @@ msgid ""
 msgstr ""
 "Chyba HTML v %s:\n"
 "Nebyl určen platný doctype."
-
-#: extensions/error-viewer/sgml-validator.c:216
-#, c-format
-msgid ""
-"HTML error in %s:\n"
-"Doctype is XHTML but content type is text/html"
-msgstr ""
-"Chyba HTML v %s:\n"
-"Doctype je XHTML, ale typ obsahu je text/html"
 
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
 msgid "Blo_ck Popups from this Site"
@@ -120,11 +144,11 @@ msgstr[0] "Okno '%s' (%d karta)"
 msgstr[1] "Okno '%s' (%d karty)"
 msgstr[2] "Okno '%s' (%d karet)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:277
+#: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move Tab To Window"
 msgstr "Přesunout kartu do okna"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:278
+#: extensions/tabsmenu/ephy-tab-move-menu.c:284
 msgid "Move the current tab to a different window"
 msgstr "Přesunout aktuální kartu do jiného okna"
 
