@@ -275,11 +275,13 @@ mozilla_set_stylesheet (EphyEmbed *aEmbed,
 		item->GetTitle (title);
 		if (NS_FAILED (rv)) continue;
 
-		if (aSelected->mType == STYLESHEET_BASIC)
+		if (title.Length() == 0)
 		{
-			item->SetDisabled (title.Length() != 0);
+			item->SetDisabled(PR_FALSE);
 			continue;
 		}
+
+		if (aSelected->mType == STYLESHEET_BASIC) continue;
 
 		nsEmbedCString cTitle;
 		NS_UTF16ToCString (title, NS_CSTRING_ENCODING_UTF8, cTitle);
