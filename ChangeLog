@@ -1,3 +1,12 @@
+2004-10-08  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/page-info/page-info-context-ui.xml:
+	* extensions/page-info/page-info-dialog.c:
+	(links_get_selected_link_url), (links_copy_link_address_cb),
+	(links_info_page_construct):
+
+	Implement context menu in "Links" tab.
+
 2004-10-05  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/error-viewer/error-viewer.c: (build_ui):
