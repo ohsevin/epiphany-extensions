@@ -1,3 +1,10 @@
+2005-03-03  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/page-info/page-info-dialog.c:
+	(background_download_completed_cb):
+
+	Don't double-unref.
+
 2005-03-02  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/page-info/mozilla/mozilla-helpers.h:

@@ -1007,8 +1007,6 @@ background_download_completed_cb (EphyEmbedPersist *persist)
 	}
 	g_free (type);
 
-	g_object_unref (persist);
-
         /* open the "Background Properties" capplet */
         ephy_file_launch_desktop_file ("background.desktop", user_time);
 }
