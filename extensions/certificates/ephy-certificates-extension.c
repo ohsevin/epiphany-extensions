@@ -26,6 +26,7 @@
 #include "ephy-certificates-extension.h"
 
 #include "mozilla-embed-certificate.h"
+
 #include "ephy-debug.h"
 
 #include <epiphany/ephy-window.h>
@@ -41,6 +42,7 @@
 #include <gtk/gtkframe.h>
 #include <gtk/gtkrc.h>
 #include <gtk/gtkeventbox.h>
+#include <gtk/gtkwindow.h>
 #include <gmodule.h>
 #include <glib/gi18n-lib.h>
 
@@ -48,6 +50,7 @@
 
 struct EphyCertificatesExtensionPrivate
 {
+	GtkWidget *cert_manager;
 };
 
 static void ephy_certificates_extension_class_init	 (EphyCertificatesExtensionClass *klass);
@@ -110,14 +113,76 @@ ephy_certificates_extension_init (EphyCertificatesExtension *extension)
 static void
 ephy_certificates_extension_finalize (GObject *object)
 {
+	EphyCertificatesExtension *extension = EPHY_CERTIFICATES_EXTENSION (object);
+
 	LOG ("EphyCertificatesExtension finalising")
+
+	if (extension->priv->cert_manager)
+	{
+		g_object_remove_weak_pointer (G_OBJECT (extension->priv->cert_manager),
+					      (gpointer *) &extension->priv->cert_manager);
+		gtk_widget_destroy (extension->priv->cert_manager);
+		extension->priv->cert_manager = NULL;
+	}
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
 }
 
 static void
-ephy_certificates_extension_view_certificate_cb (GtkAction *action,
-						 EphyWindow *window)
+cert_manager_visibility_cb (GtkWidget *embed,
+			    gboolean visibility,
+			    GtkWidget *window)
+{
+        if (visibility)
+        {
+                gtk_widget_show (window);
+        }
+        else
+        {
+                gtk_widget_hide (window);
+        }
+}
+
+static void
+manage_certificates_cb (GtkAction *action,
+			EphyCertificatesExtension *extension)
+{
+	GtkWidget *window, *embed;
+
+	if (extension->priv->cert_manager != NULL)
+	{
+		gtk_window_present (GTK_WINDOW (extension->priv->cert_manager));
+		return;
+	}  
+
+	window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
+	gtk_window_set_title (GTK_WINDOW (window), _("Certificate Manager"));
+
+	embed = GTK_WIDGET (g_object_new (g_type_from_name ("MozillaEmbed"), NULL));
+	gtk_widget_show (embed);
+	gtk_container_add (GTK_CONTAINER (window), embed);
+
+	g_signal_connect_object (embed, "destroy_browser",
+				 G_CALLBACK (gtk_widget_destroy),
+				 window, G_CONNECT_SWAPPED);
+	g_signal_connect_object (embed, "visibility",
+				 G_CALLBACK (cert_manager_visibility_cb),
+				 window, (GConnectFlags) 0);
+	g_signal_connect (embed, "realize",
+			  G_CALLBACK (ephy_embed_load_url),
+			  "chrome://pippki/content/certManager.xul");
+
+	gtk_window_set_default_size (GTK_WINDOW (window), 600, 360);
+	gtk_window_present (GTK_WINDOW (window));
+
+	extension->priv->cert_manager = window;
+	g_object_add_weak_pointer (G_OBJECT (extension->priv->cert_manager),
+				   (gpointer *) &extension->priv->cert_manager);
+}
+
+static void
+view_certificate_cb (GtkAction *action,
+		     EphyWindow *window)
 {
 	EphyEmbed *embed;
 
@@ -207,16 +272,26 @@ padlock_button_press_cb (GtkWidget *ebox,
 	}
 }
 
-static GtkActionEntry action_entries [] =
+static GtkActionEntry action_entries_1 [] =
+{
+	{ "ToolsCertificateManager",
+	  NULL /* stock icon */,
+	  N_("Manage _Certificates"),
+	  NULL, /* shortcut key */
+	  N_("Manage your certificates"),
+	  G_CALLBACK (manage_certificates_cb) }
+};
+static const guint n_action_entries_1 = G_N_ELEMENTS (action_entries_1);
+static GtkActionEntry action_entries_2 [] =
 {
 	{ "ViewServerCertificate",
 	  NULL /* stock icon */,
 	  N_("Server _Certificate"),
 	  NULL, /* shortcut key */
 	  N_("Display the web server's certificate"),
-	  G_CALLBACK (ephy_certificates_extension_view_certificate_cb) }
+	  G_CALLBACK (view_certificate_cb) }
 };
-static const guint n_action_entries = G_N_ELEMENTS (action_entries);
+static const guint n_action_entries_2 = G_N_ELEMENTS (action_entries_2);
 
 static void
 impl_attach_window (EphyExtension *ext,
@@ -267,8 +342,10 @@ impl_attach_window (EphyExtension *ext,
 	action_group = gtk_action_group_new ("CertificatesExtensionActions");
 	gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
 
-	gtk_action_group_add_actions (action_group, action_entries,
-				      n_action_entries, window);
+	gtk_action_group_add_actions (action_group, action_entries_1,
+				      n_action_entries_1, ext);
+	gtk_action_group_add_actions (action_group, action_entries_2,
+				      n_action_entries_2, window);
 
 	gtk_ui_manager_insert_action_group (manager, action_group, 0);
 	g_object_unref (action_group);
@@ -281,6 +358,10 @@ impl_attach_window (EphyExtension *ext,
 	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ViewMenu",
 			       "ViewServerCertificateItem",
 			       "ViewServerCertificate",
+			       GTK_UI_MANAGER_MENUITEM, FALSE);
+	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
+			       "ToolsCertificateManagerItem",
+			       "ToolsCertificateManager",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
 }
 

@@ -1,3 +1,13 @@
+2004-02-21  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/certificates/ephy-certificates-extension.c:
+	(ephy_certificates_extension_finalize),
+	(cert_manager_visibility_cb), (manage_certificates_cb),
+	(view_certificate_cb), (impl_attach_window):
+
+	Since we don't have a native cert manager for 1.2, add a menu
+	item to open the XUL cert manager from the tools menu.
+
 2004-02-17  Christian Persch  <chpe@cvs.gnome.org>
 
 	* doc/writing-epiphany-extensions.xml:
