@@ -1,5 +1,14 @@
 2004-01-02  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/gestures/ephy-gestures-extension.c: (tab_added_cb),
+	(tab_removed_cb):
+	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
+	(tab_added_cb), (tab_removed_cb):
+
+	Make it compile from the last change.
+
+2004-01-02  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/gestures/ephy-gestures-extension.c:
 	(dom_mouse_down_cb), (tab_added_cb), (tab_removed_cb):
 	* extensions/popup-blocker/ephy-popup-blocker-extension.c:

@@ -428,10 +428,10 @@ tab_added_cb (GtkWidget *notebook,
 
 	tab = ephy_tab_for_embed (embed);
 
-	g_signal_connect (G_OBJECT (child), "ge_location",
+	g_signal_connect (embed, "ge_location",
 			  G_CALLBACK (location_cb), tab);
 
-	g_signal_connect (G_OBJECT (child), "ge_popup_blocked",
+	g_signal_connect (embed, "ge_popup_blocked",
 			  G_CALLBACK (popup_blocked_cb), tab);
 }
 
@@ -445,10 +445,10 @@ tab_removed_cb (GtkWidget *notebook,
 	tab = ephy_tab_for_embed (embed);
 
 	g_signal_handlers_disconnect_by_func
-		(child, G_CALLBACK (location_cb), tab);
+		(embed, G_CALLBACK (location_cb), tab);
 
 	g_signal_handlers_disconnect_by_func
-		(child, G_CALLBACK (popup_blocked_cb), tab);
+		(embed, G_CALLBACK (popup_blocked_cb), tab);
 }
 
 static void

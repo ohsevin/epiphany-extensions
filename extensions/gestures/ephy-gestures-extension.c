@@ -349,7 +349,7 @@ tab_added_cb (GtkWidget *notebook,
 
 	tab = ephy_tab_for_embed (embed);
 
-	g_signal_connect (G_OBJECT (child), "ge_dom_mouse_down",
+	g_signal_connect (embed, "ge_dom_mouse_down",
 			  G_CALLBACK (dom_mouse_down_cb), extension);
 }
 
@@ -363,7 +363,7 @@ tab_removed_cb (GtkWidget *notebook,
 	tab = ephy_tab_for_embed (embed);
 
 	g_signal_handlers_disconnect_by_func
-		(child, G_CALLBACK (dom_mouse_down_cb), extension);
+		(embed, G_CALLBACK (dom_mouse_down_cb), extension);
 }
 
 static void
