@@ -988,7 +988,7 @@ free_embed_page_form (EmbedPageForm *form)
   g_free (form);
 }
 
-extern "C" void
+static void
 mozilla_free_page_properties (EmbedPageProperties *props)
 {
   g_free (props->content_type);
@@ -1008,6 +1008,8 @@ mozilla_free_embed_page_info (EmbedPageInfo *info)
 
   g_list_foreach (info->media, (GFunc) free_embed_page_medium, NULL);
   g_list_free (info->media);
+
+  mozilla_free_page_properties (info->props);
 
   g_free (info);
 }
