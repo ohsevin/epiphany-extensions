@@ -1,7 +1,9 @@
 Build & configure infrastructure:
 Sample plugin:
+Tabs menu plugin:
+Zoom persistence plugin:
+
 	Christian Persch <chpe+epiphany@stud.uni-saarland.de>
-	Marco Pesenti Gritti <mpesent@tin.it>
 
 Gestures Plugin:
 	Adam Hooper <adamh@densi.com>
