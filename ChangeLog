@@ -1,3 +1,10 @@
+2004-12-05  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/gestures/ephy-gesture.c: (unmap_event_cb),
+	(ephy_gesture_start):
+
+	Fix epiphany-extensions equivalent of galeon bug #160228.
+
 2004-12-02  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
