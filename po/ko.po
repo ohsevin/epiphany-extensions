@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-06 12:51+0900\n"
-"PO-Revision-Date: 2004-08-06 12:58+0900\n"
+"POT-Creation-Date: 2004-09-02 10:40+0900\n"
+"PO-Revision-Date: 2004-09-02 10:39+0900\n"
 "Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
 "Language-Team: GNOME Korea <gnome-kr-hackers@lists.kldp.net>\n"
 "MIME-Version: 1.0\n"
@@ -12,27 +12,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:160
-msgid "Certificate Manager"
-msgstr "인증서 관리"
-
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:276
+#: extensions/certificates/ephy-certificates-extension.c:253
 msgid "Manage _Certificates"
 msgstr "인증서 관리(_C)"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:278
+#: extensions/certificates/ephy-certificates-extension.c:255
 msgid "Manage your certificates"
 msgstr "인증서를 관리합니다"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:286
+#: extensions/certificates/ephy-certificates-extension.c:263
 msgid "Server _Certificate"
 msgstr "서버 인증서(_C)"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:288
+#: extensions/certificates/ephy-certificates-extension.c:265
 msgid "Display the web server's certificate"
 msgstr "웹 서버의 인증서를 표시합니다"
 
@@ -145,7 +141,9 @@ msgstr ""
 msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
-msgstr "문서타입은 \"XHTML\"이지만 content type은 \"text/html\"입니다.  \"application/xhtml+xml\"을 사용하십시오."
+msgstr ""
+"문서타입은 \"XHTML\"이지만 content type은 \"text/html\"입니다.  "
+"\"application/xhtml+xml\"을 사용하십시오."
 
 #: extensions/error-viewer/sgml-validator.c:243
 #, c-format
@@ -186,8 +184,11 @@ msgstr[0] "창 '%s' (탭 %d개)"
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:282
 msgid "Move Tab To Window"
-msgstr "탭을 창으로 옮깁니다"
+msgstr "탭을 창으로 옮기기"
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
 msgstr "현재 탭을 다른 창으로 옮깁니다"
+
+#~ msgid "Certificate Manager"
+#~ msgstr "인증서 관리"
