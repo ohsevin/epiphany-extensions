@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-17 14:19+0100\n"
-"PO-Revision-Date: 2004-02-17 16:45+0100\n"
+"POT-Creation-Date: 2004-02-22 14:18+0100\n"
+"PO-Revision-Date: 2004-02-22 16:56+0100\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,13 +18,27 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
+#: extensions/certificates/ephy-certificates-extension.c:159
+msgid "Certificate Manager"
+msgstr "Správce certifikátů"
+
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:214
+#: extensions/certificates/ephy-certificates-extension.c:279
+msgid "Manage _Certificates"
+msgstr "Spravovat _certifikáty"
+
+#. shortcut key
+#: extensions/certificates/ephy-certificates-extension.c:281
+msgid "Manage your certificates"
+msgstr "Spravovat vaše certifikáty"
+
+#. stock icon
+#: extensions/certificates/ephy-certificates-extension.c:289
 msgid "Server _Certificate"
 msgstr "_Certifikát serveru"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:216
+#: extensions/certificates/ephy-certificates-extension.c:291
 msgid "Display the web server's certificate"
 msgstr "Zobrazit certifikát WWW serveru"
 
