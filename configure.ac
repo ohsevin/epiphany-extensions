@@ -18,7 +18,7 @@ dnl $Id$
 
 AC_PREREQ(2.52)
 
-AC_INIT(epiphany-extensions, 0.7, [http://lists.gnome.org/mailman/listinfo/epiphany-list])
+AC_INIT(epiphany-extensions, 0.7.1, [http://lists.gnome.org/mailman/listinfo/epiphany-list])
 
 AC_CONFIG_SRCDIR(extensions)
 AM_CONFIG_HEADER(config.h)
@@ -66,7 +66,7 @@ dnl ********************************
 dnl pkg config checks
 dnl ********************************
 
-EPIPHANY_REQUIRED=1.1.7
+EPIPHANY_REQUIRED=1.1.8
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.3.1
 LIBGTK_REQUIRED=2.3.2
@@ -83,7 +83,7 @@ PKG_CHECK_MODULES(EPIPHANY_DEPENDENCY, \
 		  glib-2.0 >= $LIBGLIB_REQUIRED \
 		  gmodule-2.0 \
 		  gtk+-2.0 >= $LIBGTK_REQUIRED \
-		  epiphany-1.0 >= $EPIPHANY_REQUIRED)
+		  epiphany-1.2 >= $EPIPHANY_REQUIRED)
 AC_SUBST(EPIPHANY_DEPENDENCY_CFLAGS)
 AC_SUBST(EPIPHANY_DEPENDENCY_LIBS)
 

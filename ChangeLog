@@ -1,3 +1,10 @@
+2004-02-15  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
+	Bump version to 0.7.1, and increase epiphany dependency version to
+	1.1.8.
+
 2004-02-01  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
