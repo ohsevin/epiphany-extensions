@@ -1,3 +1,39 @@
+=========================
+Epiphany Extensions 1.1.0
+=========================
+
+Code changes
+
+	* Adapt to Epiphany API changes (Christian)
+	* Portability fix for FreeBSD (Christian, taken from FreeBSD ports)
+	* Adapt to mozilla API changes (Christian, Adam)
+	* Refactored link checker (Adam)
+	* Use public epiphany API to get at the statusbar security icon (Christian)
+
+Bug fixes
+
+	* Build fixes (Christian, Adam)
+	* Mem leak fix (Christian)
+	* Fix link checker stuck busy cursor (Adam)
+	* Fix handling of invalid encodings (Adam)
+	* Fix stupid bug, connect to the right signal on tab-remove (Christian)
+
+Translations
+
+	* Xavier Conde Rueda (ca)
+	* Miloslav Trmac (cs)
+	* Adam Weinberger (en_CA)
+	* Francesco Marletta (it)
+	* Reinout van Schouwen (nl)
+	* GNOME PL Team (pl)
+	* Duarte Loreto (pt)
+	* Dmitry G. Mastrukov (ru)
+	* Christian Rose (sv)
+	* Yuriy Syrota (uk)
+	* Pablo Saratxaga (wa)
+	* Liu Songhe (zh_CN)
+
+
 ==========================
 Epiphany Extensions 0.7.91
 ==========================
