@@ -1,3 +1,19 @@
+2005-01-14  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/smart-bookmarks/Makefile.am:
+	* extensions/smart-bookmarks/smart-bookmarks-extension.c:
+	(context_menu_cb), (rebuild_ui), (impl_attach_tab),
+	(impl_detach_tab), (impl_attach_window), (impl_detach_window),
+	(smart_bookmarks_extension_iface_init),
+	(smart_bookmarks_extension_init),
+	(smart_bookmarks_extension_class_init):
+	* extensions/smart-bookmarks/smart-bookmarks-prefs-ui.c:
+	* extensions/smart-bookmarks/smart-bookmarks-prefs-ui.h:
+	* extensions/smart-bookmarks/smart-bookmarks-prefs.h:
+	* extensions/smart-bookmarks/smart-bookmarks.glade:
+
+	Removed prefs dialogue.
+
 2005-01-13  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/page-info/mozilla/mozilla-helpers.cpp:

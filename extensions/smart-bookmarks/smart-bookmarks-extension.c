@@ -21,8 +21,6 @@
 #include "config.h"
 
 #include "smart-bookmarks-extension.h"
-#include "smart-bookmarks-prefs-ui.h"
-#include "smart-bookmarks-prefs.h"
 #include "mozilla-selection.h"
 
 #include <epiphany/ephy-extension.h>
@@ -46,6 +44,8 @@
 #include <glib/gi18n-lib.h>
 
 #include <string.h>
+
+#define CONF_OPEN_IN_TAB  "/apps/epiphany/extensions/smart-bookmarks/dictionarysearch/open_in_tab"
 
 #define SMART_BOOKMARKS_EXTENSION_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), TYPE_SMART_BOOKMARKS_EXTENSION, SmartBookmarksExtensionPrivate))
 
@@ -219,7 +219,7 @@ context_menu_cb (EphyEmbed *embed,
 		 EphyEmbedEvent *event,
 		 EphyWindow *window)
 {
-	gboolean can_copy, use_gdict;
+	gboolean can_copy;
 	GtkAction  *action;
 	WindowData *data;
 
@@ -234,13 +234,6 @@ context_menu_cb (EphyEmbed *embed,
 	g_return_val_if_fail (action != NULL, FALSE);
 
 	g_object_set(action, "sensitive", can_copy, "visible", can_copy, NULL);
-
-	/* Display or not Gnome Dictionary entry */
-	action = gtk_action_group_get_action (data->action_group, GDICT_ACTION);
-	g_return_val_if_fail (action != NULL, FALSE);
-
-	use_gdict = eel_gconf_get_boolean (CONF_USE_GDICT);
-	g_object_set(action, "sensitive", use_gdict, "visible", use_gdict, NULL);
 
 	return FALSE;
 }
@@ -303,22 +296,17 @@ rebuild_ui (WindowData *data)
 
 	data->ui_id = ui_id = gtk_ui_manager_new_merge_id (manager);
 
-	/* Add prefs UI */
-	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
-			       "ToolsSmartBookmarksSep1", NULL,
-			       GTK_UI_MANAGER_SEPARATOR, FALSE);
-	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
-			       "SmartBookmarksPrefsItem", "SmartBookmarksPrefs",
-			       GTK_UI_MANAGER_MENUITEM, FALSE);
-	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
-			       "ToolsSmartBookmarksSep2", NULL,
-			       GTK_UI_MANAGER_SEPARATOR, FALSE);
-
 	/* Add bookmarks to popup context (normal document) */
 	gtk_ui_manager_add_ui (manager, ui_id, "/EphyDocumentPopup",
 			       "SmbExtSep0", NULL,
 			       GTK_UI_MANAGER_SEPARATOR, FALSE);
 	gtk_ui_manager_add_ui (manager, ui_id, "/EphyDocumentPopup",
+			       LOOKUP_ACTION "Menu", LOOKUP_ACTION,
+			       GTK_UI_MANAGER_MENU, FALSE);
+	gtk_ui_manager_add_ui (manager, ui_id, "/EphyFullscreenDocumentPopup",
+			       "SmbExtSep0", NULL,
+			       GTK_UI_MANAGER_SEPARATOR, FALSE);
+	gtk_ui_manager_add_ui (manager, ui_id, "/EphyFullscreenDocumentPopup",
 			       LOOKUP_ACTION "Menu", LOOKUP_ACTION,
 			       GTK_UI_MANAGER_MENU, FALSE);
 
@@ -327,6 +315,12 @@ rebuild_ui (WindowData *data)
 			       "SmbExtSep0", NULL,
 			       GTK_UI_MANAGER_SEPARATOR, FALSE);
 	gtk_ui_manager_add_ui (manager, ui_id, "/EphyFramedDocumentPopup",
+			       LOOKUP_ACTION "Menu", LOOKUP_ACTION,
+			       GTK_UI_MANAGER_MENU, FALSE);
+	gtk_ui_manager_add_ui (manager, ui_id, "/EphyFullscreenFramedDocumentPopup",
+			       "SmbExtSep0", NULL,
+			       GTK_UI_MANAGER_SEPARATOR, FALSE);
+	gtk_ui_manager_add_ui (manager, ui_id, "/EphyFullscreenFramedDocumentPopup",
 			       LOOKUP_ACTION "Menu", LOOKUP_ACTION,
 			       GTK_UI_MANAGER_MENU, FALSE);
 
@@ -356,6 +350,14 @@ rebuild_ui (WindowData *data)
 				       "/EphyFramedDocumentPopup/" LOOKUP_ACTION "Menu",
 				       verb, verb,
 				       GTK_UI_MANAGER_MENUITEM, FALSE);
+		gtk_ui_manager_add_ui (manager, ui_id,
+				       "/EphyFullscreenDocumentPopup/" LOOKUP_ACTION "Menu",
+				       verb, verb,
+				       GTK_UI_MANAGER_MENUITEM, FALSE);
+		gtk_ui_manager_add_ui (manager, ui_id,
+				       "/EphyFullscreenFramedDocumentPopup/" LOOKUP_ACTION "Menu",
+				       verb, verb,
+				       GTK_UI_MANAGER_MENUITEM, FALSE);
 	}
 
 	g_list_free (bmks);
@@ -366,8 +368,16 @@ rebuild_ui (WindowData *data)
 			       GDICT_ACTION "IDP", GDICT_ACTION,
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
 	gtk_ui_manager_add_ui (manager, ui_id,
+			       "/EphyFullscreenDocumentPopup/" LOOKUP_ACTION "Menu",
+			       GDICT_ACTION "FSIDP", GDICT_ACTION,
+			       GTK_UI_MANAGER_MENUITEM, FALSE);
+	gtk_ui_manager_add_ui (manager, ui_id,
 			       "/EphyFramedDocumentPopup/" LOOKUP_ACTION "Menu",
 			       GDICT_ACTION "IFDP", GDICT_ACTION,
+			       GTK_UI_MANAGER_MENUITEM, FALSE);
+	gtk_ui_manager_add_ui (manager, ui_id,
+			       "/EphyFullscreenFramedDocumentPopup/" LOOKUP_ACTION "Menu",
+			       GDICT_ACTION "FSIFDP", GDICT_ACTION,
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
 
 	gtk_ui_manager_ensure_update (manager);
@@ -513,9 +523,9 @@ smart_bookmark_changed_cb (EphyNode *node,
 }
 
 static void
-tab_added_cb (GtkWidget *notebook,
-	      EphyTab *tab,
-	      EphyWindow *window)
+impl_attach_tab (EphyExtension *extension,
+		 EphyWindow *window,
+		 EphyTab *tab)
 {
 	EphyEmbed *embed;
 
@@ -527,9 +537,9 @@ tab_added_cb (GtkWidget *notebook,
 }
 
 static void
-tab_removed_cb (GtkWidget *notebook,
-		EphyTab *tab,
-		EphyWindow *window)
+impl_detach_tab (EphyExtension *extension,
+		 EphyWindow *window,
+		 EphyTab *tab)
 {
 	EphyEmbed *embed;
 
@@ -577,37 +587,20 @@ static GtkActionEntry action_entries [] =
 	  NULL,
 	  G_CALLBACK (search_gnome_dict_cb)
 	},
-	{ "SmartBookmarksPrefs",
-	  NULL,
-	  N_("Loo_k-Up Preferences"),
-	  NULL, /* shortcut key */
-	  N_("Look up your selection"),
-	  G_CALLBACK (smart_bookmarks_show_prefs_ui_cb)
-	}
 };
-static const guint n_action_entries = G_N_ELEMENTS (action_entries);
 
 static void
 impl_attach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
 	GtkActionGroup *action_group;
-	GtkWidget *notebook;
 	WindowData *data;
 	EphyBookmarks *bookmarks;
 	GPtrArray *children;
 	EphyNode *smart_bmks, *bmk;
-	GList *tabs, *l;
 	int i;
 
 	LOG ("SmartBookmarksExtension attach_window %p", window)
-
-	notebook = ephy_window_get_notebook (window);
-
-	g_signal_connect_after (notebook, "tab_added",
-			G_CALLBACK (tab_added_cb), window);
-	g_signal_connect_after (notebook, "tab_removed",
-			G_CALLBACK (tab_removed_cb), window);
 
 	/* Attach ui infos to the window */
 	data = g_new0 (WindowData, 1);
@@ -620,7 +613,7 @@ impl_attach_window (EphyExtension *ext,
 			  G_CALLBACK (connect_proxy_cb), NULL);
 	gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
 	gtk_action_group_add_actions (action_group, action_entries,
-				      n_action_entries, window);
+				      G_N_ELEMENTS (action_entries), window);
 
 	data->manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
 	data->action_group = action_group;
@@ -640,14 +633,6 @@ impl_attach_window (EphyExtension *ext,
 	gtk_ui_manager_insert_action_group (data->manager, action_group, -1);
 	g_object_unref (action_group);
 
-	/* Sync open tabs */
-	tabs = ephy_window_get_tabs (window);
-	for (l = tabs; l != NULL; l = l->next)
-	{
-		tab_added_cb (notebook, (EphyTab *) l->data, window);
-	}
-	g_list_free (tabs);
-
 	/* now add the UI to the window */
 	rebuild_ui (data);
 }
@@ -656,8 +641,6 @@ static void
 impl_detach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
-	GtkWidget *notebook;
-	GList *tabs, *l;
 	WindowData *data;
 
 	LOG ("SmartBookmarksExtension detach_window")
@@ -669,20 +652,6 @@ impl_detach_window (EphyExtension *ext,
 	gtk_ui_manager_ensure_update (data->manager);
 	gtk_ui_manager_remove_action_group (data->manager, data->action_group);
 
-	notebook = ephy_window_get_notebook (window);
-
-	g_signal_handlers_disconnect_by_func
-		(notebook, G_CALLBACK (tab_added_cb), window);
-	g_signal_handlers_disconnect_by_func
-		(notebook, G_CALLBACK (tab_removed_cb), window);
-
-	tabs = ephy_window_get_tabs (window);
-	for (l = tabs; l != NULL; l = l->next)
-	{
-		tab_removed_cb (notebook, (EphyTab *) l->data, window);
-	}
-	g_list_free (tabs);
-
 	g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, NULL);
 }
 
@@ -691,6 +660,8 @@ smart_bookmarks_extension_iface_init (EphyExtensionIface *iface)
 {
 	iface->attach_window = impl_attach_window;
 	iface->detach_window = impl_detach_window;
+	iface->attach_tab = impl_attach_tab;
+	iface->detach_tab = impl_detach_tab;
 }
 
 static void
@@ -721,20 +692,6 @@ smart_bookmarks_extension_init (SmartBookmarksExtension *extension)
 			(smart_bmks, EPHY_NODE_CHILD_CHANGED,
 			 (EphyNodeCallback) smart_bookmark_changed_cb,
 			 G_OBJECT (extension));
-
-	eel_gconf_monitor_add (CONF_DIR);
-}
-
-static void
-smart_bookmarks_extension_finalize (GObject *object)
-{
-//	SmartBookmarksExtension *extension = SMART_BOOKMARKS_EXTENSION (object);
-
-	LOG ("SmartBookmarksExtension finalising")
-
-	eel_gconf_monitor_remove (CONF_DIR);
-
-	G_OBJECT_CLASS (parent_class)->finalize (object);
 }
 
 static void
@@ -743,8 +700,6 @@ smart_bookmarks_extension_class_init (SmartBookmarksExtensionClass *klass)
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
 	parent_class = g_type_class_peek_parent (klass);
-
-	object_class->finalize = smart_bookmarks_extension_finalize;
 
 	g_type_class_add_private (object_class, sizeof (SmartBookmarksExtensionPrivate));
 }

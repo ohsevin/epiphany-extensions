@@ -6,9 +6,6 @@ extension_LTLIBRARIES = libsmartbookmarksextension.la
 libsmartbookmarksextension_la_SOURCES =	\
 	smart-bookmarks-extension.c	\
 	smart-bookmarks-extension.h	\
-	smart-bookmarks-prefs.h		\
-	smart-bookmarks-prefs-ui.c	\
-	smart-bookmarks-prefs-ui.h	\
         smart-bookmarks.c
 
 libsmartbookmarksextension_la_CPPFLAGS = \
@@ -27,10 +24,6 @@ libsmartbookmarksextension_la_LIBADD =	\
 	$(MOZILLA_COMPONENT_LIBS)
 
 libsmartbookmarksextension_la_LDFLAGS = -module -avoid-version
-
-glade_DATA = smart-bookmarks.glade
-
-gladedir = $(pkgdatadir)/glade
 
 extensionxmldir = $(extensiondir)
 extensionxml_in_files = smart-bookmarks.xml.in.in
