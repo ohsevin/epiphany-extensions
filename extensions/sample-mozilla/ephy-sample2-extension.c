@@ -111,7 +111,7 @@ ephy_sample2_extension_finalize (GObject *object)
 	G_OBJECT_CLASS (parent_class)->finalize (object);
 }
 
-static void
+static gboolean
 dom_mouse_down_cb (EphyEmbed *embed,
 		   EphyEmbedEvent *event,
 		   EphySample2Extension *extension)
@@ -122,6 +122,8 @@ dom_mouse_down_cb (EphyEmbed *embed,
 	LOG ("DOM Event %p", dom_event)
 
 	mozilla_do_something (dom_event);
+
+	return FALSE;
 }
 
 static void
