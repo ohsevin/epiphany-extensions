@@ -1,5 +1,11 @@
 2004-05-31  Christian Persch  <chpe@cvs.gnome.org>
 
+	* configure.ac:
+
+	Post-release version bump.
+
+2004-05-31  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/sample-mozilla/mozilla/Makefile.am:
 	* po/ca.po:
 	* po/cs.po:
