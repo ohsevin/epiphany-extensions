@@ -1,5 +1,14 @@
 2004-09-13  Christian Persch  <chpe@cvs.gnome.org>
 
+	=== Release 1.4.0 ===
+
+	* extensions/Makefile.am:
+	* include/Makefile.am:
+
+	Make distcheck succeed.
+
+2004-09-13  Christian Persch  <chpe@cvs.gnome.org>
+
 	* NEWS:
 	* configure.ac:
 
