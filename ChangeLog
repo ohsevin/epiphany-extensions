@@ -1,3 +1,9 @@
+2004-03-20  Anders Carlsson  <andersca@gnome.org>
+
+	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
+	(new_window_cb):
+	Build fix.
+	
 2004-03-19  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/certificates/ephy-certificates-extension.c:
