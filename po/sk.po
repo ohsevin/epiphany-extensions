@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-01 09:46+0100\n"
+"POT-Creation-Date: 2004-02-01 16:43+0100\n"
 "PO-Revision-Date: 2004-02-01 10:01+0100\n"
 "Last-Translator: Marcel Telka <marcel@telka.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
@@ -140,10 +140,10 @@ msgstr[0] "Okno '%s' (%d kariet)"
 msgstr[1] "Okno '%s' (%d karta)"
 msgstr[2] "Okno '%s' (%d karty)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:277
+#: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move Tab To Window"
 msgstr "Presunúť kartu do okna"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:278
+#: extensions/tabsmenu/ephy-tab-move-menu.c:284
 msgid "Move the current tab to a different window"
 msgstr "Presunúť aktuálnu kartu do iného okna"

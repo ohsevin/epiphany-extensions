@@ -7,7 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
-"POT-Creation-Date: 2004-01-02 19:45+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-02-01 16:43+0100\n"
 "PO-Revision-Date: 2004-01-02 19:45+0100\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -16,9 +17,98 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#. stock icon
+#: extensions/certificates/ephy-certificates-extension.c:214
+#, fuzzy
+msgid "Server _Certificate"
+msgstr "Certifikat"
+
+#. shortcut key
+#: extensions/certificates/ephy-certificates-extension.c:216
+#, fuzzy
+msgid "Display the web server's certificate"
+msgstr "Visa tack till webbläsarens författare"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:83
+#, fuzzy
+msgid "_Validate"
+msgstr "_Evaluera"
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:85
+msgid "Display HTML errors in the Error Viewer dialog"
+msgstr ""
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:90
+#, fuzzy
+msgid "_Error Viewer"
+msgstr "Fel: "
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:92
+#, fuzzy
+msgid "Display web page errors"
+msgstr "Visa hjälp för webbläsaren"
+
+#: extensions/error-viewer/error-viewer.glade.h:1
+msgid "C_lear"
+msgstr "T_öm"
+
+#: extensions/error-viewer/error-viewer.glade.h:2
+#, fuzzy
+msgid "Error Viewer"
+msgstr "Fel: "
+
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:106
+#, fuzzy, c-format
+msgid ""
+"Javascript error in %s on line %d:\n"
+"%s"
+msgstr "Javascript-konsoll"
+
+#: extensions/error-viewer/opensp/validate.cpp:152
+#, c-format
+msgid ""
+"HTML error in %s on line %s:\n"
+"%s"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:162
+#, c-format
+msgid ""
+"HTML Validation of %s complete\n"
+"Found %d error"
+msgid_plural ""
+"HTML Validation of %s complete\n"
+"Found %d errors"
+msgstr[0] ""
+msgstr[1] ""
+
+#: extensions/error-viewer/sgml-validator.c:216
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"Doctype is XHTML but content type is text/html"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:230
+#, c-format
+msgid ""
+"HTML warning in %s:\n"
+"Doctype is XHTML but content type is text/html"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:366
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"No valid doctype specified."
+msgstr ""
+
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
-msgid "Block _Popups from this Site"
-msgstr "Blockera _popupfönster från denna webbplats"
+#, fuzzy
+msgid "Blo_ck Popups from this Site"
+msgstr "Blockera popupfönster från denna webbplats"
 
 #. shortcut key
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:64
@@ -32,23 +122,23 @@ msgid_plural "%d popups blocked"
 msgstr[0] "%d popupfönster blockerat"
 msgstr[1] "%d popupfönster blockerade"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:181
+#: extensions/tabsmenu/ephy-tab-move-menu.c:185
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"
 msgstr[0] "Fönster \"%s\" (%d flik)"
 msgstr[1] "Fönster \"%s\" (%d flikar)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:272
+#: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move Tab To Window"
 msgstr "Flytta flik till fönster"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:273
+#: extensions/tabsmenu/ephy-tab-move-menu.c:284
 msgid "Move the current tab to a different window"
 msgstr "Flytta den aktuella fliken till ett annat fönster"
 
-#~ msgid "Block Popups from this Site"
-#~ msgstr "Blockera popupfönster från denna webbplats"
+#~ msgid "Block _Popups from this Site"
+#~ msgstr "Blockera _popupfönster från denna webbplats"
 
 #~ msgid "Epiphany automation"
 #~ msgstr "Epiphany-automation"
@@ -1291,9 +1381,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "_About"
 #~ msgstr "_Om"
 
-#~ msgid "Display credits for the web browser creators"
-#~ msgstr "Visa tack till webbläsarens författare"
-
 #~ msgid "Type a topic"
 #~ msgstr "Ange ett ämne"
 
@@ -1414,9 +1501,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "Clear history"
 #~ msgstr "Töm historik"
-
-#~ msgid "C_lear"
-#~ msgstr "T_öm"
 
 #~ msgid "Clear browsing history?"
 #~ msgstr "Töm bläddringshistorik?"
@@ -1753,9 +1837,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "Detach current tab"
 #~ msgstr "Ta loss den aktuella fliken"
-
-#~ msgid "Display web browser help"
-#~ msgstr "Visa hjälp för webbläsaren"
 
 #~ msgid "_Save Background As..."
 #~ msgstr "_Spara bakgrund som..."
@@ -4021,9 +4102,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "Untitled folder"
 #~ msgstr "Namnlös mapp"
 
-#~ msgid "Error: "
-#~ msgstr "Fel: "
-
 #~ msgid "Warning: "
 #~ msgstr "Varning: "
 
@@ -5224,9 +5302,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "Images on this page:"
 #~ msgstr "Bilder på denna sida:"
 
-#~ msgid "Javascript console"
-#~ msgstr "Javascript-konsoll"
-
 #~ msgid "L_ocation"
 #~ msgstr "_Plats"
 
@@ -5265,9 +5340,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "Wi_dth"
 #~ msgstr "Bre_dd"
-
-#~ msgid "_Evaluate"
-#~ msgstr "_Evaluera"
 
 #~ msgid "_Forms"
 #~ msgstr "_Formulär"
@@ -7028,9 +7100,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "Bottom"
 #~ msgstr "Nederkant"
-
-#~ msgid "Certificates"
-#~ msgstr "Certifikat"
 
 #~ msgid "Charsets"
 #~ msgstr "Teckentabeller"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-01-31 13:36+0100\n"
+"POT-Creation-Date: 2004-02-01 16:43+0100\n"
 "PO-Revision-Date: 2004-01-31 13:39+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian <i18n-nb@lister.ping.uio.no>\n"
@@ -15,6 +15,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8Bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. stock icon
+#: extensions/certificates/ephy-certificates-extension.c:214
+msgid "Server _Certificate"
+msgstr ""
+
+#. shortcut key
+#: extensions/certificates/ephy-certificates-extension.c:216
+msgid "Display the web server's certificate"
+msgstr ""
 
 #: extensions/error-viewer/ephy-error-viewer-extension.c:83
 msgid "_Validate"
@@ -51,7 +61,7 @@ msgstr ""
 "Javascript-feil i %s på linje %d:\n"
 "%s"
 
-#: extensions/error-viewer/opensp/validate.cpp:146
+#: extensions/error-viewer/opensp/validate.cpp:152
 #, c-format
 msgid ""
 "HTML error in %s on line %s:\n"
@@ -60,7 +70,7 @@ msgstr ""
 "HTML-feil i %s på linje %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:157
+#: extensions/error-viewer/sgml-validator.c:162
 #, c-format
 msgid ""
 "HTML Validation of %s complete\n"
@@ -75,16 +85,7 @@ msgstr[1] ""
 "HTML-validering av %s er fullført\n"
 "Fant %d feil"
 
-#: extensions/error-viewer/sgml-validator.c:202
-#, c-format
-msgid ""
-"HTML error in %s:\n"
-"No valid doctype specified."
-msgstr ""
-"HTML-feil i %s:\n"
-"Ingen gyldig dokumenttype spesifisert."
-
-#: extensions/error-viewer/sgml-validator.c:223
+#: extensions/error-viewer/sgml-validator.c:216
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -93,7 +94,7 @@ msgstr ""
 "HTML-feil i %s:\n"
 "Dokumenttypen er XHTML, men innholdstypen er text/html"
 
-#: extensions/error-viewer/sgml-validator.c:237
+#: extensions/error-viewer/sgml-validator.c:230
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
@@ -101,6 +102,15 @@ msgid ""
 msgstr ""
 "HTML-advarsel i %s:\n"
 "Dokumenttypen er XHTML, men innholdstypen er text/html"
+
+#: extensions/error-viewer/sgml-validator.c:366
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"No valid doctype specified."
+msgstr ""
+"HTML-feil i %s:\n"
+"Ingen gyldig dokumenttype spesifisert."
 
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
 msgid "Blo_ck Popups from this Site"
@@ -125,10 +135,10 @@ msgid_plural "Window '%s' (%d tabs)"
 msgstr[0] "Vindu «%s» (%d fane)"
 msgstr[1] "Vindu «%s» (%d faner)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:277
+#: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move Tab To Window"
 msgstr "Flytt fane til vindu"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:278
+#: extensions/tabsmenu/ephy-tab-move-menu.c:284
 msgid "Move the current tab to a different window"
 msgstr "Flytt denne fanen til et annet vindu"

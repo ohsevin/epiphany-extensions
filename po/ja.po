@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany Plugins 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-01-02 08:15+0100\n"
+"POT-Creation-Date: 2004-02-01 16:43+0100\n"
 "PO-Revision-Date: 2003-08-03 20:29+0200\n"
 "Last-Translator: Christian Persch  <chpe+ephyplugins@stud.uni-saarland.de>\n"
 "Language-Team: \n"
@@ -18,8 +18,90 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#. stock icon
+#: extensions/certificates/ephy-certificates-extension.c:214
+msgid "Server _Certificate"
+msgstr ""
+
+#. shortcut key
+#: extensions/certificates/ephy-certificates-extension.c:216
+msgid "Display the web server's certificate"
+msgstr ""
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:83
+msgid "_Validate"
+msgstr ""
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:85
+msgid "Display HTML errors in the Error Viewer dialog"
+msgstr ""
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:90
+msgid "_Error Viewer"
+msgstr ""
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:92
+msgid "Display web page errors"
+msgstr ""
+
+#: extensions/error-viewer/error-viewer.glade.h:1
+msgid "C_lear"
+msgstr ""
+
+#: extensions/error-viewer/error-viewer.glade.h:2
+msgid "Error Viewer"
+msgstr ""
+
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:106
+#, c-format
+msgid ""
+"Javascript error in %s on line %d:\n"
+"%s"
+msgstr ""
+
+#: extensions/error-viewer/opensp/validate.cpp:152
+#, c-format
+msgid ""
+"HTML error in %s on line %s:\n"
+"%s"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:162
+#, c-format
+msgid ""
+"HTML Validation of %s complete\n"
+"Found %d error"
+msgid_plural ""
+"HTML Validation of %s complete\n"
+"Found %d errors"
+msgstr[0] ""
+msgstr[1] ""
+
+#: extensions/error-viewer/sgml-validator.c:216
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"Doctype is XHTML but content type is text/html"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:230
+#, c-format
+msgid ""
+"HTML warning in %s:\n"
+"Doctype is XHTML but content type is text/html"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:366
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"No valid doctype specified."
+msgstr ""
+
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
-msgid "Block _Popups from this Site"
+msgid "Blo_ck Popups from this Site"
 msgstr ""
 
 #. shortcut key
@@ -34,18 +116,18 @@ msgid_plural "%d popups blocked"
 msgstr[0] ""
 msgstr[1] ""
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:181
+#: extensions/tabsmenu/ephy-tab-move-menu.c:185
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"
 msgstr[0] "ウインドウ「%s」(%dタブ)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:272
+#: extensions/tabsmenu/ephy-tab-move-menu.c:283
 #, fuzzy
 msgid "Move Tab To Window"
 msgstr "タブを他のウインドウへ(_M)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:273
+#: extensions/tabsmenu/ephy-tab-move-menu.c:284
 msgid "Move the current tab to a different window"
 msgstr "現在のタブを他のウインドウへ移動する"
 
