@@ -16,10 +16,10 @@ dnl 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 dnl
 dnl $Id$
 
-AC_INIT([Epiphany Extensions], [1.4.0], [http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions], [epiphany-extensions])
+AC_INIT([Epiphany Extensions], [1.5.0], [http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions], [epiphany-extensions])
 GNOME_COMMON_INIT
 
-EPIPHANY_EXTENSIONS_MAJOR=1.4
+EPIPHANY_EXTENSIONS_MAJOR=1.5
 AC_SUBST(EPIPHANY_EXTENSIONS_MAJOR)
 
 AC_PREREQ(2.57)
@@ -62,7 +62,7 @@ dnl ********************************
 
 ALL_LINGUAS="bg ca cs da de el en_CA en_GB es fr hr hu it ja ko lt nl no pa pl pt pt_BR ru sk sq sr sr@Latn sv uk wa zh_CN"
 
-GETTEXT_PACKAGE=epiphany-extensions-1.2
+GETTEXT_PACKAGE=epiphany-extensions-1.6
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
 AM_GLIB_GNU_GETTEXT
@@ -71,7 +71,7 @@ dnl ********************************
 dnl pkg config checks
 dnl ********************************
 
-EPIPHANY_REQUIRED=1.4.0
+EPIPHANY_REQUIRED=1.5.0
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.4.0
 LIBGTK_REQUIRED=2.4.0
