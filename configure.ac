@@ -365,7 +365,7 @@ AC_MSG_RESULT([$result])
 
 dnl Find extension needs toolkit nsITypeAheadFind
 
-if echo "$extensions" | egrep '(^|,)find($|,)' > /dev/null; then
+if echo "$EXTENSIONS" | egrep '(^| )find($| )' > /dev/null; then
 	AC_CHECK_FILE([$MOZILLA_INCLUDE_ROOT/fastfind/nsITypeAheadFind.h],
 	        [AC_DEFINE([HAVE_FASTFIND_NSITYPEAHEADFIND_H],[1],[Define if we have toolkit's nsITypeAheadFind])],
 		[AC_MSG_ERROR([Find extension needs toolkit's nsITypeAheadFind])])
