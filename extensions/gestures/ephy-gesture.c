@@ -161,6 +161,17 @@ mouse_release_cb (GtkWidget *widget,
 	return TRUE;
 }
 
+static gboolean
+unmap_event_cb (GtkWidget *width,
+		GdkEvent *event,
+		EphyGesture *gesture)
+{
+	/* ungrab and disconnect */
+	ephy_gesture_stop (gesture);
+
+	return FALSE;
+}
+
 void
 ephy_gesture_start (EphyGesture *gesture)
 {
@@ -190,6 +201,8 @@ ephy_gesture_start (EphyGesture *gesture)
 			  G_CALLBACK (cancel_cb), gesture);
 	g_signal_connect (window, "key_press_event",
 			  G_CALLBACK (cancel_cb), gesture);
+	g_signal_connect (window, "unmap-event",
+			 G_CALLBACK (unmap_event_cb), gesture);
 
 	gtk_grab_add (window);
 	gdk_keyboard_grab (window->window, FALSE, gtk_get_current_event_time ());
