@@ -1,3 +1,10 @@
+2005-01-25  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* epiphany-extensions/extensions/sample-mozilla/ephy-sample2-extension.c:
+
+	Implement EphyExtension's attach_window/detach_window interface
+	instead of simulating them.
+
 2005-01-24  Christian Persch,,,  <chpe@cvs.gnome.org>
 
 	* configure.ac:

@@ -73,43 +73,12 @@ dom_mouse_down_cb (EphyEmbed *embed,
 	gpointer dom_event;
 
 	dom_event = ephy_embed_event_get_dom_event (event);
+
 	LOG ("DOM Event %p", dom_event)
 
 	mozilla_do_something (dom_event);
 
 	return FALSE;
-}
-
-static void
-tab_added_cb (GtkWidget *notebook,
-	      EphyTab *tab,
-	      EphySample2Extension *extension)
-{
-	EphyEmbed *embed;
-
-	g_return_if_fail (EPHY_IS_TAB (tab));
-
-	embed = ephy_tab_get_embed (tab);
-	g_return_if_fail (EPHY_IS_EMBED (embed));
-
-	g_signal_connect (embed, "ge_dom_mouse_down",
-			  G_CALLBACK (dom_mouse_down_cb), extension);
-}
-
-static void
-tab_removed_cb (EphyEmbed *notebook,
-		EphyTab *tab,
-		EphySample2Extension *extension)
-{
-	EphyEmbed *embed;
-
-	g_return_if_fail (EPHY_IS_TAB (tab));
-
-	embed = ephy_tab_get_embed (tab);
-	g_return_if_fail (EPHY_IS_EMBED (embed));
-
-	g_signal_handlers_disconnect_by_func
-		(embed, G_CALLBACK (dom_mouse_down_cb), extension);
 }
 
 static void
@@ -121,11 +90,6 @@ impl_attach_window (EphyExtension *ext,
 	LOG ("EphySample2Extension attach_window")
 
 	notebook = ephy_window_get_notebook (window);
-
-	g_signal_connect_after (notebook, "tab_added",
-				G_CALLBACK (tab_added_cb), ext);
-	g_signal_connect_after (notebook, "tab_removed",
-				G_CALLBACK (tab_removed_cb), ext);
 }
 
 static void
@@ -137,11 +101,6 @@ impl_detach_window (EphyExtension *ext,
 	LOG ("EphySample2Extension detach_window")
 
 	notebook = ephy_window_get_notebook (window);
-
-	g_signal_handlers_disconnect_by_func
-		(notebook, G_CALLBACK (tab_added_cb), ext);
-	g_signal_handlers_disconnect_by_func
-		(notebook, G_CALLBACK (tab_removed_cb), ext);
 }
 
 static void
@@ -149,7 +108,17 @@ impl_attach_tab (EphyExtension *ext,
 		 EphyWindow *window,
 		 EphyTab *tab)
 {
-	LOG ("attach_tab")
+	EphyEmbed *embed;
+
+	LOG ("impl_attach_tab")
+
+	g_return_if_fail (EPHY_IS_TAB (tab));
+
+	embed = ephy_tab_get_embed (tab);
+	g_return_if_fail (EPHY_IS_EMBED (embed));
+
+	g_signal_connect (embed, "ge_dom_mouse_down",
+			  G_CALLBACK (dom_mouse_down_cb), ext);
 }
 
 static void
@@ -157,7 +126,17 @@ impl_detach_tab (EphyExtension *ext,
 		 EphyWindow *window,
 		 EphyTab *tab)
 {
-	LOG ("detach_tab")
+	EphyEmbed *embed;
+
+	LOG ("impl_detach_tab")
+
+	g_return_if_fail (EPHY_IS_TAB (tab));
+
+	embed = ephy_tab_get_embed (tab);
+	g_return_if_fail (EPHY_IS_EMBED (embed));
+
+	g_signal_handlers_disconnect_by_func
+		(embed, G_CALLBACK (dom_mouse_down_cb), ext);
 }
 
 static void
