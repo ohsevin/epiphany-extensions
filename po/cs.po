@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-27 19:12+0200\n"
-"PO-Revision-Date: 2004-09-28 02:16+0200\n"
+"POT-Creation-Date: 2004-10-09 18:49+0200\n"
+"PO-Revision-Date: 2004-10-10 00:14+0200\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -267,7 +267,7 @@ msgid "_Save Image As..."
 msgstr "_Uložit obrázek jako..."
 
 #: extensions/page-info/page-info-dialog.c:992
-#: extensions/page-info/page-info-dialog.c:1169
+#: extensions/page-info/page-info-dialog.c:1210
 msgid "URL"
 msgstr "URL"
 
@@ -276,7 +276,7 @@ msgid "Alt Text"
 msgstr "Alternativní text"
 
 #: extensions/page-info/page-info-dialog.c:1016
-#: extensions/page-info/page-info-dialog.c:1181
+#: extensions/page-info/page-info-dialog.c:1222
 msgid "Title"
 msgstr "Nadpis"
 
@@ -288,19 +288,23 @@ msgstr "Šířka"
 msgid "Height"
 msgstr "Výška"
 
-#: extensions/page-info/page-info-dialog.c:1193
+#: extensions/page-info/page-info-dialog.c:1176
+msgid "_Copy Link Address"
+msgstr "_Kopírovat adresu odkazu"
+
+#: extensions/page-info/page-info-dialog.c:1234
 msgid "Relation"
 msgstr "Vztah"
 
-#: extensions/page-info/page-info-dialog.c:1304
+#: extensions/page-info/page-info-dialog.c:1345
 msgid "Name"
 msgstr "Název"
 
-#: extensions/page-info/page-info-dialog.c:1316
+#: extensions/page-info/page-info-dialog.c:1357
 msgid "Method"
 msgstr "Metoda"
 
-#: extensions/page-info/page-info-dialog.c:1328
+#: extensions/page-info/page-info-dialog.c:1369
 msgid "Action"
 msgstr "Akce"
 
