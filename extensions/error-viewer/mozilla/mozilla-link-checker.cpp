@@ -132,7 +132,9 @@ mozilla_check_links (LinkChecker *checker,
 
 	nsCOMPtr<ErrorViewerURICheckerObserver> observer = do_CreateInstance
 		(G_ERRORVIEWERURICHECKEROBSERVER_CONTRACTID);
-	observer->Init (checker, ephy_embed_get_location (embed, FALSE));
+	char *url = ephy_embed_get_location (embed, FALSE);
+	observer->Init (checker, url);
+	g_free (url);
 
 	PRUint32 numLinks;
 	rv = links->GetLength (&numLinks);
