@@ -1,3 +1,10 @@
+2005-01-22  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/adblock/ad-uri-tester.c: (match_uri),
+	(ad_uri_tester_test_uri):
+
+	Calculate uri length once instead of once per regular expression.
+
 2005-01-21  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* configure.ac:

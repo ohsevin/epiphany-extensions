@@ -46,6 +46,12 @@ struct _AdUriTesterPrivate
 	GHashTable *whitelist;
 };
 
+typedef struct
+{
+	const char *uri;
+	unsigned int len;
+} UriWithLen;
+
 GType
 ad_uri_tester_get_type (void)
 {
@@ -85,18 +91,17 @@ ad_uri_tester_new (void)
 static gboolean
 match_uri (const char *pattern,
 	   const pcre *preg,
-	   const char *uri)
+	   const UriWithLen *uri_with_len)
 {
 	int ret;
-	int len;
 
-	len = g_utf8_strlen (uri, -1); /* TODO: cache this */
-
-	ret = pcre_exec (preg, NULL, uri, len, 0, PCRE_NO_UTF8_CHECK, NULL, 0);
+	ret = pcre_exec (preg, NULL, uri_with_len->uri, uri_with_len->len,
+			 0, PCRE_NO_UTF8_CHECK, NULL, 0);
 
 	if (ret >= 0)
 	{
-		LOG ("Blocking '%s' with pattern '%s'", uri, pattern)
+		LOG ("Blocking '%s' with pattern '%s'",
+		     uri_with_len->uri, pattern)
 
 		return TRUE;
 	}
@@ -118,14 +123,18 @@ ad_uri_tester_test_uri (AdUriTester *tester,
 			AdUriCheckType type)
 {
 	const char *pattern;
+	UriWithLen uri_with_len;
 
 	if (type == AD_URI_CHECK_TYPE_DOCUMENT)
 	{
 		return FALSE;
 	}
 
+	uri_with_len.uri = uri;
+	uri_with_len.len = g_utf8_strlen (uri, -1);
+
 	pattern = g_hash_table_find (tester->priv->blacklist,
-				     (GHRFunc) match_uri, (gpointer) uri);
+				     (GHRFunc) match_uri, &uri_with_len);
 
 	if (pattern == NULL)
 	{
@@ -133,7 +142,7 @@ ad_uri_tester_test_uri (AdUriTester *tester,
 	}
 
 	pattern = g_hash_table_find (tester->priv->whitelist,
-				     (GHRFunc) match_uri, (gpointer) uri);
+				     (GHRFunc) match_uri, &uri_with_len);
 
 	return pattern == NULL;
 }
