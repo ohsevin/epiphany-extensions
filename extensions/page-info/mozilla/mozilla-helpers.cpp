@@ -1,4 +1,4 @@
-  /*
+/*
  *  Copyright (C) 2004 Adam Hooper
  *  Copyright (C) 2004 Jean-François Rameau
  *  Copyright (C) 2004 Christian Persch
