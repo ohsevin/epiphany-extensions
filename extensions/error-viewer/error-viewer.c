@@ -105,7 +105,9 @@ error_viewer_register_type (GTypeModule *module)
 ErrorViewer *
 error_viewer_new (void)
 {
-	return ERROR_VIEWER (g_object_new (TYPE_ERROR_VIEWER, NULL));
+	return ERROR_VIEWER (g_object_new (TYPE_ERROR_VIEWER,
+					   "persist-position", TRUE,
+					   NULL));
 }
 
 static void

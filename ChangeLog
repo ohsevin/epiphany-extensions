@@ -1,3 +1,9 @@
+2004-03-15  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/error-viewer/error-viewer.c: (error_viewer_new):
+
+	Persist position. Fixes bug #137186
+
 2004-03-14  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/popup-blocker/ephy-popup-blocker-list.c:
