@@ -1,13 +1,14 @@
 Marco Pesenti Gritti <marco@it.gnome.org>
 
-Popup blocker:
-Error viewer:
+Error Viewer:
+Select Stylesheet:
 
 	Adam Hooper <adamh@cvs.gnome.org>
 
-Tabs menu:
+Tabs Menu:
 Certificates:
 Sample:
+Sample-Mozilla:
 Gestures:
 
 	Christian Persch <chpe@gnome.org>
@@ -22,3 +23,9 @@ Tab Grouper:
 Smart Bookmarks:
 	Jean-François Rameau <jf.rameau@wanadoo.fr>
 
+Page Info:
+	Adam Hooper <adamh@cvs.gnome.org>
+	Christian Persch <chpe@gnome.org>
+
+Sidebar:
+	Crispin Flowerday <gnome@flowerday.cx>

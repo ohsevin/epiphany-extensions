@@ -10,4 +10,5 @@ EXTRA_DIST =				\
 	egg-toolbars-model.h		\
 	ephy-favicon-cache.h		\
 	ephy-gui.h			\
+	ephy-prefs.h			\
 	ephy-string.h

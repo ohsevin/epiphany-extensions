@@ -49,7 +49,7 @@ AC_HEADER_STDC
 AC_PROG_INSTALL
 AC_PROG_MAKE_SET
 
-dnl AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
+AC_PATH_PROG([GLIB_GENMARSHAL], [glib-genmarshal])
 
 AC_SUBST(AM_CXXFLAGS)
 
@@ -136,10 +136,10 @@ dnl *******************************
 
 AC_MSG_CHECKING([extensions to build])
 
-all_extensions="adblock,certificates,dashboard,error-viewer,gestures,page-info,sample,sample-mozilla,select-stylesheet,smart-bookmarks,tabsmenu,tab-groups"
-all_useful_extensions="adblock,certificates,dashboard,error-viewer,gestures,page-info,select-stylesheet,smart-bookmarks,tab-groups,tabsmenu"
-default_extensions="adblock,certificates,error-viewer,gestures,page-info,select-stylesheet,smart-bookmarks,tab-groups,tabsmenu"
-mozilla_dependent_extensions="adblock,certificates,error-viewer,page-info,sample-mozilla,select-stylesheet,smart-bookmarks"
+all_extensions="adblock,certificates,dashboard,error-viewer,gestures,page-info,sample,sample-mozilla,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups"
+all_useful_extensions="adblock,certificates,dashboard,error-viewer,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tab-groups,tabsmenu"
+default_extensions="adblock,certificates,error-viewer,gestures,page-info,select-stylesheet,sidebar,smart-bookmarks,tabsmenu,tab-groups"
+mozilla_dependent_extensions="adblock,certificates,error-viewer,page-info,sample-mozilla,select-stylesheet,sidebar,smart-bookmarks"
 
 dnl due to an autoconf bug, commas in the first arg to
 dnl AC_HELP_STRING cause problems.
@@ -193,6 +193,7 @@ AM_CONDITIONAL(ENABLE_PAGE_INFO_EXTENSION, echo "$extensions" | egrep '(^|,)page
 AM_CONDITIONAL(ENABLE_SAMPLE_EXTENSION, echo "$extensions" | egrep '(^|,)sample($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SAMPLE_MOZILLA_EXTENSION, echo "$extensions" | egrep '(^|,)sample-mozilla($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SELECT_STYLESHEET_EXTENSION, echo "$extensions" | egrep '(^|,)select-stylesheet($|,)' > /dev/null)
+AM_CONDITIONAL(ENABLE_SIDEBAR_EXTENSION, echo "$extensions" | egrep '(^|,)sidebar($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SMART_BOOKMARKS_EXTENSION, echo "$extensions" | egrep '(^|,)smart-bookmarks($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_TABSMENU_EXTENSION, echo "$extensions" | egrep '(^|,)tabsmenu($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_TAB_GROUPS_EXTENSION, echo "$extensions" | egrep '(^|,)tab-groups($|,)' > /dev/null)
@@ -369,6 +370,8 @@ extensions/sample-mozilla/Makefile
 extensions/sample-mozilla/mozilla/Makefile
 extensions/select-stylesheet/Makefile
 extensions/select-stylesheet/mozilla/Makefile
+extensions/sidebar/Makefile
+extensions/sidebar/mozilla/Makefile
 extensions/smart-bookmarks/Makefile
 extensions/smart-bookmarks/mozilla/Makefile
 extensions/tabsmenu/Makefile
