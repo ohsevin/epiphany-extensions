@@ -121,8 +121,7 @@ ErrorViewerConsoleListener::GetMessageFromError (nsIScriptError *aError,
 	NS_ENSURE_SUCCESS (rv, rv);
 
 	nsEmbedCString cSourceName;
-	NS_UTF16ToCString (nsEmbedString (sourceName),
-			   NS_CSTRING_ENCODING_UTF8, cSourceName);
+	NS_UTF16ToCString (sourceName, NS_CSTRING_ENCODING_UTF8, cSourceName);
 #else
 	PRUnichar *sourceName = nsnull;
 	rv = aError->GetSourceName (&sourceName);
