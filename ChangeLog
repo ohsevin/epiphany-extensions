@@ -1,5 +1,18 @@
 2004-03-15  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/popup-blocker/ephy-popup-blocker-list.c:
+	(window_visible_cb), (free_blocked_popup),
+	(ephy_popup_blocker_list_insert_window),
+	(ephy_popup_blocker_list_show_all),
+	(ephy_popup_blocker_list_hide_all):
+
+	Connect popup windows' "notify::visible" to notify the list's "count"
+	instead of only notifying on show_all and hide_all. Fixes the icon
+	showing up even when windows aren't blocked. Not to mention, it's more
+	logical.
+
+2004-03-15  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
 	(update_action_without_address):
 	* extensions/popup-blocker/mozilla/mozilla-helpers.cpp:

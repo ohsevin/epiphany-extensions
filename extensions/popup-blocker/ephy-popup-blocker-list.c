@@ -136,6 +136,17 @@ ephy_popup_blocker_list_insert (EphyPopupBlockerList *list,
 	g_object_notify (G_OBJECT (list), "count");
 }
 
+static void
+window_visible_cb (EphyWindow *widget,
+		   GParamSpec *pspec,
+		   EphyPopupBlockerList *list)
+{
+	g_return_if_fail (EPHY_IS_WINDOW (widget));
+	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (list));
+
+	g_object_notify (G_OBJECT (list), "count");
+}
+
 /* FIXME: Have to declare a function here, the next three functions depend on
  * each other recursively */
 static void ephy_popup_blocker_list_remove_window (EphyPopupBlockerList *list, EphyWindow *window);
@@ -165,6 +176,9 @@ free_blocked_popup (BlockedPopup *popup)
 		g_signal_handlers_disconnect_matched
 			(popup->window, G_SIGNAL_MATCH_FUNC, 0, 0, NULL,
 			 window_destroy_cb, NULL);
+		g_signal_handlers_disconnect_matched
+			(popup->window, G_SIGNAL_MATCH_FUNC, 0, 0, NULL,
+			 window_visible_cb, NULL);
 
 		if (GTK_WIDGET_VISIBLE (popup->window) == FALSE)
 		{
@@ -223,6 +237,8 @@ ephy_popup_blocker_list_insert_window (EphyPopupBlockerList *list,
 
 	g_signal_connect (window, "destroy",
 			  G_CALLBACK (window_destroy_cb), list);
+	g_signal_connect (window, "notify::visible",
+			  G_CALLBACK (window_visible_cb), list);
 
 	LOG ("Added allowed popup to list %p: window %p\n", list, window)
 
@@ -390,8 +406,6 @@ ephy_popup_blocker_list_show_all (EphyPopupBlockerList *list)
 			t = t->next;
 		}
 	}
-
-	g_object_notify (G_OBJECT (list), "count");
 }
 
 void
@@ -420,6 +434,4 @@ ephy_popup_blocker_list_hide_all (EphyPopupBlockerList *list)
 			gtk_widget_hide (GTK_WIDGET (popup->window));
 		}
 	}
-
-	g_object_notify (G_OBJECT (list), "count");
 }
