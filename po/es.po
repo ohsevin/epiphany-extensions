@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-01-30 02:22+0100\n"
-"PO-Revision-Date: 2005-01-30 02:32+0100\n"
+"POT-Creation-Date: 2005-02-12 16:39+0100\n"
+"PO-Revision-Date: 2005-02-12 16:45+0100\n"
 "Last-Translator: Francisco Javier F. Serrador <serrador@cvs.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,6 +17,106 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.9.1\n"
+
+#: ../extensions/actions/action-properties.glade.h:1
+msgid "<span weight=\"bold\">Applies to</span>"
+msgstr "<span weight=\"bold\">Se aplica a</span>"
+
+#: ../extensions/actions/action-properties.glade.h:2
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">General</span>"
+
+#: ../extensions/actions/action-properties.glade.h:3
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"images."
+msgstr "Si se activa esta opción, la acción se incluirá en el menú emergente de imágenes."
+
+#: ../extensions/actions/action-properties.glade.h:4
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"links and pages."
+msgstr "Si se activa esta opción, la acción se incluirá en el menú emergente de enlaces y páginas."
+
+#: ../extensions/actions/action-properties.glade.h:5
+msgid "The action description."
+msgstr "La descripción de la acción."
+
+#: ../extensions/actions/action-properties.glade.h:6
+msgid ""
+"The action name. If a character is preceded by an underscore, that character "
+"will be used as the access key for the menu item."
+msgstr "El nombre de la acción. Si se precede un carácter de un guión bajo, ese carácter se usará para la combinación de teclas para el elemento del menú."
+
+#: ../extensions/actions/action-properties.glade.h:7
+msgid ""
+"The command to execute when the action is activated. The URL of the link, "
+"image or page will be appended to the command."
+msgstr "El comando que se va a ejecutar cuando se active la acción. La URL del enlace, imagen o página será agregada al comando."
+
+#: ../extensions/actions/action-properties.glade.h:8
+msgid "_Command:"
+msgstr "_Comando:"
+
+#: ../extensions/actions/action-properties.glade.h:9
+msgid "_Description:"
+msgstr "_Descripción:"
+
+#: ../extensions/actions/action-properties.glade.h:10
+msgid "_Images"
+msgstr "_Imágenes"
+
+#: ../extensions/actions/action-properties.glade.h:11
+msgid "_Name:"
+msgstr "_Nombre:"
+
+#: ../extensions/actions/action-properties.glade.h:12
+msgid "_Pages"
+msgstr "_Páginas"
+
+#: ../extensions/actions/actions-editor.glade.h:1
+msgid "Actions"
+msgstr "Acciones"
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:490
+msgid "No action selected."
+msgstr "No se ha seleccionado ninguna acción."
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:500
+#, c-format
+msgid "%i action selected."
+msgid_plural "%i actions selected."
+msgstr[0] "Se ha seleccionado %i acción."
+msgstr[1] "Se han seleccionado %i acciones."
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:312
+msgid "Add Action"
+msgstr "Añadir acción"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:421
+#, c-format
+msgid "%s Properties"
+msgstr "Propiedades de %s"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:426
+msgid "Action Properties"
+msgstr "Propiedades de acción"
+
+#: ../extensions/actions/ephy-actions-extension.c:97
+msgid "_Actions"
+msgstr "_Acciones"
+
+#: ../extensions/actions/ephy-actions-extension.c:98
+msgid "Customize actions"
+msgstr "Personalizar acciones"
+
+#: ../extensions/actions/ephy-actions-extension.c:409
+msgid "Could not run command"
+msgstr "No se pudo ejecutar el comando"
+
+#: ../extensions/actions/ephy-actions-extension.c:412
+msgid "Could not Run Command"
+msgstr "No se pudo ejecutar el comando"
 
 #: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
 msgid "_Edit Bookmarks"
@@ -55,22 +155,22 @@ msgid "Bookmarks"
 msgstr "Marcadores"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:269
+#: ../extensions/certificates/ephy-certificates-extension.c:275
 msgid "Manage _Certificates"
 msgstr "Administrar _certificados"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:271
+#: ../extensions/certificates/ephy-certificates-extension.c:277
 msgid "Manage your certificates"
 msgstr "Administra sus certificados"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:279
+#: ../extensions/certificates/ephy-certificates-extension.c:285
 msgid "Server _Certificate"
 msgstr "_Certificado del servidor"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:281
+#: ../extensions/certificates/ephy-certificates-extension.c:287
 msgid "Display the web server's certificate"
 msgstr "Mostrar el certificado del servidor web"
 
@@ -317,124 +417,124 @@ msgstr "Cumple con la mayoría de los estándares"
 msgid "Compatibility"
 msgstr "Compatibilidad"
 
-#: ../extensions/page-info/page-info-dialog.c:659
+#: ../extensions/page-info/page-info-dialog.c:660
 msgid "Undetermined"
 msgstr "Indeterminada"
 
-#: ../extensions/page-info/page-info-dialog.c:668
+#: ../extensions/page-info/page-info-dialog.c:669
 msgid "Not cached"
 msgstr "No cacheado"
 
-#: ../extensions/page-info/page-info-dialog.c:671
+#: ../extensions/page-info/page-info-dialog.c:672
 msgid "Disk cache"
 msgstr "Caché de disco"
 
-#: ../extensions/page-info/page-info-dialog.c:674
+#: ../extensions/page-info/page-info-dialog.c:675
 msgid "Memory cache"
 msgstr "Caché de memoria"
 
-#: ../extensions/page-info/page-info-dialog.c:677
+#: ../extensions/page-info/page-info-dialog.c:678
 msgid "Unknown cache"
 msgstr "Caché desconocido"
 
-#: ../extensions/page-info/page-info-dialog.c:693
-#: ../extensions/page-info/page-info-dialog.c:822
+#: ../extensions/page-info/page-info-dialog.c:694
+#: ../extensions/page-info/page-info-dialog.c:823
 msgid "Unknown"
 msgstr "Desconocido "
 
-#: ../extensions/page-info/pa
+#: ../extensions/page-info/page-info-dialog.c:699
 msgid "No referrer"
 msgstr "Sin referrer"
 
-#: ../extensions/page-info/page-info-dialog.c:712
-#: ../extensions/page-info/page-info-dialog.c:728
+#: ../extensions/page-info/page-info-dialog.c:713
+#: ../extensions/page-info/page-info-dialog.c:729
 msgid "Not specified"
 msgstr "Sin especificar"
 
-#: ../extensions/page-info/page-info-dialog.c:807
+#: ../extensions/page-info/page-info-dialog.c:808
 msgid "Image"
 msgstr "Imagen"
 
-#: ../extensions/page-info/page-info-dialog.c:810
+#: ../extensions/page-info/page-info-dialog.c:811
 msgid "Embed"
 msgstr "Embeber"
 
-#: ../extensions/page-info/page-info-dialog.c:813
+#: ../extensions/page-info/page-info-dialog.c:814
 msgid "Object"
 msgstr "Objeto"
 
-#: ../extensions/page-info/page-info-dialog.c:816
+#: ../extensions/page-info/page-info-dialog.c:817
 msgid "Applet"
 msgstr "Miniaplicación"
 
-#: ../extensions/page-info/page-info-dialog.c:819
+#: ../extensions/page-info/page-info-dialog.c:820
 msgid "Icon"
 msgstr "Icono"
 
-#: ../extensions/page-info/page-info-dialog.c:975
+#: ../extensions/page-info/page-info-dialog.c:976
 msgid "Save Medium As..."
 msgstr "Guardar soporte como..."
 
-#: ../extensions/page-info/page-info-dialog.c:992
+#: ../extensions/page-info/page-info-dialog.c:993
 msgid "Select a directory"
 msgstr "Seleccione un directorio"
 
-#: ../extensions/page-info/page-info-dialog.c:1093
+#: ../extensions/page-info/page-info-dialog.c:1094
 msgid "_Open"
 msgstr "_Abrir"
 
-#: ../extensions/page-info/page-info-dialog.c:1099
-#: ../extensions/page-info/page-info-dialog.c:1492
+#: ../extensions/page-info/page-info-dialog.c:1100
+#: ../extensions/page-info/page-info-dialog.c:1493
 msgid "_Copy Link Address"
 msgstr "_Copiar dirección del enlace"
 
-#: ../extensions/page-info/page-info-dialog.c:1105
+#: ../extensions/page-info/page-info-dialog.c:1106
 msgid "_Use as Background"
 msgstr "_Usar como fondo"
 
-#: ../extensions/page-info/page-info-dialog.c:1111
+#: ../extensions/page-info/page-info-dialog.c:1112
 msgid "_Save As..."
 msgstr "Guardar _como..."
 
-#: ../extensions/page-info/page-info-dialog.c:1296
-#: ../extensions/page-info/page-info-dialog.c:1566
+#: ../extensions/page-info/page-info-dialog.c:1297
+#: ../extensions/page-info/page-info-dialog.c:1567
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1308
+#: ../extensions/page-info/page-info-dialog.c:1309
 msgid "Type"
 msgstr "Tipo"
 
-#: ../extensions/page-info/page-info-dialog.c:1320
+#: ../extensions/page-info/page-info-dialog.c:1321
 msgid "Alt Text"
 msgstr "Texto Alt"
 
-#: ../extensions/page-info/page-info-dialog.c:1332
-#: ../extensions/page-info/page-info-dialog.c:1578
+#: ../extensions/page-info/page-info-dialog.c:1333
+#: ../extensions/page-info/page-info-dialog.c:1579
 msgid "Title"
 msgstr "Título"
 
-#: ../extensions/page-info/page-info-dialog.c:1344
+#: ../extensions/page-info/page-info-dialog.c:1345
 msgid "Width"
 msgstr "Anchura"
 
-#: ../extensions/page-info/page-info-dialog.c:1356
+#: ../extensions/page-info/page-info-dialog.c:1357
 msgid "Height"
 msgstr "Altura"
 
-#: ../extensions/page-info/page-info-dialog.c:1590
+#: ../extensions/page-info/page-info-dialog.c:1591
 msgid "Relation"
 msgstr "Relación"
 
-#: ../extensions/page-info/page-info-dialog.c:1698
+#: ../extensions/page-info/page-info-dialog.c:1699
 msgid "Name"
 msgstr "Nombre"
 
-#: ../extensions/page-info/page-info-dialog.c:1710
+#: ../extensions/page-info/page-info-dialog.c:1711
 msgid "Method"
 msgstr "Método"
 
-#: ../extensions/page-info/page-info-dialog.c:1722
+#: ../extensions/page-info/page-info-dialog.c:1723
 msgid "Action"
 msgstr "Acción"
 
@@ -634,10 +734,6 @@ msgstr "Mueve la solapa actual a una ventana diferente"
 
 #~ msgid "Open search results in a new tab"
 #~ msgstr "Abrir resultados de búsqueda en una solapa nueva"
-
-#, fuzzy
-#~ msgid "Name:"
-#~ msgstr "Nombre"
 
 #, fuzzy
 #~ msgid "URL:"
