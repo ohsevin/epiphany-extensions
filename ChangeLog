@@ -1,5 +1,15 @@
 2004-12-13  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+	* extensions/page-info/page-info-dialog.c: (page_info_set_text),
+	(general_info_page_fill):
+	* extensions/page-info/page-info.glade:
+
+	Use ellipsised labels instead of entries for title, and referrer fields.
+	Get charset per DOM window, not globally. Fix empty referrer display.
+
+2004-12-13  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/select-stylesheet/ephy-css-menu.c:
 	(create_stylesheet_action), (connect_proxy_cb),
 	(ephy_css_menu_rebuild):

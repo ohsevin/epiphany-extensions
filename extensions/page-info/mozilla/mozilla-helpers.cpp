@@ -179,7 +179,6 @@ PageInfoHelper::Init (EphyEmbed *aEmbed)
 
   char *charset;
   docCharset->GetCharset (&charset);
-  mDocCharset = charset;
   nsMemory::Free (charset);
 
   mJavaEnabled = PR_TRUE;
@@ -351,8 +350,11 @@ PageInfoHelper::GetProperties ()
   nsCOMPtr<nsIDOMHTMLDocument> domHtmlDoc (do_QueryInterface (mDOMDocument));
   if (domHtmlDoc)
     {
-      domHtmlDoc->GetReferrer (value);
-      props->referring_url = ToCString (value);
+      rv = domHtmlDoc->GetReferrer (value);
+      if (NS_SUCCEEDED (rv) && value.Length ())
+      	{
+          props->referring_url = ToCString (value);
+	}
     }
 
   /* Might not work on XUL pages */
@@ -760,13 +762,17 @@ PageInfoHelper::ProcessLinkNode (nsIDOMNode *aNode)
 void
 PageInfoHelper::WalkTree (nsIDOMDocument *aDocument)
 {
-  nsresult rv;
-
   nsCOMPtr<nsIDOMHTMLDocument> htmlDoc (do_QueryInterface (aDocument));
+  nsCOMPtr<nsIDOMNSDocument> nsDoc (do_QueryInterface (aDocument));
   nsCOMPtr<nsIDOMDocumentTraversal> trav (do_QueryInterface (aDocument));
-  if (!htmlDoc || !trav) return;
+  if (!htmlDoc || !nsDoc || !trav) return;
 
-  /* FIXME! get this document's charset, not the one of the top document */
+  nsresult rv;
+  nsEmbedString charset;
+  rv = nsDoc->GetCharacterSet (charset);
+  if (NS_FAILED (rv)) return;
+
+  NS_UTF16ToCString (charset, NS_CSTRING_ENCODING_UTF8, mDocCharset);
 
   nsCOMPtr<nsIDOM3Node> dom3Node (do_QueryInterface (aDocument));
   if (!dom3Node) return;
@@ -933,12 +939,12 @@ PageInfoHelper::WalkTree (nsIDOMDocument *aDocument)
 void
 PageInfoHelper::WalkFrame (nsIDOMDocument *aDocument)
 {
-//  nsEmbedCString saveCharset (mDocCharset);
+  nsEmbedCString saveCharset (mDocCharset);
   nsCOMPtr<nsIURI> uri (mBaseURI);
   
   WalkTree (aDocument);
 
-//  mDocCharset = saveCharset;
+  mDocCharset = saveCharset;
   mBaseURI = uri;
 }
 

@@ -603,18 +603,7 @@ page_info_set_text (PageInfoDialog *dialog,
 	/* FIXME: Switch to prop strings instead of enum */
 	widget = ephy_dialog_get_control (EPHY_DIALOG (dialog), prop);
 
-	g_return_if_fail (GTK_IS_ENTRY (widget) || GTK_IS_LABEL (widget));
-
-	if (!text) text = "";
-
-	if (GTK_IS_ENTRY(widget))
-	{
-		gtk_entry_set_text (GTK_ENTRY (widget), text);
-	}
-	else
-	{
-		gtk_label_set_markup (GTK_LABEL (widget), text);
-	}
+	gtk_label_set_text (GTK_LABEL (widget), text ? text : "");
 }
 
 static void
@@ -701,7 +690,7 @@ general_info_page_fill (InfoPage *page)
 
 	page_info_set_text (dialog, properties[PROP_GENERAL_REFERRING_URL].id,
 			    props->referring_url ? props->referring_url :
-			    _("No referrer" ));
+			    _("No referrer"));
 	
 	if (props->modification_time)
 	{
