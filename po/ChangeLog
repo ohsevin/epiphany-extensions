@@ -1,4 +1,8 @@
-2003-08-04  Christian Persch
+2003-08-04  Christian Persch  <chpe@cvs.gnome.org>
+
+	* de.po: Corrected translation of "current tab", thanks to Manny.
+
+2003-08-04  Christian Persch  <chpe@cvs.gnome.org>
 
 	* de.po:
 	* en_GB.po:

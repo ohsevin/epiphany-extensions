@@ -1,13 +1,14 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# German Epiphany Plugins translation
+# Copyright (C) 2003 Christian Persch 
+# This file is distributed under the same license as the Epiphany Plugins package.
+# Christian Persch <chpe+ephyplugins@stud.uni-saarland.de>, 2003
 #
-#, fuzzy
+# $Id$
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany Plugins 1.0\n"
-"POT-Creation-Date: 2003-08-03 20:26+0200\n"
+"POT-Creation-Date: 2003-08-04 12:38+0200\n"
 "PO-Revision-Date: 2003-08-03 20:29+0200\n"
 "Last-Translator: Christian Persch  <chpe+ephyplugins@stud.uni-saarland.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
@@ -22,7 +23,7 @@ msgstr "Reiter _duplizieren"
 
 #: plugins/tabsmenu/ephy-tabs-plugin-menu.c:321
 msgid "Create a copy of the current tab"
-msgstr "Den aktuellen Reiter duplizieren"
+msgstr "Den momentan angezeigten Reiter duplizieren"
 
 #: plugins/tabsmenu/ephy-tabs-plugin-menu.c:331
 msgid "_Move Tab To"
@@ -30,7 +31,7 @@ msgstr "Reiter _verschieben"
 
 #: plugins/tabsmenu/ephy-tabs-plugin-menu.c:332
 msgid "Move the current tab to a different window"
-msgstr "Den aktuellen Reiter in ein anderes Fenster verschieben"
+msgstr "Den momentan angezeigten Reiter in ein anderes Fenster verschieben"
 
 #: plugins/tabsmenu/ephy-window-action.c:180
 #, c-format
