@@ -16,10 +16,10 @@ dnl 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 dnl
 dnl $Id$
 
-AC_INIT([Epiphany Extensions],[1.6.0],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+AC_INIT([Epiphany Extensions],[1.7.0],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 GNOME_COMMON_INIT
 
-EPIPHANY_EXTENSIONS_MAJOR=1.6
+EPIPHANY_EXTENSIONS_MAJOR=1.7
 AC_SUBST(EPIPHANY_EXTENSIONS_MAJOR)
 
 AC_PREREQ([2.59])
@@ -76,7 +76,7 @@ ALL_LINGUAS="`cat "$srcdir/po/LINGUAS" | grep -v '^#'`"
 
 AC_SUBST([CONFIG_STATUS_DEPENDENCIES],['$(top_srcdir)/po/LINGUAS'])
 
-GETTEXT_PACKAGE=epiphany-extensions-1.6
+GETTEXT_PACKAGE=epiphany-extensions-1.8
 AC_SUBST([GETTEXT_PACKAGE])
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE],["$GETTEXT_PACKAGE"], [Gettext package])
 AM_GLIB_GNU_GETTEXT
@@ -86,7 +86,7 @@ dnl ********************************
 dnl pkg config checks
 dnl ********************************
 
-EPIPHANY_REQUIRED=1.6.0
+EPIPHANY_REQUIRED=1.7.0
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.6.0
 LIBGTK_REQUIRED=2.6.0
@@ -102,7 +102,7 @@ PKG_CHECK_MODULES([EPIPHANY_DEPENDENCY], [\
 		  glib-2.0 >= $LIBGLIB_REQUIRED \
 		  gmodule-2.0 \
 		  gtk+-2.0 >= $LIBGTK_REQUIRED \
-		  epiphany-1.6 >= $EPIPHANY_REQUIRED])
+		  epiphany-1.8 >= $EPIPHANY_REQUIRED])
 AC_SUBST([EPIPHANY_DEPENDENCY_CFLAGS])
 AC_SUBST([EPIPHANY_DEPENDENCY_LIBS])
 
@@ -187,7 +187,7 @@ if echo "$EXTENSIONS" | egrep '(^| )net-monitor($| )' > /dev/null; then
 	DBUS_GLIB_REQUIRED=0.22
 
 	PKG_CHECK_MODULES([DBUS], [dbus-1 >= $DBUS_REQUIRED dbus-glib-1 >= $DBUS_GLIB_REQUIRED])
-	INCLUDE_DIR="`$PKG_CONFIG --variable=includedir epiphany-1.6`"
+	INCLUDE_DIR="`$PKG_CONFIG --variable=includedir epiphany-1.8`"
 	AC_CHECK_FILE([$INCLUDE_DIR/epiphany/ephy-dbus.h],,[AC_MSG_ERROR([Epiphany was not compiled with dbus support])])
 fi
 
@@ -400,7 +400,7 @@ else
   AC_DEFINE_UNQUOTED([EXTENSIONS_DATA_DIR], ["${datadir}/${PACKAGE}-${EPIPHANY_EXTENSIONS_MAJOR}"], [Directory of data files])
 fi
 
-EXTENSIONS_DIR="`$PKG_CONFIG --variable=extensionsdir epiphany-1.6`"
+EXTENSIONS_DIR="`$PKG_CONFIG --variable=extensionsdir epiphany-1.8`"
 AC_SUBST([EXTENSIONS_DIR])
 
 dnl *******************************
