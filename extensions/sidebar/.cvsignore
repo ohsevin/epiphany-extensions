@@ -1,0 +1,10 @@
+*.o
+*.lo
+*.la
+*.so
+Makefile
+Makefile.in
+.deps
+.libs
+ephy-sidebar-marshal.c
+ephy-sidebar-marshal.h
