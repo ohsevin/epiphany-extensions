@@ -547,7 +547,11 @@ connect_proxy_cb (GtkActionGroup *action_group,
                   GtkAction *action,
                   GtkWidget *proxy)
 {
-	if (GTK_IS_MENU_ITEM (proxy))
+	/* If NODE_ID_KEY has NULL data, we have the main menu entry, or the
+	 * context menu main entry. Allow underscores for these.
+	 */
+	if (GTK_IS_MENU_ITEM (proxy) &&
+	    g_object_get_data (G_OBJECT (action),NODE_ID_KEY) != NULL)
 	{
 		GtkLabel *label;
 	

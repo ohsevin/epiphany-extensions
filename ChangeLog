@@ -1,3 +1,11 @@
+2004-12-21  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/smart-bookmarks/smart-bookmarks-extension.c:
+	(connect_proxy_cb):
+
+	Don't turn underscores off for the main menu entries, only for the
+	smart bookmark entries. Fixes bug #161832.
+
 2004-12-20  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
