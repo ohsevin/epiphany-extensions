@@ -64,7 +64,7 @@ nsresult MozAdBlocker::ShouldLoadURI(nsIURI *uri,
 	return NS_OK;
 }
 
-#ifdef MOZ_NSICONTENTPOLICY_VARIANT_2
+#if MOZ_NSICONTENTPOLICY_VARIANT == 2
 NS_IMETHODIMP
 MozAdBlocker::ShouldLoad(PRUint32 aContentType,
 			 nsIURI *aContentLocation,

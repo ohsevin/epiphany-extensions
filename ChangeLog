@@ -2,6 +2,13 @@
 
 	* configure.ac:
 	* extensions/adblock/mozilla/MozAdBlocker.cpp:
+
+	Simplified nsIContentPolicy API check.
+
+2004-09-21  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/adblock/mozilla/MozAdBlocker.cpp:
 	* include/Makefile.am:
 	* include/mozilla-version.h:
 
