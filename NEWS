@@ -1,6 +1,16 @@
-==========================
+=========================
+Epiphany Extensions 0.8.1
+=========================
+
+Translations:
+	* Francesco Marletta (it)
+        * Данило Шеган (sr, sr@Latn)
+	* (en_GB)
+
+
+=========================
 Epiphany Extensions 0.8.0
-==========================
+=========================
 
 New features
 	* Popup blocker icon in statusbar (Adam)
