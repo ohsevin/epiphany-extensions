@@ -15,4 +15,5 @@ gestures		Gestures extension
 popup-blocker		Popup blocker extension
 tabsmenu		Tabs Menu extension
 all			All of the above extensions
-sample			Sample extensions [not very useful]
+sample			Sample extension [use this as a template]
+sample-mozilla		Sample extension which uses mozilla api [use as a template]
