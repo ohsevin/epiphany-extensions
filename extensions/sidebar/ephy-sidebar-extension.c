@@ -100,7 +100,7 @@ typedef struct
 } WindowData;
 
 static void cmd_view_sidebar	(GtkAction *action,
-				 WindowData *data);
+				 EphyWindow *window);
 
 static GtkToggleActionEntry toggle_action_entries [] =
 {
@@ -167,15 +167,23 @@ ephy_sidebar_extension_register_type (GTypeModule *module)
 }
 
 static void 
-cmd_view_sidebar (GtkAction *action,
-		  WindowData *data)
+cmd_view_sidebar (GtkAction *action, EphyWindow *window)
 {
 	GValue value = { 0, };
+	gboolean ppview_mode;
+	WindowData *data;
+
+	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
+
+	g_object_get (window, "print-preview-mode", &ppview_mode, NULL);
 	g_value_init (&value, G_TYPE_BOOLEAN);
 
 	if (gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action)))
 	{
-		gtk_widget_show (data->sidebar);
+		if (!ppview_mode)
+		{
+			gtk_widget_show (data->sidebar);
+		}
 		g_value_set_boolean (&value, TRUE);
 	}
 	else
@@ -187,6 +195,26 @@ cmd_view_sidebar (GtkAction *action,
 	ephy_node_set_property (data->extension->priv->state,
 				SIDEBAR_NODE_PROP_VISIBLE, &value);
 	g_value_unset (&value);
+}
+
+static void
+window_ppv_mode_notify_cb (EphyWindow *window, GParamSpec   *pspec,
+                           WindowData *data)
+{
+	GtkAction *action;
+	gboolean ppview_mode;
+
+	g_object_get (window, "print-preview-mode", &ppview_mode, NULL);
+	action = gtk_action_group_get_action (data->action_group, "ViewSidebar");
+
+	if (ppview_mode)
+	{
+		gtk_widget_hide (data->sidebar);
+	}
+	else if (gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action)))
+	{
+		gtk_widget_show (data->sidebar);
+	}
 }
 
 static void
@@ -450,7 +478,7 @@ impl_attach_window (EphyExtension *ext,
 
 	gtk_action_group_add_toggle_actions (action_group, toggle_action_entries,
 					     G_N_ELEMENTS (toggle_action_entries),
-					     data);
+					     window);
 	gtk_ui_manager_insert_action_group (manager, action_group, -1);
 	g_object_unref (action_group);
 
@@ -461,7 +489,8 @@ impl_attach_window (EphyExtension *ext,
 			       "ViewSidebar", "ViewSidebar",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
 
-//	gtk_ui_manager_ensure_update (manager);
+	g_signal_connect (window, "notify::print-preview-mode",
+			  G_CALLBACK (window_ppv_mode_notify_cb), data);
 
 	/* Add the sidebar and the current notebook to a
 	 * GtkHPaned, and add the hpaned to where the notebook
@@ -556,6 +585,9 @@ impl_detach_window (EphyExtension *ext,
 
 	gtk_ui_manager_remove_ui (manager, data->merge_id);
 	gtk_ui_manager_remove_action_group (manager, data->action_group);
+
+	g_signal_handlers_disconnect_by_func
+		(window, G_CALLBACK (window_ppv_mode_notify_cb), data);
 
 	/* Remove the Sidebar, replacing our hpaned with the
 	 * notebook itself */
