@@ -12,13 +12,8 @@ where ext1, ext2 ... are one of the following:
 
 gestures		Gestures extensions
 tabsmenu		Tabs Menu extension
-zoom-persistence	Zoom persistence extension
 all			All of the above extensions
 sample			Sample extensions [not very useful]
 
-Remember that for the tabsmenu plugin to work, you need to apply the patch in
-plugins/tabsmenu/epiphany.diff, see plugins/tabsmenu/README.
-
-Note for users of the zoom persistence plugin:
-Epiphany now includes this functionality; you HAVE to remove the installed plugin
-files before running epiphany!
+Remember that for the tabsmenu extension to work, you need to apply the patch in
+extensions/tabsmenu/epiphany.diff, see extensions/tabsmenu/README.

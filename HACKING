@@ -1,19 +1,19 @@
-CVS guidelines for ephy-plugins
-*******************************
+CVS guidelines for epiphany-extensions
+**************************************
 
 DO NOT commit to the CVS unless you have been given explicit permission from
 me (chpe+epiphany@stud.uni-saarland.de) or, if you want to check in to
-plugins/someplugin/ directory, from the plugin maintainer.
+extensions/$extension/ directory, from the extension maintainer.
 (This doesn't apply to certain people, but they know who they are :)
 
 Please send patches for the build & configure infrastructure to me at
 chpe+epiphany@stud.uni-saarland.de.
 
-Send patches for the individual plugins to the maintainer listed in the 
+Send patches for the individual extensions to the maintainer listed in the 
 MAINTAINERS file.
 
 If you are a translator feel free to add new translations, mark strings for
-translation, fix typos in the code, etc.
+translation, fix typos, etc.
 
 Coding style
 ************

@@ -1,10 +1,26 @@
-dnl Process this file with autoconf to produce a configure script.
+dnl Copyright (c) 2003  Christian Persch
+dnl
+dnl This program is free software; you can redistribute it and/or modify it
+dnl under the terms of the GNU General Public License as published by the
+dnl Free Software Foundation; either version 2 of the License, or (at your
+dnl option) any later version.
+dnl
+dnl This program is distributed in the hope that it will be useful, but
+dnl WITHOUT ANY WARRANTY; without even the implied warranty of
+dnl MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+dnl General Public License for more details.
+dnl
+dnl You should have received a copy of the GNU General Public License along
+dnl with this program; if not, write to the Free Software Foundation, Inc.,
+dnl 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
+dnl
+dnl $Id$
 
 AC_PREREQ(2.52)
 
-AC_INIT(ephy-extensions, 0.4.0, [http://savannah.nongnu.org/bugs/?func=addbug&group=ephyplugins])
+AC_INIT(epiphany-extensions, 0.5.0, [no bug tracker yet])
 
-AC_CONFIG_SRCDIR(plugins)
+AC_CONFIG_SRCDIR(extensions)
 AM_CONFIG_HEADER(config.h)
 
 AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
@@ -38,7 +54,7 @@ ALL_LINGUAS="de en_GB fr ja"
 
 AC_PROG_INTLTOOL([0.22])
 
-GETTEXT_PACKAGE=epiphany-extensions-1.1
+GETTEXT_PACKAGE=epiphany-extensions-1.0
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
 AM_GLIB_GNU_GETTEXT
@@ -58,7 +74,13 @@ AC_SUBST(LIBGLIB_REQUIRED)
 AC_SUBST(LIBGTK_REQUIRED)
 
 dnl fixme -- combine the dependencies of only the enabled plugins
-PKG_CHECK_MODULES(EPIPHANY_DEPENDENCY, libxml-2.0 >= $LIBXML_REQUIRED libglade-2.0 glib-2.0 >= $LIBGLIB_REQUIRED gtk+-2.0 >= $LIBGTK_REQUIRED epiphany-1.0 >= $EPIPHANY_REQUIRED)
+PKG_CHECK_MODULES(EPIPHANY_DEPENDENCY, \
+		  libxml-2.0 >= $LIBXML_REQUIRED \
+		  libglade-2.0 \
+		  glib-2.0 >= $LIBGLIB_REQUIRED \
+		  gmodule-2.0 \
+		  gtk+-2.0 >= $LIBGTK_REQUIRED \
+		  epiphany-1.0 >= $EPIPHANY_REQUIRED)
 AC_SUBST(EPIPHANY_DEPENDENCY_CFLAGS)
 AC_SUBST(EPIPHANY_DEPENDENCY_LIBS)
 
@@ -125,9 +147,9 @@ for ext in $extensions; do
 done
 IFS="$ephyext_save_ifs"
 
-AM_CONDITIONAL(ENABLE_PLUGIN_GESTURES, echo "$extensions" | egrep '(^|,)gestures($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_PLUGIN_SAMPLE, echo "$extensions" | egrep '(^|,)sample($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_PLUGIN_TABSMENU, echo "$extensions" | egrep '(^|,)tabsmenu($|,)' > /dev/null)
+AM_CONDITIONAL(ENABLE_GESTURES_EXTENSION, echo "$extensions" | egrep '(^|,)gestures($|,)' > /dev/null)
+AM_CONDITIONAL(ENABLE_SAMPLE_EXTENSION, echo "$extensions" | egrep '(^|,)sample($|,)' > /dev/null)
+AM_CONDITIONAL(ENABLE_TABSMENU_EXTENSION, echo "$extensions" | egrep '(^|,)tabsmenu($|,)' > /dev/null)
 
 dnl *******************************
 dnl Misc things
@@ -137,8 +159,8 @@ dnl uninstalled share dir to search data
 dnl AC_DEFINE_UNQUOTED(SHARE_UNINSTALLED_DIR,"`pwd`/data",[path to source data dir])
 
 dnl what about those? are they needed -- from gedit-plugins
-dnl PLUGIN_LIBTOOL_FLAGS="-module -avoid-version"
-dnl AC_SUBST(PLUGIN_LIBTOOL_FLAGS)
+dnl EXTENSION_LIBTOOL_FLAGS="-module -avoid-version"
+dnl AC_SUBST(EXTENSION_LIBTOOL_FLAGS)
 
 dnl *******************************
 dnl share/data dir
@@ -146,12 +168,12 @@ dnl *******************************
 
 if test "x${datadir}" = 'x${prefix}/share'; then
   if test "x${prefix}" = "xNONE"; then
-    AC_DEFINE_UNQUOTED(PLUGINS_DATA_DIR, "${ac_default_prefix}/share/${PACKAGE}", [Directory of data files])
+    AC_DEFINE_UNQUOTED(EXTENSIONS_DATA_DIR, "${ac_default_prefix}/share/${PACKAGE}", [Directory of data files])
   else
-    AC_DEFINE_UNQUOTED(PLUGINS_DATA_DIR, "${prefix}/share/${PACKAGE}", [Directory of data files])
+    AC_DEFINE_UNQUOTED(EXTENSIONS_DATA_DIR, "${prefix}/share/${PACKAGE}", [Directory of data files])
   fi
 else
-  AC_DEFINE_UNQUOTED(PLUGINS_DATA_DIR, "${datadir}/${PACKAGE}", [Directory of data files])
+  AC_DEFINE_UNQUOTED(EXTENSIONS_DATA_DIR, "${datadir}/${PACKAGE}", [Directory of data files])
 fi
 
 dnl *******************************
@@ -160,10 +182,10 @@ dnl *******************************
 AC_OUTPUT([
 Makefile
 include/Makefile
-plugins/Makefile
-plugins/sample/Makefile
-plugins/gestures/Makefile
-plugins/tabsmenu/Makefile
+extensions/Makefile
+extensions/sample/Makefile
+extensions/gestures/Makefile
+extensions/tabsmenu/Makefile
 po/Makefile.in
 ],
 [])
