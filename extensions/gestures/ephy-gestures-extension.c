@@ -376,7 +376,7 @@ static void
 impl_attach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
-	EphyGesturesExtension *extension = EPHY_GESTURES_EXTENSION (extension);
+	EphyGesturesExtension *extension = EPHY_GESTURES_EXTENSION (ext);
 	GtkWidget *notebook;
 	GList *tabs, *l;
 
