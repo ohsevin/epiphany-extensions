@@ -2,83 +2,115 @@
 # Copyright (C) 2004 THE epiphany-extensions'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the epiphany-extensions package.
 # Rostislav Raykov <zbrox@i-space.org>, 2004.
+# Vladimir Petkov <vpetkov@i-space.org>, 2005.
 #
-# 
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-05-14 14:13+0200\n"
-"PO-Revision-Date: 2004-07-10 17:45+0300\n"
+"POT-Creation-Date: 2005-01-25 16:21+0200\n"
+"PO-Revision-Date: 2005-01-25 16:21+0200\n"
 "Last-Translator: Rostislav Raykov <zbrox@i-space.org>\n"
 "Language-Team: Bulgarian <dict@linux.zonebg.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:160
-msgid "Certificate Manager"
-msgstr "Мениджър на сертификатите"
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
+msgid "_Edit Bookmarks"
+msgstr "_Редактиране на отметки"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
+msgid "Open the bookmarks window"
+msgstr "Отваряне на прозореца с отметките"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:451
+msgid "Open in _Current Tab"
+msgstr "Отваряне в _текущия таб"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:452
+msgid "Open bookmarks in the current tab of the active window"
+msgstr "Отваряне на отметките в текущия таб на активния прозорец"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:454
+msgid "Open in New _Tab"
+msgstr "Отваряне в нов _таб"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:455
+msgid "Open bookmarks in a new tab of the active window"
+msgstr "Отваряне на отметките в нов таб на активния прозорец"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:457
+msgid "Open in New _Window"
+msgstr "Отваряне в нов _прозорец"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:458
+msgid "Open bookmarks in new a window"
+msgstr "Отваряне на отметките в нов прозорец"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:526
+msgid "Bookmarks"
+msgstr "Отметки"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:277
+#: extensions/certificates/ephy-certificates-extension.c:265
 msgid "Manage _Certificates"
-msgstr "Управление на сертификати"
+msgstr "Управление на _сертификати"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:279
+#: extensions/certificates/ephy-certificates-extension.c:267
 msgid "Manage your certificates"
 msgstr "Управление на сертификатите"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:287
+#: extensions/certificates/ephy-certificates-extension.c:275
 msgid "Server _Certificate"
-msgstr "Сървърен сертификат"
+msgstr "Сървърен _сертификат"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:289
+#: extensions/certificates/ephy-certificates-extension.c:277
 msgid "Display the web server's certificate"
 msgstr "Показване на сертификата на уеб сървъра"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:88
+#: extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
-msgstr "Проверка на HTML"
+msgstr "Проверка на _HTML"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:90
+#: extensions/error-viewer/ephy-error-viewer-extension.c:99
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "Показване на HTML грешките в прозореца за преглед на грешките"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:95
+#: extensions/error-viewer/ephy-error-viewer-extension.c:104
 msgid "Check _Links"
-msgstr "Проверяване на Връзките"
+msgstr "Проверяване на връзките"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:97
+#: extensions/error-viewer/ephy-error-viewer-extension.c:106
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr "Показване на невалидни връзки в прозореца за преглед на грешки"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:101
+#: extensions/error-viewer/ephy-error-viewer-extension.c:110
 msgid "_Error Viewer"
-msgstr "Преглед на грешките"
+msgstr "Преглед на гр_ешките"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:103
+#: extensions/error-viewer/ephy-error-viewer-extension.c:112
 msgid "Display web page errors"
 msgstr "Показване на грешки в страницата"
 
 #: extensions/error-viewer/error-viewer.glade.h:1
-msgid "C_lear"
-msgstr "Изчистване"
+msgid "Cl_ear"
+msgstr "Из_чистване"
 
 #: extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
 msgstr "Преглед на грешките"
 
 #. Don't bother looking for source lines -- they're not there
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:87
 #, c-format
 msgid ""
 "Error:\n"
@@ -87,7 +119,7 @@ msgstr ""
 "Грешка:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:90
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:112
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -96,14 +128,14 @@ msgstr ""
 "Javascript грешка в %s на ред %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
 msgstr[0] "Открита %d невалидна препратка"
 msgstr[1] "Открити %d невалидни препратки"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -112,7 +144,7 @@ msgstr ""
 "Грешка при връзката %s:\n"
 "%s не е наличен."
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
@@ -155,7 +187,8 @@ msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
 msgstr ""
-"Документното определение е \"XHTML\", но съдържанието е \"text/html\".  Използвайте \"application/xhtml+xml\" вместо това."
+"Документното определение е \"XHTML\", но съдържанието е \"text/html\".  "
+"Използвайте \"application/xhtml+xml\" вместо това."
 
 #: extensions/error-viewer/sgml-validator.c:243
 #, c-format
@@ -188,34 +221,415 @@ msgstr ""
 "HTML грешка в %s:\n"
 "Не е заявен правилно определение на документа."
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
-msgid "Popup _Windows"
-msgstr "Изскачащи прозорци"
+#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
+msgid "_Extensions"
+msgstr "_Разширения"
 
-#. shortcut key
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
-msgid "Show or hide unrequested popup windows from this site"
-msgstr "Показване или скриване на незаявени изскачащи прозорци от този сайт"
+#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+msgid "Load and unload extensions"
+msgstr "Зареждане и изключване на разширения"
 
-#: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:355
+msgid "Enabled"
+msgstr "Зареден"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:362
+msgid "Description"
+msgstr "Описание"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+msgid "<b>Loaded Extensions</b>"
+msgstr "<b>Заредени разширения</b>"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+msgid "Extensions"
+msgstr "Разширения"
+
+#: extensions/find/eggfindbar.c:133
+msgid "Search string"
+msgstr "Низ за търсене"
+
+#: extensions/find/eggfindbar.c:134
+msgid "The name of the string to be found"
+msgstr "Низа, който да бъде намерен"
+
+#: extensions/find/eggfindbar.c:147
+msgid "Case sensitive"
+msgstr "Малки и големи букви имат значение"
+
+#: extensions/find/eggfindbar.c:148
+msgid "TRUE for a case sensitive search"
+msgstr "TRUE за търсене при имащи значение малки и големи букви"
+
+#: extensions/find/eggfindbar.c:155
+msgid "Highlight color"
+msgstr "Цвят за осветяване"
+
+#: extensions/find/eggfindbar.c:156
+msgid "Color of highlight for all matches"
+msgstr "Цвят за оцветяване на всички попадения"
+
+#: extensions/find/eggfindbar.c:162
+msgid "Current color"
+msgstr "Текущ цвят"
+
+#: extensions/find/eggfindbar.c:163
+msgid "Color of highlight for the current match"
+msgstr "Цвят за оцветяване на текущото попадение"
+
+#: extensions/find/eggfindbar.c:302
+msgid "F_ind:"
+msgstr "_Търсене:"
+
+#: extensions/find/eggfindbar.c:320
+msgid "_Previous"
+msgstr "_Предишно"
+
+#: extensions/find/eggfindbar.c:321
+msgid "_Next"
+msgstr "_Следващо"
+
+#: extensions/find/eggfindbar.c:333
+msgid "C_ase Sensitive"
+msgstr "М_алки и големи букви имат значение"
+
+#: extensions/page-info/ephy-page-info-extension.c:65
+msgid "_Page Info"
+msgstr "Информация за _страницата"
+
+#: extensions/page-info/ephy-page-info-extension.c:67
+msgid "Display page information in a dialog"
+msgstr "Изобразяване на информация за страницата в диалогов прозорец"
+
+#: extensions/page-info/page-info-dialog.c:645
+msgid "Unknown type"
+msgstr "Неизвестен тип"
+
+#: extensions/page-info/page-info-dialog.c:650
+msgid "Full standards compliance"
+msgstr "Пълна съвместимост със стандартите"
+
+#: extensions/page-info/page-info-dialog.c:653
+msgid "Almost standards compliance"
+msgstr "Почти пълна съвместимост със стандартите"
+
+#: extensions/page-info/page-info-dialog.c:656
+msgid "Compatibility"
+msgstr "Съвместимост"
+
+#: extensions/page-info/page-info-dialog.c:659
+msgid "Undetermined"
+msgstr "Неопределен"
+
+#: extensions/page-info/page-info-dialog.c:668
+msgid "Not cached"
+msgstr "Не е кеширан"
+
+#: extensions/page-info/page-info-dialog.c:671
+msgid "Disk cache"
+msgstr "Кеш на диска"
+
+#: extensions/page-info/page-info-dialog.c:674
+msgid "Memory cache"
+msgstr "Кеш на паметта"
+
+#: extensions/page-info/page-info-dialog.c:677
+msgid "Unknown cache"
+msgstr "Неизвестен кеш"
+
+#: extensions/page-info/page-info-dialog.c:693
+#: extensions/page-info/page-info-dialog.c:822
+msgid "Unknown"
+msgstr "Неизвестно"
+
+#: extensions/page-info/page-info-dialog.c:698
+msgid "No referrer"
+msgstr "Без референт"
+
+#: extensions/page-info/page-info-dialog.c:712
+#: extensions/page-info/page-info-dialog.c:728
+msgid "Not specified"
+msgstr "Не е определен"
+
+#: extensions/page-info/page-info-dialog.c:807
+msgid "Image"
+msgstr "Изображение"
+
+#: extensions/page-info/page-info-dialog.c:810
+msgid "Embed"
+msgstr "Прикрепяне"
+
+#: extensions/page-info/page-info-dialog.c:813
+msgid "Object"
+msgstr "Обект"
+
+#: extensions/page-info/page-info-dialog.c:816
+msgid "Applet"
+msgstr "Аплет"
+
+#: extensions/page-info/page-info-dialog.c:819
+msgid "Icon"
+msgstr "Икона"
+
+#: extensions/page-info/page-info-dialog.c:975
+msgid "Save Medium As..."
+msgstr "Запазване на носителя като..."
+
+#: extensions/page-info/page-info-dialog.c:992
+msgid "Select a directory"
+msgstr "Избор на папка"
+
+#: extensions/page-info/page-info-dialog.c:1093
+msgid "_Open"
+msgstr "_Отваряне"
+
+#: extensions/page-info/page-info-dialog.c:1099
+#: extensions/page-info/page-info-dialog.c:1492
+msgid "_Copy Link Address"
+msgstr "_Копиране адреса на връзката"
+
+#: extensions/page-info/page-info-dialog.c:1105
+msgid "_Use as Background"
+msgstr "_Използване като фоново изображение"
+
+#: extensions/page-info/page-info-dialog.c:1111
+msgid "_Save As..."
+msgstr "_Запазване като..."
+
+#: extensions/page-info/page-info-dialog.c:1296
+#: extensions/page-info/page-info-dialog.c:1566
+msgid "URL"
+msgstr "URL"
+
+#: extensions/page-info/page-info-dialog.c:1308
+msgid "Type"
+msgstr "Тип"
+
+#: extensions/page-info/page-info-dialog.c:1320
+msgid "Alt Text"
+msgstr "Алтернативен текст"
+
+#: extensions/page-info/page-info-dialog.c:1332
+#: extensions/page-info/page-info-dialog.c:1578
+msgid "Title"
+msgstr "Заглавие"
+
+#: extensions/page-info/page-info-dialog.c:1344
+msgid "Width"
+msgstr "Ширина"
+
+#: extensions/page-info/page-info-dialog.c:1356
+msgid "Height"
+msgstr "Височина"
+
+#: extensions/page-info/page-info-dialog.c:1590
+msgid "Relation"
+msgstr "Отношение"
+
+#: extensions/page-info/page-info-dialog.c:1698
+msgid "Name"
+msgstr "Име"
+
+#: extensions/page-info/page-info-dialog.c:1710
+msgid "Method"
+msgstr "Метод"
+
+#: extensions/page-info/page-info-dialog.c:1722
+msgid "Action"
+msgstr "Действие"
+
+#: extensions/page-info/page-info.glade.h:1
+msgid "<b>Forms In Page</b>"
+msgstr "<b>Формуляри в страницата</b>"
+
+#: extensions/page-info/page-info.glade.h:2
+msgid "<b>Links In Page</b>"
+msgstr "<b>Връзки в страницата</b>"
+
+#: extensions/page-info/page-info.glade.h:3
+msgid "<b>Media In Page</b>"
+msgstr "<b>Мултимедия в страницата</b>"
+
+#: extensions/page-info/page-info.glade.h:4
+msgid "<b>Medium View</b>"
+msgstr "<b>Изглед на Medium</b>"
+
+#: extensions/page-info/page-info.glade.h:5
+msgid "<b>Rendering</b>"
+msgstr "<b>Изчисляване/Генериране</b>"
+
+#: extensions/page-info/page-info.glade.h:6
+msgid "<b>Source File</b>"
+msgstr "<b>Изходен файл</b>"
+
+#: extensions/page-info/page-info.glade.h:7
+msgid "<b>Web Page</b>"
+msgstr "<b>Интернет страница</b>"
+
+#: extensions/page-info/page-info.glade.h:8
+msgid "DYNAMIC"
+msgstr "ДИНАМИЧНО"
+
+#: extensions/page-info/page-info.glade.h:9
+msgid "Encoding:"
+msgstr "Кодиране:"
+
+#: extensions/page-info/page-info.glade.h:10
+msgid "Expires:"
+msgstr "Изтича на:"
+
+#: extensions/page-info/page-info.glade.h:11
+msgid "Forms"
+msgstr "Формуляри"
+
+#: extensions/page-info/page-info.glade.h:12
+msgid "General"
+msgstr "Общи"
+
+#: extensions/page-info/page-info.glade.h:13
+msgid "Links"
+msgstr "Връзки"
+
+#: extensions/page-info/page-info.glade.h:14
+msgid "Location:"
+msgstr "Местоположение:"
+
+#: extensions/page-info/page-info.glade.h:15
+msgid "MIME type:"
+msgstr "MIME тип:"
+
+#: extensions/page-info/page-info.glade.h:16
+msgid "Media"
+msgstr "Медия"
+
+#: extensions/page-info/page-info.glade.h:17
+msgid "Mode:"
+msgstr "Режим:"
+
+#: extensions/page-info/page-info.glade.h:18
+msgid "Modified:"
+msgstr "Променян:"
+
+#: extensions/page-info/page-info.glade.h:19
+msgid "Page Properties"
+msgstr "Подробности за страницата"
+
+#: extensions/page-info/page-info.glade.h:20
+msgid "Referrer:"
+msgstr "Референт:"
+
+#: extensions/page-info/page-info.glade.h:21
+msgid "Size:"
+msgstr "Размер:"
+
+#: extensions/page-info/page-info.glade.h:22
+msgid "Source:"
+msgstr "Източник:"
+
+#: extensions/page-info/page-info.glade.h:23
+msgid "Title:"
+msgstr "Заглавие:"
+
+#: extensions/page-info/page-info.glade.h:24
+msgid "Type:"
+msgstr "Тип:"
+
+#: extensions/page-info/page-info.glade.h:25
+msgid "_Save Media As..."
+msgstr "_Запазване на медията като..."
+
+#: extensions/select-stylesheet/ephy-css-menu.c:145
+msgid "Render the page without using a style"
+msgstr "Генериране на страницата без използването на стил"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:148
+msgid "Render the page using the default style"
+msgstr "Генериране на страницата чрез стандартния стил"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:151
 #, c-format
-msgid "%d popup window blocked"
-msgid_plural "%d popup windows blocked"
-msgstr[0] "%d изскачащ прозорец блокиран"
-msgstr[1] "%d изскачащи прозорци блокирани"
+msgid "Render the page using the \"%s\" style"
+msgstr "Генериране на страницата чрез стила \"%s\""
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:183
+#: extensions/select-stylesheet/ephy-css-menu.c:309
+msgid "St_yle"
+msgstr "Ст_ил"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:310
+msgid "Select a different style for this page"
+msgstr "Избор на различен стил за тази страница"
+
+#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
+msgid "Default"
+msgstr "Стандартен"
+
+#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
+msgid "None"
+msgstr "Без"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:104
+msgid "_Sidebar"
+msgstr "_Странична лента"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:105
+msgid "Show or hide the sidebar"
+msgstr "Показване или скриване на страничната лента"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:385
+#, c-format
+msgid "Add \"%s\" to the Sidebar?"
+msgstr "Добавяне на \"%s\" към страничната лента?"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:389
+#, c-format
+msgid "The source to the new sidebar page is %s."
+msgstr "Източникът на новата странична лента е %s."
+
+#: extensions/sidebar/ephy-sidebar-extension.c:391
+msgid "Add Sidebar"
+msgstr "Добавяне на странична лента"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:395
+msgid "_Add Sidebar"
+msgstr "_Добавяне на странична лента"
+
+#: extensions/sidebar/ephy-sidebar.c:176
+msgid "No Sidebars installed"
+msgstr "Няма инсталирани стр. ленти"
+
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:578
+msgid "_Look Up"
+msgstr "_Поглеждане"
+
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:585
+msgid "_GNOME Dictionary"
+msgstr "_Речник на GNOME"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:190
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"
 msgstr[0] "Прозорец \"%s\" (%d таб)"
 msgstr[1] "Прозорец '%s' (%d таба)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:282
+#: extensions/tabsmenu/ephy-tab-move-menu.c:302
 msgid "Move Tab To Window"
 msgstr "Преместване на таб към процорец ..."
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:283
+#: extensions/tabsmenu/ephy-tab-move-menu.c:303
 msgid "Move the current tab to a different window"
 msgstr "Преместване на текущия таб към друг прозорец"
 
+#~ msgid "Certificate Manager"
+#~ msgstr "Мениджър на сертификатите"
+
+#~ msgid "Popup _Windows"
+#~ msgstr "Изскачащи прозорци"
+
+#~ msgid "Show or hide unrequested popup windows from this site"
+#~ msgstr "Показване или скриване на незаявени изскачащи прозорци от този сайт"
+
+#~ msgid "%d popup window blocked"
+#~ msgid_plural "%d popup windows blocked"
+#~ msgstr[0] "%d изскачащ прозорец блокиран"
+#~ msgstr[1] "%d изскачащи прозорци блокирани"
