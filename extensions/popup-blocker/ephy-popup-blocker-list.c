@@ -39,6 +39,8 @@ typedef struct
 {
 	/* For open popups (or popups which were opened at one point) */
 	EphyWindow *window;
+	gint x;
+	gint y;
 
 	/* For never-opened popups */
 	char *url;
@@ -223,6 +225,8 @@ ephy_popup_blocker_list_insert_window (EphyPopupBlockerList *list,
 	popup = g_new0 (BlockedPopup, 1);
 
 	popup->window = window;
+	popup->x = -1;
+	popup->y = -1;
 	popup->url = NULL;
 	popup->features = NULL;
 
@@ -374,6 +378,11 @@ ephy_popup_blocker_list_show_all (EphyPopupBlockerList *list)
 			g_return_if_fail (EPHY_IS_EMBED (embed));
 
 			gtk_widget_show (GTK_WIDGET (popup->window));
+			if (popup->x != -1 && popup->y != -1)
+			{
+				gtk_window_move (GTK_WINDOW (popup->window),
+						 popup->x, popup->y);
+			}
 			mozilla_enable_javascript (embed, TRUE);
 
 			t = t->next;
@@ -417,6 +426,8 @@ ephy_popup_blocker_list_hide_all (EphyPopupBlockerList *list)
 			g_return_if_fail (EPHY_IS_EMBED (embed));
 
 			mozilla_enable_javascript (embed, FALSE);
+			gtk_window_get_position (GTK_WINDOW (popup->window),
+						 &popup->x, &popup->y);
 			gtk_widget_hide (GTK_WIDGET (popup->window));
 		}
 	}
