@@ -12,3 +12,9 @@ aclocal.m4
 Makefile
 Makefile.in
 *.cache
+INSTALL
+depcomp
+install-sh
+missing
+mkinstalldirs
+
