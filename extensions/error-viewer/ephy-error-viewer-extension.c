@@ -31,6 +31,7 @@
 
 #include <epiphany/ephy-extension.h>
 #include <epiphany/ephy-window.h>
+#include <epiphany/ephy-embed-shell.h>
 
 #include <gtk/gtkaction.h>
 #include <gtk/gtkactiongroup.h>
@@ -44,7 +45,6 @@
 struct EphyErrorViewerExtensionPrivate
 {
 	ErrorViewer *dialog;
-	gboolean initialized;
 	void *listener;
 };
 
@@ -111,9 +111,13 @@ ephy_error_viewer_extension_init (EphyErrorViewerExtension *extension)
 {
 	LOG ("EphyErrorViewerExtension initialising")
 
+	ephy_embed_shell_get_embed_single (embed_shell); /* Fire up Mozilla */
+
 	extension->priv = EPHY_ERROR_VIEWER_EXTENSION_GET_PRIVATE (extension);
 
-	extension->priv->initialized = FALSE;
+	extension->priv->dialog = error_viewer_new ();
+
+	extension->priv->listener = mozilla_register_error_listener (G_OBJECT (extension->priv->dialog));
 }
 
 static void
@@ -124,12 +128,9 @@ ephy_error_viewer_extension_finalize (GObject *object)
 
 	LOG ("EphyErrorViewerExtension finalizing")
 
-	if (extension->priv->initialized == TRUE)
-	{
-		mozilla_unregister_error_listener (extension->priv->listener);
+	mozilla_unregister_error_listener (extension->priv->listener);
 
-		g_object_unref (G_OBJECT (extension->priv->dialog));
-	}
+	g_object_unref (G_OBJECT (extension->priv->dialog));
 
 	G_OBJECT_CLASS (error_viewer_extension_parent_class)->finalize (object);
 }
@@ -157,7 +158,6 @@ static void
 impl_attach_window (EphyExtension *extension,
 		    EphyWindow *window)
 {
-	EphyErrorViewerExtensionPrivate *priv;
 	GtkActionGroup *action_group;
 	GtkUIManager *manager;
 	guint merge_id;
@@ -184,17 +184,6 @@ impl_attach_window (EphyExtension *extension,
 	gtk_ui_manager_add_ui (manager, merge_id, "/menubar/ViewMenu",
 			       "ErrorViewer", "ErrorViewer",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
-
-	/* Create error listener */
-	priv = EPHY_ERROR_VIEWER_EXTENSION_GET_PRIVATE (extension);
-	if (priv->initialized == FALSE)
-	{
-		priv->dialog = error_viewer_new ();
-
-		priv->listener = mozilla_register_error_listener (G_OBJECT (priv->dialog));
-
-		priv->initialized = TRUE;
-	}
 }
 
 static void

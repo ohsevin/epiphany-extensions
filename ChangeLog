@@ -1,5 +1,14 @@
 2004-01-22  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	(ephy_error_viewer_extension_init),
+	(ephy_error_viewer_extension_finalize), (impl_attach_window):
+
+	Initialize Mozilla ourselves with ephy_embed_shell_get_embed_single ()
+	- that saves us from the evil hack I used before.
+
+2004-01-22  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/error-viewer/README:
 
 	Add a few suggestions from spark on IRC
