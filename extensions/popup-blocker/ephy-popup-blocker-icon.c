@@ -122,9 +122,8 @@ create_ui (EphyPopupBlockerIcon *icon)
 	gtk_frame_set_shadow_type (GTK_FRAME (icon->priv->frame),
 				   GTK_SHADOW_IN);
 
-	/* FIXME: Why does 24x24 not work? */
 	pixbuf = gdk_pixbuf_new_from_file_at_size
-		(SHARE_DIR "/icons/popup-blocker.svg", 20, 20, NULL);
+		(SHARE_DIR "/icons/popup-blocker.svg", 16, 16, NULL);
 	icon->priv->image = gtk_image_new_from_pixbuf (pixbuf);
 	g_object_unref (G_OBJECT (pixbuf));
 
