@@ -1,7 +1,6 @@
 ## Process this file with automake to produce Makefile.in
 
-# add 'po' when we get some translatable strings
-SUBDIRS = include plugins
+SUBDIRS = include plugins po
 
 EXTRA_DIST =			\
 	COPYING.README		\
