@@ -227,6 +227,10 @@ link_checker_update_progress (LinkChecker *checker,
 	{
 		char *msg, *part1, *part2;
 
+		error_viewer_unuse (checker->priv->error_viewer);
+
+		if (num_checked == 0) return;
+
 		part1 = g_strdup_printf ("Link check of %s complete", filename);
 		part2 = g_strdup_printf (ngettext ("Found %d invalid link",
 						   "Found %d invalid links",
@@ -240,7 +244,5 @@ link_checker_update_progress (LinkChecker *checker,
 		g_free (msg);
 		g_free (part1);
 		g_free (part2);
-
-		error_viewer_unuse (checker->priv->error_viewer);
 	}
 }

@@ -170,10 +170,21 @@ mozilla_check_links (LinkChecker *checker,
 
 	links->GetLength (&observer->mNumLinksTotal);
 
-	char *msg = g_strdup_printf
-		(ngettext("Checking %d Link on %s",
-			  "Checking %d Links on %s", observer->mNumLinksTotal),
-		 observer->mNumLinksTotal, observer->mFilename);
+	char *msg;
+	
+	if (observer->mNumLinksTotal > 0)
+	{
+		msg = g_strdup_printf
+			(ngettext("Checking %d Link on %s",
+				  "Checking %d Links on %s",
+				  observer->mNumLinksTotal),
+			 observer->mNumLinksTotal, observer->mFilename);
+	}
+	else
+	{
+		msg = g_strdup_printf ("No links to check on %s",
+				       observer->mFilename);
+	}
 
 	link_checker_append (checker, ERROR_VIEWER_INFO, msg);
 
@@ -181,6 +192,8 @@ mozilla_check_links (LinkChecker *checker,
 
 	link_checker_update_progress (checker, observer->mFilename,
 				      0, 0, observer->mNumLinksTotal);
+
+	if (observer->mNumLinksTotal == 0) return;
 
 	for (PRUint32 i = 0; i < observer->mNumLinksTotal; i++)
 	{

@@ -1,5 +1,13 @@
 2004-03-15  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/error-viewer/link-checker.c:
+	(link_checker_update_progress):
+	* extensions/error-viewer/mozilla/mozilla-link-checker.cpp:
+
+	Don't show "checking 0 links...". Fixes bug #137188
+
+2004-03-15  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/error-viewer/error-viewer.c: (delete_window_cb),
 	(build_ui):
 
