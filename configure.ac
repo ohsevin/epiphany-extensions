@@ -16,7 +16,7 @@ dnl 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 dnl
 dnl $Id$
 
-AC_INIT([Epiphany Extensions], [0.8.2.90], [http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+AC_INIT([Epiphany Extensions], [0.9.0], [http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 
 AC_PREREQ(2.57)
 
@@ -253,7 +253,7 @@ dnl allow user to override the autodetected mozilla version
 dnl     - without arguments for cvs head
 AC_ARG_WITH([mozilla-snapshot],
   AC_HELP_STRING([--with-mozilla-snapshot@<:@=1.4|1.4.1|1.5|1.6|trunk@:>@],
-		 [Whether to try building against mozilla 1.4|1.4.1|1.5|1.6|1.7a|trunk
+		 [Whether to try building against mozilla 1.4|1.4.1|1.5|1.6|1.7|trunk
 		  snapshot. @<:@guessed@:>@]),
   [autodetect=" (guessed: $MOZILLA_VERSION)"; MOZILLA_VERSION="$withval"])
 
@@ -275,7 +275,7 @@ branch1.7) MOZILLA_SNAPSHOT=16 ;;
 trunk) MOZILLA_SNAPSHOT=18 ;;
     *) AC_ERROR([
 *******************************************************************************
-Epiphany Extensions  can be built using Mozilla 1.4, 1.4.1, 1.5, 1.6, 1.7a or 
+Epiphany Extensions  can be built using Mozilla 1.4, 1.4.1, 1.5, 1.6, 1.7 or 
 trunk snapshot, but the version available is $MOZILLA_VERSION.  
 
 When using Mozilla trunk snapshot, a successful build is not guaranteed due 

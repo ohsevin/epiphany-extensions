@@ -1,5 +1,12 @@
 2004-05-15  Christian Persch  <chpe@cvs.gnome.org>
 
+	* configure.ac:
+	* NEWS:
+
+	Version 0.9.0.
+
+2004-05-15  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/popup-blocker/ephy-popup-blocker-icon.c: (create_ui):
 
 	Don't try to unref NULL objects.

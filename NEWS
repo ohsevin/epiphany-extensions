@@ -1,4 +1,22 @@
 =========================
+Epiphany Extensions 0.9.0
+=========================
+
+Code changes
+
+	* Support for Mozilla 1.7rc1, 1.7 branch and trunk (Christian)
+
+Bug fixes
+
+	* Fix crash when failing to load the "popup blocked" icon (Christian)
+	* Backported all bugfixes from HEAD (Adam)
+
+Translations
+
+	* GNOME PL Team (pl)
+
+
+=========================
 Epiphany Extensions 0.8.2
 =========================
 
