@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2002  Ricardo Fern·ndez Pascual
+ *  Copyright (C) 2002  Ricardo Fern√°ndez Pascual
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -24,7 +24,6 @@
 
 #include "gul-gestures.h"
 #include "stroke.h"
-#include "gul-gobject-misc.h"
 #include <gtk/gtkmain.h>
 #include <gtk/gtkdnd.h>
 #include <string.h>
@@ -52,18 +51,22 @@ struct _GulGesturesPrivate {
 static void		gul_gestures_class_init		(GulGesturesClass *klass);
 static void		gul_gestures_init		(GulGestures *as);
 static void		gul_gestures_finalize_impl	(GObject *o);
-static gboolean		gul_gestures_motion_cb		(GtkWidget *widget, GdkEventMotion *e,
+static gboolean		gul_gestures_motion_cb		(GtkWidget *widget,
+							 GdkEventMotion *e,
 							 GulGestures *as);
-static gboolean		gul_gestures_mouse_press_cb	(GtkWidget *widget, GdkEventButton *e,
+static gboolean		gul_gestures_mouse_press_cb	(GtkWidget *widget,
+							 GdkEventButton *e,
 							 GulGestures *as);
-static gboolean		gul_gestures_mouse_release_cb	(GtkWidget *widget, GdkEventButton *e,
+static gboolean		gul_gestures_mouse_release_cb	(GtkWidget *widget,
+							 GdkEventButton *e,
 							 GulGestures *as);
-static gboolean		gul_gestures_key_press_cb	(GtkWidget *widget, GdkEventKey *e,
+static gboolean		gul_gestures_key_press_cb	(GtkWidget *widget,
+							 GdkEventKey *e,
 							 GulGestures *as);
 static void		gul_gestures_stop		(GulGestures *as);
 static void		gul_gestures_start_autocancel	(GulGestures *ges);
 
-static gpointer g_object_class;
+static GObjectClass *parent_class = NULL;
 
 /* signals enums and ids */
 enum GulGesturesSignalsEnum {
@@ -77,14 +80,42 @@ static gint GulGesturesSignals[GUL_GESTURES_LAST_SIGNAL];
  * Gestures object
  */
 
-MAKE_GET_TYPE (gul_gestures, "GulGestures", 
-	       GulGestures, gul_gestures_class_init, 
-	       gul_gestures_init, G_TYPE_OBJECT);
+GType
+gul_gestures_get_type (void)
+{
+        static GType gul_gestures_type = 0;
+
+        if (gul_gestures_type == 0)
+        {
+                static const GTypeInfo our_info =
+                {
+                        sizeof (GulGesturesClass),
+                        NULL, /* base_init */
+                        NULL, /* base_finalize */
+                        (GClassInitFunc) gul_gestures_class_init,
+                        NULL,
+                        NULL, /* class_data */
+                        sizeof (GulGestures),
+                        0, /* n_preallocs */
+                        (GInstanceInitFunc) gul_gestures_init
+                };
+
+		gul_gestures_type = g_type_register_static (G_TYPE_OBJECT,
+							    "GulGestures",
+							    &our_info, 0);
+        }
+
+        return gul_gestures_type;
+}
 
 static void
 gul_gestures_class_init (GulGesturesClass *klass)
 {
-	G_OBJECT_CLASS (klass)->finalize = gul_gestures_finalize_impl;
+	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+
+	parent_class = g_type_class_peek_parent (klass);
+
+	object_class->finalize = gul_gestures_finalize_impl;
 
 	GulGesturesSignals[GUL_GESTURES_GESTURE_PERFORMED] = g_signal_new (
 		"gesture-performed", G_OBJECT_CLASS_TYPE (klass),  
@@ -101,8 +132,6 @@ gul_gestures_class_init (GulGesturesClass *klass)
 		NULL, NULL, 
 		g_cclosure_marshal_VOID__VOID,
 		G_TYPE_NONE, 0);
-
-	g_object_class = g_type_class_peek_parent (klass);
 }
 
 static void 
@@ -127,7 +156,7 @@ gul_gestures_finalize_impl (GObject *o)
 
 	g_free (p);
 
-	G_OBJECT_CLASS (g_object_class)->finalize (o);
+	parent_class->finalize (o);
 }
 
 GulGestures *
@@ -226,12 +255,12 @@ gul_gestures_mouse_release_cb (GtkWidget *widget, GdkEventButton *e,
 	gul_gestures_stop (as);
 
         /* handle gestures */
- if (!stroke_trans (sequence) == TRUE)
- {
-    strcpy(sequence, "5"); /* fake a 'nothing' move, to bring up the menu */
- }
+	if (!stroke_trans (sequence) == TRUE)
+	{
+		strcpy (sequence, "5"); /* fake a 'nothing' move, to bring up the menu */
+	}
  
-  g_signal_emit (as, GulGesturesSignals[GUL_GESTURES_GESTURE_PERFORMED], 0, sequence);
+	g_signal_emit (as, GulGesturesSignals[GUL_GESTURES_GESTURE_PERFORMED], 0, sequence);
 
 	g_object_unref (as);
 

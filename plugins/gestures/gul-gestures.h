@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2002  Ricardo Fern·ndez Pascual
+ *  Copyright (C) 2002  Ricardo Fern√°ndez Pascual
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -22,10 +22,7 @@
 #include <glib-object.h>
 #include <gtk/gtkwidget.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
+G_BEGIN_DECLS
 
 /* object forward declarations */
 
@@ -37,27 +34,20 @@ typedef struct _GulGesturesPrivate GulGesturesPrivate;
  * Gestures object
  */
 
-#define GUL_TYPE_GESTURES			(gul_gestures_get_type())
-#define GUL_GESTURES(object)		(G_TYPE_CHECK_INSTANCE_CAST((object), \
-							 GUL_TYPE_GESTURES,\
-							 GulGestures))
-#define GUL_GESTURES_CLASS(klass)		(G_TYPE_CHECK_CLASS_CAST((klass), \
-							 GUL_TYPE_GESTURES,\
-							 GulGesturesClass))
-#define GUL_IS_GESTURES(object)		(G_TYPE_CHECK_INSTANCE_TYPE((object), \
-							 GUL_TYPE_GESTURES))
-#define GUL_IS_GESTURES_CLASS(klass)	(G_TYPE_CHECK_CLASS_TYPE((klass), \
-							 GUL_TYPE_GESTURES))
-#define GUL_GESTURES_GET_CLASS(obj)	(G_TYPE_INSTANCE_GET_CLASS((obj), \
-							 GUL_TYPE_GESTURES,\
-							 GulGesturesClass))
+#define GUL_TYPE_GESTURES		(gul_gestures_get_type())
+#define GUL_GESTURES(object)		(G_TYPE_CHECK_INSTANCE_CAST((object), GUL_TYPE_GESTURES, GulGestures))
+#define GUL_GESTURES_CLASS(klass)	(G_TYPE_CHECK_CLASS_CAST((klass), GUL_TYPE_GESTURES, GulGesturesClass))
+#define GUL_IS_GESTURES(object)		(G_TYPE_CHECK_INSTANCE_TYPE((object), GUL_TYPE_GESTURES))
+#define GUL_IS_GESTURES_CLASS(klass)	(G_TYPE_CHECK_CLASS_TYPE((klass), GUL_TYPE_GESTURES))
+#define GUL_GESTURES_GET_CLASS(obj)	(G_TYPE_INSTANCE_GET_CLASS((obj), GUL_TYPE_GESTURES, GulGesturesClass))
 
 struct _GulGesturesClass 
 {
 	GObjectClass parent_class;
 
 	/* signals */
-	void	(*gesture_performed)	(GulGestures *g, const char *sequence);
+	void	(*gesture_performed)	(GulGestures *g,
+					 const char *sequence);
 	void	(*cancelled)		(GulGestures *g);
 	
 };
@@ -68,18 +58,19 @@ struct _GulGestures
 	GulGesturesPrivate *priv;
 };
 
-GType				gul_gestures_get_type		(void);
-GulGestures *			gul_gestures_new		(void);
-void				gul_gestures_start		(GulGestures *g,
-								 GtkWidget *widget, 
-								 guint button,
-								 gint x, gint y);
-void 				gul_gestures_set_autocancel	(GulGestures *ges, 
-								 gboolean autocancel);
+GType		gul_gestures_get_type		(void);
 
+GulGestures *	gul_gestures_new		(void);
 
-#ifdef __cplusplus
-}
-#endif
+void		gul_gestures_start		(GulGestures *g,
+						 GtkWidget *widget, 
+						 guint button,
+						 gint x,
+						 gint y);
+
+void 		gul_gestures_set_autocancel	(GulGestures *ges, 
+						 gboolean autocancel);
+
+G_END_DECLS
 
 #endif

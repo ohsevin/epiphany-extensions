@@ -1,0 +1,6 @@
+2003-07-31  Christian Persch
+
+	* gul-gestures.h:
+	* gul-gestures.c:
+
+	Exorcised the gul-gobject-misc macros, cleaned up formatting a bit.
