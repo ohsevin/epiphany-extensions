@@ -21,8 +21,8 @@ Changes
 	* Implement EphyExtension attach_window/detach_window interface in page-info ext
 	* Adapt to Epiphany API changes
 
-Contributors to this release: Adam Hooper, Tomasz Kłoczko, Jean-François Rameau
-and myself, and the translators Frank Arnold (de) and Takeshi AIHANA (ja).
+Contributors to this release: Adam Hooper, Tomasz Kłoczko, Christian Persch,
+Jean-François Rameau, and the translators Frank Arnold (de) and Takeshi AIHANA (ja).
 
 
 =========================
