@@ -436,13 +436,13 @@ static GtkActionEntry action_entries [] =
 static GtkRadioActionEntry radio_entries [] =
 {
 	{ "OpenInCurrent", NULL, N_("Open in _Current Tab"), NULL,
-	  N_("Opens bookmarks in the current tab of the active window"),
+	  N_("Open bookmarks in the current tab of the active window"),
 	  OPEN_IN_CURRENT },
 	{ "OpenInNewTab", NULL, N_("Open in New _Tab"), NULL,
-	  N_("Opens bookmarks in a newt tab of the active window"),
+	  N_("Open bookmarks in a new tab of the active window"),
 	  OPEN_IN_NEW_TAB },
 	{ "OpenInNewWindow", NULL, N_("Open in New _Window"), NULL,
-	  N_("Opens bookmarks in a new window"),
+	  N_("Open bookmarks in new a window"),
 	  OPEN_IN_NEW_WINDOW },
 };
 
