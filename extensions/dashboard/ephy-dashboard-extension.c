@@ -140,9 +140,9 @@ load_status_cb (EphyTab *tab,
 			g_object_unref (persist);
 
 			DashboardSendCluePacket (
-				EPIPHANY_FRONTEND_IDENTIFIER,
+				(const xmlChar*) EPIPHANY_FRONTEND_IDENTIFIER,
 				ephy_tab_get_visibility(tab), /* focused */
-				location, /* context */
+				(const xmlChar*) location, /* context */
 				location, "url", 10,
 				page_title, "title", 10,
 				content, "htmlblock", 10,
@@ -155,9 +155,9 @@ load_status_cb (EphyTab *tab,
 			LOG ("Page not bookmarked, sending only location and title")
 
 			DashboardSendCluePacket (
-				EPIPHANY_FRONTEND_IDENTIFIER,
+				(const xmlChar*) EPIPHANY_FRONTEND_IDENTIFIER,
 				ephy_tab_get_visibility(tab), /* focused */
-				location, /* context */
+				(const xmlChar*) location, /* context */
 				location, "url", 10,
 				page_title, "title", 10,
 				NULL);

@@ -1,3 +1,18 @@
+2005-01-20  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/dashboard/dashboard-frontend-xmlwriter.c:
+	(NewTextWriterDashboard), (DashboardSendClue):
+	* extensions/dashboard/ephy-dashboard-extension.c:
+	(load_status_cb):
+	* extensions/error-viewer/sgml-validator.c:
+	(save_source_completed_cb):
+	* extensions/gestures/ephy-gestures-extension.c:
+	(load_one_gesture), (load_gestures):
+	* extensions/sidebar/ephy-sidebar-extension.c:
+	(ephy_sidebar_extension_init), (ephy_sidebar_extension_finalize):
+
+	Fix signed/unsigned int confusion. Patch by Andreas Jochens.
+
 2005-01-19  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/adblock/Makefile.am:

@@ -114,13 +114,13 @@ load_one_gesture (EphyGesturesExtension *extension,
 
 	for (child = node->children; child != NULL; child = child->next)
 	{
-		if (xmlStrEqual (child->name, "sequence"))
+		if (xmlStrEqual (child->name, (const xmlChar*) "sequence"))
 		{
 			s = xmlNodeGetContent (child);
 
 			sequences = g_slist_prepend (sequences, s);
 		}
-		else if (xmlStrEqual (child->name, "action"))
+		else if (xmlStrEqual (child->name, (const xmlChar*) "action"))
 		{
 			if (action == NULL)
 			{
@@ -143,7 +143,7 @@ load_one_gesture (EphyGesturesExtension *extension,
 	{
 		g_hash_table_insert (extension->priv->gestures,
 				     g_strdup (l->data),
-				     g_strdup (action));
+				     g_strdup ((char*)action));
 		xmlFree (l->data);
 	}
 
@@ -173,7 +173,7 @@ load_gestures (EphyGesturesExtension *extension,
 	}
 
 	root = xmlDocGetRootElement (doc);
-	if (root == NULL || strcmp (root->name, EPHY_GESTURES_XML_ROOT) != 0)
+	if (root == NULL || strcmp ((char*)root->name, EPHY_GESTURES_XML_ROOT) != 0)
 	{
 		g_warning ("Gestures definitions file %s has wrong format '%s'"
 		           "(expected " EPHY_GESTURES_XML_ROOT ")\n",
@@ -181,8 +181,8 @@ load_gestures (EphyGesturesExtension *extension,
 		goto out;
 	}
 
-	tmp = xmlGetProp (root, "version");
-	if (tmp  == NULL || strcmp (tmp, EPHY_GESTURES_XML_VERSION) != 0)
+	tmp = xmlGetProp (root, (const xmlChar*) "version");
+	if (tmp  == NULL || strcmp ((char*) tmp, (char*) EPHY_GESTURES_XML_VERSION) != 0)
 	{
 		g_warning ("Gestures definitions file %s has wrong format version %s"
 			   "(expected " EPHY_GESTURES_XML_VERSION ")\n",
@@ -192,7 +192,7 @@ load_gestures (EphyGesturesExtension *extension,
 
 	for (child = root->children; child != NULL; child = child->next)
 	{
-		if (xmlStrEqual (child->name, "gesture"))
+		if (xmlStrEqual (child->name, (const xmlChar*) "gesture"))
 		{
 			load_one_gesture (extension, child);
 		}

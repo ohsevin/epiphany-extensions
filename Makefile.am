@@ -3,6 +3,7 @@ SUBDIRS = include extensions po
 EXTRA_DIST =			\
 	COPYING.README		\
 	ChangeLog  		\
+	HACKING			\
 	README 			\
 	TODO 			\
 	intltool-extract.in 	\
