@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-05-31 13:15+0200\n"
-"PO-Revision-Date: 2004-03-18 23:02+0100\n"
+"POT-Creation-Date: 2004-07-13 21:15+0200\n"
+"PO-Revision-Date: 2004-07-13 21:16+0200\n"
 "Last-Translator: Francisco Javier F. Serrador <serrador@cvs.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -77,7 +77,7 @@ msgid "Error Viewer"
 msgstr "Visor de errores"
 
 #. Don't bother looking for source lines -- they're not there
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:85
 #, c-format
 msgid ""
 "Error:\n"
@@ -86,7 +86,7 @@ msgstr ""
 "Error:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:90
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:110
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -95,14 +95,14 @@ msgstr ""
 "Error de JavaScript en %s, en la línea %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:60
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
 msgstr[0] "Se encontró %d enlace inválido"
 msgstr[1] "Se encontraron %d enlaces inválidos"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:117
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -111,14 +111,14 @@ msgstr ""
 "Error de enlace en %s:\n"
 "%s no está disponible."
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:198
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
 msgstr[0] "Comprobando %d enlace en %s"
 msgstr[1] "Comprobando %d enlaces en %s"
 
-#: extensions/error-viewer/opensp/validate.cpp:167
+#: extensions/error-viewer/opensp/validate.cpp:168
 #, c-format
 msgid ""
 "HTML error in %s on line %s:\n"
@@ -167,19 +167,17 @@ msgstr ""
 "%s"
 
 #: extensions/error-viewer/sgml-validator.c:360
-#, fuzzy, c-format
+#, c-format
 msgid "HTML error in %s:"
-msgstr ""
-"Error HTML en %s:\n"
-"%s"
+msgstr "Error HTML en %s:"
 
 #: extensions/error-viewer/sgml-validator.c:368
 msgid "Invalid character encoding"
-msgstr ""
+msgstr "Codificación de caracteres inválida"
 
 #: extensions/error-viewer/sgml-validator.c:373
 msgid "Unknown error while converting to UTF-8"
-msgstr ""
+msgstr "Error desconocido al convertir a UTF-8"
 
 #: extensions/error-viewer/sgml-validator.c:435
 #, c-format
@@ -189,23 +187,6 @@ msgid ""
 msgstr ""
 "Error HTML en %s:\n"
 "No se especificó un doctupe válido."
-
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
-msgid "Popup _Windows"
-msgstr "_Ventanas emergentes"
-
-#. shortcut key
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
-msgid "Show or hide unrequested popup windows from this site"
-msgstr ""
-"Mostrar u ocultar las ventanas emergentes no  solicitadas de este sitio"
-
-#: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
-#, c-format
-msgid "%d popup window blocked"
-msgid_plural "%d popup windows blocked"
-msgstr[0] "%d emergente bloqueado"
-msgstr[1] "%d emergentes bloqueados"
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:183
 #, c-format
@@ -221,6 +202,18 @@ msgstr "Mover solapa a la ventana"
 #: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
 msgstr "Mueve la solapa actual a una ventana diferente"
+
+#~ msgid "Popup _Windows"
+#~ msgstr "_Ventanas emergentes"
+
+#~ msgid "Show or hide unrequested popup windows from this site"
+#~ msgstr ""
+#~ "Mostrar u ocultar las ventanas emergentes no  solicitadas de este sitio"
+
+#~ msgid "%d popup window blocked"
+#~ msgid_plural "%d popup windows blocked"
+#~ msgstr[0] "%d emergente bloqueado"
+#~ msgstr[1] "%d emergentes bloqueados"
 
 #~ msgid "Blo_ck Popups from this Site"
 #~ msgstr "_Bloquear emergentes de este sitio"
