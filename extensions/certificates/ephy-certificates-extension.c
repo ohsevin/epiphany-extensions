@@ -243,10 +243,9 @@ tab_removed_cb (GtkWidget *notebook,
 }
 
 static void
-switch_page_cb (GtkNotebook *notebook,
-		GtkNotebookPage *page,
-		guint page_num,
-		EphyWindow *window)
+sync_active_tab_cb (EphyWindow *window,
+		    GParamSpec *pspec,
+		    EphyCertificatesExtension *extension)
 {
 	EphyTab *tab;
 
@@ -309,9 +308,9 @@ impl_attach_window (EphyExtension *ext,
 	g_signal_connect_after (notebook, "tab_added",
 				G_CALLBACK (tab_added_cb), window);
 	g_signal_connect_after (notebook, "tab_removed",
-				G_CALLBACK (tab_added_cb), window);
-	g_signal_connect_after (notebook, "switch_page",
-				G_CALLBACK (switch_page_cb), window);
+				G_CALLBACK (tab_removed_cb), window);
+	g_signal_connect (window, "notify::active-tab",
+			  G_CALLBACK (sync_active_tab_cb), extension);
 
 	/* make padlock icon clickable */
 	statusbar = ephy_window_get_statusbar (window);

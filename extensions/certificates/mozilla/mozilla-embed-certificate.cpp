@@ -25,20 +25,23 @@
 #include <nsCOMPtr.h>
 #include <nsIRequest.h>
 
-#define DATA_KEY "EphyCertificateExtension::MozillaEmbedCertificate"
+#define DATA_KEY "EphyCertificatesExtension::MozillaEmbedCertificate"
 
-static void embed_security_change_cb (GObject *embed_object, 
-				      gpointer request_ptr,
-				      guint state,
-				      gpointer dummy)
+static void
+embed_security_change_cb (GObject *embed_object, 
+			  gpointer request_ptr,
+			  guint state,
+			  gpointer dummy)
 {
 	MozillaEmbedCertificate *cert;
 
 	cert = (MozillaEmbedCertificate *) g_object_get_data (embed_object, DATA_KEY);
+	g_return_if_fail (cert);
 	if (!cert) return;
 
 	nsCOMPtr<nsIRequest> request = static_cast<nsIRequest*>(request_ptr);
-	NS_ENSURE_TRUE (request,);
+	g_return_if_fail (request != nsnull);
+	if (!request) return;
 
 	cert->SetCertificateFromRequest (request);
 }
@@ -48,7 +51,8 @@ delete_cert (gpointer cert_ptr)
 {
 	MozillaEmbedCertificate *cert = (MozillaEmbedCertificate *) cert_ptr;
 
-	g_return_if_fail (cert != NULL);
+	g_return_if_fail (cert);
+	if (!cert) return;
 
 	delete cert;
 }
@@ -66,11 +70,11 @@ mozilla_embed_certificate_attach (EphyEmbed *embed)
 
 		g_object_set_data_full (embed_object, DATA_KEY, cert,
 					(GDestroyNotify) delete_cert);
-	}
 
-	g_signal_connect_object (G_OBJECT (embed), "security_change",
-				 G_CALLBACK (embed_security_change_cb),
-				 NULL, (GConnectFlags) 0);
+		g_signal_connect_object (G_OBJECT (embed), "security_change",
+					 G_CALLBACK (embed_security_change_cb),
+					 NULL, (GConnectFlags) 0);
+	}
 }
 
 extern "C" void
@@ -80,6 +84,7 @@ mozilla_embed_view_certificate (EphyEmbed *embed)
 	MozillaEmbedCertificate *cert;
 
 	cert = (MozillaEmbedCertificate *) g_object_get_data (embed_object, DATA_KEY);
+	g_return_if_fail (cert);
 	if (!cert) return;
 
 	cert->ViewCertificate ();
@@ -92,6 +97,7 @@ mozilla_embed_has_certificate (EphyEmbed *embed)
 	MozillaEmbedCertificate *cert;
 
 	cert = (MozillaEmbedCertificate *) g_object_get_data (embed_object, DATA_KEY);
+	g_return_val_if_fail (cert, FALSE);
 	if (!cert) return FALSE;
 
 	PRBool hasCert;
