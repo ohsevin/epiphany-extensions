@@ -1,3 +1,12 @@
+2004-06-24  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/Makefile.am:
+
+	Remove the popup-blocker extension from the build, since it's
+	not ported to embed strings and we're integrating it into
+	Epiphany.
+
 2004-06-23  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/certificates/mozilla/mozilla-embed-certificate.cpp:

@@ -16,9 +16,9 @@ if ENABLE_GESTURES_EXTENSION
 SUBDIRS += gestures
 endif
 
-if ENABLE_POPUP_BLOCKER_EXTENSION
-SUBDIRS += popup-blocker
-endif
+#if ENABLE_POPUP_BLOCKER_EXTENSION
+#SUBDIRS += popup-blocker
+#endif
 
 if ENABLE_SAMPLE_EXTENSION
 SUBDIRS += sample

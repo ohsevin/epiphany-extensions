@@ -137,9 +137,9 @@ dnl *******************************
 
 AC_MSG_CHECKING([extensions to build])
 
-all_extensions="certificates,dashboard,error-viewer,gestures,popup-blocker,sample,sample-mozilla,tabsmenu,toolbar-extras"
-all_useful_extensions="certificates,dashboard,error-viewer,gestures,popup-blocker,tabsmenu,toolbar-extras"
-default_extensions="certificates,error-viewer,gestures,popup-blocker,tabsmenu"
+all_extensions="certificates,dashboard,error-viewer,gestures,sample,sample-mozilla,tabsmenu,toolbar-extras"
+all_useful_extensions="certificates,dashboard,error-viewer,gestures,tabsmenu,toolbar-extras"
+default_extensions="certificates,error-viewer,gestures,tabsmenu"
 mozilla_dependent_extensions="certificates,error-viewer,sample-mozilla"
 
 dnl due to an autoconf bug, commas in the first arg to
@@ -186,7 +186,7 @@ AM_CONDITIONAL(ENABLE_CERTIFICATES_EXTENSION, echo "$extensions" | egrep '(^|,)c
 AM_CONDITIONAL(ENABLE_DASHBOARD_EXTENSION, echo "$extensions" | egrep '(^|,)dashboard($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_ERROR_VIEWER_EXTENSION, echo "$extensions" | egrep '(^|,)error-viewer($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_GESTURES_EXTENSION, echo "$extensions" | egrep '(^|,)gestures($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_POPUP_BLOCKER_EXTENSION, echo "$extensions" | egrep '(^|,)popup-blocker($|,)' > /dev/null)
+dnl AM_CONDITIONAL(ENABLE_POPUP_BLOCKER_EXTENSION, echo "$extensions" | egrep '(^|,)popup-blocker($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SAMPLE_EXTENSION, echo "$extensions" | egrep '(^|,)sample($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SAMPLE_MOZILLA_EXTENSION, echo "$extensions" | egrep '(^|,)sample-mozilla($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_TABSMENU_EXTENSION, echo "$extensions" | egrep '(^|,)tabsmenu($|,)' > /dev/null)
