@@ -1,5 +1,14 @@
 2004-10-11  Christian Persch  <chpe@cvs.gnome.org>
 
+	=== Release 1.4.2 ===
+
+	* NEWS:
+	* configure.ac:
+
+	Version 1.4.2.
+
+2004-10-11  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/error-viewer/sgml-validator.c: (convert_to_utf8):
 
 	64-bit fix. Patch by Andrzej Dopierała.

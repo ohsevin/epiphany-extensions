@@ -1,4 +1,26 @@
 =========================
+Epiphany Extensions 1.4.2
+=========================
+
+Interface improvements
+
+	* Implement context menu in "Links" tab of the Page Info dialog (Christian)
+
+Bug fixes
+
+	* Fix a mem leak (Christian)
+	* 64 bit portability fix (Andrzej Dopierała)
+
+Translations updates
+
+	* Miloslav Trmac (cs)
+	* Adam Weinberger (en_CA)
+	* David Lodge (en_GB)
+	* Gabor Kelemen (hu)
+	* Takeshi AIHANA (ja)
+
+
+=========================
 Epiphany Extensions 1.4.1
 =========================
 
