@@ -343,7 +343,7 @@ dom_mouse_down_cb  (EphyEmbed *embed,
 		g_signal_connect (eg, "gesture-performed",
 				  G_CALLBACK (tab_gesture_performed_cb), tab);
 
-		gul_gestures_start (eg, GTK_WIDGET (window), button, x, y);
+		ephy_gestures_start (eg, GTK_WIDGET (window), button, x, y);
 
 		g_object_unref (eg);
 	}
