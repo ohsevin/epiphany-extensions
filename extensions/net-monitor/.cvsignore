@@ -6,4 +6,4 @@ Makefile
 Makefile.in
 .deps
 .libs
-actions.xml
+net-monitor.xml
