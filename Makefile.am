@@ -18,4 +18,4 @@ DISTCLEANFILES = 		\
 	intltool-merge 		\
 	intltool-update
 
-DISTCHECK_CONFIGURE_FLAGS = --with-extensions=really-all
+DISTCHECK_CONFIGURE_FLAGS = --with-extensions=really-all --with-mozilla=$(MOZILLA)

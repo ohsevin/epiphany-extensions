@@ -260,6 +260,8 @@ elif test "x$with_mozilla" != "xmozilla" -a "x$with_mozilla" != "xfirefox" -a "x
   AC_MSG_ERROR([unknown mozilla name ($MOZILLA)])
 fi
 
+AC_SUBST([MOZILLA])
+
 AC_MSG_RESULT([$MOZILLA])
 
 case "$MOZILLA" in
