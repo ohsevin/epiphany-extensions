@@ -18,6 +18,7 @@ extensions/dashboard/dashboard.xml.in.in
 extensions/error-viewer/error-viewer.xml.in.in
 extensions/find/find.xml.in.in
 extensions/gestures/gestures.xml.in.in
+extensions/net-monitor/net-monitor.xml.in.in
 extensions/page-info/page-info.xml.in.in
 extensions/sample-mozilla/sample-mozilla.xml.in.in
 extensions/sample/sample.xml.in.in
