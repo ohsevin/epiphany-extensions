@@ -1,5 +1,13 @@
 2004-10-08  Crispin Flowerday  <gnome@flowerday.cx>
 
+	* extensions/sidebar/mozilla/Sidebar.cpp
+	* extensions/sidebar/mozilla/Sidebar.h:
+
+	Remove the SidebarProxy destructor, it avoids a one potential
+	crash after the extension has been unloaded
+
+2004-10-08  Crispin Flowerday  <gnome@flowerday.cx>
+
 	* extensions/sidebar/ephy-sidebar-extension.c: (cmd_view_sidebar),
 	(window_ppv_mode_notify_cb), (impl_attach_window),
 	(impl_detach_window):

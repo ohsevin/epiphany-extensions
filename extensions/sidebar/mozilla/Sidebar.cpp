@@ -42,12 +42,6 @@ GObject * SidebarProxy::mSignalObject = NULL;
 
 SidebarProxy::SidebarProxy()
 {
-	LOG ("SidebarProxy ctor(%p)", this);
-}
-
-SidebarProxy::~SidebarProxy()
-{
-	LOG ("SidebarProxy dtor(%p)", this);
 }
 
 void

@@ -39,7 +39,6 @@ public:
 	NS_DECL_NSICLASSINFO
      
 	SidebarProxy();
-	~SidebarProxy();
 
 	static void SetSignalObject (GObject *aObject);
  private:
