@@ -1,4 +1,13 @@
 =========================
+Epiphany Extensions 1.4.5
+=========================
+
+Changes
+
+	* Fix signed/unsigned int problems [Andreas Jochens]
+
+
+=========================
 Epiphany Extensions 1.4.4
 =========================
 
