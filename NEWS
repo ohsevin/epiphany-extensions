@@ -1,4 +1,66 @@
 =========================
+Epiphany Extensions 1.5.1
+=========================
+
+New features
+
+	* Created copy-template script
+	* Added "Sidebar" extension, written by Crispin Flowerday
+	* Added "Extensions Manager" extension, written by Adam Hooper
+	* Added "Bookmarks Tray" extension
+
+Changes
+
+	* Updated for epiphany 1.5 API changes
+	* Cleanup of mozilla stylesheet handling.
+	* Skip style sheets not for "screen" or "all" media
+	* Add tab-groups to default_extensions
+	* Fix context menu positioning
+	* Add warnings to CFLAGS and CXXFLAGS
+	* Fix loads of compiler warnings
+	* Set window icons
+	* Implement context menu in "Links" tab
+	* Add extension description files
+	* Make dialogue transient to the opening window
+	* Add separators in the Tools menu
+	* Use new gtk+ HIG message dialogue API.
+	* Listen to ephy-extension-manager's added/removed signals to add/remove
+	  extensions from the list
+
+Bug fixes
+	* Fix mem leaks [#153470, #153471, #153473]
+	* Fix crash after unloading the error-viewer extension [#153712]
+	* Make all extensions unload-proof
+	* Always load unnamed stylesheets [#153739]
+	* Don't block stylesheets without "media" attribute. Shorten menu
+	  entries to 32 chars max [#153710]
+	* Hide the sidebar when in print preview mode
+	* 64-bit fix [Andrzej Dopierała]
+	* Don't make the extensions description ediable [#155389]
+	* Fix the extensions .xml description file build process
+	* Detach correctly from the window [#155388]
+	* Destroy info dialoguess with Extension Manager UI dialogue
+	* Fix alignment of "Authors" label
+
+Documentation
+
+	* Updated HOW-TO
+
+Translation updates
+
+	* Ole Laursen (da)
+	* Christian Neumair (de)
+	* Adam Weinberger (en_CA)
+	* David Lodge (en_GB)
+	* Francisco Javier F. Serrador (es)
+	* Yannick Tailliez (fr)
+	* (hr)
+	* Francesco Marletta (it)
+	* Reinout van Schouwen (nl)
+	* Raphael Higino (pt_BR)
+
+
+=========================
 Epiphany Extensions 1.4.0
 =========================
 
