@@ -42,21 +42,17 @@ static string
 toString (SGMLApplication::CharString s)
 {
 	string r = "";
-	char *utf8_buf;
+	char utf8_buf[7];
 	int len;
-
-	utf8_buf = (char *) g_malloc0 (7 * sizeof (char));
 
 	for (size_t i = 0; i < s.len; i++)
 	{
 		len = g_unichar_to_utf8 ((gunichar) s.ptr[i], utf8_buf);
 
-		*(utf8_buf + len) = 0;
+		utf8_buf[len] = 0;
 
 		r += utf8_buf;
 	}
-
-	g_free (utf8_buf);
 
 	return r;
 }

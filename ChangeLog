@@ -2,6 +2,12 @@
 
 	* extensions/error-viewer/opensp/validate.cpp:
 
+	Use a char[7] instead of a char *
+
+2004-01-31  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/error-viewer/opensp/validate.cpp:
+
 	toString() returns utf-8 now, like it should.
 
 	* extensions/error-viewer/sgml-validator.c:
