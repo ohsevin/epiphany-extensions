@@ -1,3 +1,9 @@
+2003-07-31  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.in:
+
+	Added gconf dependency.
+
 2003-07-30  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.in:
