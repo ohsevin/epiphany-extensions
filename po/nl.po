@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNOME 2.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-29 14:37+0100\n"
-"PO-Revision-Date: 2004-02-29 22:30+0100\n"
+"POT-Creation-Date: 2004-03-12 03:18+0100\n"
+"PO-Revision-Date: 2004-03-12 12:16+0100\n"
 "Last-Translator: Reinout van Schouwen <reinout@cs.vu.nl>\n"
 "Language-Team: nl <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
@@ -82,10 +82,8 @@ msgstr "Foutenweergave"
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
-msgstr[0] ""
-"%d ongeldige verwijzing gevonden"
-msgstr[1] ""
-"%d ongeldige verwijzingen gevonden"
+msgstr[0] "%d ongeldige verwijzing gevonden"
+msgstr[1] "%d ongeldige verwijzingen gevonden"
 
 #. Don't bother looking for source lines -- they're not there
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
@@ -180,16 +178,21 @@ msgstr ""
 "HTML fout in %s:\n"
 "Geen geldig doctype opgegeven."
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
 msgid "Blo_ck Popups from this Site"
 msgstr "O_pduikvensters van deze site blokkeren"
 
 #. shortcut key
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:64
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
 msgid "Block or unblock popup windows"
 msgstr "Opduikvensters blokkeren of deblokkeren"
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:324
+#: extensions/popup-blocker/ephy-popup-blocker-icon.c:295
+#, c-format
+msgid "Open %s"
+msgstr "%s openen"
+
+#: extensions/popup-blocker/ephy-popup-blocker-icon.c:342
 #, c-format
 msgid "%d popup blocked"
 msgid_plural "%d popups blocked"
@@ -205,7 +208,7 @@ msgstr[1] "Venster '%s' (%d tabs)"
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:282
 msgid "Move Tab To Window"
-msgstr "Tabblad naar venster verplaatsen"
+msgstr "Tabblad verplaatsen naar venster"
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
