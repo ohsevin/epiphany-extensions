@@ -20,10 +20,16 @@
  *  $Id$
  */
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 #include "ephy-dashboard-extension.h"
 #include "ephy-debug.h"
 
 #include <gmodule.h>
+
+G_MODULE_EXPORT GType register_module (GTypeModule *module);
 
 G_MODULE_EXPORT GType
 register_module (GTypeModule *module)
@@ -32,4 +38,3 @@ register_module (GTypeModule *module)
 
 	return ephy_dashboard_extension_register_type (module);
 }
-

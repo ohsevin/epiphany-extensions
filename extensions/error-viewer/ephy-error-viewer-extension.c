@@ -43,6 +43,8 @@
 
 #include <glib/gi18n-lib.h>
 
+#include <string.h>
+
 #ifdef HAVE_OPENSP
 #include "sgml-validator.h"
 #endif /* HAVE_OPENSP */

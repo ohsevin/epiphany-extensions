@@ -40,6 +40,8 @@
 
 #include <glib/gi18n-lib.h>
 
+#include <string.h>
+
 #define EPHY_CSS_MENU_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_CSS_MENU, EphyCSSMenuPrivate))
 
 struct _EphyCSSMenuPrivate

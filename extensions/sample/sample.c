@@ -19,15 +19,28 @@
  *  $Id$
  */
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 #include "ephy-sample-extension.h"
 #include "ephy-debug.h"
 
 #include <gmodule.h>
+#include <glib/gi18n-lib.h>
+
+G_MODULE_EXPORT GType register_module (GTypeModule *module);
 
 G_MODULE_EXPORT GType
 register_module (GTypeModule *module)
 {
 	LOG ("Registering EphySampleExtension")
+
+#ifdef ENABLE_NLS
+       /* Initialise the i18n stuff */
+        bindtextdomain (GETTEXT_PACKAGE, EPHY_PLUGINS_LOCALEDIR);
+        bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");	
+#endif /* ENABLE_NLS */
 
 	return ephy_sample_extension_register_type (module);
 }

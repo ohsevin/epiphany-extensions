@@ -198,7 +198,7 @@ load_patterns (void)
 static void
 ad_blocker_init (AdBlocker *blocker)
 {
-	LOG ("AdBlocker initializing %x", blocker)
+	LOG ("AdBlocker initializing %p", blocker)
 
 	blocker->priv = AD_BLOCKER_GET_PRIVATE (blocker);
 
@@ -210,7 +210,7 @@ ad_blocker_finalize (GObject *object)
 {
 	AdBlockerPrivate *priv = AD_BLOCKER_GET_PRIVATE (AD_BLOCKER (object));
 
-	LOG ("AdBlocker finalizing %x", object)
+	LOG ("AdBlocker finalizing %p", object)
 
 	g_slist_foreach (priv->patterns, (GFunc) g_pattern_spec_free, NULL);
 	g_slist_free (priv->patterns);

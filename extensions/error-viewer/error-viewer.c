@@ -64,6 +64,12 @@ enum
 	N_COLUMNS
 };
 
+/* glade callbacks */
+void error_viewer_clear_cb (GtkWidget *button,
+			    ErrorViewer *dialog);
+void error_viewer_close_cb (GtkWidget *button,
+			    ErrorViewer *dialog);
+
 static void error_viewer_class_init	(ErrorViewerClass *klass);
 static void error_viewer_init		(ErrorViewer *dialog);
 static void error_viewer_finalize	(GObject *object);
@@ -197,7 +203,6 @@ build_ui (ErrorViewer *dialog)
 	GdkPixbuf *icon;
 	GtkListStore *store;
 	GtkTreeView *treeview;
-	GtkTreeViewColumn *col;
 	GtkCellRenderer *renderer;
 	ErrorViewerPrivate *priv = dialog->priv;
 
@@ -269,7 +274,7 @@ error_viewer_init (ErrorViewer *dialog)
 static void
 error_viewer_finalize (GObject *object)
 {
-	ErrorViewer *dialog = ERROR_VIEWER (object);
+//	ErrorViewer *dialog = ERROR_VIEWER (object);
 
 	/* FIXME: Free TreeView stuff? */
 

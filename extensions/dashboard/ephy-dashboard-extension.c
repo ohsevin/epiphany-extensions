@@ -195,7 +195,9 @@ static void
 impl_attach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
+	EphyDashboardExtension *extension = EPHY_DASHBOARD_EXTENSION (ext);
 	GtkWidget *notebook;
+	GList *tabs, *l;
 
 	notebook = ephy_window_get_notebook (window);
 
@@ -203,12 +205,20 @@ impl_attach_window (EphyExtension *ext,
 				G_CALLBACK (tab_added_cb), ext);
 	g_signal_connect_after (notebook, "tab_removed",
 				G_CALLBACK (tab_removed_cb), ext);
+
+	tabs = ephy_window_get_tabs (window);
+	for (l = tabs; l != NULL; l = l->next)
+	{
+		tab_removed_cb (notebook, (EphyTab *) l->data, extension);
+	}
+	g_list_free (tabs);
 }
 
 static void
 impl_detach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
+	EphyDashboardExtension *extension = EPHY_DASHBOARD_EXTENSION (ext);
 	GtkWidget *notebook;
 	GList *tabs, *l;
 
@@ -222,7 +232,7 @@ impl_detach_window (EphyExtension *ext,
 	tabs = ephy_window_get_tabs (window);
 	for (l = tabs; l != NULL; l = l->next)
 	{
-		tab_removed_cb (notebook, (EphyTab *) l->data, window);
+		tab_removed_cb (notebook, (EphyTab *) l->data, extension);
 	}
 	g_list_free (tabs);
 }
@@ -245,7 +255,7 @@ ephy_dashboard_extension_iface_init (EphyExtensionIface *iface)
 static void
 ephy_dashboard_extension_class_init (EphyDashboardExtensionClass *klass)
 {
-	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+/*	GObjectClass *object_class = G_OBJECT_CLASS (klass);*/
 
 	parent_class = g_type_class_peek_parent (klass);
 

@@ -69,6 +69,10 @@ void		error_viewer_append		(ErrorViewer *dialog,
 						 ErrorViewerErrorType type,
 						 const char *text);
 
+void		error_viewer_use		(ErrorViewer *dialog);
+
+void		error_viewer_unuse		(ErrorViewer *dialog);
+
 G_END_DECLS
 
 #endif

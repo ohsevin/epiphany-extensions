@@ -106,8 +106,6 @@ ephy_tabs_menu_extension_init (EphyTabsMenuExtension *extension)
 static void
 ephy_tabs_menu_extension_finalize (GObject *object)
 {
-	EphyTabsMenuExtension *extension = EPHY_TABS_MENU_EXTENSION (object);
-
 	LOG ("EphyTabsMenuExtension finalising")
 
 	G_OBJECT_CLASS (tabs_menu_extension_parent_class)->finalize (object);

@@ -23,6 +23,7 @@
 #endif
 
 #include "link-checker.h"
+#include "mozilla-link-checker.h"
 
 #include "ephy-debug.h"
 
@@ -113,14 +114,14 @@ link_checker_append_internal (gpointer data)
 {
 	LinkCheckerAppendCBData *append_data;
 
-	g_return_if_fail (data != NULL);
+	g_return_val_if_fail (data != NULL, FALSE);
 
 	append_data = (LinkCheckerAppendCBData *) data;
 
-	g_return_if_fail (IS_LINK_CHECKER (append_data->checker));
-	g_return_if_fail (IS_ERROR_VIEWER
-			   (append_data->checker->priv->error_viewer));
-	g_return_if_fail (append_data->message != NULL);
+	g_return_val_if_fail (IS_LINK_CHECKER (append_data->checker), FALSE);
+	g_return_val_if_fail (IS_ERROR_VIEWER
+			   (append_data->checker->priv->error_viewer), FALSE);
+	g_return_val_if_fail (append_data->message != NULL, FALSE);
 
 	error_viewer_append (append_data->checker->priv->error_viewer,
 			     append_data->error_type,
@@ -188,7 +189,7 @@ link_checker_class_finalize (LinkCheckerClass *klass)
 static void
 link_checker_init (LinkChecker *checker)
 {
-	LOG ("LinkChecker initializing %x", checker)
+	LOG ("LinkChecker initializing %p", checker)
 
 	checker->priv = LINK_CHECKER_GET_PRIVATE (checker);
 }
@@ -198,7 +199,7 @@ link_checker_finalize (GObject *object)
 {
 	LinkCheckerPrivate *priv = LINK_CHECKER_GET_PRIVATE (LINK_CHECKER (object));
 
-	LOG ("LinkChecker finalizing %x", object)
+	LOG ("LinkChecker finalizing %p", object)
 
 	g_object_unref (priv->error_viewer);
 

@@ -109,8 +109,8 @@ find_action_group (GtkUIManager *manager)
 
 	list = gtk_ui_manager_get_action_groups (manager);
 	element = g_list_find_custom (list, "WindowActions", (GCompareFunc) find_name);
-	g_return_if_fail (element != NULL);
-	g_return_if_fail (element->data != NULL);
+	g_return_val_if_fail (element != NULL, NULL);
+	g_return_val_if_fail (element->data != NULL, NULL);
 
 	return GTK_ACTION_GROUP (element->data);
 }
@@ -212,7 +212,7 @@ update_tab_move_menu_cb (GtkAction *dummy,
 	EphyTabMoveMenuPrivate *p = menu->priv;
 	EphySession *session;
 	GtkAction *action;
-	GList *windows, *l;
+	GList *windows;
 
 	LOG ("update_tab_move_menu_cb")
 

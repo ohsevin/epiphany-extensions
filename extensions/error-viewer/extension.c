@@ -26,10 +26,14 @@
 
 #include "ephy-error-viewer-extension.h"
 #include "error-viewer.h"
+#include "link-checker.h"
+#include "sgml-validator.h"
 #include "ephy-debug.h"
 
 #include <gmodule.h>
 #include <glib/gi18n-lib.h>
+
+G_MODULE_EXPORT GType register_module (GTypeModule *module);
 
 G_MODULE_EXPORT GType
 register_module (GTypeModule *module)

@@ -121,8 +121,6 @@ motion_cb (GtkWidget *widget,
 	   GdkEventMotion *event,
 	   EphyGesture *gesture)
 {
-	EphyGesturePrivate *p = gesture->priv;
-
 	stroke_record (event->x_root, event->y_root);
 
 	return TRUE;

@@ -1,5 +1,68 @@
 2004-09-26  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/adblock/Makefile.am:
+	* extensions/adblock/ad-blocker.c: (ad_blocker_init),
+	(ad_blocker_finalize):
+	* extensions/adblock/extension.c:
+	* extensions/certificates/ephy-certificates-extension.c:
+	(impl_attach_window):
+	* extensions/certificates/extension.c:
+	* extensions/dashboard/dashboard-frontend-xmlwriter.c:
+	(dashboard_connect_with_timeout):
+	* extensions/dashboard/ephy-dashboard-extension.c:
+	(impl_attach_window), (impl_detach_window),
+	(ephy_dashboard_extension_class_init):
+	* extensions/dashboard/ephy-dashboard-extension.h:
+	* extensions/dashboard/ephy-dashboard.c: (register_module):
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	* extensions/error-viewer/error-viewer.c: (build_ui),
+	(error_viewer_finalize):
+	* extensions/error-viewer/error-viewer.h:
+	* extensions/error-viewer/extension.c:
+	* extensions/error-viewer/link-checker.c:
+	(link_checker_append_internal), (link_checker_init),
+	(link_checker_finalize):
+	* extensions/error-viewer/sgml-validator.c: (sgml_validator_init),
+	(sgml_validator_finalize), (save_source_completed_cb),
+	(sgml_validator_append_internal):
+	* extensions/gestures/ephy-gesture.c: (motion_cb):
+	* extensions/gestures/ephy-gestures-extension.c: (load_gestures),
+	(gesture_performed_cb), (dom_mouse_down_cb):
+	* extensions/gestures/gestures.c:
+	* extensions/page-info/ephy-page-info-extension.c:
+	(ephy_page_info_extension_finalize):
+	* extensions/page-info/extension.c:
+	* extensions/page-info/page-info-dialog.c:
+	(general_info_page_fill), (page_info_image_box_realize_cb),
+	(images_treeview_selection_changed_cb), (images_info_page_fill),
+	(links_info_page_construct), (links_info_page_fill),
+	(forms_info_page_construct), (forms_info_page_fill),
+	(page_info_dialog_init), (page_info_dialog_constructor):
+	* extensions/sample-mozilla/sample-mozilla.c:
+	* extensions/sample/sample.c: (register_module):
+	* extensions/select-stylesheet/ephy-css-menu.c:
+	* extensions/select-stylesheet/extension.c:
+	* extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:
+	* extensions/smart-bookmarks/smart-bookmarks-extension.c:
+	(search_gnome_dict_cb), (context_menu_cb), (tab_removed_cb),
+	(smart_bookmarks_extension_finalize):
+	* extensions/smart-bookmarks/smart-bookmarks-prefs-ui.c:
+	(smart_bookmarks_show_prefs_ui_cb):
+	* extensions/smart-bookmarks/smart-bookmarks.c:
+	* extensions/tab-groups/ephy-tab-grouper.c: (tab_added_cb):
+	* extensions/tab-groups/ephy-tab-groups-extension.c:
+	(ephy_tab_groups_extension_register_type):
+	* extensions/tab-groups/tab-groups.c:
+	* extensions/tabsmenu/ephy-tab-move-menu.c: (find_action_group),
+	(update_tab_move_menu_cb):
+	* extensions/tabsmenu/ephy-tabs-menu-extension.c:
+	(ephy_tabs_menu_extension_finalize):
+	* extensions/tabsmenu/tabs-menu.c:
+
+	Fix compiler warnings.
+
+2004-09-26  Christian Persch  <chpe@cvs.gnome.org>
+
 	* configure.ac:
 
 	Add warnings to CFLAGS and CXXFLAGS.

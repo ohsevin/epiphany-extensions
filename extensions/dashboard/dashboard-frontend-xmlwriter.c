@@ -28,6 +28,7 @@
 
 #include <libxml/xmlIO.h>
 
+#include <string.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/socket.h>
@@ -73,7 +74,7 @@ dashboard_connect_with_timeout (int  *fd,
 		return 0;
 	}
 
-	bzero ((char *) &sock, sizeof (sock));
+	memset ((char *) &sock, 0, sizeof (sock));
 	sock.sin_family      = AF_INET;
 	sock.sin_port        = htons (DASHBOARD_PORT);
 	sock.sin_addr.s_addr = inet_addr ("127.0.0.1");

@@ -19,12 +19,18 @@
  *  $Id$
  */
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
+
 #include "ephy-adblock-extension.h"
 #include "ad-blocker.h"
 #include "ephy-debug.h"
 
 #include <gmodule.h>
 #include <glib/gi18n-lib.h>
+
+G_MODULE_EXPORT GType register_module (GTypeModule *module);
 
 G_MODULE_EXPORT GType
 register_module (GTypeModule *module)

@@ -52,6 +52,7 @@
 #include <gtk/gtkuimanager.h>
 #include <gtk/gtkstock.h>
 #include <gtk/gtkclipboard.h>
+#include <gtk/gtkmain.h>
 
 #include <libgnomevfs/gnome-vfs-uri.h>
 #include <libgnomevfs/gnome-vfs-utils.h>
@@ -63,6 +64,7 @@
 #include <glib/gconvert.h>
 
 #include <time.h>
+#include <string.h>
 
 /* Glade callbacks */
 void page_info_dialog_close_button_clicked_cb	  (GtkWidget *button,
@@ -608,7 +610,6 @@ general_info_page_fill (InfoPage *page)
 	EphyEmbed *embed = dialog->priv->embed;
 	EmbedPageProperties *props;
 	/* GtkTreeView *page_info_meta_list; */
-	GList *i;
 	const char *text;
 	const char *date_hack = "%c"; /* quiet gcc */
 	char date[128];
@@ -923,7 +924,6 @@ page_info_image_box_realize_cb (GtkContainer *box,
 	TreeviewInfoPage *tpage = (TreeviewInfoPage *) dialog->priv->pages[IMAGES_PAGE];
 	ImagesInfoPage *page = (ImagesInfoPage *) tpage;
 	EphyEmbed *embed;
-	GtkWidget *treeview;
 
 	page->embed = embed = EPHY_EMBED (ephy_embed_factory_new_object (EPHY_TYPE_EMBED));
 
@@ -946,10 +946,7 @@ static void
 images_treeview_selection_changed_cb (GtkTreeSelection *selection,
 				      ImagesInfoPage *page)
 {
-	GtkTreeModel *model;
-	GtkTreeIter iter;
 	char *url;
-	gboolean has_selected;
 
 	url = images_get_selected_image_url (page);
 
@@ -1089,7 +1086,6 @@ static void
 images_info_page_fill (InfoPage *ipage)
 {
 	TreeviewInfoPage *tpage = (TreeviewInfoPage *) ipage;
-	ImagesInfoPage *page = (ImagesInfoPage *) ipage;
 	PageInfoDialog *dialog = ipage->dialog;
 	GtkListStore *store = tpage->store;
 	GtkTreeIter iter;
@@ -1157,7 +1153,6 @@ static void
 links_info_page_construct (InfoPage *ipage)
 {
 	TreeviewInfoPage *tpage = (TreeviewInfoPage *) ipage;
-	LinksInfoPage *page = (LinksInfoPage *) ipage;
 	PageInfoDialog *dialog = ipage->dialog;
 	GtkTreeView *treeview;
 	GtkListStore *liststore;
@@ -1227,7 +1222,6 @@ static void
 links_info_page_fill (InfoPage *ipage)
 {
 	TreeviewInfoPage *tpage = (TreeviewInfoPage *) ipage;
-	LinksInfoPage *page = (LinksInfoPage *) ipage;
 	PageInfoDialog *dialog = ipage->dialog;
 	GtkListStore *store = tpage->store;
 	GtkTreeIter iter;
@@ -1293,7 +1287,6 @@ static void
 forms_info_page_construct (InfoPage *ipage)
 {
 	TreeviewInfoPage *tpage = (TreeviewInfoPage *) ipage;
-	FormsInfoPage *page = (FormsInfoPage *) ipage;
 	PageInfoDialog *dialog = ipage->dialog;
 
 	GtkTreeView *treeview;
@@ -1364,7 +1357,6 @@ static void
 forms_info_page_fill (InfoPage *ipage)
 {
 	TreeviewInfoPage *tpage = (TreeviewInfoPage *) ipage;
-	ImagesInfoPage *page = (ImagesInfoPage *) ipage;
 	PageInfoDialog *dialog = ipage->dialog;
 	GtkListStore *store = tpage->store;
 	GtkTreeIter iter;
@@ -1411,8 +1403,6 @@ forms_info_page_new (PageInfoDialog *dialog)
 static void
 page_info_dialog_init (PageInfoDialog *dialog)
 {
-	InfoPage *page;
-
 	dialog->priv = PAGE_INFO_DIALOG_GET_PRIVATE (dialog);
 
 	dialog->priv->pages[GENERAL_PAGE] = general_info_page_new (dialog);
@@ -1433,7 +1423,6 @@ page_info_dialog_constructor (GType type,
 	GObject *object;
 	PageInfoDialog *dialog;
 	EphyDialog *edialog;
-	GtkWidget *notebook;
 	GtkAction *action;
 	InfoPage *page;
 	GError *error = NULL;

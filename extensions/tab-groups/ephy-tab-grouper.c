@@ -101,7 +101,6 @@ tab_added_cb (GtkWidget *notebook,
 	      EphyTab *tab,
 	      EphyTabGrouper *grouper)
 {
-	GtkWidget *cur_tab;
 	guint position = -1;
 
 	/* Calculate the appropriate position for the tab */
