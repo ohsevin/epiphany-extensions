@@ -1,13 +1,17 @@
-=======================
-Epiphany Extensions 1.0
-=======================
+=========================
+Epiphany Extensions 0.9.1
+=========================
 
 Changes
-	* Support Mozilla 1.7 and 1.8a[12].
+	* Support Mozilla 1.7
 
 Bug fixes
 
 	* Fix crash after moving tabs between windows (Christian) [#142078]
+
+Translations
+
+	* Rostislav Raykov (bg)
 
 
 =========================
