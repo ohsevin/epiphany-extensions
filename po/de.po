@@ -27,7 +27,7 @@ msgstr "Den momentan angezeigten Reiter duplizieren"
 
 #: plugins/tabsmenu/ephy-tabs-plugin-menu.c:331
 msgid "_Move Tab To"
-msgstr "Reiter _verschieben"
+msgstr "Reiter in anderes _Fenster verschieben"
 
 #: plugins/tabsmenu/ephy-tabs-plugin-menu.c:332
 msgid "Move the current tab to a different window"

@@ -1,5 +1,9 @@
 2003-08-04  Christian Persch  <chpe@cvs.gnome.org>
 
+	* de.po: Fixed mnemonic collision.
+
+2003-08-04  Christian Persch  <chpe@cvs.gnome.org>
+
 	* ja.po: Added Japanese translation.
 
 2003-08-04  Christian Persch  <chpe@cvs.gnome.org>
