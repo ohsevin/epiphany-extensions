@@ -81,9 +81,9 @@ AC_ARG_ENABLE(plugin-sample, [  --enable-plugin-sample  (yes,no)
  	      	Enable sample plugin])
 AM_CONDITIONAL(ENABLE_PLUGIN_SAMPLE, test "x$enable_plugin_sample" = "xyes")
  
-dnl AC_ARG_ENABLE(plugin-gestures, [  --enable-plugin-gestures  (yes,no)
-dnl  	      	Enable gestures plugin])
-dnl AM_CONDITIONAL(ENABLE_PLUGIN_GESTURES, test "x$enable_plugin_gestures" = "xyes")
+AC_ARG_ENABLE(plugin-gestures, [  --enable-plugin-gestures  (yes,no)
+ 	      	Enable gestures plugin])
+AM_CONDITIONAL(ENABLE_PLUGIN_GESTURES, test "x$enable_plugin_gestures" = "xyes")
 
 dnl *******************************
 dnl Misc things
@@ -118,5 +118,6 @@ Makefile
 po/Makefile.in
 plugins/Makefile
 plugins/sample/Makefile
+plugins/gestures/Makefile
 ],
 [])
