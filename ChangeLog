@@ -1,3 +1,9 @@
+2004-05-15  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
+	Fix typo.
+
 2004-05-07  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/popup-blocker/mozilla/mozilla-helpers.cpp:
