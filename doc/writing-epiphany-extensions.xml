@@ -212,17 +212,19 @@ endif</programlisting>
 		<sect1>
 			<title>Connecting Signals</title>
 			<para>GLib has a very flexible signals system. Use it. The <function>impl_attach_window</function> function has an <literal>EphyWindow</literal> argument. As an example, the <literal>tab_added</literal> signal will be fired whenever a tab is added to that window. Put the following in <function>impl_attach_window</function> to hook the <literal>tab_added</literal> signal to your own callback:</para>
-			<programlisting>
-	GtkWidget *notebook;
+			<example>
+				<title>Connecting the tab_added signal</title>
+				<programlisting>GtkWidget *notebook;
 
 	notebook = ephy_window_get_notebook (window);
 
 	g_signal_connect_after (notebook, &quot;tab_added&quot;, G_CALLBACK (tab_added_cb), extension);
-	g_signal_connect_after (notebook, &quot;tab_removed&quot;, G_CALLBACK (tab_removed_cb), extension);
-			</programlisting>
+	g_signal_connect_after (notebook, &quot;tab_removed&quot;, G_CALLBACK (tab_removed_cb), extension);</programlisting>
+			</example>
 			<para><function>tab_added_cb</function> can connect signals of its own. Of particular interest are the <literal>EphyEmbed</literal> signals (prefixed by <literal>ge_</literal>). These signals are listed in <filename>epiphany/embed/ephy-embed.c</filename>. For example, to call a function when the browser changes to a new location:</para>
-			<programlisting>
-static void
+			<example>
+				<title>Listening to location changes</title>
+				<programlisting>static void
 location_cb (EphyEmbed *embed, char *address, EphyTab *tab)
 {
 	/* Actions to perform on location change */
@@ -239,8 +241,8 @@ tab_added_cb (GtkWidget *notebook, EphyTab *tab, Ephy<replaceable>Foo</replaceab
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	g_signal_connect (G_OBJECT (embed), &quot;ge_location&quot;, G_CALLBACK (location_cb), tab);
-}
-			</programlisting>
+}</programlisting>
+			</example>
 			<warning>
 				<para>Free all memory and disconnect all signals when they're not needed. In the case of this <literal>ge_location</literal> signal connection, disconnect the signal when the tab is removed:</para>
 				<programlisting>
@@ -279,10 +281,11 @@ tab_removed_cb (GtkWidget *notebook, EphyTab *tab, Ephy<replaceable>Foo</replace
 			<itemizedlist>
 				<listitem>
 					<para>For every string needing translation, use the <function>N_</function>, <function>_</function> or <function>ngettext</function> functions. For example:</para>
-					<programlisting>
-g_print (_(&quot;This is a foobar. It says %s.&quot;), message);
-g_print (ngettext (&quot;%d cow jumped over the moon&quot;, &quot;%d cows jumped over the moon&quot;, n), n);
-					</programlisting>
+					<example>
+						<title>Basic gettext usage</title>
+						<programlisting>g_print (_(&quot;This is a foobar. It says %s.&quot;), message);
+g_print (ngettext (&quot;%d cow jumped over the moon&quot;, &quot;%d cows jumped over the moon&quot;, n), n);</programlisting>
+					</example>
 				</listitem>
 				<listitem>
 					<para>Add the filenames with translatable strings to <filename>epiphany-extensions/po/POTFILES.in</filename>.</para>
@@ -294,53 +297,109 @@ g_print (ngettext (&quot;%d cow jumped over the moon&quot;, &quot;%d cows jumped
 			<warning>
 				<para>This section describes changing Epiphany's user interface. Epiphany developers take pride in Epiphany's simplicity and ease of use: you should continue the trend. UI additions should be simple, minor, and non-intrusive. Carefully plan each addition.</para>
 			</warning>
-			<para>The <literal>GtkUIManager</literal> functions allow you to add new user interface elements. Epiphany's <function>ephy_window_get_ui_manager</function> will return the appropriate <classname>GtkUIManager</classname> for an <classname>EphyWindow</classname>. Use <literal>GtkAction</literal>s to represent actions. For example, an extension could place an action in the <literal>Go</literal> menu of Epiphany. To do so, write the following in <filename>ephy-<replaceable>foo</replaceable>-extension.c</filename>:</para>
-			<para>FIXME: handle removing extensions</para>
-			<programlisting>
-#include &lt;gtk/gtkaction.&gt;
+			<para>The <classname>GtkUIManager</classname> functions allow you to add new user interface elements. Epiphany's <function>ephy_window_get_ui_manager</function> will return the appropriate <classname>GtkUIManager</classname> for an <classname>EphyWindow</classname>. Use <classname>GtkAction</classname>s to represent actions. For example, an extension could place an action at the bottom of the <guimenu>Go</guimenu> menu of Epiphany. To do so, write the following in <filename>ephy-<replaceable>foo</replaceable>-extension.c</filename>:</para>
+			<example>
+				<title>Adding menu entries</title>
+				<programlisting>#include &lt;gtk/gtkaction.&gt;
 #include &lt;gtk/gtkactiongroup&gt;
 #include &lt;gtk/gtkuimanager.h&gt;
 
 #include &lt;glib/gi18n-lib.h&gt; /* see <xref linkend="translation"/> */
 
+#define WINDOW_DATA_KEY "Ephy<replaceable>Foo</replaceable>ExtensionWindowData"
+
+typedef struct
+{
+	GtkActionGroup *action_group;
+	guint ui_id;
+} WindowData;
+
+static void my_action_activate_cb (GtkAction *action, EphyWindow *window);
+
 /* ... */
 
-static void my_action_activate_cb (GtkAction *action, EphyWindow *window)
+static GtkActionEntry action_entries [] =
+{
+	{ &quot;<replaceable>MyAction</replaceable>&quot;,
+	  NULL,
+	  N_(&quot;<replaceable>Menu Entry Name</replaceable>&quot;),
+	  NULL, /* shortcut key */
+	  N_(&quot;<replaceable>Does Whatever I Want</replaceable>&quot;),
+	  G_CALLBACK (my_action_activate_cb) }
+};
+static const guint n_action_entries = G_N_ELEMENTS (action_entries);
+
+static void my_action_activate_cb (GtkAction *action,
+				   EphyWindow *window)
 {
 	/* Do something */
 }
-			</programlisting>
-			<para>Then place the following in <function>impl_attach_window</function> (or a function it calls):</para>
-			<programlisting>
+
+/* ... */
+
 static void
-impl_attach_window (EphyExtension *extension, EphyWindow *window)
+free_window_data (WindowData *data)
+{
+	g_object_unref (data->action_group);
+	g_free (data);
+}
+
+static void
+impl_attach_window (EphyExtension *extension,
+		    EphyWindow *window)
 {
 	GtkActionGroup *action_group;
 	GtkUIManager *manager;
 	guint merge_id;
+	WindowData *data;
 
-	static GtkActionEntry action_entries [] =
-	{
-	{ &quot;<replaceable>MyAction</replaceable>&quot;, NULL, N_(&quot;<replaceable>Menu Entry Name</replaceable>&quot;), NULL, /* shortcut key */ N_(&quot;<replaceable>Does Whatever I Want</replaceable>&quot;), G_CALLBACK (my_action_activate_cb) }
-	};
-	static const guint n_action_entries = G_N_ELEMENTS (action_entries);
+	data = g_new (WindowData, 1);
 
-	manager = GTK_UI_MANAGER (window->ui_merge);
+	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
 
-	action_group = gtk_action_group_new (&quot;Ephy<replaceable>Foo</replaceable>ExtensionActions&quot;);
+	data->action_group = action_group =
+		gtk_action_group_new (&quot;Ephy<replaceable>Foo</replaceable>ExtensionActions&quot;);
 
 	gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
-	gtk_action_group_add_actions (action_group, action_entries, n_action_entries, window);
+	gtk_action_group_add_actions (action_group, action_entries,
+				      n_action_entries, window);
 
 	gtk_ui_manager_insert_action_group (manager, action_group, 0);
-	g_object_unref (action_group);
 
-	merge_id = gtk_ui_manager_new_merge_id (manager);
+	data->ui_id = merge_id = gtk_ui_manager_new_merge_id (manager);
 
-	gtk_ui_manager_add_ui (manager, merge_id, &quot;/menubar/GoMenu&quot;, &quot;<replaceable>MyAction</replaceable>Sep&quot;, NULL, GTK_UI_MANAGER_SEPARATOR, TRUE);
-	gtk_ui_manager_add_ui (manager, merge_id, &quot;/menubar/GoMenu&quot;, &quot;<replaceable>MyAction</replaceable>&quot;, &quot;<replaceable>MyAction</replaceable>&quot;, GTK_UI_MANAGER_MENUITEM, TRUE);
+	g_data_set_full (G_OBJECT (window), WINDOW_DATA_KEY, data,
+			 (GDestroyNotify) free_window_data);
+
+	gtk_ui_manager_add_ui (manager, merge_id, &quot;/menubar/GoMenu&quot;,
+			       &quot;<replaceable>MyAction</replaceable>Sep1&quot;, NULL,
+			       GTK_UI_MANAGER_SEPARATOR, FALSE);
+	gtk_ui_manager_add_ui (manager, merge_id, &quot;/menubar/GoMenu&quot;,
+			       &quot;<replaceable>MyAction</replaceable>&quot;, &quot;<replaceable>MyAction</replaceable>&quot;,
+			       GTK_UI_MANAGER_MENUITEM, FALSE);
+	gtk_ui_manager_add_ui (manager, merge_id, &quot;/menubar/GoMenu&quot;,
+			       &quot;<replaceable>MyAction</replaceable>Sep2&quot;, NULL,
+			       GTK_UI_MANAGER_SEPARATOR, FALSE);
 }
-			</programlisting>
+
+static void
+impl_detach_window (EphyExtension *extension,
+		    EphyWindow *window)
+{
+	GtkUIManager *manager;
+	WindowData *data;
+
+	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
+
+	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
+	g_return_if_fail (data != NULL);
+
+	gtk_ui_manager_remove_ui (manager, data->ui_id);
+	gtk_ui_manager_remove_action_group (manager, data->action_group);
+
+	g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, NULL);
+}</programlisting>
+			</example>
 			<tip>
 				<para>The existing epiphany menu hierarchy is described in <filename>epiphany/data/ui/epiphany-ui.xml</filename>.</para>
 			</tip>
@@ -348,8 +407,7 @@ impl_attach_window (EphyExtension *extension, EphyWindow *window)
 				<para>Without a <literal>placeholder</literal> element in <filename>epiphany/data/ui/epiphany-ui.xml</filename>, extensions can only add menu entries to the top or bottom of menus.</para>
 			</note>
 			<warning>
-				<para>FIXME: Investigate farther</para>
-				<para>At the time this document was written, adding toolbar entries to extension-created actions is impossible.</para>
+				<para>Remember that extensions may be loaded or unloaded at any point in time. The above procedure detaches from windows nicely. If you decide to modify it, be sure that your extension still loads and unloads successfully.</para>
 			</warning>
 		</sect1>
 		<sect1>
@@ -359,21 +417,10 @@ impl_attach_window (EphyExtension *extension, EphyWindow *window)
 			</warning>
 			<para>Writing statusbar messages is one of the easiest things to do from an extension. Just be sure to understand <literal>GtkStatusbar</literal>s: in a given context, there is a stack of messages. Only the top message from <emphasis>all</emphasis> contexts can be shown at a time, and messages can be pushed and popped to and from the stack on any given context.</para>
 			<para>This sample code should give some ideas:</para>
-			<programlisting>
-static void
-impl_attach_window (EphyExtension *extension, EphyWindow *window)
-{
-	GtkStatusbar *statusbar;
-	guint context_id;
-
-	statusbar = GTK_STATUSBAR (ephy_window_get_statusbar (window));
-	g_return_if_fail (GTK_IS_STATUSBAR (statusbar));
-
-	context_id = gtk_statusbar_get_context_id (statusbar, &quot;<replaceable>Foo</replaceable> extension&quot;);
-
-	g_object_set_data (G_OBJECT (window), &quot;<replaceable>foo</replaceable>-statusbar-cid&quot;, GUINT_TO_POINTER (context_id));
-}
-
+			<example>
+				<title>Manipulating the statusbar</title>
+				<programlisting>#define STATUSBAR_CONTEXT "Ephy<replaceable>Foo</replaceable>StatusbarContext"
+					
 static void
 write_statusbar_message (EphyWindow *window, const char *message)
 {
@@ -383,7 +430,8 @@ write_statusbar_message (EphyWindow *window, const char *message)
 	statusbar = GTK_STATUSBAR (ephy_window_get_statusbar (window));
 	g_return_if_fail (GTK_IS_STATUSBAR (statusbar));
 
-	context_id = GPOINTER_TO_UINT (g_object_get_data (G_OBJECT (window), &quot;<replaceable>foo</replaceable>-statusbar-cid&quot;));
+	context_id = GPOINTER_TO_UINT (g_object_get_data (G_OBJECT (window),
+							  STATUSBAR_CONTEXT));
 	g_return_if_fail (context_id != 0);
 
 	/* Keep a maximum of one element on the stack */
@@ -402,55 +450,87 @@ remove_statusbar_message (EphyWindow *window)
 	statusbar = GTK_STATUSBAR (ephy_window_get_statusbar (window));
 	g_return_if_fail (GTK_IS_STATUSBAR (statusbar));
 
-	context_id = GPOINTER_TO_UINT (g_object_get_data (G_OBJECT (window), &quot;<replaceable>foo</replaceable>-statusbar-cid&quot;));
+	context_id = GPOINTER_TO_UINT (g_object_get_data (G_OBJECT (window),
+							  STATUSBAR_CONTEXT));
 	g_return_if_fail (context_id != 0);
 
 	gtk_statusbar_pop (statusbar, context_id);
 }
-			</programlisting>
+
+static void
+impl_attach_window (EphyExtension *extension,
+		    EphyWindow *window)
+{
+	GtkStatusbar *statusbar;
+	guint context_id;
+
+	statusbar = GTK_STATUSBAR (ephy_window_get_statusbar (window));
+	g_return_if_fail (GTK_IS_STATUSBAR (statusbar));
+
+	context_id = gtk_statusbar_get_context_id (statusbar, &quot;<replaceable>Foo</replaceable> extension&quot;);
+
+	g_object_set_data (G_OBJECT (window), &quot;<replaceable>foo</replaceable>-statusbar-cid&quot;, GUINT_TO_POINTER (context_id));
+}
+
+static void
+impl_detach_window (EphyExtension *extension,
+		    EphyWindow *window)
+{
+	remove_statusbar_message (window);
+}</programlisting>
+			</example>
 		</sect1>
 		<sect1>
 			<title>GConf Settings</title>
 			<para>Using <filename>eel-gconf-extensions.h</filename>, retrieving Epiphany's GConf settings is a snap. The keys used by Epiphany are all listed in <filename>epiphany/lib/ephy-prefs.h</filename> (but ephy-prefs.h is not installed alongside Epiphany, and so cannot be included by your extension). For example, the following function will return whether or not the statusbar is to be displayed:</para>
-			<programlisting>
-static gboolean
+			<example>
+				<title>Retrieving a GConf value</title>
+				<programlisting>static gboolean
 is_statusbar_wanted (void)
 {
 	return eel_gconf_get_boolean (&quot;/apps/epiphany/general/show_statusbar&quot;);
-}
-			</programlisting>
+}</programlisting>
+			</example>
 			<para>Even better, how about a callback for when a GConf key is changed:</para>
-			<programlisting>
+			<example>
+				<title>Listening to GConf</title>
+				<programlisting>
+struct Ephy<replaceable>Foo</replaceable>ExtensionPrivate
+{
+	/* ... */
+	guint gconf_cnxn_id;
+	/* ... */
+};
+
 static void
-my_gconf_cb (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data)
+my_gconf_cb (GConfClient *client,
+	     guint cnxn_id,
+	     GConfEntry *entry,
+	     gpointer user_data)
 {
 	/* Do something */
 }
-			</programlisting>
-			<para>First, put a line within <classname>Ephy<replaceable>Foo</replaceable>ExtensionPrivate</classname>:</para>
-			<programlisting>
-struct Ephy<replaceable>Foo</replaceable>ExtensionPrivate
+
+static void
+ephy_<replaceable>foo</replaceable>_extension_init (Ephy<replaceable>Foo</replaceable>Extension *extension)
 {
-	guint gconf_cnxn_id;
-};
-			</programlisting>
-			<para>Add a bit of code to <function>ephy_<replaceable>foo</replaceable>_extension_init</function>:</para>
-			<programlisting>
-	guint cnxn_id;
+	/* ... */
+	extension->priv->gconf_cnxn_id = eel_gconf_notification_add
+		(&quot;/apps/epiphany/general/show_statusbar&quot;, (GConfClientNotifyFunc) my_gconf_cb, NULL);
+}
 
-	cnxn_id = eel_gconf_notification_add (&quot;/apps/epiphany/general/show_statusbar&quot;, (GConfClientNotifyFunc) my_gconf_cb, NULL);
-
-	extension->priv->gconf_cnxn_id = cnxn_id;
-			</programlisting>
-			<para>And of course, remove the notification in <function>ephy_<replaceable>foo</replaceable>_extension_finalize</function>:</para>
-			<programlisting>
+static void
+ephy_<replaceable>foo</replaceable>_extension_finalize (Ephy<replaceable>Foo</replaceable>Extension *extension)
+{
 	if (extension->priv->gconf_cnxn_id != 0)
 	{
 		eel_gconf_notification_remove (extension->priv->gconf_cnxn_id);
 		extension->priv->gconf_cnxn_id = 0;
 	}
-			</programlisting>
-			<para>And voila! <function>my_gconf_cb</function> will be called when the GConf key is modified from within any program. Isn't GConf great?</para>
+	/* ... */
+}</programlisting>
+			</example>
+			<para>Voila! <function>my_gconf_cb</function> will be called when the GConf key is modified from within any program. Isn't GConf great?</para>
 			<para>Read <filename>epiphany-extensions/include/eel-gconf-extensions.h</filename> for a full list of functions.</para>
 		</sect1>
 		<sect1>

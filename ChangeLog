@@ -2,6 +2,13 @@
 
 	* doc/writing-epiphany-extensions.xml:
 
+	Use <example> tags, and update things to deal with unloading
+	extensions.
+
+2004-10-30  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* doc/writing-epiphany-extensions.xml:
+
 	A few updates, not yet complete but at least it doesn't refer to
 	"ephyplugins" any more!
 
