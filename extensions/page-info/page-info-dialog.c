@@ -805,7 +805,7 @@ images_save_image_cb (GtkAction *action,
 	char *address;
 
 	address = images_get_selected_image_url (page);
-	g_return_if_fail (address != NULL);
+	if (address == NULL) return;
 
 	persist = EPHY_EMBED_PERSIST
 		(ephy_embed_factory_new_object ("EphyEmbedPersist"));
@@ -847,7 +847,7 @@ images_set_image_as_background_cb (GtkAction *action,
 	char *dest, *base, *base_converted;
 
 	address = images_get_selected_image_url (page);
-	g_return_if_fail (address != NULL);
+	if (address == NULL) return;
 
 	base = g_path_get_basename (address);
 	base_converted = g_filename_from_utf8 (base, -1, NULL, NULL, NULL);
@@ -880,12 +880,14 @@ images_copy_image_address_cb (GtkAction *action,
 	char *address;
 
 	address = images_get_selected_image_url (page);
-	g_return_if_fail (address != NULL);
+	if (address == NULL) return;
 
 	gtk_clipboard_set_text (gtk_clipboard_get (GDK_NONE),
 				address, -1);
 	gtk_clipboard_set_text (gtk_clipboard_get (GDK_SELECTION_PRIMARY),
 				address, -1);
+
+	g_free (address);
 }
 
 static GtkActionEntry images_action_entries[] =
@@ -934,6 +936,10 @@ page_info_image_box_realize_cb (GtkContainer *box,
 	g_signal_connect_swapped (embed, "net_stop",
 				  G_CALLBACK (gtk_widget_grab_focus),
 				  tpage->treeview);
+
+	g_signal_connect_swapped (embed, "ge_context_menu",
+				  G_CALLBACK (treeview_info_page_show_popup),
+				  tpage);
 
 	ephy_embed_load_url (embed, "about:blank");
 

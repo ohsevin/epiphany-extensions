@@ -1,5 +1,13 @@
 2004-09-12  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/page-info/page-info-dialog.c: (images_save_image_cb),
+	(images_set_image_as_background_cb),
+	(images_copy_image_address_cb), (page_info_image_box_realize_cb):
+
+	Implement context menu for the images embed.
+
+2004-09-12  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/page-info/page-info-context-ui.xml:
 	* extensions/page-info/page-info-dialog.c:
 	(images_get_selected_image_url), (images_open_image_cb),
