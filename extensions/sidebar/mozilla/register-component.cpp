@@ -32,7 +32,7 @@
 #include <nsIComponentManager.h>
 #include <nsIComponentRegistrar.h>
 #include <nsICategoryManager.h>
-#include <nsIServiceManagerUtils.h>
+#include <nsIServiceManager.h>
 #include <nsCOMPtr.h>
 #include <nsXPCOM.h>
 
