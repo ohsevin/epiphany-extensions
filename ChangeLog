@@ -1,5 +1,16 @@
 2004-09-28  Christian Persch  <chpe@cvs.gnome.org>
 
+	* Makefile.am:
+
+	Pass --with-mozilla to distcheck's configure.
+
+	* NEWS:
+	* configure.ac:
+
+	Version 1.4.1.
+
+2004-09-28  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/sidebar/ephy-sidebar-embed.c: (show_context_menu):
 	* extensions/sidebar/epiphany-sidebar-ui.xml:
 

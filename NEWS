@@ -1,4 +1,28 @@
 =========================
+Epiphany Extensions 1.4.1
+=========================
+
+New extensions
+
+	* Sidebar extension, written by Crispin Flowerday
+
+Bug fixes
+
+	* Fix some mem leaks (Adam) [#153470, #153471, #153473]
+	* Fix crash (Christian) [#153712]
+	* Always load unnamed stylesheets (Adam) [#153739]
+	* Don't block stylesheets without "media" attribute (Adam) [#153710]
+	* Fix many compiler warnings (Christian)
+
+Translation updates
+
+	* Miloslav Trmac (cs)
+	* Adam Weinberger (en_CA)
+	* Reinout van Schouwen (nl)
+	* Raphael Higino (pt_BR)
+
+
+=========================
 Epiphany Extensions 1.4.0
 =========================
 
