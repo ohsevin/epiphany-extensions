@@ -2,6 +2,12 @@
 
 	* configure.ac:
 
+	Bump epiphany dependency to version 1.1.8.
+
+2004-02-13  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
 	Misc changes.
 	Change epiphany-1.0 dependency to epiphany-1.2.
 
