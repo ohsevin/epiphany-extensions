@@ -99,6 +99,8 @@ TypeAheadFind::SetEmbed (EphyEmbed *aEmbed)
 
   mCurrentEmbed = aEmbed;
 
+  SetFocusLinks (PR_TRUE);
+
   return rv;
 }
 

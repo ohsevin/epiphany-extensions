@@ -1,3 +1,9 @@
+2005-02-20  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/find/TypeAheadFind.cpp:
+
+	Focus links while finding.
+
 2005-02-17  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/find/ephy-find-bar.cpp:
