@@ -1,0 +1,672 @@
+<?xml version="1.0"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.1//EN" "http://www.oasis-open.org/docbook/xml/4.1/docbookx.dtd" [
+]>
+<book>
+	<!-- {{{ bookinfo -->
+	<bookinfo>
+		<title>Writing Epiphany Extensions</title>
+		<author>
+			<firstname>Adam</firstname>
+			<surname>Hooper</surname>
+			<affiliation>
+				<address>
+					<email>adamh@densi.com</email>
+				</address>
+			</affiliation>
+		</author>
+
+		<revhistory>
+			<revision>
+				<revnumber>0.01</revnumber>
+				<date>01-Jan-2004</date>
+				<authorinitials>ah</authorinitials>
+				<revremark>
+					My first shot at a great HOWTO. Surelly loaded with typos and minor errors.
+				</revremark>
+			</revision>
+		</revhistory>
+	</bookinfo>
+	<!-- }}} End bookinfo -->
+	<!-- {{{ Introduction -->
+	<chapter id="Introduction">
+		<title>Introduction</title>
+		<sect1>
+			<title>What Epiphany Extensions Are</title>
+			<para>Epiphany extensions are similar to <ulink url="http://texturizer.net/firebird/extensions/">Mozilla Firebird extensions</ulink>: they are entirely optional and change the way the browser works (usually by expanding its feature set). For example, an Epiphany extension could provide mouse gestures, track your browsing behavior, or even replace the entire Bookmarks system (though such an extension would be rather messy).</para>
+			<para>Epiphany extensions are <emphasis>different</emphasis> from Mozilla Firdbird's because they are implemented in C as opposed to Javascript. This gives enormous flexibility and a bit of added challenge, but it should be no problem for even a beginner to develop an extension which crashes Epiphany on startup.</para>
+			<para>Epiphany extensions are at a lower level code-wise than Mozilla Firebird's; there is no simple way to convert a Mozilla Firebird extension to an Epiphany one, and Epiphany cannot load Mozilla Firebird extensions.</para>
+		</sect1>
+		<sect1>
+			<title>Document Scope</title>
+			<para>This document is <emphasis>not</emphasis> a C programming tutorial. It is also not a guide to the Epiphany source code. It is just a basic guide to begin writing an extension.</para>
+			<para>The document is written under the assumption that the reader wants to write an extension. The document will be an aid, but it does not replace reading actual source code from existing extensions. Many extensions are available at <ulink url="http://savannah.nongnu.org/projects/ephyplugins"/>.</para>
+		</sect1>
+		<sect1 id="getting-help">
+			<title>Getting Help</title>
+			<para>For more help writing Epiphany Extensions, log on to <literal>#epiphany</literal> on <literal>irc.gnome.org</literal>. You can also use the regular <ulink url="http://mail.gnome.org/mailman/listinfo/epiphany-list/">Epiphany Mailing List</ulink>.</para>
+			<para>As with all software projects' channels of communication, please do not ask stupid questions. If you've never read <ulink url="http://catb.org/~esr/faqs/smart-questions.html">How to Ask Questions the Smart Way</ulink> by Eric S. Raymond, read it now. It's a big pile of common sense, and it applies to virtually every open-source software project in existence.</para>
+			<para>If you are a proficient hacker and don't understand some part of this document, that's a bug in the document; please email <link linkend="author">the author</link>.</para>
+		</sect1>
+		<sect1 id="author">
+			<title>About the Author</title>
+			<para>I am Adam Hooper, age 20, first-year Software Engineering student at <ulink url="http://www.mcgill.ca">McGill University</ulink> in Montreal, Quebec, Canada. I wrote a popup-blocking extension and want to share my experiences.</para>
+			<para>My email address is <email>adamh@densi.com</email>; feel free to contact me about this document (or most other things, really).</para>
+		</sect1>
+	</chapter>
+	<!-- }}} End Introduction -->
+	<!-- {{{ Preparation -->
+	<chapter id="Preparation">
+		<title>Preparation</title>
+		<sect1>
+			<title>Required Experience</title>
+			<para>Knowledge of C is required. Familiarity with GTK+ and Glib are also quite important. Familiarity with the Epiphany source code would be fantastic, but if you don't have it&hellip; you will before you're finished writing your extension!</para>
+		</sect1>
+		<sect1>
+			<title>Required Programs</title>
+			<para>Obviously, you will need <ulink url="http://www.gnome.org/projects/epiphany">Epiphany</ulink> installed, and all of its required libraries. Development headers must be installed, too (for most distributions, you must install both the regular library and the <filename>-dev</filename> or <filename>-devel</filename> packages &mdash; but if you don't know this already, just give up now and save yourself the confusion).</para>
+			<para>To compile your extension with the existing infrastructure, you will need <application>GNU autoconf</application>, <application>GNU automake</application>, <application>libtool</application>, <application>gettext</application>, etc. Basically, you must be able to compile Epiphany from CVS. In fact, you should install Epiphany from CVS before coding.</para>
+		</sect1>
+		<sect1>
+			<title>Required Source Code</title>
+			<para>You will <emphasis>need</emphasis> the source code to Epiphany. It is available at <ulink url="http://www.gnome.org/projects/epiphany"/>. It's a good idea to code an extension for the newest version of Epiphany available; from CVS is best.</para>
+			<para>The existing <ulink url="http://savannah.nongnu.org/projects/ephyplugins">GNOME Web Browser Extensions</ulink> source code has many working (and non-working) examples.</para>
+		</sect1>
+		<sect1>
+			<title>Required Documentation</title>
+			<para>GTK+ and Glib documentation are available at <ulink url="http://gtk.org/api/"/>, but a locally-installed set of documentation is preferable. If you installed GTK+ from CVS or a recent tarball (at the time this document was written, doing so is necessary for Epiphany CVS to compile), be sure to install the gtk-doc documentation along with it.</para>
+			<para>The author uses <ulink url="http://www.imendio.com/projects/devhelp">Devhelp</ulink> for quick access to Glib and GTK+ documentation.</para>
+			<para>The <ulink url="http://developer.gnome.org/projects/gup/hig/">GNOME Human Interface Guidelines</ulink>: this documentation is not strictly required, but it <emphasis>should</emphasis> be treated with at least as much respect as exists towards the Bible, Koran, Torah and all other holy books.</para>
+		</sect1>
+		<sect1>
+			<title>Before Coding</title>
+			<para>As with any software project, be sure to plan what your extension should do before writing it. At the very least, you should have a good idea of what events (Glib signals) will trigger your extension, and what it will do.</para>
+			<para>Read Epiphany's <filename>HACKING</filename> file. Adhere to those standards.</para>
+		</sect1>
+	</chapter>
+	<!-- }}} End Preparation -->
+	<!-- {{{ Build-Framework -->
+	<chapter id="Build-Framework">
+		<title>Build Framework</title>
+		<para>To avoid autoconf/automake hell, you could simply code your extension in the existing ephyplugins framework (download the source from <ulink url="http://savannah.nongnu.org/projects/ephyplugins"/>). To do so:</para>
+		<orderedlist>
+			<listitem>
+				<para>Create a subdirectory within <filename class="directory">ephyplugins/extensions/</filename> for your very own extension: For example, <filename class="directory">ephyplugins/extensions/<replaceable>foo</replaceable>/</filename>.</para>
+			</listitem>
+			<listitem>
+				<para>Edit <filename>ephyplugins/extensions/Makefile.am</filename> and add your SUBDIRS entry:</para>
+				<programlisting>
+if ENABLE_<replaceable>FOO</replaceable>_EXTENSION
+SUBDIRS += <replaceable>foo</replaceable>
+endif
+				</programlisting>
+				<para>Also, add your extension to the end of the <literal>DIST_SUBDIRS</literal> line.</para>
+			</listitem>
+			<listitem>
+				<itemizedlist>
+					<listitem>
+						<para>Edit <filename>ephyplugins/configure.ac</filename>, adding your own extension. As a minimum, add a line similar to the existing ones:</para>
+						<programlisting>
+AM_CONDITIONAL(ENABLE_<replaceable>FOO</replaceable>_EXTENSION, echo &quot;$extensions&quot; | egrep '(^|,)<replaceable>foo</replaceable>($|,)' &gt; /dev/null)
+						</programlisting>
+					</listitem>
+					<listitem>
+						<para>Add <filename>extensions/<replaceable>foo</replaceable>/Makefile</filename> to the <function>AC_OUTPUT</function> call.</para>
+					</listitem>
+					<listitem>
+						<para>Add your extension to the <literal>all_extensions=</literal> line.</para>
+					</listitem>
+				</itemizedlist>
+			</listitem>
+			<listitem>
+				<para>If your extension will include strings which should be translated, edit <filename>ephyplugins/po/POTFILES.in</filename> and add <filename>extensions/<replaceable>foo</replaceable>/ephy-<replaceable>foo</replaceable>-extension.c</filename>. (No, the filename is not important.)</para>
+			</listitem>
+			<listitem>
+				<para>Create <filename>ephyplugins/extensions/<replaceable>foo</replaceable>/Makefile.am</filename>:</para>
+				<programlisting>
+extensiondir = $(libdir)/epiphany/extensions
+
+INCLUDES = \
+	-I$(top_srcdir)/include \
+	$(EPIPHANY_DEPENDENCY_CFLAGS) \
+	-DSHARE_DIR=\&quot;pkgdatadir\&quot; \
+	-DEPHY_EXTENSIONS_LOCALEDIR=\&quot;$(datadir)/locale\&quot; \
+	-DG_DISABLE_DEPRECATED \
+	-DGDK_DISABLE_DEPRECATED \
+	-DGTK_DISABLE_DEPRECATED \
+	-DGDK_PIXBUF_DISABLE_DEPRECATED \
+	-DGNOME_DISABLE_DEPRECATED
+
+extension_LTLIBRARIES = lib<replaceable>foo</replaceable>extension.la
+
+lib<replaceable>foo</replaceable>extension_la_SOURCES = \
+	ephy-<replaceable>foo</replaceable>-extension.c \
+	ephy-<replaceable>foo</replaceable>-extension.h \
+	<replaceable>foo</replaceable>.c
+				</programlisting>
+			</listitem>
+		</orderedlist>
+		<para>Now all work will take place in the <filename class="directory">ephyplugins/extensions/<replaceable>foo</replaceable>/</filename> directory. After coding is finished, run <userinput>./autogen.sh --enable-debug --enable-extensions=<replaceable>foo</replaceable></userinput> in the <filename class="directory">ephyplugins/</filename> directory, then <userinput>make</userinput> and <userinput>make install</userinput> as root.</para>
+		<para>All extensions are loaded on Epiphany startup and unloaded on Epiphany shutdown. Epiphany's extension manager only sees extensions with a filename like <filename>$(prefix)/lib/epiphany/extensions/*.so</filename>. To uninstall an extension, just remove this file and restart Epiphany.</para>
+	</chapter>
+	<!-- }}} End Build-Framework -->
+	<!-- {{{ Coding -->
+	<chapter id="Coding">
+		<title>Coding</title>
+		<note>
+			<para>In any conflict between Epiphany's coding style and this document's, Epiphany's is right and this document's is wrong. Particularly, tabs are 8 spaces wide and are <emphasis>tabs</emphasis>, and in each function declaration, each argument should appear on its own line, in line with the argument above it.</para>
+		</note>
+		<sect1 id="register-module">
+			<title><function>register_module</function></title>
+			<para>Epiphany will look for a <function>register_module</function> function. Create a file for it: call it <filename><replaceable>foo</replaceable>.c</filename>:</para>
+			<programlisting>
+/* Header/License/Copyright information */
+
+#include &quot;ephy-<replaceable>foo</replaceable>-extension.h&quot;
+#include &quot;ephy-debug.h&quot;
+
+#include &lt;gmodule.h&gt;
+
+G_MODULE_EXPORT GType
+register_module (GTypeModule *module)
+{
+	LOG (&quot;Registering Ephy<replaceable>Foo</replaceable>Extension&quot;)
+
+	return ephy_<replaceable>foo</replaceable>_extension_register_type (module);
+}
+			</programlisting>
+			<tip>
+				<para>
+					<function>LOG</function> is included in <filename>ephy-debug.h</filename>. If you use <userinput>--enable-debug</userinput> while running <command>configure</command> or <command>autogen.sh</command> from within the <filename class="directory">ephyplugins/</filename> directory, the messages will be printed with <function>g_print</function>, which uses a <function>printf</function>-like syntax.
+				</para>
+			</tip>
+			<warning>
+				<para>
+					Epiphany extensions could easily be classified as derivative works of Epiphany, which means they require a GPL license. Copy the header comment from an existing extension.
+				</para>
+			</warning>
+		</sect1>
+		<sect1>
+			<title>Header File</title>
+			<para>The <filename><replaceable>foo</replaceable>.c</filename> file above referred to <filename>ephy-<replaceable>foo</replaceable>-extension.h</filename>, so the header file must be written. Also, as hinted above, an extension is a <literal>GObject</literal>. There are no surprises in the header file: just standard <literal>GObject</literal> stuff:</para>
+			<programlisting>
+/* header information */
+#ifndef EPHY_<replaceable>FOO</replaceable>_EXTENSION_H
+#define EPHY_<replaceable>FOO</replaceable>_EXTENSION_H
+
+#include &lt;glib.h&gt;
+#include &lt;glib-object.h&gt;
+
+G_BEGIN_DECLS
+
+#define EPHY_TYPE_<replaceable>FOO</replaceable>_EXTENSION (ephy_<replaceable>foo</replaceable>_extension_get_type ())
+#define EPHY_<replaceable>FOO</replaceable>_EXTENSION(o) (G_TYPE_CHECK_INSTANCE_CAST ((o, EPHY_TYPE_<replaceable>FOO</replaceable>_EXTENSION, Ephy<replaceable>Foo</replaceable>Extension))
+#define EPHY_<replaceable>FOO</replaceable>_EXTENSION_CLASS(k) (G_TYPE_CHECK_CLASS_CAST((k), EPHY_TYPE_<replaceable>FOO</replaceable>_EXTENSION, Ephy<replaceable>Foo</replaceable>ExtensionClass))
+#define EPHY_IS_<replaceable>FOO</replaceable>_EXTENSION(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), EPHY_TYPE_<replaceable>FOO</replaceable>_EXTENSION))
+#define EPHY_IS_<replaceable>FOO</replaceable>_EXTENSION_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), EPHY_TYPE_<replaceable>FOO</replaceable>_EXTENSION))
+#define EPHY_<replaceable>FOO</replaceable>_EXTENSION_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), EPHY_TYPE_<replaceable>FOO</replaceable>_EXTENSION, Ephy<replaceable>Foo</replaceable>ExtensionClass))
+
+typedef struct Ephy<replaceable>Foo</replaceable>Extension Ephy<replaceable>Foo</replaceable>Extension;
+typedef struct Ephy<replaceable>Foo</replaceable>ExtensionClass Ephy<replaceable>Foo</replaceable>ExtensionClass;
+typedef struct Ephy<replaceable>Foo</replaceable>ExtensionPrivate Ephy<replaceable>Foo</replaceable>ExtensionPrivate;
+
+struct Ephy<replaceable>Foo</replaceable>ExtensionClass
+{
+	GObjectClass parent_class;
+};
+
+struct Ephy<replaceable>Foo</replaceable>Extension
+{
+	GObject parent_instance;
+
+	Ephy<replaceable>Foo</replaceable>ExtensionPrivate *priv;
+};
+
+GType ephy_<replaceable>foo</replaceable>_extension_get_type (void);
+GType ephy_<replaceable>foo</replaceable>_extension_register_type (GTypeModule *module);
+
+G_END_DECLS
+
+#endif
+			</programlisting>
+		</sect1>
+		<sect1>
+			<title>Minimum C Code</title>
+			<para>As a <literal>GObject</literal>, the extension requires a minimum level of code, which is mostly copy-paste work. Place the following in <filename>ephy-<replaceable>foo</replaceable>-extension.c</filename>:</para>
+			<programlisting>
+#ifdef HAVE_CONFIG_H
+#include &quot;config.h&quot;
+#endif
+
+#include &quot;ephy-<replaceable>foo</replaceable>-extension.h&quot;
+#include &quot;ephy-debug.h&quot;
+
+#include &lt;epiphany/ephy-extension.h&gt;
+
+#include &lt;gmodule.h&gt;
+
+#define EPHY_<replaceable>FOO</replaceable>_EXTENSION_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_<replaceable>FOO</replaceable>_EXTENSION, Ephy<replaceable>Foo</replaceable>ExtensionPrivate))
+
+struct Ephy<replaceable>Foo</replaceable>ExtensionPrivate
+{
+};
+
+static void ephy_<replaceable>foo</replaceable>_extension_class_init (Ephy<replaceable>Foo</replaceable>ExtensionClass *klass);
+static void ephy_<replaceable>foo</replaceable>_extension_iface_init (EphyExtensionClass *iface);
+static void ephy_<replaceable>foo</replaceable>_extension_init (Ephy<replaceable>Foo</replaceable>Extension *extension);
+
+enum
+{
+	PROP_0
+	/* Extension-specific properties go here, to be added using
+	 * <function>g_object_class_install_property</function> in the
+	 * <function>class_init</function> function.
+	 */
+};
+
+static GObjectClass *<replaceable>foo</replaceable>_extension_parent_class = NULL;
+
+static GType <replaceable>foo</replaceable>_extension_type = 0;
+
+GType
+ephy_<replaceable>foo</replaceable>_extension_get_type (void)
+{
+	return <replaceable>foo</replaceable>_extension_type;
+}
+
+GType
+ephy_<replaceable>foo</replaceable>_extension_register_type (GTypeModule *module)
+{
+	static const GTypeInfo our_info =
+	{
+		sizeof (Ephy<replaceable>Foo</replaceable>ExtensionClass),
+		NULL, /* base_init */
+		NULL, /* base_finalize */
+		(GClassInitFunc) ephy_<replaceable>foo</replaceable>_extension_class_init,
+		NULL,
+		NULL, /* class_data */
+		sizeof (Ephy<replaceable>Foo</replaceable>Extension),
+		0, /* n_preallocs */
+		(GInstanceInitFunc) ephy_<replaceable>foo</replaceable>_extension_init
+	};
+
+	static const GInterfaceInfo extension_info =
+	{
+		(GInterfaceInitFunc) ephy_<replaceable>foo</replaceable>_extension_iface_init,
+		NULL,
+		NULL
+	};
+
+	<replaceable>foo</replaceable>_extension_type =
+		g_type_module_register_type (module, G_TYPE_OBJECT, &quot;Ephy<replaceable>Foo</replaceable>Extension&quot;, &amp;our_info, 0);
+	
+	g_type_module_add_interface (module, <replaceable>foo</replaceable>_extension_type, EPHY_TYPE_EXTENSION, &amp;extension_info);
+
+	return <replaceable>foo</replaceable>_extension_type;
+}
+
+static void
+ephy_<replaceable>foo</replaceable>_extension_init (Ephy<replaceable>Foo</replaceable>Extension *extension)
+{
+	extension->priv = EPHY_<replaceable>FOO</replaceable>_EXTENSION_GET_PRIVATE (extension);
+
+	LOG (&quot;Ephy<replaceable>Foo</replaceable>Extension initialising&quot;)
+}
+
+static void
+ephy_<replaceable>foo</replaceable>_extension_finalize (GObject *object)
+{
+	/* If needed,
+	 * Ephy<replaceable>Foo</replaceable>Extension *extension = EPHY_<replaceable>FOO</replaceable>_EXTENSION (object);
+	 * ...followed by, say, some <function>g_free</function> calls.
+	 */
+	
+	LOG (&quot;Ephy<replaceable>Foo</replaceable>Extension finalizing&quot;)
+
+	G_OBJECT_CLASS (<replaceable>foo</replaceable>_extension_parent_class)->finalize (object);
+}
+
+static void
+ephy_<replaceable>foo</replaceable>_extension_set_property (GObject *object, guint prop_id, const GValue *value, GParamSpec *pspec)
+{
+/* Code this function if anything was placed after <literal>PROP_0</literal> in the <literal>enum</literal> above. */
+/*
+	Ephy<replaceable>Foo</replaceable>Extension *extension = EPHY_<replaceable>FOO</replaceable>_EXTENSION (object);
+
+	switch (prop_id)
+	{
+	}
+*/
+}
+
+static void
+ephy_<replaceable>foo</replaceable>_extension_get_property (GObject *object, guint prop_id, GValue *value, GParamSpec *pspec)
+{
+/* Code this function if anything was placed after <literal>PROP_0</literal> in the <literal>enum</literal> above. */
+/*
+	Ephy<replaceable>Foo</replaceable>Extension *extension = EPHY_<replaceable>FOO</replaceable>_EXTENSION (object);
+
+	switch (prop_id)
+	{
+	}
+*/
+}
+
+static void
+ephy_<replaceable>foo</replaceable>_extension_class_init (Ephy<replaceable>Foo</replaceable>ExtensionClass *klass)
+{
+	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+
+	<replaceable>foo</replaceable>_extension_parent_class = g_type_class_peek_parent (klass);
+
+	object_class->finalize = ephy_<replaceable>foo</replaceable>_extension_finalize;
+	object_class->get_property = ephy_<replaceable>foo</replaceable>_extension_get_property;
+	object_class->set_property = ephy_<replaceable>foo</replaceable>_extension_set_property;
+
+	g_type_class_add_private (object_class, sizeof (Ephy<replaceable>Foo</replaceable>ExtensionPrivate));
+}
+			</programlisting>
+			<para>The astute reader will undoubtably be shocked by the missing <function>ephy_<replaceable>foo</replaceable>_extension_iface_init</function> function. It is written and described in the next chapter.</para>
+		</sect1>
+		<sect1>
+			<title>The Extension Interface</title>
+			<para>Besides the basic <literal>GObject</literal> functions, the Epiphany extensions manager will only call two functions directly: the <function>attach_window</function> and <function>detach_window</function> functions in its class. Write skeleton functions, and your extension should actually compile and run:</para>
+			<programlisting>
+static void
+impl_attach_window (EphyExtension *extension, EphyWindow *window)
+{
+	LOG (&quot;Ephy<replaceable>Foo</replaceable>Extension attach_window&quot;)
+}
+
+static void
+impl_detach_window (EphyExtension *extension, EphyWindow *window)
+{
+	LOG (&quot;Ephy<replaceable>Foo</replaceable>Extension detach_window&quot;)
+}
+
+static void
+ephy_<replaceable>foo</replaceable>_extension_iface_init (EphyExtensionClass *iface)
+{
+	iface->attach_window = impl_attach_window;
+	iface->detach_window = impl_detach_window;
+}
+			</programlisting>
+			<para>You're now ready to write code. Your creativity should begin in <function>impl_attach_window</function> and extend beyond limits. The next sections just contain ideas to spark your creativity.</para>
+		</sect1>
+		<sect1>
+			<title>Connecting Signals</title>
+			<para>GLib has a very flexible signals system. Use it. The <function>impl_attach_window</function> function has an <literal>EphyWindow</literal> object. For example, the <literal>tab_added</literal> signal will fire whenever a tab is added to that window. Put the following in <function>impl_attach_window</function> to hook the <literal>tab_added</literal> signal to your own callback:</para>
+			<programlisting>
+	GtkWidget *notebook;
+
+	notebook = ephy_window_get_notebook (window);
+
+	g_signal_connect_after (notebook, &quot;tab_added&quot;, G_CALLBACK (tab_added_cb), extension);
+	g_signal_connect_after (notebook, &quot;tab_removed&quot;, G_CALLBACK (tab_removed_cb), extension);
+			</programlisting>
+			<para><function>tab_added_cb</function> can connect signals of its own. Of particular interest are the <literal>EphyEmbed</literal> signals (prefixed by <literal>ge_</literal>. The signals are listed in <filename>epiphany/embed/ephy-embed.c</filename>. For example, to call a function when the browser changes to a new location:</para>
+			<programlisting>
+static void
+location_cb (EphyEmbed *embed, char *address, EphyTab *tab)
+{
+	/* Actions to perform on location change */
+}
+
+static void
+tab_added_cb (GtkWidget *notebook, EphyEmbed *embed, Ephy<replaceable>Foo</replaceable>Extension *extension)
+{
+	EphyTab *tab;
+
+	tab = EPHY_TAB (g_object_get_data (G_OBJECT (embed), &quot;EphyTab&quot;));
+	g_return_if_fail (EPHY_IS_TAB (tab));
+
+	g_signal_connect (G_OBJECT (embed), &quot;ge_location&quot;, G_CALLBACK (location_cb), tab);
+}
+			</programlisting>
+			<warning>
+				<para>Free all memory and disconnect all signals when they're not needed. In the case of this <literal>ge_location</literal> signal connection, it should be disconnected when the tab is removed:</para>
+				<programlisting>
+static void
+tab_removed_cb (GtkWidget *notebook, EphyEmbed *embed, Ephy<replaceable>Foo</replaceable>Extension *extension)
+{
+	EphyTab *tab;
+
+	tab = EPHY_TAB (g_object_get_data (G_OBJECT (embed), &quot;EphyTab&quot;));
+	g_return_if_fail (EPHY_IS_TAB (tab));
+
+	g_signal_handlers_disconnect_by_func
+		(embed, G_CALLBACK (location_cb), tab);
+}
+				</programlisting>
+				<para>Likewise, clean up in <function>impl_detach_window</function>. In our example:</para>
+				<programlisting>
+	GtkWidget *notebook;
+
+	notebook = ephy_window_get_notebook (window);
+
+	g_signal_handlers_disconnect_by_func
+		(notebook, G_CALLBACK (tab_added_cb), extension);
+	g_signal_handlers_disconnect_by_func
+		(notebook, G_CALLBACK (tab_removed_cb), extension);
+				</programlisting>
+	
+
+			</warning>
+		</sect1>
+		<sect1 id="translation">
+			<title>Translation</title>
+			<para>If you need to translate some strings (if your extension prints or displays any messages besides debug messages), a few steps must be followed:</para>
+			<itemizedlist>
+				<listitem>
+					<para>Add the following line to the source files needing translation and to the file containing <function>register_module</function> (<xref linkend="register-module"/>):</para>
+					<programlisting>
+#include &lt;glib/gi18n-lib.h&gt;
+					</programlisting>
+				</listitem>
+				<listitem>
+					<para>Add the following to your <function>register_module</function> function:</para>
+					<programlisting>
+#ifdef ENABLE_NLS
+	/* Initialize the i18n stuff */
+	bindtextdomain (GETTEXT_PACKAGE, EPHY_EXTENSIONS_LOCALEDIR);
+	bind_textdomain_codeset (GETTEXT_PACKAGE, &quot;UTF-8&quot;);
+#endif /* ENABLE_NLS */
+					</programlisting>
+				</listitem>
+				<listitem>
+					<para>For every string needing translation, use the <function>N_</function>, <function>_</function> or <function>ngettext</function> functions. For example:</para>
+					<programlisting>
+g_print (_(&quot;This is a foobar. It says %s.&quot;), message);
+g_print (ngettext (&quot;%d cow jumped over the moon&quot;, &quot;%d cows jumped over the moon&quot;, n), n);
+					</programlisting>
+				</listitem>
+				<listitem>
+					<para>Add the filenames with translatable strings to <filename>ephyplugins/po/POTFILES.in</filename>.</para>
+				</listitem>
+			</itemizedlist>
+		</sect1>
+		<sect1>
+			<title>User Interface Integration</title>
+			<warning>
+				<para>This section describes changing Epiphany's user interface. Epiphany developers take pride in Epiphany's simplicity and ease of use: you should continue the trend. UI additions should be simple, minor, and non-intrusive. Carefully plan each addition.</para>
+			</warning>
+			<para>The <literal>GtkUIManager</literal> functions allow you to add new user interface elements. Epiphany's <literal>EphyWindow->ui_merge</literal> is the appropriate <literal>GtkUIManager</literal> with which to merge. Use <literal>GtkAction</literal>s to represent actions. For example, an extension could place an action in the <literal>Go</literal> menu of Epiphany. To do so, place the following in <filename>ephy-<replaceable>foo</replaceable>-extension.c</filename>:</para>
+			<programlisting>
+#include &lt;gtk/gtkaction.&gt;
+#include &lt;gtk/gtkactiongroup&gt;
+#include &lt;gtk/gtkuimanager.h&gt;
+
+#include &lt;glib/gi18n-lib.h&gt; /* see <xref linkend="translation"/> */
+
+/* ... */
+
+static void my_action_activate_cb (GtkAction *action, EphyWindow *window)
+{
+	/* Do something */
+}
+			</programlisting>
+			<para>Then place the following in <function>impl_attach_window</function> (or a function it calls):</para>
+			<programlisting>
+static void
+impl_attach_window (EphyExtension *extension, EphyWindow *window)
+{
+	GtkActionGroup *action_group;
+	GtkUIManager *manager;
+	guint merge_id;
+
+	static GtkActionEntry action_entries [] =
+	{
+	{ &quot;<replaceable>MyAction</replaceable>&quot;, NULL, N_(&quot;<replaceable>Menu Entry Name</replaceable>&quot;), NULL, /* shortcut key */ N_(&quot;<replaceable>Does Whatever I Want</replaceable>&quot;), G_CALLBACK (my_action_activate_cb) }
+	};
+	static const guint n_action_entries = G_N_ELEMENTS (action_entries);
+
+	manager = GTK_UI_MANAGER (window->ui_merge);
+
+	action_group = gtk_action_group_new (&quot;Ephy<replaceable>Foo</replaceable>ExtensionActions&quot;);
+
+	gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
+	gtk_action_group_add_actions (action_group, action_entries, n_action_entries, window);
+
+	gtk_ui_manager_insert_action_group (manager, action_group, 0);
+	g_object_unref (action_group);
+
+	merge_id = gtk_ui_manager_new_merge_id (manager);
+
+	gtk_ui_manager_add_ui (manager, merge_id, &quot;/menubar/GoMenu&quot;, &quot;<replaceable>MyAction</replaceable>Sep&quot;, NULL, GTK_UI_MANAGER_SEPARATOR, TRUE);
+	gtk_ui_manager_add_ui (manager, merge_id, &quot;/menubar/GoMenu&quot;, &quot;<replaceable>MyAction</replaceable>&quot;, &quot;<replaceable>MyAction</replaceable>&quot;, GTK_UI_MANAGER_MENUITEM, TRUE);
+}
+			</programlisting>
+			<tip>
+				<para>The existing epiphany menu hierarchy is described in <filename>epiphany/data/ui/epiphany-ui.xml</filename>.</para>
+			</tip>
+			<note>
+				<para>Without a <literal>placeholder</literal> element in <filename>epiphany/data/ui/epiphany-ui.xml</filename>, extensions can only add menu entries to the top or bottom of menus.</para>
+			</note>
+			<warning>
+				<para>FIXME: Investigate farther</para>
+				<para>At the time this document was written, adding toolbar entries to extension-created actions is impossible.</para>
+			</warning>
+		</sect1>
+		<sect1>
+			<title>Statusbar</title>
+			<warning>
+				<para>The statusbar can only display one message at a time. What's more, the statusbar can be disabled. Statusbar messages from one extension can conflict with another &mdash; and all extensions can conflict with Epiphany's standard statusbar messages. There are many reasons <emphasis>not</emphasis> to write statusbar messages in your extension.</para>
+			</warning>
+			<para>Writing statusbar messages is one of the easiest things to do from an extension. Just be sure to understand <literal>GtkStatusbar</literal>s: in a given context, there is a stack of messages. Only the top message from <emphasis>all</emphasis> contexts can be shown at a time, and messages can be pushed and popped to and from the stack on any given context.</para>
+			<para>This sample code should give some ideas:</para>
+			<programlisting>
+static void
+impl_attach_window (EphyExtension *extension, EphyWindow *window)
+{
+	GtkStatusbar *statusbar;
+	guint context_id;
+
+	statusbar = GTK_STATUSBAR (ephy_window_get_statusbar (window));
+	g_return_if_fail (GTK_IS_STATUSBAR (statusbar));
+
+	context_id = gtk_statusbar_get_context_id (statusbar, &quot;<replaceable>Foo</replaceable> extension&quot;);
+
+	g_object_set_data (G_OBJECT (window), &quot;<replaceable>foo</replaceable>-statusbar-cid&quot;, GUINT_TO_POINTER (context_id));
+}
+
+static void
+write_statusbar_message (EphyWindow *window, const char *message)
+{
+	GtkStatusbar *statusbar;
+	guint context_id;
+
+	statusbar = GTK_STATUSBAR (ephy_window_get_statusbar (window));
+	g_return_if_fail (GTK_IS_STATUSBAR (statusbar));
+
+	context_id = GPOINTER_TO_UINT (g_object_get_data (G_OBJECT (window), &quot;<replaceable>foo</replaceable>-statusbar-cid&quot;));
+	g_return_if_fail (context_id != 0);
+
+	/* Keep a maximum of one element on the stack */
+	gtk_statusbar_pop (statusbar, context_id);
+
+	/* Write our message */
+	gtk_statusbar_push (statusbar, context_id, message);
+}
+
+static void
+remove_statusbar_message (EphyWindow *window)
+{
+	GtkStatusbar *statusbar;
+	guint context_id;
+
+	statusbar = GTK_STATUSBAR (ephy_window_get_statusbar (window));
+	g_return_if_fail (GTK_IS_STATUSBAR (statusbar));
+
+	context_id = GPOINTER_TO_UINT (g_object_get_data (G_OBJECT (window), &quot;<replaceable>foo</replaceable>-statusbar-cid&quot;));
+	g_return_if_fail (context_id != 0);
+
+	gtk_statusbar_pop (statusbar, context_id);
+}
+			</programlisting>
+		</sect1>
+		<sect1>
+			<title>GConf Settings</title>
+			<para>Using <filename>eel-gconf-extensions.h</filename>, retrieving Epiphany's GConf settings is a snap. The keys used by Epiphany are all listed in <filename>epiphany/lib/ephy-prefs.h</filename> (but ephy-prefs.h is not installed alongside Epiphany, and so cannot be included by your extension). For example, the following function will return whether or not the statusbar is to be displayed:</para>
+			<programlisting>
+static gboolean
+is_statusbar_wanted (void)
+{
+	return eel_gconf_get_boolean (&quot;/apps/epiphany/general/show_statusbar&quot;);
+}
+			</programlisting>
+			<para>Even better, how about a callback for when a GConf key is changed:</para>
+			<programlisting>
+static void
+my_gconf_cb (GConfClient *client, guint cnxn_id, GConfEntry *entry, gpointer user_data)
+{
+	/* Do something */
+}
+			</programlisting>
+			<para>First, put a line within <literal>Ephy<replaceable>Foo</replaceable>ExtensionPrivate</literal>:</para>
+			<programlisting>
+struct Ephy<replaceable>Foo</replaceable>ExtensionPrivate
+{
+	guint gconf_cnxn_id;
+};
+			</programlisting>
+			<para>Add a bit of code to <function>ephy_<replaceable>foo</replaceable>_extension_init</function>:</para>
+			<programlisting>
+	guint cnxn_id;
+
+	cnxn_id = eel_gconf_notification_add (&quot;/apps/epiphany/general/show_statusbar&quot;, (GConfClientNotifyFunc) my_gconf_cb, NULL);
+
+	extension->priv->gconf_cnxn_id = cnxn_id;
+			</programlisting>
+			<para>And of course, remove the notification in <function>ephy_<replaceable>foo</replaceable>_extension_finalize</function>:</para>
+			<programlisting>
+	if (extension->priv->gconf_cnxn_id != 0)
+	{
+		eel_gconf_notification_remove (extension->priv->gconf_cnxn_id);
+		extension->priv->gconf_cnxn_id = 0;
+	}
+			</programlisting>
+			<para>And voila! <function>my_gconf_cb</function> will be called when the GConf key is modified from within any program. Isn't GConf great?</para>
+			<para>Read <filename>ephyplugins/include/eel-gconf-extensions.h</filename> for a full list of functions.</para>
+		</sect1>
+		<sect1>
+			<title>Your Own Ideas</title>
+			<para>Many of the Epiphany integration ideas above were first discovered (or in some cases, the integration functionality was coded into Epiphany itself) by the author while creating the <application>Popup Blocker</application> extension.</para>
+			<para>While writing an extension, you will almost certainly need to keep looking around <filename>epiphany/src/ephy-window.c</filename>, <filename>epiphany/src/ephy-tab.c</filename>, <filename>epiphany/embed/ephy-embed.h</filename>, and others. The code is very clean; if you still have questions, IRC is a great place to ask (see <xref linkend="getting-help"/>.)</para>
+			<para>You may come up with great ideas when writing your own extension. Feel free to email <link linkend="author">the author</link> some sample code; a new section could be added to this document to help other extension writers.</para>
+		</sect1>
+		<sect1>
+			<title>Hacking at Epiphany</title>
+			<para>Extensions can do a heck of a lot. Since the system is still under development, new (<emphasis>good</emphasis>) ideas would likely be welcome. Mozilla integration, for example, is a bit loose. To get certain signals from Mozilla, you may have to hack at files within the <filename class="directory">epiphany/embed/</filename> directory in the Epiphany source code. If your patch is clean and logical, submit it to <ulink url="http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany">GNOME's Bugzilla</ulink> and you'll have a good chance of its getting applied.</para>
+			<para>Stylesheet manipulation is one very important missing feature (all the more important because Mozilla Firebird's extensions are so powerful in this respect). At the time of this document's writing, the author is hacking at Epiphany to improve CSS manipulation from within extensions (and Epiphany itself, for that matter).</para>
+			<para>Are you an uber-hacker? Here are some challenges. Note: very possibly, a perfectly acceptable patch would <emphasis>not</emphasis> be applied to the official Epiphany source tree. Consider talking about how you would modify Epiphany using developer <link linkend="getting-help">communication channels</link>.</para>
+			<itemizedlist>
+				<listitem>
+					<para>Extension loading interface: Maybe a tab within the Epiphany preferences dialog to load or unload extensions on the fly. It would store a list of loaded extensions using GConf (and keep in sync with GConf).</para>
+				</listitem>
+				<listitem>
+					<para>A Javascript interface similar to Firebird's: this would naturally be integrated much more tightly with Mozilla, and loosely (if at all) with the Epiphany UI.</para>
+				</listitem>
+			</itemizedlist>
+		</sect1>
+	</chapter>
+	<!-- }}} End Coding -->
+</book>
