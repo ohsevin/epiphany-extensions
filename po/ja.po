@@ -1,18 +1,19 @@
 # Japanese Epiphany Plugins translation
-# Copyright (C) 2003 Christian Persch 
+# Copyright (C) 2003-2004 Christian Persch 
 # This file is distributed under the same license as the Epiphany Plugins package.
 # Christian Persch <chpe+ephyplugins@stud.uni-saarland.de>, 2003
 # Yukhiro Nakai <nakai@gnome.gr.jp>, 2004
+# Takeshi AIHANA <aihana@gnome.gr.jp>, 2004
 #
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Epiphany Plugins 1.0\n"
+"Project-Id-Version: epiphany-extensions HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-05-31 13:15+0200\n"
-"PO-Revision-Date: 2004-02-13 20:29+0200\n"
-"Last-Translator: Yukihiro Nakai <nakai@gnome.gr.jp>\n"
-"Language-Team: Japanese <translation@gnome.gr.jp>\n"
+"POT-Creation-Date: 2004-06-05 13:22+0900\n"
+"PO-Revision-Date: 2004-06-05 13:19+0900\n"
+"Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
+"Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,19 +21,17 @@ msgstr ""
 
 #: extensions/certificates/ephy-certificates-extension.c:160
 msgid "Certificate Manager"
-msgstr ""
+msgstr "証明書マネージャ"
 
 #. stock icon
 #: extensions/certificates/ephy-certificates-extension.c:276
-#, fuzzy
 msgid "Manage _Certificates"
-msgstr "サーバ証明書(_C)"
+msgstr "証明書の管理(_C)"
 
 #. shortcut key
 #: extensions/certificates/ephy-certificates-extension.c:278
-#, fuzzy
 msgid "Manage your certificates"
-msgstr "サーバ証明書(_C)"
+msgstr "お使いの証明書を管理します"
 
 #. stock icon
 #: extensions/certificates/ephy-certificates-extension.c:286
@@ -42,35 +41,34 @@ msgstr "サーバ証明書(_C)"
 #. shortcut key
 #: extensions/certificates/ephy-certificates-extension.c:288
 msgid "Display the web server's certificate"
-msgstr "ウェブサーバの証明書を表示します"
+msgstr "ウェブ・サーバの証明書を表示します"
 
 #: extensions/error-viewer/ephy-error-viewer-extension.c:88
 msgid "Check _HTML"
-msgstr ""
+msgstr "HTML のチェック(_H)"
 
 #. shortcut key
 #: extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Display HTML errors in the Error Viewer dialog"
-msgstr "エラービューアダイアログでHTMLエラーを表示します"
+msgstr "HTML のエラーをエラー表示ダイアログの中に表示します"
 
 #: extensions/error-viewer/ephy-error-viewer-extension.c:95
 msgid "Check _Links"
-msgstr ""
+msgstr "リンクのチェック(_L)"
 
 #. shortcut key
 #: extensions/error-viewer/ephy-error-viewer-extension.c:97
-#, fuzzy
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
-msgstr "エラービューアダイアログでHTMLエラーを表示します"
+msgstr "おかしなハイパーリンクをエラー表示ダイアログの中に表示します"
 
 #: extensions/error-viewer/ephy-error-viewer-extension.c:101
 msgid "_Error Viewer"
-msgstr "エラービューア(_E)"
+msgstr "エラー・ビューア(_E)"
 
 #. shortcut key
 #: extensions/error-viewer/ephy-error-viewer-extension.c:103
 msgid "Display web page errors"
-msgstr "ウェブページのエラーを表示します"
+msgstr "ウェブ・ページのエラーを表示します"
 
 #: extensions/error-viewer/error-viewer.glade.h:1
 msgid "C_lear"
@@ -78,7 +76,7 @@ msgstr "クリア(_L)"
 
 #: extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
-msgstr "エラービューア"
+msgstr "エラー・ビューア"
 
 #. Don't bother looking for source lines -- they're not there
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
@@ -87,6 +85,8 @@ msgid ""
 "Error:\n"
 "%s"
 msgstr ""
+"エラー:\n"
+"%s"
 
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:90
 #, c-format
@@ -94,15 +94,15 @@ msgid ""
 "Javascript error in %s on line %d:\n"
 "%s"
 msgstr ""
-"%sの%d行目でJavascriptエラー:\n"
+"%s の %d 行目に Javascript エラー:\n"
 "%s"
 
 #: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d 個の不正なリンクが見つかりました"
+msgstr[1] "%d 個の不正なリンクが見つかりました"
 
 #: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
 #, c-format
@@ -110,13 +110,15 @@ msgid ""
 "Link error in %s:\n"
 "%s is unavailable."
 msgstr ""
+"%s の中にリンク・エラー:\n"
+"%s は利用できません。"
 
 #: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d 個のリンク (%s) のチェック中"
+msgstr[1] "%d 個のリンク (%s) のチェック中"
 
 #: extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
@@ -124,66 +126,60 @@ msgid ""
 "HTML error in %s on line %s:\n"
 "%s"
 msgstr ""
-"%sの%s行目でHTMLエラー:\n"
+"%s の %s 行目に HTML エラー:\n"
 "%s"
 
 #: extensions/error-viewer/sgml-validator.c:165
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d 個のエラーが見つかりました"
+msgstr[1] "%d 個のエラーが見つかりました"
 
 #: extensions/error-viewer/sgml-validator.c:169
-#, fuzzy, c-format
+#, c-format
 msgid "HTML Validation of %s complete"
-msgstr ""
-"%sのHTMLの評価が完了しました\n"
-"%dのエラーが見つかりました"
+msgstr "%s の HTML 検証が完了しました"
 
 #: extensions/error-viewer/sgml-validator.c:227
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "HTML error in %s:\n"
 "%s"
 msgstr ""
-"%sの%s行目でHTMLエラー:\n"
+"%s の中に HTML エラー:\n"
 "%s"
 
 #: extensions/error-viewer/sgml-validator.c:229
 #: extensions/error-viewer/sgml-validator.c:245
-#, fuzzy
 msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
 msgstr ""
-"%sでHTMLエラーが見つかりました:\n"
-"DoctypeはXHTMLですが、content typeはtext/htmlになっています。代わりに"
-"application/xhtml+xmlを使ってください。"
+"DOCTYPE は \"XHTML\" ですが、CONTENTESTYPE は \"text/html\" になっています。"
+"代わりに \"application/xhtml+xml\" を使って下さい。"
 
 #: extensions/error-viewer/sgml-validator.c:243
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "HTML warning in %s:\n"
 "%s"
 msgstr ""
-"%sの%s行目でHTMLエラー:\n"
+"%s の中に HTML ワーニング:\n"
 "%s"
 
 #: extensions/error-viewer/sgml-validator.c:360
-#, fuzzy, c-format
+#, c-format
 msgid "HTML error in %s:"
-msgstr ""
-"%sの%s行目でHTMLエラー:\n"
-"%s"
+msgstr "%s の中に HTML エラー:"
 
 #: extensions/error-viewer/sgml-validator.c:368
 msgid "Invalid character encoding"
-msgstr ""
+msgstr "文字エンコーディングが間違っています"
 
 #: extensions/error-viewer/sgml-validator.c:373
 msgid "Unknown error while converting to UTF-8"
-msgstr ""
+msgstr "UTF-8 へ変換する際に不明なエラーが発生しました"
 
 #: extensions/error-viewer/sgml-validator.c:435
 #, c-format
@@ -191,53 +187,36 @@ msgid ""
 "HTML error in %s:\n"
 "No valid doctype specified."
 msgstr ""
-"%sにHTMLエラーがあります:\n"
-"適切なdoctypeが指定されていません。"
+"%s の中に HTML エラー:\n"
+"正しい DOCTYPE が指定されていません。"
 
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
 msgid "Popup _Windows"
-msgstr ""
+msgstr "ウィンドウのポップアップ(_W)"
 
 #. shortcut key
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
 msgid "Show or hide unrequested popup windows from this site"
-msgstr ""
+msgstr "このサイトからの無用なポップアップ・ウィンドウを制御します"
 
 #: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
-#, fuzzy, c-format
+#, c-format
 msgid "%d popup window blocked"
 msgid_plural "%d popup windows blocked"
-msgstr[0] "%d個のポップアップをブロックしました"
-msgstr[1] "%d個のポップアップをブロックしました"
+msgstr[0] "%d 個のポップアップ・ウィンドウを拒否しました"
+msgstr[1] "%d 個のポップアップ・ウィンドウを拒否しました"
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:183
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"
-msgstr[0] "ウインドウ「%s」(%dタブ)"
+msgstr[0] "ウィンドウ '%s' (%d 個のタブ)"
+msgstr[1] "ウィンドウ '%s' (%d 個のタブ)"
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:282
 msgid "Move Tab To Window"
-msgstr "タブを他のウインドウに移動する"
+msgstr "タブの移動"
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
-msgstr "現在のタブを他のウインドウへ移動します"
-
-#~ msgid "_Validate"
-#~ msgstr "評価(_V)"
-
-#~ msgid ""
-#~ "HTML warning in %s:\n"
-#~ "Doctype is XHTML but content type is text/html.  Use application/xhtml"
-#~ "+xml instead."
-#~ msgstr ""
-#~ "%sでHTMLワーニングがあります:\n"
-#~ "DoctypeはXHTMLですが、content typeはtext/htmlになっています。代わりに"
-#~ "application/xhtml+xmlを使ってください。"
-
-#~ msgid "Blo_ck Popups from this Site"
-#~ msgstr "このサイトのポップアップをブロックする(_C)"
-
-#~ msgid "Block or unblock popup windows"
-#~ msgstr "ポップアップウィンドウのブロック/ブロック解除"
+msgstr "このタブを他のウインドウへ移動します"
