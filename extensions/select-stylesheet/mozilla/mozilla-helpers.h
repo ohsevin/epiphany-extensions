@@ -18,12 +18,8 @@
  *  $Id$
  */
 
-#ifndef PAGE_INFO_MOZILLA_HELPERS_H
-#define PAGE_INFO_MOZILLA_HELPERS_H
-
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
+#ifndef MOZILLA_HELPERS_H
+#define MOZILLA_HELPERS_H
 
 #include <glib.h>
 
@@ -31,28 +27,27 @@
 
 G_BEGIN_DECLS
 
+typedef struct MozillaStyleSheet MozillaStyleSheet;
+
 typedef enum
 {
 	STYLESHEET_NONE,
 	STYLESHEET_BASIC,
 	STYLESHEET_NAMED
-} EmbedStyleSheetType;
+} StyleSheetType;
 
-typedef struct
-{
-	char *name;
-	gpointer sheet; /* opaque pointer to underlying sheet object */
-	EmbedStyleSheetType type;
-} EmbedStyleSheet;
+StyleSheetType	mozilla_stylesheet_get_type	(MozillaStyleSheet *style);
 
-void		 mozilla_free_stylesheet		(EmbedStyleSheet *style);
+const char     *mozilla_stylesheet_get_name	(MozillaStyleSheet *style);
 
-GList		*mozilla_get_stylesheets		(EphyEmbed *embed,
-							 EmbedStyleSheet **selected);
+void		mozilla_stylesheet_free		(MozillaStyleSheet *style);
 
-void		 mozilla_set_stylesheet			(EphyEmbed *embed,
-							 EmbedStyleSheet *style);
+GList	       *mozilla_get_stylesheets		(EphyEmbed *embed,
+						 MozillaStyleSheet **selected);
+
+void		mozilla_set_stylesheet		(EphyEmbed *embed,
+						 MozillaStyleSheet *style);
 
 G_END_DECLS
 
-#endif /* PAGE_INFO_MOZILLA_HELPERS_H */
+#endif /* MOZILLA_HELPERS_H */

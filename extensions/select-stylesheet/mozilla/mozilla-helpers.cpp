@@ -28,8 +28,6 @@
 
 #include <string.h>
 
-#include <glib/gi18n.h>
-
 #include <gtkmozembed.h>
 #include <gtkmozembed_internal.h>
 
@@ -46,179 +44,190 @@
 #include <nsIDOMWindow.h>
 #include <nsIWebBrowser.h>
 
-struct MozillaEmbedStyleSheet : public EmbedStyleSheet
+#include <glib/gi18n-lib.h>
+
+#define MAGIC	0xDEADBEEF
+
+struct MozillaStyleSheet
 {
-	MozillaEmbedStyleSheet()
-	{
-		name = NULL; sheet = NULL; type = STYLESHEET_NONE;
-	}
-	~MozillaEmbedStyleSheet()
+	MozillaStyleSheet(StyleSheetType aType,
+			  const char *aName,
+			  nsIDOMStyleSheet *aStyleSheet)
+	: mName(g_strdup (aName))
+	, mType(aType)
+	, mStyleSheet(aStyleSheet)
+	, mMagic(MAGIC)
 	{
 	}
 
-	nsCOMPtr<nsIDOMStyleSheet> domStyle;
+	~MozillaStyleSheet()
+	{
+		g_free (mName);
+	}
+
+	PRUint32 mMagic;
+	nsCOMPtr<nsIDOMStyleSheet> mStyleSheet;
+	char *mName;
+	StyleSheetType mType;
 };
 
-static char *
-embed_string_to_c_string (const nsEmbedString& embed_string)
+extern "C" StyleSheetType
+mozilla_stylesheet_get_type (MozillaStyleSheet *aStyle)
 {
-	nsEmbedCString c_string;
-	NS_UTF16ToCString (embed_string, NS_CSTRING_ENCODING_UTF8, c_string);
+	g_return_val_if_fail (aStyle->mMagic == MAGIC, STYLESHEET_NONE);
 
-	return g_strdup (c_string.get());
+	return aStyle->mType;
+}
+
+extern "C" const char *
+mozilla_stylesheet_get_name (MozillaStyleSheet *aStyle)
+{
+	g_return_val_if_fail (aStyle->mMagic == MAGIC, "");
+
+	return aStyle->mName;
 }
 
 extern "C" void
-mozilla_free_stylesheet (EmbedStyleSheet *sheet)
+mozilla_stylesheet_free (MozillaStyleSheet *aStyle)
 {
-	MozillaEmbedStyleSheet *mess = NS_STATIC_CAST(MozillaEmbedStyleSheet*, sheet);
+	g_return_if_fail (aStyle != NULL);
+	g_return_if_fail (aStyle->mMagic == MAGIC);
 
-	if (mess)
-	{
-		g_free (mess->name);
-		delete mess;
-	}
+	aStyle->mMagic = ~MAGIC;
+
+	delete aStyle;
 }
 
-static gint
+static int
 stylesheet_find_func (gconstpointer a, gconstpointer b)
 {
-	const EmbedStyleSheet *sheet = (const EmbedStyleSheet *) a;
+	const MozillaStyleSheet *sheet = (const MozillaStyleSheet *) a;
 	const char *name = (const char *) b;
 
-	return strcmp (sheet->name, name);
+	g_return_val_if_fail (sheet->mMagic == MAGIC, -1);
+
+	return strcmp (sheet->mName, name);
 }
 
 static nsresult
-get_raw_stylesheets (EphyEmbed *embed,
-		     nsIDOMStyleSheetList **list)
+GetStylesheets (EphyEmbed *aEmbed,
+		nsIDOMStyleSheetList **aList)
 {
-	nsresult rv;
+	NS_ENSURE_TRUE (aEmbed, NS_ERROR_FAILURE);
 
 	nsCOMPtr<nsIWebBrowser> browser;
-	gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (embed),
+	gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (aEmbed),
 					 getter_AddRefs (browser));
 	NS_ENSURE_TRUE (browser, NS_ERROR_FAILURE);
 
-	nsCOMPtr<nsIDOMWindow> dom_window;
-	rv = browser->GetContentDOMWindow (getter_AddRefs (dom_window));
-	NS_ENSURE_SUCCESS (rv, rv);
-
+	nsCOMPtr<nsIDOMWindow> domWindow;
+	browser->GetContentDOMWindow (getter_AddRefs (domWindow));
+	NS_ENSURE_TRUE (domWindow, NS_ERROR_FAILURE);
+	
 	nsCOMPtr<nsIDOMDocument> doc;
-	rv = dom_window->GetDocument (getter_AddRefs (doc));
-	NS_ENSURE_SUCCESS (rv, rv);
+	domWindow->GetDocument (getter_AddRefs (doc));
 
-	nsCOMPtr<nsIDOMDocumentStyle> docstyle = do_QueryInterface (doc);
+	nsCOMPtr<nsIDOMDocumentStyle> docstyle (do_QueryInterface (doc));
 	NS_ENSURE_TRUE (docstyle, NS_ERROR_FAILURE);
 
-	return docstyle->GetStyleSheets(list);
+	return docstyle->GetStyleSheets (aList);
 }
 
 static gboolean
-stylesheet_is_alternate (nsIDOMStyleSheet *item)
+IsAlternateStylesheet (nsIDOMStyleSheet *aStyleSheet)
 {
-	nsresult rv;
-	gboolean ret = FALSE;
+	NS_ENSURE_TRUE (aStyleSheet, FALSE);
 
 	nsCOMPtr<nsIDOMNode> node;
-	rv = item->GetOwnerNode (getter_AddRefs (node));
-	NS_ENSURE_SUCCESS (rv, FALSE);
+	aStyleSheet->GetOwnerNode (getter_AddRefs (node));
 
-	nsCOMPtr<nsIDOMHTMLLinkElement> link = do_QueryInterface (node);
+	nsCOMPtr<nsIDOMHTMLLinkElement> link (do_QueryInterface (node));
 
+	gboolean ret = FALSE;
 	if (link)
 	{
-		nsEmbedString str;
-		link->GetRel(str);
+		nsresult rv;
+		nsEmbedString rel;
+		rv = link->GetRel (rel);
+		NS_ENSURE_SUCCESS (rv, ret);
 
-		char *t = embed_string_to_c_string (str);
+		nsEmbedCString cRel;
+		NS_UTF16ToCString (rel, NS_CSTRING_ENCODING_UTF8, cRel);
 
-		ret = (g_ascii_strncasecmp (t, "alternate", 9) == 0);
-
-		g_free (t);
+		ret = (g_ascii_strncasecmp (cRel.get(), "alternate", 9) == 0);
 	}
 
 	return ret;
 }
 
 extern "C" GList *
-mozilla_get_stylesheets (EphyEmbed *embed,
-			 EmbedStyleSheet **selected)
+mozilla_get_stylesheets (EphyEmbed *aEmbed,
+			 MozillaStyleSheet **aSelected)
 {
-	nsresult rv;
-	GList *ret = NULL;
-	int num_total = 0;
-	int num_named = 0;
-
-	*selected = NULL;
+	*aSelected = NULL;
 
 	nsCOMPtr<nsIDOMStyleSheetList> list;
-	rv = get_raw_stylesheets (embed, getter_AddRefs (list));
+	GetStylesheets (aEmbed, getter_AddRefs (list));
+	NS_ENSURE_TRUE (list, NULL);
+
+	nsresult rv;
+	PRUint32 count = 0;
+	rv = list->GetLength (&count);
 	NS_ENSURE_SUCCESS (rv, NULL);
 
-	PRUint32 count(0);
-	rv = list->GetLength(&count);
-	NS_ENSURE_SUCCESS (rv, NULL);
-
-	for (PRUint32 i = 0; i < count; i++)
+	GList *ret = NULL;
+	PRUint32 numTotal = 0, numNamed = 0, i;
+	for (i = 0; i < count; i++)
 	{
 		nsCOMPtr<nsIDOMStyleSheet> item;
-		rv = list->Item(i, getter_AddRefs (item));
-		NS_ENSURE_SUCCESS (rv, ret);
+		list->Item(i, getter_AddRefs (item));
+		if (!item) continue;
 
-		num_total++;
+		++numTotal;
 
-		nsEmbedString string;
-		rv = item->GetTitle(string);
-		NS_ENSURE_SUCCESS (rv, ret);
+		nsEmbedString title;
+		rv = item->GetTitle (title);
+		if (NS_FAILED (rv) || !title.Length()) continue;
 
-		if (string.Length() == 0) continue;
+		nsEmbedCString cTitle;
+		NS_UTF16ToCString (title, NS_CSTRING_ENCODING_UTF8, cTitle);
 
-		char *name = embed_string_to_c_string (string);
+		/* check if it's already in the list */
+		if (g_list_find_custom (ret, cTitle.get(), stylesheet_find_func)) continue;
 
-		if (g_list_find_custom (ret, name, stylesheet_find_func))
+		MozillaStyleSheet *sheet =
+			new MozillaStyleSheet (STYLESHEET_NAMED,
+					       cTitle.get(), item);
+
+		if (!IsAlternateStylesheet (item))
 		{
-			g_free (name);
-			continue;
-		}
-
-		MozillaEmbedStyleSheet *sheet = new MozillaEmbedStyleSheet ();
-		sheet->name = name;
-		sheet->sheet = item;
-		sheet->type = STYLESHEET_NAMED;
-		sheet->domStyle = item;
-
-		if (!stylesheet_is_alternate (item))
-		{
-			num_named++;
-			if (selected) *selected = sheet;
+			numNamed++;
+			if (aSelected) *aSelected = sheet;
 		}
 
 		ret = g_list_prepend (ret, sheet);
 	}
 
-	if (num_total > 0 && num_named == 0)
+	if (numTotal > 0 && numNamed == 0)
 	{
 		/* Add in the "Default" style if we found stylesheets but
-		 * we didn't find any (non-alternate) named ones) */
-		MozillaEmbedStyleSheet *sheet = new MozillaEmbedStyleSheet();
-		sheet->name = g_strdup (_("Default"));
-		sheet->sheet = NULL;
-		sheet->type = STYLESHEET_BASIC;
+		 * we didn't find any (non-alternate) named ones.
+		 */
 
-		if (selected) *selected = sheet;
+		MozillaStyleSheet *sheet =
+			new MozillaStyleSheet (STYLESHEET_BASIC,
+					       _("Default"), nsnull);
+		if (aSelected) *aSelected = sheet;
 
 		ret = g_list_prepend (ret, sheet);
 	}
 
 	ret = g_list_reverse (ret);
 
-	if (num_total > 0)
+	if (numTotal > 0)
 	{
-		MozillaEmbedStyleSheet *sheet = new MozillaEmbedStyleSheet();
-		sheet->name = g_strdup (_("None"));
-		sheet->sheet = NULL;
-		sheet->type = STYLESHEET_NONE;
+		MozillaStyleSheet *sheet =
+			new MozillaStyleSheet (STYLESHEET_NONE, _("None"), nsnull);
 
 		ret = g_list_prepend (ret, sheet);
 	}
@@ -227,50 +236,52 @@ mozilla_get_stylesheets (EphyEmbed *embed,
 }
 
 extern "C" void
-mozilla_set_stylesheet (EphyEmbed *embed,
-			EmbedStyleSheet *selected)
+mozilla_set_stylesheet (EphyEmbed *aEmbed,
+			MozillaStyleSheet *aSelected)
 {
-	nsresult rv;
+	g_return_if_fail (aSelected->mMagic == MAGIC);
 
 	nsCOMPtr<nsIDOMStyleSheetList> list;
-	rv = get_raw_stylesheets (embed, getter_AddRefs (list));
-	g_return_if_fail (NS_SUCCEEDED (rv));
+	GetStylesheets (aEmbed, getter_AddRefs (list));
+	NS_ENSURE_TRUE (list, );
 
-	PRUint32 count(0);
+	nsresult rv;
+	PRUint32 count = 0;
 	rv = list->GetLength(&count);
-	g_return_if_fail (NS_SUCCEEDED (rv));
+	NS_ENSURE_SUCCESS (rv, );
 
-	for (PRUint32 i = 0; i < count; i++)
+	PRUint32 i;
+	for (i = 0; i < count; i++)
 	{
 		nsCOMPtr<nsIDOMStyleSheet> item;
-		rv = list->Item(i, getter_AddRefs(item));
-		if (NS_FAILED (rv) || !item) continue;
+		list->Item(i, getter_AddRefs(item));
+		if (!item) continue;
 
 		/*
 		 * if STYLESHEET_NONE, disable all
 		 * if STYLESHEET_BASIC, enable only unnamed
 		 * if STYLESHEET_NAMED, load unnamed and ones with given name
 		 */
-		if (selected->type == STYLESHEET_NONE)
+
+		if (aSelected->mType == STYLESHEET_NONE)
 		{
 			item->SetDisabled(PR_TRUE);
 			continue;
 		}
 
-		nsEmbedString string;
-		item->GetTitle(string);
+		nsEmbedString title;
+		item->GetTitle (title);
 		if (NS_FAILED (rv)) continue;
 
-		if (selected->type == STYLESHEET_BASIC)
+		if (aSelected->mType == STYLESHEET_BASIC)
 		{
-			item->SetDisabled(string.Length());
+			item->SetDisabled (title.Length() != 0);
 			continue;
 		}
 
-		char *name = embed_string_to_c_string (string);
+		nsEmbedCString cTitle;
+		NS_UTF16ToCString (title, NS_CSTRING_ENCODING_UTF8, cTitle);
 
-		item->SetDisabled(strcmp (name, selected->name) != 0);
-
-		g_free (name);
+		item->SetDisabled (strcmp (cTitle.get(), aSelected->mName) != 0);
 	}
 }
