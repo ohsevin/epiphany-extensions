@@ -14,25 +14,28 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ *
+ *  $Id$
  */
 
-#ifndef JAVASCRIPT_CONSOLE_H
-#define JAVASCRIPT_CONSOLE_H
+#ifndef SGML_VALIDATOR_H
+#define SGML_VALIDATOR_H
 
 #include <glib.h>
 #include <glib-object.h>
+#include <gmodule.h>
 
 #include "error-viewer.h"
 #include <epiphany/ephy-embed.h>
 
 G_BEGIN_DECLS
 
-#define TYPE_SGML_VALIDATOR (sgml_validator_get_type ())
-#define SGML_VALIDATOR(o) (G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_SGML_VALIDATOR, SgmlValidator))
-#define SGML_VALIDATOR_CLASS(k) (G_TYPE_CHECK_CLASS_CAST((k), TYPE_SGML_VALIDATOR, SgmlValidatorClass))
-#define IS_SGML_VALIDATOR(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_SGML_VALIDATOR))
-#define IS_SGML_VALIDATOR_CLASS(k) (G_TYPE_CHECK_CLASS_TYPE ((k), TYPE_SGML_VALIDATOR))
-#define SGML_VALIDATOR_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), TYPE_SGML_VALIDATOR, SgmlValidatorClass))
+#define TYPE_SGML_VALIDATOR		(sgml_validator_get_type ())
+#define SGML_VALIDATOR(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_SGML_VALIDATOR, SgmlValidator))
+#define SGML_VALIDATOR_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), TYPE_SGML_VALIDATOR, SgmlValidatorClass))
+#define IS_SGML_VALIDATOR(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_SGML_VALIDATOR))
+#define IS_SGML_VALIDATOR_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), TYPE_SGML_VALIDATOR))
+#define SGML_VALIDATOR_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), TYPE_SGML_VALIDATOR, SgmlValidatorClass))
 
 typedef struct SgmlValidator		SgmlValidator;
 typedef struct SgmlValidatorClass	SgmlValidatorClass;
@@ -46,6 +49,8 @@ struct SgmlValidatorClass
 struct SgmlValidator
 {
 	GObject parent_instance;
+
+	/*< private >*/
 	SgmlValidatorPrivate *priv;
 };
 
@@ -61,4 +66,3 @@ void		sgml_validator_validate		(SgmlValidator *validator,
 G_END_DECLS
 
 #endif
-

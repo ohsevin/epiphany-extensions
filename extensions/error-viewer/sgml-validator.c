@@ -14,7 +14,10 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ *
+ *  $Id$
  */
+
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
@@ -143,7 +146,7 @@ sgml_validator_validate (SgmlValidator *validator,
 	char *tmp, *base;
 	const char *static_tmp_dir;
 
-	static_tmp_dir = ephy_file_tmp_directory ();
+	static_tmp_dir = ephy_file_tmp_dir ();
 	g_return_if_fail (static_tmp_dir != NULL);
 
 	base = g_build_filename (static_tmp_dir, "validateXXXXXX", NULL);

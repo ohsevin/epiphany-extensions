@@ -1,3 +1,15 @@
+2004-01-25  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/error-viewer/sgml-validator.c:
+	(sgml_validator_validate):
+	* extensions/error-viewer/sgml-validator.h:
+
+	Indentation fixes. Updated to changed epiphany API.
+
+	* include/ephy-file-helpers.h:
+
+	Update from Epiphany.
+
 2004-01-25  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* include/ephy-file-helpers.h:
