@@ -1,6 +1,14 @@
 2004-09-12  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/page-info/page-info-dialog.c: (images_save_image_cb),
+	(page_info_image_box_realize_cb), (images_info_page_construct):
+	* extensions/page-info/page-info.glade:
+
+	Unify code for context menu save-as and button save-as.
+	
+2004-09-12  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/page-info/page-info-dialog.c: (images_save_image_cb),
 	(images_set_image_as_background_cb),
 	(images_copy_image_address_cb), (page_info_image_box_realize_cb):
 

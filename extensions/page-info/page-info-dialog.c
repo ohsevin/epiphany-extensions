@@ -79,8 +79,6 @@ void page_info_dialog_close_button_clicked_cb	  (GtkWidget *button,
 						   PageInfoDialog *dialog);
 void page_info_dialog_view_cert_button_clicked_cb (GtkWidget *button,
 						   PageInfoDialog *dialog);
-void page_info_dialog_imagesave_button_clicked_cb (GtkWidget *button,
-						   PageInfoDialog *dialog);
 void page_info_image_box_realize_cb		  (GtkContainer *box,
 						   PageInfoDialog *dialog);
 
@@ -796,7 +794,7 @@ images_open_image_cb (GtkAction *action,
 }
 
 static void
-images_save_image_cb (GtkAction *action,
+images_save_image_cb (gpointer ptr,
 		      ImagesInfoPage *page)
 {
 	InfoPage *ipage = (InfoPage *) page;
@@ -937,36 +935,11 @@ page_info_image_box_realize_cb (GtkContainer *box,
 				  G_CALLBACK (gtk_widget_grab_focus),
 				  tpage->treeview);
 
-	g_signal_connect_swapped (embed, "ge_context_menu",
-				  G_CALLBACK (treeview_info_page_show_popup),
-				  tpage);
-
 	ephy_embed_load_url (embed, "about:blank");
 
 	gtk_widget_show (GTK_WIDGET(embed));
 
 	gtk_container_add (box, GTK_WIDGET (embed));
-}
-
-void
-page_info_dialog_imagesave_button_clicked_cb (GtkWidget *button,
-					      PageInfoDialog *dialog)
-{
-	ImagesInfoPage *page = (ImagesInfoPage *) dialog->priv->pages[IMAGES_PAGE];
-	EphyEmbedPersist *persist;
-
-	persist = EPHY_EMBED_PERSIST
-		(ephy_embed_factory_new_object ("EphyEmbedPersist"));
-
-	ephy_embed_persist_set_embed (persist, page->embed);
-	ephy_embed_persist_set_flags (persist, EMBED_PERSIST_COPY_PAGE |
-					       EMBED_PERSIST_ASK_DESTINATION);
-	ephy_embed_persist_set_fc_title (persist, _("Save Image As..."));
-	ephy_embed_persist_set_fc_parent (persist, GTK_WINDOW (dialog->priv->window));
-
-	ephy_embed_persist_save (persist);
-
-	g_object_unref (persist);
 }
 
 static void
@@ -1090,6 +1063,9 @@ images_info_page_construct (InfoPage *ipage)
 
 	button = ephy_dialog_get_control (EPHY_DIALOG (dialog),
 					  properties[PROP_IMAGES_SAVE_BUTTON].id);
+	g_signal_connect (button, "clicked",
+			  G_CALLBACK (images_save_image_cb), page);
+
 	vpaned = ephy_dialog_get_control (EPHY_DIALOG (dialog),
 					  properties[PROP_IMAGES_IMAGE_VPANED].id);
 

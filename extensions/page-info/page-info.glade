@@ -889,7 +889,6 @@
 			  <property name="can_focus">True</property>
 			  <property name="relief">GTK_RELIEF_NORMAL</property>
 			  <property name="focus_on_click">True</property>
-			  <signal name="clicked" handler="page_info_dialog_imagesave_button_clicked_cb" after="yes" last_modification_time="Sun, 25 Apr 2004 10:42:16 GMT"/>
 
 			  <child>
 			    <widget class="GtkAlignment" id="alignment18">
@@ -1029,6 +1028,7 @@
 	      <property name="type">tab</property>
 	    </packing>
 	  </child>
+
 	  <child>
 	    <widget class="GtkVBox" id="vbox149">
 	      <property name="border_width">12</property>
@@ -1108,6 +1108,7 @@
 	      <property name="type">tab</property>
 	    </packing>
 	  </child>
+
 	  <child>
 	    <widget class="GtkVBox" id="vbox150">
 	      <property name="border_width">12</property>
