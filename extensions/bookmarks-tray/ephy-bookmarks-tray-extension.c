@@ -216,6 +216,53 @@ open_bookmark_cb (EphyBookmarksMenu *menu,
 	}
 }
 
+/* from netapplet */
+static void
+menu_position_func (GtkMenu *menu,
+		    int *x,
+		    int *y,
+		    gboolean *push_in,
+		    gpointer data)
+{
+	EphyBookmarksTrayExtension *extension = EPHY_BOOKMARKS_TRAY_EXTENSION (data);
+	EphyBookmarksTrayExtensionPrivate *priv = extension->priv;
+	GdkScreen *screen;
+	int screen_w, screen_h;
+	int button_x, button_y;
+	int panel_w, panel_h;
+	GtkRequisition requisition;
+
+	screen = gtk_widget_get_screen (priv->tray);
+	screen_w = gdk_screen_get_width (screen);
+	screen_h = gdk_screen_get_height (screen);
+
+	gdk_window_get_origin (priv->tray->window,
+			       &button_x, &button_y);
+
+	gtk_window_get_size (
+		GTK_WINDOW (gtk_widget_get_toplevel (priv->tray)),
+		&panel_w, &panel_h);
+
+	*x = button_x;
+
+	/*
+	 * Check to see if we would be placing the menu off the
+	 * end of the screen.
+	 */
+	gtk_widget_size_request (GTK_WIDGET (menu), &requisition);
+	
+	if (button_y + panel_h + requisition.height >= screen_h)
+	{
+		*y = button_y - requisition.height;
+	}
+	else
+	{
+		*y = button_y + panel_h;
+	}
+
+	*push_in = FALSE; //TRUE;
+}
+
 static void
 show_context_menu (EphyBookmarksTrayExtension *extension,
 		   GtkWidget *button,
@@ -232,15 +279,15 @@ show_context_menu (EphyBookmarksTrayExtension *extension,
 	if (event != NULL && event->type == GDK_BUTTON_PRESS)
 	{
 		gtk_menu_popup (GTK_MENU (menu), NULL, NULL,
-				ephy_gui_menu_position_under_widget,
-				button, event->button, event->time);
+				menu_position_func,
+				extension, event->button, event->time);
 		
 	}
 	else
 	{
 		gtk_menu_popup (GTK_MENU (menu), NULL, NULL,
-				ephy_gui_menu_position_under_widget,
-				button, 0, gtk_get_current_event_time ());
+				menu_position_func,
+				extension, 0, gtk_get_current_event_time ());
 		gtk_menu_shell_select_first (GTK_MENU_SHELL (menu), FALSE);
 	}
 }
@@ -274,8 +321,8 @@ show_menu (EphyBookmarksTrayExtension *extension,
 			  G_CALLBACK (menu_deactivate_cb), button);
 
 	gtk_menu_popup (GTK_MENU (menu), NULL, NULL,
-			ephy_gui_menu_position_under_widget,
-			button, 0, gtk_get_current_event_time ());
+			menu_position_func,
+			extension, 0, gtk_get_current_event_time ());
 }
 
 static void

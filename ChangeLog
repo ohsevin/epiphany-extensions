@@ -1,6 +1,13 @@
 2004-10-28  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:
+	(menu_position_func), (show_context_menu), (show_menu):
+
+	Better menu positioning function, adapted from netapplet.
+
+2004-10-28  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:
 	(button_size_allocate_cb), (ephy_bookmarks_tray_extension_init),
 	(ephy_bookmarks_tray_extension_finalize):
 
