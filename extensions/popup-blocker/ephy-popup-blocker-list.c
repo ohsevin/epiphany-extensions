@@ -388,6 +388,8 @@ ephy_popup_blocker_list_show_all (EphyPopupBlockerList *list)
 			free_blocked_popup (popup);
 		}
 	}
+
+	g_object_notify (G_OBJECT (list), "count");
 }
 
 void
@@ -414,4 +416,6 @@ ephy_popup_blocker_list_hide_all (EphyPopupBlockerList *list)
 			gtk_widget_hide (GTK_WIDGET (popup->window));
 		}
 	}
+
+	g_object_notify (G_OBJECT (list), "count");
 }

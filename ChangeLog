@@ -1,5 +1,14 @@
 2004-03-13  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/popup-blocker/ephy-popup-blocker-list.c:
+	(ephy_popup_blocker_list_show_all),
+	(ephy_popup_blocker_list_hide_all):
+
+	Emit the 'count' notify when hiding/showing popups, so the parent
+	window's icon disappears and reappears as appropriate.
+
+2004-03-13  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
 	(update_all_actions), (action_activate_cb):
 	* extensions/popup-blocker/ephy-popup-blocker-icon.c:
