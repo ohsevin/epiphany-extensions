@@ -1,5 +1,3 @@
-SUBDIRS =
-
 extensiondir = $(EXTENSIONS_DIR)
 
 INCLUDES = \
@@ -22,5 +20,4 @@ libcertificatesextension_la_SOURCES = \
 	extension.c
 
 libcertificatesextension_la_LIBADD = \
-	mozilla/libmozillacertificates.la	\
 	$(MOZILLA_COMPONENT_LIBS)

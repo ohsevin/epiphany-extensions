@@ -1,5 +1,14 @@
 2004-11-28  Christian Persch  <chpe@cvs.gnome.org>
 
+	=== Release 1.4.3 ===
+
+	* Makefile.am:
+	* autogen.sh:
+	* configure.ac:
+	* extensions/certificates/Makefile.am:
+
+2004-11-28  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/tab-groups/ephy-tab-grouper.c: (reset_last_tab),
 	(tab_added_cb), (ephy_tab_grouper_finalize):
 

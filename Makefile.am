@@ -1,6 +1,6 @@
 ## Process this file with automake to produce Makefile.in
 
-SUBDIRS = include extensions po tools
+SUBDIRS = include extensions po
 
 EXTRA_DIST =			\
 	COPYING.README		\
@@ -9,7 +9,8 @@ EXTRA_DIST =			\
 	TODO 			\
 	intltool-extract.in 	\
 	intltool-merge.in 	\
-	intltool-update.in
+	intltool-update.in	\
+	tools/copy-template
 
 DISTCLEANFILES = 		\
 	intltool-extract 	\
