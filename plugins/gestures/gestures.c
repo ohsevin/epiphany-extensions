@@ -139,7 +139,7 @@ tab_gesture_performed_cb (EphyGestures *eg, const char *sequence, EphyTab *tab)
 
 		event = g_object_get_data (G_OBJECT (eg), "embed_event");
 
-		ephy_embed_event_get_event_type (event, &type);
+		type = ephy_embed_event_get_event_type (event);
 
 		g_signal_emit_by_name (embed, "ge_dom_mouse_click", event,
 				       &handled);
@@ -188,8 +188,8 @@ dom_mouse_down_cb  (EphyEmbed *embed,
 	EphyEmbedEventType type;
 	gint handled = FALSE;
 
-	ephy_embed_event_get_event_type (event, &type);
-        ephy_embed_event_get_context (event, &context);
+	type = ephy_embed_event_get_event_type (event);
+        context = ephy_embed_event_get_context (event);
 
 	if (type == EPHY_EMBED_EVENT_MOUSE_BUTTON2 &&
             !(context & EMBED_CONTEXT_INPUT))
@@ -255,6 +255,7 @@ reload_bypass_cb (GtkAction *action, EphyWindow *window)
 	ephy_embed_reload (embed, EMBED_RELOAD_BYPASSCACHE);
 }
 
+/*
 static void
 clone_window_cb (GtkAction *action, EphyWindow *window)
 {
@@ -268,6 +269,7 @@ clone_window_cb (GtkAction *action, EphyWindow *window)
 			    EPHY_NEW_TAB_IN_NEW_WINDOW);
 }
 
+
 static void
 clone_tab_cb (GtkAction *action, EphyWindow *window)
 {
@@ -280,18 +282,20 @@ clone_tab_cb (GtkAction *action, EphyWindow *window)
 			    EPHY_NEW_TAB_CLONE_PAGE |
 			    EPHY_NEW_TAB_IN_EXISTING_WINDOW);
 }
+*/
 
 static GtkActionEntry action_entries [] =
 {
 	{ "EphyGesturesPluginReloadBypass", "", NULL, NULL, NULL,
 	  G_CALLBACK (reload_bypass_cb)
-	},
+	} /*,
 	{ "EphyGesturesPluginCloneWindow", "", NULL, NULL, NULL,
 	  G_CALLBACK (clone_window_cb)
 	},
 	{ "EphyGesturesPluginCloneTab", "", NULL, NULL, NULL,
 	  G_CALLBACK (clone_tab_cb)
 	}
+*/
 };
 static const guint n_action_entries = G_N_ELEMENTS (action_entries);
 
