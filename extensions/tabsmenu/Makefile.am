@@ -24,7 +24,7 @@ extensionxmldir = $(extensiondir)
 extensionxml_in_files = tabsmenu.xml.in.in
 extensionxml_DATA = $(extensionxml_in_files:.xml.in.in=.xml)
 
-%.xml.in: %.xml.in.in
+%.xml.in: %.xml.in.in $(extension_LTLIBRARIES)
 	sed -e "s|%GETTEXT_PACKAGE%|$(GETTEXT_PACKAGE)|" \
 	    -e "s|%LOCALE_DIR%|$(datadir)/locale|" \
 	    -e "s|%LIBRARY%|`source $(extension_LTLIBRARIES) && echo $$dlname`|" \
@@ -33,9 +33,7 @@ extensionxml_DATA = $(extensionxml_in_files:.xml.in.in=.xml)
 
 @INTLTOOL_XML_RULE@
 
-BUILT_SOURCES = $(extensionxml_DATA)
-
-CLEANFILES = $(BUILT_SOURCES)
-DISTCLEANFILES = $(BUILT_SOURCES)
+CLEANFILES = $(extensionxml_DATA)
+DISTCLEANFILES = $(extensionxml_DATA)
 
 EXTRA_DIST = $(extensionxml_in_files)

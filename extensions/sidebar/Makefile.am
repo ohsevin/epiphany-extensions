@@ -51,7 +51,7 @@ extensionxmldir = $(extensiondir)
 extensionxml_in_files = sidebar.xml.in.in
 extensionxml_DATA = $(extensionxml_in_files:.xml.in.in=.xml)
 
-%.xml.in: %.xml.in.in
+%.xml.in: %.xml.in.in $(extension_LTLIBRARIES)
 	sed -e "s|%GETTEXT_PACKAGE%|$(GETTEXT_PACKAGE)|" \
 	    -e "s|%LOCALE_DIR%|$(datadir)/locale|" \
 	    -e "s|%LIBRARY%|`source $(extension_LTLIBRARIES) && echo $$dlname`|" \
@@ -62,13 +62,13 @@ extensionxml_DATA = $(extensionxml_in_files:.xml.in.in=.xml)
 
 BUILT_SOURCES = \
 	ephy-sidebar-marshal.c	\
-	ephy-sidebar-marshal.h	\
-	$(extensionxml_DATA)
+	ephy-sidebar-marshal.h
 
-CLEANFILES = $(BUILT_SOURCES)
-DISTCLEANFILES = $(BUILT_SOURCES)
+CLEANFILES = $(BUILT_SOURCES) $(extensionxml_DATA)
+DISTCLEANFILES = $(BUILT_SOURCES) $(extensionxml_DATA)
 
 EXTRA_DIST = \
 	ephy-sidebar-marshal.list	\
 	$(uimanager_DATA)		\
 	$(extensionxml_in_files)
+

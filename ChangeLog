@@ -1,3 +1,26 @@
+2004-10-17  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/adblock/Makefile.am:
+	* extensions/certificates/Makefile.am:
+	* extensions/dashboard/Makefile.am:
+	* extensions/error-viewer/Makefile.am:
+	* extensions/extensions-manager-ui/Makefile.am:
+	* extensions/extensions-manager-ui/extensions-manager-ui.c:
+	(build_ui):
+	* extensions/gestures/Makefile.am:
+	* extensions/page-info/Makefile.am:
+	* extensions/sample-mozilla/Makefile.am:
+	* extensions/sample/Makefile.am:
+	* extensions/select-stylesheet/Makefile.am:
+	* extensions/sidebar/Makefile.am:
+	* extensions/smart-bookmarks/Makefile.am:
+	* extensions/tab-groups/Makefile.am:
+	* extensions/tabsmenu/Makefile.am:
+	* extensions/toolbar-extras/Makefile.am:
+
+	Fix the extensions .xml description file build process, thanks to Crispin
+	for the idea.
+
 2004-10-16  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/extensions-manager-ui/extensions-manager-ui.c:

@@ -271,9 +271,6 @@ build_ui (ExtensionsManagerUI *dialog)
 						     NULL);
 
 	renderer = gtk_cell_renderer_text_new ();
-	g_object_set (G_OBJECT (renderer),
-		      "mode", GTK_CELL_RENDERER_MODE_INERT,
-		      NULL);
 	gtk_tree_view_insert_column_with_attributes (treeview,
 						     COL_DISPLAY, _("Description"),
 						     renderer,
