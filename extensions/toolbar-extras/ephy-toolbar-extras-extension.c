@@ -131,7 +131,7 @@ find_action_group (EphyWindow *window)
 	GtkUIManager *manager;
 	GList *list, *element;
 
-	manager = GTK_UI_MANAGER (window->ui_merge);
+	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
 	list = gtk_ui_manager_get_action_groups (manager);
 	element = g_list_find_custom (list, "SpecialToolbarActions", (GCompareFunc) find_name);
 	g_return_if_fail (element != NULL);

@@ -168,7 +168,7 @@ update_action (EphyWindow *window,
 	GtkAction *action;
 	gboolean loading = TRUE;
 
-	action = gtk_ui_manager_get_action (GTK_UI_MANAGER (window->ui_merge),
+	action = gtk_ui_manager_get_action (GTK_UI_MANAGER (ephy_window_get_ui_manager (window)),
 					    "/menubar/ToolsMenu/PageInfo");
 
 	g_object_get (G_OBJECT (tab), "load-status", &loading, NULL);
@@ -239,7 +239,7 @@ impl_attach_window (EphyExtension *extension,
 
 	data = g_new (WindowData, 1);
 
-	manager = GTK_UI_MANAGER (window->ui_merge);
+	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
 
 	data->action_group = action_group =
 		gtk_action_group_new ("EphyPageInfoExtensionActions");
@@ -290,7 +290,7 @@ impl_detach_window (EphyExtension *extension,
 	GtkWidget *notebook;
 	GList *tabs, *l;
 
-	manager = GTK_UI_MANAGER (window->ui_merge);
+	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
 
 	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 	g_return_if_fail (data != NULL);

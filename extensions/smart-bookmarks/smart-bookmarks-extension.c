@@ -597,7 +597,7 @@ impl_attach_window (EphyExtension *ext,
 	gtk_action_group_add_actions (action_group, action_entries,
 				      n_action_entries, window);
 
-	data->manager = GTK_UI_MANAGER (window->ui_merge);
+	data->manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
 	data->action_group = action_group;
 
 	bookmarks = ephy_shell_get_bookmarks (ephy_shell);

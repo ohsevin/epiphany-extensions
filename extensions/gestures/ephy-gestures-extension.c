@@ -285,7 +285,7 @@ gesture_performed_cb (EphyGesture *gesture,
 		GtkAction *action = NULL;
 		GList *action_groups, *l;
 		
-		manager = GTK_UI_MANAGER (window->ui_merge);
+		manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
 		
 		action = gtk_ui_manager_get_action (manager, path);
 		

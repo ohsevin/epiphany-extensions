@@ -281,9 +281,9 @@ update_actions (EphyWindow *window)
 	g_value_init (&sensitive, G_TYPE_BOOLEAN);
 	g_value_set_boolean (&sensitive, FALSE);
 
-	action1 = gtk_ui_manager_get_action (GTK_UI_MANAGER (window->ui_merge),
+	action1 = gtk_ui_manager_get_action (GTK_UI_MANAGER (ephy_window_get_ui_manager (window)),
 					     "/menubar/ToolsMenu/SgmlValidate");
-	action2 = gtk_ui_manager_get_action (GTK_UI_MANAGER (window->ui_merge),
+	action2 = gtk_ui_manager_get_action (GTK_UI_MANAGER (ephy_window_get_ui_manager (window)),
 					     "/menubar/ToolsMenu/CheckLinks");
 
 	tab = ephy_window_get_active_tab (window);
@@ -392,7 +392,7 @@ impl_attach_window (EphyExtension *extension,
 
 	data = g_new (WindowData, 1);
 
-	manager = GTK_UI_MANAGER (window->ui_merge);
+	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
 
 	data->action_group = action_group =
 		gtk_action_group_new ("EphyErrorViewerExtensionActions");
@@ -446,7 +446,7 @@ impl_detach_window (EphyExtension *extension,
 #endif /* HAVE_OPENSP */
 
 	/* Remove UI */
-	manager = GTK_UI_MANAGER (window->ui_merge);
+	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
 
 	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 	g_return_if_fail (data != NULL);

@@ -190,7 +190,7 @@ sync_security_status (EphyTab *tab,
 
 	if (ephy_window_get_active_tab (window) != tab) return;
 
-	manager = GTK_UI_MANAGER (window->ui_merge);
+	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
 
 	action = gtk_ui_manager_get_action (manager, "/menubar/ViewMenu/ViewServerCertificateItem");
 	g_return_if_fail (action != NULL);
@@ -335,7 +335,7 @@ impl_attach_window (EphyExtension *ext,
 	/* add UI */
 	win_data = g_new (WindowData, 1);
 
-	manager = GTK_UI_MANAGER (window->ui_merge);
+	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
 
 	win_data->action_group = action_group = gtk_action_group_new
 		("CertificatesExtensionActions");
@@ -408,7 +408,7 @@ impl_detach_window (EphyExtension *ext,
 		(ebox, G_CALLBACK (padlock_button_press_cb), window);
 
 	/* remove UI */
-	manager = GTK_UI_MANAGER (window->ui_merge);
+	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
 
 	win_data = (WindowData *) g_object_get_data (G_OBJECT (window),
 						     WINDOW_DATA_KEY);

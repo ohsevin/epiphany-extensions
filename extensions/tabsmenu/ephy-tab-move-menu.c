@@ -273,7 +273,7 @@ ephy_tab_move_menu_set_window (EphyTabMoveMenu *menu,
 	g_return_if_fail (EPHY_IS_WINDOW (window));
 
 	menu->priv->window = window;
-	menu->priv->manager = GTK_UI_MANAGER (window->ui_merge);
+	menu->priv->manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
 
 	action_group = find_action_group (menu->priv->manager);
 

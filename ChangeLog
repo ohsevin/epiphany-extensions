@@ -1,5 +1,26 @@
 2004-09-13  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/certificates/ephy-certificates-extension.c:
+	(sync_security_status), (impl_attach_window), (impl_detach_window):
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	(update_actions), (impl_attach_window), (impl_detach_window):
+	* extensions/gestures/ephy-gestures-extension.c:
+	(gesture_performed_cb):
+	* extensions/page-info/ephy-page-info-extension.c: (update_action),
+	(impl_attach_window), (impl_detach_window):
+	* extensions/select-stylesheet/ephy-css-menu.c:
+	(ephy_css_menu_set_window):
+	* extensions/smart-bookmarks/smart-bookmarks-extension.c:
+	(impl_attach_window):
+	* extensions/tabsmenu/ephy-tab-move-menu.c:
+	(ephy_tab_move_menu_set_window):
+	* extensions/toolbar-extras/ephy-toolbar-extras-extension.c:
+	(find_action_group):
+
+	Use ephy_window_get_ui_manager() instead of the struct member.
+
+2004-09-13  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:
 
 	Remove debugging aid.
