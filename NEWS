@@ -1,4 +1,25 @@
 =========================
+Epiphany Extensions 1.6.1
+=========================
+
+Changes
+
+	* Fix compile with gcc-4.0 on amd64 [Debian #290309]
+	* Fix configure check for nsITypeAheadFind.h
+	* Enable typeahead search in the treeview [#170322]
+	* Remove label from the tray bookmarks menu, and add tooltip
+	* IPage Info gets href attribute for embed elements [#170786]
+	* Fix configure extensions list without --with-extensions.
+	* Fixes size persistence of the page info dialogue
+	* Adapt to mozilla API change
+
+Contributors to this release:
+Jordi Mallach, Christian Persch, Jean-François Rameau and
+Lars Strojny, and the translators Francisco Javier F. Serrador (es),
+Changwoo Ryu (ko), Steve Murphy (rw) and Pablo Saratxaga (wa).
+
+
+=========================
 Epiphany Extensions 1.6.0
 =========================
 

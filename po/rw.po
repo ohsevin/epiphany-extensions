@@ -1,0 +1,1089 @@
+# translation of epiphany-extensions to Kinyarwanda.
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# This file is distributed under the same license as the epiphany-extensions package.
+# Steve Murphy <murf@e-tools.com>, 2005
+# Steve performed initial rough translation from compendium built from translations provided by the following translators:
+# Philibert Ndandali  <ndandali@yahoo.fr>, 2005.
+# Viateur MUGENZI <muvia1@yahoo.fr>, 2005.
+# Noëlla Mupole <s24211045@tuks.co.za>, 2005.
+# Carole Karema <karemacarole@hotmail.com>, 2005.
+# JEAN BAPTISTE NGENDAHAYO <ngenda_denis@yahoo.co.uk>, 2005.
+# Augustin KIBERWA  <akiberwa@yahoo.co.uk>, 2005.
+# Donatien NSENGIYUMVA <ndonatienuk@yahoo.co.uk>, 2005..
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: epiphany-extensions HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-04-01 11:11-0700\n"
+"PO-Revision-Date: 2005-03-31 20:55-0700\n"
+"Last-Translator: Steve Murphy <murf@e-tools.com>\n"
+"Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"ULL NAME <EMAIL@ADDRESS>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: extensions/actions/action-properties.glade.h:1
+#, fuzzy
+msgid "<span weight=\"bold\">Applies to</span>"
+msgstr "<Uburemere UTSINDAGIYE Kuri"
+
+#: extensions/actions/action-properties.glade.h:2
+#, fuzzy
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<Uburemere UTSINDAGIYE"
+
+#: extensions/actions/action-properties.glade.h:3
+#, fuzzy
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"images."
+msgstr "iyi Ihitamo ni Bikora i Igikorwa in i Ibikubiyemo Bya Ishusho"
+
+#: extensions/actions/action-properties.glade.h:4
+#, fuzzy
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"links and pages."
+msgstr ""
+"iyi Ihitamo ni Bikora i Igikorwa in i Ibikubiyemo Bya amahuza Na Amapaji"
+
+#: extensions/actions/action-properties.glade.h:5
+#, fuzzy
+msgid "The action description."
+msgstr "Igikorwa Isobanuramiterere"
+
+#: extensions/actions/action-properties.glade.h:6
+#, fuzzy
+msgid ""
+"The action name. If a character is preceded by an underscore, that character "
+"will be used as the access key for the menu item."
+msgstr ""
+"Igikorwa Izina: a Inyuguti ni ku Inyuguti Nka i Urufunguzo kugirango i "
+"Ibikubiyemo Ikintu"
+
+#: extensions/actions/action-properties.glade.h:7
+#, fuzzy
+msgid ""
+"The command to execute when the action is activated. The URL of the link, "
+"image or page will be appended to the command."
+msgstr ""
+"Komandi: Kuri Gukora Ryari: i Igikorwa ni Bya i Ihuza Ishusho Cyangwa Ipaji "
+"Kuri i Komandi:"
+
+# padmin/source\padialog.src:RID_PADIALOG.RID_PA_TXT_COMMAND.text
+#: extensions/actions/action-properties.glade.h:8
+#, fuzzy
+msgid "_Command:"
+msgstr "Komandi:"
+
+#: extensions/actions/action-properties.glade.h:9
+#, fuzzy
+msgid "_Description:"
+msgstr "Umwirondoro:"
+
+#: extensions/actions/action-properties.glade.h:10
+#, fuzzy
+msgid "_Images"
+msgstr "Ishusho"
+
+# basctl/source\basicide\moduldlg.src:RID_DLG_NEWLIB.RID_FT_NEWLIB.text
+#: extensions/actions/action-properties.glade.h:11
+#, fuzzy
+msgid "_Name:"
+msgstr "Izina:"
+
+# filter/source\pdf\impdialog.src:RID_PDF_EXPORT_DLG.FL_PAGES.text
+#: extensions/actions/action-properties.glade.h:12
+#, fuzzy
+msgid "_Pages"
+msgstr "Amapaji"
+
+#: extensions/actions/actions-editor.glade.h:1
+#: extensions/actions/actions.xml.in.in.h:1
+msgid "Actions"
+msgstr ""
+
+#: extensions/actions/actions.xml.in.in.h:2
+#, fuzzy
+msgid "Execute arbitrary commands from the context menu"
+msgstr "Amabwiriza Bivuye i Imvugiro Ibikubiyemo"
+
+#: extensions/actions/ephy-actions-extension.c:97
+msgid "_Actions"
+msgstr ""
+
+#: extensions/actions/ephy-actions-extension.c:98
+msgid "Customize actions"
+msgstr ""
+
+#: extensions/actions/ephy-actions-extension.c:409
+#, fuzzy
+msgid "Could not run command"
+msgstr "OYA Gukoresha Komandi:"
+
+#: extensions/actions/ephy-actions-extension.c:412
+#, fuzzy
+msgid "Could not Run Command"
+msgstr "OYA"
+
+#: extensions/actions/ephy-actions-extension-editor-dialog.c:490
+#, fuzzy
+msgid "No action selected."
+msgstr "Igikorwa Byahiswemo"
+
+#: extensions/actions/ephy-actions-extension-editor-dialog.c:500
+#, fuzzy, c-format
+msgid "%i action selected."
+msgid_plural "%i actions selected."
+msgstr[0] "%iIgikorwa Byahiswemo"
+
+#: extensions/actions/ephy-actions-extension-properties-dialog.c:312
+msgid "Add Action"
+msgstr ""
+
+# LOCALIZATION NOTE (ObjectProperties):Don't translate "%obj%" it will be replaced with one of above object nouns
+#: extensions/actions/ephy-actions-extension-properties-dialog.c:421
+#, fuzzy, c-format
+msgid "%s Properties"
+msgstr "%sindangabintu ya %s%obj %s%"
+
+#: extensions/actions/ephy-actions-extension-properties-dialog.c:426
+msgid "Action Properties"
+msgstr ""
+
+#: extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:1
+#, fuzzy
+msgid "Add a bookmarks menu to the panel's notification area"
+msgstr "a Ibirango Ibikubiyemo Kuri i Ikimenyetso Ubuso"
+
+#: extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:2
+msgid "Bookmarks Tray"
+msgstr ""
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
+msgid "_Edit Bookmarks"
+msgstr ""
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
+#, fuzzy
+msgid "Open the bookmarks window"
+msgstr "i Ibirango Idirishya"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
+#, fuzzy
+msgid "Open in _Current Tab"
+msgstr "in"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
+#, fuzzy
+msgid "Open bookmarks in the current tab of the active window"
+msgstr "Ibirango in i KIGEZWEHO Isunika Bya i Gikora Idirishya"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
+#, fuzzy
+msgid "Open in New _Tab"
+msgstr "Fungura mw'isimbuka nshya"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
+#, fuzzy
+msgid "Open bookmarks in a new tab of the active window"
+msgstr "Ibirango in a Gishya Isunika Bya i Gikora Idirishya"
+
+# svtools/source\uno\unoifac2.src:RID_CONTEXTMENU.RID_OPEN_LINK_NEW.text
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
+#, fuzzy
+msgid "Open in New _Window"
+msgstr "Gufungurira muri New Window"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
+#, fuzzy
+msgid "Open bookmarks in new a window"
+msgstr "Ibirango in Gishya a Idirishya"
+
+# sfx2/source\appl\newhelp.src:WIN_HELP_INDEX.TC_INDEX.HELP_INDEX_PAGE_BOOKMARKS.text
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:531
+msgid "Bookmarks"
+msgstr "Ibirango"
+
+#: extensions/certificates/certificates.xml.in.in.h:1
+msgid "Certificates"
+msgstr "Impamyabushobozi"
+
+#: extensions/certificates/certificates.xml.in.in.h:2
+#, fuzzy
+msgid "View the page certificate and manage the certificates"
+msgstr "i Ipaji Impamyabushobozi Na kuyobora i Impamyabushobozi"
+
+#. stock icon
+#: extensions/certificates/ephy-certificates-extension.c:275
+#, fuzzy
+msgid "Manage _Certificates"
+msgstr "Yobora impamyabushobozi"
+
+#. shortcut key
+#: extensions/certificates/ephy-certificates-extension.c:277
+#, fuzzy
+msgid "Manage your certificates"
+msgstr "Impamyabushobozi"
+
+#. stock icon
+#: extensions/certificates/ephy-certificates-extension.c:285
+msgid "Server _Certificate"
+msgstr ""
+
+#. shortcut key
+#: extensions/certificates/ephy-certificates-extension.c:287
+#, fuzzy
+msgid "Display the web server's certificate"
+msgstr "i Urubuga Impamyabushobozi"
+
+#: extensions/dashboard/dashboard.xml.in.in.h:1
+msgid "Dashboard"
+msgstr ""
+
+#: extensions/dashboard/dashboard.xml.in.in.h:2
+#, fuzzy
+msgid "Send browsing information to Dashboard"
+msgstr "Ibisobanuro Kuri"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:97
+msgid "Check _HTML"
+msgstr ""
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:99
+#, fuzzy
+msgid "Display HTML errors in the Error Viewer dialog"
+msgstr "Amakosa in i Ikiganiro"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:104
+#, fuzzy
+msgid "Check _Links"
+msgstr "Genzura amahuza"
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:106
+#, fuzzy
+msgid "Display invalid hyperlinks in the Error Viewer dialog"
+msgstr "Sibyo Amahuzanyobora in i Ikiganiro"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:110
+msgid "_Error Viewer"
+msgstr ""
+
+#. shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:112
+#, fuzzy
+msgid "Display web page errors"
+msgstr "Urubuga Ipaji Amakosa"
+
+#: extensions/error-viewer/error-viewer.glade.h:1
+#, fuzzy
+msgid "Cl_ear"
+msgstr "Gusiba"
+
+#: extensions/error-viewer/error-viewer.glade.h:2
+msgid "Error Viewer"
+msgstr ""
+
+#: extensions/error-viewer/error-viewer.xml.in.in.h:1
+msgid "Error viewer"
+msgstr ""
+
+#: extensions/error-viewer/error-viewer.xml.in.in.h:2
+#, fuzzy
+msgid "View error in web pages, validate web pages and check links"
+msgstr ""
+"Ikosa in Urubuga Amapaji Kwemeza Urubuga Amapaji Na Kugenzura... amahuza"
+
+#. Don't bother looking for source lines -- they're not there
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:107
+#, fuzzy, c-format
+msgid ""
+"Error:\n"
+"%s"
+msgstr "Ikosa"
+
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:137
+#, fuzzy, c-format
+msgid ""
+"Javascript error in %s on line %d:\n"
+"%s"
+msgstr "Ikosa in ku Umurongo"
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
+#, fuzzy, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "Sibyo Ihuza"
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
+#, fuzzy, c-format
+msgid ""
+"Link error in %s:\n"
+"%s is unavailable."
+msgstr "Ikosa in ni"
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
+#, fuzzy, c-format
+msgid "Checking %d Link on %s"
+msgid_plural "Checking %d Links on %s"
+msgstr[0] "ku"
+
+#: extensions/error-viewer/opensp/validate.cpp:167
+#, fuzzy, c-format
+msgid ""
+"HTML error in %s on line %s:\n"
+"%s"
+msgstr "Ikosa in ku Umurongo"
+
+#: extensions/error-viewer/sgml-validator.c:165
+#, fuzzy, c-format
+msgid "Found %d error"
+msgid_plural "Found %d errors"
+msgstr[0] "Ikosa"
+
+#: extensions/error-viewer/sgml-validator.c:169
+#, fuzzy, c-format
+msgid "HTML Validation of %s complete"
+msgstr "Bya Byuzuye"
+
+#: extensions/error-viewer/sgml-validator.c:227
+#, fuzzy, c-format
+msgid ""
+"HTML error in %s:\n"
+"%s"
+msgstr "Ikosa in"
+
+#: extensions/error-viewer/sgml-validator.c:229
+#: extensions/error-viewer/sgml-validator.c:245
+#, fuzzy
+msgid ""
+"Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
+"xhtml+xml\" instead."
+msgstr "ni Ibikubiyemo Ubwoko ni Umwandiko HTML Porogaramu XHTML xml"
+
+#: extensions/error-viewer/sgml-validator.c:243
+#, fuzzy, c-format
+msgid ""
+"HTML warning in %s:\n"
+"%s"
+msgstr "Iburira in"
+
+#: extensions/error-viewer/sgml-validator.c:360
+#, fuzzy, c-format
+msgid "HTML error in %s:"
+msgstr "Ikosa in"
+
+#: extensions/error-viewer/sgml-validator.c:368
+#, fuzzy
+msgid "Invalid character encoding"
+msgstr "Inyuguti Imisobekere:"
+
+#: extensions/error-viewer/sgml-validator.c:373
+#, fuzzy
+msgid "Unknown error while converting to UTF-8"
+msgstr "Ikosa Guhindura.... Kuri 8"
+
+#: extensions/error-viewer/sgml-validator.c:435
+#, fuzzy, c-format
+msgid ""
+"HTML error in %s:\n"
+"No valid doctype specified."
+msgstr "Ikosa in Byemewe Ubwoko bw'inyandiko"
+
+#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
+#, fuzzy
+msgid "_Extensions"
+msgstr "Umigereka"
+
+#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#, fuzzy
+msgid "Load and unload extensions"
+msgstr "Na Kureka gufungura Umigereka"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:357
+msgid "Enabled"
+msgstr "Bikora"
+
+# #-#-#-#-#  basctl.pot (PACKAGE VERSION)  #-#-#-#-#
+# basctl/source\basicide\moptions.src:RID_MACROOPTIONS.RID_FT_DESCR.text
+# #-#-#-#-#  basctl.pot (PACKAGE VERSION)  #-#-#-#-#
+# basctl/source\basicide\moptions.src:RID_MACROOPTIONS.text
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:364
+msgid "Description"
+msgstr "Isobanuramiterere"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+#, fuzzy
+msgid "<b>Loaded Extensions</b>"
+msgstr "<B B"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+msgid "Extensions"
+msgstr "Umigereka"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:1
+#, fuzzy
+msgid "Activate and deactivate extensions"
+msgstr "Na Kubuza gukora Umigereka"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:2
+msgid "Extensions Manager"
+msgstr ""
+
+#: extensions/find/eggfindbar.c:132
+#, fuzzy
+msgid "Search string"
+msgstr "Ikurikiranyanyuguti"
+
+#: extensions/find/eggfindbar.c:133
+#, fuzzy
+msgid "The name of the string to be found"
+msgstr "Izina: Bya i Ikurikiranyanyuguti Kuri Byabonetse"
+
+# officecfg/registry\schema\org\openoffice\Office\Calc.xcs:....Calculate.Other.CaseSensitive.text
+#: extensions/find/eggfindbar.c:146
+msgid "Case sensitive"
+msgstr "Imyandikire y'inyuguti nkuru/nto"
+
+#: extensions/find/eggfindbar.c:147
+#, fuzzy
+msgid "TRUE for a case sensitive search"
+msgstr "kugirango a Gushaka"
+
+#: extensions/find/eggfindbar.c:154
+#, fuzzy
+msgid "Highlight color"
+msgstr "Garagaza ibara"
+
+#: extensions/find/eggfindbar.c:155
+#, fuzzy
+msgid "Color of highlight for all matches"
+msgstr "Bya garagaza cyane kugirango Byose"
+
+#: extensions/find/eggfindbar.c:161
+#, fuzzy
+msgid "Current color"
+msgstr "Ibara"
+
+#: extensions/find/eggfindbar.c:162
+#, fuzzy
+msgid "Color of highlight for the current match"
+msgstr "Bya garagaza cyane kugirango i KIGEZWEHO BIHUYE"
+
+# sfx2/source\appl\newhelp.src:STR_HELP_BUTTON_SEARCHDIALOG.text
+#: extensions/find/eggfindbar.c:286
+#, fuzzy
+msgid "F_ind:"
+msgstr "Gushaka..."
+
+#: extensions/find/eggfindbar.c:306
+#, fuzzy
+msgid "_Previous"
+msgstr "Ibanjirije"
+
+#: extensions/find/eggfindbar.c:308
+#, fuzzy
+msgid "_Next"
+msgstr "Bikurikira"
+
+# officecfg/registry\schema\org\openoffice\Office\Calc.xcs:....Calculate.Other.CaseSensitive.text
+#: extensions/find/eggfindbar.c:321
+#, fuzzy
+msgid "C_ase Sensitive"
+msgstr "Imyandikire y'inyuguti nkuru/ nto"
+
+# offmgr/source\offapp\dialog\hyprlink.src:RID_SVXDLG_HYPERLINK.BTN_INET_SEARCH.text
+#: extensions/find/find.xml.in.in.h:1
+msgid "Find"
+msgstr "Gushaka"
+
+#: extensions/find/find.xml.in.in.h:2
+#, fuzzy
+msgid "Replace the find dialog with a find toolbar"
+msgstr "i Gushaka Ikiganiro Na: a Gushaka Umwanyabikoresho"
+
+#: extensions/gestures/gestures.xml.in.in.h:1
+msgid "Gestures"
+msgstr ""
+
+#: extensions/gestures/gestures.xml.in.in.h:2
+#, fuzzy
+msgid "Perform actions with mouse gestures"
+msgstr "Na: Imbeba"
+
+#. How to describe this? It makes Epiphany "Just Work"
+#: extensions/net-monitor/net-monitor.xml.in.in.h:2
+#, fuzzy
+msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
+msgstr "urusobe kiri kuri interineti Ntibicometse kuri interineti Imimerere"
+
+#: extensions/net-monitor/net-monitor.xml.in.in.h:3
+msgid "Network Connection Monitor"
+msgstr ""
+
+#: extensions/page-info/ephy-page-info-extension.c:65
+#, fuzzy
+msgid "_Page Info"
+msgstr "Ipaji y'amakuru"
+
+#: extensions/page-info/ephy-page-info-extension.c:67
+#, fuzzy
+msgid "Display page information in a dialog"
+msgstr "Ipaji Ibisobanuro in a Ikiganiro"
+
+#: extensions/page-info/page-info-dialog.c:673
+#, fuzzy
+msgid "Unknown type"
+msgstr "Ubwoko"
+
+#: extensions/page-info/page-info-dialog.c:678
+msgid "Full standards compliance"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:681
+msgid "Almost standards compliance"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:684
+msgid "Compatibility"
+msgstr "Bihuye neza"
+
+#: extensions/page-info/page-info-dialog.c:688
+msgid "Undetermined"
+msgstr "Kitazwi"
+
+#: extensions/page-info/page-info-dialog.c:697
+msgid "Not cached"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:700
+#, fuzzy
+msgid "Disk cache"
+msgstr "Ubwihisho"
+
+#: extensions/page-info/page-info-dialog.c:703
+#, fuzzy
+msgid "Memory cache"
+msgstr "ububikoremezo y'Ubwihisho"
+
+#: extensions/page-info/page-info-dialog.c:706
+#, fuzzy
+msgid "Unknown cache"
+msgstr "Ubwihisho"
+
+# filter/source\xsltdialog\xmlfilterdialogstrings.src:STR_UNKNOWN_APPLICATION.text
+#: extensions/page-info/page-info-dialog.c:722
+#: extensions/page-info/page-info-dialog.c:833
+msgid "Unknown"
+msgstr "Kitazwi"
+
+#: extensions/page-info/page-info-dialog.c:727
+msgid "No referrer"
+msgstr ""
+
+# filter/source\xsltdialog\xmlfilterdialogstrings.src:STR_NOT_SPECIFIED.text
+#: extensions/page-info/page-info-dialog.c:741
+#: extensions/page-info/page-info-dialog.c:757
+msgid "Not specified"
+msgstr "Kiterekanywe "
+
+# #-#-#-#-#  officecfg.pot (PACKAGE VERSION)  #-#-#-#-#
+# officecfg/registry\schema\org\openoffice\Office\Common.xcs:....Image.text
+# #-#-#-#-#  officecfg.pot (PACKAGE VERSION)  #-#-#-#-#
+# officecfg/registry\schema\org\openoffice\Office\Writer.xcs:....Insert.Caption.OfficeObject.Image.Enable.text
+#: extensions/page-info/page-info-dialog.c:818
+msgid "Image"
+msgstr "Ishusho"
+
+#: extensions/page-info/page-info-dialog.c:821
+msgid "Embed"
+msgstr "Gutsindira"
+
+#: extensions/page-info/page-info-dialog.c:824
+msgid "Object"
+msgstr "Igikoresho"
+
+#: extensions/page-info/page-info-dialog.c:827
+msgid "Applet"
+msgstr "Guhindura Applet"
+
+# sfx2/source\toolbox\tbxopdlg.src:TP_CONFIG_OBJECTBAR.STR_SYMBOL.text
+#: extensions/page-info/page-info-dialog.c:830
+msgid "Icon"
+msgstr "Agashushondanga"
+
+#: extensions/page-info/page-info-dialog.c:958
+#, fuzzy
+msgid "Save Medium As..."
+msgstr "Kubika"
+
+# wizards/source\importwizard\importwi.src:sPathDialogMessage.text
+#: extensions/page-info/page-info-dialog.c:975
+msgid "Select a directory"
+msgstr "Guhitamo ububiko"
+
+# #-#-#-#-#  sfx2.pot (PACKAGE VERSION)  #-#-#-#-#
+# sfx2/source\accel\accel.src:STR_OPEN.text
+# #-#-#-#-#  sfx2.pot (PACKAGE VERSION)  #-#-#-#-#
+# sfx2/source\dialog\cfg.src:STR_OPEN.text
+# #-#-#-#-#  sfx2.pot (PACKAGE VERSION)  #-#-#-#-#
+# sfx2/source\dialog\versdlg.src:DLG_VERSIONS.PB_OPEN.text
+#: extensions/page-info/page-info-dialog.c:1055
+#, fuzzy
+msgid "_Open"
+msgstr "Gufungura"
+
+#: extensions/page-info/page-info-dialog.c:1061
+#: extensions/page-info/page-info-dialog.c:1413
+msgid "_Copy Link Address"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:1067
+#, fuzzy
+msgid "_Use as Background"
+msgstr "Nka"
+
+# sfx2/source\doc\doc.src:STR_SAVEASDOC.text
+#: extensions/page-info/page-info-dialog.c:1073
+#, fuzzy
+msgid "_Save As..."
+msgstr "Gushyingura muri..."
+
+#: extensions/page-info/page-info-dialog.c:1250
+#: extensions/page-info/page-info-dialog.c:1485
+msgid "URL"
+msgstr "URL"
+
+# filter/source\xsltdialog\xmlfilterdialogstrings.src:STR_COLUMN_HEADER_TYPE.text
+#: extensions/page-info/page-info-dialog.c:1262
+msgid "Type"
+msgstr "Ubwoko"
+
+#: extensions/page-info/page-info-dialog.c:1274
+msgid "Alt Text"
+msgstr ""
+
+#: extensions/page-info/page-info-dialog.c:1286
+#: extensions/page-info/page-info-dialog.c:1497
+msgid "Title"
+msgstr "Umutwe"
+
+#: extensions/page-info/page-info-dialog.c:1298
+msgid "Width"
+msgstr "Ubugari"
+
+#: extensions/page-info/page-info-dialog.c:1310
+msgid "Height"
+msgstr "Ubuhagarike"
+
+# 5033
+#: extensions/page-info/page-info-dialog.c:1509
+msgid "Relation"
+msgstr "Isano"
+
+#: extensions/page-info/page-info-dialog.c:1621
+#: extensions/page-info/page-info-dialog.c:1758
+msgid "Name"
+msgstr "Izina"
+
+#: extensions/page-info/page-info-dialog.c:1633
+msgid "Method"
+msgstr "Uburyo"
+
+# sc/source\ui\miscdlgs\acredlin.src:RID_POPUP_CHANGES.SC_SUB_SORT.SC_SORT_ACTION.text
+#: extensions/page-info/page-info-dialog.c:1645
+msgid "Action"
+msgstr "Igikorwa"
+
+# dbaccess/source/ui/inc/toolbox.hrc:MID_SBA_QRY_COPY.text
+#: extensions/page-info/page-info-dialog.c:1724
+#, fuzzy
+msgid "_Copy"
+msgstr "Gukoporora"
+
+#: extensions/page-info/page-info-dialog.c:1770
+msgid "Content"
+msgstr "Ibikubiyemo"
+
+#: extensions/page-info/page-info-dialog.c:1869
+msgid "Page Metadata"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:1
+#, fuzzy
+msgid "<b>Dublin Core Metadata</b>"
+msgstr "<B B"
+
+#: extensions/page-info/page-info.glade.h:2
+#, fuzzy
+msgid "<b>Forms In Page</b>"
+msgstr "<B B"
+
+#: extensions/page-info/page-info.glade.h:3
+#, fuzzy
+msgid "<b>Links In Page</b>"
+msgstr "<B B"
+
+#: extensions/page-info/page-info.glade.h:4
+#, fuzzy
+msgid "<b>Media In Page</b>"
+msgstr "<B B"
+
+#: extensions/page-info/page-info.glade.h:5
+#, fuzzy
+msgid "<b>Medium View</b>"
+msgstr "<B B"
+
+#: extensions/page-info/page-info.glade.h:6
+#, fuzzy
+msgid "<b>Other Metadata</b>"
+msgstr "<B B"
+
+#: extensions/page-info/page-info.glade.h:7
+#, fuzzy
+msgid "<b>Rendering</b>"
+msgstr "<B B"
+
+#: extensions/page-info/page-info.glade.h:8
+#, fuzzy
+msgid "<b>Source File</b>"
+msgstr "<B Idosiye B"
+
+#: extensions/page-info/page-info.glade.h:9
+#, fuzzy
+msgid "<b>Web Page</b>"
+msgstr "<B B"
+
+#: extensions/page-info/page-info.glade.h:10
+msgid "DYNAMIC"
+msgstr ""
+
+#: extensions/page-info/page-info.glade.h:11
+msgid "Date:"
+msgstr "Itariki:"
+
+#: extensions/page-info/page-info.glade.h:12
+msgid "Description:"
+msgstr "Umwirondoro"
+
+#: extensions/page-info/page-info.glade.h:13
+msgid "Encoding:"
+msgstr "Imisobekere:"
+
+#: extensions/page-info/page-info.glade.h:14
+msgid "Expires:"
+msgstr "Yarenze igihe:"
+
+#: extensions/page-info/page-info.glade.h:15
+msgid "Format:"
+msgstr "Imiterere:"
+
+#: extensions/page-info/page-info.glade.h:16
+msgid "Forms"
+msgstr "Amafishi"
+
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+#: extensions/page-info/page-info.glade.h:17
+msgid "General"
+msgstr "Rusange"
+
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+#: extensions/page-info/page-info.glade.h:18
+msgid "Links"
+msgstr "amahuza"
+
+# padmin/source\padialog.src:RID_PADIALOG.RID_PA_TXT_LOCATION.text
+#: extensions/page-info/page-info.glade.h:19
+msgid "Location:"
+msgstr "Intaho:"
+
+# framework/source\classes\fltdlg.src:DLG_FILTER_SELECT.FT_DLG_MIMETYPE.text
+#: extensions/page-info/page-info.glade.h:20
+#, fuzzy
+msgid "MIME type:"
+msgstr "Ubwoko bwa MIME:"
+
+#: extensions/page-info/page-info.glade.h:21
+msgid "Media"
+msgstr "Ibitangazamakuru"
+
+#: extensions/page-info/page-info.glade.h:22
+msgid "Metadata"
+msgstr ""
+
+# #-#-#-#-#  goodies.pot (PACKAGE VERSION)  #-#-#-#-#
+# goodies/source\filter.vcl\egif\dlgegif.src:DLG_EXPORT_GIF.GRP_MODE.text
+# #-#-#-#-#  goodies.pot (PACKAGE VERSION)  #-#-#-#-#
+# goodies/source\filter.vcl\eos2met\dlgeos2.src:DLG_EXPORT_EMET.GRP_MODE.text
+# #-#-#-#-#  goodies.pot (PACKAGE VERSION)  #-#-#-#-#
+# goodies/source\filter.vcl\epict\dlgepct.src:DLG_EXPORT_EPCT.GRP_MODE.text
+# #-#-#-#-#  goodies.pot (PACKAGE VERSION)  #-#-#-#-#
+# goodies/source\filter.vcl\epng\dlgepng.src:DLG_EXPORT_EPNG.GRP_COMPRESSION.text
+#: extensions/page-info/page-info.glade.h:23
+#, fuzzy
+msgid "Mode:"
+msgstr "Ubwoko"
+
+# sfx2/source\dialog\dinfdlg.src:TP_DOCINFODOC.FT_CHANGE.text
+#: extensions/page-info/page-info.glade.h:24
+msgid "Modified:"
+msgstr "Byahinduwe"
+
+# ***** BEGIN LICENSE BLOCK *****
+# - Version: MPL 1.1/GPL 2.0/LGPL 2.1
+# -
+# - The contents of this file are subject to the Mozilla Public License Version
+# - 1.1 (the "License"); you may not use this file except in compliance with
+# - the License. You may obtain a copy of the License at
+# - http://www.mozilla.org/MPL/
+# -
+# - Software distributed under the License is distributed on an "AS IS" basis,
+# - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+# - for the specific language governing rights and limitations under the
+# - License.
+# -
+# - The Original Code is Mozilla Communicator client code, released
+# - March 31, 1998.
+# -
+# - The Initial Developer of the Original Code is
+# - Netscape Communications Corporation.
+# - Portions created by the Initial Developer are Copyright (C) 1998-1999
+# - the Initial Developer. All Rights Reserved.
+# -
+# - Contributor(s):
+# -
+# - Alternatively, the contents of this file may be used under the terms of
+# - either of the GNU General Public License Version 2 or later (the "GPL"),
+# - or the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+# - in which case the provisions of the GPL or the LGPL are applicable instead
+# - of those above. If you wish to allow use of your version of this file only
+# - under the terms of either the GPL or the LGPL, and not to allow others to
+# - use your version of this file under the terms of the MPL, indicate your
+# - decision by deleting the provisions above and replace them with the notice
+# - and other provisions required by the GPL or the LGPL. If you do not delete
+# - the provisions above, a recipient may use your version of this file under
+# - the terms of any one of the MPL, the GPL or the LGPL.
+# -
+# - ***** END LICENSE BLOCK *****
+# Window title
+#: extensions/page-info/page-info.glade.h:25
+msgid "Page Properties"
+msgstr "Indangabintu y'ipaji"
+
+#: extensions/page-info/page-info.glade.h:26
+msgid "Referrer:"
+msgstr ""
+
+# sfx2/source\dialog\dinfdlg.src:TP_DOCINFODOC.FT_FILE_SIZE.text
+#: extensions/page-info/page-info.glade.h:27
+msgid "Size:"
+msgstr "Ingano"
+
+# sc/source\ui\src\dbnamdlg.src:RID_SCDLG_DBNAMES.FT_SOURCE.text
+#: extensions/page-info/page-info.glade.h:28
+msgid "Source:"
+msgstr "Inkomoko:"
+
+# shell/source\win32\shlxthandler\shlxthdl.lng:%TITLE_COLON%.text
+#: extensions/page-info/page-info.glade.h:29
+msgid "Title:"
+msgstr "Umutwe:"
+
+# sfx2/source\dialog\dinfdlg.src:TP_DOCINFODOC.FT_FILE_TYP.text
+#: extensions/page-info/page-info.glade.h:30
+msgid "Type:"
+msgstr "Ubwoko"
+
+#: extensions/page-info/page-info.glade.h:31
+#, fuzzy
+msgid "_Save Media As..."
+msgstr "Kubika"
+
+#: extensions/page-info/page-info.xml.in.in.h:1
+#, fuzzy
+msgid "Display information about and links and media from the current page"
+msgstr ""
+"Ibisobanuro Ibyerekeye Na amahuza Na Ibitangazamakuru Bivuye i KIGEZWEHO "
+"Ipaji"
+
+#: extensions/page-info/page-info.xml.in.in.h:2
+msgid "Page Info"
+msgstr "Ipaji y'amakuru"
+
+#: extensions/sample-mozilla/sample-mozilla.xml.in.in.h:1
+#, fuzzy
+msgid "A sample extension with mozilla backend"
+msgstr "A Urugero Umugereka Na: mozilla"
+
+#: extensions/sample-mozilla/sample-mozilla.xml.in.in.h:2
+#, fuzzy
+msgid "Sample (Mozilla)"
+msgstr "Mozilla"
+
+#: extensions/sample/sample.xml.in.in.h:1
+#, fuzzy
+msgid "A sample extension"
+msgstr "A Urugero Umugereka"
+
+#: extensions/sample/sample.xml.in.in.h:2
+msgid "Sample"
+msgstr "Urugero"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:145
+#, fuzzy
+msgid "Render the page without using a style"
+msgstr "i Ipaji ikoresha a IMISUSIRE"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:148
+#, fuzzy
+msgid "Render the page using the default style"
+msgstr "i Ipaji ikoresha i Mburabuzi IMISUSIRE"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:151
+#, fuzzy, c-format
+msgid "Render the page using the \"%s\" style"
+msgstr "i Ipaji ikoresha i IMISUSIRE"
+
+# sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_STYLE.text
+#: extensions/select-stylesheet/ephy-css-menu.c:309
+#, fuzzy
+msgid "St_yle"
+msgstr "IMISUSIRE"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:310
+#, fuzzy
+msgid "Select a different style for this page"
+msgstr "a IMISUSIRE kugirango iyi Ipaji"
+
+#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
+msgid "Default"
+msgstr "Mburabuzi"
+
+# goodies/source\filter.vcl\eps\dlgeps.src:DLG_EXPORT_EPS.RB_COMPRESSION_NONE.text
+#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
+msgid "None"
+msgstr "Nta na kimwe"
+
+#: extensions/select-stylesheet/select-stylesheet.xml.in.in.h:1
+msgid "Select Stylesheet"
+msgstr ""
+
+#: extensions/select-stylesheet/select-stylesheet.xml.in.in.h:2
+#, fuzzy
+msgid "Select between different stylesheets offered by the web page"
+msgstr "hagati ku i Urubuga Ipaji"
+
+#: extensions/sidebar/ephy-sidebar.c:176
+msgid "No Sidebars installed"
+msgstr ""
+
+#: extensions/sidebar/ephy-sidebar-extension.c:104
+#, fuzzy
+msgid "_Sidebar"
+msgstr "Umurongo wo ku mpande"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:105
+#, fuzzy
+msgid "Show or hide the sidebar"
+msgstr "Cyangwa Gushisha i Umurongo wo ku mpande"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:407
+#, fuzzy, c-format
+msgid "Add \"%s\" to the Sidebar?"
+msgstr "Kuri i"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:411
+#, fuzzy, c-format
+msgid "The source to the new sidebar page is %s."
+msgstr "Inkomoko Kuri i Gishya Umurongo wo ku mpande Ipaji ni"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:413
+msgid "Add Sidebar"
+msgstr ""
+
+#: extensions/sidebar/ephy-sidebar-extension.c:417
+msgid "_Add Sidebar"
+msgstr ""
+
+#: extensions/sidebar/sidebar.xml.in.in.h:1
+#, fuzzy
+msgid "Adds a sidebar to windows"
+msgstr "a Umurongo wo ku mpande Kuri"
+
+#: extensions/sidebar/sidebar.xml.in.in.h:2
+msgid "Sidebar"
+msgstr "Umurongo wo ku mpande"
+
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:578
+msgid "_Look Up"
+msgstr ""
+
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:585
+msgid "_GNOME Dictionary"
+msgstr ""
+
+#: extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:1
+#, fuzzy
+msgid "Look up the selected text with a smart bookmark"
+msgstr "Hejuru i Byahiswemo Umwandiko Na: a Cyiza Akamenyetso"
+
+#: extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:2
+msgid "Smart Bookmarks"
+msgstr ""
+
+#: extensions/tab-groups/tab-groups.xml.in.in.h:1
+#, fuzzy
+msgid "Groups newly opened tabs"
+msgstr "Amasimbuka"
+
+#: extensions/tab-groups/tab-groups.xml.in.in.h:2
+msgid "Tab Groups"
+msgstr ""
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:190
+#, fuzzy, c-format
+msgid "Window '%s' (%d tab)"
+msgid_plural "Window '%s' (%d tabs)"
+msgstr[0] "Isunika"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:302
+msgid "Move Tab To Window"
+msgstr ""
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:303
+#, fuzzy
+msgid "Move the current tab to a different window"
+msgstr "i KIGEZWEHO Isunika Kuri a Idirishya"
+
+#: extensions/tabsmenu/tabsmenu.xml.in.in.h:1
+#, fuzzy
+msgid "Move tabs between windows"
+msgstr "Amasimbuka hagati"
+
+#: extensions/tabsmenu/tabsmenu.xml.in.in.h:2
+msgid "Tabsmenu"
+msgstr ""
+
+#: extensions/tab-states/tab-states.xml.in.in.h:1
+#, fuzzy
+msgid "Indicates new content in background tabs"
+msgstr "Gishya Ibikubiyemo in Mbuganyuma Amasimbuka"
+
+#: extensions/tab-states/tab-states.xml.in.in.h:2
+msgid "Tab States"
+msgstr ""
