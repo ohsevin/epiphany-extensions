@@ -365,7 +365,7 @@ else
   AC_DEFINE_UNQUOTED(EXTENSIONS_DATA_DIR, "${datadir}/${PACKAGE}-${EPIPHANY_EXTENSIONS_MAJOR}", [Directory of data files])
 fi
 
-EXTENSIONS_DIR="`$PKG_CONFIG --variable=extensionsdir epiphany-1.4`"
+EXTENSIONS_DIR="`$PKG_CONFIG --variable=extensionsdir epiphany-1.6`"
 AC_SUBST(EXTENSIONS_DIR)
 
 dnl *******************************
