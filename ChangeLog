@@ -1,3 +1,42 @@
+2004-09-11  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/Makefile.am:
+	* extensions/page-info/.cvsignore:
+	* extensions/page-info/Makefile.am:
+	* extensions/page-info/ephy-page-info-extension.c:
+	(ephy_page_info_extension_get_type),
+	(ephy_page_info_extension_register_type),
+	(ephy_page_info_extension_init),
+	(ephy_page_info_extension_finalize),
+	(ephy_page_info_extension_class_init), (display_page_info),
+	(ephy_page_info_extension_display_cb), (update_action),
+	(load_status_cb), (switch_page_cb), (tab_added_cb),
+	(tab_removed_cb), (free_window_data), (impl_attach_window),
+	(impl_detach_window), (ephy_page_info_extension_iface_init):
+	* extensions/page-info/ephy-page-info-extension.h:
+	* extensions/page-info/extension.c: (register_module):
+	* extensions/page-info/mozilla/.cvsignore:
+	* extensions/page-info/mozilla/Makefile.am:
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+	* extensions/page-info/mozilla/mozilla-helpers.h:
+	* extensions/page-info/page-info-dialog.c:
+	(page_info_dialog_get_type), (page_info_dialog_register_type),
+	(page_info_dialog_class_init), (page_info_set_text),
+	(setup_page_general), (page_info_dialog_init),
+	(page_info_dialog_finalize), (page_info_dialog_new),
+	(page_info_dialog_close_button_clicked_cb),
+	(page_info_dialog_view_cert_button_clicked_cb),
+	(page_info_dialog_imagesave_button_clicked_cb),
+	(images_treeview_selection_changed_cb),
+	(page_info_image_box_realize_cb):
+	* extensions/page-info/page-info-dialog.h:
+	* extensions/page-info/page-info.glade:
+	* po/POTFILES.in:
+
+	Initial work on Page Info extension. It has the "General" tab but no
+	others yet.
+
 2004-09-09  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/certificates/ephy-certificates-extension.c:

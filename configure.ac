@@ -135,10 +135,10 @@ dnl *******************************
 
 AC_MSG_CHECKING([extensions to build])
 
-all_extensions="certificates,dashboard,error-viewer,gestures,sample,sample-mozilla,smart-bookmarks,tabsmenu,tab-groups"
-all_useful_extensions="certificates,dashboard,error-viewer,gestures,smart-bookmarks,tabsmenu,tab-groups"
-default_extensions="certificates,error-viewer,smart-bookmarks,tabsmenu"
-mozilla_dependent_extensions="certificates,error-viewer,sample-mozilla,smart-bookmarks"
+all_extensions="certificates,dashboard,error-viewer,gestures,page-info,sample,sample-mozilla,smart-bookmarks,tabsmenu,tab-groups"
+all_useful_extensions="certificates,dashboard,error-viewer,gestures,page-info,smart-bookmarks,tabsmenu,tab-groups"
+default_extensions="certificates,error-viewer,page-info,smart-bookmarks,tabsmenu"
+mozilla_dependent_extensions="certificates,error-viewer,page-info,sample-mozilla,smart-bookmarks"
 
 dnl due to an autoconf bug, commas in the first arg to
 dnl AC_HELP_STRING cause problems.
@@ -184,6 +184,7 @@ AM_CONDITIONAL(ENABLE_CERTIFICATES_EXTENSION, echo "$extensions" | egrep '(^|,)c
 AM_CONDITIONAL(ENABLE_DASHBOARD_EXTENSION, echo "$extensions" | egrep '(^|,)dashboard($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_ERROR_VIEWER_EXTENSION, echo "$extensions" | egrep '(^|,)error-viewer($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_GESTURES_EXTENSION, echo "$extensions" | egrep '(^|,)gestures($|,)' > /dev/null)
+AM_CONDITIONAL(ENABLE_PAGE_INFO_EXTENSION, echo "$extensions" | egrep '(^|,)page-info($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SAMPLE_EXTENSION, echo "$extensions" | egrep '(^|,)sample($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SAMPLE_MOZILLA_EXTENSION, echo "$extensions" | egrep '(^|,)sample-mozilla($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SMART_BOOKMARKS_EXTENSION, echo "$extensions" | egrep '(^|,)smart-bookmarks($|,)' > /dev/null)
@@ -378,6 +379,8 @@ extensions/gestures/Makefile
 extensions/error-viewer/Makefile
 extensions/error-viewer/mozilla/Makefile
 extensions/error-viewer/opensp/Makefile
+extensions/page-info/Makefile
+extensions/page-info/mozilla/Makefile
 extensions/sample/Makefile
 extensions/sample-mozilla/Makefile
 extensions/sample-mozilla/mozilla/Makefile

@@ -16,6 +16,10 @@ if ENABLE_GESTURES_EXTENSION
 SUBDIRS += gestures
 endif
 
+if ENABLE_PAGE_INFO_EXTENSION
+SUBDIRS += page-info
+endif
+
 if ENABLE_SAMPLE_EXTENSION
 SUBDIRS += sample
 endif
