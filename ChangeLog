@@ -1,3 +1,24 @@
+2005-01-01  Crispin Flowerday  <gnome@flowerday.cx>
+
+	* configure.ac:
+	* extensions/sidebar/Makefile.am:
+	* extensions/sidebar/ephy-sidebar-extension.c:
+	(ephy_sidebar_extension_add_sidebar_cb),
+	(ephy_sidebar_extension_init), (ephy_sidebar_extension_finalize),
+	(ephy_sidebar_extension_class_init):
+	* extensions/sidebar/ephy-sidebar-extension.h:
+	R extensions/sidebar/ephy-sidebar-marshal.list:
+	R extensions/sidebar/mozilla/.cvsignore:
+	R extensions/sidebar/mozilla/Makefile.am:
+	R extensions/sidebar/mozilla/Sidebar.cpp:
+	R extensions/sidebar/mozilla/Sidebar.h:
+	R extensions/sidebar/mozilla/register-component.cpp:
+	R extensions/sidebar/mozilla/register-component.h:
+
+	Hook into the "add-sidebar" signal in epiphany, this avoids
+	problems with unloading the extension. Fixes bug #156849 and 
+	bug #157088
+	
 2004-12-30  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/sample-mozilla/ephy-sample2-extension.c:

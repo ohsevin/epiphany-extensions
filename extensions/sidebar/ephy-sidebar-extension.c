@@ -1,7 +1,7 @@
 /*
  *  Copyright (C) 2003 Marco Pesenti Gritti
  *  Copyright (C) 2003 Christian Persch
- *  Copyright (C) 2004 Crispin Flowerday
+ *  Copyright (C) 2004,2005 Crispin Flowerday
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -25,14 +25,12 @@
 #endif
 
 #include "ephy-sidebar-extension.h"
-#include "ephy-sidebar-marshal.h"
 #include "ephy-sidebar-embed.h"
 #include "ephy-sidebar.h"
 
-#include "register-component.h"
-
 #include <epiphany/ephy-extension.h>
 #include <epiphany/ephy-embed-shell.h>
+#include <epiphany/ephy-embed-single.h>
 #include <epiphany/ephy-shell.h>
 #include <epiphany/ephy-session.h>
 #include <epiphany/ephy-node.h>
@@ -108,14 +106,6 @@ static GtkToggleActionEntry toggle_action_entries [] =
 	{ "ViewSidebar", NULL, N_("_Sidebar"), "F9", 
 	  N_("Show or hide the sidebar"), G_CALLBACK(cmd_view_sidebar), FALSE }
 };
-
-enum
-{
-	ADD_SIDEBAR,
-	LAST_SIGNAL
-};
-
-static guint signals[LAST_SIGNAL] = { 0 };
 
 static void ephy_sidebar_extension_class_init	(EphySidebarExtensionClass *klass);
 static void ephy_sidebar_extension_iface_init	(EphyExtensionIface *iface);
@@ -361,10 +351,11 @@ add_dialog_response_cb (GtkDialog *dialog,
 	gtk_widget_destroy (GTK_WIDGET (dialog));
 }
 
-static void
-impl_add_sidebar (EphySidebarExtension *extension,
-		  const char *url,
-		  const char *title)
+static gboolean
+ephy_sidebar_extension_add_sidebar_cb (EphyEmbedSingle *single,
+                                       const char *url,
+                                       const char *title,
+                                       EphySidebarExtension *extension)
 {
 	EphySession *session;
 	EphyWindow *window;
@@ -381,7 +372,7 @@ impl_add_sidebar (EphySidebarExtension *extension,
 		if (strcmp (node_url, url) == 0)
 		{
 			/* TODO Should we raise a dialog or perform an action here */
-			return;
+			return TRUE;
 		}
 	}
 
@@ -417,6 +408,8 @@ impl_add_sidebar (EphySidebarExtension *extension,
 			       0);
 
 	gtk_widget_show (GTK_WIDGET (dialog));
+
+	return TRUE;
 }
 
 static void
@@ -592,6 +585,7 @@ static void
 ephy_sidebar_extension_init (EphySidebarExtension *extension)
 {
 	EphyNodeDb *db;
+	GObject *single;
 
 	LOG ("EphySidebarExtension initialising");
 
@@ -624,20 +618,20 @@ ephy_sidebar_extension_init (EphySidebarExtension *extension)
 				     extension->priv->state);
 	}
 
-	ephy_embed_shell_get_embed_single (embed_shell); /* Fire up Mozilla */
-
-	mozilla_register_component (G_OBJECT (extension));
+	single = ephy_embed_shell_get_embed_single (embed_shell);
+	g_signal_connect (single, "add-sidebar",
+			  G_CALLBACK (ephy_sidebar_extension_add_sidebar_cb),
+			  extension);
 }
 
 static void
 ephy_sidebar_extension_finalize (GObject *object)
 {
 	EphySidebarExtension *extension = EPHY_SIDEBAR_EXTENSION (object);
+	GObject *single;
 
 	LOG ("EphySidebarExtension finalising")
 
-	mozilla_unregister_component();
-	
 	ephy_node_db_write_to_xml_safe
 		(extension->priv->db, 
 		 extension->priv->xml_file,
@@ -654,6 +648,11 @@ ephy_sidebar_extension_finalize (GObject *object)
 	ephy_node_unref (extension->priv->state);
 
 	g_object_unref (extension->priv->db);
+
+	/* Disconnect our signal */
+	single = ephy_embed_shell_get_embed_single (embed_shell);
+	g_signal_handlers_disconnect_matched
+		(single, G_SIGNAL_MATCH_DATA, 0, 0, NULL, NULL, object);
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
 }
@@ -673,20 +672,6 @@ ephy_sidebar_extension_class_init (EphySidebarExtensionClass *klass)
 	parent_class = g_type_class_peek_parent (klass);
 
 	object_class->finalize = ephy_sidebar_extension_finalize;
-
-	klass->add_sidebar = impl_add_sidebar;
-
-	signals[ADD_SIDEBAR] =
-		g_signal_new ("add_sidebar",
-			      G_OBJECT_CLASS_TYPE (object_class),
-			      G_SIGNAL_RUN_FIRST,
-			      G_STRUCT_OFFSET (EphySidebarExtensionClass, add_sidebar),
-			      NULL, NULL,
-			      ephy_sidebar_marshal_VOID__STRING_STRING,
-			      G_TYPE_NONE,
-			      2,
-			      G_TYPE_STRING,
-			      G_TYPE_STRING);
 
 	g_type_class_add_private (object_class, sizeof (EphySidebarExtensionPrivate));
 }

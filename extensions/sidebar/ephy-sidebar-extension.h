@@ -42,11 +42,6 @@ typedef struct EphySidebarExtensionClass	EphySidebarExtensionClass;
 struct EphySidebarExtensionClass
 {
 	GObjectClass parent_class;
-
-	/* Signals */
-	void (* add_sidebar) (EphySidebarExtension *extension,
-			      const char *url, const char *title);
-
 };
 
 struct EphySidebarExtension
