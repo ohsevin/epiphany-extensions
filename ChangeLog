@@ -1,3 +1,9 @@
+2004-06-06  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/error-viewer/opensp/validate.cpp:
+
+	#include <string>: Fixes bug #143818
+
 2004-06-06  Alexander Shopov <ash@contact.bg>
 	* configure.ac: Added "bg" (Bulgarian) to ALL_LINGUAS
 

@@ -35,6 +35,7 @@
 #include <glib/gi18n-lib.h>
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
