@@ -215,7 +215,15 @@ open_bookmark_cb (EphyBookmarksMenu *menu,
 	}
 }
 
-/* from netapplet */
+/*
+ * menu positioning function adapted from gnome-panel/menu-utils.c:
+ *
+ * GNOME panel menu module.
+ * (C) 1997 The Free Software Foundation
+ *
+ * Authors: Miguel de Icaza
+ *          Federico Mena
+ */
 static void
 menu_position_func (GtkMenu *menu,
 		    int *x,
@@ -225,40 +233,39 @@ menu_position_func (GtkMenu *menu,
 {
 	EphyBookmarksTrayExtension *extension = EPHY_BOOKMARKS_TRAY_EXTENSION (data);
 	EphyBookmarksTrayExtensionPrivate *priv = extension->priv;
-	GdkScreen *screen;
-	int screen_w, screen_h;
-	int button_x, button_y;
-	int panel_w, panel_h;
 	GtkRequisition requisition;
+	GdkScreen *screen;
+	GtkWidget *widget = priv->tray;
+	int menu_x = 0, menu_y = 0;
 
-	screen = gtk_widget_get_screen (priv->tray);
-	screen_w = gdk_screen_get_width (screen);
-	screen_h = gdk_screen_get_height (screen);
+	screen = gtk_widget_get_screen (widget);
 
-	gdk_window_get_origin (priv->tray->window,
-			       &button_x, &button_y);
-
-	gtk_window_get_size (
-		GTK_WINDOW (gtk_widget_get_toplevel (priv->tray)),
-		&panel_w, &panel_h);
-
-	*x = button_x;
-
-	/*
-	 * Check to see if we would be placing the menu off the
-	 * end of the screen.
-	 */
 	gtk_widget_size_request (GTK_WIDGET (menu), &requisition);
-	
-	if (button_y + panel_h + requisition.height >= screen_h)
+
+	gdk_window_get_origin (widget->window, &menu_x, &menu_y);
+
+	if (GTK_WIDGET_NO_WINDOW (widget))
 	{
-		*y = button_y - requisition.height;
-	}
-	else
-	{
-		*y = button_y + panel_h;
+		menu_x += widget->allocation.x;
+		menu_y += widget->allocation.y;
 	}
 
+	/* FIXME:  egg_tray_icon_get_orientation doesn't seem to work */
+	if (egg_tray_icon_get_orientation (EGG_TRAY_ICON (priv->tray)) == GTK_ORIENTATION_HORIZONTAL)
+	{
+		if (menu_y > gdk_screen_get_height (screen) / 2)
+			menu_y -= requisition.height;
+		else
+			menu_y += widget->allocation.height;
+	} else {
+		if (menu_x > gdk_screen_get_width (screen) / 2)
+			menu_x -= requisition.width;
+		else
+			menu_x += widget->allocation.width;
+	}
+
+	*x = menu_x;
+	*y = menu_y;
 	*push_in = FALSE;
 }
 

@@ -1,5 +1,13 @@
 2004-11-27  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:
+	(menu_position_func):
+
+	Fix menu positioning with top panel. Code adapted from gnome-panel's
+	menu-util.c. Fixes bug #157053.
+
+2004-11-27  Christian Persch  <chpe@cvs.gnome.org>
+
 	* Makefile.am:
 
 	Add copy-template to EXTRA_DIST.
