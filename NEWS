@@ -1,4 +1,31 @@
 =========================
+Epiphany Extensions 1.5.6
+=========================
+
+New extensions
+
+	* 'Find' extension adds a find-bar.
+	  This extension is experimental and will crash or hang your browser.
+	* 'Tab-States' extensions
+
+Changes
+
+	* Build extensions modules as not versioned DSO
+	* Hook adblock extension onto "check-content" signal
+	* Adapt to Mozilla API change
+	* Fix a small memory leak
+	* Removed prefs dialogue from smart-bookmarks extension
+	* Work-in-progress: huge refactoring of adblock
+	* Fix builddir != srcdir build
+	* Use pcre instead of pcreposix. Check for utf-8 support, too
+	* Implement EphyExtension attach_window/detach_window interface in page-info ext
+	* Adapt to Epiphany API changes
+
+Contributors to this release: Adam Hooper, Tomasz Kłoczko, Jean-François Rameau
+and myself, and the translators Frank Arnold (de) and Takeshi AIHANA (ja).
+
+
+=========================
 Epiphany Extensions 1.5.5
 =========================
 
