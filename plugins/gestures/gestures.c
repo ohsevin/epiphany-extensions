@@ -322,6 +322,8 @@ plugin_init (GTypeModule *module)
 {
 	Session *session;
 
+	LOG ("Gestures plugin initialising")
+
 	gestures = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, g_free);
 	g_assert (gestures != NULL);
 
@@ -335,7 +337,7 @@ plugin_init (GTypeModule *module)
 G_MODULE_EXPORT void
 plugin_exit (void)
 {
-	LOG ("Gestures plugin exit")
+	LOG ("Gestures plugin exiting")
 
 	g_hash_table_destroy (gestures);
 	gestures = NULL;

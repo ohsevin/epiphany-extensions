@@ -1,6 +1,6 @@
 2003-08-01  Christian Persch  <chpe@cvs.gnome.org>
 
-	* gestures.c: (load_gestures), (load_one_gestures),
+	* gestures.c: (load_gestures), (load_one_gesture),
 	(tab_update_gestures), (tab_gesture_performed_cb),
 	(plugin_init), (plugin_exit):
 
@@ -22,3 +22,7 @@
 	* gul-gestures.c:
 
 	Exorcised the gul-gobject-misc macros, cleaned up formatting a bit.
+
+2003-07-30  Adam Hooper <adamh@densi.com>
+
+	* Initial checkin

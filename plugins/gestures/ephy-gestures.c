@@ -62,14 +62,15 @@ static gboolean		ephy_gestures_key_press_cb	(GtkWidget *widget,
 							 GdkEventKey *e,
 							 EphyGestures *eg);
 static void		ephy_gestures_stop		(EphyGestures *eg);
-static void		ephy_gestures_start_autocancel	(EphyGestures *ges);
+static void		ephy_gestures_start_autocancel	(EphyGestures *eg);
 
 enum {
 	PERFORMED,
 	CANCELLED,
 	LAST_SIGNAL
 };
-static gint signals[LAST_SIGNAL];
+
+static guint signals[LAST_SIGNAL];
 
 static GObjectClass *parent_class = NULL;
 
@@ -98,8 +99,8 @@ ephy_gestures_get_type (void)
 		};
 
 		ephy_gestures_type = g_type_register_static (G_TYPE_OBJECT,
-							    "EphyGestures",
-							    &our_info, 0);
+							     "EphyGestures",
+							     &our_info, 0);
         }
 
         return ephy_gestures_type;
@@ -140,6 +141,7 @@ static void
 ephy_gestures_init (EphyGestures *e)
 {
 	EphyGesturesPrivate *p = g_new0 (EphyGesturesPrivate, 1);
+
 	e->priv = p;
 }
 
@@ -352,6 +354,7 @@ void
 ephy_gestures_set_autocancel (EphyGestures *eg, gboolean autocancel)
 {
 	EphyGesturesPrivate *p = eg->priv;
+
 	p->autocancel = autocancel;
 	ephy_gestures_start_autocancel (eg);
 }
