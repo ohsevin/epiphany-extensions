@@ -108,6 +108,10 @@ static GtkToggleActionEntry toggle_action_entries [] =
 static void ephy_sidebar_extension_class_init	(EphySidebarExtensionClass *klass);
 static void ephy_sidebar_extension_iface_init	(EphyExtensionIface *iface);
 static void ephy_sidebar_extension_init		(EphySidebarExtension *extension);
+static void extension_weak_notify_cb		(GObject *dialog,
+						 GObject *extension);
+static void add_dialog_weak_notify_cb		(GObject *extension,
+						 GObject *dialog);
 
 static GObjectClass *parent_class = NULL;
 
@@ -349,6 +353,24 @@ add_dialog_response_cb (GtkDialog *dialog,
 	gtk_widget_destroy (GTK_WIDGET (dialog));
 }
 
+static void
+extension_weak_notify_cb (GObject *dialog,
+			  GObject *extension)
+{
+	g_object_weak_unref (dialog,
+			     (GWeakNotify) add_dialog_weak_notify_cb, extension);
+
+	gtk_widget_destroy (GTK_WIDGET (dialog));
+}
+
+static void
+add_dialog_weak_notify_cb (GObject *extension,
+			   GObject *dialog)
+{
+	g_object_weak_unref (extension,
+			     (GWeakNotify) extension_weak_notify_cb, dialog);
+}
+
 static gboolean
 ephy_sidebar_extension_add_sidebar_cb (EphyEmbedSingle *single,
                                        const char *url,
@@ -404,6 +426,11 @@ ephy_sidebar_extension_add_sidebar_cb (EphyEmbedSingle *single,
 			       G_CALLBACK (add_dialog_response_cb),
 			       cb_data, (GClosureNotify) free_response_data,
 			       0);
+
+	g_object_weak_ref (G_OBJECT (extension),
+			   (GWeakNotify) extension_weak_notify_cb, dialog);
+	g_object_weak_ref (G_OBJECT (dialog),
+			   (GWeakNotify) add_dialog_weak_notify_cb, extension);
 
 	gtk_widget_show (GTK_WIDGET (dialog));
 

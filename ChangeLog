@@ -1,3 +1,12 @@
+2005-02-14  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/sidebar/ephy-sidebar-extension.c:
+	(extension_weak_notify_cb), (add_dialog_weak_notify_cb),
+	(ephy_sidebar_extension_add_sidebar_cb):
+
+	Destroy open "Add to sidebar" dialogues when unloading the
+	extension. Fixes bug #156523.
+
 2005-02-13  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:
