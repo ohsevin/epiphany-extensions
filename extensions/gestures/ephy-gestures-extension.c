@@ -340,11 +340,13 @@ dom_mouse_down_cb (EphyEmbed *embed,
 }
 
 static void
-tab_added_cb (GtkWidget *notebook,
-	      EphyTab *tab,
-	      EphyGesturesExtension *extension)
+impl_attach_tab (EphyExtension *extension,
+		 EphyWindow *window,
+		 EphyTab *tab)
 {
 	EphyEmbed *embed;
+
+	LOG ("Attach tab")
 
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
@@ -356,11 +358,13 @@ tab_added_cb (GtkWidget *notebook,
 }
 
 static void
-tab_removed_cb (GtkWidget *notebook,
-		EphyTab *tab,
-		EphyGesturesExtension *extension)
+impl_detach_tab (EphyExtension *extension,
+		 EphyWindow *window,
+		 EphyTab *tab)
 {
 	EphyEmbed *embed;
+
+	LOG ("Detach tab")
 
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
@@ -372,60 +376,10 @@ tab_removed_cb (GtkWidget *notebook,
 }
 
 static void
-impl_attach_window (EphyExtension *ext,
-		    EphyWindow *window)
-{
-	EphyGesturesExtension *extension = EPHY_GESTURES_EXTENSION (ext);
-	GtkWidget *notebook;
-	GList *tabs, *l;
-
-	notebook = ephy_window_get_notebook (window);
-
-	tabs = ephy_window_get_tabs (window);
-
-	for (l = tabs; l != NULL; l = l->next)
-	{
-		tab_added_cb (notebook, (EphyTab *) l->data, extension);
-	}
-
-	g_list_free (tabs);
-
-	g_signal_connect (notebook, "tab_added",
-			  G_CALLBACK (tab_added_cb), extension);
-	g_signal_connect (notebook, "tab_removed",
-			  G_CALLBACK (tab_removed_cb), extension);
-}
-
-static void
-impl_detach_window (EphyExtension *ext,
-		    EphyWindow *window)
-{
-	EphyGesturesExtension *extension = EPHY_GESTURES_EXTENSION (ext);
-	GtkWidget *notebook;
-	GList *tabs, *l;
-
-	notebook = ephy_window_get_notebook (window);
-
-	g_signal_handlers_disconnect_by_func
-		(notebook, G_CALLBACK (tab_added_cb), extension);
-	g_signal_handlers_disconnect_by_func
-		(notebook, G_CALLBACK (tab_removed_cb), extension);
-
-	tabs = ephy_window_get_tabs (window);
-
-	for (l = tabs; l != NULL; l = g_list_next (l))
-	{
-		tab_removed_cb (notebook, (EphyTab *) l->data, extension);
-	}
-
-	g_list_free (tabs);
-}
-
-static void
 ephy_gestures_extension_iface_init (EphyExtensionIface *iface)
 {
-	iface->attach_window = impl_attach_window;
-	iface->detach_window = impl_detach_window;
+	iface->attach_tab = impl_attach_tab;
+	iface->detach_tab = impl_detach_tab;
 }
 
 static void

@@ -28,14 +28,14 @@
 #include <epiphany/ephy-extensions-manager.h>
 #include <epiphany/ephy-shell.h>
 
+#include <gtk/gtkaboutdialog.h>
 #include <gtk/gtkcellrenderertext.h>
 #include <gtk/gtkcellrenderertoggle.h>
-#include <gtk/gtklabel.h>
 #include <gtk/gtktreeselection.h>
 #include <gtk/gtktreemodel.h>
 #include <gtk/gtkliststore.h>
 #include <gtk/gtkstock.h>
-#include <gtk/gtkdialog.h>
+#include <gtk/gtkwindow.h>
 
 #include <string.h>
 
@@ -67,28 +67,6 @@ EphyDialogProperty properties [] =
 {
 	{ "extensions_manager_ui",	NULL, PT_NORMAL, 0 },
 	{ "extensions_treeview",	NULL, PT_NORMAL, 0 },
-
-	{ NULL }
-};
-
-enum
-{
-	INFO_PROP_NAME,
-	INFO_PROP_DESCRIPTION,
-	INFO_PROP_AUTHOR,
-	INFO_PROP_URL,
-	INFO_PROP_AUTHOR_TITLE,
-	INFO_PROP_URL_TITLE,
-};
-
-EphyDialogProperty info_properties [] =
-{
-	{ "name_label",			NULL, PT_NORMAL, 0 },
-	{ "description_label",		NULL, PT_NORMAL, 0 },
-	{ "author_label",		NULL, PT_NORMAL, 0 },
-	{ "url_label",			NULL, PT_NORMAL, 0 },
-	{ "author_title_label",		NULL, PT_NORMAL, 0 },
-	{ "url_title_label",		NULL, PT_NORMAL, 0 },
 
 	{ NULL }
 };
@@ -168,74 +146,43 @@ extensions_manager_ui_info_dialog_response_cb (GtkWidget *widget,
 	g_object_unref (dialog);
 }
 
+static const char **
+string_list_to_array (GList *list)
+{
+	GList *l;
+	int i = 0;
+	const char **ret = malloc
+		((g_list_length (list) + 1) * sizeof (char *));
+
+	for (l = list; l; l = l->next)
+	{
+		ret[i++] = (const char *) l->data;
+	}
+
+	ret[i] = NULL;
+
+	return ret;
+}
+
 static void
 show_extension_info (ExtensionsManagerUI *parent_dialog,
 		     EphyExtensionInfo *info)
 {
-	EphyDialog *dialog;
-	GtkWidget *name_label;
-	GtkWidget *description_label;
-	GtkWidget *author_label;
-	GtkWidget *url_label;
-	GtkWidget *author_title_label;
-	GtkWidget *url_title_label;
-	GList *l;
-	GString *author_str = NULL;
+	GtkAboutDialog *dialog;
+	const char **authors;
 
-	dialog = EPHY_DIALOG (g_object_new (EPHY_TYPE_DIALOG,
-					    "parent-window", parent_dialog->priv->window,
-					    NULL));
-	ephy_dialog_construct (dialog,
-			       info_properties,
-			       SHARE_DIR "/glade/extensions-manager-ui.glade",
-			       "info_dialog",
-			       GETTEXT_PACKAGE);
+	dialog = GTK_ABOUT_DIALOG (gtk_about_dialog_new ());
+	gtk_about_dialog_set_name (dialog, info->name);
+	gtk_about_dialog_set_comments (dialog, info->description);
+	gtk_about_dialog_set_website (dialog, info->url);
 
-	ephy_dialog_show (dialog);
+	authors = string_list_to_array (info->authors);
+	gtk_about_dialog_set_authors (dialog, (const char **) authors);
+	free (authors);
 
-	ephy_dialog_get_controls
-		(dialog,
-		 info_properties[INFO_PROP_NAME].id, &name_label,
-		 info_properties[INFO_PROP_DESCRIPTION].id, &description_label,
-		 info_properties[INFO_PROP_AUTHOR].id, &author_label,
-		 info_properties[INFO_PROP_URL].id, &url_label,
-		 info_properties[INFO_PROP_AUTHOR_TITLE].id, &author_title_label,
-		 info_properties[INFO_PROP_URL_TITLE].id, &url_title_label,
-		 NULL);
-
-	gtk_label_set_text (GTK_LABEL (name_label), info->name);
-	gtk_label_set_text (GTK_LABEL (description_label), info->description);
-
-	for (l = info->authors; l; l = l->next)
-	{
-		if (author_str == NULL)
-		{
-			author_str = g_string_new (l->data);
-		}
-		else
-		{
-			author_str = g_string_append_c (author_str, '\n');
-			author_str = g_string_append (author_str, l->data);
-		}
-	}
-
-	gtk_label_set_text (GTK_LABEL (author_label), author_str->str);
-
-	gtk_label_set_text (GTK_LABEL (url_label), info->url);
-
-	gtk_label_set_text (GTK_LABEL (author_title_label),
-			  ngettext ("Author:", "Authors:",
-				    g_list_length (info->authors)));
-
-	if (info->url == NULL)
-	{
-		gtk_label_set_text (GTK_LABEL (url_title_label), NULL);
-	}
-
-	if (author_str != NULL)
-	{
-		g_string_free (author_str, TRUE);
-	}
+	gtk_window_set_transient_for (GTK_WINDOW (dialog),
+				      GTK_WINDOW (parent_dialog->priv->window));
+	gtk_window_present (GTK_WINDOW (dialog));
 }
 
 static char *

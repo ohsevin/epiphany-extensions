@@ -1,3 +1,16 @@
+2004-12-17  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/extensions-manager-ui/extensions-manager-ui.c:
+	(string_list_to_array), (show_extension_info):
+	* extensions/extensions-manager-ui/extensions-manager-ui.glade:
+
+	Use GtkAboutDialog (Bug #161519).
+
+	* extensions/gestures/ephy-gestures-extension.c: (impl_attach_tab),
+	(impl_detach_tab), (ephy_gestures_extension_iface_init):
+
+	Take advantage of attach_tab and detach_tab.
+
 2004-12-14  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/page-info/page-info-context-ui.xml:
