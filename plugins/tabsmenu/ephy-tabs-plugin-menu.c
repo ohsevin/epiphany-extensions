@@ -33,6 +33,7 @@
 #include "egg-action-group.h"
 #include "ephy-debug.h"
 
+#include <epiphany/ephy-embed.h>
 #include <epiphany/ephy-tab.h>
 #include <epiphany/ephy-notebook.h>
 #include <epiphany/ephy-shell.h>
@@ -258,7 +259,8 @@ static void
 clone_cb (EggAction *action, EphyTabsPluginMenu *menu)
 {
 	EphyWindow *window;
-	EphyTab *tab;
+	EphyTab *tab, *new_tab;
+	EphyEmbed *embed, *new_embed;
 
 	window = menu->priv->window;
 	g_return_if_fail (window != NULL);
@@ -266,10 +268,20 @@ clone_cb (EggAction *action, EphyTabsPluginMenu *menu)
 	tab = ephy_window_get_active_tab (window);
 	g_return_if_fail (IS_EPHY_TAB (tab));
 
-	ephy_shell_new_tab (ephy_shell, window, tab, NULL,
-			    EPHY_NEW_TAB_IN_EXISTING_WINDOW |
-			    EPHY_NEW_TAB_APPEND_AFTER |
-			    EPHY_NEW_TAB_CLONE_PAGE);
+	new_tab = ephy_shell_new_tab (ephy_shell, window, tab, NULL,
+				      EPHY_NEW_TAB_IN_EXISTING_WINDOW |
+				      EPHY_NEW_TAB_APPEND_AFTER |
+				      EPHY_NEW_TAB_CLONE_PAGE);
+
+	/* clone session history, until ephy does this itself -- bug #113694 */
+	g_return_if_fail (IS_EPHY_TAB (new_tab));
+
+	embed = ephy_tab_get_embed (tab);
+	new_embed = ephy_tab_get_embed (new_tab);
+	g_return_if_fail (IS_EPHY_EMBED (embed));
+	g_return_if_fail (IS_EPHY_EMBED (new_embed));
+
+	ephy_embed_shistory_copy (embed, new_embed);
 }
 
 static void

@@ -1,3 +1,10 @@
+2003-08-05  Christian Persch  <chpe@cvs.gnome.org>
+
+	* ephy-tabs-plugin-menu.c: (clone_cb):
+
+	Clone tab session history too; until epiphany does this itself.
+	(Bug  #113694)
+
 2003-08-04  Christian Persch  <chpe@cvs.gnome.org>
 
 	* ephy-window-action.c: (sync_title), (tab_num_changed_cb),
