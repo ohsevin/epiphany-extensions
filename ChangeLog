@@ -1,3 +1,8 @@
+2003-11-20  Adam Hooper  <adamh@densi.com>
+	extensions/gestures/ephy-gestures-extension.c (gesture_performed_cb):
+    chpe filed a bug against GTK regarding my previous change; since it was
+	fixed in GTK, the fix is no longer needed here.
+
 2003-11-16  Adam Hooper  <adamh@densi.com>
 	extensions/gestures/ephy-gestures-extension.c (gesture_performed_cb):
 	Don't activate an action if it isn't sensitive.
