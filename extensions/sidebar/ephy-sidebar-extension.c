@@ -650,8 +650,8 @@ ephy_sidebar_extension_init (EphySidebarExtension *extension)
 
 	ephy_node_db_load_from_file (extension->priv->db,
 				     extension->priv->xml_file,
-				     EPHY_SIDEBARS_XML_ROOT,
-				     EPHY_SIDEBARS_XML_VERSION);
+				     (const xmlChar*) EPHY_SIDEBARS_XML_ROOT,
+				     (const xmlChar*) EPHY_SIDEBARS_XML_VERSION);
 	
 	if (ephy_node_get_n_children (extension->priv->state_parent))
 	{
@@ -681,9 +681,9 @@ ephy_sidebar_extension_finalize (GObject *object)
 
 	ephy_node_db_write_to_xml_safe
 		(extension->priv->db, 
-		 extension->priv->xml_file,
-		 EPHY_SIDEBARS_XML_ROOT,
-		 EPHY_SIDEBARS_XML_VERSION,
+		 (const xmlChar*) extension->priv->xml_file,
+		 (const xmlChar*) EPHY_SIDEBARS_XML_ROOT,
+		 (const xmlChar*) EPHY_SIDEBARS_XML_VERSION,
 		 NULL,
 		 extension->priv->sidebars, 0, 
 		 extension->priv->state_parent, 0, 

@@ -142,7 +142,7 @@ popup_menu_at_coords (GtkMenu *menu,
 {
 	EphyEmbedEvent *event = (EphyEmbedEvent *) user_data;
 
-	ephy_embed_event_get_coords (event, x, y);
+	ephy_embed_event_get_coords (event, (guint*) x, (guint*) y);
 
 	*push_in = TRUE;
 }

@@ -1,3 +1,11 @@
+2005-03-07  Jordi Mallach  <jordi@sindominio.net>:
+
+	* extensions/sidebar/ephy-sidebar-embed.c: (popup_menu_at_coords):
+	* extensions/sidebar/ephy-sidebar-extension.c:
+	(ephy_sidebar_extension_init), (ephy_sidebar_extension_finalize):
+
+	Fix compile with gcc-4.0 on amd64 (Debian #290309).
+
 2005-03-07  Christian Persch  <chpe@cvs.gnome.org>
 
 	=== Release 1.6.0 ===
