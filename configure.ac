@@ -35,6 +35,8 @@ AM_MAINTAINER_MODE
 
 ACLOCAL="$ACLOCAL $ACLOCAL_FLAGS"
 
+AC_CONFIG_MACRO_DIR(m4)
+
 AC_PROG_INTLTOOL([0.29])
 
 AM_DISABLE_STATIC
@@ -275,7 +277,10 @@ case "$MOZILLA_VERSION" in
  1.7a) MOZILLA_SNAPSHOT=14 ;;
  1.7b) MOZILLA_SNAPSHOT=15 ;;
   1.7) MOZILLA_SNAPSHOT=15 ;;
-trunk) MOZILLA_SNAPSHOT=15 ;;
+ 1.8a) MOZILLA_SNAPSHOT=16 ;;
+ 1.8b) MOZILLA_SNAPSHOT=16 ;;
+  1.8) MOZILLA_SNAPSHOT=16 ;;
+trunk) MOZILLA_SNAPSHOT=16 ;;
     *) AC_ERROR([
 *******************************************************************************
 Epiphany Extensions  can be built using Mozilla 1.4, 1.4.1, 1.5, 1.6, 1.7a or 
