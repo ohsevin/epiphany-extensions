@@ -332,13 +332,6 @@ ephy_tabs_plugin_menu_finalize (GObject *o)
 
 	if (p->action_group != NULL)
 	{
-		if (window != NULL)
-		{
-			gtk_ui_manager_remove_action_group
-				(GTK_UI_MANAGER (window->ui_merge),
-				 p->action_group);
-		}
-
 		g_object_unref (p->action_group);
 	}
 
