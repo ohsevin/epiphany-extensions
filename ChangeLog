@@ -1,5 +1,12 @@
 2004-10-28  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/extensions-manager-ui/extensions-manager-ui.c:
+	(extensions_manager_ui_response_cb):
+
+	Don't dismiss the dialogue when pressing the Help button.
+
+2004-10-28  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:
 	(menu_position_func), (show_context_menu), (show_menu):
 

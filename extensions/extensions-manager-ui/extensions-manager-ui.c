@@ -35,6 +35,7 @@
 #include <gtk/gtktreemodel.h>
 #include <gtk/gtkliststore.h>
 #include <gtk/gtkstock.h>
+#include <gtk/gtkdialog.h>
 
 #include <string.h>
 
@@ -148,6 +149,12 @@ extensions_manager_ui_response_cb (GtkWidget *widget,
 				   int response,
 				   GObject *dialog)
 {
+	if (response == GTK_RESPONSE_HELP)
+	{
+		/* FIXME not implemented yet */
+		return;
+	}
+
 	g_object_unref (dialog);
 }
 
