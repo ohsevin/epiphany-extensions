@@ -18,10 +18,16 @@ libadblockextension_la_CFLAGS = \
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
 	$(AM_CFLAGS)
 
-libadblockextension_la_LDFLAGS = -module -avoid-version
+libadblockextension_la_LDFLAGS = -module -avoid-version -lpcreposix #FIXME
 
 patterns_DATA = adblock-patterns
 patternsdir = $(pkgdatadir)
+
+update-adblock-patterns: download-latest.pl
+	perl $< > $(patterns_DATA)
+
+icon_DATA = adblock-statusbar-icon.svg
+icondir = $(pkgdatadir)
 
 extensionxmldir = $(extensiondir)
 extensionxml_in_files = adblock.xml.in.in
@@ -39,4 +45,4 @@ extensionxml_DATA = $(extensionxml_in_files:.xml.in.in=.xml)
 CLEANFILES = $(extensionxml_DATA)
 DISTCLEANFILES = $(extensionxml_DATA)
 
-EXTRA_DIST = $(patterns_DATA) $(extensionxml_in_files)
+EXTRA_DIST = $(patterns_DATA) $(icon_DATA) $(extensionxml_in_files)

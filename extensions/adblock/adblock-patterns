@@ -1,18 +1,124 @@
-# Each line of this file should be a "glob"-style pattern to match. If a
-# requested URL matches any line in this file, it will not be loaded.
+# Each line of this file is a Perl-compatible regular expression to match. If a
+# requested URL matches any line in this file, the data at that URL will not be
+# downloaded.
 #
-# For example, to block (almost) all images:
+# For example, to block GIF images, use "\.gif$".
 #
-# *.gif
-# *.jpg
-# *.png
+# This list is Copyright (C) its original author ("G"). It is relicensed under
+# the GPL with permission.
 #
-# What follows is a good default:
+# The original list, Filterset.G, can be found at
+# http://www.geocities.com/pierceive/adblock/.
+#
+# This version has been modified from its original. The changes have not been
+# approved by the original author; direct any problems to Bugzilla and not to
+# the original author ("G").
 
-*/ad/*
-*/ads/*
-*/banner/*
-*adtech*
-*annonce*
-*banners*
-*doubleclick*
+(/_|ad|assets/|live|net|sales|serve|video|view)_?banner
+(\Wadv|banner|promo)s?(\.\w+\.\w{2,3}(\.\w{2,2})?/|\W\w*\d+x\d+\.)
+(amazon\.\w+.*|barnesandnoble\.com/p.*)(amzban|banner|cm\?t|&search=|marketing(/2|.+html)|promo|stripe?s?\W|tcg.*\.[gj])
+(bf|careerc|flyc|unic)ast\.com
+(casaleme|rightme|travi|vibrantme)dia
+(jupiter|mercury)\.bravenet
+/(adt|dclk)\.
+/(affiliates?|revenue)(\.swf|fuel|/((.*\d+x)?\d+\.|(banner|image|script)s?/))
+/ccas(\.clearchannel|_media/)
+[/.]overture(/|\.com)
+[^\w=+]promo(t(e|ion)s?|(?!banner)\w*\.js|banner(?!\.js\?)|box)(\W|_|$)
+[^a-z\d=+%](\w*\d+x\d)?\d*(show)?(\w{3,}%20|alligator|avs|barter|blog|box|central|d?html|front|fuse|get|house|http|i?frame|inline|instant|live|main|net|partner|primary|provider|rotated?|secure|side|smart|sponsor|story|text|view)?_?ads?(v?(bot|brite|broker|bureau|butler|center|click|client|creative|content|coun(cil|t)|data|engage|er(tis\w+|t(pro)?|ve?r?)|farm|force|frame|gif|groupid|head|id|ima?ge?|info|js|juggler|legend|link|log|man(ager)?|max|mentor|meta\.com|net|optimi[sz]er|pic|popup|proof|q\.nextag|quest\.nl|redire?c?t?|remote|revolver|rotator|sale|sdk|sfac|solution|sonar|source|space|srv|stat.*\.asp|sys|track|trix|view|vt|type|zone))?\d*(s|status)?\d*[\W_](?!\w+\.edu|aware|adurl=|block|login|nl/|.*(&sbc|\.(wmv|rm)))
+[^a-z\d=+](get|web)?_?spons?(or(ed|s)?)?_?(links?)?(pots?)?(\W|_|$)(?!.*sigalert)
+[^a-z\d=+]\d*((double|fast|fine|smart|specific|value)_?clicks?|clicks?(2net|adhere|ban\.php|over|tag|thrutraffic|trade|xchange))(\W|$)(?!but)
+[^a-z_]banners?[/._-]?(.*(\.pl|redir|siteid=)|\.(cgi|js|php\?)|ad|affiliate|central|click|connect|count|exchange|file|id|man(ager|ia)|newsletter|/_?promo|/?script|skyscraper|space\.|swap)
+\W(banmanpro|centrport|clickad|clk_thru|contextuallinks?|falkag|klipmart|mediaturf|offerfusion|paypopup|redirect.*banner|tacoda|werbung|(hit|spin|google/)box)[\W_]
+\Wadv(\d+\.[gjs]|/house)
+\Wimg(is|ehost)\.com
+about.com/\d/(?!.*\.js)
+bs\d{3,}\.gmx
+intelli(-direct\.com|srv\.(js|net)|txt)
+link(buddies|exchange|share|synergy)
+market(ing(/images|/?promo)|banker\.com)
+popu(nder\W|pad|pkp)
+qks(rv|z)\.net
+yimg\.com/a[^u]
+125x125\.com
+265\.com
+2o7\.net
+action\.ientry\.net
+adx\.nu
+afcyhf\.com
+aftrack\.asp
+atdmt\.com
+atwola\.com
+audiencematch\.net
+awltovhc\.com
+awrz\.net
+beweb\.com
+bluestreak\.com
+bncnt\.com
+bns1\.net
+bravenetmedianetwork\.com
+bs\.yandex\.ru
+budsinc\.com
+cc-dt\.com
+checkm8\.com
+cjt1\.net
+connextra\.com
+did-it\.com
+directtrack\.com
+dtmpub\.com
+eShopOffer\.aspx
+espotting\.com
+eyewonder\.com
+factortg\.com
+findology\.com
+ftjcfx\.com
+geocities\.com/js_source/
+getban\.php
+hb\.lycos\.com
+imrworldwide\.com
+industrybrains\.com
+inetinteractive\.com
+insightfirst\.com
+interpolls\.com
+java\.yahoo\.com/a
+kanoodle\.com
+lapi\.ebay\.
+lduhtrp\.net
+log\.go\.com
+lycos\.com/catman/
+maxserving\.com
+mediaonenetwork\.net
+mercuras\.com
+mgnetwork\.com
+myreferer\.com
+netshelter\.net
+nvidium\.com
+oasis\.zmh\.zope\.com
+partner\.eniro\.
+partner2profit\.com
+pay-by-click\.de
+popularix\.com
+pro-market\.net
+ptadsrv\.de
+questionmarket\.com
+rad\.msn\.com
+radcity\.net
+realmedia\.com
+redsheriff\.com
+ru4\.com
+searchfeed\.com
+serving-sys\.com
+shareasale\.com
+showyoursite\.com
+site-id\.nl
+sitemeter\.com
+smarttargetting\.co
+suitesmart\.com
+tfag\.de
+tipsurf\.com
+tqlkg\.com
+tradedoubler\.com
+trafficsystem\.com
+urltrak\.com
+yceml\.net
+zedo\.com

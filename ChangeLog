@@ -1,3 +1,13 @@
+2005-01-19  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/adblock/Makefile.am:
+	* extensions/adblock/adblock-patterns:
+	* extensions/adblock/adblock-statusbar-icon.svg:
+	* extensions/adblock/download-latest.pl:
+
+	Got permission from the FilterSet.G author to use his filters. Note
+	that adblock is currently in a state of flux: it really doesn't work.
+
 2005-01-14  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/smart-bookmarks/Makefile.am:
