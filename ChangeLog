@@ -1,6 +1,14 @@
 2004-10-21  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/extensions-manager-ui/extensions-manager-ui.c:
+	(show_extension_info):
+	* extensions/extensions-manager-ui/extensions-manager-ui.glade:
+
+	Destroy info dialogs with Extension Manager UI dialog
+
+2004-10-21  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/extensions-manager-ui/extensions-manager-ui.c:
 	(extensions_manager_ui_info_dialog_response_cb),
 	(show_extension_info), (fill_list_store), (extension_toggle_cb),
 	(active_sync), (row_activated), (build_ui):

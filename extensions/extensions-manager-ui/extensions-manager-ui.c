@@ -182,6 +182,8 @@ show_extension_info (ExtensionsManagerUI *parent_dialog,
 			       "info_dialog",
 			       GETTEXT_PACKAGE);
 
+	ephy_dialog_show (dialog);
+
 	name_label = ephy_dialog_get_control
 		(dialog, info_properties[INFO_PROP_NAME].id);
 	description_label = ephy_dialog_get_control
