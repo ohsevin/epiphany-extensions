@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany Plugins 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-24 19:26+0100\n"
+"POT-Creation-Date: 2004-02-24 19:41+0100\n"
 "PO-Revision-Date: 2003-08-03 18:28+0000\n"
 "Last-Translator: Christian Persch <chpe+ephyplugins@stud.uni-saarland.de>\n"
 "Language-Team: British English\n"
@@ -195,7 +195,7 @@ msgstr[1] "Window '%s' (%d tabs)"
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:282
 msgid "Move Tab To Window"
-msgstr "fMove Tab To Window"
+msgstr "Move Tab To Window"
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
