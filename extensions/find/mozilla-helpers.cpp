@@ -35,8 +35,17 @@
 #include <nsIWebBrowserFocus.h>
 #include <nsIServiceManager.h>
 #include <nsIInterfaceRequestorUtils.h>
+#include <nsIPrefBranch.h>
+#include <nsIPrefService.h>
+
 #include <gtkmozembed.h>
 #include <gtkmozembed_internal.h>
+
+#define PREFNAME	"accessibility.typeaheadfind"
+#define SEA_SUFFIX	"sea"
+
+static PRBool gEnabled = PR_TRUE, gEnabledSea = PR_TRUE;
+static PRUint32 gNumEnabled = 0;
 
 extern "C" void
 mozilla_embed_scroll_pages (EphyEmbed *embed,
@@ -84,4 +93,52 @@ mozilla_embed_scroll_lines (EphyEmbed *embed,
   NS_ENSURE_TRUE (domWin, );
 
   domWin->ScrollByLines ((PRInt32) lines);
+}
+
+void
+mozilla_push_prefs (void)
+{
+  if (gNumEnabled++ > 0) return;
+
+  LOG ("Setting prefs");
+
+  nsCOMPtr<nsIPrefService> prefService (do_GetService (NS_PREFSERVICE_CONTRACTID));
+  g_return_if_fail (prefService);
+  NS_ENSURE_TRUE (prefService, );
+
+  nsresult rv;
+  nsCOMPtr<nsIPrefBranch> prefBranch;
+  rv = prefService->GetBranch ("", getter_AddRefs (prefBranch));
+  g_return_if_fail (NS_SUCCEEDED (rv) && prefBranch);
+  NS_ENSURE_TRUE (NS_SUCCEEDED (rv) && prefBranch, );
+
+  rv  = prefBranch->GetBoolPref (PREFNAME, &gEnabled);
+  rv |= prefBranch->SetBoolPref (PREFNAME, PR_FALSE);
+  rv |= prefBranch->GetBoolPref (PREFNAME SEA_SUFFIX, &gEnabled);
+  rv |= prefBranch->SetBoolPref (PREFNAME SEA_SUFFIX, PR_FALSE);
+  g_return_if_fail (NS_SUCCEEDED (rv));
+  NS_ENSURE_SUCCESS (rv, );
+}
+
+void
+mozilla_pop_prefs (void)
+{
+  if (--gNumEnabled > 0) return;
+
+  LOG ("Unsetting prefs");
+
+  nsCOMPtr<nsIPrefService> prefService (do_GetService (NS_PREFSERVICE_CONTRACTID));
+  g_return_if_fail (prefService);
+  NS_ENSURE_TRUE (prefService, );
+
+  nsresult rv;
+  nsCOMPtr<nsIPrefBranch> prefBranch;
+  rv = prefService->GetBranch ("", getter_AddRefs (prefBranch));
+  g_return_if_fail (NS_SUCCEEDED (rv) && prefBranch);
+  NS_ENSURE_TRUE (NS_SUCCEEDED (rv) && prefBranch, );
+
+  rv |= prefBranch->SetBoolPref (PREFNAME, gEnabled);
+  rv |= prefBranch->SetBoolPref (PREFNAME "sea", gEnabledSea);
+  g_return_if_fail (NS_SUCCEEDED (rv));
+  NS_ENSURE_SUCCESS (rv, );
 }

@@ -823,6 +823,8 @@ ephy_find_bar_init (EphyFindBar *bar)
 
 	priv->links_only = FALSE;
 
+	mozilla_push_prefs ();
+
 	priv->finder = new TypeAheadFind ();
 	g_return_if_fail (priv->finder);
 
@@ -873,6 +875,8 @@ ephy_find_bar_finalize (GObject *object)
 	{
 		gtk_widget_destroy (priv->offscreen_window);
 	}
+
+	mozilla_pop_prefs ();
 
 	parent_class->finalize (object);
 }

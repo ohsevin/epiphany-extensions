@@ -33,6 +33,10 @@ void	mozilla_embed_scroll_pages	(EphyEmbed *embed,
 void	mozilla_embed_scroll_lines	(EphyEmbed *embed,
 					 gint32 lines);
 
+void	mozilla_push_prefs		(void);
+
+void	mozilla_pop_prefs		(void);
+
 G_END_DECLS
 
 #endif /* !MOZILLA_HELPERS_H */
