@@ -31,7 +31,7 @@
 
 G_BEGIN_DECLS
 
-#define TYPE_PAGE_INFO_DIALOG		(page_info_extension_get_type ())
+#define TYPE_PAGE_INFO_DIALOG		(page_info_dialog_get_type ())
 #define PAGE_INFO_DIALOG(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), TYPE_PAGE_INFO_DIALOG, PageInfoDialog))
 #define PAGE_INFO_DIALOG_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), TYPE_PAGE_INFO_DIALOG, PageInfoDialogClass))
 #define IS_PAGE_INFO_DIALOG(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), TYPE_PAGE_INFO_DIALOG))
@@ -71,7 +71,7 @@ GType		 page_info_dialog_get_type	(void);
 
 GType		 page_info_dialog_register_type	(GTypeModule *module);
 
-PageInfoDialog	*page_info_dialog_new		(GtkWidget *window,
+PageInfoDialog	*page_info_dialog_new		(GtkWidget *parent,
 						 EphyEmbed *embed);
 
 /*

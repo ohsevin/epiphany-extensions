@@ -163,8 +163,8 @@ mozilla_get_page_properties (EphyEmbed *embed)
 	nsCOMPtr<nsIHTMLDocument> htmlDoc = do_QueryInterface (doc);
 	if (htmlDoc)
 	{
-		nsCompatibility compat = htmlDoc->GetCompatibilityMode();
-		props->rendering_mode = (EmbedPageRenderMode) compat;
+		props->rendering_mode =
+			(EmbedPageRenderMode) htmlDoc->GetCompatibilityMode();
 	}
 
 	/* Get the URL so we can look in the cache for this page */

@@ -103,13 +103,19 @@ images_treeview_selection_changed_cb(GtkTreeSelection *selection,
 static GObjectClass *parent_class = NULL;
 static GType type = 0;
 
-#define PAGE_INFO_DIALOG_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), \
-				       TYPE_PAGE_INFO_DIALOG, PageInfoDialogPrivate))
+#define PAGE_INFO_DIALOG_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), TYPE_PAGE_INFO_DIALOG, PageInfoDialogPrivate))
 
 
 struct _PageInfoDialogPrivate
 {
+	EphyEmbed *embed;
 	EphyEmbed *image_embed;
+};
+
+enum
+{
+	PROP_0,
+	PROP_EMBED
 };
 
 enum
@@ -246,18 +252,6 @@ page_info_dialog_register_type (GTypeModule *module)
 					    &our_info, 0);
 
 	return type;
-}
-
-static void
-page_info_dialog_class_init (PageInfoDialogClass *klass)
-{
-        GObjectClass *object_class = G_OBJECT_CLASS(klass);
-
-        parent_class = g_type_class_peek_parent(klass);
-
-        object_class->finalize = page_info_dialog_finalize;
-
-	g_type_class_add_private (object_class, sizeof (PageInfoDialogPrivate));
 }
 
 /*
@@ -995,13 +989,13 @@ setup_page_images_add_image(GtkTreeView *treeView, EmbedPageImage *image)
 }
 
 static void
-setup_page_images(PageInfoDialog *dialog, EphyEmbed *embed)
+setup_page_images (PageInfoDialog *dialog)
 {
 	GList *images, *i;
-	GtkTreeView *page_info_image_list = setup_image_treeview(dialog);
+	GtkTreeView *page_info_image_list = setup_image_treeview (dialog);
 	GtkWidget *paned;
 
-	images = mozilla_get_images (embed);
+	images = mozilla_get_images (dialog->priv->embed);
 
 	for (i = images; i != NULL; i = g_list_next (i))
 	{
@@ -1103,8 +1097,9 @@ setup_page_general_add_meta_tag(GtkTreeView *treeView, EmbedPageMetaTag *tag)
 */
 
 static void
-setup_page_general (PageInfoDialog *dialog, EphyEmbed *embed)
+setup_page_general (PageInfoDialog *dialog)
 {
+	EphyEmbed *embed = dialog->priv->embed;
 	/* GtkTreeView *page_info_meta_list; */
 	EmbedPageProperties *props;
 	GList *i;
@@ -1145,7 +1140,7 @@ setup_page_general (PageInfoDialog *dialog, EphyEmbed *embed)
 			text = _("Compatibility");
 			break;
 		default:
-			g_return_if_reached ();
+			text = _("Undetermined");
 			break;
 	}
 	page_info_set_text (dialog, "page_info_render_mode", text);
@@ -1219,56 +1214,6 @@ setup_page_general (PageInfoDialog *dialog, EphyEmbed *embed)
 	*/
 
 	mozilla_free_page_properties (props);
-}
-
-static void
-page_info_dialog_init (PageInfoDialog *dialog)
-{	
-	dialog->priv = PAGE_INFO_DIALOG_GET_PRIVATE (dialog);
-	
-	ephy_dialog_construct (EPHY_DIALOG (dialog),
-                               properties,
-                               SHARE_DIR "/glade/page-info.glade",
-                               "page_info_dialog",
-			       GETTEXT_PACKAGE);
-}
-
-static void
-page_info_dialog_finalize (GObject *object)
-{
-	PageInfoDialog *dialog;
-
-	LOG ("PageInfoDialog finalizing")
-
-        g_return_if_fail(object != NULL);
-        g_return_if_fail(IS_PAGE_INFO_DIALOG (object));
-
-	dialog = PAGE_INFO_DIALOG(object);
-
-        g_return_if_fail(dialog->priv != NULL);
-
-        G_OBJECT_CLASS(parent_class)->finalize (object);
-}
-
-PageInfoDialog *
-page_info_dialog_new (GtkWidget *window,
-		      EphyEmbed *embed)
-{
-	PageInfoDialog *dialog;
-
-	dialog = PAGE_INFO_DIALOG(g_object_new (TYPE_PAGE_INFO_DIALOG,
-						/*"ParentWindow", window,*/
-						NULL));
-
-	setup_page_general (PAGE_INFO_DIALOG(dialog), embed);
-	setup_page_images (PAGE_INFO_DIALOG(dialog), embed);
-	/*
-	setup_page_forms (PAGE_INFO_DIALOG(dialog), props);
-	setup_page_links (PAGE_INFO_DIALOG(dialog), props);
-	setup_page_security (PAGE_INFO_DIALOG(dialog), props);
-	*/
-
-	return dialog;
 }
 
 /*
@@ -1396,4 +1341,114 @@ page_info_image_box_realize_cb (GtkContainer *box,
 	gtk_widget_show(GTK_WIDGET(embed));
 
 	gtk_container_add(box, GTK_WIDGET(embed));
+}
+
+
+static void
+page_info_dialog_init (PageInfoDialog *dialog)
+{	
+	dialog->priv = PAGE_INFO_DIALOG_GET_PRIVATE (dialog);
+}
+
+static GObject *
+page_info_dialog_constructor (GType type,
+			      guint n_construct_properties,
+			      GObjectConstructParam *construct_params)
+{
+	GObject *object;
+	PageInfoDialog *dialog;
+
+	object = parent_class->constructor (type, n_construct_properties,
+					    construct_params);
+
+	dialog = PAGE_INFO_DIALOG (object);
+	g_return_val_if_fail (dialog->priv->embed != NULL, object);
+
+	ephy_dialog_construct (EPHY_DIALOG (dialog),
+                               properties,
+                               SHARE_DIR "/glade/page-info.glade",
+                               "page_info_dialog",
+			       GETTEXT_PACKAGE);
+
+	/* FIXME: lazily initialise the pages as needed */
+	setup_page_general (PAGE_INFO_DIALOG (object));
+	setup_page_images (PAGE_INFO_DIALOG (object));
+	/*
+	setup_page_forms (PAGE_INFO_DIALOG(dialog), props);
+	setup_page_links (PAGE_INFO_DIALOG(dialog), props);
+	setup_page_security (PAGE_INFO_DIALOG(dialog), props);
+	*/
+
+	return object;
+}
+
+
+static void
+page_info_dialog_finalize (GObject *object)
+{
+	PageInfoDialog *dialog = PAGE_INFO_DIALOG (object);
+
+	LOG ("PageInfoDialog finalizing")
+
+        G_OBJECT_CLASS(parent_class)->finalize (object);
+}
+
+static void
+page_info_dialog_get_property (GObject *object,
+			       guint prop_id,
+			       GValue *value,
+			       GParamSpec *pspec)
+{
+	/* no readable properties */
+	g_return_if_reached ();
+}
+
+static void
+page_info_dialog_set_property (GObject *object,
+			       guint prop_id,
+			       const GValue *value,
+			       GParamSpec *pspec)
+{
+	PageInfoDialog *dialog = PAGE_INFO_DIALOG (object);
+
+	switch (prop_id)
+	{
+		case PROP_EMBED:
+			dialog->priv->embed = g_value_get_object (value);
+			break;
+	}
+}
+
+static void
+page_info_dialog_class_init (PageInfoDialogClass *klass)
+{
+        GObjectClass *object_class = G_OBJECT_CLASS (klass);
+
+        parent_class = g_type_class_peek_parent (klass);
+
+        object_class->finalize = page_info_dialog_finalize;
+	object_class->constructor = page_info_dialog_constructor;
+	object_class->get_property = page_info_dialog_get_property;
+	object_class->set_property = page_info_dialog_set_property;
+
+	g_object_class_install_property
+		(object_class,
+		 PROP_EMBED,
+		 g_param_spec_object ("embed",
+				      "Embed",
+				      "Embed",
+				      G_TYPE_OBJECT,
+				      G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
+
+	g_type_class_add_private (object_class, sizeof (PageInfoDialogPrivate));
+}
+
+PageInfoDialog *
+page_info_dialog_new (GtkWidget *parent,
+		      EphyEmbed *embed)
+{
+	return g_object_new (TYPE_PAGE_INFO_DIALOG,
+			     "parent-window", parent,
+			     "embed", embed,
+			     NULL);
 }

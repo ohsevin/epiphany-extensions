@@ -1,5 +1,18 @@
 2004-09-11  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+	* extensions/page-info/page-info-dialog.c: (setup_page_images),
+	(setup_page_general), (page_info_image_box_realize_cb),
+	(page_info_dialog_init), (page_info_dialog_constructor),
+	(page_info_dialog_finalize), (page_info_dialog_get_property),
+	(page_info_dialog_set_property), (page_info_dialog_class_init),
+	(page_info_dialog_new):
+	* extensions/page-info/page-info-dialog.h:
+
+	Modernise GObject usage. Install an embed property, use GObject constructor.
+
+2004-09-11  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/page-info/ephy-page-info-extension.c:
 	* extensions/page-info/ephy-page-info-extension.h:
 	* extensions/page-info/page-info-dialog.c:
