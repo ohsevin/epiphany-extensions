@@ -639,7 +639,7 @@ impl_attach_window (EphyExtension *ext,
 	}
 
 	/* Action group completed */
-	gtk_ui_manager_insert_action_group (data->manager, action_group, -1),
+	gtk_ui_manager_insert_action_group (data->manager, action_group, -1);
 	g_object_unref (action_group);
 
 	/* Sync open tabs */
