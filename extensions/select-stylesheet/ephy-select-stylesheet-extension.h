@@ -1,6 +1,6 @@
 /*
  *  Copyright (C) 2003 Marco Pesenti Gritti
- *  Copyright (C) 2003 Christian Persch
+ *  Copyright (C) 2003, 2004 Christian Persch
  *  Copyright (C) 2004 Adam Hooper
  *
  *  This program is free software; you can redistribute it and/or modify

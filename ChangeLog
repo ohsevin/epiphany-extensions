@@ -1,5 +1,25 @@
 2004-09-13  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/select-stylesheet/ephy-css-menu.c:
+	(ephy_css_menu_register_type), (activate_stylesheet_cb),
+	(create_stylesheet_action), (ephy_css_menu_rebuild),
+	(ephy_css_menu_set_embed), (sync_active_tab_cb),
+	(ephy_css_menu_set_window), (ephy_css_menu_finalize),
+	(ephy_css_menu_init), (ephy_css_menu_get_property),
+	(ephy_css_menu_set_property), (ephy_css_menu_class_init),
+	(ephy_css_menu_new):
+	* extensions/select-stylesheet/ephy-css-menu.h:
+	* extensions/select-stylesheet/ephy-select-stylesheet-extension.c:
+	(ephy_select_stylesheet_extension_init),
+	(ephy_select_stylesheet_extension_class_init),
+	(impl_attach_window):
+	* extensions/select-stylesheet/ephy-select-stylesheet-extension.h:
+
+	Converted to UTF-8. s/EphyCssMenu/EphyCSSMenu/g. Misc cleanups,
+	simplifications and fixes.
+
+2004-09-13  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/dashboard/ephy-dashboard-extension.c:
 	* extensions/error-viewer/sgml-validator.c:
 
