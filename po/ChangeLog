@@ -1,3 +1,6 @@
+NOTE: Please also update the translations on "gnome-2.10" branch,
+NOTE: and keep this note at the top of this file.
+
 2005-03-20  Gabor Kelemen  <kelemeng@gnome.hu>
 
 	* hu.po: Hungarian translation updated.
@@ -9,8 +12,6 @@
 2005-03-09  Vincent van Adrighem  <adrighem@gnome.org>
 
 	* nl.po: Translation updated by Reinout van Schouwen.
-
-NOTE: Please also update the translations on "gnome-2.10" branch.
 
 2005-03-07  Marcel Telka  <marcel@telka.sk>
 
