@@ -7,10 +7,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: GNOME 2.6\n"
+"Project-Id-Version: Epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-05-22 03:14+0200\n"
-"PO-Revision-Date: 2004-05-22 16:05+0100\n"
+"POT-Creation-Date: 2004-12-20 21:37+0100\n"
+"PO-Revision-Date: 2004-12-22 14:54+0100\n"
 "Last-Translator: Reinout van Schouwen <reinout@cs.vu.nl>\n"
 "Language-Team: nl <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,54 +18,86 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:160
-msgid "Certificate Manager"
-msgstr "Certificaatbeheer"
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
+msgid "_Edit Bookmarks"
+msgstr "Bladwijzers be_werken"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
+msgid "Open the bookmarks window"
+msgstr "Bladwijzervenster openen"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
+msgid "Open in _Current Tab"
+msgstr "Openen in _huidig tabblad"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:446
+msgid "Open bookmarks in the current tab of the active window"
+msgstr "Bladwijzers openen in het huidige tabblad van het actieve venster"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:448
+msgid "Open in New _Tab"
+msgstr "Openen in nieuw _tabblad"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:449
+msgid "Open bookmarks in a new tab of the active window"
+msgstr "Bladwijzers openen in een nieuw tabblad van het actieve venster"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:451
+msgid "Open in New _Window"
+msgstr "Openen in _nieuw venster"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:452
+msgid "Open bookmarks in new a window"
+msgstr "Bladwijzers openen in een nieuw venster"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:520
+msgid "Bookmarks"
+msgstr "Bladwijzers"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:276
+#: extensions/certificates/ephy-certificates-extension.c:263
 msgid "Manage _Certificates"
 msgstr "_Certificaten beheren"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:278
+#: extensions/certificates/ephy-certificates-extension.c:265
 msgid "Manage your certificates"
 msgstr "Uw certificaten beheren"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:286
+#: extensions/certificates/ephy-certificates-extension.c:273
 msgid "Server _Certificate"
 msgstr "Server_certificaat"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:288
+#: extensions/certificates/ephy-certificates-extension.c:275
 msgid "Display the web server's certificate"
 msgstr "Het certificaat van de webserver weergeven"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:88
+#: extensions/error-viewer/ephy-error-viewer-extension.c:98
 msgid "Check _HTML"
 msgstr "_HTML controleren"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:90
+#: extensions/error-viewer/ephy-error-viewer-extension.c:100
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "HTML-fouten weergeven in het Fouten-dialoogvenster"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:95
+#: extensions/error-viewer/ephy-error-viewer-extension.c:105
 msgid "Check _Links"
 msgstr "Ver_wijzingen controleren"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:97
+#: extensions/error-viewer/ephy-error-viewer-extension.c:107
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr "Ongeldige hyperlinks weergeven in het Fouten-dialoogvenster"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:101
+#: extensions/error-viewer/ephy-error-viewer-extension.c:111
 msgid "_Error Viewer"
 msgstr "_Foutenweergave"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:103
+#: extensions/error-viewer/ephy-error-viewer-extension.c:113
 msgid "Display web page errors"
 msgstr "Fouten van de webpagina weergeven"
 
@@ -79,7 +111,7 @@ msgid "Error Viewer"
 msgstr "Foutenweergave"
 
 #. Don't bother looking for source lines -- they're not there
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:87
 #, c-format
 msgid ""
 "Error:\n"
@@ -88,7 +120,7 @@ msgstr ""
 "Fout:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:90
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:112
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -97,14 +129,14 @@ msgstr ""
 "Javascript fout in %s op regel %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
 msgstr[0] "%d ongeldige verwijzing gevonden"
 msgstr[1] "%d ongeldige verwijzingen gevonden"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -113,7 +145,7 @@ msgstr ""
 "Verwijzingsfout in %s:\n"
 "%s is niet beschikbaar."
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
@@ -130,19 +162,19 @@ msgstr ""
 "HTML-fout in %s op regel %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:165
+#: extensions/error-viewer/sgml-validator.c:167
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
 msgstr[0] "%d fout gevonden"
 msgstr[1] "%d fouten gevonden"
 
-#: extensions/error-viewer/sgml-validator.c:169
+#: extensions/error-viewer/sgml-validator.c:171
 #, c-format
 msgid "HTML Validation of %s complete"
 msgstr "HTML-validatie van %s voltooid"
 
-#: extensions/error-viewer/sgml-validator.c:227
+#: extensions/error-viewer/sgml-validator.c:229
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -151,8 +183,8 @@ msgstr ""
 "HTML fout in %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:229
-#: extensions/error-viewer/sgml-validator.c:245
+#: extensions/error-viewer/sgml-validator.c:231
+#: extensions/error-viewer/sgml-validator.c:247
 msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
@@ -160,7 +192,7 @@ msgstr ""
 "Doctype is \"XHTML\" maar het inhoudstype is \"text/html\".  Gebruik daarom "
 "\"application/xhtml+xml\"."
 
-#: extensions/error-viewer/sgml-validator.c:243
+#: extensions/error-viewer/sgml-validator.c:245
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
@@ -169,20 +201,20 @@ msgstr ""
 "HTML-waarschuwing in %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:360
+#: extensions/error-viewer/sgml-validator.c:362
 #, c-format
 msgid "HTML error in %s:"
 msgstr "HTML-fout in %s:"
 
-#: extensions/error-viewer/sgml-validator.c:368
+#: extensions/error-viewer/sgml-validator.c:370
 msgid "Invalid character encoding"
 msgstr "Ongeldige karaktercodering"
 
-#: extensions/error-viewer/sgml-validator.c:373
+#: extensions/error-viewer/sgml-validator.c:375
 msgid "Unknown error while converting to UTF-8"
 msgstr "Onbekende fout bij het converteren naar UTF-8"
 
-#: extensions/error-viewer/sgml-validator.c:435
+#: extensions/error-viewer/sgml-validator.c:437
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -191,64 +223,375 @@ msgstr ""
 "HTML fout in %s:\n"
 "Geen geldig doctype opgegeven."
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
-msgid "Popup _Windows"
-msgstr "_Opduikvensters"
+#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+msgid "_Extensions"
+msgstr "Uit_breidingen"
+
+#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
+msgid "Load and unload extensions"
+msgstr "Uitbreidingen laden en deactiveren"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:357
+msgid "Enabled"
+msgstr "Ingeschakeld"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:364
+msgid "Description"
+msgstr "Omschrijving"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+msgid "<b>Loaded Extensions</b>"
+msgstr "<b>Geladen uitbreidingen</b>"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+msgid "Extensions"
+msgstr "Uitbreidingen"
+
+#: extensions/page-info/ephy-page-info-extension.c:66
+msgid "_Page Info"
+msgstr "_Pagina-informatie"
+
+#: extensions/page-info/ephy-page-info-extension.c:68
+msgid "Display page information in a dialog"
+msgstr "Pagina-informatie weergeven in een dialoogvenster"
+
+#: extensions/page-info/page-info-dialog.c:640
+msgid "Unknown type"
+msgstr "Onbekend type"
+
+#: extensions/page-info/page-info-dialog.c:645
+msgid "Full standards compliance"
+msgstr "Voldoet geheel aan alle standaarden"
+
+#: extensions/page-info/page-info-dialog.c:648
+msgid "Almost standards compliance"
+msgstr "Voldoet bijna aan alle standaarden"
+
+#: extensions/page-info/page-info-dialog.c:651
+msgid "Compatibility"
+msgstr "Compatibiliteit"
+
+#: extensions/page-info/page-info-dialog.c:654
+msgid "Undetermined"
+msgstr "Onbepaald"
+
+#: extensions/page-info/page-info-dialog.c:663
+msgid "Not cached"
+msgstr "Niet gebufferd"
+
+#: extensions/page-info/page-info-dialog.c:666
+msgid "Disk cache"
+msgstr "Schijfbuffer"
+
+#: extensions/page-info/page-info-dialog.c:669
+msgid "Memory cache"
+msgstr "Geheugenbuffer"
+
+#: extensions/page-info/page-info-dialog.c:672
+msgid "Unknown cache"
+msgstr "Onbekende buffer"
+
+#: extensions/page-info/page-info-dialog.c:688
+#: extensions/page-info/page-info-dialog.c:808
+msgid "Unknown"
+msgstr "Onbekend"
+
+#: extensions/page-info/page-info-dialog.c:693
+msgid "No referrer"
+msgstr "Geen doorverwijzer"
+
+#: extensions/page-info/page-info-dialog.c:707
+#: extensions/page-info/page-info-dialog.c:723
+msgid "Not specified"
+msgstr "Niet gespecificeerd"
+
+#: extensions/page-info/page-info-dialog.c:793
+msgid "Image"
+msgstr "Afbeelding"
+
+#: extensions/page-info/page-info-dialog.c:796
+msgid "Embed"
+msgstr "Ingebed"
+
+#: extensions/page-info/page-info-dialog.c:799
+msgid "Object"
+msgstr "object"
+
+#: extensions/page-info/page-info-dialog.c:802
+msgid "Applet"
+msgstr "applet"
+
+#: extensions/page-info/page-info-dialog.c:805
+msgid "Icon"
+msgstr "Pictogram"
+
+#: extensions/page-info/page-info-dialog.c:961
+msgid "Save Medium As..."
+msgstr "Media opslaan als..."
+
+#: extensions/page-info/page-info-dialog.c:976
+msgid "Select a directory"
+msgstr "Kies een map"
+
+#: extensions/page-info/page-info-dialog.c:1074
+msgid "_Open"
+msgstr "_Openen"
+
+#: extensions/page-info/page-info-dialog.c:1080
+#: extensions/page-info/page-info-dialog.c:1427
+msgid "_Copy Link Address"
+msgstr "Verwij_zingsadres kopiëren"
+
+#: extensions/page-info/page-info-dialog.c:1086
+msgid "_Use as Background"
+msgstr "Als a_chtergrond gebruiken"
+
+#: extensions/page-info/page-info-dialog.c:1092
+msgid "_Save As..."
+msgstr "Op_slaan als..."
+
+#: extensions/page-info/page-info-dialog.c:1231
+#: extensions/page-info/page-info-dialog.c:1461
+msgid "URL"
+msgstr "URL"
+
+#: extensions/page-info/page-info-dialog.c:1243
+msgid "Type"
+msgstr "Type"
+
+#: extensions/page-info/page-info-dialog.c:1255
+msgid "Alt Text"
+msgstr "Alt-tekst"
+
+#: extensions/page-info/page-info-dialog.c:1267
+#: extensions/page-info/page-info-dialog.c:1473
+msgid "Title"
+msgstr "Titel"
+
+#: extensions/page-info/page-info-dialog.c:1279
+msgid "Width"
+msgstr "Breedte"
+
+#: extensions/page-info/page-info-dialog.c:1291
+msgid "Height"
+msgstr "Hoogte"
+
+#: extensions/page-info/page-info-dialog.c:1485
+msgid "Relation"
+msgstr "Relatie"
+
+#: extensions/page-info/page-info-dialog.c:1593
+msgid "Name"
+msgstr "Naam"
+
+#: extensions/page-info/page-info-dialog.c:1605
+msgid "Method"
+msgstr "Methode"
+
+#: extensions/page-info/page-info-dialog.c:1617
+msgid "Action"
+msgstr "Actie"
+
+#: extensions/page-info/page-info.glade.h:1
+msgid "<b>Forms In Page</b>"
+msgstr "<b>Formulieren in pagina</b>"
+
+#: extensions/page-info/page-info.glade.h:2
+msgid "<b>Links In Page</b>"
+msgstr "<b>Verwijzingen in pagina</b>"
+
+#: extensions/page-info/page-info.glade.h:3
+msgid "<b>Media In Page</b>"
+msgstr "<b>Media in pagina</b>"
+
+#: extensions/page-info/page-info.glade.h:4
+msgid "<b>Medium View</b>"
+msgstr "<b>Mediaweergave</b>"
+
+#: extensions/page-info/page-info.glade.h:5
+msgid "<b>Rendering</b>"
+msgstr "<b>Pagina-opbouw</b>"
+
+#: extensions/page-info/page-info.glade.h:6
+msgid "<b>Source File</b>"
+msgstr "<b>Broncodebestand</b>"
+
+#: extensions/page-info/page-info.glade.h:7
+msgid "<b>Web Page</b>"
+msgstr "<b>Webpagina</b>"
+
+#: extensions/page-info/page-info.glade.h:8
+msgid "DYNAMIC"
+msgstr "DYNAMISCH"
+
+#: extensions/page-info/page-info.glade.h:9
+msgid "Encoding:"
+msgstr "Codering:"
+
+#: extensions/page-info/page-info.glade.h:10
+msgid "Expires:"
+msgstr "Verloopt:"
+
+#: extensions/page-info/page-info.glade.h:11
+msgid "Forms"
+msgstr "Formulieren"
+
+#: extensions/page-info/page-info.glade.h:12
+msgid "General"
+msgstr "Algemeen"
+
+#: extensions/page-info/page-info.glade.h:13
+msgid "Links"
+msgstr "Verwijzingen"
+
+#: extensions/page-info/page-info.glade.h:14
+msgid "Location:"
+msgstr "Locatie:"
+
+#: extensions/page-info/page-info.glade.h:15
+msgid "MIME type:"
+msgstr "MIME-type:"
+
+#: extensions/page-info/page-info.glade.h:16
+msgid "Media"
+msgstr "Media"
+
+#: extensions/page-info/page-info.glade.h:17
+msgid "Mode:"
+msgstr "Modus:"
+
+#: extensions/page-info/page-info.glade.h:18
+msgid "Modified:"
+msgstr "Gewijzigd:"
+
+#: extensions/page-info/page-info.glade.h:19
+msgid "Page Properties"
+msgstr "Pagina-eigenschappen"
+
+#: extensions/page-info/page-info.glade.h:20
+msgid "Referrer:"
+msgstr "Doorverwijzer:"
+
+#: extensions/page-info/page-info.glade.h:21
+msgid "Size:"
+msgstr "Grootte:"
+
+#: extensions/page-info/page-info.glade.h:22
+msgid "Source:"
+msgstr "Bron:"
+
+#: extensions/page-info/page-info.glade.h:23
+msgid "Title:"
+msgstr "Titel:"
+
+#: extensions/page-info/page-info.glade.h:24
+msgid "Type:"
+msgstr "Type:"
+
+#: extensions/page-info/page-info.glade.h:25
+msgid "_Save Media As..."
+msgstr "Media op_slaan als..."
+
+#: extensions/select-stylesheet/ephy-css-menu.c:147
+msgid "Render the page without using a style"
+msgstr "Pagina opbouwen zonder gebruik te maken van een stijl"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:150
+msgid "Render the page using the default style"
+msgstr "Pagina opbouwen met gebruik van de standaardstijl"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:153
+#, c-format
+msgid "Render the page using the \"%s\" style"
+msgstr "Pagina opbouwen met gebruik van de \"%s\"-stijl"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:311
+msgid "St_yle"
+msgstr "Sti_jl"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:312
+msgid "Select a different style for this page"
+msgstr "Een andere stijl voor deze pagina selecteren"
+
+#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
+msgid "Default"
+msgstr "Standaard"
+
+#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
+msgid "None"
+msgstr "Geen"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:108
+msgid "_Sidebar"
+msgstr "_Zijbalk"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:109
+msgid "Show or hide the sidebar"
+msgstr "Zijbalk tonen of verbergen"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:396
+#, c-format
+msgid "Add \"%s\" to the Sidebar?"
+msgstr "\"%s\" toevoegen aan de zijbalk?"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:400
+#, c-format
+msgid "The source to the new sidebar page is %s."
+msgstr "De bron van de nieuwe zijbalk-pagina is %s."
+
+#: extensions/sidebar/ephy-sidebar-extension.c:402
+msgid "Add Sidebar"
+msgstr "Zijbalk toevoegen"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:406
+msgid "_Add Sidebar"
+msgstr "Zijbalk _toevoegen"
+
+#: extensions/sidebar/ephy-sidebar.c:178
+msgid "No Sidebars installed"
+msgstr "Geen zijbalken geïnstalleerd"
+
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:566
+msgid "_Look Up"
+msgstr "Opzoe_ken"
+
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:573
+msgid "_GNOME Dictionary"
+msgstr "_GNOME-woordenboek"
+
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:580
+msgid "Loo_k-Up Preferences"
+msgstr "Opzoek_voorkeuren"
 
 #. shortcut key
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
-msgid "Show or hide unrequested popup windows from this site"
-msgstr "Ongevraagde opduikvensters van deze webstek tonen of weren"
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:582
+msgid "Look up your selection"
+msgstr "Uw selectie opzoeken"
 
-#: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
-#, c-format
-msgid "%d popup window blocked"
-msgid_plural "%d popup windows blocked"
-msgstr[0] "%d opduikvenster geblokkerd"
-msgstr[1] "%d opduikvensters geblokkeerd"
+#: extensions/smart-bookmarks/smart-bookmarks.glade.h:1
+msgid "Add GNOME Dictionary to the menu"
+msgstr "GNOME-woordenboek aan het menu toevoegen"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:183
+#: extensions/smart-bookmarks/smart-bookmarks.glade.h:2
+msgid "Look Up Preferences"
+msgstr "Opzoekvoorkeuren"
+
+#: extensions/smart-bookmarks/smart-bookmarks.glade.h:3
+msgid "Open search results in a new tab"
+msgstr "Zoekresultaten openen in een nieuwe tab"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:181
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"
 msgstr[0] "Venster '%s' (%d tab)"
 msgstr[1] "Venster '%s' (%d tabs)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:282
+#: extensions/tabsmenu/ephy-tab-move-menu.c:296
 msgid "Move Tab To Window"
 msgstr "Tabblad verplaatsen naar venster"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:283
+#: extensions/tabsmenu/ephy-tab-move-menu.c:297
 msgid "Move the current tab to a different window"
 msgstr "Het huidige tabblad naar een ander venster verplaatsen"
 
-#~ msgid "Blo_ck Popups from this Site"
-#~ msgstr "O_pduikvensters van deze site blokkeren"
-
-#~ msgid "Block or unblock popup windows"
-#~ msgstr "Opduikvensters blokkeren of deblokkeren"
-
-#~ msgid "Open %s"
-#~ msgstr "%s openen"
-
-#, fuzzy
-#~ msgid ""
-#~ "HTML error in %s:\n"
-#~ "Doctype is XHTML but content type is text/html.  Use application/xhtml"
-#~ "+xml instead."
-#~ msgstr ""
-#~ "HTML waarschuwing in %s:\n"
-#~ "Doctype is XHTML maar type inhoud is text/html.  Gebruik in plaats "
-#~ "daarvan application/xhtml+xml."
-
-#~ msgid ""
-#~ "HTML warning in %s:\n"
-#~ "Doctype is XHTML but content type is text/html.  Use application/xhtml"
-#~ "+xml instead."
-#~ msgstr ""
-#~ "HTML waarschuwing in %s:\n"
-#~ "Doctype is XHTML maar type inhoud is text/html.  Gebruik in plaats "
-#~ "daarvan application/xhtml+xml."
-
-#~ msgid "_Validate"
-#~ msgstr "_Valideren"
