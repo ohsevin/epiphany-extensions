@@ -1,0 +1,48 @@
+# Norwegian translation of Epiphany-extensions
+# Copyright (C) 2000-2003 Free Software Foundation, Inc.
+# Ola Sverre Bauge <osb@plover.net>, 2000
+# Kjartan Maraas  <kmaraas@gnome.org>, 2000-2004
+# Roy-Magne Mo <rmo@sunnmore.net>, 2001
+msgid ""
+msgstr ""
+"Project-Id-Version: epiphany-extensions 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-01-17 21:21+0100\n"
+"PO-Revision-Date: 2004-01-17 21:25+0100\n"
+"Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
+"Language-Team: Norwegian <i18n-nb@lister.ping.uio.no>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8Bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
+msgid "Block _Popups from this Site"
+msgstr "Blokker _popups fra dette nettstedet"
+
+#. shortcut key
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:64
+msgid "Block or unblock popup windows"
+msgstr "Blokker eller fjern blokkering av popup-vinduer"
+
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:324
+#, c-format
+msgid "%d popup blocked"
+msgid_plural "%d popups blocked"
+msgstr[0] "%d popup blokkert"
+msgstr[1] "%d popups blokkert"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:181
+#, c-format
+msgid "Window '%s' (%d tab)"
+msgid_plural "Window '%s' (%d tabs)"
+msgstr[0] "Vindu «%s» (%d fane)"
+msgstr[1] "Vindu «%s» (%d faner)"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:272
+msgid "Move Tab To Window"
+msgstr "Flytt fane til vindu"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:273
+msgid "Move the current tab to a different window"
+msgstr "Flytt denne fanen til et annet vindu"
