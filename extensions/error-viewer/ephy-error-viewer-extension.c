@@ -40,22 +40,48 @@
 
 #include <glib/gi18n-lib.h>
 
+#ifdef HAVE_OPENSP
+#include "sgml-validator.h"
+#endif /* HAVE_OPENSP */
+
 #define EPHY_ERROR_VIEWER_EXTENSION_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_ERROR_VIEWER_EXTENSION, EphyErrorViewerExtensionPrivate))
 
 struct EphyErrorViewerExtensionPrivate
 {
 	ErrorViewer *dialog;
+#if HAVE_OPENSP
+	SgmlValidator *validator;
+#endif /* HAVE_OPENSP */
 	void *listener;
 };
+
+typedef struct
+{
+	EphyErrorViewerExtension *extension;
+	EphyWindow *window;
+} ErrorViewerCBData;
 
 static void ephy_error_viewer_extension_class_init	(EphyErrorViewerExtensionClass *klass);
 static void ephy_error_viewer_extension_iface_init	(EphyExtensionClass *iface);
 static void ephy_error_viewer_extension_init		(EphyErrorViewerExtension *extension);
+
 static void ephy_error_viewer_extension_show_viewer	(GtkAction *action,
-							 EphyErrorViewerExtension *window);
+							 ErrorViewerCBData *data);
+#ifdef HAVE_OPENSP
+static void ephy_error_viewer_extension_validate	(GtkAction *action,
+							 ErrorViewerCBData *data);
+#endif /* HAVE_OPENSP */
 
 static GtkActionEntry action_entries [] =
 {
+#ifdef HAVE_OPENSP
+	{ "SgmlValidate",
+	  NULL,
+	  N_("_Validate"),
+	  NULL, /* shortcut key */
+	  N_("Display HTML errors in the Error Viewer dialog"),
+	  G_CALLBACK (ephy_error_viewer_extension_validate) },
+#endif /* HAVE_OPENSP */
 	{ "ErrorViewer",
 	  GTK_STOCK_DIALOG_ERROR,
 	  N_("Errors"),
@@ -122,6 +148,10 @@ ephy_error_viewer_extension_init (EphyErrorViewerExtension *extension)
 
 	extension->priv->dialog = error_viewer_new ();
 
+#ifdef HAVE_OPENSP
+	extension->priv->validator = sgml_validator_new (extension->priv->dialog);
+#endif /* HAVE_OPENSP */
+
 	extension->priv->listener = mozilla_register_error_listener (G_OBJECT (extension->priv->dialog));
 }
 
@@ -134,6 +164,10 @@ ephy_error_viewer_extension_finalize (GObject *object)
 	LOG ("EphyErrorViewerExtension finalizing")
 
 	mozilla_unregister_error_listener (extension->priv->listener);
+
+#ifdef HAVE_OPENSP
+	g_object_unref (G_OBJECT (extension->priv->validator));
+#endif /* HAVE_OPENSP */
 
 	g_object_unref (G_OBJECT (extension->priv->dialog));
 
@@ -152,41 +186,81 @@ ephy_error_viewer_extension_class_init (EphyErrorViewerExtensionClass *klass)
 	g_type_class_add_private (object_class, sizeof (EphyErrorViewerExtensionPrivate));
 }
 
+#ifdef HAVE_OPENSP
+static void
+ephy_error_viewer_extension_validate (GtkAction *action,
+				      ErrorViewerCBData *data)
+{
+	ErrorViewer *dialog;
+	EphyEmbed *embed;
+
+	dialog = data->extension->priv->dialog;
+
+	embed = ephy_window_get_active_embed (data->window);
+
+	ephy_dialog_show (EPHY_DIALOG (dialog));
+
+	sgml_validator_validate (data->extension->priv->validator, embed);
+}
+#endif /* HAVE_OPENSP */
+
 static void
 ephy_error_viewer_extension_show_viewer (GtkAction *action,
-					 EphyErrorViewerExtension *ext)
+					 ErrorViewerCBData *data)
 {
-	ephy_dialog_show (EPHY_DIALOG (ext->priv->dialog));
+	ephy_dialog_show (EPHY_DIALOG (data->extension->priv->dialog));
+}
+
+static void
+free_error_viewer_cb_data (gpointer data)
+{
+	/* Pending GTK+ bug #132447 */
+	/*
+	if (data)
+	{
+		g_free (data);
+	}
+	*/
 }
 
 static void
 impl_attach_window (EphyExtension *extension,
 		    EphyWindow *window)
 {
+	ErrorViewerCBData *cb_data;
 	GtkActionGroup *action_group;
 	GtkUIManager *manager;
 	guint merge_id;
 
 	LOG ("EphyErrorViewerExtension attach_window")
 
+	cb_data = g_new0 (ErrorViewerCBData, 1);
+	cb_data->extension = EPHY_ERROR_VIEWER_EXTENSION (extension);
+	cb_data->window = window;
+
 	manager = GTK_UI_MANAGER (window->ui_merge);
 
 	action_group = gtk_action_group_new ("EphyErrorViewerExtensionActions");
 
 	gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
-	gtk_action_group_add_actions (action_group, action_entries,
-				      n_action_entries,
-				      EPHY_ERROR_VIEWER_EXTENSION (extension));
+	gtk_action_group_add_actions_full (action_group, action_entries,
+					   n_action_entries, cb_data,
+					   free_error_viewer_cb_data);
 
 	gtk_ui_manager_insert_action_group (manager, action_group, 0);
 	g_object_unref (action_group);
 
 	merge_id = gtk_ui_manager_new_merge_id (manager);
 
-	gtk_ui_manager_add_ui (manager, merge_id, "/menubar/ViewMenu",
+	gtk_ui_manager_add_ui (manager, merge_id, "/menubar/ToolsMenu",
 			       "ErrorViewerSep", NULL,
 			       GTK_UI_MANAGER_SEPARATOR, FALSE);
-	gtk_ui_manager_add_ui (manager, merge_id, "/menubar/ViewMenu",
+#ifdef HAVE_OPENSP
+	gtk_ui_manager_add_ui (manager, merge_id, "/menubar/ToolsMenu",
+			       "SgmlValidate", "SgmlValidate",
+			       GTK_UI_MANAGER_MENUITEM, FALSE);
+#endif /* HAVE_OPENSP */
+	gtk_ui_manager_add_ui (manager, merge_id, "/menubar/ToolsMenu",
 			       "ErrorViewer", "ErrorViewer",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
 }

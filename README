@@ -1,8 +1,8 @@
 For the moment, you have to ./configure with --prefix=same prefix as you configured
 epiphany with.
 
-Please see the README files in the plugin subdirs for information about the
-plugins.
+Please see the README files in each extension subdirectory for more specific
+information.
 
 How to choose which extensions to build:
 
@@ -10,7 +10,7 @@ How to choose which extensions to build:
 
 where ext1, ext2 ... are one of the following:
 
-error-viewer		Error viewer extension [i.e., Javascript errors]
+error-viewer		Error viewer extension [i.e., Javascript, HTML errors]
 gestures		Gestures extension
 popup-blocker		Popup blocker extension
 tabsmenu		Tabs Menu extension

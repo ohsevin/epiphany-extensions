@@ -1,3 +1,40 @@
+2004-01-25  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* include/ephy-file-helpers.h:
+
+	Update to newer version from Ephy CVS for a teeny bugfix.
+
+	* README:
+	* configure.ac:
+	* extensions/error-viewer/Makefile.am:
+	* extensions/error-viewer/README:
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	(ephy_error_viewer_extension_init),
+	(ephy_error_viewer_extension_finalize),
+	(ephy_error_viewer_extension_validate),
+	(ephy_error_viewer_extension_show_viewer),
+	(free_error_viewer_cb_data), (impl_attach_window):
+	* extensions/error-viewer/extension.c: (register_module):
+	* extensions/error-viewer/opensp/Makefile.am:
+	* extensions/error-viewer/opensp/validate.cpp:
+	* extensions/error-viewer/opensp/validate.h:
+	* extensions/error-viewer/sgml-validator.c:
+	(sgml_validator_get_type), (sgml_validator_register_type),
+	(sgml_validator_new), (sgml_validator_class_init),
+	(sgml_validator_init), (sgml_validator_finalize),
+	(save_source_completed_cb), (sgml_validator_validate):
+	* extensions/error-viewer/sgml-validator.h:
+
+	Who says Epiphany has no features? I've just coded one that NOBODY else
+	has: local, functional, fast, GOOD HTML validation!
+
+	It's rough around the edges, but it DOES validate HTML and it IS
+	damned cool. And as far as I know, it's the first of its kind. Which
+	makes me kind of proud.
+
+	There's a memory leak when every window closes, pending GTK bug
+	#132447.
+
 2004-01-23  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/error-viewer/ephy-error-viewer-extension.c:

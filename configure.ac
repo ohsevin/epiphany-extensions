@@ -39,6 +39,7 @@ AM_PROG_LIBTOOL
 AC_ISC_POSIX
 AC_PROG_CC
 AM_PROG_CC_STDC
+AC_PROG_CXX
 AC_HEADER_STDC
 AC_PROG_INSTALL
 AC_PROG_MAKE_SET
@@ -102,6 +103,26 @@ dnl  AC_MSG_ERROR([gconftool-2 executable not found in your path - should be ins
 dnl fi
 
 dnl AM_GCONF_SOURCE_2
+
+dnl *******************************
+dnl Check for OpenSP
+dnl *******************************
+AC_ARG_ENABLE(opensp,
+	      [ --enable-opensp=[yes,no]    Attempt to use OpenSP for SGML validation [default=yes]],
+	      [enable_opensp="$enableval"],
+	      [enable_opensp="yes"])
+
+if test "x$enable_opensp" != "xno"; then
+	AC_LANG_PUSH([C++])
+
+	AC_CHECK_HEADERS([OpenSP/config.h OpenSP/ParserEventGeneratorKit.h],
+			 [ have_opensp="yes" ],
+			 [ have_opensp="no" ])
+
+	AM_CONDITIONAL([HAVE_OPENSP], test "x$have_opensp" = "xyes")
+
+	AC_LANG_POP([C++])
+fi
 
 dnl *******************************
 dnl Extensions
@@ -293,6 +314,7 @@ extensions/dashboard/Makefile
 extensions/gestures/Makefile
 extensions/error-viewer/Makefile
 extensions/error-viewer/mozilla/Makefile
+extensions/error-viewer/opensp/Makefile
 extensions/popup-blocker/Makefile
 extensions/sample/Makefile
 extensions/sample-mozilla/Makefile

@@ -1,6 +1,4 @@
 /*
- *  Copyright (C) 2003 Marco Pesenti Gritti
- *  Copyright (C) 2003 Christian Persch
  *  Copyright (C) 2004 Adam Hooper
  *
  *  This program is free software; you can redistribute it and/or modify
@@ -20,33 +18,17 @@
  *  $Id$
  */
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
+#ifndef ERROR_VIEWER_VALIDATE_H
+#define ERROR_VIEWER_VALIDATE_H
+
+#include <glib.h>
+#include <glib-object.h>
+
+G_BEGIN_DECLS
+
+void validate (const char *filename, ErrorViewer *error_viewer);
+
+G_END_DECLS
+
 #endif
 
-#include "ephy-error-viewer-extension.h"
-#include "error-viewer.h"
-#include "ephy-debug.h"
-
-#include <gmodule.h>
-#include <glib/gi18n-lib.h>
-
-G_MODULE_EXPORT GType
-register_module (GTypeModule *module)
-{
-	LOG ("Registering EphyErrorViewerExtension")
-
-#ifdef ENABLE_NLS
-	/* Initialize the i18n stuff */
-	bindtextdomain (GETTEXT_PACKAGE, EPHY_EXTENSIONS_LOCALEDIR);
-	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
-#endif /* ENABLE_NLS */
-
-	error_viewer_register_type (module);
-
-#ifdef HAVE_OPENSP
-	sgml_validator_register_type (module);
-#endif /* HAVE_OPENSP */
-
-	return ephy_error_viewer_extension_register_type (module);
-}
