@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions 0.8.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-29 15:53+0200\n"
+"POT-Creation-Date: 2004-05-31 13:15+0200\n"
 "PO-Revision-Date: 2004-04-01 07:09+0400\n"
 "Last-Translator: Dmitry G. Mastrukov <dmitry@taurussoft.org>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:159
+#: extensions/certificates/ephy-certificates-extension.c:160
 msgid "Certificate Manager"
 msgstr "Менеджер сертификатов"
 
@@ -77,14 +77,6 @@ msgstr "О_чистить"
 msgid "Error Viewer"
 msgstr "Просмотрщик ошибок"
 
-#: extensions/error-viewer/link-checker.c:235
-#, c-format
-msgid "Found %d invalid link"
-msgid_plural "Found %d invalid links"
-msgstr[0] "Найдена %d неверная ссылка"
-msgstr[1] "Найдено %d неверные ссылки"
-msgstr[2] "Найдено %d неверных ссылок"
-
 #. Don't bother looking for source lines -- they're not there
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
 #, c-format
@@ -104,7 +96,15 @@ msgstr ""
 "Произошла ошибка языка Javascript в %s, в строке %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:77
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "Найдена %d неверная ссылка"
+msgstr[1] "Найдено %d неверные ссылки"
+msgstr[2] "Найдено %d неверных ссылок"
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -113,7 +113,7 @@ msgstr ""
 "Произошла ошибка ссылки в %s:\n"
 "%s недоступна."
 
-#: extensions/error-viewer/mozilla/mozilla-link-checker.cpp:152
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
@@ -170,7 +170,22 @@ msgstr ""
 "Предупреждение HTML в %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:381
+#: extensions/error-viewer/sgml-validator.c:360
+#, fuzzy, c-format
+msgid "HTML error in %s:"
+msgstr ""
+"Произошла ошибка языка HTML в %s:\n"
+"%s"
+
+#: extensions/error-viewer/sgml-validator.c:368
+msgid "Invalid character encoding"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:373
+msgid "Unknown error while converting to UTF-8"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:435
 #, c-format
 msgid ""
 "HTML error in %s:\n"

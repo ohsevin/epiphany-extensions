@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-10 17:24+0100\n"
+"POT-Creation-Date: 2004-05-31 13:15+0200\n"
 "PO-Revision-Date: 2004-03-10 17:26+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian <i18n-nb@lister.ping.uio.no>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8Bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:159
+#: extensions/certificates/ephy-certificates-extension.c:160
 msgid "Certificate Manager"
 msgstr "Sertifikathåndterer"
 
@@ -75,13 +75,6 @@ msgstr "_Tøm"
 msgid "Error Viewer"
 msgstr "Feilvisning"
 
-#: extensions/error-viewer/link-checker.c:231
-#, c-format
-msgid "Found %d invalid link"
-msgid_plural "Found %d invalid links"
-msgstr[0] ""
-msgstr[1] ""
-
 #. Don't bother looking for source lines -- they're not there
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
 #, c-format
@@ -101,7 +94,14 @@ msgstr ""
 "Javascript-feil i %s på linje %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:77
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] ""
+msgstr[1] ""
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -110,7 +110,7 @@ msgstr ""
 "Feil på lenke i %s:\n"
 "%s er ikke tilgjengelig."
 
-#: extensions/error-viewer/mozilla/mozilla-link-checker.cpp:174
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
@@ -154,7 +154,8 @@ msgid ""
 "xhtml+xml\" instead."
 msgstr ""
 "HTML-feil i %s:\n"
-"Dokumenttypen er XHTML, men innholdstypen er text/html. Bruk «application/xhtml+xml» i stedet."
+"Dokumenttypen er XHTML, men innholdstypen er text/html. Bruk «application/"
+"xhtml+xml» i stedet."
 
 #: extensions/error-viewer/sgml-validator.c:243
 #, c-format
@@ -165,7 +166,22 @@ msgstr ""
 "HTML-advarsel i %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:381
+#: extensions/error-viewer/sgml-validator.c:360
+#, fuzzy, c-format
+msgid "HTML error in %s:"
+msgstr ""
+"HTML-feil i %s:\n"
+"%s"
+
+#: extensions/error-viewer/sgml-validator.c:368
+msgid "Invalid character encoding"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:373
+msgid "Unknown error while converting to UTF-8"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:435
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -175,13 +191,20 @@ msgstr ""
 "Ingen gyldig dokumenttype spesifisert."
 
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
-msgid "Blo_ck Popups from this Site"
-msgstr "Blokker _popups fra dette nettstedet"
+msgid "Popup _Windows"
+msgstr ""
 
 #. shortcut key
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
-msgid "Block or unblock popup windows"
-msgstr "Blokker eller fjern blokkering av popup-vinduer"
+msgid "Show or hide unrequested popup windows from this site"
+msgstr ""
+
+#: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
+#, c-format
+msgid "%d popup window blocked"
+msgid_plural "%d popup windows blocked"
+msgstr[0] ""
+msgstr[1] ""
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:183
 #, c-format
@@ -197,3 +220,9 @@ msgstr "Flytt fane til vindu"
 #: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
 msgstr "Flytt denne fanen til et annet vindu"
+
+#~ msgid "Blo_ck Popups from this Site"
+#~ msgstr "Blokker _popups fra dette nettstedet"
+
+#~ msgid "Block or unblock popup windows"
+#~ msgstr "Blokker eller fjern blokkering av popup-vinduer"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-04-26 03:15+0200\n"
+"POT-Creation-Date: 2004-05-31 13:15+0200\n"
 "PO-Revision-Date: 2004-04-26 15:01+0200\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:159
+#: extensions/certificates/ephy-certificates-extension.c:160
 msgid "Certificate Manager"
 msgstr "Správce certifikátů"
 

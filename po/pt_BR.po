@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-09 03:18+0100\n"
+"POT-Creation-Date: 2004-05-31 13:15+0200\n"
 "PO-Revision-Date: 2004-03-10 16:27-0500\n"
 "Last-Translator: Estêvão Samuel Procópio <tevaum@ig.com.br>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:159
+#: extensions/certificates/ephy-certificates-extension.c:160
 msgid "Certificate Manager"
 msgstr "Gerenciador de Certificados"
 
@@ -75,13 +75,6 @@ msgstr "_Limpar"
 msgid "Error Viewer"
 msgstr "Vizualização de Erros"
 
-#: extensions/error-viewer/link-checker.c:231
-#, c-format
-msgid "Found %d invalid link"
-msgid_plural "Found %d invalid links"
-msgstr[0] "Encontrado %d link inválido"
-msgstr[1] "Encontrados %d links inválidos"
-
 #. Don't bother looking for source lines -- they're not there
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
 #, c-format
@@ -101,7 +94,14 @@ msgstr ""
 "Erro de javascript em %s, linha %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:77
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "Encontrado %d link inválido"
+msgstr[1] "Encontrados %d links inválidos"
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -110,7 +110,7 @@ msgstr ""
 "Erro de link em %s:\n"
 "%s não está disponível"
 
-#: extensions/error-viewer/mozilla/mozilla-link-checker.cpp:174
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
@@ -153,7 +153,8 @@ msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
 msgstr ""
-"O tipo do documento é \\\"XHTML\\\", mas o tipo do conteúdo é \\\"text/html\\\".\n"
+"O tipo do documento é \\\"XHTML\\\", mas o tipo do conteúdo é \\\"text/html\\"
+"\".\n"
 "Use \\\"application/xhtml+xml\\\"."
 
 #: extensions/error-viewer/sgml-validator.c:243
@@ -165,7 +166,22 @@ msgstr ""
 "Aviso de HTML em %s\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:381
+#: extensions/error-viewer/sgml-validator.c:360
+#, fuzzy, c-format
+msgid "HTML error in %s:"
+msgstr ""
+"Erro HTML em %s\n"
+"%s"
+
+#: extensions/error-viewer/sgml-validator.c:368
+msgid "Invalid character encoding"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:373
+msgid "Unknown error while converting to UTF-8"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:435
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -175,13 +191,20 @@ msgstr ""
 "Tipo de documento inválido."
 
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
-msgid "Blo_ck Popups from this Site"
-msgstr "Bloquear Popups desse sítio"
+msgid "Popup _Windows"
+msgstr ""
 
 #. shortcut key
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
-msgid "Block or unblock popup windows"
-msgstr "Bloquear ou desbloquear janelas popup"
+msgid "Show or hide unrequested popup windows from this site"
+msgstr ""
+
+#: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
+#, c-format
+msgid "%d popup window blocked"
+msgid_plural "%d popup windows blocked"
+msgstr[0] ""
+msgstr[1] ""
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:183
 #, c-format
@@ -197,3 +220,9 @@ msgstr "Destacar aba"
 #: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
 msgstr "Destaca a aba atual para uma nova janela"
+
+#~ msgid "Blo_ck Popups from this Site"
+#~ msgstr "Bloquear Popups desse sítio"
+
+#~ msgid "Block or unblock popup windows"
+#~ msgstr "Bloquear ou desbloquear janelas popup"

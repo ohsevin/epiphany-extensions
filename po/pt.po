@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.6\n"
-"Report-Msgid-Bugs-To: Duarte Loreto <happyguy_pt@hotmail.com>\n"
-"POT-Creation-Date: 2004-05-16 18:02+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-05-31 13:15+0200\n"
 "PO-Revision-Date: 2004-05-16 18:05+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
@@ -21,22 +21,22 @@ msgid "Certificate Manager"
 msgstr "Gestor de Certificados"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:277
+#: extensions/certificates/ephy-certificates-extension.c:276
 msgid "Manage _Certificates"
 msgstr "Gerir _Certificados"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:279
+#: extensions/certificates/ephy-certificates-extension.c:278
 msgid "Manage your certificates"
 msgstr "Efectue a gestão dos seus certificados"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:287
+#: extensions/certificates/ephy-certificates-extension.c:286
 msgid "Server _Certificate"
 msgstr "Servidor de _Certificados"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:289
+#: extensions/certificates/ephy-certificates-extension.c:288
 msgid "Display the web server's certificate"
 msgstr "Apresentar o certificado do servidor web"
 

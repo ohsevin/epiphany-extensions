@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-18 22:59+0100\n"
+"POT-Creation-Date: 2004-05-31 13:15+0200\n"
 "PO-Revision-Date: 2004-03-18 23:02+0100\n"
 "Last-Translator: Francisco Javier F. Serrador <serrador@cvs.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.3.1\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:159
+#: extensions/certificates/ephy-certificates-extension.c:160
 msgid "Certificate Manager"
 msgstr "Administrador de certificados"
 
@@ -76,13 +76,6 @@ msgstr "_Vaciar"
 msgid "Error Viewer"
 msgstr "Visor de errores"
 
-#: extensions/error-viewer/link-checker.c:235
-#, c-format
-msgid "Found %d invalid link"
-msgid_plural "Found %d invalid links"
-msgstr[0] "Se encontró %d enlace inválido"
-msgstr[1] "Se encontraron %d enlaces inválidos"
-
 #. Don't bother looking for source lines -- they're not there
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
 #, c-format
@@ -102,7 +95,14 @@ msgstr ""
 "Error de JavaScript en %s, en la línea %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:77
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "Se encontró %d enlace inválido"
+msgstr[1] "Se encontraron %d enlaces inválidos"
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -111,7 +111,7 @@ msgstr ""
 "Error de enlace en %s:\n"
 "%s no está disponible."
 
-#: extensions/error-viewer/mozilla/mozilla-link-checker.cpp:152
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
@@ -166,7 +166,22 @@ msgstr ""
 "Error HTML en %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:381
+#: extensions/error-viewer/sgml-validator.c:360
+#, fuzzy, c-format
+msgid "HTML error in %s:"
+msgstr ""
+"Error HTML en %s:\n"
+"%s"
+
+#: extensions/error-viewer/sgml-validator.c:368
+msgid "Invalid character encoding"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:373
+msgid "Unknown error while converting to UTF-8"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:435
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -182,7 +197,8 @@ msgstr "_Ventanas emergentes"
 #. shortcut key
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
 msgid "Show or hide unrequested popup windows from this site"
-msgstr "Mostrar u ocultar las ventanas emergentes no  solicitadas de este sitio"
+msgstr ""
+"Mostrar u ocultar las ventanas emergentes no  solicitadas de este sitio"
 
 #: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
 #, c-format
@@ -223,4 +239,3 @@ msgstr "Mueve la solapa actual a una ventana diferente"
 #~ "Aviso HTML en %s\n"
 #~ "Doctype es XHTML pero el tipo de contenido es text/html.  Use application/"
 #~ "xhtml+xml en su lugar."
-

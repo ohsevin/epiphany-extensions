@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: punlinux\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-04 16:01+0530\n"
+"POT-Creation-Date: 2004-05-31 13:15+0200\n"
 "PO-Revision-Date: 2004-01-26 08:21+0530\n"
 "Last-Translator: Amanpreet Singh Alam <amanlinux@netscape.net>\n"
 "Language-Team: KBST Punjab <kbstpunjab@netscape.net>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:159
+#: extensions/certificates/ephy-certificates-extension.c:160
 msgid "Certificate Manager"
 msgstr ""
 
@@ -74,13 +74,6 @@ msgstr ""
 msgid "Error Viewer"
 msgstr ""
 
-#: extensions/error-viewer/link-checker.c:231
-#, c-format
-msgid "Found %d invalid link"
-msgid_plural "Found %d invalid links"
-msgstr[0] ""
-msgstr[1] ""
-
 #. Don't bother looking for source lines -- they're not there
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
 #, c-format
@@ -96,14 +89,21 @@ msgid ""
 "%s"
 msgstr ""
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:77
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] ""
+msgstr[1] ""
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
 #, c-format
 msgid ""
 "Link error in %s:\n"
 "%s is unavailable."
 msgstr ""
 
-#: extensions/error-viewer/mozilla/mozilla-link-checker.cpp:174
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
@@ -150,27 +150,39 @@ msgid ""
 "%s"
 msgstr ""
 
-#: extensions/error-viewer/sgml-validator.c:381
+#: extensions/error-viewer/sgml-validator.c:360
+#, c-format
+msgid "HTML error in %s:"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:368
+msgid "Invalid character encoding"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:373
+msgid "Unknown error while converting to UTF-8"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:435
 #, c-format
 msgid ""
 "HTML error in %s:\n"
 "No valid doctype specified."
 msgstr ""
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
-#, fuzzy
-msgid "Blo_ck Popups from this Site"
-msgstr "ਇਸ ਸਾਈਟ ਤੋ ਪੋਪਸ ਰੋਕੇ ਗਏ ਹਨ"
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
+msgid "Popup _Windows"
+msgstr ""
 
 #. shortcut key
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:64
-msgid "Block or unblock popup windows"
-msgstr "ਪੋਪਅਪ ਝਰੋਖਾ ਰੋਕੋ ਜਾਂ ਖੋਲੋ"
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
+msgid "Show or hide unrequested popup windows from this site"
+msgstr ""
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:324
+#: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
 #, c-format
-msgid "%d popup blocked"
-msgid_plural "%d popups blocked"
+msgid "%d popup window blocked"
+msgid_plural "%d popup windows blocked"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -188,3 +200,10 @@ msgstr "ਟੈਬ ਝਰੋਖੇ ਤੇ ਲੈ ਜਾਉ"
 #: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
 msgstr "ਇਸ ਟੈਬ ਨੂੰ ਵਖਰੇ ਝਰੋਖੇ ਲਈ ਲੈ ਜਾਉ"
+
+#, fuzzy
+#~ msgid "Blo_ck Popups from this Site"
+#~ msgstr "ਇਸ ਸਾਈਟ ਤੋ ਪੋਪਸ ਰੋਕੇ ਗਏ ਹਨ"
+
+#~ msgid "Block or unblock popup windows"
+#~ msgstr "ਪੋਪਅਪ ਝਰੋਖਾ ਰੋਕੋ ਜਾਂ ਖੋਲੋ"

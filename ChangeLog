@@ -1,3 +1,38 @@
+2004-05-31  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/sample-mozilla/mozilla/Makefile.am:
+	* po/ca.po:
+	* po/cs.po:
+	* po/da.po:
+	* po/de.po:
+	* po/el.po:
+	* po/en_CA.po:
+	* po/en_GB.po:
+	* po/es.po:
+	* po/fr.po:
+	* po/hr.po:
+	* po/hu.po:
+	* po/it.po:
+	* po/ja.po:
+	* po/lt.po:
+	* po/nl.po:
+	* po/no.po:
+	* po/pa.po:
+	* po/pl.po:
+	* po/pt.po:
+	* po/pt_BR.po:
+	* po/ru.po:
+	* po/sk.po:
+	* po/sq.po:
+	* po/sr.po:
+	* po/sr@Latn.po:
+	* po/sv.po:
+	* po/uk.po:
+	* po/wa.po:
+	* po/zh_CN.po:
+
+	=== Release 1.1.0 ===
+
 2004-05-30  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:

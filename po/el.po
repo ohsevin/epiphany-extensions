@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-04 14:13+0100\n"
+"POT-Creation-Date: 2004-05-31 13:15+0200\n"
 "PO-Revision-Date: 2004-03-04 18:30+0200\n"
 "Last-Translator: Kostas Papadimas <pkst@gnome.org>\n"
 "Language-Team: Greek <nls@tux.hellug.gr>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.0.2\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:159
+#: extensions/certificates/ephy-certificates-extension.c:160
 msgid "Certificate Manager"
 msgstr "Διαχείριση πιστοποιητικών"
 
@@ -76,13 +76,6 @@ msgstr "Ε_κκαθάριση"
 msgid "Error Viewer"
 msgstr "Προβολή σφαλμάτων"
 
-#: extensions/error-viewer/link-checker.c:231
-#, c-format
-msgid "Found %d invalid link"
-msgid_plural "Found %d invalid links"
-msgstr[0] "Βρέθηκε %d μη έγκυρος δεσμός"
-msgstr[1] "Βρέθηκαν %d μη έγκυροι δεσμοί"
-
 #. Don't bother looking for source lines -- they're not there
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
 #, c-format
@@ -102,7 +95,14 @@ msgstr ""
 "Σφάλμα Javascript σε %s στην γραμμή %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:77
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "Βρέθηκε %d μη έγκυρος δεσμός"
+msgstr[1] "Βρέθηκαν %d μη έγκυροι δεσμοί"
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -111,7 +111,7 @@ msgstr ""
 "Σφάλμα δεσμού σε %s:\n"
 "%s δεν είναι διαθέσιμο."
 
-#: extensions/error-viewer/mozilla/mozilla-link-checker.cpp:174
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
@@ -154,8 +154,8 @@ msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
 msgstr ""
-"Ο τύπος εγγράφου  είναι \"XHTML\" αλλά ο τύπος περιεχομένου είναι  \"text/html\". Χρησιμοποιήστε "
-"\"application/xhtml+xml\" ."
+"Ο τύπος εγγράφου  είναι \"XHTML\" αλλά ο τύπος περιεχομένου είναι  \"text/"
+"html\". Χρησιμοποιήστε \"application/xhtml+xml\" ."
 
 #: extensions/error-viewer/sgml-validator.c:243
 #, c-format
@@ -166,7 +166,22 @@ msgstr ""
 "Προειδοποίηση HTML σε %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:381
+#: extensions/error-viewer/sgml-validator.c:360
+#, fuzzy, c-format
+msgid "HTML error in %s:"
+msgstr ""
+"Σφάλα HTML σε %s:\n"
+"%s"
+
+#: extensions/error-viewer/sgml-validator.c:368
+msgid "Invalid character encoding"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:373
+msgid "Unknown error while converting to UTF-8"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:435
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -175,19 +190,19 @@ msgstr ""
 "Σφάλμα HTML σε  %s:\n"
 "Δεν καθορίστηκε έγκυρος τύπος εγγράφου."
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
-msgid "Blo_ck Popups from this Site"
-msgstr "Φρα_γή αναδυομένων από αυτή την σελίδα"
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
+msgid "Popup _Windows"
+msgstr ""
 
 #. shortcut key
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:64
-msgid "Block or unblock popup windows"
-msgstr "Φραγή ή άρση φραγής αναδυομένων παραθύρων"
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
+msgid "Show or hide unrequested popup windows from this site"
+msgstr ""
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:324
-#, c-format
-msgid "%d popup blocked"
-msgid_plural "%d popups blocked"
+#: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
+#, fuzzy, c-format
+msgid "%d popup window blocked"
+msgid_plural "%d popup windows blocked"
 msgstr[0] "έγινε φραγή %d αναδυομένου "
 msgstr[1] "έγινε φραγή %d αναδυομένων"
 
@@ -206,3 +221,8 @@ msgstr "Μετακίνηση στήλης στο παράθυρο"
 msgid "Move the current tab to a different window"
 msgstr "Μετακίνηση ρτης τρέχουσας στήλης σε ένα διαφορετικό παράθυρο"
 
+#~ msgid "Blo_ck Popups from this Site"
+#~ msgstr "Φρα_γή αναδυομένων από αυτή την σελίδα"
+
+#~ msgid "Block or unblock popup windows"
+#~ msgstr "Φραγή ή άρση φραγής αναδυομένων παραθύρων"

@@ -7,17 +7,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions 0.7\n"
-"POT-Creation-Date: 2004-03-19 19:41+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-05-31 13:15+0200\n"
 "PO-Revision-Date: 2004-03-19 23:26+0100\n"
 "Last-Translator: Francesco Marletta <francesco.marletta@tiscali.it>\n"
 "Language-Team: italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Report-Msgid-Bugs-To: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:159
+#: extensions/certificates/ephy-certificates-extension.c:160
 msgid "Certificate Manager"
 msgstr "Gestore certificati"
 
@@ -80,13 +80,6 @@ msgstr "Pu_lisci"
 msgid "Error Viewer"
 msgstr "Visualizzatore errori"
 
-#: extensions/error-viewer/link-checker.c:235
-#, c-format
-msgid "Found %d invalid link"
-msgid_plural "Found %d invalid links"
-msgstr[0] "Trovato %d collegamento non valido"
-msgstr[1] "Trovati %d collegamenti non validi"
-
 #. Don't bother looking for source lines -- they're not there
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
 #, c-format
@@ -106,7 +99,14 @@ msgstr ""
 "Errore Javascript in %s alla riga %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:77
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "Trovato %d collegamento non valido"
+msgstr[1] "Trovati %d collegamenti non validi"
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -115,7 +115,7 @@ msgstr ""
 "Errore di collegamento in %s:\n"
 "%s non è disponibile."
 
-#: extensions/error-viewer/mozilla/mozilla-link-checker.cpp:152
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
@@ -170,7 +170,22 @@ msgstr ""
 "Avviso HTML in %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:381
+#: extensions/error-viewer/sgml-validator.c:360
+#, fuzzy, c-format
+msgid "HTML error in %s:"
+msgstr ""
+"Errore HTML in %s:\n"
+"%s"
+
+#: extensions/error-viewer/sgml-validator.c:368
+msgid "Invalid character encoding"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:373
+msgid "Unknown error while converting to UTF-8"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:435
 #, c-format
 msgid ""
 "HTML error in %s:\n"

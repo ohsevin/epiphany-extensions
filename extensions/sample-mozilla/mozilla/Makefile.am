@@ -6,6 +6,7 @@ INCLUDES = \
 	-I$(MOZILLA_INCLUDE_ROOT)/docshell		\
 	-I$(MOZILLA_INCLUDE_ROOT)/dom			\
 	-I$(MOZILLA_INCLUDE_ROOT)/xpcom			\
+	-I$(MOZILLA_INCLUDE_ROOT)			\
 	$(EPIPHANY_DEPENDENCY_CFLAGS) 			\
 	-DSHARE_DIR=\"$(pkgdatadir)\"   		\
 	-include $(MOZILLA_INCLUDE_ROOT)/mozilla-config.h

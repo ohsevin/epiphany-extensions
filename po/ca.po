@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-15 03:14+0100\n"
+"POT-Creation-Date: 2004-05-31 13:15+0200\n"
 "PO-Revision-Date: 2004-03-18 17:13+0100\n"
 "Last-Translator: Xavier Conde Rueda <xaviconde@eresmas.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n!=1;\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:159
+#: extensions/certificates/ephy-certificates-extension.c:160
 msgid "Certificate Manager"
 msgstr "Gestor de certificats"
 
@@ -56,7 +56,8 @@ msgstr "Comprova els en_llaços"
 #. shortcut key
 #: extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
-msgstr "Visualitza els hiperenllaços invàlids en el diàleg de visualització d'errors"
+msgstr ""
+"Visualitza els hiperenllaços invàlids en el diàleg de visualització d'errors"
 
 #: extensions/error-viewer/ephy-error-viewer-extension.c:101
 msgid "_Error Viewer"
@@ -74,13 +75,6 @@ msgstr "Nete_ja"
 #: extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
 msgstr "Visualitzador d'errors"
-
-#: extensions/error-viewer/link-checker.c:231
-#, c-format
-msgid "Found %d invalid link"
-msgid_plural "Found %d invalid links"
-msgstr[0] "S'ha trobat %d enllaç invàlid"
-msgstr[1] "S'han trobat %d enllaços invàlids"
 
 #. Don't bother looking for source lines -- they're not there
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
@@ -101,7 +95,14 @@ msgstr ""
 "S'ha produït un error de Javascript en %s a la línia %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:77
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "S'ha trobat %d enllaç invàlid"
+msgstr[1] "S'han trobat %d enllaços invàlids"
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -110,7 +111,7 @@ msgstr ""
 "S'ha produït un error en l'enllaç %s:\n"
 "%s no està disponible."
 
-#: extensions/error-viewer/mozilla/mozilla-link-checker.cpp:174
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
@@ -153,8 +154,8 @@ msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
 msgstr ""
-"El tipus de document és \"XHTML\" però el tipus de contingut és \"text/html\". "
-"Heu de fer servir \"application/xhtml+xml\"."
+"El tipus de document és \"XHTML\" però el tipus de contingut és \"text/html"
+"\". Heu de fer servir \"application/xhtml+xml\"."
 
 #: extensions/error-viewer/sgml-validator.c:243
 #, c-format
@@ -165,7 +166,22 @@ msgstr ""
 "S'ha produït una avís HTML a %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:381
+#: extensions/error-viewer/sgml-validator.c:360
+#, fuzzy, c-format
+msgid "HTML error in %s:"
+msgstr ""
+"S'ha produït un error d'HTML a %s:\n"
+"%s"
+
+#: extensions/error-viewer/sgml-validator.c:368
+msgid "Invalid character encoding"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:373
+msgid "Unknown error while converting to UTF-8"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:435
 #, c-format
 msgid ""
 "HTML error in %s:\n"

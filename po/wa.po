@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-04-02 14:21+0200\n"
+"POT-Creation-Date: 2004-05-31 13:15+0200\n"
 "PO-Revision-Date: 2004-04-02 17:38+0200\n"
 "Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: KBabel 1.0.2\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:159
+#: extensions/certificates/ephy-certificates-extension.c:160
 msgid "Certificate Manager"
 msgstr "Manaedjeu d' acertineures"
 
@@ -76,13 +76,6 @@ msgstr "_Netyî"
 msgid "Error Viewer"
 msgstr "Håyneu d' arokes"
 
-#: extensions/error-viewer/link-checker.c:235
-#, c-format
-msgid "Found %d invalid link"
-msgid_plural "Found %d invalid links"
-msgstr[0] "Trové %d loyén nén valide"
-msgstr[1] "Trové %d loyéns nén valides"
-
 #. Don't bother looking for source lines -- they're not there
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
 #, c-format
@@ -102,7 +95,14 @@ msgstr ""
 "Aroke Javascript dins %s el roye %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:77
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "Trové %d loyén nén valide"
+msgstr[1] "Trové %d loyéns nén valides"
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -111,7 +111,7 @@ msgstr ""
 "Aroke di loyén dins %s:\n"
 "%s n' est nén disponibe."
 
-#: extensions/error-viewer/mozilla/mozilla-link-checker.cpp:152
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
@@ -153,7 +153,9 @@ msgstr ""
 msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
-msgstr "Li sôre di documint est «XHTML» mins li sôre di contnou est «text/html».  Eployîz purade «application/xhtml+xml»."
+msgstr ""
+"Li sôre di documint est «XHTML» mins li sôre di contnou est «text/html».  "
+"Eployîz purade «application/xhtml+xml»."
 
 #: extensions/error-viewer/sgml-validator.c:243
 #, c-format
@@ -164,7 +166,22 @@ msgstr ""
 "Adviertixhmint HTML dins %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:381
+#: extensions/error-viewer/sgml-validator.c:360
+#, fuzzy, c-format
+msgid "HTML error in %s:"
+msgstr ""
+"Aroke HTML dins %s:\n"
+"%s"
+
+#: extensions/error-viewer/sgml-validator.c:368
+msgid "Invalid character encoding"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:373
+msgid "Unknown error while converting to UTF-8"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:435
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -180,7 +197,8 @@ msgstr "Aspitants _purneas"
 #. shortcut key
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
 msgid "Show or hide unrequested popup windows from this site"
-msgstr "Mostrer ou catchî les aspitants purneas nén dmandés vnant di cisse waibe ci"
+msgstr ""
+"Mostrer ou catchî les aspitants purneas nén dmandés vnant di cisse waibe ci"
 
 #: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
 #, c-format
@@ -203,4 +221,3 @@ msgstr "Bodjî l' linwete viè on purnea"
 #: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
 msgstr "Bodjî l' linwete do moumint viè èn ôte purnea"
-

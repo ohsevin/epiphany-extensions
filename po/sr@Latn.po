@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-01 17:49+0100\n"
+"POT-Creation-Date: 2004-05-31 13:15+0200\n"
 "PO-Revision-Date: 2004-03-01 17:49+0100\n"
 "Last-Translator: Danilo Šegan <danilo@prevod.org>\n"
 "Language-Team: Serbian (sr) <serbiangnome-lista@nongnu.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=3;    plural=n%10==1 && n%100!=11 ? 0 :    n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:159
+#: extensions/certificates/ephy-certificates-extension.c:160
 msgid "Certificate Manager"
 msgstr "Upravljač sertifikatima"
 
@@ -78,14 +78,6 @@ msgstr "_Očisti"
 msgid "Error Viewer"
 msgstr "Pregled grešaka"
 
-#: extensions/error-viewer/link-checker.c:231
-#, c-format
-msgid "Found %d invalid link"
-msgid_plural "Found %d invalid links"
-msgstr[0] "Nađoh %d neispravnu vezu"
-msgstr[1] "Nađoh %d neispravne veze"
-msgstr[2] "Nađoh %d neispravnih veza"
-
 #. Don't bother looking for source lines -- they're not there
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
 #, c-format
@@ -105,7 +97,15 @@ msgstr ""
 "Greška u JavaSkriptu u %s, u %d. redu:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:77
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "Nađoh %d neispravnu vezu"
+msgstr[1] "Nađoh %d neispravne veze"
+msgstr[2] "Nađoh %d neispravnih veza"
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -114,7 +114,7 @@ msgstr ""
 "Greška u vezi u  %s:\n"
 "%s je nedostupno."
 
-#: extensions/error-viewer/mozilla/mozilla-link-checker.cpp:174
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
@@ -171,7 +171,22 @@ msgstr ""
 "Upozorenje za HTML u %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:381
+#: extensions/error-viewer/sgml-validator.c:360
+#, fuzzy, c-format
+msgid "HTML error in %s:"
+msgstr ""
+"Greška u HTML-u u %s:\n"
+"%s"
+
+#: extensions/error-viewer/sgml-validator.c:368
+msgid "Invalid character encoding"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:373
+msgid "Unknown error while converting to UTF-8"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:435
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -180,19 +195,19 @@ msgstr ""
 "HTML greška u %s:\n"
 "Nije navedena ispravna vrsta dokumenta."
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
-msgid "Blo_ck Popups from this Site"
-msgstr "Zabrani _iskačuće prozore sa ove stranice"
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
+msgid "Popup _Windows"
+msgstr ""
 
 #. shortcut key
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:64
-msgid "Block or unblock popup windows"
-msgstr "Zabrani ili dopusti iskačuće prozore"
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
+msgid "Show or hide unrequested popup windows from this site"
+msgstr ""
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:324
-#, c-format
-msgid "%d popup blocked"
-msgid_plural "%d popups blocked"
+#: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
+#, fuzzy, c-format
+msgid "%d popup window blocked"
+msgid_plural "%d popup windows blocked"
 msgstr[0] "Zabranjen %d iskačući prozor"
 msgstr[1] "Zabranjena %d iskačuća prozora"
 msgstr[2] "Zabranjeno %d iskačućih prozora"
@@ -212,6 +227,12 @@ msgstr "Premesti list u prozor"
 #: extensions/tabsmenu/ephy-tab-move-menu.c:283
 msgid "Move the current tab to a different window"
 msgstr "Premesti tekući list u drugi prozor"
+
+#~ msgid "Blo_ck Popups from this Site"
+#~ msgstr "Zabrani _iskačuće prozore sa ove stranice"
+
+#~ msgid "Block or unblock popup windows"
+#~ msgstr "Zabrani ili dopusti iskačuće prozore"
 
 #~ msgid "_Validate"
 #~ msgstr "_Proveri"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-05-22 19:18+0200\n"
+"POT-Creation-Date: 2004-05-31 13:15+0200\n"
 "PO-Revision-Date: 2004-05-23 04:29+0800\n"
 "Last-Translator: Liu Songhe <jackliu9999@263.net>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -164,8 +164,7 @@ msgstr ""
 #: extensions/error-viewer/sgml-validator.c:360
 #, c-format
 msgid "HTML error in %s:"
-msgstr ""
-"%s 的 HTML 错误："
+msgstr "%s 的 HTML 错误："
 
 #: extensions/error-viewer/sgml-validator.c:368
 msgid "Invalid character encoding"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-06 16:53+0100\n"
+"POT-Creation-Date: 2004-05-31 13:15+0200\n"
 "PO-Revision-Date: 2004-03-06 17:02+0100\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: Albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:159
+#: extensions/certificates/ephy-certificates-extension.c:160
 msgid "Certificate Manager"
 msgstr "Organizuesi i çertifikatave"
 
@@ -56,7 +56,8 @@ msgstr "Kontrollo _Lidhjet"
 #. shortcut key
 #: extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
-msgstr "Shfaq lidhjet e pavlefshme tek dritarja e dialogut të Shikuesit të Gabimeve"
+msgstr ""
+"Shfaq lidhjet e pavlefshme tek dritarja e dialogut të Shikuesit të Gabimeve"
 
 #: extensions/error-viewer/ephy-error-viewer-extension.c:101
 msgid "_Error Viewer"
@@ -74,13 +75,6 @@ msgstr "P_astro"
 #: extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
 msgstr "Shikuesi i Gabimeve"
-
-#: extensions/error-viewer/link-checker.c:231
-#, c-format
-msgid "Found %d invalid link"
-msgid_plural "Found %d invalid links"
-msgstr[0] "U gjet %d lidhje e pavlefshme"
-msgstr[1] "U gjetën %d lidhje të pavlefshme"
 
 #. Don't bother looking for source lines -- they're not there
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
@@ -101,7 +95,14 @@ msgstr ""
 "Gabim Javascript tek %s në rreshtin %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:77
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "U gjet %d lidhje e pavlefshme"
+msgstr[1] "U gjetën %d lidhje të pavlefshme"
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -110,7 +111,7 @@ msgstr ""
 "Lidhje e gabuar tek %s:\n"
 "%s nuk përgjigjet."
 
-#: extensions/error-viewer/mozilla/mozilla-link-checker.cpp:174
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
@@ -153,8 +154,8 @@ msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
 msgstr ""
-"Lloji i dokumentit është \"XHTML\" por lloji i përmbajtjes është \"text/html\".  "
-"Përdor \"application/xhtml+xml\" në vend të tij."
+"Lloji i dokumentit është \"XHTML\" por lloji i përmbajtjes është \"text/html"
+"\".  Përdor \"application/xhtml+xml\" në vend të tij."
 
 #: extensions/error-viewer/sgml-validator.c:243
 #, c-format
@@ -165,7 +166,22 @@ msgstr ""
 "Paralajmërime HTML tek %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:381
+#: extensions/error-viewer/sgml-validator.c:360
+#, fuzzy, c-format
+msgid "HTML error in %s:"
+msgstr ""
+"Gabim HTML tek %s:\n"
+"%s"
+
+#: extensions/error-viewer/sgml-validator.c:368
+msgid "Invalid character encoding"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:373
+msgid "Unknown error while converting to UTF-8"
+msgstr ""
+
+#: extensions/error-viewer/sgml-validator.c:435
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -175,13 +191,20 @@ msgstr ""
 "Nuk është specifikuar asnjë lloj i vlefshëm dokumenti."
 
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
-msgid "Blo_ck Popups from this Site"
-msgstr "Bllo_ko Popups nga ky sit"
+msgid "Popup _Windows"
+msgstr ""
 
 #. shortcut key
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
-msgid "Block or unblock popup windows"
-msgstr "Blloko ose ç'blloko dritaret popup"
+msgid "Show or hide unrequested popup windows from this site"
+msgstr ""
+
+#: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
+#, c-format
+msgid "%d popup window blocked"
+msgid_plural "%d popup windows blocked"
+msgstr[0] ""
+msgstr[1] ""
 
 #: extensions/tabsmenu/ephy-tab-move-menu.c:183
 #, c-format
@@ -198,3 +221,8 @@ msgstr "Lëviz skedën tek dritarja"
 msgid "Move the current tab to a different window"
 msgstr "Lëviz skedën aktuale në një dritare tjetër"
 
+#~ msgid "Blo_ck Popups from this Site"
+#~ msgstr "Bllo_ko Popups nga ky sit"
+
+#~ msgid "Block or unblock popup windows"
+#~ msgstr "Blloko ose ç'blloko dritaret popup"
