@@ -1,3 +1,11 @@
+2005-03-21  Christian Persch  <chpe@cvs.gnome.org>
+
+        * extensions/page-info/page-info-dialog.c: (page_info_dialog_new):
+        * extensions/page-info/page-info.glade:
+		
+        Set the default size from code, not from glade. Fixes size persistence
+        of the page info dialogue.
+
 2005-03-20  Christian Persch  <chpe@cvs.gnome.org>
 
         * configure.ac:
