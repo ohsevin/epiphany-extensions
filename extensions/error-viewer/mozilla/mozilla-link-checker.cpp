@@ -118,8 +118,7 @@ mozilla_check_links (LinkChecker *checker,
 	
 	nsCOMPtr<ErrorViewerURICheckerObserver> observer = do_CreateInstance
 		(G_ERRORVIEWERURICHECKEROBSERVER_CONTRACTID);
-	observer->mChecker = G_OBJECT (checker);
-	observer->mFilename = ephy_embed_get_location (embed, FALSE);
+	observer->Init (checker, ephy_embed_get_location (embed, FALSE));
 
 	nsCOMPtr<nsIWebBrowser> browser;
 	gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (embed),
@@ -144,21 +143,27 @@ mozilla_check_links (LinkChecker *checker,
 
 	links->GetLength (&observer->mNumLinksTotal);
 
-	char *msg;
-	
-	if (observer->mNumLinksTotal > 0)
+	if (observer->mNumLinksTotal == 0)
 	{
-		msg = g_strdup_printf
-			(ngettext("Checking %d Link on %s",
-				  "Checking %d Links on %s",
-				  observer->mNumLinksTotal),
-			 observer->mNumLinksTotal, observer->mFilename);
-	}
-	else
-	{
+		char *msg;
+
 		msg = g_strdup_printf ("No links to check on %s",
 				       observer->mFilename);
+
+		link_checker_append (checker, ERROR_VIEWER_INFO, msg);
+
+		g_free (msg);
+
+		return;
 	}
+
+	char *msg;
+	
+	msg = g_strdup_printf
+		(ngettext("Checking %d Link on %s",
+			  "Checking %d Links on %s",
+			  observer->mNumLinksTotal),
+		 observer->mNumLinksTotal, observer->mFilename);
 
 	link_checker_append (checker, ERROR_VIEWER_INFO, msg);
 
@@ -166,8 +171,6 @@ mozilla_check_links (LinkChecker *checker,
 
 	link_checker_update_progress (checker, observer->mFilename,
 				      0, 0, observer->mNumLinksTotal);
-
-	if (observer->mNumLinksTotal == 0) return;
 
 	for (PRUint32 i = 0; i < observer->mNumLinksTotal; i++)
 	{
@@ -179,6 +182,7 @@ mozilla_check_links (LinkChecker *checker,
 		anchor = do_QueryInterface (node, &rv);
 		if (NS_FAILED (rv))
 		{
+			g_warning ("Cannot check <area> tag: assumed valid");
 			observer->mNumLinksChecked++;
 			continue;
 		}
@@ -187,7 +191,9 @@ mozilla_check_links (LinkChecker *checker,
 		rv = anchor->GetHref (href);
 		if (NS_FAILED (rv))
 		{
+			g_warning ("Could not retrieve link's href attribute");
 			observer->mNumLinksChecked++;
+			observer->mNumLinksInvalid++;
 			continue;
 		}
 
@@ -196,7 +202,10 @@ mozilla_check_links (LinkChecker *checker,
 				NS_ConvertUCS2toUTF8 (href));
 		if (NS_FAILED (rv))
 		{
+			g_warning ("Could not retrieve uri from href %s",
+				   NS_ConvertUCS2toUTF8 (href).get ());
 			observer->mNumLinksChecked++;
+			observer->mNumLinksInvalid++;
 			continue;
 		}
 
@@ -209,6 +218,7 @@ mozilla_check_links (LinkChecker *checker,
 			g_warning ("Couldn't init with URI pointed to %s",
 				   NS_ConvertUCS2toUTF8 (href).get ());
 			observer->mNumLinksChecked++;
+			observer->mNumLinksInvalid++;
 			continue;
 		}
 

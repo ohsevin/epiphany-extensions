@@ -22,7 +22,6 @@
 #include "config.h"
 #endif
 
-#include "error-viewer.h"
 #include "link-checker.h"
 
 #include "ErrorViewerURICheckerObserver.h"
@@ -49,6 +48,21 @@ ErrorViewerURICheckerObserver::ErrorViewerURICheckerObserver()
 ErrorViewerURICheckerObserver::~ErrorViewerURICheckerObserver()
 {
 	  /* destructor code */
+	link_checker_unuse (mChecker);
+	g_object_unref (mChecker);
+}
+
+nsresult ErrorViewerURICheckerObserver::Init (LinkChecker *aChecker, const char *aFilename)
+{
+	g_return_val_if_fail (IS_LINK_CHECKER (aChecker), NS_ERROR_FAILURE);
+
+	mChecker = aChecker;
+	mFilename = g_strdup (aFilename);
+
+	g_object_ref (mChecker);
+	link_checker_use (mChecker);
+
+	return NS_OK;
 }
                                                                                 
 /* void onStartRequest (in nsIRequest aRequest, in nsISupports aContext); */
@@ -77,8 +91,7 @@ NS_IMETHODIMP ErrorViewerURICheckerObserver::OnStopRequest(nsIRequest *aRequest,
 			_("Link error in %s:\n%s is unavailable."),
 			mFilename, uri.get());
 
-		link_checker_append (LINK_CHECKER (mChecker),
-				     ERROR_VIEWER_ERROR, msg);
+		link_checker_append (mChecker, ERROR_VIEWER_ERROR, msg);
 
 		g_free (msg);
 
@@ -87,7 +100,7 @@ NS_IMETHODIMP ErrorViewerURICheckerObserver::OnStopRequest(nsIRequest *aRequest,
 
 	mNumLinksChecked++;
 
-	link_checker_update_progress (LINK_CHECKER (mChecker),
+	link_checker_update_progress (mChecker,
 				      mFilename, mNumLinksChecked,
 				      mNumLinksInvalid, mNumLinksTotal);
 

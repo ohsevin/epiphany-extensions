@@ -1,3 +1,21 @@
+2004-04-17  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/error-viewer/error-viewer.c: (error_viewer_use),
+	(error_viewer_unuse):
+	* extensions/error-viewer/link-checker.c: (link_checker_check),
+	(link_checker_use), (link_checker_unuse),
+	(link_checker_update_progress):
+	* extensions/error-viewer/link-checker.h:
+	* extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp
+	:
+	* extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.h:
+	* extensions/error-viewer/mozilla/mozilla-link-checker.cpp:
+
+	Fix that frickin' busy cursor bug once and for all. If the observer's
+	done the cursor will return to normal, regardless of its counter
+	(which is still wrong sometimes). Big bug: mailto: urls open up the
+	email client. Also, <area> tags will produce a g_warning.
+
 2004-04-10  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/error-viewer/mozilla/Makefile.am:

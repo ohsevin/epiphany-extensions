@@ -73,6 +73,10 @@ void		link_checker_update_progress	(LinkChecker *checker,
 						 int num_invalid,
 						 int num_total);
 
+void		link_checker_use		(LinkChecker *checker);
+
+void		link_checker_unuse		(LinkChecker *checker);
+
 G_END_DECLS
 
 #endif

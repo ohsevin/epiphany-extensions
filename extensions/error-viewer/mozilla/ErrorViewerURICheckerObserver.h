@@ -18,8 +18,9 @@
  *  $Id$
  */
 
+#include "link-checker.h"
+
 #include <nsIRequestObserver.h>
-#include <glib-object.h>
 
 /* Header file */
 class ErrorViewerURICheckerObserver : public nsIRequestObserver
@@ -32,11 +33,15 @@ public:
   virtual ~ErrorViewerURICheckerObserver();
   /* additional members */
 
-  GObject *mChecker;
+  nsresult Init (LinkChecker *aChecker, const char *aFilename);
+
   char *mFilename;
   PRUint32 mNumLinksChecked;
   PRUint32 mNumLinksInvalid;
   PRUint32 mNumLinksTotal;
+
+private:
+  LinkChecker *mChecker;
 };
 
 #define G_ERRORVIEWERURICHECKEROBSERVER_CONTRACTID "@gnome.org/projects/epiphany/epiphany-extensions/error-viewer/error-viewer-uri-checker-observer;1"
