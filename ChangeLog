@@ -1,3 +1,6 @@
+2004-06-06  Alexander Shopov <ash@contact.bg>
+	* configure.ac: Added "bg" (Bulgarian) to ALL_LINGUAS
+
 2004-05-31  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
