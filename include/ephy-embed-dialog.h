@@ -21,8 +21,8 @@
 #ifndef EPHY_EMBED_DIALOG_H
 #define EPHY_EMBED_DIALOG_H
 
-#include <epiphany/ephy-embed.h>
-#include <epiphany/ephy-dialog.h>
+#include "ephy-embed.h"
+#include "ephy-dialog.h"
 
 #include <glib-object.h>
 #include <glib.h>
