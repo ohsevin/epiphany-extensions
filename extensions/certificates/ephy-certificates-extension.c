@@ -32,6 +32,8 @@
 #include <epiphany/ephy-window.h>
 #include <epiphany/ephy-extension.h>
 #include <epiphany/ephy-embed.h>
+#include <epiphany/ephy-embed-single.h>
+#include <epiphany/ephy-embed-shell.h>
 #include <epiphany/ephy-tab.h>
 #include <epiphany/ephy-statusbar.h>
 
@@ -53,6 +55,8 @@ struct EphyCertificatesExtensionPrivate
 {
 	GtkWidget *cert_manager;
 };
+
+#define CERT_MANAGER_URL	"chrome://pippki/content/certManager.xul"
 
 static void ephy_certificates_extension_class_init	 (EphyCertificatesExtensionClass *klass);
 static void ephy_certificates_extension_iface_init	 (EphyExtensionIface *iface);
@@ -130,25 +134,11 @@ ephy_certificates_extension_finalize (GObject *object)
 }
 
 static void
-cert_manager_visibility_cb (GtkWidget *embed,
-			    gboolean visibility,
-			    GtkWidget *window)
-{
-        if (visibility)
-        {
-                gtk_widget_show (window);
-        }
-        else
-        {
-                gtk_widget_hide (window);
-        }
-}
-
-static void
 manage_certificates_cb (GtkAction *action,
 			EphyCertificatesExtension *extension)
 {
-	GtkWidget *window, *embed;
+	EphyEmbedSingle *single;
+	GtkWidget *manager, *window;
 
 	if (extension->priv->cert_manager != NULL)
 	{
@@ -156,25 +146,12 @@ manage_certificates_cb (GtkAction *action,
 		return;
 	}  
 
-	window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-	gtk_window_set_title (GTK_WINDOW (window), _("Certificate Manager"));
+	single = EPHY_EMBED_SINGLE (ephy_embed_shell_get_embed_single (embed_shell));
+	manager = ephy_embed_single_open_window (single, NULL, CERT_MANAGER_URL,
+						 "", "all,chrome");
+	g_return_if_fail (manager != NULL);
 
-	embed = GTK_WIDGET (g_object_new (g_type_from_name ("MozillaEmbed"), NULL));
-	gtk_widget_show (embed);
-	gtk_container_add (GTK_CONTAINER (window), embed);
-
-	g_signal_connect_object (embed, "destroy_browser",
-				 G_CALLBACK (gtk_widget_destroy),
-				 window, G_CONNECT_SWAPPED);
-	g_signal_connect_object (embed, "visibility",
-				 G_CALLBACK (cert_manager_visibility_cb),
-				 window, (GConnectFlags) 0);
-	g_signal_connect_after (embed, "realize",
-				G_CALLBACK (ephy_embed_load_url),
-				"chrome://pippki/content/certManager.xul");
-
-	gtk_window_set_default_size (GTK_WINDOW (window), 600, 360);
-	gtk_window_present (GTK_WINDOW (window));
+	window = gtk_widget_get_toplevel (manager);
 
 	extension->priv->cert_manager = window;
 	g_object_add_weak_pointer (G_OBJECT (extension->priv->cert_manager),
