@@ -1,2 +1,5 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
+plugins/tabsmenu/ephy-tabs-plugin-menu.c
+plugins/tabsmenu/ephy-window-action.c
+

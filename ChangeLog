@@ -1,4 +1,11 @@
-2003-08-03  Christian Persch  <chpe@cvs.gnome.org>
+2003-08-04  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.in:
+
+	Enabled gettext support, added "de" and "en_GB" translations
+	to ALL_LINGUAS.
+
+2003-08-04  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.in:
 
