@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-09 11:08-0400\n"
-"PO-Revision-Date: 2004-10-09 16:10-0400\n"
+"POT-Creation-Date: 2004-10-22 16:20-0400\n"
+"PO-Revision-Date: 2004-10-22 16:10-0400\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: English/Canada <adamw@FreeBSD.org>\n"
 "MIME-Version: 1.0\n"
@@ -184,6 +184,57 @@ msgstr ""
 "HTML error in %s:\n"
 "No valid doctype specified."
 
+#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+msgid "_Extensions"
+msgstr "_Extensions"
+
+#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
+msgid "Load and unload extensions"
+msgstr "Load and unload extensions"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:218
+msgid "Author:"
+msgid_plural "Authors:"
+msgstr[0] "Author:"
+msgstr[1] "Authors:"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:397
+msgid "Enabled"
+msgstr "Enabled"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:404
+msgid "Description"
+msgstr "Description"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+msgid "<b>Loaded Extensions</b>"
+msgstr "<b>Loaded Extensions</b>"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+#: extensions/page-info/page-info.glade.h:9
+msgid "DYNAMIC"
+msgstr "DYNAMIC"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:3
+msgid "Description:"
+msgstr "Description:"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:4
+msgid "Extension Information"
+msgstr "Extension Information"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:5
+msgid "Extensions"
+msgstr "Extensions"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:6
+msgid "Name:"
+msgstr "Name:"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:7
+msgid "URL:"
+msgstr "URL:"
+
 #: extensions/page-info/ephy-page-info-extension.c:65
 msgid "_Page Info"
 msgstr "_Page Info"
@@ -336,10 +387,6 @@ msgstr "<b>Source File</b>"
 msgid "<b>Web Page</b>"
 msgstr "<b>Web Page</b>"
 
-#: extensions/page-info/page-info.glade.h:9
-msgid "DYNAMIC"
-msgstr "DYNAMIC"
-
 #: extensions/page-info/page-info.glade.h:10
 msgid "Encoding:"
 msgstr "Encoding:"
@@ -458,20 +505,20 @@ msgstr "The source to the new sidebar page is:"
 msgid "No Sidebars installed"
 msgstr "No Sidebars installed"
 
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:547
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:553
 msgid "_Look Up"
 msgstr "_Look Up"
 
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:554
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:560
 msgid "_GNOME Dictionary"
 msgstr "_GNOME Dictionary"
 
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:561
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:567
 msgid "Loo_k-Up Preferences"
 msgstr "Loo_k-Up Preferences"
 
 #. shortcut key
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:563
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:569
 msgid "Look up your selection"
 msgstr "Look up your selection"
 
