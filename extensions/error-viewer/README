@@ -1,11 +1,14 @@
-The goal for this extension is to be part of the Web Development extension, which will contain plenty of CSS and page information goodies. In the meantime, enjoy.
+The goal for this extension is to be part of the (as-yet nonexistent) Web
+Development extension, which will contain plenty of CSS and page information
+goodies. In the meantime, enjoy.
 
-To get HTML validation support, install libosp-dev and
-w3c-dtd-xhtml if on Debian, or their equivalents on other
-systems. I don't know what those *are*, but libosp-dev has the
-OpenSP includes (and libraries are part of libosp1, which is a
-dependency) and w3c-dtd-xhtml is a package of DTD's for XHTML.
-Without OpenSP installed, the error viewer will simply not
-contain that functionality (which is darned cool).
-This also requires Epiphany newer than Jan 25 2004, because it
-adds an entry to the Tools menu.
+For HTML validation support, you will need:
+- OpenSP development libraries (libosp4 on Debian)
+- (to compile) OpenSP development headers (libosp-dev on Debian)
+- DTD's for the documents you want to validate
+  (sgml-data and w3c-dtd-xhtml on Debian)
+
+If you don't have OpenSP installed, Javascript errors will still be displayed.
+
+Epiphany must be newer than Jan 25, 2004.
+GTK+ must be newer than Jan 30, 2004.
