@@ -84,16 +84,16 @@ ephy_tab_grouper_register_type (GTypeModule *module)
 /**
  * Clear the recently opened tab spot.
  */
-static void
+static gboolean
 reset_last_tab (EphyTabGrouper *grouper)
 {
-	g_return_if_fail (EPHY_IS_TAB_GROUPER (grouper));
-	
 	if (grouper->priv->last_opened_tab != NULL)
 	{
 		g_object_unref (grouper->priv->last_opened_tab);
 		grouper->priv->last_opened_tab = NULL;
 	}
+
+	return FALSE;
 }
 
 static void
