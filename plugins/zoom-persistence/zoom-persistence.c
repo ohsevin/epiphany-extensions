@@ -312,11 +312,11 @@ zoom_cb (EphyTab *tab, GParamSpec *pspec, EphyEmbed *embed)
 }
 
 static void
-set_zoom (EphyTab *tab, const char *address, gboolean reflow)
+address_cb (EphyEmbed *embed, const char *address, EphyTab *tab)
 {
-	EphyEmbed *embed;
 	EphyNode *host;
 	float zoom, current_zoom;
+	gboolean reflow = FALSE;
 	gresult rv;
 
 	g_return_if_fail (address != NULL);
@@ -326,7 +326,7 @@ set_zoom (EphyTab *tab, const char *address, gboolean reflow)
 	rv = ephy_embed_zoom_get (embed, &current_zoom);
 	if (rv != G_OK) 
 	{
-		LOG ("embed_zoom_get failed, tab %p embed %p", tab, embed);
+		LOG ("embed_zoom_get failed, tab %p embed %p", tab, embed)
 		return;
 	}
 
@@ -350,33 +350,10 @@ set_zoom (EphyTab *tab, const char *address, gboolean reflow)
 
 	if (zoom != current_zoom)
 	{
-		ephy_embed_zoom_set (embed, zoom, reflow);
+		rv = ephy_embed_zoom_set (embed, zoom, reflow);
+
+		LOG ("setting zoom %s", rv == G_OK ? "succeeded" : "FAILED!")
 	}
-}
-
-static void
-net_state_cb (EphyEmbed *embed, const char *uri, EmbedState state, EphyTab *tab)
-{
-	LOG ("net_state_cb tab %p embed %p state 0x%x uri '%s'",
-		 tab, embed, state, uri)
-
-	if ((uri && strcmp (uri, "about:layout-dummy-request") &&
-	    (state & EMBED_STATE_STOP)) ||
-	    state == (EMBED_STATE_IS_NETWORK | EMBED_STATE_STOP))
-	{
-		const char *address;
-
-		g_signal_handlers_disconnect_by_func (embed, G_CALLBACK (net_state_cb), tab);
-
-		address = ephy_tab_get_location (tab);
-		set_zoom (tab, address, TRUE);
-	}
-}
-
-static void
-address_cb (EphyEmbed *embed, const char *address, EphyTab *tab)
-{
-	set_zoom (tab, address, FALSE);
 }
 
 static void
@@ -392,19 +369,6 @@ tab_added_cb (GtkWidget *notebook, GtkWidget *embed)
 			  G_CALLBACK (zoom_cb), embed);
 	g_signal_connect (G_OBJECT (embed), "ge_location",
 			  G_CALLBACK (address_cb), tab);
-
-	/**
-	 * work around an ephy/mozilla bug where we cannot set the zoom of a
-	 * newly opened tab
-	 */
-	is_tagged = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (tab), TAB_TAG));
-	if (is_tagged == FALSE)
-	{
-		g_signal_connect (G_OBJECT (embed), "ge_net_state",
-				  G_CALLBACK (net_state_cb), tab);
-
-		g_object_set_data (G_OBJECT (tab), TAB_TAG, GINT_TO_POINTER (TRUE));
-	}
 }
 
 static void

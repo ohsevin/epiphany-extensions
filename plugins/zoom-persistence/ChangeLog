@@ -1,3 +1,9 @@
+2003-10-27  Christian Persch  <chpe@cvs.gnome.org>
+
+	* zoom-persistence.c: (address_cb), (tab_added_cb):
+
+	Get rid of the dirty hacks, epiphany now works flawlessly.
+
 2003-09-04  Christian Persch  <chpe@cvs.gnome.org>
 
 	* zoom-persistence.c: (tab_added_cb), (tab_removed_cb),
