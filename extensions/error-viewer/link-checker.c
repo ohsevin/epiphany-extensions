@@ -111,10 +111,11 @@ free_link_checker_append_cb_data (gpointer data)
 static gboolean
 link_checker_append_internal (gpointer data)
 {
+	LinkCheckerAppendCBData *append_data;
+
 	g_return_if_fail (data != NULL);
 
-	LinkCheckerAppendCBData *append_data =
-		(LinkCheckerAppendCBData *) data;
+	append_data = (LinkCheckerAppendCBData *) data;
 
 	g_return_if_fail (IS_LINK_CHECKER (append_data->checker));
 	g_return_if_fail (IS_ERROR_VIEWER
