@@ -326,6 +326,7 @@ extensions/error-viewer/Makefile
 extensions/error-viewer/mozilla/Makefile
 extensions/error-viewer/opensp/Makefile
 extensions/popup-blocker/Makefile
+extensions/popup-blocker/mozilla/Makefile
 extensions/sample/Makefile
 extensions/sample-mozilla/Makefile
 extensions/sample-mozilla/mozilla/Makefile

@@ -1,3 +1,43 @@
+2004-03-05  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/popup-blocker/Makefile.am:
+	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
+	(get_window_for_embed), (get_icon_for_embed), (location_cb),
+	(ephy_popup_blocker_extension_block), (create_statusbar_icon),
+	(unregister_mozilla), (register_mozilla), (tab_added_cb),
+	(tab_removed_cb), (switch_page_cb), (impl_attach_window),
+	(impl_detach_window):
+	* extensions/popup-blocker/ephy-popup-blocker-extension.h:
+	* extensions/popup-blocker/ephy-popup-blocker-icon.c:
+	(ephy_popup_blocker_icon_get_type),
+	(ephy_popup_blocker_icon_register_type),
+	(ephy_popup_blocker_icon_new), (create_ui),
+	(ephy_popup_blocker_icon_init), (ephy_popup_blocker_icon_finalize),
+	(ephy_popup_blocker_icon_class_init), (update_ui),
+	(ephy_popup_blocker_icon_set_popups):
+	* extensions/popup-blocker/ephy-popup-blocker-icon.h:
+	* extensions/popup-blocker/ephy-popup-blocker-popup.c:
+	(ephy_popup_blocker_popup_get_type),
+	(ephy_popup_blocker_popup_register_type),
+	(ephy_popup_blocker_popup_new), (ephy_popup_blocker_popup_get_url),
+	(ephy_popup_blocker_popup_get_features),
+	(ephy_popup_blocker_popup_init),
+	(ephy_popup_blocker_popup_finalize),
+	(ephy_popup_blocker_popup_class_init):
+	* extensions/popup-blocker/ephy-popup-blocker-popup.h:
+	* extensions/popup-blocker/mozilla/Makefile.am:
+	* extensions/popup-blocker/mozilla/PopupBlockerListener.cpp:
+	* extensions/popup-blocker/mozilla/PopupBlockerListener.h:
+	* extensions/popup-blocker/mozilla/mozilla-helpers.cpp:
+	* extensions/popup-blocker/mozilla/mozilla-helpers.h:
+	* extensions/popup-blocker/popup-blocker.c: (register_module):
+	* extensions/popup-blocker/popup-blocker.svg:
+
+	Make the "popup blocked" notification into an icon, with a tooltip.  It
+	stores the data necessary to open the window, but there's no UI to do
+	that just yet.
+
 2004-03-04  Kostas Papadimas <pkst@gnome.org>
 
         * configure.ac: Added "el" (Greek) to ALL_LINGUAS.

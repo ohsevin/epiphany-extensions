@@ -21,6 +21,9 @@
  */
 
 #include "ephy-popup-blocker-extension.h"
+#include "ephy-popup-blocker-icon.h"
+#include "ephy-popup-blocker-popup.h"
+
 #include "ephy-debug.h"
 
 #include <gmodule.h>
@@ -36,6 +39,9 @@ register_module (GTypeModule *module)
 	bindtextdomain (GETTEXT_PACKAGE, EPHY_EXTENSIONS_LOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 #endif /* ENABLE_NLS */
+
+	ephy_popup_blocker_icon_register_type (module);
+	ephy_popup_blocker_popup_register_type (module);
 
 	return ephy_popup_blocker_extension_register_type (module);
 }

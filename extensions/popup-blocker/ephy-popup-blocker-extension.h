@@ -26,6 +26,8 @@
 #include <glib.h>
 #include <glib-object.h>
 
+#include <epiphany/ephy-embed.h>
+
 G_BEGIN_DECLS
 
 #define EPHY_TYPE_POPUP_BLOCKER_EXTENSION (ephy_popup_blocker_extension_get_type ())
@@ -54,6 +56,10 @@ struct EphyPopupBlockerExtension
 GType	ephy_popup_blocker_extension_get_type		(void);
 
 GType	ephy_popup_blocker_extension_register_type	(GTypeModule *module);
+
+void	ephy_popup_blocker_extension_block		(EphyEmbed *embed,
+							 const char *uri,
+							 const char *features);
 
 G_END_DECLS
 
