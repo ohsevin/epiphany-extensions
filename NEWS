@@ -1,4 +1,44 @@
 ==========================
+Epiphany Extensions 0.8.0
+==========================
+
+New features
+	* Popup blocker icon in statusbar (Adam)
+	* Show/hide popup windows from View menu (Adam)
+	* Link checker in error viewer window (Adam)
+	* Certificate viewer for SSL connections (Christian)
+	* Access mozilla's XUL Certificate Manager (Christian)
+	
+Code changes
+	* Adapt to Epiphany API changes (Christian)
+	* Enable compilation with mozilla < 1.7a (Adam)
+	
+Bug fixes
+	* Remove timeout from link checker (Adam)
+	* Persist position of error viewer window (Adam)
+	* Remember popup locations (Adam)
+
+ranslations
+	* Amanpreet Singh Alam (pa)
+	* Christian Neumair (de)
+	* Christian Rose (sv)
+	* Duarte Loreto (pt)
+	* Estêvão Samuel Procópio (pt_BR)
+	* Francisco Javier F. Serrador (es)
+	* Funda Wang (zh_CN)
+	* Kjartan Maraas (no)
+	* Kostas Papadimas (el)
+	* ? (hr)
+	* Laszlo Dvornik (hu)
+	* Laurent Dhima (sq)
+	* Miloslav Trmac (cs)
+	* Reinout van Schouwen (nl)
+	* Xavier Conde Rueda (ca)
+	* Yukihiro Nakai (ja)
+	* Žygimantas Beručka (lt)
+	* Данило Шеган (sr)
+
+==========================
 Epiphany Extensions 0.7.91
 ==========================
 
