@@ -1,0 +1,4 @@
+Problem, as demonstrated by the zoom persistence plugin:
+
+There is plugin A. Later, epiphany itself gains the functionality of A or sth.
+conflicting with it; therefore it must now stop loading A. How to do this?
