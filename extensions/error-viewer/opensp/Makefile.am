@@ -1,6 +1,7 @@
 INCLUDES = \
 	-I..					\
 	-I$(top_srcdir)/include			\
+	-I$(top_srcdir)/extensions/error-viewer	\
 	$(EPIPHANY_DEPENDENCY_CFLAGS)		\
 	-DSHARE_DIR=\"$(pkgdatadir)\"		\
 	-include $(MOZILLA_INCLUDE_ROOT)/mozilla-config.h

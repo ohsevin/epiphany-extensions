@@ -7,7 +7,9 @@ endif
 extensiondir = $(libdir)/epiphany/extensions
 
 INCLUDES = \
-	-Imozilla						\
+	-I$(top_srcdir)/extensions/error-viewer/mozilla		\
+	-I$(top_srcdir)/extensions/error-viewer/opensp		\
+	-I$(top_srcdir)/extensions/error-viewer			\
 	-I$(top_srcdir)/include					\
 	$(EPIPHANY_DEPENDENCY_CFLAGS)				\
 	-DSHARE_DIR=\"$(pkgdatadir)\"				\
