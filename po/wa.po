@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-04-01 02:52+0200\n"
-"PO-Revision-Date: 2005-04-01 09:51+0200\n"
+"PO-Revision-Date: 2005-04-01 09:59+0200\n"
 "Last-Translator: Pablo Saratxaga <pablo@walon.org>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
 "MIME-Version: 1.0\n"
@@ -42,15 +42,15 @@ msgstr ""
 
 #: extensions/actions/action-properties.glade.h:5
 msgid "The action description."
-msgstr "Li discrijhaedje id l' accion."
+msgstr "Li discrijhaedje di l' accion."
 
 #: extensions/actions/action-properties.glade.h:6
 msgid ""
 "The action name. If a character is preceded by an underscore, that character "
 "will be used as the access key for the menu item."
 msgstr ""
-"Li no d' l' accin. S' i gn a on sene sorlignî pa dvant ene lete, ele serè "
-"defineye come tape-rascourit po l' intrêye do menu."
+"Li no d' l' accion. S' i gn a on sene sorlignî pa dvant ene lete, ele serè "
+"defineye come tape-rascourti po l' intrêye do menu."
 
 #: extensions/actions/action-properties.glade.h:7
 msgid ""
@@ -455,7 +455,7 @@ msgstr "Trover"
 #: extensions/find/find.xml.in.in.h:2
 msgid "Replace the find dialog with a find toolbar"
 msgstr ""
-"Replaecî l' prunea «trover» avou ene intrêye «trover» el bård ås usteyes"
+"Replaecî l' purnea «trover» avou ene intrêye «trover» el bår ås usteyes"
 
 #: extensions/gestures/gestures.xml.in.in.h:1
 msgid "Gestures"
@@ -603,7 +603,7 @@ msgstr "Lårdjeu"
 
 #: extensions/page-info/page-info-dialog.c:1310
 msgid "Height"
-msgstr "Hôteu"
+msgstr "Hôteur"
 
 #: extensions/page-info/page-info-dialog.c:1509
 msgid "Relation"
@@ -770,7 +770,7 @@ msgstr "Informåcion sol pådje"
 
 #: extensions/sample-mozilla/sample-mozilla.xml.in.in.h:1
 msgid "A sample extension with mozilla backend"
-msgstr "Ene fonccion d' rawete d' egzimpe eployant l' mozilla"
+msgstr "Ene fonccion d' rawete d' egzimpe eployant l' Mozilla"
 
 #: extensions/sample-mozilla/sample-mozilla.xml.in.in.h:2
 msgid "Sample (Mozilla)"

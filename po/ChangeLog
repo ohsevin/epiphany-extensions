@@ -1,6 +1,10 @@
 NOTE: Please also update the translations on "gnome-2-10" branch,
 NOTE: and keep this note at the top of this file.
 	
+2005-04-201 Pablo Saratxaga  <pablo@mandrakesoft.com>
+
+	* wa.po: Updated Walloon file
+
 2005-03-27  Francisco Javier F. Serrador  <serrador@cvs.gnome.org>
 
 	* es.po: Updated Spanish translation.
