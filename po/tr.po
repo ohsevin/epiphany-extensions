@@ -1,44 +1,53 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Gnome 2.6 Turkish translation
+# This file is distributed under the same license as the GNOME package.
+# Onur Can CAKMAK <onur@uzem.itu.edu.tr>, 2004.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-01-30 14:28+0100\n"
-"PO-Revision-Date: 2004-01-30 14:28+0100\n"
-"Last-Translator: GC <gorkem@gorkemcetin.com>\n"
+"POT-Creation-Date: 2004-02-08 14:22+0100\n"
+"PO-Revision-Date: 2004-02-08 21:55+0200\n"
+"Last-Translator: Onur Can ÇAKMAK <onur@uzem.itu.edu.tr>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:80
+#  stock icon
+#: extensions/certificates/ephy-certificates-extension.c:214
+msgid "Server _Certificate"
+msgstr "Sunucu _Serifikası"
+
+#  shortcut key
+#: extensions/certificates/ephy-certificates-extension.c:216
+msgid "Display the web server's certificate"
+msgstr "Web sunucusunun sertifikasını görüntüle"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:83
 msgid "_Validate"
-msgstr ""
+msgstr "_Geçerliliğini Denele"
 
-#. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:82
+#  shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:85
 msgid "Display HTML errors in the Error Viewer dialog"
-msgstr ""
+msgstr "HTML hatalarını Hata Görüntüleyici diyaloğunda göster."
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:87
+#: extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "_Error Viewer"
-msgstr ""
+msgstr "_Hata Görüntüleyici"
 
-#. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:89
+#  shortcut key
+#: extensions/error-viewer/ephy-error-viewer-extension.c:92
 msgid "Display web page errors"
-msgstr ""
+msgstr "Web sayfasındaki hataları göster"
 
 #: extensions/error-viewer/error-viewer.glade.h:1
 msgid "C_lear"
-msgstr ""
+msgstr "_Temizle"
 
 #: extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
-msgstr ""
+msgstr "_Hata Görüntüleyici"
 
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:106
 #, c-format
@@ -46,58 +55,65 @@ msgid ""
 "Javascript error in %s on line %d:\n"
 "%s"
 msgstr ""
+"%s dosyasında %d. satırda Javascript hatası:\n"
+"%s"
 
-#: extensions/error-viewer/opensp/validate.cpp:123
+#: extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
 msgid ""
 "HTML error in %s on line %s:\n"
 "%s"
 msgstr ""
+"%s dosyasında %s. satırda HTML hatası:\n"
+"%s"
 
-#: extensions/error-viewer/sgml-validator.c:151
+#: extensions/error-viewer/sgml-validator.c:162
+#: extensions/error-viewer/sgml-validator.c:216
 #, c-format
 msgid ""
-"HTML Validation of %s complete\n"
-"Found %d error"
+"HTML error in %s:\n"
+"Doctype is XHTML but content type is text/html.  Use application/xhtml+xml instead."
 msgstr ""
+"%s dosyasında HTML hatası:\n"
+"Döküman tipi(doctype) XHTML, fakat içerik tiği text/html. Bunun yerine \"application/xhtml+xml\" kullanın."
 
-#: extensions/error-viewer/sgml-validator.c:196
+#: extensions/error-viewer/sgml-validator.c:231
+#, c-format
+msgid ""
+"HTML warning in %s:\n"
+"Doctype is XHTML but content type is text/html.  Use application/xhtml+xml instead."
+msgstr ""
+"%s dosyasında HTML uyarısı:\n"
+"Döküman tipi(doctype) XHTML, fakat içerik tiği text/html. Bunun yerine \"application/xhtml+xml\" kullanın."
+
+#: extensions/error-viewer/sgml-validator.c:368
 #, c-format
 msgid ""
 "HTML error in %s:\n"
 "No valid doctype specified."
 msgstr ""
-
-#: extensions/error-viewer/sgml-validator.c:216
-#, c-format
-msgid ""
-"HTML error in %s:\n"
-"Doctype is XHTML but content type is text/html"
-msgstr ""
+"%s dosyasında HTML hatası:\n"
+"Geçerli bir döküman tipi(doctype) belirtilmemiş."
 
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
+#, fuzzy
 msgid "Blo_ck Popups from this Site"
-msgstr ""
+msgstr "_Bu sitedeki Popupları engelle"
 
-#. shortcut key
+#  shortcut key
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:64
+#, fuzzy
 msgid "Block or unblock popup windows"
-msgstr ""
+msgstr "Popupları engelle veya engeli kaldır"
 
 #: extensions/popup-blocker/ephy-popup-blocker-extension.c:324
-#, c-format
-msgid "%d popup blocked"
-msgstr ""
-
 #: extensions/tabsmenu/ephy-tab-move-menu.c:185
+#: extensions/tabsmenu/ephy-tab-move-menu.c:283
 #, c-format
-msgid "Window '%s' (%d tab)"
-msgstr ""
-
-#: extensions/tabsmenu/ephy-tab-move-menu.c:277
 msgid "Move Tab To Window"
-msgstr ""
+msgstr "Sekmeyi Pencereye Taşı"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:278
+#: extensions/tabsmenu/ephy-tab-move-menu.c:284
 msgid "Move the current tab to a different window"
-msgstr ""
+msgstr "Sekmeyi başka bir pencereye taşı"
+
