@@ -1,5 +1,11 @@
 2004-10-30  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* tools/copy-template:
+
+	Automatically edit configure.ac and extensions/Makefile.am
+
+2004-10-30  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* doc/writing-epiphany-extensions.xml:
 
 	Use <example> tags, and update things to deal with unloading
