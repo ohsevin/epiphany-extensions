@@ -60,19 +60,22 @@ toString (SGMLApplication::CharString s)
 class HtmlErrorFinder : public SGMLApplication
 {
 public:
-	HtmlErrorFinder (SgmlValidator *validator, const char *location);
+	HtmlErrorFinder (SgmlValidator *validator, const char *location,
+			 const char *filename);
 	~HtmlErrorFinder (void);
 	void error (const ErrorEvent &err);
 
 private:
 	void handle_line (const char *msg);
-	regex_t *err_regex;
-	SgmlValidator *validator;
-	const char *location;
+	regex_t *mErrRegex;
+	SgmlValidator *mValidator;
+	const char *mLocation;
+	const char *mFilename;
 };
 
 HtmlErrorFinder::HtmlErrorFinder (SgmlValidator *validator,
-				  const char *location)
+				  const char *location,
+				  const char *filename)
 {
 	int regex_ret;
 
@@ -80,29 +83,30 @@ HtmlErrorFinder::HtmlErrorFinder (SgmlValidator *validator,
 	g_return_if_fail (location != NULL);
 
 	g_object_ref (validator);
-	this->validator = validator;
-	this->location = location;
+	this->mValidator = validator;
+	this->mLocation = location;
+	this->mFilename = filename;
 
-	this->err_regex = g_new0 (regex_t, 1);
-	regex_ret = regcomp (this->err_regex,
-			     "^[^:]+:([0-9]+):[0-9]+:([A-Z]?):? (.*)$",
+	this->mErrRegex = g_new0 (regex_t, 1);
+	regex_ret = regcomp (this->mErrRegex,
+			     "^(<URL>)?(.*):([0-9]+):[0-9]+:([A-Z]?):? (.*)$",
 			     REG_EXTENDED);
 	if (regex_ret != 0)
 	{
 		g_warning ("Could not compile HTML error regex. "
 			   "This is bad.\n");
-		g_free (this->err_regex);
-		this->err_regex = NULL;
+		g_free (this->mErrRegex);
+		this->mErrRegex = NULL;
 	}
 }
 
 HtmlErrorFinder::~HtmlErrorFinder (void)
 {
-	g_object_unref (this->validator);
+	g_object_unref (this->mValidator);
 
-	if (this->err_regex)
+	if (this->mErrRegex)
 	{
-		regfree (this->err_regex);
+		regfree (this->mErrRegex);
 	}
 }
 
@@ -110,31 +114,42 @@ void
 HtmlErrorFinder::handle_line (const char *msg)
 {
 	ErrorViewerErrorType error_type;
+	char *display_filename;
 	char *line_number;
 	char *verbose_msg;
 	const char *description;
 
-	regmatch_t matches[4];
+	regmatch_t matches[6];
 	int regex_ret;
 
-	g_return_if_fail (IS_SGML_VALIDATOR (this->validator));
-	g_return_if_fail (this->err_regex != NULL);
+	g_return_if_fail (IS_SGML_VALIDATOR (this->mValidator));
+	g_return_if_fail (this->mErrRegex != NULL);
 
-	regex_ret = regexec (err_regex, msg, G_N_ELEMENTS (matches), matches,
-			     0);
+	regex_ret = regexec (this->mErrRegex, msg, G_N_ELEMENTS (matches),
+			     matches, 0);
 	if (regex_ret != 0)
 	{
 		g_warning ("Could not parse OpenSP string.: %s\n", msg);
-		sgml_validator_append (this->validator,
+		sgml_validator_append (this->mValidator,
 				       ERROR_VIEWER_ERROR,
 				       msg);
 		return;
 	}
 
-	line_number = g_strndup (msg + matches[1].rm_so,
-				 matches[1].rm_eo - matches[1].rm_so);
+	display_filename = g_strndup (msg + matches[2].rm_so,
+				      matches[2].rm_eo - matches[2].rm_so);
 
-	switch (*(msg + matches[2].rm_so))
+	/* If the error's in our temp file, display the "true" location */
+	if (strcmp (display_filename, this->mFilename) == 0)
+	{
+		g_free (display_filename);
+		display_filename = g_strdup (this->mLocation);
+	}
+
+	line_number = g_strndup (msg + matches[3].rm_so,
+				 matches[3].rm_eo - matches[3].rm_so);
+
+	switch (*(msg + matches[4].rm_so))
 	{
 		case 'W':
 			error_type = ERROR_VIEWER_WARNING;
@@ -146,14 +161,15 @@ HtmlErrorFinder::handle_line (const char *msg)
 			error_type = ERROR_VIEWER_INFO;
 	}
 
-	description = msg + matches[3].rm_so;
+	description = msg + matches[5].rm_so;
 
 	verbose_msg =
 		g_strdup_printf (_("HTML error in %s on line %s:\n%s"),
-				 this->location, line_number, description);
+				 display_filename, line_number, description);
 
-	sgml_validator_append (this->validator, error_type, verbose_msg);
+	sgml_validator_append (this->mValidator, error_type, verbose_msg);
 
+	g_free (display_filename);
 	g_free (line_number);
 	g_free (verbose_msg);
 }
@@ -211,7 +227,8 @@ validate (const char *filename,
 
 	egp->inhibitMessages (true);
 
-	HtmlErrorFinder *app = new HtmlErrorFinder (validator, location);
+	HtmlErrorFinder *app = new HtmlErrorFinder (validator, location,
+						    filename);
 
 	num_errors = egp->run (*app);
 

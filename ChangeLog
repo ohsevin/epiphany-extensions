@@ -1,3 +1,18 @@
+2004-02-01  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/error-viewer/error-viewer.c:
+
+	Upped message limit to 400 messages.
+
+	* extensions/error-viewer/opensp/validate.cpp:
+
+	Fixed regex to work with "<URL>"'s from OpenSP.
+	Name member variables differently from function arguments.
+
+	* extensions/error-viewer/sgml-validator.c: (check_doctype):
+
+	Suggest "application/xhtml+xml" instead of just complaining
+
 2004-02-01  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:

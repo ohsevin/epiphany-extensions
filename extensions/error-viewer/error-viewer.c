@@ -31,7 +31,7 @@
 
 #define ERROR_VIEWER_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), TYPE_ERROR_VIEWER, ErrorViewerPrivate))
 
-#define MAX_NUM_ROWS 150
+#define MAX_NUM_ROWS 400
 
 struct ErrorViewerPrivate
 {

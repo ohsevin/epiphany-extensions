@@ -214,7 +214,8 @@ check_doctype (SgmlValidator *validator,
 		{
 			t = g_strdup_printf
 				(_("HTML error in %s:\nDoctype is XHTML"
-				   " but content type is text/html"),
+				   " but content type is text/html. "
+				   " Use application/xhtml+xml instead."),
 				 location);
 
 			sgml_validator_append (validator,
@@ -228,7 +229,8 @@ check_doctype (SgmlValidator *validator,
 		{
 			t = g_strdup_printf
 				(_("HTML warning in %s:\nDoctype is XHTML"
-				   " but content type is text/html"),
+				   " but content type is text/html. "
+				   " Use application/xhtml+xml instead."),
 				 location);
 
 			sgml_validator_append (validator,
