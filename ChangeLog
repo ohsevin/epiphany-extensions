@@ -1,3 +1,23 @@
+2004-03-11  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
+	(create_statusbar_icon), (ephy_popup_blocker_extension_iface_init):
+	* extensions/popup-blocker/ephy-popup-blocker-icon.c:
+	(popup_menu_detach), (icon_button_press_cb), (create_ui),
+	(ephy_popup_blocker_icon_init), (activate_popup_cb),
+	(clear_actions), (build_menu), (update_ui),
+	(ephy_popup_blocker_icon_new), (ephy_popup_blocker_icon_finalize):
+	* extensions/popup-blocker/ephy-popup-blocker-icon.h:
+	* extensions/popup-blocker/ephy-popup-blocker-list.c:
+	(ephy_popup_blocker_list_open),
+	(ephy_popup_blocker_list_set_property),
+	(ephy_popup_blocker_list_get_property),
+	(ephy_popup_blocker_list_class_init):
+	* extensions/popup-blocker/ephy-popup-blocker-list.h:
+	* po/POTFILES.in:
+
+	Incomplete and buggy work-in-progress hacking for bug #134320
+
 2004-03-10  Gustavo Maciel Dias Vieira  <gdvieira@zaz.com.br>
 
 	* configure.ac: Added pt_BR to ALL_LINGUAS.

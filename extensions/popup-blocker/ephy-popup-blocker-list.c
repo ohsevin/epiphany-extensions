@@ -26,13 +26,9 @@
 
 #include "ephy-debug.h"
 
-#define EPHY_POPUP_BLOCKER_LIST_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_POPUP_BLOCKER_LIST, EphyPopupBlockerListPrivate))
+#include <epiphany/ephy-shell.h>
 
-typedef struct
-{
-	char *url;
-	char *features;
-} BlockedPopup;
+#define EPHY_POPUP_BLOCKER_LIST_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_POPUP_BLOCKER_LIST, EphyPopupBlockerListPrivate))
 
 struct EphyPopupBlockerListPrivate
 {
@@ -45,7 +41,8 @@ static void ephy_popup_blocker_list_init	(EphyPopupBlockerList *popup);
 enum
 {
 	PROP_0,
-	PROP_COUNT
+	PROP_COUNT,
+	PROP_BLOCKED_POPUPS
 };
 
 static GObjectClass *parent_class = NULL;
@@ -159,6 +156,25 @@ ephy_popup_blocker_list_insert (EphyPopupBlockerList *list,
 	g_object_notify (G_OBJECT (list), "count");
 }
 
+void
+ephy_popup_blocker_list_open (EphyPopupBlockerList *list,
+			      BlockedPopup *popup)
+{
+	/* FIXME: Get the 'features' working */
+	/* FIXME: Set 3rd argument of ephy_shell_new_tab to referrer tab */
+	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (list));
+
+	ephy_shell_new_tab (ephy_shell, NULL, NULL, popup->url,
+			    EPHY_NEW_TAB_IN_NEW_WINDOW);
+
+	list->priv->blocked_popups =
+		g_slist_remove (list->priv->blocked_popups, popup);
+
+	free_blocked_popup (popup);
+
+	g_object_notify (G_OBJECT (list), "count");
+}
+
 static void
 ephy_popup_blocker_list_finalize (GObject *object)
 {
@@ -182,6 +198,7 @@ ephy_popup_blocker_list_set_property (GObject *object,
 	switch (prop_id)
 	{
 		case PROP_COUNT:
+		case PROP_BLOCKED_POPUPS:
 			/* read only */
 			break;
 	}
@@ -201,6 +218,9 @@ ephy_popup_blocker_list_get_property (GObject *object,
 			g_value_set_uint
 				(value,
 				 g_slist_length (list->priv->blocked_popups));
+			break;
+		case PROP_BLOCKED_POPUPS:
+			g_value_set_pointer (value, list->priv->blocked_popups);
 			break;
 	}
 }
@@ -225,6 +245,13 @@ ephy_popup_blocker_list_class_init (EphyPopupBlockerListClass *klass)
 							    G_MAXUINT,
 							    0,
 							    G_PARAM_READABLE));
+	g_object_class_install_property (object_class,
+					 PROP_BLOCKED_POPUPS,
+					 g_param_spec_pointer
+					 	("blocked-popups",
+						 "Blocked Popups",
+						 "GSList of blocked popups",
+						 G_PARAM_READABLE));
 
 	g_type_class_add_private (object_class, sizeof (EphyPopupBlockerListPrivate));
 }

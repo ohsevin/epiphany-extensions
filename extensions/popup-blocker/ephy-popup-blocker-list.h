@@ -37,6 +37,12 @@ typedef struct EphyPopupBlockerList		EphyPopupBlockerList;
 typedef struct EphyPopupBlockerListClass	EphyPopupBlockerListClass;
 typedef struct EphyPopupBlockerListPrivate	EphyPopupBlockerListPrivate;
 
+typedef struct
+{
+	char *url;
+	char *features;
+} BlockedPopup;
+
 struct EphyPopupBlockerListClass
 {
 	GObjectClass parent_class;
@@ -61,11 +67,8 @@ void			ephy_popup_blocker_list_insert			(EphyPopupBlockerList *list,
 									 const char *url,
 									 const char *features);
 
-const char		*ephy_popup_blocker_list_get_popup_string	(EphyPopupBlockerList *list,
-									 int index);
-
-void			ephy_popup_blocker_list_open_popup		(EphyPopupBlockerList *list,
-									 int index);
+void			ephy_popup_blocker_list_open			(EphyPopupBlockerList *list,
+									 BlockedPopup *popup);
 
 G_END_DECLS
 

@@ -23,19 +23,26 @@
 #endif
 
 #include "ephy-popup-blocker-icon.h"
+#include "ephy-string.h"
 #include "ephy-debug.h"
 
 #include <epiphany/ephy-statusbar.h>
 
+#include <gtk/gtkaction.h>
+#include <gtk/gtkactiongroup.h>
 #include <gtk/gtkcontainer.h>
 #include <gtk/gtkeventbox.h>
 #include <gtk/gtkimage.h>
-#include <gtk/gtktooltips.h>
+#include <gtk/gtkmenu.h>
 #include <gtk/gtkstatusbar.h>
+#include <gtk/gtktooltips.h>
+#include <gtk/gtkuimanager.h>
 
 #include <gdk/gdkpixbuf.h>
 
 #include <glib/gi18n-lib.h>
+
+#define MAX_MENU_LENGTH 60
 
 #define EPHY_POPUP_BLOCKER_ICON_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_POPUP_BLOCKER_ICON, EphyPopupBlockerIconPrivate))
 
@@ -48,7 +55,18 @@ struct EphyPopupBlockerIconPrivate
 	GtkWidget *evbox;
 	/* FIXME: use the same pixbuf/image for all icons? */
 	GtkWidget *image;
+
+	GtkUIManager *ui;
+	guint ui_merge_id;
+	GtkActionGroup *actions;
+	GtkWidget *popup_menu;
 };
+
+typedef struct
+{
+	EphyPopupBlockerIcon *icon;
+	BlockedPopup *popup;
+} PopupActivateCBData;
 
 static void ephy_popup_blocker_icon_class_init	(EphyPopupBlockerIconClass *klass);
 static void ephy_popup_blocker_icon_init	(EphyPopupBlockerIcon *icon);
@@ -87,20 +105,45 @@ ephy_popup_blocker_icon_register_type (GTypeModule *module)
 	return type;
 }
 
-EphyPopupBlockerIcon *
-ephy_popup_blocker_icon_new (GtkWidget *statusbar)
+static void
+popup_menu_detach (GtkWidget *widget,
+		   GtkMenu *menu)
 {
-	EphyPopupBlockerIcon *ret;
+	EPHY_POPUP_BLOCKER_ICON (widget)->priv->popup_menu = NULL;
+}
 
-	g_return_val_if_fail (EPHY_IS_STATUSBAR (statusbar), NULL);
+static void
+icon_button_press_cb (GtkWidget *evbox,
+		      GdkEventButton *event,
+		      EphyPopupBlockerIcon *icon)
+{
+	GtkWidget *menu;
+	char *path;
 
-	ret = EPHY_POPUP_BLOCKER_ICON
-		(g_object_new (EPHY_TYPE_POPUP_BLOCKER_ICON, NULL));
+	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_ICON (icon));
 
-	ephy_statusbar_add_widget (EPHY_STATUSBAR (statusbar),
-				   GTK_WIDGET (ret));
+	if (event->type != GDK_BUTTON_PRESS || event->button != 1) return;
 
-	return ret;
+	if (icon->priv->popup_menu)
+	{
+		gtk_widget_destroy (icon->priv->popup_menu);
+	}
+
+	path = g_strdup_printf ("/EphyPopupBlockerPopup-%p", icon);
+
+	menu = gtk_ui_manager_get_widget (icon->priv->ui, path);
+
+	g_free (path);
+
+	g_return_if_fail (GTK_IS_MENU (menu) && menu != NULL);
+
+	icon->priv->popup_menu = menu;
+
+	gtk_menu_attach_to_widget (GTK_MENU (menu), GTK_WIDGET (icon),
+				   popup_menu_detach);
+	gtk_widget_show_all (GTK_WIDGET (menu));
+	gtk_menu_popup (GTK_MENU (menu), NULL, NULL, NULL, NULL, event->button,
+			event->time);
 }
 
 static void
@@ -108,6 +151,7 @@ create_ui (EphyPopupBlockerIcon *icon)
 {
 	GdkPixbuf *pixbuf;
 	int width = 0, height = 0;
+	char *t;
 
 	gtk_frame_set_shadow_type (GTK_FRAME (icon),
 				   GTK_SHADOW_IN);
@@ -123,10 +167,25 @@ create_ui (EphyPopupBlockerIcon *icon)
 	gtk_event_box_set_visible_window (GTK_EVENT_BOX (icon->priv->evbox),
 					  FALSE);
 
+	gtk_widget_add_events (icon->priv->evbox, GDK_BUTTON_PRESS_MASK);
+	g_signal_connect (icon->priv->evbox, "button-press-event",
+			  G_CALLBACK (icon_button_press_cb), icon);
+
 	gtk_container_add (GTK_CONTAINER (icon),
 			   icon->priv->evbox);
 	gtk_container_add (GTK_CONTAINER (icon->priv->evbox),
 			   icon->priv->image);
+
+	t = g_strdup_printf ("EphyPopupBlockerPopup-%p", icon);
+	icon->priv->actions = gtk_action_group_new (t);
+	g_free (t);
+
+	gtk_action_group_set_translation_domain (icon->priv->actions,
+						 GETTEXT_PACKAGE);
+
+	gtk_ui_manager_insert_action_group (icon->priv->ui,
+					    icon->priv->actions,
+					    0);
 }
 
 static void
@@ -142,8 +201,128 @@ ephy_popup_blocker_icon_init (EphyPopupBlockerIcon *icon)
 
 	icon->priv->popups = NULL;
 	icon->priv->notify_signal = 0;
+	icon->priv->ui = NULL;
+	icon->priv->ui_merge_id = 0;
+	icon->priv->actions = NULL;
+	icon->priv->popup_menu = NULL;
+}
 
-	create_ui (icon);
+static void
+activate_popup_cb (GtkAction *action,
+		   PopupActivateCBData *cb_data)
+{
+	g_return_if_fail (GTK_IS_ACTION (action));
+
+	ephy_popup_blocker_list_open (cb_data->icon->priv->popups,
+				      cb_data->popup);
+}
+
+static void
+clear_actions (EphyPopupBlockerIcon *icon)
+{
+	GList *actions;
+	GList *t;
+	GtkAction *action;
+
+	LOG ("clear_actions on %p\n", icon)
+
+	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_ICON (icon));
+	g_return_if_fail (icon->priv->actions != NULL);
+
+	if (icon->priv->ui_merge_id == 0) return;
+
+	gtk_ui_manager_remove_ui (icon->priv->ui, icon->priv->ui_merge_id);
+	icon->priv->ui_merge_id = 0;
+
+	actions = gtk_action_group_list_actions (icon->priv->actions);
+
+	for (t = actions; t; t = g_list_next (t))
+	{
+		action = (GtkAction *) t->data;
+
+		g_return_if_fail (GTK_IS_ACTION (action));
+
+		gtk_action_group_remove_action (icon->priv->actions, action);
+	}
+
+	g_list_free (actions);
+}
+
+static void
+build_menu (EphyPopupBlockerIcon *icon)
+{
+	GSList *blocked_popups;
+	GValue value = { 0, };
+	PopupActivateCBData *cb_data;
+	BlockedPopup *popup;
+	GtkAction *action;
+	char *name;
+	char *label;
+	char *short_label;
+	char *path;
+	char *merge_str;
+
+	if (icon->priv->popups == NULL) return;
+
+	LOG ("build_menu on %p\n", icon)
+
+	g_value_init (&value, G_TYPE_POINTER);
+	g_object_get_property (G_OBJECT (icon->priv->popups), "blocked-popups",
+			       &value);
+
+	blocked_popups = g_value_get_pointer (&value);
+
+	g_value_unset (&value);
+
+	clear_actions (icon);
+
+	if (blocked_popups == NULL) return;
+
+	path = g_strdup_printf ("/EphyPopupBlockerPopup-%p", icon);
+
+	merge_str = g_strdup_printf
+		("<ui><popup name=\"EphyPopupBlockerPopup-%p\"/></ui>", icon);
+
+	icon->priv->ui_merge_id = gtk_ui_manager_add_ui_from_string
+		(icon->priv->ui, merge_str, -1, NULL);
+
+	g_return_if_fail (icon->priv->ui_merge_id != 0);
+
+	g_free (merge_str);
+
+	for (; blocked_popups; blocked_popups = g_slist_next (blocked_popups))
+	{
+		popup = blocked_popups->data;
+
+		if (popup->url == NULL) continue;
+
+		name = g_strdup_printf ("open-popup-%p", popup);
+		label = g_strdup_printf (_("Open %s"), popup->url);
+		short_label = ephy_string_shorten (label, MAX_MENU_LENGTH);
+
+		action = gtk_action_new (name, short_label, NULL, NULL);
+
+		cb_data = g_new0 (PopupActivateCBData, 1);
+		cb_data->icon = icon;
+		cb_data->popup = popup;
+
+		g_signal_connect_data
+			(G_OBJECT (action), "activate",
+			 G_CALLBACK (activate_popup_cb), cb_data,
+			 (GClosureNotify) g_free, 0);
+
+		gtk_action_group_add_action (icon->priv->actions, action);
+
+		gtk_ui_manager_add_ui (icon->priv->ui, icon->priv->ui_merge_id,
+				       path, name, name,
+				       GTK_UI_MANAGER_MENUITEM, FALSE);
+
+		g_free (name);
+		g_free (label);
+		g_free (short_label);
+	}
+
+	g_free (path);
 }
 
 static void
@@ -155,13 +334,15 @@ update_ui (EphyPopupBlockerIcon *icon)
 
 	if (icon->priv->popups == NULL) return;
 
+	LOG ("update_ui on %p\n", icon)
+
 	g_value_init (&value, G_TYPE_UINT);
 	g_object_get_property (G_OBJECT (icon->priv->popups), "count", &value);
 
 	num_blocked = g_value_get_uint (&value);
 
 	LOG ("update_ui: Number of popups on list %p in icon %p: %d\n",
-	     icon->priv->popups, icon, num_blocked);
+	     icon->priv->popups, icon, num_blocked)
 
 	tooltip = g_strdup_printf (ngettext("%d popup blocked",
 					    "%d popups blocked",
@@ -172,6 +353,8 @@ update_ui (EphyPopupBlockerIcon *icon)
 			      NULL);
 
 	g_free (tooltip);
+
+	build_menu (icon);
 
 	if (num_blocked == 0)
 	{
@@ -193,6 +376,28 @@ count_changed_cb (EphyPopupBlockerList *list,
 	update_ui (icon);
 }
 
+EphyPopupBlockerIcon *
+ephy_popup_blocker_icon_new (GtkWidget *statusbar,
+			     GObject *ui_merge)
+{
+	EphyPopupBlockerIcon *ret;
+
+	g_return_val_if_fail (EPHY_IS_STATUSBAR (statusbar), NULL);
+	g_return_val_if_fail (GTK_IS_UI_MANAGER (ui_merge), NULL);
+
+	ret = EPHY_POPUP_BLOCKER_ICON
+		(g_object_new (EPHY_TYPE_POPUP_BLOCKER_ICON, NULL));
+
+	ephy_statusbar_add_widget (EPHY_STATUSBAR (statusbar),
+				   GTK_WIDGET (ret));
+
+	ret->priv->ui = GTK_UI_MANAGER (g_object_ref (ui_merge));
+
+	create_ui (ret);
+
+	return ret;
+}
+
 static void
 ephy_popup_blocker_icon_finalize (GObject *object)
 {
@@ -201,6 +406,7 @@ ephy_popup_blocker_icon_finalize (GObject *object)
 	LOG ("EphyPopupBlockerIcon finalizing")
 
 	g_object_unref (icon->priv->tooltips);
+	g_object_unref (G_OBJECT (icon->priv->ui));
 
 	if (icon->priv->popups)
 	{

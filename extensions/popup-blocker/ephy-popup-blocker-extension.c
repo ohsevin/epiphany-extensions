@@ -403,7 +403,7 @@ create_statusbar_icon (EphyWindow *window)
 	statusbar = ephy_window_get_statusbar (window);
 	g_return_if_fail (EPHY_IS_STATUSBAR (statusbar));
 
-	icon = ephy_popup_blocker_icon_new (statusbar);
+	icon = ephy_popup_blocker_icon_new (statusbar, window->ui_merge);
 	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_ICON (icon));
 
 	g_object_set_data (G_OBJECT (statusbar), "popup-blocker-icon", icon);
@@ -611,6 +611,9 @@ ephy_popup_blocker_extension_iface_init (EphyExtensionIface *iface)
 {
 	iface->attach_window = impl_attach_window;
 	iface->detach_window = impl_detach_window;
+
+	g_print ("Warning: The popup blocker extension is undergoing changes. "
+		 "You WILL see warnings and errors.");
 }
 
 static void
