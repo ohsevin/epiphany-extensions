@@ -1,3 +1,8 @@
+2004-11-13  Crispin Flowerday  <gnome@flowerday.cx>
+
+	* extensions/sidebar/ephy-sidebar-embed.h: Fix a couple of
+	typos in the boilerplate GObject defines
+
 2004-11-07  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/page-info/page-info-dialog.c:
