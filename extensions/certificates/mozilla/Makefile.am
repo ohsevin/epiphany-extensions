@@ -12,6 +12,7 @@ INCLUDES = \
 	-I$(MOZILLA_INCLUDE_ROOT)/webbrwsr		\
 	-I$(MOZILLA_INCLUDE_ROOT)/webshell		\
 	-I$(MOZILLA_INCLUDE_ROOT)/xpcom			\
+	-I$(MOZILLA_INCLUDE_ROOT)/string		\
 	$(EPIPHANY_DEPENDENCY_CFLAGS) 			\
 	-DSHARE_DIR=\"$(pkgdatadir)\"   		\
 	-include $(MOZILLA_INCLUDE_ROOT)/mozilla-config.h

@@ -119,6 +119,7 @@ load_status_cb (EphyTab *tab,
 
 		/* Get the URL from the embed, since tab may contain modified url */
 		location = ephy_embed_get_location (embed, TRUE);
+		if (location == NULL) return;
 
 		/* Get page title */
 		page_title = ephy_tab_get_title(tab);
