@@ -341,23 +341,6 @@ ephy_tab_move_menu_finalize (GObject *object)
 {
 	EphyTabMoveMenu *menu = EPHY_TAB_MOVE_MENU (object); 
 
-	GtkActionGroup *action_group;
-	GtkAction *action;
-
-/*
-	action_group = find_action_group (menu->priv->manager);
-	g_return_if_fail (action_group != NULL);
-
-	action = gtk_action_group_get_action (action_group, "TabMoveTo");
-	g_return_if_fail (action != NULL);
-
-	gtk_action_group_remove_action (action_group, action);
-
-	action = gtk_ui_manager_get_action (menu->priv->manager, "/menubar/TabsMenu");
-	g_return_if_fail (action != NULL);
-
-	g_signal_handlers_disconnect_by_func (action, G_CALLBACK (update_tab_move_menu_cb), menu);
-*/
 	if (menu->priv->merge_id != 0)
 	{
 		gtk_ui_manager_remove_ui (menu->priv->manager,

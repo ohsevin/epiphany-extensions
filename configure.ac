@@ -352,6 +352,7 @@ extensions/smart-bookmarks/mozilla/Makefile
 extensions/tabsmenu/Makefile
 extensions/tab-groups/Makefile
 po/Makefile.in
+tools/Makefile
 ])
 
 AC_OUTPUT

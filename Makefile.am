@@ -1,6 +1,6 @@
 ## Process this file with automake to produce Makefile.in
 
-SUBDIRS = include extensions po
+SUBDIRS = include extensions po tools
 
 EXTRA_DIST =			\
 	COPYING.README		\

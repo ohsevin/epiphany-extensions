@@ -1,0 +1,141 @@
+#!/usr/bin/env python
+
+def copy_template_files(paths, replacements):
+	"""Copies files from paths applying replacements to names and contents.
+
+	For example, having replacements of
+	{'sample':'gestures','SAMPLE':'GESTURES','Sample':'Gestures'} and
+	passing all files in extensions/sample as this function's first
+	argument, they files would all move to extensions/gestures and have
+	their contents updated.
+	"""
+	import os
+
+	for path in paths:
+		dest = path
+		for a, b in replacements.items():
+			dest = dest.replace(a, b)
+
+		dir = os.path.dirname(dest)
+
+		if not os.path.exists(dir): os.makedirs(dir)
+
+		r = open(path, 'r')
+		w = open(dest, 'w')
+
+		for line in r:
+			for a, b in replacements.items():
+				line = line.replace(a, b)
+			w.write(line)
+
+		r.close()
+		w.close()
+
+def copy_sample_template(new_name):
+	"""Copies the sample extension (in extensions/sample) to new_name.
+
+	new_name should be the name of the new extension, with words separated
+	by dash ('-') characters.
+	"""
+
+	import os.path
+
+	t_paths = (
+		'ephy-sample-extension.h',
+		'ephy-sample-extension.c',
+		'Makefile.am',
+		'sample.c',
+		)
+
+	paths = []
+
+	root = os.path.normpath(os.path.dirname(__file__) + \
+				'/../extensions/sample')
+
+	for path in t_paths:
+		paths.append(os.path.join(root, path))
+
+	replacements = {
+		'sample.c': 'extension.c',
+		'libsample': 'lib' + new_name.replace('-', ''),
+		'sample/': new_name + '/',
+		'sample-': new_name + '-',
+		'sample_': new_name.replace('-', '_') + '_',
+		'Sample': new_name.title().replace('-', ''),
+		'SAMPLE': new_name.upper().replace('-', '_'),
+		}
+
+	copy_template_files (paths, replacements)
+
+def copy_sample_mozilla_template(new_name):
+	"""Copies the extension in extensions/sample-mozilla to new_name.
+
+	new_name should be the name of the new extension, with words separated
+	by dash ('-') characters.
+	"""
+
+	import os.path
+
+	t_paths = (
+		'ephy-sample2-extension.h',
+		'ephy-sample2-extension.c',
+		'Makefile.am',
+		'sample-mozilla.c',
+		'mozilla/Makefile.am',
+		'mozilla/mozilla-sample.cpp',
+		'mozilla/mozilla-sample.h',
+		)
+
+	paths = []
+
+	root = os.path.normpath(os.path.dirname(__file__) + \
+				'/../extensions/sample-mozilla')
+
+	for path in t_paths:
+		paths.append(os.path.join(root, path))
+
+	replacements = {
+		'sample-mozilla.c': 'extension.c',
+		'mozilla-sample': 'mozilla-helpers',
+		'sample-mozilla/': new_name + '/',
+		'libsamplemozilla': 'lib' + new_name.replace('-', ''),
+		'sample2-': new_name + '-',
+		'sample2_': new_name.replace('-', '_') + '_',
+		'Sample2': new_name.title().replace('-', ''),
+		'SAMPLE2': new_name.upper().replace('-', '_'),
+		}
+
+	copy_template_files (paths, replacements)
+
+if __name__ == '__main__':
+	from optparse import OptionParser
+
+	usage = 'usage: %prog [options] new-name'
+	description = 'Copies a sample extension template to new ' + \
+		      'subdirectory of extensions/, specified by new_name'
+	parser = OptionParser(usage=usage, description=description)
+	parser.add_option('-f', '--force', dest='force',
+			  action='store_true', default=False,
+			  help='Overwrite existing extensions')
+	parser.add_option('-m', '--mozilla', dest='use_mozilla',
+			  action='store_true', default=False,
+			  help='Use Mozilla template')
+	(options, args) = parser.parse_args()
+
+	if len(args) != 1:
+		parser.error('Wrong number of arguments')
+
+	if options.use_mozilla:
+		f = copy_sample_mozilla_template
+	else:
+		f = copy_sample_template
+
+	import os.path
+
+	root = os.path.normpath(os.path.dirname(__file__) + \
+				'/../extensions/' + args[0])
+
+	if os.path.exists(root) and not options.force:
+		parser.error('Specified path already exists')
+
+	f(args[0])

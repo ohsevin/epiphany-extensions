@@ -1,5 +1,24 @@
 2004-09-28  Christian Persch  <chpe@cvs.gnome.org>
 
+	=== Release 1.4.1 ===
+
+	* extensions/Makefile.am:
+
+	Add sidebar extension to DIST_SUBDIRS.
+
+	* extensions/sample-mozilla/sample-mozilla.c:
+	* extensions/tabsmenu/ephy-tab-move-menu.c:
+	(ephy_tab_move_menu_finalize):
+
+	Compile warning fixes.
+
+	* tools/.cvsignore:
+	* tools/copy-template:
+
+	Added to EXTRA_DIST.
+
+2004-09-28  Christian Persch  <chpe@cvs.gnome.org>
+
 	* Makefile.am:
 
 	Pass --with-mozilla to distcheck's configure.
