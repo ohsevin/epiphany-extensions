@@ -71,7 +71,7 @@ dnl ********************************
 dnl pkg config checks
 dnl ********************************
 
-EPIPHANY_REQUIRED=1.3.5
+EPIPHANY_REQUIRED=1.3.7.90
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.4.0
 LIBGTK_REQUIRED=2.4.0
@@ -135,8 +135,8 @@ dnl *******************************
 
 AC_MSG_CHECKING([extensions to build])
 
-all_extensions="certificates,dashboard,error-viewer,gestures,sample,sample-mozilla,tabsmenu"
-all_useful_extensions="certificates,dashboard,error-viewer,gestures,tabsmenu"
+all_extensions="certificates,dashboard,error-viewer,gestures,sample,sample-mozilla,tabsmenu,tab-groups"
+all_useful_extensions="certificates,dashboard,error-viewer,gestures,tabsmenu,tab-groups"
 default_extensions="certificates,error-viewer,gestures,tabsmenu"
 mozilla_dependent_extensions="certificates,error-viewer,sample-mozilla"
 
@@ -147,7 +147,7 @@ dnl AC_HELP_STRING([--with-extensions=ext1,ext2,...],[build the specified extens
 AC_ARG_WITH([extensions],
 [  --with-extensions=extension1,extension2,...
 			  build the specified extensions. Available:
-			  gestures, sample, tabsmenu, all])
+			  gestures, sample, tabsmenu, tab-groups, all])
 
 dnl If no extensions specified, build the default set
 if test "x$with_extensions" = xyes; then
@@ -187,6 +187,7 @@ AM_CONDITIONAL(ENABLE_GESTURES_EXTENSION, echo "$extensions" | egrep '(^|,)gestu
 AM_CONDITIONAL(ENABLE_SAMPLE_EXTENSION, echo "$extensions" | egrep '(^|,)sample($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SAMPLE_MOZILLA_EXTENSION, echo "$extensions" | egrep '(^|,)sample-mozilla($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_TABSMENU_EXTENSION, echo "$extensions" | egrep '(^|,)tabsmenu($|,)' > /dev/null)
+AM_CONDITIONAL(ENABLE_TAB_GROUPS_EXTENSION, echo "$extensions" | egrep '(^|,)tab-groups($|,)' > /dev/null)
 dnl AM_CONDITIONAL(ENABLE_TOOLBAR_EXTRAS_EXTENSION, echo "$extensions" | egrep '(^|,)toolbar-extras($|,)' > /dev/null)
 
 dnl *******************************************
@@ -380,6 +381,7 @@ extensions/sample/Makefile
 extensions/sample-mozilla/Makefile
 extensions/sample-mozilla/mozilla/Makefile
 extensions/tabsmenu/Makefile
+extensions/tab-groups/Makefile
 po/Makefile.in
 ])
 

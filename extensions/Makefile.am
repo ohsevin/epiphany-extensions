@@ -28,10 +28,14 @@ if ENABLE_TABSMENU_EXTENSION
 SUBDIRS += tabsmenu
 endif
 
+if ENABLE_TAB_GROUPS_EXTENSION
+SUBDIRS += tab-groups
+endif
+
 #if ENABLE_TOOLBAR_EXTRAS_EXTENSION
 #SUBDIRS += toolbar-extras
 #endif
 
-DIST_SUBDIRS = certificates dashboard error-viewer gestures sample sample-mozilla tabsmenu
+DIST_SUBDIRS = certificates dashboard error-viewer gestures sample sample-mozilla tabsmenu tab-groups
 
 EXTRA_DIST =

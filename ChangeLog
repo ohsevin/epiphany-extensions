@@ -1,3 +1,28 @@
+2004-08-26  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+	* AUTHORS:
+	* extensions/Makefile.am:
+	* extensions/tab-groups/.cvsignore:
+	* extensions/tab-groups/Makefile.am:
+	* extensions/tab-groups/ephy-tab-grouper.c:
+	(ephy_tab_grouper_get_type), (ephy_tab_grouper_register_type),
+	(reset_last_tab), (tab_added_cb), (ephy_tab_grouper_set_notebook),
+	(ephy_tab_grouper_init), (ephy_tab_grouper_finalize),
+	(ephy_tab_grouper_set_property), (ephy_tab_grouper_get_property),
+	(ephy_tab_grouper_class_init), (ephy_tab_grouper_new):
+	* extensions/tab-groups/ephy-tab-grouper.h:
+	* extensions/tab-groups/ephy-tab-groups-extension.c:
+	(ephy_tab_groups_extension_get_type),
+	(ephy_tab_groups_extension_register_type), (impl_attach_window),
+	(impl_detach_window), (ephy_tab_groups_extension_init),
+	(ephy_tab_groups_extension_iface_init),
+	(ephy_tab_groups_extension_class_init):
+	* extensions/tab-groups/ephy-tab-groups-extension.h:
+	* extensions/tab-groups/tab-groups.c: (register_module):
+
+	Add Tab Grouper extension, written by Justin Wake.
+
 2004-08-16  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
