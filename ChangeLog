@@ -1,3 +1,9 @@
+2004-10-25  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* tools/copy-template:
+
+	Copy .xml.in.in files.
+
 2004-10-22  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/extensions-manager-ui/extensions-manager-ui.c:

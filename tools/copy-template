@@ -45,6 +45,7 @@ def copy_sample_template(new_name):
 		'ephy-sample-extension.c',
 		'Makefile.am',
 		'sample.c',
+		'sample.xml.in.in',
 		)
 
 	paths = []
@@ -57,6 +58,7 @@ def copy_sample_template(new_name):
 
 	replacements = {
 		'sample.c': 'extension.c',
+		'sample.xml.in.in': new_name + '.xml.in.in',
 		'libsample': 'lib' + new_name.replace('-', ''),
 		'sample/': new_name + '/',
 		'sample-': new_name + '-',
@@ -81,6 +83,7 @@ def copy_sample_mozilla_template(new_name):
 		'ephy-sample2-extension.c',
 		'Makefile.am',
 		'sample-mozilla.c',
+		'sample-mozilla.xml.in.in',
 		'mozilla/Makefile.am',
 		'mozilla/mozilla-sample.cpp',
 		'mozilla/mozilla-sample.h',
@@ -96,6 +99,7 @@ def copy_sample_mozilla_template(new_name):
 
 	replacements = {
 		'sample-mozilla.c': 'extension.c',
+		'sample-mozilla.xml.in.in': new_name + '.xml.in.in',
 		'mozilla-sample': 'mozilla-helpers',
 		'sample-mozilla/': new_name + '/',
 		'libsamplemozilla': 'lib' + new_name.replace('-', ''),
