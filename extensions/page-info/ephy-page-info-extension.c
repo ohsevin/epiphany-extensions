@@ -288,6 +288,9 @@ impl_attach_window (EphyExtension *extension,
 	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
 			       "PageInfo", "PageInfo",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
+	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
+			       "PageInfoSep2", NULL,
+			       GTK_UI_MANAGER_SEPARATOR, FALSE);
 
 	notebook = ephy_window_get_notebook (window);
 

@@ -1,6 +1,14 @@
 2004-09-11  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/page-info/ephy-page-info-extension.c:
+	(impl_attach_window):
+	* extensions/page-info/page-info.glade:
+
+	HIGified Page Info dialog and put a separator after the menu entry.
+
+2004-09-11  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/page-info/ephy-page-info-extension.c:
 	(display_page_info):
 	* extensions/page-info/mozilla/mozilla-helpers.cpp:
 	* extensions/page-info/mozilla/mozilla-helpers.h:
