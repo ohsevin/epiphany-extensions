@@ -1,5 +1,14 @@
 2004-09-27  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/sidebar/.cvsignore:
+	* extensions/sidebar/ephy-sidebar-embed.c:
+	(ephy_sidebar_embed_create_embed):
+	* extensions/sidebar/mozilla/.cvsignore:
+
+	Merge from HEAD.
+
+2004-09-27  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/sidebar/ephy-sidebar-embed.c:
 	* extensions/sidebar/epiphany-sidebar-ui.xml:
 	* extensions/sidebar/sidebar-commands.c:
