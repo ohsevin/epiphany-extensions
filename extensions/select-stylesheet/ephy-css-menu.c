@@ -29,7 +29,7 @@
 
 #include <epiphany/ephy-window.h>
 #include <epiphany/ephy-embed.h>
-#include "ephy-string.h"
+
 #include "ephy-debug.h"
 
 #include "mozilla/mozilla-helpers.h"
@@ -37,6 +37,8 @@
 #include <gtk/gtkuimanager.h>
 #include <gtk/gtkactiongroup.h>
 #include <gtk/gtkradioaction.h>
+#include <gtk/gtklabel.h>
+#include <gtk/gtkmenuitem.h>
 
 #include <glib/gi18n-lib.h>
 
@@ -63,7 +65,7 @@ struct _EphyCSSMenuPrivate
 #define STYLESHEET_KEY			"ECStyleSheet"
 #define ACTION_VERB_FORMAT		"ECSSSwitchStyle%x"
 #define ACTION_VERB_FORMAT_LENGTH	strlen (ACTION_VERB_FORMAT) + 14 + 1
-#define ACTION_MAX_LENGTH		32
+#define LABEL_WIDTH_CHARS		32
 
 enum
 {
@@ -134,12 +136,10 @@ create_stylesheet_action (EphyCSSMenu *menu,
 			  const char *verb)
 {
 	GtkAction  *action;
-	char *tooltip, *label, *label_temp;
+	char *tooltip;
 	const char *name;
 
 	name = mozilla_stylesheet_get_name (style);
-	label_temp = ephy_string_shorten (name, ACTION_MAX_LENGTH);
-	label = ephy_string_double_underscores (label_temp);
 
 	switch (mozilla_stylesheet_get_type (style))
 	{
@@ -157,7 +157,7 @@ create_stylesheet_action (EphyCSSMenu *menu,
 
 	action = g_object_new (GTK_TYPE_RADIO_ACTION,
 			       "name", verb,
-			       "label", label,
+			       "label", name,
 			       "tooltip", tooltip,
 			       NULL);
 
@@ -171,11 +171,26 @@ create_stylesheet_action (EphyCSSMenu *menu,
 	gtk_action_group_add_action (menu->priv->item_action_group, action);
 	g_object_unref (action);
 
-	g_free (label_temp);
-	g_free (label);
 	g_free (tooltip);
 
 	return action;
+}
+
+static void
+connect_proxy_cb (GtkActionGroup *action_group,
+                  GtkAction *action,
+                  GtkWidget *proxy)
+{
+	if (GTK_IS_MENU_ITEM (proxy))
+	{
+		GtkLabel *label;
+	
+		label = (GtkLabel *) ((GtkBin *) proxy)->child;
+
+		gtk_label_set_use_underline (label, FALSE);
+		gtk_label_set_ellipsize (label, PANGO_ELLIPSIZE_END);
+		gtk_label_set_max_width_chars (label, LABEL_WIDTH_CHARS);
+	}
 }
 
 static void
@@ -210,6 +225,9 @@ ephy_css_menu_rebuild (EphyCSSMenu *menu)
 	/* Create the new action group */
 	p->item_action_group = 
 		gtk_action_group_new ("SelectStylesheetMenuDynamicActions");
+	g_signal_connect (p->item_action_group, "connect-proxy",
+			  G_CALLBACK (connect_proxy_cb), NULL);
+
 	gtk_action_group_set_translation_domain (p->item_action_group, NULL);
 	gtk_ui_manager_insert_action_group (p->manager, p->item_action_group, -1);
 

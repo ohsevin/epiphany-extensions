@@ -24,14 +24,16 @@
 #endif
 
 #include "ephy-tab-move-menu.h"
-#include "ephy-string.h"
-#include "ephy-debug.h"
 
 #include <epiphany/ephy-session.h>
 #include <epiphany/ephy-shell.h>
 
+#include "ephy-debug.h"
+
 #include <gtk/gtkaction.h>
 #include <gtk/gtkuimanager.h>
+#include <gtk/gtklabel.h>
+#include <gtk/gtkmenuitem.h>
 #include <glib/gi18n-lib.h>
 #include <string.h>
 
@@ -49,8 +51,8 @@ struct _EphyTabMoveMenuPrivate
 #define SUBMENU_PATH	"/menubar/TabsMenu/TabsOpen/TabMoveToMenu"
 #define VERB_FMT	"MoveTo%p"
 #define VERB_FMT_SIZE	(sizeof (VERB_FMT) + 18)
-#define MAX_LENGTH	32
 #define WINDOW_KEY	"dest-window"
+#define LABEL_WIDTH_CHARS	40
 
 static void ephy_tab_move_menu_class_init (EphyTabMoveMenuClass *klass);
 static void ephy_tab_move_menu_init	  (EphyTabMoveMenu *menu);
@@ -61,14 +63,14 @@ enum
 	PROP_WINDOW
 };
 
-GObjectClass *tab_move_menu_parent_class = NULL;
+GObjectClass *parent_class = NULL;
 
-GType tab_move_menu_type = 0;
+GType type = 0;
 
 GType
 ephy_tab_move_menu_get_type (void)
 {
-	return tab_move_menu_type;
+	return type;
 }
 
 GType
@@ -87,13 +89,12 @@ ephy_tab_move_menu_register_type (GTypeModule *module)
 		(GInstanceInitFunc) ephy_tab_move_menu_init
 	};
 
-	tab_move_menu_type =
-		g_type_module_register_type (module,
-					     G_TYPE_OBJECT,
-					     "EphyTabMoveMenu",
-					     &our_info, 0);
+	type = g_type_module_register_type (module,
+					    G_TYPE_OBJECT,
+					    "EphyTabMoveMenu",
+					    &our_info, 0);
 
-	return tab_move_menu_type;
+	return type;
 }
 
 static int
@@ -160,7 +161,7 @@ add_action_and_menu_item (EphyWindow *window, EphyTabMoveMenu *menu)
 	GtkWidget *notebook;
 	guint num;
 	const char *text;
-	char *title, *win_title_doubled, *win_title;
+	char *title;
 	char verb[VERB_FMT_SIZE], name[VERB_FMT_SIZE + 4];
 
 	/* the list may also contain the bookmarks and history window */
@@ -177,13 +178,9 @@ add_action_and_menu_item (EphyWindow *window, EphyTabMoveMenu *menu)
 	tab = ephy_window_get_active_tab (window);
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
-	win_title = ephy_string_shorten (ephy_tab_get_title (tab), MAX_LENGTH);
-	win_title_doubled = ephy_string_double_underscores (win_title);
-
 	text = dngettext (GETTEXT_PACKAGE, "Window '%s' (%d tab)",
 					   "Window '%s' (%d tabs)", num);
-	
-	title = g_strdup_printf (text, win_title_doubled, num);
+	title = g_strdup_printf (text, ephy_tab_get_title (tab), num);
 
 	action = g_object_new (GTK_TYPE_ACTION,
 			       "name", verb,
@@ -200,9 +197,24 @@ add_action_and_menu_item (EphyWindow *window, EphyTabMoveMenu *menu)
 			       name, verb,
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
 
-	g_free (win_title);
-	g_free (win_title_doubled);
 	g_free (title);
+}
+
+static void
+connect_proxy_cb (GtkActionGroup *action_group,
+                  GtkAction *action,
+                  GtkWidget *proxy)
+{
+	if (GTK_IS_MENU_ITEM (proxy))
+	{
+		GtkLabel *label;
+	
+		label = (GtkLabel *) ((GtkBin *) proxy)->child;
+
+		gtk_label_set_use_underline (label, FALSE);
+		gtk_label_set_ellipsize (label, PANGO_ELLIPSIZE_MIDDLE);
+		gtk_label_set_max_width_chars (label, LABEL_WIDTH_CHARS);
+	}
 }
 
 static void
@@ -233,6 +245,8 @@ update_tab_move_menu_cb (GtkAction *dummy,
 
 	/* build the new menu */
 	p->action_group = gtk_action_group_new ("TabMoveToActions");
+	g_signal_connect (p->action_group, "connect-proxy",
+			  G_CALLBACK (connect_proxy_cb), NULL);
 	gtk_ui_manager_insert_action_group (p->manager, p->action_group, 0);
 
 	p->merge_id = gtk_ui_manager_new_merge_id (p->manager);
@@ -369,7 +383,7 @@ ephy_tab_move_menu_finalize (GObject *object)
 
 	g_signal_handlers_disconnect_by_func (action, G_CALLBACK (update_tab_move_menu_cb), menu);
 
-	G_OBJECT_CLASS (tab_move_menu_parent_class)->finalize (object);
+	G_OBJECT_CLASS (parent_class)->finalize (object);
 }
 
 static void
@@ -377,7 +391,7 @@ ephy_tab_move_menu_class_init (EphyTabMoveMenuClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-	tab_move_menu_parent_class = g_type_class_peek_parent (klass);
+	parent_class = g_type_class_peek_parent (klass);
 
 	object_class->finalize = ephy_tab_move_menu_finalize;
 	object_class->set_property = ephy_tab_move_menu_set_property;

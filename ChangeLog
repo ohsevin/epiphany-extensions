@@ -1,3 +1,25 @@
+2004-12-13  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/select-stylesheet/ephy-css-menu.c:
+	(create_stylesheet_action), (connect_proxy_cb),
+	(ephy_css_menu_rebuild):
+	* extensions/smart-bookmarks/smart-bookmarks-extension.c:
+	(sync_bookmark_properties), (connect_proxy_cb),
+	(impl_attach_window):
+	* extensions/tabsmenu/ephy-tab-move-menu.c:
+	(ephy_tab_move_menu_get_type), (ephy_tab_move_menu_register_type),
+	(add_action_and_menu_item), (connect_proxy_cb),
+	(update_tab_move_menu_cb), (ephy_tab_move_menu_finalize),
+	(ephy_tab_move_menu_class_init):
+
+	Remove usage of ephy_string_*, and use ellipsized, max-width-chars,
+	non-use-underline labels instead.
+
+	* include/Makefile.am:
+	R include/ephy-string.h:
+
+	Removed ephy-string.h.
+
 2004-12-12  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/page-info/mozilla/mozilla-helpers.cpp:

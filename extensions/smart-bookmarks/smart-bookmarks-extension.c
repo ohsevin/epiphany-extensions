@@ -26,8 +26,6 @@
 #include "smart-bookmarks-prefs-ui.h"
 #include "smart-bookmarks-prefs.h"
 #include "mozilla-selection.h"
-#include "eel-gconf-extensions.h"
-#include "ephy-debug.h"
 
 #include <epiphany/ephy-extension.h>
 #include <epiphany/ephy-embed.h>
@@ -36,12 +34,16 @@
 #include <epiphany/ephy-session.h>
 #include <epiphany/ephy-node.h>
 #include <epiphany/ephy-bookmarks.h>
-#include "ephy-string.h"
+
+#include "eel-gconf-extensions.h"
+#include "ephy-debug.h"
 
 #include <gmodule.h>
 #include <gtk/gtkaction.h>
 #include <gtk/gtkactiongroup.h>
 #include <gtk/gtkuimanager.h>
+#include <gtk/gtklabel.h>
+#include <gtk/gtkmenuitem.h>
 
 #include <glib/gi18n-lib.h>
 
@@ -55,6 +57,7 @@
 #define GDICT_ACTION		"SmbExtGDict"
 #define NODE_ID_KEY		"EphyNodeId"
 #define WINDOW_DATA_KEY		"SmartBookmarksWindowData"
+#define LABEL_WIDTH_CHARS	32
 
 struct SmartBookmarksExtensionPrivate
 {
@@ -390,17 +393,10 @@ static void
 sync_bookmark_properties (GtkAction *action,
 			  EphyNode *bmk)
 {
-        const char *tmp;
-        char *title;
-
-        tmp = ephy_node_get_property_string (bmk, EPHY_NODE_BMK_PROP_TITLE);
-        title = ephy_string_double_underscores (tmp);
-
-        g_object_set (action,
-                      "label", title,
-                      NULL);
-
-        g_free (title);
+	const char *title;
+	
+	title = ephy_node_get_property_string (bmk, EPHY_NODE_BMK_PROP_TITLE);
+	g_object_set (action, "label", title, NULL);
 }
 
 static void
@@ -546,6 +542,23 @@ tab_removed_cb (GtkWidget *notebook,
 		(embed, G_CALLBACK (context_menu_cb), window);
 }
 
+static void
+connect_proxy_cb (GtkActionGroup *action_group,
+                  GtkAction *action,
+                  GtkWidget *proxy)
+{
+	if (GTK_IS_MENU_ITEM (proxy))
+	{
+		GtkLabel *label;
+	
+		label = (GtkLabel *) ((GtkBin *) proxy)->child;
+
+		gtk_label_set_use_underline (label, FALSE);
+		gtk_label_set_ellipsize (label, PANGO_ELLIPSIZE_END);
+		gtk_label_set_max_width_chars (label, LABEL_WIDTH_CHARS);
+	}
+}
+
 static GtkActionEntry action_entries [] =
 {
 	{ LOOKUP_ACTION,
@@ -601,6 +614,8 @@ impl_attach_window (EphyExtension *ext,
 
 	/* Create new action group for this extension */
 	action_group = gtk_action_group_new ("SmbExtActions");
+	g_signal_connect (action_group, "connect-proxy",
+			  G_CALLBACK (connect_proxy_cb), NULL);
 	gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
 	gtk_action_group_add_actions (action_group, action_entries,
 				      n_action_entries, window);
