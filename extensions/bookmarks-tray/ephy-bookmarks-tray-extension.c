@@ -32,7 +32,7 @@
 #include <epiphany/ephy-tab.h>
 #include <epiphany/ephy-window.h>
 #include <epiphany/ephy-extension.h>
-#include <epiphany/ephy-bookmarks-menu.h>
+#include "ephy-bookmarks-menu.h"
 #include "ephy-gui.h"
 #include "eel-gconf-extensions.h"
 #include "ephy-debug.h"

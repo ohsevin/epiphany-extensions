@@ -1,5 +1,16 @@
 2004-10-29  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:
+
+	Fix include.
+
+	* include/Makefile.am:
+	A include/ephy-bookmarks-menu.h:
+
+	Added from epiphany.
+
+2004-10-29  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/bookmarks-tray/Makefile.am:
 	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:
 	(edit_bookmarks_cb):

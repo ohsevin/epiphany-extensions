@@ -2,6 +2,7 @@ SUBDIRS =
 
 EXTRA_DIST =				\
 	EphyUtils.h			\
+	ephy-bookmarks-menu.h		\
 	ephy-debug.h			\
 	ephy-embed-dialog.h		\
 	ephy-file-helpers.h		\
