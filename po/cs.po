@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-15 03:14+0100\n"
-"PO-Revision-Date: 2004-03-15 10:26+0100\n"
+"POT-Creation-Date: 2004-04-26 03:15+0200\n"
+"PO-Revision-Date: 2004-04-26 15:01+0200\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -77,14 +77,6 @@ msgstr "_Vymazat"
 msgid "Error Viewer"
 msgstr "Prohlížeč chyb"
 
-#: extensions/error-viewer/link-checker.c:231
-#, c-format
-msgid "Found %d invalid link"
-msgid_plural "Found %d invalid links"
-msgstr[0] "Nalezen %d neplatný odkaz"
-msgstr[1] "Nalezeny %d neplatné odkazy"
-msgstr[2] "Nalezeno %d neplatných odkazů"
-
 #. Don't bother looking for source lines -- they're not there
 #: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
 #, c-format
@@ -104,7 +96,15 @@ msgstr ""
 "Chyba Javascriptu v %s na řádku %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:77
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "Nalezen %d neplatný odkaz"
+msgstr[1] "Nalezeny %d neplatné odkazy"
+msgstr[2] "Nalezeno %d neplatných odkazů"
+
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -113,7 +113,7 @@ msgstr ""
 "Chyba odkazu v %s:\n"
 "%s není k dispozici."
 
-#: extensions/error-viewer/mozilla/mozilla-link-checker.cpp:174
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
@@ -170,7 +170,20 @@ msgstr ""
 "Varovnání HTML v %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:381
+#: extensions/error-viewer/sgml-validator.c:360
+#, c-format
+msgid "HTML error in %s:"
+msgstr "Chyba HTML v %s:"
+
+#: extensions/error-viewer/sgml-validator.c:368
+msgid "Invalid character encoding"
+msgstr "Neplatné kódování znaků"
+
+#: extensions/error-viewer/sgml-validator.c:373
+msgid "Unknown error while converting to UTF-8"
+msgstr "Neznámá chyba při převodu do UTF-8"
+
+#: extensions/error-viewer/sgml-validator.c:435
 #, c-format
 msgid ""
 "HTML error in %s:\n"
