@@ -1,3 +1,7 @@
+2004-04-17  Artur Flinta  <aflinta@cvs.gnome.org>
+	* configure.ac:
+	Restored Polish translation from gnome-2-6 branch
+
 2004-04-17  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/error-viewer/error-viewer.c: (error_viewer_use),
