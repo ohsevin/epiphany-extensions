@@ -1,5 +1,17 @@
 2004-03-23  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
+	(update_action), (update_all_actions), (clear_one_permission_info),
+	(clear_popup_permissions), (action_activate_cb),
+	(unregister_mozilla), (register_mozilla), (new_window_cb),
+	(tab_added_cb), (sync_active_tab_cb), (impl_attach_window),
+	(impl_detach_window):
+
+	Replace calls to ephy_tab_get_window() which doesn't exist anymore.
+	Fix a mem leak, and do some misc cleanups.
+
+2004-03-23  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/gestures/ephy-gestures-extension.c:
 	(dom_mouse_down_cb):
 	* extensions/popup-blocker/ephy-popup-blocker-extension.c:

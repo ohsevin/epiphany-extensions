@@ -1,7 +1,7 @@
 /*
  *  Copyright (C) 2003 Marco Pesenti Gritti
- *  Copyright (C) 2003 Christian Persch
- *  Copyright (C) 2003 Adam Hooper
+ *  Copyright (C) 2003, 2004 Christian Persch
+ *  Copyright (C) 2003, 2004 Adam Hooper
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -132,7 +132,8 @@ get_icon_for_window (EphyWindow *window)
 }
 
 static void
-update_action (EphyWindow *window, const char *address)
+update_action (EphyWindow *window,
+	       const char *address)
 {
 	EphyPermissionManager *permission_manager;
 	GtkAction *action;
@@ -141,10 +142,11 @@ update_action (EphyWindow *window, const char *address)
 
 	LOG ("update_action: window %p, address %s", window, address)
 
-	permission_manager = EPHY_PERMISSION_MANAGER (ephy_embed_shell_get_embed_single (EPHY_EMBED_SHELL (ephy_shell)));
+	permission_manager = EPHY_PERMISSION_MANAGER
+		(ephy_embed_shell_get_embed_single (embed_shell));
 
-	response = ephy_permission_manager_test (permission_manager, address,
-						 EPT_POPUP);
+	response = ephy_permission_manager_test
+		(permission_manager, address, EPT_POPUP);
 
 	switch (response)
 	{
@@ -173,14 +175,7 @@ update_action (EphyWindow *window, const char *address)
 					   G_CALLBACK (action_activate_cb),
 					   window);
 
-	if (allow == TRUE)
-	{
-		LOG ("Popups are allowed from %s", address);
-	}
-	else
-	{
-		LOG ("Popups are blocked from %s", address);
-	}
+	LOG ("Popups are %s from %s", allow ? "allowed" : "blocked", address);
 }
 
 static void
@@ -219,6 +214,7 @@ update_all_actions (GConfClient *client,
 	windows = ephy_session_get_windows (session);
 
 	g_list_foreach (windows, (GFunc) update_action_without_address, NULL);
+	g_list_free (windows);
 }
 
 static void
@@ -272,12 +268,9 @@ get_gconf_allow_popups_pref (void)
 }
 
 static void
-clear_one_permission_info (gpointer data,
-			   gpointer user_data)
+clear_one_permission_info (EphyPermissionInfo *info,
+			   EphyPermissionManager *manager)
 {
-	EphyPermissionInfo *info = (EphyPermissionInfo *) data;
-	EphyPermissionManager *manager = (EphyPermissionManager *) user_data;
-
 	ephy_permission_manager_remove (manager, info->host, EPT_POPUP);
 
 	ephy_permission_info_free (info);
@@ -289,12 +282,12 @@ clear_popup_permissions (void)
 	EphyPermissionManager *manager;
 	GList *list;
 
-	manager = EPHY_PERMISSION_MANAGER (ephy_embed_shell_get_embed_single (EPHY_EMBED_SHELL (ephy_shell)));
+	manager = EPHY_PERMISSION_MANAGER
+		(ephy_embed_shell_get_embed_single (embed_shell));
 
 	list = ephy_permission_manager_list (manager, EPT_POPUP);
 
 	g_list_foreach (list, (GFunc) clear_one_permission_info, manager);
-
 	g_list_free (list);
 }
 
@@ -340,7 +333,7 @@ action_activate_cb (GtkAction *action,
 	EphyPermissionManager *permission_manager;
 	EphyPermission allow;
 
-	embed = ephy_window_get_active_embed(window);
+	embed = ephy_window_get_active_embed (window);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	address = ephy_embed_get_location (embed, TRUE);
@@ -349,7 +342,8 @@ action_activate_cb (GtkAction *action,
 	list = g_object_get_data (G_OBJECT (embed), "popup-blocker-list");
 	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (list));
 
-	permission_manager = EPHY_PERMISSION_MANAGER (ephy_embed_shell_get_embed_single (EPHY_EMBED_SHELL (ephy_shell)));
+	permission_manager = EPHY_PERMISSION_MANAGER
+		(ephy_embed_shell_get_embed_single (embed_shell));
 
 	if (gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action)) == TRUE)
 	{
@@ -396,7 +390,7 @@ create_statusbar_icon (EphyWindow *window)
 static void
 unregister_mozilla (PopupListenerFreeData *data)
 {
-	LOG ("unregister_mozilla with freeing data %x", data)
+	LOG ("unregister_mozilla with freeing data %p", data)
 
 	g_return_if_fail (data != NULL);
 
@@ -420,7 +414,7 @@ register_mozilla (EphyEmbed *embed)
 			(embed, G_CALLBACK (register_mozilla), NULL);
 	}
 
-	LOG ("register_mozilla with EphyEmbed at %x", embed)
+	LOG ("register_mozilla with EphyEmbed at %p", embed)
 
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
@@ -432,7 +426,7 @@ register_mozilla (EphyEmbed *embed)
 	data = mozilla_register_popup_listener (embed);
 	g_return_if_fail (data != NULL);
 
-	LOG ("Registered listener; freeing data is at %x", data)
+	LOG ("Registered listener; freeing data is at %p", data)
 
 	g_object_set_data_full (G_OBJECT (embed), "popup-blocker-listener-data",
 				data, (GDestroyNotify) unregister_mozilla);
@@ -444,18 +438,12 @@ new_window_cb (EphyEmbed *embed,
 	       EphyEmbedChrome chromemask,
 	       EphyPopupBlockerList *popups)
 {
-	EphyTab *tab;
 	GtkWidget *toplevel;
 
-	g_return_if_fail (EPHY_IS_EMBED (embed));
-	g_return_if_fail (new_embed != NULL);
+	if (*new_embed == NULL) return;
 	g_return_if_fail (EPHY_IS_EMBED (*new_embed));
-	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (popups));
 
-	tab = ephy_tab_for_embed (*new_embed);
-	g_return_if_fail (EPHY_IS_TAB (tab));
-
-	toplevel = gtk_widget_get_toplevel (GTK_WIDGET (tab));
+	toplevel = gtk_widget_get_toplevel (GTK_WIDGET (*new_embed));
 	g_return_if_fail (toplevel != NULL);
 
 	ephy_popup_blocker_list_insert_window (popups, EPHY_WINDOW (toplevel));
@@ -472,7 +460,7 @@ tab_added_cb (GtkWidget *notebook,
 
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
-	LOG ("tab_added_cb: tab %p, window %p\n", tab, window)
+	LOG ("tab_added_cb: tab %p, window %p", tab, window)
 
 	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
@@ -528,20 +516,19 @@ tab_removed_cb (GtkWidget *notebook,
 }
 
 static void
-switch_page_cb (GtkNotebook *notebook,
-		GtkNotebookPage *page,
-		guint page_num,
-		EphyWindow *window)
+sync_active_tab_cb (EphyWindow *window,
+		    GParamSpec *pspec,
+		    gpointer dummy)
 {
 	EphyEmbed *embed;
 	EphyPopupBlockerIcon *icon;
 	EphyPopupBlockerList *popups;
 
-	LOG ("switch_page_cb: page %x", page)
+	LOG ("sync_active_tab window %p", window)
 
 	g_return_if_fail (EPHY_IS_WINDOW (window));
 
-	if (GTK_WIDGET_REALIZED (window) == FALSE) return; /* on startup */
+	if (GTK_WIDGET_REALIZED (window) == FALSE) return;
 
 	embed = ephy_window_get_active_embed (window);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
@@ -602,6 +589,9 @@ impl_attach_window (EphyExtension *extension,
 	g_signal_connect_after (action, "activate",
 				G_CALLBACK (action_activate_cb), window);
 
+	g_signal_connect (window, "notify::active-tab",
+			  G_CALLBACK (sync_active_tab_cb), NULL);
+
 	/* Notebook signals */
 
 	notebook = ephy_window_get_notebook (window);
@@ -610,8 +600,6 @@ impl_attach_window (EphyExtension *extension,
 				G_CALLBACK (tab_added_cb), window);
 	g_signal_connect_after (notebook, "tab_removed",
 				G_CALLBACK (tab_removed_cb), window);
-	g_signal_connect_after (notebook, "switch_page",
-				G_CALLBACK (switch_page_cb), window);
 }
 
 static void
@@ -622,14 +610,15 @@ impl_detach_window (EphyExtension *extension,
 
 	g_return_if_fail (EPHY_IS_WINDOW (window));
 
+	g_signal_handlers_disconnect_by_func
+		(window, G_CALLBACK (sync_active_tab_cb), window);
+
 	notebook = ephy_window_get_notebook (window);
 
 	g_signal_handlers_disconnect_by_func
 		(notebook, G_CALLBACK (tab_added_cb), window);
 	g_signal_handlers_disconnect_by_func
 		(notebook, G_CALLBACK (tab_removed_cb), window);
-	g_signal_handlers_disconnect_by_func
-		(notebook, G_CALLBACK (switch_page_cb), window);
 }
 
 static void
