@@ -266,7 +266,7 @@ convert_to_utf8 (const char *file,
 		 EphyEmbed *embed)
 {
 	const char *static_tmp_dir;
-	EphyEncodingInfo *encoding_info;
+	char *encoding;
 	char *base;
 	char *buf;
 	int buf_size = 4096;
@@ -284,14 +284,14 @@ convert_to_utf8 (const char *file,
 	g_free (base);
 	g_return_val_if_fail (*new_file != NULL, NULL);
 
-	encoding_info = ephy_embed_get_encoding_info (embed);
+	encoding = ephy_embed_get_encoding (embed);
 
 	in = g_io_channel_new_file (file, "r", NULL);
 	g_return_val_if_fail (in != NULL, NULL);
-	status = g_io_channel_set_encoding (in, encoding_info->encoding, &err);
+	status = g_io_channel_set_encoding (in, encoding, &err);
 	g_return_val_if_fail (status == G_IO_STATUS_NORMAL, err);
 
-	ephy_encoding_info_free (encoding_info); 
+	g_free (encoding);
 
 	out = g_io_channel_new_file (*new_file, "w", NULL);
 	g_return_val_if_fail (out != NULL, NULL);
