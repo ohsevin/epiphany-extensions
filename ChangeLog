@@ -1,5 +1,11 @@
 2004-09-13  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:
+
+	Skip style sheets not for "screen" or "all" media.
+
+2004-09-13  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/page-info/page-info-dialog.c:
 
 	Include gi18n-lib.h, not gi18n.h.

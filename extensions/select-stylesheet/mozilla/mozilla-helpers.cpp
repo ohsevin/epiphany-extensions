@@ -43,6 +43,7 @@
 #include <nsIDOMStyleSheetList.h>
 #include <nsIDOMWindow.h>
 #include <nsIWebBrowser.h>
+#include <nsIDOMMediaList.h>
 
 #include <glib/gi18n-lib.h>
 
@@ -184,6 +185,22 @@ mozilla_get_stylesheets (EphyEmbed *aEmbed,
 		if (!item) continue;
 
 		++numTotal;
+
+		/* skip stylesheets for media != screen or all */
+
+		nsCOMPtr<nsIDOMMediaList> mediaList;
+		item->GetMedia (getter_AddRefs (mediaList));
+		if (mediaList)
+		{
+			nsEmbedString media;
+			rv = mediaList->GetMediaText (media);
+			if (NS_FAILED (rv)) continue;
+	
+			nsEmbedCString cMedia;
+			NS_UTF16ToCString (media, NS_CSTRING_ENCODING_UTF8, cMedia);
+			if (strstr (cMedia.get(), "screen") == NULL &&
+			    strstr (cMedia.get(), "all") == NULL) continue;
+		}
 
 		nsEmbedString title;
 		rv = item->GetTitle (title);
