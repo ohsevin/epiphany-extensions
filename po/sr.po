@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-02-12 06:24+0100\n"
-"PO-Revision-Date: 2004-02-12 06:28+0100\n"
+"POT-Creation-Date: 2004-02-20 09:06+0100\n"
+"PO-Revision-Date: 2004-02-20 09:06+0100\n"
 "Last-Translator: Данило Шеган <danilo@prevod.org>\n"
 "Language-Team: Serbian (sr) <serbiangnome-lista@nongnu.org>\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,17 @@ msgstr "_Очисти"
 msgid "Error Viewer"
 msgstr "Преглед грешака"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:106
+#. Don't bother looking for source lines -- they're not there
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:76
+#, c-format
+msgid ""
+"Error:\n"
+"%s"
+msgstr ""
+"Грешка:\n"
+"%s"
+
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:91
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -99,7 +109,8 @@ msgid ""
 "instead."
 msgstr ""
 "HTML грешка у %s:\n"
-"Врста документа је XHTML али врста садржаја је text/html.  Користите уместо тога application/xhtml+xml."
+"Врста документа је XHTML али врста садржаја је text/html.  Користите уместо "
+"тога application/xhtml+xml."
 
 #: extensions/error-viewer/sgml-validator.c:231
 #, c-format
@@ -109,7 +120,8 @@ msgid ""
 "instead."
 msgstr ""
 "HTML упозорење у %s:\n"
-"Врста документа је XHTML али врста садржаја је text/html.  Користите уместо тога application/xhtml+xml."
+"Врста документа је XHTML али врста садржаја је text/html.  Користите уместо "
+"тога application/xhtml+xml."
 
 #: extensions/error-viewer/sgml-validator.c:368
 #, c-format
@@ -152,6 +164,3 @@ msgstr "Премести лист у прозор"
 #: extensions/tabsmenu/ephy-tab-move-menu.c:284
 msgid "Move the current tab to a different window"
 msgstr "Премести текући лист у други прозор"
-
-#~ msgid "Errors"
-#~ msgstr "Грешке"
