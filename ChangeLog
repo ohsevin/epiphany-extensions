@@ -1,3 +1,15 @@
+2004-10-21  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/extensions-manager-ui/extensions-manager-ui.c:
+	(extensions_manager_ui_info_dialog_response_cb),
+	(show_extension_info), (fill_list_store), (extension_toggle_cb),
+	(active_sync), (row_activated), (build_ui):
+	* extensions/extensions-manager-ui/extensions-manager-ui.glade:
+
+	Change the "id" column in the TreeModel to an "info" column holding a
+	pointer to an EphyExtensionInfo. Using this, make row-activated in the
+	treeview open a dialog describing an extension.
+
 2004-10-19  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* configure.ac:
