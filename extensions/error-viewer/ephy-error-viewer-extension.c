@@ -258,7 +258,9 @@ update_sgml_validator_action (EphyWindow *window)
 	content_type = mozilla_get_content_type (embed);
 
 	if ((strcmp (content_type, "text/html") == 0)
-	    || (strcmp (content_type, "application/xhtml+xml") == 0))
+	    || (strcmp (content_type, "application/xhtml+xml") == 0)
+	    || (strcmp (content_type, "application/xml") == 0)
+	    || (strcmp (content_type, "text/xml") == 0))
 	{
 		g_value_set_boolean (sensitive, TRUE);
 	}

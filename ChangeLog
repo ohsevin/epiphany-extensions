@@ -1,5 +1,17 @@
 2004-01-31  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	(update_sgml_validator_action):
+
+	Add application/xml and text/xml content types.
+
+	* extensions/error-viewer/sgml-validator.c:
+	(save_source_completed_cb):
+
+	Turn "xhtml + text/html" error into a warning if it's XHTML 1.0.
+
+2004-01-31  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/error-viewer/README:
 
 	Cleaned up README. It's concise and legible now.

@@ -217,21 +217,42 @@ save_source_completed_cb (EphyEmbedPersist *persist,
 		{
 			location = ephy_embed_get_location (embed, FALSE);
 
-			t = g_strdup_printf
-				(_("HTML error in %s:\nDoctype is XHTML "
-				   "but content type is text/html"),
-				 location);
+			if (strstr (doctype, "XHTML 1.1"))
+			{
+				t = g_strdup_printf
+					(_("HTML error in %s:\nDoctype is XHTML"
+					   " but content type is text/html"),
+					 location);
+
+				sgml_validator_append (validator,
+						       ERROR_VIEWER_ERROR, t);
+
+				g_free (t);
+
+				num_errors++;
+			}
+			else
+			{
+				t = g_strdup_printf
+					(_("HTML warning in %s:\nDoctype is "
+					   "XHTML but content type is "
+					   "text/html"),
+					 location);
+
+				sgml_validator_append (validator,
+						       ERROR_VIEWER_WARNING, t);
+
+				g_free (t);
+			}
 
 			g_free (location);
-
-			sgml_validator_append (validator, ERROR_VIEWER_ERROR,
-					       t);
+		}
+		else
+		{
+			is_xml = TRUE;
 		}
 
 		g_free (content_type);
-
-		is_xml = TRUE;
-		num_errors++;
 	}
 	g_free (doctype);
 
