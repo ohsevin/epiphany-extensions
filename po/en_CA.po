@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-12-22 21:31-0500\n"
-"PO-Revision-Date: 2004-12-22 16:10-0400\n"
+"POT-Creation-Date: 2005-01-03 18:32-0500\n"
+"PO-Revision-Date: 2005-01-03 16:10-0400\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: English/Canada <adamw@FreeBSD.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,39 +17,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:446
 msgid "_Edit Bookmarks"
 msgstr "_Edit Bookmarks"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:447
 msgid "Open the bookmarks window"
 msgstr "Open the bookmarks window"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:453
 msgid "Open in _Current Tab"
 msgstr "Open in _Current Tab"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:446
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:454
 msgid "Open bookmarks in the current tab of the active window"
 msgstr "Open bookmarks in the current tab of the active window"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:448
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:456
 msgid "Open in New _Tab"
 msgstr "Open in New _Tab"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:449
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:457
 msgid "Open bookmarks in a new tab of the active window"
 msgstr "Open bookmarks in a new tab of the active window"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:451
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:459
 msgid "Open in New _Window"
 msgstr "Open in New _Window"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:452
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:460
 msgid "Open bookmarks in new a window"
 msgstr "Open bookmarks in new a window"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:520
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:528
 msgid "Bookmarks"
 msgstr "Bookmarks"
 
@@ -101,8 +101,8 @@ msgid "Display web page errors"
 msgstr "Display web page errors"
 
 #: extensions/error-viewer/error-viewer.glade.h:1
-msgid "C_lear"
-msgstr "C_lear"
+msgid "Cl_ear"
+msgstr "Cl_ear"
 
 #: extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
@@ -252,140 +252,140 @@ msgstr "_Page Info"
 msgid "Display page information in a dialog"
 msgstr "Display page information in a dialogue"
 
-#: extensions/page-info/page-info-dialog.c:640
+#: extensions/page-info/page-info-dialog.c:647
 msgid "Unknown type"
 msgstr "Unknown type"
 
-#: extensions/page-info/page-info-dialog.c:645
+#: extensions/page-info/page-info-dialog.c:652
 msgid "Full standards compliance"
 msgstr "Full standards compliance"
 
-#: extensions/page-info/page-info-dialog.c:648
+#: extensions/page-info/page-info-dialog.c:655
 msgid "Almost standards compliance"
 msgstr "Almost standards compliance"
 
-#: extensions/page-info/page-info-dialog.c:651
+#: extensions/page-info/page-info-dialog.c:658
 msgid "Compatibility"
 msgstr "Compatibility"
 
-#: extensions/page-info/page-info-dialog.c:654
+#: extensions/page-info/page-info-dialog.c:661
 msgid "Undetermined"
 msgstr "Undetermined"
 
-#: extensions/page-info/page-info-dialog.c:663
+#: extensions/page-info/page-info-dialog.c:670
 msgid "Not cached"
 msgstr "Not cached"
 
-#: extensions/page-info/page-info-dialog.c:666
+#: extensions/page-info/page-info-dialog.c:673
 msgid "Disk cache"
 msgstr "Disk cache"
 
-#: extensions/page-info/page-info-dialog.c:669
+#: extensions/page-info/page-info-dialog.c:676
 msgid "Memory cache"
 msgstr "Memory cache"
 
-#: extensions/page-info/page-info-dialog.c:672
+#: extensions/page-info/page-info-dialog.c:679
 msgid "Unknown cache"
 msgstr "Unknown cache"
 
-#: extensions/page-info/page-info-dialog.c:688
-#: extensions/page-info/page-info-dialog.c:808
+#: extensions/page-info/page-info-dialog.c:695
+#: extensions/page-info/page-info-dialog.c:824
 msgid "Unknown"
 msgstr "Unknown"
 
-#: extensions/page-info/page-info-dialog.c:693
+#: extensions/page-info/page-info-dialog.c:700
 msgid "No referrer"
 msgstr "No referrer"
 
-#: extensions/page-info/page-info-dialog.c:707
-#: extensions/page-info/page-info-dialog.c:723
+#: extensions/page-info/page-info-dialog.c:714
+#: extensions/page-info/page-info-dialog.c:730
 msgid "Not specified"
 msgstr "Not specified"
 
-#: extensions/page-info/page-info-dialog.c:793
+#: extensions/page-info/page-info-dialog.c:809
 msgid "Image"
 msgstr "Image"
 
-#: extensions/page-info/page-info-dialog.c:796
+#: extensions/page-info/page-info-dialog.c:812
 msgid "Embed"
 msgstr "Embed"
 
-#: extensions/page-info/page-info-dialog.c:799
+#: extensions/page-info/page-info-dialog.c:815
 msgid "Object"
 msgstr "Object"
 
-#: extensions/page-info/page-info-dialog.c:802
+#: extensions/page-info/page-info-dialog.c:818
 msgid "Applet"
 msgstr "Applet"
 
-#: extensions/page-info/page-info-dialog.c:805
+#: extensions/page-info/page-info-dialog.c:821
 msgid "Icon"
 msgstr "Icon"
 
-#: extensions/page-info/page-info-dialog.c:961
+#: extensions/page-info/page-info-dialog.c:977
 msgid "Save Medium As..."
 msgstr "Save Medium As..."
 
-#: extensions/page-info/page-info-dialog.c:976
+#: extensions/page-info/page-info-dialog.c:994
 msgid "Select a directory"
 msgstr "Select a directory"
 
-#: extensions/page-info/page-info-dialog.c:1074
+#: extensions/page-info/page-info-dialog.c:1095
 msgid "_Open"
 msgstr "_Open"
 
-#: extensions/page-info/page-info-dialog.c:1080
-#: extensions/page-info/page-info-dialog.c:1429
+#: extensions/page-info/page-info-dialog.c:1101
+#: extensions/page-info/page-info-dialog.c:1494
 msgid "_Copy Link Address"
 msgstr "_Copy Link Address"
 
-#: extensions/page-info/page-info-dialog.c:1086
+#: extensions/page-info/page-info-dialog.c:1107
 msgid "_Use as Background"
 msgstr "_Use as Background"
 
-#: extensions/page-info/page-info-dialog.c:1092
+#: extensions/page-info/page-info-dialog.c:1113
 msgid "_Save As..."
 msgstr "_Save As..."
 
-#: extensions/page-info/page-info-dialog.c:1233
-#: extensions/page-info/page-info-dialog.c:1463
+#: extensions/page-info/page-info-dialog.c:1298
+#: extensions/page-info/page-info-dialog.c:1568
 msgid "URL"
 msgstr "URL"
 
-#: extensions/page-info/page-info-dialog.c:1245
+#: extensions/page-info/page-info-dialog.c:1310
 msgid "Type"
 msgstr "Type"
 
-#: extensions/page-info/page-info-dialog.c:1257
+#: extensions/page-info/page-info-dialog.c:1322
 msgid "Alt Text"
 msgstr "Alt Text"
 
-#: extensions/page-info/page-info-dialog.c:1269
-#: extensions/page-info/page-info-dialog.c:1475
+#: extensions/page-info/page-info-dialog.c:1334
+#: extensions/page-info/page-info-dialog.c:1580
 msgid "Title"
 msgstr "Title"
 
-#: extensions/page-info/page-info-dialog.c:1281
+#: extensions/page-info/page-info-dialog.c:1346
 msgid "Width"
 msgstr "Width"
 
-#: extensions/page-info/page-info-dialog.c:1293
+#: extensions/page-info/page-info-dialog.c:1358
 msgid "Height"
 msgstr "Height"
 
-#: extensions/page-info/page-info-dialog.c:1487
+#: extensions/page-info/page-info-dialog.c:1592
 msgid "Relation"
 msgstr "Relation"
 
-#: extensions/page-info/page-info-dialog.c:1595
+#: extensions/page-info/page-info-dialog.c:1700
 msgid "Name"
 msgstr "Name"
 
-#: extensions/page-info/page-info-dialog.c:1607
+#: extensions/page-info/page-info-dialog.c:1712
 msgid "Method"
 msgstr "Method"
 
-#: extensions/page-info/page-info-dialog.c:1619
+#: extensions/page-info/page-info-dialog.c:1724
 msgid "Action"
 msgstr "Action"
 
@@ -518,29 +518,29 @@ msgstr "Default"
 msgid "None"
 msgstr "None"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:108
+#: extensions/sidebar/ephy-sidebar-extension.c:106
 msgid "_Sidebar"
 msgstr "_Sidebar"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:109
+#: extensions/sidebar/ephy-sidebar-extension.c:107
 msgid "Show or hide the sidebar"
 msgstr "Show or hide the sidebar"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:396
+#: extensions/sidebar/ephy-sidebar-extension.c:387
 #, c-format
 msgid "Add \"%s\" to the Sidebar?"
 msgstr "Add \"%s\" to the Sidebar?"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:400
+#: extensions/sidebar/ephy-sidebar-extension.c:391
 #, c-format
 msgid "The source to the new sidebar page is %s."
 msgstr "The source to the new sidebar page is %s."
 
-#: extensions/sidebar/ephy-sidebar-extension.c:402
+#: extensions/sidebar/ephy-sidebar-extension.c:393
 msgid "Add Sidebar"
 msgstr "Add Sidebar"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:406
+#: extensions/sidebar/ephy-sidebar-extension.c:397
 msgid "_Add Sidebar"
 msgstr "_Add Sidebar"
 
