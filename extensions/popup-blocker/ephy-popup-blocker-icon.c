@@ -131,7 +131,7 @@ icon_button_press_cb (GtkWidget *evbox,
 
 	g_return_if_fail (GTK_IS_MENU (menu) && menu != NULL);
 
-	if (gtk_menu_get_attach_widget (GTK_MENU (menu)) != icon)
+	if (gtk_menu_get_attach_widget (GTK_MENU (menu)) != GTK_WIDGET (icon))
 	{
 		gtk_menu_attach_to_widget (GTK_MENU (menu), GTK_WIDGET (icon),
 					   popup_menu_detach);

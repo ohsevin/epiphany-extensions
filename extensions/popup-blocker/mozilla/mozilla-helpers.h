@@ -41,6 +41,10 @@ PopupListenerFreeData	*mozilla_register_popup_listener	(EphyEmbed *embed);
 
 void			mozilla_unregister_popup_listener	(PopupListenerFreeData *data);
 
+void			mozilla_open_popup			(EphyEmbed *embed,
+								 const char *url,
+								 const char *features);
+
 G_END_DECLS
 
 #endif /* POPUP_BLOCKER_MOZILLA_HELPERS_H */

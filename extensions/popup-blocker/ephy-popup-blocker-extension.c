@@ -463,7 +463,7 @@ tab_added_cb (GtkWidget *notebook,
 	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
-	popups = ephy_popup_blocker_list_new ();
+	popups = ephy_popup_blocker_list_new (embed);
 	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (popups));
 
 	g_object_set_data_full (G_OBJECT (embed), "popup-blocker-list", popups,

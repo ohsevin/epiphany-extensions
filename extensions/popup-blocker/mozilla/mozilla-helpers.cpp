@@ -32,6 +32,8 @@
 #include <nsIDOMEventTarget.h>
 #include <nsIDOMWindow.h>
 #include <nsIDOMWindowInternal.h>
+#include <nsIScriptGlobalObject.h>
+#include <nsIScriptContext.h>
 #include <nsIWebBrowser.h>
 #include <nsPIDOMWindow.h>
 
@@ -110,4 +112,54 @@ mozilla_unregister_popup_listener (PopupListenerFreeData *data)
 
 	NS_RELEASE (target);
 	//delete listener;
+}
+
+extern "C" void
+mozilla_open_popup (EphyEmbed *embed,
+		    const char *url,
+		    const char *features)
+{
+	nsresult rv;
+
+	g_return_if_fail (GTK_IS_MOZ_EMBED (embed));
+
+	nsCOMPtr<nsIWebBrowser> browser;
+	gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (embed),
+					 getter_AddRefs (browser));
+	g_return_if_fail (browser != NULL);
+
+	nsCOMPtr<nsIDOMWindow> DOMWindow;
+	rv = browser->GetContentDOMWindow (getter_AddRefs (DOMWindow));
+	g_return_if_fail (NS_SUCCEEDED (rv));
+
+	nsCOMPtr<nsIScriptGlobalObject> globalObject;
+	globalObject = do_QueryInterface (DOMWindow, &rv);
+	g_return_if_fail (NS_SUCCEEDED (rv));
+
+#if MOZILLA_SNAPSHOT >= 14
+	nsIScriptContext *context = globalObject->GetContext ();
+	g_return_if_fail (context != NULL);
+#else
+	nsCOMPtr<nsIScriptContext> context;
+	rv = globalObject->GetContext (getter_AddRefs (context));
+	g_return_if_fail (NS_SUCCEEDED (rv));
+#endif
+
+	context->SetProcessingScriptTag (PR_TRUE);
+
+	char *script;
+
+	script = g_strdup_printf ("javascript:open(\"%s\", \"\", \"%s\");",
+				  url, features);
+
+	const nsAString &aScript = NS_ConvertUTF8toUCS2(script);
+
+	g_free (script);
+
+	PRBool isUndefined;
+	nsAutoString ret;
+	context->EvaluateString (aScript, nsnull, nsnull, nsnull, 0,
+				 nsnull, ret, &isUndefined);
+
+	context->SetProcessingScriptTag (PR_FALSE); // Is this "right"?
 }

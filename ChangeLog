@@ -1,5 +1,27 @@
 2004-03-11  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/popup-blocker/mozilla/mozilla-helpers.cpp:
+	* extensions/popup-blocker/mozilla/mozilla-helpers.h:
+
+	Create mozilla_open_popup, which opens a popup.
+
+	* extensions/popup-blocker/ephy-popup-blocker-extension.c:
+	(tab_added_cb):
+	* extensions/popup-blocker/ephy-popup-blocker-list.c:
+	(ephy_popup_blocker_list_new), (ephy_popup_blocker_list_init),
+	(ephy_popup_blocker_list_open):
+	* extensions/popup-blocker/ephy-popup-blocker-list.h:
+
+	Make the EphyPopupBlockerList store its corresponding EphyEmbed and
+	use that to call mozilla_open_popup.
+
+	* extensions/popup-blocker/ephy-popup-blocker-icon.c:
+	(icon_button_press_cb):
+
+	Fix compiler warning
+
+2004-03-11  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/popup-blocker/ephy-popup-blocker-icon.c:
 	(popup_menu_detach), (icon_button_press_cb),
 	(ephy_popup_blocker_icon_init):

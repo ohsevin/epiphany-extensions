@@ -23,15 +23,15 @@
 #endif
 
 #include "ephy-popup-blocker-list.h"
+#include "mozilla-helpers.h"
 
 #include "ephy-debug.h"
-
-#include <epiphany/ephy-shell.h>
 
 #define EPHY_POPUP_BLOCKER_LIST_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_POPUP_BLOCKER_LIST, EphyPopupBlockerListPrivate))
 
 struct EphyPopupBlockerListPrivate
 {
+	EphyEmbed *embed;
 	GSList *blocked_popups;
 };
 
@@ -80,12 +80,14 @@ ephy_popup_blocker_list_register_type (GTypeModule *module)
 }
 
 EphyPopupBlockerList *
-ephy_popup_blocker_list_new (void)
+ephy_popup_blocker_list_new (EphyEmbed *embed)
 {
 	EphyPopupBlockerList *ret;
 
 	ret = EPHY_POPUP_BLOCKER_LIST
 		(g_object_new (EPHY_TYPE_POPUP_BLOCKER_LIST, NULL));
+
+	ret->priv->embed = embed;
 
 	return ret;
 }
@@ -98,6 +100,7 @@ ephy_popup_blocker_list_init (EphyPopupBlockerList *list)
 	list->priv = EPHY_POPUP_BLOCKER_LIST_GET_PRIVATE (list);
 
 	list->priv->blocked_popups = NULL;
+	list->priv->embed = NULL;
 }
 
 static void
@@ -160,12 +163,9 @@ void
 ephy_popup_blocker_list_open (EphyPopupBlockerList *list,
 			      BlockedPopup *popup)
 {
-	/* FIXME: Get the 'features' working */
-	/* FIXME: Set 3rd argument of ephy_shell_new_tab to referrer tab */
 	g_return_if_fail (EPHY_IS_POPUP_BLOCKER_LIST (list));
 
-	ephy_shell_new_tab (ephy_shell, NULL, NULL, popup->url,
-			    EPHY_NEW_TAB_IN_NEW_WINDOW);
+	mozilla_open_popup (list->priv->embed, popup->url, popup->features);
 
 	list->priv->blocked_popups =
 		g_slist_remove (list->priv->blocked_popups, popup);

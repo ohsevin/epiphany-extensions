@@ -21,6 +21,8 @@
 #ifndef EPHY_POPUP_BLOCKER_LIST_H
 #define EPHY_POPUP_BLOCKER_LIST_H
 
+#include <epiphany/ephy-embed.h>
+
 #include <glib.h>
 #include <glib-object.h>
 
@@ -59,7 +61,7 @@ GType			ephy_popup_blocker_list_get_type		(void);
 
 GType			ephy_popup_blocker_list_register_type		(GTypeModule *module);
 
-EphyPopupBlockerList	*ephy_popup_blocker_list_new			();
+EphyPopupBlockerList	*ephy_popup_blocker_list_new			(EphyEmbed *embed);
 
 void			ephy_popup_blocker_list_reset			(EphyPopupBlockerList *list);
 
