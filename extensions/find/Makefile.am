@@ -1,5 +1,3 @@
-SUBDIRS = mozilla
-
 extensiondir = $(EXTENSIONS_DIR)
 extension_LTLIBRARIES = libfindextension.la
 
@@ -9,13 +7,27 @@ libfindextension_la_SOURCES = \
 	eggfindbarprivate.h	\
 	ephy-find-extension.c	\
 	ephy-find-extension.h	\
-	ephy-find-bar.c	\
-	ephy-find-bar.h	\
+	ephy-find-bar.cpp	\
+	ephy-find-bar.h		\
+	mozilla-helpers.cpp	\
+	mozilla-helpers.h	\
+	TypeAheadFind.cpp	\
+	TypeAheadFind.h		\
 	extension.c
+
+mozilla_include_subdirs = \
+	.		\
+	content		\
+	docshell	\
+	dom		\
+	fastfind	\
+	find		\
+	xpcom
 
 libfindextension_la_CPPFLAGS = \
         -I$(top_srcdir)/include					\
-	-I$(top_srcdir)/extensions/find/mozilla	\
+	$(addprefix -I$(MOZILLA_INCLUDE_ROOT)/,$(mozilla_include_subdirs))	\
+	-DALLOW_PRIVATE_API		\
 	-DSHARE_DIR=\"$(pkgdatadir)\"				\
 	-DEPHY_EXTENSIONS_LOCALEDIR=\"$(datadir)/locale\"  	\
 	$(AM_CPPFLAGS)
@@ -24,8 +36,12 @@ libfindextension_la_CFLAGS = \
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
 	$(AM_CFLAGS)
 
+libfindextension_la_CXXFLAGS = \
+	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
+	$(MOZILLA_COMPONENT_CFLAGS)	\
+	$(AM_CXXFLAGS)
+
 libfindextension_la_LIBADD = \
-	mozilla/libfindmozilla.la	\
 	$(MOZILLA_COMPONENT_LIBS)
 
 extensionxmldir = $(extensiondir)

@@ -28,22 +28,22 @@
 G_BEGIN_DECLS
 
 #define EPHY_TYPE_FIND_EXTENSION		(ephy_find_extension_get_type ())
-#define EPHY_FIND_EXTENSION(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), EPHY_TYPE_FIND_EXTENSION, EphyFindExtension))
+#define EPHY_FIND_EXTENSION(o)			(G_TYPE_CHECK_INSTANCE_CAST ((o), EPHY_TYPE_FIND_EXTENSION, EphyFindExtension))
 #define EPHY_FIND_EXTENSION_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), EPHY_TYPE_FIND_EXTENSION, EphyFindExtensionClass))
 #define EPHY_IS_FIND_EXTENSION(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), EPHY_TYPE_FIND_EXTENSION))
-#define EPHY_IS_FIND_EXTENSION_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), EPHY_TYPE_FIND_EXTENSION))
+#define EPHY_IS_FIND_EXTENSION_CLASS(k)		(G_TYPE_CHECK_CLASS_TYPE ((k), EPHY_TYPE_FIND_EXTENSION))
 #define EPHY_FIND_EXTENSION_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), EPHY_TYPE_FIND_EXTENSION, EphyFindExtensionClass))
 
-typedef struct EphyFindExtension		EphyFindExtension;
-typedef struct EphyFindExtensionClass	EphyFindExtensionClass;
-typedef struct EphyFindExtensionPrivate	EphyFindExtensionPrivate;
+typedef struct _EphyFindExtension		EphyFindExtension;
+typedef struct _EphyFindExtensionClass		EphyFindExtensionClass;
+typedef struct _EphyFindExtensionPrivate	EphyFindExtensionPrivate;
 
-struct EphyFindExtensionClass
+struct _EphyFindExtensionClass
 {
 	GObjectClass parent_class;
 };
 
-struct EphyFindExtension
+struct _EphyFindExtension
 {
 	GObject parent_instance;
 

@@ -23,7 +23,6 @@
 
 #include "ephy-find-extension.h"
 #include "ephy-find-bar.h"
-#include "mozilla-find.h"
 
 #include <epiphany/ephy-extension.h>
 #include <epiphany/ephy-window.h>
@@ -37,7 +36,7 @@
 
 #define EPHY_FIND_EXTENSION_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_FIND_EXTENSION, EphyFindExtensionPrivate))
 
-struct EphyFindExtensionPrivate
+struct _EphyFindExtensionPrivate
 {
 	gpointer dummy;
 };
@@ -181,6 +180,7 @@ impl_detach_tab (EphyExtension *extension,
 		 EphyWindow *window,
 		 EphyTab *tab)
 {
+#if 0
 	EphyEmbed *embed;
 
 	LOG ("detach_tab");
@@ -189,6 +189,7 @@ impl_detach_tab (EphyExtension *extension,
 	g_return_if_fail (embed != NULL);
 
 	mozilla_find_detach (embed);
+#endif
 }
 
 static void

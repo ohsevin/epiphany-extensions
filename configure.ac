@@ -381,10 +381,21 @@ AC_COMPILE_IFELSE(
 
 AC_MSG_RESULT([$result])
 
+dnl Find extension needs toolkit nsITypeAheadFind
+
+if echo "$extensions" | egrep '(^|,)find($|,)' > /dev/null; then
+	AC_CHECK_FILE([$MOZILLA_INCLUDE_ROOT/fastfind/nsITypeAheadFind.h],
+	        [AC_DEFINE([HAVE_FASTFIND_NSITYPEAHEADFIND_H],[1],[Define if we have toolkit's nsITypeAheadFind])],
+		[AC_MSG_ERROR([Find extension needs toolkit's nsITypeAheadFind])])
+fi
+
+dnl restore flags
 CXXFLAGS=$_SAVE_CXXFLAGS
 AC_LANG_POP([C++])
 
+dnl *****************
 dnl Add warning flags
+dnl *****************
 
 AM_CPPFLAGS="$AM_CPPFLAGS $DEPRECATION_FLAGS"
 AM_CFLAGS="$AM_CFLAGS $WARN_CFLAGS"

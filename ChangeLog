@@ -1,3 +1,37 @@
+2005-02-13  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
+	Check for toolkit nsITypeAheadFind.
+
+	* extensions/find/Makefile.am:
+	A extensions/find/TypeAheadFind.cpp:
+	A extensions/find/TypeAheadFind.h:
+
+	nsITypeAheadFind wrapper.
+
+	* extensions/find/eggfindbar.c: (entry_changed_callback),
+	(egg_find_bar_init), (egg_find_bar_finalize),
+	(egg_find_bar_get_search_string):
+
+	Put the entry in a event box. Works around gtk+ bug #167259,
+	fixes bug #164797.
+
+	R extensions/find/ephy-find-bar.c:
+	A extensions/find/ephy-find-bar.cpp:
+
+	Highlighting is gone for now. Use typeaheadfind wrapper.
+
+	* extensions/find/ephy-find-extension.c: (impl_detach_tab):
+	* extensions/find/ephy-find-extension.h:
+
+	Don't need to detach tab.
+
+	A extensions/find/mozilla-helpers.cpp:
+	A extensions/find/mozilla-helpers.h:
+
+	Helpers to scroll the embed.
+
 2005-02-11  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/page-info/mozilla/Makefile.am:

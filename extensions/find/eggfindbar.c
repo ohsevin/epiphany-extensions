@@ -23,6 +23,7 @@ Boston, MA 02111-1307, USA.
 
 #include <glib/gi18n-lib.h>
 #include <gtk/gtkhbox.h>
+#include <gtk/gtkeventbox.h>
 #include <gtk/gtkentry.h>
 #include <gtk/gtkcheckbutton.h>
 #include <gtk/gtkvseparator.h>
@@ -33,7 +34,6 @@ Boston, MA 02111-1307, USA.
 
 #include <string.h>
 
-#define ENTRY_CHANGED_TIMEOUT 300 /* ms */
 
 enum
   {
@@ -41,7 +41,6 @@ enum
     PROP_SEARCH_STRING,
     PROP_CASE_SENSITIVE
   };
-
 
 static void egg_find_bar_finalize      (GObject        *object);
 static void egg_find_bar_get_property  (GObject        *object,
@@ -241,36 +240,21 @@ entry_activate_callback (GtkEntry *entry,
   gtk_widget_activate (priv->next_button);
 }
 
-static gboolean
-entry_changed_timeout_cb (EggFindBar *find_bar)
+static void
+entry_changed_callback (GtkEntry *entry,
+                        void     *data)
 {
-  EggFindBarPrivate *priv = find_bar->priv;
+  EggFindBar *find_bar = EGG_FIND_BAR (data);
   char *text;
 
-  text = g_strdup (gtk_entry_get_text (GTK_ENTRY (priv->find_entry)));
+  /* paranoid strdup because set_search_string() sets
+   * the entry text
+   */
+  text = g_strdup (gtk_entry_get_text (entry));
 
   egg_find_bar_set_search_string (find_bar, text);
 
   g_free (text);
-  priv->update_id = 0;
-
-  return FALSE;
-}
-
-static void
-entry_changed_callback (GtkEntry *entry,
-                        EggFindBar *find_bar)
-{
-  EggFindBarPrivate *priv = find_bar->priv;
-
-  if (priv->update_id != 0)
-    {
-      g_source_remove (priv->update_id);
-    }
-
-  priv->update_id = g_timeout_add (ENTRY_CHANGED_TIMEOUT,
-				   (GSourceFunc) entry_changed_timeout_cb,
-				   find_bar);
 }
 
 static void
@@ -311,14 +295,18 @@ egg_find_bar_init (EggFindBar *find_bar)
   gtk_container_add (GTK_CONTAINER (priv->close_button), image);
 #endif
 
-  priv->find_entry_box = gtk_hbox_new (FALSE, 0);
+  /* gtk+ bug 167259. As work-around, use a window widget like GtkEventBox */
+  /* priv->find_entry_box = gtk_hbox_new (FALSE, 0);*/
+  priv->find_entry_box = gtk_event_box_new ();
 
   priv->find_entry = gtk_entry_new ();
   gtk_label_set_mnemonic_widget (GTK_LABEL (label), priv->find_entry);
   gtk_container_add (GTK_CONTAINER (priv->find_entry_box), priv->find_entry);
 
   priv->previous_button = gtk_button_new_with_mnemonic (_("_Previous"));
+  gtk_button_set_focus_on_click (GTK_BUTTON (priv->previous_button), FALSE);
   priv->next_button = gtk_button_new_with_mnemonic (_("_Next"));
+  gtk_button_set_focus_on_click (GTK_BUTTON (priv->next_button), FALSE);
 
   image_back = gtk_image_new_from_stock (GTK_STOCK_GO_BACK,
                                          GTK_ICON_SIZE_BUTTON);
@@ -392,11 +380,10 @@ egg_find_bar_init (EggFindBar *find_bar)
   gtk_widget_show (label);
   gtk_widget_show (image_back);
   gtk_widget_show (image_forward);
+  gtk_widget_show (priv->case_button);
   /* don't show status separator/label until they are set */
 
   gtk_widget_pop_composite_child ();
-
-  gtk_widget_show_all (priv->hbox);
 
 #ifdef SUCK
   g_signal_connect (priv->close_button, "clicked",
@@ -427,11 +414,6 @@ egg_find_bar_finalize (GObject *object)
   EggFindBarPrivate *priv = (EggFindBarPrivate *)find_bar->priv;
 
   g_free (priv->search_string);
-
-  if (priv->update_id != 0)
-    {
-      g_source_remove (priv->update_id);
-    }
 
   G_OBJECT_CLASS (egg_find_bar_parent_class)->finalize (object);
 }
@@ -603,9 +585,9 @@ egg_find_bar_get_search_string  (EggFindBar *find_bar)
 
   g_return_val_if_fail (EGG_IS_FIND_BAR (find_bar), NULL);
 
-  priv = (EggFindBarPrivate *)find_bar->priv;
+  priv = find_bar->priv;
 
-  return priv->search_string;
+  return priv->search_string ? priv->search_string : "";
 }
 
 /**

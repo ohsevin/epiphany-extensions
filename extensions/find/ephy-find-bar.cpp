@@ -1,6 +1,6 @@
 /*
  *  Copyright (C) 2004 Tommi Komulainen
- *  Copyright (C) 2004 Christian Persch
+ *  Copyright (C) 2004, 2005 Christian Persch
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -19,12 +19,15 @@
  *  $Id$
  */
 
+#include "mozilla-config.h"
+
 #include "config.h"
 
 #include "ephy-find-bar.h"
 #include "eggfindbarprivate.h"
 
-#include "mozilla-find.h"
+#include "TypeAheadFind.h"
+#include "mozilla-helpers.h"
 
 #include <epiphany/ephy-embed.h>
 #include <epiphany/ephy-command-manager.h>
@@ -43,13 +46,18 @@
 
 struct _EphyFindBarPrivate
 {
+	TypeAheadFind *finder;
+
 	EphyWindow *window;
 	EphyEmbed *embed;
 
 	GtkWidget *offscreen_window;
 	gulong set_focus_handler;
+	gulong search_string_handler;
 	gboolean preedit_changed;
 	gboolean ppv_mode;
+	gboolean links_only;
+
 	GtkAction *find_action;
 };
 
@@ -82,8 +90,8 @@ ensure_offscren_window (EphyFindBar *bar)
 		screen = gtk_widget_get_screen (GTK_WIDGET (bar));
 		gtk_window_set_screen (GTK_WINDOW (priv->offscreen_window), screen);
 		gtk_window_move (GTK_WINDOW (priv->offscreen_window),
-				 gdk_screen_get_width (screen) + 1,
-				 gdk_screen_get_height (screen) + 1);
+				gdk_screen_get_width (screen) + 1,
+				gdk_screen_get_height (screen) + 1);
 	}
 }
 
@@ -94,7 +102,7 @@ update_navigation_controls (EphyFindBar *bar,
 {
 	EggFindBar *ebar = EGG_FIND_BAR (bar);
 	EggFindBarPrivate *epriv = ebar->priv;
-return;
+
 	gtk_widget_set_sensitive (GTK_WIDGET (epriv->next_button), can_find_next);
 	gtk_widget_set_sensitive (GTK_WIDGET (epriv->previous_button), can_find_prev);
 }
@@ -119,6 +127,7 @@ check_text_case (const char *text, gboolean *upper, gboolean *lower)
 }
 #endif
 
+#ifdef HIGHLIGHT
 static void
 set_status_text (EphyFindBar *bar,
 		 guint32 count)
@@ -136,13 +145,17 @@ set_status_text (EphyFindBar *bar,
 
 	g_free (status);
 }
+#endif
 
+#ifdef HIGHLIGHT
 static void
 update_find_properties (EphyFindBar *bar)
 {
 	EggFindBar *ebar = EGG_FIND_BAR (bar);
 	EphyFindBarPrivate *priv = bar->priv;
 	const char *text;
+
+	g_return_if_fail (priv->embed != NULL);
 
 	text = egg_find_bar_get_search_string (ebar);
 
@@ -163,26 +176,49 @@ update_find_properties (EphyFindBar *bar)
 
 //		check_text_case (text, &upper, &lower);
 
-		gboolean upper;
+		gboolean sensitive;
 		guint32 count;
 
-		upper = egg_find_bar_get_case_sensitive (ebar);
+		sensitive = egg_find_bar_get_case_sensitive (ebar);
 
 		count = mozilla_find_set_properties (priv->embed, text, upper, TRUE);
 		set_status_text (bar, count);
+	
+//		mozilla_find_set_case_sensitive (priv->embed, upper);
 
 		update_navigation_controls (bar, TRUE, TRUE);
 	}
 }
+#endif
 
 static void
-sync_search_string_cb (EphyFindBar *bar,
-		       GParamSpec *pspec,
-		       gpointer data)
+sync_search_string (EphyFindBar *bar,
+		    GParamSpec *pspec,
+		    gpointer data)
 {
+	EphyFindBarPrivate *priv = bar->priv;
+	EggFindBar *ebar = EGG_FIND_BAR (bar);
+	FindResult result;
+	const char *text;
+	gboolean found;
+
+	LOG ("sync_search_string");
+
+	g_return_if_fail (priv->embed != NULL);
+
+	if (GTK_WIDGET_VISIBLE (bar))
+	{
+		text = egg_find_bar_get_search_string (ebar);
+		result = priv->finder->Find (text, (PRBool) priv->links_only);
+		found = (result == FIND_FOUND || result == FIND_WRAPPED);
+		update_navigation_controls (bar, found, found);
+	}
+
+#ifdef HIGHLIGHT
 	update_find_properties (bar);
 
 	mozilla_find_next (bar->priv->embed, FALSE);
+#endif
 }
 
 static void
@@ -190,7 +226,32 @@ sync_case_sensitive_cb (EphyFindBar *bar,
 		        GParamSpec *pspec,
 		        gpointer data)
 {
+	EphyFindBarPrivate *priv = bar->priv;
+	EggFindBar *ebar = EGG_FIND_BAR (bar);
+	gboolean sensitive;
+
+	LOG ("sync_case_sensitive_cb");
+
+	g_return_if_fail (priv->embed != NULL);
+
+	sensitive = egg_find_bar_get_case_sensitive (ebar);
+	priv->finder->SetCaseSensitive ((PRBool) sensitive);
+
+#ifdef HIGHLIGHT
 	update_find_properties (bar);
+#endif
+}
+
+static void
+update_find_properties (EphyFindBar *bar)
+{
+#ifdef HIGHLIGHT
+	if (GTK_WIDGET_REALIZED (bar))
+	{
+		sync_case_sensitive_cb (bar, NULL, NULL);
+		sync_search_string (bar, NULL, NULL);
+	}
+#endif
 }
 
 static gboolean
@@ -204,7 +265,6 @@ find_entry_key_press_event_cb (GtkEntry *entry,
 
 	LOG ("find_entry_key_press_event_cb");
 
-	/* Hide the bar when ESC is pressed */
 	if ((event->state & mask) == 0)
 	{
 		handled = TRUE;
@@ -240,6 +300,7 @@ entry_preedit_changed_cb (GtkIMContext *context,
 	bar->priv->preedit_changed = TRUE;
 }
 
+#ifdef HIGHLIGHT
 static void
 embed_net_stop_cb (EphyEmbed *embed,
 		   EphyFindBar *bar)
@@ -260,6 +321,7 @@ embed_net_stop_cb (EphyEmbed *embed,
 		set_status_text (bar, count);
 	}
 }
+#endif
 
 /* Cut and paste from gtkwindow.c */
 static void
@@ -276,7 +338,7 @@ send_focus_change (GtkWidget *widget,
     GTK_WIDGET_UNSET_FLAGS (widget, GTK_HAS_FOCUS);
 
   fevent->focus_change.type = GDK_FOCUS_CHANGE;
-  fevent->focus_change.window = g_object_ref (widget->window);
+  fevent->focus_change.window = (GdkWindow *) g_object_ref (widget->window);
   fevent->focus_change.in = in;
   
   gtk_widget_event (widget, fevent);
@@ -312,16 +374,25 @@ embed_key_press_event_cb (EphyEmbed *embed,
 
 	LOG ("embed_key_press_event_cb, find bar is %svisible", GTK_WIDGET_VISIBLE (widget) ? "" : "in");
 
-	/* if the bar is invisible, show the offscreen window and add the entry to it */
-	if (!GTK_WIDGET_VISIBLE (widget))
+	g_print ("keyval '%c'\n", event->keyval);
+	if (event->keyval == GDK_slash || event->keyval == GDK_apostrophe)
 	{
-		LOG ("using off-screen window");
-		ensure_offscren_window (bar);
-		g_return_val_if_fail (priv->offscreen_window != NULL, FALSE);
+		priv->links_only = event->keyval == GDK_apostrophe;
 
-		gtk_widget_reparent (ebar->priv->find_entry, priv->offscreen_window);
-		gtk_widget_show (priv->offscreen_window);
+		gtk_widget_show (widget);
+		gtk_widget_grab_focus (widget);
+		return TRUE;
 	}
+
+	if (GTK_WIDGET_VISIBLE (widget)) return FALSE;
+
+	/* show the offscreen window and add the entry to it */
+	LOG ("using off-screen window");
+	ensure_offscren_window (bar);
+	g_return_val_if_fail (priv->offscreen_window != NULL, FALSE);
+
+	gtk_widget_reparent (ebar->priv->find_entry, priv->offscreen_window);
+	gtk_widget_show (priv->offscreen_window);
 
 	g_return_val_if_fail (GTK_WIDGET_REALIZED (epriv->find_entry), FALSE);
 
@@ -340,20 +411,21 @@ embed_key_press_event_cb (EphyEmbed *embed,
 
 	/* Send the event to the window.  If the preedit_changed signal is emitted
 	* during this event, we will set priv->imcontext_changed  */
+	g_signal_handler_block (bar, priv->search_string_handler);
 	retval = gtk_widget_event (epriv->find_entry, new_event);
+	g_signal_handler_unblock (bar, priv->search_string_handler);
 
+	/* restore event window, else gdk_event_free below will crash */
 	new_event_key->window = event_window;
 
-	if (!GTK_WIDGET_VISIBLE (widget))
-	{
-		g_return_val_if_fail (priv->offscreen_window != NULL, FALSE);
+	g_return_val_if_fail (!GTK_WIDGET_VISIBLE (widget), FALSE);
+		
+	g_return_val_if_fail (priv->offscreen_window != NULL, FALSE);
 
-		LOG ("hiding off-screen window again");
-
-		gtk_widget_hide (priv->offscreen_window);
-		gtk_widget_reparent (ebar->priv->find_entry,
-				     ebar->priv->find_entry_box);
-	}
+	LOG ("hiding off-screen window again");
+	gtk_widget_hide (priv->offscreen_window);
+	gtk_widget_reparent (ebar->priv->find_entry,
+			     ebar->priv->find_entry_box);
 
 	/* We check to make sure that the entry tried to handle the text, and that
 	* the text has changed.
@@ -369,7 +441,7 @@ embed_key_press_event_cb (EphyEmbed *embed,
 		 * call the parent instance and bypass the selection change.  This is probably
 		 * really non-kosher.
 		 */
-		entry_parent_class = g_type_class_peek_parent (GTK_ENTRY_GET_CLASS (epriv->find_entry));
+		entry_parent_class = (GtkWidgetClass *) g_type_class_peek_parent (GTK_ENTRY_GET_CLASS (epriv->find_entry));
 		(entry_parent_class->grab_focus) (epriv->find_entry);
 
 		/* send focus-in event */
@@ -430,7 +502,6 @@ unset_embed (EphyFindBar *bar)
 
 		priv->embed = NULL;	
 	}
-
 }
 
 static void
@@ -440,10 +511,12 @@ update_find_bar (EphyFindBar *bar)
 
 	LOG ("embed realized!");
 
+	priv->finder->SetEmbed (priv->embed);
+
 	update_find_properties (bar);
 
 	g_signal_handlers_disconnect_by_func
-		(priv->embed, G_CALLBACK (update_find_bar), bar);
+		(priv->embed, (void (*)) (update_find_bar), bar);
 }
 
 static void
@@ -452,27 +525,25 @@ sync_active_tab (EphyWindow *window,
 		 EphyFindBar *bar)
 {
 	EphyFindBarPrivate *priv = bar->priv;
-//	EphyEmbed *embed;
+	EphyEmbed *embed;
 	EphyEmbed **embedptr;
 
 	LOG ("sync_active_tab");
 
 	unset_embed (bar);
 
-	//embed = ephy_window_get_active_embed (window);
-	//if (embed == NULL) return; /* happens at startup */
-	//priv->embed = embed;
+	embed = ephy_window_get_active_embed (window);
+	if (embed == NULL) return; /* happens at startup */
 
-	EphyTab *tab;
-	tab = ephy_window_get_active_tab (window);
-	if (tab == NULL) return; /* happens at startup */
-
-	priv->embed = ephy_tab_get_embed (tab);
+	priv->embed = embed;
 	embedptr = &priv->embed;
 	g_object_add_weak_pointer (G_OBJECT (priv->embed), (gpointer *) embedptr);
 
+#ifdef HIGHLIGHT
 	g_signal_connect_after (priv->embed, "net-stop",
 				G_CALLBACK (embed_net_stop_cb), bar);
+#endif
+
 	g_signal_connect_after (priv->embed, "key_press_event",
 				G_CALLBACK (embed_key_press_event_cb), bar);
 
@@ -483,6 +554,8 @@ sync_active_tab (EphyWindow *window,
 				       NULL, G_CONNECT_SWAPPED);
 		return;
 	}
+
+	priv->finder->SetEmbed (priv->embed);
 
 	update_find_properties (bar);
 }
@@ -510,17 +583,60 @@ find_cb (GtkAction *action,
 	gtk_widget_grab_focus (bar);
 }
 
-static GtkAction *
-get_action (EphyWindow *window)
+static void
+find_next_cb (GtkAction *action,
+	      GtkWidget *bar)
 {
-	GtkUIManager *manager;
+	g_signal_emit_by_name (bar, "next", 0);
+}
+
+static void
+find_prev_cb (GtkAction *action,
+	      GtkWidget *bar)
+{
+	g_signal_emit_by_name (bar, "previous", 0);
+}
+
+static GtkAction *
+replace_handler (EphyFindBar *bar,
+		 EphyWindow *window,
+		 GtkUIManager *manager,
+		 const char *path,
+		 GCallback new_callback)
+{
 	GtkAction *action;
 
-	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
-	action = gtk_ui_manager_get_action (manager, "/menubar/EditMenu/EditFindMenu");
+	action = gtk_ui_manager_get_action (manager, path);
 	g_return_val_if_fail (action != NULL, NULL);
 
+	/* Block the default signal handler */
+	g_signal_handlers_block_matched (action, G_SIGNAL_MATCH_DATA, 
+					 0, 0, NULL, NULL, window);
+	
+	/* Add our signal handler */
+	g_signal_connect (action, "activate", new_callback, bar);
+
 	return action;
+}
+
+static void
+restore_handler (EphyFindBar *bar,
+		 EphyWindow *window,
+		 GtkUIManager *manager,
+		 const char *path,
+		 GCallback new_callback)
+{
+	GtkAction *action;
+
+	action = gtk_ui_manager_get_action (manager, path);
+	g_return_if_fail (action != NULL);
+
+	/* Remove our signal handler */
+	g_signal_handlers_disconnect_by_func (action, (void (*)) new_callback, bar);
+
+	/* And unblock the default one */
+	g_signal_handlers_unblock_matched (action, G_SIGNAL_MATCH_DATA, 
+					   0, 0, NULL, NULL, window);
 }
 
 static void
@@ -528,7 +644,7 @@ ephy_find_bar_set_window (EphyFindBar *bar,
 			  EphyWindow *window)
 {
 	EphyFindBarPrivate *priv = bar->priv;
-	GtkAction *action;
+	GtkUIManager *manager;
 
 	priv->window = window;
 
@@ -539,17 +655,14 @@ ephy_find_bar_set_window (EphyFindBar *bar,
 	g_signal_connect (window, "notify::print-preview-mode",
 			  G_CALLBACK (sync_print_preview_mode), bar);
 
-	action = get_action (window);
-	g_return_if_fail (action != NULL);
-	priv->find_action = action;
-
-	/* Block the default signal handler */
-	g_signal_handlers_block_matched (action, G_SIGNAL_MATCH_DATA, 
-					 0, 0, NULL, NULL, priv->window);
-	
-	/* Add our signal handler */
-	g_signal_connect (action, "activate",
-			  G_CALLBACK (find_cb), bar);
+	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
+	priv->find_action = replace_handler (bar, window, manager,
+					     "/menubar/EditMenu/EditFindMenu",
+			 		     G_CALLBACK (find_cb));
+	replace_handler (bar, window, manager, "/menubar/EditMenu/EditFindNextMenu",
+			 G_CALLBACK (find_next_cb));
+	replace_handler (bar, window, manager, "/menubar/EditMenu/EditFindPrevMenu",
+			 G_CALLBACK (find_prev_cb));
 }
 
 static void
@@ -557,7 +670,9 @@ ephy_find_bar_show (GtkWidget *widget)
 {
 	EphyFindBar *bar = EPHY_FIND_BAR (widget);
 	EphyFindBarPrivate *priv = bar->priv;
+#ifdef HIGHLIGHT
 	guint32 count;
+#endif
 
 	LOG ("ephy_find_bar_show");
 
@@ -570,17 +685,29 @@ ephy_find_bar_show (GtkWidget *widget)
 					  G_CALLBACK (set_focus_cb), bar);
 	}
 
+	g_return_if_fail (priv->embed != NULL);
+	g_return_if_fail (GTK_WIDGET_REALIZED (GTK_WIDGET (priv->embed)));
+
 	if (priv->embed != NULL)
 	{
+		nsresult rv;
+		rv = priv->finder->SetEmbed (priv->embed);
+		g_return_if_fail (NS_SUCCEEDED (rv));
+
+		sync_search_string (bar, NULL, NULL);
+#ifdef HIGHLIGHT
 		count = mozilla_find_set_highlight (priv->embed, TRUE);
 		set_status_text (bar, count);
+#endif
 	}
 }
 
 static void
 ephy_find_bar_hide (GtkWidget *widget)
 {
+#ifdef HIGHLIGHT
 	EggFindBar *ebar = EGG_FIND_BAR (widget);
+#endif
 	EphyFindBar *bar = EPHY_FIND_BAR (widget);
 	EphyFindBarPrivate *priv = bar->priv;
 
@@ -589,15 +716,17 @@ ephy_find_bar_hide (GtkWidget *widget)
 	if (priv->set_focus_handler != 0)
 	{
 		g_signal_handlers_disconnect_by_func
-			(priv->window, G_CALLBACK (set_focus_cb), bar);
+			(priv->window, (void (*)) G_CALLBACK (set_focus_cb), bar);
 		priv->set_focus_handler = 0;
 	}
 
+#ifdef HIGHLIGHT
 	if (priv->embed != NULL)
 	{
 		mozilla_find_set_highlight (priv->embed, FALSE);
 		egg_find_bar_set_status_text (ebar, NULL);
 	}
+#endif
 
 	GTK_WIDGET_CLASS (parent_class)->hide (widget);
 }
@@ -627,37 +756,59 @@ static void
 ephy_find_bar_next (EggFindBar *ebar)
 {
 	EphyFindBar *bar = EPHY_FIND_BAR (ebar);
+	EphyFindBarPrivate *priv = bar->priv;
+	FindResult result;
 	gboolean found;
-
+	
 	LOG ("ephy_find_bar_next");
 
+	g_return_if_fail (priv->embed != NULL);
+
+	result = priv->finder->FindNext ();
+	found = (result == FIND_FOUND || result == FIND_WRAPPED);
+	update_navigation_controls (bar, found, found);
+#ifdef HIGHLIGHT
 	found = mozilla_find_next (bar->priv->embed, FALSE);
 	update_navigation_controls (bar, found, TRUE);
+#endif
 }
 
 static void
 ephy_find_bar_previous (EggFindBar *ebar)
 {
 	EphyFindBar *bar = EPHY_FIND_BAR (ebar);
+	EphyFindBarPrivate *priv = bar->priv;
+	FindResult result;
 	gboolean found;
 
 	LOG ("ephy_find_bar_previous");
 
+	g_return_if_fail (priv->embed != NULL);
+
+	result = priv->finder->FindPrevious ();
+	found = (result == FIND_FOUND || result == FIND_WRAPPED);
+	update_navigation_controls (bar, found, found);
+
+#ifdef HIGHLIGHT
 	found = mozilla_find_next (bar->priv->embed, TRUE);
 	update_navigation_controls (bar, TRUE, found);
+#endif
 }
 
 static void
 ephy_find_bar_close (EggFindBar *ebar)
 {
 	EphyFindBar *bar = EPHY_FIND_BAR (ebar);
+	EphyFindBarPrivate *priv = bar->priv;
 
 	LOG ("ephy_find_bar_close");
 
-	g_return_if_fail (bar->priv->embed != NULL);
+	g_return_if_fail (priv->embed != NULL);
 
+	g_return_if_fail (GTK_WIDGET_VISIBLE (GTK_WIDGET (ebar)));
+		
 	gtk_widget_hide (GTK_WIDGET (ebar));
-	ephy_embed_activate (bar->priv->embed);
+	ephy_embed_activate (priv->embed);
 }
 
 static void
@@ -669,9 +820,15 @@ ephy_find_bar_init (EphyFindBar *bar)
 
 	priv = bar->priv = EPHY_FIND_BAR_GET_PRIVATE (bar);
 
+	priv->links_only = FALSE;
+
+	priv->finder = new TypeAheadFind ();
+	g_return_if_fail (priv->finder);
+
 	/* connect signals */
-	g_signal_connect (bar, "notify::search-string",
-			  G_CALLBACK (sync_search_string_cb), NULL);
+	priv->search_string_handler =
+		g_signal_connect (bar, "notify::search-string",
+				  G_CALLBACK (sync_search_string), NULL);
 	g_signal_connect (bar, "notify::case-sensitive",
 			  G_CALLBACK (sync_case_sensitive_cb), NULL);
 		  
@@ -682,6 +839,10 @@ ephy_find_bar_init (EphyFindBar *bar)
 			  G_CALLBACK (entry_preedit_changed_cb), bar);
 
 	update_navigation_controls (bar, FALSE, FALSE);
+
+	nsresult rv;
+	rv = priv->finder->Init ();
+	g_return_if_fail (NS_SUCCEEDED (rv));
 }
 
 static void
@@ -689,20 +850,23 @@ ephy_find_bar_finalize (GObject *object)
 {
 	EphyFindBar *bar = EPHY_FIND_BAR (object);
 	EphyFindBarPrivate *priv = bar->priv;
+	GtkUIManager *manager;
 
-	/* Remove our signal handler */
-	g_signal_handlers_disconnect_by_func
-		(priv->find_action, G_CALLBACK (find_cb), bar);
-
-	/* And unblock the default one */
-	g_signal_handlers_unblock_matched (priv->find_action, G_SIGNAL_MATCH_DATA, 
-					   0, 0, NULL, NULL, priv->window);
+	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (priv->window));
+	restore_handler (bar, priv->window, manager, "/menubar/EditMenu/EditFindMenu",
+			 G_CALLBACK (find_cb));
+	restore_handler (bar, priv->window, manager, "/menubar/EditMenu/EditFindNextMenu",
+			 G_CALLBACK (find_next_cb));
+	restore_handler (bar, priv->window, manager, "/menubar/EditMenu/EditFindPrevMenu",
+			 G_CALLBACK (find_prev_cb));
 	
 	g_signal_handlers_disconnect_matched (priv->window,
 					      G_SIGNAL_MATCH_DATA,
 					      0, 0, NULL, NULL, object);
 
 	unset_embed (bar);
+
+	delete priv->finder;
 
 	if (priv->offscreen_window != NULL)
 	{
@@ -723,7 +887,7 @@ ephy_find_bar_set_property (GObject *object,
 	switch (prop_id)
 	{
 		case PROP_WINDOW:
-			ephy_find_bar_set_window (bar, g_value_get_object (value));
+			ephy_find_bar_set_window (bar, (EphyWindow *) g_value_get_object (value));
 			break;
 	}
 }
@@ -746,7 +910,7 @@ ephy_find_bar_class_init (EphyFindBarClass *klass)
 	EggFindBarClass *find_bar_class = EGG_FIND_BAR_CLASS (klass);
 	GtkBindingSet *binding_set;
 
-        parent_class = g_type_class_peek_parent (klass);
+        parent_class = (GObjectClass *) g_type_class_peek_parent (klass);
 
         object_class->finalize = ephy_find_bar_finalize;
 	object_class->set_property = ephy_find_bar_set_property;
@@ -766,26 +930,26 @@ ephy_find_bar_class_init (EphyFindBarClass *klass)
                                                               "Window",
                                                               "Parent window",
 							      EPHY_TYPE_WINDOW,
-							      G_PARAM_WRITABLE |
-							      G_PARAM_CONSTRUCT_ONLY));
+							      (GParamFlags) (G_PARAM_WRITABLE |
+							      G_PARAM_CONSTRUCT_ONLY)));
 
 	binding_set = gtk_binding_set_by_class (klass);
 	
 	gtk_binding_entry_add_signal (binding_set, GDK_g, GDK_CONTROL_MASK,
 				      "next", 0);
-	gtk_binding_entry_add_signal (binding_set, GDK_g, GDK_CONTROL_MASK | GDK_SHIFT_MASK,
+	gtk_binding_entry_add_signal (binding_set, GDK_g, (GdkModifierType) (GDK_CONTROL_MASK | GDK_SHIFT_MASK),
 				      "previous", 0);
 
 	g_type_class_add_private (klass, sizeof (EphyFindBarPrivate));
 }
 
-GType
+extern "C" GType
 ephy_find_bar_get_type (void)
 {
 	return type;
 }
 
-GType
+extern "C" GType
 ephy_find_bar_register_type (GTypeModule *module)
 {
 	static const GTypeInfo our_info =
@@ -804,15 +968,15 @@ ephy_find_bar_register_type (GTypeModule *module)
 	type = g_type_module_register_type (module,
 					    EGG_TYPE_FIND_BAR,
 					    "EphyFindBar",
-					    &our_info, 0);
+					    &our_info, (GTypeFlags) 0);
 
 	return type;
 }
 
-GtkWidget *
+extern "C" GtkWidget *
 ephy_find_bar_new (EphyWindow *window)
 {
-	return g_object_new (EPHY_TYPE_FIND_BAR,
-			     "window", window,
-			     NULL);
+	return GTK_WIDGET (g_object_new (EPHY_TYPE_FIND_BAR,
+					 "window", window,
+					 NULL));
 }
