@@ -16,19 +16,23 @@ dnl 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 dnl
 dnl $Id$
 
-AC_PREREQ(2.52)
+AC_INIT([Epiphany Extensions], [0.7.90], [http://lists.gnome.org/mailman/listinfo/epiphany-list],[epiphany-extensions])
 
-AC_INIT(epiphany-extensions, 0.6.91, [http://lists.gnome.org/mailman/listinfo/epiphany-list])
+AC_PREREQ(2.57)
+
+AC_REVISION($Revision$)
 
 AC_CONFIG_SRCDIR(extensions)
 AM_CONFIG_HEADER(config.h)
 
-AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
+AM_INIT_AUTOMAKE
+
+AM_MAINTAINER_MODE
+
+
 ACLOCAL="$ACLOCAL $ACLOCAL_FLAGS"
 
 AC_PROG_INTLTOOL([0.29])
-
-AM_MAINTAINER_MODE
 
 AM_DISABLE_STATIC
 AC_ENABLE_SHARED(yes)
@@ -66,7 +70,7 @@ dnl ********************************
 dnl pkg config checks
 dnl ********************************
 
-EPIPHANY_REQUIRED=1.1.5
+EPIPHANY_REQUIRED=1.1.6
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.3.1
 LIBGTK_REQUIRED=2.3.2
@@ -83,7 +87,7 @@ PKG_CHECK_MODULES(EPIPHANY_DEPENDENCY, \
 		  glib-2.0 >= $LIBGLIB_REQUIRED \
 		  gmodule-2.0 \
 		  gtk+-2.0 >= $LIBGTK_REQUIRED \
-		  epiphany-1.0 >= $EPIPHANY_REQUIRED)
+		  epiphany-1.2 >= $EPIPHANY_REQUIRED)
 AC_SUBST(EPIPHANY_DEPENDENCY_CFLAGS)
 AC_SUBST(EPIPHANY_DEPENDENCY_LIBS)
 
@@ -107,7 +111,7 @@ dnl AM_GCONF_SOURCE_2
 dnl *******************************
 dnl Check for OpenSP
 dnl *******************************
-AC_ARG_ENABLE(opensp,
+AC_ARG_ENABLE([opensp],
 	      [ --enable-opensp=[yes,no]    Attempt to use OpenSP for SGML validation [default=yes]],
 	      [enable_opensp="$enableval"],
 	      [enable_opensp="yes"])
@@ -128,7 +132,7 @@ dnl *******************************
 dnl Extensions
 dnl *******************************
 
-AC_MSG_CHECKING(extensions to build)
+AC_MSG_CHECKING([extensions to build])
 
 all_extensions="certificates,dashboard,error-viewer,gestures,popup-blocker,sample,sample-mozilla,tabsmenu"
 all_useful_extensions="certificates,dashboard,error-viewer,gestures,popup-blocker,tabsmenu"
@@ -139,7 +143,7 @@ dnl due to an autoconf bug, commas in the first arg to
 dnl AC_HELP_STRING cause problems.
 dnl
 dnl AC_HELP_STRING([--with-extensions=ext1,ext2,...],[build the specified extensions])
-AC_ARG_WITH(extensions,
+AC_ARG_WITH([extensions],
 [  --with-extensions=extension1,extension2,...
 			  build the specified extensions. Available:
 			  gestures, popup-blocker, sample, tabsmenu, all])
@@ -159,6 +163,10 @@ if test "x$extensions" = xall; then
   extensions="$all_useful_extensions"
 fi
 
+if test "x$extensions" = "xreally-all"; then
+  extensions="$all_extensions"
+fi
+
 AC_MSG_RESULT($extensions)
 
 IFS="${IFS=	}"; ephyext_save_ifs="$IFS"; IFS=","
@@ -173,8 +181,8 @@ IFS="$ephyext_save_ifs"
 
 AM_CONDITIONAL(ENABLE_CERTIFICATES_EXTENSION, echo "$extensions" | egrep '(^|,)certificates($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_DASHBOARD_EXTENSION, echo "$extensions" | egrep '(^|,)dashboard($|,)' > /dev/null)
-AM_CONDITIONAL(ENABLE_GESTURES_EXTENSION, echo "$extensions" | egrep '(^|,)gestures($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_ERROR_VIEWER_EXTENSION, echo "$extensions" | egrep '(^|,)error-viewer($|,)' > /dev/null)
+AM_CONDITIONAL(ENABLE_GESTURES_EXTENSION, echo "$extensions" | egrep '(^|,)gestures($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_POPUP_BLOCKER_EXTENSION, echo "$extensions" | egrep '(^|,)popup-blocker($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SAMPLE_EXTENSION, echo "$extensions" | egrep '(^|,)sample($|,)' > /dev/null)
 AM_CONDITIONAL(ENABLE_SAMPLE_MOZILLA_EXTENSION, echo "$extensions" | egrep '(^|,)sample-mozilla($|,)' > /dev/null)
@@ -196,11 +204,11 @@ MOZILLA_HOME="`$PKG_CONFIG --variable=libdir mozilla-gtkmozembed`"
 AC_SUBST(MOZILLA_HOME)
 
 dnl whether to build with DEBUG defined
-AC_ARG_WITH(mozilla-debug,
+AC_ARG_WITH([mozilla-debug],
         [  --with-mozilla-debug        Use a debug mozilla build],
         AM_CXXFLAGS="-DDEBUG $AM_CXXFLAGS",)
 
-AC_ARG_ENABLE(cpp-rtti,
+AC_ARG_ENABLE([cpp-rtti],
         [  --enable-cpp-rtti       Enable C++ RTTI (for cvs gcc)],,
         enable_cpp_rtti=no)
 
@@ -222,7 +230,7 @@ _SAVE_AM_CXXFLAGS=$AM_CXXFLAGS
 AM_CXXFLAGS="$AM_CXXFLAGS -fshort-wchar"
 CXXFLAGS="$CXXFLAGS $AM_CXXFLAGS"
 
-AC_CACHE_CHECK(for compiler -fshort-wchar option,
+AC_CACHE_CHECK([for compiler -fshort-wchar option],
     ac_cv_have_usable_wchar_option,
     [AC_TRY_RUN([#include <stddef.h>
                  int main () {
@@ -238,12 +246,12 @@ fi
 CXXFLAGS=$_SAVE_CXXFLAGS
 AC_LANG_POP(C++)
 
-AC_MSG_CHECKING(for mozilla version)
+AC_MSG_CHECKING([for mozilla version])
 MOZILLA_VERSION="`$PKG_CONFIG --modversion mozilla-gtkmozembed`"
 
 dnl allow user to override the autodetected mozilla version
 dnl     - without arguments for cvs head
-AC_ARG_WITH(mozilla-snapshot,
+AC_ARG_WITH([mozilla-snapshot],
   AC_HELP_STRING([--with-mozilla-snapshot@<:@=1.4|1.4.1|1.5|1.6|trunk@:>@],
 		 [Whether to try building against mozilla 1.4|1.4.1|1.5|1.6|1.7a|trunk
 		  snapshot. @<:@guessed@:>@]),
@@ -306,7 +314,7 @@ fi
 dnl *******************************
 dnl *******************************
 
-AC_OUTPUT([
+AC_CONFIG_FILES([
 Makefile
 include/Makefile
 extensions/Makefile
@@ -323,5 +331,6 @@ extensions/sample-mozilla/Makefile
 extensions/sample-mozilla/mozilla/Makefile
 extensions/tabsmenu/Makefile
 po/Makefile.in
-],
-[])
+])
+
+AC_OUTPUT
