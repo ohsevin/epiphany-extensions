@@ -143,8 +143,6 @@ HtmlErrorFinder::error (const ErrorEvent &err)
 
 	const char *raw_msg = msg.c_str ();
 
-	cout << raw_msg << endl;
-
 	char **messages = g_strsplit (raw_msg, "\n", 0);
 
 	char **i;
