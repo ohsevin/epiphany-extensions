@@ -213,6 +213,8 @@ get_host_node (const char *url)
 	char *host_url = NULL;
 	GTime now;
 
+	LOG ("get_host_node for '%s'", url)
+
 	/* bail out if it's a javascript: url */
 	if (strncmp (url, "javascript:", 11) == 0) return NULL;
 
@@ -249,8 +251,6 @@ get_host_node (const char *url)
 
 	g_return_val_if_fail (host_url != NULL, NULL);
 
-	LOG ("host name is '%s'", host_url)
-
 	g_static_rw_lock_reader_lock (priv->hosts_hash_lock);
 	host = g_hash_table_lookup (priv->hosts_hash, host_url);
 	g_static_rw_lock_reader_unlock (priv->hosts_hash_lock);
@@ -258,8 +258,6 @@ get_host_node (const char *url)
 	if (!host)
 	{
 		GValue value = { 0, };
-
-		LOG ("Host not found, adding as new")
 
 		host = ephy_node_new (priv->db);
 
@@ -277,6 +275,8 @@ get_host_node (const char *url)
 	{
 		gnome_vfs_uri_unref (vfs_uri);
 	}
+
+	g_free (host_url);
 
 	return host;
 }

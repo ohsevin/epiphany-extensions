@@ -1,5 +1,11 @@
 2003-08-04  Christian Persch  <chpe@cvs.gnome.org>
 
+	* zoom-persistence.c: (get_host_node):
+
+	Fix mem leak. Ahem :)
+
+2003-08-04  Christian Persch  <chpe@cvs.gnome.org>
+
 	* zoom-persistence.c: (zoom_cb):
 
 	Use ephy_tab_get_location() instead of ephy_embed_get_location(), because
