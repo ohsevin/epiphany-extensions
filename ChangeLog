@@ -1,3 +1,7 @@
+2004-01-05  Marcel Telka  <marcel@telka.sk>
+
+	* configure.ac (ALL_LINGUAS): Added sk.
+
 2004-01-04  Miloslav Trmac  <mitr@volny.cz>
 
 	* configure.ac: Added Czech (cs) to ALL_LINGUAS.

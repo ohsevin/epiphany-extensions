@@ -50,7 +50,7 @@ dnl ********************************
 dnl Internationalisation
 dnl ********************************
 
-ALL_LINGUAS="cs de en_GB es fr ja pt sr sr@Latn sv"
+ALL_LINGUAS="cs de en_GB es fr ja pt sk sr sr@Latn sv"
 
 AC_PROG_INTLTOOL([0.22])
 
