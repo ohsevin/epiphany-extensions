@@ -1,6 +1,14 @@
 2005-01-21  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* configure.ac:
+	* extensions/adblock/ad-uri-tester.c: (match_uri),
+	(load_patterns_file), (ad_uri_tester_init):
+
+	Use pcre instead of pcreposix. Check for utf-8 support, too.
+
+2005-01-21  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* configure.ac:
 
 	Re-space extensions list
 

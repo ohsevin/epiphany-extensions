@@ -22,8 +22,7 @@
 
 #include "ad-uri-tester.h"
 
-#include <sys/types.h>
-#include <pcreposix.h>
+#include <pcre.h>
 
 #include "ephy-file-helpers.h"
 #include "ephy-debug.h"
@@ -83,42 +82,23 @@ ad_uri_tester_new (void)
 	return g_object_new (TYPE_AD_URI_TESTER, NULL);
 }
 
-static void
-handle_reg_error (const regex_t *preg,
-		  int err)
-{
-	size_t len;
-	char *s;
-
-	len = regerror (err, preg, NULL, 0);
-	s = g_malloc (len);
-
-	regerror (err, preg, s, len);
-
-	g_warning ("%s", s);
-
-	g_free (s);
-}
-
 static gboolean
 match_uri (const char *pattern,
-	   const regex_t *preg,
+	   const pcre *preg,
 	   const char *uri)
 {
 	int ret;
+	int len;
 
-	ret = regexec (preg, uri, 0, NULL, 0);
+	len = g_utf8_strlen (uri, -1); /* TODO: cache this */
 
-	if (ret == 0)
+	ret = pcre_exec (preg, NULL, uri, len, 0, PCRE_NO_UTF8_CHECK, NULL, 0);
+
+	if (ret >= 0)
 	{
 		LOG ("Blocking '%s' with pattern '%s'", uri, pattern)
 
 		return TRUE;
-	}
-
-	if (ret != REG_NOMATCH)
-	{
-		handle_reg_error (preg, ret);
 	}
 
 	return FALSE;
@@ -166,8 +146,9 @@ load_patterns_file (GHashTable *patterns,
 	char **lines;
 	char **t;
 	char *line;
-	regex_t *preg;
-	int err;
+	pcre *preg;
+	const char *err;
+	int erroffset;
 
 	if (!g_file_get_contents (filename, &contents, NULL, NULL))
 	{
@@ -188,23 +169,13 @@ load_patterns_file (GHashTable *patterns,
 
 		if (*line == '\0') continue; /* empty line */
 
-		if (g_utf8_validate (line, -1, NULL) == FALSE)
+		preg = pcre_compile (line, PCRE_UTF8, &err, &erroffset, NULL);
+
+		if (preg == NULL)
 		{
-			g_warning ("Invalid UTF-8 data in adblock input: %s",
-				   line);
-			continue;
-		}
-
-		preg = g_malloc (sizeof (regex_t));
-
-		err = regcomp (preg, line, REG_EXTENDED | REG_NOSUB);
-
-		if (err != 0)
-		{
-			handle_reg_error (preg, err);
-			g_warning ("Could not compile '%s'", line);
-			regfree (preg);
-			g_free (preg);
+			g_warning ("Could not compile expression \"%s\"\n"
+				   "Error at column %d: %s",
+				   line, erroffset, err);
 			continue;
 		}
 
@@ -249,16 +220,6 @@ load_patterns (AdUriTester *tester)
 }
 
 static void
-free_regex (gpointer preg)
-{
-	if (preg != NULL)
-	{
-		regfree (preg);
-		g_free (preg);
-	}
-}
-
-static void
 ad_uri_tester_init (AdUriTester *tester)
 {
 	LOG ("AdUriTester initializing %p", tester)
@@ -266,14 +227,14 @@ ad_uri_tester_init (AdUriTester *tester)
 	tester->priv = AD_URI_TESTER_GET_PRIVATE (tester);
 
 	tester->priv->blacklist = g_hash_table_new_full (g_str_hash,
-							  g_str_equal,
-							  g_free,
-							  free_regex);
+							 g_str_equal,
+							 g_free,
+							 g_free);
 
 	tester->priv->whitelist = g_hash_table_new_full (g_str_hash,
-							  g_str_equal,
-							  g_free,
-							  free_regex);
+							 g_str_equal,
+							 g_free,
+							 g_free);
 	load_patterns (tester);
 }
 

@@ -202,10 +202,36 @@ if echo "$extensions" | egrep '(^|,)adblock($|,)' > /dev/null; then
 		AC_ERROR([pcre development files not found])
 	fi
 
-	PCRE_CFLAGS="`$PCRE_CONFIG --cflags-posix`"
+	PCRE_CFLAGS="`$PCRE_CONFIG --cflags`"
 	AC_SUBST([PCRE_CFLAGS])
-	PCRE_LIBS="`$PCRE_CONFIG --libs-posix`"
+	PCRE_LIBS="`$PCRE_CONFIG --libs`"
 	AC_SUBST([PCRE_LIBS])
+
+	pcre_saved_CFLAGS=$CFLAGS
+	pcre_saved_LIBS=$LIBS
+	CFLAGS="$CFLAGS $PCRE_CFLAGS"
+	LIBS="$LIBS $PCRE_LIBS"
+
+	AC_CACHE_CHECK([whether libpcre was compiled with UTF-8 support],
+		[ac_cv_have_preg_utf8_support],
+		[AC_RUN_IFELSE(
+		 	[AC_LANG_SOURCE(
+				 [[#include <pcre.h>
+
+				   int main() {
+				     int t;
+				     return (pcre_config (PCRE_CONFIG_UTF8, &t) || !t);
+				   }]])],
+			[ac_cv_have_preg_utf8_support="yes"],
+			[ac_cv_have_preg_utf8_support="no"],
+			[ac_cv_have_preg_utf8_support="maybe"])])
+
+	CFLAGS=$pcre_saved_CFLAGS
+	LIBS=$pcre_saved_LIBS
+
+	if test "$ac_cv_have_preg_utf8_support" != "yes"; then
+		AC_ERROR([pcre does not support utf-8])
+	fi
 fi
 
 dnl ******************
