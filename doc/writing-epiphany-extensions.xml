@@ -17,6 +17,14 @@
 
 		<revhistory>
 			<revision>
+				<revnumber>0.02</revnumber>
+				<date>03-Jan-2004</date>
+				<authorinitials>ah</authorinitials>
+				<revremark>
+					I've implemented all changes suggested by lwillis and chpe and done some clarifications of my own.
+				</revremark>
+			</revision>
+			<revision>
 				<revnumber>0.01</revnumber>
 				<date>01-Jan-2004</date>
 				<authorinitials>ah</authorinitials>
@@ -102,9 +110,10 @@ endif
 				<para>Also, add your extension to the end of the <literal>DIST_SUBDIRS</literal> line.</para>
 			</listitem>
 			<listitem>
+				<para>Edit <filename>ephyplugins/configure.ac</filename> to add your own extension:</para>
 				<itemizedlist>
 					<listitem>
-						<para>Edit <filename>ephyplugins/configure.ac</filename>, adding your own extension. As a minimum, add a line similar to the existing ones:</para>
+						<para>Add a line near the similar existing ones:</para>
 						<programlisting>
 AM_CONDITIONAL(ENABLE_<replaceable>FOO</replaceable>_EXTENSION, echo &quot;$extensions&quot; | egrep '(^|,)<replaceable>foo</replaceable>($|,)' &gt; /dev/null)
 						</programlisting>
@@ -394,7 +403,7 @@ ephy_<replaceable>foo</replaceable>_extension_iface_init (EphyExtensionClass *if
 		</sect1>
 		<sect1>
 			<title>Connecting Signals</title>
-			<para>GLib has a very flexible signals system. Use it. The <function>impl_attach_window</function> function has an <literal>EphyWindow</literal> object. For example, the <literal>tab_added</literal> signal will fire whenever a tab is added to that window. Put the following in <function>impl_attach_window</function> to hook the <literal>tab_added</literal> signal to your own callback:</para>
+			<para>GLib has a very flexible signals system. Use it. The <function>impl_attach_window</function> function has an <literal>EphyWindow</literal> argument. As an example, the <literal>tab_added</literal> signal will be fired whenever a tab is added to that window. Put the following in <function>impl_attach_window</function> to hook the <literal>tab_added</literal> signal to your own callback:</para>
 			<programlisting>
 	GtkWidget *notebook;
 
@@ -403,7 +412,7 @@ ephy_<replaceable>foo</replaceable>_extension_iface_init (EphyExtensionClass *if
 	g_signal_connect_after (notebook, &quot;tab_added&quot;, G_CALLBACK (tab_added_cb), extension);
 	g_signal_connect_after (notebook, &quot;tab_removed&quot;, G_CALLBACK (tab_removed_cb), extension);
 			</programlisting>
-			<para><function>tab_added_cb</function> can connect signals of its own. Of particular interest are the <literal>EphyEmbed</literal> signals (prefixed by <literal>ge_</literal>. The signals are listed in <filename>epiphany/embed/ephy-embed.c</filename>. For example, to call a function when the browser changes to a new location:</para>
+			<para><function>tab_added_cb</function> can connect signals of its own. Of particular interest are the <literal>EphyEmbed</literal> signals (prefixed by <literal>ge_</literal>). These signals are listed in <filename>epiphany/embed/ephy-embed.c</filename>. For example, to call a function when the browser changes to a new location:</para>
 			<programlisting>
 static void
 location_cb (EphyEmbed *embed, char *address, EphyTab *tab)
@@ -423,7 +432,7 @@ tab_added_cb (GtkWidget *notebook, EphyEmbed *embed, Ephy<replaceable>Foo</repla
 }
 			</programlisting>
 			<warning>
-				<para>Free all memory and disconnect all signals when they're not needed. In the case of this <literal>ge_location</literal> signal connection, it should be disconnected when the tab is removed:</para>
+				<para>Free all memory and disconnect all signals when they're not needed. In the case of this <literal>ge_location</literal> signal connection, disconnect the signal when the tab is removed:</para>
 				<programlisting>
 static void
 tab_removed_cb (GtkWidget *notebook, EphyEmbed *embed, Ephy<replaceable>Foo</replaceable>Extension *extension)
@@ -489,7 +498,7 @@ g_print (ngettext (&quot;%d cow jumped over the moon&quot;, &quot;%d cows jumped
 			<warning>
 				<para>This section describes changing Epiphany's user interface. Epiphany developers take pride in Epiphany's simplicity and ease of use: you should continue the trend. UI additions should be simple, minor, and non-intrusive. Carefully plan each addition.</para>
 			</warning>
-			<para>The <literal>GtkUIManager</literal> functions allow you to add new user interface elements. Epiphany's <literal>EphyWindow->ui_merge</literal> is the appropriate <literal>GtkUIManager</literal> with which to merge. Use <literal>GtkAction</literal>s to represent actions. For example, an extension could place an action in the <literal>Go</literal> menu of Epiphany. To do so, place the following in <filename>ephy-<replaceable>foo</replaceable>-extension.c</filename>:</para>
+			<para>The <literal>GtkUIManager</literal> functions allow you to add new user interface elements. Epiphany's <literal>EphyWindow.ui_merge</literal> is the appropriate <literal>GtkUIManager</literal> with which to merge. Use <literal>GtkAction</literal>s to represent actions. For example, an extension could place an action in the <literal>Go</literal> menu of Epiphany. To do so, write the following in <filename>ephy-<replaceable>foo</replaceable>-extension.c</filename>:</para>
 			<programlisting>
 #include &lt;gtk/gtkaction.&gt;
 #include &lt;gtk/gtkactiongroup&gt;
@@ -650,14 +659,14 @@ struct Ephy<replaceable>Foo</replaceable>ExtensionPrivate
 		<sect1>
 			<title>Your Own Ideas</title>
 			<para>Many of the Epiphany integration ideas above were first discovered (or in some cases, the integration functionality was coded into Epiphany itself) by the author while creating the <application>Popup Blocker</application> extension.</para>
-			<para>While writing an extension, you will almost certainly need to keep looking around <filename>epiphany/src/ephy-window.c</filename>, <filename>epiphany/src/ephy-tab.c</filename>, <filename>epiphany/embed/ephy-embed.h</filename>, and others. The code is very clean; if you still have questions, IRC is a great place to ask (see <xref linkend="getting-help"/>.)</para>
+			<para>While writing an extension, you will almost certainly need to keep looking around <filename>epiphany/src/ephy-window.c</filename>, <filename>epiphany/src/ephy-tab.c</filename>, <filename>epiphany/embed/ephy-embed.h</filename>, and others. The code is very clean; if you still have questions, IRC is a great place to ask (see <xref linkend="getting-help"/>).</para>
 			<para>You may come up with great ideas when writing your own extension. Feel free to email <link linkend="author">the author</link> some sample code; a new section could be added to this document to help other extension writers.</para>
 		</sect1>
 		<sect1>
 			<title>Hacking at Epiphany</title>
 			<para>Extensions can do a heck of a lot. Since the system is still under development, new (<emphasis>good</emphasis>) ideas would likely be welcome. Mozilla integration, for example, is a bit loose. To get certain signals from Mozilla, you may have to hack at files within the <filename class="directory">epiphany/embed/</filename> directory in the Epiphany source code. If your patch is clean and logical, submit it to <ulink url="http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany">GNOME's Bugzilla</ulink> and you'll have a good chance of its getting applied.</para>
 			<para>Stylesheet manipulation is one very important missing feature (all the more important because Mozilla Firebird's extensions are so powerful in this respect). At the time of this document's writing, the author is hacking at Epiphany to improve CSS manipulation from within extensions (and Epiphany itself, for that matter).</para>
-			<para>Are you an uber-hacker? Here are some challenges. Note: very possibly, a perfectly acceptable patch would <emphasis>not</emphasis> be applied to the official Epiphany source tree. Consider talking about how you would modify Epiphany using developer <link linkend="getting-help">communication channels</link>.</para>
+			<para>Are you an uber-hacker? Here are some challenges. Note: very possibly, a perfectly acceptable patch would <emphasis>not</emphasis> be applied to the official Epiphany source tree. Consider discussing on <link linkend="getting-help">developer communication channels</link> about how you would modify Epiphany; you will probably get some helpful advice.</para>
 			<itemizedlist>
 				<listitem>
 					<para>Extension loading interface: Maybe a tab within the Epiphany preferences dialog to load or unload extensions on the fly. It would store a list of loaded extensions using GConf (and keep in sync with GConf).</para>

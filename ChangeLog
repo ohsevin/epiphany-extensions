@@ -1,3 +1,15 @@
+2004-01-03  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* AUTHORS:
+	* MAINTAINERS:
+
+	I've got a sweet new email alias. Also, mention popup blocker in
+	MAINTAINERS.
+
+	* doc/writing-epiphany-extensions.xml:
+
+	Some very minor grammatical clarifications.
+
 2004-01-03  Duarte Loreto <happyguy_pt@hotmail.com>
 
 	* configure.in: Added Portuguese (pt) to ALL_LINGUAS.
