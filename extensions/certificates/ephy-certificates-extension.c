@@ -242,19 +242,25 @@ sync_active_tab_cb (EphyWindow *window,
 	sync_security_status (tab, NULL, window);
 }
 
+static void
+show_page_certificate (EphyWindow *window)
+{
+	EphyEmbed *embed;
+
+	embed = ephy_window_get_active_embed (window);
+	g_return_if_fail (EPHY_IS_EMBED (embed));
+
+	ephy_embed_show_page_certificate (embed);
+}
+
 static gboolean
 padlock_button_press_cb (GtkWidget *ebox,
 			 GdkEventButton *event,
 			 EphyWindow *window)
 {
-	EphyEmbed *embed;
-
 	if (event->type == GDK_BUTTON_PRESS && event->button == 1 /* left */)
 	{
-		embed = ephy_window_get_active_embed (window);
-		g_return_val_if_fail (EPHY_IS_EMBED (embed), FALSE);
-	
-		ephy_embed_show_page_certificate (embed);
+		show_page_certificate (window);
 
 		return TRUE;
 	}
@@ -301,7 +307,7 @@ impl_attach_window (EphyExtension *ext,
 	GtkActionGroup *action_group;
 	guint ui_id;
 	WindowData *win_data;
-	GtkWidget *statusbar, *ebox;
+	GtkWidget *statusbar, *toolbar, *ebox;
 
 	LOG ("EphyCertificatesExtension attach_window");
 
@@ -316,6 +322,11 @@ impl_attach_window (EphyExtension *ext,
 	gtk_widget_add_events (ebox, GDK_BUTTON_PRESS_MASK);
 	g_signal_connect (ebox, "button-press-event",
 			  G_CALLBACK (padlock_button_press_cb), window);
+
+	/* Also attach to the location entry's lock icon */
+	toolbar = ephy_window_get_toolbar (window);
+	g_signal_connect_swapped (toolbar, "lock-clicked",
+				  G_CALLBACK (show_page_certificate), window);
 
 	/* add UI */
 	win_data = g_new (WindowData, 1);
@@ -369,7 +380,7 @@ impl_detach_window (EphyExtension *ext,
 {
 	GtkUIManager *manager;
 	WindowData *win_data;
-	GtkWidget *statusbar, *ebox;
+	GtkWidget *statusbar, *toolbar, *ebox;
 
 	LOG ("EphyCertificatesExtension detach_window");
 
@@ -382,6 +393,11 @@ impl_detach_window (EphyExtension *ext,
 	ebox = GTK_BIN (EPHY_STATUSBAR (statusbar)->security_frame)->child;
 	g_signal_handlers_disconnect_by_func
 		(ebox, G_CALLBACK (padlock_button_press_cb), window);
+
+	/* Detach from location entry lock icon */
+	toolbar = ephy_window_get_toolbar (window);
+	g_signal_handlers_disconnect_by_func
+		(toolbar, G_CALLBACK (show_page_certificate), window);
 
 	/* remove UI */
 	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));

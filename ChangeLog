@@ -1,3 +1,11 @@
+2005-02-06  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/certificates/ephy-certificates-extension.c:
+	(show_page_certificate), (padlock_button_press_cb),
+	(impl_attach_window), (impl_detach_window):
+
+	Attach to the location entry's lock-clicked signal too.
+
 2005-02-04  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/net-monitor/ephy-net-monitor-extension.c:

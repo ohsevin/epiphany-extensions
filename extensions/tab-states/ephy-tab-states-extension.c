@@ -105,6 +105,7 @@ ephy_tab_states_extension_init (EphyTabStatesExtension *extension)
 
 	LOG ("EphyTabStatesExtension initialising");
 
+	/* FIXME handle NULL and "" */
 	colour = eel_gconf_get_string (CONF_TABS_LOADING_COLOUR);
 	gdk_color_parse (colour, &priv->tab_loading_colour);
 	g_free (colour);
