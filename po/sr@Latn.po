@@ -1,0 +1,50 @@
+# Serbian translation of epiphany-extensions
+# Courtesy of Prevod.org team (http://www.prevod.org/) -- 2003, 2004.
+#
+# This file is distributed under the same license as the epiphany-extensions package.
+#
+# Maintainer: Danilo Šegan <dsegan@gmx.net>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: epiphany-extensions\n"
+"PO-Revision-Date: 2004-01-02 17:51+0100\n"
+"Last-Translator: Danilo Šegan <danilo@prevod.org>\n"
+"Language-Team: Serbian (sr) <serbiangnome-lista@nongnu.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3;    plural=n%10==1 && n%100!=11 ? 0 :    n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:62
+msgid "Block _Popups from this Site"
+msgstr "Zabrani _iskačuće prozore sa ove stranice"
+
+#. shortcut key
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:64
+msgid "Block or unblock popup windows"
+msgstr "Zabrani ili dopusti iskačuće prozore"
+
+#: extensions/popup-blocker/ephy-popup-blocker-extension.c:324
+#, c-format
+msgid "%d popup blocked"
+msgid_plural "%d popups blocked"
+msgstr[0] "Zabranjen %d iskačući prozor"
+msgstr[1] "Zabranjena %d iskačuća prozora"
+msgstr[2] "Zabranjeno %d iskačućih prozora"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:181
+#, c-format
+msgid "Window '%s' (%d tab)"
+msgid_plural "Window '%s' (%d tabs)"
+msgstr[0] "Prozor „%s“ (%d list)"
+msgstr[1] "Prozor „%s“ (%d lista)"
+msgstr[2] "Prozor „%s“ (%d listova)"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:272
+msgid "Move Tab To Window"
+msgstr "Premesti list u prozor"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:273
+msgid "Move the current tab to a different window"
+msgstr "Premesti tekući list u drugi prozor"
