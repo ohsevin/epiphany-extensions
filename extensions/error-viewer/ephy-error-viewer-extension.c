@@ -231,13 +231,12 @@ update_sgml_validator_action (EphyWindow *window)
 	EphyEmbed *embed;
 	GtkAction *action;
 	char *content_type;
-	GValue *sensitive;
+	GValue sensitive = { 0, };
 
 	g_return_if_fail (EPHY_IS_WINDOW (window));
 
-	sensitive = g_new0 (GValue, 1);
-	g_value_init (sensitive, G_TYPE_BOOLEAN);
-	g_value_set_boolean (sensitive, FALSE);
+	g_value_init (&sensitive, G_TYPE_BOOLEAN);
+	g_value_set_boolean (&sensitive, FALSE);
 
 	action = gtk_ui_manager_get_action (GTK_UI_MANAGER (window->ui_merge),
 					    "/menubar/ToolsMenu/SgmlValidate");
@@ -248,8 +247,8 @@ update_sgml_validator_action (EphyWindow *window)
 	if (ephy_tab_get_load_status (tab) == TRUE)
 	{
 		g_object_set_property (G_OBJECT (action),
-				       "sensitive", sensitive);
-		g_free (sensitive);
+				       "sensitive", &sensitive);
+		g_value_unset (&sensitive);
 		return;
 	}
 
@@ -262,14 +261,14 @@ update_sgml_validator_action (EphyWindow *window)
 	    || (strcmp (content_type, "application/xml") == 0)
 	    || (strcmp (content_type, "text/xml") == 0))
 	{
-		g_value_set_boolean (sensitive, TRUE);
+		g_value_set_boolean (&sensitive, TRUE);
 	}
 
 	g_free (content_type);
 
-	g_object_set_property (G_OBJECT (action), "sensitive", sensitive);
+	g_object_set_property (G_OBJECT (action), "sensitive", &sensitive);
 
-	g_free (sensitive);
+	g_value_unset (&sensitive);
 }
 
 static void
