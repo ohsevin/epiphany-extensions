@@ -113,6 +113,8 @@ private:
                     nsIDOMHTMLElement *aHTMLElement);
   void ProcessAppletNode (nsIDOMHTMLAppletElement *aElement);
   void ProcessAreaNode (nsIDOMHTMLAreaElement *aElement);
+  void PageInfoHelper::ProcessEmbedNodeHelper (const nsEmbedString &aUrl, 
+  				               nsIDOMHTMLEmbedElement *aElement);
   void ProcessEmbedNode (nsIDOMHTMLEmbedElement *aElement);
   void ProcessFormNode (nsIDOMHTMLFormElement *aElement);
   void ProcessImageNode (nsIDOMHTMLImageElement *aElement);
@@ -521,28 +523,50 @@ PageInfoHelper::ProcessAreaNode (nsIDOMHTMLAreaElement *aElement)
 }
 
 void
-PageInfoHelper::ProcessEmbedNode (nsIDOMHTMLEmbedElement *aElement)
+PageInfoHelper::ProcessEmbedNodeHelper (const nsEmbedString &aUrl, 
+  				        nsIDOMHTMLEmbedElement *aElement)
 {
   nsresult rv;
-  nsEmbedString tmp;
-  rv = aElement->GetSrc (tmp);
-  if (NS_FAILED (rv) || !tmp.Length()) return;
 
   nsEmbedCString cUrl;
-  rv = Resolve (tmp, cUrl);
+  rv = Resolve (aUrl, cUrl);
   if (NS_FAILED (rv) || !cUrl.Length()) return;
 
   if (g_hash_table_lookup (mMediaHash, cUrl.get())) return;
 
-  EmbedPageMedium *medium = g_new0 (EmbedPageMedium, 1);
+  EmbedPageMedium *medium;
+
+  medium = g_new0 (EmbedPageMedium, 1);
   medium->type = MEDIUM_EMBED;
   medium->url = g_strdup (cUrl.get());
   g_hash_table_insert (mMediaHash, medium->url, medium);
 
+  nsEmbedString tmp;
   rv = aElement->GetTitle (tmp);
   if (NS_SUCCEEDED (rv))
     {
       medium->title = ToCString (tmp);
+    }
+}
+
+void
+PageInfoHelper::ProcessEmbedNode (nsIDOMHTMLEmbedElement *aElement)
+{
+  nsresult rv;
+  nsEmbedString tmp;
+
+  // Look at src tag
+  rv = aElement->GetSrc (tmp);
+  if (NS_SUCCEEDED (rv) && tmp.Length())
+    {
+      ProcessEmbedNodeHelper (tmp, aElement);
+    }
+
+  // Look at href tag
+  aElement->GetAttribute(mHrefAttr, tmp);
+  if (NS_SUCCEEDED (rv) && tmp.Length())
+    { 
+      ProcessEmbedNodeHelper (tmp, aElement);
     }
 }
 

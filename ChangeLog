@@ -1,3 +1,11 @@
+2005-03-19  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+	(ProcessEmbedNode):
+
+	Page Info gets href attribute for embed elements.
+	Fix bug #170786.
+
 2005-03-19  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:
