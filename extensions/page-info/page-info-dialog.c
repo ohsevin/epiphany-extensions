@@ -37,6 +37,8 @@
 
 /* non-installed ephy headers */
 #include "ephy-state.h"
+#include "eel-gconf-extensions.h"
+#include "ephy-file-helpers.h"
 
 #include <gtk/gtkentry.h>
 #include <gtk/gtklabel.h>
@@ -48,7 +50,9 @@
 #include <gtk/gtkactiongroup.h>
 #include <gtk/gtkuimanager.h>
 #include <gtk/gtkstock.h>
+#include <gtk/gtkclipboard.h>
 
+#include <libgnomevfs/gnome-vfs-uri.h>
 #include <libgnomevfs/gnome-vfs-utils.h>
 #include <libgnomevfs/gnome-vfs-mime-handlers.h>
 
@@ -58,7 +62,6 @@
 
 #if 0
 #include <gtk/gtksizegroup.h>
-#include <gtk/gtkclipboard.h>
 #include <gdk/gdkdisplay.h>
 #include <gtk/gtkmain.h>
 #include <glib/gconvert.h>
@@ -495,6 +498,7 @@ struct _TreeviewInfoPage
 	InfoPage page;
 
 	GtkListStore *store;
+	GtkTreeSelection *selection;
 	GtkTreeView *treeview;
 	GtkActionEntry *action_entries;
 	guint n_action_entries;
@@ -743,7 +747,9 @@ general_info_page_new (PageInfoDialog *dialog)
 
 /* "Images" page */
 
-#define IMAGE_PANED_POSITION_DEFAULT 250
+#define IMAGE_PANED_POSITION_DEFAULT	250
+#define CONF_DESKTOP_BG_PICTURE		"/desktop/gnome/background/picture_filename"
+#define CONF_DESKTOP_BG_TYPE		"/desktop/gnome/background/picture_options"
 
 typedef struct _ImagesInfoPage ImagesInfoPage;
 
@@ -764,18 +770,150 @@ enum
 	COL_IMAGE_HEIGHT
 };
 
+static char *
+images_get_selected_image_url (ImagesInfoPage *page)
+{
+	TreeviewInfoPage *tpage = (TreeviewInfoPage *) page;
+	GtkTreeModel *model;
+	GtkTreeIter iter;
+	char *address = NULL;
+
+	if (gtk_tree_selection_get_selected (tpage->selection, &model, &iter))
+	{
+		gtk_tree_model_get (model, &iter,
+				    COL_IMAGE_URL, &address,
+				    -1);
+	}
+
+	return address;
+}
+
 static void
-images_save_image_cb (GtkAction *action,
+images_open_image_cb (GtkAction *action,
 		      ImagesInfoPage *page)
 {
 	/* FIXME: write me! :) */
 }
 
+static void
+images_save_image_cb (GtkAction *action,
+		      ImagesInfoPage *page)
+{
+	InfoPage *ipage = (InfoPage *) page;
+	PageInfoDialog *dialog = ipage->dialog;
+	EphyEmbedPersist *persist;
+	char *address;
+
+	address = images_get_selected_image_url (page);
+	g_return_if_fail (address != NULL);
+
+	persist = EPHY_EMBED_PERSIST
+		(ephy_embed_factory_new_object ("EphyEmbedPersist"));
+
+	ephy_embed_persist_set_source (persist, address);
+	ephy_embed_persist_set_flags (persist, EMBED_PERSIST_ASK_DESTINATION);
+	ephy_embed_persist_set_fc_title (persist, _("Save Image As..."));
+	ephy_embed_persist_set_fc_parent (persist, GTK_WINDOW (dialog->priv->window));
+
+	ephy_embed_persist_save (persist);
+
+	g_object_unref (persist);
+	g_free (address);
+}
+
+static void
+background_download_completed_cb (EphyEmbedPersist *persist)
+{
+	const char *bg;
+	char *type;
+
+	bg = ephy_embed_persist_get_dest (persist);
+	eel_gconf_set_string (CONF_DESKTOP_BG_PICTURE, bg);
+
+	type = eel_gconf_get_string (CONF_DESKTOP_BG_TYPE);
+	if (type == NULL || strcmp (type, "none") == 0)
+	{
+		eel_gconf_set_string (CONF_DESKTOP_BG_TYPE, "wallpaper");
+	}
+	g_free (type);
+}
+
+static void
+images_set_image_as_background_cb (GtkAction *action,
+				   ImagesInfoPage *page)
+{
+	EphyEmbedPersist *persist;
+	char *address;
+	char *dest, *base, *base_converted;
+
+	address = images_get_selected_image_url (page);
+	g_return_if_fail (address != NULL);
+
+	base = g_path_get_basename (address);
+	base_converted = g_filename_from_utf8 (base, -1, NULL, NULL, NULL);
+	dest = g_build_filename (ephy_dot_dir (), base_converted, NULL);
+
+	persist = EPHY_EMBED_PERSIST
+		(ephy_embed_factory_new_object ("EphyEmbedPersist"));
+
+	ephy_embed_persist_set_source (persist, address);
+	ephy_embed_persist_set_dest (persist, dest);
+	ephy_embed_persist_set_flags (persist, EMBED_PERSIST_NO_VIEW);
+
+	g_signal_connect (persist, "completed",
+			  G_CALLBACK (background_download_completed_cb), NULL);
+
+	ephy_embed_persist_save (persist);
+
+	g_object_unref (persist);
+
+	g_free (address);
+	g_free (dest);
+	g_free (base);
+	g_free (base_converted);
+}
+
+static void
+images_copy_image_address_cb (GtkAction *action,
+			      ImagesInfoPage *page)
+{
+	char *address;
+
+	address = images_get_selected_image_url (page);
+	g_return_if_fail (address != NULL);
+
+	gtk_clipboard_set_text (gtk_clipboard_get (GDK_NONE),
+				address, -1);
+	gtk_clipboard_set_text (gtk_clipboard_get (GDK_SELECTION_PRIMARY),
+				address, -1);
+}
+
 static GtkActionEntry images_action_entries[] =
 {
-	{ "SaveAs", GTK_STOCK_SAVE_AS, N_("_Save Image As..."), NULL,
-	  N_("Save image"),
-	  G_CALLBACK (images_save_image_cb) },
+	{ "OpenImage",
+	  GTK_STOCK_OPEN,
+	  N_("_Open Image"),
+	  NULL,
+	  NULL,
+	  G_CALLBACK (images_open_image_cb) },
+	{ "CopyImageAddress", 
+	  GTK_STOCK_COPY,
+	  N_("_Copy Image Address"),
+	  NULL,
+	  NULL,
+	  G_CALLBACK (images_copy_image_address_cb) },
+	{ "SetImageAsBackground",
+	  NULL,
+	  N_("_Use Image as Background"),
+	  NULL,
+	  NULL,
+	  G_CALLBACK (images_set_image_as_background_cb) },
+	{ "SaveAs", 
+	  GTK_STOCK_SAVE_AS,
+	  N_("_Save Image As..."),
+	  NULL,
+	  NULL,
+	  G_CALLBACK (images_save_image_cb) }
 };
 
 void
@@ -834,22 +972,20 @@ images_treeview_selection_changed_cb (GtkTreeSelection *selection,
 	char *url;
 	gboolean has_selected;
 
-	has_selected = gtk_tree_selection_get_selected (selection, &model, &iter);
+	url = images_get_selected_image_url (page);
 
-	if (has_selected)
+	if (url != NULL)
 	{
-		gtk_tree_model_get(model, &iter,
-				   COL_IMAGE_URL, &url,
-				   -1);
 		ephy_embed_load_url (page->embed, url);
-		g_free (url);
 	}
 	else
 	{
 		ephy_embed_load_url (page->embed, "about:blank");
 	}
 
-	gtk_widget_set_sensitive (page->save_button, has_selected);
+	gtk_widget_set_sensitive (page->save_button, url != NULL);
+
+	g_free (url);
 }
 
 static void
@@ -864,6 +1000,7 @@ images_info_page_construct (InfoPage *ipage)
 	GtkTreeViewColumn *column;
 	GtkTreeSelection *selection;
 	GtkWidget *button, *vpaned;
+	GtkAction *action;
 
 	treeview = GTK_TREE_VIEW (ephy_dialog_get_control
 		(EPHY_DIALOG (dialog), properties[PROP_IMAGES_IMAGE_TREEVIEW].id));
@@ -954,10 +1091,16 @@ images_info_page_construct (InfoPage *ipage)
 			      IMAGE_PANED_POSITION_DEFAULT);
 
 	tpage->store = liststore;
+	tpage->selection = selection;
 	tpage->treeview = treeview;
 	page->save_button = button;
 
 	treeview_info_page_construct (ipage);
+
+	/* FIXME: implement "Open", then remove this */
+	action = gtk_action_group_get_action (dialog->priv->action_group,
+					      "OpenImage");
+	g_object_set (action, "visible", FALSE, NULL);
 }
 
 static void
@@ -1092,6 +1235,7 @@ links_info_page_construct (InfoPage *ipage)
 	gtk_tree_view_column_set_sort_column_id (column, COL_LINK_REL);
 
 	tpage->store = liststore;
+	tpage->selection = selection;
 	tpage->treeview = treeview;
 
 //	treeview_info_page_construct (ipage);
@@ -1228,6 +1372,7 @@ forms_info_page_construct (InfoPage *ipage)
 	gtk_tree_view_column_set_sort_column_id (column, COL_FORM_ACTION);
 
 	tpage->store = liststore;
+	tpage->selection = selection;
 	tpage->treeview = treeview;
 
 //	treeview_info_page_construct (ipage);

@@ -1,5 +1,19 @@
 2004-09-12  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/page-info/page-info-context-ui.xml:
+	* extensions/page-info/page-info-dialog.c:
+	(images_get_selected_image_url), (images_open_image_cb),
+	(images_save_image_cb), (background_download_completed_cb),
+	(images_set_image_as_background_cb),
+	(images_copy_image_address_cb),
+	(images_treeview_selection_changed_cb),
+	(images_info_page_construct), (links_info_page_construct),
+	(forms_info_page_construct):
+
+	Implement context menu actions for "Images" page.
+
+2004-09-12  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/page-info/ephy-page-info-extension.c:
 	(ephy_page_info_extension_class_init),
 	(ephy_page_info_extension_display_cb), (update_action),

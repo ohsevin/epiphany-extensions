@@ -1,10 +1,19 @@
 <ui>
 
 <popup name="ImagesPopup" action="PopupAction">
+	<menuitem name="OpenImageIP" action="OpenImage"/>
 	<menuitem name="SaveAsIP" action="SaveAs"/>
+	<menuitem name="SetImageAsBackgroundIP" action="SetImageAsBackground"/>
+	<menuitem name="CopyImageAddressIP" action="CopyImageAddress"/>
 </popup>
 
 <popup name="ImagesEmbedPopup" action="PopupAction">
+</popup>
+
+<popup name="LinksPopup" action="PopupAction">
+</popup>
+
+<popup name="FormsPopup" action="PopupAction">
 </popup>
 
 </ui>
