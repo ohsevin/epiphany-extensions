@@ -71,7 +71,10 @@ dnl ********************************
 dnl Internationalisation
 dnl ********************************
 
-ALL_LINGUAS="bg ca cs da de el en_CA en_GB es fr hr hu it ja ko lt nl no pa pl pt pt_BR ru sk sq sr sr@Latn sv uk wa zh_CN"
+dnl Translators: new languages must be added to the po/LINGUAS file
+ALL_LINGUAS="`cat "$srcdir/po/LINGUAS" | grep -v '^#'`"
+
+AC_SUBST([CONFIG_STATUS_DEPENDENCIES],['$(top_srcdir)/po/LINGUAS'])
 
 GETTEXT_PACKAGE=epiphany-extensions-1.6
 AC_SUBST([GETTEXT_PACKAGE])
