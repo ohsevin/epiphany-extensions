@@ -1,5 +1,12 @@
 2004-10-30  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* doc/writing-epiphany-extensions.xml:
+
+	A few updates, not yet complete but at least it doesn't refer to
+	"ephyplugins" any more!
+
+2004-10-30  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/extensions-manager-ui/extensions-manager-ui.c:
 	(display_from_info), (fill_list_store), (extension_toggle_cb),
 	(active_sync), (extension_added_cb), (extension_removed_cb),
