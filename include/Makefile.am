@@ -13,4 +13,5 @@ EXTRA_DIST =				\
 	ephy-favicon-cache.h		\
 	ephy-gui.h			\
 	ephy-prefs.h			\
-	ephy-file-chooser.h
+	ephy-file-chooser.h		\
+	ephy-link.h

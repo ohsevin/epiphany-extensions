@@ -34,6 +34,7 @@
 #include <epiphany/ephy-extension.h>
 #include "ephy-bookmarks-menu.h"
 #include "ephy-gui.h"
+#include "ephy-link.h"
 #include "eel-gconf-extensions.h"
 #include "ephy-debug.h"
 
@@ -182,37 +183,44 @@ button_size_allocate_cb (GtkWidget *button,
 }
 #endif
 
-static void
+static EphyTab *
 open_bookmark_cb (EphyBookmarksMenu *menu,
 		  const char *address,
-		  gboolean open_in_new,
+		  EphyTab *tab,
+		  EphyLinkFlags flags,
 		  EphyBookmarksTrayExtension *extension)
 {
 	EphyBookmarksTrayExtensionPrivate *priv = extension->priv;
 	EphySession *session;
 	EphyWindow *window;
-	EphyTab *tab;
+	EphyTab *new_tab;
+	gboolean open_in_new;
 
 	session = EPHY_SESSION (ephy_shell_get_session (ephy_shell));
 	window = ephy_session_get_active_window (session);
 
+	open_in_new = (flags & (EPHY_LINK_NEW_WINDOW | EPHY_LINK_NEW_TAB)) != 0;
+
 	if (priv->open_in == OPEN_IN_CURRENT && !open_in_new && window != NULL)
 	{
 		ephy_window_load_url (window, address);
+		new_tab = ephy_window_get_active_tab (window);
 	}
 	else if ((priv->open_in == OPEN_IN_NEW_TAB || open_in_new) && window != NULL)
 	{
-		tab = ephy_window_get_active_tab (window);
-		ephy_shell_new_tab (ephy_shell, window, tab, address,
-				    EPHY_NEW_TAB_OPEN_PAGE |
-				    EPHY_NEW_TAB_IN_EXISTING_WINDOW);
+		tab = tab ? tab : ephy_window_get_active_tab (window);
+		new_tab = ephy_shell_new_tab (ephy_shell, window, tab, address,
+					      EPHY_NEW_TAB_OPEN_PAGE |
+					      EPHY_NEW_TAB_IN_EXISTING_WINDOW);
 	}
 	else
 	{
-		ephy_shell_new_tab (ephy_shell, window, NULL, address,
-				    EPHY_NEW_TAB_OPEN_PAGE |
-				    EPHY_NEW_TAB_IN_NEW_WINDOW);
+		new_tab = ephy_shell_new_tab (ephy_shell, window, NULL, address,
+					      EPHY_NEW_TAB_OPEN_PAGE |
+					      EPHY_NEW_TAB_IN_NEW_WINDOW);
 	}
+
+	return new_tab;
 }
 
 /*
@@ -490,7 +498,7 @@ ephy_bookmarks_tray_extension_init (EphyBookmarksTrayExtension *extension)
         }
 
 	priv->menu = ephy_bookmarks_menu_new (priv->manager, "/BmkMenu");
-	g_signal_connect (priv->menu, "open",
+	g_signal_connect (priv->menu, "open-link",
 			  G_CALLBACK (open_bookmark_cb), extension);
 
 	priv->tray_button = gtk_toggle_button_new ();
