@@ -1,3 +1,9 @@
+2005-03-20  Christian Persch  <chpe@cvs.gnome.org>
+
+        * configure.ac:
+	
+        Fix extensions list without --with-extensions.
+
 2005-03-19  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/page-info/mozilla/mozilla-helpers.cpp:
