@@ -4,7 +4,7 @@ if HAVE_OPENSP
 SUBDIRS += opensp
 endif
 
-extensiondir = $(EXTENSIONS_DIR)
+extensiondir = $(libdir)/epiphany/extensions
 
 INCLUDES = \
 	-I$(top_srcdir)/extensions/error-viewer/mozilla		\

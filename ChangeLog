@@ -1,3 +1,18 @@
+2004-04-20  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/certificates/Makefile.am:
+	* extensions/dashboard/Makefile.am:
+	* extensions/dashboard/dashboard-frontend-xmlwriter.c:
+	* extensions/error-viewer/Makefile.am:
+	* extensions/gestures/Makefile.am:
+	* extensions/popup-blocker/Makefile.am:
+	* extensions/sample-mozilla/Makefile.am:
+	* extensions/sample/Makefile.am:
+	* extensions/tabsmenu/Makefile.am:
+	* extensions/toolbar-extras/Makefile.am:
+
+	Revert changes.
+
 2004-04-19  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/certificates/Makefile.am:
