@@ -1,5 +1,12 @@
 2004-05-01  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/certificates/ephy-certificates-extension.c:
+	(impl_attach_window):
+
+	Use EphyStatusbar to find the security frame.
+
+2004-05-01  Christian Persch  <chpe@cvs.gnome.org>
+
 	* configure.ac:
 
 	Add support for mozilla 1.8a.
