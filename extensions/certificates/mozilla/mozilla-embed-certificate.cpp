@@ -30,11 +30,8 @@
 static void embed_security_change_cb (GObject *embed_object, 
 				      gpointer request_ptr,
 				      guint state,
-				      gpointer dummy)
+				      MozillaEmbedCertificate *cert)
 {
-	MozillaEmbedCertificate *cert;
-
-	cert = (MozillaEmbedCertificate *) g_object_get_data (embed_object, DATA_KEY);
 	if (!cert) return;
 
 	nsCOMPtr<nsIRequest> request = static_cast<nsIRequest*>(request_ptr);
@@ -44,11 +41,14 @@ static void embed_security_change_cb (GObject *embed_object,
 }
 
 static void
-delete_cert (gpointer cert_ptr)
+embed_destroy_cb (GtkObject *object,
+		  MozillaEmbedCertificate *cert)
 {
-	MozillaEmbedCertificate *cert = (MozillaEmbedCertificate *) cert_ptr;
-
 	g_return_if_fail (cert != NULL);
+
+	g_signal_handlers_disconnect_by_func
+		(object, (void*) embed_security_change_cb, cert);
+	g_object_set_data (G_OBJECT (object), DATA_KEY, NULL);
 
 	delete cert;
 }
@@ -64,13 +64,14 @@ mozilla_embed_certificate_attach (EphyEmbed *embed)
 	{
 		cert = new MozillaEmbedCertificate ();
 
-		g_object_set_data_full (embed_object, DATA_KEY, cert,
-					(GDestroyNotify) delete_cert);
-	}
+		g_object_set_data (embed_object, DATA_KEY, cert);
 
-	g_signal_connect_object (G_OBJECT (embed), "security_change",
-				 G_CALLBACK (embed_security_change_cb),
-				 NULL, (GConnectFlags) 0);
+		g_signal_connect (embed_object, "destroy",
+				  G_CALLBACK (embed_destroy_cb), cert);
+
+		g_signal_connect (G_OBJECT (embed), "security_change",
+				  G_CALLBACK (embed_security_change_cb), cert);
+	}
 }
 
 extern "C" void
