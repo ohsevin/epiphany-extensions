@@ -30,6 +30,7 @@
 
 #include <gtkmozembed.h>
 #include <gtkmozembed_internal.h>
+#include <EphyUtils.h>
 
 #define MOZILLA_STRICT_API
 #include <nsEmbedString.h>
@@ -40,11 +41,15 @@
 #include <nsICacheSession.h>
 #include <nsIDOMDocument.h>
 #include <nsIDOMHTMLAnchorElement.h>
+#include <nsIDOMHTMLInputElement.h>
+#include <nsIDOMHTMLAreaElement.h>
 #include <nsIDOMHTMLCollection.h>
 #include <nsIDOMHTMLDocument.h>
 #include <nsIDOMHTMLFormElement.h>
 #include <nsIDOMHTMLImageElement.h>
 #include <nsIDOMHTMLLinkElement.h>
+#include <nsIDOMHTMLFrameElement.h>
+#include <nsIDOMHTMLIFrameElement.h>
 #include <nsIDOMLocation.h>
 #include <nsIDOMNode.h>
 #include <nsIDOMNodeList.h>
@@ -59,6 +64,21 @@
 #include <nsTime.h>
 #include <nsIHTMLDocument.h>
 #include <nsCompatibility.h>
+#include <nsIDOMTreeWalker.h>
+#include <nsIDOMDocumentTraversal.h>
+#include <nsIDOMNodeFilter.h>
+#include <nsIDOMCSSStyleDeclaration.h>
+#include <nsIDOMDocumentView.h>
+#include <nsIDOMAbstractView.h>
+#include <nsIDOMViewCSS.h>
+#include <nsIURI.h>
+#include <nsIDOM3Node.h>
+#include <nsIDocCharset.h>
+#include <nsIInterfaceRequestorUtils.h>
+
+#ifdef ALLOW_PRIVATE_API
+#include <nsITextToSubURI.h>
+#endif
 
 static char *
 embed_string_to_c_string (const nsEmbedString& embed_string)
@@ -226,7 +246,7 @@ mozilla_get_page_properties (EphyEmbed *embed)
 	return props;
 }
 
-extern "C" void
+static void
 mozilla_free_embed_page_image (EmbedPageImage *image)
 {
 	g_free (image->url);
@@ -235,61 +255,23 @@ mozilla_free_embed_page_image (EmbedPageImage *image)
 	g_free (image);
 }
 
-extern "C" GList *
-mozilla_get_images (EphyEmbed *embed)
+static void
+process_image_node (nsIDOMHTMLImageElement *element, GHashTable *hash, GList **ret)
 {
 	nsresult rv;
-	GHashTable *hash = g_hash_table_new(g_str_hash, g_str_equal);
-	GList *ret = NULL;
+	EmbedPageImage *image = NULL;
 
-	nsCOMPtr<nsIWebBrowser> browser;
-	gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (embed),
-					 getter_AddRefs (browser));
-	NS_ENSURE_TRUE (browser, NULL);
-
-	nsCOMPtr<nsIDOMWindow> dom_window;
-	browser->GetContentDOMWindow (getter_AddRefs (dom_window));
-	NS_ENSURE_TRUE (dom_window, NULL);
-
-	nsCOMPtr<nsIDOMDocument> doc;
-	dom_window->GetDocument (getter_AddRefs (doc));
-	NS_ENSURE_TRUE (doc, NULL);
-
-	nsCOMPtr<nsIDOMHTMLDocument> htmlDoc = do_QueryInterface(doc);
-	NS_ENSURE_TRUE (htmlDoc, NULL);
-
-	nsCOMPtr<nsIDOMHTMLCollection> nodes;
-	/* FIXME: DOM spec recomments searching by name for "img", "object" */
-	htmlDoc->GetImages(getter_AddRefs(nodes));
-
-	PRUint32 count(0);
-	nodes->GetLength(&count);
-	for (PRUint32 i = 0; i < count; i++)
+	nsEmbedString tmp;
+	rv = element->GetSrc(tmp);
+	if (NS_SUCCEEDED(rv) && tmp.Length ())
 	{
-		nsCOMPtr<nsIDOMNode> node;
-		rv = nodes->Item(i, getter_AddRefs(node));
-		if (NS_FAILED(rv) || !node) continue;
+		char *c = embed_string_to_c_string (tmp);
 
-		nsCOMPtr<nsIDOMHTMLImageElement> element (do_QueryInterface (node));
-		if (!element) continue;
+		if (g_hash_table_lookup(hash, c)) { g_free (c); return; }
 
-		EmbedPageImage *image = g_new0 (EmbedPageImage, 1);
-
-		nsEmbedString tmp;
-		rv = element->GetSrc(tmp);
-		if (NS_SUCCEEDED(rv))
-		{
-			char *c = embed_string_to_c_string (tmp);
-			if (g_hash_table_lookup(hash, c))
-			{
-				g_free (image);
-				g_free (c);
-				continue;
-			}
-			image->url = c;
-			g_hash_table_insert(hash, image->url,
-					    GINT_TO_POINTER(TRUE));
-		}
+		image = g_new0 (EmbedPageImage, 1);
+		image->url = c;
+		g_hash_table_insert(hash, image->url, GINT_TO_POINTER(TRUE));
 
 		rv = element->GetAlt(tmp);
 		if (NS_SUCCEEDED(rv))
@@ -304,15 +286,93 @@ mozilla_get_images (EphyEmbed *embed)
 		rv = element->GetWidth(&(image->width));
 		rv = element->GetHeight(&(image->height));
 
-		ret = g_list_append(ret, image);
+		if (image)
+		{
+			*ret = g_list_prepend(*ret, image);
+		}
 	}
-
-	g_hash_table_destroy (hash);
-
-	return ret;
 }
 
-extern "C" void
+static nsresult
+mozilla_get_absolute_url (nsIDOMDocument *doc, const nsAString &relurl, nsACString &absurl)
+{
+	nsresult rv;
+
+	nsCOMPtr<nsIDOM3Node> node(do_QueryInterface (doc));
+	nsEmbedString spec;
+	node->GetBaseURI (spec);
+
+	nsCOMPtr<nsIURI> base;
+	rv = EphyUtils::NewURI (getter_AddRefs(base), spec);
+	if (NS_SUCCEEDED(rv))
+	{
+		nsEmbedCString crelurl;
+		NS_UTF16ToCString (relurl, NS_CSTRING_ENCODING_UTF8, crelurl);	
+
+		rv = base->Resolve (crelurl, absurl);
+	}
+
+	return rv;
+}
+
+static void
+process_input_node (nsIDOMHTMLInputElement *element, 
+		    nsIDOMDocument *doc,
+		    GHashTable *hash, 
+		    GList **ret)
+{
+	nsresult rv;
+	EmbedPageImage *image = NULL;
+
+	nsEmbedString tmp;
+	nsEmbedCString c_tmp;
+
+	/* We are searching for input of type image only */
+	rv = element->GetType (tmp);
+	if (NS_SUCCEEDED(rv))
+	{
+		NS_UTF16ToCString (tmp, NS_CSTRING_ENCODING_UTF8, c_tmp);
+
+		/* Is it an image ? */
+		if (g_ascii_strcasecmp (c_tmp.get (), "image") > 0) return;
+
+		/* Get url */
+		rv = element->GetSrc (tmp);
+		if (!NS_SUCCEEDED(rv) || tmp.Length () == 0) return;
+
+		char *c_url = embed_string_to_c_string (tmp);
+
+		/* Relative url ? */
+		if (c_url && c_url[0] == '/')
+		{
+			rv = mozilla_get_absolute_url (doc, tmp, c_tmp);
+			if (NS_SUCCEEDED(rv) && c_tmp.Length ())
+			{
+				g_free (c_url);
+				c_url = strdup (c_tmp.get ());
+			}
+		}
+
+		/* is already listed ? */		
+		if (g_hash_table_lookup(hash, c_url)) return;
+
+		EmbedPageImage *image = g_new0 (EmbedPageImage, 1);
+
+		image->url = c_url;
+
+		rv = element->GetAlt(tmp);
+		if (NS_SUCCEEDED(rv))
+		{
+			image->alt = embed_string_to_c_string (tmp);
+		}
+
+		*ret = g_list_prepend (*ret, image);
+
+		g_hash_table_insert(hash, image->url, GINT_TO_POINTER(TRUE));
+	}
+}
+
+static void
 mozilla_free_embed_page_link (EmbedPageLink *link)
 {
 	g_free (link->url);
@@ -321,11 +381,35 @@ mozilla_free_embed_page_link (EmbedPageLink *link)
 	g_free (link);
 }
 
+static nsresult 
+mozilla_unescape (const nsACString &aEscaped, 
+                  nsACString &aUnescaped, 
+                  const nsACString &encoding)
+{
+	nsresult rv;
+
+	if (!aEscaped.Length()) return NS_ERROR_FAILURE;
+
+	nsCOMPtr<nsITextToSubURI> escaper
+		(do_CreateInstance ("@mozilla.org/intl/texttosuburi;1"));
+	NS_ENSURE_TRUE (escaper, NS_ERROR_FAILURE);
+
+	nsEmbedString unescaped;
+	rv = escaper->UnEscapeNonAsciiURI (encoding, aEscaped, unescaped);
+	NS_ENSURE_TRUE (NS_SUCCEEDED (rv) && unescaped.Length(), NS_ERROR_FAILURE);
+
+	NS_UTF16ToCString (unescaped, NS_CSTRING_ENCODING_UTF8, aUnescaped);
+
+	return NS_OK;
+}
+
 template <class T>
 static nsresult
 process_link_node (nsIDOMNode *node,
-		   nsIDOMDocument *doc,
-		   GList **ret)
+		   GHashTable *hash,
+		   GList **links,
+		   GList **imgs,
+		   const nsEmbedCString &encoding)
 {
 	nsresult rv;
 
@@ -334,12 +418,89 @@ process_link_node (nsIDOMNode *node,
 
 	nsEmbedString tmp;
 
-	EmbedPageLink *link = g_new0 (EmbedPageLink, 1);
-
+	/* HREF */
 	rv = element->GetHref(tmp);
 	NS_ENSURE_SUCCESS (rv, rv);
-	link->url = embed_string_to_c_string (tmp);
 
+	/* Check for mailto scheme */
+	nsCOMPtr<nsIURI> uri;
+	rv = EphyUtils::NewURI (getter_AddRefs (uri), tmp);
+	NS_ENSURE_TRUE (NS_SUCCEEDED (rv) && uri, NS_ERROR_FAILURE);
+
+	PRBool isMailto = PR_FALSE;
+	rv = uri->SchemeIs ("mailto", &isMailto);
+
+	char* url = NULL;
+
+	/* We need to unescape mailto link */
+	if (isMailto)
+	{
+		nsEmbedCString unescapedHref, escapedHref;
+
+		NS_UTF16ToCString (tmp, NS_CSTRING_ENCODING_UTF8, escapedHref);
+
+		rv = mozilla_unescape (escapedHref, unescapedHref, encoding);
+		if (NS_SUCCEEDED (rv) && unescapedHref.Length())
+		{
+			url = strdup (unescapedHref.get ());
+		}
+		else
+		{
+			url = embed_string_to_c_string (tmp);
+		}
+	}
+	else
+	{
+		url = embed_string_to_c_string (tmp);
+	}
+
+	/* REL */	
+	rv = element->GetRel(tmp);
+	NS_ENSURE_SUCCESS (rv, rv);
+
+	char *rel = NULL;
+
+	if (tmp.Length())
+	{
+		rel = embed_string_to_c_string (tmp);
+	}
+	if (!rel)
+	{
+		rv = element->GetRev(tmp);
+		NS_ENSURE_SUCCESS (rv, rv);
+		if (tmp.Length())
+		{
+			rel = embed_string_to_c_string (tmp);
+		}
+	}
+	else
+	{
+		/* Special case : rel = icon */
+		if (strcmp (rel, "icon") == 0)
+		{
+			EmbedPageImage *image = g_new0 (EmbedPageImage, 1);
+
+			image->url = url;
+
+			*imgs = g_list_prepend (*imgs, image);
+
+			return NS_OK;
+		}
+	}
+
+	/* This is really a link */
+
+	/* Already listed ? */
+	if (g_hash_table_lookup(hash, url)) return NS_OK;
+
+	g_hash_table_insert(hash, url, GINT_TO_POINTER(TRUE));
+
+	EmbedPageLink *link = g_new0 (EmbedPageLink, 1);
+
+	link->url = url;
+	link->rel = rel;
+
+	/* TITLE */
 	rv = element->GetTitle(tmp);
 	NS_ENSURE_SUCCESS (rv, rv);
 	if (tmp.Length())
@@ -347,92 +508,50 @@ process_link_node (nsIDOMNode *node,
 		link->title = embed_string_to_c_string (tmp);
 	}
 
-	rv = element->GetRel(tmp);
-	NS_ENSURE_SUCCESS (rv, rv);
-	if (tmp.Length())
-	{
-		link->rel = embed_string_to_c_string (tmp);
-	}
-	if (!link->rel)
-	{
-		rv = element->GetRev(tmp);
-		NS_ENSURE_SUCCESS (rv, rv);
-		if (tmp.Length())
-		{
-			link->rel = embed_string_to_c_string (tmp);
-		}
-	}
-
-	*ret = g_list_prepend(*ret, link);
+	if (isMailto)
+		/* The list is reversed on end to get the mailto links on head */
+		*links = g_list_append(*links, link);
+	else
+		*links = g_list_prepend(*links, link);
 
 	return NS_OK;
 }
 
-extern "C" GList *
-mozilla_get_links (EphyEmbed *embed)
+static void
+process_area_node (nsIDOMHTMLAreaElement *node,
+		   GHashTable *hash,
+		   GList **links)
 {
 	nsresult rv;
-	GList *ret = NULL;
 
-	nsCOMPtr<nsIWebBrowser> browser;
-	gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (embed),
-					 getter_AddRefs (browser));
-	NS_ENSURE_TRUE (browser, ret);
+	nsEmbedString tmp;
 
-	nsCOMPtr<nsIDOMWindow> dom_window;
-	browser->GetContentDOMWindow (getter_AddRefs (dom_window));
-	NS_ENSURE_TRUE (dom_window, ret);
+	/* HREF */
+	rv = node->GetHref(tmp);
+	if (!NS_SUCCEEDED (rv) || tmp.Length() == 0) return;
 
-	nsCOMPtr<nsIDOMDocument> doc;
-	dom_window->GetDocument (getter_AddRefs (doc));
-	NS_ENSURE_TRUE (doc, ret);
+	char* url = embed_string_to_c_string (tmp);
 
-	/* first, get a list of <link> elements */
-	nsCOMPtr<nsIDOMNodeList> links;
-	nsEmbedString str_link;
-	NS_CStringToUTF16 (nsEmbedCString("link"), NS_CSTRING_ENCODING_UTF8,
-			   str_link);
-	rv = doc->GetElementsByTagName (str_link, getter_AddRefs(links));
-	NS_ENSURE_SUCCESS (rv, ret);
+	/* Already listed ? */
+	if (g_hash_table_lookup(hash, url)) return;
 
-	PRUint32 links_count;
-	rv = links->GetLength(&links_count);
-	NS_ENSURE_SUCCESS (rv, ret);
+	g_hash_table_insert(hash, url, GINT_TO_POINTER(TRUE));
 
-	for (PRUint32 i = 0; i < links_count; i++)
+	EmbedPageLink *link = g_new0 (EmbedPageLink, 1);
+
+	link->url = url;
+
+	/* TITLE */
+	rv = node->GetTitle(tmp);
+	if (NS_SUCCEEDED (rv) && tmp.Length() == 0)
 	{
-		nsCOMPtr<nsIDOMNode> node;
-		rv = links->Item(i, getter_AddRefs(node));
-		if (NS_FAILED(rv) || !node) continue;
-
-		process_link_node<nsIDOMHTMLLinkElement>(node, doc, &ret);
+		link->title = embed_string_to_c_string (tmp);
 	}
 
-	/* next, get a list of anchors */
-	nsCOMPtr<nsIDOMHTMLDocument> htmlDoc = do_QueryInterface(doc);
-	NS_ENSURE_TRUE (htmlDoc, ret);
-
-	nsCOMPtr<nsIDOMHTMLCollection> anchors;
-	rv = htmlDoc->GetLinks(getter_AddRefs(anchors));
-	NS_ENSURE_SUCCESS (rv, ret);
-
-	PRUint32 anchor_count;
-	anchors->GetLength(&anchor_count);
-	for (PRUint32 i = 0; i < anchor_count; i++)
-	{
-		nsCOMPtr<nsIDOMNode> node;
-		rv = anchors->Item(i, getter_AddRefs(node));
-		if (NS_FAILED(rv) || !node) continue;
-
-		process_link_node<nsIDOMHTMLAnchorElement>(node, doc, &ret);
-	}
-
-	ret = g_list_reverse (ret);
-
-	return ret;
+	*links = g_list_prepend(*links, link);
 }
 
-extern "C" void
+static void
 mozilla_free_embed_page_form (EmbedPageForm *form)
 {
 	g_free (form->name);
@@ -441,16 +560,237 @@ mozilla_free_embed_page_form (EmbedPageForm *form)
 	g_free (form);
 }
 
-extern "C" GList *
-mozilla_get_forms (EphyEmbed *embed)
+static void
+process_form_node (nsIDOMHTMLFormElement *element,
+		   GList **ret)
 {
 	nsresult rv;
-	GList *ret = NULL;
+	EmbedPageForm *form = g_new0 (EmbedPageForm, 1);
+
+	nsEmbedString tmp;
+
+	rv = element->GetAction(tmp);
+	if (NS_SUCCEEDED(rv) && tmp.Length())
+	{
+		/*
+		   nsCOMPtr<nsIDocument> document;
+		   document = do_QueryInterface(doc, &rv);
+		   if (NS_FAILED(rv))
+		   {
+		   g_free(form);
+		   continue;
+		   }
+
+		   nsIURI *uri = document->GetDocumentURI();
+
+		   const nsACString &s = NS_ConvertUCS2toUTF8(tmp);
+		   nsCAutoString c;
+		   rv = uri->Resolve(s, c);
+
+		   form->action = c.Length() ?
+		   g_strdup (c.get()) :
+		   g_strdup (PromiseFlatCString(s).get());
+		 */
+		form->action = embed_string_to_c_string (tmp);
+	}
+
+	rv = element->GetName(tmp);
+	if (NS_SUCCEEDED(rv) && tmp.Length())
+	{
+		form->name = embed_string_to_c_string (tmp);
+	}
+
+	rv = element->GetMethod(tmp);
+	if (NS_SUCCEEDED(rv) && tmp.Length())
+	{
+		form->method = embed_string_to_c_string (tmp);
+	}
+
+	*ret = g_list_prepend (*ret, form);
+}
+
+static nsresult 
+mozilla_get_encoding (nsIWebBrowser *browser, nsACString &encoding)
+{
+	nsCOMPtr<nsIDocCharset> docCharset = do_GetInterface (browser);
+	NS_ENSURE_TRUE (docCharset, NS_ERROR_FAILURE);
+	char *charset;
+	docCharset->GetCharset (&charset);
+	encoding = charset;
+	nsMemory::Free (charset);
+
+	return NS_OK;
+}
+
+static void
+mozilla_walk_tree (nsIDOMDocument *doc, 
+		   const nsEmbedCString &encoding,
+		   EmbedPageInfo *page_info,
+		   GHashTable *img_hash,
+		   GHashTable *lnk_hash)
+{
+	nsresult rv;
+
+	nsCOMPtr<nsIDOMHTMLDocument> htmlDoc = do_QueryInterface(doc);
+	if (htmlDoc == NULL) return;
+
+	nsCOMPtr<nsIDOMTreeWalker> walker;
+	nsCOMPtr<nsIDOMDocumentTraversal> trav = do_QueryInterface(doc, &rv);
+	if (trav == NULL) return;
+
+	rv = trav->CreateTreeWalker(htmlDoc, 
+			nsIDOMNodeFilter::SHOW_ELEMENT, 
+			nsnull, 
+			PR_TRUE, 
+			getter_AddRefs(walker));
+	if (!NS_SUCCEEDED(rv)) return;
+
+	nsCOMPtr<nsIDOMCSSStyleDeclaration> computedStyle;
+	nsCOMPtr<nsIDOMDocumentView> docView = do_QueryInterface(doc);
+	nsCOMPtr<nsIDOMViewCSS> defaultCSSView = nsnull;
+	if (docView) 
+	{
+		nsCOMPtr<nsIDOMAbstractView> defaultView;
+		docView->GetDefaultView(getter_AddRefs(defaultView));
+		defaultCSSView = do_QueryInterface(defaultView);
+	}
+
+	nsCOMPtr<nsIDOMNode> aNode;
+	walker->GetCurrentNode(getter_AddRefs(aNode));
+	while (aNode)
+	{
+		nsCOMPtr<nsIDOMHTMLElement> nodeAsElement = do_QueryInterface(aNode);
+		if (nodeAsElement)
+		{
+			if (defaultCSSView)
+			{
+				nsEmbedString EmptyStr;
+				defaultCSSView->GetComputedStyle(nodeAsElement,
+						EmptyStr,
+						getter_AddRefs(computedStyle));
+			}
+
+			if (computedStyle)
+			{
+				nsEmbedString bgr;
+				const PRUnichar bgimage[] = {'b', 'a', 'c', 'k', 'g', 
+					'r', 'o', 'u', 'n', 'd', 
+					'-', 'i', 'm', 'a', 'g', 'e', '\0'};
+				computedStyle->GetPropertyValue(
+						nsEmbedString(bgimage), 
+						bgr);
+				nsEmbedCString cValue;
+				NS_UTF16ToCString (bgr, NS_CSTRING_ENCODING_UTF8, cValue);
+				if (!g_ascii_strcasecmp (cValue.get(), "none") == 0)
+				{
+					/* Format is url(http://...) */
+					gchar **tab = g_strsplit_set (cValue.get(), "()", 0);
+
+					/* FIXME : should use g_strv_length() with glib 2.5.x */
+					guint counter = 0;
+					while (tab[counter] != NULL) counter++;
+
+					if (counter > 2 && !g_hash_table_lookup(img_hash, tab[1]))
+					{
+						EmbedPageImage *image = g_new0 (EmbedPageImage, 1);
+
+						/* Sorry, only the url is available */	
+						image->url = g_strdup (tab[1]);
+
+						page_info->images = g_list_prepend(page_info->images, image);
+
+						g_hash_table_insert(img_hash, 
+								    image->url, 
+								    GINT_TO_POINTER(TRUE));
+					}
+					g_strfreev (tab);
+				}
+			}
+		}
+
+		nsCOMPtr<nsIDOMHTMLImageElement> nodeAsImage = do_QueryInterface(aNode);
+		if (nodeAsImage)
+		{
+			process_image_node (nodeAsImage, img_hash, &page_info->images);
+		}
+
+		nsCOMPtr<nsIDOMHTMLLinkElement> nodeAsLink = do_QueryInterface(aNode);
+		if (nodeAsLink)
+		{
+			process_link_node<nsIDOMHTMLLinkElement>(
+					nodeAsLink, 
+					lnk_hash, 
+					&page_info->links,
+					&page_info->images,
+					encoding);
+		}
+
+		nsCOMPtr<nsIDOMHTMLAnchorElement> nodeAsAnchor = do_QueryInterface(aNode);
+		if (nodeAsAnchor)
+		{
+			process_link_node<nsIDOMHTMLAnchorElement>(
+					nodeAsAnchor, 
+					lnk_hash, 
+					&page_info->links,
+					&page_info->images,
+					encoding);
+		}
+
+		nsCOMPtr<nsIDOMHTMLAreaElement> nodeAsArea = do_QueryInterface(aNode);
+		if (nodeAsArea)
+		{
+			process_area_node (nodeAsArea, lnk_hash, &page_info->links);
+		}
+
+		nsCOMPtr<nsIDOMHTMLFormElement> nodeAsForm = do_QueryInterface(aNode);
+		if (nodeAsForm)
+		{
+			process_form_node(nodeAsForm, &page_info->forms);
+		}
+
+		nsCOMPtr<nsIDOMHTMLInputElement> nodeAsInput = do_QueryInterface(aNode);
+		if (nodeAsInput)
+		{
+			process_input_node(nodeAsInput, doc, img_hash, &page_info->images);
+		}
+
+		nsCOMPtr<nsIDOMHTMLFrameElement> nodeAsFrame = do_QueryInterface(aNode);
+		if (nodeAsFrame)
+		{
+			nsCOMPtr<nsIDOMDocument> doc;
+			nodeAsFrame->GetContentDocument (getter_AddRefs (doc));
+			if (doc) mozilla_walk_tree (doc, encoding, page_info, img_hash, lnk_hash);
+		}
+
+		nsCOMPtr<nsIDOMHTMLIFrameElement> nodeAsIFrame = do_QueryInterface(aNode);
+		if (nodeAsIFrame)
+		{
+			nsCOMPtr<nsIDOMDocument> doc;
+			nodeAsIFrame->GetContentDocument (getter_AddRefs (doc));
+			if (doc) mozilla_walk_tree (doc, encoding, page_info, img_hash, lnk_hash);
+		}
+
+		walker->NextNode(getter_AddRefs(aNode));
+	}
+}
+
+extern "C" EmbedPageInfo *
+mozilla_get_page_info (EphyEmbed *embed)
+{
+	nsresult rv;
+	GHashTable *img_hash = g_hash_table_new(g_str_hash, g_str_equal);
+	GHashTable *lnk_hash = g_hash_table_new(g_str_hash, g_str_equal);
+	EmbedPageInfo *page_info = g_new0 (EmbedPageInfo, 1);
 
 	nsCOMPtr<nsIWebBrowser> browser;
 	gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (embed),
-					 getter_AddRefs (browser));
+			getter_AddRefs (browser));
 	NS_ENSURE_TRUE (browser, NULL);
+
+	/* Get charset */
+	nsEmbedCString encoding;
+	rv = mozilla_get_encoding (browser, encoding);
+	if (!NS_SUCCEEDED(rv)) return NULL;
 
 	nsCOMPtr<nsIDOMWindow> dom_window;
 	browser->GetContentDOMWindow (getter_AddRefs (dom_window));
@@ -460,72 +800,28 @@ mozilla_get_forms (EphyEmbed *embed)
 	dom_window->GetDocument (getter_AddRefs (doc));
 	NS_ENSURE_TRUE (doc, NULL);
 
-	nsCOMPtr<nsIDOMHTMLDocument> htmlDoc = do_QueryInterface(doc);
-	NS_ENSURE_TRUE (htmlDoc, NULL);
+	mozilla_walk_tree (doc, encoding, page_info, img_hash, lnk_hash);
 
-	nsCOMPtr<nsIDOMHTMLCollection> nodes;
-	rv = htmlDoc->GetForms(getter_AddRefs(nodes));
-	NS_ENSURE_SUCCESS (rv, NULL);
+	g_hash_table_destroy (img_hash);
+	g_hash_table_destroy (lnk_hash);
 
-	PRUint32 count(0);
-	rv = nodes->GetLength(&count);
-	NS_ENSURE_SUCCESS (rv, NULL);
+	/* Ensure that mailto links are on head */
+	page_info->links = g_list_reverse (page_info->links);
 
-	for (PRUint32 i = 0; i < count; i++)
-	{
-		nsCOMPtr<nsIDOMNode> node;
-		rv = nodes->Item(i, getter_AddRefs(node));
-		if (NS_FAILED(rv) || !node) continue;
+	return page_info;
+}
 
-		nsCOMPtr<nsIDOMHTMLFormElement> element;
-		element = do_QueryInterface(node, &rv);
-		if (NS_FAILED(rv) || !element) continue;
+extern "C" void
+mozilla_free_embed_page_info (EmbedPageInfo *page_info)
+{
+	g_list_foreach (page_info->forms, (GFunc) mozilla_free_embed_page_form, NULL);
+	g_list_free (page_info->forms);
 
-		EmbedPageForm *form = g_new0 (EmbedPageForm, 1);
+	g_list_foreach (page_info->links, (GFunc) mozilla_free_embed_page_link, NULL);
+	g_list_free (page_info->links);
 
-		nsEmbedString tmp;
+	g_list_foreach (page_info->images, (GFunc) mozilla_free_embed_page_image, NULL);
+	g_list_free (page_info->images);
 
-		rv = element->GetAction(tmp);
-		if (NS_SUCCEEDED(rv) && tmp.Length())
-		{
-			/*
-			nsCOMPtr<nsIDocument> document;
-			document = do_QueryInterface(doc, &rv);
-			if (NS_FAILED(rv))
-			{
-				g_free(form);
-				continue;
-			}
-
-			nsIURI *uri = document->GetDocumentURI();
-
-			const nsACString &s = NS_ConvertUCS2toUTF8(tmp);
-			nsCAutoString c;
-			rv = uri->Resolve(s, c);
-
-			form->action = c.Length() ?
-				       g_strdup (c.get()) :
-				       g_strdup (PromiseFlatCString(s).get());
-			*/
-			form->action = embed_string_to_c_string (tmp);
-		}
-
-		rv = element->GetName(tmp);
-		if (NS_SUCCEEDED(rv) && tmp.Length())
-		{
-			form->name = embed_string_to_c_string (tmp);
-		}
-
-		rv = element->GetMethod(tmp);
-		if (NS_SUCCEEDED(rv) && tmp.Length())
-		{
-			form->method = embed_string_to_c_string (tmp);
-		}
-
-		ret = g_list_prepend (ret, form);
-	}
-
-	ret = g_list_reverse (ret);
-
-	return ret;
+	g_free (page_info);
 }

@@ -1,5 +1,28 @@
 2004-11-21  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/page-info/mozilla/Makefile.am:
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+	* extensions/page-info/mozilla/mozilla-helpers.h:
+	* extensions/page-info/page-info-dialog.c: (treeview_filter_popup),
+	(treeview_info_page_button_pressed_cb),
+	(images_get_selected_image_url), (save_an_image),
+	(download_path_response_cb), (images_save_image_cb),
+	(images_set_image_as_background_cb),
+	(images_copy_image_address_cb),
+	(images_treeview_selection_changed_cb),
+	(images_info_page_construct), (images_info_page_fill),
+	(links_info_page_fill), (forms_info_page_fill),
+	(page_info_dialog_constructor), (page_info_dialog_finalize):
+	
+	Converted to using a DOM tree walker. While walking the tree,
+	check for CSS background images, and add those to the list too.
+	Avoid duplicate links by keeping a hash of already-seen links.
+	Also pick up mailto: links, and add those at top of Links
+	tab.
+	Patch by Jean-François Rameau.
+
+2004-11-21  Christian Persch  <chpe@cvs.gnome.org>
+
 	* include/EphyUtils.h:
 
 	Sync'd with epiphany.

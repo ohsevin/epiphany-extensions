@@ -92,21 +92,20 @@ typedef struct
 	char *action;
 } EmbedPageForm;
 
+typedef struct
+{
+	GList *images;
+	GList *links;
+	GList *forms;
+} EmbedPageInfo;
+
 void			 mozilla_free_page_properties	(EmbedPageProperties *props);
 
 EmbedPageProperties	*mozilla_get_page_properties	(EphyEmbed *embed);
 
-void			 mozilla_free_embed_page_image	(EmbedPageImage *image);
+EmbedPageInfo    	*mozilla_get_page_info          (EphyEmbed *embed);
 
-GList			*mozilla_get_images		(EphyEmbed *embed);
-
-void			 mozilla_free_embed_page_link	(EmbedPageLink *link);
-
-GList			*mozilla_get_links		(EphyEmbed *embed);
-
-void			 mozilla_free_embed_page_form	(EmbedPageForm *form);
-
-GList			*mozilla_get_forms		(EphyEmbed *embed);
+void			 mozilla_free_embed_page_info	(EmbedPageInfo *page_info);
 
 G_END_DECLS
 

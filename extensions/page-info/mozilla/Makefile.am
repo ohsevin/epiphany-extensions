@@ -15,8 +15,11 @@ INCLUDES = \
 	-I$(MOZILLA_INCLUDE_ROOT)/necko		\
 	-I$(MOZILLA_INCLUDE_ROOT)/layout	\
 	-I$(MOZILLA_INCLUDE_ROOT)/string	\
+	-I$(MOZILLA_INCLUDE_ROOT)/uconv		\
+	-I$(MOZILLA_INCLUDE_ROOT)/chardet	\
 	$(EPIPHANY_DEPENDENCY_CFLAGS)		\
 	-DSHARE_DIR=\"$(pkgdatadir)\"		\
+	-DALLOW_PRIVATE_API                     \
 	-include $(MOZILLA_INCLUDE_ROOT)/mozilla-config.h
 
 if MAINTAINER_MODE
