@@ -251,13 +251,18 @@ PageInfoHelper::GetCacheEntryDescriptor (const nsAString &aUrl,
 {
   nsresult rv;
 
+  *aEntry = nsnull;
+ 
   nsCOMPtr<nsICacheService> cacheService =
           do_GetService(NS_CACHESERVICE_CONTRACTID);
   NS_ENSURE_TRUE (cacheService, NS_ERROR_FAILURE);
 
   nsEmbedCString cUrl;
   NS_UTF16ToCString (aUrl, NS_CSTRING_ENCODING_UTF8, cUrl);
-  
+
+  char *url = g_strdup (cUrl.get ());
+  g_strdelimit (url, "#", '\0'); /* snip fragment, see bug #161201 */
+
   const char *cacheTypes[] = { "HTTP", "FTP" };
   for (unsigned int i = 0 ; i < G_N_ELEMENTS (cacheTypes); i++)
     {
@@ -272,14 +277,15 @@ PageInfoHelper::GetCacheEntryDescriptor (const nsAString &aUrl,
   
       nsCOMPtr<nsICacheEntryDescriptor> cacheEntryDescriptor;
   
-      rv = cacheSession->OpenCacheEntry (cUrl.get(), nsICache::ACCESS_READ,
+      rv = cacheSession->OpenCacheEntry (url, nsICache::ACCESS_READ,
                                          PR_FALSE, aEntry);
   
-      if (NS_SUCCEEDED (rv)) return NS_OK;
+      if (NS_SUCCEEDED (rv)) break;
     }
 
-  *aEntry = NULL;
-  return NS_ERROR_FAILURE;
+  g_free (url);
+
+  return rv;
 }
 
 nsresult

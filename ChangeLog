@@ -1,3 +1,10 @@
+2004-12-30  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+	* extensions/page-info/mozilla/mozilla-helpers.h:
+
+	Snip fragment when trying to find a cache entry. Fixes bug #161201.
+
 2004-12-29  Jean-François Rameau
 
 	* extensions/page-info/page-info-dialog.c:

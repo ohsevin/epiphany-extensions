@@ -69,10 +69,6 @@ typedef struct
 	gint key_length;
 	gint secret_key_length;
 	*/
-
-//	/* lists of hashtables with gvalues */
-//	GList *metatags;    /* name, value */
-//	GList *stylesheets; /* url, title */
 } EmbedPageProperties;
 
 typedef enum 
