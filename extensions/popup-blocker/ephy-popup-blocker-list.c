@@ -215,6 +215,8 @@ ephy_popup_blocker_list_remove_window (EphyPopupBlockerList *list,
 			break;
 		}
 	}
+
+	g_object_notify (G_OBJECT (list), "count");
 }
 
 void
