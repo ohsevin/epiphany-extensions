@@ -8,7 +8,6 @@ For HTML validation support, you will need:
 - DTD's for the documents you want to validate
   (sgml-data and w3c-dtd-xhtml on Debian)
 
-If you don't have OpenSP installed, Javascript errors will still be displayed.
-
-Epiphany must be newer than Jan 25, 2004.
-GTK+ must be newer than Jan 30, 2004.
+Everything needed for Link Checking is built into Mozilla. You may want to go
+into about:config and increase network.http.max-connections and
+network.http.max-connections-per-server for a speedup.
