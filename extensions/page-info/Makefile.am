@@ -13,6 +13,7 @@ libpageinfoextension_la_SOURCES = \
 libpageinfoextension_la_CPPFLAGS = \
         -I$(top_srcdir)/include				\
 	-I$(top_srcdir)/extensions/page-info/mozilla	\
+	-I$(MOZILLA_INCLUDE_ROOT)/gtkembedmoz		\
 	-DSHARE_DIR=\"$(pkgdatadir)\"			\
 	-DEPHY_EXTENSIONS_LOCALEDIR=\"$(datadir)/locale\"  \
 	$(AM_CPPFLAGS)

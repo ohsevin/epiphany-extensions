@@ -35,6 +35,7 @@
 #include <epiphany/ephy-embed-persist.h>
 #include <epiphany/ephy-embed-factory.h>
 #include <epiphany/ephy-state.h>
+#include <ephy-dnd.h>
 
 /* non-installed ephy headers */
 #include "ephy-gui.h"
@@ -197,6 +198,12 @@ EphyDialogProperty properties [] =
 
 	{ NULL }
 };
+
+static GtkTargetEntry drag_targets[] =
+{
+	{ EPHY_DND_URL_TYPE, 0, 0 }
+};
+static int n_drag_targets = G_N_ELEMENTS (drag_targets);
 
 /*
 enum
@@ -745,6 +752,15 @@ general_info_page_new (PageInfoDialog *dialog)
 	return ipage;
 }
 
+/* Set dnd cursor to the default dnd Gtk one and not the GtktreeView one */
+static void 
+page_info_drag_begin_cb(GtkWidget *widget, 
+		        GdkDragContext *dc, 
+		        gpointer dummy)
+{
+	gtk_drag_set_icon_default (dc);
+}
+
 /* "Media" page */
 
 #define MEDIUM_PANED_POSITION_DEFAULT	250
@@ -951,8 +967,8 @@ media_save_medium_cb (gpointer ptr,
 	{
 		char *address = (gchar *)(rows->data); 
 
-		if (address == NULL) return;
-
+		if (address != NULL)
+		{
 		persist = EPHY_EMBED_PERSIST
 					(ephy_embed_factory_new_object (EPHY_TYPE_EMBED_PERSIST));
 
@@ -964,7 +980,9 @@ media_save_medium_cb (gpointer ptr,
 		ephy_embed_persist_save (persist);
 
 		g_object_unref (persist);
-		g_free (address);
+		}
+		g_list_foreach (rows, (GFunc) g_free, NULL);
+		g_list_free (rows);
 	}
 	else
 	{
@@ -1019,8 +1037,8 @@ media_set_image_as_background_cb (GtkAction *action,
 	g_return_if_fail (g_list_length (rows) == 1);
 
 	address = (gchar *)(rows->data); 
-	if (address == NULL) return;
-
+	if (address != NULL)
+	{
 	base = g_path_get_basename (address);
 	base_converted = g_filename_from_utf8 (base, -1, NULL, NULL, NULL);
 	dest = g_build_filename (ephy_dot_dir (), base_converted, NULL);
@@ -1039,10 +1057,12 @@ media_set_image_as_background_cb (GtkAction *action,
 
 	g_object_unref (persist);
 
-	g_free (address);
 	g_free (dest);
 	g_free (base);
 	g_free (base_converted);
+	}
+	g_list_foreach (rows, (GFunc) g_free, NULL);
+	g_list_free (rows);
 }
 
 static void
@@ -1057,14 +1077,15 @@ media_copy_medium_address_cb (GtkAction *action,
 
 	address = (gchar *)(rows->data);
 	g_return_if_fail (address != NULL);
-	if (address == NULL) return;
-
+	if (address != NULL)
+	{
 	gtk_clipboard_set_text (gtk_clipboard_get (GDK_NONE),
 				address, -1);
 	gtk_clipboard_set_text (gtk_clipboard_get (GDK_SELECTION_PRIMARY),
 				address, -1);
-
-	g_free (address);
+	}
+	g_list_foreach (rows, (GFunc) g_free, NULL);
+	g_list_free (rows);
 }
 
 static GtkActionEntry media_action_entries[] =
@@ -1193,6 +1214,35 @@ media_info_page_filter (TreeviewInfoPage *page)
 }
 
 static void
+media_drag_data_get_cb (GtkWidget *widget,
+                        GdkDragContext *context,
+                        GtkSelectionData *selection_data,
+                        guint info,
+                        guint32 time,
+                        MediaInfoPage *page)
+{
+	char *address;
+	GList *rows;
+
+	g_assert (widget != NULL);
+	g_return_if_fail (context != NULL);
+
+	rows = media_get_selected_medium_url (page);
+	g_return_if_fail (rows != NULL);
+
+	address = (gchar *)(rows->data);
+	g_return_if_fail (address != NULL);
+
+	gtk_selection_data_set (selection_data,
+			selection_data->target,
+			8,
+			address,
+			strlen(address));
+	g_list_foreach (rows, (GFunc) g_free, NULL);
+	g_list_free (rows);
+}
+
+static void
 media_info_page_construct (InfoPage *ipage)
 {
 	TreeviewInfoPage *tpage = (TreeviewInfoPage *) ipage;
@@ -1219,6 +1269,21 @@ media_info_page_construct (InfoPage *ipage)
                                         G_TYPE_INT);
 	gtk_tree_view_set_model (treeview, GTK_TREE_MODEL (liststore));
 	g_object_unref (liststore);
+
+	/* Allow the tree to be a source for dnd */
+	gtk_tree_view_enable_model_drag_source (treeview, GDK_BUTTON1_MASK,
+                                                drag_targets, n_drag_targets,
+                                                GDK_ACTION_COPY);
+	g_signal_connect (G_OBJECT(treeview),
+                          "drag_data_get",
+                          G_CALLBACK(media_drag_data_get_cb),
+                          page);
+
+	/* Be careful, default handler forces dnd icon to be an image of the row ! */ 
+	g_signal_connect_after (G_OBJECT(treeview),
+                                "drag_begin",
+                                G_CALLBACK(page_info_drag_begin_cb),
+                                NULL);
 
 	selection = gtk_tree_view_get_selection (treeview);
 	gtk_tree_selection_set_mode (selection, GTK_SELECTION_MULTIPLE);
@@ -1433,6 +1498,31 @@ static GtkActionEntry links_action_entries[] =
 };
 
 static void
+links_drag_data_get_cb (GtkWidget *widget,
+                        GdkDragContext *context,
+                        GtkSelectionData *selection_data,
+                        guint info,
+                        guint32 time,
+                        LinksInfoPage *page)
+{
+	char *address;
+
+	g_assert (widget != NULL);
+	g_return_if_fail (context != NULL);
+
+	address = links_get_selected_link_url (page);
+	if (address == NULL) return;
+
+	gtk_selection_data_set (selection_data,
+			        selection_data->target,
+			        8,
+			        address,
+			        strlen(address));
+
+	g_free (address);
+}
+
+static void
 links_info_page_construct (InfoPage *ipage)
 {
 	TreeviewInfoPage *tpage = (TreeviewInfoPage *) ipage;
@@ -1456,6 +1546,21 @@ links_info_page_construct (InfoPage *ipage)
 	gtk_tree_view_set_headers_visible (treeview, TRUE);
 	selection = gtk_tree_view_get_selection (treeview);
 	gtk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
+
+	/* Allow the tree to be a source for dnd */
+	gtk_tree_view_enable_model_drag_source (treeview, GDK_BUTTON1_MASK,
+                                                drag_targets, n_drag_targets,
+                                                GDK_ACTION_COPY);
+	g_signal_connect (G_OBJECT(treeview),
+                          "drag_data_get",
+                          G_CALLBACK(links_drag_data_get_cb),
+                          ipage);
+
+	/* Be careful, default handler forces dnd icon to be an image of the row ! */ 
+	g_signal_connect_after (G_OBJECT(treeview),
+                                "drag_begin",
+                                G_CALLBACK(page_info_drag_begin_cb),
+                                NULL);
 
 	renderer = gtk_cell_renderer_text_new ();
 	gtk_tree_view_insert_column_with_attributes (treeview,

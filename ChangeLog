@@ -1,3 +1,24 @@
+2004-12-29  Jean-François Rameau
+
+	* extensions/page-info/page-info-dialog.c:
+	(page_info_drag_begin_cb), (media_save_medium_cb),
+	(media_set_image_as_background_cb), (media_copy_medium_address_cb),
+	(media_drag_data_get_cb), (media_info_page_construct),
+	(links_drag_data_get_cb), (links_info_page_construct):
+	* include/Makefile.am:
+	* include/ephy-dnd.h:
+
+	Add DND to Media and Links tabs, and plug a few mem leaks.
+	Fixes bug #
+
+2004-12-24  Christian Persch  <chpe@cvs.gnome.org> 
+	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:
+	(open_bookmark_cb), (ephy_bookmarks_tray_extension_init):
+	* include/Makefile.am:
+	* include/ephy-link.h:
+
+	Update for changed Epiphany API.
+
 2004-12-21  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/smart-bookmarks/smart-bookmarks-extension.c:
