@@ -221,7 +221,7 @@ impl_detach_window (EphyExtension *ext,
 static void
 ephy_dashboard_extension_init (EphyDashboardExtension *extension)
 {
-	extension->priv = EPHY_DASHBOARD_EXTENSION_GET_PRIVATE (extension);
+/*	extension->priv = EPHY_DASHBOARD_EXTENSION_GET_PRIVATE (extension);*/
 
 	LOG ("EphyDashboardExtension initialising")
 }
@@ -240,5 +240,5 @@ ephy_dashboard_extension_class_init (EphyDashboardExtensionClass *klass)
 
 	parent_class = g_type_class_peek_parent (klass);
 
-	g_type_class_add_private (object_class, sizeof (EphyDashboardExtensionPrivate));
+/*	g_type_class_add_private (object_class, sizeof (EphyDashboardExtensionPrivate));*/
 }

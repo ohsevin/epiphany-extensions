@@ -1,5 +1,14 @@
 2004-09-12  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/dashboard/ephy-dashboard-extension.c:
+	(ephy_dashboard_extension_init),
+	(ephy_dashboard_extension_class_init):
+
+	Comment out private-data stuff since it's empty.
+	Noticed by Crispin.
+
+2004-09-12  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/page-info/ephy-page-info-extension.c:
 	(ephy_page_info_extension_init):
 
