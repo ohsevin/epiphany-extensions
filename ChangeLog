@@ -1,5 +1,17 @@
 2004-02-01  Christian Persch  <chpe@cvs.gnome.org>
 
+	* configure.ac:
+
+	Bump epiphany dependency to 1.1.6, and increase version to 0.7.
+
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	(impl_attach_window):
+
+	Since the freeing of the callback data depends on an unreleased
+	gtk+ bug fix, revert the fix for this release.
+
+2004-02-01  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/tabsmenu/ephy-tab-move-menu.c:
 	(update_tab_move_menu_cb):
 
