@@ -36,6 +36,11 @@
 #include <gtk/gtkaction.h>
 #include <gtk/gtkactiongroup.h>
 #include <gtk/gtkuimanager.h>
+#include <gtk/gtkwidget.h>
+#include <gtk/gtkbutton.h>
+#include <gtk/gtkframe.h>
+#include <gtk/gtkrc.h>
+#include <gtk/gtkeventbox.h>
 #include <gmodule.h>
 #include <glib/gi18n-lib.h>
 
@@ -185,6 +190,23 @@ switch_page_cb (GtkNotebook *notebook,
 	sync_security_status (tab, NULL, window);
 }
 
+
+static void
+padlock_button_press_cb (GtkWidget *ebox,
+			 GdkEventButton *event,
+			 EphyWindow *window)
+{
+	EphyEmbed *embed;
+
+	if (event->type == GDK_BUTTON_PRESS && event->button == 1 /* left */)
+	{
+		embed = ephy_window_get_active_embed (window);
+		g_return_if_fail (EPHY_IS_EMBED (embed));
+	
+		mozilla_embed_view_certificate (embed);
+	}
+}
+
 static GtkActionEntry action_entries [] =
 {
 	{ "ViewServerCertificate",
@@ -205,9 +227,12 @@ impl_attach_window (EphyExtension *ext,
 	GtkActionGroup *action_group;
 	guint ui_id;
 	GtkWidget *notebook;
+	GtkWidget *statusbar, *frame, *ebox;
+	GList *children, *l;
 
 	LOG ("EphyCertificatesExtension attach_window")
 
+	/* catch tab added/removed/switched */
 	notebook = ephy_window_get_notebook (window);
 	g_signal_connect_after (notebook, "tab_added",
 				G_CALLBACK (tab_added_cb), window);
@@ -216,6 +241,28 @@ impl_attach_window (EphyExtension *ext,
 	g_signal_connect_after (notebook, "switch_page",
 				G_CALLBACK (switch_page_cb), window);
 
+	/* make padlock icon clickable */
+	statusbar = ephy_window_get_statusbar (window);
+
+	/* FIXME: find a better method to get the security icon frame :) */
+	children = gtk_container_get_children (GTK_CONTAINER (statusbar));
+	for (l = children; l != NULL; l = l->next)
+	{
+		g_print ("type name %s\n", g_type_name (((GTypeInstance *) l->data)->g_class->g_type));
+		if (GTK_IS_FRAME (l->data) && GTK_IS_EVENT_BOX (GTK_BIN (l->data)->child)) break;
+	}
+	g_return_if_fail (l != NULL);
+
+	ebox = GTK_BIN (l->data)->child;
+	g_list_free (children);
+
+	ebox = GTK_WIDGET (l->data);
+
+	gtk_widget_add_events (ebox, GDK_BUTTON_PRESS_MASK);
+	g_signal_connect (ebox, "button-press-event",
+			  G_CALLBACK (padlock_button_press_cb), window);
+
+	/* add UI */
 	manager = GTK_UI_MANAGER (window->ui_merge);
 
 	action_group = gtk_action_group_new ("CertificatesExtensionActions");
