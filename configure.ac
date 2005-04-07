@@ -394,6 +394,11 @@ dnl restore flags
 CXXFLAGS=$_SAVE_CXXFLAGS
 AC_LANG_POP([C++])
 
+dnl Needed since 1.8b2
+dnl Define this down here so it doesn't affect the API checks above
+
+AC_DEFINE([MOZILLA_INTERNAL_API],[1],[Define for access to internal mozilla API])
+
 dnl *****************
 dnl Add warning flags
 dnl *****************
