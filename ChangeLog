@@ -1,3 +1,12 @@
+2005-04-08  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/actions/ephy-actions-extension.c:
+	(ephy_actions_extension_save_actions):
+	* extensions/sidebar/ephy-sidebar-extension.c:
+	(ephy_sidebar_extension_finalize):
+
+	Fix for changed EphyNodeDb save API.
+
 2005-04-06  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:

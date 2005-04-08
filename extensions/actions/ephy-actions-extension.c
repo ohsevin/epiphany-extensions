@@ -231,7 +231,8 @@ ephy_actions_extension_save_actions (EphyActionsExtension *extension)
 	if (ephy_node_db_write_to_xml_safe (extension->priv->db,
 					    extension->priv->xml_file,
 					    ACTIONS_XML_ROOT, ACTIONS_XML_VERSION,
-					    NULL, extension->priv->actions, 0,
+					    NULL,
+					    extension->priv->actions, NULL, NULL,
 					    NULL) == 0)
 	{
 		extension->priv->dirty = FALSE;

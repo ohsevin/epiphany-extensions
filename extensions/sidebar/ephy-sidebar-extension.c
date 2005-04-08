@@ -685,8 +685,8 @@ ephy_sidebar_extension_finalize (GObject *object)
 		 (const xmlChar*) EPHY_SIDEBARS_XML_ROOT,
 		 (const xmlChar*) EPHY_SIDEBARS_XML_VERSION,
 		 NULL,
-		 extension->priv->sidebars, 0, 
-		 extension->priv->state_parent, 0, 
+		 extension->priv->sidebars, NULL, NULL, 
+		 extension->priv->state_parent, NULL, NULL, 
 		 NULL);
 
 	g_free (extension->priv->xml_file);
