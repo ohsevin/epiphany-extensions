@@ -218,6 +218,77 @@ PageInfoHelper::Init (EphyEmbed *aEmbed)
   return NS_OK;
 }
 
+/* A fairly good case insensitive comparison */
+static gint 
+utf8_strcasecmp (const gchar *a, const gchar *b)
+{
+	gint retval;
+	char *str_a, *str_b;
+
+	str_a = g_utf8_casefold (a, -1);
+	str_b = g_utf8_casefold (b, -1);
+	retval = g_utf8_collate (str_a, str_b);
+	g_free (str_a);
+	g_free (str_b);
+
+	return retval;
+}
+
+/* Compares two links */
+static gint 
+link_compare (gconstpointer a, 
+	      gconstpointer b)
+{
+	EmbedPageLink *link_a = (EmbedPageLink *)a;
+	EmbedPageLink *link_b = (EmbedPageLink *)b;
+
+	return utf8_strcasecmp (link_a->url, link_b->url);
+}
+
+/* Compares two media, first by type then by url */
+static gint 
+media_compare (gconstpointer a, 
+	       gconstpointer b)
+{
+	gint res;
+
+	EmbedPageMedium *media_a = (EmbedPageMedium *)a;
+	EmbedPageMedium *media_b = (EmbedPageMedium *)b;
+
+	// Same type then compare urls.
+	if (media_a->type == media_b->type)
+	{
+		res = utf8_strcasecmp (media_a->url, media_b->url);
+	}
+	else
+	{
+		// Enum comparison ...
+		res = media_a->type > media_b->type ? 1 : -1;
+   	}
+
+	return res;
+}
+
+/* Compares two forms */
+static gint 
+form_compare (gconstpointer a, 
+	      gconstpointer b)
+{
+	EmbedPageForm *form_a = (EmbedPageForm *)a;
+	EmbedPageForm *form_b = (EmbedPageForm *)b;
+
+	// be careful, form's name may be NULL	
+	if (form_a->name == NULL)
+	{
+		return form_b->name == NULL ? 0 : -1; 
+	}
+	else if (form_b->name == NULL)
+	{
+		return form_a->name == NULL ? 0 : 1; 
+	}
+	return utf8_strcasecmp (form_a->name, form_b->name);
+}
+
 static void
 make_list (gpointer key,
            gpointer value,
@@ -236,9 +307,16 @@ PageInfoHelper::GetInfo ()
   EmbedPageInfo *info = g_new0 (EmbedPageInfo, 1);
 
   info->props = GetProperties ();
+
   g_hash_table_foreach (mMediaHash, (GHFunc) make_list, &info->media);
+  info->media = g_list_sort (info->media, media_compare);
+
   g_hash_table_foreach (mLinkHash, (GHFunc) make_list, &info->links);
+  info->links = g_list_sort (info->links, link_compare);
+
   g_hash_table_foreach (mFormHash, (GHFunc) make_list, &info->forms);
+  info->forms = g_list_sort (info->forms, form_compare);
+
   info->metatags = mMetaTagsList;
 
   return info;

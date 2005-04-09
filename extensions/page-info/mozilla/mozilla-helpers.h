@@ -72,13 +72,15 @@ typedef struct
 	*/
 } EmbedPageProperties;
 
+/* take care to sort enum by name */
+/* so we can sort media as well */
 typedef enum 
 {
-  MEDIUM_IMAGE,
-  MEDIUM_EMBED,
-  MEDIUM_OBJECT,
   MEDIUM_APPLET,
+  MEDIUM_EMBED,
   MEDIUM_ICON,
+  MEDIUM_IMAGE,
+  MEDIUM_OBJECT,
   LAST_MEDIUM
 } EmbedPageMediumType;
 
