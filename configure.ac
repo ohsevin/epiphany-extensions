@@ -132,7 +132,7 @@ dnl *******************************
 
 AC_MSG_CHECKING([which extensions to build])
 
-ALL_EXTENSIONS="actions adblock bookmarks-tray certificates dashboard error-viewer extensions-manager-ui find gestures net-monitor page-info sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu"
+ALL_EXTENSIONS="actions adblock bookmarks-tray certificates dashboard error-viewer extensions-manager-ui find gestures net-monitor page-info rss sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu"
 USEFUL_EXTENSIONS="actions bookmarks-tray certificates dashboard error-viewer extensions-manager-ui gestures page-info select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu"
 DEFAULT_EXTENSIONS="actions bookmarks-tray certificates error-viewer extensions-manager-ui gestures page-info select-stylesheet sidebar smart-bookmarks tabsmenu tab-groups tab-states"
 
@@ -181,7 +181,7 @@ dnl ****
 dnl DBUS
 dnl ****
 
-if echo "$EXTENSIONS" | egrep '(^| )net-monitor($| )' > /dev/null; then
+if echo "$EXTENSIONS" | egrep '(^| )(net-monitor)|(rss)($| )' > /dev/null; then
 
 	DBUS_REQUIRED=0.22
 	DBUS_GLIB_REQUIRED=0.22
@@ -449,6 +449,7 @@ extensions/extensions-manager-ui/Makefile
 extensions/net-monitor/Makefile
 extensions/page-info/Makefile
 extensions/page-info/mozilla/Makefile
+extensions/rss/Makefile
 extensions/sample/Makefile
 extensions/sample-mozilla/Makefile
 extensions/sample-mozilla/mozilla/Makefile

@@ -371,40 +371,36 @@ ephy_sidebar_size_allocate (GtkWidget *widget,
 static void
 ephy_sidebar_init (EphySidebar *sidebar)
 {
-	GtkWidget *frame;
-	GtkWidget *frame_hbox;
-	GtkWidget *button_hbox;
-	GtkWidget *close_button;
-	GtkWidget *close_image;
-	GtkWidget *remove_image;
-	GtkWidget *remove_button;
-	GtkWidget *arrow;
+	EphySidebarPrivate *priv;
+	GtkWidget *frame, *frame_hbox, *button_hbox, *close_button, *close_image;
+	GtkWidget *remove_image, *remove_button, *arrow;
 	
-	sidebar->priv = EPHY_SIDEBAR_GET_PRIVATE (sidebar);
+	priv = sidebar->priv = EPHY_SIDEBAR_GET_PRIVATE (sidebar);
 
-	sidebar->priv->content = NULL;
-	sidebar->priv->pages = NULL;
-	sidebar->priv->current = NULL;
+	priv->content = NULL;
+	priv->pages = NULL;
+	priv->current = NULL;
 		
 	frame_hbox = gtk_hbox_new (FALSE, 0);
 	
-	sidebar->priv->title_button = gtk_button_new ();
-	gtk_button_set_relief (GTK_BUTTON (sidebar->priv->title_button),
+	priv->title_button = gtk_button_new ();
+	gtk_button_set_relief (GTK_BUTTON (priv->title_button),
 			       GTK_RELIEF_NONE);
+	gtk_button_set_focus_on_click (GTK_BUTTON (priv->title_button), FALSE);
 
-	g_signal_connect (sidebar->priv->title_button, "button_press_event",
+	g_signal_connect (priv->title_button, "button_press_event",
 			  G_CALLBACK (title_button_press_cb),
 			  sidebar);
        
 	button_hbox = gtk_hbox_new (FALSE, 0);
 	gtk_container_set_border_width (GTK_CONTAINER (button_hbox), 0);
        
-	sidebar->priv->title_label = gtk_label_new ("");
+	priv->title_label = gtk_label_new ("");
        
-	gtk_widget_show (sidebar->priv->title_label);
+	gtk_widget_show (priv->title_label);
 
 	gtk_box_pack_start (GTK_BOX (button_hbox), 
-			    sidebar->priv->title_label,
+			    priv->title_label,
 			    FALSE, FALSE, 0);
        
 	arrow = gtk_arrow_new (GTK_ARROW_DOWN, GTK_SHADOW_ETCHED_IN);
@@ -413,18 +409,18 @@ ephy_sidebar_init (EphySidebar *sidebar)
        
 	gtk_widget_show (button_hbox);
        
-	gtk_container_add (GTK_CONTAINER (sidebar->priv->title_button),
+	gtk_container_add (GTK_CONTAINER (priv->title_button),
 			   button_hbox);
 
-	sidebar->priv->title_menu = gtk_menu_new ();
-	g_object_ref (sidebar->priv->title_menu);
-	gtk_object_sink (GTK_OBJECT (sidebar->priv->title_menu));
+	priv->title_menu = gtk_menu_new ();
+	g_object_ref (priv->title_menu);
+	gtk_object_sink (GTK_OBJECT (priv->title_menu));
 
-	gtk_widget_show (sidebar->priv->title_button);
-	gtk_widget_show (sidebar->priv->title_menu);
+	gtk_widget_show (priv->title_button);
+	gtk_widget_show (priv->title_menu);
 
 	gtk_box_pack_start (GTK_BOX (frame_hbox), 
-			    sidebar->priv->title_button,
+			    priv->title_button,
 			    FALSE, FALSE, 0);
 
 	/* Remove sidebar button */
@@ -443,7 +439,7 @@ ephy_sidebar_init (EphySidebar *sidebar)
 
 	gtk_widget_show (remove_button);
 
-	sidebar->priv->remove_button = remove_button;
+	priv->remove_button = remove_button;
 	
 	/* Close button */
 	close_image = gtk_image_new_from_stock (GTK_STOCK_CLOSE, 
@@ -464,13 +460,13 @@ ephy_sidebar_init (EphySidebar *sidebar)
 	gtk_box_pack_end (GTK_BOX (frame_hbox), close_button, FALSE, FALSE, 0);
 	gtk_box_pack_end (GTK_BOX (frame_hbox), remove_button, FALSE, FALSE, 0);
 
-	sidebar->priv->title_hbox = frame_hbox;
+	priv->title_hbox = frame_hbox;
 
 	frame = gtk_frame_new (NULL);
 	gtk_frame_set_shadow_type (GTK_FRAME (frame), 
 				   GTK_SHADOW_ETCHED_IN);
 	gtk_widget_show (frame);
-	sidebar->priv->title_frame = frame;
+	priv->title_frame = frame;
  
 	gtk_container_add (GTK_CONTAINER (frame), 
 			   frame_hbox);
@@ -480,20 +476,35 @@ ephy_sidebar_init (EphySidebar *sidebar)
 	gtk_box_pack_start (GTK_BOX (sidebar), frame,
 			    FALSE, FALSE, 2);
 
-	sidebar->priv->content_frame = gtk_vbox_new (FALSE, 0);
-	gtk_widget_show (sidebar->priv->content_frame);
+	priv->content_frame = gtk_vbox_new (FALSE, 0);
+	gtk_widget_show (priv->content_frame);
 		
-	gtk_box_pack_start (GTK_BOX (sidebar), sidebar->priv->content_frame,
+	gtk_box_pack_start (GTK_BOX (sidebar), priv->content_frame,
 			    TRUE, TRUE, 0);
+}
+
+static void
+ephy_sidebar_dispose (GObject *object)
+{
+	EphySidebar *sidebar = EPHY_SIDEBAR (object);
+	EphySidebarPrivate *priv = sidebar->priv;
+
+	if (priv->title_menu != NULL)
+	{
+		gtk_menu_shell_deactivate (GTK_MENU_SHELL (priv->title_menu));
+		g_object_unref (priv->title_menu);
+		priv->title_menu = NULL;
+	}
+
+	G_OBJECT_CLASS (parent_class)->dispose (object);
 }
 
 static void
 ephy_sidebar_finalize (GObject *object)
 {
-	EphySidebar *sidebar = EPHY_SIDEBAR (object);
-
-	g_object_unref (sidebar->priv->title_menu);
-
+/*	EphySidebar *sidebar = EPHY_SIDEBAR (object);
+	EphySidebarPrivate *priv = sidebar->priv;
+*/
 	/* FIXME free pages list */
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
@@ -507,6 +518,7 @@ ephy_sidebar_class_init (EphySidebarClass *klass)
 	
 	parent_class = (GObjectClass *) g_type_class_peek_parent (klass);
 
+	object_class->dispose = ephy_sidebar_dispose;
 	object_class->finalize = ephy_sidebar_finalize;
 	
 	widget_class->size_allocate = ephy_sidebar_size_allocate;

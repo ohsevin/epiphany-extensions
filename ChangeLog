@@ -1,3 +1,23 @@
+2005-04-10  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+	A extensions/rss/.cvsignore:
+	A extensions/rss/Makefile.am:
+	A extensions/rss/ephy-rss-extension.c: 
+	A extensions/rss/ephy-rss-extension.h:
+	A extensions/rss/extension.c: 
+	A extensions/rss/rss-feedlist.c: 
+	A extensions/rss/rss-feedlist.h:
+	A extensions/rss/rss-ui.c:
+	A extensions/rss/rss-ui.glade:
+	A extensions/rss/rss-ui.h:
+	A extensions/rss/rss.xml.in.in:
+	A extensions/sidebar/ephy-sidebar.c:
+	* po/POTFILES.in:
+
+	Newsfeed extractor extension, written by Raphaël Slinckx.
+	Bug #171908.
+
 2005-04-09  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/page-info/mozilla/mozilla-helpers.cpp:

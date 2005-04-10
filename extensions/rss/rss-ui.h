@@ -1,0 +1,76 @@
+/*
+ *  Copyright (C) 2005 Raphaël Slinckx <raphael@slinckx.net>
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2, or (at your option)
+ *  any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ *
+ *  $Id$
+ */
+
+#ifndef RSS_UI_H
+#define RSS_UI_H
+
+#include "ephy-rss-extension.h"
+#include "rss-feedlist.h"
+
+#include <epiphany/ephy-dialog.h>
+#include <epiphany/ephy-dbus.h>
+#include <epiphany/ephy-shell.h>
+#include <epiphany/ephy-embed.h>
+
+#include <glib.h>
+#include <glib-object.h>
+
+G_BEGIN_DECLS
+
+#define TYPE_RSS_UI		(rss_ui_get_type ())
+#define RSS_UI(o)		(G_TYPE_CHECK_INSTANCE_CAST((o), TYPE_RSS_UI, RssUI))
+#define RSS_UI_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), TYPE_RSS_UI, RssUIClass))
+#define IS_RSS_UI(o)		(G_TYPE_CHECK_INSTANCE_TYPE((o), TYPE_RSS_UI))
+#define IS_RSS_UI_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE((k), TYPE_RSS_UI))
+#define RSS_UI_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS((o),	TYPE_RSS_UI, RssUIClass))
+
+/* How to contact feed readers via dbus */
+#define RSS_DBUS_SERVICE	"org.gnome.rss.FeedReader"
+#define	RSS_DBUS_OBJECT_PATH	"/org/gnome/rss/FeedReader"
+#define	RSS_DBUS_INTERFACE	"org.gnome.rss.FeedReader"
+#define	RSS_DBUS_SUBSCRIBE	"Subscribe"
+
+typedef struct _RssUI		RssUI;
+typedef struct _RssUIClass	RssUIClass;
+typedef struct _RssUIPrivate	RssUIPrivate;
+
+struct _RssUI
+{
+	EphyDialog parent;
+
+	/*< private >*/
+	RssUIPrivate *priv;
+};
+
+struct _RssUIClass
+{
+	EphyDialogClass parent_class;
+};
+
+GType	 rss_ui_get_type	(void);
+
+GType	 rss_ui_register_type	(GTypeModule *module);
+
+RssUI   *rss_ui_new		(FeedList *list,
+				 EphyEmbed *embed);
+
+G_END_DECLS
+
+#endif
