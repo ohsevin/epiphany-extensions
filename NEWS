@@ -1,4 +1,18 @@
 =========================
+Epiphany Extensions 1.6.2
+=========================
+
+Changes
+
+	* Adapt to mozilla API change on trunk
+	* Sort by type first in the page info dialogue [#172390]
+
+Contributors to this release:
+Christian Persch and Jean-François Rameau, and the translators
+Takeshi AIHANA (ja) and Reinout van Schouwen (nl).
+
+
+=========================
 Epiphany Extensions 1.6.1
 =========================
 
