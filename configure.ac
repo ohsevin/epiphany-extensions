@@ -64,7 +64,7 @@ AC_PATH_PROG([GLIB_GENMARSHAL], [glib-genmarshal])
 AC_SUBST([AM_CXXFLAGS])
 
 GNOME_DEBUG_CHECK
-GNOME_COMPILE_WARNINGS([error])
+GNOME_COMPILE_WARNINGS([maximum])
 GNOME_CXX_WARNINGS
 
 dnl ********************************
