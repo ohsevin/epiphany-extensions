@@ -1,5 +1,17 @@
 2005-04-14  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/actions/ephy-actions-extension.c:
+	(ephy_actions_extension_init),
+	(ephy_actions_extension_save_actions):
+	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:
+	* extensions/page-info/page-info-dialog.c:
+	(media_drag_data_get_cb), (links_drag_data_get_cb):
+
+	 Fix compilation with gcc4. Patch by Sebastien Bacher,
+         fixes bug #300637.
+	 
+2005-04-14  Christian Persch  <chpe@cvs.gnome.org>
+
 	* configure.ac:
 
 	Don't default to -Werror.

@@ -197,9 +197,9 @@ ephy_actions_extension_init (EphyActionsExtension *extension)
 							  ACTIONS_NODE_ID);
 
 	ephy_node_db_load_from_file (extension->priv->db,
-				     extension->priv->xml_file,
-				     ACTIONS_XML_ROOT,
-				     ACTIONS_XML_VERSION);
+				     (const char*) extension->priv->xml_file,
+				     (const xmlChar*) ACTIONS_XML_ROOT,
+				     (const xmlChar*) ACTIONS_XML_VERSION);
 
 	ephy_node_signal_connect_object
 		(extension->priv->actions, EPHY_NODE_CHILD_ADDED,
@@ -229,8 +229,9 @@ ephy_actions_extension_save_actions (EphyActionsExtension *extension)
 	g_return_if_fail (extension->priv->dirty == TRUE);
 
 	if (ephy_node_db_write_to_xml_safe (extension->priv->db,
-					    extension->priv->xml_file,
-					    ACTIONS_XML_ROOT, ACTIONS_XML_VERSION,
+					    (const xmlChar*) extension->priv->xml_file,
+					    (const xmlChar*) ACTIONS_XML_ROOT, 
+					    (const xmlChar*) ACTIONS_XML_VERSION,
 					    NULL,
 					    extension->priv->actions, NULL, NULL,
 					    NULL) == 0)

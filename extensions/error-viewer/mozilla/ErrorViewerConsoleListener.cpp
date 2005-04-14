@@ -96,6 +96,7 @@ ErrorViewerConsoleListener::GetMessageFromError (nsIScriptError *aError,
 	 * "XUL Document" (nsXULDocument.cpp)
 	 * "ImageMap" (nsImageMap.cpp: has source line info)
 	 * "CSS Loader" (nsCSSLoader.cpp)
+	 * "XForms" (nsXFormsUtils.cpp)
 	 */
 	/* FIXME FIXME FIXME */
 	if (strstr (category, "javascript") == NULL &&
