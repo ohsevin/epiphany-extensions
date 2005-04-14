@@ -1190,7 +1190,7 @@ media_drag_data_get_cb (GtkWidget *widget,
 	gtk_selection_data_set (selection_data,
 			selection_data->target,
 			8,
-			address,
+			(const guchar *) address,
 			strlen(address));
 }
 
@@ -1433,7 +1433,7 @@ links_drag_data_get_cb (GtkWidget *widget,
 	gtk_selection_data_set (selection_data,
 			        selection_data->target,
 			        8,
-			        address,
+			        (const guchar *)address,
 			        strlen(address));
 
 	g_free (address);
