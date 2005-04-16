@@ -536,8 +536,8 @@ rss_ui_fill_list_store (RssUI *dialog,
 		decision->rss_present |= (type == FEED_TYPE_RSS);
 		decision->atom_present |= (type == FEED_TYPE_ATOM);
 
-		display = g_strdup_printf ("<b>%s</b>\n%s",
-					   feed->title, feed->address);
+		display = g_markup_printf_escaped ("<b>%s</b>\n%s",
+						   feed->title, feed->address);
 
 		gtk_list_store_append (priv->store, &iter);
 		gtk_list_store_set (priv->store, &iter,

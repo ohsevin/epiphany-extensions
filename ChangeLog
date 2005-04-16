@@ -1,5 +1,11 @@
 2005-04-16  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/rss/rss-ui.c: (rss_ui_fill_list_store):
+
+	Use g_markup_printf_escaped when printing pango markup.
+
+2005-04-16  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/rss/ephy-rss-extension.c: (ephy_rss_ge_feed_cb),
 	(ephy_rss_ge_content_cb), (ephy_rss_update_action),
 	(ephy_rss_sync_active_tab), (ephy_rss_load_status_cb),
