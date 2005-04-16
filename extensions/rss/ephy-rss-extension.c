@@ -71,8 +71,7 @@ static void ephy_rss_display_cb 	(GtkAction *action,
 					 EphyWindow *window);
 static void ephy_rss_update_statusbar 	(EphyWindow *window,
 					 gboolean show);
-static void ephy_rss_update_action 	(EphyWindow *window,
-					 EphyEmbed *embed);
+static void ephy_rss_update_action 	(EphyWindow *window);
 	      	   
 typedef struct
 {
@@ -112,7 +111,7 @@ ephy_rss_ge_feed_cb (EphyEmbed *embed,
 
 	LOG ("Got a new feed for the site: type=%s, title=%s, address=%s\nWe now have %d feeds", type, title, address, rss_feedlist_length (list));
 
-	ephy_rss_update_action (window, embed);
+	ephy_rss_update_action (window);
 }
 
 static void
@@ -168,7 +167,7 @@ ephy_rss_ge_content_cb (EphyEmbed *embed,
 
 	g_object_set_data (G_OBJECT (embed), FEEDLIST_DATA_KEY, NULL);
 
-	ephy_rss_update_action (window, embed);
+	ephy_rss_update_action (window);
 }
 
 static void
@@ -187,12 +186,14 @@ ephy_rss_update_statusbar (EphyWindow *window,
 
 /* Update the menu item availability */
 static void
-ephy_rss_update_action (EphyWindow *window,
-			EphyEmbed *embed)
+ephy_rss_update_action (EphyWindow *window)
 {
 	WindowData *data;
 	FeedList *list;
 	gboolean show = TRUE;
+	EphyEmbed *embed;
+
+	embed = ephy_window_get_active_embed (window);
 
 	/* The page is loaded, do we have a feed ? */
 	list = (FeedList *) g_object_get_data (G_OBJECT (embed), FEEDLIST_DATA_KEY);
@@ -201,6 +202,7 @@ ephy_rss_update_action (EphyWindow *window,
 
 	/* Disable the menu item when loading the page */
 	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
+	g_return_if_fail (data != NULL);
 
 	g_object_set (data->action, "sensitive", show, NULL);
 
@@ -209,14 +211,13 @@ ephy_rss_update_action (EphyWindow *window,
 	
 /* Called when the user changes tab */
 static void
-ephy_rss_switch_page_cb (GtkNotebook *notebook,
-			 GtkNotebookPage *page,
-			 guint page_num,
-			 EphyWindow *window)
+ephy_rss_sync_active_tab (EphyWindow *window,
+			  GParamSpec *pspec,
+			  gpointer data)
 {
 	if (GTK_WIDGET_REALIZED (window) == FALSE) return; /* on startup */
 
-	ephy_rss_update_action (window, ephy_tab_get_embed (ephy_window_get_active_tab (window)));
+	ephy_rss_update_action (window);
 }
 
 /* When the load status changes update menu item */
@@ -227,7 +228,7 @@ ephy_rss_load_status_cb (EphyTab *tab,
 {
 	if (tab == ephy_window_get_active_tab (window))
 	{
-		ephy_rss_update_action (window, ephy_tab_get_embed (tab));
+		ephy_rss_update_action (window);
 	}
 }
 
@@ -357,7 +358,6 @@ impl_attach_window (EphyExtension *ext,
 	GtkUIManager *manager;
 	guint ui_id;
 	WindowData *data;
-	GtkWidget *notebook;
 
 	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
 
@@ -382,10 +382,9 @@ impl_attach_window (EphyExtension *ext,
 			       GTK_UI_MANAGER_SEPARATOR, FALSE);
 
 	/* Register for tab switch events */
-	notebook = ephy_window_get_notebook (window);
-
-	g_signal_connect_after (notebook, "switch_page",
-				G_CALLBACK (ephy_rss_switch_page_cb), window);
+	ephy_rss_sync_active_tab (window, NULL, NULL);
+	g_signal_connect_after (window, "notify::active-tab",
+				G_CALLBACK (ephy_rss_sync_active_tab), NULL);
 				
 	/* store data */
 	data = g_new (WindowData, 1);
@@ -396,7 +395,7 @@ impl_attach_window (EphyExtension *ext,
 	data->ui_id = ui_id;
 	
 	g_object_set_data_full (G_OBJECT (window), WINDOW_DATA_KEY, data,
-						   (GDestroyNotify) g_free);
+				(GDestroyNotify) g_free);
 
 	/* Create the status bar icon */
 	ephy_rss_create_statusbar_icon (window, data);
@@ -409,7 +408,6 @@ impl_detach_window (EphyExtension *ext,
 {
 	GtkUIManager *manager;
 	WindowData *data;
-	GtkWidget *notebook;
 
 	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
 
@@ -421,10 +419,8 @@ impl_detach_window (EphyExtension *ext,
 	gtk_ui_manager_remove_action_group (manager, data->action_group);
 
 	/* Remove the tab switch notification */
-	notebook = ephy_window_get_notebook (window);
-
 	g_signal_handlers_disconnect_by_func
-		(notebook, G_CALLBACK (ephy_rss_switch_page_cb), window);
+		(window, G_CALLBACK (ephy_rss_sync_active_tab), NULL);
 
 	/* Remove the status bar icon */
 	ephy_rss_destroy_statusbar_icon (window, data);

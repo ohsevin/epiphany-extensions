@@ -1,3 +1,18 @@
+2005-04-16  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/rss/ephy-rss-extension.c: (ephy_rss_ge_feed_cb),
+	(ephy_rss_ge_content_cb), (ephy_rss_update_action),
+	(ephy_rss_sync_active_tab), (ephy_rss_load_status_cb),
+	(impl_attach_window), (impl_detach_window):
+	* extensions/rss/rss-ui.c: (rss_ui_get_selected_feed),
+	(rss_ui_treeview_page_copy_selected), (rss_ui_build_context_menu),
+	(rss_ui_treeview_show_popup), (rss_ui_treeview_button_pressed_cb),
+	(rss_ui_drag_begin_cb), (rss_ui_drag_data_get_cb),
+	(rss_ui_constructor):
+
+	Implement drag-and-drop and context menu in the subscribe dialogue.
+	Patch by Raphaël Slinckx.
+
 2005-04-14  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/actions/ephy-actions-extension.c:

@@ -22,6 +22,8 @@
 
 #include "rss-ui.h"
 
+#include "ephy-gui.h"
+#include "ephy-dnd.h"
 #include "ephy-debug.h"
 
 #include <glib/gi18n-lib.h>
@@ -34,10 +36,15 @@
 #include <gtk/gtktreeselection.h>
 #include <gtk/gtktreemodel.h>
 #include <gtk/gtkliststore.h>
+#include <gtk/gtkimage.h>
+#include <gtk/gtkimagemenuitem.h>
+#include <gtk/gtkmenu.h>
+#include <gtk/gtkclipboard.h>
+#include <gtk/gtkmain.h>
 
 #include <libgnomevfs/gnome-vfs-uri.h>
 
-#include <strings.h>
+#include <string.h>
 
 #define RSS_UI_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE((object), TYPE_RSS_UI, RssUIPrivate))
 
@@ -109,8 +116,15 @@ typedef struct
 	char 	*hostname;
 } FeedSelectionDecision;
 
+/* Drag and drop stuff */
+static GtkTargetEntry drag_targets[] =
+{
+	{ EPHY_DND_URL_TYPE,	  0, 0 },
+	{ EPHY_DND_TEXT_TYPE,	  0, 1 }
+};
+
 /* glade callbacks */
-void	rss_ui_response_cb	(GtkWidget *button,
+void rss_ui_response_cb	(GtkWidget *button,
 				 int response,
 				 RssUI *dialog);
 
@@ -296,6 +310,169 @@ rss_feed_toggle_cb (GtkCellRendererToggle *celltoggle,
 	gtk_list_store_set (store, &iter, COL_TOGGLE, !active, -1);
 }
 
+static NewsFeed *
+rss_ui_get_selected_feed (RssUI *dialog)
+{
+	RssUIPrivate *priv = dialog->priv;
+	GtkTreeSelection *selection;
+	GtkTreeModel *model;
+	GtkTreeIter iter;
+	NewsFeed *feed = NULL;
+	
+	selection = gtk_tree_view_get_selection (priv->treeview);
+	if (gtk_tree_selection_get_selected (selection, &model, &iter))
+	{
+		gtk_tree_model_get (model, &iter, COL_FEED, &feed, -1);
+	}
+
+	return feed;
+}
+
+static void
+rss_ui_treeview_page_copy_selected (GtkWidget *widget,
+				    RssUI *dialog)
+{
+	NewsFeed *feed;
+
+	LOG ("Copying selected feed");
+	
+	feed = rss_ui_get_selected_feed (dialog);
+	if (feed != NULL)
+	{
+		gtk_clipboard_set_text (gtk_clipboard_get (GDK_NONE),
+					feed->address, -1);
+		gtk_clipboard_set_text (gtk_clipboard_get (GDK_SELECTION_PRIMARY),
+					feed->address, -1);
+
+		rss_newsfeed_free (feed);
+	}
+}	
+
+static GtkMenu *
+rss_ui_build_context_menu (RssUI *dialog)
+{
+	GtkWidget *menu;
+	GtkWidget *item, *image;
+
+	LOG ("Building context menu");
+
+	menu = gtk_menu_new ();
+
+	image = gtk_image_new_from_stock (GTK_STOCK_COPY, GTK_ICON_SIZE_BUTTON);
+	gtk_widget_show (image);
+
+	item = gtk_image_menu_item_new_with_mnemonic (_("_Copy Feed Address"));
+	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item), image);
+	g_signal_connect (item, "activate", 
+			  G_CALLBACK (rss_ui_treeview_page_copy_selected),
+			  dialog);
+	gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+	gtk_widget_show (item);
+
+	return GTK_MENU (menu);
+}
+
+static gboolean
+rss_ui_treeview_show_popup (GtkTreeView *treeview,
+			    RssUI *dialog)
+{
+	GtkMenu *menu;
+
+	LOG ("Got a keyboard popup");
+
+	menu = rss_ui_build_context_menu (dialog);
+	gtk_menu_popup (menu, NULL, NULL,
+			ephy_gui_menu_position_tree_selection, treeview, 0,
+			gtk_get_current_event_time ());	
+	gtk_menu_shell_select_first (GTK_MENU_SHELL (menu), FALSE);
+
+	return TRUE;
+}
+
+static gboolean
+rss_ui_treeview_button_pressed_cb (GtkTreeView *treeview,
+				   GdkEventButton *event,
+				   RssUI *dialog)
+{
+	RssUIPrivate *priv = dialog->priv;
+	GtkTreeModel *model = GTK_TREE_MODEL (priv->store);
+	GtkTreeSelection *selection;
+	GtkTreeIter iter;
+	GtkTreePath *path = NULL;
+	GtkMenu *menu;
+
+	LOG ("Got a button press");
+
+	/* right-click? */
+	if (event->button != 3)
+	{
+	       return FALSE;
+	}
+
+	/* Get tree path for row that was clicked */
+	if (!gtk_tree_view_get_path_at_pos (treeview,
+					    event->x, event->y,
+					    &path, NULL, NULL, NULL))
+	{
+	       return FALSE;
+	}
+
+	if (!gtk_tree_model_get_iter (model, &iter, path))
+	{
+	       gtk_tree_path_free(path);
+	       return FALSE;
+	}
+
+	/* Select the row the user clicked on */
+	selection = gtk_tree_view_get_selection (treeview);
+	if (gtk_tree_selection_count_selected_rows (selection) == 1)
+	{
+		gtk_tree_selection_unselect_all (selection);
+		gtk_tree_selection_select_path (selection, path);
+		gtk_tree_path_free (path);
+	}
+
+	/* now popup the menu */
+	menu = rss_ui_build_context_menu (dialog);
+	gtk_menu_popup (menu, NULL, NULL, NULL, NULL,
+			event->button, event->time);
+
+	return TRUE;
+}
+
+/* Set dnd cursor to the default dnd Gtk one and not the GtktreeView one */
+static void 
+rss_ui_drag_begin_cb (GtkWidget *widget, 
+		      GdkDragContext *dc, 
+		      RssUI *dialog)
+{
+	gtk_drag_set_icon_default (dc);
+}
+
+static void
+rss_ui_drag_data_get_cb (GtkWidget *widget,
+			 GdkDragContext *context,
+			 GtkSelectionData *selection_data,
+			 guint info,
+			 guint32 time,
+			 RssUI *dialog)
+{
+	NewsFeed *feed;
+
+	LOG ("Drag trying to get data");
+
+	feed = rss_ui_get_selected_feed (dialog);
+	if (feed == NULL || feed->address == NULL) return;
+
+	gtk_selection_data_set (selection_data,
+			        selection_data->target,
+			        8,
+			        feed->address,
+			        strlen (feed->address));
+
+	rss_newsfeed_free (feed);
+}
+
 static gboolean
 rss_ui_select_feeds (GtkTreeModel *model,
 		     GtkTreePath *path,
@@ -422,6 +599,7 @@ rss_ui_constructor (GType type,
 	RssUIPrivate *priv;
 	EphyDialog *edialog;
 	GtkCellRenderer *renderer;
+	GtkTreeSelection *selection;
 
 	object = parent_class->constructor (type, n_construct_properties,
 					    construct_params);
@@ -477,6 +655,26 @@ rss_ui_constructor (GType type,
 	gtk_tree_view_set_search_column (priv->treeview, COL_SEARCH);
 
 	g_object_unref (priv->store);
+
+	selection = gtk_tree_view_get_selection (priv->treeview);
+	gtk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
+
+	/* Build the context menu stuff */
+	g_signal_connect (priv->treeview, "popup-menu", 
+			  G_CALLBACK (rss_ui_treeview_show_popup), dialog);
+	g_signal_connect (priv->treeview, "button-press-event", 
+			  G_CALLBACK (rss_ui_treeview_button_pressed_cb), dialog);
+
+	/* Set up drag and drop */		 	  
+	gtk_tree_view_enable_model_drag_source (priv->treeview, GDK_BUTTON1_MASK,
+						drag_targets, G_N_ELEMENTS (drag_targets),
+						GDK_ACTION_COPY);
+	g_signal_connect (priv->treeview, "drag_data_get",
+			  G_CALLBACK(rss_ui_drag_data_get_cb), dialog);
+
+	/* Be careful, default handler forces dnd icon to be an image of the row ! */ 
+	g_signal_connect_after (priv->treeview, "drag_begin",
+				G_CALLBACK (rss_ui_drag_begin_cb), dialog);
 
 	return object;
 }
