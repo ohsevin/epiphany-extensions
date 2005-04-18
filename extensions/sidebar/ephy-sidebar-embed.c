@@ -386,25 +386,6 @@ embed_mouse_click_cb (EphyEmbed *embed,
 	return handled;
 }
 
-static void 
-embed_new_window_cb (EphyEmbed *embed,
-		     EphyEmbed **new_embed,
-		     EphyEmbedChrome chromemask,
-		     gpointer data)
-{
-	EphyWindow *window;
-	EphyTab *new_tab;
-
-	window = ephy_window_new_with_chrome (chromemask);
-
-	new_tab = ephy_tab_new ();
-	gtk_widget_show (GTK_WIDGET (new_tab));
-
-	ephy_window_add_tab (window, new_tab, -1, FALSE);
-
-	*new_embed = ephy_tab_get_embed (new_tab);
-}
-
 static void
 ephy_sidebar_embed_create_embed (EphySidebarEmbed *sbembed)
 {
@@ -423,10 +404,6 @@ ephy_sidebar_embed_create_embed (EphySidebarEmbed *sbembed)
 	{
 		ephy_embed_load_url (embed, sbembed->priv->url);
 
-		g_signal_connect (G_OBJECT (embed),
-				  "ge_new_window",
-				  G_CALLBACK(embed_new_window_cb),
-				  NULL);
 		g_signal_connect (G_OBJECT (embed),
 				  "ge_dom_mouse_click",
 				  G_CALLBACK(embed_mouse_click_cb),

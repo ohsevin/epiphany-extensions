@@ -1,3 +1,10 @@
+2005-04-18  Christian Persch  <chpe@cvs.gnome.org>
+
+        * extensions/sidebar/ephy-sidebar-embed.c:
+        (ephy_sidebar_embed_create_embed):
+		
+	Don't attach to ge_new_window; ephy handles this internally now.
+
 2005-04-14  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/actions/ephy-actions-extension.c:
