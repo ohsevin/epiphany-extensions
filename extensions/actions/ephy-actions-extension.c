@@ -352,7 +352,7 @@ ephy_actions_extension_add_action (EphyWindow *window,
 	}
 	else
 	{
-		g_object_set (ui_action, "sensitive", FALSE, NULL);
+		gtk_action_set_sensitive (ui_action, FALSE);
 	}
 
 	gtk_action_group_add_action (data->user_action_group, ui_action);

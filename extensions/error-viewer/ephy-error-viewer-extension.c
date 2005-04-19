@@ -314,8 +314,8 @@ update_actions (EphyWindow *window)
 
 	g_free (content_type);
 
-	g_object_set_property (G_OBJECT (action1), "sensitive", &sensitive);
-	g_object_set_property (G_OBJECT (action2), "sensitive", &sensitive);
+	g_object_set_property (action1, "sensitive", &sensitive);
+	g_object_set_property (action2, "sensitive", &sensitive);
 
 	g_value_unset (&sensitive);
 }

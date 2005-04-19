@@ -1,3 +1,26 @@
+2005-04-19  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/actions/ephy-actions-extension.c:
+	(ephy_actions_extension_add_action):
+	* extensions/certificates/ephy-certificates-extension.c:
+	(sync_security_status):
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	(update_actions):
+	* extensions/page-info/page-info-dialog.c:
+	(treeview_info_page_filter), (media_info_page_filter),
+	(media_info_page_construct):
+	* extensions/rss/ephy-rss-extension.c: (ephy_rss_update_action):
+	* extensions/select-stylesheet/ephy-css-menu.c:
+	(ephy_css_menu_rebuild):
+	* extensions/sidebar/ephy-sidebar-embed.c: (hide_embed_popup_cb),
+	(show_context_menu):
+	* extensions/smart-bookmarks/smart-bookmarks-extension.c:
+	(context_menu_cb):
+	* extensions/tabsmenu/ephy-tab-move-menu.c:
+	(update_tab_move_menu_cb):
+
+	Use gtk_action_set_[sensitive|visible] instead of g_object_set.
+
 2005-04-18  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/sidebar/ephy-sidebar-embed.c:

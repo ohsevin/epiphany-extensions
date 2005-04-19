@@ -233,7 +233,8 @@ context_menu_cb (EphyEmbed *embed,
 	action = gtk_action_group_get_action (data->action_group, LOOKUP_ACTION);
 	g_return_val_if_fail (action != NULL, FALSE);
 
-	g_object_set(action, "sensitive", can_copy, "visible", can_copy, NULL);
+	gtk_action_set_sensitive (action, can_copy);
+	gtk_action_set_visible (action, can_copy);
 
 	return FALSE;
 }

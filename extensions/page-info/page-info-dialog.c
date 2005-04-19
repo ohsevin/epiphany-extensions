@@ -543,7 +543,7 @@ treeview_info_page_filter (TreeviewInfoPage *page)
 	g_return_if_fail (action != NULL);
 
 	count = gtk_tree_selection_count_selected_rows (selection);
-	g_object_set (G_OBJECT (action), "sensitive", count == 1, NULL);
+	gtk_action_set_sensitive (action, count == 1);
 }
 
 static gboolean
@@ -1167,10 +1167,10 @@ media_info_page_filter (TreeviewInfoPage *page)
 	}
 	action = gtk_action_group_get_action (dialog->priv->action_group,
 					      "CopyMediumAddress");
-	g_object_set (action, "visible", one_col, NULL);
+	gtk_action_set_visible (action, one_col);
 	action = gtk_action_group_get_action (dialog->priv->action_group,
 					      "SetAsBackground");
-	g_object_set (action, "visible", one_col && can_set_as_background, NULL);
+	gtk_action_set_visible (action, one_col && can_set_as_background);
 }
 
 static void
@@ -1338,7 +1338,7 @@ media_info_page_construct (InfoPage *ipage)
 	/* FIXME: implement "Open", then remove this */
 	action = gtk_action_group_get_action (dialog->priv->action_group,
 					      "Open");
-	g_object_set (action, "visible", FALSE, NULL);
+	gtk_action_set_sensitive (action, FALSE);
 }
 
 static void

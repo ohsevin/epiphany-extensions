@@ -154,11 +154,14 @@ hide_embed_popup_cb (GtkMenu *menu,
 	GtkAction *action;
 
 	action = gtk_ui_manager_get_action (manager, "/EphyInputPopup/EditCopyIP");
-	g_object_set (action, "sensitive", TRUE, "visible", TRUE, NULL);
+	gtk_action_set_sensitive (action, TRUE);
+	gtk_action_set_visible (action, TRUE);
 	action = gtk_ui_manager_get_action (manager, "/EphyInputPopup/EditCutIP");
-	g_object_set (action, "sensitive", TRUE, "visible", TRUE, NULL);
+	gtk_action_set_sensitive (action, TRUE);
+	gtk_action_set_visible (action, TRUE);
 	action = gtk_ui_manager_get_action (manager, "/EphyInputPopup/EditPasteIP");
-	g_object_set (action, "sensitive", TRUE, "visible", TRUE, NULL);
+	gtk_action_set_sensitive (action, TRUE);
+	gtk_action_set_visible (action, TRUE);
 }
 
 static void
@@ -223,22 +226,25 @@ show_context_menu (EphySidebarEmbed *sbembed,
 
 	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
 	action = gtk_ui_manager_get_action (manager, "/EphySidebarDocumentPopup/SaveBackgroundAsDP");
-	g_object_set (action, "sensitive", has_background,
-			      "visible", has_background, NULL);
+	gtk_action_set_sensitive (action, has_background);
+	gtk_action_set_visible (action, has_background);
 	action = gtk_ui_manager_get_action (manager, "/EphyLinkPopup/OpenLinkInNewWindowLP");
-	g_object_set (action, "sensitive", can_open_in_new, FALSE);
+	gtk_action_set_sensitive (action, can_open_in_new);
 	action = gtk_ui_manager_get_action (manager, "/EphyLinkPopup/OpenLinkInNewTabLP");
-	g_object_set (action, "sensitive", can_open_in_new, FALSE);
+	gtk_action_set_sensitive (action, can_open_in_new);
 
 	can_copy = ephy_command_manager_can_do_command (EPHY_COMMAND_MANAGER (embed), "cmd_copy");
 	can_cut = ephy_command_manager_can_do_command (EPHY_COMMAND_MANAGER (embed), "cmd_cut");
 	can_paste = ephy_command_manager_can_do_command (EPHY_COMMAND_MANAGER (embed), "cmd_paste");
 	action = gtk_ui_manager_get_action (manager, "/EphyInputPopup/EditCopyIP");
-	g_object_set (action, "sensitive", can_copy, "visible", !hide_edit_actions || can_copy, NULL);
+	gtk_action_set_sensitive (action, can_copy);
+	gtk_action_set_visible (action, !hide_edit_actions || can_copy);
 	action = gtk_ui_manager_get_action (manager, "/EphyInputPopup/EditCutIP");
-	g_object_set (action, "sensitive", can_cut, "visible", !hide_edit_actions || can_cut, NULL);
+	gtk_action_set_sensitive (action, can_cut);
+	gtk_action_set_visible (action, !hide_edit_actions || can_cut);
 	action = gtk_ui_manager_get_action (manager, "/EphyInputPopup/EditPasteIP");
-	g_object_set (action, "sensitive", can_paste, "visible", !hide_edit_actions || can_paste, NULL);
+	gtk_action_set_sensitive (action, can_paste);
+	gtk_action_set_visible (action, !hide_edit_actions || can_paste);
 
 	g_object_set_data_full (G_OBJECT (window), "context_event",
 				g_object_ref (event),

@@ -192,7 +192,7 @@ sync_security_status (EphyTab *tab,
 	g_return_if_fail (action != NULL);
 
 	is_secure = ephy_tab_get_security_level (tab) > EPHY_EMBED_STATE_IS_INSECURE;
-	g_object_set (action, "sensitive", is_secure, NULL);
+	gtk_action_set_sensitive (action, is_secure);
 }
 
 static void

@@ -271,8 +271,7 @@ update_tab_move_menu_cb (GtkAction *dummy,
 
 	g_list_foreach (windows, (GFunc) add_action_and_menu_item, menu);
 
-	g_object_set (G_OBJECT (priv->menu_action), "sensitive",
-		      g_list_length (windows) > 1, NULL);
+	g_object_set (priv->menu_action, "sensitive", g_list_length (windows) > 1, NULL);
 
 	g_list_free (windows);
 

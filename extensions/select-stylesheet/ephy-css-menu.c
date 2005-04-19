@@ -233,7 +233,7 @@ ephy_css_menu_rebuild (EphyCSSMenu *menu)
 
 	action = gtk_action_group_get_action (p->menu_action_group,
 					      "ECSSMenuAction");
-	g_object_set (G_OBJECT (action), "sensitive", stylesheets != NULL, NULL);
+	gtk_action_set_sensitive (action, stylesheets != NULL);
 	
 	for (l = stylesheets, i = 0; l != NULL; l = l->next, i++)
 	{

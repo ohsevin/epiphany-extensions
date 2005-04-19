@@ -204,7 +204,7 @@ ephy_rss_update_action (EphyWindow *window)
 	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 	g_return_if_fail (data != NULL);
 
-	g_object_set (data->action, "sensitive", show, NULL);
+	gtk_action_set_sensitive (data->action, show);
 
 	ephy_rss_update_statusbar (window, show);
 }
