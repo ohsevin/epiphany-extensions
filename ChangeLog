@@ -1,3 +1,9 @@
+2005-04-19  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/sidebar/ephy-sidebar-embed.c: (show_context_menu):
+
+	Terminate g_object_set calls with NULL.
+
 2005-04-18  Christian Persch  <chpe@cvs.gnome.org>
 
         * extensions/sidebar/ephy-sidebar-embed.c:

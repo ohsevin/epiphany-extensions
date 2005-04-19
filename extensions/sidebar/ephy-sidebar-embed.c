@@ -226,9 +226,9 @@ show_context_menu (EphySidebarEmbed *sbembed,
 	g_object_set (action, "sensitive", has_background,
 			      "visible", has_background, NULL);
 	action = gtk_ui_manager_get_action (manager, "/EphyLinkPopup/OpenLinkInNewWindowLP");
-	g_object_set (action, "sensitive", can_open_in_new, FALSE);
+	g_object_set (action, "sensitive", can_open_in_new, NULL);
 	action = gtk_ui_manager_get_action (manager, "/EphyLinkPopup/OpenLinkInNewTabLP");
-	g_object_set (action, "sensitive", can_open_in_new, FALSE);
+	g_object_set (action, "sensitive", can_open_in_new, NULL);
 
 	can_copy = ephy_command_manager_can_do_command (EPHY_COMMAND_MANAGER (embed), "cmd_copy");
 	can_cut = ephy_command_manager_can_do_command (EPHY_COMMAND_MANAGER (embed), "cmd_cut");
