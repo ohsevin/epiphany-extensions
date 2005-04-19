@@ -26,10 +26,7 @@
 #include "ephy-actions-extension.h"
 #include "ephy-actions-extension-editor-dialog.h"
 
-#define EPHY_ACTIONS_EXTENSION_GET_PRIVATE(object) \
-	G_TYPE_INSTANCE_GET_PRIVATE ((object), \
-				     EPHY_TYPE_ACTIONS_EXTENSION, \
-				     EphyActionsExtensionPrivate)
+#define EPHY_ACTIONS_EXTENSION_GET_PRIVATE(object) G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_ACTIONS_EXTENSION, EphyActionsExtensionPrivate)
 
 #define WINDOW_DATA_KEY		"EphyActionsExtensionWindowData"
 #define ACTION_KEY		"EphyActionsExtensionAction"
@@ -64,7 +61,8 @@ typedef struct
 	guint					user_ui_id;
 } WindowData;
 
-enum {
+enum
+{
 	ACTIONS_CHANGED,
 	LAST_SIGNAL
 };
@@ -73,8 +71,7 @@ GType ephy_actions_extension_type = 0;
 static GObjectClass *parent_class = NULL;
 static unsigned int extension_signals[LAST_SIGNAL] = { 0 };
 
-static void ephy_actions_extension_class_init
-	(EphyActionsExtensionClass *class);
+static void ephy_actions_extension_class_init (EphyActionsExtensionClass *class);
 static void ephy_actions_extension_init (EphyActionsExtension *extension);
 static void ephy_actions_extension_iface_init (EphyExtensionIface *iface);
 static void ephy_actions_extension_finalize (GObject *object);
@@ -93,7 +90,7 @@ static void ephy_actions_extension_edit_actions_cb (GtkAction *action,
 static void ephy_actions_extension_properties_dialog_weak_notify_cb
 	(EphyActionsExtension *extension, GObject *former_object);
 
-static GtkActionEntry edit_entries[] = {
+static const GtkActionEntry edit_entries[] = {
 	{ "EphyActionsExtensionEditActions", NULL, N_("_Actions"), NULL,
 	  N_("Customize actions"),
 	  G_CALLBACK (ephy_actions_extension_edit_actions_cb) }
@@ -483,7 +480,7 @@ ephy_actions_extension_update_menus (EphyWindow *window)
 	int n_children;
 	int i;
 	int n = 0;
-	const char *popups[] = {
+	static const char * const popups[] = {
 		"/EphyDocumentPopup",
 		"/EphyFramedDocumentPopup",
 		"/EphyFullscreenDocumentPopup",

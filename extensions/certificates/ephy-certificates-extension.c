@@ -268,7 +268,7 @@ padlock_button_press_cb (GtkWidget *ebox,
 	return FALSE;
 }
 
-static GtkActionEntry action_entries_1 [] =
+static const GtkActionEntry action_entries_1 [] =
 {
 	{ "ToolsCertificateManager",
 	  NULL /* stock icon */,
@@ -277,8 +277,7 @@ static GtkActionEntry action_entries_1 [] =
 	  N_("Manage your certificates"),
 	  G_CALLBACK (manage_certificates_cb) }
 };
-static const guint n_action_entries_1 = G_N_ELEMENTS (action_entries_1);
-static GtkActionEntry action_entries_2 [] =
+static const GtkActionEntry action_entries_2 [] =
 {
 	{ "ViewServerCertificate",
 	  NULL /* stock icon */,
@@ -287,7 +286,6 @@ static GtkActionEntry action_entries_2 [] =
 	  N_("Display the web server's certificate"),
 	  G_CALLBACK (view_certificate_cb) }
 };
-static const guint n_action_entries_2 = G_N_ELEMENTS (action_entries_2);
 
 static void
 free_window_data (WindowData *data)
@@ -338,9 +336,9 @@ impl_attach_window (EphyExtension *ext,
 	gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
 
 	gtk_action_group_add_actions (action_group, action_entries_1,
-				      n_action_entries_1, ext);
+				      G_N_ELEMENTS (action_entries_1), ext);
 	gtk_action_group_add_actions (action_group, action_entries_2,
-				      n_action_entries_2, window);
+				      G_N_ELEMENTS (action_entries_2), window);
 
 	gtk_ui_manager_insert_action_group (manager, action_group, 0);
 

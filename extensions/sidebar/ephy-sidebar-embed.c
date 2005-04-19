@@ -423,7 +423,7 @@ ephy_sidebar_embed_create_embed (EphySidebarEmbed *sbembed)
 
 #define EPHY_STOCK_DOWNLOAD	"ephy-download"
 
-static GtkActionEntry action_entries [] =
+static const GtkActionEntry action_entries [] =
 {
 	{ "SidebarSaveAs", GTK_STOCK_SAVE_AS, N_("Save _As..."), NULL,
 	  N_("Save the current page"),

@@ -84,7 +84,7 @@ typedef struct
 	GtkWidget *evbox;
 } WindowData;
 
-static GtkActionEntry action_entries [] =
+static const GtkActionEntry action_entries [] =
 {
 	{ "RssInfo",
 	  NULL,

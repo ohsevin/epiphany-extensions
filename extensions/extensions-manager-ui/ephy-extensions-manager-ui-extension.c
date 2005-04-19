@@ -58,7 +58,7 @@ typedef struct
 static void display_cb (GtkAction *action,
 			EphyWindow *window);
 
-static GtkActionEntry action_entries [] =
+static const GtkActionEntry action_entries [] =
 {
 	{ "ExtensionsManagerUI",
 	  NULL,

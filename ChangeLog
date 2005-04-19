@@ -1,6 +1,29 @@
 2005-04-19  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/actions/ephy-actions-extension.c:
+	(ephy_actions_extension_update_menus):
+	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:
+	* extensions/certificates/ephy-certificates-extension.c:
+	(impl_attach_window):
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	(impl_attach_window):
+	* extensions/extensions-manager-ui/ephy-extensions-manager-ui-exten
+	sion.c:
+	* extensions/page-info/ephy-page-info-extension.c:
+	(impl_attach_window):
+	* extensions/page-info/page-info-dialog.c:
+	(media_info_page_construct), (links_info_page_construct):
+	* extensions/rss/ephy-rss-extension.c:
+	* extensions/select-stylesheet/ephy-css-menu.c:
+	* extensions/sidebar/ephy-sidebar-embed.c:
+	* extensions/sidebar/ephy-sidebar-extension.c:
+	* extensions/smart-bookmarks/smart-bookmarks-extension.c:
+
+	Constification.
+
+2005-04-19  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/actions/ephy-actions-extension.c:
 	(ephy_actions_extension_add_action):
 	* extensions/certificates/ephy-certificates-extension.c:
 	(sync_security_status):

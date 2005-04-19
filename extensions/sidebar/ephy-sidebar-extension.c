@@ -99,10 +99,10 @@ typedef struct
 static void cmd_view_sidebar	(GtkAction *action,
 				 EphyWindow *window);
 
-static GtkToggleActionEntry toggle_action_entries [] =
+static const GtkToggleActionEntry toggle_action_entries [] =
 {
 	{ "ViewSidebar", NULL, N_("_Sidebar"), "F9", 
-	  N_("Show or hide the sidebar"), G_CALLBACK(cmd_view_sidebar), FALSE }
+	  N_("Show or hide the sidebar"), G_CALLBACK (cmd_view_sidebar), FALSE }
 };
 
 static void ephy_sidebar_extension_class_init	(EphySidebarExtensionClass *klass);

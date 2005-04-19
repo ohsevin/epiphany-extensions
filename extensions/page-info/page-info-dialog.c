@@ -217,12 +217,11 @@ EphyDialogProperty properties [] =
 	{ NULL }
 };
 
-static GtkTargetEntry drag_targets[] =
+static const GtkTargetEntry drag_targets[] =
 {
-	{ EPHY_DND_URL_TYPE,	  0, 0 }//,
-	//{ EPHY_DND_URI_LIST_TYPE, 0, 1}
+	{ EPHY_DND_URL_TYPE,	  0, 0 }
+	/* { EPHY_DND_URI_LIST_TYPE, 0, 1} */
 };
-static int n_drag_targets = G_N_ELEMENTS (drag_targets);
 
 static void page_info_dialog_class_init	(PageInfoDialogClass *klass);
 static void page_info_dialog_init	(PageInfoDialog *dialog);
@@ -457,7 +456,7 @@ struct _TreeviewInfoPage
 	GtkTreeSelection *selection;
 	GtkTreeView *treeview;
 	TreeviewInfoPageFilterFunc filter_func;
-	GtkActionEntry *action_entries;
+	const GtkActionEntry *action_entries;
 	guint n_action_entries;
 	const char *popup_path;
 	const char *copy_action;
@@ -1048,7 +1047,7 @@ media_set_image_as_background_cb (GtkAction *action,
 	g_free (base_converted);
 }
 
-static GtkActionEntry media_action_entries[] =
+static const GtkActionEntry media_action_entries[] =
 {
 	{ "Open",
 	  GTK_STOCK_OPEN,
@@ -1224,7 +1223,7 @@ media_info_page_construct (InfoPage *ipage)
 
 	/* Allow the tree to be a source for dnd */
 	gtk_tree_view_enable_model_drag_source (treeview, GDK_BUTTON1_MASK,
-                                                drag_targets, n_drag_targets,
+                                                drag_targets, G_N_ELEMENTS (drag_targets),
                                                 GDK_ACTION_COPY);
 	g_signal_connect (G_OBJECT(treeview),
                           "drag_data_get",
@@ -1406,7 +1405,7 @@ enum
 	COL_LINK_REL
 };
 
-static GtkActionEntry links_action_entries[] =
+static const GtkActionEntry links_action_entries[] =
 {
 	{ "CopyLinkAddress", 
 	  GTK_STOCK_COPY,
@@ -1466,7 +1465,7 @@ links_info_page_construct (InfoPage *ipage)
 
 	/* Allow the tree to be a source for dnd */
 	gtk_tree_view_enable_model_drag_source (treeview, GDK_BUTTON1_MASK,
-                                                drag_targets, n_drag_targets,
+                                                drag_targets, G_N_ELEMENTS (drag_targets),
                                                 GDK_ACTION_COPY);
 	g_signal_connect (G_OBJECT(treeview),
                           "drag_data_get",
@@ -1585,7 +1584,7 @@ enum
 };
 
 /*
-static GtkActionEntry forms_action_entries[] =
+static const GtkActionEntry forms_action_entries[] =
 {
 };
 */
@@ -1717,7 +1716,7 @@ enum
 	COL_META_CONTENT
 };
 
-static GtkActionEntry metadata_action_entries[] =
+static const GtkActionEntry metadata_action_entries[] =
 {
 	{ "CopyMetadata", 
 	  GTK_STOCK_COPY,

@@ -304,7 +304,7 @@ sync_active_tab_cb (EphyWindow *window,
 	ephy_css_menu_rebuild (menu);
 }
 
-static GtkActionEntry entries[] =
+static const GtkActionEntry entries[] =
 {
 	{ "ECSSMenuAction", NULL, N_("St_yle"), NULL,
 	  N_("Select a different style for this page"), NULL }

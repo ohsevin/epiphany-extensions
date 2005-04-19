@@ -58,7 +58,7 @@ static void ephy_page_info_extension_init	(EphyPageInfoExtension *extension);
 static void ephy_page_info_extension_display_cb (GtkAction *action,
 						 EphyWindow *window);
 
-static GtkActionEntry action_entries [] =
+static const GtkActionEntry action_entries [] =
 {
 	{ "PageInfo",
 	  NULL,
@@ -67,7 +67,6 @@ static GtkActionEntry action_entries [] =
 	  N_("Display page information in a dialog"),
 	  G_CALLBACK (ephy_page_info_extension_display_cb) },
 };
-static const guint n_action_entries = G_N_ELEMENTS (action_entries);
 
 static GObjectClass *parent_class = NULL;
 static GType type = 0;
@@ -244,7 +243,7 @@ impl_attach_window (EphyExtension *extension,
 		gtk_action_group_new ("EphyPageInfoExtensionActions");
 	gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
 	gtk_action_group_add_actions (action_group, action_entries,
-				      n_action_entries, window);
+				      G_N_ELEMENTS (action_entries), window);
 
 	gtk_ui_manager_insert_action_group (manager, action_group, -1);
 

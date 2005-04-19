@@ -572,7 +572,7 @@ connect_proxy_cb (GtkActionGroup *action_group,
 	}
 }
 
-static GtkActionEntry action_entries [] =
+static const GtkActionEntry action_entries [] =
 {
 	{ LOOKUP_ACTION,
 	  NULL,

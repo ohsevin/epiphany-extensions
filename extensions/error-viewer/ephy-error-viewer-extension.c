@@ -89,7 +89,7 @@ static void ephy_error_viewer_extension_validate	(GtkAction *action,
 static void ephy_error_viewer_extension_check_links	(GtkAction *action,
 							 ErrorViewerCBData *data);
 
-static GtkActionEntry action_entries [] =
+static const GtkActionEntry action_entries [] =
 {
 #ifdef HAVE_OPENSP
 	{ "SgmlValidate",
@@ -112,7 +112,6 @@ static GtkActionEntry action_entries [] =
 	  N_("Display web page errors"),
 	  G_CALLBACK (ephy_error_viewer_extension_show_viewer) }
 };
-static const guint n_action_entries = G_N_ELEMENTS (action_entries);
 
 static GObjectClass *parent_class = NULL;
 
@@ -395,7 +394,7 @@ impl_attach_window (EphyExtension *extension,
 		gtk_action_group_new ("EphyErrorViewerExtensionActions");
 	gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
 	gtk_action_group_add_actions_full (action_group, action_entries,
-					   n_action_entries, cb_data,
+					   G_N_ELEMENTS (action_entries), cb_data,
 					   free_error_viewer_cb_data);
 
 	gtk_ui_manager_insert_action_group (manager, action_group, 0);

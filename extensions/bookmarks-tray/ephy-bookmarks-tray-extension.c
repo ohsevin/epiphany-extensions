@@ -424,7 +424,7 @@ open_in_changed_cb (GtkAction *action,
 			      types[extension->priv->open_in].text);
 }
 
-static GtkActionEntry action_entries [] =
+static const GtkActionEntry action_entries [] =
 {
 	{ "Bookmarks", NULL, "" },
 	{ "Context", NULL, "" },
@@ -433,7 +433,7 @@ static GtkActionEntry action_entries [] =
           G_CALLBACK (edit_bookmarks_cb) },
 };
 
-static GtkRadioActionEntry radio_entries [] =
+static const GtkRadioActionEntry radio_entries [] =
 {
 	{ "OpenInCurrent", NULL, N_("Open in _Current Tab"), NULL,
 	  N_("Open bookmarks in the current tab of the active window"),
