@@ -1,4 +1,20 @@
 =========================
+Epiphany Extensions 1.6.3
+=========================
+
+Changes
+
+	* Don't default to -Werror.
+	* Deactivate the menu when destroying the sidebar.
+	* Fix compilation with gcc4 [#300637]
+	* Fix window opening from sidebar
+	* Fix rare crash on 64-bit archs
+
+Contributors to this release:
+Sebastien Bacher and Christian Persch.
+
+
+=========================
 Epiphany Extensions 1.6.2
 =========================
 
