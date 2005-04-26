@@ -1,3 +1,15 @@
+2005-04-26  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
+	Ged rid of all API checks which check for 1.8-only API, and introduce
+        a Gecko version check instead.
+		
+	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+
+	Use new HAVE_GECKO_1_8 define instead of the API defines.
+
 2005-04-23  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:

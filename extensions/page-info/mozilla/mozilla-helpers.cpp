@@ -363,7 +363,7 @@ PageInfoHelper::GetCacheEntryDescriptor (const nsAString &aUrl,
   
       nsCOMPtr<nsICacheEntryDescriptor> cacheEntryDescriptor;
   
-#ifdef MOZ_NSICACHESESSION_OPENCACHEENTRY_NSACSTRING_
+#ifdef HAVE_GECKO_1_8
       rv = cacheSession->OpenCacheEntry (nsEmbedCString(url), nsICache::ACCESS_READ,
                                          PR_FALSE, aEntry);
 #else

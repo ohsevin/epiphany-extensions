@@ -65,7 +65,7 @@ ErrorViewerConsoleListener::GetMessageFromError (nsIScriptError *aError,
 	NS_ENSURE_TRUE (NS_SUCCEEDED (rv) && category, NS_ERROR_FAILURE);
 
 	nsEmbedString message;
-#ifdef MOZ_NSISCRIPTERROR_NSASTRING_
+#ifdef HAVE_GECKO_1_8
 	rv = aError->GetErrorMessage (message);
 #else
 	PRUnichar *msg = nsnull;
@@ -115,7 +115,7 @@ ErrorViewerConsoleListener::GetMessageFromError (nsIScriptError *aError,
 	rv = aError->GetLineNumber (&lineNumber);
 	NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
 
-#ifdef MOZ_NSISCRIPTERROR_NSASTRING_
+#ifdef HAVE_GECKO_1_8
 	nsEmbedString sourceName;
 	rv = aError->GetSourceName (sourceName);
 	NS_ENSURE_SUCCESS (rv, rv);
