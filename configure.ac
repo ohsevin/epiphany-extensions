@@ -1,3 +1,4 @@
+
 dnl Copyright (c) 2003, 2004 Christian Persch
 dnl
 dnl This program is free software; you can redistribute it and/or modify it
@@ -302,6 +303,7 @@ dnl Do this test using CXX only since some versions of gcc
 dnl 2.95-2.97 have a signed wchar_t in c++ only and some versions
 dnl only have short-wchar support for c++.
 AC_LANG_PUSH([C++])
+_SAVE_CPPFLAGS=$CPPFLAGS
 _SAVE_CXXFLAGS=$CXXFLAGS
 _SAVE_AM_CXXFLAGS=$AM_CXXFLAGS
 AM_CXXFLAGS="$AM_CXXFLAGS -fshort-wchar"
@@ -327,10 +329,35 @@ if test "$ac_cv_have_usable_wchar_option" != "yes"; then
     AM_CXXFLAGS=$_SAVE_AM_CXXFLAGS
 fi
 
+CPPFLAGS="$_SAVE_CPPFLAGS $AM_CPPFLAGS -I$MOZILLA_INCLUDE_ROOT `$PKG_CONFIG --cflags-only-I $MOZILLA-xpcom` -I$MOZILLA_INCLUDE_ROOT/necko"
+CXXFLAGS="$_SAVE_CXXFLAGS $AM_CXXFLAGS `$PKG_CONFIG --cflags-only-other $MOZILLA-xpcom`"
+
 dnl Changed in 1.8a1 and again in 1.8a3 to its present form (variant 2);
 dnl variant 1 is on 1.7 branch. Aviary branch also has variant 2.
 
-CXXFLAGS="$_SAVE_CXXFLAGS $AM_CXXFLAGS -I$MOZILLA_INCLUDE_ROOT `$PKG_CONFIG --cflags $MOZILLA-xpcom` -I$MOZILLA_INCLUDE_ROOT/necko -DMOZILLA_STRICT_API"
+dnl Determine gecko version
+dnl We don't use the version from the .pc file, since that's the app version
+dnl and not the Gecko version
+
+AC_MSG_CHECKING([[for gecko version]])
+
+AC_PREPROC_IFELSE(
+        [AC_LANG_SOURCE(
+                [[#include <mozilla-config.h>
+                  #define _DECL_VERSION(major,minor) ((major << 8) + minor)
+                  #if (_DECL_VERSION(MOZILLA_VERSION_MAJOR,MOZILLA_VERSION_MINOR) < _DECL_VERSION(1,8))
+                  #error No
+                  #endif]]
+        )],
+        [have_gecko_1_8=yes gecko_version="1.8"],
+        [have_gecko_1_8=no gecko_version="1.7"])
+
+AC_MSG_RESULT([$gecko_version])
+
+if test "x$have_gecko_1_8" = "xyes"; then
+        AC_DEFINE([HAVE_GECKO_1_8],[1],[Define if we have gecko 1.8])
+fi
+AM_CONDITIONAL([HAVE_GECKO_1_8],[test "x$have_gecko_1_8" = "xyes"])
 
 AC_MSG_CHECKING([for nsIContentPolicy API])
 
@@ -350,38 +377,6 @@ AC_DEFINE_UNQUOTED([MOZ_NSICONTENTPOLICY_VARIANT], [$variant], [Define the nsICo
 
 AC_MSG_RESULT([variant $variant])
 
-AC_MSG_CHECKING([whether nsICacheSession::OpenCacheEntry takes nsACString&])
-
-AC_COMPILE_IFELSE(
-	[AC_LANG_PROGRAM(
-		[[#include <nsEmbedString.h>
-		  #include <nkcache/nsICacheSession.h>]],
-		[[nsICacheSession *p;
-		  nsEmbedCString arg1;
-		  p->OpenCacheEntry(arg1, 0, 0, nsnull);]]
-	)],
-	[AC_DEFINE([MOZ_NSICACHESESSION_OPENCACHEENTRY_NSACSTRING_],[1],[Define if nsICacheSession::OpenCacheEntry takes nsACString&]) result=yes],
-	[result=no])
-
-AC_MSG_RESULT([$result])
-
-dnl Since 1.8b2
-
-AC_MSG_CHECKING([whether nsIScriptError has nsAString& properties])
-
-AC_COMPILE_IFELSE(
-	[AC_LANG_PROGRAM(
-		[[#include <nsEmbedString.h>
-		  #include <xpconnect/nsIScriptError.h>]],
-		[[nsIScriptError *p;
-		  nsEmbedString arg1;
-		  p->GetErrorMessage(arg1);]]
-	)],
-	[AC_DEFINE([MOZ_NSISCRIPTERROR_NSASTRING_],[1],[Define if nsIScriptError has nsAString& properties]) result=yes],
-	[result=no])
-
-AC_MSG_RESULT([$result])
-
 dnl Find extension needs toolkit nsITypeAheadFind
 
 if echo "$EXTENSIONS" | egrep '(^| )find($| )' > /dev/null; then
@@ -391,6 +386,7 @@ if echo "$EXTENSIONS" | egrep '(^| )find($| )' > /dev/null; then
 fi
 
 dnl restore flags
+CPPFLAGS=$_SAVE_CPPFLAGS
 CXXFLAGS=$_SAVE_CXXFLAGS
 AC_LANG_POP([C++])
 
