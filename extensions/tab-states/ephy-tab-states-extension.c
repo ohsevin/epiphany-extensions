@@ -35,10 +35,15 @@
 
 #define EPHY_TAB_STATES_EXTENSION_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_TAB_STATES_EXTENSION, EphyTabStatesExtensionPrivate))
 
+/* disable colours until they're themeable */
+#undef ENABLE_COLOURS
+
 struct _EphyTabStatesExtensionPrivate
 {
+#ifdef ENABLE_COLOURS
 	GdkColor tab_loading_colour;
 	GdkColor tab_unread_colour;
+#endif
 	PangoFontDescription *bold_font_desc;
 };
 
@@ -99,12 +104,15 @@ static void
 ephy_tab_states_extension_init (EphyTabStatesExtension *extension)
 {
 	EphyTabStatesExtensionPrivate *priv;
+#ifdef ENABLE_COLOURS
 	char *colour;
+#endif
 
 	priv = extension->priv = EPHY_TAB_STATES_EXTENSION_GET_PRIVATE (extension);
 
 	LOG ("EphyTabStatesExtension initialising");
 
+#ifdef ENABLE_COLOURS
 	/* FIXME handle NULL and "" */
 	colour = eel_gconf_get_string (CONF_TABS_LOADING_COLOUR);
 	gdk_color_parse (colour, &priv->tab_loading_colour);
@@ -113,6 +121,7 @@ ephy_tab_states_extension_init (EphyTabStatesExtension *extension)
 	colour = eel_gconf_get_string (CONF_TABS_UNREAD_COLOUR);
 	gdk_color_parse (colour, &priv->tab_unread_colour);
 	g_free (colour);
+#endif
 
 	priv->bold_font_desc = pango_font_description_new ();
 	pango_font_description_set_weight (priv->bold_font_desc, PANGO_WEIGHT_BOLD);
@@ -145,6 +154,7 @@ get_real_tab_label (EphyWindow *window,
 	return label;
 }
 
+#ifdef ENABLE_COLOURS
 static void
 set_label_colour (GtkWidget *widget,
 		  GdkColor *colour)
@@ -152,6 +162,7 @@ set_label_colour (GtkWidget *widget,
         gtk_widget_modify_fg (widget, GTK_STATE_NORMAL, colour);
         gtk_widget_modify_fg (widget, GTK_STATE_ACTIVE, colour);
 }
+#endif
 
 static void
 sync_active_tab (EphyWindow *window,
@@ -167,8 +178,10 @@ sync_active_tab (EphyWindow *window,
 	{
 		/* mark the tab as read */
 		label = get_real_tab_label (window, active_tab);
-		set_label_colour (label, NULL);
 		gtk_widget_modify_font (label, NULL);
+#ifdef ENABLE_COLOURS
+		set_label_colour (label, NULL);
+#endif
 	}
 }
 
@@ -179,10 +192,12 @@ sync_load_status (EphyTab *tab,
 {
 	EphyTabStatesExtensionPrivate *priv = extension->priv;
 	EphyWindow *window;
-	GdkColor *colour = NULL;
 	GtkWidget *label;
 	PangoFontDescription *font_desc = NULL;
 	gboolean loading;
+#ifdef ENABLE_COLOURS
+	GdkColor *colour = NULL;
+#endif
 
 	window = EPHY_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (tab)));
 	g_return_if_fail (window != NULL);
@@ -191,18 +206,24 @@ sync_load_status (EphyTab *tab,
 
 	if (loading)
 	{
+#ifdef ENABLE_COLOURS
 		colour = &priv->tab_loading_colour;
+#endif
 		font_desc = priv->bold_font_desc;
 	}
 	else if (tab != ephy_window_get_active_tab (window))
 	{
+#ifdef ENABLE_COLOURS
 		colour = &priv->tab_unread_colour;
+#endif
 		font_desc = priv->bold_font_desc;
 	}
 
 	label = get_real_tab_label (window, tab);
-	set_label_colour (label, colour);
 	gtk_widget_modify_font (label, font_desc);
+#ifdef ENABLE_COLOURS
+	set_label_colour (label, colour);
+#endif
 }
 
 static void
