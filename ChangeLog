@@ -1,3 +1,12 @@
+2005-04-28  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/tab-states/ephy-tab-states-extension.c:
+	(ephy_tab_states_extension_init), (sync_active_tab),
+	(sync_load_status):
+
+	Disable colour changes, since they're not themeable. Fixes
+	bug #302326.
+
 2005-04-26  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
