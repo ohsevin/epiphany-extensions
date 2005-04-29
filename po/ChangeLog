@@ -1,6 +1,10 @@
 NOTE: Please also update the translations on "gnome-2-10" branch,
 NOTE: and keep this note at the top of this file.
 
+2005-04-29  Abel Cheung  <maddog@linuxhall.org>
+
+	* POTFILES.in: Remove non-existant file to fix intltool-update error.
+
 2005-04-02  Takeshi AIHANA <aihana@gnome.gr.jp>
 
 	* ja.po: Updated Japanese translation.
