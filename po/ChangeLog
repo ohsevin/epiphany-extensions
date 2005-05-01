@@ -1,6 +1,10 @@
 NOTE: Please also update the translations on "gnome-2-10" branch,
 NOTE: and keep this note at the top of this file.
 
+2005-05-01  Francisco Javier F. Serrador  <serrador@cvs.gnome.org>
+
+	*  es.po: Updated Spanish translation.
+
 2005-04-30  Pauli Virtanen <pauli.virtanen@hut.fi>
 
 	* fi.po: Added a Finnish translation.

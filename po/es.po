@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-03-27 15:23+0200\n"
-"PO-Revision-Date: 2005-03-27 15:34+0200\n"
+"POT-Creation-Date: 2005-05-01 16:25+0200\n"
+"PO-Revision-Date: 2005-05-01 16:28+0200\n"
 "Last-Translator: Francisco Javier F. Serrador <serrador@cvs.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -91,19 +91,19 @@ msgstr "Acciones"
 msgid "Execute arbitrary commands from the context menu"
 msgstr "Ejecute comandos arbitrarios desde el menú contextual"
 
-#: ../extensions/actions/ephy-actions-extension.c:97
+#: ../extensions/actions/ephy-actions-extension.c:94
 msgid "_Actions"
 msgstr "_Acciones"
 
-#: ../extensions/actions/ephy-actions-extension.c:98
+#: ../extensions/actions/ephy-actions-extension.c:95
 msgid "Customize actions"
 msgstr "Personalizar acciones"
 
-#: ../extensions/actions/ephy-actions-extension.c:409
+#: ../extensions/actions/ephy-actions-extension.c:408
 msgid "Could not run command"
 msgstr "No se pudo ejecutar el comando"
 
-#: ../extensions/actions/ephy-actions-extension.c:412
+#: ../extensions/actions/ephy-actions-extension.c:411
 msgid "Could not Run Command"
 msgstr "No se pudo ejecutar el comando"
 
@@ -194,12 +194,12 @@ msgid "Manage your certificates"
 msgstr "Administra sus certificados"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:285
+#: ../extensions/certificates/ephy-certificates-extension.c:284
 msgid "Server _Certificate"
 msgstr "_Certificado del servidor"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:287
+#: ../extensions/certificates/ephy-certificates-extension.c:286
 msgid "Display the web server's certificate"
 msgstr "Mostrar el certificado del servidor web"
 
@@ -252,10 +252,11 @@ msgstr "Visor de errores"
 
 #: ../extensions/error-viewer/error-viewer.xml.in.in.h:2
 msgid "View error in web pages, validate web pages and check links"
-msgstr "Vea los errores en las páginas web, valida páginas web y comprueba enlaces"
+msgstr ""
+"Vea los errores en las páginas web, valida páginas web y comprueba enlaces"
 
 #. Don't bother looking for source lines -- they're not there
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:87
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:108
 #, c-format
 msgid ""
 "Error:\n"
@@ -264,7 +265,7 @@ msgstr ""
 "Error:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:112
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:138
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -379,6 +380,7 @@ msgid "Enabled"
 msgstr "Activada"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: ../extensions/rss/rss-ui.c:646
 msgid "Description"
 msgstr "Descripción"
 
@@ -465,7 +467,8 @@ msgstr "Realice acciones con gestos del ratón"
 #. How to describe this? It makes Epiphany "Just Work"
 #: ../extensions/net-monitor/net-monitor.xml.in.in.h:2
 msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
-msgstr "Manipula automáticamente el estado conectado/desconectado (Experimental)"
+msgstr ""
+"Manipula automáticamente el estado conectado/desconectado (Experimental)"
 
 #: ../extensions/net-monitor/net-monitor.xml.in.in.h:3
 msgid "Network Connection Monitor"
@@ -479,153 +482,153 @@ msgstr "_Información de la página"
 msgid "Display page information in a dialog"
 msgstr "Muestra la información de la página en un diálogo"
 
-#: ../extensions/page-info/page-info-dialog.c:673
+#: ../extensions/page-info/page-info-dialog.c:672
 msgid "Unknown type"
 msgstr "Tipo desconocido"
 
-#: ../extensions/page-info/page-info-dialog.c:678
+#: ../extensions/page-info/page-info-dialog.c:677
 msgid "Full standards compliance"
 msgstr "Cumple con todos los estándares"
 
-#: ../extensions/page-info/page-info-dialog.c:681
+#: ../extensions/page-info/page-info-dialog.c:680
 msgid "Almost standards compliance"
 msgstr "Cumple con la mayoría de los estándares"
 
-#: ../extensions/page-info/page-info-dialog.c:684
+#: ../extensions/page-info/page-info-dialog.c:683
 msgid "Compatibility"
 msgstr "Compatibilidad"
 
-#: ../extensions/page-info/page-info-dialog.c:688
+#: ../extensions/page-info/page-info-dialog.c:687
 msgid "Undetermined"
 msgstr "Indeterminada"
 
-#: ../extensions/page-info/page-info-dialog.c:697
+#: ../extensions/page-info/page-info-dialog.c:696
 msgid "Not cached"
 msgstr "No cacheado"
 
-#: ../extensions/page-info/page-info-dialog.c:700
+#: ../extensions/page-info/page-info-dialog.c:699
 msgid "Disk cache"
 msgstr "Caché de disco"
 
-#: ../extensions/page-info/page-info-dialog.c:703
+#: ../extensions/page-info/page-info-dialog.c:702
 msgid "Memory cache"
 msgstr "Caché de memoria"
 
-#: ../extensions/page-info/page-info-dialog.c:706
+#: ../extensions/page-info/page-info-dialog.c:705
 msgid "Unknown cache"
 msgstr "Caché desconocido"
 
-#: ../extensions/page-info/page-info-dialog.c:722
-#: ../extensions/page-info/page-info-dialog.c:833
+#: ../extensions/page-info/page-info-dialog.c:721
+#: ../extensions/page-info/page-info-dialog.c:832
 msgid "Unknown"
 msgstr "Desconocido "
 
-#: ../extensions/page-info/page-info-dialog.c:727
+#: ../extensions/page-info/page-info-dialog.c:726
 msgid "No referrer"
 msgstr "Sin referrer"
 
-#: ../extensions/page-info/page-info-dialog.c:741
-#: ../extensions/page-info/page-info-dialog.c:757
+#: ../extensions/page-info/page-info-dialog.c:740
+#: ../extensions/page-info/page-info-dialog.c:756
 msgid "Not specified"
 msgstr "Sin especificar"
 
-#: ../extensions/page-info/page-info-dialog.c:818
+#: ../extensions/page-info/page-info-dialog.c:817
 msgid "Image"
 msgstr "Imagen"
 
-#: ../extensions/page-info/page-info-dialog.c:821
+#: ../extensions/page-info/page-info-dialog.c:820
 msgid "Embed"
 msgstr "Embeber"
 
-#: ../extensions/page-info/page-info-dialog.c:824
+#: ../extensions/page-info/page-info-dialog.c:823
 msgid "Object"
 msgstr "Objeto"
 
-#: ../extensions/page-info/page-info-dialog.c:827
+#: ../extensions/page-info/page-info-dialog.c:826
 msgid "Applet"
 msgstr "Miniaplicación"
 
-#: ../extensions/page-info/page-info-dialog.c:830
+#: ../extensions/page-info/page-info-dialog.c:829
 msgid "Icon"
 msgstr "Icono"
 
-#: ../extensions/page-info/page-info-dialog.c:958
+#: ../extensions/page-info/page-info-dialog.c:957
 msgid "Save Medium As..."
 msgstr "Guardar soporte como..."
 
-#: ../extensions/page-info/page-info-dialog.c:975
+#: ../extensions/page-info/page-info-dialog.c:974
 msgid "Select a directory"
 msgstr "Seleccione un directorio"
 
-#: ../extensions/page-info/page-info-dialog.c:1055
+#: ../extensions/page-info/page-info-dialog.c:1054
 msgid "_Open"
 msgstr "_Abrir"
 
-#: ../extensions/page-info/page-info-dialog.c:1061
-#: ../extensions/page-info/page-info-dialog.c:1413
+#: ../extensions/page-info/page-info-dialog.c:1060
+#: ../extensions/page-info/page-info-dialog.c:1412
 msgid "_Copy Link Address"
 msgstr "_Copiar dirección del enlace"
 
-#: ../extensions/page-info/page-info-dialog.c:1067
+#: ../extensions/page-info/page-info-dialog.c:1066
 msgid "_Use as Background"
 msgstr "_Usar como fondo"
 
-#: ../extensions/page-info/page-info-dialog.c:1073
+#: ../extensions/page-info/page-info-dialog.c:1072
 msgid "_Save As..."
 msgstr "Guardar _como..."
 
-#: ../extensions/page-info/page-info-dialog.c:1250
-#: ../extensions/page-info/page-info-dialog.c:1485
+#: ../extensions/page-info/page-info-dialog.c:1249
+#: ../extensions/page-info/page-info-dialog.c:1484
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1262
+#: ../extensions/page-info/page-info-dialog.c:1261
 msgid "Type"
 msgstr "Tipo"
 
-#: ../extensions/page-info/page-info-dialog.c:1274
+#: ../extensions/page-info/page-info-dialog.c:1273
 msgid "Alt Text"
 msgstr "Texto Alt"
 
-#: ../extensions/page-info/page-info-dialog.c:1286
-#: ../extensions/page-info/page-info-dialog.c:1497
+#: ../extensions/page-info/page-info-dialog.c:1285
+#: ../extensions/page-info/page-info-dialog.c:1496
 msgid "Title"
 msgstr "Título"
 
-#: ../extensions/page-info/page-info-dialog.c:1298
+#: ../extensions/page-info/page-info-dialog.c:1297
 msgid "Width"
 msgstr "Anchura"
 
-#: ../extensions/page-info/page-info-dialog.c:1310
+#: ../extensions/page-info/page-info-dialog.c:1309
 msgid "Height"
 msgstr "Altura"
 
-#: ../extensions/page-info/page-info-dialog.c:1509
+#: ../extensions/page-info/page-info-dialog.c:1508
 msgid "Relation"
 msgstr "Relación"
 
-#: ../extensions/page-info/page-info-dialog.c:1621
-#: ../extensions/page-info/page-info-dialog.c:1758
+#: ../extensions/page-info/page-info-dialog.c:1620
+#: ../extensions/page-info/page-info-dialog.c:1757
 msgid "Name"
 msgstr "Nombre"
 
-#: ../extensions/page-info/page-info-dialog.c:1633
+#: ../extensions/page-info/page-info-dialog.c:1632
 msgid "Method"
 msgstr "Método"
 
-#: ../extensions/page-info/page-info-dialog.c:1645
+#: ../extensions/page-info/page-info-dialog.c:1644
 msgid "Action"
 msgstr "Acción"
 
-#: ../extensions/page-info/page-info-dialog.c:1724
+#: ../extensions/page-info/page-info-dialog.c:1723
 msgid "_Copy"
 msgstr "_Copiar"
 
-#: ../extensions/page-info/page-info-dialog.c:1770
+#: ../extensions/page-info/page-info-dialog.c:1769
 msgid "Content"
 msgstr "Contenido"
 
-#: ../extensions/page-info/page-info-dialog.c:1869
+#: ../extensions/page-info/page-info-dialog.c:1868
 msgid "Page Metadata"
 msgstr "Metadatos de la página"
 
@@ -755,11 +758,49 @@ msgstr "_Guardar soporte como..."
 
 #: ../extensions/page-info/page-info.xml.in.in.h:1
 msgid "Display information about and links and media from the current page"
-msgstr "Muestra información acerca de los enlaces y los medios desde la página actual"
+msgstr ""
+"Muestra información acerca de los enlaces y los medios desde la página actual"
 
 #: ../extensions/page-info/page-info.xml.in.in.h:2
 msgid "Page Info"
 msgstr "Info de la página"
+
+#: ../extensions/rss/ephy-rss-extension.c:91
+msgid "News Feeds Subscription"
+msgstr "Subscripción a proveedores de noticias"
+
+#: ../extensions/rss/ephy-rss-extension.c:93
+msgid "Subscribe to this website's news feed in your favorite news reader"
+msgstr "Subscribirse al proveedor de noticias de este web en su lector de noticas favorito"
+
+#: ../extensions/rss/ephy-rss-extension.c:323
+msgid "Subscribe to site's news feed"
+msgstr "Subscribirse al proveedor de noticas del sitio"
+
+#: ../extensions/rss/rss-ui.c:234
+msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
+msgstr "<b><i>No es posible contactar con el lector de proveedores, ¿está funcionando?</i></b>"
+
+#: ../extensions/rss/rss-ui.c:236
+msgid "Retry"
+msgstr "Reintentar"
+
+#: ../extensions/rss/rss-ui.c:364
+msgid "_Copy Feed Address"
+msgstr "_Copiar dirección del proveedor"
+
+#: ../extensions/rss/rss-ui.c:639
+msgid "Subscribe"
+msgstr "Suscribirse"
+
+#: ../extensions/rss/rss.xml.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "Suscripción a proveedores de noticias"
+
+#: ../extensions/rss/rss.xml.in.in.h:2
+msgid ""
+"Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr "Suscríbase a proveedores de noticas obfrecidos por la página web en su lector de noticas favorito"
 
 #: ../extensions/sample-mozilla/sample-mozilla.xml.in.in.h:1
 msgid "A sample extension with mozilla backend"
@@ -812,7 +853,8 @@ msgstr "Seleccione la hoja de estilo"
 
 #: ../extensions/select-stylesheet/select-stylesheet.xml.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
-msgstr "Seleccionar entre direrentes hojas de estilo ofrecidas por la página web"
+msgstr ""
+"Seleccionar entre direrentes hojas de estilo ofrecidas por la página web"
 
 #: ../extensions/sidebar/ephy-sidebar.c:176
 msgid "No Sidebars installed"
@@ -852,11 +894,11 @@ msgstr "Añada una barra lateral a las ventanas"
 msgid "Sidebar"
 msgstr "Barra lateral"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:578
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:579
 msgid "_Look Up"
 msgstr "_Buscar"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:585
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:586
 msgid "_GNOME Dictionary"
 msgstr "Diccionario de _Gnome"
 
@@ -883,11 +925,11 @@ msgid_plural "Window '%s' (%d tabs)"
 msgstr[0] "Ventana «%s»  (%d solapa)"
 msgstr[1] "Ventana «%s» (%d solapas)"
 
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:302
+#: ../extensions/tabsmenu/ephy-tab-move-menu.c:301
 msgid "Move Tab To Window"
 msgstr "Mover solapa a la ventana"
 
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:303
+#: ../extensions/tabsmenu/ephy-tab-move-menu.c:302
 msgid "Move the current tab to a different window"
 msgstr "Mueve la solapa actual a una ventana diferente"
 
@@ -921,9 +963,6 @@ msgstr "Estado de solapas"
 
 #~ msgid "Open search results in a new tab"
 #~ msgstr "Abrir resultados de búsqueda en una solapa nueva"
-
-#~ msgid "_Copy Image Address"
-#~ msgstr "_Copiar dirección de la imagen"
 
 #~ msgid "*"
 #~ msgstr "*"
