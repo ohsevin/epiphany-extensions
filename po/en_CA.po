@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-03-05 20:07-0500\n"
-"PO-Revision-Date: 2005-03-05 16:10-0400\n"
+"POT-Creation-Date: 2005-05-04 01:24-0400\n"
+"PO-Revision-Date: 2005-05-04 16:10-0400\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: Canadian English <adamw@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: extensions/actions/action-properties.glade.h:1
+#: ../extensions/actions/action-properties.glade.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
 msgstr "<span weight=\"bold\">Applies to</span>"
 
-#: extensions/actions/action-properties.glade.h:2
+#: ../extensions/actions/action-properties.glade.h:2
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">General</span>"
 
-#: extensions/actions/action-properties.glade.h:3
+#: ../extensions/actions/action-properties.glade.h:3
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "images."
@@ -33,7 +33,7 @@ msgstr ""
 "If this option is enabled, the action will be included in the popup menu of "
 "images."
 
-#: extensions/actions/action-properties.glade.h:4
+#: ../extensions/actions/action-properties.glade.h:4
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "links and pages."
@@ -41,11 +41,11 @@ msgstr ""
 "If this option is enabled, the action will be included in the popup menu of "
 "links and pages."
 
-#: extensions/actions/action-properties.glade.h:5
+#: ../extensions/actions/action-properties.glade.h:5
 msgid "The action description."
 msgstr "The action description."
 
-#: extensions/actions/action-properties.glade.h:6
+#: ../extensions/actions/action-properties.glade.h:6
 msgid ""
 "The action name. If a character is preceded by an underscore, that character "
 "will be used as the access key for the menu item."
@@ -53,7 +53,7 @@ msgstr ""
 "The action name. If a character is preceded by an underscore, that character "
 "will be used as the access key for the menu item."
 
-#: extensions/actions/action-properties.glade.h:7
+#: ../extensions/actions/action-properties.glade.h:7
 msgid ""
 "The command to execute when the action is activated. The URL of the link, "
 "image or page will be appended to the command."
@@ -61,200 +61,200 @@ msgstr ""
 "The command to execute when the action is activated. The URL of the link, "
 "image or page will be appended to the command."
 
-#: extensions/actions/action-properties.glade.h:8
+#: ../extensions/actions/action-properties.glade.h:8
 msgid "_Command:"
 msgstr "_Command:"
 
-#: extensions/actions/action-properties.glade.h:9
+#: ../extensions/actions/action-properties.glade.h:9
 msgid "_Description:"
 msgstr "_Description:"
 
-#: extensions/actions/action-properties.glade.h:10
+#: ../extensions/actions/action-properties.glade.h:10
 msgid "_Images"
 msgstr "_Images"
 
-#: extensions/actions/action-properties.glade.h:11
+#: ../extensions/actions/action-properties.glade.h:11
 msgid "_Name:"
 msgstr "_Name:"
 
-#: extensions/actions/action-properties.glade.h:12
+#: ../extensions/actions/action-properties.glade.h:12
 msgid "_Pages"
 msgstr "_Pages"
 
-#: extensions/actions/actions-editor.glade.h:1
-#: extensions/actions/actions.xml.in.in.h:1
+#: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions.xml.in.in.h:1
 msgid "Actions"
 msgstr "Actions"
 
-#: extensions/actions/actions.xml.in.in.h:2
+#: ../extensions/actions/actions.xml.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
 msgstr "Execute arbitrary commands from the context menu"
 
-#: extensions/actions/ephy-actions-extension.c:97
+#: ../extensions/actions/ephy-actions-extension.c:94
 msgid "_Actions"
 msgstr "_Actions"
 
-#: extensions/actions/ephy-actions-extension.c:98
+#: ../extensions/actions/ephy-actions-extension.c:95
 msgid "Customize actions"
 msgstr "Customize actions"
 
-#: extensions/actions/ephy-actions-extension.c:409
+#: ../extensions/actions/ephy-actions-extension.c:408
 msgid "Could not run command"
 msgstr "Could not run command"
 
-#: extensions/actions/ephy-actions-extension.c:412
+#: ../extensions/actions/ephy-actions-extension.c:411
 msgid "Could not Run Command"
 msgstr "Could not Run Command"
 
-#: extensions/actions/ephy-actions-extension-editor-dialog.c:490
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:490
 msgid "No action selected."
 msgstr "No action selected."
 
-#: extensions/actions/ephy-actions-extension-editor-dialog.c:500
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:500
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
 msgstr[0] "%i action selected."
 msgstr[1] "%i actions selected."
 
-#: extensions/actions/ephy-actions-extension-properties-dialog.c:312
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:312
 msgid "Add Action"
 msgstr "Add Action"
 
-#: extensions/actions/ephy-actions-extension-properties-dialog.c:421
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:421
 #, c-format
 msgid "%s Properties"
 msgstr "%s Properties"
 
-#: extensions/actions/ephy-actions-extension-properties-dialog.c:426
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:426
 msgid "Action Properties"
 msgstr "Action Properties"
 
-#: extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:1
+#: ../extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:1
 msgid "Add a bookmarks menu to the panel's notification area"
 msgstr "Add a bookmarks menu to the panel's notification area"
 
-#: extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:2
+#: ../extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:2
 msgid "Bookmarks Tray"
 msgstr "Bookmarks Tray"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
 msgid "_Edit Bookmarks"
 msgstr "_Edit Bookmarks"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
 msgid "Open the bookmarks window"
 msgstr "Open the bookmarks window"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
 msgid "Open in _Current Tab"
 msgstr "Open in _Current Tab"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
 msgid "Open bookmarks in the current tab of the active window"
 msgstr "Open bookmarks in the current tab of the active window"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
 msgid "Open in New _Tab"
 msgstr "Open in New _Tab"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
 msgid "Open bookmarks in a new tab of the active window"
 msgstr "Open bookmarks in a new tab of the active window"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
 msgid "Open in New _Window"
 msgstr "Open in New _Window"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
 msgid "Open bookmarks in new a window"
 msgstr "Open bookmarks in new a window"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:513
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:531
 msgid "Bookmarks"
 msgstr "Bookmarks"
 
-#: extensions/certificates/certificates.xml.in.in.h:1
+#: ../extensions/certificates/certificates.xml.in.in.h:1
 msgid "Certificates"
 msgstr "Certificates"
 
-#: extensions/certificates/certificates.xml.in.in.h:2
+#: ../extensions/certificates/certificates.xml.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "View the page certificate and manage the certificates"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:275
+#: ../extensions/certificates/ephy-certificates-extension.c:275
 msgid "Manage _Certificates"
 msgstr "Manage _Certificates"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:277
+#: ../extensions/certificates/ephy-certificates-extension.c:277
 msgid "Manage your certificates"
 msgstr "Manage your certificates"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:285
+#: ../extensions/certificates/ephy-certificates-extension.c:284
 msgid "Server _Certificate"
 msgstr "Server _Certificate"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:287
+#: ../extensions/certificates/ephy-certificates-extension.c:286
 msgid "Display the web server's certificate"
 msgstr "Display the web server's certificate"
 
-#: extensions/dashboard/dashboard.xml.in.in.h:1
+#: ../extensions/dashboard/dashboard.xml.in.in.h:1
 msgid "Dashboard"
 msgstr "Dashboard"
 
-#: extensions/dashboard/dashboard.xml.in.in.h:2
+#: ../extensions/dashboard/dashboard.xml.in.in.h:2
 msgid "Send browsing information to Dashboard"
 msgstr "Send browsing information to Dashboard"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:97
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
 msgstr "Check _HTML"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:99
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "Display HTML errors in the Error Viewer dialogue"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:104
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:104
 msgid "Check _Links"
 msgstr "Check _Links"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:106
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:106
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr "Display invalid hyperlinks in the Error Viewer dialogue"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:110
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:110
 msgid "_Error Viewer"
 msgstr "_Error Viewer"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:112
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:112
 msgid "Display web page errors"
 msgstr "Display web page errors"
 
-#: extensions/error-viewer/error-viewer.glade.h:1
+#: ../extensions/error-viewer/error-viewer.glade.h:1
 msgid "Cl_ear"
 msgstr "Cl_ear"
 
-#: extensions/error-viewer/error-viewer.glade.h:2
+#: ../extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
 msgstr "Error Viewer"
 
-#: extensions/error-viewer/error-viewer.xml.in.in.h:1
+#: ../extensions/error-viewer/error-viewer.xml.in.in.h:1
 msgid "Error viewer"
 msgstr "Error viewer"
 
-#: extensions/error-viewer/error-viewer.xml.in.in.h:2
+#: ../extensions/error-viewer/error-viewer.xml.in.in.h:2
 msgid "View error in web pages, validate web pages and check links"
 msgstr "View errors in web pages, validate web pages and check links"
 
 #. Don't bother looking for source lines -- they're not there
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:87
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:108
 #, c-format
 msgid ""
 "Error:\n"
@@ -263,7 +263,7 @@ msgstr ""
 "Error:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:112
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:138
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -272,14 +272,14 @@ msgstr ""
 "Javascript error in %s on line %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
 msgstr[0] "Found %d invalid link"
 msgstr[1] "Found %d invalid links"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -288,14 +288,14 @@ msgstr ""
 "Link error in %s:\n"
 "%s is unavailable."
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
 msgstr[0] "Checking %d Link on %s"
 msgstr[1] "Checking %d Links on %s"
 
-#: extensions/error-viewer/opensp/validate.cpp:167
+#: ../extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
 msgid ""
 "HTML error in %s on line %s:\n"
@@ -304,19 +304,19 @@ msgstr ""
 "HTML error in %s on line %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:165
+#: ../extensions/error-viewer/sgml-validator.c:165
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
 msgstr[0] "Found %d error"
 msgstr[1] "Found %d errors"
 
-#: extensions/error-viewer/sgml-validator.c:169
+#: ../extensions/error-viewer/sgml-validator.c:169
 #, c-format
 msgid "HTML Validation of %s complete"
 msgstr "HTML Validation of %s complete"
 
-#: extensions/error-viewer/sgml-validator.c:227
+#: ../extensions/error-viewer/sgml-validator.c:227
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -325,8 +325,8 @@ msgstr ""
 "HTML error in %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:229
-#: extensions/error-viewer/sgml-validator.c:245
+#: ../extensions/error-viewer/sgml-validator.c:229
+#: ../extensions/error-viewer/sgml-validator.c:245
 msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
@@ -334,7 +334,7 @@ msgstr ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
 
-#: extensions/error-viewer/sgml-validator.c:243
+#: ../extensions/error-viewer/sgml-validator.c:243
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
@@ -343,20 +343,20 @@ msgstr ""
 "HTML warning in %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:360
+#: ../extensions/error-viewer/sgml-validator.c:360
 #, c-format
 msgid "HTML error in %s:"
 msgstr "HTML error in %s:"
 
-#: extensions/error-viewer/sgml-validator.c:368
+#: ../extensions/error-viewer/sgml-validator.c:368
 msgid "Invalid character encoding"
 msgstr "Invalid character encoding"
 
-#: extensions/error-viewer/sgml-validator.c:373
+#: ../extensions/error-viewer/sgml-validator.c:373
 msgid "Unknown error while converting to UTF-8"
 msgstr "Unknown error while converting to UTF-8"
 
-#: extensions/error-viewer/sgml-validator.c:435
+#: ../extensions/error-viewer/sgml-validator.c:435
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -365,543 +365,582 @@ msgstr ""
 "HTML error in %s:\n"
 "No valid doctype specified."
 
-#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
 msgid "_Extensions"
 msgstr "_Extensions"
 
-#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
 msgid "Load and unload extensions"
 msgstr "Load and unload extensions"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.c:355
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:357
 msgid "Enabled"
 msgstr "Enabled"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.c:362
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: ../extensions/rss/rss-ui.c:646
 msgid "Description"
 msgstr "Description"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
 msgid "<b>Loaded Extensions</b>"
 msgstr "<b>Loaded Extensions</b>"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
 msgid "Extensions"
 msgstr "Extensions"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:1
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:1
 msgid "Activate and deactivate extensions"
 msgstr "Activate and deactivate extensions"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:2
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:2
 msgid "Extensions Manager"
 msgstr "Extensions Manager"
 
-#: extensions/find/eggfindbar.c:132
+#: ../extensions/find/eggfindbar.c:132
 msgid "Search string"
 msgstr "Search string"
 
-#: extensions/find/eggfindbar.c:133
+#: ../extensions/find/eggfindbar.c:133
 msgid "The name of the string to be found"
 msgstr "The name of the string to be searched for"
 
-#: extensions/find/eggfindbar.c:146
+#: ../extensions/find/eggfindbar.c:146
 msgid "Case sensitive"
 msgstr "Case sensitive"
 
-#: extensions/find/eggfindbar.c:147
+#: ../extensions/find/eggfindbar.c:147
 msgid "TRUE for a case sensitive search"
 msgstr "TRUE for a case sensitive search"
 
-#: extensions/find/eggfindbar.c:154
+#: ../extensions/find/eggfindbar.c:154
 msgid "Highlight color"
 msgstr "Highlight colour"
 
-#: extensions/find/eggfindbar.c:155
+#: ../extensions/find/eggfindbar.c:155
 msgid "Color of highlight for all matches"
 msgstr "Colour of highlight for all matches"
 
-#: extensions/find/eggfindbar.c:161
+#: ../extensions/find/eggfindbar.c:161
 msgid "Current color"
 msgstr "Current colour"
 
-#: extensions/find/eggfindbar.c:162
+#: ../extensions/find/eggfindbar.c:162
 msgid "Color of highlight for the current match"
 msgstr "Highlight colour for the current match"
 
-#: extensions/find/eggfindbar.c:286
+#: ../extensions/find/eggfindbar.c:286
 msgid "F_ind:"
 msgstr "F_ind:"
 
-#: extensions/find/eggfindbar.c:306
+#: ../extensions/find/eggfindbar.c:306
 msgid "_Previous"
 msgstr "_Previous"
 
-#: extensions/find/eggfindbar.c:308
+#: ../extensions/find/eggfindbar.c:308
 msgid "_Next"
 msgstr "_Next"
 
-#: extensions/find/eggfindbar.c:321
+#: ../extensions/find/eggfindbar.c:321
 msgid "C_ase Sensitive"
 msgstr "C_ase Sensitive"
 
-#: extensions/find/find.xml.in.in.h:1
+#: ../extensions/find/find.xml.in.in.h:1
 msgid "Find"
 msgstr "Find"
 
-#: extensions/find/find.xml.in.in.h:2
+#: ../extensions/find/find.xml.in.in.h:2
 msgid "Replace the find dialog with a find toolbar"
 msgstr "Replace the find dialogue with a find toolbar"
 
-#: extensions/gestures/gestures.xml.in.in.h:1
+#: ../extensions/gestures/gestures.xml.in.in.h:1
 msgid "Gestures"
 msgstr "Gestures"
 
-#: extensions/gestures/gestures.xml.in.in.h:2
+#: ../extensions/gestures/gestures.xml.in.in.h:2
 msgid "Perform actions with mouse gestures"
 msgstr "Perform actions with mouse gestures"
 
 #. How to describe this? It makes Epiphany "Just Work"
-#: extensions/net-monitor/net-monitor.xml.in.in.h:2
+#: ../extensions/net-monitor/net-monitor.xml.in.in.h:2
 msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
 msgstr "Automatically handle network online/offline status (EXPERIMENTAL!)"
 
-#: extensions/net-monitor/net-monitor.xml.in.in.h:3
+#: ../extensions/net-monitor/net-monitor.xml.in.in.h:3
 msgid "Network Connection Monitor"
 msgstr "Network Connection Monitor"
 
-#: extensions/page-info/ephy-page-info-extension.c:65
+#: ../extensions/page-info/ephy-page-info-extension.c:65
 msgid "_Page Info"
 msgstr "_Page Info"
 
-#: extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/page-info/ephy-page-info-extension.c:67
 msgid "Display page information in a dialog"
 msgstr "Display page information in a dialogue"
 
-#: extensions/page-info/page-info-dialog.c:673
+#: ../extensions/page-info/page-info-dialog.c:672
 msgid "Unknown type"
 msgstr "Unknown type"
 
-#: extensions/page-info/page-info-dialog.c:678
+#: ../extensions/page-info/page-info-dialog.c:677
 msgid "Full standards compliance"
 msgstr "Full standards compliance"
 
-#: extensions/page-info/page-info-dialog.c:681
+#: ../extensions/page-info/page-info-dialog.c:680
 msgid "Almost standards compliance"
 msgstr "Almost standards compliance"
 
-#: extensions/page-info/page-info-dialog.c:684
+#: ../extensions/page-info/page-info-dialog.c:683
 msgid "Compatibility"
 msgstr "Compatibility"
 
-#: extensions/page-info/page-info-dialog.c:688
+#: ../extensions/page-info/page-info-dialog.c:687
 msgid "Undetermined"
 msgstr "Undetermined"
 
-#: extensions/page-info/page-info-dialog.c:697
+#: ../extensions/page-info/page-info-dialog.c:696
 msgid "Not cached"
 msgstr "Not cached"
 
-#: extensions/page-info/page-info-dialog.c:700
+#: ../extensions/page-info/page-info-dialog.c:699
 msgid "Disk cache"
 msgstr "Disk cache"
 
-#: extensions/page-info/page-info-dialog.c:703
+#: ../extensions/page-info/page-info-dialog.c:702
 msgid "Memory cache"
 msgstr "Memory cache"
 
-#: extensions/page-info/page-info-dialog.c:706
+#: ../extensions/page-info/page-info-dialog.c:705
 msgid "Unknown cache"
 msgstr "Unknown cache"
 
-#: extensions/page-info/page-info-dialog.c:722
-#: extensions/page-info/page-info-dialog.c:833
+#: ../extensions/page-info/page-info-dialog.c:721
+#: ../extensions/page-info/page-info-dialog.c:832
 msgid "Unknown"
 msgstr "Unknown"
 
-#: extensions/page-info/page-info-dialog.c:727
+#: ../extensions/page-info/page-info-dialog.c:726
 msgid "No referrer"
 msgstr "No referrer"
 
-#: extensions/page-info/page-info-dialog.c:741
-#: extensions/page-info/page-info-dialog.c:757
+#: ../extensions/page-info/page-info-dialog.c:740
+#: ../extensions/page-info/page-info-dialog.c:756
 msgid "Not specified"
 msgstr "Not specified"
 
-#: extensions/page-info/page-info-dialog.c:818
+#: ../extensions/page-info/page-info-dialog.c:817
 msgid "Image"
 msgstr "Image"
 
-#: extensions/page-info/page-info-dialog.c:821
+#: ../extensions/page-info/page-info-dialog.c:820
 msgid "Embed"
 msgstr "Embed"
 
-#: extensions/page-info/page-info-dialog.c:824
+#: ../extensions/page-info/page-info-dialog.c:823
 msgid "Object"
 msgstr "Object"
 
-#: extensions/page-info/page-info-dialog.c:827
+#: ../extensions/page-info/page-info-dialog.c:826
 msgid "Applet"
 msgstr "Applet"
 
-#: extensions/page-info/page-info-dialog.c:830
+#: ../extensions/page-info/page-info-dialog.c:829
 msgid "Icon"
 msgstr "Icon"
 
-#: extensions/page-info/page-info-dialog.c:958
+#: ../extensions/page-info/page-info-dialog.c:957
 msgid "Save Medium As..."
 msgstr "Save Medium As..."
 
-#: extensions/page-info/page-info-dialog.c:975
+#: ../extensions/page-info/page-info-dialog.c:974
 msgid "Select a directory"
 msgstr "Select a directory"
 
-#: extensions/page-info/page-info-dialog.c:1055
+#: ../extensions/page-info/page-info-dialog.c:1054
 msgid "_Open"
 msgstr "_Open"
 
-#: extensions/page-info/page-info-dialog.c:1061
-#: extensions/page-info/page-info-dialog.c:1413
+#: ../extensions/page-info/page-info-dialog.c:1060
+#: ../extensions/page-info/page-info-dialog.c:1412
 msgid "_Copy Link Address"
 msgstr "_Copy Link Address"
 
-#: extensions/page-info/page-info-dialog.c:1067
+#: ../extensions/page-info/page-info-dialog.c:1066
 msgid "_Use as Background"
 msgstr "_Use as Background"
 
-#: extensions/page-info/page-info-dialog.c:1073
+#: ../extensions/page-info/page-info-dialog.c:1072
 msgid "_Save As..."
 msgstr "_Save As..."
 
-#: extensions/page-info/page-info-dialog.c:1250
-#: extensions/page-info/page-info-dialog.c:1485
+#: ../extensions/page-info/page-info-dialog.c:1249
+#: ../extensions/page-info/page-info-dialog.c:1484
 msgid "URL"
 msgstr "URL"
 
-#: extensions/page-info/page-info-dialog.c:1262
+#: ../extensions/page-info/page-info-dialog.c:1261
 msgid "Type"
 msgstr "Type"
 
-#: extensions/page-info/page-info-dialog.c:1274
+#: ../extensions/page-info/page-info-dialog.c:1273
 msgid "Alt Text"
 msgstr "Alt Text"
 
-#: extensions/page-info/page-info-dialog.c:1286
-#: extensions/page-info/page-info-dialog.c:1497
+#: ../extensions/page-info/page-info-dialog.c:1285
+#: ../extensions/page-info/page-info-dialog.c:1496
 msgid "Title"
 msgstr "Title"
 
-#: extensions/page-info/page-info-dialog.c:1298
+#: ../extensions/page-info/page-info-dialog.c:1297
 msgid "Width"
 msgstr "Width"
 
-#: extensions/page-info/page-info-dialog.c:1310
+#: ../extensions/page-info/page-info-dialog.c:1309
 msgid "Height"
 msgstr "Height"
 
-#: extensions/page-info/page-info-dialog.c:1509
+#: ../extensions/page-info/page-info-dialog.c:1508
 msgid "Relation"
 msgstr "Relation"
 
-#: extensions/page-info/page-info-dialog.c:1621
-#: extensions/page-info/page-info-dialog.c:1758
+#: ../extensions/page-info/page-info-dialog.c:1620
+#: ../extensions/page-info/page-info-dialog.c:1757
 msgid "Name"
 msgstr "Name"
 
-#: extensions/page-info/page-info-dialog.c:1633
+#: ../extensions/page-info/page-info-dialog.c:1632
 msgid "Method"
 msgstr "Method"
 
-#: extensions/page-info/page-info-dialog.c:1645
+#: ../extensions/page-info/page-info-dialog.c:1644
 msgid "Action"
 msgstr "Action"
 
-#: extensions/page-info/page-info-dialog.c:1724
+#: ../extensions/page-info/page-info-dialog.c:1723
 msgid "_Copy"
 msgstr "_Copy"
 
-#: extensions/page-info/page-info-dialog.c:1770
+#: ../extensions/page-info/page-info-dialog.c:1769
 msgid "Content"
 msgstr "Content"
 
-#: extensions/page-info/page-info-dialog.c:1869
+#: ../extensions/page-info/page-info-dialog.c:1868
 msgid "Page Metadata"
 msgstr "Page Metadata"
 
-#: extensions/page-info/page-info.glade.h:1
+#: ../extensions/page-info/page-info.glade.h:1
 msgid "<b>Dublin Core Metadata</b>"
 msgstr "<b>Dublin Core Metadata</b>"
 
-#: extensions/page-info/page-info.glade.h:2
+#: ../extensions/page-info/page-info.glade.h:2
 msgid "<b>Forms In Page</b>"
 msgstr "<b>Forms In Page</b>"
 
-#: extensions/page-info/page-info.glade.h:3
+#: ../extensions/page-info/page-info.glade.h:3
 msgid "<b>Links In Page</b>"
 msgstr "<b>Links In Page</b>"
 
-#: extensions/page-info/page-info.glade.h:4
+#: ../extensions/page-info/page-info.glade.h:4
 msgid "<b>Media In Page</b>"
 msgstr "<b>Media In Page</b>"
 
-#: extensions/page-info/page-info.glade.h:5
+#: ../extensions/page-info/page-info.glade.h:5
 msgid "<b>Medium View</b>"
 msgstr "<b>Medium View</b>"
 
-#: extensions/page-info/page-info.glade.h:6
+#: ../extensions/page-info/page-info.glade.h:6
 msgid "<b>Other Metadata</b>"
 msgstr "<b>Other Metadata</b>"
 
-#: extensions/page-info/page-info.glade.h:7
+#: ../extensions/page-info/page-info.glade.h:7
 msgid "<b>Rendering</b>"
 msgstr "<b>Rendering</b>"
 
-#: extensions/page-info/page-info.glade.h:8
+#: ../extensions/page-info/page-info.glade.h:8
 msgid "<b>Source File</b>"
 msgstr "<b>Source File</b>"
 
-#: extensions/page-info/page-info.glade.h:9
+#: ../extensions/page-info/page-info.glade.h:9
 msgid "<b>Web Page</b>"
 msgstr "<b>Web Page</b>"
 
-#: extensions/page-info/page-info.glade.h:10
+#: ../extensions/page-info/page-info.glade.h:10
 msgid "DYNAMIC"
 msgstr "DYNAMIC"
 
-#: extensions/page-info/page-info.glade.h:11
+#: ../extensions/page-info/page-info.glade.h:11
 msgid "Date:"
 msgstr "Date:"
 
-#: extensions/page-info/page-info.glade.h:12
+#: ../extensions/page-info/page-info.glade.h:12
 msgid "Description:"
 msgstr "Description:"
 
-#: extensions/page-info/page-info.glade.h:13
+#: ../extensions/page-info/page-info.glade.h:13
 msgid "Encoding:"
 msgstr "Encoding:"
 
-#: extensions/page-info/page-info.glade.h:14
+#: ../extensions/page-info/page-info.glade.h:14
 msgid "Expires:"
 msgstr "Expires:"
 
-#: extensions/page-info/page-info.glade.h:15
+#: ../extensions/page-info/page-info.glade.h:15
 msgid "Format:"
 msgstr "Format:"
 
-#: extensions/page-info/page-info.glade.h:16
+#: ../extensions/page-info/page-info.glade.h:16
 msgid "Forms"
 msgstr "Forms"
 
-#: extensions/page-info/page-info.glade.h:17
+#: ../extensions/page-info/page-info.glade.h:17
 msgid "General"
 msgstr "General"
 
-#: extensions/page-info/page-info.glade.h:18
+#: ../extensions/page-info/page-info.glade.h:18
 msgid "Links"
 msgstr "Links"
 
-#: extensions/page-info/page-info.glade.h:19
+#: ../extensions/page-info/page-info.glade.h:19
 msgid "Location:"
 msgstr "Location:"
 
-#: extensions/page-info/page-info.glade.h:20
+#: ../extensions/page-info/page-info.glade.h:20
 msgid "MIME type:"
 msgstr "MIME type:"
 
-#: extensions/page-info/page-info.glade.h:21
+#: ../extensions/page-info/page-info.glade.h:21
 msgid "Media"
 msgstr "Media"
 
-#: extensions/page-info/page-info.glade.h:22
+#: ../extensions/page-info/page-info.glade.h:22
 msgid "Metadata"
 msgstr "Metadata"
 
-#: extensions/page-info/page-info.glade.h:23
+#: ../extensions/page-info/page-info.glade.h:23
 msgid "Mode:"
 msgstr "Mode:"
 
-#: extensions/page-info/page-info.glade.h:24
+#: ../extensions/page-info/page-info.glade.h:24
 msgid "Modified:"
 msgstr "Modified:"
 
-#: extensions/page-info/page-info.glade.h:25
+#: ../extensions/page-info/page-info.glade.h:25
 msgid "Page Properties"
 msgstr "Page Properties"
 
-#: extensions/page-info/page-info.glade.h:26
+#: ../extensions/page-info/page-info.glade.h:26
 msgid "Referrer:"
 msgstr "Referrer:"
 
-#: extensions/page-info/page-info.glade.h:27
+#: ../extensions/page-info/page-info.glade.h:27
 msgid "Size:"
 msgstr "Size:"
 
-#: extensions/page-info/page-info.glade.h:28
+#: ../extensions/page-info/page-info.glade.h:28
 msgid "Source:"
 msgstr "Source:"
 
-#: extensions/page-info/page-info.glade.h:29
+#: ../extensions/page-info/page-info.glade.h:29
 msgid "Title:"
 msgstr "Title:"
 
-#: extensions/page-info/page-info.glade.h:30
+#: ../extensions/page-info/page-info.glade.h:30
 msgid "Type:"
 msgstr "Type:"
 
-#: extensions/page-info/page-info.glade.h:31
+#: ../extensions/page-info/page-info.glade.h:31
 msgid "_Save Media As..."
 msgstr "_Save Media As..."
 
-#: extensions/page-info/page-info.xml.in.in.h:1
+#: ../extensions/page-info/page-info.xml.in.in.h:1
 msgid "Display information about and links and media from the current page"
 msgstr "Display information, links and media from the current page"
 
-#: extensions/page-info/page-info.xml.in.in.h:2
+#: ../extensions/page-info/page-info.xml.in.in.h:2
 msgid "Page Info"
 msgstr "Page Info"
 
-#: extensions/sample-mozilla/sample-mozilla.xml.in.in.h:1
+#: ../extensions/rss/ephy-rss-extension.c:91
+msgid "News Feeds Subscription"
+msgstr "News Feeds Subscription"
+
+#: ../extensions/rss/ephy-rss-extension.c:93
+msgid "Subscribe to this website's news feed in your favorite news reader"
+msgstr "Subscribe to this website's news feed in your favourite news reader"
+
+#: ../extensions/rss/ephy-rss-extension.c:323
+msgid "Subscribe to site's news feed"
+msgstr "Subscribe to site's news feed"
+
+#: ../extensions/rss/rss-ui.c:234
+msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
+msgstr "<b><i>Unable to contact the feed reader; is it running?</i></b>"
+
+#: ../extensions/rss/rss-ui.c:236
+msgid "Retry"
+msgstr "Retry"
+
+#: ../extensions/rss/rss-ui.c:364
+msgid "_Copy Feed Address"
+msgstr "_Copy Feed Address"
+
+#: ../extensions/rss/rss-ui.c:639
+msgid "Subscribe"
+msgstr "Subscribe"
+
+#: ../extensions/rss/rss.xml.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "News Feed Subscription"
+
+#: ../extensions/rss/rss.xml.in.in.h:2
+msgid ""
+"Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr ""
+"Subscristr to a news feed offered by the webpage in your favourite news reader"
+
+#: ../extensions/sample-mozilla/sample-mozilla.xml.in.in.h:1
 msgid "A sample extension with mozilla backend"
 msgstr "A sample extension with Mozilla backend"
 
-#: extensions/sample-mozilla/sample-mozilla.xml.in.in.h:2
+#: ../extensions/sample-mozilla/sample-mozilla.xml.in.in.h:2
 msgid "Sample (Mozilla)"
 msgstr "Sample (Mozilla)"
 
-#: extensions/sample/sample.xml.in.in.h:1
+#: ../extensions/sample/sample.xml.in.in.h:1
 msgid "A sample extension"
 msgstr "A sample extension"
 
-#: extensions/sample/sample.xml.in.in.h:2
+#: ../extensions/sample/sample.xml.in.in.h:2
 msgid "Sample"
 msgstr "Sample"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:145
+#: ../extensions/select-stylesheet/ephy-css-menu.c:145
 msgid "Render the page without using a style"
 msgstr "Render the page without using a style"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:148
+#: ../extensions/select-stylesheet/ephy-css-menu.c:148
 msgid "Render the page using the default style"
 msgstr "Render the page using the default style"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:151
+#: ../extensions/select-stylesheet/ephy-css-menu.c:151
 #, c-format
 msgid "Render the page using the \"%s\" style"
 msgstr "Render the page using the \"%s\" style"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:309
+#: ../extensions/select-stylesheet/ephy-css-menu.c:309
 msgid "St_yle"
 msgstr "St_yle"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:310
+#: ../extensions/select-stylesheet/ephy-css-menu.c:310
 msgid "Select a different style for this page"
 msgstr "Select a different style for this page"
 
-#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
 msgid "Default"
 msgstr "Default"
 
-#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
 msgid "None"
 msgstr "None"
 
-#: extensions/select-stylesheet/select-stylesheet.xml.in.in.h:1
+#: ../extensions/select-stylesheet/select-stylesheet.xml.in.in.h:1
 msgid "Select Stylesheet"
 msgstr "Select Stylesheet"
 
-#: extensions/select-stylesheet/select-stylesheet.xml.in.in.h:2
+#: ../extensions/select-stylesheet/select-stylesheet.xml.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
 msgstr "Select between different stylesheets offered by the web page"
 
-#: extensions/sidebar/ephy-sidebar.c:176
+#: ../extensions/sidebar/ephy-sidebar.c:176
 msgid "No Sidebars installed"
 msgstr "No Sidebars installed"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:104
+#: ../extensions/sidebar/ephy-sidebar-extension.c:104
 msgid "_Sidebar"
 msgstr "_Sidebar"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:105
+#: ../extensions/sidebar/ephy-sidebar-extension.c:105
 msgid "Show or hide the sidebar"
 msgstr "Show or hide the sidebar"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:407
+#: ../extensions/sidebar/ephy-sidebar-extension.c:407
 #, c-format
 msgid "Add \"%s\" to the Sidebar?"
 msgstr "Add \"%s\" to the Sidebar?"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:411
+#: ../extensions/sidebar/ephy-sidebar-extension.c:411
 #, c-format
 msgid "The source to the new sidebar page is %s."
 msgstr "The source to the new sidebar page is %s."
 
-#: extensions/sidebar/ephy-sidebar-extension.c:413
+#: ../extensions/sidebar/ephy-sidebar-extension.c:413
 msgid "Add Sidebar"
 msgstr "Add Sidebar"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:417
+#: ../extensions/sidebar/ephy-sidebar-extension.c:417
 msgid "_Add Sidebar"
 msgstr "_Add Sidebar"
 
-#: extensions/sidebar/sidebar.xml.in.in.h:1
+#: ../extensions/sidebar/sidebar.xml.in.in.h:1
 msgid "Adds a sidebar to windows"
 msgstr "Adds a sidebar to windows"
 
-#: extensions/sidebar/sidebar.xml.in.in.h:2
+#: ../extensions/sidebar/sidebar.xml.in.in.h:2
 msgid "Sidebar"
 msgstr "Sidebar"
 
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:578
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:579
 msgid "_Look Up"
 msgstr "_Look Up"
 
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:585
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:586
 msgid "_GNOME Dictionary"
 msgstr "_GNOME Dictionary"
 
-#: extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:1
+#: ../extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:1
 msgid "Look up the selected text with a smart bookmark"
 msgstr "Look up the selected text with a smart bookmark"
 
-#: extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:2
+#: ../extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:2
 msgid "Smart Bookmarks"
 msgstr "Smart Bookmarks"
 
-#: extensions/tab-groups/tab-groups.xml.in.in.h:1
+#: ../extensions/tab-groups/tab-groups.xml.in.in.h:1
 msgid "Groups newly opened tabs"
 msgstr "Groups newly opened tabs"
 
-#: extensions/tab-groups/tab-groups.xml.in.in.h:2
+#: ../extensions/tab-groups/tab-groups.xml.in.in.h:2
 msgid "Tab Groups"
 msgstr "Tab Groups"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:190
+#: ../extensions/tabsmenu/ephy-tab-move-menu.c:190
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"
 msgstr[0] "Window '%s' (%d tab)"
 msgstr[1] "Window '%s' (%d tabs)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:302
+#: ../extensions/tabsmenu/ephy-tab-move-menu.c:301
 msgid "Move Tab To Window"
 msgstr "Move Tab To Window"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:303
+#: ../extensions/tabsmenu/ephy-tab-move-menu.c:302
 msgid "Move the current tab to a different window"
 msgstr "Move the current tab to a different window"
 
-#: extensions/tabsmenu/tabsmenu.xml.in.in.h:1
+#: ../extensions/tabsmenu/tabsmenu.xml.in.in.h:1
 msgid "Move tabs between windows"
 msgstr "Move tabs between windows"
 
-#: extensions/tabsmenu/tabsmenu.xml.in.in.h:2
+#: ../extensions/tabsmenu/tabsmenu.xml.in.in.h:2
 msgid "Tabsmenu"
 msgstr "Tabs menu"
 
-#: extensions/tab-states/tab-states.xml.in.in.h:1
+#: ../extensions/tab-states/tab-states.xml.in.in.h:1
 msgid "Indicates new content in background tabs"
 msgstr "Indicates new content in background tabs"
 
-#: extensions/tab-states/tab-states.xml.in.in.h:2
+#: ../extensions/tab-states/tab-states.xml.in.in.h:2
 msgid "Tab States"
 msgstr "Tab States"
