@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-03-11 10:56+0100\n"
-"PO-Revision-Date: 2005-03-11 15:28+0100\n"
+"POT-Creation-Date: 2005-05-06 02:53+0000\n"
+"PO-Revision-Date: 2005-05-06 09:44+0200\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,22 +18,22 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: extensions/actions/action-properties.glade.h:1
+#: ../extensions/actions/action-properties.glade.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
 msgstr "<span weight=\"bold\">Týká se</span>"
 
-#: extensions/actions/action-properties.glade.h:2
+#: ../extensions/actions/action-properties.glade.h:2
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">Obecné</span>"
 
-#: extensions/actions/action-properties.glade.h:3
+#: ../extensions/actions/action-properties.glade.h:3
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "images."
 msgstr ""
 "Je-li tato možnost povolena, bude akce obsažena v kontextovém menu obrázků."
 
-#: extensions/actions/action-properties.glade.h:4
+#: ../extensions/actions/action-properties.glade.h:4
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "links and pages."
@@ -41,11 +41,11 @@ msgstr ""
 "Je-li tato možnost povolena, bude akce obsažena v kontextovém menu odkazů a "
 "stránek."
 
-#: extensions/actions/action-properties.glade.h:5
+#: ../extensions/actions/action-properties.glade.h:5
 msgid "The action description."
 msgstr "Popis akce."
 
-#: extensions/actions/action-properties.glade.h:6
+#: ../extensions/actions/action-properties.glade.h:6
 msgid ""
 "The action name. If a character is preceded by an underscore, that character "
 "will be used as the access key for the menu item."
@@ -53,7 +53,7 @@ msgstr ""
 "Název akce. Je-li před znakem podtržítko, bude se tento znak používat jako "
 "klávesová zkratka pro položku menu."
 
-#: extensions/actions/action-properties.glade.h:7
+#: ../extensions/actions/action-properties.glade.h:7
 msgid ""
 "The command to execute when the action is activated. The URL of the link, "
 "image or page will be appended to the command."
@@ -61,56 +61,56 @@ msgstr ""
 "Příkaz, který spustit, když je akce aktivována. K příkazu bude připojeno URL "
 "odkazu, obrázku nebo stránky."
 
-#: extensions/actions/action-properties.glade.h:8
+#: ../extensions/actions/action-properties.glade.h:8
 msgid "_Command:"
 msgstr "_Příkaz:"
 
-#: extensions/actions/action-properties.glade.h:9
+#: ../extensions/actions/action-properties.glade.h:9
 msgid "_Description:"
 msgstr "_Popis:"
 
-#: extensions/actions/action-properties.glade.h:10
+#: ../extensions/actions/action-properties.glade.h:10
 msgid "_Images"
 msgstr "_Obrázky"
 
-#: extensions/actions/action-properties.glade.h:11
+#: ../extensions/actions/action-properties.glade.h:11
 msgid "_Name:"
 msgstr "_Název:"
 
-#: extensions/actions/action-properties.glade.h:12
+#: ../extensions/actions/action-properties.glade.h:12
 msgid "_Pages"
 msgstr "_Stránky"
 
-#: extensions/actions/actions-editor.glade.h:1
-#: extensions/actions/actions.xml.in.in.h:1
+#: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions.xml.in.in.h:1
 msgid "Actions"
 msgstr "Akce"
 
-#: extensions/actions/actions.xml.in.in.h:2
+#: ../extensions/actions/actions.xml.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
 msgstr "Spouštět libovolné přikazy z kontextového menu"
 
-#: extensions/actions/ephy-actions-extension.c:97
+#: ../extensions/actions/ephy-actions-extension.c:94
 msgid "_Actions"
 msgstr "_Akce"
 
-#: extensions/actions/ephy-actions-extension.c:98
+#: ../extensions/actions/ephy-actions-extension.c:95
 msgid "Customize actions"
 msgstr "Upravit akce"
 
-#: extensions/actions/ephy-actions-extension.c:409
+#: ../extensions/actions/ephy-actions-extension.c:408
 msgid "Could not run command"
 msgstr "Nemohu spustit příkaz"
 
-#: extensions/actions/ephy-actions-extension.c:412
+#: ../extensions/actions/ephy-actions-extension.c:411
 msgid "Could not Run Command"
 msgstr "Nemohu spustit příkaz"
 
-#: extensions/actions/ephy-actions-extension-editor-dialog.c:490
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:490
 msgid "No action selected."
 msgstr "Nevybrána žádná akce."
 
-#: extensions/actions/ephy-actions-extension-editor-dialog.c:500
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:500
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
@@ -118,145 +118,147 @@ msgstr[0] "vybrána %i akce."
 msgstr[1] "vybrány %i akce."
 msgstr[2] "vybráno %i akcí."
 
-#: extensions/actions/ephy-actions-extension-properties-dialog.c:312
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:312
 msgid "Add Action"
 msgstr "Přidat akci"
 
-#: extensions/actions/ephy-actions-extension-properties-dialog.c:421
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:421
 #, c-format
 msgid "%s Properties"
 msgstr "Vlastnosti %s"
 
-#: extensions/actions/ephy-actions-extension-properties-dialog.c:426
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:426
 msgid "Action Properties"
 msgstr "Vlastnosti akce"
 
-#: extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:1
+#: ../extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:1
 msgid "Add a bookmarks menu to the panel's notification area"
 msgstr "Přidat menu záložek do oznamovací oblasti panelu"
 
-#: extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:2
+#: ../extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:2
 msgid "Bookmarks Tray"
 msgstr "Záložky v oznamovací oblasti"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
 msgid "_Edit Bookmarks"
 msgstr "_Upravit záložky"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
 msgid "Open the bookmarks window"
 msgstr "Otevřít okno záložek"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
 msgid "Open in _Current Tab"
 msgstr "Otevírat v _aktuální kartě"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
 msgid "Open bookmarks in the current tab of the active window"
 msgstr "Otevírat záložky v aktuální kartě aktivního okna"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
 msgid "Open in New _Tab"
 msgstr "Otevírat v nové _kartě"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
 msgid "Open bookmarks in a new tab of the active window"
 msgstr "Otevírat záložky v nové kartě aktivního okna"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
 msgid "Open in New _Window"
 msgstr "Otevírat v novém _okně"
 
 # FIXME: s/new a/a new/
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
 msgid "Open bookmarks in new a window"
 msgstr "Otevírat záložky v novém okně"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:513
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:531
 msgid "Bookmarks"
 msgstr "Záložky"
 
-#: extensions/certificates/certificates.xml.in.in.h:1
+#: ../extensions/certificates/certificates.xml.in.in.h:1
 msgid "Certificates"
 msgstr "Certifikáty"
 
-#: extensions/certificates/certificates.xml.in.in.h:2
+#: ../extensions/certificates/certificates.xml.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Zobrazit certifikát stránky a spravovat certifikáty"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:275
+#: ../extensions/certificates/ephy-certificates-extension.c:275
 msgid "Manage _Certificates"
 msgstr "Spravovat _certifikáty"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:277
+#: ../extensions/certificates/ephy-certificates-extension.c:277
 msgid "Manage your certificates"
 msgstr "Spravovat vaše certifikáty"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:285
+#: ../extensions/certificates/ephy-certificates-extension.c:284
 msgid "Server _Certificate"
 msgstr "_Certifikát serveru"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:287
+#: ../extensions/certificates/ephy-certificates-extension.c:286
 msgid "Display the web server's certificate"
 msgstr "Zobrazit certifikát WWW serveru"
 
-#: extensions/dashboard/dashboard.xml.in.in.h:1
+#: ../extensions/dashboard/dashboard.xml.in.in.h:1
 msgid "Dashboard"
 msgstr "Dashboard"
 
-#: extensions/dashboard/dashboard.xml.in.in.h:2
+#: ../extensions/dashboard/dashboard.xml.in.in.h:2
 msgid "Send browsing information to Dashboard"
 msgstr "Posílat informace o prohlížení Dashboardu"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:97
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
 msgstr "Zkontrolovat _HTML"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:99
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "Zobrazit chyby HTML v dialogu Prohlížeče chyb"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:104
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:104
 msgid "Check _Links"
 msgstr "Zkontrolovat _odkazy"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:106
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:106
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr "Zobrazit neplatné odkazy v dialogu Prohlížeče chyb"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:110
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:110
 msgid "_Error Viewer"
 msgstr "_Prohlížeč chyb"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:112
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:112
 msgid "Display web page errors"
 msgstr "Zobrazovat chyby WWW stránek"
 
-#: extensions/error-viewer/error-viewer.glade.h:1
+#: ../extensions/error-viewer/error-viewer.glade.h:1
 msgid "Cl_ear"
 msgstr "_Vymazat"
 
-#: extensions/error-viewer/error-viewer.glade.h:2
+#: ../extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
 msgstr "Prohlížeč chyb"
 
-#: extensions/error-viewer/error-viewer.xml.in.in.h:1
+#: ../extensions/error-viewer/error-viewer.xml.in.in.h:1
 msgid "Error viewer"
 msgstr "Prohlížeč chyb"
 
-#: extensions/error-viewer/error-viewer.xml.in.in.h:2
+#: ../extensions/error-viewer/error-viewer.xml.in.in.h:2
 msgid "View error in web pages, validate web pages and check links"
-msgstr "Zobrazit chyby ve WWW stránkách, ověřovat platnost WWW stránek a kontrolovat odkazy"
+msgstr ""
+"Zobrazit chyby ve WWW stránkách, ověřovat platnost WWW stránek a kontrolovat "
+"odkazy"
 
 #. Don't bother looking for source lines -- they're not there
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:87
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:108
 #, c-format
 msgid ""
 "Error:\n"
@@ -265,7 +267,7 @@ msgstr ""
 "Chyba:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:112
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:138
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -274,7 +276,7 @@ msgstr ""
 "Chyba Javascriptu v %s na řádku %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
@@ -282,7 +284,7 @@ msgstr[0] "Nalezen %d neplatný odkaz"
 msgstr[1] "Nalezeny %d neplatné odkazy"
 msgstr[2] "Nalezeno %d neplatných odkazů"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -291,7 +293,7 @@ msgstr ""
 "Chyba odkazu v %s:\n"
 "%s není k dispozici."
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
@@ -299,7 +301,7 @@ msgstr[0] "Kontroluji %d odkaz v %s"
 msgstr[1] "Kontroluji %d odkazy v %s"
 msgstr[2] "Kontroluji %d odkazů v %s"
 
-#: extensions/error-viewer/opensp/validate.cpp:167
+#: ../extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
 msgid ""
 "HTML error in %s on line %s:\n"
@@ -308,7 +310,7 @@ msgstr ""
 "Chyba HTML v %s na řádku %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:165
+#: ../extensions/error-viewer/sgml-validator.c:165
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
@@ -316,12 +318,12 @@ msgstr[0] "Nalezena %d chyba"
 msgstr[1] "Nalezeny %d chyby"
 msgstr[2] "Nalezeno %d chyb"
 
-#: extensions/error-viewer/sgml-validator.c:169
+#: ../extensions/error-viewer/sgml-validator.c:169
 #, c-format
 msgid "HTML Validation of %s complete"
 msgstr "Ověření platnosti HTML v %s dokončeno"
 
-#: extensions/error-viewer/sgml-validator.c:227
+#: ../extensions/error-viewer/sgml-validator.c:227
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -330,8 +332,8 @@ msgstr ""
 "Chyba HTML v %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:229
-#: extensions/error-viewer/sgml-validator.c:245
+#: ../extensions/error-viewer/sgml-validator.c:229
+#: ../extensions/error-viewer/sgml-validator.c:245
 msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
@@ -339,7 +341,7 @@ msgstr ""
 "Doctype je \"XHTML\", ale typ obsahu je \"text/html\". Použijte místo něj "
 "\"application/xhtml+xml\"."
 
-#: extensions/error-viewer/sgml-validator.c:243
+#: ../extensions/error-viewer/sgml-validator.c:243
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
@@ -348,20 +350,20 @@ msgstr ""
 "Varovnání HTML v %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:360
+#: ../extensions/error-viewer/sgml-validator.c:360
 #, c-format
 msgid "HTML error in %s:"
 msgstr "Chyba HTML v %s:"
 
-#: extensions/error-viewer/sgml-validator.c:368
+#: ../extensions/error-viewer/sgml-validator.c:368
 msgid "Invalid character encoding"
 msgstr "Neplatné kódování znaků"
 
-#: extensions/error-viewer/sgml-validator.c:373
+#: ../extensions/error-viewer/sgml-validator.c:373
 msgid "Unknown error while converting to UTF-8"
 msgstr "Neznámá chyba při převodu do UTF-8"
 
-#: extensions/error-viewer/sgml-validator.c:435
+#: ../extensions/error-viewer/sgml-validator.c:435
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -370,517 +372,555 @@ msgstr ""
 "Chyba HTML v %s:\n"
 "Nebyl určen platný doctype."
 
-#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
 msgid "_Extensions"
 msgstr "_Rozšíření"
 
-#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
 msgid "Load and unload extensions"
 msgstr "Načíst a uvolnit rozšíření"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.c:355
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:357
 msgid "Enabled"
 msgstr "Povoleno"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.c:362
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: ../extensions/rss/rss-ui.c:646
 msgid "Description"
 msgstr "Popis"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
 msgid "<b>Loaded Extensions</b>"
 msgstr "<b>Načtená rozšíření</b>"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
 msgid "Extensions"
 msgstr "Rozšíření"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:1
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:1
 msgid "Activate and deactivate extensions"
 msgstr "Ativovat a deaktivovat rozšíření"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:2
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:2
 msgid "Extensions Manager"
 msgstr "Správce rozšíření"
 
-#: extensions/find/eggfindbar.c:132
+#: ../extensions/find/eggfindbar.c:132
 msgid "Search string"
 msgstr "Hledaný řetězec"
 
-#: extensions/find/eggfindbar.c:133
+#: ../extensions/find/eggfindbar.c:133
 msgid "The name of the string to be found"
 msgstr "Název hledaného řetězce"
 
-#: extensions/find/eggfindbar.c:146
+#: ../extensions/find/eggfindbar.c:146
 msgid "Case sensitive"
 msgstr "Rozlišovat velikost písmen"
 
-#: extensions/find/eggfindbar.c:147
+#: ../extensions/find/eggfindbar.c:147
 msgid "TRUE for a case sensitive search"
 msgstr "TRUE pro hledání rozlišující velikost písmen"
 
-#: extensions/find/eggfindbar.c:154
+#: ../extensions/find/eggfindbar.c:154
 msgid "Highlight color"
 msgstr "Barva zvýraznění"
 
-#: extensions/find/eggfindbar.c:155
+#: ../extensions/find/eggfindbar.c:155
 msgid "Color of highlight for all matches"
 msgstr "Barva zvýraznění všech výskytů"
 
-#: extensions/find/eggfindbar.c:161
+#: ../extensions/find/eggfindbar.c:161
 msgid "Current color"
 msgstr "Barva aktuálního"
 
-#: extensions/find/eggfindbar.c:162
+#: ../extensions/find/eggfindbar.c:162
 msgid "Color of highlight for the current match"
 msgstr "Barva zvýraznění aktuálního výskytu"
 
-#: extensions/find/eggfindbar.c:286
+#: ../extensions/find/eggfindbar.c:286
 msgid "F_ind:"
 msgstr "_Hledat:"
 
-#: extensions/find/eggfindbar.c:306
+#: ../extensions/find/eggfindbar.c:306
 msgid "_Previous"
 msgstr "_Předchozí"
 
-#: extensions/find/eggfindbar.c:308
+#: ../extensions/find/eggfindbar.c:308
 msgid "_Next"
 msgstr "_Následující"
 
-#: extensions/find/eggfindbar.c:321
+#: ../extensions/find/eggfindbar.c:321
 msgid "C_ase Sensitive"
 msgstr "_Rozlišovat velikost písmen"
 
-#: extensions/find/find.xml.in.in.h:1
+#: ../extensions/find/find.xml.in.in.h:1
 msgid "Find"
 msgstr "Hledat"
 
-#: extensions/find/find.xml.in.in.h:2
+#: ../extensions/find/find.xml.in.in.h:2
 msgid "Replace the find dialog with a find toolbar"
 msgstr "Nahradit dialog hledání lištou hledání"
 
-#: extensions/gestures/gestures.xml.in.in.h:1
+#: ../extensions/gestures/gestures.xml.in.in.h:1
 msgid "Gestures"
 msgstr "Gesta"
 
-#: extensions/gestures/gestures.xml.in.in.h:2
+#: ../extensions/gestures/gestures.xml.in.in.h:2
 msgid "Perform actions with mouse gestures"
 msgstr "Provádět akce gesty myši"
 
 #. How to describe this? It makes Epiphany "Just Work"
-#: extensions/net-monitor/net-monitor.xml.in.in.h:2
+#: ../extensions/net-monitor/net-monitor.xml.in.in.h:2
 msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
 msgstr "Automaticky spravovat stav online/off-line (EXPERIMENTÁLNÍ!)"
 
-#: extensions/net-monitor/net-monitor.xml.in.in.h:3
+#: ../extensions/net-monitor/net-monitor.xml.in.in.h:3
 msgid "Network Connection Monitor"
 msgstr "Sledování připojení k síti"
 
-#: extensions/page-info/ephy-page-info-extension.c:65
+#: ../extensions/page-info/ephy-page-info-extension.c:65
 msgid "_Page Info"
 msgstr "_Informace o stránce"
 
-#: extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/page-info/ephy-page-info-extension.c:67
 msgid "Display page information in a dialog"
 msgstr "Zobrazit informace o stránce v dialogu"
 
-#: extensions/page-info/page-info-dialog.c:673
+#: ../extensions/page-info/page-info-dialog.c:672
 msgid "Unknown type"
 msgstr "Neznámý typ"
 
-#: extensions/page-info/page-info-dialog.c:678
+#: ../extensions/page-info/page-info-dialog.c:677
 msgid "Full standards compliance"
 msgstr "Úplné splňování standardu"
 
-#: extensions/page-info/page-info-dialog.c:681
+#: ../extensions/page-info/page-info-dialog.c:680
 msgid "Almost standards compliance"
 msgstr "Téměř splňování standardu"
 
-#: extensions/page-info/page-info-dialog.c:684
+#: ../extensions/page-info/page-info-dialog.c:683
 msgid "Compatibility"
 msgstr "Kompatibilita"
 
-#: extensions/page-info/page-info-dialog.c:688
+#: ../extensions/page-info/page-info-dialog.c:687
 msgid "Undetermined"
 msgstr "Neurčeno"
 
-#: extensions/page-info/page-info-dialog.c:697
+#: ../extensions/page-info/page-info-dialog.c:696
 msgid "Not cached"
 msgstr "Nekešováno"
 
-#: extensions/page-info/page-info-dialog.c:700
+#: ../extensions/page-info/page-info-dialog.c:699
 msgid "Disk cache"
 msgstr "Cache na disku"
 
-#: extensions/page-info/page-info-dialog.c:703
+#: ../extensions/page-info/page-info-dialog.c:702
 msgid "Memory cache"
 msgstr "Cache v paměti"
 
-#: extensions/page-info/page-info-dialog.c:706
+#: ../extensions/page-info/page-info-dialog.c:705
 msgid "Unknown cache"
 msgstr "Neznámá cache"
 
-#: extensions/page-info/page-info-dialog.c:722
-#: extensions/page-info/page-info-dialog.c:833
+#: ../extensions/page-info/page-info-dialog.c:721
+#: ../extensions/page-info/page-info-dialog.c:832
 msgid "Unknown"
 msgstr "Neznámé"
 
-#: extensions/page-info/page-info-dialog.c:727
+#: ../extensions/page-info/page-info-dialog.c:726
 msgid "No referrer"
 msgstr "Žádný referrer"
 
-#: extensions/page-info/page-info-dialog.c:741
-#: extensions/page-info/page-info-dialog.c:757
+#: ../extensions/page-info/page-info-dialog.c:740
+#: ../extensions/page-info/page-info-dialog.c:756
 msgid "Not specified"
 msgstr "Neurčeno"
 
-#: extensions/page-info/page-info-dialog.c:818
+#: ../extensions/page-info/page-info-dialog.c:817
 msgid "Image"
 msgstr "Obrázek"
 
-#: extensions/page-info/page-info-dialog.c:821
+#: ../extensions/page-info/page-info-dialog.c:820
 msgid "Embed"
 msgstr "Vloženo"
 
-#: extensions/page-info/page-info-dialog.c:824
+#: ../extensions/page-info/page-info-dialog.c:823
 msgid "Object"
 msgstr "Objekt"
 
-#: extensions/page-info/page-info-dialog.c:827
+#: ../extensions/page-info/page-info-dialog.c:826
 msgid "Applet"
 msgstr "Aplet"
 
-#: extensions/page-info/page-info-dialog.c:830
+#: ../extensions/page-info/page-info-dialog.c:829
 msgid "Icon"
 msgstr "Ikona"
 
-#: extensions/page-info/page-info-dialog.c:958
+#: ../extensions/page-info/page-info-dialog.c:957
 msgid "Save Medium As..."
 msgstr "Uložit médium jako..."
 
-#: extensions/page-info/page-info-dialog.c:975
+#: ../extensions/page-info/page-info-dialog.c:974
 msgid "Select a directory"
 msgstr "Zvolte adresář"
 
-#: extensions/page-info/page-info-dialog.c:1055
+#: ../extensions/page-info/page-info-dialog.c:1054
 msgid "_Open"
 msgstr "_Otevřít"
 
-#: extensions/page-info/page-info-dialog.c:1061
-#: extensions/page-info/page-info-dialog.c:1413
+#: ../extensions/page-info/page-info-dialog.c:1060
+#: ../extensions/page-info/page-info-dialog.c:1412
 msgid "_Copy Link Address"
 msgstr "_Kopírovat adresu odkazu"
 
-#: extensions/page-info/page-info-dialog.c:1067
+#: ../extensions/page-info/page-info-dialog.c:1066
 msgid "_Use as Background"
 msgstr "_Použít jako pozadí"
 
-#: extensions/page-info/page-info-dialog.c:1073
+#: ../extensions/page-info/page-info-dialog.c:1072
 msgid "_Save As..."
 msgstr "_Uložit jako..."
 
-#: extensions/page-info/page-info-dialog.c:1250
-#: extensions/page-info/page-info-dialog.c:1485
+#: ../extensions/page-info/page-info-dialog.c:1249
+#: ../extensions/page-info/page-info-dialog.c:1484
 msgid "URL"
 msgstr "URL"
 
-#: extensions/page-info/page-info-dialog.c:1262
+#: ../extensions/page-info/page-info-dialog.c:1261
 msgid "Type"
 msgstr "Typ"
 
-#: extensions/page-info/page-info-dialog.c:1274
+#: ../extensions/page-info/page-info-dialog.c:1273
 msgid "Alt Text"
 msgstr "Alternativní text"
 
-#: extensions/page-info/page-info-dialog.c:1286
-#: extensions/page-info/page-info-dialog.c:1497
+#: ../extensions/page-info/page-info-dialog.c:1285
+#: ../extensions/page-info/page-info-dialog.c:1496
 msgid "Title"
 msgstr "Nadpis"
 
-#: extensions/page-info/page-info-dialog.c:1298
+#: ../extensions/page-info/page-info-dialog.c:1297
 msgid "Width"
 msgstr "Šířka"
 
-#: extensions/page-info/page-info-dialog.c:1310
+#: ../extensions/page-info/page-info-dialog.c:1309
 msgid "Height"
 msgstr "Výška"
 
-#: extensions/page-info/page-info-dialog.c:1509
+#: ../extensions/page-info/page-info-dialog.c:1508
 msgid "Relation"
 msgstr "Vztah"
 
-#: extensions/page-info/page-info-dialog.c:1621
-#: extensions/page-info/page-info-dialog.c:1758
+#: ../extensions/page-info/page-info-dialog.c:1620
+#: ../extensions/page-info/page-info-dialog.c:1757
 msgid "Name"
 msgstr "Název"
 
-#: extensions/page-info/page-info-dialog.c:1633
+#: ../extensions/page-info/page-info-dialog.c:1632
 msgid "Method"
 msgstr "Metoda"
 
-#: extensions/page-info/page-info-dialog.c:1645
+#: ../extensions/page-info/page-info-dialog.c:1644
 msgid "Action"
 msgstr "Akce"
 
-#: extensions/page-info/page-info-dialog.c:1724
+#: ../extensions/page-info/page-info-dialog.c:1723
 msgid "_Copy"
 msgstr "_Kopírovat"
 
-#: extensions/page-info/page-info-dialog.c:1770
+#: ../extensions/page-info/page-info-dialog.c:1769
 msgid "Content"
 msgstr "Obsah"
 
-#: extensions/page-info/page-info-dialog.c:1869
+#: ../extensions/page-info/page-info-dialog.c:1868
 msgid "Page Metadata"
 msgstr "Metadata stránky"
 
-#: extensions/page-info/page-info.glade.h:1
+#: ../extensions/page-info/page-info.glade.h:1
 msgid "<b>Dublin Core Metadata</b>"
 msgstr "<b>Dublin Core Metadata</b>"
 
-#: extensions/page-info/page-info.glade.h:2
+#: ../extensions/page-info/page-info.glade.h:2
 msgid "<b>Forms In Page</b>"
 msgstr "<b>Formuláře na stránce</b>"
 
-#: extensions/page-info/page-info.glade.h:3
+#: ../extensions/page-info/page-info.glade.h:3
 msgid "<b>Links In Page</b>"
 msgstr "<b>Odkazy na stránce</b>"
 
-#: extensions/page-info/page-info.glade.h:4
+#: ../extensions/page-info/page-info.glade.h:4
 msgid "<b>Media In Page</b>"
 msgstr "<b>Média na stránce</b>"
 
-#: extensions/page-info/page-info.glade.h:5
+#: ../extensions/page-info/page-info.glade.h:5
 msgid "<b>Medium View</b>"
 msgstr "<b>Pohled na médium</b>"
 
-#: extensions/page-info/page-info.glade.h:6
+#: ../extensions/page-info/page-info.glade.h:6
 msgid "<b>Other Metadata</b>"
 msgstr "<b>Jiná metadata</b>"
 
-#: extensions/page-info/page-info.glade.h:7
+#: ../extensions/page-info/page-info.glade.h:7
 msgid "<b>Rendering</b>"
 msgstr "<b>Vykreslování</b>"
 
-#: extensions/page-info/page-info.glade.h:8
+#: ../extensions/page-info/page-info.glade.h:8
 msgid "<b>Source File</b>"
 msgstr "<b>Zdrojový soubor</b>"
 
-#: extensions/page-info/page-info.glade.h:9
+#: ../extensions/page-info/page-info.glade.h:9
 msgid "<b>Web Page</b>"
 msgstr "<b>WWW stránka</b>"
 
-#: extensions/page-info/page-info.glade.h:10
+#: ../extensions/page-info/page-info.glade.h:10
 msgid "DYNAMIC"
 msgstr "DYNAMICKÉ"
 
-#: extensions/page-info/page-info.glade.h:11
+#: ../extensions/page-info/page-info.glade.h:11
 msgid "Date:"
 msgstr "Datum:"
 
-#: extensions/page-info/page-info.glade.h:12
+#: ../extensions/page-info/page-info.glade.h:12
 msgid "Description:"
 msgstr "Popis:"
 
-#: extensions/page-info/page-info.glade.h:13
+#: ../extensions/page-info/page-info.glade.h:13
 msgid "Encoding:"
 msgstr "Kódování:"
 
-#: extensions/page-info/page-info.glade.h:14
+#: ../extensions/page-info/page-info.glade.h:14
 msgid "Expires:"
 msgstr "Vyprší:"
 
-#: extensions/page-info/page-info.glade.h:15
+#: ../extensions/page-info/page-info.glade.h:15
 msgid "Format:"
 msgstr "Formát:"
 
-#: extensions/page-info/page-info.glade.h:16
+#: ../extensions/page-info/page-info.glade.h:16
 msgid "Forms"
 msgstr "Formuláře"
 
-#: extensions/page-info/page-info.glade.h:17
+#: ../extensions/page-info/page-info.glade.h:17
 msgid "General"
 msgstr "Obecné"
 
-#: extensions/page-info/page-info.glade.h:18
+#: ../extensions/page-info/page-info.glade.h:18
 msgid "Links"
 msgstr "Odkazy"
 
-#: extensions/page-info/page-info.glade.h:19
+#: ../extensions/page-info/page-info.glade.h:19
 msgid "Location:"
 msgstr "Umístění:"
 
-#: extensions/page-info/page-info.glade.h:20
+#: ../extensions/page-info/page-info.glade.h:20
 msgid "MIME type:"
 msgstr "Typ MIME:"
 
-#: extensions/page-info/page-info.glade.h:21
+#: ../extensions/page-info/page-info.glade.h:21
 msgid "Media"
 msgstr "Média"
 
-#: extensions/page-info/page-info.glade.h:22
+#: ../extensions/page-info/page-info.glade.h:22
 msgid "Metadata"
 msgstr "Metadata"
 
-#: extensions/page-info/page-info.glade.h:23
+#: ../extensions/page-info/page-info.glade.h:23
 msgid "Mode:"
 msgstr "Režim:"
 
-#: extensions/page-info/page-info.glade.h:24
+#: ../extensions/page-info/page-info.glade.h:24
 msgid "Modified:"
 msgstr "Změněno:"
 
-#: extensions/page-info/page-info.glade.h:25
+#: ../extensions/page-info/page-info.glade.h:25
 msgid "Page Properties"
 msgstr "Vlastnosti stránky"
 
-#: extensions/page-info/page-info.glade.h:26
+#: ../extensions/page-info/page-info.glade.h:26
 msgid "Referrer:"
 msgstr "Referrer:"
 
-#: extensions/page-info/page-info.glade.h:27
+#: ../extensions/page-info/page-info.glade.h:27
 msgid "Size:"
 msgstr "Velikost:"
 
-#: extensions/page-info/page-info.glade.h:28
+#: ../extensions/page-info/page-info.glade.h:28
 msgid "Source:"
 msgstr "Zdroj:"
 
-#: extensions/page-info/page-info.glade.h:29
+#: ../extensions/page-info/page-info.glade.h:29
 msgid "Title:"
 msgstr "Nadpis:"
 
-#: extensions/page-info/page-info.glade.h:30
+#: ../extensions/page-info/page-info.glade.h:30
 msgid "Type:"
 msgstr "Typ:"
 
-#: extensions/page-info/page-info.glade.h:31
+#: ../extensions/page-info/page-info.glade.h:31
 msgid "_Save Media As..."
 msgstr "_Uložit médium jako..."
 
-#: extensions/page-info/page-info.xml.in.in.h:1
+#: ../extensions/page-info/page-info.xml.in.in.h:1
 msgid "Display information about and links and media from the current page"
 msgstr "Zobrazit informace o odkazech a médiích z aktuální stránky"
 
-#: extensions/page-info/page-info.xml.in.in.h:2
+#: ../extensions/page-info/page-info.xml.in.in.h:2
 msgid "Page Info"
 msgstr "Informace o stránce"
 
-#: extensions/sample-mozilla/sample-mozilla.xml.in.in.h:1
+#: ../extensions/rss/ephy-rss-extension.c:91
+msgid "News Feeds Subscription"
+msgstr "Přihlášení k toku novinek"
+
+#: ../extensions/rss/ephy-rss-extension.c:93
+msgid "Subscribe to this website's news feed in your favorite news reader"
+msgstr "Přihlásit se k toku novinek tohoto WWW serveru ve vaší oblíbené čtečce novinek"
+
+#: ../extensions/rss/ephy-rss-extension.c:323
+msgid "Subscribe to site's news feed"
+msgstr "Přihlásit se k toku novinek serveru"
+
+#: ../extensions/rss/rss-ui.c:234
+msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
+msgstr "<b><i>Nemohu kontaktovat čtečku toků, běží?</i></b>"
+
+#: ../extensions/rss/rss-ui.c:236
+msgid "Retry"
+msgstr "Zkusit znovu"
+
+#: ../extensions/rss/rss-ui.c:364
+msgid "_Copy Feed Address"
+msgstr "_Kopírovat adresu toku"
+
+#: ../extensions/rss/rss-ui.c:639
+msgid "Subscribe"
+msgstr "Přihlásit se"
+
+#: ../extensions/rss/rss.xml.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "Přihlášení k toku novinek"
+
+#: ../extensions/rss/rss.xml.in.in.h:2
+msgid ""
+"Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr "Přihlásit se k toku novinek nabízenému WWW stránkou ve vaší oblíbené čtečce novinek"
+
+#: ../extensions/sample-mozilla/sample-mozilla.xml.in.in.h:1
 msgid "A sample extension with mozilla backend"
 msgstr "Ukázkové rozšíření s backendem mozilly"
 
-#: extensions/sample-mozilla/sample-mozilla.xml.in.in.h:2
+#: ../extensions/sample-mozilla/sample-mozilla.xml.in.in.h:2
 msgid "Sample (Mozilla)"
 msgstr "Ukázka (Mozilla)"
 
-#: extensions/sample/sample.xml.in.in.h:1
+#: ../extensions/sample/sample.xml.in.in.h:1
 msgid "A sample extension"
 msgstr "Ukázkové rozšíření"
 
-#: extensions/sample/sample.xml.in.in.h:2
+#: ../extensions/sample/sample.xml.in.in.h:2
 msgid "Sample"
 msgstr "Ukázka"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:145
+#: ../extensions/select-stylesheet/ephy-css-menu.c:145
 msgid "Render the page without using a style"
 msgstr "Vykreslit stránku bez použití stylu"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:148
+#: ../extensions/select-stylesheet/ephy-css-menu.c:148
 msgid "Render the page using the default style"
 msgstr "Vykreslit stránku s implicitním stylem"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:151
+#: ../extensions/select-stylesheet/ephy-css-menu.c:151
 #, c-format
 msgid "Render the page using the \"%s\" style"
 msgstr "Vykreslit stránku se stylem \"%s\""
 
-#: extensions/select-stylesheet/ephy-css-menu.c:309
+#: ../extensions/select-stylesheet/ephy-css-menu.c:309
 msgid "St_yle"
 msgstr "_Styl"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:310
+#: ../extensions/select-stylesheet/ephy-css-menu.c:310
 msgid "Select a different style for this page"
 msgstr "Zvolte jiný styl pro tuto stránku"
 
-#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
 msgid "Default"
 msgstr "Implicitní"
 
-#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
 msgid "None"
 msgstr "Žádný"
 
-#: extensions/select-stylesheet/select-stylesheet.xml.in.in.h:1
+#: ../extensions/select-stylesheet/select-stylesheet.xml.in.in.h:1
 msgid "Select Stylesheet"
 msgstr "Vybrat styl"
 
-#: extensions/select-stylesheet/select-stylesheet.xml.in.in.h:2
+#: ../extensions/select-stylesheet/select-stylesheet.xml.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
 msgstr "Vybírejte různé styly nabízené WWW stránkou"
 
-#: extensions/sidebar/ephy-sidebar.c:176
+#: ../extensions/sidebar/ephy-sidebar.c:176
 msgid "No Sidebars installed"
 msgstr "Nenainstalován žádný boční panel"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:104
+#: ../extensions/sidebar/ephy-sidebar-extension.c:104
 msgid "_Sidebar"
 msgstr "_Boční panel"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:105
+#: ../extensions/sidebar/ephy-sidebar-extension.c:105
 msgid "Show or hide the sidebar"
 msgstr "Zobrazit nebo skrýt boční panel"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:407
+#: ../extensions/sidebar/ephy-sidebar-extension.c:407
 #, c-format
 msgid "Add \"%s\" to the Sidebar?"
 msgstr "Přidat \"%s\" na boční panel?"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:411
+#: ../extensions/sidebar/ephy-sidebar-extension.c:411
 #, c-format
 msgid "The source to the new sidebar page is %s."
 msgstr "Zdroj nové stránky bočního panelu je %s."
 
-#: extensions/sidebar/ephy-sidebar-extension.c:413
+#: ../extensions/sidebar/ephy-sidebar-extension.c:413
 msgid "Add Sidebar"
 msgstr "Přidat boční panel"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:417
+#: ../extensions/sidebar/ephy-sidebar-extension.c:417
 msgid "_Add Sidebar"
 msgstr "_Přidat boční panel"
 
-#: extensions/sidebar/sidebar.xml.in.in.h:1
+#: ../extensions/sidebar/sidebar.xml.in.in.h:1
 msgid "Adds a sidebar to windows"
 msgstr "Přidá k oknům boční panel"
 
-#: extensions/sidebar/sidebar.xml.in.in.h:2
+#: ../extensions/sidebar/sidebar.xml.in.in.h:2
 msgid "Sidebar"
 msgstr "Boční panel"
 
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:578
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:579
 msgid "_Look Up"
 msgstr "_Vyheldat"
 
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:585
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:586
 msgid "_GNOME Dictionary"
 msgstr "_Slovník GNOME"
 
-#: extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:1
+#: ../extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:1
 msgid "Look up the selected text with a smart bookmark"
 msgstr "Vyhledat vybraný text chytrou záložkou"
 
-#: extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:2
+#: ../extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:2
 msgid "Smart Bookmarks"
 msgstr "Chytré záložky"
 
-#: extensions/tab-groups/tab-groups.xml.in.in.h:1
+#: ../extensions/tab-groups/tab-groups.xml.in.in.h:1
 msgid "Groups newly opened tabs"
 msgstr "Seskupuje nově otevřené karty"
 
-#: extensions/tab-groups/tab-groups.xml.in.in.h:2
+#: ../extensions/tab-groups/tab-groups.xml.in.in.h:2
 msgid "Tab Groups"
 msgstr "Skupiny karet"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:190
+#: ../extensions/tabsmenu/ephy-tab-move-menu.c:190
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"
@@ -888,27 +928,27 @@ msgstr[0] "Okno '%s' (%d karta)"
 msgstr[1] "Okno '%s' (%d karty)"
 msgstr[2] "Okno '%s' (%d karet)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:302
+#: ../extensions/tabsmenu/ephy-tab-move-menu.c:301
 msgid "Move Tab To Window"
 msgstr "Přesunout kartu do okna"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:303
+#: ../extensions/tabsmenu/ephy-tab-move-menu.c:302
 msgid "Move the current tab to a different window"
 msgstr "Přesunout aktuální kartu do jiného okna"
 
-#: extensions/tabsmenu/tabsmenu.xml.in.in.h:1
+#: ../extensions/tabsmenu/tabsmenu.xml.in.in.h:1
 msgid "Move tabs between windows"
 msgstr "Přesouvat karty mezi okny"
 
-#: extensions/tabsmenu/tabsmenu.xml.in.in.h:2
+#: ../extensions/tabsmenu/tabsmenu.xml.in.in.h:2
 msgid "Tabsmenu"
 msgstr "Menu karet"
 
-#: extensions/tab-states/tab-states.xml.in.in.h:1
+#: ../extensions/tab-states/tab-states.xml.in.in.h:1
 msgid "Indicates new content in background tabs"
 msgstr "Indikuje nový obsah v kartách na pozadí"
 
-#: extensions/tab-states/tab-states.xml.in.in.h:2
+#: ../extensions/tab-states/tab-states.xml.in.in.h:2
 msgid "Tab States"
 msgstr "Stavy karet"
 
