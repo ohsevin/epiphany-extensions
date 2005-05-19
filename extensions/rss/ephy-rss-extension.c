@@ -22,6 +22,7 @@
 
 #include "ephy-rss-extension.h"
 #include "rss-ui.h"
+#include "rss-dbus.h"
 #include "rss-feedlist.h"
 
 #include "ephy-debug.h"
@@ -72,12 +73,14 @@ static void ephy_rss_display_cb 	(GtkAction *action,
 static void ephy_rss_update_statusbar 	(EphyWindow *window,
 					 gboolean show);
 static void ephy_rss_update_action 	(EphyWindow *window);
-	      	   
+static void ephy_rss_feed_subscribe_cb (GtkAction *action, 
+					 EphyWindow *window);
 typedef struct
 {
 	EphyRssExtension *extension;
 	GtkActionGroup *action_group;
-	GtkAction *action;
+	GtkAction *info_action;
+	GtkAction *subscribe_action;
 	guint ui_id;
 
 	GtkWidget *frame;
@@ -90,8 +93,16 @@ static const GtkActionEntry action_entries [] =
 	  NULL,
 	  N_("News Feeds Subscription"),
 	  NULL,
-	  N_("Subscribe to this website's news feed in your favorite news reader"),
-	  G_CALLBACK (ephy_rss_display_cb) },
+	  N_("Subscribe to this website's news feeds in your favorite news reader"),
+	  G_CALLBACK (ephy_rss_display_cb)
+	},
+	{ "RssSubscribe",
+	  NULL,
+	  N_("_Subscribe to this feed"),
+	  NULL,
+	  N_("Subscribe to this feed in your favorite news reader"),
+	  G_CALLBACK (ephy_rss_feed_subscribe_cb)
+	},
 };
 
 /* We got an rss feed from a tab */
@@ -112,6 +123,55 @@ ephy_rss_ge_feed_cb (EphyEmbed *embed,
 	LOG ("Got a new feed for the site: type=%s, title=%s, address=%s\nWe now have %d feeds", type, title, address, rss_feedlist_length (list));
 
 	ephy_rss_update_action (window);
+}
+
+static void
+ephy_rss_feed_subscribe_cb (GtkAction *action, 
+			 EphyWindow *window)
+{
+	const GValue *value;
+
+	LOG ("Subscribing to the feed");
+	
+	EphyEmbedEvent *event = EPHY_EMBED_EVENT (
+			g_object_get_data (G_OBJECT (window), "context_event"));
+	g_return_if_fail (event != NULL);
+	
+	ephy_embed_event_get_property (event, "link", &value);
+
+	rss_dbus_subscribe_feed (g_value_get_string (value));
+	
+	g_object_set(action, "sensitive", FALSE, "visible", FALSE, NULL);	
+}
+
+static gboolean
+ephy_rss_ge_context_cb	(EphyEmbed *embed,
+			EphyEmbedEvent *event,
+			EphyWindow *window)
+{	
+	WindowData *data;
+	const GValue *value;
+	const char *address;
+	FeedList *list;
+	gboolean active = FALSE;
+	
+	list = (FeedList *) g_object_get_data (G_OBJECT (embed), FEEDLIST_DATA_KEY);
+	if ((ephy_embed_event_get_context (event) & EPHY_EMBED_CONTEXT_LINK) && (list != NULL))
+	{
+		LOG ("Context menu on a link");
+		data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
+		g_return_val_if_fail (data != NULL, FALSE);
+		
+		ephy_embed_event_get_property (event, "link", &value);
+		address = g_value_get_string (value);
+		
+		active = rss_feedlist_contains (list, address);
+		
+		LOG ("Showing menu item: %d", active);
+		g_object_set(data->subscribe_action, "sensitive", active, "visible", active, NULL);	
+	}
+	
+	return FALSE;
 }
 
 static void
@@ -204,9 +264,11 @@ ephy_rss_update_action (EphyWindow *window)
 	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 	g_return_if_fail (data != NULL);
 
-	gtk_action_set_sensitive (data->action, show);
+	g_object_set (data->info_action, "sensitive", show, NULL);
 
 	ephy_rss_update_statusbar (window, show);
+	
+	g_object_set(data->subscribe_action, "sensitive", show, "visible", show, NULL);	
 }
 	
 /* Called when the user changes tab */
@@ -218,18 +280,6 @@ ephy_rss_sync_active_tab (EphyWindow *window,
 	if (GTK_WIDGET_REALIZED (window) == FALSE) return; /* on startup */
 
 	ephy_rss_update_action (window);
-}
-
-/* When the load status changes update menu item */
-static void
-ephy_rss_load_status_cb (EphyTab *tab,
-			 GParamSpec *pspec,
-			 EphyWindow *window)
-{
-	if (tab == ephy_window_get_active_tab (window))
-	{
-		ephy_rss_update_action (window);
-	}
 }
 
 /* Attach the callback to this new tab */
@@ -250,8 +300,8 @@ impl_attach_tab (EphyExtension *extension,
 				G_CALLBACK (ephy_rss_ge_content_cb), window);
 	g_signal_connect_after (embed, "ge-feed-link",
 			    G_CALLBACK (ephy_rss_ge_feed_cb), window);
-	g_signal_connect_after (tab, "notify::load-status",
-				G_CALLBACK (ephy_rss_load_status_cb), window);
+	g_signal_connect (embed, "ge-context-menu",
+			    G_CALLBACK (ephy_rss_ge_context_cb), window);
 }
 
                                              
@@ -273,11 +323,11 @@ impl_detach_tab (EphyExtension *extension,
 		(embed, G_CALLBACK (ephy_rss_ge_feed_cb), window);
 
 	g_signal_handlers_disconnect_by_func
-		(tab, G_CALLBACK (ephy_rss_load_status_cb), window);
-
-	g_signal_handlers_disconnect_by_func
 		(embed, G_CALLBACK (ephy_rss_ge_content_cb), window);
-
+	
+	g_signal_handlers_disconnect_by_func
+		(embed, G_CALLBACK (ephy_rss_ge_context_cb), window);
+		
 	/* destroy data */
 	g_object_set_data (G_OBJECT (embed), FEEDLIST_DATA_KEY, NULL);
 }
@@ -371,16 +421,29 @@ impl_attach_window (EphyExtension *ext,
 
 	ui_id = gtk_ui_manager_new_merge_id (manager);
 
+	/* Add feed info to tools menu */
 	gtk_ui_manager_add_ui (manager, ui_id, MENU_PATH,
 			       "RssInfoSep", NULL,
 			       GTK_UI_MANAGER_SEPARATOR, FALSE);
 	gtk_ui_manager_add_ui (manager, ui_id, MENU_PATH,
 			       "RssInfo", "RssInfo",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
-	gtk_ui_manager_add_ui (manager, ui_id, MENU_PATH,
-			       "RssInfoSep2", NULL,
-			       GTK_UI_MANAGER_SEPARATOR, FALSE);
 
+	/* Add subscribe to popup context (normal document) */
+	gtk_ui_manager_add_ui (manager, ui_id, "/EphyLinkPopup",
+			       "RssInfoSep", NULL,
+			       GTK_UI_MANAGER_SEPARATOR, FALSE);
+	gtk_ui_manager_add_ui (manager, ui_id, "/EphyLinkPopup",
+			       "RssSubscribe", "RssSubscribe",
+			       GTK_UI_MANAGER_MENUITEM, FALSE);
+			       
+	gtk_ui_manager_add_ui (manager, ui_id, "/EphyImageLinkPopup",
+			       "RssInfoSep", NULL,
+			       GTK_UI_MANAGER_SEPARATOR, FALSE);
+	gtk_ui_manager_add_ui (manager, ui_id, "/EphyImageLinkPopup",
+			       "RssSubscribe", "RssSubscribe",
+			       GTK_UI_MANAGER_MENUITEM, FALSE);
+			       
 	/* Register for tab switch events */
 	ephy_rss_sync_active_tab (window, NULL, NULL);
 	g_signal_connect_after (window, "notify::active-tab",
@@ -391,9 +454,10 @@ impl_attach_window (EphyExtension *ext,
 
 	data->extension = extension;
 	data->action_group = action_group;
-	data->action = gtk_action_group_get_action (action_group, "RssInfo");
+	data->info_action = gtk_action_group_get_action (action_group, "RssInfo");
+	data->subscribe_action = gtk_action_group_get_action (action_group, "RssSubscribe");
 	data->ui_id = ui_id;
-	
+		
 	g_object_set_data_full (G_OBJECT (window), WINDOW_DATA_KEY, data,
 				(GDestroyNotify) g_free);
 

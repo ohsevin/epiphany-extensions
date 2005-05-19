@@ -21,6 +21,7 @@
 #include "config.h"
 
 #include "rss-ui.h"
+#include "rss-dbus.h"
 
 #include "ephy-gui.h"
 #include "ephy-dnd.h"
@@ -132,76 +133,6 @@ static GObjectClass *parent_class = NULL;
 static GType type = 0;
 
 static gboolean
-rss_ui_subscribe_feed_dbus (NewsFeed *feed,
-			    DBusConnection *bus)
-{
-	DBusMessage *message, *reply;
-	DBusError error;
-	DBusMessageIter iter;
-	gboolean success;
-
-	if (feed == NULL || feed->title == NULL || feed->address == NULL || bus == NULL)
-	{	
-		LOG ("Feed is NULL, or no connection to dbus");
-		return FALSE;
-	}
-	
-	LOG ("Performing dbus remote call");
-	
-	/* ask the feed reader to register the given feed */
-	message = dbus_message_new_method_call (RSS_DBUS_SERVICE, 
-						RSS_DBUS_OBJECT_PATH, 
-						RSS_DBUS_INTERFACE, 
-						RSS_DBUS_SUBSCRIBE);
-
-	if (message == NULL)
-	{
-		LOG ("Couldn't allocate the dbus rss message");
-		return FALSE;
-	}
-	
-	/* Build the dbus mesage containing the url a a string */
-	dbus_message_iter_init (message, &iter);
-	dbus_message_iter_append_string (&iter, feed->address);
-	
-	dbus_error_init (&error);
-	reply = dbus_connection_send_with_reply_and_block (bus, message, 1000, &error);
-	dbus_message_unref (message);
-	
-	if (dbus_error_is_set (&error))
-	{
-		LOG ("Failed to connect to a Feed Reader: %s: %s", error.name, error.message);
-		dbus_error_free (&error);
-		return FALSE;
-	}
-
-	if (reply == NULL)
-	{
-		LOG ("Failed to retreive dbus reply, got NULL");
-		dbus_error_free (&error);
-		return FALSE;
-	}
-
-	/* We got an answer */
-	LOG ("Received a subscription confirmation");
-	
-	dbus_message_get_args (reply, &error, DBUS_TYPE_BOOLEAN, &success, DBUS_TYPE_INVALID);
-	dbus_message_unref (reply);
-	
-	if (dbus_error_is_set (&error))
-	{
-		LOG ("Error while retreiveing method answer: %s: %s", error.name, error.message);
-		dbus_error_free (&error);
-		return FALSE;
-	}
-
-	LOG ("Successfully retreived boolean answer");
-	dbus_error_free (&error);
-
-	return success;
-}
-
-static gboolean
 rss_ui_subscribe_selected (GtkTreeModel *model,
 			   GtkTreePath *path,
 			   GtkTreeIter *iter,
@@ -218,17 +149,11 @@ rss_ui_subscribe_selected (GtkTreeModel *model,
 	LOG ("Trying to subscribe");
 	
 	if (selected && feed != NULL && feed->title != NULL && feed->type != NULL && feed->address != NULL)
-	{
-		EphyDbus *dbus;
-		DBusConnection *bus_connection;
-		GtkWidget *image;
-
-		dbus = EPHY_DBUS (ephy_shell_get_dbus_service (ephy_shell_get_default ()));
-		bus_connection = ephy_dbus_get_bus (dbus, EPHY_DBUS_SESSION);
-							
-		success = rss_ui_subscribe_feed_dbus (feed, bus_connection);
+	{				
+		success = rss_dbus_subscribe_feed (feed->address);
 		if (success == FALSE)
 		{
+			GtkWidget *image;
 			LOG ("Failed to subscribe, certainly due to dbus..");
 		
 			gtk_label_set_markup (priv->title, _("<b><i>Unable to contact the feed reader, is it running ?</i></b>"));

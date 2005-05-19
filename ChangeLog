@@ -1,3 +1,21 @@
+2005-05-19  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/rss/Makefile.am:
+	* extensions/rss/ephy-rss-extension.c:
+	(ephy_rss_feed_subscribe_cb), (ephy_rss_ge_context_cb),
+	(ephy_rss_update_action), (impl_attach_tab), (impl_detach_tab),
+	(impl_attach_window):
+	* extensions/rss/rss-dbus.c: (rss_dbus_subscribe_feed):
+	* extensions/rss/rss-dbus.h:
+	* extensions/rss/rss-feedlist.c: (rss_feedlist_add),
+	(rss_feedlist_compare_feeds), (rss_feedlist_contains):
+	* extensions/rss/rss-feedlist.h:
+	* extensions/rss/rss-ui.c: (rss_ui_subscribe_selected):
+	* extensions/rss/rss-ui.h:
+
+	Add RSS item to context menu, and refactor DBUS code.
+	Fixes bug #301001, patch by Raphaël Slinckx.
+
 2005-04-28  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/tab-states/ephy-tab-states-extension.c:

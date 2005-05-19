@@ -66,6 +66,8 @@ FeedList	*rss_feedlist_add 	(FeedList *feedlist,
 					 const char *title,
 					 const char *address);
 
+gboolean	rss_feedlist_contains (FeedList *feedlist,
+					 const char *url);
 G_END_DECLS
 
 #endif

@@ -24,6 +24,8 @@
 
 #include "rss-feedlist.h"
 
+#include <strings.h>
+
 /* NewsFeed */
 GType
 rss_newsfeed_get_type (void)
@@ -142,4 +144,20 @@ rss_feedlist_add (FeedList *feedlist,
 	feed->address = g_strdup (address);
 	
 	return (FeedList *) g_slist_prepend (list, feed);
+}
+
+static gint
+rss_feedlist_compare_feeds (gconstpointer a, gconstpointer b)
+{
+	NewsFeed *feed = (NewsFeed *) a;
+	const char *address = (char *) b;
+	
+	return g_ascii_strcasecmp (feed->address, address);
+}
+
+gboolean
+rss_feedlist_contains (FeedList *feedlist,
+		 const char *address)
+{
+	return g_slist_find_custom ((GSList *) feedlist, address, (GCompareFunc) rss_feedlist_compare_feeds) != NULL;
 }

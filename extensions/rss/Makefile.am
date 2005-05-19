@@ -8,6 +8,8 @@ librssextension_la_SOURCES = \
 	rss-ui.h                \
 	rss-feedlist.c			\
 	rss-feedlist.h			\
+	rss-dbus.c				\
+	rss-dbus.h				\
 	extension.c
 librssextension_la_LDFLAGS = -module -avoid-version
 
