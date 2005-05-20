@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <extension>
-	<_name>Sample (Mozilla)</_name>
-	<_description>A sample extension with mozilla backend</_description>
-	<author>Christian Persch &lt;chpe@gnome.org&gt;</author>
+	<_name>Greasemonkey</_name>
+	<_description>Run user scripts to modify web pages' behavior</_description>
+	<author>Adam Hooper &lt;adamh@densi.com&gt;</author>
 	<url>http://www.gnome.org/projects/epiphany/extensions.html</url>
 	<version>1</version>
 	<gettext-domain>%GETTEXT_PACKAGE%</gettext-domain>

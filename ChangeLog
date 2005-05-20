@@ -1,3 +1,9 @@
+2005-05-20  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/greasemonkey/greasemonkey.xml.in.in:
+
+	Actually change greasemonkey.xml.in.in from the sample one...
+
 2005-05-19  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* configure.ac:
