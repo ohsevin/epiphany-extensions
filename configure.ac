@@ -133,7 +133,7 @@ dnl *******************************
 
 AC_MSG_CHECKING([which extensions to build])
 
-ALL_EXTENSIONS="actions adblock bookmarks-tray certificates dashboard error-viewer extensions-manager-ui find gestures net-monitor page-info rss sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu"
+ALL_EXTENSIONS="actions adblock bookmarks-tray certificates dashboard error-viewer extensions-manager-ui find gestures greasemonkey net-monitor page-info rss sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu"
 USEFUL_EXTENSIONS="actions bookmarks-tray certificates dashboard error-viewer extensions-manager-ui gestures page-info select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu"
 DEFAULT_EXTENSIONS="actions bookmarks-tray certificates error-viewer extensions-manager-ui gestures page-info select-stylesheet sidebar smart-bookmarks tabsmenu tab-groups tab-states"
 
@@ -196,7 +196,7 @@ dnl ****
 dnl PCRE
 dnl ****
 
-if echo "$EXTENSIONS" | egrep '(^| )adblock($| )' > /dev/null; then
+if echo "$EXTENSIONS" | egrep '(^| )(adblock|greasemonkey)($| )' > /dev/null; then
 	AC_PATH_PROG([PCRE_CONFIG], [pcre-config], [no])
 
 	if test "x$PCRE_CONFIG" = "xno"; then
@@ -442,6 +442,8 @@ extensions/error-viewer/Makefile
 extensions/error-viewer/mozilla/Makefile
 extensions/error-viewer/opensp/Makefile
 extensions/extensions-manager-ui/Makefile
+extensions/greasemonkey/Makefile
+extensions/greasemonkey/mozilla/Makefile
 extensions/net-monitor/Makefile
 extensions/page-info/Makefile
 extensions/page-info/mozilla/Makefile
