@@ -368,7 +368,7 @@ fi
 CPPFLAGS="$_SAVE_CPPFLAGS $AM_CPPFLAGS -I$MOZILLA_INCLUDE_ROOT `$PKG_CONFIG --cflags-only-I $MOZILLA-xpcom` -I$MOZILLA_INCLUDE_ROOT/necko"
 CXXFLAGS="$_SAVE_CXXFLAGS $AM_CXXFLAGS `$PKG_CONFIG --cflags-only-other $MOZILLA-xpcom`"
 
-dnl Changed in $EPIPHANY_API_VERSIONa1 and again in $EPIPHANY_API_VERSIONa3 to its present form (variant 2);
+dnl Changed in 1.8a1 and again in 1.8a3 to its present form (variant 2);
 dnl variant 1 is on 1.7 branch. Aviary branch also has variant 2.
 
 dnl Determine gecko version
