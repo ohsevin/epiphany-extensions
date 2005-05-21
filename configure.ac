@@ -385,7 +385,7 @@ AC_PREPROC_IFELSE(
                   #error No
                   #endif]]
         )],
-        [have_gecko_1_8=yes gecko_version="$EPIPHANY_API_VERSION"],
+        [have_gecko_1_8=yes gecko_version="1.8"],
         [have_gecko_1_8=no gecko_version="1.7"])
 
 AC_MSG_RESULT([$gecko_version])
