@@ -1,5 +1,16 @@
 2005-05-20  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/greasemonkey/ephy-greasemonkey-extension.c:
+	(dir_changed_cb), (load_scripts), (monitor_scripts),
+	(ephy_greasemonkey_extension_init),
+	(ephy_greasemonkey_extension_finalize), (maybe_apply_script),
+	(content_loaded_cb):
+
+	Use GnomeVFS to monitor the scripts directory for changes. No more
+	browser restarting :)
+
+2005-05-20  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/greasemonkey/greasemonkey.xml.in.in:
 
 	Actually change greasemonkey.xml.in.in from the sample one...

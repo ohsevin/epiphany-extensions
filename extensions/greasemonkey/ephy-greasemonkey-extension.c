@@ -36,6 +36,9 @@
 
 #include <gtk/gtkuimanager.h>
 
+#include <libgnomevfs/gnome-vfs-ops.h>
+#include <libgnomevfs/gnome-vfs-utils.h>
+
 #include <glib/gi18n-lib.h>
 #include <gmodule.h>
 
@@ -51,12 +54,8 @@
 
 struct _EphyGreasemonkeyExtensionPrivate
 {
-	GSList *scripts;
-};
-
-enum
-{
-	PROP_0
+	GHashTable *scripts;
+	GnomeVFSMonitorHandle *monitor;
 };
 
 typedef struct
@@ -65,6 +64,12 @@ typedef struct
 	guint ui_id;
 	char *last_clicked_url;
 } WindowData;
+
+typedef struct
+{
+	const char *location;
+	gpointer event;
+} ApplyScriptCBData;
 
 static void ephy_greasemonkey_extension_install_cb (GtkAction *action,
 						    EphyWindow *window);
@@ -84,46 +89,117 @@ static GObjectClass *parent_class = NULL;
 static GType type = 0;
 
 static void
-load_scripts (EphyGreasemonkeyExtension *extension)
+dir_changed_cb (GnomeVFSMonitorHandle *handle,
+		const char *monitor_uri,
+		const char *info_uri,
+		GnomeVFSMonitorEventType event_type,
+		EphyGreasemonkeyExtension *extension)
+{
+	char *path;
+	char *basename;
+	GreasemonkeyScript *script;
+
+	if (g_str_has_suffix (info_uri, ".user.js") == FALSE) return;
+
+	path = gnome_vfs_get_local_path_from_uri (info_uri);
+	basename = g_path_get_basename (path);
+
+	switch (event_type)
+	{
+		case GNOME_VFS_MONITOR_EVENT_CREATED:
+		case GNOME_VFS_MONITOR_EVENT_CHANGED:
+			script = greasemonkey_script_new (path);
+			g_hash_table_replace (extension->priv->scripts,
+					      g_strdup (basename), script);
+			break;
+		case GNOME_VFS_MONITOR_EVENT_DELETED:
+			g_hash_table_remove (extension->priv->scripts,
+					     basename);
+			break;
+		default:
+			break;
+	}
+
+	g_free (basename);
+	g_free (path);
+}
+
+static GHashTable *
+load_scripts (const char *path)
 {
 	DIR *d;
 	struct dirent *e;
-	char *path;
 	char *file_path;
 	GreasemonkeyScript *script;
-
-	path = g_build_filename (ephy_dot_dir (),
-				 "extensions", "data", "greasemonkey", NULL);
+	GHashTable *scripts;
 
 	d = opendir (path);
 	if (d == NULL)
 	{
-		return;
+		return NULL;
 	}
+
+	scripts = g_hash_table_new_full (g_str_hash, g_str_equal,
+					 (GDestroyNotify) g_free,
+					 (GDestroyNotify) g_object_unref);
+
 	while ((e = readdir (d)) != NULL)
 	{
 		if (g_str_has_suffix (e->d_name, ".user.js"))
 		{
 			file_path = g_build_filename (path, e->d_name, NULL);
-			LOG ("Loading script at %s", file_path);
+
 			script = greasemonkey_script_new (file_path);
-			extension->priv->scripts = g_slist_prepend
-				(extension->priv->scripts, script);
+			g_hash_table_replace (scripts,
+					      g_strdup (e->d_name), script);
+
 			g_free (file_path);
 		}
 	}
 	closedir (d);
+
+	return scripts;
+}
+
+static GnomeVFSMonitorHandle *
+monitor_scripts (const char *path,
+		 EphyGreasemonkeyExtension *extension)
+{
+	char *uri;
+	GnomeVFSMonitorHandle *monitor;
+	GnomeVFSResult res;
+
+	uri = gnome_vfs_get_uri_from_local_path (path);
+	res = gnome_vfs_monitor_add (&monitor, path,
+				     GNOME_VFS_MONITOR_DIRECTORY,
+				     (GnomeVFSMonitorCallback) dir_changed_cb,
+				     extension);
+	g_free (uri);
+
+	if (res != GNOME_VFS_OK)
+	{
+		return NULL;
+	}
+
+	return monitor;
 }
 
 static void
 ephy_greasemonkey_extension_init (EphyGreasemonkeyExtension *extension)
 {
+	char *path;
+
 	extension->priv = EPHY_GREASEMONKEY_EXTENSION_GET_PRIVATE (extension);
 
 	LOG ("EphyGreasemonkeyExtension initialising");
 
-	/* FIXME: monitor directory instead */
-	load_scripts (extension);
+	path = g_build_filename (ephy_dot_dir (),
+				 "extensions", "data", "greasemonkey", NULL);
+
+	extension->priv->scripts = load_scripts (path);
+	extension->priv->monitor = monitor_scripts (path, extension);
+
+	g_free (path);
 }
 
 static void
@@ -133,9 +209,14 @@ ephy_greasemonkey_extension_finalize (GObject *object)
 
 	LOG ("EphyGreasemonkeyExtension finalising");
 
-	g_slist_foreach (extension->priv->scripts,
-			 (GFunc) g_object_unref, NULL);
-	g_slist_free (extension->priv->scripts);
+	if (extension->priv->scripts != NULL)
+	{
+		g_hash_table_destroy (extension->priv->scripts);
+	}
+	if (extension->priv->monitor != NULL)
+	{
+		gnome_vfs_monitor_cancel (extension->priv->monitor);
+	}
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
 }
@@ -318,14 +399,27 @@ dom_mouse_down_cb (EphyEmbed *embed,
 }
 
 static void
+maybe_apply_script (const char *basename,
+		    GreasemonkeyScript *script,
+		    ApplyScriptCBData *data)
+{
+	char *script_str;
+
+	if (greasemonkey_script_applies_to_url (script, data->location))
+	{
+		g_object_get (script, "script", &script_str, NULL);
+		mozilla_evaluate_js (data->event, script_str);
+		g_free (script_str);
+	}
+}
+
+static void
 content_loaded_cb (EphyEmbed *embed,
-		   EphyEmbedEvent *event,
+		   gpointer event,
 		   EphyGreasemonkeyExtension *extension)
 {
-	GSList *l;
+	ApplyScriptCBData *data;
 	char *location;
-	GreasemonkeyScript *script;
-	char *script_str;
 
 	location = ephy_embed_get_location (embed, FALSE);
 	if (location == NULL)
@@ -333,19 +427,15 @@ content_loaded_cb (EphyEmbed *embed,
 		return;
 	}
 
-	for (l = extension->priv->scripts; l; l = l->next)
-	{
-		script = (GreasemonkeyScript *) l->data;
+	data = g_new (ApplyScriptCBData, 1);
+	data->location = location;
+	data->event = event;
 
-		if (greasemonkey_script_applies_to_url (script, location))
-		{
-			g_object_get (script, "script", &script_str, NULL);
-			mozilla_evaluate_js (event, script_str);
-			g_free (script_str);
-		}
-	}
+	g_hash_table_foreach (extension->priv->scripts,
+			      (GHFunc) maybe_apply_script, data);
 
 	g_free (location);
+	g_free (data);
 }
 
 static void
