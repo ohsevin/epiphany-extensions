@@ -20,6 +20,8 @@ dnl $Id$
 AC_INIT([Epiphany Extensions],[1.7.0],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 GNOME_COMMON_INIT
 
+EPIPHANY_API_VERSION=1.8
+
 EPIPHANY_EXTENSIONS_MAJOR=1.7
 AC_SUBST(EPIPHANY_EXTENSIONS_MAJOR)
 
@@ -77,7 +79,7 @@ ALL_LINGUAS="`cat "$srcdir/po/LINGUAS" | grep -v '^#'`"
 
 AC_SUBST([CONFIG_STATUS_DEPENDENCIES],['$(top_srcdir)/po/LINGUAS'])
 
-GETTEXT_PACKAGE=epiphany-extensions-1.8
+GETTEXT_PACKAGE=epiphany-extensions-$EPIPHANY_API_VERSION
 AC_SUBST([GETTEXT_PACKAGE])
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE],["$GETTEXT_PACKAGE"], [Gettext package])
 AM_GLIB_GNU_GETTEXT
@@ -103,9 +105,13 @@ PKG_CHECK_MODULES([EPIPHANY_DEPENDENCY], [\
 		  glib-2.0 >= $LIBGLIB_REQUIRED \
 		  gmodule-2.0 \
 		  gtk+-2.0 >= $LIBGTK_REQUIRED \
-		  epiphany-1.8 >= $EPIPHANY_REQUIRED])
+		  epiphany-$EPIPHANY_API_VERSION >= $EPIPHANY_REQUIRED])
 AC_SUBST([EPIPHANY_DEPENDENCY_CFLAGS])
 AC_SUBST([EPIPHANY_DEPENDENCY_LIBS])
+
+EXTENSIONS_DIR="`$PKG_CONFIG --variable=extensionsdir epiphany-$EPIPHANY_API_VERSION`"
+FEATURES="`$PKG_CONFIG --variable=features epiphany-$EPIPHANY_API_VERSION`"
+AC_SUBST([EXTENSIONS_DIR])
 
 dnl *******************************
 dnl Check for OpenSP
@@ -137,6 +143,18 @@ ALL_EXTENSIONS="actions adblock bookmarks-tray certificates dashboard error-view
 USEFUL_EXTENSIONS="actions bookmarks-tray certificates dashboard error-viewer extensions-manager-ui gestures page-info select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu"
 DEFAULT_EXTENSIONS="actions bookmarks-tray certificates error-viewer extensions-manager-ui gestures page-info select-stylesheet sidebar smart-bookmarks tabsmenu tab-groups tab-states"
 
+PYTHON_ALL_EXTENSIONS="python-console sample-python"
+PYTHON_USEFUL_EXTENSIONS="python-console"
+PYTHON_DEFAULT_EXTENSIONS="python-console"
+
+if echo "$FEATURES" | egrep '(^| )(python)($| )' > /dev/null; then
+	ALL_EXTENSIONS="$ALL_EXTENSIONS $PYTHON_ALL_EXTENSIONS"
+	USEFUL_EXTENSIONS="$USEFUL_EXTENSIONS $PYTHON_USEFUL_EXTENSIONS"
+	DEFAULT_EXTENSIONS="$DEFAULT_EXTENSIONS $PYTHON_DEFAULT_EXTENSIONS"
+else
+	AC_MSG_WARN([Epiphany compiled without python support, extensions \'$PYTHON_ALL_EXTENSIONS\' will not be available])
+fi
+
 dnl due to an autoconf bug, commas in the first arg to
 dnl AS_HELP_STRING() cause problems.
 dnl
@@ -156,6 +174,7 @@ if test "x$with_extensions" = xyes; then
   extensions="default"
 fi
 
+need_python=no
 EXTENSIONS=
 IFS="${IFS=	}"; ephyext_save_ifs="$IFS"; IFS=","
 for ext in $extensions; do
@@ -170,6 +189,10 @@ for ext in $extensions; do
  else
    AC_MSG_ERROR([the specified extension $ext does not exist])
  fi
+ 
+ if echo "$PYTHON_ALL_EXTENSIONS" | egrep "(^| )$ext(\$| )" > /dev/null; then
+   need_python=yes
+ fi
 done
 IFS="$ephyext_save_ifs"
 
@@ -183,13 +206,14 @@ dnl DBUS
 dnl ****
 
 if echo "$EXTENSIONS" | egrep '(^| )(net-monitor)|(rss)($| )' > /dev/null; then
+	if ! (echo "$FEATURES" | egrep '(^| )(dbus)($| )' > /dev/null); then
+		AC_MSG_ERROR([Epiphany was not compiled with DBUS support])
+	fi
 
 	DBUS_REQUIRED=0.22
 	DBUS_GLIB_REQUIRED=0.22
 
 	PKG_CHECK_MODULES([DBUS], [dbus-1 >= $DBUS_REQUIRED dbus-glib-1 >= $DBUS_GLIB_REQUIRED])
-	INCLUDE_DIR="`$PKG_CONFIG --variable=includedir epiphany-1.8`"
-	AC_CHECK_FILE([$INCLUDE_DIR/epiphany/ephy-dbus.h],,[AC_MSG_ERROR([Epiphany was not compiled with dbus support])])
 fi
 
 dnl ****
@@ -232,6 +256,18 @@ if echo "$EXTENSIONS" | egrep '(^| )(adblock|greasemonkey)($| )' > /dev/null; th
 
 	if test "$ac_cv_have_preg_utf8_support" != "yes"; then
 		AC_ERROR([pcre does not support utf-8])
+	fi
+fi
+
+dnl ******
+dnl Python
+dnl ******
+
+if test "x$need_python" = "xyes"; then
+	AM_PATH_PYTHON([2.3])
+
+	if test "x$PYTHON" = "x:"; then
+		AC_MSG_ERROR([Python not found])
 	fi
 fi
 
@@ -332,7 +368,7 @@ fi
 CPPFLAGS="$_SAVE_CPPFLAGS $AM_CPPFLAGS -I$MOZILLA_INCLUDE_ROOT `$PKG_CONFIG --cflags-only-I $MOZILLA-xpcom` -I$MOZILLA_INCLUDE_ROOT/necko"
 CXXFLAGS="$_SAVE_CXXFLAGS $AM_CXXFLAGS `$PKG_CONFIG --cflags-only-other $MOZILLA-xpcom`"
 
-dnl Changed in 1.8a1 and again in 1.8a3 to its present form (variant 2);
+dnl Changed in $EPIPHANY_API_VERSIONa1 and again in $EPIPHANY_API_VERSIONa3 to its present form (variant 2);
 dnl variant 1 is on 1.7 branch. Aviary branch also has variant 2.
 
 dnl Determine gecko version
@@ -349,13 +385,13 @@ AC_PREPROC_IFELSE(
                   #error No
                   #endif]]
         )],
-        [have_gecko_1_8=yes gecko_version="1.8"],
+        [have_gecko_1_8=yes gecko_version="$EPIPHANY_API_VERSION"],
         [have_gecko_1_8=no gecko_version="1.7"])
 
 AC_MSG_RESULT([$gecko_version])
 
 if test "x$have_gecko_1_8" = "xyes"; then
-        AC_DEFINE([HAVE_GECKO_1_8],[1],[Define if we have gecko 1.8])
+        AC_DEFINE([HAVE_GECKO_1_8],[1],[Define if we have gecko $EPIPHANY_API_VERSION])
 fi
 AM_CONDITIONAL([HAVE_GECKO_1_8],[test "x$have_gecko_1_8" = "xyes"])
 
@@ -390,7 +426,7 @@ CPPFLAGS=$_SAVE_CPPFLAGS
 CXXFLAGS=$_SAVE_CXXFLAGS
 AC_LANG_POP([C++])
 
-dnl Needed since 1.8b2
+dnl Needed since $EPIPHANY_API_VERSIONb2
 dnl Define this down here so it doesn't affect the API checks above
 
 AC_DEFINE([MOZILLA_INTERNAL_API],[1],[Define for access to internal mozilla API])
@@ -420,9 +456,6 @@ else
   AC_DEFINE_UNQUOTED([EXTENSIONS_DATA_DIR], ["${datadir}/${PACKAGE}-${EPIPHANY_EXTENSIONS_MAJOR}"], [Directory of data files])
 fi
 
-EXTENSIONS_DIR="`$PKG_CONFIG --variable=extensionsdir epiphany-1.8`"
-AC_SUBST([EXTENSIONS_DIR])
-
 dnl *******************************
 dnl *******************************
 
@@ -447,10 +480,12 @@ extensions/greasemonkey/mozilla/Makefile
 extensions/net-monitor/Makefile
 extensions/page-info/Makefile
 extensions/page-info/mozilla/Makefile
+extensions/python-console/Makefile
 extensions/rss/Makefile
 extensions/sample/Makefile
 extensions/sample-mozilla/Makefile
 extensions/sample-mozilla/mozilla/Makefile
+extensions/sample-python/Makefile
 extensions/select-stylesheet/Makefile
 extensions/select-stylesheet/mozilla/Makefile
 extensions/sidebar/Makefile

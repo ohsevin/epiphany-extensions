@@ -1,3 +1,23 @@
+2005-05-21  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+	A extensions/python-console/.cvsignore:
+	A extensions/python-console/Makefile.am:
+	A extensions/python-console/console.py:
+	A extensions/python-console/python-console.xml.in:
+	A extensions/sample-python/.cvsignore:
+	A extensions/sample-python/Makefile.am:
+	A extensions/sample-python/sample-python-location.py:
+	A extensions/sample-python/sample-python-location.xml.in:
+	A extensions/sample-python/sample-python-menu.py:
+	A extensions/sample-python/sample-python-menu.xml.in:
+	A extensions/sample-python/sample-python-statusbar.py:
+	A extensions/sample-python/sample-python-statusbar.xml.in:
+	A extensions/sample-python/sample-python.py:
+	A extensions/sample-python/sample-python.xml.in:
+
+	Move python extensions from Pyphany to Epiphany Extensions.
+
 2005-05-20  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/greasemonkey/ephy-greasemonkey-extension.c:

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension>
+	<name>Sample Python Statusbar</name>
+	<description>Creates a statusbar icon using PyGTK</description>
+	<author>Adam Hooper &lt;adamh@densi.com&gt;</author>
+	<url>http://www.gnome.org/projects/epiphany/extensions.html</url>
+	<version>1</version>
+	<gettext-domain>epiphany-extensions-1.6</gettext-domain>
+	<locale-directory>/opt/mozilla-1.7/share/locale</locale-directory>
+	<loader type="python">
+		<attribute name="module">sample-python-statusbar</attribute>
+	</loader>
+</extension>

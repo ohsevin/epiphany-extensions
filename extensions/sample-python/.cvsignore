@@ -1,0 +1,10 @@
+*.o
+*.lo
+*.la
+*.so
+*.xml
+Makefile
+Makefile.in
+.deps
+.libs
+*.gladep
