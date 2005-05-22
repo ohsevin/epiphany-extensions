@@ -88,142 +88,10 @@ static GObjectClass *parent_class = NULL;
 
 static GType type = 0;
 
-static void
-dir_changed_cb (GnomeVFSMonitorHandle *handle,
-		const char *monitor_uri,
-		const char *info_uri,
-		GnomeVFSMonitorEventType event_type,
-		EphyGreasemonkeyExtension *extension)
-{
-	char *path;
-	char *basename;
-	GreasemonkeyScript *script;
-
-	if (g_str_has_suffix (info_uri, ".user.js") == FALSE) return;
-
-	path = gnome_vfs_get_local_path_from_uri (info_uri);
-	basename = g_path_get_basename (path);
-
-	switch (event_type)
-	{
-		case GNOME_VFS_MONITOR_EVENT_CREATED:
-		case GNOME_VFS_MONITOR_EVENT_CHANGED:
-			script = greasemonkey_script_new (path);
-			g_hash_table_replace (extension->priv->scripts,
-					      g_strdup (basename), script);
-			break;
-		case GNOME_VFS_MONITOR_EVENT_DELETED:
-			g_hash_table_remove (extension->priv->scripts,
-					     basename);
-			break;
-		default:
-			break;
-	}
-
-	g_free (basename);
-	g_free (path);
-}
-
-static GHashTable *
-load_scripts (const char *path)
-{
-	DIR *d;
-	struct dirent *e;
-	char *file_path;
-	GreasemonkeyScript *script;
-	GHashTable *scripts;
-
-	d = opendir (path);
-	if (d == NULL)
-	{
-		return NULL;
-	}
-
-	scripts = g_hash_table_new_full (g_str_hash, g_str_equal,
-					 (GDestroyNotify) g_free,
-					 (GDestroyNotify) g_object_unref);
-
-	while ((e = readdir (d)) != NULL)
-	{
-		if (g_str_has_suffix (e->d_name, ".user.js"))
-		{
-			file_path = g_build_filename (path, e->d_name, NULL);
-
-			script = greasemonkey_script_new (file_path);
-			g_hash_table_replace (scripts,
-					      g_strdup (e->d_name), script);
-
-			g_free (file_path);
-		}
-	}
-	closedir (d);
-
-	return scripts;
-}
-
-static GnomeVFSMonitorHandle *
-monitor_scripts (const char *path,
-		 EphyGreasemonkeyExtension *extension)
-{
-	char *uri;
-	GnomeVFSMonitorHandle *monitor;
-	GnomeVFSResult res;
-
-	uri = gnome_vfs_get_uri_from_local_path (path);
-	res = gnome_vfs_monitor_add (&monitor, path,
-				     GNOME_VFS_MONITOR_DIRECTORY,
-				     (GnomeVFSMonitorCallback) dir_changed_cb,
-				     extension);
-	g_free (uri);
-
-	if (res != GNOME_VFS_OK)
-	{
-		return NULL;
-	}
-
-	return monitor;
-}
-
-static void
-ephy_greasemonkey_extension_init (EphyGreasemonkeyExtension *extension)
-{
-	char *path;
-
-	extension->priv = EPHY_GREASEMONKEY_EXTENSION_GET_PRIVATE (extension);
-
-	LOG ("EphyGreasemonkeyExtension initialising");
-
-	path = g_build_filename (ephy_dot_dir (),
-				 "extensions", "data", "greasemonkey", NULL);
-
-	extension->priv->scripts = load_scripts (path);
-	extension->priv->monitor = monitor_scripts (path, extension);
-
-	g_free (path);
-}
-
-static void
-ephy_greasemonkey_extension_finalize (GObject *object)
-{
-	EphyGreasemonkeyExtension *extension = EPHY_GREASEMONKEY_EXTENSION (object);
-
-	LOG ("EphyGreasemonkeyExtension finalising");
-
-	if (extension->priv->scripts != NULL)
-	{
-		g_hash_table_destroy (extension->priv->scripts);
-	}
-	if (extension->priv->monitor != NULL)
-	{
-		gnome_vfs_monitor_cancel (extension->priv->monitor);
-	}
-
-	G_OBJECT_CLASS (parent_class)->finalize (object);
-}
-
 static const char *
 get_script_dir (void)
 {
+	/* XXX: This is hardly error-proof */
 	static char *script_dir = NULL;
 
 	if (script_dir == NULL)
@@ -261,6 +129,134 @@ get_script_dir (void)
 	}
 
 	return script_dir;
+}
+
+static GHashTable *
+load_scripts (const char *path)
+{
+	DIR *d;
+	struct dirent *e;
+	char *file_path;
+	GreasemonkeyScript *script;
+	GHashTable *scripts;
+
+	scripts = g_hash_table_new_full (g_str_hash, g_str_equal,
+					 (GDestroyNotify) g_free,
+					 (GDestroyNotify) g_object_unref);
+
+	d = opendir (path);
+	if (d == NULL)
+	{
+		return scripts;
+	}
+
+	while ((e = readdir (d)) != NULL)
+	{
+		if (g_str_has_suffix (e->d_name, ".user.js"))
+		{
+			file_path = g_build_filename (path, e->d_name, NULL);
+
+			script = greasemonkey_script_new (file_path);
+			g_hash_table_replace (scripts,
+					      g_strdup (e->d_name), script);
+
+			g_free (file_path);
+		}
+	}
+	closedir (d);
+
+	return scripts;
+}
+
+static void
+dir_changed_cb (GnomeVFSMonitorHandle *handle,
+		const char *monitor_uri,
+		const char *info_uri,
+		GnomeVFSMonitorEventType event_type,
+		EphyGreasemonkeyExtension *extension)
+{
+	char *path;
+	char *basename;
+	GreasemonkeyScript *script;
+
+	if (g_str_has_suffix (info_uri, ".user.js") == FALSE) return;
+
+	path = gnome_vfs_get_local_path_from_uri (info_uri);
+	basename = g_path_get_basename (path);
+
+	switch (event_type)
+	{
+		case GNOME_VFS_MONITOR_EVENT_CREATED:
+		case GNOME_VFS_MONITOR_EVENT_CHANGED:
+			script = greasemonkey_script_new (path);
+			g_hash_table_replace (extension->priv->scripts,
+					      g_strdup (basename), script);
+			break;
+		case GNOME_VFS_MONITOR_EVENT_DELETED:
+			g_hash_table_remove (extension->priv->scripts,
+					     basename);
+			break;
+		default:
+			break;
+	}
+
+	g_free (basename);
+	g_free (path);
+}
+
+static GnomeVFSMonitorHandle *
+monitor_scripts (const char *path,
+		 EphyGreasemonkeyExtension *extension)
+{
+	char *uri;
+	GnomeVFSMonitorHandle *monitor;
+	GnomeVFSResult res;
+
+	uri = gnome_vfs_get_uri_from_local_path (path);
+	res = gnome_vfs_monitor_add (&monitor, path,
+				     GNOME_VFS_MONITOR_DIRECTORY,
+				     (GnomeVFSMonitorCallback) dir_changed_cb,
+				     extension);
+	g_free (uri);
+
+	if (res != GNOME_VFS_OK)
+	{
+		return NULL;
+	}
+
+	return monitor;
+}
+
+static void
+ephy_greasemonkey_extension_init (EphyGreasemonkeyExtension *extension)
+{
+	const char *path;
+
+	extension->priv = EPHY_GREASEMONKEY_EXTENSION_GET_PRIVATE (extension);
+
+	LOG ("EphyGreasemonkeyExtension initialising");
+
+	path = get_script_dir ();
+
+	extension->priv->scripts = load_scripts (path);
+	extension->priv->monitor = monitor_scripts (path, extension);
+}
+
+static void
+ephy_greasemonkey_extension_finalize (GObject *object)
+{
+	EphyGreasemonkeyExtension *extension = EPHY_GREASEMONKEY_EXTENSION (object);
+
+	LOG ("EphyGreasemonkeyExtension finalising");
+
+	g_hash_table_destroy (extension->priv->scripts);
+
+	if (extension->priv->monitor != NULL)
+	{
+		gnome_vfs_monitor_cancel (extension->priv->monitor);
+	}
+
+	G_OBJECT_CLASS (parent_class)->finalize (object);
 }
 
 static char *

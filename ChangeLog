@@ -1,3 +1,14 @@
+2005-05-22  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/greasemonkey/ephy-greasemonkey-extension.c:
+	(get_script_dir), (load_scripts), (dir_changed_cb),
+	(ephy_greasemonkey_extension_init),
+	(ephy_greasemonkey_extension_finalize):
+
+	Create the script directory the first time the extension is loaded, so
+	we can monitor the directory for new scripts. (I'll clean the logic up
+	a bit soon....)
+
 2005-05-21  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
