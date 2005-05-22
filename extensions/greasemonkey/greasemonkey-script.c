@@ -36,7 +36,8 @@ struct _GreasemonkeyScriptPrivate
 {
 	char *filename;
 	char *script;
-	pcre *include_sites;
+	GList *include;
+	GList *exclude;
 };
 
 enum
@@ -46,26 +47,52 @@ enum
 	PROP_SCRIPT
 };
 
+typedef struct
+{
+	char *str;
+	pcre *re;
+} UrlMatcher;
+
 static GObjectClass *parent_class = NULL;
 
 static GType type = 0;
+
+static gint
+matcher_url_cmp (const UrlMatcher *matcher,
+		 const char *url)
+{
+	int res;
+
+	res = pcre_exec (matcher->re, NULL, url, strlen (url), 0,
+			 PCRE_NO_UTF8_CHECK, NULL, 0);
+
+	if (res >= 0)
+	{
+		return 0;
+	}
+
+	return 1;
+}
 
 gboolean
 greasemonkey_script_applies_to_url (GreasemonkeyScript *gs,
 				    const char *url)
 {
-	int res;
+	GList *found;
 
-	g_return_val_if_fail (gs->priv->include_sites != NULL, FALSE);
+	found = g_list_find_custom (gs->priv->include, url,
+				    (GCompareFunc) matcher_url_cmp);
 
-	LOG ("Trying to match %s", url);
-
-	res = pcre_exec (gs->priv->include_sites, NULL, url, strlen (url),
-			 0, PCRE_NO_UTF8_CHECK, NULL, 0);
-
-	if (res >= 0)
+	if (found == NULL)
 	{
-		LOG ("Applying '%s' to page '%s'", gs->priv->filename, url);
+		return FALSE;
+	}
+
+	found = g_list_find_custom (gs->priv->exclude, url,
+				    (GCompareFunc) matcher_url_cmp);
+
+	if (found == NULL)
+	{
 		return TRUE;
 	}
 
@@ -128,30 +155,68 @@ greasemonkey_script_new (const char *filename)
 			     NULL);
 }
 
-static char *
-find_include_sites (const char *script)
+/*
+ * Returns a GList of char *'s
+ *
+ * For example, find_tag_values (script, "include") will return a list of all
+ * [x] in "// @include [x]" in the header part of a Greasemonkey script.
+ */
+static GList *
+find_tag_values (const char *script,
+		 const char *tag)
 {
-	const char *begin_tags;
+	GList *ret;
+	const char *pos;
 	const char *end_tags;
-	const char *begin_include;
-	const char *end_include;
+	const char *begin_line;
+	const char *end_line;
+	char *commented_tag;
 
-	begin_tags = strstr (script, "// ==UserScript==");
-	g_return_val_if_fail (begin_tags != NULL, NULL);
+	pos = strstr (script, "// ==UserScript==");
+	g_return_val_if_fail (pos != NULL, NULL);
 
-	end_tags = strstr (begin_tags, "// ==/UserScript==");
+	end_tags = strstr (pos, "// ==/UserScript==");
 	g_return_val_if_fail (end_tags != NULL, NULL);
 
-	begin_include = strstr (begin_tags, "// @include");
-	g_return_val_if_fail (begin_include != NULL, NULL);
-	g_return_val_if_fail (begin_include < end_tags, NULL);
-	begin_include += 11;
+	commented_tag = g_strdup_printf ("// @%s", tag);
 
-	end_include = strstr (begin_include, "\n");
-	g_return_val_if_fail (end_include != NULL, NULL);
-	g_return_val_if_fail (end_include < end_tags, NULL);
+	ret = NULL;
 
-	return g_strndup (begin_include, end_include - begin_include);
+	while (TRUE)
+	{
+		begin_line = strstr (pos, commented_tag);
+		if (begin_line == NULL || begin_line > end_tags)
+		{
+			break;
+		}
+
+		begin_line += strlen (commented_tag);
+
+		end_line = strstr (begin_line, "\n");
+		if (end_line == NULL || end_line > end_tags)
+		{
+			break;
+		}
+
+		pos = end_line;
+
+		while (begin_line < end_line && g_ascii_isspace (*begin_line))
+		{
+			begin_line++;
+		}
+
+		if (begin_line == end_line)
+		{
+			continue;
+		}
+
+		ret = g_list_prepend (ret, g_strndup (begin_line,
+						      end_line - begin_line));
+	}
+
+	g_free (commented_tag);
+
+	return ret;
 }
 
 static pcre *
@@ -217,11 +282,40 @@ build_preg (const char *s)
 	return preg;
 }
 
+static GList *
+matchers_for_patterns (const GList *patterns)
+{
+	GList *ret;
+	pcre *re;
+	UrlMatcher *matcher;
+
+	ret = NULL;
+
+	while (patterns != NULL)
+	{
+		re = build_preg (patterns->data);
+		if (re == NULL)
+		{
+			continue;
+		}
+
+		matcher = g_new (UrlMatcher, 1);
+		matcher->str = g_strdup (patterns->data);
+		matcher->re = re;
+
+		ret = g_list_prepend (ret, matcher);
+
+		patterns = patterns->next;
+	}
+
+	return ret;
+}
+
 static void
 load_script_file (GreasemonkeyScript *gs)
 {
 	gboolean success;
-	char *include_sites;
+	GList *patterns;
 
 	g_return_if_fail (gs->priv->filename != NULL);
 
@@ -230,12 +324,15 @@ load_script_file (GreasemonkeyScript *gs)
 				       NULL, NULL);
 	g_return_if_fail (success);
 
-	include_sites = find_include_sites (gs->priv->script);
-	/* FIXME: this *will* occur, yet the user must find out somehow */
-	g_return_if_fail (include_sites != NULL);
+	patterns = find_tag_values (gs->priv->script, "include");
+	gs->priv->include = matchers_for_patterns (patterns);
+	g_list_foreach (patterns, (GFunc) g_free, NULL);
+	g_list_free (patterns);
 
-	gs->priv->include_sites = build_preg (include_sites);
-	g_return_if_fail (gs->priv->include_sites != NULL);
+	patterns = find_tag_values (gs->priv->script, "exclude");
+	gs->priv->exclude = matchers_for_patterns (patterns);
+	g_list_foreach (patterns, (GFunc) g_free, NULL);
+	g_list_free (patterns);
 }
 
 static GObject *
@@ -257,6 +354,14 @@ greasemonkey_script_constructor (GType type,
 }
 
 static void
+url_matcher_free (UrlMatcher *matcher)
+{
+	g_free (matcher->str);
+	g_free (matcher->re);
+	g_free (matcher);
+}
+
+static void
 greasemonkey_script_finalize (GObject *object)
 {
 	GreasemonkeyScript *gs = GREASEMONKEY_SCRIPT (object);
@@ -265,7 +370,11 @@ greasemonkey_script_finalize (GObject *object)
 
 	g_free (gs->priv->filename);
 	g_free (gs->priv->script);
-	g_free (gs->priv->include_sites);
+
+	g_list_foreach (gs->priv->include, (GFunc) url_matcher_free, NULL);
+	g_list_free (gs->priv->include);
+	g_list_foreach (gs->priv->exclude, (GFunc) url_matcher_free, NULL);
+	g_list_free (gs->priv->exclude);
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
 }

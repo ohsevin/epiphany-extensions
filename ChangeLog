@@ -1,5 +1,15 @@
 2005-05-22  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/greasemonkey/greasemonkey-script.c: (matcher_url_cmp),
+	(greasemonkey_script_applies_to_url), (find_tag_values),
+	(matchers_for_patterns), (load_script_file), (url_matcher_free),
+	(greasemonkey_script_finalize):
+
+	Support multiple @include and @exclude lines in the Greasemonkey
+	script header.
+
+2005-05-22  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/greasemonkey/ephy-greasemonkey-extension.c:
 	(get_script_dir), (load_scripts), (dir_changed_cb),
 	(ephy_greasemonkey_extension_init),
