@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-04 01:24-0400\n"
-"PO-Revision-Date: 2005-05-04 16:10-0400\n"
+"POT-Creation-Date: 2005-05-23 13:02-0400\n"
+"PO-Revision-Date: 2005-05-23 16:10-0400\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: Canadian English <adamw@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -378,7 +378,7 @@ msgid "Enabled"
 msgstr "Enabled"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
-#: ../extensions/rss/rss-ui.c:646
+#: ../extensions/rss/rss-ui.c:571
 msgid "Description"
 msgstr "Description"
 
@@ -761,31 +761,39 @@ msgstr "Display information, links and media from the current page"
 msgid "Page Info"
 msgstr "Page Info"
 
-#: ../extensions/rss/ephy-rss-extension.c:91
+#: ../extensions/rss/ephy-rss-extension.c:94
 msgid "News Feeds Subscription"
 msgstr "News Feeds Subscription"
 
-#: ../extensions/rss/ephy-rss-extension.c:93
-msgid "Subscribe to this website's news feed in your favorite news reader"
-msgstr "Subscribe to this website's news feed in your favourite news reader"
+#: ../extensions/rss/ephy-rss-extension.c:96
+msgid "Subscribe to this website's news feeds in your favorite news reader"
+msgstr "Subscribe to this website's news feeds in your favourite news reader"
 
-#: ../extensions/rss/ephy-rss-extension.c:323
+#: ../extensions/rss/ephy-rss-extension.c:101
+msgid "_Subscribe to this feed"
+msgstr "_Subscribe to this feed"
+
+#: ../extensions/rss/ephy-rss-extension.c:103
+msgid "Subscribe to this feed in your favorite news reader"
+msgstr "Subscribe to this feed in your favourite news reader"
+
+#: ../extensions/rss/ephy-rss-extension.c:373
 msgid "Subscribe to site's news feed"
 msgstr "Subscribe to site's news feed"
 
-#: ../extensions/rss/rss-ui.c:234
+#: ../extensions/rss/rss-ui.c:159
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr "<b><i>Unable to contact the feed reader; is it running?</i></b>"
 
-#: ../extensions/rss/rss-ui.c:236
+#: ../extensions/rss/rss-ui.c:161
 msgid "Retry"
 msgstr "Retry"
 
-#: ../extensions/rss/rss-ui.c:364
+#: ../extensions/rss/rss-ui.c:289
 msgid "_Copy Feed Address"
 msgstr "_Copy Feed Address"
 
-#: ../extensions/rss/rss-ui.c:639
+#: ../extensions/rss/rss-ui.c:564
 msgid "Subscribe"
 msgstr "Subscribe"
 
@@ -797,7 +805,8 @@ msgstr "News Feed Subscription"
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr ""
-"Subscristr to a news feed offered by the webpage in your favourite news reader"
+"Subscristr to a news feed offered by the webpage in your favourite news "
+"reader"
 
 #: ../extensions/sample-mozilla/sample-mozilla.xml.in.in.h:1
 msgid "A sample extension with mozilla backend"
