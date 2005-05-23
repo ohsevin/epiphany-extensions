@@ -40,6 +40,7 @@
 #include <libgnomevfs/gnome-vfs-utils.h>
 
 #include <glib/gi18n-lib.h>
+#include <glib/gstdio.h>
 #include <gmodule.h>
 
 #include <sys/stat.h>
@@ -88,47 +89,59 @@ static GObjectClass *parent_class = NULL;
 
 static GType type = 0;
 
-static const char *
-get_script_dir (void)
+/*
+ * Returns 0 on success; if it's not 0, this entire extension can't be used.
+ */
+static int
+mkdir_recursive (const char *path)
 {
-	/* XXX: This is hardly error-proof */
-	static char *script_dir = NULL;
+	/*
+	 * Inspired by gnomevfs-mkdir.c, by Bastien Nocera
+	 */
+	GList *dirs = NULL;
+	GList *l;
+	char *work_dir;
+	int res = 0;
 
-	if (script_dir == NULL)
+	work_dir = g_strdup (path);
+
+	while ((work_dir[0] != '.' || work_dir[1] != '\0')
+	       && g_file_test (work_dir, G_FILE_TEST_EXISTS) == FALSE)
 	{
-		char *path;
-		char *t;
-		int ret;
-
-		path = g_build_filename (ephy_dot_dir (), "extensions", NULL);
-		if (g_file_test (path, G_FILE_TEST_EXISTS) == FALSE)
-		{
-			ret = mkdir (path, 0755);
-			g_return_val_if_fail (ret == 0, NULL);
-		}
-
-		t = path;
-		path = g_build_filename (path, "data", NULL);
-		g_free (t);
-		if (g_file_test (path, G_FILE_TEST_EXISTS) == FALSE)
-		{
-			ret = mkdir (path, 0755);
-			g_return_val_if_fail (ret == 0, NULL);
-		}
-
-		t = path;
-		path = g_build_filename (path, "greasemonkey", NULL);
-		g_free (t);
-		if (g_file_test (path, G_FILE_TEST_EXISTS) == FALSE)
-		{
-			ret = mkdir (path, 0755);
-			g_return_val_if_fail (ret == 0, NULL);
-		}
-
-		script_dir = path;
+		dirs = g_list_prepend (dirs, work_dir);
+		work_dir = g_path_get_dirname (work_dir);
 	}
 
-	return script_dir;
+	if ((work_dir[0] == '.' && work_dir[1] == '\0')
+	    || g_file_test (work_dir, G_FILE_TEST_IS_DIR) == FALSE)
+	{
+		g_free (work_dir);
+		return FALSE;
+	}
+
+	g_free (work_dir);
+
+	for (l = dirs; l != NULL; l = l->next)
+	{
+		res = g_mkdir (l->data, 0755);
+
+		if (res != 0)
+		{
+			break;
+		}
+	}
+
+	g_list_foreach (dirs, (GFunc) g_free, NULL);
+	g_list_free (dirs);
+
+	return res;
+}
+
+static char *
+get_script_dir (void)
+{
+	return g_build_filename (ephy_dot_dir (), "extensions", "data",
+				 "greasemonkey", NULL);
 }
 
 static GHashTable *
@@ -179,6 +192,8 @@ dir_changed_cb (GnomeVFSMonitorHandle *handle,
 	char *basename;
 	GreasemonkeyScript *script;
 
+	LOG ("Activity on %s", info_uri);
+
 	if (g_str_has_suffix (info_uri, ".user.js") == FALSE) return;
 
 	path = gnome_vfs_get_local_path_from_uri (info_uri);
@@ -224,13 +239,14 @@ monitor_scripts (const char *path,
 		return NULL;
 	}
 
+	LOG ("Monitoring %s for user scripts", path);
 	return monitor;
 }
 
 static void
 ephy_greasemonkey_extension_init (EphyGreasemonkeyExtension *extension)
 {
-	const char *path;
+	char *path;
 
 	extension->priv = EPHY_GREASEMONKEY_EXTENSION_GET_PRIVATE (extension);
 
@@ -238,8 +254,13 @@ ephy_greasemonkey_extension_init (EphyGreasemonkeyExtension *extension)
 
 	path = get_script_dir ();
 
-	extension->priv->scripts = load_scripts (path);
-	extension->priv->monitor = monitor_scripts (path, extension);
+	if (mkdir_recursive (path) == 0)
+	{
+		extension->priv->scripts = load_scripts (path);
+		extension->priv->monitor = monitor_scripts (path, extension);
+	}
+
+	g_free (path);
 }
 
 static void
@@ -249,7 +270,10 @@ ephy_greasemonkey_extension_finalize (GObject *object)
 
 	LOG ("EphyGreasemonkeyExtension finalising");
 
-	g_hash_table_destroy (extension->priv->scripts);
+	if (extension->priv->scripts != NULL)
+	{
+		g_hash_table_destroy (extension->priv->scripts);
+	}
 
 	if (extension->priv->monitor != NULL)
 	{
@@ -264,18 +288,18 @@ script_name_build (const char *url)
 {
 	char *basename;
 	char *path;
-	const char *script_dir;
-
-	script_dir = get_script_dir ();
-	g_return_val_if_fail (script_dir != NULL, NULL);
+	char *script_dir;
 
 	basename = g_filename_from_utf8 (url, -1, NULL, NULL, NULL);
 	g_return_val_if_fail (basename != NULL, NULL);
 
 	g_strdelimit (basename, "/", '_');
 
+	script_dir = get_script_dir ();
+
 	path = g_build_filename (script_dir, basename, NULL);
 
+	g_free (script_dir);
 	g_free (basename);
 
 	return path;
@@ -297,7 +321,7 @@ ephy_greasemonkey_extension_install_cb (GtkAction *action,
 	EphyEmbedPersist *persist;
 	WindowData *data;
 	const char *url;
-	const char *filename;
+	char *filename;
 
 	data = (WindowData *) g_object_get_data (G_OBJECT (window),
 						 WINDOW_DATA_KEY);
@@ -311,15 +335,15 @@ ephy_greasemonkey_extension_install_cb (GtkAction *action,
 
 	LOG ("Installing script at '%s'", url);
 
-	filename = script_name_build (url);
-	g_return_if_fail (filename != NULL);
-
 	persist = EPHY_EMBED_PERSIST
 		(ephy_embed_factory_new_object (EPHY_TYPE_EMBED_PERSIST));
 
 	ephy_embed_persist_set_source (persist, url);
 	ephy_embed_persist_set_embed (persist, embed);
+
+	filename = script_name_build (url);
 	ephy_embed_persist_set_dest (persist, filename);
+	g_free (filename);
 
 	g_signal_connect (persist, "completed",
 			  G_CALLBACK (save_source_completed_cb), NULL);
@@ -327,21 +351,6 @@ ephy_greasemonkey_extension_install_cb (GtkAction *action,
 	ephy_embed_persist_save (persist);
 
 	g_object_unref (G_OBJECT (persist));
-}
-
-static EphyWindow *
-ephy_window_for_ephy_embed (EphyEmbed *embed)
-{
-	EphyTab *tab;
-	EphyWindow *window;
-
-	tab = ephy_tab_for_embed (embed);
-	g_return_val_if_fail (EPHY_IS_TAB (tab), NULL);
-
-	window = EPHY_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (tab)));
-	g_return_val_if_fail (EPHY_IS_WINDOW (window), NULL);
-
-	return window;
 }
 
 static gboolean
@@ -367,7 +376,7 @@ dom_mouse_down_cb (EphyEmbed *embed,
 		return FALSE;
 	}
 
-	window = ephy_window_for_ephy_embed (embed);
+	window = EPHY_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (embed)));
 	g_return_val_if_fail (window != NULL, FALSE);
 
 	ephy_embed_event_get_property (event, "link", &value);

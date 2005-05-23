@@ -1,5 +1,15 @@
 2005-05-22  Adam Hooper  <adamh@cvs.gnome.org>
 
+	* extensions/greasemonkey/ephy-greasemonkey-extension.c:
+	(mkdir_recursive), (get_script_dir), (dir_changed_cb),
+	(monitor_scripts), (ephy_greasemonkey_extension_init),
+	(ephy_greasemonkey_extension_finalize), (script_name_build),
+	(ephy_greasemonkey_extension_install_cb), (dom_mouse_down_cb):
+
+	Implement a far better recursive mkdir for the scripts directory.
+
+2005-05-22  Adam Hooper  <adamh@cvs.gnome.org>
+
 	* extensions/greasemonkey/greasemonkey-script.c: (matcher_url_cmp),
 	(greasemonkey_script_applies_to_url), (find_tag_values),
 	(matchers_for_patterns), (load_script_file), (url_matcher_free),
