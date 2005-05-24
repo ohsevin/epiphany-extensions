@@ -82,6 +82,8 @@ mozilla_evaluate_js (gpointer event,
 	NS_ENSURE_SUCCESS (rv, FALSE);
 
 	nsCOMPtr<nsIDOMHTMLScriptElement> scriptTag = do_QueryInterface (elem);
+	NS_ENSURE_TRUE (scriptTag, FALSE);
+
 	nsEmbedString aScript;
 	NS_CStringToUTF16 (nsEmbedCString (script), NS_CSTRING_ENCODING_UTF8,
 			   aScript);

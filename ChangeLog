@@ -1,3 +1,11 @@
+2005-05-24  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/greasemonkey/mozilla/mozilla-helpers.cpp:
+	(mozilla_evaluate_js):
+
+	It is not always possible to add a script element to a document:
+	for instance, think to an XML document.
+
 2005-05-22  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/greasemonkey/ephy-greasemonkey-extension.c:
