@@ -317,11 +317,6 @@ AC_SUBST([MOZILLA_INCLUDE_ROOT])
 MOZILLA_HOME="`$PKG_CONFIG --variable=libdir $MOZILLA-gtkmozembed`"
 AC_SUBST([MOZILLA_HOME])
 
-dnl whether to build with DEBUG defined
-AC_ARG_WITH([mozilla-debug],
-        [  --with-mozilla-debug        Use a debug mozilla build],
-        [AM_CXXFLAGS="-DDEBUG $AM_CXXFLAGS"])
-
 AC_ARG_ENABLE([cpp-rtti],
         [  --enable-cpp-rtti       Enable C++ RTTI (for cvs gcc)],,
         [enable_cpp_rtti=no])
@@ -368,8 +363,21 @@ fi
 CPPFLAGS="$_SAVE_CPPFLAGS $AM_CPPFLAGS -I$MOZILLA_INCLUDE_ROOT `$PKG_CONFIG --cflags-only-I $MOZILLA-xpcom` -I$MOZILLA_INCLUDE_ROOT/necko"
 CXXFLAGS="$_SAVE_CXXFLAGS $AM_CXXFLAGS `$PKG_CONFIG --cflags-only-other $MOZILLA-xpcom`"
 
-dnl Changed in 1.8a1 and again in 1.8a3 to its present form (variant 2);
-dnl variant 1 is on 1.7 branch. Aviary branch also has variant 2.
+dnl Check whether we have a mozilla debug build
+
+AC_MSG_CHECKING([[whether we have a mozilla debug build]])
+
+AC_PREPROC_IFELSE(
+	[AC_LANG_SOURCE(
+		[[#include <mozilla-config.h>
+		  #if !defined(MOZ_REFLOW_PERF) || !defined(MOZ_REFLOW_PERF_DSP)
+		  #error No
+		  #endif]]
+	)],
+	[AM_CXXFLAGS="-DDEBUG -D_DEBUG $AM_CXXFLAGS" have_mozilla_debug=yes],
+	[have_mozilla_debug=no])
+
+AC_MSG_RESULT([$have_mozilla_debug])
 
 dnl Determine gecko version
 dnl We don't use the version from the .pc file, since that's the app version
@@ -394,6 +402,9 @@ if test "x$have_gecko_1_8" = "xyes"; then
         AC_DEFINE([HAVE_GECKO_1_8],[1],[Define if we have gecko $EPIPHANY_API_VERSION])
 fi
 AM_CONDITIONAL([HAVE_GECKO_1_8],[test "x$have_gecko_1_8" = "xyes"])
+
+dnl Changed in 1.8a1 and again in 1.8a3 to its present form (variant 2);
+dnl variant 1 is on 1.7 branch. Aviary branch also has variant 2.
 
 AC_MSG_CHECKING([for nsIContentPolicy API])
 
