@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-06 02:53+0000\n"
-"PO-Revision-Date: 2005-05-06 09:44+0200\n"
+"POT-Creation-Date: 2005-05-29 02:56+0000\n"
+"PO-Revision-Date: 2005-05-29 13:44+0200\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -385,7 +385,7 @@ msgid "Enabled"
 msgstr "Povoleno"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
-#: ../extensions/rss/rss-ui.c:646
+#: ../extensions/rss/rss-ui.c:571
 msgid "Description"
 msgstr "Popis"
 
@@ -768,31 +768,39 @@ msgstr "Zobrazit informace o odkazech a médiích z aktuální stránky"
 msgid "Page Info"
 msgstr "Informace o stránce"
 
-#: ../extensions/rss/ephy-rss-extension.c:91
+#: ../extensions/rss/ephy-rss-extension.c:94
 msgid "News Feeds Subscription"
 msgstr "Přihlášení k toku novinek"
 
-#: ../extensions/rss/ephy-rss-extension.c:93
-msgid "Subscribe to this website's news feed in your favorite news reader"
+#: ../extensions/rss/ephy-rss-extension.c:96
+msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr "Přihlásit se k toku novinek tohoto WWW serveru ve vaší oblíbené čtečce novinek"
 
-#: ../extensions/rss/ephy-rss-extension.c:323
+#: ../extensions/rss/ephy-rss-extension.c:101
+msgid "_Subscribe to this feed"
+msgstr "_Přihlásit se k tomuto toku"
+
+#: ../extensions/rss/ephy-rss-extension.c:103
+msgid "Subscribe to this feed in your favorite news reader"
+msgstr "Přihlásit se k tomuto toku ve vaší oblíbené čtečce novinek"
+
+#: ../extensions/rss/ephy-rss-extension.c:373
 msgid "Subscribe to site's news feed"
 msgstr "Přihlásit se k toku novinek serveru"
 
-#: ../extensions/rss/rss-ui.c:234
+#: ../extensions/rss/rss-ui.c:159
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr "<b><i>Nemohu kontaktovat čtečku toků, běží?</i></b>"
 
-#: ../extensions/rss/rss-ui.c:236
+#: ../extensions/rss/rss-ui.c:161
 msgid "Retry"
 msgstr "Zkusit znovu"
 
-#: ../extensions/rss/rss-ui.c:364
+#: ../extensions/rss/rss-ui.c:289
 msgid "_Copy Feed Address"
 msgstr "_Kopírovat adresu toku"
 
-#: ../extensions/rss/rss-ui.c:639
+#: ../extensions/rss/rss-ui.c:564
 msgid "Subscribe"
 msgstr "Přihlásit se"
 
@@ -803,7 +811,9 @@ msgstr "Přihlášení k toku novinek"
 #: ../extensions/rss/rss.xml.in.in.h:2
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
-msgstr "Přihlásit se k toku novinek nabízenému WWW stránkou ve vaší oblíbené čtečce novinek"
+msgstr ""
+"Přihlásit se k toku novinek nabízenému WWW stránkou ve vaší oblíbené čtečce "
+"novinek"
 
 #: ../extensions/sample-mozilla/sample-mozilla.xml.in.in.h:1
 msgid "A sample extension with mozilla backend"
