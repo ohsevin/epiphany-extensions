@@ -27,7 +27,9 @@
 
 #include <glib.h>
 
+#undef MOZILLA_INTERNAL_API
 #include <nsEmbedString.h>
+#define MOZILLA_INTERNAL_API 1
 #include <nsCOMPtr.h>
 #include <nsIDOMEvent.h>
 #include <nsIDOMEventTarget.h>

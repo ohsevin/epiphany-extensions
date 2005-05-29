@@ -1,5 +1,11 @@
 2005-05-29  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/greasemonkey/mozilla/mozilla-helpers.cpp:
+
+	Fix build with trunk.
+
+2005-05-29  Christian Persch  <chpe@cvs.gnome.org>
+
 	* configure.ac:
 	R extensions/find/.cvsignore:
 	R extensions/find/Makefile.am:
