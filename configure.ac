@@ -139,7 +139,7 @@ dnl *******************************
 
 AC_MSG_CHECKING([which extensions to build])
 
-ALL_EXTENSIONS="actions adblock bookmarks-tray certificates dashboard error-viewer extensions-manager-ui find gestures greasemonkey net-monitor page-info rss sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu"
+ALL_EXTENSIONS="actions adblock bookmarks-tray certificates dashboard error-viewer extensions-manager-ui gestures greasemonkey net-monitor page-info rss sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu"
 USEFUL_EXTENSIONS="actions bookmarks-tray certificates dashboard error-viewer extensions-manager-ui gestures page-info select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu"
 DEFAULT_EXTENSIONS="actions bookmarks-tray certificates error-viewer extensions-manager-ui gestures page-info select-stylesheet sidebar smart-bookmarks tabsmenu tab-groups tab-states"
 
@@ -440,14 +440,6 @@ AC_DEFINE_UNQUOTED([MOZ_NSICONTENTPOLICY_VARIANT], [$variant], [Define the nsICo
 
 AC_MSG_RESULT([variant $variant])
 
-dnl Find extension needs toolkit nsITypeAheadFind
-
-if echo "$EXTENSIONS" | egrep '(^| )find($| )' > /dev/null; then
-	AC_CHECK_FILE([$MOZILLA_INCLUDE_ROOT/fastfind/nsITypeAheadFind.h],
-	        [AC_DEFINE([HAVE_FASTFIND_NSITYPEAHEADFIND_H],[1],[Define if we have toolkit's nsITypeAheadFind])],
-		[AC_MSG_ERROR([Find extension needs toolkit's nsITypeAheadFind])])
-fi
-
 dnl restore flags
 CPPFLAGS=$_SAVE_CPPFLAGS
 CXXFLAGS=$_SAVE_CXXFLAGS
@@ -496,7 +488,6 @@ extensions/adblock/mozilla/Makefile
 extensions/bookmarks-tray/Makefile
 extensions/certificates/Makefile
 extensions/dashboard/Makefile
-extensions/find/Makefile
 extensions/gestures/Makefile
 extensions/error-viewer/Makefile
 extensions/error-viewer/mozilla/Makefile
