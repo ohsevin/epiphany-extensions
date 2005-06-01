@@ -1,18 +1,19 @@
 # Bulgarian translation of epiphany-extensions.
 # Copyright (C) 2004 THE epiphany-extensions'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the epiphany-extensions package.
-# Rostislav Raykov <zbrox@i-space.org>, 2004.
+# Rostislav Raykov <zbrox@i-space.org>, 2004. 2005
 # Vladimir Petkov <vpetkov@i-space.org>, 2005.
-#
-#
+# Rostislav Raykov <zbrox@i-space.org>, 2005.
+# 
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-06 18:46+0300\n"
-"PO-Revision-Date: 2005-05-06 18:38+0300\n"
-"Last-Translator: Rostislav Raykov <zbrox@i-space.org>\n"
-"Language-Team: Bulgarian <dict@linux.zonebg.com>\n"
+"POT-Creation-Date: 2005-06-01 18:31+0300\n"
+"PO-Revision-Date: 2005-06-01 18:31+0300\n"
+"Last-Translator: Rostislav \"zbrox\" Raykov <zbrox@i-space.org>\n"
+"Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -31,12 +32,16 @@ msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "images."
 msgstr ""
+"Ако тази опция е включена, това действие ще бъде включено в изскачащото меню "
+"за изображенията."
 
 #: ../extensions/actions/action-properties.glade.h:4
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "links and pages."
 msgstr ""
+"Ако тази опция е включена, това действие ще бъде включено в изскачащото меню "
+"за препратки и страници."
 
 #: ../extensions/actions/action-properties.glade.h:5
 msgid "The action description."
@@ -47,12 +52,17 @@ msgid ""
 "The action name. If a character is preceded by an underscore, that character "
 "will be used as the access key for the menu item."
 msgstr ""
+"Името на действието. Ако преди символа има долна черта, той ще бъде "
+"използван като бърз бутон за този елемент от менюто."
 
 #: ../extensions/actions/action-properties.glade.h:7
 msgid ""
 "The command to execute when the action is activated. The URL of the link, "
 "image or page will be appended to the command."
 msgstr ""
+"Команда, която да се изпълни, когато се активира действието. URL на "
+"препратката, изображението или страницата, които да се прикачат към "
+"командата."
 
 #: ../extensions/actions/action-properties.glade.h:8
 msgid "_Command:"
@@ -81,7 +91,7 @@ msgstr "Действия"
 
 #: ../extensions/actions/actions.xml.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
-msgstr ""
+msgstr "Изпълнение на команди от контекстното меню"
 
 #: ../extensions/actions/ephy-actions-extension.c:97
 msgid "_Actions"
@@ -89,7 +99,7 @@ msgstr "_Действия"
 
 #: ../extensions/actions/ephy-actions-extension.c:98
 msgid "Customize actions"
-msgstr ""
+msgstr "Настройване на действията"
 
 #: ../extensions/actions/ephy-actions-extension.c:410
 msgid "Could not run command"
@@ -173,7 +183,7 @@ msgstr "_Сертификати"
 
 #: ../extensions/certificates/certificates.xml.in.in.h:2
 msgid "View the page certificate and manage the certificates"
-msgstr ""
+msgstr "Преглед и управление на сертификатите на страницата"
 
 #. stock icon
 #: ../extensions/certificates/ephy-certificates-extension.c:275
@@ -197,11 +207,11 @@ msgstr "Показване на сертификата на уеб сървър�
 
 #: ../extensions/dashboard/dashboard.xml.in.in.h:1
 msgid "Dashboard"
-msgstr ""
+msgstr "Dashboard"
 
 #: ../extensions/dashboard/dashboard.xml.in.in.h:2
 msgid "Send browsing information to Dashboard"
-msgstr ""
+msgstr "Изпращане на информацията от разглеждането на страниците към Dashboard"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
@@ -245,6 +255,8 @@ msgstr "Преглед на грешките"
 #: ../extensions/error-viewer/error-viewer.xml.in.in.h:2
 msgid "View error in web pages, validate web pages and check links"
 msgstr ""
+"Преглед на грешките в уеб страниците, валидиране на уеб страниците и "
+"проверяване на препратките"
 
 #. Don't bother looking for source lines -- they're not there
 #: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:107
@@ -396,7 +408,7 @@ msgstr "Низ за търсене"
 
 #: ../extensions/find/eggfindbar.c:133
 msgid "The name of the string to be found"
-msgstr "Низа, който да бъде намерен"
+msgstr "Низът, който да бъде намерен"
 
 #: ../extensions/find/eggfindbar.c:146
 msgid "Case sensitive"
@@ -444,7 +456,7 @@ msgstr "Търсене"
 
 #: ../extensions/find/find.xml.in.in.h:2
 msgid "Replace the find dialog with a find toolbar"
-msgstr ""
+msgstr "Заменяне на прозореца за търсене с лента за търсене"
 
 #: ../extensions/gestures/gestures.xml.in.in.h:1
 msgid "Gestures"
@@ -457,11 +469,11 @@ msgstr "Изпълнение на действия чрез движения н�
 #. How to describe this? It makes Epiphany "Just Work"
 #: ../extensions/net-monitor/net-monitor.xml.in.in.h:2
 msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
-msgstr ""
+msgstr "Автоматично управление на статуса Включен/Изключен (ЕКСПЕРИМЕНТАЛНО!)"
 
 #: ../extensions/net-monitor/net-monitor.xml.in.in.h:3
 msgid "Network Connection Monitor"
-msgstr ""
+msgstr "Наблюдение на мрежовата връзка"
 
 #: ../extensions/page-info/ephy-page-info-extension.c:65
 msgid "_Page Info"
@@ -623,7 +635,7 @@ msgstr "Мета данни за страницата"
 
 #: ../extensions/page-info/page-info.glade.h:1
 msgid "<b>Dublin Core Metadata</b>"
-msgstr ""
+msgstr "<b>Основни метаданни на Дъблин</b>"
 
 #: ../extensions/page-info/page-info.glade.h:2
 msgid "<b>Forms In Page</b>"
@@ -747,7 +759,7 @@ msgstr "_Запазване на медията като..."
 
 #: ../extensions/page-info/page-info.xml.in.in.h:1
 msgid "Display information about and links and media from the current page"
-msgstr ""
+msgstr "Показва информация за препратките и медията от текущата страница"
 
 #: ../extensions/page-info/page-info.xml.in.in.h:2
 msgid "Page Info"
@@ -755,15 +767,15 @@ msgstr "Информация за страницата"
 
 #: ../extensions/sample-mozilla/sample-mozilla.xml.in.in.h:1
 msgid "A sample extension with mozilla backend"
-msgstr ""
+msgstr "Примерно разширение с mozilla backend"
 
 #: ../extensions/sample-mozilla/sample-mozilla.xml.in.in.h:2
 msgid "Sample (Mozilla)"
-msgstr ""
+msgstr "Пример (Mozilla)"
 
 #: ../extensions/sample/sample.xml.in.in.h:1
 msgid "A sample extension"
-msgstr ""
+msgstr "Примерно разширение"
 
 #: ../extensions/sample/sample.xml.in.in.h:2
 msgid "Sample"
@@ -800,7 +812,7 @@ msgstr "Без"
 
 #: ../extensions/select-stylesheet/select-stylesheet.xml.in.in.h:1
 msgid "Select Stylesheet"
-msgstr ""
+msgstr "Избор на стил"
 
 #: ../extensions/select-stylesheet/select-stylesheet.xml.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
@@ -838,7 +850,7 @@ msgstr "_Добавяне на странична лента"
 
 #: ../extensions/sidebar/sidebar.xml.in.in.h:1
 msgid "Adds a sidebar to windows"
-msgstr ""
+msgstr "Добавя странична лента към прозорците"
 
 #: ../extensions/sidebar/sidebar.xml.in.in.h:2
 msgid "Sidebar"
@@ -854,7 +866,7 @@ msgstr "_Речник на GNOME"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:1
 msgid "Look up the selected text with a smart bookmark"
-msgstr ""
+msgstr "Търсене на избрания текст с умна отметка."
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:2
 msgid "Smart Bookmarks"
@@ -862,7 +874,7 @@ msgstr "Умни отметки"
 
 #: ../extensions/tab-groups/tab-groups.xml.in.in.h:1
 msgid "Groups newly opened tabs"
-msgstr ""
+msgstr "Групира ново-отворените табове"
 
 #: ../extensions/tab-groups/tab-groups.xml.in.in.h:2
 msgid "Tab Groups"
@@ -889,15 +901,34 @@ msgstr "Преместване на страници между прозорци
 
 #: ../extensions/tabsmenu/tabsmenu.xml.in.in.h:2
 msgid "Tabsmenu"
-msgstr ""
+msgstr "Меню за табовете"
 
 #: ../extensions/tab-states/tab-states.xml.in.in.h:1
 msgid "Indicates new content in background tabs"
-msgstr ""
+msgstr "Показва новото съдържание в скрити табове"
 
 #: ../extensions/tab-states/tab-states.xml.in.in.h:2
 msgid "Tab States"
-msgstr ""
+msgstr "Състояния на табовете"
+
+#~ msgid "News Feeds Subscription"
+#~ msgstr "Абонаменти за новини"
+
+#~ msgid "Subscribe to this website's news feeds in your favorite news reader"
+#~ msgstr ""
+#~ "Абониране за новини предлагани от тази уеб страница през любимия Ви четец."
+
+#~ msgid "_Subscribe to this feed"
+#~ msgstr "_Абониране към новините на този сайт"
+
+#~ msgid "Subscribe to this feed in your favorite news reader"
+#~ msgstr "Абониране за тези новини през любимия Ви четец."
+
+#~ msgid "Subscribe to site's news feed"
+#~ msgstr "Абониране към новините на този сайт"
+
+#~ msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
+#~ msgstr "<b><i>Няма връзка с четеца на RSS. Пусната ли е програмата?</i></b>"
 
 #~ msgid "Retry"
 #~ msgstr "Повторен опит"
@@ -910,6 +941,12 @@ msgstr ""
 
 #~ msgid "News Feed Subscription"
 #~ msgstr "Абонамент за източници на новини"
+
+#~ msgid ""
+#~ "Subscribe to a news feed offered by the webpage in your favorite news "
+#~ "reader"
+#~ msgstr ""
+#~ "Абониране за новини, през любимия ви четец, предлагани от уеб страници."
 
 #~ msgid "Certificate Manager"
 #~ msgstr "Мениджър на сертификатите"
