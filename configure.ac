@@ -147,6 +147,8 @@ PYTHON_ALL_EXTENSIONS="python-console sample-python"
 PYTHON_USEFUL_EXTENSIONS="python-console"
 PYTHON_DEFAULT_EXTENSIONS="python-console"
 
+DIST_EXTENSIONS="$ALL_EXTENSIONS $PYTHON_ALL_EXTENSIONS"
+
 if echo "$FEATURES" | egrep '(^| )(python)($| )' > /dev/null; then
 	ALL_EXTENSIONS="$ALL_EXTENSIONS $PYTHON_ALL_EXTENSIONS"
 	USEFUL_EXTENSIONS="$USEFUL_EXTENSIONS $PYTHON_USEFUL_EXTENSIONS"
@@ -196,7 +198,7 @@ for ext in $extensions; do
 done
 IFS="$ephyext_save_ifs"
 
-AC_SUBST([ALL_EXTENSIONS])
+AC_SUBST([DIST_EXTENSIONS])
 AC_SUBST([BUILD_EXTENSIONS],[`echo $EXTENSIONS | tr ' ' '\n' | sort | uniq | tr '\n' ' '`])
 
 AC_MSG_RESULT([$EXTENSIONS])

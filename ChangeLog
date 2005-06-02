@@ -1,3 +1,10 @@
+2005-06-02  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/Makefile.am:
+
+	Distribute python extensions too.
+
 2005-05-31  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
