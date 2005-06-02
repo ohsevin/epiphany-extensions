@@ -23,8 +23,6 @@ extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c
 extensions/extensions-manager-ui/extensions-manager-ui.c
 extensions/extensions-manager-ui/extensions-manager-ui.glade
 extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in
-extensions/find/eggfindbar.c
-extensions/find/find.xml.in.in
 extensions/gestures/gestures.xml.in.in
 extensions/net-monitor/net-monitor.xml.in.in
 extensions/page-info/ephy-page-info-extension.c
