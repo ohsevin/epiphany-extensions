@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-10 18:41+0000\n"
-"PO-Revision-Date: 2005-04-30 17:43+0300\n"
+"POT-Creation-Date: 2005-06-04 10:54+0000\n"
+"PO-Revision-Date: 2005-06-04 17:31+0300\n"
 "Last-Translator: Pauli Virtanen <pauli.virtanen@hut.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -38,7 +38,8 @@ msgstr "Jos tämä on valittuna, toiminto näkyy kuvien ponnahdusvalikossa."
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "links and pages."
-msgstr "Jos tämä on valittuna, toiminto näkyy linkkien ja sivujen ponnahdusvalikossa."
+msgstr ""
+"Jos tämä on valittuna, toiminto näkyy linkkien ja sivujen ponnahdusvalikossa."
 
 #: ../extensions/actions/action-properties.glade.h:5
 msgid "The action description."
@@ -48,13 +49,17 @@ msgstr "Toiminnon kuvaus."
 msgid ""
 "The action name. If a character is preceded by an underscore, that character "
 "will be used as the access key for the menu item."
-msgstr "Toiminnon nimi. Jos jotakin merkkiä edeltää alaviiva, siitä tulee valikon kohdan pikakirjain."
+msgstr ""
+"Toiminnon nimi. Jos jotakin merkkiä edeltää alaviiva, siitä tulee valikon "
+"kohdan pikakirjain."
 
 #: ../extensions/actions/action-properties.glade.h:7
 msgid ""
 "The command to execute when the action is activated. The URL of the link, "
 "image or page will be appended to the command."
-msgstr "Komento, jonka toiminto käynnistää. Epiphany lisää linkin, kuvan tai sivun URL:n kirjoitetun komennon perään."
+msgstr ""
+"Komento, jonka toiminto käynnistää. Epiphany lisää linkin, kuvan tai sivun "
+"URL:n kirjoitetun komennon perään."
 
 #: ../extensions/actions/action-properties.glade.h:8
 msgid "_Command:"
@@ -85,19 +90,19 @@ msgstr "Toiminnot"
 msgid "Execute arbitrary commands from the context menu"
 msgstr "Käynnistä vapaavalintaisia komentoja ponnahdusvalikoista."
 
-#: ../extensions/actions/ephy-actions-extension.c:97
+#: ../extensions/actions/ephy-actions-extension.c:94
 msgid "_Actions"
 msgstr "_Toiminnot"
 
-#: ../extensions/actions/ephy-actions-extension.c:98
+#: ../extensions/actions/ephy-actions-extension.c:95
 msgid "Customize actions"
 msgstr "Muokkaa toimintoja"
 
-#: ../extensions/actions/ephy-actions-extension.c:410
+#: ../extensions/actions/ephy-actions-extension.c:408
 msgid "Could not run command"
 msgstr "Komennon käynnistys epäonnistui"
 
-#: ../extensions/actions/ephy-actions-extension.c:413
+#: ../extensions/actions/ephy-actions-extension.c:411
 msgid "Could not Run Command"
 msgstr "Komennon käynnistys epäonnistui"
 
@@ -188,18 +193,18 @@ msgid "Manage your certificates"
 msgstr "Varmenteiden hallinta"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:285
+#: ../extensions/certificates/ephy-certificates-extension.c:284
 msgid "Server _Certificate"
 msgstr "Palvelimen _varmenne"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:287
+#: ../extensions/certificates/ephy-certificates-extension.c:286
 msgid "Display the web server's certificate"
 msgstr "Näytä WWW-palvelimen varmenne"
 
 #: ../extensions/dashboard/dashboard.xml.in.in.h:1
 msgid "Dashboard"
-msgstr "Kojelauta (Dashboard)"
+msgstr "Dashboard"
 
 #: ../extensions/dashboard/dashboard.xml.in.in.h:2
 msgid "Send browsing information to Dashboard"
@@ -207,7 +212,7 @@ msgstr "Lähetä selailutiedot Dashboard-ohjelmalle"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
-msgstr "Tarkista _HTML"
+msgstr "Tarkasta _HTML"
 
 #. shortcut key
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
@@ -216,7 +221,7 @@ msgstr "Näytä HTML-virheet virheiden katseluikkunassa"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:104
 msgid "Check _Links"
-msgstr "Tarkista _linkit"
+msgstr "Tarkasta _linkit"
 
 #. shortcut key
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:106
@@ -246,10 +251,10 @@ msgstr "Virheiden katselu"
 
 #: ../extensions/error-viewer/error-viewer.xml.in.in.h:2
 msgid "View error in web pages, validate web pages and check links"
-msgstr "Näytä WWW-sivujen virheet, validoi WWW-sivuja ja tarkista linkkejä"
+msgstr "Näytä WWW-sivujen virheet, validoi WWW-sivuja ja tarkasta linkkejä"
 
 #. Don't bother looking for source lines -- they're not there
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:107
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:108
 #, c-format
 msgid ""
 "Error:\n"
@@ -258,7 +263,7 @@ msgstr ""
 "Virhe:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:137
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:138
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -271,8 +276,8 @@ msgstr ""
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
-msgstr[0] "%d viallinen linkki"
-msgstr[1] "%d viallista linkkiä"
+msgstr[0] "%d viallinen linkki löytyi"
+msgstr[1] "%d viallista linkkiä löytyi"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
@@ -287,8 +292,8 @@ msgstr ""
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
-msgstr[0] "Tarkistetaan %d linkki kohteessa %s"
-msgstr[1] "Tarkistetaan %d linkkiä kohteessa %s"
+msgstr[0] "Tarkastetaan %d linkki kohteessa %s"
+msgstr[1] "Tarkastetaan %d linkkiä kohteessa %s"
 
 #: ../extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
@@ -309,7 +314,7 @@ msgstr[1] "%d virhettä löytyi"
 #: ../extensions/error-viewer/sgml-validator.c:169
 #, c-format
 msgid "HTML Validation of %s complete"
-msgstr "Kohteen %s HTML-tarkistus valmis"
+msgstr "Kohteen %s HTML-tarkastus valmis"
 
 #: ../extensions/error-viewer/sgml-validator.c:227
 #, c-format
@@ -323,11 +328,9 @@ msgstr ""
 #: ../extensions/error-viewer/sgml-validator.c:229
 #: ../extensions/error-viewer/sgml-validator.c:245
 msgid ""
-"Doctype is \"XHTML\" but content type is \"text/html\".  Use "
-"\"application/xhtml+xml\" instead."
-msgstr ""
-"Asiakirjatyyppi on \"XHTML\" mutta sisältötyyppi on \"text/html\". "
-"Tyyppiä \"application/xhtml+xml\" tulisi käyttää sen sijaan."
+"Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
+"xhtml+xml\" instead."
+msgstr "Dokumenttityyppi on \"XHTML\" mutta sisältötyyppi on \"text/html\". Tyyppiä \"application/xhtml+xml\" tulisi käyttää sen sijaan."
 
 #: ../extensions/error-viewer/sgml-validator.c:243
 #, c-format
@@ -358,7 +361,7 @@ msgid ""
 "No valid doctype specified."
 msgstr ""
 "HTML-virhe kohteessa %s:\n"
-"Asiakirjatyyppiä ei määritelty."
+"Dokumenttityyppiä ei määritelty."
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
 msgid "_Extensions"
@@ -373,6 +376,7 @@ msgid "Enabled"
 msgstr "Käytössä"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: ../extensions/rss/rss-ui.c:571
 msgid "Description"
 msgstr "Kuvaus"
 
@@ -391,62 +395,6 @@ msgstr "Ota laajennuksia käyttöön tai poista niitä käytöstä"
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:2
 msgid "Extensions Manager"
 msgstr "Laajennusten hallinta"
-
-#: ../extensions/find/eggfindbar.c:132
-msgid "Search string"
-msgstr "Etsi tekstiä"
-
-#: ../extensions/find/eggfindbar.c:133
-msgid "The name of the string to be found"
-msgstr "Etsittävän merkkijonon nimi"
-
-#: ../extensions/find/eggfindbar.c:146
-msgid "Case sensitive"
-msgstr "Sama kirjainkoko"
-
-#: ../extensions/find/eggfindbar.c:147
-msgid "TRUE for a case sensitive search"
-msgstr "TOSI, jos kirjainkoon on oltava sama"
-
-#: ../extensions/find/eggfindbar.c:154
-msgid "Highlight color"
-msgstr "Korostusväri"
-
-#: ../extensions/find/eggfindbar.c:155
-msgid "Color of highlight for all matches"
-msgstr "Kaikkien täsmäävien kohtien korostusväri"
-
-#: ../extensions/find/eggfindbar.c:161
-msgid "Current color"
-msgstr "Nykyinen väri"
-
-#: ../extensions/find/eggfindbar.c:162
-msgid "Color of highlight for the current match"
-msgstr "Nykyisen täsmäävän kohdan korostusväri"
-
-#: ../extensions/find/eggfindbar.c:286
-msgid "F_ind:"
-msgstr "E_tsi:"
-
-#: ../extensions/find/eggfindbar.c:306
-msgid "_Previous"
-msgstr "_Edellinen"
-
-#: ../extensions/find/eggfindbar.c:308
-msgid "_Next"
-msgstr "_Seuraava"
-
-#: ../extensions/find/eggfindbar.c:321
-msgid "C_ase Sensitive"
-msgstr "S_ama kirjainkoko"
-
-#: ../extensions/find/find.xml.in.in.h:1
-msgid "Find"
-msgstr "Etsi"
-
-#: ../extensions/find/find.xml.in.in.h:2
-msgid "Replace the find dialog with a find toolbar"
-msgstr "Korvaa etsintäikkuna työkalurivillä"
 
 #: ../extensions/gestures/gestures.xml.in.in.h:1
 msgid "Gestures"
@@ -473,153 +421,153 @@ msgstr "_Sivun tiedot"
 msgid "Display page information in a dialog"
 msgstr "Näytä sivun tiedot ikkunassa"
 
-#: ../extensions/page-info/page-info-dialog.c:673
+#: ../extensions/page-info/page-info-dialog.c:672
 msgid "Unknown type"
 msgstr "Tuntematon tyyppi"
 
-#: ../extensions/page-info/page-info-dialog.c:678
+#: ../extensions/page-info/page-info-dialog.c:677
 msgid "Full standards compliance"
 msgstr "Täysin standardienmukainen"
 
-#: ../extensions/page-info/page-info-dialog.c:681
+#: ../extensions/page-info/page-info-dialog.c:680
 msgid "Almost standards compliance"
 msgstr "Melkein standardienmukainen"
 
-#: ../extensions/page-info/page-info-dialog.c:684
+#: ../extensions/page-info/page-info-dialog.c:683
 msgid "Compatibility"
 msgstr "Yhteensopivuus"
 
-#: ../extensions/page-info/page-info-dialog.c:688
+#: ../extensions/page-info/page-info-dialog.c:687
 msgid "Undetermined"
 msgstr "Määrittelemätön"
 
-#: ../extensions/page-info/page-info-dialog.c:697
+#: ../extensions/page-info/page-info-dialog.c:696
 msgid "Not cached"
 msgstr "Ei välimuistissa"
 
-#: ../extensions/page-info/page-info-dialog.c:700
+#: ../extensions/page-info/page-info-dialog.c:699
 msgid "Disk cache"
 msgstr "Levyvälimuisti"
 
-#: ../extensions/page-info/page-info-dialog.c:703
+#: ../extensions/page-info/page-info-dialog.c:702
 msgid "Memory cache"
 msgstr "Välimuisti"
 
-#: ../extensions/page-info/page-info-dialog.c:706
+#: ../extensions/page-info/page-info-dialog.c:705
 msgid "Unknown cache"
 msgstr "Tuntematon välimuisti"
 
-#: ../extensions/page-info/page-info-dialog.c:722
-#: ../extensions/page-info/page-info-dialog.c:833
+#: ../extensions/page-info/page-info-dialog.c:721
+#: ../extensions/page-info/page-info-dialog.c:832
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: ../extensions/page-info/page-info-dialog.c:727
+#: ../extensions/page-info/page-info-dialog.c:726
 msgid "No referrer"
 msgstr "Ei viittaajaa"
 
-#: ../extensions/page-info/page-info-dialog.c:741
-#: ../extensions/page-info/page-info-dialog.c:757
+#: ../extensions/page-info/page-info-dialog.c:740
+#: ../extensions/page-info/page-info-dialog.c:756
 msgid "Not specified"
 msgstr "Ei määritelty"
 
-#: ../extensions/page-info/page-info-dialog.c:818
+#: ../extensions/page-info/page-info-dialog.c:817
 msgid "Image"
 msgstr "Kuva"
 
-#: ../extensions/page-info/page-info-dialog.c:821
+#: ../extensions/page-info/page-info-dialog.c:820
 msgid "Embed"
 msgstr "Upote"
 
-#: ../extensions/page-info/page-info-dialog.c:824
+#: ../extensions/page-info/page-info-dialog.c:823
 msgid "Object"
 msgstr "Objekti"
 
-#: ../extensions/page-info/page-info-dialog.c:827
+#: ../extensions/page-info/page-info-dialog.c:826
 msgid "Applet"
 msgstr "Sovelma"
 
-#: ../extensions/page-info/page-info-dialog.c:830
+#: ../extensions/page-info/page-info-dialog.c:829
 msgid "Icon"
 msgstr "Kuvake"
 
-#: ../extensions/page-info/page-info-dialog.c:958
+#: ../extensions/page-info/page-info-dialog.c:957
 msgid "Save Medium As..."
 msgstr "Tallenna nimellä..."
 
-#: ../extensions/page-info/page-info-dialog.c:975
+#: ../extensions/page-info/page-info-dialog.c:974
 msgid "Select a directory"
 msgstr "Valitse kansio"
 
-#: ../extensions/page-info/page-info-dialog.c:1055
+#: ../extensions/page-info/page-info-dialog.c:1054
 msgid "_Open"
 msgstr "_Avaa"
 
-#: ../extensions/page-info/page-info-dialog.c:1061
-#: ../extensions/page-info/page-info-dialog.c:1413
+#: ../extensions/page-info/page-info-dialog.c:1060
+#: ../extensions/page-info/page-info-dialog.c:1412
 msgid "_Copy Link Address"
 msgstr "_Kopioi linkin osoite"
 
-#: ../extensions/page-info/page-info-dialog.c:1067
+#: ../extensions/page-info/page-info-dialog.c:1066
 msgid "_Use as Background"
 msgstr "Käytä _taustakuvana"
 
-#: ../extensions/page-info/page-info-dialog.c:1073
+#: ../extensions/page-info/page-info-dialog.c:1072
 msgid "_Save As..."
 msgstr "_Tallenna nimellä..."
 
-#: ../extensions/page-info/page-info-dialog.c:1250
-#: ../extensions/page-info/page-info-dialog.c:1485
+#: ../extensions/page-info/page-info-dialog.c:1249
+#: ../extensions/page-info/page-info-dialog.c:1484
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1262
+#: ../extensions/page-info/page-info-dialog.c:1261
 msgid "Type"
 msgstr "Tyyppi"
 
-#: ../extensions/page-info/page-info-dialog.c:1274
+#: ../extensions/page-info/page-info-dialog.c:1273
 msgid "Alt Text"
 msgstr "Vaihtoehtoinen teksti"
 
-#: ../extensions/page-info/page-info-dialog.c:1286
-#: ../extensions/page-info/page-info-dialog.c:1497
+#: ../extensions/page-info/page-info-dialog.c:1285
+#: ../extensions/page-info/page-info-dialog.c:1496
 msgid "Title"
 msgstr "Otsikko"
 
-#: ../extensions/page-info/page-info-dialog.c:1298
+#: ../extensions/page-info/page-info-dialog.c:1297
 msgid "Width"
 msgstr "Leveys"
 
-#: ../extensions/page-info/page-info-dialog.c:1310
+#: ../extensions/page-info/page-info-dialog.c:1309
 msgid "Height"
 msgstr "Korkeus"
 
-#: ../extensions/page-info/page-info-dialog.c:1509
+#: ../extensions/page-info/page-info-dialog.c:1508
 msgid "Relation"
 msgstr "Suhde"
 
-#: ../extensions/page-info/page-info-dialog.c:1621
-#: ../extensions/page-info/page-info-dialog.c:1758
+#: ../extensions/page-info/page-info-dialog.c:1620
+#: ../extensions/page-info/page-info-dialog.c:1757
 msgid "Name"
 msgstr "Nimi"
 
-#: ../extensions/page-info/page-info-dialog.c:1633
+#: ../extensions/page-info/page-info-dialog.c:1632
 msgid "Method"
 msgstr "Metodi"
 
-#: ../extensions/page-info/page-info-dialog.c:1645
+#: ../extensions/page-info/page-info-dialog.c:1644
 msgid "Action"
 msgstr "Toiminto"
 
-#: ../extensions/page-info/page-info-dialog.c:1724
+#: ../extensions/page-info/page-info-dialog.c:1723
 msgid "_Copy"
 msgstr "_Kopioi"
 
-#: ../extensions/page-info/page-info-dialog.c:1770
+#: ../extensions/page-info/page-info-dialog.c:1769
 msgid "Content"
 msgstr "Sisältö"
 
-#: ../extensions/page-info/page-info-dialog.c:1869
+#: ../extensions/page-info/page-info-dialog.c:1868
 msgid "Page Metadata"
 msgstr "Sivun metatiedot"
 
@@ -749,11 +697,59 @@ msgstr "_Tallenna nimellä..."
 
 #: ../extensions/page-info/page-info.xml.in.in.h:1
 msgid "Display information about and links and media from the current page"
-msgstr "Näytä tietoja nykyisestä sivusta, sillä olevista linkeistä sekä multimediasta"
+msgstr ""
+"Näytä tietoja nykyisestä sivusta, sillä olevista linkeistä sekä multimediasta"
 
 #: ../extensions/page-info/page-info.xml.in.in.h:2
 msgid "Page Info"
 msgstr "Sivun tiedot"
+
+#: ../extensions/rss/ephy-rss-extension.c:94
+msgid "News Feeds Subscription"
+msgstr "Uutissyötteiden tilaus"
+
+#: ../extensions/rss/ephy-rss-extension.c:96
+msgid "Subscribe to this website's news feeds in your favorite news reader"
+msgstr "Tilaa tämän sivuston uutissyöte haluamaasi syötteiden lukuohjelmaan"
+
+#: ../extensions/rss/ephy-rss-extension.c:101
+msgid "_Subscribe to this feed"
+msgstr "_Tilaa sivuston uutissyöte"
+
+#: ../extensions/rss/ephy-rss-extension.c:103
+msgid "Subscribe to this feed in your favorite news reader"
+msgstr "Tilaa tämän sivuston uutissyöte haluamaasi syötteiden lukuohjelmaan"
+
+#: ../extensions/rss/ephy-rss-extension.c:373
+msgid "Subscribe to site's news feed"
+msgstr "Tilaa sivuston uutissyöte"
+
+#: ../extensions/rss/rss-ui.c:159
+msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
+msgstr ""
+"<b><i>Uutissyötteiden lukuohjelmaan ei saatu yhteyttä. Onko ohjelma "
+"käynnissä?</i></b>"
+
+#: ../extensions/rss/rss-ui.c:161
+msgid "Retry"
+msgstr "Yritä uudelleen"
+
+#: ../extensions/rss/rss-ui.c:289
+msgid "_Copy Feed Address"
+msgstr "_Kopioi syötteen osoite"
+
+#: ../extensions/rss/rss-ui.c:564
+msgid "Subscribe"
+msgstr "Tilaa"
+
+#: ../extensions/rss/rss.xml.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "Uutissyötteen tilaus"
+
+#: ../extensions/rss/rss.xml.in.in.h:2
+msgid ""
+"Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr "Tilaa sivuston tarjoama uutissyöte haluamaasi syötteiden lukuohjelmaan"
 
 #: ../extensions/sample-mozilla/sample-mozilla.xml.in.in.h:1
 msgid "A sample extension with mozilla backend"
@@ -846,11 +842,11 @@ msgstr "Lisää sivupaneelin ikkunoihin"
 msgid "Sidebar"
 msgstr "Sivupaneeli"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:578
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:579
 msgid "_Look Up"
 msgstr "_Etsi"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:585
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:586
 msgid "_GNOME Dictionary"
 msgstr "_Gnomen sanakirja"
 
@@ -877,11 +873,11 @@ msgid_plural "Window '%s' (%d tabs)"
 msgstr[0] "Ikkuna \"%s\" (%d välilehti)"
 msgstr[1] "Ikkuna \"%s\" (%d välilehteä)"
 
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:302
+#: ../extensions/tabsmenu/ephy-tab-move-menu.c:301
 msgid "Move Tab To Window"
 msgstr "Siirrä välilehti ikkunaan"
 
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:303
+#: ../extensions/tabsmenu/ephy-tab-move-menu.c:302
 msgid "Move the current tab to a different window"
 msgstr "Siirrä nykyinen välilehti toiseen ikkunaan"
 
@@ -901,3 +897,44 @@ msgstr "Ilmaise taustalla olevien välilehtien uusi sisältö"
 msgid "Tab States"
 msgstr "Välilehtien tilat"
 
+#~ msgid "Search string"
+#~ msgstr "Etsi tekstiä"
+
+#~ msgid "The name of the string to be found"
+#~ msgstr "Etsittävän merkkijonon nimi"
+
+#~ msgid "Case sensitive"
+#~ msgstr "Sama kirjainkoko"
+
+#~ msgid "TRUE for a case sensitive search"
+#~ msgstr "TOSI, jos kirjainkoon on oltava sama"
+
+#~ msgid "Highlight color"
+#~ msgstr "Korostusväri"
+
+#~ msgid "Color of highlight for all matches"
+#~ msgstr "Kaikkien täsmäävien kohtien korostusväri"
+
+#~ msgid "Current color"
+#~ msgstr "Nykyinen väri"
+
+#~ msgid "Color of highlight for the current match"
+#~ msgstr "Nykyisen täsmäävän kohdan korostusväri"
+
+#~ msgid "F_ind:"
+#~ msgstr "E_tsi:"
+
+#~ msgid "_Previous"
+#~ msgstr "_Edellinen"
+
+#~ msgid "_Next"
+#~ msgstr "_Seuraava"
+
+#~ msgid "C_ase Sensitive"
+#~ msgstr "S_ama kirjainkoko"
+
+#~ msgid "Find"
+#~ msgstr "Etsi"
+
+#~ msgid "Replace the find dialog with a find toolbar"
+#~ msgstr "Korvaa etsintäikkuna työkalurivillä"
