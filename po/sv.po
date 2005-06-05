@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-05-31 13:15+0200\n"
-"PO-Revision-Date: 2004-03-21 13:06+0100\n"
+"PO-Revision-Date: 2005-06-05 02:03+0200\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -5453,7 +5453,7 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgstr "Starta Galeon"
 
 #~ msgid "Stylesheets on this page:"
-#~ msgstr "Stilmallar på denna sida:"
+#~ msgstr "Formatmallar på denna sida:"
 
 #~ msgid "Target t_ype"
 #~ msgstr "Målt_yp"
@@ -5489,7 +5489,7 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgstr "_Relation"
 
 #~ msgid "_Stylesheets"
-#~ msgstr "_Stilmallar"
+#~ msgstr "_Formatmallar"
 
 #~ msgid "_URL"
 #~ msgstr "_URL"
@@ -6418,7 +6418,7 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgstr "Kraschad"
 
 #~ msgid "Default stylesheets"
-#~ msgstr "Standardstilmallar"
+#~ msgstr "Standardformatmallar"
 
 #~ msgid "Dock type to show by default"
 #~ msgstr "Docktyp att visa som standard"
@@ -6754,7 +6754,7 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgstr "St_ilmall"
 
 #~ msgid "Specify stylesheet settings for the current page"
-#~ msgstr "Ange stilmallsinställningar av den aktuella sidan"
+#~ msgstr "Ange formatmallsinställningar av den aktuella sidan"
 
 #~ msgid "Page i_nformation..."
 #~ msgstr "Sidi_nformation..."
@@ -7881,7 +7881,7 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgstr "Länk-URL"
 
 #~ msgid "Stylesheet URL"
-#~ msgstr "Stilmalls-URL"
+#~ msgstr "Formatmalls-URL"
 
 #~ msgid "_Number to generate"
 #~ msgstr "An_tal att generera"
@@ -8022,7 +8022,7 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgstr "Rulla ett steg i taget"
 
 #~ msgid "Select a file to use as custom stylesheet"
-#~ msgstr "Välj en fil att använda som anpassad stilmall"
+#~ msgstr "Välj en fil att använda som anpassad formatmall"
 
 #~ msgid "Show \"_go to\" button"
 #~ msgstr "Visa knappen \"_Gå till\""
@@ -8137,7 +8137,7 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgstr "Helskärmsvy"
 
 #~ msgid "Use a different stylesheet"
-#~ msgstr "Använd en annan stilmall"
+#~ msgstr "Använd en annan formatmall"
 
 #~ msgid "Nick:"
 #~ msgstr "Smeknamn:"
@@ -8519,7 +8519,7 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgstr "Ny kategori"
 
 #~ msgid "Select \"My Portal\" Stylesheet"
-#~ msgstr "Välj stilmall för \"Min portal\""
+#~ msgstr "Välj formatmall för \"Min portal\""
 
 #~ msgid "_Enable Galeon MIME handling"
 #~ msgstr "_Använd Galeons MIME-hantering"

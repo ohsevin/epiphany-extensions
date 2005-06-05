@@ -2,6 +2,10 @@ NOTE: Please also update the translations on "gnome-2-10" branch,
 NOTE: and keep this note at the top of this file.
 NOTE: Top is the beginning of the file!!!
 
+2005-06-05  Christian Rose  <menthos@menthos.com>
+
+	* sv.po: Changed the translation of stylesheet.
+
 2005-06-04  Pauli Virtanen <pauli.virtanen@hut.fi>
 
 	 * fi.po: Updated Finnish translation.
