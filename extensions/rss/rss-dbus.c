@@ -62,8 +62,12 @@ rss_dbus_subscribe_feed (const char *address)
 	
 	/* Build the dbus mesage containing the url a a string */
 	dbus_message_iter_init (message, &iter);
+#ifdef HAVE_NEW_DBUS
+	dbus_message_iter_append_basic (&iter, DBUS_TYPE_STRING, address);
+#else
 	dbus_message_iter_append_string (&iter, address);
-	
+#endif
+
 	dbus_error_init (&error);
 	reply = dbus_connection_send_with_reply_and_block (bus, message, 1000, &error);
 	dbus_message_unref (message);
