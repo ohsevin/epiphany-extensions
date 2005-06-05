@@ -1,5 +1,9 @@
 2005-06-05  Christian Persch  <chpe@cvs.gnome.org>
 
+	=== Release 1.7.1 ===
+
+2005-06-05  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/rss/ephy-rss-extension.c: (impl_attach_window):
 
 	Fix crash when activating the extension after startup. Patch
