@@ -17,7 +17,7 @@ dnl 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 dnl
 dnl $Id$
 
-AC_INIT([Epiphany Extensions],[1.7.0],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+AC_INIT([Epiphany Extensions],[1.7.1],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 GNOME_COMMON_INIT
 
 EPIPHANY_API_VERSION=1.8
@@ -89,7 +89,7 @@ dnl ********************************
 dnl pkg config checks
 dnl ********************************
 
-EPIPHANY_REQUIRED=1.7.0
+EPIPHANY_REQUIRED=1.7.1
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.6.0
 LIBGTK_REQUIRED=2.6.0
@@ -116,6 +116,7 @@ AC_SUBST([EXTENSIONS_DIR])
 dnl *******************************
 dnl Check for OpenSP
 dnl *******************************
+
 AC_ARG_ENABLE([opensp],
 	      [ --enable-opensp=[yes,no]    Attempt to use OpenSP for SGML validation [default=yes]],
 	      [enable_opensp="$enableval"],

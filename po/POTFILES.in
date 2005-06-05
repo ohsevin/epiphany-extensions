@@ -24,6 +24,8 @@ extensions/extensions-manager-ui/extensions-manager-ui.c
 extensions/extensions-manager-ui/extensions-manager-ui.glade
 extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in
 extensions/gestures/gestures.xml.in.in
+extensions/greasemonkey/ephy-greasemonkey-extension.c
+extensions/greasemonkey/greasemonkey.xml.in.in
 extensions/net-monitor/net-monitor.xml.in.in
 extensions/page-info/ephy-page-info-extension.c
 extensions/page-info/page-info-dialog.c
@@ -31,6 +33,7 @@ extensions/page-info/page-info.glade
 extensions/page-info/page-info.xml.in.in
 extensions/rss/ephy-rss-extension.c
 extensions/rss/rss-ui.c
+extensions/rss/rss-ui.glade
 extensions/rss/rss.xml.in.in
 extensions/sample-mozilla/sample-mozilla.xml.in.in
 extensions/sample/sample.xml.in.in

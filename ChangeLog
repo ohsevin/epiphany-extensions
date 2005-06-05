@@ -1,3 +1,18 @@
+2005-06-05  Christian Persch  <chpe@cvs.gnome.org>
+
+	* NEWS:
+	* configure.ac:
+
+	Updated for version 1.7.1.
+
+	* extensions/rss/Makefile.am:
+
+	Fix make distcheck.
+
+	* po/POTFILES.in:
+
+	Add missing files.
+
 2005-06-02  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:

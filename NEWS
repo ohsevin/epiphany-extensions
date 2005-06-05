@@ -1,4 +1,39 @@
 =========================
+Epiphany Extensions 1.7.1
+=========================
+
+New extensions
+
+	* Newsfeed extractor extension, written by Raphaël Slinckx
+	* Greasemonkey extension, written by Adam Hooper
+	* Python console
+	* Sample Python extensions
+
+
+Removed extensions
+
+	* Find toolbar (moved to Epiphany core)
+
+
+Changes
+
+	* Numerous enhancements
+	* Numerous bug fixed: #301001, #302326, #300637, #171908, #172390,
+	  #170786, #170322, #290309.
+
+
+Contributors: Adam Hooper, Jordi Mallach, Christian Persch,
+Jean-François Rameau and Raphaël Slinckx.
+
+New and updated translations by Rostislav "zbrox" Raykov (bg),
+Miloslav Trmac (cs), Frank Arnold (de), Adam Weinberger (en_CA),
+Francisco Javier F. Serrador (es), Pauli Virtanen (fi), Gabor Kelemen (hu),
+Takeshi AIHANA (ja), Reinout van Schouwen (nl), Steve Murphy (rw),
+Marcel Telka (sk), Christian Rose (sv), Maxim Dziumanenko (uk) and
+Pablo Saratxaga (wa).
+
+
+=========================
 Epiphany Extensions 1.6.0
 =========================
 

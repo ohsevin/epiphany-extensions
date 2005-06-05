@@ -43,4 +43,6 @@ extensionxml_DATA = $(extensionxml_in_files:.xml.in.in=.xml)
 CLEANFILES = $(extensionxml_DATA)
 DISTCLEANFILES = $(extensionxml_DATA)
 
-EXTRA_DIST = $(extensionxml_in_files)
+EXTRA_DIST = \
+	$(extensionxml_in_files)	\
+	$(glade_DATA)
