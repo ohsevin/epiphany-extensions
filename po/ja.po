@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-06-05 23:50+0900\n"
-"PO-Revision-Date: 2005-06-05 23:48+0900\n"
+"POT-Creation-Date: 2005-06-05 23:58+0900\n"
+"PO-Revision-Date: 2005-06-05 23:57+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -744,7 +744,7 @@ msgstr "この配信元をお気に入りのニュース・リーダで購読し
 
 #: ../extensions/rss/ephy-rss-extension.c:373
 msgid "Subscribe to site's news feed"
-msgstr "サイト・ニュースの購読"
+msgstr "このサイトのニュース配信元を購読します"
 
 #: ../extensions/rss/rss-ui.c:159
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
