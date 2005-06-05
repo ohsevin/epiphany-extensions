@@ -443,12 +443,7 @@ impl_attach_window (EphyExtension *ext,
 	gtk_ui_manager_add_ui (manager, ui_id, "/EphyImageLinkPopup",
 			       "RssSubscribe", "RssSubscribe",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
-			       
-	/* Register for tab switch events */
-	ephy_rss_sync_active_tab (window, NULL, NULL);
-	g_signal_connect_after (window, "notify::active-tab",
-				G_CALLBACK (ephy_rss_sync_active_tab), NULL);
-				
+			       				
 	/* store data */
 	data = g_new (WindowData, 1);
 
@@ -463,6 +458,11 @@ impl_attach_window (EphyExtension *ext,
 
 	/* Create the status bar icon */
 	ephy_rss_create_statusbar_icon (window, data);
+
+	/* Register for tab switch events */
+	ephy_rss_sync_active_tab (window, NULL, NULL);
+	g_signal_connect_after (window, "notify::active-tab",
+				G_CALLBACK (ephy_rss_sync_active_tab), NULL);
 }
 
 /* Delete the menu item to subscribe to a feed */

@@ -1,5 +1,12 @@
 2005-06-05  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/rss/ephy-rss-extension.c: (impl_attach_window):
+
+	Fix crash when activating the extension after startup. Patch
+	by Raphaël Slinckx, fixes bug #306536.
+
+2005-06-05  Christian Persch  <chpe@cvs.gnome.org>
+
 	* NEWS:
 	* configure.ac:
 
