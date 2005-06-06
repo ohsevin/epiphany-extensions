@@ -1,5 +1,11 @@
 2005-06-06  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/rss/rss-dbus.c: (rss_dbus_subscribe_feed):
+
+	Work with new DBUS 0.34. Patch by Raphaël Slinckx, bug #306565.
+
+2005-06-06  Christian Persch  <chpe@cvs.gnome.org>
+
 	* configure.ac:
 
 	Require DBUS 0.34. Bug #306626.

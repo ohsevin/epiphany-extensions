@@ -32,9 +32,11 @@ rss_dbus_subscribe_feed (const char *address)
 {
 	DBusMessage *message, *reply;
 	DBusError error;
-	DBusMessageIter iter;
 	gboolean success;
-	DBusConnection *bus;	
+	DBusConnection *bus;
+#ifndef HAVE_NEW_DBUS
+	DBusMessageIter iter;
+#endif
 
 	bus = ephy_dbus_get_bus (
 				EPHY_DBUS (ephy_shell_get_dbus_service (ephy_shell_get_default ())),
@@ -61,10 +63,10 @@ rss_dbus_subscribe_feed (const char *address)
 	}
 	
 	/* Build the dbus mesage containing the url a a string */
-	dbus_message_iter_init (message, &iter);
 #ifdef HAVE_NEW_DBUS
-	dbus_message_iter_append_basic (&iter, DBUS_TYPE_STRING, address);
+	dbus_message_append_args (message, DBUS_TYPE_STRING, &address);
 #else
+	dbus_message_iter_init (message, &iter);
 	dbus_message_iter_append_string (&iter, address);
 #endif
 
