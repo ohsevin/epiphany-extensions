@@ -225,8 +225,8 @@ if echo "$EXTENSIONS" | egrep '(^| )(net-monitor)|(rss)($| )' > /dev/null; then
 	if test "x$have_new_dbus" = "xyes"; then
 		AC_DEFINE([HAVE_NEW_DBUS],[1],[Define if compiling with DBUS 0.3])
 
-		DBUS_REQUIRED=0.32
-		DBUS_GLIB_REQUIRED=0.32
+		DBUS_REQUIRED=0.34
+		DBUS_GLIB_REQUIRED=0.34
 	else
 		DBUS_REQUIRED=0.22
 		DBUS_GLIB_REQUIRED=0.22
