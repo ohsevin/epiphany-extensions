@@ -2,6 +2,10 @@ NOTE: Please also update the translations on "gnome-2-10" branch,
 NOTE: and keep this note at the top of this file.
 NOTE: Top is the beginning of the file!!!
 
+2005-06-10  Marcel Telka  <marcel@telka.sk>
+
+	* sk.po: Updated Slovak translation.
+
 2005-06-05  Adam Weinberger  <adamw@gnome.org>
 
 	* en_CA.po: Updated Canadian English translation.
