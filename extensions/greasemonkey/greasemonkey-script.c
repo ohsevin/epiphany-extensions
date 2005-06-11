@@ -32,6 +32,22 @@
 
 #define GREASEMONKEY_SCRIPT_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), TYPE_GREASEMONKEY_SCRIPT, GreasemonkeyScriptPrivate))
 
+#define TLD_REGEX "\\.(arpa|com|edu|int|mil|net|org|aero|biz|coop|info|museum"\
+		  "|name|pro|ac|ad|ae|af|ag|ai|al|am|an|ao|aq|ar|ar|as|at|au"\
+		  "|aw|ax|az|ba|bb|bd|be|bf|bg|bh|bi|bj|bm|bn|bo|br|bs|bt|bv"\
+		  "|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|cr|cs|cu|cv"\
+		  "|cx|cy|cz|de|dj|dk|dm|do|dz|ec|ee|eg|eh|er|es|et|eu|fi|fj"\
+		  "|fk|fm|fo|fr|ga|gb|gd|ge|gf|gg|gh|gi|gl|gm|gn|gp|gq|gr|gs"\
+		  "|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|im|in|io|iq|ir|is"\
+		  "|it|je|jm|jo|jp|ke|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li"\
+		  "|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|mg|mg|mh|mk|ml|mm|mn|mo|mp"\
+		  "|mq|mr|mp|mq|mr|ms|mt|mu|mv|mw|mx|my|mz|na|nc|ne|nf|ng|ni"\
+		  "|nl|no|np|nr|nu|nz|om|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|ps|pt"\
+		  "|pw|py|qa|re|ro|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|sk|sl|sm"\
+		  "|sn|so|sr|st|sv|sy|sz|tc|td|tf|tg|th|tj|tk|tl|tm|tn|to|tp"\
+		  "|tr|tt|tv|tw|tz|ua|ug|uk|um|us|uy|uz|va|vc|ve|vg|vi|vn|vu"\
+		  "|wf|ws|ye|yt|yu|za|zm|zw|co|or)"
+
 struct _GreasemonkeyScriptPrivate
 {
 	char *filename;
@@ -170,13 +186,22 @@ find_tag_values (const char *script,
 	const char *end_tags;
 	const char *begin_line;
 	const char *end_line;
+	char *val;
 	char *commented_tag;
 
 	pos = strstr (script, "// ==UserScript==");
-	g_return_val_if_fail (pos != NULL, NULL);
+	if (pos == NULL)
+	{
+		LOG ("Could not find // ==UserScript== in script");
+		return NULL;
+	}
 
 	end_tags = strstr (pos, "// ==/UserScript==");
-	g_return_val_if_fail (end_tags != NULL, NULL);
+	if (pos == NULL)
+	{
+		LOG ("Could not find // ==/UserScript== in script");
+		return NULL;
+	}
 
 	commented_tag = g_strdup_printf ("// @%s", tag);
 
@@ -210,13 +235,51 @@ find_tag_values (const char *script,
 			continue;
 		}
 
-		ret = g_list_prepend (ret, g_strndup (begin_line,
-						      end_line - begin_line));
+		val = g_strndup (begin_line, end_line - begin_line);
+
+		LOG ("Tag %s: %s", tag, val);
+
+		ret = g_list_prepend (ret, val);
 	}
 
 	g_free (commented_tag);
 
 	return ret;
+}
+
+/*
+ * Finds the position of "\.tld" in a string. It may be either the end of a
+ * string or before a "/", but it can't be in a subdirectory.
+ *
+ * Returns 0 if "\.tld" could not be found
+ */
+static int
+find_tld_pos (const char *s)
+{
+	char prev;
+	const char *t;
+
+	g_return_val_if_fail (*s != '\0', 0);
+
+	prev = '\0';
+	for (t = s; *t; prev = *t++)
+	{
+		if (g_str_has_prefix (t, "\\.tld"))
+		{
+			if (t[5] == '\0' || t[5] == '/')
+			{
+				return t - s;
+			}
+		}
+
+		if (*t == '/' && prev != '\0' && prev != '/' && prev != ':')
+		{
+			/* We're getting into subdirectories; stop searching */
+			return 0;
+		}
+	}
+
+	return 0;
 }
 
 static pcre *
@@ -226,6 +289,7 @@ build_preg (const char *s)
 	pcre *preg;
 	const char *err;
 	int erroffset;
+	int tld_pos;
 
 	preg_str = g_string_new (NULL);
 
@@ -264,6 +328,12 @@ build_preg (const char *s)
 				g_string_append_c (preg_str, *s);
 				break;
 		}
+	}
+
+	if ((tld_pos = find_tld_pos (preg_str->str)) != 0)
+	{
+		g_string_erase (preg_str, tld_pos, 5);
+		g_string_insert (preg_str, tld_pos, TLD_REGEX);
 	}
 
 	LOG ("Matching against %s", preg_str->str);
@@ -316,6 +386,8 @@ load_script_file (GreasemonkeyScript *gs)
 {
 	gboolean success;
 	GList *patterns;
+
+	LOG ("Loading script: %s", gs->priv->filename);
 
 	g_return_if_fail (gs->priv->filename != NULL);
 

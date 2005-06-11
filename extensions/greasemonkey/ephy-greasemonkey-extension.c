@@ -31,13 +31,16 @@
 #include <epiphany/ephy-embed-factory.h>
 #include <epiphany/ephy-embed-event.h>
 #include <epiphany/ephy-embed-persist.h>
+#include <epiphany/ephy-shell.h>
 #include <epiphany/ephy-tab.h>
 #include <epiphany/ephy-window.h>
 
+#include <gtk/gtkmessagedialog.h>
 #include <gtk/gtkuimanager.h>
 
 #include <libgnomevfs/gnome-vfs-ops.h>
 #include <libgnomevfs/gnome-vfs-utils.h>
+#include <libgnomevfs/gnome-vfs-xfer.h>
 
 #include <glib/gi18n-lib.h>
 #include <glib/gstdio.h>
@@ -61,7 +64,9 @@ struct _EphyGreasemonkeyExtensionPrivate
 
 typedef struct
 {
+	EphyWindow *window;
 	GtkActionGroup *action_group;
+	GList *pending_downloads;
 	guint ui_id;
 	char *last_clicked_url;
 } WindowData;
@@ -306,11 +311,53 @@ script_name_build (const char *url)
 }
 
 static void
-save_source_completed_cb (EphyEmbedPersist *persist,
-			  gpointer dummy)
+save_source_cancelled_cb (EphyEmbedPersist *persist,
+			  EphyWindow *window)
 {
-	g_print ("Download to %s complete.\n",
-		 ephy_embed_persist_get_dest (persist));
+	WindowData *data;
+	const char *dest;
+
+	LOG ("Download from %s cancelled",
+	     ephy_embed_persist_get_source (persist));
+
+	data = g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
+	g_return_if_fail (data != NULL);
+	data->pending_downloads = g_list_remove (data->pending_downloads,
+						 persist);
+
+	dest = ephy_embed_persist_get_dest (persist);
+	gnome_vfs_unlink (dest);
+
+	g_object_unref (G_OBJECT (persist));
+}
+
+static void
+save_source_completed_cb (EphyEmbedPersist *persist,
+			  EphyWindow *window)
+{
+	WindowData *data;
+	GtkWidget *dialog;
+	const char *src;
+
+	data = g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
+	g_return_if_fail (data != NULL);
+	data->pending_downloads = g_list_remove (data->pending_downloads,
+						 persist);
+
+	src = ephy_embed_persist_get_source (persist);
+
+	g_object_unref (G_OBJECT (persist));
+
+	dialog = gtk_message_dialog_new (GTK_WINDOW (window), 0,
+					 GTK_MESSAGE_INFO,
+					 GTK_BUTTONS_OK,
+					 _("The user script at %s has "
+					   "been installed"),
+					 src);
+
+	g_signal_connect_swapped (dialog, "response",
+				  G_CALLBACK (gtk_widget_destroy), dialog);
+	gtk_widget_show (dialog);
 }
 
 static void
@@ -340,23 +387,28 @@ ephy_greasemonkey_extension_install_cb (GtkAction *action,
 
 	ephy_embed_persist_set_source (persist, url);
 	ephy_embed_persist_set_embed (persist, embed);
+	ephy_embed_persist_set_flags (persist,
+				      EPHY_EMBED_PERSIST_DO_CONVERSION);
 
 	filename = script_name_build (url);
 	ephy_embed_persist_set_dest (persist, filename);
 	g_free (filename);
 
 	g_signal_connect (persist, "completed",
-			  G_CALLBACK (save_source_completed_cb), NULL);
+			  G_CALLBACK (save_source_completed_cb), window);
+	g_signal_connect (persist, "cancelled",
+			  G_CALLBACK (save_source_cancelled_cb), window);
+
+	data->pending_downloads = g_list_prepend (data->pending_downloads,
+						  persist);
 
 	ephy_embed_persist_save (persist);
-
-	g_object_unref (G_OBJECT (persist));
 }
 
 static gboolean
-dom_mouse_down_cb (EphyEmbed *embed,
-		   EphyEmbedEvent *event,
-		   EphyGreasemonkeyExtension *extension)
+context_menu_cb (EphyEmbed *embed,
+		 EphyEmbedEvent *event,
+		 EphyGreasemonkeyExtension *extension)
 {
 	/*
 	 * Set whether or not the action is visible before we display the
@@ -444,10 +496,31 @@ content_loaded_cb (EphyEmbed *embed,
 }
 
 static void
+kill_download (EphyEmbedPersist *persist,
+	       EphyWindow *window)
+{
+	LOG ("kill_download %p", persist);
+
+	g_signal_handlers_disconnect_by_func
+		(persist, save_source_cancelled_cb, window);
+	g_signal_handlers_disconnect_by_func
+		(persist, save_source_completed_cb, window);
+
+	ephy_embed_persist_cancel (persist);
+}
+
+static void
 free_window_data (WindowData *data)
 {
+	LOG ("free_window_data %p", data);
+
 	g_object_unref (data->action_group);
 	g_free (data->last_clicked_url);
+
+	g_list_foreach (data->pending_downloads,
+			(GFunc) kill_download, data->window);
+	g_list_free (data->pending_downloads);
+
 	g_free (data);
 }
 
@@ -475,6 +548,8 @@ impl_attach_window (EphyExtension *ext,
 	gtk_ui_manager_insert_action_group (manager, action_group, 0);
 
 	data->ui_id = ui_id = gtk_ui_manager_new_merge_id (manager);
+
+	data->window = window;
 
 	g_object_set_data_full (G_OBJECT (window), WINDOW_DATA_KEY, data,
 				(GDestroyNotify) free_window_data);
@@ -534,8 +609,8 @@ impl_attach_tab (EphyExtension *ext,
 	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
-	g_signal_connect (embed, "ge_dom_mouse_down",
-			  G_CALLBACK (dom_mouse_down_cb), ext);
+	g_signal_connect (embed, "ge_context_menu",
+			  G_CALLBACK (context_menu_cb), ext);
 	g_signal_connect (embed, "dom_content_loaded",
 			  G_CALLBACK (content_loaded_cb), ext);
 }
@@ -555,7 +630,7 @@ impl_detach_tab (EphyExtension *ext,
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	g_signal_handlers_disconnect_by_func
-		(embed, G_CALLBACK (dom_mouse_down_cb), ext);
+		(embed, G_CALLBACK (context_menu_cb), ext);
 	g_signal_handlers_disconnect_by_func
 		(embed, G_CALLBACK (content_loaded_cb), ext);
 }

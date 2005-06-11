@@ -1,3 +1,20 @@
+2005-06-11  Adam Hooper  <adamh@cvs.gnome.org>
+
+	* extensions/greasemonkey/ephy-greasemonkey-extension.c:
+	(save_source_cancelled_cb), (save_source_completed_cb),
+	(ephy_greasemonkey_extension_install_cb), (context_menu_cb),
+	(kill_download), (free_window_data), (impl_attach_window),
+	(impl_attach_tab), (impl_detach_tab):
+	* extensions/greasemonkey/greasemonkey-script.c: (find_tag_values),
+	(find_tld_pos), (build_preg), (load_script_file):
+
+	- Support ".tld" domain name in Greasemonkey scripts. Not many
+	  scripts actually *use* this, but they ought to
+	- Pop up a message when extensions are installed
+	- Try to cancel downloads when quitting their invoking EphyWindow.
+	  This seems to cause crashes sometimes when Epiphany quits while
+	  downloading...
+
 2005-06-06  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/rss/rss-dbus.c: (rss_dbus_subscribe_feed):
