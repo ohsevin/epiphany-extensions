@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-29 02:56+0000\n"
-"PO-Revision-Date: 2005-05-29 13:44+0200\n"
+"POT-Creation-Date: 2005-06-12 10:55+0000\n"
+"PO-Revision-Date: 2005-06-12 14:01+0200\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -405,62 +405,6 @@ msgstr "Ativovat a deaktivovat rozšíření"
 msgid "Extensions Manager"
 msgstr "Správce rozšíření"
 
-#: ../extensions/find/eggfindbar.c:132
-msgid "Search string"
-msgstr "Hledaný řetězec"
-
-#: ../extensions/find/eggfindbar.c:133
-msgid "The name of the string to be found"
-msgstr "Název hledaného řetězce"
-
-#: ../extensions/find/eggfindbar.c:146
-msgid "Case sensitive"
-msgstr "Rozlišovat velikost písmen"
-
-#: ../extensions/find/eggfindbar.c:147
-msgid "TRUE for a case sensitive search"
-msgstr "TRUE pro hledání rozlišující velikost písmen"
-
-#: ../extensions/find/eggfindbar.c:154
-msgid "Highlight color"
-msgstr "Barva zvýraznění"
-
-#: ../extensions/find/eggfindbar.c:155
-msgid "Color of highlight for all matches"
-msgstr "Barva zvýraznění všech výskytů"
-
-#: ../extensions/find/eggfindbar.c:161
-msgid "Current color"
-msgstr "Barva aktuálního"
-
-#: ../extensions/find/eggfindbar.c:162
-msgid "Color of highlight for the current match"
-msgstr "Barva zvýraznění aktuálního výskytu"
-
-#: ../extensions/find/eggfindbar.c:286
-msgid "F_ind:"
-msgstr "_Hledat:"
-
-#: ../extensions/find/eggfindbar.c:306
-msgid "_Previous"
-msgstr "_Předchozí"
-
-#: ../extensions/find/eggfindbar.c:308
-msgid "_Next"
-msgstr "_Následující"
-
-#: ../extensions/find/eggfindbar.c:321
-msgid "C_ase Sensitive"
-msgstr "_Rozlišovat velikost písmen"
-
-#: ../extensions/find/find.xml.in.in.h:1
-msgid "Find"
-msgstr "Hledat"
-
-#: ../extensions/find/find.xml.in.in.h:2
-msgid "Replace the find dialog with a find toolbar"
-msgstr "Nahradit dialog hledání lištou hledání"
-
 #: ../extensions/gestures/gestures.xml.in.in.h:1
 msgid "Gestures"
 msgstr "Gesta"
@@ -468,6 +412,28 @@ msgstr "Gesta"
 #: ../extensions/gestures/gestures.xml.in.in.h:2
 msgid "Perform actions with mouse gestures"
 msgstr "Provádět akce gesty myši"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+msgid "Install User _Script"
+msgstr "Nainstalovat uživatelský _skript"
+
+#. shortcut key
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
+msgid "Install Greasemonkey script"
+msgstr "Nainstalovat skript Greasemonkey"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:354
+#, c-format
+msgid "The user script at %s has been installed"
+msgstr "Uživatelský skript v %s byl nainstalován"
+
+#: ../extensions/greasemonkey/greasemonkey.xml.in.in.h:1
+msgid "Greasemonkey"
+msgstr "Greasemonkey"
+
+#: ../extensions/greasemonkey/greasemonkey.xml.in.in.h:2
+msgid "Run user scripts to modify web pages' behavior"
+msgstr "Spouštět uživatelské skripty pro úpravu chování WWW stránek"
 
 #. How to describe this? It makes Epiphany "Just Work"
 #: ../extensions/net-monitor/net-monitor.xml.in.in.h:2
@@ -774,7 +740,9 @@ msgstr "Přihlášení k toku novinek"
 
 #: ../extensions/rss/ephy-rss-extension.c:96
 msgid "Subscribe to this website's news feeds in your favorite news reader"
-msgstr "Přihlásit se k toku novinek tohoto WWW serveru ve vaší oblíbené čtečce novinek"
+msgstr ""
+"Přihlásit se k toku novinek tohoto WWW serveru ve vaší oblíbené čtečce "
+"novinek"
 
 #: ../extensions/rss/ephy-rss-extension.c:101
 msgid "_Subscribe to this feed"
@@ -803,6 +771,18 @@ msgstr "_Kopírovat adresu toku"
 #: ../extensions/rss/rss-ui.c:564
 msgid "Subscribe"
 msgstr "Přihlásit se"
+
+#: ../extensions/rss/rss-ui.glade.h:1
+msgid "<b>Select Interesting Feeds</b>"
+msgstr "<b>Vybrat zajímavé toky</b>"
+
+#: ../extensions/rss/rss-ui.glade.h:2
+msgid "News Feed Subcription"
+msgstr "Přihlášení k toku novinek"
+
+#: ../extensions/rss/rss-ui.glade.h:3
+msgid "_Subscribe"
+msgstr "_Přihlásit se"
 
 #: ../extensions/rss/rss.xml.in.in.h:1
 msgid "News Feed Subscription"
@@ -961,33 +941,3 @@ msgstr "Indikuje nový obsah v kartách na pozadí"
 #: ../extensions/tab-states/tab-states.xml.in.in.h:2
 msgid "Tab States"
 msgstr "Stavy karet"
-
-#~ msgid "Loo_k-Up Preferences"
-#~ msgstr "Nastavení h_ledání"
-
-#~ msgid "Look up your selection"
-#~ msgstr "Vyledat váš výběr"
-
-#~ msgid "Add GNOME Dictionary to the menu"
-#~ msgstr "Přidat Slovník GNOME do menu"
-
-#~ msgid "Look Up Preferences"
-#~ msgstr "Nastavení hledání"
-
-#~ msgid "Open search results in a new tab"
-#~ msgstr "Otevřít výsledky hledání v nové kartě"
-
-#~ msgid "Certificate Manager"
-#~ msgstr "Správce certifikátů"
-
-#~ msgid "Popup _Windows"
-#~ msgstr "Vyskakovací _okna"
-
-#~ msgid "Show or hide unrequested popup windows from this site"
-#~ msgstr "Zobrazit nebo skrýt nevyžádaná vyskakovací okna z tohoto serveru"
-
-#~ msgid "%d popup window blocked"
-#~ msgid_plural "%d popup windows blocked"
-#~ msgstr[0] "Zablokováno %d vyskakovací okno"
-#~ msgstr[1] "Zablokována %d vyskakovací okna"
-#~ msgstr[2] "Zablokováno %d vyskakovacích oken"
