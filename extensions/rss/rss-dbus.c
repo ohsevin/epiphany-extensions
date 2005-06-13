@@ -64,7 +64,7 @@ rss_dbus_subscribe_feed (const char *address)
 	
 	/* Build the dbus mesage containing the url a a string */
 #ifdef HAVE_NEW_DBUS
-	dbus_message_append_args (message, DBUS_TYPE_STRING, &address);
+	dbus_message_append_args (message, DBUS_TYPE_STRING, &address, DBUS_TYPE_INVALID);
 #else
 	dbus_message_iter_init (message, &iter);
 	dbus_message_iter_append_string (&iter, address);

@@ -1,3 +1,9 @@
+2005-06-13  Raphael Slinckx  <rslinckx@cvs.gnome.org>
+
+	* extensions/rss/rss-dbus.c: (rss_dbus_subscribe_feed):
+	
+	Fixes feed subscription using new dbus API
+	
 2005-06-11  Adam Hooper  <adamh@cvs.gnome.org>
 
 	* extensions/greasemonkey/ephy-greasemonkey-extension.c:
