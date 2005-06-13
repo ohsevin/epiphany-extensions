@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-06-02 15:38+0200\n"
-"PO-Revision-Date: 2005-06-02 16:30+0100\n"
+"POT-Creation-Date: 2005-06-13 10:53+0000\n"
+"PO-Revision-Date: 2005-06-13 19:46+0100\n"
 "Last-Translator: Reinout van Schouwen <reinout@cs.vu.nl>\n"
 "Language-Team: nl <vertaling@vrijschrift.org>\n"
 "MIME-Version: 1.0\n"
@@ -412,6 +412,28 @@ msgstr "Gebaren"
 msgid "Perform actions with mouse gestures"
 msgstr "Acties uitvoeren met behulp van muisgebaren"
 
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+msgid "Install User _Script"
+msgstr "Gebruikers_script installeren"
+
+#. shortcut key
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
+msgid "Install Greasemonkey script"
+msgstr "Greasemonkey-script installeren"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:354
+#, c-format
+msgid "The user script at %s has been installed"
+msgstr "Het gebruikersscript op %s is geïnstalleerd"
+
+#: ../extensions/greasemonkey/greasemonkey.xml.in.in.h:1
+msgid "Greasemonkey"
+msgstr "Greasemonkey"
+
+#: ../extensions/greasemonkey/greasemonkey.xml.in.in.h:2
+msgid "Run user scripts to modify web pages' behavior"
+msgstr "Gebruikersscripts uitvoeren om gedrag van webpagina's te beïnvloeden"
+
 #. How to describe this? It makes Epiphany "Just Work"
 #: ../extensions/net-monitor/net-monitor.xml.in.in.h:2
 msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
@@ -738,8 +760,8 @@ msgstr "Abonneren op de nieuwsfeed van de pagina"
 #: ../extensions/rss/rss-ui.c:159
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr ""
-"<b><i>Niet in staat te verbinden met de feed-lezer, is deze wel actief?"
-"</i></b>"
+"<b><i>Niet in staat te verbinden met de feed-lezer, is deze wel actief?</i></"
+"b>"
 
 #: ../extensions/rss/rss-ui.c:161
 msgid "Retry"
@@ -752,6 +774,18 @@ msgstr "_Feed-adres kopiëren"
 #: ../extensions/rss/rss-ui.c:564
 msgid "Subscribe"
 msgstr "Abonneren"
+
+#: ../extensions/rss/rss-ui.glade.h:1
+msgid "<b>Select Interesting Feeds</b>"
+msgstr "<b>Interessante feeds selecteren</b>"
+
+#: ../extensions/rss/rss-ui.glade.h:2
+msgid "News Feed Subcription"
+msgstr "Nieuwsfeed-abonnement"
+
+#: ../extensions/rss/rss-ui.glade.h:3
+msgid "_Subscribe"
+msgstr "_Abonneren"
 
 #: ../extensions/rss/rss.xml.in.in.h:1
 msgid "News Feed Subscription"
