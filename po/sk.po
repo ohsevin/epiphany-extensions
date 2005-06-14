@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-06-10 22:24+0200\n"
-"PO-Revision-Date: 2005-06-10 22:36+0200\n"
+"POT-Creation-Date: 2005-06-14 07:15+0200\n"
+"PO-Revision-Date: 2005-06-14 07:16+0200\n"
 "Last-Translator: Marcel Telka <marcel@telka.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
@@ -413,14 +413,19 @@ msgstr "Gestá"
 msgid "Perform actions with mouse gestures"
 msgstr "Vykonávať akcie pomocou gest myši"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:82
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
 msgid "Install User _Script"
 msgstr "Inštalovať _skript používateľa"
 
 #. shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:84
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
 msgid "Install Greasemonkey script"
 msgstr "Inštalovať skript Greasemonkey"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:354
+#, c-format
+msgid "The user script at %s has been installed"
+msgstr "Používateľský skript v %s bol nainštalovaný"
 
 #: ../extensions/greasemonkey/greasemonkey.xml.in.in.h:1
 msgid "Greasemonkey"
@@ -736,7 +741,9 @@ msgstr "Prihlásenie k odberom noviniek"
 
 #: ../extensions/rss/ephy-rss-extension.c:96
 msgid "Subscribe to this website's news feeds in your favorite news reader"
-msgstr "Prihlásiť sa k odberu noviniek tejto www stránky vo vašom obľúbenom programe na čítanie diskusných skupín"
+msgstr ""
+"Prihlásiť sa k odberu noviniek tejto www stránky vo vašom obľúbenom programe "
+"na čítanie diskusných skupín"
 
 #: ../extensions/rss/ephy-rss-extension.c:101
 msgid "_Subscribe to this feed"
@@ -744,7 +751,9 @@ msgstr "_Prihlásiť sa k tomuto odberu"
 
 #: ../extensions/rss/ephy-rss-extension.c:103
 msgid "Subscribe to this feed in your favorite news reader"
-msgstr "Prihlásiť sa k tomuto odberu vo vašom obľubenom programe na čítanie diskusných skupín"
+msgstr ""
+"Prihlásiť sa k tomuto odberu vo vašom obľubenom programe na čítanie "
+"diskusných skupín"
 
 #: ../extensions/rss/ephy-rss-extension.c:373
 msgid "Subscribe to site's news feed"
@@ -786,7 +795,8 @@ msgstr "Prihlásenie k odberu noviniek"
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr ""
-"Prihlásiť sa k odberu noviniek ponúkaných touto www stránkou vo vašom obľúbenom programe na čítanie diskusných skupín"
+"Prihlásiť sa k odberu noviniek ponúkaných touto www stránkou vo vašom "
+"obľúbenom programe na čítanie diskusných skupín"
 
 #: ../extensions/sample-mozilla/sample-mozilla.xml.in.in.h:1
 msgid "A sample extension with mozilla backend"
