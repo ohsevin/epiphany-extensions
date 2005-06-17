@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-06-05 22:07-0400\n"
-"PO-Revision-Date: 2005-06-05 16:10-0400\n"
+"POT-Creation-Date: 2005-06-17 01:12-0400\n"
+"PO-Revision-Date: 2005-06-17 16:10-0400\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: Canadian English <adamw@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -406,14 +406,19 @@ msgstr "Gestures"
 msgid "Perform actions with mouse gestures"
 msgstr "Perform actions with mouse gestures"
 
-#: extensions/greasemonkey/ephy-greasemonkey-extension.c:82
+#: extensions/greasemonkey/ephy-greasemonkey-extension.c:87
 msgid "Install User _Script"
 msgstr "Install User _Script"
 
 #. shortcut key
-#: extensions/greasemonkey/ephy-greasemonkey-extension.c:84
+#: extensions/greasemonkey/ephy-greasemonkey-extension.c:89
 msgid "Install Greasemonkey script"
 msgstr "Install Greasemonkey script"
+
+#: extensions/greasemonkey/ephy-greasemonkey-extension.c:354
+#, c-format
+msgid "The user script at %s has been installed"
+msgstr "The user script at %s has been installed"
 
 #: extensions/greasemonkey/greasemonkey.xml.in.in.h:1
 msgid "Greasemonkey"
