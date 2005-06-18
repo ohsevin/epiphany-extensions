@@ -229,6 +229,10 @@ sidebar_page_changed_cb (GtkWidget* sidebar,
 	ephy_sidebar_embed_set_url (EPHY_SIDEBAR_EMBED (data->embed), page_id);
 	ephy_sidebar_set_content (EPHY_SIDEBAR (data->sidebar),
 				  GTK_WIDGET (data->embed));
+
+	/* This is a workaround for bug: #169116 */
+	gtk_widget_hide(GTK_WIDGET (data->embed));
+
 	gtk_widget_show (GTK_WIDGET (data->embed));
 
 	/* Remeber the current page */
