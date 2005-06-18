@@ -1,3 +1,9 @@
+2005-06-19  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/sidebar/ephy-sidebar-extension.c: (sidebar_page_changed_cb):
+
+	Workaround to bug #169116. Fixes #172872.
+
 2005-06-13  Raphael Slinckx  <rslinckx@cvs.gnome.org>
 
 	* extensions/rss/rss-dbus.c: (rss_dbus_subscribe_feed):
