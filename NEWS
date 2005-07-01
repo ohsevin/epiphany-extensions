@@ -1,4 +1,27 @@
 =========================
+Epiphany Extensions 1.6.4
+=========================
+
+Changes
+
+	* gcc 4 compilation fixes
+	* Enable typeahead search in the treeview in page info [#170322]
+	* Remove label, and add tooltip from bookmarks tray
+	* Page Info gets href attribute for embed elements [#170786]
+	* Fixes size persistence of the page info dialogue
+	* Fix for mozilla API change.
+
+Contributors to this release:
+Jordi Mallach, Christian Persch, Jean-François Rameau and Lars Strojny.
+
+Translation updates:
+
+	* Rostislav \"zbrox\" Raykov (bg)
+	* Pauli Virtanen (fi)
+	* Abel Cheung (zh_TW)
+
+
+=========================
 Epiphany Extensions 1.6.3
 =========================
 
