@@ -2,6 +2,10 @@ NOTE: Please also update the translations on "gnome-2-10" branch,
 NOTE: and keep this note at the top of this file.
 NOTE: Top is the beginning of the file!!!
 
+2005-07-10  Christian Rose  <menthos@menthos.com>
+
+	* sv.po: Updated Swedish translation.
+
 2005-07-01  Chao-Hsiung Liao  <j_h_liau@yahoo.com.tw>
 
 	* zh_TW.po: Added Traditional Chinese translation.
