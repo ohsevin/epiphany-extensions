@@ -1,5 +1,5 @@
 # Swedish messages for epiphany-extensions.
-# Copyright (C) 2004 Free Software Foundation, Inc.
+# Copyright (C) 2004, 2005 Free Software Foundation, Inc.
 # Christian Rose <menthos@menthos.com>, 2004.
 #
 # $Id$
@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-05-31 13:15+0200\n"
-"PO-Revision-Date: 2004-03-21 13:06+0100\n"
+"POT-Creation-Date: 2005-07-10 13:51+0200\n"
+"PO-Revision-Date: 2005-07-10 13:51+0200\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,67 +17,244 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:160
-msgid "Certificate Manager"
-msgstr "Certifikathanterare"
+#: extensions/actions/action-properties.glade.h:1
+msgid "<span weight=\"bold\">Applies to</span>"
+msgstr "<span weight=\"bold\">Gäller för</span>"
+
+#: extensions/actions/action-properties.glade.h:2
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">Allmänt</span>"
+
+#: extensions/actions/action-properties.glade.h:3
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"images."
+msgstr ""
+"Om detta alternativ är aktiverat kommer åtgärden att inkluderas i popupmenyn "
+"för bilder."
+
+#: extensions/actions/action-properties.glade.h:4
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"links and pages."
+msgstr ""
+"Om detta alternativ är aktiverat kommer åtgärden att inkluderas i popupmenyn "
+"för länkar och sidor."
+
+#: extensions/actions/action-properties.glade.h:5
+msgid "The action description."
+msgstr "Åtgärdsbeskrivningen."
+
+#: extensions/actions/action-properties.glade.h:6
+msgid ""
+"The action name. If a character is preceded by an underscore, that character "
+"will be used as the access key for the menu item."
+msgstr ""
+"Namnet på åtgärden. Om ett tecken föregås av ett understreck kommer det "
+"tecknet att användas som åtkomsttangent för menyposten."
+
+#: extensions/actions/action-properties.glade.h:7
+msgid ""
+"The command to execute when the action is activated. The URL of the link, "
+"image or page will be appended to the command."
+msgstr ""
+"Kommandot att köra då åtgärden aktiveras. URL:en för länken, bilden eller "
+"sidan kommer att läggas till efter kommandot."
+
+#: extensions/actions/action-properties.glade.h:8
+msgid "_Command:"
+msgstr "_Kommando:"
+
+#: extensions/actions/action-properties.glade.h:9
+msgid "_Description:"
+msgstr "_Beskrivning:"
+
+#: extensions/actions/action-properties.glade.h:10
+msgid "_Images"
+msgstr "_Bilder"
+
+#: extensions/actions/action-properties.glade.h:11
+msgid "_Name:"
+msgstr "_Namn:"
+
+#: extensions/actions/action-properties.glade.h:12
+msgid "_Pages"
+msgstr "_Sidor"
+
+#: extensions/actions/actions-editor.glade.h:1
+#: extensions/actions/actions.xml.in.in.h:1
+msgid "Actions"
+msgstr "Åtgärder"
+
+#: extensions/actions/actions.xml.in.in.h:2
+msgid "Execute arbitrary commands from the context menu"
+msgstr "Kör godtyckliga kommandon från sammanhangsmenyn"
+
+#: extensions/actions/ephy-actions-extension.c:97
+msgid "_Actions"
+msgstr "_Åtgärder"
+
+#: extensions/actions/ephy-actions-extension.c:98
+msgid "Customize actions"
+msgstr "Anpassa åtgärder"
+
+#: extensions/actions/ephy-actions-extension.c:410
+msgid "Could not run command"
+msgstr "Kunde inte köra kommando"
+
+#: extensions/actions/ephy-actions-extension.c:413
+msgid "Could not Run Command"
+msgstr "Kunde inte köra kommando"
+
+#: extensions/actions/ephy-actions-extension-editor-dialog.c:490
+msgid "No action selected."
+msgstr "Ingen åtgärd markerad."
+
+#: extensions/actions/ephy-actions-extension-editor-dialog.c:500
+#, c-format
+msgid "%i action selected."
+msgid_plural "%i actions selected."
+msgstr[0] "%i åtgärd markerad."
+msgstr[1] "%i åtgärder markerade."
+
+#: extensions/actions/ephy-actions-extension-properties-dialog.c:312
+msgid "Add Action"
+msgstr "Lägg till åtgärd"
+
+#: extensions/actions/ephy-actions-extension-properties-dialog.c:421
+#, c-format
+msgid "%s Properties"
+msgstr "Egenskaper för %s"
+
+#: extensions/actions/ephy-actions-extension-properties-dialog.c:426
+msgid "Action Properties"
+msgstr "Egenskaper för åtgärd"
+
+#: extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:1
+msgid "Add a bookmarks menu to the panel's notification area"
+msgstr "Lägg till en bokmärkesmeny till panelens notifieringsyta"
+
+#: extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:2
+msgid "Bookmarks Tray"
+msgstr "Bokmärkeslåda"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
+msgid "_Edit Bookmarks"
+msgstr "_Redigera bokmärken"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
+msgid "Open the bookmarks window"
+msgstr "Öppna bokmärkesfönstret"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
+msgid "Open in _Current Tab"
+msgstr "Öppna i _aktuell flik"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
+msgid "Open bookmarks in the current tab of the active window"
+msgstr "Öppna bokmärken i den aktuella fliken i det aktiva fönstret"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
+msgid "Open in New _Tab"
+msgstr "Öppna i ny _flik"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
+msgid "Open bookmarks in a new tab of the active window"
+msgstr "Öppna bilden i en ny flik i det aktiva fönstret"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
+msgid "Open in New _Window"
+msgstr "Öppna i nytt _fönster"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
+msgid "Open bookmarks in new a window"
+msgstr "Öppna bokmärken i ett nytt fönster"
+
+#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:531
+msgid "Bookmarks"
+msgstr "Bokmärken"
+
+#: extensions/certificates/certificates.xml.in.in.h:1
+msgid "Certificates"
+msgstr "Certifikat"
+
+#: extensions/certificates/certificates.xml.in.in.h:2
+msgid "View the page certificate and manage the certificates"
+msgstr "Visa sidans certifikat och hantera certifikaten"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:276
+#: extensions/certificates/ephy-certificates-extension.c:275
 msgid "Manage _Certificates"
 msgstr "Hantera _certifikat"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:278
+#: extensions/certificates/ephy-certificates-extension.c:277
 msgid "Manage your certificates"
 msgstr "Hantera dina certifikat"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:286
+#: extensions/certificates/ephy-certificates-extension.c:285
 msgid "Server _Certificate"
 msgstr "Server_certifikat"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:288
+#: extensions/certificates/ephy-certificates-extension.c:287
 msgid "Display the web server's certificate"
 msgstr "Visa webbserverns certifikat"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:88
+#: extensions/dashboard/dashboard.xml.in.in.h:1
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: extensions/dashboard/dashboard.xml.in.in.h:2
+msgid "Send browsing information to Dashboard"
+msgstr "Skicka webbläsarinformation till Dashboard"
+
+#: extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
 msgstr "Kontrollera _HTML"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:90
+#: extensions/error-viewer/ephy-error-viewer-extension.c:99
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "Visa HTML-fel i felvisardialogen"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:95
+#: extensions/error-viewer/ephy-error-viewer-extension.c:104
 msgid "Check _Links"
 msgstr "Kontrollera _länkar"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:97
+#: extensions/error-viewer/ephy-error-viewer-extension.c:106
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr "Visa ogiltiga länkar i felvisardialogen"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:101
+#: extensions/error-viewer/ephy-error-viewer-extension.c:110
 msgid "_Error Viewer"
 msgstr "_Felvisare"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:103
+#: extensions/error-viewer/ephy-error-viewer-extension.c:112
 msgid "Display web page errors"
 msgstr "Visa fel i webbsidor"
 
 #: extensions/error-viewer/error-viewer.glade.h:1
-msgid "C_lear"
+msgid "Cl_ear"
 msgstr "T_öm"
 
 #: extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
 msgstr "Felvisare"
 
+#: extensions/error-viewer/error-viewer.xml.in.in.h:1
+msgid "Error viewer"
+msgstr "Felvisare"
+
+#: extensions/error-viewer/error-viewer.xml.in.in.h:2
+msgid "View error in web pages, validate web pages and check links"
+msgstr "Visa fel i webbsidor, validera webbsidor och kontrollera länkar"
+
 #. Don't bother looking for source lines -- they're not there
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:107
 #, c-format
 msgid ""
 "Error:\n"
@@ -86,7 +263,7 @@ msgstr ""
 "Fel:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:90
+#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:137
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -95,14 +272,14 @@ msgstr ""
 "Javascript-fel i %s på rad %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
 msgstr[0] "Hittade %d ogiltig länk"
 msgstr[1] "Hittade %d ogiltiga länkar"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -111,7 +288,7 @@ msgstr ""
 "Länkfel i %s:\n"
 "%s är inte tillgänglig."
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
+#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
@@ -167,20 +344,17 @@ msgstr ""
 "%s"
 
 #: extensions/error-viewer/sgml-validator.c:360
-#, fuzzy, c-format
+#, c-format
 msgid "HTML error in %s:"
-msgstr ""
-"HTML-fel i %s:\n"
-"%s"
+msgstr "HTML-fel i %s:"
 
 #: extensions/error-viewer/sgml-validator.c:368
-#, fuzzy
 msgid "Invalid character encoding"
-msgstr "Använd en annan teckenkodning"
+msgstr "Ogiltig teckenkodning"
 
 #: extensions/error-viewer/sgml-validator.c:373
 msgid "Unknown error while converting to UTF-8"
-msgstr ""
+msgstr "Okänt fel vid konvertering till UTF-8"
 
 #: extensions/error-viewer/sgml-validator.c:435
 #, c-format
@@ -191,36 +365,698 @@ msgstr ""
 "HTML-fel i %s:\n"
 "Ingen giltig dokumenttyp angiven."
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
-msgid "Popup _Windows"
-msgstr "Popup_fönster"
+#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
+msgid "_Extensions"
+msgstr "_Utökningar"
 
-#. shortcut key
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
-msgid "Show or hide unrequested popup windows from this site"
-msgstr "Visa eller dölj obegärda popupfönster från denna webbplats"
+#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+msgid "Load and unload extensions"
+msgstr "Läs in och glöm utökningar"
 
-#: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:357
+msgid "Enabled"
+msgstr "Aktiverad"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:364
+msgid "Description"
+msgstr "Beskrivning"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+msgid "<b>Loaded Extensions</b>"
+msgstr "<b>Inlästa utökningar</b>"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+msgid "Extensions"
+msgstr "Utökningar"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:1
+msgid "Activate and deactivate extensions"
+msgstr "Aktivera och inaktivera utökningar"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:2
+msgid "Extensions Manager"
+msgstr "Utökningshanterare"
+
+#: extensions/find/eggfindbar.c:132
+msgid "Search string"
+msgstr "Söksträng"
+
+#: extensions/find/eggfindbar.c:133
+msgid "The name of the string to be found"
+msgstr "Namnet på den sträng som eftersöks"
+
+#: extensions/find/eggfindbar.c:146
+msgid "Case sensitive"
+msgstr "Gör skillnad på VERSALER och gemener"
+
+#: extensions/find/eggfindbar.c:147
+msgid "TRUE for a case sensitive search"
+msgstr "SANT för en skiftlägeskänslig sökning"
+
+#: extensions/find/eggfindbar.c:154
+msgid "Highlight color"
+msgstr "Färgmarkeringsfärg"
+
+#: extensions/find/eggfindbar.c:155
+msgid "Color of highlight for all matches"
+msgstr "Färg för färgmarkering av alla träffar"
+
+#: extensions/find/eggfindbar.c:161
+msgid "Current color"
+msgstr "Aktuell färg"
+
+#: extensions/find/eggfindbar.c:162
+msgid "Color of highlight for the current match"
+msgstr "Färg för färgmarkering av den aktuella träffen"
+
+#: extensions/find/eggfindbar.c:286
+msgid "F_ind:"
+msgstr "S_ök:"
+
+#: extensions/find/eggfindbar.c:306
+msgid "_Previous"
+msgstr "_Föregående"
+
+#: extensions/find/eggfindbar.c:308
+msgid "_Next"
+msgstr "_Nästa"
+
+#: extensions/find/eggfindbar.c:321
+msgid "C_ase Sensitive"
+msgstr "_Gör skillnad på VERSALER och gemener"
+
+#: extensions/find/find.xml.in.in.h:1
+msgid "Find"
+msgstr "Sök"
+
+#: extensions/find/find.xml.in.in.h:2
+msgid "Replace the find dialog with a find toolbar"
+msgstr "Ersätt sökdialogen med en sökverktygsrad"
+
+#: extensions/gestures/gestures.xml.in.in.h:1
+msgid "Gestures"
+msgstr "Gester"
+
+#: extensions/gestures/gestures.xml.in.in.h:2
+msgid "Perform actions with mouse gestures"
+msgstr "Utför åtgärder med musgester"
+
+#. How to describe this? It makes Epiphany "Just Work"
+#: extensions/net-monitor/net-monitor.xml.in.in.h:2
+msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
+msgstr ""
+"Hantera ansluten-/frånkoppladstatus för nätverket automatiskt "
+"(EXPERIMENTELLT!)"
+
+#: extensions/net-monitor/net-monitor.xml.in.in.h:3
+msgid "Network Connection Monitor"
+msgstr "Nätverksanslutningsövervakare"
+
+#: extensions/page-info/ephy-page-info-extension.c:65
+msgid "_Page Info"
+msgstr "Sid_information"
+
+#: extensions/page-info/ephy-page-info-extension.c:67
+msgid "Display page information in a dialog"
+msgstr "Visa sidinformation i en dialogruta"
+
+#: extensions/page-info/page-info-dialog.c:673
+msgid "Unknown type"
+msgstr "Okänd typ"
+
+#: extensions/page-info/page-info-dialog.c:678
+msgid "Full standards compliance"
+msgstr "Fullständig standardkompatibilitet"
+
+#: extensions/page-info/page-info-dialog.c:681
+msgid "Almost standards compliance"
+msgstr "Nästan standardkompatibilitet"
+
+#: extensions/page-info/page-info-dialog.c:684
+msgid "Compatibility"
+msgstr "Kompatibilitet"
+
+#: extensions/page-info/page-info-dialog.c:688
+msgid "Undetermined"
+msgstr "Oavgjord"
+
+#: extensions/page-info/page-info-dialog.c:697
+msgid "Not cached"
+msgstr "Inte cachad"
+
+#: extensions/page-info/page-info-dialog.c:700
+msgid "Disk cache"
+msgstr "Diskcache"
+
+#: extensions/page-info/page-info-dialog.c:703
+msgid "Memory cache"
+msgstr "Minnescache"
+
+#: extensions/page-info/page-info-dialog.c:706
+msgid "Unknown cache"
+msgstr "Okänd cache"
+
+#: extensions/page-info/page-info-dialog.c:722
+#: extensions/page-info/page-info-dialog.c:833
+msgid "Unknown"
+msgstr "Okänd"
+
+#: extensions/page-info/page-info-dialog.c:727
+msgid "No referrer"
+msgstr "Ingen refererare"
+
+#: extensions/page-info/page-info-dialog.c:741
+#: extensions/page-info/page-info-dialog.c:757
+msgid "Not specified"
+msgstr "Inte angiven"
+
+#: extensions/page-info/page-info-dialog.c:818
+msgid "Image"
+msgstr "Bild"
+
+#: extensions/page-info/page-info-dialog.c:821
+msgid "Embed"
+msgstr "Inbäddaren"
+
+#: extensions/page-info/page-info-dialog.c:824
+msgid "Object"
+msgstr "Objekt"
+
+#: extensions/page-info/page-info-dialog.c:827
+msgid "Applet"
+msgstr "Applet"
+
+#: extensions/page-info/page-info-dialog.c:830
+msgid "Icon"
+msgstr "Ikon"
+
+#: extensions/page-info/page-info-dialog.c:958
+msgid "Save Medium As..."
+msgstr "Spara media som..."
+
+#: extensions/page-info/page-info-dialog.c:975
+msgid "Select a directory"
+msgstr "Välj en katalog"
+
+#: extensions/page-info/page-info-dialog.c:1055
+msgid "_Open"
+msgstr "_Öppna"
+
+#: extensions/page-info/page-info-dialog.c:1061
+#: extensions/page-info/page-info-dialog.c:1413
+msgid "_Copy Link Address"
+msgstr "_Kopiera länkadress"
+
+#: extensions/page-info/page-info-dialog.c:1067
+msgid "_Use as Background"
+msgstr "_Använd som bakgrund"
+
+#: extensions/page-info/page-info-dialog.c:1073
+msgid "_Save As..."
+msgstr "_Spara som..."
+
+#: extensions/page-info/page-info-dialog.c:1250
+#: extensions/page-info/page-info-dialog.c:1485
+msgid "URL"
+msgstr "URL"
+
+#: extensions/page-info/page-info-dialog.c:1262
+msgid "Type"
+msgstr "Typ"
+
+#: extensions/page-info/page-info-dialog.c:1274
+msgid "Alt Text"
+msgstr "Alt-text"
+
+#: extensions/page-info/page-info-dialog.c:1286
+#: extensions/page-info/page-info-dialog.c:1497
+msgid "Title"
+msgstr "Titel"
+
+#: extensions/page-info/page-info-dialog.c:1298
+msgid "Width"
+msgstr "Bredd"
+
+#: extensions/page-info/page-info-dialog.c:1310
+msgid "Height"
+msgstr "Höjd"
+
+#: extensions/page-info/page-info-dialog.c:1509
+msgid "Relation"
+msgstr "Relation"
+
+#: extensions/page-info/page-info-dialog.c:1621
+#: extensions/page-info/page-info-dialog.c:1758
+msgid "Name"
+msgstr "Namn"
+
+#: extensions/page-info/page-info-dialog.c:1633
+msgid "Method"
+msgstr "Metod"
+
+#: extensions/page-info/page-info-dialog.c:1645
+msgid "Action"
+msgstr "Åtgärd"
+
+#: extensions/page-info/page-info-dialog.c:1724
+msgid "_Copy"
+msgstr "_Kopiera"
+
+#: extensions/page-info/page-info-dialog.c:1770
+msgid "Content"
+msgstr "Innehåll"
+
+#: extensions/page-info/page-info-dialog.c:1869
+msgid "Page Metadata"
+msgstr "Sidmetadata"
+
+#: extensions/page-info/page-info.glade.h:1
+msgid "<b>Dublin Core Metadata</b>"
+msgstr "<b>Dublin Core-metadata</b>"
+
+#: extensions/page-info/page-info.glade.h:2
+msgid "<b>Forms In Page</b>"
+msgstr "<b>Formulär på sidan</b>"
+
+#: extensions/page-info/page-info.glade.h:3
+msgid "<b>Links In Page</b>"
+msgstr "<b>Länkar på sidan</b>"
+
+#: extensions/page-info/page-info.glade.h:4
+msgid "<b>Media In Page</b>"
+msgstr "<b>Media på sidan</b>"
+
+#: extensions/page-info/page-info.glade.h:5
+msgid "<b>Medium View</b>"
+msgstr "<b>Mediavy</b>"
+
+#: extensions/page-info/page-info.glade.h:6
+msgid "<b>Other Metadata</b>"
+msgstr "<b>Andra metadata</b>"
+
+#: extensions/page-info/page-info.glade.h:7
+msgid "<b>Rendering</b>"
+msgstr "<b>Rendering</b>"
+
+#: extensions/page-info/page-info.glade.h:8
+msgid "<b>Source File</b>"
+msgstr "<b>Källfil</b>"
+
+#: extensions/page-info/page-info.glade.h:9
+msgid "<b>Web Page</b>"
+msgstr "<b>Webbsida</b>"
+
+#: extensions/page-info/page-info.glade.h:10
+msgid "DYNAMIC"
+msgstr "DYNAMISK"
+
+#: extensions/page-info/page-info.glade.h:11
+msgid "Date:"
+msgstr "Datum:"
+
+#: extensions/page-info/page-info.glade.h:12
+msgid "Description:"
+msgstr "Beskrivning:"
+
+#: extensions/page-info/page-info.glade.h:13
+msgid "Encoding:"
+msgstr "Kodning:"
+
+#: extensions/page-info/page-info.glade.h:14
+msgid "Expires:"
+msgstr "Utgår:"
+
+#: extensions/page-info/page-info.glade.h:15
+msgid "Format:"
+msgstr "Format:"
+
+#: extensions/page-info/page-info.glade.h:16
+msgid "Forms"
+msgstr "Formulär"
+
+#: extensions/page-info/page-info.glade.h:17
+msgid "General"
+msgstr "Allmänt"
+
+#: extensions/page-info/page-info.glade.h:18
+msgid "Links"
+msgstr "Länkar"
+
+#: extensions/page-info/page-info.glade.h:19
+msgid "Location:"
+msgstr "Adress:"
+
+#: extensions/page-info/page-info.glade.h:20
+msgid "MIME type:"
+msgstr "MIME-typ:"
+
+#: extensions/page-info/page-info.glade.h:21
+msgid "Media"
+msgstr "Media"
+
+#: extensions/page-info/page-info.glade.h:22
+msgid "Metadata"
+msgstr "Metadata"
+
+#: extensions/page-info/page-info.glade.h:23
+msgid "Mode:"
+msgstr "Läge:"
+
+#: extensions/page-info/page-info.glade.h:24
+msgid "Modified:"
+msgstr "Ändrad:"
+
+#: extensions/page-info/page-info.glade.h:25
+msgid "Page Properties"
+msgstr "Sidegenskaper"
+
+#: extensions/page-info/page-info.glade.h:26
+msgid "Referrer:"
+msgstr "Refererare:"
+
+#: extensions/page-info/page-info.glade.h:27
+msgid "Size:"
+msgstr "Storlek:"
+
+#: extensions/page-info/page-info.glade.h:28
+msgid "Source:"
+msgstr "Källa:"
+
+#: extensions/page-info/page-info.glade.h:29
+msgid "Title:"
+msgstr "Titel:"
+
+#: extensions/page-info/page-info.glade.h:30
+msgid "Type:"
+msgstr "Typ:"
+
+#: extensions/page-info/page-info.glade.h:31
+msgid "_Save Media As..."
+msgstr "_Spara media som..."
+
+#: extensions/page-info/page-info.xml.in.in.h:1
+msgid "Display information about and links and media from the current page"
+msgstr "Visa information om länkar och media på den aktuella sidan"
+
+#: extensions/page-info/page-info.xml.in.in.h:2
+msgid "Page Info"
+msgstr "Sidinformation"
+
+#: extensions/sample-mozilla/sample-mozilla.xml.in.in.h:1
+msgid "A sample extension with mozilla backend"
+msgstr "En exempelutökning med mozilla-bakänden"
+
+#: extensions/sample-mozilla/sample-mozilla.xml.in.in.h:2
+msgid "Sample (Mozilla)"
+msgstr "Exempel (Mozilla)"
+
+#: extensions/sample/sample.xml.in.in.h:1
+msgid "A sample extension"
+msgstr "En exempelutökning"
+
+#: extensions/sample/sample.xml.in.in.h:2
+msgid "Sample"
+msgstr "Exempel"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:145
+msgid "Render the page without using a style"
+msgstr "Rendera sidan utan att använda en stil"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:148
+msgid "Render the page using the default style"
+msgstr "Rendera sidan med standardstilen"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:151
 #, c-format
-msgid "%d popup window blocked"
-msgid_plural "%d popup windows blocked"
-msgstr[0] "%d popupfönster blockerat"
-msgstr[1] "%d popupfönster blockerade"
+msgid "Render the page using the \"%s\" style"
+msgstr "Rendera sidan med \"%s\"-stilen"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:183
+#: extensions/select-stylesheet/ephy-css-menu.c:309
+msgid "St_yle"
+msgstr "St_il"
+
+#: extensions/select-stylesheet/ephy-css-menu.c:310
+msgid "Select a different style for this page"
+msgstr "Välj en annan stil för denna sida"
+
+#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
+msgid "Default"
+msgstr "Standard"
+
+#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
+msgid "None"
+msgstr "Ingen"
+
+#: extensions/select-stylesheet/select-stylesheet.xml.in.in.h:1
+msgid "Select Stylesheet"
+msgstr "Välj formatmall"
+
+#: extensions/select-stylesheet/select-stylesheet.xml.in.in.h:2
+msgid "Select between different stylesheets offered by the web page"
+msgstr "Välj mellan olika formatmallar som erbjuds av webbsidan"
+
+#: extensions/sidebar/ephy-sidebar.c:176
+msgid "No Sidebars installed"
+msgstr "Inga sidopaneler är installerade"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:104
+msgid "_Sidebar"
+msgstr "_Sidopanel"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:105
+msgid "Show or hide the sidebar"
+msgstr "Visa eller dölj sidopanelen"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:411
+#, c-format
+msgid "Add \"%s\" to the Sidebar?"
+msgstr "Lägg till \"%s\" på sidopanelen?"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:415
+#, c-format
+msgid "The source to the new sidebar page is %s."
+msgstr "Källan till den nya sidopanelssidan är %s."
+
+#: extensions/sidebar/ephy-sidebar-extension.c:417
+msgid "Add Sidebar"
+msgstr "Lägg till sidopanel"
+
+#: extensions/sidebar/ephy-sidebar-extension.c:421
+msgid "_Add Sidebar"
+msgstr "_Lägg till sidopanel"
+
+#: extensions/sidebar/sidebar.xml.in.in.h:1
+msgid "Adds a sidebar to windows"
+msgstr "Lägger till en sidopanel på fönster"
+
+#: extensions/sidebar/sidebar.xml.in.in.h:2
+msgid "Sidebar"
+msgstr "Sidopanel"
+
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:578
+msgid "_Look Up"
+msgstr "Slå _upp"
+
+#: extensions/smart-bookmarks/smart-bookmarks-extension.c:585
+msgid "_GNOME Dictionary"
+msgstr "_GNOME-ordbok"
+
+#: extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:1
+msgid "Look up the selected text with a smart bookmark"
+msgstr "Slå upp den markerade texten med ett smart bokmärke"
+
+#: extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:2
+msgid "Smart Bookmarks"
+msgstr "Smarta bokmärken"
+
+#: extensions/tab-groups/tab-groups.xml.in.in.h:1
+msgid "Groups newly opened tabs"
+msgstr "Grupperar nyligen öppnade flikar"
+
+#: extensions/tab-groups/tab-groups.xml.in.in.h:2
+msgid "Tab Groups"
+msgstr "Flikgrupper"
+
+#: extensions/tabsmenu/ephy-tab-move-menu.c:190
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"
 msgstr[0] "Fönster \"%s\" (%d flik)"
 msgstr[1] "Fönster \"%s\" (%d flikar)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:282
+#: extensions/tabsmenu/ephy-tab-move-menu.c:302
 msgid "Move Tab To Window"
 msgstr "Flytta flik till fönster"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:283
+#: extensions/tabsmenu/ephy-tab-move-menu.c:303
 msgid "Move the current tab to a different window"
 msgstr "Flytta den aktuella fliken till ett annat fönster"
+
+#: extensions/tabsmenu/tabsmenu.xml.in.in.h:1
+msgid "Move tabs between windows"
+msgstr "Flytta flikar mellan fönster"
+
+#: extensions/tabsmenu/tabsmenu.xml.in.in.h:2
+msgid "Tabsmenu"
+msgstr "Flikmeny"
+
+#: extensions/tab-states/tab-states.xml.in.in.h:1
+msgid "Indicates new content in background tabs"
+msgstr "Indikerar nytt innehåll i bakgrundsflikar"
+
+#: extensions/tab-states/tab-states.xml.in.in.h:2
+msgid "Tab States"
+msgstr "Fliktillstånd"
+
+#~ msgid "Find:"
+#~ msgstr "Sök:"
+
+#~ msgid "Install User _Script"
+#~ msgstr "Installera användar_skript"
+
+#~ msgid "Install Greasemonkey script"
+#~ msgstr "Installera Greasemonkey-skript"
+
+#~ msgid "The user script at %s has been installed"
+#~ msgstr "Användarskriptet på %s har installerats."
+
+#~ msgid "Greasemonkey"
+#~ msgstr "Greasemonkey"
+
+#~ msgid "Run user scripts to modify web pages' behavior"
+#~ msgstr "Kör användarskript för att ändra beteendet hos webbsidor"
+
+#~ msgid "News Feeds Subscription"
+#~ msgstr "Prenumeration på nyhetskällor"
+
+#~ msgid "Subscribe to this website's news feeds in your favorite news reader"
+#~ msgstr ""
+#~ "Prenumerera på nyhetskällan för denna webbplats i din favoritnyhetsläsare"
+
+#~ msgid "_Subscribe to this feed"
+#~ msgstr "_Prenumerera på denna källa"
+
+#~ msgid "Subscribe to this feed in your favorite news reader"
+#~ msgstr "Prenumerera på denna källa i din favoritnyhetsläsare"
+
+#~ msgid "Subscribe to site's news feed"
+#~ msgstr "Prenumerera på nyhetskällan för denna webbplats"
+
+#~ msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
+#~ msgstr "Kunde inte kontakta källäsaren, är den igång?"
+
+#~ msgid "Retry"
+#~ msgstr "Försök igen"
+
+#~ msgid "_Copy Feed Address"
+#~ msgstr "_Kopiera källadress"
+
+#~ msgid "Subscribe"
+#~ msgstr "Prenumerera"
+
+#~ msgid "<b>Select Interesting Feeds</b>"
+#~ msgstr "<b>Välj intressanta källor</b>"
+
+#~ msgid "News Feed Subcription"
+#~ msgstr "Prenumeration på nyhetskälla"
+
+#~ msgid "_Subscribe"
+#~ msgstr "_Prenumerera"
+
+#~ msgid "News Feed Subscription"
+#~ msgstr "Pprenumeration på nyhetskälla"
+
+#~ msgid ""
+#~ "Subscribe to a news feed offered by the webpage in your favorite news "
+#~ "reader"
+#~ msgstr ""
+#~ "Prenumerera på en nyhetskälla som erbjuds av webbsidan i din "
+#~ "favoritnyhetsläsare"
+
+#~ msgid "Applies to"
+#~ msgstr "Gäller för"
+
+#~ msgid "Command:"
+#~ msgstr "Kommando:"
+
+#~ msgid "Command"
+#~ msgstr "Kommando"
+
+#~ msgid "%i action selected"
+#~ msgid_plural "%i actions selected"
+#~ msgstr[0] "%i åtgärd markerad"
+#~ msgstr[1] "%i åtgärder markerade"
+
+#~ msgid "View errors in web pages, validate web pages and check links"
+#~ msgstr "Visa fel i webbsidor, validera webbsidor och kontrollera länkar"
+
+#~ msgid "Loaded Extensions"
+#~ msgstr "Inlästa utökningar"
+
+#~ msgid "Dublin Core Metadata"
+#~ msgstr "Dublin Core-metadata"
+
+#~ msgid "Media In Page"
+#~ msgstr "Media på sidan"
+
+#~ msgid "Medium View"
+#~ msgstr "Mediavy"
+
+#~ msgid "Other Metadata"
+#~ msgstr "Andra metadata"
+
+#~ msgid "Source File"
+#~ msgstr "Källfil"
+
+#~ msgid "Web page"
+#~ msgstr "Webbsida"
+
+#~ msgid "_Format:"
+#~ msgstr "_Format:"
+
+#~ msgid "_Mode:"
+#~ msgstr "_Läge:"
+
+#~ msgid "Page Information"
+#~ msgstr "Sidinformation"
+
+#~ msgid "Page information"
+#~ msgstr "Sidinformation"
+
+#~ msgid "<b><i>Unable to contact the feed reader, is it running?</i></b>"
+#~ msgstr "<b><i>Kunde inte kontakta källäsaren, är den igång?</i></b>"
+
+#~ msgid "Unable to contact the feed reader, is it running ?"
+#~ msgstr "Kunde inte kontakta källäsaren, är den igång?"
+
+#~ msgid "Unable to contact the feed reader, is it running?"
+#~ msgstr "Kunde inte kontakta källäsaren, är den igång?"
+
+#~ msgid "_Copy Address"
+#~ msgstr "_Kopiera adress"
+
+#~ msgid "Select Interesting Feeds"
+#~ msgstr "Välj intressanta källor"
+
+#~ msgid "Newsfeed Subscription"
+#~ msgstr "Prenumeration på nyhetskälla"
+
+#~ msgid "Certificate Manager"
+#~ msgstr "Certifikathanterare"
+
+#~ msgid "C_lear"
+#~ msgstr "T_öm"
+
+#~ msgid "Popup _Windows"
+#~ msgstr "Popup_fönster"
+
+#~ msgid "Show or hide unrequested popup windows from this site"
+#~ msgstr "Visa eller dölj obegärda popupfönster från denna webbplats"
+
+#~ msgid "%d popup window blocked"
+#~ msgid_plural "%d popup windows blocked"
+#~ msgstr[0] "%d popupfönster blockerat"
+#~ msgstr[1] "%d popupfönster blockerade"
 
 #~ msgid "Certificate"
 #~ msgstr "Certifikat"
@@ -532,26 +1368,17 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ "</span>\n"
 #~ "Det är inte möjligt att visa denna filtyp direkt i webbläsaren:"
 
-#~ msgid "C_ase sensitive"
-#~ msgstr "_Gör skillnad på VERSALER och gemener"
-
 #~ msgid "Choose the file type action"
 #~ msgstr "Välj filtypsåtgärden"
 
 #~ msgid "Cookies"
 #~ msgstr "Kakor"
 
-#~ msgid "DYNAMIC"
-#~ msgstr "DYNAMISK"
-
 #~ msgid "Download Manager"
 #~ msgstr "Hämtningshanterare"
 
 #~ msgid "Download _Details"
 #~ msgstr "Hämtnings_detaljer"
-
-#~ msgid "Find"
-#~ msgstr "Sök"
 
 #~ msgid "Passwords"
 #~ msgstr "Lösenord"
@@ -565,14 +1392,8 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "_Find:"
 #~ msgstr "_Sök:"
 
-#~ msgid "_Next"
-#~ msgstr "_Nästa"
-
 #~ msgid "_Pause"
 #~ msgstr "_Paus"
-
-#~ msgid "_Previous"
-#~ msgstr "_Föregående"
 
 #~ msgid "_Wrap around"
 #~ msgstr "_Börja om från början"
@@ -616,9 +1437,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "Autodetec_t:"
 #~ msgstr "_Upptäck automatiskt:"
 
-#~ msgid "Cl_ear"
-#~ msgstr "T_öm"
-
 #~ msgid "Enable Java_Script"
 #~ msgstr "Använd Java_Script"
 
@@ -630,9 +1448,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "For _Language:"
 #~ msgstr "För _språket:"
-
-#~ msgid "General"
-#~ msgstr "Allmänt"
 
 #~ msgid "Language"
 #~ msgstr "Språk"
@@ -738,9 +1553,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "P_rinter:"
 #~ msgstr "Sk_rivare:"
-
-#~ msgid "Pa_ges"
-#~ msgstr "Si_dor"
 
 #~ msgid "Page _numbers"
 #~ msgstr "Sidnu_mmer"
@@ -865,9 +1677,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "Save Image As..."
 #~ msgstr "Spara bild som..."
 
-#~ msgid "Save Page As..."
-#~ msgstr "Spara sida som..."
-
 #~ msgid "Search for a String"
 #~ msgstr "Sök efter en sträng"
 
@@ -913,9 +1722,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "%s at %.1f kB/s"
 #~ msgstr "%s med %.1f kB/s"
-
-#~ msgid "Unknown"
-#~ msgstr "Okänd"
 
 #~ msgid "00.00"
 #~ msgstr "00.00"
@@ -1393,9 +2199,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "%s:"
 #~ msgstr "%s:"
 
-#~ msgid "%s Properties"
-#~ msgstr "Egenskaper för %s"
-
 #~ msgid "_Title:"
 #~ msgstr "_Titel:"
 
@@ -1422,9 +2225,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "Open the selected bookmark in a new window"
 #~ msgstr "Öppna det markerade bokmärket i ett nytt fönster"
-
-#~ msgid "Open in New _Tab"
-#~ msgstr "Öppna i ny _flik"
 
 #~ msgid "Open the selected bookmark in a new tab"
 #~ msgstr "Öppna det markerade bokmärket i en ny flik"
@@ -1471,9 +2271,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "Cut the selection"
 #~ msgstr "Klipp ut markeringen"
 
-#~ msgid "_Copy"
-#~ msgstr "_Kopiera"
-
 #~ msgid "Copy the selection"
 #~ msgstr "Kopiera markeringen"
 
@@ -1504,9 +2301,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "Type a topic"
 #~ msgstr "Ange ett ämne"
 
-#~ msgid "Import Bookmarks"
-#~ msgstr "Importera bokmärken"
-
 #~ msgid "Choose the bookmarks source:"
 #~ msgstr "Välj bokmärkeskällan:"
 
@@ -1525,20 +2319,11 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "Open in New _Tabs"
 #~ msgstr "Öppna i nya _flikar"
 
-#~ msgid "_Copy Address"
-#~ msgstr "_Kopiera adress"
-
 #~ msgid "_Search:"
 #~ msgstr "_Sök:"
 
-#~ msgid "Bookmarks"
-#~ msgstr "Bokmärken"
-
 #~ msgid "Topics"
 #~ msgstr "Ämnen"
-
-#~ msgid "Title"
-#~ msgstr "Titel"
 
 #~ msgid "Empty"
 #~ msgstr "Tom"
@@ -1673,9 +2458,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "Add a bookmark (don't open any window)"
 #~ msgstr "Lägg till ett bokmärke (öppna inget fönster)"
-
-#~ msgid "URL"
-#~ msgstr "URL"
 
 #~ msgid "Close all Epiphany windows"
 #~ msgstr "Stäng alla Epiphany-fönster"
@@ -1847,9 +2629,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "St_atusbar"
 #~ msgstr "St_atusrad"
 
-#~ msgid "Show or hide statusbar"
-#~ msgstr "Visa eller dölj statusrad"
-
 #~ msgid "_Fullscreen"
 #~ msgstr "_Helskärm"
 
@@ -1888,12 +2667,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "Add a bookmark for the current page"
 #~ msgstr "Lägg till bokmärke för den aktuella sidan"
-
-#~ msgid "_Edit Bookmarks"
-#~ msgstr "_Redigera bokmärken"
-
-#~ msgid "Open the bookmarks window"
-#~ msgstr "Öppna bokmärkesfönstret"
 
 #~ msgid "_Back"
 #~ msgstr "_Bakåt"
@@ -1988,9 +2761,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "_Bookmark Link..."
 #~ msgstr "_Lägg till bokmärke för länk..."
 
-#~ msgid "_Copy Link Address"
-#~ msgstr "_Kopiera länkadress"
-
 #~ msgid "Open _Image"
 #~ msgstr "Öppna _bild"
 
@@ -2054,9 +2824,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "Domain"
 #~ msgstr "Domän"
-
-#~ msgid "Name"
-#~ msgstr "Namn"
 
 #~ msgid "Cookie Properties"
 #~ msgstr "Kakegenskaper"
@@ -3638,14 +4405,8 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "Properties"
 #~ msgstr "Egenskaper"
 
-#~ msgid "Open in New Tab"
-#~ msgstr "Öppna i ny flik"
-
 #~ msgid "Search:"
 #~ msgstr "Sök:"
-
-#~ msgid "Title:"
-#~ msgstr "Titel:"
 
 #~ msgid "Topics:"
 #~ msgstr "Ämnen:"
@@ -3712,9 +4473,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "_Remove"
 #~ msgstr "_Ta bort"
-
-#~ msgid "Location:"
-#~ msgstr "Adress:"
 
 #~ msgid "Add bookmark"
 #~ msgstr "Lägg till bokmärke"
@@ -3880,9 +4638,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "Save the current file with a different name"
 #~ msgstr "Spara den aktuella filen med ett annat namn"
 
-#~ msgid "Search for a string"
-#~ msgstr "Sök efter en sträng"
-
 #~ msgid "Zoom In"
 #~ msgstr "Zooma in"
 
@@ -4028,9 +4783,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "Epiphany already running, using existing process"
 #~ msgstr "Epiphany kör redan, använder befintlig process"
 
-#~ msgid "Open in New _Window"
-#~ msgstr "Öppna i nytt _fönster"
-
 #~ msgid "Copy _Link Location"
 #~ msgstr "Kopiera _länkadress"
 
@@ -4157,9 +4909,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "These are the bookmarks just imported."
 #~ msgstr "Detta är de bokmärken som precis importerats."
-
-#~ msgid "Current bookmarks:"
-#~ msgstr "Befintliga bokmärken:"
 
 #~ msgid "These are the bookmarks of your current bookmark set."
 #~ msgstr "Detta är de bokmärken som tillhör din befintliga samling bokmärken."
@@ -4864,9 +5613,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "MIME Type"
 #~ msgstr "MIME-typ"
 
-#~ msgid "Action"
-#~ msgstr "Åtgärd"
-
 #~ msgid "Helper"
 #~ msgstr "Hjälpprogram"
 
@@ -4890,9 +5636,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "New mime item"
 #~ msgstr "Nytt mime-objekt"
-
-#~ msgid "None"
-#~ msgstr "Ingen"
 
 #~ msgid "Filters"
 #~ msgstr "Filter"
@@ -4993,9 +5736,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "ISO-8859-9"
 #~ msgstr "ISO-8859-9"
 
-#~ msgid "Image"
-#~ msgstr "Bild"
-
 #~ msgid "JOHAB"
 #~ msgstr "JOHAB"
 
@@ -5081,17 +5821,11 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "Find bookmarks whose"
 #~ msgstr "Sök bokmärken vars"
 
-#~ msgid "Find:"
-#~ msgstr "Sök:"
-
 #~ msgid "Folder"
 #~ msgstr "Mapp"
 
 #~ msgid "Galeon Bookmarks Editor"
 #~ msgstr "Galeons bokmärkesredigerare"
-
-#~ msgid "Modified:"
-#~ msgstr "Modifierad:"
 
 #~ msgid "N_icknames:"
 #~ msgstr "_Smeknamn:"
@@ -5138,9 +5872,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "_Add to context menu"
 #~ msgstr "_Lägg till i sammanhangsmeny"
-
-#~ msgid "_Name:"
-#~ msgstr "_Namn:"
 
 #~ msgid "_Remove all these bookmarks"
 #~ msgstr "_Ta bort alla dessa bokmärken"
@@ -5437,9 +6168,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "Links on this page:"
 #~ msgstr "Länkar på denna sida:"
 
-#~ msgid "Page information"
-#~ msgstr "Sidinformation"
-
 #~ msgid "R_eversed relation"
 #~ msgstr "Om_vänd relation"
 
@@ -5453,7 +6181,7 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgstr "Starta Galeon"
 
 #~ msgid "Stylesheets on this page:"
-#~ msgstr "Stilmallar på denna sida:"
+#~ msgstr "Formatmallar på denna sida:"
 
 #~ msgid "Target t_ype"
 #~ msgstr "Målt_yp"
@@ -5479,9 +6207,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "_Image"
 #~ msgstr "_Bild"
 
-#~ msgid "_Images"
-#~ msgstr "_Bilder"
-
 #~ msgid "_Link properties"
 #~ msgstr "_Länkegenskaper"
 
@@ -5489,13 +6214,10 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgstr "_Relation"
 
 #~ msgid "_Stylesheets"
-#~ msgstr "_Stilmallar"
+#~ msgstr "_Formatmallar"
 
 #~ msgid "_URL"
 #~ msgstr "_URL"
-
-#~ msgid "_View long description..."
-#~ msgstr "_Visa lång beskrivning..."
 
 #~ msgid "_Will open in"
 #~ msgstr "_Kommer att öppnas i"
@@ -5844,9 +6566,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "<b>_No proxy</b>"
 #~ msgstr "<b>_Ingen proxyserver</b>"
 
-#~ msgid "Actions"
-#~ msgstr "Åtgärder"
-
 #~ msgid "Always _use this helper"
 #~ msgstr "_Använd alltid detta hjälpprogram"
 
@@ -6009,9 +6728,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "Menubar"
 #~ msgstr "Menyrad"
-
-#~ msgid "Sidebar"
-#~ msgstr "Sidopanel"
 
 #~ msgid "This is the resulting bookmark set after marging."
 #~ msgstr "Detta är den resulterande bokmärkessamlingen efter sammanslagning."
@@ -6357,9 +7073,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "_Clear"
 #~ msgstr "T_öm"
 
-#~ msgid "Embed"
-#~ msgstr "Inbäddaren"
-
 #~ msgid "The embed containing the document"
 #~ msgstr "Inbäddaren som innehåller dokumentet"
 
@@ -6418,7 +7131,7 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgstr "Kraschad"
 
 #~ msgid "Default stylesheets"
-#~ msgstr "Standardstilmallar"
+#~ msgstr "Standardformatmallar"
 
 #~ msgid "Dock type to show by default"
 #~ msgstr "Docktyp att visa som standard"
@@ -6754,7 +7467,7 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgstr "St_ilmall"
 
 #~ msgid "Specify stylesheet settings for the current page"
-#~ msgstr "Ange stilmallsinställningar av den aktuella sidan"
+#~ msgstr "Ange formatmallsinställningar av den aktuella sidan"
 
 #~ msgid "Page i_nformation..."
 #~ msgstr "Sidi_nformation..."
@@ -7309,9 +8022,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "Pastes and loads selection as URL"
 #~ msgstr "Klistrar och läser in markeringen som URL"
 
-#~ msgid "Performs gestures"
-#~ msgstr "Utför gester"
-
 #~ msgid "Performs gestures, displaying menu on button release"
 #~ msgstr "Utför gester, visar meny vid knappsläpp"
 
@@ -7745,9 +8455,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "Clear the location entry field"
 #~ msgstr "Töm platsfältet"
 
-#~ msgid "Links"
-#~ msgstr "Länkar"
-
 #~ msgid "Open the find dialog"
 #~ msgstr "Öppna sökdialogen"
 
@@ -7783,18 +8490,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "Form action"
 #~ msgstr "Formuläråtgärd"
-
-#~ msgid "Height"
-#~ msgstr "Höjd"
-
-#~ msgid "Method"
-#~ msgstr "Metod"
-
-#~ msgid "Relation"
-#~ msgstr "Relation"
-
-#~ msgid "Width"
-#~ msgstr "Bredd"
 
 #~ msgid "Unable to initialize mozilla libraries"
 #~ msgstr "Kan inte initiera Mozilla-bibliotek"
@@ -7881,7 +8576,7 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgstr "Länk-URL"
 
 #~ msgid "Stylesheet URL"
-#~ msgstr "Stilmalls-URL"
+#~ msgstr "Formatmalls-URL"
 
 #~ msgid "_Number to generate"
 #~ msgstr "An_tal att generera"
@@ -8022,7 +8717,7 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgstr "Rulla ett steg i taget"
 
 #~ msgid "Select a file to use as custom stylesheet"
-#~ msgstr "Välj en fil att använda som anpassad stilmall"
+#~ msgstr "Välj en fil att använda som anpassad formatmall"
 
 #~ msgid "Show \"_go to\" button"
 #~ msgstr "Visa knappen \"_Gå till\""
@@ -8137,7 +8832,7 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgstr "Helskärmsvy"
 
 #~ msgid "Use a different stylesheet"
-#~ msgstr "Använd en annan stilmall"
+#~ msgstr "Använd en annan formatmall"
 
 #~ msgid "Nick:"
 #~ msgstr "Smeknamn:"
@@ -8238,9 +8933,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgid "Internet Explorer"
 #~ msgstr "Internet Explorer"
 
-#~ msgid "Mozilla"
-#~ msgstr "Mozilla"
-
 #~ msgid "Navigator"
 #~ msgstr "Navigator"
 
@@ -8312,9 +9004,6 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #~ msgid "_Open all bookmarks in this folder"
 #~ msgstr "_Öppna alla bokmärken i denna mapp"
-
-#~ msgid "Open all bookmarks in this folder in _windows"
-#~ msgstr "Öppna alla bokmärken i denna mapp i _fönster"
 
 #~ msgid "unable to download using GTM -- please check if installed?"
 #~ msgstr "kan inte hämta med GTM -- kontrollera om det är installerat?"
@@ -8519,7 +9208,7 @@ msgstr "Flytta den aktuella fliken till ett annat fönster"
 #~ msgstr "Ny kategori"
 
 #~ msgid "Select \"My Portal\" Stylesheet"
-#~ msgstr "Välj stilmall för \"Min portal\""
+#~ msgstr "Välj formatmall för \"Min portal\""
 
 #~ msgid "_Enable Galeon MIME handling"
 #~ msgstr "_Använd Galeons MIME-hantering"
