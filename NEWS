@@ -1,4 +1,29 @@
 =========================
+Epiphany Extensions 1.7.2
+=========================
+
+Changes
+
+	* Support DBUS 0.34 [#306565]
+	* Improved Greasemonkey extension
+	* Work around bug #169116 [#172872]
+
+Contributors to this release are Adam Hooper, Jean-François Rameau and
+Raphaël Slinckx.
+
+Updated translations:
+
+	* Miloslav Trmac (cs)
+	* Frank Arnold (de)
+	* Adam Weinberger (en_CA)
+	* Takeshi AIHANA (ja)
+	* Reinout van Schouwen (nl)
+	* Marcel Telka (sk)
+	* Christian Rose (sv)
+	* Abel Cheung (zh_TW)
+
+
+=========================
 Epiphany Extensions 1.7.1
 =========================
 

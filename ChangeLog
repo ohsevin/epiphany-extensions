@@ -1,3 +1,9 @@
+2005-07-11  Christian Persch  <chpe@cvs.gnome.org>
+
+	=== Release 1.7.2 ===
+
+	* NEWS:
+
 2005-06-19  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/sidebar/ephy-sidebar-extension.c: (sidebar_page_changed_cb):
