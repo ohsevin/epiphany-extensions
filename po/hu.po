@@ -8,25 +8,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-03-07 10:55+0100\n"
-"PO-Revision-Date: 2005-03-18 20:10+0100\n"
+"POT-Creation-Date: 2005-07-12 10:57+0000\n"
+"PO-Revision-Date: 2005-07-12 16:50+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <gnome@gnome.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=1; plural=0;\n"
-"X-Generator: KBabel 1.3.1\n"
+"X-Generator: KBabel 1.10.1\n"
 
-#: extensions/actions/action-properties.glade.h:1
+#: ../extensions/actions/action-properties.glade.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
 msgstr "<span weight=\"bold\">Alkalmazás:</span>"
 
-#: extensions/actions/action-properties.glade.h:2
+#: ../extensions/actions/action-properties.glade.h:2
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">Általános</span>"
 
-#: extensions/actions/action-properties.glade.h:3
+#: ../extensions/actions/action-properties.glade.h:3
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "images."
@@ -34,7 +34,7 @@ msgstr ""
 "Ha ez a lehetőség engedélyezve van, a művelet bekerül a képek felbukkanó "
 "menüjébe."
 
-#: extensions/actions/action-properties.glade.h:4
+#: ../extensions/actions/action-properties.glade.h:4
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "links and pages."
@@ -42,11 +42,11 @@ msgstr ""
 "Ha ez a lehetőség engedélyezve van, a művelet bekerül a hivatkozások és "
 "oldalak felbukkanó menüjébe."
 
-#: extensions/actions/action-properties.glade.h:5
+#: ../extensions/actions/action-properties.glade.h:5
 msgid "The action description."
 msgstr "A művelet leírása."
 
-#: extensions/actions/action-properties.glade.h:6
+#: ../extensions/actions/action-properties.glade.h:6
 msgid ""
 "The action name. If a character is preceded by an underscore, that character "
 "will be used as the access key for the menu item."
@@ -54,7 +54,7 @@ msgstr ""
 "A művelet neve. Ha egy karaktert egy aláhúzásjel előz meg, akkor az a "
 "karakter lesz a menüelem gyorsbillentyűje."
 
-#: extensions/actions/action-properties.glade.h:7
+#: ../extensions/actions/action-properties.glade.h:7
 msgid ""
 "The command to execute when the action is activated. The URL of the link, "
 "image or page will be appended to the command."
@@ -62,200 +62,202 @@ msgstr ""
 "A művelet aktiválásakor végrehajtandó parancs. A hivatkozás, kép vagy oldal "
 "URL-je hozzá lesz fűzve a parancshoz."
 
-#: extensions/actions/action-properties.glade.h:8
+#: ../extensions/actions/action-properties.glade.h:8
 msgid "_Command:"
 msgstr "_Parancs:"
 
-#: extensions/actions/action-properties.glade.h:9
+#: ../extensions/actions/action-properties.glade.h:9
 msgid "_Description:"
 msgstr "_Leírás:"
 
-#: extensions/actions/action-properties.glade.h:10
+#: ../extensions/actions/action-properties.glade.h:10
 msgid "_Images"
 msgstr "_Képek"
 
-#: extensions/actions/action-properties.glade.h:11
+#: ../extensions/actions/action-properties.glade.h:11
 msgid "_Name:"
 msgstr "_Név:"
 
-#: extensions/actions/action-properties.glade.h:12
+#: ../extensions/actions/action-properties.glade.h:12
 msgid "_Pages"
 msgstr "_Oldalak"
 
-#: extensions/actions/actions-editor.glade.h:1
-#: extensions/actions/actions.xml.in.in.h:1
+#: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions.xml.in.in.h:1
 msgid "Actions"
 msgstr "Műveletek"
 
-#: extensions/actions/actions.xml.in.in.h:2
+#: ../extensions/actions/actions.xml.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
 msgstr "Tetszőleges parancsok végrehajtása a felbukkanó menüből"
 
-#: extensions/actions/ephy-actions-extension.c:97
+#: ../extensions/actions/ephy-actions-extension.c:94
 msgid "_Actions"
 msgstr "_Műveletek"
 
-#: extensions/actions/ephy-actions-extension.c:98
+#: ../extensions/actions/ephy-actions-extension.c:95
 msgid "Customize actions"
 msgstr "Műveletek testreszabása"
 
-#: extensions/actions/ephy-actions-extension.c:409
+#: ../extensions/actions/ephy-actions-extension.c:408
 msgid "Could not run command"
 msgstr "Nem sikerült futtatni a parancsot"
 
-#: extensions/actions/ephy-actions-extension.c:412
+#: ../extensions/actions/ephy-actions-extension.c:411
 msgid "Could not Run Command"
 msgstr "Nem sikerült futtatni a parancsot"
 
-#: extensions/actions/ephy-actions-extension-editor-dialog.c:490
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:490
 msgid "No action selected."
 msgstr "Nincs kiválasztva művelet."
 
-#: extensions/actions/ephy-actions-extension-editor-dialog.c:500
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:500
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
 msgstr[0] "%i művelet kiválasztva."
 msgstr[1] "%i művelet kiválasztva."
 
-#: extensions/actions/ephy-actions-extension-properties-dialog.c:312
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:312
 msgid "Add Action"
 msgstr "Művelet hozzáadása"
 
-#: extensions/actions/ephy-actions-extension-properties-dialog.c:421
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:421
 #, c-format
 msgid "%s Properties"
 msgstr "%s tulajdonságai"
 
-#: extensions/actions/ephy-actions-extension-properties-dialog.c:426
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:426
 msgid "Action Properties"
 msgstr "Művelet tulajdonságai"
 
-#: extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:1
+#: ../extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:1
 msgid "Add a bookmarks menu to the panel's notification area"
 msgstr "Könyvjelzőmenü hozzáadása a panel figyelmeztető területéhez"
 
-#: extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:2
+#: ../extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:2
 msgid "Bookmarks Tray"
 msgstr "Könyvjelzők a tálcán"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
 msgid "_Edit Bookmarks"
 msgstr "Köny_vjelzők szerkesztése"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
 msgid "Open the bookmarks window"
 msgstr "A könyvjelzők ablakának megnyitása"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
 msgid "Open in _Current Tab"
 msgstr "Megnyitás a _jelenlegi lapon"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
 msgid "Open bookmarks in the current tab of the active window"
 msgstr "Könyvjelzők megnyitása az aktív ablak jelenlegi lapján"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
 msgid "Open in New _Tab"
 msgstr "Megnyitás új _lapon"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
 msgid "Open bookmarks in a new tab of the active window"
 msgstr "Könyvjelzők megnyitása az aktív ablak egy új lapján"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
 msgid "Open in New _Window"
 msgstr "Megnyitás új _ablakban"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
 msgid "Open bookmarks in new a window"
 msgstr "Könyvjelzők megnyitása új ablakban"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:513
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:531
 msgid "Bookmarks"
 msgstr "Könyvjelzők"
 
-#: extensions/certificates/certificates.xml.in.in.h:1
+#: ../extensions/certificates/certificates.xml.in.in.h:1
 msgid "Certificates"
 msgstr "Tanúsítványok"
 
-#: extensions/certificates/certificates.xml.in.in.h:2
+#: ../extensions/certificates/certificates.xml.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Az oldal tanúsítványainak megtekintése és azok kezelése"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:275
+#: ../extensions/certificates/ephy-certificates-extension.c:275
 msgid "Manage _Certificates"
 msgstr "_Tanúsítványok kezelése"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:277
+#: ../extensions/certificates/ephy-certificates-extension.c:277
 msgid "Manage your certificates"
 msgstr "Az Ön tanúsítványainak kezelése"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:285
+#: ../extensions/certificates/ephy-certificates-extension.c:284
 msgid "Server _Certificate"
 msgstr "_Kiszolgáló tanúsítványa"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:287
+#: ../extensions/certificates/ephy-certificates-extension.c:286
 msgid "Display the web server's certificate"
 msgstr "A kiszolgáló tanúsítványának megjelenítése"
 
-#: extensions/dashboard/dashboard.xml.in.in.h:1
+#: ../extensions/dashboard/dashboard.xml.in.in.h:1
 msgid "Dashboard"
 msgstr "Dashboard"
 
-#: extensions/dashboard/dashboard.xml.in.in.h:2
+#: ../extensions/dashboard/dashboard.xml.in.in.h:2
 msgid "Send browsing information to Dashboard"
 msgstr "Böngészési információ küldése a dashboardnak"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:97
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
 msgstr "_HTML ellenőrzése"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:99
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "HTML hibák megjelenítése a Hibanéző párbeszédablakban"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:104
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:104
 msgid "Check _Links"
 msgstr "H_ivatkozások ellenőrzése"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:106
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:106
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr "Érvénytelen hivatkozások megjelenítése a Hibanéző párbeszédablakban"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:110
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:110
 msgid "_Error Viewer"
 msgstr "Hiba_néző"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:112
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:112
 msgid "Display web page errors"
 msgstr "Weboldal hibák megjelenítése"
 
-#: extensions/error-viewer/error-viewer.glade.h:1
+#: ../extensions/error-viewer/error-viewer.glade.h:1
 msgid "Cl_ear"
 msgstr "_Törlés"
 
-#: extensions/error-viewer/error-viewer.glade.h:2
+#: ../extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
 msgstr "Hibanéző"
 
-#: extensions/error-viewer/error-viewer.xml.in.in.h:1
+#: ../extensions/error-viewer/error-viewer.xml.in.in.h:1
 msgid "Error viewer"
 msgstr "Hibanéző"
 
-#: extensions/error-viewer/error-viewer.xml.in.in.h:2
+#: ../extensions/error-viewer/error-viewer.xml.in.in.h:2
 msgid "View error in web pages, validate web pages and check links"
-msgstr "Hibák keresése weboldalakon, hivatkozások és weboldalak érvényességének ellenőrzése"
+msgstr ""
+"Hibák keresése weboldalakon, hivatkozások és weboldalak érvényességének "
+"ellenőrzése"
 
 #. Don't bother looking for source lines -- they're not there
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:87
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:108
 #, c-format
 msgid ""
 "Error:\n"
@@ -264,7 +266,7 @@ msgstr ""
 "Hiba:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:112
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:138
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -273,14 +275,14 @@ msgstr ""
 "Javascript hiba a(z) %s fájl %d. sorában:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
 msgstr[0] "%d érvénytelen hivatkozás"
 msgstr[1] "%d érvénytelen hivatkozás"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -289,14 +291,14 @@ msgstr ""
 "Hivatkozás hiba a(z) %s fájlban:\n"
 "%s nem érhető el."
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
 msgstr[0] "%d hivatkozás ellenőrzése itt: %s"
 msgstr[1] "%d hivatkozás ellenőrzése itt: %s"
 
-#: extensions/error-viewer/opensp/validate.cpp:167
+#: ../extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
 msgid ""
 "HTML error in %s on line %s:\n"
@@ -305,19 +307,19 @@ msgstr ""
 "HTML hiba a(z) %s fájl %s. sorában:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:165
+#: ../extensions/error-viewer/sgml-validator.c:165
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
 msgstr[0] "%d hiba"
 msgstr[1] "%d hiba"
 
-#: extensions/error-viewer/sgml-validator.c:169
+#: ../extensions/error-viewer/sgml-validator.c:169
 #, c-format
 msgid "HTML Validation of %s complete"
 msgstr "%s HTML jóváhagyása kész"
 
-#: extensions/error-viewer/sgml-validator.c:227
+#: ../extensions/error-viewer/sgml-validator.c:227
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -326,8 +328,8 @@ msgstr ""
 "HTML hiba a(z) %s fájlban:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:229
-#: extensions/error-viewer/sgml-validator.c:245
+#: ../extensions/error-viewer/sgml-validator.c:229
+#: ../extensions/error-viewer/sgml-validator.c:245
 msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
@@ -335,7 +337,7 @@ msgstr ""
 "A doctype \"XHTML\", de a content type \"text/html\". Inkább használjon "
 "\"application/xhtml+xml\"-t."
 
-#: extensions/error-viewer/sgml-validator.c:243
+#: ../extensions/error-viewer/sgml-validator.c:243
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
@@ -344,20 +346,20 @@ msgstr ""
 "HTML figyelmeztetés a(z) %s fájlban:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:360
+#: ../extensions/error-viewer/sgml-validator.c:360
 #, c-format
 msgid "HTML error in %s:"
 msgstr "HTML hiba a(z) %s fájlban:"
 
-#: extensions/error-viewer/sgml-validator.c:368
+#: ../extensions/error-viewer/sgml-validator.c:368
 msgid "Invalid character encoding"
 msgstr "Érvénytelen karakterkódolás"
 
-#: extensions/error-viewer/sgml-validator.c:373
+#: ../extensions/error-viewer/sgml-validator.c:373
 msgid "Unknown error while converting to UTF-8"
 msgstr "Ismeretlen hiba UTF-8-ra konvertálás közben"
 
-#: extensions/error-viewer/sgml-validator.c:435
+#: ../extensions/error-viewer/sgml-validator.c:435
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -366,544 +368,567 @@ msgstr ""
 "HTML hiba a(z) %s fájlban:\n"
 "Nincs érvényes doctype megadva."
 
-#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
 msgid "_Extensions"
 msgstr "Kit_erjesztések"
 
-#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
 msgid "Load and unload extensions"
 msgstr "Kiterjesztések betöltése és eltávolítása"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.c:355
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:357
 msgid "Enabled"
 msgstr "Engedélyezve"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.c:362
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: ../extensions/rss/rss-ui.c:571
 msgid "Description"
 msgstr "Leírás"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
 msgid "<b>Loaded Extensions</b>"
 msgstr "<b>Betöltött kiterjesztések</b>"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
 msgid "Extensions"
 msgstr "Kiterjesztések"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:1
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:1
 msgid "Activate and deactivate extensions"
 msgstr "Kiterjesztések be- és kikapcsolása"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:2
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:2
 msgid "Extensions Manager"
 msgstr "Kiterjesztéskezelő"
 
-#: extensions/find/eggfindbar.c:132
-msgid "Search string"
-msgstr "Karakterlánc keresése"
-
-#: extensions/find/eggfindbar.c:133
-msgid "The name of the string to be found"
-msgstr "A keresendő karakterlánc neve"
-
-#: extensions/find/eggfindbar.c:146
-msgid "Case sensitive"
-msgstr "Kis- és nagybetű"
-
-#: extensions/find/eggfindbar.c:147
-msgid "TRUE for a case sensitive search"
-msgstr "TRUE a nagybetűérzékeny kereséshez"
-
-#: extensions/find/eggfindbar.c:154
-msgid "Highlight color"
-msgstr "Kiemelés színe"
-
-#: extensions/find/eggfindbar.c:155
-msgid "Color of highlight for all matches"
-msgstr "Az összes találat kiemelésének színe"
-
-#: extensions/find/eggfindbar.c:161
-msgid "Current color"
-msgstr "Jelenlegi szín"
-
-#: extensions/find/eggfindbar.c:162
-msgid "Color of highlight for the current match"
-msgstr "A jelenlegi találat kiemelésének színe"
-
-#: extensions/find/eggfindbar.c:286
-msgid "F_ind:"
-msgstr "Ke_resés:"
-
-#: extensions/find/eggfindbar.c:306
-msgid "_Previous"
-msgstr "E_lőző"
-
-#: extensions/find/eggfindbar.c:308
-msgid "_Next"
-msgstr "Kö_vetkező"
-
-#: extensions/find/eggfindbar.c:321
-msgid "C_ase Sensitive"
-msgstr "Na_gybetűérzékeny"
-
-#: extensions/find/find.xml.in.in.h:1
-msgid "Find"
-msgstr "Keresés"
-
-#: extensions/find/find.xml.in.in.h:2
-msgid "Replace the find dialog with a find toolbar"
-msgstr "A keresési párbeszédablak eszköztárra cserélése"
-
-#: extensions/gestures/gestures.xml.in.in.h:1
+#: ../extensions/gestures/gestures.xml.in.in.h:1
 msgid "Gestures"
 msgstr "Egérmozgatások"
 
-#: extensions/gestures/gestures.xml.in.in.h:2
+#: ../extensions/gestures/gestures.xml.in.in.h:2
 msgid "Perform actions with mouse gestures"
 msgstr "Műveletek végrehajtása egérmozgatásokkal"
 
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+msgid "Install User _Script"
+msgstr "_Felhasználói parancsfájl telepítése"
+
+#. shortcut key
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
+msgid "Install Greasemonkey script"
+msgstr "Greasemonkey parancsfájl telepítése"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:354
+#, c-format
+msgid "The user script at %s has been installed"
+msgstr "A(z) %s helyen lévő felhasználói parancsfájl telepítve"
+
+#: ../extensions/greasemonkey/greasemonkey.xml.in.in.h:1
+msgid "Greasemonkey"
+msgstr "Greasemonkey"
+
+#: ../extensions/greasemonkey/greasemonkey.xml.in.in.h:2
+msgid "Run user scripts to modify web pages' behavior"
+msgstr "Felhasználói parancsfájlok futtatása weboldalak viselkedésének módosítására"
+
 #. How to describe this? It makes Epiphany "Just Work"
-#: extensions/net-monitor/net-monitor.xml.in.in.h:2
+#: ../extensions/net-monitor/net-monitor.xml.in.in.h:2
 msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
 msgstr "Hálózat állapotának automatikus kezelése (KÍSÉRLETI!)"
 
-#: extensions/net-monitor/net-monitor.xml.in.in.h:3
+#: ../extensions/net-monitor/net-monitor.xml.in.in.h:3
 msgid "Network Connection Monitor"
 msgstr "Hálózati kapcsolat figyelő"
 
-#: extensions/page-info/ephy-page-info-extension.c:65
+#: ../extensions/page-info/ephy-page-info-extension.c:65
 msgid "_Page Info"
 msgstr "_Oldalinformáció"
 
-#: extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/page-info/ephy-page-info-extension.c:67
 msgid "Display page information in a dialog"
 msgstr "Oldalinformáció megjelenítése egy párbeszédablakban"
 
-#: extensions/page-info/page-info-dialog.c:673
+#: ../extensions/page-info/page-info-dialog.c:672
 msgid "Unknown type"
 msgstr "Ismeretlen típus"
 
-#: extensions/page-info/page-info-dialog.c:678
+#: ../extensions/page-info/page-info-dialog.c:677
 msgid "Full standards compliance"
 msgstr "Szabványoknak való teljes megfelelés"
 
-#: extensions/page-info/page-info-dialog.c:681
+#: ../extensions/page-info/page-info-dialog.c:680
 msgid "Almost standards compliance"
 msgstr "Szabványoknak való majdnem megfelelés"
 
-#: extensions/page-info/page-info-dialog.c:684
+#: ../extensions/page-info/page-info-dialog.c:683
 msgid "Compatibility"
 msgstr "Kompatibilitás"
 
-#: extensions/page-info/page-info-dialog.c:688
+#: ../extensions/page-info/page-info-dialog.c:687
 msgid "Undetermined"
 msgstr "Meg nem állapítható"
 
-#: extensions/page-info/page-info-dialog.c:697
+#: ../extensions/page-info/page-info-dialog.c:696
 msgid "Not cached"
 msgstr "Gyorsítótárba nincs mentve"
 
-#: extensions/page-info/page-info-dialog.c:700
+#: ../extensions/page-info/page-info-dialog.c:699
 msgid "Disk cache"
 msgstr "Lemezes gyorsítótár"
 
-#: extensions/page-info/page-info-dialog.c:703
+#: ../extensions/page-info/page-info-dialog.c:702
 msgid "Memory cache"
 msgstr "Memória gyorsítótár"
 
-#: extensions/page-info/page-info-dialog.c:706
+#: ../extensions/page-info/page-info-dialog.c:705
 msgid "Unknown cache"
 msgstr "Ismeretlen gyorsítótár"
 
-#: extensions/page-info/page-info-dialog.c:722
-#: extensions/page-info/page-info-dialog.c:833
+#: ../extensions/page-info/page-info-dialog.c:721
+#: ../extensions/page-info/page-info-dialog.c:832
 msgid "Unknown"
 msgstr "Ismeretlen"
 
-#: extensions/page-info/page-info-dialog.c:727
+#: ../extensions/page-info/page-info-dialog.c:726
 msgid "No referrer"
 msgstr "Nincs hivatkozó"
 
-#: extensions/page-info/page-info-dialog.c:741
-#: extensions/page-info/page-info-dialog.c:757
+#: ../extensions/page-info/page-info-dialog.c:740
+#: ../extensions/page-info/page-info-dialog.c:756
 msgid "Not specified"
 msgstr "Nincs megadva"
 
-#: extensions/page-info/page-info-dialog.c:818
+#: ../extensions/page-info/page-info-dialog.c:817
 msgid "Image"
 msgstr "Kép"
 
-#: extensions/page-info/page-info-dialog.c:821
+#: ../extensions/page-info/page-info-dialog.c:820
 msgid "Embed"
-msgstr ""
+msgstr "Beágyaz"
 
-#: extensions/page-info/page-info-dialog.c:824
+#: ../extensions/page-info/page-info-dialog.c:823
 msgid "Object"
 msgstr "Objektum"
 
-#: extensions/page-info/page-info-dialog.c:827
+#: ../extensions/page-info/page-info-dialog.c:826
 msgid "Applet"
 msgstr "Kisalkalmazás"
 
-#: extensions/page-info/page-info-dialog.c:830
+#: ../extensions/page-info/page-info-dialog.c:829
 msgid "Icon"
 msgstr "Ikon"
 
-#: extensions/page-info/page-info-dialog.c:958
+#: ../extensions/page-info/page-info-dialog.c:957
 msgid "Save Medium As..."
 msgstr "Média mentése másként..."
 
-#: extensions/page-info/page-info-dialog.c:975
+#: ../extensions/page-info/page-info-dialog.c:974
 msgid "Select a directory"
 msgstr "Válasszon ki egy könyvtárat"
 
-#: extensions/page-info/page-info-dialog.c:1055
+#: ../extensions/page-info/page-info-dialog.c:1054
 msgid "_Open"
 msgstr "_Megnyitás"
 
-#: extensions/page-info/page-info-dialog.c:1061
-#: extensions/page-info/page-info-dialog.c:1413
+#: ../extensions/page-info/page-info-dialog.c:1060
+#: ../extensions/page-info/page-info-dialog.c:1412
 msgid "_Copy Link Address"
 msgstr "Hivatkozás _címének másolása"
 
-#: extensions/page-info/page-info-dialog.c:1067
+#: ../extensions/page-info/page-info-dialog.c:1066
 msgid "_Use as Background"
 msgstr "Kép _használata háttérként"
 
-#: extensions/page-info/page-info-dialog.c:1073
+#: ../extensions/page-info/page-info-dialog.c:1072
 msgid "_Save As..."
 msgstr "M_entés másként..."
 
-#: extensions/page-info/page-info-dialog.c:1250
-#: extensions/page-info/page-info-dialog.c:1485
+#: ../extensions/page-info/page-info-dialog.c:1249
+#: ../extensions/page-info/page-info-dialog.c:1484
 msgid "URL"
 msgstr "URL"
 
-#: extensions/page-info/page-info-dialog.c:1262
+#: ../extensions/page-info/page-info-dialog.c:1261
 msgid "Type"
 msgstr "Típus"
 
-#: extensions/page-info/page-info-dialog.c:1274
+#: ../extensions/page-info/page-info-dialog.c:1273
 msgid "Alt Text"
 msgstr "Alt szöveg"
 
-#: extensions/page-info/page-info-dialog.c:1286
-#: extensions/page-info/page-info-dialog.c:1497
+#: ../extensions/page-info/page-info-dialog.c:1285
+#: ../extensions/page-info/page-info-dialog.c:1496
 msgid "Title"
 msgstr "Cím"
 
-#: extensions/page-info/page-info-dialog.c:1298
+#: ../extensions/page-info/page-info-dialog.c:1297
 msgid "Width"
 msgstr "Szélesség"
 
-#: extensions/page-info/page-info-dialog.c:1310
+#: ../extensions/page-info/page-info-dialog.c:1309
 msgid "Height"
 msgstr "Magasság"
 
-#: extensions/page-info/page-info-dialog.c:1509
+#: ../extensions/page-info/page-info-dialog.c:1508
 msgid "Relation"
 msgstr "Kapcsolat"
 
-#: extensions/page-info/page-info-dialog.c:1621
-#: extensions/page-info/page-info-dialog.c:1758
+#: ../extensions/page-info/page-info-dialog.c:1620
+#: ../extensions/page-info/page-info-dialog.c:1757
 msgid "Name"
 msgstr "Név"
 
-#: extensions/page-info/page-info-dialog.c:1633
+#: ../extensions/page-info/page-info-dialog.c:1632
 msgid "Method"
 msgstr "Módszer"
 
-#: extensions/page-info/page-info-dialog.c:1645
+#: ../extensions/page-info/page-info-dialog.c:1644
 msgid "Action"
 msgstr "Művelet"
 
-#: extensions/page-info/page-info-dialog.c:1724
+#: ../extensions/page-info/page-info-dialog.c:1723
 msgid "_Copy"
 msgstr "_Másolás"
 
-#: extensions/page-info/page-info-dialog.c:1770
+#: ../extensions/page-info/page-info-dialog.c:1769
 msgid "Content"
 msgstr "Tartalom"
 
-#: extensions/page-info/page-info-dialog.c:1869
+#: ../extensions/page-info/page-info-dialog.c:1868
 msgid "Page Metadata"
 msgstr "Oldal metaadat"
 
-#: extensions/page-info/page-info.glade.h:1
+#: ../extensions/page-info/page-info.glade.h:1
 msgid "<b>Dublin Core Metadata</b>"
 msgstr "<b>Dublin Core Metaadat</b>"
 
-#: extensions/page-info/page-info.glade.h:2
+#: ../extensions/page-info/page-info.glade.h:2
 msgid "<b>Forms In Page</b>"
 msgstr "<b>Űrlapok az oldalon</b>"
 
-#: extensions/page-info/page-info.glade.h:3
+#: ../extensions/page-info/page-info.glade.h:3
 msgid "<b>Links In Page</b>"
 msgstr "<b>Hivatkozások az oldalon</b>"
 
-#: extensions/page-info/page-info.glade.h:4
+#: ../extensions/page-info/page-info.glade.h:4
 msgid "<b>Media In Page</b>"
 msgstr "<b>Média az oldalon</b>"
 
-#: extensions/page-info/page-info.glade.h:5
+#: ../extensions/page-info/page-info.glade.h:5
 msgid "<b>Medium View</b>"
 msgstr "<b>Média megjelenítése</b>"
 
-#: extensions/page-info/page-info.glade.h:6
+#: ../extensions/page-info/page-info.glade.h:6
 msgid "<b>Other Metadata</b>"
 msgstr "<b>Egyéb metaadat</b>"
 
-#: extensions/page-info/page-info.glade.h:7
+#: ../extensions/page-info/page-info.glade.h:7
 msgid "<b>Rendering</b>"
 msgstr "<b>Megjelenítés</b>"
 
-#: extensions/page-info/page-info.glade.h:8
+#: ../extensions/page-info/page-info.glade.h:8
 msgid "<b>Source File</b>"
 msgstr "<b>Forrásfájl</b>"
 
-#: extensions/page-info/page-info.glade.h:9
+#: ../extensions/page-info/page-info.glade.h:9
 msgid "<b>Web Page</b>"
 msgstr "<b>Weboldal</b>"
 
-#: extensions/page-info/page-info.glade.h:10
+#: ../extensions/page-info/page-info.glade.h:10
 msgid "DYNAMIC"
 msgstr "DYNAMIC"
 
-#: extensions/page-info/page-info.glade.h:11
+#: ../extensions/page-info/page-info.glade.h:11
 msgid "Date:"
 msgstr "Dátum:"
 
-#: extensions/page-info/page-info.glade.h:12
+#: ../extensions/page-info/page-info.glade.h:12
 msgid "Description:"
 msgstr "Leírás:"
 
-#: extensions/page-info/page-info.glade.h:13
+#: ../extensions/page-info/page-info.glade.h:13
 msgid "Encoding:"
 msgstr "Kódolás:"
 
-#: extensions/page-info/page-info.glade.h:14
+#: ../extensions/page-info/page-info.glade.h:14
 msgid "Expires:"
 msgstr "Lejárat:"
 
-#: extensions/page-info/page-info.glade.h:15
+#: ../extensions/page-info/page-info.glade.h:15
 msgid "Format:"
 msgstr "Formátum:"
 
-#: extensions/page-info/page-info.glade.h:16
+#: ../extensions/page-info/page-info.glade.h:16
 msgid "Forms"
 msgstr "Űrlapok"
 
-#: extensions/page-info/page-info.glade.h:17
+#: ../extensions/page-info/page-info.glade.h:17
 msgid "General"
 msgstr "Általános"
 
-#: extensions/page-info/page-info.glade.h:18
+#: ../extensions/page-info/page-info.glade.h:18
 msgid "Links"
 msgstr "Hivatkozások"
 
-#: extensions/page-info/page-info.glade.h:19
+#: ../extensions/page-info/page-info.glade.h:19
 msgid "Location:"
 msgstr "Hely:"
 
-#: extensions/page-info/page-info.glade.h:20
+#: ../extensions/page-info/page-info.glade.h:20
 msgid "MIME type:"
 msgstr "MIME-típus:"
 
-#: extensions/page-info/page-info.glade.h:21
+#: ../extensions/page-info/page-info.glade.h:21
 msgid "Media"
 msgstr "Média"
 
-#: extensions/page-info/page-info.glade.h:22
+#: ../extensions/page-info/page-info.glade.h:22
 msgid "Metadata"
 msgstr "Metaadat"
 
-#: extensions/page-info/page-info.glade.h:23
+#: ../extensions/page-info/page-info.glade.h:23
 msgid "Mode:"
 msgstr "Mód:"
 
-#: extensions/page-info/page-info.glade.h:24
+#: ../extensions/page-info/page-info.glade.h:24
 msgid "Modified:"
 msgstr "Módosítva:"
 
-#: extensions/page-info/page-info.glade.h:25
+#: ../extensions/page-info/page-info.glade.h:25
 msgid "Page Properties"
 msgstr "Oldal tulajdonságai"
 
-#: extensions/page-info/page-info.glade.h:26
+#: ../extensions/page-info/page-info.glade.h:26
 msgid "Referrer:"
 msgstr "Hivatkozó:"
 
-#: extensions/page-info/page-info.glade.h:27
+#: ../extensions/page-info/page-info.glade.h:27
 msgid "Size:"
 msgstr "Méret:"
 
-#: extensions/page-info/page-info.glade.h:28
+#: ../extensions/page-info/page-info.glade.h:28
 msgid "Source:"
 msgstr "Forrás:"
 
-#: extensions/page-info/page-info.glade.h:29
+#: ../extensions/page-info/page-info.glade.h:29
 msgid "Title:"
 msgstr "Cím:"
 
-#: extensions/page-info/page-info.glade.h:30
+#: ../extensions/page-info/page-info.glade.h:30
 msgid "Type:"
 msgstr "Típus:"
 
-#: extensions/page-info/page-info.glade.h:31
+#: ../extensions/page-info/page-info.glade.h:31
 msgid "_Save Media As..."
 msgstr "_Média mentése másként..."
 
-#: extensions/page-info/page-info.xml.in.in.h:1
+#: ../extensions/page-info/page-info.xml.in.in.h:1
 msgid "Display information about and links and media from the current page"
 msgstr "A jelenlegi oldalon lévő hivatkozásokról és médiáról jelenít meg adatokat"
 
-#: extensions/page-info/page-info.xml.in.in.h:2
+#: ../extensions/page-info/page-info.xml.in.in.h:2
 msgid "Page Info"
 msgstr "Oldalinformáció"
 
-#: extensions/sample-mozilla/sample-mozilla.xml.in.in.h:1
+#: ../extensions/rss/ephy-rss-extension.c:94
+msgid "News Feeds Subscription"
+msgstr "Hírfolyamokra feliratkozás"
+
+#: ../extensions/rss/ephy-rss-extension.c:96
+msgid "Subscribe to this website's news feeds in your favorite news reader"
+msgstr "Feliratkozás ezen weboldal hírfolyamaira a kedvenc hírolvasójával."
+
+#: ../extensions/rss/ephy-rss-extension.c:101
+msgid "_Subscribe to this feed"
+msgstr "_Feliratkozás ezen folyamra"
+
+#: ../extensions/rss/ephy-rss-extension.c:103
+msgid "Subscribe to this feed in your favorite news reader"
+msgstr "Feliratkozás ezen folyamra a kedvenc hírolvasójával"
+
+#: ../extensions/rss/ephy-rss-extension.c:373
+msgid "Subscribe to site's news feed"
+msgstr "Feliratkozás oldal hírfolyamaira"
+
+#: ../extensions/rss/rss-ui.c:159
+msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
+msgstr "<b><i>Nem lehet kapcsolatba lépni a hírfolyam-olvasóval, biztosan fut?</i></b>"
+
+#: ../extensions/rss/rss-ui.c:161
+msgid "Retry"
+msgstr "Újra"
+
+#: ../extensions/rss/rss-ui.c:289
+msgid "_Copy Feed Address"
+msgstr "Hírfoly_am címének másolása"
+
+#: ../extensions/rss/rss-ui.c:564
+msgid "Subscribe"
+msgstr "Feliratkozás"
+
+#: ../extensions/rss/rss-ui.glade.h:1
+msgid "<b>Select Interesting Feeds</b>"
+msgstr "<b>Érdekes hírfolyamok kiválasztása</b>"
+
+#: ../extensions/rss/rss-ui.glade.h:2
+msgid "News Feed Subcription"
+msgstr "Feliratkozás hírfolyamra"
+
+#: ../extensions/rss/rss-ui.glade.h:3
+msgid "_Subscribe"
+msgstr "_Feliratkozás"
+
+#: ../extensions/rss/rss.xml.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "Feliratkozás hírfolyamra"
+
+#: ../extensions/rss/rss.xml.in.in.h:2
+msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr "Feliratkozás az oldal által kínált hírfolyamokra a kedvenc hírolvasójával"
+
+#: ../extensions/sample-mozilla/sample-mozilla.xml.in.in.h:1
 msgid "A sample extension with mozilla backend"
 msgstr "Mintakiterjesztés mozilla háttérrel"
 
-#: extensions/sample-mozilla/sample-mozilla.xml.in.in.h:2
+#: ../extensions/sample-mozilla/sample-mozilla.xml.in.in.h:2
 msgid "Sample (Mozilla)"
 msgstr "Minta (Mozilla)"
 
-#: extensions/sample/sample.xml.in.in.h:1
+#: ../extensions/sample/sample.xml.in.in.h:1
 msgid "A sample extension"
 msgstr "Egy mintakiterjesztés"
 
-#: extensions/sample/sample.xml.in.in.h:2
+#: ../extensions/sample/sample.xml.in.in.h:2
 msgid "Sample"
 msgstr "Minta"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:145
+#: ../extensions/select-stylesheet/ephy-css-menu.c:145
 msgid "Render the page without using a style"
 msgstr "Az oldal megjelenítése stílus használata nélkül"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:148
+#: ../extensions/select-stylesheet/ephy-css-menu.c:148
 msgid "Render the page using the default style"
 msgstr "Az oldal megjelenítése az alapértelmezett stílus használatával"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:151
+#: ../extensions/select-stylesheet/ephy-css-menu.c:151
 #, c-format
 msgid "Render the page using the \"%s\" style"
 msgstr "Az oldal megjelenítése a(z) \"%s\" stílus használatával"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:309
+#: ../extensions/select-stylesheet/ephy-css-menu.c:309
 msgid "St_yle"
 msgstr "_Stílus"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:310
+#: ../extensions/select-stylesheet/ephy-css-menu.c:310
 msgid "Select a different style for this page"
 msgstr "Eltérő stílus választása a jelenlegi oldalhoz"
 
-#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
 msgid "Default"
 msgstr "Alapértelmezett"
 
-#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
 msgid "None"
 msgstr "Nincs"
 
-#: extensions/select-stylesheet/select-stylesheet.xml.in.in.h:1
+#: ../extensions/select-stylesheet/select-stylesheet.xml.in.in.h:1
 msgid "Select Stylesheet"
 msgstr "Stíluslap kiválasztása"
 
-#: extensions/select-stylesheet/select-stylesheet.xml.in.in.h:2
+#: ../extensions/select-stylesheet/select-stylesheet.xml.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
 msgstr "A weboldal által ajánlott különböző stíluslapok közti választás"
 
-#: extensions/sidebar/ephy-sidebar.c:176
+#: ../extensions/sidebar/ephy-sidebar.c:176
 msgid "No Sidebars installed"
 msgstr "Nincsenek oldalsávok telepítve"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:104
+#: ../extensions/sidebar/ephy-sidebar-extension.c:104
 msgid "_Sidebar"
 msgstr "_Oldalsáv"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:105
+#: ../extensions/sidebar/ephy-sidebar-extension.c:105
 msgid "Show or hide the sidebar"
 msgstr "Az oldalsáv mutatása vagy elrejtése"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:407
+#: ../extensions/sidebar/ephy-sidebar-extension.c:411
 #, c-format
 msgid "Add \"%s\" to the Sidebar?"
 msgstr "Hozzáadja ezt: \"%s\" az oldalsávhoz?"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:411
+#: ../extensions/sidebar/ephy-sidebar-extension.c:415
 #, c-format
 msgid "The source to the new sidebar page is %s."
 msgstr "A forrás az új oldalsávoldalhoz: %s."
 
-#: extensions/sidebar/ephy-sidebar-extension.c:413
+#: ../extensions/sidebar/ephy-sidebar-extension.c:417
 msgid "Add Sidebar"
 msgstr "Oldalsáv hozzáadása"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:417
+#: ../extensions/sidebar/ephy-sidebar-extension.c:421
 msgid "_Add Sidebar"
 msgstr "Oldalsáv _hozzáadása"
 
-#: extensions/sidebar/sidebar.xml.in.in.h:1
+#: ../extensions/sidebar/sidebar.xml.in.in.h:1
 msgid "Adds a sidebar to windows"
 msgstr "Oldalsávot ad az ablakokhoz"
 
-#: extensions/sidebar/sidebar.xml.in.in.h:2
+#: ../extensions/sidebar/sidebar.xml.in.in.h:2
 msgid "Sidebar"
 msgstr "Oldalsáv"
 
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:578
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:579
 msgid "_Look Up"
 msgstr "_Keresés"
 
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:585
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:586
 msgid "_GNOME Dictionary"
 msgstr "_GNOME szótár"
 
-#: extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:1
+#: ../extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:1
 msgid "Look up the selected text with a smart bookmark"
 msgstr "A kiválasztott szöveg keresése okos könyvjelzővel"
 
-#: extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:2
+#: ../extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:2
 msgid "Smart Bookmarks"
 msgstr "Okos könyvjelzők"
 
-#: extensions/tab-groups/tab-groups.xml.in.in.h:1
+#: ../extensions/tab-groups/tab-groups.xml.in.in.h:1
 msgid "Groups newly opened tabs"
 msgstr "Újonnan megnyitott lapok csoportosítása"
 
-#: extensions/tab-groups/tab-groups.xml.in.in.h:2
+#: ../extensions/tab-groups/tab-groups.xml.in.in.h:2
 msgid "Tab Groups"
 msgstr "Lapcsoportok"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:190
+#: ../extensions/tabsmenu/ephy-tab-move-menu.c:190
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"
 msgstr[0] "'%s' ablak (%d böngészőlap)"
 msgstr[1] "'%s' ablak (%d böngészőlap)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:302
+#: ../extensions/tabsmenu/ephy-tab-move-menu.c:301
 msgid "Move Tab To Window"
 msgstr "Böngészőlap mozgatása ablakba"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:303
+#: ../extensions/tabsmenu/ephy-tab-move-menu.c:302
 msgid "Move the current tab to a different window"
 msgstr "Böngészőlap mozgatása egy másik ablakba"
 
-#: extensions/tabsmenu/tabsmenu.xml.in.in.h:1
+#: ../extensions/tabsmenu/tabsmenu.xml.in.in.h:1
 msgid "Move tabs between windows"
 msgstr "Böngészőlapok mozgatása az ablakok között"
 
-#: extensions/tabsmenu/tabsmenu.xml.in.in.h:2
+#: ../extensions/tabsmenu/tabsmenu.xml.in.in.h:2
 msgid "Tabsmenu"
 msgstr "Lapmenü"
 
-#: extensions/tab-states/tab-states.xml.in.in.h:1
+#: ../extensions/tab-states/tab-states.xml.in.in.h:1
 msgid "Indicates new content in background tabs"
 msgstr "Az új tartalom jelzése a háttérlapokon"
 
-#: extensions/tab-states/tab-states.xml.in.in.h:2
+#: ../extensions/tab-states/tab-states.xml.in.in.h:2
 msgid "Tab States"
 msgstr "Lapok állapota"
 
