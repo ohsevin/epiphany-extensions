@@ -1,5 +1,12 @@
 2005-07-26  Christian Persch  <chpe@cvs.gnome.org>
 
+	=== Release 1.7.3 ===
+
+	* NEWS:
+	* configure.ac:
+
+2005-07-26  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/smart-bookmarks/smart-bookmarks-extension.c:
 	(search_smart_bookmark_cb):
 
