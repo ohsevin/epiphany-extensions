@@ -178,15 +178,15 @@ search_smart_bookmark_cb (GtkAction *action,
 	id = GPOINTER_TO_UINT (g_object_get_data (G_OBJECT (action), NODE_ID_KEY));
 	g_return_if_fail (id != 0);
 
-	bookmarks = ephy_shell_get_bookmarks (ephy_shell);
+	bookmarks = ephy_shell_get_bookmarks (ephy_shell_get_default ());
 	bmk = ephy_bookmarks_get_from_id (bookmarks, id);
-	g_return_if_fail (bmk != NULL);
+	if (bmk == NULL) return;
 
 	bmk_url =  ephy_node_get_property_string (bmk, EPHY_NODE_BMK_PROP_LOCATION);
 	g_return_if_fail (bmk_url != NULL);
 
 	/* Use smart bookmark solver to build definitive url */
-	url = ephy_bookmarks_solve_smart_url (bookmarks, bmk_url, text);
+	url = ephy_bookmarks_resolve_address (bookmarks, bmk_url, text);
 
 	if (url != NULL)
 	{
