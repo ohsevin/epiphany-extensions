@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-06-05 23:58+0900\n"
-"PO-Revision-Date: 2005-06-05 23:57+0900\n"
+"POT-Creation-Date: 2005-07-28 16:38+0900\n"
+"PO-Revision-Date: 2005-07-28 16:37+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -408,14 +408,19 @@ msgstr "ジェスチャ"
 msgid "Perform actions with mouse gestures"
 msgstr "マウスを使ったジェスチャでブラウザを操作します"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:82
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
 msgid "Install User _Script"
 msgstr "ユーザ・スクリプトのインストール(_S)"
 
 #. shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:84
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
 msgid "Install Greasemonkey script"
 msgstr "Greasemonkey スクリプトのインストール"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:354
+#, c-format
+msgid "The user script at %s has been installed"
+msgstr "ユーザ・スクリプトが %s にインストールされています"
 
 #: ../extensions/greasemonkey/greasemonkey.xml.in.in.h:1
 msgid "Greasemonkey"
@@ -850,21 +855,21 @@ msgstr "サイドバー(_S)"
 msgid "Show or hide the sidebar"
 msgstr "サイドバーの表示/非表示を切り替えます"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:407
+#: ../extensions/sidebar/ephy-sidebar-extension.c:411
 #, c-format
 msgid "Add \"%s\" to the Sidebar?"
 msgstr "\"%s\" をサイドバーへ追加しますか？"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:411
+#: ../extensions/sidebar/ephy-sidebar-extension.c:415
 #, c-format
 msgid "The source to the new sidebar page is %s."
 msgstr "新しいサイドバー・ページのソースは %s です"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:413
+#: ../extensions/sidebar/ephy-sidebar-extension.c:417
 msgid "Add Sidebar"
 msgstr "サイドバーを追加します"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:417
+#: ../extensions/sidebar/ephy-sidebar-extension.c:421
 msgid "_Add Sidebar"
 msgstr "サイドバーの追加(_A)"
 
