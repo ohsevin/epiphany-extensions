@@ -375,7 +375,6 @@ embed_key_press_event_cb (EphyEmbed *embed,
 	/* don't open on space, we want space to toggle checkboxes in the page instead */
 	if (event->keyval == GDK_space) return FALSE;
 
-	g_print ("keyval '%c'\n", event->keyval);
 	if (event->keyval == GDK_slash || event->keyval == GDK_apostrophe)
 	{
 		priv->links_only = event->keyval == GDK_apostrophe;
