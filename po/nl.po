@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-06-13 10:53+0000\n"
+"POT-Creation-Date: 2005-08-01 02:56+0000\n"
 "PO-Revision-Date: 2005-06-13 19:46+0100\n"
 "Last-Translator: Reinout van Schouwen <reinout@cs.vu.nl>\n"
 "Language-Team: nl <vertaling@vrijschrift.org>\n"
@@ -677,7 +677,7 @@ msgstr "Verwijzingen"
 
 #: ../extensions/page-info/page-info.glade.h:19
 msgid "Location:"
-msgstr "Lokatie:"
+msgstr "Locatie:"
 
 #: ../extensions/page-info/page-info.glade.h:20
 msgid "MIME type:"
@@ -863,21 +863,21 @@ msgstr "_Zijbalk"
 msgid "Show or hide the sidebar"
 msgstr "Zijbalk tonen of verbergen"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:407
+#: ../extensions/sidebar/ephy-sidebar-extension.c:411
 #, c-format
 msgid "Add \"%s\" to the Sidebar?"
 msgstr "\"%s\" toevoegen aan de zijbalk?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:411
+#: ../extensions/sidebar/ephy-sidebar-extension.c:415
 #, c-format
 msgid "The source to the new sidebar page is %s."
 msgstr "De bron van de nieuwe zijbalk-pagina is %s."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:413
+#: ../extensions/sidebar/ephy-sidebar-extension.c:417
 msgid "Add Sidebar"
 msgstr "Zijbalk toevoegen"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:417
+#: ../extensions/sidebar/ephy-sidebar-extension.c:421
 msgid "_Add Sidebar"
 msgstr "Zijbalk _toevoegen"
 
