@@ -639,8 +639,8 @@ treeview_info_page_construct (InfoPage *ipage)
 
 /* Save a link given the destination directory */
 static void
-treeview_save_one_link (const char *source,
-	              const char *dir)
+treeview_page_info_save_one_selection (const char *source,
+	                               const char *dir)
 {
 	GnomeVFSURI *uri;
 	EphyEmbedPersist *persist;
@@ -690,7 +690,7 @@ treeview_download_path_response_cb (GtkDialog *fc,
 		{
 			for (l = rows; l != NULL; l = l->next)
 			{
-				treeview_save_one_link ((char *)l->data, dir);
+				treeview_page_info_save_one_selection ((char *)l->data, dir);
 			}
 		}
 		g_free (dir);
@@ -704,8 +704,8 @@ treeview_download_path_response_cb (GtkDialog *fc,
 
 
 static void
-treeview_save_link_cb (gpointer ptr,
-	               TreeviewInfoPage *tpage)
+treeview_page_info_save_selected_cb (gpointer ptr,
+	                             TreeviewInfoPage *tpage)
 {
 	InfoPage *ipage = (InfoPage *) tpage;
 	PageInfoDialog *dialog = ipage->dialog;
@@ -1073,7 +1073,7 @@ static const GtkActionEntry media_action_entries[] =
 	  N_("_Save As..."),
 	  NULL,
 	  NULL,
-	  G_CALLBACK (treeview_save_link_cb) }
+	  G_CALLBACK (treeview_page_info_save_selected_cb) }
 };
 
 void
@@ -1320,7 +1320,7 @@ media_info_page_construct (InfoPage *ipage)
 	button = ephy_dialog_get_control (EPHY_DIALOG (dialog),
 					  properties[PROP_MEDIA_SAVE_BUTTON].id);
 	g_signal_connect (button, "clicked",
-			  G_CALLBACK (treeview_save_link_cb), page);
+			  G_CALLBACK (treeview_page_info_save_selected_cb), page);
 
 	vpaned = ephy_dialog_get_control (EPHY_DIALOG (dialog),
 					  properties[PROP_MEDIA_MEDIUM_VPANED].id);
@@ -1419,7 +1419,7 @@ static const GtkActionEntry links_action_entries[] =
 	  N_("_Save As..."),
 	  NULL,
 	  NULL,
-	  G_CALLBACK (treeview_save_link_cb) }
+	  G_CALLBACK (treeview_page_info_save_selected_cb) }
 };
 
 static void

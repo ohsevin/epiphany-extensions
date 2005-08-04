@@ -1,5 +1,12 @@
 2005-08-04  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
+	* extensions/page-info/page-info-dialog.c:
+
+	Better names according to global schema.
+	Fix previous patch.
+
+2005-08-04  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
 	* extensions/page-info/page-info-context-ui.xml:
 	* extensions/page-info/page-info-dialog.c:
 	* extensions/page-info/mozilla/mozilla-helpers.cpp:
