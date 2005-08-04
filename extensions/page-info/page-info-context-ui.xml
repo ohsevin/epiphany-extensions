@@ -12,6 +12,7 @@
 
 <popup name="LinksPopup" action="PopupAction">
 	<menuitem name="CopyLinkAddress" action="CopyLinkAddress"/>
+	<menuitem name="LinkSaveAs" action="LinkSaveAs"/>
 </popup>
 
 <popup name="FormsPopup" action="PopupAction">

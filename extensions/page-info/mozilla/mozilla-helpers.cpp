@@ -70,6 +70,7 @@
 #include <nsIDOMHTMLLinkElement.h>
 #include <nsIDOMHTMLMetaElement.h>
 #include <nsIDOMHTMLObjectElement.h>
+#include <nsIDOMHTMLScriptElement.h>
 #include <nsIDOMLocation.h>
 #include <nsIDOMNodeFilter.h>
 #include <nsIDOMNode.h>
@@ -120,6 +121,7 @@ private:
   void ProcessImageNode (nsIDOMHTMLImageElement *aElement);
   void ProcessMetaNode (nsIDOMHTMLMetaElement *aElement);
   void ProcessInputNode (nsIDOMHTMLInputElement *aElement);
+  void ProcessScriptNode (nsIDOMHTMLScriptElement *aElement);
   template <class T> void ProcessLinkNode (nsIDOMNode *aNode);
   void ProcessObjectNode (nsIDOMHTMLObjectElement *aElement);
   void WalkTree (nsIDOMDocument *aDocument);
@@ -335,7 +337,7 @@ nsresult
 PageInfoHelper::GetCacheEntryDescriptor (const nsAString &aUrl,
                                          nsICacheEntryDescriptor **aEntry)
 {
-  nsresult rv;
+  nsresult rv = NS_OK;
 
   *aEntry = nsnull;
  
@@ -801,6 +803,28 @@ PageInfoHelper::ProcessInputNode (nsIDOMHTMLInputElement *aElement)
     }
 }
 
+void
+PageInfoHelper::ProcessScriptNode (nsIDOMHTMLScriptElement *aElement)
+{
+  nsEmbedCString cUrl;
+  nsresult rv;
+  nsEmbedString url;
+
+  // Src is not 0 if it is a link
+  rv = aElement->GetSrc (url);
+  if (NS_FAILED (rv) || !url.Length ()) return;
+
+  NS_UTF16ToCString (url, NS_CSTRING_ENCODING_UTF8, cUrl);
+
+  // Already listed ?
+  if (g_hash_table_lookup (mLinkHash, cUrl.get())) return;
+
+  EmbedPageLink *link = g_new0 (EmbedPageLink, 1);
+  link->url = g_strdup (cUrl.get());
+  link->type = EMBED_LINK_TYPE_NORMAL;
+  g_hash_table_insert (mLinkHash, link->url, link);
+}
+
 template <class T>
 void
 PageInfoHelper::ProcessLinkNode (nsIDOMNode *aNode)
@@ -1027,6 +1051,12 @@ PageInfoHelper::WalkTree (nsIDOMDocument *aDocument)
       if (nodeAsInput)
         {
           ProcessInputNode (nodeAsInput);
+        }
+
+      nsCOMPtr<nsIDOMHTMLScriptElement> nodeAsScript (do_QueryInterface(aNode));
+      if (nodeAsScript)
+        {
+          ProcessScriptNode (nodeAsScript);
         }
 
       /* When Java is enabled, the DOM model for <APPLET> is broken.

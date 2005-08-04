@@ -1,3 +1,14 @@
+2005-08-04  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/page-info/page-info-context-ui.xml:
+	* extensions/page-info/page-info-dialog.c:
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+
+	External scripts are listed in page info, and can be saved.
+	Multiple selections allowed to be saved too.
+	Same behaviour as Media tab.
+	Fix #310398.
+
 2005-07-26  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:

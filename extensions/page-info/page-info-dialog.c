@@ -637,6 +637,127 @@ treeview_info_page_construct (InfoPage *ipage)
 				  page);
 }
 
+/* Save a link given the destination directory */
+static void
+treeview_save_one_link (const char *source,
+	              const char *dir)
+{
+	GnomeVFSURI *uri;
+	EphyEmbedPersist *persist;
+
+	uri = gnome_vfs_uri_new (source);
+	if (uri != NULL)
+	{	
+		char *file_name;
+
+		file_name = gnome_vfs_uri_extract_short_name (uri);
+		if (file_name != NULL)
+		{
+			char *dest;
+
+			/* Persist needs a full path */
+			dest = g_build_filename (dir, file_name, NULL);
+
+			persist = EPHY_EMBED_PERSIST (
+					ephy_embed_factory_new_object (EPHY_TYPE_EMBED_PERSIST));
+			ephy_embed_persist_set_source (persist, source);
+			ephy_embed_persist_set_dest (persist, dest);
+			ephy_embed_persist_save (persist);
+
+			g_object_unref (persist);
+			g_free(dest);
+		}
+
+		g_free (file_name);
+		gnome_vfs_uri_unref (uri);
+	}
+}
+
+/* Download at the same time all the selelected links (rows) */
+static void
+treeview_download_path_response_cb (GtkDialog *fc,
+			            int response,
+			            GList *rows)
+{
+	if (response == GTK_RESPONSE_ACCEPT)
+	{
+		char *dir;
+		GList *l;
+
+		dir = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (fc));
+
+		if (dir)
+		{
+			for (l = rows; l != NULL; l = l->next)
+			{
+				treeview_save_one_link ((char *)l->data, dir);
+			}
+		}
+		g_free (dir);
+	}
+	gtk_widget_destroy (GTK_WIDGET (fc));
+
+	/* No needs of rows anymore */
+	g_list_foreach (rows, (GFunc) g_free, NULL);
+	g_list_free (rows);
+}
+
+
+static void
+treeview_save_link_cb (gpointer ptr,
+	               TreeviewInfoPage *tpage)
+{
+	InfoPage *ipage = (InfoPage *) tpage;
+	PageInfoDialog *dialog = ipage->dialog;
+	EphyEmbedPersist *persist;
+	GList *rows;
+
+	rows = treeview_info_page_get_selected_rows (tpage);
+	if (g_list_length (rows) == 1)
+	{
+		char *address = (char *) rows->data;
+
+		if (address != NULL)
+		{
+		persist = EPHY_EMBED_PERSIST
+					(ephy_embed_factory_new_object (EPHY_TYPE_EMBED_PERSIST));
+
+		ephy_embed_persist_set_source (persist, address);
+		ephy_embed_persist_set_flags (persist, EPHY_EMBED_PERSIST_ASK_DESTINATION);
+		ephy_embed_persist_set_fc_title (persist, _("Save As..."));
+		ephy_embed_persist_set_fc_parent (persist, GTK_WINDOW (dialog->priv->window));
+
+		ephy_embed_persist_save (persist);
+
+		g_object_unref (persist);
+		}
+		g_list_foreach (rows, (GFunc) g_free, NULL);
+		g_list_free (rows);
+	}
+	else if (rows != NULL)
+	{
+		EphyFileChooser *fc;
+		GtkWidget *parent;
+
+		parent = NULL;
+
+		fc = ephy_file_chooser_new (_("Select a directory"),
+				            GTK_WIDGET (parent),
+				            GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
+				            NULL, EPHY_FILE_FILTER_NONE);
+
+		gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (fc),
+						     g_get_home_dir ());
+
+		g_signal_connect (GTK_DIALOG (fc), "response",
+				  G_CALLBACK (treeview_download_path_response_cb),
+				  rows);
+
+		gtk_widget_show (GTK_WIDGET (fc));
+	}
+}
+
+
 /* "General" page */
 
 static void
@@ -860,131 +981,11 @@ media_is_embedded_medium (EmbedPageMediumType type)
 	return type == MEDIUM_OBJECT || type == MEDIUM_EMBED;
 }
 
-/* Save a medium given the destination directory */
-static void
-save_a_medium (const char *source,
-	       const char *dir)
-{
-	GnomeVFSURI *uri;
-	EphyEmbedPersist *persist;
-
-	uri = gnome_vfs_uri_new (source);
-	if (uri != NULL)
-	{	
-		char *file_name;
-
-		file_name = gnome_vfs_uri_extract_short_name (uri);
-		if (file_name != NULL)
-		{
-			char *dest;
-
-			/* Persist needs a full path */
-			dest = g_build_filename (dir, file_name, NULL);
-
-			persist = EPHY_EMBED_PERSIST (
-					ephy_embed_factory_new_object (EPHY_TYPE_EMBED_PERSIST));
-			ephy_embed_persist_set_source (persist, source);
-			ephy_embed_persist_set_dest (persist, dest);
-			ephy_embed_persist_save (persist);
-
-			g_object_unref (persist);
-			g_free(dest);
-		}
-
-		g_free (file_name);
-		gnome_vfs_uri_unref (uri);
-	}
-}
-
-/* Download at the same time all the selelected medium (rows) */
-static void
-download_path_response_cb (GtkDialog *fc,
-			   int response,
-			   GList *rows)
-{
-	if (response == GTK_RESPONSE_ACCEPT)
-	{
-		char *dir;
-		GList *l;
-
-		dir = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (fc));
-
-		if (dir)
-		{
-			for (l = rows; l != NULL; l = l->next)
-			{
-				save_a_medium ((char *)l->data, dir);
-			}
-		}
-		g_free (dir);
-	}
-	gtk_widget_destroy (GTK_WIDGET (fc));
-
-	/* No needs of rows anymore */
-	g_list_foreach (rows, (GFunc) g_free, NULL);
-	g_list_free (rows);
-}
-
 static void
 media_open_medium_cb (GtkAction *action,
 		      MediaInfoPage *page)
 {
 	/* FIXME: write me! :) */
-}
-
-static void
-media_save_medium_cb (gpointer ptr,
-		      MediaInfoPage *page)
-{
-	InfoPage *ipage = (InfoPage *) page;
-	TreeviewInfoPage *tpage = (TreeviewInfoPage *) page;
-	PageInfoDialog *dialog = ipage->dialog;
-	EphyEmbedPersist *persist;
-	GList *rows;
-
-	rows = treeview_info_page_get_selected_rows (tpage);
-	if (g_list_length (rows) == 1)
-	{
-		char *address = (char *) rows->data;
-
-		if (address != NULL)
-		{
-		persist = EPHY_EMBED_PERSIST
-					(ephy_embed_factory_new_object (EPHY_TYPE_EMBED_PERSIST));
-
-		ephy_embed_persist_set_source (persist, address);
-		ephy_embed_persist_set_flags (persist, EPHY_EMBED_PERSIST_ASK_DESTINATION);
-		ephy_embed_persist_set_fc_title (persist, _("Save Medium As..."));
-		ephy_embed_persist_set_fc_parent (persist, GTK_WINDOW (dialog->priv->window));
-
-		ephy_embed_persist_save (persist);
-
-		g_object_unref (persist);
-		}
-		g_list_foreach (rows, (GFunc) g_free, NULL);
-		g_list_free (rows);
-	}
-	else if (rows != NULL)
-	{
-		EphyFileChooser *fc;
-		GtkWidget *parent;
-
-		parent = NULL;
-
-		fc = ephy_file_chooser_new (_("Select a directory"),
-				            GTK_WIDGET (parent),
-				            GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
-				            NULL, EPHY_FILE_FILTER_NONE);
-
-		gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (fc),
-						     g_get_home_dir ());
-
-		g_signal_connect (GTK_DIALOG (fc), "response",
-				  G_CALLBACK (download_path_response_cb),
-				  rows);
-
-		gtk_widget_show (GTK_WIDGET (fc));
-	}
 }
 
 static void
@@ -1072,7 +1073,7 @@ static const GtkActionEntry media_action_entries[] =
 	  N_("_Save As..."),
 	  NULL,
 	  NULL,
-	  G_CALLBACK (media_save_medium_cb) }
+	  G_CALLBACK (treeview_save_link_cb) }
 };
 
 void
@@ -1319,7 +1320,7 @@ media_info_page_construct (InfoPage *ipage)
 	button = ephy_dialog_get_control (EPHY_DIALOG (dialog),
 					  properties[PROP_MEDIA_SAVE_BUTTON].id);
 	g_signal_connect (button, "clicked",
-			  G_CALLBACK (media_save_medium_cb), page);
+			  G_CALLBACK (treeview_save_link_cb), page);
 
 	vpaned = ephy_dialog_get_control (EPHY_DIALOG (dialog),
 					  properties[PROP_MEDIA_MEDIUM_VPANED].id);
@@ -1413,6 +1414,12 @@ static const GtkActionEntry links_action_entries[] =
 	  NULL,
 	  NULL,
 	  G_CALLBACK (treeview_info_page_copy_selected) },
+	{ "LinkSaveAs", 
+	  GTK_STOCK_SAVE_AS,
+	  N_("_Save As..."),
+	  NULL,
+	  NULL,
+	  G_CALLBACK (treeview_save_link_cb) }
 };
 
 static void
@@ -1461,7 +1468,7 @@ links_info_page_construct (InfoPage *ipage)
 
 	gtk_tree_view_set_headers_visible (treeview, TRUE);
 	selection = gtk_tree_view_get_selection (treeview);
-	gtk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
+	gtk_tree_selection_set_mode (selection, GTK_SELECTION_MULTIPLE);
 
 	/* Allow the tree to be a source for dnd */
 	gtk_tree_view_enable_model_drag_source (treeview, GDK_BUTTON1_MASK,
@@ -1546,6 +1553,24 @@ links_info_page_fill (InfoPage *ipage)
 	}
 }
 
+static void
+links_info_page_filter (TreeviewInfoPage *page)
+{
+	InfoPage *ipage = (InfoPage *) page;
+	PageInfoDialog *dialog = ipage->dialog;
+	GtkAction *action;
+	gboolean one_col;
+
+	/* In case of a multiple medium selection, we must reduce popup to Save As
+	 * only.
+         */
+	one_col = (gtk_tree_selection_count_selected_rows (page->selection) == 1);
+
+	action = gtk_action_group_get_action (dialog->priv->action_group,
+					      "CopyLinkAddress");
+	gtk_action_set_visible (action, one_col);
+}
+
 static InfoPage *
 links_info_page_new (PageInfoDialog *dialog)
 {
@@ -1562,7 +1587,7 @@ links_info_page_new (PageInfoDialog *dialog)
 	tpage->copy_data_col = COL_LINK_URL;
 	tpage->action_entries = links_action_entries;
 	tpage->n_action_entries = G_N_ELEMENTS (links_action_entries);
-	tpage->filter_func = treeview_info_page_filter;
+	tpage->filter_func = links_info_page_filter;
 
 	return ipage;
 }
