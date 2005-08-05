@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-06-14 07:15+0200\n"
-"PO-Revision-Date: 2005-06-14 07:16+0200\n"
+"POT-Creation-Date: 2005-08-05 20:53+0200\n"
+"PO-Revision-Date: 2005-08-05 20:53+0200\n"
 "Last-Translator: Marcel Telka <marcel@telka.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
@@ -453,153 +453,154 @@ msgstr "_Informácie o stránke"
 msgid "Display page information in a dialog"
 msgstr "Zobraziť informácie o stránke v dialógovom okne"
 
-#: ../extensions/page-info/page-info-dialog.c:672
-msgid "Unknown type"
-msgstr "Neznámy typ"
+#: ../extensions/page-info/page-info-dialog.c:727
+msgid "Save As..."
+msgstr "Uložiť ako..."
 
-#: ../extensions/page-info/page-info-dialog.c:677
-msgid "Full standards compliance"
-msgstr "Úplne dodržané štandardy"
-
-#: ../extensions/page-info/page-info-dialog.c:680
-msgid "Almost standards compliance"
-msgstr "Takmer dodržané štandardy"
-
-#: ../extensions/page-info/page-info-dialog.c:683
-msgid "Compatibility"
-msgstr "Kompatibilita"
-
-#: ../extensions/page-info/page-info-dialog.c:687
-msgid "Undetermined"
-msgstr "Neurčené"
-
-#: ../extensions/page-info/page-info-dialog.c:696
-msgid "Not cached"
-msgstr "Neuložené vo vyrovnávacej pamäti"
-
-#: ../extensions/page-info/page-info-dialog.c:699
-msgid "Disk cache"
-msgstr "Disková vyrovnávacia pamäť"
-
-#: ../extensions/page-info/page-info-dialog.c:702
-msgid "Memory cache"
-msgstr "Pamäťová vyrovnávacia pamäť"
-
-#: ../extensions/page-info/page-info-dialog.c:705
-msgid "Unknown cache"
-msgstr "Neznáma vyrovnávacia pamäť"
-
-#: ../extensions/page-info/page-info-dialog.c:721
-#: ../extensions/page-info/page-info-dialog.c:832
-msgid "Unknown"
-msgstr "Neznáme"
-
-#: ../extensions/page-info/page-info-dialog.c:726
-msgid "No referrer"
-msgstr "Bez odkazu"
-
-#: ../extensions/page-info/page-info-dialog.c:740
-#: ../extensions/page-info/page-info-dialog.c:756
-msgid "Not specified"
-msgstr "Nezadané"
-
-#: ../extensions/page-info/page-info-dialog.c:817
-msgid "Image"
-msgstr "Obrázok"
-
-#: ../extensions/page-info/page-info-dialog.c:820
-msgid "Embed"
-msgstr "Vložiť"
-
-#: ../extensions/page-info/page-info-dialog.c:823
-msgid "Object"
-msgstr "Objekt"
-
-#: ../extensions/page-info/page-info-dialog.c:826
-msgid "Applet"
-msgstr "Applet"
-
-#: ../extensions/page-info/page-info-dialog.c:829
-msgid "Icon"
-msgstr "Ikona"
-
-#: ../extensions/page-info/page-info-dialog.c:957
-msgid "Save Medium As..."
-msgstr "Uložiť médium ako..."
-
-#: ../extensions/page-info/page-info-dialog.c:974
+#: ../extensions/page-info/page-info-dialog.c:744
 msgid "Select a directory"
 msgstr "Vybrať priečinok"
 
-#: ../extensions/page-info/page-info-dialog.c:1054
+#: ../extensions/page-info/page-info-dialog.c:793
+msgid "Unknown type"
+msgstr "Neznámy typ"
+
+#: ../extensions/page-info/page-info-dialog.c:798
+msgid "Full standards compliance"
+msgstr "Úplne dodržané štandardy"
+
+#: ../extensions/page-info/page-info-dialog.c:801
+msgid "Almost standards compliance"
+msgstr "Takmer dodržané štandardy"
+
+#: ../extensions/page-info/page-info-dialog.c:804
+msgid "Compatibility"
+msgstr "Kompatibilita"
+
+#: ../extensions/page-info/page-info-dialog.c:808
+msgid "Undetermined"
+msgstr "Neurčené"
+
+#: ../extensions/page-info/page-info-dialog.c:817
+msgid "Not cached"
+msgstr "Neuložené vo vyrovnávacej pamäti"
+
+#: ../extensions/page-info/page-info-dialog.c:820
+msgid "Disk cache"
+msgstr "Disková vyrovnávacia pamäť"
+
+#: ../extensions/page-info/page-info-dialog.c:823
+msgid "Memory cache"
+msgstr "Pamäťová vyrovnávacia pamäť"
+
+#: ../extensions/page-info/page-info-dialog.c:826
+msgid "Unknown cache"
+msgstr "Neznáma vyrovnávacia pamäť"
+
+#: ../extensions/page-info/page-info-dialog.c:842
+#: ../extensions/page-info/page-info-dialog.c:953
+msgid "Unknown"
+msgstr "Neznáme"
+
+#: ../extensions/page-info/page-info-dialog.c:847
+msgid "No referrer"
+msgstr "Bez odkazu"
+
+#: ../extensions/page-info/page-info-dialog.c:861
+#: ../extensions/page-info/page-info-dialog.c:877
+msgid "Not specified"
+msgstr "Nezadané"
+
+#: ../extensions/page-info/page-info-dialog.c:938
+msgid "Image"
+msgstr "Obrázok"
+
+#: ../extensions/page-info/page-info-dialog.c:941
+msgid "Embed"
+msgstr "Vložiť"
+
+#: ../extensions/page-info/page-info-dialog.c:944
+msgid "Object"
+msgstr "Objekt"
+
+#: ../extensions/page-info/page-info-dialog.c:947
+msgid "Applet"
+msgstr "Applet"
+
+#: ../extensions/page-info/page-info-dialog.c:950
+msgid "Icon"
+msgstr "Ikona"
+
+#: ../extensions/page-info/page-info-dialog.c:1055
 msgid "_Open"
 msgstr "_Otvoriť"
 
-#: ../extensions/page-info/page-info-dialog.c:1060
-#: ../extensions/page-info/page-info-dialog.c:1412
+#: ../extensions/page-info/page-info-dialog.c:1061
+#: ../extensions/page-info/page-info-dialog.c:1413
 msgid "_Copy Link Address"
 msgstr "_Kopírovať adresu odkazu"
 
-#: ../extensions/page-info/page-info-dialog.c:1066
+#: ../extensions/page-info/page-info-dialog.c:1067
 msgid "_Use as Background"
 msgstr "_Použiť ako pozadie"
 
-#: ../extensions/page-info/page-info-dialog.c:1072
+#: ../extensions/page-info/page-info-dialog.c:1073
+#: ../extensions/page-info/page-info-dialog.c:1419
 msgid "_Save As..."
 msgstr "_Uložiť ako..."
 
-#: ../extensions/page-info/page-info-dialog.c:1249
-#: ../extensions/page-info/page-info-dialog.c:1484
+#: ../extensions/page-info/page-info-dialog.c:1250
+#: ../extensions/page-info/page-info-dialog.c:1491
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1261
+#: ../extensions/page-info/page-info-dialog.c:1262
 msgid "Type"
 msgstr "Typ"
 
-#: ../extensions/page-info/page-info-dialog.c:1273
+#: ../extensions/page-info/page-info-dialog.c:1274
 msgid "Alt Text"
 msgstr "Alternatívny text"
 
-#: ../extensions/page-info/page-info-dialog.c:1285
-#: ../extensions/page-info/page-info-dialog.c:1496
+#: ../extensions/page-info/page-info-dialog.c:1286
+#: ../extensions/page-info/page-info-dialog.c:1503
 msgid "Title"
 msgstr "Titulok"
 
-#: ../extensions/page-info/page-info-dialog.c:1297
+#: ../extensions/page-info/page-info-dialog.c:1298
 msgid "Width"
 msgstr "Šírka"
 
-#: ../extensions/page-info/page-info-dialog.c:1309
+#: ../extensions/page-info/page-info-dialog.c:1310
 msgid "Height"
 msgstr "Výška"
 
-#: ../extensions/page-info/page-info-dialog.c:1508
+#: ../extensions/page-info/page-info-dialog.c:1515
 msgid "Relation"
 msgstr "Vzťah"
 
-#: ../extensions/page-info/page-info-dialog.c:1620
-#: ../extensions/page-info/page-info-dialog.c:1757
+#: ../extensions/page-info/page-info-dialog.c:1645
+#: ../extensions/page-info/page-info-dialog.c:1782
 msgid "Name"
 msgstr "Názov"
 
-#: ../extensions/page-info/page-info-dialog.c:1632
+#: ../extensions/page-info/page-info-dialog.c:1657
 msgid "Method"
 msgstr "Metóda"
 
-#: ../extensions/page-info/page-info-dialog.c:1644
+#: ../extensions/page-info/page-info-dialog.c:1669
 msgid "Action"
 msgstr "Akcia"
 
-#: ../extensions/page-info/page-info-dialog.c:1723
+#: ../extensions/page-info/page-info-dialog.c:1748
 msgid "_Copy"
 msgstr "_Kopírovať"
 
-#: ../extensions/page-info/page-info-dialog.c:1769
+#: ../extensions/page-info/page-info-dialog.c:1794
 msgid "Content"
 msgstr "Obsah"
 
-#: ../extensions/page-info/page-info-dialog.c:1868
+#: ../extensions/page-info/page-info-dialog.c:1893
 msgid "Page Metadata"
 msgstr "Metadáta stránky"
 
@@ -863,21 +864,21 @@ msgstr "_Bočná lišta"
 msgid "Show or hide the sidebar"
 msgstr "Zobraziť alebo skryť bočnú lištu"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:407
+#: ../extensions/sidebar/ephy-sidebar-extension.c:411
 #, c-format
 msgid "Add \"%s\" to the Sidebar?"
 msgstr "Pridač \"%s\" na bočnú lištu?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:411
+#: ../extensions/sidebar/ephy-sidebar-extension.c:415
 #, c-format
 msgid "The source to the new sidebar page is %s."
 msgstr "Zdroj novej stránky na bočnej lište je %s."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:413
+#: ../extensions/sidebar/ephy-sidebar-extension.c:417
 msgid "Add Sidebar"
 msgstr "Pridať bočnú lištu"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:417
+#: ../extensions/sidebar/ephy-sidebar-extension.c:421
 msgid "_Add Sidebar"
 msgstr "_Pridať bočnú lištu"
 
