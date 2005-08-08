@@ -1,4 +1,25 @@
 =========================
+Epiphany Extensions 1.7.4
+=========================
+
+Changes
+
+        * Page info extension now allows saving multiple selections
+        * Page info extension now lists external scripts [#310398]
+
+Contributors to this release: 
+Jean-François Rameau.
+
+Translation updates:
+
+	* Miloslav Trmac (cs)
+	* Adam Weinberger (en_CA)
+	* Takeshi AIHANA (ja)
+	* Reinout van Schouwen (nl)
+	* Marcel Telka (sk)
+
+
+=========================
 Epiphany Extensions 1.7.3
 =========================
 
