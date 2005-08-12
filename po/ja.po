@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-07-28 16:38+0900\n"
-"PO-Revision-Date: 2005-07-28 16:37+0900\n"
+"POT-Creation-Date: 2005-08-12 13:38+0900\n"
+"PO-Revision-Date: 2005-08-12 13:36+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -448,153 +448,154 @@ msgstr "ページ情報(_P)"
 msgid "Display page information in a dialog"
 msgstr "ページ情報をダイアログに表示します"
 
-#: ../extensions/page-info/page-info-dialog.c:672
-msgid "Unknown type"
-msgstr "種類を特定できません"
+#: ../extensions/page-info/page-info-dialog.c:727
+msgid "Save As..."
+msgstr "別名で保存..."
 
-#: ../extensions/page-info/page-info-dialog.c:677
-msgid "Full standards compliance"
-msgstr "完全に標準互換"
-
-#: ../extensions/page-info/page-info-dialog.c:680
-msgid "Almost standards compliance"
-msgstr "ほぼ標準互換"
-
-#: ../extensions/page-info/page-info-dialog.c:683
-msgid "Compatibility"
-msgstr "互換性"
-
-#: ../extensions/page-info/page-info-dialog.c:687
-msgid "Undetermined"
-msgstr "未確認"
-
-#: ../extensions/page-info/page-info-dialog.c:696
-msgid "Not cached"
-msgstr "キャッシュされていない"
-
-#: ../extensions/page-info/page-info-dialog.c:699
-msgid "Disk cache"
-msgstr "ディスクへキャッシュ済"
-
-#: ../extensions/page-info/page-info-dialog.c:702
-msgid "Memory cache"
-msgstr "メモリへキャッシュ済"
-
-#: ../extensions/page-info/page-info-dialog.c:705
-msgid "Unknown cache"
-msgstr "キャッシュを特定できません"
-
-#: ../extensions/page-info/page-info-dialog.c:721
-#: ../extensions/page-info/page-info-dialog.c:832
-msgid "Unknown"
-msgstr "不明"
-
-#: ../extensions/page-info/page-info-dialog.c:726
-msgid "No referrer"
-msgstr "照会者なし"
-
-#: ../extensions/page-info/page-info-dialog.c:740
-#: ../extensions/page-info/page-info-dialog.c:756
-msgid "Not specified"
-msgstr "指定なし"
-
-#: ../extensions/page-info/page-info-dialog.c:817
-msgid "Image"
-msgstr "画像"
-
-#: ../extensions/page-info/page-info-dialog.c:820
-msgid "Embed"
-msgstr "埋め込み"
-
-#: ../extensions/page-info/page-info-dialog.c:823
-msgid "Object"
-msgstr "オブジェクト"
-
-#: ../extensions/page-info/page-info-dialog.c:826
-msgid "Applet"
-msgstr "アプレット"
-
-#: ../extensions/page-info/page-info-dialog.c:829
-msgid "Icon"
-msgstr "アイコン"
-
-#: ../extensions/page-info/page-info-dialog.c:957
-msgid "Save Medium As..."
-msgstr "メディアを別名で保存..."
-
-#: ../extensions/page-info/page-info-dialog.c:974
+#: ../extensions/page-info/page-info-dialog.c:744
 msgid "Select a directory"
 msgstr "フォルダの選択"
 
-#: ../extensions/page-info/page-info-dialog.c:1054
+#: ../extensions/page-info/page-info-dialog.c:793
+msgid "Unknown type"
+msgstr "種類を特定できません"
+
+#: ../extensions/page-info/page-info-dialog.c:798
+msgid "Full standards compliance"
+msgstr "完全に標準互換"
+
+#: ../extensions/page-info/page-info-dialog.c:801
+msgid "Almost standards compliance"
+msgstr "ほぼ標準互換"
+
+#: ../extensions/page-info/page-info-dialog.c:804
+msgid "Compatibility"
+msgstr "互換性"
+
+#: ../extensions/page-info/page-info-dialog.c:808
+msgid "Undetermined"
+msgstr "未確認"
+
+#: ../extensions/page-info/page-info-dialog.c:817
+msgid "Not cached"
+msgstr "キャッシュされていない"
+
+#: ../extensions/page-info/page-info-dialog.c:820
+msgid "Disk cache"
+msgstr "ディスクへキャッシュ済"
+
+#: ../extensions/page-info/page-info-dialog.c:823
+msgid "Memory cache"
+msgstr "メモリへキャッシュ済"
+
+#: ../extensions/page-info/page-info-dialog.c:826
+msgid "Unknown cache"
+msgstr "キャッシュを特定できません"
+
+#: ../extensions/page-info/page-info-dialog.c:842
+#: ../extensions/page-info/page-info-dialog.c:953
+msgid "Unknown"
+msgstr "不明"
+
+#: ../extensions/page-info/page-info-dialog.c:847
+msgid "No referrer"
+msgstr "照会者なし"
+
+#: ../extensions/page-info/page-info-dialog.c:861
+#: ../extensions/page-info/page-info-dialog.c:877
+msgid "Not specified"
+msgstr "指定なし"
+
+#: ../extensions/page-info/page-info-dialog.c:938
+msgid "Image"
+msgstr "画像"
+
+#: ../extensions/page-info/page-info-dialog.c:941
+msgid "Embed"
+msgstr "埋め込み"
+
+#: ../extensions/page-info/page-info-dialog.c:944
+msgid "Object"
+msgstr "オブジェクト"
+
+#: ../extensions/page-info/page-info-dialog.c:947
+msgid "Applet"
+msgstr "アプレット"
+
+#: ../extensions/page-info/page-info-dialog.c:950
+msgid "Icon"
+msgstr "アイコン"
+
+#: ../extensions/page-info/page-info-dialog.c:1055
 msgid "_Open"
 msgstr "開く(_O)"
 
-#: ../extensions/page-info/page-info-dialog.c:1060
-#: ../extensions/page-info/page-info-dialog.c:1412
+#: ../extensions/page-info/page-info-dialog.c:1061
+#: ../extensions/page-info/page-info-dialog.c:1413
 msgid "_Copy Link Address"
 msgstr "リンク先のコピー(_C)"
 
-#: ../extensions/page-info/page-info-dialog.c:1066
+#: ../extensions/page-info/page-info-dialog.c:1067
 msgid "_Use as Background"
 msgstr "背景として使用(_U)"
 
-#: ../extensions/page-info/page-info-dialog.c:1072
+#: ../extensions/page-info/page-info-dialog.c:1073
+#: ../extensions/page-info/page-info-dialog.c:1419
 msgid "_Save As..."
 msgstr "別名で保存(_S)..."
 
-#: ../extensions/page-info/page-info-dialog.c:1249
-#: ../extensions/page-info/page-info-dialog.c:1484
+#: ../extensions/page-info/page-info-dialog.c:1250
+#: ../extensions/page-info/page-info-dialog.c:1491
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1261
+#: ../extensions/page-info/page-info-dialog.c:1262
 msgid "Type"
 msgstr "種類"
 
-#: ../extensions/page-info/page-info-dialog.c:1273
+#: ../extensions/page-info/page-info-dialog.c:1274
 msgid "Alt Text"
 msgstr "代替文字列"
 
-#: ../extensions/page-info/page-info-dialog.c:1285
-#: ../extensions/page-info/page-info-dialog.c:1496
+#: ../extensions/page-info/page-info-dialog.c:1286
+#: ../extensions/page-info/page-info-dialog.c:1503
 msgid "Title"
 msgstr "タイトル"
 
-#: ../extensions/page-info/page-info-dialog.c:1297
+#: ../extensions/page-info/page-info-dialog.c:1298
 msgid "Width"
 msgstr "幅"
 
-#: ../extensions/page-info/page-info-dialog.c:1309
+#: ../extensions/page-info/page-info-dialog.c:1310
 msgid "Height"
 msgstr "高さ"
 
-#: ../extensions/page-info/page-info-dialog.c:1508
+#: ../extensions/page-info/page-info-dialog.c:1515
 msgid "Relation"
 msgstr "関係"
 
-#: ../extensions/page-info/page-info-dialog.c:1620
-#: ../extensions/page-info/page-info-dialog.c:1757
+#: ../extensions/page-info/page-info-dialog.c:1645
+#: ../extensions/page-info/page-info-dialog.c:1782
 msgid "Name"
 msgstr "名前"
 
-#: ../extensions/page-info/page-info-dialog.c:1632
+#: ../extensions/page-info/page-info-dialog.c:1657
 msgid "Method"
 msgstr "メソッド"
 
-#: ../extensions/page-info/page-info-dialog.c:1644
+#: ../extensions/page-info/page-info-dialog.c:1669
 msgid "Action"
 msgstr "アクション"
 
-#: ../extensions/page-info/page-info-dialog.c:1723
+#: ../extensions/page-info/page-info-dialog.c:1748
 msgid "_Copy"
 msgstr "コピー(_C)"
 
-#: ../extensions/page-info/page-info-dialog.c:1769
+#: ../extensions/page-info/page-info-dialog.c:1794
 msgid "Content"
 msgstr "コンテンツ"
 
-#: ../extensions/page-info/page-info-dialog.c:1868
+#: ../extensions/page-info/page-info-dialog.c:1893
 msgid "Page Metadata"
 msgstr "ページのメタデータ"
 
