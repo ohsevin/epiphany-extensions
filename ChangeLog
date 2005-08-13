@@ -2,6 +2,12 @@
 
 	* configure.ac:
 
+	Don't use AM_CONDITIONAL conditionally.
+
+2005-08-13  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
 	Better gecko version check.
 
 2005-08-08  Christian Persch  <chpe@cvs.gnome.org>

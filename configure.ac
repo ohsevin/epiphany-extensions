@@ -116,22 +116,28 @@ dnl *******************************
 dnl Check for OpenSP
 dnl *******************************
 
+AC_MSG_CHECKING([whether OpenSP support is requested])
 AC_ARG_ENABLE([opensp],
 	      [ --enable-opensp=[yes,no]    Attempt to use OpenSP for SGML validation [default=yes]],
 	      [enable_opensp="$enableval"],
 	      [enable_opensp="yes"])
+AC_MSG_RESULT([$enable_opensp])
 
 if test "x$enable_opensp" != "xno"; then
 	AC_LANG_PUSH([C++])
 
 	AC_CHECK_HEADERS([OpenSP/config.h OpenSP/ParserEventGeneratorKit.h],
-			 [have_opensp="yes"],
-			 [have_opensp="no"])
-
-	AM_CONDITIONAL([HAVE_OPENSP], test "x$have_opensp" = "xyes")
+			 [have_opensp=yes],
+			 [enable_opensp=no have_opensp=no])
 
 	AC_LANG_POP([C++])
+
+	if test "x$have_opensp" = "xno"; then
+		AC_MSG_WARN([OpenSP is not installed; OpenSP support disabled])
+	fi
 fi
+
+AM_CONDITIONAL([HAVE_OPENSP],[test "x$enable_opensp" = "xyes"])
 
 dnl *******************************
 dnl Extensions
