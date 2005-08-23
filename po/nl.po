@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-08-01 02:56+0000\n"
-"PO-Revision-Date: 2005-06-13 19:46+0100\n"
+"POT-Creation-Date: 2005-08-23 18:58+0000\n"
+"PO-Revision-Date: 2005-08-23 22:17+0100\n"
 "Last-Translator: Reinout van Schouwen <reinout@cs.vu.nl>\n"
 "Language-Team: nl <vertaling@vrijschrift.org>\n"
 "MIME-Version: 1.0\n"
@@ -453,153 +453,154 @@ msgstr "_Pagina-informatie"
 msgid "Display page information in a dialog"
 msgstr "Pagina-informatie weergeven in een dialoogvenster"
 
-#: ../extensions/page-info/page-info-dialog.c:672
-msgid "Unknown type"
-msgstr "Onbekend type"
+#: ../extensions/page-info/page-info-dialog.c:727
+msgid "Save As..."
+msgstr "Opslaan als..."
 
-#: ../extensions/page-info/page-info-dialog.c:677
-msgid "Full standards compliance"
-msgstr "Voldoet geheel aan alle standaarden"
-
-#: ../extensions/page-info/page-info-dialog.c:680
-msgid "Almost standards compliance"
-msgstr "Voldoet bijna aan alle standaarden"
-
-#: ../extensions/page-info/page-info-dialog.c:683
-msgid "Compatibility"
-msgstr "Compatibiliteit"
-
-#: ../extensions/page-info/page-info-dialog.c:687
-msgid "Undetermined"
-msgstr "Onbepaald"
-
-#: ../extensions/page-info/page-info-dialog.c:696
-msgid "Not cached"
-msgstr "Niet gebufferd"
-
-#: ../extensions/page-info/page-info-dialog.c:699
-msgid "Disk cache"
-msgstr "Schijfbuffer"
-
-#: ../extensions/page-info/page-info-dialog.c:702
-msgid "Memory cache"
-msgstr "Geheugenbuffer"
-
-#: ../extensions/page-info/page-info-dialog.c:705
-msgid "Unknown cache"
-msgstr "Onbekende buffer"
-
-#: ../extensions/page-info/page-info-dialog.c:721
-#: ../extensions/page-info/page-info-dialog.c:832
-msgid "Unknown"
-msgstr "Onbekend"
-
-#: ../extensions/page-info/page-info-dialog.c:726
-msgid "No referrer"
-msgstr "Geen doorverwijzer"
-
-#: ../extensions/page-info/page-info-dialog.c:740
-#: ../extensions/page-info/page-info-dialog.c:756
-msgid "Not specified"
-msgstr "Niet gespecificeerd"
-
-#: ../extensions/page-info/page-info-dialog.c:817
-msgid "Image"
-msgstr "Afbeelding"
-
-#: ../extensions/page-info/page-info-dialog.c:820
-msgid "Embed"
-msgstr "Ingebed"
-
-#: ../extensions/page-info/page-info-dialog.c:823
-msgid "Object"
-msgstr "object"
-
-#: ../extensions/page-info/page-info-dialog.c:826
-msgid "Applet"
-msgstr "applet"
-
-#: ../extensions/page-info/page-info-dialog.c:829
-msgid "Icon"
-msgstr "Pictogram"
-
-#: ../extensions/page-info/page-info-dialog.c:957
-msgid "Save Medium As..."
-msgstr "Media opslaan als..."
-
-#: ../extensions/page-info/page-info-dialog.c:974
+#: ../extensions/page-info/page-info-dialog.c:744
 msgid "Select a directory"
 msgstr "Kies een map"
 
-#: ../extensions/page-info/page-info-dialog.c:1054
+#: ../extensions/page-info/page-info-dialog.c:793
+msgid "Unknown type"
+msgstr "Onbekend type"
+
+#: ../extensions/page-info/page-info-dialog.c:798
+msgid "Full standards compliance"
+msgstr "Voldoet geheel aan alle standaarden"
+
+#: ../extensions/page-info/page-info-dialog.c:801
+msgid "Almost standards compliance"
+msgstr "Voldoet bijna aan alle standaarden"
+
+#: ../extensions/page-info/page-info-dialog.c:804
+msgid "Compatibility"
+msgstr "Compatibiliteit"
+
+#: ../extensions/page-info/page-info-dialog.c:808
+msgid "Undetermined"
+msgstr "Onbepaald"
+
+#: ../extensions/page-info/page-info-dialog.c:817
+msgid "Not cached"
+msgstr "Niet gebufferd"
+
+#: ../extensions/page-info/page-info-dialog.c:820
+msgid "Disk cache"
+msgstr "Schijfbuffer"
+
+#: ../extensions/page-info/page-info-dialog.c:823
+msgid "Memory cache"
+msgstr "Geheugenbuffer"
+
+#: ../extensions/page-info/page-info-dialog.c:826
+msgid "Unknown cache"
+msgstr "Onbekende buffer"
+
+#: ../extensions/page-info/page-info-dialog.c:842
+#: ../extensions/page-info/page-info-dialog.c:953
+msgid "Unknown"
+msgstr "Onbekend"
+
+#: ../extensions/page-info/page-info-dialog.c:847
+msgid "No referrer"
+msgstr "Geen doorverwijzer"
+
+#: ../extensions/page-info/page-info-dialog.c:861
+#: ../extensions/page-info/page-info-dialog.c:877
+msgid "Not specified"
+msgstr "Niet gespecificeerd"
+
+#: ../extensions/page-info/page-info-dialog.c:938
+msgid "Image"
+msgstr "Afbeelding"
+
+#: ../extensions/page-info/page-info-dialog.c:941
+msgid "Embed"
+msgstr "Ingebed"
+
+#: ../extensions/page-info/page-info-dialog.c:944
+msgid "Object"
+msgstr "object"
+
+#: ../extensions/page-info/page-info-dialog.c:947
+msgid "Applet"
+msgstr "applet"
+
+#: ../extensions/page-info/page-info-dialog.c:950
+msgid "Icon"
+msgstr "Pictogram"
+
+#: ../extensions/page-info/page-info-dialog.c:1055
 msgid "_Open"
 msgstr "_Openen"
 
-#: ../extensions/page-info/page-info-dialog.c:1060
-#: ../extensions/page-info/page-info-dialog.c:1412
+#: ../extensions/page-info/page-info-dialog.c:1061
+#: ../extensions/page-info/page-info-dialog.c:1413
 msgid "_Copy Link Address"
 msgstr "Verwij_zingsadres kopiëren"
 
-#: ../extensions/page-info/page-info-dialog.c:1066
+#: ../extensions/page-info/page-info-dialog.c:1067
 msgid "_Use as Background"
 msgstr "Als a_chtergrond gebruiken"
 
-#: ../extensions/page-info/page-info-dialog.c:1072
+#: ../extensions/page-info/page-info-dialog.c:1073
+#: ../extensions/page-info/page-info-dialog.c:1419
 msgid "_Save As..."
 msgstr "Op_slaan als..."
 
-#: ../extensions/page-info/page-info-dialog.c:1249
-#: ../extensions/page-info/page-info-dialog.c:1484
+#: ../extensions/page-info/page-info-dialog.c:1250
+#: ../extensions/page-info/page-info-dialog.c:1491
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1261
+#: ../extensions/page-info/page-info-dialog.c:1262
 msgid "Type"
 msgstr "Type"
 
-#: ../extensions/page-info/page-info-dialog.c:1273
+#: ../extensions/page-info/page-info-dialog.c:1274
 msgid "Alt Text"
 msgstr "Alt-tekst"
 
-#: ../extensions/page-info/page-info-dialog.c:1285
-#: ../extensions/page-info/page-info-dialog.c:1496
+#: ../extensions/page-info/page-info-dialog.c:1286
+#: ../extensions/page-info/page-info-dialog.c:1503
 msgid "Title"
 msgstr "Titel"
 
-#: ../extensions/page-info/page-info-dialog.c:1297
+#: ../extensions/page-info/page-info-dialog.c:1298
 msgid "Width"
 msgstr "Breedte"
 
-#: ../extensions/page-info/page-info-dialog.c:1309
+#: ../extensions/page-info/page-info-dialog.c:1310
 msgid "Height"
 msgstr "Hoogte"
 
-#: ../extensions/page-info/page-info-dialog.c:1508
+#: ../extensions/page-info/page-info-dialog.c:1515
 msgid "Relation"
 msgstr "Relatie"
 
-#: ../extensions/page-info/page-info-dialog.c:1620
-#: ../extensions/page-info/page-info-dialog.c:1757
+#: ../extensions/page-info/page-info-dialog.c:1645
+#: ../extensions/page-info/page-info-dialog.c:1782
 msgid "Name"
 msgstr "Naam"
 
-#: ../extensions/page-info/page-info-dialog.c:1632
+#: ../extensions/page-info/page-info-dialog.c:1657
 msgid "Method"
 msgstr "Methode"
 
-#: ../extensions/page-info/page-info-dialog.c:1644
+#: ../extensions/page-info/page-info-dialog.c:1669
 msgid "Action"
 msgstr "Actie"
 
-#: ../extensions/page-info/page-info-dialog.c:1723
+#: ../extensions/page-info/page-info-dialog.c:1748
 msgid "_Copy"
 msgstr "_Kopiëren"
 
-#: ../extensions/page-info/page-info-dialog.c:1769
+#: ../extensions/page-info/page-info-dialog.c:1794
 msgid "Content"
 msgstr "Inhoud"
 
-#: ../extensions/page-info/page-info-dialog.c:1868
+#: ../extensions/page-info/page-info-dialog.c:1893
 msgid "Page Metadata"
 msgstr "Pagina-metadata"
 
@@ -943,6 +944,9 @@ msgstr "Geeft nieuwe inhoud aan in achtergrondtabbladen"
 #: ../extensions/tab-states/tab-states.xml.in.in.h:2
 msgid "Tab States"
 msgstr "Tab-staat"
+
+#~ msgid "Save Medium As..."
+#~ msgstr "Media opslaan als..."
 
 #~ msgid "Search string"
 #~ msgstr "Zoekreeks"
