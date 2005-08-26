@@ -6,6 +6,7 @@ extensions/actions/actions.xml.in.in
 extensions/actions/ephy-actions-extension.c
 extensions/actions/ephy-actions-extension-editor-dialog.c
 extensions/actions/ephy-actions-extension-properties-dialog.c
+extensions/auto-scroller/auto-scroller.xml.in.in
 extensions/bookmarks-tray/bookmarks-tray.xml.in.in
 extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c
 extensions/certificates/certificates.xml.in.in
