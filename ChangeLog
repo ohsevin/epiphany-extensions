@@ -1,3 +1,39 @@
+2005-08-26  Crispin Flowerday  <gnome@flowerday.cx>
+
+	* configure.ac:
+	* extensions/auto-scroller/.cvsignore:
+	* extensions/auto-scroller/Makefile.am:
+	* extensions/auto-scroller/auto-scroller.xml.in.in:
+	* extensions/auto-scroller/autoscroll.xpm.h:
+	* extensions/auto-scroller/ephy-auto-scroller-extension.c:
+	(ephy_auto_scroller_extension_init),
+	(ephy_auto_scroller_extension_finalize), (dom_mouse_down_cb),
+	(impl_attach_tab), (impl_detach_tab),
+	(ephy_auto_scroller_extension_iface_init),
+	(ephy_auto_scroller_extension_class_init),
+	(ephy_auto_scroller_extension_get_type),
+	(ephy_auto_scroller_extension_register_type):
+	* extensions/auto-scroller/ephy-auto-scroller-extension.h:
+	* extensions/auto-scroller/ephy-auto-scroller.c:
+	(ephy_auto_scroller_class_init), (ephy_auto_scroller_init),
+	(ephy_auto_scroller_finalize_impl), (ephy_auto_scroller_new),
+	(ephy_auto_scroller_set_embed), (ephy_auto_scroller_start_scroll),
+	(ephy_auto_scroller_motion_cb),
+	(ephy_auto_scroller_mouse_press_cb),
+	(ephy_auto_scroller_key_press_cb),
+	(ephy_auto_scroller_unmap_event_cb),
+	(ephy_auto_scroller_timeout_cb), (ephy_auto_scroller_stop),
+	(ephy_auto_scroller_get_type), (ephy_auto_scroller_register_type):
+	* extensions/auto-scroller/ephy-auto-scroller.h:
+	* extensions/auto-scroller/extension.c: (register_module):
+	* extensions/auto-scroller/mozilla/.cvsignore:
+	* extensions/auto-scroller/mozilla/Makefile.am:
+	* extensions/auto-scroller/mozilla/mozilla-helpers.cpp:
+	* extensions/auto-scroller/mozilla/mozilla-helpers.h:
+	
+	Import an auto-scroller extension, allowing easy scrolling
+	using the middle mouse button.
+
 2005-08-13  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
