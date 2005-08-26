@@ -1,6 +1,7 @@
 /*
- *  Copyright (C) 2002  Ricardo Fern·ndez Pascual
- *  Copyright (C) 2005  Crispin Flowerday
+ *  Copyright (C) 2002 Ricardo Fern√°dez Pascual
+ *  Copyright (C) 2005 Crispin Flowerday
+ *  Copyright (C) 2005 Christian Persch
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -15,13 +16,13 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ *
+ *  $Id$
  */
 
 /* this file is based on work of Daniel Erat for galeon 1 */
 
-#ifdef HAVE_CONFIG_H
 #include "config.h"
-#endif
 
 #include "ephy-auto-scroller.h"
 
@@ -38,14 +39,10 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-/**
- * Private data
- */
-#define EPHY_AUTO_SCROLLER_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), \
-				       EPHY_TYPE_AUTO_SCROLLER, EphyAutoScrollerPrivate))
+#define EPHY_AUTO_SCROLLER_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_AUTO_SCROLLER, EphyAutoScrollerPrivate))
 
-
-struct _EphyAutoScrollerPrivate {
+struct _EphyAutoScrollerPrivate
+{
 	EphyEmbed *embed;
 	GtkWidget *widget;
 	guint start_x;
@@ -54,7 +51,7 @@ struct _EphyAutoScrollerPrivate {
 	gfloat step_y;
 	gfloat roundoff_error_x;
 	gfloat roundoff_error_y;
-	gint msecs;
+	int msecs;
 	guint timeout_id;
 	gboolean active;
 };
@@ -65,227 +62,68 @@ static GType type = 0;
 
 static GtkWidget *autoscroll_icon = NULL;
 
+static int	ephy_auto_scroller_timeout_cb	(gpointer data);
+static void	ephy_auto_scroller_stop		(EphyAutoScroller *scroller);
 
-/**
- * Private functions, only availble from this file
- */
-static void		ephy_auto_scroller_finalize_impl	(GObject *o);
-static gboolean		ephy_auto_scroller_motion_cb	(GtkWidget *widget, GdkEventMotion *e,
-								 EphyAutoScroller *as);
-static gboolean		ephy_auto_scroller_mouse_press_cb (GtkWidget *widget, GdkEventButton *e,
-								  EphyAutoScroller *as);
-static gboolean		ephy_auto_scroller_key_press_cb (GtkWidget *widget, GdkEventKey *e,
-								EphyAutoScroller *as);
-static gboolean		ephy_auto_scroller_unmap_event_cb  (GtkWidget *widget,
-								   GdkEvent *event,
-								   EphyAutoScroller *as);
-static gint		ephy_auto_scroller_timeout_cb	(gpointer data);
-static void		ephy_auto_scroller_stop		(EphyAutoScroller *as);
-
-
-/**
- * EmbedAutoScroller object
- */
-
-static void
-ephy_auto_scroller_class_init (EphyAutoScrollerClass *klass)
-{
-	GdkPixbuf *icon_pixbuf;
-	GdkPixmap *icon_pixmap;
-	GdkBitmap *icon_bitmap;
-	GtkWidget *icon_img;
-
-	parent_class = g_type_class_peek_parent (klass);
-
-	G_OBJECT_CLASS (klass)->finalize = ephy_auto_scroller_finalize_impl;
-
-	/* initialize the autoscroll icon */
-
-	icon_pixbuf = gdk_pixbuf_new_from_xpm_data (autoscroll_xpm);
-	g_return_if_fail (icon_pixbuf);
-		
-	gdk_pixbuf_render_pixmap_and_mask (icon_pixbuf, &icon_pixmap,
-					   &icon_bitmap, 128);
-	g_object_unref (icon_pixbuf);
-
-	/*
-	  gtk_widget_push_visual (gdk_rgb_get_visual ());
-	  gtk_widget_push_colormap (gdk_rgb_get_cmap ());
-	*/
-	icon_img = gtk_image_new_from_pixmap (icon_pixmap, icon_bitmap);
-	
-	autoscroll_icon = gtk_window_new (GTK_WINDOW_POPUP);
-	gtk_widget_realize (autoscroll_icon);
-	gtk_container_add (GTK_CONTAINER (autoscroll_icon), icon_img);
-	gtk_widget_shape_combine_mask (autoscroll_icon, icon_bitmap, 0, 0);
-
-	/*
-	  gtk_widget_pop_visual ();
-	  gtk_widget_pop_colormap ();
-	*/
-		
-	g_object_unref (icon_pixmap);
-	g_object_unref (icon_bitmap);
-
-	gtk_widget_show_all (icon_img);
-
-	g_type_class_add_private (klass, sizeof (EphyAutoScrollerPrivate));
-}
-
-static void 
-ephy_auto_scroller_init (EphyAutoScroller *e)
-{
-	EphyAutoScrollerPrivate *p = EPHY_AUTO_SCROLLER_GET_PRIVATE (e);
-	e->priv = p;
-
-	p->active = FALSE;
-	p->msecs = 33;
-}
-
-static void
-ephy_auto_scroller_finalize_impl (GObject *o)
-{
-	EphyAutoScroller *as = EPHY_AUTO_SCROLLER (o);
-	EphyAutoScrollerPrivate *p = as->priv;
-
-	LOG ("in ephy_auto_scroller_finalize_impl");
-
-	if (p->embed)
-	{
-		g_object_unref (p->embed);
-	}
-
-	if (p->timeout_id)
-	{
-		g_source_remove (p->timeout_id);
-		p->timeout_id = 0;
-	}
-
-
-	G_OBJECT_CLASS (parent_class)->finalize (o);
-}
-
-EphyAutoScroller *
-ephy_auto_scroller_new (void)
-{
-	EphyAutoScroller *ret = g_object_new (EPHY_TYPE_AUTO_SCROLLER, NULL);
-	return ret;
-}
+/* private functions */
 
 void
-ephy_auto_scroller_set_embed (EphyAutoScroller *as,
+ephy_auto_scroller_set_embed (EphyAutoScroller *scroller,
                              EphyEmbed *embed)
 {
-	EphyAutoScrollerPrivate *p = as->priv;
+	EphyAutoScrollerPrivate *priv = scroller->priv;
 
-	if (p->embed)
+	if (priv->embed)
 	{
-		g_object_unref (p->embed);
+		g_object_unref (priv->embed);
 	}
 	
-	p->embed = g_object_ref (embed);
-}
-
-void
-ephy_auto_scroller_start_scroll (EphyAutoScroller *as,
-					GtkWidget *widget, gint x, gint y)
-{
-	static GdkCursor *cursor = NULL;
-	EphyAutoScrollerPrivate *p = as->priv;
-
-	g_return_if_fail (p->embed);
-	
-	if (p->active)
-	{
-		return;
-	}
-	p->active = TRUE;
-	
-	g_object_ref (as);
-
-	p->widget = g_object_ref (widget);
-
-	/* get a new cursor, if necessary */
-	if (!cursor) cursor = gdk_cursor_new (GDK_FLEUR);
-
-	/* show icon */
-	gtk_window_move (GTK_WINDOW (autoscroll_icon), x - 12, y - 12);
-	gtk_widget_show (autoscroll_icon);
-
-	/* set positions */
-	p->start_x = x;
-	p->start_y = y;
-	p->step_x = 0;
-	p->step_y = 0;
-	p->roundoff_error_x = 0;
-	p->roundoff_error_y = 0;
-
-	/* attach signals */
-	g_signal_connect (widget, "motion_notify_event",
-			    G_CALLBACK (ephy_auto_scroller_motion_cb), as);
-	g_signal_connect (widget, "button_press_event",
-			  G_CALLBACK (ephy_auto_scroller_mouse_press_cb), as);
-	g_signal_connect (widget, "key_press_event",
-			  G_CALLBACK (ephy_auto_scroller_key_press_cb), as);
-	g_signal_connect (widget, "unmap-event",
-			  G_CALLBACK (ephy_auto_scroller_unmap_event_cb), as);
-
-	p->timeout_id =
-		g_timeout_add (p->msecs,
-			       ephy_auto_scroller_timeout_cb, as);
-
-	/* grab the pointer */
-	gtk_grab_add (widget);
-	gdk_pointer_grab (widget->window, FALSE,
-			  GDK_POINTER_MOTION_MASK |
-			  GDK_BUTTON_PRESS_MASK,
-			  NULL, cursor, GDK_CURRENT_TIME);
-	gdk_keyboard_grab (widget->window, FALSE, GDK_CURRENT_TIME);
+	priv->embed = g_object_ref (embed);
 }
 
 static gboolean
 ephy_auto_scroller_motion_cb (GtkWidget *widget, GdkEventMotion *e,
-				     EphyAutoScroller *as)
+				     EphyAutoScroller *scroller)
 {
-	EphyAutoScrollerPrivate *p = as->priv;
+	EphyAutoScrollerPrivate *priv = scroller->priv;
 	gint x_dist, x_dist_abs, y_dist, y_dist_abs;
 
-	if (!p->active)
+	if (!priv->active)
 	{
 		return FALSE;
 	}
 
 	/* get distance between scroll center and cursor */
-	x_dist = e->x_root - p->start_x;
+	x_dist = e->x_root - priv->start_x;
 	x_dist_abs = abs (x_dist);
-	y_dist = e->y_root - p->start_y;
+	y_dist = e->y_root - priv->start_y;
 	y_dist_abs = abs (y_dist);
 
 	/* calculate scroll step */
 	if (y_dist_abs <= 48.0)
 	{
-		p->step_y = (float) (y_dist / 4) / 6.0;
+		priv->step_y = (float) (y_dist / 4) / 6.0;
 	}
 	else if (y_dist > 0)
 	{
-		p->step_y = (y_dist - 48.0) / 2.0 + 2.0;
+		priv->step_y = (y_dist - 48.0) / 2.0 + 2.0;
 	}
 	else 
 	{
-		p->step_y = (y_dist + 48.0) / 2.0 - 2.0;
+		priv->step_y = (y_dist + 48.0) / 2.0 - 2.0;
 	}
 
 	if (x_dist_abs <= 48.0)
 	{
-		p->step_x = (float) (x_dist / 4) / 6.0;
+		priv->step_x = (float) (x_dist / 4) / 6.0;
 	}
 	else if (x_dist > 0)
 	{
-		p->step_x = (x_dist - 48.0) / 2.0 + 2.0;
+		priv->step_x = (x_dist - 48.0) / 2.0 + 2.0;
 	}
 	else 
 	{
-		p->step_x = (x_dist + 48.0) / 2.0 - 2.0;
+		priv->step_x = (x_dist + 48.0) / 2.0 - 2.0;
 	}
 
 	return TRUE;
@@ -293,20 +131,20 @@ ephy_auto_scroller_motion_cb (GtkWidget *widget, GdkEventMotion *e,
 
 static gboolean
 ephy_auto_scroller_mouse_press_cb (GtkWidget *widget, GdkEventButton *e,
-				      EphyAutoScroller *as)
+				      EphyAutoScroller *scroller)
 {
 	/* ungrab and disconnect */
-	ephy_auto_scroller_stop (as);
+	ephy_auto_scroller_stop (scroller);
 
 	return TRUE;
 }
 
 static gboolean
 ephy_auto_scroller_key_press_cb (GtkWidget *widget, GdkEventKey *e,
-					EphyAutoScroller *as)
+					EphyAutoScroller *scroller)
 {
 	/* ungrab and disconnect */
-	ephy_auto_scroller_stop (as);
+	ephy_auto_scroller_stop (scroller);
 
 	return TRUE;
 }
@@ -314,10 +152,10 @@ ephy_auto_scroller_key_press_cb (GtkWidget *widget, GdkEventKey *e,
 static gboolean
 ephy_auto_scroller_unmap_event_cb  (GtkWidget *widget,
 					   GdkEvent *event,
-					   EphyAutoScroller *as)
+					   EphyAutoScroller *scroller)
 {
 	/* ungrab and disconnect */
-	ephy_auto_scroller_stop (as);
+	ephy_auto_scroller_stop (scroller);
 
 	return FALSE;
 }
@@ -327,42 +165,42 @@ ephy_auto_scroller_timeout_cb (gpointer data)
 {
 	struct timeval start_time, finish_time;
 	long elapsed_msecs;
-	EphyAutoScroller *as = data;
-	EphyAutoScrollerPrivate *p;
+	EphyAutoScroller *scroller = data;
+	EphyAutoScrollerPrivate *priv;
 	gfloat scroll_step_y_adj;
 	gint scroll_step_y_int;
 	gfloat scroll_step_x_adj;
 	gint scroll_step_x_int;
 
-	g_return_val_if_fail (EPHY_IS_AUTO_SCROLLER (as), FALSE);
-	p = as->priv;
-	g_return_val_if_fail (EPHY_IS_EMBED (p->embed), FALSE);
+	g_return_val_if_fail (EPHY_IS_AUTO_SCROLLER (scroller), FALSE);
+	priv = scroller->priv;
+	g_return_val_if_fail (EPHY_IS_EMBED (priv->embed), FALSE);
 
 	/* return if we're not supposed to scroll */
-	if (!p->step_y && !p->step_x)
+	if (!priv->step_y && !priv->step_x)
 	{
 		return TRUE;
 	}
 
 	/* calculate the number of pixels to scroll */
-	scroll_step_y_adj = p->step_y * p->msecs / 33;
+	scroll_step_y_adj = priv->step_y * priv->msecs / 33;
 	scroll_step_y_int = scroll_step_y_adj;
-	p->roundoff_error_y += (scroll_step_y_adj - scroll_step_y_int);
+	priv->roundoff_error_y += (scroll_step_y_adj - scroll_step_y_int);
 
-	if (fabs (p->roundoff_error_y) >= 1.0)
+	if (fabs (priv->roundoff_error_y) >= 1.0)
 	{
-		scroll_step_y_int += p->roundoff_error_y;
-		p->roundoff_error_y -= (gint) p->roundoff_error_y;
+		scroll_step_y_int += priv->roundoff_error_y;
+		priv->roundoff_error_y -= (gint) priv->roundoff_error_y;
 	}
 
-	scroll_step_x_adj = p->step_x * p->msecs / 33;
+	scroll_step_x_adj = priv->step_x * priv->msecs / 33;
 	scroll_step_x_int = scroll_step_x_adj;
-	p->roundoff_error_x += (scroll_step_x_adj - scroll_step_x_int);
+	priv->roundoff_error_x += (scroll_step_x_adj - scroll_step_x_int);
 
-	if (fabs (p->roundoff_error_x) >= 1.0)
+	if (fabs (priv->roundoff_error_x) >= 1.0)
 	{
-		scroll_step_x_int += p->roundoff_error_x;
-		p->roundoff_error_x -= (gint) p->roundoff_error_x;
+		scroll_step_x_int += priv->roundoff_error_x;
+		priv->roundoff_error_x -= (gint) priv->roundoff_error_x;
 	}
 
 	/* exit if we're not supposed to scroll yet */
@@ -377,7 +215,7 @@ ephy_auto_scroller_timeout_cb (gpointer data)
 	/* FIXME: if mozilla is able to do diagonal scrolling in a
 	 * reasonable manner at some point, this should be changed to
 	 * calculate x and pass both values instead of just y */
-	mozilla_helper_fine_scroll (p->embed, scroll_step_x_int, scroll_step_y_int);
+	mozilla_helper_fine_scroll (priv->embed, scroll_step_x_int, scroll_step_y_int);
 
 	/* find out how long the scroll took */
 	gettimeofday (&finish_time, NULL);
@@ -386,15 +224,15 @@ ephy_auto_scroller_timeout_cb (gpointer data)
 			1000;
 
 	/* check if we should update the scroll delay */
-	if ((elapsed_msecs >= p->msecs + 5) ||
-	    ((p->msecs > 20) && (elapsed_msecs < p->msecs - 10)))
+	if ((elapsed_msecs >= priv->msecs + 5) ||
+	    ((priv->msecs > 20) && (elapsed_msecs < priv->msecs - 10)))
 	{
 		/* update the scrolling delay, with a
 		 * minimum delay of 20 ms */
-		p->msecs = (elapsed_msecs + 10 >= 20) ? elapsed_msecs + 10 : 20;
+		priv->msecs = (elapsed_msecs + 10 >= 20) ? elapsed_msecs + 10 : 20;
 
 		/* create new timeout with adjusted delay */
-		p->timeout_id =	g_timeout_add (p->msecs, ephy_auto_scroller_timeout_cb, as);
+		priv->timeout_id =	g_timeout_add (priv->msecs, ephy_auto_scroller_timeout_cb, scroller);
 
 		/* kill the old timeout */
 		return FALSE;
@@ -405,9 +243,9 @@ ephy_auto_scroller_timeout_cb (gpointer data)
 }
 
 static void
-ephy_auto_scroller_stop (EphyAutoScroller *as)
+ephy_auto_scroller_stop (EphyAutoScroller *scroller)
 {
-	EphyAutoScrollerPrivate *p = as->priv;
+	EphyAutoScrollerPrivate *priv = scroller->priv;
 
 	/* ungrab the pointer if it's grabbed */
 	if (gdk_pointer_is_grabbed ())
@@ -420,27 +258,174 @@ ephy_auto_scroller_stop (EphyAutoScroller *as)
 	/* hide the icon */
 	gtk_widget_hide (autoscroll_icon);
 
-	g_return_if_fail (p->widget);
+	g_return_if_fail (priv->widget);
 	
-	gtk_grab_remove (p->widget);
+	gtk_grab_remove (priv->widget);
 
 	/* disconnect all of the signals */
-	g_signal_handlers_disconnect_matched (p->widget, G_SIGNAL_MATCH_DATA, 0, 0, 
-					      NULL, NULL, as);
-	if (p->timeout_id)
+	g_signal_handlers_disconnect_matched (priv->widget, G_SIGNAL_MATCH_DATA, 0, 0, 
+					      NULL, NULL, scroller);
+	if (priv->timeout_id)
 	{
-		g_source_remove (p->timeout_id);
-		p->timeout_id = 0;
+		g_source_remove (priv->timeout_id);
+		priv->timeout_id = 0;
 	}
 
-	g_object_unref (p->widget);
-	p->widget = NULL;
+	g_object_unref (priv->widget);
+	priv->widget = NULL;
 
-	p->active = FALSE;
-	g_object_unref (as);
+	priv->active = FALSE;
+	g_object_unref (scroller);
 }
 
 
+/* public functions */
+
+void
+ephy_auto_scroller_start_scroll (EphyAutoScroller *scroller,
+				 GtkWidget *widget,
+				 int x,
+				 int y)
+{
+	static GdkCursor *cursor = NULL;
+	EphyAutoScrollerPrivate *priv = scroller->priv;
+
+	g_return_if_fail (priv->embed);
+	
+	if (priv->active)
+	{
+		return;
+	}
+	priv->active = TRUE;
+	
+	g_object_ref (scroller);
+
+	priv->widget = g_object_ref (widget);
+
+	/* get a new cursor, if necessary */
+	if (!cursor) cursor = gdk_cursor_new (GDK_FLEUR);
+
+	/* show icon */
+	gtk_window_move (GTK_WINDOW (autoscroll_icon), x - 12, y - 12);
+	gtk_widget_show (autoscroll_icon);
+
+	/* set positions */
+	priv->start_x = x;
+	priv->start_y = y;
+	priv->step_x = 0;
+	priv->step_y = 0;
+	priv->roundoff_error_x = 0;
+	priv->roundoff_error_y = 0;
+
+	/* attach signals */
+	g_signal_connect (widget, "motion_notify_event",
+			    G_CALLBACK (ephy_auto_scroller_motion_cb), scroller);
+	g_signal_connect (widget, "button_press_event",
+			  G_CALLBACK (ephy_auto_scroller_mouse_press_cb), scroller);
+	g_signal_connect (widget, "key_press_event",
+			  G_CALLBACK (ephy_auto_scroller_key_press_cb), scroller);
+	g_signal_connect (widget, "unmap-event",
+			  G_CALLBACK (ephy_auto_scroller_unmap_event_cb), scroller);
+
+	priv->timeout_id =
+		g_timeout_add (priv->msecs,
+			       ephy_auto_scroller_timeout_cb, scroller);
+
+	/* grab the pointer */
+	gtk_grab_add (widget);
+	gdk_pointer_grab (widget->window, FALSE,
+			  GDK_POINTER_MOTION_MASK |
+			  GDK_BUTTON_PRESS_MASK,
+			  NULL, cursor, GDK_CURRENT_TIME);
+	gdk_keyboard_grab (widget->window, FALSE, GDK_CURRENT_TIME);
+}
+
+EphyAutoScroller *
+ephy_auto_scroller_new (void)
+{
+	return EPHY_AUTO_SCROLLER (g_object_new (EPHY_TYPE_AUTO_SCROLLER, NULL));
+}
+
+/* class implementation */
+
+static void 
+ephy_auto_scroller_init (EphyAutoScroller *scroller)
+{
+	EphyAutoScrollerPrivate *priv;
+
+	priv = scroller->priv = EPHY_AUTO_SCROLLER_GET_PRIVATE (scroller);
+
+	priv->active = FALSE;
+	priv->msecs = 33;
+}
+
+static void
+ephy_auto_scroller_finalize (GObject *object)
+{
+	EphyAutoScroller *scroller = EPHY_AUTO_SCROLLER (object);
+	EphyAutoScrollerPrivate *priv = scroller->priv;
+
+	LOG ("in ephy_auto_scroller_finalize_impl");
+
+	if (priv->embed != NULL)
+	{
+		g_object_unref (priv->embed);
+	}
+
+	if (priv->timeout_id != 0)
+	{
+		g_source_remove (priv->timeout_id);
+		priv->timeout_id = 0;
+	}
+
+	parent_class->finalize (object);
+}
+
+static void
+ephy_auto_scroller_class_init (EphyAutoScrollerClass *klass)
+{
+	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+	GdkPixbuf *icon_pixbuf;
+	GdkPixmap *icon_pixmap;
+	GdkBitmap *icon_bitmap;
+	GtkWidget *icon_img;
+
+	parent_class = g_type_class_peek_parent (klass);
+
+	object_class->finalize = ephy_auto_scroller_finalize;
+
+	/* initialize the autoscroll icon */
+
+	icon_pixbuf = gdk_pixbuf_new_from_xpm_data (autoscroll_xpm);
+	g_return_if_fail (icon_pixbuf);
+		
+	gdk_pixbuf_render_pixmap_and_mask (icon_pixbuf, &icon_pixmap,
+					   &icon_bitmap, 128);
+	g_object_unref (icon_pixbuf);
+
+	/*
+	gtk_widget_push_visual (gdk_rgb_get_visual ());
+	gtk_widget_push_colormap (gdk_rgb_get_cmap ());
+	*/
+	icon_img = gtk_image_new_from_pixmap (icon_pixmap, icon_bitmap);
+	
+	autoscroll_icon = gtk_window_new (GTK_WINDOW_POPUP);
+	gtk_widget_realize (autoscroll_icon);
+	gtk_container_add (GTK_CONTAINER (autoscroll_icon), icon_img);
+	gtk_widget_shape_combine_mask (autoscroll_icon, icon_bitmap, 0, 0);
+
+	/*
+	gtk_widget_pop_visual ();
+	gtk_widget_pop_colormap ();
+	*/
+		
+	g_object_unref (icon_pixmap);
+	g_object_unref (icon_bitmap);
+
+	gtk_widget_show_all (icon_img);
+
+	g_type_class_add_private (klass, sizeof (EphyAutoScrollerPrivate));
+}
 
 GType
 ephy_auto_scroller_get_type (void)

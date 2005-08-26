@@ -1,3 +1,19 @@
+2005-08-26  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/auto-scroller/ephy-auto-scroller.c:
+	(ephy_auto_scroller_set_embed), (ephy_auto_scroller_motion_cb),
+	(ephy_auto_scroller_mouse_press_cb),
+	(ephy_auto_scroller_key_press_cb),
+	(ephy_auto_scroller_unmap_event_cb),
+	(ephy_auto_scroller_timeout_cb), (ephy_auto_scroller_stop),
+	(ephy_auto_scroller_start_scroll), (ephy_auto_scroller_new),
+	(ephy_auto_scroller_init), (ephy_auto_scroller_finalize),
+	(ephy_auto_scroller_class_init):
+	* extensions/auto-scroller/ephy-auto-scroller.h:
+
+	Phase I: Move code around, rename variables, remove unnecessary
+	prototypes etc.
+
 2005-08-26  Crispin Flowerday  <gnome@flowerday.cx>
 
 	* configure.ac:

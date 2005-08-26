@@ -1,6 +1,7 @@
 /*
- *  Copyright (C) 2002  Ricardo Fern·ndez Pascual
- *  Copyright (C) 2005  Crispin Flowerday
+ *  Copyright (C) 2002 Ricardo Fern√°dez Pascual
+ *  Copyright (C) 2005 Crispin Flowerday
+ *  Copyright (C) 2005 Christian Persch
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -15,36 +16,29 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ *
+ *  $Id$
  */
 
-#ifndef __ephy_auto_scroller_h
-#define __ephy_auto_scroller_h
+#ifndef EPHY_AUTO_SCROLLER_H
+#define EPHY_AUTO_SCROLLER_H
 
-#include <gtk/gtkwidget.h>
 #include <glib-object.h>
+#include <gtk/gtkwidget.h>
 #include <epiphany/ephy-embed.h>
-
 
 G_BEGIN_DECLS
 
 #define EPHY_TYPE_AUTO_SCROLLER	        (ephy_auto_scroller_get_type())
-#define EPHY_AUTO_SCROLLER(object)	(G_TYPE_CHECK_INSTANCE_CAST((object), \
-					 EPHY_TYPE_AUTO_SCROLLER,\
-					 EphyAutoScroller))
-#define EPHY_AUTO_SCROLLER_CLASS(klass)	(G_TYPE_CHECK_CLASS_CAST((klass), \
-					 EPHY_TYPE_AUTO_SCROLLER,\
-					 EphyAutoScrollerClass))
-#define EPHY_IS_AUTO_SCROLLER(object)	(G_TYPE_CHECK_INSTANCE_TYPE((object), \
-					 EPHY_TYPE_AUTO_SCROLLER))
-#define EPHY_IS_AUTO_SCROLLER_CLASS(klass)(G_TYPE_CHECK_CLASS_TYPE((klass), \
-					 EPHY_TYPE_AUTO_SCROLLER))
-#define EPHY_AUTO_SCROLLER_GET_CLASS(obj)(G_TYPE_INSTANCE_GET_CLASS((obj), \
-					 EPHY_TYPE_AUTO_SCROLLER,\
-					 EphyAutoScrollerClass))
+#define EPHY_AUTO_SCROLLER(object)	(G_TYPE_CHECK_INSTANCE_CAST((object), EPHY_TYPE_AUTO_SCROLLER, EphyAutoScroller))
+#define EPHY_AUTO_SCROLLER_CLASS(klass)	(G_TYPE_CHECK_CLASS_CAST((klass), EPHY_TYPE_AUTO_SCROLLER, EphyAutoScrollerClass))
+#define EPHY_IS_AUTO_SCROLLER(object)	(G_TYPE_CHECK_INSTANCE_TYPE((object), EPHY_TYPE_AUTO_SCROLLER))
+#define EPHY_IS_AUTO_SCROLLER_CLASS(klass)(G_TYPE_CHECK_CLASS_TYPE((klass), EPHY_TYPE_AUTO_SCROLLER))
+#define EPHY_AUTO_SCROLLER_GET_CLASS(obj)(G_TYPE_INSTANCE_GET_CLASS((obj), EPHY_TYPE_AUTO_SCROLLER, EphyAutoScrollerClass))
 
-typedef struct _EphyAutoScroller EphyAutoScroller;
-typedef struct _EphyAutoScrollerClass EphyAutoScrollerClass;
-typedef struct _EphyAutoScrollerPrivate EphyAutoScrollerPrivate;
+typedef struct _EphyAutoScrollerClass	EphyAutoScrollerClass;
+typedef struct _EphyAutoScroller	EphyAutoScroller;
+typedef struct _EphyAutoScrollerPrivate	EphyAutoScrollerPrivate;
 
 struct _EphyAutoScrollerClass 
 {
@@ -54,17 +48,24 @@ struct _EphyAutoScrollerClass
 struct _EphyAutoScroller
 {
 	GObject parent_object;
+
+	/*< private >*/
 	EphyAutoScrollerPrivate *priv;
 };
 
-GType			ephy_auto_scroller_get_type	(void);
+GType			ephy_auto_scroller_get_type	 (void);
+
 GType                   ephy_auto_scroller_register_type (GTypeModule *module);
-EphyAutoScroller *	ephy_auto_scroller_new		(void);
-void			ephy_auto_scroller_set_embed	(EphyAutoScroller *as,
-                                                         EphyEmbed *embed);
-void			ephy_auto_scroller_start_scroll	(EphyAutoScroller *as,
-							 GtkWidget *widget, 
-							 gint x, gint y);
+
+EphyAutoScroller       *ephy_auto_scroller_new		 (void);
+
+void			ephy_auto_scroller_set_embed	 (EphyAutoScroller *scroller,
+                                                          EphyEmbed *embed);
+
+void			ephy_auto_scroller_start_scroll	 (EphyAutoScroller *scroller,
+							  GtkWidget *widget, 
+							  int x,
+							  int y);
 
 G_END_DECLS
 
