@@ -1,6 +1,6 @@
 /*
  *  Copyright (C) 2003 Marco Pesenti Gritti
- *  Copyright (C) 2003 Christian Persch
+ *  Copyright (C) 2003, 2005 Christian Persch
  *  Copyright (C) 2005 Crispin Flowerday
  *
  *  This program is free software; you can redistribute it and/or modify
@@ -61,10 +61,10 @@ dom_mouse_down_cb (EphyEmbed *embed,
 	toplevel = gtk_widget_get_toplevel (GTK_WIDGET (embed));
 	g_return_val_if_fail (toplevel != NULL, FALSE);
 
-	as = ephy_auto_scroller_new ();
+	as = ephy_auto_scroller_new (toplevel);
 	ephy_embed_event_get_coords (event, &x, &y);
 	ephy_auto_scroller_set_embed (as, embed);
-	ephy_auto_scroller_start_scroll (as, GTK_WIDGET (toplevel), x, y);
+	ephy_auto_scroller_start_scroll (as, x, y);
 	g_object_unref (as);
 
 	return TRUE;

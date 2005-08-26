@@ -1,5 +1,19 @@
 2005-08-26  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/auto-scroller/ephy-auto-scroller-extension.c:
+	(dom_mouse_down_cb):
+	* extensions/auto-scroller/ephy-auto-scroller-extension.h:
+	* extensions/auto-scroller/ephy-auto-scroller.c:
+	(ephy_auto_scroller_start_scroll), (ephy_auto_scroller_stop),
+	(ephy_auto_scroller_new), (ephy_auto_scroller_init),
+	(ephy_auto_scroller_finalize), (ephy_auto_scroller_set_property),
+	(ephy_auto_scroller_get_property), (ephy_auto_scroller_class_init):
+	* extensions/auto-scroller/ephy-auto-scroller.h:
+
+	Phase III: Use object properties, and rename some variables.
+
+2005-08-26  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/auto-scroller/ephy-auto-scroller.c:
 	(ephy_auto_scroller_set_embed), (ephy_auto_scroller_start_scroll),
 	(ephy_auto_scroller_stop), (ephy_auto_scroller_init),

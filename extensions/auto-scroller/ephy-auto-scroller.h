@@ -57,13 +57,12 @@ GType			ephy_auto_scroller_get_type	 (void);
 
 GType                   ephy_auto_scroller_register_type (GTypeModule *module);
 
-EphyAutoScroller       *ephy_auto_scroller_new		 (void);
+EphyAutoScroller       *ephy_auto_scroller_new		 (GtkWidget *window);
 
 void			ephy_auto_scroller_set_embed	 (EphyAutoScroller *scroller,
                                                           EphyEmbed *embed);
 
 void			ephy_auto_scroller_start_scroll	 (EphyAutoScroller *scroller,
-							  GtkWidget *widget, 
 							  int x,
 							  int y);
 

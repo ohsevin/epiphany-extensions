@@ -28,13 +28,13 @@
 G_BEGIN_DECLS
 
 #define EPHY_TYPE_AUTO_SCROLLER_EXTENSION		(ephy_auto_scroller_extension_get_type ())
-#define EPHY_AUTO_SCROLLER_EXTENSION(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), EPHY_TYPE_AUTO_SCROLLER_EXTENSION, EphyAutoScrollerExtension))
+#define EPHY_AUTO_SCROLLER_EXTENSION(o)			(G_TYPE_CHECK_INSTANCE_CAST ((o), EPHY_TYPE_AUTO_SCROLLER_EXTENSION, EphyAutoScrollerExtension))
 #define EPHY_AUTO_SCROLLER_EXTENSION_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), EPHY_TYPE_AUTO_SCROLLER_EXTENSION, EphyAutoScrollerExtensionClass))
 #define EPHY_IS_AUTO_SCROLLER_EXTENSION(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), EPHY_TYPE_AUTO_SCROLLER_EXTENSION))
 #define EPHY_IS_AUTO_SCROLLER_EXTENSION_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), EPHY_TYPE_AUTO_SCROLLER_EXTENSION))
 #define EPHY_AUTO_SCROLLER_EXTENSION_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), EPHY_TYPE_AUTO_SCROLLER_EXTENSION, EphyAutoScrollerExtensionClass))
 
-typedef struct _EphyAutoScrollerExtension		EphyAutoScrollerExtension;
+typedef struct _EphyAutoScrollerExtension	EphyAutoScrollerExtension;
 typedef struct _EphyAutoScrollerExtensionClass	EphyAutoScrollerExtensionClass;
 
 struct _EphyAutoScrollerExtensionClass
