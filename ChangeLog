@@ -1,5 +1,12 @@
 2005-08-26  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/auto-scroller/ephy-auto-scroller.c:
+	(ephy_auto_scroller_timeout_cb):
+
+	Remove one unnecessary type check, and add one comment.
+
+2005-08-26  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/auto-scroller/ephy-auto-scroller-extension.c:
 	(dom_mouse_down_cb), (impl_attach_window), (impl_detach_window),
 	(impl_attach_tab), (impl_detach_tab),

@@ -152,6 +152,7 @@ ephy_auto_scroller_key_press_cb (GtkWidget *widget,
 	return TRUE;
 }
 
+/* FIXME: I think this is a subcase of grab-broken now? */
 static gboolean
 ephy_auto_scroller_unmap_event_cb (GtkWidget *widget,
 				   GdkEventAny *event,
@@ -187,15 +188,12 @@ ephy_auto_scroller_grab_notify_cb (GtkWidget *widget,
 static int
 ephy_auto_scroller_timeout_cb (EphyAutoScroller *scroller)
 {
-	EphyAutoScrollerPrivate *priv;
+	EphyAutoScrollerPrivate *priv = scroller->priv;
 	struct timeval start_time, finish_time;
 	long elapsed_msecs;
 	float scroll_step_x_adj, scroll_step_y_adj;
 	int scroll_step_y_int, scroll_step_x_int;
 
-	g_return_val_if_fail (EPHY_IS_AUTO_SCROLLER (scroller), FALSE);
-
-	priv = scroller->priv;
 	g_return_val_if_fail (priv->embed != NULL, FALSE);
 
 	/* return if we're not supposed to scroll */
