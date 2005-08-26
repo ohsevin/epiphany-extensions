@@ -1,12 +1,31 @@
 2005-08-26  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/auto-scroller/ephy-auto-scroller-extension.c:
+	(dom_mouse_down_cb), (impl_attach_window), (impl_detach_window),
+	(impl_attach_tab), (impl_detach_tab),
+	(ephy_auto_scroller_extension_iface_init):
+	* extensions/auto-scroller/ephy-auto-scroller.c:
+	(ephy_auto_scroller_set_window),
+	(ephy_auto_scroller_unmap_event_cb),
+	(ephy_auto_scroller_grab_broken_event_cb),
+	(ephy_auto_scroller_grab_notify_cb),
+	(ephy_auto_scroller_timeout_cb), (ephy_auto_scroller_start),
+	(ephy_auto_scroller_stop), (ephy_auto_scroller_new),
+	(ephy_auto_scroller_finalize), (ephy_auto_scroller_class_init):
+	* extensions/auto-scroller/ephy-auto-scroller.h:
+
+	Phase VI: Make one autoscroller per window, and just start/stop it.
+	Eliminate pointer deadlock when gecko pops up a modal dialogue!
+
+2005-08-26  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/auto-scroller/ephy-auto-scroller.c:
 	(ephy_auto_scroller_set_embed), (ephy_auto_scroller_motion_cb),
 	(ephy_auto_scroller_timeout_cb), (ephy_auto_scroller_start_scroll),
 	(ephy_auto_scroller_stop), (ephy_auto_scroller_init),
 	(ephy_auto_scroller_finalize):
 
-	Minor cleanups. Handle grab failure.
+	Phase V: Minor cleanups. Handle grab failure.
 
 2005-08-26  Christian Persch  <chpe@cvs.gnome.org>
 

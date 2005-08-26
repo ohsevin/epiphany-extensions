@@ -44,7 +44,7 @@
 
 struct _EphyAutoScrollerPrivate
 {
-	GtkWidget *window;
+	EphyWindow *window;
 	EphyEmbed *embed;
 	GtkWidget *popup;
 	GdkCursor *cursor;
@@ -73,7 +73,7 @@ static GType type = 0;
 
 static void
 ephy_auto_scroller_set_window (EphyAutoScroller *scroller,
-			       GtkWidget *window)
+			       EphyWindow *window)
 {
 	EphyAutoScrollerPrivate *priv = scroller->priv;
 
@@ -81,20 +81,6 @@ ephy_auto_scroller_set_window (EphyAutoScroller *scroller,
 
 	gtk_window_group_add_window (GTK_WINDOW (priv->window)->group,
 				     GTK_WINDOW (priv->popup));
-}
- 
-void
-ephy_auto_scroller_set_embed (EphyAutoScroller *scroller,
-			      EphyEmbed *embed)
-{
-	EphyAutoScrollerPrivate *priv = scroller->priv;
-
-	if (priv->embed != NULL)
-	{
-		g_object_unref (priv->embed);
-	}
-
-	priv->embed = embed != NULL ? g_object_ref (embed) : NULL;
 }
 
 static gboolean
@@ -168,21 +154,22 @@ ephy_auto_scroller_key_press_cb (GtkWidget *widget,
 
 static gboolean
 ephy_auto_scroller_unmap_event_cb (GtkWidget *widget,
-				   GdkEvent *event,
+				   GdkEventAny *event,
 				   EphyAutoScroller *scroller)
 {
-	ephy_auto_scroller_stop (scroller, gtk_get_current_event_time () /* FIXME what event type is |event| ? */);
+	ephy_auto_scroller_stop (scroller, gtk_get_current_event_time ());
 
 	return FALSE;
 }
 
-#if 0
 static gboolean
 ephy_auto_scroller_grab_broken_event_cb (GtkWidget *widget,
 					 GdkEventGrabBroken *event,
 					 EphyAutoScroller *scroller)
 {
-	g_print ("Grab broken!\n");
+	LOG ("Grab Broken [%p, window %p]", scroller, scroller->priv->window);
+
+	ephy_auto_scroller_stop (scroller, GDK_CURRENT_TIME /* FIXME? */);
 
 	return FALSE;
 }
@@ -192,9 +179,10 @@ ephy_auto_scroller_grab_notify_cb (GtkWidget *widget,
 				   gboolean was_grabbed,
 				   EphyAutoScroller *scroller)
 {
-	g_print ("grab notify, was-grabbed:%s\n", was_grabbed ? "t":"f");
+	LOG ("Grab Notify [%p, window %p]", scroller, scroller->priv->window);
+
+	ephy_auto_scroller_stop (scroller, GDK_CURRENT_TIME /* FIXME? */);
 }
-#endif
 
 static int
 ephy_auto_scroller_timeout_cb (EphyAutoScroller *scroller)
@@ -246,9 +234,6 @@ ephy_auto_scroller_timeout_cb (EphyAutoScroller *scroller)
 	/* do scrolling, moving at a constart speed regardless of the
 	 * scrolling delay */
 
-	/* FIXME: if mozilla is able to do diagonal scrolling in a
-	 * reasonable manner at some point, this should be changed to
-	 * calculate x and pass both values instead of just y */
 	mozilla_helper_fine_scroll (priv->embed, scroll_step_x_int, scroll_step_y_int);
 
 	/* find out how long the scroll took */
@@ -282,16 +267,22 @@ ephy_auto_scroller_timeout_cb (EphyAutoScroller *scroller)
 /* public functions */
 
 void
-ephy_auto_scroller_start_scroll (EphyAutoScroller *scroller,
-				 int x,
-				 int y)
+ephy_auto_scroller_start (EphyAutoScroller *scroller,
+			  EphyEmbed *embed,
+			  int x,
+			  int y)
 {
 	EphyAutoScrollerPrivate *priv = scroller->priv;
+	GtkWidget *widget, *child;
 	guint32 timestamp;
 
-	g_return_if_fail (priv->embed);
+	g_return_if_fail (embed != NULL);
+
+	LOG ("Start [%p]", scroller);
 
 	if (priv->active) return;
+
+	if (gdk_pointer_is_grabbed ()) return;
 
 	priv->active = TRUE;
 
@@ -299,6 +290,8 @@ ephy_auto_scroller_start_scroll (EphyAutoScroller *scroller,
 	timestamp = gtk_get_current_event_time ();
 
 	g_object_ref (scroller);
+
+	priv->embed = embed;
 
 	g_object_ref (priv->window);
 
@@ -315,32 +308,34 @@ ephy_auto_scroller_start_scroll (EphyAutoScroller *scroller,
 	priv->roundoff_error_x = 0;
 	priv->roundoff_error_y = 0;
 
-	g_signal_connect (priv->window, "motion_notify_event",
+	g_signal_connect (priv->window, "motion-notify-event",
 			    G_CALLBACK (ephy_auto_scroller_motion_cb), scroller);
-	g_signal_connect (priv->window, "button_press_event",
+	g_signal_connect (priv->window, "button-press-event",
 			  G_CALLBACK (ephy_auto_scroller_mouse_press_cb), scroller);
-	g_signal_connect (priv->window, "key_press_event",
+	g_signal_connect (priv->window, "key-press-event",
 			  G_CALLBACK (ephy_auto_scroller_key_press_cb), scroller);
 	g_signal_connect (priv->window, "unmap-event",
 			  G_CALLBACK (ephy_auto_scroller_unmap_event_cb), scroller);
 
-#if 0
 	g_signal_connect (priv->window, "grab-broken-event",
 			  G_CALLBACK (ephy_auto_scroller_grab_broken_event_cb), scroller);
-	g_signal_connect (priv->window, "grab-notify",
-			  G_CALLBACK (ephy_auto_scroller_grab_notify_cb), scroller);
-#endif
+
+	/* FIXME: this signal only seems to be emitted on the container children of GtkWindow,
+	 * not on GtkWindow itself... is there a better way to get notified of new grabs?
+	 */
+	child = gtk_bin_get_child (GTK_BIN (priv->window));
+	g_signal_connect_object (child, "grab-notify",
+				 G_CALLBACK (ephy_auto_scroller_grab_notify_cb), scroller, 0);
 
 	priv->timeout_id =
 		g_timeout_add (priv->msecs,
 			       (GSourceFunc) ephy_auto_scroller_timeout_cb,
 			       scroller);
 
-	if (gdk_pointer_is_grabbed ()) return;
-
 	/* grab the pointer */
-	gtk_grab_add (priv->window);
-	if (gdk_pointer_grab (priv->window->window, FALSE,
+	widget = GTK_WIDGET (priv->window);
+	gtk_grab_add (widget);
+	if (gdk_pointer_grab (widget->window, FALSE,
 			      GDK_POINTER_MOTION_MASK |
 			      GDK_BUTTON_PRESS_MASK,
 			      NULL, priv->cursor, timestamp) != GDK_GRAB_SUCCESS)
@@ -349,7 +344,7 @@ ephy_auto_scroller_start_scroll (EphyAutoScroller *scroller,
 		return;
 	}
 
-	if (gdk_keyboard_grab (priv->window->window, FALSE, timestamp) != GDK_GRAB_SUCCESS)
+	if (gdk_keyboard_grab (widget->window, FALSE, timestamp) != GDK_GRAB_SUCCESS)
 	{
 		ephy_auto_scroller_stop (scroller, timestamp);
 		return;
@@ -361,8 +356,19 @@ ephy_auto_scroller_stop (EphyAutoScroller *scroller,
 			 guint32 timestamp)
 {
 	EphyAutoScrollerPrivate *priv = scroller->priv;
+	GtkWidget *widget;
+
+	LOG ("Stop [%p]", scroller);
 
 	if (priv->active == FALSE) return;
+
+	/* disconnect the signals before ungrabbing! */
+	g_signal_handlers_disconnect_matched (priv->window,
+					      G_SIGNAL_MATCH_DATA, 0, 0, 
+					      NULL, NULL, scroller);
+	g_signal_handlers_disconnect_matched (gtk_bin_get_child (GTK_BIN (priv->window)),
+					      G_SIGNAL_MATCH_DATA, 0, 0, 
+					      NULL, NULL, scroller);
 
 	/* ungrab the pointer if it's grabbed */
 	if (gdk_pointer_is_grabbed ())
@@ -375,26 +381,25 @@ ephy_auto_scroller_stop (EphyAutoScroller *scroller,
 	/* hide the icon */
 	gtk_widget_hide (priv->popup);
 
-	gtk_grab_remove (priv->window);
+	widget = GTK_WIDGET (priv->window);
+	gtk_grab_remove (widget);
 
-	/* disconnect all of the signals */
-	g_signal_handlers_disconnect_matched (priv->window, G_SIGNAL_MATCH_DATA, 0, 0, 
-					      NULL, NULL, scroller);
-	if (priv->timeout_id)
+	if (priv->timeout_id != 0)
 	{
 		g_source_remove (priv->timeout_id);
 		priv->timeout_id = 0;
 	}
 
 	g_object_unref (priv->window);
-	priv->window = NULL;
 
+	priv->embed = NULL;
 	priv->active = FALSE;
+
 	g_object_unref (scroller);
 }
 
 EphyAutoScroller *
-ephy_auto_scroller_new (GtkWidget *window)
+ephy_auto_scroller_new (EphyWindow *window)
 {
 	return EPHY_AUTO_SCROLLER (g_object_new (EPHY_TYPE_AUTO_SCROLLER,
 				    		 "window", window,
@@ -446,10 +451,7 @@ ephy_auto_scroller_finalize (GObject *object)
 	EphyAutoScroller *scroller = EPHY_AUTO_SCROLLER (object);
 	EphyAutoScrollerPrivate *priv = scroller->priv;
 
-	if (priv->embed != NULL)
-	{
-		g_object_unref (priv->embed);
-	}
+	LOG ("Finalize [%p]", object);
 
 	if (priv->timeout_id != 0)
 	{
@@ -506,8 +508,8 @@ ephy_auto_scroller_class_init (EphyAutoScrollerClass *klass)
 		 g_param_spec_object ("window",
 				      "window",
 				      "window",
-				      GTK_TYPE_WINDOW,
-				      G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY));
+				      EPHY_TYPE_WINDOW,
+				      G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
 	
 
 	g_type_class_add_private (klass, sizeof (EphyAutoScrollerPrivate));
