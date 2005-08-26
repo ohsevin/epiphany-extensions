@@ -1,3 +1,13 @@
+2005-08-26  Crispin Flowerday  <gnome@flowerday.cx>
+
+	* extensions/auto-scroller/ephy-auto-scroller-extension.c:
+	(ephy_auto_scroller_extension_init), (dom_mouse_down_cb),
+	(impl_attach_tab), (ephy_auto_scroller_extension_register_type):
+	* extensions/auto-scroller/ephy-auto-scroller-extension.h:
+
+	Clean up, remove finalize / private data. Use connect_object
+	and remove empty functions
+
 2005-08-26  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/auto-scroller/ephy-auto-scroller.c:

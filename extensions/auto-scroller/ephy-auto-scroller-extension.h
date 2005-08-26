@@ -36,7 +36,6 @@ G_BEGIN_DECLS
 
 typedef struct _EphyAutoScrollerExtension		EphyAutoScrollerExtension;
 typedef struct _EphyAutoScrollerExtensionClass	EphyAutoScrollerExtensionClass;
-typedef struct _EphyAutoScrollerExtensionPrivate	EphyAutoScrollerExtensionPrivate;
 
 struct _EphyAutoScrollerExtensionClass
 {
@@ -46,9 +45,6 @@ struct _EphyAutoScrollerExtensionClass
 struct _EphyAutoScrollerExtension
 {
 	GObject parent_instance;
-
-	/*< private >*/
-	EphyAutoScrollerExtensionPrivate *priv;
 };
 
 GType	ephy_auto_scroller_extension_get_type		(void);

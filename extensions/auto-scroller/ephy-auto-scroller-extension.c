@@ -1,7 +1,7 @@
 /*
  *  Copyright (C) 2003 Marco Pesenti Gritti
  *  Copyright (C) 2003 Christian Persch
- *  Copyright (C) 2005  Crispin Flowerday
+ *  Copyright (C) 2005 Crispin Flowerday
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -29,42 +29,14 @@
 
 #include <epiphany/ephy-extension.h>
 
-#include <glib/gi18n-lib.h>
 #include <gmodule.h>
-
-#define EPHY_AUTO_SCROLLER_EXTENSION_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_AUTO_SCROLLER_EXTENSION, EphyAutoScrollerExtensionPrivate))
-
-struct _EphyAutoScrollerExtensionPrivate
-{
-	gpointer dummy;
-};
-
-enum
-{
-	PROP_0
-};
-
-static GObjectClass *parent_class = NULL;
 
 static GType type = 0;
 
 static void
 ephy_auto_scroller_extension_init (EphyAutoScrollerExtension *extension)
 {
-	extension->priv = EPHY_AUTO_SCROLLER_EXTENSION_GET_PRIVATE (extension);
-
 	LOG ("EphyAutoScrollerExtension initialising");
-}
-
-static void
-ephy_auto_scroller_extension_finalize (GObject *object)
-{
-/*
-	EphyAutoScrollerExtension *extension = EPHY_AUTO_SCROLLER_EXTENSION (object);
-*/
-	LOG ("EphyAutoScrollerExtension finalising");
-
-	G_OBJECT_CLASS (parent_class)->finalize (object);
 }
 
 static gboolean
@@ -74,8 +46,6 @@ dom_mouse_down_cb (EphyEmbed *embed,
 {
 	EphyEmbedEventContext context;
 	guint button;
-	gint handled = FALSE;
-	EphyTab *tab;
 	GtkWidget *toplevel;
 	EphyAutoScroller *as;
 	guint x, y;
@@ -88,11 +58,8 @@ dom_mouse_down_cb (EphyEmbed *embed,
 		return FALSE;
 	}
 
-	tab = ephy_tab_for_embed (embed);
-	g_return_val_if_fail (EPHY_IS_TAB (tab), handled);
-
-	toplevel = gtk_widget_get_toplevel (GTK_WIDGET (tab));
-	g_return_val_if_fail (toplevel != NULL, handled);
+	toplevel = gtk_widget_get_toplevel (GTK_WIDGET (embed));
+	g_return_val_if_fail (toplevel != NULL, FALSE);
 
 	as = ephy_auto_scroller_new ();
 	ephy_embed_event_get_coords (event, &x, &y);
@@ -115,8 +82,8 @@ impl_attach_tab (EphyExtension *ext,
 	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
-	g_signal_connect (embed, "ge_dom_mouse_down",
-			  G_CALLBACK (dom_mouse_down_cb), ext);
+	g_signal_connect_object (embed, "ge_dom_mouse_down",
+                                 G_CALLBACK (dom_mouse_down_cb), ext, 0);
 }
 
 static void
@@ -142,18 +109,6 @@ ephy_auto_scroller_extension_iface_init (EphyExtensionIface *iface)
 	iface->detach_tab = impl_detach_tab;
 }
 
-static void
-ephy_auto_scroller_extension_class_init (EphyAutoScrollerExtensionClass *klass)
-{
-	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-
-	parent_class = g_type_class_peek_parent (klass);
-
-	object_class->finalize = ephy_auto_scroller_extension_finalize;
-
-	g_type_class_add_private (object_class, sizeof (EphyAutoScrollerExtensionPrivate));
-}
-
 GType
 ephy_auto_scroller_extension_get_type (void)
 {
@@ -168,8 +123,8 @@ ephy_auto_scroller_extension_register_type (GTypeModule *module)
 		sizeof (EphyAutoScrollerExtensionClass),
 		NULL, /* base_init */
 		NULL, /* base_finalize */
-		(GClassInitFunc) ephy_auto_scroller_extension_class_init,
-		NULL,
+		NULL, /* class_init */
+		NULL, /* class_finalize */
 		NULL, /* class_data */
 		sizeof (EphyAutoScrollerExtension),
 		0, /* n_preallocs */
