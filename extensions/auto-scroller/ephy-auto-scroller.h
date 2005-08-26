@@ -67,6 +67,8 @@ void			ephy_auto_scroller_start_scroll	 (EphyAutoScroller *scroller,
 							  int x,
 							  int y);
 
+void			ephy_auto_scroller_stop		 (EphyAutoScroller *scroller);
+
 G_END_DECLS
 
 #endif

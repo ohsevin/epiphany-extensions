@@ -1,3 +1,14 @@
+2005-08-26  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/auto-scroller/ephy-auto-scroller.c:
+	(ephy_auto_scroller_set_embed), (ephy_auto_scroller_start_scroll),
+	(ephy_auto_scroller_stop), (ephy_auto_scroller_init),
+	(ephy_auto_scroller_finalize), (ephy_auto_scroller_class_init):
+	* extensions/auto-scroller/ephy-auto-scroller.h:
+
+	Phase II: Move the popup window into the priv struct, and destroy
+	the window when not needed anymore.
+
 2005-08-26  Crispin Flowerday  <gnome@flowerday.cx>
 
 	* extensions/auto-scroller/ephy-auto-scroller-extension.c:
