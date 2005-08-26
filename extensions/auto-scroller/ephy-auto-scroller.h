@@ -66,7 +66,8 @@ void			ephy_auto_scroller_start_scroll	 (EphyAutoScroller *scroller,
 							  int x,
 							  int y);
 
-void			ephy_auto_scroller_stop		 (EphyAutoScroller *scroller);
+void			ephy_auto_scroller_stop		 (EphyAutoScroller *scroller,
+							  guint32 timestamp);
 
 G_END_DECLS
 
