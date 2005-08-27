@@ -1,5 +1,12 @@
 2005-08-27  Crispin Flowerday  <gnome@flowerday.cx>
 
+	* extensions/auto-scroller/ephy-auto-scroller-extension.c
+	(dom_mouse_down_cb): 
+
+	Don't activate auto-scroll over links
+
+2005-08-27  Crispin Flowerday  <gnome@flowerday.cx>
+
 	* extensions/sample-mozilla/ephy-sample2-extension.c:
 	(impl_attach_tab), (impl_detach_tab):
 

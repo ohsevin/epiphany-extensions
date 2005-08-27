@@ -69,7 +69,8 @@ dom_mouse_down_cb (EphyEmbed *embed,
 	button = ephy_embed_event_get_button (event);
 	context = ephy_embed_event_get_context (event);
 	
-	if (button != 2 || (context & EPHY_EMBED_CONTEXT_INPUT))
+	if (button != 2 || (context & EPHY_EMBED_CONTEXT_INPUT) ||
+            (context & EPHY_EMBED_CONTEXT_LINK))
 	{
 		return FALSE;
 	}
