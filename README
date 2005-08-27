@@ -12,15 +12,17 @@ where ext1, ext2 ... are one of the following:
 
 actions			Perform actions on links from the context menu
 adblock			Block content based on its URL
+auto-scroll		Auto scroll on middle mouse clicks
 bookmarks-tray		Add bookmarks menu to the panel
 certificates		Display SSL certificates
 dashboard		Send cluepackets to Dashboard
 error-viewer		Error Viewer dialog [i.e., Javascript, HTML errors]
 extensions-manager-ui	GUI to enable and disable Epiphany extensions
-find			Find toolbar
 gestures		Mouse gestures
+greasemonkey		Load mozilla greasmonkey scripts
 net-monitor		Monitor the network status and set 'offline' mode accordingly
 page-info		Show information about the current page
+python-console		Opens an interactive Python console
 rss			Subscribe to newsfeeds contained in web pages
 select-stylesheet	Switch between alternate stylesheets
 sidebar			Adds a sidebar to Epiphany
@@ -35,8 +37,3 @@ sample			Sample extension [use this as a template]
 sample-mozilla		Sample extension using Mozilla API [use as a template]
 
 really-all		All of the above extensions (including samples)
-
-NOTE !
-
-The "find" extension can only be used when compiling against firefox, not when using
-the mozilla suite!

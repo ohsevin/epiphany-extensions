@@ -1,5 +1,10 @@
 2005-08-27  Crispin Flowerday  <gnome@flowerday.cx>
 
+	* AUTHORS: Add auto scroll extension
+	* README: Update
+
+2005-08-27  Crispin Flowerday  <gnome@flowerday.cx>
+
 	* extensions/auto-scroller/ephy-auto-scroller-extension.c
 	(dom_mouse_down_cb): 
 
