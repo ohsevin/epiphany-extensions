@@ -41,6 +41,23 @@ ephy_auto_scroller_extension_init (EphyAutoScrollerExtension *extension)
 	LOG ("EphyAutoScrollerExtension initialising");
 }
 
+static EphyAutoScroller *
+ensure_auto_scroller (EphyWindow *window)
+{
+	EphyAutoScroller *scroller;
+
+	scroller = g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
+	if (scroller == NULL)
+	{
+		scroller = ephy_auto_scroller_new (window);
+		g_object_set_data_full (G_OBJECT (window), WINDOW_DATA_KEY,
+					scroller,
+					(GDestroyNotify) g_object_unref);
+	}
+
+	return scroller;
+}
+
 static gboolean
 dom_mouse_down_cb (EphyEmbed *embed,
 		   EphyEmbedEvent *event,
@@ -63,24 +80,13 @@ dom_mouse_down_cb (EphyEmbed *embed,
 	toplevel = gtk_widget_get_toplevel (GTK_WIDGET (embed));
 	g_return_val_if_fail (toplevel != NULL, FALSE);
 
-	scroller = g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
+	scroller = ensure_auto_scroller (window);
 	g_return_val_if_fail (scroller != NULL, FALSE);
 
 	ephy_embed_event_get_coords (event, &x, &y);
 	ephy_auto_scroller_start (scroller, embed, x, y);
 
 	return TRUE;
-}
-
-static void
-impl_attach_window (EphyExtension *extension,
-                    EphyWindow *window)
-{
-	EphyAutoScroller *scroller;
-
-	scroller = ephy_auto_scroller_new (window);
-	g_object_set_data_full (G_OBJECT (window), WINDOW_DATA_KEY,
-			        scroller, (GDestroyNotify) g_object_unref);
 }
 
 static void
@@ -125,7 +131,6 @@ impl_detach_tab (EphyExtension *ext,
 static void
 ephy_auto_scroller_extension_iface_init (EphyExtensionIface *iface)
 {
-	iface->attach_window = impl_attach_window;
 	iface->detach_window = impl_detach_window;
 	iface->attach_tab = impl_attach_tab;
 	iface->detach_tab = impl_detach_tab;
