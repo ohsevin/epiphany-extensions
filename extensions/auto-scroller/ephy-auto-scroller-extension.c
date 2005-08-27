@@ -38,7 +38,6 @@ static GType type = 0;
 static void
 ephy_auto_scroller_extension_init (EphyAutoScrollerExtension *extension)
 {
-	LOG ("EphyAutoScrollerExtension initialising");
 }
 
 static EphyAutoScroller *
@@ -63,11 +62,9 @@ dom_mouse_down_cb (EphyEmbed *embed,
 		   EphyEmbedEvent *event,
 		   EphyWindow *window)
 {
-	EphyEmbedEventContext context;
-	guint button;
-	GtkWidget *toplevel;
 	EphyAutoScroller *scroller;
-	guint x, y;
+	EphyEmbedEventContext context;
+	guint button, x, y;
 
 	button = ephy_embed_event_get_button (event);
 	context = ephy_embed_event_get_context (event);
@@ -76,9 +73,6 @@ dom_mouse_down_cb (EphyEmbed *embed,
 	{
 		return FALSE;
 	}
-
-	toplevel = gtk_widget_get_toplevel (GTK_WIDGET (embed));
-	g_return_val_if_fail (toplevel != NULL, FALSE);
 
 	scroller = ensure_auto_scroller (window);
 	g_return_val_if_fail (scroller != NULL, FALSE);

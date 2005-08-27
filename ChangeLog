@@ -1,6 +1,13 @@
 2005-08-27  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/auto-scroller/ephy-auto-scroller-extension.c:
+	(ephy_auto_scroller_extension_init), (dom_mouse_down_cb):
+
+	Remove unused variable.
+
+2005-08-27  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/auto-scroller/ephy-auto-scroller-extension.c:
 	(ensure_auto_scroller), (dom_mouse_down_cb),
 	(ephy_auto_scroller_extension_iface_init):
 
