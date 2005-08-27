@@ -112,8 +112,6 @@ impl_attach_tab (EphyExtension *ext,
 
 	LOG ("impl_attach_tab");
 
-	g_return_if_fail (EPHY_IS_TAB (tab));
-
 	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
@@ -129,8 +127,6 @@ impl_detach_tab (EphyExtension *ext,
 	EphyEmbed *embed;
 
 	LOG ("impl_detach_tab");
-
-	g_return_if_fail (EPHY_IS_TAB (tab));
 
 	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
