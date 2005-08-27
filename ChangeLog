@@ -1,3 +1,38 @@
+2005-08-27  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/auto-scroller/.cvsignore:
+	* extensions/auto-scroller/Makefile.am:
+	* extensions/auto-scroller/auto-scroller.xml.in.in:
+	* extensions/auto-scroller/autoscroll.xpm.h:
+	* extensions/auto-scroller/ephy-auto-scroller-extension.c:
+	(ephy_auto_scroller_extension_init), (ensure_auto_scroller),
+	(dom_mouse_down_cb), (impl_detach_window), (impl_attach_tab),
+	(impl_detach_tab), (ephy_auto_scroller_extension_iface_init),
+	(ephy_auto_scroller_extension_get_type),
+	(ephy_auto_scroller_extension_register_type):
+	* extensions/auto-scroller/ephy-auto-scroller-extension.h:
+	* extensions/auto-scroller/ephy-auto-scroller.c:
+	(ephy_auto_scroller_set_window), (ephy_auto_scroller_motion_cb),
+	(ephy_auto_scroller_mouse_press_cb),
+	(ephy_auto_scroller_key_press_cb),
+	(ephy_auto_scroller_unmap_event_cb),
+	(ephy_auto_scroller_grab_notify_cb),
+	(ephy_auto_scroller_timeout_cb), (ephy_auto_scroller_start),
+	(ephy_auto_scroller_stop), (ephy_auto_scroller_new),
+	(ephy_auto_scroller_init), (ephy_auto_scroller_finalize),
+	(ephy_auto_scroller_set_property),
+	(ephy_auto_scroller_get_property), (ephy_auto_scroller_class_init),
+	(ephy_auto_scroller_get_type), (ephy_auto_scroller_register_type):
+	* extensions/auto-scroller/ephy-auto-scroller.h:
+	* extensions/auto-scroller/extension.c: (register_module):
+	* extensions/auto-scroller/mozilla/.cvsignore:
+	* extensions/auto-scroller/mozilla/Makefile.am:
+	* extensions/auto-scroller/mozilla/mozilla-helpers.cpp:
+	* extensions/auto-scroller/mozilla/mozilla-helpers.h:
+
+	Merged auto-scroller extension from HEAD.
+
 2005-08-13  Christian Persch  <chpe@cvs.gnome.org>
 
 	=== Release 1.6.5 ===
