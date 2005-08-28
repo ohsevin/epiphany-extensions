@@ -18,6 +18,7 @@ certificates		Display SSL certificates
 dashboard		Send cluepackets to Dashboard
 error-viewer		Error Viewer dialog [i.e., Javascript, HTML errors]
 extensions-manager-ui	GUI to enable and disable Epiphany extensions
+favicon			Loads /favicon.ico if the page doesn't specify one
 gestures		Mouse gestures
 greasemonkey		Load mozilla greasmonkey scripts
 net-monitor		Monitor the network status and set 'offline' mode accordingly

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension>
+        <_name>Favicon fallback</_name>
+        <_description>Loads /favicon.ico as favicon if the site doesn't use the standard method</_description>
+        <author>Christian Persch &lt;chpe@gnome.org&gt;</author>
+        <url>http://www.gnome.org/projects/epiphany/extensions.html</url>
+        <version>1</version>
+        <gettext-domain>%GETTEXT_PACKAGE%</gettext-domain>
+        <locale-directory>%LOCALE_DIR%</locale-directory>
+        <loader type="python">
+                <attribute name="module">favicon</attribute>
+        </loader>
+</extension>

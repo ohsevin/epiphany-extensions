@@ -149,9 +149,9 @@ ALL_EXTENSIONS="actions adblock auto-scroller bookmarks-tray certificates dashbo
 USEFUL_EXTENSIONS="actions auto-scroller bookmarks-tray certificates dashboard error-viewer extensions-manager-ui gestures page-info select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 DEFAULT_EXTENSIONS="actions auto-scroller bookmarks-tray certificates error-viewer extensions-manager-ui gestures page-info select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 
-PYTHON_ALL_EXTENSIONS="python-console sample-python"
-PYTHON_USEFUL_EXTENSIONS="python-console"
-PYTHON_DEFAULT_EXTENSIONS="python-console"
+PYTHON_ALL_EXTENSIONS="python-console sample-python favicon"
+PYTHON_USEFUL_EXTENSIONS="python-console favicon"
+PYTHON_DEFAULT_EXTENSIONS="python-console favicon"
 
 DIST_EXTENSIONS="$ALL_EXTENSIONS $PYTHON_ALL_EXTENSIONS"
 
@@ -517,6 +517,7 @@ extensions/error-viewer/Makefile
 extensions/error-viewer/mozilla/Makefile
 extensions/error-viewer/opensp/Makefile
 extensions/extensions-manager-ui/Makefile
+extensions/favicon/Makefile
 extensions/greasemonkey/Makefile
 extensions/greasemonkey/mozilla/Makefile
 extensions/net-monitor/Makefile
