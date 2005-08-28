@@ -41,6 +41,8 @@
 
 #include <string.h>
 
+#define WINDOW_DATA_KEY	"EphyGesturesExtension::WindowData"
+
 #define EPHY_GESTURES_EXTENSION_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_GESTURES_EXTENSION, EphyGesturesExtensionPrivate))
 
 struct EphyGesturesExtensionPrivate
@@ -289,6 +291,29 @@ gesture_performed_cb (EphyGesture *gesture,
 	}
 }
 
+static EphyGesture *
+ensure_gesture (EphyGesturesExtension *extension,
+		EphyWindow *window)
+	        
+{
+	EphyGesture *gesture;
+
+	gesture = g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
+	if (gesture == NULL)
+	{
+		gesture = ephy_gesture_new (GTK_WIDGET (window));
+		g_signal_connect (gesture, "gesture-performed",
+				  G_CALLBACK (gesture_performed_cb),
+				  extension);
+
+		g_object_set_data_full (G_OBJECT (window), WINDOW_DATA_KEY,
+					gesture,
+					(GDestroyNotify) g_object_unref);
+	}
+
+	return gesture;
+}
+
 static gboolean
 dom_mouse_down_cb (EphyEmbed *embed,
 		   EphyEmbedEvent *event,
@@ -318,15 +343,16 @@ dom_mouse_down_cb (EphyEmbed *embed,
 	button = ephy_embed_event_get_button (event);
         context = ephy_embed_event_get_context (event);
 
-	if (button == 2 && !(context & EPHY_EMBED_CONTEXT_INPUT))
+	if (button == 2 &&
+	    !((context & EPHY_EMBED_CONTEXT_INPUT) ||
+	      (context & EPHY_EMBED_CONTEXT_LINK)))
 	{
 		EphyGesture *gesture;
 
-		gesture = ephy_gesture_new (toplevel, event);
+		gesture = ensure_gesture (extension, window);
+		g_return_val_if_fail (gesture != NULL, FALSE);
 
-		g_signal_connect (gesture, "gesture-performed",
-				  G_CALLBACK (gesture_performed_cb),
-				  extension);
+		ephy_gesture_set_event (gesture, event);
 
 		ephy_gesture_start (gesture);
 
@@ -337,6 +363,13 @@ dom_mouse_down_cb (EphyEmbed *embed,
 }
 
 static void
+impl_detach_window (EphyExtension *ext,
+                    EphyWindow *window)
+{
+        g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, NULL);
+}
+
+static void
 impl_attach_tab (EphyExtension *extension,
 		 EphyWindow *window,
 		 EphyTab *tab)
@@ -344,8 +377,6 @@ impl_attach_tab (EphyExtension *extension,
 	EphyEmbed *embed;
 
 	LOG ("Attach tab");
-
-	g_return_if_fail (EPHY_IS_TAB (tab));
 
 	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
@@ -363,8 +394,6 @@ impl_detach_tab (EphyExtension *extension,
 
 	LOG ("Detach tab");
 
-	g_return_if_fail (EPHY_IS_TAB (tab));
-
 	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
@@ -375,6 +404,7 @@ impl_detach_tab (EphyExtension *extension,
 static void
 ephy_gestures_extension_iface_init (EphyExtensionIface *iface)
 {
+	iface->detach_window = impl_detach_window;
 	iface->attach_tab = impl_attach_tab;
 	iface->detach_tab = impl_detach_tab;
 }

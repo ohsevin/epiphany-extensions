@@ -1,4 +1,16 @@
 =========================
+Epiphany Extensions 1.6.6
+=========================
+
+New extensions:
+
+	* Auto-Scroll extension
+
+Changes
+	* Fix possible pointer grab lockup with gestures
+
+
+=========================
 Epiphany Extensions 1.6.5
 =========================
 

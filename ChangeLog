@@ -1,3 +1,26 @@
+2005-08-28  Christian Persch  <chpe@cvs.gnome.org>
+
+	=== Release 1.6.6 ===
+	
+	* NEWS:
+	* configure.ac:
+
+	Updated for 1.6.6.
+
+	* extensions/gestures/ephy-gesture.c: (ephy_gesture_stop),
+	(button_press_event_cb), (key_press_event_cb), (mouse_release_cb),
+	(unmap_event_cb), (grab_notify_cb), (ephy_gesture_start),
+	(ephy_gesture_init), (ephy_gesture_finalize),
+	(ephy_gesture_set_property), (ephy_gesture_get_property),
+	(ephy_gesture_get_event), (ephy_gesture_set_event),
+	(ephy_gesture_new):
+	* extensions/gestures/ephy-gesture.h:
+	* extensions/gestures/ephy-gestures-extension.c: (ensure_gesture),
+	(dom_mouse_down_cb), (impl_detach_window), (impl_attach_tab),
+	(impl_detach_tab), (ephy_gestures_extension_iface_init):
+
+	Fix pointer grab lockup; backported from HEAD.
+
 2005-08-27  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
