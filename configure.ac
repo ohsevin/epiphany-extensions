@@ -16,7 +16,7 @@ dnl 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 dnl
 dnl $Id$
 
-AC_INIT([Epiphany Extensions],[1.9.0],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+AC_INIT([GNOME Web Browser Extensions],[1.9.0],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 GNOME_COMMON_INIT
 
 EPIPHANY_API_VERSION=1.10
@@ -214,28 +214,8 @@ dnl DBUS
 dnl ****
 
 if echo "$EXTENSIONS" | egrep '(^| )(net-monitor)|(rss)($| )' > /dev/null; then
-	if ! (echo "$FEATURES" | egrep '(^| )(dbus)($| )' > /dev/null); then
-		AC_MSG_ERROR([Epiphany was not compiled with DBUS support])
-	fi
-
-	AC_MSG_CHECKING([for new DBUS API])
-
-	_SAVE_LDFLAGS="$LDFLAGS"
-	LDFLAGS="$LDFLAGS `$PKG_CONFIG --libs dbus-1`"
-	AC_TRY_LINK_FUNC([dbus_message_iter_get_boolean],[have_new_dbus=no],[have_new_dbus=yes])
-	LDFLAGS="$_SAVE_LDFLAGS"
-
-	AC_MSG_RESULT([$have_new_dbus])
-
-	if test "x$have_new_dbus" = "xyes"; then
-		AC_DEFINE([HAVE_NEW_DBUS],[1],[Define if compiling with DBUS 0.3])
-
-		DBUS_REQUIRED=0.34
-		DBUS_GLIB_REQUIRED=0.34
-	else
-		DBUS_REQUIRED=0.22
-		DBUS_GLIB_REQUIRED=0.22
-	fi
+	DBUS_REQUIRED=0.34
+	DBUS_GLIB_REQUIRED=0.34
 
 	PKG_CHECK_MODULES([DBUS], [dbus-1 >= $DBUS_REQUIRED dbus-glib-1 >= $DBUS_GLIB_REQUIRED])
 fi
