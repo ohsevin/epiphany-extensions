@@ -1,5 +1,12 @@
 2005-08-28  Christian Persch  <chpe@cvs.gnome.org>
 
+	* autogen.sh:
+	* configure.ac:
+
+	Version 1.9.0.
+
+2005-08-28  Christian Persch  <chpe@cvs.gnome.org>
+
 	* configure.ac:
 
 	Fix configure check for gecko 1.8.

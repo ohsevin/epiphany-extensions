@@ -1,4 +1,4 @@
-dnl Copyright (c) 2003, 2004 Christian Persch
+dnl Copyright (c) 2003, 2004, 2005 Christian Persch
 dnl
 dnl This program is free software; you can redistribute it and/or modify it
 dnl under the terms of the GNU General Public License as published by the
@@ -16,12 +16,12 @@ dnl 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 dnl
 dnl $Id$
 
-AC_INIT([Epiphany Extensions],[1.8.0],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+AC_INIT([Epiphany Extensions],[1.9.0],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 GNOME_COMMON_INIT
 
-EPIPHANY_API_VERSION=1.8
+EPIPHANY_API_VERSION=1.10
 
-EPIPHANY_EXTENSIONS_MAJOR=1.8
+EPIPHANY_EXTENSIONS_MAJOR=1.9
 AC_SUBST(EPIPHANY_EXTENSIONS_MAJOR)
 
 AC_PREREQ([2.59])
@@ -31,7 +31,7 @@ AC_REVISION([$Revision$])
 AC_CONFIG_SRCDIR([extensions])
 AC_CONFIG_HEADERS([config.h])
 
-AM_INIT_AUTOMAKE([dist-bzip2 no-dist-gzip check-news])
+AM_INIT_AUTOMAKE([1.9 dist-bzip2 no-dist-gzip check-news])
 
 dnl AC_SUBST([ACLOCAL_AMFLAGS], ["-I $ac_macro_dir \${ACLOCAL_FLAGS}"])
 AC_SUBST([ACLOCAL_AMFLAGS], ["\${ACLOCAL_FLAGS}"])
@@ -88,7 +88,7 @@ dnl ********************************
 dnl pkg config checks
 dnl ********************************
 
-EPIPHANY_REQUIRED=1.8.0
+EPIPHANY_REQUIRED=1.9.0
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.6.0
 LIBGTK_REQUIRED=2.6.0
@@ -160,7 +160,7 @@ if echo "$FEATURES" | egrep '(^| )(python)($| )' > /dev/null; then
 	USEFUL_EXTENSIONS="$USEFUL_EXTENSIONS $PYTHON_USEFUL_EXTENSIONS"
 	DEFAULT_EXTENSIONS="$DEFAULT_EXTENSIONS $PYTHON_DEFAULT_EXTENSIONS"
 else
-	AC_MSG_WARN([Epiphany compiled without python support, extensions \'$PYTHON_ALL_EXTENSIONS\' will not be available])
+	AC_MSG_WARN([Epiphany compiled without python support, extensions $PYTHON_ALL_EXTENSIONS will not be available])
 fi
 
 dnl due to an autoconf bug, commas in the first arg to
@@ -427,11 +427,7 @@ gecko_version_minor=`echo $gecko_version | awk '{ print $[2]; }'`
 
 AC_MSG_RESULT([$gecko_version_major.$gecko_version_minor])
 
-if test "$gecko_version_major" = "1" -a "$gecko_version_minor" = "9"; then
-	AC_MSG_ERROR([Gecko 1.9 is not supported yet])
-elif test "$gecko_version_major" = "1" -a "$gecko_version_minor" = "8"; then
-elif test "$gecko_version_major" = "1" -a "$gecko_version_minor" = "7"; then
-else
+if test "$gecko_version_major" != "1" -o "$gecko_version_minor" -lt "7" -o "$gecko_version_minor" -gt "9"; then
 	AC_MSG_ERROR([Unsupported Gecko version $gecko_version_major.$gecko_version_minor])
 fi
 
