@@ -417,33 +417,33 @@ dnl and not the Gecko version
 
 AC_MSG_CHECKING([[for gecko version]])
 
-gecko_version_major=`cat $MOZILLA_INCLUDE_ROOT/mozilla-config.h | grep MOZILLA_VERSION_MAJOR | awk '{ print $[3]; }'`
-gecko_version_minor=`cat $MOZILLA_INCLUDE_ROOT/mozilla-config.h | grep MOZILLA_VERSION_MINOR | awk '{ print $[3]; }'`
-
-dnl These variables are only available since gecko 1.8
-if test -z "$gecko_version_major" -o -z "$gecko_version_minor"; then
-	gecko_version_major=1
-	gecko_version_minor=7
+gecko_version=`cat $MOZILLA_INCLUDE_ROOT/mozilla-config.h | grep MOZILLA_VERSION_U | awk '{ print $[3]; }' | tr ".ab+" " "`
+if test -z "$gecko_version"; then
+	gecko_version="1 7"
 fi
+
+gecko_version_major=`echo $gecko_version | awk '{ print $[1]; }'`
+gecko_version_minor=`echo $gecko_version | awk '{ print $[2]; }'`
 
 AC_MSG_RESULT([$gecko_version_major.$gecko_version_minor])
 
 if test "$gecko_version_major" = "1" -a "$gecko_version_minor" = "9"; then
 	AC_MSG_ERROR([Gecko 1.9 is not supported yet])
-	have_gecko_1_8=yes
 elif test "$gecko_version_major" = "1" -a "$gecko_version_minor" = "8"; then
-	have_gecko_1_8=yes
 elif test "$gecko_version_major" = "1" -a "$gecko_version_minor" = "7"; then
-	have_gecko_1_8=no
 else
 	AC_MSG_ERROR([Unsupported Gecko version $gecko_version_major.$gecko_version_minor])
 fi
 
-if test "x$have_gecko_1_8" = "xyes"; then
+if test "$gecko_version_major" = "1" -a "$gecko_version_minor" -ge "8"; then
 	AC_DEFINE([HAVE_GECKO_1_8],[1],[Define if we have gecko 1.8])
 fi
+if test "$gecko_version_major" = "1" -a "$gecko_version_minor" -ge "9"; then
+	AC_DEFINE([HAVE_GECKO_1_9],[1],[Define if we have gecko 1.9])
+fi
 
-AM_CONDITIONAL([HAVE_GECKO_1_8],[test "x$have_gecko_1_8" = "xyes"])
+AM_CONDITIONAL([HAVE_GECKO_1_8],[test "$gecko_version_major" = "1" -a "$gecko_version_minor" -ge "8"])
+AM_CONDITIONAL([HAVE_GECKO_1_9],[test "$gecko_version_major" = "1" -a "$gecko_version_minor" -ge "9"])
 
 dnl Changed in 1.8a1 and again in 1.8a3 to its present form (variant 2);
 dnl variant 1 is on 1.7 branch. Aviary branch also has variant 2.
