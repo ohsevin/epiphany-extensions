@@ -1,3 +1,20 @@
+2005-08-28  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/gestures/ephy-gesture.c: (ephy_gesture_stop),
+	(button_press_event_cb), (key_press_event_cb), (mouse_release_cb),
+	(unmap_event_cb), (grab_broken_event_cb), (grab_notify_cb),
+	(ephy_gesture_start), (ephy_gesture_init), (ephy_gesture_finalize),
+	(ephy_gesture_set_property), (ephy_gesture_get_property),
+	(ephy_gesture_get_event), (ephy_gesture_set_event),
+	(ephy_gesture_new):
+	* extensions/gestures/ephy-gesture.h:
+	* extensions/gestures/ephy-gestures-extension.c: (ensure_gesture),
+	(dom_mouse_down_cb), (impl_detach_window), (impl_attach_tab),
+	(impl_detach_tab), (ephy_gestures_extension_iface_init):
+
+	Converte gestures to one-per-window like autoscroller, and make
+	grab lockup-proof.
+
 2005-08-27  Crispin Flowerday  <gnome@flowerday.cx>
 
 	* AUTHORS: Add auto scroll extension

@@ -37,8 +37,8 @@ G_BEGIN_DECLS
 #define EPHY_IS_GESTURE_CLASS(klass)	(G_TYPE_CHECK_CLASS_TYPE((klass), EPHY_TYPE_GESTURE))
 #define EPHY_GESTURE_GET_CLASS(obj)	(G_TYPE_INSTANCE_GET_CLASS((obj), EPHY_TYPE_GESTURE, EphyGestureClass))
 
-typedef struct _EphyGesture		EphyGesture;
 typedef struct _EphyGestureClass	EphyGestureClass;
+typedef struct _EphyGesture		EphyGesture;
 typedef struct _EphyGesturePrivate	EphyGesturePrivate;
 
 struct _EphyGestureClass 
@@ -60,14 +60,19 @@ GType		ephy_gesture_get_type		(void);
 
 GType		ephy_gesture_register_type	(GTypeModule *module);
 
-EphyGesture    *ephy_gesture_new		(GtkWidget *window,
-						 EphyEmbedEvent *event);
-
-void		ephy_gesture_start		(EphyGesture *gesture);
+EphyGesture    *ephy_gesture_new		(GtkWidget *window);
 
 GtkWidget      *ephy_gesture_get_window		(EphyGesture *gesture);
 
+gboolean	ephy_gesture_start		(EphyGesture *gesture);
+
+void		ephy_gesture_stop		(EphyGesture *gesture,
+						 guint32 time);
+
 EphyEmbedEvent *ephy_gesture_get_event		(EphyGesture *gesture);
+
+void		ephy_gesture_set_event		(EphyGesture *gesture,
+						 EphyEmbedEvent *event);
 
 G_END_DECLS
 

@@ -29,16 +29,18 @@
 #include "stroke.h"
 
 #include <gdk/gdk.h>
+#include <gtk/gtkbin.h>
 #include <gtk/gtkmain.h>
 #include <gtk/gtkdnd.h>
 
 #define EPHY_GESTURE_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_GESTURE, EphyGesturePrivate))
 
-struct _EphyGesturePrivate {
+struct _EphyGesturePrivate
+{
 	GtkWidget *window;
 	EphyEmbedEvent *event;
 	GdkCursor *cursor;
-	gboolean started;
+	guint started : 1;
 };
 
 enum
@@ -48,7 +50,8 @@ enum
 	PROP_WINDOW
 };
 
-enum {
+enum
+{
 	PERFORMED,
 	LAST_SIGNAL
 };
@@ -94,24 +97,37 @@ ephy_gesture_register_type (GTypeModule *module)
 	return type;
 }
 
-static void
-ephy_gesture_stop (EphyGesture *gesture)
+void
+ephy_gesture_stop (EphyGesture *gesture,
+		   guint32 time)
 {
+	EphyGesturePrivate *priv = gesture->priv;
+	GtkWidget *child;
+
+	/* disconnect our signals before ungrabbing! */
+	g_signal_handlers_disconnect_matched
+		(priv->window, G_SIGNAL_MATCH_DATA, 0, 0, NULL, NULL, gesture);
+
+	child = gtk_bin_get_child (GTK_BIN (priv->window));
+	g_signal_handlers_disconnect_matched
+		(child, G_SIGNAL_MATCH_DATA, 0, 0, NULL, NULL, gesture);
+
+	if (priv->started == FALSE) return;
+
 	/* ungrab the pointer if it's grabbed */
 	if (gdk_pointer_is_grabbed ())
 	{
-		gdk_pointer_ungrab (gtk_get_current_event_time ());
+		gdk_pointer_ungrab (time);
 	}
 
-	gdk_keyboard_ungrab (gtk_get_current_event_time ());
+	gdk_keyboard_ungrab (time);
 
-	gtk_grab_remove (gesture->priv->window);
+	gtk_grab_remove (priv->window);
 
-	/* disconnect all our signals */
-	g_signal_handlers_disconnect_matched
-		(gesture->priv->window, G_SIGNAL_MATCH_DATA, 0, 0, NULL, NULL, gesture);
+	priv->started = FALSE;
 
-	gesture->priv->started = FALSE;
+	g_object_unref (priv->window);
+	g_object_unref (gesture);
 }
 
 static gboolean
@@ -125,13 +141,21 @@ motion_cb (GtkWidget *widget,
 }
 
 static gboolean
-cancel_cb (GtkWidget *widget,
-	   GdkEventButton *event,
-	   EphyGesture *gesture)
+button_press_event_cb (GtkWidget *widget,
+		       GdkEventButton *event,
+		       EphyGesture *gesture)
 {
-	ephy_gesture_stop (gesture);
+	ephy_gesture_stop (gesture, event->time);
 
-	g_object_unref (gesture);
+	return TRUE;
+}
+
+static gboolean
+key_press_event_cb (GtkWidget *widget,
+		    GdkEventKey *event,
+		    EphyGesture *gesture)
+{
+	ephy_gesture_stop (gesture, event->time);
 
 	return TRUE;
 }
@@ -143,7 +167,9 @@ mouse_release_cb (GtkWidget *widget,
 {
 	char sequence[STROKE_MAX_SEQUENCE + 1];
 
-	ephy_gesture_stop (gesture);
+	g_object_ref (gesture);
+
+	ephy_gesture_stop (gesture, event->time);
 
 	if (stroke_trans (sequence) == FALSE)
 	{
@@ -154,6 +180,8 @@ mouse_release_cb (GtkWidget *widget,
  
 	g_signal_emit (gesture, signals[PERFORMED], 0, sequence);
 
+	ephy_gesture_set_event (gesture, NULL);
+
 	g_object_unref (gesture);
 
 	return TRUE;
@@ -161,83 +189,121 @@ mouse_release_cb (GtkWidget *widget,
 
 static gboolean
 unmap_event_cb (GtkWidget *width,
-		GdkEvent *event,
+		GdkEventAny *event,
 		EphyGesture *gesture)
 {
 	/* ungrab and disconnect */
-	ephy_gesture_stop (gesture);
+	ephy_gesture_stop (gesture, GDK_CURRENT_TIME /* FIXME? */);
 
 	return FALSE;
 }
 
-void
+static gboolean
+grab_broken_event_cb (GtkWidget *widget,
+		      GdkEventGrabBroken *event,
+		      EphyGesture *gesture)
+{
+	ephy_gesture_stop (gesture, GDK_CURRENT_TIME /* FIXME? */);
+
+	return FALSE;
+}
+
+static void
+grab_notify_cb (GtkWidget *widget,
+		gboolean was_grabbed,
+		EphyGesture *gesture)
+{
+	ephy_gesture_stop (gesture, GDK_CURRENT_TIME /* FIXME? */);
+}
+
+gboolean
 ephy_gesture_start (EphyGesture *gesture)
 {
-	EphyGesturePrivate *p = gesture->priv;
-	GtkWidget *window = p->window;
+	EphyGesturePrivate *priv = gesture->priv;
+	GtkWidget *child;
+	guint32 time;
+
+	g_object_ref (gesture);
+	priv->started = TRUE;
+
+	time = gtk_get_current_event_time ();
+
+	/* attach signals */
+	g_signal_connect (priv->window, "button-release-event",
+			  G_CALLBACK (mouse_release_cb), gesture);
+	g_signal_connect (priv->window, "motion-notify-event",
+			  G_CALLBACK (motion_cb), gesture);
+	g_signal_connect (priv->window, "button-press-event",
+			  G_CALLBACK (button_press_event_cb), gesture);
+	g_signal_connect (priv->window, "key-press-event",
+			  G_CALLBACK (key_press_event_cb), gesture);
+	g_signal_connect (priv->window, "unmap-event",
+			  G_CALLBACK (unmap_event_cb), gesture);
+	g_signal_connect (priv->window, "grab-broken-event",
+			  G_CALLBACK (grab_broken_event_cb), gesture);
+
+	child = gtk_bin_get_child (GTK_BIN (priv->window));
+	g_signal_connect (child, "grab-notify",
+			  G_CALLBACK (grab_notify_cb), gesture);
 
 	/* get a new cursor, if necessary */
-	p->cursor = gdk_cursor_new (GDK_PENCIL);
-
-	/* grab the pointer as soon as possible, we might miss button_release
-	 * otherwise */
-	gdk_pointer_grab (window->window, FALSE,
-			  GDK_POINTER_MOTION_MASK |
-			  GDK_BUTTON_RELEASE_MASK |
-			  GDK_BUTTON_PRESS_MASK,
-			  NULL, p->cursor, gtk_get_current_event_time ());
-	g_signal_connect (window, "button_release_event",
-			  G_CALLBACK (mouse_release_cb), gesture);
+	priv->cursor = gdk_cursor_new (GDK_PENCIL);
 
 	/* init stroke */
 	stroke_init ();
 
-	/* attach signals */
-	g_signal_connect (window, "motion_notify_event",
-			  G_CALLBACK (motion_cb), gesture);
-	g_signal_connect (window, "button_press_event",
-			  G_CALLBACK (cancel_cb), gesture);
-	g_signal_connect (window, "key_press_event",
-			  G_CALLBACK (cancel_cb), gesture);
-	g_signal_connect (window, "unmap-event",
-			 G_CALLBACK (unmap_event_cb), gesture);
+	g_object_ref (priv->window);
+	gtk_grab_add (priv->window);
 
-	gtk_grab_add (window);
-	gdk_keyboard_grab (window->window, FALSE, gtk_get_current_event_time ());
+	if (gdk_pointer_grab (priv->window->window, FALSE,
+			     GDK_POINTER_MOTION_MASK |
+			     GDK_BUTTON_RELEASE_MASK |
+			     GDK_BUTTON_PRESS_MASK,
+			     NULL, priv->cursor, time) != GDK_GRAB_SUCCESS ||
+	    gdk_keyboard_grab (priv->window->window, FALSE, time) != GDK_GRAB_SUCCESS)
+	{
+		ephy_gesture_stop (gesture, time);
 
-	p->started = TRUE;
+		return FALSE;
+	}
+
+	return TRUE;
 }
 
 static void 
 ephy_gesture_init (EphyGesture *gesture)
 {
-	gesture->priv = EPHY_GESTURE_GET_PRIVATE (gesture);
+	EphyGesturePrivate *priv;
 
-	gesture->priv->window = NULL;
-	gesture->priv->event = NULL;
-	gesture->priv->cursor = NULL;
-	gesture->priv->started = FALSE;
+	LOG ("Init [%p]", gesture);
+
+	priv = gesture->priv = EPHY_GESTURE_GET_PRIVATE (gesture);
+
+	priv->window = NULL;
+	priv->event = NULL;
+	priv->cursor = NULL;
+	priv->started = FALSE;
 }
 
 static void
 ephy_gesture_finalize (GObject *object)
 {
 	EphyGesture *gesture = EPHY_GESTURE (object);
+	EphyGesturePrivate *priv = gesture->priv;
+	
+	LOG ("Finalise [%p]", object);
 
-	if (gesture->priv->started)
+	if (priv->started)
 	{
-		ephy_gesture_stop (gesture);
+		ephy_gesture_stop (gesture, GDK_CURRENT_TIME /* FIXME? */);
 	}
 
-	if (gesture->priv->cursor)
+	if (priv->cursor != NULL)
 	{
 		gdk_cursor_unref (gesture->priv->cursor);
 	}
 
-	g_object_unref (gesture->priv->window);
-	g_object_unref (gesture->priv->event);
-
-	LOG ("EphyGesture finalised %p", object);
+	ephy_gesture_set_event (gesture, NULL);
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
 }
@@ -249,14 +315,15 @@ ephy_gesture_set_property (GObject *object,
 			   GParamSpec *pspec)
 {
 	EphyGesture *gesture = EPHY_GESTURE (object);
+	EphyGesturePrivate *priv = gesture->priv;
 
 	switch (prop_id)
 	{
 		case PROP_EVENT:
-			gesture->priv->event = g_object_ref (g_value_get_object (value));
+			ephy_gesture_set_event (gesture, g_value_get_object (value));
 			break;
 		case PROP_WINDOW:
-			gesture->priv->window = g_object_ref (g_value_get_object (value));
+			priv->window = g_value_get_object (value);
 			break;
 	}
 }
@@ -268,14 +335,15 @@ ephy_gesture_get_property (GObject *object,
 			   GParamSpec *pspec)
 {
 	EphyGesture *gesture = EPHY_GESTURE (object);
+	EphyGesturePrivate *priv = gesture->priv;
 
 	switch (prop_id)
 	{
 		case PROP_EVENT:
-			g_value_set_object (value, gesture->priv->event);
+			g_value_set_object (value, priv->event);
 			break;
 		case PROP_WINDOW:
-			g_value_set_object (value, gesture->priv->window);
+			g_value_set_object (value, priv->window);
 			break;
 	}
 }
@@ -332,15 +400,37 @@ ephy_gesture_get_window (EphyGesture *gesture)
 EphyEmbedEvent *
 ephy_gesture_get_event (EphyGesture *gesture)
 {
-	return gesture->priv->event;
+	EphyGesturePrivate *priv;
+
+	g_return_val_if_fail (EPHY_IS_GESTURE (gesture), NULL);
+
+	priv = gesture->priv;
+
+	return priv->event;
+}
+
+void
+ephy_gesture_set_event (EphyGesture *gesture,
+			EphyEmbedEvent *event)
+{
+	EphyGesturePrivate *priv;
+
+	g_return_if_fail (EPHY_IS_GESTURE (gesture));
+
+	priv = gesture->priv;
+
+	if (priv->event != NULL)
+	{
+		g_object_unref (priv->event);
+	}
+
+	priv->event = event != NULL ? g_object_ref (event) : NULL;
 }
 
 EphyGesture *
-ephy_gesture_new (GtkWidget *window,
-		  EphyEmbedEvent *event)
+ephy_gesture_new (GtkWidget *window)
 {
 	return EPHY_GESTURE (g_object_new (EPHY_TYPE_GESTURE,
-					   "event", event,
 					   "window", window,
 					   NULL));
 }
