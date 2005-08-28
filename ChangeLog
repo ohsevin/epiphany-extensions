@@ -1,3 +1,9 @@
+2005-08-28  Christian Persch  <chpe@cvs.gnome.org>
+
+	=== Release 1.7.5 ===
+
+	* NEWS:
+
 2005-08-28  Crispin Flowerday  <gnome@flowerday.cx>
 
 	* configure.ac: Add auto-scroller to default

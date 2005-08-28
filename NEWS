@@ -1,4 +1,29 @@
 =========================
+Epiphany Extensions 1.7.5
+=========================
+
+New extensions:
+
+        * Auto-Scroll extension
+
+Changes
+
+        * Fix possible pointer grab lockup with gestures
+	* Fix configure check to not use AM_CONDITIONAL conditionally
+	* Updated AUTHORS and README files
+
+Contributors to this release: Crispin Flowerday, Christian Persch.
+
+Updated translations:
+
+	* Frank Arnold (de)
+	* Ignacio Casal Quinteiro (gl)
+	* Takeshi AIHANA (ja)
+	* Reinout van Schouwen (nl)
+	* Maxim Dziumanenko (uk)
+
+
+=========================
 Epiphany Extensions 1.7.4
 =========================
 

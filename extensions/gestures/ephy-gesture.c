@@ -104,6 +104,8 @@ ephy_gesture_stop (EphyGesture *gesture,
 	EphyGesturePrivate *priv = gesture->priv;
 	GtkWidget *child;
 
+	if (priv->started == FALSE) return;
+
 	/* disconnect our signals before ungrabbing! */
 	g_signal_handlers_disconnect_matched
 		(priv->window, G_SIGNAL_MATCH_DATA, 0, 0, NULL, NULL, gesture);
@@ -111,8 +113,6 @@ ephy_gesture_stop (EphyGesture *gesture,
 	child = gtk_bin_get_child (GTK_BIN (priv->window));
 	g_signal_handlers_disconnect_matched
 		(child, G_SIGNAL_MATCH_DATA, 0, 0, NULL, NULL, gesture);
-
-	if (priv->started == FALSE) return;
 
 	/* ungrab the pointer if it's grabbed */
 	if (gdk_pointer_is_grabbed ())
