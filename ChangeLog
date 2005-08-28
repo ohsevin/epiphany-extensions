@@ -1,13 +1,13 @@
 2005-08-28  Crispin Flowerday  <gnome@flowerday.cx>
 
-        * README:
-        * configure.ac:
-        * extensions/favicon/.cvsignore:
-        * extensions/favicon/Makefile.am:
-        * extensions/favicon/favicon.py:
-        * extensions/favicon/favicon.xml.in.in:
+	* README:
+	* configure.ac:
+	* extensions/favicon/.cvsignore:
+	* extensions/favicon/Makefile.am:
+	* extensions/favicon/favicon.py:
+	* extensions/favicon/favicon.xml.in.in:
 
-        Add a favicon fallback extension (written in python)
+	Add a favicon fallback extension (written in python)
 
 2005-08-28  Christian Persch  <chpe@cvs.gnome.org>
 
