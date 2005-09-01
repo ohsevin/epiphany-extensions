@@ -322,12 +322,6 @@ ephy_actions_extension_properties_dialog_constructor
 				       GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE);
 	}
 
-	ephy_dialog_set_size_group (EPHY_DIALOG (dialog),
-				    properties[PROP_NAME_LABEL].id,
-				    properties[PROP_DESCRIPTION_LABEL].id,
-				    properties[PROP_COMMAND_LABEL].id,
-				    NULL);
-  
 	return object;
 }
 

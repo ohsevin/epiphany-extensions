@@ -1,3 +1,13 @@
+2005-09-01  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/actions/action-properties.glade:
+	* extensions/actions/actions-editor.glade:
+	* extensions/actions/ephy-actions-extension-properties-dialog.c:
+	(ephy_actions_extension_properties_dialog_constructor):
+	* extensions/extensions-manager-ui/extensions-manager-ui.glade:
+
+	Fix HIG spacings.
+
 2005-08-31  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
