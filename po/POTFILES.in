@@ -24,6 +24,7 @@ extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c
 extensions/extensions-manager-ui/extensions-manager-ui.c
 extensions/extensions-manager-ui/extensions-manager-ui.glade
 extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in
+extensions/favicon/favicon.xml.in.in
 extensions/gestures/gestures.xml.in.in
 extensions/greasemonkey/ephy-greasemonkey-extension.c
 extensions/greasemonkey/greasemonkey.xml.in.in
