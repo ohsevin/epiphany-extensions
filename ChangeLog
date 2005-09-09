@@ -1,4 +1,10 @@
 2005-09-09  Jean-François Rameau  <jframeau@cvs.gnome.org>
+	
+	* extensions/smart-bookmarks/mozilla/mozilla-selection.cpp: (mozilla_get_selected_text):
+
+	Avoid a dependency to gecko 1.8.
+
+2005-09-09  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/smart-bookmarks/smart-bookmarks-extension.c:
 	* extensions/smart-bookmarks/mozilla/mozilla-selection.cpp:

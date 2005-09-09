@@ -119,10 +119,10 @@ mozilla_get_selected_text (EphyEmbed *embed)
 	if (selection) return selection;
 
 	// Take care of password fields
-	const PRUnichar textLiteral[] = { 't', 'e', 'x', 't', '\0' };
 	nsCOMPtr<nsIDOMHTMLInputElement> input (do_QueryInterface(domElement));
 	input->GetType (text);
-	if (!text.Equals (nsEmbedString(textLiteral))) return NULL;
+	const PRUnichar *str = text.get ();
+	if (!(str[0] == 't' && str[1] == 'e' && str[2] == 'x' && str[3] == 't' && str[4] == '\0')) return NULL;
 
 	selection = get_selection <nsIDOMNSHTMLInputElement, 
 		       		   nsIDOMHTMLInputElement> (domElement);
