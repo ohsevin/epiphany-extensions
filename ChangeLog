@@ -1,3 +1,11 @@
+2005-09-09  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/smart-bookmarks/smart-bookmarks-extension.c:
+	* extensions/smart-bookmarks/mozilla/mozilla-selection.cpp:
+
+	Allow lookup of selections within forms (textarea and text input).
+	Fix bug #315319.
+
 2005-09-01  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/actions/action-properties.glade:

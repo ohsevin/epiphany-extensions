@@ -325,6 +325,14 @@ rebuild_ui (WindowData *data)
 			       LOOKUP_ACTION "Menu", LOOKUP_ACTION,
 			       GTK_UI_MANAGER_MENU, FALSE);
 
+	/* Add bookmarks to input popup context */
+	gtk_ui_manager_add_ui (manager, ui_id, "/EphyInputPopup",
+			       "SmbExtSep0", NULL,
+			       GTK_UI_MANAGER_SEPARATOR, FALSE);
+	gtk_ui_manager_add_ui (manager, ui_id, "/EphyInputPopup",
+			       LOOKUP_ACTION "Menu", LOOKUP_ACTION,
+			       GTK_UI_MANAGER_MENU, FALSE);
+
 	/* get smart bookmarks and sort them */
 	bookmarks = ephy_shell_get_bookmarks (ephy_shell);
 	smart_bmks = ephy_bookmarks_get_smart_bookmarks (bookmarks);
@@ -359,6 +367,10 @@ rebuild_ui (WindowData *data)
 				       "/EphyFullscreenFramedDocumentPopup/" LOOKUP_ACTION "Menu",
 				       verb, verb,
 				       GTK_UI_MANAGER_MENUITEM, FALSE);
+		gtk_ui_manager_add_ui (manager, ui_id,
+				       "/EphyInputPopup/" LOOKUP_ACTION "Menu",
+				       verb, verb,
+				       GTK_UI_MANAGER_MENUITEM, FALSE);
 	}
 
 	g_list_free (bmks);
@@ -379,6 +391,10 @@ rebuild_ui (WindowData *data)
 	gtk_ui_manager_add_ui (manager, ui_id,
 			       "/EphyFullscreenFramedDocumentPopup/" LOOKUP_ACTION "Menu",
 			       GDICT_ACTION "FSIFDP", GDICT_ACTION,
+			       GTK_UI_MANAGER_MENUITEM, FALSE);
+	gtk_ui_manager_add_ui (manager, ui_id,
+			       "/EphyInputPopup/" LOOKUP_ACTION "Menu",
+			       GDICT_ACTION "INPUTP", GDICT_ACTION,
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
 
 	gtk_ui_manager_ensure_update (manager);
