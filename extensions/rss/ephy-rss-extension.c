@@ -127,15 +127,15 @@ ephy_rss_ge_feed_cb (EphyEmbed *embed,
 
 static void
 ephy_rss_feed_subscribe_cb (GtkAction *action, 
-			 EphyWindow *window)
+			    EphyWindow *window)
 {
 	const GValue *value;
+	EphyEmbedEvent *event;
 
 	LOG ("Subscribing to the feed");
-	
-	EphyEmbedEvent *event = EPHY_EMBED_EVENT (
-			g_object_get_data (G_OBJECT (window), "context_event"));
-	g_return_if_fail (event != NULL);
+
+	event = ephy_window_get_context_event (window);
+	if (event == NULL) return;
 	
 	ephy_embed_event_get_property (event, "link", &value);
 

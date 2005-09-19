@@ -432,7 +432,7 @@ ephy_actions_extension_run_action_on_embed_property (GtkAction *action,
 	g_return_if_fail (property_name != NULL);
 
 	tab = ephy_window_get_active_tab (window);
-	event = g_object_get_data (G_OBJECT (window), "context_event");
+	event = ephy_window_get_context_event (window);
 	g_return_if_fail (event != NULL);
 
 	ephy_embed_event_get_property (event, property_name, &value);

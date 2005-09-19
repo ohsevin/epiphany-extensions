@@ -88,7 +88,7 @@ dnl ********************************
 dnl pkg config checks
 dnl ********************************
 
-EPIPHANY_REQUIRED=1.8.0
+EPIPHANY_REQUIRED=1.8.1
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.8.0
 LIBGTK_REQUIRED=2.8.0

@@ -1,3 +1,22 @@
+2005-09-19  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
+	Update Epiphany dependency to 1.8.1.
+
+	* extensions/actions/ephy-actions-extension.c:
+	(ephy_actions_extension_run_action_on_embed_property):
+	* extensions/rss/ephy-rss-extension.c:
+	(ephy_rss_feed_subscribe_cb):
+	* extensions/sidebar/ephy-sidebar-embed.c:
+	(embed_popup_deactivate_cb), (show_context_menu):
+	* extensions/sidebar/sidebar-commands.c: (save_property_url):
+
+	Fix context events to use ephy_window_get_context_event instead
+	of the old method.
+	Fix sidebar context menu setting of the context event, and
+	menu deactivation.
+
 2005-09-04  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
