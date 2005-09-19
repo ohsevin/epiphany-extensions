@@ -159,6 +159,9 @@ hide_embed_popup_cb (GtkMenu *menu,
 	g_object_set (action, "sensitive", TRUE, "visible", TRUE, NULL);
 	action = gtk_ui_manager_get_action (manager, "/EphyInputPopup/EditPasteIP");
 	g_object_set (action, "sensitive", TRUE, "visible", TRUE, NULL);
+
+	g_signal_handlers_disconnect_by_func
+		(menu, G_CALLBACK (hide_embed_popup_cb), manager);
 }
 
 static void
