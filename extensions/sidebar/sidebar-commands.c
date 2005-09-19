@@ -37,18 +37,6 @@
  */
 #include <glib/gi18n.h>
 
-static EphyEmbedEvent *
-get_event_info (EphyWindow *window)
-{
-	EphyEmbedEvent *info;
-
-	info = EPHY_EMBED_EVENT (g_object_get_data
-		(G_OBJECT (window), "context_event"));
-	g_return_val_if_fail (info != NULL, NULL);
-
-	return info;
-}
-
 void
 sidebar_cmd_file_save_as (GtkAction *action,
 			  EphySidebarEmbed *sidebar)
@@ -85,7 +73,7 @@ save_property_url (GtkAction *action,
 		   gboolean ask_dest,
 		   const char *property)
 {
-	EphyEmbedEvent *info;
+	EphyEmbedEvent *event;
 	const char *location;
 	const GValue *value;
 	EphyEmbedPersist *persist;
@@ -97,8 +85,10 @@ save_property_url (GtkAction *action,
 
 	window = ephy_sidebar_embed_get_window (sidebar);
 
-	info = get_event_info (window);
-	ephy_embed_event_get_property (info, property, &value);
+	event = ephy_window_get_context_event (window);
+	if (event == NULL) return;
+
+	ephy_embed_event_get_property (event, property, &value);
 	location = g_value_get_string (value);
 
 	persist = EPHY_EMBED_PERSIST

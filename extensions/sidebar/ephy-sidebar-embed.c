@@ -148,10 +148,16 @@ popup_menu_at_coords (GtkMenu *menu,
 }
 
 static void
-hide_embed_popup_cb (GtkMenu *menu,
-		     GtkUIManager *manager)
+embed_popup_deactivate_cb (GtkMenu *menu,
+			   EphyWindow *window)
 {
+	GtkUIManager *manager;
 	GtkAction *action;
+
+	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
+
+	g_signal_handlers_disconnect_by_func
+		(menu, G_CALLBACK (embed_popup_deactivate_cb), window);
 
 	action = gtk_ui_manager_get_action (manager, "/EphyInputPopup/EditCopyIP");
 	gtk_action_set_sensitive (action, TRUE);
@@ -162,6 +168,8 @@ hide_embed_popup_cb (GtkMenu *menu,
 	action = gtk_ui_manager_get_action (manager, "/EphyInputPopup/EditPasteIP");
 	gtk_action_set_sensitive (action, TRUE);
 	gtk_action_set_visible (action, TRUE);
+
+	_ephy_window_unset_context_event (window);
 }
 
 static void
@@ -246,15 +254,13 @@ show_context_menu (EphySidebarEmbed *sbembed,
 	gtk_action_set_sensitive (action, can_paste);
 	gtk_action_set_visible (action, !hide_edit_actions || can_paste);
 
-	g_object_set_data_full (G_OBJECT (window), "context_event",
-				g_object_ref (event),
-				(GDestroyNotify)g_object_unref);
+	_ephy_window_set_context_event (window, event);
 
 	widget = gtk_ui_manager_get_widget (manager, popup);
 	g_return_if_fail (widget != NULL);
 
-	g_signal_connect (widget, "hide",
-			  G_CALLBACK (hide_embed_popup_cb), manager);
+	g_signal_connect (widget, "deactivate",
+			  G_CALLBACK (embed_popup_deactivate_cb), window);
 
 	button = ephy_embed_event_get_button (event);
 	if (button == 0)
