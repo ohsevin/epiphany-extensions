@@ -1,7 +1,7 @@
 /*
  *  Copyright (C) 2002 Jorn Baayen
  *  Copyright (C) 2003-2004 Marco Pesenti Gritti
- *  Copyright (C) 2004 Christian Persch
+ *  Copyright (C) 2004, 2005 Christian Persch
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -35,11 +35,11 @@ G_BEGIN_DECLS
 #define EPHY_IS_FAVICON_CACHE_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), EPHY_TYPE_FAVICON_CACHE))
 #define EPHY_FAVICON_CACHE_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), EPHY_TYPE_FAVICON_CACHE, EphyFaviconCacheClass))
 
-typedef struct EphyFaviconCacheClass	EphyFaviconCacheClass;
-typedef struct EphyFaviconCache		EphyFaviconCache;
-typedef struct EphyFaviconCachePrivate	EphyFaviconCachePrivate;
+typedef struct _EphyFaviconCacheClass	EphyFaviconCacheClass;
+typedef struct _EphyFaviconCache	EphyFaviconCache;
+typedef struct _EphyFaviconCachePrivate	EphyFaviconCachePrivate;
 
-struct EphyFaviconCache
+struct _EphyFaviconCache
 {
 	GObject parent;
 
@@ -47,7 +47,7 @@ struct EphyFaviconCache
 	EphyFaviconCachePrivate *priv;
 };
 
-struct EphyFaviconCacheClass
+struct _EphyFaviconCacheClass
 {
 	GObjectClass parent_class;
 
@@ -62,6 +62,8 @@ EphyFaviconCache *ephy_favicon_cache_new	(void);
 
 GdkPixbuf	 *ephy_favicon_cache_get	(EphyFaviconCache *cache,
 						 const char *url);
+
+void		  ephy_favicon_cache_clear	(EphyFaviconCache *cache);
 
 G_END_DECLS
 

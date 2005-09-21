@@ -47,6 +47,12 @@ void		ephy_gui_menu_position_under_widget	 (GtkMenu   *menu,
 							  gboolean  *push_in,
 							  gpointer  user_data);
 
+void		ephy_gui_menu_position_on_toolbar	 (GtkMenu   *menu,
+							  gint      *x,
+							  gint      *y,
+							  gboolean  *push_in,
+							  gpointer  user_data);
+
 void		ephy_gui_menu_position_on_panel		 (GtkMenu *menu,
 							  gint      *x,
 							  gint      *y,
@@ -57,11 +63,7 @@ GtkWindowGroup *ephy_gui_ensure_window_group		 (GtkWindow *window);
 
 gboolean	ephy_gui_is_middle_click		 (void);
 
-gboolean	ephy_gui_select_row_by_key		 (GtkTreeView *treeview,
-							  gint column,
-							  guint32 unicode);
-
-gboolean	ephy_gui_confirm_overwrite_file	         (GtkWidget *parent,
+gboolean	ephy_gui_check_location_writable         (GtkWidget *parent,
 							  const char *filename);
 
 void		ephy_gui_help				 (GtkWindow *parent,
