@@ -6,5 +6,4 @@ Makefile
 Makefile.in
 .deps
 .libs
-
-gestures.xml
+gestures.ephy-extension
