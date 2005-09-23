@@ -1,5 +1,115 @@
 2005-09-23  Crispin Flowerday  <gnome@flowerday.cx>
 
+	* extensions/actions/.cvsignore:
+	* extensions/actions/Makefile.am:
+	* extensions/actions/actions.ephy-extension.in.in:
+	* extensions/actions/actions.xml.in.in:
+	* extensions/adblock/.cvsignore:
+	* extensions/adblock/Makefile.am:
+	* extensions/adblock/adblock.ephy-extension.in.in:
+	* extensions/adblock/adblock.xml.in.in:
+	* extensions/auto-scroller/.cvsignore:
+	* extensions/auto-scroller/Makefile.am:
+	* extensions/auto-scroller/auto-scroller.ephy-extension.in.in:
+	* extensions/auto-scroller/auto-scroller.xml.in.in:
+	* extensions/bookmarks-tray/.cvsignore:
+	* extensions/bookmarks-tray/Makefile.am:
+	* extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in:
+	* extensions/bookmarks-tray/bookmarks-tray.xml.in.in:
+	* extensions/certificates/.cvsignore:
+	* extensions/certificates/Makefile.am:
+	* extensions/certificates/certificates.ephy-extension.in.in:
+	* extensions/certificates/certificates.xml.in.in:
+	* extensions/dashboard/.cvsignore:
+	* extensions/dashboard/Makefile.am:
+	* extensions/dashboard/dashboard.ephy-extension.in.in:
+	* extensions/dashboard/dashboard.xml.in.in:
+	* extensions/error-viewer/.cvsignore:
+	* extensions/error-viewer/Makefile.am:
+	* extensions/error-viewer/error-viewer.ephy-extension.in.in:
+	* extensions/error-viewer/error-viewer.xml.in.in:
+	* extensions/extensions-manager-ui/.cvsignore:
+	* extensions/extensions-manager-ui/Makefile.am:
+	* extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in:
+	* extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in:
+	* extensions/favicon/.cvsignore:
+	* extensions/favicon/Makefile.am:
+	* extensions/favicon/favicon.ephy-extension.in:
+	* extensions/favicon/favicon.xml.in.in:
+	* extensions/gestures/Makefile.am:
+	* extensions/gestures/gestures.ephy-extension.in.in:
+	* extensions/greasemonkey/.cvsignore:
+	* extensions/greasemonkey/Makefile.am:
+	* extensions/greasemonkey/greasemonkey.ephy-extension.in.in:
+	* extensions/greasemonkey/greasemonkey.xml.in.in:
+	* extensions/net-monitor/.cvsignore:
+	* extensions/net-monitor/Makefile.am:
+	* extensions/net-monitor/net-monitor.ephy-extension.in.in:
+	* extensions/net-monitor/net-monitor.xml.in.in:
+	* extensions/page-info/.cvsignore:
+	* extensions/page-info/Makefile.am:
+	* extensions/page-info/page-info.ephy-extension.in.in:
+	* extensions/page-info/page-info.xml.in.in:
+	* extensions/python-console/.cvsignore:
+	* extensions/python-console/Makefile.am:
+	* extensions/python-console/python-console.ephy-extension.in:
+	* extensions/python-console/python-console.xml.in:
+	* extensions/rss/.cvsignore:
+	* extensions/rss/Makefile.am:
+	* extensions/rss/rss.ephy-extension.in.in:
+	* extensions/rss/rss.xml.in.in:
+	* extensions/sample-mozilla/.cvsignore:
+	* extensions/sample-mozilla/Makefile.am:
+	* extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in:
+	* extensions/sample-mozilla/sample-mozilla.xml.in.in:
+	* extensions/sample-python/.cvsignore:
+	* extensions/sample-python/Makefile.am:
+	* extensions/sample-python/sample-python-location.ephy-extension.in:
+	* extensions/sample-python/sample-python-location.xml.in:
+	* extensions/sample-python/sample-python-menu.ephy-extension.in:
+	* extensions/sample-python/sample-python-menu.xml.in:
+	* extensions/sample-python/sample-python-statusbar.ephy-extension.in:
+	* extensions/sample-python/sample-python-statusbar.xml.in:
+	* extensions/sample-python/sample-python.ephy-extension.in:
+	* extensions/sample-python/sample-python.xml.in:
+	* extensions/sample/.cvsignore:
+	* extensions/sample/Makefile.am:
+	* extensions/sample/sample.ephy-extension.in.in:
+	* extensions/sample/sample.xml.in.in:
+	* extensions/select-stylesheet/.cvsignore:
+	* extensions/select-stylesheet/Makefile.am:
+	* extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in:
+	* extensions/select-stylesheet/select-stylesheet.xml.in.in:
+	* extensions/sidebar/.cvsignore:
+	* extensions/sidebar/Makefile.am:
+	* extensions/sidebar/sidebar.ephy-extension.in.in:
+	* extensions/sidebar/sidebar.xml.in.in:
+	* extensions/smart-bookmarks/.cvsignore:
+	* extensions/smart-bookmarks/Makefile.am:
+	* extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in:
+	* extensions/smart-bookmarks/smart-bookmarks.xml.in.in:
+	* extensions/tab-groups/.cvsignore:
+	* extensions/tab-groups/Makefile.am:
+	* extensions/tab-groups/tab-groups.ephy-extension.in.in:
+	* extensions/tab-groups/tab-groups.xml.in.in:
+	* extensions/tab-states/.cvsignore:
+	* extensions/tab-states/Makefile.am:
+	* extensions/tab-states/tab-states.ephy-extension.in.in:
+	* extensions/tab-states/tab-states.xml.in.in:
+	* extensions/tabsmenu/.cvsignore:
+	* extensions/tabsmenu/Makefile.am:
+	* extensions/tabsmenu/tabsmenu.ephy-extension.in.in:
+	* extensions/tabsmenu/tabsmenu.xml.in.in:
+	* extensions/toolbar-extras/.cvsignore:
+	* extensions/toolbar-extras/Makefile.am:
+	* extensions/toolbar-extras/toolbar-extras.ephy-extension.in.in:
+	* extensions/toolbar-extras/toolbar-extras.xml.in.in:
+
+	Port the rest of the extensions to the new .ephy-extension file
+	format.
+
+2005-09-23  Crispin Flowerday  <gnome@flowerday.cx>
+
 	* configure.ac:
 	* extensions/gestures/.cvsignore:
 	* extensions/gestures/Makefile.am:

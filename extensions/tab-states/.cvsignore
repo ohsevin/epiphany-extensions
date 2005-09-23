@@ -7,4 +7,4 @@ Makefile
 Makefile.in
 .deps
 .libs
-tab-states.xml
+tab-states.ephy-extension

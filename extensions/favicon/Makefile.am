@@ -2,20 +2,12 @@ favicondir = $(EXTENSIONS_DIR)
 favicon_PYTHON = \
 	favicon.py
 
-extensionsxmldir = $(EXTENSIONS_DIR)
-extensionsxml_in_files = favicon.xml.in.in
-extensionsxml_DATA = $(extensionsxml_in_files:.xml.in.in=.xml)
+extensionsinidir = $(EXTENSIONS_DIR)
+extensionsini_in_files = favicon.ephy-extension.in
+extensionsini_DATA = $(extensionsini_in_files:.ephy-extension.in=.ephy-extension)
 
-%.xml.in: %.xml.in.in $(extension_LTLIBRARIES)
-	sed -e "s|%GETTEXT_PACKAGE%|$(GETTEXT_PACKAGE)|" \
-	    -e "s|%LOCALE_DIR%|$(datadir)/locale|" \
-	    -e "s|%EXTENSION_DIR%|$(extensiondir)|" \
-	$< > $@
+@EPIPHANY_EXTENSION_RULE@
 
-@INTLTOOL_XML_RULE@
-
-EXTRA_DIST = \
-	$(extensionsxml_in_files)
-
-CLEANFILES = $(extensionsxml_DATA)
-DISTCLEANFILES = $(extensionsxml_DATA)
+EXTRA_DIST = $(extensionsini_in_files)
+CLEANFILES = $(extensionsini_DATA)
+DISTCLEANFILES = $(extensionsini_DATA)

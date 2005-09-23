@@ -7,4 +7,4 @@ Makefile.in
 .deps
 .libs
 *.gladep
-extensions-manager-ui.xml
+extensions-manager-ui.ephy-extension

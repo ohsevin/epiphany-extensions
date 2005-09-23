@@ -7,4 +7,4 @@ Makefile.in
 .deps
 .libs
 
-tab-groups.xml
+tab-groups.ephy-extension

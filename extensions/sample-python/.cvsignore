@@ -2,7 +2,7 @@
 *.lo
 *.la
 *.so
-*.xml
+*.ephy-extension
 Makefile
 Makefile.in
 .deps

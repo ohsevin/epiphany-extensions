@@ -5,18 +5,18 @@ sample_PYTHON = \
 	sample-python-menu.py		\
 	sample-python-statusbar.py
 
-extensionsxmldir = $(EXTENSIONS_DIR)
-extensionsxml_in_files = \
-	sample-python.xml.in		\
-	sample-python-location.xml.in	\
-	sample-python-menu.xml.in	\
-	sample-python-statusbar.xml.in
-extensionsxml_DATA = $(extensionsxml_in_files:.xml.in=.xml)
+extensionsinidir = $(EXTENSIONS_DIR)
+extensionsini_in_files = \
+	sample-python.ephy-extension.in		\
+	sample-python-location.ephy-extension.in	\
+	sample-python-menu.ephy-extension.in	\
+	sample-python-statusbar.ephy-extension.in
+extensionsini_DATA = $(extensionsini_in_files:.ephy-extension.in=.ephy-extension)
 
-@INTLTOOL_XML_RULE@
+@EPIPHANY_EXTENSION_RULE@
 
 EXTRA_DIST = \
-	$(extensionsxml_in_files)
+	$(extensionsini_in_files)
 
-CLEANFILES = $(extensionsxml_DATA)
-DISTCLEANFILES = $(extensionsxml_DATA)
+CLEANFILES = $(extensionsini_DATA)
+DISTCLEANFILES = $(extensionsini_DATA)

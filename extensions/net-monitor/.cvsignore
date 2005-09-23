@@ -6,4 +6,4 @@ Makefile
 Makefile.in
 .deps
 .libs
-net-monitor.xml
+net-monitor.ephy-extension

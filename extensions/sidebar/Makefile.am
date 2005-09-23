@@ -28,21 +28,19 @@ uimanager_DATA = epiphany-sidebar-ui.xml
 
 uimanagerdir = $(pkgdatadir)/xml
 
-extensionxmldir = $(extensiondir)
-extensionxml_in_files = sidebar.xml.in.in
-extensionxml_DATA = $(extensionxml_in_files:.xml.in.in=.xml)
+extensioninidir = $(extensiondir)
+extensionini_in_files = sidebar.ephy-extension.in.in
+extensionini_DATA = $(extensionini_in_files:.ephy-extension.in.in=.ephy-extension)
 
-%.xml.in: %.xml.in.in $(extension_LTLIBRARIES)
-	sed -e "s|%GETTEXT_PACKAGE%|$(GETTEXT_PACKAGE)|" \
-	    -e "s|%LOCALE_DIR%|$(datadir)/locale|" \
-	    -e "s|%LIBRARY%|`. ./$(extension_LTLIBRARIES) && echo $$dlname`|" \
+%.ephy-extension.in: %.ephy-extension.in.in $(extension_LTLIBRARIES)
+	sed -e "s|%LIBRARY%|`. ./$(extension_LTLIBRARIES) && echo $$dlname`|" \
 	    -e "s|%EXTENSION_DIR%|$(extensiondir)|" \
 	$< > $@
 
-@INTLTOOL_XML_RULE@
+@EPIPHANY_EXTENSION_RULE@
 
-CLEANFILES = $(BUILT_SOURCES) $(extensionxml_DATA)
-DISTCLEANFILES = $(BUILT_SOURCES) $(extensionxml_DATA)
+CLEANFILES = $(BUILT_SOURCES) $(extensionini_DATA)
+DISTCLEANFILES = $(BUILT_SOURCES) $(extensionini_DATA)
 
 EXTRA_DIST = \
 	$(uimanager_DATA)		\

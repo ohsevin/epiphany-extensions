@@ -6,4 +6,4 @@ Makefile
 Makefile.in
 .deps
 .libs
-adblock.xml
+adblock.ephy-extension

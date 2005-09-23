@@ -7,4 +7,4 @@ Makefile.in
 .deps
 .libs
 
-sample.xml
+sample.ephy-extension

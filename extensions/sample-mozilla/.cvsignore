@@ -7,4 +7,4 @@ Makefile.in
 .deps
 .libs
 
-sample-mozilla.xml
+sample-mozilla.ephy-extension

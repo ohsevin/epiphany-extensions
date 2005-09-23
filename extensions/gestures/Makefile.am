@@ -24,9 +24,9 @@ libgesturesextension_la_CFLAGS = \
 gesturesdir = $(pkgdatadir)
 gestures_DATA =	ephy-gestures.xml
 
-extensionxmldir = $(extensiondir)
-extensionxml_in_files = gestures.ephy-extension.in.in
-extensionxml_DATA = $(extensionxml_in_files:.ephy-extension.in.in=.ephy-extension)
+extensioninidir = $(extensiondir)
+extensionini_in_files = gestures.ephy-extension.in.in
+extensionini_DATA = $(extensionini_in_files:.ephy-extension.in.in=.ephy-extension)
 
 %.ephy-extension.in: %.ephy-extension.in.in $(extension_LTLIBRARIES)
 	sed -e "s|%LIBRARY%|`. ./$(extension_LTLIBRARIES) && echo $$dlname`|" \
@@ -35,7 +35,7 @@ extensionxml_DATA = $(extensionxml_in_files:.ephy-extension.in.in=.ephy-extensio
 
 @EPIPHANY_EXTENSION_RULE@
 
-CLEANFILES = $(extensionxml_DATA)
-DISTCLEANFILES = $(extensionxml_DATA)
+CLEANFILES = $(extensionini_DATA)
+DISTCLEANFILES = $(extensionini_DATA)
 
-EXTRA_DIST = $(gestures_DATA) $(extensionxml_in_files)
+EXTRA_DIST = $(gestures_DATA) $(extensionini_in_files)

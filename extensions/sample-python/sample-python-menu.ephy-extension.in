@@ -1,0 +1,10 @@
+[Epiphany Extension]
+_Name=Sample Python Menu
+_Description=Creates dummy menu entries using PyGTK
+Authors=Adam Hooper <adamh@densi.com>
+URL=http://www.gnome.org/projects/epiphany/extensions.html
+Version=1
+
+[Loader]
+Type=python
+Module=sample-python-menu

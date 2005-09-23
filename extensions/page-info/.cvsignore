@@ -7,4 +7,4 @@ Makefile.in
 .deps
 .libs
 *.gladep
-page-info.xml
+page-info.ephy-extension

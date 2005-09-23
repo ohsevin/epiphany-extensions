@@ -8,4 +8,4 @@ Makefile.in
 .libs
 ephy-sidebar-marshal.c
 ephy-sidebar-marshal.h
-sidebar.xml
+sidebar.ephy-extension

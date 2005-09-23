@@ -1,0 +1,11 @@
+[Epiphany Extension]
+_Name=Python Console
+_Description=Opens an interactive Python console
+Authors=James Henstridge <james@daa.com.au> and Adam Hooper &lt;adamh@densi.com&gt;
+Version=1
+URL=http://www.gnome.org/projects/epiphany/extensions.html
+
+
+[Loader]
+Type=python
+Module=console

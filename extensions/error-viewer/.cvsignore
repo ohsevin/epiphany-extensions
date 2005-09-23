@@ -6,4 +6,4 @@ Makefile
 Makefile.in
 .deps
 .libs
-error-viewer.xml
+error-viewer.ephy-extension

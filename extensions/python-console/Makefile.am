@@ -2,14 +2,12 @@ consoledir = $(EXTENSIONS_DIR)
 console_PYTHON = \
 	console.py
 
-extensionsxmldir = $(EXTENSIONS_DIR)
-extensionsxml_in_files = python-console.xml.in
-extensionsxml_DATA = $(extensionsxml_in_files:.xml.in=.xml)
+extensionsinidir = $(EXTENSIONS_DIR)
+extensionsini_in_files = python-console.ephy-extension.in
+extensionsini_DATA = $(extensionsini_in_files:.ephy-extension.in=.ephy-extension)
 
-@INTLTOOL_XML_RULE@
+@EPIPHANY_EXTENSION_RULE@
 
-EXTRA_DIST = \
-	$(extensionsxml_in_files)
-
-CLEANFILES = $(extensionsxml_DATA)
-DISTCLEANFILES = $(extensionsxml_DATA)
+EXTRA_DIST = $(extensionsini_in_files)
+CLEANFILES = $(extensionsini_DATA)
+DISTCLEANFILES = $(extensionsini_DATA)
