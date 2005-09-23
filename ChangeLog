@@ -112,7 +112,7 @@
 	* extensions/toolbar-extras/toolbar-extras.xml.in.in:
 
 	Port the rest of the extensions to the new .ephy-extension file
-	format.
+	format. Patch from Gustavo Gama, adapted with some changes.
 
 2005-09-23  Crispin Flowerday  <gnome@flowerday.cx>
 
