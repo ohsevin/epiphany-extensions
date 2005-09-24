@@ -1,3 +1,11 @@
+2005-09-24  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/page-info/ephy-page-info-extension.c:
+	(impl_attach_window):
+
+	Move Page Information menu item to View menu.
+	Patch by Tommi Komulainen, fixes bug #316247.
+
 2005-09-23  Christian Persch  <chpe@cvs.gnome.org>
 
 	* tools/copy-template:

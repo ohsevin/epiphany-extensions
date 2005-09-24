@@ -37,7 +37,7 @@
 #include <glib/gi18n-lib.h>
 
 #define WINDOW_DATA_KEY "EphyPageInfoExtensionWindowData"
-#define MENU_PATH "/menubar/ToolsMenu"
+#define MENU_PATH "/menubar/ViewMenu"
 
 #define EPHY_PAGE_INFO_EXTENSION_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_PAGE_INFO_EXTENSION, EphyPageInfoExtensionPrivate))
 
@@ -62,7 +62,7 @@ static const GtkActionEntry action_entries [] =
 {
 	{ "PageInfo",
 	  NULL,
-	  N_("_Page Info"),
+	  N_("Pa_ge Information"),
 	  NULL,
 	  N_("Display page information in a dialog"),
 	  G_CALLBACK (ephy_page_info_extension_display_cb) },
@@ -252,15 +252,9 @@ impl_attach_window (EphyExtension *extension,
 	g_object_set_data_full (G_OBJECT (window), WINDOW_DATA_KEY, data,
 				(GDestroyNotify) free_window_data);
 
-	gtk_ui_manager_add_ui (manager, ui_id, MENU_PATH,
-			       "PageInfoSep", NULL,
-			       GTK_UI_MANAGER_SEPARATOR, FALSE);
-	gtk_ui_manager_add_ui (manager, ui_id, MENU_PATH,
+	gtk_ui_manager_add_ui (manager, ui_id, MENU_PATH "/ViewPageSourceMenu",
 			       "PageInfo", "PageInfo",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
-	gtk_ui_manager_add_ui (manager, ui_id, MENU_PATH,
-			       "PageInfoSep2", NULL,
-			       GTK_UI_MANAGER_SEPARATOR, FALSE);
 
 	notebook = ephy_window_get_notebook (window);
 
