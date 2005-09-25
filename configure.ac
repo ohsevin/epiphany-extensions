@@ -175,7 +175,7 @@ AC_ARG_WITH([extensions],
 			  build the specified extensions. Available:
 			  actions, adblock, bookmarks-tray, certificates, dashboard,
 			  error-viewer, extensions-manager-ui, gestures, net-monitor,
-			  page-info, sample, sampls-mozilla, select-stylesheet,
+			  page-info, rss, sample, sampls-mozilla, select-stylesheet,
 			  sidebar, smart-bookmarks, tab-groups, and tabsmenu,
 			  as well as the aliases default, all, and really-all],
 			  [extensions=$with_extensions],
