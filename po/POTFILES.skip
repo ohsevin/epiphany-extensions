@@ -10,6 +10,6 @@ extensions/sidebar/ephy-sidebar-embed.c
 extensions/sidebar/sidebar-commands.c
 
 #don't translate those, until we've reviewed the strings:
-extensions/adblock/adblock.xml.in.in
-extensions/toolbar-extras/toolbar-extras.xml.in.in
+extensions/adblock/adblock.ephy-extension.in.in
+extensions/toolbar-extras/toolbar-extras.ephy-extension.in.in
 

@@ -1,3 +1,10 @@
+2005-10-01  Christian Persch  <chpe@cvs.gnome.org>
+
+	* POTFILES.in:
+	* POTFILES.skip:
+
+	Update POTFILES for the .xml -> .ini format change. Fixes bug #317670.
+
 2005-10-01  Alexander Shopov  <ash@contact.bg>
 
 	* bg.po: Updated Bulgarian translation by
