@@ -3,6 +3,11 @@ NOTE: they'll be released anytime an Epiphany 1.8.x release is made.
 NOTE: 
 NOTE: And please keep this notice at the top of the file!
 
+2005-10-01  Alexander Shopov  <ash@contact.bg>
+
+	* bg.po: Updated Bulgarian translation by
+	Vladimir Petkov <vpetkov@i-space.org>
+
 2005-09-04  Christian Persch  <chpe@cvs.gnome.org>
 
 	* POTFILES.in: Updated.
