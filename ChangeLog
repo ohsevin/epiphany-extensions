@@ -1,3 +1,11 @@
+2005-10-02  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/tab-groups/ephy-tab-grouper.c:
+	(ephy_tab_grouper_set_notebook):
+
+	Fix tab-groups extension for changed EphyNotebook signal
+	name.
+
 2005-09-25  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* configure.ac: 

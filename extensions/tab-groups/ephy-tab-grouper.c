@@ -133,8 +133,6 @@ ephy_tab_grouper_set_notebook (EphyTabGrouper *grouper,
 	g_signal_connect_swapped (notebook, "switch_page", 
 				  G_CALLBACK (reset_last_tab), grouper);
 	g_signal_connect_swapped (notebook, "tabs_reordered", 
-				  G_CALLBACK (reset_last_tab), grouper);	
-	g_signal_connect_swapped (notebook, "tab_delete", 
 				  G_CALLBACK (reset_last_tab), grouper);
 }
 
