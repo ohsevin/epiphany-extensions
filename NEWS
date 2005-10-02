@@ -1,4 +1,20 @@
 =========================
+Epiphany Extensions 1.8.1
+=========================
+
+Changes
+
+	* Fix some extensions for changed APIs
+	* Move Page Information to View menu
+
+Contributors to this release: Tommi Komulainen and Christian Persch.
+
+Updated translations:
+
+	* Rostislav "zbrox" Raykov (bg)
+
+
+=========================
 Epiphany Extensions 1.8.0
 =========================
 

@@ -1,5 +1,11 @@
 2005-10-02  Christian Persch  <chpe@cvs.gnome.org>
 
+	=== Release 1.8.1 ===
+
+	* NEWS:
+
+2005-10-02  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/tab-groups/ephy-tab-grouper.c:
 	(ephy_tab_grouper_set_notebook):
 
