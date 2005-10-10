@@ -48,6 +48,8 @@
 
 #include <string.h>
 
+#define EPIPHANY_GETTEXT_DOMAIN	"epiphany"
+
 #define EPHY_SIDEBAR_EMBED_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_SIDEBAR_EMBED, EphySidebarEmbedPrivate))
 
 struct _EphySidebarEmbedPrivate
@@ -455,7 +457,7 @@ ephy_sidebar_embed_set_window (EphySidebarEmbed *sbembed,
 
 	action_group = sbembed->priv->action_group =
 		gtk_action_group_new ("SidebarContextMenuActions");
-	gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
+	gtk_action_group_set_translation_domain (action_group, EPIPHANY_GETTEXT_DOMAIN);
 	gtk_action_group_add_actions (action_group, action_entries,
 				      G_N_ELEMENTS (action_entries), sbembed);
 

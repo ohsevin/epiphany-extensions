@@ -1,3 +1,10 @@
+2005-10-10  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/sidebar/ephy-sidebar-embed.c:
+	(ephy_sidebar_embed_set_window):
+
+	Fix gettext domain use.
+
 2005-09-19  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
