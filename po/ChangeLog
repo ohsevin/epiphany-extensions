@@ -3,6 +3,10 @@ NOTE: they'll be released anytime an Epiphany 1.8.x release is made.
 NOTE: 
 NOTE: And please keep this notice at the top of the file!
 
+2005-10-17  Funda Wang  <fundawang@linux.net.cn>
+
+	* zh_CN.po: Updated Simplified Chinese translation.
+
 2005-10-01  Alexander Shopov  <ash@contact.bg>
 
 	* bg.po: Updated Bulgarian translation by
