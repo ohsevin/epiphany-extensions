@@ -8,76 +8,256 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-05-31 13:15+0200\n"
-"PO-Revision-Date: 2004-05-23 04:29+0800\n"
-"Last-Translator: Liu Songhe <jackliu9999@263.net>\n"
+"POT-Creation-Date: 2005-10-17 05:58+0800\n"
+"PO-Revision-Date: 2005-10-17 06:51+0800\n"
+"Last-Translator: Funda Wang <fundawang@linux.net.cn>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:160
-msgid "Certificate Manager"
-msgstr "证书管理器"
+#: ../extensions/actions/action-properties.glade.h:1
+msgid "<span weight=\"bold\">Applies to</span>"
+msgstr "<span weight=\"bold\">应用到</span>"
+
+#: ../extensions/actions/action-properties.glade.h:2
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">常规</span>"
+
+#: ../extensions/actions/action-properties.glade.h:3
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"images."
+msgstr ""
+"如果启用此选项，则在图像的弹出菜单中包含动作。"
+
+#: ../extensions/actions/action-properties.glade.h:4
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"links and pages."
+msgstr ""
+"如果启用此选项，则在链接和页面的弹出菜单中包含动作。"
+
+#: ../extensions/actions/action-properties.glade.h:5
+msgid "The action description."
+msgstr "动作描述。"
+
+#: ../extensions/actions/action-properties.glade.h:6
+msgid ""
+"The action name. If a character is preceded by an underscore, that character "
+"will be used as the access key for the menu item."
+msgstr ""
+"动作名称。如果字符前面包含下划线，则字符将会用作菜单项的加速键。"
+
+#: ../extensions/actions/action-properties.glade.h:7
+msgid ""
+"The command to execute when the action is activated. The URL of the link, "
+"image or page will be appended to the command."
+msgstr ""
+"激活动作时所执行的命令。链接、图像或页面的 URL 将被追加到命令后面。"
+
+#: ../extensions/actions/action-properties.glade.h:8
+msgid "_Command:"
+msgstr "命令(_C)："
+
+#: ../extensions/actions/action-properties.glade.h:9
+msgid "_Description:"
+msgstr "描述(_D)："
+
+#: ../extensions/actions/action-properties.glade.h:10
+msgid "_Images"
+msgstr "图像(_I)"
+
+#: ../extensions/actions/action-properties.glade.h:11
+msgid "_Name:"
+msgstr "名称(_N)："
+
+#: ../extensions/actions/action-properties.glade.h:12
+msgid "_Pages"
+msgstr "页面(_P)"
+
+#: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions.xml.in.in.h:1
+msgid "Actions"
+msgstr "动作"
+
+#: ../extensions/actions/actions.xml.in.in.h:2
+msgid "Execute arbitrary commands from the context menu"
+msgstr "从快捷菜单中执行外部命令"
+
+#: ../extensions/actions/ephy-actions-extension.c:94
+msgid "_Actions"
+msgstr "动作(_A)"
+
+#: ../extensions/actions/ephy-actions-extension.c:95
+msgid "Customize actions"
+msgstr "自定义动作"
+
+#: ../extensions/actions/ephy-actions-extension.c:408
+msgid "Could not run command"
+msgstr "无法运行命令"
+
+#: ../extensions/actions/ephy-actions-extension.c:411
+msgid "Could not Run Command"
+msgstr "无法运行命令"
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:490
+msgid "No action selected."
+msgstr "未选择命令。"
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:500
+#, c-format
+msgid "%i action selected."
+msgid_plural "%i actions selected."
+msgstr[0] "选中了 %i 个动作。"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:312
+msgid "Add Action"
+msgstr "添加动作"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:415
+#, c-format
+msgid "%s Properties"
+msgstr "%s 属性"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
+msgid "Action Properties"
+msgstr "动作属性"
+
+#: ../extensions/auto-scroller/auto-scroller.xml.in.in.h:1
+msgid "Auto Scroll"
+msgstr "自动滚动"
+
+#: ../extensions/auto-scroller/auto-scroller.xml.in.in.h:2
+msgid "Scroll on middle mouse click"
+msgstr "鼠标中键单击时滚动"
+
+#: ../extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:1
+msgid "Add a bookmarks menu to the panel's notification area"
+msgstr "在面板的通知区域添加书签菜单"
+
+#: ../extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:2
+msgid "Bookmarks Tray"
+msgstr "书签托盘"
+
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
+msgid "_Edit Bookmarks"
+msgstr "编辑书签(_E)"
+
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
+msgid "Open the bookmarks window"
+msgstr "打开书签窗口"
+
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
+msgid "Open in _Current Tab"
+msgstr "在当前标签中打开(_C)"
+
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
+msgid "Open bookmarks in the current tab of the active window"
+msgstr "在当前窗口的当前标签中打开书签"
+
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
+msgid "Open in New _Tab"
+msgstr "在新标签中打开(_T)"
+
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
+msgid "Open bookmarks in a new tab of the active window"
+msgstr "在当前窗口的新标签中打开书签"
+
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
+msgid "Open in New _Window"
+msgstr "在新窗口中打开(_W)"
+
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
+msgid "Open bookmarks in new a window"
+msgstr "在新窗口中打开书签"
+
+#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:531
+msgid "Bookmarks"
+msgstr "书签"
+
+#: ../extensions/certificates/certificates.xml.in.in.h:1
+msgid "Certificates"
+msgstr "证书"
+
+#: ../extensions/certificates/certificates.xml.in.in.h:2
+msgid "View the page certificate and manage the certificates"
+msgstr "查看页面证书并管理证书"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:276
+#: ../extensions/certificates/ephy-certificates-extension.c:275
 msgid "Manage _Certificates"
 msgstr "管理证书(_C)"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:278
+#: ../extensions/certificates/ephy-certificates-extension.c:277
 msgid "Manage your certificates"
 msgstr "管理您的证书"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:286
+#: ../extensions/certificates/ephy-certificates-extension.c:284
 msgid "Server _Certificate"
 msgstr "服务器证书(_C)"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:288
+#: ../extensions/certificates/ephy-certificates-extension.c:286
 msgid "Display the web server's certificate"
 msgstr "显示 Web 服务器的证书"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:88
+#: ../extensions/dashboard/dashboard.xml.in.in.h:1
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: ../extensions/dashboard/dashboard.xml.in.in.h:2
+msgid "Send browsing information to Dashboard"
+msgstr "将浏览信息发送到 Dashboard"
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
 msgstr "检查 _HTML"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:90
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "在错误查看器对话框中显示 HTML 错误"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:95
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:104
 msgid "Check _Links"
 msgstr "检查链接(_L)"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:97
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:106
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr "在错误查看器对话框中显示无效的超链接"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:101
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:110
 msgid "_Error Viewer"
 msgstr "错误查看器(_E)"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:103
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:112
 msgid "Display web page errors"
 msgstr "显示网页错误"
 
-#: extensions/error-viewer/error-viewer.glade.h:1
-msgid "C_lear"
-msgstr "清除(_L)"
+#: ../extensions/error-viewer/error-viewer.glade.h:1
+msgid "Cl_ear"
+msgstr "清除(_E)"
 
-#: extensions/error-viewer/error-viewer.glade.h:2
+#: ../extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
 msgstr "错误查看器"
 
+#: ../extensions/error-viewer/error-viewer.xml.in.in.h:1
+msgid "Error viewer"
+msgstr "错误查看器"
+
+#: ../extensions/error-viewer/error-viewer.xml.in.in.h:2
+msgid "View error in web pages, validate web pages and check links"
+msgstr "查看网页中的错误，验证网页并检查链接"
+
 #. Don't bother looking for source lines -- they're not there
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:108
 #, c-format
 msgid ""
 "Error:\n"
@@ -86,7 +266,7 @@ msgstr ""
 "错误：\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:90
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:138
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -95,26 +275,26 @@ msgstr ""
 "在 %s 的第 %d 行中有 Javascript 错误：\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
 msgstr[0] "发现 %d 个无效链接"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
 msgid ""
 "Link error in %s:\n"
 "%s is unavailable."
 msgstr "%s 中有链接错误：%s 无法访问。"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
 #, c-format
 msgid "Checking %d Link on %s"
 msgid_plural "Checking %d Links on %s"
 msgstr[0] "正在检查 %2$s 上的 %1$d 个链接"
 
-#: extensions/error-viewer/opensp/validate.cpp:167
+#: ../extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
 msgid ""
 "HTML error in %s on line %s:\n"
@@ -123,18 +303,18 @@ msgstr ""
 "在 %s 的第 %s 行中有 HTML 错误：\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:165
+#: ../extensions/error-viewer/sgml-validator.c:165
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
 msgstr[0] "发现 %d 个错误"
 
-#: extensions/error-viewer/sgml-validator.c:169
+#: ../extensions/error-viewer/sgml-validator.c:169
 #, c-format
 msgid "HTML Validation of %s complete"
 msgstr "%s 的 HTML 校验完成"
 
-#: extensions/error-viewer/sgml-validator.c:227
+#: ../extensions/error-viewer/sgml-validator.c:227
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -143,8 +323,8 @@ msgstr ""
 "%s 的 HTML 错误：\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:229
-#: extensions/error-viewer/sgml-validator.c:245
+#: ../extensions/error-viewer/sgml-validator.c:229
+#: ../extensions/error-viewer/sgml-validator.c:245
 msgid ""
 "Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
 "xhtml+xml\" instead."
@@ -152,7 +332,7 @@ msgstr ""
 "文档类型是“XHTML”，但是内容类型却为“text/html”。请换用“application/xhtml"
 "+xml”。"
 
-#: extensions/error-viewer/sgml-validator.c:243
+#: ../extensions/error-viewer/sgml-validator.c:243
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
@@ -161,20 +341,20 @@ msgstr ""
 "%s 的 HTML 警告：\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:360
+#: ../extensions/error-viewer/sgml-validator.c:360
 #, c-format
 msgid "HTML error in %s:"
 msgstr "%s 的 HTML 错误："
 
-#: extensions/error-viewer/sgml-validator.c:368
+#: ../extensions/error-viewer/sgml-validator.c:368
 msgid "Invalid character encoding"
 msgstr "无效的字符编码"
 
-#: extensions/error-viewer/sgml-validator.c:373
+#: ../extensions/error-viewer/sgml-validator.c:373
 msgid "Unknown error while converting to UTF-8"
 msgstr "转换为 UTF-8 时发生了未知错误"
 
-#: extensions/error-viewer/sgml-validator.c:435
+#: ../extensions/error-viewer/sgml-validator.c:435
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -183,31 +363,577 @@ msgstr ""
 "%s 中有 HTML 错误：\n"
 "没有指定有效的文档类型。"
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
-msgid "Popup _Windows"
-msgstr "弹出窗口(_W)"
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
+msgid "_Extensions"
+msgstr "扩展(_E)"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+msgid "Load and unload extensions"
+msgstr "装入和卸载扩展"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:357
+msgid "Enabled"
+msgstr "启用"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: ../extensions/rss/rss-ui.c:571
+msgid "Description"
+msgstr "描述"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+msgid "<b>Loaded Extensions</b>"
+msgstr "<b>装入的扩展</b>"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+msgid "Extensions"
+msgstr "扩展"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:1
+msgid "Activate and deactivate extensions"
+msgstr "激活和禁用扩展"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:2
+msgid "Extensions Manager"
+msgstr "扩展管理器"
+
+#: ../extensions/favicon/favicon.xml.in.in.h:1
+msgid "Favicon fallback"
+msgstr "默认收藏图标"
+
+#: ../extensions/favicon/favicon.xml.in.in.h:2
+msgid ""
+"Loads /favicon.ico as favicon if the site doesn't use the standard method"
+msgstr "如果网站不使用标准方式指定收藏图标，则装入 /favicon.ico"
+
+#: ../extensions/gestures/gestures.xml.in.in.h:1
+msgid "Gestures"
+msgstr "手势"
+
+#: ../extensions/gestures/gestures.xml.in.in.h:2
+msgid "Perform actions with mouse gestures"
+msgstr "用鼠标手势执行动作"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+msgid "Install User _Script"
+msgstr "安装用户脚本(_S)"
 
 #. shortcut key
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
-msgid "Show or hide unrequested popup windows from this site"
-msgstr "显示或隐藏未请求的来自此站点的弹出窗口"
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
+msgid "Install Greasemonkey script"
+msgstr "安装 Greasemonkey 脚本"
 
-#: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:354
 #, c-format
-msgid "%d popup window blocked"
-msgid_plural "%d popup windows blocked"
-msgstr[0] "屏蔽了 %d 个弹出窗口"
+msgid "The user script at %s has been installed"
+msgstr "%s 的用户脚本已经安装"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:183
+#: ../extensions/greasemonkey/greasemonkey.xml.in.in.h:1
+msgid "Greasemonkey"
+msgstr "Greasemonkey"
+
+#: ../extensions/greasemonkey/greasemonkey.xml.in.in.h:2
+msgid "Run user scripts to modify web pages' behavior"
+msgstr "运行用户脚本修改网页的行为"
+
+#. How to describe this? It makes Epiphany "Just Work"
+#: ../extensions/net-monitor/net-monitor.xml.in.in.h:2
+msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
+msgstr "自动处理网络联机/脱机状态(试验性质!)"
+
+#: ../extensions/net-monitor/net-monitor.xml.in.in.h:3
+msgid "Network Connection Monitor"
+msgstr "网络连接监视器"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:65
+msgid "Pa_ge Information"
+msgstr "页面信息(_G)"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:67
+msgid "Display page information in a dialog"
+msgstr "在对话框中显示页面信息"
+
+#: ../extensions/page-info/page-info-dialog.c:727
+msgid "Save As..."
+msgstr "另存为..."
+
+#: ../extensions/page-info/page-info-dialog.c:744
+msgid "Select a directory"
+msgstr "选择目录"
+
+#: ../extensions/page-info/page-info-dialog.c:793
+msgid "Unknown type"
+msgstr "未知类型"
+
+#: ../extensions/page-info/page-info-dialog.c:798
+msgid "Full standards compliance"
+msgstr "完全遵从标准"
+
+#: ../extensions/page-info/page-info-dialog.c:801
+msgid "Almost standards compliance"
+msgstr "基本遵从标准"
+
+#: ../extensions/page-info/page-info-dialog.c:804
+msgid "Compatibility"
+msgstr "兼容性"
+
+#: ../extensions/page-info/page-info-dialog.c:808
+msgid "Undetermined"
+msgstr "未确定"
+
+#: ../extensions/page-info/page-info-dialog.c:817
+msgid "Not cached"
+msgstr "未缓存"
+
+#: ../extensions/page-info/page-info-dialog.c:820
+msgid "Disk cache"
+msgstr "磁盘缓存"
+
+#: ../extensions/page-info/page-info-dialog.c:823
+msgid "Memory cache"
+msgstr "内存缓存"
+
+#: ../extensions/page-info/page-info-dialog.c:826
+msgid "Unknown cache"
+msgstr "位置缓存"
+
+#: ../extensions/page-info/page-info-dialog.c:842
+#: ../extensions/page-info/page-info-dialog.c:953
+msgid "Unknown"
+msgstr "未知"
+
+#: ../extensions/page-info/page-info-dialog.c:847
+msgid "No referrer"
+msgstr "无引用者"
+
+#: ../extensions/page-info/page-info-dialog.c:861
+#: ../extensions/page-info/page-info-dialog.c:877
+msgid "Not specified"
+msgstr "未指定"
+
+#: ../extensions/page-info/page-info-dialog.c:938
+msgid "Image"
+msgstr "图像"
+
+#: ../extensions/page-info/page-info-dialog.c:941
+msgid "Embed"
+msgstr "嵌入"
+
+#: ../extensions/page-info/page-info-dialog.c:944
+msgid "Object"
+msgstr "对象"
+
+#: ../extensions/page-info/page-info-dialog.c:947
+msgid "Applet"
+msgstr "小程序"
+
+#: ../extensions/page-info/page-info-dialog.c:950
+msgid "Icon"
+msgstr "图标"
+
+#: ../extensions/page-info/page-info-dialog.c:1055
+msgid "_Open"
+msgstr "打开(_O)"
+
+#: ../extensions/page-info/page-info-dialog.c:1061
+#: ../extensions/page-info/page-info-dialog.c:1413
+msgid "_Copy Link Address"
+msgstr "复制链接地址(_C)"
+
+#: ../extensions/page-info/page-info-dialog.c:1067
+msgid "_Use as Background"
+msgstr "用作背景(_U)"
+
+#: ../extensions/page-info/page-info-dialog.c:1073
+#: ../extensions/page-info/page-info-dialog.c:1419
+msgid "_Save As..."
+msgstr "另存为(_S)..."
+
+#: ../extensions/page-info/page-info-dialog.c:1250
+#: ../extensions/page-info/page-info-dialog.c:1491
+msgid "URL"
+msgstr "URL"
+
+#: ../extensions/page-info/page-info-dialog.c:1262
+msgid "Type"
+msgstr "类型"
+
+#: ../extensions/page-info/page-info-dialog.c:1274
+msgid "Alt Text"
+msgstr "替代文本"
+
+#: ../extensions/page-info/page-info-dialog.c:1286
+#: ../extensions/page-info/page-info-dialog.c:1503
+msgid "Title"
+msgstr "标题"
+
+#: ../extensions/page-info/page-info-dialog.c:1298
+msgid "Width"
+msgstr "宽度"
+
+#: ../extensions/page-info/page-info-dialog.c:1310
+msgid "Height"
+msgstr "高度"
+
+#: ../extensions/page-info/page-info-dialog.c:1515
+msgid "Relation"
+msgstr "关系"
+
+#: ../extensions/page-info/page-info-dialog.c:1645
+#: ../extensions/page-info/page-info-dialog.c:1782
+msgid "Name"
+msgstr "名称"
+
+#: ../extensions/page-info/page-info-dialog.c:1657
+msgid "Method"
+msgstr "方式"
+
+#: ../extensions/page-info/page-info-dialog.c:1669
+msgid "Action"
+msgstr "动作"
+
+#: ../extensions/page-info/page-info-dialog.c:1748
+msgid "_Copy"
+msgstr "复制(_C)"
+
+#: ../extensions/page-info/page-info-dialog.c:1794
+msgid "Content"
+msgstr "内容"
+
+#: ../extensions/page-info/page-info-dialog.c:1893
+msgid "Page Metadata"
+msgstr "页面元数据"
+
+#: ../extensions/page-info/page-info.glade.h:1
+msgid "<b>Dublin Core Metadata</b>"
+msgstr "<b>Dublin Core 元数据</b>"
+
+#: ../extensions/page-info/page-info.glade.h:2
+msgid "<b>Forms In Page</b>"
+msgstr "<b>页面中的表单</b>"
+
+#: ../extensions/page-info/page-info.glade.h:3
+msgid "<b>Links In Page</b>"
+msgstr "<b>页面中的链接</b>"
+
+#: ../extensions/page-info/page-info.glade.h:4
+msgid "<b>Media In Page</b>"
+msgstr "<b>页面中的媒体</b>"
+
+#: ../extensions/page-info/page-info.glade.h:5
+msgid "<b>Medium View</b>"
+msgstr "<b>介质查看</b>"
+
+#: ../extensions/page-info/page-info.glade.h:6
+msgid "<b>Other Metadata</b>"
+msgstr "<b>其它元数据</b>"
+
+#: ../extensions/page-info/page-info.glade.h:7
+msgid "<b>Rendering</b>"
+msgstr "<b>渲染</b>"
+
+#: ../extensions/page-info/page-info.glade.h:8
+msgid "<b>Source File</b>"
+msgstr "<b>源文件</b>"
+
+#: ../extensions/page-info/page-info.glade.h:9
+msgid "<b>Web Page</b>"
+msgstr "<b>网页</b>"
+
+#: ../extensions/page-info/page-info.glade.h:10
+msgid "DYNAMIC"
+msgstr "动态"
+
+#: ../extensions/page-info/page-info.glade.h:11
+msgid "Date:"
+msgstr "日期："
+
+#: ../extensions/page-info/page-info.glade.h:12
+msgid "Description:"
+msgstr "描述："
+
+#: ../extensions/page-info/page-info.glade.h:13
+msgid "Encoding:"
+msgstr "编码："
+
+#: ../extensions/page-info/page-info.glade.h:14
+msgid "Expires:"
+msgstr "过期："
+
+#: ../extensions/page-info/page-info.glade.h:15
+msgid "Format:"
+msgstr "格式："
+
+#: ../extensions/page-info/page-info.glade.h:16
+msgid "Forms"
+msgstr "表单"
+
+#: ../extensions/page-info/page-info.glade.h:17
+msgid "General"
+msgstr "常规"
+
+#: ../extensions/page-info/page-info.glade.h:18
+msgid "Links"
+msgstr "链接"
+
+#: ../extensions/page-info/page-info.glade.h:19
+msgid "Location:"
+msgstr "位置："
+
+#: ../extensions/page-info/page-info.glade.h:20
+msgid "MIME type:"
+msgstr "MIME 类型："
+
+#: ../extensions/page-info/page-info.glade.h:21
+msgid "Media"
+msgstr "媒体"
+
+#: ../extensions/page-info/page-info.glade.h:22
+msgid "Metadata"
+msgstr "元数据"
+
+#: ../extensions/page-info/page-info.glade.h:23
+msgid "Mode:"
+msgstr "模式："
+
+#: ../extensions/page-info/page-info.glade.h:24
+msgid "Modified:"
+msgstr "修改时间："
+
+#: ../extensions/page-info/page-info.glade.h:25
+msgid "Page Properties"
+msgstr "页面属性"
+
+#: ../extensions/page-info/page-info.glade.h:26
+msgid "Referrer:"
+msgstr "引用者："
+
+#: ../extensions/page-info/page-info.glade.h:27
+msgid "Size:"
+msgstr "大小："
+
+#: ../extensions/page-info/page-info.glade.h:28
+msgid "Source:"
+msgstr "源："
+
+#: ../extensions/page-info/page-info.glade.h:29
+msgid "Title:"
+msgstr "标题："
+
+#: ../extensions/page-info/page-info.glade.h:30
+msgid "Type:"
+msgstr "类型："
+
+#: ../extensions/page-info/page-info.glade.h:31
+msgid "_Save Media As..."
+msgstr "媒体另存为(_S)..."
+
+#: ../extensions/page-info/page-info.xml.in.in.h:1
+msgid "Display information about and links and media from the current page"
+msgstr "显示当前页面及其链接和媒体的有关信息"
+
+#: ../extensions/page-info/page-info.xml.in.in.h:2
+msgid "Page Info"
+msgstr "页面信息"
+
+#: ../extensions/rss/ephy-rss-extension.c:94
+msgid "News Feeds Subscription"
+msgstr "新闻推送订阅"
+
+#: ../extensions/rss/ephy-rss-extension.c:96
+msgid "Subscribe to this website's news feeds in your favorite news reader"
+msgstr "用您喜爱的新闻阅读器订阅此网站的新闻推送"
+
+#: ../extensions/rss/ephy-rss-extension.c:101
+msgid "_Subscribe to this feed"
+msgstr "订阅此种子(_S)"
+
+#: ../extensions/rss/ephy-rss-extension.c:103
+msgid "Subscribe to this feed in your favorite news reader"
+msgstr "用您喜爱的新闻阅读器订阅此种子"
+
+#: ../extensions/rss/ephy-rss-extension.c:373
+msgid "Subscribe to site's news feed"
+msgstr "订阅网站的新闻推送"
+
+#: ../extensions/rss/rss-ui.c:159
+msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
+msgstr "<b><i>无法联系种子阅读器，程序是否在运行？</i></b>"
+
+#: ../extensions/rss/rss-ui.c:161
+msgid "Retry"
+msgstr "重试"
+
+#: ../extensions/rss/rss-ui.c:289
+msgid "_Copy Feed Address"
+msgstr "复制种子地址(_C)"
+
+#: ../extensions/rss/rss-ui.c:564
+msgid "Subscribe"
+msgstr "订阅"
+
+#: ../extensions/rss/rss-ui.glade.h:1
+msgid "<b>Select Interesting Feeds</b>"
+msgstr "<b>选择感兴趣的种子</b>"
+
+#: ../extensions/rss/rss-ui.glade.h:2
+msgid "News Feed Subcription"
+msgstr "新闻推送订阅"
+
+#: ../extensions/rss/rss-ui.glade.h:3
+msgid "_Subscribe"
+msgstr "订阅(_S)"
+
+#: ../extensions/rss/rss.xml.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "新闻推送订阅"
+
+#: ../extensions/rss/rss.xml.in.in.h:2
+msgid ""
+"Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr "用您喜爱的新闻阅读器订阅网页提供的新闻推送"
+
+#: ../extensions/sample-mozilla/sample-mozilla.xml.in.in.h:1
+msgid "A sample extension with mozilla backend"
+msgstr "Mozilla 后端的示例扩展"
+
+#: ../extensions/sample-mozilla/sample-mozilla.xml.in.in.h:2
+msgid "Sample (Mozilla)"
+msgstr "示例(Mozilla)"
+
+#: ../extensions/sample/sample.xml.in.in.h:1
+msgid "A sample extension"
+msgstr "示例扩展"
+
+#: ../extensions/sample/sample.xml.in.in.h:2
+msgid "Sample"
+msgstr "示例"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:145
+msgid "Render the page without using a style"
+msgstr "不使用样式渲染页面"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:148
+msgid "Render the page using the default style"
+msgstr "使用默认样式渲染页面"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:151
+#, c-format
+msgid "Render the page using the \"%s\" style"
+msgstr "使用“%s”样式渲染页面"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:309
+msgid "St_yle"
+msgstr "样式(_Y)"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:310
+msgid "Select a different style for this page"
+msgstr "为此页选择不同的样式表"
+
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
+msgid "Default"
+msgstr "默认"
+
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
+msgid "None"
+msgstr "无"
+
+#: ../extensions/select-stylesheet/select-stylesheet.xml.in.in.h:1
+msgid "Select Stylesheet"
+msgstr "选择样式表"
+
+#: ../extensions/select-stylesheet/select-stylesheet.xml.in.in.h:2
+msgid "Select between different stylesheets offered by the web page"
+msgstr "选择网页提供的不同样式表"
+
+#: ../extensions/sidebar/ephy-sidebar.c:176
+msgid "No Sidebars installed"
+msgstr "未安装侧边栏"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:104
+msgid "_Sidebar"
+msgstr "侧边栏(_S)"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:105
+msgid "Show or hide the sidebar"
+msgstr "显示或隐藏侧边栏"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:411
+#, c-format
+msgid "Add \"%s\" to the Sidebar?"
+msgstr "将“%s”添加到侧边栏吗？"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:415
+#, c-format
+msgid "The source to the new sidebar page is %s."
+msgstr "新侧边栏的源文件为 %s。"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:417
+msgid "Add Sidebar"
+msgstr "添加侧边栏"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:421
+msgid "_Add Sidebar"
+msgstr "添加侧边栏(_A)"
+
+#: ../extensions/sidebar/sidebar.xml.in.in.h:1
+msgid "Adds a sidebar to windows"
+msgstr "在窗口中添加侧边栏"
+
+#: ../extensions/sidebar/sidebar.xml.in.in.h:2
+msgid "Sidebar"
+msgstr "侧边栏"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:579
+msgid "_Look Up"
+msgstr "查阅(_L)"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:586
+msgid "_GNOME Dictionary"
+msgstr "_GNOME 字典"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:1
+msgid "Look up the selected text with a smart bookmark"
+msgstr "用智能书签查阅选中文本"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:2
+msgid "Smart Bookmarks"
+msgstr "智能书签"
+
+#: ../extensions/tab-groups/tab-groups.xml.in.in.h:1
+msgid "Groups newly opened tabs"
+msgstr "对新打开的标签分组"
+
+#: ../extensions/tab-groups/tab-groups.xml.in.in.h:2
+msgid "Tab Groups"
+msgstr "标签组"
+
+#: ../extensions/tabsmenu/ephy-tab-move-menu.c:190
 #, c-format
 msgid "Window '%s' (%d tab)"
 msgid_plural "Window '%s' (%d tabs)"
 msgstr[0] "窗口“%s”(%d 个标签)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:282
+#: ../extensions/tabsmenu/ephy-tab-move-menu.c:301
 msgid "Move Tab To Window"
 msgstr "将标签移至窗口"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:283
+#: ../extensions/tabsmenu/ephy-tab-move-menu.c:302
 msgid "Move the current tab to a different window"
 msgstr "将当前标签移至不同的窗口"
+
+#: ../extensions/tabsmenu/tabsmenu.xml.in.in.h:1
+msgid "Move tabs between windows"
+msgstr "在窗口间移动标签"
+
+#: ../extensions/tabsmenu/tabsmenu.xml.in.in.h:2
+msgid "Tabsmenu"
+msgstr "标签菜单"
+
+#: ../extensions/tab-states/tab-states.xml.in.in.h:1
+msgid "Indicates new content in background tabs"
+msgstr "在后台标签标识新内容"
+
+#: ../extensions/tab-states/tab-states.xml.in.in.h:2
+msgid "Tab States"
+msgstr "标签状态"
+
