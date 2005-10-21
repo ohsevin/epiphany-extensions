@@ -40,6 +40,7 @@
 #include <glib/gi18n-lib.h>
 
 #define IGNORE_SELF /* Don't display *this* extension in the list */
+#define GROUP	"Epiphany Extension"
 
 #define EXTENSIONS_MANAGER_UI_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), TYPE_EXTENSIONS_MANAGER_UI, ExtensionsManagerUIPrivate))
 
@@ -145,51 +146,58 @@ extensions_manager_ui_info_dialog_response_cb (GtkWidget *widget,
 	g_object_unref (dialog);
 }
 
-static const char **
-string_list_to_array (GList *list)
-{
-	GList *l;
-	int i = 0;
-	const char **ret = malloc
-		((g_list_length (list) + 1) * sizeof (char *));
-
-	for (l = list; l; l = l->next)
-	{
-		ret[i++] = (const char *) l->data;
-	}
-
-	ret[i] = NULL;
-
-	return ret;
-}
-
 static void
 show_extension_info (ExtensionsManagerUI *parent_dialog,
 		     EphyExtensionInfo *info)
 {
+	GKeyFile *keyfile = info->keyfile;
 	GtkAboutDialog *dialog;
-	const char **authors;
+	char *name, *description, *url, **authors;
+
+	name = g_key_file_get_locale_string (keyfile, GROUP, "Name", NULL, NULL);
+	description = g_key_file_get_locale_string (keyfile, GROUP, "Description", NULL, NULL);
+	url = g_key_file_get_string (keyfile, GROUP, "URL", NULL);
+	authors = g_key_file_get_string_list (keyfile, GROUP, "Name", NULL, NULL);
 
 	dialog = GTK_ABOUT_DIALOG (gtk_about_dialog_new ());
-	gtk_about_dialog_set_name (dialog, info->name);
-	gtk_about_dialog_set_comments (dialog, info->description);
-	gtk_about_dialog_set_website (dialog, info->url);
-
-	authors = string_list_to_array (info->authors);
+	gtk_about_dialog_set_name (dialog, name);
+	gtk_about_dialog_set_comments (dialog, description);
+	gtk_about_dialog_set_website (dialog, url);
 	gtk_about_dialog_set_authors (dialog, (const char **) authors);
-	free (authors);
 
 	gtk_window_set_transient_for (GTK_WINDOW (dialog),
 				      GTK_WINDOW (parent_dialog->priv->window));
 	gtk_window_present (GTK_WINDOW (dialog));
+
+	g_free (name);
+	g_free (description);
+	g_free (url);
+	g_strfreev (authors);
 }
 
-static char *
-display_from_info (EphyExtensionInfo *info)
+static void
+store_extension (GtkListStore *store,
+		 EphyExtensionInfo *info)
 {
-	return g_strdup_printf ("<b>%s</b>\n%s",
-				info->name,
-				info->description);
+	GKeyFile *keyfile = info->keyfile;
+	GtkTreeIter iter;
+	char *name, *description, *display;
+
+	name = g_key_file_get_locale_string (keyfile, GROUP, "Name", NULL, NULL);
+	description = g_key_file_get_locale_string (keyfile, GROUP, "Description", NULL, NULL);
+	display = g_strdup_printf ("<b>%s</b>\n%s", name, description);
+
+	gtk_list_store_append (store, &iter);
+	gtk_list_store_set (store, &iter,
+				COL_INFO, info,
+				COL_NAME, name,
+				COL_TOGGLE, info->active,
+				COL_DISPLAY, display,
+				-1);
+
+	g_free (name);
+	g_free (description);
+	g_free (display);
 }
 
 static void
@@ -198,8 +206,6 @@ fill_list_store (EphyExtensionsManager *manager,
 {
 	GList *extensions, *l;
 	EphyExtensionInfo *info;
-	GtkTreeIter iter;
-	char *display;
 
 	gtk_list_store_clear (store);
 
@@ -216,18 +222,7 @@ fill_list_store (EphyExtensionsManager *manager,
 		}
 #endif /* IGNORE_SELF */
 
-		gtk_list_store_append (store, &iter);
-
-		display = display_from_info (info);
-
-		gtk_list_store_set (store, &iter,
-				    COL_INFO, info,
-				    COL_NAME, info->name,
-				    COL_TOGGLE, info->active,
-				    COL_DISPLAY, display,
-				    -1);
-
-		g_free (display);
+		store_extension (store, info);
 	}
 
 	g_list_free (extensions);
@@ -388,29 +383,9 @@ extension_added_cb (EphyExtensionsManager *manager,
 		    EphyExtensionInfo *info,
 		    ExtensionsManagerUI *dialog)
 {
-	GtkTreeView *treeview;
-	GtkListStore *store;
-	GtkTreeIter iter;
-	char *display;
+	ExtensionsManagerUIPrivate *priv = dialog->priv;
 
-	treeview = GTK_TREE_VIEW (dialog->priv->treeview);
-	g_return_if_fail (GTK_IS_TREE_VIEW (treeview));
-
-	store = GTK_LIST_STORE (gtk_tree_view_get_model (treeview));
-	g_return_if_fail (GTK_IS_LIST_STORE (store));
-
-	gtk_list_store_append (store, &iter);
-
-	display = display_from_info (info);
-
-	gtk_list_store_set (store, &iter,
-			    COL_INFO, info,
-			    COL_NAME, info->name,
-			    COL_TOGGLE, info->active,
-			    COL_DISPLAY, display,
-			    -1);
-
-	g_free (display);
+	store_extension (GTK_LIST_STORE (priv->model), info);
 }
 
 static void
@@ -418,11 +393,10 @@ extension_removed_cb (EphyExtensionsManager *manager,
 		      EphyExtensionInfo *info,
 		      ExtensionsManagerUI *dialog)
 {
-	GtkTreeModel *model;
+	ExtensionsManagerUIPrivate *priv = dialog->priv;
+	GtkTreeModel *model = priv->model;
 	GtkTreeIter iter;
 	EphyExtensionInfo *row_info;
-
-	model = dialog->priv->model;
 
 	if (gtk_tree_model_get_iter_first (model, &iter) == FALSE) return;
 

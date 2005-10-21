@@ -1,3 +1,11 @@
+2005-10-21  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/extensions-manager-ui/extensions-manager-ui.c:
+	(show_extension_info), (store_extension), (fill_list_store),
+	(extension_added_cb), (extension_removed_cb):
+
+	Adapt to changed ephy-extensions-manager API.
+
 2005-10-10  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/sidebar/ephy-sidebar-embed.c:
