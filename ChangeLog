@@ -1,3 +1,11 @@
+2005-10-22  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/adblock/adblock.ephy-extension.in.in:
+
+	Make the module resident. Works around mozilla bug
+	https://bugzilla.mozilla.org/show_bug.cgi?id=246092;
+	fixes bug #170518.
+
 2005-10-22  Philip Langdale  <philipl@mail.utexas.edu>
 
 	* extensions/adblock/mozilla/Makefile.am
