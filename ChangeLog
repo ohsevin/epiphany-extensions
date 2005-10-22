@@ -1,3 +1,13 @@
+2005-10-22  Philip Langdale  <philipl@mail.utexas.edu>
+
+	* extensions/adblock/mozilla/Makefile.am
+	* extensions/auto-scroller/mozilla/Makefile.am
+	* extensions/error-viewer/mozilla/Makefile.am
+	* extensions/page-info/mozilla/Makefile.am
+	* extensions/select-stylesheet/mozilla/Makefile.am:
+	Add extra mozilla includes to allow compilation against an
+	uninstalled mozilla build.
+
 2005-10-21  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/extensions-manager-ui/extensions-manager-ui.c:

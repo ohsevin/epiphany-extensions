@@ -9,6 +9,7 @@ mozilla_include_subdirs = \
 	content		\
 	docshell	\
 	dom		\
+	webbrwsr	\
 	xpcom
 
 libautoscrollermozilla_la_CPPFLAGS = \

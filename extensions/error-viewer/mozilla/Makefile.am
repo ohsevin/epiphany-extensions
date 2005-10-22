@@ -16,7 +16,8 @@ mozilla_include_subdirs = \
 	.		\
 	dom		\
 	jsconsole	\
-	necko
+	necko		\
+	webbrwsr
 
 liberrorviewermozilla_la_CPPFLAGS = \
 	-I..						\

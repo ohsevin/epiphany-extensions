@@ -14,6 +14,7 @@ mozilla_include_subdirs = \
 	layout		\
 	nkcache		\
 	necko		\
+	pref		\
 	uconv		\
 	webbrwsr
 

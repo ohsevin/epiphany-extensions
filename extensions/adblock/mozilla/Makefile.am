@@ -11,6 +11,7 @@ mozilla_include_subdirs = \
 	content		\
 	docshell	\
 	dom		\
+	necko		\
 	xpcom
 
 libadblockmozilla_la_CPPFLAGS = \
