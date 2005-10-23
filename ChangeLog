@@ -1,3 +1,10 @@
+2005-10-23  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/extensions-manager-ui/extensions-manager-ui.c:
+	(show_extension_info):
+
+	Authors are from Authors key, not Name.
+
 2005-10-22  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/adblock/adblock.ephy-extension.in.in:

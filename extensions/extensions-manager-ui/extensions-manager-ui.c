@@ -157,7 +157,7 @@ show_extension_info (ExtensionsManagerUI *parent_dialog,
 	name = g_key_file_get_locale_string (keyfile, GROUP, "Name", NULL, NULL);
 	description = g_key_file_get_locale_string (keyfile, GROUP, "Description", NULL, NULL);
 	url = g_key_file_get_string (keyfile, GROUP, "URL", NULL);
-	authors = g_key_file_get_string_list (keyfile, GROUP, "Name", NULL, NULL);
+	authors = g_key_file_get_string_list (keyfile, GROUP, "Authors", NULL, NULL);
 
 	dialog = GTK_ABOUT_DIALOG (gtk_about_dialog_new ());
 	gtk_about_dialog_set_name (dialog, name);
@@ -355,6 +355,7 @@ build_ui (ExtensionsManagerUI *dialog)
 						     NULL);
 
 	renderer = gtk_cell_renderer_text_new ();
+	g_object_set (G_OBJECT (renderer), "ellipsize", PANGO_ELLIPSIZE_END, NULL);
 	gtk_tree_view_insert_column_with_attributes (treeview,
 						     COL_DISPLAY, _("Description"),
 						     renderer,
