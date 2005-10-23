@@ -10,6 +10,7 @@ mozilla_include_subdirs = \
 	docshell	\
 	dom		\
 	webbrwsr	\
+	widget		\
 	xpcom
 
 libsbmozilla_la_CPPFLAGS = \

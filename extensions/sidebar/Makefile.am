@@ -44,5 +44,5 @@ DISTCLEANFILES = $(BUILT_SOURCES) $(extensionini_DATA)
 
 EXTRA_DIST = \
 	$(uimanager_DATA)		\
-	$(extensionxml_in_files)
+	$(extensionini_in_files)
 

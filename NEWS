@@ -1,4 +1,41 @@
 =========================
+Epiphany Extensions 1.9.1
+=========================
+
+Changes:
+
+	* Adapt to new and changed Epiphany APIs
+	* Fix About dialogue entry in extensions manager UI
+	* Make the adblock module resident [#170518]
+	* Add extra mozilla includes to allow compilation against an uninstalled mozilla build
+	* Fix gettext domain use
+	* Fix tab-groups extension for changed EphyNotebook signal name
+	* Add rss extension to help section.
+	* Use the EPIPHANY_EXTENSION_INIT macro
+	* Move Page Information menu item to View menu [#316247]
+	* Adapt to new .ini file format
+	* Port the rest of the extensions to the new .ephy-extension file format
+	* Port the gestures extension to the new .ephy-extensions file format
+	* Fix sidebar context menu setting of the context event, and menu deactivation
+	* Avoid a dependency to gecko 1.8
+	* Allow lookup of selections within forms (textarea and text input)[#315319]
+	* Fix HIG spacings
+	* Update gtk requirement
+	* Remove check for old dbus
+	* Add a favicon fallback extension (written in python)
+
+Contributors to this release: Crispin Flowerday, Gustavo Gama, Tommi Komulainen,
+Christian Persch, Jean François Rameau and Raphael Slinckx.
+
+New and updated translations:
+
+	* Rostislav "zbrox" Raykov (bg)
+	* Adam Weinberger (en_CA)
+	* Marcel Telka (sk)
+	* Funda Wang (zh_CN)
+
+
+=========================
 Epiphany Extensions 1.7.5
 =========================
 

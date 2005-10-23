@@ -72,7 +72,7 @@ def attach_window(window):
 	ui_manager = window.get_ui_manager()
 	group = gtk.ActionGroup('PythonSampleMenu')
 	group.add_actions(_actions, window)
-	ui_manager.insert_action_group(group, 0)
+	ui_manager.insert_action_group(group, -1)
 	ui_id = ui_manager.add_ui_from_string(_ui_str)
 
 	window._python_sample_menu_window_data = (group, ui_id)

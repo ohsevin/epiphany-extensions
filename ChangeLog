@@ -1,3 +1,14 @@
+2005-10-24  Christian Persch  <chpe@cvs.gnome.org>
+
+	* NEWS:
+	* configure.ac:
+
+	Update for 1.9.1. Use tar-pax format because of overlong paths.
+
+	* extensions/sidebar/Makefile.am:
+
+	Dist the .in.in file.
+
 2005-10-23  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/extensions-manager-ui/extensions-manager-ui.c:

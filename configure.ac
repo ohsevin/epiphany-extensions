@@ -16,7 +16,7 @@ dnl 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 dnl
 dnl $Id$
 
-AC_INIT([GNOME Web Browser Extensions],[1.9.0],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+AC_INIT([GNOME Web Browser Extensions],[1.9.1],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 GNOME_COMMON_INIT
 
 EPIPHANY_API_VERSION=1.10
@@ -31,7 +31,7 @@ AC_REVISION([$Revision$])
 AC_CONFIG_SRCDIR([extensions])
 AC_CONFIG_HEADERS([config.h])
 
-AM_INIT_AUTOMAKE([1.9 dist-bzip2 no-dist-gzip check-news])
+AM_INIT_AUTOMAKE([1.9 dist-bzip2 no-dist-gzip check-news tar-pax])
 
 dnl AC_SUBST([ACLOCAL_AMFLAGS], ["-I $ac_macro_dir \${ACLOCAL_FLAGS}"])
 AC_SUBST([ACLOCAL_AMFLAGS], ["\${ACLOCAL_FLAGS}"])
@@ -88,7 +88,7 @@ dnl ********************************
 dnl pkg config checks
 dnl ********************************
 
-EPIPHANY_REQUIRED=1.9.0
+EPIPHANY_REQUIRED=1.9.1
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.8.0
 LIBGTK_REQUIRED=2.8.0
@@ -149,7 +149,7 @@ dnl *******************************
 AC_MSG_CHECKING([which extensions to build])
 
 ALL_EXTENSIONS="actions adblock auto-scroller bookmarks-tray certificates dashboard error-viewer extensions-manager-ui gestures greasemonkey net-monitor page-info rss sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu"
-USEFUL_EXTENSIONS="actions auto-scroller bookmarks-tray certificates dashboard error-viewer extensions-manager-ui gestures page-info select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
+USEFUL_EXTENSIONS="actions auto-scroller bookmarks-tray certificates error-viewer extensions-manager-ui gestures page-info select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 DEFAULT_EXTENSIONS="actions auto-scroller bookmarks-tray certificates error-viewer extensions-manager-ui gestures page-info select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 
 PYTHON_ALL_EXTENSIONS="python-console sample-python favicon"
