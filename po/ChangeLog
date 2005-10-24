@@ -3,6 +3,11 @@ NOTE: they'll be released anytime an Epiphany 1.8.x release is made.
 NOTE:
 NOTE: And please keep this notice at the top of the file!
 
+2005-10-24  Christian Persch  <chpe@cvs.gnome.org>
+
+	* POTFILES.in: Tag the .ephy-extension.in.in files
+	so that intltool extracts the strings.
+
 2005-10-19  Marcel Telka  <marcel@telka.sk>
 
 	* sk.po: Updated Slovak translation.
