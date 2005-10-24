@@ -29,12 +29,7 @@
 
 #include <epiphany/ephy-embed.h>
 #include <epiphany/ephy-tab.h>
-#include <epiphany/ephy-window.h>
 #include <epiphany/ephy-extension.h>
-
-#include <gtk/gtkaction.h>
-#include <gtk/gtkactiongroup.h>
-#include <gtk/gtkuimanager.h>
 
 #include <gmodule.h>
 #include <libxml/tree.h>
@@ -242,52 +237,14 @@ gesture_performed_cb (EphyGesture *gesture,
 		      const char *sequence,
 		      EphyGesturesExtension *extension)
 {
-	EphyWindow *window;
 	const char *path;
 
 	LOG ("Gesture: sequence '%s'", sequence);
 
 	path = g_hash_table_lookup (extension->priv->gestures, sequence);
-	if (path == NULL)
+	if (path)
 	{
-		return;
-	}
-
-	window = EPHY_WINDOW (ephy_gesture_get_window (gesture));
-	g_return_if_fail (EPHY_IS_WINDOW (window));
-
-	if (strcmp (path, "fallback") == 0)
-	{
-		/* Fall back to normal click */
-		EphyEmbed *embed;
-		EphyEmbedEvent *event;
-		gint handled = FALSE;
-
-		embed = ephy_window_get_active_embed (window);
-		g_return_if_fail (EPHY_IS_EMBED (embed));
-
-		event = ephy_gesture_get_event (gesture);
-		g_return_if_fail (EPHY_IS_EMBED_EVENT (event));
-
-		g_signal_emit_by_name (embed, "ge_dom_mouse_click", event,
-				       &handled);
-	}
-	else
-	{
-		GtkUIManager *manager;
-		GtkAction *action;
-		
-		manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
-		
-		action = gtk_ui_manager_get_action (manager, path);
-		
-		if (action == NULL)
-		{
-			g_warning ("Action for path '%s' not found!\n", path);
-			return;
-		}
-
-		gtk_action_activate (action);
+		ephy_gesture_activate(gesture, path);
 	}
 }
 

@@ -73,6 +73,8 @@ EphyEmbedEvent *ephy_gesture_get_event		(EphyGesture *gesture);
 
 void		ephy_gesture_set_event		(EphyGesture *gesture,
 						 EphyEmbedEvent *event);
+void		ephy_gesture_activate		(EphyGesture *gesture,
+						 const char *path);
 
 G_END_DECLS
 

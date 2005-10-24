@@ -33,6 +33,14 @@
 #include <gtk/gtkmain.h>
 #include <gtk/gtkdnd.h>
 
+#include <gtk/gtkaction.h>
+#include <gtk/gtkactiongroup.h>
+#include <gtk/gtkuimanager.h>
+
+#include <epiphany/ephy-window.h>
+
+#include <string.h>
+
 #define EPHY_GESTURE_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_GESTURE, EphyGesturePrivate))
 
 struct _EphyGesturePrivate
@@ -40,6 +48,8 @@ struct _EphyGesturePrivate
 	GtkWidget *window;
 	EphyEmbedEvent *event;
 	GdkCursor *cursor;
+	GtkAction *current_action;
+	guint timeout_id;
 	guint started : 1;
 };
 
@@ -282,6 +292,8 @@ ephy_gesture_init (EphyGesture *gesture)
 	priv->window = NULL;
 	priv->event = NULL;
 	priv->cursor = NULL;
+	priv->current_action = NULL;
+	priv->timeout_id = 0;
 	priv->started = FALSE;
 }
 
@@ -301,6 +313,11 @@ ephy_gesture_finalize (GObject *object)
 	if (priv->cursor != NULL)
 	{
 		gdk_cursor_unref (gesture->priv->cursor);
+	}
+
+	if (priv->timeout_id)
+	{
+		g_source_remove(priv->timeout_id);
 	}
 
 	ephy_gesture_set_event (gesture, NULL);
@@ -425,6 +442,67 @@ ephy_gesture_set_event (EphyGesture *gesture,
 	}
 
 	priv->event = event != NULL ? g_object_ref (event) : NULL;
+}
+
+static gboolean
+ephy_gesture_do_activate_cb (EphyGesture *gesture)
+{
+	gtk_action_activate (gesture->priv->current_action);
+
+	gesture->priv->current_action = NULL;
+	gesture->priv->timeout_id = 0;
+
+	return FALSE;
+}
+
+void
+ephy_gesture_activate (EphyGesture *gesture,
+		       const char *path)
+{
+	EphyWindow *window = EPHY_WINDOW (ephy_gesture_get_window (gesture));
+	g_return_if_fail (EPHY_IS_WINDOW (window));
+
+	if (strcmp (path, "fallback") == 0)
+	{
+		/* Fall back to normal click */
+		EphyEmbed *embed;
+		EphyEmbedEvent *event;
+		gint handled = FALSE;
+
+		embed = ephy_window_get_active_embed (window);
+		g_return_if_fail (EPHY_IS_EMBED (embed));
+
+		event = ephy_gesture_get_event (gesture);
+		g_return_if_fail (EPHY_IS_EMBED_EVENT (event));
+
+		g_signal_emit_by_name (embed, "ge_dom_mouse_click", event,
+				       &handled);
+	}
+	else
+	{
+		GtkUIManager *manager;
+		GtkAction *action;
+
+		manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
+		
+		action = gtk_ui_manager_get_action (manager, path);
+		
+		if (action == NULL)
+		{
+			g_warning ("Action for path '%s' not found!\n", path);
+			return;
+		}
+
+		gesture->priv->current_action = action;
+
+		/**
+		 * We need to activate the action in a timeout callback so
+		 * that we do not induce middle-click side-effects in the action.
+		 */
+		gesture->priv->timeout_id =
+			g_timeout_add(0, (GSourceFunc)ephy_gesture_do_activate_cb,
+				      gesture);
+	}
 }
 
 EphyGesture *

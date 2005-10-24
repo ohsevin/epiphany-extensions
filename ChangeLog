@@ -1,3 +1,16 @@
+2005-10-24  Philip Langdale  <philipl@mail.utexas.edu>
+
+	* extensions/gestures/ephy-gesture.c
+	* extensions/gestures/ephy-gesture.h
+	 (ephy_gesture_activate), (ephy_gesture_do_activate_cb),
+	 (ephy_gesture_init);
+	* extensions/gestures/ephy-gestures-extension.c:
+	 (gesture_performed_cb):
+	Use a zero-timeout callback to activate actions linked to
+	gestures. This prevents middle-click side effects which
+	existed before but are now more obvious because more actions
+	now have middle-click support.
+
 2005-10-24  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
