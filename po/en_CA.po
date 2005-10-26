@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-19 14:36-0400\n"
+"POT-Creation-Date: 2005-10-26 17:33-0400\n"
 "PO-Revision-Date: 2005-08-27 16:10-0400\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: Canadian English <adamw@gnome.org>\n"
@@ -82,6 +82,7 @@ msgid "_Pages"
 msgstr "_Pages"
 
 #: extensions/actions/actions-editor.glade.h:1
+#: extensions/actions/actions.ephy-extension.in.in.h:1
 msgid "Actions"
 msgstr "Actions"
 
@@ -328,19 +329,11 @@ msgstr ""
 "HTML error in %s:\n"
 "No valid doctype specified."
 
-#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
-msgid "_Extensions"
-msgstr "_Extensions"
-
-#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
-msgid "Load and unload extensions"
-msgstr "Load and unload extensions"
-
-#: extensions/extensions-manager-ui/extensions-manager-ui.c:357
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:352
 msgid "Enabled"
 msgstr "Enabled"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: extensions/extensions-manager-ui/extensions-manager-ui.c:360
 #: extensions/rss/rss-ui.c:571
 msgid "Description"
 msgstr "Description"
@@ -779,3 +772,171 @@ msgstr "Move Tab To Window"
 #: extensions/tabsmenu/ephy-tab-move-menu.c:302
 msgid "Move the current tab to a different window"
 msgstr "Move the current tab to a different window"
+
+#: extensions/actions/actions.ephy-extension.in.in.h:2
+msgid "Execute arbitrary commands from the context menu"
+msgstr "Execute arbitrary commands from the context menu"
+
+#: extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
+msgid "Auto Scroll"
+msgstr "Auto Scroll"
+
+#: extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
+msgid "Scroll on middle mouse click"
+msgstr "Scroll on middle mouse click"
+
+#: extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in.h:1
+msgid "Add a bookmarks menu to the panel's notification area"
+msgstr "Add a bookmarks menu to the panel's notification area"
+
+#: extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in.h:2
+msgid "Bookmarks Tray"
+msgstr "Bookmarks Tray"
+
+#: extensions/certificates/certificates.ephy-extension.in.in.h:1
+msgid "Certificates"
+msgstr "Certificates"
+
+#: extensions/certificates/certificates.ephy-extension.in.in.h:2
+msgid "View the page certificate and manage the certificates"
+msgstr "View the page certificate and manage the certificates"
+
+#: extensions/dashboard/dashboard.ephy-extension.in.in.h:1
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: extensions/dashboard/dashboard.ephy-extension.in.in.h:2
+msgid "Send browsing information to Dashboard"
+msgstr "Send browsing information to Dashboard"
+
+#: extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
+msgid "Error viewer"
+msgstr "Error viewer"
+
+#: extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
+msgid "View error in web pages, validate web pages and check links"
+msgstr "View error in web pages, validate web pages and check links"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
+msgid "Activate and deactivate extensions"
+msgstr "Activate and deactivate extensions"
+
+#: extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
+msgid "Extensions Manager"
+msgstr "Extensions Manager"
+
+#: extensions/favicon/favicon.ephy-extension.in.h:1
+msgid "Favicon fallback"
+msgstr "Favicon fallback"
+
+#: extensions/favicon/favicon.ephy-extension.in.h:2
+msgid ""
+"Loads /favicon.ico as favicon if the site doesn't use the standard method"
+msgstr ""
+"Loads /favicon.ico as favicon if the site doesn't use the standard method"
+
+#: extensions/gestures/gestures.ephy-extension.in.in.h:1
+msgid "Gestures"
+msgstr "Gestures"
+
+#: extensions/gestures/gestures.ephy-extension.in.in.h:2
+msgid "Perform actions with mouse gestures"
+msgstr "Perform actions with mouse gestures"
+
+#: extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
+msgid "Greasemonkey"
+msgstr "Greasemonkey"
+
+#: extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
+msgid "Run user scripts to modify web pages' behavior"
+msgstr "Run user scripts to modify web pages' behaviour"
+
+#: extensions/net-monitor/net-monitor.ephy-extension.in.in.h:1
+msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
+msgstr "Automatically handle network online/offline status (EXPERIMENTAL!)"
+
+#: extensions/net-monitor/net-monitor.ephy-extension.in.in.h:2
+msgid "Network Connection Monitor"
+msgstr "Network Connection Monitor"
+
+#: extensions/page-info/page-info.ephy-extension.in.in.h:1
+msgid "Display information about and links and media from the current page"
+msgstr "Display information about and links and media from the current page"
+
+#: extensions/page-info/page-info.ephy-extension.in.in.h:2
+msgid "Page Info"
+msgstr "Page Info"
+
+#: extensions/rss/rss.ephy-extension.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "News Feed Subscription"
+
+#: extensions/rss/rss.ephy-extension.in.in.h:2
+msgid ""
+"Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr ""
+"Subscribe to a news feed offered by the webpage in your favourite news reader"
+
+#: extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
+msgid "A sample extension with mozilla backend"
+msgstr "A sample extension with mozilla backend"
+
+#: extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:2
+msgid "Sample (Mozilla)"
+msgstr "Sample (Mozilla)"
+
+#: extensions/sample/sample.ephy-extension.in.in.h:1
+msgid "A sample extension"
+msgstr "A sample extension"
+
+#: extensions/sample/sample.ephy-extension.in.in.h:2
+msgid "Sample"
+msgstr "Sample"
+
+#: extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
+msgid "Select Stylesheet"
+msgstr "Select Stylesheet"
+
+#: extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
+msgid "Select between different stylesheets offered by the web page"
+msgstr "Select between different stylesheets offered by the web page"
+
+#: extensions/sidebar/sidebar.ephy-extension.in.in.h:1
+msgid "Adds a sidebar to windows"
+msgstr "Adds a sidebar to windows"
+
+#: extensions/sidebar/sidebar.ephy-extension.in.in.h:2
+msgid "Sidebar"
+msgstr "Sidebar"
+
+#: extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
+msgid "Look up the selected text with a smart bookmark"
+msgstr "Look up the selected text with a smart bookmark"
+
+#: extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
+msgid "Smart Bookmarks"
+msgstr "Smart Bookmarks"
+
+#: extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
+msgid "Groups newly opened tabs"
+msgstr "Groups newly opened tabs"
+
+#: extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
+msgid "Tab Groups"
+msgstr "Tab Groups"
+
+#: extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:1
+msgid "Move tabs between windows"
+msgstr "Move tabs between windows"
+
+#: extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:2
+msgid "Tabsmenu"
+msgstr "Tabsmenu"
+
+#: extensions/tab-states/tab-states.ephy-extension.in.in.h:1
+msgid "Indicates new content in background tabs"
+msgstr "Indicates new content in background tabs"
+
+#: extensions/tab-states/tab-states.ephy-extension.in.in.h:2
+msgid "Tab States"
+msgstr "Tab States"
