@@ -8,10 +8,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: epiphany-extensions HEAD\n"
+"Project-Id-Version: epiphany-extensions gnome-2-12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-08-12 13:38+0900\n"
-"PO-Revision-Date: 2005-08-12 13:36+0900\n"
+"POT-Creation-Date: 2005-10-28 00:01+0900\n"
+"PO-Revision-Date: 2005-10-27 23:56+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -123,14 +123,22 @@ msgstr[1] "%i 個のアクションを選択しました"
 msgid "Add Action"
 msgstr "アクションの追加"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:421
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:415
 #, c-format
 msgid "%s Properties"
 msgstr "%s のプロパティ"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:426
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
 msgid "Action Properties"
 msgstr "アクションのプロパティ"
+
+#: ../extensions/auto-scroller/auto-scroller.xml.in.in.h:1
+msgid "Auto Scroll"
+msgstr "自動スクロール"
+
+#: ../extensions/auto-scroller/auto-scroller.xml.in.in.h:2
+msgid "Scroll on middle mouse click"
+msgstr "マウスの中ボタンでスクロールします"
 
 #: ../extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:1
 msgid "Add a bookmarks menu to the panel's notification area"
@@ -373,7 +381,7 @@ msgstr "拡張機能(_E)"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
 msgid "Load and unload extensions"
-msgstr "Epiphany 拡張機能の有効/無効を設定します"
+msgstr "拡張機能の有効/無効を設定します"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.c:357
 msgid "Enabled"
@@ -399,6 +407,17 @@ msgstr "拡張機能を有効/無効を設定します"
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:2
 msgid "Extensions Manager"
 msgstr "拡張機能のマネージャ"
+
+#: ../extensions/favicon/favicon.xml.in.in.h:1
+msgid "Favicon fallback"
+msgstr "Favicon のフォールバック"
+
+#: ../extensions/favicon/favicon.xml.in.in.h:2
+msgid ""
+"Loads /favicon.ico as favicon if the site doesn't use the standard method"
+msgstr ""
+"サイト側で標準メソッドを使用していない場合に /favicon.ico を favicon として読"
+"み込みます"
 
 #: ../extensions/gestures/gestures.xml.in.in.h:1
 msgid "Gestures"
@@ -441,8 +460,8 @@ msgid "Network Connection Monitor"
 msgstr "ネットワーク接続の監視"
 
 #: ../extensions/page-info/ephy-page-info-extension.c:65
-msgid "_Page Info"
-msgstr "ページ情報(_P)"
+msgid "Pa_ge Information"
+msgstr "ページ情報(_G)"
 
 #: ../extensions/page-info/ephy-page-info-extension.c:67
 msgid "Display page information in a dialog"
