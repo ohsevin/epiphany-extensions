@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-27 23:56+0900\n"
-"PO-Revision-Date: 2005-10-27 23:56+0900\n"
+"POT-Creation-Date: 2005-10-28 00:05+0900\n"
+"PO-Revision-Date: 2005-10-28 00:03+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -822,7 +822,7 @@ msgstr "ウエブ・ページのエラーを表示したり、リンクなどの
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
 msgid "Activate and deactivate extensions"
-msgstr "拡張機能を有効/無効を設定します"
+msgstr "拡張機能の有効/無効を設定します"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
 msgid "Extensions Manager"
