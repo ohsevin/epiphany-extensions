@@ -50,6 +50,7 @@
 struct EphyCertificatesExtensionPrivate
 {
 	GtkWidget *cert_manager;
+	GtkWidget *device_manager;
 };
 
 typedef struct
@@ -59,6 +60,7 @@ typedef struct
 } WindowData;
 
 #define CERT_MANAGER_URL	"chrome://pippki/content/certManager.xul"
+#define DEVICE_MANAGER_URL	"chrome://pippki/content/device_manager.xul"
 #define WINDOW_DATA_KEY "EphyCertificatesExtensionWindowData"
 
 static void ephy_certificates_extension_class_init	 (EphyCertificatesExtensionClass *klass);
@@ -122,15 +124,24 @@ static void
 ephy_certificates_extension_finalize (GObject *object)
 {
 	EphyCertificatesExtension *extension = EPHY_CERTIFICATES_EXTENSION (object);
+	EphyCertificatesExtensionPrivate *priv = extension->priv;
 
 	LOG ("EphyCertificatesExtension finalising");
 
-	if (extension->priv->cert_manager)
+	if (priv->cert_manager)
 	{
-		g_object_remove_weak_pointer (G_OBJECT (extension->priv->cert_manager),
-					      (gpointer *) &extension->priv->cert_manager);
-		gtk_widget_destroy (extension->priv->cert_manager);
-		extension->priv->cert_manager = NULL;
+		g_object_remove_weak_pointer (G_OBJECT (priv->cert_manager),
+					      (gpointer *) &priv->cert_manager);
+		gtk_widget_destroy (priv->cert_manager);
+		priv->cert_manager = NULL;
+	}
+
+	if (priv->device_manager)
+	{
+		g_object_remove_weak_pointer (G_OBJECT (priv->device_manager),
+					      (gpointer *) &priv->device_manager);
+		gtk_widget_destroy (priv->device_manager);
+		priv->device_manager = NULL;
 	}
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
@@ -140,12 +151,13 @@ static void
 manage_certificates_cb (GtkAction *action,
 			EphyCertificatesExtension *extension)
 {
+	EphyCertificatesExtensionPrivate *priv = extension->priv;
 	EphyEmbedSingle *single;
 	GtkWidget *manager, *window;
 
-	if (extension->priv->cert_manager != NULL)
+	if (priv->cert_manager != NULL)
 	{
-		gtk_window_present (GTK_WINDOW (extension->priv->cert_manager));
+		gtk_window_present (GTK_WINDOW (priv->cert_manager));
 		return;
 	}  
 
@@ -155,10 +167,44 @@ manage_certificates_cb (GtkAction *action,
 	g_return_if_fail (manager != NULL);
 
 	window = gtk_widget_get_toplevel (manager);
+	g_return_if_fail (GTK_WIDGET_TOPLEVEL (window));
 
-	extension->priv->cert_manager = window;
-	g_object_add_weak_pointer (G_OBJECT (extension->priv->cert_manager),
-				   (gpointer *) &extension->priv->cert_manager);
+	gtk_window_set_role (GTK_WINDOW (window), "epiphany-certificate-manager");
+	gtk_window_set_title (GTK_WINDOW (window), _("Certificates"));
+
+	priv->cert_manager = window;
+	g_object_add_weak_pointer (G_OBJECT (priv->cert_manager),
+				   (gpointer *) &priv->cert_manager);
+}
+
+static void
+manage_devices_cb (GtkAction *action,
+		   EphyCertificatesExtension *extension)
+{
+	EphyCertificatesExtensionPrivate *priv = extension->priv;
+	EphyEmbedSingle *single;
+	GtkWidget *manager, *window;
+
+	if (priv->device_manager != NULL)
+	{
+		gtk_window_present (GTK_WINDOW (priv->device_manager));
+		return;
+	}  
+
+	single = EPHY_EMBED_SINGLE (ephy_embed_shell_get_embed_single (embed_shell));
+	manager = ephy_embed_single_open_window (single, NULL, DEVICE_MANAGER_URL,
+						 "", "all,chrome");
+	g_return_if_fail (manager != NULL);
+
+	window = gtk_widget_get_toplevel (manager);
+	g_return_if_fail (GTK_WIDGET_TOPLEVEL (window));
+
+	gtk_window_set_role (GTK_WINDOW (window), "epiphany-security-device-manager");
+	gtk_window_set_title (GTK_WINDOW (window), _("Security Devices"));
+
+	priv->device_manager = window;
+	g_object_add_weak_pointer (G_OBJECT (priv->device_manager),
+				   (gpointer *) &priv->device_manager);
 }
 
 static void
@@ -275,7 +321,13 @@ static const GtkActionEntry action_entries_1 [] =
 	  N_("Manage _Certificates"),
 	  NULL, /* shortcut key */
 	  N_("Manage your certificates"),
-	  G_CALLBACK (manage_certificates_cb) }
+	  G_CALLBACK (manage_certificates_cb) },
+	{ "ToolsSecurityDevicesManager",
+	  NULL /* stock icon */,
+	  N_("Manage Security _Devices"),
+	  NULL, /* shortcut key */
+	  N_("Manage your security devices"),
+	  G_CALLBACK (manage_devices_cb) }
 };
 static const GtkActionEntry action_entries_2 [] =
 {
@@ -357,6 +409,10 @@ impl_attach_window (EphyExtension *ext,
 	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
 			       "ToolsCertificateManagerItem",
 			       "ToolsCertificateManager",
+			       GTK_UI_MANAGER_MENUITEM, FALSE);
+	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
+			       "ToolsSecurityDevicesManagerItem",
+			       "ToolsSecurityDevicesManager",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
 	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
 			       "ToolsSCSep2", NULL,
