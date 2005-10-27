@@ -17,6 +17,7 @@ extensions/error-viewer/opensp/validate.cpp
 extensions/error-viewer/sgml-validator.c
 extensions/extensions-manager-ui/extensions-manager-ui.c
 extensions/extensions-manager-ui/extensions-manager-ui.glade
+extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c
 extensions/greasemonkey/ephy-greasemonkey-extension.c
 extensions/page-info/ephy-page-info-extension.c
 extensions/page-info/page-info-dialog.c
@@ -36,7 +37,6 @@ extensions/tabsmenu/ephy-tab-move-menu.c
 [type: gettext/ini]extensions/certificates/certificates.ephy-extension.in.in
 [type: gettext/ini]extensions/dashboard/dashboard.ephy-extension.in.in
 [type: gettext/ini]extensions/error-viewer/error-viewer.ephy-extension.in.in
-[type: gettext/ini]extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c
 [type: gettext/ini]extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in
 [type: gettext/ini]extensions/favicon/favicon.ephy-extension.in
 [type: gettext/ini]extensions/gestures/gestures.ephy-extension.in.in
