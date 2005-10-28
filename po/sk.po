@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-19 23:10+0200\n"
-"PO-Revision-Date: 2005-10-19 23:12+0200\n"
+"POT-Creation-Date: 2005-10-28 21:11+0200\n"
+"PO-Revision-Date: 2005-10-28 22:21+0200\n"
 "Last-Translator: Marcel Telka <marcel@telka.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
@@ -82,6 +82,7 @@ msgid "_Pages"
 msgstr "_Stránky"
 
 #: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions.ephy-extension.in.in.h:1
 msgid "Actions"
 msgstr "Akcie"
 
@@ -162,23 +163,42 @@ msgstr "Otvoriť záložky v novom okne"
 msgid "Bookmarks"
 msgstr "Záložky"
 
+#: ../extensions/certificates/ephy-certificates-extension.c:173
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
+msgid "Certificates"
+msgstr "Certifikáty"
+
+#: ../extensions/certificates/ephy-certificates-extension.c:203
+msgid "Security Devices"
+msgstr "Bezpečnostné zariadenia"
+
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:275
+#: ../extensions/certificates/ephy-certificates-extension.c:321
 msgid "Manage _Certificates"
 msgstr "Spravovať _certifikáty"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:277
+#: ../extensions/certificates/ephy-certificates-extension.c:323
 msgid "Manage your certificates"
 msgstr "Spravovať vaše certifikáty"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:284
+#: ../extensions/certificates/ephy-certificates-extension.c:327
+msgid "Manage Security _Devices"
+msgstr "Spravovať bezpečnostné _zariadenia"
+
+#. shortcut key
+#: ../extensions/certificates/ephy-certificates-extension.c:329
+msgid "Manage your security devices"
+msgstr "Spravovať vaše bezpečnostné zariadenia"
+
+#. stock icon
+#: ../extensions/certificates/ephy-certificates-extension.c:336
 msgid "Server _Certificate"
 msgstr "_Certifikát servera"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:286
+#: ../extensions/certificates/ephy-certificates-extension.c:338
 msgid "Display the web server's certificate"
 msgstr "Zobraziť cerifikát www servera"
 
@@ -333,19 +353,11 @@ msgstr ""
 "HTML chyba v %s:\n"
 "Nebol zadany platný typ dokumentu (doctype)."
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
-msgid "_Extensions"
-msgstr "_Rozšírenia"
-
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
-msgid "Load and unload extensions"
-msgstr "Načítať a uvoľniť rozšírenia"
-
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:357
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:352
 msgid "Enabled"
 msgstr "Povolené"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:360
 #: ../extensions/rss/rss-ui.c:571
 msgid "Description"
 msgstr "Popis"
@@ -357,6 +369,14 @@ msgstr "<b>Načítané rozšírenia</b>"
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
 msgid "Extensions"
 msgstr "Rozšírenia"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
+msgid "_Extensions"
+msgstr "_Rozšírenia"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+msgid "Load and unload extensions"
+msgstr "Načítať a uvoľniť rozšírenia"
 
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
 msgid "Install User _Script"
@@ -789,3 +809,170 @@ msgstr "Presunúť kartu do okna"
 #: ../extensions/tabsmenu/ephy-tab-move-menu.c:302
 msgid "Move the current tab to a different window"
 msgstr "Presunúť aktuálnu kartu do iného okna"
+
+#: ../extensions/actions/actions.ephy-extension.in.in.h:2
+msgid "Execute arbitrary commands from the context menu"
+msgstr "Vykonať doplnkové príkazy z kontextového menu"
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
+msgid "Auto Scroll"
+msgstr "Automatický posuv"
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
+msgid "Scroll on middle mouse click"
+msgstr "Posunúť pri kliknutí stredným tlačidlom myši"
+
+#: ../extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in.h:1
+msgid "Add a bookmarks menu to the panel's notification area"
+msgstr "Pridať menu záložiek do oblasti upozornení panela"
+
+#: ../extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Bookmarks Tray"
+msgstr "Záložky"
+
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
+msgid "View the page certificate and manage the certificates"
+msgstr "Zobraziť certifikát stránky a spravovať certifikáty"
+
+#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:1
+msgid "Dashboard"
+msgstr ""
+
+#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:2
+msgid "Send browsing information to Dashboard"
+msgstr ""
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
+msgid "Error viewer"
+msgstr "Zobrazovač chýb"
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
+msgid "View error in web pages, validate web pages and check links"
+msgstr "Zobraziť chyby na www stránkach, overiť www stránky a skontrolovať odkazy"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
+msgid "Activate and deactivate extensions"
+msgstr "Aktivovať a deaktivovať rozšírenia"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
+msgid "Extensions Manager"
+msgstr "Správca rozšírení"
+
+#: ../extensions/favicon/favicon.ephy-extension.in.h:1
+msgid "Favicon fallback"
+msgstr ""
+
+#: ../extensions/favicon/favicon.ephy-extension.in.h:2
+msgid ""
+"Loads /favicon.ico as favicon if the site doesn't use the standard method"
+msgstr ""
+"Načíta /favicon.ico ako obľúbenú ikonu, ak stránka nepoužíva štandardnú metódu"
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
+msgid "Gestures"
+msgstr "Gestá"
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:2
+msgid "Perform actions with mouse gestures"
+msgstr "Vykonávať činnosti pomocou gest myši"
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
+msgid "Greasemonkey"
+msgstr "Greasemonkey"
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
+msgid "Run user scripts to modify web pages' behavior"
+msgstr "Spustiť skripty používateľa na modifikáciu správania sa stránky"
+
+#: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:1
+msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
+msgstr "Automaticky obsluhovať stav pripojenia/odpojenia siete (EXPERIMENTÁLNE!)"
+
+#: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:2
+msgid "Network Connection Monitor"
+msgstr "Sledovač pripojenia siete"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
+msgid "Display information about and links and media from the current page"
+msgstr "Zobraziť informácie o aktuálnej stránke, jej odkazoch a médiách"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
+msgid "Page Info"
+msgstr "Informácie o stránke"
+
+#: ../extensions/rss/rss.ephy-extension.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "Prihlásenie k odberu noviniek"
+
+#: ../extensions/rss/rss.ephy-extension.in.in.h:2
+msgid ""
+"Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr ""
+"Prihlásiť sa k odberu noviniek ponúkanému na tejto www stránke vo vašom obľubenom programe na čítanie "
+"diskusných skupín"
+
+#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
+msgid "A sample extension with mozilla backend"
+msgstr "Ukážkové rozšírenie s pozadím mozilla"
+
+#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:2
+msgid "Sample (Mozilla)"
+msgstr "Príklad (Mozilla)"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:1
+msgid "A sample extension"
+msgstr "Ukážkové rozšírenie"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:2
+msgid "Sample"
+msgstr "Príklad"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
+msgid "Select Stylesheet"
+msgstr "Vybrať štýl"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
+msgid "Select between different stylesheets offered by the web page"
+msgstr "Zvoliť medzi rôznymi štýlmi ponúkanými pre túto stránku"
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
+msgid "Adds a sidebar to windows"
+msgstr "Pridá bočnú lištu do okien"
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
+msgid "Sidebar"
+msgstr "Bočná lišta"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
+msgid "Look up the selected text with a smart bookmark"
+msgstr ""
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Smart Bookmarks"
+msgstr "Záložky"
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
+msgid "Groups newly opened tabs"
+msgstr "Zoskupuje novootvorené karty"
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
+msgid "Tab Groups"
+msgstr "Skupiny kariet"
+
+#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:1
+msgid "Move tabs between windows"
+msgstr "Presúvať karty medzi oknami"
+
+#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:2
+msgid "Tabsmenu"
+msgstr "Menu kariet"
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
+msgid "Indicates new content in background tabs"
+msgstr "Indikuje nový obsah na kartách v pozadí"
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
+msgid "Tab States"
+msgstr "Stavy karty"
