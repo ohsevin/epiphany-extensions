@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-07-23 20:37+0200\n"
-"PO-Revision-Date: 2005-07-23 20:41+0200\n"
+"POT-Creation-Date: 2005-10-29 15:56+0200\n"
+"PO-Revision-Date: 2005-10-29 15:52+0200\n"
 "Last-Translator: Francisco Javier F. Serrador <serrador@cvs.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -122,14 +122,22 @@ msgstr[1] "Se han seleccionado %i acciones."
 msgid "Add Action"
 msgstr "Añadir acción"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:421
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:415
 #, c-format
 msgid "%s Properties"
 msgstr "Propiedades de %s"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:426
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
 msgid "Action Properties"
 msgstr "Propiedades de acción"
+
+#: ../extensions/auto-scroller/auto-scroller.xml.in.in.h:1
+msgid "Auto Scroll"
+msgstr "Autodesplazar"
+
+#: ../extensions/auto-scroller/auto-scroller.xml.in.in.h:2
+msgid "Scroll on middle mouse click"
+msgstr "Desplazar al pulsar el botón central del ratón"
 
 #: ../extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:1
 msgid "Add a bookmarks menu to the panel's notification area"
@@ -176,6 +184,7 @@ msgid "Bookmarks"
 msgstr "Marcadores"
 
 #: ../extensions/certificates/certificates.xml.in.in.h:1
+#: ../extensions/certificates/ephy-certificates-extension.c:173
 msgid "Certificates"
 msgstr "Certificados"
 
@@ -183,23 +192,37 @@ msgstr "Certificados"
 msgid "View the page certificate and manage the certificates"
 msgstr "Vea el certificado de página y gestione los certificados"
 
+#: ../extensions/certificates/ephy-certificates-extension.c:203
+msgid "Security Devices"
+msgstr "Dispositivos de seguridad"
+
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:275
+#: ../extensions/certificates/ephy-certificates-extension.c:321
 msgid "Manage _Certificates"
 msgstr "Administrar _certificados"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:277
+#: ../extensions/certificates/ephy-certificates-extension.c:323
 msgid "Manage your certificates"
 msgstr "Administra sus certificados"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:284
+#: ../extensions/certificates/ephy-certificates-extension.c:327
+msgid "Manage Security _Devices"
+msgstr "Administrar _dispositivos de seguridad"
+
+#. shortcut key
+#: ../extensions/certificates/ephy-certificates-extension.c:329
+msgid "Manage your security devices"
+msgstr "Administra sus dispositivos de seguridad"
+
+#. stock icon
+#: ../extensions/certificates/ephy-certificates-extension.c:336
 msgid "Server _Certificate"
 msgstr "_Certificado del servidor"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:286
+#: ../extensions/certificates/ephy-certificates-extension.c:338
 msgid "Display the web server's certificate"
 msgstr "Mostrar el certificado del servidor web"
 
@@ -400,6 +423,15 @@ msgstr "Activar y desactivar extensiones"
 msgid "Extensions Manager"
 msgstr "Administrador de extensiones"
 
+#: ../extensions/favicon/favicon.xml.in.in.h:1
+msgid "Favicon fallback"
+msgstr "Recuperación de Favicon"
+
+#: ../extensions/favicon/favicon.xml.in.in.h:2
+msgid ""
+"Loads /favicon.ico as favicon if the site doesn't use the standard method"
+msgstr "Carga /favicon.ico como favicon si el sitio no usa el método estándar"
+
 #: ../extensions/gestures/gestures.xml.in.in.h:1
 msgid "Gestures"
 msgstr "Gestos"
@@ -428,7 +460,9 @@ msgstr "Greasemonkey"
 
 #: ../extensions/greasemonkey/greasemonkey.xml.in.in.h:2
 msgid "Run user scripts to modify web pages' behavior"
-msgstr "Ejecutar scripts de usuario para modificar el comportamiento de las páginas web"
+msgstr ""
+"Ejecutar scripts de usuario para modificar el comportamiento de las páginas "
+"web"
 
 #. How to describe this? It makes Epiphany "Just Work"
 #: ../extensions/net-monitor/net-monitor.xml.in.in.h:2
@@ -441,160 +475,161 @@ msgid "Network Connection Monitor"
 msgstr "Monitor de conexión de red"
 
 #: ../extensions/page-info/ephy-page-info-extension.c:65
-msgid "_Page Info"
-msgstr "_Información de la página"
+msgid "Pa_ge Information"
+msgstr "Info de la _página"
 
 #: ../extensions/page-info/ephy-page-info-extension.c:67
 msgid "Display page information in a dialog"
 msgstr "Muestra la información de la página en un diálogo"
 
-#: ../extensions/page-info/page-info-dialog.c:672
-msgid "Unknown type"
-msgstr "Tipo desconocido"
+#: ../extensions/page-info/page-info-dialog.c:727
+msgid "Save As..."
+msgstr "Guardar como..."
 
-#: ../extensions/page-info/page-info-dialog.c:677
-msgid "Full standards compliance"
-msgstr "Cumple con todos los estándares"
-
-#: ../extensions/page-info/page-info-dialog.c:680
-msgid "Almost standards compliance"
-msgstr "Cumple con la mayoría de los estándares"
-
-#: ../extensions/page-info/page-info-dialog.c:683
-msgid "Compatibility"
-msgstr "Compatibilidad"
-
-#: ../extensions/page-info/page-info-dialog.c:687
-msgid "Undetermined"
-msgstr "Indeterminada"
-
-#: ../extensions/page-info/page-info-dialog.c:696
-msgid "Not cached"
-msgstr "No cacheado"
-
-#: ../extensions/page-info/page-info-dialog.c:699
-msgid "Disk cache"
-msgstr "Caché de disco"
-
-#: ../extensions/page-info/page-info-dialog.c:702
-msgid "Memory cache"
-msgstr "Caché de memoria"
-
-#: ../extensions/page-info/page-info-dialog.c:705
-msgid "Unknown cache"
-msgstr "Caché desconocido"
-
-#: ../extensions/page-info/page-info-dialog.c:721
-#: ../extensions/page-info/page-info-dialog.c:832
-msgid "Unknown"
-msgstr "Desconocido "
-
-#: ../extensions/page-info/page-info-dialog.c:726
-msgid "No referrer"
-msgstr "Sin referrer"
-
-#: ../extensions/page-info/page-info-dialog.c:740
-#: ../extensions/page-info/page-info-dialog.c:756
-msgid "Not specified"
-msgstr "Sin especificar"
-
-#: ../extensions/page-info/page-info-dialog.c:817
-msgid "Image"
-msgstr "Imagen"
-
-#: ../extensions/page-info/page-info-dialog.c:820
-msgid "Embed"
-msgstr "Embeber"
-
-#: ../extensions/page-info/page-info-dialog.c:823
-msgid "Object"
-msgstr "Objeto"
-
-#: ../extensions/page-info/page-info-dialog.c:826
-msgid "Applet"
-msgstr "Miniaplicación"
-
-#: ../extensions/page-info/page-info-dialog.c:829
-msgid "Icon"
-msgstr "Icono"
-
-#: ../extensions/page-info/page-info-dialog.c:957
-msgid "Save Medium As..."
-msgstr "Guardar soporte como..."
-
-#: ../extensions/page-info/page-info-dialog.c:974
+#: ../extensions/page-info/page-info-dialog.c:744
 msgid "Select a directory"
 msgstr "Seleccione un directorio"
 
-#: ../extensions/page-info/page-info-dialog.c:1054
+#: ../extensions/page-info/page-info-dialog.c:793
+msgid "Unknown type"
+msgstr "Tipo desconocido"
+
+#: ../extensions/page-info/page-info-dialog.c:798
+msgid "Full standards compliance"
+msgstr "Cumple con todos los estándares"
+
+#: ../extensions/page-info/page-info-dialog.c:801
+msgid "Almost standards compliance"
+msgstr "Cumple con la mayoría de los estándares"
+
+#: ../extensions/page-info/page-info-dialog.c:804
+msgid "Compatibility"
+msgstr "Compatibilidad"
+
+#: ../extensions/page-info/page-info-dialog.c:808
+msgid "Undetermined"
+msgstr "Indeterminada"
+
+#: ../extensions/page-info/page-info-dialog.c:817
+msgid "Not cached"
+msgstr "No cacheado"
+
+#: ../extensions/page-info/page-info-dialog.c:820
+msgid "Disk cache"
+msgstr "Caché de disco"
+
+#: ../extensions/page-info/page-info-dialog.c:823
+msgid "Memory cache"
+msgstr "Caché de memoria"
+
+#: ../extensions/page-info/page-info-dialog.c:826
+msgid "Unknown cache"
+msgstr "Caché desconocido"
+
+#: ../extensions/page-info/page-info-dialog.c:842
+#: ../extensions/page-info/page-info-dialog.c:953
+msgid "Unknown"
+msgstr "Desconocido "
+
+#: ../extensions/page-info/page-info-dialog.c:847
+msgid "No referrer"
+msgstr "Sin referrer"
+
+#: ../extensions/page-info/page-info-dialog.c:861
+#: ../extensions/page-info/page-info-dialog.c:877
+msgid "Not specified"
+msgstr "Sin especificar"
+
+#: ../extensions/page-info/page-info-dialog.c:938
+msgid "Image"
+msgstr "Imagen"
+
+#: ../extensions/page-info/page-info-dialog.c:941
+msgid "Embed"
+msgstr "Embeber"
+
+#: ../extensions/page-info/page-info-dialog.c:944
+msgid "Object"
+msgstr "Objeto"
+
+#: ../extensions/page-info/page-info-dialog.c:947
+msgid "Applet"
+msgstr "Miniaplicación"
+
+#: ../extensions/page-info/page-info-dialog.c:950
+msgid "Icon"
+msgstr "Icono"
+
+#: ../extensions/page-info/page-info-dialog.c:1055
 msgid "_Open"
 msgstr "_Abrir"
 
-#: ../extensions/page-info/page-info-dialog.c:1060
-#: ../extensions/page-info/page-info-dialog.c:1412
+#: ../extensions/page-info/page-info-dialog.c:1061
+#: ../extensions/page-info/page-info-dialog.c:1413
 msgid "_Copy Link Address"
 msgstr "_Copiar dirección del enlace"
 
-#: ../extensions/page-info/page-info-dialog.c:1066
+#: ../extensions/page-info/page-info-dialog.c:1067
 msgid "_Use as Background"
 msgstr "_Usar como fondo"
 
-#: ../extensions/page-info/page-info-dialog.c:1072
+#: ../extensions/page-info/page-info-dialog.c:1073
+#: ../extensions/page-info/page-info-dialog.c:1419
 msgid "_Save As..."
 msgstr "Guardar _como..."
 
-#: ../extensions/page-info/page-info-dialog.c:1249
-#: ../extensions/page-info/page-info-dialog.c:1484
+#: ../extensions/page-info/page-info-dialog.c:1250
+#: ../extensions/page-info/page-info-dialog.c:1491
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1261
+#: ../extensions/page-info/page-info-dialog.c:1262
 msgid "Type"
 msgstr "Tipo"
 
-#: ../extensions/page-info/page-info-dialog.c:1273
+#: ../extensions/page-info/page-info-dialog.c:1274
 msgid "Alt Text"
 msgstr "Texto Alt"
 
-#: ../extensions/page-info/page-info-dialog.c:1285
-#: ../extensions/page-info/page-info-dialog.c:1496
+#: ../extensions/page-info/page-info-dialog.c:1286
+#: ../extensions/page-info/page-info-dialog.c:1503
 msgid "Title"
 msgstr "Título"
 
-#: ../extensions/page-info/page-info-dialog.c:1297
+#: ../extensions/page-info/page-info-dialog.c:1298
 msgid "Width"
 msgstr "Anchura"
 
-#: ../extensions/page-info/page-info-dialog.c:1309
+#: ../extensions/page-info/page-info-dialog.c:1310
 msgid "Height"
 msgstr "Altura"
 
-#: ../extensions/page-info/page-info-dialog.c:1508
+#: ../extensions/page-info/page-info-dialog.c:1515
 msgid "Relation"
 msgstr "Relación"
 
-#: ../extensions/page-info/page-info-dialog.c:1620
-#: ../extensions/page-info/page-info-dialog.c:1757
+#: ../extensions/page-info/page-info-dialog.c:1645
+#: ../extensions/page-info/page-info-dialog.c:1782
 msgid "Name"
 msgstr "Nombre"
 
-#: ../extensions/page-info/page-info-dialog.c:1632
+#: ../extensions/page-info/page-info-dialog.c:1657
 msgid "Method"
 msgstr "Método"
 
-#: ../extensions/page-info/page-info-dialog.c:1644
+#: ../extensions/page-info/page-info-dialog.c:1669
 msgid "Action"
 msgstr "Acción"
 
-#: ../extensions/page-info/page-info-dialog.c:1723
+#: ../extensions/page-info/page-info-dialog.c:1748
 msgid "_Copy"
 msgstr "_Copiar"
 
-#: ../extensions/page-info/page-info-dialog.c:1769
+#: ../extensions/page-info/page-info-dialog.c:1794
 msgid "Content"
 msgstr "Contenido"
 
-#: ../extensions/page-info/page-info-dialog.c:1868
+#: ../extensions/page-info/page-info-dialog.c:1893
 msgid "Page Metadata"
 msgstr "Metadatos de la página"
 
@@ -747,7 +782,8 @@ msgstr "_Subscribirse a este proveedor"
 
 #: ../extensions/rss/ephy-rss-extension.c:103
 msgid "Subscribe to this feed in your favorite news reader"
-msgstr "Subscribirse a este proveedor de noticias en su lector de noticias favorito"
+msgstr ""
+"Subscribirse a este proveedor de noticias en su lector de noticias favorito"
 
 #: ../extensions/rss/ephy-rss-extension.c:373
 msgid "Subscribe to site's news feed"
@@ -940,6 +976,12 @@ msgstr "Indica el contenido nuevo en solapas en segundo plano"
 #: ../extensions/tab-states/tab-states.xml.in.in.h:2
 msgid "Tab States"
 msgstr "Estado de solapas"
+
+#~ msgid "_Page Info"
+#~ msgstr "_Información de la página"
+
+#~ msgid "Save Medium As..."
+#~ msgstr "Guardar soporte como..."
 
 #~ msgid "Search string"
 #~ msgstr "Cadena de búsqueda"
