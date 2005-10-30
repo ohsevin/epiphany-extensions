@@ -124,11 +124,6 @@ static GtkTargetEntry drag_targets[] =
 	{ EPHY_DND_TEXT_TYPE,	  0, 1 }
 };
 
-/* glade callbacks */
-void rss_ui_response_cb	(GtkWidget *button,
-				 int response,
-				 RssUI *dialog);
-
 static GObjectClass *parent_class = NULL;
 static GType type = 0;
 
@@ -170,7 +165,7 @@ rss_ui_subscribe_selected (GtkTreeModel *model,
 	return FALSE;
 }
 
-void
+static void
 rss_ui_response_cb (GtkWidget *widget,
 		    int response,
 		    RssUI *dialog)
@@ -546,6 +541,9 @@ rss_ui_constructor (GType type,
 				  properties[PROP_SUBSCRIBE].id, &priv->subscribe,
 				  properties[PROP_CLOSE].id, &priv->close,
 				  NULL);
+
+	g_signal_connect (priv->dialog, "response",
+			  G_CALLBACK (rss_ui_response_cb), dialog);
 
 	priv->store = gtk_list_store_new (N_COLUMNS,
 					  RSS_TYPE_NEWSFEED,

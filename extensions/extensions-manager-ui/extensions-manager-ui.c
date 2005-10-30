@@ -79,14 +79,6 @@ enum
 	N_COLUMNS
 };
 
-/* glade callbacks */
-void extensions_manager_ui_response_cb (GtkWidget *button,
-					int response,
-				  	GObject *dialog);
-void extensions_manager_ui_info_dialog_response_cb (GtkWidget *button,
-						    int response,
-						    GObject *dialog);
-
 static void extensions_manager_ui_class_init	(ExtensionsManagerUIClass *klass);
 static void extensions_manager_ui_init		(ExtensionsManagerUI *dialog);
 
@@ -124,7 +116,7 @@ extensions_manager_ui_register_type (GTypeModule *module)
 	return type;
 }
 
-void
+static void
 extensions_manager_ui_response_cb (GtkWidget *widget,
 				   int response,
 				   GObject *dialog)
@@ -135,14 +127,6 @@ extensions_manager_ui_response_cb (GtkWidget *widget,
 		return;
 	}
 
-	g_object_unref (dialog);
-}
-
-void
-extensions_manager_ui_info_dialog_response_cb (GtkWidget *widget,
-					       int response,
-					       GObject *dialog)
-{
 	g_object_unref (dialog);
 }
 
@@ -337,6 +321,9 @@ build_ui (ExtensionsManagerUI *dialog)
 						properties[PROP_WINDOW].id);
 	priv->treeview = ephy_dialog_get_control (EPHY_DIALOG (dialog),
 						  properties[PROP_TREEVIEW].id);
+
+	g_signal_connect (priv->window, "response",
+			  G_CALLBACK (extensions_manager_ui_response_cb), dialog);
 
 	gtk_window_set_icon_name (GTK_WINDOW (priv->window), GTK_STOCK_PREFERENCES);
 

@@ -62,12 +62,6 @@ enum
 	N_COLUMNS
 };
 
-/* glade callbacks */
-void error_viewer_clear_cb (GtkWidget *button,
-			    ErrorViewer *dialog);
-void error_viewer_close_cb (GtkWidget *button,
-			    ErrorViewer *dialog);
-
 static void error_viewer_class_init	(ErrorViewerClass *klass);
 static void error_viewer_init		(ErrorViewer *dialog);
 static void error_viewer_finalize	(GObject *object);
@@ -196,6 +190,24 @@ delete_window_cb (GtkWidget *widget,
 }
 
 static void
+response_cb (GtkWidget *widget,
+	     int response,
+	     ErrorViewer *dialog)
+{
+	ErrorViewerPrivate *priv = dialog->priv;
+
+	if (response == 1 /* Clear */)
+	{
+		gtk_list_store_clear (GTK_LIST_STORE (priv->model));
+		gtk_tree_view_columns_autosize (GTK_TREE_VIEW (priv->treeview));
+	
+		return;
+	}
+
+	gtk_widget_hide (widget);
+}
+
+static void
 build_ui (ErrorViewer *dialog)
 {
 	GtkListStore *store;
@@ -213,6 +225,8 @@ build_ui (ErrorViewer *dialog)
 
 	g_signal_connect (priv->window, "delete-event",
 			  G_CALLBACK (delete_window_cb), NULL);
+	g_signal_connect (priv->window, "response",
+			  G_CALLBACK (response_cb), dialog);
 
 	treeview = GTK_TREE_VIEW (priv->treeview);
 
@@ -273,22 +287,6 @@ error_viewer_finalize (GObject *object)
 	/* FIXME: Free TreeView stuff? */
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
-}
-
-void
-error_viewer_clear_cb (GtkWidget *button,
-		       ErrorViewer *dialog)
-{
-	gtk_list_store_clear (GTK_LIST_STORE (dialog->priv->model));
-
-	gtk_tree_view_columns_autosize (GTK_TREE_VIEW (dialog->priv->treeview));
-}
-
-void
-error_viewer_close_cb (GtkWidget *button,
-		       ErrorViewer *dialog)
-{
-	gtk_widget_hide (dialog->priv->window);
 }
 
 static void

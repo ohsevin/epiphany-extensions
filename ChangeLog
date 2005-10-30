@@ -1,3 +1,20 @@
+2005-10-30  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/error-viewer/error-viewer.c: (response_cb),
+	(build_ui), (error_viewer_finalize):
+	* extensions/error-viewer/error-viewer.glade:
+	* extensions/extensions-manager-ui/extensions-manager-ui.c:
+	(build_ui):
+	* extensions/extensions-manager-ui/extensions-manager-ui.glade:
+	* extensions/page-info/page-info-dialog.c:
+	(page_info_dialog_response_cb), (page_info_media_box_realize_cb),
+	(media_info_page_construct), (page_info_dialog_constructor):
+	* extensions/page-info/page-info.glade:
+	* extensions/rss/rss-ui.c: (rss_ui_constructor):
+	* extensions/rss/rss-ui.glade:
+
+	Remove glade callbacks.
+
 2005-10-27  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/certificates/ephy-certificates-extension.c:

@@ -17,6 +17,7 @@
   <property name="type_hint">GDK_WINDOW_TYPE_HINT_DIALOG</property>
   <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
   <property name="focus_on_map">True</property>
+  <property name="urgency_hint">False</property>
   <property name="has_separator">False</property>
 
   <child internal-child="vbox">
@@ -40,7 +41,6 @@
 	      <property name="relief">GTK_RELIEF_NORMAL</property>
 	      <property name="focus_on_click">True</property>
 	      <property name="response_id">-7</property>
-	      <signal name="clicked" handler="page_info_dialog_close_button_clicked_cb" last_modification_time="Fri, 14 Nov 2003 03:32:27 GMT"/>
 	    </widget>
 	  </child>
 	</widget>
@@ -1125,7 +1125,6 @@
 			  <property name="bottom_padding">0</property>
 			  <property name="left_padding">0</property>
 			  <property name="right_padding">0</property>
-			  <signal name="realize" handler="page_info_media_box_realize_cb" last_modification_time="Wed, 02 Mar 2005 15:26:11 GMT"/>
 
 			  <child>
 			    <placeholder/>

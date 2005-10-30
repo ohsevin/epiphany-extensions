@@ -72,14 +72,6 @@ static void page_info_set_text (PageInfoDialog *dialog,
 		    		const char *prop,
 		    		const char *text);
 
-/* Glade callbacks */
-void page_info_dialog_close_button_clicked_cb	  (GtkWidget *button,
-						   PageInfoDialog *dialog);
-void page_info_dialog_view_cert_button_clicked_cb (GtkWidget *button,
-						   PageInfoDialog *dialog);
-void page_info_media_box_realize_cb		  (GtkContainer *box,
-						   PageInfoDialog *dialog);
-
 enum {
 	GENERAL_PAGE,
 	MEDIA_PAGE,
@@ -402,21 +394,12 @@ page_info_dialog_set_current_page (PageInfoDialog *dialog, PageInfoDialogPage pa
 }
 */
 
-void
-page_info_dialog_close_button_clicked_cb (GtkWidget *button,
-					  PageInfoDialog *dialog)
+static void
+page_info_dialog_response_cb (GtkWidget *widget,
+			      int response,
+			      PageInfoDialog *dialog)
 {
 	g_object_unref (dialog);
-}
-
-void
-page_info_dialog_view_cert_button_clicked_cb (GtkWidget *button,
-					      PageInfoDialog *dialog)
-{
-	/*
-	GaleonEmbed *embed = galeon_tab_get_embed (dialog->priv->tab);
-	galeon_embed_show_page_certificate (embed);
-	*/
 }
 
 /* Helper functions */
@@ -1076,7 +1059,7 @@ static const GtkActionEntry media_action_entries[] =
 	  G_CALLBACK (treeview_page_info_save_selected_cb) }
 };
 
-void
+static void
 page_info_media_box_realize_cb (GtkContainer *box,
 				PageInfoDialog *dialog)
 {
@@ -1090,7 +1073,7 @@ page_info_media_box_realize_cb (GtkContainer *box,
 	/* When the media has loaded grab the focus for the treeview
 	 * again. This means that you can navigate in the treeview
 	 * using the arrow keys */
-	g_signal_connect_swapped (embed, "net_stop",
+	g_signal_connect_swapped (embed, "net-stop",
 				  G_CALLBACK (gtk_widget_grab_focus),
 				  tpage->treeview);
 
@@ -1205,11 +1188,17 @@ media_info_page_construct (InfoPage *ipage)
 	GtkCellRenderer *renderer;
 	GtkTreeViewColumn *column;
 	GtkTreeSelection *selection;
-	GtkWidget *button, *vpaned;
+	GtkWidget *button, *vpaned, *box;
 	GtkAction *action;
 
-	treeview = GTK_TREE_VIEW (ephy_dialog_get_control
-		(EPHY_DIALOG (dialog), properties[PROP_MEDIA_MEDIUM_TREEVIEW].id));
+	ephy_dialog_get_controls
+		(EPHY_DIALOG (dialog),
+		 properties[PROP_MEDIA_MEDIUM_TREEVIEW].id, &treeview,
+		 properties[PROP_MEDIA_MEDIUM_BOX].id, &box,
+		 NULL);
+
+	g_signal_connect (box, "realize",
+			  G_CALLBACK (page_info_media_box_realize_cb), dialog);
 
 	liststore = gtk_list_store_new (7,
 					G_TYPE_STRING,
@@ -1941,6 +1930,7 @@ page_info_dialog_constructor (GType type,
 {
 	GObject *object;
 	PageInfoDialog *dialog;
+	PageInfoDialogPrivate *priv;
 	EphyDialog *edialog;
 	GtkAction *action;
 	InfoPage *page;
@@ -1952,6 +1942,7 @@ page_info_dialog_constructor (GType type,
 
 	dialog = PAGE_INFO_DIALOG (object);
 	edialog = EPHY_DIALOG (object);
+	priv = dialog->priv;
 
 	ephy_dialog_construct (edialog,
 			       properties,
@@ -1965,7 +1956,9 @@ page_info_dialog_constructor (GType type,
 				G_CALLBACK (sync_notebook_page), dialog);
 	*/
 
-	dialog->priv->dialog = ephy_dialog_get_control (edialog, properties[PROP_DIALOG].id);
+	priv->dialog = ephy_dialog_get_control (edialog, properties[PROP_DIALOG].id);
+	g_signal_connect (priv->dialog, "response",
+			  G_CALLBACK (page_info_dialog_response_cb), dialog);
 
 	gtk_window_set_icon_name (GTK_WINDOW (dialog->priv->dialog),
 				  GTK_STOCK_PROPERTIES);
