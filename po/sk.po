@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-10-28 21:11+0200\n"
-"PO-Revision-Date: 2005-10-28 22:21+0200\n"
+"POT-Creation-Date: 2005-10-30 18:24+0100\n"
+"PO-Revision-Date: 2005-10-30 18:52+0100\n"
 "Last-Translator: Marcel Telka <marcel@telka.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
@@ -827,9 +827,8 @@ msgid "Add a bookmarks menu to the panel's notification area"
 msgstr "Pridať menu záložiek do oblasti upozornení panela"
 
 #: ../extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Bookmarks Tray"
-msgstr "Záložky"
+msgstr "Zásobník záložiek"
 
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
@@ -837,11 +836,11 @@ msgstr "Zobraziť certifikát stránky a spravovať certifikáty"
 
 #: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:1
 msgid "Dashboard"
-msgstr ""
+msgstr "Prístrojová doska"
 
 #: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:2
 msgid "Send browsing information to Dashboard"
-msgstr ""
+msgstr "Odoslať informácie prehliadania na prístrojovú dosku"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -849,7 +848,8 @@ msgstr "Zobrazovač chýb"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
 msgid "View error in web pages, validate web pages and check links"
-msgstr "Zobraziť chyby na www stránkach, overiť www stránky a skontrolovať odkazy"
+msgstr ""
+"Zobraziť chyby na www stránkach, overiť www stránky a skontrolovať odkazy"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
 msgid "Activate and deactivate extensions"
@@ -861,13 +861,14 @@ msgstr "Správca rozšírení"
 
 #: ../extensions/favicon/favicon.ephy-extension.in.h:1
 msgid "Favicon fallback"
-msgstr ""
+msgstr "Predvolená obľúbená ikona"
 
 #: ../extensions/favicon/favicon.ephy-extension.in.h:2
 msgid ""
 "Loads /favicon.ico as favicon if the site doesn't use the standard method"
 msgstr ""
-"Načíta /favicon.ico ako obľúbenú ikonu, ak stránka nepoužíva štandardnú metódu"
+"Načíta /favicon.ico ako obľúbenú ikonu, ak stránka nepoužíva štandardnú "
+"metódu"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -887,7 +888,8 @@ msgstr "Spustiť skripty používateľa na modifikáciu správania sa stránky"
 
 #: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:1
 msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
-msgstr "Automaticky obsluhovať stav pripojenia/odpojenia siete (EXPERIMENTÁLNE!)"
+msgstr ""
+"Automaticky obsluhovať stav pripojenia/odpojenia siete (EXPERIMENTÁLNE!)"
 
 #: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:2
 msgid "Network Connection Monitor"
@@ -909,8 +911,8 @@ msgstr "Prihlásenie k odberu noviniek"
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr ""
-"Prihlásiť sa k odberu noviniek ponúkanému na tejto www stránke vo vašom obľubenom programe na čítanie "
-"diskusných skupín"
+"Prihlásiť sa k odberu noviniek ponúkanému na tejto www stránke vo vašom "
+"obľubenom programe na čítanie diskusných skupín"
 
 #: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
 msgid "A sample extension with mozilla backend"
@@ -946,12 +948,11 @@ msgstr "Bočná lišta"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
 msgid "Look up the selected text with a smart bookmark"
-msgstr ""
+msgstr "Vyhľadať označený text pomocou pohotových záložiek"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Smart Bookmarks"
-msgstr "Záložky"
+msgstr "Pohotové záložky"
 
 #: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
 msgid "Groups newly opened tabs"
