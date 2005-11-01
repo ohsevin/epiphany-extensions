@@ -148,7 +148,7 @@ create_stylesheet_action (EphyCSSMenu *menu,
 			tooltip = g_strdup (_("Render the page using the default style"));
 			break;
 		default:
-			tooltip = g_strdup_printf (_("Render the page using the \"%s\" style"), 
+			tooltip = g_strdup_printf (_("Render the page using the “%s” style"), 
 						   name);
 			break;
 	}

@@ -412,7 +412,7 @@ ephy_actions_extension_properties_dialog_update_title
 		char *formatted;
 
 		formatted = ephy_actions_extension_format_name_for_display (name);
-		title = g_strdup_printf (_("%s Properties"), formatted);
+		title = g_strdup_printf (_("“%s” Properties"), formatted);
 		g_free (formatted);
 	}
 	else

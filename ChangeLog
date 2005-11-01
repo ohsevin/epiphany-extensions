@@ -1,3 +1,22 @@
+2005-11-01  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/actions/ephy-actions-extension-properties-dialog.c:
+	(ephy_actions_extension_properties_dialog_update_title):
+	* extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:
+	* extensions/error-viewer/opensp/validate.cpp:
+	* extensions/error-viewer/sgml-validator.c: (opensp_thread),
+	(check_doctype):
+	* extensions/greasemonkey/ephy-greasemonkey-extension.c:
+	(save_source_completed_cb):
+	* extensions/select-stylesheet/ephy-css-menu.c:
+	(create_stylesheet_action):
+	* extensions/sidebar/ephy-sidebar-extension.c:
+	(ephy_sidebar_extension_add_sidebar_cb):
+	* extensions/tabsmenu/ephy-tab-move-menu.c:
+	(add_action_and_menu_item):
+
+	Use curly quotes.
+
 2005-10-30  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/error-viewer/error-viewer.c: (response_cb),

@@ -187,8 +187,8 @@ add_action_and_menu_item (EphyWindow *window,
 	tab = ephy_window_get_active_tab (window);
 	g_return_if_fail (EPHY_IS_TAB (tab));
 
-	text = dngettext (GETTEXT_PACKAGE, "Window '%s' (%d tab)",
-					   "Window '%s' (%d tabs)", num);
+	text = dngettext (GETTEXT_PACKAGE, "Window “%s” (%d tab)",
+					   "Window “%s” (%d tabs)", num);
 	title = g_strdup_printf (text, ephy_tab_get_title (tab), num);
 
 	action = g_object_new (GTK_TYPE_ACTION,

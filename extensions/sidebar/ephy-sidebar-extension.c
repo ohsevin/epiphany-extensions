@@ -408,11 +408,11 @@ ephy_sidebar_extension_add_sidebar_cb (EphyEmbedSingle *single,
 		 GTK_DIALOG_DESTROY_WITH_PARENT,
 		 GTK_MESSAGE_QUESTION,
 		 GTK_BUTTONS_CANCEL,
-		 _("Add \"%s\" to the Sidebar?"), title);
+		 _("Add “%s” to the Sidebar?"), title);
 
 	gtk_message_dialog_format_secondary_text
 		(GTK_MESSAGE_DIALOG (dialog),
-		 _("The source to the new sidebar page is %s."), url);
+		 _("The source to the new sidebar page is “%s”."), url);
 
 	gtk_window_set_title (GTK_WINDOW (dialog), _("Add Sidebar"));
 	gtk_window_set_icon_name (GTK_WINDOW (dialog), "web-browser");

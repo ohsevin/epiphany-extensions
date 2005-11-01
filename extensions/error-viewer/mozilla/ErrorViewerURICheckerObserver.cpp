@@ -57,7 +57,7 @@ ErrorViewerURICheckerObserver::~ErrorViewerURICheckerObserver()
 	{
 		char *msg, *part1, *part2;
 
-		part1 = g_strdup_printf ("Link check of %s complete",
+		part1 = g_strdup_printf ("Link check of “%s” complete",
 					 mFilename);
 		part2 = g_strdup_printf (ngettext ("Found %d invalid link",
 						   "Found %d invalid links",
@@ -192,13 +192,13 @@ nsresult ErrorViewerURICheckerObserver::DoneAdding (void)
 
 	if (mNumLinksTotal == 0)
 	{
-		msg = g_strdup_printf ("No links to check on %s", mFilename);
+		msg = g_strdup_printf ("No links to check on “%s”", mFilename);
 	}
 	else
 	{
 		msg = g_strdup_printf
-		        (ngettext("Checking %d Link on %s",
-		                  "Checking %d Links on %s",
+		        (ngettext("Checking %d Link on “%s”",
+		                  "Checking %d Links on “%s”",
 		                  mNumLinksTotal),
 		         mNumLinksTotal, mFilename);
 	}

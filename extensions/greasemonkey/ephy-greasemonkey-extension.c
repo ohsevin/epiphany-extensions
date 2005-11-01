@@ -351,7 +351,7 @@ save_source_completed_cb (EphyEmbedPersist *persist,
 	dialog = gtk_message_dialog_new (GTK_WINDOW (window), 0,
 					 GTK_MESSAGE_INFO,
 					 GTK_BUTTONS_OK,
-					 _("The user script at %s has "
+					 _("The user script at “%s” has "
 					   "been installed"),
 					 src);
 

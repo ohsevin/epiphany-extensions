@@ -129,7 +129,7 @@ HtmlErrorFinder::handle_line (const char *msg)
 			     matches, 0);
 	if (regex_ret != 0)
 	{
-		g_warning ("Could not parse OpenSP string.: %s\n", msg);
+		g_warning ("Could not parse OpenSP string: %s\n", msg);
 		sgml_validator_append (this->mValidator,
 				       ERROR_VIEWER_ERROR,
 				       msg);
@@ -164,7 +164,7 @@ HtmlErrorFinder::handle_line (const char *msg)
 	description = msg + matches[5].rm_so;
 
 	verbose_msg =
-		g_strdup_printf (_("HTML error in %s on line %s:\n%s"),
+		g_strdup_printf (_("HTML error in “%s” on line %s:\n%s"),
 				 display_filename, line_number, description);
 
 	sgml_validator_append (this->mValidator, error_type, verbose_msg);

@@ -166,7 +166,7 @@ opensp_thread (gpointer data)
 					    "Found %d errors",
 					    osp_data->num_errors),
 				  osp_data->num_errors);
-	complete = g_strdup_printf (_("HTML Validation of %s complete"),
+	complete = g_strdup_printf (_("HTML Validation of “%s” complete"),
 				    osp_data->location);
 
 	summary = g_strconcat (complete, "\n", errors, NULL);
@@ -226,9 +226,9 @@ check_doctype (SgmlValidator *validator,
 			t = g_strdup_printf
 				(_("HTML error in %s:\n%s"),
 				 location,
-				 _("Doctype is \"XHTML\""
-				   " but content type is \"text/html\". "
-				   " Use \"application/xhtml+xml\" instead."));
+				 _("Doctype is “XHTML”"
+				   " but content type is “text/html”. "
+				   " Use “application/xhtml+xml” instead."));
 
 			sgml_validator_append (validator,
 					       ERROR_VIEWER_ERROR, t);
@@ -242,9 +242,9 @@ check_doctype (SgmlValidator *validator,
 			t = g_strdup_printf
 				(_("HTML warning in %s:\n%s"),
 				 location,
-				 _("Doctype is \"XHTML\""
-				   " but content type is \"text/html\". "
-				   " Use \"application/xhtml+xml\" instead."));
+				 _("Doctype is “XHTML”"
+				   " but content type is “text/html”. "
+				   " Use “application/xhtml+xml” instead."));
 
 			sgml_validator_append (validator,
 					       ERROR_VIEWER_WARNING, t);
