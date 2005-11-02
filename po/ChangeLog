@@ -3,6 +3,10 @@ NOTE: they'll be released anytime an Epiphany 1.8.x release is made.
 NOTE:
 NOTE: And please keep this notice at the top of the file!
 	
+2005-11-02  Funda Wang  <fundawang@linux.net.cn>
+
+	* zh_CN.po: Updated Simplified Chinese translation.
+
 2005-11-01  Adam Weinberger  <adamw@gnome.org>
 
 	* en_CA.po: Updated Canadian English translation.
