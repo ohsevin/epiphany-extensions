@@ -230,8 +230,7 @@ show_context_menu (EphySidebarEmbed *sbembed,
 	}
 	else
 	{
-		popup = framed ? "/EphySidebarFramedDocumentPopup" :
-				 "/EphySidebarDocumentPopup";
+		popup = "/EphySidebarDocumentPopup";
 	}
 
 	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
@@ -255,6 +254,9 @@ show_context_menu (EphySidebarEmbed *sbembed,
 	action = gtk_ui_manager_get_action (manager, "/EphyInputPopup/EditPasteIP");
 	gtk_action_set_sensitive (action, can_paste);
 	gtk_action_set_visible (action, !hide_edit_actions || can_paste);
+
+	action = gtk_ui_manager_get_action (manager, "/EphyDocumentPopup/OpenFrameFDP");
+	gtk_action_set_visible (action, framed);
 
 	_ephy_window_set_context_event (window, event);
 

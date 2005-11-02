@@ -311,20 +311,6 @@ rebuild_ui (WindowData *data)
 			       LOOKUP_ACTION "Menu", LOOKUP_ACTION,
 			       GTK_UI_MANAGER_MENU, FALSE);
 
-	/* Add bookmarks to popup context (framed document) */
-	gtk_ui_manager_add_ui (manager, ui_id, "/EphyFramedDocumentPopup",
-			       "SmbExtSep0", NULL,
-			       GTK_UI_MANAGER_SEPARATOR, FALSE);
-	gtk_ui_manager_add_ui (manager, ui_id, "/EphyFramedDocumentPopup",
-			       LOOKUP_ACTION "Menu", LOOKUP_ACTION,
-			       GTK_UI_MANAGER_MENU, FALSE);
-	gtk_ui_manager_add_ui (manager, ui_id, "/EphyFullscreenFramedDocumentPopup",
-			       "SmbExtSep0", NULL,
-			       GTK_UI_MANAGER_SEPARATOR, FALSE);
-	gtk_ui_manager_add_ui (manager, ui_id, "/EphyFullscreenFramedDocumentPopup",
-			       LOOKUP_ACTION "Menu", LOOKUP_ACTION,
-			       GTK_UI_MANAGER_MENU, FALSE);
-
 	/* Add bookmarks to input popup context */
 	gtk_ui_manager_add_ui (manager, ui_id, "/EphyInputPopup",
 			       "SmbExtSep0", NULL,
@@ -356,15 +342,7 @@ rebuild_ui (WindowData *data)
 				       verb, verb,
 				       GTK_UI_MANAGER_MENUITEM, FALSE);
 		gtk_ui_manager_add_ui (manager, ui_id,
-				       "/EphyFramedDocumentPopup/" LOOKUP_ACTION "Menu",
-				       verb, verb,
-				       GTK_UI_MANAGER_MENUITEM, FALSE);
-		gtk_ui_manager_add_ui (manager, ui_id,
 				       "/EphyFullscreenDocumentPopup/" LOOKUP_ACTION "Menu",
-				       verb, verb,
-				       GTK_UI_MANAGER_MENUITEM, FALSE);
-		gtk_ui_manager_add_ui (manager, ui_id,
-				       "/EphyFullscreenFramedDocumentPopup/" LOOKUP_ACTION "Menu",
 				       verb, verb,
 				       GTK_UI_MANAGER_MENUITEM, FALSE);
 		gtk_ui_manager_add_ui (manager, ui_id,
@@ -383,14 +361,6 @@ rebuild_ui (WindowData *data)
 	gtk_ui_manager_add_ui (manager, ui_id,
 			       "/EphyFullscreenDocumentPopup/" LOOKUP_ACTION "Menu",
 			       GDICT_ACTION "FSIDP", GDICT_ACTION,
-			       GTK_UI_MANAGER_MENUITEM, FALSE);
-	gtk_ui_manager_add_ui (manager, ui_id,
-			       "/EphyFramedDocumentPopup/" LOOKUP_ACTION "Menu",
-			       GDICT_ACTION "IFDP", GDICT_ACTION,
-			       GTK_UI_MANAGER_MENUITEM, FALSE);
-	gtk_ui_manager_add_ui (manager, ui_id,
-			       "/EphyFullscreenFramedDocumentPopup/" LOOKUP_ACTION "Menu",
-			       GDICT_ACTION "FSIFDP", GDICT_ACTION,
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
 	gtk_ui_manager_add_ui (manager, ui_id,
 			       "/EphyInputPopup/" LOOKUP_ACTION "Menu",

@@ -2,17 +2,10 @@
 
 <popup name="EphySidebarDocumentPopup" action="PopupAction">
 	<menuitem name="EditCopyDP" action="EditCopy"/>
-	<separator name="DPSep2"/>
+	<separator />
 	<menuitem name="SavePageAsDP" action="SidebarSaveAs"/>
 	<menuitem name="SaveBackgroundAsDP" action="SidebarSaveBackgroundAs"/>
-</popup>
-
-<popup name="EphySidebarFramedDocumentPopup" action="PopupAction">
-	<menuitem name="EditCopyFDP" action="EditCopy"/>
-	<separator name="FDPSep2"/>
-	<menuitem name="SavePageAsFDP" action="SidebarSaveAs"/>
-	<menuitem name="SaveBackgroundAsFDP" action="SidebarSaveBackgroundAs"/>
-	<separator name="FDBSep3"/>
+	<separator />
 	<menuitem name="OpenFrameFDP" action="OpenFrame"/>
 </popup>
 
