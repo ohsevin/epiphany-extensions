@@ -31,7 +31,7 @@ AC_REVISION([$Revision$])
 AC_CONFIG_SRCDIR([extensions])
 AC_CONFIG_HEADERS([config.h])
 
-AM_INIT_AUTOMAKE([1.9 dist-bzip2 no-dist-gzip check-news tar-pax])
+AM_INIT_AUTOMAKE([1.9 dist-bzip2 no-dist-gzip check-news tar-ustar])
 
 dnl AC_SUBST([ACLOCAL_AMFLAGS], ["-I $ac_macro_dir \${ACLOCAL_FLAGS}"])
 AC_SUBST([ACLOCAL_AMFLAGS], ["\${ACLOCAL_FLAGS}"])
@@ -148,7 +148,7 @@ dnl *******************************
 
 AC_MSG_CHECKING([which extensions to build])
 
-ALL_EXTENSIONS="actions adblock auto-scroller bookmarks-tray certificates dashboard error-viewer extensions-manager-ui gestures greasemonkey net-monitor page-info rss sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu"
+ALL_EXTENSIONS="actions adblock auto-scroller bookmarks-tray certificates dashboard error-viewer extensions-manager-ui gestures greasemonkey net-monitor page-info permissions rss sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu"
 USEFUL_EXTENSIONS="actions auto-scroller bookmarks-tray certificates error-viewer extensions-manager-ui gestures page-info select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 DEFAULT_EXTENSIONS="actions auto-scroller bookmarks-tray certificates error-viewer extensions-manager-ui gestures page-info select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 
@@ -506,6 +506,7 @@ extensions/greasemonkey/mozilla/Makefile
 extensions/net-monitor/Makefile
 extensions/page-info/Makefile
 extensions/page-info/mozilla/Makefile
+extensions/permissions/Makefile
 extensions/python-console/Makefile
 extensions/rss/Makefile
 extensions/sample/Makefile

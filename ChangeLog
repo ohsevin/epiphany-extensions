@@ -1,3 +1,21 @@
+2005-11-05  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
+	Use tar-ustar instead of tar-pax to work with older tar's.
+	Should fix bug #320011.
+
+	A extensions/permissions/.cvsignore:
+	A extensions/permissions/Makefile.am:
+	A extensions/permissions/ephy-permissions-dialog.c:
+	A extensions/permissions/ephy-permissions-dialog.h:
+	A extensions/permissions/ephy-permissions-extension.c:
+	A extensions/permissions/ephy-permissions-extension.h:
+	A extensions/permissions/extension.c:
+	A extensions/permissions/permissions.ephy-extension.in.in:
+
+	Add Permissions extension.
+
 2005-11-02  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/sidebar/ephy-sidebar-embed.c: (show_context_menu):
