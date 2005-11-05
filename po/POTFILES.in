@@ -22,6 +22,8 @@ extensions/greasemonkey/ephy-greasemonkey-extension.c
 extensions/page-info/ephy-page-info-extension.c
 extensions/page-info/page-info-dialog.c
 extensions/page-info/page-info.glade
+extensions/permissions/ephy-permissions-dialog.c
+extensions/permissions/ephy-permissions-extension.c
 extensions/rss/ephy-rss-extension.c
 extensions/rss/rss-ui.c
 extensions/rss/rss-ui.glade
@@ -43,6 +45,7 @@ extensions/tabsmenu/ephy-tab-move-menu.c
 [type: gettext/ini]extensions/greasemonkey/greasemonkey.ephy-extension.in.in
 [type: gettext/ini]extensions/net-monitor/net-monitor.ephy-extension.in.in
 [type: gettext/ini]extensions/page-info/page-info.ephy-extension.in.in
+[type: gettext/ini]extensions/permissions/permissions.ephy-extension.in.in
 [type: gettext/ini]extensions/rss/rss.ephy-extension.in.in
 [type: gettext/ini]extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in
 [type: gettext/ini]extensions/sample/sample.ephy-extension.in.in
