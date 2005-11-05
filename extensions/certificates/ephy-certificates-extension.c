@@ -340,15 +340,6 @@ static const GtkActionEntry action_entries_2 [] =
 };
 
 static void
-free_window_data (WindowData *data)
-{
-	if (data) {
-		g_object_unref (data->action_group);
-		g_free (data);
-	}
-}
-
-static void
 impl_attach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
@@ -392,7 +383,8 @@ impl_attach_window (EphyExtension *ext,
 	gtk_action_group_add_actions (action_group, action_entries_2,
 				      G_N_ELEMENTS (action_entries_2), window);
 
-	gtk_ui_manager_insert_action_group (manager, action_group, 0);
+	gtk_ui_manager_insert_action_group (manager, action_group, -1);
+	g_object_unref (win_data->action_group);
 
 	win_data->ui_id = ui_id = gtk_ui_manager_new_merge_id (manager);
 
@@ -419,7 +411,7 @@ impl_attach_window (EphyExtension *ext,
 			       GTK_UI_MANAGER_SEPARATOR, FALSE);
 
 	g_object_set_data_full (G_OBJECT (window), WINDOW_DATA_KEY, win_data,
-				(GDestroyNotify) free_window_data);
+				(GDestroyNotify) g_free);
 
 	/* Synchronize */
 	if (GTK_WIDGET_REALIZED (window))

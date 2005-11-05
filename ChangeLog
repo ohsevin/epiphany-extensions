@@ -1,5 +1,13 @@
 2005-11-05  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/certificates/ephy-certificates-extension.c:
+	(impl_attach_window):
+
+	Remove custom free function for WindowData, and just don't
+	store a ref to the action group.
+
+2005-11-05  Christian Persch  <chpe@cvs.gnome.org>
+
 	* configure.ac:
 
 	Use tar-ustar instead of tar-pax to work with older tar's.
