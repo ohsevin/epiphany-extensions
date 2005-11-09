@@ -1,3 +1,10 @@
+2005-11-09  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/net-monitor/ephy-net-monitor-extension.c:
+	(ephy_net_monitor_set_mode):
+
+	Fix for Epiphany API change.
+
 2005-11-05  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/certificates/ephy-certificates-extension.c:

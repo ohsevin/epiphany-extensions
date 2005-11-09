@@ -68,7 +68,7 @@ ephy_net_monitor_set_mode (EphyNetMonitorExtension *net_monitor, NetworkStatus s
 	     status == NETWORK_UP ? "online" : "offline");
 
 	single = EPHY_EMBED_SINGLE (ephy_embed_shell_get_embed_single (embed_shell));
-	ephy_embed_single_set_offline_mode (single, status == NETWORK_DOWN);
+	ephy_embed_single_set_network_status (single, status != NETWORK_DOWN);
 }
 
 /* This is the heart of Net Monitor extension */
