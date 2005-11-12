@@ -1,5 +1,11 @@
 2005-11-12  Christian Persch  <chpe@cvs.gnome.org>
 
+	* Makefile.am:
+
+	Set ACLOCAL_AMFLAGS.
+
+2005-11-12  Christian Persch  <chpe@cvs.gnome.org>
+
 	* configure.ac:
 
 	Post-release version bump.
