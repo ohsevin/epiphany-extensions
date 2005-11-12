@@ -10,7 +10,6 @@ EXTRA_DIST =			\
 	intltool-merge.in 	\
 	intltool-update.in	\
 	tools/copy-template	\
-	po/LINGUAS		\
 	doc/writing-epiphany-extensions.xml
 
 DISTCLEANFILES = 		\

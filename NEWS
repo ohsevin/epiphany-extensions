@@ -1,4 +1,35 @@
 =========================
+Epiphany Extensions 1.9.2
+=========================
+
+Changes:
+
+	* Fix for Epiphany API changes
+	* Use tar-ustar instead of tar-pax to work with older tars [#320011]
+	* New: Permissions extension
+	* Fix for removal of the Ephy*FramedDocumentPopup popup menus
+	* Use curly quotes
+	* Remove glade callbacks
+	* Add a menu item to open the Security Device Manager
+	* Fix gestures not to also activate the middle-click callbacks
+	* Fix extension description files i18n
+
+Extensions known to be broken currently: Actions, Adblock, Bookmarks Tray.
+
+Contributors to this release:
+Christian Persch, Jean-François Rameau, Philip Langdale.
+
+Updated translations:
+
+	* Miloslav Trmac (cs)
+	* Adam Weinberger (en_CA)
+	* Francisco Javier F. Serrador (es)
+	* Takeshi AIHANA (ja)
+	* Marcel Telka (sk)
+	* Funda Wang (zh_CN)
+
+
+=========================
 Epiphany Extensions 1.9.1
 =========================
 

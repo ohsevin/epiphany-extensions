@@ -1,3 +1,16 @@
+2005-11-12  Christian Persch  <chpe@cvs.gnome.org>
+
+	=== Release 1.9.2 ===
+
+	* Makefile.am:
+
+	Fix distcheck.
+
+	* NEWS:
+	* configure.ac:
+
+	Updated for 1.9.2.
+
 2005-11-10  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
@@ -112,6 +125,8 @@
 	Post-release version bump.
 
 2005-10-24  Christian Persch  <chpe@cvs.gnome.org>
+
+	=== Release 1.9.1 ===
 
 	* NEWS:
 	* configure.ac:
