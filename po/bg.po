@@ -122,7 +122,7 @@ msgstr "Добавяне на действие"
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:415
 #, c-format
 msgid "“%s” Properties"
-msgstr "Настройки на \"%s\""
+msgstr "Настройки на „%s“"
 
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
 msgid "Action Properties"
@@ -191,7 +191,7 @@ msgstr "Управление на устройства за сигурност"
 #. shortcut key
 #: ../extensions/certificates/ephy-certificates-extension.c:329
 msgid "Manage your security devices"
-msgstr "Управление на вашите устройства за сигурност"
+msgstr "Управление на Вашите устройства за сигурност"
 
 #. stock icon
 #: ../extensions/certificates/ephy-certificates-extension.c:336
