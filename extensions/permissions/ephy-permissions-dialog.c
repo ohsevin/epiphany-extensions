@@ -226,6 +226,10 @@ fill_tab (DialogTab *tab)
 	g_list_foreach (list, (GFunc) ephy_permission_info_free, NULL);
 	g_list_free (list);
 
+	/* Now turn on sorting */
+	gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (tab->model),
+					      COL_HOST, GTK_SORT_ASCENDING);
+
 	tab->filled = TRUE;
 }
 
@@ -496,9 +500,6 @@ ephy_permissions_dialog_add_tab (EphyPermissionsDialog *dialog,
 						 G_TYPE_STRING,
 						 G_TYPE_STRING);
 	tab->model = GTK_TREE_MODEL (store);
-
-	gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (tab->model),
-					      COL_HOST, GTK_SORT_ASCENDING);
 
 	tab->treeview = treeview = GTK_TREE_VIEW (gtk_tree_view_new_with_model (tab->model));
 	g_object_unref (store);
