@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-02 10:17+0100\n"
-"PO-Revision-Date: 2005-11-02 23:02+0800\n"
+"POT-Creation-Date: 2005-11-17 10:13+0100\n"
+"PO-Revision-Date: 2005-11-17 18:10+0800\n"
 "Last-Translator: Funda Wang <fundawang@linux.net.cn>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
 "MIME-Version: 1.0\n"
@@ -656,6 +656,53 @@ msgstr "类型："
 msgid "_Save Media As..."
 msgstr "媒体另存为(_S)..."
 
+#: ../extensions/permissions/ephy-permissions-dialog.c:180
+msgid "allowed"
+msgstr "允许"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:184
+msgid "denied"
+msgstr "禁止"
+
+#. Sometimes we get this... how did this get in the list!?
+#: ../extensions/permissions/ephy-permissions-dialog.c:189
+msgid "default"
+msgstr "默认"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:514
+msgid "Domain"
+msgstr "域"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:526
+msgid "State"
+msgstr "状态"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:619
+msgid "Site Permissions"
+msgstr "站点权限"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:643
+msgid "Cookies"
+msgstr "Cookies"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:644
+msgid "Images"
+msgstr "图像"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:645
+msgid "Popup Windows"
+msgstr "弹出窗口"
+
+#. stock icon
+#: ../extensions/permissions/ephy-permissions-extension.c:152
+msgid "Site _Permissions"
+msgstr "站点权限(_P)"
+
+#. shortcut key
+#: ../extensions/permissions/ephy-permissions-extension.c:154
+msgid "Manage web site permissions"
+msgstr "管理网站属性"
+
 #: ../extensions/rss/ephy-rss-extension.c:94
 msgid "News Feeds Subscription"
 msgstr "新闻推送订阅"
@@ -763,11 +810,11 @@ msgstr "添加侧边栏"
 msgid "_Add Sidebar"
 msgstr "添加侧边栏(_A)"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:595
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:565
 msgid "_Look Up"
 msgstr "查阅(_L)"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:602
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:572
 msgid "_GNOME Dictionary"
 msgstr "_GNOME 字典"
 
@@ -873,6 +920,14 @@ msgstr "显示当前页面及其链接和媒体的有关信息"
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
 msgid "Page Info"
 msgstr "页面信息"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
+msgid "Edit site permissions"
+msgstr "编辑站点权限"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
+msgid "Permissions"
+msgstr "权限"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:1
 msgid "News Feed Subscription"
