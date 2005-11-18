@@ -1,3 +1,11 @@
+2005-11-18  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/permissions/ephy-permissions-dialog.c:
+	(ephy_permissions_dialog_constructor):
+
+	Set the window's type hint to NORMAL; else it stays in front
+	of all windows.
+
 2005-11-17  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/permissions/ephy-permissions-dialog.c: (fill_tab),

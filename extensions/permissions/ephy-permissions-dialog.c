@@ -619,7 +619,10 @@ ephy_permissions_dialog_constructor (GType type,
 
         gtk_window_set_title (GTK_WINDOW (dialog), _("Site Permissions"));
 	gtk_window_set_role (GTK_WINDOW (dialog), "epiphany-permissions-manager");
-	gtk_window_set_icon_name (GTK_WINDOW (dialog), GTK_STOCK_PROPERTIES /* FIXME */);
+	gtk_window_set_icon_name (GTK_WINDOW (dialog), GTK_STOCK_PROPERTIES /* FIXME? */);
+
+	/* Don't stay on top of all windows! */
+	gtk_window_set_type_hint (GTK_WINDOW (dialog), GDK_WINDOW_TYPE_HINT_NORMAL);
 
         gtk_dialog_set_has_separator (GTK_DIALOG (dialog), FALSE);
         gtk_container_set_border_width (GTK_CONTAINER (dialog), 5);
