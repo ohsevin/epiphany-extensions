@@ -1,3 +1,13 @@
+2005-11-23  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/adblock/mozilla/MozAdBlocker.cpp: (ShouldLoadURI):
+	* extensions/adblock/mozilla/MozAdBlocker.h:
+	* extensions/adblock/mozilla/mozilla-helpers.cpp: 
+	(mozilla_register_ad_blocker), (mozilla_unregister_ad_blocker):
+
+	Works around mozilla bug https://bugzilla.mozilla.org/show_bug.cgi?id=246092;
+	fixes bug #319562.
+	
 2005-11-23  Christian Persch  <chpe@cvs.gnome.org>
 
 	* AUTHORS:

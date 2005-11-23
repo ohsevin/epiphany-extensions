@@ -32,6 +32,10 @@ public:
 	NS_DECL_NSICONTENTPOLICY
 	/* additional members */
 
+	// FIXME: See https://bugzilla.mozilla.org/show_bug.cgi?id=246092
+	static PRBool sActive;
+	// End FIXME
+
 private:
 	nsresult ShouldLoadURI (nsIURI *uri, nsISupports *aContext, PRUint32 aContenType, PRBool *_retval);
 };

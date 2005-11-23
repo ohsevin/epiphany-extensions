@@ -41,6 +41,10 @@
 
 NS_IMPL_ISUPPORTS1(MozAdBlocker, nsIContentPolicy)
 
+// FIXME: See https://bugzilla.mozilla.org/show_bug.cgi?id=246092	
+PRBool MozAdBlocker::sActive = PR_FALSE;
+// End FIXME
+
 static EphyEmbed *
 get_embed_from_context (nsISupports *aContext)
 {
@@ -90,6 +94,14 @@ nsresult MozAdBlocker::ShouldLoadURI(nsIURI *uri,
 				     PRUint32 aContentType,
 				     PRBool *_retval)
 {
+	// FIXME: See https://bugzilla.mozilla.org/show_bug.cgi?id=246092	
+	if (!sActive) 
+	{
+		*_retval = PR_TRUE; 
+		return NS_OK;
+	}
+	// End FIXME
+
 	EphyEmbed *embed;
 	AdBlocker *blocker;
 	AdUriCheckType content_type = (AdUriCheckType) aContentType;

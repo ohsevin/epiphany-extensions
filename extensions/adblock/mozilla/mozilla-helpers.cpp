@@ -58,6 +58,10 @@ mozilla_register_ad_blocker (void)
 {
 	nsresult rv;
 
+	// FIXME: See https://bugzilla.mozilla.org/show_bug.cgi?id=246092
+	MozAdBlocker::sActive = PR_TRUE;
+	// End FIXME
+
 	g_return_if_fail (is_registered == FALSE);
 
 	nsCOMPtr<nsIComponentRegistrar> cr;
@@ -100,6 +104,10 @@ mozilla_register_ad_blocker (void)
 extern "C" void
 mozilla_unregister_ad_blocker (void)
 {
+	// FIXME: See https://bugzilla.mozilla.org/show_bug.cgi?id=246092
+	MozAdBlocker::sActive = PR_FALSE;
+	// End FIXME
+
 	nsresult rv;
 
 	g_return_if_fail (is_registered == TRUE);
