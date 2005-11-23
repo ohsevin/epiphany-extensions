@@ -1,3 +1,24 @@
+2005-11-23  Christian Persch  <chpe@cvs.gnome.org>
+
+	* AUTHORS:
+	* Makefile.am:
+	* configure.ac:
+	A extensions/push-scroller/.cvsignore:
+	A extensions/push-scroller/Makefile.am:
+	A extensions/push-scroller/ephy-push-scroller-extension.c:
+	A extensions/push-scroller/ephy-push-scroller-extension.h:
+	A extensions/push-scroller/ephy-push-scroller.c:
+	A extensions/push-scroller/ephy-push-scroller.h:
+	A extensions/push-scroller/extension.c: 
+	A extensions/push-scroller/mozilla/.cvsignore:
+	A extensions/push-scroller/mozilla/Makefile.am:
+	A extensions/push-scroller/mozilla/mozilla-helpers.cpp:
+	A extensions/push-scroller/mozilla/mozilla-helpers.h:
+	A extensions/push-scroller/push-scroller.ephy-extension.in.in:
+
+	Add "Push Scroller" extension. Based on the Auto Scroller extension,
+	modified by Samuel Abels. Bug #322275.
+
 2005-11-18  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/permissions/ephy-permissions-dialog.c:
