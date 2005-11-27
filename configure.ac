@@ -149,7 +149,7 @@ dnl *******************************
 
 AC_MSG_CHECKING([which extensions to build])
 
-ALL_EXTENSIONS="actions adblock auto-scroller bookmarks-tray certificates dashboard error-viewer extensions-manager-ui gestures greasemonkey net-monitor page-info permissions push-scroller rss sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu"
+ALL_EXTENSIONS="actions adblock auto-scroller bookmarks-tray certificates dashboard error-viewer extensions-manager-ui gestures greasemonkey java-console net-monitor page-info permissions push-scroller rss sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu"
 USEFUL_EXTENSIONS="actions auto-scroller bookmarks-tray certificates error-viewer extensions-manager-ui gestures page-info push-scroller select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 DEFAULT_EXTENSIONS="actions auto-scroller bookmarks-tray certificates error-viewer extensions-manager-ui gestures page-info select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 
@@ -437,6 +437,8 @@ extensions/smart-bookmarks/mozilla/Makefile
 extensions/tab-states/Makefile
 extensions/tabsmenu/Makefile
 extensions/tab-groups/Makefile
+extensions/java-console/Makefile
+extensions/java-console/mozilla/Makefile
 po/Makefile.in
 ])
 

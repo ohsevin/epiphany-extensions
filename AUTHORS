@@ -42,3 +42,9 @@ RSS:
 Auto Scroller:
 	Crispin Flowerday <gnome@flowerday.cx
 	Christian Persch <chpe@gnome.org>
+
+Push Scroller: based largely on Auto Scroller
+	Samuel Abels <bugzilla.gnome.org@debain.org>
+
+Java Console:
+	Mathias Hasselmann <mathias.hasselmann@gmx.de>

@@ -1,3 +1,21 @@
+2005-11-27  Christian Persch  <chpe@cvs.gnome.org>
+
+	* AUTHORS:
+	* configure.ac:
+	A extensions/java-console/.cvsignore:
+	A extensions/java-console/Makefile.am:
+	A extensions/java-console/ephy-java-console-extension.c:
+	A extensions/java-console/ephy-java-console-extension.h:
+	A extensions/java-console/java-console.c: 
+	A extensions/java-console/java-console.ephy-extension.in.in:
+	A extensions/java-console/mozilla/.cvsignore:
+	A extensions/java-console/mozilla/Makefile.am:
+	A extensions/java-console/mozilla/java-console.cpp:
+	A extensions/java-console/mozilla/java-console.h:
+
+	Add an extension to open the java console. Written by
+	Mathias Hasselmann. Fixes bug #322576.
+
 2005-11-23  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/adblock/mozilla/MozAdBlocker.cpp: (ShouldLoadURI):
