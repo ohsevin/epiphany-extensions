@@ -1,4 +1,21 @@
 =========================
+Epiphany Extensions 1.8.2
+=========================
+
+Changes
+
+	* Fix sidebar i18n
+	* Add Device Manager to the certificates extension
+
+Updated translations:
+
+	* Rostislav \"zbrox\" Raykov (bg)
+	* Francisco Javier F. Serrador (es)
+	* Takeshi AIHANA (ja)
+	* Funda Wang (zh_CN)
+
+
+=========================
 Epiphany Extensions 1.8.1
 =========================
 
