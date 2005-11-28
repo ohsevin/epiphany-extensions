@@ -1,20 +1,20 @@
-	dnl Copyright (c) 2003, 2004, 2005 Christian Persch
-dnl
-dnl This program is free software; you can redistribute it and/or modify it
-dnl under the terms of the GNU General Public License as published by the
-dnl Free Software Foundation; either version 2 of the License, or (at your
-dnl option) any later version.
-dnl
-dnl This program is distributed in the hope that it will be useful, but
-dnl WITHOUT ANY WARRANTY; without even the implied warranty of
-dnl MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-dnl General Public License for more details.
-dnl
-dnl You should have received a copy of the GNU General Public License along
-dnl with this program; if not, write to the Free Software Foundation, Inc.,
-dnl 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
-dnl
-dnl $Id$
+# Copyright (c) 2003, 2004, 2005 Christian Persch
+#
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation; either version 2 of the License, or (at your
+# option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with this program; if not, write to the Free Software Foundation, Inc.,
+# 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
+#
+# $Id$
 
 AC_INIT([GNOME Web Browser Extensions],[1.9.2.90],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 GNOME_COMMON_INIT
@@ -34,7 +34,7 @@ AC_CONFIG_MACRO_DIR([m4])
 
 AM_INIT_AUTOMAKE([1.9 dist-bzip2 no-dist-gzip check-news tar-ustar])
 
-dnl AC_SUBST([ACLOCAL_AMFLAGS], ["-I $ac_macro_dir \${ACLOCAL_FLAGS}"])
+# AC_SUBST([ACLOCAL_AMFLAGS], ["-I $ac_macro_dir \${ACLOCAL_FLAGS}"])
 AC_SUBST([ACLOCAL_AMFLAGS], ["\${ACLOCAL_FLAGS}"])
 
 AM_MAINTAINER_MODE
@@ -70,11 +70,11 @@ GNOME_DEBUG_CHECK
 GNOME_COMPILE_WARNINGS([maximum])
 GNOME_CXX_WARNINGS
 
-dnl ********************************
-dnl Internationalisation
-dnl ********************************
+# ********************************
+# Internationalisation
+# ********************************
 
-dnl Translators: new languages must be added to the po/LINGUAS file
+# Translators: new languages must be added to the po/LINGUAS file
 ALL_LINGUAS="`cat "$srcdir/po/LINGUAS" | grep -v '^#'`"
 
 AC_SUBST([CONFIG_STATUS_DEPENDENCIES],['$(top_srcdir)/po/LINGUAS'])
@@ -85,9 +85,9 @@ AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE],["$GETTEXT_PACKAGE"], [Gettext package])
 AM_GLIB_GNU_GETTEXT
 AM_GLIB_DEFINE_LOCALEDIR([LOCALE_DIR])
 
-dnl ********************************
-dnl pkg config checks
-dnl ********************************
+# ********************************
+# pkg config checks
+# ********************************
 
 EPIPHANY_REQUIRED=1.9.2
 LIBXML_REQUIRED=2.6.0
@@ -116,9 +116,9 @@ AC_SUBST([EPIPHANY_DEPENDENCY_LIBS])
 EXTENSIONS_DIR=$EPIPHANY_EXTENSIONS_DIR
 AC_SUBST([EXTENSIONS_DIR])
 
-dnl *******************************
-dnl Check for OpenSP
-dnl *******************************
+# *******************************
+# Check for OpenSP
+# *******************************
 
 AC_MSG_CHECKING([whether OpenSP support is requested])
 AC_ARG_ENABLE([opensp],
@@ -143,9 +143,9 @@ fi
 
 AM_CONDITIONAL([HAVE_OPENSP],[test "x$enable_opensp" = "xyes"])
 
-dnl *******************************
-dnl Extensions
-dnl *******************************
+# *******************************
+# Extensions
+# *******************************
 
 AC_MSG_CHECKING([which extensions to build])
 
@@ -167,10 +167,10 @@ else
 	AC_MSG_WARN([Epiphany compiled without python support, extensions $PYTHON_ALL_EXTENSIONS will not be available])
 fi
 
-dnl due to an autoconf bug, commas in the first arg to
-dnl AS_HELP_STRING() cause problems.
-dnl
-dnl AS_HELP_STRING(--with-extensions=ext1,ext2,...,build the specified extensions)
+# due to an autoconf bug, commas in the first arg to
+# AS_HELP_STRING() cause problems.
+#
+# AS_HELP_STRING(--with-extensions=ext1,ext2,...,build the specified extensions)
 AC_ARG_WITH([extensions],
 [  --with-extensions=extension1,extension2,...
 			  build the specified extensions. Available:
@@ -213,9 +213,9 @@ AC_SUBST([BUILD_EXTENSIONS],[`echo $EXTENSIONS | tr ' ' '\n' | sort | uniq | tr 
 
 AC_MSG_RESULT([$EXTENSIONS])
 
-dnl ****
-dnl DBUS
-dnl ****
+# ****
+# DBUS
+# ****
 
 if echo "$EXTENSIONS" | egrep '(^| )(net-monitor)|(rss)($| )' > /dev/null; then
 	DBUS_REQUIRED=0.34
@@ -224,9 +224,9 @@ if echo "$EXTENSIONS" | egrep '(^| )(net-monitor)|(rss)($| )' > /dev/null; then
 	PKG_CHECK_MODULES([DBUS], [dbus-1 >= $DBUS_REQUIRED dbus-glib-1 >= $DBUS_GLIB_REQUIRED])
 fi
 
-dnl ****
-dnl PCRE
-dnl ****
+# ****
+# PCRE
+# ****
 
 if echo "$EXTENSIONS" | egrep '(^| )(adblock|greasemonkey)($| )' > /dev/null; then
 	AC_PATH_PROG([PCRE_CONFIG], [pcre-config], [no])
@@ -267,9 +267,9 @@ if echo "$EXTENSIONS" | egrep '(^| )(adblock|greasemonkey)($| )' > /dev/null; th
 	fi
 fi
 
-dnl ******
-dnl Python
-dnl ******
+# ******
+# Python
+# ******
 
 if test "x$need_python" = "xyes"; then
 	AM_PATH_PYTHON([2.3])
@@ -279,9 +279,9 @@ if test "x$need_python" = "xyes"; then
 	fi
 fi
 
-dnl *******
-dnl Mozilla
-dnl *******
+# *******
+# Mozilla
+# *******
 
 GECKO_INIT([MOZILLA])
 
@@ -302,52 +302,16 @@ PKG_CHECK_MODULES([MOZILLA_COMPONENT],[$MOZILLA-gtkmozembed >= $min_version])
 AC_SUBST([MOZILLA_COMPONENT_CFLAGS])
 AC_SUBST([MOZILLA_COMPONENT_LIBS])
 
-AC_LANG_PUSH([C++])
-_SAVE_CPPFLAGS="$CPPFLAGS"
-_SAVE_CXXFLAGS="$CXXFLAGS"
-CPPFLAGS="$CPPFLAGS -I$MOZILLA_INCLUDE_ROOT $($PKG_CONFIG --cflags-only-I $MOZILLA-xpcom) -I$MOZILLA_INCLUDE_ROOT/necko"
-CXXFLAGS="$CXXFLAGS $($PKG_CONFIG --cflags-only-other $MOZILLA-xpcom)"
-
-dnl Determine gecko version
-dnl We don't use the version from the .pc file, since that's the app version
-dnl and not the Gecko version
-
-AC_MSG_CHECKING([[for gecko version]])
-
-gecko_version=`cat $MOZILLA_INCLUDE_ROOT/mozilla-config.h | grep MOZILLA_VERSION_U | awk '{ print $[3]; }' | tr ".ab+" " "`
-if test -z "$gecko_version"; then
-	gecko_version="1 7"
-fi
-
-gecko_version_major=`echo $gecko_version | awk '{ print $[1]; }'`
-gecko_version_minor=`echo $gecko_version | awk '{ print $[2]; }'`
-
-AC_MSG_RESULT([$gecko_version_major.$gecko_version_minor])
-
-if test "$gecko_version_major" != "1" -o "$gecko_version_minor" -lt "7" -o "$gecko_version_minor" -gt "9"; then
-	AC_MSG_ERROR([Unsupported Gecko version $gecko_version_major.$gecko_version_minor])
-fi
-
-if test "$gecko_version_major" = "1" -a "$gecko_version_minor" -ge "8"; then
-	AC_DEFINE([HAVE_GECKO_1_8],[1],[Define if we have gecko 1.8])
-fi
-if test "$gecko_version_major" = "1" -a "$gecko_version_minor" -ge "9"; then
-	AC_DEFINE([HAVE_GECKO_1_9],[1],[Define if we have gecko 1.9])
-fi
-
-AM_CONDITIONAL([HAVE_GECKO_1_8],[test "$gecko_version_major" = "1" -a "$gecko_version_minor" -ge "8"])
-AM_CONDITIONAL([HAVE_GECKO_1_9],[test "$gecko_version_major" = "1" -a "$gecko_version_minor" -ge "9"])
-
-dnl Changed in 1.8a1 and again in 1.8a3 to its present form (variant 2);
-dnl variant 1 is on 1.7 branch. Aviary branch also has variant 2.
+# Changed in 1.8a1 and again in 1.8a3 to its present form (variant 2);
+# variant 1 is on 1.7 branch. Aviary branch also has variant 2.
 
 AC_MSG_CHECKING([for nsIContentPolicy API])
 
-AC_COMPILE_IFELSE(
+GECKO_COMPILE_IFELSE([content],
 	[AC_LANG_PROGRAM(
 		[[#include <nsEmbedString.h>
 		  #include <nsIURI.h>
-		  #include <content/nsIContentPolicy.h>]],
+		  #include <nsIContentPolicy.h>]],
 		[[nsIContentPolicy *p;
 		  nsISupports *arg4;
 		  p->ShouldLoad(0,nsnull,nsnull,arg4,nsEmbedCString(),nsnull,nsnull);]]
@@ -359,19 +323,14 @@ AC_DEFINE_UNQUOTED([MOZ_NSICONTENTPOLICY_VARIANT], [$variant], [Define the nsICo
 
 AC_MSG_RESULT([variant $variant])
 
-dnl restore flags
-CPPFLAGS=$_SAVE_CPPFLAGS
-CXXFLAGS=$_SAVE_CXXFLAGS
-AC_LANG_POP([C++])
-
-dnl Needed since $EPIPHANY_API_VERSIONb2
-dnl Define this down here so it doesn't affect the API checks above
+# Needed since 1.8b2
+# Define this down here so it doesn't affect the API checks above
 
 AC_DEFINE([MOZILLA_INTERNAL_API],[1],[Define for access to internal mozilla API])
 
-dnl *****************
-dnl Add warning flags
-dnl *****************
+# *****************
+# Add warning flags
+# *****************
 
 AM_CPPFLAGS="$AM_CPPFLAGS $DEPRECATION_FLAGS"
 AM_CFLAGS="$AM_CFLAGS $WARN_CFLAGS"
@@ -380,9 +339,9 @@ AC_SUBST([AM_CPPFLAGS])
 AC_SUBST([AM_CFLAGS])
 AC_SUBST([AM_CXXFLAGS])
 
-dnl *******************************
-dnl share/data dir
-dnl *******************************
+# *******************************
+# share/data dir
+# *******************************
 
 if test "x${datadir}" = 'x${prefix}/share'; then
   if test "x${prefix}" = "xNONE"; then
@@ -394,8 +353,8 @@ else
   AC_DEFINE_UNQUOTED([EXTENSIONS_DATA_DIR], ["${datadir}/${PACKAGE}-${EPIPHANY_EXTENSIONS_MAJOR}"], [Directory of data files])
 fi
 
-dnl *******************************
-dnl *******************************
+# *******************************
+# *******************************
 
 AC_CONFIG_FILES([
 Makefile
