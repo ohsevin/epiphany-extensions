@@ -1,3 +1,23 @@
+2005-12-02  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/extensions-manager-ui/ephy-extensions-manager-ui-exten
+	sion.c: (display_cb):
+	* extensions/extensions-manager-ui/extensions-manager-ui.c:
+	(show_extension_info), (extensions_manager_ui_init),
+	(extensions_manager_ui_finalize):
+	* extensions/extensions-manager-ui/extensions-manager-ui.glade:
+
+	Don't force the extensions manager window to be in front of all
+	windows. Set window role.
+
+	* extensions/java-console/mozilla/java-console.cpp:
+
+	Fix compilation with gecko 1.8.
+
+	* extensions/rss/rss-ui.c: (rss_ui_drag_data_get_cb):
+
+	Fix signed/unsigned problem.
+
 2005-11-28  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:

@@ -387,7 +387,7 @@ rss_ui_drag_data_get_cb (GtkWidget *widget,
 	gtk_selection_data_set (selection_data,
 			        selection_data->target,
 			        8,
-			        feed->address,
+			        (const guchar*) feed->address,
 			        strlen (feed->address));
 
 	rss_newsfeed_free (feed);

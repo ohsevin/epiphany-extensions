@@ -157,8 +157,6 @@ display_cb (GtkAction *action,
 					   (gpointer *) &priv->dialog);
 	}
 
-	ephy_dialog_set_parent (EPHY_DIALOG (priv->dialog),
-				GTK_WIDGET (window));
 	ephy_dialog_show (EPHY_DIALOG (priv->dialog));
 }
 

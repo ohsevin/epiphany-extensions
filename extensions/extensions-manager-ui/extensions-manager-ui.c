@@ -151,6 +151,7 @@ show_extension_info (ExtensionsManagerUI *parent_dialog,
 
 	gtk_window_set_transient_for (GTK_WINDOW (dialog),
 				      GTK_WINDOW (parent_dialog->priv->window));
+	/* FIXME window group ! */
 	gtk_window_present (GTK_WINDOW (dialog));
 
 	g_free (name);
@@ -403,12 +404,14 @@ extension_removed_cb (EphyExtensionsManager *manager,
 
 static void
 extensions_manager_ui_init (ExtensionsManagerUI *dialog)
-{		
+{
+	ExtensionsManagerUIPrivate *priv;
+
 	LOG ("ExtensionsManagerUI initializing");
 
-	dialog->priv = EXTENSIONS_MANAGER_UI_GET_PRIVATE (dialog);
+	priv = dialog->priv = EXTENSIONS_MANAGER_UI_GET_PRIVATE (dialog);
 
-	dialog->priv->manager = EPHY_EXTENSIONS_MANAGER
+	priv->manager = EPHY_EXTENSIONS_MANAGER
 		(ephy_shell_get_extensions_manager (ephy_shell));
 
 	ephy_dialog_construct (EPHY_DIALOG (dialog),
@@ -419,13 +422,13 @@ extensions_manager_ui_init (ExtensionsManagerUI *dialog)
 
 	build_ui (dialog);
 
-	dialog->priv->added_signal =
+	priv->added_signal =
 		g_signal_connect (G_OBJECT (dialog->priv->manager), "added",
 				  G_CALLBACK (extension_added_cb), dialog);
-	dialog->priv->changed_signal =
+	priv->changed_signal =
 		g_signal_connect (G_OBJECT (dialog->priv->manager), "changed",
 				  G_CALLBACK (active_sync), dialog);
-	dialog->priv->removed_signal =
+	priv->removed_signal =
 		g_signal_connect (G_OBJECT (dialog->priv->manager), "removed",
 				  G_CALLBACK (extension_removed_cb), dialog);
 }
@@ -434,15 +437,16 @@ static void
 extensions_manager_ui_finalize (GObject *object)
 {
 	ExtensionsManagerUI *dialog = EXTENSIONS_MANAGER_UI (object);
+	ExtensionsManagerUIPrivate *priv = dialog->priv;	
 
 	LOG ("ExtensionsManagerUI finalising");
 
-	g_signal_handler_disconnect (G_OBJECT (dialog->priv->manager),
-				     dialog->priv->changed_signal);
-	g_signal_handler_disconnect (G_OBJECT (dialog->priv->manager),
-				     dialog->priv->added_signal);
-	g_signal_handler_disconnect (G_OBJECT (dialog->priv->manager),
-				     dialog->priv->removed_signal);
+	g_signal_handler_disconnect (G_OBJECT (priv->manager),
+				     priv->changed_signal);
+	g_signal_handler_disconnect (G_OBJECT (priv->manager),
+				     priv->added_signal);
+	g_signal_handler_disconnect (G_OBJECT (priv->manager),
+				     priv->removed_signal);
 
 	parent_class->finalize (object);
 }

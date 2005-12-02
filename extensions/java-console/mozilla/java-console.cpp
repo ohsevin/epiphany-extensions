@@ -25,7 +25,7 @@
 
 #include <nsCOMPtr.h>
 #include <nsIJVMManager.h>
-#include <nsIServiceManagerUtils.h>
+#include <nsIServiceManager.h>
 
 gboolean
 java_console_is_available (void)
