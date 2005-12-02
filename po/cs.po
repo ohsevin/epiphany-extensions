@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-02 18:14+0100\n"
-"PO-Revision-Date: 2005-11-02 22:55+0100\n"
+"POT-Creation-Date: 2005-12-02 18:15+0100\n"
+"PO-Revision-Date: 2005-12-02 20:01+0100\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -318,7 +318,9 @@ msgstr ""
 msgid ""
 "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
 "+xml” instead."
-msgstr "Doctype je „XHTML”, ale typ obsahu je „text/html”. Použijte místo něj „application/xhtml+xml”."
+msgstr ""
+"Doctype je „XHTML”, ale typ obsahu je „text/html”. Použijte místo něj "
+"„application/xhtml+xml”."
 
 #: ../extensions/error-viewer/sgml-validator.c:243
 #, c-format
@@ -351,11 +353,11 @@ msgstr ""
 "Chyba HTML v %s:\n"
 "Nebyl určen platný doctype."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:339
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:340
 msgid "Enabled"
 msgstr "Povoleno"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:347
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:348
 #: ../extensions/rss/rss-ui.c:569
 msgid "Description"
 msgstr "Popis"
@@ -673,6 +675,53 @@ msgstr "Typ:"
 msgid "_Save Media As..."
 msgstr "_Uložit médium jako..."
 
+#: ../extensions/permissions/ephy-permissions-dialog.c:180
+msgid "allowed"
+msgstr "povoleno"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:184
+msgid "denied"
+msgstr "zakázáno"
+
+#. Sometimes we get this... how did this get in the list!?
+#: ../extensions/permissions/ephy-permissions-dialog.c:189
+msgid "default"
+msgstr "implicitní"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:515
+msgid "Domain"
+msgstr "Doména"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:527
+msgid "State"
+msgstr "Stav"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:620
+msgid "Site Permissions"
+msgstr "Oprávnění serveru"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:647
+msgid "Cookies"
+msgstr "Cookies"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:648
+msgid "Images"
+msgstr "Obrázky"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:649
+msgid "Popup Windows"
+msgstr "Vyskakovací okna"
+
+#. stock icon
+#: ../extensions/permissions/ephy-permissions-extension.c:152
+msgid "Site _Permissions"
+msgstr "_Oprávnění serveru"
+
+#. shortcut key
+#: ../extensions/permissions/ephy-permissions-extension.c:154
+msgid "Manage web site permissions"
+msgstr "Spravovat oprávnění WWW serverů"
+
 #: ../extensions/rss/ephy-rss-extension.c:94
 msgid "News Feeds Subscription"
 msgstr "Přihlášení k toku novinek"
@@ -782,11 +831,11 @@ msgstr "Přidat boční panel"
 msgid "_Add Sidebar"
 msgstr "_Přidat boční panel"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:595
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:565
 msgid "_Look Up"
 msgstr "_Vyheldat"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:602
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:572
 msgid "_GNOME Dictionary"
 msgstr "_Slovník GNOME"
 
@@ -863,7 +912,8 @@ msgstr "Náhradní favicon"
 #: ../extensions/favicon/favicon.ephy-extension.in.h:2
 msgid ""
 "Loads /favicon.ico as favicon if the site doesn't use the standard method"
-msgstr "Načte /favicon.ico jako favicon, když server nepoužívá standardní metodu"
+msgstr ""
+"Načte /favicon.ico jako favicon, když server nepoužívá standardní metodu"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -896,6 +946,14 @@ msgstr "Zobrazit informace o odkazech a médiích z aktuální stránky"
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
 msgid "Page Info"
 msgstr "Informace o stránce"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
+msgid "Edit site permissions"
+msgstr "Upravit oprávnění serveru"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
+msgid "Permissions"
+msgstr "Oprávnění"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:1
 msgid "News Feed Subscription"
