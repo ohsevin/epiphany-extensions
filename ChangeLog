@@ -1,3 +1,20 @@
+2005-12-03  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* action-properties.glade:
+	* actions-editor.glade:
+	* ephy-actions-extension-editor-dialog.c:
+	* ephy-actions-extension-properties-dialog.c:
+
+	Convert glade callbacks to normal callbacks.
+	Fix bug #320257.
+
+	* ephy-actions-extension.c:
+
+	Update for the removal of the EphyImagePopup,
+	EphyImageLinkPopup, EphyFramedDocumentPopup and
+	EphyFullscreenFramedDocumentPopup popup menus.
+	Fix bug #320552.
+
 2005-12-02  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/extensions-manager-ui/ephy-extensions-manager-ui-exten

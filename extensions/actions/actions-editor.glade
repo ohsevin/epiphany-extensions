@@ -18,8 +18,8 @@
   <property name="type_hint">GDK_WINDOW_TYPE_HINT_DIALOG</property>
   <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
   <property name="focus_on_map">True</property>
+  <property name="urgency_hint">False</property>
   <property name="has_separator">False</property>
-  <signal name="response" handler="ephy_actions_extension_editor_dialog_response_cb" last_modification_time="Fri, 21 Jan 2005 03:54:38 GMT"/>
 
   <child internal-child="vbox">
     <widget class="GtkVBox" id="dialog-vbox1">
@@ -33,7 +33,7 @@
 	  <property name="layout_style">GTK_BUTTONBOX_END</property>
 
 	  <child>
-	    <widget class="GtkButton" id="closebutton1">
+	    <widget class="GtkButton" id="close_button">
 	      <property name="visible">True</property>
 	      <property name="can_default">True</property>
 	      <property name="can_focus">True</property>
@@ -80,9 +80,6 @@
 		  <property name="fixed_height_mode">False</property>
 		  <property name="hover_selection">False</property>
 		  <property name="hover_expand">False</property>
-		  <signal name="row_activated" handler="ephy_actions_extension_editor_dialog_view_row_activated_cb" last_modification_time="Fri, 21 Jan 2005 03:53:53 GMT"/>
-		  <signal name="popup_menu" handler="ephy_actions_extension_editor_dialog_view_popup_menu_cb" last_modification_time="Fri, 21 Jan 2005 03:53:57 GMT"/>
-		  <signal name="button_press_event" handler="ephy_actions_extension_editor_dialog_view_button_press_event_cb" last_modification_time="Fri, 21 Jan 2005 03:54:02 GMT"/>
 		</widget>
 	      </child>
 	    </widget>
@@ -125,14 +122,13 @@
 	      <property name="spacing">6</property>
 
 	      <child>
-		<widget class="GtkButton" id="button1">
+		<widget class="GtkButton" id="add_button">
 		  <property name="visible">True</property>
 		  <property name="can_focus">True</property>
 		  <property name="label">gtk-add</property>
 		  <property name="use_stock">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
 		  <property name="focus_on_click">True</property>
-		  <signal name="clicked" handler="ephy_actions_extension_editor_dialog_add_clicked_cb" last_modification_time="Fri, 21 Jan 2005 03:54:17 GMT"/>
 		</widget>
 		<packing>
 		  <property name="padding">0</property>
@@ -149,7 +145,6 @@
 		  <property name="use_stock">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
 		  <property name="focus_on_click">True</property>
-		  <signal name="clicked" handler="ephy_actions_extension_editor_dialog_remove_clicked_cb" last_modification_time="Fri, 21 Jan 2005 03:54:23 GMT"/>
 		</widget>
 		<packing>
 		  <property name="padding">0</property>
@@ -166,7 +161,6 @@
 		  <property name="use_stock">True</property>
 		  <property name="relief">GTK_RELIEF_NORMAL</property>
 		  <property name="focus_on_click">True</property>
-		  <signal name="clicked" handler="ephy_actions_extension_editor_dialog_properties_clicked_cb" last_modification_time="Fri, 21 Jan 2005 03:54:29 GMT"/>
 		</widget>
 		<packing>
 		  <property name="padding">0</property>

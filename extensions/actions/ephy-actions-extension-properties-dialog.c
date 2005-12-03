@@ -105,14 +105,12 @@ static void ephy_actions_extension_properties_dialog_get_property
 static void ephy_actions_extension_properties_dialog_update_title
 	(EphyActionsExtensionPropertiesDialog *dialog);
 
-/* libglade callbacks */
-
-void ephy_actions_extension_properties_dialog_response_cb
+static void ephy_actions_extension_properties_dialog_response_cb
 	(GtkDialog *dialog,
 	 int response,
 	 EphyActionsExtensionPropertiesDialog *pdialog);
 
-void ephy_actions_extension_properties_dialog_name_entry_changed_cb
+static void ephy_actions_extension_properties_dialog_name_entry_changed_cb
 	(GtkEditable *editable, EphyActionsExtensionPropertiesDialog *dialog);
 
 GType
@@ -281,10 +279,10 @@ ephy_actions_extension_properties_dialog_constructor
 			(ephy_actions_extension_get_db (dialog->priv->extension));
 	}
 
-	dialog->priv->dialog = ephy_dialog_get_control
-		(EPHY_DIALOG (dialog), properties[PROP_ACTION_PROPERTIES].id);
-	dialog->priv->name_entry = ephy_dialog_get_control
-		(EPHY_DIALOG (dialog), properties[PROP_NAME_ENTRY].id);
+	ephy_dialog_get_controls (EPHY_DIALOG (dialog),
+				  properties[PROP_ACTION_PROPERTIES].id, &(dialog->priv->dialog),
+				  properties[PROP_NAME_ENTRY].id, &(dialog->priv->name_entry),
+				  NULL);
 
 	ephy_actions_extension_properties_dialog_link
 		(dialog,
@@ -322,6 +320,13 @@ ephy_actions_extension_properties_dialog_constructor
 				       GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE);
 	}
 
+	g_signal_connect (dialog->priv->dialog, "response",
+  	                  G_CALLBACK (ephy_actions_extension_properties_dialog_response_cb), 
+			  dialog);
+
+	g_signal_connect (dialog->priv->name_entry, "changed",
+  	                  G_CALLBACK (ephy_actions_extension_properties_dialog_name_entry_changed_cb), 
+			  dialog);
 	return object;
 }
 
@@ -436,9 +441,7 @@ ephy_actions_extension_properties_dialog_new (EphyExtension *extension,
 			     NULL);
 }
 
-/* libglade callbacks */
-
-void
+static void
 ephy_actions_extension_properties_dialog_response_cb
 	(GtkDialog *dialog,
 	 int response,
@@ -458,7 +461,7 @@ ephy_actions_extension_properties_dialog_response_cb
 	g_object_unref (pdialog);
 }
 
-void
+static void
 ephy_actions_extension_properties_dialog_name_entry_changed_cb
 	(GtkEditable *editable, EphyActionsExtensionPropertiesDialog *dialog)
 {

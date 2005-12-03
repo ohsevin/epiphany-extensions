@@ -47,6 +47,7 @@ struct _EphyActionsExtensionEditorDialogPrivate
 	GtkWidget		*dialog;
 	GtkWidget		*view;
 	GtkWidget		*selection_count_label;
+	GtkWidget		*add_button;
 	GtkWidget		*remove_button;
 	GtkWidget		*properties_button;
 };
@@ -56,8 +57,10 @@ enum {
 
 	PROP_VIEW,
 	PROP_SELECTION_COUNT_LABEL,
+	PROP_ADD_BUTTON,
 	PROP_REMOVE_BUTTON,
-	PROP_PROPERTIES_BUTTON
+	PROP_PROPERTIES_BUTTON,
+	PROP_CLOSE_BUTTON
 };
 
 static const
@@ -66,6 +69,7 @@ EphyDialogProperty properties[] = {
 
 	{ "view",			NULL, PT_NORMAL, 0 },
 	{ "selection_count_label",	NULL, PT_NORMAL, 0 },
+	{ "add_button",			NULL, PT_NORMAL, 0 },
 	{ "remove_button",		NULL, PT_NORMAL, 0 },
 	{ "properties_button",		NULL, PT_NORMAL, 0 },
 
@@ -103,35 +107,40 @@ static void ephy_actions_extension_editor_dialog_remove_selected
 static void ephy_actions_extension_editor_dialog_edit_selected
 	(EphyActionsExtensionEditorDialog *dialog);
 
-/* libglade callbacks */
-
-void ephy_actions_extension_editor_dialog_view_row_activated_cb
+static void 
+ephy_actions_extension_editor_dialog_view_row_activated_cb
 	(GtkTreeView *view,
 	 GtkTreePath *path,
 	 GtkTreeViewColumn *column,
 	 EphyActionsExtensionEditorDialog *dialog);
 
-gboolean ephy_actions_extension_editor_dialog_view_popup_menu_cb
+static gboolean 
+ephy_actions_extension_editor_dialog_view_popup_menu_cb
 	(GtkWidget *widget, EphyActionsExtensionEditorDialog *dialog);
 
-gboolean ephy_actions_extension_editor_dialog_view_button_press_event_cb
+static gboolean 
+ephy_actions_extension_editor_dialog_view_button_press_event_cb
 	(GtkWidget *widget,
-	 GdkEventButton *event,
-	 EphyActionsExtensionEditorDialog *dialog);
+ 	 GdkEventButton *event,
+ 	 EphyActionsExtensionEditorDialog *dialog);
 
-void ephy_actions_extension_editor_dialog_add_clicked_cb
+static void 
+ephy_actions_extension_editor_dialog_add_clicked_cb
 	(GtkButton *button, EphyActionsExtensionEditorDialog *dialog);
 
-void ephy_actions_extension_editor_dialog_remove_clicked_cb
+static void 
+ephy_actions_extension_editor_dialog_remove_clicked_cb
 	(GtkButton *button, EphyActionsExtensionEditorDialog *dialog);
 
-void ephy_actions_extension_editor_dialog_properties_clicked_cb
+static void 
+ephy_actions_extension_editor_dialog_properties_clicked_cb
 	(GtkButton *button, EphyActionsExtensionEditorDialog *dialog);
 
-void ephy_actions_extension_editor_dialog_response_cb
+static void 
+ephy_actions_extension_editor_dialog_response_cb
 	(GtkDialog *dialog,
-	 int response,
-	 EphyActionsExtensionEditorDialog *pdialog);
+ 	 int response,
+ 	 EphyActionsExtensionEditorDialog *pdialog);
 
 GType
 ephy_actions_extension_editor_dialog_register_type (GTypeModule *module)
@@ -384,16 +393,36 @@ ephy_actions_extension_editor_dialog_constructor
 			       properties[PROP_ACTIONS_EDITOR].id,
 			       GETTEXT_PACKAGE);
 
-	dialog->priv->dialog = ephy_dialog_get_control
-		(EPHY_DIALOG (dialog), properties[PROP_ACTIONS_EDITOR].id);
-	dialog->priv->view = ephy_dialog_get_control
-		(EPHY_DIALOG (dialog), properties[PROP_VIEW].id);
-	dialog->priv->selection_count_label = ephy_dialog_get_control
-		(EPHY_DIALOG (dialog), properties[PROP_SELECTION_COUNT_LABEL].id);
-	dialog->priv->remove_button = ephy_dialog_get_control
-		(EPHY_DIALOG (dialog), properties[PROP_REMOVE_BUTTON].id);
-	dialog->priv->properties_button = ephy_dialog_get_control
-		(EPHY_DIALOG (dialog), properties[PROP_PROPERTIES_BUTTON].id);
+	ephy_dialog_get_controls (
+		EPHY_DIALOG (dialog),
+	  	properties[PROP_ACTIONS_EDITOR].id, &(dialog->priv->dialog),
+		properties[PROP_VIEW].id, &(dialog->priv->view),
+		properties[PROP_SELECTION_COUNT_LABEL].id, &(dialog->priv->selection_count_label),
+		properties[PROP_REMOVE_BUTTON].id, &(dialog->priv->remove_button),
+		properties[PROP_ADD_BUTTON].id, &(dialog->priv->add_button),
+		properties[PROP_PROPERTIES_BUTTON].id, &(dialog->priv->properties_button),
+		NULL);
+	g_signal_connect (dialog->priv->properties_button, "clicked",
+  	                  G_CALLBACK (ephy_actions_extension_editor_dialog_properties_clicked_cb), 
+			  dialog);
+	g_signal_connect (dialog->priv->add_button, "clicked",
+  	                  G_CALLBACK (ephy_actions_extension_editor_dialog_add_clicked_cb), 
+			  dialog);
+	g_signal_connect (dialog->priv->remove_button, "clicked",
+  	                  G_CALLBACK (ephy_actions_extension_editor_dialog_remove_clicked_cb), 
+			  dialog);
+	g_signal_connect (dialog->priv->dialog, "response",
+  	                  G_CALLBACK (ephy_actions_extension_editor_dialog_response_cb), 
+			  dialog);
+	g_signal_connect (dialog->priv->view, "row_activated",
+  	                  G_CALLBACK (ephy_actions_extension_editor_dialog_view_row_activated_cb), 
+			  dialog);
+	g_signal_connect (dialog->priv->view, "popup_menu",
+  	                  G_CALLBACK (ephy_actions_extension_editor_dialog_view_popup_menu_cb), 
+			  dialog);
+	g_signal_connect (dialog->priv->view, "button_press_event",
+  	                  G_CALLBACK (ephy_actions_extension_editor_dialog_view_button_press_event_cb), 
+			  dialog);
 
 	store = gtk_list_store_new (N_COLUMNS, G_TYPE_POINTER, G_TYPE_STRING);
 	gtk_tree_view_set_model (GTK_TREE_VIEW (dialog->priv->view),
@@ -623,8 +652,6 @@ ephy_actions_extension_editor_dialog_new (EphyExtension *extension)
 			     NULL);
 }
 
-/* libglade callbacks */
-
 void
 ephy_actions_extension_editor_dialog_view_row_activated_cb
 	(GtkTreeView *view,
@@ -685,7 +712,7 @@ ephy_actions_extension_editor_dialog_remove_clicked_cb
 	ephy_actions_extension_editor_dialog_remove_selected (dialog);
 }
 
-void
+static void
 ephy_actions_extension_editor_dialog_properties_clicked_cb
 	(GtkButton *button, EphyActionsExtensionEditorDialog *dialog)
 {
@@ -700,3 +727,4 @@ ephy_actions_extension_editor_dialog_response_cb
 {
 	g_object_unref (pdialog);
 }
+
