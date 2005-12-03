@@ -1,3 +1,9 @@
+2005-12-03  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
+	Update default extensions list.
+
 2005-12-03  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* action-properties.glade:
