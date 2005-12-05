@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-06 10:42+0100\n"
-"PO-Revision-Date: 2005-11-06 10:47+0100\n"
+"POT-Creation-Date: 2005-12-05 23:37+0100\n"
+"PO-Revision-Date: 2005-12-05 23:38+0100\n"
 "Last-Translator: Marcel Telka <marcel@telka.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
@@ -86,27 +86,27 @@ msgstr "_Stránky"
 msgid "Actions"
 msgstr "Akcie"
 
-#: ../extensions/actions/ephy-actions-extension.c:94
+#: ../extensions/actions/ephy-actions-extension.c:112
 msgid "_Actions"
 msgstr "_Akcie"
 
-#: ../extensions/actions/ephy-actions-extension.c:95
+#: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Customize actions"
 msgstr "Prispôsobiť akcie"
 
-#: ../extensions/actions/ephy-actions-extension.c:408
+#: ../extensions/actions/ephy-actions-extension.c:436
 msgid "Could not run command"
 msgstr "Nepodarilo sa spustiť príkaz"
 
-#: ../extensions/actions/ephy-actions-extension.c:411
+#: ../extensions/actions/ephy-actions-extension.c:439
 msgid "Could not Run Command"
 msgstr "Nepodarilo sa spustiť príkaz"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:490
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:519
 msgid "No action selected."
 msgstr "Akcia nebola vybratá."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:500
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:529
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
@@ -114,16 +114,16 @@ msgstr[0] "Zvolených %i akcií."
 msgstr[1] "Zvolená %i akcia."
 msgstr[2] "Zvolené %i akcie."
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:312
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
 msgstr "Pridať akciu"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:415
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
 #, c-format
 msgid "“%s” Properties"
 msgstr "Vlastnosti “%s”"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
 msgid "Action Properties"
 msgstr "Vlastnosti akcie"
 
@@ -319,8 +319,8 @@ msgid ""
 "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
 "+xml” instead."
 msgstr ""
-"Typ dokumentu (Doctype) je “XHTML”, ale typ obsahu je “text/html”. "
-"Použite namiesto toho “application/xhtml+xml”."
+"Typ dokumentu (Doctype) je “XHTML”, ale typ obsahu je “text/html”. Použite "
+"namiesto toho “application/xhtml+xml”."
 
 #: ../extensions/error-viewer/sgml-validator.c:243
 #, c-format
@@ -353,11 +353,11 @@ msgstr ""
 "HTML chyba v %s:\n"
 "Nebol zadany platný typ dokumentu (doctype)."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:339
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:340
 msgid "Enabled"
 msgstr "Povolené"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:347
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:348
 #: ../extensions/rss/rss-ui.c:569
 msgid "Description"
 msgstr "Popis"
@@ -391,6 +391,15 @@ msgstr "Inštalovať skript Greasemonkey"
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "Používateľský skript v “%s” bol nainštalovaný"
+
+#: ../extensions/java-console/ephy-java-console-extension.c:48
+msgid "_Java Console"
+msgstr "Konzola _Java"
+
+#. shortcut key
+#: ../extensions/java-console/ephy-java-console-extension.c:50
+msgid "Show Java Console"
+msgstr "Zobraziť konzolu Java"
 
 #: ../extensions/page-info/ephy-page-info-extension.c:65
 msgid "Pa_ge Information"
@@ -688,27 +697,27 @@ msgstr "zakázané"
 msgid "default"
 msgstr "predvolené"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:514
+#: ../extensions/permissions/ephy-permissions-dialog.c:515
 msgid "Domain"
 msgstr "Doména"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:526
+#: ../extensions/permissions/ephy-permissions-dialog.c:527
 msgid "State"
 msgstr "Stav"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:619
+#: ../extensions/permissions/ephy-permissions-dialog.c:620
 msgid "Site Permissions"
 msgstr "Práva servera"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:643
+#: ../extensions/permissions/ephy-permissions-dialog.c:647
 msgid "Cookies"
 msgstr "Koláčiky"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:644
+#: ../extensions/permissions/ephy-permissions-dialog.c:648
 msgid "Images"
 msgstr "Obrázky"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:645
+#: ../extensions/permissions/ephy-permissions-dialog.c:649
 msgid "Popup Windows"
 msgstr "Vyskakovacie okná"
 
