@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-11 20:01+0100\n"
-"PO-Revision-Date: 2005-11-11 20:10+0100\n"
+"POT-Creation-Date: 2005-12-06 21:26+0100\n"
+"PO-Revision-Date: 2005-12-06 21:27+0100\n"
 "Last-Translator: Francisco Javier F. Serrador <serrador@cvs.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -87,43 +87,43 @@ msgstr "_Páginas"
 msgid "Actions"
 msgstr "Acciones"
 
-#: ../extensions/actions/ephy-actions-extension.c:94
+#: ../extensions/actions/ephy-actions-extension.c:112
 msgid "_Actions"
 msgstr "_Acciones"
 
-#: ../extensions/actions/ephy-actions-extension.c:95
+#: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Customize actions"
 msgstr "Personalizar acciones"
 
-#: ../extensions/actions/ephy-actions-extension.c:408
+#: ../extensions/actions/ephy-actions-extension.c:436
 msgid "Could not run command"
 msgstr "No se pudo ejecutar el comando"
 
-#: ../extensions/actions/ephy-actions-extension.c:411
+#: ../extensions/actions/ephy-actions-extension.c:439
 msgid "Could not Run Command"
 msgstr "No se pudo ejecutar el comando"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:490
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:519
 msgid "No action selected."
 msgstr "No se ha seleccionado ninguna acción."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:500
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:529
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
 msgstr[0] "Se ha seleccionado %i acción."
 msgstr[1] "Se han seleccionado %i acciones."
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:312
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
 msgstr "Añadir acción"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:415
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
 #, c-format
 msgid "“%s” Properties"
 msgstr "Propiedades de «%s»"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
 msgid "Action Properties"
 msgstr "Propiedades de acción"
 
@@ -314,7 +314,9 @@ msgstr ""
 msgid ""
 "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
 "+xml” instead."
-msgstr "Doctype es «XHTML» pero el tipo de contenido es «text/html». Use «application/xhtml+xml» en su lugar."
+msgstr ""
+"Doctype es «XHTML» pero el tipo de contenido es «text/html». Use "
+"«application/xhtml+xml» en su lugar."
 
 #: ../extensions/error-viewer/sgml-validator.c:243
 #, c-format
@@ -347,11 +349,11 @@ msgstr ""
 "Error HTML en %s:\n"
 "No se especificó un tipo de documento válido."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:339
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:340
 msgid "Enabled"
 msgstr "Activada"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:347
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:348
 #: ../extensions/rss/rss-ui.c:569
 msgid "Description"
 msgstr "Descripción"
@@ -385,6 +387,15 @@ msgstr "Instalar script Greasemonkey"
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "Se ha instalado el script de usuario en «%s»"
+
+#: ../extensions/java-console/ephy-java-console-extension.c:48
+msgid "_Java Console"
+msgstr "Consola _Java"
+
+#. shortcut key
+#: ../extensions/java-console/ephy-java-console-extension.c:50
+msgid "Show Java Console"
+msgstr "Muestra la consola Java"
 
 #: ../extensions/page-info/ephy-page-info-extension.c:65
 msgid "Pa_ge Information"
@@ -682,27 +693,27 @@ msgstr "denegado"
 msgid "default"
 msgstr "predeterminado"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:514
+#: ../extensions/permissions/ephy-permissions-dialog.c:515
 msgid "Domain"
 msgstr "Dominio"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:526
+#: ../extensions/permissions/ephy-permissions-dialog.c:527
 msgid "State"
 msgstr "Estado"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:619
+#: ../extensions/permissions/ephy-permissions-dialog.c:620
 msgid "Site Permissions"
 msgstr "Permisos del sitio"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:643
+#: ../extensions/permissions/ephy-permissions-dialog.c:647
 msgid "Cookies"
 msgstr "Cookies"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:644
+#: ../extensions/permissions/ephy-permissions-dialog.c:648
 msgid "Images"
 msgstr "Imágenes"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:645
+#: ../extensions/permissions/ephy-permissions-dialog.c:649
 msgid "Popup Windows"
 msgstr "Ventanas emergentes"
 
