@@ -1,7 +1,7 @@
 [Epiphany Extension]
 Version=1
-Name=Java Console
-Description=Provide access to the Java-Plugin Console
+_Name=Java Console
+_Description=Provide access to the Java-Plugin Console
 Authors=Mathias Hasselmann <mathias@taschenorakel.de>
 URL=http://www.gnome.org/projects/epiphany/extensions.html
 

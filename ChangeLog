@@ -1,5 +1,11 @@
 2005-12-07  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/java-console/java-console.ephy-extension.in.in:
+
+	Mark the name and description for translation.
+
+2005-12-07  Christian Persch  <chpe@cvs.gnome.org>
+
 	* configure.ac:
 	* extensions/auto-scroller/Makefile.am:
 	* extensions/auto-scroller/ephy-auto-scroller.c:
