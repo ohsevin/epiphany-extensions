@@ -1,5 +1,3 @@
-SUBDIRS = mozilla
-
 extensiondir = $(EXTENSIONS_DIR)
 extension_LTLIBRARIES = libpushscrollerextension.la
 
@@ -21,9 +19,8 @@ libpushscrollerextension_la_CFLAGS = \
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
 	$(AM_CFLAGS)
 
-libpushscrollerextension_la_LIBADD = \
-	mozilla/libpushscrollermozilla.la	\
-	$(MOZILLA_COMPONENT_LIBS)
+libpushscrollerextension_la_LIBADD =
+
 libpushscrollerextension_la_LDFLAGS = -module -avoid-version
 
 extensioninidir = $(extensiondir)

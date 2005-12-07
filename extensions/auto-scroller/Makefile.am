@@ -1,5 +1,3 @@
-SUBDIRS = mozilla
-
 extensiondir = $(EXTENSIONS_DIR)
 extension_LTLIBRARIES = libautoscrollerextension.la
 
@@ -22,9 +20,8 @@ libautoscrollerextension_la_CFLAGS = \
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
 	$(AM_CFLAGS)
 
-libautoscrollerextension_la_LIBADD = \
-	mozilla/libautoscrollermozilla.la	\
-	$(MOZILLA_COMPONENT_LIBS)
+libautoscrollerextension_la_LIBADD =
+
 libautoscrollerextension_la_LDFLAGS = -module -avoid-version
 
 extensioninidir = $(extensiondir)

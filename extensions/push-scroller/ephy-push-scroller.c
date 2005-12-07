@@ -91,7 +91,7 @@ ephy_push_scroller_motion_cb (GtkWidget *widget,
 	y_dist_abs = abs (y_dist);
 
 	/* scroll */
-	mozilla_helper_fine_scroll (priv->embed, x_dist, y_dist);
+	ephy_embed_scroll_pixels (priv->embed, x_dist, y_dist);
 
 	priv->start_x = event->x_root;
 	priv->start_y = event->y_root;

@@ -93,7 +93,7 @@ AM_GLIB_DEFINE_LOCALEDIR([LOCALE_DIR])
 # pkg config checks
 # ********************************
 
-EPIPHANY_REQUIRED=1.9.2
+EPIPHANY_REQUIRED=1.9.2.90
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.8.0
 LIBGTK_REQUIRED=2.8.0
@@ -368,7 +368,6 @@ extensions/actions/Makefile
 extensions/adblock/Makefile
 extensions/adblock/mozilla/Makefile
 extensions/auto-scroller/Makefile
-extensions/auto-scroller/mozilla/Makefile
 extensions/bookmarks-tray/Makefile
 extensions/certificates/Makefile
 extensions/dashboard/Makefile
@@ -385,7 +384,6 @@ extensions/page-info/Makefile
 extensions/page-info/mozilla/Makefile
 extensions/permissions/Makefile
 extensions/push-scroller/Makefile
-extensions/push-scroller/mozilla/Makefile
 extensions/python-console/Makefile
 extensions/rss/Makefile
 extensions/sample/Makefile

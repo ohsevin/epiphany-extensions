@@ -1,3 +1,24 @@
+2005-12-07  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/auto-scroller/Makefile.am:
+	* extensions/auto-scroller/ephy-auto-scroller.c:
+	(ephy_auto_scroller_timeout_cb):
+	R extensions/auto-scroller/mozilla/.cvsignore:
+	R extensions/auto-scroller/mozilla/Makefile.am:
+	R extensions/auto-scroller/mozilla/mozilla-helpers.cpp:
+	R extensions/auto-scroller/mozilla/mozilla-helpers.h:
+	* extensions/push-scroller/Makefile.am:
+	* extensions/push-scroller/ephy-push-scroller.c:
+	(ephy_push_scroller_motion_cb):
+	R extensions/push-scroller/mozilla/.cvsignore:
+	R extensions/push-scroller/mozilla/Makefile.am:
+	R extensions/push-scroller/mozilla/mozilla-helpers.cpp:
+	R extensions/push-scroller/mozilla/mozilla-helpers.h:
+
+	Use ephy_embed_scroll_pixels(), and remove the now unused
+	mozilla helpers.
+
 2005-12-03  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:

@@ -232,7 +232,7 @@ ephy_auto_scroller_timeout_cb (EphyAutoScroller *scroller)
 	/* do scrolling, moving at a constart speed regardless of the
 	 * scrolling delay */
 
-	mozilla_helper_fine_scroll (priv->embed, scroll_step_x_int, scroll_step_y_int);
+	ephy_embed_scroll_pixels (priv->embed, scroll_step_x_int, scroll_step_y_int);
 
 	/* find out how long the scroll took */
 	gettimeofday (&finish_time, NULL);
