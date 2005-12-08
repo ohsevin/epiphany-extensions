@@ -26,7 +26,6 @@
 #include "config.h"
 
 #include "ephy-push-scroller.h"
-#include "mozilla-helpers.h"
 #include "ephy-debug.h"
 
 #include <gtk/gtkimage.h>

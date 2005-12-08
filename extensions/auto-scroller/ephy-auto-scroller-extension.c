@@ -24,7 +24,6 @@
 
 #include "ephy-auto-scroller-extension.h"
 #include "ephy-auto-scroller.h"
-#include "mozilla-helpers.h"
 #include "ephy-debug.h"
 
 #include <epiphany/ephy-extension.h>

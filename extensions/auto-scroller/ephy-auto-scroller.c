@@ -25,7 +25,6 @@
 #include "config.h"
 
 #include "ephy-auto-scroller.h"
-#include "mozilla-helpers.h"
 #include "autoscroll.xpm.h"
 #include "ephy-debug.h"
 

@@ -1,3 +1,12 @@
+2005-12-08  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/auto-scroller/ephy-auto-scroller-extension.c:
+	* extensions/auto-scroller/ephy-auto-scroller.c:
+	* extensions/push-scroller/ephy-push-scroller-extension.c:
+	* extensions/push-scroller/ephy-push-scroller.c:
+
+	Remove include of mozilla-helpers.h which doesn't exist anymore.
+
 2005-12-07  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/actions/action-properties.glade:
