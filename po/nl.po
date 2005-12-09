@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-20 10:14+0100\n"
-"PO-Revision-Date: 2005-11-20 16:55+0100\n"
+"POT-Creation-Date: 2005-12-09 10:15+0100\n"
+"PO-Revision-Date: 2005-12-09 11:57+0100\n"
 "Last-Translator: Reinout van Schouwen <reinout@cs.vu.nl>\n"
 "Language-Team: nl <vertaling@vrijschrift.org>\n"
 "MIME-Version: 1.0\n"
@@ -87,43 +87,43 @@ msgstr "_Pagina's"
 msgid "Actions"
 msgstr "Acties"
 
-#: ../extensions/actions/ephy-actions-extension.c:94
+#: ../extensions/actions/ephy-actions-extension.c:112
 msgid "_Actions"
 msgstr "_Acties"
 
-#: ../extensions/actions/ephy-actions-extension.c:95
+#: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Customize actions"
 msgstr "Acties aanpassen"
 
-#: ../extensions/actions/ephy-actions-extension.c:408
+#: ../extensions/actions/ephy-actions-extension.c:436
 msgid "Could not run command"
 msgstr "Kon opdracht niet uitvoeren"
 
-#: ../extensions/actions/ephy-actions-extension.c:411
+#: ../extensions/actions/ephy-actions-extension.c:439
 msgid "Could not Run Command"
 msgstr "Kon opdracht niet uitvoeren"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:490
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:519
 msgid "No action selected."
 msgstr "Geen actie geselecteerd."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:500
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:529
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
 msgstr[0] "%i actie geselecteerd."
 msgstr[1] "%i acties geselecteerd."
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:312
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
 msgstr "Actie toevoegen"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:415
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
 #, c-format
 msgid "“%s” Properties"
 msgstr "Eigenschappen van “%s”"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
 msgid "Action Properties"
 msgstr "Actie-eigenschappen"
 
@@ -350,11 +350,11 @@ msgstr ""
 "HTML fout in %s:\n"
 "Geen geldig doctype opgegeven."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:339
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:340
 msgid "Enabled"
 msgstr "Ingeschakeld"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:347
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:348
 #: ../extensions/rss/rss-ui.c:569
 msgid "Description"
 msgstr "Omschrijving"
@@ -388,6 +388,15 @@ msgstr "Greasemonkey-script installeren"
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "Het gebruikersscript op “%s” is geïnstalleerd"
+
+#: ../extensions/java-console/ephy-java-console-extension.c:48
+msgid "_Java Console"
+msgstr "_Java-console"
+
+#. shortcut key
+#: ../extensions/java-console/ephy-java-console-extension.c:50
+msgid "Show Java Console"
+msgstr "De Java-console tonen"
 
 #: ../extensions/page-info/ephy-page-info-extension.c:65
 msgid "Pa_ge Information"
@@ -912,8 +921,8 @@ msgstr "Favicon-terugval"
 msgid ""
 "Loads /favicon.ico as favicon if the site doesn't use the standard method"
 msgstr ""
-"Laadt /favicon.ico als pagina-pictogram wanneer de webstek niet de "
-"standaard methode toepast."
+"Laadt /favicon.ico als pagina-pictogram wanneer de webstek niet de standaard "
+"methode toepast."
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -930,6 +939,14 @@ msgstr "Greasemonkey"
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
 msgid "Run user scripts to modify web pages' behavior"
 msgstr "Gebruikersscripts uitvoeren om gedrag van webpagina's te beïnvloeden"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
+msgid "Java Console"
+msgstr "Java-console"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
+msgid "Provide access to the Java-Plugin Console"
+msgstr "Biedt toegang tot de console van de Java-plugin"
 
 #: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:1
 msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
