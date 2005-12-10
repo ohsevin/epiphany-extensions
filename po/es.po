@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-06 21:26+0100\n"
-"PO-Revision-Date: 2005-12-06 21:27+0100\n"
+"POT-Creation-Date: 2005-12-10 22:57+0100\n"
+"PO-Revision-Date: 2005-12-10 22:58+0100\n"
 "Last-Translator: Francisco Javier F. Serrador <serrador@cvs.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -937,6 +937,14 @@ msgid "Run user scripts to modify web pages' behavior"
 msgstr ""
 "Ejecutar scripts de usuario para modificar el comportamiento de las páginas "
 "web"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
+msgid "Java Console"
+msgstr "Consola Java"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
+msgid "Provide access to the Java-Plugin Console"
+msgstr "Proporcionar acceso a la consola del complemento de Java"
 
 #: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:1
 msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
