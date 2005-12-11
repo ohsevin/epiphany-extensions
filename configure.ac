@@ -16,7 +16,7 @@
 #
 # $Id$
 
-AC_INIT([GNOME Web Browser Extensions],[1.9.2.90],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+AC_INIT([GNOME Web Browser Extensions],[1.9.3],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 GNOME_COMMON_INIT
 
 EPIPHANY_API_VERSION=1.10
@@ -93,7 +93,7 @@ AM_GLIB_DEFINE_LOCALEDIR([LOCALE_DIR])
 # pkg config checks
 # ********************************
 
-EPIPHANY_REQUIRED=1.9.2.90
+EPIPHANY_REQUIRED=1.9.3
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.8.0
 LIBGTK_REQUIRED=2.8.0
