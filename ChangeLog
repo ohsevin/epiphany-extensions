@@ -1,5 +1,11 @@
 2005-12-14  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/error-viewer/error-viewer.glade:
+
+	Don't force error viewer to be above all windows.
+
+2005-12-14  Christian Persch  <chpe@cvs.gnome.org>
+
 	A ephy-extension.symbols:
 	* extensions/actions/Makefile.am:
 	* extensions/adblock/Makefile.am:
