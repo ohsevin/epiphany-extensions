@@ -24,7 +24,11 @@ libselectstylesheetextension_la_CFLAGS = \
 libselectstylesheetextension_la_LIBADD = \
 	mozilla/libselectstylesheetmozilla.la	\
 	$(MOZILLA_COMPONENT_LIBS)
-libselectstylesheetextension_la_LDFLAGS = -module -avoid-version
+
+libselectstylesheetextension_la_LDFLAGS = \
+	-module -avoid-version \
+	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	$(AM_LDFLAGS)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = select-stylesheet.ephy-extension.in.in

@@ -22,7 +22,10 @@ libautoscrollerextension_la_CFLAGS = \
 
 libautoscrollerextension_la_LIBADD =
 
-libautoscrollerextension_la_LDFLAGS = -module -avoid-version
+libautoscrollerextension_la_LDFLAGS = \
+	-module -avoid-version \
+	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	$(AM_LDFLAGS)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = auto-scroller.ephy-extension.in.in

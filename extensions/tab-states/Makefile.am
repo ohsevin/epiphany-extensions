@@ -16,6 +16,11 @@ libtabstatesextension_la_CFLAGS = \
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
 	$(AM_CFLAGS)
 
+libtabstatesextension_la_LDFLAGS = \
+	-module -avoid-version \
+	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	$(AM_LDFLAGS)
+
 extensioninidir = $(extensiondir)
 extensionini_in_files = tab-states.ephy-extension.in.in
 extensionini_DATA = $(extensionini_in_files:.ephy-extension.in.in=.ephy-extension)

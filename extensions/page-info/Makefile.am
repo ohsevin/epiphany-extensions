@@ -25,7 +25,11 @@ libpageinfoextension_la_CFLAGS = \
 libpageinfoextension_la_LIBADD = \
 	mozilla/libpageinfomozilla.la	\
 	$(MOZILLA_COMPONENT_LIBS)
-libpageinfoextension_la_LDFLAGS = -module -avoid-version
+
+libpageinfoextension_la_LDFLAGS = \
+	-module -avoid-version \
+	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	$(AM_LDFLAGS)
 
 glade_DATA = page-info.glade
 gladedir = $(pkgdatadir)/glade

@@ -23,7 +23,10 @@ libjavaconsoleextension_la_LIBADD = \
 	mozilla/libjavaconsolemozilla.la	\
 	$(MOZILLA_COMPONENT_LIBS)
 
-libjavaconsoleextension_la_LDFLAGS = -module -avoid-version
+libjavaconsoleextension_la_LDFLAGS = \
+	-module -avoid-version \
+	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	$(AM_LDFLAGS)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = java-console.ephy-extension.in.in

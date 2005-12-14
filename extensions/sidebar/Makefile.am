@@ -22,7 +22,10 @@ libsidebarextension_la_CFLAGS = \
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
 	$(AM_CFLAGS)
 
-libsidebarextension_la_LDFLAGS = -module -avoid-version
+libsidebarextension_la_LDFLAGS = \
+	-module -avoid-version \
+	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	$(AM_LDFLAGS)
 
 uimanager_DATA = epiphany-sidebar-ui.xml
 

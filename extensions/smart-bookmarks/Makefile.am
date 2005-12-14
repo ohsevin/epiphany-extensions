@@ -23,7 +23,10 @@ libsmartbookmarksextension_la_LIBADD =	\
 	$(top_builddir)/extensions/smart-bookmarks/mozilla/libsbmozilla.la	\
 	$(MOZILLA_COMPONENT_LIBS)
 
-libsmartbookmarksextension_la_LDFLAGS = -module -avoid-version
+libsmartbookmarksextension_la_LDFLAGS = \
+	-module -avoid-version \
+	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	$(AM_LDFLAGS)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = smart-bookmarks.ephy-extension.in.in

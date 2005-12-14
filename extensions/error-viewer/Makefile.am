@@ -48,7 +48,11 @@ liberrorviewerextension_la_LIBADD += \
 	opensp/liberrorvieweropensp.la	\
 	-losp
 endif
-liberrorviewerextension_la_LDFLAGS = -module -avoid-version
+
+liberrorviewerextension_la_LDFLAGS = \
+	-module -avoid-version \
+	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	$(AM_LDFLAGS)
 
 glade_DATA = error-viewer.glade
 

@@ -5,7 +5,6 @@ libsampleextension_la_SOURCES = \
 	ephy-sample-extension.c	\
 	ephy-sample-extension.h	\
 	sample.c
-libsampleextension_la_LDFLAGS = -module -avoid-version
 
 libsampleextension_la_CPPFLAGS = \
         -I$(top_srcdir)/include				\
@@ -16,6 +15,11 @@ libsampleextension_la_CPPFLAGS = \
 libsampleextension_la_CFLAGS = \
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
 	$(AM_CFLAGS)
+
+libsampleextension_la_LDFLAGS = \
+	-module -avoid-version \
+	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	$(AM_LDFLAGS)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = sample.ephy-extension.in.in

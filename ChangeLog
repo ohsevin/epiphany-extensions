@@ -1,3 +1,35 @@
+2005-12-14  Christian Persch  <chpe@cvs.gnome.org>
+
+	A ephy-extension.symbols:
+	* extensions/actions/Makefile.am:
+	* extensions/adblock/Makefile.am:
+	* extensions/auto-scroller/Makefile.am:
+	* extensions/bookmarks-tray/Makefile.am:
+	* extensions/certificates/Makefile.am:
+	* extensions/dashboard/Makefile.am:
+	* extensions/error-viewer/Makefile.am:
+	* extensions/extensions-manager-ui/Makefile.am:
+	* extensions/gestures/Makefile.am:
+	* extensions/greasemonkey/Makefile.am:
+	* extensions/java-console/Makefile.am:
+	* extensions/net-monitor/Makefile.am:
+	* extensions/page-info/Makefile.am:
+	* extensions/permissions/Makefile.am:
+	* extensions/push-scroller/Makefile.am:
+	* extensions/rss/Makefile.am:
+	* extensions/sample-mozilla/Makefile.am:
+	* extensions/sample/Makefile.am:
+	* extensions/select-stylesheet/Makefile.am:
+	* extensions/sidebar/Makefile.am:
+	* extensions/smart-bookmarks/Makefile.am:
+	* extensions/tab-groups/Makefile.am:
+	* extensions/tab-states/Makefile.am:
+	* extensions/tabsmenu/Makefile.am:
+	* extensions/toolbar-extras/Makefile.am:
+
+	Add -export-symbols to LDFLAGS, since we only need the
+	"register_module" symbol exported.
+
 2005-12-11  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:

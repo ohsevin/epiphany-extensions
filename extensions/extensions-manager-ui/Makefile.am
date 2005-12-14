@@ -7,7 +7,6 @@ libextensionsmanageruiextension_la_SOURCES = \
 	ephy-extensions-manager-ui-extension.c	\
 	ephy-extensions-manager-ui-extension.h	\
 	extension.c
-libextensionsmanageruiextension_la_LDFLAGS = -module -avoid-version
 
 libextensionsmanageruiextension_la_CPPFLAGS = \
         -I$(top_srcdir)/include				\
@@ -18,6 +17,11 @@ libextensionsmanageruiextension_la_CPPFLAGS = \
 libextensionsmanageruiextension_la_CFLAGS = \
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
 	$(AM_CFLAGS)
+
+libextensionsmanageruiextension_la_LDFLAGS = \
+	-module -avoid-version \
+	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	$(AM_LDFLAGS)
 
 gladedir = $(pkgdatadir)/glade
 glade_DATA = extensions-manager-ui.glade

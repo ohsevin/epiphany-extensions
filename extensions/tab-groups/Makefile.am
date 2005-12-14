@@ -7,8 +7,6 @@ libtabgroupsextension_la_SOURCES = \
 	ephy-tab-grouper.c		\
 	ephy-tab-grouper.h		\
 	tab-groups.c
-libtabgroupsextension_la_LDFLAGS = -module -avoid-version
-
 libtabgroupsextension_la_CPPFLAGS = \
         -I$(top_srcdir)/include				\
 	-DSHARE_DIR=\"$(pkgdatadir)\"			\
@@ -18,6 +16,11 @@ libtabgroupsextension_la_CPPFLAGS = \
 libtabgroupsextension_la_CFLAGS = \
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
 	$(AM_CFLAGS)
+
+libtabgroupsextension_la_LDFLAGS = \
+	-module -avoid-version \
+	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	$(AM_LDFLAGS)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = tab-groups.ephy-extension.in.in

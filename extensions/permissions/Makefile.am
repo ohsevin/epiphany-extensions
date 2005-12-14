@@ -7,7 +7,6 @@ libpermissionsextension_la_SOURCES = \
 	ephy-permissions-extension.c	\
 	ephy-permissions-extension.h	\
 	extension.c
-libpermissionsextension_la_LDFLAGS = -module -avoid-version
 
 libpermissionsextension_la_CPPFLAGS = \
         -I$(top_srcdir)/include				\
@@ -18,6 +17,11 @@ libpermissionsextension_la_CPPFLAGS = \
 libpermissionsextension_la_CFLAGS = \
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
 	$(AM_CFLAGS)
+
+libpermissionsextension_la_LDFLAGS = \
+	-module -avoid-version \
+	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	$(AM_LDFLAGS)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = permissions.ephy-extension.in.in

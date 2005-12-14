@@ -26,7 +26,11 @@ libgreasemonkeyextension_la_LIBADD = \
 	mozilla/libgreasemonkeymozilla.la	\
 	$(MOZILLA_COMPONENT_LIBS)		\
 	$(PCRE_LIBS)
-libgreasemonkeyextension_la_LDFLAGS = -module -avoid-version
+
+libgreasemonkeyextension_la_LDFLAGS = \
+	-module -avoid-version \
+	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	$(AM_LDFLAGS)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = greasemonkey.ephy-extension.in.in

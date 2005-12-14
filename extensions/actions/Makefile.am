@@ -22,6 +22,11 @@ libactionsextension_la_CFLAGS = \
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
 	$(AM_CFLAGS)
 
+libactionsextension_la_LDFLAGS = \
+	-module -avoid-version \
+	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	$(AM_LDFLAGS)
+
 glade_DATA = \
 	action-properties.glade	\
 	actions-editor.glade

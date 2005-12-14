@@ -9,7 +9,6 @@ libgesturesextension_la_SOURCES = 	\
 	gestures.c			\
 	stroke.c			\
 	stroke.h
-libgesturesextension_la_LDFLAGS = -module -avoid-version
 
 libgesturesextension_la_CPPFLAGS = \
         -I$(top_srcdir)/include				\
@@ -21,6 +20,11 @@ libgesturesextension_la_CFLAGS = \
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
 	$(AM_CFLAGS)
 
+libgesturesextension_la_LDFLAGS = \
+	-module -avoid-version \
+	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	$(AM_LDFLAGS)
+ 
 gesturesdir = $(pkgdatadir)
 gestures_DATA =	ephy-gestures.xml
 

@@ -20,7 +20,10 @@ libtoolbarextrasextension_la_CFLAGS = \
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
 	$(AM_CFLAGS)
 
-libtoolbarextrasextension_la_LDFLAGS = -module -avoid-version
+libtoolbarextrasextension_la_LDFLAGS = \
+	-module -avoid-version \
+	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	$(AM_LDFLAGS)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = toolbar-extras.ephy-extension.in.in

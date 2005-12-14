@@ -21,7 +21,10 @@ libpushscrollerextension_la_CFLAGS = \
 
 libpushscrollerextension_la_LIBADD =
 
-libpushscrollerextension_la_LDFLAGS = -module -avoid-version
+libpushscrollerextension_la_LDFLAGS = \
+	-module -avoid-version \
+	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	$(AM_LDFLAGS)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = push-scroller.ephy-extension.in.in

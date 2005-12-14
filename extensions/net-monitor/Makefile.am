@@ -5,8 +5,6 @@ libnetmonitorextension_la_SOURCES = \
 	ephy-net-monitor-extension.c	\
 	ephy-net-monitor-extension.h	\
 	extension.c
-libnetmonitorextension_la_LDFLAGS = -module -avoid-version
-
 libnetmonitorextension_la_CPPFLAGS = \
         -I$(top_srcdir)/include				\
 	-DSHARE_DIR=\"$(pkgdatadir)\"			\
@@ -17,6 +15,11 @@ libnetmonitorextension_la_CFLAGS = \
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
 	$(DBUS_CFLAGS) \
 	$(AM_CFLAGS)
+
+libnetmonitorextension_la_LDFLAGS = \
+	-module -avoid-version \
+	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	$(AM_LDFLAGS)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = net-monitor.ephy-extension.in.in

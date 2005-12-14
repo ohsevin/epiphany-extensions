@@ -5,7 +5,6 @@ libbookmarkstrayextension_la_SOURCES = \
 	ephy-bookmarks-tray-extension.c	\
 	ephy-bookmarks-tray-extension.h	\
 	extension.c
-libbookmarkstrayextension_la_LDFLAGS = -module -avoid-version
 
 libbookmarkstrayextension_la_CPPFLAGS = \
         -I$(top_srcdir)/include					\
@@ -16,6 +15,11 @@ libbookmarkstrayextension_la_CPPFLAGS = \
 libbookmarkstrayextension_la_CFLAGS = \
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
 	$(AM_CFLAGS)
+
+libbookmarkstrayextension_la_LDFLAGS = \
+	-module -avoid-version \
+	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	$(AM_LDFLAGS)
 
 ui_xmldir = $(pkgdatadir)/xml
 ui_xml_DATA = ephy-bookmarks-tray-ui.xml

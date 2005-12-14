@@ -22,7 +22,11 @@ libsamplemozillaextension_la_CFLAGS = \
 libsamplemozillaextension_la_LIBADD = \
 	mozilla/libsamplemozillamozilla.la	\
 	$(MOZILLA_COMPONENT_LIBS)
-libsamplemozillaextension_la_LDFLAGS = -module -avoid-version
+
+libsamplemozillaextension_la_LDFLAGS = \
+	-module -avoid-version \
+	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	$(AM_LDFLAGS)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = sample-mozilla.ephy-extension.in.in

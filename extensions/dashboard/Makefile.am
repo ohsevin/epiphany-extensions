@@ -7,7 +7,6 @@ libdashboardextension_la_SOURCES =	\
 	ephy-dashboard-extension.h	\
 	dashboard-frontend-xmlwriter.h	\
 	dashboard-frontend-xmlwriter.c
-libdashboardextension_la_LDFLAGS = -module -avoid-version
 
 libdashboardextension_la_CPPFLAGS = \
         -I$(top_srcdir)/include				\
@@ -18,6 +17,11 @@ libdashboardextension_la_CPPFLAGS = \
 libdashboardextension_la_CFLAGS = \
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
 	$(AM_CFLAGS)
+
+libdashboardextension_la_LDFLAGS = \
+	-module -avoid-version \
+	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	$(AM_LDFLAGS)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = dashboard.ephy-extension.in.in

@@ -11,8 +11,6 @@ librssextension_la_SOURCES = \
 	rss-dbus.c				\
 	rss-dbus.h				\
 	extension.c
-librssextension_la_LDFLAGS = -module -avoid-version
-
 librssextension_la_CPPFLAGS = \
     -I$(top_srcdir)/include				\
 	-DSHARE_DIR=\"$(pkgdatadir)\"			\
@@ -23,6 +21,11 @@ librssextension_la_CFLAGS = \
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
 	$(DBUS_CFLAGS) \
 	$(AM_CFLAGS)
+
+librssextension_la_LDFLAGS = \
+	-module -avoid-version \
+	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	$(AM_LDFLAGS)
 
 gladedir = $(pkgdatadir)/glade
 glade_DATA = rss-ui.glade
