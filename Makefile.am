@@ -9,6 +9,7 @@ EXTRA_DIST =			\
 	HACKING			\
 	README 			\
 	TODO 			\
+	ephy-extension.symbols	\
 	intltool-extract.in 	\
 	intltool-merge.in 	\
 	intltool-update.in	\

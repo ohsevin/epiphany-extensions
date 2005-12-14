@@ -1,5 +1,11 @@
 2005-12-14  Christian Persch  <chpe@cvs.gnome.org>
 
+	* Makefile.am: (EXTRA_DIST):
+
+	Added ephy-extension.symbols.
+	
+2005-12-14  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/error-viewer/error-viewer.glade:
 
 	Don't force error viewer to be above all windows.
