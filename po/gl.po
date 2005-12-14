@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-04 16:53+0100\n"
-"PO-Revision-Date: 2005-12-04 17:08+0100\n"
+"POT-Creation-Date: 2005-12-14 17:16+0100\n"
+"PO-Revision-Date: 2005-12-14 17:17+0100\n"
 "Last-Translator: Ignacio Casal Quinteiro <nacho.resa@gmail.com>\n"
 "Language-Team: Galego\n"
 "MIME-Version: 1.0\n"
@@ -733,7 +733,9 @@ msgstr "Subscrición a proveedores de noticias"
 
 #: ../extensions/rss/ephy-rss-extension.c:96
 msgid "Subscribe to this website's news feeds in your favorite news reader"
-msgstr "Subscribirse ao proveedor de noticias desta web no seu lector de noticias favorito"
+msgstr ""
+"Subscribirse ao proveedor de noticias desta web no seu lector de noticias "
+"favorito"
 
 #: ../extensions/rss/ephy-rss-extension.c:101
 msgid "_Subscribe to this feed"
@@ -749,7 +751,9 @@ msgstr "Subscribirse ao proveedor de noticias do sitio"
 
 #: ../extensions/rss/rss-ui.c:154
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
-msgstr "<b><i>Imposible contactar co lector de proveedores, estase executando?</i></b>"
+msgstr ""
+"<b><i>Imposible contactar co lector de proveedores, estase executando?</i></"
+"b>"
 
 #: ../extensions/rss/rss-ui.c:156
 msgid "Retry"
@@ -929,6 +933,14 @@ msgstr "Greasemonkey"
 msgid "Run user scripts to modify web pages' behavior"
 msgstr "Executar scripts de usuario para modificar o comportamento das páxinas web"
 
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
+msgid "Java Console"
+msgstr "Consola java"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
+msgid "Provide access to the Java-Plugin Console"
+msgstr "Proporcionar acceso á consola do complemento de Java"
+
 #: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:1
 msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
 msgstr "Manipula automaticamente o estado conectado/desconectado (EXPERIMENTAL!)"
@@ -959,7 +971,9 @@ msgstr "Subscrición a proveedores de noticias"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
-msgstr "Subscribirse a proveedores de noticias ofrecidos pola páxina web no seu lector de noticias favorito"
+msgstr ""
+"Subscribirse a proveedores de noticias ofrecidos pola páxina web no seu "
+"lector de noticias favorito"
 
 #: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
 msgid "A sample extension with mozilla backend"
