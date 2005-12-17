@@ -20,12 +20,15 @@
 
 #include "config.h"
 
+#undef MOZILLA_INTERNAL_API
+#include <nsEmbedString.h>
+#define MOZILLA_INTERNAL_API 1
+
 #include <nsCOMPtr.h>
 #include <nsIDOMNode.h>
 #include <nsIDOMEvent.h>
 #include <nsIDOMMouseEvent.h>
 #include <nsIDOMEventTarget.h>
-#include <nsEmbedString.h>
 #include <nsIDOMHTMLImageElement.h>
 #include <dom/nsIDOMCSS2Properties.h>
 #include <dom/nsIDOMNSHTMLElement.h>

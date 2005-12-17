@@ -1,3 +1,9 @@
+2005-12-17  Crispin Flowerday  <gnome@flowerday.cx>
+
+	* extensions/imagebar/mozilla-event.cpp:
+
+	Undefine MOZILLA_INTERNAL_API while including nsEmbedString
+
 2005-12-17  Kang Jeong-Hee  <Keizi@mail.co.kr>
 
 	* extensions/imagebar/:
