@@ -1,3 +1,9 @@
+2005-12-17  Kang Jeong-Hee  <Keizi@mail.co.kr>
+
+	* extensions/imagebar/:
+
+	New extension Image Toolbar added. Many TODOs and FIXMEs.
+
 2005-12-14  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/extensions-manager-ui/extensions-manager-ui.glade:
