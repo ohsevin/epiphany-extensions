@@ -302,7 +302,7 @@ seamonkey) min_version=1.0 ;;
 xulrunner) min_version=1.8 ;;
 esac
 
-PKG_CHECK_MODULES([MOZILLA_COMPONENT],[$MOZILLA-gtkmozembed >= $min_version nspr])
+PKG_CHECK_MODULES([MOZILLA_COMPONENT],[$MOZILLA-gtkmozembed >= $min_version])
 AC_SUBST([MOZILLA_COMPONENT_CFLAGS])
 AC_SUBST([MOZILLA_COMPONENT_LIBS])
 

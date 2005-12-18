@@ -1,3 +1,13 @@
+2005-12-18  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* configure.ac
+
+	Revert part of change made for imagebar (typo).
+
+	* extensions/rss/rss-dbus.c: (rss_dbus_subscribe_feed):
+
+	Fix compile warning (unused variable).
+
 2005-12-17  Crispin Flowerday  <gnome@flowerday.cx>
 
 	* extensions/imagebar/mozilla-event.cpp:
