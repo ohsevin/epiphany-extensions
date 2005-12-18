@@ -30,6 +30,7 @@ G_BEGIN_DECLS
 nsresult	evaluate_dom_event	(gpointer dom_event,
 					 PRBool *isImage,
 					 PRBool *isCtrlKey,
+					 PRBool *isAnchored,
 					 PRInt32 *x,
 					 PRInt32 *y,
 					 char **imgSrc);

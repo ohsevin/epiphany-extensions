@@ -142,13 +142,12 @@ dom_mouse_over_cb (GtkMozEmbed *embed,
 	GtkWidget *toplevel;
 	gint32 x, y;
 	gint tmp_x, tmp_y;
-	gboolean is_image = FALSE, is_forced = FALSE;
+	gboolean is_image = FALSE, is_forced = FALSE, is_anchored = FALSE;
 	char *img_src;
 
-	evaluate_dom_event (dom_event, &is_image, &is_forced,
-				       &x, &y,
-				       &img_src);
-	if (!is_image) return FALSE;
+	evaluate_dom_event (dom_event, &is_image, &is_forced, &is_anchored,
+				       &x, &y, &img_src);
+	if (!is_image || (is_anchored && !is_forced)) return FALSE;
 
 	if (priv->src != NULL) g_free (priv->src);
 	priv->src = img_src;

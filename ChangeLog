@@ -1,3 +1,9 @@
+2005-12-18  Kang Jeong-Hee  <Keizi@mail.co.kr>
+
+	* extensions/imagebar/mozilla-event.*:
+
+	Check parentNode is anchor or not, to work conditionally.
+
 2005-12-18  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* configure.ac

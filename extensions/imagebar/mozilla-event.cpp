@@ -29,6 +29,7 @@
 #include <nsIDOMEvent.h>
 #include <nsIDOMMouseEvent.h>
 #include <nsIDOMEventTarget.h>
+#include <nsIDOMHTMLAnchorElement.h>
 #include <nsIDOMHTMLImageElement.h>
 #include <dom/nsIDOMCSS2Properties.h>
 #include <dom/nsIDOMNSHTMLElement.h>
@@ -38,7 +39,9 @@
 
 nsresult
 evaluate_dom_event (gpointer dom_event,
-		    PRBool *isImage, PRBool *isCtrlKey,
+		    PRBool *isImage,
+		    PRBool *isCtrlKey,
+		    PRBool *isAnchored,
 		    PRInt32 *x, PRInt32 *y,
 		    char **imgSrc)
 {
@@ -56,6 +59,21 @@ evaluate_dom_event (gpointer dom_event,
 
 	nsCOMPtr <nsIDOMNode> node = do_QueryInterface (target, &rv);
 	if (NS_FAILED (rv) || !node) return NS_ERROR_FAILURE;
+
+	/* check whether parent is anchor */
+	nsCOMPtr <nsIDOMNode> parentNode;
+	rv = node->GetParentNode (getter_AddRefs (parentNode));
+	if (NS_FAILED (rv) || !parentNode) return NS_ERROR_FAILURE;
+
+	if (isCtrlKey)
+	{
+		nsCOMPtr <nsIDOMHTMLAnchorElement> parentAnchor =
+					do_QueryInterface (parentNode, &rv);
+		if (!NS_FAILED (rv) && parentAnchor)
+		{
+			(*isAnchored) = PR_TRUE;
+		}
+	}
 
 	PRUint16 type;
 	rv = node->GetNodeType (&type);
