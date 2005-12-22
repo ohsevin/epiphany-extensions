@@ -60,7 +60,7 @@ static GType type = 0;
 
 /* Menu item stuff */
 #define WINDOW_DATA_KEY	"EphyRssExtensionWindowData"
-#define RSS_FEEDREADER_PROXY_DATA_KEY "EphyRssExtensionRssFeedreaderProxy"
+#define EPHY_RSS_EXTENSION_DATA_KEY "EphyRssExtension"
 #define MENU_PATH	"/menubar/ToolsMenu"
 
 /* Status Bar stuff */
@@ -156,7 +156,7 @@ ephy_rss_feed_subscribe_cb (GtkAction *action,
 		G_TYPE_BOOLEAN, &success,
 		G_TYPE_INVALID))
 	{
-		LOG ("Error while retreiving method answer: %s: %s", error->name, error->message);
+		LOG ("Error while retreiving method answer: %s: %s", error.name, error.message);
 		g_error_free (error);
 	}
 	

@@ -154,7 +154,7 @@ rss_ui_subscribe_selected (GtkTreeModel *model,
 			G_TYPE_BOOLEAN, &success,
 			G_TYPE_INVALID))
 		{
-			LOG ("Error while retreiving method answer: %s: %s", error->name, error->message);
+			LOG ("Error while retreiving method answer: %s: %s", error.name, error.message);
 			g_error_free (error);
 			success = FALSE;
 		}
