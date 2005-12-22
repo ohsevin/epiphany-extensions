@@ -22,7 +22,6 @@
 
 #include "ephy-rss-extension.h"
 #include "rss-ui.h"
-#include "rss-dbus.h"
 #include "rss-feedlist.h"
 
 #include "ephy-debug.h"
@@ -45,11 +44,15 @@
 
 #include <glib/gi18n-lib.h>
 
+#include <dbus/dbus-glib.h>
+
 #define EPHY_RSS_EXTENSION_GET_PRIVATE(object)	(G_TYPE_INSTANCE_GET_PRIVATE((object), EPHY_TYPE_RSS_EXTENSION, EphyRssExtensionPrivate))
 
 struct _EphyRssExtensionPrivate
 {
 	RssUI *dialog;
+	/* The proxy to the rss reader */
+	DBusGProxy *proxy;
 };
 
 static GObjectClass *parent_class = NULL;
@@ -57,6 +60,7 @@ static GType type = 0;
 
 /* Menu item stuff */
 #define WINDOW_DATA_KEY	"EphyRssExtensionWindowData"
+#define RSS_FEEDREADER_PROXY_DATA_KEY "EphyRssExtensionRssFeedreaderProxy"
 #define MENU_PATH	"/menubar/ToolsMenu"
 
 /* Status Bar stuff */
@@ -130,8 +134,13 @@ ephy_rss_feed_subscribe_cb (GtkAction *action,
 			    EphyWindow *window)
 {
 	const GValue *value;
+	GError *error = NULL;
 	EphyEmbedEvent *event;
-
+	gboolean success;
+	EphyRssExtension *extension = EPHY_RSS_EXTENSION (g_object_get_data (
+												G_OBJECT (window),
+												EPHY_RSS_EXTENSION_DATA_KEY));
+	
 	LOG ("Subscribing to the feed");
 
 	event = ephy_window_get_context_event (window);
@@ -139,7 +148,17 @@ ephy_rss_feed_subscribe_cb (GtkAction *action,
 	
 	ephy_embed_event_get_property (event, "link", &value);
 
-	rss_dbus_subscribe_feed (g_value_get_string (value));
+	
+
+	if (!dbus_g_proxy_call (extension->priv->proxy, RSS_DBUS_SUBSCRIBE, &error,
+		G_TYPE_STRING, g_value_get_string (value),
+		G_TYPE_INVALID,
+		G_TYPE_BOOLEAN, &success,
+		G_TYPE_INVALID))
+	{
+		LOG ("Error while retreiving method answer: %s: %s", error->name, error->message);
+		g_error_free (error);
+	}
 	
 	g_object_set(action, "sensitive", FALSE, "visible", FALSE, NULL);	
 }
@@ -456,6 +475,8 @@ impl_attach_window (EphyExtension *ext,
 	g_object_set_data_full (G_OBJECT (window), WINDOW_DATA_KEY, data,
 				(GDestroyNotify) g_free);
 
+	g_object_set_data (G_OBJECT (window), EPHY_RSS_EXTENSION_DATA_KEY, extension);
+	
 	/* Create the status bar icon */
 	ephy_rss_create_statusbar_icon (window, data);
 
@@ -491,13 +512,29 @@ impl_detach_window (EphyExtension *ext,
 
 	/* Destroy data */
 	g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, NULL);
+	g_object_set_data (G_OBJECT (window), EPHY_RSS_EXTENSION_DATA_KEY, NULL);
 }
 
 /* Epiphany init/dispose stuff ------------------------- */
 static void
 ephy_rss_extension_init (EphyRssExtension *extension)
 {
+	DBusGConnection *connection;
+	GError *error = NULL;
 	extension->priv = EPHY_RSS_EXTENSION_GET_PRIVATE (extension);
+		
+	connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
+	if (connection == NULL)
+	{
+		LOG ("No connection to dbus:%s", error->message);
+		g_error_free (error);
+		return;
+    }
+    	
+	extension->priv->proxy = dbus_g_proxy_new_for_name (connection,
+                                     RSS_DBUS_SERVICE,
+                                     RSS_DBUS_OBJECT_PATH,
+                                     RSS_DBUS_INTERFACE);
 }
 
 static void
@@ -505,6 +542,8 @@ ephy_rss_extension_finalize (GObject *object)
 {
 	EphyRssExtension *extension = EPHY_RSS_EXTENSION (object);
 
+	g_object_unref (extension->priv->proxy);
+	
 	/* Dispose the dialog */
 	if (extension->priv->dialog != NULL)
 	{

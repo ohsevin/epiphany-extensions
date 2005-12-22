@@ -1,3 +1,13 @@
+2005-12-22  Raphael Slinckx  <rslinckx@cvs.gnome.org>
+
+	* extensions/rss/Makefile.am:
+	* extensions/rss/rss-dbus.c:
+	* extensions/rss/rss-dbus.h:
+	* extensions/rss/rss-ui.c: (rss_ui_subscribe_selected),
+	(rss_ui_init), (rss_ui_finalize):
+	Fixes crash with newer dbuses.
+	Only support dbus >0.3 from now on, using the new glib API
+
 2005-12-22  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/page-info/mozilla/mozilla-helpers.cpp:

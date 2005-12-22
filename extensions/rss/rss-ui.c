@@ -21,7 +21,7 @@
 #include "config.h"
 
 #include "rss-ui.h"
-#include "rss-dbus.h"
+#include <dbus/dbus-glib.h>
 
 #include "ephy-gui.h"
 #include "ephy-dnd.h"
@@ -64,6 +64,8 @@ struct _RssUIPrivate
 	FeedList *list;
 	/* Embed in which we have the feeds */
 	EphyEmbed *embed;
+	/* The proxy to the rss reader */
+	DBusGProxy *proxy;
 	/* A boolean flag indicating a dbus error */
 	gboolean dbus_error;
 };
@@ -145,7 +147,18 @@ rss_ui_subscribe_selected (GtkTreeModel *model,
 	
 	if (selected && feed != NULL && feed->title != NULL && feed->type != NULL && feed->address != NULL)
 	{				
-		success = rss_dbus_subscribe_feed (feed->address);
+		GError *error = NULL;
+		if (!dbus_g_proxy_call (priv->proxy, RSS_DBUS_SUBSCRIBE, &error,
+			G_TYPE_STRING, feed->address,
+			G_TYPE_INVALID,
+			G_TYPE_BOOLEAN, &success,
+			G_TYPE_INVALID))
+		{
+			LOG ("Error while retreiving method answer: %s: %s", error->name, error->message);
+			g_error_free (error);
+			success = FALSE;
+		}
+	
 		if (success == FALSE)
 		{
 			GtkWidget *image;
@@ -505,8 +518,24 @@ rss_ui_populate_store (RssUI *dialog)
 
 static void
 rss_ui_init (RssUI *dialog)
-{		
+{
+	DBusGConnection *connection;
+	GError *error = NULL;
+	
 	dialog->priv = RSS_UI_GET_PRIVATE (dialog);
+	
+	connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
+	if (connection == NULL)
+	{
+		LOG ("No connection to dbus:%s", error->message);
+		g_error_free (error);
+		return;
+    }
+    	
+	dialog->priv->proxy = dbus_g_proxy_new_for_name (connection,
+                                     RSS_DBUS_SERVICE,
+                                     RSS_DBUS_OBJECT_PATH,
+                                     RSS_DBUS_INTERFACE);
 }
 
 static GObject *
@@ -608,6 +637,7 @@ rss_ui_finalize (GObject *object)
 	RssUI *dialog = RSS_UI (object);
 	RssUIPrivate *priv = dialog->priv;
 
+	g_object_unref (priv->proxy);
 	rss_feedlist_free (priv->list);
 	
 	parent_class->finalize (object);

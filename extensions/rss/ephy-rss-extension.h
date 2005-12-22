@@ -24,6 +24,12 @@
 #include <glib.h>
 #include <glib-object.h>
 
+/* How to contact feed readers via dbus */
+#define RSS_DBUS_SERVICE        "org.gnome.feed.Reader"
+#define RSS_DBUS_OBJECT_PATH    "/org/gnome/feed/Reader"
+#define RSS_DBUS_INTERFACE      "org.gnome.feed.Reader"
+#define RSS_DBUS_SUBSCRIBE      "Subscribe"
+
 G_BEGIN_DECLS
 
 #define EPHY_TYPE_RSS_EXTENSION		(ephy_rss_extension_get_type ())
