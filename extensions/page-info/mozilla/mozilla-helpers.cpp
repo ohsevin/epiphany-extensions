@@ -114,8 +114,8 @@ private:
                     nsIDOMHTMLElement *aHTMLElement);
   void ProcessAppletNode (nsIDOMHTMLAppletElement *aElement);
   void ProcessAreaNode (nsIDOMHTMLAreaElement *aElement);
-  void PageInfoHelper::ProcessEmbedNodeHelper (const nsEmbedString &aUrl, 
-  				               nsIDOMHTMLEmbedElement *aElement);
+  void ProcessEmbedNodeHelper (const nsEmbedString &aUrl, 
+  		               nsIDOMHTMLEmbedElement *aElement);
   void ProcessEmbedNode (nsIDOMHTMLEmbedElement *aElement);
   void ProcessFormNode (nsIDOMHTMLFormElement *aElement);
   void ProcessImageNode (nsIDOMHTMLImageElement *aElement);
