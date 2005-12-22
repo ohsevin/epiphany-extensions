@@ -156,7 +156,7 @@ ephy_rss_feed_subscribe_cb (GtkAction *action,
 		G_TYPE_BOOLEAN, &success,
 		G_TYPE_INVALID))
 	{
-		LOG ("Error while retreiving method answer: %s: %s", error.name, error.message);
+		LOG ("Error while retreiving method answer: %s", error->message);
 		g_error_free (error);
 	}
 	
