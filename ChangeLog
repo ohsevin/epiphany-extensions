@@ -1,5 +1,10 @@
 2005-12-22  Raphael Slinckx  <rslinckx@cvs.gnome.org>
 
+	* extensions/rss/rss-ui.c: (rss_ui_constructor):
+	Fixes bug #324599, ellipsize the URL in the RSS extension dialog.
+
+2005-12-22  Raphael Slinckx  <rslinckx@cvs.gnome.org>
+
 	* extensions/rss/Makefile.am:
 	* extensions/rss/rss-dbus.c:
 	* extensions/rss/rss-dbus.h:
