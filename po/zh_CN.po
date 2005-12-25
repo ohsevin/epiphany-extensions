@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-17 10:13+0100\n"
-"PO-Revision-Date: 2005-11-17 18:10+0800\n"
+"POT-Creation-Date: 2005-12-25 02:11+0100\n"
+"PO-Revision-Date: 2005-12-25 11:28+0800\n"
 "Last-Translator: Funda Wang <fundawang@linux.net.cn>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
 "MIME-Version: 1.0\n"
@@ -78,42 +78,42 @@ msgstr "页面(_P)"
 msgid "Actions"
 msgstr "动作"
 
-#: ../extensions/actions/ephy-actions-extension.c:94
+#: ../extensions/actions/ephy-actions-extension.c:112
 msgid "_Actions"
 msgstr "动作(_A)"
 
-#: ../extensions/actions/ephy-actions-extension.c:95
+#: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Customize actions"
 msgstr "自定义动作"
 
-#: ../extensions/actions/ephy-actions-extension.c:408
+#: ../extensions/actions/ephy-actions-extension.c:436
 msgid "Could not run command"
 msgstr "无法运行命令"
 
-#: ../extensions/actions/ephy-actions-extension.c:411
+#: ../extensions/actions/ephy-actions-extension.c:439
 msgid "Could not Run Command"
 msgstr "无法运行命令"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:490
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:519
 msgid "No action selected."
 msgstr "未选择命令。"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:500
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:529
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
 msgstr[0] "选中了 %i 个动作。"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:312
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
 msgstr "添加动作"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:415
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
 #, c-format
 msgid "“%s” Properties"
 msgstr "“%s”属性"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
 msgid "Action Properties"
 msgstr "动作属性"
 
@@ -334,12 +334,12 @@ msgstr ""
 "%s 中有 HTML 错误：\n"
 "没有指定有效的文档类型。"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:339
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:340
 msgid "Enabled"
 msgstr "启用"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:347
-#: ../extensions/rss/rss-ui.c:569
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:348
+#: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "描述"
 
@@ -372,6 +372,15 @@ msgstr "安装 Greasemonkey 脚本"
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "“%s”的用户脚本已经安装"
+
+#: ../extensions/java-console/ephy-java-console-extension.c:48
+msgid "_Java Console"
+msgstr "_Java 控制台"
+
+#. shortcut key
+#: ../extensions/java-console/ephy-java-console-extension.c:50
+msgid "Show Java Console"
+msgstr "显示 Java 控制台"
 
 #: ../extensions/page-info/ephy-page-info-extension.c:65
 msgid "Pa_ge Information"
@@ -669,27 +678,27 @@ msgstr "禁止"
 msgid "default"
 msgstr "默认"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:514
+#: ../extensions/permissions/ephy-permissions-dialog.c:515
 msgid "Domain"
 msgstr "域"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:526
+#: ../extensions/permissions/ephy-permissions-dialog.c:527
 msgid "State"
 msgstr "状态"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:619
+#: ../extensions/permissions/ephy-permissions-dialog.c:620
 msgid "Site Permissions"
 msgstr "站点权限"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:643
+#: ../extensions/permissions/ephy-permissions-dialog.c:647
 msgid "Cookies"
 msgstr "Cookies"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:644
+#: ../extensions/permissions/ephy-permissions-dialog.c:648
 msgid "Images"
 msgstr "图像"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:645
+#: ../extensions/permissions/ephy-permissions-dialog.c:649
 msgid "Popup Windows"
 msgstr "弹出窗口"
 
@@ -703,39 +712,39 @@ msgstr "站点权限(_P)"
 msgid "Manage web site permissions"
 msgstr "管理网站属性"
 
-#: ../extensions/rss/ephy-rss-extension.c:94
+#: ../extensions/rss/ephy-rss-extension.c:98
 msgid "News Feeds Subscription"
 msgstr "新闻推送订阅"
 
-#: ../extensions/rss/ephy-rss-extension.c:96
+#: ../extensions/rss/ephy-rss-extension.c:100
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr "用您喜爱的新闻阅读器订阅此网站的新闻推送"
 
-#: ../extensions/rss/ephy-rss-extension.c:101
+#: ../extensions/rss/ephy-rss-extension.c:105
 msgid "_Subscribe to this feed"
 msgstr "订阅此种子(_S)"
 
-#: ../extensions/rss/ephy-rss-extension.c:103
+#: ../extensions/rss/ephy-rss-extension.c:107
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "用您喜爱的新闻阅读器订阅此种子"
 
-#: ../extensions/rss/ephy-rss-extension.c:373
+#: ../extensions/rss/ephy-rss-extension.c:392
 msgid "Subscribe to site's news feed"
 msgstr "订阅网站的新闻推送"
 
-#: ../extensions/rss/rss-ui.c:154
+#: ../extensions/rss/rss-ui.c:167
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr "<b><i>无法联系种子阅读器，程序是否在运行？</i></b>"
 
-#: ../extensions/rss/rss-ui.c:156
+#: ../extensions/rss/rss-ui.c:169
 msgid "Retry"
 msgstr "重试"
 
-#: ../extensions/rss/rss-ui.c:284
+#: ../extensions/rss/rss-ui.c:297
 msgid "_Copy Feed Address"
 msgstr "复制种子地址(_C)"
 
-#: ../extensions/rss/rss-ui.c:562
+#: ../extensions/rss/rss-ui.c:591
 msgid "Subscribe"
 msgstr "订阅"
 
@@ -904,6 +913,14 @@ msgstr "Greasemonkey"
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
 msgid "Run user scripts to modify web pages' behavior"
 msgstr "运行用户脚本修改网页的行为"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
+msgid "Java Console"
+msgstr "Java 控制台"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
+msgid "Provide access to the Java-Plugin Console"
+msgstr "提供对 Java 插件控制台的访问"
 
 #: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:1
 msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
