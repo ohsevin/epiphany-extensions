@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-04 18:48-0500\n"
+"POT-Creation-Date: 2005-12-26 17:15-0500\n"
 "PO-Revision-Date: 2005-08-27 16:10-0400\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: Canadian English <adamw@gnome.org>\n"
@@ -353,7 +353,7 @@ msgid "Enabled"
 msgstr "Enabled"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.c:348
-#: ../extensions/rss/rss-ui.c:569
+#: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "Description"
 
@@ -726,39 +726,39 @@ msgstr "Site _Permissions"
 msgid "Manage web site permissions"
 msgstr "Manage web site permissions"
 
-#: ../extensions/rss/ephy-rss-extension.c:94
+#: ../extensions/rss/ephy-rss-extension.c:98
 msgid "News Feeds Subscription"
 msgstr "News Feeds Subscription"
 
-#: ../extensions/rss/ephy-rss-extension.c:96
+#: ../extensions/rss/ephy-rss-extension.c:100
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr "Subscribe to this website's news feeds in your favourite news reader"
 
-#: ../extensions/rss/ephy-rss-extension.c:101
+#: ../extensions/rss/ephy-rss-extension.c:105
 msgid "_Subscribe to this feed"
 msgstr "_Subscribe to this feed"
 
-#: ../extensions/rss/ephy-rss-extension.c:103
+#: ../extensions/rss/ephy-rss-extension.c:107
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Subscribe to this feed in your favourite news reader"
 
-#: ../extensions/rss/ephy-rss-extension.c:373
+#: ../extensions/rss/ephy-rss-extension.c:392
 msgid "Subscribe to site's news feed"
 msgstr "Subscribe to site's news feed"
 
-#: ../extensions/rss/rss-ui.c:154
+#: ../extensions/rss/rss-ui.c:167
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr "<b><i>Unable to contact the feed reader; is it running?</i></b>"
 
-#: ../extensions/rss/rss-ui.c:156
+#: ../extensions/rss/rss-ui.c:169
 msgid "Retry"
 msgstr "Retry"
 
-#: ../extensions/rss/rss-ui.c:284
+#: ../extensions/rss/rss-ui.c:297
 msgid "_Copy Feed Address"
 msgstr "_Copy Feed Address"
 
-#: ../extensions/rss/rss-ui.c:562
+#: ../extensions/rss/rss-ui.c:591
 msgid "Subscribe"
 msgstr "Subscribe"
 
@@ -929,6 +929,14 @@ msgstr "Greasemonkey"
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
 msgid "Run user scripts to modify web pages' behavior"
 msgstr "Run user scripts to modify web pages' behaviour"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
+msgid "Java Console"
+msgstr "Java Console"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
+msgid "Provide access to the Java-Plugin Console"
+msgstr "Provide access to the Java-Plugin Console"
 
 #: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:1
 msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
