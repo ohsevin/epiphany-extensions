@@ -7,20 +7,36 @@ libimagebarextension_la_SOURCES = \
 	mozilla-event.cpp		\
 	mozilla-event.h			\
 	extension.c
-libimagebarextension_la_LDFLAGS = -module -avoid-version
+
+gecko_include_subdirs = \
+	.		\
+	dom		\
+	webbrwsr
 
 libimagebarextension_la_CPPFLAGS = \
-        -I$(top_srcdir)/include				\
-	-DSHARE_DIR=\"$(pkgdatadir)\"			\
+        -I$(top_srcdir)/include		\
+	$(addprefix -I$(MOZILLA_INCLUDE_ROOT)/,$(gecko_include_subdirs)) \
+	-DSHARE_DIR=\"$(pkgdatadir)\"	\
 	-DEPHY_EXTENSIONS_LOCALEDIR=\"$(datadir)/locale\"  \
-	$(EPIPHANY_DEPENDENCY_CFLAGS)			\
-	$(MOZILLA_COMPONENT_CFLAGS)			\
 	$(AM_CPPFLAGS)
 
 libimagebarextension_la_CFLAGS = \
-	-I$(MOZILLA_INCLUDE_ROOT)	\
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
+	$(MOZILLA_COMPONENT_CFLAGS)	\
 	$(AM_CFLAGS)
+
+libimagebarextension_la_CXXFLAGS = \
+	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
+	$(MOZILLA_COMPONENT_CFLAGS)	\
+	$(AM_CXXFLAGS)
+
+libimagebarextension_la_LIBADD = \
+	$(MOZILLA_COMPONENT_LIBS)
+
+libimagebarextension_la_LDFLAGS = \
+	-module -avoid-version \
+	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	$(AM_LDFLAGS)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = imagebar.ephy-extension.in.in

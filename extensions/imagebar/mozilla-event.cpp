@@ -18,24 +18,24 @@
  *  $Id$
  */
 
+#include "mozilla-config.h"
 #include "config.h"
 
+#include "mozilla-event.h"
+
+#include <nsCOMPtr.h>
 #undef MOZILLA_INTERNAL_API
 #include <nsEmbedString.h>
 #define MOZILLA_INTERNAL_API 1
-
-#include <nsCOMPtr.h>
 #include <nsIDOMNode.h>
 #include <nsIDOMEvent.h>
 #include <nsIDOMMouseEvent.h>
 #include <nsIDOMEventTarget.h>
 #include <nsIDOMHTMLAnchorElement.h>
 #include <nsIDOMHTMLImageElement.h>
-#include <dom/nsIDOMCSS2Properties.h>
-#include <dom/nsIDOMNSHTMLElement.h>
+#include <nsIDOMCSS2Properties.h>
+#include <nsIDOMNSHTMLElement.h>
 #include <nsIDOMElement.h>
-
-#include "mozilla-event.h"
 
 nsresult
 evaluate_dom_event (gpointer dom_event,
@@ -47,11 +47,8 @@ evaluate_dom_event (gpointer dom_event,
 {
 	nsresult rv;
 
-	nsCOMPtr <nsIDOMMouseEvent> ev =
-				static_cast <nsIDOMMouseEvent*> (dom_event);
+	nsCOMPtr <nsIDOMMouseEvent> ev = NS_STATIC_CAST (nsIDOMMouseEvent*, dom_event);
 	NS_ENSURE_TRUE (ev, NS_ERROR_FAILURE);
-
-	ev->GetCtrlKey (isCtrlKey);
 
 	nsCOMPtr <nsIDOMEventTarget> target;
 	rv = ev->GetTarget (getter_AddRefs (target));
@@ -60,99 +57,78 @@ evaluate_dom_event (gpointer dom_event,
 	nsCOMPtr <nsIDOMNode> node = do_QueryInterface (target, &rv);
 	if (NS_FAILED (rv) || !node) return NS_ERROR_FAILURE;
 
-	/* check whether parent is anchor */
-	nsCOMPtr <nsIDOMNode> parentNode;
-	rv = node->GetParentNode (getter_AddRefs (parentNode));
-	if (NS_FAILED (rv) || !parentNode) return NS_ERROR_FAILURE;
-
-	if (isCtrlKey)
+	ev->GetCtrlKey (isCtrlKey);
+	if (*isCtrlKey)
 	{
-		nsCOMPtr <nsIDOMHTMLAnchorElement> parentAnchor =
-					do_QueryInterface (parentNode, &rv);
-		if (!NS_FAILED (rv) && parentAnchor)
-		{
-			(*isAnchored) = PR_TRUE;
-		}
+		nsCOMPtr <nsIDOMNode> parentNode;
+		node->GetParentNode (getter_AddRefs (parentNode));
+
+		nsCOMPtr <nsIDOMHTMLAnchorElement> parentAnchor (do_QueryInterface (parentNode));
+		*isAnchored = parentAnchor != nsnull;
 	}
 
-	PRUint16 type;
-	rv = node->GetNodeType (&type);
-	if (NS_FAILED (rv)) return NS_ERROR_FAILURE;
-
-	nsCOMPtr <nsIDOMHTMLElement> element = do_QueryInterface(node);
-	if ((nsIDOMNode::ELEMENT_NODE != type) || !element)
-		return NS_ERROR_FAILURE;
-
-	nsEmbedString uTag;
-	rv = element->GetLocalName (uTag);
-	if (NS_FAILED (rv)) return NS_ERROR_FAILURE;
-
-	nsEmbedCString tag;
-	NS_UTF16ToCString (uTag, NS_CSTRING_ENCODING_UTF8, tag);
-
-	if (g_ascii_strcasecmp (tag.get(), "img") == 0)
+	nsCOMPtr <nsIDOMHTMLImageElement> image (do_QueryInterface (node));
+	if (!image)
 	{
-		nsCOMPtr <nsIDOMHTMLImageElement> image =
-					do_QueryInterface (node, &rv);
-		if (NS_FAILED (rv) || !image) return NS_ERROR_FAILURE;
+		*isImage = PR_FALSE;
+		*x = -1;
+		*y = -1;
 
-		(*isImage) = PR_TRUE;
+		return NS_OK;
+	}
 
-		/* image url to download */
-		nsEmbedString uImg;
-		rv = image->GetSrc (uImg);
-		if (NS_FAILED (rv)) return NS_ERROR_FAILURE;
+	*isImage = PR_TRUE;
 
-		/* TODO: resolving with base url */
+	/* image url to download */
+	nsEmbedString uImg;
+	image->GetSrc (uImg);
 
-		nsEmbedCString img;
-		NS_UTF16ToCString (uImg, NS_CSTRING_ENCODING_UTF8, img);
-		(*imgSrc) = g_strdup (img.get());
+	/* FIXME: resolving with base url */
 
-		/* image offset */
-		PRInt32 tmpTop, tmpLeft, allTop, allLeft;
-		nsCOMPtr <nsIDOMNSHTMLElement> nsElement =
-					do_QueryInterface (element, &rv);
-		if (NS_FAILED (rv)) return NS_ERROR_FAILURE;
-		nsElement->GetOffsetTop (&tmpTop);
+	nsEmbedCString img;
+	NS_UTF16ToCString (uImg, NS_CSTRING_ENCODING_UTF8, img);
+	*imgSrc = g_strdup (img.get());
+
+	/* image offset */
+	PRInt32 tmpTop, tmpLeft, allTop, allLeft;
+	nsCOMPtr <nsIDOMNSHTMLElement> nsElement (do_QueryInterface (node));
+	if (!nsElement) return NS_ERROR_FAILURE;
+
+	nsElement->GetOffsetTop (&tmpTop);
+	nsElement->GetOffsetLeft (&tmpLeft);
+
+	allTop = tmpTop;
+	allLeft = tmpLeft;
+
+	/* scroll offset */
+	nsCOMPtr <nsIDOMElement> offsetParent;
+	rv = nsElement->GetOffsetParent (getter_AddRefs (offsetParent));
+	while (NS_SUCCEEDED (rv) && offsetParent)
+	{
+		nsElement = do_QueryInterface (offsetParent);
+		if (!nsElement) break;
+
+		nsElement->GetOffsetTop  (&tmpTop);
 		nsElement->GetOffsetLeft (&tmpLeft);
 
-		allTop = tmpTop;
-		allLeft = tmpLeft;
+		allTop  += tmpTop;
+		allLeft += tmpLeft;
 
-		/* scroll offset */
-		nsCOMPtr <nsIDOMElement> offsetParent;
+		nsElement->GetScrollTop (&tmpTop);
+		nsElement->GetScrollLeft (&tmpLeft);
+
+		allTop  -= tmpTop;
+		allLeft -= tmpLeft;
+
 		rv = nsElement->GetOffsetParent (getter_AddRefs (offsetParent));
-		while (!NS_FAILED (rv) && offsetParent != NULL)
-		{
-			nsElement = do_QueryInterface (offsetParent, &rv);
-			nsElement->GetOffsetTop  (&tmpTop);
-			nsElement->GetOffsetLeft (&tmpLeft);
-
-			allTop  += tmpTop;
-			allLeft += tmpLeft;
-
-			nsElement->GetScrollTop (&tmpTop);
-			nsElement->GetScrollLeft (&tmpLeft);
-
-			allTop  -= tmpTop;
-			allLeft -= tmpLeft;
-
-			rv = nsElement->GetOffsetParent
-						(getter_AddRefs (offsetParent));
-		}
-
-		/* plus all the offsetTop from all the offsetParent
-		 * (http://slayeroffice.com/tools/modi/v2.0/modi_help.html)
-		 * and minus scrollX, scrollY from window
-		 */
-		(*x) = allLeft;
-		(*y) = allTop;
-	} else {
-		(*isImage) = PR_FALSE;
-		(*x) = -1;
-		(*y) = -1;
 	}
+
+	/* plus all the offsetTop from all the offsetParent
+	 * (http://slayeroffice.com/tools/modi/v2.0/modi_help.html)
+	 * and minus scrollX, scrollY from window
+	 */
+	*x = allLeft;
+	*y = allTop;
 
 	return NS_OK;
 }

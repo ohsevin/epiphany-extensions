@@ -1,3 +1,19 @@
+2006-01-01  Christian Persch  <chpe@cvs.gnome.org>
+
+	=== Release 1.9.4 ===
+
+	* NEWS:
+	* configure.ac:
+
+	Updated for 1.9.4.
+
+	* extensions/imagebar/Makefile.am:
+	* extensions/imagebar/ephy-imagebar-extension.c:
+	(ephy_imagebar_extension_init):
+	* extensions/imagebar/mozilla-event.cpp:
+
+	Make it compile, plus extensive fixes.
+
 2005-12-22  Raphael Slinckx  <rslinckx@cvs.gnome.org>
 
 	* extensions/rss/rss-ui.c: (rss_ui_constructor):

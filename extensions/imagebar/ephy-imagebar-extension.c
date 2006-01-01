@@ -103,7 +103,7 @@ ephy_imagebar_extension_init (EphyImagebarExtension *ext)
 	gtk_widget_show (GTK_WIDGET (item));
 
 	toolbar = gtk_toolbar_new ();
-	gtk_toolbar_set_icon_size (GTK_TOOLBAR (toolbar), GTK_ICON_SIZE_MENU);
+	/* gtk_toolbar_set_icon_size (GTK_TOOLBAR (toolbar), GTK_ICON_SIZE_MENU); */
 	gtk_toolbar_set_show_arrow (GTK_TOOLBAR (toolbar), FALSE);
 	gtk_toolbar_insert (GTK_TOOLBAR (toolbar), item, -1);
 	gtk_widget_show (toolbar);
