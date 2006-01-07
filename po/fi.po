@@ -944,7 +944,7 @@ msgstr "Lisää Java-liitännäisen konsoli valikkoon"
 
 #: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:1
 msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
-msgstr "Käsittele verkkoyhteyden käynnissä olo automaattisesti (KOKEELLINEN!)"
+msgstr "Muuta verkkoyhteyden tilaa automaattisesti (KOKEELLINEN!)"
 
 #: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:2
 msgid "Network Connection Monitor"
