@@ -66,9 +66,7 @@ GType		 ad_blocker_register_type	(GTypeModule *module);
 
 AdBlocker	*ad_blocker_new			(AdUriTester *uri_tester);
 
-gboolean	 ad_blocker_test_uri		(AdBlocker *blocker,
-						 const char *uri,
-						 AdUriCheckType type);
+void		 ad_blocker_blocked_uri		(AdBlocker *blocker);
 
 void		 ad_blocker_reset		(AdBlocker *blocker);
 

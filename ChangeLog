@@ -1,3 +1,19 @@
+2006-01-08  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/adblock/Makefile.am:
+	* extensions/adblock/ad-blocker.c:
+	* extensions/adblock/ad-blocker.h:
+	* extensions/adblock/ad-uri-tester.h:
+	* extensions/adblock/ephy-adblock-extension.c:
+	R mozilla/
+
+	Adblock extension now uses the new EphyAdblock interface from Epiphany core
+	and listens to content-blocked signal from EphyContentPolicy.
+	The Mozilla part has been removed since it is now Epiphany which controls
+	content blocking through EphyContentPolicy component.
+	
+	Should fix #319561.
+	
 2006-01-06  Crispin Flowerday  <gnome@flowerday.cx>
 
 	* configure.ac:

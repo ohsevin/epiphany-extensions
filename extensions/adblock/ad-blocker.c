@@ -85,23 +85,12 @@ ad_blocker_new (AdUriTester *uri_tester)
 			     NULL);
 }
 
-gboolean
-ad_blocker_test_uri (AdBlocker *blocker,
-		     const char *uri,
-		     AdUriCheckType type)
+void
+ad_blocker_blocked_uri (AdBlocker *blocker)
 {
-	gboolean ret;
-
-	ret = ad_uri_tester_test_uri (blocker->priv->uri_tester, uri, type);
-
-	if (ret == TRUE)
-	{
 		blocker->priv->num_blocked++;
 
 		g_object_notify (G_OBJECT (blocker), "num-blocked");
-	}
-
-	return ret;
 }
 
 void

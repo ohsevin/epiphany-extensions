@@ -21,8 +21,9 @@
 
 #include "config.h"
 
+#include <epiphany/ephy-adblock.h>
+#include <epiphany/ephy-adblock-manager.h>
 #include <epiphany/ephy-embed-shell.h>
-#include <epiphany/ephy-embed-single.h>
 #include <epiphany/ephy-extension.h>
 #include <epiphany/ephy-tab.h>
 #include <epiphany/ephy-statusbar.h>
@@ -33,8 +34,6 @@
 
 #include "ad-blocker.h"
 #include "ad-uri-tester.h"
-
-#include "mozilla/mozilla-helpers.h"
 
 #include <gtk/gtkeventbox.h>
 #include <gtk/gtkframe.h>
@@ -59,6 +58,7 @@ struct EphyAdblockExtensionPrivate
 
 static void ephy_adblock_extension_class_init	(EphyAdblockExtensionClass *klass);
 static void ephy_adblock_extension_iface_init	(EphyExtensionIface *iface);
+static void ephy_adblock_adblock_iface_init	(EphyAdBlockIface *iface);
 static void ephy_adblock_extension_init		(EphyAdblockExtension *extension);
 
 static GObjectClass *parent_class = NULL;
@@ -87,6 +87,13 @@ ephy_adblock_extension_register_type (GTypeModule *module)
 		(GInstanceInitFunc) ephy_adblock_extension_init
 	};
 
+	static const GInterfaceInfo adblock_info =
+	{
+		(GInterfaceInitFunc) ephy_adblock_adblock_iface_init,
+		NULL,
+		NULL
+	};
+
 	static const GInterfaceInfo extension_info =
 	{
 		(GInterfaceInitFunc) ephy_adblock_extension_iface_init,
@@ -99,6 +106,11 @@ ephy_adblock_extension_register_type (GTypeModule *module)
 					    "EphyAdblockExtension",
 					    &our_info, 0);
 
+        g_type_module_add_interface (module,
+                                     type,
+                                     EPHY_TYPE_ADBLOCK,
+                                     &adblock_info);
+
 	g_type_module_add_interface (module,
 				     type,
 				     EPHY_TYPE_EXTENSION,
@@ -110,29 +122,48 @@ ephy_adblock_extension_register_type (GTypeModule *module)
 static void
 ephy_adblock_extension_init (EphyAdblockExtension *extension)
 {
+	EphyAdBlockManager *manager;
+
 	LOG ("EphyAdblockExtension initialising");
-
-	ephy_embed_shell_get_embed_single (embed_shell); /* Fire up Mozilla */
-
-	mozilla_register_ad_blocker ();
 
 	extension->priv = EPHY_ADBLOCK_EXTENSION_GET_PRIVATE (extension);
 
 	extension->priv->tester = ad_uri_tester_new ();
+
+	/* register our extention as a blocker */
+	manager = EPHY_ADBLOCK_MANAGER (ephy_embed_shell_get_adblock_manager (embed_shell));
+
+	ephy_adblock_manager_set_blocker (manager, EPHY_ADBLOCK (extension));
 }
 
 static void
 ephy_adblock_extension_finalize (GObject *object)
 {
+	EphyAdBlockManager *manager;
 	EphyAdblockExtension *extension = EPHY_ADBLOCK_EXTENSION (object);
 
 	LOG ("EphyAdblockExtension finalising");
 
-	mozilla_unregister_ad_blocker ();
+	/* unregister our extension as a blocker */
+	manager = EPHY_ADBLOCK_MANAGER (ephy_embed_shell_get_adblock_manager (embed_shell));
+	ephy_adblock_manager_set_blocker (manager, NULL);
 
 	g_object_unref (extension->priv->tester);
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
+}
+
+static gboolean
+ephy_adblock_impl_should_load (EphyAdBlock *blocker, const char *url, AdUriCheckType type)
+{
+	EphyAdblockExtension *self;
+
+	LOG ("ephy_adblock_impl_should_load checking %s", %s);
+
+	self = EPHY_ADBLOCK_EXTENSION (blocker);
+	g_return_val_if_fail (self != NULL, TRUE);
+
+	return !ad_uri_tester_test_uri (self->priv->tester, url, type);
 }
 
 static void
@@ -291,6 +322,16 @@ impl_detach_window (EphyExtension *ext,
 }
 
 static void
+content_blocked_cb (EphyEmbed *embed,
+		    const char *address,
+		    AdBlocker *blocker)
+{
+	LOG ("EphyAdblockExtension content blocked %s", address);
+
+	ad_blocker_blocked_uri (blocker);
+}
+
+static void
 location_changed_cb (EphyEmbed *embed,
 		     const char *address,
 		     AdBlocker *blocker)
@@ -334,10 +375,13 @@ impl_attach_tab (EphyExtension *ext,
 
 	g_object_set_data (G_OBJECT (embed), AD_BLOCKER_KEY, blocker);
 
-	g_signal_connect (G_OBJECT (embed), "ge-location",
+	g_signal_connect (embed, "ge-location",
 			  G_CALLBACK (location_changed_cb), blocker);
 
-	g_signal_connect (G_OBJECT (blocker), "notify::num-blocked",
+	g_signal_connect (embed, "content-blocked",
+			  G_CALLBACK (content_blocked_cb), blocker);
+
+	g_signal_connect (blocker, "notify::num-blocked",
 			  G_CALLBACK (num_blocked_cb), embed);
 }
 
@@ -355,11 +399,19 @@ impl_detach_tab (EphyExtension *ext,
 	g_return_if_fail (blocker != NULL);
 
 	g_signal_handlers_disconnect_by_func
+		(G_OBJECT (embed), G_CALLBACK (content_blocked_cb), blocker);
+	g_signal_handlers_disconnect_by_func
 		(G_OBJECT (embed), G_CALLBACK (location_changed_cb), blocker);
 	g_signal_handlers_disconnect_by_func
 		(G_OBJECT (blocker), G_CALLBACK (num_blocked_cb), blocker);
 
 	g_object_unref (blocker);
+}
+
+static void
+ephy_adblock_adblock_iface_init (EphyAdBlockIface *iface)
+{
+	iface->should_load = ephy_adblock_impl_should_load;
 }
 
 static void
