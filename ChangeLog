@@ -1,3 +1,12 @@
+2006-01-09  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/page-info/page-info-dialog.c: (media_info_page_construct),
+	(links_info_page_construct), (forms_info_page_construct):
+
+	Ellipsizes urls and set a maximum size to urls.
+
+	Fix #171577.
+	
 2006-01-08  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/adblock/Makefile.am:

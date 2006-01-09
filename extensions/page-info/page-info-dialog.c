@@ -67,6 +67,9 @@
 #include <time.h>
 #include <string.h>
 
+/* Set maximum size to columns rendering urls */
+#define PAGE_INFO_MAX_URL_LENGTH 64
+
 /* Forward declarations */
 static void page_info_set_text (PageInfoDialog *dialog,
 		    		const char *prop,
@@ -414,6 +417,19 @@ page_info_set_text (PageInfoDialog *dialog,
 	widget = ephy_dialog_get_control (EPHY_DIALOG (dialog), prop);
 
 	gtk_label_set_text (GTK_LABEL (widget), text ? text : "");
+}
+
+/* 
+   Asks to a renderer to ellipsize urls 
+   and set the maximum size of the rendered urls 
+*/
+static void
+page_info_set_url_renderer_props (GtkCellRenderer *renderer)
+{
+	g_object_set (G_OBJECT (renderer), 
+		      "ellipsize", PANGO_ELLIPSIZE_MIDDLE, NULL);
+	g_object_set (G_OBJECT (renderer), 
+		      "width-chars", PAGE_INFO_MAX_URL_LENGTH, NULL);
 }
 
 /* Set dnd cursor to the default dnd Gtk one and not the GtktreeView one */
@@ -1234,6 +1250,7 @@ media_info_page_construct (InfoPage *ipage)
 						page, NULL);
 
 	renderer = gtk_cell_renderer_text_new ();
+	page_info_set_url_renderer_props (renderer); 
 	gtk_tree_view_insert_column_with_attributes (treeview,
 						     TV_COL_MEDIUM_URL,
 						     _("URL"),
@@ -1246,6 +1263,7 @@ media_info_page_construct (InfoPage *ipage)
 	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
 	gtk_tree_view_column_set_sort_column_id (column, TV_COL_MEDIUM_URL);
 
+	renderer = gtk_cell_renderer_text_new ();
 	gtk_tree_view_insert_column_with_attributes (treeview,
 						     TV_COL_MEDIUM_TYPE_TEXT,
 						     _("Type"),
@@ -1475,6 +1493,7 @@ links_info_page_construct (InfoPage *ipage)
                                 NULL);
 
 	renderer = gtk_cell_renderer_text_new ();
+	page_info_set_url_renderer_props (renderer); 
 	gtk_tree_view_insert_column_with_attributes (treeview,
 						     COL_LINK_URL,
 						     _("URL"),
@@ -1487,6 +1506,7 @@ links_info_page_construct (InfoPage *ipage)
 	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
 	gtk_tree_view_column_set_sort_column_id (column, COL_LINK_URL);
 
+	renderer = gtk_cell_renderer_text_new ();
 	gtk_tree_view_insert_column_with_attributes (treeview,
 						     COL_LINK_TITLE, 
 						     _("Title"),
@@ -1653,6 +1673,8 @@ forms_info_page_construct (InfoPage *ipage)
 	gtk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
 	gtk_tree_view_column_set_sort_column_id (column, COL_FORM_METHOD);
 
+	renderer = gtk_cell_renderer_text_new ();
+	page_info_set_url_renderer_props (renderer); 
 	gtk_tree_view_insert_column_with_attributes (treeview,
 						     COL_FORM_ACTION, 
 						     _("Action"),
