@@ -1,3 +1,9 @@
+2006-01-13  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* configure.ac:
+
+	Forgot to remove mozilla directory when configuring adblock extension.
+	
 2006-01-09  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/page-info/page-info-dialog.c: (media_info_page_construct),
