@@ -1,3 +1,26 @@
+2006-01-14  Raphael Slinckx  <rslinckx@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/auto-reload/.cvsignore:
+	* extensions/auto-reload/Makefile.am:
+	* extensions/auto-reload/auto-reload.xml.in.in:
+	* extensions/auto-reload/ephy-auto-reload-extension.c:
+	(ephy_auto_reload_extension_init),
+	(ephy_auto_reload_extension_finalize),
+	(ephy_auto_reload_remove_timeout), (ephy_auto_reload_create),
+	(ephy_auto_reload_timeout), (ephy_auto_reload_activate_cb),
+	(update_auto_reload_menu_cb), (impl_attach_window),
+	(impl_detach_window), (impl_attach_tab), (impl_detach_tab),
+	(ephy_auto_reload_extension_iface_init),
+	(ephy_auto_reload_extension_class_init),
+	(ephy_auto_reload_extension_get_type),
+	(ephy_auto_reload_extension_register_type):
+	* extensions/auto-reload/ephy-auto-reload-extension.h:
+	* extensions/auto-reload/extension.c: (register_module):
+	New Extension allowing to auto-reload a webpage automatically.
+	For now it supports only every 3 minutes but can be improved to allow
+	custom refresh intervals.
+
 2006-01-13  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* configure.ac:
