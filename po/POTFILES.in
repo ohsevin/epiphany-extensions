@@ -6,6 +6,7 @@ extensions/actions/actions-editor.glade
 extensions/actions/ephy-actions-extension.c
 extensions/actions/ephy-actions-extension-editor-dialog.c
 extensions/actions/ephy-actions-extension-properties-dialog.c
+extensions/auto-reload/ephy-auto-reload-extension.c
 extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c
 extensions/certificates/ephy-certificates-extension.c
 extensions/error-viewer/ephy-error-viewer-extension.c
@@ -36,6 +37,7 @@ extensions/smart-bookmarks/smart-bookmarks-extension.c
 extensions/tabsmenu/ephy-tab-move-menu.c
 [type: gettext/ini]extensions/actions/actions.ephy-extension.in.in
 [type: gettext/ini]extensions/auto-scroller/auto-scroller.ephy-extension.in.in
+[type: gettext/ini]extensions/auto-reload/auto-reload.ephy-extension.in.in
 [type: gettext/ini]extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in
 [type: gettext/ini]extensions/certificates/certificates.ephy-extension.in.in
 [type: gettext/ini]extensions/dashboard/dashboard.ephy-extension.in.in

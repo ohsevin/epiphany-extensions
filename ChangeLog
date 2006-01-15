@@ -1,3 +1,11 @@
+2006-01-15  Raphael Slinckx  <rslinckx@cvs.gnome.org>
+
+	* extensions/auto-reload/Makefile.am:
+	* extensions/auto-reload/auto-reload.ephy-extension.in.in:
+	* extensions/auto-reload/auto-reload.xml.in.in:
+	* po/POTFILES.in:
+	Build tools fixes, and translation files
+
 2006-01-15 Christian Persch <chpe@cvs.gnome.org>
  
 	* m4/gecko.m4:
