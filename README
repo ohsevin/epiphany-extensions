@@ -13,6 +13,7 @@ where ext1, ext2 ... are one of the following:
 actions			Perform actions on links from the context menu
 adblock			Block content based on its URL
 auto-scroll		Auto scroll on middle mouse clicks
+auto-reload		Reload a tab periodically
 bookmarks-tray		Add bookmarks menu to the panel
 certificates		Display SSL certificates
 dashboard		Send cluepackets to Dashboard
@@ -21,8 +22,12 @@ extensions-manager-ui	GUI to enable and disable Epiphany extensions
 favicon			Loads /favicon.ico if the page doesn't specify one
 gestures		Mouse gestures
 greasemonkey		Load mozilla greasmonkey scripts
+imagebar		Display a toolbar over images
+java-console		Provide access to the Java-Plugin Console
 net-monitor		Monitor the network status and set 'offline' mode accordingly
 page-info		Show information about the current page
+permissions		Manage web site permissions
+push-scroller		Scroll by holding the middle mouse button and 'pushing'
 python-console		Opens an interactive Python console
 rss			Subscribe to newsfeeds contained in web pages
 select-stylesheet	Switch between alternate stylesheets

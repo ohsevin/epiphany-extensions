@@ -1,4 +1,16 @@
 =========================
+Epiphany Extensions 1.9.5
+=========================
+
+Changes:
+        * New auto-reload extension by Raphaël Slinckx
+        * Page info: Ellipsizes urls and set a maximum size to urls [#171577]
+        * Ad blocker: Several improvements, fix [#319561]
+
+Contributors to this release:
+Crispin Flowerday, Jean-François Rameau and Raphaël Slinckx.
+
+=========================
 Epiphany Extensions 1.9.4
 =========================
 
