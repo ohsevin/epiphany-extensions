@@ -1,5 +1,11 @@
 2006-01-16  Crispin Flowerday  <gnome@flowerday.cx>
 
+	* extensions/auto-reload/auto-reload.ephy-extension.in.in:
+
+	Get the extension description file in the correct format.
+
+2006-01-16  Crispin Flowerday  <gnome@flowerday.cx>
+
 	* extensions/adblock/ephy-adblock-extension.c
 	(ephy_adblock_extension_finalize): 
 

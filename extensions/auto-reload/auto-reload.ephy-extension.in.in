@@ -1,13 +1,10 @@
-<?xml version="1.0"?>
-<extension>
-	<_name>Auto Reload Tab</_name>
-	<_description>Reload a tab periodically</_description>
-	<author>Raphaël Slinckx &lt;raphael@slinckx.net&gt;</author>
-	<url>http://www.gnome.org/projects/epiphany/extensions.html</url>
-	<version>1</version>
-	<gettext-domain>%GETTEXT_PACKAGE%</gettext-domain>
-	<locale-directory>%LOCALE_DIR%</locale-directory>
-	<loader type="shlib">
-		<attribute name="library">%EXTENSION_DIR%/%LIBRARY%</attribute>
-	</loader>
-</extension>
+[Epiphany Extension]
+_Name=Auto Reload Tab
+_Description=Reload a tab periodically
+Authors=Raphaël Slinckx <raphael@slinckx.net>;
+Version=1
+URL=http://www.gnome.org/projects/epiphany/extensions.html
+
+[Loader]
+Type=shlib
+Library=%EXTENSION_DIR%/%LIBRARY%
