@@ -1,5 +1,11 @@
 2006-01-16  Crispin Flowerday  <gnome@flowerday.cx>
 
+	* configure.ac: 
+
+	Post-release version bump.
+
+2006-01-16  Crispin Flowerday  <gnome@flowerday.cx>
+
 	=== Release 1.9.5 ===
 
 	* configure.ac:
