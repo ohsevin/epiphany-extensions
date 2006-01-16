@@ -1,5 +1,13 @@
 2006-01-16  Crispin Flowerday  <gnome@flowerday.cx>
 
+	=== Release 1.9.5 ===
+
+	* configure.ac:
+
+	Updated for 1.9.5.
+
+2006-01-16  Crispin Flowerday  <gnome@flowerday.cx>
+
 	* extensions/auto-reload/auto-reload.ephy-extension.in.in:
 
 	Get the extension description file in the correct format.
