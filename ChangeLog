@@ -1,3 +1,10 @@
+2006-01-16  Crispin Flowerday  <gnome@flowerday.cx>
+
+	* extensions/adblock/ephy-adblock-extension.c
+	(ephy_adblock_extension_finalize): 
+
+	Another build fix
+
 2006-01-15  Raphael Slinckx  <rslinckx@cvs.gnome.org>
 
 	* extensions/auto-reload/Makefile.am:

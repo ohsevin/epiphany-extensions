@@ -158,7 +158,7 @@ ephy_adblock_impl_should_load (EphyAdBlock *blocker, const char *url, AdUriCheck
 {
 	EphyAdblockExtension *self;
 
-	LOG ("ephy_adblock_impl_should_load checking %s", %s);
+	LOG ("ephy_adblock_impl_should_load checking %s", url);
 
 	self = EPHY_ADBLOCK_EXTENSION (blocker);
 	g_return_val_if_fail (self != NULL, TRUE);
