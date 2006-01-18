@@ -463,7 +463,7 @@ ephy_actions_extension_run_action_on_embed_property (GtkAction *action,
 	event = ephy_window_get_context_event (window);
 	g_return_if_fail (event != NULL);
 
-	ephy_embed_event_get_property (event, property_name, &value);
+	value = ephy_embed_event_get_property (event, property_name);
 	ephy_actions_extension_run_action (action, window,
 					   g_value_get_string (value));
 }

@@ -1,3 +1,15 @@
+2006-01-18  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/actions/ephy-actions-extension.c: 
+	(ephy_actions_extension_run_action_on_embed_property):
+	* extensions/rss/ephy-rss-extension.c: (ephy_rss_feed_subscribe_cb),
+	(ephy_rss_ge_context_cb):
+	* extensions/sidebar/ephy-sidebar-embed.c: (show_context_menu),
+	(save_property_url),(embed_mouse_click_cb):
+	* extensions/sidebar/sidebar-commands.c: (save_property_url):
+
+	Re-sync with Epiphany (ephy_embed_event_get_property)
+
 2006-01-16  Crispin Flowerday  <gnome@flowerday.cx>
 
 	* configure.ac: 

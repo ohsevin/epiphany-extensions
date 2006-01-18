@@ -191,7 +191,7 @@ show_context_menu (EphySidebarEmbed *sbembed,
 	gboolean can_copy, can_cut, can_paste;
 	guint button;
 
-	ephy_embed_event_get_property (event, "framed_page", &value);
+	value = ephy_embed_event_get_property (event, "framed_page");
 	framed = g_value_get_int (value);
 
 	has_background = ephy_embed_event_has_property (event, "background_image");
@@ -302,7 +302,7 @@ save_property_url (EphyEmbed *embed,
 	const GValue *value;
 	EphyEmbedPersist *persist;
 
-	ephy_embed_event_get_property (event, property, &value);
+	value = ephy_embed_event_get_property (event, property);
 	location = g_value_get_string (value);
 
 	persist = EPHY_EMBED_PERSIST
@@ -352,7 +352,7 @@ embed_mouse_click_cb (EphyEmbed *embed,
 				|| (context & EPHY_EMBED_CONTEXT_EMAIL_LINK));
 	is_input = (context & EPHY_EMBED_CONTEXT_INPUT) != 0;
 
-	ephy_embed_event_get_property (event, "link_target", &targetValue);
+	targetValue = ephy_embed_event_get_property (event, "link_target");
 
 	/* ctrl+click or middle click opens the link in new tab */
 	if (is_link && ((is_left_click && with_control) || is_middle_click))
@@ -360,7 +360,7 @@ embed_mouse_click_cb (EphyEmbed *embed,
 		const GValue *value;
 		const char *link_address;
 
-		ephy_embed_event_get_property (event, "link", &value);
+		value = ephy_embed_event_get_property (event, "link");
 		link_address = g_value_get_string (value);
 
 		ephy_shell_new_tab (ephy_shell, sbembed->priv->window, NULL,
@@ -382,7 +382,7 @@ embed_mouse_click_cb (EphyEmbed *embed,
 		const GValue *value;
 		const char *link_address;
 
-		ephy_embed_event_get_property (event, "link", &value);
+		value = ephy_embed_event_get_property (event, "link");
 		link_address = g_value_get_string (value);
 		ephy_window_load_url (sbembed->priv->window, link_address);
 	}

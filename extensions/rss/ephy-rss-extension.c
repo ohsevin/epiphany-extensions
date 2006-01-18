@@ -146,7 +146,7 @@ ephy_rss_feed_subscribe_cb (GtkAction *action,
 	event = ephy_window_get_context_event (window);
 	if (event == NULL) return;
 	
-	ephy_embed_event_get_property (event, "link", &value);
+	value = ephy_embed_event_get_property (event, "link");
 
 	
 
@@ -181,7 +181,7 @@ ephy_rss_ge_context_cb	(EphyEmbed *embed,
 		data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 		g_return_val_if_fail (data != NULL, FALSE);
 		
-		ephy_embed_event_get_property (event, "link", &value);
+		value = ephy_embed_event_get_property (event, "link");
 		address = g_value_get_string (value);
 		
 		active = rss_feedlist_contains (list, address);

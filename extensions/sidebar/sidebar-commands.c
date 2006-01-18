@@ -88,7 +88,7 @@ save_property_url (GtkAction *action,
 	event = ephy_window_get_context_event (window);
 	if (event == NULL) return;
 
-	ephy_embed_event_get_property (event, property, &value);
+	value = ephy_embed_event_get_property (event, property);
 	location = g_value_get_string (value);
 
 	persist = EPHY_EMBED_PERSIST
