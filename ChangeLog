@@ -1,5 +1,18 @@
 2006-01-18  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
+	* extensions/net-monitor/ephy-net-monitor-extension.c:
+	(ephy_net_monitor_network_status),(ephy_net_monitor_attach_to_dbus),
+	(filter_func):
+
+	Re-sync with NetworkManager.
+	getActiveDevice method went away from NM so replace it with getDevices and so on.
+
+	Errors form NM must be freed (dbus_error_free).
+
+	We now includes constants from NetworkManager.h.
+
+2006-01-18  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
 	* extensions/actions/ephy-actions-extension.c: 
 	(ephy_actions_extension_run_action_on_embed_property):
 	* extensions/rss/ephy-rss-extension.c: (ephy_rss_feed_subscribe_cb),
