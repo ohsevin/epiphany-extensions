@@ -1,3 +1,9 @@
+2006-01-21  Raphael Slinckx  <rslinckx@cvs.gnome.org>
+
+	* extensions/extensions-manager-ui/ephy-extensions-manager-ui-exten
+	sion.c:
+	Add ... to "Tools/Extensions" menu item
+
 2006-01-18  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/net-monitor/ephy-net-monitor-extension.c:

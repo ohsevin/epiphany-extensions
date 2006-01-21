@@ -62,7 +62,7 @@ static const GtkActionEntry action_entries [] =
 {
 	{ "ExtensionsManagerUI",
 	  NULL,
-	  N_("_Extensions"),
+	  N_("_Extensions..."),
 	  NULL,
 	  N_("Load and unload extensions"),
 	  G_CALLBACK (display_cb) },
