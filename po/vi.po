@@ -1,20 +1,20 @@
 # Vietnamese translation for Epiphany Extensions.
-# Copyright © 2005 Gnome i18n Project for Vietnamese.
-# Clytie Siddall <clytie@riverland.net.au>, 2005.
+# Copyright © 2005-2006 Gnome i18n Project for Vietnamese.
+# Clytie Siddall <clytie@riverland.net.au>, 2005-2006.
 # 
 msgid ""
 ""
 msgstr "Project-Id-Version: epiphany-extensions Gnome HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-03 02:12+0100\n"
-"PO-Revision-Date: 2006-01-03 22:23+1030\n"
+"POT-Creation-Date: 2006-01-22 02:14+0100\n"
+"PO-Revision-Date: 2006-01-22 16:14+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"X-Generator: LocFactoryEditor 1.5.1b\n"
+"X-Generator: LocFactoryEditor 1.6b31\n"
 
 #:../extensions/actions/action-properties.glade.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
@@ -34,7 +34,8 @@ msgstr "Nếu bật tùy chọn này, hành động sẽ xuất hiện trong tr�
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "links and pages."
-msgstr "Nếu bật tùy chọn này, hành động sẽ xuất hiện trong trình đơn liên kết và trang bật lên."
+msgstr "Nếu bật tùy chọn này, hành động sẽ xuất hiện trong trình đơn liên kết và "
+"trang bật lên."
 
 #:../extensions/actions/action-properties.glade.h:5
 msgid "The action description."
@@ -44,13 +45,15 @@ msgstr "Mô tả hành động."
 msgid ""
 "The action name. If a character is preceded by an underscore, that character "
 "will be used as the access key for the menu item."
-msgstr "Tên hành động. Nếu ký tự nào có dấu gạch dưới đi trước, ký tự đó sẽ là phím nóng cho mục trình đơn."
+msgstr "Tên hành động. Nếu ký tự nào có dấu gạch dưới đi trước, ký tự đó sẽ là phím "
+"nóng cho mục trình đơn."
 
 #:../extensions/actions/action-properties.glade.h:7
 msgid ""
 "The command to execute when the action is activated. The URL of the link, "
 "image or page will be appended to the command."
-msgstr "Lệnh cần chạy khi hành động mới hoạt hóa. Địa chỉ Mạng của liên kết, ảnh hay trang sẽ được phụ thêm vào lệnh này."
+msgstr "Lệnh cần chạy khi hành động mới hoạt hóa. Địa chỉ Mạng của liên kết, ảnh hay "
+"trang sẽ được phụ thêm vào lệnh này."
 
 #:../extensions/actions/action-properties.glade.h:8
 msgid "_Command:"
@@ -115,6 +118,14 @@ msgstr "Thuộc tính « %s »"
 #:../extensions/actions/ephy-actions-extension-properties-dialog.c:425
 msgid "Action Properties"
 msgstr "Thuộc tính hành động"
+
+#:../extensions/auto-reload/ephy-auto-reload-extension.c:83
+msgid "_Auto Reload"
+msgstr "Tự động tải _lại"
+
+#:../extensions/auto-reload/ephy-auto-reload-extension.c:85
+msgid "Reload the page periodically"
+msgstr "Tải lại trang theo định kỳ"
 
 #:../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
 msgid "_Edit Bookmarks"
@@ -295,7 +306,8 @@ msgstr "Gặp lỗi HTML trong %s:\n"
 msgid ""
 "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
 "+xml” instead."
-msgstr "Kiểu tài liệu (doctype) là “XHTML” mà kiểu nội dung (content-type) là “text/html”. Dùng “application/xhtml+xml” thay vào đó."
+msgstr "Kiểu tài liệu (doctype) là “XHTML” mà kiểu nội dung (content-type) là “text/"
+"html”. Dùng “application/xhtml+xml” thay vào đó."
 
 #:../extensions/error-viewer/sgml-validator.c:243
 #,c-format
@@ -344,8 +356,8 @@ msgid "Extensions"
 msgstr "Phần mở rộng"
 
 #:../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
-msgid "_Extensions"
-msgstr "Phần _mở rộng"
+msgid "_Extensions..."
+msgstr "Phần _mở rộng..."
 
 #:../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
 msgid "Load and unload extensions"
@@ -382,154 +394,154 @@ msgstr "Thông tin t_rang"
 msgid "Display page information in a dialog"
 msgstr "Hiển thị thông tin trang trong hộp thoại"
 
-#:../extensions/page-info/page-info-dialog.c:710
+#:../extensions/page-info/page-info-dialog.c:726
 msgid "Save As..."
 msgstr "Lưu dạng..."
 
-#:../extensions/page-info/page-info-dialog.c:727
+#:../extensions/page-info/page-info-dialog.c:743
 msgid "Select a directory"
 msgstr "Chọn thư mục"
 
-#:../extensions/page-info/page-info-dialog.c:776
+#:../extensions/page-info/page-info-dialog.c:792
 msgid "Unknown type"
 msgstr "Kiểu lạ"
 
-#:../extensions/page-info/page-info-dialog.c:781
+#:../extensions/page-info/page-info-dialog.c:797
 msgid "Full standards compliance"
 msgstr "Tuân theo tiêu chuẩn hoàn toàn"
 
-#:../extensions/page-info/page-info-dialog.c:784
+#:../extensions/page-info/page-info-dialog.c:800
 msgid "Almost standards compliance"
 msgstr "Gần tuân theo tiêu chuẩn"
 
-#:../extensions/page-info/page-info-dialog.c:787
+#:../extensions/page-info/page-info-dialog.c:803
 msgid "Compatibility"
 msgstr "Tương thích"
 
-#:../extensions/page-info/page-info-dialog.c:791
+#:../extensions/page-info/page-info-dialog.c:807
 msgid "Undetermined"
 msgstr "Chưa quyết định"
 
-#:../extensions/page-info/page-info-dialog.c:800
+#:../extensions/page-info/page-info-dialog.c:816
 msgid "Not cached"
 msgstr "Không trong bộ nhớ tạm"
 
-#:../extensions/page-info/page-info-dialog.c:803
+#:../extensions/page-info/page-info-dialog.c:819
 msgid "Disk cache"
 msgstr "Bộ nhớ tạm đĩa"
 
-#:../extensions/page-info/page-info-dialog.c:806
+#:../extensions/page-info/page-info-dialog.c:822
 msgid "Memory cache"
 msgstr "Bộ nhớ tạm"
 
-#:../extensions/page-info/page-info-dialog.c:809
+#:../extensions/page-info/page-info-dialog.c:825
 msgid "Unknown cache"
 msgstr "Bộ nhớ tạm lạ"
 
-#:../extensions/page-info/page-info-dialog.c:825
-#:../extensions/page-info/page-info-dialog.c:936
+#:../extensions/page-info/page-info-dialog.c:841
+#:../extensions/page-info/page-info-dialog.c:952
 msgid "Unknown"
 msgstr "Không biết"
 
-#:../extensions/page-info/page-info-dialog.c:830
+#:../extensions/page-info/page-info-dialog.c:846
 msgid "No referrer"
 msgstr "Không có điều tham chiếu"
 
-#:../extensions/page-info/page-info-dialog.c:844
 #:../extensions/page-info/page-info-dialog.c:860
+#:../extensions/page-info/page-info-dialog.c:876
 msgid "Not specified"
 msgstr "Chưa ghi rõ"
 
-#:../extensions/page-info/page-info-dialog.c:921
+#:../extensions/page-info/page-info-dialog.c:937
 msgid "Image"
 msgstr "Ảnh"
 
-#:../extensions/page-info/page-info-dialog.c:924
+#:../extensions/page-info/page-info-dialog.c:940
 msgid "Embed"
 msgstr "Nhúng"
 
-#:../extensions/page-info/page-info-dialog.c:927
+#:../extensions/page-info/page-info-dialog.c:943
 msgid "Object"
 msgstr "Đối tượng"
 
-#:../extensions/page-info/page-info-dialog.c:930
+#:../extensions/page-info/page-info-dialog.c:946
 msgid "Applet"
 msgstr "Tiểu dụng"
 
-#:../extensions/page-info/page-info-dialog.c:933
+#:../extensions/page-info/page-info-dialog.c:949
 msgid "Icon"
 msgstr "Biểu tượng"
 
-#:../extensions/page-info/page-info-dialog.c:1038
+#:../extensions/page-info/page-info-dialog.c:1054
 msgid "_Open"
 msgstr "_Mở"
 
-#:../extensions/page-info/page-info-dialog.c:1044
-#:../extensions/page-info/page-info-dialog.c:1402
+#:../extensions/page-info/page-info-dialog.c:1060
+#:../extensions/page-info/page-info-dialog.c:1420
 msgid "_Copy Link Address"
 msgstr "_Chép địa chỉ liên kết"
 
-#:../extensions/page-info/page-info-dialog.c:1050
+#:../extensions/page-info/page-info-dialog.c:1066
 msgid "_Use as Background"
 msgstr "_Dùng làm nền"
 
-#:../extensions/page-info/page-info-dialog.c:1056
-#:../extensions/page-info/page-info-dialog.c:1408
+#:../extensions/page-info/page-info-dialog.c:1072
+#:../extensions/page-info/page-info-dialog.c:1426
 msgid "_Save As..."
 msgstr "Lưu _dang..."
 
-#:../extensions/page-info/page-info-dialog.c:1239
-#:../extensions/page-info/page-info-dialog.c:1480
+#:../extensions/page-info/page-info-dialog.c:1256
+#:../extensions/page-info/page-info-dialog.c:1499
 msgid "URL"
 msgstr "Địa chỉ Mạng"
 
-#:../extensions/page-info/page-info-dialog.c:1251
+#:../extensions/page-info/page-info-dialog.c:1269
 msgid "Type"
 msgstr "Kiểu"
 
-#:../extensions/page-info/page-info-dialog.c:1263
+#:../extensions/page-info/page-info-dialog.c:1281
 msgid "Alt Text"
 msgstr "Chữ thay thế"
 
-#:../extensions/page-info/page-info-dialog.c:1275
-#:../extensions/page-info/page-info-dialog.c:1492
+#:../extensions/page-info/page-info-dialog.c:1293
+#:../extensions/page-info/page-info-dialog.c:1512
 msgid "Title"
 msgstr "Tiêu đề"
 
-#:../extensions/page-info/page-info-dialog.c:1287
+#:../extensions/page-info/page-info-dialog.c:1305
 msgid "Width"
 msgstr "Rộng"
 
-#:../extensions/page-info/page-info-dialog.c:1299
+#:../extensions/page-info/page-info-dialog.c:1317
 msgid "Height"
 msgstr "Cao"
 
-#:../extensions/page-info/page-info-dialog.c:1504
+#:../extensions/page-info/page-info-dialog.c:1524
 msgid "Relation"
 msgstr "Quan hệ"
 
-#:../extensions/page-info/page-info-dialog.c:1634
-#:../extensions/page-info/page-info-dialog.c:1771
+#:../extensions/page-info/page-info-dialog.c:1654
+#:../extensions/page-info/page-info-dialog.c:1793
 msgid "Name"
 msgstr "Tên"
 
-#:../extensions/page-info/page-info-dialog.c:1646
+#:../extensions/page-info/page-info-dialog.c:1666
 msgid "Method"
 msgstr "Phương pháp"
 
-#:../extensions/page-info/page-info-dialog.c:1658
+#:../extensions/page-info/page-info-dialog.c:1680
 msgid "Action"
 msgstr "Hành động"
 
-#:../extensions/page-info/page-info-dialog.c:1737
+#:../extensions/page-info/page-info-dialog.c:1759
 msgid "_Copy"
 msgstr "_Chép"
 
-#:../extensions/page-info/page-info-dialog.c:1783
+#:../extensions/page-info/page-info-dialog.c:1805
 msgid "Content"
 msgstr "Nội dung"
 
-#:../extensions/page-info/page-info-dialog.c:1882
+#:../extensions/page-info/page-info-dialog.c:1904
 msgid "Page Metadata"
 msgstr "Siêu dữ liệu của trang"
 
@@ -710,7 +722,8 @@ msgstr "Đăng ký dòng tin tức"
 
 #:../extensions/rss/ephy-rss-extension.c:100
 msgid "Subscribe to this website's news feeds in your favorite news reader"
-msgstr "Đang ký với các dòng cung cấp tin tức của nơi Mạng này trong bộ đọc tin tức ưa thích"
+msgstr "Đang ký với các dòng cung cấp tin tức của nơi Mạng này trong bộ đọc tin tức "
+"ưa thích"
 
 #:../extensions/rss/ephy-rss-extension.c:105
 msgid "_Subscribe to this feed"
@@ -847,6 +860,14 @@ msgstr "Cuộn tự động"
 msgid "Scroll on middle mouse click"
 msgstr "Cuộn khi nhắp giữa chuột"
 
+#:../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
+msgid "Auto Reload Tab"
+msgstr "Tự động Tải lại Thanh"
+
+#:../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
+msgid "Reload a tab periodically"
+msgstr "Tải lại thanh theo định kỳ"
+
 #:../extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in.h:1
 msgid "Add a bookmarks menu to the panel's notification area"
 msgstr "Thêm trình đơn đánh dấu vào vùng thông báo trong bảng"
@@ -890,7 +911,8 @@ msgstr "Phục hồi hình thích"
 #:../extensions/favicon/favicon.ephy-extension.in.h:2
 msgid ""
 "Loads /favicon.ico as favicon if the site doesn't use the standard method"
-msgstr "Tải tập tin </favicon.ico> là biểu tượng ưa thích nếu nơi Mạng đó không dùng phương pháp chuẩn"
+msgstr "Tải tập tin </favicon.ico> là biểu tượng ưa thích nếu nơi Mạng đó không dùng "
+"phương pháp chuẩn"
 
 #:../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -947,7 +969,8 @@ msgstr "Đăng ký Dòng Tin tức"
 #:../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
-msgstr "Đang ký với một dòng tin tức đưa ra bởi trang Mạng, trong bộ đọc tin tức ưa thích"
+msgstr "Đang ký với một dòng tin tức đưa ra bởi trang Mạng, trong bộ đọc tin tức ưa "
+"thích"
 
 #:../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
 msgid "A sample extension with mozilla backend"
