@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-14 14:45+0200\n"
-"PO-Revision-Date: 2005-11-14 14:45+0200\n"
+"POT-Creation-Date: 2006-01-22 19:51+0200\n"
+"PO-Revision-Date: 2006-01-22 19:51+0200\n"
 "Last-Translator: Rostislav \"zbrox\" Raykov <zbrox@i-space.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "MIME-Version: 1.0\n"
@@ -88,45 +88,53 @@ msgstr "_Страници"
 msgid "Actions"
 msgstr "Действия"
 
-#: ../extensions/actions/ephy-actions-extension.c:94
+#: ../extensions/actions/ephy-actions-extension.c:112
 msgid "_Actions"
 msgstr "_Действия"
 
-#: ../extensions/actions/ephy-actions-extension.c:95
+#: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Customize actions"
 msgstr "Настройване на действията"
 
-#: ../extensions/actions/ephy-actions-extension.c:408
+#: ../extensions/actions/ephy-actions-extension.c:436
 msgid "Could not run command"
 msgstr "Командата не може да бъде изпълнена"
 
-#: ../extensions/actions/ephy-actions-extension.c:411
+#: ../extensions/actions/ephy-actions-extension.c:439
 msgid "Could not Run Command"
 msgstr "Командата не може да бъде изпълнена"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:490
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:519
 msgid "No action selected."
 msgstr "Няма избрано действие."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:500
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:529
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
 msgstr[0] "Избрано е %i действие."
 msgstr[1] "Избрани са %d действия."
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:312
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
 msgstr "Добавяне на действие"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:415
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
 #, c-format
 msgid "“%s” Properties"
 msgstr "Настройки на „%s“"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
 msgid "Action Properties"
 msgstr "Настройки на действията"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+msgid "_Auto Reload"
+msgstr "_Автоматично презареждане"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
+msgid "Reload the page periodically"
+msgstr "Презареждане на страницата през определен период"
 
 #: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
 msgid "_Edit Bookmarks"
@@ -316,7 +324,7 @@ msgid ""
 "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
 "+xml” instead."
 msgstr ""
-"Зададеният вид на документ е „XHTML“, но задеденият вид на съдържанието е "
+"Зададеният вид на документ е „XHTML“, но зададеният вид на съдържанието е "
 "„text/html“. Използвайте „application/xhtml+xml“ вместо това."
 
 #: ../extensions/error-viewer/sgml-validator.c:243
@@ -350,12 +358,12 @@ msgstr ""
 "HTML грешка в %s:\n"
 "Не е заявен правилно определение на документа."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:339
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:340
 msgid "Enabled"
 msgstr "Зареден"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:347
-#: ../extensions/rss/rss-ui.c:569
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:348
+#: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "Описание"
 
@@ -368,8 +376,8 @@ msgid "Extensions"
 msgstr "Разширения"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
-msgid "_Extensions"
-msgstr "_Разширения"
+msgid "_Extensions..."
+msgstr "_Разширения..."
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
 msgid "Load and unload extensions"
@@ -389,6 +397,15 @@ msgstr "Инсталиране на скрипт на Greasemonkey"
 msgid "The user script at “%s” has been installed"
 msgstr "Инсталиран е потребителският скрипт в „%s“"
 
+#: ../extensions/java-console/ephy-java-console-extension.c:48
+msgid "_Java Console"
+msgstr "Конзола на _Java"
+
+#. shortcut key
+#: ../extensions/java-console/ephy-java-console-extension.c:50
+msgid "Show Java Console"
+msgstr "Показване конзолата на Java"
+
 #: ../extensions/page-info/ephy-page-info-extension.c:65
 msgid "Pa_ge Information"
 msgstr "_Информация за страницата"
@@ -397,156 +414,156 @@ msgstr "_Информация за страницата"
 msgid "Display page information in a dialog"
 msgstr "Изобразяване на информация за страницата в диалогов прозорец"
 
-#: ../extensions/page-info/page-info-dialog.c:710
+#: ../extensions/page-info/page-info-dialog.c:726
 msgid "Save As..."
 msgstr "Запазване като..."
 
-#: ../extensions/page-info/page-info-dialog.c:727
+#: ../extensions/page-info/page-info-dialog.c:743
 msgid "Select a directory"
 msgstr "Избор на папка"
 
-#: ../extensions/page-info/page-info-dialog.c:776
+#: ../extensions/page-info/page-info-dialog.c:792
 msgid "Unknown type"
 msgstr "Неизвестен тип"
 
-#: ../extensions/page-info/page-info-dialog.c:781
+#: ../extensions/page-info/page-info-dialog.c:797
 msgid "Full standards compliance"
 msgstr "Пълна съвместимост със стандартите"
 
-#: ../extensions/page-info/page-info-dialog.c:784
+#: ../extensions/page-info/page-info-dialog.c:800
 msgid "Almost standards compliance"
 msgstr "Почти пълна съвместимост със стандартите"
 
-#: ../extensions/page-info/page-info-dialog.c:787
+#: ../extensions/page-info/page-info-dialog.c:803
 msgid "Compatibility"
 msgstr "Съвместимост"
 
-#: ../extensions/page-info/page-info-dialog.c:791
+#: ../extensions/page-info/page-info-dialog.c:807
 msgid "Undetermined"
 msgstr "Неопределен"
 
-#: ../extensions/page-info/page-info-dialog.c:800
+#: ../extensions/page-info/page-info-dialog.c:816
 msgid "Not cached"
 msgstr "Не е кеширан"
 
-#: ../extensions/page-info/page-info-dialog.c:803
+#: ../extensions/page-info/page-info-dialog.c:819
 msgid "Disk cache"
 msgstr "Кеш на диска"
 
-#: ../extensions/page-info/page-info-dialog.c:806
+#: ../extensions/page-info/page-info-dialog.c:822
 msgid "Memory cache"
 msgstr "Кеш на паметта"
 
-#: ../extensions/page-info/page-info-dialog.c:809
+#: ../extensions/page-info/page-info-dialog.c:825
 msgid "Unknown cache"
 msgstr "Неизвестен кеш"
 
-#: ../extensions/page-info/page-info-dialog.c:825
-#: ../extensions/page-info/page-info-dialog.c:936
+#: ../extensions/page-info/page-info-dialog.c:841
+#: ../extensions/page-info/page-info-dialog.c:952
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: ../extensions/page-info/page-info-dialog.c:830
+#: ../extensions/page-info/page-info-dialog.c:846
 msgid "No referrer"
 msgstr "Без референт"
 
-#: ../extensions/page-info/page-info-dialog.c:844
 #: ../extensions/page-info/page-info-dialog.c:860
+#: ../extensions/page-info/page-info-dialog.c:876
 msgid "Not specified"
 msgstr "Не е определен"
 
-#: ../extensions/page-info/page-info-dialog.c:921
+#: ../extensions/page-info/page-info-dialog.c:937
 msgid "Image"
 msgstr "Изображение"
 
-#: ../extensions/page-info/page-info-dialog.c:924
+#: ../extensions/page-info/page-info-dialog.c:940
 msgid "Embed"
 msgstr "Прикрепяне"
 
-#: ../extensions/page-info/page-info-dialog.c:927
+#: ../extensions/page-info/page-info-dialog.c:943
 msgid "Object"
 msgstr "Обект"
 
-#: ../extensions/page-info/page-info-dialog.c:930
+#: ../extensions/page-info/page-info-dialog.c:946
 msgid "Applet"
 msgstr "Аплет"
 
-#: ../extensions/page-info/page-info-dialog.c:933
+#: ../extensions/page-info/page-info-dialog.c:949
 msgid "Icon"
 msgstr "Икона"
 
-#: ../extensions/page-info/page-info-dialog.c:1038
+#: ../extensions/page-info/page-info-dialog.c:1054
 msgid "_Open"
 msgstr "_Отваряне"
 
-#: ../extensions/page-info/page-info-dialog.c:1044
-#: ../extensions/page-info/page-info-dialog.c:1402
+#: ../extensions/page-info/page-info-dialog.c:1060
+#: ../extensions/page-info/page-info-dialog.c:1420
 msgid "_Copy Link Address"
-msgstr "_Копиране адреса на връзката"
+msgstr "_Копиране на адреса на връзката"
 
-#: ../extensions/page-info/page-info-dialog.c:1050
+#: ../extensions/page-info/page-info-dialog.c:1066
 msgid "_Use as Background"
 msgstr "_Използване като фоново изображение"
 
-#: ../extensions/page-info/page-info-dialog.c:1056
-#: ../extensions/page-info/page-info-dialog.c:1408
+#: ../extensions/page-info/page-info-dialog.c:1072
+#: ../extensions/page-info/page-info-dialog.c:1426
 msgid "_Save As..."
 msgstr "_Запазване като..."
 
-#: ../extensions/page-info/page-info-dialog.c:1239
-#: ../extensions/page-info/page-info-dialog.c:1480
+#: ../extensions/page-info/page-info-dialog.c:1256
+#: ../extensions/page-info/page-info-dialog.c:1499
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1251
+#: ../extensions/page-info/page-info-dialog.c:1269
 msgid "Type"
 msgstr "Тип"
 
-#: ../extensions/page-info/page-info-dialog.c:1263
+#: ../extensions/page-info/page-info-dialog.c:1281
 msgid "Alt Text"
 msgstr "Алтернативен текст"
 
-#: ../extensions/page-info/page-info-dialog.c:1275
-#: ../extensions/page-info/page-info-dialog.c:1492
+#: ../extensions/page-info/page-info-dialog.c:1293
+#: ../extensions/page-info/page-info-dialog.c:1512
 msgid "Title"
 msgstr "Заглавие"
 
-#: ../extensions/page-info/page-info-dialog.c:1287
+#: ../extensions/page-info/page-info-dialog.c:1305
 msgid "Width"
 msgstr "Ширина"
 
-#: ../extensions/page-info/page-info-dialog.c:1299
+#: ../extensions/page-info/page-info-dialog.c:1317
 msgid "Height"
 msgstr "Височина"
 
-#: ../extensions/page-info/page-info-dialog.c:1504
+#: ../extensions/page-info/page-info-dialog.c:1524
 msgid "Relation"
 msgstr "Отношение"
 
-#: ../extensions/page-info/page-info-dialog.c:1634
-#: ../extensions/page-info/page-info-dialog.c:1771
+#: ../extensions/page-info/page-info-dialog.c:1654
+#: ../extensions/page-info/page-info-dialog.c:1793
 msgid "Name"
 msgstr "Име"
 
-#: ../extensions/page-info/page-info-dialog.c:1646
+#: ../extensions/page-info/page-info-dialog.c:1666
 msgid "Method"
 msgstr "Метод"
 
-#: ../extensions/page-info/page-info-dialog.c:1658
+#: ../extensions/page-info/page-info-dialog.c:1680
 msgid "Action"
 msgstr "Действие"
 
-#: ../extensions/page-info/page-info-dialog.c:1737
+#: ../extensions/page-info/page-info-dialog.c:1759
 msgid "_Copy"
 msgstr "_Копиране"
 
-#: ../extensions/page-info/page-info-dialog.c:1783
+#: ../extensions/page-info/page-info-dialog.c:1805
 msgid "Content"
 msgstr "Съдържание"
 
-#: ../extensions/page-info/page-info-dialog.c:1882
+#: ../extensions/page-info/page-info-dialog.c:1904
 msgid "Page Metadata"
-msgstr "Мета данни за страницата"
+msgstr "Мета-данни за страницата"
 
 #: ../extensions/page-info/page-info.glade.h:1
 msgid "<b>Dublin Core Metadata</b>"
@@ -685,27 +702,27 @@ msgstr "забранени"
 msgid "default"
 msgstr "по подразбиране"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:514
+#: ../extensions/permissions/ephy-permissions-dialog.c:515
 msgid "Domain"
 msgstr "Домейн"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:526
+#: ../extensions/permissions/ephy-permissions-dialog.c:527
 msgid "State"
 msgstr "Състояние"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:619
+#: ../extensions/permissions/ephy-permissions-dialog.c:620
 msgid "Site Permissions"
 msgstr "Разрешения за Интернет страниците"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:643
+#: ../extensions/permissions/ephy-permissions-dialog.c:647
 msgid "Cookies"
 msgstr "Бисквитки"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:644
+#: ../extensions/permissions/ephy-permissions-dialog.c:648
 msgid "Images"
 msgstr "Изображения"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:645
+#: ../extensions/permissions/ephy-permissions-dialog.c:649
 msgid "Popup Windows"
 msgstr "Изскачащи прозорци"
 
@@ -719,43 +736,43 @@ msgstr "_Разрешения за Интернет страниците"
 msgid "Manage web site permissions"
 msgstr "Управление на разрешенията за Интернет страниците"
 
-#: ../extensions/rss/ephy-rss-extension.c:94
+#: ../extensions/rss/ephy-rss-extension.c:98
 msgid "News Feeds Subscription"
 msgstr "Абонаменти за новини"
 
-#: ../extensions/rss/ephy-rss-extension.c:96
+#: ../extensions/rss/ephy-rss-extension.c:100
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr ""
 "Абониране за емисии предлагани от тази уеб страница през любимия Ви "
 "агрегатор."
 
-#: ../extensions/rss/ephy-rss-extension.c:101
+#: ../extensions/rss/ephy-rss-extension.c:105
 msgid "_Subscribe to this feed"
 msgstr "_Абониране към емисиите на този сайт"
 
-#: ../extensions/rss/ephy-rss-extension.c:103
+#: ../extensions/rss/ephy-rss-extension.c:107
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Абониране за тази емисия през любимия Ви четец."
 
-#: ../extensions/rss/ephy-rss-extension.c:373
+#: ../extensions/rss/ephy-rss-extension.c:392
 msgid "Subscribe to site's news feed"
 msgstr "Абониране към емисиите по RSS на този сайт"
 
-#: ../extensions/rss/rss-ui.c:154
+#: ../extensions/rss/rss-ui.c:167
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr ""
 "<b><i>Няма връзка с агрегатора на емисии по RSS. Пусната ли е програмата?</"
 "i></b>"
 
-#: ../extensions/rss/rss-ui.c:156
+#: ../extensions/rss/rss-ui.c:169
 msgid "Retry"
 msgstr "Повторен опит"
 
-#: ../extensions/rss/rss-ui.c:284
+#: ../extensions/rss/rss-ui.c:297
 msgid "_Copy Feed Address"
 msgstr "_Копиране адреса на емисията"
 
-#: ../extensions/rss/rss-ui.c:562
+#: ../extensions/rss/rss-ui.c:591
 msgid "Subscribe"
 msgstr "Абониране"
 
@@ -865,6 +882,14 @@ msgstr "Автоматично прелистване"
 msgid "Scroll on middle mouse click"
 msgstr "Прелистване чрез натискане на средния бутон на мишката"
 
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
+msgid "Auto Reload Tab"
+msgstr "Автоматично презареждане на подпрозорец"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
+msgid "Reload a tab periodically"
+msgstr "Автоматично презареждане на подпрозорец през определен период"
+
 #: ../extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in.h:1
 msgid "Add a bookmarks menu to the panel's notification area"
 msgstr "Добавяне на меню за отметките в лентата за уведомяване"
@@ -929,7 +954,15 @@ msgstr "Greasemonkey"
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
 msgid "Run user scripts to modify web pages' behavior"
 msgstr ""
-"Изпозване на потребителски скриптове за промяна на поведението на страниците"
+"Използване на потребителски скриптове за промяна на поведението на страниците"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
+msgid "Java Console"
+msgstr "Конзола на Java"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
+msgid "Provide access to the Java-Plugin Console"
+msgstr "Предоставя достъп до приставката за конзола на Java"
 
 #: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:1
 msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
