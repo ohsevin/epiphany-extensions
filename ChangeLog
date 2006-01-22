@@ -1,3 +1,11 @@
+2006-01-22  Crispin Flowerday  <gnome@flowerday.cx>
+
+	* extensions/greasemonkey/ephy-greasemonkey-extension.c:
+	(context_menu_cb):
+
+	Fix the greasemonkey extension for the ephy_embed_event_get_property
+	API change.
+
 2006-01-21  Raphael Slinckx  <rslinckx@cvs.gnome.org>
 
 	* extensions/extensions-manager-ui/ephy-extensions-manager-ui-exten

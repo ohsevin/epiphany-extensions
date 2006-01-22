@@ -431,7 +431,7 @@ context_menu_cb (EphyEmbed *embed,
 	window = EPHY_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (embed)));
 	g_return_val_if_fail (window != NULL, FALSE);
 
-	ephy_embed_event_get_property (event, "link", &value);
+	value = ephy_embed_event_get_property (event, "link");
 	url = g_value_get_string (value);
 
 	show_install = g_str_has_suffix (url, ".user.js");
