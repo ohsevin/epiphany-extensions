@@ -1,5 +1,12 @@
 2006-01-22  Crispin Flowerday  <gnome@flowerday.cx>
 
+	* extensions/error-viewer/ephy-error-viewer-extension.c (update_actions): 
+
+	Check that we have a content_type before calling strcmp() on it.
+	Fixes bug #322082
+
+2006-01-22  Crispin Flowerday  <gnome@flowerday.cx>
+
 	* extensions/permissions/ephy-permissions-dialog.c:
 
 	Update for EphyPermissionManager API change
