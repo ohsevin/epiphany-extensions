@@ -1,5 +1,11 @@
 2006-01-22  Crispin Flowerday  <gnome@flowerday.cx>
 
+	* extensions/permissions/ephy-permissions-dialog.c:
+
+	Update for EphyPermissionManager API change
+
+2006-01-22  Crispin Flowerday  <gnome@flowerday.cx>
+
 	* extensions/greasemonkey/ephy-greasemonkey-extension.c:
 	(context_menu_cb):
 

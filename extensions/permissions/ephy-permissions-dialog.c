@@ -216,7 +216,7 @@ fill_tab (DialogTab *tab)
 
 	if (tab->filled) return;
 
-	list = ephy_permission_manager_list (manager, tab->type);
+	list = ephy_permission_manager_list_permissions (manager, tab->type);
 
 	for (l = list; l != NULL; l = l->next)
 	{
@@ -314,8 +314,8 @@ delete_selection (DialogTab *tab)
 		gtk_tree_model_get_iter (model, &iter, path);
 		gtk_tree_model_get_value (model, &iter, COL_HOST, &val);
 
-		ephy_permission_manager_remove (manager, g_value_get_string (&val),
-						tab->type);
+		ephy_permission_manager_remove_permission (manager, g_value_get_string (&val),
+                                                           tab->type);
 		g_value_unset (&val);
 
 		gtk_tree_row_reference_free ((GtkTreeRowReference *)r->data);
