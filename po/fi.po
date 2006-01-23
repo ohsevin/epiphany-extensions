@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-07 11:57+0200\n"
-"PO-Revision-Date: 2006-01-07 12:12+0200\n"
+"POT-Creation-Date: 2006-01-23 20:05+0200\n"
+"PO-Revision-Date: 2006-01-23 20:05+0200\n"
 "Last-Translator: Pauli Virtanen <pauli.virtanen@hut.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -126,6 +126,14 @@ msgstr "\"%s\" ominaisuudet"
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
 msgid "Action Properties"
 msgstr "Toiminnon ominaisuudet"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+msgid "_Auto Reload"
+msgstr "_Automaattinen uudelleenlataus"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
+msgid "Reload the page periodically"
+msgstr "Lataa sivu uudestaan tietyin aikavälein"
 
 #: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
 msgid "_Edit Bookmarks"
@@ -367,8 +375,8 @@ msgid "Extensions"
 msgstr "Laajennukset"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
-msgid "_Extensions"
-msgstr "_Laajennukset"
+msgid "_Extensions..."
+msgstr "_Laajennukset..."
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
 msgid "Load and unload extensions"
@@ -405,154 +413,154 @@ msgstr "Si_vun tiedot"
 msgid "Display page information in a dialog"
 msgstr "Näytä sivun tiedot ikkunassa"
 
-#: ../extensions/page-info/page-info-dialog.c:710
+#: ../extensions/page-info/page-info-dialog.c:726
 msgid "Save As..."
 msgstr "Tallenna nimellä..."
 
-#: ../extensions/page-info/page-info-dialog.c:727
+#: ../extensions/page-info/page-info-dialog.c:743
 msgid "Select a directory"
 msgstr "Valitse kansio"
 
-#: ../extensions/page-info/page-info-dialog.c:776
+#: ../extensions/page-info/page-info-dialog.c:792
 msgid "Unknown type"
 msgstr "Tuntematon tyyppi"
 
-#: ../extensions/page-info/page-info-dialog.c:781
+#: ../extensions/page-info/page-info-dialog.c:797
 msgid "Full standards compliance"
 msgstr "Täysin standardienmukainen"
 
-#: ../extensions/page-info/page-info-dialog.c:784
+#: ../extensions/page-info/page-info-dialog.c:800
 msgid "Almost standards compliance"
 msgstr "Melkein standardienmukainen"
 
-#: ../extensions/page-info/page-info-dialog.c:787
+#: ../extensions/page-info/page-info-dialog.c:803
 msgid "Compatibility"
 msgstr "Yhteensopivuus"
 
-#: ../extensions/page-info/page-info-dialog.c:791
+#: ../extensions/page-info/page-info-dialog.c:807
 msgid "Undetermined"
 msgstr "Määrittelemätön"
 
-#: ../extensions/page-info/page-info-dialog.c:800
+#: ../extensions/page-info/page-info-dialog.c:816
 msgid "Not cached"
 msgstr "Ei välimuistissa"
 
-#: ../extensions/page-info/page-info-dialog.c:803
+#: ../extensions/page-info/page-info-dialog.c:819
 msgid "Disk cache"
 msgstr "Levyvälimuisti"
 
-#: ../extensions/page-info/page-info-dialog.c:806
+#: ../extensions/page-info/page-info-dialog.c:822
 msgid "Memory cache"
 msgstr "Välimuisti"
 
-#: ../extensions/page-info/page-info-dialog.c:809
+#: ../extensions/page-info/page-info-dialog.c:825
 msgid "Unknown cache"
 msgstr "Tuntematon välimuisti"
 
-#: ../extensions/page-info/page-info-dialog.c:825
-#: ../extensions/page-info/page-info-dialog.c:936
+#: ../extensions/page-info/page-info-dialog.c:841
+#: ../extensions/page-info/page-info-dialog.c:952
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: ../extensions/page-info/page-info-dialog.c:830
+#: ../extensions/page-info/page-info-dialog.c:846
 msgid "No referrer"
 msgstr "Ei viittaajaa"
 
-#: ../extensions/page-info/page-info-dialog.c:844
 #: ../extensions/page-info/page-info-dialog.c:860
+#: ../extensions/page-info/page-info-dialog.c:876
 msgid "Not specified"
 msgstr "Ei määritelty"
 
-#: ../extensions/page-info/page-info-dialog.c:921
+#: ../extensions/page-info/page-info-dialog.c:937
 msgid "Image"
 msgstr "Kuva"
 
-#: ../extensions/page-info/page-info-dialog.c:924
+#: ../extensions/page-info/page-info-dialog.c:940
 msgid "Embed"
 msgstr "Upote"
 
-#: ../extensions/page-info/page-info-dialog.c:927
+#: ../extensions/page-info/page-info-dialog.c:943
 msgid "Object"
 msgstr "Objekti"
 
-#: ../extensions/page-info/page-info-dialog.c:930
+#: ../extensions/page-info/page-info-dialog.c:946
 msgid "Applet"
 msgstr "Sovelma"
 
-#: ../extensions/page-info/page-info-dialog.c:933
+#: ../extensions/page-info/page-info-dialog.c:949
 msgid "Icon"
 msgstr "Kuvake"
 
-#: ../extensions/page-info/page-info-dialog.c:1038
+#: ../extensions/page-info/page-info-dialog.c:1054
 msgid "_Open"
 msgstr "_Avaa"
 
-#: ../extensions/page-info/page-info-dialog.c:1044
-#: ../extensions/page-info/page-info-dialog.c:1402
+#: ../extensions/page-info/page-info-dialog.c:1060
+#: ../extensions/page-info/page-info-dialog.c:1420
 msgid "_Copy Link Address"
 msgstr "_Kopioi linkin osoite"
 
-#: ../extensions/page-info/page-info-dialog.c:1050
+#: ../extensions/page-info/page-info-dialog.c:1066
 msgid "_Use as Background"
 msgstr "Käytä _taustakuvana"
 
-#: ../extensions/page-info/page-info-dialog.c:1056
-#: ../extensions/page-info/page-info-dialog.c:1408
+#: ../extensions/page-info/page-info-dialog.c:1072
+#: ../extensions/page-info/page-info-dialog.c:1426
 msgid "_Save As..."
 msgstr "_Tallenna nimellä..."
 
-#: ../extensions/page-info/page-info-dialog.c:1239
-#: ../extensions/page-info/page-info-dialog.c:1480
+#: ../extensions/page-info/page-info-dialog.c:1256
+#: ../extensions/page-info/page-info-dialog.c:1499
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1251
+#: ../extensions/page-info/page-info-dialog.c:1269
 msgid "Type"
 msgstr "Tyyppi"
 
-#: ../extensions/page-info/page-info-dialog.c:1263
+#: ../extensions/page-info/page-info-dialog.c:1281
 msgid "Alt Text"
 msgstr "Vaihtoehtoinen teksti"
 
-#: ../extensions/page-info/page-info-dialog.c:1275
-#: ../extensions/page-info/page-info-dialog.c:1492
+#: ../extensions/page-info/page-info-dialog.c:1293
+#: ../extensions/page-info/page-info-dialog.c:1512
 msgid "Title"
 msgstr "Otsikko"
 
-#: ../extensions/page-info/page-info-dialog.c:1287
+#: ../extensions/page-info/page-info-dialog.c:1305
 msgid "Width"
 msgstr "Leveys"
 
-#: ../extensions/page-info/page-info-dialog.c:1299
+#: ../extensions/page-info/page-info-dialog.c:1317
 msgid "Height"
 msgstr "Korkeus"
 
-#: ../extensions/page-info/page-info-dialog.c:1504
+#: ../extensions/page-info/page-info-dialog.c:1524
 msgid "Relation"
 msgstr "Suhde"
 
-#: ../extensions/page-info/page-info-dialog.c:1634
-#: ../extensions/page-info/page-info-dialog.c:1771
+#: ../extensions/page-info/page-info-dialog.c:1654
+#: ../extensions/page-info/page-info-dialog.c:1793
 msgid "Name"
 msgstr "Nimi"
 
-#: ../extensions/page-info/page-info-dialog.c:1646
+#: ../extensions/page-info/page-info-dialog.c:1666
 msgid "Method"
 msgstr "Metodi"
 
-#: ../extensions/page-info/page-info-dialog.c:1658
+#: ../extensions/page-info/page-info-dialog.c:1680
 msgid "Action"
 msgstr "Toiminto"
 
-#: ../extensions/page-info/page-info-dialog.c:1737
+#: ../extensions/page-info/page-info-dialog.c:1759
 msgid "_Copy"
 msgstr "_Kopioi"
 
-#: ../extensions/page-info/page-info-dialog.c:1783
+#: ../extensions/page-info/page-info-dialog.c:1805
 msgid "Content"
 msgstr "Sisältö"
 
-#: ../extensions/page-info/page-info-dialog.c:1882
+#: ../extensions/page-info/page-info-dialog.c:1904
 msgid "Page Metadata"
 msgstr "Sivun metatiedot"
 
@@ -870,6 +878,14 @@ msgstr "Vieritä automaattisesti"
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
 msgid "Scroll on middle mouse click"
 msgstr "Vieritä hiiren keskinapilla"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
+msgid "Auto Reload Tab"
+msgstr "Välilehden uudelleenlataus"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
+msgid "Reload a tab periodically"
+msgstr "Lataa välilehden uudestaan tietyin aikavälein"
 
 #: ../extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in.h:1
 msgid "Add a bookmarks menu to the panel's notification area"
