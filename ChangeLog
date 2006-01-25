@@ -1,3 +1,15 @@
+2006-01-25  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+	R extensions/net-monitor/.cvsignore:
+	R extensions/net-monitor/Makefile.am:
+	R extensions/net-monitor/ephy-net-monitor-extension.c:
+	R extensions/net-monitor/ephy-net-monitor-extension.h:
+	R extensions/net-monitor/extension.c:
+	R extensions/net-monitor/net-monitor.ephy-extension.in.in:
+
+	Net-monitor is now integrated into Epiphany; remove the extension.
+
 2006-01-22  Crispin Flowerday  <gnome@flowerday.cx>
 
 	* extensions/error-viewer/ephy-error-viewer-extension.c (update_actions): 

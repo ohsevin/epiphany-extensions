@@ -153,7 +153,7 @@ AM_CONDITIONAL([HAVE_OPENSP],[test "x$enable_opensp" = "xyes"])
 
 AC_MSG_CHECKING([which extensions to build])
 
-ALL_EXTENSIONS="actions adblock auto-reload auto-scroller bookmarks-tray certificates dashboard error-viewer extensions-manager-ui gestures greasemonkey imagebar java-console net-monitor page-info permissions push-scroller rss sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu"
+ALL_EXTENSIONS="actions adblock auto-reload auto-scroller bookmarks-tray certificates dashboard error-viewer extensions-manager-ui gestures greasemonkey imagebar java-console page-info permissions push-scroller rss sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu"
 USEFUL_EXTENSIONS="actions auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 DEFAULT_EXTENSIONS="actions auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 
@@ -179,7 +179,7 @@ AC_ARG_WITH([extensions],
 [  --with-extensions=extension1,extension2,...
 			  build the specified extensions. Available:
 			  actions, adblock, bookmarks-tray, certificates, dashboard,
-			  error-viewer, extensions-manager-ui, gestures, net-monitor,
+			  error-viewer, extensions-manager-ui, gestures,
 			  page-info, rss, sample, sampls-mozilla, select-stylesheet,
 			  sidebar, smart-bookmarks, tab-groups, and tabsmenu,
 			  as well as the aliases default, all, and really-all],
@@ -221,7 +221,7 @@ AC_MSG_RESULT([$EXTENSIONS])
 # DBUS
 # ****
 
-if echo "$EXTENSIONS" | egrep '(^| )(net-monitor)|(rss)($| )' > /dev/null; then
+if echo "$EXTENSIONS" | egrep '(^| )(rss)($| )' > /dev/null; then
 	DBUS_REQUIRED=0.34
 	DBUS_GLIB_REQUIRED=0.34
 
@@ -380,7 +380,6 @@ extensions/favicon/Makefile
 extensions/greasemonkey/Makefile
 extensions/greasemonkey/mozilla/Makefile
 extensions/imagebar/Makefile
-extensions/net-monitor/Makefile
 extensions/page-info/Makefile
 extensions/page-info/mozilla/Makefile
 extensions/permissions/Makefile
