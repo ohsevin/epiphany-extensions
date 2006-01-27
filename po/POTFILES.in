@@ -47,7 +47,6 @@ extensions/tabsmenu/ephy-tab-move-menu.c
 [type: gettext/ini]extensions/gestures/gestures.ephy-extension.in.in
 [type: gettext/ini]extensions/greasemonkey/greasemonkey.ephy-extension.in.in
 [type: gettext/ini]extensions/java-console/java-console.ephy-extension.in.in
-[type: gettext/ini]extensions/net-monitor/net-monitor.ephy-extension.in.in
 [type: gettext/ini]extensions/page-info/page-info.ephy-extension.in.in
 [type: gettext/ini]extensions/permissions/permissions.ephy-extension.in.in
 [type: gettext/ini]extensions/rss/rss.ephy-extension.in.in

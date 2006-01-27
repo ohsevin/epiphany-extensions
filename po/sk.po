@@ -1,7 +1,7 @@
 # Slovak translations for epiphany-extensions package.
-# Copyright (C) 2004, 2005 Free Software Foundation, Inc.
+# Copyright (C) 2004, 2005, 2006 Free Software Foundation, Inc.
 # This file is distributed under the same license as the epiphany-extensions package.
-# Marcel Telka <marcel@telka.sk>, 2004, 2005.
+# Marcel Telka <marcel@telka.sk>, 2004, 2005, 2006.
 #
 # $Id$
 #
@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-16 00:20+0100\n"
-"PO-Revision-Date: 2005-12-16 00:22+0100\n"
+"POT-Creation-Date: 2006-01-27 01:17+0100\n"
+"PO-Revision-Date: 2006-01-27 01:20+0100\n"
 "Last-Translator: Marcel Telka <marcel@telka.sk>\n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
 "MIME-Version: 1.0\n"
@@ -126,6 +126,14 @@ msgstr "Vlastnosti “%s”"
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
 msgid "Action Properties"
 msgstr "Vlastnosti akcie"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+msgid "_Auto Reload"
+msgstr "_Automaticky obnoviť"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
+msgid "Reload the page periodically"
+msgstr "Obnoviť stranu periodicky"
 
 #: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
 msgid "_Edit Bookmarks"
@@ -358,7 +366,7 @@ msgid "Enabled"
 msgstr "Povolené"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.c:348
-#: ../extensions/rss/rss-ui.c:569
+#: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "Popis"
 
@@ -371,8 +379,8 @@ msgid "Extensions"
 msgstr "Rozšírenia"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
-msgid "_Extensions"
-msgstr "_Rozšírenia"
+msgid "_Extensions..."
+msgstr "_Rozšírenia..."
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
 msgid "Load and unload extensions"
@@ -409,154 +417,154 @@ msgstr "Informácie o _stránke"
 msgid "Display page information in a dialog"
 msgstr "Zobraziť informácie o stránke v dialógovom okne"
 
-#: ../extensions/page-info/page-info-dialog.c:710
+#: ../extensions/page-info/page-info-dialog.c:726
 msgid "Save As..."
 msgstr "Uložiť ako..."
 
-#: ../extensions/page-info/page-info-dialog.c:727
+#: ../extensions/page-info/page-info-dialog.c:743
 msgid "Select a directory"
 msgstr "Vybrať priečinok"
 
-#: ../extensions/page-info/page-info-dialog.c:776
+#: ../extensions/page-info/page-info-dialog.c:792
 msgid "Unknown type"
 msgstr "Neznámy typ"
 
-#: ../extensions/page-info/page-info-dialog.c:781
+#: ../extensions/page-info/page-info-dialog.c:797
 msgid "Full standards compliance"
 msgstr "Úplne dodržané štandardy"
 
-#: ../extensions/page-info/page-info-dialog.c:784
+#: ../extensions/page-info/page-info-dialog.c:800
 msgid "Almost standards compliance"
 msgstr "Takmer dodržané štandardy"
 
-#: ../extensions/page-info/page-info-dialog.c:787
+#: ../extensions/page-info/page-info-dialog.c:803
 msgid "Compatibility"
 msgstr "Kompatibilita"
 
-#: ../extensions/page-info/page-info-dialog.c:791
+#: ../extensions/page-info/page-info-dialog.c:807
 msgid "Undetermined"
 msgstr "Neurčené"
 
-#: ../extensions/page-info/page-info-dialog.c:800
+#: ../extensions/page-info/page-info-dialog.c:816
 msgid "Not cached"
 msgstr "Neuložené vo vyrovnávacej pamäti"
 
-#: ../extensions/page-info/page-info-dialog.c:803
+#: ../extensions/page-info/page-info-dialog.c:819
 msgid "Disk cache"
 msgstr "Disková vyrovnávacia pamäť"
 
-#: ../extensions/page-info/page-info-dialog.c:806
+#: ../extensions/page-info/page-info-dialog.c:822
 msgid "Memory cache"
 msgstr "Pamäťová vyrovnávacia pamäť"
 
-#: ../extensions/page-info/page-info-dialog.c:809
+#: ../extensions/page-info/page-info-dialog.c:825
 msgid "Unknown cache"
 msgstr "Neznáma vyrovnávacia pamäť"
 
-#: ../extensions/page-info/page-info-dialog.c:825
-#: ../extensions/page-info/page-info-dialog.c:936
+#: ../extensions/page-info/page-info-dialog.c:841
+#: ../extensions/page-info/page-info-dialog.c:952
 msgid "Unknown"
 msgstr "Neznáme"
 
-#: ../extensions/page-info/page-info-dialog.c:830
+#: ../extensions/page-info/page-info-dialog.c:846
 msgid "No referrer"
 msgstr "Bez odkazu"
 
-#: ../extensions/page-info/page-info-dialog.c:844
 #: ../extensions/page-info/page-info-dialog.c:860
+#: ../extensions/page-info/page-info-dialog.c:876
 msgid "Not specified"
 msgstr "Nezadané"
 
-#: ../extensions/page-info/page-info-dialog.c:921
+#: ../extensions/page-info/page-info-dialog.c:937
 msgid "Image"
 msgstr "Obrázok"
 
-#: ../extensions/page-info/page-info-dialog.c:924
+#: ../extensions/page-info/page-info-dialog.c:940
 msgid "Embed"
 msgstr "Vložiť"
 
-#: ../extensions/page-info/page-info-dialog.c:927
+#: ../extensions/page-info/page-info-dialog.c:943
 msgid "Object"
 msgstr "Objekt"
 
-#: ../extensions/page-info/page-info-dialog.c:930
+#: ../extensions/page-info/page-info-dialog.c:946
 msgid "Applet"
 msgstr "Applet"
 
-#: ../extensions/page-info/page-info-dialog.c:933
+#: ../extensions/page-info/page-info-dialog.c:949
 msgid "Icon"
 msgstr "Ikona"
 
-#: ../extensions/page-info/page-info-dialog.c:1038
+#: ../extensions/page-info/page-info-dialog.c:1054
 msgid "_Open"
 msgstr "_Otvoriť"
 
-#: ../extensions/page-info/page-info-dialog.c:1044
-#: ../extensions/page-info/page-info-dialog.c:1402
+#: ../extensions/page-info/page-info-dialog.c:1060
+#: ../extensions/page-info/page-info-dialog.c:1420
 msgid "_Copy Link Address"
 msgstr "_Kopírovať adresu odkazu"
 
-#: ../extensions/page-info/page-info-dialog.c:1050
+#: ../extensions/page-info/page-info-dialog.c:1066
 msgid "_Use as Background"
 msgstr "_Použiť ako pozadie"
 
-#: ../extensions/page-info/page-info-dialog.c:1056
-#: ../extensions/page-info/page-info-dialog.c:1408
+#: ../extensions/page-info/page-info-dialog.c:1072
+#: ../extensions/page-info/page-info-dialog.c:1426
 msgid "_Save As..."
 msgstr "_Uložiť ako..."
 
-#: ../extensions/page-info/page-info-dialog.c:1239
-#: ../extensions/page-info/page-info-dialog.c:1480
+#: ../extensions/page-info/page-info-dialog.c:1256
+#: ../extensions/page-info/page-info-dialog.c:1499
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1251
+#: ../extensions/page-info/page-info-dialog.c:1269
 msgid "Type"
 msgstr "Typ"
 
-#: ../extensions/page-info/page-info-dialog.c:1263
+#: ../extensions/page-info/page-info-dialog.c:1281
 msgid "Alt Text"
 msgstr "Alternatívny text"
 
-#: ../extensions/page-info/page-info-dialog.c:1275
-#: ../extensions/page-info/page-info-dialog.c:1492
+#: ../extensions/page-info/page-info-dialog.c:1293
+#: ../extensions/page-info/page-info-dialog.c:1512
 msgid "Title"
 msgstr "Titulok"
 
-#: ../extensions/page-info/page-info-dialog.c:1287
+#: ../extensions/page-info/page-info-dialog.c:1305
 msgid "Width"
 msgstr "Šírka"
 
-#: ../extensions/page-info/page-info-dialog.c:1299
+#: ../extensions/page-info/page-info-dialog.c:1317
 msgid "Height"
 msgstr "Výška"
 
-#: ../extensions/page-info/page-info-dialog.c:1504
+#: ../extensions/page-info/page-info-dialog.c:1524
 msgid "Relation"
 msgstr "Vzťah"
 
-#: ../extensions/page-info/page-info-dialog.c:1634
-#: ../extensions/page-info/page-info-dialog.c:1771
+#: ../extensions/page-info/page-info-dialog.c:1654
+#: ../extensions/page-info/page-info-dialog.c:1793
 msgid "Name"
 msgstr "Názov"
 
-#: ../extensions/page-info/page-info-dialog.c:1646
+#: ../extensions/page-info/page-info-dialog.c:1666
 msgid "Method"
 msgstr "Metóda"
 
-#: ../extensions/page-info/page-info-dialog.c:1658
+#: ../extensions/page-info/page-info-dialog.c:1680
 msgid "Action"
 msgstr "Akcia"
 
-#: ../extensions/page-info/page-info-dialog.c:1737
+#: ../extensions/page-info/page-info-dialog.c:1759
 msgid "_Copy"
 msgstr "_Kopírovať"
 
-#: ../extensions/page-info/page-info-dialog.c:1783
+#: ../extensions/page-info/page-info-dialog.c:1805
 msgid "Content"
 msgstr "Obsah"
 
-#: ../extensions/page-info/page-info-dialog.c:1882
+#: ../extensions/page-info/page-info-dialog.c:1904
 msgid "Page Metadata"
 msgstr "Metadáta stránky"
 
@@ -731,43 +739,43 @@ msgstr "_Práva servera"
 msgid "Manage web site permissions"
 msgstr "Spravovať práva www servera"
 
-#: ../extensions/rss/ephy-rss-extension.c:94
+#: ../extensions/rss/ephy-rss-extension.c:98
 msgid "News Feeds Subscription"
 msgstr "Prihlásenie k odberom noviniek"
 
-#: ../extensions/rss/ephy-rss-extension.c:96
+#: ../extensions/rss/ephy-rss-extension.c:100
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr ""
 "Prihlásiť sa k odberu noviniek tejto www stránky vo vašom obľúbenom programe "
 "na čítanie diskusných skupín"
 
-#: ../extensions/rss/ephy-rss-extension.c:101
+#: ../extensions/rss/ephy-rss-extension.c:105
 msgid "_Subscribe to this feed"
 msgstr "_Prihlásiť sa k tomuto odberu"
 
-#: ../extensions/rss/ephy-rss-extension.c:103
+#: ../extensions/rss/ephy-rss-extension.c:107
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr ""
 "Prihlásiť sa k tomuto odberu vo vašom obľubenom programe na čítanie "
 "diskusných skupín"
 
-#: ../extensions/rss/ephy-rss-extension.c:373
+#: ../extensions/rss/ephy-rss-extension.c:392
 msgid "Subscribe to site's news feed"
 msgstr "Prihlásiť sa k odberu noviniek sídla"
 
-#: ../extensions/rss/rss-ui.c:154
+#: ../extensions/rss/rss-ui.c:167
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr "<b><i>Nepodarilo sa spojiť čítačom odberu, beží?</i></b>"
 
-#: ../extensions/rss/rss-ui.c:156
+#: ../extensions/rss/rss-ui.c:169
 msgid "Retry"
 msgstr "Opätovne skúsiť"
 
-#: ../extensions/rss/rss-ui.c:284
+#: ../extensions/rss/rss-ui.c:297
 msgid "_Copy Feed Address"
 msgstr "_Kopírovať adresu odberu"
 
-#: ../extensions/rss/rss-ui.c:562
+#: ../extensions/rss/rss-ui.c:591
 msgid "Subscribe"
 msgstr "Prihlásiť"
 
@@ -878,6 +886,14 @@ msgstr "Automatický posuv"
 msgid "Scroll on middle mouse click"
 msgstr "Posunúť pri kliknutí stredným tlačidlom myši"
 
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
+msgid "Auto Reload Tab"
+msgstr "Automaticky obnovovať kartu"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
+msgid "Reload a tab periodically"
+msgstr "Kartu periodicky obnovovať"
+
 #: ../extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in.h:1
 msgid "Add a bookmarks menu to the panel's notification area"
 msgstr "Pridať menu záložiek do oblasti upozornení panela"
@@ -949,15 +965,6 @@ msgstr "Konzola Java"
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
 msgid "Provide access to the Java-Plugin Console"
 msgstr "Poskytuje prístup ku konzole zásuvného modulu Java"
-
-#: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:1
-msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
-msgstr ""
-"Automaticky obsluhovať stav pripojenia/odpojenia siete (EXPERIMENTÁLNE!)"
-
-#: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:2
-msgid "Network Connection Monitor"
-msgstr "Sledovač pripojenia siete"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"

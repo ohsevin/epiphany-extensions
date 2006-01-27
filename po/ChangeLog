@@ -1,3 +1,8 @@
+2006-01-27  Marcel Telka  <marcel@telka.sk>
+
+	* POTFILES.in: Removed obsolete file.
+	* sk.po: Updated Slovak translation.
+
 2006-01-23  Ilkka Tuohela  <hile@iki.fi>
 
 	* fi.po: Updated Finnish translation.
