@@ -1,3 +1,7 @@
+2006-01-29  Reinout van Schouwen <reinout@cs.vu.nl>
+
+        * NEWS: 1.9.6 release
+        
 2006-01-25  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
