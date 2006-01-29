@@ -1,3 +1,9 @@
+2006-01-29  Crispin Flowerday  <gnome@flowerday.cx>
+
+	* extensions/favicon/favicon.py (net_stop_cb): 
+
+	If using gecko >= 1.8 then load favicons for https sites as well
+
 2006-01-29  Reinout van Schouwen <reinout@cs.vu.nl>
 
         * NEWS: 1.9.6 release

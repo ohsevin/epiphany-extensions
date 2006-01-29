@@ -25,8 +25,10 @@ def net_stop_cb(embed, tab):
 	if tab.get_icon_address() == None:
 		try:
 			uri = gnomevfs.URI(tab.get_address())
-			if uri.scheme == "http":
-				url = "http://" + uri.host_name
+			single = epiphany.ephy_shell_get_default().get_embed_single()
+			backend = single.get_backend_name();
+			if uri.scheme == "http" or (uri.scheme == "https" and backend != "gecko-1.7") :
+				url = uri.scheme + "://" + uri.host_name
 				if uri.host_port != 0:
 					url += ':%d' % uri.host_port;
 				url += "/favicon.ico"
