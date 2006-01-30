@@ -1,13 +1,14 @@
 =========================
-Epiphany-extensions 1.9.6
+Epiphany Extensions 1.9.6
 =========================
 
 Changes:
 	* Check that we have a content_type before calling strcmp() on it. Fixes bug #322082
 	* Update for EphyPermissionManager API change
-	* Fix the greasemonkey extension for the ephy_embed_event_get_property API change.
+	* Update for the ephy_embed_event_get_property API change.
 	* Add ... to "Tools/Extensions" menu item
-	* Re-sync with NetworkManager. 
+	* Remove net-monitor extension, this is now integrated with epiphany
+	* Load favicons for https sites with gecko >= 1.8
 
 Contributors to this release:
 Christian Persch, Crispin Flowerday, Raphaël Slinckx, Jean-François Rameau
