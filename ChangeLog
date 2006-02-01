@@ -1,3 +1,10 @@
+2006-02-01  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
+	Remove all bookmarks-tray references from configure; it's just
+	broken and I don't foresee it being fixed for 1.10. Bug #325854.
+
 2006-01-30  Crispin Flowerday  <gnome@flowerday.cx>
 
 	* configure.ac: 
