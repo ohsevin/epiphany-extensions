@@ -7,6 +7,7 @@ libselectstylesheetmozilla_la_SOURCES = \
 mozilla_include_subdirs = \
 	.		\
 	dom		\
+	gtkembedmoz	\
 	necko		\
 	nkcache		\
 	webbrwsr

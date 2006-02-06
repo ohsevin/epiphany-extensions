@@ -15,6 +15,7 @@ liberrorviewermozilla_la_SOURCES = \
 mozilla_include_subdirs = \
 	.		\
 	dom		\
+	gtkembedmoz	\
 	jsconsole	\
 	necko		\
 	webbrwsr

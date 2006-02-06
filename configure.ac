@@ -17,6 +17,7 @@
 # $Id$
 
 AC_INIT([GNOME Web Browser Extensions],[1.9.6.90],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+
 GNOME_COMMON_INIT
 
 EPIPHANY_API_VERSION=1.10
@@ -32,14 +33,11 @@ AC_CONFIG_SRCDIR([extensions])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 
-AM_INIT_AUTOMAKE([1.9 dist-bzip2 no-dist-gzip check-news tar-ustar])
-
-# AC_SUBST([ACLOCAL_AMFLAGS], ["-I $ac_macro_dir \${ACLOCAL_FLAGS}"])
-AC_SUBST([ACLOCAL_AMFLAGS], ["\${ACLOCAL_FLAGS}"])
+AM_INIT_AUTOMAKE([1.9 foreign dist-bzip2 no-dist-gzip tar-ustar])
 
 AM_MAINTAINER_MODE
 
-AC_PROG_INTLTOOL([0.29])
+IT_PROG_INTLTOOL([0.34.2])
 
 AM_DISABLE_STATIC
 AC_ENABLE_SHARED(yes)
@@ -79,15 +77,13 @@ fi
 # ********************************
 
 # Translators: new languages must be added to the po/LINGUAS file
-ALL_LINGUAS="`cat "$srcdir/po/LINGUAS" | grep -v '^#'`"
-
-AC_SUBST([CONFIG_STATUS_DEPENDENCIES],['$(top_srcdir)/po/LINGUAS'])
 
 GETTEXT_PACKAGE=epiphany-extensions-$EPIPHANY_API_VERSION
 AC_SUBST([GETTEXT_PACKAGE])
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE],["$GETTEXT_PACKAGE"], [Gettext package])
-AM_GLIB_GNU_GETTEXT
-AM_GLIB_DEFINE_LOCALEDIR([LOCALE_DIR])
+
+AM_GNU_GETTEXT([external])
+AM_GNU_GETTEXT_VERSION([0.14])
 
 # ********************************
 # pkg config checks
@@ -302,7 +298,7 @@ seamonkey) min_version=1.0 ;;
 xulrunner) min_version=1.8 ;;
 esac
 
-PKG_CHECK_MODULES([MOZILLA_COMPONENT],[$MOZILLA-gtkmozembed >= $min_version])
+PKG_CHECK_MODULES([MOZILLA_COMPONENT],[${gecko_cv_gecko}-xpcom >= $min_version $gecko_cv_extra_pkg_dependencies])
 AC_SUBST([MOZILLA_COMPONENT_CFLAGS])
 AC_SUBST([MOZILLA_COMPONENT_LIBS])
 

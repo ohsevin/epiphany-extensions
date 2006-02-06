@@ -9,6 +9,7 @@ mozilla_include_subdirs = \
 	content		\
 	docshell	\
 	dom		\
+	gtkembedmoz	\
 	webbrwsr	\
 	widget		\
 	xpcom

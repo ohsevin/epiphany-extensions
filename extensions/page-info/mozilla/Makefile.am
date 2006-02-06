@@ -11,6 +11,7 @@ mozilla_include_subdirs = \
 	chardet		\
 	content		\
 	dom		\
+	gtkembedmoz	\
 	layout		\
 	nkcache		\
 	necko		\
