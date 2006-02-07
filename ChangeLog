@@ -1,5 +1,12 @@
 2006-02-07  Crispin Flowerday  <gnome@flowerday.cx>
 
+	* extensions/error-viewer/ephy-error-viewer-extension.c:
+	(update_actions):
+
+	Fix a compile warning
+
+2006-02-07  Crispin Flowerday  <gnome@flowerday.cx>
+
 	* extensions/extensions-manager-ui/extensions-manager-ui.c:
 	(store_extension), (active_sync):
 
