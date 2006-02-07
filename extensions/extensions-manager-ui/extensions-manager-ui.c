@@ -176,7 +176,7 @@ store_extension (GtkListStore *store,
 	gtk_list_store_set (store, &iter,
 				COL_INFO, info,
 				COL_NAME, name,
-				COL_TOGGLE, info->active,
+				COL_TOGGLE, info->enabled,
 				COL_DISPLAY, display,
 				-1);
 
@@ -278,7 +278,7 @@ active_sync (EphyExtensionsManager *manager,
 		if (row_info == info)
 		{
 			gtk_list_store_set (GTK_LIST_STORE (model), &iter,
-					    COL_TOGGLE, info->active,
+					    COL_TOGGLE, info->enabled,
 					    -1);
 			break;
 		}

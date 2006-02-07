@@ -1,3 +1,12 @@
+2006-02-07  Crispin Flowerday  <gnome@flowerday.cx>
+
+	* extensions/extensions-manager-ui/extensions-manager-ui.c:
+	(store_extension), (active_sync):
+
+	Sync the checkbox against the 'enabled' flag not the 'active'
+	flag, so that failed extensions can be disabled.
+	Fixes bug #164704
+
 2006-02-07  Christian Persch  <chpe@cvs.gnome.org>
 
 	* m4/epiphany.m4:
