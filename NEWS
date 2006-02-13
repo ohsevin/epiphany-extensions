@@ -1,4 +1,21 @@
 =========================
+Epiphany Extensions 1.9.7
+=========================
+
+Changes:
+	* Make the Extension Manager reflect which extensions are enabled,
+	 not which are active. Fixes bug #164704
+	* Remove references to bookmarks-tray. It is broken and won't be fixed
+	  by 1.10
+
+Contributors to this release:
+Christian Persch, Crispin Flowerday
+
+Updated translations:
+
+	* Ignacio Casal Quinteiro (gl)
+
+=========================
 Epiphany Extensions 1.9.6
 =========================
 

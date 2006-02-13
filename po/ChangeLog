@@ -1,3 +1,9 @@
+2006-02-13  Crispin Flowerday  <gnome@flowerday.cx>
+
+	* POTFILES.skip
+	* POTFILES.in:
+	Move bookmarks-tray files to .skip (it isn't compiled or shipped)
+
 2006-02-02  Ignacio Casal Quinteiro  <nacho.resa@gmail.com>
 
 	* gl.po: Updated Galician Translation.

@@ -1,3 +1,12 @@
+2006-02-13  Crispin Flowerday  <gnome@flowerday.cx>
+
+	=== Release 1.9.7 ===
+	
+	* NEWS:
+	* configure.ac:
+
+	Update for 1.9.7
+	
 2006-02-07  Crispin Flowerday  <gnome@flowerday.cx>
 
 	* extensions/error-viewer/ephy-error-viewer-extension.c:

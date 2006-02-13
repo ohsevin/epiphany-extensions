@@ -13,3 +13,7 @@ extensions/sidebar/sidebar-commands.c
 extensions/adblock/adblock.ephy-extension.in.in
 extensions/toolbar-extras/toolbar-extras.ephy-extension.in.in
 
+
+#These are removed while bookmarks-tray isn't being shipped
+extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c
+[type: gettext/ini]extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in
