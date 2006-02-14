@@ -210,9 +210,13 @@ AC_LANG_POP([C++])
 if test "$gecko_cv_have_debug" = "yes"; then
 	_GECKO_EXTRA_CXXFLAGS="$_GECKO_EXTRA_CXXFLAGS -DDEBUG -D_DEBUG"
 	AM_CXXFLAGS="-DDEBUG -D_DEBUG $AM_CXXFLAGS"
+
+	AC_DEFINE([HAVE_GECKO_DEBUG],[1],[Define if gecko is a debug build])
 fi
 
 fi # if gecko_cv_have_gecko
+
+AM_CONDITIONAL([HAVE_GECKO_DEBUG],[test "$gecko_cv_have_debug" = "yes"])
 
 # ***********************
 # Check for gecko version
@@ -281,13 +285,19 @@ $1[]_VERSION_MINOR=$gecko_cv_gecko_version_minor
 # Packages that we need to check for with pkg-config 
 # **************************************************
 
-if test "$gecko_cv_gecko" = "xulrunner" -a "$gecko_cv_gecko_version_major" = "1" -a "$gecko_cv_gecko_version_minor" -ge "9"; then
-	gecko_cv_extra_pkg_dependencies=
+gecko_cv_extra_libs=
+gecko_cv_extra_pkg_dependencies=
+
+if test "$gecko_cv_gecko_version_major" = "1" -a "$gecko_cv_gecko_version_minor" -ge "9"; then
+	if test "$gecko_cv_gecko" != "xulrunner"; then
+		gecko_cv_extra_libs="-lxul"
+	fi
 else
 	gecko_cv_extra_pkg_dependencies="${gecko_cv_gecko}-gtkmozembed"
 fi
 
 $1[]_EXTRA_PKG_DEPENDENCIES="$gecko_cv_extra_pkg_dependencies"
+$1[]_EXTRA_LIBS="$gecko_cv_extra_libs"
 
 ])
 
@@ -379,7 +389,11 @@ GECKO_RUN_IFELSE([],
 #include <nsILocalFile.h>
 #include <nsIServiceManager.h>
 #include <nsIComponentRegistrar.h>
+#ifdef HAVE_GECKO_1_8
+#include <nsStringAPI.h>
+#else
 #include <nsString.h>
+#endif
 ]],[[
 // redirect unwanted mozilla debug output
 freopen ("/dev/null", "w", stdout);

@@ -1,3 +1,9 @@
+2006-02-14  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* m4/gecko.m4:
+
+	Updated from Epiphany.
+
 2006-02-13  Crispin Flowerday  <gnome@flowerday.cx>
 
 	* configure.ac: 
