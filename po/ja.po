@@ -1,17 +1,17 @@
 # Japanese Epiphany Plugins translation
-# Copyright (C) 2003-2005 Christian Persch 
+# Copyright (C) 2003-2006 Christian Persch 
 # This file is distributed under the same license as the Epiphany Plugins package.
 # Christian Persch <chpe+ephyplugins@stud.uni-saarland.de>, 2003.
 # Yukhiro Nakai <nakai@gnome.gr.jp>, 2004.
-# Takeshi AIHANA <aihana@gnome.gr.jp>, 2004,2005.
+# Takeshi AIHANA <aihana@gnome.gr.jp>, 2004-2006.
 #
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-18 16:46+0900\n"
-"PO-Revision-Date: 2005-12-18 16:46+0900\n"
+"POT-Creation-Date: 2006-02-20 23:05+0900\n"
+"PO-Revision-Date: 2006-02-20 23:05+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -128,41 +128,13 @@ msgstr "\"%s\" のプロパティ"
 msgid "Action Properties"
 msgstr "アクションのプロパティ"
 
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
-msgid "_Edit Bookmarks"
-msgstr "ブックマークの編集(_E)"
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+msgid "_Auto Reload"
+msgstr "自動読み込み(_A)"
 
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
-msgid "Open the bookmarks window"
-msgstr "ブックマーク・ウィンドウを開きます"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
-msgid "Open in _Current Tab"
-msgstr "このタブの中に開く(_C)"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
-msgid "Open bookmarks in the current tab of the active window"
-msgstr "アクティブなウィンドウのタブの中にブックマークを開きます"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
-msgid "Open in New _Tab"
-msgstr "新しいタブの中に開く(_T)"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
-msgid "Open bookmarks in a new tab of the active window"
-msgstr "アクティブなウィンドウの新しいタブの中にブックマークを開きます"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
-msgid "Open in New _Window"
-msgstr "新しいウィンドウの中に開く(_W)"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
-msgid "Open bookmarks in new a window"
-msgstr "新しいウィンドウの中にブックマークを開きます"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:531
-msgid "Bookmarks"
-msgstr "ブックマーク"
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
+msgid "Reload the page periodically"
+msgstr "定期的にページを読み込みます"
 
 #: ../extensions/certificates/ephy-certificates-extension.c:173
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
@@ -355,7 +327,7 @@ msgid "Enabled"
 msgstr "有効"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.c:348
-#: ../extensions/rss/rss-ui.c:569
+#: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "説明"
 
@@ -368,8 +340,8 @@ msgid "Extensions"
 msgstr "Epiphany 拡張機能"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
-msgid "_Extensions"
-msgstr "拡張機能(_E)"
+msgid "_Extensions..."
+msgstr "拡張機能(_E)..."
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
 msgid "Load and unload extensions"
@@ -406,154 +378,154 @@ msgstr "ページ情報(_G)"
 msgid "Display page information in a dialog"
 msgstr "ページ情報をダイアログに表示します"
 
-#: ../extensions/page-info/page-info-dialog.c:710
+#: ../extensions/page-info/page-info-dialog.c:726
 msgid "Save As..."
 msgstr "別名で保存..."
 
-#: ../extensions/page-info/page-info-dialog.c:727
+#: ../extensions/page-info/page-info-dialog.c:743
 msgid "Select a directory"
 msgstr "フォルダの選択"
 
-#: ../extensions/page-info/page-info-dialog.c:776
+#: ../extensions/page-info/page-info-dialog.c:792
 msgid "Unknown type"
 msgstr "種類を特定できません"
 
-#: ../extensions/page-info/page-info-dialog.c:781
+#: ../extensions/page-info/page-info-dialog.c:797
 msgid "Full standards compliance"
 msgstr "完全に標準互換"
 
-#: ../extensions/page-info/page-info-dialog.c:784
+#: ../extensions/page-info/page-info-dialog.c:800
 msgid "Almost standards compliance"
 msgstr "ほぼ標準互換"
 
-#: ../extensions/page-info/page-info-dialog.c:787
+#: ../extensions/page-info/page-info-dialog.c:803
 msgid "Compatibility"
 msgstr "互換性"
 
-#: ../extensions/page-info/page-info-dialog.c:791
+#: ../extensions/page-info/page-info-dialog.c:807
 msgid "Undetermined"
 msgstr "未確認"
 
-#: ../extensions/page-info/page-info-dialog.c:800
+#: ../extensions/page-info/page-info-dialog.c:816
 msgid "Not cached"
 msgstr "キャッシュされていない"
 
-#: ../extensions/page-info/page-info-dialog.c:803
+#: ../extensions/page-info/page-info-dialog.c:819
 msgid "Disk cache"
 msgstr "ディスクへキャッシュ済"
 
-#: ../extensions/page-info/page-info-dialog.c:806
+#: ../extensions/page-info/page-info-dialog.c:822
 msgid "Memory cache"
 msgstr "メモリへキャッシュ済"
 
-#: ../extensions/page-info/page-info-dialog.c:809
+#: ../extensions/page-info/page-info-dialog.c:825
 msgid "Unknown cache"
 msgstr "キャッシュを特定できません"
 
-#: ../extensions/page-info/page-info-dialog.c:825
-#: ../extensions/page-info/page-info-dialog.c:936
+#: ../extensions/page-info/page-info-dialog.c:841
+#: ../extensions/page-info/page-info-dialog.c:952
 msgid "Unknown"
 msgstr "不明"
 
-#: ../extensions/page-info/page-info-dialog.c:830
+#: ../extensions/page-info/page-info-dialog.c:846
 msgid "No referrer"
 msgstr "照会者なし"
 
-#: ../extensions/page-info/page-info-dialog.c:844
 #: ../extensions/page-info/page-info-dialog.c:860
+#: ../extensions/page-info/page-info-dialog.c:876
 msgid "Not specified"
 msgstr "指定なし"
 
-#: ../extensions/page-info/page-info-dialog.c:921
+#: ../extensions/page-info/page-info-dialog.c:937
 msgid "Image"
 msgstr "画像"
 
-#: ../extensions/page-info/page-info-dialog.c:924
+#: ../extensions/page-info/page-info-dialog.c:940
 msgid "Embed"
 msgstr "埋め込み"
 
-#: ../extensions/page-info/page-info-dialog.c:927
+#: ../extensions/page-info/page-info-dialog.c:943
 msgid "Object"
 msgstr "オブジェクト"
 
-#: ../extensions/page-info/page-info-dialog.c:930
+#: ../extensions/page-info/page-info-dialog.c:946
 msgid "Applet"
 msgstr "アプレット"
 
-#: ../extensions/page-info/page-info-dialog.c:933
+#: ../extensions/page-info/page-info-dialog.c:949
 msgid "Icon"
 msgstr "アイコン"
 
-#: ../extensions/page-info/page-info-dialog.c:1038
+#: ../extensions/page-info/page-info-dialog.c:1054
 msgid "_Open"
 msgstr "開く(_O)"
 
-#: ../extensions/page-info/page-info-dialog.c:1044
-#: ../extensions/page-info/page-info-dialog.c:1402
+#: ../extensions/page-info/page-info-dialog.c:1060
+#: ../extensions/page-info/page-info-dialog.c:1420
 msgid "_Copy Link Address"
 msgstr "リンク先のコピー(_C)"
 
-#: ../extensions/page-info/page-info-dialog.c:1050
+#: ../extensions/page-info/page-info-dialog.c:1066
 msgid "_Use as Background"
 msgstr "背景として使用(_U)"
 
-#: ../extensions/page-info/page-info-dialog.c:1056
-#: ../extensions/page-info/page-info-dialog.c:1408
+#: ../extensions/page-info/page-info-dialog.c:1072
+#: ../extensions/page-info/page-info-dialog.c:1426
 msgid "_Save As..."
 msgstr "別名で保存(_S)..."
 
-#: ../extensions/page-info/page-info-dialog.c:1239
-#: ../extensions/page-info/page-info-dialog.c:1480
+#: ../extensions/page-info/page-info-dialog.c:1256
+#: ../extensions/page-info/page-info-dialog.c:1499
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1251
+#: ../extensions/page-info/page-info-dialog.c:1269
 msgid "Type"
 msgstr "種類"
 
-#: ../extensions/page-info/page-info-dialog.c:1263
+#: ../extensions/page-info/page-info-dialog.c:1281
 msgid "Alt Text"
 msgstr "代替文字列"
 
-#: ../extensions/page-info/page-info-dialog.c:1275
-#: ../extensions/page-info/page-info-dialog.c:1492
+#: ../extensions/page-info/page-info-dialog.c:1293
+#: ../extensions/page-info/page-info-dialog.c:1512
 msgid "Title"
 msgstr "タイトル"
 
-#: ../extensions/page-info/page-info-dialog.c:1287
+#: ../extensions/page-info/page-info-dialog.c:1305
 msgid "Width"
 msgstr "幅"
 
-#: ../extensions/page-info/page-info-dialog.c:1299
+#: ../extensions/page-info/page-info-dialog.c:1317
 msgid "Height"
 msgstr "高さ"
 
-#: ../extensions/page-info/page-info-dialog.c:1504
+#: ../extensions/page-info/page-info-dialog.c:1524
 msgid "Relation"
 msgstr "関係"
 
-#: ../extensions/page-info/page-info-dialog.c:1634
-#: ../extensions/page-info/page-info-dialog.c:1771
+#: ../extensions/page-info/page-info-dialog.c:1654
+#: ../extensions/page-info/page-info-dialog.c:1793
 msgid "Name"
 msgstr "名前"
 
-#: ../extensions/page-info/page-info-dialog.c:1646
+#: ../extensions/page-info/page-info-dialog.c:1666
 msgid "Method"
 msgstr "メソッド"
 
-#: ../extensions/page-info/page-info-dialog.c:1658
+#: ../extensions/page-info/page-info-dialog.c:1680
 msgid "Action"
 msgstr "アクション"
 
-#: ../extensions/page-info/page-info-dialog.c:1737
+#: ../extensions/page-info/page-info-dialog.c:1759
 msgid "_Copy"
 msgstr "コピー(_C)"
 
-#: ../extensions/page-info/page-info-dialog.c:1783
+#: ../extensions/page-info/page-info-dialog.c:1805
 msgid "Content"
 msgstr "コンテンツ"
 
-#: ../extensions/page-info/page-info-dialog.c:1882
+#: ../extensions/page-info/page-info-dialog.c:1904
 msgid "Page Metadata"
 msgstr "ページのメタデータ"
 
@@ -728,40 +700,40 @@ msgstr "サイトの権限(_P)"
 msgid "Manage web site permissions"
 msgstr "ウェブ・サイトの権限を管理します"
 
-#: ../extensions/rss/ephy-rss-extension.c:94
+#: ../extensions/rss/ephy-rss-extension.c:98
 msgid "News Feeds Subscription"
 msgstr "ニュース配信元の購読"
 
-#: ../extensions/rss/ephy-rss-extension.c:96
+#: ../extensions/rss/ephy-rss-extension.c:100
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr ""
 "このウェブサイトのニュース配信元をお気に入りのニュース・リーダで購読します"
 
-#: ../extensions/rss/ephy-rss-extension.c:101
+#: ../extensions/rss/ephy-rss-extension.c:105
 msgid "_Subscribe to this feed"
 msgstr "この配信元を購読する(_S)"
 
-#: ../extensions/rss/ephy-rss-extension.c:103
+#: ../extensions/rss/ephy-rss-extension.c:107
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "この配信元をお気に入りのニュース・リーダで購読します"
 
-#: ../extensions/rss/ephy-rss-extension.c:373
+#: ../extensions/rss/ephy-rss-extension.c:392
 msgid "Subscribe to site's news feed"
 msgstr "このサイトのニュース配信元を購読します"
 
-#: ../extensions/rss/rss-ui.c:154
+#: ../extensions/rss/rss-ui.c:167
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr "<b><i>配信元リーダへ接続できません。既に実行中ですか？</i></b>"
 
-#: ../extensions/rss/rss-ui.c:156
+#: ../extensions/rss/rss-ui.c:169
 msgid "Retry"
 msgstr "再試行"
 
-#: ../extensions/rss/rss-ui.c:284
+#: ../extensions/rss/rss-ui.c:297
 msgid "_Copy Feed Address"
 msgstr "配信元アドレスのコピー(_C)"
 
-#: ../extensions/rss/rss-ui.c:562
+#: ../extensions/rss/rss-ui.c:591
 msgid "Subscribe"
 msgstr "購読する"
 
@@ -871,13 +843,13 @@ msgstr "自動スクロール"
 msgid "Scroll on middle mouse click"
 msgstr "マウスの中ボタンでスクロールします"
 
-#: ../extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in.h:1
-msgid "Add a bookmarks menu to the panel's notification area"
-msgstr "ブックマーク・メニューを GNOME パネルの通知スペースへ追加します"
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
+msgid "Auto Reload Tab"
+msgstr "タブの自動読み込み"
 
-#: ../extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in.h:2
-msgid "Bookmarks Tray"
-msgstr "ブックマーク・トレイ"
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
+msgid "Reload a tab periodically"
+msgstr "定期的にタブを読み込みます"
 
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
@@ -941,15 +913,6 @@ msgstr "Java コンソール"
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
 msgid "Provide access to the Java-Plugin Console"
 msgstr "Java プラグイン・コンソールを提供します"
-
-#: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:1
-msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
-msgstr ""
-"自動的にネットワークのオンライン/オフライン状態を操作します (EXPERIMENTAL!)"
-
-#: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:2
-msgid "Network Connection Monitor"
-msgstr "ネットワーク接続の監視"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
