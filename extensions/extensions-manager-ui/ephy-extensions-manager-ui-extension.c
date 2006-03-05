@@ -152,9 +152,12 @@ display_cb (GtkAction *action,
 
 	if (priv->dialog == NULL)
 	{
+		ExtensionsManagerUI **dialog;
+
 		priv->dialog = extensions_manager_ui_new ();
+		dialog = &priv->dialog;
 		g_object_add_weak_pointer (G_OBJECT (priv->dialog),
-					   (gpointer *) &priv->dialog);
+					   (gpointer *) dialog);
 	}
 
 	ephy_dialog_show (EPHY_DIALOG (priv->dialog));

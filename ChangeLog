@@ -1,3 +1,15 @@
+2006-03-05  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/certificates/ephy-certificates-extension.c:(ephy_certificates_extension_finalize),
+	(manage_certificates_cb),(manage_certificates_cb),(manage_devices_cb):
+	* extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:
+	(display_cb):
+	* extensions/permissions/ephy-permissions-extension.c: (ephy_permissions_extension_finalize),
+	(manage_permissions_cb):
+	* extensions/rss/ephy-rss-extension.c: (ephy_rss_dialog_display), (ephy_rss_extension_finalize):
+
+	Fix gcc 4.1 warnings (dereferencing type-punned pointer will break strict-aliasing rules).	
+
 2006-02-14  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* m4/gecko.m4:

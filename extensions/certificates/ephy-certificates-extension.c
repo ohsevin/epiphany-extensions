@@ -130,16 +130,20 @@ ephy_certificates_extension_finalize (GObject *object)
 
 	if (priv->cert_manager)
 	{
+		GtkWidget **cert_manager = &priv->cert_manager;
+
 		g_object_remove_weak_pointer (G_OBJECT (priv->cert_manager),
-					      (gpointer *) &priv->cert_manager);
+					      (gpointer *) cert_manager);
 		gtk_widget_destroy (priv->cert_manager);
 		priv->cert_manager = NULL;
 	}
 
 	if (priv->device_manager)
 	{
+		GtkWidget **device_manager = &priv->device_manager;
+
 		g_object_remove_weak_pointer (G_OBJECT (priv->device_manager),
-					      (gpointer *) &priv->device_manager);
+					      (gpointer *) device_manager);
 		gtk_widget_destroy (priv->device_manager);
 		priv->device_manager = NULL;
 	}
@@ -153,7 +157,7 @@ manage_certificates_cb (GtkAction *action,
 {
 	EphyCertificatesExtensionPrivate *priv = extension->priv;
 	EphyEmbedSingle *single;
-	GtkWidget *manager, *window;
+	GtkWidget *manager, *window, **widget;
 
 	if (priv->cert_manager != NULL)
 	{
@@ -173,8 +177,9 @@ manage_certificates_cb (GtkAction *action,
 	gtk_window_set_title (GTK_WINDOW (window), _("Certificates"));
 
 	priv->cert_manager = window;
+	widget = &priv->cert_manager;
 	g_object_add_weak_pointer (G_OBJECT (priv->cert_manager),
-				   (gpointer *) &priv->cert_manager);
+				   (gpointer *) widget);
 }
 
 static void
@@ -183,7 +188,7 @@ manage_devices_cb (GtkAction *action,
 {
 	EphyCertificatesExtensionPrivate *priv = extension->priv;
 	EphyEmbedSingle *single;
-	GtkWidget *manager, *window;
+	GtkWidget *manager, *window, **widget;
 
 	if (priv->device_manager != NULL)
 	{
@@ -203,8 +208,9 @@ manage_devices_cb (GtkAction *action,
 	gtk_window_set_title (GTK_WINDOW (window), _("Security Devices"));
 
 	priv->device_manager = window;
+	widget = &priv->device_manager;
 	g_object_add_weak_pointer (G_OBJECT (priv->device_manager),
-				   (gpointer *) &priv->device_manager);
+				   (gpointer *) widget);
 }
 
 static void

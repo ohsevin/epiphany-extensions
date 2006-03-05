@@ -117,8 +117,10 @@ ephy_permissions_extension_finalize (GObject *object)
 
 	if (priv->dialog != NULL)
 	{
+		GtkWidget **dialog = &priv->dialog;
+
 		g_object_remove_weak_pointer (G_OBJECT (priv->dialog),
-					      (gpointer *) &priv->dialog);
+					      (gpointer *) dialog);
 		gtk_widget_destroy (priv->dialog);
 		priv->dialog = NULL;
 	}
@@ -130,6 +132,7 @@ static void
 manage_permissions_cb (GtkAction *action,
 		       EphyPermissionsExtension *extension)
 {
+	GtkWidget **dialog;
 	EphyPermissionsExtensionPrivate *priv = extension->priv;
 
 	if (priv->dialog != NULL)
@@ -139,10 +142,11 @@ manage_permissions_cb (GtkAction *action,
 	}  
 
 	priv->dialog = ephy_permissions_dialog_new ();
+	dialog = &priv->dialog;
 	gtk_window_present (GTK_WINDOW (priv->dialog));
 
 	g_object_add_weak_pointer (G_OBJECT (priv->dialog),
-				   (gpointer *) &priv->dialog);
+				   (gpointer *) dialog);
 }
 
 static const GtkActionEntry action_entries [] =

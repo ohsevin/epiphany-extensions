@@ -215,12 +215,16 @@ ephy_rss_dialog_display (EphyWindow *window)
 	
 	if (priv->dialog == NULL)
 	{
+		RssUI **dialog;
+
 		LOG ("Trying to build dialog");
 		
 		priv->dialog = rss_ui_new (list, embed);
+
+		dialog = &priv->dialog;
 		
 		g_object_add_weak_pointer (G_OBJECT (priv->dialog),
-					   (gpointer *) &priv->dialog);
+					   (gpointer *) dialog);
 	}
 
 	ephy_dialog_set_parent (EPHY_DIALOG (priv->dialog),
@@ -547,9 +551,11 @@ ephy_rss_extension_finalize (GObject *object)
 	/* Dispose the dialog */
 	if (extension->priv->dialog != NULL)
 	{
-		g_object_unref (extension->priv->dialog);
-		g_object_remove_weak_pointer (G_OBJECT (extension->priv->dialog),
-					      (gpointer *) &extension->priv->dialog);
+		RssUI **dialog = &extension->priv->dialog;
+
+		g_object_unref (*dialog);
+		g_object_remove_weak_pointer (G_OBJECT (*dialog),
+					      (gpointer *) dialog);
 	}
 
 	parent_class->finalize (object);
