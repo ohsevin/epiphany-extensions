@@ -2,14 +2,14 @@
 # translation of es.po to Spanish
 # This file is distributed under the same license as the epiphany package.
 # Copyright (C) 2003 The Free Software Foundation.
-# Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2004, 2005.
+# Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2004, 2005, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-28 01:00+0100\n"
-"PO-Revision-Date: 2006-01-28 01:01+0100\n"
+"POT-Creation-Date: 2006-03-09 00:31+0100\n"
+"PO-Revision-Date: 2006-03-09 00:42+0100\n"
 "Last-Translator: Francisco Javier F. Serrador <serrador@cvs.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -135,78 +135,42 @@ msgstr "_Autorecargar"
 msgid "Reload the page periodically"
 msgstr "Recarga la página periódicamente"
 
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
-msgid "_Edit Bookmarks"
-msgstr "_Editar marcadores"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
-msgid "Open the bookmarks window"
-msgstr "Abrir la ventana de marcadores"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
-msgid "Open in _Current Tab"
-msgstr "Abrir en la solapa _actual"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
-msgid "Open bookmarks in the current tab of the active window"
-msgstr "Abre los marcadores en la solapa actual de la ventana activa"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
-msgid "Open in New _Tab"
-msgstr "Abrir en una _solapa nueva"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
-msgid "Open bookmarks in a new tab of the active window"
-msgstr "Abre los marcadores en una solapa nueva de la ventana activa"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
-msgid "Open in New _Window"
-msgstr "Abrir en una _ventana nueva"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
-msgid "Open bookmarks in new a window"
-msgstr "Abre los marcadores en una ventana nueva"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:531
-msgid "Bookmarks"
-msgstr "Marcadores"
-
-#: ../extensions/certificates/ephy-certificates-extension.c:173
+#: ../extensions/certificates/ephy-certificates-extension.c:177
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "Certificados"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:203
+#: ../extensions/certificates/ephy-certificates-extension.c:208
 msgid "Security Devices"
 msgstr "Dispositivos de seguridad"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:321
+#: ../extensions/certificates/ephy-certificates-extension.c:327
 msgid "Manage _Certificates"
 msgstr "Administrar _certificados"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:323
+#: ../extensions/certificates/ephy-certificates-extension.c:329
 msgid "Manage your certificates"
 msgstr "Administra sus certificados"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:327
+#: ../extensions/certificates/ephy-certificates-extension.c:333
 msgid "Manage Security _Devices"
 msgstr "Administrar _dispositivos de seguridad"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:329
+#: ../extensions/certificates/ephy-certificates-extension.c:335
 msgid "Manage your security devices"
 msgstr "Administra sus dispositivos de seguridad"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:336
+#: ../extensions/certificates/ephy-certificates-extension.c:342
 msgid "Server _Certificate"
 msgstr "_Certificado del servidor"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:338
+#: ../extensions/certificates/ephy-certificates-extension.c:344
 msgid "Display the web server's certificate"
 msgstr "Mostrar el certificado del servidor web"
 
@@ -726,12 +690,12 @@ msgid "Popup Windows"
 msgstr "Ventanas emergentes"
 
 #. stock icon
-#: ../extensions/permissions/ephy-permissions-extension.c:152
+#: ../extensions/permissions/ephy-permissions-extension.c:156
 msgid "Site _Permissions"
 msgstr "_Permisos del sitio"
 
 #. shortcut key
-#: ../extensions/permissions/ephy-permissions-extension.c:154
+#: ../extensions/permissions/ephy-permissions-extension.c:158
 msgid "Manage web site permissions"
 msgstr "Gestionar permisos del sitio web"
 
@@ -742,21 +706,20 @@ msgstr "Subscripción a proveedores de noticias"
 #: ../extensions/rss/ephy-rss-extension.c:100
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr ""
-"Subscribirse al proveedor de noticias de este web en su lector de noticas "
+"Suscribirse al proveedor de noticias de este web en su lector de noticias "
 "favorito"
 
 #: ../extensions/rss/ephy-rss-extension.c:105
 msgid "_Subscribe to this feed"
-msgstr "_Subscribirse a este proveedor"
+msgstr "_Suscribirse a este proveedor"
 
 #: ../extensions/rss/ephy-rss-extension.c:107
 msgid "Subscribe to this feed in your favorite news reader"
-msgstr ""
-"Subscribirse a este proveedor de noticias en su lector de noticias favorito"
+msgstr "Suscribirse a este proveedor de noticias en su lector de noticias favorito"
 
-#: ../extensions/rss/ephy-rss-extension.c:392
+#: ../extensions/rss/ephy-rss-extension.c:396
 msgid "Subscribe to site's news feed"
-msgstr "Subscribirse al proveedor de noticas del sitio"
+msgstr "Suscribirse al proveedor de noticias del sitio"
 
 #: ../extensions/rss/rss-ui.c:167
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
@@ -890,14 +853,6 @@ msgstr "Autorecargar solapa"
 msgid "Reload a tab periodically"
 msgstr "Recarga la solapa periódicamente"
 
-#: ../extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in.h:1
-msgid "Add a bookmarks menu to the panel's notification area"
-msgstr "Añade un menú de marcadores al área de notificación del panel"
-
-#: ../extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in.h:2
-msgid "Bookmarks Tray"
-msgstr "Bandeja de marcadores"
-
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Vea el certificado de página y gestione los certificados"
@@ -916,8 +871,7 @@ msgstr "Visor de errores"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
 msgid "View error in web pages, validate web pages and check links"
-msgstr ""
-"Vea los errores en las páginas web, valida páginas web y comprueba enlaces"
+msgstr "Vea los errores en las páginas web, valida páginas web y comprueba enlaces"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
 msgid "Activate and deactivate extensions"
@@ -932,8 +886,7 @@ msgid "Favicon fallback"
 msgstr "Recuperación de Favicon"
 
 #: ../extensions/favicon/favicon.ephy-extension.in.h:2
-msgid ""
-"Loads /favicon.ico as favicon if the site doesn't use the standard method"
+msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
 msgstr "Carga /favicon.ico como favicon si el sitio no usa el método estándar"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
@@ -964,8 +917,7 @@ msgstr "Proporcionar acceso a la consola del complemento de Java"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
-msgstr ""
-"Muestra información acerca de los enlaces y los medios desde la página actual"
+msgstr "Muestra información acerca de los enlaces y los medios desde la página actual"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
 msgid "Page Info"
@@ -984,11 +936,10 @@ msgid "News Feed Subscription"
 msgstr "Suscripción a proveedores de noticias"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
-msgid ""
-"Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr ""
-"Suscríbase a proveedores de noticas obfrecidos por la página web en su "
-"lector de noticas favorito"
+"Suscríbase a proveedores de noticias ofrecidos por la página web en su "
+"lector de noticias favorito"
 
 #: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
 msgid "A sample extension with mozilla backend"
@@ -1012,8 +963,7 @@ msgstr "Seleccione la hoja de estilo"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
-msgstr ""
-"Seleccionar entre direrentes hojas de estilo ofrecidas por la página web"
+msgstr "Seleccionar entre diferentes hojas de estilo ofrecidas por la página web"
 
 #: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
 msgid "Adds a sidebar to windows"
@@ -1055,108 +1005,3 @@ msgstr "Indica el contenido nuevo en solapas en segundo plano"
 msgid "Tab States"
 msgstr "Estado de solapas"
 
-#~ msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
-#~ msgstr ""
-#~ "Manipula automáticamente el estado conectado/desconectado (Experimental)"
-
-#~ msgid "Network Connection Monitor"
-#~ msgstr "Monitor de conexión de red"
-
-#~ msgid "_Page Info"
-#~ msgstr "_Información de la página"
-
-#~ msgid "Save Medium As..."
-#~ msgstr "Guardar soporte como..."
-
-#~ msgid "Search string"
-#~ msgstr "Cadena de búsqueda"
-
-#~ msgid "The name of the string to be found"
-#~ msgstr "El nombre de la cadena que se quiere encontrar"
-
-#~ msgid "Case sensitive"
-#~ msgstr "Sensible a capitalización"
-
-#~ msgid "TRUE for a case sensitive search"
-#~ msgstr "TRUE para una búsqueda sensible a capitalización"
-
-#~ msgid "Highlight color"
-#~ msgstr "Color de resaltado"
-
-#~ msgid "Color of highlight for all matches"
-#~ msgstr "Color de resaltado para todas las coincidencias"
-
-#~ msgid "Current color"
-#~ msgstr "Color actual"
-
-#~ msgid "Color of highlight for the current match"
-#~ msgstr "Color de resaltado para la coincidencia actual"
-
-#~ msgid "F_ind:"
-#~ msgstr "_Buscar:"
-
-#~ msgid "_Previous"
-#~ msgstr "_Anterior"
-
-#~ msgid "_Next"
-#~ msgstr "_Siguiente"
-
-#~ msgid "C_ase Sensitive"
-#~ msgstr "Sensible a _capitalización"
-
-#~ msgid "Find"
-#~ msgstr "Buscar"
-
-#~ msgid "Replace the find dialog with a find toolbar"
-#~ msgstr "Reemplaza el diálogo de buqueda con una barra de búsqueda"
-
-#~ msgid "Loo_k-Up Preferences"
-#~ msgstr "_Buscar preferencias"
-
-#~ msgid "Look up your selection"
-#~ msgstr "Buscar en su selección"
-
-#~ msgid "Add GNOME Dictionary to the menu"
-#~ msgstr "Añadir el diccionario de Gnome al menú"
-
-#~ msgid "Look Up Preferences"
-#~ msgstr "Buscar preferencias"
-
-#~ msgid "Open search results in a new tab"
-#~ msgstr "Abrir resultados de búsqueda en una solapa nueva"
-
-#~ msgid "*"
-#~ msgstr "*"
-
-#~ msgid "<b>Images In Page</b>"
-#~ msgstr "<b>Imágenes en la página</b>"
-
-#~ msgid "Certificate Manager"
-#~ msgstr "Administrador de certificados"
-
-#~ msgid "Show or hide unrequested popup windows from this site"
-#~ msgstr ""
-#~ "Mostrar u ocultar las ventanas emergentes no  solicitadas de este sitio"
-
-#~ msgid "%d popup window blocked"
-#~ msgid_plural "%d popup windows blocked"
-#~ msgstr[0] "%d emergente bloqueado"
-#~ msgstr[1] "%d emergentes bloqueados"
-
-#~ msgid "Blo_ck Popups from this Site"
-#~ msgstr "_Bloquear emergentes de este sitio"
-
-#~ msgid "Block or unblock popup windows"
-#~ msgstr "Bloquea o desbloquea ventanas emergentes"
-
-#~ msgid "_Validate"
-#~ msgstr "_Validar"
-
-#~ msgid ""
-#~ "HTML warning in %s:\n"
-#~ "Doctype is XHTML but content type is text/html.  Use application/xhtml"
-#~ "+xml instead."
-#~ msgstr ""
-#~ "Aviso HTML en %s\n"
-#~ "Doctype es XHTML pero el tipo de contenido es text/html.  Use application/"
-#~ "xhtml+xml en su lugar."
