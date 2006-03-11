@@ -49,6 +49,7 @@
 
 #define STATUSBAR_FRAME_KEY	"EphyAdblockExtensionStatusbarFrame"
 #define STATUSBAR_EVBOX_KEY	"EphyAdblockExtensionStatusbarEvbox"
+#define EXTENSION_KEY		"EphyAdblockExtension"
 #define ICON_FILENAME		"adblock-statusbar-icon.svg"
 
 struct EphyAdblockExtensionPrivate
@@ -60,6 +61,7 @@ static void ephy_adblock_extension_class_init	(EphyAdblockExtensionClass *klass)
 static void ephy_adblock_extension_iface_init	(EphyExtensionIface *iface);
 static void ephy_adblock_adblock_iface_init	(EphyAdBlockIface *iface);
 static void ephy_adblock_extension_init		(EphyAdblockExtension *extension);
+static AdBlocker * ensure_adblocker    		(EphyWindow *window, EphyEmbed *embed);
 
 static GObjectClass *parent_class = NULL;
 
@@ -179,7 +181,7 @@ update_statusbar (EphyWindow *window)
 	embed = ephy_window_get_active_embed (window);
 	g_return_if_fail (embed != NULL);
 
-	blocker = g_object_get_data (G_OBJECT (embed), AD_BLOCKER_KEY);
+	blocker = ensure_adblocker (window, embed);
 	g_return_if_fail (blocker != NULL);
 
 	statusbar = G_OBJECT (ephy_window_get_statusbar (window));
@@ -299,6 +301,9 @@ impl_attach_window (EphyExtension *ext,
 {
 	GtkWidget *notebook;
 
+	/* Remember the xtension attached to that window */
+	g_object_set_data (G_OBJECT (window), EXTENSION_KEY, ext);
+
 	create_statusbar_icon (window);
 
 	notebook = ephy_window_get_notebook (window);
@@ -359,27 +364,49 @@ num_blocked_cb (AdBlocker *blocker,
 	}
 }
 
+static AdBlocker *
+ensure_adblocker (EphyWindow *window, EphyEmbed *embed)
+{
+	AdBlocker *blocker;
+
+	blocker = g_object_get_data (G_OBJECT (embed), AD_BLOCKER_KEY);
+	
+	if (blocker == NULL)
+	{
+		EphyAdblockExtension *ext;
+	
+		ext = EPHY_ADBLOCK_EXTENSION (g_object_get_data (G_OBJECT (window), 
+								 EXTENSION_KEY));
+		g_return_val_if_fail (ext != NULL, NULL);
+
+		blocker = ad_blocker_new (ext->priv->tester);
+		g_return_val_if_fail (blocker != NULL, NULL);
+
+		g_object_set_data (G_OBJECT (embed), AD_BLOCKER_KEY, blocker);
+
+		g_signal_connect (embed, "ge-location",
+				G_CALLBACK (location_changed_cb), blocker);
+
+		g_signal_connect (embed, "content-blocked",
+				G_CALLBACK (content_blocked_cb), blocker);
+	}
+
+	return blocker;
+}
+
+
 static void
 impl_attach_tab (EphyExtension *ext,
 		 EphyWindow *window,
 		 EphyTab *tab)
 {
-	EphyAdblockExtension *extension = EPHY_ADBLOCK_EXTENSION (ext);
-	AdBlocker *blocker;
 	EphyEmbed *embed;
+	AdBlocker *blocker;
 	
 	embed = ephy_tab_get_embed (tab);
 
-	blocker = ad_blocker_new (extension->priv->tester);
+	blocker = ensure_adblocker (window, embed);
 	g_return_if_fail (blocker != NULL);
-
-	g_object_set_data (G_OBJECT (embed), AD_BLOCKER_KEY, blocker);
-
-	g_signal_connect (embed, "ge-location",
-			  G_CALLBACK (location_changed_cb), blocker);
-
-	g_signal_connect (embed, "content-blocked",
-			  G_CALLBACK (content_blocked_cb), blocker);
 
 	g_signal_connect (blocker, "notify::num-blocked",
 			  G_CALLBACK (num_blocked_cb), embed);

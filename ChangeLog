@@ -1,3 +1,11 @@
+2006-03-11  Jean-François Rameau  <jframeau@cvs.gnome.org>
+	
+	* extensions/adblock/ephy-adblock-extension.c:
+	
+	We now ensure that a blocker is attached to any window.
+	Prevent a critical when recovering a page from a previous crash (attach_tab
+	is called after switch_tab signal and then no blocker is attached to that tab).
+	
 2006-03-05  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/certificates/ephy-certificates-extension.c:(ephy_certificates_extension_finalize),
