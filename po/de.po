@@ -4,21 +4,21 @@
 # Christian Persch <chpe+ephyplugins@stud.uni-saarland.de>, 2003.
 # Christian Neumair <chris@gnome-de.org>, 2004.
 # Hendrik Brandt <heb@gnome-de.org>, 2004, 2005.
-# Frank Arnold <frank@scirocco-5v-turbo.de>, 2005.
+# Frank Arnold <frank@scirocco-5v-turbo.de>, 2005, 2006.
 # 
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany Extension HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-08-10 00:10+0200\n"
-"PO-Revision-Date: 2005-08-10 00:10+0200\n"
+"POT-Creation-Date: 2006-03-11 11:04+0100\n"
+"PO-Revision-Date: 2006-03-11 11:01+0100\n"
 "Last-Translator: Frank Arnold <frank@scirocco-5v-turbo.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../extensions/actions/action-properties.glade.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
@@ -53,8 +53,8 @@ msgid ""
 "The action name. If a character is preceded by an underscore, that character "
 "will be used as the access key for the menu item."
 msgstr ""
-"Der·Aktionsname.·Wenn·einem·Zeichen·ein·Unterstrich·vorangestellt·ist,"
-"·wird·dieses·Zeichen·als·Tastenkombination·für·den·Menüeintrag·verwendet."
+"Der Aktionsname. Wenn einem Zeichen ein Unterstrich vorangestellt ist, wird "
+"dieses Zeichen als Tastenkombination für den Menüeintrag verwendet."
 
 #: ../extensions/actions/action-properties.glade.h:7
 msgid ""
@@ -85,133 +85,96 @@ msgid "_Pages"
 msgstr "_Seiten"
 
 #: ../extensions/actions/actions-editor.glade.h:1
-#: ../extensions/actions/actions.xml.in.in.h:1
+#: ../extensions/actions/actions.ephy-extension.in.in.h:1
 msgid "Actions"
 msgstr "Aktionen"
 
-#: ../extensions/actions/actions.xml.in.in.h:2
-msgid "Execute arbitrary commands from the context menu"
-msgstr "Beliebige Befehle aus dem Kontextmenü heraus ausführen"
-
-#: ../extensions/actions/ephy-actions-extension.c:94
+#: ../extensions/actions/ephy-actions-extension.c:112
 msgid "_Actions"
 msgstr "_Aktionen"
 
-#: ../extensions/actions/ephy-actions-extension.c:95
+#: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Customize actions"
 msgstr "Aktionen einrichten"
 
-#: ../extensions/actions/ephy-actions-extension.c:408
+#: ../extensions/actions/ephy-actions-extension.c:436
 msgid "Could not run command"
 msgstr "Der Befehl konnte nicht ausgeführt werden"
 
-#: ../extensions/actions/ephy-actions-extension.c:411
+#: ../extensions/actions/ephy-actions-extension.c:439
 msgid "Could not Run Command"
 msgstr "Befehl konnte nicht ausgeführt werden"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:490
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:519
 msgid "No action selected."
 msgstr "Keine Aktion ausgewählt."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:500
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:529
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
 msgstr[0] "%i Aktion ausgewählt."
 msgstr[1] "%i Aktionen ausgewählt."
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:312
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
 msgstr "Aktion hinzufügen"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:421
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
 #, c-format
-msgid "%s Properties"
-msgstr "Eigenschaften von %s"
+msgid "“%s” Properties"
+msgstr "Eigenschaften von »%s«"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:426
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
 msgid "Action Properties"
 msgstr "Aktionseigenschaften"
 
-#: ../extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:1
-msgid "Add a bookmarks menu to the panel's notification area"
-msgstr "Ein Lesezeichenmenü zum Benachrichtigungsfeld des Panels hinzufügen"
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+msgid "_Auto Reload"
+msgstr "_Automatische Aktualisierung"
 
-#: ../extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:2
-msgid "Bookmarks Tray"
-msgstr "Lesezeichenschublade"
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
+msgid "Reload the page periodically"
+msgstr "Die Seite regelmäßig aktualisieren"
 
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
-msgid "_Edit Bookmarks"
-msgstr "Lesezeichen _bearbeiten"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
-msgid "Open the bookmarks window"
-msgstr "Das Lesezeichenverwaltung öffnen"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
-msgid "Open in _Current Tab"
-msgstr "Im _aktuellen Reiter öffnen"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
-msgid "Open bookmarks in the current tab of the active window"
-msgstr "Die Lesezeichen im aktuellen Reiter des Fensters öffnen"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
-msgid "Open in New _Tab"
-msgstr "In _neuem Reiter öffnen"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
-msgid "Open bookmarks in a new tab of the active window"
-msgstr "Die Lesezeichen in einem neuen Reiter des aktuellen Fensters öffnen"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
-msgid "Open in New _Window"
-msgstr "In neuem _Fenster öffnen"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
-msgid "Open bookmarks in new a window"
-msgstr "Die Lesezeichen in einem neuen Fenster öffnen"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:531
-msgid "Bookmarks"
-msgstr "Lesezeichen"
-
-#: ../extensions/certificates/certificates.xml.in.in.h:1
+#: ../extensions/certificates/ephy-certificates-extension.c:177
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "Zertifikate"
 
-#: ../extensions/certificates/certificates.xml.in.in.h:2
-msgid "View the page certificate and manage the certificates"
-msgstr "Das Seitenzertifikat anzeigen und die Zertifikate verwalten"
+#: ../extensions/certificates/ephy-certificates-extension.c:208
+msgid "Security Devices"
+msgstr "Sicherheitsgeräte"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:275
+#: ../extensions/certificates/ephy-certificates-extension.c:327
 msgid "Manage _Certificates"
 msgstr "_Zertifikate verwalten"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:277
+#: ../extensions/certificates/ephy-certificates-extension.c:329
 msgid "Manage your certificates"
 msgstr "Ihre Zertifikate verwalten"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:284
+#: ../extensions/certificates/ephy-certificates-extension.c:333
+msgid "Manage Security _Devices"
+msgstr "Sicherheits_geräte verwalten"
+
+#. shortcut key
+#: ../extensions/certificates/ephy-certificates-extension.c:335
+msgid "Manage your security devices"
+msgstr "Ihre Sicherheitsgeräte verwalten"
+
+#. stock icon
+#: ../extensions/certificates/ephy-certificates-extension.c:342
 msgid "Server _Certificate"
 msgstr "Server-Z_ertifikat"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:286
+#: ../extensions/certificates/ephy-certificates-extension.c:344
 msgid "Display the web server's certificate"
 msgstr "Das Zertifikat des Web-Servers anzeigen"
-
-#: ../extensions/dashboard/dashboard.xml.in.in.h:1
-msgid "Dashboard"
-msgstr "Dashboard"
-
-#: ../extensions/dashboard/dashboard.xml.in.in.h:2
-msgid "Send browsing information to Dashboard"
-msgstr "Browsing-Informationen zu Dashboard senden"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
@@ -247,16 +210,6 @@ msgstr "L_eeren"
 #: ../extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
 msgstr "Fehleransicht"
-
-#: ../extensions/error-viewer/error-viewer.xml.in.in.h:1
-msgid "Error viewer"
-msgstr "Fehleransicht"
-
-#: ../extensions/error-viewer/error-viewer.xml.in.in.h:2
-msgid "View error in web pages, validate web pages and check links"
-msgstr ""
-"Fehler in Web-Seiten anzeigen, Web-Seiten validieren und Verknüpfungen "
-"überprüfen"
 
 #. Don't bother looking for source lines -- they're not there
 #: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:108
@@ -295,18 +248,18 @@ msgstr ""
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
 #, c-format
-msgid "Checking %d Link on %s"
-msgid_plural "Checking %d Links on %s"
-msgstr[0] "%d Link auf %s wird überprüft"
-msgstr[1] "%d Links auf %s werden überprüft"
+msgid "Checking %d Link on “%s”"
+msgid_plural "Checking %d Links on “%s”"
+msgstr[0] "%d Link auf »%s« wird überprüft"
+msgstr[1] "%d Links auf »%s« werden überprüft"
 
 #: ../extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
 msgid ""
-"HTML error in %s on line %s:\n"
+"HTML error in “%s” on line %s:\n"
 "%s"
 msgstr ""
-"HTML-Fehler in %s, Zeile %s:\n"
+"HTML-Fehler in »%s«, Zeile %s:\n"
 "%s"
 
 #: ../extensions/error-viewer/sgml-validator.c:165
@@ -318,8 +271,8 @@ msgstr[1] "%d Fehler gefunden"
 
 #: ../extensions/error-viewer/sgml-validator.c:169
 #, c-format
-msgid "HTML Validation of %s complete"
-msgstr "HTML-Validierung von %s durchgeführt"
+msgid "HTML Validation of “%s” complete"
+msgstr "HTML-Validierung von »%s« durchgeführt"
 
 #: ../extensions/error-viewer/sgml-validator.c:227
 #, c-format
@@ -333,11 +286,11 @@ msgstr ""
 #: ../extensions/error-viewer/sgml-validator.c:229
 #: ../extensions/error-viewer/sgml-validator.c:245
 msgid ""
-"Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
-"xhtml+xml\" instead."
+"Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
+"+xml” instead."
 msgstr ""
-"Der Doctype-Dokumententyp ist »XHTML«, der Content-Type-Inhaltstyp jedoch "
-"»text/html«. Verwenden Sie stattdessen »application/xhtml+xml«."
+"Der Dokumententyp ist »XHTML«, die Content-Type-Angabe jedoch »text/html«. "
+"Verwenden Sie stattdessen »application/xhtml+xml«."
 
 #: ../extensions/error-viewer/sgml-validator.c:243
 #, c-format
@@ -370,20 +323,12 @@ msgstr ""
 "HTML-Fehler in %s:\n"
 "Kein gültiger doctype-Dokumententyp angegeben."
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
-msgid "_Extensions"
-msgstr "_Erweiterungen"
-
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
-msgid "Load and unload extensions"
-msgstr "Erweiterungen laden und entladen"
-
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:357
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:340
 msgid "Enabled"
 msgstr "Aktiviert"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
-#: ../extensions/rss/rss-ui.c:571
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:348
+#: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "Beschreibung"
 
@@ -395,25 +340,17 @@ msgstr "<b>Geladene Erweiterungen</b>"
 msgid "Extensions"
 msgstr "Erweiterungen"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:1
-msgid "Activate and deactivate extensions"
-msgstr "Erweiterungen aktivieren und deaktivieren"
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
+msgid "_Extensions..."
+msgstr "_Erweiterungen..."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:2
-msgid "Extensions Manager"
-msgstr "Erweiterungsverwaltung"
-
-#: ../extensions/gestures/gestures.xml.in.in.h:1
-msgid "Gestures"
-msgstr "Gesten"
-
-#: ../extensions/gestures/gestures.xml.in.in.h:2
-msgid "Perform actions with mouse gestures"
-msgstr "Aktionen durch Gesten mit der Maus ausführen"
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+msgid "Load and unload extensions"
+msgstr "Erweiterungen laden und entladen"
 
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
 msgid "Install User _Script"
-msgstr "Benutzerskript installieren"
+msgstr "Benutzer_skript installieren"
 
 #. shortcut key
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
@@ -422,185 +359,174 @@ msgstr "Greasemonkey-Skript installieren"
 
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:354
 #, c-format
-msgid "The user script at %s has been installed"
-msgstr "Das Benutzerskript »%s« wurde installiert"
+msgid "The user script at “%s” has been installed"
+msgstr "Das Benutzerskript unter »%s« wurde installiert"
 
-#: ../extensions/greasemonkey/greasemonkey.xml.in.in.h:1
-msgid "Greasemonkey"
-msgstr "Greasemonkey"
+#: ../extensions/java-console/ephy-java-console-extension.c:48
+msgid "_Java Console"
+msgstr "_Java-Konsole"
 
-#: ../extensions/greasemonkey/greasemonkey.xml.in.in.h:2
-msgid "Run user scripts to modify web pages' behavior"
-msgstr ""
-"Mit Benutzerskripten kann das Verhalten von Internet-Seiten  beeinflusst "
-"werden"
-
-#. How to describe this? It makes Epiphany "Just Work"
-#: ../extensions/net-monitor/net-monitor.xml.in.in.h:2
-msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
-msgstr ""
-"Den Netzwerkstatus (Online/Offline) automatisch behandeln (EXPERIMENTELL!)"
-
-#: ../extensions/net-monitor/net-monitor.xml.in.in.h:3
-msgid "Network Connection Monitor"
-msgstr "Netzwerkverbindungsüberwachung"
+#. shortcut key
+#: ../extensions/java-console/ephy-java-console-extension.c:50
+msgid "Show Java Console"
+msgstr "Java-Konsole anzeigen"
 
 #: ../extensions/page-info/ephy-page-info-extension.c:65
-msgid "_Page Info"
-msgstr "_Seiteninformationen"
+msgid "Pa_ge Information"
+msgstr "Seitenin_formationen"
 
 #: ../extensions/page-info/ephy-page-info-extension.c:67
 msgid "Display page information in a dialog"
 msgstr "Die Informationen zu dieser Seite in einem Dialog anzeigen"
 
-#: ../extensions/page-info/page-info-dialog.c:727
+#: ../extensions/page-info/page-info-dialog.c:726
 msgid "Save As..."
 msgstr "Speichern unter..."
 
-#: ../extensions/page-info/page-info-dialog.c:744
+#: ../extensions/page-info/page-info-dialog.c:743
 msgid "Select a directory"
 msgstr "Ordner auswählen"
 
-#: ../extensions/page-info/page-info-dialog.c:793
+#: ../extensions/page-info/page-info-dialog.c:792
 msgid "Unknown type"
 msgstr "Unbekannter Typ"
 
-#: ../extensions/page-info/page-info-dialog.c:798
+#: ../extensions/page-info/page-info-dialog.c:797
 msgid "Full standards compliance"
 msgstr "Vollständig Standardkonform"
 
-#: ../extensions/page-info/page-info-dialog.c:801
+#: ../extensions/page-info/page-info-dialog.c:800
 msgid "Almost standards compliance"
 msgstr "Größtenteils Standardkonform"
 
-#: ../extensions/page-info/page-info-dialog.c:804
+#: ../extensions/page-info/page-info-dialog.c:803
 msgid "Compatibility"
 msgstr "Kompatibilität"
 
-#: ../extensions/page-info/page-info-dialog.c:808
+#: ../extensions/page-info/page-info-dialog.c:807
 msgid "Undetermined"
 msgstr "Unbestimmt"
 
-#: ../extensions/page-info/page-info-dialog.c:817
+#: ../extensions/page-info/page-info-dialog.c:816
 msgid "Not cached"
 msgstr "Nicht gepuffert"
 
-#: ../extensions/page-info/page-info-dialog.c:820
+#: ../extensions/page-info/page-info-dialog.c:819
 msgid "Disk cache"
 msgstr "Festplattenpuffer"
 
-#: ../extensions/page-info/page-info-dialog.c:823
+#: ../extensions/page-info/page-info-dialog.c:822
 msgid "Memory cache"
 msgstr "Hauptspeicherpuffer"
 
-#: ../extensions/page-info/page-info-dialog.c:826
+#: ../extensions/page-info/page-info-dialog.c:825
 msgid "Unknown cache"
 msgstr "Unbekannter Puffer"
 
-#: ../extensions/page-info/page-info-dialog.c:842
-#: ../extensions/page-info/page-info-dialog.c:953
+#: ../extensions/page-info/page-info-dialog.c:841
+#: ../extensions/page-info/page-info-dialog.c:952
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: ../extensions/page-info/page-info-dialog.c:847
+#: ../extensions/page-info/page-info-dialog.c:846
 msgid "No referrer"
 msgstr "Kein Bezug"
 
-#: ../extensions/page-info/page-info-dialog.c:861
-#: ../extensions/page-info/page-info-dialog.c:877
+#: ../extensions/page-info/page-info-dialog.c:860
+#: ../extensions/page-info/page-info-dialog.c:876
 msgid "Not specified"
 msgstr "Nicht festgelegt"
 
-#: ../extensions/page-info/page-info-dialog.c:938
+#: ../extensions/page-info/page-info-dialog.c:937
 msgid "Image"
 msgstr "Bild"
 
-#: ../extensions/page-info/page-info-dialog.c:941
+#: ../extensions/page-info/page-info-dialog.c:940
 msgid "Embed"
 msgstr "Eingebettet"
 
-#: ../extensions/page-info/page-info-dialog.c:944
+#: ../extensions/page-info/page-info-dialog.c:943
 msgid "Object"
 msgstr "Objekt"
 
-#: ../extensions/page-info/page-info-dialog.c:947
+#: ../extensions/page-info/page-info-dialog.c:946
 msgid "Applet"
 msgstr "Applet"
 
-#: ../extensions/page-info/page-info-dialog.c:950
+#: ../extensions/page-info/page-info-dialog.c:949
 msgid "Icon"
 msgstr "Symbol"
 
-#: ../extensions/page-info/page-info-dialog.c:1055
+#: ../extensions/page-info/page-info-dialog.c:1054
 msgid "_Open"
 msgstr "Ö_ffnen"
 
-#: ../extensions/page-info/page-info-dialog.c:1061
-#: ../extensions/page-info/page-info-dialog.c:1413
+#: ../extensions/page-info/page-info-dialog.c:1060
+#: ../extensions/page-info/page-info-dialog.c:1420
 msgid "_Copy Link Address"
 msgstr "_Link-Adresse kopieren"
 
-#: ../extensions/page-info/page-info-dialog.c:1067
+#: ../extensions/page-info/page-info-dialog.c:1066
 msgid "_Use as Background"
 msgstr "Als _Hintergrund verwenden"
 
-#: ../extensions/page-info/page-info-dialog.c:1073
-#: ../extensions/page-info/page-info-dialog.c:1419
+#: ../extensions/page-info/page-info-dialog.c:1072
+#: ../extensions/page-info/page-info-dialog.c:1426
 msgid "_Save As..."
 msgstr "_Speichern unter..."
 
-#: ../extensions/page-info/page-info-dialog.c:1250
-#: ../extensions/page-info/page-info-dialog.c:1491
+#: ../extensions/page-info/page-info-dialog.c:1256
+#: ../extensions/page-info/page-info-dialog.c:1499
 msgid "URL"
 msgstr "Adresse"
 
-#: ../extensions/page-info/page-info-dialog.c:1262
+#: ../extensions/page-info/page-info-dialog.c:1269
 msgid "Type"
 msgstr "Typ"
 
-#: ../extensions/page-info/page-info-dialog.c:1274
+#: ../extensions/page-info/page-info-dialog.c:1281
 msgid "Alt Text"
 msgstr "Alternativer Text"
 
-#: ../extensions/page-info/page-info-dialog.c:1286
-#: ../extensions/page-info/page-info-dialog.c:1503
+#: ../extensions/page-info/page-info-dialog.c:1293
+#: ../extensions/page-info/page-info-dialog.c:1512
 msgid "Title"
 msgstr "Titel"
 
-#: ../extensions/page-info/page-info-dialog.c:1298
+#: ../extensions/page-info/page-info-dialog.c:1305
 msgid "Width"
 msgstr "Breite"
 
-#: ../extensions/page-info/page-info-dialog.c:1310
+#: ../extensions/page-info/page-info-dialog.c:1317
 msgid "Height"
 msgstr "Höhe"
 
-#: ../extensions/page-info/page-info-dialog.c:1515
+#: ../extensions/page-info/page-info-dialog.c:1524
 msgid "Relation"
 msgstr "Bezug"
 
-#: ../extensions/page-info/page-info-dialog.c:1645
-#: ../extensions/page-info/page-info-dialog.c:1782
+#: ../extensions/page-info/page-info-dialog.c:1654
+#: ../extensions/page-info/page-info-dialog.c:1793
 msgid "Name"
 msgstr "Name"
 
-#: ../extensions/page-info/page-info-dialog.c:1657
+#: ../extensions/page-info/page-info-dialog.c:1666
 msgid "Method"
 msgstr "Methode"
 
-#: ../extensions/page-info/page-info-dialog.c:1669
+#: ../extensions/page-info/page-info-dialog.c:1680
 msgid "Action"
 msgstr "Aktion"
 
-#: ../extensions/page-info/page-info-dialog.c:1748
+#: ../extensions/page-info/page-info-dialog.c:1759
 msgid "_Copy"
 msgstr "_Kopieren"
 
-#: ../extensions/page-info/page-info-dialog.c:1794
+#: ../extensions/page-info/page-info-dialog.c:1805
 msgid "Content"
 msgstr "Inhalt"
 
-#: ../extensions/page-info/page-info-dialog.c:1893
+#: ../extensions/page-info/page-info-dialog.c:1904
 msgid "Page Metadata"
 msgstr "Metadaten der Seite"
 
@@ -728,52 +654,89 @@ msgstr "Typ:"
 msgid "_Save Media As..."
 msgstr "Medieninhalt _speichern unter..."
 
-#: ../extensions/page-info/page-info.xml.in.in.h:1
-msgid "Display information about and links and media from the current page"
-msgstr ""
-"Informationen über die momentane Seite sowie deren Verknüpfungen und "
-"Medieninhalte anzeigen"
+#: ../extensions/permissions/ephy-permissions-dialog.c:180
+msgid "allowed"
+msgstr "Erlaubt"
 
-#: ../extensions/page-info/page-info.xml.in.in.h:2
-msgid "Page Info"
-msgstr "Seiteninformationen"
+#: ../extensions/permissions/ephy-permissions-dialog.c:184
+msgid "denied"
+msgstr "Verweigert"
 
-#: ../extensions/rss/ephy-rss-extension.c:94
+#. Sometimes we get this... how did this get in the list!?
+#: ../extensions/permissions/ephy-permissions-dialog.c:189
+msgid "default"
+msgstr "Vorgabe"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:515
+msgid "Domain"
+msgstr "Domain"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:527
+msgid "State"
+msgstr "Zustand"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:620
+msgid "Site Permissions"
+msgstr "Seitenrechte"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:647
+msgid "Cookies"
+msgstr "Cookies"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:648
+msgid "Images"
+msgstr "Bilder"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:649
+msgid "Popup Windows"
+msgstr "Popup-Fenster"
+
+#. stock icon
+#: ../extensions/permissions/ephy-permissions-extension.c:156
+msgid "Site _Permissions"
+msgstr "Seiten_rechte"
+
+#. shortcut key
+#: ../extensions/permissions/ephy-permissions-extension.c:158
+msgid "Manage web site permissions"
+msgstr "Seitenrechte verwalten"
+
+#: ../extensions/rss/ephy-rss-extension.c:98
 msgid "News Feeds Subscription"
 msgstr "News-Feed-Abonnierung"
 
-#: ../extensions/rss/ephy-rss-extension.c:96
+#: ../extensions/rss/ephy-rss-extension.c:100
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr ""
 "Abonnieren des News-Feeds dieser Webseite in Ihrem bevorzugten News-Reader"
 
-#: ../extensions/rss/ephy-rss-extension.c:101
+#: ../extensions/rss/ephy-rss-extension.c:105
 msgid "_Subscribe to this feed"
 msgstr "Diesen Feed ab_onnieren"
 
-#: ../extensions/rss/ephy-rss-extension.c:103
+#: ../extensions/rss/ephy-rss-extension.c:107
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Diesen Feed in Ihrem bevorzugten News-Reader abonnieren"
 
-#: ../extensions/rss/ephy-rss-extension.c:373
+#: ../extensions/rss/ephy-rss-extension.c:396
 msgid "Subscribe to site's news feed"
 msgstr "News-Feed der Webseite abonnieren"
 
-#: ../extensions/rss/rss-ui.c:159
+#: ../extensions/rss/rss-ui.c:167
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr ""
 "<b><i>Kontaktaufnahme zum Feed-Reader fehlgeschlagen. Ist der Reader "
 "gestartet?</i></b>"
 
-#: ../extensions/rss/rss-ui.c:161
+#: ../extensions/rss/rss-ui.c:169
 msgid "Retry"
 msgstr "Wiederholen"
 
-#: ../extensions/rss/rss-ui.c:289
+#: ../extensions/rss/rss-ui.c:297
 msgid "_Copy Feed Address"
 msgstr "_Feed-Adresse kopieren"
 
-#: ../extensions/rss/rss-ui.c:564
+#: ../extensions/rss/rss-ui.c:591
 msgid "Subscribe"
 msgstr "Abonnieren"
 
@@ -789,53 +752,26 @@ msgstr "News-Feed-Abonnierung"
 msgid "_Subscribe"
 msgstr "Ab_onnieren"
 
-#: ../extensions/rss/rss.xml.in.in.h:1
-msgid "News Feed Subscription"
-msgstr "News-Feed-Abonnierung"
-
-#: ../extensions/rss/rss.xml.in.in.h:2
-msgid ""
-"Subscribe to a news feed offered by the webpage in your favorite news reader"
-msgstr ""
-"Abonnieren eines von der Webseite angebotenen News-Feeds in Ihrem "
-"bevorzugten News-Reader"
-
-#: ../extensions/sample-mozilla/sample-mozilla.xml.in.in.h:1
-msgid "A sample extension with mozilla backend"
-msgstr "Eine Mustererweiterung mit Mozilla-Backend"
-
-#: ../extensions/sample-mozilla/sample-mozilla.xml.in.in.h:2
-msgid "Sample (Mozilla)"
-msgstr "Muster (Mozilla)"
-
-#: ../extensions/sample/sample.xml.in.in.h:1
-msgid "A sample extension"
-msgstr "Eine Mustererweiterung"
-
-#: ../extensions/sample/sample.xml.in.in.h:2
-msgid "Sample"
-msgstr "Muster"
-
 #: ../extensions/select-stylesheet/ephy-css-menu.c:145
 msgid "Render the page without using a style"
-msgstr "Die Seiten ohne die Benutzung eines Styles anzeigen"
+msgstr "Die Seite stillos anzeigen"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:148
 msgid "Render the page using the default style"
-msgstr "Die Seiten mit Benutzung des Vorgabestyles anzeigen"
+msgstr "Die Seite unter Verwendung des Vorgabestils anzeigen"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:151
 #, c-format
-msgid "Render the page using the \"%s\" style"
-msgstr "Die Seiten mit Benutzung des Styles »%s« anzeigen"
+msgid "Render the page using the “%s” style"
+msgstr "Die Seite unter Verwendung des Stils »%s« anzeigen"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:309
 msgid "St_yle"
-msgstr "St_yle"
+msgstr "S_til"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:310
 msgid "Select a different style for this page"
-msgstr "Einen anderen Style für diese Seite auswählen"
+msgstr "Einen anderen Stil für diese Seite auswählen"
 
 #: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
 msgid "Default"
@@ -844,16 +780,6 @@ msgstr "Vorgabe"
 #: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
 msgid "None"
 msgstr "Keiner"
-
-#: ../extensions/select-stylesheet/select-stylesheet.xml.in.in.h:1
-msgid "Select Stylesheet"
-msgstr "Stylesheet auswählen"
-
-#: ../extensions/select-stylesheet/select-stylesheet.xml.in.in.h:2
-msgid "Select between different stylesheets offered by the web page"
-msgstr ""
-"Zwischen verschiedenen Stylesheets wählen, die von der Web-Seite angeboten "
-"werden"
 
 #: ../extensions/sidebar/ephy-sidebar.c:176
 msgid "No Sidebars installed"
@@ -869,13 +795,13 @@ msgstr "Die Seitenleiste anzeigen oder ausblenden"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:411
 #, c-format
-msgid "Add \"%s\" to the Sidebar?"
+msgid "Add “%s” to the Sidebar?"
 msgstr "Möchten Sie »%s« zur Seitenleiste hinzufügen?"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:415
 #, c-format
-msgid "The source to the new sidebar page is %s."
-msgstr "Die Quelle der neuen Seitenleistenseite ist %s."
+msgid "The source to the new sidebar page is “%s”."
+msgstr "Die Quelle der neuen Seitenleistenseite ist »%s«."
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:417
 msgid "Add Sidebar"
@@ -885,42 +811,18 @@ msgstr "Seitenleiste hinzufügen"
 msgid "_Add Sidebar"
 msgstr "Seitenleiste _hinzufügen"
 
-#: ../extensions/sidebar/sidebar.xml.in.in.h:1
-msgid "Adds a sidebar to windows"
-msgstr "Eine Seitenleiste zu den Fenstern hinzufügen"
-
-#: ../extensions/sidebar/sidebar.xml.in.in.h:2
-msgid "Sidebar"
-msgstr "Seitenleiste"
-
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:579
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:565
 msgid "_Look Up"
 msgstr "_Nachschlagen"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:586
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:572
 msgid "_GNOME Dictionary"
 msgstr "_GNOME-Wörterbuch"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:1
-msgid "Look up the selected text with a smart bookmark"
-msgstr "Den ausgewählten Text mit einem intelligenten Lesezeichen nachschlagen"
-
-#: ../extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:2
-msgid "Smart Bookmarks"
-msgstr "Intelligente Lesezeichen"
-
-#: ../extensions/tab-groups/tab-groups.xml.in.in.h:1
-msgid "Groups newly opened tabs"
-msgstr "Neu geöffnete Reiter gruppieren"
-
-#: ../extensions/tab-groups/tab-groups.xml.in.in.h:2
-msgid "Tab Groups"
-msgstr "Reitergruppen"
-
 #: ../extensions/tabsmenu/ephy-tab-move-menu.c:190
 #, c-format
-msgid "Window '%s' (%d tab)"
-msgid_plural "Window '%s' (%d tabs)"
+msgid "Window “%s” (%d tab)"
+msgid_plural "Window “%s” (%d tabs)"
 msgstr[0] "Fenster »%s« (%d Reiter)"
 msgstr[1] "Fenster »%s« (%d Reiter)"
 
@@ -932,19 +834,227 @@ msgstr "Reiter in anderes _Fenster verschieben"
 msgid "Move the current tab to a different window"
 msgstr "Den momentan angezeigten Reiter in ein anderes Fenster verschieben"
 
-#: ../extensions/tabsmenu/tabsmenu.xml.in.in.h:1
+#: ../extensions/actions/actions.ephy-extension.in.in.h:2
+msgid "Execute arbitrary commands from the context menu"
+msgstr "Beliebige Befehle aus dem Kontextmenü heraus ausführen"
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
+msgid "Auto Scroll"
+msgstr "Automatisches Scrollen"
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
+msgid "Scroll on middle mouse click"
+msgstr "Seiteninhalt durch Drücken der mittleren Maustaste verschieben"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
+msgid "Auto Reload Tab"
+msgstr "Automatische Reiteraktualisierung"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
+msgid "Reload a tab periodically"
+msgstr "Einen Reiter regelmäßig aktualisieren"
+
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
+msgid "View the page certificate and manage the certificates"
+msgstr "Das Seitenzertifikat anzeigen und die Zertifikate verwalten"
+
+#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:1
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:2
+msgid "Send browsing information to Dashboard"
+msgstr "Browsing-Informationen zu Dashboard senden"
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
+msgid "Error viewer"
+msgstr "Fehleransicht"
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
+msgid "View error in web pages, validate web pages and check links"
+msgstr ""
+"Fehler in Web-Seiten anzeigen, Web-Seiten validieren und Verknüpfungen "
+"überprüfen"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
+msgid "Activate and deactivate extensions"
+msgstr "Erweiterungen aktivieren und deaktivieren"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
+msgid "Extensions Manager"
+msgstr "Erweiterungsverwaltung"
+
+#: ../extensions/favicon/favicon.ephy-extension.in.h:1
+msgid "Favicon fallback"
+msgstr "Vorgabe-Favicon"
+
+#: ../extensions/favicon/favicon.ephy-extension.in.h:2
+msgid ""
+"Loads /favicon.ico as favicon if the site doesn't use the standard method"
+msgstr ""
+"Lädt /favicon.ico als Favicon, falls die Seite nicht die Standardmethode "
+"anwendet"
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
+msgid "Gestures"
+msgstr "Gesten"
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:2
+msgid "Perform actions with mouse gestures"
+msgstr "Aktionen durch Gesten mit der Maus ausführen"
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
+msgid "Greasemonkey"
+msgstr "Greasemonkey"
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
+msgid "Run user scripts to modify web pages' behavior"
+msgstr ""
+"Mit Benutzerskripten kann das Verhalten von Internet-Seiten  beeinflusst "
+"werden"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
+msgid "Java Console"
+msgstr "Java-Konsole"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
+msgid "Provide access to the Java-Plugin Console"
+msgstr "Stellt den Zugriff auf die Java-Plugin-Konsole zur Verfügung"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
+msgid "Display information about and links and media from the current page"
+msgstr ""
+"Informationen über die momentane Seite sowie deren Verknüpfungen und "
+"Medieninhalte anzeigen"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
+msgid "Page Info"
+msgstr "Seiteninformationen"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
+msgid "Edit site permissions"
+msgstr "Seitenrechte bearbeiten"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
+msgid "Permissions"
+msgstr "Rechte"
+
+#: ../extensions/rss/rss.ephy-extension.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "News-Feed-Abonnierung"
+
+#: ../extensions/rss/rss.ephy-extension.in.in.h:2
+msgid ""
+"Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr ""
+"Abonnieren eines von der Webseite angebotenen News-Feeds in Ihrem "
+"bevorzugten News-Reader"
+
+#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
+msgid "A sample extension with mozilla backend"
+msgstr "Eine Mustererweiterung mit Mozilla-Backend"
+
+#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:2
+msgid "Sample (Mozilla)"
+msgstr "Muster (Mozilla)"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:1
+msgid "A sample extension"
+msgstr "Eine Mustererweiterung"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:2
+msgid "Sample"
+msgstr "Muster"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
+msgid "Select Stylesheet"
+msgstr "Stylesheet auswählen"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
+msgid "Select between different stylesheets offered by the web page"
+msgstr ""
+"Zwischen verschiedenen Stylesheets wählen, die von der Web-Seite angeboten "
+"werden"
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
+msgid "Adds a sidebar to windows"
+msgstr "Eine Seitenleiste zu den Fenstern hinzufügen"
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
+msgid "Sidebar"
+msgstr "Seitenleiste"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
+msgid "Look up the selected text with a smart bookmark"
+msgstr "Den ausgewählten Text mit einem intelligenten Lesezeichen nachschlagen"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
+msgid "Smart Bookmarks"
+msgstr "Intelligente Lesezeichen"
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
+msgid "Groups newly opened tabs"
+msgstr "Neu geöffnete Reiter gruppieren"
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
+msgid "Tab Groups"
+msgstr "Reitergruppen"
+
+#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:1
 msgid "Move tabs between windows"
 msgstr "Reiter in andere Fenster verschieben"
 
-#: ../extensions/tabsmenu/tabsmenu.xml.in.in.h:2
+#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:2
 msgid "Tabsmenu"
 msgstr "Reitermenü"
 
-#: ../extensions/tab-states/tab-states.xml.in.in.h:1
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
 msgstr "Auf neuen Inhalt in Hintergrundreitern hinweisen"
 
-#: ../extensions/tab-states/tab-states.xml.in.in.h:2
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Reiterzustände"
 
+#~ msgid "Add a bookmarks menu to the panel's notification area"
+#~ msgstr "Ein Lesezeichenmenü zum Benachrichtigungsfeld des Panels hinzufügen"
+
+#~ msgid "Bookmarks Tray"
+#~ msgstr "Lesezeichenschublade"
+
+#~ msgid "_Edit Bookmarks"
+#~ msgstr "Lesezeichen _bearbeiten"
+
+#~ msgid "Open the bookmarks window"
+#~ msgstr "Das Lesezeichenverwaltung öffnen"
+
+#~ msgid "Open in _Current Tab"
+#~ msgstr "Im _aktuellen Reiter öffnen"
+
+#~ msgid "Open bookmarks in the current tab of the active window"
+#~ msgstr "Die Lesezeichen im aktuellen Reiter des Fensters öffnen"
+
+#~ msgid "Open in New _Tab"
+#~ msgstr "In _neuem Reiter öffnen"
+
+#~ msgid "Open bookmarks in a new tab of the active window"
+#~ msgstr "Die Lesezeichen in einem neuen Reiter des aktuellen Fensters öffnen"
+
+#~ msgid "Open in New _Window"
+#~ msgstr "In neuem _Fenster öffnen"
+
+#~ msgid "Open bookmarks in new a window"
+#~ msgstr "Die Lesezeichen in einem neuen Fenster öffnen"
+
+#~ msgid "Bookmarks"
+#~ msgstr "Lesezeichen"
+
+#~ msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
+#~ msgstr ""
+#~ "Den Netzwerkstatus (Online/Offline) automatisch behandeln (EXPERIMENTELL!)"
+
+#~ msgid "Network Connection Monitor"
+#~ msgstr "Netzwerkverbindungsüberwachung"
+
+#~ msgid "_Page Info"
+#~ msgstr "_Seiteninformationen"
