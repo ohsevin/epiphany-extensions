@@ -1,3 +1,26 @@
+2006-03-12  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/extensions-manager-ui/extensions-manager-ui.c:
+	(extensions_manager_ui_response_cb):
+	* extensions/extensions-manager-ui/extensions-manager-ui.glade:
+
+	Fix Help button.
+
+	* include/EphyUtils.h:
+	* include/eel-gconf-extensions.h:
+	* include/egg-editable-toolbar.h:
+	* include/egg-toolbars-model.h:
+	* include/ephy-debug.h:
+	* include/ephy-dnd.h:
+	* include/ephy-embed-dialog.h:
+	* include/ephy-favicon-cache.h:
+	* include/ephy-file-chooser.h:
+	* include/ephy-file-helpers.h:
+	* include/ephy-gui.h:
+	* include/ephy-prefs.h:
+
+	Updated from Epiphany.
+
 2006-03-11  Jean-François Rameau  <jframeau@cvs.gnome.org>
 	
 	* extensions/adblock/ephy-adblock-extension.c:

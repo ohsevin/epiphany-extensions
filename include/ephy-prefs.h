@@ -36,6 +36,7 @@ G_BEGIN_DECLS
 #define CONF_INTERFACE_TOOLBAR_STYLE		"/apps/epiphany/general/toolbar_style"
 #define CONF_AUTO_DOWNLOADS			"/apps/epiphany/general/automatic_downloads"
 #define CONF_DESKTOP_IS_HOME_DIR		"/apps/nautilus/preferences/desktop_is_home_dir"
+#define CONF_NETWORK_MANAGED			"/apps/epiphany/general/managed_network"
 
 /* Directories */
 #define CONF_STATE_SAVE_DIR		"/apps/epiphany/directories/save"
@@ -61,6 +62,8 @@ G_BEGIN_DECLS
 /* System prefs */
 #define CONF_DESKTOP_FTP_HANDLER	"/desktop/gnome/url-handlers/ftp/command"
 #define CONF_DESKTOP_TOOLBAR_STYLE	"/desktop/gnome/interface/toolbar_style"
+#define CONF_DESKTOP_BG_PICTURE		"/desktop/gnome/background/picture_filename"
+#define CONF_DESKTOP_BG_TYPE		"/desktop/gnome/background/picture_options"
 
 G_END_DECLS
 

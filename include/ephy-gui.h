@@ -61,6 +61,10 @@ void		ephy_gui_menu_position_on_panel		 (GtkMenu *menu,
 
 GtkWindowGroup *ephy_gui_ensure_window_group		 (GtkWindow *window);
 
+void		ephy_gui_get_current_event		 (GdkEventType *type,
+							  guint *state,
+							  guint *button);
+
 gboolean	ephy_gui_is_middle_click		 (void);
 
 gboolean	ephy_gui_check_location_writable         (GtkWidget *parent,
@@ -73,8 +77,7 @@ void		ephy_gui_help				 (GtkWindow *parent,
 void		ephy_gui_window_update_user_time	 (GtkWidget *window,
 							  guint32 user_time);
 
-void		ephy_gui_window_present			 (GtkWindow *window,
-							  guint32 user_time);
+GtkWidget      *ephy_gui_message_dialog_get_content_box	 (GtkWidget *dialog);
 
 G_END_DECLS
 

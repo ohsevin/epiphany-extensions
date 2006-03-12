@@ -1,7 +1,7 @@
 /*
  *  Copyright (C) 2002 Jorn Baayen
  *  Copyright (C) 2003, 2004 Marco Pesenti Gritti
- *  Copyright (C) 2004 Christian Persch
+ *  Copyright (C) 2004, 2005, 2006 Christian Persch
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -25,6 +25,10 @@
 
 #include <glib.h>
 #include <libgnomevfs/gnome-vfs-mime-handlers.h>
+#include <libgnomevfs/gnome-vfs-ops.h>
+
+extern GQuark ephy_file_helpers_error_quark;
+#define EPHY_FILE_HELPERS_ERROR_QUARK	(ephy_file_helpers_error_quark)
 
 G_BEGIN_DECLS
 
@@ -35,15 +39,24 @@ typedef enum
 	EPHY_MIME_PERMISSION_UNKNOWN	= 3
 } EphyMimePermission;
 
+typedef struct _EphyFileMonitor EphyFileMonitor;
+typedef void (* EphyFileMonitorFunc) (EphyFileMonitor*, const char*, GnomeVFSMonitorEventType, gpointer);
+typedef gboolean (* EphyFileMonitorDelayFunc) (EphyFileMonitor*, gpointer);
+
+gboolean    ephy_file_helpers_init       (const char *profile_dir,
+					  gboolean private_profile,
+					  gboolean keep_temp_dir,
+					  GError **error);
+
 const char *ephy_file                    (const char *filename);
 
 const char *ephy_dot_dir                 (void);
 
-void        ephy_file_helpers_init       (void);
-
 void        ephy_file_helpers_shutdown   (void);
 
 char       *ephy_file_downloads_dir      (void);
+
+char	   *ephy_file_get_downloads_dir	 (void);
 
 char       *ephy_file_desktop_dir	 (void);
 
@@ -52,7 +65,8 @@ const char *ephy_file_tmp_dir	 	 (void);
 char       *ephy_file_tmp_filename	 (const char *base,
 					  const char *extension);
 
-gboolean    ephy_ensure_dir_exists       (const char *dir);
+gboolean    ephy_ensure_dir_exists       (const char *dir,
+					  GError **);
 
 GSList     *ephy_file_find               (const char *path,
 				          const char *fname,
@@ -75,6 +89,17 @@ gboolean    ephy_file_launch_application (GnomeVFSMimeApplication *application,
 gboolean    ephy_file_launch_handler	 (const char *mime_type,
 					  const char *address,
 					  guint32 user_time);
+
+EphyFileMonitor *ephy_file_monitor_add	 (const char *uri,
+					  GnomeVFSMonitorType monitor_type,
+					  guint delay,
+					  EphyFileMonitorFunc callback,
+					  EphyFileMonitorDelayFunc delay_func,
+					  gpointer user_data);
+
+void	   ephy_file_monitor_cancel	 (EphyFileMonitor *monitor);
+
+void	   ephy_file_delete_directory	 (const char *path);
 
 G_END_DECLS
 

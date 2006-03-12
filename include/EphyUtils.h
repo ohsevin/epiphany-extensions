@@ -21,12 +21,16 @@
 #ifndef EPHY_UTILS_H
 #define EPHY_UTILS_H
 
-#include <nsIIOService.h>
-#include <nsIURI.h>
-#include <nsIDOMWindow.h>
+#include <nsError.h>
 #include <gtk/gtkwidget.h>
 
+class nsAString;
+class nsACString;
+class nsIDOMWindow;
+class nsIIOService;
 class nsIPrintSettings;
+class nsIURI;
+class nsIFile;
 struct _EmbedPrintInfo;
 
 namespace EphyUtils
@@ -43,13 +47,18 @@ namespace EphyUtils
 						 const char *charset = nsnull,
 						 nsIURI *baseURI = nsnull);
 
+	nsresult	NewFileURI		(nsIURI **result,
+						 nsIFile *spec);
+
 	GtkWidget      *FindEmbed		(nsIDOMWindow *aDOMWindow);
 
 	GtkWidget      *FindGtkParent		(nsIDOMWindow *aDOMWindow);
 
-	nsresult        CollatePrintSettings	(const _EmbedPrintInfo *info,
+	nsresult        CollatePrintSettings	(_EmbedPrintInfo *info,
 						 nsIPrintSettings *settings,
 						 gboolean preview);
+	PRBool          StringEquals            (nsAString &s1, 
+						 nsAString &s2);
 }
 
 #endif

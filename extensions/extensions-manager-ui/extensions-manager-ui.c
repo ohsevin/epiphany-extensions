@@ -21,6 +21,8 @@
 #include "config.h"
 
 #include "extensions-manager-ui.h"
+
+#include "ephy-gui.h"
 #include "ephy-debug.h"
 
 #include <epiphany/ephy-extensions-manager.h>
@@ -123,7 +125,7 @@ extensions_manager_ui_response_cb (GtkWidget *widget,
 {
 	if (response == GTK_RESPONSE_HELP)
 	{
-		/* FIXME not implemented yet */
+		ephy_gui_help (GTK_WINDOW (widget), "epiphany", "extending-epiphany");
 		return;
 	}
 
