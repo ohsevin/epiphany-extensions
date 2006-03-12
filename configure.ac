@@ -377,7 +377,6 @@ extensions/favicon/Makefile
 extensions/greasemonkey/Makefile
 extensions/greasemonkey/mozilla/Makefile
 extensions/imagebar/Makefile
-extensions/images/Makefile
 extensions/page-info/Makefile
 extensions/page-info/mozilla/Makefile
 extensions/permissions/Makefile
