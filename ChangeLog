@@ -1,6 +1,13 @@
 2006-03-12  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/extensions-manager-ui/extensions-manager-ui.c:
+	(show_extension_info):
+
+	Add extensions About dialogue to the parent's window group.
+
+2006-03-12  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/extensions-manager-ui/extensions-manager-ui.c:
 	(extensions_manager_ui_response_cb):
 	* extensions/extensions-manager-ui/extensions-manager-ui.glade:
 

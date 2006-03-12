@@ -40,6 +40,7 @@
 #include <string.h>
 
 #include <glib/gi18n-lib.h>
+#include <gtk/gtkversion.h>
 
 #define IGNORE_SELF /* Don't display *this* extension in the list */
 #define GROUP	"Epiphany Extension"
@@ -153,7 +154,16 @@ show_extension_info (ExtensionsManagerUI *parent_dialog,
 
 	gtk_window_set_transient_for (GTK_WINDOW (dialog),
 				      GTK_WINDOW (parent_dialog->priv->window));
-	/* FIXME window group ! */
+#if !GTK_CHECK_VERSION(2,9,0)
+	gtk_window_group_add_window (ephy_gui_ensure_window_group (GTK_WINDOW (parent_dialog->priv->window)),
+				     GTK_WINDOW (dialog));
+#endif
+	gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
+
+#if GTK_CHECK_VERSION(2,9,0)
+	g_signal_connect (dialog, "response", G_CALLBACK (gtk_widget_destroy), NULL);
+#endif
+
 	gtk_window_present (GTK_WINDOW (dialog));
 
 	g_free (name);
