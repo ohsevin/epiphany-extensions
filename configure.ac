@@ -16,13 +16,13 @@
 #
 # $Id$
 
-AC_INIT([GNOME Web Browser Extensions],[1.9.7.90],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+AC_INIT([GNOME Web Browser Extensions],[2.14.0],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 
 GNOME_COMMON_INIT
 
-EPIPHANY_API_VERSION=1.10
+EPIPHANY_API_VERSION=2.14
 
-EPIPHANY_EXTENSIONS_MAJOR=1.9
+EPIPHANY_EXTENSIONS_MAJOR=2.14
 AC_SUBST(EPIPHANY_EXTENSIONS_MAJOR)
 
 AC_PREREQ([2.59])
@@ -151,7 +151,7 @@ AM_CONDITIONAL([HAVE_OPENSP],[test "x$enable_opensp" = "xyes"])
 
 AC_MSG_CHECKING([which extensions to build])
 
-ALL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates dashboard error-viewer extensions-manager-ui gestures greasemonkey imagebar java-console page-info permissions push-scroller rss sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu"
+ALL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates dashboard error-viewer extensions-manager-ui gestures greasemonkey imagebar images java-console page-info permissions push-scroller rss sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu"
 USEFUL_EXTENSIONS="actions auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 DEFAULT_EXTENSIONS="actions auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 
@@ -377,6 +377,7 @@ extensions/favicon/Makefile
 extensions/greasemonkey/Makefile
 extensions/greasemonkey/mozilla/Makefile
 extensions/imagebar/Makefile
+extensions/images/Makefile
 extensions/page-info/Makefile
 extensions/page-info/mozilla/Makefile
 extensions/permissions/Makefile
