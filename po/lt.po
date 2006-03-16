@@ -1,15 +1,15 @@
 # Lithuanian translation of epiphany-extensions.
-# Copyright (C) 2004-2005 Free Software Foundation, Inc.
+# Copyright (C) 2004-2006 Free Software Foundation, Inc.
 # This file is distributed under the same license as the epiphany-extensions package.
-# Žygimantas Beručka <zygis@gnome.org>, 2004-2005.
+# Žygimantas Beručka <zygis@gnome.org>, 2004-2006.
 # 
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-16 02:58+0200\n"
-"PO-Revision-Date: 2005-11-16 03:32+0200\n"
+"POT-Creation-Date: 2006-03-16 13:05+0200\n"
+"PO-Revision-Date: 2006-03-16 13:07+0200\n"
 "Last-Translator: Žygimantas Beručka <zygis@gnome.org>\n"
 "Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
 "MIME-Version: 1.0\n"
@@ -86,27 +86,27 @@ msgstr "P_uslapiai"
 msgid "Actions"
 msgstr "Veiksmai"
 
-#: ../extensions/actions/ephy-actions-extension.c:94
+#: ../extensions/actions/ephy-actions-extension.c:112
 msgid "_Actions"
 msgstr "_Veiksmai"
 
-#: ../extensions/actions/ephy-actions-extension.c:95
+#: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Customize actions"
 msgstr "Keisti veiksmus"
 
-#: ../extensions/actions/ephy-actions-extension.c:408
+#: ../extensions/actions/ephy-actions-extension.c:436
 msgid "Could not run command"
 msgstr "Nepavyko paleisti komandos"
 
-#: ../extensions/actions/ephy-actions-extension.c:411
+#: ../extensions/actions/ephy-actions-extension.c:439
 msgid "Could not Run Command"
 msgstr "Nepavyko paleisti komandos"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:490
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:519
 msgid "No action selected."
 msgstr "Veiksmas nepasirinktas."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:500
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:529
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
@@ -114,91 +114,63 @@ msgstr[0] "Pasirinktas %i veiksmas."
 msgstr[1] "Pasirinkti %i veiksmai."
 msgstr[2] "Pasirinkta %i veiksmų."
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:312
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
 msgstr "Pridėti veiksmą"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:415
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
 #, c-format
 msgid "“%s” Properties"
 msgstr "„%s“ savybės"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
 msgid "Action Properties"
 msgstr "Veiksmo savybės"
 
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
-msgid "_Edit Bookmarks"
-msgstr "_Keisti žymeles"
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+msgid "_Auto Reload"
+msgstr "_Automatiškai perkrauti"
 
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
-msgid "Open the bookmarks window"
-msgstr "Atidaryti žymelių langą"
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
+msgid "Reload the page periodically"
+msgstr "Periodiškai perkrauti puslapį"
 
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
-msgid "Open in _Current Tab"
-msgstr "Atidaryti _esamoje kortelėje"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
-msgid "Open bookmarks in the current tab of the active window"
-msgstr "Atidaryti žymeles esamoje aktyvaus lango kortelėje"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
-msgid "Open in New _Tab"
-msgstr "Atidaryti naujoje _kortelėje"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
-msgid "Open bookmarks in a new tab of the active window"
-msgstr "Atidaryti žymeles naujoje aktyvaus lango kortelėje"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
-msgid "Open in New _Window"
-msgstr "Atidaryti naujame _lange"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
-msgid "Open bookmarks in new a window"
-msgstr "Atidaryti žymeles naujame lange"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:531
-msgid "Bookmarks"
-msgstr "Žymelės"
-
-#: ../extensions/certificates/ephy-certificates-extension.c:173
+#: ../extensions/certificates/ephy-certificates-extension.c:177
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "Sertifikatai"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:203
+#: ../extensions/certificates/ephy-certificates-extension.c:208
 msgid "Security Devices"
 msgstr "Saugumo įrenginiai"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:321
+#: ../extensions/certificates/ephy-certificates-extension.c:327
 msgid "Manage _Certificates"
 msgstr "Tvarkyti _sertifikatus"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:323
+#: ../extensions/certificates/ephy-certificates-extension.c:329
 msgid "Manage your certificates"
 msgstr "Tvarkyti Jūsų sertifikatams"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:327
+#: ../extensions/certificates/ephy-certificates-extension.c:333
 msgid "Manage Security _Devices"
 msgstr "Tvarkyti saugumo į_renginius"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:329
+#: ../extensions/certificates/ephy-certificates-extension.c:335
 msgid "Manage your security devices"
 msgstr "Tvarkyti Jūsų saugumo įrenginius"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:336
+#: ../extensions/certificates/ephy-certificates-extension.c:342
 msgid "Server _Certificate"
 msgstr "Serverio _sertifikatas"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:338
+#: ../extensions/certificates/ephy-certificates-extension.c:344
 msgid "Display the web server's certificate"
 msgstr "Rodyti web serverio sertifikatą"
 
@@ -352,12 +324,12 @@ msgstr ""
 "HTML klaida esanti %s:\n"
 "Nenurodytas tinkamas dokumento tipas."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:339
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:352
 msgid "Enabled"
 msgstr "Įjungtas"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:347
-#: ../extensions/rss/rss-ui.c:569
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:360
+#: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "Aprašymas"
 
@@ -370,8 +342,8 @@ msgid "Extensions"
 msgstr "Išplėtimai"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
-msgid "_Extensions"
-msgstr "_Išplėtimai"
+msgid "_Extensions..."
+msgstr "_Išplėtimai..."
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
 msgid "Load and unload extensions"
@@ -391,6 +363,15 @@ msgstr "Įdiegti Greasemonkey script"
 msgid "The user script at “%s” has been installed"
 msgstr "Naudotojo scenarijus esantis „%s“ buvo įdiegtas"
 
+#: ../extensions/java-console/ephy-java-console-extension.c:48
+msgid "_Java Console"
+msgstr "_Java konsolė"
+
+#. shortcut key
+#: ../extensions/java-console/ephy-java-console-extension.c:50
+msgid "Show Java Console"
+msgstr "Rodyti Java konsolę"
+
 #: ../extensions/page-info/ephy-page-info-extension.c:65
 msgid "Pa_ge Information"
 msgstr "P_uslapio informacija"
@@ -399,154 +380,154 @@ msgstr "P_uslapio informacija"
 msgid "Display page information in a dialog"
 msgstr "Lange parodyti puslapio informaciją"
 
-#: ../extensions/page-info/page-info-dialog.c:710
+#: ../extensions/page-info/page-info-dialog.c:726
 msgid "Save As..."
 msgstr "Išsaugoti kaip..."
 
-#: ../extensions/page-info/page-info-dialog.c:727
+#: ../extensions/page-info/page-info-dialog.c:743
 msgid "Select a directory"
 msgstr "Pasirinkite žodyną"
 
-#: ../extensions/page-info/page-info-dialog.c:776
+#: ../extensions/page-info/page-info-dialog.c:792
 msgid "Unknown type"
 msgstr "Nežinomas tipas"
 
-#: ../extensions/page-info/page-info-dialog.c:781
+#: ../extensions/page-info/page-info-dialog.c:797
 msgid "Full standards compliance"
 msgstr "Visiškai suderinamas su standartais"
 
-#: ../extensions/page-info/page-info-dialog.c:784
+#: ../extensions/page-info/page-info-dialog.c:800
 msgid "Almost standards compliance"
 msgstr "Beveik suderinamas su standartais"
 
-#: ../extensions/page-info/page-info-dialog.c:787
+#: ../extensions/page-info/page-info-dialog.c:803
 msgid "Compatibility"
 msgstr "Suderinamumas"
 
-#: ../extensions/page-info/page-info-dialog.c:791
+#: ../extensions/page-info/page-info-dialog.c:807
 msgid "Undetermined"
 msgstr "Nenustatytas"
 
-#: ../extensions/page-info/page-info-dialog.c:800
+#: ../extensions/page-info/page-info-dialog.c:816
 msgid "Not cached"
 msgstr "Ne podėlyje"
 
-#: ../extensions/page-info/page-info-dialog.c:803
+#: ../extensions/page-info/page-info-dialog.c:819
 msgid "Disk cache"
 msgstr "Disko podėlyje"
 
-#: ../extensions/page-info/page-info-dialog.c:806
+#: ../extensions/page-info/page-info-dialog.c:822
 msgid "Memory cache"
 msgstr "Atminties podėlyje"
 
-#: ../extensions/page-info/page-info-dialog.c:809
+#: ../extensions/page-info/page-info-dialog.c:825
 msgid "Unknown cache"
 msgstr "Nežinomas podėlis"
 
-#: ../extensions/page-info/page-info-dialog.c:825
-#: ../extensions/page-info/page-info-dialog.c:936
+#: ../extensions/page-info/page-info-dialog.c:841
+#: ../extensions/page-info/page-info-dialog.c:952
 msgid "Unknown"
 msgstr "Nežinomas"
 
-#: ../extensions/page-info/page-info-dialog.c:830
+#: ../extensions/page-info/page-info-dialog.c:846
 msgid "No referrer"
 msgstr "Nėra nukreipėjo"
 
-#: ../extensions/page-info/page-info-dialog.c:844
 #: ../extensions/page-info/page-info-dialog.c:860
+#: ../extensions/page-info/page-info-dialog.c:876
 msgid "Not specified"
 msgstr "Nenurodyta"
 
-#: ../extensions/page-info/page-info-dialog.c:921
+#: ../extensions/page-info/page-info-dialog.c:937
 msgid "Image"
 msgstr "Paveikslėlis"
 
-#: ../extensions/page-info/page-info-dialog.c:924
+#: ../extensions/page-info/page-info-dialog.c:940
 msgid "Embed"
 msgstr "Įterptas"
 
-#: ../extensions/page-info/page-info-dialog.c:927
+#: ../extensions/page-info/page-info-dialog.c:943
 msgid "Object"
 msgstr "Objektas"
 
-#: ../extensions/page-info/page-info-dialog.c:930
+#: ../extensions/page-info/page-info-dialog.c:946
 msgid "Applet"
 msgstr "Įtaisas"
 
-#: ../extensions/page-info/page-info-dialog.c:933
+#: ../extensions/page-info/page-info-dialog.c:949
 msgid "Icon"
 msgstr "Ikona"
 
-#: ../extensions/page-info/page-info-dialog.c:1038
+#: ../extensions/page-info/page-info-dialog.c:1054
 msgid "_Open"
 msgstr "_Atidaryti"
 
-#: ../extensions/page-info/page-info-dialog.c:1044
-#: ../extensions/page-info/page-info-dialog.c:1402
+#: ../extensions/page-info/page-info-dialog.c:1060
+#: ../extensions/page-info/page-info-dialog.c:1420
 msgid "_Copy Link Address"
 msgstr "_Kopijuoti nuorodos adresą"
 
-#: ../extensions/page-info/page-info-dialog.c:1050
+#: ../extensions/page-info/page-info-dialog.c:1066
 msgid "_Use as Background"
 msgstr "_Naudoti kaip foną"
 
-#: ../extensions/page-info/page-info-dialog.c:1056
-#: ../extensions/page-info/page-info-dialog.c:1408
+#: ../extensions/page-info/page-info-dialog.c:1072
+#: ../extensions/page-info/page-info-dialog.c:1426
 msgid "_Save As..."
 msgstr "Iš_saugoti kaip..."
 
-#: ../extensions/page-info/page-info-dialog.c:1239
-#: ../extensions/page-info/page-info-dialog.c:1480
+#: ../extensions/page-info/page-info-dialog.c:1256
+#: ../extensions/page-info/page-info-dialog.c:1499
 msgid "URL"
 msgstr "Adresas"
 
-#: ../extensions/page-info/page-info-dialog.c:1251
+#: ../extensions/page-info/page-info-dialog.c:1269
 msgid "Type"
 msgstr "Tipas"
 
-#: ../extensions/page-info/page-info-dialog.c:1263
+#: ../extensions/page-info/page-info-dialog.c:1281
 msgid "Alt Text"
 msgstr "Alternatyvus tekstas"
 
-#: ../extensions/page-info/page-info-dialog.c:1275
-#: ../extensions/page-info/page-info-dialog.c:1492
+#: ../extensions/page-info/page-info-dialog.c:1293
+#: ../extensions/page-info/page-info-dialog.c:1512
 msgid "Title"
 msgstr "Pavadinimas"
 
-#: ../extensions/page-info/page-info-dialog.c:1287
+#: ../extensions/page-info/page-info-dialog.c:1305
 msgid "Width"
 msgstr "Plotis"
 
-#: ../extensions/page-info/page-info-dialog.c:1299
+#: ../extensions/page-info/page-info-dialog.c:1317
 msgid "Height"
 msgstr "Aukštis"
 
-#: ../extensions/page-info/page-info-dialog.c:1504
+#: ../extensions/page-info/page-info-dialog.c:1524
 msgid "Relation"
 msgstr "Ryšys"
 
-#: ../extensions/page-info/page-info-dialog.c:1634
-#: ../extensions/page-info/page-info-dialog.c:1771
+#: ../extensions/page-info/page-info-dialog.c:1654
+#: ../extensions/page-info/page-info-dialog.c:1793
 msgid "Name"
 msgstr "Vardas"
 
-#: ../extensions/page-info/page-info-dialog.c:1646
+#: ../extensions/page-info/page-info-dialog.c:1666
 msgid "Method"
 msgstr "Metodas"
 
-#: ../extensions/page-info/page-info-dialog.c:1658
+#: ../extensions/page-info/page-info-dialog.c:1680
 msgid "Action"
 msgstr "Veiksmas"
 
-#: ../extensions/page-info/page-info-dialog.c:1737
+#: ../extensions/page-info/page-info-dialog.c:1759
 msgid "_Copy"
 msgstr "_Kopijuoti"
 
-#: ../extensions/page-info/page-info-dialog.c:1783
+#: ../extensions/page-info/page-info-dialog.c:1805
 msgid "Content"
 msgstr "Turinys"
 
-#: ../extensions/page-info/page-info-dialog.c:1882
+#: ../extensions/page-info/page-info-dialog.c:1904
 msgid "Page Metadata"
 msgstr "Puslapio meta duomenys"
 
@@ -580,7 +561,7 @@ msgstr "<b>Vaizdavimas</b>"
 
 #: ../extensions/page-info/page-info.glade.h:8
 msgid "<b>Source File</b>"
-msgstr "<b>Šaltinio byla</b>"
+msgstr "<b>Šaltinio rinkmena</b>"
 
 #: ../extensions/page-info/page-info.glade.h:9
 msgid "<b>Web Page</b>"
@@ -687,73 +668,77 @@ msgstr "uždrausta"
 msgid "default"
 msgstr "numatytasis"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:514
+#: ../extensions/permissions/ephy-permissions-dialog.c:515
 msgid "Domain"
 msgstr "Domenas"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:526
+#: ../extensions/permissions/ephy-permissions-dialog.c:527
 msgid "State"
 msgstr "Būsena"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:619
+#: ../extensions/permissions/ephy-permissions-dialog.c:620
 msgid "Site Permissions"
 msgstr "Svetainės teisės"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:643
+#: ../extensions/permissions/ephy-permissions-dialog.c:647
 msgid "Cookies"
 msgstr "Slapukai"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:644
+#: ../extensions/permissions/ephy-permissions-dialog.c:648
 msgid "Images"
 msgstr "Paveikslėliai"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:645
+#: ../extensions/permissions/ephy-permissions-dialog.c:649
 msgid "Popup Windows"
 msgstr "Iššokantys langai"
 
 #. stock icon
-#: ../extensions/permissions/ephy-permissions-extension.c:152
+#: ../extensions/permissions/ephy-permissions-extension.c:156
 msgid "Site _Permissions"
 msgstr "Svetainės _teisės"
 
 #. shortcut key
-#: ../extensions/permissions/ephy-permissions-extension.c:154
+#: ../extensions/permissions/ephy-permissions-extension.c:158
 msgid "Manage web site permissions"
 msgstr "Tvarkyti svetainės teises"
 
-#: ../extensions/rss/ephy-rss-extension.c:94
+#: ../extensions/rss/ephy-rss-extension.c:98
 msgid "News Feeds Subscription"
 msgstr "Naujienų kanalo prenumerata"
 
-#: ../extensions/rss/ephy-rss-extension.c:96
+#: ../extensions/rss/ephy-rss-extension.c:100
 msgid "Subscribe to this website's news feeds in your favorite news reader"
-msgstr "Užsisakyti šios svetainės naujienų kanalą Jūsų mėgstamiausia naujienų programa"
+msgstr ""
+"Užsisakyti šios svetainės naujienų kanalą Jūsų mėgstamiausia naujienų "
+"programa"
 
-#: ../extensions/rss/ephy-rss-extension.c:101
+#: ../extensions/rss/ephy-rss-extension.c:105
 msgid "_Subscribe to this feed"
 msgstr "_Užsisakyti šį kanalą"
 
-#: ../extensions/rss/ephy-rss-extension.c:103
+#: ../extensions/rss/ephy-rss-extension.c:107
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Užsisakyti šį kanalą Jūsų mėgstamiausia naujienų skaitymo programa"
 
-#: ../extensions/rss/ephy-rss-extension.c:373
+#: ../extensions/rss/ephy-rss-extension.c:396
 msgid "Subscribe to site's news feed"
 msgstr "Užsisakyti šios svetainės naujienų kanalą"
 
-#: ../extensions/rss/rss-ui.c:154
+#: ../extensions/rss/rss-ui.c:167
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
-msgstr "<b><i>Nepavyko prisijungti prie naujienų skaitymo programos, ji paleista?</i></b>"
+msgstr ""
+"<b><i>Nepavyko prisijungti prie naujienų skaitymo programos, ji paleista?</"
+"i></b>"
 
-#: ../extensions/rss/rss-ui.c:156
+#: ../extensions/rss/rss-ui.c:169
 msgid "Retry"
 msgstr "Bandyti dar kartą"
 
-#: ../extensions/rss/rss-ui.c:284
+#: ../extensions/rss/rss-ui.c:297
 msgid "_Copy Feed Address"
 msgstr "_Kopijuoti kanalo adresą"
 
-#: ../extensions/rss/rss-ui.c:562
+#: ../extensions/rss/rss-ui.c:591
 msgid "Subscribe"
 msgstr "Užsisakyti"
 
@@ -864,13 +849,13 @@ msgstr "Automatinė slinktis"
 msgid "Scroll on middle mouse click"
 msgstr "Slinkti paspaudus vidurinįjį pelės mygtuką"
 
-#: ../extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in.h:1
-msgid "Add a bookmarks menu to the panel's notification area"
-msgstr "Įdėti žymelių meniu į skydelio pranešimų vietą"
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
+msgid "Auto Reload Tab"
+msgstr "Automatiškai perkrauti kortelę"
 
-#: ../extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in.h:2
-msgid "Bookmarks Tray"
-msgstr "Žymelių skydelis"
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
+msgid "Reload a tab periodically"
+msgstr "Periodiškai perkrauti kortelę"
 
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
@@ -908,7 +893,8 @@ msgstr "Numatytoji ikona"
 msgid ""
 "Loads /favicon.ico as favicon if the site doesn't use the standard method"
 msgstr ""
-"Įkelia /favicon.ico kaip „favicon“, jei svetainėje nenaudojamas standartinis metodas"
+"Įkelia /favicon.ico kaip „favicon“, jei svetainėje nenaudojamas standartinis "
+"metodas"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -926,17 +912,17 @@ msgstr "Greasemonkey"
 msgid "Run user scripts to modify web pages' behavior"
 msgstr "Paleisti naudotojo scenarijus puslapių elgsenos modifikavimui"
 
-#: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:1
-msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
-msgstr "Automatiškai valdoma tinklo prisijungimo/atsijungimo būsena (EKSPERIMENTINIS!)"
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
+msgid "Java Console"
+msgstr "Java konsolė"
 
-#: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:2
-msgid "Network Connection Monitor"
-msgstr "Tinklo prisijungimo monitorius"
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
+msgid "Provide access to the Java-Plugin Console"
+msgstr "Suteikia priėjimą prie Java-Plugin konsolės"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
-msgstr "Rodyti informaciją apie esamo puslapio nuorodas bei daugialypę terpę"
+msgstr "Rodyti informaciją apie esamo puslapio nuorodas bei multimediją"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
 msgid "Page Info"
@@ -958,7 +944,8 @@ msgstr "Naujienų kanalų prenumerata"
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr ""
-"Užsisakyti svetainės siūlomą naujienų kanalą Jūsų mėgstamiausiae naujienų programa"
+"Užsisakyti svetainės siūlomą naujienų kanalą Jūsų mėgstamiausiae naujienų "
+"programa"
 
 #: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
 msgid "A sample extension with mozilla backend"
@@ -1023,3 +1010,44 @@ msgstr "Rodo naują naują turinį fono kortelėse"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Kortelių būsenos"
+
+#~ msgid "_Edit Bookmarks"
+#~ msgstr "_Keisti žymeles"
+
+#~ msgid "Open the bookmarks window"
+#~ msgstr "Atidaryti žymelių langą"
+
+#~ msgid "Open in _Current Tab"
+#~ msgstr "Atidaryti _esamoje kortelėje"
+
+#~ msgid "Open bookmarks in the current tab of the active window"
+#~ msgstr "Atidaryti žymeles esamoje aktyvaus lango kortelėje"
+
+#~ msgid "Open in New _Tab"
+#~ msgstr "Atidaryti naujoje _kortelėje"
+
+#~ msgid "Open bookmarks in a new tab of the active window"
+#~ msgstr "Atidaryti žymeles naujoje aktyvaus lango kortelėje"
+
+#~ msgid "Open in New _Window"
+#~ msgstr "Atidaryti naujame _lange"
+
+#~ msgid "Open bookmarks in new a window"
+#~ msgstr "Atidaryti žymeles naujame lange"
+
+#~ msgid "Bookmarks"
+#~ msgstr "Žymelės"
+
+#~ msgid "Add a bookmarks menu to the panel's notification area"
+#~ msgstr "Įdėti žymelių meniu į skydelio pranešimų vietą"
+
+#~ msgid "Bookmarks Tray"
+#~ msgstr "Žymelių skydelis"
+
+#~ msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
+#~ msgstr ""
+#~ "Automatiškai valdoma tinklo prisijungimo/atsijungimo būsena "
+#~ "(EKSPERIMENTINIS!)"
+
+#~ msgid "Network Connection Monitor"
+#~ msgstr "Tinklo prisijungimo monitorius"
