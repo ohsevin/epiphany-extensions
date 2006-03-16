@@ -270,11 +270,8 @@ destroy_statusbar_icon (EphyWindow *window)
 	statusbar = EPHY_STATUSBAR (ephy_window_get_statusbar (window));
 	g_return_if_fail (statusbar != NULL);
 
-	frame = g_object_get_data (G_OBJECT (statusbar), STATUSBAR_FRAME_KEY);
-	evbox = g_object_get_data (G_OBJECT (statusbar), STATUSBAR_EVBOX_KEY);
-
-	g_object_set_data (G_OBJECT (statusbar), STATUSBAR_FRAME_KEY, NULL);
-	g_object_set_data (G_OBJECT (statusbar), STATUSBAR_EVBOX_KEY, NULL);
+	frame = g_object_steal_data (G_OBJECT (statusbar), STATUSBAR_FRAME_KEY);
+	evbox = g_object_steal_data (G_OBJECT (statusbar), STATUSBAR_EVBOX_KEY);
 
 	g_return_if_fail (frame != NULL);
 	g_return_if_fail (evbox != NULL);
@@ -365,7 +362,8 @@ num_blocked_cb (AdBlocker *blocker,
 }
 
 static AdBlocker *
-ensure_adblocker (EphyWindow *window, EphyEmbed *embed)
+ensure_adblocker (EphyWindow *window,
+		  EphyEmbed *embed)
 {
 	AdBlocker *blocker;
 
@@ -382,18 +380,18 @@ ensure_adblocker (EphyWindow *window, EphyEmbed *embed)
 		blocker = ad_blocker_new (ext->priv->tester);
 		g_return_val_if_fail (blocker != NULL, NULL);
 
-		g_object_set_data (G_OBJECT (embed), AD_BLOCKER_KEY, blocker);
+		g_object_set_data_full (G_OBJECT (embed), AD_BLOCKER_KEY,
+					blocker, (GDestroyNotify) g_object_unref);
 
 		g_signal_connect (embed, "ge-location",
-				G_CALLBACK (location_changed_cb), blocker);
+				  G_CALLBACK (location_changed_cb), blocker);
 
 		g_signal_connect (embed, "content-blocked",
-				G_CALLBACK (content_blocked_cb), blocker);
+				  G_CALLBACK (content_blocked_cb), blocker);
 	}
 
 	return blocker;
 }
-
 
 static void
 impl_attach_tab (EphyExtension *ext,
@@ -422,15 +420,15 @@ impl_detach_tab (EphyExtension *ext,
 	
 	embed = ephy_tab_get_embed (tab);
 
-	blocker = g_object_get_data (G_OBJECT (embed), AD_BLOCKER_KEY);
+	blocker = g_object_steal_data (G_OBJECT (embed), AD_BLOCKER_KEY);
 	g_return_if_fail (blocker != NULL);
 
 	g_signal_handlers_disconnect_by_func
-		(G_OBJECT (embed), G_CALLBACK (content_blocked_cb), blocker);
+		(embed, G_CALLBACK (content_blocked_cb), blocker);
 	g_signal_handlers_disconnect_by_func
-		(G_OBJECT (embed), G_CALLBACK (location_changed_cb), blocker);
+		(embed, G_CALLBACK (location_changed_cb), blocker);
 	g_signal_handlers_disconnect_by_func
-		(G_OBJECT (blocker), G_CALLBACK (num_blocked_cb), blocker);
+		(blocker, G_CALLBACK (num_blocked_cb), embed);
 
 	g_object_unref (blocker);
 }
