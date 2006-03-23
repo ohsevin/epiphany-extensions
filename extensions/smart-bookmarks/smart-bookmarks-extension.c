@@ -134,15 +134,15 @@ search_gnome_dict_cb (GtkAction *action,
 		      EphyWindow *window)
 {
 	EphyEmbed *embed;
-	char *argv[3] = { "gnome-dictionary", NULL, NULL };
+	char *argv[4] = { "gnome-dictionary", "--look-up", NULL, NULL };
 	GError *error = NULL;
 
 	embed = ephy_window_get_active_embed (window);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	/* ask Mozilla the selection */
-	argv[1] = mozilla_get_selected_text (embed);
-	if (argv[1] == NULL) return;
+	argv[2] = mozilla_get_selected_text (embed);
+	if (argv[2] == NULL) return;
 
 	g_spawn_async (NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error);
 
@@ -152,7 +152,7 @@ search_gnome_dict_cb (GtkAction *action,
 		g_error_free (error);
 	}
 
-	g_free (argv[1]);
+	g_free (argv[2]);
 }
 
 static void 
