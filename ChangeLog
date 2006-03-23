@@ -1,3 +1,12 @@
+2006-03-23  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/tab-groups/ephy-tab-grouper.c: (reset_last_tab),
+	(notebook_page_added_cb), (ephy_tab_grouper_set_notebook),
+	(ephy_tab_grouper_finalize):
+
+	Port to gtk+ 2.9 notebook API.
+
 2006-03-16  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/adblock/adblock.ephy-extension.in.in:

@@ -83,19 +83,19 @@ ephy_tab_grouper_register_type (GTypeModule *module)
 /**
  * Clear the recently opened tab spot.
  */
-static gboolean
+static void
 reset_last_tab (EphyTabGrouper *grouper)
 {
-	grouper->priv->last_pos = -1;
+	EphyTabGrouperPrivate *priv = grouper->priv;
 
-	/* needed for tab-delete signal */
-	return FALSE;
+	priv->last_pos = -1;
 }
 
 static void
-tab_added_cb (EphyNotebook *notebook,
-	      EphyTab *tab,
-	      EphyTabGrouper *grouper)
+notebook_page_added_cb (GtkNotebook *notebook,
+			GtkWidget *tab,
+			guint page,
+			EphyTabGrouper *grouper)
 {
 	EphyTabGrouperPrivate *priv = grouper->priv;
 	int position;
@@ -107,32 +107,32 @@ tab_added_cb (EphyNotebook *notebook,
 	}
 	else
 	{
-		position = gtk_notebook_get_current_page (GTK_NOTEBOOK (notebook)) + 1;
+		position = gtk_notebook_get_current_page (notebook) + 1;
 	}
 
-	ephy_notebook_move_tab (notebook, notebook, tab, position);
+	gtk_notebook_reorder_child (notebook, tab, position);
 
-	grouper->priv->last_pos = position;
+	priv->last_pos = position;
 }
 
 static void
 ephy_tab_grouper_set_notebook (EphyTabGrouper *grouper,
 			       GtkWidget *notebook)
 {
+	EphyTabGrouperPrivate *priv = grouper->priv;
+
 	g_return_if_fail (GTK_IS_NOTEBOOK (notebook));
 
-	grouper->priv->notebook = notebook;
+	priv->notebook = notebook;
 
 	/* Hook up the signals */
-	g_signal_connect (notebook, "tab_added", 
-			  G_CALLBACK (tab_added_cb), grouper);
-	g_signal_connect_swapped (notebook, "tab_removed", 
+	g_signal_connect (notebook, "page-added",
+			  G_CALLBACK (notebook_page_added_cb), grouper);
+	g_signal_connect_swapped (notebook, "page-removed", 
 				  G_CALLBACK (reset_last_tab), grouper);
-	g_signal_connect_swapped (notebook, "tab_detached", 
+	g_signal_connect_swapped (notebook, "page-reordered", 
 				  G_CALLBACK (reset_last_tab), grouper);
-	g_signal_connect_swapped (notebook, "switch_page", 
-				  G_CALLBACK (reset_last_tab), grouper);
-	g_signal_connect_swapped (notebook, "tabs_reordered", 
+	g_signal_connect_swapped (notebook, "switch-page", 
 				  G_CALLBACK (reset_last_tab), grouper);
 }
 
@@ -151,12 +151,12 @@ ephy_tab_grouper_finalize (GObject *object)
 
 	/* Disconnect the signal handlers */
 	g_signal_handlers_disconnect_matched
-		(grouper->priv->notebook, G_SIGNAL_MATCH_DATA,
+		(priv->notebook, G_SIGNAL_MATCH_DATA,
 		 0, 0, NULL, NULL, grouper);
 
 	LOG ("EphyTabGrouper finalised");
 
-	G_OBJECT_CLASS (parent_class)->finalize (object);
+	parent_class->finalize (object);
 }
 
 static void
