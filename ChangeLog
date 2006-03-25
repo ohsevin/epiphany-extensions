@@ -1,11 +1,8 @@
-2006-03-24  Jean-François Rameau  <jframeau@cvs.gnome.org>
+2006-03-25  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
-	* extensions/smart-bookmarks/smart-bookmarks-extension.c:
-	(search_gnome_dict_cb):
+	* configure.ac:
 
-	Change call to gnome-dictionary (--look-up).
-	Fix #335728.
-	Patch from Baptiste Mille-mathias.
+	Typo.
 	
 2006-03-23  Christian Persch  <chpe@cvs.gnome.org>
 
