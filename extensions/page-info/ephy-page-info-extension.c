@@ -43,10 +43,12 @@
 
 struct _EphyPageInfoExtensionPrivate
 {
+	GSList *page_info_dialogs;
 };
 
 typedef struct
 {
+	EphyPageInfoExtension *extension;
 	GtkActionGroup *action_group;
 	guint ui_id;
 } WindowData;
@@ -118,15 +120,36 @@ ephy_page_info_extension_init (EphyPageInfoExtension *extension)
 {
 	LOG ("EphyPageInfoExtension initialising");
 
-/*	extension->priv = EPHY_PAGE_INFO_EXTENSION_GET_PRIVATE (extension);*/
+	extension->priv = EPHY_PAGE_INFO_EXTENSION_GET_PRIVATE (extension);
+}
+
+static void
+ephy_page_info_extension_dialog_weak_notify_cb (
+	EphyPageInfoExtension *extension, 
+	GObject *dialog)
+{
+	extension->priv->page_info_dialogs = g_slist_remove
+		(extension->priv->page_info_dialogs, dialog);
 }
 
 static void
 ephy_page_info_extension_finalize (GObject *object)
 {
-//	EphyPageInfoExtension *extension = EPHY_PAGE_INFO_EXTENSION (object);
+	EphyPageInfoExtension *extension = EPHY_PAGE_INFO_EXTENSION (object);
+	GSList *l;
 
 	LOG ("EphyPageInfoExtension finalizing");
+
+	for (l = extension->priv->page_info_dialogs; l != NULL; l = l->next)
+	{
+		g_object_weak_unref (l->data,
+				     (GWeakNotify) ephy_page_info_extension_dialog_weak_notify_cb,
+				     extension);
+	}
+
+	g_slist_foreach (extension->priv->page_info_dialogs,
+			 (GFunc) g_object_unref, NULL);
+	g_slist_free (extension->priv->page_info_dialogs);
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
 }
@@ -140,7 +163,7 @@ ephy_page_info_extension_class_init (EphyPageInfoExtensionClass *klass)
 
 	object_class->finalize = ephy_page_info_extension_finalize;
 
-/*	g_type_class_add_private (object_class, sizeof (EphyPageInfoExtensionPrivate)); */
+	g_type_class_add_private (object_class, sizeof (EphyPageInfoExtensionPrivate));
 }
 
 static void
@@ -149,13 +172,26 @@ ephy_page_info_extension_display_cb (GtkAction *action,
 {
 	EphyEmbed *embed;
 	PageInfoDialog *dialog;
+	WindowData *data;
+	EphyPageInfoExtension *extension;
 
 	LOG ("Creating page info dialog");
 
 	embed = ephy_window_get_active_embed (window);
 	g_return_if_fail (embed != NULL);
 
+	data = g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
+	g_return_if_fail (data != NULL);
+	
 	dialog = page_info_dialog_new (window, embed);
+
+	extension = data->extension;
+	extension->priv->page_info_dialogs =  
+			g_slist_append (extension->priv->page_info_dialogs, dialog);
+
+	g_object_weak_ref (G_OBJECT (dialog),
+			   (GWeakNotify) ephy_page_info_extension_dialog_weak_notify_cb,
+			   extension);
 
 	ephy_dialog_show (EPHY_DIALOG (dialog));
 }
@@ -220,6 +256,7 @@ free_window_data (WindowData *data)
 	g_return_if_fail (data != NULL);
 
 	g_object_unref (data->action_group);
+
 	g_free (data);
 }
 
@@ -239,6 +276,7 @@ impl_attach_window (EphyExtension *extension,
 
 	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
 
+	data->extension = EPHY_PAGE_INFO_EXTENSION (extension);
 	data->action_group = action_group =
 		gtk_action_group_new ("EphyPageInfoExtensionActions");
 	gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);

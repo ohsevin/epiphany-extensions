@@ -1,3 +1,11 @@
+2006-03-25  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/page-info/ephy-page-info-extension.c:
+	
+	PageInfo extension crashes after it has been unloaded
+	and when a Pageinfo dialog is currently displayed.
+	Fix #335738.
+
 2006-03-24  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/smart-bookmarks/smart-bookmarks-extension.c:
