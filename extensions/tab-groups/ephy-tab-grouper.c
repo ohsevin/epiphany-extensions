@@ -151,7 +151,7 @@ ephy_tab_grouper_finalize (GObject *object)
 
 	/* Disconnect the signal handlers */
 	g_signal_handlers_disconnect_matched
-		(priv->notebook, G_SIGNAL_MATCH_DATA,
+		(grouper->priv->notebook, G_SIGNAL_MATCH_DATA,
 		 0, 0, NULL, NULL, grouper);
 
 	LOG ("EphyTabGrouper finalised");
