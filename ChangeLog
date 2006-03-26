@@ -1,3 +1,9 @@
+2006-03-26  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
+	No need to check for nsIContentPolicy variants anymore.
+
 2006-03-25  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/page-info/ephy-page-info-extension.c:
