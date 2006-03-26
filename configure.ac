@@ -304,27 +304,6 @@ PKG_CHECK_MODULES([MOZILLA_COMPONENT],[${gecko_cv_gecko}-xpcom >= $min_version $
 AC_SUBST([MOZILLA_COMPONENT_CFLAGS])
 AC_SUBST([MOZILLA_COMPONENT_LIBS])
 
-# Changed in 1.8a1 and again in 1.8a3 to its present form (variant 2);
-# variant 1 is on 1.7 branch. Aviary branch also has variant 2.
-
-AC_MSG_CHECKING([for nsIContentPolicy API])
-
-GECKO_COMPILE_IFELSE([content],
-	[AC_LANG_PROGRAM(
-		[[#include <nsEmbedString.h>
-		  #include <nsIURI.h>
-		  #include <nsIContentPolicy.h>]],
-		[[nsIContentPolicy *p;
-		  nsISupports *arg4;
-		  p->ShouldLoad(0,nsnull,nsnull,arg4,nsEmbedCString(),nsnull,nsnull);]]
-	)],
-	[variant=2],
-	[variant=1])
-
-AC_DEFINE_UNQUOTED([MOZ_NSICONTENTPOLICY_VARIANT], [$variant], [Define the nsIContentPolicy API variant])
-
-AC_MSG_RESULT([variant $variant])
-
 # Needed since 1.8b2
 # Define this down here so it doesn't affect the API checks above
 
