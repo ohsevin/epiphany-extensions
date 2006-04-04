@@ -19,3 +19,4 @@ missing
 mkinstalldirs
 compile
 py-compile
+gnome-doc-utils.make

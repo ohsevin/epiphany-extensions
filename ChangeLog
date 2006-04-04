@@ -1,3 +1,40 @@
+2006-04-04  Christian Persch  <chpe@cvs.gnome.org>
+
+	* .cvsignore:
+	* Makefile.am:
+	* configure.ac:
+
+	Use gnome doc utils.
+
+	* help/.cvsignore:
+	* help/C/epiphany-extensions.xml:
+	* help/C/figures/epi-ext-action-create.png:
+	* help/C/figures/epi-ext-actions-use.png:
+	* help/C/figures/epi-ext-adblocker.png:
+	* help/C/figures/epi-ext-gestures-back.png:
+	* help/C/figures/epi-ext-gestures-close-2.png:
+	* help/C/figures/epi-ext-gestures-close.png:
+	* help/C/figures/epi-ext-gestures-forward.png:
+	* help/C/figures/epi-ext-gestures-fullscreen.png:
+	* help/C/figures/epi-ext-gestures-homepage.png:
+	* help/C/figures/epi-ext-gestures-new-tab.png:
+	* help/C/figures/epi-ext-gestures-new-window.png:
+	* help/C/figures/epi-ext-gestures-next-tab.png:
+	* help/C/figures/epi-ext-gestures-prev-tab.png:
+	* help/C/figures/epi-ext-gestures-reload.png:
+	* help/C/figures/epi-ext-gestures-stop.png:
+	* help/C/figures/epi-ext-gestures-up.png:
+	* help/C/figures/epi-ext-gestures-view-source-2.png:
+	* help/C/figures/epi-ext-gestures-view-source.png:
+	* help/C/figures/epi-ext-sidebar.png:
+	* help/C/figures/epi-ext-tabgroups.png:
+	* help/C/legal.xml:
+	* help/Makefile.am:
+	* help/epiphany-extensions.omf.in:
+
+	Add documentation for Epiphany Extensions, written by Baptiste
+	Mille-Mathias.
+
 2006-03-26  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
