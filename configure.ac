@@ -88,6 +88,12 @@ AM_GLIB_GNU_GETTEXT
 AM_GLIB_DEFINE_LOCALEDIR([LOCALE_DIR])
 
 # ********************************
+# Documentation
+# ********************************
+
+GNOME_DOC_INIT
+
+# ********************************
 # pkg config checks
 # ********************************
 
@@ -376,6 +382,7 @@ extensions/tabsmenu/Makefile
 extensions/tab-groups/Makefile
 extensions/java-console/Makefile
 extensions/java-console/mozilla/Makefile
+help/Makefile
 po/Makefile.in
 ])
 

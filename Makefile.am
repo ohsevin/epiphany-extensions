@@ -1,4 +1,4 @@
-SUBDIRS = include extensions po
+SUBDIRS = include extensions po help
 
 ACLOCAL_AMFLAGS = -I m4
 
@@ -13,6 +13,7 @@ EXTRA_DIST =			\
 	intltool-extract.in 	\
 	intltool-merge.in 	\
 	intltool-update.in	\
+	gnome-doc-utils.make	\
 	tools/copy-template	\
 	doc/writing-epiphany-extensions.xml
 
@@ -21,4 +22,8 @@ DISTCLEANFILES = 		\
 	intltool-merge 		\
 	intltool-update
 
-DISTCHECK_CONFIGURE_FLAGS = --with-extensions=really-all --with-mozilla=$(MOZILLA)
+DISTCHECK_CONFIGURE_FLAGS = \
+	--with-extensions=really-all	\
+	--with-gecko=$(MOZILLA)		\
+	--disable-scrollkeeper		\
+	--disable-schemas-install
