@@ -1,3 +1,22 @@
+2006-04-09  Christian Persch  <chpe@cvs.gnome.org>
+
+	* m4/gecko.m4:
+	* include/ephy-gui.h:
+
+	Update from Epiphany.
+
+	* extensions/actions/actions-editor.glade:
+	* extensions/actions/ephy-actions-extension-editor-dialog.c:
+	(ephy_actions_extension_editor_dialog_response_cb):
+	* extensions/certificates/ephy-certificates-extension.c:
+	(manage_certificates_cb), (manage_devices_cb):
+	* extensions/extensions-manager-ui/ephy-extensions-manager-ui-exten
+	sion.c: (help_cb), (impl_attach_window), (impl_detach_window):
+	* extensions/extensions-manager-ui/extensions-manager-ui.c:
+	(extensions_manager_ui_response_cb):
+
+	Add help to some extensions.
+
 2006-04-04  Christian Persch  <chpe@cvs.gnome.org>
 
 	* .cvsignore:
