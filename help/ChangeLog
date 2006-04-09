@@ -1,3 +1,14 @@
+2006-04-09  Christian Persch  <chpe@cvs.gnome.org>
+
+	* C/figures/epi-ext-action-create.png:
+	* C/figures/epi-ext-actions-use.png:
+	* C/figures/epi-ext-adblocker.png:
+	* C/figures/epi-ext-sidebar.png:
+	* C/figures/epi-ext-tabgroups.png:
+	* C/epiphany-extensions.xml:
+
+	Docs and screenshot updates from Victor Osadci.
+
 2006-04-08  Christian Persch  <chpe@cvs.gnome.org>
 
 	* C/epiphany-extensions.xml:

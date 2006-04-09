@@ -33,7 +33,10 @@
       <year>2006</year>
       <holder>Baptiste Mille-Mathias</holder>
     </copyright>
-
+    <copyright>
+      <year>2006</year>
+      <holder>Victor Osadci</holder>
+    </copyright>
 <!-- translators: uncomment this:
 
   <copyright>
@@ -62,6 +65,14 @@
 	  <address><email>baptiste.millemathias@gmail.com</email></address> 
 	</affiliation> 
       </author>
+	  <author> 
+	<firstname>Victor</firstname> 
+	<surname>Osadci</surname> 
+	<affiliation> 
+	  <orgname>GNOME Documentation Project</orgname> 
+	  <address><email>Victor.Osadci.GNOME@xhtml.md</email></address> 
+	</affiliation> 
+	  </author> 
     </authorgroup>
 
     <releaseinfo>
@@ -88,16 +99,16 @@
 		<title>Introduction</title>
 
 		<para>&fr; are a set of tools that extend the capabilities of &app;, the GNOME Web Browser.</para>
-		<para>They provide to Epiphany new functionalities and complete some
+		<para>They provide to Epiphany new functionality and complete some
 		existing.</para>
-	</sect1>
+	</sect1>	
 
 	<sect1 id="epi-ext-manager">
 		<title>Extensions Manager</title>
 
 		<sect2 id="epi-ext-manager-intro">
 			<title>Introduction</title>
-			<para>The Extension Manager is the tool that permit to activate Epiphany
+			<para>The Extension Manager is the tool that lets you activate Epiphany
 			Extensions.</para>
 		</sect2>
 
@@ -105,11 +116,11 @@
 			<title>Using Extensions Manager</title>
 			<para>To open the Extension Manager, choose
 			<menuchoice><guimenu>Tools</guimenu><guimenuitem>Extension...</guimenuitem></menuchoice>.</para>
-			<para>To activate an extension, tick the checkbox in front of this
-			extension, the extension is loaded. To disable an extension, untick the checkbox.</para>
+			<para>To enable an extension, activate the check-box in front of the
+			extension. To disable an extension, deactivate the check-box.</para>
 		</sect2>
 	</sect1>
-	
+
 	<sect1 id="epi-ext-actions">
 		<title>Actions</title>	
 
@@ -126,7 +137,7 @@
 			<sect3 id="epi-ext-action-manage-create">
 				<title>Create Actions</title>
 			
-				<para>To create an action, do the following steps:
+				<para>To create an action, perform the following steps:
 					<orderedlist>
 						<listitem>
 							<para>Choose <menuchoice><guimenu>Edit</guimenu>
@@ -134,12 +145,12 @@
 							to open the Actions manager</para>
 						</listitem>
 						<listitem>
-							<para>Click <guibutton>Add</guibutton> to add a
+							<para>Press <guibutton>Add</guibutton> to add a
 							new action
 							</para>
 						</listitem>
 						<listitem>
-							<para>In the window "Add Action", 
+							<para>In the "Add Action" window, 
 								<itemizedlist>
 									<listitem>
 										<para>Enter the <guilabel>Name</guilabel> of the action. The name
@@ -159,18 +170,18 @@
 										program or script available in your path</para>
 									</listitem>
 									<listitem>
-										<para>Tick <guilabel>Pages</guilabel> or
+										<para>Select <guilabel>Pages</guilabel> or
 										<guilabel>Images</guilabel> to choose on
-										which elements the action will appears</para>
+										which elements the action will appear</para>
 									</listitem>
 									<listitem>
-										<para>Click <guibutton>Add</guibutton></para>
+										<para>Press <guibutton>Add</guibutton></para>
 									</listitem>
 								</itemizedlist>
 							</para>
 						</listitem>
 						<listitem>
-							<para>Click <guibutton>Close</guibutton> to close the Actions Manager</para>
+							<para>Press <guibutton>Close</guibutton> to close the Actions Manager</para>
 						</listitem>
 					</orderedlist>
 				</para>
@@ -194,11 +205,11 @@
 							</para>
 						</listitem>
 						<listitem>
-							<para>Click <guibutton>Edit</guibutton> 
+							<para>Press <guibutton>Edit</guibutton> 
 							</para>
 						</listitem>
 						<listitem>
-							<para>Now edit the action like in <xref linkend="epi-ext-action-manage-create"/>
+							<para>Edit the action as described in <xref linkend="epi-ext-action-manage-create"/>
 							</para>
 						</listitem>
 					</orderedlist>
@@ -220,11 +231,11 @@
 							</para>
 						</listitem>
 						<listitem>
-							<para>Click <guibutton>Remove</guibutton> 
+							<para>Press <guibutton>Remove</guibutton> 
 							</para>
 						</listitem>
 						<listitem>
-							<para>Click <guibutton>Close</guibutton> to close the Actions Manager</para>
+							<para>Press <guibutton>Close</guibutton> to close the Actions Manager</para>
 						</listitem>
 					</orderedlist>
 				</para>
@@ -234,10 +245,9 @@
 		<sect2 id="epi-ext-actions-usage">
 			<title>Using Actions</title>
 
-			<para>To use a custom action, visit a page, right-click on the
-			element you want to perfmon the action, select in the context
-			menu, the action to do.</para>
-			<figure><title>The &app; context menu with the custom action</title>
+			<para>To use a custom action, choose the action to execute from the context 
+			menu of the element you wish to perform the action on.</para>
+			<figure><title>The &app; image context menu with a custom action</title>
 			<graphic fileref="figures/epi-ext-actions-use.png"/>
 			</figure>
 		</sect2>
@@ -250,20 +260,19 @@
 		<sect2 id="epi-ext-adblocker-intro">
 			<title>Introduction</title>
 			
-			<para>The Ad Blocker extension permits to block ad banners on a website.
-			It allows to avoid to download them, and so to save time and
-			bandwith.</para>
+			<para>The Ad Blocker extension lets you block ad banners on websites.
+			It avoids downloading them, saving time and bandwidth.</para>
 		</sect2>
 
 		<sect2 id="epi-ext-adblocker-usage">
 			<title>Using Ad Blocker</title>
 			
-			<para>To use the Ad Blocker, you just have to enable the extension,
-			it will ignore link to ads when you visit websites, and	so, they won't 
+			<para>To use the Ad Blocker, you have to enable the extension.
+			The extension will ignore link to ads when you visit websites, and	they won't 
 			be displayed in web pages.</para>
-			<para>&app; will however display an icon (see <xref linkend="epi-ext-figure-adblocker"
-			/>) to inform you that it blocked ads, at the left-bottom hand corner
-			of the window. If you move the mouse pointer over the icon, it will
+			<para>&app; will display an icon in left side of the status bar 
+			(see <xref linkend="epi-ext-figure-adblocker"	/>) to inform you that it has 
+			blocked ads. If you move the mouse pointer over the icon, it will
 			give you of the number of ads blocked in the page.
 			<figure id="epi-ext-figure-adblocker">
 				<title>The Ad Blocker icon</title>
@@ -303,9 +312,9 @@
 					<title>Add a permit rule</title>
 
 					<para>If you want allow to permit an ad to be displayed or
-					correct a rule of Ad Blocker which is too restrictive you can
+					correct a rule of Ad Blocker which is too restrictive, you can
 					create a whitelist file, and add rules inside.</para>
-					<para>&app; looks for whitelist rules in the file 
+					<para>&app; looks for white-list rules in the file 
 					<filename>$HOME/.gnome2/epiphany/extensions/data/adblock/whitelist</filename>.
 					</para>
 				</sect3>
@@ -318,18 +327,26 @@
 		<sect2 id="epi-ext-autoreloadtab-intro">
 			<title>Introduction</title>
 	
-			<para>The Auto Reload Tab extension allows you to reload a page in a tab
-			regularly.</para>
+			<para>The Auto Reload Tab extension allows you to regularly reload a page 
+			in a tab.</para>
 		</sect2>
 
 		<sect2 id="epi-ext-autoreloadtab-usage">
 			<title>Using Auto Reload Tab</title>
 
-			<para>Enter the URL of a page you want to read and you know its
+			<para>Enter the URL of a page you want to open and you know its
 			content change often, then choose
 			<menuchoice><guimenu>View</guimenu><guimenuitem>Auto
 			Reload</guimenuitem></menuchoice> to enable auto reload,
 			&app; will refresh each 3 minutes.</para>
+
+			<note>
+			  <title>Auto reload local files</title>
+			  <para>
+				When a local file is opened, &app; will monitor it and reload the file when it changes.
+			  </para>
+			</note>
+			
 		</sect2>
 	</sect1>
 
@@ -339,8 +356,8 @@
 		<sect2 id="epi-ext-autoscroll-intro">
 			<title>Introduction</title>
 	
-			<para>The Auto Scroll extension allows you to scroll a page in any direction
-			automatically. For instance if you set a slow scroll, you can read a
+			<para>The Auto Scroll extension allows you to automatically scroll a page in 
+			any direction.	For instance, if you set a slow scroll, you can read a
 			whole web page without touching your mouse.</para>
 		</sect2>
 
@@ -350,13 +367,13 @@
 			<para>To start to auto scroll on a page,
 				<orderedlist>
 					<listitem>
-						<para>press and release the middle-mouse button; a
+						<para>Press and release the middle-mouse button; a
 						target appears, and the cursor of mouse pointer is 
 						changed to a hand cursor.</para>
 					</listitem>
 					<listitem>
-						<para>Now, move away the cursor from the target, 
-						you should see the	page that start to scroll.</para>
+						<para>Move the cursor in the direction to scroll. 
+						The page will start to scroll in that direction.</para>
 					</listitem>
 				</orderedlist>
 			</para>
@@ -380,9 +397,9 @@
 				<title>View website certificate</title>
 			
 				<para>When you browse a secured website, the unlocked padlock
-				which appear on the left of the statusbar becomes a locked
+				which appear on the left of the status bar becomes a locked
 				padlock. When the Certificates extension is activated, you
-				can click on the padlock, it will displayed the
+				can click on the padlock, it will display the
 				certificate information.</para>
 			</sect3>
 
@@ -418,7 +435,7 @@
 							<term><guilabel>Authorities</guilabel></term>
 							<listitem><para>To import, view, edit and delete
 							certificates from authorities. Authorities are
-							organizations which create and validate authenticity
+							organizations which create and validate the authenticity
 							of published certificates over the Internet.</para></listitem>
 						</varlistentry>
 					</variablelist>
@@ -440,15 +457,15 @@
 		<sect2 id="epi-ext-errorviewer-intro">
 			<title>Introduction</title>
 	
-			<para>The Error Viewer extension allows you to view error in web pages,
+			<para>The Error Viewer extension allows you to view errors in web pages,
 			validate web pages and check links.</para>
 		</sect2>
 
 		<sect2 id="epi-ext-errorviewer-usage">
 			<title>Using Error Viewer</title>
 
-			<para>The Error Viewer is a small but useful extension for webmaster to check that
-			website (specially yours) conforms to Web standards. This extension comes with 3
+			<para>The Error Viewer is a small but useful extension for webmasters to check that
+			websites (specially yours) conform to Web standards. This extension comes with 3
 			functions:
 				<variablelist>
 					<varlistentry>
@@ -466,17 +483,17 @@
 					</varlistentry>
 				</variablelist>
 			</para>
-			<para>To launch Links Checker, choose
+			<para>To launch the Links Checker, choose
 			<menuchoice><guimenu>Tools</guimenu><guimenuitem>Check
-			Links</guimenuitem></menuchoice>, the error viewer window will open, and
+			Links</guimenuitem></menuchoice>. The error viewer window will open, and
 			the links verification will start automatically.</para>
-			<para>To launch HTML Code Checker, choose
+			<para>To launch the HTML Code Checker, choose
 			<menuchoice><guimenu>Tools</guimenu><guimenuitem>Check
-			HTML</guimenuitem></menuchoice>, the error viewer window will open, and
+			HTML</guimenuitem></menuchoice>. The error viewer window will open, and
 			the HTML code verification will start automatically.</para>
-			<para>To launch Error Viewer, choose
+			<para>To launch the Error Viewer, choose
 			<menuchoice><guimenu>Tools</guimenu><guimenuitem>Error
-			Viewer</guimenuitem></menuchoice>, the error viewer window will open, it
+			Viewer</guimenuitem></menuchoice>. The error viewer window will open, it
 			will display all the validation errors discovered in the web page.</para>
 		</sect2>
 	</sect1>
@@ -488,15 +505,15 @@
 			<title>Introduction</title>
 		
 			<para>The Favicon Fallback extension allows to retrieve the icon favicon.ico when
-			the favicon is not well declared in webpage.</para>
+			the favicon is not well declared in web page.</para>
 		</sect2>
 
 		<sect2 id="epi-ext-favicon-usage">
 			<title>Using Favicon</title>
 
 			<para>Once activated, this extension will retrieve the picture file
-			/favicon.ico on each site you will visit If this file exists. Then
-			&app; will displayed this icon on the left of the location bar.</para>
+			/favicon.ico on each site you will visit if this file exists. Then
+			&app; will display this icon on the left of the location bar.</para>
 		</sect2>
 	</sect1>
 
@@ -506,15 +523,14 @@
 		<sect2 id="epi-ext-gestures-intro">
 			<title>Introduction</title>
 	
-			<para>The Gestures allows you to use Mouse Gesture, Mouse gestures
-			provides an easy way to quickly perform actions in &app; by drawing
+			<para>The Gestures allows you to quickly perform actions in &app; by drawing
 			a shape with the mouse.</para>
 		</sect2>
 
 		<sect2 id="epi-ext-gestures-usage">
 			<title>Using Gestures</title>
 
-			<para>To perform a gesture, press the middle button in the browser part of
+			<para>To perform a gesture, press the middle button in the view pane of
 			a &app; window, move the mouse in one of the following patterns, and then
 			release the button. The cursor will change while the gesture is being performed.
 			</para>
@@ -567,7 +583,7 @@
 							</entry>
 						</row>
 						<row>
-							<entry valign="top">Go to homepage</entry>
+							<entry valign="top">Go to your home page</entry>
 							<entry valign="top">Up - Left - Down</entry>
 							<entry valign="top">
 								<mediaobject>
@@ -578,7 +594,7 @@
 							</entry>
 						</row>
 						<row>
-							<entry valign="top">Reload a page</entry>
+							<entry valign="top">Reload the page</entry>
 							<entry valign="top">Up - Down</entry>
 							<entry valign="top">
 								<mediaobject>
@@ -589,7 +605,7 @@
 							</entry>
 						</row>
 						<row>
-							<entry valign="top">Stop loading a page</entry>
+							<entry valign="top">Stop loading the page</entry>
 							<entry valign="top">Left - Up</entry>
 							<entry valign="top">
 								<mediaobject>
@@ -644,7 +660,7 @@
 							</entry>
 						</row>
 						<row>
-							<entry valign="top">Toggle fullscreen mode</entry>
+							<entry valign="top">Toggle full-screen mode</entry>
 							<entry valign="top">Down - Left</entry>
 							<entry valign="top">
 								<mediaobject>
@@ -677,7 +693,7 @@
 							</entry>
 						</row>
 						<row>
-							<entry valign="top">View page source</entry>
+							<entry valign="top">View the page source</entry>
 							<entry valign="top">Left - Down - Right - Down - Left (Do a
 							<wordasword>S</wordasword>)</entry>
 							<entry valign="top">
@@ -689,7 +705,7 @@
 							</entry>
 						</row>
 						<row>
-							<entry valign="top">View page source (Second gesture)</entry>
+							<entry valign="top">View the page source (Second gesture)</entry>
 							<entry valign="top">Up - Right - Down</entry>
 							<entry valign="top">
 								<mediaobject>
@@ -716,7 +732,7 @@
 				<para>&app; stores the definition of the gestures for all users in the file 
 				<filename>ephy-gestures.xml</filename> located in the directory <filename
 				class="directory">$PREFIX/share/epiphany-extensions/</filename>; this
-				file uses the xml format, and defined the gestures for all the users of
+				file uses the xml format, and defines the gestures for all the users of
 				the system.</para>
 				
 				<para>If you open this file, you see a set of markup gesture, and
@@ -739,7 +755,7 @@
 				<title>Create new gesture</title>
 
 				<para>In this section, we will explain how to create a new gesture. We
-				will decide to print the webpage when we will draw a
+				will decide to print the web page when we will draw a
 				<wordasword>P</wordasword> with the mouse.</para>
 
 				<para>To create your own gestures, first create a file named
@@ -747,7 +763,7 @@
 				class="directory">~/.gnome2/epiphany/</filename> which will store your
 				personal gesture definitions.</para>
 				
-				<para>Open the newly created file with you favorite editor and add the following
+				<para>Open the newly created file with a text editor and add the following
 				content:
 				<programlisting>
 <![CDATA[<?xml version="1.0"?>
@@ -786,7 +802,7 @@
 					<para>An action describes the path to a menu or toolbar item
 					in the &app; window. All these paths are defined is the file
 					<filename>ephy-gestures.xml</filename> located in <filename
-					class="directory">$PREFIX/epiphany/epiphany-ui.xml</filename></para>
+					class="directory">$PREFIX/epiphany-browser/epiphany-ui.xml</filename></para>
 				<programlisting>
 <![CDATA[<?xml version="1.0"?>
 <epiphany_gestures version="0.4">
@@ -807,17 +823,17 @@
 			<title>Introduction</title>
 	
 			<para>Greasemonkey is a powerful extension that allows users to use 
-			scripts that make on-the-fly changes to specific web pages. The
-			greasemonkey scripts can do pages modifications or automatically
+			scripts that make on-the-fly changes to web pages. The
+			greasemonkey scripts can make page modifications or automatically
 			fill forms for instance.</para>
-			<para>Greasemonkey scripts are javascripts and have a file
+			<para>Greasemonkey scripts are javascripts and have the file
 			extension ".user.js". Greasemonkey extension doesn't come with any scripts, you have to find
 			by yourself scripts over the web. A good Greasemonkey scripts repository is the
 			site <ulink
 			url="http://userscripts.org/">http://userscripts.org/</ulink>.</para>
-			<para>To know more about Greasemonkey, visit the <ulink
-			url="http://en.wikipedia.org/wiki/Greasemonkey">Wikipedia
-			Definition</ulink>.</para>
+			<para>To learn more about Greasemonkey, read the <ulink
+			url="http://en.wikipedia.org/wiki/Greasemonkey">definition</ulink> on the 
+			Wikipedia on-line enciclopedia.</para>
 		</sect2>
 
 		<sect2 id="epi-ext-greasemonkey-usage">
@@ -827,9 +843,9 @@
 				<title>Install a Greasemonkey script</title>
 		
 				<para>To install a Greasemonkey script, first locate a link to a
-				greasemonkey script on a webpage, right-click on the link, and
+				greasemonkey script on a web page, right-click on the link, and
 				choose <guimenuitem>Install User Script</guimenuitem>. &app; 
-				will download the script; a messagebox will confirm the script
+				will download the script; a message box will confirm the script
 				is installed and ready to use.</para>
 				<tip><para>You can manually install Greasemonkey scripts by
 				copying them in <filename
@@ -873,8 +889,8 @@
 			<title>Introduction</title>
 	
 			<para>The News Feed Subscription extension allows you to subscribe to a news feed
-			offered by the webpage in your favorite news reader. The supported
-			feed readers software are
+			offered by the web page in your favorite news reader. The supported
+			feed readers are
 			<itemizedlist>
 				<listitem><para>Liferea</para></listitem>
 				<listitem><para>Straw</para></listitem>
@@ -886,32 +902,28 @@
 		<sect2 id="epi-ext-newsfeedsubscription-usage">
 			<title>Using News Feed Subscription</title>
 
-			<para>When &app; detects a website provide RSS and Atom feeds, it
-			will display an icon on the bottom left hand corner of the &app; 
-			window.</para>
+			<para>When &app; detects a that a website provides RSS and Atom feeds, it
+			will display an icon on left side of the &app; status bar.</para>
 			<para>To register this feed: 
 				<orderedlist>
 					<listitem>
 						<para>
 							Choose <menuchoice><guimenu>Tools</guimenu><guimenuitem>News Feed
 							Subscription</guimenuitem></menuchoice>, a new
-							window appears with the list of available feeds
-							appears. You can also click on the Feed icon to make
-							appear the window <interface>News Feed
-							Subscription</interface>.
+							window with the list of available feeds
+							appears. You can also click on the Feed icon in the status bar to 
+							make the <interface>News Feed Subscription</interface> window appear.
 						</para>
 					</listitem>
 					<listitem>
 						<para>
-							Choose the feeds you wan to register by ticking the
-							checkbox button in front of each feed. If you
-							right-click on a feed title, you can also copy its URL
-							to paste it in a news aggregator not yet supported.
+							Choose the feeds you wan to subscribe to. You can also copy the feed
+							Loaction using the feed's context menu.
 						</para>
 					</listitem>
 					<listitem>
 						<para>
-							Click <guibutton>Subscribe</guibutton> to
+							Press <guibutton>Subscribe</guibutton> to
 							subscribe the feeds.
 						</para>
 					</listitem>
@@ -926,7 +938,8 @@
 		<sect2 id="epi-ext-pageinfo-intro">
 			<title>Introduction</title>
 			
-			<para>The Page Info extension provides detailled information about the web pages you visit.</para>
+			<para>The Page Info extension provides detailed information about the web 
+			pages you visit.</para>
 		</sect2>
 
 		<sect2 id="epi-ext-pageinfo-usage">
@@ -935,7 +948,7 @@
 			<para>To access the page information choose
 			<menuchoice><guimenu>View</guimenu><guimenuitem>Page
 			Information</guimenuitem></menuchoice>; a new window appears, letting
-			you access to 5 tabs:
+			you access 5 tabs:
 				<variablelist>
 					<varlistentry>
 						<term><guilabel>General</guilabel></term>
@@ -949,7 +962,7 @@
 					</varlistentry>
 					<varlistentry>
 						<term><guilabel>Links</guilabel></term>
-						<listitem><para>Provides all the links of the webpage.</para></listitem>
+						<listitem><para>Provides all the links of the web page.</para></listitem>
 					</varlistentry>
 					<varlistentry>
 						<term><guilabel>Forms</guilabel></term>
@@ -980,8 +993,7 @@
 			<title>Using Push Scroll</title>
 
 			<para>To use Push Scroll, simply press the middle mouse button, and
-			while this time move your mouse in any direction, the page will
-			scroll.</para>
+			move your mouse in any direction, the page will scroll.</para>
 		</sect2>
 	</sect1>
 	
@@ -1010,17 +1022,17 @@
 		<sect2 id="epi-ext-style-intro">
 			<title>Introduction</title>
 			
-			<para>The Select Stylesheet extension is an extension that enable to
-			switch between the stylesheets of a website, it enables also to
-			disable stylesheet when you browse a page.</para>
+			<para>The Select Stylesheet extension lets you 
+			switch between the stylesheets of a web page. You can also 
+			disable the stylesheets when you browsing a page.</para>
 		</sect2>
 
 		<sect2 id="epi-ext-style-usage">
 			<title>Using Select Stylesheet</title>
 			
-			<para>To switch the style sheet of the website you visit, choose menu
+			<para>To change the style sheet of the website you visit, choose 
 			<menuchoice><guimenu>View</guimenu><guimenuitem>Style</guimenuitem></menuchoice>
-			, then choose the style sheet among those available.</para>
+			, then choose a style sheet from those available.</para>
 			<para>If you choose the style sheet <guilabel>none</guilabel> the
 			website will not use any style sheet.</para>
 		</sect2>
@@ -1032,7 +1044,7 @@
 		<sect2 id="epi-ext-sidebar-intro">
 			<title>Introduction</title>
 
-			<para>The Sidebar extension adds a small window on the left side af the
+			<para>The Sidebar extension adds a small window on the left side of the
 			&app; window. Sidebar allows to display website content and	can provide quick
 			access to their information.</para>
 		</sect2>
@@ -1051,7 +1063,7 @@
 				<para>By default, the Sidebar is not displayed; to display the
 				Sidebar, choose menu
 				<menuchoice><guimenu>View</guimenu><guimenuitem>Sidebar</guimenuitem></menuchoice>.</para>
-				<tip><para>You can also toggle visibility of Sidebar by pressing
+				<tip><para>You can also toggle the visibility of Sidebar by pressing
 				<keycap>F9</keycap>.</para></tip>
 			</sect3>			
 
@@ -1071,14 +1083,15 @@
 				<title>Switch between Sidebars</title>
 				
 				<para>When you have subscribed to several sidebars, to switch
-				between them, click in the drop-box and select the Sidebar.</para>
+				between them, select the Sidebar from the drop-box at the top of the 
+				Sidebar.</para>
 			</sect3>
 
 			<sect3 id="epi-ext-sidebar-usage-del">
 				<title>Delete a Sidebar</title>
 				
-				<para>To delete a Sidebar to which you have added, display the
-				sidebar to delete and click on the trash icon</para>
+				<para>To delete a Sidebar which you have added, display the
+				sidebar to delete and press the trash icon.</para>
 			</sect3>
 		</sect2>
 	</sect1>
@@ -1096,13 +1109,13 @@
 		<sect2 id="epi-ext-smart-usage">
 			<title>Using Smart Bookmarks</title>
 			
-			<para>To use smart bookmarks, see first the appropriate <ulink
-			type="help" url="ghelp:epiphany#smart-bookmarks-create-a-smartbookmark">
-			section</ulink>	to create smart bookmark.</para>
-			<para>To look up text, select a text in a webpage and right-click,
-			choose <guimenuitem>lookup</guimenuitem> and choose with which smart
-			bookmark do the lookup. A web browser will be opened with the result
-			of the lookup.</para>
+			<para>To create a smart bookmark, see the appropriate <ulink
+			type="help" url="ghelp:epiphany-browser#smart-bookmarks-create-a-smartbookmark">
+			section</ulink>	in the &app; manual.</para>
+			<para>To look up text, select the text in a web page and 
+			choose <guimenuitem>look-up</guimenuitem> and the smart
+			bookmark from the context menu. A web browser will be opened with the result
+			of the look-up.</para>
 		</sect2>
 	</sect1>
 
@@ -1112,16 +1125,16 @@
 		<sect2 id="epi-ext-tabgroups-intro">
 			<title>Introduction</title>
 			
-			<para>The Tab Groups extension makes the new tabs created just
-			after the actual tab.</para>
+			<para>The Tab Groups extension makes new tabs appear after the current 
+			tab.</para>
 		</sect2>
 
 		<sect2 id="epi-ext-tabgroups-usage">
 			<title>Using Tab Groups</title>
 			
-			<para>Once this extension is enabled, it change the normal behaviour
-			(where the new tabs are created at the last place) to a new one. When you open a new tab it
-			will be created just after the actual tab.</para>
+			<para>Once this extension is enabled, it changes the normal behaviour
+			(where new tabs are created after the last tab) to a new one. When you open 
+			a new tab, it	will be created after the current tab.</para>
 
 			<figure>
 				<title>A new tab created after the first tab</title>
@@ -1136,7 +1149,7 @@
 		<sect2 id="epi-ext-tabstates-intro">
 			<title>Introduction</title>
 			
-			<para>The Tab States extension change the status of the tab label to
+			<para>The Tab States extension changes the status of the tab label to
 			signal the content has changed.</para>
 		</sect2>
 
@@ -1144,13 +1157,13 @@
 			<title>Using Tab States</title>
 			
 			<para>Once this extension is enabled, when the content of a page in
-			a tab has changed, the tab label will become bold, so you are
-			notified.</para>
+			a tab changes, the tab label will become bold, to notify you that the 
+			page has changed.</para>
 		</sect2>
 	</sect1>
 
-<!-- Tabs-Menu is disabled for now 
-
+<!-- The tabsmenu extension is currently broken. -->
+<!--
 	<sect1 id="epi-ext-tabsmenu">
 		<title>Tabsmenu</title>
 		
@@ -1172,7 +1185,7 @@
 			name</guimenuitem></menuchoice>. The tab is moved to the selected
 			window.
 			</para>
-			<tip><para>You can also move tabs between window, with the
+			<tip><para>You can also move tabs between window from the
 			context menu on the tabs.</para></tip>
 		</sect2>
 	</sect1>
