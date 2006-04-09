@@ -90,7 +90,26 @@
 		<para>&fr; are a set of tools that extend the capabilities of &app;, the GNOME Web Browser.</para>
 		<para>They provide to Epiphany new functionalities and complete some
 		existing.</para>
-	</sect1>	
+	</sect1>
+
+	<sect1 id="epi-ext-manager">
+		<title>Extensions Manager</title>
+
+		<sect2 id="epi-ext-manager-intro">
+			<title>Introduction</title>
+			<para>The Extension Manager is the tool that permit to activate Epiphany
+			Extensions.</para>
+		</sect2>
+
+		<sect2 id="epi-ext-manager-use">
+			<title>Using Extensions Manager</title>
+			<para>To open the Extension Manager, choose
+			<menuchoice><guimenu>Tools</guimenu><guimenuitem>Extension...</guimenuitem></menuchoice>.</para>
+			<para>To activate an extension, tick the checkbox in front of this
+			extension, the extension is loaded. To disable an extension, untick the checkbox.</para>
+		</sect2>
+	</sect1>
+	
 	<sect1 id="epi-ext-actions">
 		<title>Actions</title>	
 
@@ -767,7 +786,7 @@
 					<para>An action describes the path to a menu or toolbar item
 					in the &app; window. All these paths are defined is the file
 					<filename>ephy-gestures.xml</filename> located in <filename
-					class="directory">$PREFIX/epiphany-browser/epiphany-ui.xml</filename></para>
+					class="directory">$PREFIX/epiphany/epiphany-ui.xml</filename></para>
 				<programlisting>
 <![CDATA[<?xml version="1.0"?>
 <epiphany_gestures version="0.4">
@@ -1078,7 +1097,7 @@
 			<title>Using Smart Bookmarks</title>
 			
 			<para>To use smart bookmarks, see first the appropriate <ulink
-			type="help" url="ghelp:epiphany-browser#smart-bookmarks-create-a-smartbookmark">
+			type="help" url="ghelp:epiphany#smart-bookmarks-create-a-smartbookmark">
 			section</ulink>	to create smart bookmark.</para>
 			<para>To look up text, select a text in a webpage and right-click,
 			choose <guimenuitem>lookup</guimenuitem> and choose with which smart
@@ -1130,6 +1149,8 @@
 		</sect2>
 	</sect1>
 
+<!-- Tabs-Menu is disabled for now 
+
 	<sect1 id="epi-ext-tabsmenu">
 		<title>Tabsmenu</title>
 		
@@ -1155,6 +1176,7 @@
 			context menu on the tabs.</para></tip>
 		</sect2>
 	</sect1>
+-->
 
 	<sect1 id="epi-ext-about">
 		<title>About &fr;</title>

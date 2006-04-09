@@ -23,7 +23,7 @@ DOC_FIGURES = \
 	figures/epi-ext-gestures-view-source.png	\
 	figures/epi-ext-gestures-view-source-2.png	\
 	figures/epi-ext-sidebar.png			\
-	figure/epi-ext-tabgroups.png
+	figures/epi-ext-tabgroups.png
 
 DOC_LINGUAS =
 

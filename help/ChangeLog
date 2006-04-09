@@ -1,0 +1,5 @@
+2006-04-08  Christian Persch  <chpe@cvs.gnome.org>
+
+	* C/epiphany-extensions.xml:
+
+	Document the extensions manager. Patch from Baptiste Mille-Mathias.
