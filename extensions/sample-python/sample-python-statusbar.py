@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 #
 # Sample Python Statusbar extension: creates a statusbar icon using Python
 #

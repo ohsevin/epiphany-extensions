@@ -20,6 +20,7 @@
 #include <string.h>
 #include <glib/gi18n-lib.h>
 #include <gtk/gtk.h>
+
 #include "ephy-gui.h"
 #include "ephy-actions-extension.h"
 #include "ephy-actions-extension-editor-dialog.h"
@@ -725,6 +726,15 @@ ephy_actions_extension_editor_dialog_response_cb
 	 int response,
 	 EphyActionsExtensionEditorDialog *pdialog)
 {
+	if (response == GTK_RESPONSE_HELP)
+	{
+		ephy_gui_help_with_doc_id (GTK_WINDOW (dialog),
+					   "epiphany-extensions",
+					   "epiphany-extensions",
+					   "epi-ext-action-manage");
+		return;
+	}
+
 	g_object_unref (pdialog);
 }
 

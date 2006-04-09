@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 #
 # Sample Python Menu extension: creates menu entries using Python
 #

@@ -78,19 +78,17 @@ ad_blocker_register_type (GTypeModule *module)
 }
 
 AdBlocker *
-ad_blocker_new (AdUriTester *uri_tester)
+ad_blocker_new (void)
 {
-	return g_object_new (TYPE_AD_BLOCKER,
-			     "uri-tester", uri_tester,
-			     NULL);
+	return g_object_new (TYPE_AD_BLOCKER, NULL);
 }
 
 void
 ad_blocker_blocked_uri (AdBlocker *blocker)
 {
-		blocker->priv->num_blocked++;
+	blocker->priv->num_blocked++;
 
-		g_object_notify (G_OBJECT (blocker), "num-blocked");
+	g_object_notify (G_OBJECT (blocker), "num-blocked");
 }
 
 void
@@ -125,16 +123,8 @@ ad_blocker_set_property (GObject *object,
 			 const GValue *value,
 			 GParamSpec *pspec)
 {
-	AdBlocker *blocker = AD_BLOCKER (object);
-
-	switch (prop_id)
-	{
-		case PROP_URI_TESTER:
-			blocker->priv->uri_tester = g_value_get_object (value);
-			break;
-		default:
-			g_return_if_reached ();
-	}
+	/* No writable properties */
+	g_return_if_reached ();
 }
 
 static void
@@ -169,15 +159,6 @@ ad_blocker_class_init (AdBlockerClass *klass)
 	object_class->finalize = ad_blocker_finalize;
 	object_class->get_property = ad_blocker_get_property;
 	object_class->set_property = ad_blocker_set_property;
-
-	g_object_class_install_property
-		(object_class,
-		 PROP_URI_TESTER,
-		 g_param_spec_object ("uri-tester",
-				      "URI Tester",
-				      "URI Tester",
-				      G_TYPE_OBJECT,
-				      G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
 
 	g_object_class_install_property
 		(object_class,

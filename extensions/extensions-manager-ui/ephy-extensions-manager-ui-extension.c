@@ -23,9 +23,11 @@
 
 #include "ephy-extensions-manager-ui-extension.h"
 #include "extensions-manager-ui.h"
-#include "ephy-debug.h"
 
 #include <epiphany/ephy-extension.h>
+
+#include "ephy-gui.h"
+#include "ephy-debug.h"
 
 #include <gmodule.h>
 
@@ -57,6 +59,8 @@ typedef struct
 
 static void display_cb (GtkAction *action,
 			EphyWindow *window);
+static void help_cb    (GtkAction *action,
+			EphyWindow *window);
 
 static const GtkActionEntry action_entries [] =
 {
@@ -66,6 +70,13 @@ static const GtkActionEntry action_entries [] =
 	  NULL,
 	  N_("Load and unload extensions"),
 	  G_CALLBACK (display_cb) },
+	{ "ExtensionsManagerHelp",
+	  NULL,
+	  N_("_Extensions"),
+	  NULL,
+	  N_("Help about extensions"),
+	  G_CALLBACK (help_cb)
+	}
 };
 
 static GObjectClass *parent_class = NULL;
@@ -164,6 +175,16 @@ display_cb (GtkAction *action,
 }
 
 static void
+help_cb (GtkAction *action,
+	 EphyWindow *window)
+{
+	ephy_gui_help_with_doc_id (GTK_WINDOW (window),
+				   "epiphany-extensions",
+				   "epiphany-extensions",
+				   "");
+}
+
+static void
 impl_attach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
@@ -202,7 +223,9 @@ impl_attach_window (EphyExtension *ext,
 			       "ExtensionsManagerUISep2", NULL,
 			       GTK_UI_MANAGER_SEPARATOR, FALSE);
 
-	LOG ("EphyExtensionsManagerUIExtension attach_window");
+	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/HelpMenu/HelpContentsMenu",
+			       "ExtensionsManagerHelp", "ExtensionsManagerHelp",
+			       GTK_UI_MANAGER_MENUITEM, FALSE);
 }
 
 static void
@@ -216,14 +239,12 @@ impl_detach_window (EphyExtension *ext,
 
 	data = (WindowData *) g_object_get_data (G_OBJECT (window),
 						 WINDOW_DATA_KEY);
-	g_return_if_fail (data != NULL);
+	g_assert (data != NULL);
 
 	gtk_ui_manager_remove_ui (manager, data->ui_id);
 	gtk_ui_manager_remove_action_group (manager, data->action_group);
 
 	g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, NULL);
-
-	LOG ("EphyExtensionsManagerUIExtension detach_window");
 }
 
 static void

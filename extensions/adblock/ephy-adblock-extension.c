@@ -377,7 +377,7 @@ ensure_adblocker (EphyWindow *window,
 								 EXTENSION_KEY));
 		g_return_val_if_fail (ext != NULL, NULL);
 
-		blocker = ad_blocker_new (ext->priv->tester);
+		blocker = ad_blocker_new ();
 		g_return_val_if_fail (blocker != NULL, NULL);
 
 		g_object_set_data_full (G_OBJECT (embed), AD_BLOCKER_KEY,

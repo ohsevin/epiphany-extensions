@@ -167,7 +167,7 @@ manage_certificates_cb (GtkAction *action,
 
 	single = EPHY_EMBED_SINGLE (ephy_embed_shell_get_embed_single (embed_shell));
 	manager = ephy_embed_single_open_window (single, NULL, CERT_MANAGER_URL,
-						 "", "all,chrome");
+						 "", "all,chrome,dialog");
 	g_return_if_fail (manager != NULL);
 
 	window = gtk_widget_get_toplevel (manager);
@@ -198,7 +198,7 @@ manage_devices_cb (GtkAction *action,
 
 	single = EPHY_EMBED_SINGLE (ephy_embed_shell_get_embed_single (embed_shell));
 	manager = ephy_embed_single_open_window (single, NULL, DEVICE_MANAGER_URL,
-						 "", "all,chrome");
+						 "", "all,chrome,dialog");
 	g_return_if_fail (manager != NULL);
 
 	window = gtk_widget_get_toplevel (manager);
