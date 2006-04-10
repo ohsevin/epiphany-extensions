@@ -158,7 +158,10 @@ ephy_push_scroller_grab_notify_cb (GtkWidget *widget,
 {
 	LOG ("Grab Notify [%p, window %p]", scroller, scroller->priv->window);
 
-	ephy_push_scroller_stop (scroller, GDK_CURRENT_TIME /* FIXME? */);
+	if (was_grabbed)
+	{
+		ephy_push_scroller_stop (scroller, GDK_CURRENT_TIME /* FIXME? */);
+	}
 }
 
 /* public functions */
