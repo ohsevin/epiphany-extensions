@@ -223,7 +223,10 @@ grab_notify_cb (GtkWidget *widget,
 		gboolean was_grabbed,
 		EphyGesture *gesture)
 {
-	ephy_gesture_stop (gesture, GDK_CURRENT_TIME /* FIXME? */);
+	if (was_grabbed)
+	{
+		ephy_gesture_stop (gesture, GDK_CURRENT_TIME /* FIXME? */);
+	}
 }
 
 gboolean

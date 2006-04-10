@@ -1,3 +1,14 @@
+2006-04-10  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/auto-scroller/ephy-auto-scroller.c:
+	(ephy_auto_scroller_grab_notify_cb):
+	* extensions/gestures/ephy-gesture.c: (grab_notify_cb):
+	* extensions/push-scroller/ephy-push-scroller.c:
+	(ephy_push_scroller_grab_notify_cb):
+
+	Only ungrab if we were grabbed. Should work around breakage with gtk+
+	2.8.17.
+
 2006-04-09  Christian Persch  <chpe@cvs.gnome.org>
 
 	* m4/gecko.m4:
