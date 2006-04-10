@@ -6,15 +6,15 @@ msgid ""
 ""
 msgstr "Project-Id-Version: epiphany-extensions Gnome HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-22 02:14+0100\n"
-"PO-Revision-Date: 2006-01-22 16:14+1030\n"
+"POT-Creation-Date: 2006-04-10 10:13+0200\n"
+"PO-Revision-Date: 2006-04-10 21:55+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"X-Generator: LocFactoryEditor 1.6b31\n"
+"X-Generator: LocFactoryEditor 1.6b36\n"
 
 #:../extensions/actions/action-properties.glade.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
@@ -96,11 +96,11 @@ msgstr "Không thể chạy lệnh"
 msgid "Could not Run Command"
 msgstr "Không thể chạy lệnh"
 
-#:../extensions/actions/ephy-actions-extension-editor-dialog.c:519
+#:../extensions/actions/ephy-actions-extension-editor-dialog.c:520
 msgid "No action selected."
 msgstr "Chưa chọn hành động."
 
-#:../extensions/actions/ephy-actions-extension-editor-dialog.c:529
+#:../extensions/actions/ephy-actions-extension-editor-dialog.c:530
 #,c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
@@ -127,78 +127,42 @@ msgstr "Tự động tải _lại"
 msgid "Reload the page periodically"
 msgstr "Tải lại trang theo định kỳ"
 
-#:../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
-msgid "_Edit Bookmarks"
-msgstr "_Sửa đổi đánh dấu"
-
-#:../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
-msgid "Open the bookmarks window"
-msgstr "Mở cửa sổ đánh dấu"
-
-#:../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
-msgid "Open in _Current Tab"
-msgstr "Mở trong thanh _hiện có"
-
-#:../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
-msgid "Open bookmarks in the current tab of the active window"
-msgstr "Mở đánh dấy trong thanh hiện thời trong cửa sổ hoạt động"
-
-#:../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
-msgid "Open in New _Tab"
-msgstr "Mở trong _Thanh mới"
-
-#:../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
-msgid "Open bookmarks in a new tab of the active window"
-msgstr "Mở đánh dấu trong thanh mới trong cửa sổ hoạt động"
-
-#:../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
-msgid "Open in New _Window"
-msgstr "Mở trong _cửa sổ mới"
-
-#:../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
-msgid "Open bookmarks in new a window"
-msgstr "Mở đánh dấu trong cửa sổ mới"
-
-#:../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:531
-msgid "Bookmarks"
-msgstr "Đánh dấu"
-
-#:../extensions/certificates/ephy-certificates-extension.c:173
+#:../extensions/certificates/ephy-certificates-extension.c:177
 #:../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "Chứng nhận"
 
-#:../extensions/certificates/ephy-certificates-extension.c:203
+#:../extensions/certificates/ephy-certificates-extension.c:208
 msgid "Security Devices"
 msgstr "Thiết bị bảo mật"
 
 #.stock icon
-#:../extensions/certificates/ephy-certificates-extension.c:321
+#:../extensions/certificates/ephy-certificates-extension.c:327
 msgid "Manage _Certificates"
 msgstr "_Quản lý chứng nhận"
 
 #.shortcut key
-#:../extensions/certificates/ephy-certificates-extension.c:323
+#:../extensions/certificates/ephy-certificates-extension.c:329
 msgid "Manage your certificates"
 msgstr "Quản lý các chứng nhận của bạn"
 
 #.stock icon
-#:../extensions/certificates/ephy-certificates-extension.c:327
+#:../extensions/certificates/ephy-certificates-extension.c:333
 msgid "Manage Security _Devices"
 msgstr "Quản lý thiết bị _bảo mật"
 
 #.shortcut key
-#:../extensions/certificates/ephy-certificates-extension.c:329
+#:../extensions/certificates/ephy-certificates-extension.c:335
 msgid "Manage your security devices"
 msgstr "Quản lý các thiết bị bảo mật của bạn."
 
 #.stock icon
-#:../extensions/certificates/ephy-certificates-extension.c:336
+#:../extensions/certificates/ephy-certificates-extension.c:342
 msgid "Server _Certificate"
 msgstr "_Chứng nhận máy phục vụ"
 
 #.shortcut key
-#:../extensions/certificates/ephy-certificates-extension.c:338
+#:../extensions/certificates/ephy-certificates-extension.c:344
 msgid "Display the web server's certificate"
 msgstr "Hiển thị chứng nhận của máy phục vụ Mạng"
 
@@ -338,11 +302,11 @@ msgid ""
 msgstr "Gặp lỗi HTML trong %s:\n"
 "Chưa ghi rõ kiểu tài liệu (doctype) hợp lệ."
 
-#:../extensions/extensions-manager-ui/extensions-manager-ui.c:340
+#:../extensions/extensions-manager-ui/extensions-manager-ui.c:355
 msgid "Enabled"
 msgstr "Hoạt động"
 
-#:../extensions/extensions-manager-ui/extensions-manager-ui.c:348
+#:../extensions/extensions-manager-ui/extensions-manager-ui.c:363
 #:../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "Mô tả"
@@ -355,13 +319,21 @@ msgstr "<b>Phần mở rộng đã tải</b>"
 msgid "Extensions"
 msgstr "Phần mở rộng"
 
-#:../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
+#:../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
 msgid "_Extensions..."
 msgstr "Phần _mở rộng..."
 
-#:../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#:../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
 msgid "Load and unload extensions"
 msgstr "Tải và bỏ tài phần mở rộng"
+
+#:../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "_Extensions"
+msgstr "_Phần mở rộng"
+
+#:../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
+msgid "Help about extensions"
+msgstr "Trợ giúp về phần mở rộng"
 
 #:../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
 msgid "Install User _Script"
@@ -386,11 +358,11 @@ msgstr "Bàn giao tiếp _Java"
 msgid "Show Java Console"
 msgstr "HIển thị bàn giao tiếp Java"
 
-#:../extensions/page-info/ephy-page-info-extension.c:65
+#:../extensions/page-info/ephy-page-info-extension.c:67
 msgid "Pa_ge Information"
 msgstr "Thông tin t_rang"
 
-#:../extensions/page-info/ephy-page-info-extension.c:67
+#:../extensions/page-info/ephy-page-info-extension.c:69
 msgid "Display page information in a dialog"
 msgstr "Hiển thị thông tin trang trong hộp thoại"
 
@@ -707,12 +679,12 @@ msgid "Popup Windows"
 msgstr "Cửa sổ bất lên"
 
 #.stock icon
-#:../extensions/permissions/ephy-permissions-extension.c:152
+#:../extensions/permissions/ephy-permissions-extension.c:156
 msgid "Site _Permissions"
 msgstr "_Quyền hạn nơi"
 
 #.shortcut key
-#:../extensions/permissions/ephy-permissions-extension.c:154
+#:../extensions/permissions/ephy-permissions-extension.c:158
 msgid "Manage web site permissions"
 msgstr "Quẳn lý quyền hạn nơi Mạng"
 
@@ -733,7 +705,7 @@ msgstr "Đăng _ký với dòng tin tức này"
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Đăng ký với dòng tin tức này trong bộ đọc tin tức ưa thích"
 
-#:../extensions/rss/ephy-rss-extension.c:392
+#:../extensions/rss/ephy-rss-extension.c:396
 msgid "Subscribe to site's news feed"
 msgstr "Đang ký với dòng cung cấp tin tức của nơi Mạng"
 
@@ -868,14 +840,6 @@ msgstr "Tự động Tải lại Thanh"
 msgid "Reload a tab periodically"
 msgstr "Tải lại thanh theo định kỳ"
 
-#:../extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in.h:1
-msgid "Add a bookmarks menu to the panel's notification area"
-msgstr "Thêm trình đơn đánh dấu vào vùng thông báo trong bảng"
-
-#:../extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in.h:2
-msgid "Bookmarks Tray"
-msgstr "Khay đánh dấu"
-
 #:../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Xem chứng nhận của trang và quản lý các chứng nhận"
@@ -937,14 +901,6 @@ msgstr "Bàn giao tiếp Java"
 #:../extensions/java-console/java-console.ephy-extension.in.in.h:2
 msgid "Provide access to the Java-Plugin Console"
 msgstr "Cung cấp truy cập Bàn giao tiếp Bộ cầm phít Java"
-
-#:../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:1
-msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
-msgstr "Tự động quản lý trạng thái mạng trực/ngoại tuyến [THỰC NGHIỆM]"
-
-#:../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:2
-msgid "Network Connection Monitor"
-msgstr "Bộ Theo dõi Kết nối mạng"
 
 #:../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
