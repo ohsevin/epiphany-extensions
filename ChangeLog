@@ -1,3 +1,13 @@
+2006-04-11  Crispin Flowerday  <gnome@flowerday.cx>
+
+	=== Release 2.14.1 ===
+
+	* Makefile.am:
+	* NEWS:
+	* configure.ac:
+
+	Update for 2.14.1.
+
 2006-04-10  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/auto-scroller/ephy-auto-scroller.c:

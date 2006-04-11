@@ -1,4 +1,25 @@
 ==========================
+Epiphany Extensions 2.14.1
+==========================
+
+Changes:
+	* Unload the adblock extension when it is disabled
+	* Call gnome-dictionary correctly (bug #335728)
+	* Fix Page info dialogue crash when a pageinfo dialogue 
+	  is displayed (#335738)
+	* Add some documentation
+	* Fix gestures, auto-scroller and push-scroller extension
+ 	  with gtk+ 2.8.17 (#337814)
+
+Contributors to the Epiphany Extensions 2.14.1 release:
+
+Baptiste Mille-Mathias, Victor Osadci, Christian Persch, Jean-François Rameau
+
+Updated translations:
+
+	* Žygimantas Beručka (lt)
+
+==========================
 Epiphany Extensions 2.14.0
 ==========================
 
