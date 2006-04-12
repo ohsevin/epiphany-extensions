@@ -5,13 +5,12 @@
 # Yukhiro Nakai <nakai@gnome.gr.jp>, 2004.
 # Takeshi AIHANA <aihana@gnome.gr.jp>, 2004-2006.
 #
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-20 23:05+0900\n"
-"PO-Revision-Date: 2006-02-20 23:05+0900\n"
+"POT-Creation-Date: 2006-04-12 17:22+0900\n"
+"PO-Revision-Date: 2006-04-12 17:18+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -104,11 +103,11 @@ msgstr "コマンドを実行できませんでした"
 msgid "Could not Run Command"
 msgstr "コマンドを実行できませんでした"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:519
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
 msgid "No action selected."
 msgstr "アクションが選択されていません"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:529
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
@@ -136,42 +135,42 @@ msgstr "自動読み込み(_A)"
 msgid "Reload the page periodically"
 msgstr "定期的にページを読み込みます"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:173
+#: ../extensions/certificates/ephy-certificates-extension.c:177
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "証明書の管理"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:203
+#: ../extensions/certificates/ephy-certificates-extension.c:208
 msgid "Security Devices"
 msgstr "セキュリティ・デバイス"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:321
+#: ../extensions/certificates/ephy-certificates-extension.c:327
 msgid "Manage _Certificates"
 msgstr "証明書の管理(_C)"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:323
+#: ../extensions/certificates/ephy-certificates-extension.c:329
 msgid "Manage your certificates"
 msgstr "お使いの証明書を管理します"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:327
+#: ../extensions/certificates/ephy-certificates-extension.c:333
 msgid "Manage Security _Devices"
 msgstr "セキュリティ・デバイスの管理(_D)"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:329
+#: ../extensions/certificates/ephy-certificates-extension.c:335
 msgid "Manage your security devices"
 msgstr "お使いのセキュリティ・デバイスを管理します"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:336
+#: ../extensions/certificates/ephy-certificates-extension.c:342
 msgid "Server _Certificate"
 msgstr "サーバ証明書(_C)"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:338
+#: ../extensions/certificates/ephy-certificates-extension.c:344
 msgid "Display the web server's certificate"
 msgstr "ウェブ・サーバの証明書を表示します"
 
@@ -322,11 +321,11 @@ msgstr ""
 "%s の中に HTML エラー:\n"
 "正しい DOCTYPE が指定されていません。"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:340
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
 msgid "Enabled"
 msgstr "有効"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:348
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
 #: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "説明"
@@ -339,13 +338,21 @@ msgstr "<b>利用可能な拡張機能の一覧</b>"
 msgid "Extensions"
 msgstr "Epiphany 拡張機能"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
 msgid "_Extensions..."
 msgstr "拡張機能(_E)..."
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
 msgid "Load and unload extensions"
 msgstr "拡張機能の有効/無効を設定します"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "_Extensions"
+msgstr "拡張機能(_E)"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
+msgid "Help about extensions"
+msgstr "拡張機能のヘルプです"
 
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
 msgid "Install User _Script"
@@ -370,11 +377,11 @@ msgstr "Java コンソール(_J)"
 msgid "Show Java Console"
 msgstr "Java コンソールを表示します"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:65
+#: ../extensions/page-info/ephy-page-info-extension.c:67
 msgid "Pa_ge Information"
 msgstr "ページ情報(_G)"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/page-info/ephy-page-info-extension.c:69
 msgid "Display page information in a dialog"
 msgstr "ページ情報をダイアログに表示します"
 
@@ -691,12 +698,12 @@ msgid "Popup Windows"
 msgstr "ウィンドウのポップアップ"
 
 #. stock icon
-#: ../extensions/permissions/ephy-permissions-extension.c:152
+#: ../extensions/permissions/ephy-permissions-extension.c:156
 msgid "Site _Permissions"
 msgstr "サイトの権限(_P)"
 
 #. shortcut key
-#: ../extensions/permissions/ephy-permissions-extension.c:154
+#: ../extensions/permissions/ephy-permissions-extension.c:158
 msgid "Manage web site permissions"
 msgstr "ウェブ・サイトの権限を管理します"
 
@@ -717,7 +724,7 @@ msgstr "この配信元を購読する(_S)"
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "この配信元をお気に入りのニュース・リーダで購読します"
 
-#: ../extensions/rss/ephy-rss-extension.c:392
+#: ../extensions/rss/ephy-rss-extension.c:396
 msgid "Subscribe to site's news feed"
 msgstr "このサイトのニュース配信元を購読します"
 
