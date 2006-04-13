@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-09 00:31+0100\n"
-"PO-Revision-Date: 2006-03-09 00:42+0100\n"
+"POT-Creation-Date: 2006-04-13 11:52+0200\n"
+"PO-Revision-Date: 2006-04-13 11:52+0200\n"
 "Last-Translator: Francisco Javier F. Serrador <serrador@cvs.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -103,11 +103,11 @@ msgstr "No se pudo ejecutar el comando"
 msgid "Could not Run Command"
 msgstr "No se pudo ejecutar el comando"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:519
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
 msgid "No action selected."
 msgstr "No se ha seleccionado ninguna acción."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:529
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
@@ -321,11 +321,11 @@ msgstr ""
 "Error HTML en %s:\n"
 "No se especificó un tipo de documento válido."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:340
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
 msgid "Enabled"
 msgstr "Activada"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:348
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
 #: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "Descripción"
@@ -338,13 +338,21 @@ msgstr "<b>Extensiones cargadas</b>"
 msgid "Extensions"
 msgstr "Extensiones"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
 msgid "_Extensions..."
 msgstr "_Extensiones..."
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
 msgid "Load and unload extensions"
 msgstr "Cargar y descargar extensiones"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "_Extensions"
+msgstr "_Extensiones"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
+msgid "Help about extensions"
+msgstr "Ayuda acerca de las extensiones"
 
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
 msgid "Install User _Script"
@@ -369,11 +377,11 @@ msgstr "Consola _Java"
 msgid "Show Java Console"
 msgstr "Muestra la consola Java"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:65
+#: ../extensions/page-info/ephy-page-info-extension.c:67
 msgid "Pa_ge Information"
 msgstr "Info de la _página"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/page-info/ephy-page-info-extension.c:69
 msgid "Display page information in a dialog"
 msgstr "Muestra la información de la página en un diálogo"
 
@@ -715,7 +723,8 @@ msgstr "_Suscribirse a este proveedor"
 
 #: ../extensions/rss/ephy-rss-extension.c:107
 msgid "Subscribe to this feed in your favorite news reader"
-msgstr "Suscribirse a este proveedor de noticias en su lector de noticias favorito"
+msgstr ""
+"Suscribirse a este proveedor de noticias en su lector de noticias favorito"
 
 #: ../extensions/rss/ephy-rss-extension.c:396
 msgid "Subscribe to site's news feed"
@@ -871,7 +880,8 @@ msgstr "Visor de errores"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
 msgid "View error in web pages, validate web pages and check links"
-msgstr "Vea los errores en las páginas web, valida páginas web y comprueba enlaces"
+msgstr ""
+"Vea los errores en las páginas web, valida páginas web y comprueba enlaces"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
 msgid "Activate and deactivate extensions"
@@ -886,7 +896,8 @@ msgid "Favicon fallback"
 msgstr "Recuperación de Favicon"
 
 #: ../extensions/favicon/favicon.ephy-extension.in.h:2
-msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
+msgid ""
+"Loads /favicon.ico as favicon if the site doesn't use the standard method"
 msgstr "Carga /favicon.ico como favicon si el sitio no usa el método estándar"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
@@ -917,7 +928,8 @@ msgstr "Proporcionar acceso a la consola del complemento de Java"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
-msgstr "Muestra información acerca de los enlaces y los medios desde la página actual"
+msgstr ""
+"Muestra información acerca de los enlaces y los medios desde la página actual"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
 msgid "Page Info"
@@ -936,7 +948,8 @@ msgid "News Feed Subscription"
 msgstr "Suscripción a proveedores de noticias"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
-msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgid ""
+"Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr ""
 "Suscríbase a proveedores de noticias ofrecidos por la página web en su "
 "lector de noticias favorito"
@@ -963,7 +976,8 @@ msgstr "Seleccione la hoja de estilo"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
-msgstr "Seleccionar entre diferentes hojas de estilo ofrecidas por la página web"
+msgstr ""
+"Seleccionar entre diferentes hojas de estilo ofrecidas por la página web"
 
 #: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
 msgid "Adds a sidebar to windows"
@@ -1004,4 +1018,3 @@ msgstr "Indica el contenido nuevo en solapas en segundo plano"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Estado de solapas"
-
