@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-23 20:05+0200\n"
-"PO-Revision-Date: 2006-01-23 20:05+0200\n"
+"POT-Creation-Date: 2006-04-15 09:26+0300\n"
+"PO-Revision-Date: 2006-04-15 09:30+0300\n"
 "Last-Translator: Pauli Virtanen <pauli.virtanen@hut.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -103,11 +103,11 @@ msgstr "Komennon käynnistys epäonnistui"
 msgid "Could not Run Command"
 msgstr "Komennon käynnistys epäonnistui"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:519
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
 msgid "No action selected."
 msgstr "Toimintoa ei valittu."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:529
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
@@ -135,78 +135,42 @@ msgstr "_Automaattinen uudelleenlataus"
 msgid "Reload the page periodically"
 msgstr "Lataa sivu uudestaan tietyin aikavälein"
 
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
-msgid "_Edit Bookmarks"
-msgstr "_Muokkaa kirjanmerkkejä"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
-msgid "Open the bookmarks window"
-msgstr "Avaa kirjanmerkki-ikkuna"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
-msgid "Open in _Current Tab"
-msgstr "_Avaa nykyisessä välilehdessä"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
-msgid "Open bookmarks in the current tab of the active window"
-msgstr "Avaa kirjanmerkit aktiivisen ikkunan nykyiseen välilehteen"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
-msgid "Open in New _Tab"
-msgstr "Avaa uudessa _välilehdessä"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
-msgid "Open bookmarks in a new tab of the active window"
-msgstr "Avaa kirjanmerkit aktiivisen ikkunan uuteen välilehteen"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
-msgid "Open in New _Window"
-msgstr "Avaa _uudessa ikkunassa"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
-msgid "Open bookmarks in new a window"
-msgstr "Avaa kirjanmerkit uuteen ikkunaan"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:531
-msgid "Bookmarks"
-msgstr "Kirjanmerkit"
-
-#: ../extensions/certificates/ephy-certificates-extension.c:173
+#: ../extensions/certificates/ephy-certificates-extension.c:177
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "Varmenteet"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:203
+#: ../extensions/certificates/ephy-certificates-extension.c:208
 msgid "Security Devices"
 msgstr "Turvallisuuslaitteet"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:321
+#: ../extensions/certificates/ephy-certificates-extension.c:327
 msgid "Manage _Certificates"
 msgstr "_Varmenteiden hallinta"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:323
+#: ../extensions/certificates/ephy-certificates-extension.c:329
 msgid "Manage your certificates"
 msgstr "Varmenteiden hallinta"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:327
+#: ../extensions/certificates/ephy-certificates-extension.c:333
 msgid "Manage Security _Devices"
 msgstr "Hallitse _turvallisuuslaitteita"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:329
+#: ../extensions/certificates/ephy-certificates-extension.c:335
 msgid "Manage your security devices"
 msgstr "Hallitse turvallisuuslaitteitasi"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:336
+#: ../extensions/certificates/ephy-certificates-extension.c:342
 msgid "Server _Certificate"
 msgstr "Palvelimen _varmenne"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:338
+#: ../extensions/certificates/ephy-certificates-extension.c:344
 msgid "Display the web server's certificate"
 msgstr "Näytä WWW-palvelimen varmenne"
 
@@ -357,11 +321,11 @@ msgstr ""
 "HTML-virhe kohteessa %s:\n"
 "Dokumenttityyppiä ei määritelty."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:340
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
 msgid "Enabled"
 msgstr "Käytössä"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:348
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
 #: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "Kuvaus"
@@ -374,13 +338,21 @@ msgstr "<b>Käytössä olevat laajennukset</b>"
 msgid "Extensions"
 msgstr "Laajennukset"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
 msgid "_Extensions..."
 msgstr "_Laajennukset..."
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
 msgid "Load and unload extensions"
 msgstr "Ota laajennuksia käyttöön ja poista niitä käytöstä"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "_Extensions"
+msgstr "_Laajennukset"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
+msgid "Help about extensions"
+msgstr "Apua laajennuksista"
 
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
 msgid "Install User _Script"
@@ -405,11 +377,11 @@ msgstr "_Java-konsoli"
 msgid "Show Java Console"
 msgstr "Näytä Java-konsoli"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:65
+#: ../extensions/page-info/ephy-page-info-extension.c:67
 msgid "Pa_ge Information"
 msgstr "Si_vun tiedot"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/page-info/ephy-page-info-extension.c:69
 msgid "Display page information in a dialog"
 msgstr "Näytä sivun tiedot ikkunassa"
 
@@ -726,12 +698,12 @@ msgid "Popup Windows"
 msgstr "Ponnahdusikkunat"
 
 #. stock icon
-#: ../extensions/permissions/ephy-permissions-extension.c:152
+#: ../extensions/permissions/ephy-permissions-extension.c:156
 msgid "Site _Permissions"
 msgstr "Sivuston _oikeudet"
 
 #. shortcut key
-#: ../extensions/permissions/ephy-permissions-extension.c:154
+#: ../extensions/permissions/ephy-permissions-extension.c:158
 msgid "Manage web site permissions"
 msgstr "Hallitse oikeuksia sivustokohtaisesti"
 
@@ -751,7 +723,7 @@ msgstr "_Tilaa sivuston uutissyöte"
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Tilaa tämän sivuston uutissyöte haluamaasi syötteiden lukuohjelmaan"
 
-#: ../extensions/rss/ephy-rss-extension.c:392
+#: ../extensions/rss/ephy-rss-extension.c:396
 msgid "Subscribe to site's news feed"
 msgstr "Tilaa sivuston uutissyöte"
 
@@ -887,14 +859,6 @@ msgstr "Välilehden uudelleenlataus"
 msgid "Reload a tab periodically"
 msgstr "Lataa välilehden uudestaan tietyin aikavälein"
 
-#: ../extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in.h:1
-msgid "Add a bookmarks menu to the panel's notification area"
-msgstr "Lisää kirjanmerkkivalikon avaava kuvake paneelin ilmoitusalueeseen"
-
-#: ../extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in.h:2
-msgid "Bookmarks Tray"
-msgstr "Kirjanmerkkikuvake"
-
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Näytä sivun varmenne ja hallitse varmenteita"
@@ -957,14 +921,6 @@ msgstr "Java-konsoli"
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
 msgid "Provide access to the Java-Plugin Console"
 msgstr "Lisää Java-liitännäisen konsoli valikkoon"
-
-#: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:1
-msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
-msgstr "Muuta verkkoyhteyden tilaa automaattisesti (KOKEELLINEN!)"
-
-#: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:2
-msgid "Network Connection Monitor"
-msgstr "Verkon tilan tarkkailu"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
@@ -1055,6 +1011,45 @@ msgstr "Ilmaise taustalla olevien välilehtien uusi sisältö"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Välilehtien tilat"
+
+#~ msgid "_Edit Bookmarks"
+#~ msgstr "_Muokkaa kirjanmerkkejä"
+
+#~ msgid "Open the bookmarks window"
+#~ msgstr "Avaa kirjanmerkki-ikkuna"
+
+#~ msgid "Open in _Current Tab"
+#~ msgstr "_Avaa nykyisessä välilehdessä"
+
+#~ msgid "Open bookmarks in the current tab of the active window"
+#~ msgstr "Avaa kirjanmerkit aktiivisen ikkunan nykyiseen välilehteen"
+
+#~ msgid "Open in New _Tab"
+#~ msgstr "Avaa uudessa _välilehdessä"
+
+#~ msgid "Open bookmarks in a new tab of the active window"
+#~ msgstr "Avaa kirjanmerkit aktiivisen ikkunan uuteen välilehteen"
+
+#~ msgid "Open in New _Window"
+#~ msgstr "Avaa _uudessa ikkunassa"
+
+#~ msgid "Open bookmarks in new a window"
+#~ msgstr "Avaa kirjanmerkit uuteen ikkunaan"
+
+#~ msgid "Bookmarks"
+#~ msgstr "Kirjanmerkit"
+
+#~ msgid "Add a bookmarks menu to the panel's notification area"
+#~ msgstr "Lisää kirjanmerkkivalikon avaava kuvake paneelin ilmoitusalueeseen"
+
+#~ msgid "Bookmarks Tray"
+#~ msgstr "Kirjanmerkkikuvake"
+
+#~ msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
+#~ msgstr "Muuta verkkoyhteyden tilaa automaattisesti (KOKEELLINEN!)"
+
+#~ msgid "Network Connection Monitor"
+#~ msgstr "Verkon tilan tarkkailu"
 
 #~ msgid "_Page Info"
 #~ msgstr "_Sivun tiedot"
