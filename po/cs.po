@@ -813,7 +813,7 @@ msgstr "_Přidat boční panel"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:565
 msgid "_Look Up"
-msgstr "_Vyheldat"
+msgstr "_Vyhledat"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:572
 msgid "_GNOME Dictionary"
