@@ -1,3 +1,30 @@
+2006-04-24  Christian Persch  <chpe@cvs.gnome.org>
+
+	=== Release 2.15.1 ===
+
+	* Makefile.am:
+
+	Fix distcheck.
+
+	* configure.ac:
+
+	Updated for 2.15.1. Remove tabsmenu extension, since it doesn't work
+	with new notebook code, and shouldn't be used anyway because of the
+	gecko bug.
+
+	* extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:
+	(ephy_bookmarks_tray_extension_init):
+	* extensions/sidebar/ephy-sidebar-extension.c:
+	(impl_attach_window):
+	* extensions/sidebar/ephy-sidebar.c: (ephy_sidebar_init):
+
+	Fix build with GTK_DISABLE_DEPRECATED.
+
+	* po/POTFILES.in:
+	* po/POTFILES.skip:
+
+	Remove tabsmenu extension files from POTFILES.in.
+
 2006-04-10  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/auto-scroller/ephy-auto-scroller.c:

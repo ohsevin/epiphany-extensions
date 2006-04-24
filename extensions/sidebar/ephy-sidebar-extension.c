@@ -526,8 +526,7 @@ impl_attach_window (EphyExtension *ext,
 	ephy_state_add_paned (hpaned, "EphySidebarExtension::HPaned", 220);
 
 	data->embed = ephy_sidebar_embed_new (window);
-	g_object_ref (data->embed);
-	gtk_object_sink (GTK_OBJECT (data->embed));
+	g_object_ref_sink (data->embed);
 
 	g_signal_connect (sidebar, "page_changed", 
 			  G_CALLBACK(sidebar_page_changed_cb), data);

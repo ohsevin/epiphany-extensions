@@ -518,12 +518,10 @@ ephy_bookmarks_tray_extension_init (EphyBookmarksTrayExtension *extension)
 	gtk_widget_show (priv->tray_button);
 	
 	priv->tray_tips = gtk_tooltips_new ();
-	g_object_ref (priv->tray_tips);
-	gtk_object_sink (GTK_OBJECT (priv->tray_tips));
+	g_object_ref_sink (priv->tray_tips);
 
 	priv->tray = GTK_WIDGET (egg_tray_icon_new (NULL));
-	g_object_ref (priv->tray);
-	gtk_object_sink (GTK_OBJECT (priv->tray));
+	g_object_ref_sink (priv->tray);
 	gtk_container_set_border_width (GTK_CONTAINER (priv->tray), 0);
 	gtk_container_add (GTK_CONTAINER (priv->tray), priv->tray_button);
 

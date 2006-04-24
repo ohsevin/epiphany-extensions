@@ -413,8 +413,7 @@ ephy_sidebar_init (EphySidebar *sidebar)
 			   button_hbox);
 
 	priv->title_menu = gtk_menu_new ();
-	g_object_ref (priv->title_menu);
-	gtk_object_sink (GTK_OBJECT (priv->title_menu));
+	g_object_ref_sink (priv->title_menu);
 
 	gtk_widget_show (priv->title_button);
 	gtk_widget_show (priv->title_menu);

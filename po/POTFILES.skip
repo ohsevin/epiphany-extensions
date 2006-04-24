@@ -17,3 +17,7 @@ extensions/toolbar-extras/toolbar-extras.ephy-extension.in.in
 #These are removed while bookmarks-tray isn't being shipped
 extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c
 [type: gettext/ini]extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in
+
+#These are removed while tabsmenu isn't being shipped
+extensions/tabsmenu/ephy-tab-move-menu.c
+[type: gettext/ini]extensions/tabsmenu/tabsmenu.ephy-extension.in.in

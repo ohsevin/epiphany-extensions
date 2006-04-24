@@ -20,7 +20,8 @@ EXTRA_DIST =			\
 DISTCLEANFILES = 		\
 	intltool-extract 	\
 	intltool-merge 		\
-	intltool-update
+	intltool-update		\
+	gnome-doc-utils.make
 
 DISTCHECK_CONFIGURE_FLAGS = \
 	--with-extensions=really-all	\

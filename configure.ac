@@ -16,7 +16,7 @@
 #
 # $Id$
 
-AC_INIT([GNOME Web Browser Extensions],[2.15.0],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+AC_INIT([GNOME Web Browser Extensions],[2.15.1],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 
 GNOME_COMMON_INIT
 
@@ -157,7 +157,7 @@ AM_CONDITIONAL([HAVE_OPENSP],[test "x$enable_opensp" = "xyes"])
 
 AC_MSG_CHECKING([which extensions to build])
 
-ALL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates dashboard error-viewer extensions-manager-ui gestures greasemonkey imagebar java-console page-info permissions push-scroller rss sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states tabsmenu"
+ALL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates dashboard error-viewer extensions-manager-ui gestures greasemonkey imagebar java-console page-info permissions push-scroller rss sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 USEFUL_EXTENSIONS="actions auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 DEFAULT_EXTENSIONS="actions auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 
@@ -185,7 +185,7 @@ AC_ARG_WITH([extensions],
 			  actions, adblock, certificates, dashboard,
 			  error-viewer, extensions-manager-ui, gestures,
 			  page-info, rss, sample, sampls-mozilla, select-stylesheet,
-			  sidebar, smart-bookmarks, tab-groups, and tabsmenu,
+			  sidebar, smart-bookmarks, tab-groups,
 			  as well as the aliases default, all, and really-all],
 			  [extensions=$with_extensions],
 			  [extensions="default"])
@@ -378,7 +378,6 @@ extensions/sidebar/Makefile
 extensions/smart-bookmarks/Makefile
 extensions/smart-bookmarks/mozilla/Makefile
 extensions/tab-states/Makefile
-extensions/tabsmenu/Makefile
 extensions/tab-groups/Makefile
 extensions/java-console/Makefile
 extensions/java-console/mozilla/Makefile
