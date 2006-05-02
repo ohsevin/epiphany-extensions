@@ -5,15 +5,15 @@
 # Christian Neumair <chris@gnome-de.org>, 2004.
 # Hendrik Brandt <heb@gnome-de.org>, 2004, 2005.
 # Frank Arnold <frank@scirocco-5v-turbo.de>, 2005, 2006.
-# 
+# Hendrik Richter <hendrikr@gnome.org>, 2006.
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany Extension HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-11 11:04+0100\n"
-"PO-Revision-Date: 2006-03-11 11:01+0100\n"
-"Last-Translator: Frank Arnold <frank@scirocco-5v-turbo.de>\n"
+"POT-Creation-Date: 2006-05-02 14:38+0200\n"
+"PO-Revision-Date: 2006-05-02 14:39+0200\n"
+"Last-Translator: Hendrik Richter <hendrikr@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -105,11 +105,11 @@ msgstr "Der Befehl konnte nicht ausgeführt werden"
 msgid "Could not Run Command"
 msgstr "Befehl konnte nicht ausgeführt werden"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:519
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
 msgid "No action selected."
 msgstr "Keine Aktion ausgewählt."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:529
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
@@ -323,11 +323,11 @@ msgstr ""
 "HTML-Fehler in %s:\n"
 "Kein gültiger doctype-Dokumententyp angegeben."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:340
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
 msgid "Enabled"
 msgstr "Aktiviert"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:348
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
 #: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "Beschreibung"
@@ -340,13 +340,21 @@ msgstr "<b>Geladene Erweiterungen</b>"
 msgid "Extensions"
 msgstr "Erweiterungen"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
 msgid "_Extensions..."
 msgstr "_Erweiterungen..."
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
 msgid "Load and unload extensions"
 msgstr "Erweiterungen laden und entladen"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "_Extensions"
+msgstr "_Erweiterungen"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
+msgid "Help about extensions"
+msgstr "Hilfe zu den Erweiterungen anzeigen"
 
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
 msgid "Install User _Script"
@@ -371,11 +379,11 @@ msgstr "_Java-Konsole"
 msgid "Show Java Console"
 msgstr "Java-Konsole anzeigen"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:65
+#: ../extensions/page-info/ephy-page-info-extension.c:67
 msgid "Pa_ge Information"
 msgstr "Seitenin_formationen"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/page-info/ephy-page-info-extension.c:69
 msgid "Display page information in a dialog"
 msgstr "Die Informationen zu dieser Seite in einem Dialog anzeigen"
 
