@@ -19,17 +19,12 @@
  */
 
 #include "mozilla-config.h"
-
 #include "config.h"
-
-#include "mozilla-link-checker.h"
-
-#include "ErrorViewerURICheckerObserver.h"
 
 #include <gtkembedmoz/gtkmozembed.h>
 #include <gtkembedmoz/gtkmozembed_internal.h>
-
 #include <nsCOMPtr.h>
+#include <nsComponentManagerUtils.h>
 #include <nsIComponentManager.h>
 #include <nsIComponentRegistrar.h>
 #include <nsIDOMDocument.h>
@@ -40,6 +35,10 @@
 #include <nsIGenericFactory.h>
 #include <nsIWebBrowser.h>
 #include <nsNetCID.h>
+
+#include "ErrorViewerURICheckerObserver.h"
+
+#include "mozilla-link-checker.h"
 
 NS_GENERIC_FACTORY_CONSTRUCTOR(ErrorViewerURICheckerObserver)
 

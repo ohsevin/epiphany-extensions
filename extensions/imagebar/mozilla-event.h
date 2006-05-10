@@ -22,8 +22,8 @@
 #define MOZILLA_EVENT_H
 
 #include <glib.h>
-#include <nsError.h>
-#include <nspr.h>
+
+#include <nscore.h>
 
 G_BEGIN_DECLS
 

@@ -20,16 +20,12 @@
  */
 
 #include "mozilla-config.h"
-
 #include "config.h"
-
-#include "mozilla-helpers.h"
 
 #include <glib.h>
 
-#undef MOZILLA_INTERNAL_API
-#include <nsEmbedString.h>
-#define MOZILLA_INTERNAL_API 1
+#include <nsStringAPI.h>
+
 #include <nsCOMPtr.h>
 #include <nsIDOMEvent.h>
 #include <nsIDOMEventTarget.h>
@@ -37,6 +33,8 @@
 #include <nsIDOMHTMLElement.h>
 #include <nsIDOMHTMLScriptElement.h>
 #include <nsMemory.h>
+
+#include "mozilla-helpers.h"
 
 gboolean
 mozilla_evaluate_js (gpointer event,
@@ -79,18 +77,18 @@ mozilla_evaluate_js (gpointer event,
 						    '\0' };
 
 	nsCOMPtr<nsIDOMElement> elem;
-	rv = doc->CreateElement (nsEmbedString (kScriptLiteral),
+	rv = doc->CreateElement (nsString (kScriptLiteral),
 				 getter_AddRefs (elem));
 	NS_ENSURE_SUCCESS (rv, FALSE);
 
 	nsCOMPtr<nsIDOMHTMLScriptElement> scriptTag = do_QueryInterface (elem);
 	NS_ENSURE_TRUE (scriptTag, FALSE);
 
-	nsEmbedString aScript;
-	NS_CStringToUTF16 (nsEmbedCString (script), NS_CSTRING_ENCODING_UTF8,
+	nsString aScript;
+	NS_CStringToUTF16 (nsCString (script), NS_CSTRING_ENCODING_UTF8,
 			   aScript);
 	scriptTag->SetText (aScript);
-	scriptTag->SetType (nsEmbedString (kJSTypeLiteral));
+	scriptTag->SetType (nsString (kJSTypeLiteral));
 
 	// Insert our script within the DOM
 	nsCOMPtr<nsIDOMNode> dummy;

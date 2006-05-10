@@ -20,20 +20,20 @@
 
 #include "config.h"
 
-#include "validate.h"
+#include <sys/types.h>
+#include <regex.h>
+
+#include <glib/gi18n-lib.h>
+
+#include <string>
+#include <iostream>
 
 #include <OpenSP/config.h> // Necessary for multi-byte support
 #include <OpenSP/ParserEventGeneratorKit.h>
 
 #include "error-viewer.h"
 
-#include <sys/types.h>
-#include <regex.h>
-
-#include <glib/gi18n-lib.h>
-
-#include <iostream>
-#include <string>
+#include "validate.h"
 
 using namespace std;
 

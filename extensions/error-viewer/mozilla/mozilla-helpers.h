@@ -21,8 +21,6 @@
 #ifndef ERROR_VIEWER_MOZILLA_HELPERS_H
 #define ERROR_VIEWER_MOZILLA_HELPERS_H
 
-#include "config.h"
-
 #include <glib.h>
 
 #include <epiphany/ephy-embed.h>

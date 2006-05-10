@@ -1,3 +1,36 @@
+2006-05-10  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:
+	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.h:
+	* extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:
+	* extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.h:
+	* extensions/error-viewer/mozilla/Makefile.am:
+	* extensions/error-viewer/mozilla/mozilla-helpers.cpp:
+	* extensions/error-viewer/mozilla/mozilla-helpers.h:
+	* extensions/error-viewer/mozilla/mozilla-link-checker.cpp:
+	* extensions/error-viewer/mozilla/mozilla-link-checker.h:
+	* extensions/error-viewer/mozilla/register-listener.cpp:
+	* extensions/error-viewer/opensp/validate.cpp:
+	* extensions/error-viewer/opensp/validate.h:
+	* extensions/greasemonkey/mozilla/mozilla-helpers.cpp:
+	* extensions/greasemonkey/mozilla/mozilla-helpers.h:
+	* extensions/imagebar/mozilla-event.cpp:
+	* extensions/imagebar/mozilla-event.h:
+	* extensions/java-console/mozilla/java-console.cpp:
+	* extensions/page-info/mozilla/PageInfoPrivate.cpp:
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+	* extensions/page-info/mozilla/mozilla-helpers.h:
+	* extensions/sample-mozilla/mozilla/mozilla-sample.cpp:
+	* extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:
+	* extensions/smart-bookmarks/mozilla/mozilla-selection.cpp:
+	* extensions/smart-bookmarks/mozilla/mozilla-selection.h:
+	* m4/gecko.m4:
+
+	Drop support for gecko 1.7, and remove MOZILLA_INTERNA_API usage.
+	Should fix compilation with gecko trunk once epiphany compiles against
+	it again.
+
 2006-04-24  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:

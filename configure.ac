@@ -300,20 +300,15 @@ AC_SUBST([MOZILLA_PREFIX])
 AC_SUBST([MOZILLA_INCLUDE_ROOT])
 
 case "$MOZILLA" in
-mozilla) min_version=1.7.5 ;;
-seamonkey) min_version=1.0 ;;
-*firefox) min_version=1.0 ;;
 xulrunner) min_version=1.8 ;;
+*firefox) min_version=1.5 ;;
+seamonkey) min_version=1.0 ;;
+*) AC_MSG_ERROR([Unsupported gecko "$gecko_cv_gecko"]) ;;
 esac
 
 PKG_CHECK_MODULES([MOZILLA_COMPONENT],[${gecko_cv_gecko}-xpcom >= $min_version $gecko_cv_extra_pkg_dependencies])
 AC_SUBST([MOZILLA_COMPONENT_CFLAGS])
 AC_SUBST([MOZILLA_COMPONENT_LIBS])
-
-# Needed since 1.8b2
-# Define this down here so it doesn't affect the API checks above
-
-AC_DEFINE([MOZILLA_INTERNAL_API],[1],[Define for access to internal mozilla API])
 
 # *****************
 # Add warning flags

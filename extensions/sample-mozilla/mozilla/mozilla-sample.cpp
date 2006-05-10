@@ -20,16 +20,15 @@
  */
 
 #include "mozilla-config.h"
-
 #include "config.h"
-
-#include "mozilla-sample.h"
 
 #include <glib.h>
 
 #include <nsCOMPtr.h>
 #include <nsIDOMEvent.h>
 #include <nsIDOMMouseEvent.h>
+
+#include "mozilla-sample.h"
 
 void
 mozilla_do_something (gpointer dom_event)

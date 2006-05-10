@@ -18,10 +18,11 @@
  *  $Id$
  */
 
-#include "link-checker.h"
-
-#include <nsIDOMNode.h>
 #include <nsIRequestObserver.h>
+
+class nsIDOMNode;
+
+#include "link-checker.h"
 
 /* Header file */
 class ErrorViewerURICheckerObserver : public nsIRequestObserver

@@ -19,14 +19,18 @@
  */
 
 #include "mozilla-config.h"
-
 #include "config.h"
 
-#include "PageInfoPrivate.h"
+#include <nscore.h>
+
+#define MOZILLA_INTERNAL_API 1
+#include <nsString.h>
 
 #include <nsCOMPtr.h>
 #include <nsIDOMDocument.h>
 #include <nsIHTMLDocument.h>
+
+#include "PageInfoPrivate.h"
 
 EmbedPageRenderMode
 PageInfoPrivate::GetRenderMode (nsIDOMDocument *aDocument)

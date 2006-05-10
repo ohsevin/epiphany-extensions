@@ -20,29 +20,27 @@
  */
 
 #include "mozilla-config.h"
-
 #include "config.h"
-
-#include "mozilla-selection.h"
 
 #include <glib.h>
 
-#undef MOZILLA_INTERNAL_API
-#include <nsEmbedString.h>
-#define MOZILLA_INTERNAL_API 1
-#include <nsCOMPtr.h>
-#include <nsISelection.h>
+#include <nsStringAPI.h>
+
 #include <gtkmozembed.h>
-#include <nsIWebBrowser.h>
-#include <nsIDOMWindow.h>
+#include <gtkmozembed_internal.h>
+#include <nsCOMPtr.h>
 #include <nsIDOMElement.h>
 #include <nsIDOMHTMLInputElement.h>
+#include <nsIDOMHTMLTextAreaElement.h>
 #include <nsIDOMNSHTMLInputElement.h>
 #include <nsIDOMNSHTMLTextAreaElement.h>
-#include <nsIDOMHTMLTextAreaElement.h>
+#include <nsIDOMWindow.h>
+#include <nsISelection.h>
 #include <nsIWebBrowserFocus.h>
-#include <gtkmozembed_internal.h>
+#include <nsIWebBrowser.h>
 #include <nsMemory.h>
+
+#include "mozilla-selection.h"
 
 template <class NST, class T>
 char * get_selection (nsIDOMElement *aElement)
@@ -57,7 +55,7 @@ char * get_selection (nsIDOMElement *aElement)
 	nsElement->GetSelectionEnd (&end);
 
 	// Get full text in element
-	nsEmbedString text; 
+	nsString text; 
 	nsCOMPtr<T> element (do_QueryInterface(aElement));
 	element->GetValue(text);
 
@@ -65,7 +63,7 @@ char * get_selection (nsIDOMElement *aElement)
 	text.Cut (end, text.Length());
 	text.Cut (0, start);
 
-	nsEmbedCString cText; 
+	nsCString cText; 
 	NS_UTF16ToCString(text, NS_CSTRING_ENCODING_UTF8, cText);
 
 	if (cText.Length () == 0) return NULL;
@@ -94,11 +92,11 @@ mozilla_get_selected_text (EphyEmbed *embed)
 
 	PRUnichar *selText = nsnull; 
 	nsSelection->ToString(&selText);
-	nsEmbedString text(selText);
+	nsString text(selText);
 
 	if (text.Length () > 0)
 	{
-		nsEmbedCString cText; 
+		nsCString cText; 
 		NS_UTF16ToCString(text, NS_CSTRING_ENCODING_UTF8, cText);
 
 		nsMemory::Free (selText);

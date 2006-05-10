@@ -21,8 +21,6 @@
 #ifndef SMART_BOOKMARKS_MOZILLA_SELECTION_H
 #define SMART_BOOKMARKS_MOZILLA_SELECTION_H
 
-#include "config.h"
-
 #include <glib.h>
 
 #include <epiphany/ephy-embed.h>

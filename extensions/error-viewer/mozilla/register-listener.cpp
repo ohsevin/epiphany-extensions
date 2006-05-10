@@ -21,18 +21,15 @@
  */
 
 #include "mozilla-config.h"
-
 #include "config.h"
 
-#include "ErrorViewerConsoleListener.h"
-
-#include <nsIServiceManager.h>
-#include <nsIConsoleService.h>
 #include <nsCOMPtr.h>
-#include <nsXPCOM.h>
+#include <nsIConsoleService.h>
 #include <nsNetCID.h>
+#include <nsServiceManagerUtils.h>
+#include <nsXPCOM.h>
 
-#include <glib-object.h>
+#include "ErrorViewerConsoleListener.h"
 
 extern "C" void *
 mozilla_register_error_listener (GObject *dialog)

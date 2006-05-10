@@ -22,9 +22,9 @@
 #ifndef MOZILLA_SAMPLE_H
 #define MOZILLA_SAMPLE_H
 
-#include <epiphany/ephy-embed.h>
-
 #include <glib.h>
+
+#include <epiphany/ephy-embed.h>
 
 G_BEGIN_DECLS
 

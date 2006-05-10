@@ -21,11 +21,11 @@
 #include "mozilla-config.h"
 #include "config.h"
 
-#include "java-console.h"
-
 #include <nsCOMPtr.h>
 #include <nsIJVMManager.h>
-#include <nsIServiceManager.h>
+#include <nsServiceManagerUtils.h>
+
+#include "java-console.h"
 
 gboolean
 java_console_is_available (void)

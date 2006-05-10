@@ -18,7 +18,8 @@ mozilla_include_subdirs = \
 	gtkembedmoz	\
 	jsconsole	\
 	necko		\
-	webbrwsr
+	webbrwsr	\
+	xpconnect
 
 liberrorviewermozilla_la_CPPFLAGS = \
 	-I..						\

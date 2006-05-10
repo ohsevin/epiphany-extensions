@@ -19,9 +19,9 @@
 #ifndef ERROR_VIEWER_CONSOLE_LISTENER_H
 #define ERROR_VIEWER_CONSOLE_LISTENER_H
 
-#include <nsIConsoleListener.h>
-
 #include <glib-object.h>
+
+#include <nsIConsoleListener.h>
 
 class nsIScriptError;
 

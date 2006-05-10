@@ -22,7 +22,6 @@
 #define ERROR_VIEWER_VALIDATE_H
 
 #include <glib.h>
-#include <glib-object.h>
 
 #include "sgml-validator.h"
 

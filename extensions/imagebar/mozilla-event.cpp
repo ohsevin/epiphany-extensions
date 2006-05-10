@@ -21,21 +21,20 @@
 #include "mozilla-config.h"
 #include "config.h"
 
-#include "mozilla-event.h"
+#include <nsStringAPI.h>
 
 #include <nsCOMPtr.h>
-#undef MOZILLA_INTERNAL_API
-#include <nsEmbedString.h>
-#define MOZILLA_INTERNAL_API 1
-#include <nsIDOMNode.h>
+#include <nsIDOMCSS2Properties.h>
+#include <nsIDOMElement.h>
 #include <nsIDOMEvent.h>
-#include <nsIDOMMouseEvent.h>
 #include <nsIDOMEventTarget.h>
 #include <nsIDOMHTMLAnchorElement.h>
 #include <nsIDOMHTMLImageElement.h>
-#include <nsIDOMCSS2Properties.h>
+#include <nsIDOMMouseEvent.h>
+#include <nsIDOMNode.h>
 #include <nsIDOMNSHTMLElement.h>
-#include <nsIDOMElement.h>
+
+#include "mozilla-event.h"
 
 nsresult
 evaluate_dom_event (gpointer dom_event,
@@ -80,12 +79,12 @@ evaluate_dom_event (gpointer dom_event,
 	*isImage = PR_TRUE;
 
 	/* image url to download */
-	nsEmbedString uImg;
+	nsString uImg;
 	image->GetSrc (uImg);
 
 	/* FIXME: resolving with base url */
 
-	nsEmbedCString img;
+	nsCString img;
 	NS_UTF16ToCString (uImg, NS_CSTRING_ENCODING_UTF8, img);
 	*imgSrc = g_strdup (img.get());
 

@@ -23,39 +23,31 @@
  */
 
 #include "mozilla-config.h"
-
 #include "config.h"
-
-#include "mozilla-helpers.h"
-#include "PageInfoPrivate.h"
-
-#include "EphyUtils.h"
 
 #include <string.h>
 
+#include <nsStringAPI.h>
+
 #include <gtkmozembed.h>
 #include <gtkmozembed_internal.h>
-
-#undef MOZILLA_INTERNAL_API
-#include <nsEmbedString.h>
-#define MOZILLA_INTERNAL_API 1
-#include <nsCOMPtr.h>
-
 #include <nsCompatibility.h>
+#include <nsComponentManagerUtils.h>
+#include <nsCOMPtr.h>
 #include <nsICacheEntryDescriptor.h>
 #include <nsICacheService.h>
 #include <nsICacheSession.h>
 #include <nsIDocCharset.h>
 #include <nsIDOM3Node.h>
 #include <nsIDOMAbstractView.h>
+#include <nsIDOMCSSPrimitiveValue.h>
 #include <nsIDOMCSSStyleDeclaration.h>
+#include <nsIDOMCSSStyleDeclaration.h>
+#include <nsIDOMCSSValue.h>
 #include <nsIDOMDocument.h>
 #include <nsIDOMDocumentTraversal.h>
 #include <nsIDOMDocumentView.h>
 #include <nsIDOMElement.h>
-#include <nsIDOMCSSStyleDeclaration.h>
-#include <nsIDOMCSSPrimitiveValue.h>
-#include <nsIDOMCSSValue.h>
 #include <nsIDOMHTMLAnchorElement.h>
 #include <nsIDOMHTMLAppletElement.h>
 #include <nsIDOMHTMLAreaElement.h>
@@ -88,11 +80,17 @@
 #include <nsIWebBrowser.h>
 #include <nsMemory.h>
 #include <nsNetCID.h>
+#include <nsServiceManagerUtils.h>
 #include <nsTime.h>
 
 #ifdef ALLOW_PRIVATE_API
 #include <nsITextToSubURI.h>
 #endif
+
+#include "EphyUtils.h"
+#include "PageInfoPrivate.h"
+
+#include "mozilla-helpers.h"
 
 /* page info helper class */
 
@@ -114,7 +112,7 @@ private:
                     nsIDOMHTMLElement *aHTMLElement);
   void ProcessAppletNode (nsIDOMHTMLAppletElement *aElement);
   void ProcessAreaNode (nsIDOMHTMLAreaElement *aElement);
-  void ProcessEmbedNodeHelper (const nsEmbedString &aUrl, 
+  void ProcessEmbedNodeHelper (const nsString &aUrl, 
   		               nsIDOMHTMLEmbedElement *aElement);
   void ProcessEmbedNode (nsIDOMHTMLEmbedElement *aElement);
   void ProcessFormNode (nsIDOMHTMLFormElement *aElement);
@@ -133,9 +131,9 @@ private:
 
   nsCOMPtr<nsIDOMDocument> mDOMDocument;
 
-  nsEmbedString mXLinkNS;
-  nsEmbedString mBgImageAttr;
-  nsEmbedString mHrefAttr;
+  nsString mXLinkNS;
+  nsString mBgImageAttr;
+  nsString mHrefAttr;
   PRBool mJavaEnabled;
   nsCOMPtr<nsITextToSubURI> mTextToSubURI;
 
@@ -145,7 +143,7 @@ private:
   GList      *mMetaTagsList;
   
   /* these two are used by the walker: */
-  nsEmbedCString mDocCharset;
+  nsCString mDocCharset;
   nsCOMPtr<nsIURI> mBaseURI;
 };
 
@@ -327,7 +325,7 @@ PageInfoHelper::GetInfo ()
 char *
 PageInfoHelper::ToCString (const nsAString& aString)
 {
-  nsEmbedCString cString;
+  nsCString cString;
   NS_UTF16ToCString (aString, NS_CSTRING_ENCODING_UTF8, cString);
 
   return g_strdup (cString.get());
@@ -345,7 +343,7 @@ PageInfoHelper::GetCacheEntryDescriptor (const nsAString &aUrl,
           do_GetService(NS_CACHESERVICE_CONTRACTID);
   NS_ENSURE_TRUE (cacheService, NS_ERROR_FAILURE);
 
-  nsEmbedCString cUrl;
+  nsCString cUrl;
   NS_UTF16ToCString (aUrl, NS_CSTRING_ENCODING_UTF8, cUrl);
 
   char *url = g_strdup (cUrl.get ());
@@ -365,13 +363,8 @@ PageInfoHelper::GetCacheEntryDescriptor (const nsAString &aUrl,
   
       nsCOMPtr<nsICacheEntryDescriptor> cacheEntryDescriptor;
   
-#ifdef HAVE_GECKO_1_8
-      rv = cacheSession->OpenCacheEntry (nsEmbedCString(url), nsICache::ACCESS_READ,
+      rv = cacheSession->OpenCacheEntry (nsCString(url), nsICache::ACCESS_READ,
                                          PR_FALSE, aEntry);
-#else
-      rv = cacheSession->OpenCacheEntry (url, nsICache::ACCESS_READ,
-                                         PR_FALSE, aEntry);
-#endif
 
       if (NS_SUCCEEDED (rv)) break;
     }
@@ -387,7 +380,7 @@ PageInfoHelper::Resolve (const nsAString &aUrl,
 {
   NS_ENSURE_TRUE (mBaseURI, NS_ERROR_FAILURE);
 
-  nsEmbedCString cUrl;
+  nsCString cUrl;
   NS_UTF16ToCString (aUrl, NS_CSTRING_ENCODING_UTF8, cUrl);
 
   return mBaseURI->Resolve (cUrl, aResult);
@@ -406,7 +399,7 @@ PageInfoHelper::Unescape (const nsACString &aEscaped,
       NS_ENSURE_SUCCESS (rv, rv);
     }
 
-  nsEmbedString unescaped;
+  nsString unescaped;
   rv = mTextToSubURI->UnEscapeNonAsciiURI (mDocCharset, aEscaped, unescaped);
   NS_ENSURE_TRUE (NS_SUCCEEDED (rv) && unescaped.Length(), rv);
 
@@ -426,11 +419,11 @@ PageInfoHelper::GetProperties ()
   EmbedPageProperties *props = g_new0 (EmbedPageProperties, 1);
 
   nsresult rv;
-  nsEmbedString value;
+  nsString value;
   rv = domNSDoc->GetLastModified (value);
   NS_ENSURE_SUCCESS (rv, props);
 
-  nsEmbedCString cTmp;
+  nsCString cTmp;
   NS_UTF16ToCString (value, NS_CSTRING_ENCODING_UTF8, cTmp);
 
   nsTime last_modified (cTmp.get(), PR_TRUE);
@@ -464,7 +457,7 @@ PageInfoHelper::GetProperties ()
   domNSDoc->GetLocation (getter_AddRefs (domLocation));
   NS_ENSURE_TRUE (domLocation, props);
 
-  nsEmbedString url;
+  nsString url;
   domLocation->ToString (url);
 
   nsCOMPtr<nsICacheEntryDescriptor> cacheEntryDescriptor;
@@ -511,12 +504,12 @@ PageInfoHelper::ProcessNode (nsIDOMElement *aElement,
                              nsIDOMHTMLElement *aHTMLElement)
 {
   nsresult rv;
-  nsEmbedString value;
+  nsString value;
 
-  rv = aElement->GetAttributeNS (mXLinkNS, nsEmbedString (mHrefAttr), value);
+  rv = aElement->GetAttributeNS (mXLinkNS, nsString (mHrefAttr), value);
   if (NS_FAILED (rv) || !value.Length ()) return;
 
-  nsEmbedCString cUrl;
+  nsCString cUrl;
   rv = Resolve (value, cUrl);
   if (NS_FAILED (rv) || !cUrl.Length()) return;
 
@@ -540,7 +533,7 @@ PageInfoHelper::ProcessNode (nsIDOMElement *aElement,
 void
 PageInfoHelper::ProcessAppletNode (nsIDOMHTMLAppletElement *aElement)
 {
-  nsEmbedString tmp;
+  nsString tmp;
 
   nsresult rv;
   rv = aElement->GetCode (tmp);
@@ -550,7 +543,7 @@ PageInfoHelper::ProcessAppletNode (nsIDOMHTMLAppletElement *aElement)
       if (NS_FAILED (rv) || !tmp.Length()) return;
     }
 
-  nsEmbedCString cUrl;
+  nsCString cUrl;
   rv = Resolve (tmp, cUrl);
   if (NS_FAILED (rv) || !cUrl.Length()) return;
   
@@ -578,13 +571,13 @@ PageInfoHelper::ProcessAppletNode (nsIDOMHTMLAppletElement *aElement)
 void
 PageInfoHelper::ProcessAreaNode (nsIDOMHTMLAreaElement *aElement)
 {
-  nsEmbedString tmp;
+  nsString tmp;
 
   nsresult rv;
   rv = aElement->GetHref (tmp);
   if (NS_FAILED (rv) || !tmp.Length()) return;
 
-  nsEmbedCString cUrl;
+  nsCString cUrl;
   rv = Resolve (tmp, cUrl);
   if (NS_FAILED (rv) || !cUrl.Length()) return;
 
@@ -603,12 +596,12 @@ PageInfoHelper::ProcessAreaNode (nsIDOMHTMLAreaElement *aElement)
 }
 
 void
-PageInfoHelper::ProcessEmbedNodeHelper (const nsEmbedString &aUrl, 
+PageInfoHelper::ProcessEmbedNodeHelper (const nsString &aUrl, 
   				        nsIDOMHTMLEmbedElement *aElement)
 {
   nsresult rv;
 
-  nsEmbedCString cUrl;
+  nsCString cUrl;
   rv = Resolve (aUrl, cUrl);
   if (NS_FAILED (rv) || !cUrl.Length()) return;
 
@@ -621,7 +614,7 @@ PageInfoHelper::ProcessEmbedNodeHelper (const nsEmbedString &aUrl,
   medium->url = g_strdup (cUrl.get());
   g_hash_table_insert (mMediaHash, medium->url, medium);
 
-  nsEmbedString tmp;
+  nsString tmp;
   rv = aElement->GetTitle (tmp);
   if (NS_SUCCEEDED (rv))
     {
@@ -633,7 +626,7 @@ void
 PageInfoHelper::ProcessEmbedNode (nsIDOMHTMLEmbedElement *aElement)
 {
   nsresult rv;
-  nsEmbedString tmp;
+  nsString tmp;
 
   // Look at src tag
   rv = aElement->GetSrc (tmp);
@@ -653,13 +646,13 @@ PageInfoHelper::ProcessEmbedNode (nsIDOMHTMLEmbedElement *aElement)
 void
 PageInfoHelper::ProcessFormNode (nsIDOMHTMLFormElement *aElement)
 {
-  nsEmbedString tmp;
+  nsString tmp;
 
   nsresult rv;
   rv = aElement->GetAction (tmp);
   if (NS_FAILED (rv) || !tmp.Length ()) return;
 
-  nsEmbedCString cUrl;
+  nsCString cUrl;
   rv = Resolve (tmp, cUrl);
   if (NS_FAILED (rv) || !cUrl.Length()) return;
 
@@ -684,11 +677,11 @@ void
 PageInfoHelper::ProcessImageNode (nsIDOMHTMLImageElement *aElement)
 {
   nsresult rv;
-  nsEmbedString tmp;
+  nsString tmp;
   rv = aElement->GetSrc (tmp);
   if (NS_FAILED (rv) || !tmp.Length()) return;
 
-  nsEmbedCString cUrl;
+  nsCString cUrl;
   rv = Resolve (tmp, cUrl);
   if (NS_FAILED (rv) || !cUrl.Length()) return;
 
@@ -719,11 +712,11 @@ void
 PageInfoHelper::ProcessObjectNode (nsIDOMHTMLObjectElement *aElement)
 {
   nsresult rv;
-  nsEmbedString tmp;
+  nsString tmp;
   rv = aElement->GetData (tmp);
   if (NS_FAILED (rv) || !tmp.Length()) return;
 
-  nsEmbedCString cUrl;
+  nsCString cUrl;
   rv = Resolve (tmp, cUrl);
   if (NS_FAILED (rv) || !cUrl.Length()) return;
 
@@ -745,7 +738,7 @@ void
 PageInfoHelper::ProcessMetaNode (nsIDOMHTMLMetaElement *aElement)
 {
   nsresult rv;
-  nsEmbedString key;
+  nsString key;
   /* if we have a http-equiv in the page */
   rv = aElement->GetHttpEquiv (key);
   if (NS_FAILED (rv) || !key.Length())
@@ -754,7 +747,7 @@ PageInfoHelper::ProcessMetaNode (nsIDOMHTMLMetaElement *aElement)
     if (NS_FAILED (rv) || !key.Length()) return;
   }
 
-  nsEmbedString content;
+  nsString content;
   rv = aElement->GetContent (content);
   if (NS_FAILED (rv) || !content.Length ()) return;
 
@@ -770,11 +763,11 @@ PageInfoHelper::ProcessInputNode (nsIDOMHTMLInputElement *aElement)
 {
   /* We are searching for input of type medium only */
   nsresult rv;
-  nsEmbedString tmp;
+  nsString tmp;
   rv = aElement->GetType (tmp);
   if (NS_FAILED (rv) || !tmp.Length()) return;
 
-  nsEmbedCString cTmp;
+  nsCString cTmp;
   NS_UTF16ToCString (tmp, NS_CSTRING_ENCODING_UTF8, cTmp);
 
   /* Is it an image ? */
@@ -784,7 +777,7 @@ PageInfoHelper::ProcessInputNode (nsIDOMHTMLInputElement *aElement)
   rv = aElement->GetSrc (tmp);
   if (NS_FAILED (rv) || !tmp.Length ()) return;
 
-  nsEmbedCString cUrl;
+  nsCString cUrl;
   rv = Resolve (tmp, cUrl);
   if (NS_FAILED (rv) || !cUrl.Length()) return;
 
@@ -806,9 +799,9 @@ PageInfoHelper::ProcessInputNode (nsIDOMHTMLInputElement *aElement)
 void
 PageInfoHelper::ProcessScriptNode (nsIDOMHTMLScriptElement *aElement)
 {
-  nsEmbedCString cUrl;
+  nsCString cUrl;
   nsresult rv;
-  nsEmbedString url;
+  nsString url;
 
   // Src is not 0 if it is a link
   rv = aElement->GetSrc (url);
@@ -832,7 +825,7 @@ PageInfoHelper::ProcessLinkNode (nsIDOMNode *aNode)
   nsCOMPtr<T> element (do_QueryInterface (aNode));
   if (!element) return;
 
-  nsEmbedString tmp;
+  nsString tmp;
 
   nsresult rv;
   rv = element->GetHref(tmp);
@@ -848,12 +841,12 @@ PageInfoHelper::ProcessLinkNode (nsIDOMNode *aNode)
 
 #if 0
   /* We need to unescape mailto link, see bug #144462 */
-  nsEmbedCString cTmp;
+  nsCString cTmp;
   NS_UTF16ToCString (tmp, NS_CSTRING_ENCODING_UTF8, cTmp);
 
   if (isMailto)
   {
-          nsEmbedCString unescapedHref;
+          nsCString unescapedHref;
 
           rv = mozilla_unescape (cTmp, unescapedHref, encoding);
           if (NS_SUCCEEDED (rv) && unescapedHref.Length())
@@ -871,18 +864,18 @@ PageInfoHelper::ProcessLinkNode (nsIDOMNode *aNode)
   }
 #endif
 
-  nsEmbedCString spec;
+  nsCString spec;
   rv = uri->GetSpec (spec);
   if (NS_FAILED (rv)) return;
 
-  nsEmbedCString cUrl;
+  nsCString cUrl;
   rv = Unescape (spec, cUrl);
   if (NS_FAILED (rv) || !cUrl.Length()) return;
 
   /* REL */
   element->GetRel (tmp);
 
-  nsEmbedCString rel;
+  nsCString rel;
   NS_UTF16ToCString (tmp, NS_CSTRING_ENCODING_UTF8, rel);
 
   if (rel.Length() && (g_ascii_strcasecmp (rel.get(), "icon") == 0 ||
@@ -931,7 +924,7 @@ PageInfoHelper::WalkTree (nsIDOMDocument *aDocument)
   if (!htmlDoc || !nsDoc || !trav) return;
 
   nsresult rv;
-  nsEmbedString charset;
+  nsString charset;
   rv = nsDoc->GetCharacterSet (charset);
   if (NS_FAILED (rv)) return;
 
@@ -939,7 +932,7 @@ PageInfoHelper::WalkTree (nsIDOMDocument *aDocument)
 
   nsCOMPtr<nsIDOM3Node> dom3Node (do_QueryInterface (aDocument));
   if (!dom3Node) return;
-  nsEmbedString spec;
+  nsString spec;
   rv = dom3Node->GetBaseURI (spec);
   if (NS_FAILED (rv)) return;
 
@@ -967,7 +960,7 @@ PageInfoHelper::WalkTree (nsIDOMDocument *aDocument)
       defaultCSSView = do_QueryInterface(defaultView);
     }
 
-  nsEmbedString EmptyString;
+  nsString EmptyString;
 
   nsCOMPtr<nsIDOMNode> aNode;
   nsCOMPtr<nsIDOMCSSStyleDeclaration> computedStyle;
@@ -999,7 +992,7 @@ PageInfoHelper::WalkTree (nsIDOMDocument *aDocument)
 		  rv = primitiveValue->GetPrimitiveType (&primitiveType);
 		  if (NS_SUCCEEDED (rv) && primitiveType == nsIDOMCSSPrimitiveValue::CSS_URI)
 		    {
-		      nsEmbedString stringValue;
+		      nsString stringValue;
 		      rv = primitiveValue->GetStringValue (stringValue);
 		      if (NS_SUCCEEDED (rv) && stringValue.Length())
 		      	{
@@ -1117,7 +1110,7 @@ PageInfoHelper::WalkTree (nsIDOMDocument *aDocument)
 void
 PageInfoHelper::WalkFrame (nsIDOMDocument *aDocument)
 {
-  nsEmbedCString saveCharset (mDocCharset);
+  nsCString saveCharset (mDocCharset);
   nsCOMPtr<nsIURI> uri (mBaseURI);
   
   WalkTree (aDocument);

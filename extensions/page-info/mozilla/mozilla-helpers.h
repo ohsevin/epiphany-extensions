@@ -23,8 +23,6 @@
 #ifndef PAGE_INFO_MOZILLA_HELPERS_H
 #define PAGE_INFO_MOZILLA_HELPERS_H
 
-#include "config.h"
-
 #include <glib.h>
 
 #include <epiphany/ephy-embed.h>

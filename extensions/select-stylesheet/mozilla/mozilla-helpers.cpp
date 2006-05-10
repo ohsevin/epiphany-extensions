@@ -21,19 +21,16 @@
  */
 
 #include "mozilla-config.h"
-
 #include "config.h"
-
-#include "mozilla-helpers.h"
 
 #include <string.h>
 
+#include <glib/gi18n-lib.h>
+
+#include <nsStringAPI.h>
+
 #include <gtkmozembed.h>
 #include <gtkmozembed_internal.h>
-
-#undef MOZILLA_INTERNAL_API
-#include <nsEmbedString.h>
-#define MOZILLA_INTERNAL_API 1
 #include <nsCOMPtr.h>
 #include <nsICacheEntryDescriptor.h>
 #include <nsICacheService.h>
@@ -41,13 +38,13 @@
 #include <nsIDOMDocument.h>
 #include <nsIDOMDocumentStyle.h>
 #include <nsIDOMHTMLLinkElement.h>
+#include <nsIDOMMediaList.h>
 #include <nsIDOMStyleSheet.h>
 #include <nsIDOMStyleSheetList.h>
 #include <nsIDOMWindow.h>
 #include <nsIWebBrowser.h>
-#include <nsIDOMMediaList.h>
 
-#include <glib/gi18n-lib.h>
+#include "mozilla-helpers.h"
 
 struct MozillaStyleSheet
 {
@@ -137,11 +134,11 @@ IsAlternateStylesheet (nsIDOMStyleSheet *aStyleSheet)
 	if (link)
 	{
 		nsresult rv;
-		nsEmbedString rel;
+		nsString rel;
 		rv = link->GetRel (rel);
 		NS_ENSURE_SUCCESS (rv, ret);
 
-		nsEmbedCString cRel;
+		nsCString cRel;
 		NS_UTF16ToCString (rel, NS_CSTRING_ENCODING_UTF8, cRel);
 
 		ret = (g_ascii_strncasecmp (cRel.get(), "alternate", 9) == 0);
@@ -181,11 +178,11 @@ mozilla_get_stylesheets (EphyEmbed *aEmbed,
 		item->GetMedia (getter_AddRefs (mediaList));
 		if (mediaList)
 		{
-			nsEmbedString media;
+			nsString media;
 			rv = mediaList->GetMediaText (media);
 			if (NS_FAILED (rv)) continue;
 	
-			nsEmbedCString cMedia;
+			nsCString cMedia;
 			NS_UTF16ToCString (media, NS_CSTRING_ENCODING_UTF8, cMedia);
 
 			if (media.Length() > 0 &&
@@ -193,11 +190,11 @@ mozilla_get_stylesheets (EphyEmbed *aEmbed,
 			    strstr (cMedia.get(), "all") == NULL) continue;
 		}
 
-		nsEmbedString title;
+		nsString title;
 		rv = item->GetTitle (title);
 		if (NS_FAILED (rv) || !title.Length()) continue;
 
-		nsEmbedCString cTitle;
+		nsCString cTitle;
 		NS_UTF16ToCString (title, NS_CSTRING_ENCODING_UTF8, cTitle);
 
 		/* check if it's already in the list */
@@ -275,7 +272,7 @@ mozilla_set_stylesheet (EphyEmbed *aEmbed,
 			continue;
 		}
 
-		nsEmbedString title;
+		nsString title;
 		item->GetTitle (title);
 		if (NS_FAILED (rv)) continue;
 
@@ -287,7 +284,7 @@ mozilla_set_stylesheet (EphyEmbed *aEmbed,
 
 		if (aSelected->mType == STYLESHEET_BASIC) continue;
 
-		nsEmbedCString cTitle;
+		nsCString cTitle;
 		NS_UTF16ToCString (title, NS_CSTRING_ENCODING_UTF8, cTitle);
 
 		item->SetDisabled (strcmp (cTitle.get(), aSelected->mName) != 0);

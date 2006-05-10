@@ -19,28 +19,28 @@
  */
 
 #include "mozilla-config.h"
-
 #include "config.h"
+
+#include <glib/gi18n-lib.h>
+
+#include <nsStringAPI.h>
+
+#include <nsCOMPtr.h>
+#include <nsComponentManagerUtils.h>
+#include <nsIChannel.h>
+#include <nsIDOMHTMLAnchorElement.h>
+#include <nsIDOMHTMLAreaElement.h>
+#include <nsIDOMNode.h>
+#include <nsIURIChecker.h>
+#include <nsIURI.h>
+#include <nsNetError.h>
+#include <nsServiceManagerUtils.h>
+
+#include "EphyUtils.h"
 
 #include "link-checker.h"
 
 #include "ErrorViewerURICheckerObserver.h"
-
-#undef MOZILLA_INTERNAL_API
-#include <nsEmbedString.h>
-#define MOZILLA_INTERNAL_API 1
-#include <nsCOMPtr.h>
-#include <nsIChannel.h>
-#include <nsIDOMHTMLAnchorElement.h>
-#include <nsIDOMHTMLAreaElement.h>
-#include <nsIURI.h>
-#include <nsIServiceManager.h>
-
-#include <nsIURIChecker.h>
-#include <nsNetError.h>
-#include "EphyUtils.h"
-
-#include <glib/gi18n-lib.h>
 
 NS_IMPL_ISUPPORTS1(ErrorViewerURICheckerObserver, nsIRequestObserver)
 
@@ -109,7 +109,7 @@ NS_IMETHODIMP ErrorViewerURICheckerObserver::OnStopRequest(nsIRequest *aRequest,
 	{
 		nsresult rv;
 
-		nsEmbedCString uri;
+		nsCString uri;
 		rv = aRequest->GetName(uri);
 		NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
 
@@ -132,7 +132,7 @@ NS_IMETHODIMP ErrorViewerURICheckerObserver::OnStopRequest(nsIRequest *aRequest,
 nsresult ErrorViewerURICheckerObserver::AddNode (nsIDOMNode *node)
 {
 	nsresult rv;
-	nsEmbedString href;
+	nsString href;
 
 	nsCOMPtr<nsIDOMHTMLAnchorElement> anchor;
 	anchor = do_QueryInterface (node, &rv);

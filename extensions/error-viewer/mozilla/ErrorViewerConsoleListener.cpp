@@ -20,26 +20,22 @@
  */
 
 #include "mozilla-config.h"
-
 #include "config.h"
-
-#include "error-viewer.h"
-
-#include "ErrorViewerConsoleListener.h"
-
-#undef MOZILLA_INTERNAL_API
-#include <nsEmbedString.h>
-#define MOZILLA_INTERNAL_API 1
-#include <nsCOMPtr.h>
-#include <nsMemory.h>
-
-#include <xpconnect/nsIScriptError.h>
-
-#include <glib/gi18n-lib.h>
 
 #include <string.h>
 
+#include <glib/gi18n-lib.h>
+
+#include <nsStringAPI.h>
+
+#include <nsCOMPtr.h>
+#include <nsMemory.h>
+#include <nsIScriptError.h>
+
 #include "ephy-debug.h"
+#include "error-viewer.h"
+
+#include "ErrorViewerConsoleListener.h"
 
 NS_IMPL_ISUPPORTS1(ErrorViewerConsoleListener, nsIConsoleListener)
 
@@ -64,20 +60,12 @@ ErrorViewerConsoleListener::GetMessageFromError (nsIScriptError *aError,
 	rv = aError->GetCategory (&category);
 	NS_ENSURE_TRUE (NS_SUCCEEDED (rv) && category, NS_ERROR_FAILURE);
 
-	nsEmbedString message;
-#ifdef HAVE_GECKO_1_8
+	nsString message;
 	rv = aError->GetErrorMessage (message);
-#else
-	PRUnichar *msg = nsnull;
-	rv = aError->GetMessage (&msg);
-	NS_ENSURE_TRUE (NS_SUCCEEDED (rv) && msg, NS_ERROR_FAILURE);
-	message.Assign (msg);
-	nsMemory::Free (msg);
-#endif
 	NS_ENSURE_SUCCESS (rv, rv);
 
-	nsEmbedCString cMessage;
-	NS_UTF16ToCString (nsEmbedString (message),
+	nsCString cMessage;
+	NS_UTF16ToCString (nsString (message),
 				NS_CSTRING_ENCODING_UTF8, cMessage);
 
 	/*
@@ -117,19 +105,19 @@ ErrorViewerConsoleListener::GetMessageFromError (nsIScriptError *aError,
 	NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
 
 #ifdef HAVE_GECKO_1_8
-	nsEmbedString sourceName;
+	nsString sourceName;
 	rv = aError->GetSourceName (sourceName);
 	NS_ENSURE_SUCCESS (rv, rv);
 
-	nsEmbedCString cSourceName;
+	nsCString cSourceName;
 	NS_UTF16ToCString (sourceName, NS_CSTRING_ENCODING_UTF8, cSourceName);
 #else
 	PRUnichar *sourceName = nsnull;
 	rv = aError->GetSourceName (&sourceName);
 	NS_ENSURE_TRUE (NS_SUCCEEDED (rv) && sourceName, NS_ERROR_FAILURE);
 
-	nsEmbedCString cSourceName;
-	NS_UTF16ToCString (nsEmbedString (sourceName),
+	nsCString cSourceName;
+	NS_UTF16ToCString (nsString (sourceName),
 			   NS_CSTRING_ENCODING_UTF8, cSourceName);
 	nsMemory::Free (sourceName);
 #endif
@@ -167,8 +155,8 @@ NS_IMETHODIMP ErrorViewerConsoleListener::Observe(nsIConsoleMessage *aMessage)
 		rv = aMessage->GetMessage (&message);
 		NS_ENSURE_TRUE (NS_SUCCEEDED (rv) && message, NS_ERROR_FAILURE);
 
-		nsEmbedCString cMessage;
-		NS_UTF16ToCString (nsEmbedString (message),
+		nsCString cMessage;
+		NS_UTF16ToCString (nsString (message),
 				   NS_CSTRING_ENCODING_UTF8, cMessage);
 
 		error_viewer_append (dialog, ERROR_VIEWER_ERROR, cMessage.get());
