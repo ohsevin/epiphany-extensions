@@ -1,6 +1,12 @@
 2006-05-10  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
+
+	Non-toolkit geckos aren't supported anymore.
+
+2006-05-10  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
 	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:
 	* extensions/error-viewer/mozilla/ErrorViewerConsoleListener.h:
 	* extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:

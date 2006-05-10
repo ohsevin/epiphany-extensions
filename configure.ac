@@ -302,7 +302,6 @@ AC_SUBST([MOZILLA_INCLUDE_ROOT])
 case "$MOZILLA" in
 xulrunner) min_version=1.8 ;;
 *firefox) min_version=1.5 ;;
-seamonkey) min_version=1.0 ;;
 *) AC_MSG_ERROR([Unsupported gecko "$gecko_cv_gecko"]) ;;
 esac
 
