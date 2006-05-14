@@ -1,3 +1,10 @@
+2006-05-14  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/smart-bookmarks/smart-bookmarks-extension.c: (rebuild_ui):
+
+	Remove all references to EphyFullscreenDocumentPopup which has been removed
+	from Epiphany's ui from a while.
+
 2006-05-10  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
