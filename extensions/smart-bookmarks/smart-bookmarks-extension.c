@@ -304,12 +304,6 @@ rebuild_ui (WindowData *data)
 	gtk_ui_manager_add_ui (manager, ui_id, "/EphyDocumentPopup",
 			       LOOKUP_ACTION "Menu", LOOKUP_ACTION,
 			       GTK_UI_MANAGER_MENU, FALSE);
-	gtk_ui_manager_add_ui (manager, ui_id, "/EphyFullscreenDocumentPopup",
-			       "SmbExtSep0", NULL,
-			       GTK_UI_MANAGER_SEPARATOR, FALSE);
-	gtk_ui_manager_add_ui (manager, ui_id, "/EphyFullscreenDocumentPopup",
-			       LOOKUP_ACTION "Menu", LOOKUP_ACTION,
-			       GTK_UI_MANAGER_MENU, FALSE);
 
 	/* Add bookmarks to input popup context */
 	gtk_ui_manager_add_ui (manager, ui_id, "/EphyInputPopup",
@@ -342,10 +336,6 @@ rebuild_ui (WindowData *data)
 				       verb, verb,
 				       GTK_UI_MANAGER_MENUITEM, FALSE);
 		gtk_ui_manager_add_ui (manager, ui_id,
-				       "/EphyFullscreenDocumentPopup/" LOOKUP_ACTION "Menu",
-				       verb, verb,
-				       GTK_UI_MANAGER_MENUITEM, FALSE);
-		gtk_ui_manager_add_ui (manager, ui_id,
 				       "/EphyInputPopup/" LOOKUP_ACTION "Menu",
 				       verb, verb,
 				       GTK_UI_MANAGER_MENUITEM, FALSE);
@@ -357,10 +347,6 @@ rebuild_ui (WindowData *data)
 	gtk_ui_manager_add_ui (manager, ui_id,
 			       "/EphyDocumentPopup/" LOOKUP_ACTION "Menu",
 			       GDICT_ACTION "IDP", GDICT_ACTION,
-			       GTK_UI_MANAGER_MENUITEM, FALSE);
-	gtk_ui_manager_add_ui (manager, ui_id,
-			       "/EphyFullscreenDocumentPopup/" LOOKUP_ACTION "Menu",
-			       GDICT_ACTION "FSIDP", GDICT_ACTION,
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
 	gtk_ui_manager_add_ui (manager, ui_id,
 			       "/EphyInputPopup/" LOOKUP_ACTION "Menu",
