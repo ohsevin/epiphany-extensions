@@ -1,3 +1,17 @@
+2006-05-15  Christian Persch  <chpe@cvs.gnome.org>
+
+	=== Release 2.14.1.1 ===
+
+	* Makefile.am:
+	* NEWS:
+	* configure.ac:
+	* m4/gecko.m4:
+	* po/POTFILES.in:
+
+2006-04-24  Christian Persch  <chpe@cvs.gnome.org>
+
+	* Makefile.am:
+
 2006-05-14  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/smart-bookmarks/smart-bookmarks-extension.c: (rebuild_ui):

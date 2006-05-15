@@ -21,7 +21,7 @@ DISTCLEANFILES = 		\
 	intltool-extract 	\
 	intltool-merge 		\
 	intltool-update		\
-        gnome-doc-utils.make
+	gnome-doc-utils.make
 
 DISTCHECK_CONFIGURE_FLAGS = \
 	--with-extensions=really-all	\
