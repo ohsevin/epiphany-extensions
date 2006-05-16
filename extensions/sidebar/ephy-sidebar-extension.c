@@ -36,6 +36,7 @@
 #include <epiphany/ephy-state.h>
 
 #include "ephy-file-helpers.h"
+#include "ephy-gui.h"
 #include "ephy-debug.h"
 
 #include <gtk/gtkactiongroup.h>
@@ -386,7 +387,10 @@ ephy_sidebar_extension_add_sidebar_cb (EphyEmbedSingle *single,
 	GtkWidget *dialog;
 	struct ResponseCallbackData *cb_data;
 	int i;
-	
+
+	session = EPHY_SESSION (ephy_shell_get_session (ephy_shell));
+	window = ephy_session_get_active_window (session);
+
 	/* See if the Sidebar is already added */
 	for (i = 0 ; i < ephy_node_get_n_children (extension->priv->sidebars); i++)
 	{
@@ -395,13 +399,33 @@ ephy_sidebar_extension_add_sidebar_cb (EphyEmbedSingle *single,
 		
 		if (strcmp (node_url, url) == 0)
 		{
-			/* TODO Should we raise a dialog or perform an action here */
+			dialog = gtk_message_dialog_new
+				(GTK_WINDOW (window),
+				 GTK_DIALOG_DESTROY_WITH_PARENT,
+				 GTK_MESSAGE_INFO,
+				 GTK_BUTTONS_OK,
+				 /* Translators: %s is the sidebar title */
+				 _("The sidebar already contains “%s”"), title);
+
+			gtk_message_dialog_format_secondary_text
+				(GTK_MESSAGE_DIALOG (dialog),
+				 _("To use this sidebar, select it from the list of available "
+					 "sidebar pages."));
+
+			gtk_window_set_title (GTK_WINDOW (dialog), _("Add Sidebar"));
+			gtk_window_set_icon_name (GTK_WINDOW (dialog), "web-browser");
+
+			gtk_window_group_add_window (ephy_gui_ensure_window_group
+					(GTK_WINDOW (window)), GTK_WINDOW (dialog));
+
+			g_signal_connect (dialog, "response", G_CALLBACK
+					(gtk_widget_destroy), NULL);
+
+			gtk_widget_show (GTK_WIDGET (dialog));
+
 			return TRUE;
 		}
 	}
-
-	session = EPHY_SESSION (ephy_shell_get_session (ephy_shell));
-	window = ephy_session_get_active_window (session);
 
 	dialog = gtk_message_dialog_new
 		(GTK_WINDOW (window),

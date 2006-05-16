@@ -1,3 +1,11 @@
+2006-05-17  Wouter Bolsterlee  <uws+gnome@xs4all.nl>
+
+	* extensions/sidebar/ephy-sidebar-extension.c:
+	(ephy_sidebar_extension_add_sidebar_cb):
+
+	Show a notification dialog when a duplicate sidebar is
+	added. Fixes bug #333306.
+
 2006-05-16  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/smart-bookmarks/adblock-patterns:
