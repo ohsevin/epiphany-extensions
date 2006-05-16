@@ -3,7 +3,7 @@
 use strict;
 use LWP::Simple;
 
-my $base = 'http://www.geocities.com/pierceive/adblock';
+my $base = 'http://www.pierceive.com/filtersetg/';
 
 sub get_latest()
 {
