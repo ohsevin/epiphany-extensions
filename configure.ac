@@ -37,7 +37,7 @@ AM_INIT_AUTOMAKE([1.9 foreign dist-bzip2 no-dist-gzip tar-ustar])
 
 AM_MAINTAINER_MODE
 
-AC_PROG_INTLTOOL([0.29])
+IT_PROG_INTLTOOL([0.35])
 
 AM_DISABLE_STATIC
 AC_ENABLE_SHARED(yes)
@@ -75,11 +75,6 @@ fi
 # ********************************
 # Internationalisation
 # ********************************
-
-# Translators: new languages must be added to the po/LINGUAS file
-ALL_LINGUAS="`cat "$srcdir/po/LINGUAS" | grep -v '^#'`"
-
-AC_SUBST([CONFIG_STATUS_DEPENDENCIES],['$(top_srcdir)/po/LINGUAS'])
 
 GETTEXT_PACKAGE=epiphany-extensions-$EPIPHANY_API_VERSION
 AC_SUBST([GETTEXT_PACKAGE])
