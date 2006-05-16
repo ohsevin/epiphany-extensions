@@ -1,3 +1,11 @@
+2006-05-16  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/smart-bookmarks/adblock-patterns:
+	* extensions/smart-bookmarks/download-latest.pl:
+
+	Update from upstream (2006-04-06a).
+	Adjust url to http://www.pierceive.com/filtersetg/ in download-latest.pl.
+
 2006-05-15  Christian Persch  <chpe@cvs.gnome.org>
 
 	* configure.ac:
