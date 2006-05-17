@@ -1,3 +1,11 @@
+2006-05-17  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/adblock/ad-blocker.c:
+	* extensions/adblock/ad-blocker.h:
+	* extensions/adblock/ephy-adblock-extension.c:
+
+	Code cleanup. AdBlocker doesn't depend on AdUriTester anymore.
+
 2006-05-17  Wouter Bolsterlee  <uws+gnome@xs4all.nl>
 
 	* extensions/sidebar/ephy-sidebar-extension.c:
