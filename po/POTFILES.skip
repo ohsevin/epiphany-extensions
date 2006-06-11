@@ -13,6 +13,8 @@ extensions/sidebar/sidebar-commands.c
 extensions/adblock/adblock.ephy-extension.in.in
 extensions/toolbar-extras/toolbar-extras.ephy-extension.in.in
 
+#disabled
+extensions/tabsmenu/ephy-tab-move-menu.c
 
 #These are removed while bookmarks-tray isn't being shipped
 extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c
