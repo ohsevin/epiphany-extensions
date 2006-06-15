@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Epiphany Extension HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-05-02 14:35+0200\n"
-"PO-Revision-Date: 2006-05-02 14:36+0200\n"
+"PO-Revision-Date: 2006-06-15 16:08+0200\n"
 "Last-Translator: Hendrik Richter <hendrikr@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -342,7 +342,7 @@ msgstr "Erweiterungen"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
 msgid "_Extensions..."
-msgstr "_Erweiterungen..."
+msgstr "_Erweiterungen …"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
 msgid "Load and unload extensions"
@@ -389,7 +389,7 @@ msgstr "Die Informationen zu dieser Seite in einem Dialog anzeigen"
 
 #: ../extensions/page-info/page-info-dialog.c:726
 msgid "Save As..."
-msgstr "Speichern unter..."
+msgstr "Speichern unter …"
 
 #: ../extensions/page-info/page-info-dialog.c:743
 msgid "Select a directory"
@@ -481,7 +481,7 @@ msgstr "Als _Hintergrund verwenden"
 #: ../extensions/page-info/page-info-dialog.c:1072
 #: ../extensions/page-info/page-info-dialog.c:1426
 msgid "_Save As..."
-msgstr "_Speichern unter..."
+msgstr "_Speichern unter …"
 
 #: ../extensions/page-info/page-info-dialog.c:1256
 #: ../extensions/page-info/page-info-dialog.c:1499
@@ -660,7 +660,7 @@ msgstr "Typ:"
 
 #: ../extensions/page-info/page-info.glade.h:31
 msgid "_Save Media As..."
-msgstr "Medieninhalt _speichern unter..."
+msgstr "Medieninhalt _speichern unter …"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:180
 msgid "allowed"
@@ -1060,3 +1060,6 @@ msgstr "Reiterzustände"
 
 #~ msgid "_Page Info"
 #~ msgstr "_Seiteninformationen"
+
+
+
