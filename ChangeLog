@@ -1,3 +1,10 @@
+2006-06-28  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* configure.ac:
+	
+	Configure now prints a summary of enabled/disabled features as for
+	Epiphany. Bug 345908.
+
 2006-05-17  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/adblock/ad-blocker.c:

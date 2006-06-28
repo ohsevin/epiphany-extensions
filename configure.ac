@@ -375,3 +375,26 @@ po/Makefile.in
 ])
 
 AC_OUTPUT
+
+# *************************************
+# *************************************
+
+if test "$EPIPHANY_HAS_PYTHON" = "1"; then enable_python="yes"; else enable_python="no"; fi
+
+echo "
+Epiphany Extensions was configured with the following options:
+        
+	Source code location       : $srcdir
+	Compiler                   : $CC
+	Prefix                     : $prefix
+	Extra debugging support    : $enable_debug
+
+	Epiphany API version	   : $EPIPHANY_API_VERSION
+	Epiphany has Python	   : $enable_python
+
+	Gecko backend              : $gecko_cv_gecko version $gecko_cv_gecko_version
+
+	OpenSP			   : $enable_opensp	
+
+	Extensions		   : $EXTENSIONS
+"
