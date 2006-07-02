@@ -936,7 +936,7 @@ msgstr "Bàn giao tiếp Java"
 
 #:../extensions/java-console/java-console.ephy-extension.in.in.h:2
 msgid "Provide access to the Java-Plugin Console"
-msgstr "Cung cấp truy cập Bàn giao tiếp Bộ cầm phít Java"
+msgstr "Cung cấp truy cập Phần mở rộng Bàn giao tiếp Java"
 
 #:../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:1
 msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
