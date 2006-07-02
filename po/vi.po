@@ -900,7 +900,7 @@ msgstr "Bàn giao tiếp Java"
 
 #:../extensions/java-console/java-console.ephy-extension.in.in.h:2
 msgid "Provide access to the Java-Plugin Console"
-msgstr "Cung cấp truy cập Phần mở rộng Bàn giao tiếp Java"
+msgstr "Cung cấp truy cập Phần bổ sung Bàn giao tiếp Java"
 
 #:../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
