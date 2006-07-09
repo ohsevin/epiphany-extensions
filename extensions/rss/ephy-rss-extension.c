@@ -460,13 +460,6 @@ impl_attach_window (EphyExtension *ext,
 			       "RssSubscribe", "RssSubscribe",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
 			       
-	gtk_ui_manager_add_ui (manager, ui_id, "/EphyImageLinkPopup",
-			       "RssInfoSep", NULL,
-			       GTK_UI_MANAGER_SEPARATOR, FALSE);
-	gtk_ui_manager_add_ui (manager, ui_id, "/EphyImageLinkPopup",
-			       "RssSubscribe", "RssSubscribe",
-			       GTK_UI_MANAGER_MENUITEM, FALSE);
-			       				
 	/* store data */
 	data = g_new (WindowData, 1);
 

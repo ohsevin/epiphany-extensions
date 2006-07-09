@@ -1,3 +1,11 @@
+2006-07-09  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/rss/ephy-rss-extension.c: (impl_attach_window):
+	* extensions/greasemonkey/ephy-greasemonkey-extension.c: (impl_attach_wi
+ndow):
+
+	Some clean up since EphyImageLinkPopup doesn't exist anymore.
+
 2006-05-16  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/smart-bookmarks/adblock-patterns:
