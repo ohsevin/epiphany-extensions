@@ -563,15 +563,6 @@ impl_attach_window (EphyExtension *ext,
 	gtk_ui_manager_add_ui (manager, ui_id, "/EphyLinkPopup",
 			       "GreasemonkeySep2", NULL,
 			       GTK_UI_MANAGER_SEPARATOR, TRUE);
-	gtk_ui_manager_add_ui (manager, ui_id, "/EphyImageLinkPopup",
-			       "GreasemonkeySep1", NULL,
-			       GTK_UI_MANAGER_SEPARATOR, TRUE);
-	gtk_ui_manager_add_ui (manager, ui_id, "/EphyImageLinkPopup",
-			       ACTION_NAME, ACTION_NAME,
-			       GTK_UI_MANAGER_MENUITEM, TRUE);
-	gtk_ui_manager_add_ui (manager, ui_id, "/EphyImageLinkPopup",
-			       "GreasemonkeySep2", NULL,
-			       GTK_UI_MANAGER_SEPARATOR, TRUE);
 }
 
 static void
