@@ -24,6 +24,7 @@ gestures		Mouse gestures
 greasemonkey		Load mozilla greasmonkey scripts
 imagebar		Display a toolbar over images
 java-console		Provide access to the Java-Plugin Console
+livehttpheaders		Display HTTP headers
 net-monitor		Monitor the network status and set 'offline' mode accordingly
 page-info		Show information about the current page
 permissions		Manage web site permissions

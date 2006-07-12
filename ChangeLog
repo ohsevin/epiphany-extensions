@@ -1,3 +1,23 @@
+2006-07-12  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* README:
+	* configure.ac:
+	* extensions/livehttpheaders/ephy-livehttpheaders-extension.c:
+	* extensions/livehttpheaders/ephy-livehttpheaders-extension.h:
+	* extensions/livehttpheaders/extension.c:
+	* extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in:
+	* extensions/livehttpheaders/livehttpheaders-ui.c:
+	* extensions/livehttpheaders/livehttpheaders-ui.h:
+	* extensions/livehttpheaders/livehttpheaders-ui.glade:
+	* extensions/livehttpheaders/Makefile.am:
+	* extensions/livehttpheaders/mozilla/LiveHTTPHeadersListener.cpp:
+	* extensions/livehttpheaders/mozilla/LiveHTTPHeadersListener.h:
+	* extensions/livehttpheaders/mozilla/mozilla-helper.cpp:
+	* extensions/livehttpheaders/mozilla/mozilla-helper.h:
+	* extensions/livehttpheaders/mozilla/Makefile.am:
+
+	New Live HTTP Headers extension.
+
 2006-07-09  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/rss/ephy-rss-extension.c: (impl_attach_window):
