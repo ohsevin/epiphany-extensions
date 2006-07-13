@@ -2,83 +2,218 @@
 # Copyright (C) 2004 THE epiphany-extensions'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the epiphany-extensions package.
 # Dan Korostelev <dan@ats.energo.ru>, 2004.
-# 
-# 
+# Alexey Balmashnov <a.balmashnov@gmail.com>, 2006.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions 0.8.1\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-05-31 13:15+0200\n"
-"PO-Revision-Date: 2004-04-01 07:09+0400\n"
-"Last-Translator: Dmitry G. Mastrukov <dmitry@taurussoft.org>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=epiphany-extensions\n"
+"POT-Creation-Date: 2006-07-13 23:33+0400\n"
+"PO-Revision-Date: 2006-05-26 20:54+0000\n"
+"Last-Translator: Alexey Balmashnov <a.balmashnov@gmail.com>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: extensions/certificates/ephy-certificates-extension.c:160
-msgid "Certificate Manager"
-msgstr "Менеджер сертификатов"
+#: ../extensions/actions/action-properties.glade.h:1
+msgid "<span weight=\"bold\">Applies to</span>"
+msgstr "<span weight=\"bold\">Применять к</span>"
+
+#: ../extensions/actions/action-properties.glade.h:2
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">Общие</span>"
+
+#: ../extensions/actions/action-properties.glade.h:3
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"images."
+msgstr ""
+"Если включён этот параметр, действие будет отображаться в контекстном меню "
+"изображений."
+
+#: ../extensions/actions/action-properties.glade.h:4
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"links and pages."
+msgstr ""
+"Если включён этот параметр, действие будет отображаться в контекстном меню "
+"станиц."
+
+#: ../extensions/actions/action-properties.glade.h:5
+msgid "The action description."
+msgstr "Описание действия."
+
+#: ../extensions/actions/action-properties.glade.h:6
+msgid ""
+"The action name. If a character is preceded by an underscore, that character "
+"will be used as the access key for the menu item."
+msgstr ""
+"Название действия. Если перед буквой в названии поставить подчёркивание \"_"
+"\", то эта буква будет использоваться  в качестве кнопки доступа к пункту "
+"меню."
+
+#: ../extensions/actions/action-properties.glade.h:7
+msgid ""
+"The command to execute when the action is activated. The URL of the link, "
+"image or page will be appended to the command."
+msgstr ""
+"Выполнить команду при выборе действия. URL ссылки, изображения или страницы "
+"будет добавлен к команде."
+
+#: ../extensions/actions/action-properties.glade.h:8
+msgid "_Command:"
+msgstr "_Команда:"
+
+#: ../extensions/actions/action-properties.glade.h:9
+msgid "_Description:"
+msgstr "_Описание:"
+
+#: ../extensions/actions/action-properties.glade.h:10
+msgid "_Images"
+msgstr "_Изображения"
+
+#: ../extensions/actions/action-properties.glade.h:11
+msgid "_Name:"
+msgstr "_Название:"
+
+#: ../extensions/actions/action-properties.glade.h:12
+msgid "_Pages"
+msgstr "_Страницы"
+
+#: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions.ephy-extension.in.in.h:1
+msgid "Actions"
+msgstr "Действия"
+
+#: ../extensions/actions/ephy-actions-extension.c:112
+msgid "_Actions"
+msgstr "_Действия"
+
+#: ../extensions/actions/ephy-actions-extension.c:113
+msgid "Customize actions"
+msgstr "Настройка действий"
+
+#: ../extensions/actions/ephy-actions-extension.c:436
+msgid "Could not run command"
+msgstr "Не удалось запустить команду"
+
+#: ../extensions/actions/ephy-actions-extension.c:439
+msgid "Could not Run Command"
+msgstr "Не удалось запустить команду"
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
+msgid "No action selected."
+msgstr "Действие не выбрано."
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
+#, c-format
+msgid "%i action selected."
+msgid_plural "%i actions selected."
+msgstr[0] "%i действие выбрано."
+msgstr[1] "%i действия выбрано."
+msgstr[2] "%i действий выбрано."
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
+msgid "Add Action"
+msgstr "Добавить действие"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
+#, c-format
+msgid "“%s” Properties"
+msgstr "Свойства «%s»"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
+msgid "Action Properties"
+msgstr "Свойства действия"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+msgid "_Auto Reload"
+msgstr "_Перезагружать автоматически"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
+msgid "Reload the page periodically"
+msgstr "Периодическая перезагрузка страницы"
+
+#: ../extensions/certificates/ephy-certificates-extension.c:177
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
+msgid "Certificates"
+msgstr "Сертификаты"
+
+#: ../extensions/certificates/ephy-certificates-extension.c:208
+msgid "Security Devices"
+msgstr "Устройства безопасности"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:276
+#: ../extensions/certificates/ephy-certificates-extension.c:327
 msgid "Manage _Certificates"
 msgstr "Изменить _сертификаты"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:278
+#: ../extensions/certificates/ephy-certificates-extension.c:329
 msgid "Manage your certificates"
-msgstr "Открыть окно управления сертификатами"
+msgstr "Управление сертификатами"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:286
+#: ../extensions/certificates/ephy-certificates-extension.c:333
+msgid "Manage Security _Devices"
+msgstr "_Управление устройствами безопасности"
+
+#. shortcut key
+#: ../extensions/certificates/ephy-certificates-extension.c:335
+msgid "Manage your security devices"
+msgstr "Управляйте Вашими устройствами безопасности"
+
+#. stock icon
+#: ../extensions/certificates/ephy-certificates-extension.c:342
 msgid "Server _Certificate"
 msgstr "_Сертификат сервера"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:288
+#: ../extensions/certificates/ephy-certificates-extension.c:344
 msgid "Display the web server's certificate"
 msgstr "Показать сертификаты веб-сервера"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:88
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
 msgstr "Проверить _HTML"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:90
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
 msgid "Display HTML errors in the Error Viewer dialog"
-msgstr "Показать ошибки HTML в окне просмотрщика ошибок"
+msgstr "Показать ошибки HTML в окне просмотра ошибок"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:95
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:104
 msgid "Check _Links"
-msgstr "_Проверить ссылки ссылок"
+msgstr "_Проверить ссылки"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:97
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:106
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
-msgstr "Показать неправильные гиперссылки в окне просмотрщика ошибок"
+msgstr "Показать неправильные гипер-ссылки в окне просмотра ошибок"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:101
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:110
 msgid "_Error Viewer"
 msgstr "_Просмотреть ошибки"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:103
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:112
 msgid "Display web page errors"
 msgstr "Показать ошибки веб-страницы"
 
-#: extensions/error-viewer/error-viewer.glade.h:1
-msgid "C_lear"
-msgstr "О_чистить"
+#: ../extensions/error-viewer/error-viewer.glade.h:1
+msgid "Cl_ear"
+msgstr "_Очистить"
 
-#: extensions/error-viewer/error-viewer.glade.h:2
+#: ../extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
-msgstr "Просмотрщик ошибок"
+msgstr "Просмотр ошибок"
 
 #. Don't bother looking for source lines -- they're not there
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:75
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:96
 #, c-format
 msgid ""
 "Error:\n"
@@ -87,7 +222,7 @@ msgstr ""
 "Произошла ошибка:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:90
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:126
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -96,15 +231,15 @@ msgstr ""
 "Произошла ошибка языка Javascript в %s, в строке %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:61
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
-msgstr[0] "Найдена %d неверная ссылка"
-msgstr[1] "Найдено %d неверные ссылки"
-msgstr[2] "Найдено %d неверных ссылок"
+msgstr[0] "Найдена %d нерабочая ссылка"
+msgstr[1] "Найдено %d нерабочие ссылки"
+msgstr[2] "Найдено %d нерабочих ссылок"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:118
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -113,24 +248,24 @@ msgstr ""
 "Произошла ошибка ссылки в %s:\n"
 "%s недоступна."
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:202
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
 #, c-format
-msgid "Checking %d Link on %s"
-msgid_plural "Checking %d Links on %s"
-msgstr[0] "Идёт проверка %d ссылки на %s"
-msgstr[1] "Идёт проверка %d ссылок на %s"
-msgstr[2] "Идёт проверка %d ссылок на %s"
+msgid "Checking %d Link on “%s”"
+msgid_plural "Checking %d Links on “%s”"
+msgstr[0] "Проверка %d ссылки по адресу «%s»"
+msgstr[1] "Проверка %d ссылок по адресу «%s»"
+msgstr[2] "Проверка %d ссылок по адресу «%s»"
 
-#: extensions/error-viewer/opensp/validate.cpp:167
+#: ../extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
 msgid ""
-"HTML error in %s on line %s:\n"
+"HTML error in “%s” on line %s:\n"
 "%s"
 msgstr ""
-"Произошла ошибка языка HTML в %s, в строке %s:\n"
+"Ошибка HTML в «%s» на строке %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:165
+#: ../extensions/error-viewer/sgml-validator.c:165
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
@@ -138,12 +273,12 @@ msgstr[0] "Найдена %d ошибка"
 msgstr[1] "Найдено %d ошибки"
 msgstr[2] "Найдено %d ошибок"
 
-#: extensions/error-viewer/sgml-validator.c:169
+#: ../extensions/error-viewer/sgml-validator.c:169
 #, c-format
-msgid "HTML Validation of %s complete"
-msgstr "Проверка %s на правильность синтаксиса HTML завершена"
+msgid "HTML Validation of “%s” complete"
+msgstr "Проверка правильности HTML для «%s» завершена"
 
-#: extensions/error-viewer/sgml-validator.c:227
+#: ../extensions/error-viewer/sgml-validator.c:227
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -152,16 +287,16 @@ msgstr ""
 "Произошла ошибка языка HTML в %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:229
-#: extensions/error-viewer/sgml-validator.c:245
+#: ../extensions/error-viewer/sgml-validator.c:229
+#: ../extensions/error-viewer/sgml-validator.c:245
 msgid ""
-"Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
-"xhtml+xml\" instead."
+"Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
+"+xml” instead."
 msgstr ""
-"Doctype - \"XHTML\", однако content type - \"text/html\". Используйте "
-"\"application/xhtml+xml\" вместо этого."
+"Параметр doctype установлен в “XHTML”, хотя при этом content-type является "
+"“text/html”. Замените его на “application/xhtml+xml”."
 
-#: extensions/error-viewer/sgml-validator.c:243
+#: ../extensions/error-viewer/sgml-validator.c:243
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
@@ -170,22 +305,20 @@ msgstr ""
 "Предупреждение HTML в %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:360
-#, fuzzy, c-format
+#: ../extensions/error-viewer/sgml-validator.c:360
+#, c-format
 msgid "HTML error in %s:"
-msgstr ""
-"Произошла ошибка языка HTML в %s:\n"
-"%s"
+msgstr "Ошибка HTML в %s:"
 
-#: extensions/error-viewer/sgml-validator.c:368
+#: ../extensions/error-viewer/sgml-validator.c:368
 msgid "Invalid character encoding"
-msgstr ""
+msgstr "Недопустимая кодировка символов"
 
-#: extensions/error-viewer/sgml-validator.c:373
+#: ../extensions/error-viewer/sgml-validator.c:373
 msgid "Unknown error while converting to UTF-8"
-msgstr ""
+msgstr "Ошибка при конвертации в кодировку UTF-8"
 
-#: extensions/error-viewer/sgml-validator.c:435
+#: ../extensions/error-viewer/sgml-validator.c:435
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -194,35 +327,691 @@ msgstr ""
 "Произошла ошибка языка HTML в %s:\n"
 "Не указан правильный doctype"
 
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:63
-msgid "Popup _Windows"
-msgstr "_Всплывающие окна"
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
+msgid "Enabled"
+msgstr "Включено"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
+#: ../extensions/rss/rss-ui.c:599
+msgid "Description"
+msgstr "Описание"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+msgid "<b>Loaded Extensions</b>"
+msgstr "<b>Загруженные расширения</b>"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+msgid "Extensions"
+msgstr "Расширения"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
+msgid "_Extensions..."
+msgstr "_Расширения..."
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
+msgid "Load and unload extensions"
+msgstr "Загружать и выгружать расширения"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "_Extensions"
+msgstr "_Расширения"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
+msgid "Help about extensions"
+msgstr "Справка по расширениям"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+msgid "Install User _Script"
+msgstr "Установить пользовательский _скрипт"
 
 #. shortcut key
-#: extensions/popup-blocker/ephy-popup-blocker-extension.c:65
-msgid "Show or hide unrequested popup windows from this site"
-msgstr "Скрыть или показать непрошенные всплывающие окна с этого сайта"
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
+msgid "Install Greasemonkey script"
+msgstr "Установить скрипт Greasemonkey"
 
-#: extensions/popup-blocker/ephy-popup-blocker-icon.c:152
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:354
 #, c-format
-msgid "%d popup window blocked"
-msgid_plural "%d popup windows blocked"
-msgstr[0] "%d всплывающее окно заблокировано"
-msgstr[1] "%d всплывающих окна заблокировано"
-msgstr[2] "%d всплывающих окон заблокировано"
+msgid "The user script at “%s” has been installed"
+msgstr "Пользовательский скрипт в «%s» установлен"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:183
+#: ../extensions/java-console/ephy-java-console-extension.c:48
+msgid "_Java Console"
+msgstr "Консоль _Java"
+
+#. shortcut key
+#: ../extensions/java-console/ephy-java-console-extension.c:50
+msgid "Show Java Console"
+msgstr "Показать консоль Java"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:67
+msgid "Pa_ge Information"
+msgstr "Информация о с_транице"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:69
+msgid "Display page information in a dialog"
+msgstr "Вывести диалог с информацией о странице"
+
+#: ../extensions/page-info/page-info-dialog.c:726
+msgid "Save As..."
+msgstr "Сохранить как..."
+
+#: ../extensions/page-info/page-info-dialog.c:743
+msgid "Select a directory"
+msgstr "Выберите папку"
+
+#: ../extensions/page-info/page-info-dialog.c:792
+msgid "Unknown type"
+msgstr "Неизвестный тип"
+
+#: ../extensions/page-info/page-info-dialog.c:797
+msgid "Full standards compliance"
+msgstr "Полностью соответствует стандартам"
+
+#: ../extensions/page-info/page-info-dialog.c:800
+msgid "Almost standards compliance"
+msgstr "Почти соответствует стандартам"
+
+#: ../extensions/page-info/page-info-dialog.c:803
+msgid "Compatibility"
+msgstr "Совместимость"
+
+#: ../extensions/page-info/page-info-dialog.c:807
+msgid "Undetermined"
+msgstr "Неопределено"
+
+#: ../extensions/page-info/page-info-dialog.c:816
+msgid "Not cached"
+msgstr "Не кэшировано"
+
+#: ../extensions/page-info/page-info-dialog.c:819
+msgid "Disk cache"
+msgstr "Дисковый кэш"
+
+#: ../extensions/page-info/page-info-dialog.c:822
+msgid "Memory cache"
+msgstr "Кэш-память"
+
+#: ../extensions/page-info/page-info-dialog.c:825
+msgid "Unknown cache"
+msgstr "Неопределённый кэш"
+
+#: ../extensions/page-info/page-info-dialog.c:841
+#: ../extensions/page-info/page-info-dialog.c:952
+msgid "Unknown"
+msgstr "Неизвестно"
+
+#: ../extensions/page-info/page-info-dialog.c:846
+msgid "No referrer"
+msgstr "Нет"
+
+#: ../extensions/page-info/page-info-dialog.c:860
+#: ../extensions/page-info/page-info-dialog.c:876
+msgid "Not specified"
+msgstr "Не определено"
+
+#: ../extensions/page-info/page-info-dialog.c:937
+msgid "Image"
+msgstr "Изображение"
+
+#: ../extensions/page-info/page-info-dialog.c:940
+msgid "Embed"
+msgstr "Встроить"
+
+#: ../extensions/page-info/page-info-dialog.c:943
+msgid "Object"
+msgstr "Объект"
+
+#: ../extensions/page-info/page-info-dialog.c:946
+msgid "Applet"
+msgstr "Апплет"
+
+#: ../extensions/page-info/page-info-dialog.c:949
+msgid "Icon"
+msgstr "Значок"
+
+#: ../extensions/page-info/page-info-dialog.c:1054
+msgid "_Open"
+msgstr "_Открыть"
+
+#: ../extensions/page-info/page-info-dialog.c:1060
+#: ../extensions/page-info/page-info-dialog.c:1420
+msgid "_Copy Link Address"
+msgstr "_Копировать адрес ссылки"
+
+#: ../extensions/page-info/page-info-dialog.c:1066
+msgid "_Use as Background"
+msgstr "_Использовать в качестве фона"
+
+#: ../extensions/page-info/page-info-dialog.c:1072
+#: ../extensions/page-info/page-info-dialog.c:1426
+msgid "_Save As..."
+msgstr "_Сохранить как..."
+
+#: ../extensions/page-info/page-info-dialog.c:1256
+#: ../extensions/page-info/page-info-dialog.c:1499
+msgid "URL"
+msgstr "URL"
+
+#: ../extensions/page-info/page-info-dialog.c:1269
+msgid "Type"
+msgstr "Тип"
+
+#: ../extensions/page-info/page-info-dialog.c:1281
+msgid "Alt Text"
+msgstr "Альтернативный текст"
+
+#: ../extensions/page-info/page-info-dialog.c:1293
+#: ../extensions/page-info/page-info-dialog.c:1512
+msgid "Title"
+msgstr "Заголовок"
+
+#: ../extensions/page-info/page-info-dialog.c:1305
+msgid "Width"
+msgstr "Ширина"
+
+#: ../extensions/page-info/page-info-dialog.c:1317
+msgid "Height"
+msgstr "Высота"
+
+#: ../extensions/page-info/page-info-dialog.c:1524
+msgid "Relation"
+msgstr "Отношение"
+
+#: ../extensions/page-info/page-info-dialog.c:1654
+#: ../extensions/page-info/page-info-dialog.c:1793
+msgid "Name"
+msgstr "Название"
+
+#: ../extensions/page-info/page-info-dialog.c:1666
+msgid "Method"
+msgstr "Метод:"
+
+#: ../extensions/page-info/page-info-dialog.c:1680
+msgid "Action"
+msgstr "Действие"
+
+#: ../extensions/page-info/page-info-dialog.c:1759
+msgid "_Copy"
+msgstr "_Копировать"
+
+#: ../extensions/page-info/page-info-dialog.c:1805
+msgid "Content"
+msgstr "Контент"
+
+#: ../extensions/page-info/page-info-dialog.c:1904
+msgid "Page Metadata"
+msgstr "Метаданные страницы"
+
+#: ../extensions/page-info/page-info.glade.h:1
+msgid "<b>Dublin Core Metadata</b>"
+msgstr "<b>Метаданные Dublin Core</b>"
+
+#: ../extensions/page-info/page-info.glade.h:2
+msgid "<b>Forms In Page</b>"
+msgstr "<b>Формы на странице</b>"
+
+#: ../extensions/page-info/page-info.glade.h:3
+msgid "<b>Links In Page</b>"
+msgstr "<b>Ссылки на странице</b>"
+
+#: ../extensions/page-info/page-info.glade.h:4
+msgid "<b>Media In Page</b>"
+msgstr "<b>Медиа элементы страницы</b>"
+
+#: ../extensions/page-info/page-info.glade.h:5
+msgid "<b>Medium View</b>"
+msgstr "<b>Просмотр медиа элемента</b>"
+
+#: ../extensions/page-info/page-info.glade.h:6
+msgid "<b>Other Metadata</b>"
+msgstr "<b>Другие метаданные</b>"
+
+#: ../extensions/page-info/page-info.glade.h:7
+msgid "<b>Rendering</b>"
+msgstr "<b>Отрисовка</b>"
+
+#: ../extensions/page-info/page-info.glade.h:8
+msgid "<b>Source File</b>"
+msgstr "<b>Исходный файл</b>"
+
+#: ../extensions/page-info/page-info.glade.h:9
+msgid "<b>Web Page</b>"
+msgstr "<b>Веб-страница</b>"
+
+#: ../extensions/page-info/page-info.glade.h:10
+msgid "DYNAMIC"
+msgstr "ДИНАМИЧЕСКИЙ"
+
+#: ../extensions/page-info/page-info.glade.h:11
+msgid "Date:"
+msgstr "Дата:"
+
+#: ../extensions/page-info/page-info.glade.h:12
+msgid "Description:"
+msgstr "Описание:"
+
+#: ../extensions/page-info/page-info.glade.h:13
+msgid "Encoding:"
+msgstr "Кодировка:"
+
+#: ../extensions/page-info/page-info.glade.h:14
+msgid "Expires:"
+msgstr "Истекает:"
+
+#: ../extensions/page-info/page-info.glade.h:15
+msgid "Format:"
+msgstr "Формат:"
+
+#: ../extensions/page-info/page-info.glade.h:16
+msgid "Forms"
+msgstr "Формы"
+
+#: ../extensions/page-info/page-info.glade.h:17
+msgid "General"
+msgstr "Общие"
+
+#: ../extensions/page-info/page-info.glade.h:18
+msgid "Links"
+msgstr "Ссылки"
+
+#: ../extensions/page-info/page-info.glade.h:19
+msgid "Location:"
+msgstr "Адрес:"
+
+#: ../extensions/page-info/page-info.glade.h:20
+msgid "MIME type:"
+msgstr "Тип MIME:"
+
+#: ../extensions/page-info/page-info.glade.h:21
+msgid "Media"
+msgstr "Медиа элементы"
+
+#: ../extensions/page-info/page-info.glade.h:22
+msgid "Metadata"
+msgstr "Метаданные"
+
+#: ../extensions/page-info/page-info.glade.h:23
+msgid "Mode:"
+msgstr "Режим:"
+
+#: ../extensions/page-info/page-info.glade.h:24
+msgid "Modified:"
+msgstr "Изменён"
+
+#: ../extensions/page-info/page-info.glade.h:25
+msgid "Page Properties"
+msgstr "Свойства страницы"
+
+#: ../extensions/page-info/page-info.glade.h:26
+msgid "Referrer:"
+msgstr "Ссылающийся:"
+
+#: ../extensions/page-info/page-info.glade.h:27
+msgid "Size:"
+msgstr "Размер:"
+
+#: ../extensions/page-info/page-info.glade.h:28
+msgid "Source:"
+msgstr "Источник:"
+
+#: ../extensions/page-info/page-info.glade.h:29
+msgid "Title:"
+msgstr "Заголовок:"
+
+#: ../extensions/page-info/page-info.glade.h:30
+msgid "Type:"
+msgstr "Тип:"
+
+#: ../extensions/page-info/page-info.glade.h:31
+msgid "_Save Media As..."
+msgstr "_Сохранить поток как..."
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:180
+msgid "allowed"
+msgstr "разрешено"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:184
+msgid "denied"
+msgstr "отказано"
+
+#. Sometimes we get this... how did this get in the list!?
+#: ../extensions/permissions/ephy-permissions-dialog.c:189
+msgid "default"
+msgstr "по умолчанию"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:515
+msgid "Domain"
+msgstr "Домен"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:527
+msgid "State"
+msgstr "Состояние"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:620
+msgid "Site Permissions"
+msgstr "Разрешения для сайта"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:647
+msgid "Cookies"
+msgstr "Cookies"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:648
+msgid "Images"
+msgstr "Изображения"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:649
+msgid "Popup Windows"
+msgstr "Всплывающие окна"
+
+#. stock icon
+#: ../extensions/permissions/ephy-permissions-extension.c:156
+msgid "Site _Permissions"
+msgstr "Разрешения для сайта"
+
+#. shortcut key
+#: ../extensions/permissions/ephy-permissions-extension.c:158
+msgid "Manage web site permissions"
+msgstr "Управление разрешениями для сайта"
+
+#: ../extensions/rss/ephy-rss-extension.c:98
+msgid "News Feeds Subscription"
+msgstr "Подписаться на новостной канал (RSS)"
+
+#: ../extensions/rss/ephy-rss-extension.c:100
+msgid "Subscribe to this website's news feeds in your favorite news reader"
+msgstr ""
+"Подпишитесь на новостной канал (RSS) этого веб-сайта  для чтения новостей с "
+"помощью Вашей любимой программы"
+
+#: ../extensions/rss/ephy-rss-extension.c:105
+msgid "_Subscribe to this feed"
+msgstr "_Подписаться на этот канал (RSS)"
+
+#: ../extensions/rss/ephy-rss-extension.c:107
+msgid "Subscribe to this feed in your favorite news reader"
+msgstr ""
+"Подписаться на этот канал с использованием Вашей любимой программы просмотра "
+"новостей"
+
+#: ../extensions/rss/ephy-rss-extension.c:396
+msgid "Subscribe to site's news feed"
+msgstr "Подписаться на новостной канал (RSS) этого сайта"
+
+#: ../extensions/rss/rss-ui.c:167
+msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
+msgstr ""
+"<b><i>Не могу соединиться с программой чтения новостей. Она запущена?</i></b>"
+
+#: ../extensions/rss/rss-ui.c:169
+msgid "Retry"
+msgstr "Повторить"
+
+#: ../extensions/rss/rss-ui.c:297
+msgid "_Copy Feed Address"
+msgstr "_Скопировать адрес канала"
+
+#: ../extensions/rss/rss-ui.c:591
+msgid "Subscribe"
+msgstr "Подписаться"
+
+#: ../extensions/rss/rss-ui.glade.h:1
+msgid "<b>Select Interesting Feeds</b>"
+msgstr "<b>Выберите интересные каналы</b>"
+
+#: ../extensions/rss/rss-ui.glade.h:2
+msgid "News Feed Subcription"
+msgstr "Подписка на новостной канал"
+
+#: ../extensions/rss/rss-ui.glade.h:3
+msgid "_Subscribe"
+msgstr "_Подписаться"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:145
+msgid "Render the page without using a style"
+msgstr "Отрисовать страницу, не используя стили"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:148
+msgid "Render the page using the default style"
+msgstr "Отрисовать страницу, используя стиль по умолчанию"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:151
 #, c-format
-msgid "Window '%s' (%d tab)"
-msgid_plural "Window '%s' (%d tabs)"
-msgstr[0] "Окно '%s' (%d вкладка)"
-msgstr[1] "Окно '%s' (%d вкладки)"
-msgstr[2] "Окно '%s' (%d вкладок)"
+msgid "Render the page using the “%s” style"
+msgstr "Отрисовать страницу, используя стиль «%s»"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:282
-msgid "Move Tab To Window"
-msgstr "Переместить вкладку в отдельное окно"
+#: ../extensions/select-stylesheet/ephy-css-menu.c:309
+msgid "St_yle"
+msgstr "_Стиль"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:283
-msgid "Move the current tab to a different window"
-msgstr "Переместить текущую вкладку в другое окно"
+#: ../extensions/select-stylesheet/ephy-css-menu.c:310
+msgid "Select a different style for this page"
+msgstr "Выбрать другой стиль для этой страницы"
+
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:224
+msgid "Default"
+msgstr "По умолчанию"
+
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:235
+msgid "None"
+msgstr "Никакой"
+
+#: ../extensions/sidebar/ephy-sidebar.c:176
+msgid "No Sidebars installed"
+msgstr "Боковые панели не установлены"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:105
+msgid "_Sidebar"
+msgstr "_Боковая панель"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:106
+msgid "Show or hide the sidebar"
+msgstr "Показать или скрыть боковую панель"
+
+#. Translators: %s is the sidebar title
+#: ../extensions/sidebar/ephy-sidebar-extension.c:408
+#, c-format
+msgid "The sidebar already contains “%s”"
+msgstr "Боковая панель уже содержит «%s»."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:412
+msgid ""
+"To use this sidebar, select it from the list of available sidebar pages."
+msgstr ""
+"Для того, чтобы использовать боковую панель, выберите её из списка доступных."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:415
+#: ../extensions/sidebar/ephy-sidebar-extension.c:441
+msgid "Add Sidebar"
+msgstr "Добавить боковую панель"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:435
+#, c-format
+msgid "Add “%s” to the Sidebar?"
+msgstr "Добавить «%s» на боковую панель?"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:439
+#, c-format
+msgid "The source to the new sidebar page is “%s”."
+msgstr "Источник новой страницы боковой панели: «%s»."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:445
+msgid "_Add Sidebar"
+msgstr "_Добавить боковую панель"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:551
+msgid "_Look Up"
+msgstr "_Просмотр"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:558
+msgid "_GNOME Dictionary"
+msgstr "_Словарь GNOME"
+
+#: ../extensions/actions/actions.ephy-extension.in.in.h:2
+msgid "Execute arbitrary commands from the context menu"
+msgstr "Исполнять различные команды с помощью контекстного меню"
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
+msgid "Auto Scroll"
+msgstr "Автоматическая прокрутка"
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
+msgid "Scroll on middle mouse click"
+msgstr "Прокрутка при щелчке средней кнопкой мыши"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
+msgid "Auto Reload Tab"
+msgstr "Автоматически перезагружать вкладку"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
+msgid "Reload a tab periodically"
+msgstr "Периодически перезагружать вкладку"
+
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
+msgid "View the page certificate and manage the certificates"
+msgstr "Просмотр сертификата страницы и управление сертификатами"
+
+#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:1
+msgid "Dashboard"
+msgstr "Панель управления"
+
+#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:2
+msgid "Send browsing information to Dashboard"
+msgstr "Посылать информацию о навигации в панель управления"
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
+msgid "Error viewer"
+msgstr "Просмотр ошибок"
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
+msgid "View error in web pages, validate web pages and check links"
+msgstr ""
+"Просмотр ошибок в веб-страницах, проверка правильности веб-страниц и "
+"проверка ссылок"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
+msgid "Activate and deactivate extensions"
+msgstr "Включение и отключение расширений"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
+msgid "Extensions Manager"
+msgstr "Управление расширениями"
+
+#: ../extensions/favicon/favicon.ephy-extension.in.h:1
+msgid "Favicon fallback"
+msgstr "Вариант favicon"
+
+#: ../extensions/favicon/favicon.ephy-extension.in.h:2
+msgid ""
+"Loads /favicon.ico as favicon if the site doesn't use the standard method"
+msgstr ""
+"Загружает /favicon.ico в качестве иконки для избранного, если сайт "
+"использует нестандартный метод"
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
+msgid "Gestures"
+msgstr "Жесты"
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:2
+msgid "Perform actions with mouse gestures"
+msgstr "Выполнение различных действий с помощью жестов мыши"
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
+msgid "Greasemonkey"
+msgstr "Greasemonkey"
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
+msgid "Run user scripts to modify web pages' behavior"
+msgstr ""
+"Исполнение пользовательских скриптов для изменения поведения веб-страниц"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
+msgid "Java Console"
+msgstr "Консоль Java"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
+msgid "Provide access to the Java-Plugin Console"
+msgstr "Предоставляет доступ к консоли модуля Java"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
+msgid "Display information about and links and media from the current page"
+msgstr ""
+"Отображает информацию о свойствах, ссылках и медиа элементах текущей страницы"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
+msgid "Page Info"
+msgstr "Информация о странице"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
+msgid "Edit site permissions"
+msgstr "Редактирование режимов доступа для сайта"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
+msgid "Permissions"
+msgstr "Режимы доступа"
+
+#: ../extensions/rss/rss.ephy-extension.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "Подписка на новостной канал (RSS)"
+
+#: ../extensions/rss/rss.ephy-extension.in.in.h:2
+msgid ""
+"Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr ""
+"Подпишитесь на новостной канал (RSS) этой страницы, для просмотра в Вашей "
+"любимой программе"
+
+#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
+msgid "A sample extension with mozilla backend"
+msgstr "Пример расширения с использованием mozilla backend"
+
+#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:2
+msgid "Sample (Mozilla)"
+msgstr "Пример (Мозилла)"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:1
+msgid "A sample extension"
+msgstr "Пример расширения"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:2
+msgid "Sample"
+msgstr "Пример"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
+msgid "Select Stylesheet"
+msgstr "Выберите стиль"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
+msgid "Select between different stylesheets offered by the web page"
+msgstr "Выбор из различных стилей, предоставленных данной страницей"
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
+msgid "Adds a sidebar to windows"
+msgstr "Добавляет боковую панель в окно программы"
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
+msgid "Sidebar"
+msgstr "Боковая панель"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
+msgid "Look up the selected text with a smart bookmark"
+msgstr "Поиск набираемого текста с помощью умных закладок"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
+msgid "Smart Bookmarks"
+msgstr "Умные закладки"
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
+msgid "Groups newly opened tabs"
+msgstr "Группирует открытые заново вкладки"
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
+msgid "Tab Groups"
+msgstr "Группы вкладок"
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
+msgid "Indicates new content in background tabs"
+msgstr "Отображает обновления контента в неактивных вкладках"
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
+msgid "Tab States"
+msgstr "Состояние вкладок"
