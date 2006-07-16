@@ -1,3 +1,11 @@
+2006-07-16  Christian Persch  <chpe@cvs.gnome.org>
+
+	* include/EphyUtils.h:
+	* include/eggtrayicon.h:
+	* include/ephy-gui.h:
+
+	Sync with epiphany.
+
 2006-07-12  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* README:

@@ -21,17 +21,21 @@
 #ifndef EPHY_UTILS_H
 #define EPHY_UTILS_H
 
-#include <nsError.h>
+// cannot include EphyUtils with internal strings!
+#ifdef MOZILLA_INTERNAL_API
+#error Cannot use EphyUtils with MOZILLA_INTERNAL_API
+#endif
+
+#include <nscore.h>
+
 #include <gtk/gtkwidget.h>
 
-class nsAString;
 class nsACString;
+class nsAString;
 class nsIDOMWindow;
-class nsIIOService;
-class nsIPrintSettings;
-class nsIURI;
 class nsIFile;
-struct _EmbedPrintInfo;
+class nsIIOService;
+class nsIURI;
 
 namespace EphyUtils
 {
@@ -53,12 +57,13 @@ namespace EphyUtils
 	GtkWidget      *FindEmbed		(nsIDOMWindow *aDOMWindow);
 
 	GtkWidget      *FindGtkParent		(nsIDOMWindow *aDOMWindow);
+	
+	char *		ConvertUTF16toUTF8	(const PRUnichar*, PRInt32);
+}
 
-	nsresult        CollatePrintSettings	(_EmbedPrintInfo *info,
-						 nsIPrintSettings *settings,
-						 gboolean preview);
-	PRBool          StringEquals            (nsAString &s1, 
-						 nsAString &s2);
+namespace EphyJSUtils
+{
+	PRBool IsCalledFromScript ();
 }
 
 #endif
