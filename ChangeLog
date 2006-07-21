@@ -1,3 +1,13 @@
+2006-07-22  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* include/Makefile.am:
+
+	Remove eggtrayicon.h (doesn't exist anymore).
+
+	* extensions/livehttpheaders/Makefile.am:
+
+	Fix typo.
+
 2006-07-16  Christian Persch  <chpe@cvs.gnome.org>
 
 	* include/EphyUtils.h:

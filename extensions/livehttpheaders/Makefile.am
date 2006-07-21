@@ -7,7 +7,7 @@ liblivehttpheadersextension_la_SOURCES = \
 	ephy-livehttpheaders-extension.c	\
 	ephy-livehttpheaders-extension.h	\
 	livehttpheaders-ui.c			\
-	ivehttpheaders-ui.h			\
+	livehttpheaders-ui.h			\
 	extension.c
 
 liblivehttpheadersextension_la_CPPFLAGS = \
