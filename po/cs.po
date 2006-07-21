@@ -1,22 +1,25 @@
+# translation of cs.po to Czech
+# translation of cs.po to
 # Czech translation of epiphany-extensions.
 # Copyright (C) 2004, 2005, 2006 epiphany-extensions' COPYRIGHT HOLDER
 # Copyright (C) 2004, 2005, 2006 Miloslav Trmac <mitr@volny.cz>
 # This file is distributed under the same license as the epiphany-extensions package.
 # Miloslav Trmac <mitr@volny.cz>, 2004 - 2006.
+# Jakub Friedl <jfriedl@suse.cz>, 2006.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: epiphany-extensions VERSION\n"
+"Project-Id-Version: cs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-25 18:23+0100\n"
-"PO-Revision-Date: 2006-02-25 23:29+0100\n"
-"Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
-"Language-Team: Czech <cs@li.org>\n"
+"POT-Creation-Date: 2006-07-21 15:54+0200\n"
+"PO-Revision-Date: 2006-07-21 16:00+0200\n"
+"Last-Translator: Jakub Friedl <jfriedl@suse.cz>\n"
+"Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms:  nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: KBabel 1.10.2\n"
 
 #: ../extensions/actions/action-properties.glade.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
@@ -30,8 +33,7 @@ msgstr "<span weight=\"bold\">Obecné</span>"
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "images."
-msgstr ""
-"Je-li tato možnost povolena, bude akce obsažena v kontextovém menu obrázků."
+msgstr "Je-li tato možnost povolena, bude akce obsažena v kontextovém menu obrázků."
 
 #: ../extensions/actions/action-properties.glade.h:4
 msgid ""
@@ -102,11 +104,11 @@ msgstr "Nemohu spustit příkaz"
 msgid "Could not Run Command"
 msgstr "Nemohu spustit příkaz"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:519
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
 msgid "No action selected."
 msgstr "Nevybrána žádná akce."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:529
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
@@ -135,42 +137,42 @@ msgstr "_Automaticky obnovovat"
 msgid "Reload the page periodically"
 msgstr "Pravidelně obnovovat stránku"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:173
+#: ../extensions/certificates/ephy-certificates-extension.c:177
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "Certifikáty"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:203
+#: ../extensions/certificates/ephy-certificates-extension.c:208
 msgid "Security Devices"
 msgstr "Bezpečnostní zařízení"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:321
+#: ../extensions/certificates/ephy-certificates-extension.c:327
 msgid "Manage _Certificates"
 msgstr "Spravovat _certifikáty"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:323
+#: ../extensions/certificates/ephy-certificates-extension.c:329
 msgid "Manage your certificates"
 msgstr "Spravovat vaše certifikáty"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:327
+#: ../extensions/certificates/ephy-certificates-extension.c:333
 msgid "Manage Security _Devices"
 msgstr "Spravovat _bezpečnostní zařízení"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:329
+#: ../extensions/certificates/ephy-certificates-extension.c:335
 msgid "Manage your security devices"
 msgstr "Spravovat vaše bezpečnostní zařízení"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:336
+#: ../extensions/certificates/ephy-certificates-extension.c:342
 msgid "Server _Certificate"
 msgstr "_Certifikát serveru"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:338
+#: ../extensions/certificates/ephy-certificates-extension.c:344
 msgid "Display the web server's certificate"
 msgstr "Zobrazit certifikát WWW serveru"
 
@@ -324,11 +326,11 @@ msgstr ""
 "Chyba HTML v %s:\n"
 "Nebyl určen platný doctype."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:340
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
 msgid "Enabled"
 msgstr "Povoleno"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:348
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
 #: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "Popis"
@@ -341,13 +343,21 @@ msgstr "<b>Načtená rozšíření</b>"
 msgid "Extensions"
 msgstr "Rozšíření"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
 msgid "_Extensions..."
 msgstr "_Rozšíření..."
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
 msgid "Load and unload extensions"
 msgstr "Načíst a uvolnit rozšíření"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "_Extensions"
+msgstr "_Rozšíření"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
+msgid "Help about extensions"
+msgstr "Nápověda k rozšířením"
 
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
 msgid "Install User _Script"
@@ -372,11 +382,11 @@ msgstr "Konzola _Javy"
 msgid "Show Java Console"
 msgstr "Zobrazit konzolu Javy"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:65
+#: ../extensions/page-info/ephy-page-info-extension.c:67
 msgid "Pa_ge Information"
 msgstr "Informace o _stránce"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/page-info/ephy-page-info-extension.c:69
 msgid "Display page information in a dialog"
 msgstr "Zobrazit informace o stránce v dialogu"
 
@@ -693,12 +703,12 @@ msgid "Popup Windows"
 msgstr "Vyskakovací okna"
 
 #. stock icon
-#: ../extensions/permissions/ephy-permissions-extension.c:152
+#: ../extensions/permissions/ephy-permissions-extension.c:156
 msgid "Site _Permissions"
 msgstr "_Oprávnění serveru"
 
 #. shortcut key
-#: ../extensions/permissions/ephy-permissions-extension.c:154
+#: ../extensions/permissions/ephy-permissions-extension.c:158
 msgid "Manage web site permissions"
 msgstr "Spravovat oprávnění WWW serverů"
 
@@ -720,7 +730,7 @@ msgstr "_Přihlásit se k tomuto toku"
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Přihlásit se k tomuto toku ve vaší oblíbené čtečce novinek"
 
-#: ../extensions/rss/ephy-rss-extension.c:392
+#: ../extensions/rss/ephy-rss-extension.c:396
 msgid "Subscribe to site's news feed"
 msgstr "Přihlásit se k toku novinek serveru"
 
@@ -811,29 +821,13 @@ msgstr "Přidat boční panel"
 msgid "_Add Sidebar"
 msgstr "_Přidat boční panel"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:565
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:551
 msgid "_Look Up"
 msgstr "_Vyhledat"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:572
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:558
 msgid "_GNOME Dictionary"
 msgstr "_Slovník GNOME"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:190
-#, c-format
-msgid "Window “%s” (%d tab)"
-msgid_plural "Window “%s” (%d tabs)"
-msgstr[0] "Okno „%s” (%d karta)"
-msgstr[1] "Okno „%s” (%d karty)"
-msgstr[2] "Okno „%s” (%d karet)"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:301
-msgid "Move Tab To Window"
-msgstr "Přesunout kartu do okna"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:302
-msgid "Move the current tab to a different window"
-msgstr "Přesunout aktuální kartu do jiného okna"
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
@@ -890,10 +884,8 @@ msgid "Favicon fallback"
 msgstr "Náhradní favicon"
 
 #: ../extensions/favicon/favicon.ephy-extension.in.h:2
-msgid ""
-"Loads /favicon.ico as favicon if the site doesn't use the standard method"
-msgstr ""
-"Načte /favicon.ico jako favicon, když server nepoužívá standardní metodu"
+msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
+msgstr "Načte /favicon.ico jako favicon, když server nepoužívá standardní metodu"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -940,8 +932,7 @@ msgid "News Feed Subscription"
 msgstr "Přihlášení k toku novinek"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
-msgid ""
-"Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr ""
 "Přihlásit se k toku novinek nabízenému WWW stránkou ve vaší oblíbené čtečce "
 "novinek"
@@ -994,14 +985,6 @@ msgstr "Seskupuje nově otevřené karty"
 msgid "Tab Groups"
 msgstr "Skupiny karet"
 
-#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:1
-msgid "Move tabs between windows"
-msgstr "Přesouvat karty mezi okny"
-
-#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:2
-msgid "Tabsmenu"
-msgstr "Menu karet"
-
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
 msgstr "Indikuje nový obsah v kartách na pozadí"
@@ -1010,44 +993,3 @@ msgstr "Indikuje nový obsah v kartách na pozadí"
 msgid "Tab States"
 msgstr "Stavy karet"
 
-#~ msgid "_Edit Bookmarks"
-#~ msgstr "_Upravit záložky"
-
-#~ msgid "Open the bookmarks window"
-#~ msgstr "Otevřít okno záložek"
-
-#~ msgid "Open in _Current Tab"
-#~ msgstr "Otevírat v _aktuální kartě"
-
-#~ msgid "Open bookmarks in the current tab of the active window"
-#~ msgstr "Otevírat záložky v aktuální kartě aktivního okna"
-
-#~ msgid "Open in New _Tab"
-#~ msgstr "Otevírat v nové _kartě"
-
-#~ msgid "Open bookmarks in a new tab of the active window"
-#~ msgstr "Otevírat záložky v nové kartě aktivního okna"
-
-#~ msgid "Open in New _Window"
-#~ msgstr "Otevírat v novém _okně"
-
-#~ msgid "Bookmarks"
-#~ msgstr "Záložky"
-
-#~ msgid "Add a bookmarks menu to the panel's notification area"
-#~ msgstr "Přidat menu záložek do oznamovací oblasti panelu"
-
-#~ msgid "Bookmarks Tray"
-#~ msgstr "Záložky v oznamovací oblasti"
-
-#~ msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
-#~ msgstr "Automaticky spravovat stav online/off-line (EXPERIMENTÁLNÍ!)"
-
-#~ msgid "Network Connection Monitor"
-#~ msgstr "Sledování připojení k síti"
-
-#~ msgid "_Page Info"
-#~ msgstr "_Informace o stránce"
-
-#~ msgid "Save Medium As..."
-#~ msgstr "Uložit médium jako..."
