@@ -1,12 +1,12 @@
-# Changwoo Ryu <cwryu@debian.org>, 2004, 2005.
+# Changwoo Ryu <cwryu@debian.org>, 2004, 2005, 2006.
 # Young-Ho Cha <ganadist@gmail.com>, 2005
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-18 15:37+0900\n"
-"PO-Revision-Date: 2006-03-18 15:44+0900\n"
-"Last-Translator: Young-Ho Cha <ganadist@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
+"POT-Creation-Date: 2006-07-22 22:39+0900\n"
+"PO-Revision-Date: 2006-07-22 22:40+0900\n"
+"Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
 "Language-Team: GNOME Korea <gnome-kr-hackers@lists.kldp.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -94,11 +94,11 @@ msgstr "명령을 실행할 수 없습니다"
 msgid "Could not Run Command"
 msgstr "명령을 실행할 수 없습니다"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:519
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
 msgid "No action selected."
 msgstr "동작을 선택하지 않았습니다."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:529
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
@@ -200,7 +200,7 @@ msgid "Error Viewer"
 msgstr "오류 보기"
 
 #. Don't bother looking for source lines -- they're not there
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:108
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:96
 #, c-format
 msgid ""
 "Error:\n"
@@ -209,7 +209,7 @@ msgstr ""
 "오류:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:138
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:126
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -274,8 +274,8 @@ msgid ""
 "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
 "+xml” instead."
 msgstr ""
-"문서 형식은 \"XHTML\"이지만 content type은 “text/html”입니다. "
-"“application/xhtml+xml”을 사용하십시오."
+"문서 형식은 \"XHTML\"이지만 content type은 “text/html”입니다. “application/"
+"xhtml+xml”을 사용하십시오."
 
 #: ../extensions/error-viewer/sgml-validator.c:243
 #, c-format
@@ -308,11 +308,11 @@ msgstr ""
 "%s에 HTML 오류:\n"
 "올바른 문서타입이 지정되지 않았습니다."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:352
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
 msgid "Enabled"
 msgstr "사용"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:360
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
 #: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "설명"
@@ -325,13 +325,21 @@ msgstr "<b>읽어들인 확장 기능</b>"
 msgid "Extensions"
 msgstr "확장 기능"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
 msgid "_Extensions..."
 msgstr "확장 기능(_E)..."
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
 msgid "Load and unload extensions"
 msgstr "확장 기능 읽어들이기 혹은 취소"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "_Extensions"
+msgstr "확장 기능(_E)"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
+msgid "Help about extensions"
+msgstr "확장 기능 도움말"
 
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
 msgid "Install User _Script"
@@ -356,11 +364,11 @@ msgstr "자바 콘솔(_J)"
 msgid "Show Java Console"
 msgstr "자바 콘솔을 봅니다"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:65
+#: ../extensions/page-info/ephy-page-info-extension.c:67
 msgid "Pa_ge Information"
 msgstr "페이지 정보(_G)"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/page-info/ephy-page-info-extension.c:69
 msgid "Display page information in a dialog"
 msgstr "대화 상자에서 페이지 정보를 봅니다"
 
@@ -757,11 +765,11 @@ msgstr "스타일(_Y)"
 msgid "Select a different style for this page"
 msgstr "이 페이지에 여러가지 스타일 선택"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:224
 msgid "Default"
 msgstr "기본값"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:235
 msgid "None"
 msgstr "없음"
 
@@ -769,53 +777,51 @@ msgstr "없음"
 msgid "No Sidebars installed"
 msgstr "사이드바를 하나도 설치하지 않았습니다"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:104
-msgid "_Sidebar"
-msgstr "사이드바(_S)"
-
 #: ../extensions/sidebar/ephy-sidebar-extension.c:105
-msgid "Show or hide the sidebar"
-msgstr "사이드바 보기/감추기"
+msgid "_Sidebar"
+msgstr "가장자리 창(_S)"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:411
+#: ../extensions/sidebar/ephy-sidebar-extension.c:106
+msgid "Show or hide the sidebar"
+msgstr "가장자리 창 보기/감추기"
+
+#. Translators: %s is the sidebar title
+#: ../extensions/sidebar/ephy-sidebar-extension.c:408
+#, c-format
+msgid "The sidebar already contains “%s”"
+msgstr "가장자리 창에 이미 \"%s\"이(가) 들어 있습니다"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:412
+msgid ""
+"To use this sidebar, select it from the list of available sidebar pages."
+msgstr "이 가장자리 창을 사용하려면, 가장자리 창 페이지 목록에서 하나를 선택하십시오."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:415
+#: ../extensions/sidebar/ephy-sidebar-extension.c:441
+msgid "Add Sidebar"
+msgstr "사이드바 더하기"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:435
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr "“%s”을(를) 사이드바에 더하시겠습니까?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:415
+#: ../extensions/sidebar/ephy-sidebar-extension.c:439
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr "새 사이드바 페이지의 원본은 “%s”입니다."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:417
-msgid "Add Sidebar"
-msgstr "사이드바 더하기"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:421
+#: ../extensions/sidebar/ephy-sidebar-extension.c:445
 msgid "_Add Sidebar"
 msgstr "사이드바 더하기(_A)"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:565
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:551
 msgid "_Look Up"
 msgstr "찾아보기(_L)"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:572
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:558
 msgid "_GNOME Dictionary"
 msgstr "그놈 사전(_G)"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:190
-#, c-format
-msgid "Window “%s” (%d tab)"
-msgid_plural "Window “%s” (%d tabs)"
-msgstr[0] "창 “%s” (탭 %d개)"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:301
-msgid "Move Tab To Window"
-msgstr "탭을 창으로 옮기기"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:302
-msgid "Move the current tab to a different window"
-msgstr "현재 탭을 다른 창으로 옮깁니다"
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
@@ -974,14 +980,6 @@ msgstr "새로 열리는 탭을 묶습니다"
 msgid "Tab Groups"
 msgstr "탭 묶음"
 
-#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:1
-msgid "Move tabs between windows"
-msgstr "탭을 창사이로 옮깁니다"
-
-#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:2
-msgid "Tabsmenu"
-msgstr "탭 메뉴"
-
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
 msgstr "뒤에 숨어있는 탭에 내용이 바뀐것을 알립니다"
@@ -989,3 +987,19 @@ msgstr "뒤에 숨어있는 탭에 내용이 바뀐것을 알립니다"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "탭 상태"
+
+#~ msgid "Window “%s” (%d tab)"
+#~ msgid_plural "Window “%s” (%d tabs)"
+#~ msgstr[0] "창 “%s” (탭 %d개)"
+
+#~ msgid "Move Tab To Window"
+#~ msgstr "탭을 창으로 옮기기"
+
+#~ msgid "Move the current tab to a different window"
+#~ msgstr "현재 탭을 다른 창으로 옮깁니다"
+
+#~ msgid "Move tabs between windows"
+#~ msgstr "탭을 창사이로 옮깁니다"
+
+#~ msgid "Tabsmenu"
+#~ msgstr "탭 메뉴"
