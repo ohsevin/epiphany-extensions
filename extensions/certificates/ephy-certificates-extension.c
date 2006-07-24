@@ -213,113 +213,6 @@ manage_devices_cb (GtkAction *action,
 				   (gpointer *) widget);
 }
 
-static void
-view_certificate_cb (GtkAction *action,
-		     EphyWindow *window)
-{
-	EphyEmbed *embed;
-
-	embed = ephy_window_get_active_embed (window);
-	g_return_if_fail (EPHY_IS_EMBED (embed));
-
-	ephy_embed_show_page_certificate (embed);
-}
-
-static void
-sync_security_status (EphyTab *tab,
-		      GParamSpec *pspec,
-		      EphyWindow *window)
-{
-	GtkUIManager *manager;
-	GtkAction *action;
-	gboolean is_secure;
-
-	LOG ("sync_security_status: tab %p, window %p", tab, window);
-
-	if (ephy_window_get_active_tab (window) != tab) return;
-
-	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
-
-	action = gtk_ui_manager_get_action (manager, "/menubar/ViewMenu/ViewServerCertificateItem");
-	g_return_if_fail (action != NULL);
-
-	is_secure = ephy_tab_get_security_level (tab) > EPHY_EMBED_STATE_IS_INSECURE;
-	gtk_action_set_sensitive (action, is_secure);
-}
-
-static void
-impl_attach_tab (EphyExtension *ext,
-		 EphyWindow *window,
-		 EphyTab *tab)
-{
-	EphyEmbed *embed;
-
-	LOG ("EphyCertificatesExtension attach_tab");
-
-	g_return_if_fail (EPHY_IS_TAB (tab));
-
-	embed = ephy_tab_get_embed (tab);	
-	g_return_if_fail (EPHY_IS_EMBED (embed));
-
-	g_signal_connect_after (tab, "notify::security-level",
-				G_CALLBACK (sync_security_status), window);
-}
-
-static void
-impl_detach_tab (EphyExtension *ext,
-		 EphyWindow *window,
-		 EphyTab *tab)
-{
-	EphyEmbed *embed;
-
-	LOG ("EphyCertificatesExtension detach_tab");
-
-	g_return_if_fail (EPHY_IS_TAB (tab));
-
-	embed = ephy_tab_get_embed (tab);
-	g_return_if_fail (EPHY_IS_EMBED (embed));
-
-	g_signal_handlers_disconnect_by_func
-		(tab, G_CALLBACK (sync_security_status), window);
-}
-
-static void
-sync_active_tab_cb (EphyWindow *window,
-		    GParamSpec *pspec,
-		    EphyCertificatesExtension *extension)
-{
-	EphyTab *tab;
-
-	tab = ephy_window_get_active_tab (window);
-	sync_security_status (tab, NULL, window);
-}
-
-static void
-show_page_certificate (EphyWindow *window)
-{
-	EphyEmbed *embed;
-
-	embed = ephy_window_get_active_embed (window);
-	g_return_if_fail (EPHY_IS_EMBED (embed));
-
-	ephy_embed_show_page_certificate (embed);
-}
-
-static gboolean
-padlock_button_press_cb (GtkWidget *ebox,
-			 GdkEventButton *event,
-			 EphyWindow *window)
-{
-	if (event->type == GDK_BUTTON_PRESS && event->button == 1 /* left */)
-	{
-		show_page_certificate (window);
-
-		return TRUE;
-	}
-
-	return FALSE;
-}
-
 static const GtkActionEntry action_entries_1 [] =
 {
 	{ "ToolsCertificateManager",
@@ -335,45 +228,17 @@ static const GtkActionEntry action_entries_1 [] =
 	  N_("Manage your security devices"),
 	  G_CALLBACK (manage_devices_cb) }
 };
-static const GtkActionEntry action_entries_2 [] =
-{
-	{ "ViewServerCertificate",
-	  NULL /* stock icon */,
-	  N_("Server _Certificate"),
-	  NULL, /* shortcut key */
-	  N_("Display the web server's certificate"),
-	  G_CALLBACK (view_certificate_cb) }
-};
 
 static void
 impl_attach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
-	EphyCertificatesExtension *extension = EPHY_CERTIFICATES_EXTENSION (ext);
 	GtkUIManager *manager;
 	GtkActionGroup *action_group;
 	guint ui_id;
 	WindowData *win_data;
-	GtkWidget *statusbar, *toolbar, *ebox;
 
 	LOG ("EphyCertificatesExtension attach_window");
-
-	/* catch tab switched */
-	g_signal_connect (window, "notify::active-tab",
-			  G_CALLBACK (sync_active_tab_cb), extension);
-
-	/* make padlock icon clickable */
-	statusbar = ephy_window_get_statusbar (window);
-
-	ebox = GTK_BIN (EPHY_STATUSBAR (statusbar)->security_frame)->child;
-	gtk_widget_add_events (ebox, GDK_BUTTON_PRESS_MASK);
-	g_signal_connect (ebox, "button-press-event",
-			  G_CALLBACK (padlock_button_press_cb), window);
-
-	/* Also attach to the location entry's lock icon */
-	toolbar = ephy_window_get_toolbar (window);
-	g_signal_connect_swapped (toolbar, "lock-clicked",
-				  G_CALLBACK (show_page_certificate), window);
 
 	/* add UI */
 	win_data = g_new (WindowData, 1);
@@ -386,21 +251,12 @@ impl_attach_window (EphyExtension *ext,
 
 	gtk_action_group_add_actions (action_group, action_entries_1,
 				      G_N_ELEMENTS (action_entries_1), ext);
-	gtk_action_group_add_actions (action_group, action_entries_2,
-				      G_N_ELEMENTS (action_entries_2), window);
 
 	gtk_ui_manager_insert_action_group (manager, action_group, -1);
 	g_object_unref (win_data->action_group);
 
 	win_data->ui_id = ui_id = gtk_ui_manager_new_merge_id (manager);
 
-	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ViewMenu",
-			       "ViewSCSep1", NULL,
-			       GTK_UI_MANAGER_SEPARATOR, FALSE);
-	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ViewMenu",
-			       "ViewServerCertificateItem",
-			       "ViewServerCertificate",
-			       GTK_UI_MANAGER_MENUITEM, FALSE);
 	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
 			       "ToolsSCSep1", NULL,
 			       GTK_UI_MANAGER_SEPARATOR, FALSE);
@@ -418,12 +274,6 @@ impl_attach_window (EphyExtension *ext,
 
 	g_object_set_data_full (G_OBJECT (window), WINDOW_DATA_KEY, win_data,
 				(GDestroyNotify) g_free);
-
-	/* Synchronize */
-	if (GTK_WIDGET_REALIZED (window))
-	{
-		sync_active_tab_cb (window, NULL, extension);
-	}
 }
 
 static void
@@ -432,24 +282,8 @@ impl_detach_window (EphyExtension *ext,
 {
 	GtkUIManager *manager;
 	WindowData *win_data;
-	GtkWidget *statusbar, *toolbar, *ebox;
 
 	LOG ("EphyCertificatesExtension detach_window");
-
-	/* Disconnect switched signal */
-	g_signal_handlers_disconnect_by_func
-		(window, G_CALLBACK (sync_active_tab_cb), ext);
-
-	/* un-make padlock icon clickable */
-	statusbar = ephy_window_get_statusbar (window);
-	ebox = GTK_BIN (EPHY_STATUSBAR (statusbar)->security_frame)->child;
-	g_signal_handlers_disconnect_by_func
-		(ebox, G_CALLBACK (padlock_button_press_cb), window);
-
-	/* Detach from location entry lock icon */
-	toolbar = ephy_window_get_toolbar (window);
-	g_signal_handlers_disconnect_by_func
-		(toolbar, G_CALLBACK (show_page_certificate), window);
 
 	/* remove UI */
 	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
@@ -469,8 +303,6 @@ ephy_certificates_extension_iface_init (EphyExtensionIface *iface)
 {
 	iface->attach_window = impl_attach_window;
 	iface->detach_window = impl_detach_window;
-	iface->attach_tab = impl_attach_tab;
-	iface->detach_tab = impl_detach_tab;
 }
 
 static void

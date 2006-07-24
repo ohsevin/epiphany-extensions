@@ -1,5 +1,13 @@
 2006-07-24  Christian Persch  <chpe@cvs.gnome.org>
 
+	* extensions/certificates/ephy-certificates-extension.c:
+	(impl_attach_window), (impl_detach_window),
+	(ephy_certificates_extension_iface_init):
+
+	Remove parts which are now in Epiphany.
+
+2006-07-24  Christian Persch  <chpe@cvs.gnome.org>
+
 	* configure.ac:
 
 	Don't distribute dashboard and imagebar extensions, they're just too
