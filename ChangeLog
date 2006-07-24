@@ -1,3 +1,10 @@
+2006-07-24  Christian Persch  <chpe@cvs.gnome.org>
+
+	* configure.ac:
+
+	Don't distribute dashboard and imagebar extensions, they're just too
+	broken. Bug #348440.
+
 2006-07-22  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* include/Makefile.am:

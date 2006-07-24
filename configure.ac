@@ -152,7 +152,7 @@ AM_CONDITIONAL([HAVE_OPENSP],[test "x$enable_opensp" = "xyes"])
 
 AC_MSG_CHECKING([which extensions to build])
 
-ALL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates dashboard error-viewer extensions-manager-ui gestures greasemonkey imagebar java-console livehttpheaders page-info permissions push-scroller rss sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
+ALL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures greasemonkey java-console livehttpheaders page-info permissions push-scroller rss sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 USEFUL_EXTENSIONS="actions auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 DEFAULT_EXTENSIONS="actions auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 
@@ -177,7 +177,7 @@ fi
 AC_ARG_WITH([extensions],
 [  --with-extensions=extension1,extension2,...
 			  build the specified extensions. Available:
-			  actions, adblock, certificates, dashboard,
+			  actions, adblock, certificates,
 			  error-viewer, extensions-manager-ui, gestures, livehttpheaders,
 			  page-info, rss, sample, sampls-mozilla, select-stylesheet,
 			  sidebar, smart-bookmarks, tab-groups,
@@ -341,7 +341,6 @@ extensions/adblock/Makefile
 extensions/auto-reload/Makefile
 extensions/auto-scroller/Makefile
 extensions/certificates/Makefile
-extensions/dashboard/Makefile
 extensions/gestures/Makefile
 extensions/error-viewer/Makefile
 extensions/error-viewer/mozilla/Makefile
@@ -350,7 +349,6 @@ extensions/extensions-manager-ui/Makefile
 extensions/favicon/Makefile
 extensions/greasemonkey/Makefile
 extensions/greasemonkey/mozilla/Makefile
-extensions/imagebar/Makefile
 extensions/livehttpheaders/Makefile
 extensions/livehttpheaders/mozilla/Makefile
 extensions/page-info/Makefile
