@@ -1,4 +1,33 @@
 ==========================
+Epiphany Extensions 2.15.2
+==========================
+
+New extensions:
+
+        * Live HTTP Headers
+
+Changes:
+
+	* Update Adblock with last blacklist from upstream (2006-04-06a)
+	* Update intltool requirement to 0.35
+	* Drop support for gecko 1.7
+	* Don't ship dashboard extension (too broken)
+	* Don't ship imagebar extension (too broken)
+	
+Bug fixes:
+	
+	* Configure now prints a summary of enabled/disabled features as for Epiphany [#345908]
+	* Show a notification dialog when a duplicate sidebar is added [#333306]
+	
+Contributors to the Epiphany Extensions 2.15.2 release:
+
+Wouter Bolsterlee, Christian Persch, Jean-François Rameau.
+
+Updated translations:
+
+Theppitak Karoonboonyanan (th), Hendrik Richter (de), Alexey Balmashnov (ru), pclouds (vi)
+ 
+==========================
 Epiphany Extensions 2.14.0
 ==========================
 

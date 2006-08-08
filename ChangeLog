@@ -1,5 +1,11 @@
 2006-08-08  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
+	=== Release 2.15.2 ===
+
+	* configure.ac:
+
+2006-08-08  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
 	* po/POTFILES.in:
 	* po/POTFILES.skip:
 
