@@ -21,3 +21,6 @@ extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c
 #These are removed while tabsmenu isn't being shipped
 extensions/tabsmenu/ephy-tab-move-menu.c
 [type: gettext/ini]extensions/tabsmenu/tabsmenu.ephy-extension.in.in
+
+#These are removed while dashboard isn't being shipped
+[type: gettext/ini]extensions/dashboard/dashboard.ephy-extension.in.in

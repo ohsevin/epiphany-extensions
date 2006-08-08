@@ -37,7 +37,6 @@ extensions/smart-bookmarks/smart-bookmarks-extension.c
 [type: gettext/ini]extensions/auto-scroller/auto-scroller.ephy-extension.in.in
 [type: gettext/ini]extensions/auto-reload/auto-reload.ephy-extension.in.in
 [type: gettext/ini]extensions/certificates/certificates.ephy-extension.in.in
-[type: gettext/ini]extensions/dashboard/dashboard.ephy-extension.in.in
 [type: gettext/ini]extensions/error-viewer/error-viewer.ephy-extension.in.in
 [type: gettext/ini]extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in
 [type: gettext/ini]extensions/favicon/favicon.ephy-extension.in

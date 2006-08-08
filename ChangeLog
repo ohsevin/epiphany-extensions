@@ -1,3 +1,10 @@
+2006-08-08  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* po/POTFILES.in:
+	* po/POTFILES.skip:
+
+	Remove dashboard from translation.
+
 2006-07-24  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/certificates/ephy-certificates-extension.c:
