@@ -11,9 +11,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-04-14 18:24+0300\n"
-"PO-Revision-Date: 2006-04-14 18:30+0300\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=epiphany-extensions\n"
+"POT-Creation-Date: 2006-08-16 13:37+0300\n"
+"PO-Revision-Date: 2006-08-16 13:39+0300\n"
 "Last-Translator: Pauli Virtanen <pauli.virtanen@hut.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -145,34 +146,24 @@ msgid "Security Devices"
 msgstr "Turvallisuuslaitteet"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:327
+#: ../extensions/certificates/ephy-certificates-extension.c:220
 msgid "Manage _Certificates"
 msgstr "_Varmenteiden hallinta"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:329
+#: ../extensions/certificates/ephy-certificates-extension.c:222
 msgid "Manage your certificates"
 msgstr "Varmenteiden hallinta"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:333
+#: ../extensions/certificates/ephy-certificates-extension.c:226
 msgid "Manage Security _Devices"
 msgstr "Hallitse _turvallisuuslaitteita"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:335
+#: ../extensions/certificates/ephy-certificates-extension.c:228
 msgid "Manage your security devices"
 msgstr "Hallitse turvallisuuslaitteitasi"
-
-#. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:342
-msgid "Server _Certificate"
-msgstr "Palvelimen _varmenne"
-
-#. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:344
-msgid "Display the web server's certificate"
-msgstr "Näytä WWW-palvelimen varmenne"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
@@ -210,7 +201,7 @@ msgid "Error Viewer"
 msgstr "Virheiden katselu"
 
 #. Don't bother looking for source lines -- they're not there
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:108
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:96
 #, c-format
 msgid ""
 "Error:\n"
@@ -219,7 +210,7 @@ msgstr ""
 "Virhe:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:138
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:126
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -778,11 +769,11 @@ msgstr "T_yyli"
 msgid "Select a different style for this page"
 msgstr "Valitse eri tyyli tätä sivua varten"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:224
 msgid "Default"
 msgstr "Oletus"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:235
 msgid "None"
 msgstr "Ei mikään"
 
@@ -790,54 +781,53 @@ msgstr "Ei mikään"
 msgid "No Sidebars installed"
 msgstr "Ei asennettuja sivupaneeleita"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:104
+#: ../extensions/sidebar/ephy-sidebar-extension.c:105
 msgid "_Sidebar"
 msgstr "_Sivupaneeli"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:105
+#: ../extensions/sidebar/ephy-sidebar-extension.c:106
 msgid "Show or hide the sidebar"
 msgstr "Näytä tai piilota sivupaneeli"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:411
+#. Translators: %s is the sidebar title
+#: ../extensions/sidebar/ephy-sidebar-extension.c:408
+#, c-format
+msgid "The sidebar already contains “%s”"
+msgstr "Sivupalkki sisältää jo kohteen \"%s\""
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:412
+msgid ""
+"To use this sidebar, select it from the list of available sidebar pages."
+msgstr ""
+"Valitse tämä palkki saatavilla olevien sivupalkkien listasta, jos haluat "
+"käyttää sitä."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:415
+#: ../extensions/sidebar/ephy-sidebar-extension.c:441
+msgid "Add Sidebar"
+msgstr "Lisää sivupaneeli"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:435
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr "Lisätäänkö \"%s\" sivupaneeliin?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:415
+#: ../extensions/sidebar/ephy-sidebar-extension.c:439
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr "Uuden sivupaneelin sivun lähde on \"%s\"."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:417
-msgid "Add Sidebar"
-msgstr "Lisää sivupaneeli"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:421
+#: ../extensions/sidebar/ephy-sidebar-extension.c:445
 msgid "_Add Sidebar"
 msgstr "_Lisää sivupaneeli"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:565
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:551
 msgid "_Look Up"
 msgstr "_Etsi"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:572
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:558
 msgid "_GNOME Dictionary"
 msgstr "_Gnomen sanakirja"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:190
-#, c-format
-msgid "Window “%s” (%d tab)"
-msgid_plural "Window “%s” (%d tabs)"
-msgstr[0] "Ikkuna \"%s\" (%d välilehti)"
-msgstr[1] "Ikkuna \"%s\" (%d välilehteä)"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:301
-msgid "Move Tab To Window"
-msgstr "Siirrä välilehti ikkunaan"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:302
-msgid "Move the current tab to a different window"
-msgstr "Siirrä nykyinen välilehti toiseen ikkunaan"
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
@@ -862,14 +852,6 @@ msgstr "Lataa välilehden uudestaan tietyin aikavälein"
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Näytä sivun varmenne ja hallitse varmenteita"
-
-#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:1
-msgid "Dashboard"
-msgstr "Dashboard"
-
-#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:2
-msgid "Send browsing information to Dashboard"
-msgstr "Lähetä selailutiedot Dashboard-ohjelmalle"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -996,14 +978,6 @@ msgstr "Ryhmittele avatut välilehdet"
 msgid "Tab Groups"
 msgstr "Välilehtiryhmät"
 
-#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:1
-msgid "Move tabs between windows"
-msgstr "Siirrä välilehtiä ikkunoiden välillä"
-
-#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:2
-msgid "Tabsmenu"
-msgstr "Välilehtivalikko"
-
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
 msgstr "Ilmaise taustalla olevien välilehtien uusi sisältö"
@@ -1011,6 +985,35 @@ msgstr "Ilmaise taustalla olevien välilehtien uusi sisältö"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Välilehtien tilat"
+
+#~ msgid "Server _Certificate"
+#~ msgstr "Palvelimen _varmenne"
+
+#~ msgid "Display the web server's certificate"
+#~ msgstr "Näytä WWW-palvelimen varmenne"
+
+#~ msgid "Window “%s” (%d tab)"
+#~ msgid_plural "Window “%s” (%d tabs)"
+#~ msgstr[0] "Ikkuna \"%s\" (%d välilehti)"
+#~ msgstr[1] "Ikkuna \"%s\" (%d välilehteä)"
+
+#~ msgid "Move Tab To Window"
+#~ msgstr "Siirrä välilehti ikkunaan"
+
+#~ msgid "Move the current tab to a different window"
+#~ msgstr "Siirrä nykyinen välilehti toiseen ikkunaan"
+
+#~ msgid "Dashboard"
+#~ msgstr "Dashboard"
+
+#~ msgid "Send browsing information to Dashboard"
+#~ msgstr "Lähetä selailutiedot Dashboard-ohjelmalle"
+
+#~ msgid "Move tabs between windows"
+#~ msgstr "Siirrä välilehtiä ikkunoiden välillä"
+
+#~ msgid "Tabsmenu"
+#~ msgstr "Välilehtivalikko"
 
 #~ msgid "_Edit Bookmarks"
 #~ msgstr "_Muokkaa kirjanmerkkejä"
