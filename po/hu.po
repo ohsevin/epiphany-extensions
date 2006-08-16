@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions.HEAD.hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-20 18:23+0100\n"
+"POT-Creation-Date: 2006-08-15 00:59+0200\n"
 "PO-Revision-Date: 2005-12-17 00:08+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <gnome@gnome.hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=1; plural=0;\n"
+"Plural-Forms:   nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.10\n"
 
 #: ../extensions/actions/action-properties.glade.h:1
@@ -103,11 +103,11 @@ msgstr "Nem sikerült futtatni a parancsot"
 msgid "Could not Run Command"
 msgstr "Nem sikerült futtatni a parancsot"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:519
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
 msgid "No action selected."
 msgstr "Nincs kiválasztva művelet."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:529
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
@@ -321,11 +321,11 @@ msgstr ""
 "HTML hiba a(z) %s fájlban:\n"
 "Nincs érvényes doctype megadva."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:352
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
 msgid "Enabled"
 msgstr "Engedélyezve"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:360
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
 #: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "Leírás"
@@ -338,13 +338,23 @@ msgstr "<b>Betöltött kiterjesztések</b>"
 msgid "Extensions"
 msgstr "Kiterjesztések"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
 msgid "_Extensions..."
 msgstr "Kit_erjesztések..."
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
 msgid "Load and unload extensions"
 msgstr "Kiterjesztések betöltése és eltávolítása"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+#, fuzzy
+msgid "_Extensions"
+msgstr "Kiterjesztések"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
+#, fuzzy
+msgid "Help about extensions"
+msgstr "Egy mintakiterjesztés"
 
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
 msgid "Install User _Script"
@@ -369,11 +379,11 @@ msgstr "_Java konzol"
 msgid "Show Java Console"
 msgstr "A Java konzol megjelenítése"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:65
+#: ../extensions/page-info/ephy-page-info-extension.c:67
 msgid "Pa_ge Information"
 msgstr "_Oldalinformációk"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/page-info/ephy-page-info-extension.c:69
 msgid "Display page information in a dialog"
 msgstr "Oldalinformáció megjelenítése egy párbeszédablakban"
 
@@ -808,28 +818,13 @@ msgstr "Oldalsáv hozzáadása"
 msgid "_Add Sidebar"
 msgstr "Oldalsáv _hozzáadása"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:565
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:551
 msgid "_Look Up"
 msgstr "_Keresés"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:572
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:558
 msgid "_GNOME Dictionary"
 msgstr "_GNOME szótár"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:190
-#, c-format
-msgid "Window “%s” (%d tab)"
-msgid_plural "Window “%s” (%d tabs)"
-msgstr[0] "\"%s\" ablak (%d böngészőlap)"
-msgstr[1] "\"%s\" ablak (%d böngészőlap)"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:301
-msgid "Move Tab To Window"
-msgstr "Böngészőlap mozgatása ablakba"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:302
-msgid "Move the current tab to a different window"
-msgstr "Böngészőlap mozgatása egy másik ablakba"
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
@@ -886,7 +881,8 @@ msgid "Favicon fallback"
 msgstr "Tartalék favicon"
 
 #: ../extensions/favicon/favicon.ephy-extension.in.h:2
-msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
+msgid ""
+"Loads /favicon.ico as favicon if the site doesn't use the standard method"
 msgstr ""
 "A /favicon.ico-t tölti be favicon-ként ha az oldal nem használja a szabvány "
 "eljárást"
@@ -905,7 +901,8 @@ msgstr "Greasemonkey"
 
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
 msgid "Run user scripts to modify web pages' behavior"
-msgstr "Felhasználói parancsfájlok futtatása weboldalak viselkedésének módosítására"
+msgstr ""
+"Felhasználói parancsfájlok futtatása weboldalak viselkedésének módosítására"
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
 msgid "Java Console"
@@ -917,7 +914,8 @@ msgstr "Hozzáférést biztosít a Java bővítmény konzolhoz"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
-msgstr "A jelenlegi oldalon lévő hivatkozásokról és médiáról jelenít meg adatokat"
+msgstr ""
+"A jelenlegi oldalon lévő hivatkozásokról és médiáról jelenít meg adatokat"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
 msgid "Page Info"
@@ -936,8 +934,10 @@ msgid "News Feed Subscription"
 msgstr "Feliratkozás hírfolyamra"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
-msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
-msgstr "Feliratkozás az oldal által kínált hírfolyamokra a kedvenc hírolvasójával"
+msgid ""
+"Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr ""
+"Feliratkozás az oldal által kínált hírfolyamokra a kedvenc hírolvasójával"
 
 #: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
 msgid "A sample extension with mozilla backend"
@@ -987,14 +987,6 @@ msgstr "Újonnan megnyitott lapok csoportosítása"
 msgid "Tab Groups"
 msgstr "Lapcsoportok"
 
-#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:1
-msgid "Move tabs between windows"
-msgstr "Böngészőlapok mozgatása az ablakok között"
-
-#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:2
-msgid "Tabsmenu"
-msgstr "Lapmenü"
-
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
 msgstr "Az új tartalom jelzése a háttérlapokon"
@@ -1003,3 +995,19 @@ msgstr "Az új tartalom jelzése a háttérlapokon"
 msgid "Tab States"
 msgstr "Lapok állapota"
 
+#~ msgid "Window “%s” (%d tab)"
+#~ msgid_plural "Window “%s” (%d tabs)"
+#~ msgstr[0] "\"%s\" ablak (%d böngészőlap)"
+#~ msgstr[1] "\"%s\" ablak (%d böngészőlap)"
+
+#~ msgid "Move Tab To Window"
+#~ msgstr "Böngészőlap mozgatása ablakba"
+
+#~ msgid "Move the current tab to a different window"
+#~ msgstr "Böngészőlap mozgatása egy másik ablakba"
+
+#~ msgid "Move tabs between windows"
+#~ msgstr "Böngészőlapok mozgatása az ablakok között"
+
+#~ msgid "Tabsmenu"
+#~ msgstr "Lapmenü"
