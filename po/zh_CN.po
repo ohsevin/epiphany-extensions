@@ -7,9 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-22 10:18+0100\n"
-"PO-Revision-Date: 2006-01-22 18:15+0800\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=epiphany-extensions\n"
+"POT-Creation-Date: 2006-08-18 10:24+0200\n"
+"PO-Revision-Date: 2006-08-18 21:00+0800\n"
 "Last-Translator: Funda Wang <fundawang@linux.net.cn>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
 "MIME-Version: 1.0\n"
@@ -94,11 +95,11 @@ msgstr "无法运行命令"
 msgid "Could not Run Command"
 msgstr "无法运行命令"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:519
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
 msgid "No action selected."
 msgstr "未选择命令。"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:529
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
@@ -125,80 +126,34 @@ msgstr "自动重新装入(_A)"
 msgid "Reload the page periodically"
 msgstr "定时重新装入页面"
 
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
-msgid "_Edit Bookmarks"
-msgstr "编辑书签(_E)"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
-msgid "Open the bookmarks window"
-msgstr "打开书签窗口"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
-msgid "Open in _Current Tab"
-msgstr "在当前标签中打开(_C)"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
-msgid "Open bookmarks in the current tab of the active window"
-msgstr "在当前窗口的当前标签中打开书签"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
-msgid "Open in New _Tab"
-msgstr "在新标签中打开(_T)"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
-msgid "Open bookmarks in a new tab of the active window"
-msgstr "在当前窗口的新标签中打开书签"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
-msgid "Open in New _Window"
-msgstr "在新窗口中打开(_W)"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
-msgid "Open bookmarks in new a window"
-msgstr "在新窗口中打开书签"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:531
-msgid "Bookmarks"
-msgstr "书签"
-
-#: ../extensions/certificates/ephy-certificates-extension.c:173
+#: ../extensions/certificates/ephy-certificates-extension.c:177
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "证书"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:203
+#: ../extensions/certificates/ephy-certificates-extension.c:208
 msgid "Security Devices"
 msgstr "安全设备"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:321
+#: ../extensions/certificates/ephy-certificates-extension.c:220
 msgid "Manage _Certificates"
 msgstr "管理证书(_C)"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:323
+#: ../extensions/certificates/ephy-certificates-extension.c:222
 msgid "Manage your certificates"
 msgstr "管理您的证书"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:327
+#: ../extensions/certificates/ephy-certificates-extension.c:226
 msgid "Manage Security _Devices"
 msgstr "管理安全设备(_D)"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:329
+#: ../extensions/certificates/ephy-certificates-extension.c:228
 msgid "Manage your security devices"
 msgstr "管理您的安全设备"
-
-#. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:336
-msgid "Server _Certificate"
-msgstr "服务器证书(_C)"
-
-#. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:338
-msgid "Display the web server's certificate"
-msgstr "显示 Web 服务器的证书"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
@@ -236,7 +191,7 @@ msgid "Error Viewer"
 msgstr "错误查看器"
 
 #. Don't bother looking for source lines -- they're not there
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:108
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:96
 #, c-format
 msgid ""
 "Error:\n"
@@ -245,7 +200,7 @@ msgstr ""
 "错误：\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:138
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:126
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -342,11 +297,11 @@ msgstr ""
 "%s 中有 HTML 错误：\n"
 "没有指定有效的文档类型。"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:340
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
 msgid "Enabled"
 msgstr "启用"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:348
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
 #: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "描述"
@@ -359,13 +314,21 @@ msgstr "<b>装入的扩展</b>"
 msgid "Extensions"
 msgstr "扩展"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
 msgid "_Extensions..."
 msgstr "扩展(_E)..."
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
 msgid "Load and unload extensions"
 msgstr "装入和卸载扩展"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "_Extensions"
+msgstr "扩展(_E)"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
+msgid "Help about extensions"
+msgstr "关于扩展的帮助"
 
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
 msgid "Install User _Script"
@@ -390,11 +353,11 @@ msgstr "_Java 控制台"
 msgid "Show Java Console"
 msgstr "显示 Java 控制台"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:65
+#: ../extensions/page-info/ephy-page-info-extension.c:67
 msgid "Pa_ge Information"
 msgstr "页面信息(_G)"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/page-info/ephy-page-info-extension.c:69
 msgid "Display page information in a dialog"
 msgstr "在对话框中显示页面信息"
 
@@ -711,12 +674,12 @@ msgid "Popup Windows"
 msgstr "弹出窗口"
 
 #. stock icon
-#: ../extensions/permissions/ephy-permissions-extension.c:152
+#: ../extensions/permissions/ephy-permissions-extension.c:156
 msgid "Site _Permissions"
 msgstr "站点权限(_P)"
 
 #. shortcut key
-#: ../extensions/permissions/ephy-permissions-extension.c:154
+#: ../extensions/permissions/ephy-permissions-extension.c:158
 msgid "Manage web site permissions"
 msgstr "管理网站属性"
 
@@ -736,7 +699,7 @@ msgstr "订阅此种子(_S)"
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "用您喜爱的新闻阅读器订阅此种子"
 
-#: ../extensions/rss/ephy-rss-extension.c:392
+#: ../extensions/rss/ephy-rss-extension.c:396
 msgid "Subscribe to site's news feed"
 msgstr "订阅网站的新闻推送"
 
@@ -789,11 +752,11 @@ msgstr "样式(_Y)"
 msgid "Select a different style for this page"
 msgstr "为此页选择不同的样式表"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:224
 msgid "Default"
 msgstr "默认"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:235
 msgid "None"
 msgstr "无"
 
@@ -801,53 +764,51 @@ msgstr "无"
 msgid "No Sidebars installed"
 msgstr "未安装侧边栏"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:104
+#: ../extensions/sidebar/ephy-sidebar-extension.c:105
 msgid "_Sidebar"
 msgstr "侧边栏(_S)"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:105
+#: ../extensions/sidebar/ephy-sidebar-extension.c:106
 msgid "Show or hide the sidebar"
 msgstr "显示或隐藏侧边栏"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:411
+#. Translators: %s is the sidebar title
+#: ../extensions/sidebar/ephy-sidebar-extension.c:408
+#, c-format
+msgid "The sidebar already contains “%s”"
+msgstr "侧边栏已经包含“%s”"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:412
+msgid ""
+"To use this sidebar, select it from the list of available sidebar pages."
+msgstr "要使用此侧边栏，请从可用的侧边栏页面列表中选择该侧边栏。"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:415
+#: ../extensions/sidebar/ephy-sidebar-extension.c:441
+msgid "Add Sidebar"
+msgstr "添加侧边栏"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:435
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr "将“%s”添加到侧边栏吗？"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:415
+#: ../extensions/sidebar/ephy-sidebar-extension.c:439
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr "新侧边栏的源文件为“%s”。"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:417
-msgid "Add Sidebar"
-msgstr "添加侧边栏"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:421
+#: ../extensions/sidebar/ephy-sidebar-extension.c:445
 msgid "_Add Sidebar"
 msgstr "添加侧边栏(_A)"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:565
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:551
 msgid "_Look Up"
 msgstr "查阅(_L)"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:572
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:558
 msgid "_GNOME Dictionary"
 msgstr "_GNOME 字典"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:190
-#, c-format
-msgid "Window “%s” (%d tab)"
-msgid_plural "Window “%s” (%d tabs)"
-msgstr[0] "窗口“%s”(%d 个标签)"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:301
-msgid "Move Tab To Window"
-msgstr "将标签移至窗口"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:302
-msgid "Move the current tab to a different window"
-msgstr "将当前标签移至不同的窗口"
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
@@ -869,25 +830,9 @@ msgstr "自动重新装入标签"
 msgid "Reload a tab periodically"
 msgstr "定时重新装入标签"
 
-#: ../extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in.h:1
-msgid "Add a bookmarks menu to the panel's notification area"
-msgstr "在面板的通知区域添加书签菜单"
-
-#: ../extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in.h:2
-msgid "Bookmarks Tray"
-msgstr "书签托盘"
-
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "查看页面证书并管理证书"
-
-#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:1
-msgid "Dashboard"
-msgstr "Dashboard"
-
-#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:2
-msgid "Send browsing information to Dashboard"
-msgstr "将浏览信息发送到 Dashboard"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -937,14 +882,6 @@ msgstr "Java 控制台"
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
 msgid "Provide access to the Java-Plugin Console"
 msgstr "提供对 Java 插件控制台的访问"
-
-#: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:1
-msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
-msgstr "自动处理网络联机/脱机状态(试验性质!)"
-
-#: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:2
-msgid "Network Connection Monitor"
-msgstr "网络连接监视器"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
@@ -1019,14 +956,6 @@ msgstr "对新打开的标签分组"
 msgid "Tab Groups"
 msgstr "标签组"
 
-#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:1
-msgid "Move tabs between windows"
-msgstr "在窗口间移动标签"
-
-#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:2
-msgid "Tabsmenu"
-msgstr "标签菜单"
-
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
 msgstr "在后台标签标识新内容"
@@ -1034,3 +963,4 @@ msgstr "在后台标签标识新内容"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "标签状态"
+
