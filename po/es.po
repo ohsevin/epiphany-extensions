@@ -7,9 +7,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-04-13 11:49+0200\n"
-"PO-Revision-Date: 2006-04-13 11:49+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=epiphany-extensions\n"
+"POT-Creation-Date: 2006-08-21 11:05+0200\n"
+"PO-Revision-Date: 2006-08-21 11:06+0200\n"
 "Last-Translator: Francisco Javier F. Serrador <serrador@cvs.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -145,34 +146,24 @@ msgid "Security Devices"
 msgstr "Dispositivos de seguridad"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:327
+#: ../extensions/certificates/ephy-certificates-extension.c:220
 msgid "Manage _Certificates"
 msgstr "Administrar _certificados"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:329
+#: ../extensions/certificates/ephy-certificates-extension.c:222
 msgid "Manage your certificates"
 msgstr "Administra sus certificados"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:333
+#: ../extensions/certificates/ephy-certificates-extension.c:226
 msgid "Manage Security _Devices"
 msgstr "Administrar _dispositivos de seguridad"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:335
+#: ../extensions/certificates/ephy-certificates-extension.c:228
 msgid "Manage your security devices"
 msgstr "Administra sus dispositivos de seguridad"
-
-#. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:342
-msgid "Server _Certificate"
-msgstr "_Certificado del servidor"
-
-#. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:344
-msgid "Display the web server's certificate"
-msgstr "Mostrar el certificado del servidor web"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
@@ -210,7 +201,7 @@ msgid "Error Viewer"
 msgstr "Visor de errores"
 
 #. Don't bother looking for source lines -- they're not there
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:108
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:96
 #, c-format
 msgid ""
 "Error:\n"
@@ -219,7 +210,7 @@ msgstr ""
 "Error:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:138
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:126
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -781,11 +772,11 @@ msgstr "E_stilo"
 msgid "Select a different style for this page"
 msgstr "Seleccionar un estilo diferente para esta página"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:224
 msgid "Default"
 msgstr "Predeterminado"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:235
 msgid "None"
 msgstr "Ninguno"
 
@@ -793,54 +784,51 @@ msgstr "Ninguno"
 msgid "No Sidebars installed"
 msgstr "No hay ninguna barra lateral instalada"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:104
+#: ../extensions/sidebar/ephy-sidebar-extension.c:105
 msgid "_Sidebar"
 msgstr "Barra _lateral"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:105
+#: ../extensions/sidebar/ephy-sidebar-extension.c:106
 msgid "Show or hide the sidebar"
 msgstr "Mostrar u ocultar la barra lateral"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:411
+#. Translators: %s is the sidebar title
+#: ../extensions/sidebar/ephy-sidebar-extension.c:408
+#, c-format
+msgid "The sidebar already contains “%s”"
+msgstr "La barra lateral ya contiene  «%s»"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:412
+msgid ""
+"To use this sidebar, select it from the list of available sidebar pages."
+msgstr "Para usar esta barra lateral, seleccionela desde la lista de páginas disponibles."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:415
+#: ../extensions/sidebar/ephy-sidebar-extension.c:441
+msgid "Add Sidebar"
+msgstr "Añadir barra lateral"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:435
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr "¿Desea añadir «%s» a la barra lateral?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:415
+#: ../extensions/sidebar/ephy-sidebar-extension.c:439
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr "El fuente de la página nueva de la barra lateral es «%s»."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:417
-msgid "Add Sidebar"
-msgstr "Añadir barra lateral"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:421
+#: ../extensions/sidebar/ephy-sidebar-extension.c:445
 msgid "_Add Sidebar"
 msgstr "_Añadir barra lateral"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:565
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:551
 msgid "_Look Up"
 msgstr "_Buscar"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:572
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:558
 msgid "_GNOME Dictionary"
 msgstr "Diccionario de _Gnome"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:190
-#, c-format
-msgid "Window “%s” (%d tab)"
-msgid_plural "Window “%s” (%d tabs)"
-msgstr[0] "Ventana «%s»  (%d solapa)"
-msgstr[1] "Ventana «%s» (%d solapas)"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:301
-msgid "Move Tab To Window"
-msgstr "Mover solapa a la ventana"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:302
-msgid "Move the current tab to a different window"
-msgstr "Mueve la solapa actual a una ventana diferente"
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
@@ -865,14 +853,6 @@ msgstr "Recarga la solapa periódicamente"
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Vea el certificado de página y gestione los certificados"
-
-#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:1
-msgid "Dashboard"
-msgstr "Pizarra"
-
-#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:2
-msgid "Send browsing information to Dashboard"
-msgstr "Enviar información de navegación a la Dashboard"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -1003,14 +983,6 @@ msgstr "Agrupa las solapas nuevas abiertas"
 msgid "Tab Groups"
 msgstr "Grupos de solapas"
 
-#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:1
-msgid "Move tabs between windows"
-msgstr "Mover solapas entre las ventanas"
-
-#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:2
-msgid "Tabsmenu"
-msgstr "Menú de solapas"
-
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
 msgstr "Indica el contenido nuevo en solapas en segundo plano"
@@ -1018,3 +990,32 @@ msgstr "Indica el contenido nuevo en solapas en segundo plano"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Estado de solapas"
+
+#~ msgid "Server _Certificate"
+#~ msgstr "_Certificado del servidor"
+
+#~ msgid "Display the web server's certificate"
+#~ msgstr "Mostrar el certificado del servidor web"
+
+#~ msgid "Window “%s” (%d tab)"
+#~ msgid_plural "Window “%s” (%d tabs)"
+#~ msgstr[0] "Ventana «%s»  (%d solapa)"
+#~ msgstr[1] "Ventana «%s» (%d solapas)"
+
+#~ msgid "Move Tab To Window"
+#~ msgstr "Mover solapa a la ventana"
+
+#~ msgid "Move the current tab to a different window"
+#~ msgstr "Mueve la solapa actual a una ventana diferente"
+
+#~ msgid "Dashboard"
+#~ msgstr "Pizarra"
+
+#~ msgid "Send browsing information to Dashboard"
+#~ msgstr "Enviar información de navegación a la Dashboard"
+
+#~ msgid "Move tabs between windows"
+#~ msgstr "Mover solapas entre las ventanas"
+
+#~ msgid "Tabsmenu"
+#~ msgstr "Menú de solapas"
