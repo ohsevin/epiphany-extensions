@@ -6,9 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extension\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-05-15 11:47+0700\n"
-"PO-Revision-Date: 2006-05-15 11:48+0700\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=epiphany-extensions\n"
+"POT-Creation-Date: 2006-08-27 13:29+0700\n"
+"PO-Revision-Date: 2006-08-27 13:36+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <l10n@opentle.org>\n"
 "MIME-Version: 1.0\n"
@@ -104,7 +105,6 @@ msgstr "ไม่ได้เลือกการกระทำ"
 msgid "%i action selected."
 msgid_plural "%i actions selected."
 msgstr[0] "เลือกการกระทำไว้ %i รายการ"
-msgstr[1] "เลือกการกระทำไว้ %i รายการ"
 
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
@@ -137,34 +137,24 @@ msgid "Security Devices"
 msgstr "อุปกรณ์รักษาความปลอดภัย"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:327
+#: ../extensions/certificates/ephy-certificates-extension.c:220
 msgid "Manage _Certificates"
 msgstr "จัดการใ_บรับรอง"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:329
+#: ../extensions/certificates/ephy-certificates-extension.c:222
 msgid "Manage your certificates"
 msgstr "จัดการใบรับรองต่างๆ ของคุณ"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:333
+#: ../extensions/certificates/ephy-certificates-extension.c:226
 msgid "Manage Security _Devices"
 msgstr "จัดการ_อุปกรณ์รักษาความปลอดภัย"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:335
+#: ../extensions/certificates/ephy-certificates-extension.c:228
 msgid "Manage your security devices"
 msgstr "จัดการอุปกรณ์รักษาความปลอดภัยของคุณ"
-
-#. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:342
-msgid "Server _Certificate"
-msgstr "ใ_บรับรองของเซิร์ฟเวอร์"
-
-#. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:344
-msgid "Display the web server's certificate"
-msgstr "แสดงใบรับรองของเว็บเซิร์ฟเวอร์"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
@@ -225,7 +215,6 @@ msgstr ""
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
 msgstr[0] "พบลิงก์เสีย %d ลิงก์"
-msgstr[1] "พบลิงก์เสีย %d ลิงก์"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
@@ -241,7 +230,6 @@ msgstr ""
 msgid "Checking %d Link on “%s”"
 msgid_plural "Checking %d Links on “%s”"
 msgstr[0] "กำลังตรวจสอบลิงก์ %d ลิงก์ใน “%s”"
-msgstr[1] "กำลังตรวจสอบลิงก์ %d ลิงก์ใน “%s”"
 
 #: ../extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
@@ -257,7 +245,6 @@ msgstr ""
 msgid "Found %d error"
 msgid_plural "Found %d errors"
 msgstr[0] "พบข้อผิดพลาด %d แห่ง"
-msgstr[1] "พบข้อผิดพลาด %d แห่ง"
 
 #: ../extensions/error-viewer/sgml-validator.c:169
 #, c-format
@@ -779,29 +766,41 @@ msgstr "ไม่ใช้"
 msgid "No Sidebars installed"
 msgstr "ไม่มีแถบข้างติดตั้งไว้"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:104
+#: ../extensions/sidebar/ephy-sidebar-extension.c:105
 msgid "_Sidebar"
 msgstr "แถบ_ข้าง"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:105
+#: ../extensions/sidebar/ephy-sidebar-extension.c:106
 msgid "Show or hide the sidebar"
 msgstr "แสดงหรือซ่อนแถบข้าง"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:411
+#. Translators: %s is the sidebar title
+#: ../extensions/sidebar/ephy-sidebar-extension.c:408
+#, c-format
+msgid "The sidebar already contains “%s”"
+msgstr "แถบข้างมี “%s” อยู่ก่อนแล้ว"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:412
+msgid ""
+"To use this sidebar, select it from the list of available sidebar pages."
+msgstr "หากจะใช้แถบข้างนี้ คุณสามารถเลือกได้จากรายการแถบข้างที่มีอยู่"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:415
+#: ../extensions/sidebar/ephy-sidebar-extension.c:441
+msgid "Add Sidebar"
+msgstr "เพิ่มแถบข้าง"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:435
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr "เพิ่ม “%s” ลงในแถบข้างหรือไม่?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:415
+#: ../extensions/sidebar/ephy-sidebar-extension.c:439
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr "แหล่งของหน้าเว็บของแถบข้างใหม่ที่จะเพิ่มคือ “%s”"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:417
-msgid "Add Sidebar"
-msgstr "เพิ่มแถบข้าง"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:421
+#: ../extensions/sidebar/ephy-sidebar-extension.c:445
 msgid "_Add Sidebar"
 msgstr "เ_พิ่มแถบข้าง"
 
@@ -836,14 +835,6 @@ msgstr "โหลดแท็บใหม่เป็นระยะ"
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "ดูใบรับรองของหน้าเว็บและจัดการใบรับรองต่างๆ"
-
-#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:1
-msgid "Dashboard"
-msgstr "Dashboard\t"
-
-#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:2
-msgid "Send browsing information to Dashboard"
-msgstr "ส่งข้อมูลการดูเว็บไปยัง Dashboard"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -975,10 +966,21 @@ msgstr "บ่งชี้การเปลี่ยนแปลงเนื้
 msgid "Tab States"
 msgstr "สถานะแท็บ"
 
+#~ msgid "Server _Certificate"
+#~ msgstr "ใ_บรับรองของเซิร์ฟเวอร์"
+
+#~ msgid "Display the web server's certificate"
+#~ msgstr "แสดงใบรับรองของเว็บเซิร์ฟเวอร์"
+
+#~ msgid "Dashboard"
+#~ msgstr "Dashboard"
+
+#~ msgid "Send browsing information to Dashboard"
+#~ msgstr "ส่งข้อมูลการดูเว็บไปยัง Dashboard"
+
 #~ msgid "Window “%s” (%d tab)"
 #~ msgid_plural "Window “%s” (%d tabs)"
 #~ msgstr[0] "หน้าต่าง “%s” (%d แท็บ)"
-#~ msgstr[1] "หน้าต่าง “%s” (%d แท็บ)"
 
 #~ msgid "Move Tab To Window"
 #~ msgstr "ย้ายแท็บไปยังหน้าต่าง"
