@@ -1,4 +1,4 @@
-# Chinese (Taiwan) translation of epiphany-extensions.
+# Chinese (Hong Kong) translation of epiphany-extensions.
 # Copyright (C) 2005 Free Software Foundation, Inc.
 # Abel Cheung <maddog@linuxhall.org>, 2005.
 # 
@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions 1.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-12-10 07:56+0800\n"
-"PO-Revision-Date: 2006-08-27 11:18+0800\n"
+"PO-Revision-Date: 2006-08-27 11:19+0800\n"
 "Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
-"Language-Team: Chinese (Taiwan) <community@linuxhall.org>\n"
+"Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,13 +28,13 @@ msgstr "<span weight=\"bold\">一般</span>"
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "images."
-msgstr "如果啟用這個選項，在用滑鼠右鍵點選圖片時的突顯式選單裡，會出現該行動。"
+msgstr "如果啟用這個選項，在用滑鼠右鍵點選圖片時的突顯式選單裏，會出現該行動。"
 
 #: ../extensions/actions/action-properties.glade.h:4
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "links and pages."
-msgstr "如果啟用這個選項，在用滑鼠右鍵點選鏈結或圖片時的突顯式選單裡，會出現該行動。"
+msgstr "如果啟用這個選項，在用滑鼠右鍵點選鏈結或圖片時的突顯式選單裏，會出現該行動。"
 
 #: ../extensions/actions/action-properties.glade.h:5
 msgid "The action description."
@@ -155,7 +155,7 @@ msgstr "書籤"
 #: ../extensions/certificates/ephy-certificates-extension.c:173
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
-msgstr "憑證"
+msgstr "證書"
 
 #: ../extensions/certificates/ephy-certificates-extension.c:203
 msgid "Security Devices"
@@ -164,12 +164,12 @@ msgstr "安全性裝置"
 #. stock icon
 #: ../extensions/certificates/ephy-certificates-extension.c:321
 msgid "Manage _Certificates"
-msgstr "管理憑證(_C)"
+msgstr "管理證書(_C)"
 
 #. shortcut key
 #: ../extensions/certificates/ephy-certificates-extension.c:323
 msgid "Manage your certificates"
-msgstr "管理自己的憑證"
+msgstr "管理自己的證書"
 
 #. stock icon
 #: ../extensions/certificates/ephy-certificates-extension.c:327
@@ -179,17 +179,17 @@ msgstr "管理安全性裝置(_D)"
 #. shortcut key
 #: ../extensions/certificates/ephy-certificates-extension.c:329
 msgid "Manage your security devices"
-msgstr "管理您的安全性裝置"
+msgstr "管理你的安全性裝置"
 
 #. stock icon
 #: ../extensions/certificates/ephy-certificates-extension.c:336
 msgid "Server _Certificate"
-msgstr "伺服器憑證(_C)"
+msgstr "伺服器證書(_C)"
 
 #. shortcut key
 #: ../extensions/certificates/ephy-certificates-extension.c:338
 msgid "Display the web server's certificate"
-msgstr "顯示網頁伺服器的憑證"
+msgstr "顯示網頁伺服器的證書"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
@@ -318,7 +318,7 @@ msgstr "%s 有 HTML 錯誤："
 
 #: ../extensions/error-viewer/sgml-validator.c:368
 msgid "Invalid character encoding"
-msgstr "字元編碼無效"
+msgstr "字符編碼無效"
 
 #: ../extensions/error-viewer/sgml-validator.c:373
 msgid "Unknown error while converting to UTF-8"
@@ -411,7 +411,7 @@ msgstr "接近完全符合標準"
 
 #: ../extensions/page-info/page-info-dialog.c:787
 msgid "Compatibility"
-msgstr "相容性質，不符合標準"
+msgstr "兼容性質，不符合標準"
 
 #: ../extensions/page-info/page-info-dialog.c:791
 msgid "Undetermined"
@@ -508,7 +508,7 @@ msgstr "標題"
 
 #: ../extensions/page-info/page-info-dialog.c:1287
 msgid "Width"
-msgstr "寬度"
+msgstr "闊度"
 
 #: ../extensions/page-info/page-info-dialog.c:1299
 msgid "Height"
@@ -721,7 +721,7 @@ msgstr "新聞餵信訂閱"
 
 #: ../extensions/rss/ephy-rss-extension.c:96
 msgid "Subscribe to this website's news feeds in your favorite news reader"
-msgstr "在您所喜愛的新聞閱讀器中訂閱這個網站的新聞餵信"
+msgstr "在你所喜愛的新聞閱讀器中訂閱這個網站的新聞餵信"
 
 #: ../extensions/rss/ephy-rss-extension.c:101
 msgid "_Subscribe to this feed"
@@ -729,7 +729,7 @@ msgstr "訂閱此餵送(_S)"
 
 #: ../extensions/rss/ephy-rss-extension.c:103
 msgid "Subscribe to this feed in your favorite news reader"
-msgstr "在您所喜愛的新聞閱讀器中訂閱這個餵信"
+msgstr "在你所喜愛的新聞閱讀器中訂閱這個餵信"
 
 #: ../extensions/rss/ephy-rss-extension.c:373
 msgid "Subscribe to site's news feed"
@@ -866,7 +866,7 @@ msgstr "書籤匣"
 
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
-msgstr "顯示目前頁面的憑證，並管理所有憑證"
+msgstr "顯示目前頁面的證書，並管理所有證書"
 
 #: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:1
 msgid "Dashboard"
@@ -927,11 +927,11 @@ msgstr "提供對 Java 外掛程式主控台的存取"
 
 #: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:1
 msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
-msgstr "自動配合網路的上線/離線狀態運作 (測試性質)"
+msgstr "自動配合網絡的上線/離線狀態運作 (測試性質)"
 
 #: ../extensions/net-monitor/net-monitor.ephy-extension.in.in.h:2
 msgid "Network Connection Monitor"
-msgstr "監察網路連線"
+msgstr "監察網絡連線"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
@@ -956,7 +956,7 @@ msgstr "新聞餵信訂閱"
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
-msgstr "在您所喜愛的新聞閱讀器中訂閱這個網頁所提供的新聞餵信"
+msgstr "在你所喜愛的新聞閱讀器中訂閱這個網頁所提供的新聞餵信"
 
 #: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
 msgid "A sample extension with mozilla backend"
@@ -1004,7 +1004,7 @@ msgstr "將新開的分頁排在一起"
 
 #: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
 msgid "Tab Groups"
-msgstr "分頁群組"
+msgstr "分頁羣組"
 
 #: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:1
 msgid "Move tabs between windows"
