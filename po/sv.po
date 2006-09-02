@@ -1,16 +1,16 @@
 # Swedish messages for epiphany-extensions.
 # Copyright (C) 2004, 2005, 2006 Free Software Foundation, Inc.
-# Christian Rose <menthos@menthos.com>, 2004.
 # Daniel Nylander <po@danielnylander.se>, 2006.
+# Christian Rose <menthos@menthos.com>, 2004.
 #
 # $Id$
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-04-11 18:13+0200\n"
-"PO-Revision-Date: 2006-04-12 10:07+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
+"POT-Creation-Date: 2006-09-02 12:50+0200\n"
+"PO-Revision-Date: 2006-09-02 16:51+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -129,34 +129,24 @@ msgid "Security Devices"
 msgstr "Säkerhetsenheter"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:327
+#: ../extensions/certificates/ephy-certificates-extension.c:220
 msgid "Manage _Certificates"
 msgstr "Hantera _certifikat"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:329
+#: ../extensions/certificates/ephy-certificates-extension.c:222
 msgid "Manage your certificates"
 msgstr "Hantera dina certifikat"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:333
+#: ../extensions/certificates/ephy-certificates-extension.c:226
 msgid "Manage Security _Devices"
 msgstr "Hantera säkerhets_enheter"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:335
+#: ../extensions/certificates/ephy-certificates-extension.c:228
 msgid "Manage your security devices"
 msgstr "Hantera dina säkerhetsenheter"
-
-#. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:342
-msgid "Server _Certificate"
-msgstr "Server_certifikat"
-
-#. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:344
-msgid "Display the web server's certificate"
-msgstr "Visa webbserverns certifikat"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
@@ -194,7 +184,7 @@ msgid "Error Viewer"
 msgstr "Felvisare"
 
 #. Don't bother looking for source lines -- they're not there
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:108
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:96
 #, c-format
 msgid ""
 "Error:\n"
@@ -203,7 +193,7 @@ msgstr ""
 "Fel:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:138
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:126
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -756,11 +746,11 @@ msgstr "St_il"
 msgid "Select a different style for this page"
 msgstr "Välj en annan stil för denna sida"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:224
 msgid "Default"
 msgstr "Standard"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:235
 msgid "None"
 msgstr "Ingen"
 
@@ -768,54 +758,50 @@ msgstr "Ingen"
 msgid "No Sidebars installed"
 msgstr "Inga sidopaneler är installerade"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:104
+#: ../extensions/sidebar/ephy-sidebar-extension.c:105
 msgid "_Sidebar"
 msgstr "_Sidopanel"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:105
+#: ../extensions/sidebar/ephy-sidebar-extension.c:106
 msgid "Show or hide the sidebar"
 msgstr "Visa eller dölj sidopanelen"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:411
+#. Translators: %s is the sidebar title
+#: ../extensions/sidebar/ephy-sidebar-extension.c:408
+#, c-format
+msgid "The sidebar already contains “%s”"
+msgstr "Denna sidopanel innehåller redan \"%s\""
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:412
+msgid "To use this sidebar, select it from the list of available sidebar pages."
+msgstr "För att använda denna sidopanel, välj den från listan av tillgängliga sidopanelssidor."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:415
+#: ../extensions/sidebar/ephy-sidebar-extension.c:441
+msgid "Add Sidebar"
+msgstr "Lägg till sidopanel"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:435
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr "Lägg till \"%s\" på sidopanelen?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:415
+#: ../extensions/sidebar/ephy-sidebar-extension.c:439
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr "Källan till den nya sidopanelssidan är \"%s\"."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:417
-msgid "Add Sidebar"
-msgstr "Lägg till sidopanel"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:421
+#: ../extensions/sidebar/ephy-sidebar-extension.c:445
 msgid "_Add Sidebar"
 msgstr "_Lägg till sidopanel"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:565
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:551
 msgid "_Look Up"
 msgstr "Slå _upp"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:572
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:558
 msgid "_GNOME Dictionary"
 msgstr "_GNOME-ordbok"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:190
-#, c-format
-msgid "Window “%s” (%d tab)"
-msgid_plural "Window “%s” (%d tabs)"
-msgstr[0] "Fönster \"%s\" (%d flik)"
-msgstr[1] "Fönster \"%s\" (%d flikar)"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:301
-msgid "Move Tab To Window"
-msgstr "Flytta flik till fönster"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:302
-msgid "Move the current tab to a different window"
-msgstr "Flytta den aktuella fliken till ett annat fönster"
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
@@ -841,14 +827,6 @@ msgstr "Läs om en flik periodiskt"
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Visa sidans certifikat och hantera certifikaten"
-
-#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:1
-msgid "Dashboard"
-msgstr "Dashboard"
-
-#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:2
-msgid "Send browsing information to Dashboard"
-msgstr "Skicka webbläsarinformation till Dashboard"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -970,14 +948,6 @@ msgstr "Grupperar nyligen öppnade flikar"
 msgid "Tab Groups"
 msgstr "Flikgrupper"
 
-#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:1
-msgid "Move tabs between windows"
-msgstr "Flytta flikar mellan fönster"
-
-#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:2
-msgid "Tabsmenu"
-msgstr "Flikmeny"
-
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
 msgstr "Indikerar nytt innehåll i bakgrundsflikar"
@@ -986,6 +956,26 @@ msgstr "Indikerar nytt innehåll i bakgrundsflikar"
 msgid "Tab States"
 msgstr "Fliktillstånd"
 
+#~ msgid "Server _Certificate"
+#~ msgstr "Server_certifikat"
+#~ msgid "Display the web server's certificate"
+#~ msgstr "Visa webbserverns certifikat"
+#~ msgid "Window “%s” (%d tab)"
+#~ msgid_plural "Window “%s” (%d tabs)"
+#~ msgstr[0] "Fönster \"%s\" (%d flik)"
+#~ msgstr[1] "Fönster \"%s\" (%d flikar)"
+#~ msgid "Move Tab To Window"
+#~ msgstr "Flytta flik till fönster"
+#~ msgid "Move the current tab to a different window"
+#~ msgstr "Flytta den aktuella fliken till ett annat fönster"
+#~ msgid "Dashboard"
+#~ msgstr "Dashboard"
+#~ msgid "Send browsing information to Dashboard"
+#~ msgstr "Skicka webbläsarinformation till Dashboard"
+#~ msgid "Move tabs between windows"
+#~ msgstr "Flytta flikar mellan fönster"
+#~ msgid "Tabsmenu"
+#~ msgstr "Flikmeny"
 #~ msgid "Add a bookmarks menu to the panel's notification area"
 #~ msgstr "Lägg till en bokmärkesmeny till panelens notifieringsyta"
 #~ msgid "Bookmarks Tray"
