@@ -2,22 +2,21 @@
 # translation of es.po to Spanish
 # This file is distributed under the same license as the epiphany package.
 # Copyright (C) 2003 The Free Software Foundation.
-# Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2004, 2005, 2006.
 #
+# Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2004, 2005, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=epiphany-extensions\n"
-"POT-Creation-Date: 2006-08-21 11:05+0200\n"
-"PO-Revision-Date: 2006-08-21 11:06+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
+"POT-Creation-Date: 2006-09-03 01:43+0200\n"
+"PO-Revision-Date: 2006-09-03 01:45+0200\n"
 "Last-Translator: Francisco Javier F. Serrador <serrador@cvs.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: ../extensions/actions/action-properties.glade.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
@@ -370,7 +369,7 @@ msgstr "Muestra la consola Java"
 
 #: ../extensions/page-info/ephy-page-info-extension.c:67
 msgid "Pa_ge Information"
-msgstr "Info de la _página"
+msgstr "Información de la _página"
 
 #: ../extensions/page-info/ephy-page-info-extension.c:69
 msgid "Display page information in a dialog"
@@ -714,8 +713,7 @@ msgstr "_Suscribirse a este proveedor"
 
 #: ../extensions/rss/ephy-rss-extension.c:107
 msgid "Subscribe to this feed in your favorite news reader"
-msgstr ""
-"Suscribirse a este proveedor de noticias en su lector de noticias favorito"
+msgstr "Suscribirse a este proveedor de noticias en su lector de noticias favorito"
 
 #: ../extensions/rss/ephy-rss-extension.c:396
 msgid "Subscribe to site's news feed"
@@ -799,9 +797,10 @@ msgid "The sidebar already contains “%s”"
 msgstr "La barra lateral ya contiene  «%s»"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:412
-msgid ""
-"To use this sidebar, select it from the list of available sidebar pages."
-msgstr "Para usar esta barra lateral, seleccionela desde la lista de páginas disponibles."
+msgid "To use this sidebar, select it from the list of available sidebar pages."
+msgstr ""
+"Para usar esta barra lateral, seleccionela desde la lista de páginas "
+"disponibles."
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:415
 #: ../extensions/sidebar/ephy-sidebar-extension.c:441
@@ -860,8 +859,7 @@ msgstr "Visor de errores"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
 msgid "View error in web pages, validate web pages and check links"
-msgstr ""
-"Vea los errores en las páginas web, valida páginas web y comprueba enlaces"
+msgstr "Vea los errores en las páginas web, valida páginas web y comprueba enlaces"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
 msgid "Activate and deactivate extensions"
@@ -876,8 +874,7 @@ msgid "Favicon fallback"
 msgstr "Recuperación de Favicon"
 
 #: ../extensions/favicon/favicon.ephy-extension.in.h:2
-msgid ""
-"Loads /favicon.ico as favicon if the site doesn't use the standard method"
+msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
 msgstr "Carga /favicon.ico como favicon si el sitio no usa el método estándar"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
@@ -908,12 +905,11 @@ msgstr "Proporcionar acceso a la consola del complemento de Java"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
-msgstr ""
-"Muestra información acerca de los enlaces y los medios desde la página actual"
+msgstr "Muestra información acerca de los enlaces y los medios desde la página actual"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
 msgid "Page Info"
-msgstr "Info de la página"
+msgstr "Información de la página"
 
 #: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
 msgid "Edit site permissions"
@@ -928,8 +924,7 @@ msgid "News Feed Subscription"
 msgstr "Suscripción a proveedores de noticias"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
-msgid ""
-"Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr ""
 "Suscríbase a proveedores de noticias ofrecidos por la página web en su "
 "lector de noticias favorito"
@@ -952,12 +947,11 @@ msgstr "Ejemplo"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
 msgid "Select Stylesheet"
-msgstr "Seleccione la hoja de estilo"
+msgstr "Selección de la hoja de estilo"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
-msgstr ""
-"Seleccionar entre diferentes hojas de estilo ofrecidas por la página web"
+msgstr "Seleccionar entre diferentes hojas de estilo ofrecidas por la página web"
 
 #: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
 msgid "Adds a sidebar to windows"
@@ -991,31 +985,3 @@ msgstr "Indica el contenido nuevo en solapas en segundo plano"
 msgid "Tab States"
 msgstr "Estado de solapas"
 
-#~ msgid "Server _Certificate"
-#~ msgstr "_Certificado del servidor"
-
-#~ msgid "Display the web server's certificate"
-#~ msgstr "Mostrar el certificado del servidor web"
-
-#~ msgid "Window “%s” (%d tab)"
-#~ msgid_plural "Window “%s” (%d tabs)"
-#~ msgstr[0] "Ventana «%s»  (%d solapa)"
-#~ msgstr[1] "Ventana «%s» (%d solapas)"
-
-#~ msgid "Move Tab To Window"
-#~ msgstr "Mover solapa a la ventana"
-
-#~ msgid "Move the current tab to a different window"
-#~ msgstr "Mueve la solapa actual a una ventana diferente"
-
-#~ msgid "Dashboard"
-#~ msgstr "Pizarra"
-
-#~ msgid "Send browsing information to Dashboard"
-#~ msgstr "Enviar información de navegación a la Dashboard"
-
-#~ msgid "Move tabs between windows"
-#~ msgstr "Mover solapas entre las ventanas"
-
-#~ msgid "Tabsmenu"
-#~ msgstr "Menú de solapas"
