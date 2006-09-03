@@ -1,5 +1,5 @@
-# Copyright (C) 2000-2004 Marco Pesenti Gritti
-# Copyright (C) 2003, 2004, 2005, 2006 Christian Persch
+# Copyright © 2000-2004 Marco Pesenti Gritti
+# Copyright © 2003, 2004, 2005, 2006 Christian Persch
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -76,7 +76,7 @@ if test "x$gecko_cv_gecko" = "x"; then
 	ifelse([$3],,[AC_MSG_ERROR([No gecko found; you may need to adjust PKG_CONFIG_PATH or install a mozilla/firefox/xulrunner -devel package])],[$3])
 	gecko_cv_have_gecko=no
 elif ! ( echo "$_geckos" | egrep "(^| )$gecko_cv_gecko(\$| )" > /dev/null); then
-	AC_MSG_ERROR([Unknown gecko "gecko_cv_gecko" specified])
+	AC_MSG_ERROR([Unknown gecko "$gecko_cv_gecko" specified])
 else
 	ifelse([$2],,[],[$2])
 	gecko_cv_have_gecko=yes

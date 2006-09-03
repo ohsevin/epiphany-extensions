@@ -1,3 +1,13 @@
+2006-09-03  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:
+
+	Fix varargs.
+	
+	* m4/gecko.m4:
+
+	Sync with epiphany.
+
 2006-08-08  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* configure.ac:

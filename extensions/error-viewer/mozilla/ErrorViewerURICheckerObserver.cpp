@@ -64,7 +64,7 @@ ErrorViewerURICheckerObserver::~ErrorViewerURICheckerObserver()
 						   mNumLinksInvalid),
 					 mNumLinksInvalid);
 
-		msg = g_strconcat (part1, "\n", part2, NULL);
+		msg = g_strconcat (part1, "\n", part2, (char *) NULL);
 
 		link_checker_append (mChecker, ERROR_VIEWER_INFO, msg);
 
