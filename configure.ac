@@ -16,13 +16,13 @@
 #
 # $Id$
 
-AC_INIT([GNOME Web Browser Extensions],[2.15.2.90],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+AC_INIT([GNOME Web Browser Extensions],[2.16.0],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 
 GNOME_COMMON_INIT
 
-EPIPHANY_API_VERSION=2.15
+EPIPHANY_API_VERSION=2.16
 
-EPIPHANY_EXTENSIONS_MAJOR=2.15
+EPIPHANY_EXTENSIONS_MAJOR=2.16
 AC_SUBST(EPIPHANY_EXTENSIONS_MAJOR)
 
 AC_PREREQ([2.59])
@@ -36,8 +36,6 @@ AC_CONFIG_MACRO_DIR([m4])
 AM_INIT_AUTOMAKE([1.9 foreign dist-bzip2 no-dist-gzip tar-ustar])
 
 AM_MAINTAINER_MODE
-
-IT_PROG_INTLTOOL([0.35])
 
 AM_DISABLE_STATIC
 AC_ENABLE_SHARED(yes)
@@ -76,11 +74,12 @@ fi
 # Internationalisation
 # ********************************
 
+IT_PROG_INTLTOOL([0.35.0])
+
 GETTEXT_PACKAGE=epiphany-extensions-$EPIPHANY_API_VERSION
 AC_SUBST([GETTEXT_PACKAGE])
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE],["$GETTEXT_PACKAGE"], [Gettext package])
 AM_GLIB_GNU_GETTEXT
-AM_GLIB_DEFINE_LOCALEDIR([LOCALE_DIR])
 
 # ********************************
 # Documentation
@@ -92,10 +91,10 @@ GNOME_DOC_INIT
 # pkg config checks
 # ********************************
 
-EPIPHANY_REQUIRED=1.9.7
+EPIPHANY_REQUIRED=2.16.0
 LIBXML_REQUIRED=2.6.0
-LIBGLIB_REQUIRED=2.10.1
-LIBGTK_REQUIRED=2.9.0
+LIBGLIB_REQUIRED=2.12.0
+LIBGTK_REQUIRED=2.10.0
 
 AC_SUBST([EPIPHANY_REQUIRED])
 AC_SUBST([LIBXML_REQUIRED])

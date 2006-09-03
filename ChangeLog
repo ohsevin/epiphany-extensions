@@ -1,5 +1,11 @@
 2006-09-03  Christian Persch  <chpe@cvs.gnome.org>
 
+	=== Release 2.16.0 ===
+
+	* configure.ac:
+
+2006-09-03  Christian Persch  <chpe@cvs.gnome.org>
+
 	* extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:
 
 	Fix varargs.
