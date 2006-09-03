@@ -16,13 +16,13 @@
 #
 # $Id$
 
-AC_INIT([GNOME Web Browser Extensions],[2.16.0.90],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+AC_INIT([GNOME Web Browser Extensions],[2.17.0],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 
 GNOME_COMMON_INIT
 
-EPIPHANY_API_VERSION=2.16
+EPIPHANY_API_VERSION=2.17
 
-EPIPHANY_EXTENSIONS_MAJOR=2.16
+EPIPHANY_EXTENSIONS_MAJOR=2.17
 AC_SUBST(EPIPHANY_EXTENSIONS_MAJOR)
 
 AC_PREREQ([2.59])
@@ -91,7 +91,7 @@ GNOME_DOC_INIT
 # pkg config checks
 # ********************************
 
-EPIPHANY_REQUIRED=2.16.0
+EPIPHANY_REQUIRED=2.17.0
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.12.0
 LIBGTK_REQUIRED=2.10.0
