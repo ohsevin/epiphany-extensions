@@ -5,13 +5,13 @@
 # Yukhiro Nakai <nakai@gnome.gr.jp>, 2004.
 # Takeshi AIHANA <aihana@gnome.gr.jp>, 2004-2006.
 #
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions HEAD\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-20 23:05+0900\n"
-"PO-Revision-Date: 2006-02-20 23:05+0900\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=epiphany-extensions\n"
+"POT-Creation-Date: 2006-09-04 16:24+0900\n"
+"PO-Revision-Date: 2006-08-27 23:04+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -104,16 +104,16 @@ msgstr "コマンドを実行できませんでした"
 msgid "Could not Run Command"
 msgstr "コマンドを実行できませんでした"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:519
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
 msgid "No action selected."
 msgstr "アクションが選択されていません"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:529
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
-msgstr[0] "%i 個のアクションを選択しました"
-msgstr[1] "%i 個のアクションを選択しました"
+msgstr[0] "%i個のアクションを選択しました"
+msgstr[1] "%i個のアクションを選択しました"
 
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
@@ -136,44 +136,34 @@ msgstr "自動読み込み(_A)"
 msgid "Reload the page periodically"
 msgstr "定期的にページを読み込みます"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:173
+#: ../extensions/certificates/ephy-certificates-extension.c:177
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "証明書の管理"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:203
+#: ../extensions/certificates/ephy-certificates-extension.c:208
 msgid "Security Devices"
 msgstr "セキュリティ・デバイス"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:321
+#: ../extensions/certificates/ephy-certificates-extension.c:220
 msgid "Manage _Certificates"
 msgstr "証明書の管理(_C)"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:323
+#: ../extensions/certificates/ephy-certificates-extension.c:222
 msgid "Manage your certificates"
 msgstr "お使いの証明書を管理します"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:327
+#: ../extensions/certificates/ephy-certificates-extension.c:226
 msgid "Manage Security _Devices"
 msgstr "セキュリティ・デバイスの管理(_D)"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:329
+#: ../extensions/certificates/ephy-certificates-extension.c:228
 msgid "Manage your security devices"
 msgstr "お使いのセキュリティ・デバイスを管理します"
-
-#. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:336
-msgid "Server _Certificate"
-msgstr "サーバ証明書(_C)"
-
-#. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:338
-msgid "Display the web server's certificate"
-msgstr "ウェブ・サーバの証明書を表示します"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
@@ -211,7 +201,7 @@ msgid "Error Viewer"
 msgstr "エラー・ビューア"
 
 #. Don't bother looking for source lines -- they're not there
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:108
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:96
 #, c-format
 msgid ""
 "Error:\n"
@@ -220,21 +210,21 @@ msgstr ""
 "エラー:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:138
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:126
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
 "%s"
 msgstr ""
-"%s の %d 行目に Javascript エラー:\n"
+"%s の %d行目に Javascript エラー:\n"
 "%s"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
-msgstr[0] "%d 個の不正なリンクが見つかりました"
-msgstr[1] "%d 個の不正なリンクが見つかりました"
+msgstr[0] "%d個の不正なリンクが見つかりました"
+msgstr[1] "%d個の不正なリンクが見つかりました"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
@@ -249,8 +239,8 @@ msgstr ""
 #, c-format
 msgid "Checking %d Link on “%s”"
 msgid_plural "Checking %d Links on “%s”"
-msgstr[0] "\"%2$s\" にある %1$d 個のリンクをチェックしています"
-msgstr[1] "\"%2$s\" にある %1$d 個のリンクをチェックしています"
+msgstr[0] "\"%2$s\" にある %1$d個のリンクをチェックしています"
+msgstr[1] "\"%2$s\" にある %1$d個のリンクをチェックしています"
 
 #: ../extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
@@ -265,8 +255,8 @@ msgstr ""
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
-msgstr[0] "%d 個のエラーが見つかりました"
-msgstr[1] "%d 個のエラーが見つかりました"
+msgstr[0] "%d個のエラーが見つかりました"
+msgstr[1] "%d個のエラーが見つかりました"
 
 #: ../extensions/error-viewer/sgml-validator.c:169
 #, c-format
@@ -322,11 +312,11 @@ msgstr ""
 "%s の中に HTML エラー:\n"
 "正しい DOCTYPE が指定されていません。"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:340
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
 msgid "Enabled"
 msgstr "有効"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:348
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
 #: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "説明"
@@ -339,13 +329,21 @@ msgstr "<b>利用可能な拡張機能の一覧</b>"
 msgid "Extensions"
 msgstr "Epiphany 拡張機能"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
 msgid "_Extensions..."
 msgstr "拡張機能(_E)..."
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
 msgid "Load and unload extensions"
 msgstr "拡張機能の有効/無効を設定します"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "_Extensions"
+msgstr "拡張機能(_E)"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
+msgid "Help about extensions"
+msgstr "拡張機能のヘルプです"
 
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
 msgid "Install User _Script"
@@ -370,11 +368,11 @@ msgstr "Java コンソール(_J)"
 msgid "Show Java Console"
 msgstr "Java コンソールを表示します"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:65
+#: ../extensions/page-info/ephy-page-info-extension.c:67
 msgid "Pa_ge Information"
 msgstr "ページ情報(_G)"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/page-info/ephy-page-info-extension.c:69
 msgid "Display page information in a dialog"
 msgstr "ページ情報をダイアログに表示します"
 
@@ -691,12 +689,12 @@ msgid "Popup Windows"
 msgstr "ウィンドウのポップアップ"
 
 #. stock icon
-#: ../extensions/permissions/ephy-permissions-extension.c:152
+#: ../extensions/permissions/ephy-permissions-extension.c:156
 msgid "Site _Permissions"
 msgstr "サイトの権限(_P)"
 
 #. shortcut key
-#: ../extensions/permissions/ephy-permissions-extension.c:154
+#: ../extensions/permissions/ephy-permissions-extension.c:158
 msgid "Manage web site permissions"
 msgstr "ウェブ・サイトの権限を管理します"
 
@@ -717,7 +715,7 @@ msgstr "この配信元を購読する(_S)"
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "この配信元をお気に入りのニュース・リーダで購読します"
 
-#: ../extensions/rss/ephy-rss-extension.c:392
+#: ../extensions/rss/ephy-rss-extension.c:396
 msgid "Subscribe to site's news feed"
 msgstr "このサイトのニュース配信元を購読します"
 
@@ -770,11 +768,11 @@ msgstr "スタイル(_Y)"
 msgid "Select a different style for this page"
 msgstr "このページをレンダリングする別のスタイルを選択して下さい"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:224
 msgid "Default"
 msgstr "デフォルト"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:235
 msgid "None"
 msgstr "なし"
 
@@ -782,54 +780,53 @@ msgstr "なし"
 msgid "No Sidebars installed"
 msgstr "サイドバーは未インストール"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:104
+#: ../extensions/sidebar/ephy-sidebar-extension.c:105
 msgid "_Sidebar"
 msgstr "サイドバー(_S)"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:105
+#: ../extensions/sidebar/ephy-sidebar-extension.c:106
 msgid "Show or hide the sidebar"
 msgstr "サイドバーの表示/非表示を切り替えます"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:411
+#. Translators: %s is the sidebar title
+#: ../extensions/sidebar/ephy-sidebar-extension.c:408
+#, c-format
+msgid "The sidebar already contains “%s”"
+msgstr "サイドバーには既に \"%s\" が含まれています"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:412
+msgid ""
+"To use this sidebar, select it from the list of available sidebar pages."
+msgstr ""
+"このサイドバーを利用するには、利用可能なサイドバー・ペインの一覧から選択して"
+"下さい。"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:415
+#: ../extensions/sidebar/ephy-sidebar-extension.c:441
+msgid "Add Sidebar"
+msgstr "サイドバーを追加します"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:435
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr "\"%s\" をサイドバーへ追加しますか？"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:415
+#: ../extensions/sidebar/ephy-sidebar-extension.c:439
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr "新しいサイドバー・ページのソースは \"%s\" です"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:417
-msgid "Add Sidebar"
-msgstr "サイドバーを追加します"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:421
+#: ../extensions/sidebar/ephy-sidebar-extension.c:445
 msgid "_Add Sidebar"
 msgstr "サイドバーの追加(_A)"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:565
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:551
 msgid "_Look Up"
 msgstr "検索(_L)"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:572
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:558
 msgid "_GNOME Dictionary"
 msgstr "GNOME 辞書(_G)"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:190
-#, c-format
-msgid "Window “%s” (%d tab)"
-msgid_plural "Window “%s” (%d tabs)"
-msgstr[0] "ウィンドウ \"%s\" (%d 個のタブ)"
-msgstr[1] "ウィンドウ \"%s\" (%d 個のタブ)"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:301
-msgid "Move Tab To Window"
-msgstr "タブの移動"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:302
-msgid "Move the current tab to a different window"
-msgstr "このタブを他のウインドウへ移動します"
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
@@ -854,14 +851,6 @@ msgstr "定期的にタブを読み込みます"
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "ページの証明書を表示したり管理します"
-
-#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:1
-msgid "Dashboard"
-msgstr "Dashboard"
-
-#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:2
-msgid "Send browsing information to Dashboard"
-msgstr "ブラウザで表示した情報を Dashboard へ送信します"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -988,14 +977,6 @@ msgstr "新たに開いた複数のタブをグループ化します"
 #: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
 msgid "Tab Groups"
 msgstr "タブのグループ化"
-
-#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:1
-msgid "Move tabs between windows"
-msgstr "ウィンドウとウィンドウの間でタブの移動を可能にします"
-
-#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:2
-msgid "Tabsmenu"
-msgstr "タブメニュー"
 
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
