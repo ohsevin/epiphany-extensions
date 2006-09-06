@@ -81,7 +81,7 @@ ephy_tab_move_menu_get_type (void)
 GType
 ephy_tab_move_menu_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (EphyTabMoveMenuClass),
 		NULL,

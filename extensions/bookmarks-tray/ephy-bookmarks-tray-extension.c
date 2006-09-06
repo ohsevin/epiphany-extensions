@@ -114,7 +114,7 @@ ephy_bookmarks_tray_extension_get_type (void)
 GType
 ephy_bookmarks_tray_extension_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (EphyBookmarksTrayExtensionClass),
 		NULL, /* base_init */

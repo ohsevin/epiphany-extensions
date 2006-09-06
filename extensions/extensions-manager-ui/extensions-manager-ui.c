@@ -98,7 +98,7 @@ extensions_manager_ui_get_type (void)
 GType
 extensions_manager_ui_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (ExtensionsManagerUIClass),
 		NULL, /* base_init */

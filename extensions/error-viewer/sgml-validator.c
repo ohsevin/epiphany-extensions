@@ -79,7 +79,7 @@ sgml_validator_get_type (void)
 GType
 sgml_validator_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (SgmlValidatorClass),
 		NULL, /* base_init */

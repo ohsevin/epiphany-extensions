@@ -76,7 +76,7 @@ ephy_adblock_extension_get_type (void)
 GType
 ephy_adblock_extension_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (EphyAdblockExtensionClass),
 		NULL, /* base_init */
@@ -89,14 +89,14 @@ ephy_adblock_extension_register_type (GTypeModule *module)
 		(GInstanceInitFunc) ephy_adblock_extension_init
 	};
 
-	static const GInterfaceInfo adblock_info =
+	const GInterfaceInfo adblock_info =
 	{
 		(GInterfaceInitFunc) ephy_adblock_adblock_iface_init,
 		NULL,
 		NULL
 	};
 
-	static const GInterfaceInfo extension_info =
+	const GInterfaceInfo extension_info =
 	{
 		(GInterfaceInitFunc) ephy_adblock_extension_iface_init,
 		NULL,

@@ -126,7 +126,7 @@ ephy_error_viewer_extension_get_type (void)
 GType
 ephy_error_viewer_extension_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (EphyErrorViewerExtensionClass),
 		NULL, /* base_init */
@@ -139,7 +139,7 @@ ephy_error_viewer_extension_register_type (GTypeModule *module)
 		(GInstanceInitFunc) ephy_error_viewer_extension_init
 	};
 
-	static const GInterfaceInfo extension_info =
+	const GInterfaceInfo extension_info =
 	{
 		(GInterfaceInitFunc) ephy_error_viewer_extension_iface_init,
 		NULL,

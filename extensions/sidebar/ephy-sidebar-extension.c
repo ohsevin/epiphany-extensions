@@ -127,7 +127,7 @@ ephy_sidebar_extension_get_type (void)
 GType
 ephy_sidebar_extension_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (EphySidebarExtensionClass),
 		NULL, /* base_init */
@@ -140,7 +140,7 @@ ephy_sidebar_extension_register_type (GTypeModule *module)
 		(GInstanceInitFunc) ephy_sidebar_extension_init
 	};
 
-	static const GInterfaceInfo extension_info =
+	const GInterfaceInfo extension_info =
 	{
 		(GInterfaceInitFunc) ephy_sidebar_extension_iface_init,
 		NULL,

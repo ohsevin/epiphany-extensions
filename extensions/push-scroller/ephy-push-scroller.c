@@ -368,7 +368,7 @@ ephy_push_scroller_get_type (void)
 GType
 ephy_push_scroller_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (EphyPushScrollerClass),
 		NULL, /* base_init */

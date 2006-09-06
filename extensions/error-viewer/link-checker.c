@@ -63,7 +63,7 @@ link_checker_get_type (void)
 GType
 link_checker_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (LinkCheckerClass),
 		NULL, /* base_init */

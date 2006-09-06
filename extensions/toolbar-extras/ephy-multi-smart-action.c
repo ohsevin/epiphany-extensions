@@ -110,7 +110,7 @@ ephy_multi_smart_action_get_type (void)
 GType
 ephy_multi_smart_action_register_type (GTypeModule *module)
 {
-	static const GTypeInfo type_info =
+	const GTypeInfo type_info =
 	{
 		sizeof (EphyMultiSmartActionClass),
 		(GBaseInitFunc) NULL,

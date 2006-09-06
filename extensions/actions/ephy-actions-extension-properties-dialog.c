@@ -116,7 +116,7 @@ static void ephy_actions_extension_properties_dialog_name_entry_changed_cb
 GType
 ephy_actions_extension_properties_dialog_register_type (GTypeModule *module)
 {
-	static const GTypeInfo info = {
+	const GTypeInfo info = {
 		sizeof (EphyActionsExtensionPropertiesDialogClass),
 		NULL,
 		NULL,

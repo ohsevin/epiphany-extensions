@@ -724,7 +724,7 @@ ephy_permissions_dialog_get_type (void)
 
 	if (G_UNLIKELY (type == 0))
 	{
-		static const GTypeInfo our_info =
+		const GTypeInfo our_info =
 		{
 			sizeof (EphyPermissionsDialogClass),
 			NULL, /* base_init */
@@ -757,7 +757,7 @@ ephy_permissions_dialog_get_type (void)
 GType
 ephy_permissions_dialog_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (EphyPermissionsDialogClass),
 		NULL, /* base_init */

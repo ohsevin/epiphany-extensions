@@ -117,7 +117,7 @@ static const GtkActionEntry edit_entries[] = {
 GType
 ephy_actions_extension_register_type (GTypeModule *module)
 {
-	static const GTypeInfo info = {
+	const GTypeInfo info = {
 		sizeof (EphyActionsExtensionClass),
 		NULL,
 		NULL,
@@ -128,7 +128,7 @@ ephy_actions_extension_register_type (GTypeModule *module)
 		0,
 		(GInstanceInitFunc) ephy_actions_extension_init
 	};
-	static const GInterfaceInfo extension_info = {
+	const GInterfaceInfo extension_info = {
 		(GInterfaceInitFunc) ephy_actions_extension_iface_init,
 		NULL,
 		NULL
