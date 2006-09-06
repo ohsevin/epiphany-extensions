@@ -77,7 +77,7 @@ galago_gtk_icon_entry_get_type(void)
 
 	if (!type)
 	{
-		static const GTypeInfo info =
+		const GTypeInfo info =
 		{
 			sizeof(GalagoGtkIconEntryClass),
 			NULL,
@@ -90,7 +90,7 @@ galago_gtk_icon_entry_get_type(void)
 			(GInstanceInitFunc)galago_gtk_icon_entry_init
 		};
 
-		static const GInterfaceInfo editable_info =
+		const GInterfaceInfo editable_info =
 		{
 			(GInterfaceInitFunc)galago_gtk_icon_entry_editable_init,
 			NULL,

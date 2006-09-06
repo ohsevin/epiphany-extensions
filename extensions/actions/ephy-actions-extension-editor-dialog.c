@@ -146,7 +146,7 @@ ephy_actions_extension_editor_dialog_response_cb
 GType
 ephy_actions_extension_editor_dialog_register_type (GTypeModule *module)
 {
-	static const GTypeInfo info = {
+	const GTypeInfo info = {
 		sizeof (EphyActionsExtensionEditorDialogClass),
 		NULL,
 		NULL,

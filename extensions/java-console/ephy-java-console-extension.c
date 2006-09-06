@@ -122,7 +122,7 @@ ephy_java_console_extension_get_type (void)
 GType
 ephy_java_console_extension_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (EphyJavaConsoleExtensionClass),
 		NULL, /* base_init */
@@ -135,7 +135,7 @@ ephy_java_console_extension_register_type (GTypeModule *module)
 		NULL /* instance_init */
 	};
 
-	static const GInterfaceInfo extension_info =
+	const GInterfaceInfo extension_info =
 	{
 		(GInterfaceInitFunc) ephy_java_console_extension_iface_init,
 		NULL,

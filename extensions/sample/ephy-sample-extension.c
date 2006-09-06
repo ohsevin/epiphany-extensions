@@ -157,7 +157,7 @@ ephy_sample_extension_get_type (void)
 GType
 ephy_sample_extension_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (EphySampleExtensionClass),
 		NULL, /* base_init */
@@ -170,7 +170,7 @@ ephy_sample_extension_register_type (GTypeModule *module)
 		(GInstanceInitFunc) ephy_sample_extension_init
 	};
 
-	static const GInterfaceInfo extension_info =
+	const GInterfaceInfo extension_info =
 	{
 		(GInterfaceInitFunc) ephy_sample_extension_iface_init,
 		NULL,

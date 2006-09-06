@@ -88,7 +88,7 @@ smart_bookmarks_extension_get_type (void)
 GType
 smart_bookmarks_extension_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (SmartBookmarksExtensionClass),
 		NULL, /* base_init */
@@ -101,7 +101,7 @@ smart_bookmarks_extension_register_type (GTypeModule *module)
 		(GInstanceInitFunc) smart_bookmarks_extension_init
 	};
 
-	static const GInterfaceInfo extension_info =
+	const GInterfaceInfo extension_info =
 	{
 		(GInterfaceInitFunc) smart_bookmarks_extension_iface_init,
 		NULL,

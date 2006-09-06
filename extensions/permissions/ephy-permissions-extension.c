@@ -67,7 +67,7 @@ ephy_permissions_extension_get_type (void)
 GType
 ephy_permissions_extension_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (EphyPermissionsExtensionClass),
 		NULL, /* base_init */
@@ -80,7 +80,7 @@ ephy_permissions_extension_register_type (GTypeModule *module)
 		(GInstanceInitFunc) ephy_permissions_extension_init
 	};
 
-	static const GInterfaceInfo extension_info =
+	const GInterfaceInfo extension_info =
 	{
 		(GInterfaceInitFunc) ephy_permissions_extension_iface_init,
 		NULL,

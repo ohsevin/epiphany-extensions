@@ -234,7 +234,7 @@ page_info_dialog_get_type (void)
 GType 
 page_info_dialog_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (PageInfoDialogClass),
 		NULL, /* base_init */

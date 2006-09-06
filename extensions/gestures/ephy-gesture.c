@@ -86,7 +86,7 @@ ephy_gesture_get_type (void)
 GType
 ephy_gesture_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (EphyGestureClass),
 		NULL, /* base_init */

@@ -86,7 +86,7 @@ ephy_sidebar_get_type (void)
 GType
 ephy_sidebar_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (EphySidebarClass),
 		NULL, /* base_init */

@@ -79,7 +79,7 @@ error_viewer_get_type (void)
 GType
 error_viewer_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (ErrorViewerClass),
 		NULL, /* base_init */

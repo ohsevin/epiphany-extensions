@@ -197,7 +197,7 @@ ephy_livehttpheaders_extension_get_type (void)
 GType
 ephy_livehttpheaders_extension_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (EphyLivehttpheadersExtensionClass),
 		NULL, /* base_init */
@@ -210,7 +210,7 @@ ephy_livehttpheaders_extension_register_type (GTypeModule *module)
 		(GInstanceInitFunc) ephy_livehttpheaders_extension_init
 	};
 
-	static const GInterfaceInfo extension_info =
+	const GInterfaceInfo extension_info =
 	{
 		(GInterfaceInitFunc) ephy_livehttpheaders_extension_iface_init,
 		NULL,

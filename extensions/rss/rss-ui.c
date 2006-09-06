@@ -717,7 +717,7 @@ rss_ui_get_type (void)
 GType
 rss_ui_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (RssUIClass),
 		NULL, /* base_init */

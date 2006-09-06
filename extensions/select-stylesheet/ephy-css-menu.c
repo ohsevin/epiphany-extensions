@@ -89,7 +89,7 @@ ephy_css_menu_get_type (void)
 GType
 ephy_css_menu_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (EphyCSSMenuClass),
 		NULL, /* base_init */

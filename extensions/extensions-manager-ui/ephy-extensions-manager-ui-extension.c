@@ -92,7 +92,7 @@ ephy_extensions_manager_ui_extension_get_type (void)
 GType
 ephy_extensions_manager_ui_extension_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (EphyExtensionsManagerUIExtensionClass),
 		NULL, /* base_init */
@@ -105,7 +105,7 @@ ephy_extensions_manager_ui_extension_register_type (GTypeModule *module)
 		(GInstanceInitFunc) ephy_extensions_manager_ui_extension_init
 	};
 
-	static const GInterfaceInfo extension_info =
+	const GInterfaceInfo extension_info =
 	{
 		(GInterfaceInitFunc) ephy_extensions_manager_ui_extension_iface_init,
 		NULL,

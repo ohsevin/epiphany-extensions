@@ -61,7 +61,7 @@ ad_uri_tester_get_type (void)
 GType
 ad_uri_tester_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (AdUriTesterClass),
 		NULL, /* base_init */

@@ -493,7 +493,7 @@ greasemonkey_script_get_type (void)
 GType
 greasemonkey_script_register_type (GTypeModule *module)
 {
-	static const GTypeInfo our_info =
+	const GTypeInfo our_info =
 	{
 		sizeof (GreasemonkeyScriptClass),
 		NULL, /* base_init */
