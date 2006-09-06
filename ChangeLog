@@ -1,3 +1,14 @@
+2006-09-06  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/error-viewer/link-checker.c:
+	(link_checker_register_type), (link_checker_class_init):
+	* extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:
+	* extensions/error-viewer/mozilla/mozilla-link-checker.cpp:
+	* extensions/error-viewer/mozilla/register-listener.cpp:
+
+	No need to register a factory for the observer, just instantiate the
+	class directly.
+
 2006-09-06 Christian Persch  <chpe@cvs.gnome.org>
 
 	* *.c *.cpp:
