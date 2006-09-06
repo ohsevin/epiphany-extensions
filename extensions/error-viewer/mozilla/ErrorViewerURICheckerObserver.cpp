@@ -45,10 +45,10 @@
 NS_IMPL_ISUPPORTS1(ErrorViewerURICheckerObserver, nsIRequestObserver)
 
 ErrorViewerURICheckerObserver::ErrorViewerURICheckerObserver()
+  : mNumLinksChecked (0)
+  , mNumLinksInvalid (0)
+  , mNumLinksTotal (0)
 {
-	mNumLinksTotal = 0;
-	mNumLinksChecked = 0;
-	mNumLinksInvalid = 0;
 }
                                                                                 
 ErrorViewerURICheckerObserver::~ErrorViewerURICheckerObserver()

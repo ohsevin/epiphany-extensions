@@ -35,11 +35,9 @@ extern "C" void *
 mozilla_register_error_listener (GObject *dialog)
 {
 	ErrorViewerConsoleListener *listener;
-	nsresult rv;
 
-	nsCOMPtr<nsIConsoleService> consoleService =
-		do_GetService (NS_CONSOLESERVICE_CONTRACTID, &rv);
-	g_return_val_if_fail (NS_SUCCEEDED (rv), NULL);
+	nsCOMPtr<nsIConsoleService> consoleService (do_GetService (NS_CONSOLESERVICE_CONTRACTID));
+	NS_ENSURE_TRUE (consoleService, NULL);
 
 	listener = new ErrorViewerConsoleListener ();
 	consoleService->RegisterListener (listener);
@@ -52,13 +50,10 @@ mozilla_register_error_listener (GObject *dialog)
 extern "C" void
 mozilla_unregister_error_listener (void *listener)
 {
-	nsresult rv;
+	NS_ENSURE_TRUE (listener, );
 
-	nsCOMPtr<nsIConsoleService> consoleService =
-		do_GetService (NS_CONSOLESERVICE_CONTRACTID, &rv);
-	g_return_if_fail (NS_SUCCEEDED (rv));
+	nsCOMPtr<nsIConsoleService> consoleService (do_GetService (NS_CONSOLESERVICE_CONTRACTID));
+	NS_ENSURE_TRUE (consoleService, );
 
 	consoleService->UnregisterListener ((ErrorViewerConsoleListener *) listener);
-
-	/* FIXME: Are we leaking the listener? */
 }

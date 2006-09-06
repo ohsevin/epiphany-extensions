@@ -34,7 +34,6 @@
 #define MAX_NUM_ROWS 50
 
 static void link_checker_class_init (LinkCheckerClass *klass);
-static void link_checker_class_finalize (LinkCheckerClass *klass);
 static void link_checker_init (LinkChecker *dialog);
 static void link_checker_finalize (GObject *object);
 
@@ -69,7 +68,7 @@ link_checker_register_type (GTypeModule *module)
 		NULL, /* base_init */
 		NULL, /* base_finalize */
 		(GClassInitFunc) link_checker_class_init,
-		(GClassFinalizeFunc) link_checker_class_finalize,
+		(GClassFinalizeFunc) NULL,
 		NULL, /* class_data */
 		sizeof (LinkChecker),
 		0, /* n_preallocs */
@@ -174,14 +173,6 @@ link_checker_class_init (LinkCheckerClass *klass)
 	object_class->finalize = link_checker_finalize;
 
 	g_type_class_add_private (object_class, sizeof (LinkCheckerPrivate));
-
-	mozilla_register_link_checker_component ();
-}
-
-static void
-link_checker_class_finalize (LinkCheckerClass *klass)
-{
-	mozilla_unregister_link_checker_component ();
 }
 
 static void
