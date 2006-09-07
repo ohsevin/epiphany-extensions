@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
 "POT-Creation-Date: 2006-09-02 12:50+0200\n"
-"PO-Revision-Date: 2006-09-02 16:51+0100\n"
+"PO-Revision-Date: 2006-09-07 15:13+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -419,7 +419,7 @@ msgstr "Bild"
 
 #: ../extensions/page-info/page-info-dialog.c:940
 msgid "Embed"
-msgstr "Inbäddaren"
+msgstr "Inbäddad"
 
 #: ../extensions/page-info/page-info-dialog.c:943
 msgid "Object"
@@ -427,7 +427,7 @@ msgstr "Objekt"
 
 #: ../extensions/page-info/page-info-dialog.c:946
 msgid "Applet"
-msgstr "Applet"
+msgstr "Panelprogram"
 
 #: ../extensions/page-info/page-info-dialog.c:949
 msgid "Icon"
@@ -894,7 +894,7 @@ msgstr "Rättigheter"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:1
 msgid "News Feed Subscription"
-msgstr "Pprenumeration på nyhetskälla"
+msgstr "Prenumeration på nyhetskanal"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
