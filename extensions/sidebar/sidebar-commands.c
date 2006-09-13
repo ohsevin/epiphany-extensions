@@ -1,6 +1,6 @@
 /*
- *  Copyright (C) 2000-2004 Marco Pesenti Gritti
- *  Copyright (C) 2004 Crispin Flowerday
+ *  Copyright © 2000-2004 Marco Pesenti Gritti
+ *  Copyright © 2004 Crispin Flowerday
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by

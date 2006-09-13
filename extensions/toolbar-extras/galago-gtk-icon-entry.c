@@ -1,7 +1,7 @@
 /**
  * @file libgalago-gtk/galago-gtk-icon-entry.c Entry widget
  *
- * @Copyright (C) 2004 Christian Hammond.
+ * @Copyright © 2004 Christian Hammond.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public

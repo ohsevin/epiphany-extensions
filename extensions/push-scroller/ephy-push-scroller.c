@@ -1,8 +1,8 @@
 /*
- *  Copyright (C) 2002 Ricardo Fernádez Pascual
- *  Copyright (C) 2005 Crispin Flowerday
- *  Copyright (C) 2005 Christian Persch
- *  Copyright (C) 2005 Samuel Abels
+ *  Copyright © 2002 Ricardo Fernádez Pascual
+ *  Copyright © 2005 Crispin Flowerday
+ *  Copyright © 2005 Christian Persch
+ *  Copyright © 2005 Samuel Abels
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by

@@ -1,13 +1,13 @@
 /*
- *  Copyright (C) 2004 Adam Hooper
- *  Copyright (C) 2004, 2005 Christian Persch
- *  Copyright (C) 2004, 2005 Jean-François Rameau
+ *  Copyright © 2004 Adam Hooper
+ *  Copyright © 2004, 2005 Christian Persch
+ *  Copyright © 2004, 2005 Jean-François Rameau
  *
  *  Heavily based on Galeon's:
- *      Copyright (C) 2003 Philip Langdale
+ *      Copyright © 2003 Philip Langdale
  *
  *  ...in turn, Galeon's was based on PDM Dialog:
- *  	Copyright (C) 2002 Jorn Baayen
+ *  	Copyright © 2002 Jorn Baayen
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by

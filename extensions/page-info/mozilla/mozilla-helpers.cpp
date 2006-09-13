@@ -1,7 +1,7 @@
 /*
- *  Copyright (C) 2004 Adam Hooper
- *  Copyright (C) 2004, 2005 Jean-François Rameau
- *  Copyright (C) 2004, 2005 Christian Persch
+ *  Copyright © 2004 Adam Hooper
+ *  Copyright © 2004, 2005 Jean-François Rameau
+ *  Copyright © 2004, 2005 Christian Persch
  *
  *  Ripped from GaleonWrapper.cpp, which has no copyright info besides Marco...
  *

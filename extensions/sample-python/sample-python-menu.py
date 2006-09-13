@@ -3,7 +3,7 @@
 #
 # Sample Python Menu extension: creates menu entries using Python
 #
-# Copyright (C) 2005 Adam Hooper
+# Copyright © 2005 Adam Hooper
 #
 # Places two menu entries in the Tools menu: one which is always enabled, and
 # one which will only be enabled when the currently-viewed page has finished

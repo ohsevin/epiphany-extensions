@@ -1,6 +1,6 @@
 /*
- *  Copyright (C) 2000 Marco Pesenti Gritti
- *  Copyright (C) 2004 Adam Hooper
+ *  Copyright © 2000 Marco Pesenti Gritti
+ *  Copyright © 2004 Adam Hooper
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by

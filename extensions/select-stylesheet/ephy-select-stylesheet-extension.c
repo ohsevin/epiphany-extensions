@@ -1,9 +1,9 @@
 /*
- *  Copyright (C) 2004 Adam Hooper
+ *  Copyright © 2004 Adam Hooper
  *
  *  Ported from Galeon:
- *      Copyright (C) 2002 Ricardo Fernández Pascual
- *      Copyright (C) 2004 Crispin Flowerday
+ *      Copyright © 2002 Ricardo Fernández Pascual
+ *      Copyright © 2004 Crispin Flowerday
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by

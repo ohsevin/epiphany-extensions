@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 #
 #   Interactive Python-GTK Console
-#   Copyright (C), 1998 James Henstridge <james@daa.com.au>
-#   Copyright (C), 2005 Adam Hooper <adamh@densi.com>
+#   Copyright ©, 1998 James Henstridge <james@daa.com.au>
+#   Copyright ©, 2005 Adam Hooper <adamh@densi.com>
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by

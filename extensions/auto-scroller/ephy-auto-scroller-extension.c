@@ -1,7 +1,7 @@
 /*
- *  Copyright (C) 2003 Marco Pesenti Gritti
- *  Copyright (C) 2003, 2005 Christian Persch
- *  Copyright (C) 2005 Crispin Flowerday
+ *  Copyright © 2003 Marco Pesenti Gritti
+ *  Copyright © 2003, 2005 Christian Persch
+ *  Copyright © 2005 Crispin Flowerday
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License scrollerpublished by

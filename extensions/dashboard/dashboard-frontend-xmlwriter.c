@@ -1,6 +1,6 @@
 /*
- *  Copyright (C) 2003 Nat Friedman <nat@nat.org>
- *  Copyright (C) 2004 Christian Persch
+ *  Copyright © 2003 Nat Friedman <nat@nat.org>
+ *  Copyright © 2004 Christian Persch
  *
  *  Permission is hereby granted, free of charge, to any person obtaining
  *  a copy of this software and associated documentation files (the

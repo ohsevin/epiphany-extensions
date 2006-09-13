@@ -3,7 +3,7 @@
 #
 # Sample Python Statusbar extension: creates a statusbar icon using Python
 #
-# Copyright (C) 2005 Adam Hooper
+# Copyright © 2005 Adam Hooper
 
 import epiphany
 

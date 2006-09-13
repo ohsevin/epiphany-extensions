@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 print "Sample Python extension"
-print "Copyright (C) 2005 Adam Hooper"
+print "Copyright © 2005 Adam Hooper"
 print
 
 def attach_window(window):

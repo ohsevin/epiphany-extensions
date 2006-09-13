@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2002 Ricardo Fernández Pascual
+ *  Copyright © 2002 Ricardo Fernández Pascual
  *  Copright  (C) 2003 Christian Persch
  *
  *  This program is free software; you can redistribute it and/or modify

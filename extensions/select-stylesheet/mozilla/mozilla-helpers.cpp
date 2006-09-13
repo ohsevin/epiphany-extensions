@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2004 Adam Hooper
+ *  Copyright © 2004 Adam Hooper
  *
  *  Ripped from GaleonWrapper.cpp, which has no copyright info besides Marco...
  *
