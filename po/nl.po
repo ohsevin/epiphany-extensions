@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the
 # epiphany-extensions package.
 # Tino Meinen <a.t.meinen@chello.nl>, 2004.
-# Reinout van Schouwen <reinout@cs.vu.nl>, 2004, 2005
+# Reinout van Schouwen <reinout@cs.vu.nl>, 2004-2006
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany-extensions\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-29 21:55+0100\n"
-"PO-Revision-Date: 2006-01-29 21:59+0100\n"
-"Last-Translator: Reinout van Schouwen <reinout@cs.vu.nl>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
+"POT-Creation-Date: 2006-09-21 00:21+0200\n"
+"PO-Revision-Date: 2006-09-21 00:53+0100\n"
+"Last-Translator: Reinout van Schouwen <reinouts@gnome.org>\n"
 "Language-Team: nl <vertaling@vrijschrift.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,7 +44,7 @@ msgstr ""
 
 #: ../extensions/actions/action-properties.glade.h:5
 msgid "The action description."
-msgstr "Omschrijving van de actie"
+msgstr "Omschrijving van de actie."
 
 #: ../extensions/actions/action-properties.glade.h:6
 msgid ""
@@ -103,11 +103,11 @@ msgstr "Kon opdracht niet uitvoeren"
 msgid "Could not Run Command"
 msgstr "Kon opdracht niet uitvoeren"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:519
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
 msgid "No action selected."
 msgstr "Geen actie geselecteerd."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:529
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
@@ -135,80 +135,34 @@ msgstr "Auto-he_rladen"
 msgid "Reload the page periodically"
 msgstr "De pagina periodiek herladen"
 
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
-msgid "_Edit Bookmarks"
-msgstr "Bladwijzers be_werken"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
-msgid "Open the bookmarks window"
-msgstr "Bladwijzervenster openen"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
-msgid "Open in _Current Tab"
-msgstr "Openen in _huidig tabblad"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
-msgid "Open bookmarks in the current tab of the active window"
-msgstr "Bladwijzers openen in het huidige tabblad van het actieve venster"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
-msgid "Open in New _Tab"
-msgstr "Openen in nieuw _tabblad"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
-msgid "Open bookmarks in a new tab of the active window"
-msgstr "Bladwijzers openen in een nieuw tabblad van het actieve venster"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
-msgid "Open in New _Window"
-msgstr "Openen in _nieuw venster"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
-msgid "Open bookmarks in new a window"
-msgstr "Bladwijzers openen in een nieuw venster"
-
-#: ../extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:531
-msgid "Bookmarks"
-msgstr "Bladwijzers"
-
-#: ../extensions/certificates/ephy-certificates-extension.c:173
+#: ../extensions/certificates/ephy-certificates-extension.c:177
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "Certificaten"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:203
+#: ../extensions/certificates/ephy-certificates-extension.c:208
 msgid "Security Devices"
 msgstr "Beveiligingsapparaten"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:321
+#: ../extensions/certificates/ephy-certificates-extension.c:220
 msgid "Manage _Certificates"
 msgstr "_Certificaten beheren"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:323
+#: ../extensions/certificates/ephy-certificates-extension.c:222
 msgid "Manage your certificates"
 msgstr "Uw certificaten beheren"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:327
+#: ../extensions/certificates/ephy-certificates-extension.c:226
 msgid "Manage Security _Devices"
 msgstr "_Beveiligingsapparaten beheren"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:329
+#: ../extensions/certificates/ephy-certificates-extension.c:228
 msgid "Manage your security devices"
 msgstr "Uw beveiligingsapparaten beheren"
-
-#. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:336
-msgid "Server _Certificate"
-msgstr "Server_certificaat"
-
-#. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:338
-msgid "Display the web server's certificate"
-msgstr "Het certificaat van de webserver weergeven"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
@@ -247,7 +201,7 @@ msgid "Error Viewer"
 msgstr "Foutenweergave"
 
 #. Don't bother looking for source lines -- they're not there
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:108
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:96
 #, c-format
 msgid ""
 "Error:\n"
@@ -256,7 +210,7 @@ msgstr ""
 "Fout:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:138
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:126
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -358,11 +312,11 @@ msgstr ""
 "HTML fout in %s:\n"
 "Geen geldig doctype opgegeven."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:340
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
 msgid "Enabled"
 msgstr "Ingeschakeld"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:348
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
 #: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "Omschrijving"
@@ -375,13 +329,21 @@ msgstr "<b>Geladen uitbreidingen</b>"
 msgid "Extensions"
 msgstr "Uitbreidingen"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
 msgid "_Extensions..."
 msgstr "Uit_breidingen..."
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
 msgid "Load and unload extensions"
 msgstr "Uitbreidingen laden en deactiveren"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "_Extensions"
+msgstr "Uit_breidingen"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
+msgid "Help about extensions"
+msgstr "Hulp over uitbreidingen"
 
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
 msgid "Install User _Script"
@@ -406,11 +368,11 @@ msgstr "_Java-console"
 msgid "Show Java Console"
 msgstr "De Java-console tonen"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:65
+#: ../extensions/page-info/ephy-page-info-extension.c:67
 msgid "Pa_ge Information"
 msgstr "Pa_gina-informatie"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/page-info/ephy-page-info-extension.c:69
 msgid "Display page information in a dialog"
 msgstr "Pagina-informatie weergeven in een dialoogvenster"
 
@@ -727,12 +689,12 @@ msgid "Popup Windows"
 msgstr "Opduikvensters"
 
 #. stock icon
-#: ../extensions/permissions/ephy-permissions-extension.c:152
+#: ../extensions/permissions/ephy-permissions-extension.c:156
 msgid "Site _Permissions"
 msgstr "Webstek-_rechten"
 
 #. shortcut key
-#: ../extensions/permissions/ephy-permissions-extension.c:154
+#: ../extensions/permissions/ephy-permissions-extension.c:158
 msgid "Manage web site permissions"
 msgstr "Webstek-rechten beheren"
 
@@ -754,7 +716,7 @@ msgstr "_Abonneren op deze feed"
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Abonneren op deze feed in uw favoriete nieuwsleesprogramma"
 
-#: ../extensions/rss/ephy-rss-extension.c:392
+#: ../extensions/rss/ephy-rss-extension.c:396
 msgid "Subscribe to site's news feed"
 msgstr "Abonneren op de nieuwsfeed van de pagina"
 
@@ -809,11 +771,11 @@ msgstr "Sti_jl"
 msgid "Select a different style for this page"
 msgstr "Een andere stijl voor deze pagina selecteren"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:224
 msgid "Default"
 msgstr "Standaard"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:235
 msgid "None"
 msgstr "Geen"
 
@@ -821,66 +783,57 @@ msgstr "Geen"
 msgid "No Sidebars installed"
 msgstr "Geen zijbalken geïnstalleerd"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:104
+#: ../extensions/sidebar/ephy-sidebar-extension.c:105
 msgid "_Sidebar"
 msgstr "_Zijbalk"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:105
+#: ../extensions/sidebar/ephy-sidebar-extension.c:106
 msgid "Show or hide the sidebar"
 msgstr "Zijbalk tonen of verbergen"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:411
+#. Translators: %s is the sidebar title
+#: ../extensions/sidebar/ephy-sidebar-extension.c:408
+#, c-format
+msgid "The sidebar already contains “%s”"
+msgstr "De zijbalk bevat “%s” al."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:412
+msgid ""
+"To use this sidebar, select it from the list of available sidebar pages."
+msgstr ""
+"Om deze zijbalk te gebruiken, selecteert u hem uit de lijst van beschikbare"
+"zijbalkpagina's."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:415
+#: ../extensions/sidebar/ephy-sidebar-extension.c:441
+msgid "Add Sidebar"
+msgstr "Zijbalk toevoegen"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:435
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr "“%s” toevoegen aan de zijbalk?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:415
+#: ../extensions/sidebar/ephy-sidebar-extension.c:439
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr "De bron van de nieuwe zijbalk-pagina is “%s”."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:417
-msgid "Add Sidebar"
-msgstr "Zijbalk toevoegen"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:421
+#: ../extensions/sidebar/ephy-sidebar-extension.c:445
 msgid "_Add Sidebar"
 msgstr "Zijbalk _toevoegen"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:565
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:551
 msgid "_Look Up"
 msgstr "Opzoe_ken"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:572
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:558
 msgid "_GNOME Dictionary"
 msgstr "_GNOME-woordenboek"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:190
-#, c-format
-msgid "Window “%s” (%d tab)"
-msgid_plural "Window “%s” (%d tabs)"
-msgstr[0] "Venster “%s” (%d tabblad)"
-msgstr[1] "Venster “%s” (%d tabbladen)"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:301
-msgid "Move Tab To Window"
-msgstr "Tabblad verplaatsen naar venster"
-
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:302
-msgid "Move the current tab to a different window"
-msgstr "Het huidige tabblad naar een ander venster verplaatsen"
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
 msgstr "Willekeurige opdrachten uitvoeren vanuit het contextmenu"
-
-#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
-msgid "Auto Reload Tab"
-msgstr "Tabblad auto-herladen"
-
-#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
-msgid "Reload a tab periodically"
-msgstr "Periodiek een tabblad herladen"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
 msgid "Auto Scroll"
@@ -890,25 +843,17 @@ msgstr "Auto-schuiven"
 msgid "Scroll on middle mouse click"
 msgstr "Schuiven bij klik met middelste muisknop"
 
-#: ../extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in.h:1
-msgid "Add a bookmarks menu to the panel's notification area"
-msgstr "Een bladwijzersmenu toevoegen aan het paneel-mededelingengebied"
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
+msgid "Auto Reload Tab"
+msgstr "Tabblad auto-herladen"
 
-#: ../extensions/bookmarks-tray/bookmarks-tray.ephy-extension.in.in.h:2
-msgid "Bookmarks Tray"
-msgstr "Bladwijzersvak"
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
+msgid "Reload a tab periodically"
+msgstr "Periodiek een tabblad herladen"
 
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Het paginacertificaat bekijken en certificaten beheren"
-
-#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:1
-msgid "Dashboard"
-msgstr "Dashboard"
-
-#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:2
-msgid "Send browsing information to Dashboard"
-msgstr "Bladerinformatie naar Dashboard sturen"
 
 # weergever is lelijk
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
@@ -1039,14 +984,6 @@ msgstr "Groepeert nieuw geopende tabbladen"
 msgid "Tab Groups"
 msgstr "Tab-groepen"
 
-#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:1
-msgid "Move tabs between windows"
-msgstr "Tabbladen verplaatsen tussen vensters"
-
-#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:2
-msgid "Tabsmenu"
-msgstr "Tabs-menu"
-
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
 msgstr "Geeft nieuwe inhoud aan in achtergrondtabbladen"
@@ -1054,6 +991,68 @@ msgstr "Geeft nieuwe inhoud aan in achtergrondtabbladen"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Tab-staat"
+
+#~ msgid "_Edit Bookmarks"
+#~ msgstr "Bladwijzers be_werken"
+
+#~ msgid "Open the bookmarks window"
+#~ msgstr "Bladwijzervenster openen"
+
+#~ msgid "Open in _Current Tab"
+#~ msgstr "Openen in _huidig tabblad"
+
+#~ msgid "Open bookmarks in the current tab of the active window"
+#~ msgstr "Bladwijzers openen in het huidige tabblad van het actieve venster"
+
+#~ msgid "Open in New _Tab"
+#~ msgstr "Openen in nieuw _tabblad"
+
+#~ msgid "Open bookmarks in a new tab of the active window"
+#~ msgstr "Bladwijzers openen in een nieuw tabblad van het actieve venster"
+
+#~ msgid "Open in New _Window"
+#~ msgstr "Openen in _nieuw venster"
+
+#~ msgid "Open bookmarks in new a window"
+#~ msgstr "Bladwijzers openen in een nieuw venster"
+
+#~ msgid "Bookmarks"
+#~ msgstr "Bladwijzers"
+
+#~ msgid "Server _Certificate"
+#~ msgstr "Server_certificaat"
+
+#~ msgid "Display the web server's certificate"
+#~ msgstr "Het certificaat van de webserver weergeven"
+
+#~ msgid "Window “%s” (%d tab)"
+#~ msgid_plural "Window “%s” (%d tabs)"
+#~ msgstr[0] "Venster “%s” (%d tabblad)"
+#~ msgstr[1] "Venster “%s” (%d tabbladen)"
+
+#~ msgid "Move Tab To Window"
+#~ msgstr "Tabblad verplaatsen naar venster"
+
+#~ msgid "Move the current tab to a different window"
+#~ msgstr "Het huidige tabblad naar een ander venster verplaatsen"
+
+#~ msgid "Add a bookmarks menu to the panel's notification area"
+#~ msgstr "Een bladwijzersmenu toevoegen aan het paneel-mededelingengebied"
+
+#~ msgid "Bookmarks Tray"
+#~ msgstr "Bladwijzersvak"
+
+#~ msgid "Dashboard"
+#~ msgstr "Dashboard"
+
+#~ msgid "Send browsing information to Dashboard"
+#~ msgstr "Bladerinformatie naar Dashboard sturen"
+
+#~ msgid "Move tabs between windows"
+#~ msgstr "Tabbladen verplaatsen tussen vensters"
+
+#~ msgid "Tabsmenu"
+#~ msgstr "Tabs-menu"
 
 #~ msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
 #~ msgstr ""
