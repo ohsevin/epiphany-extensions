@@ -1,253 +1,215 @@
+# translation of epiphany-extensions.HEAD.ne.po to Nepali
 # translation of epiphany-extensions.HEAD.po to Nepali
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Pawan Chitrakar <pawan@mpp.org.np>, 2005.
 # Ganesh Ghimire <gghimire@gmail.com>, 2005.
+# Dadhiram Nepal <yourssymbol@gmail.com>, 2005.
+# Kapil Timilsina <lipak21@gmail.com>, 2005.
+# Jaydeep Bhusal <zaydeep@hotmail.com>, 2005.
+# Mahesh subedi <submanesh@hotmail.com>, 2006.
+# Shiva Pokharel <pokharelshiva@hotmail.com>, 2006.
+# Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>, 2006.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: epiphany-extensions.HEAD\n"
+"Project-Id-Version: epiphany-extensions.HEAD.ne\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-04-04 02:52+0200\n"
-"PO-Revision-Date: 2005-05-27 12:27+0545\n"
-"Last-Translator: Ganesh Ghimire <gghimire@gmail.com>\n"
+"POT-Creation-Date: 2006-03-12 18:25+0100\n"
+"PO-Revision-Date: 2006-09-05 12:38+0545\n"
+"Last-Translator: Mahesh subedi <submanesh@hotmail.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"X-Generator: KBabel 1.9.1\n"
+"Plural-Forms: nplurals=2;plural=(n!=1)\n"
+"X-Generator: KBabel 1.10.2\n"
 
-#: extensions/actions/action-properties.glade.h:1
+#: ../extensions/actions/action-properties.glade.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
-msgstr "<span weight=\"bold\">प्रयोग गर्ने</span>"
+msgstr "<span weight=\"bold\">लागू हुन्छ</span>"
 
-#: extensions/actions/action-properties.glade.h:2
+#: ../extensions/actions/action-properties.glade.h:2
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">सामान्य</span>"
 
-#: extensions/actions/action-properties.glade.h:3
+#: ../extensions/actions/action-properties.glade.h:3
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "images."
-msgstr "यदि यस बिकल्पलाई सकृय बनाइन्छ भने यो कार्यमा छबिहरूको पपअप मेनु समाबेश गरिनेछ।"
+msgstr "यदि यो विकल्प सक्षम पारिएमा यो कार्यलाई छविको पपअप मेनुमा समावेश गरिन्छ ।"
 
-#: extensions/actions/action-properties.glade.h:4
+#: ../extensions/actions/action-properties.glade.h:4
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "links and pages."
-msgstr "यदि यस बिकल्पलाई सकृय बनाइन्छ भने यो कार्यमा लिङ्क र पेजहरूको पपअप मेनु समाबेश गरिनेछ।"
+msgstr "यदि यो विकल्प सक्षम पारिएमा यो कार्यलाई लिङ्क र पृष्ठको पपअप मेनुमा समावेश गरिन्छ ।"
 
-#: extensions/actions/action-properties.glade.h:5
+#: ../extensions/actions/action-properties.glade.h:5
 msgid "The action description."
-msgstr "कार्य बिबरण"
+msgstr "कार्य वर्णन"
 
-#: extensions/actions/action-properties.glade.h:6
+#: ../extensions/actions/action-properties.glade.h:6
 msgid ""
 "The action name. If a character is preceded by an underscore, that character "
 "will be used as the access key for the menu item."
-msgstr "कार्यको नाम। यदि क्यारेक्टरको अगाडि अन्डरस्कोर राखिन्छ भने त्यो क्यारेक्टर मेनु प्रकारका लागि पहुँच कुञ्जीको रुपमा प्रयोग गरिन्छ। "
+msgstr "कार्यको नाम, यदि क्यारेक्टरको अगाडि अन्डरस्कोर राखिन्छ भने त्यो क्यारेक्टर मेनु प्रकारका लागि पहुँच कुञ्जीको रूपमा प्रयोग गरिन्छ ।"
 
-#: extensions/actions/action-properties.glade.h:7
+#: ../extensions/actions/action-properties.glade.h:7
 msgid ""
 "The command to execute when the action is activated. The URL of the link, "
 "image or page will be appended to the command."
-msgstr "जब कार्य सञ्चालन गरिन्छ,कार्यान्वयन गर्न यस आदेश। लिङ्क, छबि वा पेजको युआरएल आदेशमा जडान गरिनेछ।"
+msgstr "कार्य सक्रिय पारेमा कार्यान्वयन गर्ने आदेश । यू आर एल को लिङ्क, छवि वा पृष्ठ आदेशमा जडान गरिन्छ ।"
 
-#: extensions/actions/action-properties.glade.h:8
+#: ../extensions/actions/action-properties.glade.h:8
 msgid "_Command:"
-msgstr "_आदेश:"
+msgstr "आदेश:"
 
-#: extensions/actions/action-properties.glade.h:9
+#: ../extensions/actions/action-properties.glade.h:9
 msgid "_Description:"
-msgstr "_बिबरण:"
+msgstr "वर्णन:"
 
-#: extensions/actions/action-properties.glade.h:10
+#: ../extensions/actions/action-properties.glade.h:10
 msgid "_Images"
-msgstr "_छबिहरू"
+msgstr "छवि"
 
-#: extensions/actions/action-properties.glade.h:11
+#: ../extensions/actions/action-properties.glade.h:11
 msgid "_Name:"
-msgstr "_नाम:"
+msgstr "नाम:"
 
-#: extensions/actions/action-properties.glade.h:12
+#: ../extensions/actions/action-properties.glade.h:12
 msgid "_Pages"
-msgstr "_पृष्ठहरु"
+msgstr "पृष्ठ"
 
-#: extensions/actions/actions-editor.glade.h:1
-#: extensions/actions/actions.xml.in.in.h:1
+#: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions.ephy-extension.in.in.h:1
 msgid "Actions"
-msgstr "कार्यहरु"
+msgstr "कार्य"
 
-#: extensions/actions/actions.xml.in.in.h:2
-msgid "Execute arbitrary commands from the context menu"
-msgstr "सन्दर्भ मेनुबाट स्वेच्छाचारी आदेशहरू कार्यान्वयन गर्नुहोस्"
-
-#: extensions/actions/ephy-actions-extension.c:97
+#: ../extensions/actions/ephy-actions-extension.c:112
 msgid "_Actions"
-msgstr "_कार्यहरु"
+msgstr "कार्य"
 
-#: extensions/actions/ephy-actions-extension.c:98
+#: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Customize actions"
-msgstr "कार्यहरू अनुकुलन गर्नुहोस्"
+msgstr "कार्य अनुकूल गर्नुहोस्"
 
-#: extensions/actions/ephy-actions-extension.c:409
+#: ../extensions/actions/ephy-actions-extension.c:436
 msgid "Could not run command"
-msgstr "आदेश सञ्चालन हुन सकेन"
+msgstr "आदेश चलाउन सकेन"
 
-#: extensions/actions/ephy-actions-extension.c:412
+#: ../extensions/actions/ephy-actions-extension.c:439
 msgid "Could not Run Command"
-msgstr "आदेश सञ्चालन हुन सकेन"
+msgstr "आदेश चलाउन सकेन"
 
-#: extensions/actions/ephy-actions-extension-editor-dialog.c:490
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:519
 msgid "No action selected."
-msgstr "कार्य छनोट गरिएन।"
+msgstr "कार्य चयन भएन"
 
-#: extensions/actions/ephy-actions-extension-editor-dialog.c:500
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:529
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
-msgstr[0] "%i कार्य छनोट गरियो।"
-msgstr[1] "%i कार्यहरू छनोट गरियो।"
+msgstr[0] "%i कार्य चयन गरियो ।"
+msgstr[1] "%i कार्यहरू चयन गरियो ।"
 
-#: extensions/actions/ephy-actions-extension-properties-dialog.c:312
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
 msgstr "कार्य थप्नुहोस्"
 
-#: extensions/actions/ephy-actions-extension-properties-dialog.c:421
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
 #, c-format
-msgid "%s Properties"
-msgstr "%s गुणहरु"
+msgid "“%s” Properties"
+msgstr "“%s” गुण"
 
-#: extensions/actions/ephy-actions-extension-properties-dialog.c:426
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
 msgid "Action Properties"
-msgstr "कार्य गुणहरू"
+msgstr "कार्य गुण"
 
-#: extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:1
-msgid "Add a bookmarks menu to the panel's notification area"
-msgstr "प्यानेल सूचना क्षेत्रमा पुस्तिकाछिन्ह मेनु थप्नुहोस्"
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+msgid "_Auto Reload"
+msgstr "स्वचालित पुन: लोड"
 
-#: extensions/bookmarks-tray/bookmarks-tray.xml.in.in.h:2
-msgid "Bookmarks Tray"
-msgstr "पुस्तक चिन्ह ट्रे"
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
+msgid "Reload the page periodically"
+msgstr "आवधिक रूपमा पृष्ठ पुन: लोड गर्नुहोस्"
 
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:431
-msgid "_Edit Bookmarks"
-msgstr "_पुस्तक चिन्ह संपादन गर"
-
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:432
-msgid "Open the bookmarks window"
-msgstr "पुस्तकचिन्ह सञ्झ्याल खोल्नुहोस् "
-
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:438
-msgid "Open in _Current Tab"
-msgstr "हालैको _ट्याबमा खोल्नुहोस्"
-
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:439
-msgid "Open bookmarks in the current tab of the active window"
-msgstr "सक्रिय सञ्झ्यालको हालको ट्याबमा पुस्तिका चिन्ह खोल्नुहोस्"
-
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:441
-msgid "Open in New _Tab"
-msgstr "नयाँ ट्याबमा खोल्नुहोस्"
-
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:442
-msgid "Open bookmarks in a new tab of the active window"
-msgstr "सक्रिय सञ्झ्यालको नयाँ ट्याबमा पुस्तिकाचिन्ह खोल्नुहोस्"
-
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:444
-msgid "Open in New _Window"
-msgstr "नयाँ _सञ्झ्यालमा खोल्नुहोस्"
-
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:445
-msgid "Open bookmarks in new a window"
-msgstr "नयाँ सञ्झ्यालमा पुस्तकचिन्ह खोल्नुहोस्"
-
-#: extensions/bookmarks-tray/ephy-bookmarks-tray-extension.c:531
-msgid "Bookmarks"
-msgstr "पुस्तकचिन्ह"
-
-#: extensions/certificates/certificates.xml.in.in.h:1
+#: ../extensions/certificates/ephy-certificates-extension.c:177
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
-msgstr "प्रमाणपत्रहरू"
+msgstr "प्रमाणपत्र"
 
-#: extensions/certificates/certificates.xml.in.in.h:2
-msgid "View the page certificate and manage the certificates"
-msgstr "प्रमाणपत्र पृष्ठ देखाउनुहोस् र प्रमाणपत्रहरूको प्रबन्ध मिलाउनुहोस्"
+#: ../extensions/certificates/ephy-certificates-extension.c:208
+msgid "Security Devices"
+msgstr "सुरक्षा यन्त्र"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:275
+#: ../extensions/certificates/ephy-certificates-extension.c:327
 msgid "Manage _Certificates"
-msgstr "_प्रमाणपत्रहरू प्रबन्ध मिलाउनुहोस्"
+msgstr "प्रमाणपत्र व्यवस्थापन गर्नुहोस्"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:277
+#: ../extensions/certificates/ephy-certificates-extension.c:329
 msgid "Manage your certificates"
-msgstr "तपाईँको प्रमाणपत्रहरूको प्रबन्ध मिलाउनुहोस्"
+msgstr "तपाईँको प्रमाणपत्र व्यवस्थापन गर्नुहोस्"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:285
-msgid "Server _Certificate"
-msgstr "सर्भर _प्रमाणपत्र"
+#: ../extensions/certificates/ephy-certificates-extension.c:333
+msgid "Manage Security _Devices"
+msgstr "सुरक्षा यन्त्र व्यवस्थापन गर्नुहोस्"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:287
+#: ../extensions/certificates/ephy-certificates-extension.c:335
+msgid "Manage your security devices"
+msgstr "तपाईँको सुरक्षा यन्त्र व्यवस्थापन गर्नुहोस्"
+
+#. stock icon
+#: ../extensions/certificates/ephy-certificates-extension.c:342
+msgid "Server _Certificate"
+msgstr "सर्भर प्रमाणपत्र"
+
+#. shortcut key
+#: ../extensions/certificates/ephy-certificates-extension.c:344
 msgid "Display the web server's certificate"
 msgstr "वेब सर्भरको प्रमाणपत्र प्रदर्शन गर्नुहोस्"
 
-#: extensions/dashboard/dashboard.xml.in.in.h:1
-msgid "Dashboard"
-msgstr "ड्यास्बोर्ड"
-
-#: extensions/dashboard/dashboard.xml.in.in.h:2
-msgid "Send browsing information to Dashboard"
-msgstr "ड्यसबोर्डमा ब्राउज गरेको सूचना पठाउनुहोस"
-
-#: extensions/error-viewer/ephy-error-viewer-extension.c:97
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
-msgstr "_एचटिएमएल जाँच गर्नुहोस्"
+msgstr "HTML जाँच गर्नुहोस्"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:99
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
 msgid "Display HTML errors in the Error Viewer dialog"
-msgstr "त्रुटि दर्शक सम्वादमा एचटिएमएल त्रुटि देखाउनुहोस्"
+msgstr "त्रुटि दर्शक संवादमा HTML त्रुटि प्रदर्शन गर्नुहोस्"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:104
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:104
 msgid "Check _Links"
-msgstr "_लिङ्कहरू जाँच गर्नुहोस्"
+msgstr "लिङ्क जाँच गर्नुहोस्"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:106
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:106
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
-msgstr "त्रुटि दर्शक सम्वादमा अमान्य हापरलिङ्कहरू देखाउनुहोस्"
+msgstr "त्रुटि दर्शक संवादमा अवैध हाइपरलिङ्क प्रदर्शन गर्नुहोस्"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:110
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:110
 msgid "_Error Viewer"
-msgstr "_त्रुटि दर्शक"
+msgstr "त्रुटि दर्शक"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:112
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:112
 msgid "Display web page errors"
-msgstr "वेब पृष्ठ प्रदर्शनमा त्रुटिहरू"
+msgstr "वेब पृष्ठ त्रुटि प्रदर्शन गर्नुहोस्"
 
-#: extensions/error-viewer/error-viewer.glade.h:1
+#: ../extensions/error-viewer/error-viewer.glade.h:1
 msgid "Cl_ear"
-msgstr "स_फा"
+msgstr "खाली गर्नुहोस्"
 
-#: extensions/error-viewer/error-viewer.glade.h:2
+#: ../extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
 msgstr "त्रुटि दर्शक"
 
-#: extensions/error-viewer/error-viewer.xml.in.in.h:1
-msgid "Error viewer"
-msgstr "त्रुटि दर्शक"
-
-#: extensions/error-viewer/error-viewer.xml.in.in.h:2
-msgid "View error in web pages, validate web pages and check links"
-msgstr "वेब पेजहरूमा त्रुटि हेर्नुहोस, वेब पृष्ठहरू मान्यता दिनुहोस र लिङ्कहरू परिक्षण गर्नुहोस"
-
 #. Don't bother looking for source lines -- they're not there
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:107
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:108
 #, c-format
 msgid ""
 "Error:\n"
@@ -256,7 +218,7 @@ msgstr ""
 "त्रुटि:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:137
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:138
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
@@ -265,637 +227,774 @@ msgstr ""
 "%s मा जाभास्क्रिप्ट त्रुटि अनलाइन %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
-msgstr[0] "अमान्य %d लिङ्क फेलापर्यो"
-msgstr[1] "अमान्य %d लिङ्कहरू फेलापर्यो"
+msgstr[0] "%d अवैध लिङ्क फेला पर्यो"
+msgstr[1] "%d अवैध लिङ्क फेला पर्यो"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
 msgid ""
 "Link error in %s:\n"
 "%s is unavailable."
 msgstr ""
 "%s मा लिङ्क त्रुटि:\n"
-"%s उपलब्ध छैन।"
+"%s उपलब्ध छैन ।"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
 #, c-format
-msgid "Checking %d Link on %s"
-msgid_plural "Checking %d Links on %s"
-msgstr[0] "%s मा %d लिङ्क जाँच गर्दै"
-msgstr[1] "%s मा %d लिङ्कहरू जाँच गर्दै"
+msgid "Checking %d Link on “%s”"
+msgid_plural "Checking %d Links on “%s”"
+msgstr[0] "%d जाँच “%s” लिङ्कमा"
+msgstr[1] "लिङ्कहरू %d जाँच “%s” मा"
 
-#: extensions/error-viewer/opensp/validate.cpp:167
+#: ../extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
 msgid ""
-"HTML error in %s on line %s:\n"
+"HTML error in “%s” on line %s:\n"
 "%s"
 msgstr ""
-"%s मा एचटिएमएल त्रुटि अनलाइन %s:\n"
+"%s लाइनमा HTML त्रुटि “%s”:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:165
+#: ../extensions/error-viewer/sgml-validator.c:165
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
-msgstr[0] "%d त्रुटिू फेला पर्यो"
-msgstr[1] "%d त्रुटिहरू फेला पर्यो"
+msgstr[0] "%d त्रुटि फेला पर्यो"
+msgstr[1] "%d त्रुटि फेला पर्यो"
 
-#: extensions/error-viewer/sgml-validator.c:169
+#: ../extensions/error-viewer/sgml-validator.c:169
 #, c-format
-msgid "HTML Validation of %s complete"
-msgstr "%s पुराको एचटिएमएल प्रमाणीकरण"
+msgid "HTML Validation of “%s” complete"
+msgstr "%s पुराको HTML वेधता"
 
-#: extensions/error-viewer/sgml-validator.c:227
+#: ../extensions/error-viewer/sgml-validator.c:227
 #, c-format
 msgid ""
 "HTML error in %s:\n"
 "%s"
 msgstr ""
-" %s मा एचटिएमएल त्रुटि:\n"
+"%s मा HTML त्रुटि:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:229
-#: extensions/error-viewer/sgml-validator.c:245
+#: ../extensions/error-viewer/sgml-validator.c:229
+#: ../extensions/error-viewer/sgml-validator.c:245
 msgid ""
-"Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
-"xhtml+xml\" instead."
+"Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
+"+xml” instead."
 msgstr ""
-"डकप्रकार \"एक्सएचटिएमएल\" छ तर बिषयबस्तु प्रकार \"पाठ्य/एचटिएमएल\".  प्रयोग \"अनुप्रयोग/"
-"xhtml+xml\" सट्टामा"
+"डकटाइप “XHTML” छ तर विषयवस्तु प्रकार “text/html”। “application/xhtml"
+"+xml” सट्टामा प्रयोग गर्नुहोस् ।"
 
-#: extensions/error-viewer/sgml-validator.c:243
+#: ../extensions/error-viewer/sgml-validator.c:243
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
 "%s"
 msgstr ""
-"%s मा एचटिएमएल चेतावनी:\n"
+"%s मा HTML चेतावनी:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:360
+#: ../extensions/error-viewer/sgml-validator.c:360
 #, c-format
 msgid "HTML error in %s:"
-msgstr "%s मा एचटिएमएल त्रुटि:"
+msgstr "%s मा HTML त्रुटि:"
 
-#: extensions/error-viewer/sgml-validator.c:368
+#: ../extensions/error-viewer/sgml-validator.c:368
 msgid "Invalid character encoding"
-msgstr "अमान्य क्यारेक्टर इनकोडिङ्"
+msgstr "अवैध क्यारेक्टर सङ्केतन"
 
-#: extensions/error-viewer/sgml-validator.c:373
+#: ../extensions/error-viewer/sgml-validator.c:373
 msgid "Unknown error while converting to UTF-8"
-msgstr "यटिएफ-८मा परिबर्तन गर्दा अज्ञात त्रुटि भयो"
+msgstr "UTF-8 मा रूपान्तरण गर्दा अज्ञात त्रुटि भयो"
 
-#: extensions/error-viewer/sgml-validator.c:435
+#: ../extensions/error-viewer/sgml-validator.c:435
 #, c-format
 msgid ""
 "HTML error in %s:\n"
 "No valid doctype specified."
 msgstr ""
-"%s मा एचटिएमएल त्रुटि:\n"
-"कुनै मान्य डक प्रकार निश्चित छैन।"
+"%s मा HTML त्रुटि:\n"
+"वैध डकटाइप निर्दिष्ट गरिएको छैन ।"
 
-#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
-msgid "_Extensions"
-msgstr "_बिस्तारहरू"
-
-#: extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
-msgid "Load and unload extensions"
-msgstr "बिस्तारहरू लोड र अनलोड गर्नुहोस्"
-
-#: extensions/extensions-manager-ui/extensions-manager-ui.c:357
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:352
 msgid "Enabled"
-msgstr "सक्रिय"
+msgstr "सक्षम पारियो"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:360
+#: ../extensions/rss/rss-ui.c:599
 msgid "Description"
-msgstr "बिबरण"
+msgstr "वर्णन"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
 msgid "<b>Loaded Extensions</b>"
-msgstr "<b>लोडगरिएको बिस्तारहरू</b>"
+msgstr "<b>लोड गरिएको विस्तार</b>"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
 msgid "Extensions"
-msgstr "बिस्तारहरू"
+msgstr "विस्तार"
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:1
-msgid "Activate and deactivate extensions"
-msgstr "बिस्तारहरू सकृय र निस्कृय गर्नुहोस्"
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
+msgid "_Extensions..."
+msgstr "विस्तार..."
 
-#: extensions/extensions-manager-ui/extensions-manager-ui.xml.in.in.h:2
-msgid "Extensions Manager"
-msgstr "बिस्तार प्रबन्धक"
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+msgid "Load and unload extensions"
+msgstr "विस्तार लोड र अनलोड गर्नुहोस्"
 
-#: extensions/find/eggfindbar.c:132
-msgid "Search string"
-msgstr "स्ट्रिङ खोज्नुहोस्"
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+msgid "Install User _Script"
+msgstr "प्रयोगकर्ता स्क्रिप्ट स्थापाना गर्नुहोस्"
 
-#: extensions/find/eggfindbar.c:133
-msgid "The name of the string to be found"
-msgstr "पत्तालगाउनु पर्ने स्ट्रिङको नाम्ट "
+#. shortcut key
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
+msgid "Install Greasemonkey script"
+msgstr "ग्रेसमङ्केइ स्क्रिप्ट सुरु गर्नुहोस्"
 
-#: extensions/find/eggfindbar.c:146
-msgid "Case sensitive"
-msgstr "संबेदनसिल अवस्था॒"
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:354
+#, c-format
+msgid "The user script at “%s” has been installed"
+msgstr "“%s” मा प्रयोगकर्ता स्क्रिप्ट स्थापना गरिएको छ"
 
-#: extensions/find/eggfindbar.c:147
-msgid "TRUE for a case sensitive search"
-msgstr "सम्बेदनशील खोजको घटनाका लागि सत्य"
+#: ../extensions/java-console/ephy-java-console-extension.c:48
+msgid "_Java Console"
+msgstr "जाभा कन्सोल"
 
-#: extensions/find/eggfindbar.c:154
-msgid "Highlight color"
-msgstr "रंग हाइलाइट गर्नुहोस्"
+#. shortcut key
+#: ../extensions/java-console/ephy-java-console-extension.c:50
+msgid "Show Java Console"
+msgstr "जाभा कन्सोल देखाउनुहोस्"
 
-#: extensions/find/eggfindbar.c:155
-msgid "Color of highlight for all matches"
-msgstr "सबै उस्तै मिल्नेहरूका लागि हाइलाइट रंग"
+#: ../extensions/page-info/ephy-page-info-extension.c:65
+msgid "Pa_ge Information"
+msgstr "पृष्ठ सूचना"
 
-#: extensions/find/eggfindbar.c:161
-msgid "Current color"
-msgstr "अहिलेको रंग"
-
-#: extensions/find/eggfindbar.c:162
-msgid "Color of highlight for the current match"
-msgstr "हालका मिल्दोजुल्दोका लागि हाइलाइट कलर"
-
-#: extensions/find/eggfindbar.c:286
-msgid "F_ind:"
-msgstr "_खोज्नुहोस्:"
-
-#: extensions/find/eggfindbar.c:306
-msgid "_Previous"
-msgstr "_अघिल्लो"
-
-#: extensions/find/eggfindbar.c:308
-msgid "_Next"
-msgstr "_पछिल्लो"
-
-#: extensions/find/eggfindbar.c:321
-msgid "C_ase Sensitive"
-msgstr "अवस्था॒ संबेदनशील"
-
-#: extensions/find/find.xml.in.in.h:1
-msgid "Find"
-msgstr "खोज्नुहोस"
-
-#: extensions/find/find.xml.in.in.h:2
-msgid "Replace the find dialog with a find toolbar"
-msgstr "पत्तालगाउने संवादलाई पत्तलगाउने टुलबारसँग स्थानन्तर गर्नुहोस्"
-
-#: extensions/gestures/gestures.xml.in.in.h:1
-msgid "Gestures"
-msgstr "हावभावहरू"
-
-#: extensions/gestures/gestures.xml.in.in.h:2
-msgid "Perform actions with mouse gestures"
-msgstr "माउस हावभावहरू सँग कार्य गर्नुहोस्"
-
-#. How to describe this? It makes Epiphany "Just Work"
-#: extensions/net-monitor/net-monitor.xml.in.in.h:2
-msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
-msgstr "अनलाइन/अफलाइन स्थिति स्व्स्वचालित सञ्चtप्रयोगात्मकNTAL!)"
-
-#: extensions/net-monitor/net-monitor.xml.in.in.h:3
-msgid "Network Connection Monitor"
-msgstr "सञ्जाल जडान मनिटर"
-
-#: extensions/page-info/ephy-page-info-extension.c:65
-msgid "_Page Info"
-msgstr "_पृष्ठ सूचना"
-
-#: extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/page-info/ephy-page-info-extension.c:67
 msgid "Display page information in a dialog"
-msgstr "पृष्ठ सूचना संवाद भित्र देखाउनुहोस्"
+msgstr "संवादमा पृष्ठ सूचना प्रदर्शन गर्नुहोस्"
 
-#: extensions/page-info/page-info-dialog.c:673
+#: ../extensions/page-info/page-info-dialog.c:726
+msgid "Save As..."
+msgstr "यस रूपमा बचत गर्नुहोस्..."
+
+#: ../extensions/page-info/page-info-dialog.c:743
+msgid "Select a directory"
+msgstr "डाइरेक्टरी चयन गर्नुहोस्"
+
+#: ../extensions/page-info/page-info-dialog.c:792
 msgid "Unknown type"
 msgstr "अज्ञात प्रकार"
 
-#: extensions/page-info/page-info-dialog.c:678
+#: ../extensions/page-info/page-info-dialog.c:797
 msgid "Full standards compliance"
-msgstr "पूर्ण मानकहरू अनुसार"
+msgstr "पूर्ण मानक स्विकृति"
 
-#: extensions/page-info/page-info-dialog.c:681
+#: ../extensions/page-info/page-info-dialog.c:800
 msgid "Almost standards compliance"
-msgstr "धेरै मानकहरू अनुसार"
+msgstr "धेरै मानक स्विकृति"
 
-#: extensions/page-info/page-info-dialog.c:684
+#: ../extensions/page-info/page-info-dialog.c:803
 msgid "Compatibility"
-msgstr "अनुकुलता"
+msgstr "अनुकूलता"
 
-#: extensions/page-info/page-info-dialog.c:688
+#: ../extensions/page-info/page-info-dialog.c:807
 msgid "Undetermined"
-msgstr "अनिश्चित"
+msgstr "अनिर्धारित"
 
-#: extensions/page-info/page-info-dialog.c:697
+#: ../extensions/page-info/page-info-dialog.c:816
 msgid "Not cached"
-msgstr "क्यास भएन"
+msgstr "क्यास नभएको"
 
-#: extensions/page-info/page-info-dialog.c:700
+#: ../extensions/page-info/page-info-dialog.c:819
 msgid "Disk cache"
 msgstr "डिस्क क्यास"
 
-#: extensions/page-info/page-info-dialog.c:703
+#: ../extensions/page-info/page-info-dialog.c:822
 msgid "Memory cache"
 msgstr "स्मृति क्यास"
 
-#: extensions/page-info/page-info-dialog.c:706
+#: ../extensions/page-info/page-info-dialog.c:825
 msgid "Unknown cache"
 msgstr "अपरिचित क्यास"
 
-#: extensions/page-info/page-info-dialog.c:722
-#: extensions/page-info/page-info-dialog.c:833
+#: ../extensions/page-info/page-info-dialog.c:841
+#: ../extensions/page-info/page-info-dialog.c:952
 msgid "Unknown"
 msgstr "अज्ञात"
 
-#: extensions/page-info/page-info-dialog.c:727
+#: ../extensions/page-info/page-info-dialog.c:846
 msgid "No referrer"
 msgstr "सन्दर्भकर्ता छैन"
 
-#: extensions/page-info/page-info-dialog.c:741
-#: extensions/page-info/page-info-dialog.c:757
+#: ../extensions/page-info/page-info-dialog.c:860
+#: ../extensions/page-info/page-info-dialog.c:876
 msgid "Not specified"
-msgstr "निश्चित गरिएन"
+msgstr "निर्दिष्ट नगरिएको"
 
-#: extensions/page-info/page-info-dialog.c:818
+#: ../extensions/page-info/page-info-dialog.c:937
 msgid "Image"
-msgstr "छबित्र"
+msgstr "छवि"
 
-#: extensions/page-info/page-info-dialog.c:821
+#: ../extensions/page-info/page-info-dialog.c:940
 msgid "Embed"
-msgstr "सन्निबेश गर्नुहोस"
+msgstr "सम्मिलित"
 
-#: extensions/page-info/page-info-dialog.c:824
+#: ../extensions/page-info/page-info-dialog.c:943
 msgid "Object"
-msgstr "बस्तु"
+msgstr "वस्तु"
 
-#: extensions/page-info/page-info-dialog.c:827
+#: ../extensions/page-info/page-info-dialog.c:946
 msgid "Applet"
 msgstr "एप्लेट"
 
-#: extensions/page-info/page-info-dialog.c:830
+#: ../extensions/page-info/page-info-dialog.c:949
 msgid "Icon"
 msgstr "प्रतिमा"
 
-#: extensions/page-info/page-info-dialog.c:958
-msgid "Save Medium As..."
-msgstr "...जासरी मध्यम बचत गर्नुहोस्"
-
-#: extensions/page-info/page-info-dialog.c:975
-msgid "Select a directory"
-msgstr "निर्देशिका चयन गर"
-
-#: extensions/page-info/page-info-dialog.c:1055
+#: ../extensions/page-info/page-info-dialog.c:1054
 msgid "_Open"
-msgstr "_खोल्नुहोस्"
+msgstr "खोल्नुहोस्"
 
-#: extensions/page-info/page-info-dialog.c:1061
-#: extensions/page-info/page-info-dialog.c:1413
+#: ../extensions/page-info/page-info-dialog.c:1060
+#: ../extensions/page-info/page-info-dialog.c:1420
 msgid "_Copy Link Address"
-msgstr "_लिङ्क  ठेगाना प्रतिलिपि गर्नुहोस् "
+msgstr "लिङ्क ठेगाना प्रतिलिपि बनाउनुहोस्"
 
-#: extensions/page-info/page-info-dialog.c:1067
+#: ../extensions/page-info/page-info-dialog.c:1066
 msgid "_Use as Background"
-msgstr "_पृष्ठभूमीमा प्रयोग"
+msgstr "पृष्ठभूमिको रूपमा प्रयोग गर्नुहोस्"
 
-#: extensions/page-info/page-info-dialog.c:1073
+#: ../extensions/page-info/page-info-dialog.c:1072
+#: ../extensions/page-info/page-info-dialog.c:1426
 msgid "_Save As..."
-msgstr "..._जसरी भण्डार गर्नुहोस्"
+msgstr "यस रूपमा बचत गर्नुहोस्..."
 
-#: extensions/page-info/page-info-dialog.c:1250
-#: extensions/page-info/page-info-dialog.c:1485
+#: ../extensions/page-info/page-info-dialog.c:1256
+#: ../extensions/page-info/page-info-dialog.c:1499
 msgid "URL"
-msgstr "युआरएल"
+msgstr "URL"
 
-#: extensions/page-info/page-info-dialog.c:1262
+#: ../extensions/page-info/page-info-dialog.c:1269
 msgid "Type"
 msgstr "प्रकार"
 
-#: extensions/page-info/page-info-dialog.c:1274
+#: ../extensions/page-info/page-info-dialog.c:1281
 msgid "Alt Text"
-msgstr "आल्ट टेक्स्ट"
+msgstr "Alt पाठ"
 
-#: extensions/page-info/page-info-dialog.c:1286
-#: extensions/page-info/page-info-dialog.c:1497
+#: ../extensions/page-info/page-info-dialog.c:1293
+#: ../extensions/page-info/page-info-dialog.c:1512
 msgid "Title"
 msgstr "शीर्षक"
 
-#: extensions/page-info/page-info-dialog.c:1298
+#: ../extensions/page-info/page-info-dialog.c:1305
 msgid "Width"
-msgstr "चौडाई"
+msgstr "चौडाइ"
 
-#: extensions/page-info/page-info-dialog.c:1310
+#: ../extensions/page-info/page-info-dialog.c:1317
 msgid "Height"
-msgstr "उचाई"
+msgstr "उचाइ"
 
-#: extensions/page-info/page-info-dialog.c:1509
+#: ../extensions/page-info/page-info-dialog.c:1524
 msgid "Relation"
-msgstr "संबन्ध"
+msgstr "सम्बन्ध"
 
-#: extensions/page-info/page-info-dialog.c:1621
-#: extensions/page-info/page-info-dialog.c:1758
+#: ../extensions/page-info/page-info-dialog.c:1654
+#: ../extensions/page-info/page-info-dialog.c:1793
 msgid "Name"
 msgstr "नाम"
 
-#: extensions/page-info/page-info-dialog.c:1633
+#: ../extensions/page-info/page-info-dialog.c:1666
 msgid "Method"
-msgstr "बिधि"
+msgstr "विधि"
 
-#: extensions/page-info/page-info-dialog.c:1645
+#: ../extensions/page-info/page-info-dialog.c:1680
 msgid "Action"
 msgstr "कार्य"
 
-#: extensions/page-info/page-info-dialog.c:1724
+#: ../extensions/page-info/page-info-dialog.c:1759
 msgid "_Copy"
-msgstr "_प्रतिलिपि"
+msgstr "प्रतिलिपि बनाउनुहोस्"
 
-#: extensions/page-info/page-info-dialog.c:1770
+#: ../extensions/page-info/page-info-dialog.c:1805
 msgid "Content"
-msgstr "बिषयबस्तु"
+msgstr "सामग्री"
 
-#: extensions/page-info/page-info-dialog.c:1869
+#: ../extensions/page-info/page-info-dialog.c:1904
 msgid "Page Metadata"
 msgstr "मेटाडाटा पृष्ठ"
 
-#: extensions/page-info/page-info.glade.h:1
+#: ../extensions/page-info/page-info.glade.h:1
 msgid "<b>Dublin Core Metadata</b>"
 msgstr "<b>डब्लिन कोर मेटाडाटा</b>"
 
-#: extensions/page-info/page-info.glade.h:2
+#: ../extensions/page-info/page-info.glade.h:2
 msgid "<b>Forms In Page</b>"
-msgstr "<b>पृष्ठमा फारमहरू</b>"
+msgstr "<b>पृष्ठमा फारम</b>"
 
-#: extensions/page-info/page-info.glade.h:3
+#: ../extensions/page-info/page-info.glade.h:3
 msgid "<b>Links In Page</b>"
-msgstr "<b>पृष्ठमा लिङ्कहरू</b>"
+msgstr "<b>पृष्ठमा लिङ्क</b>"
 
-#: extensions/page-info/page-info.glade.h:4
+#: ../extensions/page-info/page-info.glade.h:4
 msgid "<b>Media In Page</b>"
 msgstr "<b>पृष्ठमा मिडिया</b>"
 
-#: extensions/page-info/page-info.glade.h:5
+#: ../extensions/page-info/page-info.glade.h:5
 msgid "<b>Medium View</b>"
-msgstr "<b>मध्यम दृष्य</b>"
+msgstr "<b>मध्यम दृश्य</b>"
 
-#: extensions/page-info/page-info.glade.h:6
+#: ../extensions/page-info/page-info.glade.h:6
 msgid "<b>Other Metadata</b>"
 msgstr "<b>अन्य मेटाडाटा</b>"
 
-#: extensions/page-info/page-info.glade.h:7
+#: ../extensions/page-info/page-info.glade.h:7
 msgid "<b>Rendering</b>"
-msgstr "<b>रेन्डर गर्दै</b>"
+msgstr "<b>रेन्डरिङ</b>"
 
-#: extensions/page-info/page-info.glade.h:8
+#: ../extensions/page-info/page-info.glade.h:8
 msgid "<b>Source File</b>"
-msgstr "<b>श्रोत फाइल</b>"
+msgstr "<b>स्रोत फाइल</b>"
 
-#: extensions/page-info/page-info.glade.h:9
+#: ../extensions/page-info/page-info.glade.h:9
 msgid "<b>Web Page</b>"
 msgstr "<b>वेब पृष्ठ</b>"
 
-#: extensions/page-info/page-info.glade.h:10
+#: ../extensions/page-info/page-info.glade.h:10
 msgid "DYNAMIC"
 msgstr "DYNAMIC"
 
-#: extensions/page-info/page-info.glade.h:11
+#: ../extensions/page-info/page-info.glade.h:11
 msgid "Date:"
 msgstr "मिति:"
 
-#: extensions/page-info/page-info.glade.h:12
+#: ../extensions/page-info/page-info.glade.h:12
 msgid "Description:"
-msgstr "बिबरण:"
+msgstr "वर्णन:"
 
-#: extensions/page-info/page-info.glade.h:13
+#: ../extensions/page-info/page-info.glade.h:13
 msgid "Encoding:"
-msgstr "इनकोडिङ्:"
+msgstr "सङ्केतन:"
 
-#: extensions/page-info/page-info.glade.h:14
+#: ../extensions/page-info/page-info.glade.h:14
 msgid "Expires:"
-msgstr "म्याद सकेको:"
+msgstr "म्याद समाप्त:"
 
-#: extensions/page-info/page-info.glade.h:15
+#: ../extensions/page-info/page-info.glade.h:15
 msgid "Format:"
 msgstr "ढाँचा:"
 
-#: extensions/page-info/page-info.glade.h:16
+#: ../extensions/page-info/page-info.glade.h:16
 msgid "Forms"
-msgstr "फारमहरू"
+msgstr "फारम"
 
-#: extensions/page-info/page-info.glade.h:17
+#: ../extensions/page-info/page-info.glade.h:17
 msgid "General"
 msgstr "साधारण"
 
-#: extensions/page-info/page-info.glade.h:18
+#: ../extensions/page-info/page-info.glade.h:18
 msgid "Links"
-msgstr "लिङ्कहरू"
+msgstr "लिङ्क"
 
-#: extensions/page-info/page-info.glade.h:19
+#: ../extensions/page-info/page-info.glade.h:19
 msgid "Location:"
 msgstr "स्थान:"
 
-#: extensions/page-info/page-info.glade.h:20
+#: ../extensions/page-info/page-info.glade.h:20
 msgid "MIME type:"
-msgstr "मिमे प्रकार:"
+msgstr "माइम प्रकार:"
 
-#: extensions/page-info/page-info.glade.h:21
+#: ../extensions/page-info/page-info.glade.h:21
 msgid "Media"
-msgstr "सञ्चार"
+msgstr "मिडिया"
 
-#: extensions/page-info/page-info.glade.h:22
+#: ../extensions/page-info/page-info.glade.h:22
 msgid "Metadata"
-msgstr "मेटालगत॒"
+msgstr "मेटाडेटा"
 
-#: extensions/page-info/page-info.glade.h:23
+#: ../extensions/page-info/page-info.glade.h:23
 msgid "Mode:"
 msgstr "मोड:"
 
-#: extensions/page-info/page-info.glade.h:24
+#: ../extensions/page-info/page-info.glade.h:24
 msgid "Modified:"
-msgstr "विकसित:"
+msgstr "परिमार्जित:"
 
-#: extensions/page-info/page-info.glade.h:25
+#: ../extensions/page-info/page-info.glade.h:25
 msgid "Page Properties"
-msgstr "पेजका गुणहरू"
+msgstr "पृष्ठको गुण"
 
-#: extensions/page-info/page-info.glade.h:26
+#: ../extensions/page-info/page-info.glade.h:26
 msgid "Referrer:"
 msgstr "सन्दर्भकर्ता:"
 
-#: extensions/page-info/page-info.glade.h:27
+#: ../extensions/page-info/page-info.glade.h:27
 msgid "Size:"
-msgstr "आकार:"
+msgstr "साइज:"
 
-#: extensions/page-info/page-info.glade.h:28
+#: ../extensions/page-info/page-info.glade.h:28
 msgid "Source:"
-msgstr "श्रोत:"
+msgstr "स्रोत:"
 
-#: extensions/page-info/page-info.glade.h:29
+#: ../extensions/page-info/page-info.glade.h:29
 msgid "Title:"
 msgstr "शीर्षक:"
 
-#: extensions/page-info/page-info.glade.h:30
+#: ../extensions/page-info/page-info.glade.h:30
 msgid "Type:"
 msgstr "प्रकार:"
 
-#: extensions/page-info/page-info.glade.h:31
+#: ../extensions/page-info/page-info.glade.h:31
 msgid "_Save Media As..."
-msgstr "...जसरी मिडिया _बचत गर्नुहोस्"
+msgstr "यस रूपमा मिडिया बचत गर्नुहोस्"
 
-#: extensions/page-info/page-info.xml.in.in.h:1
-msgid "Display information about and links and media from the current page"
-msgstr "अहिलेको पृष्ठबाट बारेमा र लिङ्कहरू र मिडिया सूचना देखाउनुहोस्"
+#: ../extensions/permissions/ephy-permissions-dialog.c:180
+msgid "allowed"
+msgstr "अनुमति दिइयो"
 
-#: extensions/page-info/page-info.xml.in.in.h:2
-msgid "Page Info"
-msgstr "पृष्ठ सूचना"
+#: ../extensions/permissions/ephy-permissions-dialog.c:184
+msgid "denied"
+msgstr "अस्विकार गरियो"
 
-#: extensions/sample-mozilla/sample-mozilla.xml.in.in.h:1
-msgid "A sample extension with mozilla backend"
-msgstr "मोजिलाको अन्तिममा एक बिस्तार नमुना"
+#. Sometimes we get this... how did this get in the list!?
+#: ../extensions/permissions/ephy-permissions-dialog.c:189
+msgid "default"
+msgstr "पूर्वनिर्धारित"
 
-#: extensions/sample-mozilla/sample-mozilla.xml.in.in.h:2
-msgid "Sample (Mozilla)"
-msgstr "नमुना (मोजिला)"
+#: ../extensions/permissions/ephy-permissions-dialog.c:515
+msgid "Domain"
+msgstr "डोमेन"
 
-#: extensions/sample/sample.xml.in.in.h:1
-msgid "A sample extension"
-msgstr "एक नमुना बिस्तार"
+#: ../extensions/permissions/ephy-permissions-dialog.c:527
+msgid "State"
+msgstr "स्थिति"
 
-#: extensions/sample/sample.xml.in.in.h:2
-msgid "Sample"
-msgstr "नमुना॒"
+#: ../extensions/permissions/ephy-permissions-dialog.c:620
+msgid "Site Permissions"
+msgstr "साइट अनुमति"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:145
+#: ../extensions/permissions/ephy-permissions-dialog.c:647
+msgid "Cookies"
+msgstr "कुकिज"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:648
+msgid "Images"
+msgstr "छवि"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:649
+msgid "Popup Windows"
+msgstr "पपअप सञ्झ्याल"
+
+#. stock icon
+#: ../extensions/permissions/ephy-permissions-extension.c:156
+msgid "Site _Permissions"
+msgstr "साइट अनुमति"
+
+#. shortcut key
+#: ../extensions/permissions/ephy-permissions-extension.c:158
+msgid "Manage web site permissions"
+msgstr "वेब साइट अनुमति व्यवस्थापन गर्नुहोस्"
+
+#: ../extensions/rss/ephy-rss-extension.c:98
+msgid "News Feeds Subscription"
+msgstr "समाचार सदस्यता फिड गर्दछ"
+
+#: ../extensions/rss/ephy-rss-extension.c:100
+msgid "Subscribe to this website's news feeds in your favorite news reader"
+msgstr "यो वेबसाइटको समाचारको सदस्य बन्नाले तपाईँको मन पर्ने समाचार बाचकलाई फिड गर्दछ"
+
+#: ../extensions/rss/ephy-rss-extension.c:105
+msgid "_Subscribe to this feed"
+msgstr "यो फिडको सदस्य बन्नुहोस्"
+
+#: ../extensions/rss/ephy-rss-extension.c:107
+msgid "Subscribe to this feed in your favorite news reader"
+msgstr "तपाईँले मन पराएको समाचार वाचक भित्र यो फिडमा सदस्य बन्नुहोस्"
+
+#: ../extensions/rss/ephy-rss-extension.c:396
+msgid "Subscribe to site's news feed"
+msgstr "साइटको समाचार फिडमा सदस्य बन्नुहोस्"
+
+#: ../extensions/rss/rss-ui.c:167
+msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
+msgstr "<b><i>फिड पाठकलाई सम्पर्क गर्न अक्षम, के यो चलिरहेको छ ?</i></b>"
+
+#: ../extensions/rss/rss-ui.c:169
+msgid "Retry"
+msgstr "पुन: प्रयास गर्नुहोस्"
+
+#: ../extensions/rss/rss-ui.c:297
+msgid "_Copy Feed Address"
+msgstr "फिड ठेगाना प्रतिलिपि बनाउनुहोस्"
+
+#: ../extensions/rss/rss-ui.c:591
+msgid "Subscribe"
+msgstr "सदस्य बन्नुहोस्"
+
+#: ../extensions/rss/rss-ui.glade.h:1
+msgid "<b>Select Interesting Feeds</b>"
+msgstr "<b>मनपर्ने फिड चयन गर्नुहोस्</b>"
+
+#: ../extensions/rss/rss-ui.glade.h:2
+msgid "News Feed Subcription"
+msgstr "समाचार फिड सदस्यता"
+
+#: ../extensions/rss/rss-ui.glade.h:3
+msgid "_Subscribe"
+msgstr "सदस्य बन्नुहोस्"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:145
 msgid "Render the page without using a style"
 msgstr "शैली प्रयोग बिना पृष्ठ रेन्डर गर्नुहोस्"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:148
+#: ../extensions/select-stylesheet/ephy-css-menu.c:148
 msgid "Render the page using the default style"
 msgstr "पूर्वनिर्धारित शैली प्रयोग पृष्ठ रेन्डर गर्नुहोस्"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:151
+#: ../extensions/select-stylesheet/ephy-css-menu.c:151
 #, c-format
-msgid "Render the page using the \"%s\" style"
-msgstr " \"%s\" शैली प्रयोग गरेर पृष्ठ रेन्डर गर्नुहोस्"
+msgid "Render the page using the “%s” style"
+msgstr " “%s” शैली प्रयोग गरेर पृष्ठ रेन्डर गर्नुहोस्"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:309
+#: ../extensions/select-stylesheet/ephy-css-menu.c:309
 msgid "St_yle"
-msgstr "_शैली"
+msgstr "शैली"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:310
+#: ../extensions/select-stylesheet/ephy-css-menu.c:310
 msgid "Select a different style for this page"
-msgstr "यस पृष्ठका लागि एक फरक शैली छनोट गर्नुहोस्"
+msgstr "यस पृष्ठका लागि फरक शैली चयन गर्नुहोस्"
 
-#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
 msgid "Default"
 msgstr "पूर्वनिर्धारित"
 
-#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
 msgid "None"
-msgstr "कुनैपनि होइन"
+msgstr "कुनै पनि होइन"
 
-#: extensions/select-stylesheet/select-stylesheet.xml.in.in.h:1
-msgid "Select Stylesheet"
-msgstr "स्टइलसिट छनोट गर्नुहोस्"
-
-#: extensions/select-stylesheet/select-stylesheet.xml.in.in.h:2
-msgid "Select between different stylesheets offered by the web page"
-msgstr "वेब पृष्ठले दिएको बिभिन्न स्टाइलसिटहरू मध्ये छनोट गर्नुहोस्"
-
-#: extensions/sidebar/ephy-sidebar.c:176
+#: ../extensions/sidebar/ephy-sidebar.c:176
 msgid "No Sidebars installed"
-msgstr "किनारापट्टी स्थापना गरिएको छैन"
+msgstr "छेउपट्टी स्थापित छैन"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:104
+#: ../extensions/sidebar/ephy-sidebar-extension.c:104
 msgid "_Sidebar"
-msgstr "_छेउपट्टी"
+msgstr "छेउपट्टी"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:105
+#: ../extensions/sidebar/ephy-sidebar-extension.c:105
 msgid "Show or hide the sidebar"
-msgstr "किनारापट्टी लुकाउनुहोस् वा देखाउनुहोस्"
+msgstr "छेउपट्टी लुकाउनुहोस् वा देखाउनुहोस्"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:407
+#: ../extensions/sidebar/ephy-sidebar-extension.c:411
 #, c-format
-msgid "Add \"%s\" to the Sidebar?"
-msgstr "किनारापट्टीमा \"%s\" थप्ने?"
+msgid "Add “%s” to the Sidebar?"
+msgstr "“%s” छेउपट्टीमा थप्नुहुन्छ ?"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:411
+#: ../extensions/sidebar/ephy-sidebar-extension.c:415
 #, c-format
-msgid "The source to the new sidebar page is %s."
-msgstr "नयाँ किनारापट्टीको श्रोत पृष्ठ %s हो।"
+msgid "The source to the new sidebar page is “%s”."
+msgstr "नयाँ छेउपट्टीको स्रोत पृष्ठ “%s” हो ।"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:413
+#: ../extensions/sidebar/ephy-sidebar-extension.c:417
 msgid "Add Sidebar"
 msgstr "छेउपट्टी थप्नुहोस्"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:417
+#: ../extensions/sidebar/ephy-sidebar-extension.c:421
 msgid "_Add Sidebar"
-msgstr "_छेउपट्टी थप्नुहोस्"
+msgstr "छेउपट्टी थप्नुहोस्"
 
-#: extensions/sidebar/sidebar.xml.in.in.h:1
-msgid "Adds a sidebar to windows"
-msgstr "सञ्झ्यालमा एक किनारापट्टी थप्दछ"
-
-#: extensions/sidebar/sidebar.xml.in.in.h:2
-msgid "Sidebar"
-msgstr "छेउपट्टी"
-
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:578
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:565
 msgid "_Look Up"
-msgstr "_खोजी गर्नुहोस्"
+msgstr "खोजी गर्नुहोस्"
 
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:585
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:572
 msgid "_GNOME Dictionary"
-msgstr "_जिनोम शब्दकोश"
+msgstr "जोनोम शब्दकोश"
 
-#: extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:1
-msgid "Look up the selected text with a smart bookmark"
-msgstr "छानिएको पाठ एक स्मार्ट पुस्तकचिन्ह सँग खोज्नुहोस्"
-
-#: extensions/smart-bookmarks/smart-bookmarks.xml.in.in.h:2
-msgid "Smart Bookmarks"
-msgstr "स्मार्ट पुस्तकचिन्हहरू"
-
-#: extensions/tab-groups/tab-groups.xml.in.in.h:1
-msgid "Groups newly opened tabs"
-msgstr "नयाँ खोलिएका ट्याबहरू समुह"
-
-#: extensions/tab-groups/tab-groups.xml.in.in.h:2
-msgid "Tab Groups"
-msgstr "ट्याब समुहहरू"
-
-#: extensions/tabsmenu/ephy-tab-move-menu.c:190
+#: ../extensions/tabsmenu/ephy-tab-move-menu.c:190
 #, c-format
-msgid "Window '%s' (%d tab)"
-msgid_plural "Window '%s' (%d tabs)"
-msgstr[0] "सञ्झ्याल '%s' (%d ट्याब)"
-msgstr[1] "सञ्झ्याल '%s' (%d ट्याबहरू)"
+msgid "Window “%s” (%d tab)"
+msgid_plural "Window “%s” (%d tabs)"
+msgstr[0] "सञ्झ्याल “%s” (%d ट्याब)"
+msgstr[1] "सञ्झ्याल “%s” (%d ट्याब)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:302
+#: ../extensions/tabsmenu/ephy-tab-move-menu.c:301
 msgid "Move Tab To Window"
 msgstr "सञ्झ्यालमा ट्याब सार्नुहोस्"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:303
+#: ../extensions/tabsmenu/ephy-tab-move-menu.c:302
 msgid "Move the current tab to a different window"
-msgstr "हालको ट्याब एक फरक सञ्झ्यालमा सार्नुहोस्"
+msgstr "हालको ट्याब फरक सञ्झ्यालमा सार्नुहोस्"
 
-#: extensions/tabsmenu/tabsmenu.xml.in.in.h:1
+#: ../extensions/actions/actions.ephy-extension.in.in.h:2
+msgid "Execute arbitrary commands from the context menu"
+msgstr "सामग्री मेनुबाट स्वेच्छाचारी आदेश कार्यान्वयन गर्नुहोस्"
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
+msgid "Auto Scroll"
+msgstr "स्वत: स्क्रोल"
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
+msgid "Scroll on middle mouse click"
+msgstr "मध्य माउस क्लिकमा स्क्रोल"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
+msgid "Auto Reload Tab"
+msgstr "स्वचालित पुन: लोड ट्याब"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
+msgid "Reload a tab periodically"
+msgstr "आवधिक रूपमा एउटा ट्याब पुन: लोड गर्नुहोस्"
+
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
+msgid "View the page certificate and manage the certificates"
+msgstr "प्रमाणपत्र पृष्ठ देखाउनुहोस् र प्रमाणपत्र व्यवस्थापन गर्नुहोस्"
+
+#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:1
+msgid "Dashboard"
+msgstr "ड्यास्बोर्ड"
+
+#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:2
+msgid "Send browsing information to Dashboard"
+msgstr "ड्यसबोर्डमा ब्राउज गरेको सूचना पठाउनुहोस्"
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
+msgid "Error viewer"
+msgstr "त्रुटि दर्शक"
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
+msgid "View error in web pages, validate web pages and check links"
+msgstr "वेब पृष्ठहरूमा त्रुटि हेर्नुहोस्, वेब पृष्ठलाई मान्यता दिनुहोस् र लिङ्क परीक्षण गर्नुहोस्"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
+msgid "Activate and deactivate extensions"
+msgstr "विस्तार सक्रिय र निष्क्रिय पार्नुहोस्"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
+msgid "Extensions Manager"
+msgstr "विस्तार प्रबन्धक"
+
+#: ../extensions/favicon/favicon.ephy-extension.in.h:1
+msgid "Favicon fallback"
+msgstr "फेविकोन फलब्याक"
+
+#: ../extensions/favicon/favicon.ephy-extension.in.h:2
+msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
+msgstr ""
+"यदि साइटमा मानक विधि प्रयोग नगरिएकोमा बिकोनको रूपमा Loads /favicon.ico "
+"प्रयोग गर्नुहोस् ।"
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
+msgid "Gestures"
+msgstr "सङ्केत"
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:2
+msgid "Perform actions with mouse gestures"
+msgstr "माउस सङ्केतसँग कार्य गर्नुहोस्"
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
+msgid "Greasemonkey"
+msgstr "गेस्चरमङ्कि"
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
+msgid "Run user scripts to modify web pages' behavior"
+msgstr "वेब पृष्ठको व्यवहार परिमार्जन गर्न प्रयोगकर्ता स्क्रिप्ट चलाउनुहोस्"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
+msgid "Java Console"
+msgstr "जाभा कन्सोल"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
+msgid "Provide access to the Java-Plugin Console"
+msgstr "जाभा-प्लगइन कन्सोलमा पहुँच प्रदान गर्नुहोस्"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
+msgid "Display information about and links and media from the current page"
+msgstr "हालको पृष्ठबाट बारेमा र लिङ्क र मिडिया सूचनाको प्रदर्शन गर्नुहोस् ।"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
+msgid "Page Info"
+msgstr "पृष्ठ सूचना"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
+msgid "Edit site permissions"
+msgstr "साइट अनुमति सम्पादन गर्नुहोस्"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
+msgid "Permissions"
+msgstr "अनुमति"
+
+#: ../extensions/rss/rss.ephy-extension.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "सूचना फिड सदस्यता"
+
+#: ../extensions/rss/rss.ephy-extension.in.in.h:2
+msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr "तपाईँको मनपर्ने समाचार वाचकमा वेब पेजद्वारा प्रस्ताव गरिएको फिड समाचारमा सदस्य बन्नुहोस्"
+
+#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
+msgid "A sample extension with mozilla backend"
+msgstr "मोजिलाको ब्याकइन्डसँग नमूना विस्तार"
+
+#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:2
+msgid "Sample (Mozilla)"
+msgstr "नमूना (मोजिला)"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:1
+msgid "A sample extension"
+msgstr "नमूना विस्तार"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:2
+msgid "Sample"
+msgstr "नमूना"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
+msgid "Select Stylesheet"
+msgstr "शैलीपाना चयन गर्नुहोस्"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
+msgid "Select between different stylesheets offered by the web page"
+msgstr "वेब पृष्ठले प्रस्ताव गरेको विभिन्न शैलीपानाको बीचमा फरक चयन गर्नुहोस्"
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
+msgid "Adds a sidebar to windows"
+msgstr "सञ्झ्यालमा छेउपट्टी थप्दछ"
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
+msgid "Sidebar"
+msgstr "छेउपट्टी"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
+msgid "Look up the selected text with a smart bookmark"
+msgstr "छरितो पुस्तकचिनोसँग चयन गरिएको पाठ खोजी गर्नुहोस्"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
+msgid "Smart Bookmarks"
+msgstr "छरितो पुस्तकचिनो"
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
+msgid "Groups newly opened tabs"
+msgstr "नयाँ खोलिएका ट्याब समूह"
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
+msgid "Tab Groups"
+msgstr "ट्याब समूह"
+
+#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:1
 msgid "Move tabs between windows"
-msgstr "सञ्झ्यालहरू बिचमा ट्याब सार्नुहोस्"
+msgstr "सञ्झ्यालहरू बीचमा ट्याब सार्नुहोस्"
 
-#: extensions/tabsmenu/tabsmenu.xml.in.in.h:2
+#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:2
 msgid "Tabsmenu"
-msgstr "ट्याबहरूको मेनु"
+msgstr "ट्याब मेनु"
 
-#: extensions/tab-states/tab-states.xml.in.in.h:1
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
-msgstr "पृष्ठभुमी ट्याबहरूमा नयाँ बिषयबस्तु जनाउनहोस्"
+msgstr "पृष्ठभूमि ट्याबमा नयाँ विषयवस्तु इङ्गित गर्दछ"
 
-#: extensions/tab-states/tab-states.xml.in.in.h:2
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
-msgstr "ट्याब क्षेत्रहरू"
+msgstr "ट्याब अवस्था"
 
