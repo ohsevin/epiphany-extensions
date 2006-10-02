@@ -1,3 +1,9 @@
+2006-10-02  Christian Persch  <chpe@cvs.gnome.org>
+
+	=== Release 2.16.1 ===
+
+	* configure.ac:
+
 2006-09-06  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/error-viewer/link-checker.c:
