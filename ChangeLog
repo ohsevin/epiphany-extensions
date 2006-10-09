@@ -1,3 +1,10 @@
+2006-10-09  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/actions/ephy-actions-extension.c:
+
+	Fix Actions menu accelerator overlapping with "Select All".
+	Bug #358721.
+
 2006-09-06  Christian Persch  <chpe@cvs.gnome.org>
 
 	* extensions/error-viewer/link-checker.c:

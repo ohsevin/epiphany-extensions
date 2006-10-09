@@ -109,7 +109,7 @@ ephy_actions_extension_detach_tab (EphyExtension *extension,
 		 		   EphyTab *tab);
 
 static const GtkActionEntry edit_entries[] = {
-	{ "EphyActionsExtensionEditActions", NULL, N_("_Actions"), NULL,
+	{ "EphyActionsExtensionEditActions", NULL, N_("Actio_ns"), NULL,
 	  N_("Customize actions"),
 	  G_CALLBACK (ephy_actions_extension_edit_actions_cb) }
 };
