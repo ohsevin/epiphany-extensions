@@ -1,4 +1,10 @@
 2006-10-10  Jean-François Rameau  <jframeau@cvs.gnome.org>
+	
+	* extensions/cc-license-viewer/Makefile.am:
+
+	Fix last commit.
+
+2006-10-10  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/cc-license-viewer/cc-license-viewer.py:
 	* extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in:
