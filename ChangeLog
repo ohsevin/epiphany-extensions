@@ -1,3 +1,11 @@
+2006-10-10  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/cc-license-viewer/cc-license-viewer.py:
+	* extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in:
+
+	New extension. Shows the Creative Commons license of the current website if available.
+	Created by Jaime Frutos Morales <acidborg@gmail.com>
+	
 2006-10-09  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/actions/ephy-actions-extension.c:
