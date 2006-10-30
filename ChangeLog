@@ -1,3 +1,10 @@
+2006-10-30  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/livehttpheaders/mozilla/LiveHTTPHeadersListener.cpp:
+	(LiveHTTPHeadersListener::Observe):
+
+	Don't use free'd string. Fix #367468.
+
 2006-10-10  Jean-François Rameau  <jframeau@cvs.gnome.org>
 	
 	* extensions/cc-license-viewer/Makefile.am:
