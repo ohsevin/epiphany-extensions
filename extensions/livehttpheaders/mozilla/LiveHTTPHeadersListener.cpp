@@ -102,7 +102,7 @@ NS_IMETHODIMP LiveHTTPHeadersListener::Observe(nsISupports *aSubject, const char
 		frame->response = NULL;
 		frame->url = g_strdup (name.get ());
 		mHeaders = g_slist_append (mHeaders, (gpointer)frame);
-		g_hash_table_insert (mUrls, (gpointer)name.get (), (gpointer)frame);
+		g_hash_table_insert (mUrls, frame->url, (gpointer)frame);
 	}
 	else if (strcmp (aTopic, NS_HTTP_ON_EXAMINE_RESPONSE_TOPIC) == 0)
 	{
