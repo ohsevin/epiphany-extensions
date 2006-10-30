@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2006-08-16 13:37+0300\n"
-"PO-Revision-Date: 2006-08-16 13:39+0300\n"
+"POT-Creation-Date: 2006-10-30 07:04+0300\n"
+"PO-Revision-Date: 2006-10-30 07:04+0300\n"
 "Last-Translator: Pauli Virtanen <pauli.virtanen@hut.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -89,8 +89,8 @@ msgid "Actions"
 msgstr "Toiminnot"
 
 #: ../extensions/actions/ephy-actions-extension.c:112
-msgid "_Actions"
-msgstr "_Toiminnot"
+msgid "Actio_ns"
+msgstr "Toimi_nnot"
 
 #: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Customize actions"
@@ -985,6 +985,9 @@ msgstr "Ilmaise taustalla olevien välilehtien uusi sisältö"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Välilehtien tilat"
+
+#~ msgid "_Actions"
+#~ msgstr "_Toiminnot"
 
 #~ msgid "Server _Certificate"
 #~ msgstr "Palvelimen _varmenne"
