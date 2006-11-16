@@ -25,6 +25,6 @@ DOC_FIGURES = \
 	figures/epi-ext-sidebar.png			\
 	figures/epi-ext-tabgroups.png
 
-DOC_LINGUAS =
+DOC_LINGUAS = sv
 
 dist-hook: doc-dist-hook
