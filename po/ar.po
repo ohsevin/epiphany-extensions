@@ -1,0 +1,1094 @@
+# Arabic translations for PACKAGE package.
+# Copyright (C) 2006 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Project\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
+"POT-Creation-Date: 2006-11-17 21:14+0000\n"
+"PO-Revision-Date: 2006-11-18 00:55+0100\n"
+"Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
+"Language-Team: Arabic <doc@arabeyes.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n == 0 ? 0 : n == 1 ? 1 : n == 2 ? 2 : n >= 3 && n <= 10 ? 3 : n >= 11 && n <= 99 ? 4 : 5;\n"
+"X-Poedit-Language: Arabic\n"
+
+#: ../extensions/actions/action-properties.glade.h:1
+#, fuzzy
+msgid "<span weight=\"bold\">Applies to</span>"
+msgstr "<span weight=\"bold\">اسم الملف</span>"
+
+#: ../extensions/actions/action-properties.glade.h:2
+#, fuzzy
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">عام</span>"
+
+#: ../extensions/actions/action-properties.glade.h:3
+msgid "If this option is enabled, the action will be included in the popup menu of images."
+msgstr ""
+
+#: ../extensions/actions/action-properties.glade.h:4
+msgid "If this option is enabled, the action will be included in the popup menu of links and pages."
+msgstr ""
+
+#: ../extensions/actions/action-properties.glade.h:5
+#, fuzzy
+msgid "The action description."
+msgstr "الوصف يحتوي على"
+
+#: ../extensions/actions/action-properties.glade.h:6
+msgid "The action name. If a character is preceded by an underscore, that character will be used as the access key for the menu item."
+msgstr ""
+
+#: ../extensions/actions/action-properties.glade.h:7
+msgid "The command to execute when the action is activated. The URL of the link, image or page will be appended to the command."
+msgstr ""
+
+#: ../extensions/actions/action-properties.glade.h:8
+#, fuzzy
+msgid "_Command:"
+msgstr "الأم_ر:"
+
+#: ../extensions/actions/action-properties.glade.h:9
+#, fuzzy
+msgid "_Description:"
+msgstr "ال_وصف:"
+
+#: ../extensions/actions/action-properties.glade.h:10
+#, fuzzy
+msgid "_Images"
+msgstr "صور"
+
+#: ../extensions/actions/action-properties.glade.h:11
+#, fuzzy
+msgid "_Name:"
+msgstr "الإ_سم:"
+
+#: ../extensions/actions/action-properties.glade.h:12
+#, fuzzy
+msgid "_Pages"
+msgstr "صفحات"
+
+#: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Actions"
+msgstr "أفعال"
+
+#: ../extensions/actions/ephy-actions-extension.c:112
+msgid "Actio_ns"
+msgstr ""
+
+#: ../extensions/actions/ephy-actions-extension.c:113
+#, fuzzy
+msgid "Customize actions"
+msgstr "أفعال الحاسوب"
+
+#: ../extensions/actions/ephy-actions-extension.c:436
+#, fuzzy
+msgid "Could not run command"
+msgstr "تعذّر تشغيل الأمر '%s'"
+
+#: ../extensions/actions/ephy-actions-extension.c:439
+#, fuzzy
+msgid "Could not Run Command"
+msgstr "تعذّر تشغيل الأمر '%s'"
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
+#, fuzzy
+msgid "No action selected."
+msgstr "لم يتم انتقاء أيّة تطبيقات"
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
+#, fuzzy, c-format
+msgid "%i action selected."
+msgid_plural "%i actions selected."
+msgstr[0] "اليوم المنتقى (%a %b %d %Y)"
+msgstr[1] ""
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
+#, fuzzy
+msgid "Add Action"
+msgstr "الإجراء/المحفّز"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
+#, fuzzy, c-format
+msgid "“%s” Properties"
+msgstr "“%s” خصائص"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
+#, fuzzy
+msgid "Action Properties"
+msgstr "خصائص القائمة"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+#, fuzzy
+msgid "_Auto Reload"
+msgstr "إعادة تحميل المستند"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
+#, fuzzy
+msgid "Reload the page periodically"
+msgstr "افتح صفحة الويب %s"
+
+#: ../extensions/certificates/ephy-certificates-extension.c:177
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Certificates"
+msgstr "الشّهادات"
+
+#: ../extensions/certificates/ephy-certificates-extension.c:208
+#, fuzzy
+msgid "Security Devices"
+msgstr "أجهزة الصوت"
+
+#. stock icon
+#: ../extensions/certificates/ephy-certificates-extension.c:220
+#, fuzzy
+msgid "Manage _Certificates"
+msgstr "إدارة الشهادات"
+
+#. shortcut key
+#: ../extensions/certificates/ephy-certificates-extension.c:222
+#, fuzzy
+msgid "Manage your certificates"
+msgstr "أدر حزمة المفاتيح الخاصة بك"
+
+#. stock icon
+#: ../extensions/certificates/ephy-certificates-extension.c:226
+#, fuzzy
+msgid "Manage Security _Devices"
+msgstr "أجهزة الصوت - الصفحة %d/%d"
+
+#. shortcut key
+#: ../extensions/certificates/ephy-certificates-extension.c:228
+#, fuzzy
+msgid "Manage your security devices"
+msgstr "أدوات لإدارة الحاسوب"
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
+#, fuzzy
+msgid "Check _HTML"
+msgstr "موزيلا (HTML)"
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
+msgid "Display HTML errors in the Error Viewer dialog"
+msgstr ""
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:104
+#, fuzzy
+msgid "Check _Links"
+msgstr "بحث عن وصلات:"
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:106
+msgid "Display invalid hyperlinks in the Error Viewer dialog"
+msgstr ""
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:110
+#, fuzzy
+msgid "_Error Viewer"
+msgstr "عارض الصّور"
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:112
+#, fuzzy
+msgid "Display web page errors"
+msgstr "عرض المعلومات الأمنية لصفحة الويب"
+
+#: ../extensions/error-viewer/error-viewer.glade.h:1
+#, fuzzy
+msgid "Cl_ear"
+msgstr "_مسح"
+
+#: ../extensions/error-viewer/error-viewer.glade.h:2
+#, fuzzy
+msgid "Error Viewer"
+msgstr "عارض الصّور"
+
+#. Don't bother looking for source lines -- they're not there
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:96
+#, fuzzy, c-format
+msgid ""
+"Error:\n"
+"%s"
+msgstr "خطأ"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:126
+#, c-format
+msgid ""
+"Javascript error in %s on line %d:\n"
+"%s"
+msgstr ""
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
+#, fuzzy, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "تعليم الوصلة “%s”"
+msgstr[1] ""
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
+#, fuzzy, c-format
+msgid ""
+"Link error in %s:\n"
+"%s is unavailable."
+msgstr "خطأ أثناء إنشاء وصلة في \"%s\"."
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
+#, fuzzy, c-format
+msgid "Checking %d Link on “%s”"
+msgid_plural "Checking %d Links on “%s”"
+msgstr[0] "نسخ عنوان الوصلة “%s”"
+msgstr[1] ""
+
+#: ../extensions/error-viewer/opensp/validate.cpp:167
+#, c-format
+msgid ""
+"HTML error in “%s” on line %s:\n"
+"%s"
+msgstr ""
+
+#: ../extensions/error-viewer/sgml-validator.c:165
+#, fuzzy, c-format
+msgid "Found %d error"
+msgid_plural "Found %d errors"
+msgstr[0] "خطأ: مستخدم غير موجود"
+msgstr[1] ""
+
+#: ../extensions/error-viewer/sgml-validator.c:169
+#, c-format
+msgid "HTML Validation of “%s” complete"
+msgstr ""
+
+#: ../extensions/error-viewer/sgml-validator.c:227
+#, fuzzy, c-format
+msgid ""
+"HTML error in %s:\n"
+"%s"
+msgstr "خطأ في الـ CRL"
+
+#: ../extensions/error-viewer/sgml-validator.c:229
+#: ../extensions/error-viewer/sgml-validator.c:245
+msgid "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml+xml” instead."
+msgstr ""
+
+#: ../extensions/error-viewer/sgml-validator.c:243
+#, fuzzy, c-format
+msgid ""
+"HTML warning in %s:\n"
+"%s"
+msgstr "تهيئة الملفّات ب_تهيئة HTML"
+
+#: ../extensions/error-viewer/sgml-validator.c:360
+#, fuzzy, c-format
+msgid "HTML error in %s:"
+msgstr "خطأ في الـ CRL"
+
+#: ../extensions/error-viewer/sgml-validator.c:368
+#, fuzzy
+msgid "Invalid character encoding"
+msgstr "ضبط تشفير ال_رموز"
+
+#: ../extensions/error-viewer/sgml-validator.c:373
+#, fuzzy
+msgid "Unknown error while converting to UTF-8"
+msgstr "حدث خطأ مجهول عند محاولة فتح \"%s\""
+
+#: ../extensions/error-viewer/sgml-validator.c:435
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"No valid doctype specified."
+msgstr ""
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
+#, fuzzy
+msgid "Enabled"
+msgstr "مفعّل"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
+#: ../extensions/rss/rss-ui.c:599
+#, fuzzy
+msgid "Description"
+msgstr "الوصف"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+#, fuzzy
+msgid "<b>Loaded Extensions</b>"
+msgstr "التمديدات النشطة"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+#, fuzzy
+msgid "Extensions"
+msgstr "إمتدادات"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
+#, fuzzy
+msgid "_Extensions..."
+msgstr "إمتدادات"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
+#, fuzzy
+msgid "Load and unload extensions"
+msgstr "اسم الملف للتحميل و العرض"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+#, fuzzy
+msgid "_Extensions"
+msgstr "إمتدادات"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
+#, fuzzy
+msgid "Help about extensions"
+msgstr "قائمة التمديدات النشطة"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+#, fuzzy
+msgid "Install User _Script"
+msgstr "تفعيل _جافاسكربت"
+
+#. shortcut key
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
+#, fuzzy
+msgid "Install Greasemonkey script"
+msgstr "تفعيل _جافاسكربت"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:354
+#, c-format
+msgid "The user script at “%s” has been installed"
+msgstr ""
+
+#: ../extensions/java-console/ephy-java-console-extension.c:48
+#, fuzzy
+msgid "_Java Console"
+msgstr "%s في هيكل %d"
+
+#. shortcut key
+#: ../extensions/java-console/ephy-java-console-extension.c:50
+#, fuzzy
+msgid "Show Java Console"
+msgstr "تفعيل _جافاسكربت"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:67
+#, fuzzy
+msgid "Pa_ge Information"
+msgstr "جاري جلب معلومات على %s"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:69
+#, fuzzy
+msgid "Display page information in a dialog"
+msgstr "معلومات الصفحة المعروضة في معرض التاريخ"
+
+#: ../extensions/page-info/page-info-dialog.c:726
+#, fuzzy
+msgid "Save As..."
+msgstr "حفظ كـ..."
+
+#: ../extensions/page-info/page-info-dialog.c:743
+#, fuzzy
+msgid "Select a directory"
+msgstr "اختر الدليل"
+
+#: ../extensions/page-info/page-info-dialog.c:792
+#, fuzzy
+msgid "Unknown type"
+msgstr "نوع غير معروف"
+
+#: ../extensions/page-info/page-info-dialog.c:797
+#, fuzzy
+msgid "Full standards compliance"
+msgstr "إظهار الـ VCard بالكامل"
+
+#: ../extensions/page-info/page-info-dialog.c:800
+msgid "Almost standards compliance"
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:803
+#, fuzzy
+msgid "Compatibility"
+msgstr "التوافق"
+
+#: ../extensions/page-info/page-info-dialog.c:807
+msgid "Undetermined"
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:816
+#, fuzzy
+msgid "Not cached"
+msgstr "غير صحيح"
+
+#: ../extensions/page-info/page-info-dialog.c:819
+#, fuzzy
+msgid "Disk cache"
+msgstr "حجم مخبأ القرص"
+
+#: ../extensions/page-info/page-info-dialog.c:822
+#, fuzzy
+msgid "Memory cache"
+msgstr "نفذت الذّاكرة"
+
+#: ../extensions/page-info/page-info-dialog.c:825
+#, fuzzy
+msgid "Unknown cache"
+msgstr "NAT غير معروف"
+
+#: ../extensions/page-info/page-info-dialog.c:841
+#: ../extensions/page-info/page-info-dialog.c:952
+#, fuzzy
+msgid "Unknown"
+msgstr "مجهول"
+
+#: ../extensions/page-info/page-info-dialog.c:846
+#, fuzzy
+msgid "No referrer"
+msgstr "لا تاريخ"
+
+#: ../extensions/page-info/page-info-dialog.c:860
+#: ../extensions/page-info/page-info-dialog.c:876
+#, fuzzy
+msgid "Not specified"
+msgstr "غير صحيح"
+
+#: ../extensions/page-info/page-info-dialog.c:937
+#, fuzzy
+msgid "Image"
+msgstr "صورة"
+
+#: ../extensions/page-info/page-info-dialog.c:940
+msgid "Embed"
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:943
+#, fuzzy
+msgid "Object"
+msgstr "جسم"
+
+#: ../extensions/page-info/page-info-dialog.c:946
+#, fuzzy
+msgid "Applet"
+msgstr "بريم_ج:"
+
+#: ../extensions/page-info/page-info-dialog.c:949
+#, fuzzy
+msgid "Icon"
+msgstr "أيقونة."
+
+#: ../extensions/page-info/page-info-dialog.c:1054
+#, fuzzy
+msgid "_Open"
+msgstr "_فتح"
+
+#: ../extensions/page-info/page-info-dialog.c:1060
+#: ../extensions/page-info/page-info-dialog.c:1420
+#, fuzzy
+msgid "_Copy Link Address"
+msgstr "_نسخ عنوان الوصلة"
+
+#: ../extensions/page-info/page-info-dialog.c:1066
+#, fuzzy
+msgid "_Use as Background"
+msgstr "ا_ستخدام الصورة كخلفية"
+
+#: ../extensions/page-info/page-info-dialog.c:1072
+#: ../extensions/page-info/page-info-dialog.c:1426
+#, fuzzy
+msgid "_Save As..."
+msgstr "_حفظ كـ..."
+
+#: ../extensions/page-info/page-info-dialog.c:1256
+#: ../extensions/page-info/page-info-dialog.c:1499
+#, fuzzy
+msgid "URL"
+msgstr "العنوان"
+
+#: ../extensions/page-info/page-info-dialog.c:1269
+#, fuzzy
+msgid "Type"
+msgstr "النّوع"
+
+#: ../extensions/page-info/page-info-dialog.c:1281
+#, fuzzy
+msgid "Alt Text"
+msgstr "نص العلامة."
+
+#: ../extensions/page-info/page-info-dialog.c:1293
+#: ../extensions/page-info/page-info-dialog.c:1512
+#, fuzzy
+msgid "Title"
+msgstr "العنوان"
+
+#: ../extensions/page-info/page-info-dialog.c:1305
+#, fuzzy
+msgid "Width"
+msgstr "العرض"
+
+#: ../extensions/page-info/page-info-dialog.c:1317
+#, fuzzy
+msgid "Height"
+msgstr "الارتفاع"
+
+#: ../extensions/page-info/page-info-dialog.c:1524
+msgid "Relation"
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:1654
+#: ../extensions/page-info/page-info-dialog.c:1793
+#, fuzzy
+msgid "Name"
+msgstr "اسم"
+
+#: ../extensions/page-info/page-info-dialog.c:1666
+#, fuzzy
+msgid "Method"
+msgstr "<b>ال_طريقة:</b>"
+
+#: ../extensions/page-info/page-info-dialog.c:1680
+#, fuzzy
+msgid "Action"
+msgstr "حدث"
+
+#: ../extensions/page-info/page-info-dialog.c:1759
+#, fuzzy
+msgid "_Copy"
+msgstr "_نسخ"
+
+#: ../extensions/page-info/page-info-dialog.c:1805
+#, fuzzy
+msgid "Content"
+msgstr "المحتويات:"
+
+#: ../extensions/page-info/page-info-dialog.c:1904
+#, fuzzy
+msgid "Page Metadata"
+msgstr "<b>الصفحة الرئيسية</b>"
+
+#: ../extensions/page-info/page-info.glade.h:1
+#, fuzzy
+msgid "<b>Dublin Core Metadata</b>"
+msgstr "قسم خاطيء في البيانات العامة '%s': %s"
+
+#: ../extensions/page-info/page-info.glade.h:2
+#, fuzzy
+msgid "<b>Forms In Page</b>"
+msgstr "تكبير الصفحة"
+
+#: ../extensions/page-info/page-info.glade.h:3
+#, fuzzy
+msgid "<b>Links In Page</b>"
+msgstr "تكبير الصفحة"
+
+#: ../extensions/page-info/page-info.glade.h:4
+#, fuzzy
+msgid "<b>Media In Page</b>"
+msgstr "تكبير الصفحة"
+
+#: ../extensions/page-info/page-info.glade.h:5
+#, fuzzy
+msgid "<b>Medium View</b>"
+msgstr "وضعية _ العرض"
+
+#: ../extensions/page-info/page-info.glade.h:6
+#, fuzzy
+msgid "<b>Other Metadata</b>"
+msgstr "تشفيرات أخرى"
+
+#: ../extensions/page-info/page-info.glade.h:7
+#, fuzzy
+msgid "<b>Rendering</b>"
+msgstr "جاري رسم الصفحة %d من %d..."
+
+#: ../extensions/page-info/page-info.glade.h:8
+#, fuzzy
+msgid "<b>Source File</b>"
+msgstr "إنتقاء ملف"
+
+#: ../extensions/page-info/page-info.glade.h:9
+#, fuzzy
+msgid "<b>Web Page</b>"
+msgstr "_صفحة الإنترنت:"
+
+#: ../extensions/page-info/page-info.glade.h:10
+msgid "DYNAMIC"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:11
+#, fuzzy
+msgid "Date:"
+msgstr "التّاريخ:"
+
+#: ../extensions/page-info/page-info.glade.h:12
+#, fuzzy
+msgid "Description:"
+msgstr "الوصف:"
+
+#: ../extensions/page-info/page-info.glade.h:13
+#, fuzzy
+msgid "Encoding:"
+msgstr "تشفيرة:"
+
+#: ../extensions/page-info/page-info.glade.h:14
+#, fuzzy
+msgid "Expires:"
+msgstr "ينقضي:"
+
+#: ../extensions/page-info/page-info.glade.h:15
+#, fuzzy
+msgid "Format:"
+msgstr "التنسيق:"
+
+#: ../extensions/page-info/page-info.glade.h:16
+#, fuzzy
+msgid "Forms"
+msgstr "أشكال الأعداد"
+
+#: ../extensions/page-info/page-info.glade.h:17
+#, fuzzy
+msgid "General"
+msgstr "عامّ"
+
+#: ../extensions/page-info/page-info.glade.h:18
+#, fuzzy
+msgid "Links"
+msgstr "بحث عن وصلات:"
+
+#: ../extensions/page-info/page-info.glade.h:19
+#, fuzzy
+msgid "Location:"
+msgstr "الموقع:"
+
+#: ../extensions/page-info/page-info.glade.h:20
+#, fuzzy
+msgid "MIME type:"
+msgstr "نوع MIME:"
+
+#: ../extensions/page-info/page-info.glade.h:21
+#, fuzzy
+msgid "Media"
+msgstr "إخراج الوسيط"
+
+#: ../extensions/page-info/page-info.glade.h:22
+msgid "Metadata"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:23
+#, fuzzy
+msgid "Mode:"
+msgstr "نمط"
+
+#: ../extensions/page-info/page-info.glade.h:24
+#, fuzzy
+msgid "Modified:"
+msgstr "عُدّل:"
+
+#: ../extensions/page-info/page-info.glade.h:25
+#, fuzzy
+msgid "Page Properties"
+msgstr "خصائص القائمة"
+
+#: ../extensions/page-info/page-info.glade.h:26
+msgid "Referrer:"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:27
+#, fuzzy
+msgid "Size:"
+msgstr "الحجم:"
+
+#: ../extensions/page-info/page-info.glade.h:28
+#, fuzzy
+msgid "Source:"
+msgstr "المصدر"
+
+#: ../extensions/page-info/page-info.glade.h:29
+#, fuzzy
+msgid "Title:"
+msgstr "العنوان:"
+
+#: ../extensions/page-info/page-info.glade.h:30
+#, fuzzy
+msgid "Type:"
+msgstr "النّوع:"
+
+#: ../extensions/page-info/page-info.glade.h:31
+#, fuzzy
+msgid "_Save Media As..."
+msgstr "حفظ الملف كـ"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:180
+#, fuzzy
+msgid "allowed"
+msgstr "<b>المستضيفين المسموح لهم</b>"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:184
+#, fuzzy
+msgid "denied"
+msgstr "رُفض التّصريح"
+
+#. Sometimes we get this... how did this get in the list!?
+#: ../extensions/permissions/ephy-permissions-dialog.c:189
+#, fuzzy
+msgid "default"
+msgstr "افتراضات"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:515
+#, fuzzy
+msgid "Domain"
+msgstr "النطاق"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:527
+#, fuzzy
+msgid "State"
+msgstr "الحالة"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:620
+#, fuzzy
+msgid "Site Permissions"
+msgstr "أذون المندوبين"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:647
+#, fuzzy
+msgid "Cookies"
+msgstr "كوكيس"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:648
+#, fuzzy
+msgid "Images"
+msgstr "صور"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:649
+#, fuzzy
+msgid "Popup Windows"
+msgstr "نوافذ قافزة"
+
+#. stock icon
+#: ../extensions/permissions/ephy-permissions-extension.c:156
+#, fuzzy
+msgid "Site _Permissions"
+msgstr "أذون المندوبين"
+
+#. shortcut key
+#: ../extensions/permissions/ephy-permissions-extension.c:158
+msgid "Manage web site permissions"
+msgstr ""
+
+#: ../extensions/rss/ephy-rss-extension.c:98
+#, fuzzy
+msgid "News Feeds Subscription"
+msgstr "أخبار USENET عبر %s"
+
+#: ../extensions/rss/ephy-rss-extension.c:100
+msgid "Subscribe to this website's news feeds in your favorite news reader"
+msgstr ""
+
+#: ../extensions/rss/ephy-rss-extension.c:105
+#, fuzzy
+msgid "_Subscribe to this feed"
+msgstr "تحول لهذا السان"
+
+#: ../extensions/rss/ephy-rss-extension.c:107
+msgid "Subscribe to this feed in your favorite news reader"
+msgstr ""
+
+#: ../extensions/rss/ephy-rss-extension.c:396
+msgid "Subscribe to site's news feed"
+msgstr ""
+
+#: ../extensions/rss/rss-ui.c:167
+msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
+msgstr ""
+
+#: ../extensions/rss/rss-ui.c:169
+#, fuzzy
+msgid "Retry"
+msgstr "إعادة المحاولة"
+
+#: ../extensions/rss/rss-ui.c:297
+#, fuzzy
+msgid "_Copy Feed Address"
+msgstr "نسخ عنوان ال_صورة"
+
+#: ../extensions/rss/rss-ui.c:591
+#, fuzzy
+msgid "Subscribe"
+msgstr "إشتراك"
+
+#: ../extensions/rss/rss-ui.glade.h:1
+#, fuzzy
+msgid "<b>Select Interesting Feeds</b>"
+msgstr "من فضلك إختار تلميحة"
+
+#: ../extensions/rss/rss-ui.glade.h:2
+#, fuzzy
+msgid "News Feed Subcription"
+msgstr "أخبار USENET عبر %s"
+
+#: ../extensions/rss/rss-ui.glade.h:3
+#, fuzzy
+msgid "_Subscribe"
+msgstr "_إشتراك"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:145
+msgid "Render the page without using a style"
+msgstr ""
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:148
+msgid "Render the page using the default style"
+msgstr ""
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:151
+#, c-format
+msgid "Render the page using the “%s” style"
+msgstr ""
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:309
+#, fuzzy
+msgid "St_yle"
+msgstr "عمود الحالة"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:310
+msgid "Select a different style for this page"
+msgstr ""
+
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:224
+#, fuzzy
+msgid "Default"
+msgstr "الافتراضي"
+
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:235
+#, fuzzy
+msgid "None"
+msgstr "لا شيء"
+
+#: ../extensions/sidebar/ephy-sidebar.c:176
+#, fuzzy
+msgid "No Sidebars installed"
+msgstr "لا قوالب مثبتة"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:105
+#, fuzzy
+msgid "_Sidebar"
+msgstr "العمود الجانبي"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:106
+#, fuzzy
+msgid "Show or hide the sidebar"
+msgstr "إظهار أو إخفاء الهامش"
+
+#. Translators: %s is the sidebar title
+#: ../extensions/sidebar/ephy-sidebar-extension.c:408
+#, c-format
+msgid "The sidebar already contains “%s”"
+msgstr ""
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:412
+msgid "To use this sidebar, select it from the list of available sidebar pages."
+msgstr ""
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:415
+#: ../extensions/sidebar/ephy-sidebar-extension.c:441
+#, fuzzy
+msgid "Add Sidebar"
+msgstr "عرض العمود العرضي"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:435
+#, fuzzy, c-format
+msgid "Add “%s” to the Sidebar?"
+msgstr "صفحة الشريط الجانبي الظاهرة"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:439
+#, c-format
+msgid "The source to the new sidebar page is “%s”."
+msgstr ""
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:445
+#, fuzzy
+msgid "_Add Sidebar"
+msgstr "عرض العمود العرضي"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:551
+#, fuzzy
+msgid "_Look Up"
+msgstr "_بحث"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:558
+#, fuzzy
+msgid "_GNOME Dictionary"
+msgstr "معجم المستعمل:"
+
+#: ../extensions/actions/actions.ephy-extension.in.in.h:2
+msgid "Execute arbitrary commands from the context menu"
+msgstr ""
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Auto Scroll"
+msgstr "الإلتفاف إلى الأعلى"
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
+msgid "Scroll on middle mouse click"
+msgstr ""
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Auto Reload Tab"
+msgstr "تنشيط اللسان التالي"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Reload a tab periodically"
+msgstr "تنشيط اللسان التالي"
+
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
+msgid "View the page certificate and manage the certificates"
+msgstr ""
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Error viewer"
+msgstr "عارض الصّور"
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
+msgid "View error in web pages, validate web pages and check links"
+msgstr ""
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
+msgid "Activate and deactivate extensions"
+msgstr ""
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Extensions Manager"
+msgstr "مدير المحفوظات"
+
+#: ../extensions/favicon/favicon.ephy-extension.in.h:1
+msgid "Favicon fallback"
+msgstr ""
+
+#: ../extensions/favicon/favicon.ephy-extension.in.h:2
+msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
+msgstr ""
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
+msgid "Gestures"
+msgstr ""
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:2
+msgid "Perform actions with mouse gestures"
+msgstr ""
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
+msgid "Greasemonkey"
+msgstr ""
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
+msgid "Run user scripts to modify web pages' behavior"
+msgstr ""
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Java Console"
+msgstr "%s في هيكل %d"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
+msgid "Provide access to the Java-Plugin Console"
+msgstr ""
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
+msgid "Display information about and links and media from the current page"
+msgstr ""
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Page Info"
+msgstr "قراءة صفحات info عن %s"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Edit site permissions"
+msgstr "عدّل معلومات الحساب"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Permissions"
+msgstr "التصاريح"
+
+#: ../extensions/rss/rss.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "News Feed Subscription"
+msgstr "أخبار USENET عبر %s"
+
+#: ../extensions/rss/rss.ephy-extension.in.in.h:2
+msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr ""
+
+#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
+msgid "A sample extension with mozilla backend"
+msgstr ""
+
+#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Sample (Mozilla)"
+msgstr "موزيلا (HTML)"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "A sample extension"
+msgstr "ا_متداد الملف:"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Sample"
+msgstr "عينة"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Select Stylesheet"
+msgstr "ت_حرير مستند النسق..."
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
+msgid "Select between different stylesheets offered by the web page"
+msgstr ""
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Adds a sidebar to windows"
+msgstr "متى تجمّع النوافذ"
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Sidebar"
+msgstr "العمود الجانبي"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
+msgid "Look up the selected text with a smart bookmark"
+msgstr ""
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Smart Bookmarks"
+msgstr "مؤشرات الويب"
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
+msgid "Groups newly opened tabs"
+msgstr ""
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Tab Groups"
+msgstr "المجموعات الثانوية"
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
+msgid "Indicates new content in background tabs"
+msgstr ""
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Tab States"
+msgstr "الولايات المتحدة الأمريكية"
+
