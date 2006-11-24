@@ -1,3 +1,9 @@
+2006-11-24  Mart Raudsepp  <mraudsepp@cvs.gnome.org>
+
+	* configure.ac:
+
+	Update list of extensions in configure help. Fixes bug #377295.
+
 2006-10-30  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/livehttpheaders/mozilla/LiveHTTPHeadersListener.cpp:
