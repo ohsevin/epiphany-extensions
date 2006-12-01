@@ -16,7 +16,7 @@
 #
 # $Id$
 
-AC_INIT([GNOME Web Browser Extensions],[2.17.0],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+AC_INIT([GNOME Web Browser Extensions],[2.17.3.90],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 
 GNOME_COMMON_INIT
 
