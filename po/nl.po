@@ -8,9 +8,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany-extensions\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2006-09-21 00:21+0200\n"
-"PO-Revision-Date: 2006-09-21 00:53+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-12-01 14:06+0100\n"
+"PO-Revision-Date: 2006-12-01 14:08+0100\n"
 "Last-Translator: Reinout van Schouwen <reinouts@gnome.org>\n"
 "Language-Team: nl <vertaling@vrijschrift.org>\n"
 "MIME-Version: 1.0\n"
@@ -88,8 +88,8 @@ msgid "Actions"
 msgstr "Acties"
 
 #: ../extensions/actions/ephy-actions-extension.c:112
-msgid "_Actions"
-msgstr "_Acties"
+msgid "Actio_ns"
+msgstr "A_cties"
 
 #: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Customize actions"
@@ -801,8 +801,8 @@ msgstr "De zijbalk bevat “%s” al."
 msgid ""
 "To use this sidebar, select it from the list of available sidebar pages."
 msgstr ""
-"Om deze zijbalk te gebruiken, selecteert u hem uit de lijst van beschikbare"
-"zijbalkpagina's."
+"Om deze zijbalk te gebruiken, selecteert u hem uit de lijst van "
+"beschikbarezijbalkpagina's."
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:415
 #: ../extensions/sidebar/ephy-sidebar-extension.c:441
@@ -991,6 +991,9 @@ msgstr "Geeft nieuwe inhoud aan in achtergrondtabbladen"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Tab-staat"
+
+#~ msgid "_Actions"
+#~ msgstr "_Acties"
 
 #~ msgid "_Edit Bookmarks"
 #~ msgstr "Bladwijzers be_werken"
