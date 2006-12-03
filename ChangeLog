@@ -1,3 +1,12 @@
+2006-12-03  Christian Persch  <chpe@cvs.gnome.org>
+
+	* extensions/adblock/ephy-adblock-extension.c: (update_statusbar),
+	(create_statusbar_icon), (destroy_statusbar_icon),
+	(switch_page_cb):
+
+	Remove frame around the adblock icon, to make it look like the other
+	items. From bug #368759.
+
 2006-12-02  Reinout van Schouwen <reinouts@cvs.gnome.org>
 
 	* configure.ac:

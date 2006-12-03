@@ -36,7 +36,6 @@
 #include "ad-uri-tester.h"
 
 #include <gtk/gtkeventbox.h>
-#include <gtk/gtkframe.h>
 #include <gtk/gtkiconfactory.h>
 #include <gtk/gtkimage.h>
 #include <gtk/gtknotebook.h>
@@ -175,7 +174,6 @@ update_statusbar (EphyWindow *window)
 	EphyEmbed *embed;
 	GObject *statusbar;
 	GtkWidget *evbox;
-	GtkWidget *frame;
 	int num_blocked;
 
 	embed = ephy_window_get_active_embed (window);
@@ -187,9 +185,6 @@ update_statusbar (EphyWindow *window)
 	statusbar = G_OBJECT (ephy_window_get_statusbar (window));
 	g_return_if_fail (statusbar != NULL);
 
-	frame = g_object_get_data (statusbar, STATUSBAR_FRAME_KEY);
-	g_return_if_fail (frame != NULL);
-
 	evbox = g_object_get_data (statusbar, STATUSBAR_EVBOX_KEY);
 	g_return_if_fail (evbox != NULL);
 
@@ -197,7 +192,7 @@ update_statusbar (EphyWindow *window)
 
 	if (num_blocked == 0)
 	{
-		gtk_widget_hide (frame);
+		gtk_widget_hide (evbox);
 	}
 	else
 	{
@@ -208,12 +203,12 @@ update_statusbar (EphyWindow *window)
 						     num_blocked),
 					   num_blocked);
 
-		gtk_tooltips_set_tip ((EPHY_STATUSBAR(statusbar))->tooltips,
+		gtk_tooltips_set_tip ((EPHY_STATUSBAR (statusbar))->tooltips,
 				      evbox, tooltip, NULL);
 
 		g_free (tooltip);
 
-		gtk_widget_show (frame);
+		gtk_widget_show (evbox);
 	}
 }
 
@@ -223,13 +218,13 @@ create_statusbar_icon (EphyWindow *window)
 	EphyStatusbar *statusbar;
 	char *filename;
 	GdkPixbuf *pixbuf;
-	GtkWidget *frame;
 	GtkWidget *icon;
 	GtkWidget *evbox;
 	int w, h;
 
 	gtk_icon_size_lookup (GTK_ICON_SIZE_MENU, &w, &h);
 
+	/* FIXME themeing! */
 	filename = g_build_filename (SHARE_DIR, ICON_FILENAME, NULL);
 	pixbuf = gdk_pixbuf_new_from_file_at_size (filename, w, h, NULL);
 	g_free (filename);
@@ -238,47 +233,38 @@ create_statusbar_icon (EphyWindow *window)
 	statusbar = EPHY_STATUSBAR (ephy_window_get_statusbar (window));
 	g_return_if_fail (statusbar != NULL);
 
-	frame = gtk_frame_new (NULL);
-
 	icon = gtk_image_new_from_pixbuf (pixbuf);
+	g_object_unref (pixbuf);
 
 	evbox = gtk_event_box_new ();
 	gtk_event_box_set_visible_window (GTK_EVENT_BOX (evbox), FALSE);
 
-	gtk_container_add (GTK_CONTAINER (frame), evbox);
 	gtk_container_add (GTK_CONTAINER (evbox), icon);
 
-	gtk_widget_show (evbox);
 	gtk_widget_show (icon);
-	/* don't show the frame */
+	/* don't show the evbox */
 
-	ephy_statusbar_add_widget (statusbar, frame);
+	ephy_statusbar_add_widget (statusbar, evbox);
 
-	g_object_set_data (G_OBJECT (statusbar), STATUSBAR_FRAME_KEY, frame);
 	g_object_set_data (G_OBJECT (statusbar), STATUSBAR_EVBOX_KEY, evbox);
-
-	g_object_unref (pixbuf);
 }
 
 static void
 destroy_statusbar_icon (EphyWindow *window)
 {
 	EphyStatusbar *statusbar;
-	GtkWidget *frame;
 	GtkWidget *evbox;
 
 	statusbar = EPHY_STATUSBAR (ephy_window_get_statusbar (window));
 	g_return_if_fail (statusbar != NULL);
 
-	frame = g_object_steal_data (G_OBJECT (statusbar), STATUSBAR_FRAME_KEY);
 	evbox = g_object_steal_data (G_OBJECT (statusbar), STATUSBAR_EVBOX_KEY);
 
-	g_return_if_fail (frame != NULL);
 	g_return_if_fail (evbox != NULL);
 
 	gtk_tooltips_set_tip (statusbar->tooltips, evbox, NULL, NULL);
 
-	ephy_statusbar_remove_widget (statusbar, frame);
+	ephy_statusbar_remove_widget (statusbar, evbox);
 }
 
 static void
@@ -287,6 +273,7 @@ switch_page_cb (GtkNotebook *notebook,
 		guint page_num,
 		EphyWindow *window)
 {
+	/* FIXME: this shouldn't happen anymore with gtk 2.10 ! Test & remove */
 	if (GTK_WIDGET_REALIZED (window) == FALSE) return; /* on startup */
 
 	update_statusbar (window);
