@@ -39,6 +39,7 @@
 #include <gtk/gtkiconfactory.h>
 #include <gtk/gtkimage.h>
 #include <gtk/gtknotebook.h>
+#include <gtk/gtkstock.h>
 
 #include <gmodule.h>
 
@@ -228,13 +229,21 @@ create_statusbar_icon (EphyWindow *window)
 	filename = g_build_filename (SHARE_DIR, ICON_FILENAME, NULL);
 	pixbuf = gdk_pixbuf_new_from_file_at_size (filename, w, h, NULL);
 	g_free (filename);
-	g_return_if_fail (pixbuf != NULL);
+
+	/* Try not to crash when librsvg isn't installed! */
+	if (pixbuf)
+	{
+		icon = gtk_image_new_from_pixbuf (pixbuf);
+		g_object_unref (pixbuf);
+	}
+	else
+	{
+		icon = gtk_image_new_from_stock (GTK_STOCK_MISSING_IMAGE, GTK_ICON_SIZE_MENU);
+	}
 
 	statusbar = EPHY_STATUSBAR (ephy_window_get_statusbar (window));
 	g_return_if_fail (statusbar != NULL);
 
-	icon = gtk_image_new_from_pixbuf (pixbuf);
-	g_object_unref (pixbuf);
 
 	evbox = gtk_event_box_new ();
 	gtk_event_box_set_visible_window (GTK_EVENT_BOX (evbox), FALSE);
