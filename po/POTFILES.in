@@ -33,6 +33,7 @@ extensions/select-stylesheet/mozilla/mozilla-helpers.cpp
 extensions/sidebar/ephy-sidebar.c
 extensions/sidebar/ephy-sidebar-extension.c
 extensions/smart-bookmarks/smart-bookmarks-extension.c
+extensions/smart-bookmarks/smart-bookmarks.schemas.in
 [type: gettext/ini]extensions/actions/actions.ephy-extension.in.in
 [type: gettext/ini]extensions/auto-scroller/auto-scroller.ephy-extension.in.in
 [type: gettext/ini]extensions/auto-reload/auto-reload.ephy-extension.in.in

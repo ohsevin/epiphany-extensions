@@ -32,12 +32,28 @@ extensioninidir = $(extensiondir)
 extensionini_in_files = smart-bookmarks.ephy-extension.in.in
 extensionini_DATA = $(extensionini_in_files:.ephy-extension.in.in=.ephy-extension)
 
+schemadir = $(GCONF_SCHEMA_FILE_DIR)
+schema_in_files = smart-bookmarks.schemas.in
+schema_DATA = $(schema_in_files:.schemas.in=.schemas)
+
+@INTLTOOL_SCHEMAS_RULE@
+
 %.ephy-extension.in: %.ephy-extension.in.in $(extension_LTLIBRARIES)
 	sed -e "s|%LIBRARY%|`. ./$(extension_LTLIBRARIES) && echo $$dlname`|" \
 	    -e "s|%EXTENSION_DIR%|$(extensiondir)|" \
 	$< > $@
 
 @EPIPHANY_EXTENSION_RULE@
+
+if GCONF_SCHEMAS_INSTALL
+install-data-local: $(schema_DATA)
+	if test -z "$(DESTDIR)" ; then \
+	for p in $^ ; do \
+		GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) \
+		$(GCONFTOOL) --makefile-install-rule $$p >&1 > /dev/null; \
+	done \
+	fi
+endif
 
 CLEANFILES = $(extensionini_DATA)
 DISTCLEANFILES = $(extensionini_DATA)
