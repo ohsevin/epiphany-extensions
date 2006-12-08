@@ -28,19 +28,27 @@
 
 #include <nsCOMPtr.h>
 #include <nsIDOMDocument.h>
+#ifdef HAVE_GECKO_1_9
+#include <nsIDocument.h>
+#else
 #include <nsIHTMLDocument.h>
+#endif
 
 #include "PageInfoPrivate.h"
 
 EmbedPageRenderMode
 PageInfoPrivate::GetRenderMode (nsIDOMDocument *aDocument)
 {
-  nsCOMPtr<nsIHTMLDocument> htmlDoc (do_QueryInterface (aDocument));
+#ifdef HAVE_GECKO_1_9
+  nsCOMPtr<nsIDocument> doc (do_QueryInterface (aDocument));
+#else
+  nsCOMPtr<nsIHTMLDocument> doc (do_QueryInterface (aDocument));
+#endif
 
   EmbedPageRenderMode mode = EMBED_RENDER_UNKNOWN;
-  if (htmlDoc)
+  if (doc)
     {
-      mode = (EmbedPageRenderMode) htmlDoc->GetCompatibilityMode ();
+      mode = (EmbedPageRenderMode) doc->GetCompatibilityMode ();
     }
 
   return mode;

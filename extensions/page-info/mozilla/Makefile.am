@@ -17,7 +17,8 @@ mozilla_include_subdirs = \
 	necko		\
 	pref		\
 	uconv		\
-	webbrwsr
+	webbrwsr	\
+	widget
 
 libpageinfomozilla_la_CPPFLAGS = \
 	-I..						\
