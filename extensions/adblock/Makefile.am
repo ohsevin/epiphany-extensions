@@ -6,9 +6,11 @@ libadblockextension_la_SOURCES = \
 	ephy-adblock-extension.h	\
 	ad-blocker.h			\
 	ad-blocker.c			\
+	adblock-pattern.h		\
 	adblock-pattern.c		\
 	ad-uri-tester.h			\
 	ad-uri-tester.c			\
+	adblock-ui.h			\
 	adblock-ui.c			\
 	extension.c
 

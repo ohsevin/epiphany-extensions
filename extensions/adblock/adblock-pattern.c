@@ -173,14 +173,14 @@ adblock_pattern_rewrite_patterns (const char *contents)
 	{
 		g_warning ("Could not compile expression ^\\[Adblock]\n" "Error at column %d: %s", 
 			   erroffset, err);
-		return NULL;
+		return;
 	}
 	preg2 = pcre_compile ("^\\!Filterset", PCRE_UTF8, &err, &erroffset, NULL);
 	if (preg1 == NULL)
 	{
 		g_warning ("Could not compile expression ^\\!Filterset\n" "Error at column %d: %s", 
 			   erroffset, err);
-		return NULL;
+		return;
 	}
 
 	t = lines = g_strsplit (contents, "\n", 0);
