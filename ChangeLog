@@ -1,5 +1,12 @@
 2006-12-17  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
+	* configure.ac:
+
+	Add bits to check against gconftool.
+	Add macro to install gconf schemas.
+
+2006-12-17  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
 	* extensions/page-info/page-info-dialog.c:
 
 	Add a column so one can see if a media/link has been blocked (if Adblock extension is on).
