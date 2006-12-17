@@ -60,6 +60,8 @@ gboolean	 ad_uri_tester_test_uri		(AdUriTester *tester,
 						 const char *uri,
 						 AdUriCheckType type);
 
+void		 ad_uri_tester_reload		(AdUriTester *tester);
+
 G_END_DECLS
 
 #endif /* AD_URI_TESTER_H */

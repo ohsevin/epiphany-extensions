@@ -31,14 +31,19 @@
 
 #include "ephy-adblock-extension.h"
 #include "ephy-debug.h"
+#include "ephy-file-helpers.h"
 
 #include "ad-blocker.h"
 #include "ad-uri-tester.h"
+#include "adblock-ui.h"
 
+#include <gtk/gtkaction.h>
+#include <gtk/gtkactiongroup.h>
 #include <gtk/gtkeventbox.h>
 #include <gtk/gtkiconfactory.h>
 #include <gtk/gtkimage.h>
 #include <gtk/gtknotebook.h>
+#include <gtk/gtkuimanager.h>
 #include <gtk/gtkstock.h>
 
 #include <gmodule.h>
@@ -47,14 +52,28 @@
 
 #define EPHY_ADBLOCK_EXTENSION_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_ADBLOCK_EXTENSION, EphyAdblockExtensionPrivate))
 
+#define WINDOW_DATA_KEY		"EphyAdblockExtensionWindowData"
 #define STATUSBAR_FRAME_KEY	"EphyAdblockExtensionStatusbarFrame"
 #define STATUSBAR_EVBOX_KEY	"EphyAdblockExtensionStatusbarEvbox"
 #define EXTENSION_KEY		"EphyAdblockExtension"
 #define ICON_FILENAME		"adblock-statusbar-icon.svg"
 
+typedef struct
+{
+	EphyAdblockExtension	*extension;
+	EphyWindow		*window;
+
+	GtkActionGroup		*action_group;
+	guint			ui_id;
+} WindowData;
+
+static void ephy_adblock_extension_edit_cb (GtkAction *action,
+					    EphyWindow *window);
+
 struct EphyAdblockExtensionPrivate
 {
 	AdUriTester *tester;
+	AdblockUI   *ui;
 };
 
 static void ephy_adblock_extension_class_init	(EphyAdblockExtensionClass *klass);
@@ -125,6 +144,7 @@ static void
 ephy_adblock_extension_init (EphyAdblockExtension *extension)
 {
 	EphyAdBlockManager *manager;
+	char *dirname;
 
 	LOG ("EphyAdblockExtension initialising");
 
@@ -132,9 +152,14 @@ ephy_adblock_extension_init (EphyAdblockExtension *extension)
 
 	extension->priv->tester = ad_uri_tester_new ();
 
-	/* register our extention as a blocker */
-	manager = EPHY_ADBLOCK_MANAGER (ephy_embed_shell_get_adblock_manager (embed_shell));
+	/* ensure adblock's dir is there */
+	dirname =  g_build_filename (ephy_dot_dir (), "extensions", "adblock", "data", NULL);
+	g_mkdir_with_parents (dirname, 0775);
+	g_free (dirname);
 
+	/* register our extention as a blocker */
+	manager = EPHY_ADBLOCK_MANAGER (
+			ephy_embed_shell_get_adblock_manager (embed_shell));
 	ephy_adblock_manager_set_blocker (manager, EPHY_ADBLOCK (extension));
 }
 
@@ -149,14 +174,20 @@ ephy_adblock_extension_finalize (GObject *object)
 	/* unregister our extension as a blocker */
 	manager = EPHY_ADBLOCK_MANAGER (ephy_embed_shell_get_adblock_manager (embed_shell));
 	ephy_adblock_manager_set_blocker (manager, NULL);
-
+	
+	if (extension->priv->ui != NULL)
+	{
+		g_object_unref (extension->priv->ui);
+	}
 	g_object_unref (extension->priv->tester);
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
 }
 
 static gboolean
-ephy_adblock_impl_should_load (EphyAdBlock *blocker, const char *url, AdUriCheckType type)
+ephy_adblock_impl_should_load (EphyAdBlock *blocker, 
+			       const char *url, 
+			       AdUriCheckType type)
 {
 	EphyAdblockExtension *self;
 
@@ -166,6 +197,68 @@ ephy_adblock_impl_should_load (EphyAdBlock *blocker, const char *url, AdUriCheck
 	g_return_val_if_fail (self != NULL, TRUE);
 
 	return !ad_uri_tester_test_uri (self->priv->tester, url, type);
+}
+
+static void
+ephy_adblock_impl_edit_rule (EphyAdBlock *blocker, 
+			     const char *url, 
+			     gboolean allowed)
+{
+	EphyAdblockExtension *self;
+	EphyAdblockExtensionPrivate *priv;
+
+	LOG ("ephy_adblock_impl_edit_rule %s with state %d", url, allowed);
+
+	self = EPHY_ADBLOCK_EXTENSION (blocker);
+	priv = self->priv;
+
+	if (priv->ui == NULL)
+	{
+		AdblockUI **ui;
+ 
+		priv->ui =  g_object_new (TYPE_ADBLOCK_UI, 
+					  "tester"     , priv->tester, 
+					  "url"        , url, 
+					  "url_allowed", allowed,
+					  NULL);
+		ui = &priv->ui;
+
+		g_object_add_weak_pointer ((gpointer)priv->ui,
+				           (gpointer *) ui);
+	
+		ephy_dialog_set_parent (EPHY_DIALOG (priv->ui), NULL);
+	}
+
+	ephy_dialog_show (EPHY_DIALOG (priv->ui));
+}
+
+
+static const GtkActionEntry edit_entries[] = {
+	{ "EphyAdblockExtensionEdit", NULL, N_("Adblock editor"), NULL,
+	  N_("Edit Adblock"),
+	  G_CALLBACK (ephy_adblock_extension_edit_cb) }
+};
+
+static gboolean
+ephy_adblock_statusbar_icon_clicked_cb (GtkWidget *widget,
+				        GdkEventButton *event,
+				        EphyWindow *window)
+{
+	if (event->button == 1)
+	{
+		GtkAction *action;
+
+		action = gtk_ui_manager_get_action (
+				GTK_UI_MANAGER (ephy_window_get_ui_manager (window)),
+					        "/menubar/ViewMenu/PageInfo");
+		g_return_val_if_fail (action != NULL, TRUE);
+
+		gtk_action_activate (action);
+
+		return TRUE;
+	}
+
+	return FALSE;
 }
 
 static void
@@ -244,7 +337,6 @@ create_statusbar_icon (EphyWindow *window)
 	statusbar = EPHY_STATUSBAR (ephy_window_get_statusbar (window));
 	g_return_if_fail (statusbar != NULL);
 
-
 	evbox = gtk_event_box_new ();
 	gtk_event_box_set_visible_window (GTK_EVENT_BOX (evbox), FALSE);
 
@@ -256,6 +348,10 @@ create_statusbar_icon (EphyWindow *window)
 	ephy_statusbar_add_widget (statusbar, evbox);
 
 	g_object_set_data (G_OBJECT (statusbar), STATUSBAR_EVBOX_KEY, evbox);
+
+	g_signal_connect_after (evbox, "button-press-event",
+				G_CALLBACK (ephy_adblock_statusbar_icon_clicked_cb),
+				window);
 }
 
 static void
@@ -277,6 +373,34 @@ destroy_statusbar_icon (EphyWindow *window)
 }
 
 static void
+ephy_adblock_extension_edit_cb (GtkAction *action, EphyWindow *window)
+{
+	WindowData *data;
+	EphyAdblockExtensionPrivate *priv;
+	
+	data = g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
+	g_return_if_fail (data != NULL);
+
+	priv = data->extension->priv;
+
+	if (priv->ui == NULL)
+	{
+		AdblockUI **ui;
+
+		priv->ui =  g_object_new (TYPE_ADBLOCK_UI, 
+					  "tester", priv->tester, 
+					  NULL);
+		ui = &priv->ui;
+
+		g_object_add_weak_pointer ((gpointer)priv->ui,
+				           (gpointer *) ui);
+	}
+
+	ephy_dialog_set_parent (EPHY_DIALOG (priv->ui), GTK_WIDGET (window));
+	ephy_dialog_show (EPHY_DIALOG (priv->ui));
+}
+
+static void
 switch_page_cb (GtkNotebook *notebook,
 		GtkNotebookPage *page,
 		guint page_num,
@@ -293,10 +417,45 @@ impl_attach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
 	GtkWidget *notebook;
+	WindowData *data;
+	GtkUIManager *manager;
 
+	/* Add adblock editor's menu entry */
+	data = g_new (WindowData, 1);
+	g_object_set_data_full (G_OBJECT (window), 
+			 	WINDOW_DATA_KEY, 
+				data,
+				g_free);
+
+	data->extension = EPHY_ADBLOCK_EXTENSION (ext);
+	data->window = window;
+
+	data->action_group = gtk_action_group_new ("EphyAdblockExtension");
+	gtk_action_group_set_translation_domain (data->action_group,
+						 GETTEXT_PACKAGE);
+	gtk_action_group_add_actions (data->action_group, edit_entries,
+				      G_N_ELEMENTS(edit_entries), window);
+
+	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
+
+	gtk_ui_manager_insert_action_group (manager, data->action_group, -1);
+	/* ui manager refs the new action group */
+	g_object_unref (data->action_group);
+
+	data->ui_id = gtk_ui_manager_new_merge_id (manager);
+
+	gtk_ui_manager_add_ui (manager,
+			       data->ui_id,
+			       "/menubar/ToolsMenu",
+			       "EphyAdblockExtensionEdit",
+			       "EphyAdblockExtensionEdit",
+			       GTK_UI_MANAGER_MENUITEM,
+			       FALSE);
+	
 	/* Remember the xtension attached to that window */
 	g_object_set_data (G_OBJECT (window), EXTENSION_KEY, ext);
 
+	/* The ad blocked icon */
 	create_statusbar_icon (window);
 
 	notebook = ephy_window_get_notebook (window);
@@ -310,7 +469,21 @@ impl_detach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
 	GtkWidget *notebook;
+	WindowData *data;
+	GtkUIManager *manager;
 
+	/* Remove editor ui */
+	data = g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
+	g_assert (data != NULL);
+
+	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
+
+	gtk_ui_manager_remove_ui (manager, data->ui_id);
+	gtk_ui_manager_remove_action_group (manager, data->action_group);
+
+	g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, NULL);
+
+	/* Remove icon stuff */
 	notebook = ephy_window_get_notebook (window);
 
 	g_signal_handlers_disconnect_by_func
@@ -433,6 +606,7 @@ static void
 ephy_adblock_adblock_iface_init (EphyAdBlockIface *iface)
 {
 	iface->should_load = ephy_adblock_impl_should_load;
+	iface->edit_rule   = ephy_adblock_impl_edit_rule;
 }
 
 static void

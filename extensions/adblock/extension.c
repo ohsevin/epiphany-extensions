@@ -23,6 +23,7 @@
 
 #include "ephy-adblock-extension.h"
 #include "ad-blocker.h"
+#include "adblock-ui.h"
 #include "ephy-debug.h"
 
 #include <gmodule.h>
@@ -43,5 +44,6 @@ register_module (GTypeModule *module)
 
 	ad_blocker_register_type (module);
 	ad_uri_tester_register_type (module);
+	adblock_ui_register_type (module);
 	return ephy_adblock_extension_register_type (module);
 }

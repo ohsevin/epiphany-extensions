@@ -6,8 +6,10 @@ libadblockextension_la_SOURCES = \
 	ephy-adblock-extension.h	\
 	ad-blocker.h			\
 	ad-blocker.c			\
+	adblock-pattern.c		\
 	ad-uri-tester.h			\
 	ad-uri-tester.c			\
+	adblock-ui.c			\
 	extension.c
 
 libadblockextension_la_CPPFLAGS = \
@@ -29,6 +31,9 @@ libadblockextension_la_LDFLAGS = \
 	-module -avoid-version \
 	-export-symbols $(top_srcdir)/ephy-extension.symbols \
 	$(AM_LDFLAGS)
+
+glade_DATA = adblock.glade
+gladedir = $(pkgdatadir)/glade
 
 patterns_DATA = adblock-patterns
 patternsdir = $(pkgdatadir)
@@ -53,4 +58,4 @@ extensionini_DATA = $(extensionini_in_files:.ephy-extension.in.in=.ephy-extensio
 CLEANFILES = $(extensionini_DATA)
 DISTCLEANFILES = $(extensionini_DATA)
 
-EXTRA_DIST = $(patterns_DATA) $(icon_DATA) $(extensionini_in_files)
+EXTRA_DIST = $(patterns_DATA) $(icon_DATA) $(extensionini_in_files) $(glade_DATA)

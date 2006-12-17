@@ -21,15 +21,12 @@
 #include "config.h"
 
 #include "ad-uri-tester.h"
+#include "adblock-pattern.h"
 
 #include <pcre.h>
 
 #include "ephy-file-helpers.h"
 #include "ephy-debug.h"
-
-#define AD_URI_TESTER_DEFAULT_BLACKLIST_FILENAME	"adblock-patterns"
-#define	AD_URI_TESTER_BLACKLIST_FILENAME		"blacklist"
-#define AD_URI_TESTER_WHITELIST_FILENAME		"whitelist"
 
 #define AD_URI_TESTER_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), TYPE_AD_URI_TESTER, AdUriTesterPrivate))
 
@@ -88,6 +85,16 @@ ad_uri_tester_new (void)
 	return g_object_new (TYPE_AD_URI_TESTER, NULL);
 }
 
+static void
+load_patterns (AdUriTester *tester)
+{
+	adblock_pattern_load (tester->priv->blacklist, PATTERN_BLACKLIST);
+
+	adblock_pattern_load (tester->priv->blacklist, PATTERN_DEFAULT_BLACKLIST);
+
+	adblock_pattern_load (tester->priv->whitelist, PATTERN_WHITELIST);
+}
+
 static gboolean
 match_uri (const char *pattern,
 	   const pcre *preg,
@@ -109,6 +116,32 @@ match_uri (const char *pattern,
 	return FALSE;
 }
 
+static gboolean
+ad_uri_tester_true (gpointer key,
+                    gpointer value,
+                    gpointer dummy)
+{
+	return TRUE;
+}
+
+/**
+ * ad_uri_tester_reload:
+ * @tester: an AdUriTester
+ *
+ * Reload patterns from zero
+ */
+void
+ad_uri_tester_reload (AdUriTester *tester)
+{
+	g_hash_table_foreach_remove (tester->priv->blacklist,
+				     ad_uri_tester_true,
+				     NULL);		     
+	g_hash_table_foreach_remove (tester->priv->whitelist,
+				     ad_uri_tester_true,
+				     NULL);		     
+	load_patterns (tester);
+}
+
 /**
  * ad_uri_tester_test_uri:
  * @tester: an AdUriTester
@@ -125,7 +158,7 @@ ad_uri_tester_test_uri (AdUriTester *tester,
 	const char *pattern;
 	UriWithLen uri_with_len;
 
-	if (type == AD_URI_CHECK_TYPE_DOCUMENT)
+	if (type == AD_URI_CHECK_TYPE_DOCUMENT) 
 	{
 		return FALSE;
 	}
@@ -145,87 +178,6 @@ ad_uri_tester_test_uri (AdUriTester *tester,
 				     (GHRFunc) match_uri, &uri_with_len);
 
 	return pattern == NULL;
-}
-
-static void
-load_patterns_file (GHashTable *patterns,
-		    const char *filename)
-{
-	char *contents;
-	char **lines;
-	char **t;
-	char *line;
-	pcre *preg;
-	const char *err;
-	int erroffset;
-
-	if (!g_file_get_contents (filename, &contents, NULL, NULL))
-	{
-		g_warning ("Could not read from file '%s'", filename);
-		return;
-	}
-
-	t = lines = g_strsplit (contents, "\n", 0);
-
-	while (TRUE)
-	{
-		line = *t++;
-		if (line == NULL) break;
-
-		if (*line == '#') continue; /* comment */
-
-		g_strstrip (line);
-
-		if (*line == '\0') continue; /* empty line */
-
-		preg = pcre_compile (line, PCRE_UTF8, &err, &erroffset, NULL);
-
-		if (preg == NULL)
-		{
-			g_warning ("Could not compile expression \"%s\"\n"
-				   "Error at column %d: %s",
-				   line, erroffset, err);
-			continue;
-		}
-
-		g_hash_table_insert (patterns, g_strdup (line), preg);
-	}
-
-	g_strfreev (lines);
-	g_free (contents);
-}
-
-static void
-load_patterns (AdUriTester *tester)
-{
-	char *filename;
-
-	filename = g_build_filename (ephy_dot_dir (), "extensions", "data",
-				     "adblock", AD_URI_TESTER_BLACKLIST_FILENAME,
-				     NULL);
-	if (g_file_test (filename, G_FILE_TEST_IS_REGULAR))
-	{
-		load_patterns_file (tester->priv->blacklist, filename);
-	}
-	g_free (filename);
-
-	filename = g_build_filename (SHARE_DIR,
-				     AD_URI_TESTER_DEFAULT_BLACKLIST_FILENAME,
-				     NULL);
-	if (g_file_test (filename, G_FILE_TEST_IS_REGULAR))
-	{
-		load_patterns_file (tester->priv->blacklist, filename);
-	}
-	g_free (filename);
-
-	filename = g_build_filename (ephy_dot_dir (), "extensions", "data",
-				     "adblock", AD_URI_TESTER_WHITELIST_FILENAME,
-				     NULL);
-	if (g_file_test (filename, G_FILE_TEST_IS_REGULAR))
-	{
-		load_patterns_file (tester->priv->whitelist, filename);
-	}
-	g_free (filename);
 }
 
 static void
