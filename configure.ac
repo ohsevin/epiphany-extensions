@@ -16,7 +16,7 @@
 #
 # $Id$
 
-AC_INIT([GNOME Web Browser Extensions],[2.17.3.90],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+AC_INIT([GNOME Web Browser Extensions],[2.17.4],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 
 GNOME_COMMON_INIT
 
@@ -93,7 +93,7 @@ GNOME_DOC_INIT
 # pkg config checks
 # ********************************
 
-EPIPHANY_REQUIRED=2.17.0
+EPIPHANY_REQUIRED=2.17.4
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.12.0
 LIBGTK_REQUIRED=2.10.0

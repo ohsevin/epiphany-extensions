@@ -1,4 +1,17 @@
 ==========================
+Epiphany Extensions 2.17.4
+==========================
+
+Changes:
+
+	* Adblock has now an UI (in-progress work)
+	* Page info now shows if a media/link is blocked (if Adblock is on)
+	* Add gconf schemas to smart-bookmarks extension
+	* Remove frame around the adblock icon, to make it look like the other
+	items
+	* Fix for mozilla API change
+	
+==========================
 Epiphany Extensions 2.15.2
 ==========================
 
