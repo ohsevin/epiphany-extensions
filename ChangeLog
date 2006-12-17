@@ -1,5 +1,12 @@
 2006-12-17  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
+	* extensions/page-info/page-info-dialog.c:
+
+	Add a column so one can see if a media/link has been blocked (if Adblock extension is on).
+	Page info dialog can now be opened when clicking on the Adblock icon.
+
+2006-12-17  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
 	* extensions/adblock/Makefile.am:
 	* extensions/adblock/ad-uri-tester.c:
 	* extensions/adblock/ad-uri-tester.h:

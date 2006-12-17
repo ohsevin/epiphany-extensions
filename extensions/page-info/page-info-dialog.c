@@ -34,7 +34,10 @@
 #include <epiphany/ephy-embed-persist.h>
 #include <epiphany/ephy-embed-factory.h>
 #include <epiphany/ephy-state.h>
+#include <epiphany/ephy-adblock-manager.h>
 #include <ephy-dnd.h>
+#include <epiphany/ephy-embed-shell.h>
+#include <epiphany/ephy-adblock-manager.h>
 
 /* non-installed ephy headers */
 #include "ephy-gui.h"
@@ -48,6 +51,7 @@
 #include <gtk/gtktreeview.h>
 #include <gtk/gtktreeselection.h>
 #include <gtk/gtkcellrenderertext.h>
+#include <gtk/gtkcellrenderertoggle.h>
 #include <gtk/gtkaction.h>
 #include <gtk/gtkactiongroup.h>
 #include <gtk/gtkuimanager.h>
@@ -907,6 +911,7 @@ struct _MediaInfoPage
 
 enum
 {
+	COL_MEDIUM_BLOCKED,
 	COL_MEDIUM_URL,
 	COL_MEDIUM_TYPE,
         COL_MEDIUM_TYPE_TEXT,
@@ -918,6 +923,7 @@ enum
 
 enum
 {
+	TV_COL_MEDIUM_BLOCKED,
 	TV_COL_MEDIUM_URL,
         TV_COL_MEDIUM_TYPE_TEXT,
 	TV_COL_MEDIUM_ALT,
@@ -953,6 +959,67 @@ mozilla_embed_type_to_string (EmbedPageMediumType type)
 	}
 
 	return s_type;
+}
+
+static gboolean
+media_is_medium_blocked (EphyAdBlockManager *manager,
+		         const char *url,
+			 EmbedPageMediumType type)
+{
+	gboolean should_load;
+
+	switch (type)
+	{
+		case MEDIUM_IMAGE: 
+		case MEDIUM_ICON:
+			should_load = ephy_adblock_manager_should_load (
+							manager, 
+					 		url, 
+							AD_URI_CHECK_TYPE_IMAGE);
+
+			break;
+		case MEDIUM_EMBED:
+		case MEDIUM_OBJECT:
+		case MEDIUM_APPLET:
+			should_load = ephy_adblock_manager_should_load (
+							manager, 
+					 		url, 
+							AD_URI_CHECK_TYPE_OBJECT);
+
+			break;
+		default:
+			should_load = ephy_adblock_manager_should_load (
+							manager, 
+					 		url, 
+							AD_URI_CHECK_TYPE_OTHER);
+	}
+	return should_load;
+}
+
+static void
+media_sync_adblock (EphyAdBlockManager *manager, 
+		    TreeviewInfoPage *page)
+{
+	GtkTreeIter   iter;
+	gboolean      iter_valid;
+	GtkTreeModel *model = GTK_TREE_MODEL (page->store);
+
+	for (iter_valid = gtk_tree_model_get_iter_first (model, &iter);
+	     iter_valid;
+	     iter_valid = gtk_tree_model_iter_next (model, &iter))
+	{
+		char *url;
+		EmbedPageMediumType type;
+		gboolean should_load;
+
+		gtk_tree_model_get (model, &iter, COL_MEDIUM_URL, &url, COL_MEDIUM_TYPE, &type, -1);
+
+		should_load = media_is_medium_blocked (manager, url, type);
+
+		gtk_list_store_set (page->store, &iter, COL_MEDIUM_BLOCKED, !should_load, -1);
+		
+		g_free (url);
+	}
 }
 
 static EmbedPageMediumType
@@ -1194,6 +1261,38 @@ media_drag_data_get_cb (GtkWidget *widget,
 }
 
 static void
+treeview_page_info_blocked_cb (GtkCellRendererToggle *cell_renderer,
+               		       gchar *path,
+               		       TreeviewInfoPage *tpage)
+{	
+	GtkTreeIter iter;
+	GtkTreeModel *model;
+
+	model = GTK_TREE_MODEL (tpage->store);
+
+	if (gtk_tree_model_get_iter_from_string (model, &iter, path)) 
+	{
+		char *url;
+		gboolean state;
+
+		EphyAdBlockManager *adblock_manager;
+
+		gtk_tree_model_get (model, &iter,
+				COL_MEDIUM_URL, &url,
+				-1);
+
+		adblock_manager = EPHY_ADBLOCK_MANAGER (
+				ephy_embed_shell_get_adblock_manager (embed_shell));
+
+		state = gtk_cell_renderer_toggle_get_active (cell_renderer);
+
+		ephy_adblock_manager_edit_rule (adblock_manager, url, state);
+
+		g_free (url);
+	}	
+}
+
+static void
 media_info_page_construct (InfoPage *ipage)
 {
 	TreeviewInfoPage *tpage = (TreeviewInfoPage *) ipage;
@@ -1206,6 +1305,7 @@ media_info_page_construct (InfoPage *ipage)
 	GtkTreeSelection *selection;
 	GtkWidget *button, *vpaned, *box;
 	GtkAction *action;
+	EphyAdBlockManager *adblock_manager;
 
 	ephy_dialog_get_controls
 		(EPHY_DIALOG (dialog),
@@ -1216,7 +1316,11 @@ media_info_page_construct (InfoPage *ipage)
 	g_signal_connect (box, "realize",
 			  G_CALLBACK (page_info_media_box_realize_cb), dialog);
 
-	liststore = gtk_list_store_new (7,
+	adblock_manager = EPHY_ADBLOCK_MANAGER (
+				ephy_embed_shell_get_adblock_manager (embed_shell));
+
+	liststore = gtk_list_store_new (8,
+					G_TYPE_BOOLEAN,
 					G_TYPE_STRING,
 					G_TYPE_INT,
 					G_TYPE_STRING,
@@ -1249,6 +1353,20 @@ media_info_page_construct (InfoPage *ipage)
 							media_treeview_selection_changed_cb,
 						page, NULL);
 
+	renderer = gtk_cell_renderer_toggle_new ();
+	gtk_tree_view_insert_column_with_attributes (treeview,
+						     TV_COL_MEDIUM_BLOCKED, _("Blocked"),
+						     renderer,
+						     "active", COL_MEDIUM_BLOCKED,
+						     NULL);
+	column = gtk_tree_view_get_column (treeview, COL_MEDIUM_BLOCKED);
+	gtk_tree_view_column_set_reorderable (column, TRUE);
+	gtk_tree_view_column_set_sort_column_id (column, TV_COL_MEDIUM_BLOCKED);
+	gtk_tree_view_column_set_visible (column, 
+					  ephy_adblock_manager_has_blocker (adblock_manager));
+	g_signal_connect (renderer, "toggled",
+			  G_CALLBACK (treeview_page_info_blocked_cb), tpage);
+	
 	renderer = gtk_cell_renderer_text_new ();
 	page_info_set_url_renderer_props (renderer); 
 	gtk_tree_view_insert_column_with_attributes (treeview,
@@ -1355,7 +1473,14 @@ media_info_page_fill (InfoPage *ipage)
 	PageInfoDialog *dialog = ipage->dialog;
 	GtkListStore *store = tpage->store;
 	GtkTreeIter iter;
-	GList *media, *l;
+	GList *media, *l;	
+	EphyAdBlockManager *adblock_manager;
+	gboolean should_load;
+
+	LOG ("media_info_page_fill");
+
+	adblock_manager = EPHY_ADBLOCK_MANAGER (
+				ephy_embed_shell_get_adblock_manager (embed_shell));
 
 	media = dialog->priv->page_info->media;
 
@@ -1363,8 +1488,13 @@ media_info_page_fill (InfoPage *ipage)
 	{
 		EmbedPageMedium *media = (EmbedPageMedium *) l->data;
 
+		should_load = media_is_medium_blocked (adblock_manager, 
+						       media->url, 
+						       media->type);
+
 		gtk_list_store_append (store, &iter);
 		gtk_list_store_set (store, &iter,
+				    COL_MEDIUM_BLOCKED, !should_load,
 				    COL_MEDIUM_URL, media->url,
 				    COL_MEDIUM_TYPE_TEXT, mozilla_embed_type_to_string (media->type),
 				    COL_MEDIUM_ALT, media->alt,
@@ -1408,6 +1538,7 @@ struct _LinksInfoPage
 
 enum
 {
+	COL_LINK_BLOCKED,
 	COL_LINK_URL,
 	COL_LINK_TITLE,
 	COL_LINK_REL
@@ -1452,6 +1583,40 @@ links_drag_data_get_cb (GtkWidget *widget,
 	g_free (address);
 }
 
+static gboolean
+links_is_link_blocked (EphyAdBlockManager *manager,
+		       const char *url)
+{
+	return ephy_adblock_manager_should_load (manager, 
+						 url, 
+						 AD_URI_CHECK_TYPE_OTHER);
+}
+
+static void
+links_sync_adblock (EphyAdBlockManager *manager, 
+		    TreeviewInfoPage *page)
+{
+	GtkTreeIter   iter;
+	gboolean      iter_valid;
+	GtkTreeModel *model = GTK_TREE_MODEL (page->store);
+
+	for (iter_valid = gtk_tree_model_get_iter_first (model, &iter);
+	     iter_valid;
+	     iter_valid = gtk_tree_model_iter_next (model, &iter))
+	{
+		char *url;
+		gboolean should_load;
+
+		gtk_tree_model_get (model, &iter, COL_LINK_URL, &url, -1);
+
+		should_load = links_is_link_blocked (manager, url);
+
+		gtk_list_store_set (page->store, &iter, COL_LINK_BLOCKED, !should_load, -1);
+		
+		g_free (url);
+	}
+}
+
 static void
 links_info_page_construct (InfoPage *ipage)
 {
@@ -1462,11 +1627,16 @@ links_info_page_construct (InfoPage *ipage)
 	GtkCellRenderer *renderer;
 	GtkTreeViewColumn *column;
 	GtkTreeSelection *selection;
+	EphyAdBlockManager *adblock_manager;
 
 	treeview = GTK_TREE_VIEW (ephy_dialog_get_control
 		(EPHY_DIALOG (dialog), properties[PROP_LINKS_LINK_TREEVIEW].id));
 
-	liststore = gtk_list_store_new (3,
+	adblock_manager = EPHY_ADBLOCK_MANAGER (
+				ephy_embed_shell_get_adblock_manager (embed_shell));
+
+	liststore = gtk_list_store_new (4,
+					G_TYPE_BOOLEAN,
 					G_TYPE_STRING,
 					G_TYPE_STRING,
 					G_TYPE_STRING);
@@ -1491,6 +1661,20 @@ links_info_page_construct (InfoPage *ipage)
                                 "drag_begin",
                                 G_CALLBACK(page_info_drag_begin_cb),
                                 NULL);
+
+	renderer = gtk_cell_renderer_toggle_new ();
+	gtk_tree_view_insert_column_with_attributes (treeview,
+						     COL_LINK_BLOCKED, _("Blocked"),
+						     renderer,
+						     "active", COL_LINK_BLOCKED,
+						     NULL);
+	column = gtk_tree_view_get_column (treeview, COL_LINK_BLOCKED);
+	gtk_tree_view_column_set_visible (column, 
+					  ephy_adblock_manager_has_blocker (adblock_manager));
+	gtk_tree_view_column_set_reorderable (column, TRUE);
+	gtk_tree_view_column_set_sort_column_id (column, COL_LINK_BLOCKED);
+	g_signal_connect (renderer, "toggled",
+			  G_CALLBACK (treeview_page_info_blocked_cb), tpage);
 
 	renderer = gtk_cell_renderer_text_new ();
 	page_info_set_url_renderer_props (renderer); 
@@ -1546,6 +1730,13 @@ links_info_page_fill (InfoPage *ipage)
 	GtkListStore *store = tpage->store;
 	GtkTreeIter iter;
 	GList *links, *l;
+	EphyAdBlockManager *adblock_manager;
+	gboolean should_load;
+
+	LOG ("links_info_page_fill");
+
+	adblock_manager = EPHY_ADBLOCK_MANAGER (
+				ephy_embed_shell_get_adblock_manager (embed_shell));
 
 	links = dialog->priv->page_info->links;
 
@@ -1553,8 +1744,12 @@ links_info_page_fill (InfoPage *ipage)
 	{
 		EmbedPageLink *link = (EmbedPageLink *) l->data;
 
+		should_load = links_is_link_blocked (adblock_manager, 
+						     link->url);
+
 		gtk_list_store_append (store, &iter);
 		gtk_list_store_set (store, &iter,
+				    COL_LINK_BLOCKED, !should_load,
 				    COL_LINK_URL, link->url,
 				    COL_LINK_TITLE, link->title,
 				    COL_LINK_REL, link->rel,
@@ -1702,6 +1897,8 @@ forms_info_page_fill (InfoPage *ipage)
 	GtkListStore *store = tpage->store;
 	GtkTreeIter iter;
 	GList *forms, *l;
+
+	LOG ("forms_info_page_fill");
 
 	forms = dialog->priv->page_info->forms;
 
@@ -1871,6 +2068,8 @@ metadata_info_page_fill (InfoPage *ipage)
 	gboolean have_dc = FALSE;
 	char *text;
 
+	LOG ("metadata_info_page_fill");
+
 	tags = dialog->priv->page_info->metatags;
 
 	for (l = tags; l != NULL; l = l->next)
@@ -1945,6 +2144,18 @@ page_info_dialog_init (PageInfoDialog *dialog)
 	*/
 }
 
+static void
+adblock_rules_change_cb (EphyAdBlockManager *manager, PageInfoDialog *dialog)
+{
+	TreeviewInfoPage *page;
+
+	page = (TreeviewInfoPage *)dialog->priv->pages[MEDIA_PAGE];
+	media_sync_adblock (manager, page);
+
+	page = (TreeviewInfoPage *)dialog->priv->pages[LINKS_PAGE];
+	links_sync_adblock (manager, page);
+}
+
 static GObject *
 page_info_dialog_constructor (GType type,
 			      guint n_construct_properties,
@@ -1958,6 +2169,7 @@ page_info_dialog_constructor (GType type,
 	InfoPage *page;
 	GError *error = NULL;
 	int i;
+	EphyAdBlockManager *manager;
 
 	object = parent_class->constructor (type, n_construct_properties,
 					    construct_params);
@@ -2024,6 +2236,11 @@ page_info_dialog_constructor (GType type,
 		page->fill (page);
 	}
 
+	manager = EPHY_ADBLOCK_MANAGER (
+			ephy_embed_shell_get_adblock_manager (embed_shell));
+	g_signal_connect (G_OBJECT (manager), "rules_changed",
+			  G_CALLBACK (adblock_rules_change_cb), dialog);
+
 	return object;
 }
 
@@ -2031,6 +2248,7 @@ static void
 page_info_dialog_finalize (GObject *object)
 {
 	PageInfoDialog *dialog = PAGE_INFO_DIALOG (object);
+	EphyAdBlockManager *manager;
 	int i;
 
 	LOG ("PageInfoDialog finalizing");
@@ -2040,6 +2258,13 @@ page_info_dialog_finalize (GObject *object)
 	{
 		g_free (dialog->priv->pages[i]);
 	}
+
+	manager = EPHY_ADBLOCK_MANAGER (
+			ephy_embed_shell_get_adblock_manager (embed_shell));
+	g_signal_handlers_disconnect_by_func
+		(manager,
+		 G_CALLBACK (adblock_rules_change_cb),
+		 dialog);
 
 	G_OBJECT_CLASS(parent_class)->finalize (object);
 }
