@@ -56,6 +56,6 @@ install-data-local: $(schema_DATA)
 endif
 
 CLEANFILES = $(extensionini_DATA)
-DISTCLEANFILES = $(extensionini_DATA)
+DISTCLEANFILES = $(extensionini_DATA) $(schema_in_files:.schemas.in=.schemas)
 
-EXTRA_DIST = $(glade_DATA) $(extensionini_in_files)
+EXTRA_DIST = $(glade_DATA) $(extensionini_in_files) $(schema_in_files)
