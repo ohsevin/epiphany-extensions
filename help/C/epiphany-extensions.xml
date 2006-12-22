@@ -849,7 +849,7 @@
 				is installed and ready to use.</para>
 				<tip><para>You can manually install Greasemonkey scripts by
 				copying them in <filename
-				class="directory">$HOME/.gnome2/epiphany/extensions/data/</filename></para></tip>
+				class="directory">$HOME/.gnome2/epiphany/extensions/data/greasemonkey/</filename></para></tip>
 			</sect3>
 
 			<sect3 id="epi-ext-greasemonkey-usage-del">
@@ -857,7 +857,7 @@
 
 				<para>&app; doesn't provide a Graphical User interface to delete scripts;
 				to remove a script go to 
-				<filename class="directory">$HOME/.gnome2/epiphany/extensions/data/</filename>
+				<filename class="directory">$HOME/.gnome2/epiphany/extensions/data/greasemonkey/</filename>
 				, and move the script file in the trash.</para>
 			</sect3>
 		</sect2>
