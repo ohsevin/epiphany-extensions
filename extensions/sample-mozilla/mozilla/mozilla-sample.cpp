@@ -33,12 +33,14 @@
 void
 mozilla_do_something (gpointer dom_event)
 {
-	nsCOMPtr<nsIDOMMouseEvent> ev = static_cast<nsIDOMMouseEvent*>(dom_event);
+	nsCOMPtr<nsIDOMEvent> ev = static_cast<nsIDOMEvent*>(dom_event);
 	NS_ENSURE_TRUE (ev,);
+	nsCOMPtr<nsIDOMMouseEvent> mev = do_QueryInterface (ev);
+	NS_ENSURE_TRUE (mev,);
 
 	nsresult rv;
 	PRUint16 button;
-	rv = ev->GetButton (&button);
+	rv = mev->GetButton (&button);
 	NS_ENSURE_SUCCESS (rv,);
 
 	g_print ("Button %u\n", button);

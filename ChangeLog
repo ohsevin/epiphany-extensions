@@ -1,3 +1,10 @@
+2006-12-23  Jean-François Rameau  <jframeau@cvs.gnome.org>
+
+	* extensions/sample-mozilla/mozilla/mozilla-sample.cpp: (mozilla_do_something):
+
+	Fix incorrect cast. dom_event parameter is nsIDOMEvent, not nsIDOMMouseEvent.
+	Bug #357052.
+
 2006-12-22  Priit Laes  <plaes@cvs.gnome.org>
 
 	* help/C/epiphany-extensions.xml:
