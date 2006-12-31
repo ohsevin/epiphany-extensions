@@ -1,3 +1,9 @@
+2006-12-31  Diego Escalante Urrelo <diegoe@svn.gnome.org>
+
+	* extensions/rss/ephy-rss-extension.c:
+
+	Removes the now useless GtkFrame.
+
 2006-12-31  Christian Persch  <chpe@svn.gnome.org>
 
 	* extensions/error-viewer/sgml-validator.c:

@@ -38,7 +38,6 @@
 #include <gtk/gtkuimanager.h>
 
 #include <gtk/gtkeventbox.h>
-#include <gtk/gtkframe.h>
 #include <gtk/gtkiconfactory.h>
 #include <gtk/gtkimage.h>
 
@@ -87,7 +86,6 @@ typedef struct
 	GtkAction *subscribe_action;
 	guint ui_id;
 
-	GtkWidget *frame;
 	GtkWidget *evbox;
 } WindowData;
 
@@ -262,9 +260,8 @@ ephy_rss_update_statusbar (EphyWindow *window,
 	/* Show / Hide statusbar icon */
 	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 	g_return_if_fail (data != NULL);
-	g_return_if_fail (data->frame != NULL);
 	
-	g_object_set (data->frame, "visible", show, NULL);
+	g_object_set (data->evbox, "visible", show, NULL);
 }
 
 /* Update the menu item availability */
@@ -381,13 +378,8 @@ ephy_rss_create_statusbar_icon (EphyWindow *window,
 	statusbar = EPHY_STATUSBAR (ephy_window_get_statusbar (window));
 	g_return_if_fail (statusbar != NULL);
 
-	data->frame = gtk_frame_new (NULL);
-	/* don't show the frame */
-
 	data->evbox = gtk_event_box_new ();
 	gtk_event_box_set_visible_window (GTK_EVENT_BOX (data->evbox), FALSE);
-	gtk_container_add (GTK_CONTAINER (data->frame), data->evbox);
-	gtk_widget_show (data->evbox);
 
 	icon = gtk_image_new_from_icon_name (STOCK_ICON, GTK_ICON_SIZE_MENU);
 	gtk_container_add (GTK_CONTAINER (data->evbox), icon);
@@ -397,7 +389,7 @@ ephy_rss_create_statusbar_icon (EphyWindow *window,
 	gtk_tooltips_set_tip (statusbar->tooltips, data->evbox, tooltip, NULL);
 	g_free (tooltip);
 
-	ephy_statusbar_add_widget (statusbar, data->frame);
+	ephy_statusbar_add_widget (statusbar, data->evbox);
 
 	g_signal_connect_after (data->evbox, "button-press-event",
 				G_CALLBACK (ephy_rss_statusbar_icon_clicked_cb),
@@ -413,12 +405,11 @@ ephy_rss_destroy_statusbar_icon (EphyWindow *window,
 	statusbar = EPHY_STATUSBAR (ephy_window_get_statusbar (window));
 	g_return_if_fail (statusbar != NULL);
 
-	g_return_if_fail (data->frame != NULL);
 	g_return_if_fail (data->evbox != NULL);	
 
 	gtk_tooltips_set_tip (statusbar->tooltips, GTK_WIDGET (data->evbox), NULL, NULL);
 
-	ephy_statusbar_remove_widget (statusbar, GTK_WIDGET (data->frame));
+	ephy_statusbar_remove_widget (statusbar, GTK_WIDGET (data->evbox));
 }
 
 /* Create the menu item to subscribe to an rss feed */
