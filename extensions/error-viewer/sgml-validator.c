@@ -402,7 +402,7 @@ save_source_completed_cb (EphyEmbedPersist *persist,
 
 	unlink (dest);
 
-	if (!g_thread_supported ()) g_thread_init (NULL);
+	g_assert (g_thread_supported ());
 
 	data = g_new0 (OpenSPThreadCBData, 1);
 	data->dest = dest_utf8;

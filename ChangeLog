@@ -1,3 +1,11 @@
+2006-12-31  Christian Persch  <chpe@svn.gnome.org>
+
+	* extensions/error-viewer/sgml-validator.c:
+	(save_source_completed_cb):
+
+	Assert the threads are initialised; we cannot init them
+	at this late time.
+
 2006-12-31  Priit Laes  <plaes@svn.gnome.org>
 
 	* extensions/adblock/adblock.glade:
