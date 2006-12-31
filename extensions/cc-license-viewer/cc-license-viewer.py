@@ -363,33 +363,31 @@ def ui_init (window):
 	# Pack the widgets
 	eventbox.add(cc_image)
 
-	frame = gtk.Frame()
-	frame.add(eventbox)
 	eventbox.show()	
 
 	statusbar = window.get_statusbar()
-	statusbar.add_widget(frame)
-	statusbar._cc_frame = frame
+	statusbar.add_widget(eventbox)
+	statusbar._cc_eventbox = eventbox
 	statusbar.tooltips.set_tip (eventbox, _("View Creative Commons license"))
 
 def ui_show(window, tab):
 	if tab != window.get_active_tab(): return
 
 	statusbar = window.get_statusbar()
-	frame = statusbar._cc_frame
+	eventbox = statusbar._cc_eventbox
 	
 	try:
 		if tab.get_embed()._has_cc:
-			frame.show()
+			eventbox.show()
 		else:
-			frame.hide()
+			eventbox.hide()
 	except: 
-		frame.hide()
+		eventbox.hide()
 
 def ui_destroy(window):
 	statusbar = window.get_statusbar()
-	statusbar._cc_frame.destroy()
-	del statusbar._cc_frame
+	statusbar._cc_eventbox.destroy()
+	del statusbar._cc_eventbox
 
 def show_license(window):
 	statusbar = window.get_statusbar()
