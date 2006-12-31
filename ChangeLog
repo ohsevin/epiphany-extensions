@@ -1,3 +1,9 @@
+2006-12-31  Priit Laes  <plaes@svn.gnome.org>
+
+	* extensions/adblock/adblock.glade:
+	
+	Use gtk-refresh icon instead of gtk-save for reload button.
+
 2006-12-23  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/sample-mozilla/mozilla/mozilla-sample.cpp: (mozilla_do_something):
