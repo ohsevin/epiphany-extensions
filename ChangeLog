@@ -1,3 +1,10 @@
+2006-12-31  Christian Persch  <chpe@svn.gnome.org>
+
+	* extensions/adblock/ephy-adblock-extension.c:
+	(create_statusbar_icon):
+
+	Don't crash when we can't load the icon.
+
 2006-12-23  Jean-François Rameau  <jframeau@cvs.gnome.org>
 
 	* extensions/sample-mozilla/mozilla/mozilla-sample.cpp: (mozilla_do_something):
