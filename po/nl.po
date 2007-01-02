@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the
 # epiphany-extensions package.
 # Tino Meinen <a.t.meinen@chello.nl>, 2004.
-# Reinout van Schouwen <reinout@cs.vu.nl>, 2004-2006
+# Reinout van Schouwen <reinout@cs.vu.nl>, 2004-2007
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany-extensions\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-01 14:06+0100\n"
-"PO-Revision-Date: 2006-12-01 14:08+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=epiphany-extensions\n"
+"POT-Creation-Date: 2007-01-02 22:38+0100\n"
+"PO-Revision-Date: 2007-01-02 23:22+0100\n"
 "Last-Translator: Reinout van Schouwen <reinouts@gnome.org>\n"
 "Language-Team: nl <vertaling@vrijschrift.org>\n"
 "MIME-Version: 1.0\n"
@@ -127,6 +128,81 @@ msgstr "Eigenschappen van “%s”"
 msgid "Action Properties"
 msgstr "Actie-eigenschappen"
 
+#: ../extensions/adblock/adblock-ui.c:286
+msgid ""
+"This list is Copyright © its original author(G). It is relicensed under the "
+"GPL with permission.\n"
+"The original list, Filterset.G, can be found at http://www.pierceive.com/"
+"filtersetg/.\n"
+"This version has been modified from its original. The changes have not been "
+"approved by the original author;\n"
+"direct any problems to Bugzilla and not to the original author (G).\n"
+msgstr ""
+"Deze lijst valt onder Copyright © van de oorspronkelijke auteur(G)."
+"Hij is opnieuw gelicenseerd onder de GPL met toestemming.\n"
+"De originele lijst, Filterset.G, is te vinden op http://www.pierceive.com/"
+"filtersetg/.\n"
+"Deze versie is gewijzigd ten opzichte van het origineel. De wijzigingen "
+"zijn niet geaccordeerd door de oorspronkelijke auteur; \n"
+"klachten dient men te melden op Bugzilla en niet bij de oorspronkelijke "
+"auteur (G).\n"
+
+#: ../extensions/adblock/adblock-ui.c:503
+msgid "Pattern"
+msgstr "Patroon"
+
+#: ../extensions/adblock/adblock.glade.h:1
+msgid "<b>Courtesy of Graham Pierce</b>"
+msgstr "<b>Met dank aan Graham Pierce</b>"
+
+#: ../extensions/adblock/adblock.glade.h:2
+msgid "<b>Rule</b>"
+msgstr "<b>Regel</b>"
+
+#: ../extensions/adblock/adblock.glade.h:3
+msgid "<b>Update rules from original site</b>"
+msgstr "<b>Regels bijwerken vanaf oorspronkelijke webstek</b>"
+
+#: ../extensions/adblock/adblock.glade.h:4
+#: ../extensions/adblock/ephy-adblock-extension.c:237
+msgid "Adblock editor"
+msgstr "Adblock-editor"
+
+#: ../extensions/adblock/adblock.glade.h:5
+msgid "Add a new rule"
+msgstr "Nieuwe regel toevoegen"
+
+#: ../extensions/adblock/adblock.glade.h:6
+msgid "Apply your modification"
+msgstr "De wijziging toepassen"
+
+#: ../extensions/adblock/adblock.glade.h:7
+msgid "Blacklist"
+msgstr "Zwarte lijst"
+
+#: ../extensions/adblock/adblock.glade.h:8
+msgid "Filterset.G"
+msgstr "Filterset.G"
+
+#: ../extensions/adblock/adblock.glade.h:9
+msgid "Remove the current rule"
+msgstr "De huidige regel verwijderen"
+
+#: ../extensions/adblock/adblock.glade.h:10
+msgid "Whitelist"
+msgstr "Toegestaan-lijst"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:238
+msgid "Edit Adblock"
+msgstr "Adblock bewerken"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:295
+#, c-format
+msgid "%d hidden advertisement"
+msgid_plural "%d hidden advertisements"
+msgstr[0] "%d verborgen advertentie"
+msgstr[1] "%d verborgen advertenties"
+
 #: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
 msgid "_Auto Reload"
 msgstr "Auto-he_rladen"
@@ -134,6 +210,10 @@ msgstr "Auto-he_rladen"
 #: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
 msgid "Reload the page periodically"
 msgstr "De pagina periodiek herladen"
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.py:371
+msgid "View Creative Commons license"
+msgstr "Creative Commons-licentie lezen"
 
 #: ../extensions/certificates/ephy-certificates-extension.c:177
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
@@ -368,6 +448,34 @@ msgstr "_Java-console"
 msgid "Show Java Console"
 msgstr "De Java-console tonen"
 
+#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:102
+msgid "_HTTP Headers"
+msgstr "_HTTP-headers"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:1
+msgid "<b>Request</b>"
+msgstr "<b>Request</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:2
+msgid "<b>Response</b>"
+msgstr "<b>Response</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:3
+msgid "<b>URLs</b>"
+msgstr "<b>URL’s</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
+msgid "Clear cache"
+msgstr "Geheugenbuffer legen"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
+msgid "Live Headers"
+msgstr "Live-headers"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
+msgid "Remove headers"
+msgstr "Headers verwijderen"
+
 #: ../extensions/page-info/ephy-page-info-extension.c:67
 msgid "Pa_ge Information"
 msgstr "Pa_gina-informatie"
@@ -376,154 +484,159 @@ msgstr "Pa_gina-informatie"
 msgid "Display page information in a dialog"
 msgstr "Pagina-informatie weergeven in een dialoogvenster"
 
-#: ../extensions/page-info/page-info-dialog.c:726
+#: ../extensions/page-info/page-info-dialog.c:730
 msgid "Save As..."
 msgstr "Opslaan als..."
 
-#: ../extensions/page-info/page-info-dialog.c:743
+#: ../extensions/page-info/page-info-dialog.c:747
 msgid "Select a directory"
 msgstr "Kies een map"
 
-#: ../extensions/page-info/page-info-dialog.c:792
+#: ../extensions/page-info/page-info-dialog.c:796
 msgid "Unknown type"
 msgstr "Onbekend type"
 
-#: ../extensions/page-info/page-info-dialog.c:797
+#: ../extensions/page-info/page-info-dialog.c:801
 msgid "Full standards compliance"
 msgstr "Voldoet geheel aan alle standaarden"
 
-#: ../extensions/page-info/page-info-dialog.c:800
+#: ../extensions/page-info/page-info-dialog.c:804
 msgid "Almost standards compliance"
 msgstr "Voldoet bijna aan alle standaarden"
 
-#: ../extensions/page-info/page-info-dialog.c:803
+#: ../extensions/page-info/page-info-dialog.c:807
 msgid "Compatibility"
 msgstr "Compatibiliteit"
 
-#: ../extensions/page-info/page-info-dialog.c:807
+#: ../extensions/page-info/page-info-dialog.c:811
 msgid "Undetermined"
 msgstr "Onbepaald"
 
-#: ../extensions/page-info/page-info-dialog.c:816
+#: ../extensions/page-info/page-info-dialog.c:820
 msgid "Not cached"
 msgstr "Niet gebufferd"
 
-#: ../extensions/page-info/page-info-dialog.c:819
+#: ../extensions/page-info/page-info-dialog.c:823
 msgid "Disk cache"
 msgstr "Schijfbuffer"
 
-#: ../extensions/page-info/page-info-dialog.c:822
+#: ../extensions/page-info/page-info-dialog.c:826
 msgid "Memory cache"
 msgstr "Geheugenbuffer"
 
-#: ../extensions/page-info/page-info-dialog.c:825
+#: ../extensions/page-info/page-info-dialog.c:829
 msgid "Unknown cache"
 msgstr "Onbekende buffer"
 
-#: ../extensions/page-info/page-info-dialog.c:841
-#: ../extensions/page-info/page-info-dialog.c:952
+#: ../extensions/page-info/page-info-dialog.c:845
+#: ../extensions/page-info/page-info-dialog.c:958
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: ../extensions/page-info/page-info-dialog.c:846
+#: ../extensions/page-info/page-info-dialog.c:850
 msgid "No referrer"
 msgstr "Geen doorverwijzer"
 
-#: ../extensions/page-info/page-info-dialog.c:860
-#: ../extensions/page-info/page-info-dialog.c:876
+#: ../extensions/page-info/page-info-dialog.c:864
+#: ../extensions/page-info/page-info-dialog.c:880
 msgid "Not specified"
 msgstr "Niet gespecificeerd"
 
-#: ../extensions/page-info/page-info-dialog.c:937
+#: ../extensions/page-info/page-info-dialog.c:943
 msgid "Image"
 msgstr "Afbeelding"
 
-#: ../extensions/page-info/page-info-dialog.c:940
+#: ../extensions/page-info/page-info-dialog.c:946
 msgid "Embed"
 msgstr "Ingebed"
 
-#: ../extensions/page-info/page-info-dialog.c:943
+#: ../extensions/page-info/page-info-dialog.c:949
 msgid "Object"
 msgstr "object"
 
-#: ../extensions/page-info/page-info-dialog.c:946
+#: ../extensions/page-info/page-info-dialog.c:952
 msgid "Applet"
 msgstr "applet"
 
-#: ../extensions/page-info/page-info-dialog.c:949
+#: ../extensions/page-info/page-info-dialog.c:955
 msgid "Icon"
 msgstr "Pictogram"
 
-#: ../extensions/page-info/page-info-dialog.c:1054
+#: ../extensions/page-info/page-info-dialog.c:1121
 msgid "_Open"
 msgstr "_Openen"
 
-#: ../extensions/page-info/page-info-dialog.c:1060
-#: ../extensions/page-info/page-info-dialog.c:1420
+#: ../extensions/page-info/page-info-dialog.c:1127
+#: ../extensions/page-info/page-info-dialog.c:1551
 msgid "_Copy Link Address"
 msgstr "Verwij_zingsadres kopiëren"
 
-#: ../extensions/page-info/page-info-dialog.c:1066
+#: ../extensions/page-info/page-info-dialog.c:1133
 msgid "_Use as Background"
 msgstr "Als a_chtergrond gebruiken"
 
-#: ../extensions/page-info/page-info-dialog.c:1072
-#: ../extensions/page-info/page-info-dialog.c:1426
+#: ../extensions/page-info/page-info-dialog.c:1139
+#: ../extensions/page-info/page-info-dialog.c:1557
 msgid "_Save As..."
 msgstr "Op_slaan als..."
 
-#: ../extensions/page-info/page-info-dialog.c:1256
-#: ../extensions/page-info/page-info-dialog.c:1499
+#: ../extensions/page-info/page-info-dialog.c:1358
+#: ../extensions/page-info/page-info-dialog.c:1667
+msgid "Blocked"
+msgstr "Geblokkeerd"
+
+#: ../extensions/page-info/page-info-dialog.c:1374
+#: ../extensions/page-info/page-info-dialog.c:1683
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1269
+#: ../extensions/page-info/page-info-dialog.c:1387
 msgid "Type"
 msgstr "Type"
 
-#: ../extensions/page-info/page-info-dialog.c:1281
+#: ../extensions/page-info/page-info-dialog.c:1399
 msgid "Alt Text"
 msgstr "Alt-tekst"
 
-#: ../extensions/page-info/page-info-dialog.c:1293
-#: ../extensions/page-info/page-info-dialog.c:1512
+#: ../extensions/page-info/page-info-dialog.c:1411
+#: ../extensions/page-info/page-info-dialog.c:1696
 msgid "Title"
 msgstr "Titel"
 
-#: ../extensions/page-info/page-info-dialog.c:1305
+#: ../extensions/page-info/page-info-dialog.c:1423
 msgid "Width"
 msgstr "Breedte"
 
-#: ../extensions/page-info/page-info-dialog.c:1317
+#: ../extensions/page-info/page-info-dialog.c:1435
 msgid "Height"
 msgstr "Hoogte"
 
-#: ../extensions/page-info/page-info-dialog.c:1524
+#: ../extensions/page-info/page-info-dialog.c:1708
 msgid "Relation"
 msgstr "Relatie"
 
-#: ../extensions/page-info/page-info-dialog.c:1654
-#: ../extensions/page-info/page-info-dialog.c:1793
+#: ../extensions/page-info/page-info-dialog.c:1849
+#: ../extensions/page-info/page-info-dialog.c:1990
 msgid "Name"
 msgstr "Naam"
 
-#: ../extensions/page-info/page-info-dialog.c:1666
+#: ../extensions/page-info/page-info-dialog.c:1861
 msgid "Method"
 msgstr "Methode"
 
-#: ../extensions/page-info/page-info-dialog.c:1680
+#: ../extensions/page-info/page-info-dialog.c:1875
 msgid "Action"
 msgstr "Actie"
 
-#: ../extensions/page-info/page-info-dialog.c:1759
+#: ../extensions/page-info/page-info-dialog.c:1956
 msgid "_Copy"
 msgstr "_Kopiëren"
 
-#: ../extensions/page-info/page-info-dialog.c:1805
+#: ../extensions/page-info/page-info-dialog.c:2002
 msgid "Content"
 msgstr "Inhoud"
 
-#: ../extensions/page-info/page-info-dialog.c:1904
+#: ../extensions/page-info/page-info-dialog.c:2103
 msgid "Page Metadata"
 msgstr "Pagina-metadata"
 
@@ -698,25 +811,25 @@ msgstr "Webstek-_rechten"
 msgid "Manage web site permissions"
 msgstr "Webstek-rechten beheren"
 
-#: ../extensions/rss/ephy-rss-extension.c:98
+#: ../extensions/rss/ephy-rss-extension.c:96
 msgid "News Feeds Subscription"
 msgstr "Nieuwsfeed-abonnement"
 
-#: ../extensions/rss/ephy-rss-extension.c:100
+#: ../extensions/rss/ephy-rss-extension.c:98
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr ""
 "Abonneren op de nieuwsfeeds van deze webpagina in uw favoriete "
 "nieuwsleesprogramma"
 
-#: ../extensions/rss/ephy-rss-extension.c:105
+#: ../extensions/rss/ephy-rss-extension.c:103
 msgid "_Subscribe to this feed"
 msgstr "_Abonneren op deze feed"
 
-#: ../extensions/rss/ephy-rss-extension.c:107
+#: ../extensions/rss/ephy-rss-extension.c:105
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Abonneren op deze feed in uw favoriete nieuwsleesprogramma"
 
-#: ../extensions/rss/ephy-rss-extension.c:396
+#: ../extensions/rss/ephy-rss-extension.c:388
 msgid "Subscribe to site's news feed"
 msgstr "Abonneren op de nieuwsfeed van de pagina"
 
@@ -831,6 +944,14 @@ msgstr "Opzoe_ken"
 msgid "_GNOME Dictionary"
 msgstr "_GNOME-woordenboek"
 
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
+msgid "Open search result in new tab"
+msgstr "Zoekresultaten openen in een nieuw tabblad"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
+msgid "Open search result in new tab if true, in new window if false"
+msgstr "Zoekresultaat openen in nieuw tabblad als waar, in nieuw venster als onwaar"
+
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
 msgstr "Willekeurige opdrachten uitvoeren vanuit het contextmenu"
@@ -850,6 +971,18 @@ msgstr "Tabblad auto-herladen"
 #: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
 msgid "Reload a tab periodically"
 msgstr "Periodiek een tabblad herladen"
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
+msgid "Creative Commons license viewer"
+msgstr "Creative Commons licentieweergave"
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
+msgid "Jaime Frutos Morales <acidborg@gmail.com>"
+msgstr "Jaime Frutos Morales <acidborg@gmail.com>"
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:3
+msgid "Shows the Creative Commons license of the current website if available"
+msgstr "Toont de Creative Commons-licentie van de huidige webpagina indien beschikbaar"
 
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
@@ -908,6 +1041,10 @@ msgstr "Java-console"
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
 msgid "Provide access to the Java-Plugin Console"
 msgstr "Biedt toegang tot de console van de Java-plugin"
+
+#: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
+msgid "Live HTTP headers"
+msgstr "Live HTTP-headers"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
@@ -1009,9 +1146,6 @@ msgstr "Tab-staat"
 
 #~ msgid "Open in New _Tab"
 #~ msgstr "Openen in nieuw _tabblad"
-
-#~ msgid "Open bookmarks in a new tab of the active window"
-#~ msgstr "Bladwijzers openen in een nieuw tabblad van het actieve venster"
 
 #~ msgid "Open in New _Window"
 #~ msgstr "Openen in _nieuw venster"
@@ -1124,6 +1258,3 @@ msgstr "Tab-staat"
 
 #~ msgid "Look Up Preferences"
 #~ msgstr "Opzoekvoorkeuren"
-
-#~ msgid "Open search results in a new tab"
-#~ msgstr "Zoekresultaten openen in een nieuwe tab"
