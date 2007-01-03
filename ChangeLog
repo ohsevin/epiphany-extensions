@@ -1,3 +1,10 @@
+2007-01-03  Diego Escalante Urrelo <diegoe@svn.gnome.org>
+
+	* extensions/rss/rss-ui.glade:
+	* extensions/error-viewer/error-viewer.ephy-extension.in.in:
+
+	Minor translation fix. Patch by Gabor Kelemen.
+
 2006-12-31  Diego Escalante Urrelo <diegoe@svn.gnome.org>
 
 	* extensions/rss/ephy-rss-extension.c:
