@@ -344,6 +344,7 @@ build_ui (ExtensionsManagerUI *dialog)
 	gtk_window_set_icon_name (GTK_WINDOW (priv->window), GTK_STOCK_PREFERENCES);
 
 	treeview = GTK_TREE_VIEW (priv->treeview);
+	gtk_tree_view_set_rules_hint (treeview, TRUE);
 
 	g_signal_connect (G_OBJECT (treeview), "row-activated",
 			  G_CALLBACK (row_activated), dialog);
