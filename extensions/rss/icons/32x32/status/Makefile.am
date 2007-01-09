@@ -1,4 +1,4 @@
-themedir = $(EPIPHANY_ICONDIR)/icons/hicolor
+themedir = $(EPIPHANY_ICONDIR)/hicolor
 size = 32x32
 context = status
 

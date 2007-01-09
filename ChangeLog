@@ -1,5 +1,15 @@
 2007-01-09  Luca Ferretti  <elle.uca@libero.it>
 
+	* extensions/rss/icons/22x22/status/Makefile.am:
+	* extensions/rss/icons/24x24/status/Makefile.am:
+	* extensions/rss/icons/32x32/status/Makefile.am:
+	* extensions/rss/icons/scalable/status/Makefile.am:
+
+	Fix the installation path (.../icons/hicolor, not
+	.../icons/icons/hicolor).
+
+2007-01-09  Luca Ferretti  <elle.uca@libero.it>
+
 	* help/C/epiphany-extensions.xml:
 	Add <abstract role="description"> and <revhistory> needed to
 	fix the build. Maybe someone should review them.
