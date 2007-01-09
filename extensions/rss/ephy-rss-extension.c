@@ -63,13 +63,7 @@ static GType type = 0;
 #define MENU_PATH	"/menubar/ToolsMenu"
 
 /* Status Bar stuff */
-
-/* Test these
-	"stock_hyperlink-toolbar"	<-- Globe with a link
-	"stock_connect-to-url"		<-- Globe with a plug
-	"stock_internet"			<-- Simple globe
-*/
-#define STOCK_ICON	"stock_hyperlink-toolbar"
+#define FEED_ICON	"feed-presence"
 
 static void ephy_rss_display_cb 	(GtkAction *action, 
 					 EphyWindow *window);
@@ -381,7 +375,7 @@ ephy_rss_create_statusbar_icon (EphyWindow *window,
 	data->evbox = gtk_event_box_new ();
 	gtk_event_box_set_visible_window (GTK_EVENT_BOX (data->evbox), FALSE);
 
-	icon = gtk_image_new_from_icon_name (STOCK_ICON, GTK_ICON_SIZE_MENU);
+	icon = gtk_image_new_from_icon_name (FEED_ICON, GTK_ICON_SIZE_MENU);
 	gtk_container_add (GTK_CONTAINER (data->evbox), icon);
 	gtk_widget_show (icon);
 

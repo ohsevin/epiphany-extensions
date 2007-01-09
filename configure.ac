@@ -14,7 +14,7 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 #
-# $Id$
+# $Id: configure.ac,v 1.235 2006/12/17 22:17:06 jframeau Exp $
 
 AC_INIT([GNOME Web Browser Extensions],[2.17.4.90],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 
@@ -27,7 +27,7 @@ AC_SUBST(EPIPHANY_EXTENSIONS_MAJOR)
 
 AC_PREREQ([2.59])
 
-AC_REVISION([$Revision$])
+AC_REVISION([$Revision: 1.235 $])
 
 AC_CONFIG_SRCDIR([extensions])
 AC_CONFIG_HEADERS([config.h])
@@ -93,7 +93,7 @@ GNOME_DOC_INIT
 # pkg config checks
 # ********************************
 
-EPIPHANY_REQUIRED=2.17.4
+EPIPHANY_REQUIRED=2.17.5
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.12.0
 LIBGTK_REQUIRED=2.10.0
@@ -333,6 +333,13 @@ else
 fi
 
 # *******************************
+# icon dir
+# *******************************
+
+EPIPHANY_ICONDIR="`$PKG_CONFIG --variable=icondir epiphany-$EPIPHANY_API_VERSION`"
+AC_SUBST(EPIPHANY_ICONDIR)
+
+# *******************************
 # *******************************
 
 AC_CONFIG_FILES([
@@ -361,6 +368,17 @@ extensions/permissions/Makefile
 extensions/push-scroller/Makefile
 extensions/python-console/Makefile
 extensions/rss/Makefile
+extensions/rss/icons/Makefile
+extensions/rss/icons/16x16/Makefile
+extensions/rss/icons/16x16/status/Makefile
+extensions/rss/icons/22x22/Makefile
+extensions/rss/icons/22x22/status/Makefile
+extensions/rss/icons/24x24/Makefile
+extensions/rss/icons/24x24/status/Makefile
+extensions/rss/icons/32x32/Makefile
+extensions/rss/icons/32x32/status/Makefile
+extensions/rss/icons/scalable/Makefile
+extensions/rss/icons/scalable/status/Makefile
 extensions/sample/Makefile
 extensions/sample-mozilla/Makefile
 extensions/sample-mozilla/mozilla/Makefile

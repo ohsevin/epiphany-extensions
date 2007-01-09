@@ -1,3 +1,25 @@
+2007-01-09  Luca Ferretti  <elle.uca@libero.it>
+
+	* configure.in:
+
+	Depend on epiphany 2.17.5 to use new icondir variable from
+	pkg-config file; use this value to set EPIPHANY_ICONDIR to
+	install images for new named icon; add new directories to
+	AC_CONFIG_FILES
+
+	* extensions/rss/icons/*/feed-presence.*:
+	* extensions/rss/icons/*/Makefile.am:
+	* extensions/rss/Makefile.am
+
+	Add images to install for "feed-presence" named icon
+	(from Andreas Nilsson based on common shape from
+	http://feedicons.com but using Tango style and GPL licence).
+
+	* extensions/rss/ephy-rss-extension.c:
+
+	Replace STOCK_ICON with FEED_ICON to use new "feed-presence"
+	named icon.
+	
 2006-01-07  Jean-François Rameau  <jframeau@svn.gnome.org>
 
 	* extensions/extensions-manager-ui/extensions-manager-ui.c: (build_ui):

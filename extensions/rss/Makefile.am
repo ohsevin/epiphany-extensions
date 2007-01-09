@@ -1,3 +1,5 @@
+SUBDIRS = icons
+
 extensiondir = $(EXTENSIONS_DIR)
 extension_LTLIBRARIES = librssextension.la
 
