@@ -26,7 +26,10 @@
 <article id="index" lang="en">
 <!-- please do not change the id; for translations, change lang to -->
 <!-- appropriate code -->
-  <articleinfo> 
+  <articleinfo>
+    <abstract role="description">
+      <para>Variuous extensions for Epiphany Web browser.</para>
+    </abstract>
     <title>Epiphany Extensions Manual</title>       
 
     <copyright>
@@ -74,6 +77,13 @@
 	</affiliation> 
 	  </author> 
     </authorgroup>
+
+    <revhistory>
+      <revision>
+        <revnumber>1.0</revnumber>
+        <date>2006-03</date>
+      </revision>
+    </revhistory>
 
     <releaseinfo>
       This manual describes version &appversion; of &frplain;.

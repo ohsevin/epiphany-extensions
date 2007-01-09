@@ -1,5 +1,11 @@
 2007-01-09  Luca Ferretti  <elle.uca@libero.it>
 
+	* help/C/epiphany-extensions.xml:
+	Add <abstract role="description"> and <revhistory> needed to
+	fix the build. Maybe someone should review them.
+
+2007-01-09  Luca Ferretti  <elle.uca@libero.it>
+
 	* extensions/rss/icons/24x24/Makefile.am:
 	Add missing file
 
