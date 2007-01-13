@@ -1,3 +1,10 @@
+2006-01-13  Jean-François Rameau  <jframeau@svn.gnome.org>
+
+	* extensions/adblock/ephy-adblock-extension.c: (ephy_adblock_extension_init):
+
+	Bad path used to ensure adblock's data directory. 
+	Fix bug #395763.
+
 2007-01-09  Luca Ferretti  <elle.uca@libero.it>
 
 	* extensions/rss/icons/22x22/status/Makefile.am:

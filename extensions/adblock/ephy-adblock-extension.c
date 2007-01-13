@@ -153,7 +153,7 @@ ephy_adblock_extension_init (EphyAdblockExtension *extension)
 	extension->priv->tester = ad_uri_tester_new ();
 
 	/* ensure adblock's dir is there */
-	dirname =  g_build_filename (ephy_dot_dir (), "extensions", "adblock", "data", NULL);
+	dirname =  g_build_filename (ephy_dot_dir (), "extensions", "data", "adblock", NULL);
 	g_mkdir_with_parents (dirname, 0775);
 	g_free (dirname);
 
