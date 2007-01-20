@@ -89,8 +89,7 @@ struct _AdblockUIPrivate
 
 	/* The dialog buttons */
 	GtkButton *add;
-	GtkButton *modify;
-	GtkButton *suppr;
+	GtkButton *white_suppr, *black_suppr;
 	GtkButton *load;
 	GtkButton *license;
 	GtkFrame  *actions;
@@ -164,8 +163,8 @@ enum
 	PROP_DEFAULTLIST,
 	PROP_PATTERN,
 	PROP_ADD,
-	PROP_MODIFY,
-	PROP_SUPPR,
+	PROP_WHITE_SUPPR,
+	PROP_BLACK_SUPPR,
 	PROP_LOAD,
 	PROP_LICENSE,
 	PROP_ACTIONS
@@ -181,8 +180,8 @@ EphyDialogProperty properties [] =
 	{ "default_treeview",	NULL, PT_NORMAL, 0 },
 	{ "pattern",		NULL, PT_NORMAL, 0 },
 	{ "add",		NULL, PT_NORMAL, 0 },
-	{ "modify",		NULL, PT_NORMAL, 0 },
-	{ "suppr",		NULL, PT_NORMAL, 0 },
+	{ "white_suppr",	NULL, PT_NORMAL, 0 },
+	{ "black_suppr",	NULL, PT_NORMAL, 0 },
 	{ "load",		NULL, PT_NORMAL, 0 },
 	{ "license",		NULL, PT_NORMAL, 0 },
 	{ "action_rules_frame",	NULL, PT_NORMAL, 0 },
@@ -225,32 +224,6 @@ adblock_ui_save (InfoPage *page)
 }
 
 static void
-adblock_ui_sync_page (InfoPage *page)
-{
-	GtkTreeIter iter;
-	GtkTreeModel *model;
-
-	gtk_entry_set_text (page->dialog->priv->pattern, "");
-	if (gtk_tree_selection_get_selected (page->selection, &model, &iter))
-	{
-		gchar *pattern;
-
-		gtk_tree_model_get (model, &iter, COL_PATTERN, &pattern, -1);
-
-		gtk_entry_set_text (page->dialog->priv->pattern, pattern);
-
-		g_free (pattern);
-	}
-}
-
-static void
-adblock_ui_selection_changed_cb (GtkTreeSelection *selection,
-				 InfoPage *page)
-{	
-	adblock_ui_sync_page (page);
-}
-
-static void
 adblock_ui_response_cb (GtkWidget *widget,
 		    	int response,
 		    	AdblockUI *dialog)
@@ -273,6 +246,26 @@ adblock_ui_response_cb (GtkWidget *widget,
 	}
 
 	g_object_unref (dialog);
+}
+
+static void
+adblock_ui_add_pattern (AdblockUI *dialog)
+{
+	GtkTreeIter iter;
+
+	/* new pattern */
+	const char *pattern = gtk_entry_get_text (dialog->priv->pattern);
+
+	if (pattern != NULL && strlen (pattern) > 0)
+	{
+		GtkListStore *store = dialog->priv->current_page->store;
+
+		gtk_list_store_append (store, &iter);
+		gtk_list_store_set (store, &iter, COL_PATTERN, pattern, -1);
+
+		/* Makes the pattern field blank */
+		gtk_entry_set_text (dialog->priv->pattern, "");
+	}
 }
 
 static void
@@ -299,21 +292,17 @@ adblock_ui_show_license_cb (GtkButton *button,
 }
 
 static void
+adblock_ui_pattern_cb (GtkEntry *entry, 
+		       AdblockUI *dialog)
+{
+	adblock_ui_add_pattern (dialog);
+}
+
+static void
 adblock_ui_add_cb (GtkButton *button, 
 		   AdblockUI *dialog)
 {
-	GtkTreeIter iter;
-
-	/* new pattern */
-	const char *pattern = gtk_entry_get_text (dialog->priv->pattern);
-
-	if (pattern != NULL)
-	{
-		GtkListStore *store = dialog->priv->current_page->store;
-
-		gtk_list_store_append (store, &iter);
-		gtk_list_store_set (store, &iter, COL_PATTERN, pattern, -1);
-	}
+	adblock_ui_add_pattern (dialog);
 }
 
 static void
@@ -342,28 +331,6 @@ adblock_ui_load_cb (GtkButton *button,
 	gtk_list_store_clear (dialog->priv->current_page->store);	
 
 	adblock_ui_populate_store (dialog->priv->current_page, PATTERN_DEFAULT_BLACKLIST);
-}
-
-static void
-adblock_ui_modify_cb (GtkButton *button, 
-		      AdblockUI *dialog)
-{
-	GtkTreeModel *model;
-	GtkTreeIter iter;
-	GtkTreeSelection *selection;
-
-	selection = dialog->priv->current_page->selection;
-
-	if (gtk_tree_selection_get_selected (selection, &model, &iter))
-	{
-		GtkListStore *store = dialog->priv->current_page->store;
-
-		/* new pattern */
-		const char *pattern = gtk_entry_get_text (dialog->priv->pattern);
-		if (strlen (pattern) == 0) return;
-
-		gtk_list_store_set (store, &iter, COL_PATTERN, pattern, -1);
-	}
 }
 
 static void 
@@ -407,7 +374,6 @@ adblock_ui_switch_page (GtkNotebook *notebook,
 	if (page_num != DEFAULT_BLACKLIST_PAGE)
 	{
 		gtk_widget_show (GTK_WIDGET (dialog->priv->actions));
-		adblock_ui_sync_page (dialog->priv->current_page);	
 	}
 	else
 	{
@@ -444,8 +410,8 @@ adblock_ui_constructor (GType type,
 			properties[PROP_DIALOG].id, &priv->dialog,
 			properties[PROP_NOTEBOOK].id, &priv->notebook,
 			properties[PROP_ADD].id, &priv->add,
-			properties[PROP_MODIFY].id, &priv->modify,
-			properties[PROP_SUPPR].id, &priv->suppr,
+			properties[PROP_WHITE_SUPPR].id, &priv->white_suppr,
+			properties[PROP_BLACK_SUPPR].id, &priv->black_suppr,
 			properties[PROP_LOAD].id, &priv->load,
 			properties[PROP_PATTERN].id, &priv->pattern,
 			properties[PROP_LICENSE].id, &priv->license,
@@ -460,10 +426,12 @@ adblock_ui_constructor (GType type,
 
 	g_signal_connect (priv->add, "clicked",
 			  G_CALLBACK (adblock_ui_add_cb), dialog);
-	g_signal_connect (priv->suppr, "clicked",
+	g_signal_connect (priv->pattern, "activate",
+			  G_CALLBACK (adblock_ui_pattern_cb), dialog);
+	g_signal_connect (priv->white_suppr, "clicked",
 			  G_CALLBACK (adblock_ui_suppr_cb), dialog);
-	g_signal_connect (priv->modify, "clicked",
-			  G_CALLBACK (adblock_ui_modify_cb), dialog);
+	g_signal_connect (priv->black_suppr, "clicked",
+			  G_CALLBACK (adblock_ui_suppr_cb), dialog);
 	g_signal_connect (priv->load, "clicked",
 			  G_CALLBACK (adblock_ui_load_cb), dialog);
 	g_signal_connect (priv->license, "clicked",
@@ -493,12 +461,37 @@ adblock_ui_constructor (GType type,
 	return object;
 }
 
+static void 
+adblock_ui_cell_edited_cb (GtkCellRendererText *cell,
+                           gchar               *path_string,
+                           gchar               *new_pattern,
+                           InfoPage            *page)
+{
+	GtkTreeModel *model = GTK_TREE_MODEL (page->store);
+	GtkTreePath *path = gtk_tree_path_new_from_string (path_string);
+	GtkTreeIter iter;
+
+	gtk_tree_model_get_iter (model, &iter, path);
+
+	gtk_list_store_set (page->store, &iter, COL_PATTERN, new_pattern, -1);
+
+	gtk_tree_path_free (path);
+}
+
 static void
-adblock_ui_set_treeview_commons (InfoPage *page)
+adblock_ui_set_treeview_commons (InfoPage *page, gboolean editable)
 {
 	GtkCellRenderer *renderer;
 
 	renderer = gtk_cell_renderer_text_new ();
+	if (editable)
+	{
+		g_object_set(renderer, "editable", TRUE, NULL);
+		g_signal_connect(renderer, 
+				 "edited", 
+				 (GCallback) adblock_ui_cell_edited_cb, 
+			   	 (gpointer)page);
+	}
 	gtk_tree_view_insert_column_with_attributes (page->treeview,
 			COL_PATTERN, _("Pattern"),
 			renderer,
@@ -517,10 +510,6 @@ adblock_ui_set_treeview_commons (InfoPage *page)
 
 	page->selection = gtk_tree_view_get_selection (page->treeview);
 	gtk_tree_selection_set_mode (page->selection, GTK_SELECTION_SINGLE);
-
-	g_signal_connect (page->selection, "changed",
-			  G_CALLBACK (adblock_ui_selection_changed_cb),
-			  page);
 }
 
 static void
@@ -561,7 +550,7 @@ adblock_ui_page_construct (InfoPage *page)
 	}
 	page->store = gtk_list_store_new (N_COLUMNS, G_TYPE_STRING);
 
-	adblock_ui_set_treeview_commons (page);
+	adblock_ui_set_treeview_commons (page, page->type != PATTERN_DEFAULT_BLACKLIST);
 }
 
 static InfoPage *
