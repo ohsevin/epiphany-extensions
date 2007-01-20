@@ -78,6 +78,7 @@ typedef enum
   MEDIUM_EMBED,
   MEDIUM_ICON,
   MEDIUM_IMAGE,
+  MEDIUM_BG_IMAGE,
   MEDIUM_OBJECT,
   LAST_MEDIUM
 } EmbedPageMediumType;

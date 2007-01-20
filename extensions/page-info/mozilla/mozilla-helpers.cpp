@@ -997,7 +997,7 @@ PageInfoHelper::WalkTree (nsIDOMDocument *aDocument)
 		      if (NS_SUCCEEDED (rv) && stringValue.Length())
 		      	{
                           EmbedPageMedium *medium = g_new0 (EmbedPageMedium, 1);
-                          medium->type = MEDIUM_IMAGE;
+                          medium->type = MEDIUM_BG_IMAGE;
                           medium->url = ToCString (stringValue);
                           g_hash_table_insert(mMediaHash, medium->url, medium);
 			}

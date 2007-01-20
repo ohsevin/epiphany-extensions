@@ -1,5 +1,19 @@
 2006-01-20  Jean-François Rameau  <jframeau@svn.gnome.org>
 
+	* extensions/page-info/page-info-dialog.c: (links_info_page_fill),
+	(media_info_page_filter):
+
+	Page Info lists blocked links first. Fix #397554.
+
+	* extensions/page-info/page-info-dialog.c: (mozilla_embed_type_to_string):
+	* extensions/page-info/mozilla/mozilla-helpers.cpp: (WalkTree):
+	* extensions/page-info/mozilla/mozilla-helpers.h:
+
+	Page Info distinguishes between regular images and background images.
+	Fix part of #342951.
+
+2006-01-20  Jean-François Rameau  <jframeau@svn.gnome.org>
+
 	* extensions/adblock/adblock-ui.c:
 	* extensions/adblock/adblock.glade:
 	

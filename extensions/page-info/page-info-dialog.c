@@ -942,6 +942,9 @@ mozilla_embed_type_to_string (EmbedPageMediumType type)
 		case MEDIUM_IMAGE: 
 			s_type = _("Image");
 			break;
+		case MEDIUM_BG_IMAGE: 
+			s_type = _("Background image");
+			break;
 		case MEDIUM_EMBED:
 			s_type = _("Embed");
 			break;
@@ -1504,6 +1507,12 @@ media_info_page_fill (InfoPage *ipage)
 				    COL_MEDIUM_TYPE, media->type,
 				    -1);
 	}
+	if (ephy_adblock_manager_has_blocker (adblock_manager))
+	{
+		gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE(store), 
+						      COL_MEDIUM_BLOCKED, 	
+						      GTK_SORT_DESCENDING);
+	}
 }
 
 static InfoPage *
@@ -1754,6 +1763,12 @@ links_info_page_fill (InfoPage *ipage)
 				    COL_LINK_TITLE, link->title,
 				    COL_LINK_REL, link->rel,
 				    -1);
+	}
+	if (ephy_adblock_manager_has_blocker (adblock_manager))
+	{
+		gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE(store), 
+						      COL_MEDIUM_BLOCKED, 	
+						      GTK_SORT_DESCENDING);
 	}
 }
 
