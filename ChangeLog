@@ -1,3 +1,10 @@
+2006-01-28  Jean-François Rameau  <jframeau@svn.gnome.org>
+
+	* extensions/page-info/page-info-dialog.c: (media_treeview_selection_changed_cb):
+
+	Media displays in the embed, or not at all, but no downloads. Add a 
+	veto to download workflow. Fix #342951.
+
 2006-12-31  Christian Persch  <chpe@svn.gnome.org>
 
 	* extensions/adblock/ephy-adblock-extension.c:
