@@ -1197,7 +1197,20 @@ media_treeview_selection_changed_cb (GtkTreeSelection *selection,
 
 		if (url != NULL && !media_is_embedded_medium (type))
 		{
-			ephy_embed_load_url (page->embed, url);
+			/* Workaround for bad content type */
+			char *data = 
+				g_markup_printf_escaped ("data:text/html,"
+							 "<html><body><img src="
+					     		 "%s></body></html>", url);
+							
+			/* We ask explicitly to not download anything. */
+			g_object_set_data (G_OBJECT (page->embed), 
+					   "content-handler-deny", 
+					   GINT_TO_POINTER (TRUE));
+
+			ephy_embed_load_url (page->embed, data);
+
+			g_free (data);
 		}
 		else
 		{
