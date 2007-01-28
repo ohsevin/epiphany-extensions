@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions doc\n"
-"POT-Creation-Date: 2006-11-16 03:17+0000\n"
-"PO-Revision-Date: 2006-11-16 20:04+0100\n"
+"POT-Creation-Date: 2007-01-10 03:15+0000\n"
+"PO-Revision-Date: 2007-01-28 15:21+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -11,114 +11,118 @@ msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/epiphany-extensions.xml:558(None)
+#: C/epiphany-extensions.xml:568(None)
 msgid "@@image: 'figures/epi-ext-gestures-back.png'; md5=c5b56cf973ea0ef5b87283b0e0c7ed4b"
 msgstr "@@image: 'figures/epi-ext-gestures-back.png'; md5=c5b56cf973ea0ef5b87283b0e0c7ed4b"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/epiphany-extensions.xml:569(None)
+#: C/epiphany-extensions.xml:579(None)
 msgid "@@image: 'figures/epi-ext-gestures-forward.png'; md5=e65d802ab75bf5db41b6a1723fe95264"
 msgstr "@@image: 'figures/epi-ext-gestures-forward.png'; md5=e65d802ab75bf5db41b6a1723fe95264"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/epiphany-extensions.xml:580(None)
+#: C/epiphany-extensions.xml:590(None)
 msgid "@@image: 'figures/epi-ext-gestures-up.png'; md5=b86e7cf6c439595aa8acda7e9a98192c"
 msgstr "@@image: 'figures/epi-ext-gestures-up.png'; md5=b86e7cf6c439595aa8acda7e9a98192c"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/epiphany-extensions.xml:591(None)
+#: C/epiphany-extensions.xml:601(None)
 msgid "@@image: 'figures/epi-ext-gestures-homepage.png'; md5=ecf77b1a6f6f6e41e6350a66fbaf161e"
 msgstr "@@image: 'figures/epi-ext-gestures-homepage.png'; md5=ecf77b1a6f6f6e41e6350a66fbaf161e"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/epiphany-extensions.xml:602(None)
+#: C/epiphany-extensions.xml:612(None)
 msgid "@@image: 'figures/epi-ext-gestures-reload.png'; md5=1fc686e1f01caa7b3eb89d991caebffb"
 msgstr "@@image: 'figures/epi-ext-gestures-reload.png'; md5=1fc686e1f01caa7b3eb89d991caebffb"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/epiphany-extensions.xml:613(None)
+#: C/epiphany-extensions.xml:623(None)
 msgid "@@image: 'figures/epi-ext-gestures-stop.png'; md5=48449b610aaf3e6bd6e72dd5b5880e0a"
 msgstr "@@image: 'figures/epi-ext-gestures-stop.png'; md5=48449b610aaf3e6bd6e72dd5b5880e0a"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/epiphany-extensions.xml:624(None)
+#: C/epiphany-extensions.xml:634(None)
 msgid "@@image: 'figures/epi-ext-gestures-new-window.png'; md5=fe1d22c8d896e54d5cbc9bf653c46bc9"
 msgstr "@@image: 'figures/epi-ext-gestures-new-window.png'; md5=fe1d22c8d896e54d5cbc9bf653c46bc9"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/epiphany-extensions.xml:635(None)
+#: C/epiphany-extensions.xml:645(None)
 msgid "@@image: 'figures/epi-ext-gestures-new-tab.png'; md5=f93528c60f02e08d39dddecaf7cc4cbb"
 msgstr "@@image: 'figures/epi-ext-gestures-new-tab.png'; md5=f93528c60f02e08d39dddecaf7cc4cbb"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/epiphany-extensions.xml:646(None)
+#: C/epiphany-extensions.xml:656(None)
 msgid "@@image: 'figures/epi-ext-gestures-close.png'; md5=83f58e3ebad89f060ea49558c9668a81"
 msgstr "@@image: 'figures/epi-ext-gestures-close.png'; md5=83f58e3ebad89f060ea49558c9668a81"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/epiphany-extensions.xml:657(None)
+#: C/epiphany-extensions.xml:667(None)
 msgid "@@image: 'figures/epi-ext-gestures-close-2.png'; md5=28c55ad71d3ab73852d8a5ab367fdee2"
 msgstr "@@image: 'figures/epi-ext-gestures-close-2.png'; md5=28c55ad71d3ab73852d8a5ab367fdee2"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/epiphany-extensions.xml:668(None)
+#: C/epiphany-extensions.xml:678(None)
 msgid "@@image: 'figures/epi-ext-gestures-fullscreen.png'; md5=b4eb72045ddb2488b215d3f3530ac56c"
 msgstr "@@image: 'figures/epi-ext-gestures-fullscreen.png'; md5=b4eb72045ddb2488b215d3f3530ac56c"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/epiphany-extensions.xml:679(None)
+#: C/epiphany-extensions.xml:689(None)
 msgid "@@image: 'figures/epi-ext-gestures-next-tab.png'; md5=dc94db0828a4f676d32286a066c7e3a4"
 msgstr "@@image: 'figures/epi-ext-gestures-next-tab.png'; md5=dc94db0828a4f676d32286a066c7e3a4"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/epiphany-extensions.xml:690(None)
+#: C/epiphany-extensions.xml:700(None)
 msgid "@@image: 'figures/epi-ext-gestures-prev-tab.png'; md5=9afb96085b69343b1f1bdba91088343d"
 msgstr "@@image: 'figures/epi-ext-gestures-prev-tab.png'; md5=9afb96085b69343b1f1bdba91088343d"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/epiphany-extensions.xml:702(None)
+#: C/epiphany-extensions.xml:712(None)
 msgid "@@image: 'figures/epi-ext-gestures-view-source.png'; md5=c509bcf2cd4dea67e7bb3d9dcc4db6aa"
 msgstr "@@image: 'figures/epi-ext-gestures-view-source.png'; md5=c509bcf2cd4dea67e7bb3d9dcc4db6aa"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
-#: C/epiphany-extensions.xml:713(None)
+#: C/epiphany-extensions.xml:723(None)
 msgid "@@image: 'figures/epi-ext-gestures-view-source-2.png'; md5=b312d3d53273067c780358698c786ab9"
 msgstr "@@image: 'figures/epi-ext-gestures-view-source-2.png'; md5=b312d3d53273067c780358698c786ab9"
 
-#: C/epiphany-extensions.xml:30(title)
-msgid "Epiphany Extensions Manual"
-msgstr ""
+#: C/epiphany-extensions.xml:31(para)
+msgid "Variuous extensions for Epiphany Web browser."
+msgstr "Diverse utökningar för webbläsaren Epiphany."
 
-#: C/epiphany-extensions.xml:33(year)
-#: C/epiphany-extensions.xml:37(year)
+#: C/epiphany-extensions.xml:33(title)
+msgid "Epiphany Extensions Manual"
+msgstr "Handbok för Epiphany-utökningar"
+
+#: C/epiphany-extensions.xml:36(year)
+#: C/epiphany-extensions.xml:40(year)
 msgid "2006"
 msgstr "2006"
 
-#: C/epiphany-extensions.xml:34(holder)
+#: C/epiphany-extensions.xml:37(holder)
 msgid "Baptiste Mille-Mathias"
 msgstr "Baptiste Mille-Mathias"
 
-#: C/epiphany-extensions.xml:38(holder)
+#: C/epiphany-extensions.xml:41(holder)
 msgid "Victor Osadci"
 msgstr "Victor Osadci"
 
-#: C/epiphany-extensions.xml:52(publishername)
-#: C/epiphany-extensions.xml:64(orgname)
-#: C/epiphany-extensions.xml:72(orgname)
+#: C/epiphany-extensions.xml:55(publishername)
+#: C/epiphany-extensions.xml:67(orgname)
+#: C/epiphany-extensions.xml:75(orgname)
 msgid "GNOME Documentation Project"
 msgstr "Dokumentationsprojekt för GNOME"
 
@@ -146,1052 +150,1060 @@ msgstr "UNDER INGA OMSTÄNDIGHETER ELLER INOM RAMEN FÖR NÅGON LAGSTIFTNING, OA
 msgid "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: <placeholder-1/>"
 msgstr "DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET TILLHANDAHÅLLS UNDER VILLKOREN I GNU FREE DOCUMENTATION LICENSE ENDAST UNDER FÖLJANDE FÖRUTSÄTTNINGAR: <placeholder-1/>"
 
-#: C/epiphany-extensions.xml:61(firstname)
+#: C/epiphany-extensions.xml:64(firstname)
 msgid "Baptiste"
 msgstr "Baptiste"
 
-#: C/epiphany-extensions.xml:62(surname)
+#: C/epiphany-extensions.xml:65(surname)
 msgid "Mille-Mathias"
 msgstr "Mille-Mathias"
 
-#: C/epiphany-extensions.xml:65(email)
+#: C/epiphany-extensions.xml:68(email)
 msgid "baptiste.millemathias@gmail.com"
 msgstr "baptiste.millemathias@gmail.com"
 
-#: C/epiphany-extensions.xml:69(firstname)
+#: C/epiphany-extensions.xml:72(firstname)
 msgid "Victor"
 msgstr "Victor"
 
-#: C/epiphany-extensions.xml:70(surname)
+#: C/epiphany-extensions.xml:73(surname)
 msgid "Osadci"
 msgstr "Osadci"
 
-#: C/epiphany-extensions.xml:73(email)
+#: C/epiphany-extensions.xml:76(email)
 msgid "Victor.Osadci.GNOME@xhtml.md"
 msgstr "Victor.Osadci.GNOME@xhtml.md"
 
-#: C/epiphany-extensions.xml:78(releaseinfo)
+#: C/epiphany-extensions.xml:83(revnumber)
+msgid "1.0"
+msgstr "1.0"
+
+#: C/epiphany-extensions.xml:84(date)
+msgid "2006-03"
+msgstr "2006-03"
+
+#: C/epiphany-extensions.xml:88(releaseinfo)
 msgid "This manual describes version 2.14 of Epiphany."
 msgstr "Den här handboken beskriver version 2.14 av Epiphany."
 
-#: C/epiphany-extensions.xml:84(primary)
+#: C/epiphany-extensions.xml:94(primary)
 msgid "Epiphany-Extensions"
-msgstr ""
+msgstr "Epiphany-Extensions"
 
-#: C/epiphany-extensions.xml:87(primary)
+#: C/epiphany-extensions.xml:97(primary)
 msgid "epiphany-extensions"
-msgstr ""
+msgstr "epiphany-extensions"
 
-#: C/epiphany-extensions.xml:90(primary)
+#: C/epiphany-extensions.xml:100(primary)
 msgid "extension"
-msgstr ""
+msgstr "utökning"
 
-#: C/epiphany-extensions.xml:93(primary)
+#: C/epiphany-extensions.xml:103(primary)
 msgid "Browser"
-msgstr ""
+msgstr "Webbläsare"
 
-#: C/epiphany-extensions.xml:99(title)
-#: C/epiphany-extensions.xml:110(title)
-#: C/epiphany-extensions.xml:128(title)
-#: C/epiphany-extensions.xml:261(title)
-#: C/epiphany-extensions.xml:328(title)
-#: C/epiphany-extensions.xml:357(title)
-#: C/epiphany-extensions.xml:387(title)
-#: C/epiphany-extensions.xml:458(title)
-#: C/epiphany-extensions.xml:505(title)
-#: C/epiphany-extensions.xml:524(title)
-#: C/epiphany-extensions.xml:823(title)
-#: C/epiphany-extensions.xml:870(title)
-#: C/epiphany-extensions.xml:889(title)
-#: C/epiphany-extensions.xml:939(title)
-#: C/epiphany-extensions.xml:986(title)
-#: C/epiphany-extensions.xml:1004(title)
-#: C/epiphany-extensions.xml:1023(title)
-#: C/epiphany-extensions.xml:1045(title)
-#: C/epiphany-extensions.xml:1103(title)
-#: C/epiphany-extensions.xml:1126(title)
-#: C/epiphany-extensions.xml:1150(title)
+#: C/epiphany-extensions.xml:109(title)
+#: C/epiphany-extensions.xml:120(title)
+#: C/epiphany-extensions.xml:138(title)
+#: C/epiphany-extensions.xml:271(title)
+#: C/epiphany-extensions.xml:338(title)
+#: C/epiphany-extensions.xml:367(title)
+#: C/epiphany-extensions.xml:397(title)
+#: C/epiphany-extensions.xml:468(title)
+#: C/epiphany-extensions.xml:515(title)
+#: C/epiphany-extensions.xml:534(title)
+#: C/epiphany-extensions.xml:833(title)
+#: C/epiphany-extensions.xml:880(title)
+#: C/epiphany-extensions.xml:899(title)
+#: C/epiphany-extensions.xml:949(title)
+#: C/epiphany-extensions.xml:996(title)
+#: C/epiphany-extensions.xml:1014(title)
+#: C/epiphany-extensions.xml:1033(title)
+#: C/epiphany-extensions.xml:1055(title)
+#: C/epiphany-extensions.xml:1113(title)
+#: C/epiphany-extensions.xml:1136(title)
+#: C/epiphany-extensions.xml:1160(title)
 msgid "Introduction"
 msgstr "Introduktion"
 
-#: C/epiphany-extensions.xml:101(para)
-msgid "<application>Epiphany Extensions</application> are a set of tools that extend the capabilities of <application>Epiphany</application>, the GNOME Web Browser."
-msgstr ""
-
-#: C/epiphany-extensions.xml:102(para)
-msgid "They provide to Epiphany new functionality and complete some existing."
-msgstr ""
-
-#: C/epiphany-extensions.xml:107(title)
-msgid "Extensions Manager"
-msgstr ""
-
 #: C/epiphany-extensions.xml:111(para)
+msgid "<application>Epiphany Extensions</application> are a set of tools that extend the capabilities of <application>Epiphany</application>, the GNOME Web Browser."
+msgstr "<application>Epiphany-utökningar</application> är en uppsättning verktyg som utökar färdigheterna för <application>Epiphany</application>, GNOME-webbläsaren."
+
+#: C/epiphany-extensions.xml:112(para)
+msgid "They provide to Epiphany new functionality and complete some existing."
+msgstr "De tillhandahåller ny funktionalitet och förbättrar vissa befintliga funktioner i Epiphany."
+
+#: C/epiphany-extensions.xml:117(title)
+msgid "Extensions Manager"
+msgstr "Utökningshanterare"
+
+#: C/epiphany-extensions.xml:121(para)
 msgid "The Extension Manager is the tool that lets you activate Epiphany Extensions."
-msgstr ""
+msgstr "Utökningshanteraren är verktyget som låter dig aktivera utökningar i Epiphany."
 
-#: C/epiphany-extensions.xml:116(title)
+#: C/epiphany-extensions.xml:126(title)
 msgid "Using Extensions Manager"
-msgstr ""
+msgstr "Användning av Utökningshanteraren"
 
-#: C/epiphany-extensions.xml:117(para)
+#: C/epiphany-extensions.xml:127(para)
 msgid "To open the Extension Manager, choose <menuchoice><guimenu>Tools</guimenu><guimenuitem>Extension...</guimenuitem></menuchoice>."
-msgstr ""
+msgstr "För att öppna Utökningshanteraren, välj <menuchoice><guimenu>Verktyg</guimenu><guimenuitem>Utökningar...</guimenuitem></menuchoice>."
 
-#: C/epiphany-extensions.xml:119(para)
+#: C/epiphany-extensions.xml:129(para)
 msgid "To enable an extension, activate the check-box in front of the extension. To disable an extension, deactivate the check-box."
-msgstr ""
-
-#: C/epiphany-extensions.xml:125(title)
-msgid "Actions"
-msgstr ""
-
-#: C/epiphany-extensions.xml:130(para)
-msgid "The Actions extension allows you to create specific actions in the context menu, for images, pages or both."
-msgstr ""
+msgstr "För att aktivera en utökning, kryssa i kryssrutan framför utökningen. För att inaktivera en utökning, klicka bort krysset i kryssrutan."
 
 #: C/epiphany-extensions.xml:135(title)
-msgid "Manage Actions"
-msgstr ""
-
-#: C/epiphany-extensions.xml:138(title)
-msgid "Create Actions"
-msgstr ""
-
-#: C/epiphany-extensions.xml:143(para)
-#: C/epiphany-extensions.xml:199(para)
-#: C/epiphany-extensions.xml:225(para)
-msgid "Choose <menuchoice><guimenu>Edit</guimenu><guimenuitem>Actions</guimenuitem></menuchoice> to open the Actions manager"
-msgstr ""
-
-#: C/epiphany-extensions.xml:148(para)
-msgid "Press <guibutton>Add</guibutton> to add a new action"
-msgstr ""
-
-#: C/epiphany-extensions.xml:156(para)
-msgid "Enter the <guilabel>Name</guilabel> of the action. The name will be displayed in the context menu"
-msgstr ""
-
-#: C/epiphany-extensions.xml:160(para)
-msgid "Enter the <guilabel>Description</guilabel> of the action. The Description will be displayed in the statusbar of <application>Epiphany</application> and in the Action Manager"
-msgstr ""
-
-#: C/epiphany-extensions.xml:166(para)
-msgid "Enter the <guilabel>Command</guilabel> to execute. this command will be executed and will receive as argument the element on which you'll launch the action. This action can be any program or script available in your path"
-msgstr ""
-
-#: C/epiphany-extensions.xml:173(para)
-msgid "Select <guilabel>Pages</guilabel> or <guilabel>Images</guilabel> to choose on which elements the action will appear"
-msgstr ""
-
-#: C/epiphany-extensions.xml:178(para)
-msgid "Press <guibutton>Add</guibutton>"
-msgstr ""
-
-#: C/epiphany-extensions.xml:153(para)
-msgid "In the \"Add Action\" window, <placeholder-1/>"
-msgstr ""
-
-#: C/epiphany-extensions.xml:184(para)
-#: C/epiphany-extensions.xml:238(para)
-msgid "Press <guibutton>Close</guibutton> to close the Actions Manager"
-msgstr ""
+msgid "Actions"
+msgstr "Åtgärder"
 
 #: C/epiphany-extensions.xml:140(para)
+msgid "The Actions extension allows you to create specific actions in the context menu, for images, pages or both."
+msgstr "Utökningen Åtgärder låter dig skapa specifika åtgärder i sammanhangsmenyn, för bilder, sidor eller båda."
+
+#: C/epiphany-extensions.xml:145(title)
+msgid "Manage Actions"
+msgstr "Hantera åtgärder"
+
+#: C/epiphany-extensions.xml:148(title)
+msgid "Create Actions"
+msgstr "Skapa åtgärder"
+
+#: C/epiphany-extensions.xml:153(para)
+#: C/epiphany-extensions.xml:209(para)
+#: C/epiphany-extensions.xml:235(para)
+msgid "Choose <menuchoice><guimenu>Edit</guimenu><guimenuitem>Actions</guimenuitem></menuchoice> to open the Actions manager"
+msgstr "Välj <menuchoice><guimenu>Redigera</guimenu><guimenuitem>Åtgärder</guimenuitem></menuchoice> för att öppna Åtgärdshanteraren"
+
+#: C/epiphany-extensions.xml:158(para)
+msgid "Press <guibutton>Add</guibutton> to add a new action"
+msgstr "Tryck på <guibutton>Lägg till</guibutton> för att lägga till en ny åtgärd"
+
+#: C/epiphany-extensions.xml:166(para)
+msgid "Enter the <guilabel>Name</guilabel> of the action. The name will be displayed in the context menu"
+msgstr "Ange <guilabel>Namn</guilabel> för åtgärden. Namnet kommer att visas i sammanhangsmenyn"
+
+#: C/epiphany-extensions.xml:170(para)
+msgid "Enter the <guilabel>Description</guilabel> of the action. The Description will be displayed in the statusbar of <application>Epiphany</application> and in the Action Manager"
+msgstr "Ange en <guilabel>Beskrivning</guilabel> för åtgärden. Beskrivningen kommer att visas i statusraden i <application>Epiphany</application> och i Åtgärdshanteraren"
+
+#: C/epiphany-extensions.xml:176(para)
+msgid "Enter the <guilabel>Command</guilabel> to execute. this command will be executed and will receive as argument the element on which you'll launch the action. This action can be any program or script available in your path"
+msgstr "Ange vilket <guilabel>Kommando</guilabel> som ska köras. Det här kommandot kommer att köras och kommer att ta emot elementet som argument när du startar åtgärden. Den här åtgärden kan vara ett program eller skript som finns tillgängligt i din sökväg"
+
+#: C/epiphany-extensions.xml:183(para)
+msgid "Select <guilabel>Pages</guilabel> or <guilabel>Images</guilabel> to choose on which elements the action will appear"
+msgstr "Välj <guilabel>Sidor</guilabel> eller <guilabel>Bilder</guilabel> för att välja för vilka element som åtgärden ska visas"
+
+#: C/epiphany-extensions.xml:188(para)
+msgid "Press <guibutton>Add</guibutton>"
+msgstr "Tryck på <guibutton>Lägg till</guibutton>"
+
+#: C/epiphany-extensions.xml:163(para)
+msgid "In the \"Add Action\" window, <placeholder-1/>"
+msgstr "I \"Lägg till åtgärd\"-fönstret, <placeholder-1/>"
+
+#: C/epiphany-extensions.xml:194(para)
+#: C/epiphany-extensions.xml:248(para)
+msgid "Press <guibutton>Close</guibutton> to close the Actions Manager"
+msgstr "Tryck på <guibutton>Stäng</guibutton> för att stänga Åtgärdshanteraren"
+
+#: C/epiphany-extensions.xml:150(para)
 msgid "To create an action, perform the following steps: <placeholder-1/>"
-msgstr ""
+msgstr "Genomför följande steg för att skapa en åtgärd: <placeholder-1/>"
 
-#: C/epiphany-extensions.xml:188(title)
+#: C/epiphany-extensions.xml:198(title)
 msgid "An example of action"
-msgstr ""
+msgstr "En exempelåtgärd"
 
-#: C/epiphany-extensions.xml:194(title)
+#: C/epiphany-extensions.xml:204(title)
 msgid "Edit Actions"
-msgstr ""
+msgstr "Redigera åtgärder"
 
-#: C/epiphany-extensions.xml:203(para)
+#: C/epiphany-extensions.xml:213(para)
 msgid "Select the action to edit"
-msgstr ""
+msgstr "Välj åtgärden att redigera"
 
-#: C/epiphany-extensions.xml:208(para)
+#: C/epiphany-extensions.xml:218(para)
 msgid "Press <guibutton>Edit</guibutton>"
-msgstr ""
-
-#: C/epiphany-extensions.xml:212(para)
-msgid "Edit the action as described in <xref linkend=\"epi-ext-action-manage-create\"/>"
-msgstr ""
-
-#: C/epiphany-extensions.xml:196(para)
-msgid "To edit an action, follow these steps: <placeholder-1/>"
-msgstr ""
-
-#: C/epiphany-extensions.xml:220(title)
-msgid "Delete Actions"
-msgstr ""
-
-#: C/epiphany-extensions.xml:229(para)
-msgid "Select the action to delete"
-msgstr ""
-
-#: C/epiphany-extensions.xml:234(para)
-msgid "Press <guibutton>Remove</guibutton>"
-msgstr ""
+msgstr "Tryck på <guibutton>Redigera</guibutton>"
 
 #: C/epiphany-extensions.xml:222(para)
+msgid "Edit the action as described in <xref linkend=\"epi-ext-action-manage-create\"/>"
+msgstr "Redigera åtgärden som beskrivs i <xref linkend=\"epi-ext-action-manage-create\"/>"
+
+#: C/epiphany-extensions.xml:206(para)
+msgid "To edit an action, follow these steps: <placeholder-1/>"
+msgstr "Följ dessa steg för att redigera en åtgärd: <placeholder-1/>"
+
+#: C/epiphany-extensions.xml:230(title)
+msgid "Delete Actions"
+msgstr "Ta bort åtgärder"
+
+#: C/epiphany-extensions.xml:239(para)
+msgid "Select the action to delete"
+msgstr "Välj den åtgärd du vill ta bort"
+
+#: C/epiphany-extensions.xml:244(para)
+msgid "Press <guibutton>Remove</guibutton>"
+msgstr "Tryck på <guibutton>Ta bort</guibutton>"
+
+#: C/epiphany-extensions.xml:232(para)
 msgid "To delete an action, do the following: <placeholder-1/>"
-msgstr ""
+msgstr "Gör följande för att ta bort en åtgärd: <placeholder-1/>"
 
-#: C/epiphany-extensions.xml:246(title)
+#: C/epiphany-extensions.xml:256(title)
 msgid "Using Actions"
-msgstr ""
+msgstr "Användning av Åtgärder"
 
-#: C/epiphany-extensions.xml:248(para)
+#: C/epiphany-extensions.xml:258(para)
 msgid "To use a custom action, choose the action to execute from the context menu of the element you wish to perform the action on."
-msgstr ""
+msgstr "För att använda en anpassad åtgärd, välj åtgärden att köra från sammanhangsmenyn för elementet du önskar genomföra åtgärden på."
 
-#: C/epiphany-extensions.xml:250(title)
+#: C/epiphany-extensions.xml:260(title)
 msgid "The <application>Epiphany</application> image context menu with a custom action"
-msgstr ""
-
-#: C/epiphany-extensions.xml:258(title)
-msgid "Ad Blocker"
-msgstr ""
-
-#: C/epiphany-extensions.xml:263(para)
-msgid "The Ad Blocker extension lets you block ad banners on websites. It avoids downloading them, saving time and bandwidth."
-msgstr ""
+msgstr "Bildsammanhangsmenyn i <application>Epiphany</application> med en anpassad åtgärd"
 
 #: C/epiphany-extensions.xml:268(title)
-msgid "Using Ad Blocker"
-msgstr ""
-
-#: C/epiphany-extensions.xml:270(para)
-msgid "To use the Ad Blocker, you have to enable the extension. The extension will ignore link to ads when you visit websites, and they won't be displayed in web pages."
-msgstr ""
-
-#: C/epiphany-extensions.xml:278(title)
-msgid "The Ad Blocker icon"
-msgstr ""
+msgid "Ad Blocker"
+msgstr "Ad Blocker"
 
 #: C/epiphany-extensions.xml:273(para)
+msgid "The Ad Blocker extension lets you block ad banners on websites. It avoids downloading them, saving time and bandwidth."
+msgstr "Utökningen Ad Blocker låter dig blockera reklambanners på webbplatser. Den förhindrar att de hämtas ner, vilket sparar tid och bandbredd."
+
+#: C/epiphany-extensions.xml:278(title)
+msgid "Using Ad Blocker"
+msgstr "Användning av Ad Blocker"
+
+#: C/epiphany-extensions.xml:280(para)
+msgid "To use the Ad Blocker, you have to enable the extension. The extension will ignore link to ads when you visit websites, and they won't be displayed in web pages."
+msgstr "För att använda Ad Blocker måste du aktivera utökningen. Utökningen kommer att ignorera länkar till reklam när du besöker webbplatser och de kommer inte att visas i webbsidorna."
+
+#: C/epiphany-extensions.xml:288(title)
+msgid "The Ad Blocker icon"
+msgstr "Ikonen för Ad Blocker"
+
+#: C/epiphany-extensions.xml:283(para)
 msgid "<application>Epiphany</application> will display an icon in left side of the status bar (see <xref linkend=\"epi-ext-figure-adblocker\"/>) to inform you that it has blocked ads. If you move the mouse pointer over the icon, it will give you of the number of ads blocked in the page. <placeholder-1/>"
-msgstr ""
+msgstr "<application>Epiphany</application> visar en ikon på vänstra sidan av statusraden (se <xref linkend=\"epi-ext-figure-adblocker\"/>) för att informera dig om att den har blockerat reklam. Om du flyttar muspekaren tiIl ikonen kommer den att visa antalet reklambanners som har blockerats för sidan. <placeholder-1/>"
 
-#: C/epiphany-extensions.xml:285(title)
+#: C/epiphany-extensions.xml:295(title)
 msgid "Extend Ad Blocker"
-msgstr ""
+msgstr "Utöka Ad Blocker"
 
-#: C/epiphany-extensions.xml:287(para)
+#: C/epiphany-extensions.xml:297(para)
 msgid "Ad Blocker should block most of the advertisement on the web, but if you find that some banners are not blocked or Ad Blocker is too restrictive, you can tune Ad Blocker extension to match your needs."
-msgstr ""
+msgstr "Ad Blocker ska blockera den mesta reklamen på webben men om du hittar några banners som inte blockeras eller att Ad Blocker är för restriktiv, kan du justera Ad Blocker-utökningen för att passa dina behov."
 
-#: C/epiphany-extensions.xml:292(para)
+#: C/epiphany-extensions.xml:302(para)
 msgid "Ad Blocker uses Perl regular expressions to match known URLs of ads servers and common words used in URLs of ads. Ad Blocker stores the system-wide rules in the file <filename>adblock-patterns</filename> located in <filename class=\"directory\">$PREFIX/share/epiphany-extensions/</filename>; one regular expression per line."
-msgstr ""
+msgstr "Ad Blocker använder reguljära Perl-uttryck för att matcha kända URL:er för reklamservrar och vanliga ord som används i reklam-URL:er. Ad Blocker lagrar systembreda regler i filen <filename>adblock-patterns</filename> som finns i <filename class=\"directory\">$PREFIX/share/epiphany-extensions/</filename>; ett reguljärt uttryck per rad."
 
-#: C/epiphany-extensions.xml:301(title)
+#: C/epiphany-extensions.xml:311(title)
 msgid "Add a deny rule"
-msgstr ""
+msgstr "Lägg till en blockeringsregel"
 
-#: C/epiphany-extensions.xml:303(para)
+#: C/epiphany-extensions.xml:313(para)
 msgid "If you want to block an ad not blocked by the Ad Blocker default rules, you may create a blacklist file, and add rules inside."
-msgstr ""
+msgstr "Om du vill blockera en reklambanner som inte blockeras av standardreglerna i Ad Blocker kan du skapa en svartlistefil, och lägga till regler i den."
 
-#: C/epiphany-extensions.xml:306(para)
+#: C/epiphany-extensions.xml:316(para)
 msgid "<application>Epiphany</application> looks for the blacklist rules in the file <filename>$HOME/.gnome2/epiphany/extensions/data/adblock/blacklist</filename>."
-msgstr ""
+msgstr "<application>Epiphany</application> letar efter svartlistreglerna i filen <filename>$HOME/.gnome2/epiphany/extensions/data/adblock/blacklist</filename>."
 
-#: C/epiphany-extensions.xml:312(title)
+#: C/epiphany-extensions.xml:322(title)
 msgid "Add a permit rule"
-msgstr ""
+msgstr "Lägg till en tillåtelseregel"
 
-#: C/epiphany-extensions.xml:314(para)
+#: C/epiphany-extensions.xml:324(para)
 msgid "If you want allow to permit an ad to be displayed or correct a rule of Ad Blocker which is too restrictive, you can create a whitelist file, and add rules inside."
-msgstr ""
+msgstr "Om du vill tillåta att en reklambanner visas eller korrigera en regel i Ad Blocker som är för restriktiv, kan du skapa en vitlistefil, och lägga till regler i den."
 
-#: C/epiphany-extensions.xml:317(para)
+#: C/epiphany-extensions.xml:327(para)
 msgid "<application>Epiphany</application> looks for white-list rules in the file <filename>$HOME/.gnome2/epiphany/extensions/data/adblock/whitelist</filename>."
-msgstr ""
-
-#: C/epiphany-extensions.xml:325(title)
-msgid "Auto Reload Tab"
-msgstr ""
-
-#: C/epiphany-extensions.xml:330(para)
-msgid "The Auto Reload Tab extension allows you to regularly reload a page in a tab."
-msgstr ""
+msgstr "<application>Epiphany</application> letar efter vitlistreglerna i filen <filename>$HOME/.gnome2/epiphany/extensions/data/adblock/whitelist</filename>."
 
 #: C/epiphany-extensions.xml:335(title)
+msgid "Auto Reload Tab"
+msgstr "Läs om flik automatiskt"
+
+#: C/epiphany-extensions.xml:340(para)
+msgid "The Auto Reload Tab extension allows you to regularly reload a page in a tab."
+msgstr "Utökningen Läs automatiskt om flik låter dig periodiskt läsa om en sida i en flik."
+
+#: C/epiphany-extensions.xml:345(title)
 msgid "Using Auto Reload Tab"
-msgstr ""
+msgstr "Användning av Läs om flik automatiskt"
 
-#: C/epiphany-extensions.xml:337(para)
+#: C/epiphany-extensions.xml:347(para)
 msgid "Enter the URL of a page you want to open and you know its content change often, then choose <menuchoice><guimenu>View</guimenu><guimenuitem>Auto Reload</guimenuitem></menuchoice> to enable auto reload, <application>Epiphany</application> will refresh each 3 minutes."
-msgstr ""
-
-#: C/epiphany-extensions.xml:344(title)
-msgid "Auto reload local files"
-msgstr ""
-
-#: C/epiphany-extensions.xml:345(para)
-msgid "When a local file is opened, <application>Epiphany</application> will monitor it and reload the file when it changes."
-msgstr ""
+msgstr "Ange URL:en för en sida som du vill öppna och som du vet att dess innehåll ändras ofta, välj sedan <menuchoice><guimenu>Visa</guimenu><guimenuitem>Läs om automatiskt</guimenuitem></menuchoice> för att aktivera den automatiskt omläsningen, <application>Epiphany</application> kommer att uppdatera sidan var tredje minut."
 
 #: C/epiphany-extensions.xml:354(title)
+msgid "Auto reload local files"
+msgstr "Läs automatiskt om lokala filer"
+
+#: C/epiphany-extensions.xml:355(para)
+msgid "When a local file is opened, <application>Epiphany</application> will monitor it and reload the file when it changes."
+msgstr "När en lokal fil öppnas kommer <application>Epiphany</application> att övervaka den och läsa om den när den ändras."
+
+#: C/epiphany-extensions.xml:364(title)
 msgid "AutoScroll"
-msgstr ""
+msgstr "Automatisk rullning"
 
-#: C/epiphany-extensions.xml:359(para)
+#: C/epiphany-extensions.xml:369(para)
 msgid "The Auto Scroll extension allows you to automatically scroll a page in any direction. For instance, if you set a slow scroll, you can read a whole web page without touching your mouse."
-msgstr ""
+msgstr "Utökningen Automatisk rullning låter dig automatiskt rulla en sida i valfri riktning. Till exempel, om du ställer in en långsam rullning kan du läsa en hel webbsida utan att röra din mus."
 
-#: C/epiphany-extensions.xml:365(title)
+#: C/epiphany-extensions.xml:375(title)
 msgid "Using Auto Scroll"
-msgstr ""
+msgstr "Användning av Automatisk rullning"
 
-#: C/epiphany-extensions.xml:370(para)
+#: C/epiphany-extensions.xml:380(para)
 msgid "Press and release the middle-mouse button; a target appears, and the cursor of mouse pointer is changed to a hand cursor."
-msgstr ""
+msgstr "Tryck och släpp mittenmusknappen; ett mål visas och muspekaren ändras till en handpekare."
 
-#: C/epiphany-extensions.xml:375(para)
+#: C/epiphany-extensions.xml:385(para)
 msgid "Move the cursor in the direction to scroll. The page will start to scroll in that direction."
-msgstr ""
+msgstr "Flytta muspekaren i riktningen för att rulla. Sidan kommer att börja rullas i den riktningen."
 
-#: C/epiphany-extensions.xml:367(para)
+#: C/epiphany-extensions.xml:377(para)
 msgid "To start to auto scroll on a page, <placeholder-1/>"
-msgstr ""
+msgstr "För att påbörja en automatisk rullning för en sida, <placeholder-1/>"
 
-#: C/epiphany-extensions.xml:384(title)
+#: C/epiphany-extensions.xml:394(title)
 msgid "Certificates"
 msgstr "Certifikat"
 
-#: C/epiphany-extensions.xml:389(para)
-msgid "The Certificates extension gives access to the certificates stored by <application>Epiphany</application>, in order to view or manage them."
-msgstr ""
-
-#: C/epiphany-extensions.xml:394(title)
-msgid "Using Certificates"
-msgstr ""
-
-#: C/epiphany-extensions.xml:397(title)
-msgid "View website certificate"
-msgstr ""
-
 #: C/epiphany-extensions.xml:399(para)
-msgid "When you browse a secured website, the unlocked padlock which appear on the left of the status bar becomes a locked padlock. When the Certificates extension is activated, you can click on the padlock, it will display the certificate information."
-msgstr ""
+msgid "The Certificates extension gives access to the certificates stored by <application>Epiphany</application>, in order to view or manage them."
+msgstr "Utökningen Certifikat ger dig åtkomst till certifikaten som lagrats av <application>Epiphany</application> för att kunna visa eller hantera dem."
+
+#: C/epiphany-extensions.xml:404(title)
+msgid "Using Certificates"
+msgstr "Användning av Certifikat"
 
 #: C/epiphany-extensions.xml:407(title)
-msgid "Manage Certificates"
-msgstr ""
+msgid "View website certificate"
+msgstr "Visa webbsidans certifikat"
 
 #: C/epiphany-extensions.xml:409(para)
-msgid "Certificates extensions lets you manage the certificates stored by <application>Epiphany</application> Browser."
-msgstr ""
+msgid "When you browse a secured website, the unlocked padlock which appear on the left of the status bar becomes a locked padlock. When the Certificates extension is activated, you can click on the padlock, it will display the certificate information."
+msgstr "När du visar en säker webbsida kommer det olåsta hänglåset som visas på vänster sida av statusraden att bli ett låst hänglås. När Certifikat-utökningen är aktiverad kan du klicka på hänglåset och den kommer att visa information om certfikatet."
 
-#: C/epiphany-extensions.xml:417(guilabel)
+#: C/epiphany-extensions.xml:417(title)
+msgid "Manage Certificates"
+msgstr "Hantera certifikat"
+
+#: C/epiphany-extensions.xml:419(para)
+msgid "Certificates extensions lets you manage the certificates stored by <application>Epiphany</application> Browser."
+msgstr "Utökningen Certifikat låter dig hantera certfikat som lagrats av webbläsaren <application>Epiphany</application>."
+
+#: C/epiphany-extensions.xml:427(guilabel)
 msgid "Your Certificates"
 msgstr "Dina certifikat"
 
-#: C/epiphany-extensions.xml:418(para)
+#: C/epiphany-extensions.xml:428(para)
 msgid "To import, view, backup and delete your own certificates. Personal Certificates can be used to identify when you browse a sensible site."
-msgstr ""
-
-#: C/epiphany-extensions.xml:425(guilabel)
-msgid "Other People's"
-msgstr ""
-
-#: C/epiphany-extensions.xml:426(para)
-msgid "To import, view, edit and delete certificates from people you know."
-msgstr ""
-
-#: C/epiphany-extensions.xml:430(guilabel)
-msgid "Web Sites"
-msgstr ""
-
-#: C/epiphany-extensions.xml:431(para)
-msgid "To import, view, edit and delete certificates from website you visited."
-msgstr ""
+msgstr "För att importera, visa, säkerhetskopiera och ta bort dina egna certifikat. Personliga certifikat användas för att identifiera dig själv när du surfar på en känslig webbplats."
 
 #: C/epiphany-extensions.xml:435(guilabel)
-msgid "Authorities"
-msgstr ""
+msgid "Other People's"
+msgstr "Andra personers"
 
 #: C/epiphany-extensions.xml:436(para)
+msgid "To import, view, edit and delete certificates from people you know."
+msgstr "För att importera, visa, redigera och ta bort certifikat från personer som du känner."
+
+#: C/epiphany-extensions.xml:440(guilabel)
+msgid "Web Sites"
+msgstr "Webbplatser"
+
+#: C/epiphany-extensions.xml:441(para)
+msgid "To import, view, edit and delete certificates from website you visited."
+msgstr "För att importera, visa, redigera och ta bort certifikat från webbplatser som du har besökt."
+
+#: C/epiphany-extensions.xml:445(guilabel)
+msgid "Authorities"
+msgstr "Utfärdare"
+
+#: C/epiphany-extensions.xml:446(para)
 msgid "To import, view, edit and delete certificates from authorities. Authorities are organizations which create and validate the authenticity of published certificates over the Internet."
-msgstr ""
+msgstr "För att importera, visa, redigera och ta bort certifikat från utfärdare. Utfärdare är organisationer som skapar och validerar giltigheten för publicerade certfikat på Internet."
 
-#: C/epiphany-extensions.xml:411(para)
+#: C/epiphany-extensions.xml:421(para)
 msgid "To display the <guilabel>Certificate Manager</guilabel>, choose <menuchoice><guimenu>Tools</guimenu><guimenuitem>Manage Certificates</guimenuitem></menuchoice>, it gives access to 4 tabs: <placeholder-1/><placeholder-2/>"
-msgstr ""
+msgstr "För att visa <guilabel>Certifikathanteraren</guilabel>, välj <menuchoice><guimenu>Verktyg</guimenu><guimenuitem>Hantera certifikat</guimenuitem></menuchoice>, den ger åtkomst till fyra olika flikar: <placeholder-1/><placeholder-2/>"
 
-#: C/epiphany-extensions.xml:446(title)
+#: C/epiphany-extensions.xml:456(title)
 msgid "Manage Security Devices"
-msgstr ""
+msgstr "Hantera säkerhetsenheter"
 
-#: C/epiphany-extensions.xml:448(para)
+#: C/epiphany-extensions.xml:458(para)
 msgid "Security Devices are used encrypt and decrypt connections and can store certificates and passwords."
-msgstr ""
-
-#: C/epiphany-extensions.xml:455(title)
-#: C/epiphany-extensions.xml:480(guilabel)
-msgid "Error Viewer"
-msgstr ""
-
-#: C/epiphany-extensions.xml:460(para)
-msgid "The Error Viewer extension allows you to view errors in web pages, validate web pages and check links."
-msgstr ""
+msgstr "Säkerhetsenheter används för att kryptera och dekryptera anslutningar och kan lagra certifikat och lösenord."
 
 #: C/epiphany-extensions.xml:465(title)
+#: C/epiphany-extensions.xml:490(guilabel)
+msgid "Error Viewer"
+msgstr "Felvisare"
+
+#: C/epiphany-extensions.xml:470(para)
+msgid "The Error Viewer extension allows you to view errors in web pages, validate web pages and check links."
+msgstr "Utökningen Felvisare låter dig visa fel i webbsidor, validera webbsidor och kontrollera länkar."
+
+#: C/epiphany-extensions.xml:475(title)
 msgid "Using Error Viewer"
-msgstr ""
+msgstr "Användning av Felvisare"
 
-#: C/epiphany-extensions.xml:472(guilabel)
+#: C/epiphany-extensions.xml:482(guilabel)
 msgid "Links Checker"
-msgstr ""
+msgstr "Kontrollera länkar"
 
-#: C/epiphany-extensions.xml:473(para)
+#: C/epiphany-extensions.xml:483(para)
 msgid "Detects dead links on a site"
-msgstr ""
+msgstr "Identifierar döda länkar på en sida"
 
-#: C/epiphany-extensions.xml:476(guilabel)
+#: C/epiphany-extensions.xml:486(guilabel)
 msgid "HTML Code Checker"
-msgstr ""
+msgstr "Kontrollera HTML-kod"
+
+#: C/epiphany-extensions.xml:487(para)
+msgid "Checks the validity of the source code."
+msgstr "Kontrollerar giltigheten för källkoden."
+
+#: C/epiphany-extensions.xml:491(para)
+msgid "Displays various errors of a webpage (like javascript, ...)"
+msgstr "Visar diverse fel för en webbsida (som till exempel javascript, ...)"
 
 #: C/epiphany-extensions.xml:477(para)
-msgid "Checks the validity of the source code."
-msgstr ""
-
-#: C/epiphany-extensions.xml:481(para)
-msgid "Displays various errors of a webpage (like javascript, ...)"
-msgstr ""
-
-#: C/epiphany-extensions.xml:467(para)
 msgid "The Error Viewer is a small but useful extension for webmasters to check that websites (specially yours) conform to Web standards. This extension comes with 3 functions: <placeholder-1/>"
-msgstr ""
+msgstr "Felvisaren är en liten men användbar utökning som webmasters kan använda för att kontrollera att webbsidorna (speciellt dina egna) är giltiga enligt webbstandarderna. Den här utökningen har tre funktioner: <placeholder-1/>"
 
-#: C/epiphany-extensions.xml:486(para)
+#: C/epiphany-extensions.xml:496(para)
 msgid "To launch the Links Checker, choose <menuchoice><guimenu>Tools</guimenu><guimenuitem>Check Links</guimenuitem></menuchoice>. The error viewer window will open, and the links verification will start automatically."
-msgstr ""
+msgstr "För att köra Kontrollera länkar, välj <menuchoice><guimenu>Verktyg</guimenu><guimenuitem>Kontrollera länkar</guimenuitem></menuchoice>. Felvisarfönstret kommer att öppnas och validering av länkarna startar automatiskt."
 
-#: C/epiphany-extensions.xml:490(para)
+#: C/epiphany-extensions.xml:500(para)
 msgid "To launch the HTML Code Checker, choose <menuchoice><guimenu>Tools</guimenu><guimenuitem>Check HTML</guimenuitem></menuchoice>. The error viewer window will open, and the HTML code verification will start automatically."
-msgstr ""
+msgstr "För att köra Kontrollera HTML-kod, välj <menuchoice><guimenu>Verktyg</guimenu><guimenuitem>Kontrollera HTML</guimenuitem></menuchoice>. Felvisarfönstret kommer att öppnas och validering av HTML-koden kommer att starta automatiskt."
 
-#: C/epiphany-extensions.xml:494(para)
+#: C/epiphany-extensions.xml:504(para)
 msgid "To launch the Error Viewer, choose <menuchoice><guimenu>Tools</guimenu><guimenuitem>Error Viewer</guimenuitem></menuchoice>. The error viewer window will open, it will display all the validation errors discovered in the web page."
-msgstr ""
-
-#: C/epiphany-extensions.xml:502(title)
-msgid "Favicon Fallback"
-msgstr ""
-
-#: C/epiphany-extensions.xml:507(para)
-msgid "The Favicon Fallback extension allows to retrieve the icon favicon.ico when the favicon is not well declared in web page."
-msgstr ""
+msgstr "För att köra Felvisaren, välj <menuchoice><guimenu>Verktyg</guimenu><guimenuitem>Felvisare</guimenuitem></menuchoice>. Felvisarfönstret kommer att öppnas och visar alla valideringsfel som hittas i webbsidan."
 
 #: C/epiphany-extensions.xml:512(title)
+msgid "Favicon Fallback"
+msgstr "Favoritikonreserv"
+
+#: C/epiphany-extensions.xml:517(para)
+msgid "The Favicon Fallback extension allows to retrieve the icon favicon.ico when the favicon is not well declared in web page."
+msgstr "Utökningen Favoritikonreserv tillåter hämtning av ikonen favicon.ico när \"favicon\" inte har deklarerats korrekt i webbsidan."
+
+#: C/epiphany-extensions.xml:522(title)
 msgid "Using Favicon"
-msgstr ""
+msgstr "Användning av Favoritikon"
 
-#: C/epiphany-extensions.xml:514(para)
+#: C/epiphany-extensions.xml:524(para)
 msgid "Once activated, this extension will retrieve the picture file /favicon.ico on each site you will visit if this file exists. Then <application>Epiphany</application> will display this icon on the left of the location bar."
-msgstr ""
-
-#: C/epiphany-extensions.xml:521(title)
-msgid "Gestures"
-msgstr ""
-
-#: C/epiphany-extensions.xml:526(para)
-msgid "The Gestures allows you to quickly perform actions in <application>Epiphany</application> by drawing a shape with the mouse."
-msgstr ""
+msgstr "När aktiverad kommer den här utökningen att hämta bildfilen /favicon.ico för varje webbplats som du besöker om det finns en sådan fil. Sedan kommer <application>Epiphany</application> att visa den här ikonen till vänster på adressfältet."
 
 #: C/epiphany-extensions.xml:531(title)
+msgid "Gestures"
+msgstr "Gester"
+
+#: C/epiphany-extensions.xml:536(para)
+msgid "The Gestures allows you to quickly perform actions in <application>Epiphany</application> by drawing a shape with the mouse."
+msgstr "Gester låter dig snabbt genomföra åtgärder i <application>Epiphany</application> genom att rita en figur med musen."
+
+#: C/epiphany-extensions.xml:541(title)
 msgid "Using Gestures"
-msgstr ""
+msgstr "Användning av Gester"
 
-#: C/epiphany-extensions.xml:533(para)
+#: C/epiphany-extensions.xml:543(para)
 msgid "To perform a gesture, press the middle button in the view pane of a <application>Epiphany</application> window, move the mouse in one of the following patterns, and then release the button. The cursor will change while the gesture is being performed."
-msgstr ""
+msgstr "För att genomföra en gest, tryck med mittenknappen i visningsrutan i ett <application>Epiphany</application>-fönster, flytta musen i ett av följande mönster och släpp sedan knappen. Muspekaren kommer att ändras under tiden gesten genomförs."
 
-#: C/epiphany-extensions.xml:539(title)
+#: C/epiphany-extensions.xml:549(title)
 msgid "List of available default patterns in <application>Epiphany Extensions</application>"
-msgstr ""
+msgstr "Lista över tillgängliga standardmönster i <application>Epiphany-utökningar</application>"
 
-#: C/epiphany-extensions.xml:546(entry)
+#: C/epiphany-extensions.xml:556(entry)
 msgid "Action"
-msgstr ""
+msgstr "Åtgärd"
 
-#: C/epiphany-extensions.xml:547(entry)
+#: C/epiphany-extensions.xml:557(entry)
 msgid "Gesture"
-msgstr ""
+msgstr "Gest"
 
-#: C/epiphany-extensions.xml:548(entry)
+#: C/epiphany-extensions.xml:558(entry)
 msgid "Example"
-msgstr ""
+msgstr "Exempel"
 
-#: C/epiphany-extensions.xml:553(entry)
+#: C/epiphany-extensions.xml:563(entry)
 msgid "Go back in history"
-msgstr ""
-
-#: C/epiphany-extensions.xml:554(entry)
-msgid "Left"
-msgstr ""
+msgstr "Gå bakåt i historik"
 
 #: C/epiphany-extensions.xml:564(entry)
-msgid "Go forward in history"
-msgstr ""
+msgid "Left"
+msgstr "Vänster"
 
-#: C/epiphany-extensions.xml:565(entry)
-msgid "Right"
-msgstr ""
+#: C/epiphany-extensions.xml:574(entry)
+msgid "Go forward in history"
+msgstr "Gå framåt i historik"
 
 #: C/epiphany-extensions.xml:575(entry)
-msgid "Go up in a directory"
-msgstr ""
+msgid "Right"
+msgstr "Höger"
 
-#: C/epiphany-extensions.xml:576(entry)
-msgid "Up - Left - Up"
-msgstr ""
+#: C/epiphany-extensions.xml:585(entry)
+msgid "Go up in a directory"
+msgstr "Gå upp i en katalog"
 
 #: C/epiphany-extensions.xml:586(entry)
-msgid "Go to your home page"
-msgstr ""
+msgid "Up - Left - Up"
+msgstr "Upp - Vänster - Upp"
 
-#: C/epiphany-extensions.xml:587(entry)
-msgid "Up - Left - Down"
-msgstr ""
+#: C/epiphany-extensions.xml:596(entry)
+msgid "Go to your home page"
+msgstr "Gå till din hemsida"
 
 #: C/epiphany-extensions.xml:597(entry)
-msgid "Reload the page"
-msgstr ""
+msgid "Up - Left - Down"
+msgstr "Upp - Vänster - Ner"
 
-#: C/epiphany-extensions.xml:598(entry)
-msgid "Up - Down"
-msgstr ""
+#: C/epiphany-extensions.xml:607(entry)
+msgid "Reload the page"
+msgstr "Läs om sidan"
 
 #: C/epiphany-extensions.xml:608(entry)
-msgid "Stop loading the page"
-msgstr ""
+msgid "Up - Down"
+msgstr "Upp - Ner"
 
-#: C/epiphany-extensions.xml:609(entry)
-msgid "Left - Up"
-msgstr ""
+#: C/epiphany-extensions.xml:618(entry)
+msgid "Stop loading the page"
+msgstr "Stoppa inläsning av sidan"
 
 #: C/epiphany-extensions.xml:619(entry)
-msgid "Open a new window"
-msgstr ""
+msgid "Left - Up"
+msgstr "Vänster - Upp"
 
-#: C/epiphany-extensions.xml:620(entry)
-msgid "Up"
-msgstr ""
+#: C/epiphany-extensions.xml:629(entry)
+msgid "Open a new window"
+msgstr "Öppna ett nytt fönster"
 
 #: C/epiphany-extensions.xml:630(entry)
-msgid "Open a new tab"
-msgstr ""
+msgid "Up"
+msgstr "Upp"
 
-#: C/epiphany-extensions.xml:631(entry)
-msgid "Down"
-msgstr ""
+#: C/epiphany-extensions.xml:640(entry)
+msgid "Open a new tab"
+msgstr "Öppna en ny flik"
 
 #: C/epiphany-extensions.xml:641(entry)
-msgid "Close a tab/window"
-msgstr ""
+msgid "Down"
+msgstr "Ner"
 
-#: C/epiphany-extensions.xml:642(entry)
-msgid "Right - Left - Right"
-msgstr ""
+#: C/epiphany-extensions.xml:651(entry)
+msgid "Close a tab/window"
+msgstr "Stäng en flik/fönster"
 
 #: C/epiphany-extensions.xml:652(entry)
-msgid "Close a tab /window (second gesture)"
-msgstr ""
+msgid "Right - Left - Right"
+msgstr "Höger - Vänster - Höger"
 
-#: C/epiphany-extensions.xml:653(entry)
-msgid "Down - Right"
-msgstr ""
+#: C/epiphany-extensions.xml:662(entry)
+msgid "Close a tab /window (second gesture)"
+msgstr "Stäng en flik/fönster (andra gest)"
 
 #: C/epiphany-extensions.xml:663(entry)
-msgid "Toggle full-screen mode"
-msgstr ""
+msgid "Down - Right"
+msgstr "Ner - Höger"
 
-#: C/epiphany-extensions.xml:664(entry)
-msgid "Down - Left"
-msgstr ""
+#: C/epiphany-extensions.xml:673(entry)
+msgid "Toggle full-screen mode"
+msgstr "Växla helskärmsläge"
 
 #: C/epiphany-extensions.xml:674(entry)
-msgid "Go to the next tab"
-msgstr ""
+msgid "Down - Left"
+msgstr "Ner - Vänster"
 
-#: C/epiphany-extensions.xml:675(entry)
-msgid "Up - Right"
-msgstr ""
+#: C/epiphany-extensions.xml:684(entry)
+msgid "Go to the next tab"
+msgstr "Gå till nästa flik"
 
 #: C/epiphany-extensions.xml:685(entry)
-msgid "Go to the previous tab"
-msgstr ""
+msgid "Up - Right"
+msgstr "Upp - Höger"
 
-#: C/epiphany-extensions.xml:686(entry)
-msgid "Up - Left"
-msgstr ""
+#: C/epiphany-extensions.xml:695(entry)
+msgid "Go to the previous tab"
+msgstr "Gå till föregående flik"
 
 #: C/epiphany-extensions.xml:696(entry)
+msgid "Up - Left"
+msgstr "Upp - Vänster"
+
+#: C/epiphany-extensions.xml:706(entry)
 msgid "View the page source"
-msgstr ""
+msgstr "Visa sidkällan"
 
-#: C/epiphany-extensions.xml:698(wordasword)
+#: C/epiphany-extensions.xml:708(wordasword)
 msgid "S"
-msgstr ""
+msgstr "S"
 
-#: C/epiphany-extensions.xml:697(entry)
+#: C/epiphany-extensions.xml:707(entry)
 msgid "Left - Down - Right - Down - Left (Do a <placeholder-1/>)"
-msgstr ""
+msgstr "Vänster - Ner - Höger - Ner - Vänster (Gör en <placeholder-1/>)"
 
-#: C/epiphany-extensions.xml:708(entry)
+#: C/epiphany-extensions.xml:718(entry)
 msgid "View the page source (Second gesture)"
-msgstr ""
+msgstr "Visa sidkällan (Andra gest)"
 
-#: C/epiphany-extensions.xml:709(entry)
+#: C/epiphany-extensions.xml:719(entry)
 msgid "Up - Right - Down"
-msgstr ""
+msgstr "Upp - Höger - Ner"
 
-#: C/epiphany-extensions.xml:724(title)
+#: C/epiphany-extensions.xml:734(title)
 msgid "Create gestures"
-msgstr ""
+msgstr "Skapa gester"
 
-#: C/epiphany-extensions.xml:726(para)
+#: C/epiphany-extensions.xml:736(para)
 msgid "The Gestures extension lets you create your own gesture patterns, and so let you extend the set provided by default."
-msgstr ""
+msgstr "Utökningen Gester låter dig skapa dina egna gestmönster och låter dig på så vis utöka uppsättningen som tillhandahålls som standard."
 
-#: C/epiphany-extensions.xml:730(title)
+#: C/epiphany-extensions.xml:740(title)
 msgid "Understand how gesture works"
-msgstr ""
+msgstr "Förstå hur gester fungerar"
 
-#: C/epiphany-extensions.xml:732(para)
+#: C/epiphany-extensions.xml:742(para)
 msgid "<application>Epiphany</application> stores the definition of the gestures for all users in the file <filename>ephy-gestures.xml</filename> located in the directory <filename class=\"directory\">$PREFIX/share/epiphany-extensions/</filename>; this file uses the xml format, and defines the gestures for all the users of the system."
-msgstr ""
+msgstr "<application>Epiphany</application> lagrar definitionen av gester för alla användare i filen <filename>ephy-gestures.xml</filename> som finns i katalogen <filename class=\"directory\">$PREFIX/share/epiphany-extensions/</filename>; den här filen använder xml-formatet, och definierar gester för alla användare på systemet."
 
-#: C/epiphany-extensions.xml:742(title)
+#: C/epiphany-extensions.xml:752(title)
 msgid "A Gesture Example"
-msgstr ""
+msgstr "Ett exempel på en gest"
 
-#: C/epiphany-extensions.xml:738(para)
+#: C/epiphany-extensions.xml:748(para)
 msgid "If you open this file, you see a set of markup gesture, and inside them, there is one of several markup sequence and one markup action. <placeholder-1/>"
-msgstr ""
+msgstr "Om du öppnar den här filen kommer du att se en uppsättning av markup-gester, och inne i dem finns en av flera markup-sekvensen och en markup-åtgärd. <placeholder-1/>"
 
-#: C/epiphany-extensions.xml:755(title)
+#: C/epiphany-extensions.xml:765(title)
 msgid "Create new gesture"
-msgstr ""
+msgstr "Skapa ny gest"
 
-#: C/epiphany-extensions.xml:757(para)
+#: C/epiphany-extensions.xml:767(para)
 msgid "In this section, we will explain how to create a new gesture. We will decide to print the web page when we will draw a <wordasword>P</wordasword> with the mouse."
-msgstr ""
+msgstr "I det här avsnittet kommer vi att förklara hur man skapar en ny gest. Vi bestämmer att en webbsida ska skrivas ut när vi ritar ett <wordasword>P</wordasword> med musen."
 
-#: C/epiphany-extensions.xml:761(para)
+#: C/epiphany-extensions.xml:771(para)
 msgid "To create your own gestures, first create a file named <filename>ephy-gestures.xml</filename> in the directory <filename class=\"directory\">~/.gnome2/epiphany/</filename> which will store your personal gesture definitions."
-msgstr ""
+msgstr "För att skapa dina egna gester, skapa först en fil med namnet <filename>ephy-gestures.xml</filename> i katalogen <filename class=\"directory\">~/.gnome2/epiphany/</filename> som kommer att lagra dina personliga gestdefinitioner."
 
-#: C/epiphany-extensions.xml:766(para)
+#: C/epiphany-extensions.xml:776(para)
 msgid "Open the newly created file with a text editor and add the following content: <placeholder-1/>"
-msgstr ""
+msgstr "Öppna den nyligen skapade filen med en textredigerare och lägg till följande innehåll: <placeholder-1/>"
 
-#: C/epiphany-extensions.xml:779(title)
+#: C/epiphany-extensions.xml:789(title)
 msgid "Define the gesture movement"
-msgstr ""
+msgstr "Definiera geströrelsen"
 
-#: C/epiphany-extensions.xml:781(para)
+#: C/epiphany-extensions.xml:791(para)
 msgid "To define a new gesture, you need at least one or several sequences and an action to execute."
-msgstr ""
+msgstr "För att definiera en ny gest behöver du en eller flera sekvenser och en åtgärd som ska köras."
 
-#: C/epiphany-extensions.xml:783(para)
+#: C/epiphany-extensions.xml:793(para)
 msgid "A sequence is a set of numerical values between 1 and 9 which define the gesture to draw following a phone keypad layout (with \"1\" placed to the top-left hand corner and the \"9\" at the bottom-right hand corner)."
-msgstr ""
+msgstr "En sekvens är en uppsättning av numeriska värden mellan 1 och 9, vilka definierar gesten som ska ritas upp som följer en knappsatsliknande layout (där \"1\" är placerad i övre vänstra hörnet och \"9\" i nedre högra hörnet)."
 
-#: C/epiphany-extensions.xml:787(para)
+#: C/epiphany-extensions.xml:797(para)
 msgid "If we want to draw a <wordasword>P</wordasword>, the key sequence is 74123654, insert this value between the markups \"sequence\"."
-msgstr ""
+msgstr "Om vi vill rita upp ett <wordasword>P</wordasword> blir tangentsekvensen 74123654, infoga det här värdet i elementet \"sequence\"."
 
-#: C/epiphany-extensions.xml:800(title)
+#: C/epiphany-extensions.xml:810(title)
 msgid "Define the action"
-msgstr ""
+msgstr "Definiera åtgärden"
 
-#: C/epiphany-extensions.xml:802(para)
+#: C/epiphany-extensions.xml:812(para)
 msgid "An action describes the path to a menu or toolbar item in the <application>Epiphany</application> window. All these paths are defined is the file <filename>ephy-gestures.xml</filename> located in <filename class=\"directory\">$PREFIX/epiphany-browser/epiphany-ui.xml</filename>"
-msgstr ""
+msgstr "En åtgärd beskriver sökvägen till ett meny- eller verktygsradsobjekt i <application>Epiphany</application>-fönstret. Alla dessa sökvägar definieras i filen <filename>ephy-gestures.xml</filename> som finns i <filename class=\"directory\">$PREFIX/epiphany-browser/epiphany-ui.xml</filename>"
 
-#: C/epiphany-extensions.xml:820(title)
+#: C/epiphany-extensions.xml:830(title)
 msgid "Greasemonkey"
 msgstr "Greasemonkey"
 
-#: C/epiphany-extensions.xml:825(para)
+#: C/epiphany-extensions.xml:835(para)
 msgid "Greasemonkey is a powerful extension that allows users to use scripts that make on-the-fly changes to web pages. The greasemonkey scripts can make page modifications or automatically fill forms for instance."
-msgstr ""
+msgstr "Greasemonkey är en kraftfull utökning som låter användarna använda skript som gör omedelbara ändringar i webbsidor. Greasemonkey-skripten kan till exempel göra sidändringar eller fylla i formulär automatiskt."
 
-#: C/epiphany-extensions.xml:829(para)
+#: C/epiphany-extensions.xml:839(para)
 msgid "Greasemonkey scripts are javascripts and have the file extension \".user.js\". Greasemonkey extension doesn't come with any scripts, you have to find by yourself scripts over the web. A good Greasemonkey scripts repository is the site <ulink url=\"http://userscripts.org/\">http://userscripts.org/</ulink>."
-msgstr ""
+msgstr "Greasemonkey-skript är javascript och har filändelsen \".user.js\". Utökningen Greasemonkey innehåller som standard inga skript, du måste själv hitta skript på webben. Ett bra förråd av Greasemonkey-skript finns på webbplatsen <ulink url=\"http://userscripts.org/\">http://userscripts.org/</ulink>."
 
-#: C/epiphany-extensions.xml:834(para)
+#: C/epiphany-extensions.xml:844(para)
 msgid "To learn more about Greasemonkey, read the <ulink url=\"http://en.wikipedia.org/wiki/Greasemonkey\">definition</ulink> on the Wikipedia on-line enciclopedia."
-msgstr ""
+msgstr "För att lära dig mer om Greasemonkey, läs <ulink url=\"http://en.wikipedia.org/wiki/Greasemonkey\">definitionen</ulink> på Wikipedia."
 
-#: C/epiphany-extensions.xml:840(title)
+#: C/epiphany-extensions.xml:850(title)
 msgid "Using Greasemonkey"
-msgstr ""
+msgstr "Användning av Greasemonkey"
 
-#: C/epiphany-extensions.xml:843(title)
+#: C/epiphany-extensions.xml:853(title)
 msgid "Install a Greasemonkey script"
-msgstr ""
+msgstr "Installera ett Greasemonkey-skript"
 
-#: C/epiphany-extensions.xml:845(para)
+#: C/epiphany-extensions.xml:855(para)
 msgid "To install a Greasemonkey script, first locate a link to a greasemonkey script on a web page, right-click on the link, and choose <guimenuitem>Install User Script</guimenuitem>. <application>Epiphany</application> will download the script; a message box will confirm the script is installed and ready to use."
-msgstr ""
+msgstr "För att installera ett Greasemonkey-skript, leta först fram länken till ett greasemonkey-skript på en webbsida, högerklicka på länken och välj <guimenuitem>Installera användarskript</guimenuitem>. <application>Epiphany</application> kommer att hämta skriptet; en meddelanderuta kommer att bekräfta att skriptet har installerats och är färdigt att användas."
 
-#: C/epiphany-extensions.xml:850(para)
-msgid "You can manually install Greasemonkey scripts by copying them in <filename class=\"directory\">$HOME/.gnome2/epiphany/extensions/data/</filename>"
-msgstr ""
+#: C/epiphany-extensions.xml:860(para)
+msgid "You can manually install Greasemonkey scripts by copying them in <filename class=\"directory\">$HOME/.gnome2/epiphany/extensions/data/greasemonkey/</filename>"
+msgstr "Du kan manuellt installera Greasemonkey-skript genom att kopiera dem till <filename class=\"directory\">$HOME/.gnome2/epiphany/extensions/data/greasemonkey/</filename>"
 
-#: C/epiphany-extensions.xml:856(title)
+#: C/epiphany-extensions.xml:866(title)
 msgid "Remove a Greasemonkey script"
-msgstr ""
+msgstr "Ta bort ett Greasemonkey-skript"
 
-#: C/epiphany-extensions.xml:858(para)
-msgid "<application>Epiphany</application> doesn't provide a Graphical User interface to delete scripts; to remove a script go to <filename class=\"directory\">$HOME/.gnome2/epiphany/extensions/data/</filename> , and move the script file in the trash."
-msgstr ""
-
-#: C/epiphany-extensions.xml:867(title)
-msgid "Java Console"
-msgstr ""
-
-#: C/epiphany-extensions.xml:872(para)
-msgid "Java Console extension provides access to the Java-Plugin Console."
-msgstr ""
+#: C/epiphany-extensions.xml:868(para)
+msgid "<application>Epiphany</application> doesn't provide a Graphical User interface to delete scripts; to remove a script go to <filename class=\"directory\">$HOME/.gnome2/epiphany/extensions/data/greasemonkey/</filename> , and move the script file in the trash."
+msgstr "<application>Epiphany</application> tillhandahåller ingen grafiskt användargränssnitt för att ta bort skript; för att ta bort en skript, gå till <filename class=\"directory\">$HOME/.gnome2/epiphany/extensions/data/greasemonkey/</filename> och flytta skriptfilen till papperskorgen."
 
 #: C/epiphany-extensions.xml:877(title)
+msgid "Java Console"
+msgstr "Java-konsoll"
+
+#: C/epiphany-extensions.xml:882(para)
+msgid "Java Console extension provides access to the Java-Plugin Console."
+msgstr "Utökningen Java-konsoll tillhandahåller åtkomst till Java-Plugin Console."
+
+#: C/epiphany-extensions.xml:887(title)
 msgid "Using Java Console"
-msgstr ""
+msgstr "Användning av Java-konsoll"
 
-#: C/epiphany-extensions.xml:879(para)
+#: C/epiphany-extensions.xml:889(para)
 msgid "To display the Java Console, choose <menuchoice><guimenu>Tools</guimenu><guimenuitem>Java Console</guimenuitem></menuchoice>."
-msgstr ""
+msgstr "För att visa Java-konsollen, välj <menuchoice><guimenu>Verktyg</guimenu><guimenuitem>Java-konsoll</guimenuitem></menuchoice>."
 
-#: C/epiphany-extensions.xml:886(title)
+#: C/epiphany-extensions.xml:896(title)
 msgid "News Feed Subscription"
-msgstr ""
+msgstr "Prenumeration på nyhetskanal"
 
-#: C/epiphany-extensions.xml:895(para)
+#: C/epiphany-extensions.xml:905(para)
 msgid "Liferea"
 msgstr "Liferea"
 
-#: C/epiphany-extensions.xml:896(para)
+#: C/epiphany-extensions.xml:906(para)
 msgid "Straw"
 msgstr "Straw"
 
-#: C/epiphany-extensions.xml:897(para)
+#: C/epiphany-extensions.xml:907(para)
 msgid "Blam"
 msgstr "Blam"
 
-#: C/epiphany-extensions.xml:891(para)
+#: C/epiphany-extensions.xml:901(para)
 msgid "The News Feed Subscription extension allows you to subscribe to a news feed offered by the web page in your favorite news reader. The supported feed readers are <placeholder-1/>"
-msgstr ""
+msgstr "Utökningen Prenumeration på nyhetskanaler låter dig prenumerera på en nyhetskanal som erbjuds av webbsidan i din favoritnyhetsläsare. Webbkanalsläsare som stöds är <placeholder-1/>"
 
-#: C/epiphany-extensions.xml:903(title)
+#: C/epiphany-extensions.xml:913(title)
 msgid "Using News Feed Subscription"
-msgstr ""
+msgstr "Användning av Prenumeration på nyhetskanal"
 
-#: C/epiphany-extensions.xml:905(para)
+#: C/epiphany-extensions.xml:915(para)
 msgid "When <application>Epiphany</application> detects a that a website provides RSS and Atom feeds, it will display an icon on left side of the <application>Epiphany</application> status bar."
-msgstr ""
+msgstr "När <application>Epiphany</application> detekterar att en webbplats tillhandahåller RSS och Atom-kanaler, kommer den att visa en ikon på vänstra sidan av statusraden i <application>Epiphany</application>."
 
-#: C/epiphany-extensions.xml:910(para)
+#: C/epiphany-extensions.xml:920(para)
 msgid "Choose <menuchoice><guimenu>Tools</guimenu><guimenuitem>News Feed Subscription</guimenuitem></menuchoice>, a new window with the list of available feeds appears. You can also click on the Feed icon in the status bar to make the <interface>News Feed Subscription</interface> window appear."
-msgstr ""
+msgstr "Välj <menuchoice><guimenu>Verktyg</guimenu><guimenuitem>Prenumerera på nyhetskanal</guimenuitem></menuchoice>, ett nytt fönster med listan över tillgängliga kanaler kommer att visas. Du kan även klicka på kanalikonen i statusraden för att visa fönstret <interface>Prenumerera på nyhetskanal</interface>."
 
-#: C/epiphany-extensions.xml:919(para)
+#: C/epiphany-extensions.xml:929(para)
 msgid "Choose the feeds you wan to subscribe to. You can also copy the feed Loaction using the feed's context menu."
-msgstr ""
+msgstr "Välj de kanaler som du vill prenumerera på. Du kan även kopiera kanalens adress med hjälp av sammanhangsmenyn för kanalen."
 
-#: C/epiphany-extensions.xml:925(para)
+#: C/epiphany-extensions.xml:935(para)
 msgid "Press <guibutton>Subscribe</guibutton> to subscribe the feeds."
-msgstr ""
+msgstr "Tryck på <guibutton>Prenumerera</guibutton> för att prenumerera på kanalerna."
 
-#: C/epiphany-extensions.xml:907(para)
+#: C/epiphany-extensions.xml:917(para)
 msgid "To register this feed: <placeholder-1/>"
-msgstr ""
-
-#: C/epiphany-extensions.xml:936(title)
-msgid "Page Info"
-msgstr ""
-
-#: C/epiphany-extensions.xml:941(para)
-msgid "The Page Info extension provides detailed information about the web pages you visit."
-msgstr ""
+msgstr "För att registrera den här kanalen: <placeholder-1/>"
 
 #: C/epiphany-extensions.xml:946(title)
+msgid "Page Info"
+msgstr "Sidinformation"
+
+#: C/epiphany-extensions.xml:951(para)
+msgid "The Page Info extension provides detailed information about the web pages you visit."
+msgstr "Utökningen Sidinformation tillhandahåller detaljerad information om webbsidorna som du besöker."
+
+#: C/epiphany-extensions.xml:956(title)
 msgid "Using Page Info"
-msgstr ""
-
-#: C/epiphany-extensions.xml:954(guilabel)
-msgid "General"
-msgstr ""
-
-#: C/epiphany-extensions.xml:955(para)
-msgid "Provides various information on the page and the website"
-msgstr ""
-
-#: C/epiphany-extensions.xml:959(guilabel)
-msgid "Media"
-msgstr ""
-
-#: C/epiphany-extensions.xml:960(para)
-msgid "displays media files (pictures, sounds,...) used on the page."
-msgstr ""
+msgstr "Användning av Sidinformation"
 
 #: C/epiphany-extensions.xml:964(guilabel)
-msgid "Links"
-msgstr ""
+msgid "General"
+msgstr "Allmänt"
 
 #: C/epiphany-extensions.xml:965(para)
+msgid "Provides various information on the page and the website"
+msgstr "Tillhandahåller diverse information om sidan och webbplatsen"
+
+#: C/epiphany-extensions.xml:969(guilabel)
+msgid "Media"
+msgstr "Media"
+
+#: C/epiphany-extensions.xml:970(para)
+msgid "displays media files (pictures, sounds,...) used on the page."
+msgstr "Visar mediafiler (bilder, ljud,...) som används på sidan."
+
+#: C/epiphany-extensions.xml:974(guilabel)
+msgid "Links"
+msgstr "Länkar"
+
+#: C/epiphany-extensions.xml:975(para)
 msgid "Provides all the links of the web page."
-msgstr ""
+msgstr "Tillhandahåller alla länkarna för webbsidan."
 
-#: C/epiphany-extensions.xml:968(guilabel)
+#: C/epiphany-extensions.xml:978(guilabel)
 msgid "Forms"
-msgstr ""
+msgstr "Formulär"
 
-#: C/epiphany-extensions.xml:969(para)
+#: C/epiphany-extensions.xml:979(para)
 msgid "All the forms available in the page are displayed."
-msgstr ""
+msgstr "Visar alla formulär tillgängliga på sidan."
 
-#: C/epiphany-extensions.xml:973(guilabel)
+#: C/epiphany-extensions.xml:983(guilabel)
 msgid "Metadata"
-msgstr ""
+msgstr "Metadata"
 
-#: C/epiphany-extensions.xml:974(para)
+#: C/epiphany-extensions.xml:984(para)
 msgid "Displays all the information entered by the webmaster about the site."
-msgstr ""
+msgstr "Visar all information som matats in av webbmastern om webbplatsen."
 
-#: C/epiphany-extensions.xml:948(para)
+#: C/epiphany-extensions.xml:958(para)
 msgid "To access the page information choose <menuchoice><guimenu>View</guimenu><guimenuitem>Page Information</guimenuitem></menuchoice>; a new window appears, letting you access 5 tabs: <placeholder-1/>"
-msgstr ""
-
-#: C/epiphany-extensions.xml:983(title)
-msgid "Push Scroll"
-msgstr ""
-
-#: C/epiphany-extensions.xml:988(para)
-msgid "The Push Scroll extension provides scroll function while the middle mouse button is pressed."
-msgstr ""
+msgstr "För att komma åt sidinformationen, välj <menuchoice><guimenu>Visa</guimenu><guimenuitem>Sidinformation</guimenuitem></menuchoice>; ett nytt fönster visas som låter dig komma åt fem olika flikar: <placeholder-1/>"
 
 #: C/epiphany-extensions.xml:993(title)
+msgid "Push Scroll"
+msgstr "Tryckrullning"
+
+#: C/epiphany-extensions.xml:998(para)
+msgid "The Push Scroll extension provides scroll function while the middle mouse button is pressed."
+msgstr "Utökningen Tryckrullning tillhandahåller en rullningsfunktion när mittenmusknappen trycks ner."
+
+#: C/epiphany-extensions.xml:1003(title)
 msgid "Using Push Scroll"
-msgstr ""
+msgstr "Användning av Tryckrullning"
 
-#: C/epiphany-extensions.xml:995(para)
+#: C/epiphany-extensions.xml:1005(para)
 msgid "To use Push Scroll, simply press the middle mouse button, and move your mouse in any direction, the page will scroll."
-msgstr ""
-
-#: C/epiphany-extensions.xml:1001(title)
-msgid "Python Console"
-msgstr ""
-
-#: C/epiphany-extensions.xml:1006(para)
-msgid "Opens an interactive Python console, and allows to modify <application>Epiphany</application> through Python."
-msgstr ""
+msgstr "För att använda Tryckrullning, tryck helt enkelt ner mittenmusknappen och rör din mus i någon riktning och sidan kommer att rullas."
 
 #: C/epiphany-extensions.xml:1011(title)
+msgid "Python Console"
+msgstr "Python-konsoll"
+
+#: C/epiphany-extensions.xml:1016(para)
+msgid "Opens an interactive Python console, and allows to modify <application>Epiphany</application> through Python."
+msgstr "Öppnar en interaktiv Python-konsoll och tillåter ändringar i <application>Epiphany</application> genom Python."
+
+#: C/epiphany-extensions.xml:1021(title)
 msgid "Using Python Console"
-msgstr ""
+msgstr "Användning av Python-konsoll"
 
-#: C/epiphany-extensions.xml:1013(para)
+#: C/epiphany-extensions.xml:1023(para)
 msgid "To display the Python Console, choose <menuchoice><guimenu>Tools</guimenu><guimenuitem>Python Console</guimenuitem></menuchoice>."
-msgstr ""
+msgstr "För att visa Python-konsollen, välj <menuchoice><guimenu>Verktyg</guimenu><guimenuitem>Python-konsoll</guimenuitem></menuchoice>."
 
-#: C/epiphany-extensions.xml:1020(title)
+#: C/epiphany-extensions.xml:1030(title)
 msgid "Select Stylesheet"
-msgstr ""
+msgstr "Välj stilmall"
 
-#: C/epiphany-extensions.xml:1025(para)
+#: C/epiphany-extensions.xml:1035(para)
 msgid "The Select Stylesheet extension lets you switch between the stylesheets of a web page. You can also disable the stylesheets when you browsing a page."
-msgstr ""
+msgstr "Utökningen Välj stilmall låter dig växla mellan stilmallar för en webbsida. Du kan även inaktivera stilmallar när du visar en sida."
 
-#: C/epiphany-extensions.xml:1031(title)
+#: C/epiphany-extensions.xml:1041(title)
 msgid "Using Select Stylesheet"
-msgstr ""
+msgstr "Användning av Välj stilmall"
 
-#: C/epiphany-extensions.xml:1033(para)
+#: C/epiphany-extensions.xml:1043(para)
 msgid "To change the style sheet of the website you visit, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Style</guimenuitem></menuchoice> , then choose a style sheet from those available."
-msgstr ""
+msgstr "För att ändra stilmallen för webbplatsen som du besöker, välj <menuchoice><guimenu>Visa</guimenu><guimenuitem>Stil</guimenuitem></menuchoice> , välj sedan en stilmall från de som finns tillgängliga."
 
-#: C/epiphany-extensions.xml:1036(para)
+#: C/epiphany-extensions.xml:1046(para)
 msgid "If you choose the style sheet <guilabel>none</guilabel> the website will not use any style sheet."
-msgstr ""
+msgstr "Om du väljer stilmallen <guilabel>Ingen</guilabel> kommer webbplatsen inte att använda någon stilmall."
 
-#: C/epiphany-extensions.xml:1042(title)
+#: C/epiphany-extensions.xml:1052(title)
 msgid "Sidebar"
-msgstr ""
+msgstr "Sidopanel"
 
-#: C/epiphany-extensions.xml:1047(para)
+#: C/epiphany-extensions.xml:1057(para)
 msgid "The Sidebar extension adds a small window on the left side of the <application>Epiphany</application> window. Sidebar allows to display website content and can provide quick access to their information."
-msgstr ""
+msgstr "Utökningen Sidopanel lägger till ett litet fönster på vänstra sidan i <application>Epiphany</application>-fönstret. Sidopanelen gör att webbplatsinnehållet kan visas och kan tillhandahålla snabb åtkomst till dess information."
 
-#: C/epiphany-extensions.xml:1053(title)
+#: C/epiphany-extensions.xml:1063(title)
 msgid "Using Sidebar"
-msgstr ""
+msgstr "Användning av Sidopanel"
 
-#: C/epiphany-extensions.xml:1056(title)
+#: C/epiphany-extensions.xml:1066(title)
 msgid "<application>Epiphany</application> with a Sidebar displayed"
-msgstr ""
-
-#: C/epiphany-extensions.xml:1061(title)
-msgid "Display Sidebar"
-msgstr ""
-
-#: C/epiphany-extensions.xml:1063(para)
-msgid "By default, the Sidebar is not displayed; to display the Sidebar, choose menu <menuchoice><guimenu>View</guimenu><guimenuitem>Sidebar</guimenuitem></menuchoice>."
-msgstr ""
-
-#: C/epiphany-extensions.xml:1066(para)
-msgid "You can also toggle the visibility of Sidebar by pressing <keycap>F9</keycap>."
-msgstr ""
+msgstr "<application>Epiphany</application> med en sidopanel som visas"
 
 #: C/epiphany-extensions.xml:1071(title)
-msgid "Add a Sidebar"
-msgstr ""
+msgid "Display Sidebar"
+msgstr "Visa Sidopanel"
 
 #: C/epiphany-extensions.xml:1073(para)
+msgid "By default, the Sidebar is not displayed; to display the Sidebar, choose menu <menuchoice><guimenu>View</guimenu><guimenuitem>Sidebar</guimenuitem></menuchoice>."
+msgstr "Som standard visas inte sidopanelen; för att visa sidopanelen, välj <menuchoice><guimenu>Visa</guimenu><guimenuitem>Sidopanel</guimenuitem></menuchoice>."
+
+#: C/epiphany-extensions.xml:1076(para)
+msgid "You can also toggle the visibility of Sidebar by pressing <keycap>F9</keycap>."
+msgstr "Du kan även växla synligheten för sidopanelen genom att trycka på <keycap>F9</keycap>."
+
+#: C/epiphany-extensions.xml:1081(title)
+msgid "Add a Sidebar"
+msgstr "Lägg till en sidopanel"
+
+#: C/epiphany-extensions.xml:1083(para)
 msgid "To add a Sidebar, activate the Sidebar extension, then click on the link that the website provides to install the sidebar. A window requests to add the document to the Sidebar, click <guibutton>Add a Sidebar</guibutton>, the sidebar document is added to the Sidebar."
-msgstr ""
+msgstr "För att lägga till en sidopanel, aktivera utökningen Sidopanel, klicka sedan på länken som webbsidan tillhandahåller för att installera sidopanelen. Ett fönster visas som frågar om att lägga till dokumentet till sidopanelen, klicka på <guibutton>Lägg till en sidopanel</guibutton>, sidopanelsdokumentet kommer då att läggas till i sidopanelen."
 
-#: C/epiphany-extensions.xml:1078(para)
+#: C/epiphany-extensions.xml:1088(para)
 msgid "You can find a list of websites that provide sidebar on <ulink url=\"http://dmoz.org/Netscape/Sidebar/\">DMOZ</ulink>."
-msgstr ""
+msgstr "Du kan hitta en lista över webbplatser som tillhandahåller en sidopanel på <ulink url=\"http://dmoz.org/Netscape/Sidebar/\">DMOZ</ulink>."
 
-#: C/epiphany-extensions.xml:1083(title)
+#: C/epiphany-extensions.xml:1093(title)
 msgid "Switch between Sidebars"
-msgstr ""
+msgstr "Växla mellan sidopaneler"
 
-#: C/epiphany-extensions.xml:1085(para)
+#: C/epiphany-extensions.xml:1095(para)
 msgid "When you have subscribed to several sidebars, to switch between them, select the Sidebar from the drop-box at the top of the Sidebar."
-msgstr ""
+msgstr "När du har prenumererat på flera sidopaneler kan du välja sidopanel från rullgardinslistan i överdelen av sidopanelen för att växla mellan dem."
 
-#: C/epiphany-extensions.xml:1091(title)
+#: C/epiphany-extensions.xml:1101(title)
 msgid "Delete a Sidebar"
-msgstr ""
+msgstr "Ta bort en sidopanel"
 
-#: C/epiphany-extensions.xml:1093(para)
+#: C/epiphany-extensions.xml:1103(para)
 msgid "To delete a Sidebar which you have added, display the sidebar to delete and press the trash icon."
-msgstr ""
-
-#: C/epiphany-extensions.xml:1100(title)
-msgid "Smart Bookmarks"
-msgstr ""
-
-#: C/epiphany-extensions.xml:1105(para)
-msgid "The Smart Bookmarks extension is an extension that enable to look up selected text with a smart bookmark."
-msgstr ""
+msgstr "För att ta bort en Sidopanel som du har lagt till, visa sidopanelen som ska tas bort och tryck på papperskorgsikonen."
 
 #: C/epiphany-extensions.xml:1110(title)
-msgid "Using Smart Bookmarks"
-msgstr ""
-
-#: C/epiphany-extensions.xml:1112(para)
-msgid "To create a smart bookmark, see the appropriate <ulink type=\"help\" url=\"ghelp:epiphany-browser#smart-bookmarks-create-a-smartbookmark\"> section</ulink> in the <application>Epiphany</application> manual."
-msgstr ""
+msgid "Smart Bookmarks"
+msgstr "Smarta bokmärken"
 
 #: C/epiphany-extensions.xml:1115(para)
+msgid "The Smart Bookmarks extension is an extension that enable to look up selected text with a smart bookmark."
+msgstr "Utökningen Smarta bokmärken är en utökning som gör att man kan slå upp markerad text med ett smart bokmärke."
+
+#: C/epiphany-extensions.xml:1120(title)
+msgid "Using Smart Bookmarks"
+msgstr "Användning av Smarta bokmärken"
+
+#: C/epiphany-extensions.xml:1122(para)
+msgid "To create a smart bookmark, see the appropriate <ulink type=\"help\" url=\"ghelp:epiphany-browser#smart-bookmarks-create-a-smartbookmark\"> section</ulink> in the <application>Epiphany</application> manual."
+msgstr "För att skapa ett smart bokmärke, se lämpligt <ulink type=\"help\" url=\"ghelp:epiphany-browser#smart-bookmarks-create-a-smartbookmark\"> avsnitt</ulink> i handboken för <application>Epiphany</application>."
+
+#: C/epiphany-extensions.xml:1125(para)
 msgid "To look up text, select the text in a web page and choose <guimenuitem>look-up</guimenuitem> and the smart bookmark from the context menu. A web browser will be opened with the result of the look-up."
-msgstr ""
-
-#: C/epiphany-extensions.xml:1123(title)
-msgid "Tab Groups"
-msgstr ""
-
-#: C/epiphany-extensions.xml:1128(para)
-msgid "The Tab Groups extension makes new tabs appear after the current tab."
-msgstr ""
+msgstr "För att slå upp text, markera texten i en webbsida och välj <guimenuitem>slå upp</guimenuitem> och det smarta bokmärket från sammanhangsmenyn. En webbläsare kommer att öppnas med resultatet för uppslagningen."
 
 #: C/epiphany-extensions.xml:1133(title)
+msgid "Tab Groups"
+msgstr "Flikgrupper"
+
+#: C/epiphany-extensions.xml:1138(para)
+msgid "The Tab Groups extension makes new tabs appear after the current tab."
+msgstr "Utökningen Flikgrupper gör att nya flikar visas efter den aktuella fliken."
+
+#: C/epiphany-extensions.xml:1143(title)
 msgid "Using Tab Groups"
-msgstr ""
+msgstr "Användning av Flikgrupper"
 
-#: C/epiphany-extensions.xml:1135(para)
+#: C/epiphany-extensions.xml:1145(para)
 msgid "Once this extension is enabled, it changes the normal behaviour (where new tabs are created after the last tab) to a new one. When you open a new tab, it will be created after the current tab."
-msgstr ""
+msgstr "När den här utökningen är aktiverad, kommer den att ändra det normala beteendet (där nya flikar skapas efter den sista fliken) till ett nytt beteende. När du öppnar en ny flik kommer den att skapas efter den aktuella fliken."
 
-#: C/epiphany-extensions.xml:1140(title)
+#: C/epiphany-extensions.xml:1150(title)
 msgid "A new tab created after the first tab"
-msgstr ""
-
-#: C/epiphany-extensions.xml:1147(title)
-msgid "Tab States"
-msgstr ""
-
-#: C/epiphany-extensions.xml:1152(para)
-msgid "The Tab States extension changes the status of the tab label to signal the content has changed."
-msgstr ""
+msgstr "En ny flik skapas efter den första fliken"
 
 #: C/epiphany-extensions.xml:1157(title)
+msgid "Tab States"
+msgstr "Fliktillstånd"
+
+#: C/epiphany-extensions.xml:1162(para)
+msgid "The Tab States extension changes the status of the tab label to signal the content has changed."
+msgstr "Utökningen Fliktillstånd ändrar statusen för fliketiketten för att signalera att innehållet har ändrats."
+
+#: C/epiphany-extensions.xml:1167(title)
 msgid "Using Tab States"
-msgstr ""
+msgstr "Användning av Fliktillstånd"
 
-#: C/epiphany-extensions.xml:1159(para)
+#: C/epiphany-extensions.xml:1169(para)
 msgid "Once this extension is enabled, when the content of a page in a tab changes, the tab label will become bold, to notify you that the page has changed."
-msgstr ""
+msgstr "När den här utökningen är aktiverad, när innehållet i en sida i en flik ändras, kommer fliketiketten att få fet text för att informera dig om att sidan har ändrats."
 
-#: C/epiphany-extensions.xml:1195(title)
+#: C/epiphany-extensions.xml:1205(title)
 msgid "About <application>Epiphany Extensions</application>"
-msgstr ""
+msgstr "Om <application>Epiphany-utökningar</application>"
 
-#: C/epiphany-extensions.xml:1200(para)
+#: C/epiphany-extensions.xml:1210(para)
 msgid "Samuel Abels (<email>spam2@debain.org</email>)"
 msgstr "Samuel Abels (<email>spam2@debain.org</email>)"
 
-#: C/epiphany-extensions.xml:1202(para)
+#: C/epiphany-extensions.xml:1212(para)
 msgid "Crispin Flowerday (<email>gnome@flowerday.cx</email>)"
 msgstr "Crispin Flowerday (<email>gnome@flowerday.cx</email>)"
 
-#: C/epiphany-extensions.xml:1204(para)
+#: C/epiphany-extensions.xml:1214(para)
 msgid "Adam Hooper (<email>adamh@cvs.gnome.org</email>)"
 msgstr "Adam Hooper (<email>adamh@cvs.gnome.org</email>)"
 
-#: C/epiphany-extensions.xml:1206(para)
+#: C/epiphany-extensions.xml:1216(para)
 msgid "Mathias Hasselmann (<email>mathias@taschenorakel.de</email>)"
 msgstr "Mathias Hasselmann (<email>mathias@taschenorakel.de</email>)"
 
-#: C/epiphany-extensions.xml:1208(para)
+#: C/epiphany-extensions.xml:1218(para)
 msgid "James Henstridge (<email>james@daa.com.au</email>)"
 msgstr "James Henstridge (<email>james@daa.com.au</email>)"
 
-#: C/epiphany-extensions.xml:1210(para)
+#: C/epiphany-extensions.xml:1220(para)
 msgid "Jean-Yves Lefort (<email>jylefort@brutele.be</email>)"
 msgstr "Jean-Yves Lefort (<email>jylefort@brutele.be</email>)"
 
-#: C/epiphany-extensions.xml:1212(para)
+#: C/epiphany-extensions.xml:1222(para)
 msgid "Christian Persch (<email>chpe@gnome.org</email>)"
 msgstr "Christian Persch (<email>chpe@gnome.org</email>)"
 
-#: C/epiphany-extensions.xml:1214(para)
+#: C/epiphany-extensions.xml:1224(para)
 msgid "Raphaël Slinckx (<email>raphael@slinckx.net</email>)"
 msgstr "Raphaël Slinckx (<email>raphael@slinckx.net</email>)"
 
-#: C/epiphany-extensions.xml:1216(para)
+#: C/epiphany-extensions.xml:1226(para)
 msgid "Justin Wake (<email>jwake@iinet.net.au</email>)"
 msgstr "Justin Wake (<email>jwake@iinet.net.au</email>)"
 
-#: C/epiphany-extensions.xml:1197(para)
+#: C/epiphany-extensions.xml:1207(para)
 msgid "<application>Epiphany Extensions</application> were written by <placeholder-1/>"
-msgstr ""
+msgstr "<application>Epiphany-utökningar</application> skrevs av <placeholder-1/>"
 
-#: C/epiphany-extensions.xml:1220(para)
+#: C/epiphany-extensions.xml:1230(para)
 msgid "This manual was written by Baptiste Mille-Mathias <email>baptiste.millemathias@gmail.com</email>."
-msgstr ""
+msgstr "Den här handboken skrevs av Baptiste Mille-Mathias <email>baptiste.millemathias@gmail.com</email>."
 
-#: C/epiphany-extensions.xml:1225(para)
+#: C/epiphany-extensions.xml:1235(para)
 msgid "This program is distributed under the terms of the GNU General Public license as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. A copy of this license can be found at this <ulink url=\"ghelp:gpl\" type=\"help\">link</ulink>, or in the file COPYING included with the source code of this program."
-msgstr ""
+msgstr "Det här programmet distribueras under villkoren för GNU General Public License som publicerats av Free Software Foundation; antingen version 2 av licensen, eller (upp till dig) någon senare version. En kopia av den här licensen kan hittas på denna <ulink url=\"ghelp:gpl\" type=\"help\">länk</ulink>, eller i filen COPYING som inkluderats med källkoden för det här programmet."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
 #: C/epiphany-extensions.xml:0(None)
 msgid "translator-credits"
-msgstr "Daniel Nylander <po@danielnylander.se>, 2006"
+msgstr "Daniel Nylander <po@danielnylander.se>, 2007"
 
