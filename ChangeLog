@@ -1,3 +1,32 @@
+2006-02-05  Jean-François Rameau  <jframeau@svn.gnome.org>
+
+	* configure.ac
+	* po/POTFILES.in
+	* AUTHORS
+
+	A extensions/epilicious/BaseStore.py
+	A extensions/epilicious/DeliciousStore.py
+	A extensions/epilicious/EpiphanyStore.py
+	A extensions/epilicious/Makefile.am
+	A extensions/epilicious/THOUGHTS
+	A extensions/epilicious/TODO
+	A extensions/epilicious/__init__.py
+	A extensions/epilicious/config.py
+	A extensions/epilicious/delicious.py
+	A extensions/epilicious/epilicious-config.glade
+	A extensions/epilicious/epilicious-progress.glade
+	A extensions/epilicious/epilicious.ephy-extension.in
+	A extensions/epilicious/epilicious.py.in
+	A extensions/epilicious/epilicious.schemas.in
+	A extensions/epilicious/progress.py
+
+	Epilicious is an extension that lets you synchronise your local 
+	bookmarks with the bookmarks in a Delicious account.
+
+	Patch from Magnus Therning.
+
+	Fix bug #352082.
+
 2006-01-28  Jean-François Rameau  <jframeau@svn.gnome.org>
 
 	* extensions/page-info/page-info-dialog.c: (media_treeview_selection_changed_cb):
