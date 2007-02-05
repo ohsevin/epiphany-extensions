@@ -1,0 +1,63 @@
+Either I mark the ones that shouldn't be synched (e.g. with keyword 'Skip')
+and all other bookmarks are synched.
+ Only one del.icio.us account can be used
+
+I mark all the bookmarks that should be synched.
+ More marking needed. Ability to have several del.icio.us accounts if each
+ account is associated with a specific keyword. When updating the del.icio.us
+ keywords have to be treated differently than other keywords.
+
+To update two sets when knowing the origin:
+
+  my_new = (my - (old - your)) | (your - old)
+  your_new = (your - (old - my)) | (my - old)
+
+ After this my_new == your_new.
+
+ Algortihm A:
+
+  URL with keywords are represented as
+   URL,kw1,kw2,...,kwn
+
+  old = Set of URL with keywords from last sync time
+  new = Set of URL with keywords retrieved from remote site
+  mine = Set of URL with keywords locally
+
+  to_add = new - old
+  to_remove = old - new
+
+  new_mine = (mine + to_add) - to_remove
+
+  1. Remove all bookmarks marked for share
+  2. Add bookmarks in new_mine
+  3. (Optional) remove empty tags
+
+  Do step 1-3 for remote site as well.
+
+The problem with descriptions.
+ Currently all bookmarks dealings are based on the URL. A change in description
+ on either side won't be reflected on the other side after a synch. Only if
+ there is a change in the tags will a change in description be propagated as
+ well, but then there is no way of knowing which site's description to use. At
+ the moment, if there's a change in description epilicious choses to keep the
+ local description (i.e. if locations A and B are synched with Delicious, and
+ A's and B's descriptions for a specific site differ then the name in Delicious
+ will bounce with every synch that changes tags for the site).
+
+Excluding instead of including bookmarks in synch
+ Two ways to do it:
+
+  1. All bookmarks in _share_kw_ are shared, except if they are in the
+     _block_kw_. If _share_kw_ isn't set, then all bookmarks are considered.
+  2. There is only one keyword, then there's a switch which controls whether
+     it is used to mark shared or non-shared bookmarks.
+
+ The former is the way proposed in the patch by Tom Coleman. The drawback here
+ is that setting the values must be explained to the user (at least one must
+ be set).
+
+ The latter is simpler, but it restricts the user somewhat. I don't think that
+ restriction is relevant though (what becomes impossible is to have something
+ marked both for inclusion and exclusion).
+
+vim: set ft=text:

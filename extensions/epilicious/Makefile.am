@@ -1,0 +1,49 @@
+epiliciousdir = $(EXTENSIONS_DIR)
+epiliciouslibdir = $(EXTENSIONS_DIR)/libepilicious
+epilicious_PYTHON = \
+		     epilicious.py
+epiliciouslib_PYTHON = \
+		     BaseStore.py \
+		     DeliciousStore.py \
+		     EpiphanyStore.py \
+		     __init__.py \
+		     config.py \
+		     delicious.py \
+		     progress.py
+
+gladedir = $(pkgdatadir)/glade
+glade_DATA = \
+	     epilicious-config.glade \
+	     epilicious-progress.glade
+
+schemadir = $(GCONF_SCHEMA_FILE_DIR)
+schema_in_files = epilicious.schemas.in
+schema_DATA = $(schema_in_files:.schemas.in=.schemas)
+
+@INTLTOOL_SCHEMAS_RULE@
+
+extensioninidir = $(EXTENSIONS_DIR)
+extensionini_in_files = epilicious.ephy-extension.in
+extensionini_DATA = $(extensionini_in_files:.ephy-extension.in=.ephy-extension)
+
+@EPIPHANY_EXTENSION_RULE@
+
+epilicious.py : epilicious.py.in
+	sed -e "s|%EXTENSION_DIR%|$(EXTENSIONS_DIR)|" \
+		-e "s|%GLADE_DIR%|$(gladedir)|" $< > $@
+
+if GCONF_SCHEMAS_INSTALL
+install-data-local: $(schema_DATA)
+	if test -z "$(DESTDIR)" ; then \
+	for p in $^ ; do \
+		GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) \
+		$(GCONFTOOL) --makefile-install-rule $$p >&1 > /dev/null; \
+	done \
+	fi
+endif
+
+CLEANFILES  = epilicious.py
+DISTCLEANFILES =
+
+EXTRA_DIST = $(glade_DATA) $(schema_DATA) $(extensionini_DATA) \
+	epilicious.py.in

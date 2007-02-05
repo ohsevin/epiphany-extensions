@@ -12,6 +12,11 @@ extensions/adblock/ephy-adblock-extension.c
 extensions/auto-reload/ephy-auto-reload-extension.c
 extensions/cc-license-viewer/cc-license-viewer.py
 extensions/certificates/ephy-certificates-extension.c
+extensions/epilicious/epilicious.ephy-extension.in
+extensions/epilicious/epilicious-config.glade
+extensions/epilicious/epilicious-progress.glade
+extensions/epilicious/epilicious.py.in
+extensions/epilicious/epilicious.schemas.in
 extensions/error-viewer/ephy-error-viewer-extension.c
 extensions/error-viewer/error-viewer.glade
 extensions/error-viewer/link-checker.c

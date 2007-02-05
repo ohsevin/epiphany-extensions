@@ -1,0 +1,56 @@
+- epilicious items
+  (added Fri May 19 17:14:45 2006, incomplete, priority medium)
+
+  - remove the cache in EpiphanyStore
+    (added Fri May 19 17:16:09 2006, completed on Sun May 21 23:57:55 2006, priority medium)
+
+  - use boolean to determine whether keyword is sharing or blocking
+    (added Fri May 19 17:19:01 2006, completed on Sun May 21 23:58:24 2006, priority medium)
+
+  - BUG: marking of bookmarks added to epiphany is wrong, they all get marked
+    with the keyword, that should depend on whether the keyword is used for
+    inclusion or exclusion
+    (added Mon Jun  5 09:08:16 2006, completed on Mon Jun  5 22:20:55 2006, priority medium)
+
+  - BUG: modifying the tags on a local bookmark doesn't carry over to
+    del.icio.us on sync. On the next sync the local bookmark has its original
+    tags restored.
+    (added Tue Jun 20 16:02:09 2006, completed on Wed Jun 21 00:57:36 2006, priority medium)
+
+  - report progress to user, i.e. progress window/dialogue
+    (added Fri Jun 30 00:21:36 2006, completed on Tue Jul  4 22:51:13 2006, priority medium)
+
+  - change priority on keyword so it doesn't show in bookmark menu
+    (added Fri May 19 17:17:40 2006, incomplete, priority medium)
+
+  - pop up dialogue if username/password is missing in gconf
+    (added Fri May 19 17:20:35 2006, incomplete, priority medium)
+
+  - configuration dialogue
+    (added Fri May 19 17:21:00 2006, incomplete, priority medium)
+
+  - ability to run in a mode where exceptions are caught and displayed
+    (added Fri May 19 17:21:32 2006, incomplete, priority medium)
+
+  - use epiphany's password store for password
+    (added Fri May 19 17:21:50 2006, incomplete, priority medium)
+
+  - deal better with descriptions of bookmarks
+    (added Fri May 19 17:22:11 2006, incomplete, priority medium)
+
+  - add support for scuttle
+    (added Fri May 19 17:22:41 2006, incomplete, priority medium)
+
+    - support for private bookmarks
+      (added Fri May 19 17:22:56 2006, incomplete, priority medium)
+
+    - changing URL to server
+      (added Fri May 19 17:23:10 2006, incomplete, priority medium)
+
+  - BUG: non-US characters are not treated right
+    (added Mon Jun  5 09:10:04 2006, incomplete, priority medium)
+
+  - Don't import * in _CB_sync, it results in a SyntaxWarning when installing on
+    Debian/Ubuntu. It's ugly!
+    (added Wed Jun 21 01:02:23 2006, incomplete, priority medium)
+

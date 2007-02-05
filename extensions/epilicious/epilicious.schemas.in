@@ -1,0 +1,60 @@
+<gconfschemafile>
+  <schemalist>
+
+    <schema>
+      <key>/schemas/apps/epiphany/extensions/epilicious/username</key>
+      <applyto>/apps/epiphany/extensions/epilicious/username</applyto>
+      <owner>epiphany</owner>
+      <type>string</type>
+      <default> </default>
+      <locale name="C">
+        <short>del.icio.us username</short>
+        <long>The del.icio.us username that epilicious will use for
+          synchronizing bookmarks.</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/epiphany/extensions/epilicious/password</key>
+      <applyto>/apps/epiphany/extensions/epilicious/password</applyto>
+      <owner>epiphany</owner>
+      <type>string</type>
+      <default> </default>
+      <locale name="C">
+        <short>del.icio.us password</short>
+        <long>The del.icio.us password that epilicious will use for
+          synchronizing bookmarks.</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/epiphany/extensions/epilicious/keyword</key>
+      <applyto>/apps/epiphany/extensions/epilicious/keyword</applyto>
+      <owner>epiphany</owner>
+      <type>string</type>
+      <default>EpiliciousShare</default>
+      <locale name="C">
+        <short>Shared topic</short>
+        <long>Bookmarks with this topic will be synchronized to
+          del.icio.us.</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/epiphany/extensions/epilicious/exclude</key>
+      <applyto>/apps/epiphany/extensions/epilicious/exclude</applyto>
+      <owner>epiphany</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Exclude topic</short>
+        <long>Controls the function of the topic. If this is unset then all
+          bookmarks with the topic will be synched with del.icio.us. If this
+          is set then all bookmarks without the topic will be synched with
+          del.icio.us.</long>
+      </locale>
+    </schema>
+
+  </schemalist>
+</gconfschemafile>
+<!-- vim: set ft=xml: -->

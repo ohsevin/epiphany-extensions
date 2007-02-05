@@ -1,0 +1,10 @@
+[Epiphany Extension]
+Name=Epilicious
+Description=Synchronize bookmarks with del.icio.us
+Authors=Magnus Therning <magnus@therning.org>;
+URL=http://therning.org/magnus/epilicious
+Version=1
+
+[Loader]
+Type=python
+Module=epilicious

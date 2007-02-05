@@ -157,7 +157,7 @@ ALL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-vie
 USEFUL_EXTENSIONS="actions auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 DEFAULT_EXTENSIONS="actions auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 
-PYTHON_ALL_EXTENSIONS="python-console sample-python favicon cc-license-viewer"
+PYTHON_ALL_EXTENSIONS="python-console sample-python favicon cc-license-viewer epilicious"
 PYTHON_USEFUL_EXTENSIONS="python-console favicon cc-license-viewer"
 PYTHON_DEFAULT_EXTENSIONS="python-console favicon cc-license-viewer"
 
@@ -352,6 +352,7 @@ extensions/auto-reload/Makefile
 extensions/auto-scroller/Makefile
 extensions/certificates/Makefile
 extensions/cc-license-viewer/Makefile
+extensions/epilicious/Makefile
 extensions/gestures/Makefile
 extensions/error-viewer/Makefile
 extensions/error-viewer/mozilla/Makefile
