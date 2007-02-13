@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: epiphany-extension\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-01-17 14:29+0700\n"
-"PO-Revision-Date: 2007-01-17 14:45+0700\n"
+"POT-Creation-Date: 2007-02-13 22:33+0700\n"
+"PO-Revision-Date: 2007-02-13 22:48+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <l10n@opentle.org>\n"
 "MIME-Version: 1.0\n"
@@ -68,6 +68,7 @@ msgid "_Images"
 msgstr "รูป_ภาพ"
 
 #: ../extensions/actions/action-properties.glade.h:11
+#: ../extensions/epilicious/epilicious-config.glade.h:5
 msgid "_Name:"
 msgstr "_ชื่อ:"
 
@@ -119,7 +120,7 @@ msgstr "คุณสมบัติของ “%s”"
 msgid "Action Properties"
 msgstr "คุณสมบัติของการกระทำ"
 
-#: ../extensions/adblock/adblock-ui.c:286
+#: ../extensions/adblock/adblock-ui.c:279
 msgid ""
 "This list is Copyright © its original author(G). It is relicensed under the "
 "GPL with permission.\n"
@@ -131,12 +132,12 @@ msgid ""
 msgstr ""
 "รายการนี้ สงวนลิขสิทธิ์โดยผู้เขียนต้นตำรับ (G) และได้รับอนุญาตให้เปลี่ยนเงื่อนไขการอนุญาตสิทธิ์เป็น "
 "GPL\n"
-"รายการต้นตำรับ คือ Filterset.G สามารถโหลดได้ที่ "
-"http://www.pierceive.com/filtersetg/\n"
+"รายการต้นตำรับ คือ Filterset.G สามารถโหลดได้ที่ http://www.pierceive.com/"
+"filtersetg/\n"
 "รุ่นนี้มีการแก้ไขจากต้นฉบับ โดยไม่ได้ผ่านการตรวจสอบยืนยันจากผู้เขียนต้นตำรับ\n"
 "หากพบปัญหา กรุณารายงานที่ Bugzilla ไม่ใช่ที่ผู้เขียนต้นตำรับ (G)\n"
 
-#: ../extensions/adblock/adblock-ui.c:503
+#: ../extensions/adblock/adblock-ui.c:496
 msgid "Pattern"
 msgstr "แพตเทิร์น"
 
@@ -145,8 +146,8 @@ msgid "<b>Courtesy of Graham Pierce</b>"
 msgstr "<b>เอื้อเฟื้อโดย Graham Pierce</b>"
 
 #: ../extensions/adblock/adblock.glade.h:2
-msgid "<b>Rule</b>"
-msgstr "<b>กฎ</b>"
+msgid "<b>New rule</b>"
+msgstr "<b>กฎใหม่</b>"
 
 #: ../extensions/adblock/adblock.glade.h:3
 msgid "<b>Update rules from original site</b>"
@@ -162,22 +163,14 @@ msgid "Add a new rule"
 msgstr "เพิ่มกฎใหม่"
 
 #: ../extensions/adblock/adblock.glade.h:6
-msgid "Apply your modification"
-msgstr "เริ่มใช้ตามที่แก้ไข"
-
-#: ../extensions/adblock/adblock.glade.h:7
 msgid "Blacklist"
 msgstr "บัญชีดำ"
 
-#: ../extensions/adblock/adblock.glade.h:8
+#: ../extensions/adblock/adblock.glade.h:7
 msgid "Filterset.G"
 msgstr "Filterset.G"
 
-#: ../extensions/adblock/adblock.glade.h:9
-msgid "Remove the current rule"
-msgstr "ลบกฎปัจจุบัน"
-
-#: ../extensions/adblock/adblock.glade.h:10
+#: ../extensions/adblock/adblock.glade.h:8
 msgid "Whitelist"
 msgstr "บัญชีขาว"
 
@@ -231,6 +224,109 @@ msgstr "จัดการ_อุปกรณ์รักษาความป�
 #: ../extensions/certificates/ephy-certificates-extension.c:228
 msgid "Manage your security devices"
 msgstr "จัดการอุปกรณ์รักษาความปลอดภัยของคุณ"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:1
+msgid "Action for tagged bookmarks:"
+msgstr "การกระทำต่อที่คั่นหนังสือที่ถูกแท็ก:"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:2
+msgid "Epilicious Configuration"
+msgstr "การตั้งค่า Epilicious"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:3
+msgid "_Exclude"
+msgstr "ไ_ม่รวม"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:4
+msgid "_Include"
+msgstr "_รวม"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:6
+msgid "_Password:"
+msgstr "รหัส_ผ่าน:"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:7
+msgid "_Tag:"
+msgstr "แ_ท็ก:"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:1
+msgid "<b>Synchronizing with del.icio.us</b>"
+msgstr "<b>กำลังปรับข้อมูลกับ del.icio.us</b>"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:2
+msgid "Adding new bookmarks and synching topics"
+msgstr "กำลังเพิ่มที่คั่นหน้าใหม่และปรับข้อมูลหัวข้อเรื่อง"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:3
+msgid "Removing deleted bookmarks"
+msgstr "กำลังลบที่คั่นหน้าที่สั่งลบ"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:4
+msgid "Retrieving bookmarks from del.icio.us"
+msgstr "กำลังดึงที่คั่นหน้าจาก del.icio.us"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:5
+msgid "Retrieving bookmarks from epiphany"
+msgstr "กำลังดึงที่คั่นหน้าจาก epiphany"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:6
+msgid "Retrieving previous synch point"
+msgstr "กำลังดึงจุดล่าสุดที่ปรับข้อมูล"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:7
+msgid "Saving new synch point"
+msgstr "กำลังบันทึกจุดปรับข้อมูลใหม่"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:8
+msgid "Synchronizing..."
+msgstr "กำลังปรับข้อมูล..."
+
+#. # Epiphany integration ##
+#: ../extensions/epilicious/epilicious.py.in:201
+#: ../extensions/epilicious/epilicious.py.in:204
+msgid "Epilicious Synchronize"
+msgstr "การปรับข้อมูล Epilicious"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:1
+msgid "Bookmarks with this topic will be synchronized to del.icio.us."
+msgstr "ที่คั่นหน้าที่มีหัวข้อเรื่องนี้จะถูกปรับข้อมูลไปยัง del.icio.us"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:2
+msgid ""
+"Controls the function of the topic. If this is unset then all bookmarks with "
+"the topic will be synched with del.icio.us. If this is set then all "
+"bookmarks without the topic will be synched with del.icio.us."
+msgstr ""
+"ควบคุมการปรับข้อมูลของหัวข้อ ถ้าไม่กำหนด ก็จะปรับข้อมูลที่คั่นหน้าทั้งหมดกับ del.icio.us "
+"ถ้ากำหนด ก็จะปรับข้อมูลที่คั่นหน้าที่ไม่มีหัวข้อเหล่านี้กับ del.icio.us"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:3
+msgid "Exclude topic"
+msgstr "ไม่รวมหัวข้อ"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:4
+msgid "Shared topic"
+msgstr "หัวข้อร่วม"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:5
+msgid ""
+"The del.icio.us password that epilicious will use for synchronizing "
+"bookmarks."
+msgstr "รหัสผ่าน del.icio.us ที่ epilicious จะใช้ในการปรับข้อมูลที่คั่นหน้า"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:6
+msgid ""
+"The del.icio.us username that epilicious will use for synchronizing "
+"bookmarks."
+msgstr "ชื่อผู้ใช้ del.icio.us ที่ epilicious จะใช้ในการปรับข้อมูลที่คั่นหน้า"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:7
+msgid "del.icio.us password"
+msgstr "รหัสผ่าน del.icio.us"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:8
+msgid "del.icio.us username"
+msgstr "ชื่อผู้ใช้ del.icio.us"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
@@ -512,7 +608,7 @@ msgid "Unknown cache"
 msgstr "แคชไม่ทราบชนิด"
 
 #: ../extensions/page-info/page-info-dialog.c:845
-#: ../extensions/page-info/page-info-dialog.c:958
+#: ../extensions/page-info/page-info-dialog.c:961
 msgid "Unknown"
 msgstr "ไม่ทราบ"
 
@@ -530,96 +626,100 @@ msgid "Image"
 msgstr "รูปภาพ"
 
 #: ../extensions/page-info/page-info-dialog.c:946
+msgid "Background image"
+msgstr "ภาพพื้นหลัง"
+
+#: ../extensions/page-info/page-info-dialog.c:949
 msgid "Embed"
 msgstr "ฝังตัว"
 
-#: ../extensions/page-info/page-info-dialog.c:949
+#: ../extensions/page-info/page-info-dialog.c:952
 msgid "Object"
 msgstr "ออบเจ็กต์"
 
-#: ../extensions/page-info/page-info-dialog.c:952
+#: ../extensions/page-info/page-info-dialog.c:955
 msgid "Applet"
 msgstr "แอพเพล็ต"
 
-#: ../extensions/page-info/page-info-dialog.c:955
+#: ../extensions/page-info/page-info-dialog.c:958
 msgid "Icon"
 msgstr "ไอคอน"
 
-#: ../extensions/page-info/page-info-dialog.c:1121
+#: ../extensions/page-info/page-info-dialog.c:1124
 msgid "_Open"
 msgstr "เ_ปิด"
 
-#: ../extensions/page-info/page-info-dialog.c:1127
-#: ../extensions/page-info/page-info-dialog.c:1551
+#: ../extensions/page-info/page-info-dialog.c:1130
+#: ../extensions/page-info/page-info-dialog.c:1573
 msgid "_Copy Link Address"
 msgstr "_คัดลอกตำแหน่งลิงก์"
 
-#: ../extensions/page-info/page-info-dialog.c:1133
+#: ../extensions/page-info/page-info-dialog.c:1136
 msgid "_Use as Background"
 msgstr "ใ_ช้เป็นภาพพื้นหลัง"
 
-#: ../extensions/page-info/page-info-dialog.c:1139
-#: ../extensions/page-info/page-info-dialog.c:1557
+#: ../extensions/page-info/page-info-dialog.c:1142
+#: ../extensions/page-info/page-info-dialog.c:1579
 msgid "_Save As..."
 msgstr "บันทึกเป็_น..."
 
-#: ../extensions/page-info/page-info-dialog.c:1358
-#: ../extensions/page-info/page-info-dialog.c:1667
+#: ../extensions/page-info/page-info-dialog.c:1374
+#: ../extensions/page-info/page-info-dialog.c:1689
 msgid "Blocked"
 msgstr "ถูกกั้น"
 
-#: ../extensions/page-info/page-info-dialog.c:1374
-#: ../extensions/page-info/page-info-dialog.c:1683
+#: ../extensions/page-info/page-info-dialog.c:1390
+#: ../extensions/page-info/page-info-dialog.c:1705
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1387
+#: ../extensions/page-info/page-info-dialog.c:1403
 msgid "Type"
 msgstr "ชนิด"
 
-#: ../extensions/page-info/page-info-dialog.c:1399
+#: ../extensions/page-info/page-info-dialog.c:1415
 msgid "Alt Text"
 msgstr "ข้อความแทน"
 
-#: ../extensions/page-info/page-info-dialog.c:1411
-#: ../extensions/page-info/page-info-dialog.c:1696
+#: ../extensions/page-info/page-info-dialog.c:1427
+#: ../extensions/page-info/page-info-dialog.c:1718
 msgid "Title"
 msgstr "ป้ายชื่อ"
 
-#: ../extensions/page-info/page-info-dialog.c:1423
+#: ../extensions/page-info/page-info-dialog.c:1439
 msgid "Width"
 msgstr "กว้าง"
 
-#: ../extensions/page-info/page-info-dialog.c:1435
+#: ../extensions/page-info/page-info-dialog.c:1451
 msgid "Height"
 msgstr "สูง"
 
-#: ../extensions/page-info/page-info-dialog.c:1708
+#: ../extensions/page-info/page-info-dialog.c:1730
 msgid "Relation"
 msgstr "ความสัมพันธ์"
 
-#: ../extensions/page-info/page-info-dialog.c:1849
-#: ../extensions/page-info/page-info-dialog.c:1990
+#: ../extensions/page-info/page-info-dialog.c:1877
+#: ../extensions/page-info/page-info-dialog.c:2018
 msgid "Name"
 msgstr "ชื่อ"
 
-#: ../extensions/page-info/page-info-dialog.c:1861
+#: ../extensions/page-info/page-info-dialog.c:1889
 msgid "Method"
 msgstr "วิธีติดต่อ"
 
-#: ../extensions/page-info/page-info-dialog.c:1875
+#: ../extensions/page-info/page-info-dialog.c:1903
 msgid "Action"
 msgstr "การกระทำ"
 
-#: ../extensions/page-info/page-info-dialog.c:1956
+#: ../extensions/page-info/page-info-dialog.c:1984
 msgid "_Copy"
 msgstr "_คัดลอก"
 
-#: ../extensions/page-info/page-info-dialog.c:2002
+#: ../extensions/page-info/page-info-dialog.c:2030
 msgid "Content"
 msgstr "เนื้อหา"
 
-#: ../extensions/page-info/page-info-dialog.c:2103
+#: ../extensions/page-info/page-info-dialog.c:2131
 msgid "Page Metadata"
 msgstr "Metadata ของหน้าเว็บ"
 
@@ -1095,6 +1195,12 @@ msgstr "บ่งชี้การเปลี่ยนแปลงเนื้
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "สถานะแท็บ"
+
+#~ msgid "Apply your modification"
+#~ msgstr "เริ่มใช้ตามที่แก้ไข"
+
+#~ msgid "Remove the current rule"
+#~ msgstr "ลบกฎปัจจุบัน"
 
 #~ msgid "News Feed Subcription"
 #~ msgstr "การบอกรับข่าวป้อน"
