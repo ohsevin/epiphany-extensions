@@ -1,3 +1,9 @@
+2006-02-13  Jean-François Rameau  <jframeau@svn.gnome.org>
+
+	* configure.ac
+
+	Enable adblock by default.
+
 2006-02-05  Jean-François Rameau  <jframeau@svn.gnome.org>
 
 	* configure.ac
