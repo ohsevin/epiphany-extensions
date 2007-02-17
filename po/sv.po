@@ -1,6 +1,6 @@
 # Swedish messages for epiphany-extensions.
-# Copyright (C) 2004, 2005, 2006 Free Software Foundation, Inc.
-# Daniel Nylander <po@danielnylander.se>, 2006.
+# Copyright (C) 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
+# Daniel Nylander <po@danielnylander.se>, 2006,2007.
 # Christian Rose <menthos@menthos.com>, 2004.
 #
 # $Id: sv.po,v 1.11 2006/12/26 13:14:21 dnylande Exp $
@@ -8,10 +8,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-01-28 15:24+0100\n"
-"PO-Revision-Date: 2007-01-28 15:22+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
+"POT-Creation-Date: 2007-02-05 22:22+0000\n"
+"PO-Revision-Date: 2007-02-17 11:37+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -28,40 +27,24 @@ msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">Allmänt</span>"
 
 #: ../extensions/actions/action-properties.glade.h:3
-msgid ""
-"If this option is enabled, the action will be included in the popup menu of "
-"images."
-msgstr ""
-"Om detta alternativ är aktiverat kommer åtgärden att inkluderas i popupmenyn "
-"för bilder."
+msgid "If this option is enabled, the action will be included in the popup menu of images."
+msgstr "Om detta alternativ är aktiverat kommer åtgärden att inkluderas i popupmenyn för bilder."
 
 #: ../extensions/actions/action-properties.glade.h:4
-msgid ""
-"If this option is enabled, the action will be included in the popup menu of "
-"links and pages."
-msgstr ""
-"Om detta alternativ är aktiverat kommer åtgärden att inkluderas i popupmenyn "
-"för länkar och sidor."
+msgid "If this option is enabled, the action will be included in the popup menu of links and pages."
+msgstr "Om detta alternativ är aktiverat kommer åtgärden att inkluderas i popupmenyn för länkar och sidor."
 
 #: ../extensions/actions/action-properties.glade.h:5
 msgid "The action description."
 msgstr "Åtgärdsbeskrivningen."
 
 #: ../extensions/actions/action-properties.glade.h:6
-msgid ""
-"The action name. If a character is preceded by an underscore, that character "
-"will be used as the access key for the menu item."
-msgstr ""
-"Namnet på åtgärden. Om ett tecken föregås av ett understreck kommer det "
-"tecknet att användas som åtkomsttangent för menyposten."
+msgid "The action name. If a character is preceded by an underscore, that character will be used as the access key for the menu item."
+msgstr "Namnet på åtgärden. Om ett tecken föregås av ett understreck kommer det tecknet att användas som åtkomsttangent för menyposten."
 
 #: ../extensions/actions/action-properties.glade.h:7
-msgid ""
-"The command to execute when the action is activated. The URL of the link, "
-"image or page will be appended to the command."
-msgstr ""
-"Kommandot att köra då åtgärden aktiveras. URL:en för länken, bilden eller "
-"sidan kommer att läggas till efter kommandot."
+msgid "The command to execute when the action is activated. The URL of the link, image or page will be appended to the command."
+msgstr "Kommandot att köra då åtgärden aktiveras. URL:en för länken, bilden eller sidan kommer att läggas till efter kommandot."
 
 #: ../extensions/actions/action-properties.glade.h:8
 msgid "_Command:"
@@ -76,6 +59,7 @@ msgid "_Images"
 msgstr "_Bilder"
 
 #: ../extensions/actions/action-properties.glade.h:11
+#: ../extensions/epilicious/epilicious-config.glade.h:5
 msgid "_Name:"
 msgstr "_Namn:"
 
@@ -130,22 +114,15 @@ msgstr "Egenskaper för åtgärd"
 
 #: ../extensions/adblock/adblock-ui.c:279
 msgid ""
-"This list is Copyright © its original author(G). It is relicensed under the "
-"GPL with permission.\n"
-"The original list, Filterset.G, can be found at http://www.pierceive.com/"
-"filtersetg/.\n"
-"This version has been modified from its original. The changes have not been "
-"approved by the original author;\n"
+"This list is Copyright © its original author(G). It is relicensed under the GPL with permission.\n"
+"The original list, Filterset.G, can be found at http://www.pierceive.com/filtersetg/.\n"
+"This version has been modified from its original. The changes have not been approved by the original author;\n"
 "direct any problems to Bugzilla and not to the original author (G).\n"
 msgstr ""
-"Den här listan är Copyright © dess ursprungliga upphovsman(G). Den är "
-"omlicensierad under GPL med tillstånd.\n"
-"Ursprungslistan, Filterset.G, kan hittas på http://www.pierceive.com/"
-"filtersetg/.\n"
-"Den här versionen har ändrats från dess original. Ändringarna har inte "
-"blivit godkända av den ursprunglige upphovsmannen;\n"
-"rikta eventuella problem till Bugzilla och inte till den ursprunglige "
-"upphovsmannen (G).\n"
+"Den här listan är Copyright © dess ursprungliga upphovsman(G). Den är omlicensierad under GPL med tillstånd.\n"
+"Ursprungslistan, Filterset.G, kan hittas på http://www.pierceive.com/filtersetg/.\n"
+"Den här versionen har ändrats från dess original. Ändringarna har inte blivit godkända av den ursprunglige upphovsmannen;\n"
+"rikta eventuella problem till Bugzilla och inte till den ursprunglige upphovsmannen (G).\n"
 
 #: ../extensions/adblock/adblock-ui.c:496
 msgid "Pattern"
@@ -235,6 +212,100 @@ msgstr "Hantera säkerhets_enheter"
 #: ../extensions/certificates/ephy-certificates-extension.c:228
 msgid "Manage your security devices"
 msgstr "Hantera dina säkerhetsenheter"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:1
+msgid "Action for tagged bookmarks:"
+msgstr "Åtgärd för taggade bokmärken:"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:2
+msgid "Epilicious Configuration"
+msgstr "Konfiguration för Epilicious"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:3
+msgid "_Exclude"
+msgstr "_Undanta"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:4
+msgid "_Include"
+msgstr "_Inkludera"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:6
+msgid "_Password:"
+msgstr "_Lösenord:"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:7
+msgid "_Tag:"
+msgstr "_Tagg:"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:1
+msgid "<b>Synchronizing with del.icio.us</b>"
+msgstr "<b>Synkroniserar med del.icio.us</b>"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:2
+msgid "Adding new bookmarks and synching topics"
+msgstr "Lägger till nya bokmärken och synkroniserar ämnen"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:3
+msgid "Removing deleted bookmarks"
+msgstr "Tar bort raderade bokmärken"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:4
+msgid "Retrieving bookmarks from del.icio.us"
+msgstr "Hämtar bokmärken från del.icio.us"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:5
+msgid "Retrieving bookmarks from epiphany"
+msgstr "Hämtar bokmärken från epiphany"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:6
+msgid "Retrieving previous synch point"
+msgstr "Hämtar föregående synkroniseringspunkt"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:7
+msgid "Saving new synch point"
+msgstr "Sparar ny synkroniseringspunkt"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:8
+msgid "Synchronizing..."
+msgstr "Synkroniserar..."
+
+#. # Epiphany integration ##
+#: ../extensions/epilicious/epilicious.py.in:201
+#: ../extensions/epilicious/epilicious.py.in:204
+msgid "Epilicious Synchronize"
+msgstr "Synkronisering för Epilicious"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:1
+msgid "Bookmarks with this topic will be synchronized to del.icio.us."
+msgstr "Bokmärken med det här ämnet kommer att synkroniseras till del.icio.us."
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:2
+msgid "Controls the function of the topic. If this is unset then all bookmarks with the topic will be synched with del.icio.us. If this is set then all bookmarks without the topic will be synched with del.icio.us."
+msgstr "Kontrollerar funktionen för ämnet. Om den här inte är inställd kommer alla bokmärken med ämnet att synkroniseras med del.icio.us. Om den här är inställd kommer alla bokmärken utan ämnet att synkroniseras med del.icio.us."
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:3
+msgid "Exclude topic"
+msgstr "Undanta ämne"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:4
+msgid "Shared topic"
+msgstr "Delat ämne"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:5
+msgid "The del.icio.us password that epilicious will use for synchronizing bookmarks."
+msgstr "Lösenordet för del.icio.us som epilicious ska använda för att synkronisera bokmärken."
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:6
+msgid "The del.icio.us username that epilicious will use for synchronizing bookmarks."
+msgstr "Användarnamnet för del.icio.us som epilicious ska använda för att synkronisera bokmärken."
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:7
+msgid "del.icio.us password"
+msgstr "Lösenord för del.icio.us"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:8
+msgid "del.icio.us username"
+msgstr "Användarnamn för del.icio.us"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
@@ -345,12 +416,8 @@ msgstr ""
 
 #: ../extensions/error-viewer/sgml-validator.c:229
 #: ../extensions/error-viewer/sgml-validator.c:245
-msgid ""
-"Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
-"+xml” instead."
-msgstr ""
-"Dokumenttypen är \"XHTML\" men innehållstypen är \"text/html\". Använd "
-"\"application/xhtml+xml\" istället."
+msgid "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml+xml” instead."
+msgstr "Dokumenttypen är \"XHTML\" men innehållstypen är \"text/html\". Använd \"application/xhtml+xml\" istället."
 
 #: ../extensions/error-viewer/sgml-validator.c:243
 #, c-format
@@ -562,7 +629,7 @@ msgid "_Open"
 msgstr "_Öppna"
 
 #: ../extensions/page-info/page-info-dialog.c:1130
-#: ../extensions/page-info/page-info-dialog.c:1560
+#: ../extensions/page-info/page-info-dialog.c:1573
 msgid "_Copy Link Address"
 msgstr "_Kopiera länkadress"
 
@@ -571,67 +638,67 @@ msgid "_Use as Background"
 msgstr "_Använd som bakgrund"
 
 #: ../extensions/page-info/page-info-dialog.c:1142
-#: ../extensions/page-info/page-info-dialog.c:1566
+#: ../extensions/page-info/page-info-dialog.c:1579
 msgid "_Save As..."
 msgstr "_Spara som..."
 
-#: ../extensions/page-info/page-info-dialog.c:1361
-#: ../extensions/page-info/page-info-dialog.c:1676
+#: ../extensions/page-info/page-info-dialog.c:1374
+#: ../extensions/page-info/page-info-dialog.c:1689
 msgid "Blocked"
 msgstr "Blockerad"
 
-#: ../extensions/page-info/page-info-dialog.c:1377
-#: ../extensions/page-info/page-info-dialog.c:1692
+#: ../extensions/page-info/page-info-dialog.c:1390
+#: ../extensions/page-info/page-info-dialog.c:1705
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1390
+#: ../extensions/page-info/page-info-dialog.c:1403
 msgid "Type"
 msgstr "Typ"
 
-#: ../extensions/page-info/page-info-dialog.c:1402
+#: ../extensions/page-info/page-info-dialog.c:1415
 msgid "Alt Text"
 msgstr "Alt-text"
 
-#: ../extensions/page-info/page-info-dialog.c:1414
-#: ../extensions/page-info/page-info-dialog.c:1705
+#: ../extensions/page-info/page-info-dialog.c:1427
+#: ../extensions/page-info/page-info-dialog.c:1718
 msgid "Title"
 msgstr "Titel"
 
-#: ../extensions/page-info/page-info-dialog.c:1426
+#: ../extensions/page-info/page-info-dialog.c:1439
 msgid "Width"
 msgstr "Bredd"
 
-#: ../extensions/page-info/page-info-dialog.c:1438
+#: ../extensions/page-info/page-info-dialog.c:1451
 msgid "Height"
 msgstr "Höjd"
 
-#: ../extensions/page-info/page-info-dialog.c:1717
+#: ../extensions/page-info/page-info-dialog.c:1730
 msgid "Relation"
 msgstr "Relation"
 
-#: ../extensions/page-info/page-info-dialog.c:1864
-#: ../extensions/page-info/page-info-dialog.c:2005
+#: ../extensions/page-info/page-info-dialog.c:1877
+#: ../extensions/page-info/page-info-dialog.c:2018
 msgid "Name"
 msgstr "Namn"
 
-#: ../extensions/page-info/page-info-dialog.c:1876
+#: ../extensions/page-info/page-info-dialog.c:1889
 msgid "Method"
 msgstr "Metod"
 
-#: ../extensions/page-info/page-info-dialog.c:1890
+#: ../extensions/page-info/page-info-dialog.c:1903
 msgid "Action"
 msgstr "Åtgärd"
 
-#: ../extensions/page-info/page-info-dialog.c:1971
+#: ../extensions/page-info/page-info-dialog.c:1984
 msgid "_Copy"
 msgstr "_Kopiera"
 
-#: ../extensions/page-info/page-info-dialog.c:2017
+#: ../extensions/page-info/page-info-dialog.c:2030
 msgid "Content"
 msgstr "Innehåll"
 
-#: ../extensions/page-info/page-info-dialog.c:2118
+#: ../extensions/page-info/page-info-dialog.c:2131
 msgid "Page Metadata"
 msgstr "Sidmetadata"
 
@@ -812,8 +879,7 @@ msgstr "Prenumeration på nyhetskällor"
 
 #: ../extensions/rss/ephy-rss-extension.c:92
 msgid "Subscribe to this website's news feeds in your favorite news reader"
-msgstr ""
-"Prenumerera på nyhetskällan för denna webbplats i din favoritnyhetsläsare"
+msgstr "Prenumerera på nyhetskällan för denna webbplats i din favoritnyhetsläsare"
 
 #: ../extensions/rss/ephy-rss-extension.c:97
 msgid "_Subscribe to this feed"
@@ -904,11 +970,8 @@ msgid "The sidebar already contains “%s”"
 msgstr "Denna sidopanel innehåller redan \"%s\""
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:412
-msgid ""
-"To use this sidebar, select it from the list of available sidebar pages."
-msgstr ""
-"För att använda denna sidopanel, välj den från listan av tillgängliga "
-"sidopanelssidor."
+msgid "To use this sidebar, select it from the list of available sidebar pages."
+msgstr "För att använda denna sidopanel, välj den från listan av tillgängliga sidopanelssidor."
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:415
 #: ../extensions/sidebar/ephy-sidebar-extension.c:441
@@ -1003,10 +1066,8 @@ msgid "Favicon fallback"
 msgstr "Favoritikonreserv"
 
 #: ../extensions/favicon/favicon.ephy-extension.in.h:2
-msgid ""
-"Loads /favicon.ico as favicon if the site doesn't use the standard method"
-msgstr ""
-"Läser in /favicon.ico som favoritikon om sidan inte använder standardmetoden"
+msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
+msgstr "Läser in /favicon.ico som favoritikon om sidan inte använder standardmetoden"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -1053,11 +1114,8 @@ msgid "Permissions"
 msgstr "Rättigheter"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
-msgid ""
-"Subscribe to a news feed offered by the webpage in your favorite news reader"
-msgstr ""
-"Prenumerera på en nyhetskälla som erbjuds av webbsidan i din "
-"favoritnyhetsläsare"
+msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr "Prenumerera på en nyhetskälla som erbjuds av webbsidan i din favoritnyhetsläsare"
 
 #: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
 msgid "A sample extension with mozilla backend"
@@ -1117,412 +1175,286 @@ msgstr "Fliktillstånd"
 
 #~ msgid "Apply your modification"
 #~ msgstr "Verkställ ändringar"
-
 #~ msgid "Remove the current rule"
 #~ msgstr "Ta bort aktuell regel"
-
 #~ msgid "News Feed Subcription"
 #~ msgstr "Prenumeration på nyhetskälla"
-
 #~ msgid "_Actions"
 #~ msgstr "_Åtgärder"
-
 #~ msgid "Server _Certificate"
 #~ msgstr "Server_certifikat"
-
 #~ msgid "Display the web server's certificate"
 #~ msgstr "Visa webbserverns certifikat"
-
 #~ msgid "Window “%s” (%d tab)"
 #~ msgid_plural "Window “%s” (%d tabs)"
 #~ msgstr[0] "Fönster \"%s\" (%d flik)"
 #~ msgstr[1] "Fönster \"%s\" (%d flikar)"
-
 #~ msgid "Move Tab To Window"
 #~ msgstr "Flytta flik till fönster"
-
 #~ msgid "Move the current tab to a different window"
 #~ msgstr "Flytta den aktuella fliken till ett annat fönster"
-
 #~ msgid "Dashboard"
 #~ msgstr "Dashboard"
-
 #~ msgid "Send browsing information to Dashboard"
 #~ msgstr "Skicka webbläsarinformation till Dashboard"
-
 #~ msgid "Move tabs between windows"
 #~ msgstr "Flytta flikar mellan fönster"
-
 #~ msgid "Tabsmenu"
 #~ msgstr "Flikmeny"
-
 #~ msgid "Add a bookmarks menu to the panel's notification area"
 #~ msgstr "Lägg till en bokmärkesmeny till panelens notifieringsyta"
-
 #~ msgid "Bookmarks Tray"
 #~ msgstr "Bokmärkeslåda"
-
 #~ msgid "_Edit Bookmarks"
 #~ msgstr "_Redigera bokmärken"
-
 #~ msgid "Open the bookmarks window"
 #~ msgstr "Öppna bokmärkesfönstret"
-
 #~ msgid "Open in _Current Tab"
 #~ msgstr "Öppna i _aktuell flik"
-
 #~ msgid "Open bookmarks in the current tab of the active window"
 #~ msgstr "Öppna bokmärken i den aktuella fliken i det aktiva fönstret"
-
 #~ msgid "Open in New _Tab"
 #~ msgstr "Öppna i ny _flik"
-
 #~ msgid "Open in New _Window"
 #~ msgstr "Öppna i nytt _fönster"
-
 #~ msgid "Open bookmarks in new a window"
 #~ msgstr "Öppna bokmärken i ett nytt fönster"
-
 #~ msgid "Bookmarks"
 #~ msgstr "Bokmärken"
-
 #~ msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
 #~ msgstr ""
 #~ "Hantera ansluten-/frånkoppladstatus för nätverket automatiskt "
 #~ "(EXPERIMENTELLT!)"
-
 #~ msgid "Network Connection Monitor"
 #~ msgstr "Nätverksanslutningsövervakare"
-
 #~ msgid "_Page Info"
 #~ msgstr "Sid_information"
-
 #~ msgid "Save Medium As..."
 #~ msgstr "Spara media som..."
-
 #~ msgid "Applies to"
 #~ msgstr "Gäller för"
-
 #~ msgid "Command:"
 #~ msgstr "Kommando:"
-
 #~ msgid "Command"
 #~ msgstr "Kommando"
-
 #~ msgid "%i action selected"
 #~ msgid_plural "%i actions selected"
 #~ msgstr[0] "%i åtgärd markerad"
 #~ msgstr[1] "%i åtgärder markerade"
-
 #~ msgid "View errors in web pages, validate web pages and check links"
 #~ msgstr "Visa fel i webbsidor, validera webbsidor och kontrollera länkar"
-
 #~ msgid "Loaded Extensions"
 #~ msgstr "Inlästa utökningar"
-
 #~ msgid "Dublin Core Metadata"
 #~ msgstr "Dublin Core-metadata"
-
 #~ msgid "Media In Page"
 #~ msgstr "Media på sidan"
-
 #~ msgid "Medium View"
 #~ msgstr "Mediavy"
-
 #~ msgid "Other Metadata"
 #~ msgstr "Andra metadata"
-
 #~ msgid "Source File"
 #~ msgstr "Källfil"
-
 #~ msgid "Web page"
 #~ msgstr "Webbsida"
-
 #~ msgid "_Format:"
 #~ msgstr "_Format:"
-
 #~ msgid "_Mode:"
 #~ msgstr "_Läge:"
-
 #~ msgid "Page information"
 #~ msgstr "Sidinformation"
-
 #~ msgid "<b><i>Unable to contact the feed reader, is it running?</i></b>"
 #~ msgstr "<b><i>Kunde inte kontakta källäsaren, är den igång?</i></b>"
-
 #~ msgid "Unable to contact the feed reader, is it running ?"
 #~ msgstr "Kunde inte kontakta källäsaren, är den igång?"
-
 #~ msgid "Unable to contact the feed reader, is it running?"
 #~ msgstr "Kunde inte kontakta källäsaren, är den igång?"
-
 #~ msgid "_Copy Address"
 #~ msgstr "_Kopiera adress"
-
 #~ msgid "Select Interesting Feeds"
 #~ msgstr "Välj intressanta källor"
-
 #~ msgid "Newsfeed Subscription"
 #~ msgstr "Prenumeration på nyhetskälla"
-
 #~ msgid "Certificate Manager"
 #~ msgstr "Certifikathanterare"
-
 #~ msgid "C_lear"
 #~ msgstr "T_öm"
-
 #~ msgid "Show or hide unrequested popup windows from this site"
 #~ msgstr "Visa eller dölj obegärda popupfönster från denna webbplats"
-
 #~ msgid "%d popup window blocked"
 #~ msgid_plural "%d popup windows blocked"
 #~ msgstr[0] "%d popupfönster blockerat"
 #~ msgstr[1] "%d popupfönster blockerade"
-
 #~ msgid "Certificate"
 #~ msgstr "Certifikat"
-
 #~ msgid "Manage Certificates..."
 #~ msgstr "Hantera certifikat..."
-
 #~ msgid "_Links"
 #~ msgstr "_Länkar"
-
 #~ msgid "Error"
 #~ msgstr "Fel"
-
 #~ msgid "Error:"
 #~ msgstr "Fel:"
-
 #~ msgid "Checking %d link on %s"
 #~ msgid_plural "Checking %d links on %s"
 #~ msgstr[0] "Kontrollerar %d länk på %s"
 #~ msgstr[1] "Kontrollerar %d länkar på %s"
-
 #~ msgid "Window"
 #~ msgstr "Fönster"
-
 #~ msgid "Block _Popups from this Site"
 #~ msgstr "Blockera _popupfönster från denna webbplats"
-
 #~ msgid "Block or unblock popup windows"
 #~ msgstr "Blockera eller avblockera popupfönster"
-
 #~ msgid "Block Popups from this Site"
 #~ msgstr "Blockera popupfönster från denna webbplats"
-
 #~ msgid "Epiphany automation"
 #~ msgstr "Epiphany-automation"
-
 #~ msgid "Epiphany Nautilus view"
 #~ msgstr "Epiphany Nautilus-vy"
-
 #~ msgid "Epiphany Nautilus view factory"
 #~ msgstr "Fabrik för Epiphany Nautilus-vy"
-
 #~ msgid "Epiphany content view component"
 #~ msgstr "Epiphany-innehållsvykomponent"
-
 #~ msgid "Epiphany content view component's factory"
 #~ msgstr "Fabrik för Epiphany-innehållsvykomponent"
-
 #~ msgid "View as Web Page"
 #~ msgstr "Visa som webbsida"
-
 #~ msgid "Web Page"
 #~ msgstr "Webbsida"
-
 #~ msgid "Web Page Viewer"
 #~ msgstr "Webbsidevisare"
-
 #~ msgid "Browse and organize your bookmarks"
 #~ msgstr "Bläddra bland och organisera dina bokmärken"
-
 #~ msgid "Web Bookmarks"
 #~ msgstr "Webbokmärken"
-
 #~ msgid "Browse the web"
 #~ msgstr "Surfa på nätet"
-
 #~ msgid "Web Browser"
 #~ msgstr "Webbläsare"
-
 #~ msgid "Address of the user's home page."
 #~ msgstr "Adress till användarens hemsida."
-
 #~ msgid "Allow popups"
 #~ msgstr "Tillåt popupfönster"
-
 #~ msgid ""
 #~ "Allow sites to open new windows using JavaScript (if JavaScript is "
 #~ "enabled)."
 #~ msgstr ""
 #~ "Tillåt webbplatser att öppna nya fönster med hjälp av JavaScript (om "
 #~ "JavaScript är aktiverat)."
-
 #~ msgid "Always show the tab bar"
 #~ msgstr "Visa alltid flikraden"
-
 #~ msgid "Ask for download destination"
 #~ msgstr "Fråga efter hämtningsdestination"
-
 #~ msgid "Ask for download destination."
 #~ msgstr "Fråga efter hämtningsdestination."
-
 #~ msgid "Autowrap for find in page"
 #~ msgstr "Börja automatiskt om från början vid sökning i sida"
-
 #~ msgid "Cookie accept"
 #~ msgstr "Accepterande av kakor"
-
 #~ msgid "Default encoding"
 #~ msgstr "Standardkodning"
-
 #~ msgid "Enable Java"
 #~ msgstr "Använd Java"
-
 #~ msgid "Enable Java."
 #~ msgstr "Använd Java."
-
 #~ msgid "Enable JavaScript"
 #~ msgstr "Använd JavaScript"
-
 #~ msgid "Enable JavaScript."
 #~ msgstr "Använd JavaScript."
-
 #~ msgid "Filename to print to"
 #~ msgstr "Filnamn att skriva ut till"
-
 #~ msgid "Filename to print to."
 #~ msgstr "Filnamn att skriva ut till."
-
 #~ msgid ""
 #~ "For find in page, whether to start again at the beginning after reaching "
 #~ "the end of the page."
 #~ msgstr ""
 #~ "Huruvida sökning ska börja om från början igen när slutet på sidan nås "
 #~ "vid sök i sida."
-
 #~ msgid "Home page"
 #~ msgstr "Hemsida"
-
 #~ msgid "ISO-8859-1"
 #~ msgstr "ISO-8859-1"
-
 #~ msgid "Languages"
 #~ msgstr "Språk"
-
 #~ msgid "Match case for find in page"
 #~ msgstr "Skilj på gemener/versaler vid sökning i sida"
-
 #~ msgid "Match case for find in page."
 #~ msgstr "Skilj på gemener/versaler vid sökning i sida."
-
 #~ msgid ""
 #~ "Middle click to open the web page pointed to by the currently selected "
 #~ "text"
 #~ msgstr ""
 #~ "Mittklick för att öppna webbsidan som pekas till av den för tillfället "
 #~ "markerade texten"
-
 #~ msgid ""
 #~ "Middle clicking on the main view pane will open the web page pointed to "
 #~ "by the currently selected text."
 #~ msgstr ""
 #~ "Mittklick på huvudvisningsytan kommer att öppna den webbsida som pekas "
 #~ "till av den för tillfället markerade texten."
-
 #~ msgid "Paper type"
 #~ msgstr "Papperstyp"
-
 #~ msgid ""
 #~ "Paper type. Supported values are \"A4\", \"Letter\", \"Legal\" and "
 #~ "\"Executive\"."
 #~ msgstr ""
 #~ "Papperstyp. Värden som stöds är \"A4\", \"Letter\", \"Legal\" och "
 #~ "\"Executive\"."
-
 #~ msgid "Preferred languages, two letter codes."
 #~ msgstr "Föredragna språk, tvåbokstavskoder."
-
 #~ msgid "Printer name"
 #~ msgstr "Skrivarnamn"
-
 #~ msgid "Printer name."
 #~ msgstr "Skrivarnamn."
-
 #~ msgid "Printing bottom margin"
 #~ msgstr "Nederkantsmarginal vid utskrift"
-
 #~ msgid "Printing bottom margin (in mm)."
 #~ msgstr "Nederkantsmarginal vid utskrift (i mm)."
-
 #~ msgid "Printing left margin"
 #~ msgstr "Vänstermarginal vid utskrift"
-
 #~ msgid "Printing left margin (in mm)."
 #~ msgstr "Vänstermarginal vid utskrift (i mm)."
-
 #~ msgid "Printing right margin"
 #~ msgstr "Högermarginal vid utskrift"
-
 #~ msgid "Printing right margin (in mm)."
 #~ msgstr "Högermarginal vid utskrift (i mm)."
-
 #~ msgid "Printing top margin"
 #~ msgstr "Överkantsmarginal vid utskrift"
-
 #~ msgid "Printing top margin (in mm)."
 #~ msgstr "Överkantsmarginal vid utskrift (i mm)."
-
 #~ msgid "Show bookmarks bar by default"
 #~ msgstr "Visa bokmärkesrad som standard"
-
 #~ msgid "Show bookmarks bar by default."
 #~ msgstr "Visa bokmärkesrad som standard."
-
 #~ msgid "Show download details"
 #~ msgstr "Visa hämtningsdetaljer"
-
 #~ msgid "Show download details."
 #~ msgstr "Visa hämtningsdetaljer."
-
 #~ msgid "Show statusbar by default"
 #~ msgstr "Visa statusrad som standard"
-
 #~ msgid "Show statusbar by default."
 #~ msgstr "Visa statusrad som standard."
-
 #~ msgid "Show the tab bar also when there is only one tab open."
 #~ msgstr "Visa flikraden även när endast en flik är öppen."
-
 #~ msgid "Show toolbars by default"
 #~ msgstr "Visa verktygsrader som standard"
-
 #~ msgid "Show toolbars by default."
 #~ msgstr "Visa verktygsrader som standard."
-
 #~ msgid "Size of disk cache"
 #~ msgstr "Storlek på diskcache"
-
 #~ msgid "Size of disk cache, in MB."
 #~ msgstr "Storlek på diskcache, i MB."
-
 #~ msgid "The currently selected fonts language"
 #~ msgstr "Språket för det för tillfället valda typsnittet"
-
 #~ msgid "Use own colors"
 #~ msgstr "Använd egna färger"
-
 #~ msgid "Use own fonts"
 #~ msgstr "Använd egna typsnitt"
-
 #~ msgid "Use your own colors instead of the colors the page requests."
 #~ msgstr "Använd dina egna färger istället för de färger som sidan begär."
-
 #~ msgid "Use your own fonts instead of the fonts the page requests."
 #~ msgstr "Använd dina egna typsnitt istället för de typsnitt som sidan begär."
-
 #~ msgid ""
 #~ "Where to accept cookies from. Possible values are \"anywhere\", \"current "
 #~ "site\" and \"nowhere\"."
@@ -1530,52 +1462,36 @@ msgstr "Fliktillstånd"
 #~ "Var kakor ska accepteras ifrån. Möjliga värden är \"anywhere"
 #~ "\" (varsomhelst), \"current site\" (aktuell server) och \"nowhere"
 #~ "\" (ingenstans ifrån)."
-
 #~ msgid "Whether to print the date in the footer"
 #~ msgstr "Huruvida datumet ska skrivas ut i sidfoten"
-
 #~ msgid "Whether to print the date in the footer."
 #~ msgstr "Huruvida datumet ska skrivas ut i sidfoten."
-
 #~ msgid "Whether to print the page address in the header"
 #~ msgstr "Huruvida sidans adress ska skrivas ut i sidhuvudet"
-
 #~ msgid "Whether to print the page address in the header."
 #~ msgstr "Huruvida sidans adress ska skrivas ut i sidhuvudet."
-
 #~ msgid "Whether to print the page numbers (x of total) in the footer"
 #~ msgstr "Huruvida sidnumren (x av totalt) ska skrivas ut i sidfoten"
-
 #~ msgid "Whether to print the page numbers (x of total) in the footer."
 #~ msgstr "Huruvida sidnumren (x av totalt) ska skrivas ut i sidfoten."
-
 #~ msgid "Whether to print the page title in the header"
 #~ msgstr "Huruvida sidans titel ska skrivas ut i sidhuvudet"
-
 #~ msgid "Whether to print the page title in the header."
 #~ msgstr "Huruvida sidans titel ska skrivas ut i sidhuvudet."
-
 #~ msgid "x-western"
 #~ msgstr "x-western"
-
 #~ msgid "  "
 #~ msgstr "  "
-
 #~ msgid "*"
 #~ msgstr "*"
-
 #~ msgid "<b>Address:</b>"
 #~ msgstr "<b>Adress:</b>"
-
 #~ msgid "<b>Status:</b>"
 #~ msgstr "<b>Status:</b>"
-
 #~ msgid "<b>Time Elapsed:</b>"
 #~ msgstr "<b>Förlupen tid:</b>"
-
 #~ msgid "<b>Time Remaining:</b>"
 #~ msgstr "<b>Återstående tid:</b>"
-
 #~ msgid ""
 #~ "<span weight=\"bold\" size=\"larger\">What do you want to do with this "
 #~ "file?\n"
@@ -1585,318 +1501,212 @@ msgstr "Fliktillstånd"
 #~ "<span weight=\"bold\" size=\"larger\">Vad vill du göra med denna fil?\n"
 #~ "</span>\n"
 #~ "Det är inte möjligt att visa denna filtyp direkt i webbläsaren:"
-
 #~ msgid "C_ase sensitive"
 #~ msgstr "_Gör skillnad på VERSALER och gemener"
-
 #~ msgid "Choose the file type action"
 #~ msgstr "Välj filtypsåtgärden"
-
 #~ msgid "Download Manager"
 #~ msgstr "Hämtningshanterare"
-
 #~ msgid "Download _Details"
 #~ msgstr "Hämtnings_detaljer"
-
 #~ msgid "Find"
 #~ msgstr "Sök"
-
-#~ msgid "Passwords"
-#~ msgstr "Lösenord"
-
 #~ msgid "Personal Data Manager"
 #~ msgstr "Hanterare för personlig data"
-
 #~ msgid "You can open it with another application or save it on disk."
 #~ msgstr "Du kan öppna den med ett annat program eller spara den på disk."
-
 #~ msgid "_Find:"
 #~ msgstr "_Sök:"
-
 #~ msgid "_Next"
 #~ msgstr "_Nästa"
-
 #~ msgid "_Pause"
 #~ msgstr "_Paus"
-
 #~ msgid "_Previous"
 #~ msgstr "_Föregående"
-
 #~ msgid "_Wrap around"
 #~ msgstr "_Börja om från början"
-
 #~ msgid "    "
 #~ msgstr "    "
-
 #~ msgid "<b>Colors</b>"
 #~ msgstr "<b>Färger</b>"
-
 #~ msgid "<b>Cookies</b>"
 #~ msgstr "<b>Kakor</b>"
-
 #~ msgid "<b>Encodings</b>"
 #~ msgstr "<b>Kodningar</b>"
-
 #~ msgid "<b>Home page</b>"
 #~ msgstr "<b>Hemsida</b>"
-
 #~ msgid "<b>Languages</b>"
 #~ msgstr "<b>Språk</b>"
-
 #~ msgid "<b>Temporary Files</b>"
 #~ msgstr "<b>Temporära filer</b>"
-
 #~ msgid "<b>Web Content</b>"
 #~ msgstr "<b>Webbinnehåll</b>"
-
 #~ msgid "Al_ways use the desktop theme colors"
 #~ msgstr "An_vänd alltid skrivbordstemats färger"
-
 #~ msgid "Allow _popup windows"
 #~ msgstr "Tillåt _popupfönster"
-
 #~ msgid "Always use _these fonts"
 #~ msgstr "Använd alltid _dessa typsnitt"
-
 #~ msgid "Autodetec_t:"
 #~ msgstr "_Upptäck automatiskt:"
-
 #~ msgid "Enable Java_Script"
 #~ msgstr "Använd Java_Script"
-
 #~ msgid "Enable _Java"
 #~ msgstr "Använd _Java"
-
 #~ msgid "Fonts and Colors"
 #~ msgstr "Typsnitt och färger"
-
 #~ msgid "For _Language:"
 #~ msgstr "För _språket:"
-
 #~ msgid "Language"
 #~ msgstr "Språk"
-
 #~ msgid "Language Editor"
 #~ msgstr "Språkredigerare"
-
 #~ msgid "MB"
 #~ msgstr "MB"
-
 #~ msgid "Min_imum size:"
 #~ msgstr "Mi_nsta typsnittsstorlek:"
-
 #~ msgid "Mo_re..."
 #~ msgstr "Me_r..."
-
 #~ msgid "Only _from sites you visit"
 #~ msgstr "Endast _från webbplatser du besöker"
-
 #~ msgid "Preferences"
 #~ msgstr "Inställningar"
-
 #~ msgid "Privacy"
 #~ msgstr "Integritet"
-
 #~ msgid "Set to Current _Page"
 #~ msgstr "Sätt till aktuell _sida"
-
 #~ msgid "Set to _Blank Page"
 #~ msgstr "Sätt till _tom sida"
-
 #~ msgid "_Address:"
 #~ msgstr "_Adress:"
-
 #~ msgid "_Always accept"
 #~ msgstr "_Acceptera alltid"
-
 #~ msgid "_Default:"
 #~ msgstr "_Standard:"
-
 #~ msgid "_Disk space:"
 #~ msgstr "_Diskutrymme:"
-
 #~ msgid "_Fixed width:"
 #~ msgstr "_Fast bredd:"
-
 #~ msgid "_Language:"
 #~ msgstr "_Språk:"
-
 #~ msgid "_Never accept"
 #~ msgstr "A_cceptera aldrig"
-
 #~ msgid "_Variable width:"
 #~ msgstr "_Variabel bredd:"
-
 #~ msgid "<b>Footers</b>"
 #~ msgstr "<b>Sidfötter</b>"
-
 #~ msgid "<b>Margins (in mm)</b>"
 #~ msgstr "<b>Marginaler (i mm)</b>"
-
 #~ msgid "<b>Orientation</b>"
 #~ msgstr "<b>Orientering</b>"
-
 #~ msgid "<b>Page Range</b>"
 #~ msgstr "<b>Sidintervall</b>"
-
 #~ msgid "<b>Print To</b>"
 #~ msgstr "<b>Skriv ut till</b>"
-
 #~ msgid "A_4"
 #~ msgstr "A_4"
-
 #~ msgid "Appearance"
 #~ msgstr "Utseende"
-
 #~ msgid "C_olor"
 #~ msgstr "F_ärg"
-
 #~ msgid "Choose a file to print to"
 #~ msgstr "Välj en fil att skriva ut till"
-
 #~ msgid "E_xecutive"
 #~ msgstr "E_xecutive"
-
 #~ msgid "L_egal"
 #~ msgstr "L_egal"
-
 #~ msgid "Lan_dscape"
 #~ msgstr "_Liggande"
-
 #~ msgid "P_age title"
 #~ msgstr "_Sidtitel"
-
 #~ msgid "P_ortrait"
 #~ msgstr "St_ående"
-
 #~ msgid "P_rinter:"
 #~ msgstr "Sk_rivare:"
-
 #~ msgid "Page _numbers"
 #~ msgstr "Sidnu_mmer"
-
 #~ msgid "Page a_ddress"
 #~ msgstr "Sida_dress"
-
 #~ msgid "Print"
 #~ msgstr "Skriv ut"
-
 #~ msgid "_All pages"
 #~ msgstr "_Alla sidor"
-
 #~ msgid "_Bottom:"
 #~ msgstr "_Nederkant:"
-
 #~ msgid "_Date"
 #~ msgstr "_Datum"
-
 #~ msgid "_File:"
 #~ msgstr "_Fil:"
-
 #~ msgid "_Grayscale"
 #~ msgstr "_Gråskala"
-
 #~ msgid "_Left:"
 #~ msgstr "_Vänster:"
-
 #~ msgid "_Letter"
 #~ msgstr "_Letter"
-
 #~ msgid "_Right:"
 #~ msgstr "_Höger:"
-
 #~ msgid "_Selection"
 #~ msgstr "_Markering"
-
 #~ msgid "_Top:"
 #~ msgstr "_Överkant:"
-
 #~ msgid "_to:"
 #~ msgstr "_till:"
-
 #~ msgid "fr_om:"
 #~ msgstr "fr_ån:"
-
 #~ msgid "lpr"
 #~ msgstr "lpr"
-
 #~ msgid "Add Bookmark for Frame"
 #~ msgstr "Lägg till bokmärke för ram"
-
 #~ msgid "Copy"
 #~ msgstr "Kopiera"
-
 #~ msgid "Copy Email Address"
 #~ msgstr "Kopiera e-postadress"
-
 #~ msgid "Copy Image Address"
 #~ msgstr "Kopiera bildadress"
-
 #~ msgid "Copy Link Address"
 #~ msgstr "Kopiera länkadress"
-
 #~ msgid "Copy Page Address"
 #~ msgstr "Kopiera sidadress"
-
 #~ msgid "Copy the Selection"
 #~ msgstr "Kopiera markeringen"
-
 #~ msgid "Cut"
 #~ msgstr "Klipp ut"
-
 #~ msgid "Cut the Selection"
 #~ msgstr "Klipp ut markeringen"
-
 #~ msgid "Download Link"
 #~ msgstr "Hämta länk"
-
 #~ msgid "Last"
 #~ msgstr "Sista"
-
 #~ msgid "Next"
 #~ msgstr "Nästa"
-
 #~ msgid "Open Frame"
 #~ msgstr "Öppna ram"
-
 #~ msgid "Open Frame in New Window"
 #~ msgstr "Öppna ram i nytt fönster"
-
 #~ msgid "Open Image"
 #~ msgstr "Öppna bild"
-
 #~ msgid "Open Image in New Window"
 #~ msgstr "Öppna bild i nytt fönster"
-
 #~ msgid "Open in New Window"
 #~ msgstr "Öppna i nytt fönster"
-
 #~ msgid "Paste"
 #~ msgstr "Klistra in"
-
 #~ msgid "Paste the Clipboard"
 #~ msgstr "Klistra in från urklipp"
-
 #~ msgid "Previous"
 #~ msgstr "Föregående"
-
 #~ msgid "Save Background As..."
 #~ msgstr "Spara bakgrund som..."
-
 #~ msgid "Save Image As..."
 #~ msgstr "Spara bild som..."
-
 #~ msgid "Search for a String"
 #~ msgstr "Sök efter en sträng"
-
 #~ msgid "Select All"
 #~ msgstr "Markera allt"
-
 #~ msgid "Select the Entire Document"
 #~ msgstr "Markera hela dokumentet"
-
 #~ msgid "Use Image As Background"
 #~ msgstr "Använd bild som bakgrund"
-
 #~ msgid "_Edit"
 #~ msgstr "_Redigera"
+
