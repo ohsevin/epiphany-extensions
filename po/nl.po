@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-02-05 22:32+0100\n"
+"POT-Creation-Date: 2007-03-01 21:45+0100\n"
 "PO-Revision-Date: 2007-02-05 23:20+0100\n"
 "Last-Translator: Reinout van Schouwen <reinouts@gnome.org>\n"
 "Language-Team: nl <vertaling@vrijschrift.org>\n"
@@ -1085,10 +1085,6 @@ msgid "Creative Commons license viewer"
 msgstr "Creative Commons licentieweergave"
 
 #: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
-msgid "Jaime Frutos Morales <acidborg@gmail.com>"
-msgstr "Jaime Frutos Morales <acidborg@gmail.com>"
-
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:3
 msgid "Shows the Creative Commons license of the current website if available"
 msgstr ""
 "Toont de Creative Commons-licentie van de huidige webpagina indien "
@@ -1232,6 +1228,9 @@ msgstr "Geeft nieuwe inhoud aan in achtergrondtabbladen"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Tab-staat"
+
+#~ msgid "Jaime Frutos Morales <acidborg@gmail.com>"
+#~ msgstr "Jaime Frutos Morales <acidborg@gmail.com>"
 
 #~ msgid "Apply your modification"
 #~ msgstr "De wijziging toepassen"
