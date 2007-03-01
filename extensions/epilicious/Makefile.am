@@ -43,8 +43,12 @@ if GCONF_SCHEMAS_INSTALL
 	fi
 endif
 
-CLEANFILES  = epilicious.py
-DISTCLEANFILES =
+CLEANFILES = \
+	$(schema_DATA)		\
+	$(extensionini_DATA)	\
+	epilicious.py
+
+DISTCLEANFILES = $(CLEANFILES)
 
 EXTRA_DIST = \
 	$(glade_DATA)			\

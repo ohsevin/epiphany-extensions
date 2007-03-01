@@ -1,3 +1,9 @@
+2007-03-02  Christian Persch  <chpe@svn.gnome.org>
+
+	* extensions/epilicious/Makefile.am:
+
+	More distcheck fixes.
+
 2007-03-01  Christian Persch  <chpe@svn.gnome.org>
 
 	* extensions/epilicious/Makefile.am:
