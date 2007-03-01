@@ -12,7 +12,6 @@ extensions/adblock/ephy-adblock-extension.c
 extensions/auto-reload/ephy-auto-reload-extension.c
 extensions/cc-license-viewer/cc-license-viewer.py
 extensions/certificates/ephy-certificates-extension.c
-extensions/epilicious/epilicious.ephy-extension.in
 extensions/epilicious/epilicious-config.glade
 extensions/epilicious/epilicious-progress.glade
 extensions/epilicious/epilicious.py.in
@@ -50,6 +49,7 @@ extensions/smart-bookmarks/smart-bookmarks.schemas.in
 [type: gettext/ini]extensions/auto-reload/auto-reload.ephy-extension.in.in
 [type: gettext/ini]extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in
 [type: gettext/ini]extensions/certificates/certificates.ephy-extension.in.in
+[type: gettext/ini]extensions/epilicious/epilicious.ephy-extension.in
 [type: gettext/ini]extensions/error-viewer/error-viewer.ephy-extension.in.in
 [type: gettext/ini]extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in
 [type: gettext/ini]extensions/favicon/favicon.ephy-extension.in

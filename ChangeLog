@@ -1,3 +1,10 @@
+2007-03-01  Christian Persch  <chpe@svn.gnome.org>
+
+	* extensions/epilicious/Makefile.am:
+	* po/POTFILES.in:
+
+	Try to fix distcheck.
+
 2007-02-28  Christian Persch  <chpe@svn.gnome.org>
 
 	* extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in:
