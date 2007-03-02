@@ -70,6 +70,10 @@ void		 ad_blocker_blocked_uri		(AdBlocker *blocker);
 
 void		 ad_blocker_reset		(AdBlocker *blocker);
 
+gboolean	 ad_blocker_should_block	(AdBlocker *blocker);
+
+void		 ad_blocker_set_noblock		(AdBlocker *blocker);
+
 G_END_DECLS
 
 #endif /* AD_BLOCKER_H */

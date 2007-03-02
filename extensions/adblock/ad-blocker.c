@@ -29,9 +29,17 @@
 static void ad_blocker_class_init (AdBlockerClass *klass);
 static void ad_blocker_init (AdBlocker *dialog);
 
+typedef enum {
+	ABNBS_NONE,
+	ABNBS_NEXT,
+	ABNBS_NOW,
+} AdBlockerNoblockState;
+
+
 struct _AdBlockerPrivate
 {
 	int num_blocked;
+	AdBlockerNoblockState noblock_state;
 };
 
 enum
@@ -93,6 +101,17 @@ ad_blocker_reset (AdBlocker *blocker)
 {
 	blocker->priv->num_blocked = 0;
 
+	switch (blocker->priv->noblock_state) {
+	case ABNBS_NONE:
+		break;
+	case ABNBS_NEXT:
+		blocker->priv->noblock_state = ABNBS_NOW;
+		break;
+	case ABNBS_NOW:
+		blocker->priv->noblock_state = ABNBS_NONE;
+		break;
+	}
+
 	g_object_notify (G_OBJECT (blocker), "num-blocked");
 }
 
@@ -132,6 +151,7 @@ ad_blocker_init (AdBlocker *blocker)
 	blocker->priv = AD_BLOCKER_GET_PRIVATE (blocker);
 
 	blocker->priv->num_blocked = 0;
+	blocker->priv->noblock_state = ABNBS_NONE;
 }
 
 static void
@@ -163,4 +183,16 @@ ad_blocker_class_init (AdBlockerClass *klass)
 				   0, G_PARAM_READABLE));
 
 	g_type_class_add_private (object_class, sizeof (AdBlockerPrivate));
+}
+
+gboolean
+ad_blocker_should_block (AdBlocker *blocker)
+{
+	return blocker->priv->noblock_state != ABNBS_NOW;
+}
+
+void
+ad_blocker_set_noblock (AdBlocker *blocker)
+{
+	blocker->priv->noblock_state = ABNBS_NEXT;
 }

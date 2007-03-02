@@ -1,3 +1,15 @@
+2007-03-03  Benjamin Berg  <benjamin@sipsolutions.net>
+
+	* extensions/adblock/ad-blocker.c:
+	* extensions/adblock/ad-blocker.h:
+	* extensions/adblock/ephy-adblock-extension.c:
+
+	Reload the page with ads on mouse click. Fixes Bug #348331.
+
+	* extensions/page-info/page-info-dialog.c:
+
+	Some modifications needed due to the API change for above fix.
+
 2007-03-02  Christian Persch  <chpe@svn.gnome.org>
 
 	* extensions/epilicious/Makefile.am:

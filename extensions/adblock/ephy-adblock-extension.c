@@ -21,13 +21,13 @@
 
 #include "config.h"
 
+#include <epiphany/ephy-tab.h>
+#include <epiphany/ephy-statusbar.h>
+#include <epiphany/ephy-window.h>
 #include <epiphany/ephy-adblock.h>
 #include <epiphany/ephy-adblock-manager.h>
 #include <epiphany/ephy-embed-shell.h>
 #include <epiphany/ephy-extension.h>
-#include <epiphany/ephy-tab.h>
-#include <epiphany/ephy-statusbar.h>
-#include <epiphany/ephy-window.h>
 
 #include "ephy-adblock-extension.h"
 #include "ephy-debug.h"
@@ -80,7 +80,7 @@ static void ephy_adblock_extension_class_init	(EphyAdblockExtensionClass *klass)
 static void ephy_adblock_extension_iface_init	(EphyExtensionIface *iface);
 static void ephy_adblock_adblock_iface_init	(EphyAdBlockIface *iface);
 static void ephy_adblock_extension_init		(EphyAdblockExtension *extension);
-static AdBlocker * ensure_adblocker    		(EphyWindow *window, EphyEmbed *embed);
+static AdBlocker * ensure_adblocker    		(EphyAdblockExtension *extension, EphyEmbed *embed);
 
 static GObjectClass *parent_class = NULL;
 
@@ -186,17 +186,46 @@ ephy_adblock_extension_finalize (GObject *object)
 
 static gboolean
 ephy_adblock_impl_should_load (EphyAdBlock *blocker, 
+			       EphyEmbed *embed,
 			       const char *url, 
 			       AdUriCheckType type)
 {
 	EphyAdblockExtension *self;
+	AdBlocker *adblocker;
 
 	LOG ("ephy_adblock_impl_should_load checking %s", url);
 
 	self = EPHY_ADBLOCK_EXTENSION (blocker);
 	g_return_val_if_fail (self != NULL, TRUE);
 
-	return !ad_uri_tester_test_uri (self->priv->tester, url, type);
+	adblocker = ensure_adblocker (self, embed);
+
+	if (ad_blocker_should_block (adblocker))
+		return !ad_uri_tester_test_uri (self->priv->tester, url, type);
+	else
+		return TRUE;
+}
+
+static gboolean
+statusbar_icon_clicked_cb (GtkWidget *widget,
+			   GdkEventButton *event,
+			   EphyWindow *window)
+{
+	EphyAdblockExtension *ext;
+	AdBlocker *blocker;
+	EphyEmbed *embed = ephy_window_get_active_embed (window);
+
+	ext = EPHY_ADBLOCK_EXTENSION (g_object_get_data (G_OBJECT (window),
+							 EXTENSION_KEY));
+
+	blocker = ensure_adblocker (ext, embed);
+	g_return_val_if_fail (blocker != NULL, FALSE);
+
+	ad_blocker_set_noblock (blocker);
+
+	ephy_embed_reload (embed, FALSE);
+
+	return FALSE;
 }
 
 static void
@@ -246,14 +275,19 @@ ephy_adblock_statusbar_icon_clicked_cb (GtkWidget *widget,
 {
 	if (event->button == 1)
 	{
-		GtkAction *action;
+		EphyAdblockExtension *ext;
+		AdBlocker *blocker;
+		EphyEmbed *embed = ephy_window_get_active_embed (window);
 
-		action = gtk_ui_manager_get_action (
-				GTK_UI_MANAGER (ephy_window_get_ui_manager (window)),
-					        "/menubar/ViewMenu/PageInfo");
-		g_return_val_if_fail (action != NULL, TRUE);
+		ext = EPHY_ADBLOCK_EXTENSION (g_object_get_data (G_OBJECT (window),
+								 EXTENSION_KEY));
 
-		gtk_action_activate (action);
+		blocker = ensure_adblocker (ext, embed);
+		g_return_val_if_fail (blocker != NULL, FALSE);
+
+		ad_blocker_set_noblock (blocker);
+
+		ephy_embed_reload (embed, FALSE);
 
 		return TRUE;
 	}
@@ -269,11 +303,16 @@ update_statusbar (EphyWindow *window)
 	GObject *statusbar;
 	GtkWidget *evbox;
 	int num_blocked;
+	EphyAdblockExtension *ext;
 
 	embed = ephy_window_get_active_embed (window);
 	g_return_if_fail (embed != NULL);
 
-	blocker = ensure_adblocker (window, embed);
+	ext = EPHY_ADBLOCK_EXTENSION (g_object_get_data (G_OBJECT (window),
+							 EXTENSION_KEY));
+	g_return_if_fail (ext != NULL);
+
+	blocker = ensure_adblocker (ext, embed);
 	g_return_if_fail (blocker != NULL);
 
 	statusbar = G_OBJECT (ephy_window_get_statusbar (window));
@@ -531,7 +570,7 @@ num_blocked_cb (AdBlocker *blocker,
 }
 
 static AdBlocker *
-ensure_adblocker (EphyWindow *window,
+ensure_adblocker (EphyAdblockExtension *ext,
 		  EphyEmbed *embed)
 {
 	AdBlocker *blocker;
@@ -540,10 +579,6 @@ ensure_adblocker (EphyWindow *window,
 	
 	if (blocker == NULL)
 	{
-		EphyAdblockExtension *ext;
-	
-		ext = EPHY_ADBLOCK_EXTENSION (g_object_get_data (G_OBJECT (window), 
-								 EXTENSION_KEY));
 		g_return_val_if_fail (ext != NULL, NULL);
 
 		blocker = ad_blocker_new ();
@@ -572,7 +607,7 @@ impl_attach_tab (EphyExtension *ext,
 	
 	embed = ephy_tab_get_embed (tab);
 
-	blocker = ensure_adblocker (window, embed);
+	blocker = ensure_adblocker (EPHY_ADBLOCK_EXTENSION (ext), embed);
 	g_return_if_fail (blocker != NULL);
 
 	g_signal_connect (blocker, "notify::num-blocked",
