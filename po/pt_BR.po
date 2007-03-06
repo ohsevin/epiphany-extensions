@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-02-28 02:52-0300\n"
-"PO-Revision-Date: 2007-02-28 02:56-0300\n"
+"POT-Creation-Date: 2007-03-06 02:00-0300\n"
+"PO-Revision-Date: 2007-03-06 01:58-0300\n"
 "Last-Translator: Leonardo Ferreira Fontenelle <leo.fontenelle@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
@@ -168,7 +168,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>Atualizar regras do site original</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:237
+#: ../extensions/adblock/ephy-adblock-extension.c:266
 msgid "Adblock editor"
 msgstr "Editor do Adblock"
 
@@ -188,11 +188,11 @@ msgstr "Filterset.G"
 msgid "Whitelist"
 msgstr "Lista Branca"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:238
+#: ../extensions/adblock/ephy-adblock-extension.c:267
 msgid "Edit Adblock"
 msgstr "Edita o Adblock"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:295
+#: ../extensions/adblock/ephy-adblock-extension.c:334
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -572,7 +572,7 @@ msgstr "Limpar cache"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
 msgid "Live Headers"
-msgstr ""
+msgstr "Cabeçalhos Dinâmicos"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
 msgid "Remove headers"
@@ -668,81 +668,81 @@ msgstr "Miniaplicativo"
 msgid "Icon"
 msgstr "Ícone"
 
-#: ../extensions/page-info/page-info-dialog.c:1124
+#: ../extensions/page-info/page-info-dialog.c:1130
 msgid "_Open"
 msgstr "_Abrir"
 
-#: ../extensions/page-info/page-info-dialog.c:1130
-#: ../extensions/page-info/page-info-dialog.c:1573
+#: ../extensions/page-info/page-info-dialog.c:1136
+#: ../extensions/page-info/page-info-dialog.c:1581
 msgid "_Copy Link Address"
 msgstr "_Copiar Endereço do Link"
 
-#: ../extensions/page-info/page-info-dialog.c:1136
+#: ../extensions/page-info/page-info-dialog.c:1142
 msgid "_Use as Background"
 msgstr "_Usar como Plano de Fundo"
 
-#: ../extensions/page-info/page-info-dialog.c:1142
-#: ../extensions/page-info/page-info-dialog.c:1579
+#: ../extensions/page-info/page-info-dialog.c:1148
+#: ../extensions/page-info/page-info-dialog.c:1587
 msgid "_Save As..."
 msgstr "_Salvar Como..."
 
-#: ../extensions/page-info/page-info-dialog.c:1374
-#: ../extensions/page-info/page-info-dialog.c:1689
+#: ../extensions/page-info/page-info-dialog.c:1380
+#: ../extensions/page-info/page-info-dialog.c:1701
 msgid "Blocked"
 msgstr "Bloqueado"
 
-#: ../extensions/page-info/page-info-dialog.c:1390
-#: ../extensions/page-info/page-info-dialog.c:1705
+#: ../extensions/page-info/page-info-dialog.c:1396
+#: ../extensions/page-info/page-info-dialog.c:1717
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1403
+#: ../extensions/page-info/page-info-dialog.c:1409
 msgid "Type"
 msgstr "Tipo"
 
-#: ../extensions/page-info/page-info-dialog.c:1415
+#: ../extensions/page-info/page-info-dialog.c:1421
 msgid "Alt Text"
 msgstr "Texto Alternativo (alt)"
 
-#: ../extensions/page-info/page-info-dialog.c:1427
-#: ../extensions/page-info/page-info-dialog.c:1718
+#: ../extensions/page-info/page-info-dialog.c:1433
+#: ../extensions/page-info/page-info-dialog.c:1730
 msgid "Title"
 msgstr "Título"
 
-#: ../extensions/page-info/page-info-dialog.c:1439
+#: ../extensions/page-info/page-info-dialog.c:1445
 msgid "Width"
 msgstr "Largura"
 
-#: ../extensions/page-info/page-info-dialog.c:1451
+#: ../extensions/page-info/page-info-dialog.c:1457
 msgid "Height"
 msgstr "Altura"
 
-#: ../extensions/page-info/page-info-dialog.c:1730
+#: ../extensions/page-info/page-info-dialog.c:1742
 msgid "Relation"
 msgstr "Relação"
 
-#: ../extensions/page-info/page-info-dialog.c:1877
-#: ../extensions/page-info/page-info-dialog.c:2018
+#: ../extensions/page-info/page-info-dialog.c:1891
+#: ../extensions/page-info/page-info-dialog.c:2032
 msgid "Name"
 msgstr "Nome"
 
-#: ../extensions/page-info/page-info-dialog.c:1889
+#: ../extensions/page-info/page-info-dialog.c:1903
 msgid "Method"
 msgstr "Método"
 
-#: ../extensions/page-info/page-info-dialog.c:1903
+#: ../extensions/page-info/page-info-dialog.c:1917
 msgid "Action"
 msgstr "Ação"
 
-#: ../extensions/page-info/page-info-dialog.c:1984
+#: ../extensions/page-info/page-info-dialog.c:1998
 msgid "_Copy"
 msgstr "_Copiar"
 
-#: ../extensions/page-info/page-info-dialog.c:2030
+#: ../extensions/page-info/page-info-dialog.c:2044
 msgid "Content"
 msgstr "Conteúdo"
 
-#: ../extensions/page-info/page-info-dialog.c:2131
+#: ../extensions/page-info/page-info-dialog.c:2145
 msgid "Page Metadata"
 msgstr "Metadados da Página"
 
@@ -1086,10 +1086,6 @@ msgid "Creative Commons license viewer"
 msgstr "Visualizador de licença do Creative Commons"
 
 #: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
-msgid "Jaime Frutos Morales <acidborg@gmail.com>"
-msgstr "Jaime Frutos Morales <acidborg@gmail.com>"
-
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:3
 msgid "Shows the Creative Commons license of the current website if available"
 msgstr "Mostra a licença Creative Commons do site da web, se disponível"
 
@@ -1149,7 +1145,7 @@ msgstr "Fornece acesso ao Console Java-Plugin"
 
 #: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
 msgid "Live HTTP headers"
-msgstr ""
+msgstr "Cabeçalhos HTTP dinâmicos"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
@@ -1229,6 +1225,9 @@ msgstr "Indica conteúdo novo em abas em segundo plano"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Estados de Aba"
+
+#~ msgid "Jaime Frutos Morales <acidborg@gmail.com>"
+#~ msgstr "Jaime Frutos Morales <acidborg@gmail.com>"
 
 #~ msgid "_Actions"
 #~ msgstr "_Ações"
