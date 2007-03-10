@@ -1,23 +1,23 @@
 # Japanese Epiphany Plugins translation
-# Copyright (C) 2003-2006 Christian Persch 
+# Copyright (C) 2003-2007 Christian Persch 
 # This file is distributed under the same license as the Epiphany Plugins package.
 # Christian Persch <chpe+ephyplugins@stud.uni-saarland.de>, 2003.
 # Yukhiro Nakai <nakai@gnome.gr.jp>, 2004.
-# Takeshi AIHANA <aihana@gnome.gr.jp>, 2004-2006.
+# Takeshi AIHANA <takeshi.aihana@gmail.com>, 2004-2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2006-10-08 11:11+0900\n"
-"PO-Revision-Date: 2006-08-27 23:04+0900\n"
+"POT-Creation-Date: 2007-03-10 23:17+0900\n"
+"PO-Revision-Date: 2007-03-10 23:17+0900\n"
 "Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../extensions/actions/action-properties.glade.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
@@ -76,6 +76,7 @@ msgid "_Images"
 msgstr "画像(_I)"
 
 #: ../extensions/actions/action-properties.glade.h:11
+#: ../extensions/epilicious/epilicious-config.glade.h:5
 msgid "_Name:"
 msgstr "名前(_N):"
 
@@ -89,8 +90,8 @@ msgid "Actions"
 msgstr "アクション"
 
 #: ../extensions/actions/ephy-actions-extension.c:112
-msgid "_Actions"
-msgstr "アクション(_A)"
+msgid "Actio_ns"
+msgstr "アクション(_N)"
 
 #: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Customize actions"
@@ -112,8 +113,8 @@ msgstr "アクションが選択されていません"
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
-msgstr[0] "%i個のアクションを選択しました"
-msgstr[1] "%i個のアクションを選択しました"
+msgstr[0] " %i個のアクションを選択しました"
+msgstr[1] " %i個のアクションを選択しました"
 
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
@@ -128,6 +129,73 @@ msgstr "\"%s\" のプロパティ"
 msgid "Action Properties"
 msgstr "アクションのプロパティ"
 
+#: ../extensions/adblock/adblock-ui.c:279
+msgid ""
+"This list is Copyright © its original author(G). It is relicensed under the "
+"GPL with permission.\n"
+"The original list, Filterset.G, can be found at http://www.pierceive.com/"
+"filtersetg/.\n"
+"This version has been modified from its original. The changes have not been "
+"approved by the original author;\n"
+"direct any problems to Bugzilla and not to the original author (G).\n"
+msgstr ""
+"This list is Copyright © its original author(G). It is relicensed under the "
+"GPL with permission.\n"
+"The original list, Filterset.G, can be found at http://www.pierceive.com/"
+"filtersetg/.\n"
+"This version has been modified from its original. The changes have not been "
+"approved by the original author;\n"
+"direct any problems to Bugzilla and not to the original author (G).\n"
+"(訳注: この条文は翻訳せずに原文のままにする)\n"
+
+#: ../extensions/adblock/adblock-ui.c:496
+msgid "Pattern"
+msgstr "パターン"
+
+#: ../extensions/adblock/adblock.glade.h:1
+msgid "<b>Courtesy of Graham Pierce</b>"
+msgstr "<b>Courtesy of Graham Pierce</b>"
+
+#: ../extensions/adblock/adblock.glade.h:2
+msgid "<b>New rule</b>"
+msgstr "<b>新しいルール</b>"
+
+#: ../extensions/adblock/adblock.glade.h:3
+msgid "<b>Update rules from original site</b>"
+msgstr "<b>ルールの更新</b>"
+
+#: ../extensions/adblock/adblock.glade.h:4
+#: ../extensions/adblock/ephy-adblock-extension.c:266
+msgid "Adblock editor"
+msgstr "Adblock エディタ"
+
+#: ../extensions/adblock/adblock.glade.h:5
+msgid "Add a new rule"
+msgstr "新しいルールを追加します"
+
+#: ../extensions/adblock/adblock.glade.h:6
+msgid "Blacklist"
+msgstr "ブロックリスト"
+
+#: ../extensions/adblock/adblock.glade.h:7
+msgid "Filterset.G"
+msgstr "Filterset.G"
+
+#: ../extensions/adblock/adblock.glade.h:8
+msgid "Whitelist"
+msgstr "ホワイトリスト"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:267
+msgid "Edit Adblock"
+msgstr "Adblock の編集"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:334
+#, c-format
+msgid "%d hidden advertisement"
+msgid_plural "%d hidden advertisements"
+msgstr[0] "表示されない広告は %d個"
+msgstr[1] "表示されない広告は %d個"
+
 #: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
 msgid "_Auto Reload"
 msgstr "自動読み込み(_A)"
@@ -135,6 +203,10 @@ msgstr "自動読み込み(_A)"
 #: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
 msgid "Reload the page periodically"
 msgstr "定期的にページを読み込みます"
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.py:371
+msgid "View Creative Commons license"
+msgstr "クリエイティブ・コモンズ・ライセンスを表示します"
 
 #: ../extensions/certificates/ephy-certificates-extension.c:177
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
@@ -164,6 +236,112 @@ msgstr "セキュリティ・デバイスの管理(_D)"
 #: ../extensions/certificates/ephy-certificates-extension.c:228
 msgid "Manage your security devices"
 msgstr "お使いのセキュリティ・デバイスを管理します"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:1
+msgid "Action for tagged bookmarks:"
+msgstr "タグ付きブックマークの扱い方:"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:2
+msgid "Epilicious Configuration"
+msgstr "Epilicious の設定"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:3
+msgid "_Exclude"
+msgstr "除外する(_E)"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:4
+msgid "_Include"
+msgstr "含める(_I)"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:6
+msgid "_Password:"
+msgstr "パスワード(_P):"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:7
+msgid "_Tag:"
+msgstr "タグ(_T):"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:1
+msgid "<b>Synchronizing with del.icio.us</b>"
+msgstr "<b>del.icio.us と同期中</b>"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:2
+msgid "Adding new bookmarks and synching topics"
+msgstr "新しいブックマークの追加とトピックの同期中"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:3
+msgid "Removing deleted bookmarks"
+msgstr "削除済みのブックマークの抹消中"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:4
+msgid "Retrieving bookmarks from del.icio.us"
+msgstr "del.icio.us からブックマークの取得中"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:5
+msgid "Retrieving bookmarks from epiphany"
+msgstr "epiphany からブックマークの取得中"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:6
+msgid "Retrieving previous synch point"
+msgstr "以前同期したサイトの取得中"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:7
+msgid "Saving new synch point"
+msgstr "新しい同期サイトの保存中"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:8
+msgid "Synchronizing..."
+msgstr "同期中..."
+
+#. # Epiphany integration ##
+#: ../extensions/epilicious/epilicious.py.in:201
+#: ../extensions/epilicious/epilicious.py.in:204
+msgid "Epilicious Synchronize"
+msgstr "Epilicious の同期"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:1
+msgid "Bookmarks with this topic will be synchronized to del.icio.us."
+msgstr "このトピックを持つブックマークを del.icio.us と同期します。"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:2
+msgid ""
+"Controls the function of the topic. If this is unset then all bookmarks with "
+"the topic will be synched with del.icio.us. If this is set then all "
+"bookmarks without the topic will be synched with del.icio.us."
+msgstr ""
+"トピックの機能を制御します。これをセットしない場合は、トピックを持つ全ての"
+"ブックマークが del.icio.us と同期されます。これをセットした場合は、トピックを"
+"持たない全てのブックマークが del.icio.us と同期されます。"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:3
+msgid "Exclude topic"
+msgstr "除外するトピック"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:4
+msgid "Shared topic"
+msgstr "共有するトピック"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:5
+msgid ""
+"The del.icio.us password that epilicious will use for synchronizing "
+"bookmarks."
+msgstr ""
+"Epilicious がブックマークを同期する際に使用する del.icio.us のパスワードです"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:6
+msgid ""
+"The del.icio.us username that epilicious will use for synchronizing "
+"bookmarks."
+msgstr ""
+"Epilicious がブックマークを同期する際に使用する del.icio.us のユーザ名です"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:7
+msgid "del.icio.us password"
+msgstr "del.icio.us のパスワード"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:8
+msgid "del.icio.us username"
+msgstr "del.icio.us のユーザ名"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
@@ -223,8 +401,8 @@ msgstr ""
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
-msgstr[0] "%d個の不正なリンクが見つかりました"
-msgstr[1] "%d個の不正なリンクが見つかりました"
+msgstr[0] " %d個の不正なリンクが見つかりました"
+msgstr[1] " %d個の不正なリンクが見つかりました"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
@@ -255,8 +433,8 @@ msgstr ""
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
-msgstr[0] "%d個のエラーが見つかりました"
-msgstr[1] "%d個のエラーが見つかりました"
+msgstr[0] " %d個のエラーが見つかりました"
+msgstr[1] " %d個のエラーが見つかりました"
 
 #: ../extensions/error-viewer/sgml-validator.c:169
 #, c-format
@@ -312,11 +490,11 @@ msgstr ""
 "%s の中に HTML エラー:\n"
 "正しい DOCTYPE が指定されていません。"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:356
 msgid "Enabled"
 msgstr "有効"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
 #: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "説明"
@@ -368,6 +546,34 @@ msgstr "Java コンソール(_J)"
 msgid "Show Java Console"
 msgstr "Java コンソールを表示します"
 
+#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:102
+msgid "_HTTP Headers"
+msgstr "HTTP ヘッダ(_H)"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:1
+msgid "<b>Request</b>"
+msgstr "<b>要求</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:2
+msgid "<b>Response</b>"
+msgstr "<b>応答</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:3
+msgid "<b>URLs</b>"
+msgstr "<b>URL の一覧</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
+msgid "Clear cache"
+msgstr "キャッシュのクリア"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
+msgid "Live Headers"
+msgstr "ライブ・ヘッダ"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
+msgid "Remove headers"
+msgstr "ヘッダの削除"
+
 #: ../extensions/page-info/ephy-page-info-extension.c:67
 msgid "Pa_ge Information"
 msgstr "ページ情報(_G)"
@@ -376,154 +582,163 @@ msgstr "ページ情報(_G)"
 msgid "Display page information in a dialog"
 msgstr "ページ情報をダイアログに表示します"
 
-#: ../extensions/page-info/page-info-dialog.c:726
+#: ../extensions/page-info/page-info-dialog.c:730
 msgid "Save As..."
 msgstr "別名で保存..."
 
-#: ../extensions/page-info/page-info-dialog.c:743
+#: ../extensions/page-info/page-info-dialog.c:747
 msgid "Select a directory"
 msgstr "フォルダの選択"
 
-#: ../extensions/page-info/page-info-dialog.c:792
+#: ../extensions/page-info/page-info-dialog.c:796
 msgid "Unknown type"
 msgstr "種類を特定できません"
 
-#: ../extensions/page-info/page-info-dialog.c:797
+#: ../extensions/page-info/page-info-dialog.c:801
 msgid "Full standards compliance"
 msgstr "完全に標準互換"
 
-#: ../extensions/page-info/page-info-dialog.c:800
+#: ../extensions/page-info/page-info-dialog.c:804
 msgid "Almost standards compliance"
 msgstr "ほぼ標準互換"
 
-#: ../extensions/page-info/page-info-dialog.c:803
+#: ../extensions/page-info/page-info-dialog.c:807
 msgid "Compatibility"
 msgstr "互換性"
 
-#: ../extensions/page-info/page-info-dialog.c:807
+#: ../extensions/page-info/page-info-dialog.c:811
 msgid "Undetermined"
 msgstr "未確認"
 
-#: ../extensions/page-info/page-info-dialog.c:816
+#: ../extensions/page-info/page-info-dialog.c:820
 msgid "Not cached"
 msgstr "キャッシュされていない"
 
-#: ../extensions/page-info/page-info-dialog.c:819
+#: ../extensions/page-info/page-info-dialog.c:823
 msgid "Disk cache"
 msgstr "ディスクへキャッシュ済"
 
-#: ../extensions/page-info/page-info-dialog.c:822
+#: ../extensions/page-info/page-info-dialog.c:826
 msgid "Memory cache"
 msgstr "メモリへキャッシュ済"
 
-#: ../extensions/page-info/page-info-dialog.c:825
+#: ../extensions/page-info/page-info-dialog.c:829
 msgid "Unknown cache"
 msgstr "キャッシュを特定できません"
 
-#: ../extensions/page-info/page-info-dialog.c:841
-#: ../extensions/page-info/page-info-dialog.c:952
+#: ../extensions/page-info/page-info-dialog.c:845
+#: ../extensions/page-info/page-info-dialog.c:961
 msgid "Unknown"
 msgstr "不明"
 
-#: ../extensions/page-info/page-info-dialog.c:846
+#: ../extensions/page-info/page-info-dialog.c:850
 msgid "No referrer"
 msgstr "照会者なし"
 
-#: ../extensions/page-info/page-info-dialog.c:860
-#: ../extensions/page-info/page-info-dialog.c:876
+#: ../extensions/page-info/page-info-dialog.c:864
+#: ../extensions/page-info/page-info-dialog.c:880
 msgid "Not specified"
 msgstr "指定なし"
 
-#: ../extensions/page-info/page-info-dialog.c:937
+#: ../extensions/page-info/page-info-dialog.c:943
 msgid "Image"
 msgstr "画像"
 
-#: ../extensions/page-info/page-info-dialog.c:940
+#: ../extensions/page-info/page-info-dialog.c:946
+msgid "Background image"
+msgstr "背景の画像"
+
+#: ../extensions/page-info/page-info-dialog.c:949
 msgid "Embed"
 msgstr "埋め込み"
 
-#: ../extensions/page-info/page-info-dialog.c:943
+#: ../extensions/page-info/page-info-dialog.c:952
 msgid "Object"
 msgstr "オブジェクト"
 
-#: ../extensions/page-info/page-info-dialog.c:946
+#: ../extensions/page-info/page-info-dialog.c:955
 msgid "Applet"
 msgstr "アプレット"
 
-#: ../extensions/page-info/page-info-dialog.c:949
+#: ../extensions/page-info/page-info-dialog.c:958
 msgid "Icon"
 msgstr "アイコン"
 
-#: ../extensions/page-info/page-info-dialog.c:1054
+#: ../extensions/page-info/page-info-dialog.c:1130
 msgid "_Open"
 msgstr "開く(_O)"
 
-#: ../extensions/page-info/page-info-dialog.c:1060
-#: ../extensions/page-info/page-info-dialog.c:1420
+#: ../extensions/page-info/page-info-dialog.c:1136
+#: ../extensions/page-info/page-info-dialog.c:1581
 msgid "_Copy Link Address"
 msgstr "リンク先のコピー(_C)"
 
-#: ../extensions/page-info/page-info-dialog.c:1066
+#: ../extensions/page-info/page-info-dialog.c:1142
 msgid "_Use as Background"
 msgstr "背景として使用(_U)"
 
-#: ../extensions/page-info/page-info-dialog.c:1072
-#: ../extensions/page-info/page-info-dialog.c:1426
+#: ../extensions/page-info/page-info-dialog.c:1148
+#: ../extensions/page-info/page-info-dialog.c:1587
 msgid "_Save As..."
 msgstr "別名で保存(_S)..."
 
-#: ../extensions/page-info/page-info-dialog.c:1256
-#: ../extensions/page-info/page-info-dialog.c:1499
+#: ../extensions/page-info/page-info-dialog.c:1380
+#: ../extensions/page-info/page-info-dialog.c:1701
+msgid "Blocked"
+msgstr "ブロック済"
+
+#: ../extensions/page-info/page-info-dialog.c:1396
+#: ../extensions/page-info/page-info-dialog.c:1717
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1269
+#: ../extensions/page-info/page-info-dialog.c:1409
 msgid "Type"
 msgstr "種類"
 
-#: ../extensions/page-info/page-info-dialog.c:1281
+#: ../extensions/page-info/page-info-dialog.c:1421
 msgid "Alt Text"
 msgstr "代替文字列"
 
-#: ../extensions/page-info/page-info-dialog.c:1293
-#: ../extensions/page-info/page-info-dialog.c:1512
+#: ../extensions/page-info/page-info-dialog.c:1433
+#: ../extensions/page-info/page-info-dialog.c:1730
 msgid "Title"
 msgstr "タイトル"
 
-#: ../extensions/page-info/page-info-dialog.c:1305
+#: ../extensions/page-info/page-info-dialog.c:1445
 msgid "Width"
 msgstr "幅"
 
-#: ../extensions/page-info/page-info-dialog.c:1317
+#: ../extensions/page-info/page-info-dialog.c:1457
 msgid "Height"
 msgstr "高さ"
 
-#: ../extensions/page-info/page-info-dialog.c:1524
+#: ../extensions/page-info/page-info-dialog.c:1742
 msgid "Relation"
 msgstr "関係"
 
-#: ../extensions/page-info/page-info-dialog.c:1654
-#: ../extensions/page-info/page-info-dialog.c:1793
+#: ../extensions/page-info/page-info-dialog.c:1891
+#: ../extensions/page-info/page-info-dialog.c:2032
 msgid "Name"
 msgstr "名前"
 
-#: ../extensions/page-info/page-info-dialog.c:1666
+#: ../extensions/page-info/page-info-dialog.c:1903
 msgid "Method"
 msgstr "メソッド"
 
-#: ../extensions/page-info/page-info-dialog.c:1680
+#: ../extensions/page-info/page-info-dialog.c:1917
 msgid "Action"
 msgstr "アクション"
 
-#: ../extensions/page-info/page-info-dialog.c:1759
+#: ../extensions/page-info/page-info-dialog.c:1998
 msgid "_Copy"
 msgstr "コピー(_C)"
 
-#: ../extensions/page-info/page-info-dialog.c:1805
+#: ../extensions/page-info/page-info-dialog.c:2044
 msgid "Content"
 msgstr "コンテンツ"
 
-#: ../extensions/page-info/page-info-dialog.c:1904
+#: ../extensions/page-info/page-info-dialog.c:2145
 msgid "Page Metadata"
 msgstr "ページのメタデータ"
 
@@ -698,24 +913,24 @@ msgstr "サイトの権限(_P)"
 msgid "Manage web site permissions"
 msgstr "ウェブ・サイトの権限を管理します"
 
-#: ../extensions/rss/ephy-rss-extension.c:98
+#: ../extensions/rss/ephy-rss-extension.c:90
 msgid "News Feeds Subscription"
 msgstr "ニュース配信元の購読"
 
-#: ../extensions/rss/ephy-rss-extension.c:100
+#: ../extensions/rss/ephy-rss-extension.c:92
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr ""
 "このウェブサイトのニュース配信元をお気に入りのニュース・リーダで購読します"
 
-#: ../extensions/rss/ephy-rss-extension.c:105
+#: ../extensions/rss/ephy-rss-extension.c:97
 msgid "_Subscribe to this feed"
 msgstr "この配信元を購読する(_S)"
 
-#: ../extensions/rss/ephy-rss-extension.c:107
+#: ../extensions/rss/ephy-rss-extension.c:99
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "この配信元をお気に入りのニュース・リーダで購読します"
 
-#: ../extensions/rss/ephy-rss-extension.c:396
+#: ../extensions/rss/ephy-rss-extension.c:382
 msgid "Subscribe to site's news feed"
 msgstr "このサイトのニュース配信元を購読します"
 
@@ -740,7 +955,8 @@ msgid "<b>Select Interesting Feeds</b>"
 msgstr "<b>お気に入りの配信元の選択</b>"
 
 #: ../extensions/rss/rss-ui.glade.h:2
-msgid "News Feed Subcription"
+#: ../extensions/rss/rss.ephy-extension.in.in.h:1
+msgid "News Feed Subscription"
 msgstr "ニュース配信元の購読"
 
 #: ../extensions/rss/rss-ui.glade.h:3
@@ -828,6 +1044,16 @@ msgstr "検索(_L)"
 msgid "_GNOME Dictionary"
 msgstr "GNOME 辞書(_G)"
 
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
+msgid "Open search result in new tab"
+msgstr "検索結果を新しいタブの中に開く"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
+msgid "Open search result in new tab if true, in new window if false"
+msgstr ""
+"ON にすると検索結果を新しいタブの中に表示し、OFF にすると新しいウィンドウの中"
+"に表示します"
+
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
 msgstr "コンテキスト・メニューから任意のコマンドを実行します"
@@ -848,6 +1074,16 @@ msgstr "タブの自動読み込み"
 msgid "Reload a tab periodically"
 msgstr "定期的にタブを読み込みます"
 
+#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
+msgid "Creative Commons license viewer"
+msgstr "クリエイティブ・コモンズ・ライセンス・ビューア"
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
+msgid "Shows the Creative Commons license of the current website if available"
+msgstr ""
+"可能ならば、現在表示しているウェブサイトのクリエイティブ・コモンズ・ライセン"
+"スを表示します"
+
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "ページの証明書を表示したり管理します"
@@ -857,8 +1093,8 @@ msgid "Error viewer"
 msgstr "エラー・ビューア"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
-msgid "View error in web pages, validate web pages and check links"
-msgstr "ウエブ・ページのエラーを表示したり、リンクなどの妥当性を確認します"
+msgid "Validate web pages and check links"
+msgstr "ウエブ・ページやリンクの妥当性を確認します"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
 msgid "Activate and deactivate extensions"
@@ -903,6 +1139,10 @@ msgstr "Java コンソール"
 msgid "Provide access to the Java-Plugin Console"
 msgstr "Java プラグイン・コンソールを提供します"
 
+#: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
+msgid "Live HTTP headers"
+msgstr "ライブ HTTP ヘッダ"
+
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
 msgstr "ウェブ・ページに関連する情報やリンク、メディアの詳細を表示します"
@@ -918,10 +1158,6 @@ msgstr "サイトの権限を編集します"
 #: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
 msgid "Permissions"
 msgstr "サイトの権限"
-
-#: ../extensions/rss/rss.ephy-extension.in.in.h:1
-msgid "News Feed Subscription"
-msgstr "ニュース配信元の購読"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
