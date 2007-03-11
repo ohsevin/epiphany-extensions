@@ -1,5 +1,13 @@
 2007-03-11  Christian Persch  <chpe@gnome.org>
 
+	=== Release 2.18.0 ===
+
+	* extensions/adblock/ephy-adblock-extension.c:
+
+	Remove unused function.
+
+2007-03-11  Christian Persch  <chpe@gnome.org>
+
 	* configure.ac:
 
 	Set version to 2.18.0.

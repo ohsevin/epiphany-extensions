@@ -206,28 +206,6 @@ ephy_adblock_impl_should_load (EphyAdBlock *blocker,
 		return TRUE;
 }
 
-static gboolean
-statusbar_icon_clicked_cb (GtkWidget *widget,
-			   GdkEventButton *event,
-			   EphyWindow *window)
-{
-	EphyAdblockExtension *ext;
-	AdBlocker *blocker;
-	EphyEmbed *embed = ephy_window_get_active_embed (window);
-
-	ext = EPHY_ADBLOCK_EXTENSION (g_object_get_data (G_OBJECT (window),
-							 EXTENSION_KEY));
-
-	blocker = ensure_adblocker (ext, embed);
-	g_return_val_if_fail (blocker != NULL, FALSE);
-
-	ad_blocker_set_noblock (blocker);
-
-	ephy_embed_reload (embed, FALSE);
-
-	return FALSE;
-}
-
 static void
 ephy_adblock_impl_edit_rule (EphyAdBlock *blocker, 
 			     const char *url, 
