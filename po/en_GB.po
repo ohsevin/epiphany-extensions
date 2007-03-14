@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany Plugins 1.0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-03-11 23:07+0000\n"
-"PO-Revision-Date: 2007-03-11 23:09-0000\n"
+"POT-Creation-Date: 2007-03-14 07:01+0000\n"
+"PO-Revision-Date: 2007-03-14 07:01-0000\n"
 "Last-Translator: David Lodge <dave@cirt.net>\n"
 "Language-Team: British English\n"
 "MIME-Version: 1.0\n"
@@ -1108,6 +1108,14 @@ msgstr "Edit site permissions"
 #: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
 msgid "Permissions"
 msgstr "Permissions"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
+msgid "Drag the page on middle mouse click"
+msgstr "Drag the page on middle mouse click"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+msgid "Push Scroll"
+msgstr "Push Scroll"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
