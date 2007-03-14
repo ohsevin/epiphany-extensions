@@ -59,6 +59,7 @@ extensions/smart-bookmarks/smart-bookmarks.schemas.in
 [type: gettext/ini]extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in
 [type: gettext/ini]extensions/page-info/page-info.ephy-extension.in.in
 [type: gettext/ini]extensions/permissions/permissions.ephy-extension.in.in
+[type: gettext/ini]extensions/push-scroller/push-scroller.ephy-extension.in.in
 [type: gettext/ini]extensions/rss/rss.ephy-extension.in.in
 [type: gettext/ini]extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in
 [type: gettext/ini]extensions/sample/sample.ephy-extension.in.in
