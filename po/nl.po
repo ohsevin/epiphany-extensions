@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the
 # epiphany-extensions package.
 # Tino Meinen <a.t.meinen@chello.nl>, 2004.
-# Reinout van Schouwen <reinout@cs.vu.nl>, 2004-2007
+# Reinout van Schouwen <reinouts@gnome.org>, 2004-2007
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-03-01 21:45+0100\n"
-"PO-Revision-Date: 2007-02-05 23:20+0100\n"
+"POT-Creation-Date: 2007-03-14 21:39+0100\n"
+"PO-Revision-Date: 2007-03-14 21:41+0100\n"
 "Last-Translator: Reinout van Schouwen <reinouts@gnome.org>\n"
 "Language-Team: nl <vertaling@vrijschrift.org>\n"
 "MIME-Version: 1.0\n"
@@ -165,7 +165,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>Regels bijwerken vanaf oorspronkelijke webstek</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:237
+#: ../extensions/adblock/ephy-adblock-extension.c:244
 msgid "Adblock editor"
 msgstr "Adblock-editor"
 
@@ -185,11 +185,11 @@ msgstr "Filterset.G"
 msgid "Whitelist"
 msgstr "Toegestaan-lijst"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:238
+#: ../extensions/adblock/ephy-adblock-extension.c:245
 msgid "Edit Adblock"
 msgstr "Adblock bewerken"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:295
+#: ../extensions/adblock/ephy-adblock-extension.c:312
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -668,81 +668,81 @@ msgstr "applet"
 msgid "Icon"
 msgstr "Pictogram"
 
-#: ../extensions/page-info/page-info-dialog.c:1124
+#: ../extensions/page-info/page-info-dialog.c:1130
 msgid "_Open"
 msgstr "_Openen"
 
-#: ../extensions/page-info/page-info-dialog.c:1130
-#: ../extensions/page-info/page-info-dialog.c:1573
+#: ../extensions/page-info/page-info-dialog.c:1136
+#: ../extensions/page-info/page-info-dialog.c:1581
 msgid "_Copy Link Address"
 msgstr "Verwij_zingsadres kopiëren"
 
-#: ../extensions/page-info/page-info-dialog.c:1136
+#: ../extensions/page-info/page-info-dialog.c:1142
 msgid "_Use as Background"
 msgstr "Als a_chtergrond gebruiken"
 
-#: ../extensions/page-info/page-info-dialog.c:1142
-#: ../extensions/page-info/page-info-dialog.c:1579
+#: ../extensions/page-info/page-info-dialog.c:1148
+#: ../extensions/page-info/page-info-dialog.c:1587
 msgid "_Save As..."
 msgstr "Op_slaan als..."
 
-#: ../extensions/page-info/page-info-dialog.c:1374
-#: ../extensions/page-info/page-info-dialog.c:1689
+#: ../extensions/page-info/page-info-dialog.c:1380
+#: ../extensions/page-info/page-info-dialog.c:1701
 msgid "Blocked"
 msgstr "Geblokkeerd"
 
-#: ../extensions/page-info/page-info-dialog.c:1390
-#: ../extensions/page-info/page-info-dialog.c:1705
+#: ../extensions/page-info/page-info-dialog.c:1396
+#: ../extensions/page-info/page-info-dialog.c:1717
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1403
+#: ../extensions/page-info/page-info-dialog.c:1409
 msgid "Type"
 msgstr "Type"
 
-#: ../extensions/page-info/page-info-dialog.c:1415
+#: ../extensions/page-info/page-info-dialog.c:1421
 msgid "Alt Text"
 msgstr "Alt-tekst"
 
-#: ../extensions/page-info/page-info-dialog.c:1427
-#: ../extensions/page-info/page-info-dialog.c:1718
+#: ../extensions/page-info/page-info-dialog.c:1433
+#: ../extensions/page-info/page-info-dialog.c:1730
 msgid "Title"
 msgstr "Titel"
 
-#: ../extensions/page-info/page-info-dialog.c:1439
+#: ../extensions/page-info/page-info-dialog.c:1445
 msgid "Width"
 msgstr "Breedte"
 
-#: ../extensions/page-info/page-info-dialog.c:1451
+#: ../extensions/page-info/page-info-dialog.c:1457
 msgid "Height"
 msgstr "Hoogte"
 
-#: ../extensions/page-info/page-info-dialog.c:1730
+#: ../extensions/page-info/page-info-dialog.c:1742
 msgid "Relation"
 msgstr "Relatie"
 
-#: ../extensions/page-info/page-info-dialog.c:1877
-#: ../extensions/page-info/page-info-dialog.c:2018
+#: ../extensions/page-info/page-info-dialog.c:1891
+#: ../extensions/page-info/page-info-dialog.c:2032
 msgid "Name"
 msgstr "Naam"
 
-#: ../extensions/page-info/page-info-dialog.c:1889
+#: ../extensions/page-info/page-info-dialog.c:1903
 msgid "Method"
 msgstr "Methode"
 
-#: ../extensions/page-info/page-info-dialog.c:1903
+#: ../extensions/page-info/page-info-dialog.c:1917
 msgid "Action"
 msgstr "Actie"
 
-#: ../extensions/page-info/page-info-dialog.c:1984
+#: ../extensions/page-info/page-info-dialog.c:1998
 msgid "_Copy"
 msgstr "_Kopiëren"
 
-#: ../extensions/page-info/page-info-dialog.c:2030
+#: ../extensions/page-info/page-info-dialog.c:2044
 msgid "Content"
 msgstr "Inhoud"
 
-#: ../extensions/page-info/page-info-dialog.c:2131
+#: ../extensions/page-info/page-info-dialog.c:2145
 msgid "Page Metadata"
 msgstr "Pagina-metadata"
 
@@ -1165,6 +1165,14 @@ msgstr "Webstek-rechten bewerken"
 #: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
 msgid "Permissions"
 msgstr "Rechten"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
+msgid "Drag the page on middle mouse click"
+msgstr "Schuiven bij klik met middelste muisknop"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+msgid "Push Scroll"
+msgstr "Auto-schuiven"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
