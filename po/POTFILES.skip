@@ -3,15 +3,12 @@ include/egg-toolbars-model.h
 include/ephy-debug.h
 include/ephy-file-helpers.h
 include/ephy-gui.h
-extensions/toolbar-extras/ephy-multi-smart-action.c
-extensions/toolbar-extras/ephy-toolbar-extras-extension.c
 # those strings are ALL the same like in epiphany, so we can skip them
 extensions/sidebar/ephy-sidebar-embed.c
 extensions/sidebar/sidebar-commands.c
 
 #don't translate those, until we've reviewed the strings:
 extensions/adblock/adblock.ephy-extension.in.in
-extensions/toolbar-extras/toolbar-extras.ephy-extension.in.in
 
 
 #These are removed while bookmarks-tray isn't being shipped
