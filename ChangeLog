@@ -1,3 +1,10 @@
+2007-03-14  Christian Persch  <chpe@gnome.org>
+
+	* extensions/epilicious/Makefile.am:
+
+	Don't distribute the generated epilicious.py file, and regenerate the
+	file when Makefile changes. Should fix bug #418041.
+
 2007-03-11  Christian Persch  <chpe@gnome.org>
 
 	* configure.ac:
