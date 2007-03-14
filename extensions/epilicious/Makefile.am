@@ -1,6 +1,6 @@
 epiliciousdir = $(EXTENSIONS_DIR)
 epiliciouslibdir = $(EXTENSIONS_DIR)/libepilicious
-epilicious_PYTHON = \
+nodist_epilicious_PYTHON = \
 	epilicious.py
 
 epiliciouslib_PYTHON = \
@@ -29,7 +29,7 @@ extensionini_DATA = $(extensionini_in_files:.ephy-extension.in=.ephy-extension)
 
 @EPIPHANY_EXTENSION_RULE@
 
-epilicious.py : epilicious.py.in
+epilicious.py : epilicious.py.in Makefile
 	sed -e "s|%EXTENSION_DIR%|$(EXTENSIONS_DIR)|" \
 		-e "s|%GLADE_DIR%|$(gladedir)|" $< > $@
 
