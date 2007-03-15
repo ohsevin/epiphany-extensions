@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-02-05 22:22+0000\n"
-"PO-Revision-Date: 2007-02-17 11:37+0100\n"
+"POT-Creation-Date: 2007-03-15 08:58+0100\n"
+"PO-Revision-Date: 2007-03-15 08:59+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -141,7 +141,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>Uppdatera regler från ursprungliga webbplatsen</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:237
+#: ../extensions/adblock/ephy-adblock-extension.c:244
 msgid "Adblock editor"
 msgstr "Adblock-redigerare"
 
@@ -161,11 +161,11 @@ msgstr "Filterset.G"
 msgid "Whitelist"
 msgstr "Vitlista"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:238
+#: ../extensions/adblock/ephy-adblock-extension.c:245
 msgid "Edit Adblock"
 msgstr "Redigera Adblock"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:295
+#: ../extensions/adblock/ephy-adblock-extension.c:312
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -624,81 +624,81 @@ msgstr "Panelprogram"
 msgid "Icon"
 msgstr "Ikon"
 
-#: ../extensions/page-info/page-info-dialog.c:1124
+#: ../extensions/page-info/page-info-dialog.c:1130
 msgid "_Open"
 msgstr "_Öppna"
 
-#: ../extensions/page-info/page-info-dialog.c:1130
-#: ../extensions/page-info/page-info-dialog.c:1573
+#: ../extensions/page-info/page-info-dialog.c:1136
+#: ../extensions/page-info/page-info-dialog.c:1581
 msgid "_Copy Link Address"
 msgstr "_Kopiera länkadress"
 
-#: ../extensions/page-info/page-info-dialog.c:1136
+#: ../extensions/page-info/page-info-dialog.c:1142
 msgid "_Use as Background"
 msgstr "_Använd som bakgrund"
 
-#: ../extensions/page-info/page-info-dialog.c:1142
-#: ../extensions/page-info/page-info-dialog.c:1579
+#: ../extensions/page-info/page-info-dialog.c:1148
+#: ../extensions/page-info/page-info-dialog.c:1587
 msgid "_Save As..."
 msgstr "_Spara som..."
 
-#: ../extensions/page-info/page-info-dialog.c:1374
-#: ../extensions/page-info/page-info-dialog.c:1689
+#: ../extensions/page-info/page-info-dialog.c:1380
+#: ../extensions/page-info/page-info-dialog.c:1701
 msgid "Blocked"
 msgstr "Blockerad"
 
-#: ../extensions/page-info/page-info-dialog.c:1390
-#: ../extensions/page-info/page-info-dialog.c:1705
+#: ../extensions/page-info/page-info-dialog.c:1396
+#: ../extensions/page-info/page-info-dialog.c:1717
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1403
+#: ../extensions/page-info/page-info-dialog.c:1409
 msgid "Type"
 msgstr "Typ"
 
-#: ../extensions/page-info/page-info-dialog.c:1415
+#: ../extensions/page-info/page-info-dialog.c:1421
 msgid "Alt Text"
 msgstr "Alt-text"
 
-#: ../extensions/page-info/page-info-dialog.c:1427
-#: ../extensions/page-info/page-info-dialog.c:1718
+#: ../extensions/page-info/page-info-dialog.c:1433
+#: ../extensions/page-info/page-info-dialog.c:1730
 msgid "Title"
 msgstr "Titel"
 
-#: ../extensions/page-info/page-info-dialog.c:1439
+#: ../extensions/page-info/page-info-dialog.c:1445
 msgid "Width"
 msgstr "Bredd"
 
-#: ../extensions/page-info/page-info-dialog.c:1451
+#: ../extensions/page-info/page-info-dialog.c:1457
 msgid "Height"
 msgstr "Höjd"
 
-#: ../extensions/page-info/page-info-dialog.c:1730
+#: ../extensions/page-info/page-info-dialog.c:1742
 msgid "Relation"
 msgstr "Relation"
 
-#: ../extensions/page-info/page-info-dialog.c:1877
-#: ../extensions/page-info/page-info-dialog.c:2018
+#: ../extensions/page-info/page-info-dialog.c:1891
+#: ../extensions/page-info/page-info-dialog.c:2032
 msgid "Name"
 msgstr "Namn"
 
-#: ../extensions/page-info/page-info-dialog.c:1889
+#: ../extensions/page-info/page-info-dialog.c:1903
 msgid "Method"
 msgstr "Metod"
 
-#: ../extensions/page-info/page-info-dialog.c:1903
+#: ../extensions/page-info/page-info-dialog.c:1917
 msgid "Action"
 msgstr "Åtgärd"
 
-#: ../extensions/page-info/page-info-dialog.c:1984
+#: ../extensions/page-info/page-info-dialog.c:1998
 msgid "_Copy"
 msgstr "_Kopiera"
 
-#: ../extensions/page-info/page-info-dialog.c:2030
+#: ../extensions/page-info/page-info-dialog.c:2044
 msgid "Content"
 msgstr "Innehåll"
 
-#: ../extensions/page-info/page-info-dialog.c:2131
+#: ../extensions/page-info/page-info-dialog.c:2145
 msgid "Page Metadata"
 msgstr "Sidmetadata"
 
@@ -1034,10 +1034,6 @@ msgid "Creative Commons license viewer"
 msgstr "Visare för Creative Commons-licensen"
 
 #: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
-msgid "Jaime Frutos Morales <acidborg@gmail.com>"
-msgstr "Jaime Frutos Morales <acidborg@gmail.com>"
-
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:3
 msgid "Shows the Creative Commons license of the current website if available"
 msgstr "Visar Creative Commons-licensen för aktuell webbplats, om tillgänglig"
 
@@ -1113,6 +1109,15 @@ msgstr "Redigera platsrättigheter"
 msgid "Permissions"
 msgstr "Rättigheter"
 
+# Hur rullar man med ett klick?
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
+msgid "Drag the page on middle mouse click"
+msgstr "Dra sidan vid mittenmusklick"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+msgid "Push Scroll"
+msgstr "Tryckrullning"
+
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr "Prenumerera på en nyhetskälla som erbjuds av webbsidan i din favoritnyhetsläsare"
@@ -1173,6 +1178,8 @@ msgstr "Indikerar nytt innehåll i bakgrundsflikar"
 msgid "Tab States"
 msgstr "Fliktillstånd"
 
+#~ msgid "Jaime Frutos Morales <acidborg@gmail.com>"
+#~ msgstr "Jaime Frutos Morales <acidborg@gmail.com>"
 #~ msgid "Apply your modification"
 #~ msgstr "Verkställ ändringar"
 #~ msgid "Remove the current rule"
