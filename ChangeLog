@@ -1,3 +1,9 @@
+2007-03-16  Loic Minier  <lool@svn.gnome.org>
+
+	* extensions/epilicious/epilicious.py.in:
+	Explicitely import all needed functions; fixes SyntaxWarning: import *
+	only allowed at module level; bug #418164.
+
 2007-03-14  Christian Persch  <chpe@gnome.org>
 
 	* extensions/epilicious/Makefile.am:
