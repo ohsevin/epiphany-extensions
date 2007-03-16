@@ -124,7 +124,7 @@ def _do_sync():
     from libepilicious.progress import ProgressBar
     pbar = ProgressBar()
     try:
-        from libepilicious import *
+        from libepilicious import get_logger, get_old, save_snapshot, remove_urls, find_changed_urls, sync_tags_on_urls
         from libepilicious.DeliciousStore import DeliciousStore
         from libepilicious.EpiphanyStore import EpiphanyStore
 
