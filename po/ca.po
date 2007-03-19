@@ -4,15 +4,16 @@
 # Xavier Conde Rueda <xaviconde@eresmas.com>, 2004.
 # Jordi Mallach <jordi@sindominio.net>, 2004.
 # Esteve Blanch Sanmartí <anakinjinn@gmail.com>, 2006.
+# David Planella Molas <david.planella@gmail.com>, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2006-06-09 10:14+0200\n"
-"PO-Revision-Date: 2006-08-10 00:10+0200\n"
-"Last-Translator: Esteve Blanch Sanmartí <anakinjinn@gmail.com>\n"
+"POT-Creation-Date: 2007-03-19 08:34+0100\n"
+"PO-Revision-Date: 2007-03-19 08:43+0100\n"
+"Last-Translator: David Planella Molas <david.planella@gmail.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +23,7 @@ msgstr ""
 
 #: ../extensions/actions/action-properties.glade.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
-msgstr "<span weight=\"bold\">Aplica a</span>"
+msgstr "<span weight=\"bold\">Aplicable a</span>"
 
 #: ../extensions/actions/action-properties.glade.h:2
 msgid "<span weight=\"bold\">General</span>"
@@ -33,15 +34,15 @@ msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "images."
 msgstr ""
-"Si aquesta operació està activada, l'acció serà inclosa al menú emergent de "
-"les imatges."
+"Si aquesta opció està activada, s'inclourà l'acció al menú emergent de les "
+"imatges."
 
 #: ../extensions/actions/action-properties.glade.h:4
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "links and pages."
 msgstr ""
-"Si aquesta operació està activada, l'acció serà inclosa al menú emergent "
+"Si aquesta opció està activada, s'inclourà l'acció al menú emergent "
 "d'enllaços i pàgines."
 
 #: ../extensions/actions/action-properties.glade.h:5
@@ -53,16 +54,16 @@ msgid ""
 "The action name. If a character is preceded by an underscore, that character "
 "will be used as the access key for the menu item."
 msgstr ""
-"Nom de l'acció. Si el caràcter està precedit per un caràcter de subratllat, "
-"aquest caràcter serà utilitzat com a tecla d'accés per a l'element del menú."
+"El nom de l'acció. Si el caràcter està precedit per un caràcter de "
+"subratllat, s'utilitzarà com a tecla d'accés per a l'element del menú."
 
 #: ../extensions/actions/action-properties.glade.h:7
 msgid ""
 "The command to execute when the action is activated. The URL of the link, "
 "image or page will be appended to the command."
 msgstr ""
-"L'ordre que s'executarà al produir-se l'acció està activat. La URL de "
-"l'enllaç, imatge o pàgina serà incorporat al comandament."
+"L'ordre a executar en activar-se l'acció. L'URL de l'enllaç, imatge o pàgina "
+"s'afegirà a l'ordre."
 
 #: ../extensions/actions/action-properties.glade.h:8
 msgid "_Command:"
@@ -77,6 +78,7 @@ msgid "_Images"
 msgstr "_Imatges"
 
 #: ../extensions/actions/action-properties.glade.h:11
+#: ../extensions/epilicious/epilicious-config.glade.h:5
 msgid "_Name:"
 msgstr "_Nom:"
 
@@ -90,20 +92,20 @@ msgid "Actions"
 msgstr "Accions"
 
 #: ../extensions/actions/ephy-actions-extension.c:112
-msgid "_Actions"
-msgstr "_Accions"
+msgid "Actio_ns"
+msgstr "Accio_ns"
 
 #: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Customize actions"
-msgstr "Personalitza accions"
+msgstr "Personalitza les accions"
 
 #: ../extensions/actions/ephy-actions-extension.c:436
 msgid "Could not run command"
-msgstr "No es pot executar l'ordre"
+msgstr "No s'ha pogut executar l'ordre"
 
 #: ../extensions/actions/ephy-actions-extension.c:439
 msgid "Could not Run Command"
-msgstr "No es pot executar l'ordre"
+msgstr "No s'ha pogut executar l'ordre"
 
 #: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
 msgid "No action selected."
@@ -118,24 +120,95 @@ msgstr[1] "%i accions seleccionades."
 
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
-msgstr "Afegeix acció"
+msgstr "Afegeix una acció"
 
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
 #, c-format
 msgid "“%s” Properties"
-msgstr "Propietats de “%s”"
+msgstr "Propietats de «%s»"
 
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
 msgid "Action Properties"
 msgstr "Propietats de l'acció"
 
+#: ../extensions/adblock/adblock-ui.c:279
+msgid ""
+"This list is Copyright © its original author(G). It is relicensed under the "
+"GPL with permission.\n"
+"The original list, Filterset.G, can be found at http://www.pierceive.com/"
+"filtersetg/.\n"
+"This version has been modified from its original. The changes have not been "
+"approved by the original author;\n"
+"direct any problems to Bugzilla and not to the original author (G).\n"
+msgstr ""
+"Aquesta llista és Copyright © del seu autor original (G). S'ha distribuït "
+"sota la llicència GPL amb el seu permís.\n"
+"Podeu trobar la llista original, Filterset.G, a http://www.pierceive.com/"
+"filtersetg/.\n"
+"Aquesta versió ha estat modificada respecte a l'original. Aquests canvis no "
+"han estat aprovats pel seu autor original;\n"
+"en cas que hi tingueu problemes, hauríeu d'usar el sistema de seguiment "
+"d'errors del Bugzilla en lloc de dirigir-vos al seu autor original (G).\n"
+
+#: ../extensions/adblock/adblock-ui.c:496
+msgid "Pattern"
+msgstr "Patró"
+
+#: ../extensions/adblock/adblock.glade.h:1
+msgid "<b>Courtesy of Graham Pierce</b>"
+msgstr "<b>Per cortesia d'en Graham Pierce</b>"
+
+#: ../extensions/adblock/adblock.glade.h:2
+msgid "<b>New rule</b>"
+msgstr "<b>Regla nova</b>"
+
+#: ../extensions/adblock/adblock.glade.h:3
+msgid "<b>Update rules from original site</b>"
+msgstr "<b>Actualitza les regles des del lloc web original</b>"
+
+#: ../extensions/adblock/adblock.glade.h:4
+#: ../extensions/adblock/ephy-adblock-extension.c:244
+msgid "Adblock editor"
+msgstr "Editor del blocador de publicitat"
+
+#: ../extensions/adblock/adblock.glade.h:5
+msgid "Add a new rule"
+msgstr "Afegeix una regla nova"
+
+#: ../extensions/adblock/adblock.glade.h:6
+msgid "Blacklist"
+msgstr "Llista negra"
+
+#: ../extensions/adblock/adblock.glade.h:7
+msgid "Filterset.G"
+msgstr "Filtres del Filterset.G"
+
+#: ../extensions/adblock/adblock.glade.h:8
+msgid "Whitelist"
+msgstr "Llista blanca"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:245
+msgid "Edit Adblock"
+msgstr "Edita el blocador de publicitat"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:312
+#, c-format
+msgid "%d hidden advertisement"
+msgid_plural "%d hidden advertisements"
+msgstr[0] "%d anunci ocult"
+msgstr[1] "%d anuncis ocults"
+
 #: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
 msgid "_Auto Reload"
-msgstr "_Auto recàrrega"
+msgstr "_Actualització automàtica"
 
 #: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
 msgid "Reload the page periodically"
 msgstr "Actualitza la pàgina periòdicament"
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.py:371
+msgid "View Creative Commons license"
+msgstr "Mostra la llicència Creative Commons"
 
 #: ../extensions/certificates/ephy-certificates-extension.c:177
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
@@ -147,34 +220,134 @@ msgid "Security Devices"
 msgstr "Dispositius de seguretat"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:327
+#: ../extensions/certificates/ephy-certificates-extension.c:220
 msgid "Manage _Certificates"
 msgstr "Gestiona els _certificats"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:329
+#: ../extensions/certificates/ephy-certificates-extension.c:222
 msgid "Manage your certificates"
 msgstr "Gestioneu els vostres certificats"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:333
+#: ../extensions/certificates/ephy-certificates-extension.c:226
 msgid "Manage Security _Devices"
 msgstr "Administra els _dispositius de seguretat"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:335
+#: ../extensions/certificates/ephy-certificates-extension.c:228
 msgid "Manage your security devices"
 msgstr "Administreu els vostres dispositius de seguretat"
 
-#. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:342
-msgid "Server _Certificate"
-msgstr "_Certificat del servidor"
+#: ../extensions/epilicious/epilicious-config.glade.h:1
+msgid "Action for tagged bookmarks:"
+msgstr "Acció a dur a terme per a les adreces d'interès etiquetades:"
 
-#. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:344
-msgid "Display the web server's certificate"
-msgstr "Visualitza el certificat del servidor web"
+#: ../extensions/epilicious/epilicious-config.glade.h:2
+msgid "Epilicious Configuration"
+msgstr "Configuració de l'Epilicious"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:3
+msgid "_Exclude"
+msgstr "_Exclou"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:4
+msgid "_Include"
+msgstr "_Inclou"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:6
+msgid "_Password:"
+msgstr "_Contrasenya:"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:7
+msgid "_Tag:"
+msgstr "Et_iqueta:"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:1
+msgid "<b>Synchronizing with del.icio.us</b>"
+msgstr "<b>Sincronització amb el del.icio.us</b>"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:2
+msgid "Adding new bookmarks and synching topics"
+msgstr "Addició de les adreces d'interès noves i sincronització dels temes"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:3
+msgid "Removing deleted bookmarks"
+msgstr "Eliminació de les adreces d'interès suprimides"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:4
+msgid "Retrieving bookmarks from del.icio.us"
+msgstr "Recuperació de les adreces d'interès del del.icio.us"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:5
+msgid "Retrieving bookmarks from epiphany"
+msgstr "Recuperació de les adreces d'interès de l'Epiphany"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:6
+msgid "Retrieving previous synch point"
+msgstr "Recuperació del punt de sincronització anterior"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:7
+msgid "Saving new synch point"
+msgstr "Desat del punt de sincronització nou"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:8
+msgid "Synchronizing..."
+msgstr "S'està sincronitzant..."
+
+#. # Epiphany integration ##
+#: ../extensions/epilicious/epilicious.py.in:201
+#: ../extensions/epilicious/epilicious.py.in:204
+msgid "Epilicious Synchronize"
+msgstr "Sincronitza amb l'Epilicious"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:1
+msgid "Bookmarks with this topic will be synchronized to del.icio.us."
+msgstr ""
+"Les adreces d'interès amb aquest tema se sincronitzaran amb el del.icio.us."
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:2
+msgid ""
+"Controls the function of the topic. If this is unset then all bookmarks with "
+"the topic will be synched with del.icio.us. If this is set then all "
+"bookmarks without the topic will be synched with del.icio.us."
+msgstr ""
+"Controla la funció del tema. Si aquest paràmetre no està activat, totes les "
+"adreces d'interès que continguin el tema se sincronitzaran amb el del.icio."
+"us. Si aquest paràmetre està activat, totes les adreces d'interès que no "
+"continguin el tema se sincronitzaran amb el del.icio.us."
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:3
+msgid "Exclude topic"
+msgstr "Exclou el tema"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:4
+msgid "Shared topic"
+msgstr "Tema compartit"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:5
+msgid ""
+"The del.icio.us password that epilicious will use for synchronizing "
+"bookmarks."
+msgstr ""
+"La contrasenya del del.icio.us que s'utilitzarà per a sincronitzar les "
+"adreces d'interès."
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:6
+msgid ""
+"The del.icio.us username that epilicious will use for synchronizing "
+"bookmarks."
+msgstr ""
+"El nom d'usuari del del.icio.us que s'utilitzarà per a sincronitzar les "
+"adreces d'interès."
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:7
+msgid "del.icio.us password"
+msgstr "contrasenya del del.icio.us"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:8
+msgid "del.icio.us username"
+msgstr "nom d'usuari del del.icio.us"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
@@ -193,7 +366,7 @@ msgstr "Comprova els en_llaços"
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:106
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr ""
-"Visualitza els hiperenllaços invàlids en el diàleg de visualització d'errors"
+"Visualitza els enllaços invàlids en el diàleg de visualització d'errors"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:110
 msgid "_Error Viewer"
@@ -213,7 +386,7 @@ msgid "Error Viewer"
 msgstr "Visualitzador d'errors"
 
 #. Don't bother looking for source lines -- they're not there
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:108
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:96
 #, c-format
 msgid ""
 "Error:\n"
@@ -222,13 +395,13 @@ msgstr ""
 "S'ha produït un error:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:138
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:126
 #, c-format
 msgid ""
 "Javascript error in %s on line %d:\n"
 "%s"
 msgstr ""
-"S'ha produït un error de Javascript en %s a la línia %d:\n"
+"S'ha produït un error del Javascript en %s a la línia %d:\n"
 "%s"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
@@ -260,7 +433,7 @@ msgid ""
 "HTML error in “%s” on line %s:\n"
 "%s"
 msgstr ""
-"S'ha produït un error d'HTML a %s a la línia %s:\n"
+"S'ha produït un error d'HTML a «%s» a la línia %s:\n"
 "%s"
 
 #: ../extensions/error-viewer/sgml-validator.c:165
@@ -273,7 +446,7 @@ msgstr[1] "S'han trobat %d errors"
 #: ../extensions/error-viewer/sgml-validator.c:169
 #, c-format
 msgid "HTML Validation of “%s” complete"
-msgstr "S'ha completat la validació HTML de %s"
+msgstr "S'ha completat la validació HTML de «%s»"
 
 #: ../extensions/error-viewer/sgml-validator.c:227
 #, c-format
@@ -299,7 +472,7 @@ msgid ""
 "HTML warning in %s:\n"
 "%s"
 msgstr ""
-"S'ha produït una avís HTML a %s:\n"
+"S'ha produït un avís HTML a %s:\n"
 "%s"
 
 #: ../extensions/error-viewer/sgml-validator.c:360
@@ -322,13 +495,13 @@ msgid ""
 "No valid doctype specified."
 msgstr ""
 "S'ha produït un error HTML a %s:\n"
-"No s'ha especificat cap tipus de document vàlid."
+"No s'ha especificat un tipus de document vàlid."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:356
 msgid "Enabled"
 msgstr "Habilitat"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
 #: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "Descripció"
@@ -355,7 +528,7 @@ msgstr "_Extensions"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
 msgid "Help about extensions"
-msgstr "Ajuda sobre les extensions"
+msgstr "Ajuda de les extensions"
 
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
 msgid "Install User _Script"
@@ -380,6 +553,34 @@ msgstr "Consola del _Java"
 msgid "Show Java Console"
 msgstr "Mostra la consola del Java"
 
+#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:102
+msgid "_HTTP Headers"
+msgstr "Capçaleres _HTTP"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:1
+msgid "<b>Request</b>"
+msgstr "<b>Sol·licitud</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:2
+msgid "<b>Response</b>"
+msgstr "<b>Resposta</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:3
+msgid "<b>URLs</b>"
+msgstr "<b>URL</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
+msgid "Clear cache"
+msgstr "Buida la memòria cau"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
+msgid "Live Headers"
+msgstr "Capçaleres en viu"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
+msgid "Remove headers"
+msgstr "Suprimeix les capçaleres"
+
 #: ../extensions/page-info/ephy-page-info-extension.c:67
 msgid "Pa_ge Information"
 msgstr "Informació de la pà_gina"
@@ -388,154 +589,163 @@ msgstr "Informació de la pà_gina"
 msgid "Display page information in a dialog"
 msgstr "Mostra informació sobre la pàgina en un diàleg"
 
-#: ../extensions/page-info/page-info-dialog.c:726
+#: ../extensions/page-info/page-info-dialog.c:730
 msgid "Save As..."
 msgstr "Anomena i desa..."
 
-#: ../extensions/page-info/page-info-dialog.c:743
+#: ../extensions/page-info/page-info-dialog.c:747
 msgid "Select a directory"
-msgstr "Selecciona un directori"
+msgstr "Seleccioneu un directori"
 
-#: ../extensions/page-info/page-info-dialog.c:792
+#: ../extensions/page-info/page-info-dialog.c:796
 msgid "Unknown type"
 msgstr "Tipus desconegut"
 
-#: ../extensions/page-info/page-info-dialog.c:797
+#: ../extensions/page-info/page-info-dialog.c:801
 msgid "Full standards compliance"
 msgstr "Compleix els estàndards completament"
 
-#: ../extensions/page-info/page-info-dialog.c:800
+#: ../extensions/page-info/page-info-dialog.c:804
 msgid "Almost standards compliance"
 msgstr "Gairebé compleix els estàndards"
 
-#: ../extensions/page-info/page-info-dialog.c:803
+#: ../extensions/page-info/page-info-dialog.c:807
 msgid "Compatibility"
 msgstr "Compatibilitat"
 
-#: ../extensions/page-info/page-info-dialog.c:807
+#: ../extensions/page-info/page-info-dialog.c:811
 msgid "Undetermined"
 msgstr "Indeterminada"
 
-#: ../extensions/page-info/page-info-dialog.c:816
+#: ../extensions/page-info/page-info-dialog.c:820
 msgid "Not cached"
 msgstr "No es a la memòria cau"
 
-#: ../extensions/page-info/page-info-dialog.c:819
+#: ../extensions/page-info/page-info-dialog.c:823
 msgid "Disk cache"
 msgstr "Memòria cau del disc"
 
-#: ../extensions/page-info/page-info-dialog.c:822
+#: ../extensions/page-info/page-info-dialog.c:826
 msgid "Memory cache"
 msgstr "Memòria cau"
 
-#: ../extensions/page-info/page-info-dialog.c:825
+#: ../extensions/page-info/page-info-dialog.c:829
 msgid "Unknown cache"
 msgstr "Memòria cau desconeguda"
 
-#: ../extensions/page-info/page-info-dialog.c:841
-#: ../extensions/page-info/page-info-dialog.c:952
+#: ../extensions/page-info/page-info-dialog.c:845
+#: ../extensions/page-info/page-info-dialog.c:961
 msgid "Unknown"
 msgstr "Desconegut"
 
-#: ../extensions/page-info/page-info-dialog.c:846
+#: ../extensions/page-info/page-info-dialog.c:850
 msgid "No referrer"
 msgstr "Cap referent"
 
-#: ../extensions/page-info/page-info-dialog.c:860
-#: ../extensions/page-info/page-info-dialog.c:876
+#: ../extensions/page-info/page-info-dialog.c:864
+#: ../extensions/page-info/page-info-dialog.c:880
 msgid "Not specified"
 msgstr "No especificat"
 
-#: ../extensions/page-info/page-info-dialog.c:937
+#: ../extensions/page-info/page-info-dialog.c:943
 msgid "Image"
 msgstr "Imatge"
 
-#: ../extensions/page-info/page-info-dialog.c:940
+#: ../extensions/page-info/page-info-dialog.c:946
+msgid "Background image"
+msgstr "Imatge de fons"
+
+#: ../extensions/page-info/page-info-dialog.c:949
 msgid "Embed"
 msgstr "Incrusta"
 
-#: ../extensions/page-info/page-info-dialog.c:943
+#: ../extensions/page-info/page-info-dialog.c:952
 msgid "Object"
 msgstr "Objecte"
 
-#: ../extensions/page-info/page-info-dialog.c:946
+#: ../extensions/page-info/page-info-dialog.c:955
 msgid "Applet"
 msgstr "Miniaplicació"
 
-#: ../extensions/page-info/page-info-dialog.c:949
+#: ../extensions/page-info/page-info-dialog.c:958
 msgid "Icon"
 msgstr "Icona"
 
-#: ../extensions/page-info/page-info-dialog.c:1054
+#: ../extensions/page-info/page-info-dialog.c:1130
 msgid "_Open"
 msgstr "_Obre"
 
-#: ../extensions/page-info/page-info-dialog.c:1060
-#: ../extensions/page-info/page-info-dialog.c:1420
+#: ../extensions/page-info/page-info-dialog.c:1136
+#: ../extensions/page-info/page-info-dialog.c:1581
 msgid "_Copy Link Address"
 msgstr "_Copia l'adreça de l'enllaç"
 
-#: ../extensions/page-info/page-info-dialog.c:1066
+#: ../extensions/page-info/page-info-dialog.c:1142
 msgid "_Use as Background"
 msgstr "_Usa la imatge com a fons"
 
-#: ../extensions/page-info/page-info-dialog.c:1072
-#: ../extensions/page-info/page-info-dialog.c:1426
+#: ../extensions/page-info/page-info-dialog.c:1148
+#: ../extensions/page-info/page-info-dialog.c:1587
 msgid "_Save As..."
 msgstr "_Anomena i desa..."
 
-#: ../extensions/page-info/page-info-dialog.c:1256
-#: ../extensions/page-info/page-info-dialog.c:1499
+#: ../extensions/page-info/page-info-dialog.c:1380
+#: ../extensions/page-info/page-info-dialog.c:1701
+msgid "Blocked"
+msgstr "Blocat"
+
+#: ../extensions/page-info/page-info-dialog.c:1396
+#: ../extensions/page-info/page-info-dialog.c:1717
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1269
+#: ../extensions/page-info/page-info-dialog.c:1409
 msgid "Type"
 msgstr "Tipus"
 
-#: ../extensions/page-info/page-info-dialog.c:1281
+#: ../extensions/page-info/page-info-dialog.c:1421
 msgid "Alt Text"
 msgstr "Text alternatiu"
 
-#: ../extensions/page-info/page-info-dialog.c:1293
-#: ../extensions/page-info/page-info-dialog.c:1512
+#: ../extensions/page-info/page-info-dialog.c:1433
+#: ../extensions/page-info/page-info-dialog.c:1730
 msgid "Title"
 msgstr "Títol"
 
-#: ../extensions/page-info/page-info-dialog.c:1305
+#: ../extensions/page-info/page-info-dialog.c:1445
 msgid "Width"
 msgstr "Amplada"
 
-#: ../extensions/page-info/page-info-dialog.c:1317
+#: ../extensions/page-info/page-info-dialog.c:1457
 msgid "Height"
 msgstr "Alçada"
 
-#: ../extensions/page-info/page-info-dialog.c:1524
+#: ../extensions/page-info/page-info-dialog.c:1742
 msgid "Relation"
 msgstr "Relació"
 
-#: ../extensions/page-info/page-info-dialog.c:1654
-#: ../extensions/page-info/page-info-dialog.c:1793
+#: ../extensions/page-info/page-info-dialog.c:1891
+#: ../extensions/page-info/page-info-dialog.c:2032
 msgid "Name"
 msgstr "Nom"
 
-#: ../extensions/page-info/page-info-dialog.c:1666
+#: ../extensions/page-info/page-info-dialog.c:1903
 msgid "Method"
 msgstr "Mètode"
 
-#: ../extensions/page-info/page-info-dialog.c:1680
+#: ../extensions/page-info/page-info-dialog.c:1917
 msgid "Action"
 msgstr "Acció"
 
-#: ../extensions/page-info/page-info-dialog.c:1759
+#: ../extensions/page-info/page-info-dialog.c:1998
 msgid "_Copy"
 msgstr "_Copia"
 
-#: ../extensions/page-info/page-info-dialog.c:1805
+#: ../extensions/page-info/page-info-dialog.c:2044
 msgid "Content"
 msgstr "Contingut"
 
-#: ../extensions/page-info/page-info-dialog.c:1904
+#: ../extensions/page-info/page-info-dialog.c:2145
 msgid "Page Metadata"
 msgstr "Metadades de la pàgina"
 
@@ -545,15 +755,15 @@ msgstr "<b>Metadades Dublin Core</b>"
 
 #: ../extensions/page-info/page-info.glade.h:2
 msgid "<b>Forms In Page</b>"
-msgstr "<b>Formularis a la pàgina</b>"
+msgstr "<b>Formularis de la pàgina</b>"
 
 #: ../extensions/page-info/page-info.glade.h:3
 msgid "<b>Links In Page</b>"
-msgstr "<b>Enllaços a la pàgina</b>"
+msgstr "<b>Enllaços de la pàgina</b>"
 
 #: ../extensions/page-info/page-info.glade.h:4
 msgid "<b>Media In Page</b>"
-msgstr "<b>Multimèdia a la pàgina</b>"
+msgstr "<b>Multimèdia de la pàgina</b>"
 
 #: ../extensions/page-info/page-info.glade.h:5
 msgid "<b>Medium View</b>"
@@ -621,7 +831,7 @@ msgstr "Tipus MIME:"
 
 #: ../extensions/page-info/page-info.glade.h:21
 msgid "Media"
-msgstr "Media"
+msgstr "Multimèdia"
 
 #: ../extensions/page-info/page-info.glade.h:22
 msgid "Metadata"
@@ -661,7 +871,7 @@ msgstr "Tipus:"
 
 #: ../extensions/page-info/page-info.glade.h:31
 msgid "_Save Media As..."
-msgstr "_Anomena i desa suport..."
+msgstr "_Anomena i desa el suport..."
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:180
 msgid "allowed"
@@ -710,32 +920,33 @@ msgstr "_Permisos del lloc web"
 msgid "Manage web site permissions"
 msgstr "Administra els permisos del lloc web"
 
-#: ../extensions/rss/ephy-rss-extension.c:98
+#: ../extensions/rss/ephy-rss-extension.c:90
 msgid "News Feeds Subscription"
 msgstr "Subscripció a canals de notícies"
 
-#: ../extensions/rss/ephy-rss-extension.c:100
+#: ../extensions/rss/ephy-rss-extension.c:92
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr ""
 "Subscriviu-vos al canal de notícies d'aquest web utilitzant el vostre lector "
-"de notícies favorit"
+"de notícies preferit"
 
-#: ../extensions/rss/ephy-rss-extension.c:105
+#: ../extensions/rss/ephy-rss-extension.c:97
 msgid "_Subscribe to this feed"
 msgstr "_Subscriviu-vos al canal"
 
-#: ../extensions/rss/ephy-rss-extension.c:107
+#: ../extensions/rss/ephy-rss-extension.c:99
 msgid "Subscribe to this feed in your favorite news reader"
-msgstr "Subscriviu-vos al canal amb el vostre lector favorit de notícies"
+msgstr "Subscriviu-vos al canal amb el vostre lector de notícies preferit"
 
-#: ../extensions/rss/ephy-rss-extension.c:396
+#: ../extensions/rss/ephy-rss-extension.c:382
 msgid "Subscribe to site's news feed"
-msgstr "Subscriviu-vos al canal de notícies de la web"
+msgstr "Subscriviu-vos al canal de notícies del lloc web"
 
 #: ../extensions/rss/rss-ui.c:167
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr ""
-"<b><i>No es pot contactar amb el canal de notícies, està actiu?</i></b>"
+"<b><i>No s'ha pogut contactar amb el lector de canals de notícies; s'està "
+"executant?</i></b>"
 
 #: ../extensions/rss/rss-ui.c:169
 msgid "Retry"
@@ -754,16 +965,17 @@ msgid "<b>Select Interesting Feeds</b>"
 msgstr "<b>Selecciona canals interessants</b>"
 
 #: ../extensions/rss/rss-ui.glade.h:2
-msgid "News Feed Subcription"
+#: ../extensions/rss/rss.ephy-extension.in.in.h:1
+msgid "News Feed Subscription"
 msgstr "Subscripció a canals de notícies"
 
 #: ../extensions/rss/rss-ui.glade.h:3
 msgid "_Subscribe"
-msgstr "_Subscriu"
+msgstr "_Subscriu-m'hi"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:145
 msgid "Render the page without using a style"
-msgstr "Representa la pàgina sense usar estils"
+msgstr "Representa la pàgina sense utilitzar cap estil"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:148
 msgid "Render the page using the default style"
@@ -780,13 +992,13 @@ msgstr "E_stil"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:310
 msgid "Select a different style for this page"
-msgstr "Selecciona un estil diferent per la pàgina"
+msgstr "Selecciona un estil diferent per a aquesta pàgina"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:224
 msgid "Default"
 msgstr "Predeterminat"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:235
 msgid "None"
 msgstr "Cap"
 
@@ -794,31 +1006,45 @@ msgstr "Cap"
 msgid "No Sidebars installed"
 msgstr "No hi ha cap barra lateral instal·lada"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:104
+#: ../extensions/sidebar/ephy-sidebar-extension.c:105
 msgid "_Sidebar"
 msgstr "Barra _lateral"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:105
+#: ../extensions/sidebar/ephy-sidebar-extension.c:106
 msgid "Show or hide the sidebar"
 msgstr "Mostra o amaga la barra lateral"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:411
+#. Translators: %s is the sidebar title
+#: ../extensions/sidebar/ephy-sidebar-extension.c:408
 #, c-format
-msgid "Add “%s” to the Sidebar?"
-msgstr "Vols afegir «%s» a la barra lateral ?"
+msgid "The sidebar already contains “%s”"
+msgstr "«%s» ja és a la barra lateral"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:412
+msgid ""
+"To use this sidebar, select it from the list of available sidebar pages."
+msgstr ""
+"Per a utilitzar aquesta barra lateral, seleccioneu-la a la llista de barres "
+"laterals disponibles."
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:415
-#, c-format
-msgid "The source to the new sidebar page is “%s”."
-msgstr "L'origen per la nova pàgina de la barra lateral és «%s»."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:417
+#: ../extensions/sidebar/ephy-sidebar-extension.c:441
 msgid "Add Sidebar"
 msgstr "Afegeix la barra lateral"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:421
+#: ../extensions/sidebar/ephy-sidebar-extension.c:435
+#, c-format
+msgid "Add “%s” to the Sidebar?"
+msgstr "Voleu afegir «%s» a la barra lateral?"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:439
+#, c-format
+msgid "The source to the new sidebar page is “%s”."
+msgstr "L'origen de la pàgina nova de la barra lateral és «%s»."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:445
 msgid "_Add Sidebar"
-msgstr "_Afegeix barra lateral"
+msgstr "_Afegeix la barra lateral"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:551
 msgid "_Look Up"
@@ -827,6 +1053,16 @@ msgstr "_Cerca"
 #: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:558
 msgid "_GNOME Dictionary"
 msgstr "Diccionari del _GNOME"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
+msgid "Open search result in new tab"
+msgstr "Obre el resultat de la cerca en una pestanya nova"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
+msgid "Open search result in new tab if true, in new window if false"
+msgstr ""
+"Obre el resultat de la cerca en una nova pestanya si s'estableix com a cert, "
+"o bé en una nova finestra si s'estableix com a fals."
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
@@ -842,33 +1078,33 @@ msgstr "Desplaça en prémer el botó central del ratolí"
 
 #: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
 msgid "Auto Reload Tab"
-msgstr "Auto recarregat pestanya"
+msgstr "Actualització automàtica de pestanyes"
 
 #: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
 msgid "Reload a tab periodically"
-msgstr "Torna a carregar periòdicament una pestanya"
+msgstr "Actualitza periòdicament una pestanya"
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
+msgid "Creative Commons license viewer"
+msgstr "Visualitzador de llicències Creative Commons"
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
+msgid "Shows the Creative Commons license of the current website if available"
+msgstr ""
+"Mostra la llicència Creative Commons del lloc web actual si és que està "
+"disponible."
 
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Visualitza el certificat de la pàgina i administra els certificats"
-
-#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:1
-msgid "Dashboard"
-msgstr "Dashboard"
-
-#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:2
-msgid "Send browsing information to Dashboard"
-msgstr "Envia informació de navegació al Dashboard"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
 msgstr "Visualitzador d'errors"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
-msgid "View error in web pages, validate web pages and check links"
-msgstr ""
-"Visualitza errors a les pàgines webs, valida les planes i comprova els "
-"enllaços"
+msgid "Validate web pages and check links"
+msgstr "Valida pàgines web i comprova els enllaços"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
 msgid "Activate and deactivate extensions"
@@ -880,13 +1116,13 @@ msgstr "Administrador d'extensions"
 
 #: ../extensions/favicon/favicon.ephy-extension.in.h:1
 msgid "Favicon fallback"
-msgstr "Obtenció del favicon"
+msgstr "Càrrega alternativa de la Favicon"
 
 #: ../extensions/favicon/favicon.ephy-extension.in.h:2
 msgid ""
 "Loads /favicon.ico as favicon if the site doesn't use the standard method"
 msgstr ""
-"Carrega el /favicon.ico com a Favicon si el lloc web no utilitza el mètode "
+"Carrega la /favicon.ico com a Favicon si el lloc web no utilitza el mètode "
 "estàndard"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
@@ -904,7 +1140,7 @@ msgstr "Greasemonkey"
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
 msgid "Run user scripts to modify web pages' behavior"
 msgstr ""
-"Executa seqüències d'usuari per modificar el comportament de les pàgines"
+"Executa seqüències d'usuari per a modificar el comportament de les pàgines"
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
 msgid "Java Console"
@@ -912,7 +1148,11 @@ msgstr "Consola del Java"
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
 msgid "Provide access to the Java-Plugin Console"
-msgstr "Proporciona accés a la consola del commector Java"
+msgstr "Proporciona accés a la consola de connectors del Java"
+
+#: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
+msgid "Live HTTP headers"
+msgstr "Capçaleres HTTP en viu"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
@@ -932,20 +1172,26 @@ msgstr "Edita els permisos de la pàgina"
 msgid "Permissions"
 msgstr "Permisos"
 
-#: ../extensions/rss/rss.ephy-extension.in.in.h:1
-msgid "News Feed Subscription"
-msgstr "Subscripció a canals de notícies"
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Drag the page on middle mouse click"
+msgstr "Desplaça en prémer el botó central del ratolí"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Push Scroll"
+msgstr "Desplaçament automàtic"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr ""
 "Subscriviu-vos al canal de notícies ofert per la pàgina web utilitzant el "
-"vostre lector favorit de notícies"
+"vostre lector de notícies preferit"
 
 #: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
 msgid "A sample extension with mozilla backend"
-msgstr "Una extensió d'exemple amb el backend de Mozilla"
+msgstr "Una extensió d'exemple amb el rerefons del Mozilla"
 
 #: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:2
 msgid "Sample (Mozilla)"
@@ -965,7 +1211,8 @@ msgstr "Selecciona el full d'estil"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
-msgstr "Selecciona entre diferentes fulles d'estil ofertes per la pàgina web"
+msgstr ""
+"Seleccioneu entre les diferents fulles d'estil ofertes per la pàgina web"
 
 #: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
 msgid "Adds a sidebar to windows"
@@ -977,15 +1224,15 @@ msgstr "Barra lateral"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
 msgid "Look up the selected text with a smart bookmark"
-msgstr "Cerca el text seleccionat amb un marcador intel·ligent"
+msgstr "Cerca el text seleccionat amb una adreça d'interès intel·ligent"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
 msgid "Smart Bookmarks"
-msgstr "Adreces d'interès"
+msgstr "Adreces d'interès intel·ligents"
 
 #: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
 msgid "Groups newly opened tabs"
-msgstr "Agrupa les noves pestanyes obertes"
+msgstr "Agrupa les pestanyes acabades d'obrir"
 
 #: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
 msgid "Tab Groups"
@@ -998,6 +1245,24 @@ msgstr "Indica contingut nou a les pestanyes en segon pla"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Estat de les pestanyes"
+
+#~ msgid "_Actions"
+#~ msgstr "_Accions"
+
+#~ msgid "Server _Certificate"
+#~ msgstr "_Certificat del servidor"
+
+#~ msgid "Display the web server's certificate"
+#~ msgstr "Visualitza el certificat del servidor web"
+
+#~ msgid "News Feed Subcription"
+#~ msgstr "Subscripció a canals de notícies"
+
+#~ msgid "Dashboard"
+#~ msgstr "Dashboard"
+
+#~ msgid "Send browsing information to Dashboard"
+#~ msgstr "Envia informació de navegació al Dashboard"
 
 #~ msgid "_Edit Bookmarks"
 #~ msgstr "_Edita les adreces d'interès"
@@ -1014,10 +1279,6 @@ msgstr "Estat de les pestanyes"
 
 #~ msgid "Open in New _Tab"
 #~ msgstr "Obre en una nova _pestanya"
-
-#~ msgid "Open bookmarks in a new tab of the active window"
-#~ msgstr ""
-#~ "Obre les adreces d'interès en una nova pestanya de la finestra activa"
 
 #~ msgid "Open in New _Window"
 #~ msgstr "Obre en una finestra _nova"
