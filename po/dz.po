@@ -1,0 +1,1179 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: epiphany-extensions\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
+"POT-Creation-Date: 2007-03-16 03:16+0000\n"
+"PO-Revision-Date: 2007-03-21 02:19+0530\n"
+"Last-Translator: yangka <yanang_ka@hotmail.com>\n"
+"Language-Team: dzongkha <pgeyleg@dit.gov.bt>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Poedit-Language: Dzongkha\n"
+"X-Poedit-Country: BHUTAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: ../extensions/actions/action-properties.glade.h:1
+msgid "<span weight=\"bold\">Applies to</span>"
+msgstr "<span weight=\"bold\">ལུ་འཇུག་སྤྱོད་འབདཝ་ཨིན</span>"
+
+#: ../extensions/actions/action-properties.glade.h:2
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">ཡངོས་ཁྱབ་</span>"
+
+#: ../extensions/actions/action-properties.glade.h:3
+msgid "If this option is enabled, the action will be included in the popup menu of images."
+msgstr "གདམ་ཁ་འདི་ལྕགས་ཅན་བཟོ་ཡོདཔ་ཨིན་པ་ཅིན་གཟུགས་བརྙན་ཚུ་གི་པོཔ་ཨཔ་དཀར་ཆག་ནང་བྱ་བ་འདི་གྲངས་སུ་བཙུགས་ཡོདཔ་ཨིན།"
+
+#: ../extensions/actions/action-properties.glade.h:4
+msgid "If this option is enabled, the action will be included in the popup menu of links and pages."
+msgstr "གདམ་ཁ་འདི་ལྕོགས་ཅན་བཟོ་ཡོདཔ་ཨིན་པ་ཅིན་ འབྲེལ་ལམ་ཚུ་དང་ཤོག་ལེབ་ཚུ་གི་པོཔ་ཨཔ་དཀར་ཆག་ནང་བྱ་བ་འདི་གྲངས་སུ་བཙུགས་ཡོདཔ་ཨིན།"
+
+#: ../extensions/actions/action-properties.glade.h:5
+msgid "The action description."
+msgstr "བྱ་བའི་འགྲེལ་བཤད་འདི།"
+
+#: ../extensions/actions/action-properties.glade.h:6
+msgid "The action name. If a character is preceded by an underscore, that character will be used as the access key for the menu item."
+msgstr "བྱ་བའི་མིང་འདི། གཤམ་ཐིག་ཅིག་གིས་སྦོམ་བཟོ་ཡོད་མི་ཡིག་འབྲུ་ཅིག་ཨིན་པ་ཅིན་ ཡིག་འབྲུ་དེ་དཀར་ཆག་རྣམ་གྲངས་འདིའི་དོན་ལུ་ལྡེ་མིག་འཛུལ་སྤྱོད་འབད་ནི་སྦེ་ལག་ལེན་འཐབ་ཡོདཔ་ཨིན།"
+
+#: ../extensions/actions/action-properties.glade.h:7
+msgid "The command to execute when the action is activated. The URL of the link, image or page will be appended to the command."
+msgstr "བྱ་བ་འདི་ཤུགས་ལྡན་བཟོ་ཡོད་པའི་སྐབས་ལག་ལེན་འཐབ་ནི་ལུ་བརྡ་བཀོད་འདི། འབྲེལ་ལམ་ གཟུགས་བརྙན་ཡང་ན་ཤོག་ལེབ་ཀྱི་ཡུ་ཨར་ཨེལ་འདི་བརྡ་བཀོད་ལུ་མཇུག་བསྣོན་འབད་ཡོདཔ་ཨིན།"
+
+#: ../extensions/actions/action-properties.glade.h:8
+msgid "_Command:"
+msgstr "བརྡ་བཀོད།(_C)"
+
+#: ../extensions/actions/action-properties.glade.h:9
+msgid "_Description:"
+msgstr "འགྲེལ་བཤད།(_D)"
+
+#: ../extensions/actions/action-properties.glade.h:10
+msgid "_Images"
+msgstr "གཟུགས་བརྙན་ཚུ།(_I)"
+
+#: ../extensions/actions/action-properties.glade.h:11
+#: ../extensions/epilicious/epilicious-config.glade.h:5
+msgid "_Name:"
+msgstr "མིང་།(_N)"
+
+#: ../extensions/actions/action-properties.glade.h:12
+msgid "_Pages"
+msgstr "ཤོག་ལེབ་ཚུ།(_P)"
+
+#: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions.ephy-extension.in.in.h:1
+msgid "Actions"
+msgstr "བྱ་བ་ཚུ།"
+
+#: ../extensions/actions/ephy-actions-extension.c:112
+msgid "Actio_ns"
+msgstr "བྱ་བ་ཚུ།(_n)"
+
+#: ../extensions/actions/ephy-actions-extension.c:113
+msgid "Customize actions"
+msgstr "བྱ་བ་ཚུ་སྲོལ་སྒྲིག་བཟོ།"
+
+#: ../extensions/actions/ephy-actions-extension.c:436
+msgid "Could not run command"
+msgstr "བརྡ་བཀོད་གཡོག་བཀོལ་མ་ཚུགས།"
+
+#: ../extensions/actions/ephy-actions-extension.c:439
+msgid "Could not Run Command"
+msgstr "བརྡ་བཀོད་གཡོག་བཀོལ་མ་ཚུགས།"
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
+msgid "No action selected."
+msgstr "བྱ་བ་སེལ་འཐུ་འབད་མེདཔ།"
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
+#, c-format
+msgid "%i action selected."
+msgid_plural "%i actions selected."
+msgstr[0] "%i བྱ་བ་སེལ་འཐུ་འབད་ཡོདཔ།"
+msgstr[1] "%i བྱ་བ་ཚུ་སེལ་འཐུ་འབད་མེདཔ།"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
+msgid "Add Action"
+msgstr "བྱ་བ་ཁ་སྐོང་འབད།"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
+#, c-format
+msgid "“%s” Properties"
+msgstr "“%s” རྒྱུ་དངོས་ཚུ།"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
+msgid "Action Properties"
+msgstr "བྱ་བའི་རྒྱུ་དངོས་ཚུ།"
+
+#: ../extensions/adblock/adblock-ui.c:279
+msgid ""
+"This list is Copyright © its original author(G). It is relicensed under the GPL with permission.\n"
+"The original list, Filterset.G, can be found at http://www.pierceive.com/filtersetg/.\n"
+"This version has been modified from its original. The changes have not been approved by the original author;\n"
+"direct any problems to Bugzilla and not to the original author (G).\n"
+msgstr ""
+"ཐོ་ཡིག་འདི་འདྲ་བཤུས་དབང་ཆ་ © དེའི་རྩོམ་པ་པོ་ངོ་མ(G)། ཇི་པི་ཨེལ་དང་གཅིག་ཁར་གནང་བ་འདིའི་འོག་ལུ་ཡང་བསྐྱར་ཆོག་ཐམ་ཡོདཔ་ཨིན།\n"
+"ཚགས་མ་.ཇི་ཐོ་ཡིག་ངོ་མ་འདི་ http://www.pierceive.com/filtersetg/ནང་ལུ་ཐོབ་ཚུགསཔ་ཨིན།\n"
+"ཐོན་རིམ་འདི་དེའི་ངོ་མ་ལས་ལེགས་བཅོས་འབད་ཡོདཔ་ཨིན། བསྒྱུར་འདི་ཚུ་རྩོམ་པ་པོ་ཐད་ཀར་དུ་དཀའ་ངལ་ཚུ་གང་རུང་་\n"
+" རྐྱེན་སེལ་ཛིལ་ལ་ལུ་དང་རྩོམ་པོ་པོ་ངོ་མ་ལུ་མེན་པར་གནང་བ་མ་གནང་བཡ་ཡོདཔ།(G).\n"
+
+#: ../extensions/adblock/adblock-ui.c:496
+msgid "Pattern"
+msgstr "དཔེ་གཞི།"
+
+#: ../extensions/adblock/adblock.glade.h:1
+msgid "<b>Courtesy of Graham Pierce</b>"
+msgstr "<b>གཱ་ར་ཧམ་པི་ཡརསི་གི་བཀུར་སྟི།</b>"
+
+#: ../extensions/adblock/adblock.glade.h:2
+msgid "<b>New rule</b>"
+msgstr "<b>ལམ་ལུགས་གསརཔ</b>"
+
+#: ../extensions/adblock/adblock.glade.h:3
+msgid "<b>Update rules from original site</b>"
+msgstr "<b>ས་ཁོངས་ངོ་མ་ལས་ལམ་ལུགས་ཚུ་དུས་མཐུན་བཟོ</b>"
+
+#: ../extensions/adblock/adblock.glade.h:4
+#: ../extensions/adblock/ephy-adblock-extension.c:244
+msgid "Adblock editor"
+msgstr "ཨེཌི་ལེབ་དུམ་ཞུན་དགཔ།"
+
+#: ../extensions/adblock/adblock.glade.h:5
+msgid "Add a new rule"
+msgstr "ལམ་ལུགས་གསརཔ་ཅིག་ཁ་སྐོང་འབད།"
+
+#: ../extensions/adblock/adblock.glade.h:6
+msgid "Blacklist"
+msgstr "ཐོ་ཡིག་གནགཔོ།"
+
+#: ../extensions/adblock/adblock.glade.h:7
+msgid "Filterset.G"
+msgstr "ཚགས་མ་གཞི་སྒྲིག་ཇི།"
+
+#: ../extensions/adblock/adblock.glade.h:8
+msgid "Whitelist"
+msgstr "ཐོ་ཡིག་དཀརཔོ།"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:245
+msgid "Edit Adblock"
+msgstr "ཨེཌི་ལེབ་དུམ་ཞུན་དག་འབད།"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:312
+#, c-format
+msgid "%d hidden advertisement"
+msgid_plural "%d hidden advertisements"
+msgstr[0] "%d གསང་བའི་ཚོང་བསྒྲགས།"
+msgstr[1] "%d གསང་བའི་ཚོང་བསྒྲགས་ཚུ།"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+msgid "_Auto Reload"
+msgstr "རང་བཞིན་ཡང་བསྐྱར་མངོན་གསལ་འབད།(_A)"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
+msgid "Reload the page periodically"
+msgstr "ཤོག་ལེབ་འདི་འཕྲལ་འཕྲལ་སྦེ་ཡང་བསྐྱར་མངོན་གསལ་འབད།"
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.py:371
+msgid "View Creative Commons license"
+msgstr "གསར་སྐྲུན་གྱི་མཐུན་མོང་ཚུ་གི་ཆོག་ཐམ་ལག་འཁྱེར་་སྟོན།"
+
+#: ../extensions/certificates/ephy-certificates-extension.c:177
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
+msgid "Certificates"
+msgstr "ལག་འཁྱེར་ཚུ།"
+
+#: ../extensions/certificates/ephy-certificates-extension.c:208
+msgid "Security Devices"
+msgstr "སྲུང་སྐྱོབ་ཐབས་འཕྲུལ་ཚུ།"
+
+#. stock icon
+#: ../extensions/certificates/ephy-certificates-extension.c:220
+msgid "Manage _Certificates"
+msgstr "ལག་འཁྱེར་ཚུ་འཛིན་སྐྱོང་འབད།(_C)"
+
+#. shortcut key
+#: ../extensions/certificates/ephy-certificates-extension.c:222
+msgid "Manage your certificates"
+msgstr "ཁྱོད་རང་གི་ལག་འཁྱེར་ཚུ་འཛིན་སྐྱོང་འབད།"
+
+#. stock icon
+#: ../extensions/certificates/ephy-certificates-extension.c:226
+msgid "Manage Security _Devices"
+msgstr "སྲུང་སྐྱོབ་ཐབས་འཕྲུལ་ཚུ་འཛིན་སྐྱོང་འབད།(_D)"
+
+#. shortcut key
+#: ../extensions/certificates/ephy-certificates-extension.c:228
+msgid "Manage your security devices"
+msgstr "ཁྱོད་རང་གི་སྲུང་སྐྱོབ་ཐབས་འཕྲུལ་ཚུ་འཛིན་སྐྱོང་འབད།"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:1
+msgid "Action for tagged bookmarks:"
+msgstr "ངོ་རྟགས་ཡོད་མི་དེབ་རྟགས་ཚུ་གི་དོན་ལུ་བྱ་བ།"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:2
+msgid "Epilicious Configuration"
+msgstr "ཨིཔིལི་ཤིའསི་རིམ་སྒྲིག"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:3
+msgid "_Exclude"
+msgstr "གྲངས་སུ་མ་བརྩི་།(_E)"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:4
+msgid "_Include"
+msgstr "གརངས་སུ་བརྩི།(_I)"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:6
+msgid "_Password:"
+msgstr "ཆོག་ཡིག(_P)"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:7
+msgid "_Tag:"
+msgstr "ངོ་རྟགས།(_T)"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:1
+msgid "<b>Synchronizing with del.icio.us</b>"
+msgstr "<b> del.icio.us དང་གཅིག་ཁར་མཉམ་འབྱུང་འབད་དོ།</b>"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:2
+msgid "Adding new bookmarks and synching topics"
+msgstr "དེབ་རྟགས་ཚུ་དང་མཉམ་འབྱུང་གནད་དོན་གསརཔ་ཚུ་ཁ་སྐོང་འབད་དོ།"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:3
+msgid "Removing deleted bookmarks"
+msgstr "བཏོན་གཏང་ཡོད་མི་དེབ་རྟགས་ཚུ་རྩ་བསྐྲད་གཏང་དོ།"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:4
+msgid "Retrieving bookmarks from del.icio.us"
+msgstr " del.icio.us ལས་དེབ་རྟགས་ཚུ་སླར་འདྲེན་འབད་དོ།"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:5
+msgid "Retrieving bookmarks from epiphany"
+msgstr "ཨི་པི་ཕ་ནི་ལས་དེབ་རྟགས་ཚུ་སླར་འདྲེན་འབད་དོ།"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:6
+msgid "Retrieving previous synch point"
+msgstr "ཧེ་མམ་གྱི་མཉམ་འབྱུང་རྩེ་སླར་འདྲེན་འབད་དོ།"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:7
+msgid "Saving new synch point"
+msgstr "མཉམ་འབྱུང་རྩེ་གསརཔ་སྲུང་བཞག་འབད་དོ།"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:8
+msgid "Synchronizing..."
+msgstr "མཉམ་འབྱུང་འབད་དོ་་་"
+
+#. # Epiphany integration ##
+#: ../extensions/epilicious/epilicious.py.in:201
+#: ../extensions/epilicious/epilicious.py.in:204
+msgid "Epilicious Synchronize"
+msgstr "ཨིཔིལི་ཤིའསི་མཉམ་འབྱུང་།"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:1
+msgid "Bookmarks with this topic will be synchronized to del.icio.us."
+msgstr "དེབ་རྟགས་ཚུ་དང་གཅིག་ཁར་གནད་དོན་འདི་del.icio.us.ལུ་མཉམ་འབྱུང་འབད་ཡོདཔ་ཨིན།"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:2
+msgid "Controls the function of the topic. If this is unset then all bookmarks with the topic will be synched with del.icio.us. If this is set then all bookmarks without the topic will be synched with del.icio.us."
+msgstr "གནད་དོན་གྱི་ལས་འགན་འདི་ཚད་འཛིན་འབདཝ་ཨིན། འདི་གཞི་སྒྲིག་མ་འབད་བ་ཅིན་དེ་ལས་དེབ་རྟགས་ཚུ་དང་གཅིག་ཁར་གནད་དོན་ཆ་མཉམ་del.icio.us.དང་གཅིག་ཁར་མཉམ་འབྱུང་འབད་ཡོདཔ་ཨིན། འདི་གཞི་སྒྲིག་འབད་ཡོད་པ་ཅིན་དེ་ལས་གནད་དོན་མེད་མི་དེབ་རྟགས་ཚུ་ཆ་མཉམ་del.icio.us.དང་གཅིག་ཁར་མཉམ་འབྱུང་འབད་ཡོདཔ་ཨིན།"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:3
+msgid "Exclude topic"
+msgstr "གནད་དོན་གྲངས་སུ་མ་བརྩི།"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:4
+msgid "Shared topic"
+msgstr "རུབ་སྤྱོད་འབད་ཡོད་མི་གནད་དོན།"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:5
+msgid "The del.icio.us password that epilicious will use for synchronizing bookmarks."
+msgstr "མཉམ་འབྱུང་དེབ་རྟགས་ཚུ་གི་དོན་ལུ་ལག་ལེན་འཐབ་ནི་ཨིཔིལི་ཤིའསི་དེའི་del.icio.usཆོག་ཡིག་འདི།"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:6
+msgid "The del.icio.us username that epilicious will use for synchronizing bookmarks."
+msgstr "མཉམ་འབྱུང་དེབ་རྟགས་ཚུ་གི་དོན་ལུ་ལག་ལེན་འཐབ་ནི་ཨིཔིལི་ཤིའསི་དེའི་del.icio.us ལག་ལེན་པའི་མིང་འདི།"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:7
+msgid "del.icio.us password"
+msgstr "del.icio.us ཆོག་ཡིག"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:8
+msgid "del.icio.us username"
+msgstr "del.icio.us ལག་ལེན་པའི་མིང་།"
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
+msgid "Check _HTML"
+msgstr "ཨེཆ་ཊི་ཨེམ་ཨེལ་བརྟག་ཞིབ་འབད།(_H)"
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
+msgid "Display HTML errors in the Error Viewer dialog"
+msgstr "འཛོལ་བའི་མཐོང་སྣང་ཌའི་ལོག་ནང་ཨེཆ་ཊི་ཨེམ་ཨེལ་འཛོལ་བ་ཚུ་བཀྲམ་སྟོན་འབད།"
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:104
+msgid "Check _Links"
+msgstr "འབྲེལ་ལམ་ཚུ་བརྟག་ཞིབ་འབད།(_L)"
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:106
+msgid "Display invalid hyperlinks in the Error Viewer dialog"
+msgstr "འཛོལ་བའི་མཐོང་སྣང་ཌའི་ལོག་ནང་ནུས་མེད་ཚད་བརྒལ་འབྲེལ་མཐུད་ཚུ་བཀྲམ་སྟོན་འབད།"
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:110
+msgid "_Error Viewer"
+msgstr "སྟོན་མི་འཛོལ་བ།(_E)"
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:112
+msgid "Display web page errors"
+msgstr "ཝེབ་ཤཅག་ལེབ་འཛོལ་བ་ཚུ་བཀྲམ་སྟོན་འབད།"
+
+#: ../extensions/error-viewer/error-viewer.glade.h:1
+msgid "Cl_ear"
+msgstr "བསལ།(_e)"
+
+#: ../extensions/error-viewer/error-viewer.glade.h:2
+msgid "Error Viewer"
+msgstr "སྟོན་མི་འཛོལ་བ།"
+
+#. Don't bother looking for source lines -- they're not there
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:96
+#, c-format
+msgid ""
+"Error:\n"
+"%s"
+msgstr ""
+"འཛོལ་བ་\n"
+"%s"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:126
+#, c-format
+msgid ""
+"Javascript error in %s on line %d:\n"
+"%s"
+msgstr ""
+"ཇ་བ་ཡིག་ཚུགས་འཛོལ་བ་ %s གྱལ་གུ་ %d:\n"
+"%s"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "ནུས་མེད་%d འབྲེལ་མཐུད་འཚོལ་ཐོབ་ཡོདཔ།"
+msgstr[1] "ནུས་མེད་འབྲེལ་མཐུད་ཚུ་%d ཐོབ་ཡོདཔ།"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
+#, c-format
+msgid ""
+"Link error in %s:\n"
+"%s is unavailable."
+msgstr ""
+"ནང་འབྲེལ་ལམ་འཛོལ་བ་འདི་ %s:\n"
+"%s ཐོབ་མ་ཚུགསཔ།"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
+#, c-format
+msgid "Checking %d Link on “%s”"
+msgid_plural "Checking %d Links on “%s”"
+msgstr[0] "བརྟག་ཞིབ་འབད་དོ་ %d འབྲེལ་མཐུད་གུ་ “%s”"
+msgstr[1] "བརྟག་ཞིབ་འབད་དོ %d འབྲེལ་མཐུད་ཚུ་གུ་ “%s”"
+
+#: ../extensions/error-viewer/opensp/validate.cpp:167
+#, c-format
+msgid ""
+"HTML error in “%s” on line %s:\n"
+"%s"
+msgstr ""
+"གྱལ་གུ་ “%s” ཨེཆ་ཊི་ཨེམ་ཨེལ་འཛོལ་བ་ནང་ %s:\n"
+"%s"
+
+#: ../extensions/error-viewer/sgml-validator.c:165
+#, c-format
+msgid "Found %d error"
+msgid_plural "Found %d errors"
+msgstr[0] "ཐོབ་ཡོད་པའི་%dའཛོལ་བ་"
+msgstr[1] "ཐོ་ཡོད་པའི་ %dའཛོལ་བ་ཚུ་"
+
+#: ../extensions/error-viewer/sgml-validator.c:169
+#, c-format
+msgid "HTML Validation of “%s” complete"
+msgstr "མཇུག་བསྡུ་ “%s” གི་ཨེཆ་ཊི་ཨེམ་ཨེལ་ནུས་ལྡན་བཟོ་བ།"
+
+#: ../extensions/error-viewer/sgml-validator.c:227
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"%s"
+msgstr ""
+"ནང་ཨེཆ་ཊི་ཨེམ་ཨེལ་འཛོལ་བ་%s:\n"
+"%s"
+
+#: ../extensions/error-viewer/sgml-validator.c:229
+#: ../extensions/error-viewer/sgml-validator.c:245
+msgid "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml+xml” instead."
+msgstr "ཡིག་ཆའི་དབྱེ་བ་འདི་ “XHTML” ཨིན་རུང་ནང་དོན་དབྱེ་བ་འདི་ “text/html”ཨིནམ།  ཚབ་མ་ “application/xhtml+xml” ལག་ལེན་འཐབ།"
+
+#: ../extensions/error-viewer/sgml-validator.c:243
+#, c-format
+msgid ""
+"HTML warning in %s:\n"
+"%s"
+msgstr ""
+"ནང་ཨེཆ་ཊི་ཨེམ་ཨེལ་ཉེན་བརྡ་འབད་དོ %s:\n"
+"%s"
+
+#: ../extensions/error-viewer/sgml-validator.c:360
+#, c-format
+msgid "HTML error in %s:"
+msgstr "ནང་ཨེཆ་ཊི་ཨེམ་ཨེལ་འཛོལ་བ་ %s:"
+
+#: ../extensions/error-viewer/sgml-validator.c:368
+msgid "Invalid character encoding"
+msgstr "ནུས་མེད་ཡིག་འབྲུ་ཨིན་ཀོ་ཌིང་།"
+
+#: ../extensions/error-viewer/sgml-validator.c:373
+msgid "Unknown error while converting to UTF-8"
+msgstr "ཡུ་ཊི་ཨེཕ་-༨ ལུ་གཞི་བསྒྱུར་སྐབས་མ་ཤེས་པའི་འཛོལ་བ།"
+
+#: ../extensions/error-viewer/sgml-validator.c:435
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"No valid doctype specified."
+msgstr ""
+"ནང་ཨེཆ་ཊི་ཨེམ་ཨེལ་འཛོལ་བ་ %s:\n"
+"ནུས་ཅན་ཡིག་ཆའི་དབྱེ་བ་གསལ་བཀོད་འབད་མེདཔ།"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:356
+msgid "Enabled"
+msgstr "ལྕོགས་ཅན་བཟོ་ཡོདཔ།"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: ../extensions/rss/rss-ui.c:599
+msgid "Description"
+msgstr "འགྲེལ་བཤད།"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+msgid "<b>Loaded Extensions</b>"
+msgstr "<b>མངོན་གསལ་འབད་ཡོད་མི་རྒྱ་བསྐྱེད་ཚུ་</b>"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+msgid "Extensions"
+msgstr "རྒྱ་བསྐྱེད་ཚུ།"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
+msgid "_Extensions..."
+msgstr "རྒྱ་བསྐྱེད་ཚུ་་་(_E)"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
+msgid "Load and unload extensions"
+msgstr "མངོན་གསལ་དང་མངོན་གསལ་མ་འབད་བའི་རྒྱ་བསྐྱེད་ཚུ།"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "_Extensions"
+msgstr "རྒྱ་བསྐྱེད་ཚུ།(_E)"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
+msgid "Help about extensions"
+msgstr "རྒྱ་བསྐྱེད་ཚུ་གི་གྲོགས་རམ་སྐོར་ལས།"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+msgid "Install User _Script"
+msgstr "ལག་ལེན་པའི་ཡིག་ཚུགས་གཞི་བཙུགས་འབད།(_S)"
+
+#. shortcut key
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
+msgid "Install Greasemonkey script"
+msgstr "གིརིསི་མོང་ཀི་ཡིག་ཚུགས་གཞི་བཙུགས་འབད།"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:354
+#, c-format
+msgid "The user script at “%s” has been installed"
+msgstr "ལུ་ལག་ལེན་པའི་ཡིག་ཚུགས་འདི་ “%s” གཞི་བཙུགས་འབད་ཡོདཔ།"
+
+#: ../extensions/java-console/ephy-java-console-extension.c:48
+msgid "_Java Console"
+msgstr "ཇ་བ་མ་སྒྲོམ།(_J)"
+
+#. shortcut key
+#: ../extensions/java-console/ephy-java-console-extension.c:50
+msgid "Show Java Console"
+msgstr "ཇ་བ་མ་སྒྲོམ་སྟོན།"
+
+#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:102
+msgid "_HTTP Headers"
+msgstr "ཨེཆ་ཊི་ཊི་པི་མགོ་ཡིག་ཚུ།(_H)"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:1
+msgid "<b>Request</b>"
+msgstr "<b>ཞུ་བ་</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:2
+msgid "<b>Response</b>"
+msgstr "<b>ལན་་ཚུ་</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:3
+msgid "<b>URLs</b>"
+msgstr "<b>ཡུ་ཨར་ཨེལ་ཨེསི་</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
+msgid "Clear cache"
+msgstr "འདྲ་མཛོད་བསལ།"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
+msgid "Live Headers"
+msgstr "དངོས་མཐོང་མགོ་ཡིག་ཚུ།"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
+msgid "Remove headers"
+msgstr "མགོ་ཡིག་ཚུ་རྩ་བསྐྲད་གཏང་།"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:67
+msgid "Pa_ge Information"
+msgstr "ཤོག་ལེབ་བརྡ་དོན།(_g)"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:69
+msgid "Display page information in a dialog"
+msgstr "ཌའི་ལོག་ཅིག་ནང་ཤོག་ལེབ་བརྡ་དོན་བཀྲམ་སྟོན་འབད།"
+
+#: ../extensions/page-info/page-info-dialog.c:730
+msgid "Save As..."
+msgstr "བཟུམ་སྦེ་སྲུང་བཞག་འབད་་་"
+
+#: ../extensions/page-info/page-info-dialog.c:747
+msgid "Select a directory"
+msgstr "སནོད་ཐོ་ོིག་སེལ་འཐུ་འབད།"
+
+#: ../extensions/page-info/page-info-dialog.c:796
+msgid "Unknown type"
+msgstr "མ་ཤེས་པའི་དབྱེ་བ།"
+
+#: ../extensions/page-info/page-info-dialog.c:801
+msgid "Full standards compliance"
+msgstr "ཚད་ལྡན་འཁྲིལ་བསྟུན་གངམ།"
+
+#: ../extensions/page-info/page-info-dialog.c:804
+msgid "Almost standards compliance"
+msgstr "འཁྲིལ་བསྟུན་ཧ་ལམ་ཚད་ལྡནམ་ཨིན།"
+
+#: ../extensions/page-info/page-info-dialog.c:807
+msgid "Compatibility"
+msgstr "མཐུན་འགྱུར།"
+
+#: ../extensions/page-info/page-info-dialog.c:811
+msgid "Undetermined"
+msgstr "གཏན་འབེབས་མ་བཟོ་བར་ཡོདཔ།"
+
+#: ../extensions/page-info/page-info-dialog.c:820
+msgid "Not cached"
+msgstr "འདྲ་མཛོད་མེདཔ།"
+
+#: ../extensions/page-info/page-info-dialog.c:823
+msgid "Disk cache"
+msgstr "ཌིཀསི་འདྲ་མཛོད།"
+
+#: ../extensions/page-info/page-info-dialog.c:826
+msgid "Memory cache"
+msgstr "དྲན་ཚད་འདྲ་མཛོད།"
+
+#: ../extensions/page-info/page-info-dialog.c:829
+msgid "Unknown cache"
+msgstr "མ་ཤེས་པའི་འདྲ་མཛོད།"
+
+#: ../extensions/page-info/page-info-dialog.c:845
+#: ../extensions/page-info/page-info-dialog.c:961
+msgid "Unknown"
+msgstr "མ་ཤེསཔ།"
+
+#: ../extensions/page-info/page-info-dialog.c:850
+msgid "No referrer"
+msgstr "གཞི་བསྟུན་མེདཔ།"
+
+#: ../extensions/page-info/page-info-dialog.c:864
+#: ../extensions/page-info/page-info-dialog.c:880
+msgid "Not specified"
+msgstr "གསལ་བཀོད་འབད་མེདཔ།"
+
+#: ../extensions/page-info/page-info-dialog.c:943
+msgid "Image"
+msgstr "གཟུགས་བརྙན།"
+
+#: ../extensions/page-info/page-info-dialog.c:946
+msgid "Background image"
+msgstr "རྒྱབ་གཞིའི་གཟུགས་བརྙན།"
+
+#: ../extensions/page-info/page-info-dialog.c:949
+msgid "Embed"
+msgstr "གནས་འདྲེན།"
+
+#: ../extensions/page-info/page-info-dialog.c:952
+msgid "Object"
+msgstr "དངོས་པོ།"
+
+#: ../extensions/page-info/page-info-dialog.c:955
+msgid "Applet"
+msgstr "ཨེཔ་ལེཊི།"
+
+#: ../extensions/page-info/page-info-dialog.c:958
+msgid "Icon"
+msgstr "ངོས་དཔར།"
+
+#: ../extensions/page-info/page-info-dialog.c:1130
+msgid "_Open"
+msgstr "ཁ་ཕྱེ།(_O)"
+
+#: ../extensions/page-info/page-info-dialog.c:1136
+#: ../extensions/page-info/page-info-dialog.c:1581
+msgid "_Copy Link Address"
+msgstr "འབྲེལ་མཐུད་ཁ་བྱང་འདྲ་བཤུས་འབད།(_C)"
+
+#: ../extensions/page-info/page-info-dialog.c:1142
+msgid "_Use as Background"
+msgstr "རྒྱབ་གཞི་བཟུམ་སྦེ་ལག་ལེན་འཐབ།(_U)"
+
+#: ../extensions/page-info/page-info-dialog.c:1148
+#: ../extensions/page-info/page-info-dialog.c:1587
+msgid "_Save As..."
+msgstr "བཟུམ་སྦེ་སྲུང་བཞག་འབད་་་(_S)"
+
+#: ../extensions/page-info/page-info-dialog.c:1380
+#: ../extensions/page-info/page-info-dialog.c:1701
+msgid "Blocked"
+msgstr "འགགས་ཡོདཔ།"
+
+#: ../extensions/page-info/page-info-dialog.c:1396
+#: ../extensions/page-info/page-info-dialog.c:1717
+msgid "URL"
+msgstr "ཡུ་ཨར་ཨེལ།"
+
+#: ../extensions/page-info/page-info-dialog.c:1409
+msgid "Type"
+msgstr "དབྱེ་བ།"
+
+#: ../extensions/page-info/page-info-dialog.c:1421
+msgid "Alt Text"
+msgstr "གདམ་ལྡེ་ཚིག་ཡིག"
+
+#: ../extensions/page-info/page-info-dialog.c:1433
+#: ../extensions/page-info/page-info-dialog.c:1730
+msgid "Title"
+msgstr "མགོ་མིང་།"
+
+#: ../extensions/page-info/page-info-dialog.c:1445
+msgid "Width"
+msgstr "རྒྱ་ཚད།"
+
+#: ../extensions/page-info/page-info-dialog.c:1457
+msgid "Height"
+msgstr "མཐོ་ཚད།"
+
+#: ../extensions/page-info/page-info-dialog.c:1742
+msgid "Relation"
+msgstr "མཐུན་འབྲེལ།"
+
+#: ../extensions/page-info/page-info-dialog.c:1891
+#: ../extensions/page-info/page-info-dialog.c:2032
+msgid "Name"
+msgstr "མིང་།"
+
+#: ../extensions/page-info/page-info-dialog.c:1903
+msgid "Method"
+msgstr "ཐབས་ལམ།"
+
+#: ../extensions/page-info/page-info-dialog.c:1917
+msgid "Action"
+msgstr "བྱ་བ།"
+
+#: ../extensions/page-info/page-info-dialog.c:1998
+msgid "_Copy"
+msgstr "འདྲ་བཤུས།(_C)"
+
+#: ../extensions/page-info/page-info-dialog.c:2044
+msgid "Content"
+msgstr "ནང་དོན།"
+
+#: ../extensions/page-info/page-info-dialog.c:2145
+msgid "Page Metadata"
+msgstr "ཤོག་ལེབ་མི་ཊ་གནས་སྡུད།"
+
+#: ../extensions/page-info/page-info.glade.h:1
+msgid "<b>Dublin Core Metadata</b>"
+msgstr "<b>དུབ་ལིན་ནང་སྙིང་མི་ཊ་གནས་སྡུད།</b>"
+
+#: ../extensions/page-info/page-info.glade.h:2
+msgid "<b>Forms In Page</b>"
+msgstr "<b>ཤོག་ལེབ་ནང་གཞི་སྒྲུབ་ཨིན།</b>"
+
+#: ../extensions/page-info/page-info.glade.h:3
+msgid "<b>Links In Page</b>"
+msgstr "<b>ཤོག་ལེབ་ནང་འབྲེལ་མཐུདཔ་ཨིན།</b>"
+
+#: ../extensions/page-info/page-info.glade.h:4
+msgid "<b>Media In Page</b>"
+msgstr "<b>ཤོག་ལེབ་ནང་བརྡ་ལམ།</b>"
+
+#: ../extensions/page-info/page-info.glade.h:5
+msgid "<b>Medium View</b>"
+msgstr "<b>འབྲིང་མ་སྟོན།</b>"
+
+#: ../extensions/page-info/page-info.glade.h:6
+msgid "<b>Other Metadata</b>"
+msgstr "<b>གཞན་མི་ཊ་གནས་སྡུད།</b>"
+
+#: ../extensions/page-info/page-info.glade.h:7
+msgid "<b>Rendering</b>"
+msgstr "<b>ལྷག་སྟོན་འབད་དོ།</b>"
+
+#: ../extensions/page-info/page-info.glade.h:8
+msgid "<b>Source File</b>"
+msgstr "<b>འབྱུང་ཁུངས་ཡིག་སྣོད།</b>"
+
+#: ../extensions/page-info/page-info.glade.h:9
+msgid "<b>Web Page</b>"
+msgstr "<b>ཝེབ་ཤོག་ལེབ།</b>"
+
+#: ../extensions/page-info/page-info.glade.h:10
+msgid "DYNAMIC"
+msgstr "ནུས་ཅན།"
+
+#: ../extensions/page-info/page-info.glade.h:11
+msgid "Date:"
+msgstr "ཚེས་གྲངས།"
+
+#: ../extensions/page-info/page-info.glade.h:12
+msgid "Description:"
+msgstr "འགྲེལ་བཤད།"
+
+#: ../extensions/page-info/page-info.glade.h:13
+msgid "Encoding:"
+msgstr "ཨིན་ཀོ་ཌིང་།"
+
+#: ../extensions/page-info/page-info.glade.h:14
+msgid "Expires:"
+msgstr "དུས་ཡོལཝ་ཨིན།"
+
+#: ../extensions/page-info/page-info.glade.h:15
+msgid "Format:"
+msgstr "རྩ་སྒྲིག"
+
+#: ../extensions/page-info/page-info.glade.h:16
+msgid "Forms"
+msgstr "འབྲི་ཤོག་ཚུ།"
+
+#: ../extensions/page-info/page-info.glade.h:17
+msgid "General"
+msgstr "ཡོངས་ཁྱབ།"
+
+#: ../extensions/page-info/page-info.glade.h:18
+msgid "Links"
+msgstr "འབྲེལ་མཐུད་ཚུ།"
+
+#: ../extensions/page-info/page-info.glade.h:19
+msgid "Location:"
+msgstr "གནས་ཁོངས།"
+
+#: ../extensions/page-info/page-info.glade.h:20
+msgid "MIME type:"
+msgstr "ཨེམ་ཨའི་ཨེམ་ཨི་དབྱེ་བ།"
+
+#: ../extensions/page-info/page-info.glade.h:21
+msgid "Media"
+msgstr "བརྡ་ལམ།"
+
+#: ../extensions/page-info/page-info.glade.h:22
+msgid "Metadata"
+msgstr "མི་ཊ་གནས་སྡུད།"
+
+#: ../extensions/page-info/page-info.glade.h:23
+msgid "Mode:"
+msgstr "ཐབས་ལམ།"
+
+#: ../extensions/page-info/page-info.glade.h:24
+msgid "Modified:"
+msgstr "ལེགས་བཅོས་འབད་ཡོདཔ།"
+
+#: ../extensions/page-info/page-info.glade.h:25
+msgid "Page Properties"
+msgstr "ཤོག་ལེབ་རྒྱུ་དངོས་ཚུ།"
+
+#: ../extensions/page-info/page-info.glade.h:26
+msgid "Referrer:"
+msgstr "གཞི་བསྟུན།"
+
+#: ../extensions/page-info/page-info.glade.h:27
+msgid "Size:"
+msgstr "ཚད།"
+
+#: ../extensions/page-info/page-info.glade.h:28
+msgid "Source:"
+msgstr "འབྱུང་ཁུངས།"
+
+#: ../extensions/page-info/page-info.glade.h:29
+msgid "Title:"
+msgstr "མགོ་མིང་།"
+
+#: ../extensions/page-info/page-info.glade.h:30
+msgid "Type:"
+msgstr "དབྱ་བ།"
+
+#: ../extensions/page-info/page-info.glade.h:31
+msgid "_Save Media As..."
+msgstr "བཟུམ་སྦེ་བརྡ་ལམ་སྲུང་བཞག་འབད་་་(_S)"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:180
+msgid "allowed"
+msgstr "ཆོག་པ།"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:184
+msgid "denied"
+msgstr "ཉན་མ་བཏུབ།"
+
+#. Sometimes we get this... how did this get in the list!?
+#: ../extensions/permissions/ephy-permissions-dialog.c:189
+msgid "default"
+msgstr "སྔོན་སྒྲིག"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:515
+msgid "Domain"
+msgstr "ཌོ་མེན།"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:527
+msgid "State"
+msgstr "གནས་ལུགས།"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:620
+msgid "Site Permissions"
+msgstr "གནང་བ་ཚུའི་ས་ཁོངས།"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:647
+msgid "Cookies"
+msgstr "ཀུ་ཀིསི།"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:648
+msgid "Images"
+msgstr "གཟུགས་བརྙན་ཚུ།"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:649
+msgid "Popup Windows"
+msgstr "པོཔ་ཨཔ་ཝིནཌོསི།"
+
+#. stock icon
+#: ../extensions/permissions/ephy-permissions-extension.c:156
+msgid "Site _Permissions"
+msgstr "གནང་བ་ཚཚུའི་ས་ཁོངས།(_P)"
+
+#. shortcut key
+#: ../extensions/permissions/ephy-permissions-extension.c:158
+msgid "Manage web site permissions"
+msgstr "ཝེབ་ས་ཁོངས་གནང་བ་ཚུ་འཛིན་སྐྱོང་འབད།"
+
+#: ../extensions/rss/ephy-rss-extension.c:90
+msgid "News Feeds Subscription"
+msgstr "གནས་ཚུལ་གྱིས་མཁོ་མངགས་མཁོ་སྒྲུབ་འབདཝ་ཨིན།"
+
+#: ../extensions/rss/ephy-rss-extension.c:92
+msgid "Subscribe to this website's news feeds in your favorite news reader"
+msgstr "ཁྱོད་རང་གི་དགའ་མི་གནས་ཚུལ་ལྷག་མི་ནང་ཝེབ་ས་ཁོངས་ཀྱི་གནས་ཚུལ་མཁོ་སྒྲུབ་འབད་ནི་ཚུ་ལུ་མཁོ་མངགས་འབད།"
+
+#: ../extensions/rss/ephy-rss-extension.c:97
+msgid "_Subscribe to this feed"
+msgstr "མཁོ་སྒྲུབ་འདི་ལུ་མཁོ་མངགས་འབད།(_S)"
+
+#: ../extensions/rss/ephy-rss-extension.c:99
+msgid "Subscribe to this feed in your favorite news reader"
+msgstr "མཁོ་སྒྲུབ་འདི་ཁྱོད་རང་གི་དགའ་མི་གནས་ཚུལ་ལྷག་མི་ནང་མཁོ་མངགས་འབད།"
+
+#: ../extensions/rss/ephy-rss-extension.c:382
+msgid "Subscribe to site's news feed"
+msgstr "ས་ཁོངས་ཀྱི་གནས་ཚུལ་མཁོ་སྒྲུབ་ལུ་མཁོ་མངགས་འབད།"
+
+#: ../extensions/rss/rss-ui.c:167
+msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
+msgstr "<b><i>མཁོ་སྒྲུབ་ལྷག་མི་འདི་འབྲེལ་བ་འཐབ་མི་ཚུགསཔ་ གཡོག་བཀོལ་དོ་ག ?</i></b>"
+
+#: ../extensions/rss/rss-ui.c:169
+msgid "Retry"
+msgstr "སླར་རྩོལ།"
+
+#: ../extensions/rss/rss-ui.c:297
+msgid "_Copy Feed Address"
+msgstr "མཁོ་སྒྲུབ་འབད་ནི་ཁ་བྱང་འདྲ་བཤུས་འབད།(_C)"
+
+#: ../extensions/rss/rss-ui.c:591
+msgid "Subscribe"
+msgstr "མཁོ་མངགས་འབད་ནི།"
+
+#: ../extensions/rss/rss-ui.glade.h:1
+msgid "<b>Select Interesting Feeds</b>"
+msgstr "<b>སྤྲོ་བ་ཆེ་བའི་མཁོ་སྒྲུབ་ཚུ་སེལ་འཐུ་འབད།</b>"
+
+#: ../extensions/rss/rss-ui.glade.h:2
+#: ../extensions/rss/rss.ephy-extension.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "གནས་ཚུལ་མཁོ་སྒྲུབ་མཁོ་མངགས།"
+
+#: ../extensions/rss/rss-ui.glade.h:3
+msgid "_Subscribe"
+msgstr "མཁོ་མངགས་འབད་ནི།(_S)"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:145
+msgid "Render the page without using a style"
+msgstr "བཟོ་རྣམ་ཅིག་ལག་ལེན་མ་འཐབ་པར་ཤོག་ལེབ་འདི་ལྷག་སྟོན་འབད།"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:148
+msgid "Render the page using the default style"
+msgstr "སྔོན་སྒྲིག་བཟོ་རྣམ་ལག་ལེན་འཐབ་དེ་ཤོག་ལེབ་འདི་ལྷག་སྟོན་འབད།"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:151
+#, c-format
+msgid "Render the page using the “%s” style"
+msgstr "བཟོ་རྣམ་ “%s” འདི་ལག་ལེན་འཐབ་དོ་ཤོག་ལེབ་འདི་ལྷག་སྟོན་འབད།"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:309
+msgid "St_yle"
+msgstr "བཟོ་རྣམ།(_y)"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:310
+msgid "Select a different style for this page"
+msgstr "ཤོག་ལེབ་འདིའི་དོན་ལུ་བཟོ་རྣམ་སོ་སོ་ཅིག་སེལ་འཐུ་འབད།"
+
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:224
+msgid "Default"
+msgstr "སྔོན་སྒྲིག"
+
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:235
+msgid "None"
+msgstr "ཅི་མེད།"
+
+#: ../extensions/sidebar/ephy-sidebar.c:176
+msgid "No Sidebars installed"
+msgstr "ཟུར་ཁའི་ཕྲ་རིང་ཚུ་གཞི་བཙུགས་འབད་མེདཔ།"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:105
+msgid "_Sidebar"
+msgstr "ཟུར་ཁའི་ཕྲ་རིང་།(_S)"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:106
+msgid "Show or hide the sidebar"
+msgstr "ཟུར་ཁའི་ཕྲ་རིང་འདི་སྟོན་ཡང་ན་སྦ་བཞག"
+
+#. Translators: %s is the sidebar title
+#: ../extensions/sidebar/ephy-sidebar-extension.c:408
+#, c-format
+msgid "The sidebar already contains “%s”"
+msgstr "ཟུར་ཁའི་ཕྲ་རིང་འདི་ཧེ་མ་ལས་ “%s” ཡོདཔ།"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:412
+msgid "To use this sidebar, select it from the list of available sidebar pages."
+msgstr "ཟུར་ཁའི་ཕྲ་རིང་འདི་ལག་ལེན་འཐབ་ནི་ལུ་ཐོབ་ཚུགས་པའི་ཟུར་ཁའི་ཕྲ་རིང་ཤོག་ལེབ་ཚུ་གི་ཐོ་ཡིག་ལས་སེལ་འཐུ་འབད།"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:415
+#: ../extensions/sidebar/ephy-sidebar-extension.c:441
+msgid "Add Sidebar"
+msgstr "ཟུར་ཁའི་ཕྲ་རིང་ཁ་སྐོང་འབད།"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:435
+#, c-format
+msgid "Add “%s” to the Sidebar?"
+msgstr "ཟུར་ཁའི་ཕྲ་རིང་འདི་ལུ་ “%s” ཁ་སྐོང་འབད་ནི་ཨིན་ན?"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:439
+#, c-format
+msgid "The source to the new sidebar page is “%s”."
+msgstr "ཟུར་ཁའི་ཕྲ་རིང་ཤོག་ལེབ་གསརཔ་འདི་ལུ་འབྱུང་ཁུངས་འདི་ “%s”."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:445
+msgid "_Add Sidebar"
+msgstr "ཟུར་ཁའི་ཕྲ་རིང་ཁ་སྐོང་འབད།(_A)"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:551
+msgid "_Look Up"
+msgstr "བལྟ་བ།(_L)"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:558
+msgid "_GNOME Dictionary"
+msgstr "ཇི་ནོམ་སྣོད་ཐོ།(_G)"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
+msgid "Open search result in new tab"
+msgstr "མཆོང་ལྡེ་གསརཔ་ནང་འཚོལ་ཞིབ་འགྲུབ་འབྲས་ཁ་ཕྱེ།"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
+msgid "Open search result in new tab if true, in new window if false"
+msgstr "རྫུན་མ་ཨིན་པ་ཅིན་ཝིནཌོ་གསརཔ་ནང་ བདེན་པ་ཨིན་པ་ཅིན་མཆོང་ལྡེ་གསརཔ་ནང་འཚོལ་ཞིབ་ཁ་ཕྱེ།"
+
+#: ../extensions/actions/actions.ephy-extension.in.in.h:2
+msgid "Execute arbitrary commands from the context menu"
+msgstr "སྐབས་དོན་དཀར་ཆག་ལས་མཐུན་སྒྲིག་བརྡ་བཀོད་ཚུ་ལག་ལེན་འཐབ།"
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
+msgid "Auto Scroll"
+msgstr "རང་བཞིན་བཤུད་སྒྲིལ།"
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
+msgid "Scroll on middle mouse click"
+msgstr "མཱའུསི་ཨེབ་གཏང་འབྲིང་མ་གུ་བཤུད་སྒྲིལ་འབད།"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
+msgid "Auto Reload Tab"
+msgstr "རང་བཞིན་ཡང་བསྐྱར་མངོན་གསལ་མཆོང་ལྡེ།"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
+msgid "Reload a tab periodically"
+msgstr "མཆོང་ལྡེ་ཅིག་འཕྲལ་འཕྲལ་སྦེ་ཡང་བསྐྱར་མངོན་གསལ་འབད།"
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
+msgid "Creative Commons license viewer"
+msgstr "གསར་སྐྲུན་གྱི་མཐུན་མོང་ཚུ་གི་ཆོག་ཐམ་ལག་འཁྱེར་སྟོན་མི།"
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
+msgid "Shows the Creative Commons license of the current website if available"
+msgstr "ཐོབ་ཚུགས་པ་ཅིན་ད་ལྟོའི་ཝེབ་ས་ཁོངས་ཀྱི་གསར་སྐྲུན་གྱི་མཐུན་མོང་ཚུ་གི་ཆོག་ཐམ་ལག་འཁྱེར་འདི་སྟོནམ་ཨིན།"
+
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
+msgid "View the page certificate and manage the certificates"
+msgstr "ཤོག་ལེབ་ལག་འཁྱེར་འདི་སྟོན་ནི་དང་ལག་འཁྱེར་ཚུ་འཛིན་སྐྱོང་འབད།"
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
+msgid "Error viewer"
+msgstr "འཛོལ་བ་སྟོན་མི།"
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
+msgid "Validate web pages and check links"
+msgstr "ནུས་ཅན་ཝེབ་ཤོག་ལེབ་ཚུ་དང་འབྲེལ་མཐུད་ཚུ་བརྟག་ཞིབ་འབད།"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
+msgid "Activate and deactivate extensions"
+msgstr "ཤུགས་ལྡན་དང་ཤུགས་ལྡན་མེད་པའི་རྒྱ་བསྐྱེད་ཚུ།"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
+msgid "Extensions Manager"
+msgstr "རྒྱ་བསྐྱེད་ཚུ་གི་འཛིན་སྐྱོང་པ།"
+
+#: ../extensions/favicon/favicon.ephy-extension.in.h:1
+msgid "Favicon fallback"
+msgstr "ཕེ་བི་ཀོན་ཕཱལ་བེཀ།"
+
+#: ../extensions/favicon/favicon.ephy-extension.in.h:2
+msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
+msgstr "ས་ཁོངས་འདི་གིས་ཚད་ལྡན་ཐབས་ལམ་ལག་ལེན་མ་འཐབ་པ་ཅིན་ཕེ་བི་ཀོན་བཟུམ་སྦེ་/favicon.icoམངོན་གསལ་འབདཝ་ཨིན།"
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
+msgid "Gestures"
+msgstr "རྣམ་འགྱུར་ཚུ།"
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:2
+msgid "Perform actions with mouse gestures"
+msgstr "བྱ་བ་ཚུ་དང་གཅིག་ཁར་མཱའུསི་རྣམ་འགྱུར་ཚུ་ལཱ་འགན་སྒྲུབ།"
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
+msgid "Greasemonkey"
+msgstr "གིརིསི་མོང་ཀི།"
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
+msgid "Run user scripts to modify web pages' behavior"
+msgstr "ཝེབ་ཤོག་ལེབ་ཀྱི་སྤྱོད་ལམ་ལེགས་བཅོས་འབད་ནི་ལུ་ལག་ལེན་པའི་ཡིག་ཚུགས་ཚུ་གཡོག་བཀོལ།"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
+msgid "Java Console"
+msgstr "ཇ་བ་མ་སྒྲོམ།"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
+msgid "Provide access to the Java-Plugin Console"
+msgstr "ཇ་བ་ནང་བསྐྱོད་མ་སྒྲོམ་ལུ་འཛུལ་སྤྱོད་འབད་ནི་བྱིན།"
+
+#: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
+msgid "Live HTTP headers"
+msgstr "དངོས་མཐོང་ཨེཆ་ཊི་ཊི་པི་མགོ་ཡིག་ཚུ།"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
+msgid "Display information about and links and media from the current page"
+msgstr "ད་ལྟོའི་ཤོག་ལེབ་ལས་འབྲེལ་མཐུད་ཚུ་དང་བརྡ་ལམ་གྱི་སྐོར་ལས་བརྡ་དོན་བཀྲམ་སྟོན་འབད།"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
+msgid "Page Info"
+msgstr "ཤོག་ལེབ་བརྡ་དོན།"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
+msgid "Edit site permissions"
+msgstr "ས་ཁོངས་གནང་བ་ཚུ་ཞུན་དག་འབད།"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
+msgid "Permissions"
+msgstr "གནང་བ་ཚུ།"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
+msgid "Drag the page on middle mouse click"
+msgstr "ཤོག་ལེབ་འདི་མཱའུསི་ཨེབ་གཏང་འབྲིང་མ་གུ་འདྲུད་འབག"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+msgid "Push Scroll"
+msgstr "བཤུད་སྒྲིལ་འཕུལ།"
+
+#: ../extensions/rss/rss.ephy-extension.in.in.h:2
+msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr "ཁྱོད་རང་གི་དགའ་མི་གནས་ཚུལ་ལྷག་མི་ནང་ཝེབ་ཤོག་ལེབ་ཀྱིས་ཕུལ་ཡོད་མི་གནས་ཚུལ་མཁོ་སྒྲུབ་ཅིག་ལུ་མཁོ་མངགས་འབད།"
+
+#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
+msgid "A sample extension with mozilla backend"
+msgstr "དཔེ་ཚད་རྒྱ་བསྐྱེད་དང་གཅིག་ཁར་མོ་ཛིལ་ལ་རྒྱབ་མཐའ་ཅིག"
+
+#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:2
+msgid "Sample (Mozilla)"
+msgstr "དཔེ་ཚད(མི་ཛིལ་ལ་)"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:1
+msgid "A sample extension"
+msgstr "དཔེ་ཚད་རྒྱ་བསྐྱེད་ཅིག"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:2
+msgid "Sample"
+msgstr "དཔེ་ཚད།"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
+msgid "Select Stylesheet"
+msgstr "སི་ཊཡེལ་ཤིཊི་སེལ་འཐུ་འབད།"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
+msgid "Select between different stylesheets offered by the web page"
+msgstr "ཝེབ་ཤོག་ལེབ་ཀྱིས་ཕུལ་ཡོད་མི་སི་ཊ་ཡེལ་ཤིཊི་སོ་སོ་བར་ན་སེལ་འཐུ་འབད།"
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
+msgid "Adds a sidebar to windows"
+msgstr "ཝིནཌོ་ཚུ་ལུ་ཟུར་ཁའི་ཕྲ་རིང་ཅིག་ཁ་སྐོང་འབདཝ་ཨིན།"
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
+msgid "Sidebar"
+msgstr "ཟུར་ཁའི་ཕྲ་རིང་།"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
+msgid "Look up the selected text with a smart bookmark"
+msgstr "སེལ་འཐུ་འབད་ཡོད་མི་ཚིག་ཡིག་དང་གཅིག་ཁར་སྤུར་བསྒྱིར་དྲགས་དེབ་རྟགས་ཅིག་བལྟ་བ།"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
+msgid "Smart Bookmarks"
+msgstr "སྤུལ་བསྒྱིར་དྲགས་ཀྱི་དེབ་རྟགས་ཚུ།"
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
+msgid "Groups newly opened tabs"
+msgstr "གསརཔ་སྦེ་ཁ་ཕྱེ་ཡོད་མི་མཆོང་ལྡེ་ཚུ་སྡེ་ཚན་བཟོཝ་ཨིན།"
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
+msgid "Tab Groups"
+msgstr "མཆོང་ལྡེའི་སྡེ་ཚན་ཚུ།"
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
+msgid "Indicates new content in background tabs"
+msgstr "རྒྱབ་གཞི་མཆོང་ལྡེ་ཚུ་ནང་ནང་དོན་གསརཔ་བརྡ་སྟོནམ་ཨིན།"
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
+msgid "Tab States"
+msgstr "མཆོང་ལྡེའི་གནས་ལུགས་ཚུ།"
+
