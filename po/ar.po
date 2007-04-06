@@ -8,17 +8,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions.HEAD.ar\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=epiphany-extensions\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
 "POT-Creation-Date: 2007-04-06 11:17+0100\n"
-"PO-Revision-Date: 2007-03-03 12:55+0200\n"
-"Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
+"PO-Revision-Date: 2007-04-06 11:18+0100\n"
+"Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : "
-"3\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 0 : n==2 ? 1 : n>=3 && n<=10 ? 2 : 3\n"
 "X-Poedit-Language: Arabic\n"
 "X-Generator: KBabel 1.11.4\n"
 
@@ -31,15 +29,11 @@ msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">عام</span>"
 
 #: ../extensions/actions/action-properties.glade.h:3
-msgid ""
-"If this option is enabled, the action will be included in the popup menu of "
-"images."
+msgid "If this option is enabled, the action will be included in the popup menu of images."
 msgstr "إذا فعّل هذا الخيار، سيُشمل الفعل في القائمة المنبثقة للصور."
 
 #: ../extensions/actions/action-properties.glade.h:4
-msgid ""
-"If this option is enabled, the action will be included in the popup menu of "
-"links and pages."
+msgid "If this option is enabled, the action will be included in the popup menu of links and pages."
 msgstr "إذا فعّل هذا الخيار، سيُشمل الفعل في القائمة المنبثقة للروابط والصفحات."
 
 #: ../extensions/actions/action-properties.glade.h:5
@@ -47,20 +41,12 @@ msgid "The action description."
 msgstr "وصف الفعل."
 
 #: ../extensions/actions/action-properties.glade.h:6
-msgid ""
-"The action name. If a character is preceded by an underscore, that character "
-"will be used as the access key for the menu item."
-msgstr ""
-"اسم الفعل. إذا سبق محرف بشرطة تحتية، سيستخدم هذا المحرف كمفتاح وصول لعنصر "
-"القائمة."
+msgid "The action name. If a character is preceded by an underscore, that character will be used as the access key for the menu item."
+msgstr "اسم الفعل. إذا سبق محرف بشرطة تحتية، سيستخدم هذا المحرف كمفتاح وصول لعنصر القائمة."
 
 #: ../extensions/actions/action-properties.glade.h:7
-msgid ""
-"The command to execute when the action is activated. The URL of the link, "
-"image or page will be appended to the command."
-msgstr ""
-"الأمر الذي سينفّذ عند تنشيط الفعل. عنوان (URL) الوصلة، الصورة أو الصفحة سيلحق "
-"بالأمر."
+msgid "The command to execute when the action is activated. The URL of the link, image or page will be appended to the command."
+msgstr "الأمر الذي سينفّذ عند تنشيط الفعل. عنوان (URL) الوصلة، الصورة أو الصفحة سيلحق بالأمر."
 
 #: ../extensions/actions/action-properties.glade.h:8
 msgid "_Command:"
@@ -132,20 +118,14 @@ msgstr "خصائص الفعل"
 
 #: ../extensions/adblock/adblock-ui.c:279
 msgid ""
-"This list is Copyright © its original author(G). It is relicensed under the "
-"GPL with permission.\n"
-"The original list, Filterset.G, can be found at http://www.pierceive.com/"
-"filtersetg/.\n"
-"This version has been modified from its original. The changes have not been "
-"approved by the original author;\n"
+"This list is Copyright © its original author(G). It is relicensed under the GPL with permission.\n"
+"The original list, Filterset.G, can be found at http://www.pierceive.com/filtersetg/.\n"
+"This version has been modified from its original. The changes have not been approved by the original author;\n"
 "direct any problems to Bugzilla and not to the original author (G).\n"
 msgstr ""
-"حقوق نسخ هذعه القائمة محفوظة © لمؤلفها الأصلي (G). أعيد ترخيصها تحت GPL "
-"بتصريح.\n"
-"القائمة الأصلية، Filterset.G، يمكن العثور عليها في  http://www.pierceive.com/"
-"filtersetg/.\n"
-"هذه الإصدارة عدلّت عن حالتها الأصلية. والتعديلات لم يوافق يجزها المؤلف "
-"الأصلي؛\n"
+"حقوق نسخ هذعه القائمة محفوظة © لمؤلفها الأصلي (G). أعيد ترخيصها تحت GPL بتصريح.\n"
+"القائمة الأصلية، Filterset.G، يمكن العثور عليها في  http://www.pierceive.com/filtersetg/.\n"
+"هذه الإصدارة عدلّت عن حالتها الأصلية. والتعديلات لم يوافق يجزها المؤلف الأصلي؛\n"
 "لذا أرسل أي مشاكل إلى بجزيلا Bugzilla وليس المؤلف الأصلي (G).\n"
 
 #: ../extensions/adblock/adblock-ui.c:496
@@ -306,13 +286,8 @@ msgid "Bookmarks with this topic will be synchronized to del.icio.us."
 msgstr "ستزامن العلامات ذات هذا الموضوع مع del.icio.us"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:2
-msgid ""
-"Controls the function of the topic. If this is unset then all bookmarks with "
-"the topic will be synched with del.icio.us. If this is set then all "
-"bookmarks without the topic will be synched with del.icio.us."
-msgstr ""
-"يتحكم في وظيفة الموضوع. إذا لم يضبط هذا فستزامن كل العلامات ذات هذا الموضوع "
-"مع del.icio.us. إذا ضبط هذا، ستزامن العلامات بدون هذا الموضوع مع del.icio.us."
+msgid "Controls the function of the topic. If this is unset then all bookmarks with the topic will be synched with del.icio.us. If this is set then all bookmarks without the topic will be synched with del.icio.us."
+msgstr "يتحكم في وظيفة الموضوع. إذا لم يضبط هذا فستزامن كل العلامات ذات هذا الموضوع مع del.icio.us. إذا ضبط هذا، ستزامن العلامات بدون هذا الموضوع مع del.icio.us."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:3
 msgid "Exclude topic"
@@ -323,15 +298,11 @@ msgid "Shared topic"
 msgstr "موضوع مُشارك"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:5
-msgid ""
-"The del.icio.us password that epilicious will use for synchronizing "
-"bookmarks."
+msgid "The del.icio.us password that epilicious will use for synchronizing bookmarks."
 msgstr "كلمة سر del.icio.us التي سيستخدمها إبيليشيس لمزامنة علامات المواقع."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
-msgid ""
-"The del.icio.us username that epilicious will use for synchronizing "
-"bookmarks."
+msgid "The del.icio.us username that epilicious will use for synchronizing bookmarks."
 msgstr "اسم مستخدم del.icio.us الذي سيستخدمه إبيليشيس لمزامنة علامات المواقع."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:7
@@ -457,12 +428,8 @@ msgstr ""
 
 #: ../extensions/error-viewer/sgml-validator.c:229
 #: ../extensions/error-viewer/sgml-validator.c:245
-msgid ""
-"Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
-"+xml” instead."
-msgstr ""
-"نوع Doctype هو “XHTML” لكن نوع المحتوى “text/html”. استخدم “application/xhtml"
-"+xml” بدلاً."
+msgid "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml+xml” instead."
+msgstr "نوع Doctype هو “XHTML” لكن نوع المحتوى “text/html”. استخدم “application/xhtml+xml” بدلاً."
 
 #: ../extensions/error-viewer/sgml-validator.c:243
 #, c-format
@@ -1015,10 +982,8 @@ msgid "The sidebar already contains “%s”"
 msgstr "الشريط الجانبي يحتوي بالفعل “%s”"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:412
-msgid ""
-"To use this sidebar, select it from the list of available sidebar pages."
-msgstr ""
-"لتستخدم هذا الشريط الجانبي، اختره من قائمة صفحات الأشرطة الجانبية المتوفّرة."
+msgid "To use this sidebar, select it from the list of available sidebar pages."
+msgstr "لتستخدم هذا الشريط الجانبي، اختره من قائمة صفحات الأشرطة الجانبية المتوفّرة."
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:415
 #: ../extensions/sidebar/ephy-sidebar-extension.c:441
@@ -1108,8 +1073,7 @@ msgid "Favicon fallback"
 msgstr "تراجع Favicon"
 
 #: ../extensions/favicon/favicon.ephy-extension.in.h:2
-msgid ""
-"Loads /favicon.ico as favicon if the site doesn't use the standard method"
+msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
 msgstr "حمّل /favicon.ico كـ favicon إذا لم يستخدم الموقع الطريقة القياسية"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
@@ -1157,20 +1121,16 @@ msgid "Permissions"
 msgstr "الأذون"
 
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
-#, fuzzy
 msgid "Drag the page on middle mouse click"
 msgstr "لف عند نقر زر الفأرة الأوسط"
 
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Push Scroll"
-msgstr "إلتفاف تلقائي"
+msgstr "إلتفاف دفعي"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
-msgid ""
-"Subscribe to a news feed offered by the webpage in your favorite news reader"
-msgstr ""
-"اشترك في تلقيمات الأخبار التي توفرها صفحات الويب في قاريء أخبارك المفضل"
+msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr "اشترك في تلقيمات الأخبار التي توفرها صفحات الويب في قاريء أخبارك المفضل"
 
 #: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
 msgid "A sample extension with mozilla backend"
@@ -1230,3 +1190,4 @@ msgstr "حالات الألسنة"
 
 #~ msgid "Jaime Frutos Morales <acidborg@gmail.com>"
 #~ msgstr "Jaime Frutos Morales <acidborg@gmail.com>"
+
