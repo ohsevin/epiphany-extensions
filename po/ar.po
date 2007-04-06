@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions.HEAD.ar\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-03-04 19:25+0000\n"
+"POT-Creation-Date: 2007-04-06 11:17+0100\n"
 "PO-Revision-Date: 2007-03-03 12:55+0200\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -165,7 +165,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>حدث القواعد من الموقع الأصلي</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:266
+#: ../extensions/adblock/ephy-adblock-extension.c:244
 msgid "Adblock editor"
 msgstr "محرر منع الإعلانات"
 
@@ -185,11 +185,11 @@ msgstr "Filterset.G"
 msgid "Whitelist"
 msgstr "القائمة البيضاء"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:267
+#: ../extensions/adblock/ephy-adblock-extension.c:245
 msgid "Edit Adblock"
 msgstr "حرر منع الإعلانات"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:334
+#: ../extensions/adblock/ephy-adblock-extension.c:312
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -1155,6 +1155,16 @@ msgstr "حرّر أذون الموقع"
 #: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
 msgid "Permissions"
 msgstr "الأذون"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Drag the page on middle mouse click"
+msgstr "لف عند نقر زر الفأرة الأوسط"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Push Scroll"
+msgstr "إلتفاف تلقائي"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
