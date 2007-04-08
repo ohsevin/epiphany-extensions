@@ -8,8 +8,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gl\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-03-04 23:39+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=epiphany-extensions\n"
+"POT-Creation-Date: 2007-04-08 21:20+0200\n"
 "PO-Revision-Date: 2007-03-04 23:43+0100\n"
 "Last-Translator: Ignacio Casal Quinteiro <icq@cvs.gnome.org>\n"
 "Language-Team: Galego <trasno@ceu.fi.udc.es>\n"
@@ -157,7 +158,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr ""
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:266
+#: ../extensions/adblock/ephy-adblock-extension.c:244
 msgid "Adblock editor"
 msgstr ""
 
@@ -177,11 +178,11 @@ msgstr ""
 msgid "Whitelist"
 msgstr ""
 
-#: ../extensions/adblock/ephy-adblock-extension.c:267
+#: ../extensions/adblock/ephy-adblock-extension.c:245
 msgid "Edit Adblock"
 msgstr ""
 
-#: ../extensions/adblock/ephy-adblock-extension.c:334
+#: ../extensions/adblock/ephy-adblock-extension.c:312
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -239,11 +240,11 @@ msgstr ""
 
 #: ../extensions/epilicious/epilicious-config.glade.h:3
 msgid "_Exclude"
-msgstr "_Excluir"
+msgstr "_Excluír"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:4
 msgid "_Include"
-msgstr "_Incluir"
+msgstr "_Incluír"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Password:"
@@ -887,7 +888,7 @@ msgstr "Imaxes"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:649
 msgid "Popup Windows"
-msgstr "Fiestras emerxentes"
+msgstr "Ventás emerxentes"
 
 #. stock icon
 #: ../extensions/permissions/ephy-permissions-extension.c:156
@@ -915,7 +916,8 @@ msgstr "_Subscribirse a este proveedor"
 
 #: ../extensions/rss/ephy-rss-extension.c:99
 msgid "Subscribe to this feed in your favorite news reader"
-msgstr "Subscribirse a este proveedor de noticias no seu lector de noticias favorito"
+msgstr ""
+"Subscribirse a este proveedor de noticias no seu lector de noticias favorito"
 
 #: ../extensions/rss/ephy-rss-extension.c:382
 msgid "Subscribe to site's news feed"
@@ -1000,7 +1002,8 @@ msgid "The sidebar already contains “%s”"
 msgstr "A barra lateral xa contén “%s”"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:412
-msgid "To use this sidebar, select it from the list of available sidebar pages."
+msgid ""
+"To use this sidebar, select it from the list of available sidebar pages."
 msgstr ""
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:415
@@ -1037,7 +1040,7 @@ msgstr ""
 #: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
 #, fuzzy
 msgid "Open search result in new tab if true, in new window if false"
-msgstr "Abrir marcadores nun solapa nova da fiestra activa"
+msgstr "Abrir marcadores nun solapa nova da ventá activa"
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
@@ -1093,7 +1096,8 @@ msgid "Favicon fallback"
 msgstr "Recuperación de Favicon"
 
 #: ../extensions/favicon/favicon.ephy-extension.in.h:2
-msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
+msgid ""
+"Loads /favicon.ico as favicon if the site doesn't use the standard method"
 msgstr "Carga /favicon.ico como favicon se o sitio non usa o método estándar"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
@@ -1110,7 +1114,8 @@ msgstr "Greasemonkey"
 
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
 msgid "Run user scripts to modify web pages' behavior"
-msgstr "Executar scripts de usuario para modificar o comportamento das páxinas web"
+msgstr ""
+"Executar scripts de usuario para modificar o comportamento das páxinas web"
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
 msgid "Java Console"
@@ -1126,7 +1131,8 @@ msgstr ""
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
-msgstr "Amosa información acerca dos ligazóns e os medios desde a páxina actual"
+msgstr ""
+"Amosa información acerca dos ligazóns e os medios desde a páxina actual"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
 msgid "Page Info"
@@ -1140,8 +1146,19 @@ msgstr "Editar permisos do sitio"
 msgid "Permissions"
 msgstr "Permisos"
 
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Drag the page on middle mouse click"
+msgstr "Desprazar ao premer o botón central do rato"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Push Scroll"
+msgstr "Autodesprazamento"
+
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
-msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgid ""
+"Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr ""
 "Subscribirse a proveedores de noticias ofrecidos pola páxina web no seu "
 "lector de noticias favorito"
@@ -1168,11 +1185,12 @@ msgstr "Seleccione a folla de estilo"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
-msgstr "Seleccionar entre diferentes follas de estilo ofrecidas pola páxina web"
+msgstr ""
+"Seleccionar entre diferentes follas de estilo ofrecidas pola páxina web"
 
 #: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
 msgid "Adds a sidebar to windows"
-msgstr "Engada unha barra lateral ás fiestras"
+msgstr "Engada unha barra lateral ás ventás"
 
 #: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
 msgid "Sidebar"
@@ -1201,4 +1219,3 @@ msgstr "Indica o contido novo en solapas en segundo plano"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Estado de solapas"
-
