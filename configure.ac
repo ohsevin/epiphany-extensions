@@ -16,7 +16,7 @@
 #
 # $Id: configure.ac,v 1.235 2006/12/17 22:17:06 jframeau Exp $
 
-AC_INIT([GNOME Web Browser Extensions],[2.18.0.90],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+AC_INIT([GNOME Web Browser Extensions],[2.18.1],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 
 EPIPHANY_API_VERSION=2.18
 
@@ -32,8 +32,6 @@ AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 
 AM_INIT_AUTOMAKE([1.9 foreign dist-bzip2 no-dist-gzip tar-ustar])
-
-AM_MAINTAINER_MODE
 
 AM_DISABLE_STATIC
 AC_ENABLE_SHARED(yes)
