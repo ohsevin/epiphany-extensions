@@ -14,9 +14,9 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 #
-# $Id: configure.ac,v 1.235 2006/12/17 22:17:06 jframeau Exp $
+# $Id$
 
-AC_INIT([GNOME Web Browser Extensions],[2.18.1],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+AC_INIT([GNOME Web Browser Extensions],[2.18.1.90],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 
 EPIPHANY_API_VERSION=2.18
 
