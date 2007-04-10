@@ -1,3 +1,7 @@
+2007-04-10  Jakub Friedl  <jfriedl@suse.cz>
+
+	* cs.po: Updated Czech Translation.
+
 2007-04-08  Ignacio Casal Quinteiro  <nacho.resa@gmail.com>
 
 	* gl.po: Updated Galician Translation.
@@ -35,7 +39,7 @@
 
 2007-03-14  Reinout van Schouwen <reinouts@gnome.org>
 
-    * nl.po: Translation updated by Reinout van Schouwen.
+	* nl.po: Translation updated by Reinout van Schouwen.
 
 2007-03-14  David Lodge <dave@cirt.net>
 
