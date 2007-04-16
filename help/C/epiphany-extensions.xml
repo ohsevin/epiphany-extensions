@@ -812,7 +812,7 @@
 					<para>An action describes the path to a menu or toolbar item
 					in the &app; window. All these paths are defined is the file
 					<filename>ephy-gestures.xml</filename> located in <filename
-					class="directory">$PREFIX/epiphany-browser/epiphany-ui.xml</filename></para>
+					class="directory">$PREFIX/epiphany/epiphany-ui.xml</filename></para>
 				<programlisting>
 <![CDATA[<?xml version="1.0"?>
 <epiphany_gestures version="0.4">
@@ -1120,7 +1120,7 @@
 			<title>Using Smart Bookmarks</title>
 			
 			<para>To create a smart bookmark, see the appropriate <ulink
-			type="help" url="ghelp:epiphany-browser#smart-bookmarks-create-a-smartbookmark">
+			type="help" url="ghelp:epiphany#smart-bookmarks-create-a-smartbookmark">
 			section</ulink>	in the &app; manual.</para>
 			<para>To look up text, select the text in a web page and 
 			choose <guimenuitem>look-up</guimenuitem> and the smart
