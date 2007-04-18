@@ -3,17 +3,17 @@
 # Copyright (C) 2004, 2005, 2006 epiphany-extensions' COPYRIGHT HOLDER
 # Copyright (C) 2004, 2005, 2006 Miloslav Trmac <mitr@volny.cz>
 # This file is distributed under the same license as the epiphany-extensions package.
-# Miloslav Trmac <mitr@volny.cz>, 2004 - 2006.
-# Jakub Friedl <jfriedl@suse.cz>, 2006.
 #
+# Miloslav Trmac <mitr@volny.cz>, 2004 - 2006.
+# Jakub Friedl <jfriedl@suse.cz>, 2006, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: cs\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-04-10 17:16+0200\n"
-"PO-Revision-Date: 2007-04-10 17:16+0200\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2007-04-18 17:35+0200\n"
+"PO-Revision-Date: 2007-04-18 17:35+0200\n"
+"Last-Translator: Jakub Friedl <jfriedl@suse.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -201,7 +201,7 @@ msgstr "Pravidelně obnovovat stránku"
 
 #: ../extensions/cc-license-viewer/cc-license-viewer.py:371
 msgid "View Creative Commons license"
-msgstr ""
+msgstr "Zobrazit licenci Creative Commons"
 
 #: ../extensions/certificates/ephy-certificates-extension.c:177
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
@@ -246,7 +246,7 @@ msgstr ""
 
 #: ../extensions/epilicious/epilicious-config.glade.h:4
 msgid "_Include"
-msgstr ""
+msgstr "_Zahrnout"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Password:"
@@ -258,7 +258,7 @@ msgstr ""
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:1
 msgid "<b>Synchronizing with del.icio.us</b>"
-msgstr ""
+msgstr "<b>Synchronizace s del.icio.us</b>"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:2
 msgid "Adding new bookmarks and synching topics"
@@ -266,7 +266,7 @@ msgstr ""
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:3
 msgid "Removing deleted bookmarks"
-msgstr ""
+msgstr "Odstraňují se smazané záložky"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:4
 msgid "Retrieving bookmarks from del.icio.us"
@@ -286,7 +286,7 @@ msgstr ""
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:8
 msgid "Synchronizing..."
-msgstr ""
+msgstr "Probíhá synchronizace..."
 
 #. # Epiphany integration ##
 #: ../extensions/epilicious/epilicious.py.in:201
@@ -327,11 +327,11 @@ msgstr ""
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:7
 msgid "del.icio.us password"
-msgstr ""
+msgstr "Heslo pro del.icio.us"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:8
 msgid "del.icio.us username"
-msgstr ""
+msgstr "Uživatelské jméno pro del.icio.us"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
@@ -566,7 +566,7 @@ msgstr ""
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
 msgid "Remove headers"
-msgstr ""
+msgstr "Odstranit hlavičky"
 
 #: ../extensions/page-info/ephy-page-info-extension.c:67
 msgid "Pa_ge Information"
@@ -1073,7 +1073,7 @@ msgstr ""
 
 #: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
 msgid "Shows the Creative Commons license of the current website if available"
-msgstr ""
+msgstr "Je-li dostupná, zobrazit licenci Creative Commmons aktuálního webu"
 
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
@@ -1084,11 +1084,8 @@ msgid "Error viewer"
 msgstr "Prohlížeč chyb"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Validate web pages and check links"
-msgstr ""
-"Zobrazit chyby ve WWW stránkách, ověřovat platnost WWW stránek a kontrolovat "
-"odkazy"
+msgstr "Validovat webové stránky a kontrolovat odkazy"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
 msgid "Activate and deactivate extensions"
