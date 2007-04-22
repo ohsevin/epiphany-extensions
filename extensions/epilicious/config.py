@@ -25,7 +25,7 @@ class ConfigWindow:
 
     def __init__(self):
         self.gui = gtk.glade.XML(os.path.join(libepilicious.GLADE_DIR, \
-                'epilicious-config.glade'), domain='epilicious')
+                'epilicious-config.glade'), domain=libepilicious.L10N_DOMAIN)
         self.gui.signal_autoconnect(self)
 
         # I can't remember how to get the whole friggin' lot of 'em...
