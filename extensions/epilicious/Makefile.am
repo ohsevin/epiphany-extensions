@@ -31,7 +31,10 @@ extensionini_DATA = $(extensionini_in_files:.ephy-extension.in=.ephy-extension)
 
 epilicious.py : epilicious.py.in Makefile
 	sed -e "s|%EXTENSION_DIR%|$(EXTENSIONS_DIR)|" \
-		-e "s|%GLADE_DIR%|$(gladedir)|" $< > $@
+		-e "s|%GLADE_DIR%|$(gladedir)|" \
+		-e "s|%LOCALE_DIR%|$(localedir)|" \
+		-e "s|%GETTEXT_PACKAGE%|$(GETTEXT_PACKAGE)|" \
+		$< > $@
 
 install-data-local: $(schema_DATA)
 if GCONF_SCHEMAS_INSTALL

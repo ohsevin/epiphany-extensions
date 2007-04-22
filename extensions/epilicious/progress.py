@@ -24,7 +24,7 @@ class ProgressBar:
 
     def __init__(self):
         self.gui = gtk.glade.XML(os.path.join(libepilicious.GLADE_DIR, \
-                'epilicious-progress.glade'), domain='epilicious')
+                'epilicious-progress.glade'), domain=libepilicious.L10N_DOMAIN)
         self.gui.signal_autoconnect(self)
 
         self.dlg = self.gui.get_widget('dlgProgress')

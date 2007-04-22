@@ -29,11 +29,17 @@ sys.path.append('%EXTENSION_DIR%')
 
 import libepilicious
 libepilicious.GLADE_DIR = '%GLADE_DIR%'
+libepilicious.L10N_DOMAIN = '%GETTEXT_PACKAGE%'
+libepilicious.LOCALE_DIR = '%LOCALE_DIR%'
 
 # localization
 import gettext
+import gtk.glade
 try:
-    t = gettext.translation('epilicious')
+    gettext.bindtextdomain(libepilicious.L10N_DOMAIN, \
+            localedir=libepilicious.LOCALE_DIR)
+    gettext.bind_textdomain_codeset(libepilicious.L10N_DOMAIN, codeset='UTF-8')
+    t = gettext.translation(libepilicious.L10N_DOMAIN)
     _ = t.ugettext
 except Exception, e:
     _ = lambda x : x
@@ -203,7 +209,7 @@ _menu_ui = '''
 _actions = [ \
         ('EpiliciousSync', None, _('Epilicious Synchronize'),
                 None, None, _CB_Sync), \
-        ('EpiliciousConfig', None, ('Epilicious Configuration'),
+        ('EpiliciousConfig', None, _('Epilicious Configuration'),
                 None, None, _CB_Config), \
         ]
 

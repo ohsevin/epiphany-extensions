@@ -1,3 +1,12 @@
+2007-04-22  Magnus Therning <mtherning@svn.gnome.org>
+
+	* extensions/epilicious/epilicious.ephy-extension.in:
+	* extensions/epilicious/progress.py:
+	* extensions/epilicious/config.py:
+	* extensions/epilicious/epilicious.py.in:
+	* extensions/epilicious/Makefile.am:
+	Localisation issues in epilicious; bug #425304
+
 2007-03-16  Loic Minier  <lool@svn.gnome.org>
 
 	* extensions/epilicious/epilicious.py.in:
