@@ -14,15 +14,16 @@
 # Rafaël Carré <wavael@yahoo.fr>, 2006.
 # Jean-Philippe Moal <jean-philippe.moal@laposte.net>, 2006.
 # Claude Paroz <claude@2xlibre.net>, 2007.
+# Robert-André Mauchin <zebob.m@gmail.com>, 2007.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: epiphany-extensions fr\n"
+"Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-03-27 22:25+0200\n"
-"PO-Revision-Date: 2007-03-27 22:30+0200\n"
-"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"POT-Creation-Date: 2007-04-26 00:24+0200\n"
+"PO-Revision-Date: 2007-04-23 18:35+0200\n"
+"Last-Translator: Robert-André Mauchin <zebob.m@gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -153,7 +154,7 @@ msgstr ""
 "remise sous licence GPL avec autorisation.\n"
 "La liste originale, Filterset.G, se trouve sur http://www.pierceive.com/"
 "filtersetg/.\n"
-"Cette version est une modification de l'originale. Les modifications n'ont "
+"Cette version est une modification de l'original. Les modifications n'ont "
 "pas été approuvées par l'auteur originel ;\n"
 "veuillez signaler les problèmes éventuels à Bugzilla et non pas à l'auteur "
 "d'origine (G).\n"
@@ -252,6 +253,7 @@ msgid "Action for tagged bookmarks:"
 msgstr "Action pour les signets étiquetés :"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:2
+#: ../extensions/epilicious/epilicious.py.in:212
 msgid "Epilicious Configuration"
 msgstr "Configuration d'Epilicious"
 
@@ -304,8 +306,8 @@ msgid "Synchronizing..."
 msgstr "Synchronisation..."
 
 #. # Epiphany integration ##
-#: ../extensions/epilicious/epilicious.py.in:201
-#: ../extensions/epilicious/epilicious.py.in:204
+#: ../extensions/epilicious/epilicious.py.in:207
+#: ../extensions/epilicious/epilicious.py.in:210
 msgid "Epilicious Synchronize"
 msgstr "Synchroniser avec Epilicious"
 
@@ -487,11 +489,11 @@ msgstr "Erreur HTML dans %s :"
 
 #: ../extensions/error-viewer/sgml-validator.c:368
 msgid "Invalid character encoding"
-msgstr "Codage de caratère non valide"
+msgstr "Codage de caractère non valide"
 
 #: ../extensions/error-viewer/sgml-validator.c:373
 msgid "Unknown error while converting to UTF-8"
-msgstr "Erreur inconnue durant la convertion en UTF-8"
+msgstr "Erreur inconnue durant la conversion en UTF-8"
 
 #: ../extensions/error-viewer/sgml-validator.c:435
 #, c-format
@@ -608,7 +610,7 @@ msgstr "Type inconnu"
 
 #: ../extensions/page-info/page-info-dialog.c:801
 msgid "Full standards compliance"
-msgstr "Complètement conforme aux normes"
+msgstr "Conformité complète aux normes"
 
 #: ../extensions/page-info/page-info-dialog.c:804
 msgid "Almost standards compliance"
@@ -650,7 +652,7 @@ msgstr "Aucun référent"
 #: ../extensions/page-info/page-info-dialog.c:864
 #: ../extensions/page-info/page-info-dialog.c:880
 msgid "Not specified"
-msgstr "Non spécifié"
+msgstr "Non indiqué"
 
 #: ../extensions/page-info/page-info-dialog.c:943
 msgid "Image"
@@ -949,8 +951,7 @@ msgstr "S'abonner au flux de ce site"
 
 #: ../extensions/rss/rss-ui.c:167
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
-msgstr ""
-"<b><i>Impossible de joindre le lecteur de flux, est-il ouvert ?</i></b>"
+msgstr "<b><i>Impossible de joindre le lecteur de flux, est-il lancé ?</i></b>"
 
 #: ../extensions/rss/rss-ui.c:169
 msgid "Retry"
@@ -1100,6 +1101,10 @@ msgstr "Si disponible, affiche la licence Creative Commons du site Web actuel"
 msgid "View the page certificate and manage the certificates"
 msgstr "Affiche le certificat d'une page et gère les certificats"
 
+#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
+msgid "Synchronize bookmarks with del.icio.us"
+msgstr "Synchronisation des signets avec del.icio.us"
+
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
 msgstr "Visionneur d'erreurs"
@@ -1244,4 +1249,4 @@ msgstr "Indique un nouveau contenu dans les onglets en arrière-plan"
 
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
-msgstr "États d'onglet"
+msgstr "États des onglets"
