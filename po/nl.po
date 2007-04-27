@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: Epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-03-14 21:39+0100\n"
-"PO-Revision-Date: 2007-03-14 21:41+0100\n"
+"POT-Creation-Date: 2007-04-27 22:48+0200\n"
+"PO-Revision-Date: 2007-04-27 22:50+0200\n"
 "Last-Translator: Reinout van Schouwen <reinouts@gnome.org>\n"
 "Language-Team: nl <vertaling@vrijschrift.org>\n"
 "MIME-Version: 1.0\n"
@@ -242,6 +242,7 @@ msgid "Action for tagged bookmarks:"
 msgstr "Actie voor bladwijzers met tag:"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:2
+#: ../extensions/epilicious/epilicious.py.in:212
 msgid "Epilicious Configuration"
 msgstr "Epilicious-configuratie"
 
@@ -294,8 +295,8 @@ msgid "Synchronizing..."
 msgstr "Synchroniseren…"
 
 #. # Epiphany integration ##
-#: ../extensions/epilicious/epilicious.py.in:201
-#: ../extensions/epilicious/epilicious.py.in:204
+#: ../extensions/epilicious/epilicious.py.in:207
+#: ../extensions/epilicious/epilicious.py.in:210
 msgid "Epilicious Synchronize"
 msgstr "Epiplicious-synchronisatie"
 
@@ -1093,6 +1094,10 @@ msgstr ""
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Het paginacertificaat bekijken en certificaten beheren"
+
+#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
+msgid "Synchronize bookmarks with del.icio.us"
+msgstr "Bladwijzers synchroniseren met del.icio.us"
 
 # weergever is lelijk
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
