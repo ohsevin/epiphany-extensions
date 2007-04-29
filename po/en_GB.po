@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany Plugins 1.0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-03-14 07:01+0000\n"
-"PO-Revision-Date: 2007-03-14 07:01-0000\n"
+"POT-Creation-Date: 2007-04-29 08:56+0100\n"
+"PO-Revision-Date: 2007-04-29 08:56-0000\n"
 "Last-Translator: David Lodge <dave@cirt.net>\n"
 "Language-Team: British English\n"
 "MIME-Version: 1.0\n"
@@ -219,6 +219,7 @@ msgid "Action for tagged bookmarks:"
 msgstr "Action for tagged bookmarks:"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:2
+#: ../extensions/epilicious/epilicious.py.in:212
 msgid "Epilicious Configuration"
 msgstr "Epilicious Configuration"
 
@@ -271,8 +272,8 @@ msgid "Synchronizing..."
 msgstr "Synchronising..."
 
 #. # Epiphany integration ##
-#: ../extensions/epilicious/epilicious.py.in:201
-#: ../extensions/epilicious/epilicious.py.in:204
+#: ../extensions/epilicious/epilicious.py.in:207
+#: ../extensions/epilicious/epilicious.py.in:210
 msgid "Epilicious Synchronize"
 msgstr "Epilicious Synchronise"
 
@@ -1040,6 +1041,10 @@ msgstr "Shows the Creative Commons licence of the current website if available"
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "View the page certificate and manage the certificates"
+
+#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
+msgid "Synchronize bookmarks with del.icio.us"
+msgstr "Synchronise bookmarks with del.icio.us"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
