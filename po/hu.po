@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions.HEAD.hu\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-03-01 03:16+0000\n"
-"PO-Revision-Date: 2007-03-11 23:18+0100\n"
+"POT-Creation-Date: 2007-04-23 03:18+0100\n"
+"PO-Revision-Date: 2007-05-02 22:33+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <gnome@gnome.hu>\n"
 "MIME-Version: 1.0\n"
@@ -138,10 +138,14 @@ msgid ""
 "approved by the original author;\n"
 "direct any problems to Bugzilla and not to the original author (G).\n"
 msgstr ""
-"A lista szerzői joga (©) az eredeti szerzőt (G) illeti. Engedéllyel került újralicencelésre a GPL alatt.\n"
-"Az eredeti Filterset.G lista a http://www.pierceive.com/filtersetg/ címen található.\n"
-"Ez a verzió eltér az eredetitől. A módosításokat nem hagyta jóvá az eredeti szerző;\n"
-"minden problémát a Gnome Bugzilla-ba jelentsen és ne az eredeti szerzőnek (G).\n"
+"A lista szerzői joga (©) az eredeti szerzőt (G) illeti. Engedéllyel került "
+"újralicencelésre a GPL alatt.\n"
+"Az eredeti Filterset.G lista a http://www.pierceive.com/filtersetg/ címen "
+"található.\n"
+"Ez a verzió eltér az eredetitől. A módosításokat nem hagyta jóvá az eredeti "
+"szerző;\n"
+"minden problémát a Gnome Bugzilla-ba jelentsen és ne az eredeti szerzőnek "
+"(G).\n"
 
 #: ../extensions/adblock/adblock-ui.c:496
 msgid "Pattern"
@@ -160,7 +164,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>Szabályok frissítése az eredeti oldalról</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:237
+#: ../extensions/adblock/ephy-adblock-extension.c:244
 msgid "Adblock editor"
 msgstr "Adblock szerkesztő"
 
@@ -180,11 +184,11 @@ msgstr "Filterset.G"
 msgid "Whitelist"
 msgstr "Fehérlista"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:238
+#: ../extensions/adblock/ephy-adblock-extension.c:245
 msgid "Edit Adblock"
 msgstr "Adblock szerkesztése"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:295
+#: ../extensions/adblock/ephy-adblock-extension.c:312
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -237,6 +241,7 @@ msgid "Action for tagged bookmarks:"
 msgstr "Művelet címkézett könyvjelzőkhöz:"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:2
+#: ../extensions/epilicious/epilicious.py.in:212
 msgid "Epilicious Configuration"
 msgstr "Epilicious beállítása"
 
@@ -289,8 +294,8 @@ msgid "Synchronizing..."
 msgstr "Szinkronizálás..."
 
 #. # Epiphany integration ##
-#: ../extensions/epilicious/epilicious.py.in:201
-#: ../extensions/epilicious/epilicious.py.in:204
+#: ../extensions/epilicious/epilicious.py.in:207
+#: ../extensions/epilicious/epilicious.py.in:210
 msgid "Epilicious Synchronize"
 msgstr "Epilicious szinkronizálás"
 
@@ -303,7 +308,11 @@ msgid ""
 "Controls the function of the topic. If this is unset then all bookmarks with "
 "the topic will be synched with del.icio.us. If this is set then all "
 "bookmarks without the topic will be synched with del.icio.us."
-msgstr "A témakör funkcióját felügyeli. Ha nincs beállítva, akkor a témakör összes könyvjelzője szinkronizálva lesz a del.icio.us oldallal. Ha be van állítva, akkor a témakör könyvjelzőin kívül minden szinkronizálva lesz a del.icio.us oldallal. "
+msgstr ""
+"A témakör funkcióját felügyeli. Ha nincs beállítva, akkor a témakör összes "
+"könyvjelzője szinkronizálva lesz a del.icio.us oldallal. Ha be van állítva, "
+"akkor a témakör könyvjelzőin kívül minden szinkronizálva lesz a del.icio.us "
+"oldallal. "
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:3
 msgid "Exclude topic"
@@ -317,13 +326,17 @@ msgstr "Megosztott témakör"
 msgid ""
 "The del.icio.us password that epilicious will use for synchronizing "
 "bookmarks."
-msgstr "Az epilicious által a könyvjelzők szinkronizálására használandó del.icio.us jelszó."
+msgstr ""
+"Az epilicious által a könyvjelzők szinkronizálására használandó del.icio.us "
+"jelszó."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
 msgid ""
 "The del.icio.us username that epilicious will use for synchronizing "
 "bookmarks."
-msgstr "Az epilicious által a könyvjelzők szinkronizálására használandó del.icio.us felhasználónév."
+msgstr ""
+"Az epilicious által a könyvjelzők szinkronizálására használandó del.icio.us "
+"felhasználónév."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:7
 msgid "del.icio.us password"
@@ -654,81 +667,81 @@ msgstr "Kisalkalmazás"
 msgid "Icon"
 msgstr "Ikon"
 
-#: ../extensions/page-info/page-info-dialog.c:1124
+#: ../extensions/page-info/page-info-dialog.c:1130
 msgid "_Open"
 msgstr "_Megnyitás"
 
-#: ../extensions/page-info/page-info-dialog.c:1130
-#: ../extensions/page-info/page-info-dialog.c:1573
+#: ../extensions/page-info/page-info-dialog.c:1136
+#: ../extensions/page-info/page-info-dialog.c:1581
 msgid "_Copy Link Address"
 msgstr "Hivatkozás _címének másolása"
 
-#: ../extensions/page-info/page-info-dialog.c:1136
+#: ../extensions/page-info/page-info-dialog.c:1142
 msgid "_Use as Background"
 msgstr "Kép _használata háttérként"
 
-#: ../extensions/page-info/page-info-dialog.c:1142
-#: ../extensions/page-info/page-info-dialog.c:1579
+#: ../extensions/page-info/page-info-dialog.c:1148
+#: ../extensions/page-info/page-info-dialog.c:1587
 msgid "_Save As..."
 msgstr "M_entés másként..."
 
-#: ../extensions/page-info/page-info-dialog.c:1374
-#: ../extensions/page-info/page-info-dialog.c:1689
+#: ../extensions/page-info/page-info-dialog.c:1380
+#: ../extensions/page-info/page-info-dialog.c:1701
 msgid "Blocked"
 msgstr "Blokkolva"
 
-#: ../extensions/page-info/page-info-dialog.c:1390
-#: ../extensions/page-info/page-info-dialog.c:1705
+#: ../extensions/page-info/page-info-dialog.c:1396
+#: ../extensions/page-info/page-info-dialog.c:1717
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1403
+#: ../extensions/page-info/page-info-dialog.c:1409
 msgid "Type"
 msgstr "Típus"
 
-#: ../extensions/page-info/page-info-dialog.c:1415
+#: ../extensions/page-info/page-info-dialog.c:1421
 msgid "Alt Text"
 msgstr "Alt szöveg"
 
-#: ../extensions/page-info/page-info-dialog.c:1427
-#: ../extensions/page-info/page-info-dialog.c:1718
+#: ../extensions/page-info/page-info-dialog.c:1433
+#: ../extensions/page-info/page-info-dialog.c:1730
 msgid "Title"
 msgstr "Cím"
 
-#: ../extensions/page-info/page-info-dialog.c:1439
+#: ../extensions/page-info/page-info-dialog.c:1445
 msgid "Width"
 msgstr "Szélesség"
 
-#: ../extensions/page-info/page-info-dialog.c:1451
+#: ../extensions/page-info/page-info-dialog.c:1457
 msgid "Height"
 msgstr "Magasság"
 
-#: ../extensions/page-info/page-info-dialog.c:1730
+#: ../extensions/page-info/page-info-dialog.c:1742
 msgid "Relation"
 msgstr "Kapcsolat"
 
-#: ../extensions/page-info/page-info-dialog.c:1877
-#: ../extensions/page-info/page-info-dialog.c:2018
+#: ../extensions/page-info/page-info-dialog.c:1891
+#: ../extensions/page-info/page-info-dialog.c:2032
 msgid "Name"
 msgstr "Név"
 
-#: ../extensions/page-info/page-info-dialog.c:1889
+#: ../extensions/page-info/page-info-dialog.c:1903
 msgid "Method"
 msgstr "Módszer"
 
-#: ../extensions/page-info/page-info-dialog.c:1903
+#: ../extensions/page-info/page-info-dialog.c:1917
 msgid "Action"
 msgstr "Művelet"
 
-#: ../extensions/page-info/page-info-dialog.c:1984
+#: ../extensions/page-info/page-info-dialog.c:1998
 msgid "_Copy"
 msgstr "_Másolás"
 
-#: ../extensions/page-info/page-info-dialog.c:2030
+#: ../extensions/page-info/page-info-dialog.c:2044
 msgid "Content"
 msgstr "Tartalom"
 
-#: ../extensions/page-info/page-info-dialog.c:2131
+#: ../extensions/page-info/page-info-dialog.c:2145
 msgid "Page Metadata"
 msgstr "Oldal metaadat"
 
@@ -1038,7 +1051,9 @@ msgstr "Találatok megnyitása új lapon"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
 msgid "Open search result in new tab if true, in new window if false"
-msgstr "Ha ez be van állítva, akkor a találatot új lapon, ha nincs, akkor új ablakban nyitja meg."
+msgstr ""
+"Ha ez be van állítva, akkor a találatot új lapon, ha nincs, akkor új "
+"ablakban nyitja meg."
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
@@ -1071,6 +1086,10 @@ msgstr "Megjeleníti az aktuális weboldal Creative Commons licencét, ha van"
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Az oldal tanúsítványainak megtekintése és azok kezelése"
+
+#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
+msgid "Synchronize bookmarks with del.icio.us"
+msgstr "Könyvjelzők szinkronizálása a del.icio.us oldallal"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -1141,6 +1160,14 @@ msgstr "Oldal jogosultságainak szerkesztése"
 #: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
 msgid "Permissions"
 msgstr "Jogosultságok"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
+msgid "Drag the page on middle mouse click"
+msgstr "Oldal húzása középső egérkattintásra"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+msgid "Push Scroll"
+msgstr "Kattintásra görgetés"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
