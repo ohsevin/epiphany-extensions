@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions doc\n"
-"POT-Creation-Date: 2007-01-10 03:15+0000\n"
-"PO-Revision-Date: 2007-01-28 15:21+0100\n"
+"POT-Creation-Date: 2007-04-17 03:16+0100\n"
+"PO-Revision-Date: 2007-05-04 23:39+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -827,8 +827,8 @@ msgid "Define the action"
 msgstr "Definiera åtgärden"
 
 #: C/epiphany-extensions.xml:812(para)
-msgid "An action describes the path to a menu or toolbar item in the <application>Epiphany</application> window. All these paths are defined is the file <filename>ephy-gestures.xml</filename> located in <filename class=\"directory\">$PREFIX/epiphany-browser/epiphany-ui.xml</filename>"
-msgstr "En åtgärd beskriver sökvägen till ett meny- eller verktygsradsobjekt i <application>Epiphany</application>-fönstret. Alla dessa sökvägar definieras i filen <filename>ephy-gestures.xml</filename> som finns i <filename class=\"directory\">$PREFIX/epiphany-browser/epiphany-ui.xml</filename>"
+msgid "An action describes the path to a menu or toolbar item in the <application>Epiphany</application> window. All these paths are defined is the file <filename>ephy-gestures.xml</filename> located in <filename class=\"directory\">$PREFIX/epiphany/epiphany-ui.xml</filename>"
+msgstr "En åtgärd beskriver sökvägen till ett meny- eller verktygsradsobjekt i <application>Epiphany</application>-fönstret. Alla dessa sökvägar definieras i filen <filename>ephy-gestures.xml</filename> som finns i <filename class=\"directory\">$PREFIX/epiphany/epiphany-ui.xml</filename>"
 
 #: C/epiphany-extensions.xml:830(title)
 msgid "Greasemonkey"
@@ -1107,8 +1107,8 @@ msgid "Using Smart Bookmarks"
 msgstr "Användning av Smarta bokmärken"
 
 #: C/epiphany-extensions.xml:1122(para)
-msgid "To create a smart bookmark, see the appropriate <ulink type=\"help\" url=\"ghelp:epiphany-browser#smart-bookmarks-create-a-smartbookmark\"> section</ulink> in the <application>Epiphany</application> manual."
-msgstr "För att skapa ett smart bokmärke, se lämpligt <ulink type=\"help\" url=\"ghelp:epiphany-browser#smart-bookmarks-create-a-smartbookmark\"> avsnitt</ulink> i handboken för <application>Epiphany</application>."
+msgid "To create a smart bookmark, see the appropriate <ulink type=\"help\" url=\"ghelp:epiphany#smart-bookmarks-create-a-smartbookmark\"> section</ulink> in the <application>Epiphany</application> manual."
+msgstr "För att skapa ett smart bokmärke, se lämpligt <ulink type=\"help\" url=\"ghelp:epiphany#smart-bookmarks-create-a-smartbookmark\"> avsnitt</ulink> i handboken för <application>Epiphany</application>."
 
 #: C/epiphany-extensions.xml:1125(para)
 msgid "To look up text, select the text in a web page and choose <guimenuitem>look-up</guimenuitem> and the smart bookmark from the context menu. A web browser will be opened with the result of the look-up."
