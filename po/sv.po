@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-03-15 08:58+0100\n"
-"PO-Revision-Date: 2007-03-15 08:59+0100\n"
+"POT-Creation-Date: 2007-04-23 03:18+0100\n"
+"PO-Revision-Date: 2007-05-04 23:40+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -218,6 +218,7 @@ msgid "Action for tagged bookmarks:"
 msgstr "Åtgärd för taggade bokmärken:"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:2
+#: ../extensions/epilicious/epilicious.py.in:212
 msgid "Epilicious Configuration"
 msgstr "Konfiguration för Epilicious"
 
@@ -270,8 +271,8 @@ msgid "Synchronizing..."
 msgstr "Synkroniserar..."
 
 #. # Epiphany integration ##
-#: ../extensions/epilicious/epilicious.py.in:201
-#: ../extensions/epilicious/epilicious.py.in:204
+#: ../extensions/epilicious/epilicious.py.in:207
+#: ../extensions/epilicious/epilicious.py.in:210
 msgid "Epilicious Synchronize"
 msgstr "Synkronisering för Epilicious"
 
@@ -1040,6 +1041,10 @@ msgstr "Visar Creative Commons-licensen för aktuell webbplats, om tillgänglig"
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Visa sidans certifikat och hantera certifikaten"
+
+#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
+msgid "Synchronize bookmarks with del.icio.us"
+msgstr "Synkronisera bokmärken med del.icio.us"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
