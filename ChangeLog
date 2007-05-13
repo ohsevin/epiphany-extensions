@@ -1,3 +1,11 @@
+2007-05-13  Reinout van Schouwen <reinouts@gnome.org>
+
+	=== Release 2.19.2 ===
+
+	* configure.ac:
+
+	Set version to 2.19.2.
+
 2007-04-22  Magnus Therning <mtherning@svn.gnome.org>
 
 	* extensions/epilicious/epilicious.ephy-extension.in:
