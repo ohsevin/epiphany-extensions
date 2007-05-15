@@ -1,5 +1,4 @@
-# traducción de es.po al Spanish
-# translation of es.po to Spanish
+# translation of epiphany-extensions.HEAD.es.po to Spanish
 # This file is distributed under the same license as the epiphany package.
 # Copyright (C) 2003 The Free Software Foundation.
 #
@@ -9,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions.HEAD.es\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-04-23 03:18+0100\n"
-"PO-Revision-Date: 2007-05-05 15:29+0200\n"
+"POT-Creation-Date: 2007-05-05 14:35+0100\n"
+"PO-Revision-Date: 2007-05-15 10:04+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -139,6 +138,10 @@ msgid ""
 "approved by the original author;\n"
 "direct any problems to Bugzilla and not to the original author (G).\n"
 msgstr ""
+"Los derechos de esta lista © son propiedad de su autor original (G). Está relicenciada bajo GPL con permiso.\n"
+"La lista original, Filterset.G, se puede encontrar en http://www.pierceive.com/filtersetg/.\n"
+"Esta versión ha sido modificada de la original. Los cambios no han sido aprobados por el autor original;\n"
+"dirija cualquier problema a Bugzilla y no al autor original (G).\n"
 
 #: ../extensions/adblock/adblock-ui.c:496
 msgid "Pattern"
@@ -301,7 +304,11 @@ msgid ""
 "Controls the function of the topic. If this is unset then all bookmarks with "
 "the topic will be synched with del.icio.us. If this is set then all "
 "bookmarks without the topic will be synched with del.icio.us."
-msgstr "Controla la función del tema. Si no está establecida, entonces todos los marcadores con el tema se soncronizarán con del.icio.us. Si está establecida, entonces todos los marcadores sin tema serán sincronizados con del.icio.us."
+msgstr ""
+"Controla la función del tema. Si no está establecida, entonces todos los "
+"marcadores con el tema se soncronizarán con del.icio.us. Si está "
+"establecida, entonces todos los marcadores sin tema serán sincronizados con "
+"del.icio.us."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:3
 msgid "Exclude topic"
@@ -315,13 +322,17 @@ msgstr "Tema compartido"
 msgid ""
 "The del.icio.us password that epilicious will use for synchronizing "
 "bookmarks."
-msgstr "La contraseña de del.icio.us que Epilicious usará para sincronizar los marcadores."
+msgstr ""
+"La contraseña de del.icio.us que Epilicious usará para sincronizar los "
+"marcadores."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
 msgid ""
 "The del.icio.us username that epilicious will use for synchronizing "
 "bookmarks."
-msgstr "El usuario de del.icio.us que Epilicious usará para sincronizar los marcadores."
+msgstr ""
+"El usuario de del.icio.us que Epilicious usará para sincronizar los "
+"marcadores."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:7
 msgid "del.icio.us password"
@@ -1040,7 +1051,9 @@ msgstr "Abrir el resultado de la búsqueda en una nueva solapa"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
 msgid "Open search result in new tab if true, in new window if false"
-msgstr "Abrir el resultado de la búsqueda en una nueva solapa si es TRUE, en una nueva venana si es FALSE"
+msgstr ""
+"Abrir el resultado de la búsqueda en una nueva solapa si es TRUE, en una "
+"nueva venana si es FALSE"
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
@@ -1154,7 +1167,7 @@ msgstr "Arrastrar la página al pulsar el botón central del ratón"
 
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
 msgid "Push Scroll"
-msgstr ""
+msgstr "Pulsar y desplazar"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
