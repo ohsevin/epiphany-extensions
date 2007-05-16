@@ -149,23 +149,22 @@ show_extension_info (ExtensionsManagerUI *parent_dialog,
 	url = g_key_file_get_string (keyfile, GROUP, "URL", NULL);
 	authors = g_key_file_get_string_list (keyfile, GROUP, "Authors", NULL, NULL);
 
-	dialog = GTK_ABOUT_DIALOG (gtk_about_dialog_new ());
-	gtk_about_dialog_set_name (dialog, name);
-	gtk_about_dialog_set_comments (dialog, description);
-	gtk_about_dialog_set_website (dialog, url);
-	gtk_about_dialog_set_authors (dialog, (const char **) authors);
+	dialog = g_object_new (GTK_TYPE_ABOUT_DIALOG,
+#if GTK_CHECK_VERSION (2, 11, 0)
+                               "program-name", name,
+#else
+#endif /* GTK 2.11.0 */
+                               "name", name,
+                               "comments", description,
+                               "website", url,
+                               "authors", (const char **) authors,
+                               NULL);
 
 	gtk_window_set_transient_for (GTK_WINDOW (dialog),
 				      GTK_WINDOW (parent_dialog->priv->window));
-#if !GTK_CHECK_VERSION(2,9,0)
-	gtk_window_group_add_window (ephy_gui_ensure_window_group (GTK_WINDOW (parent_dialog->priv->window)),
-				     GTK_WINDOW (dialog));
-#endif
 	gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
 
-#if GTK_CHECK_VERSION(2,9,0)
 	g_signal_connect (dialog, "response", G_CALLBACK (gtk_widget_destroy), NULL);
-#endif
 
 	gtk_window_present (GTK_WINDOW (dialog));
 
