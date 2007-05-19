@@ -1,18 +1,19 @@
 # Brazilian Portuguese translation of epiphany-extensions.
-# Copyright (C) 2004, 2006-2007 Free Software Foundation, Inc.
+# Copyright (C) 2004-2007 Free Software Foundation, Inc.
 # This file is distributed under the same license as the epiphany-extensions package.
 # Estêvão Samuel Procópio <tevaum@ig.com.br>, 2004.
 # Raphael Higino <raphaelh@uai.com.br>, 2004.
-# Leonardo Ferreira Fontenelle <leo.fontenelle@gmail.com>, 2006-2007.
+# Leonardo Ferreira Fontenelle <leo.fontenelle@gmail.com>, 2006,2007.
+# Raul Pereira <contato@raulpereira.com>, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-04-29 22:38-0300\n"
-"PO-Revision-Date: 2007-04-29 22:38-0300\n"
-"Last-Translator: Leonardo Ferreira Fontenelle <leo.fontenelle@gmail.com>\n"
+"POT-Creation-Date: 2007-05-19 17:30-0300\n"
+"PO-Revision-Date: 2007-05-19 17:10-0300\n"
+"Last-Translator: Raul Pereira <contato@raulpereira.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -781,7 +782,7 @@ msgstr "<b>Arquivo Fonte</b>"
 
 #: ../extensions/page-info/page-info.glade.h:9
 msgid "<b>Web Page</b>"
-msgstr "<b>Página da Web</b>"
+msgstr "<b>Página Web</b>"
 
 #: ../extensions/page-info/page-info.glade.h:10
 msgid "DYNAMIC"
@@ -916,7 +917,7 @@ msgstr "_Permissões do Site"
 #. shortcut key
 #: ../extensions/permissions/ephy-permissions-extension.c:158
 msgid "Manage web site permissions"
-msgstr "Gerenciar permissões do web site"
+msgstr "Gerenciar permissões do site web"
 
 #: ../extensions/rss/ephy-rss-extension.c:90
 msgid "News Feeds Subscription"
@@ -925,7 +926,7 @@ msgstr "Assinatura de Fonte de Notícia"
 #: ../extensions/rss/ephy-rss-extension.c:92
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr ""
-"Assinar a fonte de notícias desse website usando seu agregador de notícias "
+"Assine a fonte de notícias desse site web usando seu agregador de notícias "
 "favorito"
 
 #: ../extensions/rss/ephy-rss-extension.c:97
@@ -1072,7 +1073,7 @@ msgstr "Rolar Automaticamente"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
 msgid "Scroll on middle mouse click"
-msgstr "Role com o clique do botão do meio do mouse"
+msgstr "Role a página automaticamente após clicar com o botão do meio"
 
 #: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
 msgid "Auto Reload Tab"
@@ -1088,15 +1089,15 @@ msgstr "Visualizador de licença do Creative Commons"
 
 #: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
 msgid "Shows the Creative Commons license of the current website if available"
-msgstr "Mostra a licença Creative Commons do site da web, se disponível"
+msgstr "Mostra a licença Creative Commons da página, se disponível"
 
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
-msgstr "Veja o certificado da página e gerenciar os certificados"
+msgstr "Veja o certificado da página e gerencie os certificados"
 
 #: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
 msgid "Synchronize bookmarks with del.icio.us"
-msgstr "Sincronize seus marcadores com o del.icio.us"
+msgstr "Sincroniza marcadores com o del.icio.us"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -1104,7 +1105,7 @@ msgstr "Visualizador de erros"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
 msgid "Validate web pages and check links"
-msgstr "Valide páginas da web e verifique links"
+msgstr "Valide páginas web e verifique links"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
 msgid "Activate and deactivate extensions"
@@ -1138,7 +1139,7 @@ msgstr "Greasemonkey"
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
 msgid "Run user scripts to modify web pages' behavior"
 msgstr ""
-"Execute scripts de usuário para modificar o comportamento de páginas da web"
+"Execute scripts de usuário para modificar o comportamento de páginas web"
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
 msgid "Java Console"
@@ -1146,7 +1147,7 @@ msgstr "Console Java"
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
 msgid "Provide access to the Java-Plugin Console"
-msgstr "Fornece acesso ao Console Java-Plugin"
+msgstr "Fornece acesso ao Console do Java Plug-in"
 
 #: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
 msgid "Live HTTP headers"
@@ -1205,11 +1206,11 @@ msgstr "Escolher Folha de Estilo"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
-msgstr "Selecione entre folhas de estilo fornecidas pela página da web"
+msgstr "Selecione entre folhas de estilo fornecidas pela página web"
 
 #: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
 msgid "Adds a sidebar to windows"
-msgstr "Adiciona um barra lateral à janela"
+msgstr "Adiciona uma barra lateral à janela"
 
 #: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
 msgid "Sidebar"
@@ -1233,7 +1234,7 @@ msgstr "Grupos de Abas"
 
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
-msgstr "Indica conteúdo novo em abas em segundo plano"
+msgstr "Indica conteúdo novo em abas de segundo plano"
 
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
