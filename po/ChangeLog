@@ -1,3 +1,8 @@
+2007-05-19  Leonardo Ferreira Fontenelle  <leonardof@svn.gnome.org>
+
+	* pt_BR.po: Improvements in Brazilian Portuguese translation by Raul
+	Pereira <contato@raulpereira.com>. Closes bug #434764.
+
 2007-05-15  Jorge Gonzalez <jorgegonz@svn.gnome.org> 
 
         * es.po: Updated Spanish translation
