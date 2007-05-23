@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: cs\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-04-18 17:35+0200\n"
-"PO-Revision-Date: 2007-04-18 17:35+0200\n"
+"POT-Creation-Date: 2007-05-23 11:25+0200\n"
+"PO-Revision-Date: 2007-05-23 11:25+0200\n"
 "Last-Translator: Jakub Friedl <jfriedl@suse.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -161,7 +161,7 @@ msgstr ""
 #: ../extensions/adblock/adblock.glade.h:4
 #: ../extensions/adblock/ephy-adblock-extension.c:244
 msgid "Adblock editor"
-msgstr ""
+msgstr "Editor blokování reklam"
 
 #: ../extensions/adblock/adblock.glade.h:5
 msgid "Add a new rule"
@@ -173,7 +173,7 @@ msgstr "Černá listina"
 
 #: ../extensions/adblock/adblock.glade.h:7
 msgid "Filterset.G"
-msgstr ""
+msgstr "Filterset.G"
 
 #: ../extensions/adblock/adblock.glade.h:8
 msgid "Whitelist"
@@ -181,7 +181,7 @@ msgstr "Bílá listina"
 
 #: ../extensions/adblock/ephy-adblock-extension.c:245
 msgid "Edit Adblock"
-msgstr ""
+msgstr "Upravit blokování reklam"
 
 #: ../extensions/adblock/ephy-adblock-extension.c:312
 #, c-format
@@ -237,6 +237,7 @@ msgid "Action for tagged bookmarks:"
 msgstr ""
 
 #: ../extensions/epilicious/epilicious-config.glade.h:2
+#: ../extensions/epilicious/epilicious.py.in:212
 msgid "Epilicious Configuration"
 msgstr ""
 
@@ -254,7 +255,7 @@ msgstr "_Heslo:"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:7
 msgid "_Tag:"
-msgstr ""
+msgstr "_Tag:"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:1
 msgid "<b>Synchronizing with del.icio.us</b>"
@@ -289,8 +290,8 @@ msgid "Synchronizing..."
 msgstr "Probíhá synchronizace..."
 
 #. # Epiphany integration ##
-#: ../extensions/epilicious/epilicious.py.in:201
-#: ../extensions/epilicious/epilicious.py.in:204
+#: ../extensions/epilicious/epilicious.py.in:207
+#: ../extensions/epilicious/epilicious.py.in:210
 msgid "Epilicious Synchronize"
 msgstr ""
 
@@ -483,11 +484,11 @@ msgstr ""
 "Chyba HTML v %s:\n"
 "Nebyl určen platný doctype."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:356
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
 msgid "Enabled"
 msgstr "Povoleno"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
 #: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "Popis"
@@ -679,7 +680,7 @@ msgstr "_Uložit jako..."
 #: ../extensions/page-info/page-info-dialog.c:1380
 #: ../extensions/page-info/page-info-dialog.c:1701
 msgid "Blocked"
-msgstr ""
+msgstr "Blokováno"
 
 #: ../extensions/page-info/page-info-dialog.c:1396
 #: ../extensions/page-info/page-info-dialog.c:1717
@@ -1041,11 +1042,13 @@ msgstr "_Slovník GNOME"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
 msgid "Open search result in new tab"
-msgstr ""
+msgstr "Otevřít výsledky hledání v nové kartě"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
 msgid "Open search result in new tab if true, in new window if false"
 msgstr ""
+"Je-li pravdivé, otevřít výsledky hledání v nové kartě, je-li nepravdivé, "
+"otevřít výsledky hledání v novém okně"
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
@@ -1069,7 +1072,7 @@ msgstr "Pravidelně obnovovat kartu"
 
 #: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
 msgid "Creative Commons license viewer"
-msgstr ""
+msgstr "Prohlížeč licencí Creative Commons"
 
 #: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
 msgid "Shows the Creative Commons license of the current website if available"
@@ -1078,6 +1081,10 @@ msgstr "Je-li dostupná, zobrazit licenci Creative Commmons aktuálního webu"
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Zobrazit certifikát stránky a spravovat certifikáty"
+
+#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
+msgid "Synchronize bookmarks with del.icio.us"
+msgstr "Synchronizovat záložky s del.icio.us"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
