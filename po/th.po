@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: epiphany-extension\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-02-13 22:33+0700\n"
-"PO-Revision-Date: 2007-02-13 22:48+0700\n"
+"POT-Creation-Date: 2007-06-03 13:02+0700\n"
+"PO-Revision-Date: 2007-06-03 13:11+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <l10n@opentle.org>\n"
 "MIME-Version: 1.0\n"
@@ -154,7 +154,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>ปรับกฎจากแหล่งต้นตำรับ</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:237
+#: ../extensions/adblock/ephy-adblock-extension.c:244
 msgid "Adblock editor"
 msgstr "เครื่องมือแก้ไข Adblock"
 
@@ -174,11 +174,11 @@ msgstr "Filterset.G"
 msgid "Whitelist"
 msgstr "บัญชีขาว"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:238
+#: ../extensions/adblock/ephy-adblock-extension.c:245
 msgid "Edit Adblock"
 msgstr "แก้ไข Adblock"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:295
+#: ../extensions/adblock/ephy-adblock-extension.c:312
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -230,6 +230,7 @@ msgid "Action for tagged bookmarks:"
 msgstr "การกระทำต่อที่คั่นหนังสือที่ถูกแท็ก:"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:2
+#: ../extensions/epilicious/epilicious.py.in:212
 msgid "Epilicious Configuration"
 msgstr "การตั้งค่า Epilicious"
 
@@ -282,8 +283,8 @@ msgid "Synchronizing..."
 msgstr "กำลังปรับข้อมูล..."
 
 #. # Epiphany integration ##
-#: ../extensions/epilicious/epilicious.py.in:201
-#: ../extensions/epilicious/epilicious.py.in:204
+#: ../extensions/epilicious/epilicious.py.in:207
+#: ../extensions/epilicious/epilicious.py.in:210
 msgid "Epilicious Synchronize"
 msgstr "การปรับข้อมูล Epilicious"
 
@@ -297,8 +298,8 @@ msgid ""
 "the topic will be synched with del.icio.us. If this is set then all "
 "bookmarks without the topic will be synched with del.icio.us."
 msgstr ""
-"ควบคุมการปรับข้อมูลของหัวข้อ ถ้าไม่กำหนด ก็จะปรับข้อมูลที่คั่นหน้าทั้งหมดกับ del.icio.us "
-"ถ้ากำหนด ก็จะปรับข้อมูลที่คั่นหน้าที่ไม่มีหัวข้อเหล่านี้กับ del.icio.us"
+"ควบคุมการปรับข้อมูลของหัวข้อ ถ้าไม่กำหนด ก็จะปรับข้อมูลที่คั่นหน้าทั้งหมดกับ del.icio.us ถ้ากำหนด "
+"ก็จะปรับข้อมูลที่คั่นหน้าที่ไม่มีหัวข้อเหล่านี้กับ del.icio.us"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:3
 msgid "Exclude topic"
@@ -471,11 +472,11 @@ msgstr ""
 "ข้อผิดพลาด HTML ใน %s:\n"
 "ไม่ได้ระบุ doctype อย่างถูกต้อง"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:356
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
 msgid "Enabled"
 msgstr "เปิดใช้"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
 #: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "คำบรรยาย"
@@ -645,81 +646,81 @@ msgstr "แอพเพล็ต"
 msgid "Icon"
 msgstr "ไอคอน"
 
-#: ../extensions/page-info/page-info-dialog.c:1124
+#: ../extensions/page-info/page-info-dialog.c:1130
 msgid "_Open"
 msgstr "เ_ปิด"
 
-#: ../extensions/page-info/page-info-dialog.c:1130
-#: ../extensions/page-info/page-info-dialog.c:1573
+#: ../extensions/page-info/page-info-dialog.c:1136
+#: ../extensions/page-info/page-info-dialog.c:1581
 msgid "_Copy Link Address"
 msgstr "_คัดลอกตำแหน่งลิงก์"
 
-#: ../extensions/page-info/page-info-dialog.c:1136
+#: ../extensions/page-info/page-info-dialog.c:1142
 msgid "_Use as Background"
 msgstr "ใ_ช้เป็นภาพพื้นหลัง"
 
-#: ../extensions/page-info/page-info-dialog.c:1142
-#: ../extensions/page-info/page-info-dialog.c:1579
+#: ../extensions/page-info/page-info-dialog.c:1148
+#: ../extensions/page-info/page-info-dialog.c:1587
 msgid "_Save As..."
 msgstr "บันทึกเป็_น..."
 
-#: ../extensions/page-info/page-info-dialog.c:1374
-#: ../extensions/page-info/page-info-dialog.c:1689
+#: ../extensions/page-info/page-info-dialog.c:1380
+#: ../extensions/page-info/page-info-dialog.c:1701
 msgid "Blocked"
 msgstr "ถูกกั้น"
 
-#: ../extensions/page-info/page-info-dialog.c:1390
-#: ../extensions/page-info/page-info-dialog.c:1705
+#: ../extensions/page-info/page-info-dialog.c:1396
+#: ../extensions/page-info/page-info-dialog.c:1717
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1403
+#: ../extensions/page-info/page-info-dialog.c:1409
 msgid "Type"
 msgstr "ชนิด"
 
-#: ../extensions/page-info/page-info-dialog.c:1415
+#: ../extensions/page-info/page-info-dialog.c:1421
 msgid "Alt Text"
 msgstr "ข้อความแทน"
 
-#: ../extensions/page-info/page-info-dialog.c:1427
-#: ../extensions/page-info/page-info-dialog.c:1718
+#: ../extensions/page-info/page-info-dialog.c:1433
+#: ../extensions/page-info/page-info-dialog.c:1730
 msgid "Title"
 msgstr "ป้ายชื่อ"
 
-#: ../extensions/page-info/page-info-dialog.c:1439
+#: ../extensions/page-info/page-info-dialog.c:1445
 msgid "Width"
 msgstr "กว้าง"
 
-#: ../extensions/page-info/page-info-dialog.c:1451
+#: ../extensions/page-info/page-info-dialog.c:1457
 msgid "Height"
 msgstr "สูง"
 
-#: ../extensions/page-info/page-info-dialog.c:1730
+#: ../extensions/page-info/page-info-dialog.c:1742
 msgid "Relation"
 msgstr "ความสัมพันธ์"
 
-#: ../extensions/page-info/page-info-dialog.c:1877
-#: ../extensions/page-info/page-info-dialog.c:2018
+#: ../extensions/page-info/page-info-dialog.c:1891
+#: ../extensions/page-info/page-info-dialog.c:2032
 msgid "Name"
 msgstr "ชื่อ"
 
-#: ../extensions/page-info/page-info-dialog.c:1889
+#: ../extensions/page-info/page-info-dialog.c:1903
 msgid "Method"
 msgstr "วิธีติดต่อ"
 
-#: ../extensions/page-info/page-info-dialog.c:1903
+#: ../extensions/page-info/page-info-dialog.c:1917
 msgid "Action"
 msgstr "การกระทำ"
 
-#: ../extensions/page-info/page-info-dialog.c:1984
+#: ../extensions/page-info/page-info-dialog.c:1998
 msgid "_Copy"
 msgstr "_คัดลอก"
 
-#: ../extensions/page-info/page-info-dialog.c:2030
+#: ../extensions/page-info/page-info-dialog.c:2044
 msgid "Content"
 msgstr "เนื้อหา"
 
-#: ../extensions/page-info/page-info-dialog.c:2131
+#: ../extensions/page-info/page-info-dialog.c:2145
 msgid "Page Metadata"
 msgstr "Metadata ของหน้าเว็บ"
 
@@ -1055,16 +1056,16 @@ msgid "Creative Commons license viewer"
 msgstr "แสดงสัญญาอนุญาต Creative Commons"
 
 #: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
-msgid "Jaime Frutos Morales <acidborg@gmail.com>"
-msgstr "Jaime Frutos Morales <acidborg@gmail.com>"
-
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:3
 msgid "Shows the Creative Commons license of the current website if available"
 msgstr "แสดงสัญญาอนุญาต Creative Commons ของเว็บไซต์ที่เปิดอยู่ถ้ามี"
 
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "ดูใบรับรองของหน้าเว็บและจัดการใบรับรองต่างๆ"
+
+#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
+msgid "Synchronize bookmarks with del.icio.us"
+msgstr "ปรับข้อมูลกับ del.icio.us"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -1135,6 +1136,14 @@ msgstr "แก้ไขการอนุญาตสำหรับไซต์
 msgid "Permissions"
 msgstr "การอนุญาต"
 
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
+msgid "Drag the page on middle mouse click"
+msgstr "ลากเลื่อนหน้าด้วยการคลิกเมาส์ปุ่มกลาง"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+msgid "Push Scroll"
+msgstr "จับเลื่อนหน้า"
+
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
@@ -1195,6 +1204,9 @@ msgstr "บ่งชี้การเปลี่ยนแปลงเนื้
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "สถานะแท็บ"
+
+#~ msgid "Jaime Frutos Morales <acidborg@gmail.com>"
+#~ msgstr "Jaime Frutos Morales <acidborg@gmail.com>"
 
 #~ msgid "Apply your modification"
 #~ msgstr "เริ่มใช้ตามที่แก้ไข"
