@@ -21,10 +21,6 @@ import gconf
 import gobject
 import sys, os, os.path
 
-if sys.version_info[0:2] < (2, 5):
-    class GeneratorExit(Exception):
-        pass
-
 sys.path.append('%EXTENSION_DIR%')
 
 import libepilicious
@@ -32,7 +28,15 @@ libepilicious.GLADE_DIR = '%GLADE_DIR%'
 libepilicious.L10N_DOMAIN = '%GETTEXT_PACKAGE%'
 libepilicious.LOCALE_DIR = '%LOCALE_DIR%'
 
-# localization
+# {{{1 Python 2.4 & 2.5 compatability hacks
+# In 2.5 generators need to deal with GeneratorExit exceptions, see PEP 342:
+# http://docs.python.org/whatsnew/pep-342.html
+if sys.version_info[0:2] < (2, 5):
+    class GeneratorExit(Exception):
+        pass
+
+
+# {{{1 Localization
 import gettext
 import gtk.glade
 try:
@@ -43,197 +47,208 @@ try:
     _ = t.ugettext
 except Exception, e:
     _ = lambda x : x
-
-## Globals ##
-username = ''
-password = ''
-keyword = ''
-exclude = False
-space_repl = ''
-
-## Configuration ##
-_gconf_dir = '/apps/epiphany/extensions/epilicious'
-_gconf_un = '/apps/epiphany/extensions/epilicious/username'
-_gconf_pwd = '/apps/epiphany/extensions/epilicious/password'
-_gconf_kw = '/apps/epiphany/extensions/epilicious/keyword'
-_gconf_excl = '/apps/epiphany/extensions/epilicious/exclude'
-
-def _new_un(client, *args, **kwargs):
-    '''Callback to handle the username is modified in GConf.'''
-    global username
-    username = client.get_string(_gconf_un)
-
-def _new_pwd(client, *args, **kwargs):
-    '''Callback to handle the password is modified in GConf.'''
-    global password
-    password = client.get_string(_gconf_pwd)
-
-def _new_keyword(client, *args, **kwargs):
-    '''Callback to handle the keyword is modified in GConf.'''
-    global keyword
-    keyword = client.get_string(_gconf_kw)
-
-def _new_exclude(client, *args, **kwargs):
-    '''Callback to handle the exclude is modified in GConf.'''
-    global exclude
-    exclude = client.get_bool(_gconf_excl)
-
-def _gconf_register():
-    '''Sets up the GConf callbacks.'''
-    global keyword, exclude, space_repl
-
-    # hard coded for now
-    space_repl = '#'
-
-    client = gconf.client_get_default()
-    client.add_dir(_gconf_dir, gconf.CLIENT_PRELOAD_NONE)
-    client.notify_add(_gconf_un, _new_un)
-    client.notify_add(_gconf_pwd, _new_pwd)
-    client.notify_add(_gconf_kw, _new_keyword)
-    client.notify_add(_gconf_excl, _new_exclude)
-    _new_un(client)
-    _new_pwd(client)
-    _new_keyword(client)
-    _new_exclude(client)
-
-_gconf_register()
-
-## Synchronisation ##
-def _CB_Sync(action, window):
-    # Using gobject.idle_add() together with a generator is much easier than
-    # getting threading to work properly. It doesn't make the GUI very
-    # responsive during del.icio.us calls, but it's better than nothing.
-    sync_gen = _do_sync()
-    gobject.idle_add(sync_gen.next)
-
-def _CB_Config(action, window):
-    from libepilicious.config import ConfigWindow
-    config = ConfigWindow()
-    config.show()
-
-def _do_sync():
-    '''Perform the synchronisation.
-
-    This is the method called from the menu item added in epiphany. The
-    algorithm is as follows:
-
-    1. Read the base snapshot (L{libepilicious.get_old})
-    2. Create remote storage representation (L{libepilicious.DeliciousStore})
-    3. Create local storage representation (L{libepilicious.EpiphanyStore})
-    4. Remove URLs (L{libepilicous.remove_urls})
-    5. Add new URLs and synchronise tags (L{libepilicous.sync_tags_on_urls})
-    6. Save a local snapshot as a base for the next synchronisation
-       (L{libepilicious.save_snapshot})
-
-    Any errors that occur are logged.
-    '''
-    from libepilicious.progress import ProgressBar
-    pbar = ProgressBar()
-    try:
-        from libepilicious import get_logger, get_old, save_snapshot, remove_urls, find_changed_urls, sync_tags_on_urls
-        from libepilicious.DeliciousStore import DeliciousStore
-        from libepilicious.EpiphanyStore import EpiphanyStore
-
-        pbar.show()
-        stepper = pbar.step()
-
-        remote_store = DeliciousStore(user = username, pwd = password, \
-                space_repl = space_repl)
-        local_store = EpiphanyStore(keyword = keyword, exclude = exclude)
-        stepper.next()
-        old = get_old()
-        #libepilicious.get_logger().info('old=' + str(old))
-        yield True
-        stepper.next()
-        remote = remote_store.get_snapshot()
-        #libepilicious.get_logger().info('remote=' + str(remote))
-        yield True
-        stepper.next()
-        local = local_store.get_snapshot()
-        #libepilicious.get_logger().info('local=' + str(local))
-        yield True
-        stepper.next()
-
-        # Synchronize URLs
-        remove_urls(old = old,
-                remote = remote,
-                local = local,
-                rem_store = remote_store,
-                loc_store = local_store)
-        yield True
-        stepper.next()
-
-        changed_urls = find_changed_urls(old = old,
-                remote = remote, local = local)
-        #libepilicious.get_logger().info('changed_urls=' + str(changed_urls))
-        sync_tags_on_urls(curls = changed_urls,
-                old = old,
-                remote = remote,
-                local = local,
-                rem_store = remote_store,
-                loc_store = local_store)
-        yield True
-        stepper.next()
-
-        # Save the current state for future sync
-        save_snapshot(local_store.get_snapshot())
-        yield True
-        stepper.next()
-        yield False
-    except StopIteration, e:
-        libepilicious.get_logger().exception('Too many calls to stepper.next()')
-    except GeneratorExit, e:
-        raise e
-    except:
-        pbar.failed()
-        libepilicious.get_logger().exception('Failed sync')
+libepilicious.gettext = _
 
 
-## Epiphany integration ##
+# {{{1 The main class
+class EpiliciousPlugin(object):
 
-_menu_ui = '''
-<ui>
-  <menubar name="menubar">
-    <menu name="BookmarksMenu" action="Bookmarks">
-      <separator />
-      <menuitem name="%s" action="EpiliciousSync" />
-      <separator />
-    </menu>
-    <menu name="ToolsMenu" action="Tools">
-      <menuitem name="EpiliciousConfig" action="EpiliciousConfig"/>
-    </menu>
-  </menubar>
-</ui>
-''' % (_('Epilicious Synchronize'))
+    def __init__(self):
+        self.username = ''
+        self.password = ''
+        self.backend = ''
+        self.keyword = ''
+        self.exclude = False
+        self.space_repl = '#' # any reason to make it configurable?
 
-_actions = [ \
-        ('EpiliciousSync', None, _('Epilicious Synchronize'),
-                None, None, _CB_Sync), \
-        ('EpiliciousConfig', None, _('Epilicious Configuration'),
-                None, None, _CB_Config), \
-        ]
+        self._gconf_register()
 
-# Epiphany extension interface
+    # {{{2 GConf configuration setup
+    def _gconf_register(self):
+        '''Sets up the GConf callbacks.'''
+        client = gconf.client_get_default()
+        client.add_dir(libepilicious.GCONF_DIR, gconf.CLIENT_PRELOAD_NONE)
+        client.notify_add(libepilicious.GCONF_UN, self._new_un)
+        client.notify_add(libepilicious.GCONF_PWD, self._new_pwd)
+        client.notify_add(libepilicious.GCONF_BACK, self._new_backend)
+        client.notify_add(libepilicious.GCONF_KW, self._new_keyword)
+        client.notify_add(libepilicious.GCONF_EXCL, self._new_exclude)
+
+        self._new_un(client)
+        self._new_pwd(client)
+        self._new_backend(client)
+        self._new_keyword(client)
+        self._new_exclude(client)
+
+    def _new_un(self, client, *args, **kwargs):
+        '''Callback to handle the username is modified in GConf.'''
+        self.username = client.get_string(libepilicious.GCONF_UN)
+
+    def _new_pwd(self, client, *args, **kwargs):
+        '''Callback to handle the password is modified in GConf.'''
+        self.password = client.get_string(libepilicious.GCONF_PWD)
+
+    def _new_backend(self, client, *args, **kargs):
+        '''Callback to handle when the backend is modified in GConf.'''
+        # There are very few allowed values for this.  It really should be
+        # checked!
+        self.backend = client.get_string(libepilicious.GCONF_BACK)
+
+    def _new_keyword(self, client, *args, **kwargs):
+        '''Callback to handle the keyword is modified in GConf.'''
+        self.keyword = client.get_string(libepilicious.GCONF_KW)
+
+    def _new_exclude(self, client, *args, **kwargs):
+        '''Callback to handle the exclude is modified in GConf.'''
+        self.exclude = client.get_bool(libepilicious.GCONF_EXCL)
+
+    # {{{2 Synchronisation
+    def _CB_Sync(self, action, window):
+        # Using gobject.idle_add() together with a generator is much easier than
+        # getting threading to work properly. It doesn't make the GUI very
+        # responsive during del.icio.us calls, but it's better than nothing.
+        sync_gen = self._do_sync()
+        gobject.idle_add(sync_gen.next)
+
+    def _CB_Config(self, action, window):
+        from libepilicious.config import ConfigWindow
+        config = ConfigWindow()
+        config.show()
+
+    def _do_sync(self):
+        '''Perform the synchronisation.
+
+        This is the method called from the menu item added in epiphany. The
+        algorithm is as follows:
+
+        1. Read the base snapshot (L{libepilicious.get_old})
+        2. Create remote storage representation (L{libepilicious.DeliciousStore})
+        3. Create local storage representation (L{libepilicious.EpiphanyStore})
+        4. Remove URLs (L{libepilicous.remove_urls})
+        5. Add new URLs and synchronise tags (L{libepilicous.sync_tags_on_urls})
+        6. Save a local snapshot as a base for the next synchronisation
+           (L{libepilicious.save_snapshot})
+
+        Any errors that occur are logged.
+        '''
+        from libepilicious.progress import ProgressBar
+        pbar = ProgressBar()
+        try:
+            from libepilicious.DeliciousStore import DeliciousStore
+            from libepilicious.EpiphanyStore import EpiphanyStore
+
+            pbar.show()
+            stepper = pbar.step()
+
+            remote_store = DeliciousStore(user=self.username, \
+                    pwd=self.password, space_repl=self.space_repl, \
+                    backend=self.backend)
+            local_store = EpiphanyStore(keyword=self.keyword, \
+                    exclude=self.exclude)
+            stepper.next()
+            old = libepilicious.get_old()
+            #libepilicious.get_logger().info('old = ' + str(len(old.keys())))
+            yield True
+            stepper.next()
+            remote = remote_store.get_snapshot()
+            #libepilicious.get_logger().info('remote=' + \
+            #        str(len(remote.keys())))
+            yield True
+            stepper.next()
+            local = local_store.get_snapshot()
+            #libepilicious.get_logger().info('local=' + \
+            #        str(len(local.keys())))
+            yield True
+            stepper.next()
+
+            # Synchronize URLs
+            libepilicious.remove_urls(old = old,
+                    remote = remote,
+                    local = local,
+                    rem_store = remote_store,
+                    loc_store = local_store)
+            yield True
+            stepper.next()
+
+            changed_urls = libepilicious.find_changed_urls(old = old,
+                    remote = remote, local = local)
+            #libepilicious.get_logger().info('changed_urls=' + \
+            #        str(len(changed_urls)))
+            libepilicious.sync_tags_on_urls(curls = changed_urls,
+                    old = old,
+                    remote = remote,
+                    local = local,
+                    rem_store = remote_store,
+                    loc_store = local_store)
+            yield True
+            stepper.next()
+
+            # Save the current state for future sync
+            libepilicious.save_snapshot(local_store.get_snapshot())
+            yield True
+            stepper.next()
+            yield False
+        except StopIteration, e:
+            libepilicious.get_logger().exception('Too many calls to stepper.next()')
+        except GeneratorExit, e:
+            raise e
+        except:
+            pbar.failed()
+            libepilicious.get_logger().exception('Failed sync')
+
+    # {{{2 Epiphany connection
+    def attach_window(self, window):
+        _actions = [ \
+                ('EpiliciousSync', None, _('Epilicious Synchronize'),
+                        None, None, self._CB_Sync), \
+                ('EpiliciousConfig', None, ('Epilicious Configuration'),
+                        None, None, self._CB_Config), \
+                ]
+        _menu_ui = '''
+        <ui>
+          <menubar name="menubar">
+            <menu name="BookmarksMenu" action="Bookmarks">
+              <separator />
+              <menuitem name="%s" action="EpiliciousSync" />
+              <separator />
+            </menu>
+            <menu name="ToolsMenu" action="Tools">
+              <menuitem name="EpiliciousConfig" action="EpiliciousConfig"/>
+            </menu>
+          </menubar>
+        </ui>
+        ''' % (_('Epilicious Synchronize'))
+
+
+        try:
+            ui_manager = window.get_ui_manager()
+            group = gtk.ActionGroup('My Menu')
+            group.add_actions(_actions, window)
+            ui_manager.insert_action_group(group, 0)
+            ui_id = ui_manager.add_ui_from_string(_menu_ui)
+
+            window._my_menu_data = (group, ui_id)
+        except Exception, e:
+            libepilicious.get_logger().exception('Failed attach')
+
+    def detach_window(self, window):
+        try:
+            group, ui_id = window._my_menu_data
+            del window._my_menu_data
+
+            ui_manager = window.get_ui_manager()
+            ui_manager.remove_ui(ui_id)
+            ui_manager.remove_action_group(group)
+            ui_manager.ensure_update()
+        except Exception, e:
+            libepilicious.get_logger().exception('Failed detach')
+
+
+# {{{1 Epiphany extension interface
+plugin = EpiliciousPlugin()
+
 def attach_window(window):
-    try:
-        ui_manager = window.get_ui_manager()
-        group = gtk.ActionGroup('My Menu')
-        group.add_actions(_actions, window)
-        ui_manager.insert_action_group(group, 0)
-        ui_id = ui_manager.add_ui_from_string(_menu_ui)
-
-        window._my_menu_data = (group, ui_id)
-    except Exception, e:
-        libepilicious.get_logger().exception('Failed attach')
+    plugin.attach_window(window)
 
 def detach_window(window):
-    try:
-        group, ui_id = window._my_menu_data
-        del window._my_menu_data
-
-        ui_manager = window.get_ui_manager()
-        ui_manager.remove_ui(ui_id)
-        ui_manager.remove_action_group(group)
-        ui_manager.ensure_update()
-    except Exception, e:
-        libepilicious.get_logger().exception('Failed detach')
+    plugin.detach_window(window)

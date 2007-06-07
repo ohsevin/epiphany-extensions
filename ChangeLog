@@ -1,3 +1,21 @@
+2007-06-07  Magnus Therning <mtherning@svn.gnome.org>
+
+	* extensions/epilicious/DeliciousStore.py:
+	* extensions/epilicious/EpiphanyStore.py:
+	* extensions/epilicious/Makefile.am:
+	* extensions/epilicious/__init__.py:
+	* extensions/epilicious/backend.py:
+	* extensions/epilicious/config.py:
+	* extensions/epilicious/delicious.py:
+	* extensions/epilicious/epilicious-config.glade:
+	* extensions/epilicious/epilicious-progress.glade:
+	* extensions/epilicious/epilicious.py.in:
+	* extensions/epilicious/epilicious.schemas.in:
+	* extensions/epilicious/magnolia.py:
+	* extensions/epilicious/progress.py:
+	Major update to epilicious, including adding support for ma.gnolia as
+	a backend store for bookmarks.
+
 2007-05-16  Christian Persch  <chpe@gnome.org>
 
 	* extensions/extensions-manager-ui/extensions-manager-ui.c:

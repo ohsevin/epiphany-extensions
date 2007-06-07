@@ -18,15 +18,15 @@
 
 from urllib2 import URLError
 from sets import Set
-import delicious
 import libepilicious
 from libepilicious.BaseStore import BaseStore
+from libepilicious.backend import create_backend
 
 
 class DeliciousStore(BaseStore):
     '''The class representing the storage of Delicious bookmarks.'''
 
-    def __init__(self, user, pwd, space_repl):
+    def __init__(self, user, pwd, space_repl, backend):
         '''Constructor.
 
         @param user: Delicious username
@@ -36,7 +36,7 @@ class DeliciousStore(BaseStore):
         self.__un = user
         self.__pwd = pwd
         self.__sr = space_repl
-        self.__d = delicious.Delicious(user, pwd)
+        self.__d = create_backend(backend)(user, pwd)
         self.__snap_utd = 0
 
     def get_snapshot(self):

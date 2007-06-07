@@ -16,10 +16,12 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-import libepilicious
 import gtk, gtk.glade
 import gconf
 import os
+
+import libepilicious
+import libepilicious.backend
 
 class ConfigWindow:
 
@@ -32,6 +34,7 @@ class ConfigWindow:
         self.config = self.gui.get_widget('dlgConfig')
         self.entname = self.gui.get_widget('entName')
         self.entpassword = self.gui.get_widget('entPassword')
+        self.cbbackend = self.gui.get_widget('cbBackend')
         self.enttag = self.gui.get_widget('entTag')
         self.rbinclude = self.gui.get_widget('rbInclude')
         self.rbexclude = self.gui.get_widget('rbExclude')
@@ -44,31 +47,46 @@ class ConfigWindow:
         self.entpassword.set_invisible_char('●')
 
     def show(self):
-        self.entname.set_text(self.client.get_string('/apps/epiphany/extensions/epilicious/username'))
-        self.entpassword.set_text(self.client.get_string('/apps/epiphany/extensions/epilicious/password'))
-        self.enttag.set_text(self.client.get_string('/apps/epiphany/extensions/epilicious/keyword'))
-        self.rbexclude.set_active(self.client.get_bool('/apps/epiphany/extensions/epilicious/exclude'))
+        self.entname.set_text(self.client.get_string(libepilicious.GCONF_UN))
+        self.entpassword.set_text(self.client.get_string(libepilicious.GCONF_PWD))
+        self.enttag.set_text(self.client.get_string(libepilicious.GCONF_KW))
+        self.rbexclude.set_active(self.client.get_bool(libepilicious.GCONF_EXCL))
+
+        # setting up of the combo box is a bit ugly, it's all about DRY
+        for k in libepilicious.backend.backends.keys():
+            self.cbbackend.append_text(k)
+        self.cbbackend.remove_text(0)
+        be = self.client.get_string(libepilicious.GCONF_BACK)
+        try:
+            i = libepilicious.backend.backends.keys().index(be)
+        except ValueError:
+            i = 0
+        self.cbbackend.set_active(i)
 
     def hide(self):
         self.config.hide()
-        self.client.set_string('/apps/epiphany/extensions/epilicious/username', self.entname.get_text())
-        self.client.set_string('/apps/epiphany/extensions/epilicious/password', self.entpassword.get_text())
-        self.client.set_string('/apps/epiphany/extensions/epilicious/keyword', self.enttag.get_text())
-        self.client.set_bool('/apps/epiphany/extensions/epilicious/exclude', self.rbexclude.get_active())
+        self.client.set_string(libepilicious.GCONF_UN, self.entname.get_text())
+        self.client.set_string(libepilicious.GCONF_PWD, self.entpassword.get_text())
+        self.client.set_string(libepilicious.GCONF_KW, self.enttag.get_text())
+        self.client.set_bool(libepilicious.GCONF_EXCL, self.rbexclude.get_active())
+        self.client.set_string(libepilicious.GCONF_BACK, self.cbbackend.get_active_text())
         return False
 
     ### signal handlers
     def on_entName_focus_out_event(self, widget, event):
-        self.client.set_string('/apps/epiphany/extensions/epilicious/username', self.entname.get_text())
+        self.client.set_string(libepilicious.GCONF_UN, self.entname.get_text())
 
     def on_entPassword_focus_out_event(self, widget, event):
-        self.client.set_string('/apps/epiphany/extensions/epilicious/password', self.entpassword.get_text())
+        self.client.set_string(libepilicious.GCONF_PWD, self.entpassword.get_text())
 
     def on_entTag_focus_out_event(self, widget, event):
-        self.client.set_string('/apps/epiphany/extensions/epilicious/keyword', self.enttag.get_text())
+        self.client.set_string(libepilicious.GCONF_KW, self.enttag.get_text())
 
     def on_rb_clicked(self, widget):
-        self.client.set_bool('/apps/epiphany/extensions/epilicious/exclude', self.rbexclude.get_active())
+        self.client.set_bool(libepilicious.GCONF_EXCL, self.rbexclude.get_active())
+
+    def on_cbBackend_changed(self, widget):
+        self.client.set_string(libepilicious.GCONF_BACK, self.cbbackend.get_active_text())
 
     def on_btnHelp_clicked(self, widget):
         # Figure out how to open help and open it to the yet-unwritten

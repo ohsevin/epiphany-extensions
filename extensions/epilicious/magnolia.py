@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright (C) 2006 by Magnus Therning
+# Copyright (C) 2007 by Magnus Therning
 
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -30,17 +30,11 @@
 
 import urllib
 import urllib2
-import sys
 import time
-
-# ElementTree is a standard lib from Python 2.5 {{{1
-if sys.version_info[0:2] >= (2, 5):
-    from xml.etree.ElementTree import parse as xml_parse
-else:
-    from elementtree.ElementTree import parse as xml_parse
+from elementtree.ElementTree import parse as xml_parse
 
 
-def _handle_throttle(function): # {{{1
+def _handle_throttle(function):
     # Decorator to deal with the throttling (503) that might happen when
     # talking to del.icio.us.
     # The documentation for the del.icio.us API isn't very clear on this.  They
@@ -55,24 +49,17 @@ def _handle_throttle(function): # {{{1
     def decorate(*args, **kwargs):
         while 1:
             try:
-                time.sleep(1)
                 return function(*args, **kwargs)
             except urllib2.HTTPError, e:
-                if e.code == 503:
-                    print '503'
-                    time.sleep(30)
-                elif e.code == 500:
-                    print '500'
-                    time.sleep(120)
-                else:
-                    raise e
+                print 'Error'
+                raise e
 
     # It'd be a shame to lose the docstrings, wouldn't it?
     decorate.__doc__ = function.__doc__
     return decorate
 
 
-class _DeliciousParser(object): # {{{1
+class _DeliciousParser(object):
     # Class for parsing the responses from del.icio.us. All methods expect an
     # ElementTree.
 
@@ -97,14 +84,16 @@ class _DeliciousParser(object): # {{{1
         return l
 
 
-# {{{1 Constants
-_DWS_REALM = 'del.icio.us API'
-_DWS_BASE_URI = 'https://api.del.icio.us/'
-_DWS_API_URI = 'https://api.del.icio.us/v1/'
-_DWS_USER_AGENT = 'epilicious/0.9 (magnus@therning.org)'
+#_DWS_REALM = 'del.icio.us API'
+_DWS_REALM = 'Ma.gnolia API'
+#_DWS_BASE_URI = 'https://api.del.icio.us/'
+_DWS_BASE_URI = 'https://ma.gnolia.com/'
+#_DWS_API_URI = 'https://api.del.icio.us/v1/'
+_DWS_API_URI = 'https://ma.gnolia.com/api/mirrord/v1/'
+_DWS_USER_AGENT = 'epilicious/0.10 magnus@therning.org)'
 
 
-class Delicious(object): # {{{1
+class Magnolia(object):
     def __init__(self, user_name, password):
         self.__user = user_name
         self.__passwd = password

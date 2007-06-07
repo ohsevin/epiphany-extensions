@@ -21,6 +21,14 @@ import pickle
 import os, os.path
 import time
 
+# GConf keys
+GCONF_DIR = '/apps/epiphany/extensions/epilicious'
+GCONF_UN = '/apps/epiphany/extensions/epilicious/username'
+GCONF_PWD = '/apps/epiphany/extensions/epilicious/password'
+GCONF_BACK = '/apps/epiphany/extensions/epilicious/backend'
+GCONF_KW = '/apps/epiphany/extensions/epilicious/keyword'
+GCONF_EXCL = '/apps/epiphany/extensions/epilicious/exclude'
+
 # Nice to have for debugging
 logger = None
 def get_logger():
@@ -112,22 +120,27 @@ def find_changed_urls(old, remote, local):
         tags.sort()
         return ','.join([url, desc, ','.join(tags)])
 
-    o_ids = dict([[create_unique_id_for_url(u, old[u][0], old[u][1]), u] for u in old.keys()])
-    r_ids = dict([[create_unique_id_for_url(u, remote[u][0], remote[u][1]), u] for u in remote.keys()])
-    l_ids = dict([[create_unique_id_for_url(u, local[u][0], local[u][1]), u] for u in local.keys()])
+    o_ids = dict([[create_unique_id_for_url(u, old[u][0], old[u][1]), u] \
+            for u in old.keys()])
+    r_ids = dict([[create_unique_id_for_url(u, remote[u][0], remote[u][1]), u] \
+            for u in remote.keys()])
+    l_ids = dict([[create_unique_id_for_url(u, local[u][0], local[u][1]), u] \
+            for u in local.keys()])
 
     o = Set(o_ids.keys())
     r = Set(r_ids.keys())
     l = Set(l_ids.keys())
 
-    l_changed = l - o
-    r_changed = r - o
+    l_changed = l - o # added locally
+    r_changed = r - o # added remotely
+    b_changed = l & r # existing on both sides, with identical tags
 
     result = []
-    for id in l_changed:
+    for id in l_changed - b_changed:
         if l_ids[id] not in result: result.append(l_ids[id])
-    for id in r_changed:
+    for id in r_changed - b_changed:
         if r_ids[id] not in result: result.append(r_ids[id])
+    get_logger().info('Interesting URLs: %s' % str(result))
     return result
 
 def _get_tags(url, old, rem, loc):
@@ -168,9 +181,12 @@ def sync_tags_on_urls(curls, old, remote, \
     @param rem_store: The remote storage (L{DeliciousStore})
     @param loc_store: The local storage (L{EpiphanyStore})
     '''
+    get_logger().info('Number of urls to sync %i.' % len(curls))
     for url in curls:
         desc, otags, rtags, ltags = _get_tags(url, old, remote, local)
         if otags and (not rtags or not ltags):
+            get_logger().info('Skipping %s' % url)
             continue
+        get_logger().info(url)
         rem_store.url_sync(url, desc, otags - ltags, ltags - otags)
         loc_store.url_sync(url, desc, otags - rtags, rtags - otags)

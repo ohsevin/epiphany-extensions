@@ -123,10 +123,9 @@ class EpiphanyStore(BaseStore):
 
         for k in to_del:
             kw = self.__bms.find_keyword(k, False)
-            self.__bms.unset_keyword(kw, bm)
+            if kw: self.__bms.unset_keyword(kw, bm)
 
         for k in to_add:
             kw = self.__bms.find_keyword(k, False)
-            if not kw:
-                kw = self.__bms.add_keyword(k)
+            if not kw: kw = self.__bms.add_keyword(k)
             self.__bms.set_keyword(kw, bm)

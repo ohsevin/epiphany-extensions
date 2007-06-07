@@ -8,9 +8,9 @@
       <type>string</type>
       <default> </default>
       <locale name="C">
-        <short>del.icio.us username</short>
-        <long>The del.icio.us username that epilicious will use for
-          synchronizing bookmarks.</long>
+        <short>username</short>
+        <long>The username that epilicious will use for synchronizing
+          bookmarks.</long>
       </locale>
     </schema>
 
@@ -21,9 +21,22 @@
       <type>string</type>
       <default> </default>
       <locale name="C">
-        <short>del.icio.us password</short>
-        <long>The del.icio.us password that epilicious will use for
-          synchronizing bookmarks.</long>
+        <short>password</short>
+        <long>The password that epilicious will use for synchronizing
+          bookmarks.</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/epiphany/extensions/epilicious/backend</key>
+      <applyto>/apps/epiphany/extensions/epilicious/backend</applyto>
+      <owner>epiphany</owner>
+      <type>string</type>
+      <default>del.icio.us</default>
+      <locale name="C">
+        <short>epilicious backend</short>
+        <long>The backend that epilicious will use for synchronizing
+          bookmarks. Allowed values: 'del.icio.us', 'ma.gnolia'</long>
       </locale>
     </schema>
 

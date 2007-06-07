@@ -18,7 +18,10 @@
 
 import libepilicious
 import gtk, gtk.glade
+import gconf
 import os.path
+
+_ = libepilicious.gettext
 
 class ProgressBar:
 
@@ -28,6 +31,14 @@ class ProgressBar:
         self.gui.signal_autoconnect(self)
 
         self.dlg = self.gui.get_widget('dlgProgress')
+
+        # Some setup at runtime is necessary
+        client = gconf.client_get_default()
+        backend = client.get_string(libepilicious.GCONF_BACK)
+        l1 = self.gui.get_widget('lblTitle')
+        l1.set_markup('<b>' + _('Synchronizing with %s') % backend + '</b>')
+        l2 = self.gui.get_widget('lblRetr')
+        l2.set_text(_('Retrieving bookmarks from %s') % backend)
 
     def show(self):
         self.dlg.show()
