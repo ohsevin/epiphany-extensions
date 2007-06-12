@@ -1,3 +1,8 @@
+2007-06-12  Magnus Therning <mtherning@svn.gnome.org>
+
+	* extensions/epilicious/magnolia.py: Adding compatibility with Python
+	2.5 (location of ElementTree).
+
 2007-06-07  Magnus Therning <mtherning@svn.gnome.org>
 
 	* extensions/epilicious/DeliciousStore.py:

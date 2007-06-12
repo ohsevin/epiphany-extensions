@@ -30,11 +30,17 @@
 
 import urllib
 import urllib2
+import sys
 import time
-from elementtree.ElementTree import parse as xml_parse
+
+# ElementTree is a standard lib from Python 2.5 {{{1
+if sys.version_info[0:2] >= (2, 5):
+    from xml.etree.ElementTree import parse as xml_parse
+else:
+    from elementtree.ElementTree import parse as xml_parse
 
 
-def _handle_throttle(function):
+def _handle_throttle(function): # {{{1
     # Decorator to deal with the throttling (503) that might happen when
     # talking to del.icio.us.
     # The documentation for the del.icio.us API isn't very clear on this.  They
@@ -59,7 +65,7 @@ def _handle_throttle(function):
     return decorate
 
 
-class _DeliciousParser(object):
+class _DeliciousParser(object): # {{{1
     # Class for parsing the responses from del.icio.us. All methods expect an
     # ElementTree.
 
@@ -84,6 +90,7 @@ class _DeliciousParser(object):
         return l
 
 
+# {{{1 Constants
 #_DWS_REALM = 'del.icio.us API'
 _DWS_REALM = 'Ma.gnolia API'
 #_DWS_BASE_URI = 'https://api.del.icio.us/'
@@ -93,7 +100,7 @@ _DWS_API_URI = 'https://ma.gnolia.com/api/mirrord/v1/'
 _DWS_USER_AGENT = 'epilicious/0.10 magnus@therning.org)'
 
 
-class Magnolia(object):
+class Magnolia(object): # {{{1
     def __init__(self, user_name, password):
         self.__user = user_name
         self.__passwd = password
