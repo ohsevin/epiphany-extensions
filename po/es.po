@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions.HEAD.es\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-05-05 14:35+0100\n"
-"PO-Revision-Date: 2007-05-15 10:04+0200\n"
+"POT-Creation-Date: 2007-06-08 03:16+0100\n"
+"PO-Revision-Date: 2007-06-15 16:16+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -75,7 +75,7 @@ msgid "_Images"
 msgstr "_Imágenes"
 
 #: ../extensions/actions/action-properties.glade.h:11
-#: ../extensions/epilicious/epilicious-config.glade.h:5
+#: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Name:"
 msgstr "_Nombre:"
 
@@ -138,9 +138,12 @@ msgid ""
 "approved by the original author;\n"
 "direct any problems to Bugzilla and not to the original author (G).\n"
 msgstr ""
-"Los derechos de esta lista © son propiedad de su autor original (G). Está relicenciada bajo GPL con permiso.\n"
-"La lista original, Filterset.G, se puede encontrar en http://www.pierceive.com/filtersetg/.\n"
-"Esta versión ha sido modificada de la original. Los cambios no han sido aprobados por el autor original;\n"
+"Los derechos de esta lista © son propiedad de su autor original (G). Está "
+"relicenciada bajo GPL con permiso.\n"
+"La lista original, Filterset.G, se puede encontrar en http://www.pierceive."
+"com/filtersetg/.\n"
+"Esta versión ha sido modificada de la original. Los cambios no han sido "
+"aprobados por el autor original;\n"
 "dirija cualquier problema a Bugzilla y no al autor original (G).\n"
 
 #: ../extensions/adblock/adblock-ui.c:496
@@ -237,41 +240,41 @@ msgid "Action for tagged bookmarks:"
 msgstr "Acción para los marcadores etiquetados:"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:2
-#: ../extensions/epilicious/epilicious.py.in:212
 msgid "Epilicious Configuration"
 msgstr "Configuración de Epilicious"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:3
+msgid "_Backend:"
+msgstr "_Backend:"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:4
 msgid "_Exclude"
 msgstr "_Excluir"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:4
+#: ../extensions/epilicious/epilicious-config.glade.h:5
 msgid "_Include"
 msgstr "_Incluir"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:6
+#: ../extensions/epilicious/epilicious-config.glade.h:7
 msgid "_Password:"
 msgstr "_Contraseña:"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:7
+#: ../extensions/epilicious/epilicious-config.glade.h:8
 msgid "_Tag:"
 msgstr "E_tiqueta:"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:1
-msgid "<b>Synchronizing with del.icio.us</b>"
-msgstr "<b>Sincronizando con del.icio.us</b>"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:2
 msgid "Adding new bookmarks and synching topics"
 msgstr "Añadiendo los nuevos marcadores y sincronizando temas"
 
-#: ../extensions/epilicious/epilicious-progress.glade.h:3
+#: ../extensions/epilicious/epilicious-progress.glade.h:2
 msgid "Removing deleted bookmarks"
 msgstr "Eliminando los marcadores borrados"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:4
-msgid "Retrieving bookmarks from del.icio.us"
-msgstr "Obteniendo los marcadores desde del.icio.us"
+#, no-c-format
+msgid "Retrieving bookmarks from %s"
+msgstr "Obteniendo los marcadores de %s"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:5
 msgid "Retrieving bookmarks from epiphany"
@@ -285,13 +288,17 @@ msgstr "Obteniendo el punto de sincronización previo"
 msgid "Saving new synch point"
 msgstr "Guardando el nuevo punto de sincronización"
 
-#: ../extensions/epilicious/epilicious-progress.glade.h:8
+#: ../extensions/epilicious/epilicious-progress.glade.h:9
+#, no-c-format
+msgid "Synchronizing with %s"
+msgstr "Sincronizando con %s"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:10
 msgid "Synchronizing..."
 msgstr "Sincronizando..."
 
-#. # Epiphany integration ##
-#: ../extensions/epilicious/epilicious.py.in:207
-#: ../extensions/epilicious/epilicious.py.in:210
+#: ../extensions/epilicious/epilicious.py.in:202
+#: ../extensions/epilicious/epilicious.py.in:220
 msgid "Epilicious Synchronize"
 msgstr "Sincronizar Epilicious"
 
@@ -320,27 +327,29 @@ msgstr "Tema compartido"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:5
 msgid ""
-"The del.icio.us password that epilicious will use for synchronizing "
-"bookmarks."
-msgstr ""
-"La contraseña de del.icio.us que Epilicious usará para sincronizar los "
-"marcadores."
+"The backend that epilicious will use for synchronizing bookmarks. Allowed "
+"values: 'del.icio.us', 'ma.gnolia'"
+msgstr "El backend que epilicious usará para sincronizar los marcadores. Valores permitidos: «del.icio.us», «ma.gnolia»"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
-msgid ""
-"The del.icio.us username that epilicious will use for synchronizing "
-"bookmarks."
-msgstr ""
-"El usuario de del.icio.us que Epilicious usará para sincronizar los "
-"marcadores."
+msgid "The password that epilicious will use for synchronizing bookmarks."
+msgstr "La contraseña que Epilicious usará para sincronizar los marcadores."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:7
-msgid "del.icio.us password"
-msgstr "contraseña de del.icio.us"
+msgid "The username that epilicious will use for synchronizing bookmarks."
+msgstr "El usuario que Epilicious usará para sincronizar los marcadores."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:8
-msgid "del.icio.us username"
-msgstr "usuario de del.icio.us"
+msgid "epilicious backend"
+msgstr "backend de epilicious"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:9
+msgid "password"
+msgstr "contraseña"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:10
+msgid "username"
+msgstr "nombre de usuario"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
@@ -489,11 +498,11 @@ msgstr ""
 "Error HTML en %s:\n"
 "No se especificó un tipo de documento válido."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:356
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
 msgid "Enabled"
 msgstr "Activada"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
 #: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "Descripción"
