@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-03-16 03:16+0000\n"
-"PO-Revision-Date: 2007-03-21 02:19+0530\n"
-"Last-Translator: yangka <yanang_ka@hotmail.com>\n"
+"POT-Creation-Date: 2007-06-08 03:16+0100\n"
+"PO-Revision-Date: 2007-06-19 10:43+0530\n"
+"Last-Translator: Dawa pemo <daws_403@hotmail.com>\n"
 "Language-Team: dzongkha <pgeyleg@dit.gov.bt>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -60,7 +60,7 @@ msgid "_Images"
 msgstr "གཟུགས་བརྙན་ཚུ།(_I)"
 
 #: ../extensions/actions/action-properties.glade.h:11
-#: ../extensions/epilicious/epilicious-config.glade.h:5
+#: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Name:"
 msgstr "མིང་།(_N)"
 
@@ -223,36 +223,37 @@ msgid "Epilicious Configuration"
 msgstr "ཨིཔིལི་ཤིའསི་རིམ་སྒྲིག"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:3
+msgid "_Backend:"
+msgstr "རྒྱབ་མཐའ: (_B)"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:4
 msgid "_Exclude"
 msgstr "གྲངས་སུ་མ་བརྩི་།(_E)"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:4
+#: ../extensions/epilicious/epilicious-config.glade.h:5
 msgid "_Include"
 msgstr "གརངས་སུ་བརྩི།(_I)"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:6
+#: ../extensions/epilicious/epilicious-config.glade.h:7
 msgid "_Password:"
 msgstr "ཆོག་ཡིག(_P)"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:7
+#: ../extensions/epilicious/epilicious-config.glade.h:8
 msgid "_Tag:"
 msgstr "ངོ་རྟགས།(_T)"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:1
-msgid "<b>Synchronizing with del.icio.us</b>"
-msgstr "<b> del.icio.us དང་གཅིག་ཁར་མཉམ་འབྱུང་འབད་དོ།</b>"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:2
 msgid "Adding new bookmarks and synching topics"
 msgstr "དེབ་རྟགས་ཚུ་དང་མཉམ་འབྱུང་གནད་དོན་གསརཔ་ཚུ་ཁ་སྐོང་འབད་དོ།"
 
-#: ../extensions/epilicious/epilicious-progress.glade.h:3
+#: ../extensions/epilicious/epilicious-progress.glade.h:2
 msgid "Removing deleted bookmarks"
 msgstr "བཏོན་གཏང་ཡོད་མི་དེབ་རྟགས་ཚུ་རྩ་བསྐྲད་གཏང་དོ།"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:4
-msgid "Retrieving bookmarks from del.icio.us"
-msgstr " del.icio.us ལས་དེབ་རྟགས་ཚུ་སླར་འདྲེན་འབད་དོ།"
+#, no-c-format
+msgid "Retrieving bookmarks from %s"
+msgstr "%s ལས་དེབ་རྟགས་ཚུ་སླར་འདྲེན་འབད་དོ་"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:5
 msgid "Retrieving bookmarks from epiphany"
@@ -266,13 +267,17 @@ msgstr "ཧེ་མམ་གྱི་མཉམ་འབྱུང་རྩེ་
 msgid "Saving new synch point"
 msgstr "མཉམ་འབྱུང་རྩེ་གསརཔ་སྲུང་བཞག་འབད་དོ།"
 
-#: ../extensions/epilicious/epilicious-progress.glade.h:8
+#: ../extensions/epilicious/epilicious-progress.glade.h:9
+#, no-c-format
+msgid "Synchronizing with %s"
+msgstr "%s དང་གཅིག་ཁར་ མཉམ་འབྱུང་འབད་དོ་"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:10
 msgid "Synchronizing..."
 msgstr "མཉམ་འབྱུང་འབད་དོ་་་"
 
-#. # Epiphany integration ##
-#: ../extensions/epilicious/epilicious.py.in:201
-#: ../extensions/epilicious/epilicious.py.in:204
+#: ../extensions/epilicious/epilicious.py.in:202
+#: ../extensions/epilicious/epilicious.py.in:220
 msgid "Epilicious Synchronize"
 msgstr "ཨིཔིལི་ཤིའསི་མཉམ་འབྱུང་།"
 
@@ -293,20 +298,28 @@ msgid "Shared topic"
 msgstr "རུབ་སྤྱོད་འབད་ཡོད་མི་གནད་དོན།"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:5
-msgid "The del.icio.us password that epilicious will use for synchronizing bookmarks."
-msgstr "མཉམ་འབྱུང་དེབ་རྟགས་ཚུ་གི་དོན་ལུ་ལག་ལེན་འཐབ་ནི་ཨིཔིལི་ཤིའསི་དེའི་del.icio.usཆོག་ཡིག་འདི།"
+msgid "The backend that epilicious will use for synchronizing bookmarks. Allowed values: 'del.icio.us', 'ma.gnolia'"
+msgstr "དེབ་རྟགས་ཚུ་ མཉམ་འབྱུང་འབད་ནི་དོན་ལས་ ཨི་པི་ལི་ཤི་ཡེསི་ གིས་ལག་ལེན་འཐབ་ནི་ཨིན་པའི་ རྒྱབ་མཐའ། ཆོག་པའི་ བེ་ལུ་ཚུ:  'del.icio.us', 'ma.gnolia'"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
-msgid "The del.icio.us username that epilicious will use for synchronizing bookmarks."
-msgstr "མཉམ་འབྱུང་དེབ་རྟགས་ཚུ་གི་དོན་ལུ་ལག་ལེན་འཐབ་ནི་ཨིཔིལི་ཤིའསི་དེའི་del.icio.us ལག་ལེན་པའི་མིང་འདི།"
+msgid "The password that epilicious will use for synchronizing bookmarks."
+msgstr "དེབ་རྟགས་ཚུ་ མཉམ་འབྱུང་འབད་ནིདོན་ལུ་ ཨི་པི་ལི་ཤིཡེསི་ གིས་ལག་ལེན་འཐབ་ནི་ཨིན་པའི་ ཆོག་ཡིག།"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:7
-msgid "del.icio.us password"
-msgstr "del.icio.us ཆོག་ཡིག"
+msgid "The username that epilicious will use for synchronizing bookmarks."
+msgstr "དེབ་རྟགས་ཚུ་ མཉམ་འབྱུང་འབད་ནི་དོན་ལུ་  ཨི་པི་ལི་ཤིཡེསི་ གིས་ལག་ལེན་འཐབ་ནི་ཨིན་པའི་ ལག་ལེན་པའི་མིང་།"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:8
-msgid "del.icio.us username"
-msgstr "del.icio.us ལག་ལེན་པའི་མིང་།"
+msgid "epilicious backend"
+msgstr "ཨི་པི་ལི་ཤིཡེསི་ རྒྱབ་མཐའ་"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:9
+msgid "password"
+msgstr "ཆོག་ཡིག་"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:10
+msgid "username"
+msgstr "ལག་ལེན་པའི་མིང་"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
@@ -451,11 +464,11 @@ msgstr ""
 "ནང་ཨེཆ་ཊི་ཨེམ་ཨེལ་འཛོལ་བ་ %s:\n"
 "ནུས་ཅན་ཡིག་ཆའི་དབྱེ་བ་གསལ་བཀོད་འབད་མེདཔ།"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:356
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
 msgid "Enabled"
 msgstr "ལྕོགས་ཅན་བཟོ་ཡོདཔ།"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
 #: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "འགྲེལ་བཤད།"
@@ -1041,6 +1054,10 @@ msgstr "ཐོབ་ཚུགས་པ་ཅིན་ད་ལྟོའི་ཝ
 msgid "View the page certificate and manage the certificates"
 msgstr "ཤོག་ལེབ་ལག་འཁྱེར་འདི་སྟོན་ནི་དང་ལག་འཁྱེར་ཚུ་འཛིན་སྐྱོང་འབད།"
 
+#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
+msgid "Synchronize bookmarks with del.icio.us"
+msgstr "དེབ་རྟགས་ཚུ་  del.icio.us དང་གཅིག་ཁར་མཉམ་འབྱུང་འབད་"
+
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
 msgstr "འཛོལ་བ་སྟོན་མི།"
@@ -1176,4 +1193,11 @@ msgstr "རྒྱབ་གཞི་མཆོང་ལྡེ་ཚུ་ནང་
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "མཆོང་ལྡེའི་གནས་ལུགས་ཚུ།"
+
+#~ msgid "Retrieving bookmarks from del.icio.us"
+#~ msgstr " del.icio.us ལས་དེབ་རྟགས་ཚུ་སླར་འདྲེན་འབད་དོ།"
+#~ msgid "del.icio.us password"
+#~ msgstr "del.icio.us ཆོག་ཡིག"
+#~ msgid "del.icio.us username"
+#~ msgstr "del.icio.us ལག་ལེན་པའི་མིང་།"
 
