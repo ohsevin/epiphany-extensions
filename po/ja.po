@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions trunk\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-03-19 00:42+0900\n"
-"PO-Revision-Date: 2007-03-19 00:42+0900\n"
+"POT-Creation-Date: 2007-07-02 00:15+0900\n"
+"PO-Revision-Date: 2007-07-02 00:14+0900\n"
 "Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -76,7 +76,7 @@ msgid "_Images"
 msgstr "画像(_I)"
 
 #: ../extensions/actions/action-properties.glade.h:11
-#: ../extensions/epilicious/epilicious-config.glade.h:5
+#: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Name:"
 msgstr "名前(_N):"
 
@@ -246,36 +246,37 @@ msgid "Epilicious Configuration"
 msgstr "Epilicious の設定"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:3
+msgid "_Backend:"
+msgstr "バックエンド(_B):"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:4
 msgid "_Exclude"
 msgstr "除外する(_E)"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:4
+#: ../extensions/epilicious/epilicious-config.glade.h:5
 msgid "_Include"
 msgstr "含める(_I)"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:6
+#: ../extensions/epilicious/epilicious-config.glade.h:7
 msgid "_Password:"
 msgstr "パスワード(_P):"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:7
+#: ../extensions/epilicious/epilicious-config.glade.h:8
 msgid "_Tag:"
 msgstr "タグ(_T):"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:1
-msgid "<b>Synchronizing with del.icio.us</b>"
-msgstr "<b>del.icio.us と同期中</b>"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:2
 msgid "Adding new bookmarks and synching topics"
 msgstr "新しいブックマークの追加とトピックの同期中"
 
-#: ../extensions/epilicious/epilicious-progress.glade.h:3
+#: ../extensions/epilicious/epilicious-progress.glade.h:2
 msgid "Removing deleted bookmarks"
 msgstr "削除済みのブックマークの抹消中"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:4
-msgid "Retrieving bookmarks from del.icio.us"
-msgstr "del.icio.us からブックマークの取得中"
+#, no-c-format
+msgid "Retrieving bookmarks from %s"
+msgstr "%s からブックマークの取得中"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:5
 msgid "Retrieving bookmarks from epiphany"
@@ -289,13 +290,17 @@ msgstr "以前同期したサイトの取得中"
 msgid "Saving new synch point"
 msgstr "新しい同期サイトの保存中"
 
-#: ../extensions/epilicious/epilicious-progress.glade.h:8
+#: ../extensions/epilicious/epilicious-progress.glade.h:9
+#, no-c-format
+msgid "Synchronizing with %s"
+msgstr "%s と同期中..."
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:10
 msgid "Synchronizing..."
 msgstr "同期中..."
 
-#. # Epiphany integration ##
-#: ../extensions/epilicious/epilicious.py.in:201
-#: ../extensions/epilicious/epilicious.py.in:204
+#: ../extensions/epilicious/epilicious.py.in:202
+#: ../extensions/epilicious/epilicious.py.in:220
 msgid "Epilicious Synchronize"
 msgstr "Epilicious の同期"
 
@@ -323,25 +328,31 @@ msgstr "共有するトピック"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:5
 msgid ""
-"The del.icio.us password that epilicious will use for synchronizing "
-"bookmarks."
+"The backend that epilicious will use for synchronizing bookmarks. Allowed "
+"values: 'del.icio.us', 'ma.gnolia'"
 msgstr ""
-"Epilicious がブックマークを同期する際に使用する del.icio.us のパスワードです"
+"Epilicious がブックマークを同期する際に使用するバックエンドです。指定可能な"
+"値: 'del.icio.us'、'ma.gnolia'"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
-msgid ""
-"The del.icio.us username that epilicious will use for synchronizing "
-"bookmarks."
-msgstr ""
-"Epilicious がブックマークを同期する際に使用する del.icio.us のユーザ名です"
+msgid "The password that epilicious will use for synchronizing bookmarks."
+msgstr "Epilicious がブックマークを同期する際に使用するパスワードです。"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:7
-msgid "del.icio.us password"
-msgstr "del.icio.us のパスワード"
+msgid "The username that epilicious will use for synchronizing bookmarks."
+msgstr "Epilicious がブックマークを同期する際に使用するユーザ名です。"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:8
-msgid "del.icio.us username"
-msgstr "del.icio.us のユーザ名"
+msgid "epilicious backend"
+msgstr "Epilicious のバックエンド"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:9
+msgid "password"
+msgstr "パスワード"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:10
+msgid "username"
+msgstr "ユーザ名"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
@@ -490,11 +501,11 @@ msgstr ""
 "%s の中に HTML エラー:\n"
 "正しい DOCTYPE が指定されていません。"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:356
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
 msgid "Enabled"
 msgstr "有効"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
 #: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "説明"
@@ -1087,6 +1098,10 @@ msgstr ""
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "ページの証明書を表示したり管理します"
+
+#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
+msgid "Synchronize bookmarks with del.icio.us"
+msgstr "del.icio.us とブックマークの同期"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
