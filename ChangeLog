@@ -1,3 +1,14 @@
+2006-07-08  Jean-François Rameau  <jframeau@svn.gnome.org>
+
+	* extensions/adblock/adblock-pattern.c:
+	(adblock_pattern_get_filterg_date),
+	(adblock_pattern_get_filtersetg_patterns),
+	(adblock_pattern_get_filterg_patterns):
+
+	Added support for new filterset.g update process.
+	filterset.g now has static file pointing to last update (latest.txt).
+	Added some checks to avoid crashes.
+
 2007-06-12  Magnus Therning <mtherning@svn.gnome.org>
 
 	* extensions/epilicious/magnolia.py: Adding compatibility with Python
