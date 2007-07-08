@@ -231,7 +231,7 @@ adblock_pattern_get_filterg_patterns (const char *date)
 	int size;
 	char *contents = NULL, *url = NULL;
 
-	url = g_strdup_printf ("http://www.pierceive.com/filtersetg/%s.txt", date);
+	url = g_strdup_printf ("http://www.pierceive.com/filtersetg/%s", date);
 
 	/* First, get the changelog so we can build the url pointing to the last rules */
 	if (gnome_vfs_read_entire_file (url, &size, &contents) != GNOME_VFS_OK)
@@ -246,16 +246,15 @@ adblock_pattern_get_filterg_patterns (const char *date)
 static char *
 adblock_pattern_get_filterg_date (void)
 {
-	const char *url = "http://www.pierceive.com/filtersetg/changelog.txt";
+	const char *url = "http://www.pierceive.com/filtersetg/latest.txt";
 	int size;
-	char *contents;
+	char *contents, *date;
 	char **lines;
-	char *date;
 
 	/* First, get the changelog so we can build the url pointing to the last rules */
 	if (gnome_vfs_read_entire_file (url, &size, &contents) != GNOME_VFS_OK)
 	{
-		g_warning ("Could not get changelog from filterg site");
+		g_warning ("Could not get latest.txt from filterg site");
 		return NULL;
 	}
 	lines = g_strsplit (contents, "\n", 0);
@@ -308,13 +307,22 @@ adblock_pattern_save (GSList *patterns, AdblockPatternType type)
 void 
 adblock_pattern_get_filtersetg_patterns (void)
 {
-	char *date;
-	char *patterns;
+	char *date, *patterns;
 
 	date = adblock_pattern_get_filterg_date ();
+	if (date == NULL)
+	{
+		g_warning ("Could not get the last update");
+		return;
+	}	
 
 	patterns = adblock_pattern_get_filterg_patterns (date);
-
+	if (patterns == NULL)
+	{
+		g_warning ("Could not get content from last update");
+		return;
+	}
+	
 	adblock_pattern_rewrite_patterns (patterns);
 
 	g_free (date);
