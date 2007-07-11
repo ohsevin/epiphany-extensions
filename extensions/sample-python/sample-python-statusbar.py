@@ -117,7 +117,7 @@ def attach_window(window):
 
 	statusbar = window.get_statusbar()
 	statusbar.add_widget(frame)
-	statusbar.tooltips.set_tip (evbox, "A useless tip")
+	evbox.set_tooltip_text ("A useless tip")
 	statusbar._sample_python_statusbar_frame = frame
 
 def detach_window(window):

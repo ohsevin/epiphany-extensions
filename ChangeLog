@@ -1,3 +1,19 @@
+2007-07-11  Christian Persch  <chpe@gnome.org>
+
+	* configure.ac:
+
+	Update gtk req to 2.11.6.
+
+	* extensions/adblock/ephy-adblock-extension.c: (update_statusbar),
+	(destroy_statusbar_icon):
+	* extensions/cc-license-viewer/cc-license-viewer.py:
+	* extensions/rss/ephy-rss-extension.c:
+	(ephy_rss_create_statusbar_icon),
+	(ephy_rss_destroy_statusbar_icon):
+	* extensions/sample-python/sample-python-statusbar.py:
+
+	Port to new tooltips API.
+
 2007-07-09  Christian Persch  <chpe@gnome.org>
 
 	=== Release 2.19.5 ===

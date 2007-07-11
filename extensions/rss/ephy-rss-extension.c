@@ -367,7 +367,6 @@ ephy_rss_create_statusbar_icon (EphyWindow *window,
 {
 	EphyStatusbar *statusbar;
 	GtkWidget *icon;
-	char *tooltip;
 
 	statusbar = EPHY_STATUSBAR (ephy_window_get_statusbar (window));
 	g_return_if_fail (statusbar != NULL);
@@ -379,9 +378,7 @@ ephy_rss_create_statusbar_icon (EphyWindow *window,
 	gtk_container_add (GTK_CONTAINER (data->evbox), icon);
 	gtk_widget_show (icon);
 
-	tooltip = g_strdup_printf (_("Subscribe to site's news feed"));
-	gtk_tooltips_set_tip (statusbar->tooltips, data->evbox, tooltip, NULL);
-	g_free (tooltip);
+	gtk_widget_set_tooltip_text (data->evbox, _("Subscribe to site's news feed"));
 
 	ephy_statusbar_add_widget (statusbar, data->evbox);
 
@@ -400,8 +397,6 @@ ephy_rss_destroy_statusbar_icon (EphyWindow *window,
 	g_return_if_fail (statusbar != NULL);
 
 	g_return_if_fail (data->evbox != NULL);	
-
-	gtk_tooltips_set_tip (statusbar->tooltips, GTK_WIDGET (data->evbox), NULL, NULL);
 
 	ephy_statusbar_remove_widget (statusbar, GTK_WIDGET (data->evbox));
 }

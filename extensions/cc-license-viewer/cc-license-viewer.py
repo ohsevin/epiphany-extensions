@@ -368,7 +368,7 @@ def ui_init (window):
 	statusbar = window.get_statusbar()
 	statusbar.add_widget(eventbox)
 	statusbar._cc_eventbox = eventbox
-	statusbar.tooltips.set_tip (eventbox, _("View Creative Commons license"))
+	eventbox.set_tooltip_text (_("View Creative Commons license"))
 
 def ui_show(window, tab):
 	if tab != window.get_active_tab(): return

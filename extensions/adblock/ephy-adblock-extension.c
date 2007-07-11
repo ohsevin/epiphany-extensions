@@ -53,7 +53,6 @@
 #define EPHY_ADBLOCK_EXTENSION_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_ADBLOCK_EXTENSION, EphyAdblockExtensionPrivate))
 
 #define WINDOW_DATA_KEY		"EphyAdblockExtensionWindowData"
-#define STATUSBAR_FRAME_KEY	"EphyAdblockExtensionStatusbarFrame"
 #define STATUSBAR_EVBOX_KEY	"EphyAdblockExtensionStatusbarEvbox"
 #define EXTENSION_KEY		"EphyAdblockExtension"
 #define ICON_FILENAME		"adblock-statusbar-icon.svg"
@@ -314,9 +313,7 @@ update_statusbar (EphyWindow *window)
 						     num_blocked),
 					   num_blocked);
 
-		gtk_tooltips_set_tip ((EPHY_STATUSBAR (statusbar))->tooltips,
-				      evbox, tooltip, NULL);
-
+		gtk_widget_set_tooltip_text (evbox, tooltip);
 		g_free (tooltip);
 
 		gtk_widget_show (evbox);
@@ -381,10 +378,7 @@ destroy_statusbar_icon (EphyWindow *window)
 	g_return_if_fail (statusbar != NULL);
 
 	evbox = g_object_steal_data (G_OBJECT (statusbar), STATUSBAR_EVBOX_KEY);
-
 	g_return_if_fail (evbox != NULL);
-
-	gtk_tooltips_set_tip (statusbar->tooltips, evbox, NULL, NULL);
 
 	ephy_statusbar_remove_widget (statusbar, evbox);
 }
