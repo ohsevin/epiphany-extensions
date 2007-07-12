@@ -49,6 +49,7 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <dirent.h>
+#include <errno.h>
 
 #define EPHY_GREASEMONKEY_EXTENSION_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_GREASEMONKEY_EXTENSION, EphyGreasemonkeyExtensionPrivate))
 
@@ -94,53 +95,6 @@ static GObjectClass *parent_class = NULL;
 
 static GType type = 0;
 
-/*
- * Returns 0 on success; if it's not 0, this entire extension can't be used.
- */
-static int
-mkdir_recursive (const char *path)
-{
-	/*
-	 * Inspired by gnomevfs-mkdir.c, by Bastien Nocera
-	 */
-	GList *dirs = NULL;
-	GList *l;
-	char *work_dir;
-	int res = 0;
-
-	work_dir = g_strdup (path);
-
-	while ((work_dir[0] != '.' || work_dir[1] != '\0')
-	       && g_file_test (work_dir, G_FILE_TEST_EXISTS) == FALSE)
-	{
-		dirs = g_list_prepend (dirs, work_dir);
-		work_dir = g_path_get_dirname (work_dir);
-	}
-
-	if ((work_dir[0] == '.' && work_dir[1] == '\0')
-	    || g_file_test (work_dir, G_FILE_TEST_IS_DIR) == FALSE)
-	{
-		g_free (work_dir);
-		return FALSE;
-	}
-
-	g_free (work_dir);
-
-	for (l = dirs; l != NULL; l = l->next)
-	{
-		res = g_mkdir (l->data, 0755);
-
-		if (res != 0)
-		{
-			break;
-		}
-	}
-
-	g_list_foreach (dirs, (GFunc) g_free, NULL);
-	g_list_free (dirs);
-
-	return res;
-}
 
 static char *
 get_script_dir (void)
@@ -157,32 +111,38 @@ load_scripts (const char *path)
 	char *file_path;
 	GreasemonkeyScript *script;
 	GHashTable *scripts;
+	int dir;
+	const char *dirs[2];
+
+	dirs[0] = "/usr/share/epiphany-extensions/greasemonkey/scripts";
+	dirs[1] = path;
 
 	scripts = g_hash_table_new_full (g_str_hash, g_str_equal,
 					 (GDestroyNotify) g_free,
 					 (GDestroyNotify) g_object_unref);
-
-	d = opendir (path);
-	if (d == NULL)
+	for (dir = 0; dir < G_N_ELEMENTS(dirs); dir++)
 	{
-		return scripts;
-	}
-
-	while ((e = readdir (d)) != NULL)
-	{
-		if (g_str_has_suffix (e->d_name, ".user.js"))
+		d = opendir (dirs[dir]);
+		if (d == NULL)
 		{
-			file_path = g_build_filename (path, e->d_name, NULL);
-
-			script = greasemonkey_script_new (file_path);
-			g_hash_table_replace (scripts,
-					      g_strdup (e->d_name), script);
-
-			g_free (file_path);
+			return scripts;
 		}
+		
+		while ((e = readdir (d)) != NULL)
+		{
+			if (g_str_has_suffix (e->d_name, ".user.js"))
+			{
+				file_path = g_build_filename (dirs[dir], e->d_name, NULL);
+				
+				script = greasemonkey_script_new (file_path);
+				g_hash_table_replace (scripts,
+						      g_strdup (e->d_name), script);
+				
+				g_free (file_path);
+			}
+		}
+		closedir (d);
 	}
-	closedir (d);
-
 	return scripts;
 }
 
@@ -258,8 +218,9 @@ ephy_greasemonkey_extension_init (EphyGreasemonkeyExtension *extension)
 	LOG ("EphyGreasemonkeyExtension initialising");
 
 	path = get_script_dir ();
-
-	if (mkdir_recursive (path) == 0)
+	errno = 0;
+	if ((g_mkdir_with_parents (path, 0700) >= 0) || 
+	    (errno == EEXIST))
 	{
 		extension->priv->scripts = load_scripts (path);
 		extension->priv->monitor = monitor_scripts (path, extension);
