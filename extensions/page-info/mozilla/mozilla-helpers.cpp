@@ -428,7 +428,7 @@ PageInfoHelper::GetProperties ()
 
   nsTime last_modified (cTmp.get(), PR_TRUE);
   LL_DIV (props->modification_time,
-          NS_STATIC_CAST(PRTime, last_modified), PR_USEC_PER_SEC);
+          static_cast<PRTime>(last_modified), PR_USEC_PER_SEC);
 
   rv = domNSDoc->GetContentType (value);
   NS_ENSURE_SUCCESS (rv, props);

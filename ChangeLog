@@ -1,3 +1,9 @@
+2007-07-15  Christian Persch  <chpe@gnome.org>
+
+	* extensions/page-info/mozilla/mozilla-helpers.cpp:
+
+	Use C++ casts. Script from bmo#348748.
+
 2007-07-12  Sebastien Bacher  <seb128@ubuntu.com>
 
 	reviewed by: Christian Persch  <chpe@gnome.org>
