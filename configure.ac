@@ -283,6 +283,9 @@ if test "x$need_python" = "xyes"; then
 	if test "x$PYTHON" = "x:"; then
 		AC_MSG_ERROR([Python not found])
 	fi
+
+	PYGTK_REQUIRED=2.11.0
+	PKG_CHECK_EXISTS([pygtk >= $PYGTK_REQUIRED])
 fi
 
 # *******

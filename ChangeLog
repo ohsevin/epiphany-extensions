@@ -1,5 +1,11 @@
 2007-07-15  Christian Persch  <chpe@gnome.org>
 
+	* configure.ac:
+
+	Add check for the required pygtk version.
+
+2007-07-15  Christian Persch  <chpe@gnome.org>
+
 	* extensions/page-info/mozilla/mozilla-helpers.cpp:
 
 	Use C++ casts. Script from bmo#348748.
