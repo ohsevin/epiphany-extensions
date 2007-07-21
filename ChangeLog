@@ -1,3 +1,14 @@
+2007-07-21  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* extensions/sidebar/ephy-sidebar-extension.c:
+	(remove_dialog_response_cb), (free_remove_data),
+	(sidebar_page_remove_requested_cb), (extension_weak_notify_cb),
+	(dialog_weak_notify_cb), (ephy_sidebar_extension_add_sidebar_cb):
+
+	Show delete confirmation dialog in sidebar extension.
+	Original patch by Wouter Bolsterlee, updated and
+	improved by Cosimo Cecchi. Fixes bug #333301.
+
 2007-07-15  Christian Persch  <chpe@gnome.org>
 
 	* configure.ac:

@@ -111,7 +111,7 @@ static void ephy_sidebar_extension_iface_init	(EphyExtensionIface *iface);
 static void ephy_sidebar_extension_init		(EphySidebarExtension *extension);
 static void extension_weak_notify_cb		(GObject *dialog,
 						 GObject *extension);
-static void add_dialog_weak_notify_cb		(GObject *extension,
+static void dialog_weak_notify_cb		(GObject *extension,
 						 GObject *dialog);
 
 static GObjectClass *parent_class = NULL;
@@ -252,37 +252,105 @@ sidebar_close_requested_cb (GtkWidget *sidebar,
 	gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (action), FALSE);
 }
 
+struct RemoveCallbackData {
+	char *page_id;
+	EphySidebarExtension *extension;
+};
+
+static void
+remove_dialog_response_cb (GtkWidget *dialog,
+				int response,
+				struct RemoveCallbackData *data)
+{
+	EphyNode *removeNode = NULL, *node;
+	const char *url;
+	int i;
+	
+	if (response == GTK_RESPONSE_ACCEPT)
+	{
+		for (i = 0 ; i < ephy_node_get_n_children (data->extension->priv->sidebars); i++)
+		{
+			node = ephy_node_get_nth_child (data->extension->priv->sidebars, i);
+			url = ephy_node_get_property_string (node, SIDEBAR_NODE_PROP_URL);
+		
+			if (strcmp (data->page_id, url) == 0)
+			{
+				removeNode = node;
+				ephy_node_remove_child (data->extension->priv->sidebars, removeNode);
+				break;
+			}
+		}
+
+		if (removeNode == NULL)
+		{
+			g_warning ("Remove requested for Sidebar not in EphyNodeDB");
+			return;
+		}
+	
+	}
+	
+	gtk_widget_destroy (GTK_WIDGET (dialog));
+}
+
+static void
+free_remove_data (struct RemoveCallbackData *data){
+	g_free (data->page_id);
+	g_free (data);
+}	
+
+
 static void
 sidebar_page_remove_requested_cb (GtkWidget *sidebar,
 				  const char * page_id,
 				  EphySidebarExtension *extension)
 {
-	EphyNode *removeNode = NULL, *node;
-	const char *url;
-	int i;
+	struct RemoveCallbackData *cb_data;
+	EphySession *session;
+	EphyWindow *window;
+	GtkWidget *dialog;
+	
+	session = EPHY_SESSION (ephy_shell_get_session (ephy_shell));
+	window = ephy_session_get_active_window (session);
 
 	g_return_if_fail (EPHY_IS_SIDEBAR (sidebar));
 	g_return_if_fail (page_id != NULL);
 
-	for (i = 0 ; i < ephy_node_get_n_children (extension->priv->sidebars); i++)
-	{
-		node = ephy_node_get_nth_child (extension->priv->sidebars, i);
-		url = ephy_node_get_property_string (node, SIDEBAR_NODE_PROP_URL);
-		
-		if (strcmp (page_id, url) == 0)
-		{
-			removeNode = node;
-			break;
-		}
-	}
+	dialog = gtk_message_dialog_new
+		(GTK_WINDOW (window),
+		 GTK_DIALOG_DESTROY_WITH_PARENT,
+		 GTK_MESSAGE_QUESTION,
+		 GTK_BUTTONS_CANCEL,
+		 _("Do you really want to remove this sidebar?"));
 
-	if (removeNode == NULL)
-	{
-		g_warning ("Remove requested for Sidebar not in EphyNodeDB");
-		return;
-	}
+	gtk_message_dialog_format_secondary_text
+		(GTK_MESSAGE_DIALOG (dialog),
+		 _("There is no way to recover this sidebar after removal."));
 
-	ephy_node_remove_child (extension->priv->sidebars, removeNode);
+	gtk_window_set_title (GTK_WINDOW (dialog), _("Remove Sidebar"));
+	gtk_window_set_icon_name (GTK_WINDOW (dialog), "web-browser");
+
+	gtk_dialog_add_button (GTK_DIALOG (dialog),
+			       GTK_STOCK_DELETE, GTK_RESPONSE_ACCEPT);
+	gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_ACCEPT);
+
+	gtk_window_group_add_window (GTK_WINDOW (window)->group, GTK_WINDOW (dialog));
+	
+	cb_data = g_new (struct RemoveCallbackData, 1);
+	cb_data->page_id = g_strdup(page_id);
+	cb_data->extension = extension;
+	
+	g_signal_connect_data (dialog, "response", 
+			       G_CALLBACK (remove_dialog_response_cb),
+			       cb_data, (GClosureNotify) free_remove_data,
+			       0);
+
+	g_object_weak_ref (G_OBJECT (extension),
+			   (GWeakNotify) extension_weak_notify_cb, dialog);
+	g_object_weak_ref (G_OBJECT (dialog),
+			   (GWeakNotify) dialog_weak_notify_cb, extension);
+			   
+	gtk_widget_show(GTK_WIDGET (dialog));
+
 }
 
 static void
@@ -363,13 +431,13 @@ extension_weak_notify_cb (GObject *dialog,
 			  GObject *extension)
 {
 	g_object_weak_unref (dialog,
-			     (GWeakNotify) add_dialog_weak_notify_cb, extension);
+			     (GWeakNotify) dialog_weak_notify_cb, extension);
 
 	gtk_widget_destroy (GTK_WIDGET (dialog));
 }
 
 static void
-add_dialog_weak_notify_cb (GObject *extension,
+dialog_weak_notify_cb (GObject *extension,
 			   GObject *dialog)
 {
 	g_object_weak_unref (extension,
@@ -458,12 +526,12 @@ ephy_sidebar_extension_add_sidebar_cb (EphyEmbedSingle *single,
 	g_object_weak_ref (G_OBJECT (extension),
 			   (GWeakNotify) extension_weak_notify_cb, dialog);
 	g_object_weak_ref (G_OBJECT (dialog),
-			   (GWeakNotify) add_dialog_weak_notify_cb, extension);
+			   (GWeakNotify) dialog_weak_notify_cb, extension);
 
 	gtk_widget_show (GTK_WIDGET (dialog));
 
 	return TRUE;
-}
+}	
 
 /* work-around for http://bugzilla.gnome.org/show_bug.cgi?id=169116 */
 static void
