@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: epiphany-extension\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-06-03 13:02+0700\n"
-"PO-Revision-Date: 2007-06-03 13:11+0700\n"
+"POT-Creation-Date: 2007-07-21 16:46+0700\n"
+"PO-Revision-Date: 2007-07-21 16:52+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
-"Language-Team: Thai <l10n@opentle.org>\n"
+"Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -68,7 +68,7 @@ msgid "_Images"
 msgstr "รูป_ภาพ"
 
 #: ../extensions/actions/action-properties.glade.h:11
-#: ../extensions/epilicious/epilicious-config.glade.h:5
+#: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Name:"
 msgstr "_ชื่อ:"
 
@@ -154,7 +154,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>ปรับกฎจากแหล่งต้นตำรับ</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:244
+#: ../extensions/adblock/ephy-adblock-extension.c:243
 msgid "Adblock editor"
 msgstr "เครื่องมือแก้ไข Adblock"
 
@@ -174,11 +174,11 @@ msgstr "Filterset.G"
 msgid "Whitelist"
 msgstr "บัญชีขาว"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:245
+#: ../extensions/adblock/ephy-adblock-extension.c:244
 msgid "Edit Adblock"
 msgstr "แก้ไข Adblock"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:312
+#: ../extensions/adblock/ephy-adblock-extension.c:311
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -230,41 +230,41 @@ msgid "Action for tagged bookmarks:"
 msgstr "การกระทำต่อที่คั่นหนังสือที่ถูกแท็ก:"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:2
-#: ../extensions/epilicious/epilicious.py.in:212
 msgid "Epilicious Configuration"
 msgstr "การตั้งค่า Epilicious"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:3
+msgid "_Backend:"
+msgstr "แ_ป็กเอนด์:"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:4
 msgid "_Exclude"
 msgstr "ไ_ม่รวม"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:4
+#: ../extensions/epilicious/epilicious-config.glade.h:5
 msgid "_Include"
 msgstr "_รวม"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:6
+#: ../extensions/epilicious/epilicious-config.glade.h:7
 msgid "_Password:"
 msgstr "รหัส_ผ่าน:"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:7
+#: ../extensions/epilicious/epilicious-config.glade.h:8
 msgid "_Tag:"
 msgstr "แ_ท็ก:"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:1
-msgid "<b>Synchronizing with del.icio.us</b>"
-msgstr "<b>กำลังปรับข้อมูลกับ del.icio.us</b>"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:2
 msgid "Adding new bookmarks and synching topics"
 msgstr "กำลังเพิ่มที่คั่นหน้าใหม่และปรับข้อมูลหัวข้อเรื่อง"
 
-#: ../extensions/epilicious/epilicious-progress.glade.h:3
+#: ../extensions/epilicious/epilicious-progress.glade.h:2
 msgid "Removing deleted bookmarks"
 msgstr "กำลังลบที่คั่นหน้าที่สั่งลบ"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:4
-msgid "Retrieving bookmarks from del.icio.us"
-msgstr "กำลังดึงที่คั่นหน้าจาก del.icio.us"
+#, no-c-format
+msgid "Retrieving bookmarks from %s"
+msgstr "กำลังดึงที่คั่นหน้าจาก %s"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:5
 msgid "Retrieving bookmarks from epiphany"
@@ -278,13 +278,17 @@ msgstr "กำลังดึงจุดล่าสุดที่ปรับ
 msgid "Saving new synch point"
 msgstr "กำลังบันทึกจุดปรับข้อมูลใหม่"
 
-#: ../extensions/epilicious/epilicious-progress.glade.h:8
+#: ../extensions/epilicious/epilicious-progress.glade.h:9
+#, no-c-format
+msgid "Synchronizing with %s"
+msgstr "กำลังปรับข้อมูลกับ %s"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:10
 msgid "Synchronizing..."
 msgstr "กำลังปรับข้อมูล..."
 
-#. # Epiphany integration ##
-#: ../extensions/epilicious/epilicious.py.in:207
-#: ../extensions/epilicious/epilicious.py.in:210
+#: ../extensions/epilicious/epilicious.py.in:202
+#: ../extensions/epilicious/epilicious.py.in:220
 msgid "Epilicious Synchronize"
 msgstr "การปรับข้อมูล Epilicious"
 
@@ -311,23 +315,31 @@ msgstr "หัวข้อร่วม"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:5
 msgid ""
-"The del.icio.us password that epilicious will use for synchronizing "
-"bookmarks."
-msgstr "รหัสผ่าน del.icio.us ที่ epilicious จะใช้ในการปรับข้อมูลที่คั่นหน้า"
+"The backend that epilicious will use for synchronizing bookmarks. Allowed "
+"values: 'del.icio.us', 'ma.gnolia'"
+msgstr ""
+"แบ็กเอนด์ที่ epilicious จะใช้ในการปรับข้อมูลที่คั่นหน้า ค่าที่ใช้ได้คือ 'del.icio.us', "
+"'ma.gnolia'"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
-msgid ""
-"The del.icio.us username that epilicious will use for synchronizing "
-"bookmarks."
-msgstr "ชื่อผู้ใช้ del.icio.us ที่ epilicious จะใช้ในการปรับข้อมูลที่คั่นหน้า"
+msgid "The password that epilicious will use for synchronizing bookmarks."
+msgstr "รหัสผ่านที่ epilicious จะใช้ในการปรับข้อมูลที่คั่นหน้า"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:7
-msgid "del.icio.us password"
-msgstr "รหัสผ่าน del.icio.us"
+msgid "The username that epilicious will use for synchronizing bookmarks."
+msgstr "ชื่อผู้ใช้ที่ epilicious จะใช้ในการปรับข้อมูลที่คั่นหน้า"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:8
-msgid "del.icio.us username"
-msgstr "ชื่อผู้ใช้ del.icio.us"
+msgid "epilicious backend"
+msgstr "แบ็กเอนด์ของ epilicious"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:9
+msgid "password"
+msgstr "รหัสผ่าน"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:10
+msgid "username"
+msgstr "ชื่อผู้ใช้"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
@@ -505,16 +517,16 @@ msgstr "ส่วน_ขยาย"
 msgid "Help about extensions"
 msgstr "เครื่องมือช่วยจัดการส่วนขยายต่างๆ"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:88
 msgid "Install User _Script"
 msgstr "ติดตั้ง_สคริปต์ผู้ใช้"
 
 #. shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:90
 msgid "Install Greasemonkey script"
 msgstr "ติดตั้งสคริปต์ Greasemonkey"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:354
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:315
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "ติดตั้งสคริปต์ผู้ใช้จาก “%s” เรียบร้อยแล้ว"
@@ -911,7 +923,7 @@ msgstr "_บอกรับข่าวป้อนนี้"
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "บอกรับข่าวป้อนนี้ในโปรแกรมอ่านข่าวของคุณ"
 
-#: ../extensions/rss/ephy-rss-extension.c:382
+#: ../extensions/rss/ephy-rss-extension.c:381
 msgid "Subscribe to site's news feed"
 msgstr "บอกรับข่าวป้อนของเว็บไซต์"
 
@@ -1204,6 +1216,18 @@ msgstr "บ่งชี้การเปลี่ยนแปลงเนื้
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "สถานะแท็บ"
+
+#~ msgid "<b>Synchronizing with del.icio.us</b>"
+#~ msgstr "<b>กำลังปรับข้อมูลกับ del.icio.us</b>"
+
+#~ msgid "Retrieving bookmarks from del.icio.us"
+#~ msgstr "กำลังดึงที่คั่นหน้าจาก del.icio.us"
+
+#~ msgid "del.icio.us password"
+#~ msgstr "รหัสผ่าน del.icio.us"
+
+#~ msgid "del.icio.us username"
+#~ msgstr "ชื่อผู้ใช้ del.icio.us"
 
 #~ msgid "Jaime Frutos Morales <acidborg@gmail.com>"
 #~ msgstr "Jaime Frutos Morales <acidborg@gmail.com>"
