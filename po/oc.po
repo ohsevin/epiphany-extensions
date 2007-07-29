@@ -1,0 +1,1179 @@
+# Occitan Epiphany Plugins translation.
+# Copyright (C) 2004-2007 The Free Software Foundation, Inc
+# This file is distributed under the same license as the epiphany-extensions package.
+#
+# Yannig MARCHEGAY (yannig@marchegay.org) - 2006-2007
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: epiphany-extensions\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?\n"
+"POT-Creation-Date: 2007-04-26 00:24+0200\n"
+"PO-Revision-Date: 2007-07-29 09:46+0200\n"
+"Last-Translator: Yannig MARCHEGAY <yannig@marchegay.org>\n"
+"Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);"
+
+#: ../extensions/actions/action-properties.glade.h:1
+msgid "<span weight=\"bold\">Applies to</span>"
+msgstr ""
+
+#: ../extensions/actions/action-properties.glade.h:2
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">General</span>"
+
+#: ../extensions/actions/action-properties.glade.h:3
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"images."
+msgstr ""
+
+#: ../extensions/actions/action-properties.glade.h:4
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"links and pages."
+msgstr ""
+
+#: ../extensions/actions/action-properties.glade.h:5
+msgid "The action description."
+msgstr ""
+
+#: ../extensions/actions/action-properties.glade.h:6
+msgid ""
+"The action name. If a character is preceded by an underscore, that character "
+"will be used as the access key for the menu item."
+msgstr ""
+
+#: ../extensions/actions/action-properties.glade.h:7
+msgid ""
+"The command to execute when the action is activated. The URL of the link, "
+"image or page will be appended to the command."
+msgstr ""
+
+#: ../extensions/actions/action-properties.glade.h:8
+msgid "_Command:"
+msgstr "_Comanda :"
+
+#: ../extensions/actions/action-properties.glade.h:9
+msgid "_Description:"
+msgstr "_Descripcion :"
+
+#: ../extensions/actions/action-properties.glade.h:10
+msgid "_Images"
+msgstr "_Imatges"
+
+#: ../extensions/actions/action-properties.glade.h:11
+#: ../extensions/epilicious/epilicious-config.glade.h:5
+msgid "_Name:"
+msgstr "_Nom :"
+
+#: ../extensions/actions/action-properties.glade.h:12
+msgid "_Pages"
+msgstr "_Paginas"
+
+#: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions.ephy-extension.in.in.h:1
+msgid "Actions"
+msgstr "Accions"
+
+#: ../extensions/actions/ephy-actions-extension.c:112
+msgid "Actio_ns"
+msgstr ""
+
+#: ../extensions/actions/ephy-actions-extension.c:113
+msgid "Customize actions"
+msgstr ""
+
+#: ../extensions/actions/ephy-actions-extension.c:436
+msgid "Could not run command"
+msgstr ""
+
+#: ../extensions/actions/ephy-actions-extension.c:439
+msgid "Could not Run Command"
+msgstr ""
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
+msgid "No action selected."
+msgstr ""
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
+#, c-format
+msgid "%i action selected."
+msgstr ""
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
+msgid "Add Action"
+msgstr ""
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
+#, c-format
+msgid "“%s” Properties"
+msgstr ""
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
+msgid "Action Properties"
+msgstr ""
+
+#: ../extensions/adblock/adblock-ui.c:279
+msgid ""
+"This list is Copyright © its original author(G). It is relicensed under the "
+"GPL with permission.\n"
+"The original list, Filterset.G, can be found at http://www.pierceive.com/"
+"filtersetg/.\n"
+"This version has been modified from its original. The changes have not been "
+"approved by the original author;\n"
+"direct any problems to Bugzilla and not to the original author (G).\n"
+msgstr ""
+
+#: ../extensions/adblock/adblock-ui.c:496
+msgid "Pattern"
+msgstr "Motiu"
+
+#: ../extensions/adblock/adblock.glade.h:1
+msgid "<b>Courtesy of Graham Pierce</b>"
+msgstr ""
+
+#: ../extensions/adblock/adblock.glade.h:2
+msgid "<b>New rule</b>"
+msgstr ""
+
+#: ../extensions/adblock/adblock.glade.h:3
+msgid "<b>Update rules from original site</b>"
+msgstr ""
+
+#: ../extensions/adblock/adblock.glade.h:4
+#: ../extensions/adblock/ephy-adblock-extension.c:244
+msgid "Adblock editor"
+msgstr ""
+
+#: ../extensions/adblock/adblock.glade.h:5
+msgid "Add a new rule"
+msgstr ""
+
+#: ../extensions/adblock/adblock.glade.h:6
+msgid "Blacklist"
+msgstr ""
+
+#: ../extensions/adblock/adblock.glade.h:7
+msgid "Filterset.G"
+msgstr ""
+
+#: ../extensions/adblock/adblock.glade.h:8
+msgid "Whitelist"
+msgstr ""
+
+#: ../extensions/adblock/ephy-adblock-extension.c:245
+msgid "Edit Adblock"
+msgstr ""
+
+#: ../extensions/adblock/ephy-adblock-extension.c:312
+#, c-format
+msgid "%d hidden advertisement"
+msgstr ""
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+msgid "_Auto Reload"
+msgstr ""
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
+msgid "Reload the page periodically"
+msgstr ""
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.py:371
+msgid "View Creative Commons license"
+msgstr ""
+
+#: ../extensions/certificates/ephy-certificates-extension.c:177
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
+msgid "Certificates"
+msgstr ""
+
+#: ../extensions/certificates/ephy-certificates-extension.c:208
+msgid "Security Devices"
+msgstr ""
+
+#. stock icon
+#: ../extensions/certificates/ephy-certificates-extension.c:220
+msgid "Manage _Certificates"
+msgstr ""
+
+#. shortcut key
+#: ../extensions/certificates/ephy-certificates-extension.c:222
+msgid "Manage your certificates"
+msgstr ""
+
+#. stock icon
+#: ../extensions/certificates/ephy-certificates-extension.c:226
+msgid "Manage Security _Devices"
+msgstr ""
+
+#. shortcut key
+#: ../extensions/certificates/ephy-certificates-extension.c:228
+msgid "Manage your security devices"
+msgstr ""
+
+#: ../extensions/epilicious/epilicious-config.glade.h:1
+msgid "Action for tagged bookmarks:"
+msgstr ""
+
+#: ../extensions/epilicious/epilicious-config.glade.h:2
+#: ../extensions/epilicious/epilicious.py.in:212
+msgid "Epilicious Configuration"
+msgstr ""
+
+#: ../extensions/epilicious/epilicious-config.glade.h:3
+msgid "_Exclude"
+msgstr ""
+
+#: ../extensions/epilicious/epilicious-config.glade.h:4
+msgid "_Include"
+msgstr ""
+
+#: ../extensions/epilicious/epilicious-config.glade.h:6
+msgid "_Password:"
+msgstr "Mot de _pas :"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:7
+msgid "_Tag:"
+msgstr ""
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:1
+msgid "<b>Synchronizing with del.icio.us</b>"
+msgstr ""
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:2
+msgid "Adding new bookmarks and synching topics"
+msgstr ""
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:3
+msgid "Removing deleted bookmarks"
+msgstr ""
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:4
+msgid "Retrieving bookmarks from del.icio.us"
+msgstr ""
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:5
+msgid "Retrieving bookmarks from epiphany"
+msgstr ""
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:6
+msgid "Retrieving previous synch point"
+msgstr ""
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:7
+msgid "Saving new synch point"
+msgstr ""
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:8
+msgid "Synchronizing..."
+msgstr ""
+
+#. # Epiphany integration ##
+#: ../extensions/epilicious/epilicious.py.in:207
+#: ../extensions/epilicious/epilicious.py.in:210
+msgid "Epilicious Synchronize"
+msgstr ""
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:1
+msgid "Bookmarks with this topic will be synchronized to del.icio.us."
+msgstr ""
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:2
+msgid ""
+"Controls the function of the topic. If this is unset then all bookmarks with "
+"the topic will be synched with del.icio.us. If this is set then all "
+"bookmarks without the topic will be synched with del.icio.us."
+msgstr ""
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:3
+msgid "Exclude topic"
+msgstr ""
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:4
+msgid "Shared topic"
+msgstr ""
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:5
+msgid ""
+"The del.icio.us password that epilicious will use for synchronizing "
+"bookmarks."
+msgstr ""
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:6
+msgid ""
+"The del.icio.us username that epilicious will use for synchronizing "
+"bookmarks."
+msgstr ""
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:7
+msgid "del.icio.us password"
+msgstr ""
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:8
+msgid "del.icio.us username"
+msgstr ""
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
+msgid "Check _HTML"
+msgstr ""
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
+msgid "Display HTML errors in the Error Viewer dialog"
+msgstr ""
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:104
+msgid "Check _Links"
+msgstr ""
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:106
+msgid "Display invalid hyperlinks in the Error Viewer dialog"
+msgstr ""
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:110
+msgid "_Error Viewer"
+msgstr ""
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:112
+msgid "Display web page errors"
+msgstr ""
+
+#: ../extensions/error-viewer/error-viewer.glade.h:1
+msgid "Cl_ear"
+msgstr "_Netejar"
+
+#: ../extensions/error-viewer/error-viewer.glade.h:2
+msgid "Error Viewer"
+msgstr ""
+
+#. Don't bother looking for source lines -- they're not there
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:96
+#, c-format
+msgid ""
+"Error:\n"
+"%s"
+msgstr ""
+"Error :\n"
+"%s"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:126
+#, c-format
+msgid ""
+"Javascript error in %s on line %d:\n"
+"%s"
+msgstr ""
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
+#, c-format
+msgid "Found %d invalid link"
+msgstr ""
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
+#, c-format
+msgid ""
+"Link error in %s:\n"
+"%s is unavailable."
+msgstr ""
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
+#, c-format
+msgid "Checking %d Link on “%s”"
+msgstr ""
+
+#: ../extensions/error-viewer/opensp/validate.cpp:167
+#, c-format
+msgid ""
+"HTML error in “%s” on line %s:\n"
+"%s"
+msgstr ""
+
+#: ../extensions/error-viewer/sgml-validator.c:165
+#, c-format
+msgid "Found %d error"
+msgstr ""
+
+#: ../extensions/error-viewer/sgml-validator.c:169
+#, c-format
+msgid "HTML Validation of “%s” complete"
+msgstr ""
+
+#: ../extensions/error-viewer/sgml-validator.c:227
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"%s"
+msgstr ""
+
+#: ../extensions/error-viewer/sgml-validator.c:229
+#: ../extensions/error-viewer/sgml-validator.c:245
+msgid ""
+"Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
+"+xml” instead."
+msgstr ""
+
+#: ../extensions/error-viewer/sgml-validator.c:243
+#, c-format
+msgid ""
+"HTML warning in %s:\n"
+"%s"
+msgstr ""
+
+#: ../extensions/error-viewer/sgml-validator.c:360
+#, c-format
+msgid "HTML error in %s:"
+msgstr ""
+
+#: ../extensions/error-viewer/sgml-validator.c:368
+msgid "Invalid character encoding"
+msgstr ""
+
+#: ../extensions/error-viewer/sgml-validator.c:373
+msgid "Unknown error while converting to UTF-8"
+msgstr ""
+
+#: ../extensions/error-viewer/sgml-validator.c:435
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"No valid doctype specified."
+msgstr ""
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:356
+msgid "Enabled"
+msgstr "Activat"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: ../extensions/rss/rss-ui.c:599
+msgid "Description"
+msgstr "Descripcion"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+msgid "<b>Loaded Extensions</b>"
+msgstr ""
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+msgid "Extensions"
+msgstr ""
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
+msgid "_Extensions..."
+msgstr ""
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
+msgid "Load and unload extensions"
+msgstr ""
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "_Extensions"
+msgstr ""
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
+msgid "Help about extensions"
+msgstr ""
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+msgid "Install User _Script"
+msgstr ""
+
+#. shortcut key
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
+msgid "Install Greasemonkey script"
+msgstr ""
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:354
+#, c-format
+msgid "The user script at “%s” has been installed"
+msgstr ""
+
+#: ../extensions/java-console/ephy-java-console-extension.c:48
+msgid "_Java Console"
+msgstr ""
+
+#. shortcut key
+#: ../extensions/java-console/ephy-java-console-extension.c:50
+msgid "Show Java Console"
+msgstr ""
+
+#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:102
+msgid "_HTTP Headers"
+msgstr ""
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:1
+msgid "<b>Request</b>"
+msgstr ""
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:2
+msgid "<b>Response</b>"
+msgstr ""
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:3
+msgid "<b>URLs</b>"
+msgstr ""
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
+msgid "Clear cache"
+msgstr ""
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
+msgid "Live Headers"
+msgstr ""
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
+msgid "Remove headers"
+msgstr ""
+
+#: ../extensions/page-info/ephy-page-info-extension.c:67
+msgid "Pa_ge Information"
+msgstr ""
+
+#: ../extensions/page-info/ephy-page-info-extension.c:69
+msgid "Display page information in a dialog"
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:730
+msgid "Save As..."
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:747
+msgid "Select a directory"
+msgstr "Seleccionatz un repertòri"
+
+#: ../extensions/page-info/page-info-dialog.c:796
+msgid "Unknown type"
+msgstr "Tipe desconegut"
+
+#: ../extensions/page-info/page-info-dialog.c:801
+msgid "Full standards compliance"
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:804
+msgid "Almost standards compliance"
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:807
+msgid "Compatibility"
+msgstr "Compatibilitat"
+
+#: ../extensions/page-info/page-info-dialog.c:811
+msgid "Undetermined"
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:820
+msgid "Not cached"
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:823
+msgid "Disk cache"
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:826
+msgid "Memory cache"
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:829
+msgid "Unknown cache"
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:845
+#: ../extensions/page-info/page-info-dialog.c:961
+msgid "Unknown"
+msgstr "Desconegut"
+
+#: ../extensions/page-info/page-info-dialog.c:850
+msgid "No referrer"
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:864
+#: ../extensions/page-info/page-info-dialog.c:880
+msgid "Not specified"
+msgstr "Non especificat"
+
+#: ../extensions/page-info/page-info-dialog.c:943
+msgid "Image"
+msgstr "Imatge"
+
+#: ../extensions/page-info/page-info-dialog.c:946
+msgid "Background image"
+msgstr "Imatge de fons"
+
+#: ../extensions/page-info/page-info-dialog.c:949
+msgid "Embed"
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:952
+msgid "Object"
+msgstr "Objècte"
+
+#: ../extensions/page-info/page-info-dialog.c:955
+msgid "Applet"
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:958
+msgid "Icon"
+msgstr "Icòna"
+
+#: ../extensions/page-info/page-info-dialog.c:1130
+msgid "_Open"
+msgstr "_Dubrir"
+
+#: ../extensions/page-info/page-info-dialog.c:1136
+#: ../extensions/page-info/page-info-dialog.c:1581
+msgid "_Copy Link Address"
+msgstr "_Copiar l'adreça del ligam"
+
+#: ../extensions/page-info/page-info-dialog.c:1142
+msgid "_Use as Background"
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:1148
+#: ../extensions/page-info/page-info-dialog.c:1587
+msgid "_Save As..."
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:1380
+#: ../extensions/page-info/page-info-dialog.c:1701
+msgid "Blocked"
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:1396
+#: ../extensions/page-info/page-info-dialog.c:1717
+msgid "URL"
+msgstr "URL"
+
+#: ../extensions/page-info/page-info-dialog.c:1409
+msgid "Type"
+msgstr "Tipe"
+
+#: ../extensions/page-info/page-info-dialog.c:1421
+msgid "Alt Text"
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:1433
+#: ../extensions/page-info/page-info-dialog.c:1730
+msgid "Title"
+msgstr "Titol"
+
+#: ../extensions/page-info/page-info-dialog.c:1445
+msgid "Width"
+msgstr "Largor"
+
+#: ../extensions/page-info/page-info-dialog.c:1457
+msgid "Height"
+msgstr "Nautor"
+
+#: ../extensions/page-info/page-info-dialog.c:1742
+msgid "Relation"
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:1891
+#: ../extensions/page-info/page-info-dialog.c:2032
+msgid "Name"
+msgstr "Nom"
+
+#: ../extensions/page-info/page-info-dialog.c:1903
+msgid "Method"
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:1917
+msgid "Action"
+msgstr "Accion"
+
+#: ../extensions/page-info/page-info-dialog.c:1998
+msgid "_Copy"
+msgstr "_Copiar"
+
+#: ../extensions/page-info/page-info-dialog.c:2044
+msgid "Content"
+msgstr "Contengut"
+
+#: ../extensions/page-info/page-info-dialog.c:2145
+msgid "Page Metadata"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:1
+msgid "<b>Dublin Core Metadata</b>"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:2
+msgid "<b>Forms In Page</b>"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:3
+msgid "<b>Links In Page</b>"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:4
+msgid "<b>Media In Page</b>"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:5
+msgid "<b>Medium View</b>"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:6
+msgid "<b>Other Metadata</b>"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:7
+msgid "<b>Rendering</b>"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:8
+msgid "<b>Source File</b>"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:9
+msgid "<b>Web Page</b>"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:10
+msgid "DYNAMIC"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:11
+msgid "Date:"
+msgstr "Data :"
+
+#: ../extensions/page-info/page-info.glade.h:12
+msgid "Description:"
+msgstr "Descripcion :"
+
+#: ../extensions/page-info/page-info.glade.h:13
+msgid "Encoding:"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:14
+msgid "Expires:"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:15
+msgid "Format:"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:16
+msgid "Forms"
+msgstr "Formularis"
+
+#: ../extensions/page-info/page-info.glade.h:17
+msgid "General"
+msgstr "General"
+
+#: ../extensions/page-info/page-info.glade.h:18
+msgid "Links"
+msgstr "Ligams"
+
+#: ../extensions/page-info/page-info.glade.h:19
+msgid "Location:"
+msgstr "Emplaçament :"
+
+#: ../extensions/page-info/page-info.glade.h:20
+msgid "MIME type:"
+msgstr "Tipe MIME :"
+
+#: ../extensions/page-info/page-info.glade.h:21
+msgid "Media"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:22
+msgid "Metadata"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:23
+msgid "Mode:"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:24
+msgid "Modified:"
+msgstr "Modificat :"
+
+#: ../extensions/page-info/page-info.glade.h:25
+msgid "Page Properties"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:26
+msgid "Referrer:"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:27
+msgid "Size:"
+msgstr "Talha :"
+
+#: ../extensions/page-info/page-info.glade.h:28
+msgid "Source:"
+msgstr "Sorga :"
+
+#: ../extensions/page-info/page-info.glade.h:29
+msgid "Title:"
+msgstr "Titol:"
+
+#: ../extensions/page-info/page-info.glade.h:30
+msgid "Type:"
+msgstr "Tipe :"
+
+#: ../extensions/page-info/page-info.glade.h:31
+msgid "_Save Media As..."
+msgstr ""
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:180
+msgid "allowed"
+msgstr ""
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:184
+msgid "denied"
+msgstr ""
+
+#. Sometimes we get this... how did this get in the list!?
+#: ../extensions/permissions/ephy-permissions-dialog.c:189
+msgid "default"
+msgstr "defaut"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:515
+msgid "Domain"
+msgstr "Domeni"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:527
+msgid "State"
+msgstr "Estat"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:620
+msgid "Site Permissions"
+msgstr ""
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:647
+msgid "Cookies"
+msgstr ""
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:648
+msgid "Images"
+msgstr "Imatges"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:649
+msgid "Popup Windows"
+msgstr ""
+
+#. stock icon
+#: ../extensions/permissions/ephy-permissions-extension.c:156
+msgid "Site _Permissions"
+msgstr ""
+
+#. shortcut key
+#: ../extensions/permissions/ephy-permissions-extension.c:158
+msgid "Manage web site permissions"
+msgstr ""
+
+#: ../extensions/rss/ephy-rss-extension.c:90
+msgid "News Feeds Subscription"
+msgstr ""
+
+#: ../extensions/rss/ephy-rss-extension.c:92
+msgid "Subscribe to this website's news feeds in your favorite news reader"
+msgstr ""
+
+#: ../extensions/rss/ephy-rss-extension.c:97
+msgid "_Subscribe to this feed"
+msgstr ""
+
+#: ../extensions/rss/ephy-rss-extension.c:99
+msgid "Subscribe to this feed in your favorite news reader"
+msgstr ""
+
+#: ../extensions/rss/ephy-rss-extension.c:382
+msgid "Subscribe to site's news feed"
+msgstr ""
+
+#: ../extensions/rss/rss-ui.c:167
+msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
+msgstr ""
+
+#: ../extensions/rss/rss-ui.c:169
+msgid "Retry"
+msgstr "Tornar ensajar"
+
+#: ../extensions/rss/rss-ui.c:297
+msgid "_Copy Feed Address"
+msgstr ""
+
+#: ../extensions/rss/rss-ui.c:591
+msgid "Subscribe"
+msgstr ""
+
+#: ../extensions/rss/rss-ui.glade.h:1
+msgid "<b>Select Interesting Feeds</b>"
+msgstr ""
+
+#: ../extensions/rss/rss-ui.glade.h:2
+#: ../extensions/rss/rss.ephy-extension.in.in.h:1
+msgid "News Feed Subscription"
+msgstr ""
+
+#: ../extensions/rss/rss-ui.glade.h:3
+msgid "_Subscribe"
+msgstr "_S'inscriure"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:145
+msgid "Render the page without using a style"
+msgstr ""
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:148
+msgid "Render the page using the default style"
+msgstr ""
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:151
+#, c-format
+msgid "Render the page using the “%s” style"
+msgstr ""
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:309
+msgid "St_yle"
+msgstr ""
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:310
+msgid "Select a different style for this page"
+msgstr ""
+
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:224
+msgid "Default"
+msgstr "Defaut"
+
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:235
+msgid "None"
+msgstr "Pas cap"
+
+#: ../extensions/sidebar/ephy-sidebar.c:176
+msgid "No Sidebars installed"
+msgstr ""
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:105
+msgid "_Sidebar"
+msgstr ""
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:106
+msgid "Show or hide the sidebar"
+msgstr ""
+
+#. Translators: %s is the sidebar title
+#: ../extensions/sidebar/ephy-sidebar-extension.c:408
+#, c-format
+msgid "The sidebar already contains “%s”"
+msgstr ""
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:412
+msgid ""
+"To use this sidebar, select it from the list of available sidebar pages."
+msgstr ""
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:415
+#: ../extensions/sidebar/ephy-sidebar-extension.c:441
+msgid "Add Sidebar"
+msgstr ""
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:435
+#, c-format
+msgid "Add “%s” to the Sidebar?"
+msgstr ""
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:439
+#, c-format
+msgid "The source to the new sidebar page is “%s”."
+msgstr ""
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:445
+msgid "_Add Sidebar"
+msgstr ""
+
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:551
+msgid "_Look Up"
+msgstr ""
+
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:558
+msgid "_GNOME Dictionary"
+msgstr "Diccionari _GNOME"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
+msgid "Open search result in new tab"
+msgstr ""
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
+msgid "Open search result in new tab if true, in new window if false"
+msgstr ""
+
+#: ../extensions/actions/actions.ephy-extension.in.in.h:2
+msgid "Execute arbitrary commands from the context menu"
+msgstr ""
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
+msgid "Auto Scroll"
+msgstr ""
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
+msgid "Scroll on middle mouse click"
+msgstr ""
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
+msgid "Auto Reload Tab"
+msgstr ""
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
+msgid "Reload a tab periodically"
+msgstr ""
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
+msgid "Creative Commons license viewer"
+msgstr ""
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
+msgid "Shows the Creative Commons license of the current website if available"
+msgstr ""
+
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
+msgid "View the page certificate and manage the certificates"
+msgstr ""
+
+#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
+msgid "Synchronize bookmarks with del.icio.us"
+msgstr ""
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
+msgid "Error viewer"
+msgstr ""
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
+msgid "Validate web pages and check links"
+msgstr ""
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
+msgid "Activate and deactivate extensions"
+msgstr ""
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
+msgid "Extensions Manager"
+msgstr ""
+
+#: ../extensions/favicon/favicon.ephy-extension.in.h:1
+msgid "Favicon fallback"
+msgstr ""
+
+#: ../extensions/favicon/favicon.ephy-extension.in.h:2
+msgid ""
+"Loads /favicon.ico as favicon if the site doesn't use the standard method"
+msgstr ""
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
+msgid "Gestures"
+msgstr ""
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:2
+msgid "Perform actions with mouse gestures"
+msgstr ""
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
+msgid "Greasemonkey"
+msgstr ""
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
+msgid "Run user scripts to modify web pages' behavior"
+msgstr ""
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
+msgid "Java Console"
+msgstr ""
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
+msgid "Provide access to the Java-Plugin Console"
+msgstr ""
+
+#: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
+msgid "Live HTTP headers"
+msgstr ""
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
+msgid "Display information about and links and media from the current page"
+msgstr ""
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
+msgid "Page Info"
+msgstr ""
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
+msgid "Edit site permissions"
+msgstr ""
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
+msgid "Permissions"
+msgstr "Permissions"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
+msgid "Drag the page on middle mouse click"
+msgstr ""
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+msgid "Push Scroll"
+msgstr ""
+
+#: ../extensions/rss/rss.ephy-extension.in.in.h:2
+msgid ""
+"Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr ""
+
+#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
+msgid "A sample extension with mozilla backend"
+msgstr ""
+
+#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:2
+msgid "Sample (Mozilla)"
+msgstr ""
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:1
+msgid "A sample extension"
+msgstr ""
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:2
+msgid "Sample"
+msgstr ""
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
+msgid "Select Stylesheet"
+msgstr ""
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
+msgid "Select between different stylesheets offered by the web page"
+msgstr ""
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
+msgid "Adds a sidebar to windows"
+msgstr ""
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
+msgid "Sidebar"
+msgstr ""
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
+msgid "Look up the selected text with a smart bookmark"
+msgstr ""
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
+msgid "Smart Bookmarks"
+msgstr ""
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
+msgid "Groups newly opened tabs"
+msgstr ""
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
+msgid "Tab Groups"
+msgstr ""
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
+msgid "Indicates new content in background tabs"
+msgstr ""
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
+msgid "Tab States"
+msgstr ""
+
