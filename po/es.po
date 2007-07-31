@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions.HEAD.es\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-06-08 03:16+0100\n"
-"PO-Revision-Date: 2007-06-15 16:16+0200\n"
+"POT-Creation-Date: 2007-07-22 03:22+0100\n"
+"PO-Revision-Date: 2007-08-01 00:37+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -163,7 +163,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>Actualizar reglas desde el sitio original</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:244
+#: ../extensions/adblock/ephy-adblock-extension.c:243
 msgid "Adblock editor"
 msgstr "Editor de Adblock"
 
@@ -183,11 +183,11 @@ msgstr "Filterset.G"
 msgid "Whitelist"
 msgstr "Lista blanca"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:245
+#: ../extensions/adblock/ephy-adblock-extension.c:244
 msgid "Edit Adblock"
 msgstr "Editar Adblock"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:312
+#: ../extensions/adblock/ephy-adblock-extension.c:311
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -329,7 +329,9 @@ msgstr "Tema compartido"
 msgid ""
 "The backend that epilicious will use for synchronizing bookmarks. Allowed "
 "values: 'del.icio.us', 'ma.gnolia'"
-msgstr "El backend que epilicious usará para sincronizar los marcadores. Valores permitidos: «del.icio.us», «ma.gnolia»"
+msgstr ""
+"El backend que epilicious usará para sincronizar los marcadores. Valores "
+"permitidos: «del.icio.us», «ma.gnolia»"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
 msgid "The password that epilicious will use for synchronizing bookmarks."
@@ -531,16 +533,16 @@ msgstr "_Extensiones"
 msgid "Help about extensions"
 msgstr "Ayuda acerca de las extensiones"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:88
 msgid "Install User _Script"
 msgstr "Instalar _script de usuario"
 
 #. shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:90
 msgid "Install Greasemonkey script"
 msgstr "Instalar script Greasemonkey"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:354
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:315
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "Se ha instalado el script de usuario en «%s»"
@@ -939,7 +941,7 @@ msgstr "_Suscribirse a este proveedor"
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Suscribirse a este proveedor de noticias en su lector de noticias favorito"
 
-#: ../extensions/rss/ephy-rss-extension.c:382
+#: ../extensions/rss/ephy-rss-extension.c:381
 msgid "Subscribe to site's news feed"
 msgstr "Suscribirse al proveedor de noticias del sitio"
 
@@ -1015,34 +1017,46 @@ msgstr "Barra _lateral"
 msgid "Show or hide the sidebar"
 msgstr "Mostrar u ocultar la barra lateral"
 
+#: ../extensions/sidebar/ephy-sidebar-extension.c:323
+msgid "Do you really want to remove this sidebar?"
+msgstr "¿Realmente quiere quitar esta barra lateral?"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:327
+msgid "There is no way to recover this sidebar after removal."
+msgstr "No hay forma de recuperar esta barra lateral una vez eliminada."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:329
+msgid "Remove Sidebar"
+msgstr "Eliminar barra lateral"
+
 #. Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:408
+#: ../extensions/sidebar/ephy-sidebar-extension.c:476
 #, c-format
 msgid "The sidebar already contains “%s”"
 msgstr "La barra lateral ya contiene  «%s»"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:412
+#: ../extensions/sidebar/ephy-sidebar-extension.c:480
 msgid "To use this sidebar, select it from the list of available sidebar pages."
 msgstr ""
 "Para usar esta barra lateral, seleccionela desde la lista de páginas "
 "disponibles."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:415
-#: ../extensions/sidebar/ephy-sidebar-extension.c:441
+#: ../extensions/sidebar/ephy-sidebar-extension.c:483
+#: ../extensions/sidebar/ephy-sidebar-extension.c:509
 msgid "Add Sidebar"
 msgstr "Añadir barra lateral"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:435
+#: ../extensions/sidebar/ephy-sidebar-extension.c:503
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr "¿Desea añadir «%s» a la barra lateral?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:439
+#: ../extensions/sidebar/ephy-sidebar-extension.c:507
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr "El fuente de la página nueva de la barra lateral es «%s»."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:445
+#: ../extensions/sidebar/ephy-sidebar-extension.c:513
 msgid "_Add Sidebar"
 msgstr "_Añadir barra lateral"
 
