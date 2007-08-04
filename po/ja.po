@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions trunk\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-07-02 00:15+0900\n"
-"PO-Revision-Date: 2007-07-02 00:14+0900\n"
+"POT-Creation-Date: 2007-08-05 01:47+0900\n"
+"PO-Revision-Date: 2007-08-05 01:43+0900\n"
 "Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -165,7 +165,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>ルールの更新</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:244
+#: ../extensions/adblock/ephy-adblock-extension.c:243
 msgid "Adblock editor"
 msgstr "Adblock エディタ"
 
@@ -185,11 +185,11 @@ msgstr "Filterset.G"
 msgid "Whitelist"
 msgstr "ホワイトリスト"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:245
+#: ../extensions/adblock/ephy-adblock-extension.c:244
 msgid "Edit Adblock"
 msgstr "Adblock の編集"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:312
+#: ../extensions/adblock/ephy-adblock-extension.c:311
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -534,16 +534,16 @@ msgstr "拡張機能(_E)"
 msgid "Help about extensions"
 msgstr "拡張機能のヘルプです"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:88
 msgid "Install User _Script"
 msgstr "ユーザ・スクリプトのインストール(_S)"
 
 #. shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:90
 msgid "Install Greasemonkey script"
 msgstr "Greasemonkey スクリプトのインストール"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:354
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:315
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "ユーザ・スクリプトが \"%s\" にインストールされています"
@@ -941,7 +941,7 @@ msgstr "この配信元を購読する(_S)"
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "この配信元をお気に入りのニュース・リーダで購読します"
 
-#: ../extensions/rss/ephy-rss-extension.c:382
+#: ../extensions/rss/ephy-rss-extension.c:381
 msgid "Subscribe to site's news feed"
 msgstr "このサイトのニュース配信元を購読します"
 
@@ -1015,35 +1015,47 @@ msgstr "サイドバー(_S)"
 msgid "Show or hide the sidebar"
 msgstr "サイドバーの表示/非表示を切り替えます"
 
+#: ../extensions/sidebar/ephy-sidebar-extension.c:323
+msgid "Do you really want to remove this sidebar?"
+msgstr "本当にこのサイドバーを削除してもよろしいですか？"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:327
+msgid "There is no way to recover this sidebar after removal."
+msgstr "削除したらサイドバーを元に戻す方法はありません。"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:329
+msgid "Remove Sidebar"
+msgstr "サイドバーの削除"
+
 #. Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:408
+#: ../extensions/sidebar/ephy-sidebar-extension.c:476
 #, c-format
 msgid "The sidebar already contains “%s”"
 msgstr "サイドバーには既に \"%s\" が含まれています"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:412
+#: ../extensions/sidebar/ephy-sidebar-extension.c:480
 msgid ""
 "To use this sidebar, select it from the list of available sidebar pages."
 msgstr ""
 "このサイドバーを利用するには、利用可能なサイドバー・ペインの一覧から選択して"
 "下さい。"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:415
-#: ../extensions/sidebar/ephy-sidebar-extension.c:441
+#: ../extensions/sidebar/ephy-sidebar-extension.c:483
+#: ../extensions/sidebar/ephy-sidebar-extension.c:509
 msgid "Add Sidebar"
 msgstr "サイドバーを追加します"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:435
+#: ../extensions/sidebar/ephy-sidebar-extension.c:503
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr "\"%s\" をサイドバーへ追加しますか？"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:439
+#: ../extensions/sidebar/ephy-sidebar-extension.c:507
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr "新しいサイドバー・ページのソースは \"%s\" です"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:445
+#: ../extensions/sidebar/ephy-sidebar-extension.c:513
 msgid "_Add Sidebar"
 msgstr "サイドバーの追加(_A)"
 
