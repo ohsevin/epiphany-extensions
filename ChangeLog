@@ -1,3 +1,9 @@
+2007-08-07  Sebastien Bacher  <seb128@ubuntu.com>
+
+	* extensions/greasemonkey/ephy-greasemonkey-extension.c:
+	(load_scripts): don't break when the directory is not created
+	(Closes: #437648)
+
 2007-07-30  Christian Persch  <chpe@gnome.org>
 
 	==== Release 2.19.6 ===

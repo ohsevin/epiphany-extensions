@@ -125,7 +125,7 @@ load_scripts (const char *path)
 		d = opendir (dirs[dir]);
 		if (d == NULL)
 		{
-			return scripts;
+			continue;
 		}
 		
 		while ((e = readdir (d)) != NULL)
