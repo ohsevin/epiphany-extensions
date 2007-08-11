@@ -1,4 +1,4 @@
-# Traducció d'epiphany-extensions per Softcatalà
+# Traducció de l'epiphany-extensions per Softcatalà
 # Copyright © 2004, 2006 Free Software Foundation
 # This file is distributed under the same license as epiphany-extensions.
 # Xavier Conde Rueda <xaviconde@eresmas.com>, 2004.
@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-03-19 08:34+0100\n"
-"PO-Revision-Date: 2007-03-19 08:43+0100\n"
+"POT-Creation-Date: 2007-08-11 18:28+0200\n"
+"PO-Revision-Date: 2007-07-31 21:08+0200\n"
 "Last-Translator: David Planella Molas <david.planella@gmail.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "MIME-Version: 1.0\n"
@@ -78,7 +78,7 @@ msgid "_Images"
 msgstr "_Imatges"
 
 #: ../extensions/actions/action-properties.glade.h:11
-#: ../extensions/epilicious/epilicious-config.glade.h:5
+#: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Name:"
 msgstr "_Nom:"
 
@@ -167,7 +167,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>Actualitza les regles des del lloc web original</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:244
+#: ../extensions/adblock/ephy-adblock-extension.c:243
 msgid "Adblock editor"
 msgstr "Editor del blocador de publicitat"
 
@@ -187,11 +187,11 @@ msgstr "Filtres del Filterset.G"
 msgid "Whitelist"
 msgstr "Llista blanca"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:245
+#: ../extensions/adblock/ephy-adblock-extension.c:244
 msgid "Edit Adblock"
 msgstr "Edita el blocador de publicitat"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:312
+#: ../extensions/adblock/ephy-adblock-extension.c:311
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -248,36 +248,37 @@ msgid "Epilicious Configuration"
 msgstr "Configuració de l'Epilicious"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:3
+msgid "_Backend:"
+msgstr "_Rerefons:"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:4
 msgid "_Exclude"
 msgstr "_Exclou"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:4
+#: ../extensions/epilicious/epilicious-config.glade.h:5
 msgid "_Include"
 msgstr "_Inclou"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:6
+#: ../extensions/epilicious/epilicious-config.glade.h:7
 msgid "_Password:"
 msgstr "_Contrasenya:"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:7
+#: ../extensions/epilicious/epilicious-config.glade.h:8
 msgid "_Tag:"
 msgstr "Et_iqueta:"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:1
-msgid "<b>Synchronizing with del.icio.us</b>"
-msgstr "<b>Sincronització amb el del.icio.us</b>"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:2
 msgid "Adding new bookmarks and synching topics"
 msgstr "Addició de les adreces d'interès noves i sincronització dels temes"
 
-#: ../extensions/epilicious/epilicious-progress.glade.h:3
+#: ../extensions/epilicious/epilicious-progress.glade.h:2
 msgid "Removing deleted bookmarks"
 msgstr "Eliminació de les adreces d'interès suprimides"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:4
-msgid "Retrieving bookmarks from del.icio.us"
-msgstr "Recuperació de les adreces d'interès del del.icio.us"
+#, no-c-format
+msgid "Retrieving bookmarks from %s"
+msgstr "S'estan recuperant les adreces d'interès de %s"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:5
 msgid "Retrieving bookmarks from epiphany"
@@ -291,13 +292,17 @@ msgstr "Recuperació del punt de sincronització anterior"
 msgid "Saving new synch point"
 msgstr "Desat del punt de sincronització nou"
 
-#: ../extensions/epilicious/epilicious-progress.glade.h:8
+#: ../extensions/epilicious/epilicious-progress.glade.h:9
+#, no-c-format
+msgid "Synchronizing with %s"
+msgstr "S'està sincronitzant amb %s"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:10
 msgid "Synchronizing..."
 msgstr "S'està sincronitzant..."
 
-#. # Epiphany integration ##
-#: ../extensions/epilicious/epilicious.py.in:201
-#: ../extensions/epilicious/epilicious.py.in:204
+#: ../extensions/epilicious/epilicious.py.in:202
+#: ../extensions/epilicious/epilicious.py.in:220
 msgid "Epilicious Synchronize"
 msgstr "Sincronitza amb l'Epilicious"
 
@@ -327,27 +332,35 @@ msgstr "Tema compartit"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:5
 msgid ""
-"The del.icio.us password that epilicious will use for synchronizing "
-"bookmarks."
+"The backend that epilicious will use for synchronizing bookmarks. Allowed "
+"values: 'del.icio.us', 'ma.gnolia'"
 msgstr ""
-"La contrasenya del del.icio.us que s'utilitzarà per a sincronitzar les "
-"adreces d'interès."
+"El rerefons que l'Epilicious utilitzarà per a sincronitzar les adreces "
+"d'interès. Es permeten els següents valors: «del.icio.us», «ma.gnolia»"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
-msgid ""
-"The del.icio.us username that epilicious will use for synchronizing "
-"bookmarks."
+msgid "The password that epilicious will use for synchronizing bookmarks."
 msgstr ""
-"El nom d'usuari del del.icio.us que s'utilitzarà per a sincronitzar les "
-"adreces d'interès."
+"La contrasenya que l'Epilicious utilitzarà per a sincronitzar les adreces "
+"d'interès."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:7
-msgid "del.icio.us password"
-msgstr "contrasenya del del.icio.us"
+msgid "The username that epilicious will use for synchronizing bookmarks."
+msgstr ""
+"El nom d'usuari que l'Epilicious utilitzarà per a sincronitzar les adreces "
+"d'interès."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:8
-msgid "del.icio.us username"
-msgstr "nom d'usuari del del.icio.us"
+msgid "epilicious backend"
+msgstr "rerefons de l'Epilicious"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:9
+msgid "password"
+msgstr "contrasenya"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:10
+msgid "username"
+msgstr "nom d'usuari"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
@@ -497,11 +510,11 @@ msgstr ""
 "S'ha produït un error HTML a %s:\n"
 "No s'ha especificat un tipus de document vàlid."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:356
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
 msgid "Enabled"
 msgstr "Habilitat"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
 #: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "Descripció"
@@ -530,16 +543,16 @@ msgstr "_Extensions"
 msgid "Help about extensions"
 msgstr "Ajuda de les extensions"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:88
 msgid "Install User _Script"
 msgstr "Instal·leu el fitxer de _seqüència d'usuari"
 
 #. shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:90
 msgid "Install Greasemonkey script"
 msgstr "Instal·leu la seqüència Greasemonkey"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:354
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:315
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "S'ha instal·lat el fitxer de seqüència de l'usuari a «%s»"
@@ -938,7 +951,7 @@ msgstr "_Subscriviu-vos al canal"
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Subscriviu-vos al canal amb el vostre lector de notícies preferit"
 
-#: ../extensions/rss/ephy-rss-extension.c:382
+#: ../extensions/rss/ephy-rss-extension.c:381
 msgid "Subscribe to site's news feed"
 msgstr "Subscriviu-vos al canal de notícies del lloc web"
 
@@ -1014,35 +1027,47 @@ msgstr "Barra _lateral"
 msgid "Show or hide the sidebar"
 msgstr "Mostra o amaga la barra lateral"
 
+#: ../extensions/sidebar/ephy-sidebar-extension.c:323
+msgid "Do you really want to remove this sidebar?"
+msgstr "Esteu segur de voler suprimir aquesta barra lateral?"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:327
+msgid "There is no way to recover this sidebar after removal."
+msgstr "Un cop s'hagi suprimit aquesta barra lateral no es podrà recuperar."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:329
+msgid "Remove Sidebar"
+msgstr "Suprimeix la barra lateral"
+
 #. Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:408
+#: ../extensions/sidebar/ephy-sidebar-extension.c:476
 #, c-format
 msgid "The sidebar already contains “%s”"
 msgstr "«%s» ja és a la barra lateral"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:412
+#: ../extensions/sidebar/ephy-sidebar-extension.c:480
 msgid ""
 "To use this sidebar, select it from the list of available sidebar pages."
 msgstr ""
 "Per a utilitzar aquesta barra lateral, seleccioneu-la a la llista de barres "
 "laterals disponibles."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:415
-#: ../extensions/sidebar/ephy-sidebar-extension.c:441
+#: ../extensions/sidebar/ephy-sidebar-extension.c:483
+#: ../extensions/sidebar/ephy-sidebar-extension.c:509
 msgid "Add Sidebar"
 msgstr "Afegeix la barra lateral"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:435
+#: ../extensions/sidebar/ephy-sidebar-extension.c:503
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr "Voleu afegir «%s» a la barra lateral?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:439
+#: ../extensions/sidebar/ephy-sidebar-extension.c:507
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr "L'origen de la pàgina nova de la barra lateral és «%s»."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:445
+#: ../extensions/sidebar/ephy-sidebar-extension.c:513
 msgid "_Add Sidebar"
 msgstr "_Afegeix la barra lateral"
 
@@ -1097,6 +1122,10 @@ msgstr ""
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Visualitza el certificat de la pàgina i administra els certificats"
+
+#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
+msgid "Synchronize bookmarks with del.icio.us"
+msgstr "Sincronització de les adreces d'interès amb el del.icio.us"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -1173,14 +1202,12 @@ msgid "Permissions"
 msgstr "Permisos"
 
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
-#, fuzzy
 msgid "Drag the page on middle mouse click"
-msgstr "Desplaça en prémer el botó central del ratolí"
+msgstr "Arrossega la pàgina en prémer el botó central del ratolí"
 
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Push Scroll"
-msgstr "Desplaçament automàtic"
+msgstr "Desplaçament per arrossegament"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
@@ -1245,6 +1272,15 @@ msgstr "Indica contingut nou a les pestanyes en segon pla"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Estat de les pestanyes"
+
+#~ msgid "Retrieving bookmarks from del.icio.us"
+#~ msgstr "Recuperació de les adreces d'interès del del.icio.us"
+
+#~ msgid "del.icio.us password"
+#~ msgstr "contrasenya del del.icio.us"
+
+#~ msgid "del.icio.us username"
+#~ msgstr "nom d'usuari del del.icio.us"
 
 #~ msgid "_Actions"
 #~ msgstr "_Accions"
