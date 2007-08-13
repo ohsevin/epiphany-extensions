@@ -1,5 +1,7 @@
 2007-08-13  Christian Persch  <chpe@gnome.org>
 
+	=== Release 2.19.90 ===
+
 	* Makefile.am:
 	* configure.ac:
 	A data/Makefile.am:
