@@ -348,6 +348,8 @@ AC_SUBST(EPIPHANY_ICONDIR)
 AC_CONFIG_FILES([
 Makefile
 include/Makefile
+data/Makefile
+data/icons/Makefile
 extensions/Makefile
 extensions/actions/Makefile
 extensions/adblock/Makefile
@@ -372,17 +374,6 @@ extensions/permissions/Makefile
 extensions/push-scroller/Makefile
 extensions/python-console/Makefile
 extensions/rss/Makefile
-extensions/rss/icons/Makefile
-extensions/rss/icons/16x16/Makefile
-extensions/rss/icons/16x16/status/Makefile
-extensions/rss/icons/22x22/Makefile
-extensions/rss/icons/22x22/status/Makefile
-extensions/rss/icons/24x24/Makefile
-extensions/rss/icons/24x24/status/Makefile
-extensions/rss/icons/32x32/Makefile
-extensions/rss/icons/32x32/status/Makefile
-extensions/rss/icons/scalable/Makefile
-extensions/rss/icons/scalable/status/Makefile
 extensions/sample/Makefile
 extensions/sample-mozilla/Makefile
 extensions/sample-mozilla/mozilla/Makefile

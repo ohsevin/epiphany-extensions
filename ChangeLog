@@ -1,3 +1,25 @@
+2007-08-13  Christian Persch  <chpe@gnome.org>
+
+	* Makefile.am:
+	* configure.ac:
+	A data/Makefile.am:
+	A data/icons/Makefile.am:
+	* extensions/rss/Makefile.am:
+	R extensions/rss/icons/16x16/Makefile.am:
+	R extensions/rss/icons/16x16/status/Makefile.am:
+	R extensions/rss/icons/22x22/Makefile.am:
+	R extensions/rss/icons/22x22/status/Makefile.am:
+	R extensions/rss/icons/24x24/Makefile.am:
+	R extensions/rss/icons/24x24/status/Makefile.am:
+	R extensions/rss/icons/32x32/Makefile.am:
+	R extensions/rss/icons/32x32/status/Makefile.am:
+	R extensions/rss/icons/Makefile.am:
+	R extensions/rss/icons/scalable/Makefile.am:
+	R extensions/rss/icons/scalable/status/Makefile.am:
+	R extensions/rss/icons/scalable/status/feed-presence.svg:
+
+	Clean up icons installation rules.
+
 2007-08-07  Sebastien Bacher  <seb128@ubuntu.com>
 
 	* extensions/greasemonkey/ephy-greasemonkey-extension.c:

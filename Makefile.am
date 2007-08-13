@@ -1,4 +1,4 @@
-SUBDIRS = include extensions po help
+SUBDIRS = include extensions data po help
 
 ACLOCAL_AMFLAGS = -I m4
 
