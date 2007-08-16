@@ -16,6 +16,7 @@ extensions/epilicious/epilicious-config.glade
 extensions/epilicious/epilicious-progress.glade
 extensions/epilicious/epilicious.py.in
 extensions/epilicious/epilicious.schemas.in
+extensions/epilicious/progress.py
 extensions/error-viewer/ephy-error-viewer-extension.c
 extensions/error-viewer/error-viewer.glade
 extensions/error-viewer/link-checker.c
