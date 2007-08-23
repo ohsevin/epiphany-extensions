@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-08-06 17:04+0300\n"
+"POT-Creation-Date: 2007-08-23 07:49+0300\n"
 "PO-Revision-Date: 2006-10-30 07:04+0300\n"
 "Last-Translator: Pauli Virtanen <pauli.virtanen@hut.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -139,6 +139,13 @@ msgid ""
 "approved by the original author;\n"
 "direct any problems to Bugzilla and not to the original author (G).\n"
 msgstr ""
+"Tämän luettelon tekijänoikeudet © ovat alkuperäisellä kirjoittajalla (G). "
+"Se on uudelleenlisensoitu erityisluvalla GPL-lisenssillä.\n"
+"Alkuperäinen luettelo, Filterset.G, löytyy osoitteesta "
+"http://www.pierceive.com/filtersetg/.\n"
+"Tätä versiota on muokattu alkuperäisestä. Muutokset eivät ole alkuperäisen "
+"tekijän hyväksymiä, joten ohjaa ongelmat bugzillaan alkuperäisen tekijän (G) "
+"sijasta.\n"
 
 #: ../extensions/adblock/adblock-ui.c:496
 msgid "Pattern"
@@ -266,7 +273,8 @@ msgid "Removing deleted bookmarks"
 msgstr "Poistettujen kirjanmerkkien siivous"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:4
-#, no-c-format
+#: ../extensions/epilicious/progress.py:41
+#, no-c-format, python-format
 msgid "Retrieving bookmarks from %s"
 msgstr "Noudetaan kirjamerkkejä lähteestä %s"
 
@@ -283,7 +291,8 @@ msgid "Saving new synch point"
 msgstr "Tallennetaan uusi synkronointikohta"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:9
-#, no-c-format
+#: ../extensions/epilicious/progress.py:39
+#, no-c-format, python-format
 msgid "Synchronizing with %s"
 msgstr "Synkronoidaan lähteen %s kanssa"
 
@@ -478,10 +487,12 @@ msgid "HTML error in %s:"
 msgstr "HTML-virhe kohteessa %s:"
 
 #: ../extensions/error-viewer/sgml-validator.c:368
+#, c-format
 msgid "Invalid character encoding"
 msgstr "Virheellinen merkistö"
 
 #: ../extensions/error-viewer/sgml-validator.c:373
+#, c-format
 msgid "Unknown error while converting to UTF-8"
 msgstr "Tuntematon virhe merkistöön UTF-8 muuntamisessa"
 
@@ -572,7 +583,7 @@ msgstr "Tyhjennä välimuisti"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
 msgid "Live Headers"
-msgstr ""
+msgstr "Live-otsakkeet"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
 msgid "Remove headers"
@@ -1160,7 +1171,7 @@ msgstr "Lisää Java-liitännäisen konsoli valikkoon"
 
 #: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
 msgid "Live HTTP headers"
-msgstr ""
+msgstr "HTTP-otsakkeet viestissä"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
@@ -1185,7 +1196,7 @@ msgstr "Raahaa sivua hiiren keskinapilla"
 
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
 msgid "Push Scroll"
-msgstr ""
+msgstr "Työntövieritys"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
