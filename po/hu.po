@@ -1,3 +1,4 @@
+# translation of epiphany-extensions.HEAD.hu.po to Hungarian
 # Hungarian translation of epiphany-extensions.
 # Copyright (C) 2004, 2005, 2007 Free Software Foundation, Inc.
 # This file is distributed under the same license as the epiphany-extensions package.
@@ -8,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions.HEAD.hu\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-04-23 03:18+0100\n"
-"PO-Revision-Date: 2007-05-02 22:33+0200\n"
+"POT-Creation-Date: 2007-07-22 03:22+0100\n"
+"PO-Revision-Date: 2007-08-25 11:31+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <gnome@gnome.hu>\n"
 "MIME-Version: 1.0\n"
@@ -75,7 +76,7 @@ msgid "_Images"
 msgstr "_Képek"
 
 #: ../extensions/actions/action-properties.glade.h:11
-#: ../extensions/epilicious/epilicious-config.glade.h:5
+#: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Name:"
 msgstr "_Név:"
 
@@ -164,7 +165,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>Szabályok frissítése az eredeti oldalról</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:244
+#: ../extensions/adblock/ephy-adblock-extension.c:243
 msgid "Adblock editor"
 msgstr "Adblock szerkesztő"
 
@@ -184,11 +185,11 @@ msgstr "Filterset.G"
 msgid "Whitelist"
 msgstr "Fehérlista"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:245
+#: ../extensions/adblock/ephy-adblock-extension.c:244
 msgid "Edit Adblock"
 msgstr "Adblock szerkesztése"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:312
+#: ../extensions/adblock/ephy-adblock-extension.c:311
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -241,41 +242,41 @@ msgid "Action for tagged bookmarks:"
 msgstr "Művelet címkézett könyvjelzőkhöz:"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:2
-#: ../extensions/epilicious/epilicious.py.in:212
 msgid "Epilicious Configuration"
 msgstr "Epilicious beállítása"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:3
+msgid "_Backend:"
+msgstr "_Háttér:"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:4
 msgid "_Exclude"
 msgstr "_Kihagyás"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:4
+#: ../extensions/epilicious/epilicious-config.glade.h:5
 msgid "_Include"
 msgstr "_Felvétel"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:6
+#: ../extensions/epilicious/epilicious-config.glade.h:7
 msgid "_Password:"
 msgstr "_Jelszó:"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:7
+#: ../extensions/epilicious/epilicious-config.glade.h:8
 msgid "_Tag:"
 msgstr "_Címke:"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:1
-msgid "<b>Synchronizing with del.icio.us</b>"
-msgstr "<b>Szinkronizálás a del.icio.us oldallal</b>"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:2
 msgid "Adding new bookmarks and synching topics"
 msgstr "Új könyvjelzők felvétele és témakörök szinkronizálása"
 
-#: ../extensions/epilicious/epilicious-progress.glade.h:3
+#: ../extensions/epilicious/epilicious-progress.glade.h:2
 msgid "Removing deleted bookmarks"
 msgstr "Törölt könyvjelzők eltávolítása"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:4
-msgid "Retrieving bookmarks from del.icio.us"
-msgstr "Könyvjelzők letöltése a del.icio.us oldalról"
+#, no-c-format
+msgid "Retrieving bookmarks from %s"
+msgstr "Könyvjelzők letöltése a következőből: %s"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:5
 msgid "Retrieving bookmarks from epiphany"
@@ -289,13 +290,17 @@ msgstr "Előző szinkronizálási pont lekérése"
 msgid "Saving new synch point"
 msgstr "Új szinkronizálási pont mentése"
 
-#: ../extensions/epilicious/epilicious-progress.glade.h:8
+#: ../extensions/epilicious/epilicious-progress.glade.h:9
+#, no-c-format
+msgid "Synchronizing with %s"
+msgstr "Szinkronizálás a következővel: %s"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:10
 msgid "Synchronizing..."
 msgstr "Szinkronizálás..."
 
-#. # Epiphany integration ##
-#: ../extensions/epilicious/epilicious.py.in:207
-#: ../extensions/epilicious/epilicious.py.in:210
+#: ../extensions/epilicious/epilicious.py.in:202
+#: ../extensions/epilicious/epilicious.py.in:220
 msgid "Epilicious Synchronize"
 msgstr "Epilicious szinkronizálás"
 
@@ -324,27 +329,29 @@ msgstr "Megosztott témakör"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:5
 msgid ""
-"The del.icio.us password that epilicious will use for synchronizing "
-"bookmarks."
-msgstr ""
-"Az epilicious által a könyvjelzők szinkronizálására használandó del.icio.us "
-"jelszó."
+"The backend that epilicious will use for synchronizing bookmarks. Allowed "
+"values: 'del.icio.us', 'ma.gnolia'"
+msgstr "Az epilicious által a könyvjelzők szinkronizálására használandó háttér. A lehetséges értékek: \"del.icio.us\" és \"ma.gnolia\"."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
-msgid ""
-"The del.icio.us username that epilicious will use for synchronizing "
-"bookmarks."
-msgstr ""
-"Az epilicious által a könyvjelzők szinkronizálására használandó del.icio.us "
-"felhasználónév."
+msgid "The password that epilicious will use for synchronizing bookmarks."
+msgstr "Az epilicious által a könyvjelzők szinkronizálására használandó jelszó."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:7
-msgid "del.icio.us password"
-msgstr "del.icio.us jelszó"
+msgid "The username that epilicious will use for synchronizing bookmarks."
+msgstr "Az epilicious által a könyvjelzők szinkronizálására használandó felhasználónév."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:8
-msgid "del.icio.us username"
-msgstr "del.icio.us felhasználónév"
+msgid "epilicious backend"
+msgstr "epilicious háttér"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:9
+msgid "password"
+msgstr "jelszó"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:10
+msgid "username"
+msgstr "felhasználónév"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
@@ -493,11 +500,11 @@ msgstr ""
 "HTML hiba a(z) %s fájlban:\n"
 "Nincs érvényes doctype megadva."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:356
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
 msgid "Enabled"
 msgstr "Engedélyezve"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
 #: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "Leírás"
@@ -526,16 +533,16 @@ msgstr "Kit_erjesztések"
 msgid "Help about extensions"
 msgstr "A kiterjesztések súgója"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:88
 msgid "Install User _Script"
 msgstr "_Felhasználói parancsfájl telepítése"
 
 #. shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:90
 msgid "Install Greasemonkey script"
 msgstr "Greasemonkey parancsfájl telepítése"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:354
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:315
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "A(z) \"%s\" helyen lévő felhasználói parancsfájl telepítve"
@@ -932,7 +939,7 @@ msgstr "_Feliratkozás ezen folyamra"
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Feliratkozás ezen folyamra a kedvenc hírolvasójával"
 
-#: ../extensions/rss/ephy-rss-extension.c:382
+#: ../extensions/rss/ephy-rss-extension.c:381
 msgid "Subscribe to site's news feed"
 msgstr "Feliratkozás oldal hírfolyamaira"
 
@@ -1008,32 +1015,44 @@ msgstr "_Oldalsáv"
 msgid "Show or hide the sidebar"
 msgstr "Az oldalsáv mutatása vagy elrejtése"
 
+#: ../extensions/sidebar/ephy-sidebar-extension.c:323
+msgid "Do you really want to remove this sidebar?"
+msgstr "Valóban el kívánja távolítani ezt az oldalsávot?"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:327
+msgid "There is no way to recover this sidebar after removal."
+msgstr "Az oldalsáv az eltávolítás után nem állítható vissza."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:329
+msgid "Remove Sidebar"
+msgstr "Oldalsáv eltávolítása"
+
 #. Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:408
+#: ../extensions/sidebar/ephy-sidebar-extension.c:476
 #, c-format
 msgid "The sidebar already contains “%s”"
 msgstr "Az oldalsáv már tartalmazza a következőt: \"%s\"."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:412
+#: ../extensions/sidebar/ephy-sidebar-extension.c:480
 msgid "To use this sidebar, select it from the list of available sidebar pages."
 msgstr "Az oldalsáv használatához válassza ki azt az elérhető oldalsáv-oldalak közül."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:415
-#: ../extensions/sidebar/ephy-sidebar-extension.c:441
+#: ../extensions/sidebar/ephy-sidebar-extension.c:483
+#: ../extensions/sidebar/ephy-sidebar-extension.c:509
 msgid "Add Sidebar"
 msgstr "Oldalsáv hozzáadása"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:435
+#: ../extensions/sidebar/ephy-sidebar-extension.c:503
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr "Hozzáadja ezt: \"%s\" az oldalsávhoz?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:439
+#: ../extensions/sidebar/ephy-sidebar-extension.c:507
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr "A forrás az új oldalsáv-oldalhoz: \"%s\"."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:445
+#: ../extensions/sidebar/ephy-sidebar-extension.c:513
 msgid "_Add Sidebar"
 msgstr "Oldalsáv _hozzáadása"
 
