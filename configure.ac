@@ -16,11 +16,11 @@
 #
 # $Id: configure.ac,v 1.235 2006/12/17 22:17:06 jframeau Exp $
 
-AC_INIT([GNOME Web Browser Extensions],[2.19.91],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+AC_INIT([GNOME Web Browser Extensions],[2.21.0],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 
-EPIPHANY_API_VERSION=2.19
+EPIPHANY_API_VERSION=2.21
 
-EPIPHANY_EXTENSIONS_MAJOR=2.19
+EPIPHANY_EXTENSIONS_MAJOR=2.21
 AC_SUBST(EPIPHANY_EXTENSIONS_MAJOR)
 
 AC_PREREQ([2.59])
@@ -93,7 +93,7 @@ GNOME_DOC_INIT
 # pkg config checks
 # ********************************
 
-EPIPHANY_REQUIRED=2.19.0
+EPIPHANY_REQUIRED=2.21.0
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.12.0
 LIBGTK_REQUIRED=2.11.6
