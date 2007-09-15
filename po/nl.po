@@ -1201,11 +1201,11 @@ msgstr "Rechten"
 
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
 msgid "Drag the page on middle mouse click"
-msgstr "Schuiven bij klik met middelste muisknop"
+msgstr "Sleep de pagina bij klik met middelste muisknop"
 
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
 msgid "Push Scroll"
-msgstr "Auto-schuiven"
+msgstr "Duw-schuiven"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
