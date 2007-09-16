@@ -40,7 +40,7 @@ DISTCHECK_CONFIGURE_FLAGS = \
 ChangeLog:
 	@if test -f $(top_srcdir)/.svn/entries; then \
 		svn log -v --xml -r HEAD:1572 http://svn.gnome.org/svn/epiphany | \
-			xsltproc --stringparam strip-prefix "epiphany/trunk" \
+			xsltproc --stringparam strip-prefix "epiphany-extensions/trunk" \
 				 --stringparam include-rev "yes" $(top_srcdir)/svn2cl.xsl - > $@; \
 	fi
 
