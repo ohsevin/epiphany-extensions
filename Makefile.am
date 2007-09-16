@@ -7,6 +7,7 @@ NULL =
 EXTRA_DIST =			\
 	autogen.sh		\
 	COPYING.README		\
+	ChangeLog		\
 	ChangeLog-20070912	\
 	HACKING			\
 	README 			\
@@ -32,3 +33,15 @@ DISTCHECK_CONFIGURE_FLAGS = \
 	--with-gecko=$(MOZILLA)		\
 	--disable-scrollkeeper		\
 	--disable-schemas-install
+
+# Build ChangeLog from SVN history (r1572 was the first ChangeLog-less checkin).
+# Only build this when in an svn checkout.
+
+ChangeLog:
+	@if test -f $(top_srcdir)/.svn/entries; then \
+		svn log -v --xml -r HEAD:1572 http://svn.gnome.org/svn/epiphany | \
+			xsltproc --stringparam strip-prefix "epiphany/trunk" \
+				 --stringparam include-rev "yes" $(top_srcdir)/svn2cl.xsl - > $@; \
+	fi
+
+.PHONY: ChangeLog
