@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-07-27 09:10+0200\n"
-"PO-Revision-Date: 2007-07-27 09:10+0100\n"
+"POT-Creation-Date: 2007-09-16 20:36+0200\n"
+"PO-Revision-Date: 2007-09-16 20:36+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -174,11 +174,11 @@ msgstr[1] "%d dolda reklammeddelanden"
 
 #: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
 msgid "_Auto Reload"
-msgstr "Läs om _automatiskt"
+msgstr "Uppdatera _automatiskt"
 
 #: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
 msgid "Reload the page periodically"
-msgstr "Läs om sidan periodiskt"
+msgstr "Uppdatera sidan periodvis"
 
 #: ../extensions/cc-license-viewer/cc-license-viewer.py:371
 msgid "View Creative Commons license"
@@ -449,10 +449,12 @@ msgid "HTML error in %s:"
 msgstr "HTML-fel i %s:"
 
 #: ../extensions/error-viewer/sgml-validator.c:368
+#, c-format
 msgid "Invalid character encoding"
 msgstr "Ogiltig teckenkodning"
 
 #: ../extensions/error-viewer/sgml-validator.c:373
+#, c-format
 msgid "Unknown error while converting to UTF-8"
 msgstr "Okänt fel vid konvertering till UTF-8"
 
@@ -1050,11 +1052,11 @@ msgstr "Rulla vid klick på mittenmusknapp"
 
 #: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
 msgid "Auto Reload Tab"
-msgstr "Läs om flik automatiskt"
+msgstr "Uppdatera flik automatiskt"
 
 #: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
 msgid "Reload a tab periodically"
-msgstr "Läs om en flik periodiskt"
+msgstr "Uppdatera en flik periodvis"
 
 #: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
 msgid "Creative Commons license viewer"
