@@ -68,42 +68,6 @@ ErrorViewerConsoleListener::GetMessageFromError (nsIScriptError *aError,
 	NS_UTF16ToCString (nsString (message),
 				NS_CSTRING_ENCODING_UTF8, cMessage);
 
-	/*
-	 * FIXME: file bug to document all of these in
-	 * http://lxr.mozilla.org/seamonkey/source/js/src/xpconnect/idl/nsIScriptError.idl
-	 *
-	 * With line and/or col # info:
-	 * "xbl javascript" (nsXBLDocumentInfo.cpp:)
-	 * "chrome javascript" and "content javascript" (nsJSEnvironment.cpp)
-	 * "CSS Parser" (nsCSSScanner.cpp)
-	 * "DOM::HTML" (nsDOMClassInfo.cpp: line # only)
-	 * "XBL Content Sink" (nsXBLContentSink.cpp: line # only)
-	 *
-	 * Without line and col # info:
-	 * "HTML" (nsFormSubmission.cpp)
-	 * "XUL Document" (nsXULDocument.cpp)
-	 * "ImageMap" (nsImageMap.cpp: has source line info)
-	 * "CSS Loader" (nsCSSLoader.cpp)
-	 * "XForms" (nsXFormsUtils.cpp)
-	 */
-	/* FIXME FIXME FIXME */
-	if (strstr (category, "javascript") == NULL &&
-	    strcmp (category, "CSS Parser") != 0 &&
-	    strcmp (category, "DOM::HTML") != 0 &&
-	    strcmp (category, "XBL Content Sink") != 0)
-	{
-		/* Don't bother looking for source lines -- they're not there */
-		*aMessage = g_strdup_printf (_("Error:\n%s"), cMessage.get());
-
-		nsMemory::Free (category);
-
-		return NS_OK;
-	}
-
-	PRUint32 lineNumber;
-	rv = aError->GetLineNumber (&lineNumber);
-	NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
-
 #ifdef HAVE_GECKO_1_8
 	nsString sourceName;
 	rv = aError->GetSourceName (sourceName);
@@ -121,13 +85,64 @@ ErrorViewerConsoleListener::GetMessageFromError (nsIScriptError *aError,
 			   NS_CSTRING_ENCODING_UTF8, cSourceName);
 	nsMemory::Free (sourceName);
 #endif
+	
+	if (strstr (category, "javascript") || 
+		!strcmp (category, "CSS Parser"))
+	{
+		PRUint32 lineNumber;
+		rv = aError->GetLineNumber (&lineNumber);
+		NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
+	
+		PRUint32 columnNumber;
+		rv = aError->GetColumnNumber (&columnNumber);
+		NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
+		
+		if (lineNumber && columnNumber)
+		{
+			*aMessage = g_strdup_printf (
+					_("%s error in %s on line %d and column %d:\n%s"),
+					category, cSourceName.get(), lineNumber, columnNumber, cMessage.get());
+		}
+		else
+		{
+			*aMessage = g_strdup_printf (
+					_("%s error in %s:\n%s"),
+					category, cSourceName.get(), cMessage.get());
+		}
+	}
+	else if (!strcmp (category, "DOM::HTML") ||
+			 !strcmp (category, "XBL Content Sink"))
+	{
+		PRUint32 lineNumber;
+		rv = aError->GetLineNumber (&lineNumber);
+		NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
+		
+		if (lineNumber)
+		{
+			*aMessage = g_strdup_printf (
+					_("%s error in %s on line %d:\n%s"),
+					category, cSourceName.get(), lineNumber, cMessage.get());
+		}
+		else
+		{
+			*aMessage = g_strdup_printf (
+					_("%s error in %s:\n%s"),
+					category, cSourceName.get(), cMessage.get());
+		}
+	}
+	else if	(!strcmp (category, "HTML") ||
+			 !strcmp (category, "XUL Document") ||
+			 !strcmp (category, "ImageMap") ||
+			 !strcmp (category, "CSS Loader") ||
+			 !strcmp (category, "XForms"))
+	{
+			*aMessage = g_strdup_printf (
+					_("%s error in %s:\n%s"),
+				category, cSourceName.get(), cMessage.get());
+	}
 
-	*aMessage = g_strdup_printf (
-			_("Javascript error in %s on line %d:\n%s"),
-			cSourceName.get(), lineNumber, cMessage.get());
-
-	nsMemory::Free (category);
-
+	nsMemory::Free (category);						 
+	
 	return NS_OK;
 }
 
