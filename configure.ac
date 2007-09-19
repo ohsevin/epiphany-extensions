@@ -16,11 +16,19 @@
 #
 # $Id: configure.ac,v 1.235 2006/12/17 22:17:06 jframeau Exp $
 
-AC_INIT([GNOME Web Browser Extensions],[2.21.0],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+m4_define([e_e_version_major],[2])
+m4_define([e_e_version_minor],[21])
+m4_define([e_e_version_micro],[0])
+m4_define([e_e_version],[e_e_version_major.e_e_version_minor.e_e_version_micro])
 
-EPIPHANY_API_VERSION=2.21
+# This can be either "trunk" or "branches/gnome-x-y"
+m4_define([e_e_branch],["trunk"])
 
-EPIPHANY_EXTENSIONS_MAJOR=2.21
+AC_INIT([GNOME Web Browser Extensions],[e_e_version],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
+
+EPIPHANY_API_VERSION=e_e_version_major.e_e_version_minor
+
+EPIPHANY_EXTENSIONS_MAJOR=e_e_version_major.e_e_version_minor
 AC_SUBST(EPIPHANY_EXTENSIONS_MAJOR)
 
 AC_PREREQ([2.59])
@@ -341,6 +349,14 @@ fi
 
 EPIPHANY_ICONDIR="`$PKG_CONFIG --variable=icondir epiphany-$EPIPHANY_API_VERSION`"
 AC_SUBST(EPIPHANY_ICONDIR)
+
+# ****************************
+# SVN for ChangeLog generation
+# ****************************
+
+AC_SUBST([SVN_ROOT],[http://svn.gnome.org/svn])
+AC_SUBST([SVN_MODULE],[epiphany-extensions])
+AC_SUBST([SVN_BRANCH],[e_e_branch])
 
 # *******************************
 # *******************************
