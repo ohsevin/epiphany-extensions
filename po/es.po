@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions.HEAD.es\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-07-22 03:22+0100\n"
-"PO-Revision-Date: 2007-08-01 00:37+0200\n"
+"POT-Creation-Date: 2007-09-17 20:38+0100\n"
+"PO-Revision-Date: 2007-09-20 13:16+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -272,7 +272,8 @@ msgid "Removing deleted bookmarks"
 msgstr "Eliminando los marcadores borrados"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:4
-#, no-c-format
+#: ../extensions/epilicious/progress.py:41
+#, no-c-format, python-format
 msgid "Retrieving bookmarks from %s"
 msgstr "Obteniendo los marcadores de %s"
 
@@ -289,7 +290,8 @@ msgid "Saving new synch point"
 msgstr "Guardando el nuevo punto de sincronización"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:9
-#, no-c-format
+#: ../extensions/epilicious/progress.py:39
+#, no-c-format, python-format
 msgid "Synchronizing with %s"
 msgstr "Sincronizando con %s"
 
@@ -388,23 +390,33 @@ msgstr "_Limpiar"
 msgid "Error Viewer"
 msgstr "Visor de errores"
 
-#. Don't bother looking for source lines -- they're not there
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:96
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:103
 #, c-format
 msgid ""
-"Error:\n"
+"%s error in %s on line %d and column %d:\n"
 "%s"
 msgstr ""
-"Error:\n"
+"Error %s en %s, línea %d, columna %d:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:126
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:109
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:140
 #, c-format
 msgid ""
-"Javascript error in %s on line %d:\n"
+"%s error in %s:\n"
 "%s"
 msgstr ""
-"Error de JavaScript en %s, en la línea %d:\n"
+"Error %s en %s:\n"
+"%s"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:123
+#, c-format
+msgid ""
+"%s error in %s on line %d:\n"
+"%s"
+msgstr ""
+"Error %s en %s, línea %d:\n"
 "%s"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
