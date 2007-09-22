@@ -5,15 +5,16 @@
 # Jordi Mallach <jordi@sindominio.net>, 2004.
 # Esteve Blanch Sanmartí <anakinjinn@gmail.com>, 2006.
 # David Planella Molas <david.planella@gmail.com>, 2007.
+# Francesc Vilches <francesc.vilches@gmail.com>, 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-08-11 18:28+0200\n"
-"PO-Revision-Date: 2007-07-31 21:08+0200\n"
-"Last-Translator: David Planella Molas <david.planella@gmail.com>\n"
+"POT-Creation-Date: 2007-09-22 18:19+0200\n"
+"PO-Revision-Date: 2007-09-18 21:08+0200\n"
+"Last-Translator: Francesc Vilches <francesc.vilches@gmail.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -276,7 +277,8 @@ msgid "Removing deleted bookmarks"
 msgstr "Eliminació de les adreces d'interès suprimides"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:4
-#, no-c-format
+#: ../extensions/epilicious/progress.py:41
+#, no-c-format, python-format
 msgid "Retrieving bookmarks from %s"
 msgstr "S'estan recuperant les adreces d'interès de %s"
 
@@ -293,7 +295,8 @@ msgid "Saving new synch point"
 msgstr "Desat del punt de sincronització nou"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:9
-#, no-c-format
+#: ../extensions/epilicious/progress.py:39
+#, no-c-format, python-format
 msgid "Synchronizing with %s"
 msgstr "S'està sincronitzant amb %s"
 
@@ -414,7 +417,7 @@ msgid ""
 "Javascript error in %s on line %d:\n"
 "%s"
 msgstr ""
-"S'ha produït un error del Javascript en %s a la línia %d:\n"
+"S'ha produït un error de Javascript a %s a la línia %d:\n"
 "%s"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
@@ -494,10 +497,12 @@ msgid "HTML error in %s:"
 msgstr "S'ha produït un error d'HTML a %s:"
 
 #: ../extensions/error-viewer/sgml-validator.c:368
+#, c-format
 msgid "Invalid character encoding"
 msgstr "La codificació de caràcters és invàlida"
 
 #: ../extensions/error-viewer/sgml-validator.c:373
+#, c-format
 msgid "Unknown error while converting to UTF-8"
 msgstr "S'ha produït un error desconegut en convertir a UTF-8"
 
@@ -1272,6 +1277,20 @@ msgstr "Indica contingut nou a les pestanyes en segon pla"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Estat de les pestanyes"
+
+#~ msgid ""
+#~ "%s error in %s on line %d and column %d:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "S'ha produït l'error %s a %s, a la línia %d i columna %d:\n"
+#~ "%s"
+
+#~ msgid ""
+#~ "%s error in %s:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "S'ha produït l'error %s a %s:\n"
+#~ "%s"
 
 #~ msgid "Retrieving bookmarks from del.icio.us"
 #~ msgstr "Recuperació de les adreces d'interès del del.icio.us"
