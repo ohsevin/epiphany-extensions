@@ -285,7 +285,8 @@ adblock_ui_show_license_cb (GtkButton *button,
 		   "direct any problems to Bugzilla and not to the original author (G).\n");
 
 	window = ephy_dialog_get_parent (EPHY_DIALOG (dialog));
-	gtk_show_about_dialog (GTK_WINDOW (window),
+	gtk_show_about_dialog (GTK_WINDOW (dialog->priv->dialog),
+				   "program-name", "Adblock Filterset.G",
 			       "copyright", license,
 			       "authors", authors,
 			       NULL);
