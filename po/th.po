@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: epiphany-extension\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-07-21 16:46+0700\n"
-"PO-Revision-Date: 2007-07-21 16:52+0700\n"
+"POT-Creation-Date: 2007-09-27 18:44+0700\n"
+"PO-Revision-Date: 2007-09-27 18:46+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -262,7 +262,8 @@ msgid "Removing deleted bookmarks"
 msgstr "กำลังลบที่คั่นหน้าที่สั่งลบ"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:4
-#, no-c-format
+#: ../extensions/epilicious/progress.py:41
+#, no-c-format, python-format
 msgid "Retrieving bookmarks from %s"
 msgstr "กำลังดึงที่คั่นหน้าจาก %s"
 
@@ -279,7 +280,8 @@ msgid "Saving new synch point"
 msgstr "กำลังบันทึกจุดปรับข้อมูลใหม่"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:9
-#, no-c-format
+#: ../extensions/epilicious/progress.py:39
+#, no-c-format, python-format
 msgid "Synchronizing with %s"
 msgstr "กำลังปรับข้อมูลกับ %s"
 
@@ -318,8 +320,8 @@ msgid ""
 "The backend that epilicious will use for synchronizing bookmarks. Allowed "
 "values: 'del.icio.us', 'ma.gnolia'"
 msgstr ""
-"แบ็กเอนด์ที่ epilicious จะใช้ในการปรับข้อมูลที่คั่นหน้า ค่าที่ใช้ได้คือ 'del.icio.us', "
-"'ma.gnolia'"
+"แบ็กเอนด์ที่ epilicious จะใช้ในการปรับข้อมูลที่คั่นหน้า ค่าที่ใช้ได้คือ 'del.icio.us', 'ma."
+"gnolia'"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
 msgid "The password that epilicious will use for synchronizing bookmarks."
@@ -468,10 +470,12 @@ msgid "HTML error in %s:"
 msgstr "ข้อผิดพลาด HTML ใน %s:"
 
 #: ../extensions/error-viewer/sgml-validator.c:368
+#, c-format
 msgid "Invalid character encoding"
 msgstr "การลงรหัสอักขระไม่ถูกต้อง"
 
 #: ../extensions/error-viewer/sgml-validator.c:373
+#, c-format
 msgid "Unknown error while converting to UTF-8"
 msgstr "เกิดข้อผิดพลาดไม่ทราบสาเหตุขณะแปลงเป็น UTF-8"
 
@@ -997,33 +1001,45 @@ msgstr "แถบ_ข้าง"
 msgid "Show or hide the sidebar"
 msgstr "แสดงหรือซ่อนแถบข้าง"
 
+#: ../extensions/sidebar/ephy-sidebar-extension.c:323
+msgid "Do you really want to remove this sidebar?"
+msgstr "ต้องการลบแถบข้างนี้จริงหรือ?"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:327
+msgid "There is no way to recover this sidebar after removal."
+msgstr "คุณจะไม่สามารถเรียกแถบข้างนี้คืนมาได้อีกหลังจากลบแล้ว"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:329
+msgid "Remove Sidebar"
+msgstr "ลบแถบข้าง"
+
 #. Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:408
+#: ../extensions/sidebar/ephy-sidebar-extension.c:476
 #, c-format
 msgid "The sidebar already contains “%s”"
 msgstr "แถบข้างมี “%s” อยู่ก่อนแล้ว"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:412
+#: ../extensions/sidebar/ephy-sidebar-extension.c:480
 msgid ""
 "To use this sidebar, select it from the list of available sidebar pages."
 msgstr "หากจะใช้แถบข้างนี้ คุณสามารถเลือกได้จากรายการแถบข้างที่มีอยู่"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:415
-#: ../extensions/sidebar/ephy-sidebar-extension.c:441
+#: ../extensions/sidebar/ephy-sidebar-extension.c:483
+#: ../extensions/sidebar/ephy-sidebar-extension.c:509
 msgid "Add Sidebar"
 msgstr "เพิ่มแถบข้าง"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:435
+#: ../extensions/sidebar/ephy-sidebar-extension.c:503
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr "เพิ่ม “%s” ลงในแถบข้างหรือไม่?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:439
+#: ../extensions/sidebar/ephy-sidebar-extension.c:507
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr "แหล่งของหน้าเว็บของแถบข้างใหม่ที่จะเพิ่มคือ “%s”"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:445
+#: ../extensions/sidebar/ephy-sidebar-extension.c:513
 msgid "_Add Sidebar"
 msgstr "เ_พิ่มแถบข้าง"
 
