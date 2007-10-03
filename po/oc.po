@@ -657,7 +657,7 @@ msgstr ""
 #: ../extensions/page-info/page-info-dialog.c:1433
 #: ../extensions/page-info/page-info-dialog.c:1730
 msgid "Title"
-msgstr "Titol"
+msgstr "Títol"
 
 #: ../extensions/page-info/page-info-dialog.c:1445
 msgid "Width"
@@ -810,7 +810,7 @@ msgstr "Sorga :"
 
 #: ../extensions/page-info/page-info.glade.h:29
 msgid "Title:"
-msgstr "Titol:"
+msgstr "Títol:"
 
 #: ../extensions/page-info/page-info.glade.h:30
 msgid "Type:"
