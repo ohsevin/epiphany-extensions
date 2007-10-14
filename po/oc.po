@@ -7,15 +7,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?\n"
-"POT-Creation-Date: 2007-04-26 00:24+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=epiphany-extensions\n"
+"POT-Creation-Date: 2007-10-13 17:46+0200\n"
 "PO-Revision-Date: 2007-09-16 11:23+0200\n"
 "Last-Translator: Yannig MARCHEGAY (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (post 1500) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../extensions/actions/action-properties.glade.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
@@ -66,7 +67,7 @@ msgid "_Images"
 msgstr "_Imatges"
 
 #: ../extensions/actions/action-properties.glade.h:11
-#: ../extensions/epilicious/epilicious-config.glade.h:5
+#: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Name:"
 msgstr "_Nom :"
 
@@ -102,7 +103,9 @@ msgstr ""
 #: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
 #, c-format
 msgid "%i action selected."
-msgstr ""
+msgid_plural "%i actions selected."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
@@ -128,7 +131,7 @@ msgid ""
 "direct any problems to Bugzilla and not to the original author (G).\n"
 msgstr ""
 
-#: ../extensions/adblock/adblock-ui.c:496
+#: ../extensions/adblock/adblock-ui.c:497
 msgid "Pattern"
 msgstr "Motiu"
 
@@ -145,7 +148,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr ""
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:244
+#: ../extensions/adblock/ephy-adblock-extension.c:243
 msgid "Adblock editor"
 msgstr ""
 
@@ -165,14 +168,16 @@ msgstr ""
 msgid "Whitelist"
 msgstr ""
 
-#: ../extensions/adblock/ephy-adblock-extension.c:245
+#: ../extensions/adblock/ephy-adblock-extension.c:244
 msgid "Edit Adblock"
 msgstr ""
 
-#: ../extensions/adblock/ephy-adblock-extension.c:312
+#: ../extensions/adblock/ephy-adblock-extension.c:311
 #, c-format
 msgid "%d hidden advertisement"
-msgstr ""
+msgid_plural "%d hidden advertisements"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
 msgid "_Auto Reload"
@@ -220,40 +225,41 @@ msgid "Action for tagged bookmarks:"
 msgstr ""
 
 #: ../extensions/epilicious/epilicious-config.glade.h:2
-#: ../extensions/epilicious/epilicious.py.in:212
 msgid "Epilicious Configuration"
 msgstr ""
 
 #: ../extensions/epilicious/epilicious-config.glade.h:3
-msgid "_Exclude"
+msgid "_Backend:"
 msgstr ""
 
 #: ../extensions/epilicious/epilicious-config.glade.h:4
+msgid "_Exclude"
+msgstr ""
+
+#: ../extensions/epilicious/epilicious-config.glade.h:5
 msgid "_Include"
 msgstr ""
 
-#: ../extensions/epilicious/epilicious-config.glade.h:6
+#: ../extensions/epilicious/epilicious-config.glade.h:7
 msgid "_Password:"
 msgstr "Mot de _pas :"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:7
+#: ../extensions/epilicious/epilicious-config.glade.h:8
 msgid "_Tag:"
 msgstr ""
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:1
-msgid "<b>Synchronizing with del.icio.us</b>"
-msgstr ""
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:2
 msgid "Adding new bookmarks and synching topics"
 msgstr ""
 
-#: ../extensions/epilicious/epilicious-progress.glade.h:3
+#: ../extensions/epilicious/epilicious-progress.glade.h:2
 msgid "Removing deleted bookmarks"
 msgstr ""
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:4
-msgid "Retrieving bookmarks from del.icio.us"
+#: ../extensions/epilicious/progress.py:41
+#, no-c-format, python-format
+msgid "Retrieving bookmarks from %s"
 msgstr ""
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:5
@@ -268,13 +274,18 @@ msgstr ""
 msgid "Saving new synch point"
 msgstr ""
 
-#: ../extensions/epilicious/epilicious-progress.glade.h:8
+#: ../extensions/epilicious/epilicious-progress.glade.h:9
+#: ../extensions/epilicious/progress.py:39
+#, no-c-format, python-format
+msgid "Synchronizing with %s"
+msgstr ""
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:10
 msgid "Synchronizing..."
 msgstr ""
 
-#. # Epiphany integration ##
-#: ../extensions/epilicious/epilicious.py.in:207
-#: ../extensions/epilicious/epilicious.py.in:210
+#: ../extensions/epilicious/epilicious.py.in:202
+#: ../extensions/epilicious/epilicious.py.in:220
 msgid "Epilicious Synchronize"
 msgstr ""
 
@@ -299,22 +310,29 @@ msgstr ""
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:5
 msgid ""
-"The del.icio.us password that epilicious will use for synchronizing "
-"bookmarks."
+"The backend that epilicious will use for synchronizing bookmarks. Allowed "
+"values: 'del.icio.us', 'ma.gnolia'"
 msgstr ""
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
-msgid ""
-"The del.icio.us username that epilicious will use for synchronizing "
-"bookmarks."
+msgid "The password that epilicious will use for synchronizing bookmarks."
 msgstr ""
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:7
-msgid "del.icio.us password"
+msgid "The username that epilicious will use for synchronizing bookmarks."
 msgstr ""
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:8
-msgid "del.icio.us username"
+msgid "epilicious backend"
+msgstr ""
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:9
+#, fuzzy
+msgid "password"
+msgstr "Mot de _pas :"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:10
+msgid "username"
 msgstr ""
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
@@ -352,27 +370,35 @@ msgstr "_Netejar"
 msgid "Error Viewer"
 msgstr ""
 
-#. Don't bother looking for source lines -- they're not there
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:96
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:103
 #, c-format
 msgid ""
-"Error:\n"
+"%s error in %s on line %d and column %d:\n"
 "%s"
 msgstr ""
-"Error :\n"
-"%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:126
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:109
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:140
 #, c-format
 msgid ""
-"Javascript error in %s on line %d:\n"
+"%s error in %s:\n"
+"%s"
+msgstr ""
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:123
+#, c-format
+msgid ""
+"%s error in %s on line %d:\n"
 "%s"
 msgstr ""
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
 #, c-format
 msgid "Found %d invalid link"
-msgstr ""
+msgid_plural "Found %d invalid links"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
@@ -384,7 +410,9 @@ msgstr ""
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
 #, c-format
 msgid "Checking %d Link on “%s”"
-msgstr ""
+msgid_plural "Checking %d Links on “%s”"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
@@ -396,7 +424,9 @@ msgstr ""
 #: ../extensions/error-viewer/sgml-validator.c:165
 #, c-format
 msgid "Found %d error"
-msgstr ""
+msgid_plural "Found %d errors"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../extensions/error-viewer/sgml-validator.c:169
 #, c-format
@@ -430,10 +460,12 @@ msgid "HTML error in %s:"
 msgstr ""
 
 #: ../extensions/error-viewer/sgml-validator.c:368
+#, c-format
 msgid "Invalid character encoding"
 msgstr ""
 
 #: ../extensions/error-viewer/sgml-validator.c:373
+#, c-format
 msgid "Unknown error while converting to UTF-8"
 msgstr ""
 
@@ -444,11 +476,11 @@ msgid ""
 "No valid doctype specified."
 msgstr ""
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:356
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
 msgid "Enabled"
 msgstr "Activat"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
 #: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "Descripcion"
@@ -477,16 +509,16 @@ msgstr ""
 msgid "Help about extensions"
 msgstr ""
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:88
 msgid "Install User _Script"
 msgstr ""
 
 #. shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:90
 msgid "Install Greasemonkey script"
 msgstr ""
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:354
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:315
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr ""
@@ -883,7 +915,7 @@ msgstr ""
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr ""
 
-#: ../extensions/rss/ephy-rss-extension.c:382
+#: ../extensions/rss/ephy-rss-extension.c:381
 msgid "Subscribe to site's news feed"
 msgstr ""
 
@@ -957,33 +989,45 @@ msgstr ""
 msgid "Show or hide the sidebar"
 msgstr ""
 
+#: ../extensions/sidebar/ephy-sidebar-extension.c:323
+msgid "Do you really want to remove this sidebar?"
+msgstr ""
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:327
+msgid "There is no way to recover this sidebar after removal."
+msgstr ""
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:329
+msgid "Remove Sidebar"
+msgstr ""
+
 #. Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:408
+#: ../extensions/sidebar/ephy-sidebar-extension.c:476
 #, c-format
 msgid "The sidebar already contains “%s”"
 msgstr ""
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:412
+#: ../extensions/sidebar/ephy-sidebar-extension.c:480
 msgid ""
 "To use this sidebar, select it from the list of available sidebar pages."
 msgstr ""
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:415
-#: ../extensions/sidebar/ephy-sidebar-extension.c:441
+#: ../extensions/sidebar/ephy-sidebar-extension.c:483
+#: ../extensions/sidebar/ephy-sidebar-extension.c:509
 msgid "Add Sidebar"
 msgstr ""
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:435
+#: ../extensions/sidebar/ephy-sidebar-extension.c:503
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr ""
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:439
+#: ../extensions/sidebar/ephy-sidebar-extension.c:507
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr ""
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:445
+#: ../extensions/sidebar/ephy-sidebar-extension.c:513
 msgid "_Add Sidebar"
 msgstr ""
 
@@ -1177,3 +1221,9 @@ msgstr ""
 msgid "Tab States"
 msgstr ""
 
+#~ msgid ""
+#~ "Error:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Error :\n"
+#~ "%s"
