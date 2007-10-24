@@ -21,9 +21,9 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-04-26 00:24+0200\n"
-"PO-Revision-Date: 2007-04-23 18:35+0200\n"
-"Last-Translator: Robert-André Mauchin <zebob.m@gmail.com>\n"
+"POT-Creation-Date: 2007-10-24 20:36+0200\n"
+"PO-Revision-Date: 2007-10-24 20:45+0200\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -87,7 +87,7 @@ msgid "_Images"
 msgstr "_Images"
 
 #: ../extensions/actions/action-properties.glade.h:11
-#: ../extensions/epilicious/epilicious-config.glade.h:5
+#: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Name:"
 msgstr "_Nom :"
 
@@ -159,7 +159,7 @@ msgstr ""
 "veuillez signaler les problèmes éventuels à Bugzilla et non pas à l'auteur "
 "d'origine (G).\n"
 
-#: ../extensions/adblock/adblock-ui.c:496
+#: ../extensions/adblock/adblock-ui.c:497
 msgid "Pattern"
 msgstr "Motif"
 
@@ -176,7 +176,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>Mise à jour des règles depuis le site original</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:244
+#: ../extensions/adblock/ephy-adblock-extension.c:243
 msgid "Adblock editor"
 msgstr "Éditeur Adblock"
 
@@ -196,11 +196,11 @@ msgstr "Filterset.G"
 msgid "Whitelist"
 msgstr "Liste blanche"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:245
+#: ../extensions/adblock/ephy-adblock-extension.c:244
 msgid "Edit Adblock"
 msgstr "Éditer Adblock"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:312
+#: ../extensions/adblock/ephy-adblock-extension.c:311
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -253,41 +253,42 @@ msgid "Action for tagged bookmarks:"
 msgstr "Action pour les signets étiquetés :"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:2
-#: ../extensions/epilicious/epilicious.py.in:212
 msgid "Epilicious Configuration"
 msgstr "Configuration d'Epilicious"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:3
+msgid "_Backend:"
+msgstr "M_oteur :"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:4
 msgid "_Exclude"
 msgstr "_Exclure"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:4
+#: ../extensions/epilicious/epilicious-config.glade.h:5
 msgid "_Include"
 msgstr "_Inclure"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:6
+#: ../extensions/epilicious/epilicious-config.glade.h:7
 msgid "_Password:"
 msgstr "_Mot de passe :"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:7
+#: ../extensions/epilicious/epilicious-config.glade.h:8
 msgid "_Tag:"
-msgstr "_Étiquette :"
+msgstr "É_tiquette :"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:1
-msgid "<b>Synchronizing with del.icio.us</b>"
-msgstr "<b>Synchronisation avec del.icio.us</b>"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:2
 msgid "Adding new bookmarks and synching topics"
 msgstr "Ajout de nouveaux signets et synchronisation des sujets"
 
-#: ../extensions/epilicious/epilicious-progress.glade.h:3
+#: ../extensions/epilicious/epilicious-progress.glade.h:2
 msgid "Removing deleted bookmarks"
 msgstr "Suppression de signets supprimés"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:4
-msgid "Retrieving bookmarks from del.icio.us"
-msgstr "Récupération des signets à partir de del.icio.us"
+#: ../extensions/epilicious/progress.py:41
+#, no-c-format, python-format
+msgid "Retrieving bookmarks from %s"
+msgstr "Récupération des signets depuis %s"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:5
 msgid "Retrieving bookmarks from epiphany"
@@ -301,13 +302,18 @@ msgstr "Récupération du point de synchronisation précédent"
 msgid "Saving new synch point"
 msgstr "Enregistrement du nouveau point de synchronisation"
 
-#: ../extensions/epilicious/epilicious-progress.glade.h:8
+#: ../extensions/epilicious/epilicious-progress.glade.h:9
+#: ../extensions/epilicious/progress.py:39
+#, no-c-format, python-format
+msgid "Synchronizing with %s"
+msgstr "Synchronisation avec %s"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:10
 msgid "Synchronizing..."
 msgstr "Synchronisation..."
 
-#. # Epiphany integration ##
-#: ../extensions/epilicious/epilicious.py.in:207
-#: ../extensions/epilicious/epilicious.py.in:210
+#: ../extensions/epilicious/epilicious.py.in:202
+#: ../extensions/epilicious/epilicious.py.in:220
 msgid "Epilicious Synchronize"
 msgstr "Synchroniser avec Epilicious"
 
@@ -335,27 +341,35 @@ msgstr "Sujet partagé"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:5
 msgid ""
-"The del.icio.us password that epilicious will use for synchronizing "
-"bookmarks."
+"The backend that epilicious will use for synchronizing bookmarks. Allowed "
+"values: 'del.icio.us', 'ma.gnolia'"
 msgstr ""
-"Le mot de passe del.icio.us qui sera utilisé par Epilicious pour "
-"synchroniser les signets."
+"Le moteur qui sera utilisé par Epilicious pour synchroniser les signets. Les "
+"valeurs possibles sont : « del.icio.us », « ma.gnolia »"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
-msgid ""
-"The del.icio.us username that epilicious will use for synchronizing "
-"bookmarks."
+msgid "The password that epilicious will use for synchronizing bookmarks."
 msgstr ""
-"Le nom d'utilisateur del.icio.us qui sera utilisé par Epilicious pour "
-"synchroniser les signets."
+"Le mot de passe qui sera utilisé par Epilicious pour synchroniser les "
+"signets."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:7
-msgid "del.icio.us password"
-msgstr "Mot de passe del.icio.us"
+msgid "The username that epilicious will use for synchronizing bookmarks."
+msgstr ""
+"Le nom d'utilisateur qui sera utilisé par Epilicious pour synchroniser les "
+"signets."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:8
-msgid "del.icio.us username"
-msgstr "Nom d'utilisateur del.icio.us"
+msgid "epilicious backend"
+msgstr "moteur d'Epilicious"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:9
+msgid "password"
+msgstr "mot de passe"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:10
+msgid "username"
+msgstr "nom d'utilisateur"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _HTML"
@@ -392,23 +406,33 @@ msgstr "_Effacer"
 msgid "Error Viewer"
 msgstr "Visionneur d'erreurs"
 
-#. Don't bother looking for source lines -- they're not there
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:96
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:103
 #, c-format
 msgid ""
-"Error:\n"
+"%s error in %s on line %d and column %d:\n"
 "%s"
 msgstr ""
-"Erreur :\n"
+"Erreur %s dans %s à la ligne %d et la colonne %d :\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:126
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:109
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:140
 #, c-format
 msgid ""
-"Javascript error in %s on line %d:\n"
+"%s error in %s:\n"
 "%s"
 msgstr ""
-"Erreur JavaScript dans %s à la ligne %d :\n"
+"Erreur %s dans %s :\n"
+"%s"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:123
+#, c-format
+msgid ""
+"%s error in %s on line %d:\n"
+"%s"
+msgstr ""
+"Erreur %s dans %s à la ligne %d :\n"
 "%s"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
@@ -504,11 +528,11 @@ msgstr ""
 "Erreur HTML dans %s :\n"
 "Aucun doctype valide indiqué."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:356
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
 msgid "Enabled"
 msgstr "Activé"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
 #: ../extensions/rss/rss-ui.c:599
 msgid "Description"
 msgstr "Description"
@@ -537,16 +561,16 @@ msgstr "_Extensions"
 msgid "Help about extensions"
 msgstr "Aide au sujet des extensions"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:88
 msgid "Install User _Script"
 msgstr "Installer un _script utilisateur"
 
 #. shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:90
 msgid "Install Greasemonkey script"
 msgstr "Installer un script Greasemonkey"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:354
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:315
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "Le script utilisateur à « %s » a été installé"
@@ -945,7 +969,7 @@ msgstr "_S'abonner à ce flux"
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Abonnez-vous à ce flux dans votre lecteur de nouvelles préféré"
 
-#: ../extensions/rss/ephy-rss-extension.c:382
+#: ../extensions/rss/ephy-rss-extension.c:381
 msgid "Subscribe to site's news feed"
 msgstr "S'abonner au flux de ce site"
 
@@ -1019,35 +1043,48 @@ msgstr "_Panneau latéral"
 msgid "Show or hide the sidebar"
 msgstr "Affiche ou masque le panneau latéral"
 
+#: ../extensions/sidebar/ephy-sidebar-extension.c:323
+msgid "Do you really want to remove this sidebar?"
+msgstr "Voulez-vous réellement supprimer ce panneau latéral ?"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:327
+msgid "There is no way to recover this sidebar after removal."
+msgstr ""
+"Il est impossible de récupérer un panneau latéral après l'avoir supprimé."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:329
+msgid "Remove Sidebar"
+msgstr "Supprimer le panneau latéral"
+
 #. Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:408
+#: ../extensions/sidebar/ephy-sidebar-extension.c:476
 #, c-format
 msgid "The sidebar already contains “%s”"
 msgstr "Le panneau latéral contient déjà « %s »"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:412
+#: ../extensions/sidebar/ephy-sidebar-extension.c:480
 msgid ""
 "To use this sidebar, select it from the list of available sidebar pages."
 msgstr ""
 "Pour utiliser ce panneau latéral, sélectionnez-le depuis la liste des pages "
 "de panneaux latéraux disponibles."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:415
-#: ../extensions/sidebar/ephy-sidebar-extension.c:441
+#: ../extensions/sidebar/ephy-sidebar-extension.c:483
+#: ../extensions/sidebar/ephy-sidebar-extension.c:509
 msgid "Add Sidebar"
 msgstr "Ajouter un panneau latéral"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:435
+#: ../extensions/sidebar/ephy-sidebar-extension.c:503
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr "Ajouter « %s » au panneau latéral ?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:439
+#: ../extensions/sidebar/ephy-sidebar-extension.c:507
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr "La source du nouveau panneau latéral est « %s »."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:445
+#: ../extensions/sidebar/ephy-sidebar-extension.c:513
 msgid "_Add Sidebar"
 msgstr "A_jouter un panneau latéral"
 
@@ -1250,3 +1287,10 @@ msgstr "Indique un nouveau contenu dans les onglets en arrière-plan"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "États des onglets"
+
+#~ msgid ""
+#~ "Error:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Erreur :\n"
+#~ "%s"
