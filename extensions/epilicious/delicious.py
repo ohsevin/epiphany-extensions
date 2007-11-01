@@ -53,11 +53,14 @@ def _handle_throttle(function): # {{{1
     # silly I know!
 
     def decorate(*args, **kwargs):
+        attempt = 0
         while 1:
             try:
                 time.sleep(1)
                 return function(*args, **kwargs)
             except urllib2.HTTPError, e:
+                attempt += 1
+                if attempt > 3: raise e # fed up trying
                 if e.code == 503:
                     print '503'
                     time.sleep(30)
