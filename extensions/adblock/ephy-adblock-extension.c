@@ -240,7 +240,7 @@ ephy_adblock_impl_edit_rule (EphyAdBlock *blocker,
 
 
 static const GtkActionEntry edit_entries[] = {
-	{ "EphyAdblockExtensionEdit", NULL, N_("Adblock editor"), NULL,
+	{ "EphyAdblockExtensionEdit", NULL, N_("Adblock Editor"), NULL,
 	  N_("Edit Adblock"),
 	  G_CALLBACK (ephy_adblock_extension_edit_cb) }
 };
