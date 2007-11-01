@@ -169,6 +169,8 @@ PYTHON_ALL_EXTENSIONS="python-console sample-python favicon cc-license-viewer ep
 PYTHON_USEFUL_EXTENSIONS="python-console favicon cc-license-viewer"
 PYTHON_DEFAULT_EXTENSIONS="python-console favicon cc-license-viewer"
 
+MOZILLA_ALL_EXTENSIONS="error-viewer greasemonkey java-console livehttpheaders page-info sample-mozilla select-stylesheet smart-bookmarks"
+
 DIST_EXTENSIONS="$ALL_EXTENSIONS $PYTHON_ALL_EXTENSIONS"
 
 if test $EPIPHANY_HAS_PYTHON; then
@@ -215,15 +217,24 @@ for ext in $extensions; do
  else
    AC_MSG_ERROR([the specified extension $ext does not exist])
  fi
- 
+
  if echo "$PYTHON_ALL_EXTENSIONS" | egrep "(^| )$ext(\$| )" > /dev/null; then
    need_python=yes
  fi
 done
 IFS="$ephyext_save_ifs"
 
+if test "$EPIPHANY_ENGINE" != "mozilla"; then
+ extensions=$EXTENSIONS; EXTENSIONS=
+ for ext in $extensions; do
+  if echo "$MOZILLA_ALL_EXTENSIONS" | egrep -v "(^| )$ext(\$| )" > /dev/null; then
+    EXTENSIONS="$EXTENSIONS $ext"
+  fi
+ done
+fi
+
 AC_SUBST([DIST_EXTENSIONS])
-AC_SUBST([BUILD_EXTENSIONS],[`echo $EXTENSIONS | tr ' ' '\n' | sort | uniq | tr '\n' ' '`])
+AC_SUBST([BUILD_EXTENSIONS],[$(echo $EXTENSIONS | tr ' ' '\n' | sort | uniq | tr '\n' ' ')])
 
 AC_MSG_RESULT([$EXTENSIONS])
 
@@ -249,9 +260,9 @@ if echo "$EXTENSIONS" | egrep '(^| )(adblock|greasemonkey)($| )' > /dev/null; th
 		AC_ERROR([pcre development files not found])
 	fi
 
-	PCRE_CFLAGS="`$PCRE_CONFIG --cflags`"
+	PCRE_CFLAGS="$($PCRE_CONFIG --cflags)"
 	AC_SUBST([PCRE_CFLAGS])
-	PCRE_LIBS="`$PCRE_CONFIG --libs`"
+	PCRE_LIBS="$($PCRE_CONFIG --libs)"
 	AC_SUBST([PCRE_LIBS])
 
 	pcre_saved_CFLAGS=$CFLAGS
@@ -300,6 +311,8 @@ fi
 # Mozilla
 # *******
 
+if test "$EPIPHANY_ENGINE" = "mozilla"; then
+
 GECKO_INIT([MOZILLA])
 
 AC_SUBST([MOZILLA])
@@ -317,6 +330,8 @@ esac
 PKG_CHECK_MODULES([MOZILLA_COMPONENT],[${gecko_cv_gecko}-xpcom >= $min_version $gecko_cv_extra_pkg_dependencies])
 AC_SUBST([MOZILLA_COMPONENT_CFLAGS])
 AC_SUBST([MOZILLA_COMPONENT_LIBS])
+
+fi # test "$EPIPHANY_ENGINE" != "webkit"
 
 # *****************
 # Add warning flags
@@ -342,13 +357,6 @@ if test "x${datadir}" = 'x${prefix}/share'; then
 else
   AC_DEFINE_UNQUOTED([EXTENSIONS_DATA_DIR], ["${datadir}/${PACKAGE}-${EPIPHANY_EXTENSIONS_MAJOR}"], [Directory of data files])
 fi
-
-# *******************************
-# icon dir
-# *******************************
-
-EPIPHANY_ICONDIR="`$PKG_CONFIG --variable=icondir epiphany-$EPIPHANY_API_VERSION`"
-AC_SUBST(EPIPHANY_ICONDIR)
 
 # ****************************
 # SVN for ChangeLog generation
@@ -416,7 +424,7 @@ if test "$EPIPHANY_HAS_PYTHON" = "1"; then enable_python="yes"; else enable_pyth
 
 echo "
 Epiphany Extensions was configured with the following options:
-        
+
 	Source code location       : $srcdir
 	Compiler                   : $CC
 	Prefix                     : $prefix
@@ -427,7 +435,7 @@ Epiphany Extensions was configured with the following options:
 
 	Gecko backend              : $gecko_cv_gecko version $gecko_cv_gecko_version
 
-	OpenSP			   : $enable_opensp	
+	OpenSP			   : $enable_opensp
 
 	Extensions		   : $EXTENSIONS
 "

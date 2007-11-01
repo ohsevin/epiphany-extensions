@@ -64,12 +64,12 @@ environment variable.])
 ])
 
 dnl set the EPIPHANY_EXTENSIONS_DIR variable
-EPIPHANY_EXTENSIONS_DIR="`$PKG_CONFIG --variable=extensionsdir epiphany-$_epiphany_api_version`"
+EPIPHANY_EXTENSIONS_DIR="$($PKG_CONFIG --variable=extensionsdir epiphany-$_epiphany_api_version)"
 AC_SUBST([EPIPHANY_EXTENSIONS_DIR])
 
 dnl Look to see if epiphany has python support
 AC_MSG_CHECKING([whether epiphany has python support])
-_epiphany_features="`$PKG_CONFIG --variable=features epiphany-$_epiphany_api_version`"
+_epiphany_features="$($PKG_CONFIG --variable=features epiphany-$_epiphany_api_version)"
 if echo "$_epiphany_features" | egrep '(^| )(python)($| )' > /dev/null; then
     result=yes
     EPIPHANY_HAS_PYTHON=1
@@ -84,5 +84,13 @@ dnl (like the INTLTOOL_XML_RULE does for xml files)
 EPIPHANY_EXTENSION_RULE='%.ephy-extension: %.ephy-extension.in $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*po) ; LC_ALL=C $(INTLTOOL_MERGE) -d -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@'
 
 AC_SUBST(EPIPHANY_EXTENSION_RULE)
+
+dnl Check which engine is being used
+EPIPHANY_ENGINE="$($PKG_CONFIG --variable=engine epiphany-$EPIPHANY_API_VERSION)"
+AC_SUBST(EPIPHANY_ENGINE)
+
+dnl Icon dir
+EPIPHANY_ICONDIR="$($PKG_CONFIG --variable=icondir epiphany-$EPIPHANY_API_VERSION)"
+AC_SUBST(EPIPHANY_ICONDIR)
 
 ])

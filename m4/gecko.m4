@@ -13,7 +13,7 @@
 #
 # You should have received a copy of the GNU General Public License along
 # with this program; if not, write to the Free Software Foundation, Inc.,
-# 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
+# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 
 # GECKO_INIT(VARIABLE,[ACTION-IF-FOUND],[ACTION-IF-NOT-FOUND])
 #
@@ -105,8 +105,6 @@ fi # if gecko_cv_have_gecko
 if test "$gecko_cv_gecko_flavour" = "toolkit"; then
 	AC_DEFINE([HAVE_MOZILLA_TOOLKIT],[1],[Define if mozilla is of the toolkit flavour])
 fi
-
-AM_CONDITIONAL([HAVE_MOZILLA_TOOLKIT],[test "$gecko_cv_gecko_flavour" = "toolkit"])
 
 $1[]=$gecko_cv_gecko
 $1[]_FLAVOUR=$gecko_cv_gecko_flavour
@@ -230,7 +228,6 @@ fi
 
 fi # if gecko_cv_have_gecko
 
-AM_CONDITIONAL([HAVE_GECKO_DEBUG],[test "$gecko_cv_have_debug" = "yes"])
 
 # ***********************
 # Check for gecko version
@@ -311,11 +308,6 @@ fi
 
 fi # if gecko_cv_have_gecko
 
-AM_CONDITIONAL([HAVE_GECKO_1_7],[test "$gecko_cv_gecko_version_int" -ge "1007000"])
-AM_CONDITIONAL([HAVE_GECKO_1_8],[test "$gecko_cv_gecko_version_int" -ge "1008000"])
-AM_CONDITIONAL([HAVE_GECKO_1_8_1],[test "$gecko_cv_gecko_version_int" -ge "1008001"])
-AM_CONDITIONAL([HAVE_GECKO_1_9],[test "$gecko_cv_gecko_version_int" -ge "1009000"])
-
 $1[]_VERSION=$gecko_cv_gecko_version
 $1[]_VERSION_INT=$gecko_cv_gecko_version_int
 
@@ -338,6 +330,26 @@ $1[]_EXTRA_PKG_DEPENDENCIES="$gecko_cv_extra_pkg_dependencies"
 $1[]_EXTRA_LIBS="$gecko_cv_extra_libs"
 $1[]_GLUE_LIBS="$gecko_cv_glue_libs"
 
+])
+
+# GECKO_DEFINES
+#
+# Defines the AM_CONDITIONALS for GECKO_INIT. This is a separate call
+# so that you may call GECKO_INIT conditionally; but note that you must
+# call GECKO_DEFINES _unconditionally_ !
+
+AC_DEFUN([GECKO_DEFINES],
+[
+# Ensure we have an integer variable to compare with
+if test -z "$gecko_cv_gecko_version_int"; then
+	gecko_cv_gecko_version_int=0
+fi
+AM_CONDITIONAL([HAVE_MOZILLA_TOOLKIT],[test "$gecko_cv_have_gecko" = "yes" -a "$gecko_cv_gecko_flavour" = "toolkit"])
+AM_CONDITIONAL([HAVE_GECKO_DEBUG],[test "$gecko_cv_have_gecko" = "yes" -a "$gecko_cv_have_debug" = "yes"])
+AM_CONDITIONAL([HAVE_GECKO_1_7],[test "$gecko_cv_have_gecko" = "yes" -a "$gecko_cv_gecko_version_int" -ge "1007000"])
+AM_CONDITIONAL([HAVE_GECKO_1_8],[test "$gecko_cv_have_gecko" = "yes" -a "$gecko_cv_gecko_version_int" -ge "1008000"])
+AM_CONDITIONAL([HAVE_GECKO_1_8_1],[test "$gecko_cv_have_gecko" = "yes" -a "$gecko_cv_gecko_version_int" -ge "1008001"])
+AM_CONDITIONAL([HAVE_GECKO_1_9],[test "$gecko_cv_have_gecko" = "yes" -a "$gecko_cv_gecko_version_int" -ge "1009000"])
 ])
 
 # ***************************************************************************
