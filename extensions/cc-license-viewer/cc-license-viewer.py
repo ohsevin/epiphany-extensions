@@ -386,8 +386,9 @@ def ui_show(window, tab):
 
 def ui_destroy(window):
 	statusbar = window.get_statusbar()
-	statusbar._cc_eventbox.destroy()
+	eventbox = statusbar._cc_eventbox
 	del statusbar._cc_eventbox
+	statusbar.remove_widget(eventbox)
 
 def show_license(window):
 	statusbar = window.get_statusbar()
