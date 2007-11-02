@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions doc\n"
-"POT-Creation-Date: 2007-04-17 03:16+0100\n"
-"PO-Revision-Date: 2007-05-04 23:39+0100\n"
+"POT-Creation-Date: 2007-11-01 23:52+0000\n"
+"PO-Revision-Date: 2007-11-02 02:05+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -100,7 +100,7 @@ msgid "@@image: 'figures/epi-ext-gestures-view-source-2.png'; md5=b312d3d5327306
 msgstr "@@image: 'figures/epi-ext-gestures-view-source-2.png'; md5=b312d3d53273067c780358698c786ab9"
 
 #: C/epiphany-extensions.xml:31(para)
-msgid "Variuous extensions for Epiphany Web browser."
+msgid "Various extensions for Epiphany Web browser."
 msgstr "Diverse utökningar för webbläsaren Epiphany."
 
 #: C/epiphany-extensions.xml:33(title)
