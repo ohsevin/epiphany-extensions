@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-09-19 13:53+0200\n"
-"PO-Revision-Date: 2007-09-19 13:53+0100\n"
+"POT-Creation-Date: 2007-11-02 02:04+0100\n"
+"PO-Revision-Date: 2007-11-02 02:04+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -124,7 +124,7 @@ msgstr ""
 "Den här versionen har ändrats från dess original. Ändringarna har inte blivit godkända av den ursprunglige upphovsmannen;\n"
 "rikta eventuella problem till Bugzilla och inte till den ursprunglige upphovsmannen (G).\n"
 
-#: ../extensions/adblock/adblock-ui.c:496
+#: ../extensions/adblock/adblock-ui.c:497
 msgid "Pattern"
 msgstr "Mönster"
 
@@ -142,7 +142,7 @@ msgstr "<b>Uppdatera regler från ursprungliga webbplatsen</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
 #: ../extensions/adblock/ephy-adblock-extension.c:243
-msgid "Adblock editor"
+msgid "Adblock Editor"
 msgstr "Adblock-redigerare"
 
 #: ../extensions/adblock/adblock.glade.h:5
@@ -495,16 +495,13 @@ msgid "Extensions"
 msgstr "Utökningar"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
-msgid "_Extensions..."
-msgstr "_Utökningar..."
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "_Extensions"
+msgstr "_Utökningar"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
 msgid "Load and unload extensions"
 msgstr "Läs in och glöm utökningar"
-
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
-msgid "_Extensions"
-msgstr "_Utökningar"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
 msgid "Help about extensions"
@@ -1221,6 +1218,8 @@ msgstr "Indikerar nytt innehåll i bakgrundsflikar"
 msgid "Tab States"
 msgstr "Fliktillstånd"
 
+#~ msgid "_Extensions..."
+#~ msgstr "_Utökningar..."
 #~ msgid ""
 #~ "Error:\n"
 #~ "%s"
