@@ -251,7 +251,6 @@ gesture_performed_cb (EphyGesture *gesture,
 static EphyGesture *
 ensure_gesture (EphyGesturesExtension *extension,
 		EphyWindow *window)
-	        
 {
 	EphyGesture *gesture;
 
@@ -279,15 +278,13 @@ dom_mouse_down_cb (EphyEmbed *embed,
         EphyEmbedEventContext context;
 	guint button;
 	gint handled = FALSE;
-	EphyTab *tab;
 	EphyWindow *window;
 	GtkWidget *toplevel;
 	gboolean ppv_mode;
 
-	tab = ephy_tab_for_embed (embed);
-	g_return_val_if_fail (EPHY_IS_TAB (tab), handled);
-		
-	toplevel = gtk_widget_get_toplevel (GTK_WIDGET (tab));
+	g_return_val_if_fail (EPHY_IS_EMBED (embed), handled);
+
+	toplevel = gtk_widget_get_toplevel (GTK_WIDGET (embed));
 	g_return_val_if_fail (toplevel != NULL, handled);
 
 	/* disable gestures while print preview mode */
@@ -329,14 +326,9 @@ impl_detach_window (EphyExtension *ext,
 static void
 impl_attach_tab (EphyExtension *extension,
 		 EphyWindow *window,
-		 EphyTab *tab)
+		 EphyEmbed *embed)
 {
-	EphyEmbed *embed;
-
 	LOG ("Attach tab");
-
-	embed = ephy_tab_get_embed (tab);
-	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	g_signal_connect (embed, "ge_dom_mouse_down",
 			  G_CALLBACK (dom_mouse_down_cb), extension);
@@ -345,14 +337,9 @@ impl_attach_tab (EphyExtension *extension,
 static void
 impl_detach_tab (EphyExtension *extension,
 		 EphyWindow *window,
-		 EphyTab *tab)
+		 EphyEmbed *embed)
 {
-	EphyEmbed *embed;
-
 	LOG ("Detach tab");
-
-	embed = ephy_tab_get_embed (tab);
-	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	g_signal_handlers_disconnect_by_func
 		(embed, G_CALLBACK (dom_mouse_down_cb), extension);

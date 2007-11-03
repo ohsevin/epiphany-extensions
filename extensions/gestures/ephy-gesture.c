@@ -283,7 +283,7 @@ ephy_gesture_start (EphyGesture *gesture)
 	return TRUE;
 }
 
-static void 
+static void
 ephy_gesture_init (EphyGesture *gesture)
 {
 	EphyGesturePrivate *priv;
@@ -305,7 +305,7 @@ ephy_gesture_finalize (GObject *object)
 {
 	EphyGesture *gesture = EPHY_GESTURE (object);
 	EphyGesturePrivate *priv = gesture->priv;
-	
+
 	LOG ("Finalise [%p]", object);
 
 	if (priv->started)
@@ -381,10 +381,10 @@ ephy_gesture_class_init (EphyGestureClass *klass)
 
 	signals[PERFORMED] =
 		g_signal_new ("gesture-performed",
-			      G_OBJECT_CLASS_TYPE (klass),  
+			      G_OBJECT_CLASS_TYPE (klass),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (EphyGestureClass, performed), 
-			      NULL, NULL, 
+			      G_STRUCT_OFFSET (EphyGestureClass, performed),
+			      NULL, NULL,
 			      g_cclosure_marshal_VOID__STRING,
 			      G_TYPE_NONE,
 			      1,
@@ -472,7 +472,7 @@ ephy_gesture_activate (EphyGesture *gesture,
 		EphyEmbedEvent *event;
 		gint handled = FALSE;
 
-		embed = ephy_window_get_active_embed (window);
+		embed = ephy_window_get_active_tab (window);
 		g_return_if_fail (EPHY_IS_EMBED (embed));
 
 		event = ephy_gesture_get_event (gesture);
@@ -487,9 +487,9 @@ ephy_gesture_activate (EphyGesture *gesture,
 		GtkAction *action;
 
 		manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
-		
+
 		action = gtk_ui_manager_get_action (manager, path);
-		
+
 		if (action == NULL)
 		{
 			g_warning ("Action for path '%s' not found!\n", path);

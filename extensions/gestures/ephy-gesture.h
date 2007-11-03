@@ -41,12 +41,12 @@ typedef struct _EphyGestureClass	EphyGestureClass;
 typedef struct _EphyGesture		EphyGesture;
 typedef struct _EphyGesturePrivate	EphyGesturePrivate;
 
-struct _EphyGestureClass 
+struct _EphyGestureClass
 {
 	GObjectClass parent_class;
 
 	void	(* performed)	(EphyGesture *gesture,
-				 const char *sequence);	
+				 const char *sequence);
 };
 
 struct _EphyGesture
