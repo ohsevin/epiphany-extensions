@@ -77,7 +77,7 @@ enum
 {
 	SIDEBAR_NODE_PROP_URL	= 1,
 	SIDEBAR_NODE_PROP_TITLE,
-	
+
 	/* For State */
 	SIDEBAR_NODE_PROP_VISIBLE,
 	SIDEBAR_NODE_PROP_SELECTED
@@ -102,7 +102,7 @@ static void cmd_view_sidebar	(GtkAction *action,
 
 static const GtkToggleActionEntry toggle_action_entries [] =
 {
-	{ "ViewSidebar", NULL, N_("_Sidebar"), "F9", 
+	{ "ViewSidebar", NULL, N_("_Sidebar"), "F9",
 	  N_("Show or hide the sidebar"), G_CALLBACK (cmd_view_sidebar), FALSE }
 };
 
@@ -160,7 +160,7 @@ ephy_sidebar_extension_register_type (GTypeModule *module)
 	return type;
 }
 
-static void 
+static void
 cmd_view_sidebar (GtkAction *action, EphyWindow *window)
 {
 	GValue value = { 0, };
@@ -213,7 +213,7 @@ window_ppv_mode_notify_cb (EphyWindow *window, GParamSpec   *pspec,
 
 static void
 sidebar_page_changed_cb (GtkWidget* sidebar,
-			 const char * page_id, 
+			 const char * page_id,
 			 WindowData *data)
 {
 	GValue value = { 0, };
@@ -226,7 +226,7 @@ sidebar_page_changed_cb (GtkWidget* sidebar,
 	 *      ephy_sidebar_set_content (data->sidebar, mycontentwidget);
 	 * } else { .... }
 	 */
-	
+
 	ephy_sidebar_embed_set_url (EPHY_SIDEBAR_EMBED (data->embed), page_id);
 	ephy_sidebar_set_content (EPHY_SIDEBAR (data->sidebar),
 				  GTK_WIDGET (data->embed));
@@ -265,14 +265,14 @@ remove_dialog_response_cb (GtkWidget *dialog,
 	EphyNode *removeNode = NULL, *node;
 	const char *url;
 	int i;
-	
+
 	if (response == GTK_RESPONSE_ACCEPT)
 	{
 		for (i = 0 ; i < ephy_node_get_n_children (data->extension->priv->sidebars); i++)
 		{
 			node = ephy_node_get_nth_child (data->extension->priv->sidebars, i);
 			url = ephy_node_get_property_string (node, SIDEBAR_NODE_PROP_URL);
-		
+
 			if (strcmp (data->page_id, url) == 0)
 			{
 				removeNode = node;
@@ -286,9 +286,9 @@ remove_dialog_response_cb (GtkWidget *dialog,
 			g_warning ("Remove requested for Sidebar not in EphyNodeDB");
 			return;
 		}
-	
+
 	}
-	
+
 	gtk_widget_destroy (GTK_WIDGET (dialog));
 }
 
@@ -296,7 +296,7 @@ static void
 free_remove_data (struct RemoveCallbackData *data){
 	g_free (data->page_id);
 	g_free (data);
-}	
+}
 
 
 static void
@@ -308,7 +308,7 @@ sidebar_page_remove_requested_cb (GtkWidget *sidebar,
 	EphySession *session;
 	EphyWindow *window;
 	GtkWidget *dialog;
-	
+
 	session = EPHY_SESSION (ephy_shell_get_session (ephy_shell));
 	window = ephy_session_get_active_window (session);
 
@@ -334,12 +334,12 @@ sidebar_page_remove_requested_cb (GtkWidget *sidebar,
 	gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_ACCEPT);
 
 	gtk_window_group_add_window (GTK_WINDOW (window)->group, GTK_WINDOW (dialog));
-	
+
 	cb_data = g_new (struct RemoveCallbackData, 1);
 	cb_data->page_id = g_strdup(page_id);
 	cb_data->extension = extension;
-	
-	g_signal_connect_data (dialog, "response", 
+
+	g_signal_connect_data (dialog, "response",
 			       G_CALLBACK (remove_dialog_response_cb),
 			       cb_data, (GClosureNotify) free_remove_data,
 			       0);
@@ -348,14 +348,14 @@ sidebar_page_remove_requested_cb (GtkWidget *sidebar,
 			   (GWeakNotify) extension_weak_notify_cb, dialog);
 	g_object_weak_ref (G_OBJECT (dialog),
 			   (GWeakNotify) dialog_weak_notify_cb, extension);
-			   
+
 	gtk_widget_show(GTK_WIDGET (dialog));
 
 }
 
 static void
 node_child_added_cb (EphyNode *node,
-		     EphyNode *child, 
+		     EphyNode *child,
 		     EphySidebar *sidebar)
 {
 	const char * url, *title;
@@ -370,7 +370,7 @@ node_child_added_cb (EphyNode *node,
 
 static void
 node_child_removed_cb (EphyNode *node,
-		       EphyNode *child, 
+		       EphyNode *child,
 		       guint old_index,
 		       EphySidebar *sidebar)
 {
@@ -379,7 +379,7 @@ node_child_removed_cb (EphyNode *node,
 	g_return_if_fail (EPHY_IS_SIDEBAR (sidebar));
 
 	url = ephy_node_get_property_string (child, SIDEBAR_NODE_PROP_URL);
-	
+
 	ephy_sidebar_remove_page (sidebar, url);
 }
 
@@ -400,7 +400,7 @@ free_response_data (struct ResponseCallbackData *data)
 
 static void
 add_dialog_response_cb (GtkDialog *dialog,
-			int response, 
+			int response,
 			struct ResponseCallbackData *data)
 {
 	if (response == GTK_RESPONSE_ACCEPT)
@@ -464,7 +464,7 @@ ephy_sidebar_extension_add_sidebar_cb (EphyEmbedSingle *single,
 	{
 		EphyNode *node = ephy_node_get_nth_child (extension->priv->sidebars, i);
 		const char * node_url = ephy_node_get_property_string (node, SIDEBAR_NODE_PROP_URL);
-		
+
 		if (strcmp (node_url, url) == 0)
 		{
 			dialog = gtk_message_dialog_new
@@ -531,7 +531,7 @@ ephy_sidebar_extension_add_sidebar_cb (EphyEmbedSingle *single,
 	gtk_widget_show (GTK_WIDGET (dialog));
 
 	return TRUE;
-}	
+}
 
 /* work-around for http://bugzilla.gnome.org/show_bug.cgi?id=169116 */
 static void
@@ -558,7 +558,7 @@ impl_attach_window (EphyExtension *ext,
 	gboolean show_sidebar;
 
 	LOG ("EphySidebarExtension attach_window");
-	
+
 	manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
 
 	data = g_new (WindowData, 1);
@@ -620,7 +620,7 @@ impl_attach_window (EphyExtension *ext,
 	data->embed = ephy_sidebar_embed_new (window);
 	g_object_ref_sink (data->embed);
 
-	g_signal_connect (sidebar, "page_changed", 
+	g_signal_connect (sidebar, "page_changed",
 			  G_CALLBACK(sidebar_page_changed_cb), data);
 
 	/* Add the current sidebar pages */
@@ -638,11 +638,11 @@ impl_attach_window (EphyExtension *ext,
 			  G_CALLBACK (sidebar_page_remove_requested_cb), ext);
 	ephy_node_signal_connect_object (extension->priv->sidebars,
 					 EPHY_NODE_CHILD_ADDED,
-					 (EphyNodeCallback)node_child_added_cb, 
+					 (EphyNodeCallback)node_child_added_cb,
 					 G_OBJECT(sidebar));
 	ephy_node_signal_connect_object (extension->priv->sidebars,
 					 EPHY_NODE_CHILD_REMOVED,
-					 (EphyNodeCallback)node_child_removed_cb, 
+					 (EphyNodeCallback)node_child_removed_cb,
 					 G_OBJECT(sidebar));
 
 	action = gtk_action_group_get_action (action_group, "ViewSidebar");
@@ -651,7 +651,7 @@ impl_attach_window (EphyExtension *ext,
 			  action);
 
 	/* Persist page */
-	current_page = ephy_node_get_property_string (extension->priv->state, 
+	current_page = ephy_node_get_property_string (extension->priv->state,
 						      SIDEBAR_NODE_PROP_SELECTED);
 	if (current_page && current_page[0])
 	{
@@ -659,7 +659,7 @@ impl_attach_window (EphyExtension *ext,
 	}
 
 	/* Persist visibility */
-	show_sidebar = ephy_node_get_property_boolean (extension->priv->state, 
+	show_sidebar = ephy_node_get_property_boolean (extension->priv->state,
 						       SIDEBAR_NODE_PROP_VISIBLE);
 	gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (action), show_sidebar);
 }
@@ -698,9 +698,9 @@ impl_detach_window (EphyExtension *ext,
 
 	g_object_ref (notebook);
 	gtk_container_remove (GTK_CONTAINER (data->hpaned), notebook);
-	
+
 	gtk_container_remove (GTK_CONTAINER (parent), data->hpaned);
-	
+
 	gtk_container_add (GTK_CONTAINER (parent), notebook);
 	g_object_unref (notebook);
 
@@ -718,11 +718,11 @@ impl_detach_window (EphyExtension *ext,
 static void
 impl_fixup_tab (EphyExtension *extension,
 		EphyWindow *window,
-		EphyTab *tab)
+		EphyEmbed *embed)
 {
-	fixup (GTK_WIDGET (tab));
+	fixup (GTK_WIDGET (embed));
 }
-		
+
 static void
 ephy_sidebar_extension_init (EphySidebarExtension *extension)
 {
@@ -747,10 +747,10 @@ ephy_sidebar_extension_init (EphySidebarExtension *extension)
 				     extension->priv->xml_file,
 				     (const xmlChar*) EPHY_SIDEBARS_XML_ROOT,
 				     (const xmlChar*) EPHY_SIDEBARS_XML_VERSION);
-	
+
 	if (ephy_node_get_n_children (extension->priv->state_parent))
 	{
-		extension->priv->state = 
+		extension->priv->state =
 			ephy_node_get_nth_child (extension->priv->state_parent, 0);
 	}
 	else
@@ -775,13 +775,13 @@ ephy_sidebar_extension_finalize (GObject *object)
 	LOG ("EphySidebarExtension finalising");
 
 	ephy_node_db_write_to_xml_safe
-		(extension->priv->db, 
+		(extension->priv->db,
 		 (const xmlChar*) extension->priv->xml_file,
 		 (const xmlChar*) EPHY_SIDEBARS_XML_ROOT,
 		 (const xmlChar*) EPHY_SIDEBARS_XML_VERSION,
 		 NULL,
-		 extension->priv->sidebars, NULL, NULL, 
-		 extension->priv->state_parent, NULL, NULL, 
+		 extension->priv->sidebars, NULL, NULL,
+		 extension->priv->state_parent, NULL, NULL,
 		 NULL);
 
 	g_free (extension->priv->xml_file);
