@@ -25,7 +25,6 @@
 #include "ephy-tab-grouper.h"
 #include "ephy-debug.h"
 
-#include <epiphany/ephy-tab.h>
 #include <epiphany/ephy-window.h>
 #include <epiphany/ephy-notebook.h>
 
