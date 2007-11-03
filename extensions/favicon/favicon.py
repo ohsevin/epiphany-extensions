@@ -22,28 +22,26 @@
 import epiphany;
 import gnomevfs;
 
-def net_stop_cb(embed, tab):
-	if tab.get_icon_address() == None:
+def net_stop_cb(embed):
+	if embed.get_property('icon-address') == None or len(embed.get_property('icon-address')) < 1:
 		try:
-			uri = gnomevfs.URI(tab.get_address())
+			uri = gnomevfs.URI(embed.get_property('address'))
 			single = epiphany.ephy_shell_get_default().get_embed_single()
 			backend = single.get_backend_name();
 			if uri.scheme == "http" or (uri.scheme == "https" and backend != "gecko-1.7") :
 				url = uri.scheme + "://" + uri.host_name
 				if uri.host_port != 0:
-					url += ':%d' % uri.host_port;
+					url += ':%d' % uri.host_port
 				url += "/favicon.ico"
-				tab.set_icon_address(url);
+				embed.set_property('icon_address', url)
 		except Exception:
 			pass
 
-def attach_tab(window, tab):
-	embed = tab.get_embed()
-	handler_id = embed.connect("net_stop", net_stop_cb, tab)
-	tab._favicon_details = [ handler_id ]
+def attach_tab(window, embed):
+	handler_id = embed.connect("net_stop", net_stop_cb)
+	embed._favicon_details = [ handler_id ]
 
-def detach_tab(window, tab):
-	[ handler_id ] = tab._favicon_details
-	del tab._favicon_details
-	embed = tab.get_embed()
+def detach_tab(window, embed):
+	[ handler_id ] = embed._favicon_details
+	del embed._favicon_details
 	embed.disconnect(handler_id)
