@@ -10,7 +10,6 @@ epiliciouslib_PYTHON = \
 	__init__.py \
 	backend.py \
 	config.py \
-	delicious.py \
 	magnolia.py \
 	progress.py
 

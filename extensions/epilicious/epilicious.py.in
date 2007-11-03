@@ -106,7 +106,7 @@ class EpiliciousPlugin(object):
     def _CB_Sync(self, action, window):
         # Using gobject.idle_add() together with a generator is much easier than
         # getting threading to work properly. It doesn't make the GUI very
-        # responsive during del.icio.us calls, but it's better than nothing.
+        # responsive during synching, but it's better than nothing.
         sync_gen = self._do_sync()
         gobject.idle_add(sync_gen.next)
 

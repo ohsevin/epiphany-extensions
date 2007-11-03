@@ -32,11 +32,11 @@
       <applyto>/apps/epiphany/extensions/epilicious/backend</applyto>
       <owner>epiphany</owner>
       <type>string</type>
-      <default>del.icio.us</default>
+      <default>ma.gnolia</default>
       <locale name="C">
         <short>epilicious backend</short>
         <long>The backend that epilicious will use for synchronizing
-          bookmarks. Allowed values: 'del.icio.us', 'ma.gnolia'</long>
+          bookmarks. Allowed value: 'ma.gnolia'</long>
       </locale>
     </schema>
 
@@ -48,8 +48,7 @@
       <default>EpiliciousShare</default>
       <locale name="C">
         <short>Shared topic</short>
-        <long>Bookmarks with this topic will be synchronized to
-          del.icio.us.</long>
+        <long>Bookmarks with this topic will be synchronized.</long>
       </locale>
     </schema>
 
@@ -62,9 +61,8 @@
       <locale name="C">
         <short>Exclude topic</short>
         <long>Controls the function of the topic. If this is unset then all
-          bookmarks with the topic will be synched with del.icio.us. If this
-          is set then all bookmarks without the topic will be synched with
-          del.icio.us.</long>
+        bookmarks with the topic will be synched. If this is set then all
+        bookmarks without the topic will be synched.</long>
       </locale>
     </schema>
 

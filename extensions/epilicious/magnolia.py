@@ -27,6 +27,8 @@
 # Given this and the fact that epilicious needs only a small part of the
 # pydelicious functionality I decided to write a custom del.icio.us module for
 # epilicious.
+#
+# This module is tailored for ma.gnolia's del.icio.us-like API.
 
 import urllib
 import urllib2
@@ -40,25 +42,14 @@ else:
     from elementtree.ElementTree import parse as xml_parse
 
 
-def _handle_throttle(function): # {{{1
-    # Decorator to deal with the throttling (503) that might happen when
-    # talking to del.icio.us.
-    # The documentation for the del.icio.us API isn't very clear on this.  They
-    # make it sound as if it's alright to make the request and if you get a 503
-    # back then you have to wait.  This isn't strictly true.  In some cases
-    # you'll receive a 500 (internal error), suggesting that their server has a
-    # bug, and if you push it a bit and only wait after receiving a 503 you run
-    # the chance of getting your account temporarily blocked (999).  So, to be
-    # on the safe side we _always_ wait a second before sending off a request,
-    # silly I know!
+def _handle_http_error(function): # {{{1
 
     def decorate(*args, **kwargs):
-        while 1:
-            try:
-                return function(*args, **kwargs)
-            except urllib2.HTTPError, e:
-                print 'Error'
-                raise e
+        try:
+            return function(*args, **kwargs)
+        except urllib2.HTTPError, e:
+            print 'Error'
+            raise e
 
     # It'd be a shame to lose the docstrings, wouldn't it?
     decorate.__doc__ = function.__doc__
@@ -66,8 +57,7 @@ def _handle_throttle(function): # {{{1
 
 
 class _DeliciousParser(object): # {{{1
-    # Class for parsing the responses from del.icio.us. All methods expect an
-    # ElementTree.
+    # Class for parsing the responses. All methods expect an ElementTree.
 
     def __init__(self):
         pass
@@ -125,7 +115,7 @@ class Magnolia(object): # {{{1
         return getattr(_DeliciousParser(), fname)(xmltree)
 
     def all_bookmarks(self, tag=''):
-        '''Get all bookmarks from del.icio.us.
+        '''Get all bookmarks.
 
         tag: (required) limits the response to bookmarks with that tag
 
@@ -135,20 +125,20 @@ class Magnolia(object): # {{{1
             ]
         '''
         return self.__do_request('posts/all', tag=tag)
-    all_bookmarks = _handle_throttle(all_bookmarks)
+    all_bookmarks = _handle_http_error(all_bookmarks)
 
     def delete_bookmark(self, url):
-        '''Delete bookmark from del.icio.us.
+        '''Delete bookmark.
 
         url: (required) the URL
 
         Returns 1 on success, 0 on failure.
         '''
         return self.__do_request('posts/delete', url=url)
-    delete_bookmark = _handle_throttle(delete_bookmark)
+    delete_bookmark = _handle_http_error(delete_bookmark)
 
     def add_bookmark(self, url, description, notes='', tags='', dt='', replace='yes', shared='yes'):
-        '''Add a bookmark to del.icio.us.
+        '''Add a bookmark.
 
         url: (required) the URL
         description: (required) description of the URL
@@ -164,4 +154,4 @@ class Magnolia(object): # {{{1
         return self.__do_request('posts/add', url=url, \
                 description=description, extended=notes, tags=tags,
                 dt=dt, replace=replace, shared=shared)
-    add_bookmark = _handle_throttle(add_bookmark)
+    add_bookmark = _handle_http_error(add_bookmark)

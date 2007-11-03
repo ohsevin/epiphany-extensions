@@ -24,7 +24,8 @@ from libepilicious.backend import create_backend
 
 
 class DeliciousStore(BaseStore):
-    '''The class representing the storage of Delicious bookmarks.'''
+    '''The class representing the storage of bookmarks on a backend with a
+    del.icio.us-like API.'''
 
     def __init__(self, user, pwd, space_repl, backend):
         '''Constructor.
@@ -40,7 +41,7 @@ class DeliciousStore(BaseStore):
         self.__snap_utd = 0
 
     def get_snapshot(self):
-        '''Calculates a snapshot of the del.icio.us bookmarks.
+        '''Calculates a snapshot of the bookmarks.
 
         @note: L{BaseStore.get_snapshot} documents the format of the return
         value.
@@ -50,7 +51,7 @@ class DeliciousStore(BaseStore):
         all = self.__d.all_bookmarks()
         res = {}
         for p in all:
-            # Delicious prepends "dangerous" links
+            # Delicious prepends "dangerous" links, what about ma.gnolia?
             if p['href'][:33] == 'http://del.icio.us/doc/dangerous#':
                 url = p['href'][33:]
             else:
@@ -67,7 +68,7 @@ class DeliciousStore(BaseStore):
 
         @param url: The URL to delete
         '''
-        # Delicious prepends "dangerous" links
+        # Delicious prepends "dangerous" links, what about ma.gnolia?
         if url[:7] == 'file://':
             url = 'http://del.icio.us/doc/dangerous#' + url
         try:
