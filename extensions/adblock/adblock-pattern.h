@@ -31,9 +31,9 @@ typedef enum
 	PATTERN_DEFAULT_BLACKLIST
 } AdblockPatternType;
 
-/** 
+/**
  * Load patterns of type @type into a hash table:
- * key is textual pattern 
+ * key is textual pattern
  * value is compiled pattern
  */
 void adblock_pattern_load (GHashTable *patterns, AdblockPatternType type);

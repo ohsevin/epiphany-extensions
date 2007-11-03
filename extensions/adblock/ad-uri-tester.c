@@ -135,10 +135,10 @@ ad_uri_tester_reload (AdUriTester *tester)
 {
 	g_hash_table_foreach_remove (tester->priv->blacklist,
 				     ad_uri_tester_true,
-				     NULL);		     
+				     NULL);
 	g_hash_table_foreach_remove (tester->priv->whitelist,
 				     ad_uri_tester_true,
-				     NULL);		     
+				     NULL);
 	load_patterns (tester);
 }
 
@@ -158,7 +158,7 @@ ad_uri_tester_test_uri (AdUriTester *tester,
 	const char *pattern;
 	UriWithLen uri_with_len;
 
-	if (type == AD_URI_CHECK_TYPE_DOCUMENT) 
+	if (type == AD_URI_CHECK_TYPE_DOCUMENT)
 	{
 		return FALSE;
 	}

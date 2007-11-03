@@ -96,7 +96,7 @@ struct _AdblockUIPrivate
 
 	/* The current pattern */
 	GtkEntry *pattern;
-	
+
 	/* Page we want to show first */
 	AdblockPatternType default_type;
 
@@ -196,9 +196,9 @@ enum
 
 static gboolean
 adblock_ui_foreach_save (GtkTreeModel *model,
-              		 GtkTreePath  *path,
-              		 GtkTreeIter  *iter,
-              		 GSList       **patterns)
+			 GtkTreePath  *path,
+			 GtkTreeIter  *iter,
+			 GSList       **patterns)
 {
 	char *pattern;
 
@@ -214,8 +214,8 @@ adblock_ui_save (InfoPage *page)
 {
 	GSList *patterns = NULL;
 
-	gtk_tree_model_foreach (GTK_TREE_MODEL (page->store), 
-				(GtkTreeModelForeachFunc)adblock_ui_foreach_save, 
+	gtk_tree_model_foreach (GTK_TREE_MODEL (page->store),
+				(GtkTreeModelForeachFunc)adblock_ui_foreach_save,
 				&patterns);
 
 	adblock_pattern_save (patterns, page->type);
@@ -225,8 +225,8 @@ adblock_ui_save (InfoPage *page)
 
 static void
 adblock_ui_response_cb (GtkWidget *widget,
-		    	int response,
-		    	AdblockUI *dialog)
+			int response,
+			AdblockUI *dialog)
 {
 	if (response == GTK_RESPONSE_CLOSE)
 	{
@@ -269,13 +269,13 @@ adblock_ui_add_pattern (AdblockUI *dialog)
 }
 
 static void
-adblock_ui_show_license_cb (GtkButton *button, 
-		   	    AdblockUI *dialog)
+adblock_ui_show_license_cb (GtkButton *button,
+			    AdblockUI *dialog)
 {
 	GtkWidget *window;
 
 	const char * const authors[] = {"Graham Pierce", NULL};
-	const char *license = 
+	const char *license =
 		N_("This list is Copyright © its original author(G). It is relicensed under "
 		   "the GPL with permission.\n"
 		   "The original list, Filterset.G, can be found at "
@@ -293,21 +293,21 @@ adblock_ui_show_license_cb (GtkButton *button,
 }
 
 static void
-adblock_ui_pattern_cb (GtkEntry *entry, 
+adblock_ui_pattern_cb (GtkEntry *entry,
 		       AdblockUI *dialog)
 {
 	adblock_ui_add_pattern (dialog);
 }
 
 static void
-adblock_ui_add_cb (GtkButton *button, 
+adblock_ui_add_cb (GtkButton *button,
 		   AdblockUI *dialog)
 {
 	adblock_ui_add_pattern (dialog);
 }
 
 static void
-adblock_ui_suppr_cb (GtkButton *button, 
+adblock_ui_suppr_cb (GtkButton *button,
 		     AdblockUI *dialog)
 {
 	GtkTreeModel *model;
@@ -324,20 +324,20 @@ adblock_ui_suppr_cb (GtkButton *button,
 }
 
 static void
-adblock_ui_load_cb (GtkButton *button, 
+adblock_ui_load_cb (GtkButton *button,
 		    AdblockUI *dialog)
 {
 	adblock_pattern_get_filtersetg_patterns ();
 
-	gtk_list_store_clear (dialog->priv->current_page->store);	
+	gtk_list_store_clear (dialog->priv->current_page->store);
 
 	adblock_ui_populate_store (dialog->priv->current_page, PATTERN_DEFAULT_BLACKLIST);
 }
 
-static void 
+static void
 foreach_key  (const char *key,
-              const char *value,
-              InfoPage   *page)
+	      const char *value,
+	      InfoPage   *page)
 {
 	GtkTreeIter iter;
 
@@ -364,9 +364,9 @@ adblock_ui_populate_store (InfoPage *page, AdblockPatternType type)
 
 static void
 adblock_ui_switch_page (GtkNotebook *notebook,
-               		GtkNotebookPage *page,
-               		guint page_num,
-               		AdblockUI *dialog)
+			GtkNotebookPage *page,
+			guint page_num,
+			AdblockUI *dialog)
 {
 	/* set the new current page */
 	dialog->priv->current_page = dialog->priv->pages [page_num];
@@ -453,7 +453,7 @@ adblock_ui_constructor (GType type,
 		gtk_notebook_set_current_page (
 			priv->notebook,
 			priv->url_allowed ? WHITELIST_PAGE : BLACKLIST_PAGE);
-		/* Be careful, changing page changes selection 
+		/* Be careful, changing page changes selection
 		   and then the rule entry. So, change entry value *after*
 		   page switching */
 		gtk_entry_set_text (priv->pattern, priv->url);
@@ -462,11 +462,11 @@ adblock_ui_constructor (GType type,
 	return object;
 }
 
-static void 
+static void
 adblock_ui_cell_edited_cb (GtkCellRendererText *cell,
-                           gchar               *path_string,
-                           gchar               *new_pattern,
-                           InfoPage            *page)
+			   gchar               *path_string,
+			   gchar               *new_pattern,
+			   InfoPage            *page)
 {
 	GtkTreeModel *model = GTK_TREE_MODEL (page->store);
 	GtkTreePath *path = gtk_tree_path_new_from_string (path_string);
@@ -488,10 +488,10 @@ adblock_ui_set_treeview_commons (InfoPage *page, gboolean editable)
 	if (editable)
 	{
 		g_object_set(renderer, "editable", TRUE, NULL);
-		g_signal_connect(renderer, 
-				 "edited", 
-				 (GCallback) adblock_ui_cell_edited_cb, 
-			   	 (gpointer)page);
+		g_signal_connect(renderer,
+				 "edited",
+				 (GCallback) adblock_ui_cell_edited_cb,
+				 (gpointer)page);
 	}
 	gtk_tree_view_insert_column_with_attributes (page->treeview,
 			COL_PATTERN, _("Pattern"),
@@ -501,7 +501,7 @@ adblock_ui_set_treeview_commons (InfoPage *page, gboolean editable)
 
 	gtk_tree_sortable_set_sort_column_id (
 			GTK_TREE_SORTABLE (page->store),
-			COL_PATTERN, 
+			COL_PATTERN,
 			GTK_SORT_ASCENDING);
 
 	gtk_tree_view_set_model (page->treeview, GTK_TREE_MODEL (page->store));
@@ -530,21 +530,21 @@ adblock_ui_page_construct (InfoPage *page)
 	{
 		case PATTERN_WHITELIST:
 			ephy_dialog_get_controls (edialog,
-					  	  properties[PROP_WHITELIST].id, 
+						  properties[PROP_WHITELIST].id,
 						  &page->treeview,
-					  	  NULL);
+						  NULL);
 			break;
 		case PATTERN_BLACKLIST:
 			ephy_dialog_get_controls (edialog,
-					  	  properties[PROP_BLACKLIST].id, 
+						  properties[PROP_BLACKLIST].id,
 						  &page->treeview,
-					  	  NULL);
+						  NULL);
 			break;
 		case PATTERN_DEFAULT_BLACKLIST:
 			ephy_dialog_get_controls (edialog,
-					  	  properties[PROP_DEFAULTLIST].id, 
+						  properties[PROP_DEFAULTLIST].id,
 						  &page->treeview,
-					  	  NULL);
+						  NULL);
 			break;
 		default:
 			g_return_if_reached ();
@@ -571,20 +571,20 @@ static void
 adblock_ui_init (AdblockUI *dialog)
 {
 	LOG ("AdblockUI initialising");
-	
+
 	dialog->priv = ADBLOCK_UI_GET_PRIVATE (dialog);
 
-	dialog->priv->pages[WHITELIST_PAGE] = 
+	dialog->priv->pages[WHITELIST_PAGE] =
 		adblock_ui_page_new (dialog, PATTERN_WHITELIST);
-	dialog->priv->pages[BLACKLIST_PAGE] = 
+	dialog->priv->pages[BLACKLIST_PAGE] =
 		adblock_ui_page_new (dialog, PATTERN_BLACKLIST);
-	dialog->priv->pages[DEFAULT_BLACKLIST_PAGE] = 
+	dialog->priv->pages[DEFAULT_BLACKLIST_PAGE] =
 		adblock_ui_page_new ( dialog, PATTERN_DEFAULT_BLACKLIST);
 
 	/* Default page */
 	dialog->priv->current_page = dialog->priv->pages[WHITELIST_PAGE];
 
-	/* Init attributes */	
+	/* Init attributes */
 	dialog->priv->url = NULL;
 }
 
@@ -666,10 +666,10 @@ adblock_ui_class_init (AdblockUIClass *klass)
 		object_class,
 		PROP_URL_ALLOWED,
 		g_param_spec_boolean ("url_allowed",
-			 	      "URL Allowed",
+				      "URL Allowed",
 				      "Whether url is to be allowed",
 				       TRUE,
-				       G_PARAM_READWRITE | 
+				       G_PARAM_READWRITE |
 				       G_PARAM_CONSTRUCT_ONLY));
 
 	g_type_class_add_private (object_class, sizeof (AdblockUIPrivate));

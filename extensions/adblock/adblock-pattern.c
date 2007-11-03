@@ -32,7 +32,7 @@
 #include <libgnomevfs/gnome-vfs-utils.h>
 
 #define DEFAULT_BLACKLIST_FILENAME	"adblock-patterns"
-#define	BLACKLIST_FILENAME		"blacklist"
+#define BLACKLIST_FILENAME		"blacklist"
 #define WHITELIST_FILENAME		"whitelist"
 
 typedef enum
@@ -45,7 +45,7 @@ void adblock_pattern_save (GSList *patterns, AdblockPatternType type);
 
 static void
 adblock_pattern_load_from_file (GHashTable *patterns,
-		                const char *filename)
+				const char *filename)
 {
 	char *contents;
 	char **lines;
@@ -93,7 +93,6 @@ adblock_pattern_load_from_file (GHashTable *patterns,
 
 static char *
 adblock_pattern_filename (AdblockPatternType type, OpType op)
-	       
 {
 	char *filename = NULL;
 
@@ -101,19 +100,19 @@ adblock_pattern_filename (AdblockPatternType type, OpType op)
 	{
 		case PATTERN_BLACKLIST:
 			filename = g_build_filename (ephy_dot_dir (), "extensions", "data",
-				     		     "adblock", BLACKLIST_FILENAME,
-				     		     NULL);
+						     "adblock", BLACKLIST_FILENAME,
+						     NULL);
 			break;
 		case PATTERN_WHITELIST:
 			filename = g_build_filename (ephy_dot_dir (), "extensions", "data",
-				     		     "adblock", WHITELIST_FILENAME,
-				     		     NULL);
+						     "adblock", WHITELIST_FILENAME,
+						     NULL);
 			break;
 		case PATTERN_DEFAULT_BLACKLIST:
 			/* We first try the user's one */
 			filename = g_build_filename (ephy_dot_dir (), "extensions", "data",
-				     		     "adblock", DEFAULT_BLACKLIST_FILENAME,
-				     		     NULL);
+						     "adblock", DEFAULT_BLACKLIST_FILENAME,
+						     NULL);
 			if (op == OP_LOAD && !g_file_test (filename, G_FILE_TEST_IS_REGULAR))
 			{
 				g_free (filename);
@@ -130,10 +129,10 @@ adblock_pattern_filename (AdblockPatternType type, OpType op)
 
 static gboolean
 adblock_pattern_foreach_save (const char *pattern,
-              		      GIOChannel *channel)
+			      GIOChannel *channel)
 {
 	GIOStatus status;
-        gsize bytes_written;
+	gsize bytes_written;
 
 	status = g_io_channel_write_chars (channel, pattern, -1, &bytes_written, NULL);
 	status = g_io_channel_write_chars (channel, "\n", -1, &bytes_written, NULL);
@@ -171,14 +170,14 @@ adblock_pattern_rewrite_patterns (const char *contents)
 	preg1 = pcre_compile ("^\\[Adblock\\]", PCRE_UTF8, &err, &erroffset, NULL);
 	if (preg1 == NULL)
 	{
-		g_warning ("Could not compile expression ^\\[Adblock]\n" "Error at column %d: %s", 
+		g_warning ("Could not compile expression ^\\[Adblock]\n" "Error at column %d: %s",
 			   erroffset, err);
 		return;
 	}
 	preg2 = pcre_compile ("^\\!Filterset", PCRE_UTF8, &err, &erroffset, NULL);
 	if (preg1 == NULL)
 	{
-		g_warning ("Could not compile expression ^\\!Filterset\n" "Error at column %d: %s", 
+		g_warning ("Could not compile expression ^\\!Filterset\n" "Error at column %d: %s",
 			   erroffset, err);
 		return;
 	}
@@ -221,7 +220,7 @@ adblock_pattern_rewrite_patterns (const char *contents)
 	g_strfreev (lines);
 
 	adblock_pattern_save (patterns, PATTERN_DEFAULT_BLACKLIST);
-	
+
 	g_slist_foreach (patterns, (GFunc)g_free, NULL);
 }
 
@@ -268,10 +267,9 @@ adblock_pattern_get_filterg_date (void)
 
 /* Public */
 
-void 
-adblock_pattern_load (GHashTable *patterns, 
-	       	      AdblockPatternType type)
-	       
+void
+adblock_pattern_load (GHashTable *patterns,
+		      AdblockPatternType type)
 {
 	char *filename = NULL;
 
@@ -287,7 +285,7 @@ adblock_pattern_load (GHashTable *patterns,
 }
 
 
-void 
+void
 adblock_pattern_save (GSList *patterns, AdblockPatternType type)
 {
 	GError *error = NULL;
@@ -297,14 +295,14 @@ adblock_pattern_save (GSList *patterns, AdblockPatternType type)
 
 	GIOChannel *channel = g_io_channel_new_file (filename, "w", NULL);
 
-	g_slist_foreach (patterns, 	
-			 (GFunc)adblock_pattern_foreach_save, 
+	g_slist_foreach (patterns,
+			 (GFunc)adblock_pattern_foreach_save,
 			 channel);
 
 	g_io_channel_shutdown (channel, TRUE, &error);
 }
 
-void 
+void
 adblock_pattern_get_filtersetg_patterns (void)
 {
 	char *date, *patterns;
@@ -314,7 +312,7 @@ adblock_pattern_get_filtersetg_patterns (void)
 	{
 		g_warning ("Could not get the last update");
 		return;
-	}	
+	}
 
 	patterns = adblock_pattern_get_filterg_patterns (date);
 	if (patterns == NULL)
@@ -322,7 +320,7 @@ adblock_pattern_get_filtersetg_patterns (void)
 		g_warning ("Could not get content from last update");
 		return;
 	}
-	
+
 	adblock_pattern_rewrite_patterns (patterns);
 
 	g_free (date);

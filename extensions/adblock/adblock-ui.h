@@ -56,7 +56,7 @@ struct _AdblockUIClass
 	EphyDialogClass parent_class;
 };
 
-GType	 	adblock_ui_get_type	(void);
+GType		adblock_ui_get_type	(void);
 GType		adblock_ui_register_type(GTypeModule *module);
 
 AdblockUI   	*adblock_ui_new		(AdUriTester *tester,
