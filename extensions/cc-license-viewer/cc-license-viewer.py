@@ -340,14 +340,13 @@ pixbuf = pixbuf.scale_simple(icon_size[0], icon_size[1], gtk.gdk.INTERP_BILINEAR
 def _switch_page_cb (notebook, page, page_num, window):
 	ui_show (window, window.get_active_tab())
 	
-def _load_status_cb(tab, data, window):
-	embed = tab.get_embed()
-	if not tab.get_load_status():
+def _load_status_cb(embed, data, window):
+	if not embed.get_property('load-status'):
 		# page is loaded
 		detect_license(window, embed)
 	else:
 		embed._has_cc = False
-	ui_show (window, tab)
+	ui_show (window, embed)
 		
 def _cc_button_pressed(button,event,window):
 	show_license(window)
@@ -370,14 +369,14 @@ def ui_init (window):
 	statusbar._cc_eventbox = eventbox
 	eventbox.set_tooltip_text (_("View Creative Commons license"))
 
-def ui_show(window, tab):
-	if tab != window.get_active_tab(): return
+def ui_show(window, embed):
+	if embed != window.get_active_tab(): return
 
 	statusbar = window.get_statusbar()
 	eventbox = statusbar._cc_eventbox
 	
 	try:
-		if tab.get_embed()._has_cc:
+		if embed._has_cc:
 			eventbox.show()
 		else:
 			eventbox.hide()
@@ -443,12 +442,10 @@ def detach_window(window):
 	del notebook._cc_signal_tab_switch
 	ui_destroy(window)
 
-def attach_tab(window, tab):
-	embed = tab.get_embed()
-	signal_load_status = tab.connect_after ("notify::load-status",_load_status_cb, window)
-	tab._cc_signal_load_status = signal_load_status
+def attach_tab(window, embed):
+	signal_load_status = embed.connect_after ("notify::load-status",_load_status_cb, window)
+	embed._cc_signal_load_status = signal_load_status
 
-def detach_tab(window, tab):
-	embed = tab.get_embed()
-	tab.disconnect(tab._cc_signal_load_status)
-	del tab._cc_signal_load_status
+def detach_tab(window, embed):
+	embed.disconnect(embed._cc_signal_load_status)
+	del embed._cc_signal_load_status
