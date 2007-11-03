@@ -110,7 +110,7 @@ ephy_auto_scroller_motion_cb (GtkWidget *widget,
 	{
 		priv->step_y = (y_dist - 48.0) / 2.0 + 2.0;
 	}
-	else 
+	else
 	{
 		priv->step_y = (y_dist + 48.0) / 2.0 - 2.0;
 	}
@@ -123,7 +123,7 @@ ephy_auto_scroller_motion_cb (GtkWidget *widget,
 	{
 		priv->step_x = (x_dist - 48.0) / 2.0 + 2.0;
 	}
-	else 
+	else
 	{
 		priv->step_x = (x_dist + 48.0) / 2.0 - 2.0;
 	}
@@ -227,7 +227,7 @@ ephy_auto_scroller_timeout_cb (EphyAutoScroller *scroller)
 
 	/* exit if we're not supposed to scroll yet */
 	if (!scroll_step_y_int && !scroll_step_x_int) return TRUE;
-	
+
 	/* get the time before we tell the embed to scroll */
 	gettimeofday (&start_time, NULL);
 
@@ -364,10 +364,10 @@ ephy_auto_scroller_stop (EphyAutoScroller *scroller,
 
 	/* disconnect the signals before ungrabbing! */
 	g_signal_handlers_disconnect_matched (priv->window,
-					      G_SIGNAL_MATCH_DATA, 0, 0, 
+					      G_SIGNAL_MATCH_DATA, 0, 0,
 					      NULL, NULL, scroller);
 	g_signal_handlers_disconnect_matched (gtk_bin_get_child (GTK_BIN (priv->window)),
-					      G_SIGNAL_MATCH_DATA, 0, 0, 
+					      G_SIGNAL_MATCH_DATA, 0, 0,
 					      NULL, NULL, scroller);
 
 	/* ungrab the pointer if it's grabbed */
@@ -402,13 +402,13 @@ EphyAutoScroller *
 ephy_auto_scroller_new (EphyWindow *window)
 {
 	return EPHY_AUTO_SCROLLER (g_object_new (EPHY_TYPE_AUTO_SCROLLER,
-				    		 "window", window,
+						 "window", window,
 						 NULL));
 }
 
 /* class implementation */
 
-static void 
+static void
 ephy_auto_scroller_init (EphyAutoScroller *scroller)
 {
 	EphyAutoScrollerPrivate *priv;
@@ -429,7 +429,7 @@ ephy_auto_scroller_init (EphyAutoScroller *scroller)
 
 	pixbuf = gdk_pixbuf_new_from_xpm_data (autoscroll_xpm);
 	g_return_if_fail (pixbuf != NULL);
-		
+
 	gdk_pixbuf_render_pixmap_and_mask (pixbuf, &pixmap, &mask, 128);
 	g_object_unref (pixbuf);
 	g_return_if_fail (pixmap != NULL && mask != NULL);
@@ -440,7 +440,7 @@ ephy_auto_scroller_init (EphyAutoScroller *scroller)
 
 	gtk_widget_realize (priv->popup);
 	gtk_widget_shape_combine_mask (priv->popup, mask, 0, 0);
-	
+
 	g_object_unref (pixmap);
 	g_object_unref (mask);
 }
@@ -510,7 +510,6 @@ ephy_auto_scroller_class_init (EphyAutoScrollerClass *klass)
 				      "window",
 				      EPHY_TYPE_WINDOW,
 				      G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
-	
 
 	g_type_class_add_private (klass, sizeof (EphyAutoScrollerPrivate));
 }

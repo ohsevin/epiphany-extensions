@@ -37,11 +37,11 @@ register_module (GTypeModule *module)
 
 #ifdef ENABLE_NLS
        /* Initialise the i18n stuff */
-        bindtextdomain (GETTEXT_PACKAGE, EPHY_EXTENSIONS_LOCALEDIR);
-        bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");	
+	bindtextdomain (GETTEXT_PACKAGE, EPHY_EXTENSIONS_LOCALEDIR);
+	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 #endif /* ENABLE_NLS */
 
-        ephy_auto_scroller_register_type (module);
+	ephy_auto_scroller_register_type (module);
 
 	return ephy_auto_scroller_extension_register_type (module);
 }

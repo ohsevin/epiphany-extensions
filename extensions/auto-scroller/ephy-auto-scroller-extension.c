@@ -67,7 +67,7 @@ dom_mouse_down_cb (EphyEmbed *embed,
 
 	button = ephy_embed_event_get_button (event);
 	context = ephy_embed_event_get_context (event);
-	
+
 	if (button != 2 || (context & EPHY_EMBED_CONTEXT_INPUT) ||
             (context & EPHY_EMBED_CONTEXT_LINK))
 	{
@@ -93,13 +93,10 @@ impl_detach_window (EphyExtension *ext,
 static void
 impl_attach_tab (EphyExtension *ext,
 		 EphyWindow *window,
-		 EphyTab *tab)
+		 EphyEmbed *embed)
 {
-	EphyEmbed *embed;
-
 	LOG ("impl_attach_tab");
 
-	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (embed != NULL);
 
 	g_signal_connect_object (embed, "ge-dom-mouse-down",
@@ -109,13 +106,10 @@ impl_attach_tab (EphyExtension *ext,
 static void
 impl_detach_tab (EphyExtension *ext,
 		 EphyWindow *window,
-		 EphyTab *tab)
+		 EphyEmbed *embed)
 {
-	EphyEmbed *embed;
-
 	LOG ("impl_detach_tab");
 
-	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (embed != NULL);
 
 	g_signal_handlers_disconnect_by_func
