@@ -141,7 +141,7 @@ ephy_tab_states_extension_finalize (GObject *object)
 
 static GtkWidget *
 get_real_tab_label (EphyWindow *window,
-		    EphyTab *tab)
+		    EphyEmbed *tab)
 {
 	GtkWidget *hbox, *label, *notebook;
 
@@ -169,12 +169,12 @@ sync_active_tab (EphyWindow *window,
 		 GParamSpec *pspec,
 		 EphyTabStatesExtension *extension)
 {
-	EphyTab *active_tab;
+	EphyEmbed *active_tab;
 	GtkWidget *label;
 
 	active_tab = ephy_window_get_active_tab (window);
 
-	if (ephy_tab_get_load_status (active_tab) == FALSE)
+	if (ephy_embed_get_load_status (active_tab) == FALSE)
 	{
 		/* mark the tab as read */
 		label = get_real_tab_label (window, active_tab);
@@ -186,7 +186,7 @@ sync_active_tab (EphyWindow *window,
 }
 
 static void
-sync_load_status (EphyTab *tab,
+sync_load_status (EphyEmbed *tab,
 		  GParamSpec *pspec,
 		  EphyTabStatesExtension *extension)
 {
@@ -202,7 +202,7 @@ sync_load_status (EphyTab *tab,
 	window = EPHY_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (tab)));
 	g_return_if_fail (window != NULL);
 
-	loading = ephy_tab_get_load_status (tab);
+	loading = ephy_embed_get_load_status (tab);
 
 	if (loading)
 	{
@@ -254,7 +254,7 @@ impl_detach_window (EphyExtension *ext,
 static void
 impl_attach_tab (EphyExtension *ext,
 		 EphyWindow *window,
-		 EphyTab *tab)
+		 EphyEmbed *tab)
 {
 	EphyTabStatesExtension *extension = EPHY_TAB_STATES_EXTENSION (ext);
 
@@ -268,7 +268,7 @@ impl_attach_tab (EphyExtension *ext,
 static void
 impl_detach_tab (EphyExtension *ext,
 		 EphyWindow *window,
-		 EphyTab *tab)
+		 EphyEmbed *tab)
 {
 	EphyTabStatesExtension *extension = EPHY_TAB_STATES_EXTENSION (ext);
 
