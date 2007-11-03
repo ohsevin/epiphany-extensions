@@ -53,7 +53,7 @@ ephy_tab_groups_extension_register_type (GTypeModule *module)
 		(GClassInitFunc) ephy_tab_groups_extension_class_init,
 		NULL,
 		NULL, /* class_data */
-		sizeof (EphyTab),
+		sizeof (EphyTabGroupsExtension),
 		0,	/* n_preallocs */
 		(GInstanceInitFunc) ephy_tab_groups_extension_init
 	};
