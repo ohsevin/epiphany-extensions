@@ -127,17 +127,17 @@ load_scripts (const char *path)
 		{
 			continue;
 		}
-		
+
 		while ((e = readdir (d)) != NULL)
 		{
 			if (g_str_has_suffix (e->d_name, ".user.js"))
 			{
 				file_path = g_build_filename (dirs[dir], e->d_name, NULL);
-				
+
 				script = greasemonkey_script_new (file_path);
 				g_hash_table_replace (scripts,
 						      g_strdup (e->d_name), script);
-				
+
 				g_free (file_path);
 			}
 		}
@@ -219,7 +219,7 @@ ephy_greasemonkey_extension_init (EphyGreasemonkeyExtension *extension)
 
 	path = get_script_dir ();
 	errno = 0;
-	if ((g_mkdir_with_parents (path, 0700) >= 0) || 
+	if ((g_mkdir_with_parents (path, 0700) >= 0) ||
 	    (errno == EEXIST))
 	{
 		extension->priv->scripts = load_scripts (path);
@@ -338,7 +338,7 @@ ephy_greasemonkey_extension_install_cb (GtkAction *action,
 	url = data->last_clicked_url;
 	g_return_if_fail (url != NULL);
 
-	embed = ephy_window_get_active_embed (window);
+	embed = ephy_window_get_active_tab (window);
 	g_return_if_fail (embed != NULL);
 
 	LOG ("Installing script at '%s'", url);
@@ -550,15 +550,10 @@ impl_detach_window (EphyExtension *ext,
 static void
 impl_attach_tab (EphyExtension *ext,
 		 EphyWindow *window,
-		 EphyTab *tab)
+		 EphyEmbed *embed)
 {
-	EphyEmbed *embed;
-
 	LOG ("impl_attach_tab");
 
-	g_return_if_fail (EPHY_IS_TAB (tab));
-
-	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	g_signal_connect (embed, "ge_context_menu",
@@ -570,15 +565,10 @@ impl_attach_tab (EphyExtension *ext,
 static void
 impl_detach_tab (EphyExtension *ext,
 		 EphyWindow *window,
-		 EphyTab *tab)
+		 EphyEmbed *embed)
 {
-	EphyEmbed *embed;
-
 	LOG ("impl_detach_tab");
 
-	g_return_if_fail (EPHY_IS_TAB (tab));
-
-	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	g_signal_handlers_disconnect_by_func
