@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions.HEAD.es\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-09-17 20:38+0100\n"
-"PO-Revision-Date: 2007-09-20 13:16+0200\n"
+"POT-Creation-Date: 2007-11-01 23:56+0000\n"
+"PO-Revision-Date: 2007-11-03 12:56+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -146,7 +146,7 @@ msgstr ""
 "aprobados por el autor original;\n"
 "dirija cualquier problema a Bugzilla y no al autor original (G).\n"
 
-#: ../extensions/adblock/adblock-ui.c:496
+#: ../extensions/adblock/adblock-ui.c:497
 msgid "Pattern"
 msgstr "Patrón"
 
@@ -164,7 +164,7 @@ msgstr "<b>Actualizar reglas desde el sitio original</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
 #: ../extensions/adblock/ephy-adblock-extension.c:243
-msgid "Adblock editor"
+msgid "Adblock Editor"
 msgstr "Editor de Adblock"
 
 #: ../extensions/adblock/adblock.glade.h:5
@@ -530,16 +530,13 @@ msgid "Extensions"
 msgstr "Extensiones"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
-msgid "_Extensions..."
-msgstr "_Extensiones..."
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "_Extensions"
+msgstr "_Extensiones"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
 msgid "Load and unload extensions"
 msgstr "Cargar y descargar extensiones"
-
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
-msgid "_Extensions"
-msgstr "_Extensiones"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
 msgid "Help about extensions"
