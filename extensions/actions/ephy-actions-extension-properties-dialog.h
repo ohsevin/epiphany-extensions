@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright © 2005 Jean-Yves Lefort <jylefort@brutele.be>
  *
  * This program is free software; you can redistribute it and/or modify

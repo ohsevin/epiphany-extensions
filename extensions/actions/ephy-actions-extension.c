@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright © 2005 Jean-Yves Lefort <jylefort@brutele.be>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -100,13 +100,13 @@ static void ephy_actions_extension_properties_dialog_weak_notify_cb
 
 static void
 ephy_actions_extension_attach_tab (EphyExtension *extension,
-		 		   EphyWindow *window,
-		       		   EphyTab *tab);
+				   EphyWindow *window,
+				   EphyEmbed *embed);
 
 static void
 ephy_actions_extension_detach_tab (EphyExtension *extension,
-		 		   EphyWindow *window,
-		 		   EphyTab *tab);
+				   EphyWindow *window,
+				   EphyEmbed *embed);
 
 static const GtkActionEntry edit_entries[] = {
 	{ "EphyActionsExtensionEditActions", NULL, N_("Actio_ns"), NULL,
@@ -155,7 +155,7 @@ ephy_actions_extension_class_init (EphyActionsExtensionClass *class)
 	GObjectClass *object_class = G_OBJECT_CLASS (class);
 
 	parent_class = g_type_class_peek_parent (class);
-  
+
 	g_type_class_add_private (class, sizeof (EphyActionsExtensionPrivate));
 
 	object_class->finalize = ephy_actions_extension_finalize;
@@ -278,7 +278,7 @@ ephy_actions_extension_finalize (GObject *object)
 {
 	EphyActionsExtension *extension = EPHY_ACTIONS_EXTENSION (object);
 	GSList *l;
-	
+
 	if (extension->priv->editor_dialog)
 	{
 		g_object_unref (extension->priv->editor_dialog);
@@ -294,7 +294,7 @@ ephy_actions_extension_finalize (GObject *object)
 	g_slist_foreach (extension->priv->properties_dialogs,
 			 (GFunc) g_object_unref, NULL);
 	g_slist_free (extension->priv->properties_dialogs);
-	
+
 	ephy_actions_extension_dequeue_save_actions (extension);
 	if (extension->priv->dirty)
 	{
@@ -304,7 +304,7 @@ ephy_actions_extension_finalize (GObject *object)
 	ephy_node_unref (extension->priv->actions);
 	g_object_unref (extension->priv->db);
 	g_free (extension->priv->xml_file);
-				 
+
 	parent_class->finalize (object);
 }
 
@@ -325,7 +325,7 @@ static void
 ephy_actions_extension_actions_changed (EphyActionsExtension *extension)
 {
 	extension->priv->dirty = TRUE;
-	
+
 	ephy_actions_extension_dequeue_save_actions (extension);
 	extension->priv->save_timeout_id = g_timeout_add
 		(ACTIONS_SAVE_DELAY,
@@ -370,7 +370,7 @@ ephy_actions_extension_add_action (EphyWindow *window,
 	action_data->apply_to_page = apply_to_page;
 	action_data->apply_to_image = apply_to_image;
 	action_data->context = EPHY_EMBED_CONTEXT_NONE;
-	
+
 	if (callback)
 	{
 		g_signal_connect (ui_action, "activate", callback, window);
@@ -451,7 +451,6 @@ ephy_actions_extension_run_action_on_embed_property (GtkAction *action,
 						     EphyWindow *window,
 						     const char *property_name)
 {
-	EphyTab *tab;
 	EphyEmbedEvent *event;
 	const GValue *value;
 
@@ -459,7 +458,6 @@ ephy_actions_extension_run_action_on_embed_property (GtkAction *action,
 	g_return_if_fail (EPHY_IS_WINDOW (window));
 	g_return_if_fail (property_name != NULL);
 
-	tab = ephy_window_get_active_tab (window);
 	event = ephy_window_get_context_event (window);
 	g_return_if_fail (event != NULL);
 
@@ -473,7 +471,6 @@ ephy_actions_extension_document_popup_cb (GtkAction *action,
 					  EphyWindow *window)
 {
 	EphyEmbedEventContext context;
-	EphyTab *tab;
 	EphyEmbed *embed;
 	char *url;
 	ActionData *action_data;
@@ -485,22 +482,20 @@ ephy_actions_extension_document_popup_cb (GtkAction *action,
 
 	if (context & EPHY_EMBED_CONTEXT_IMAGE)
 	{
-		ephy_actions_extension_run_action_on_embed_property (action, 
+		ephy_actions_extension_run_action_on_embed_property (action,
 				window,
 				"image");
 		return;
 	}
 	if (context & EPHY_EMBED_CONTEXT_LINK)
 	{
-		ephy_actions_extension_run_action_on_embed_property (action, 
+		ephy_actions_extension_run_action_on_embed_property (action,
 				window,
 				"link");
 		return;
 	}
 
-	tab = ephy_window_get_active_tab (window);
-	embed = ephy_tab_get_embed (tab);
-
+	embed = ephy_window_get_active_tab (window);
 	url = ephy_embed_get_location (embed, TRUE);
 	ephy_actions_extension_run_action (action, window, url);
 	g_free (url);
@@ -520,7 +515,7 @@ ephy_actions_extension_update_menus (EphyWindow *window)
 		"/EphyDocumentPopup",
 		"/EphyLinkPopup",
 	};
-    
+
 	g_return_if_fail (EPHY_IS_WINDOW (window));
 
 	data = g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
@@ -740,7 +735,7 @@ EphyNodeDb *
 ephy_actions_extension_get_db (EphyActionsExtension *extension)
 {
 	g_return_val_if_fail (EPHY_IS_ACTIONS_EXTENSION (extension), NULL);
-  
+
 	return extension->priv->db;
 }
 
@@ -748,14 +743,14 @@ EphyNode *
 ephy_actions_extension_get_actions (EphyActionsExtension *extension)
 {
 	g_return_val_if_fail (EPHY_IS_ACTIONS_EXTENSION (extension), NULL);
-  
+
 	return extension->priv->actions;
 }
 
 static gboolean
 ephy_actions_extension_context_menu_cb (EphyEmbed *embed,
-		 			EphyEmbedEvent *event,
-		 			EphyWindow *window)
+					EphyEmbedEvent *event,
+					EphyWindow *window)
 {
 	EphyEmbedEventContext context;
 	GList *actions, *l;
@@ -797,12 +792,9 @@ ephy_actions_extension_context_menu_cb (EphyEmbed *embed,
 
 static void
 ephy_actions_extension_attach_tab (EphyExtension *extension,
-		 		   EphyWindow *window,
-		       		   EphyTab *tab)
+				   EphyWindow *window,
+				   EphyEmbed *embed)
 {
-	EphyEmbed *embed;
-
-	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	g_signal_connect (embed, "ge_context_menu",
@@ -811,12 +803,9 @@ ephy_actions_extension_attach_tab (EphyExtension *extension,
 
 static void
 ephy_actions_extension_detach_tab (EphyExtension *extension,
-		 		   EphyWindow *window,
-		 		   EphyTab *tab)
+				   EphyWindow *window,
+				   EphyEmbed *embed)
 {
-	EphyEmbed *embed;
-
-	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	g_signal_handlers_disconnect_by_func

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright © 2005 Jean-Yves Lefort <jylefort@brutele.be>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -31,13 +31,13 @@ ephy_actions_extension_format_name_for_display (const char *name)
 	for (; *name; name = g_utf8_next_char (name))
 	{
 		gunichar c = g_utf8_get_char (name);
-	  
+
 		if (c != '_')
 		{
 			g_string_append_unichar (stripped, c);
 		}
 	}
-  
+
 	if (g_str_has_suffix (stripped->str, "..."))
 	{
 		g_string_truncate (stripped, stripped->len - 3);

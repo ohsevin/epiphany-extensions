@@ -67,17 +67,17 @@ enum {
 
 static const EphyDialogProperty properties[] = {
 	{ "action_properties",		NULL, PT_NORMAL, 0 },
-  
+
 	{ "name_label",			NULL, PT_NORMAL, 0 },
 	{ "description_label",		NULL, PT_NORMAL, 0 },
 	{ "command_label",		NULL, PT_NORMAL, 0 },
-  
+
 	{ "name_entry",			NULL, PT_NORMAL, 0 },
 	{ "description_entry",		NULL, PT_NORMAL, 0 },
 	{ "command_entry",		NULL, PT_NORMAL, 0 },
 	{ "applies_to_pages_check",	NULL, PT_NORMAL, 0 },
 	{ "applies_to_images_check",	NULL, PT_NORMAL, 0 },
-  
+
 	{ NULL }
 };
 
@@ -242,7 +242,7 @@ ephy_actions_extension_properties_dialog_link
 		g_return_if_fail (object_property != NULL);
 
 		node_property = va_arg (args, guint);
-      
+
 		control = ephy_dialog_get_control (EPHY_DIALOG (dialog),
 						   control_id);
 		g_return_if_fail (control != NULL);
@@ -303,7 +303,7 @@ ephy_actions_extension_properties_dialog_constructor
 		 EPHY_ACTIONS_EXTENSION_ACTION_PROP_APPLIES_TO_IMAGES,
 
 		 NULL);
-				     
+
 	if (dialog->priv->add)
 	{
 		gtk_window_set_title (GTK_WINDOW (dialog->priv->dialog),
@@ -321,11 +321,11 @@ ephy_actions_extension_properties_dialog_constructor
 	}
 
 	g_signal_connect (dialog->priv->dialog, "response",
-  	                  G_CALLBACK (ephy_actions_extension_properties_dialog_response_cb), 
+			  G_CALLBACK (ephy_actions_extension_properties_dialog_response_cb),
 			  dialog);
 
 	g_signal_connect (dialog->priv->name_entry, "changed",
-  	                  G_CALLBACK (ephy_actions_extension_properties_dialog_name_entry_changed_cb), 
+			  G_CALLBACK (ephy_actions_extension_properties_dialog_name_entry_changed_cb),
 			  dialog);
 	return object;
 }
@@ -337,7 +337,7 @@ ephy_actions_extension_properties_dialog_finalize (GObject *object)
 		= EPHY_ACTIONS_EXTENSION_PROPERTIES_DIALOG (object);
 
 	ephy_node_unref (dialog->priv->action);
-  
+
 	parent_class->finalize (object);
 }
 
@@ -355,7 +355,7 @@ ephy_actions_extension_properties_dialog_set_property (GObject *object,
 	case PROP_EXTENSION:
 		dialog->priv->extension = g_value_get_pointer (value);
 		break;
-      
+
 	case PROP_ACTION:
 		dialog->priv->action = g_value_get_pointer (value);
 		if (dialog->priv->action)
@@ -385,7 +385,7 @@ ephy_actions_extension_properties_dialog_get_property (GObject *object,
 		ephy_node_ref (dialog->priv->action);
 		g_value_set_pointer (value, dialog->priv->action);
 		break;
-		
+
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
 		break;
@@ -424,7 +424,7 @@ ephy_actions_extension_properties_dialog_update_title
 	{
 		title = g_strdup (_("Action Properties"));
 	}
-    
+
 	gtk_window_set_title (GTK_WINDOW (dialog->priv->dialog), title);
 	g_free (title);
 }
@@ -450,7 +450,7 @@ ephy_actions_extension_properties_dialog_response_cb
 	if (pdialog->priv->add && response == GTK_RESPONSE_OK)
 	{
 		EphyNode *actions;
-	  
+
 		actions = ephy_actions_extension_get_actions
 			(pdialog->priv->extension);
 

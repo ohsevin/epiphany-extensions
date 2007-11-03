@@ -108,40 +108,40 @@ static void ephy_actions_extension_editor_dialog_remove_selected
 static void ephy_actions_extension_editor_dialog_edit_selected
 	(EphyActionsExtensionEditorDialog *dialog);
 
-static void 
+static void
 ephy_actions_extension_editor_dialog_view_row_activated_cb
 	(GtkTreeView *view,
 	 GtkTreePath *path,
 	 GtkTreeViewColumn *column,
 	 EphyActionsExtensionEditorDialog *dialog);
 
-static gboolean 
+static gboolean
 ephy_actions_extension_editor_dialog_view_popup_menu_cb
 	(GtkWidget *widget, EphyActionsExtensionEditorDialog *dialog);
 
-static gboolean 
+static gboolean
 ephy_actions_extension_editor_dialog_view_button_press_event_cb
 	(GtkWidget *widget,
- 	 GdkEventButton *event,
- 	 EphyActionsExtensionEditorDialog *dialog);
+	 GdkEventButton *event,
+	 EphyActionsExtensionEditorDialog *dialog);
 
-static void 
+static void
 ephy_actions_extension_editor_dialog_add_clicked_cb
 	(GtkButton *button, EphyActionsExtensionEditorDialog *dialog);
 
-static void 
+static void
 ephy_actions_extension_editor_dialog_remove_clicked_cb
 	(GtkButton *button, EphyActionsExtensionEditorDialog *dialog);
 
-static void 
+static void
 ephy_actions_extension_editor_dialog_properties_clicked_cb
 	(GtkButton *button, EphyActionsExtensionEditorDialog *dialog);
 
-static void 
+static void
 ephy_actions_extension_editor_dialog_response_cb
 	(GtkDialog *dialog,
- 	 int response,
- 	 EphyActionsExtensionEditorDialog *pdialog);
+	 int response,
+	 EphyActionsExtensionEditorDialog *pdialog);
 
 GType
 ephy_actions_extension_editor_dialog_register_type (GTypeModule *module)
@@ -250,7 +250,7 @@ ephy_actions_extension_editor_store_set (GtkListStore *store,
 			    COLUMN_NODE, action,
 			    COLUMN_LABEL, markup,
 			    -1);
-      
+
 	g_free (markup);
 }
 
@@ -293,7 +293,7 @@ ephy_actions_extension_editor_store_get_iter (GtkListStore *store,
 			*iter = _iter;
 			return TRUE;
 		}
-		
+
 		valid = gtk_tree_model_iter_next (GTK_TREE_MODEL (store),
 						  &_iter);
 	}
@@ -310,7 +310,7 @@ ephy_actions_extension_editor_store_populate (GtkListStore *store,
 
 	g_return_if_fail (GTK_IS_LIST_STORE (store));
 	g_return_if_fail (EPHY_IS_NODE (actions));
-	
+
 	n_children = ephy_node_get_n_children (actions);
 
 	for (i = 0; i < n_children; i++)
@@ -358,7 +358,7 @@ ephy_actions_extension_editor_dialog_store_child_removed_cb (EphyNode *node,
 							       &iter,
 							       child);
 	g_return_if_fail (status == TRUE);
-	
+
 	gtk_list_store_remove (store, &iter);
 }
 
@@ -388,7 +388,7 @@ ephy_actions_extension_editor_dialog_constructor
 		= ephy_actions_extension_editor_dialog_append_popup_item
 		(dialog, GTK_STOCK_PROPERTIES,
 		 G_CALLBACK(ephy_actions_extension_editor_dialog_edit_selected));
-  
+
 	ephy_dialog_construct (EPHY_DIALOG (dialog), properties,
 			       SHARE_DIR "/glade/actions-editor.glade",
 			       properties[PROP_ACTIONS_EDITOR].id,
@@ -396,7 +396,7 @@ ephy_actions_extension_editor_dialog_constructor
 
 	ephy_dialog_get_controls (
 		EPHY_DIALOG (dialog),
-	  	properties[PROP_ACTIONS_EDITOR].id, &(dialog->priv->dialog),
+		properties[PROP_ACTIONS_EDITOR].id, &(dialog->priv->dialog),
 		properties[PROP_VIEW].id, &(dialog->priv->view),
 		properties[PROP_SELECTION_COUNT_LABEL].id, &(dialog->priv->selection_count_label),
 		properties[PROP_REMOVE_BUTTON].id, &(dialog->priv->remove_button),
@@ -404,25 +404,25 @@ ephy_actions_extension_editor_dialog_constructor
 		properties[PROP_PROPERTIES_BUTTON].id, &(dialog->priv->properties_button),
 		NULL);
 	g_signal_connect (dialog->priv->properties_button, "clicked",
-  	                  G_CALLBACK (ephy_actions_extension_editor_dialog_properties_clicked_cb), 
+	                  G_CALLBACK (ephy_actions_extension_editor_dialog_properties_clicked_cb),
 			  dialog);
 	g_signal_connect (dialog->priv->add_button, "clicked",
-  	                  G_CALLBACK (ephy_actions_extension_editor_dialog_add_clicked_cb), 
+	                  G_CALLBACK (ephy_actions_extension_editor_dialog_add_clicked_cb),
 			  dialog);
 	g_signal_connect (dialog->priv->remove_button, "clicked",
-  	                  G_CALLBACK (ephy_actions_extension_editor_dialog_remove_clicked_cb), 
+	                  G_CALLBACK (ephy_actions_extension_editor_dialog_remove_clicked_cb),
 			  dialog);
 	g_signal_connect (dialog->priv->dialog, "response",
-  	                  G_CALLBACK (ephy_actions_extension_editor_dialog_response_cb), 
+	                  G_CALLBACK (ephy_actions_extension_editor_dialog_response_cb),
 			  dialog);
 	g_signal_connect (dialog->priv->view, "row_activated",
-  	                  G_CALLBACK (ephy_actions_extension_editor_dialog_view_row_activated_cb), 
+	                  G_CALLBACK (ephy_actions_extension_editor_dialog_view_row_activated_cb),
 			  dialog);
 	g_signal_connect (dialog->priv->view, "popup_menu",
-  	                  G_CALLBACK (ephy_actions_extension_editor_dialog_view_popup_menu_cb), 
+	                  G_CALLBACK (ephy_actions_extension_editor_dialog_view_popup_menu_cb),
 			  dialog);
 	g_signal_connect (dialog->priv->view, "button_press_event",
-  	                  G_CALLBACK (ephy_actions_extension_editor_dialog_view_button_press_event_cb), 
+	                  G_CALLBACK (ephy_actions_extension_editor_dialog_view_button_press_event_cb),
 			  dialog);
 
 	store = gtk_list_store_new (N_COLUMNS, G_TYPE_POINTER, G_TYPE_STRING);
@@ -437,10 +437,10 @@ ephy_actions_extension_editor_dialog_constructor
 		 "markup", COLUMN_LABEL, NULL);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (dialog->priv->view),
 				     column);
-  
+
 	gtk_tree_view_set_search_column (GTK_TREE_VIEW (dialog->priv->view),
 					 COLUMN_LABEL);
-  
+
 	selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (dialog->priv->view));
 	gtk_tree_selection_set_mode (selection, GTK_SELECTION_MULTIPLE);
 
@@ -497,7 +497,7 @@ ephy_actions_extension_editor_dialog_finalize (GObject *object)
 		= EPHY_ACTIONS_EXTENSION_EDITOR_DIALOG (object);
 
 	gtk_widget_destroy (dialog->priv->popup_menu);
-  
+
 	parent_class->finalize (object);
 }
 
@@ -614,7 +614,7 @@ ephy_actions_extension_editor_dialog_edit_selected
 		gboolean status;
 		EphyNode *action;
 		EphyActionsExtensionPropertiesDialog *properties_dialog;
-      
+
 		status = gtk_tree_model_get_iter (model, &iter, path);
 		g_return_if_fail (status == TRUE);
 
