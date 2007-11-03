@@ -11,8 +11,8 @@ def attach_window(window):
 def detach_window(window):
 	print "detach_window"
 
-def attach_tab(window, tab):
-	print "attach_tab"
+def attach_tab(window, embed):
+	print "attach_embed"
 
-def detach_tab(window, tab):
-	print "detach_tab"
+def detach_tab(window, embed):
+	print "detach_embed"
