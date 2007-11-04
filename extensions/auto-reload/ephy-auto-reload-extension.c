@@ -74,8 +74,8 @@ static void
 ephy_auto_reload_activate_cb (GtkToggleAction *action, EphyWindow *window);
 
 static gboolean
-ephy_auto_reload_timeout (EphyTab *tab);
-							
+ephy_auto_reload_timeout (EphyEmbed *embed);
+
 static const GtkToggleActionEntry action_entries [] =
 {
 	{ "AutoReload",
@@ -96,153 +96,148 @@ ephy_auto_reload_remove_timeout (TimeoutData *data)
 }
 
 static void
-ephy_auto_reload_create (EphyTab *tab, guint new_timeout)
+ephy_auto_reload_create (EphyEmbed *embed, guint new_timeout)
 {
 	/* We have a new timeout,discard the old one */
-	g_object_set_data (G_OBJECT (tab), TIMEOUT_DATA_KEY, NULL);
-	
+	g_object_set_data (G_OBJECT (embed), TIMEOUT_DATA_KEY, NULL);
+
 	/* Check the new_timeout sanity */
 	new_timeout = (new_timeout < RELOAD_RATE) ? RELOAD_RATE : new_timeout;
-	
-	LOG ("AutoReload reloading tab: %s in %d msecs", ephy_tab_get_title (tab), new_timeout);
-		
+
+	LOG ("AutoReload reloading embed: %s in %d msecs", ephy_embed_get_title (embed), new_timeout);
+
 	/* Create the new one */
 	TimeoutData *timeout = g_new (TimeoutData, 1);
-			
-	g_object_set_data_full (G_OBJECT (tab), TIMEOUT_DATA_KEY, timeout, (GDestroyNotify) ephy_auto_reload_remove_timeout);
-	timeout->source = g_timeout_add (new_timeout, (GSourceFunc) ephy_auto_reload_timeout, tab);
+
+	g_object_set_data_full (G_OBJECT (embed), TIMEOUT_DATA_KEY, timeout, (GDestroyNotify) ephy_auto_reload_remove_timeout);
+	timeout->source = g_timeout_add (new_timeout, (GSourceFunc) ephy_auto_reload_timeout, embed);
 	timeout->timeout = new_timeout;
 }
 
 static gboolean
-ephy_auto_reload_timeout (EphyTab *tab)
-{	
+ephy_auto_reload_timeout (EphyEmbed *embed)
+{
 	guint new_timeout;
-	EphyEmbed *embed;
 	/* See below for these
 	TimeoutData *timeout;
 	guint old_timeout;
 	*/
-	
-	if ( !EPHY_IS_TAB (tab))
-		return FALSE;
-		
-	LOG ("AutoReload tab: %s", ephy_tab_get_title (tab));
-	
-	/* Reload the page */
-	embed = ephy_tab_get_embed (tab);
+
 	g_return_val_if_fail (embed != NULL, FALSE);
+
+	LOG ("AutoReload tab: %s", ephy_embed_get_title (embed));
+
+	/* Reload the page */
 	ephy_embed_reload (embed, TRUE);
-	
+
 	/* Retreive the old timeout value (if we want to do something relative to it
 	timeout = (TimeoutData *) g_object_get_data (G_OBJECT (tab), TIMEOUT_DATA_KEY);
 	old_timeout = timeout->timeout;
 	*/
 	new_timeout = RELOAD_RATE;
-	
-	ephy_auto_reload_create (tab, new_timeout);
-	
+
+	ephy_auto_reload_create (embed, new_timeout);
+
 	return FALSE;
 }
 
 static void
-ephy_auto_reload_activate_cb (GtkToggleAction *action, 
-							EphyWindow *window)
+ephy_auto_reload_activate_cb (GtkToggleAction *action,
+			      EphyWindow *window)
 {
-	EphyTab *tab = ephy_window_get_active_tab (window);
-	
+	EphyEmbed *embed = ephy_window_get_active_tab (window);
+
 	/* Invalidate the current timeout */
-	g_object_set_data (G_OBJECT (tab), TIMEOUT_DATA_KEY, NULL);
-	
+	g_object_set_data (G_OBJECT (embed), TIMEOUT_DATA_KEY, NULL);
+
 	if (gtk_toggle_action_get_active (action))
 	{
 		LOG("Activated action, reloading in %d msecs", RELOAD_RATE);
-		ephy_auto_reload_create (tab, RELOAD_RATE);
+		ephy_auto_reload_create (embed, RELOAD_RATE);
 	}
 }
 
 static void
 update_auto_reload_menu_cb (GtkAction *action,
-							EphyWindow *window)
+			    EphyWindow *window)
 {
-	EphyTab *tab;
+	EphyEmbed *embed;
 	WindowData *data;
 	TimeoutData *timeout;
-	
-	tab = ephy_window_get_active_tab (window);
+
+	embed = ephy_window_get_active_tab (window);
 	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 	g_return_if_fail (data != NULL);
-	
-	timeout = (TimeoutData *) g_object_get_data (G_OBJECT (tab), TIMEOUT_DATA_KEY);
-	
+
+	timeout = (TimeoutData *) g_object_get_data (G_OBJECT (embed), TIMEOUT_DATA_KEY);
+
 	LOG ("Displaying menu item ? %s", (timeout != NULL) ? "yes" : "no");
 	g_signal_handlers_block_by_func (data->action, update_auto_reload_menu_cb, window);
-	
+
 	gtk_toggle_action_set_active (data->action, timeout != NULL);
-	
+
 	g_signal_handlers_block_by_func (data->action, update_auto_reload_menu_cb, window);
 }
-			 
+
 static void
 impl_attach_window (EphyExtension *ext,
-					EphyWindow *window)
+		    EphyWindow *window)
 {
 	GtkUIManager *manager;
 	WindowData *data;
-	
+
 	/* The window data */
 	data = g_new (WindowData, 1);
 	g_object_set_data_full (G_OBJECT (window), WINDOW_DATA_KEY, data, (GDestroyNotify) g_free);
-	
+
 	manager =  GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
 	data->action_group = gtk_action_group_new ("EphyAutoReloadExtensionActions");
 	gtk_action_group_set_translation_domain (data->action_group, GETTEXT_PACKAGE);
 	gtk_action_group_add_toggle_actions (data->action_group, action_entries, G_N_ELEMENTS (action_entries), window);
 	gtk_ui_manager_insert_action_group (manager, data->action_group, -1);
 	g_object_unref (data->action_group);
-	
+
 	data->ui_id = gtk_ui_manager_new_merge_id (manager);
 	gtk_ui_manager_add_ui (manager, data->ui_id, "/EphyNotebookPopup",
-					"AutoReload", "AutoReload",
-					GTK_UI_MANAGER_MENUITEM, FALSE);
+			       "AutoReload", "AutoReload",
+			       GTK_UI_MANAGER_MENUITEM, FALSE);
 	gtk_ui_manager_add_ui (manager, data->ui_id, "/menubar/ViewMenu",
-					"AutoReload", "AutoReload",
-					GTK_UI_MANAGER_MENUITEM, FALSE);
-			       
-    data->action = GTK_TOGGLE_ACTION (gtk_action_group_get_action (data->action_group, "AutoReload"));
-    
-    data->popup = gtk_ui_manager_get_action (manager, "/EphyNotebookPopup");
+			       "AutoReload", "AutoReload",
+			       GTK_UI_MANAGER_MENUITEM, FALSE);
+	data->action = GTK_TOGGLE_ACTION (gtk_action_group_get_action (data->action_group, "AutoReload"));
+
+	data->popup = gtk_ui_manager_get_action (manager, "/EphyNotebookPopup");
 	g_return_if_fail (data->popup != NULL);
 	g_signal_connect (data->popup, "activate",
-					G_CALLBACK (update_auto_reload_menu_cb), window);
-	
+			  G_CALLBACK (update_auto_reload_menu_cb), window);
+
 	data->menu = gtk_ui_manager_get_action (manager, "/menubar/ViewMenu");
 	g_return_if_fail (data->menu != NULL);
 	g_signal_connect (data->menu, "activate",
-					G_CALLBACK (update_auto_reload_menu_cb), window);	
+					G_CALLBACK (update_auto_reload_menu_cb), window);
 }
 
 static void
 impl_detach_window (EphyExtension *ext,
-					EphyWindow *window)
+		    EphyWindow *window)
 {
 	WindowData *data;
 	GtkUIManager *manager;
-	
+
 	manager =  GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
 	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 	g_return_if_fail (data != NULL);
-	
+
 	/* Remove the menu item */
 	gtk_ui_manager_remove_ui (manager, data->ui_id);
 	gtk_ui_manager_remove_action_group (manager, data->action_group);
-	
+
 	/* Remove callbacks */
 	g_signal_handlers_disconnect_by_func
 		(data->popup, G_CALLBACK (update_auto_reload_menu_cb), window);
 	g_signal_handlers_disconnect_by_func
 		(data->menu, G_CALLBACK (update_auto_reload_menu_cb), window);
-		
+
 	/* Destroy data */
 	g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, NULL);
 }
@@ -250,14 +245,14 @@ impl_detach_window (EphyExtension *ext,
 static void
 impl_attach_tab (EphyExtension *ext,
 		 EphyWindow *window,
-		 EphyTab *tab)
+		 EphyEmbed *embed)
 {
 }
 
 static void
 impl_detach_tab (EphyExtension *ext,
 		 EphyWindow *window,
-		 EphyTab *tab)
+		 EphyEmbed *embed)
 {
 }
 
