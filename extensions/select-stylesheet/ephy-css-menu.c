@@ -120,7 +120,7 @@ activate_stylesheet_cb (GtkAction *action,
 	if (menu->priv->updating) return;
 
 	g_return_if_fail (EPHY_IS_EMBED (p->embed));
-	g_return_if_fail (ephy_window_get_active_embed (p->window) == p->embed);
+	g_return_if_fail (ephy_window_get_active_tab (p->window) == p->embed);
 
 	style = g_object_get_data (G_OBJECT (action), STYLESHEET_KEY);
 	g_return_if_fail (style != NULL);
@@ -148,7 +148,7 @@ create_stylesheet_action (EphyCSSMenu *menu,
 			tooltip = g_strdup (_("Render the page using the default style"));
 			break;
 		default:
-			tooltip = g_strdup_printf (_("Render the page using the “%s” style"), 
+			tooltip = g_strdup_printf (_("Render the page using the “%s” style"),
 						   name);
 			break;
 	}
@@ -182,7 +182,7 @@ connect_proxy_cb (GtkActionGroup *action_group,
 	if (GTK_IS_MENU_ITEM (proxy))
 	{
 		GtkLabel *label;
-	
+
 		label = (GtkLabel *) ((GtkBin *) proxy)->child;
 
 		gtk_label_set_use_underline (label, FALSE);
@@ -221,7 +221,7 @@ ephy_css_menu_rebuild (EphyCSSMenu *menu)
 	stylesheets = mozilla_get_stylesheets (p->embed, &current);
 
 	/* Create the new action group */
-	p->item_action_group = 
+	p->item_action_group =
 		gtk_action_group_new ("SelectStylesheetMenuDynamicActions");
 	g_signal_connect (p->item_action_group, "connect-proxy",
 			  G_CALLBACK (connect_proxy_cb), NULL);
@@ -234,7 +234,7 @@ ephy_css_menu_rebuild (EphyCSSMenu *menu)
 	action = gtk_action_group_get_action (p->menu_action_group,
 					      "ECSSMenuAction");
 	gtk_action_set_sensitive (action, stylesheets != NULL);
-	
+
 	for (l = stylesheets, i = 0; l != NULL; l = l->next, i++)
 	{
 		MozillaStyleSheet *style = (MozillaStyleSheet*) l->data;
@@ -253,7 +253,7 @@ ephy_css_menu_rebuild (EphyCSSMenu *menu)
 					    radio_group);
 		radio_group = gtk_radio_action_get_group (GTK_RADIO_ACTION (action));
 
-		gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (action), 
+		gtk_toggle_action_set_active (GTK_TOGGLE_ACTION (action),
 					      style == current);
 	}
 
@@ -274,7 +274,7 @@ ephy_css_menu_set_embed (EphyCSSMenu *menu,
 	if (p->embed != NULL)
 	{
 		g_signal_handlers_disconnect_matched
-			(p->embed, G_SIGNAL_MATCH_DATA, 
+			(p->embed, G_SIGNAL_MATCH_DATA,
 			 0, 0, NULL, NULL, menu);
 		g_object_unref (p->embed);
 	}
@@ -297,7 +297,7 @@ sync_active_tab_cb (EphyWindow *window,
 {
 	EphyEmbed *embed;
 
-	embed = ephy_window_get_active_embed (window);
+	embed = ephy_window_get_active_tab (window);
 	g_return_if_fail (embed != NULL);
 
 	ephy_css_menu_set_embed (menu, embed);
@@ -318,7 +318,7 @@ ephy_css_menu_set_window (EphyCSSMenu *menu, EphyWindow *window)
 	GtkAction *action;
 
 	p->window = window;
-	
+
 	/* Create the Action Group */
 	p->manager = GTK_UI_MANAGER (ephy_window_get_ui_manager (window));
 	p->menu_action_group = gtk_action_group_new ("EphyCSSMenuActions");
@@ -352,7 +352,7 @@ ephy_css_menu_set_window (EphyCSSMenu *menu, EphyWindow *window)
 
 	if (GTK_WIDGET_REALIZED (window))
 	{
-		embed = ephy_window_get_active_embed (window);
+		embed = ephy_window_get_active_tab (window);
 		ephy_css_menu_set_embed (menu, embed);
 		ephy_css_menu_rebuild (menu);
 	}
@@ -364,7 +364,7 @@ ephy_css_menu_finalize (GObject *object)
 	EphyCSSMenu *menu = EPHY_CSS_MENU(object);
 	EphyCSSMenuPrivate *p = menu->priv;
 
-	g_signal_handlers_disconnect_by_func	
+	g_signal_handlers_disconnect_by_func
 		(p->window, G_CALLBACK (sync_active_tab_cb), menu);
 
 	ephy_css_menu_set_embed (menu, NULL);
@@ -400,7 +400,7 @@ ephy_css_menu_finalize (GObject *object)
 	G_OBJECT_CLASS(parent_class)->finalize (object);
 }
 
-static void 
+static void
 ephy_css_menu_init(EphyCSSMenu *menu)
 {
 	menu->priv = EPHY_CSS_MENU_GET_PRIVATE (menu);
@@ -458,7 +458,7 @@ ephy_css_menu_class_init(EphyCSSMenuClass *klass)
 EphyCSSMenu *
 ephy_css_menu_new (EphyWindow *window)
 {
-	return g_object_new (EPHY_TYPE_CSS_MENU, 
+	return g_object_new (EPHY_TYPE_CSS_MENU,
 			     "window", window,
 			     NULL);
 }

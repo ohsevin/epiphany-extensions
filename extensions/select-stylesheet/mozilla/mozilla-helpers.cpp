@@ -110,7 +110,7 @@ GetStylesheets (EphyEmbed *aEmbed,
 	nsCOMPtr<nsIDOMWindow> domWindow;
 	browser->GetContentDOMWindow (getter_AddRefs (domWindow));
 	NS_ENSURE_TRUE (domWindow, NS_ERROR_FAILURE);
-	
+
 	nsCOMPtr<nsIDOMDocument> doc;
 	domWindow->GetDocument (getter_AddRefs (doc));
 
@@ -181,7 +181,7 @@ mozilla_get_stylesheets (EphyEmbed *aEmbed,
 			nsString media;
 			rv = mediaList->GetMediaText (media);
 			if (NS_FAILED (rv)) continue;
-	
+
 			nsCString cMedia;
 			NS_UTF16ToCString (media, NS_CSTRING_ENCODING_UTF8, cMedia);
 

@@ -75,7 +75,7 @@ ephy_select_stylesheet_extension_register_type (GTypeModule *module)
 					    G_TYPE_OBJECT,
 					    "EphySelectStylesheetExtension",
 					    &our_info, 0);
-	
+
 	g_type_module_add_interface (module,
 				     type,
 				     EPHY_TYPE_EXTENSION,
