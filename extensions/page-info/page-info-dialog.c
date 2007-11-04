@@ -76,8 +76,8 @@
 
 /* Forward declarations */
 static void page_info_set_text (PageInfoDialog *dialog,
-		    		const char *prop,
-		    		const char *text);
+				const char *prop,
+				const char *text);
 
 enum {
 	GENERAL_PAGE,
@@ -160,7 +160,7 @@ enum
 	PROP_META_DC_FORMAT,
 	PROP_META_OTHER_LABEL,
 	PROP_META_TREEVIEW,
-	
+
 /*
 	PROP_SECURITY_CERT_TITLE,
 	PROP_SECURITY_CERT_INFO,
@@ -235,7 +235,7 @@ page_info_dialog_get_type (void)
 	return type;
 }
 
-GType 
+GType
 page_info_dialog_register_type (GTypeModule *module)
 {
 	const GTypeInfo our_info =
@@ -288,7 +288,7 @@ setup_page_security (PageInfoDialog *dialog, EmbedPageProperties *props)
 */
 	/* Web Site Identity Verification */
 /*
-	widget = galeon_dialog_get_control (GALEON_DIALOG (dialog), 
+	widget = galeon_dialog_get_control (GALEON_DIALOG (dialog),
 					    PROP_SECURITY_VIEW_CERT_VBOX);
 	if (!props->secret_key_length)
 	{
@@ -359,7 +359,7 @@ setup_page_security (PageInfoDialog *dialog, EmbedPageProperties *props)
 		{
 			msg1 = g_strdup (_("The page you are viewing is not encrypted."));
 		}
-				
+
 
 		msg2 = _("Information sent over the Internet without encryption "
 			 "can be seen by other people while it is in transit.");
@@ -386,7 +386,7 @@ page_info_dialog_set_current_page (PageInfoDialog *dialog, PageInfoDialogPage pa
 {
 	GtkNotebook *notebook;
 	guint        n_pages;
-	
+
 	notebook = GTK_NOTEBOOK(dialog->priv->notebook);
 	n_pages  = gtk_notebook_get_n_pages(notebook);
 
@@ -423,23 +423,23 @@ page_info_set_text (PageInfoDialog *dialog,
 	gtk_label_set_text (GTK_LABEL (widget), text ? text : "");
 }
 
-/* 
-   Asks to a renderer to ellipsize urls 
-   and set the maximum size of the rendered urls 
+/*
+   Asks to a renderer to ellipsize urls
+   and set the maximum size of the rendered urls
 */
 static void
 page_info_set_url_renderer_props (GtkCellRenderer *renderer)
 {
-	g_object_set (G_OBJECT (renderer), 
+	g_object_set (G_OBJECT (renderer),
 		      "ellipsize", PANGO_ELLIPSIZE_MIDDLE, NULL);
-	g_object_set (G_OBJECT (renderer), 
+	g_object_set (G_OBJECT (renderer),
 		      "width-chars", PAGE_INFO_MAX_URL_LENGTH, NULL);
 }
 
 /* Set dnd cursor to the default dnd Gtk one and not the GtktreeView one */
-static void 
-page_info_drag_begin_cb (GtkWidget *widget, 
-		         GdkDragContext *dc, 
+static void
+page_info_drag_begin_cb (GtkWidget *widget,
+		         GdkDragContext *dc,
 		         gpointer user_data)
 {
 	gtk_drag_set_icon_default (dc);
@@ -522,14 +522,14 @@ treeview_info_page_copy_selected (GtkAction *action,
 
 	data = treeview_info_page_get_selected_data (page);
 	if (data == NULL) return;
-		
+
 	gtk_clipboard_set_text (gtk_clipboard_get (GDK_NONE),
 				data, -1);
 	gtk_clipboard_set_text (gtk_clipboard_get (GDK_SELECTION_PRIMARY),
 				data, -1);
 
 	g_free (data);
-}				  
+}
 
 static void
 treeview_info_page_filter (TreeviewInfoPage *page)
@@ -581,7 +581,7 @@ treeview_info_page_button_pressed_cb (GtkTreeView *treeview,
 	/* right-click? */
 	if (event->button != 3)
 	{
-	       return FALSE;
+		return FALSE;
 	}
 
 	/* Get tree path for row that was clicked */
@@ -589,13 +589,13 @@ treeview_info_page_button_pressed_cb (GtkTreeView *treeview,
 					    event->x, event->y,
 					    &path, NULL, NULL, NULL))
 	{
-	       return FALSE;
+		return FALSE;
 	}
 
 	if (!gtk_tree_model_get_iter (model, &iter, path))
 	{
-	       gtk_tree_path_free(path);
-	       return FALSE;
+		gtk_tree_path_free(path);
+		return FALSE;
 	}
 
 	/* Select the row the user clicked on */
@@ -607,11 +607,11 @@ treeview_info_page_button_pressed_cb (GtkTreeView *treeview,
 		gtk_tree_path_free (path);
 	}
 
-        if (page->filter_func)
-        {
+	if (page->filter_func)
+	{
 		page->filter_func (page);
-        }
-       
+	}
+
 	/* now popup the menu */
 	widget = gtk_ui_manager_get_widget (dialog->priv->manager,
 					    page->popup_path);
@@ -632,10 +632,10 @@ treeview_info_page_construct (InfoPage *ipage)
 				      page->n_action_entries,
 				      page);
 
-	g_signal_connect (page->treeview, "button-press-event", 
-			  G_CALLBACK (treeview_info_page_button_pressed_cb), 
+	g_signal_connect (page->treeview, "button-press-event",
+			  G_CALLBACK (treeview_info_page_button_pressed_cb),
 			  page);
-	g_signal_connect_swapped (page->treeview, "popup-menu", 
+	g_signal_connect_swapped (page->treeview, "popup-menu",
 				  G_CALLBACK (treeview_info_page_show_popup),
 				  page);
 }
@@ -650,7 +650,7 @@ treeview_page_info_save_one_selection (const char *source,
 
 	uri = gnome_vfs_uri_new (source);
 	if (uri != NULL)
-	{	
+	{
 		char *file_name;
 
 		file_name = gnome_vfs_uri_extract_short_name (uri);
@@ -745,9 +745,9 @@ treeview_page_info_save_selected_cb (gpointer ptr,
 		parent = NULL;
 
 		fc = ephy_file_chooser_new (_("Select a directory"),
-				            GTK_WIDGET (parent),
-				            GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
-				            NULL, EPHY_FILE_FILTER_NONE);
+					    GTK_WIDGET (parent),
+					    GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
+					    NULL, EPHY_FILE_FILTER_NONE);
 
 		gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (fc),
 						     g_get_home_dir ());
@@ -822,7 +822,7 @@ general_info_page_fill (InfoPage *page)
 		case EMBED_SOURCE_DISK_CACHE:
 			text = _("Disk cache");
 			break;
-		case EMBED_SOURCE_MEMORY_CACHE:	
+		case EMBED_SOURCE_MEMORY_CACHE:
 			text = _("Memory cache");
 			break;
 		case EMBED_SOURCE_UNKNOWN_CACHE:
@@ -834,7 +834,7 @@ general_info_page_fill (InfoPage *page)
 
 	page_info_set_text (dialog, properties[PROP_GENERAL_ENCODING].id, props->encoding);
 
-	if (props->size != -1) 
+	if (props->size != -1)
 	{
 		val = gnome_vfs_format_file_size_for_display (props->size);
 		page_info_set_text (dialog, properties[PROP_GENERAL_SIZE].id, val);
@@ -848,13 +848,13 @@ general_info_page_fill (InfoPage *page)
 	page_info_set_text (dialog, properties[PROP_GENERAL_REFERRING_URL].id,
 			    props->referring_url ? props->referring_url :
 			    _("No referrer"));
-	
+
 	if (props->modification_time)
 	{
 		t = props->modification_time;
 		strftime (date, sizeof (date), date_hack, localtime_r (&t, &tm));
 		val = g_locale_to_utf8 (date, -1, NULL, NULL, NULL);
-		
+
 		page_info_set_text (dialog, properties[PROP_GENERAL_MODIFIED].id, val);
 		g_free (val);
 	}
@@ -939,10 +939,10 @@ mozilla_embed_type_to_string (EmbedPageMediumType type)
 
 	switch (type)
 	{
-		case MEDIUM_IMAGE: 
+		case MEDIUM_IMAGE:
 			s_type = _("Image");
 			break;
-		case MEDIUM_BG_IMAGE: 
+		case MEDIUM_BG_IMAGE:
 			s_type = _("Background image");
 			break;
 		case MEDIUM_EMBED:
@@ -966,20 +966,20 @@ mozilla_embed_type_to_string (EmbedPageMediumType type)
 
 static gboolean
 media_is_medium_blocked (EphyAdBlockManager *manager,
-		         EphyEmbed *embed,
-		         const char *url,
+			 EphyEmbed *embed,
+			 const char *url,
 			 EmbedPageMediumType type)
 {
 	gboolean should_load;
 
 	switch (type)
 	{
-		case MEDIUM_IMAGE: 
+		case MEDIUM_IMAGE:
 		case MEDIUM_ICON:
 			should_load = ephy_adblock_manager_should_load (
-							manager, 
+							manager,
 							embed,
-					 		url, 
+							url,
 							AD_URI_CHECK_TYPE_IMAGE);
 
 			break;
@@ -987,24 +987,24 @@ media_is_medium_blocked (EphyAdBlockManager *manager,
 		case MEDIUM_OBJECT:
 		case MEDIUM_APPLET:
 			should_load = ephy_adblock_manager_should_load (
-							manager, 
+							manager,
 							embed,
-					 		url, 
+							url,
 							AD_URI_CHECK_TYPE_OBJECT);
 
 			break;
 		default:
 			should_load = ephy_adblock_manager_should_load (
-							manager, 
+							manager,
 							embed,
-					 		url, 
+							url,
 							AD_URI_CHECK_TYPE_OTHER);
 	}
 	return should_load;
 }
 
 static void
-media_sync_adblock (EphyAdBlockManager *manager, 
+media_sync_adblock (EphyAdBlockManager *manager,
 		    TreeviewInfoPage *page)
 {
 	PageInfoDialog *dialog = page->page.dialog;
@@ -1026,7 +1026,7 @@ media_sync_adblock (EphyAdBlockManager *manager,
 		should_load = media_is_medium_blocked (manager, embed, url, type);
 
 		gtk_list_store_set (page->store, &iter, COL_MEDIUM_BLOCKED, !should_load, -1);
-		
+
 		g_free (url);
 	}
 }
@@ -1082,8 +1082,8 @@ background_download_completed_cb (EphyEmbedPersist *persist)
 	}
 	g_free (type);
 
-        /* open the "Background Properties" capplet */
-        ephy_file_launch_desktop_file ("background.desktop", user_time);
+	/* open the "Background Properties" capplet */
+	ephy_file_launch_desktop_file ("background.desktop", user_time);
 }
 
 static void
@@ -1143,7 +1143,7 @@ static const GtkActionEntry media_action_entries[] =
 	  NULL,
 	  NULL,
 	  G_CALLBACK (media_set_image_as_background_cb) },
-	{ "SaveAs", 
+	{ "SaveAs",
 	  GTK_STOCK_SAVE_AS,
 	  N_("_Save As..."),
 	  NULL,
@@ -1176,12 +1176,12 @@ page_info_media_box_realize_cb (GtkContainer *box,
 	ephy_embed_load_url (embed, "about:blank");
 }
 
-static gboolean 
+static gboolean
 media_treeview_selection_changed_cb (GtkTreeSelection *selection,
-                                     GtkTreeModel *model,
-                                     GtkTreePath *path,
-                                     gboolean path_currently_selected,
-                                     MediaInfoPage *page)
+				     GtkTreeModel *model,
+				     GtkTreePath *path,
+				     gboolean path_currently_selected,
+				     MediaInfoPage *page)
 {
 	if (path_currently_selected) return TRUE;
 
@@ -1204,14 +1204,14 @@ media_treeview_selection_changed_cb (GtkTreeSelection *selection,
 		if (url != NULL && !media_is_embedded_medium (type))
 		{
 			/* Workaround for bad content type */
-			char *data = 
+			char *data =
 				g_markup_printf_escaped ("data:text/html,"
 							 "<html><body><img src="
-					     		 "%s></body></html>", url);
-							
+							 "%s></body></html>", url);
+
 			/* We ask explicitly to not download anything. */
-			g_object_set_data (G_OBJECT (page->embed), 
-					   "content-handler-deny", 
+			g_object_set_data (G_OBJECT (page->embed),
+					   "content-handler-deny",
 					   GINT_TO_POINTER (TRUE));
 
 			ephy_embed_load_url (page->embed, data);
@@ -1263,11 +1263,11 @@ media_info_page_filter (TreeviewInfoPage *page)
 
 static void
 media_drag_data_get_cb (GtkWidget *widget,
-                        GdkDragContext *context,
-                        GtkSelectionData *selection_data,
-                        guint info,
-                        guint32 time,
-                        MediaInfoPage *page)
+			GdkDragContext *context,
+			GtkSelectionData *selection_data,
+			guint info,
+			guint32 time,
+			MediaInfoPage *page)
 {
 	TreeviewInfoPage *tpage = (TreeviewInfoPage *) page;
 	char *address;
@@ -1284,15 +1284,15 @@ media_drag_data_get_cb (GtkWidget *widget,
 
 static void
 treeview_page_info_blocked_cb (GtkCellRendererToggle *cell_renderer,
-               		       gchar *path,
-               		       TreeviewInfoPage *tpage)
-{	
+			       gchar *path,
+			       TreeviewInfoPage *tpage)
+{
 	GtkTreeIter iter;
 	GtkTreeModel *model;
 
 	model = GTK_TREE_MODEL (tpage->store);
 
-	if (gtk_tree_model_get_iter_from_string (model, &iter, path)) 
+	if (gtk_tree_model_get_iter_from_string (model, &iter, path))
 	{
 		char *url;
 		gboolean state;
@@ -1311,7 +1311,7 @@ treeview_page_info_blocked_cb (GtkCellRendererToggle *cell_renderer,
 		ephy_adblock_manager_edit_rule (adblock_manager, url, state);
 
 		g_free (url);
-	}	
+	}
 }
 
 static void
@@ -1355,18 +1355,18 @@ media_info_page_construct (InfoPage *ipage)
 
 	/* Allow the tree to be a source for dnd */
 	gtk_tree_view_enable_model_drag_source (treeview, GDK_BUTTON1_MASK,
-                                                drag_targets, G_N_ELEMENTS (drag_targets),
+						drag_targets, G_N_ELEMENTS (drag_targets),
                                                 GDK_ACTION_COPY);
 	g_signal_connect (G_OBJECT(treeview),
-                          "drag_data_get",
-                          G_CALLBACK(media_drag_data_get_cb),
-                          page);
+			  "drag_data_get",
+			  G_CALLBACK(media_drag_data_get_cb),
+			  page);
 
-	/* Be careful, default handler forces dnd icon to be an image of the row ! */ 
+	/* Be careful, default handler forces dnd icon to be an image of the row ! */
 	g_signal_connect_after (G_OBJECT(treeview),
-                                "drag_begin",
-                                G_CALLBACK(page_info_drag_begin_cb),
-                                NULL);
+				"drag_begin",
+				G_CALLBACK(page_info_drag_begin_cb),
+				NULL);
 
 	selection = gtk_tree_view_get_selection (treeview);
 	gtk_tree_selection_set_mode (selection, GTK_SELECTION_MULTIPLE);
@@ -1384,13 +1384,13 @@ media_info_page_construct (InfoPage *ipage)
 	column = gtk_tree_view_get_column (treeview, COL_MEDIUM_BLOCKED);
 	gtk_tree_view_column_set_reorderable (column, TRUE);
 	gtk_tree_view_column_set_sort_column_id (column, TV_COL_MEDIUM_BLOCKED);
-	gtk_tree_view_column_set_visible (column, 
+	gtk_tree_view_column_set_visible (column,
 					  ephy_adblock_manager_has_blocker (adblock_manager));
 	g_signal_connect (renderer, "toggled",
 			  G_CALLBACK (treeview_page_info_blocked_cb), tpage);
-	
+
 	renderer = gtk_cell_renderer_text_new ();
-	page_info_set_url_renderer_props (renderer); 
+	page_info_set_url_renderer_props (renderer);
 	gtk_tree_view_insert_column_with_attributes (treeview,
 						     TV_COL_MEDIUM_URL,
 						     _("URL"),
@@ -1417,7 +1417,7 @@ media_info_page_construct (InfoPage *ipage)
 	gtk_tree_view_column_set_sort_column_id (column, COL_MEDIUM_TYPE_TEXT);
 
 	gtk_tree_view_insert_column_with_attributes (treeview,
-						     TV_COL_MEDIUM_ALT, 
+						     TV_COL_MEDIUM_ALT,
 						     _("Alt Text"),
 						     renderer,
 						     "text", COL_MEDIUM_ALT,
@@ -1429,7 +1429,7 @@ media_info_page_construct (InfoPage *ipage)
 	gtk_tree_view_column_set_sort_column_id (column, COL_MEDIUM_ALT);
 
 	gtk_tree_view_insert_column_with_attributes (treeview,
-						     TV_COL_MEDIUM_TITLE, 
+						     TV_COL_MEDIUM_TITLE,
 						     _("Title"),
 						     renderer,
 						     "text", COL_MEDIUM_TITLE,
@@ -1441,7 +1441,7 @@ media_info_page_construct (InfoPage *ipage)
 	gtk_tree_view_column_set_sort_column_id (column, COL_MEDIUM_TITLE);
 
 	gtk_tree_view_insert_column_with_attributes (treeview,
-						     TV_COL_MEDIUM_WIDTH, 
+						     TV_COL_MEDIUM_WIDTH,
 						     _("Width"),
 						     renderer,
 						     "text", COL_MEDIUM_WIDTH,
@@ -1453,7 +1453,7 @@ media_info_page_construct (InfoPage *ipage)
 	gtk_tree_view_column_set_sort_column_id (column, COL_MEDIUM_WIDTH);
 
 	gtk_tree_view_insert_column_with_attributes (treeview,
-						     TV_COL_MEDIUM_HEIGHT, 
+						     TV_COL_MEDIUM_HEIGHT,
 						     _("Height"),
 						     renderer,
 						     "text", COL_MEDIUM_HEIGHT,
@@ -1496,7 +1496,7 @@ media_info_page_fill (InfoPage *ipage)
 	EphyEmbed *embed = dialog->priv->embed;
 	GtkListStore *store = tpage->store;
 	GtkTreeIter iter;
-	GList *media, *l;	
+	GList *media, *l;
 	EphyAdBlockManager *adblock_manager;
 	gboolean should_load;
 
@@ -1511,9 +1511,9 @@ media_info_page_fill (InfoPage *ipage)
 	{
 		EmbedPageMedium *media = (EmbedPageMedium *) l->data;
 
-		should_load = media_is_medium_blocked (adblock_manager, 
-						       embed, 
-						       media->url, 
+		should_load = media_is_medium_blocked (adblock_manager,
+						       embed,
+						       media->url,
 						       media->type);
 
 		gtk_list_store_append (store, &iter);
@@ -1530,8 +1530,8 @@ media_info_page_fill (InfoPage *ipage)
 	}
 	if (ephy_adblock_manager_has_blocker (adblock_manager))
 	{
-		gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE(store), 
-						      COL_MEDIUM_BLOCKED, 	
+		gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE(store),
+						      COL_MEDIUM_BLOCKED,
 						      GTK_SORT_DESCENDING);
 	}
 }
@@ -1576,13 +1576,13 @@ enum
 
 static const GtkActionEntry links_action_entries[] =
 {
-	{ "CopyLinkAddress", 
+	{ "CopyLinkAddress",
 	  GTK_STOCK_COPY,
 	  N_("_Copy Link Address"),
 	  NULL,
 	  NULL,
 	  G_CALLBACK (treeview_info_page_copy_selected) },
-	{ "LinkSaveAs", 
+	{ "LinkSaveAs",
 	  GTK_STOCK_SAVE_AS,
 	  N_("_Save As..."),
 	  NULL,
@@ -1592,11 +1592,11 @@ static const GtkActionEntry links_action_entries[] =
 
 static void
 links_drag_data_get_cb (GtkWidget *widget,
-                        GdkDragContext *context,
-                        GtkSelectionData *selection_data,
-                        guint info,
-                        guint32 time,
-                        LinksInfoPage *page)
+			GdkDragContext *context,
+			GtkSelectionData *selection_data,
+			guint info,
+			guint32 time,
+			LinksInfoPage *page)
 {
 	TreeviewInfoPage *tpage = (TreeviewInfoPage *) page;
 	char *address;
@@ -1618,14 +1618,14 @@ links_is_link_blocked (EphyAdBlockManager *manager,
 		       EphyEmbed *embed,
 		       const char *url)
 {
-	return ephy_adblock_manager_should_load (manager, 
+	return ephy_adblock_manager_should_load (manager,
 						 embed,
-						 url, 
+						 url,
 						 AD_URI_CHECK_TYPE_OTHER);
 }
 
 static void
-links_sync_adblock (EphyAdBlockManager *manager, 
+links_sync_adblock (EphyAdBlockManager *manager,
 		    TreeviewInfoPage *page)
 {
 	PageInfoDialog *dialog = page->page.dialog;
@@ -1646,7 +1646,7 @@ links_sync_adblock (EphyAdBlockManager *manager,
 		should_load = links_is_link_blocked (manager, embed, url);
 
 		gtk_list_store_set (page->store, &iter, COL_LINK_BLOCKED, !should_load, -1);
-		
+
 		g_free (url);
 	}
 }
@@ -1683,18 +1683,18 @@ links_info_page_construct (InfoPage *ipage)
 
 	/* Allow the tree to be a source for dnd */
 	gtk_tree_view_enable_model_drag_source (treeview, GDK_BUTTON1_MASK,
-                                                drag_targets, G_N_ELEMENTS (drag_targets),
-                                                GDK_ACTION_COPY);
+						drag_targets, G_N_ELEMENTS (drag_targets),
+						GDK_ACTION_COPY);
 	g_signal_connect (G_OBJECT(treeview),
-                          "drag_data_get",
-                          G_CALLBACK(links_drag_data_get_cb),
-                          ipage);
+			  "drag_data_get",
+			  G_CALLBACK(links_drag_data_get_cb),
+			  ipage);
 
-	/* Be careful, default handler forces dnd icon to be an image of the row ! */ 
+	/* Be careful, default handler forces dnd icon to be an image of the row ! */
 	g_signal_connect_after (G_OBJECT(treeview),
-                                "drag_begin",
-                                G_CALLBACK(page_info_drag_begin_cb),
-                                NULL);
+				"drag_begin",
+				G_CALLBACK(page_info_drag_begin_cb),
+				NULL);
 
 	renderer = gtk_cell_renderer_toggle_new ();
 	gtk_tree_view_insert_column_with_attributes (treeview,
@@ -1703,7 +1703,7 @@ links_info_page_construct (InfoPage *ipage)
 						     "active", COL_LINK_BLOCKED,
 						     NULL);
 	column = gtk_tree_view_get_column (treeview, COL_LINK_BLOCKED);
-	gtk_tree_view_column_set_visible (column, 
+	gtk_tree_view_column_set_visible (column,
 					  ephy_adblock_manager_has_blocker (adblock_manager));
 	gtk_tree_view_column_set_reorderable (column, TRUE);
 	gtk_tree_view_column_set_sort_column_id (column, COL_LINK_BLOCKED);
@@ -1711,7 +1711,7 @@ links_info_page_construct (InfoPage *ipage)
 			  G_CALLBACK (treeview_page_info_blocked_cb), tpage);
 
 	renderer = gtk_cell_renderer_text_new ();
-	page_info_set_url_renderer_props (renderer); 
+	page_info_set_url_renderer_props (renderer);
 	gtk_tree_view_insert_column_with_attributes (treeview,
 						     COL_LINK_URL,
 						     _("URL"),
@@ -1726,7 +1726,7 @@ links_info_page_construct (InfoPage *ipage)
 
 	renderer = gtk_cell_renderer_text_new ();
 	gtk_tree_view_insert_column_with_attributes (treeview,
-						     COL_LINK_TITLE, 
+						     COL_LINK_TITLE,
 						     _("Title"),
 						     renderer,
 						     "text", COL_LINK_TITLE,
@@ -1738,7 +1738,7 @@ links_info_page_construct (InfoPage *ipage)
 	gtk_tree_view_column_set_sort_column_id (column, COL_LINK_TITLE);
 
 	gtk_tree_view_insert_column_with_attributes (treeview,
-						     COL_LINK_REL, 
+						     COL_LINK_REL,
 						     _("Relation"),
 						     renderer,
 						     "text", COL_LINK_REL,
@@ -1779,7 +1779,7 @@ links_info_page_fill (InfoPage *ipage)
 	{
 		EmbedPageLink *link = (EmbedPageLink *) l->data;
 
-		should_load = links_is_link_blocked (adblock_manager, 
+		should_load = links_is_link_blocked (adblock_manager,
 						     embed,
 						     link->url);
 
@@ -1793,8 +1793,8 @@ links_info_page_fill (InfoPage *ipage)
 	}
 	if (ephy_adblock_manager_has_blocker (adblock_manager))
 	{
-		gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE(store), 
-						      COL_MEDIUM_BLOCKED, 	
+		gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE(store),
+						      COL_MEDIUM_BLOCKED,
 						      GTK_SORT_DESCENDING);
 	}
 }
@@ -1899,7 +1899,7 @@ forms_info_page_construct (InfoPage *ipage)
 	gtk_tree_view_column_set_sort_column_id (column, COL_FORM_NAME);
 
 	gtk_tree_view_insert_column_with_attributes (treeview,
-						     COL_FORM_METHOD, 
+						     COL_FORM_METHOD,
 						     _("Method"),
 						     renderer,
 						     "text", COL_FORM_METHOD,
@@ -1911,9 +1911,9 @@ forms_info_page_construct (InfoPage *ipage)
 	gtk_tree_view_column_set_sort_column_id (column, COL_FORM_METHOD);
 
 	renderer = gtk_cell_renderer_text_new ();
-	page_info_set_url_renderer_props (renderer); 
+	page_info_set_url_renderer_props (renderer);
 	gtk_tree_view_insert_column_with_attributes (treeview,
-						     COL_FORM_ACTION, 
+						     COL_FORM_ACTION,
 						     _("Action"),
 						     renderer,
 						     "text", COL_FORM_ACTION,
@@ -1993,7 +1993,7 @@ enum
 
 static const GtkActionEntry metadata_action_entries[] =
 {
-	{ "CopyMetadata", 
+	{ "CopyMetadata",
 	  GTK_STOCK_COPY,
 	  N_("_Copy"),
 	  NULL,
@@ -2040,7 +2040,7 @@ metadata_info_page_construct (InfoPage *ipage)
 	gtk_tree_view_column_set_sort_column_id (column, COL_META_NAME);
 
 	gtk_tree_view_insert_column_with_attributes (treeview,
-						     COL_META_CONTENT, 
+						     COL_META_CONTENT,
 						     _("Content"),
 						     renderer,
 						     "text", COL_META_CONTENT,
@@ -2065,7 +2065,7 @@ metadata_info_page_construct (InfoPage *ipage)
 	treeview_info_page_construct (ipage);
 }
 
-static gboolean 
+static gboolean
 metadata_add_dc_tag (MetadataInfoPage *page,
 		     EmbedPageMetaTag *tag)
 {
@@ -2136,11 +2136,11 @@ metadata_info_page_fill (InfoPage *ipage)
 	/* Hide the DC widgets if there's no DC metadata */
 	if (!have_dc)
 	{
-		widget = ephy_dialog_get_control (EPHY_DIALOG (dialog), 
+		widget = ephy_dialog_get_control (EPHY_DIALOG (dialog),
 						  properties[PROP_META_DC_BOX].id);
 		gtk_widget_hide (widget);
 
-		widget = ephy_dialog_get_control (EPHY_DIALOG (dialog), 
+		widget = ephy_dialog_get_control (EPHY_DIALOG (dialog),
 						  properties[PROP_META_OTHER_LABEL].id);
 		text = g_strconcat ("<b>", _("Page Metadata"), "</b>", NULL);
 		gtk_label_set_markup (GTK_LABEL (widget), text);

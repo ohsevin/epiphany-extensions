@@ -112,8 +112,8 @@ private:
                     nsIDOMHTMLElement *aHTMLElement);
   void ProcessAppletNode (nsIDOMHTMLAppletElement *aElement);
   void ProcessAreaNode (nsIDOMHTMLAreaElement *aElement);
-  void ProcessEmbedNodeHelper (const nsString &aUrl, 
-  		               nsIDOMHTMLEmbedElement *aElement);
+  void ProcessEmbedNodeHelper (const nsString &aUrl,
+                               nsIDOMHTMLEmbedElement *aElement);
   void ProcessEmbedNode (nsIDOMHTMLEmbedElement *aElement);
   void ProcessFormNode (nsIDOMHTMLFormElement *aElement);
   void ProcessImageNode (nsIDOMHTMLImageElement *aElement);
@@ -141,7 +141,7 @@ private:
   GHashTable *mLinkHash;
   GHashTable *mFormHash;
   GList      *mMetaTagsList;
-  
+
   /* these two are used by the walker: */
   nsCString mDocCharset;
   nsCOMPtr<nsIURI> mBaseURI;
@@ -167,7 +167,7 @@ nsresult
 PageInfoHelper::Init (EphyEmbed *aEmbed)
 {
   NS_ENSURE_ARG (aEmbed);
-  
+
   nsCOMPtr<nsIWebBrowser> browser;
   gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (aEmbed),
                                    getter_AddRefs (browser));
@@ -219,7 +219,7 @@ PageInfoHelper::Init (EphyEmbed *aEmbed)
 }
 
 /* A fairly good case insensitive comparison */
-static gint 
+static gint
 utf8_strcasecmp (const gchar *a, const gchar *b)
 {
 	gint retval;
@@ -235,8 +235,8 @@ utf8_strcasecmp (const gchar *a, const gchar *b)
 }
 
 /* Compares two links */
-static gint 
-link_compare (gconstpointer a, 
+static gint
+link_compare (gconstpointer a,
 	      gconstpointer b)
 {
 	EmbedPageLink *link_a = (EmbedPageLink *)a;
@@ -246,8 +246,8 @@ link_compare (gconstpointer a,
 }
 
 /* Compares two media, first by type then by url */
-static gint 
-media_compare (gconstpointer a, 
+static gint
+media_compare (gconstpointer a,
 	       gconstpointer b)
 {
 	gint res;
@@ -264,27 +264,27 @@ media_compare (gconstpointer a,
 	{
 		// Enum comparison ...
 		res = media_a->type > media_b->type ? 1 : -1;
-   	}
+	}
 
 	return res;
 }
 
 /* Compares two forms */
-static gint 
-form_compare (gconstpointer a, 
+static gint
+form_compare (gconstpointer a,
 	      gconstpointer b)
 {
 	EmbedPageForm *form_a = (EmbedPageForm *)a;
 	EmbedPageForm *form_b = (EmbedPageForm *)b;
 
-	// be careful, form's name may be NULL	
+	// be careful, form's name may be NULL
 	if (form_a->name == NULL)
 	{
-		return form_b->name == NULL ? 0 : -1; 
+		return form_b->name == NULL ? 0 : -1;
 	}
 	else if (form_b->name == NULL)
 	{
-		return form_a->name == NULL ? 0 : 1; 
+		return form_a->name == NULL ? 0 : 1;
 	}
 	return utf8_strcasecmp (form_a->name, form_b->name);
 }
@@ -338,7 +338,7 @@ PageInfoHelper::GetCacheEntryDescriptor (const nsAString &aUrl,
   nsresult rv = NS_OK;
 
   *aEntry = nsnull;
- 
+
   nsCOMPtr<nsICacheService> cacheService =
           do_GetService(NS_CACHESERVICE_CONTRACTID);
   NS_ENSURE_TRUE (cacheService, NS_ERROR_FAILURE);
@@ -358,11 +358,11 @@ PageInfoHelper::GetCacheEntryDescriptor (const nsAString &aUrl,
                                    PR_TRUE,
                                    getter_AddRefs (cacheSession));
       NS_ENSURE_TRUE (cacheSession, NS_ERROR_FAILURE);
-  
+
       cacheSession->SetDoomEntriesIfExpired (PR_FALSE);
-  
+
       nsCOMPtr<nsICacheEntryDescriptor> cacheEntryDescriptor;
-  
+
       rv = cacheSession->OpenCacheEntry (nsCString(url), nsICache::ACCESS_READ,
                                          PR_FALSE, aEntry);
 
@@ -444,9 +444,9 @@ PageInfoHelper::GetProperties ()
     {
       rv = domHtmlDoc->GetReferrer (value);
       if (NS_SUCCEEDED (rv) && value.Length ())
-      	{
+        {
           props->referring_url = ToCString (value);
-	}
+        }
     }
 
   /* Until https://bugzilla.mozilla.org/show_bug.cgi?id=154359 is fixed */
@@ -515,7 +515,7 @@ PageInfoHelper::ProcessNode (nsIDOMElement *aElement,
 
   /* check if we have it already */
   if (g_hash_table_lookup (mLinkHash, cUrl.get())) return;
-      
+
   EmbedPageLink *link = g_new0 (EmbedPageLink, 1);
   link->url = g_strdup (cUrl.get());
   g_hash_table_insert (mLinkHash, link->url, link);
@@ -546,7 +546,7 @@ PageInfoHelper::ProcessAppletNode (nsIDOMHTMLAppletElement *aElement)
   nsCString cUrl;
   rv = Resolve (tmp, cUrl);
   if (NS_FAILED (rv) || !cUrl.Length()) return;
-  
+
   if (g_hash_table_lookup (mMediaHash, cUrl.get())) return;
 
   /* FIXME: link or medium('media') ? */
@@ -596,8 +596,8 @@ PageInfoHelper::ProcessAreaNode (nsIDOMHTMLAreaElement *aElement)
 }
 
 void
-PageInfoHelper::ProcessEmbedNodeHelper (const nsString &aUrl, 
-  				        nsIDOMHTMLEmbedElement *aElement)
+PageInfoHelper::ProcessEmbedNodeHelper (const nsString &aUrl,
+                                        nsIDOMHTMLEmbedElement *aElement)
 {
   nsresult rv;
 
@@ -638,7 +638,7 @@ PageInfoHelper::ProcessEmbedNode (nsIDOMHTMLEmbedElement *aElement)
   // Look at href tag
   aElement->GetAttribute(mHrefAttr, tmp);
   if (NS_SUCCEEDED (rv) && tmp.Length())
-    { 
+    {
       ProcessEmbedNodeHelper (tmp, aElement);
     }
 }
@@ -964,7 +964,7 @@ PageInfoHelper::WalkTree (nsIDOMDocument *aDocument)
 
   nsCOMPtr<nsIDOMNode> aNode;
   nsCOMPtr<nsIDOMCSSStyleDeclaration> computedStyle;
-  
+
   walker->GetCurrentNode(getter_AddRefs(aNode));
   while (aNode)
     {
@@ -979,31 +979,30 @@ PageInfoHelper::WalkTree (nsIDOMDocument *aDocument)
               defaultCSSView->GetComputedStyle(nodeAsElement, EmptyString,
                                                getter_AddRefs (computedStyle));
             }
-  
+
           if (computedStyle)
             {
-	      nsCOMPtr<nsIDOMCSSValue> value;
-	      computedStyle->GetPropertyCSSValue(mBgImageAttr, getter_AddRefs (value));
+              nsCOMPtr<nsIDOMCSSValue> value;
+              computedStyle->GetPropertyCSSValue(mBgImageAttr, getter_AddRefs (value));
 
-	      nsCOMPtr<nsIDOMCSSPrimitiveValue> primitiveValue (do_QueryInterface (value));
-	      if (primitiveValue)
-	      	{
-		  PRUint16 primitiveType = 0;
-		  rv = primitiveValue->GetPrimitiveType (&primitiveType);
-		  if (NS_SUCCEEDED (rv) && primitiveType == nsIDOMCSSPrimitiveValue::CSS_URI)
-		    {
-		      nsString stringValue;
-		      rv = primitiveValue->GetStringValue (stringValue);
-		      if (NS_SUCCEEDED (rv) && stringValue.Length())
-		      	{
+              nsCOMPtr<nsIDOMCSSPrimitiveValue> primitiveValue (do_QueryInterface (value));
+              if (primitiveValue)
+                {
+                  PRUint16 primitiveType = 0;
+                  rv = primitiveValue->GetPrimitiveType (&primitiveType);
+                  if (NS_SUCCEEDED (rv) && primitiveType == nsIDOMCSSPrimitiveValue::CSS_URI)
+                    {
+                      nsString stringValue;
+                      rv = primitiveValue->GetStringValue (stringValue);
+                      if (NS_SUCCEEDED (rv) && stringValue.Length())
+                        {
                           EmbedPageMedium *medium = g_new0 (EmbedPageMedium, 1);
                           medium->type = MEDIUM_BG_IMAGE;
                           medium->url = ToCString (stringValue);
                           g_hash_table_insert(mMediaHash, medium->url, medium);
-			}
-		    }
-		  
-		}
+                        }
+                    }
+                }
             }
         }
 
@@ -1112,7 +1111,7 @@ PageInfoHelper::WalkFrame (nsIDOMDocument *aDocument)
 {
   nsCString saveCharset (mDocCharset);
   nsCOMPtr<nsIURI> uri (mBaseURI);
-  
+
   WalkTree (aDocument);
 
   mDocCharset = saveCharset;

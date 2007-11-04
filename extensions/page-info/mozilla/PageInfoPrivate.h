@@ -24,5 +24,5 @@ class nsIDOMDocument;
 
 namespace PageInfoPrivate
 {
-	EmbedPageRenderMode	GetRenderMode (nsIDOMDocument *aDocument);	
+	EmbedPageRenderMode	GetRenderMode (nsIDOMDocument *aDocument);
 }

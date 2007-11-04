@@ -106,7 +106,7 @@ ephy_page_info_extension_register_type (GTypeModule *module)
 					    G_TYPE_OBJECT,
 					    "EphyPageInfoExtension",
 					    &our_info, 0);
-	
+
 	g_type_module_add_interface (module,
 				     type,
 				     EPHY_TYPE_EXTENSION,
@@ -125,7 +125,7 @@ ephy_page_info_extension_init (EphyPageInfoExtension *extension)
 
 static void
 ephy_page_info_extension_dialog_weak_notify_cb (
-	EphyPageInfoExtension *extension, 
+	EphyPageInfoExtension *extension,
 	GObject *dialog)
 {
 	extension->priv->page_info_dialogs = g_slist_remove
@@ -177,16 +177,16 @@ ephy_page_info_extension_display_cb (GtkAction *action,
 
 	LOG ("Creating page info dialog");
 
-	embed = ephy_window_get_active_embed (window);
+	embed = ephy_window_get_active_tab (embed);
 	g_return_if_fail (embed != NULL);
 
 	data = g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 	g_return_if_fail (data != NULL);
-	
+
 	dialog = page_info_dialog_new (window, embed);
 
 	extension = data->extension;
-	extension->priv->page_info_dialogs =  
+	extension->priv->page_info_dialogs =
 			g_slist_append (extension->priv->page_info_dialogs, dialog);
 
 	g_object_weak_ref (G_OBJECT (dialog),
@@ -198,7 +198,7 @@ ephy_page_info_extension_display_cb (GtkAction *action,
 
 static void
 update_action (EphyWindow *window,
-	       EphyTab *tab)
+	       EphyEmbed *embed)
 {
 	GtkAction *action;
 	gboolean loading = TRUE;
@@ -206,18 +206,18 @@ update_action (EphyWindow *window,
 	action = gtk_ui_manager_get_action (GTK_UI_MANAGER (ephy_window_get_ui_manager (window)),
 					    MENU_PATH "/PageInfo");
 
-	g_object_get (G_OBJECT (tab), "load-status", &loading, NULL);
+	g_object_get (G_OBJECT (embed), "load-status", &loading, NULL);
 	g_object_set (G_OBJECT (action), "sensitive", !loading, NULL);
 }
 
 static void
-load_status_cb (EphyTab *tab,
+load_status_cb (EphyEmbed *embed,
 		GParamSpec *pspec,
 		EphyWindow *window)
 {
-	if (tab == ephy_window_get_active_tab (window))
+	if (embed == ephy_window_get_active_tab (embed))
 	{
-		update_action (window, tab);
+		update_action (window, embed);
 	}
 }
 
@@ -227,27 +227,30 @@ switch_page_cb (GtkNotebook *notebook,
 		guint page_num,
 		EphyWindow *window)
 {
+	EphyEmbed *embed;
+
 	if (GTK_WIDGET_REALIZED (window) == FALSE) return; /* on startup */
 
-	update_action (window, ephy_window_get_active_tab (window));
+	embed = ephy_window_get_active_tab (window);
+	update_action (window, embed);
 }
 
 static void
 impl_attach_tab (EphyExtension *extension,
 		 EphyWindow *window,
-		 EphyTab *tab)
+		 EphyEmbed *embed)
 {
-	g_signal_connect_after (tab, "notify::load-status",
+	g_signal_connect_after (embed, "notify::load-status",
 				G_CALLBACK (load_status_cb), window);
 }
 
 static void
 impl_detach_tab (EphyExtension *extension,
 		 EphyWindow *window,
-		 EphyTab *tab)
+		 EphyEmbed *embed)
 {
 	g_signal_handlers_disconnect_by_func
-		(tab, G_CALLBACK (load_status_cb), window);
+		(embed, G_CALLBACK (load_status_cb), window);
 }
 
 static void

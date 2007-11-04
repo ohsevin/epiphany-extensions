@@ -72,7 +72,7 @@ typedef struct
 
 /* take care to sort enum by name */
 /* so we can sort media as well */
-typedef enum 
+typedef enum
 {
   MEDIUM_APPLET,
   MEDIUM_EMBED,
@@ -91,7 +91,7 @@ typedef struct
   char *title;
   int width;
   int height;
-} EmbedPageMedium; 
+} EmbedPageMedium;
 
 typedef struct
 {
