@@ -28,7 +28,6 @@
 #include "ephy-debug.h"
 
 #include <epiphany/ephy-embed.h>
-#include <epiphany/ephy-tab.h>
 #include <epiphany/ephy-extension.h>
 
 #include <gmodule.h>

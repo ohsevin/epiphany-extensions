@@ -25,7 +25,6 @@
 
 #include <epiphany/ephy-embed.h>
 #include <epiphany/ephy-shell.h>
-#include <epiphany/ephy-tab.h>
 #include <epiphany/ephy-embed-event.h>
 #include <epiphany/ephy-embed-persist.h>
 #include <epiphany/ephy-embed-factory.h>

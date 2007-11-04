@@ -21,7 +21,6 @@
 
 #include "config.h"
 
-#include <epiphany/ephy-tab.h>
 #include <epiphany/ephy-statusbar.h>
 #include <epiphany/ephy-window.h>
 #include <epiphany/ephy-adblock.h>

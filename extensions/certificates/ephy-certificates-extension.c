@@ -30,7 +30,6 @@
 #include <epiphany/ephy-embed.h>
 #include <epiphany/ephy-embed-single.h>
 #include <epiphany/ephy-embed-shell.h>
-#include <epiphany/ephy-tab.h>
 #include <epiphany/ephy-statusbar.h>
 
 #include <gtk/gtkaction.h>
