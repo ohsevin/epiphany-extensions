@@ -44,5 +44,4 @@ mozilla_do_something (gpointer dom_event)
 	NS_ENSURE_SUCCESS (rv,);
 
 	g_print ("Button %u\n", button);
-	
 }

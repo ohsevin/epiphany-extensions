@@ -106,13 +106,10 @@ impl_detach_window (EphyExtension *ext,
 static void
 impl_attach_tab (EphyExtension *ext,
 		 EphyWindow *window,
-		 EphyTab *tab)
+		 EphyEmbed *embed)
 {
-	EphyEmbed *embed;
-
 	LOG ("impl_attach_tab");
 
-	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	g_signal_connect (embed, "ge_dom_mouse_down",
@@ -122,13 +119,10 @@ impl_attach_tab (EphyExtension *ext,
 static void
 impl_detach_tab (EphyExtension *ext,
 		 EphyWindow *window,
-		 EphyTab *tab)
+		 EphyEmbed *embed)
 {
-	EphyEmbed *embed;
-
 	LOG ("impl_detach_tab");
 
-	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	g_signal_handlers_disconnect_by_func
