@@ -85,18 +85,18 @@ ErrorViewerConsoleListener::GetMessageFromError (nsIScriptError *aError,
 			   NS_CSTRING_ENCODING_UTF8, cSourceName);
 	nsMemory::Free (sourceName);
 #endif
-	
-	if (strstr (category, "javascript") || 
+
+	if (strstr (category, "javascript") ||
 		!strcmp (category, "CSS Parser"))
 	{
 		PRUint32 lineNumber;
 		rv = aError->GetLineNumber (&lineNumber);
 		NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
-	
+
 		PRUint32 columnNumber;
 		rv = aError->GetColumnNumber (&columnNumber);
 		NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
-		
+
 		if (lineNumber && columnNumber)
 		{
 			*aMessage = g_strdup_printf (
@@ -116,7 +116,7 @@ ErrorViewerConsoleListener::GetMessageFromError (nsIScriptError *aError,
 		PRUint32 lineNumber;
 		rv = aError->GetLineNumber (&lineNumber);
 		NS_ENSURE_SUCCESS (rv, NS_ERROR_FAILURE);
-		
+
 		if (lineNumber)
 		{
 			*aMessage = g_strdup_printf (
@@ -130,7 +130,7 @@ ErrorViewerConsoleListener::GetMessageFromError (nsIScriptError *aError,
 					category, cSourceName.get(), cMessage.get());
 		}
 	}
-	else if	(!strcmp (category, "HTML") ||
+	else if (!strcmp (category, "HTML") ||
 			 !strcmp (category, "XUL Document") ||
 			 !strcmp (category, "ImageMap") ||
 			 !strcmp (category, "CSS Loader") ||
@@ -141,8 +141,8 @@ ErrorViewerConsoleListener::GetMessageFromError (nsIScriptError *aError,
 				category, cSourceName.get(), cMessage.get());
 	}
 
-	nsMemory::Free (category);						 
-	
+	nsMemory::Free (category);
+
 	return NS_OK;
 }
 

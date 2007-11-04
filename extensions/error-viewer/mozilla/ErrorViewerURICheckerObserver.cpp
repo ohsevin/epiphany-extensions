@@ -50,7 +50,7 @@ ErrorViewerURICheckerObserver::ErrorViewerURICheckerObserver()
   , mNumLinksTotal (0)
 {
 }
-                                                                                
+
 ErrorViewerURICheckerObserver::~ErrorViewerURICheckerObserver()
 {
 	if (mNumLinksTotal > 0)
@@ -90,13 +90,13 @@ nsresult ErrorViewerURICheckerObserver::Init (LinkChecker *aChecker, const char 
 
 	return NS_OK;
 }
-                                                                                
+
 /* void onStartRequest (in nsIRequest aRequest, in nsISupports aContext); */
 NS_IMETHODIMP ErrorViewerURICheckerObserver::OnStartRequest(nsIRequest *aRequest, nsISupports *aContext)
 {
 	return NS_OK;
 }
-                                                                                
+
 /* void onStopRequest (in nsIRequest aRequest, in nsISupports aContext, in nsresult aStatusCode); */
 NS_IMETHODIMP ErrorViewerURICheckerObserver::OnStopRequest(nsIRequest *aRequest, nsISupports *aContext, nsresult aStatusCode)
 {

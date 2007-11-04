@@ -150,7 +150,7 @@ ephy_error_viewer_extension_register_type (GTypeModule *module)
 					    G_TYPE_OBJECT,
 					    "EphyErrorViewerExtension",
 					    &our_info, 0);
-	
+
 	g_type_module_add_interface (module,
 				     type,
 				     EPHY_TYPE_EXTENSION,
@@ -225,7 +225,7 @@ ephy_error_viewer_extension_validate (GtkAction *action,
 
 	dialog = data->extension->priv->dialog;
 
-	embed = ephy_window_get_active_embed (data->window);
+	embed = ephy_window_get_active_tab (data->window);
 
 	ephy_dialog_show (EPHY_DIALOG (dialog));
 
@@ -242,7 +242,7 @@ ephy_error_viewer_extension_check_links	(GtkAction *action,
 
 	dialog = data->extension->priv->dialog;
 
-	embed = ephy_window_get_active_embed (data->window);
+	embed = ephy_window_get_active_tab (data->window);
 
 	ephy_dialog_show (EPHY_DIALOG (dialog));
 
@@ -269,7 +269,6 @@ free_error_viewer_cb_data (gpointer data)
 static void
 update_actions (EphyWindow *window)
 {
-	EphyTab *tab;
 	EphyEmbed *embed;
 	GtkAction *action1;
 	GtkAction *action2; /* You can tell I didn't want to think... */
@@ -286,10 +285,10 @@ update_actions (EphyWindow *window)
 	action2 = gtk_ui_manager_get_action (GTK_UI_MANAGER (ephy_window_get_ui_manager (window)),
 					     "/menubar/ToolsMenu/CheckLinks");
 
-	tab = ephy_window_get_active_tab (window);
+	embed = ephy_window_get_active_tab (window);
 
 	/* Not finished loading? */
-	if (ephy_tab_get_load_status (tab) == TRUE)
+	if (ephy_embed_get_load_status (embed) == TRUE)
 	{
 		g_object_set_property (G_OBJECT (action1),
 				       "sensitive", &sensitive);
@@ -298,8 +297,6 @@ update_actions (EphyWindow *window)
 		g_value_unset (&sensitive);
 		return;
 	}
-
-	embed = ephy_tab_get_embed (tab);
 
 	content_type = mozilla_get_content_type (embed);
 
@@ -321,7 +318,7 @@ update_actions (EphyWindow *window)
 }
 
 static void
-load_status_cb (EphyTab *tab,
+load_status_cb (EphyEmbed *embed,
 		GParamSpec *pspec,
 		EphyWindow *window)
 {
@@ -343,19 +340,19 @@ switch_page_cb (GtkNotebook *notebook,
 static void
 impl_attach_tab (EphyExtension *extension,
 		 EphyWindow *window,
-		 EphyTab *tab)
+		 EphyEmbed *embed)
 {
-	g_signal_connect_after (tab, "notify::load-status",
+	g_signal_connect_after (embed, "notify::load-status",
 				G_CALLBACK (load_status_cb), window);
 }
 
 static void
 impl_detach_tab (EphyExtension *extension,
 		 EphyWindow *window,
-		 EphyTab *tab)
+		 EphyEmbed *embed)
 {
 	g_signal_handlers_disconnect_by_func
-		(tab, G_CALLBACK (load_status_cb), window);
+		(embed, G_CALLBACK (load_status_cb), window);
 }
 #endif /* HAVE_OPENSP */
 

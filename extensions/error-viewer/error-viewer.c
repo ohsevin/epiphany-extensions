@@ -70,7 +70,7 @@ static GObjectClass *parent_class = NULL;
 
 static GType type = 0;
 
-GType 
+GType
 error_viewer_get_type (void)
 {
 	return type;
@@ -200,7 +200,7 @@ response_cb (GtkWidget *widget,
 	{
 		gtk_list_store_clear (GTK_LIST_STORE (priv->model));
 		gtk_tree_view_columns_autosize (GTK_TREE_VIEW (priv->treeview));
-	
+
 		return;
 	}
 
@@ -265,7 +265,7 @@ build_ui (ErrorViewer *dialog)
 
 static void
 error_viewer_init (ErrorViewer *dialog)
-{		
+{
 	dialog->priv = ERROR_VIEWER_GET_PRIVATE (dialog);
 
 	dialog->priv->num_active = 0;

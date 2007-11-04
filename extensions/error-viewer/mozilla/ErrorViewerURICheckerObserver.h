@@ -56,7 +56,7 @@ private:
     0x4c25,						\
     {0xa1, 0x4b, 0x97, 0x7f, 0x7e, 0x4d, 0xdd, 0x58}	\
 }
-#define G_ERRORVIEWERURICHECKEROBSERVER_CLASSNAME "Error Viewer's URI Checker Observer"                                                                                
+#define G_ERRORVIEWERURICHECKEROBSERVER_CLASSNAME "Error Viewer's URI Checker Observer"
 class nsIFactory;
-                                                                                
+
 extern nsresult NS_NewErrorViewerURICheckerObserverFactory(nsIFactory** aFactory);
