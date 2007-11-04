@@ -64,7 +64,7 @@ GType	 rss_ui_register_type	(GTypeModule *module);
 
 RssUI   *rss_ui_new		(FeedList *list,
 				 EphyEmbed *embed);
-			     
+
 G_END_DECLS
 
 #endif

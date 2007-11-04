@@ -134,7 +134,7 @@ rss_feedlist_add (FeedList *feedlist,
 		  const char *title,
 		  const char *address)
 {
-	GSList *list = (GSList *) feedlist; 
+	GSList *list = (GSList *) feedlist;
 	NewsFeed *feed;
 
 	/* Alloc the new feed structure */
@@ -142,7 +142,7 @@ rss_feedlist_add (FeedList *feedlist,
 	feed->type = g_strdup (type);
 	feed->title = g_strdup (title);
 	feed->address = g_strdup (address);
-	
+
 	return (FeedList *) g_slist_prepend (list, feed);
 }
 
@@ -151,7 +151,7 @@ rss_feedlist_compare_feeds (gconstpointer a, gconstpointer b)
 {
 	NewsFeed *feed = (NewsFeed *) a;
 	const char *address = (char *) b;
-	
+
 	return g_ascii_strcasecmp (feed->address, address);
 }
 

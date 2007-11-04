@@ -36,9 +36,9 @@ register_module (GTypeModule *module)
 	LOG ("Registering EphyRssExtension");
 
 #ifdef ENABLE_NLS
-       /* Initialise the i18n stuff */
-        bindtextdomain (GETTEXT_PACKAGE, EPHY_EXTENSIONS_LOCALEDIR);
-        bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");	
+	/* Initialise the i18n stuff */
+	bindtextdomain (GETTEXT_PACKAGE, EPHY_EXTENSIONS_LOCALEDIR);
+	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 #endif /* ENABLE_NLS */
 
 	rss_ui_register_type (module);

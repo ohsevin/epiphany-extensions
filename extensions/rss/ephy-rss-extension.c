@@ -65,12 +65,12 @@ static GType type = 0;
 /* Status Bar stuff */
 #define FEED_ICON	"feed-presence"
 
-static void ephy_rss_display_cb 	(GtkAction *action, 
+static void ephy_rss_display_cb 	(GtkAction *action,
 					 EphyWindow *window);
 static void ephy_rss_update_statusbar 	(EphyWindow *window,
 					 gboolean show);
 static void ephy_rss_update_action 	(EphyWindow *window);
-static void ephy_rss_feed_subscribe_cb (GtkAction *action, 
+static void ephy_rss_feed_subscribe_cb (GtkAction *action,
 					 EphyWindow *window);
 typedef struct
 {
@@ -122,7 +122,7 @@ ephy_rss_ge_feed_cb (EphyEmbed *embed,
 }
 
 static void
-ephy_rss_feed_subscribe_cb (GtkAction *action, 
+ephy_rss_feed_subscribe_cb (GtkAction *action,
 			    EphyWindow *window)
 {
 	const GValue *value;
@@ -132,15 +132,13 @@ ephy_rss_feed_subscribe_cb (GtkAction *action,
 	EphyRssExtension *extension = EPHY_RSS_EXTENSION (g_object_get_data (
 												G_OBJECT (window),
 												EPHY_RSS_EXTENSION_DATA_KEY));
-	
+
 	LOG ("Subscribing to the feed");
 
 	event = ephy_window_get_context_event (window);
 	if (event == NULL) return;
-	
-	value = ephy_embed_event_get_property (event, "link");
 
-	
+	value = ephy_embed_event_get_property (event, "link");
 
 	if (!dbus_g_proxy_call (extension->priv->proxy, RSS_DBUS_SUBSCRIBE, &error,
 		G_TYPE_STRING, g_value_get_string (value),
@@ -151,37 +149,37 @@ ephy_rss_feed_subscribe_cb (GtkAction *action,
 		LOG ("Error while retreiving method answer: %s", error->message);
 		g_error_free (error);
 	}
-	
-	g_object_set(action, "sensitive", FALSE, "visible", FALSE, NULL);	
+
+	g_object_set(action, "sensitive", FALSE, "visible", FALSE, NULL);
 }
 
 static gboolean
 ephy_rss_ge_context_cb	(EphyEmbed *embed,
 			EphyEmbedEvent *event,
 			EphyWindow *window)
-{	
+{
 	WindowData *data;
 	const GValue *value;
 	const char *address;
 	FeedList *list;
 	gboolean active = FALSE;
-	
+
 	list = (FeedList *) g_object_get_data (G_OBJECT (embed), FEEDLIST_DATA_KEY);
 	if ((ephy_embed_event_get_context (event) & EPHY_EMBED_CONTEXT_LINK) && (list != NULL))
 	{
 		LOG ("Context menu on a link");
 		data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 		g_return_val_if_fail (data != NULL, FALSE);
-		
+
 		value = ephy_embed_event_get_property (event, "link");
 		address = g_value_get_string (value);
-		
+
 		active = rss_feedlist_contains (list, address);
-		
+
 		LOG ("Showing menu item: %d", active);
-		g_object_set(data->subscribe_action, "sensitive", active, "visible", active, NULL);	
+		g_object_set(data->subscribe_action, "sensitive", active, "visible", active, NULL);
 	}
-	
+
 	return FALSE;
 }
 
@@ -197,24 +195,24 @@ ephy_rss_dialog_display (EphyWindow *window)
 	g_return_if_fail (data != NULL);
 
 	priv = data->extension->priv;
-	
-	embed = ephy_window_get_active_embed (window);
+
+	embed = ephy_window_get_active_tab (window);
 	g_return_if_fail (embed != NULL);
-	
+
 	list = (FeedList *) g_object_get_data (G_OBJECT (embed), FEEDLIST_DATA_KEY);
 	if (list == NULL)
 		return;
-	
+
 	if (priv->dialog == NULL)
 	{
 		RssUI **dialog;
 
 		LOG ("Trying to build dialog");
-		
+
 		priv->dialog = rss_ui_new (list, embed);
 
 		dialog = &priv->dialog;
-		
+
 		g_object_add_weak_pointer (G_OBJECT (priv->dialog),
 					   (gpointer *) dialog);
 	}
@@ -254,7 +252,7 @@ ephy_rss_update_statusbar (EphyWindow *window,
 	/* Show / Hide statusbar icon */
 	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 	g_return_if_fail (data != NULL);
-	
+
 	g_object_set (data->evbox, "visible", show, NULL);
 }
 
@@ -267,7 +265,7 @@ ephy_rss_update_action (EphyWindow *window)
 	gboolean show = TRUE;
 	EphyEmbed *embed;
 
-	embed = ephy_window_get_active_embed (window);
+	embed = ephy_window_get_active_tab (window);
 
 	/* The page is loaded, do we have a feed ? */
 	list = (FeedList *) g_object_get_data (G_OBJECT (embed), FEEDLIST_DATA_KEY);
@@ -281,10 +279,10 @@ ephy_rss_update_action (EphyWindow *window)
 	g_object_set (data->info_action, "sensitive", show, NULL);
 
 	ephy_rss_update_statusbar (window, show);
-	
-	g_object_set(data->subscribe_action, "sensitive", show, "visible", show, NULL);	
+
+	g_object_set(data->subscribe_action, "sensitive", show, "visible", show, NULL);
 }
-	
+
 /* Called when the user changes tab */
 static void
 ephy_rss_sync_active_tab (EphyWindow *window,
@@ -300,13 +298,10 @@ ephy_rss_sync_active_tab (EphyWindow *window,
 static void
 impl_attach_tab (EphyExtension *extension,
 		 EphyWindow *window,
-		 EphyTab *tab)
+		 EphyEmbed *embed)
 {
-	EphyEmbed *embed;
-
 	LOG ("Attach rss listener to tab");
 
-	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	/* Notify when a new rss feed is parsed */
@@ -318,18 +313,14 @@ impl_attach_tab (EphyExtension *extension,
 			    G_CALLBACK (ephy_rss_ge_context_cb), window);
 }
 
-                                             
 /* Stop listening for the detached tab rss feeds */
 static void
 impl_detach_tab (EphyExtension *extension,
 		 EphyWindow *window,
-		 EphyTab *tab)
+		 EphyEmbed *embed)
 {
-	EphyEmbed *embed;
-
 	LOG ("Detach tab rss listener");
 
-	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	/* We don't want any new rss notif for this tab */
@@ -338,10 +329,10 @@ impl_detach_tab (EphyExtension *extension,
 
 	g_signal_handlers_disconnect_by_func
 		(embed, G_CALLBACK (ephy_rss_ge_content_cb), window);
-	
+
 	g_signal_handlers_disconnect_by_func
 		(embed, G_CALLBACK (ephy_rss_ge_context_cb), window);
-		
+
 	/* destroy data */
 	g_object_set_data (G_OBJECT (embed), FEEDLIST_DATA_KEY, NULL);
 }
@@ -392,11 +383,11 @@ ephy_rss_destroy_statusbar_icon (EphyWindow *window,
 				 WindowData *data)
 {
 	EphyStatusbar *statusbar;
-	
+
 	statusbar = EPHY_STATUSBAR (ephy_window_get_statusbar (window));
 	g_return_if_fail (statusbar != NULL);
 
-	g_return_if_fail (data->evbox != NULL);	
+	g_return_if_fail (data->evbox != NULL);
 
 	ephy_statusbar_remove_widget (statusbar, GTK_WIDGET (data->evbox));
 }
@@ -439,7 +430,7 @@ impl_attach_window (EphyExtension *ext,
 	gtk_ui_manager_add_ui (manager, ui_id, "/EphyLinkPopup",
 			       "RssSubscribe", "RssSubscribe",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
-			       
+
 	/* store data */
 	data = g_new (WindowData, 1);
 
@@ -448,12 +439,12 @@ impl_attach_window (EphyExtension *ext,
 	data->info_action = gtk_action_group_get_action (action_group, "RssInfo");
 	data->subscribe_action = gtk_action_group_get_action (action_group, "RssSubscribe");
 	data->ui_id = ui_id;
-		
+
 	g_object_set_data_full (G_OBJECT (window), WINDOW_DATA_KEY, data,
 				(GDestroyNotify) g_free);
 
 	g_object_set_data (G_OBJECT (window), EPHY_RSS_EXTENSION_DATA_KEY, extension);
-	
+
 	/* Create the status bar icon */
 	ephy_rss_create_statusbar_icon (window, data);
 
@@ -499,15 +490,15 @@ ephy_rss_extension_init (EphyRssExtension *extension)
 	DBusGConnection *connection;
 	GError *error = NULL;
 	extension->priv = EPHY_RSS_EXTENSION_GET_PRIVATE (extension);
-		
+
 	connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
 	if (connection == NULL)
 	{
 		LOG ("No connection to dbus:%s", error->message);
 		g_error_free (error);
 		return;
-    }
-    	
+	}
+
 	extension->priv->proxy = dbus_g_proxy_new_for_name (connection,
                                      RSS_DBUS_SERVICE,
                                      RSS_DBUS_OBJECT_PATH,
@@ -520,7 +511,7 @@ ephy_rss_extension_finalize (GObject *object)
 	EphyRssExtension *extension = EPHY_RSS_EXTENSION (object);
 
 	g_object_unref (extension->priv->proxy);
-	
+
 	/* Dispose the dialog */
 	if (extension->priv->dialog != NULL)
 	{

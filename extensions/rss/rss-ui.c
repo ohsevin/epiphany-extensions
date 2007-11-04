@@ -112,7 +112,7 @@ typedef enum
 	FEED_TYPE_ATOM,
 } FeedType;
 
-typedef struct 
+typedef struct
 {
 	gboolean rss_present;
 	gboolean atom_present;
@@ -142,11 +142,11 @@ rss_ui_subscribe_selected (GtkTreeModel *model,
 	/* Get the feed */
 	gtk_tree_model_get (model, iter, COL_TOGGLE, &selected, -1);
 	gtk_tree_model_get (model, iter, COL_FEED, &feed, -1);
-	
+
 	LOG ("Trying to subscribe");
-	
+
 	if (selected && feed != NULL && feed->title != NULL && feed->type != NULL && feed->address != NULL)
-	{				
+	{
 		GError *error = NULL;
 		if (!dbus_g_proxy_call (priv->proxy, RSS_DBUS_SUBSCRIBE, &error,
 			G_TYPE_STRING, feed->address,
@@ -158,18 +158,18 @@ rss_ui_subscribe_selected (GtkTreeModel *model,
 			g_error_free (error);
 			success = FALSE;
 		}
-	
+
 		if (success == FALSE)
 		{
 			GtkWidget *image;
 			LOG ("Failed to subscribe, certainly due to dbus..");
-		
+
 			gtk_label_set_markup (priv->title, _("<b><i>Unable to contact the feed reader, is it running ?</i></b>"));
 
 			gtk_button_set_label (GTK_BUTTON (priv->subscribe), _("Retry"));
 			image = gtk_image_new_from_stock (GTK_STOCK_REFRESH,  GTK_ICON_SIZE_BUTTON);
 			gtk_button_set_image (GTK_BUTTON (priv->subscribe), image);
-	
+
 			priv->dbus_error = TRUE;
 			return TRUE;
 		}
@@ -251,7 +251,7 @@ rss_ui_get_selected_feed (RssUI *dialog)
 	GtkTreeModel *model;
 	GtkTreeIter iter;
 	NewsFeed *feed = NULL;
-	
+
 	selection = gtk_tree_view_get_selection (priv->treeview);
 	if (gtk_tree_selection_get_selected (selection, &model, &iter))
 	{
@@ -268,7 +268,7 @@ rss_ui_treeview_page_copy_selected (GtkWidget *widget,
 	NewsFeed *feed;
 
 	LOG ("Copying selected feed");
-	
+
 	feed = rss_ui_get_selected_feed (dialog);
 	if (feed != NULL)
 	{
@@ -279,7 +279,7 @@ rss_ui_treeview_page_copy_selected (GtkWidget *widget,
 
 		rss_newsfeed_free (feed);
 	}
-}	
+}
 
 static GtkMenu *
 rss_ui_build_context_menu (RssUI *dialog)
@@ -296,7 +296,7 @@ rss_ui_build_context_menu (RssUI *dialog)
 
 	item = gtk_image_menu_item_new_with_mnemonic (_("_Copy Feed Address"));
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item), image);
-	g_signal_connect (item, "activate", 
+	g_signal_connect (item, "activate",
 			  G_CALLBACK (rss_ui_treeview_page_copy_selected),
 			  dialog);
 	gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
@@ -316,7 +316,7 @@ rss_ui_treeview_show_popup (GtkTreeView *treeview,
 	menu = rss_ui_build_context_menu (dialog);
 	gtk_menu_popup (menu, NULL, NULL,
 			ephy_gui_menu_position_tree_selection, treeview, 0,
-			gtk_get_current_event_time ());	
+			gtk_get_current_event_time ());
 	gtk_menu_shell_select_first (GTK_MENU_SHELL (menu), FALSE);
 
 	return TRUE;
@@ -339,7 +339,7 @@ rss_ui_treeview_button_pressed_cb (GtkTreeView *treeview,
 	/* right-click? */
 	if (event->button != 3)
 	{
-	       return FALSE;
+		return FALSE;
 	}
 
 	/* Get tree path for row that was clicked */
@@ -347,13 +347,13 @@ rss_ui_treeview_button_pressed_cb (GtkTreeView *treeview,
 					    event->x, event->y,
 					    &path, NULL, NULL, NULL))
 	{
-	       return FALSE;
+		return FALSE;
 	}
 
 	if (!gtk_tree_model_get_iter (model, &iter, path))
 	{
-	       gtk_tree_path_free(path);
-	       return FALSE;
+		gtk_tree_path_free(path);
+		return FALSE;
 	}
 
 	/* Select the row the user clicked on */
@@ -374,9 +374,9 @@ rss_ui_treeview_button_pressed_cb (GtkTreeView *treeview,
 }
 
 /* Set dnd cursor to the default dnd Gtk one and not the GtktreeView one */
-static void 
-rss_ui_drag_begin_cb (GtkWidget *widget, 
-		      GdkDragContext *dc, 
+static void
+rss_ui_drag_begin_cb (GtkWidget *widget,
+		      GdkDragContext *dc,
 		      RssUI *dialog)
 {
 	gtk_drag_set_icon_default (dc);
@@ -423,7 +423,7 @@ rss_ui_select_feeds (GtkTreeModel *model,
 	gtk_tree_model_get (model, iter, COL_FEED, &feed, -1);
 
 	/* If we have rss feeds, check if atom is on the same host */
-	if (decision->hostname != NULL && 
+	if (decision->hostname != NULL &&
 	    decision->rss_present &&
 	    rss_ui_get_feed_type (feed->type) == FEED_TYPE_ATOM)
 	{
@@ -440,7 +440,7 @@ rss_ui_select_feeds (GtkTreeModel *model,
 			gnome_vfs_uri_unref (uri);
 		}
 	}
-	
+
 	gtk_list_store_set (store, iter, COL_TOGGLE, selected, -1);
 
 	return FALSE;
@@ -511,7 +511,7 @@ rss_ui_populate_store (RssUI *dialog)
 	gtk_tree_model_foreach (GTK_TREE_MODEL (priv->store),
 				(GtkTreeModelForeachFunc) rss_ui_select_feeds,
 				&decision);
-	
+
 	g_free (location);
 	g_free (decision.hostname);
 }
@@ -521,9 +521,9 @@ rss_ui_init (RssUI *dialog)
 {
 	DBusGConnection *connection;
 	GError *error = NULL;
-	
+
 	dialog->priv = RSS_UI_GET_PRIVATE (dialog);
-	
+
 	connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
 	if (connection == NULL)
 	{
@@ -531,7 +531,7 @@ rss_ui_init (RssUI *dialog)
 		g_error_free (error);
 		return;
     }
-    	
+
 	dialog->priv->proxy = dbus_g_proxy_new_for_name (connection,
                                      RSS_DBUS_SERVICE,
                                      RSS_DBUS_OBJECT_PATH,
@@ -556,7 +556,7 @@ rss_ui_constructor (GType type,
 	dialog = RSS_UI (object);
 	edialog = EPHY_DIALOG (object);
 	priv = dialog->priv;
-	
+
 	ephy_dialog_construct (EPHY_DIALOG (edialog),
 			       properties,
 			       SHARE_DIR "/glade/rss-ui.glade",
@@ -565,7 +565,7 @@ rss_ui_constructor (GType type,
 
 	ephy_dialog_get_controls (edialog,
 				  properties[PROP_DIALOG].id, &priv->dialog,
-				  properties[PROP_TITLE].id, &priv->title,			
+				  properties[PROP_TITLE].id, &priv->title,
 				  properties[PROP_FEEDS].id, &priv->treeview,
 				  properties[PROP_SUBSCRIBE].id, &priv->subscribe,
 				  properties[PROP_CLOSE].id, &priv->close,
@@ -586,7 +586,7 @@ rss_ui_constructor (GType type,
 	renderer = gtk_cell_renderer_toggle_new ();
 	g_signal_connect (renderer, "toggled",
 			  G_CALLBACK (rss_feed_toggle_cb), dialog);
-		
+
 	gtk_tree_view_insert_column_with_attributes (priv->treeview,
 						     COL_TOGGLE, _("Subscribe"),
 						     renderer,
@@ -613,19 +613,19 @@ rss_ui_constructor (GType type,
 	gtk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
 
 	/* Build the context menu stuff */
-	g_signal_connect (priv->treeview, "popup-menu", 
+	g_signal_connect (priv->treeview, "popup-menu",
 			  G_CALLBACK (rss_ui_treeview_show_popup), dialog);
-	g_signal_connect (priv->treeview, "button-press-event", 
+	g_signal_connect (priv->treeview, "button-press-event",
 			  G_CALLBACK (rss_ui_treeview_button_pressed_cb), dialog);
 
-	/* Set up drag and drop */		 	  
+	/* Set up drag and drop */
 	gtk_tree_view_enable_model_drag_source (priv->treeview, GDK_BUTTON1_MASK,
 						drag_targets, G_N_ELEMENTS (drag_targets),
 						GDK_ACTION_COPY);
 	g_signal_connect (priv->treeview, "drag_data_get",
 			  G_CALLBACK(rss_ui_drag_data_get_cb), dialog);
 
-	/* Be careful, default handler forces dnd icon to be an image of the row ! */ 
+	/* Be careful, default handler forces dnd icon to be an image of the row ! */
 	g_signal_connect_after (priv->treeview, "drag_begin",
 				G_CALLBACK (rss_ui_drag_begin_cb), dialog);
 
@@ -640,7 +640,7 @@ rss_ui_finalize (GObject *object)
 
 	g_object_unref (priv->proxy);
 	rss_feedlist_free (priv->list);
-	
+
 	parent_class->finalize (object);
 }
 
@@ -694,7 +694,7 @@ rss_ui_class_init (RssUIClass *klass)
 				     RSS_TYPE_FEEDLIST,
 				     G_PARAM_WRITABLE |
 				     G_PARAM_CONSTRUCT_ONLY));
-				
+
 	g_object_class_install_property
 		(object_class,
 		 PROP_EMBED,
@@ -708,7 +708,7 @@ rss_ui_class_init (RssUIClass *klass)
 	g_type_class_add_private (object_class, sizeof (RssUIPrivate));
 }
 
-GType 
+GType
 rss_ui_get_type (void)
 {
 	return type;
