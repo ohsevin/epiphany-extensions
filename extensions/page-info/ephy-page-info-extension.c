@@ -177,7 +177,7 @@ ephy_page_info_extension_display_cb (GtkAction *action,
 
 	LOG ("Creating page info dialog");
 
-	embed = ephy_window_get_active_tab (embed);
+	embed = ephy_window_get_active_tab (window);
 	g_return_if_fail (embed != NULL);
 
 	data = g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
@@ -215,7 +215,7 @@ load_status_cb (EphyEmbed *embed,
 		GParamSpec *pspec,
 		EphyWindow *window)
 {
-	if (embed == ephy_window_get_active_tab (embed))
+	if (embed == ephy_window_get_active_tab (window))
 	{
 		update_action (window, embed);
 	}

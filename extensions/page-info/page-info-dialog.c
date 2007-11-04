@@ -773,6 +773,7 @@ general_info_page_fill (InfoPage *page)
 	const char *date_hack = "%c"; /* quiet gcc */
 	char date[128];
 	char *val;
+	const char *title;
 	struct tm tm;
 	time_t t;
 
@@ -781,9 +782,8 @@ general_info_page_fill (InfoPage *page)
 	props = dialog->priv->page_info->props;
 	g_return_if_fail (props != NULL);
 
-	val = ephy_embed_get_title (embed);
-	page_info_set_text (dialog, properties[PROP_GENERAL_PAGE_TITLE].id, val);
-	g_free (val);
+	title = ephy_embed_get_title (embed);
+	page_info_set_text (dialog, properties[PROP_GENERAL_PAGE_TITLE].id, title);
 
 	val = ephy_embed_get_location (embed, TRUE);
 	page_info_set_text (dialog, properties[PROP_GENERAL_URL].id, val);
