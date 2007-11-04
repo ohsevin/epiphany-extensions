@@ -82,7 +82,7 @@ impl_detach_window (EphyExtension *ext,
 static void
 impl_attach_tab (EphyExtension *ext,
 		 EphyWindow *window,
-		 EphyTab *tab)
+		 EphyEmbed *embed)
 {
 	LOG ("attach_tab");
 }
@@ -90,7 +90,7 @@ impl_attach_tab (EphyExtension *ext,
 static void
 impl_detach_tab (EphyExtension *ext,
 		 EphyWindow *window,
-		 EphyTab *tab)
+		 EphyEmbed *embed)
 {
 	LOG ("detach_tab");
 }
