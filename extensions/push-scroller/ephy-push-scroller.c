@@ -252,10 +252,10 @@ ephy_push_scroller_stop (EphyPushScroller *scroller,
 
 	/* disconnect the signals before ungrabbing! */
 	g_signal_handlers_disconnect_matched (priv->window,
-					      G_SIGNAL_MATCH_DATA, 0, 0, 
+					      G_SIGNAL_MATCH_DATA, 0, 0,
 					      NULL, NULL, scroller);
 	g_signal_handlers_disconnect_matched (gtk_bin_get_child (GTK_BIN (priv->window)),
-					      G_SIGNAL_MATCH_DATA, 0, 0, 
+					      G_SIGNAL_MATCH_DATA, 0, 0,
 					      NULL, NULL, scroller);
 
 	/* ungrab the pointer if it's grabbed */
@@ -281,13 +281,13 @@ EphyPushScroller *
 ephy_push_scroller_new (EphyWindow *window)
 {
 	return EPHY_PUSH_SCROLLER (g_object_new (EPHY_TYPE_PUSH_SCROLLER,
-				    		 "window", window,
+						 "window", window,
 						 NULL));
 }
 
 /* class implementation */
 
-static void 
+static void
 ephy_push_scroller_init (EphyPushScroller *scroller)
 {
 	EphyPushScrollerPrivate *priv;
@@ -354,7 +354,6 @@ ephy_push_scroller_class_init (EphyPushScrollerClass *klass)
 				      "window",
 				      EPHY_TYPE_WINDOW,
 				      G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
-	
 
 	g_type_class_add_private (klass, sizeof (EphyPushScrollerPrivate));
 }

@@ -85,9 +85,9 @@ dom_mouse_down_cb (EphyEmbed *embed,
 
 static void
 impl_detach_window (EphyExtension *ext,
-                    EphyWindow *window)
+		    EphyWindow *window)
 {
-        g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, NULL);
+	g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, NULL);
 }
 
 static void
