@@ -55,7 +55,7 @@ char * get_selection (nsIDOMElement *aElement)
 	nsElement->GetSelectionEnd (&end);
 
 	// Get full text in element
-	nsString text; 
+	nsString text;
 	nsCOMPtr<T> element (do_QueryInterface(aElement));
 	element->GetValue(text);
 
@@ -63,7 +63,7 @@ char * get_selection (nsIDOMElement *aElement)
 	text.Cut (end, text.Length());
 	text.Cut (0, start);
 
-	nsCString cText; 
+	nsCString cText;
 	NS_UTF16ToCString(text, NS_CSTRING_ENCODING_UTF8, cText);
 
 	if (cText.Length () == 0) return NULL;
@@ -81,7 +81,7 @@ mozilla_get_selected_text (EphyEmbed *embed)
 	NS_ENSURE_TRUE (focus, NULL);
 
 	// First, guess the selection is not somewhere inside
-	// a textarea nor an input 
+	// a textarea nor an input
 	nsCOMPtr<nsIDOMWindow> domWindow;
 	focus->GetFocusedWindow (getter_AddRefs (domWindow));
 	NS_ENSURE_TRUE (domWindow, NULL);
@@ -90,13 +90,13 @@ mozilla_get_selected_text (EphyEmbed *embed)
 	domWindow->GetSelection (getter_AddRefs (nsSelection));
 	NS_ENSURE_TRUE (nsSelection, NULL);
 
-	PRUnichar *selText = nsnull; 
+	PRUnichar *selText = nsnull;
 	nsSelection->ToString(&selText);
 	nsString text(selText);
 
 	if (text.Length () > 0)
 	{
-		nsCString cText; 
+		nsCString cText;
 		NS_UTF16ToCString(text, NS_CSTRING_ENCODING_UTF8, cText);
 
 		nsMemory::Free (selText);
@@ -104,7 +104,7 @@ mozilla_get_selected_text (EphyEmbed *embed)
 	}
 
 	// Then the selection is perhaps somewhere inside
-	// a textarea or an input	
+	// a textarea or an input
 	nsCOMPtr<nsIDOMElement> domElement;
 	focus->GetFocusedElement (getter_AddRefs(domElement));
 
@@ -112,8 +112,8 @@ mozilla_get_selected_text (EphyEmbed *embed)
 
 	char *selection;
 
-	selection = get_selection <nsIDOMNSHTMLTextAreaElement, 
-		       		   nsIDOMHTMLTextAreaElement> (domElement);
+	selection = get_selection <nsIDOMNSHTMLTextAreaElement,
+				   nsIDOMHTMLTextAreaElement> (domElement);
 	if (selection) return selection;
 
 	// Take care of password fields
@@ -122,8 +122,8 @@ mozilla_get_selected_text (EphyEmbed *embed)
 	const PRUnichar *str = text.get ();
 	if (!(str[0] == 't' && str[1] == 'e' && str[2] == 'x' && str[3] == 't' && str[4] == '\0')) return NULL;
 
-	selection = get_selection <nsIDOMNSHTMLInputElement, 
-		       		   nsIDOMHTMLInputElement> (domElement);
+	selection = get_selection <nsIDOMNSHTMLInputElement,
+				   nsIDOMHTMLInputElement> (domElement);
 	if (selection) return selection;
 
 	return NULL;

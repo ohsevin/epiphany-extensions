@@ -129,7 +129,7 @@ smart_bookmarks_extension_register_type (GTypeModule *module)
   * Will the word get mangled using char* ?
   *
  **/
-static void 
+static void
 search_gnome_dict_cb (GtkAction *action,
 		      EphyWindow *window)
 {
@@ -137,7 +137,7 @@ search_gnome_dict_cb (GtkAction *action,
 	char *argv[4] = { "gnome-dictionary", "--look-up", NULL, NULL };
 	GError *error = NULL;
 
-	embed = ephy_window_get_active_embed (window);
+	embed = ephy_window_get_active_tab (window);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	/* ask Mozilla the selection */
@@ -155,7 +155,7 @@ search_gnome_dict_cb (GtkAction *action,
 	g_free (argv[2]);
 }
 
-static void 
+static void
 search_smart_bookmark_cb (GtkAction *action,
 			  EphyWindow *window)
 {
@@ -164,11 +164,10 @@ search_smart_bookmark_cb (GtkAction *action,
 	char *text, *url;
 	EphyBookmarks *bookmarks;
 	EphyEmbed *embed;
-	EphyTab *tab;
 	guint id;
 	EphyNewTabFlags flags = EPHY_NEW_TAB_OPEN_PAGE;
 
-	embed = ephy_window_get_active_embed (window);
+	embed = ephy_window_get_active_tab (window);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	/* ask Mozilla the selection */
@@ -190,9 +189,6 @@ search_smart_bookmark_cb (GtkAction *action,
 
 	if (url != NULL)
 	{
-		tab = ephy_window_get_active_tab (window);
-		g_return_if_fail (tab != NULL);
-
 		if (eel_gconf_get_boolean (CONF_OPEN_IN_TAB))
 		{
 			flags |= EPHY_NEW_TAB_IN_EXISTING_WINDOW |
@@ -203,7 +199,7 @@ search_smart_bookmark_cb (GtkAction *action,
 			flags |= EPHY_NEW_TAB_IN_NEW_WINDOW;
 		}
 
-		ephy_shell_new_tab (ephy_shell, window, tab, url, flags);
+		ephy_shell_new_tab (ephy_shell, window, NULL, url, flags);
 	}
 	else
 	{
@@ -244,34 +240,34 @@ static int
 sort_bookmarks (gconstpointer a,
 		gconstpointer b)
 {
-        EphyNode *node_a = (EphyNode *) a;
-        EphyNode *node_b = (EphyNode *) b;
-        const char *title1, *title2;
-        int retval;
+	EphyNode *node_a = (EphyNode *) a;
+	EphyNode *node_b = (EphyNode *) b;
+	const char *title1, *title2;
+	int retval;
 
-        title1 = ephy_node_get_property_string (node_a, EPHY_NODE_BMK_PROP_TITLE);
-        title2 = ephy_node_get_property_string (node_b, EPHY_NODE_BMK_PROP_TITLE);
+	title1 = ephy_node_get_property_string (node_a, EPHY_NODE_BMK_PROP_TITLE);
+	title2 = ephy_node_get_property_string (node_b, EPHY_NODE_BMK_PROP_TITLE);
 
-        if (title1 == NULL)
-        {
-                retval = -1;
-        }
-        else if (title2 == NULL)
-        {
-                retval = 1;
-        }
-        else
-        {
-                char *str_a, *str_b;
+	if (title1 == NULL)
+	{
+		retval = -1;
+	}
+	else if (title2 == NULL)
+	{
+		retval = 1;
+	}
+	else
+	{
+		char *str_a, *str_b;
 
-                str_a = g_utf8_casefold (title1, -1);
-                str_b = g_utf8_casefold (title2, -1);
-                retval = g_utf8_collate (str_a, str_b);
-                g_free (str_a);
-                g_free (str_b);
-        }
+		str_a = g_utf8_casefold (title1, -1);
+		str_b = g_utf8_casefold (title2, -1);
+		retval = g_utf8_collate (str_a, str_b);
+		g_free (str_a);
+		g_free (str_b);
+	}
 
-        return retval;
+	return retval;
 }
 
 static void
@@ -375,7 +371,7 @@ sync_bookmark_properties (GtkAction *action,
 			  EphyNode *bmk)
 {
 	const char *title;
-	
+
 	title = ephy_node_get_property_string (bmk, EPHY_NODE_BMK_PROP_TITLE);
 	g_object_set (action, "label", title, NULL);
 }
@@ -498,11 +494,8 @@ smart_bookmark_changed_cb (EphyNode *node,
 static void
 impl_attach_tab (EphyExtension *extension,
 		 EphyWindow *window,
-		 EphyTab *tab)
+		 EphyEmbed *embed)
 {
-	EphyEmbed *embed;
-
-	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	g_signal_connect (embed, "ge_context_menu",
@@ -512,11 +505,8 @@ impl_attach_tab (EphyExtension *extension,
 static void
 impl_detach_tab (EphyExtension *extension,
 		 EphyWindow *window,
-		 EphyTab *tab)
+		 EphyEmbed *embed)
 {
-	EphyEmbed *embed;
-
-	embed = ephy_tab_get_embed (tab);
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	g_signal_handlers_disconnect_by_func
@@ -535,7 +525,7 @@ connect_proxy_cb (GtkActionGroup *action_group,
 	    g_object_get_data (G_OBJECT (action),NODE_ID_KEY) != NULL)
 	{
 		GtkLabel *label;
-	
+
 		label = (GtkLabel *) ((GtkBin *) proxy)->child;
 
 		gtk_label_set_use_underline (label, FALSE);
@@ -650,17 +640,17 @@ smart_bookmarks_extension_init (SmartBookmarksExtension *extension)
 	bookmarks = ephy_shell_get_bookmarks (ephy_shell);
 	smart_bmks = ephy_bookmarks_get_smart_bookmarks (bookmarks);
 
-	extension->priv->smart_bookmark_node_added_id = 
+	extension->priv->smart_bookmark_node_added_id =
 		ephy_node_signal_connect_object
 			(smart_bmks, EPHY_NODE_CHILD_ADDED,
 			 (EphyNodeCallback) smart_bookmark_added_cb,
 			 G_OBJECT (extension));
-	extension->priv->smart_bookmark_node_removed_id = 
+	extension->priv->smart_bookmark_node_removed_id =
 		ephy_node_signal_connect_object
 			(smart_bmks, EPHY_NODE_CHILD_REMOVED,
 			 (EphyNodeCallback) smart_bookmark_removed_cb,
 			 G_OBJECT (extension));
-	extension->priv->smart_bookmark_node_changed_id = 
+	extension->priv->smart_bookmark_node_changed_id =
 		ephy_node_signal_connect_object
 			(smart_bmks, EPHY_NODE_CHILD_CHANGED,
 			 (EphyNodeCallback) smart_bookmark_changed_cb,
