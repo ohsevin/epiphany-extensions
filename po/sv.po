@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-11-02 02:04+0100\n"
-"PO-Revision-Date: 2007-11-02 02:04+0100\n"
+"POT-Creation-Date: 2007-11-12 09:58+0100\n"
+"PO-Revision-Date: 2007-11-12 10:00+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -141,7 +141,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>Uppdatera regler från ursprungliga webbplatsen</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:243
+#: ../extensions/adblock/ephy-adblock-extension.c:242
 msgid "Adblock Editor"
 msgstr "Adblock-redigerare"
 
@@ -161,11 +161,11 @@ msgstr "Filterset.G"
 msgid "Whitelist"
 msgstr "Vitlista"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:244
+#: ../extensions/adblock/ephy-adblock-extension.c:243
 msgid "Edit Adblock"
 msgstr "Redigera Adblock"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:311
+#: ../extensions/adblock/ephy-adblock-extension.c:310
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -180,36 +180,36 @@ msgstr "Uppdatera _automatiskt"
 msgid "Reload the page periodically"
 msgstr "Uppdatera sidan periodvis"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:371
+#: ../extensions/cc-license-viewer/cc-license-viewer.py:370
 msgid "View Creative Commons license"
 msgstr "Visa Creative Commons-licensen"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:177
+#: ../extensions/certificates/ephy-certificates-extension.c:176
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "Certifikat"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:208
+#: ../extensions/certificates/ephy-certificates-extension.c:207
 msgid "Security Devices"
 msgstr "Säkerhetsenheter"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:220
+#: ../extensions/certificates/ephy-certificates-extension.c:219
 msgid "Manage _Certificates"
 msgstr "Hantera _certifikat"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:222
+#: ../extensions/certificates/ephy-certificates-extension.c:221
 msgid "Manage your certificates"
 msgstr "Hantera dina certifikat"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:226
+#: ../extensions/certificates/ephy-certificates-extension.c:225
 msgid "Manage Security _Devices"
 msgstr "Hantera säkerhets_enheter"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:228
+#: ../extensions/certificates/ephy-certificates-extension.c:227
 msgid "Manage your security devices"
 msgstr "Hantera dina säkerhetsenheter"
 
@@ -283,12 +283,12 @@ msgid "Epilicious Synchronize"
 msgstr "Synkronisering för Epilicious"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:1
-msgid "Bookmarks with this topic will be synchronized to del.icio.us."
-msgstr "Bokmärken med det här ämnet kommer att synkroniseras till del.icio.us."
+msgid "Bookmarks with this topic will be synchronized."
+msgstr "Bokmärken med det här ämnet kommer att synkroniseras."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:2
-msgid "Controls the function of the topic. If this is unset then all bookmarks with the topic will be synched with del.icio.us. If this is set then all bookmarks without the topic will be synched with del.icio.us."
-msgstr "Kontrollerar funktionen för ämnet. Om den här inte är inställd kommer alla bokmärken med ämnet att synkroniseras med del.icio.us. Om den här är inställd kommer alla bokmärken utan ämnet att synkroniseras med del.icio.us."
+msgid "Controls the function of the topic. If this is unset then all bookmarks with the topic will be synched. If this is set then all bookmarks without the topic will be synched."
+msgstr "Kontrollerar funktionen för ämnet. Om den här inte är inställd kommer alla bokmärken med ämnet att synkroniseras. Om den här är inställd kommer alla bokmärken utan ämnet att synkroniseras."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:3
 msgid "Exclude topic"
@@ -299,8 +299,8 @@ msgid "Shared topic"
 msgstr "Delat ämne"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:5
-msgid "The backend that epilicious will use for synchronizing bookmarks. Allowed values: 'del.icio.us', 'ma.gnolia'"
-msgstr "Bakänden som epilicious ska använda för att synkronisera bokmärken. Tillåtna värden: \"del.icio.us\", \"ma.gnolia\""
+msgid "The backend that epilicious will use for synchronizing bookmarks. Allowed value: 'ma.gnolia'"
+msgstr "Bakänden som epilicious ska använda för att synkronisera bokmärken. Tillåtna värden: \"ma.gnolia\""
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
 msgid "The password that epilicious will use for synchronizing bookmarks."
@@ -507,16 +507,16 @@ msgstr "Läs in och glöm utökningar"
 msgid "Help about extensions"
 msgstr "Hjälp för utökningar"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:88
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
 msgid "Install User _Script"
 msgstr "Installera användar_skript"
 
 #. shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:90
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
 msgid "Install Greasemonkey script"
 msgstr "Installera Greasemonkey-skript"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:315
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:314
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "Användarskriptet på \"%s\" har installerats"
@@ -913,7 +913,7 @@ msgstr "_Prenumerera på denna källa"
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Prenumerera på denna källa i din favoritnyhetsläsare"
 
-#: ../extensions/rss/ephy-rss-extension.c:381
+#: ../extensions/rss/ephy-rss-extension.c:372
 msgid "Subscribe to site's news feed"
 msgstr "Prenumerera på nyhetskällan för denna webbplats"
 
@@ -1028,11 +1028,11 @@ msgstr "Källan till den nya sidopanelssidan är \"%s\"."
 msgid "_Add Sidebar"
 msgstr "_Lägg till sidopanel"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:551
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:541
 msgid "_Look Up"
 msgstr "Slå _upp"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:558
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:548
 msgid "_GNOME Dictionary"
 msgstr "_GNOME-ordbok"
 
@@ -1078,8 +1078,8 @@ msgid "View the page certificate and manage the certificates"
 msgstr "Visa sidans certifikat och hantera certifikaten"
 
 #: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
-msgid "Synchronize bookmarks with del.icio.us"
-msgstr "Synkronisera bokmärken med del.icio.us"
+msgid "Synchronize bookmarks with social bookmark sites"
+msgstr "Synkronisera bokmärken med sociala bokmärkesplatser på nätet"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
