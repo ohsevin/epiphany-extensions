@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions.HEAD.es\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-11-01 23:56+0000\n"
-"PO-Revision-Date: 2007-11-03 12:56+0100\n"
+"POT-Creation-Date: 2007-11-03 19:41+0000\n"
+"PO-Revision-Date: 2007-11-13 21:07+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -305,19 +305,18 @@ msgid "Epilicious Synchronize"
 msgstr "Sincronizar Epilicious"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:1
-msgid "Bookmarks with this topic will be synchronized to del.icio.us."
-msgstr "Los marcadores con este tema se sincronizarán con del.icio.us."
+msgid "Bookmarks with this topic will be synchronized."
+msgstr "Los marcadores con este tema se sincronizarán."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:2
 msgid ""
 "Controls the function of the topic. If this is unset then all bookmarks with "
-"the topic will be synched with del.icio.us. If this is set then all "
-"bookmarks without the topic will be synched with del.icio.us."
+"the topic will be synched. If this is set then all bookmarks without the "
+"topic will be synched."
 msgstr ""
-"Controla la función del tema. Si no está establecida, entonces todos los "
-"marcadores con el tema se soncronizarán con del.icio.us. Si está "
-"establecida, entonces todos los marcadores sin tema serán sincronizados con "
-"del.icio.us."
+"Controla la función del tema. Si no está establecida, entonces todos los marcadores con "
+"el tema se sincronizarán. Si está establecida, entonces todos los marcadores sin tema "
+"se sincronizarán."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:3
 msgid "Exclude topic"
@@ -330,10 +329,10 @@ msgstr "Tema compartido"
 #: ../extensions/epilicious/epilicious.schemas.in.h:5
 msgid ""
 "The backend that epilicious will use for synchronizing bookmarks. Allowed "
-"values: 'del.icio.us', 'ma.gnolia'"
+"value: 'ma.gnolia'"
 msgstr ""
 "El backend que epilicious usará para sincronizar los marcadores. Valores "
-"permitidos: «del.icio.us», «ma.gnolia»"
+"permitidos: «ma.gnolia»"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
 msgid "The password that epilicious will use for synchronizing bookmarks."
@@ -1120,8 +1119,8 @@ msgid "View the page certificate and manage the certificates"
 msgstr "Vea el certificado de página y gestione los certificados"
 
 #: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
-msgid "Synchronize bookmarks with del.icio.us"
-msgstr "Sincronizar los marcadores con del.icio.us"
+msgid "Synchronize bookmarks with social bookmark sites"
+msgstr "Sincronizar los marcadores con las redes de marcadores sociales"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
