@@ -28,8 +28,9 @@
 
 #include <epiphany/ephy-extension.h>
 #include <epiphany/ephy-embed.h>
-#include <epiphany/ephy-embed-factory.h>
+#include <epiphany/ephy-embed-container.h>
 #include <epiphany/ephy-embed-event.h>
+#include <epiphany/ephy-embed-factory.h>
 #include <epiphany/ephy-embed-persist.h>
 #include <epiphany/ephy-shell.h>
 #include <epiphany/ephy-window.h>
@@ -337,7 +338,7 @@ ephy_greasemonkey_extension_install_cb (GtkAction *action,
 	url = data->last_clicked_url;
 	g_return_if_fail (url != NULL);
 
-	embed = ephy_window_get_active_tab (window);
+	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 	g_return_if_fail (embed != NULL);
 
 	LOG ("Installing script at '%s'", url);

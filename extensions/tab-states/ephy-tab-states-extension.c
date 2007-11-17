@@ -23,6 +23,7 @@
 
 #include "ephy-tab-states-extension.h"
 
+#include <epiphany/ephy-embed-container.h>
 #include <epiphany/ephy-extension.h>
 #include "eel-gconf-extensions.h"
 #include "ephy-debug.h"
@@ -172,7 +173,7 @@ sync_active_tab (EphyWindow *window,
 	EphyEmbed *active_tab;
 	GtkWidget *label;
 
-	active_tab = ephy_window_get_active_tab (window);
+	active_tab = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 
 	if (ephy_embed_get_load_status (active_tab) == FALSE)
 	{
@@ -211,7 +212,7 @@ sync_load_status (EphyEmbed *tab,
 #endif
 		font_desc = priv->bold_font_desc;
 	}
-	else if (tab != ephy_window_get_active_tab (window))
+	else if (tab != ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window)))
 	{
 #ifdef ENABLE_COLOURS
 		colour = &priv->tab_unread_colour;
@@ -234,7 +235,7 @@ impl_attach_window (EphyExtension *ext,
 
 	LOG ("attach_window window %p", window);
 
-	g_signal_connect (window, "notify::active-tab",
+	g_signal_connect (window, "notify::active-child",
 			  G_CALLBACK (sync_active_tab), extension);
 }
 

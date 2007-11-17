@@ -21,6 +21,7 @@
 #include <stdarg.h>
 #include <glib/gi18n-lib.h>
 #include <gtk/gtk.h>
+#include <epiphany/ephy-embed-container.h>
 #include <epiphany/ephy-extension.h>
 #include "ephy-file-helpers.h"
 #include "ephy-actions-extension.h"
@@ -495,7 +496,7 @@ ephy_actions_extension_document_popup_cb (GtkAction *action,
 		return;
 	}
 
-	embed = ephy_window_get_active_tab (window);
+	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 	url = ephy_embed_get_location (embed, TRUE);
 	ephy_actions_extension_run_action (action, window, url);
 	g_free (url);

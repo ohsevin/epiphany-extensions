@@ -25,6 +25,7 @@
 #include <epiphany/ephy-window.h>
 #include <epiphany/ephy-adblock.h>
 #include <epiphany/ephy-adblock-manager.h>
+#include <epiphany/ephy-embed-container.h>
 #include <epiphany/ephy-embed-shell.h>
 #include <epiphany/ephy-extension.h>
 
@@ -253,7 +254,7 @@ ephy_adblock_statusbar_icon_clicked_cb (GtkWidget *widget,
 	{
 		EphyAdblockExtension *ext;
 		AdBlocker *blocker;
-		EphyEmbed *embed = ephy_window_get_active_tab (window);
+		EphyEmbed *embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 
 		ext = EPHY_ADBLOCK_EXTENSION (g_object_get_data (G_OBJECT (window),
 								 EXTENSION_KEY));
@@ -281,7 +282,7 @@ update_statusbar (EphyWindow *window)
 	int num_blocked;
 	EphyAdblockExtension *ext;
 
-	embed = ephy_window_get_active_tab (window);
+	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 	g_return_if_fail (embed != NULL);
 
 	ext = EPHY_ADBLOCK_EXTENSION (g_object_get_data (G_OBJECT (window),
@@ -532,7 +533,7 @@ num_blocked_cb (AdBlocker *blocker,
 	window = EPHY_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (embed)));
 	g_return_if_fail (window != NULL);
 
-	if (embed == ephy_window_get_active_tab (window))
+	if (embed == ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window)))
 	{
 		update_statusbar (window);
 	}

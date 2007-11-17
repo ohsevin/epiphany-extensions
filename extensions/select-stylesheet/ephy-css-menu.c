@@ -27,6 +27,7 @@
 
 #include <epiphany/ephy-window.h>
 #include <epiphany/ephy-embed.h>
+#include <epiphany/ephy-embed-container.h>
 
 #include "ephy-debug.h"
 
@@ -120,7 +121,7 @@ activate_stylesheet_cb (GtkAction *action,
 	if (menu->priv->updating) return;
 
 	g_return_if_fail (EPHY_IS_EMBED (p->embed));
-	g_return_if_fail (ephy_window_get_active_tab (p->window) == p->embed);
+	g_return_if_fail (ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (p->window)) == p->embed);
 
 	style = g_object_get_data (G_OBJECT (action), STYLESHEET_KEY);
 	g_return_if_fail (style != NULL);
@@ -297,7 +298,7 @@ sync_active_tab_cb (EphyWindow *window,
 {
 	EphyEmbed *embed;
 
-	embed = ephy_window_get_active_tab (window);
+	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 	g_return_if_fail (embed != NULL);
 
 	ephy_css_menu_set_embed (menu, embed);
@@ -347,12 +348,12 @@ ephy_css_menu_set_window (EphyCSSMenu *menu, EphyWindow *window)
 			       GTK_UI_MANAGER_SEPARATOR, FALSE);
 
 	/* Attach the signals to the window */
-	g_signal_connect (window, "notify::active-tab",
+	g_signal_connect (window, "notify::active-child",
 			  G_CALLBACK (sync_active_tab_cb), menu);
 
 	if (GTK_WIDGET_REALIZED (window))
 	{
-		embed = ephy_window_get_active_tab (window);
+		embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 		ephy_css_menu_set_embed (menu, embed);
 		ephy_css_menu_rebuild (menu);
 	}

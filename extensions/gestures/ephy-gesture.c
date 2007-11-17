@@ -37,6 +37,7 @@
 #include <gtk/gtkactiongroup.h>
 #include <gtk/gtkuimanager.h>
 
+#include <epiphany/ephy-embed-container.h>
 #include <epiphany/ephy-window.h>
 
 #include <string.h>
@@ -472,7 +473,7 @@ ephy_gesture_activate (EphyGesture *gesture,
 		EphyEmbedEvent *event;
 		gint handled = FALSE;
 
-		embed = ephy_window_get_active_tab (window);
+		embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 		g_return_if_fail (EPHY_IS_EMBED (embed));
 
 		event = ephy_gesture_get_event (gesture);

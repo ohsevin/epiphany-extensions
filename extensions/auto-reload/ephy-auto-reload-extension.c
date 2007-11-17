@@ -23,6 +23,7 @@
 #include "ephy-auto-reload-extension.h"
 #include "ephy-debug.h"
 
+#include <epiphany/ephy-embed-container.h>
 #include <epiphany/ephy-extension.h>
 
 #include <gtk/gtktoggleaction.h>
@@ -145,7 +146,7 @@ static void
 ephy_auto_reload_activate_cb (GtkToggleAction *action,
 			      EphyWindow *window)
 {
-	EphyEmbed *embed = ephy_window_get_active_tab (window);
+	EphyEmbed *embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 
 	/* Invalidate the current timeout */
 	g_object_set_data (G_OBJECT (embed), TIMEOUT_DATA_KEY, NULL);
@@ -165,7 +166,7 @@ update_auto_reload_menu_cb (GtkAction *action,
 	WindowData *data;
 	TimeoutData *timeout;
 
-	embed = ephy_window_get_active_tab (window);
+	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 	g_return_if_fail (data != NULL);
 

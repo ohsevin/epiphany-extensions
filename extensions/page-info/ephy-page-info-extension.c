@@ -27,6 +27,7 @@
 #include <epiphany/ephy-extension.h>
 #include <epiphany/ephy-window.h>
 #include <epiphany/ephy-embed.h>
+#include <epiphany/ephy-embed-container.h>
 #include <epiphany/ephy-notebook.h>
 
 #include <gtk/gtkaction.h>
@@ -177,7 +178,7 @@ ephy_page_info_extension_display_cb (GtkAction *action,
 
 	LOG ("Creating page info dialog");
 
-	embed = ephy_window_get_active_tab (window);
+	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 	g_return_if_fail (embed != NULL);
 
 	data = g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
@@ -215,7 +216,7 @@ load_status_cb (EphyEmbed *embed,
 		GParamSpec *pspec,
 		EphyWindow *window)
 {
-	if (embed == ephy_window_get_active_tab (window))
+	if (embed == ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window)))
 	{
 		update_action (window, embed);
 	}
@@ -231,7 +232,7 @@ switch_page_cb (GtkNotebook *notebook,
 
 	if (GTK_WIDGET_REALIZED (window) == FALSE) return; /* on startup */
 
-	embed = ephy_window_get_active_tab (window);
+	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 	update_action (window, embed);
 }
 

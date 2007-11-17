@@ -32,6 +32,7 @@
 #include <epiphany/ephy-statusbar.h>
 #include <epiphany/ephy-notebook.h>
 #include <epiphany/ephy-shell.h>
+#include <epiphany/ephy-embed-container.h>
 
 #include <gtk/gtkaction.h>
 #include <gtk/gtkactiongroup.h>
@@ -196,7 +197,7 @@ ephy_rss_dialog_display (EphyWindow *window)
 
 	priv = data->extension->priv;
 
-	embed = ephy_window_get_active_tab (window);
+	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 	g_return_if_fail (embed != NULL);
 
 	list = (FeedList *) g_object_get_data (G_OBJECT (embed), FEEDLIST_DATA_KEY);
@@ -265,7 +266,7 @@ ephy_rss_update_action (EphyWindow *window)
 	gboolean show = TRUE;
 	EphyEmbed *embed;
 
-	embed = ephy_window_get_active_tab (window);
+	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 
 	/* The page is loaded, do we have a feed ? */
 	list = (FeedList *) g_object_get_data (G_OBJECT (embed), FEEDLIST_DATA_KEY);
@@ -450,7 +451,7 @@ impl_attach_window (EphyExtension *ext,
 
 	/* Register for tab switch events */
 	ephy_rss_sync_active_tab (window, NULL, NULL);
-	g_signal_connect_after (window, "notify::active-tab",
+	g_signal_connect_after (window, "notify::active-child",
 				G_CALLBACK (ephy_rss_sync_active_tab), NULL);
 }
 

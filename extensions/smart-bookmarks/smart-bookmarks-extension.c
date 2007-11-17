@@ -25,6 +25,7 @@
 
 #include <epiphany/ephy-extension.h>
 #include <epiphany/ephy-embed.h>
+#include <epiphany/ephy-embed-container.h>
 #include <epiphany/ephy-command-manager.h>
 #include <epiphany/ephy-shell.h>
 #include <epiphany/ephy-session.h>
@@ -137,7 +138,7 @@ search_gnome_dict_cb (GtkAction *action,
 	char *argv[4] = { "gnome-dictionary", "--look-up", NULL, NULL };
 	GError *error = NULL;
 
-	embed = ephy_window_get_active_tab (window);
+	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	/* ask Mozilla the selection */
@@ -167,7 +168,7 @@ search_smart_bookmark_cb (GtkAction *action,
 	guint id;
 	EphyNewTabFlags flags = EPHY_NEW_TAB_OPEN_PAGE;
 
-	embed = ephy_window_get_active_tab (window);
+	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	/* ask Mozilla the selection */

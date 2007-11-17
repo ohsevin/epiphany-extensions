@@ -31,8 +31,9 @@
 
 #include <epiphany/ephy-extension.h>
 #include <epiphany/ephy-window.h>
-#include <epiphany/ephy-embed-shell.h>
 #include <epiphany/ephy-embed.h>
+#include <epiphany/ephy-embed-container.h>
+#include <epiphany/ephy-embed-shell.h>
 
 #include <gtk/gtkaction.h>
 #include <gtk/gtkactiongroup.h>
@@ -225,7 +226,7 @@ ephy_error_viewer_extension_validate (GtkAction *action,
 
 	dialog = data->extension->priv->dialog;
 
-	embed = ephy_window_get_active_tab (data->window);
+	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (data->window));
 
 	ephy_dialog_show (EPHY_DIALOG (dialog));
 
@@ -242,7 +243,7 @@ ephy_error_viewer_extension_check_links	(GtkAction *action,
 
 	dialog = data->extension->priv->dialog;
 
-	embed = ephy_window_get_active_tab (data->window);
+	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (data->window));
 
 	ephy_dialog_show (EPHY_DIALOG (dialog));
 
@@ -285,7 +286,7 @@ update_actions (EphyWindow *window)
 	action2 = gtk_ui_manager_get_action (GTK_UI_MANAGER (ephy_window_get_ui_manager (window)),
 					     "/menubar/ToolsMenu/CheckLinks");
 
-	embed = ephy_window_get_active_tab (window);
+	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 
 	/* Not finished loading? */
 	if (ephy_embed_get_load_status (embed) == TRUE)
