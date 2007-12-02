@@ -47,21 +47,21 @@ _actions = [('PythonSampleMenuAlwaysEnabled', None,
 	   ]
 
 # The next three functions handle the SometimesEnabled action. Note that we
-# use window.get_active_tab(): we want the menu entries to reflect the active
-# tab, not necessarily the one which fired a signal.
+# use window.get_active_child(): we want the menu entries to reflect the active
+# child, not necessarily the one which fired a signal.
 def _update_action(window):
 	sometimes = window.get_ui_manager().get_action('/menubar/ToolsMenu/PythonSampleMenuSometimesEnabled')
 
-	tab = window.get_active_tab()
+	child = window.get_active_child()
 
-	# Tab is None when a window is first opened
-	sensitive = (tab != None and tab.get_load_status() != True)
+	# child is None when a window is first opened
+	sensitive = (child != None and child.get_load_status() != True)
 	sometimes.set_sensitive(sensitive)
 
 def _switch_page_cb(notebook, page, page_num, window):
 	_update_action(window)
 
-def _load_status_cb(tab, pspec, window):
+def _load_status_cb(child, pspec, window):
 	_update_action(window)
 
 # These implement the EphyExtension interface.

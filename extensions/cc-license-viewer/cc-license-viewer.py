@@ -338,7 +338,7 @@ pixbuf = gtk.gdk.pixbuf_new_from_inline(len(_icon), _icon, False)
 pixbuf = pixbuf.scale_simple(icon_size[0], icon_size[1], gtk.gdk.INTERP_BILINEAR)	
 
 def _switch_page_cb (notebook, page, page_num, window):
-	ui_show (window, window.get_active_tab())
+	ui_show (window, window.get_active_child())
 	
 def _load_status_cb(embed, data, window):
 	if not embed.get_property('load-status'):
@@ -370,7 +370,7 @@ def ui_init (window):
 	eventbox.set_tooltip_text (_("View Creative Commons license"))
 
 def ui_show(window, embed):
-	if embed != window.get_active_tab(): return
+	if embed != window.get_active_child(): return
 
 	statusbar = window.get_statusbar()
 	eventbox = statusbar._cc_eventbox
