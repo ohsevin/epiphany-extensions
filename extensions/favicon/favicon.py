@@ -22,8 +22,8 @@
 import epiphany;
 import gnomevfs;
 
-def net_stop_cb(embed):
-	if embed.get_property('icon-address') == None or len(embed.get_property('icon-address')) < 1:
+def net_stop_cb(embed, status):
+	if embed.get_property('icon-address') == None or len(embed.get_property('icon-address')) < 1 and not embed.get_property('load-status'):
 		try:
 			uri = gnomevfs.URI(embed.get_property('address'))
 			single = epiphany.ephy_shell_get_default().get_embed_single()
@@ -38,7 +38,7 @@ def net_stop_cb(embed):
 			pass
 
 def attach_tab(window, embed):
-	handler_id = embed.connect("net_stop", net_stop_cb)
+	handler_id = embed.connect("notify::load-status", net_stop_cb)
 	embed._favicon_details = [ handler_id ]
 
 def detach_tab(window, embed):
