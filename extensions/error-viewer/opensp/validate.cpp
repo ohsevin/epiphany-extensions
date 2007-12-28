@@ -26,6 +26,7 @@
 #include <glib/gi18n-lib.h>
 
 #include <string>
+#include <cstring>
 #include <iostream>
 
 #include <OpenSP/config.h> // Necessary for multi-byte support
