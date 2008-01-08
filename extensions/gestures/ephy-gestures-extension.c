@@ -290,7 +290,7 @@ dom_mouse_down_cb (EphyEmbed *embed,
 	window = EPHY_WINDOW (toplevel);
 	g_return_val_if_fail (EPHY_IS_WINDOW (window), handled);
 
-	g_object_get (window, "print-preview-mode", &ppv_mode, NULL);
+	g_object_get (window, "is-print-preview", &ppv_mode, NULL);
 	if (ppv_mode) return handled;
 
 	button = ephy_embed_event_get_button (event);

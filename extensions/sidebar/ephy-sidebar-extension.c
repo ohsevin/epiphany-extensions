@@ -169,7 +169,7 @@ cmd_view_sidebar (GtkAction *action, EphyWindow *window)
 
 	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 
-	g_object_get (window, "print-preview-mode", &ppview_mode, NULL);
+	g_object_get (window, "is-print-preview", &ppview_mode, NULL);
 	g_value_init (&value, G_TYPE_BOOLEAN);
 
 	if (gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action)))
@@ -198,7 +198,7 @@ window_ppv_mode_notify_cb (EphyWindow *window, GParamSpec   *pspec,
 	GtkAction *action;
 	gboolean ppview_mode;
 
-	g_object_get (window, "print-preview-mode", &ppview_mode, NULL);
+	g_object_get (window, "is-print-preview", &ppview_mode, NULL);
 	action = gtk_action_group_get_action (data->action_group, "ViewSidebar");
 
 	if (ppview_mode)
@@ -585,7 +585,7 @@ impl_attach_window (EphyExtension *ext,
 			       "ViewSidebar", "ViewSidebar",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
 
-	g_signal_connect (window, "notify::print-preview-mode",
+	g_signal_connect (window, "notify::is-print-preview",
 			  G_CALLBACK (window_ppv_mode_notify_cb), data);
 
 	/* Add the sidebar and the current notebook to a
