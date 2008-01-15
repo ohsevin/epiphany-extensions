@@ -1,16 +1,14 @@
 # Swedish messages for epiphany-extensions.
-# Copyright (C) 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
-# Daniel Nylander <po@danielnylander.se>, 2006,2007.
+# Copyright (C) 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
+# Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2008.
 # Christian Rose <menthos@menthos.com>, 2004.
-#
-# $Id: sv.po,v 1.11 2006/12/26 13:14:21 dnylande Exp $
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-11-12 09:58+0100\n"
-"PO-Revision-Date: 2007-11-12 10:00+0100\n"
+"POT-Creation-Date: 2008-01-15 04:15+0100\n"
+"PO-Revision-Date: 2008-01-15 04:17+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -40,7 +38,7 @@ msgstr "Åtgärdsbeskrivningen."
 
 #: ../extensions/actions/action-properties.glade.h:6
 msgid "The action name. If a character is preceded by an underscore, that character will be used as the access key for the menu item."
-msgstr "Namnet på åtgärden. Om ett tecken föregås av ett understreck kommer det tecknet att användas som åtkomsttangent för menyposten."
+msgstr "Namnet på åtgärden. Om ett tecken föregås av ett understreck kommer det tecknet att användas som åtkomsttangent för menyobjektet."
 
 #: ../extensions/actions/action-properties.glade.h:7
 msgid "The command to execute when the action is activated. The URL of the link, image or page will be appended to the command."
@@ -72,19 +70,19 @@ msgstr "_Sidor"
 msgid "Actions"
 msgstr "Åtgärder"
 
-#: ../extensions/actions/ephy-actions-extension.c:112
+#: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Actio_ns"
 msgstr "Åtgä_rder"
 
-#: ../extensions/actions/ephy-actions-extension.c:113
+#: ../extensions/actions/ephy-actions-extension.c:114
 msgid "Customize actions"
 msgstr "Anpassa åtgärder"
 
-#: ../extensions/actions/ephy-actions-extension.c:436
+#: ../extensions/actions/ephy-actions-extension.c:437
 msgid "Could not run command"
 msgstr "Kunde inte köra kommando"
 
-#: ../extensions/actions/ephy-actions-extension.c:439
+#: ../extensions/actions/ephy-actions-extension.c:440
 msgid "Could not Run Command"
 msgstr "Kunde inte köra kommando"
 
@@ -141,9 +139,9 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>Uppdatera regler från ursprungliga webbplatsen</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:242
+#: ../extensions/adblock/ephy-adblock-extension.c:243
 msgid "Adblock Editor"
-msgstr "Adblock-redigerare"
+msgstr "Redigerare för reklamblockerare"
 
 #: ../extensions/adblock/adblock.glade.h:5
 msgid "Add a new rule"
@@ -161,22 +159,22 @@ msgstr "Filterset.G"
 msgid "Whitelist"
 msgstr "Vitlista"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:243
+#: ../extensions/adblock/ephy-adblock-extension.c:244
 msgid "Edit Adblock"
-msgstr "Redigera Adblock"
+msgstr "Redigera reklamblockerare"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:310
+#: ../extensions/adblock/ephy-adblock-extension.c:311
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
 msgstr[0] "%d dolt reklammeddelande"
 msgstr[1] "%d dolda reklammeddelanden"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:84
 msgid "_Auto Reload"
 msgstr "Uppdatera _automatiskt"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:86
 msgid "Reload the page periodically"
 msgstr "Uppdatera sidan periodvis"
 
@@ -322,30 +320,30 @@ msgstr "lösenord"
 msgid "username"
 msgstr "användarnamn"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:98
 msgid "Check _HTML"
 msgstr "Kontrollera _HTML"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:100
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "Visa HTML-fel i felvisardialogen"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:104
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
 msgid "Check _Links"
 msgstr "Kontrollera _länkar"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:106
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:107
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr "Visa ogiltiga länkar i felvisardialogen"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:110
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:111
 msgid "_Error Viewer"
 msgstr "_Felvisare"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:112
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:113
 msgid "Display web page errors"
 msgstr "Visa fel i webbsidor"
 
@@ -409,7 +407,7 @@ msgid_plural "Checking %d Links on “%s”"
 msgstr[0] "Kontrollerar %d länk på \"%s\""
 msgstr[1] "Kontrollerar %d länkar på \"%s\""
 
-#: ../extensions/error-viewer/opensp/validate.cpp:167
+#: ../extensions/error-viewer/opensp/validate.cpp:168
 #, c-format
 msgid ""
 "HTML error in “%s” on line %s:\n"
@@ -507,16 +505,16 @@ msgstr "Läs in och glöm utökningar"
 msgid "Help about extensions"
 msgstr "Hjälp för utökningar"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:88
 msgid "Install User _Script"
 msgstr "Installera användar_skript"
 
 #. shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:90
 msgid "Install Greasemonkey script"
 msgstr "Installera Greasemonkey-skript"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:314
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:315
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "Användarskriptet på \"%s\" har installerats"
@@ -558,11 +556,11 @@ msgstr "Levande rubriker"
 msgid "Remove headers"
 msgstr "Ta bort rubriker"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/page-info/ephy-page-info-extension.c:68
 msgid "Pa_ge Information"
 msgstr "S_idinformation"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:69
+#: ../extensions/page-info/ephy-page-info-extension.c:70
 msgid "Display page information in a dialog"
 msgstr "Visa sidinformation i en dialogruta"
 
@@ -897,23 +895,23 @@ msgstr "Plats_rättigheter"
 msgid "Manage web site permissions"
 msgstr "Hantera webbplatsrättigheter"
 
-#: ../extensions/rss/ephy-rss-extension.c:90
+#: ../extensions/rss/ephy-rss-extension.c:91
 msgid "News Feeds Subscription"
 msgstr "Prenumeration på nyhetskällor"
 
-#: ../extensions/rss/ephy-rss-extension.c:92
+#: ../extensions/rss/ephy-rss-extension.c:93
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr "Prenumerera på nyhetskällan för denna webbplats i din favoritnyhetsläsare"
 
-#: ../extensions/rss/ephy-rss-extension.c:97
+#: ../extensions/rss/ephy-rss-extension.c:98
 msgid "_Subscribe to this feed"
 msgstr "_Prenumerera på denna källa"
 
-#: ../extensions/rss/ephy-rss-extension.c:99
+#: ../extensions/rss/ephy-rss-extension.c:100
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Prenumerera på denna källa i din favoritnyhetsläsare"
 
-#: ../extensions/rss/ephy-rss-extension.c:372
+#: ../extensions/rss/ephy-rss-extension.c:373
 msgid "Subscribe to site's news feed"
 msgstr "Prenumerera på nyhetskällan för denna webbplats"
 
@@ -946,24 +944,24 @@ msgstr "Prenumeration på nyhetskanal"
 msgid "_Subscribe"
 msgstr "_Prenumerera"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:145
+#: ../extensions/select-stylesheet/ephy-css-menu.c:146
 msgid "Render the page without using a style"
 msgstr "Rendera sidan utan att använda en stil"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:148
+#: ../extensions/select-stylesheet/ephy-css-menu.c:149
 msgid "Render the page using the default style"
 msgstr "Rendera sidan med standardstilen"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:151
+#: ../extensions/select-stylesheet/ephy-css-menu.c:152
 #, c-format
 msgid "Render the page using the “%s” style"
 msgstr "Rita upp sidan med \"%s\"-stilen"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:309
+#: ../extensions/select-stylesheet/ephy-css-menu.c:310
 msgid "St_yle"
 msgstr "St_il"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:310
+#: ../extensions/select-stylesheet/ephy-css-menu.c:311
 msgid "Select a different style for this page"
 msgstr "Välj en annan stil för denna sida"
 
@@ -1028,11 +1026,11 @@ msgstr "Källan till den nya sidopanelssidan är \"%s\"."
 msgid "_Add Sidebar"
 msgstr "_Lägg till sidopanel"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:541
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:542
 msgid "_Look Up"
 msgstr "Slå _upp"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:548
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:549
 msgid "_GNOME Dictionary"
 msgstr "_GNOME-ordbok"
 
@@ -1047,6 +1045,14 @@ msgstr "Öppna sökresultatet i en ny flik om sant, i ett nytt fönster om falsk
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
 msgstr "Kör godtyckliga kommandon från sammanhangsmenyn"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
+msgid "Ad Blocker"
+msgstr "Reklamblockerare"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
+msgid "Block the pest!"
+msgstr "Blockera pesten!"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
 msgid "Auto Scroll"
@@ -1157,6 +1163,14 @@ msgstr "Dra sidan vid mittenmusklick"
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
 msgid "Push Scroll"
 msgstr "Tryckrullning"
+
+#: ../extensions/python-console/python-console.ephy-extension.in.h:1
+msgid "Opens an interactive Python console"
+msgstr "Öppnar en interaktiv Python-konsoll"
+
+#: ../extensions/python-console/python-console.ephy-extension.in.h:2
+msgid "Python Console"
+msgstr "Python-konsoll"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
