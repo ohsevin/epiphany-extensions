@@ -1,17 +1,17 @@
-# translation of epiphany-extensions.HEAD.es.po to Spanish
+# translation of epiphany-extensions.HEAD.po to Español
 # This file is distributed under the same license as the epiphany package.
 # Copyright (C) 2003 The Free Software Foundation.
 #
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2004, 2005, 2006.
-# Jorge González <jorgegonz@svn.gnome.org>, 2007.
+# Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: epiphany-extensions.HEAD.es\n"
+"Project-Id-Version: epiphany-extensions.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-11-03 19:41+0000\n"
-"PO-Revision-Date: 2007-11-13 21:07+0100\n"
+"POT-Creation-Date: 2008-01-14 03:19+0000\n"
+"PO-Revision-Date: 2008-01-17 15:01+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
-"Language-Team: Spanish <traductores@es.gnome.org>\n"
+"Language-Team: Español <<gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -88,19 +88,19 @@ msgstr "_Páginas"
 msgid "Actions"
 msgstr "Acciones"
 
-#: ../extensions/actions/ephy-actions-extension.c:112
+#: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Actio_ns"
 msgstr "Accio_nes"
 
-#: ../extensions/actions/ephy-actions-extension.c:113
+#: ../extensions/actions/ephy-actions-extension.c:114
 msgid "Customize actions"
 msgstr "Personalizar acciones"
 
-#: ../extensions/actions/ephy-actions-extension.c:436
+#: ../extensions/actions/ephy-actions-extension.c:437
 msgid "Could not run command"
 msgstr "No se pudo ejecutar el comando"
 
-#: ../extensions/actions/ephy-actions-extension.c:439
+#: ../extensions/actions/ephy-actions-extension.c:440
 msgid "Could not Run Command"
 msgstr "No se pudo ejecutar el comando"
 
@@ -194,44 +194,44 @@ msgid_plural "%d hidden advertisements"
 msgstr[0] "%d anuncio oculto"
 msgstr[1] "%d anuncios ocultos"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:84
 msgid "_Auto Reload"
 msgstr "_Autorecargar"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:86
 msgid "Reload the page periodically"
 msgstr "Recarga la página periódicamente"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:371
+#: ../extensions/cc-license-viewer/cc-license-viewer.py:370
 msgid "View Creative Commons license"
 msgstr "Ver la licencia Creative Commons"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:177
+#: ../extensions/certificates/ephy-certificates-extension.c:176
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "Certificados"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:208
+#: ../extensions/certificates/ephy-certificates-extension.c:207
 msgid "Security Devices"
 msgstr "Dispositivos de seguridad"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:220
+#: ../extensions/certificates/ephy-certificates-extension.c:219
 msgid "Manage _Certificates"
 msgstr "Administrar _certificados"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:222
+#: ../extensions/certificates/ephy-certificates-extension.c:221
 msgid "Manage your certificates"
 msgstr "Administra sus certificados"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:226
+#: ../extensions/certificates/ephy-certificates-extension.c:225
 msgid "Manage Security _Devices"
 msgstr "Administrar _dispositivos de seguridad"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:228
+#: ../extensions/certificates/ephy-certificates-extension.c:227
 msgid "Manage your security devices"
 msgstr "Administra sus dispositivos de seguridad"
 
@@ -314,9 +314,9 @@ msgid ""
 "the topic will be synched. If this is set then all bookmarks without the "
 "topic will be synched."
 msgstr ""
-"Controla la función del tema. Si no está establecida, entonces todos los marcadores con "
-"el tema se sincronizarán. Si está establecida, entonces todos los marcadores sin tema "
-"se sincronizarán."
+"Controla la función del tema. Si no está establecida, entonces todos los "
+"marcadores con el tema se sincronizarán. Si está establecida, entonces todos "
+"los marcadores sin tema se sincronizarán."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:3
 msgid "Exclude topic"
@@ -354,30 +354,30 @@ msgstr "contraseña"
 msgid "username"
 msgstr "nombre de usuario"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:98
 msgid "Check _HTML"
 msgstr "Comprobar _HTML"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:100
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "Mostrar los errores HTML en el diálogo del visor de errores"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:104
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
 msgid "Check _Links"
 msgstr "Comprobar _enlaces"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:106
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:107
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr "Mostrar los hiperenlaces inválidos en el diálogo del visor de errores"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:110
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:111
 msgid "_Error Viewer"
 msgstr "_Visor de errores"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:112
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:113
 msgid "Display web page errors"
 msgstr "Mostrar los errores de la página web"
 
@@ -441,7 +441,7 @@ msgid_plural "Checking %d Links on “%s”"
 msgstr[0] "Comprobando %d enlace en «%s»"
 msgstr[1] "Comprobando %d enlaces en «%s»"
 
-#: ../extensions/error-viewer/opensp/validate.cpp:167
+#: ../extensions/error-viewer/opensp/validate.cpp:168
 #, c-format
 msgid ""
 "HTML error in “%s” on line %s:\n"
@@ -592,11 +592,11 @@ msgstr "Cabeceras en vivo"
 msgid "Remove headers"
 msgstr "Eliminar cabeceras"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/page-info/ephy-page-info-extension.c:68
 msgid "Pa_ge Information"
 msgstr "Información de la _página"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:69
+#: ../extensions/page-info/ephy-page-info-extension.c:70
 msgid "Display page information in a dialog"
 msgstr "Muestra la información de la página en un diálogo"
 
@@ -931,25 +931,25 @@ msgstr "_Permisos del sitio"
 msgid "Manage web site permissions"
 msgstr "Gestionar permisos del sitio web"
 
-#: ../extensions/rss/ephy-rss-extension.c:90
+#: ../extensions/rss/ephy-rss-extension.c:91
 msgid "News Feeds Subscription"
 msgstr "Subscripción a proveedores de noticias"
 
-#: ../extensions/rss/ephy-rss-extension.c:92
+#: ../extensions/rss/ephy-rss-extension.c:93
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr ""
 "Suscribirse al proveedor de noticias de este web en su lector de noticias "
 "favorito"
 
-#: ../extensions/rss/ephy-rss-extension.c:97
+#: ../extensions/rss/ephy-rss-extension.c:98
 msgid "_Subscribe to this feed"
 msgstr "_Suscribirse a este proveedor"
 
-#: ../extensions/rss/ephy-rss-extension.c:99
+#: ../extensions/rss/ephy-rss-extension.c:100
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Suscribirse a este proveedor de noticias en su lector de noticias favorito"
 
-#: ../extensions/rss/ephy-rss-extension.c:381
+#: ../extensions/rss/ephy-rss-extension.c:373
 msgid "Subscribe to site's news feed"
 msgstr "Suscribirse al proveedor de noticias del sitio"
 
@@ -984,24 +984,24 @@ msgstr "Suscripción a proveedores de noticias"
 msgid "_Subscribe"
 msgstr "_Suscribirse"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:145
+#: ../extensions/select-stylesheet/ephy-css-menu.c:146
 msgid "Render the page without using a style"
 msgstr "Renderizar la página sin usar un estilo"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:148
+#: ../extensions/select-stylesheet/ephy-css-menu.c:149
 msgid "Render the page using the default style"
 msgstr "Renderizar la página usando el estilo predeterminado"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:151
+#: ../extensions/select-stylesheet/ephy-css-menu.c:152
 #, c-format
 msgid "Render the page using the “%s” style"
 msgstr "Renderizar la página usando el estilo «%s»"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:309
+#: ../extensions/select-stylesheet/ephy-css-menu.c:310
 msgid "St_yle"
 msgstr "E_stilo"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:310
+#: ../extensions/select-stylesheet/ephy-css-menu.c:311
 msgid "Select a different style for this page"
 msgstr "Seleccionar un estilo diferente para esta página"
 
@@ -1068,11 +1068,11 @@ msgstr "El fuente de la página nueva de la barra lateral es «%s»."
 msgid "_Add Sidebar"
 msgstr "_Añadir barra lateral"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:551
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:542
 msgid "_Look Up"
 msgstr "_Buscar"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:558
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:549
 msgid "_GNOME Dictionary"
 msgstr "Diccionario de _Gnome"
 
@@ -1089,6 +1089,14 @@ msgstr ""
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
 msgstr "Ejecute comandos arbitrarios desde el menú contextual"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
+msgid "Ad Blocker"
+msgstr "Añadir bloqueador"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
+msgid "Block the pest!"
+msgstr "Bloquear"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
 msgid "Auto Scroll"
@@ -1199,6 +1207,14 @@ msgstr "Arrastrar la página al pulsar el botón central del ratón"
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
 msgid "Push Scroll"
 msgstr "Pulsar y desplazar"
+
+#: ../extensions/python-console/python-console.ephy-extension.in.h:1
+msgid "Opens an interactive Python console"
+msgstr "Abre una consola interactiva Python"
+
+#: ../extensions/python-console/python-console.ephy-extension.in.h:2
+msgid "Python Console"
+msgstr "Consola Python"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
