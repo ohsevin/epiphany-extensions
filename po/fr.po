@@ -1,5 +1,5 @@
 # French Epiphany Plugins translation.
-# Copyright (C) 2004-2007 The Free Software Foundation, Inc
+# Copyright (C) 2004-2008 The Free Software Foundation, Inc
 # This file is distributed under the same license as the epiphany-extensions package.
 #
 # Christian Persch <chpe+ephyplugins@stud.uni-saarland.de>, 2003.
@@ -13,7 +13,7 @@
 # Pierre Slamich <pierre.slamich@gmail.com> ,2006.
 # Rafaël Carré <wavael@yahoo.fr>, 2006.
 # Jean-Philippe Moal <jean-philippe.moal@laposte.net>, 2006.
-# Claude Paroz <claude@2xlibre.net>, 2007.
+# Claude Paroz <claude@2xlibre.net>, 2007-2008.
 # Robert-André Mauchin <zebob.m@gmail.com>, 2007.
 #
 msgid ""
@@ -21,8 +21,8 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-10-24 20:36+0200\n"
-"PO-Revision-Date: 2007-10-24 20:45+0200\n"
+"POT-Creation-Date: 2008-01-26 21:45+0100\n"
+"PO-Revision-Date: 2008-01-26 21:52+0100\n"
 "Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
@@ -100,19 +100,19 @@ msgstr "_Pages"
 msgid "Actions"
 msgstr "Actions"
 
-#: ../extensions/actions/ephy-actions-extension.c:112
+#: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Actio_ns"
 msgstr "Actio_ns"
 
-#: ../extensions/actions/ephy-actions-extension.c:113
+#: ../extensions/actions/ephy-actions-extension.c:114
 msgid "Customize actions"
 msgstr "Personnaliser les actions"
 
-#: ../extensions/actions/ephy-actions-extension.c:436
+#: ../extensions/actions/ephy-actions-extension.c:437
 msgid "Could not run command"
 msgstr "Impossible de lancer la commande"
 
-#: ../extensions/actions/ephy-actions-extension.c:439
+#: ../extensions/actions/ephy-actions-extension.c:440
 msgid "Could not Run Command"
 msgstr "Impossible de lancer la commande"
 
@@ -177,7 +177,7 @@ msgstr "<b>Mise à jour des règles depuis le site original</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
 #: ../extensions/adblock/ephy-adblock-extension.c:243
-msgid "Adblock editor"
+msgid "Adblock Editor"
 msgstr "Éditeur Adblock"
 
 #: ../extensions/adblock/adblock.glade.h:5
@@ -207,44 +207,44 @@ msgid_plural "%d hidden advertisements"
 msgstr[0] "%d publicité masquée"
 msgstr[1] "%d publicités masquées"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:84
 msgid "_Auto Reload"
 msgstr "Rafraîchir _automatiquement"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:86
 msgid "Reload the page periodically"
 msgstr "Rafraîchit périodiquement la page"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:371
+#: ../extensions/cc-license-viewer/cc-license-viewer.py:370
 msgid "View Creative Commons license"
 msgstr "Affiche la licence Creative Commons"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:177
+#: ../extensions/certificates/ephy-certificates-extension.c:176
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "Certificats"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:208
+#: ../extensions/certificates/ephy-certificates-extension.c:207
 msgid "Security Devices"
 msgstr "Systèmes de sécurité"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:220
+#: ../extensions/certificates/ephy-certificates-extension.c:219
 msgid "Manage _Certificates"
 msgstr "Gérer les _certificats"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:222
+#: ../extensions/certificates/ephy-certificates-extension.c:221
 msgid "Manage your certificates"
 msgstr "Gère vos certificats"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:226
+#: ../extensions/certificates/ephy-certificates-extension.c:225
 msgid "Manage Security _Devices"
 msgstr "Gérer les _systèmes de sécurité"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:228
+#: ../extensions/certificates/ephy-certificates-extension.c:227
 msgid "Manage your security devices"
 msgstr "Gère vos systèmes de sécurité"
 
@@ -318,18 +318,18 @@ msgid "Epilicious Synchronize"
 msgstr "Synchroniser avec Epilicious"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:1
-msgid "Bookmarks with this topic will be synchronized to del.icio.us."
-msgstr "Les signets comportant ce sujet seront synchronisés avec del.icio.us."
+msgid "Bookmarks with this topic will be synchronized."
+msgstr "Les signets comportant ce sujet seront synchronisés."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:2
 msgid ""
 "Controls the function of the topic. If this is unset then all bookmarks with "
-"the topic will be synched with del.icio.us. If this is set then all "
-"bookmarks without the topic will be synched with del.icio.us."
+"the topic will be synched. If this is set then all bookmarks without the "
+"topic will be synched."
 msgstr ""
 "Contrôle la fonction du sujet. Si non défini, tous les signets comportant ce "
-"sujet seront synchronisés avec del.icio.us. Si défini, tous les signets sans "
-"ce sujet seront synchronisés avec del.icio.us."
+"sujet seront synchronisés. Si défini, tous les signets sans "
+"ce sujet seront synchronisés."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:3
 msgid "Exclude topic"
@@ -342,10 +342,10 @@ msgstr "Sujet partagé"
 #: ../extensions/epilicious/epilicious.schemas.in.h:5
 msgid ""
 "The backend that epilicious will use for synchronizing bookmarks. Allowed "
-"values: 'del.icio.us', 'ma.gnolia'"
+"value: 'ma.gnolia'"
 msgstr ""
-"Le moteur qui sera utilisé par Epilicious pour synchroniser les signets. Les "
-"valeurs possibles sont : « del.icio.us », « ma.gnolia »"
+"Le moteur qui sera utilisé par Epilicious pour synchroniser les signets. "
+"Valeur possible : « ma.gnolia »"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
 msgid "The password that epilicious will use for synchronizing bookmarks."
@@ -371,30 +371,30 @@ msgstr "mot de passe"
 msgid "username"
 msgstr "nom d'utilisateur"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:98
 msgid "Check _HTML"
 msgstr "Vérifier le code _HTML"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:100
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "Afficher les erreurs HTML dans le visionneur d'erreurs"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:104
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
 msgid "Check _Links"
 msgstr "Vérifier les _liens"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:106
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:107
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr "Afficher les liens non valides dans le visionneur d'erreurs"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:110
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:111
 msgid "_Error Viewer"
 msgstr "Visionneur d'_erreurs"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:112
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:113
 msgid "Display web page errors"
 msgstr "Afficher les erreurs de la page Web"
 
@@ -458,7 +458,7 @@ msgid_plural "Checking %d Links on “%s”"
 msgstr[0] "Vérification de %d lien dans « %s »"
 msgstr[1] "Vérification de %d liens dans « %s »"
 
-#: ../extensions/error-viewer/opensp/validate.cpp:167
+#: ../extensions/error-viewer/opensp/validate.cpp:168
 #, c-format
 msgid ""
 "HTML error in “%s” on line %s:\n"
@@ -512,10 +512,12 @@ msgid "HTML error in %s:"
 msgstr "Erreur HTML dans %s :"
 
 #: ../extensions/error-viewer/sgml-validator.c:368
+#, c-format
 msgid "Invalid character encoding"
 msgstr "Codage de caractère non valide"
 
 #: ../extensions/error-viewer/sgml-validator.c:373
+#, c-format
 msgid "Unknown error while converting to UTF-8"
 msgstr "Erreur inconnue durant la conversion en UTF-8"
 
@@ -546,16 +548,13 @@ msgid "Extensions"
 msgstr "Extensions"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
-msgid "_Extensions..."
-msgstr "_Extensions..."
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "_Extensions"
+msgstr "_Extensions"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
 msgid "Load and unload extensions"
 msgstr "Charge et décharge des extensions"
-
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
-msgid "_Extensions"
-msgstr "_Extensions"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
 msgid "Help about extensions"
@@ -612,11 +611,11 @@ msgstr "En-têtes en direct"
 msgid "Remove headers"
 msgstr "Effacer les en-têtes"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/page-info/ephy-page-info-extension.c:68
 msgid "Pa_ge Information"
 msgstr "In_formations sur la page"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:69
+#: ../extensions/page-info/ephy-page-info-extension.c:70
 msgid "Display page information in a dialog"
 msgstr "Affiche les informations sur la page dans une fenêtre"
 
@@ -951,25 +950,25 @@ msgstr "_Permissions du site"
 msgid "Manage web site permissions"
 msgstr "Gère les permissions des sites Web"
 
-#: ../extensions/rss/ephy-rss-extension.c:90
+#: ../extensions/rss/ephy-rss-extension.c:91
 msgid "News Feeds Subscription"
 msgstr "Abonnement aux flux de nouvelles"
 
-#: ../extensions/rss/ephy-rss-extension.c:92
+#: ../extensions/rss/ephy-rss-extension.c:93
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr ""
 "Abonnez-vous au flux de nouvelles de ce site dans votre lecteur de nouvelles "
 "préféré"
 
-#: ../extensions/rss/ephy-rss-extension.c:97
+#: ../extensions/rss/ephy-rss-extension.c:98
 msgid "_Subscribe to this feed"
 msgstr "_S'abonner à ce flux"
 
-#: ../extensions/rss/ephy-rss-extension.c:99
+#: ../extensions/rss/ephy-rss-extension.c:100
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Abonnez-vous à ce flux dans votre lecteur de nouvelles préféré"
 
-#: ../extensions/rss/ephy-rss-extension.c:381
+#: ../extensions/rss/ephy-rss-extension.c:373
 msgid "Subscribe to site's news feed"
 msgstr "S'abonner au flux de ce site"
 
@@ -1002,24 +1001,24 @@ msgstr "Abonnement aux flux de nouvelles"
 msgid "_Subscribe"
 msgstr "_S'abonner"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:145
+#: ../extensions/select-stylesheet/ephy-css-menu.c:146
 msgid "Render the page without using a style"
 msgstr "Afficher la page sans utiliser de style"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:148
+#: ../extensions/select-stylesheet/ephy-css-menu.c:149
 msgid "Render the page using the default style"
 msgstr "Afficher la page en utilisant le style par défaut"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:151
+#: ../extensions/select-stylesheet/ephy-css-menu.c:152
 #, c-format
 msgid "Render the page using the “%s” style"
 msgstr "Afficher la page en utilisant le style « %s »"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:309
+#: ../extensions/select-stylesheet/ephy-css-menu.c:310
 msgid "St_yle"
 msgstr "St_yle"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:310
+#: ../extensions/select-stylesheet/ephy-css-menu.c:311
 msgid "Select a different style for this page"
 msgstr "Sélectionner un style différent pour cette page"
 
@@ -1088,11 +1087,11 @@ msgstr "La source du nouveau panneau latéral est « %s »."
 msgid "_Add Sidebar"
 msgstr "A_jouter un panneau latéral"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:551
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:542
 msgid "_Look Up"
 msgstr "_Rechercher"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:558
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:549
 msgid "_GNOME Dictionary"
 msgstr "Dictionnaire _GNOME"
 
@@ -1109,6 +1108,14 @@ msgstr ""
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
 msgstr "Exécute des commandes arbitraires à partir du menu contextuel"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
+msgid "Ad Blocker"
+msgstr "Bloqueur de pub"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
+msgid "Block the pest!"
+msgstr "Pour bloquer la peste !"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
 msgid "Auto Scroll"
@@ -1139,8 +1146,8 @@ msgid "View the page certificate and manage the certificates"
 msgstr "Affiche le certificat d'une page et gère les certificats"
 
 #: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
-msgid "Synchronize bookmarks with del.icio.us"
-msgstr "Synchronisation des signets avec del.icio.us"
+msgid "Synchronize bookmarks with social bookmark sites"
+msgstr "Synchronisation de signets avec des sites de partage de signets."
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -1223,6 +1230,14 @@ msgstr "Permet de faire défiler les pages par le clic milieu de la souris"
 msgid "Push Scroll"
 msgstr "Défilement à la souris"
 
+#: ../extensions/python-console/python-console.ephy-extension.in.h:1
+msgid "Opens an interactive Python console"
+msgstr "Affiche une console Python interactive"
+
+#: ../extensions/python-console/python-console.ephy-extension.in.h:2
+msgid "Python Console"
+msgstr "Console Python"
+
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
@@ -1288,9 +1303,5 @@ msgstr "Indique un nouveau contenu dans les onglets en arrière-plan"
 msgid "Tab States"
 msgstr "États des onglets"
 
-#~ msgid ""
-#~ "Error:\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Erreur :\n"
-#~ "%s"
+#~ msgid "_Extensions..."
+#~ msgstr "_Extensions..."
