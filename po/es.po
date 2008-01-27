@@ -8,10 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2008-01-17 14:10+0000\n"
-"PO-Revision-Date: 2008-01-21 09:39+0100\n"
+"POT-Creation-Date: 2008-01-21 09:20+0000\n"
+"PO-Revision-Date: 2008-01-27 17:00+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
-"Language-Team: Español <<gnome-es-list@gnome.org>\n"
+"Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -165,7 +165,7 @@ msgstr "<b>Actualizar reglas desde el sitio original</b>"
 #: ../extensions/adblock/adblock.glade.h:4
 #: ../extensions/adblock/ephy-adblock-extension.c:243
 msgid "Adblock Editor"
-msgstr "Editor de Adblock"
+msgstr "Editor del Bloqueo de anuncios"
 
 #: ../extensions/adblock/adblock.glade.h:5
 msgid "Add a new rule"
@@ -185,7 +185,7 @@ msgstr "Lista blanca"
 
 #: ../extensions/adblock/ephy-adblock-extension.c:244
 msgid "Edit Adblock"
-msgstr "Editar Adblock"
+msgstr "Editar Bloqueo de anuncios"
 
 #: ../extensions/adblock/ephy-adblock-extension.c:311
 #, c-format
@@ -218,22 +218,22 @@ msgstr "Dispositivos de seguridad"
 #. stock icon
 #: ../extensions/certificates/ephy-certificates-extension.c:219
 msgid "Manage _Certificates"
-msgstr "Administrar _certificados"
+msgstr "Gestionar _certificados"
 
 #. shortcut key
 #: ../extensions/certificates/ephy-certificates-extension.c:221
 msgid "Manage your certificates"
-msgstr "Administra sus certificados"
+msgstr "Gestiona sus certificados"
 
 #. stock icon
 #: ../extensions/certificates/ephy-certificates-extension.c:225
 msgid "Manage Security _Devices"
-msgstr "Administrar _dispositivos de seguridad"
+msgstr "Gestionar _dispositivos de seguridad"
 
 #. shortcut key
 #: ../extensions/certificates/ephy-certificates-extension.c:227
 msgid "Manage your security devices"
-msgstr "Administra sus dispositivos de seguridad"
+msgstr "Gestiona sus dispositivos de seguridad"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:1
 msgid "Action for tagged bookmarks:"
@@ -1074,7 +1074,7 @@ msgstr "_Buscar"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:549
 msgid "_GNOME Dictionary"
-msgstr "Diccionario de _Gnome"
+msgstr "Diccionario de _GNOME"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
 msgid "Open search result in new tab"
@@ -1240,7 +1240,7 @@ msgstr "Ejemplo"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
 msgid "Select Stylesheet"
-msgstr "Selección de la hoja de estilo"
+msgstr "Selector de la hoja de estilo"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
