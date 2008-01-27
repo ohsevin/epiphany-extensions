@@ -1,6 +1,10 @@
+2008-01-27  Jorge Gonzalez  <jorgegonz@svn.gnome.org>  
+
+	* es/es.po: Updated Spanish translation by Daniel Mustieles.
+
 2008-01-21  Jorge Gonzalez  <jorgegonz@svn.gnome.org>
 
-	* es.po: Updated Spanish translation.
+	* es/es.po: Updated Spanish translation.
 	* Makefile.am: Added es to DOC_LINGUAS
 
 2007-11-21  Yannig Marchegay <yannig@marchegay.org> 
