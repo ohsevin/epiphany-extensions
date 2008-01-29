@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions.help.HEAD\n"
-"POT-Creation-Date: 2006-03-15 05:48+0000\n"
-"PO-Revision-Date: 2008-01-27 16:03+0100\n"
+"POT-Creation-Date: 2008-01-27 16:10+0000\n"
+"PO-Revision-Date: 2008-01-29 12:52+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -364,40 +364,64 @@ msgid "Introduction"
 msgstr "Introducción"
 
 #: C/epiphany-extensions.xml:111(para)
-msgid "<application>Epiphany Extensions</application> are a set of tools that extend the capabilities of <application>Epiphany</application>, the GNOME Web Browser."
-msgstr "Las <application>Extensiones de Epiphany</application> son un conjunto de herramientas que amplían las capacidades de <application>Epiphany</application>, el navegador web de GNOME."
+msgid ""
+"<application>Epiphany Extensions</application> are a set of tools that "
+"extend the capabilities of <application>Epiphany</application>, the GNOME "
+"Web Browser."
+msgstr ""
+"Las <application>Extensiones de Epiphany</application> son un conjunto de "
+"herramientas que amplían las capacidades de <application>Epiphany</"
+"application>, el navegador web de GNOME."
 
 #: C/epiphany-extensions.xml:112(para)
 msgid "They provide to Epiphany new functionality and complete some existing."
-msgstr "Proporcionan a Epiphany nuevas funcionalidades y completan algunas de las existentes."
+msgstr ""
+"Proporcionan a Epiphany nuevas funcionalidades y completan algunas de las "
+"existentes."
 
 #: C/epiphany-extensions.xml:117(title)
 msgid "Extensions Manager"
 msgstr "Gestor de extensiones"
 
 #: C/epiphany-extensions.xml:121(para)
-msgid "The Extension Manager is the tool that lets you activate Epiphany Extensions."
-msgstr "El Gestor de extensiones es la herramienta que le permite activar las extensiones de Epiphany."
+msgid ""
+"The Extension Manager is the tool that lets you activate Epiphany Extensions."
+msgstr ""
+"El Gestor de extensiones es la herramienta que le permite activar las "
+"extensiones de Epiphany."
 
 #: C/epiphany-extensions.xml:126(title)
 msgid "Using Extensions Manager"
 msgstr "Uso del Gestor de extensiones"
 
 #: C/epiphany-extensions.xml:127(para)
-msgid "To open the Extension Manager, choose <menuchoice><guimenu>Tools</guimenu><guimenuitem>Extension...</guimenuitem></menuchoice>."
-msgstr "Para abrir el Gestor de extensiones, elija <menuchoice><guimenu>Herramientas</guimenu><guimenuitem>Extensión...</guimenuitem></menuchoice>."
+msgid ""
+"To open the Extension Manager, choose <menuchoice><guimenu>Tools</"
+"guimenu><guimenuitem>Extension...</guimenuitem></menuchoice>."
+msgstr ""
+"Para abrir el Gestor de extensiones, elija "
+"<menuchoice><guimenu>Herramientas</guimenu><guimenuitem>Extensión...</"
+"guimenuitem></menuchoice>."
 
 #: C/epiphany-extensions.xml:129(para)
-msgid "To enable an extension, activate the check-box in front of the extension. To disable an extension, deactivate the check-box."
-msgstr "Para habilitar una extensión, active la casilla correspondiente a la extensión. Para deshabilitar una extensión, desactive la casilla."
+msgid ""
+"To enable an extension, activate the check-box in front of the extension. To "
+"disable an extension, deactivate the check-box."
+msgstr ""
+"Para habilitar una extensión, active la casilla correspondiente a la "
+"extensión. Para deshabilitar una extensión, desactive la casilla."
 
 #: C/epiphany-extensions.xml:135(title)
 msgid "Actions"
 msgstr "Acciones"
 
 #: C/epiphany-extensions.xml:140(para)
-msgid "The Actions extension allows you to create specific actions in the context menu, for images, pages or both."
-msgstr "La extensión Acciones le permite crear acciones específicas en el menú contextual, para imágenes, páginas o ambas."
+msgid ""
+"The Actions extension allows you to create specific actions in the context "
+"menu, for images, pages or both."
+msgstr ""
+"La extensión Acciones le permite crear acciones específicas en el menú "
+"contextual, para imágenes, páginas o ambas."
 
 #: C/epiphany-extensions.xml:145(title)
 msgid "Manage Actions"
@@ -412,27 +436,50 @@ msgstr "Crear acciones"
 msgid ""
 "Choose <menuchoice><guimenu>Edit</guimenu><guimenuitem>Actions</"
 "guimenuitem></menuchoice> to open the Actions manager"
-msgstr "Para abrir el Gestor de acciones elija <menuchoice><guimenu>Editar</guimenu><guimenuitem>Acciones</guimenuitem></menuchoice>"
+msgstr ""
+"Para abrir el Gestor de acciones elija <menuchoice><guimenu>Editar</"
+"guimenu><guimenuitem>Acciones</guimenuitem></menuchoice>"
 
 #: C/epiphany-extensions.xml:158(para)
 msgid "Press <guibutton>Add</guibutton> to add a new action"
 msgstr "Pulse <guibutton>Añadir</guibutton> para añadir una nueva acción"
 
 #: C/epiphany-extensions.xml:166(para)
-msgid "Enter the <guilabel>Name</guilabel> of the action. The name will be displayed in the context menu"
-msgstr "Introduzca el <guilabel>Nombre</guilabel> de la acción. Se mostrará el nombre en el menú contextual"
+msgid ""
+"Enter the <guilabel>Name</guilabel> of the action. The name will be "
+"displayed in the context menu"
+msgstr ""
+"Introduzca el <guilabel>Nombre</guilabel> de la acción. Se mostrará el "
+"nombre en el menú contextual"
 
 #: C/epiphany-extensions.xml:170(para)
-msgid "Enter the <guilabel>Description</guilabel> of the action. The Description will be displayed in the statusbar of <application>Epiphany</application> and in the Action Manager"
-msgstr "Introduzca la <guilabel>Descripción</guilabel> de la acción. La descripción se mostrará en la barra de estado de <application>Epiphany</application> y en el Gestor de acciones"
+msgid ""
+"Enter the <guilabel>Description</guilabel> of the action. The Description "
+"will be displayed in the statusbar of <application>Epiphany</application> "
+"and in the Action Manager"
+msgstr ""
+"Introduzca la <guilabel>Descripción</guilabel> de la acción. La descripción "
+"se mostrará en la barra de estado de <application>Epiphany</application> y "
+"en el Gestor de acciones"
 
 #: C/epiphany-extensions.xml:176(para)
-msgid "Enter the <guilabel>Command</guilabel> to execute. this command will be executed and will receive as argument the element on which you'll launch the action. This action can be any program or script available in your path"
-msgstr "Introduzca el <guilabel>Comando</guilabel> para ejecutar. Este comando se ejecutará y recibirá como argumento el elemento sobre el cual se lanzará la acción. Esta acción puede ser cualquier programa o script disponible en su ruta"
+msgid ""
+"Enter the <guilabel>Command</guilabel> to execute. this command will be "
+"executed and will receive as argument the element on which you'll launch the "
+"action. This action can be any program or script available in your path"
+msgstr ""
+"Introduzca el <guilabel>Comando</guilabel> para ejecutar. Este comando se "
+"ejecutará y recibirá como argumento el elemento sobre el cual se lanzará la "
+"acción. Esta acción puede ser cualquier programa o script disponible en su "
+"ruta"
 
 #: C/epiphany-extensions.xml:183(para)
-msgid "Select <guilabel>Pages</guilabel> or <guilabel>Images</guilabel> to choose on which elements the action will appear"
-msgstr "Seleccione <guilabel>Páginas</guilabel> o <guilabel>Imágenes</guilabel> para elegir sobre qué elementos aparecerá la acción"
+msgid ""
+"Select <guilabel>Pages</guilabel> or <guilabel>Images</guilabel> to choose "
+"on which elements the action will appear"
+msgstr ""
+"Seleccione <guilabel>Páginas</guilabel> o <guilabel>Imágenes</guilabel> para "
+"elegir sobre qué elementos aparecerá la acción"
 
 #: C/epiphany-extensions.xml:188(para)
 msgid "Press <guibutton>Add</guibutton>"
@@ -467,8 +514,12 @@ msgid "Press <guibutton>Edit</guibutton>"
 msgstr "Pulse <guibutton>Editar</guibutton>"
 
 #: C/epiphany-extensions.xml:222(para)
-msgid "Edit the action as described in <xref linkend=\"epi-ext-action-manage-create\"/>"
-msgstr "Edita la acción tal y como se describe en <xref linkend=\"epi-ext-action-manage-create\"/>"
+msgid ""
+"Edit the action as described in <xref linkend=\"epi-ext-action-manage-create"
+"\"/>"
+msgstr ""
+"Edita la acción tal y como se describe en <xref linkend=\"epi-ext-action-"
+"manage-create\"/>"
 
 #: C/epiphany-extensions.xml:206(para)
 msgid "To edit an action, follow these steps: <placeholder-1/>"
@@ -495,96 +546,178 @@ msgid "Using Actions"
 msgstr "Uso de las acciones"
 
 #: C/epiphany-extensions.xml:258(para)
-msgid "To use a custom action, choose the action to execute from the context menu of the element you wish to perform the action on."
-msgstr "Para utilizar una acción personalizada, seleccione la acción para ejecutar en el menú contextual del elemento sobre el que quiere ejecutar la acción."
+msgid ""
+"To use a custom action, choose the action to execute from the context menu "
+"of the element you wish to perform the action on."
+msgstr ""
+"Para utilizar una acción personalizada, seleccione la acción para ejecutar "
+"en el menú contextual del elemento sobre el que quiere ejecutar la acción."
 
 #: C/epiphany-extensions.xml:260(title)
-msgid "The <application>Epiphany</application> image context menu with a custom action"
-msgstr "Imagen del menú contextual de <application>Epiphany</application> con una acción personalizada"
+msgid ""
+"The <application>Epiphany</application> image context menu with a custom "
+"action"
+msgstr ""
+"Imagen del menú contextual de <application>Epiphany</application> con una "
+"acción personalizada"
 
 #: C/epiphany-extensions.xml:268(title)
 msgid "Ad Blocker"
 msgstr "Bloqueo de anuncios"
 
 #: C/epiphany-extensions.xml:273(para)
-msgid "The Ad Blocker extension lets you block ad banners on websites. It avoids downloading them, saving time and bandwidth."
-msgstr "La extensión Bloqueo de anuncios permite bloquear banners en páginas web. Esto previene su descarga, ahorrando tiempo y ancho de banda."
+msgid ""
+"The Ad Blocker extension lets you block ad banners on websites. It avoids "
+"downloading them, saving time and bandwidth."
+msgstr ""
+"La extensión Bloqueo de anuncios permite bloquear banners en páginas web. "
+"Esto previene su descarga, ahorrando tiempo y ancho de banda."
 
 #: C/epiphany-extensions.xml:278(title)
 msgid "Using Ad Blocker"
 msgstr "Uso del Bloqueo de Anuncios"
 
 #: C/epiphany-extensions.xml:280(para)
-msgid "To use the Ad Blocker, you have to enable the extension. The extension will ignore link to ads when you visit websites, and they won't be displayed in web pages."
-msgstr "Para utilizar el Bloqueo de anuncios, debe activar la extensión. La extensión ignorará los enlaces a anuncios cuando visite las páginas web y no se mostrarán en la página web."
+msgid ""
+"To use the Ad Blocker, you have to enable the extension. The extension will "
+"ignore link to ads when you visit websites, and they won't be displayed in "
+"web pages."
+msgstr ""
+"Para utilizar el Bloqueo de anuncios, debe activar la extensión. La "
+"extensión ignorará los enlaces a anuncios cuando visite las páginas web y no "
+"se mostrarán en la página web."
 
 #: C/epiphany-extensions.xml:288(title)
 msgid "The Ad Blocker icon"
 msgstr "El icono del bloqueador de anuncios"
 
 #: C/epiphany-extensions.xml:283(para)
-msgid "<application>Epiphany</application> will display an icon in left side of the status bar (see <xref linkend=\"epi-ext-figure-adblocker\"/>) to inform you that it has blocked ads. If you move the mouse pointer over the icon, it will give you of the number of ads blocked in the page. <placeholder-1/>"
-msgstr "<application>Epiphany</application> mostrará un icono en el lado izquierdo de la barra de estado (see <xref linkend=\"epi-ext-figure-adblocker\"/>) para informarle de que se ha bloqueado un anuncio. Si pasa el puntero del ratón por encima del icono, le mostrará el número de anuncios bloqueados en la página. <placeholder-1/>"
+msgid ""
+"<application>Epiphany</application> will display an icon in left side of the "
+"status bar (see <xref linkend=\"epi-ext-figure-adblocker\"/>) to inform you "
+"that it has blocked ads. If you move the mouse pointer over the icon, it "
+"will give you of the number of ads blocked in the page. <placeholder-1/>"
+msgstr ""
+"<application>Epiphany</application> mostrará un icono en el lado izquierdo "
+"de la barra de estado (see <xref linkend=\"epi-ext-figure-adblocker\"/>) "
+"para informarle de que se ha bloqueado un anuncio. Si pasa el puntero del "
+"ratón por encima del icono, le mostrará el número de anuncios bloqueados en "
+"la página. <placeholder-1/>"
 
 #: C/epiphany-extensions.xml:295(title)
 msgid "Extend Ad Blocker"
 msgstr "Bloqueo de Anuncios extendido"
 
 #: C/epiphany-extensions.xml:297(para)
-msgid "Ad Blocker should block most of the advertisement on the web, but if you find that some banners are not blocked or Ad Blocker is too restrictive, you can tune Ad Blocker extension to match your needs."
-msgstr "El Bloqueador de anuncios debería bloquear la mayoría de los anuncios de la web, pero si considera que algunos banners no se bloquean o que el Bloqueador de anuncios es demasiado restrictivo, puede configurar la extensión Bloqueador de anuncios para que se ajuste a sus necesidades."
+msgid ""
+"Ad Blocker should block most of the advertisement on the web, but if you "
+"find that some banners are not blocked or Ad Blocker is too restrictive, you "
+"can tune Ad Blocker extension to match your needs."
+msgstr ""
+"El Bloqueador de anuncios debería bloquear la mayoría de los anuncios de la "
+"web, pero si considera que algunos banners no se bloquean o que el "
+"Bloqueador de anuncios es demasiado restrictivo, puede configurar la "
+"extensión Bloqueador de anuncios para que se ajuste a sus necesidades."
 
 #: C/epiphany-extensions.xml:302(para)
-msgid "Ad Blocker uses Perl regular expressions to match known URLs of ads servers and common words used in URLs of ads. Ad Blocker stores the system-wide rules in the file <filename>adblock-patterns</filename> located in <filename class=\"directory\">$PREFIX/share/epiphany-extensions/</filename>; one regular expression per line."
-msgstr "El Bloqueador de anuncios utiliza expresiones regulares en Perl para localizar URL conocidas de servidores de publicidad y palabras comúnmente utilizadas en URL de anuncios. El Bloqueador de anuncios almacena todas las reglas del sistema en el archivo <filename>adblock-patterns</filename> ubicado en <filename class=\"directory\">$PREFIX/share/epiphany-extensions/</filename>; con una expresión regular por línea."
+msgid ""
+"Ad Blocker uses Perl regular expressions to match known URLs of ads servers "
+"and common words used in URLs of ads. Ad Blocker stores the system-wide "
+"rules in the file <filename>adblock-patterns</filename> located in <filename "
+"class=\"directory\">$PREFIX/share/epiphany-extensions/</filename>; one "
+"regular expression per line."
+msgstr ""
+"El Bloqueador de anuncios utiliza expresiones regulares en Perl para "
+"localizar URL conocidas de servidores de publicidad y palabras comúnmente "
+"utilizadas en URL de anuncios. El Bloqueador de anuncios almacena todas las "
+"reglas del sistema en el archivo <filename>adblock-patterns</filename> "
+"ubicado en <filename class=\"directory\">$PREFIX/share/epiphany-extensions/</"
+"filename>; con una expresión regular por línea."
 
 #: C/epiphany-extensions.xml:311(title)
 msgid "Add a deny rule"
 msgstr "Añadir una regla de denegación"
 
 #: C/epiphany-extensions.xml:313(para)
-msgid "If you want to block an ad not blocked by the Ad Blocker default rules, you may create a blacklist file, and add rules inside."
-msgstr "Si quiere bloquear un anuncio que no estaba por las reglas predeterminads del Bloqueador de anuncios, debe crear un archivo de lista negra y añadir reglas dentro."
+msgid ""
+"If you want to block an ad not blocked by the Ad Blocker default rules, you "
+"may create a blacklist file, and add rules inside."
+msgstr ""
+"Si quiere bloquear un anuncio que no estaba por las reglas predeterminads "
+"del Bloqueador de anuncios, debe crear un archivo de lista negra y añadir "
+"reglas dentro."
 
 #: C/epiphany-extensions.xml:316(para)
-msgid "<application>Epiphany</application> looks for the blacklist rules in the file <filename>$HOME/.gnome2/epiphany/extensions/data/adblock/blacklist</filename>."
-msgstr "<application>Epiphany</application> busca listas negras de reglas en el archivo <filename>$HOME/.gnome2/epiphany/extensions/data/adblock/blacklist</filename>."
+msgid ""
+"<application>Epiphany</application> looks for the blacklist rules in the "
+"file <filename>$HOME/.gnome2/epiphany/extensions/data/adblock/blacklist</"
+"filename>."
+msgstr ""
+"<application>Epiphany</application> busca listas negras de reglas en el "
+"archivo <filename>$HOME/.gnome2/epiphany/extensions/data/adblock/blacklist</"
+"filename>."
 
 #: C/epiphany-extensions.xml:322(title)
 msgid "Add a permit rule"
 msgstr "Añadir una regla de permiso"
 
 #: C/epiphany-extensions.xml:324(para)
-msgid "If you want allow to permit an ad to be displayed or correct a rule of Ad Blocker which is too restrictive, you can create a whitelist file, and add rules inside."
-msgstr "Si quiere permitir que se muestre un anuncio o corregir una regla del Bloqueador de anuncios que es muy restrictiva, puede crear un archivo de lista blanca y añadir reglas en él."
+msgid ""
+"If you want allow to permit an ad to be displayed or correct a rule of Ad "
+"Blocker which is too restrictive, you can create a whitelist file, and add "
+"rules inside."
+msgstr ""
+"Si quiere permitir que se muestre un anuncio o corregir una regla del "
+"Bloqueador de anuncios que es muy restrictiva, puede crear un archivo de "
+"lista blanca y añadir reglas en él."
 
 #: C/epiphany-extensions.xml:327(para)
-msgid "<application>Epiphany</application> looks for white-list rules in the file <filename>$HOME/.gnome2/epiphany/extensions/data/adblock/whitelist</filename>."
-msgstr "<application>Epiphany</application> busca listas blancas de reglas en el archivo <filename>$HOME/.gnome2/epiphany/extensions/data/adblock/whitelist</filename>."
+msgid ""
+"<application>Epiphany</application> looks for white-list rules in the file "
+"<filename>$HOME/.gnome2/epiphany/extensions/data/adblock/whitelist</"
+"filename>."
+msgstr ""
+"<application>Epiphany</application> busca listas blancas de reglas en el "
+"archivo <filename>$HOME/.gnome2/epiphany/extensions/data/adblock/whitelist</"
+"filename>."
 
 #: C/epiphany-extensions.xml:335(title)
 msgid "Auto Reload Tab"
 msgstr "Autorecargar solapa"
 
 #: C/epiphany-extensions.xml:340(para)
-msgid "The Auto Reload Tab extension allows you to regularly reload a page in a tab."
+msgid ""
+"The Auto Reload Tab extension allows you to regularly reload a page in a tab."
 msgstr ""
+"La extensión Autorecargar solapa le permite recargar regularmente una página en una solapa."
 
 #: C/epiphany-extensions.xml:345(title)
 msgid "Using Auto Reload Tab"
-msgstr ""
+msgstr "Uso de la solapa de Autorecarga"
 
 #: C/epiphany-extensions.xml:347(para)
-msgid "Enter the URL of a page you want to open and you know its content change often, then choose <menuchoice><guimenu>View</guimenu><guimenuitem>Auto Reload</guimenuitem></menuchoice> to enable auto reload, <application>Epiphany</application> will refresh each 3 minutes."
-msgstr "Introduzca el URL de la página que quiere abrir y cuyo contenido cambia habitualmente, y seleccione <menuchoice><guimenu>Ver</guimenu><guimenuitem>Autorecargar</guimenuitem></menuchoice> para activar la auto recarga, <application>Epiphany</application> actualizará cada 3 minutos."
+msgid ""
+"Enter the URL of a page you want to open and you know its content change "
+"often, then choose <menuchoice><guimenu>View</guimenu><guimenuitem>Auto "
+"Reload</guimenuitem></menuchoice> to enable auto reload, "
+"<application>Epiphany</application> will refresh each 3 minutes."
+msgstr ""
+"Introduzca el URL de la página que quiere abrir y cuyo contenido cambia "
+"habitualmente, y seleccione <menuchoice><guimenu>Ver</"
+"guimenu><guimenuitem>Autorecargar</guimenuitem></menuchoice> para activar la "
+"auto recarga, <application>Epiphany</application> actualizará cada 3 minutos."
 
 #: C/epiphany-extensions.xml:354(title)
 msgid "Auto reload local files"
-msgstr ""
+msgstr "Autorecargar archivos locales"
 
 #: C/epiphany-extensions.xml:355(para)
-msgid "When a local file is opened, <application>Epiphany</application> will monitor it and reload the file when it changes."
-msgstr "Cuando se abre un archivo local, <application>Epiphany</application> lo monitoriza y recarga el archivo cuando éste cambia."
+msgid ""
+"When a local file is opened, <application>Epiphany</application> will "
+"monitor it and reload the file when it changes."
+msgstr ""
+"Cuando se abre un archivo local, <application>Epiphany</application> lo "
+"monitoriza y recarga el archivo cuando éste cambia."
 
 #: C/epiphany-extensions.xml:364(title)
 msgid "AutoScroll"
@@ -596,20 +729,29 @@ msgid ""
 "direction. For instance, if you set a slow scroll, you can read a whole web "
 "page without touching your mouse."
 msgstr ""
+"La extensión Autodesplazamiento le permite desplazar automáticamente una página "
+"en cualquier dirección. Por ejemplo, si configura un desplazamiento lento puede leer una "
+"página web entera sin tocar el ratón."
 
 #: C/epiphany-extensions.xml:375(title)
 msgid "Using Auto Scroll"
 msgstr "Uso del Autodesplazamiento"
 
 #: C/epiphany-extensions.xml:380(para)
-msgid "Press and release the middle-mouse button; a target appears, and the cursor of mouse pointer is changed to a hand cursor."
-msgstr "Pulse y suelte el botón medio del ratón; aparecerá un objetivo y el puntero del ratón se convierte en un cursor en forma de mano."
+msgid ""
+"Press and release the middle-mouse button; a target appears, and the cursor "
+"of mouse pointer is changed to a hand cursor."
+msgstr ""
+"Pulse y suelte el botón medio del ratón; aparecerá un objetivo y el puntero "
+"del ratón se convierte en un cursor en forma de mano."
 
 #: C/epiphany-extensions.xml:385(para)
 msgid ""
 "Move the cursor in the direction to scroll. The page will start to scroll in "
 "that direction."
 msgstr ""
+"Mueva el ratón en la dirección del desplazamiento. La página comenzará a "
+"desplazarse en esa dirección."
 
 #: C/epiphany-extensions.xml:377(para)
 msgid "To start to auto scroll on a page, <placeholder-1/>"
@@ -620,8 +762,12 @@ msgid "Certificates"
 msgstr "Certificados"
 
 #: C/epiphany-extensions.xml:399(para)
-msgid "The Certificates extension gives access to the certificates stored by <application>Epiphany</application>, in order to view or manage them."
-msgstr "La extensión Certificados da acceso a los certificados almacenados por <application>Epiphany</application>, para verlos o administrarlos."
+msgid ""
+"The Certificates extension gives access to the certificates stored by "
+"<application>Epiphany</application>, in order to view or manage them."
+msgstr ""
+"La extensión Certificados da acceso a los certificados almacenados por "
+"<application>Epiphany</application>, para verlos o administrarlos."
 
 #: C/epiphany-extensions.xml:404(title)
 msgid "Using Certificates"
@@ -632,24 +778,41 @@ msgid "View website certificate"
 msgstr "Ver el certificado del sitio web"
 
 #: C/epiphany-extensions.xml:409(para)
-msgid "When you browse a secured website, the unlocked padlock which appear on the left of the status bar becomes a locked padlock. When the Certificates extension is activated, you can click on the padlock, it will display the certificate information."
-msgstr "Cuando navega por un sitio web seguro, el candado abierto que aparece a la izquierda de la barra de estado se convierte en un candado cerrado. Cuando la extensión Certificados está activada, puede pulsar en el candado y éste mostrará la información del certificado."
+msgid ""
+"When you browse a secured website, the unlocked padlock which appear on the "
+"left of the status bar becomes a locked padlock. When the Certificates "
+"extension is activated, you can click on the padlock, it will display the "
+"certificate information."
+msgstr ""
+"Cuando navega por un sitio web seguro, el candado abierto que aparece a la "
+"izquierda de la barra de estado se convierte en un candado cerrado. Cuando "
+"la extensión Certificados está activada, puede pulsar en el candado y éste "
+"mostrará la información del certificado."
 
 #: C/epiphany-extensions.xml:417(title)
 msgid "Manage Certificates"
 msgstr "Gestionar certificados"
 
 #: C/epiphany-extensions.xml:419(para)
-msgid "Certificates extensions lets you manage the certificates stored by <application>Epiphany</application> Browser."
-msgstr "La extensión Certificados le permite gestionar los certificados almacenados por el navegador <application>Epiphany</application>."
+msgid ""
+"Certificates extensions lets you manage the certificates stored by "
+"<application>Epiphany</application> Browser."
+msgstr ""
+"La extensión Certificados le permite gestionar los certificados almacenados "
+"por el navegador <application>Epiphany</application>."
 
 #: C/epiphany-extensions.xml:427(guilabel)
 msgid "Your Certificates"
 msgstr "Sus certificados"
 
 #: C/epiphany-extensions.xml:428(para)
-msgid "To import, view, backup and delete your own certificates. Personal Certificates can be used to identify when you browse a sensible site."
-msgstr "Para importar, ver, respaldar y borrar sus propios certificados. Los certificados personales se pueden usar para identificar cuando se visita un sitio web sensible."
+msgid ""
+"To import, view, backup and delete your own certificates. Personal "
+"Certificates can be used to identify when you browse a sensible site."
+msgstr ""
+"Para importar, ver, respaldar y borrar sus propios certificados. Los "
+"certificados personales se pueden usar para identificar cuando se visita un "
+"sitio web sensible."
 
 #: C/epiphany-extensions.xml:435(guilabel)
 msgid "Other People's"
@@ -665,27 +828,46 @@ msgstr "Sitios Web"
 
 #: C/epiphany-extensions.xml:441(para)
 msgid "To import, view, edit and delete certificates from website you visited."
-msgstr "Para importar, ver, editar y borrar certificados de sitios web visitados."
+msgstr ""
+"Para importar, ver, editar y borrar certificados de sitios web visitados."
 
 #: C/epiphany-extensions.xml:445(guilabel)
 msgid "Authorities"
 msgstr "Autoridades"
 
 #: C/epiphany-extensions.xml:446(para)
-msgid "To import, view, edit and delete certificates from authorities. Authorities are organizations which create and validate the authenticity of published certificates over the Internet."
-msgstr "Para importar, ver, editar y borrar certificados de autoridades. Las autoridades son organizaciones que crean y validan la autenticidad de los certificados publicados en Internet."
+msgid ""
+"To import, view, edit and delete certificates from authorities. Authorities "
+"are organizations which create and validate the authenticity of published "
+"certificates over the Internet."
+msgstr ""
+"Para importar, ver, editar y borrar certificados de autoridades. Las "
+"autoridades son organizaciones que crean y validan la autenticidad de los "
+"certificados publicados en Internet."
 
 #: C/epiphany-extensions.xml:421(para)
-msgid "To display the <guilabel>Certificate Manager</guilabel>, choose <menuchoice><guimenu>Tools</guimenu><guimenuitem>Manage Certificates</guimenuitem></menuchoice>, it gives access to 4 tabs: <placeholder-1/><placeholder-2/>"
-msgstr "Para mostrar el <guilabel>Gestor de Certificados </guilabel>, seleccione <menuchoice><guimenu>Herramientas</guimenu><guimenuitem>Gestionar certificados</guimenuitem></menuchoice>, esto le da acceso a 4 solapas: <placeholder-1/><placeholder-2/>"
+msgid ""
+"To display the <guilabel>Certificate Manager</guilabel>, choose "
+"<menuchoice><guimenu>Tools</guimenu><guimenuitem>Manage Certificates</"
+"guimenuitem></menuchoice>, it gives access to 4 tabs: <placeholder-1/"
+"><placeholder-2/>"
+msgstr ""
+"Para mostrar el <guilabel>Gestor de Certificados </guilabel>, seleccione "
+"<menuchoice><guimenu>Herramientas</guimenu><guimenuitem>Gestionar "
+"certificados</guimenuitem></menuchoice>, esto le da acceso a 4 solapas: "
+"<placeholder-1/><placeholder-2/>"
 
 #: C/epiphany-extensions.xml:456(title)
 msgid "Manage Security Devices"
 msgstr "Gestionar dispositivos de seguridad"
 
 #: C/epiphany-extensions.xml:458(para)
-msgid "Security Devices are used encrypt and decrypt connections and can store certificates and passwords."
-msgstr "Los Dispositivos de seguridad se utilizan para cifrar y descifrar conexiones, y pueden almacenar certificados y contraseñas."
+msgid ""
+"Security Devices are used encrypt and decrypt connections and can store "
+"certificates and passwords."
+msgstr ""
+"Los Dispositivos de seguridad se utilizan para cifrar y descifrar "
+"conexiones, y pueden almacenar certificados y contraseñas."
 
 #: C/epiphany-extensions.xml:465(title)
 #: C/epiphany-extensions.xml:490(guilabel)
@@ -693,8 +875,12 @@ msgid "Error Viewer"
 msgstr "Visor de errores"
 
 #: C/epiphany-extensions.xml:470(para)
-msgid "The Error Viewer extension allows you to view errors in web pages, validate web pages and check links."
-msgstr "La extensión Visor de errores le permite ver los errores de una página web, validar las páginas y comprobar enlaces."
+msgid ""
+"The Error Viewer extension allows you to view errors in web pages, validate "
+"web pages and check links."
+msgstr ""
+"La extensión Visor de errores le permite ver los errores de una página web, "
+"validar las páginas y comprobar enlaces."
 
 #: C/epiphany-extensions.xml:475(title)
 msgid "Using Error Viewer"
@@ -721,20 +907,48 @@ msgid "Displays various errors of a webpage (like javascript, ...)"
 msgstr "Muestra varios errores de una página web (como javascript, ...)"
 
 #: C/epiphany-extensions.xml:477(para)
-msgid "The Error Viewer is a small but useful extension for webmasters to check that websites (specially yours) conform to Web standards. This extension comes with 3 functions: <placeholder-1/>"
-msgstr "El Visor de errores es una pequeña pero útil extensión para webmasters para comprobar que los sitios web (en especial el suyo propio) cumple con los estándares Web. Esta extensión incluye tres funciones: <placeholder-1/>"
+msgid ""
+"The Error Viewer is a small but useful extension for webmasters to check "
+"that websites (specially yours) conform to Web standards. This extension "
+"comes with 3 functions: <placeholder-1/>"
+msgstr ""
+"El Visor de errores es una pequeña pero útil extensión para webmasters para "
+"comprobar que los sitios web (en especial el suyo propio) cumple con los "
+"estándares Web. Esta extensión incluye tres funciones: <placeholder-1/>"
 
 #: C/epiphany-extensions.xml:496(para)
-msgid "To launch the Links Checker, choose <menuchoice><guimenu>Tools</guimenu><guimenuitem>Check Links</guimenuitem></menuchoice>. The error viewer window will open, and the links verification will start automatically."
-msgstr "Para ejecutar el Comprobador de enlaces, elija <menuchoice><guimenu>Herramientas</guimenu><guimenuitem>Comprobar enlaces</guimenuitem></menuchoice>. Se abrirá la ventana del visor de errores y comenzará automáticamente la comprobación de enlaces."
+msgid ""
+"To launch the Links Checker, choose <menuchoice><guimenu>Tools</"
+"guimenu><guimenuitem>Check Links</guimenuitem></menuchoice>. The error "
+"viewer window will open, and the links verification will start automatically."
+msgstr ""
+"Para ejecutar el Comprobador de enlaces, elija "
+"<menuchoice><guimenu>Herramientas</guimenu><guimenuitem>Comprobar enlaces</"
+"guimenuitem></menuchoice>. Se abrirá la ventana del visor de errores y "
+"comenzará automáticamente la comprobación de enlaces."
 
 #: C/epiphany-extensions.xml:500(para)
-msgid "To launch the HTML Code Checker, choose <menuchoice><guimenu>Tools</guimenu><guimenuitem>Check HTML</guimenuitem></menuchoice>. The error viewer window will open, and the HTML code verification will start automatically."
-msgstr "Para ejecutar el Comprobador de código HTML, elija <menuchoice><guimenu>Herramientas</guimenu><guimenuitem>Comprobar HTML</guimenuitem></menuchoice>. Se abrirá la ventana de visualización de errores y comenzará automáticamente la comprobación del código HTML."
+msgid ""
+"To launch the HTML Code Checker, choose <menuchoice><guimenu>Tools</"
+"guimenu><guimenuitem>Check HTML</guimenuitem></menuchoice>. The error viewer "
+"window will open, and the HTML code verification will start automatically."
+msgstr ""
+"Para ejecutar el Comprobador de código HTML, elija "
+"<menuchoice><guimenu>Herramientas</guimenu><guimenuitem>Comprobar HTML</"
+"guimenuitem></menuchoice>. Se abrirá la ventana de visualización de errores "
+"y comenzará automáticamente la comprobación del código HTML."
 
 #: C/epiphany-extensions.xml:504(para)
-msgid "To launch the Error Viewer, choose <menuchoice><guimenu>Tools</guimenu><guimenuitem>Error Viewer</guimenuitem></menuchoice>. The error viewer window will open, it will display all the validation errors discovered in the web page."
-msgstr "Para ejecutar el Visor de errores, elija <menuchoice><guimenu>Herramientas</guimenu><guimenuitem>Visor de errores</guimenuitem></menuchoice>. Se abrirá el visor de errores y mostrará todos los errores de validación descubiertos en la página web."
+msgid ""
+"To launch the Error Viewer, choose <menuchoice><guimenu>Tools</"
+"guimenu><guimenuitem>Error Viewer</guimenuitem></menuchoice>. The error "
+"viewer window will open, it will display all the validation errors "
+"discovered in the web page."
+msgstr ""
+"Para ejecutar el Visor de errores, elija <menuchoice><guimenu>Herramientas</"
+"guimenu><guimenuitem>Visor de errores</guimenuitem></menuchoice>. Se abrirá "
+"el visor de errores y mostrará todos los errores de validación descubiertos "
+"en la página web."
 
 #: C/epiphany-extensions.xml:512(title)
 msgid "Favicon Fallback"
@@ -745,14 +959,23 @@ msgid ""
 "The Favicon Fallback extension allows to retrieve the icon favicon.ico when "
 "the favicon is not well declared in web page."
 msgstr ""
+"La extensión Recuperación de Favicon le permite recuperar el icono favicon cuando "
+"éste no está declarado en la página web."
 
 #: C/epiphany-extensions.xml:522(title)
 msgid "Using Favicon"
 msgstr "Uso del favicon"
 
 #: C/epiphany-extensions.xml:524(para)
-msgid "Once activated, this extension will retrieve the picture file /favicon.ico on each site you will visit if this file exists. Then <application>Epiphany</application> will display this icon on the left of the location bar."
-msgstr "Una vez activada, esta extensión recuperará el archivo de imagen /favicon.ico de cada sitio que visite, si el archivo existe. Entonces, <application>Epiphany</application> mostrará este icono en el lado izquierdo de la barra de búsqueda."
+msgid ""
+"Once activated, this extension will retrieve the picture file /favicon.ico "
+"on each site you will visit if this file exists. Then <application>Epiphany</"
+"application> will display this icon on the left of the location bar."
+msgstr ""
+"Una vez activada, esta extensión recuperará el archivo de imagen /favicon."
+"ico de cada sitio que visite, si el archivo existe. Entonces, "
+"<application>Epiphany</application> mostrará este icono en el lado izquierdo "
+"de la barra de búsqueda."
 
 #: C/epiphany-extensions.xml:531(title)
 msgid "Gestures"
@@ -763,6 +986,8 @@ msgid ""
 "The Gestures allows you to quickly perform actions in <application>Epiphany</"
 "application> by drawing a shape with the mouse."
 msgstr ""
+"Los Gestos le permiten ejecutar acciones rápidamente en <application>Epiphany</"
+"application> dibujando una forma con el ratón."
 
 #: C/epiphany-extensions.xml:541(title)
 msgid "Using Gestures"
@@ -775,10 +1000,18 @@ msgid ""
 "following patterns, and then release the button. The cursor will change "
 "while the gesture is being performed."
 msgstr ""
+"Para realizar un gesto, pulse el botón del medio en el panel de visualización de una "
+"ventana de <application>Epiphany</application>, mueva el ratón en uno de los siguientes "
+"patrones, y después suelte el botón. El cursor cambiará "
+"mientras se realiza el gesto."
 
 #: C/epiphany-extensions.xml:549(title)
-msgid "List of available default patterns in <application>Epiphany Extensions</application>"
-msgstr "Lista de patrones predeterminados disponibles en las <application>Extensiones de Epiphany</application>"
+msgid ""
+"List of available default patterns in <application>Epiphany Extensions</"
+"application>"
+msgstr ""
+"Lista de patrones predeterminados disponibles en las "
+"<application>Extensiones de Epiphany</application>"
 
 #: C/epiphany-extensions.xml:556(entry)
 msgid "Action"
@@ -874,7 +1107,7 @@ msgstr "Abajo - Derecha"
 
 #: C/epiphany-extensions.xml:673(entry)
 msgid "Toggle full-screen mode"
-msgstr ""
+msgstr "Conmutar el modo de pantalla completa"
 
 #: C/epiphany-extensions.xml:674(entry)
 msgid "Down - Left"
@@ -906,7 +1139,8 @@ msgstr "S"
 
 #: C/epiphany-extensions.xml:707(entry)
 msgid "Left - Down - Right - Down - Left (Do a <placeholder-1/>)"
-msgstr "Izquierda - Abajo - Derecha - Abajo - Izquierda (haga un <placeholder-1/>)"
+msgstr ""
+"Izquierda - Abajo - Derecha - Abajo - Izquierda (haga un <placeholder-1/>)"
 
 #: C/epiphany-extensions.xml:718(entry)
 msgid "View the page source (Second gesture)"
@@ -925,6 +1159,8 @@ msgid ""
 "The Gestures extension lets you create your own gesture patterns, and so let "
 "you extend the set provided by default."
 msgstr ""
+"La extensión Gestos le permite crear sus propios patrones de gestos, ampliando así "
+"el conjunto proporcionado de forma predeterminada."
 
 #: C/epiphany-extensions.xml:740(title)
 msgid "Understand how gesture works"
@@ -939,10 +1175,10 @@ msgid ""
 "gestures for all the users of the system."
 msgstr ""
 "<application>Epiphany</application> almacena la definición de los gestos "
-"para todos los usuarios en el archivo <filename>ephy-gestures.xml</filename> ubicado en "
-"el directorio <filename class=\"directory\">$PREFIX/share/epiphany-"
-"extensions/</filename>; este archivo utiliza el formato xml y define los "
-"gestos para todos los usuarios del sistema."
+"para todos los usuarios en el archivo <filename>ephy-gestures.xml</filename> "
+"ubicado en el directorio <filename class=\"directory\">$PREFIX/share/"
+"epiphany-extensions/</filename>; este archivo utiliza el formato xml y "
+"define los gestos para todos los usuarios del sistema."
 
 #: C/epiphany-extensions.xml:752(title)
 msgid "A Gesture Example"
@@ -965,6 +1201,9 @@ msgid ""
 "to print the web page when we will draw a <wordasword>P</wordasword> with "
 "the mouse."
 msgstr ""
+"En esta sección, se explicará cómo crear un gesto nuevo. La acción será "
+"imprimir la página web al dibujar una <wordasword>P</wordasword> con "
+"el ratón."
 
 #: C/epiphany-extensions.xml:771(para)
 msgid ""
@@ -973,12 +1212,18 @@ msgid ""
 "gnome2/epiphany/</filename> which will store your personal gesture "
 "definitions."
 msgstr ""
+"Para crear sus propios gestos, cree primero un fichero llamado <filename>ephy-"
+"gestures.xml</filename> en el directorio <filename class=\"directory\">~/."
+"gnome2/epiphany/</filename> que almacenará sus definiciones de gestos "
+"personales."
 
 #: C/epiphany-extensions.xml:776(para)
 msgid ""
 "Open the newly created file with a text editor and add the following "
 "content: <placeholder-1/>"
 msgstr ""
+"Abra el archivo nuevo con un editor de textos y añada el siguiente "
+"contenido: <placeholder-1/>"
 
 #: C/epiphany-extensions.xml:789(title)
 msgid "Define the gesture movement"
@@ -989,6 +1234,8 @@ msgid ""
 "To define a new gesture, you need at least one or several sequences and an "
 "action to execute."
 msgstr ""
+"Para definir un nuevo gesto necesita, al menos, una o varias secuencias y una "
+"acción que ejecutar."
 
 #: C/epiphany-extensions.xml:793(para)
 msgid ""
@@ -996,10 +1243,17 @@ msgid ""
 "gesture to draw following a phone keypad layout (with \"1\" placed to the "
 "top-left hand corner and the \"9\" at the bottom-right hand corner)."
 msgstr ""
+"Una secuencia es un conjunto de valores numéricos entre 1 y 9 que define el "
+"el gesto para dibujar a continuación de la distribución de teclado de un teléfono (con «1» situado "
+"en la esquina superior izquierda y el «9» en la esquina inferior derecha)."
 
 #: C/epiphany-extensions.xml:797(para)
-msgid "If we want to draw a <wordasword>P</wordasword>, the key sequence is 74123654, insert this value between the markups \"sequence\"."
-msgstr "Si quiere dibujar una <wordasword>P</wordasword>, la secuencia de teclas es 74123654, introduzca este valor entre las marcas «secuencia»."
+msgid ""
+"If we want to draw a <wordasword>P</wordasword>, the key sequence is "
+"74123654, insert this value between the markups \"sequence\"."
+msgstr ""
+"Si quiere dibujar una <wordasword>P</wordasword>, la secuencia de teclas es "
+"74123654, introduzca este valor entre las marcas «secuencia»."
 
 #: C/epiphany-extensions.xml:810(title)
 msgid "Define the action"
@@ -1012,22 +1266,48 @@ msgid ""
 "the file <filename>ephy-gestures.xml</filename> located in <filename class="
 "\"directory\">$PREFIX/epiphany/epiphany-ui.xml</filename>"
 msgstr ""
+"Una acción describe la ruta a un menú o un elemento de una barra de herramientas en "
+"la ventana de <application>Epiphany</application>. Todas esas rutas se definen en "
+"el archivo <filename>ephy-gestures.xml</filename> ubicado en <filename class="
+"\"directory\">$PREFIX/epiphany/epiphany-ui.xml</filename>"
 
 #: C/epiphany-extensions.xml:830(title)
 msgid "Greasemonkey"
 msgstr "Greasemonkey"
 
 #: C/epiphany-extensions.xml:835(para)
-msgid "Greasemonkey is a powerful extension that allows users to use scripts that make on-the-fly changes to web pages. The greasemonkey scripts can make page modifications or automatically fill forms for instance."
-msgstr "Greasemonkey es una potente extensión que permite a los usuarios utilizar scripts que realizan cambios al vuelo en las páginas web. Los scripts de Greasemonkey pueden, por ejemplo, hacer modificaciones en una página o rellenar un formulario automáticamente."
+msgid ""
+"Greasemonkey is a powerful extension that allows users to use scripts that "
+"make on-the-fly changes to web pages. The greasemonkey scripts can make page "
+"modifications or automatically fill forms for instance."
+msgstr ""
+"Greasemonkey es una potente extensión que permite a los usuarios utilizar "
+"scripts que realizan cambios al vuelo en las páginas web. Los scripts de "
+"Greasemonkey pueden, por ejemplo, hacer modificaciones en una página o "
+"rellenar un formulario automáticamente."
 
 #: C/epiphany-extensions.xml:839(para)
-msgid "Greasemonkey scripts are javascripts and have the file extension \".user.js\". Greasemonkey extension doesn't come with any scripts, you have to find by yourself scripts over the web. A good Greasemonkey scripts repository is the site <ulink url=\"http://userscripts.org/\">http://userscripts.org/</ulink>."
-msgstr "Los scripts Greasemonkey son javascripts y tienen extensión «.user.js». La extensión Greasemonkey no incluye ningún script, usted mismo debe encontrar los scripts en la web. Un buen repositorio de scripts para Gresemonkey es <ulink url=\"http://userscripts.org/\">http://userscripts.org/</ulink>."
+msgid ""
+"Greasemonkey scripts are javascripts and have the file extension \".user.js"
+"\". Greasemonkey extension doesn't come with any scripts, you have to find "
+"by yourself scripts over the web. A good Greasemonkey scripts repository is "
+"the site <ulink url=\"http://userscripts.org/\">http://userscripts.org/</"
+"ulink>."
+msgstr ""
+"Los scripts Greasemonkey son javascripts y tienen extensión «.user.js». La "
+"extensión Greasemonkey no incluye ningún script, usted mismo debe encontrar "
+"los scripts en la web. Un buen repositorio de scripts para Gresemonkey es "
+"<ulink url=\"http://userscripts.org/\">http://userscripts.org/</ulink>."
 
 #: C/epiphany-extensions.xml:844(para)
-msgid "To learn more about Greasemonkey, read the <ulink url=\"http://en.wikipedia.org/wiki/Greasemonkey\">definition</ulink> on the Wikipedia on-line enciclopedia."
-msgstr "Para saber más acerca de Greasemonkey, lea la <ulink url=\"http://es.wikipedia.org/wiki/Greasemonkey\">definición</ulink> en la enciclopedia en línea Wikipedia."
+msgid ""
+"To learn more about Greasemonkey, read the <ulink url=\"http://en.wikipedia."
+"org/wiki/Greasemonkey\">definition</ulink> on the Wikipedia on-line "
+"enciclopedia."
+msgstr ""
+"Para saber más acerca de Greasemonkey, lea la <ulink url=\"http://es."
+"wikipedia.org/wiki/Greasemonkey\">definición</ulink> en la enciclopedia en "
+"línea Wikipedia."
 
 #: C/epiphany-extensions.xml:850(title)
 msgid "Using Greasemonkey"
@@ -1038,20 +1318,44 @@ msgid "Install a Greasemonkey script"
 msgstr "Instalar un script de Greasemonkey"
 
 #: C/epiphany-extensions.xml:855(para)
-msgid "To install a Greasemonkey script, first locate a link to a greasemonkey script on a web page, right-click on the link, and choose <guimenuitem>Install User Script</guimenuitem>. <application>Epiphany</application> will download the script; a message box will confirm the script is installed and ready to use."
-msgstr "Para instalar un script de Greasemonkey, localice primero un enlace al script de Greasemonkey en una página web, pulse con el botón derecho del ratón sobre el enlace y seleccione <guimenuitem>Instalar script de usuario</guimenuitem>. <application>Epiphany</application> descargará el script; un mensaje confirmará que el script está instalado y listo para usarse."
+msgid ""
+"To install a Greasemonkey script, first locate a link to a greasemonkey "
+"script on a web page, right-click on the link, and choose "
+"<guimenuitem>Install User Script</guimenuitem>. <application>Epiphany</"
+"application> will download the script; a message box will confirm the script "
+"is installed and ready to use."
+msgstr ""
+"Para instalar un script de Greasemonkey, localice primero un enlace al "
+"script de Greasemonkey en una página web, pulse con el botón derecho del "
+"ratón sobre el enlace y seleccione <guimenuitem>Instalar script de usuario</"
+"guimenuitem>. <application>Epiphany</application> descargará el script; un "
+"mensaje confirmará que el script está instalado y listo para usarse."
 
 #: C/epiphany-extensions.xml:860(para)
-msgid "You can manually install Greasemonkey scripts by copying them in <filename class=\"directory\">$HOME/.gnome2/epiphany/extensions/data/greasemonkey/</filename>"
-msgstr "Puede instalar manualmente scripts de Greasemonkey copiándolos en <filename class=\"directory\">$HOME/.gnome2/epiphany/extensions/data/greasemonkey/</filename>"
+msgid ""
+"You can manually install Greasemonkey scripts by copying them in <filename "
+"class=\"directory\">$HOME/.gnome2/epiphany/extensions/data/greasemonkey/</"
+"filename>"
+msgstr ""
+"Puede instalar manualmente scripts de Greasemonkey copiándolos en <filename "
+"class=\"directory\">$HOME/.gnome2/epiphany/extensions/data/greasemonkey/</"
+"filename>"
 
 #: C/epiphany-extensions.xml:866(title)
 msgid "Remove a Greasemonkey script"
 msgstr "Eliminar un script Greasemonkey"
 
 #: C/epiphany-extensions.xml:868(para)
-msgid "<application>Epiphany</application> doesn't provide a Graphical User interface to delete scripts; to remove a script go to <filename class=\"directory\">$HOME/.gnome2/epiphany/extensions/data/greasemonkey/</filename> , and move the script file in the trash."
-msgstr "<application>Epiphany</application> no proporciona una interfaz gráfica de usuario para borrar scripts; para eliminar un script vaya a <filename class=\"directory\">$HOME/.gnome2/epiphany/extensions/data/greasemonkey/</filename> y mueva el archivo del script a la papelera."
+msgid ""
+"<application>Epiphany</application> doesn't provide a Graphical User "
+"interface to delete scripts; to remove a script go to <filename class="
+"\"directory\">$HOME/.gnome2/epiphany/extensions/data/greasemonkey/</"
+"filename> , and move the script file in the trash."
+msgstr ""
+"<application>Epiphany</application> no proporciona una interfaz gráfica de "
+"usuario para borrar scripts; para eliminar un script vaya a <filename class="
+"\"directory\">$HOME/.gnome2/epiphany/extensions/data/greasemonkey/</"
+"filename> y mueva el archivo del script a la papelera."
 
 #: C/epiphany-extensions.xml:877(title)
 msgid "Java Console"
@@ -1059,15 +1363,22 @@ msgstr "Consola Java"
 
 #: C/epiphany-extensions.xml:882(para)
 msgid "Java Console extension provides access to the Java-Plugin Console."
-msgstr "La extensión Consola Java proporciona acceso a la consola de complementos de Java."
+msgstr ""
+"La extensión Consola Java proporciona acceso a la consola de complementos de "
+"Java."
 
 #: C/epiphany-extensions.xml:887(title)
 msgid "Using Java Console"
 msgstr "Uso de la consola Java"
 
 #: C/epiphany-extensions.xml:889(para)
-msgid "To display the Java Console, choose <menuchoice><guimenu>Tools</guimenu><guimenuitem>Java Console</guimenuitem></menuchoice>."
-msgstr "Para mostrar la Consola de Java, seleccione <menuchoice><guimenu>Herramientas</guimenu><guimenuitem>Consola Java</guimenuitem></menuchoice>."
+msgid ""
+"To display the Java Console, choose <menuchoice><guimenu>Tools</"
+"guimenu><guimenuitem>Java Console</guimenuitem></menuchoice>."
+msgstr ""
+"Para mostrar la Consola de Java, seleccione "
+"<menuchoice><guimenu>Herramientas</guimenu><guimenuitem>Consola Java</"
+"guimenuitem></menuchoice>."
 
 #: C/epiphany-extensions.xml:896(title)
 msgid "News Feed Subscription"
@@ -1091,22 +1402,44 @@ msgid ""
 "offered by the web page in your favorite news reader. The supported feed "
 "readers are <placeholder-1/>"
 msgstr ""
+"La extensión Suscripción a proveedores de noticias le permite suscribirse a canales de "
+"noticias que ofrezca una página web en su lector de noticias favorito. Los lectores de "
+"canales o proveedores soportados son <placeholder-1/>"
 
 #: C/epiphany-extensions.xml:913(title)
 msgid "Using News Feed Subscription"
-msgstr ""
+msgstr "Uso de Suscripción a proveedores de noticias"
 
 #: C/epiphany-extensions.xml:915(para)
-msgid "When <application>Epiphany</application> detects a that a website provides RSS and Atom feeds, it will display an icon on left side of the <application>Epiphany</application> status bar."
-msgstr "Cuando <application>Epiphany</application> detecte que un sitio web proporciona canales RSS y Atom, se mostrará un icono en el lado izquierdo de la barra de estado de <application>Epiphany</application>."
+msgid ""
+"When <application>Epiphany</application> detects a that a website provides "
+"RSS and Atom feeds, it will display an icon on left side of the "
+"<application>Epiphany</application> status bar."
+msgstr ""
+"Cuando <application>Epiphany</application> detecte que un sitio web "
+"proporciona canales RSS y Atom, se mostrará un icono en el lado izquierdo de "
+"la barra de estado de <application>Epiphany</application>."
 
 #: C/epiphany-extensions.xml:920(para)
-msgid "Choose <menuchoice><guimenu>Tools</guimenu><guimenuitem>News Feed Subscription</guimenuitem></menuchoice>, a new window with the list of available feeds appears. You can also click on the Feed icon in the status bar to make the <interface>News Feed Subscription</interface> window appear."
-msgstr "Elija <menuchoice><guimenu>Herramientas</guimenu><guimenuitem>Subscripción a proveedores de noticias</guimenuitem></menuchoice>, aparecerá una nueva ventana con la lista de canales disponibles. También puede pulsar en el icono del canal en la barra de estado para que aparezca la ventana <interface>Subscripción a proveedores de noticias</interface>"
+msgid ""
+"Choose <menuchoice><guimenu>Tools</guimenu><guimenuitem>News Feed "
+"Subscription</guimenuitem></menuchoice>, a new window with the list of "
+"available feeds appears. You can also click on the Feed icon in the status "
+"bar to make the <interface>News Feed Subscription</interface> window appear."
+msgstr ""
+"Elija <menuchoice><guimenu>Herramientas</guimenu><guimenuitem>Subscripción a "
+"proveedores de noticias</guimenuitem></menuchoice>, aparecerá una nueva "
+"ventana con la lista de canales disponibles. También puede pulsar en el "
+"icono del canal en la barra de estado para que aparezca la ventana "
+"<interface>Subscripción a proveedores de noticias</interface>"
 
 #: C/epiphany-extensions.xml:929(para)
-msgid "Choose the feeds you wan to subscribe to. You can also copy the feed Loaction using the feed's context menu."
-msgstr "Seleccione los canales a los que desea suscribirse. También puede copiar la ubicación del canal utilizando el menú contextual de canales."
+msgid ""
+"Choose the feeds you wan to subscribe to. You can also copy the feed "
+"Loaction using the feed's context menu."
+msgstr ""
+"Seleccione los canales a los que desea suscribirse. También puede copiar la "
+"ubicación del canal utilizando el menú contextual de canales."
 
 #: C/epiphany-extensions.xml:935(para)
 msgid "Press <guibutton>Subscribe</guibutton> to subscribe the feeds."
@@ -1125,6 +1458,8 @@ msgid ""
 "The Page Info extension provides detailed information about the web pages "
 "you visit."
 msgstr ""
+"La extensión Información de página proporciona información detallada sobre las páginas "
+"web que visita."
 
 #: C/epiphany-extensions.xml:956(title)
 msgid "Using Page Info"
@@ -1136,7 +1471,7 @@ msgstr "General"
 
 #: C/epiphany-extensions.xml:965(para)
 msgid "Provides various information on the page and the website"
-msgstr ""
+msgstr "Proporciona información variada de la página y del sitio web"
 
 #: C/epiphany-extensions.xml:969(guilabel)
 msgid "Media"
@@ -1144,7 +1479,8 @@ msgstr "Multimedia"
 
 #: C/epiphany-extensions.xml:970(para)
 msgid "displays media files (pictures, sounds,...) used on the page."
-msgstr "muestra los archivos multimedia (fotos, sonidos,...) usados en la página."
+msgstr ""
+"muestra los archivos multimedia (fotos, sonidos,...) usados en la página."
 
 #: C/epiphany-extensions.xml:974(guilabel)
 msgid "Links"
@@ -1152,7 +1488,7 @@ msgstr "Enlaces"
 
 #: C/epiphany-extensions.xml:975(para)
 msgid "Provides all the links of the web page."
-msgstr ""
+msgstr "Proporciona todos los enlaces de la página web."
 
 #: C/epiphany-extensions.xml:978(guilabel)
 msgid "Forms"
@@ -1168,11 +1504,20 @@ msgstr "Metadatos"
 
 #: C/epiphany-extensions.xml:984(para)
 msgid "Displays all the information entered by the webmaster about the site."
-msgstr "Muestra toda la información acerca del sitio web introducida por el webmaster."
+msgstr ""
+"Muestra toda la información acerca del sitio web introducida por el "
+"webmaster."
 
 #: C/epiphany-extensions.xml:958(para)
-msgid "To access the page information choose <menuchoice><guimenu>View</guimenu><guimenuitem>Page Information</guimenuitem></menuchoice>; a new window appears, letting you access 5 tabs: <placeholder-1/>"
-msgstr "Para acceder a la información de la página, seleccione <menuchoice><guimenu>Ver</guimenu><guimenuitem>Información de la página</guimenuitem></menuchoice>; aparecerá una nueva ventana permitiéndole acceder a 5 solapas: <placeholder-1/>"
+msgid ""
+"To access the page information choose <menuchoice><guimenu>View</"
+"guimenu><guimenuitem>Page Information</guimenuitem></menuchoice>; a new "
+"window appears, letting you access 5 tabs: <placeholder-1/>"
+msgstr ""
+"Para acceder a la información de la página, seleccione "
+"<menuchoice><guimenu>Ver</guimenu><guimenuitem>Información de la página</"
+"guimenuitem></menuchoice>; aparecerá una nueva ventana permitiéndole acceder "
+"a 5 solapas: <placeholder-1/>"
 
 #: C/epiphany-extensions.xml:993(title)
 msgid "Push Scroll"
@@ -1183,44 +1528,62 @@ msgid ""
 "The Push Scroll extension provides scroll function while the middle mouse "
 "button is pressed."
 msgstr ""
+"La extensión Pulsar y desplazar proporciona la función de desplazamiento mientras el botón "
+"del medio de ratón está pulsado."
 
 #: C/epiphany-extensions.xml:1003(title)
 msgid "Using Push Scroll"
-msgstr ""
+msgstr "Uso de Pulsar y desplazar"
 
 #: C/epiphany-extensions.xml:1005(para)
 msgid ""
 "To use Push Scroll, simply press the middle mouse button, and move your "
 "mouse in any direction, the page will scroll."
 msgstr ""
+"Para usar Pulsar y desplazar, simplemente pulse el botón del medio del ratón y mueva su "
+"ratón en cualquier dirección y la página se desplazará."
 
 #: C/epiphany-extensions.xml:1011(title)
 msgid "Python Console"
 msgstr "Consola Python"
 
 #: C/epiphany-extensions.xml:1016(para)
-msgid "Opens an interactive Python console, and allows to modify <application>Epiphany</application> through Python."
-msgstr "Abre una consola interactiva de Python, y le permite modificar <application>Epiphany</application> a través de Python."
+msgid ""
+"Opens an interactive Python console, and allows to modify "
+"<application>Epiphany</application> through Python."
+msgstr ""
+"Abre una consola interactiva de Python, y le permite modificar "
+"<application>Epiphany</application> a través de Python."
 
 #: C/epiphany-extensions.xml:1021(title)
 msgid "Using Python Console"
 msgstr "Uso de la consola de Python"
 
 #: C/epiphany-extensions.xml:1023(para)
-msgid "To display the Python Console, choose <menuchoice><guimenu>Tools</guimenu><guimenuitem>Python Console</guimenuitem></menuchoice>."
-msgstr "Para mostrar la consola de Python, seleccione <menuchoice><guimenu>Herramientas</guimenu><guimenuitem>Consola Python</guimenuitem></menuchoice>."
+msgid ""
+"To display the Python Console, choose <menuchoice><guimenu>Tools</"
+"guimenu><guimenuitem>Python Console</guimenuitem></menuchoice>."
+msgstr ""
+"Para mostrar la consola de Python, seleccione "
+"<menuchoice><guimenu>Herramientas</guimenu><guimenuitem>Consola Python</"
+"guimenuitem></menuchoice>."
 
 #: C/epiphany-extensions.xml:1030(title)
 msgid "Select Stylesheet"
 msgstr "Selector de la hoja de estilo"
 
 #: C/epiphany-extensions.xml:1035(para)
-msgid "The Select Stylesheet extension lets you switch between the stylesheets of a web page. You can also disable the stylesheets when you browsing a page."
-msgstr "La extensión Selector de la hoja de estilo le permite cambiar entre las hojas de estilo de una página web. También puede desactivar las hojas de estilo cuando visita una página."
+msgid ""
+"The Select Stylesheet extension lets you switch between the stylesheets of a "
+"web page. You can also disable the stylesheets when you browsing a page."
+msgstr ""
+"La extensión Selector de la hoja de estilo le permite cambiar entre las "
+"hojas de estilo de una página web. También puede desactivar las hojas de "
+"estilo cuando visita una página."
 
 #: C/epiphany-extensions.xml:1041(title)
 msgid "Using Select Stylesheet"
-msgstr ""
+msgstr "Uso del Selector de hoja de estilo"
 
 #: C/epiphany-extensions.xml:1043(para)
 msgid ""
@@ -1228,12 +1591,17 @@ msgid ""
 "<menuchoice><guimenu>View</guimenu><guimenuitem>Style</guimenuitem></"
 "menuchoice> , then choose a style sheet from those available."
 msgstr ""
+"Para cambiar la hoja de estilos del sitio web que visita, seleccione "
+"<menuchoice><guimenu>Ver</guimenu><guimenuitem>Estilo</guimenuitem></"
+"menuchoice>, entonces elija una hoja de estilo de entre las disponibles."
 
 #: C/epiphany-extensions.xml:1046(para)
 msgid ""
 "If you choose the style sheet <guilabel>none</guilabel> the website will not "
 "use any style sheet."
 msgstr ""
+"Si selecciona la hoja de estilos <guilabel>ninguna</guilabel> el sitio web no "
+"utilizará ninguna hoja de estilos."
 
 #: C/epiphany-extensions.xml:1052(title)
 msgid "Sidebar"
@@ -1245,6 +1613,9 @@ msgid ""
 "<application>Epiphany</application> window. Sidebar allows to display "
 "website content and can provide quick access to their information."
 msgstr ""
+"La extensión Barra latera añade una pequeña ventana en el lado izquierdo "
+"de la ventana de <application>Epiphany</application>. La Barra lateral permite "
+"mostrar el contenido del sitio web y puede proporcionar acceso rápido a su información."
 
 #: C/epiphany-extensions.xml:1063(title)
 msgid "Using Sidebar"
@@ -1259,26 +1630,47 @@ msgid "Display Sidebar"
 msgstr "Mostrar barra lateral"
 
 #: C/epiphany-extensions.xml:1073(para)
-msgid "By default, the Sidebar is not displayed; to display the Sidebar, choose menu <menuchoice><guimenu>View</guimenu><guimenuitem>Sidebar</guimenuitem></menuchoice>."
-msgstr "De forma predeterminada no se muestra la Barra lateral; para mostrarla, seleccione menú <menuchoice><guimenu>Ver</guimenu><guimenuitem>Barra lateral</guimenuitem></menuchoice>."
+msgid ""
+"By default, the Sidebar is not displayed; to display the Sidebar, choose "
+"menu <menuchoice><guimenu>View</guimenu><guimenuitem>Sidebar</guimenuitem></"
+"menuchoice>."
+msgstr ""
+"De forma predeterminada no se muestra la Barra lateral; para mostrarla, "
+"seleccione menú <menuchoice><guimenu>Ver</guimenu><guimenuitem>Barra "
+"lateral</guimenuitem></menuchoice>."
 
 #: C/epiphany-extensions.xml:1076(para)
 msgid ""
 "You can also toggle the visibility of Sidebar by pressing <keycap>F9</"
 "keycap>."
 msgstr ""
+"Puede cambiar la visibilidad de la Barra lateral pulsando <keycap>F9</"
+"keycap>."
 
 #: C/epiphany-extensions.xml:1081(title)
 msgid "Add a Sidebar"
 msgstr "Añadir una barra lateral"
 
 #: C/epiphany-extensions.xml:1083(para)
-msgid "To add a Sidebar, activate the Sidebar extension, then click on the link that the website provides to install the sidebar. A window requests to add the document to the Sidebar, click <guibutton>Add a Sidebar</guibutton>, the sidebar document is added to the Sidebar."
-msgstr "Para añadir una Barra lateral, active la extensión Barra lateral y pulse en el enlace que ofrece el sitio web para instalar la barra lateral. Una ventana le preguntará para añadir el documento a la barra lateral, pulse <guibutton>Añadir barra lateral</guibutton>, se añadirá el documento a la barra lateral."
+msgid ""
+"To add a Sidebar, activate the Sidebar extension, then click on the link "
+"that the website provides to install the sidebar. A window requests to add "
+"the document to the Sidebar, click <guibutton>Add a Sidebar</guibutton>, the "
+"sidebar document is added to the Sidebar."
+msgstr ""
+"Para añadir una Barra lateral, active la extensión Barra lateral y pulse en "
+"el enlace que ofrece el sitio web para instalar la barra lateral. Una "
+"ventana le preguntará para añadir el documento a la barra lateral, pulse "
+"<guibutton>Añadir barra lateral</guibutton>, se añadirá el documento a la "
+"barra lateral."
 
 #: C/epiphany-extensions.xml:1088(para)
-msgid "You can find a list of websites that provide sidebar on <ulink url=\"http://dmoz.org/Netscape/Sidebar/\">DMOZ</ulink>."
-msgstr "Puede encontrar una lista de sitios web que ofrecen barras laterales en <ulink url=\"http://dmoz.org/Netscape/Sidebar/\">DMOZ</ulink>."
+msgid ""
+"You can find a list of websites that provide sidebar on <ulink url=\"http://"
+"dmoz.org/Netscape/Sidebar/\">DMOZ</ulink>."
+msgstr ""
+"Puede encontrar una lista de sitios web que ofrecen barras laterales en "
+"<ulink url=\"http://dmoz.org/Netscape/Sidebar/\">DMOZ</ulink>."
 
 #: C/epiphany-extensions.xml:1093(title)
 msgid "Switch between Sidebars"
@@ -1289,14 +1681,20 @@ msgid ""
 "When you have subscribed to several sidebars, to switch between them, select "
 "the Sidebar from the drop-box at the top of the Sidebar."
 msgstr ""
+"Cuando se ha suscrito a varias barras laterales, para alternar entre ellas, seleccione "
+"la Barra lateral de la caja desplegable en la parte superior de la Barra lateral."
 
 #: C/epiphany-extensions.xml:1101(title)
 msgid "Delete a Sidebar"
 msgstr "Eliminar una barra lateral"
 
 #: C/epiphany-extensions.xml:1103(para)
-msgid "To delete a Sidebar which you have added, display the sidebar to delete and press the trash icon."
-msgstr "Para borrar una Barra lateral que había añadido, muestre la barra lateral para borrar y pulse en el icono de la papelera."
+msgid ""
+"To delete a Sidebar which you have added, display the sidebar to delete and "
+"press the trash icon."
+msgstr ""
+"Para borrar una Barra lateral que había añadido, muestre la barra lateral "
+"para borrar y pulse en el icono de la papelera."
 
 #: C/epiphany-extensions.xml:1110(title)
 msgid "Smart Bookmarks"
@@ -1307,10 +1705,12 @@ msgid ""
 "The Smart Bookmarks extension is an extension that enable to look up "
 "selected text with a smart bookmark."
 msgstr ""
+"La extensión Marcadores inteligentes es una extensión que permite buscar "
+"texto seleccionado con un marcador inteligente."
 
 #: C/epiphany-extensions.xml:1120(title)
 msgid "Using Smart Bookmarks"
-msgstr ""
+msgstr "Uso de los Marcadores inteligentes"
 
 #: C/epiphany-extensions.xml:1122(para)
 msgid ""
@@ -1318,6 +1718,9 @@ msgid ""
 "\"ghelp:epiphany#smart-bookmarks-create-a-smartbookmark\"> section</ulink> "
 "in the <application>Epiphany</application> manual."
 msgstr ""
+"Para crear un marcador inteligente, vea la sección apropiada en la <ulink type=\"help\" url="
+"\"ghelp:epiphany#smart-bookmarks-create-a-smartbookmark\">sección</ulink> "
+"del manual de <application>Epiphany</application>."
 
 #: C/epiphany-extensions.xml:1125(para)
 msgid ""
@@ -1325,6 +1728,9 @@ msgid ""
 "up</guimenuitem> and the smart bookmark from the context menu. A web browser "
 "will be opened with the result of the look-up."
 msgstr ""
+"Para buscar texto, seleccione el texto en una página web y elija <guimenuitem>Buscar"
+"</guimenuitem> y el marcador inteligente del menú contextual. Se abrirá un navegador "
+"web con el resultado de la búsqueda."
 
 #: C/epiphany-extensions.xml:1133(title)
 msgid "Tab Groups"
@@ -1332,7 +1738,7 @@ msgstr "Grupos de solapas"
 
 #: C/epiphany-extensions.xml:1138(para)
 msgid "The Tab Groups extension makes new tabs appear after the current tab."
-msgstr ""
+msgstr "La extensión Grupos de solapas hace que las nuevas solapas aparezcan después de la solapa actual."
 
 #: C/epiphany-extensions.xml:1143(title)
 msgid "Using Tab Groups"
@@ -1344,6 +1750,9 @@ msgid ""
 "tabs are created after the last tab) to a new one. When you open a new tab, "
 "it will be created after the current tab."
 msgstr ""
+"Una vez activada, esta extensión cambia el comportamiento normal (donde las nuevas "
+"solapas se crean después de la última solapa) a uno nuevo. Cuando abre una solapa nueva, "
+"ésta se creará antes de la solapa actual."
 
 #: C/epiphany-extensions.xml:1150(title)
 msgid "A new tab created after the first tab"
@@ -1358,14 +1767,21 @@ msgid ""
 "The Tab States extension changes the status of the tab label to signal the "
 "content has changed."
 msgstr ""
+"La extensión Estado de solapas cambia el estado de la solapa para "
+"indicar que el contenido ha cambiado."
 
 #: C/epiphany-extensions.xml:1167(title)
 msgid "Using Tab States"
-msgstr ""
+msgstr "Uso del Estado de solapas"
 
 #: C/epiphany-extensions.xml:1169(para)
-msgid "Once this extension is enabled, when the content of a page in a tab changes, the tab label will become bold, to notify you that the page has changed."
-msgstr "Una vez que se activa esta extensión, cuando cambia el contenido de una solapa, la etiqueta de la solapa aparecerá en negrita para notificarle que la página ha cambiado."
+msgid ""
+"Once this extension is enabled, when the content of a page in a tab changes, "
+"the tab label will become bold, to notify you that the page has changed."
+msgstr ""
+"Una vez que se activa esta extensión, cuando cambia el contenido de una "
+"solapa, la etiqueta de la solapa aparecerá en negrita para notificarle que "
+"la página ha cambiado."
 
 #: C/epiphany-extensions.xml:1205(title)
 msgid "About <application>Epiphany Extensions</application>"
@@ -1444,4 +1860,3 @@ msgid "translator-credits"
 msgstr ""
 "Daniel Mustieles <daniel.mustieles@ie.edu>, 2008\n"
 "Jorge González <jorgegonz@svn.gnome.org>, 2008."
-
