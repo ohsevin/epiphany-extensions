@@ -273,7 +273,7 @@ update_actions (EphyWindow *window)
 	EphyEmbed *embed;
 	GtkAction *action1;
 	GtkAction *action2; /* You can tell I didn't want to think... */
-	char *content_type;
+	EphyEmbedDocumentType content_type;
 	GValue sensitive = { 0, };
 
 	g_return_if_fail (EPHY_IS_WINDOW (window));
@@ -299,18 +299,15 @@ update_actions (EphyWindow *window)
 		return;
 	}
 
-	content_type = mozilla_get_content_type (embed);
+	content_type = ephy_embed_get_document_type (embed);
 
 	if (content_type &&
-            ((strcmp (content_type, "text/html") == 0)
-             || (strcmp (content_type, "application/xhtml+xml") == 0)
-             || (strcmp (content_type, "application/xml") == 0)
-             || (strcmp (content_type, "text/xml") == 0)))
+            ((content_type == EPHY_EMBED_DOCUMENT_HTML)
+             || (content_type == EPHY_EMBED_DOCUMENT_XML))
+        )
 	{
 		g_value_set_boolean (&sensitive, TRUE);
 	}
-
-	g_free (content_type);
 
 	g_object_set_property (G_OBJECT (action1), "sensitive", &sensitive);
 	g_object_set_property (G_OBJECT (action2), "sensitive", &sensitive);
