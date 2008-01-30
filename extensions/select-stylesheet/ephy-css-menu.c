@@ -193,6 +193,19 @@ connect_proxy_cb (GtkActionGroup *action_group,
 }
 
 static void
+load_status_cb (EphyEmbed *embed,
+		GParamSpec *pspec,
+		EphyCSSMenu *menu)
+{
+	gboolean loading;
+	
+	loading = ephy_embed_get_load_status (embed);
+
+	if (!loading)
+		ephy_css_menu_rebuild (menu);
+}
+
+static void
 ephy_css_menu_rebuild (EphyCSSMenu *menu)
 {
 	EphyCSSMenuPrivate *p = menu->priv;
@@ -285,9 +298,9 @@ ephy_css_menu_set_embed (EphyCSSMenu *menu,
 	if (p->embed != NULL)
 	{
 		g_object_ref (p->embed);
-		g_signal_connect_object (p->embed, "net_stop",
-					 G_CALLBACK (ephy_css_menu_rebuild),
-					 menu, G_CONNECT_SWAPPED);
+		g_signal_connect (p->embed, "notify::load-status",
+					 G_CALLBACK (load_status_cb),
+					 menu);
 	}
 }
 
