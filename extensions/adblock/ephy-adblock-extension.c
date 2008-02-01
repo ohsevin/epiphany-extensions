@@ -55,7 +55,7 @@
 #define WINDOW_DATA_KEY		"EphyAdblockExtensionWindowData"
 #define STATUSBAR_EVBOX_KEY	"EphyAdblockExtensionStatusbarEvbox"
 #define EXTENSION_KEY		"EphyAdblockExtension"
-#define ICON_FILENAME		"adblock-statusbar-icon.svg"
+#define AD_BLOCK_ICON_NAME      "ad-blocked"
 
 typedef struct
 {
@@ -324,29 +324,14 @@ static void
 create_statusbar_icon (EphyWindow *window)
 {
 	EphyStatusbar *statusbar;
-	char *filename;
-	GdkPixbuf *pixbuf;
 	GtkWidget *icon;
 	GtkWidget *evbox;
 	int w, h;
 
 	gtk_icon_size_lookup (GTK_ICON_SIZE_MENU, &w, &h);
 
-	/* FIXME themeing! */
-	filename = g_build_filename (SHARE_DIR, ICON_FILENAME, NULL);
-	pixbuf = gdk_pixbuf_new_from_file_at_size (filename, w, h, NULL);
-	g_free (filename);
-
-	/* Try not to crash when librsvg isn't installed! */
-	if (pixbuf)
-	{
-		icon = gtk_image_new_from_pixbuf (pixbuf);
-		g_object_unref (pixbuf);
-	}
-	else
-	{
-		icon = gtk_image_new_from_stock (GTK_STOCK_MISSING_IMAGE, GTK_ICON_SIZE_MENU);
-	}
+	icon = gtk_image_new_from_icon_name (AD_BLOCK_ICON_NAME,
+					     GTK_ICON_SIZE_MENU);
 
 	statusbar = EPHY_STATUSBAR (ephy_window_get_statusbar (window));
 	g_return_if_fail (statusbar != NULL);

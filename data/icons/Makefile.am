@@ -1,14 +1,19 @@
 NULL =
 
 private_icons = \
+	hicolor_status_16x16_ad-blocked.png \
 	hicolor_status_16x16_feed-presence.png \
 	hicolor_status_22x22_feed-presence.png \
+	hicolor_status_22x22_ad-blocked.png \
 	hicolor_status_24x24_feed-presence.png \
+	hicolor_status_24x24_ad-blocked.png \
 	hicolor_status_32x32_feed-presence.png \
 	hicolor_status_scalable_feed-presence.svg \
 	$(NULL)
 
 noinst_DATA = \
+	hicolor_status_16x16_ad-blocked.svg \
+	hicolor_status_22x22_ad-blocked.png \
 	$(NULL)
 
 EXTRA_DIST = \

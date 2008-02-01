@@ -43,9 +43,6 @@ patternsdir = $(pkgdatadir)
 update-adblock-patterns: download-latest.pl
 	perl $< > $(patterns_DATA)
 
-icon_DATA = adblock-statusbar-icon.svg
-icondir = $(pkgdatadir)
-
 extensioninidir = $(extensiondir)
 extensionini_in_files = adblock.ephy-extension.in.in
 extensionini_DATA = $(extensionini_in_files:.ephy-extension.in.in=.ephy-extension)
@@ -60,4 +57,4 @@ extensionini_DATA = $(extensionini_in_files:.ephy-extension.in.in=.ephy-extensio
 CLEANFILES = $(extensionini_DATA)
 DISTCLEANFILES = $(extensionini_DATA)
 
-EXTRA_DIST = $(patterns_DATA) $(icon_DATA) $(extensionini_in_files) $(glade_DATA)
+EXTRA_DIST = $(patterns_DATA) $(extensionini_in_files) $(glade_DATA)
