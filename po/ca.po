@@ -4,17 +4,17 @@
 # Xavier Conde Rueda <xaviconde@eresmas.com>, 2004.
 # Jordi Mallach <jordi@sindominio.net>, 2004.
 # Esteve Blanch Sanmartí <anakinjinn@gmail.com>, 2006.
-# David Planella Molas <david.planella@gmail.com>, 2007.
 # Francesc Vilches <francesc.vilches@gmail.com>, 2007.
+# David Planella Molas <david.planella@gmail.com>, 2007, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-09-22 19:01+0200\n"
-"PO-Revision-Date: 2007-09-18 21:08+0200\n"
-"Last-Translator: Francesc Vilches <francesc.vilches@gmail.com>\n"
+"POT-Creation-Date: 2008-02-15 00:15+0100\n"
+"PO-Revision-Date: 2008-02-13 17:12+0100\n"
+"Last-Translator: David Planella Molas <david.planella@gmail.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -92,19 +92,19 @@ msgstr "_Pàgines"
 msgid "Actions"
 msgstr "Accions"
 
-#: ../extensions/actions/ephy-actions-extension.c:112
+#: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Actio_ns"
 msgstr "Accio_ns"
 
-#: ../extensions/actions/ephy-actions-extension.c:113
+#: ../extensions/actions/ephy-actions-extension.c:114
 msgid "Customize actions"
 msgstr "Personalitza les accions"
 
-#: ../extensions/actions/ephy-actions-extension.c:436
+#: ../extensions/actions/ephy-actions-extension.c:437
 msgid "Could not run command"
 msgstr "No s'ha pogut executar l'ordre"
 
-#: ../extensions/actions/ephy-actions-extension.c:439
+#: ../extensions/actions/ephy-actions-extension.c:440
 msgid "Could not Run Command"
 msgstr "No s'ha pogut executar l'ordre"
 
@@ -151,7 +151,7 @@ msgstr ""
 "en cas que hi tingueu problemes, hauríeu d'usar el sistema de seguiment "
 "d'errors del Bugzilla en lloc de dirigir-vos al seu autor original (G).\n"
 
-#: ../extensions/adblock/adblock-ui.c:496
+#: ../extensions/adblock/adblock-ui.c:497
 msgid "Pattern"
 msgstr "Patró"
 
@@ -169,7 +169,7 @@ msgstr "<b>Actualitza les regles des del lloc web original</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
 #: ../extensions/adblock/ephy-adblock-extension.c:243
-msgid "Adblock editor"
+msgid "Adblock Editor"
 msgstr "Editor del blocador de publicitat"
 
 #: ../extensions/adblock/adblock.glade.h:5
@@ -199,44 +199,44 @@ msgid_plural "%d hidden advertisements"
 msgstr[0] "%d anunci ocult"
 msgstr[1] "%d anuncis ocults"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:84
 msgid "_Auto Reload"
 msgstr "_Actualització automàtica"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:86
 msgid "Reload the page periodically"
 msgstr "Actualitza la pàgina periòdicament"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:371
+#: ../extensions/cc-license-viewer/cc-license-viewer.py:370
 msgid "View Creative Commons license"
 msgstr "Mostra la llicència Creative Commons"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:177
+#: ../extensions/certificates/ephy-certificates-extension.c:176
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "Certificats"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:208
+#: ../extensions/certificates/ephy-certificates-extension.c:207
 msgid "Security Devices"
 msgstr "Dispositius de seguretat"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:220
+#: ../extensions/certificates/ephy-certificates-extension.c:219
 msgid "Manage _Certificates"
 msgstr "Gestiona els _certificats"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:222
+#: ../extensions/certificates/ephy-certificates-extension.c:221
 msgid "Manage your certificates"
 msgstr "Gestioneu els vostres certificats"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:226
+#: ../extensions/certificates/ephy-certificates-extension.c:225
 msgid "Manage Security _Devices"
 msgstr "Administra els _dispositius de seguretat"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:228
+#: ../extensions/certificates/ephy-certificates-extension.c:227
 msgid "Manage your security devices"
 msgstr "Administreu els vostres dispositius de seguretat"
 
@@ -310,20 +310,19 @@ msgid "Epilicious Synchronize"
 msgstr "Sincronitza amb l'Epilicious"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:1
-msgid "Bookmarks with this topic will be synchronized to del.icio.us."
-msgstr ""
-"Les adreces d'interès amb aquest tema se sincronitzaran amb el del.icio.us."
+msgid "Bookmarks with this topic will be synchronized."
+msgstr "Se sincronitzaran les adreces d'interès amb aquest tema."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:2
 msgid ""
 "Controls the function of the topic. If this is unset then all bookmarks with "
-"the topic will be synched with del.icio.us. If this is set then all "
-"bookmarks without the topic will be synched with del.icio.us."
+"the topic will be synched. If this is set then all bookmarks without the "
+"topic will be synched."
 msgstr ""
 "Controla la funció del tema. Si aquest paràmetre no està activat, totes les "
-"adreces d'interès que continguin el tema se sincronitzaran amb el del.icio."
-"us. Si aquest paràmetre està activat, totes les adreces d'interès que no "
-"continguin el tema se sincronitzaran amb el del.icio.us."
+"adreces d'interès que continguin el tema se sincronitzaran. Si aquest "
+"paràmetre està activat, totes les adreces d'interès que no continguin el "
+"tema se sincronitzaran."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:3
 msgid "Exclude topic"
@@ -336,10 +335,10 @@ msgstr "Tema compartit"
 #: ../extensions/epilicious/epilicious.schemas.in.h:5
 msgid ""
 "The backend that epilicious will use for synchronizing bookmarks. Allowed "
-"values: 'del.icio.us', 'ma.gnolia'"
+"value: 'ma.gnolia'"
 msgstr ""
 "El rerefons que l'Epilicious utilitzarà per a sincronitzar les adreces "
-"d'interès. Es permeten els següents valors: «del.icio.us», «ma.gnolia»"
+"d'interès. Es permeten els següents valors: «ma.gnolia»"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
 msgid "The password that epilicious will use for synchronizing bookmarks."
@@ -365,31 +364,31 @@ msgstr "contrasenya"
 msgid "username"
 msgstr "nom d'usuari"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:98
 msgid "Check _HTML"
 msgstr "Comprova l'_HTML"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:100
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "Visualitza els errors HTML en el diàleg de visualització d'errors"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:104
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
 msgid "Check _Links"
 msgstr "Comprova els en_llaços"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:106
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:107
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr ""
 "Visualitza els enllaços invàlids en el diàleg de visualització d'errors"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:110
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:111
 msgid "_Error Viewer"
 msgstr "Visualitzador d'_errors"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:112
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:113
 msgid "Display web page errors"
 msgstr "Visualitza els errors de les pàgines web"
 
@@ -453,7 +452,7 @@ msgid_plural "Checking %d Links on “%s”"
 msgstr[0] "S'està comprovant %d enllaç a «%s»"
 msgstr[1] "S'estan comprovant %d enllaços a «%s»"
 
-#: ../extensions/error-viewer/opensp/validate.cpp:167
+#: ../extensions/error-viewer/opensp/validate.cpp:168
 #, c-format
 msgid ""
 "HTML error in “%s” on line %s:\n"
@@ -543,16 +542,13 @@ msgid "Extensions"
 msgstr "Extensions"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
-msgid "_Extensions..."
-msgstr "_Extensions..."
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "_Extensions"
+msgstr "_Extensions"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
 msgid "Load and unload extensions"
 msgstr "Carrega i descarrega extensions"
-
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
-msgid "_Extensions"
-msgstr "_Extensions"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
 msgid "Help about extensions"
@@ -609,11 +605,11 @@ msgstr "Capçaleres en viu"
 msgid "Remove headers"
 msgstr "Suprimeix les capçaleres"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/page-info/ephy-page-info-extension.c:68
 msgid "Pa_ge Information"
 msgstr "Informació de la pà_gina"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:69
+#: ../extensions/page-info/ephy-page-info-extension.c:70
 msgid "Display page information in a dialog"
 msgstr "Mostra informació sobre la pàgina en un diàleg"
 
@@ -948,25 +944,25 @@ msgstr "_Permisos del lloc web"
 msgid "Manage web site permissions"
 msgstr "Administra els permisos del lloc web"
 
-#: ../extensions/rss/ephy-rss-extension.c:90
+#: ../extensions/rss/ephy-rss-extension.c:91
 msgid "News Feeds Subscription"
 msgstr "Subscripció a canals de notícies"
 
-#: ../extensions/rss/ephy-rss-extension.c:92
+#: ../extensions/rss/ephy-rss-extension.c:93
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr ""
 "Subscriviu-vos al canal de notícies d'aquest web utilitzant el vostre lector "
 "de notícies preferit"
 
-#: ../extensions/rss/ephy-rss-extension.c:97
+#: ../extensions/rss/ephy-rss-extension.c:98
 msgid "_Subscribe to this feed"
 msgstr "_Subscriviu-vos al canal"
 
-#: ../extensions/rss/ephy-rss-extension.c:99
+#: ../extensions/rss/ephy-rss-extension.c:100
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Subscriviu-vos al canal amb el vostre lector de notícies preferit"
 
-#: ../extensions/rss/ephy-rss-extension.c:381
+#: ../extensions/rss/ephy-rss-extension.c:373
 msgid "Subscribe to site's news feed"
 msgstr "Subscriviu-vos al canal de notícies del lloc web"
 
@@ -1001,24 +997,24 @@ msgstr "Subscripció a canals de notícies"
 msgid "_Subscribe"
 msgstr "_Subscriu-m'hi"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:145
+#: ../extensions/select-stylesheet/ephy-css-menu.c:146
 msgid "Render the page without using a style"
 msgstr "Representa la pàgina sense utilitzar cap estil"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:148
+#: ../extensions/select-stylesheet/ephy-css-menu.c:149
 msgid "Render the page using the default style"
 msgstr "Representa la pàgina utilitzant l'estil per defecte"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:151
+#: ../extensions/select-stylesheet/ephy-css-menu.c:152
 #, c-format
 msgid "Render the page using the “%s” style"
 msgstr "Representa la pàgina utilitzant l'estil «%s»"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:309
+#: ../extensions/select-stylesheet/ephy-css-menu.c:323
 msgid "St_yle"
 msgstr "E_stil"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:310
+#: ../extensions/select-stylesheet/ephy-css-menu.c:324
 msgid "Select a different style for this page"
 msgstr "Selecciona un estil diferent per a aquesta pàgina"
 
@@ -1086,11 +1082,11 @@ msgstr "L'origen de la pàgina nova de la barra lateral és «%s»."
 msgid "_Add Sidebar"
 msgstr "_Afegeix la barra lateral"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:551
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:542
 msgid "_Look Up"
 msgstr "_Cerca"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:558
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:549
 msgid "_GNOME Dictionary"
 msgstr "Diccionari del _GNOME"
 
@@ -1107,6 +1103,14 @@ msgstr ""
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
 msgstr "Executa ordres personalitzades des del menú contextual"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
+msgid "Ad Blocker"
+msgstr "Blocador de publicitat"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
+msgid "Block the pest!"
+msgstr "Bloqueu la pesta!"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
 msgid "Auto Scroll"
@@ -1139,8 +1143,9 @@ msgid "View the page certificate and manage the certificates"
 msgstr "Visualitza el certificat de la pàgina i administra els certificats"
 
 #: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
-msgid "Synchronize bookmarks with del.icio.us"
-msgstr "Sincronització de les adreces d'interès amb el del.icio.us"
+msgid "Synchronize bookmarks with social bookmark sites"
+msgstr ""
+"Sincronització de les adreces d'interès amb llocs d'adreces d'interès socials"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -1224,6 +1229,14 @@ msgstr "Arrossega la pàgina en prémer el botó central del ratolí"
 msgid "Push Scroll"
 msgstr "Desplaçament per arrossegament"
 
+#: ../extensions/python-console/python-console.ephy-extension.in.h:1
+msgid "Opens an interactive Python console"
+msgstr "Obre una consols interactiva del Python"
+
+#: ../extensions/python-console/python-console.ephy-extension.in.h:2
+msgid "Python Console"
+msgstr "Consola del Python"
+
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
@@ -1287,6 +1300,9 @@ msgstr "Indica contingut nou a les pestanyes en segon pla"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Estat de les pestanyes"
+
+#~ msgid "_Extensions..."
+#~ msgstr "_Extensions..."
 
 #~ msgid ""
 #~ "Error:\n"
