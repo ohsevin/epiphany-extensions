@@ -120,6 +120,8 @@ PKG_CHECK_MODULES([EPIPHANY_DEPENDENCY], [\
 		  glib-2.0 >= $LIBGLIB_REQUIRED \
 		  gmodule-2.0 \
 		  gtk+-2.0 >= $LIBGTK_REQUIRED \
+                  gconf-2.0 \
+                  gnome-vfs-2.0 \
 		  epiphany-$EPIPHANY_API_VERSION >= $EPIPHANY_REQUIRED])
 AC_SUBST([EPIPHANY_DEPENDENCY_CFLAGS])
 AC_SUBST([EPIPHANY_DEPENDENCY_LIBS])

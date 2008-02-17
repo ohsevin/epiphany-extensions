@@ -542,7 +542,7 @@ ensure_adblocker (EphyAdblockExtension *ext,
 		g_object_set_data_full (G_OBJECT (embed), AD_BLOCKER_KEY,
 					blocker, (GDestroyNotify) g_object_unref);
 
-		g_signal_connect (embed, "ge-location",
+		g_signal_connect (embed, "new-document-now",
 				  G_CALLBACK (location_changed_cb), blocker);
 
 		g_signal_connect (embed, "content-blocked",
