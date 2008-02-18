@@ -43,10 +43,6 @@
 #include <gtk/gtktextview.h>
 #include <gtk/gtknotebook.h>
 
-#include <libgnomevfs/gnome-vfs-uri.h>
-#include <libgnomevfs/gnome-vfs-ops.h>
-#include <libgnomevfs/gnome-vfs-utils.h>
-
 #include <string.h>
 
 #define ADBLOCK_UI_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE((object), TYPE_ADBLOCK_UI, AdblockUIPrivate))

@@ -15,7 +15,7 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  *
  *  $Id$
  */
@@ -24,8 +24,8 @@
 #define EPHY_FILE_HELPERS_H
 
 #include <glib.h>
-#include <libgnomevfs/gnome-vfs-mime-handlers.h>
-#include <libgnomevfs/gnome-vfs-ops.h>
+#include <gio/gio.h>
+#include <gtk/gtkwidget.h>
 
 extern GQuark ephy_file_helpers_error_quark;
 #define EPHY_FILE_HELPERS_ERROR_QUARK	(ephy_file_helpers_error_quark)
@@ -38,10 +38,6 @@ typedef enum
 	EPHY_MIME_PERMISSION_UNSAFE	= 2,
 	EPHY_MIME_PERMISSION_UNKNOWN	= 3
 } EphyMimePermission;
-
-typedef struct _EphyFileMonitor EphyFileMonitor;
-typedef void (* EphyFileMonitorFunc) (EphyFileMonitor*, const char*, GnomeVFSMonitorEventType, gpointer);
-typedef gboolean (* EphyFileMonitorDelayFunc) (EphyFileMonitor*, gpointer);
 
 gboolean    ephy_file_helpers_init       (const char *profile_dir,
 					  gboolean private_profile,
@@ -72,32 +68,32 @@ GSList     *ephy_file_find               (const char *path,
 				          const char *fname,
 				          gint maxdepth);
 
-gboolean    ephy_file_switch_temp_file   (const char *filename,
-					  const char *filename_temp);
+gboolean    ephy_file_switch_temp_file (GFile *file,
+					GFile *file_temp);
 
-void	    ephy_file_delete_on_exit	 (const char *path);
+void	    ephy_file_delete_on_exit	 (GFile *file);
+
+void	    ephy_file_add_recent_item	 (const char *uri,
+					  const char *mime_type);
 
 EphyMimePermission ephy_file_check_mime	 (const char *mime_type);
 
 gboolean    ephy_file_launch_desktop_file (const char *filename,
-					   guint32 user_time);
+					   const char *parameter,
+					   guint32 user_time,
+					   GtkWidget *widget);
 
-gboolean    ephy_file_launch_application (GnomeVFSMimeApplication *application,
-					  const char *parameter,
-					  guint32 user_time);
+gboolean    ephy_file_launch_application (GAppInfo *app,
+					  GList *files,
+					  guint32 user_time,
+					  GtkWidget *parent);
 
 gboolean    ephy_file_launch_handler	 (const char *mime_type,
-					  const char *address,
+					  GFile *file,
 					  guint32 user_time);
 
-EphyFileMonitor *ephy_file_monitor_add	 (const char *uri,
-					  GnomeVFSMonitorType monitor_type,
-					  guint delay,
-					  EphyFileMonitorFunc callback,
-					  EphyFileMonitorDelayFunc delay_func,
-					  gpointer user_data);
-
-void	   ephy_file_monitor_cancel	 (EphyFileMonitor *monitor);
+gboolean    ephy_file_browse_to		 (GFile *file,
+					  guint32 user_time);
 
 void	   ephy_file_delete_directory	 (const char *path);
 

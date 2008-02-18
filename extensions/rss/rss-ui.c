@@ -26,6 +26,7 @@
 #include "ephy-gui.h"
 #include "ephy-dnd.h"
 #include "ephy-debug.h"
+#include "ephy-string.h"
 
 #include <glib/gi18n-lib.h>
 #include <gtk/gtkstock.h>
@@ -42,8 +43,6 @@
 #include <gtk/gtkmenu.h>
 #include <gtk/gtkclipboard.h>
 #include <gtk/gtkmain.h>
-
-#include <libgnomevfs/gnome-vfs-uri.h>
 
 #include <string.h>
 
@@ -427,18 +426,10 @@ rss_ui_select_feeds (GtkTreeModel *model,
 	    decision->rss_present &&
 	    rss_ui_get_feed_type (feed->type) == FEED_TYPE_ATOM)
 	{
-		GnomeVFSURI *uri;
-
-		uri = gnome_vfs_uri_new (feed->address);
-
 		/* Atom is on the same host, probably a duplicate */
-		if (uri != NULL)
-		{
-			const char *host = gnome_vfs_uri_get_host_name (uri);
+		const char *host = ephy_string_get_host_name (feed->address);
 
-			selected = g_ascii_strcasecmp (decision->hostname, host) != 0;
-			gnome_vfs_uri_unref (uri);
-		}
+		selected = g_ascii_strcasecmp (decision->hostname, host) != 0;
 	}
 
 	gtk_list_store_set (store, iter, COL_TOGGLE, selected, -1);
@@ -490,7 +481,6 @@ rss_ui_populate_store (RssUI *dialog)
 	RssUIPrivate *priv = dialog->priv;
 	FeedSelectionDecision decision = { FALSE, FALSE, NULL };
 	char *location;
-	GnomeVFSURI *uri;
 
 	if (priv->embed == NULL) return;
 
@@ -498,12 +488,7 @@ rss_ui_populate_store (RssUI *dialog)
 	 * avoiding duplicate feeds
 	 */
 	location = ephy_embed_get_location (priv->embed, TRUE);
-	uri = gnome_vfs_uri_new (location);
-	if (uri != NULL)
-	{
-		decision.hostname = g_strdup (gnome_vfs_uri_get_host_name (uri));
-		gnome_vfs_uri_unref (uri);
-	}
+	decision.hostname = g_strdup (ephy_string_get_host_name (location));
 
 	/* Fill the store, and select the appropriate feeds */
 	rss_ui_fill_list_store (dialog, &decision);

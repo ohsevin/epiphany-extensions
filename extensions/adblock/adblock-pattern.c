@@ -25,11 +25,10 @@
 
 #include <pcre.h>
 #include <string.h>
+#include <gio/gio.h>
 
 #include "ephy-file-helpers.h"
 #include "ephy-debug.h"
-
-#include <libgnomevfs/gnome-vfs-utils.h>
 
 #define DEFAULT_BLACKLIST_FILENAME	"adblock-patterns"
 #define BLACKLIST_FILENAME		"blacklist"
@@ -227,17 +226,55 @@ adblock_pattern_rewrite_patterns (const char *contents)
 static char *
 adblock_pattern_get_filterg_patterns (const char *date)
 {
-	int size;
+	gsize size;
 	char *contents = NULL, *url = NULL;
+	GFile *file;
+	GFileInfo *info;
+	GFileInputStream *input_stream;
+	gboolean res = TRUE;
 
 	url = g_strdup_printf ("http://www.pierceive.com/filtersetg/%s", date);
+	file = g_file_new_for_uri (url);
+	info = g_file_query_info (file,
+				  G_FILE_ATTRIBUTE_STANDARD_SIZE,
+				  0, 0, NULL);
+	if (info == NULL)
+	{
+		g_warning ("Could not get rules file from filterg site");
+		goto out;
+	}
+	else
+	{
+		size = (gsize) g_file_info_get_size (info);
+		g_object_unref (info);
+	}
 
 	/* First, get the changelog so we can build the url pointing to the last rules */
-	if (gnome_vfs_read_entire_file (url, &size, &contents) != GNOME_VFS_OK)
+	input_stream = g_file_read (file, NULL, NULL);
+	if (input_stream != NULL)
+	{
+		gsize bytes_read;
+
+		contents = g_malloc (size);
+		res = g_input_stream_read_all (G_INPUT_STREAM (input_stream),
+					       contents,
+					       size,
+					       &bytes_read,
+					       NULL, NULL);
+		if (!res)
+		{	
+			g_warning ("Could not get rules file from filterg site");
+		}
+		g_object_unref (input_stream);
+	}
+	else
 	{
 		g_warning ("Could not get rules file from filterg site");
 	}
+
+out:
 	g_free (url);
+	g_object_unref (file);
 
 	return contents;
 }
@@ -245,22 +282,62 @@ adblock_pattern_get_filterg_patterns (const char *date)
 static char *
 adblock_pattern_get_filterg_date (void)
 {
-	const char *url = "http://www.pierceive.com/filtersetg/latest.txt";
-	int size;
-	char *contents, *date;
+	gsize size;
+	char *contents = NULL;
 	char **lines;
+	char *date = NULL;
+	GFile *file;
+	GFileInfo *info;
+	GFileInputStream *input_stream;
+	gboolean res = TRUE;
+
+	file = g_file_new_for_uri ("http://www.pierceive.com/filtersetg/latest.txt");
+	info = g_file_query_info (file,
+				  G_FILE_ATTRIBUTE_STANDARD_SIZE,
+				  0, 0, NULL);
+	if (info == NULL)
+	{
+		g_warning ("Could not get latest.txt file from filterg site");
+		goto out;
+	}
+	else
+	{
+		size = (gsize) g_file_info_get_size (info);
+		g_object_unref (info);
+	}
 
 	/* First, get the changelog so we can build the url pointing to the last rules */
-	if (gnome_vfs_read_entire_file (url, &size, &contents) != GNOME_VFS_OK)
+	input_stream = g_file_read (file, NULL, NULL);
+	if (input_stream != NULL)
 	{
-		g_warning ("Could not get latest.txt from filterg site");
-		return NULL;
-	}
-	lines = g_strsplit (contents, "\n", 0);
-	date = g_strdup (lines [0]);
+		gsize bytes_read;
 
-	g_free (contents);
-	g_strfreev (lines);
+		contents = g_malloc (size);
+		res = g_input_stream_read_all (G_INPUT_STREAM (input_stream),
+					       contents,
+					       size,
+					       &bytes_read,
+					       NULL, NULL);
+		if (!res)
+		{	
+			g_warning ("Could not get latest.txt file from filterg site");
+			goto out;
+		}
+		g_object_unref (input_stream);
+		lines = g_strsplit (contents, "\n", 0);
+		date = g_strdup (lines [0]);
+
+		g_free (contents);
+		g_strfreev (lines);
+	}
+	else
+	{
+		g_warning ("Could not get latest.txt file from filterg site");
+		goto out;
+	}
+
+out:
+	g_object_unref (file);
 
 	return date;
 }

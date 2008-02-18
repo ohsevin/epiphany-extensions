@@ -59,14 +59,11 @@
 #include <gtk/gtkclipboard.h>
 #include <gtk/gtkmain.h>
 
-#include <libgnomevfs/gnome-vfs-uri.h>
-#include <libgnomevfs/gnome-vfs-utils.h>
-#include <libgnomevfs/gnome-vfs-mime-handlers.h>
-
 #include "mozilla/mozilla-helpers.h"
 
 #include <glib/gi18n-lib.h>
 #include <glib/gconvert.h>
+#include <gio/gio.h>
 
 #include <time.h>
 #include <string.h>
@@ -645,35 +642,30 @@ static void
 treeview_page_info_save_one_selection (const char *source,
 	                               const char *dir)
 {
-	GnomeVFSURI *uri;
+	GFile *file;
 	EphyEmbedPersist *persist;
+	char *file_name;
 
-	uri = gnome_vfs_uri_new (source);
-	if (uri != NULL)
+	file = g_file_new_for_uri (source);
+
+	file_name = g_file_get_basename (file);
+	if (file_name != NULL)
 	{
-		char *file_name;
-
-		file_name = gnome_vfs_uri_extract_short_name (uri);
-		if (file_name != NULL)
-		{
-			char *dest;
-
+		char *dest;
 			/* Persist needs a full path */
-			dest = g_build_filename (dir, file_name, NULL);
+		dest = g_build_filename (dir, file_name, NULL);
 
-			persist = EPHY_EMBED_PERSIST (
-					ephy_embed_factory_new_object (EPHY_TYPE_EMBED_PERSIST));
-			ephy_embed_persist_set_source (persist, source);
-			ephy_embed_persist_set_dest (persist, dest);
-			ephy_embed_persist_save (persist);
+		persist = EPHY_EMBED_PERSIST (ephy_embed_factory_new_object (EPHY_TYPE_EMBED_PERSIST));
+		ephy_embed_persist_set_source (persist, source);
+		ephy_embed_persist_set_dest (persist, dest);
+		ephy_embed_persist_save (persist);
 
-			g_object_unref (persist);
-			g_free(dest);
-		}
-
-		g_free (file_name);
-		gnome_vfs_uri_unref (uri);
+		g_object_unref (persist);
+		g_free(dest);
 	}
+
+	g_free (file_name);
+	g_object_unref (file);
 }
 
 /* Download at the same time all the selelected links (rows) */
@@ -791,7 +783,7 @@ general_info_page_fill (InfoPage *page)
 
 	page_info_set_text (dialog, properties[PROP_GENERAL_MIME_TYPE].id, props->content_type);
 
-	text = gnome_vfs_mime_get_description (props->content_type);
+	text = g_content_type_get_description (props->content_type);
 	page_info_set_text (dialog, properties[PROP_GENERAL_TYPE].id,
 			    text ? text : _("Unknown type"));
 
@@ -836,7 +828,7 @@ general_info_page_fill (InfoPage *page)
 
 	if (props->size != -1)
 	{
-		val = gnome_vfs_format_file_size_for_display (props->size);
+		val = g_format_size_for_display ((goffset) props->size);
 		page_info_set_text (dialog, properties[PROP_GENERAL_SIZE].id, val);
 		g_free (val);
 	}
@@ -1064,11 +1056,14 @@ media_open_medium_cb (GtkAction *action,
 }
 
 static void
-background_download_completed_cb (EphyEmbedPersist *persist)
+background_download_completed_cb (EphyEmbedPersist *persist,
+				  GtkAction *action)
 {
 	const char *bg;
 	char *type;
 	guint32 user_time;
+	GtkWidget *proxy;
+	GSList *proxies;
 
 	user_time = ephy_embed_persist_get_user_time (persist);
 
@@ -1082,8 +1077,14 @@ background_download_completed_cb (EphyEmbedPersist *persist)
 	}
 	g_free (type);
 
+	proxies = gtk_action_get_proxies (action);
+	proxy = GTK_WIDGET (proxies->data);
+
 	/* open the "Background Properties" capplet */
-	ephy_file_launch_desktop_file ("background.desktop", user_time);
+	ephy_file_launch_desktop_file ("background.desktop",
+				       NULL,
+				       user_time,
+				       proxy);
 }
 
 static void
@@ -1112,7 +1113,7 @@ media_set_image_as_background_cb (GtkAction *action,
 	ephy_embed_persist_set_flags (persist, EPHY_EMBED_PERSIST_NO_VIEW);
 
 	g_signal_connect (persist, "completed",
-			  G_CALLBACK (background_download_completed_cb), NULL);
+			  G_CALLBACK (background_download_completed_cb), action);
 
 	ephy_embed_persist_save (persist);
 

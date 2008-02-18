@@ -13,4 +13,5 @@ EXTRA_DIST =				\
 	ephy-gui.h			\
 	ephy-prefs.h			\
 	ephy-file-chooser.h		\
+	ephy-string.h			\
 	ephy-dnd.h

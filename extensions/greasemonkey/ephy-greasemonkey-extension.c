@@ -38,12 +38,9 @@
 #include <gtk/gtkmessagedialog.h>
 #include <gtk/gtkuimanager.h>
 
-#include <libgnomevfs/gnome-vfs-ops.h>
-#include <libgnomevfs/gnome-vfs-utils.h>
-#include <libgnomevfs/gnome-vfs-xfer.h>
-
 #include <glib/gi18n-lib.h>
 #include <glib/gstdio.h>
+#include <gio/gio.h>
 #include <gmodule.h>
 
 #include <sys/stat.h>
@@ -60,7 +57,7 @@
 struct _EphyGreasemonkeyExtensionPrivate
 {
 	GHashTable *scripts;
-	GnomeVFSMonitorHandle *monitor;
+	GFileMonitor *monitor;
 };
 
 typedef struct
@@ -147,32 +144,34 @@ load_scripts (const char *path)
 }
 
 static void
-dir_changed_cb (GnomeVFSMonitorHandle *handle,
-		const char *monitor_uri,
-		const char *info_uri,
-		GnomeVFSMonitorEventType event_type,
+dir_changed_cb (GFileMonitor *monitor,
+		GFile *file,
+		GFile *other_file,
+		GFileMonitorEvent event,
 		EphyGreasemonkeyExtension *extension)
 {
+	char *uri;
 	char *path;
 	char *basename;
 	GreasemonkeyScript *script;
 
-	LOG ("Activity on %s", info_uri);
+	uri = g_file_get_uri (file);
+	path = g_file_get_path (file);
+	LOG ("Activity on %s", uri);
 
-	if (g_str_has_suffix (info_uri, ".user.js") == FALSE) return;
+	if (g_str_has_suffix (uri, ".user.js") == FALSE) return;
 
-	path = gnome_vfs_get_local_path_from_uri (info_uri);
-	basename = g_path_get_basename (path);
+	basename = g_file_get_basename (file);
 
-	switch (event_type)
+	switch (event)
 	{
-		case GNOME_VFS_MONITOR_EVENT_CREATED:
-		case GNOME_VFS_MONITOR_EVENT_CHANGED:
+		case G_FILE_MONITOR_EVENT_CREATED:
+		case G_FILE_MONITOR_EVENT_CHANGED:
 			script = greasemonkey_script_new (path);
 			g_hash_table_replace (extension->priv->scripts,
 					      g_strdup (basename), script);
 			break;
-		case GNOME_VFS_MONITOR_EVENT_DELETED:
+		case G_FILE_MONITOR_EVENT_DELETED:
 			g_hash_table_remove (extension->priv->scripts,
 					     basename);
 			break;
@@ -181,28 +180,29 @@ dir_changed_cb (GnomeVFSMonitorHandle *handle,
 	}
 
 	g_free (basename);
+	g_free (uri);
 	g_free (path);
 }
 
-static GnomeVFSMonitorHandle *
+static GFileMonitor *
 monitor_scripts (const char *path,
 		 EphyGreasemonkeyExtension *extension)
 {
-	char *uri;
-	GnomeVFSMonitorHandle *monitor;
-	GnomeVFSResult res;
+	GFileMonitor *monitor;
+	GFile *file;
 
-	uri = gnome_vfs_get_uri_from_local_path (path);
-	res = gnome_vfs_monitor_add (&monitor, path,
-				     GNOME_VFS_MONITOR_DIRECTORY,
-				     (GnomeVFSMonitorCallback) dir_changed_cb,
-				     extension);
-	g_free (uri);
-
-	if (res != GNOME_VFS_OK)
+	file = g_file_new_for_path (path);
+	monitor = g_file_monitor_directory (file,
+					    0, NULL, NULL);
+	if (monitor == NULL)
 	{
 		return NULL;
 	}
+	g_signal_connect (monitor, "changed",
+			  G_CALLBACK (dir_changed_cb),
+			  extension);
+
+	g_object_unref (file);
 
 	LOG ("Monitoring %s for user scripts", path);
 	return monitor;
@@ -243,7 +243,7 @@ ephy_greasemonkey_extension_finalize (GObject *object)
 
 	if (extension->priv->monitor != NULL)
 	{
-		gnome_vfs_monitor_cancel (extension->priv->monitor);
+		g_file_monitor_cancel (extension->priv->monitor);
 	}
 
 	G_OBJECT_CLASS (parent_class)->finalize (object);
@@ -277,6 +277,7 @@ save_source_cancelled_cb (EphyEmbedPersist *persist,
 {
 	WindowData *data;
 	const char *dest;
+	GFile *file;
 
 	LOG ("Download from %s cancelled",
 	     ephy_embed_persist_get_source (persist));
@@ -287,8 +288,10 @@ save_source_cancelled_cb (EphyEmbedPersist *persist,
 						 persist);
 
 	dest = ephy_embed_persist_get_dest (persist);
-	gnome_vfs_unlink (dest);
+	file = g_file_new_for_path (dest);
+	g_file_delete (file, NULL, NULL);
 
+	g_object_unref (file);
 	g_object_unref (G_OBJECT (persist));
 }
 
