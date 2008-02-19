@@ -316,7 +316,7 @@ msgid ""
 "topic will be synched."
 msgstr ""
 "Ohjaa aiheen toimintaa. Jos tämä ei ole asetettu, kaikki aiheen kirjanmerkit "
-"synkronoidaan. Jos tätä on asetettu, kaikki kirjanmerkit ilman tätä aihetta "
+"synkronoidaan. Jos tämä on asetettu, kaikki kirjanmerkit ilman tätä aihetta "
 "synkronoidaan."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:3
