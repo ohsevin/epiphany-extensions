@@ -7,15 +7,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: oc\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?\n"
-"POT-Creation-Date: 2007-12-27 13:23+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=epiphany-extensions\n"
+"POT-Creation-Date: 2008-02-19 20:19+0100\n"
 "PO-Revision-Date: 2007-12-28 10:28+0100\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan <ubuntu-l10n-oci@lists.ubuntu.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../extensions/actions/action-properties.glade.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
@@ -102,7 +103,9 @@ msgstr ""
 #: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
 #, c-format
 msgid "%i action selected."
-msgstr ""
+msgid_plural "%i actions selected."
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
@@ -117,7 +120,7 @@ msgstr ""
 msgid "Action Properties"
 msgstr ""
 
-#: ../extensions/adblock/adblock-ui.c:279
+#: ../extensions/adblock/adblock-ui.c:275
 msgid ""
 "This list is Copyright © its original author(G). It is relicensed under the "
 "GPL with permission.\n"
@@ -128,7 +131,7 @@ msgid ""
 "direct any problems to Bugzilla and not to the original author (G).\n"
 msgstr ""
 
-#: ../extensions/adblock/adblock-ui.c:497
+#: ../extensions/adblock/adblock-ui.c:493
 msgid "Pattern"
 msgstr "Motiu"
 
@@ -172,7 +175,9 @@ msgstr ""
 #: ../extensions/adblock/ephy-adblock-extension.c:311
 #, c-format
 msgid "%d hidden advertisement"
-msgstr ""
+msgid_plural "%d hidden advertisements"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../extensions/auto-reload/ephy-auto-reload-extension.c:84
 msgid "_Auto Reload"
@@ -390,7 +395,9 @@ msgstr ""
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
 #, c-format
 msgid "Found %d invalid link"
-msgstr ""
+msgid_plural "Found %d invalid links"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
@@ -402,9 +409,11 @@ msgstr ""
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
 #, c-format
 msgid "Checking %d Link on “%s”"
-msgstr ""
+msgid_plural "Checking %d Links on “%s”"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../extensions/error-viewer/opensp/validate.cpp:167
+#: ../extensions/error-viewer/opensp/validate.cpp:168
 #, c-format
 msgid ""
 "HTML error in “%s” on line %s:\n"
@@ -414,7 +423,9 @@ msgstr ""
 #: ../extensions/error-viewer/sgml-validator.c:165
 #, c-format
 msgid "Found %d error"
-msgstr ""
+msgid_plural "Found %d errors"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../extensions/error-viewer/sgml-validator.c:169
 #, c-format
@@ -469,7 +480,7 @@ msgid "Enabled"
 msgstr "Activat"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
-#: ../extensions/rss/rss-ui.c:599
+#: ../extensions/rss/rss-ui.c:584
 msgid "Description"
 msgstr "Descripcion"
 
@@ -494,16 +505,16 @@ msgstr ""
 msgid "Help about extensions"
 msgstr ""
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:88
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:85
 msgid "Install User _Script"
 msgstr ""
 
 #. shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:90
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
 msgid "Install Greasemonkey script"
 msgstr ""
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:315
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:318
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr ""
@@ -553,163 +564,163 @@ msgstr ""
 msgid "Display page information in a dialog"
 msgstr ""
 
-#: ../extensions/page-info/page-info-dialog.c:730
+#: ../extensions/page-info/page-info-dialog.c:722
 msgid "Save As..."
 msgstr "Enregistrar coma..."
 
-#: ../extensions/page-info/page-info-dialog.c:747
+#: ../extensions/page-info/page-info-dialog.c:739
 msgid "Select a directory"
 msgstr "Seleccionatz un repertòri"
 
-#: ../extensions/page-info/page-info-dialog.c:796
+#: ../extensions/page-info/page-info-dialog.c:788
 msgid "Unknown type"
 msgstr "Tipe desconegut"
 
-#: ../extensions/page-info/page-info-dialog.c:801
+#: ../extensions/page-info/page-info-dialog.c:793
 msgid "Full standards compliance"
 msgstr ""
 
-#: ../extensions/page-info/page-info-dialog.c:804
+#: ../extensions/page-info/page-info-dialog.c:796
 msgid "Almost standards compliance"
 msgstr ""
 
-#: ../extensions/page-info/page-info-dialog.c:807
+#: ../extensions/page-info/page-info-dialog.c:799
 msgid "Compatibility"
 msgstr "Compatibilitat"
 
-#: ../extensions/page-info/page-info-dialog.c:811
+#: ../extensions/page-info/page-info-dialog.c:803
 msgid "Undetermined"
 msgstr ""
 
-#: ../extensions/page-info/page-info-dialog.c:820
+#: ../extensions/page-info/page-info-dialog.c:812
 msgid "Not cached"
 msgstr ""
 
-#: ../extensions/page-info/page-info-dialog.c:823
+#: ../extensions/page-info/page-info-dialog.c:815
 msgid "Disk cache"
 msgstr "Escondedor del disc"
 
-#: ../extensions/page-info/page-info-dialog.c:826
+#: ../extensions/page-info/page-info-dialog.c:818
 msgid "Memory cache"
 msgstr ""
 
-#: ../extensions/page-info/page-info-dialog.c:829
+#: ../extensions/page-info/page-info-dialog.c:821
 msgid "Unknown cache"
 msgstr ""
 
-#: ../extensions/page-info/page-info-dialog.c:845
-#: ../extensions/page-info/page-info-dialog.c:961
+#: ../extensions/page-info/page-info-dialog.c:837
+#: ../extensions/page-info/page-info-dialog.c:953
 msgid "Unknown"
 msgstr "Desconegut"
 
-#: ../extensions/page-info/page-info-dialog.c:850
+#: ../extensions/page-info/page-info-dialog.c:842
 msgid "No referrer"
 msgstr ""
 
-#: ../extensions/page-info/page-info-dialog.c:864
-#: ../extensions/page-info/page-info-dialog.c:880
+#: ../extensions/page-info/page-info-dialog.c:856
+#: ../extensions/page-info/page-info-dialog.c:872
 msgid "Not specified"
 msgstr "Non especificat"
 
-#: ../extensions/page-info/page-info-dialog.c:943
+#: ../extensions/page-info/page-info-dialog.c:935
 msgid "Image"
 msgstr "Imatge"
 
-#: ../extensions/page-info/page-info-dialog.c:946
+#: ../extensions/page-info/page-info-dialog.c:938
 msgid "Background image"
 msgstr "Imatge de fons"
 
-#: ../extensions/page-info/page-info-dialog.c:949
+#: ../extensions/page-info/page-info-dialog.c:941
 msgid "Embed"
 msgstr ""
 
-#: ../extensions/page-info/page-info-dialog.c:952
+#: ../extensions/page-info/page-info-dialog.c:944
 msgid "Object"
 msgstr "Objècte"
 
-#: ../extensions/page-info/page-info-dialog.c:955
+#: ../extensions/page-info/page-info-dialog.c:947
 msgid "Applet"
 msgstr ""
 
-#: ../extensions/page-info/page-info-dialog.c:958
+#: ../extensions/page-info/page-info-dialog.c:950
 msgid "Icon"
 msgstr "Icòna"
 
-#: ../extensions/page-info/page-info-dialog.c:1130
+#: ../extensions/page-info/page-info-dialog.c:1131
 msgid "_Open"
 msgstr "_Dobrir"
 
-#: ../extensions/page-info/page-info-dialog.c:1136
-#: ../extensions/page-info/page-info-dialog.c:1581
+#: ../extensions/page-info/page-info-dialog.c:1137
+#: ../extensions/page-info/page-info-dialog.c:1582
 msgid "_Copy Link Address"
 msgstr "_Copiar l'adreça del ligam"
 
-#: ../extensions/page-info/page-info-dialog.c:1142
+#: ../extensions/page-info/page-info-dialog.c:1143
 msgid "_Use as Background"
 msgstr ""
 
-#: ../extensions/page-info/page-info-dialog.c:1148
-#: ../extensions/page-info/page-info-dialog.c:1587
+#: ../extensions/page-info/page-info-dialog.c:1149
+#: ../extensions/page-info/page-info-dialog.c:1588
 msgid "_Save As..."
 msgstr "_Enregistrar coma..."
 
-#: ../extensions/page-info/page-info-dialog.c:1380
-#: ../extensions/page-info/page-info-dialog.c:1701
+#: ../extensions/page-info/page-info-dialog.c:1381
+#: ../extensions/page-info/page-info-dialog.c:1702
 msgid "Blocked"
 msgstr ""
 
-#: ../extensions/page-info/page-info-dialog.c:1396
-#: ../extensions/page-info/page-info-dialog.c:1717
+#: ../extensions/page-info/page-info-dialog.c:1397
+#: ../extensions/page-info/page-info-dialog.c:1718
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1409
+#: ../extensions/page-info/page-info-dialog.c:1410
 msgid "Type"
 msgstr "Tipe"
 
-#: ../extensions/page-info/page-info-dialog.c:1421
+#: ../extensions/page-info/page-info-dialog.c:1422
 msgid "Alt Text"
 msgstr "Tèxt alt"
 
-#: ../extensions/page-info/page-info-dialog.c:1433
-#: ../extensions/page-info/page-info-dialog.c:1730
+#: ../extensions/page-info/page-info-dialog.c:1434
+#: ../extensions/page-info/page-info-dialog.c:1731
 msgid "Title"
 msgstr "Títol"
 
-#: ../extensions/page-info/page-info-dialog.c:1445
+#: ../extensions/page-info/page-info-dialog.c:1446
 msgid "Width"
 msgstr "Largor"
 
-#: ../extensions/page-info/page-info-dialog.c:1457
+#: ../extensions/page-info/page-info-dialog.c:1458
 msgid "Height"
 msgstr "Nautor"
 
-#: ../extensions/page-info/page-info-dialog.c:1742
+#: ../extensions/page-info/page-info-dialog.c:1743
 msgid "Relation"
 msgstr ""
 
-#: ../extensions/page-info/page-info-dialog.c:1891
-#: ../extensions/page-info/page-info-dialog.c:2032
+#: ../extensions/page-info/page-info-dialog.c:1892
+#: ../extensions/page-info/page-info-dialog.c:2033
 msgid "Name"
 msgstr "Nom"
 
-#: ../extensions/page-info/page-info-dialog.c:1903
+#: ../extensions/page-info/page-info-dialog.c:1904
 msgid "Method"
 msgstr "Metòde"
 
-#: ../extensions/page-info/page-info-dialog.c:1917
+#: ../extensions/page-info/page-info-dialog.c:1918
 msgid "Action"
 msgstr "Accion"
 
-#: ../extensions/page-info/page-info-dialog.c:1998
+#: ../extensions/page-info/page-info-dialog.c:1999
 msgid "_Copy"
 msgstr "_Copiar"
 
-#: ../extensions/page-info/page-info-dialog.c:2044
+#: ../extensions/page-info/page-info-dialog.c:2045
 msgid "Content"
 msgstr "Contengut"
 
-#: ../extensions/page-info/page-info-dialog.c:2145
+#: ../extensions/page-info/page-info-dialog.c:2146
 msgid "Page Metadata"
 msgstr ""
 
@@ -904,19 +915,19 @@ msgstr ""
 msgid "Subscribe to site's news feed"
 msgstr ""
 
-#: ../extensions/rss/rss-ui.c:167
+#: ../extensions/rss/rss-ui.c:166
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr ""
 
-#: ../extensions/rss/rss-ui.c:169
+#: ../extensions/rss/rss-ui.c:168
 msgid "Retry"
 msgstr "Tornar ensajar"
 
-#: ../extensions/rss/rss-ui.c:297
+#: ../extensions/rss/rss-ui.c:296
 msgid "_Copy Feed Address"
 msgstr ""
 
-#: ../extensions/rss/rss-ui.c:591
+#: ../extensions/rss/rss-ui.c:576
 msgid "Subscribe"
 msgstr "S'inscriure"
 
@@ -946,11 +957,11 @@ msgstr ""
 msgid "Render the page using the “%s” style"
 msgstr ""
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:310
+#: ../extensions/select-stylesheet/ephy-css-menu.c:323
 msgid "St_yle"
 msgstr ""
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:311
+#: ../extensions/select-stylesheet/ephy-css-menu.c:324
 msgid "Select a different style for this page"
 msgstr ""
 
@@ -1034,6 +1045,14 @@ msgstr ""
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
+msgstr ""
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
+msgid "Ad Blocker"
+msgstr ""
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
+msgid "Block the pest!"
 msgstr ""
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
@@ -1145,6 +1164,14 @@ msgstr ""
 msgid "Push Scroll"
 msgstr ""
 
+#: ../extensions/python-console/python-console.ephy-extension.in.h:1
+msgid "Opens an interactive Python console"
+msgstr ""
+
+#: ../extensions/python-console/python-console.ephy-extension.in.h:2
+msgid "Python Console"
+msgstr ""
+
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
@@ -1205,4 +1232,3 @@ msgstr ""
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr ""
-
