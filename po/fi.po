@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-08-23 07:49+0300\n"
+"POT-Creation-Date: 2008-02-19 08:39+0300\n"
 "PO-Revision-Date: 2006-10-30 07:04+0300\n"
 "Last-Translator: Pauli Virtanen <pauli.virtanen@hut.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -139,10 +139,10 @@ msgid ""
 "approved by the original author;\n"
 "direct any problems to Bugzilla and not to the original author (G).\n"
 msgstr ""
-"Tämän luettelon tekijänoikeudet © ovat alkuperäisellä kirjoittajalla (G). "
-"Se on uudelleenlisensoitu erityisluvalla GPL-lisenssillä.\n"
-"Alkuperäinen luettelo, Filterset.G, löytyy osoitteesta "
-"http://www.pierceive.com/filtersetg/.\n"
+"Tämän luettelon tekijänoikeudet © ovat alkuperäisellä kirjoittajalla (G). Se "
+"on uudelleenlisensoitu erityisluvalla GPL-lisenssillä.\n"
+"Alkuperäinen luettelo, Filterset.G, löytyy osoitteesta http://www.pierceive."
+"com/filtersetg/.\n"
 "Tätä versiota on muokattu alkuperäisestä. Muutokset eivät ole alkuperäisen "
 "tekijän hyväksymiä, joten ohjaa ongelmat bugzillaan alkuperäisen tekijän (G) "
 "sijasta.\n"
@@ -166,7 +166,7 @@ msgstr "<b>Muokkaa sääntöjä alkuperäiseltä sivulta</b>"
 #: ../extensions/adblock/adblock.glade.h:4
 #: ../extensions/adblock/ephy-adblock-extension.c:243
 msgid "Adblock editor"
-msgstr "Mainossuodattimen muokkain"
+msgstr "Mainosten poistajan muokkain"
 
 #: ../extensions/adblock/adblock.glade.h:5
 msgid "Add a new rule"
@@ -186,7 +186,7 @@ msgstr "Päästölista"
 
 #: ../extensions/adblock/ephy-adblock-extension.c:244
 msgid "Edit Adblock"
-msgstr "Muokkaa mainossuodatusta"
+msgstr "Muokkaa mainosten poistajaa"
 
 #: ../extensions/adblock/ephy-adblock-extension.c:311
 #, c-format
@@ -307,8 +307,8 @@ msgstr "Epilicious-synkronointi"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:1
 msgid "Bookmarks with this topic will be synchronized to del.icio.us."
-msgstr ""
-"Tähän aiheeseen kuuluvat kirjanmerkit synkronoidaan del.icio.us-palveluun"
+msgstr "Tähän aiheeseen liittyvät kirjanmerkit synkronoidaan "
+"del.icio.us-palveluun."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:2
 msgid ""
@@ -317,7 +317,7 @@ msgid ""
 "bookmarks without the topic will be synched with del.icio.us."
 msgstr ""
 "Ohjaa aiheen toimintaa. Jos tämä ei ole asetettu, kaikki aiheen kirjanmerkit "
-"synkronoidaan del.icio.us-palveluun. Jos tätä ei ole asetettu, kaikki "
+"synkronoidaan del.icio.us-palveluun. Jos tämä on asetettu, kaikki "
 "kirjanmerkit ilman tätä aihetta synkronoidaan del.icio.us-palveluun."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:3
@@ -407,7 +407,7 @@ msgid ""
 "Javascript error in %s on line %d:\n"
 "%s"
 msgstr ""
-"Javascript-virhe kohteessa %s rivillä %d:\n"
+"Javascript-virhe tiedostossa %s rivillä %d:\n"
 "%s"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
@@ -1258,6 +1258,32 @@ msgstr "Ilmaise taustalla olevien välilehtien uusi sisältö"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Välilehtien tilat"
+
+#~ msgid ""
+#~ "%s error in %s on line %d and column %d:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "%s-virhe tiedostossa %s rivillä %d sarakkeessa %d:\n"
+#~ "%s"
+
+#~ msgid ""
+#~ "%s error in %s:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "%s-virhe tiedostossa %s:\n"
+#~ "%s"
+
+#~ msgid "Ad Blocker"
+#~ msgstr "Mainosten poistaja"
+
+#~ msgid "Block the pest!"
+#~ msgstr "Poista turhat roskat!"
+
+#~ msgid "Opens an interactive Python console"
+#~ msgstr "Avaa interaktiivisen python-konsolin"
+
+#~ msgid "Python Console"
+#~ msgstr "Python-konsoli"
 
 #~ msgid "News Feed Subcription"
 #~ msgstr "Uutisvirtojen tilaus"
