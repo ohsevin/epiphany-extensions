@@ -306,7 +306,7 @@ impl_attach_tab (EphyExtension *extension,
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	/* Notify when a new rss feed is parsed */
-	g_signal_connect_after (embed, "ge-content-change",
+	g_signal_connect_after (embed, "new-document-now",
 				G_CALLBACK (ephy_rss_ge_content_cb), window);
 	g_signal_connect_after (embed, "ge-feed-link",
 			    G_CALLBACK (ephy_rss_ge_feed_cb), window);
