@@ -103,8 +103,9 @@ GetStylesheets (EphyEmbed *aEmbed,
 	NS_ENSURE_TRUE (aEmbed, NS_ERROR_FAILURE);
 
 	nsCOMPtr<nsIWebBrowser> browser;
-	gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (aEmbed),
-					 getter_AddRefs (browser));
+	gtk_moz_embed_get_nsIWebBrowser (
+			GTK_MOZ_EMBED (gtk_bin_get_child (GTK_BIN (aEmbed))),
+			getter_AddRefs (browser));
 	NS_ENSURE_TRUE (browser, NS_ERROR_FAILURE);
 
 	nsCOMPtr<nsIDOMWindow> domWindow;
