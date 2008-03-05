@@ -1,18 +1,19 @@
-# Dutch translation of epiphany-extensions.
-# Copyright (C) 2004 The Free Software Foundation
-# This file is distributed under the same license as the
-# epiphany-extensions package.
+# Dutch translation for Epiphany Extensions
+#
+# This file is distributed under the same license as the epiphany-extensions package.
+#
 # Tino Meinen <a.t.meinen@chello.nl>, 2004.
 # Reinout van Schouwen <reinouts@gnome.org>, 2004-2007
+# Wouter Bolsterlee <wbolster@gnome.org>, 2008
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-09-14 00:18+0200\n"
+"POT-Creation-Date: 2008-03-05 11:48+0100\n"
 "PO-Revision-Date: 2007-09-14 00:23+0200\n"
-"Last-Translator: Reinout van Schouwen <reinouts@gnome.org>\n"
+"Last-Translator: Wouter Bolsterlee <wbolster@gnome.org>\n"
 "Language-Team: nl <vertaling@vrijschrift.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -89,19 +90,19 @@ msgstr "_Pagina's"
 msgid "Actions"
 msgstr "Acties"
 
-#: ../extensions/actions/ephy-actions-extension.c:112
+#: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Actio_ns"
 msgstr "A_cties"
 
-#: ../extensions/actions/ephy-actions-extension.c:113
+#: ../extensions/actions/ephy-actions-extension.c:114
 msgid "Customize actions"
 msgstr "Acties aanpassen"
 
-#: ../extensions/actions/ephy-actions-extension.c:436
+#: ../extensions/actions/ephy-actions-extension.c:437
 msgid "Could not run command"
 msgstr "Kon opdracht niet uitvoeren"
 
-#: ../extensions/actions/ephy-actions-extension.c:439
+#: ../extensions/actions/ephy-actions-extension.c:440
 msgid "Could not Run Command"
 msgstr "Kon opdracht niet uitvoeren"
 
@@ -129,7 +130,7 @@ msgstr "Eigenschappen van “%s”"
 msgid "Action Properties"
 msgstr "Actie-eigenschappen"
 
-#: ../extensions/adblock/adblock-ui.c:279
+#: ../extensions/adblock/adblock-ui.c:275
 msgid ""
 "This list is Copyright © its original author(G). It is relicensed under the "
 "GPL with permission.\n"
@@ -148,7 +149,7 @@ msgstr ""
 "klachten dient men te melden op Bugzilla en niet bij de oorspronkelijke "
 "auteur (G).\n"
 
-#: ../extensions/adblock/adblock-ui.c:496
+#: ../extensions/adblock/adblock-ui.c:493
 msgid "Pattern"
 msgstr "Patroon"
 
@@ -166,7 +167,7 @@ msgstr "<b>Regels bijwerken vanaf oorspronkelijke webstek</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
 #: ../extensions/adblock/ephy-adblock-extension.c:243
-msgid "Adblock editor"
+msgid "Adblock Editor"
 msgstr "Adblock-editor"
 
 #: ../extensions/adblock/adblock.glade.h:5
@@ -196,44 +197,44 @@ msgid_plural "%d hidden advertisements"
 msgstr[0] "%d verborgen advertentie"
 msgstr[1] "%d verborgen advertenties"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:84
 msgid "_Auto Reload"
 msgstr "Auto-he_rladen"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:86
 msgid "Reload the page periodically"
 msgstr "De pagina periodiek herladen"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:371
+#: ../extensions/cc-license-viewer/cc-license-viewer.py:370
 msgid "View Creative Commons license"
 msgstr "Creative Commons-licentie lezen"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:177
+#: ../extensions/certificates/ephy-certificates-extension.c:176
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "Certificaten"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:208
+#: ../extensions/certificates/ephy-certificates-extension.c:207
 msgid "Security Devices"
 msgstr "Beveiligingsapparaten"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:220
+#: ../extensions/certificates/ephy-certificates-extension.c:219
 msgid "Manage _Certificates"
 msgstr "_Certificaten beheren"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:222
+#: ../extensions/certificates/ephy-certificates-extension.c:221
 msgid "Manage your certificates"
 msgstr "Uw certificaten beheren"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:226
+#: ../extensions/certificates/ephy-certificates-extension.c:225
 msgid "Manage Security _Devices"
 msgstr "_Beveiligingsapparaten beheren"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:228
+#: ../extensions/certificates/ephy-certificates-extension.c:227
 msgid "Manage your security devices"
 msgstr "Uw beveiligingsapparaten beheren"
 
@@ -307,19 +308,18 @@ msgid "Epilicious Synchronize"
 msgstr "Epiplicious-synchronisatie"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:1
-msgid "Bookmarks with this topic will be synchronized to del.icio.us."
-msgstr "Bladwijzers met dit onderwerp worden gesynchroniseerd met del.icio.us."
+msgid "Bookmarks with this topic will be synchronized."
+msgstr "Bladwijzers met dit onderwerp worden gesynchroniseerd."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:2
 msgid ""
 "Controls the function of the topic. If this is unset then all bookmarks with "
-"the topic will be synched with del.icio.us. If this is set then all "
-"bookmarks without the topic will be synched with del.icio.us."
+"the topic will be synched. If this is set then all bookmarks without the "
+"topic will be synched."
 msgstr ""
 "Bepaalt de functie van het onderwerp. Als dit uitstaat dan worden alle "
-"bladwijzers met het onderwerp gesynchroniseerd met del.icio.us. Als het "
-"aanstaat dan worden alle bladwijzers zonder dit onderwerp gesynchroniseerd "
-"met del.icio.us."
+"bladwijzers met het onderwerp gesynchroniseerd. Als het aanstaat dan worden "
+"alle bladwijzers zonder dit onderwerp gesynchroniseerd."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:3
 msgid "Exclude topic"
@@ -332,22 +332,22 @@ msgstr "Gedeeld onderwerp"
 #: ../extensions/epilicious/epilicious.schemas.in.h:5
 msgid ""
 "The backend that epilicious will use for synchronizing bookmarks. Allowed "
-"values: 'del.icio.us', 'ma.gnolia'"
+"value: 'ma.gnolia'"
 msgstr ""
 "Het achterliggend systeem dat epilicious gebruikt voor het synchroniseren "
-"van bladwijzers. Toegestane waarden: 'del.icio.us', 'ma.gnolia'"
+"van bladwijzers. Toegestane waarden: 'ma.gnolia'"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
 msgid "The password that epilicious will use for synchronizing bookmarks."
 msgstr ""
-"Het wachtwoord dat epilicious gebruikt voor het synchroniseren "
-"van bladwijzers."
+"Het wachtwoord dat epilicious gebruikt voor het synchroniseren van "
+"bladwijzers."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:7
 msgid "The username that epilicious will use for synchronizing bookmarks."
 msgstr ""
-"De gebruikersnaam die epilicious gebruikt voor het synchroniseren "
-"van bladwijzers."
+"De gebruikersnaam die epilicious gebruikt voor het synchroniseren van "
+"bladwijzers."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:8
 msgid "epilicious backend"
@@ -361,30 +361,30 @@ msgstr "wachtwoord"
 msgid "username"
 msgstr "gebruikersnaam"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:98
 msgid "Check _HTML"
 msgstr "_HTML controleren"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:100
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "HTML-fouten weergeven in het Fouten-dialoogvenster"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:104
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
 msgid "Check _Links"
 msgstr "Ver_wijzingen controleren"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:106
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:107
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr "Ongeldige hyperlinks weergeven in het Fouten-dialoogvenster"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:110
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:111
 msgid "_Error Viewer"
 msgstr "_Foutenweergave"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:112
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:113
 msgid "Display web page errors"
 msgstr "Fouten van de webpagina weergeven"
 
@@ -397,23 +397,33 @@ msgstr "_Wissen"
 msgid "Error Viewer"
 msgstr "Foutenweergave"
 
-#. Don't bother looking for source lines -- they're not there
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:96
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:103
 #, c-format
 msgid ""
-"Error:\n"
+"%s error in %s on line %d and column %d:\n"
 "%s"
 msgstr ""
-"Fout:\n"
+"%s-fout in %s op regel %d en kolom %d:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:126
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:109
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:140
 #, c-format
 msgid ""
-"Javascript error in %s on line %d:\n"
+"%s error in %s:\n"
 "%s"
 msgstr ""
-"Javascript fout in %s op regel %d:\n"
+"%s-fout in %s:\n"
+"%s"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:123
+#, c-format
+msgid ""
+"%s error in %s on line %d:\n"
+"%s"
+msgstr ""
+"%s-fout in %s op regel %d:\n"
 "%s"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
@@ -439,7 +449,7 @@ msgid_plural "Checking %d Links on “%s”"
 msgstr[0] "Controleren van %d verwijzing op “%s”..."
 msgstr[1] "Controleren van %d verwijzingen op “%s”..."
 
-#: ../extensions/error-viewer/opensp/validate.cpp:167
+#: ../extensions/error-viewer/opensp/validate.cpp:168
 #, c-format
 msgid ""
 "HTML error in “%s” on line %s:\n"
@@ -516,7 +526,7 @@ msgid "Enabled"
 msgstr "Ingeschakeld"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
-#: ../extensions/rss/rss-ui.c:599
+#: ../extensions/rss/rss-ui.c:584
 msgid "Description"
 msgstr "Omschrijving"
 
@@ -529,31 +539,28 @@ msgid "Extensions"
 msgstr "Uitbreidingen"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
-msgid "_Extensions..."
-msgstr "Uit_breidingen..."
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "_Extensions"
+msgstr "Uit_breidingen"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
 msgid "Load and unload extensions"
 msgstr "Uitbreidingen laden en deactiveren"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
-msgid "_Extensions"
-msgstr "Uit_breidingen"
-
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
 msgid "Help about extensions"
 msgstr "Hulp over uitbreidingen"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:88
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:85
 msgid "Install User _Script"
 msgstr "Gebruikers_script installeren"
 
 #. shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:90
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
 msgid "Install Greasemonkey script"
 msgstr "Greasemonkey-script installeren"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:315
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:318
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "Het gebruikersscript op “%s” is geïnstalleerd"
@@ -595,171 +602,171 @@ msgstr "Live-headers"
 msgid "Remove headers"
 msgstr "Headers verwijderen"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/page-info/ephy-page-info-extension.c:68
 msgid "Pa_ge Information"
 msgstr "Pa_gina-informatie"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:69
+#: ../extensions/page-info/ephy-page-info-extension.c:70
 msgid "Display page information in a dialog"
 msgstr "Pagina-informatie weergeven in een dialoogvenster"
 
-#: ../extensions/page-info/page-info-dialog.c:730
+#: ../extensions/page-info/page-info-dialog.c:722
 msgid "Save As..."
 msgstr "Opslaan als..."
 
-#: ../extensions/page-info/page-info-dialog.c:747
+#: ../extensions/page-info/page-info-dialog.c:739
 msgid "Select a directory"
 msgstr "Kies een map"
 
-#: ../extensions/page-info/page-info-dialog.c:796
+#: ../extensions/page-info/page-info-dialog.c:788
 msgid "Unknown type"
 msgstr "Onbekend type"
 
-#: ../extensions/page-info/page-info-dialog.c:801
+#: ../extensions/page-info/page-info-dialog.c:793
 msgid "Full standards compliance"
 msgstr "Voldoet geheel aan alle standaarden"
 
-#: ../extensions/page-info/page-info-dialog.c:804
+#: ../extensions/page-info/page-info-dialog.c:796
 msgid "Almost standards compliance"
 msgstr "Voldoet bijna aan alle standaarden"
 
-#: ../extensions/page-info/page-info-dialog.c:807
+#: ../extensions/page-info/page-info-dialog.c:799
 msgid "Compatibility"
 msgstr "Compatibiliteit"
 
-#: ../extensions/page-info/page-info-dialog.c:811
+#: ../extensions/page-info/page-info-dialog.c:803
 msgid "Undetermined"
 msgstr "Onbepaald"
 
-#: ../extensions/page-info/page-info-dialog.c:820
+#: ../extensions/page-info/page-info-dialog.c:812
 msgid "Not cached"
 msgstr "Niet gebufferd"
 
-#: ../extensions/page-info/page-info-dialog.c:823
+#: ../extensions/page-info/page-info-dialog.c:815
 msgid "Disk cache"
 msgstr "Schijfbuffer"
 
-#: ../extensions/page-info/page-info-dialog.c:826
+#: ../extensions/page-info/page-info-dialog.c:818
 msgid "Memory cache"
 msgstr "Geheugenbuffer"
 
-#: ../extensions/page-info/page-info-dialog.c:829
+#: ../extensions/page-info/page-info-dialog.c:821
 msgid "Unknown cache"
 msgstr "Onbekende buffer"
 
-#: ../extensions/page-info/page-info-dialog.c:845
-#: ../extensions/page-info/page-info-dialog.c:961
+#: ../extensions/page-info/page-info-dialog.c:837
+#: ../extensions/page-info/page-info-dialog.c:953
 msgid "Unknown"
 msgstr "Onbekend"
 
-#: ../extensions/page-info/page-info-dialog.c:850
+#: ../extensions/page-info/page-info-dialog.c:842
 msgid "No referrer"
 msgstr "Geen doorverwijzer"
 
-#: ../extensions/page-info/page-info-dialog.c:864
-#: ../extensions/page-info/page-info-dialog.c:880
+#: ../extensions/page-info/page-info-dialog.c:856
+#: ../extensions/page-info/page-info-dialog.c:872
 msgid "Not specified"
 msgstr "Niet gespecificeerd"
 
-#: ../extensions/page-info/page-info-dialog.c:943
+#: ../extensions/page-info/page-info-dialog.c:935
 msgid "Image"
 msgstr "Afbeelding"
 
-#: ../extensions/page-info/page-info-dialog.c:946
+#: ../extensions/page-info/page-info-dialog.c:938
 msgid "Background image"
 msgstr "Achtergrondafbeelding"
 
-#: ../extensions/page-info/page-info-dialog.c:949
+#: ../extensions/page-info/page-info-dialog.c:941
 msgid "Embed"
 msgstr "Ingebed"
 
-#: ../extensions/page-info/page-info-dialog.c:952
+#: ../extensions/page-info/page-info-dialog.c:944
 msgid "Object"
 msgstr "object"
 
-#: ../extensions/page-info/page-info-dialog.c:955
+#: ../extensions/page-info/page-info-dialog.c:947
 msgid "Applet"
 msgstr "applet"
 
-#: ../extensions/page-info/page-info-dialog.c:958
+#: ../extensions/page-info/page-info-dialog.c:950
 msgid "Icon"
 msgstr "Pictogram"
 
-#: ../extensions/page-info/page-info-dialog.c:1130
+#: ../extensions/page-info/page-info-dialog.c:1131
 msgid "_Open"
 msgstr "_Openen"
 
-#: ../extensions/page-info/page-info-dialog.c:1136
-#: ../extensions/page-info/page-info-dialog.c:1581
+#: ../extensions/page-info/page-info-dialog.c:1137
+#: ../extensions/page-info/page-info-dialog.c:1582
 msgid "_Copy Link Address"
 msgstr "Verwij_zingsadres kopiëren"
 
-#: ../extensions/page-info/page-info-dialog.c:1142
+#: ../extensions/page-info/page-info-dialog.c:1143
 msgid "_Use as Background"
 msgstr "Als a_chtergrond gebruiken"
 
-#: ../extensions/page-info/page-info-dialog.c:1148
-#: ../extensions/page-info/page-info-dialog.c:1587
+#: ../extensions/page-info/page-info-dialog.c:1149
+#: ../extensions/page-info/page-info-dialog.c:1588
 msgid "_Save As..."
 msgstr "Op_slaan als..."
 
-#: ../extensions/page-info/page-info-dialog.c:1380
-#: ../extensions/page-info/page-info-dialog.c:1701
+#: ../extensions/page-info/page-info-dialog.c:1381
+#: ../extensions/page-info/page-info-dialog.c:1702
 msgid "Blocked"
 msgstr "Geblokkeerd"
 
-#: ../extensions/page-info/page-info-dialog.c:1396
-#: ../extensions/page-info/page-info-dialog.c:1717
+#: ../extensions/page-info/page-info-dialog.c:1397
+#: ../extensions/page-info/page-info-dialog.c:1718
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1409
+#: ../extensions/page-info/page-info-dialog.c:1410
 msgid "Type"
 msgstr "Type"
 
-#: ../extensions/page-info/page-info-dialog.c:1421
+#: ../extensions/page-info/page-info-dialog.c:1422
 msgid "Alt Text"
 msgstr "Alt-tekst"
 
-#: ../extensions/page-info/page-info-dialog.c:1433
-#: ../extensions/page-info/page-info-dialog.c:1730
+#: ../extensions/page-info/page-info-dialog.c:1434
+#: ../extensions/page-info/page-info-dialog.c:1731
 msgid "Title"
 msgstr "Titel"
 
-#: ../extensions/page-info/page-info-dialog.c:1445
+#: ../extensions/page-info/page-info-dialog.c:1446
 msgid "Width"
 msgstr "Breedte"
 
-#: ../extensions/page-info/page-info-dialog.c:1457
+#: ../extensions/page-info/page-info-dialog.c:1458
 msgid "Height"
 msgstr "Hoogte"
 
-#: ../extensions/page-info/page-info-dialog.c:1742
+#: ../extensions/page-info/page-info-dialog.c:1743
 msgid "Relation"
 msgstr "Relatie"
 
-#: ../extensions/page-info/page-info-dialog.c:1891
-#: ../extensions/page-info/page-info-dialog.c:2032
+#: ../extensions/page-info/page-info-dialog.c:1892
+#: ../extensions/page-info/page-info-dialog.c:2033
 msgid "Name"
 msgstr "Naam"
 
-#: ../extensions/page-info/page-info-dialog.c:1903
+#: ../extensions/page-info/page-info-dialog.c:1904
 msgid "Method"
 msgstr "Methode"
 
-#: ../extensions/page-info/page-info-dialog.c:1917
+#: ../extensions/page-info/page-info-dialog.c:1918
 msgid "Action"
 msgstr "Actie"
 
-#: ../extensions/page-info/page-info-dialog.c:1998
+#: ../extensions/page-info/page-info-dialog.c:1999
 msgid "_Copy"
 msgstr "_Kopiëren"
 
-#: ../extensions/page-info/page-info-dialog.c:2044
+#: ../extensions/page-info/page-info-dialog.c:2045
 msgid "Content"
 msgstr "Inhoud"
 
-#: ../extensions/page-info/page-info-dialog.c:2145
+#: ../extensions/page-info/page-info-dialog.c:2146
 msgid "Page Metadata"
 msgstr "Pagina-metadata"
 
@@ -934,43 +941,43 @@ msgstr "Webstek-_rechten"
 msgid "Manage web site permissions"
 msgstr "Webstek-rechten beheren"
 
-#: ../extensions/rss/ephy-rss-extension.c:90
+#: ../extensions/rss/ephy-rss-extension.c:91
 msgid "News Feeds Subscription"
 msgstr "Nieuwsfeed-abonnement"
 
-#: ../extensions/rss/ephy-rss-extension.c:92
+#: ../extensions/rss/ephy-rss-extension.c:93
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr ""
 "Abonneren op de nieuwsfeeds van deze webpagina in uw favoriete "
 "nieuwsleesprogramma"
 
-#: ../extensions/rss/ephy-rss-extension.c:97
+#: ../extensions/rss/ephy-rss-extension.c:98
 msgid "_Subscribe to this feed"
 msgstr "_Abonneren op deze feed"
 
-#: ../extensions/rss/ephy-rss-extension.c:99
+#: ../extensions/rss/ephy-rss-extension.c:100
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Abonneren op deze feed in uw favoriete nieuwsleesprogramma"
 
-#: ../extensions/rss/ephy-rss-extension.c:381
+#: ../extensions/rss/ephy-rss-extension.c:373
 msgid "Subscribe to site's news feed"
 msgstr "Abonneren op de nieuwsfeed van de pagina"
 
-#: ../extensions/rss/rss-ui.c:167
+#: ../extensions/rss/rss-ui.c:166
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr ""
 "<b><i>Niet in staat te verbinden met de feed-lezer, is deze wel actief?</i></"
 "b>"
 
-#: ../extensions/rss/rss-ui.c:169
+#: ../extensions/rss/rss-ui.c:168
 msgid "Retry"
 msgstr "Opnieuw"
 
-#: ../extensions/rss/rss-ui.c:297
+#: ../extensions/rss/rss-ui.c:296
 msgid "_Copy Feed Address"
 msgstr "_Feed-adres kopiëren"
 
-#: ../extensions/rss/rss-ui.c:591
+#: ../extensions/rss/rss-ui.c:576
 msgid "Subscribe"
 msgstr "Abonneren"
 
@@ -987,32 +994,32 @@ msgstr "Nieuwsfeed-abonnement"
 msgid "_Subscribe"
 msgstr "_Abonneren"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:145
+#: ../extensions/select-stylesheet/ephy-css-menu.c:146
 msgid "Render the page without using a style"
 msgstr "Pagina opbouwen zonder gebruik te maken van een stijl"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:148
+#: ../extensions/select-stylesheet/ephy-css-menu.c:149
 msgid "Render the page using the default style"
 msgstr "Pagina opbouwen met gebruik van de standaardstijl"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:151
+#: ../extensions/select-stylesheet/ephy-css-menu.c:152
 #, c-format
 msgid "Render the page using the “%s” style"
 msgstr "Pagina opbouwen met gebruik van de “%s”-stijl"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:309
+#: ../extensions/select-stylesheet/ephy-css-menu.c:323
 msgid "St_yle"
 msgstr "Sti_jl"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:310
+#: ../extensions/select-stylesheet/ephy-css-menu.c:324
 msgid "Select a different style for this page"
 msgstr "Een andere stijl voor deze pagina selecteren"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:224
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
 msgid "Default"
 msgstr "Standaard"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:235
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
 msgid "None"
 msgstr "Geen"
 
@@ -1072,11 +1079,11 @@ msgstr "De bron van de nieuwe zijbalk-pagina is “%s”."
 msgid "_Add Sidebar"
 msgstr "Zijbalk _toevoegen"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:551
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:542
 msgid "_Look Up"
 msgstr "Opzoe_ken"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:558
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:549
 msgid "_GNOME Dictionary"
 msgstr "_GNOME-woordenboek"
 
@@ -1092,6 +1099,14 @@ msgstr ""
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
 msgstr "Willekeurige opdrachten uitvoeren vanuit het contextmenu"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
+msgid "Ad Blocker"
+msgstr "Advertentieblokkering"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
+msgid "Block the pest!"
+msgstr "Blokkeer alle rommel!"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
 msgid "Auto Scroll"
@@ -1124,8 +1139,8 @@ msgid "View the page certificate and manage the certificates"
 msgstr "Het paginacertificaat bekijken en certificaten beheren"
 
 #: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
-msgid "Synchronize bookmarks with del.icio.us"
-msgstr "Bladwijzers synchroniseren met del.icio.us"
+msgid "Synchronize bookmarks with social bookmark sites"
+msgstr "Bladwijzers synchroniseren met ‘social bookmark’-websites"
 
 # weergever is lelijk
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
@@ -1207,6 +1222,14 @@ msgstr "Sleep de pagina bij klik met middelste muisknop"
 msgid "Push Scroll"
 msgstr "Duw-schuiven"
 
+#: ../extensions/python-console/python-console.ephy-extension.in.h:1
+msgid "Opens an interactive Python console"
+msgstr "Interactieve Python-console openen"
+
+#: ../extensions/python-console/python-console.ephy-extension.in.h:2
+msgid "Python Console"
+msgstr "Python-console"
+
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
@@ -1269,6 +1292,16 @@ msgstr "Geeft nieuwe inhoud aan in achtergrondtabbladen"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Tab-staat"
+
+#~ msgid ""
+#~ "Error:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Fout:\n"
+#~ "%s"
+
+#~ msgid "_Extensions..."
+#~ msgstr "Uit_breidingen..."
 
 #~ msgid "<b>Synchronizing with del.icio.us</b>"
 #~ msgstr "<b>Synchroniseren met del.icio.us</b>"

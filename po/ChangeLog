@@ -1,3 +1,7 @@
+2008-03-05  Wouter Bolsterlee  <wbolster@svn.gnome.org>
+
+	* nl.po: Updated Dutch translation by Wouter Bolsterlee.
+
 2008-03-04  Takeshi AIHANA <takeshi.aihana@gmail.com>
 
 	* ja.po: Updated Japanese translation.
@@ -29,7 +33,7 @@
 
 2008-01-27  Jorge Gonzalez  <jorgegonz@svn.gnome.org>
 
-        * es.po: Updated Spanish translation
+	* es.po: Updated Spanish translation
 
 2008-01-27  Yair Hershkovitz  <yairhr@gmail.com>
 
@@ -75,7 +79,7 @@
 
 2007-11-13  Jorge Gonzalez  <jorgegonz@svn.gnome.org>
 
-        * es.po: Updated Spanish translation.
+	* es.po: Updated Spanish translation.
 
 2007-11-12  Daniel Nylander <po@danielnylander.se>
 
@@ -83,7 +87,7 @@
 
 2007-11-03  Jorge Gonzalez <jorgegonz@svn.gnome.org>  
 
-        * es.po: Updated Spanish translation
+	* es.po: Updated Spanish translation
 
 2007-11-02  Daniel Nylander <po@danielnylander.se>
 
@@ -99,7 +103,7 @@
 
 2007-09-20  Jorge Gonzalez  <jorgegonz@svn.gnome.org>
 
-        * es.po: Updated Spanish translation
+	* es.po: Updated Spanish translation
 
 2007-09-19  Daniel Nylander <po@danielnylander.se>
 
@@ -111,11 +115,11 @@
 
 2007-09-15  Reinout van Schouwen <reinouts@gnome.org>
 
-        - nl.po : Updated Dutch translation
+	* nl.po : Updated Dutch translation
 		
 2007-09-14  Reinout van Schouwen <reinouts@gnome.org>
 
-        - nl.po : Updated Dutch translation
+	* nl.po : Updated Dutch translation
 
 2007-09-02  Leonardo Ferreira Fontenelle  <leonardof@svn.gnome.org>
 
@@ -147,7 +151,7 @@
 
 	* ja.po: Updated Japanese translation.
 
-2007-08-01  Jorge Gonzalez  <jorgegonz@svn.gnome.org>                         
+2007-08-01  Jorge Gonzalez  <jorgegonz@svn.gnome.org>
 
 	* es.po: Updated Spanish translation
 
@@ -173,7 +177,7 @@
 
 2007-06-15  Jorge Gonzalez <jorgegonz@svn.gnome.org>
 
-        * es.po: Updated Spanish translation
+	* es.po: Updated Spanish translation
 
 2007-06-03  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
@@ -837,7 +841,7 @@
 
 2005-06-04  Pauli Virtanen <pauli.virtanen@hut.fi>
 
-	 * fi.po: Updated Finnish translation.
+	* fi.po: Updated Finnish translation.
 
 2005-06-02  Vincent van Adrighem  <adrighem@gnome.org>
 
@@ -1237,7 +1241,7 @@
 2004-06-21  Gustavo Noronha Silva  <kov@debian.org>
 
 	* pt_BR.po: translation update by
-	  "Raphael Higino" <raphaelh@uai.com.br>
+	"Raphael Higino" <raphaelh@uai.com.br>
 
 2004-06-13  Marcel Telka  <marcel@telka.sk>
 
