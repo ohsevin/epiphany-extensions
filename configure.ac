@@ -13,16 +13,14 @@
 # You should have received a copy of the GNU General Public License along
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
-#
-# $Id: configure.ac,v 1.235 2006/12/17 22:17:06 jframeau Exp $
 
 m4_define([e_e_version_major],[2])
-m4_define([e_e_version_minor],[21])
-m4_define([e_e_version_micro],[92])
+m4_define([e_e_version_minor],[22])
+m4_define([e_e_version_micro],[0])
 m4_define([e_e_version],[e_e_version_major.e_e_version_minor.e_e_version_micro])
 
 # This can be either "trunk" or "branches/gnome-x-y"
-m4_define([e_e_branch],["trunk"])
+m4_define([e_e_branch],["branches/gnome-2-22"])
 
 AC_INIT([GNOME Web Browser Extensions],[e_e_version],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 
@@ -101,7 +99,7 @@ GNOME_DOC_INIT
 # pkg config checks
 # ********************************
 
-EPIPHANY_REQUIRED=2.21.90
+EPIPHANY_REQUIRED=2.21.92
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.15.5
 LIBGTK_REQUIRED=2.11.6
