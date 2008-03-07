@@ -1,0 +1,1279 @@
+# translation of eu.po to Basque
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: eu\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
+"POT-Creation-Date: 2008-03-07 10:37+0100\n"
+"PO-Revision-Date: 2008-03-07 12:29+0100\n"
+"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
+"Language-Team: Basque <itzulpena@euskalgnu.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../extensions/actions/action-properties.glade.h:1
+msgid "<span weight=\"bold\">Applies to</span>"
+msgstr "<span weight=\"bold\">Aplikatu honi</span>"
+
+#: ../extensions/actions/action-properties.glade.h:2
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">Orokorra</span>"
+
+#: ../extensions/actions/action-properties.glade.h:3
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"images."
+msgstr "Aukera hau gaitzen bada, ekintza irudien laster-menuan txertatuko da."
+
+#: ../extensions/actions/action-properties.glade.h:4
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"links and pages."
+msgstr ""
+"Aukera hau gaitzen bada, ekintza esteken eta orrialdeen "
+"laster-menuan txertatuko da."
+
+#: ../extensions/actions/action-properties.glade.h:5
+msgid "The action description."
+msgstr "Ekintzaren azalpena."
+
+#: ../extensions/actions/action-properties.glade.h:6
+msgid ""
+"The action name. If a character is preceded by an underscore, that character "
+"will be used as the access key for the menu item."
+msgstr ""
+"Ekintzaren izena. Azpimarra bat karaktere baten aurretik egonez "
+"gero, karaktere hori laster-tekla gisa erabiliko da menuaren "
+"elementuarentzako."
+
+#: ../extensions/actions/action-properties.glade.h:7
+msgid ""
+"The command to execute when the action is activated. The URL of the link, "
+"image or page will be appended to the command."
+msgstr ""
+"Exekutatuko den komandoa ekintza aktibatzean. Estekaren, irudiaren "
+"edo orrialdearen URLa erantsiko zaio komandoari."
+
+#: ../extensions/actions/action-properties.glade.h:8
+msgid "_Command:"
+msgstr "_Komandoa:"
+
+#: ../extensions/actions/action-properties.glade.h:9
+msgid "_Description:"
+msgstr "_Azalpena:"
+
+#: ../extensions/actions/action-properties.glade.h:10
+msgid "_Images"
+msgstr "_Irudiak"
+
+#: ../extensions/actions/action-properties.glade.h:11
+#: ../extensions/epilicious/epilicious-config.glade.h:6
+msgid "_Name:"
+msgstr "I_zena:"
+
+#: ../extensions/actions/action-properties.glade.h:12
+msgid "_Pages"
+msgstr "_Orrialdeak"
+
+#: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions.ephy-extension.in.in.h:1
+msgid "Actions"
+msgstr "Ekintzak"
+
+#: ../extensions/actions/ephy-actions-extension.c:113
+msgid "Actio_ns"
+msgstr "E_kintzak"
+
+#: ../extensions/actions/ephy-actions-extension.c:114
+msgid "Customize actions"
+msgstr "Pertsonalizatu ekintzak"
+
+#: ../extensions/actions/ephy-actions-extension.c:437
+msgid "Could not run command"
+msgstr "Ezin izan da komandoa exekutatu"
+
+#: ../extensions/actions/ephy-actions-extension.c:440
+msgid "Could not Run Command"
+msgstr "Ezin izan da komandoa exekutatu"
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
+msgid "No action selected."
+msgstr "Ez da ekintzarik hautatu."
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
+#, c-format
+msgid "%i action selected."
+msgid_plural "%i actions selected."
+msgstr[0] "Ekintza %i hautatuta."
+msgstr[1] "%i ekintza hautatuta."
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
+msgid "Add Action"
+msgstr "Gehitu ekintza"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
+#, c-format
+msgid "“%s” Properties"
+msgstr "'%s'-(r)en propietateak"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
+msgid "Action Properties"
+msgstr "Ekintzaren propietateak"
+
+#: ../extensions/adblock/adblock-ui.c:275
+msgid ""
+"This list is Copyright © its original author(G). It is relicensed under the "
+"GPL with permission.\n"
+"The original list, Filterset.G, can be found at http://www.pierceive.com/"
+"filtersetg/.\n"
+"This version has been modified from its original. The changes have not been "
+"approved by the original author;\n"
+"direct any problems to Bugzilla and not to the original author (G).\n"
+msgstr ""
+"Zerrenda honen Copyright-a © bere egileak (G) du. Bere "
+"baimenarekin GPL lizentziapean kaleratu da."
+"Jatorrizko zerrenda, Filterset.G, honako gunean "
+"aurki daiteke:\n"
+"http://www.pierceive.com/filtersetg/.\n"
+"Bertsio hau eraldatua izan da bere jatorritik. Jatorrizko egileak ez ditu "
+"aldaketak onartu.\n"
+"Edozein arazori buruz joan Bugzillara, eta ez jatorrizko "
+"egilearengana (G).\n"
+
+#: ../extensions/adblock/adblock-ui.c:493
+msgid "Pattern"
+msgstr "Eredua"
+
+#: ../extensions/adblock/adblock.glade.h:1
+msgid "<b>Courtesy of Graham Pierce</b>"
+msgstr "<b>Graham Pierce-ri esker</b>"
+
+#: ../extensions/adblock/adblock.glade.h:2
+msgid "<b>New rule</b>"
+msgstr "<b>Arau berria</b>"
+
+#: ../extensions/adblock/adblock.glade.h:3
+msgid "<b>Update rules from original site</b>"
+msgstr "<b>Eguneratu arauak jatorrizko gunetik</b>"
+
+#: ../extensions/adblock/adblock.glade.h:4
+#: ../extensions/adblock/ephy-adblock-extension.c:243
+msgid "Adblock Editor"
+msgstr "Iragarki-blokeoen editorea"
+
+#: ../extensions/adblock/adblock.glade.h:5
+msgid "Add a new rule"
+msgstr "Gehitu arau berria"
+
+#: ../extensions/adblock/adblock.glade.h:6
+msgid "Blacklist"
+msgstr "Zerrenda beltza"
+
+#: ../extensions/adblock/adblock.glade.h:7
+msgid "Filterset.G"
+msgstr "Filterset.G"
+
+#: ../extensions/adblock/adblock.glade.h:8
+msgid "Whitelist"
+msgstr "Zerrenda zuria"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:244
+msgid "Edit Adblock"
+msgstr "Editatu iragazki-blokeoa"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:311
+#, c-format
+msgid "%d hidden advertisement"
+msgid_plural "%d hidden advertisements"
+msgstr[0] "Ezkutatutako iragarki %d"
+msgstr[1] "Ezkutatutako %d iragarki"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:84
+msgid "_Auto Reload"
+msgstr "Birkargatze _automatikoa"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:86
+msgid "Reload the page periodically"
+msgstr "Birkargatu orrialdea aldizka"
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.py:370
+msgid "View Creative Commons license"
+msgstr "Ikusi Creative Commons lizentzia"
+
+#: ../extensions/certificates/ephy-certificates-extension.c:176
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
+msgid "Certificates"
+msgstr "Ziurtagiriak"
+
+#: ../extensions/certificates/ephy-certificates-extension.c:207
+msgid "Security Devices"
+msgstr "Segurtasun-gailuak"
+
+#. stock icon
+#: ../extensions/certificates/ephy-certificates-extension.c:219
+msgid "Manage _Certificates"
+msgstr "Kudeatu _ziurtagiriak"
+
+#. shortcut key
+#: ../extensions/certificates/ephy-certificates-extension.c:221
+msgid "Manage your certificates"
+msgstr "Kudeatu zure ziurtagiriak"
+
+#. stock icon
+#: ../extensions/certificates/ephy-certificates-extension.c:225
+msgid "Manage Security _Devices"
+msgstr "Kudeatu segurtasun-_gailuak"
+
+#. shortcut key
+#: ../extensions/certificates/ephy-certificates-extension.c:227
+msgid "Manage your security devices"
+msgstr "Kudeatu segurtasun-gailuak"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:1
+msgid "Action for tagged bookmarks:"
+msgstr "Etiketatutako laster-marken ekintza:"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:2
+msgid "Epilicious Configuration"
+msgstr "Epilicious-en konfigurazioa"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:3
+msgid "_Backend:"
+msgstr "_Motorra:"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:4
+msgid "_Exclude"
+msgstr "_Baztertu"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:5
+msgid "_Include"
+msgstr "_Sartu"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:7
+msgid "_Password:"
+msgstr "_Pasahitza:"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:8
+msgid "_Tag:"
+msgstr "_Etiketa:"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:1
+msgid "Adding new bookmarks and synching topics"
+msgstr "Laster-marka berriak gehitzen eta gaiak sinkronizatzen"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:2
+msgid "Removing deleted bookmarks"
+msgstr "Ezabatutako laster-markak kentzen"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:4
+#: ../extensions/epilicious/progress.py:41
+#, no-c-format, python-format
+msgid "Retrieving bookmarks from %s"
+msgstr "'%s'-(e)tik laster-markak eskuratzen"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:5
+msgid "Retrieving bookmarks from epiphany"
+msgstr "Epiphany-tik laster-markak eskuratzen"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:6
+msgid "Retrieving previous synch point"
+msgstr "Aurreko sinkronizazio-puntua eskuratzen"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:7
+msgid "Saving new synch point"
+msgstr "Sinkronizazio-puntu berria gordetzen"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:9
+#: ../extensions/epilicious/progress.py:39
+#, no-c-format, python-format
+msgid "Synchronizing with %s"
+msgstr "%s-(e)kin sinkronizatzen"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:10
+msgid "Synchronizing..."
+msgstr "Sinkronizatu..."
+
+#: ../extensions/epilicious/epilicious.py.in:202
+#: ../extensions/epilicious/epilicious.py.in:220
+msgid "Epilicious Synchronize"
+msgstr "Epilicious-en sinkronizazioa"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:1
+msgid "Bookmarks with this topic will be synchronized."
+msgstr "Laster-markak (bere gaiekin) sinkronizatuko dira."
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:2
+msgid ""
+"Controls the function of the topic. If this is unset then all bookmarks with "
+"the topic will be synched. If this is set then all bookmarks without the "
+"topic will be synched."
+msgstr ""
+"Gaiaren funtzioa kontrolatzen du. Desaktibatzen bada, laster-marka guztiak (beraien gaiekin) sinkronizatu egingo dira. Aktibatzen bada, "
+"laster-marka guztiak gairik gabe sinkronizatuko dira."
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:3
+msgid "Exclude topic"
+msgstr "Baztertu gaia"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:4
+msgid "Shared topic"
+msgstr "Partekatutako gaia"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:5
+msgid ""
+"The backend that epilicious will use for synchronizing bookmarks. Allowed "
+"value: 'ma.gnolia'"
+msgstr ""
+"Epilicious-ek laster-markak sinkronizatzeko erabiliko duen motorra. "
+"Balio erabilgarria: 'ma.gnolia'"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:6
+msgid "The password that epilicious will use for synchronizing bookmarks."
+msgstr "Pasahitza epilicious-ek laster-markak sinkronizatzean erabiltzeko."
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:7
+msgid "The username that epilicious will use for synchronizing bookmarks."
+msgstr "Erabitzaile-izena epilicious-ek laster-markak sinkronizatzean erabiltzeko."
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:8
+msgid "epilicious backend"
+msgstr "epilicious motorra"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:9
+msgid "password"
+msgstr "pasahitza"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:10
+msgid "username"
+msgstr "erabiltzaile-izena"
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:98
+msgid "Check _HTML"
+msgstr "Egiaztatu _HTMLa"
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:100
+msgid "Display HTML errors in the Error Viewer dialog"
+msgstr "Bistaratu HTML erroreak 'Errore ikustailea' elkarrizketa-koadroan"
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
+msgid "Check _Links"
+msgstr "Egiaztatu _estekak"
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:107
+msgid "Display invalid hyperlinks in the Error Viewer dialog"
+msgstr ""
+"Bistaratu esteka baliogabeak 'Erroreen ikustailea' "
+"elkarrizketa-koadroan"
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:111
+msgid "_Error Viewer"
+msgstr "_Erroreen ikustailea"
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:113
+msgid "Display web page errors"
+msgstr "Bistaratu web orrialdeen erroreak"
+
+#: ../extensions/error-viewer/error-viewer.glade.h:1
+msgid "Cl_ear"
+msgstr "_Garbitu"
+
+#: ../extensions/error-viewer/error-viewer.glade.h:2
+msgid "Error Viewer"
+msgstr "Erroreen ikustailea"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:103
+#, c-format
+msgid ""
+"%s error in %s on line %d and column %d:\n"
+"%s"
+msgstr ""
+"%s errorea %s-(e)n, %d. lerroan eta %d. zutabean:\n"
+"%s"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:109
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:140
+#, c-format
+msgid ""
+"%s error in %s:\n"
+"%s"
+msgstr ""
+"%s errorea %s-(e)n:\n"
+"%s"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:123
+#, c-format
+msgid ""
+"%s error in %s on line %d:\n"
+"%s"
+msgstr ""
+"%s errorea %s-(e)n, %d. lerroan:\n"
+"%s"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "Esteka baliogabe %d aurkituta"
+msgstr[1] "%d esteka baliogabe aurkituta"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
+#, c-format
+msgid ""
+"Link error in %s:\n"
+"%s is unavailable."
+msgstr ""
+"Estekaren errorea %s-(e)n:\n"
+"%s ez dago eskuragarri."
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
+#, c-format
+msgid "Checking %d Link on “%s”"
+msgid_plural "Checking %d Links on “%s”"
+msgstr[0] "Esteka %d egiaztatzen '%s'-(e)n"
+msgstr[1] "%d esteka egiaztatzen '%s'-(e)n"
+
+#: ../extensions/error-viewer/opensp/validate.cpp:168
+#, c-format
+msgid ""
+"HTML error in “%s” on line %s:\n"
+"%s"
+msgstr ""
+"HTML errorea '%s'-(e)n, '%s' lerroan:\n"
+"%s"
+
+#: ../extensions/error-viewer/sgml-validator.c:165
+#, c-format
+msgid "Found %d error"
+msgid_plural "Found %d errors"
+msgstr[0] "Errore %d aurkituta"
+msgstr[1] "%d errore aurkituta"
+
+#: ../extensions/error-viewer/sgml-validator.c:169
+#, c-format
+msgid "HTML Validation of “%s” complete"
+msgstr "'%s'-(r)en HTML balidazioa amaituta"
+
+#: ../extensions/error-viewer/sgml-validator.c:227
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"%s"
+msgstr ""
+"HTML errorea %s-(e)n:\n"
+"%s"
+
+#: ../extensions/error-viewer/sgml-validator.c:229
+#: ../extensions/error-viewer/sgml-validator.c:245
+msgid ""
+"Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
+"+xml” instead."
+msgstr ""
+"Doctype 'XHTML' da, baina eduki mota 'text/html da. "
+"Erabili 'application/xhtml+xml' horren ordez."
+
+#: ../extensions/error-viewer/sgml-validator.c:243
+#, c-format
+msgid ""
+"HTML warning in %s:\n"
+"%s"
+msgstr ""
+"HTML abisua %s-(e)n:\n"
+"%s"
+
+#: ../extensions/error-viewer/sgml-validator.c:360
+#, c-format
+msgid "HTML error in %s:"
+msgstr "HTML errorea %s-(e)n:"
+
+#: ../extensions/error-viewer/sgml-validator.c:368
+#, c-format
+msgid "Invalid character encoding"
+msgstr "Karaktere-kodeketa baliogabea"
+
+#: ../extensions/error-viewer/sgml-validator.c:373
+#, c-format
+msgid "Unknown error while converting to UTF-8"
+msgstr "Errore ezezaguna UTF-8ra bihurtzean"
+
+#: ../extensions/error-viewer/sgml-validator.c:435
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"No valid doctype specified."
+msgstr ""
+"HTML errorea %s-(e)n:\n"
+"Ez da doctype-rik zehaztu."
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
+msgid "Enabled"
+msgstr "Gaituta"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
+#: ../extensions/rss/rss-ui.c:584
+msgid "Description"
+msgstr "Azalpena"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+msgid "<b>Loaded Extensions</b>"
+msgstr "<b>Kargatutako hedapenak</b>"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+msgid "Extensions"
+msgstr "Hedapenak"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "_Extensions"
+msgstr "_Hedapenak"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
+msgid "Load and unload extensions"
+msgstr "Kargatu eta deskargatu hedapenak"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
+msgid "Help about extensions"
+msgstr "Hedapenei buruzko laguntza"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:85
+msgid "Install User _Script"
+msgstr "Instalatu erabiltzailearen _script-a"
+
+#. shortcut key
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+msgid "Install Greasemonkey script"
+msgstr "Instalatu Greasemonkey script-a"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:318
+#, c-format
+msgid "The user script at “%s” has been installed"
+msgstr "Erabiltzailearen script-a '%s'-(e)n instalatu da"
+
+#: ../extensions/java-console/ephy-java-console-extension.c:48
+msgid "_Java Console"
+msgstr "_Java-ren kontsola"
+
+#. shortcut key
+#: ../extensions/java-console/ephy-java-console-extension.c:50
+msgid "Show Java Console"
+msgstr "Erakutsi Java-ren kontsola"
+
+#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:102
+msgid "_HTTP Headers"
+msgstr "_HTTPren goiburukoak"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:1
+msgid "<b>Request</b>"
+msgstr "<b>Eskaera</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:2
+msgid "<b>Response</b>"
+msgstr "<b>Erantzuna</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:3
+msgid "<b>URLs</b>"
+msgstr "<b>URLak</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
+msgid "Clear cache"
+msgstr "Garbitu cache-a"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
+msgid "Live Headers"
+msgstr "Zuzeneko goiburukoak"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
+msgid "Remove headers"
+msgstr "Kendu goiburukoak"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:68
+msgid "Pa_ge Information"
+msgstr "_Orrialdearen informazioa"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:70
+msgid "Display page information in a dialog"
+msgstr "Bistaratu orrialdearen informazioa elkarrizketa-koadroan"
+
+#: ../extensions/page-info/page-info-dialog.c:722
+msgid "Save As..."
+msgstr "Gorde honela..."
+
+#: ../extensions/page-info/page-info-dialog.c:739
+msgid "Select a directory"
+msgstr "Hautatu direktorioa"
+
+#: ../extensions/page-info/page-info-dialog.c:788
+msgid "Unknown type"
+msgstr "Mota ezezaguna"
+
+#: ../extensions/page-info/page-info-dialog.c:793
+msgid "Full standards compliance"
+msgstr "Estandar guztiak betetzen ditu"
+
+#: ../extensions/page-info/page-info-dialog.c:796
+msgid "Almost standards compliance"
+msgstr "Estandar ia guztiak betetzen ditu"
+
+#: ../extensions/page-info/page-info-dialog.c:799
+msgid "Compatibility"
+msgstr "Bateragarritasuna"
+
+#: ../extensions/page-info/page-info-dialog.c:803
+msgid "Undetermined"
+msgstr "Zehaztu gabea"
+
+#: ../extensions/page-info/page-info-dialog.c:812
+msgid "Not cached"
+msgstr "Ez dago cache-an"
+
+#: ../extensions/page-info/page-info-dialog.c:815
+msgid "Disk cache"
+msgstr "Diskoko cache-a"
+
+#: ../extensions/page-info/page-info-dialog.c:818
+msgid "Memory cache"
+msgstr "Memoriako cache-a"
+
+#: ../extensions/page-info/page-info-dialog.c:821
+msgid "Unknown cache"
+msgstr "Cache ezezaguna"
+
+#: ../extensions/page-info/page-info-dialog.c:837
+#: ../extensions/page-info/page-info-dialog.c:953
+msgid "Unknown"
+msgstr "Ezezaguna"
+
+#: ../extensions/page-info/page-info-dialog.c:842
+msgid "No referrer"
+msgstr "Erreferentziatu gabe"
+
+#: ../extensions/page-info/page-info-dialog.c:856
+#: ../extensions/page-info/page-info-dialog.c:872
+msgid "Not specified"
+msgstr "Zehaztu gabe"
+
+#: ../extensions/page-info/page-info-dialog.c:935
+msgid "Image"
+msgstr "Irudia"
+
+#: ../extensions/page-info/page-info-dialog.c:938
+msgid "Background image"
+msgstr "Atzeko planoko irudia"
+
+#: ../extensions/page-info/page-info-dialog.c:941
+msgid "Embed"
+msgstr "Kapsulatu"
+
+#: ../extensions/page-info/page-info-dialog.c:944
+msgid "Object"
+msgstr "Objektua"
+
+#: ../extensions/page-info/page-info-dialog.c:947
+msgid "Applet"
+msgstr "Applet-a"
+
+#: ../extensions/page-info/page-info-dialog.c:950
+msgid "Icon"
+msgstr "Ikonoa"
+
+#: ../extensions/page-info/page-info-dialog.c:1131
+msgid "_Open"
+msgstr "_Ireki"
+
+#: ../extensions/page-info/page-info-dialog.c:1137
+#: ../extensions/page-info/page-info-dialog.c:1582
+msgid "_Copy Link Address"
+msgstr "_Kopiatu estekaren helbidea"
+
+#: ../extensions/page-info/page-info-dialog.c:1143
+msgid "_Use as Background"
+msgstr "Erabili _atzeko plano gisa"
+
+#: ../extensions/page-info/page-info-dialog.c:1149
+#: ../extensions/page-info/page-info-dialog.c:1588
+msgid "_Save As..."
+msgstr "Gorde _honela..."
+
+#: ../extensions/page-info/page-info-dialog.c:1381
+#: ../extensions/page-info/page-info-dialog.c:1702
+msgid "Blocked"
+msgstr "Blokeatuta"
+
+#: ../extensions/page-info/page-info-dialog.c:1397
+#: ../extensions/page-info/page-info-dialog.c:1718
+msgid "URL"
+msgstr "URLa"
+
+#: ../extensions/page-info/page-info-dialog.c:1410
+msgid "Type"
+msgstr "Mota"
+
+#: ../extensions/page-info/page-info-dialog.c:1422
+msgid "Alt Text"
+msgstr "Alt testua"
+
+#: ../extensions/page-info/page-info-dialog.c:1434
+#: ../extensions/page-info/page-info-dialog.c:1731
+msgid "Title"
+msgstr "Titulua"
+
+#: ../extensions/page-info/page-info-dialog.c:1446
+msgid "Width"
+msgstr "Zabalera"
+
+#: ../extensions/page-info/page-info-dialog.c:1458
+msgid "Height"
+msgstr "Altuera"
+
+#: ../extensions/page-info/page-info-dialog.c:1743
+msgid "Relation"
+msgstr "Erlazioa"
+
+#: ../extensions/page-info/page-info-dialog.c:1892
+#: ../extensions/page-info/page-info-dialog.c:2033
+msgid "Name"
+msgstr "Izena"
+
+#: ../extensions/page-info/page-info-dialog.c:1904
+msgid "Method"
+msgstr "Metodoa"
+
+#: ../extensions/page-info/page-info-dialog.c:1918
+msgid "Action"
+msgstr "Ekintza"
+
+#: ../extensions/page-info/page-info-dialog.c:1999
+msgid "_Copy"
+msgstr "_Kopiatu"
+
+#: ../extensions/page-info/page-info-dialog.c:2045
+msgid "Content"
+msgstr "Edukia"
+
+#: ../extensions/page-info/page-info-dialog.c:2146
+msgid "Page Metadata"
+msgstr "Orrialdearen metadatuak"
+
+#: ../extensions/page-info/page-info.glade.h:1
+msgid "<b>Dublin Core Metadata</b>"
+msgstr "<b>Dublin Core metadatuak</b>"
+
+#: ../extensions/page-info/page-info.glade.h:2
+msgid "<b>Forms In Page</b>"
+msgstr "<b>Inprimakiak orrialdean</b>"
+
+#: ../extensions/page-info/page-info.glade.h:3
+msgid "<b>Links In Page</b>"
+msgstr "<b>Estekak orrialdean</b>"
+
+#: ../extensions/page-info/page-info.glade.h:4
+msgid "<b>Media In Page</b>"
+msgstr "<b>Multimedia orrialdean</b>"
+
+#: ../extensions/page-info/page-info.glade.h:5
+msgid "<b>Medium View</b>"
+msgstr "<b>Multimediaren ikuspegia</b>"
+
+#: ../extensions/page-info/page-info.glade.h:6
+msgid "<b>Other Metadata</b>"
+msgstr "<b>Beste metadatuak</b>"
+
+#: ../extensions/page-info/page-info.glade.h:7
+msgid "<b>Rendering</b>"
+msgstr "<b>Errendatzea</b>"
+
+#: ../extensions/page-info/page-info.glade.h:8
+msgid "<b>Source File</b>"
+msgstr "<b>Fitxategiaren iturburua</b>"
+
+#: ../extensions/page-info/page-info.glade.h:9
+msgid "<b>Web Page</b>"
+msgstr "<b>Web orrialdea</b>"
+
+#: ../extensions/page-info/page-info.glade.h:10
+msgid "DYNAMIC"
+msgstr "DINAMIKOA"
+
+#: ../extensions/page-info/page-info.glade.h:11
+msgid "Date:"
+msgstr "Data:"
+
+#: ../extensions/page-info/page-info.glade.h:12
+msgid "Description:"
+msgstr "Azalpena:"
+
+#: ../extensions/page-info/page-info.glade.h:13
+msgid "Encoding:"
+msgstr "Kodeketa:"
+
+#: ../extensions/page-info/page-info.glade.h:14
+msgid "Expires:"
+msgstr "Iraungitze-data:"
+
+#: ../extensions/page-info/page-info.glade.h:15
+msgid "Format:"
+msgstr "Formatua:"
+
+#: ../extensions/page-info/page-info.glade.h:16
+msgid "Forms"
+msgstr "Inprimakiak"
+
+#: ../extensions/page-info/page-info.glade.h:17
+msgid "General"
+msgstr "Orokorra"
+
+#: ../extensions/page-info/page-info.glade.h:18
+msgid "Links"
+msgstr "Estekak"
+
+#: ../extensions/page-info/page-info.glade.h:19
+msgid "Location:"
+msgstr "Helbidea:"
+
+#: ../extensions/page-info/page-info.glade.h:20
+msgid "MIME type:"
+msgstr "MIME mota:"
+
+#: ../extensions/page-info/page-info.glade.h:21
+msgid "Media"
+msgstr "Multimedia"
+
+#: ../extensions/page-info/page-info.glade.h:22
+msgid "Metadata"
+msgstr "Metadatuak"
+
+#: ../extensions/page-info/page-info.glade.h:23
+msgid "Mode:"
+msgstr "Modua:"
+
+#: ../extensions/page-info/page-info.glade.h:24
+msgid "Modified:"
+msgstr "Aldatze-data:"
+
+#: ../extensions/page-info/page-info.glade.h:25
+msgid "Page Properties"
+msgstr "Orrialdearen propietateak"
+
+#: ../extensions/page-info/page-info.glade.h:26
+msgid "Referrer:"
+msgstr "Erreferentziatuta:"
+
+#: ../extensions/page-info/page-info.glade.h:27
+msgid "Size:"
+msgstr "Tamaina:"
+
+#: ../extensions/page-info/page-info.glade.h:28
+msgid "Source:"
+msgstr "Iturburua:"
+
+#: ../extensions/page-info/page-info.glade.h:29
+msgid "Title:"
+msgstr "Titulua:"
+
+#: ../extensions/page-info/page-info.glade.h:30
+msgid "Type:"
+msgstr "Mota:"
+
+#: ../extensions/page-info/page-info.glade.h:31
+msgid "_Save Media As..."
+msgstr "Gorde _multimedia honela..."
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:180
+msgid "allowed"
+msgstr "baimenduta"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:184
+msgid "denied"
+msgstr "ukatuta"
+
+#. Sometimes we get this... how did this get in the list!?
+#: ../extensions/permissions/ephy-permissions-dialog.c:189
+msgid "default"
+msgstr "lehenetsia"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:515
+msgid "Domain"
+msgstr "Domeinua"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:527
+msgid "State"
+msgstr "Egoera"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:620
+msgid "Site Permissions"
+msgstr "Gunearen baimenak"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:647
+msgid "Cookies"
+msgstr "Cookie-ak"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:648
+msgid "Images"
+msgstr "Irudiak"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:649
+msgid "Popup Windows"
+msgstr "Laster-leihoak"
+
+#. stock icon
+#: ../extensions/permissions/ephy-permissions-extension.c:156
+msgid "Site _Permissions"
+msgstr "Gunearen _baimenak"
+
+#. shortcut key
+#: ../extensions/permissions/ephy-permissions-extension.c:158
+msgid "Manage web site permissions"
+msgstr "Kudeatu web gunearen baimenak"
+
+#: ../extensions/rss/ephy-rss-extension.c:91
+msgid "News Feeds Subscription"
+msgstr "Berri-iturrietara harpidetzea"
+
+#: ../extensions/rss/ephy-rss-extension.c:93
+msgid "Subscribe to this website's news feeds in your favorite news reader"
+msgstr "Harpidetu web gune honetako berri-iturrira zure berri-irakurle gogokoenean"
+
+#: ../extensions/rss/ephy-rss-extension.c:98
+msgid "_Subscribe to this feed"
+msgstr "_Harpidetu iturri honetara"
+
+#: ../extensions/rss/ephy-rss-extension.c:100
+msgid "Subscribe to this feed in your favorite news reader"
+msgstr "Harpidetu berri-iturri honetara zure berri-irakurle gogokoenean"
+
+#: ../extensions/rss/ephy-rss-extension.c:373
+msgid "Subscribe to site's news feed"
+msgstr "Harpidetu web gunearen berri-iturrira"
+
+#: ../extensions/rss/rss-ui.c:166
+msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
+msgstr ""
+"<b><i>Ezin izan da berri-irakurlearekin kontaktatu, exekutatzen ari "
+"da?</i></b>"
+
+#: ../extensions/rss/rss-ui.c:168
+msgid "Retry"
+msgstr "Saiatu berriro"
+
+#: ../extensions/rss/rss-ui.c:296
+msgid "_Copy Feed Address"
+msgstr "_Kopiatu iturrien helbideak"
+
+#: ../extensions/rss/rss-ui.c:576
+msgid "Subscribe"
+msgstr "Harpidetu"
+
+#: ../extensions/rss/rss-ui.glade.h:1
+msgid "<b>Select Interesting Feeds</b>"
+msgstr "<b>Hautatu iturri interesgarriak</b>"
+
+#: ../extensions/rss/rss-ui.glade.h:2
+#: ../extensions/rss/rss.ephy-extension.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "Berri-iturrira harpidetzea"
+
+#: ../extensions/rss/rss-ui.glade.h:3
+msgid "_Subscribe"
+msgstr "_Harpidetu"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:146
+msgid "Render the page without using a style"
+msgstr "Errendatu orrialdea estilorik erabili gabe"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:149
+msgid "Render the page using the default style"
+msgstr "Errendatu orrialdea estilo lehenetsia erabiliz"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:152
+#, c-format
+msgid "Render the page using the “%s” style"
+msgstr "Errendatu orrialdea '%s' estiloa erabiliz"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:323
+msgid "St_yle"
+msgstr "E_stiloa"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:324
+msgid "Select a different style for this page"
+msgstr "Hautatu beste estiloa orrialde honentzako"
+
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
+msgid "Default"
+msgstr "Lehenetsia"
+
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
+msgid "None"
+msgstr "Bat ere ez"
+
+#: ../extensions/sidebar/ephy-sidebar.c:176
+msgid "No Sidebars installed"
+msgstr "Ez dago albo-panelik instalatuta"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:105
+msgid "_Sidebar"
+msgstr "_Albo-panela"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:106
+msgid "Show or hide the sidebar"
+msgstr "Erakutsi edo ezkutatu albo-panela"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:323
+msgid "Do you really want to remove this sidebar?"
+msgstr "Ziur zaude albo-panel hau kentzea nahi duzula?"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:327
+msgid "There is no way to recover this sidebar after removal."
+msgstr "Ezin izango da albo-panel hau berreskuratu kendu ondoren."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:329
+msgid "Remove Sidebar"
+msgstr "Kendu albo-panela"
+
+#. Translators: %s is the sidebar title
+#: ../extensions/sidebar/ephy-sidebar-extension.c:476
+#, c-format
+msgid "The sidebar already contains “%s”"
+msgstr "Albo-panelak jadanik badu '%s'"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:480
+msgid "To use this sidebar, select it from the list of available sidebar pages."
+msgstr ""
+"Albo-panel hau erabiltzeko, hautatu erabilgarri dauden albo-panelen "
+"orrialdeen zerrendatik."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:483
+#: ../extensions/sidebar/ephy-sidebar-extension.c:509
+msgid "Add Sidebar"
+msgstr "Gehitu albo-panela"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:503
+#, c-format
+msgid "Add “%s” to the Sidebar?"
+msgstr "Gehitu '%s' albo-panelari?"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:507
+#, c-format
+msgid "The source to the new sidebar page is “%s”."
+msgstr "Albo-panel berriaren iturburua '%s' da."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:513
+msgid "_Add Sidebar"
+msgstr "_Gehitu albo-panela"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:542
+msgid "_Look Up"
+msgstr "_Bilatu"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:549
+msgid "_GNOME Dictionary"
+msgstr "_GNOMEren hiztegia"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
+msgid "Open search result in new tab"
+msgstr "Ireki bilaketako emaitzak fitxa berrian"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
+msgid "Open search result in new tab if true, in new window if false"
+msgstr "Ireki bilaketako emaitzak fitxa berrian 'true' (EGIA) bada; 'false' (faltsua) bada leiho berri batean."
+
+#: ../extensions/actions/actions.ephy-extension.in.in.h:2
+msgid "Execute arbitrary commands from the context menu"
+msgstr "Exekutatu komando arbitrarioak testuinguruko menutik"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
+msgid "Ad Blocker"
+msgstr "Iragarki-blokeatzailea"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
+msgid "Block the pest!"
+msgstr "Blokeatu izurritea!"
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
+msgid "Auto Scroll"
+msgstr "Korritze automatikoa"
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
+msgid "Scroll on middle mouse click"
+msgstr "Korritu saguaren erdiko botoiarekin klik eginez"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
+msgid "Auto Reload Tab"
+msgstr "Automatikoki birkargatu fitxa"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
+msgid "Reload a tab periodically"
+msgstr "Birkargatu fitxa aldika"
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
+msgid "Creative Commons license viewer"
+msgstr "Creative Commons lizentziaren ikustailea"
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
+msgid "Shows the Creative Commons license of the current website if available"
+msgstr "Uneko web gunearen Creative Commons lizentzia erakusten du (eskuragarri egonez gero)"
+
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
+msgid "View the page certificate and manage the certificates"
+msgstr "Ikusi orrialdearen ziurtagiria eta kudeatu ziurtagiriak"
+
+#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
+msgid "Synchronize bookmarks with social bookmark sites"
+msgstr "Sinkronizatu laster-markak gune sozialetako laster-markekin"
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
+msgid "Error viewer"
+msgstr "Erroreen ikustailea"
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
+msgid "Validate web pages and check links"
+msgstr "Balidatu web guneak eta egiaztatu estekak"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
+msgid "Activate and deactivate extensions"
+msgstr "Aktibatu eta desaktibatu hedapenak"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
+msgid "Extensions Manager"
+msgstr "Hedapenen kudeatzailea"
+
+#: ../extensions/favicon/favicon.ephy-extension.in.h:1
+msgid "Favicon fallback"
+msgstr "Favicon lehenetsia"
+
+#: ../extensions/favicon/favicon.ephy-extension.in.h:2
+msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
+msgstr ""
+"'/favicon.ico' kargatzen du guneak metodo estandarra ez badu "
+"erabiltzen"
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
+msgid "Gestures"
+msgstr "Mugimenduak"
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:2
+msgid "Perform actions with mouse gestures"
+msgstr "Landu ekintzak saguaren mugimenduekin"
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
+msgid "Greasemonkey"
+msgstr "Greasemonkey"
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
+msgid "Run user scripts to modify web pages' behavior"
+msgstr "Exekutatu erabiltzailearen script-ak web orrialdeen portaera aldatzeko"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
+msgid "Java Console"
+msgstr "Java-ren kontsola"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
+msgid "Provide access to the Java-Plugin Console"
+msgstr "Eman sarbidea 'Java-plugin'-aren kontsolari"
+
+#: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
+msgid "Live HTTP headers"
+msgstr "Zuzeneko HTTP goiburukoak"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
+msgid "Display information about and links and media from the current page"
+msgstr "Bistaratu uneko orrialdearen 'honi buruz', estekak eta multimediaren informazioa"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
+msgid "Page Info"
+msgstr "Orrialdearen informazioa"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
+msgid "Edit site permissions"
+msgstr "Editatu gunearen baimenak"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
+msgid "Permissions"
+msgstr "Baimenak"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
+msgid "Drag the page on middle mouse click"
+msgstr "Arrastatu orrialdea saguaren erdiko botoiarekin klik eginez"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+msgid "Push Scroll"
+msgstr "Korritu saguarekin"
+
+#: ../extensions/python-console/python-console.ephy-extension.in.h:1
+msgid "Opens an interactive Python console"
+msgstr "Ireki Python-en kontsola elkarreragilea"
+
+#: ../extensions/python-console/python-console.ephy-extension.in.h:2
+msgid "Python Console"
+msgstr "Python-en kontsola"
+
+#: ../extensions/rss/rss.ephy-extension.in.in.h:2
+msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr ""
+"Harpidetu web orrialdeek eskaintzen dituzten berri-iturrietara zure "
+"berri-irakurle gogokoenean"
+
+#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
+msgid "A sample extension with mozilla backend"
+msgstr "Hedapen baten lagina mozilla motorrarekin"
+
+#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:2
+msgid "Sample (Mozilla)"
+msgstr "Lagina (Mozilla)"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:1
+msgid "A sample extension"
+msgstr "Hedapen-lagina"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:2
+msgid "Sample"
+msgstr "Lagina"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
+msgid "Select Stylesheet"
+msgstr "Hautatu estilo-orria"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
+msgid "Select between different stylesheets offered by the web page"
+msgstr "Hautatu web orrialdeak eskaintzen dituen estilo-orri desberdinen artean"
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
+msgid "Adds a sidebar to windows"
+msgstr "Gehitu albo-panela leihoari"
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
+msgid "Sidebar"
+msgstr "Albo-panela"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
+msgid "Look up the selected text with a smart bookmark"
+msgstr "Bilatu hautatutako testua laster-marka azkar batekin"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
+msgid "Smart Bookmarks"
+msgstr "Laster-marka azkarrak"
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
+msgid "Groups newly opened tabs"
+msgstr "Elkartu ireki berri diren fitxak"
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
+msgid "Tab Groups"
+msgstr "Fitxen taldeak"
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
+msgid "Indicates new content in background tabs"
+msgstr "Atzeko planoko fitxetako eduki berria adierazten du"
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
+msgid "Tab States"
+msgstr "Fitxen egoera"
+

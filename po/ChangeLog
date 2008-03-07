@@ -1,3 +1,9 @@
+2008-03-07  Inaki Larranaga Murgoitio  <dooteo@euskalgnu.org>
+
+	* LINGUAS: Deleted repeated entries: sk, sq, sr, sr@Latn and sv.
+	* LINGUAS: Added 'eu' (Basque) entry.
+	* eu.po: Add Basque translation.
+
 2008-03-07  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
 	* th.po: Merged Thai translation from gnome-2-22 branch.
