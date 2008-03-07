@@ -1,15 +1,15 @@
 # Thai translation of epiphany-extension.
-# Copyright (C) 2006-2007 Free Software Foundation, Inc.
+# Copyright (C) 2006-2008 Free Software Foundation, Inc.
 # This file is distributed under the same license as the epiphany-extension package.
-# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2006-2007.
-# 
+# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2006-2008.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extension\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-07-21 16:46+0700\n"
-"PO-Revision-Date: 2007-07-21 16:52+0700\n"
+"POT-Creation-Date: 2008-03-07 09:13+0700\n"
+"PO-Revision-Date: 2008-03-07 09:14+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -81,19 +81,19 @@ msgstr "ห_น้าเว็บ"
 msgid "Actions"
 msgstr "การกระทำ"
 
-#: ../extensions/actions/ephy-actions-extension.c:112
+#: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Actio_ns"
 msgstr "การกระ_ทำ"
 
-#: ../extensions/actions/ephy-actions-extension.c:113
+#: ../extensions/actions/ephy-actions-extension.c:114
 msgid "Customize actions"
 msgstr "ปรับแต่งการกระทำต่างๆ"
 
-#: ../extensions/actions/ephy-actions-extension.c:436
+#: ../extensions/actions/ephy-actions-extension.c:437
 msgid "Could not run command"
 msgstr "ไม่สามารถเรียกคำสั่ง"
 
-#: ../extensions/actions/ephy-actions-extension.c:439
+#: ../extensions/actions/ephy-actions-extension.c:440
 msgid "Could not Run Command"
 msgstr "ไม่สามารถเรียกคำสั่ง"
 
@@ -120,7 +120,7 @@ msgstr "คุณสมบัติของ “%s”"
 msgid "Action Properties"
 msgstr "คุณสมบัติของการกระทำ"
 
-#: ../extensions/adblock/adblock-ui.c:279
+#: ../extensions/adblock/adblock-ui.c:275
 msgid ""
 "This list is Copyright © its original author(G). It is relicensed under the "
 "GPL with permission.\n"
@@ -137,7 +137,7 @@ msgstr ""
 "รุ่นนี้มีการแก้ไขจากต้นฉบับ โดยไม่ได้ผ่านการตรวจสอบยืนยันจากผู้เขียนต้นตำรับ\n"
 "หากพบปัญหา กรุณารายงานที่ Bugzilla ไม่ใช่ที่ผู้เขียนต้นตำรับ (G)\n"
 
-#: ../extensions/adblock/adblock-ui.c:496
+#: ../extensions/adblock/adblock-ui.c:493
 msgid "Pattern"
 msgstr "แพตเทิร์น"
 
@@ -155,7 +155,7 @@ msgstr "<b>ปรับกฎจากแหล่งต้นตำรับ</b
 
 #: ../extensions/adblock/adblock.glade.h:4
 #: ../extensions/adblock/ephy-adblock-extension.c:243
-msgid "Adblock editor"
+msgid "Adblock Editor"
 msgstr "เครื่องมือแก้ไข Adblock"
 
 #: ../extensions/adblock/adblock.glade.h:5
@@ -184,44 +184,44 @@ msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
 msgstr[0] "มีโฆษณาซ่อนอยู่ %d รายการ"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:84
 msgid "_Auto Reload"
 msgstr "โห_ลดใหม่อัตโนมัติ"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:86
 msgid "Reload the page periodically"
 msgstr "โหลดหน้าเว็บใหม่เป็นระยะ"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:371
+#: ../extensions/cc-license-viewer/cc-license-viewer.py:370
 msgid "View Creative Commons license"
 msgstr "ดูสัญญาอนุญาต Creative Commons"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:177
+#: ../extensions/certificates/ephy-certificates-extension.c:176
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "ใบรับรอง"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:208
+#: ../extensions/certificates/ephy-certificates-extension.c:207
 msgid "Security Devices"
 msgstr "อุปกรณ์รักษาความปลอดภัย"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:220
+#: ../extensions/certificates/ephy-certificates-extension.c:219
 msgid "Manage _Certificates"
 msgstr "จัดการใ_บรับรอง"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:222
+#: ../extensions/certificates/ephy-certificates-extension.c:221
 msgid "Manage your certificates"
 msgstr "จัดการใบรับรองต่างๆ ของคุณ"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:226
+#: ../extensions/certificates/ephy-certificates-extension.c:225
 msgid "Manage Security _Devices"
 msgstr "จัดการ_อุปกรณ์รักษาความปลอดภัย"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:228
+#: ../extensions/certificates/ephy-certificates-extension.c:227
 msgid "Manage your security devices"
 msgstr "จัดการอุปกรณ์รักษาความปลอดภัยของคุณ"
 
@@ -262,7 +262,8 @@ msgid "Removing deleted bookmarks"
 msgstr "กำลังลบที่คั่นหน้าที่สั่งลบ"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:4
-#, no-c-format
+#: ../extensions/epilicious/progress.py:41
+#, no-c-format, python-format
 msgid "Retrieving bookmarks from %s"
 msgstr "กำลังดึงที่คั่นหน้าจาก %s"
 
@@ -279,7 +280,8 @@ msgid "Saving new synch point"
 msgstr "กำลังบันทึกจุดปรับข้อมูลใหม่"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:9
-#, no-c-format
+#: ../extensions/epilicious/progress.py:39
+#, no-c-format, python-format
 msgid "Synchronizing with %s"
 msgstr "กำลังปรับข้อมูลกับ %s"
 
@@ -293,17 +295,17 @@ msgid "Epilicious Synchronize"
 msgstr "การปรับข้อมูล Epilicious"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:1
-msgid "Bookmarks with this topic will be synchronized to del.icio.us."
-msgstr "ที่คั่นหน้าที่มีหัวข้อเรื่องนี้จะถูกปรับข้อมูลไปยัง del.icio.us"
+msgid "Bookmarks with this topic will be synchronized."
+msgstr "ที่คั่นหน้าที่มีหัวข้อเรื่องนี้จะถูกปรับข้อมูล"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:2
 msgid ""
 "Controls the function of the topic. If this is unset then all bookmarks with "
-"the topic will be synched with del.icio.us. If this is set then all "
-"bookmarks without the topic will be synched with del.icio.us."
+"the topic will be synched. If this is set then all bookmarks without the "
+"topic will be synched."
 msgstr ""
-"ควบคุมการปรับข้อมูลของหัวข้อ ถ้าไม่กำหนด ก็จะปรับข้อมูลที่คั่นหน้าทั้งหมดกับ del.icio.us ถ้ากำหนด "
-"ก็จะปรับข้อมูลที่คั่นหน้าที่ไม่มีหัวข้อเหล่านี้กับ del.icio.us"
+"ควบคุมการปรับข้อมูลของหัวข้อ ถ้าไม่กำหนด ก็จะปรับข้อมูลที่คั่นหน้าทั้งหมด ถ้ากำหนด "
+"ก็จะปรับข้อมูลที่คั่นหน้าที่ไม่มีหัวข้อเหล่านี้"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:3
 msgid "Exclude topic"
@@ -316,10 +318,8 @@ msgstr "หัวข้อร่วม"
 #: ../extensions/epilicious/epilicious.schemas.in.h:5
 msgid ""
 "The backend that epilicious will use for synchronizing bookmarks. Allowed "
-"values: 'del.icio.us', 'ma.gnolia'"
-msgstr ""
-"แบ็กเอนด์ที่ epilicious จะใช้ในการปรับข้อมูลที่คั่นหน้า ค่าที่ใช้ได้คือ 'del.icio.us', "
-"'ma.gnolia'"
+"value: 'ma.gnolia'"
+msgstr "แบ็กเอนด์ที่ epilicious จะใช้ในการปรับข้อมูลที่คั่นหน้า ค่าที่ใช้ได้คือ 'ma.gnolia'"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
 msgid "The password that epilicious will use for synchronizing bookmarks."
@@ -341,30 +341,30 @@ msgstr "รหัสผ่าน"
 msgid "username"
 msgstr "ชื่อผู้ใช้"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:98
 msgid "Check _HTML"
 msgstr "ตรวจสอบ _HTML"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:100
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "แสดงข้อผิดพลาด HTML ในกล่องโต้ตอบ"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:104
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
 msgid "Check _Links"
 msgstr "ตรวจสอบ_ลิงก์"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:106
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:107
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr "แสดงลิงก์ที่ไม่ถูกต้องในกล่องโต้ตอบ"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:110
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:111
 msgid "_Error Viewer"
 msgstr "ดูข้อ_ผิดพลาด"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:112
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:113
 msgid "Display web page errors"
 msgstr "แสดงข้อผิดพลาดต่างๆ ในหน้าเว็บ"
 
@@ -376,23 +376,33 @@ msgstr "_ล้าง"
 msgid "Error Viewer"
 msgstr "รายการข้อผิดพลาด"
 
-#. Don't bother looking for source lines -- they're not there
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:96
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:103
 #, c-format
 msgid ""
-"Error:\n"
+"%s error in %s on line %d and column %d:\n"
 "%s"
 msgstr ""
-"ข้อผิดพลาด:\n"
+"ข้อผิดพลาด %s ใน %s ที่บรรทัดที่ %d คอลัมน์ %d:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:126
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:109
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:140
 #, c-format
 msgid ""
-"Javascript error in %s on line %d:\n"
+"%s error in %s:\n"
 "%s"
 msgstr ""
-"ข้อผิดพลาดจาวาสคริปต์ใน %s ที่บรรทัดที่ %d:\n"
+"ข้อผิดพลาด %s ใน %s:\n"
+"%s"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:123
+#, c-format
+msgid ""
+"%s error in %s on line %d:\n"
+"%s"
+msgstr ""
+"ข้อผิดพลาด %s ใน %s ที่บรรทัดที่ %d:\n"
 "%s"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
@@ -416,7 +426,7 @@ msgid "Checking %d Link on “%s”"
 msgid_plural "Checking %d Links on “%s”"
 msgstr[0] "กำลังตรวจสอบลิงก์ %d ลิงก์ใน “%s”"
 
-#: ../extensions/error-viewer/opensp/validate.cpp:167
+#: ../extensions/error-viewer/opensp/validate.cpp:168
 #, c-format
 msgid ""
 "HTML error in “%s” on line %s:\n"
@@ -468,10 +478,12 @@ msgid "HTML error in %s:"
 msgstr "ข้อผิดพลาด HTML ใน %s:"
 
 #: ../extensions/error-viewer/sgml-validator.c:368
+#, c-format
 msgid "Invalid character encoding"
 msgstr "การลงรหัสอักขระไม่ถูกต้อง"
 
 #: ../extensions/error-viewer/sgml-validator.c:373
+#, c-format
 msgid "Unknown error while converting to UTF-8"
 msgstr "เกิดข้อผิดพลาดไม่ทราบสาเหตุขณะแปลงเป็น UTF-8"
 
@@ -489,7 +501,7 @@ msgid "Enabled"
 msgstr "เปิดใช้"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
-#: ../extensions/rss/rss-ui.c:599
+#: ../extensions/rss/rss-ui.c:584
 msgid "Description"
 msgstr "คำบรรยาย"
 
@@ -502,31 +514,28 @@ msgid "Extensions"
 msgstr "ส่วนขยาย"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
-msgid "_Extensions..."
-msgstr "ส่วน_ขยาย..."
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "_Extensions"
+msgstr "ส่วน_ขยาย"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
 msgid "Load and unload extensions"
 msgstr "เรียกใช้และเลิกใช้ส่วนขยายต่างๆ"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
-msgid "_Extensions"
-msgstr "ส่วน_ขยาย"
-
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
 msgid "Help about extensions"
 msgstr "เครื่องมือช่วยจัดการส่วนขยายต่างๆ"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:88
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:85
 msgid "Install User _Script"
 msgstr "ติดตั้ง_สคริปต์ผู้ใช้"
 
 #. shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:90
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
 msgid "Install Greasemonkey script"
 msgstr "ติดตั้งสคริปต์ Greasemonkey"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:315
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:318
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "ติดตั้งสคริปต์ผู้ใช้จาก “%s” เรียบร้อยแล้ว"
@@ -568,171 +577,171 @@ msgstr "ข้อมูลส่วนหัวแบบสด"
 msgid "Remove headers"
 msgstr "ลบข้อมูลส่วนหัว"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/page-info/ephy-page-info-extension.c:68
 msgid "Pa_ge Information"
 msgstr "ข้อมูลเ_ว็บ"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:69
+#: ../extensions/page-info/ephy-page-info-extension.c:70
 msgid "Display page information in a dialog"
 msgstr "แสดงข้อมูลของหน้าเว็บในกล่องโต้ตอบ"
 
-#: ../extensions/page-info/page-info-dialog.c:730
+#: ../extensions/page-info/page-info-dialog.c:722
 msgid "Save As..."
 msgstr "บันทึกเป็น..."
 
-#: ../extensions/page-info/page-info-dialog.c:747
+#: ../extensions/page-info/page-info-dialog.c:739
 msgid "Select a directory"
 msgstr "เลือกไดเรกทอรี"
 
-#: ../extensions/page-info/page-info-dialog.c:796
+#: ../extensions/page-info/page-info-dialog.c:788
 msgid "Unknown type"
 msgstr "ไม่ทราบชนิด"
 
-#: ../extensions/page-info/page-info-dialog.c:801
+#: ../extensions/page-info/page-info-dialog.c:793
 msgid "Full standards compliance"
 msgstr "ตรงตามมาตรฐานอย่างสมบูรณ์"
 
-#: ../extensions/page-info/page-info-dialog.c:804
+#: ../extensions/page-info/page-info-dialog.c:796
 msgid "Almost standards compliance"
 msgstr "ตรงตามมาตรฐานเกือบทั้งหมด"
 
-#: ../extensions/page-info/page-info-dialog.c:807
+#: ../extensions/page-info/page-info-dialog.c:799
 msgid "Compatibility"
 msgstr "เข้ากันได้"
 
-#: ../extensions/page-info/page-info-dialog.c:811
+#: ../extensions/page-info/page-info-dialog.c:803
 msgid "Undetermined"
 msgstr "ไม่ทราบ"
 
-#: ../extensions/page-info/page-info-dialog.c:820
+#: ../extensions/page-info/page-info-dialog.c:812
 msgid "Not cached"
 msgstr "ไม่อยู่ในแคช"
 
-#: ../extensions/page-info/page-info-dialog.c:823
+#: ../extensions/page-info/page-info-dialog.c:815
 msgid "Disk cache"
 msgstr "แคชในดิสก์"
 
-#: ../extensions/page-info/page-info-dialog.c:826
+#: ../extensions/page-info/page-info-dialog.c:818
 msgid "Memory cache"
 msgstr "แคชในหน่วยความจำ"
 
-#: ../extensions/page-info/page-info-dialog.c:829
+#: ../extensions/page-info/page-info-dialog.c:821
 msgid "Unknown cache"
 msgstr "แคชไม่ทราบชนิด"
 
-#: ../extensions/page-info/page-info-dialog.c:845
-#: ../extensions/page-info/page-info-dialog.c:961
+#: ../extensions/page-info/page-info-dialog.c:837
+#: ../extensions/page-info/page-info-dialog.c:953
 msgid "Unknown"
 msgstr "ไม่ทราบ"
 
-#: ../extensions/page-info/page-info-dialog.c:850
+#: ../extensions/page-info/page-info-dialog.c:842
 msgid "No referrer"
 msgstr "ไม่มีผู้อ้างถึง"
 
-#: ../extensions/page-info/page-info-dialog.c:864
-#: ../extensions/page-info/page-info-dialog.c:880
+#: ../extensions/page-info/page-info-dialog.c:856
+#: ../extensions/page-info/page-info-dialog.c:872
 msgid "Not specified"
 msgstr "ไม่ระบุ"
 
-#: ../extensions/page-info/page-info-dialog.c:943
+#: ../extensions/page-info/page-info-dialog.c:935
 msgid "Image"
 msgstr "รูปภาพ"
 
-#: ../extensions/page-info/page-info-dialog.c:946
+#: ../extensions/page-info/page-info-dialog.c:938
 msgid "Background image"
 msgstr "ภาพพื้นหลัง"
 
-#: ../extensions/page-info/page-info-dialog.c:949
+#: ../extensions/page-info/page-info-dialog.c:941
 msgid "Embed"
 msgstr "ฝังตัว"
 
-#: ../extensions/page-info/page-info-dialog.c:952
+#: ../extensions/page-info/page-info-dialog.c:944
 msgid "Object"
 msgstr "ออบเจ็กต์"
 
-#: ../extensions/page-info/page-info-dialog.c:955
+#: ../extensions/page-info/page-info-dialog.c:947
 msgid "Applet"
 msgstr "แอพเพล็ต"
 
-#: ../extensions/page-info/page-info-dialog.c:958
+#: ../extensions/page-info/page-info-dialog.c:950
 msgid "Icon"
 msgstr "ไอคอน"
 
-#: ../extensions/page-info/page-info-dialog.c:1130
+#: ../extensions/page-info/page-info-dialog.c:1131
 msgid "_Open"
 msgstr "เ_ปิด"
 
-#: ../extensions/page-info/page-info-dialog.c:1136
-#: ../extensions/page-info/page-info-dialog.c:1581
+#: ../extensions/page-info/page-info-dialog.c:1137
+#: ../extensions/page-info/page-info-dialog.c:1582
 msgid "_Copy Link Address"
 msgstr "_คัดลอกตำแหน่งลิงก์"
 
-#: ../extensions/page-info/page-info-dialog.c:1142
+#: ../extensions/page-info/page-info-dialog.c:1143
 msgid "_Use as Background"
 msgstr "ใ_ช้เป็นภาพพื้นหลัง"
 
-#: ../extensions/page-info/page-info-dialog.c:1148
-#: ../extensions/page-info/page-info-dialog.c:1587
+#: ../extensions/page-info/page-info-dialog.c:1149
+#: ../extensions/page-info/page-info-dialog.c:1588
 msgid "_Save As..."
 msgstr "บันทึกเป็_น..."
 
-#: ../extensions/page-info/page-info-dialog.c:1380
-#: ../extensions/page-info/page-info-dialog.c:1701
+#: ../extensions/page-info/page-info-dialog.c:1381
+#: ../extensions/page-info/page-info-dialog.c:1702
 msgid "Blocked"
 msgstr "ถูกกั้น"
 
-#: ../extensions/page-info/page-info-dialog.c:1396
-#: ../extensions/page-info/page-info-dialog.c:1717
+#: ../extensions/page-info/page-info-dialog.c:1397
+#: ../extensions/page-info/page-info-dialog.c:1718
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1409
+#: ../extensions/page-info/page-info-dialog.c:1410
 msgid "Type"
 msgstr "ชนิด"
 
-#: ../extensions/page-info/page-info-dialog.c:1421
+#: ../extensions/page-info/page-info-dialog.c:1422
 msgid "Alt Text"
 msgstr "ข้อความแทน"
 
-#: ../extensions/page-info/page-info-dialog.c:1433
-#: ../extensions/page-info/page-info-dialog.c:1730
+#: ../extensions/page-info/page-info-dialog.c:1434
+#: ../extensions/page-info/page-info-dialog.c:1731
 msgid "Title"
 msgstr "ป้ายชื่อ"
 
-#: ../extensions/page-info/page-info-dialog.c:1445
+#: ../extensions/page-info/page-info-dialog.c:1446
 msgid "Width"
 msgstr "กว้าง"
 
-#: ../extensions/page-info/page-info-dialog.c:1457
+#: ../extensions/page-info/page-info-dialog.c:1458
 msgid "Height"
 msgstr "สูง"
 
-#: ../extensions/page-info/page-info-dialog.c:1742
+#: ../extensions/page-info/page-info-dialog.c:1743
 msgid "Relation"
 msgstr "ความสัมพันธ์"
 
-#: ../extensions/page-info/page-info-dialog.c:1891
-#: ../extensions/page-info/page-info-dialog.c:2032
+#: ../extensions/page-info/page-info-dialog.c:1892
+#: ../extensions/page-info/page-info-dialog.c:2033
 msgid "Name"
 msgstr "ชื่อ"
 
-#: ../extensions/page-info/page-info-dialog.c:1903
+#: ../extensions/page-info/page-info-dialog.c:1904
 msgid "Method"
 msgstr "วิธีติดต่อ"
 
-#: ../extensions/page-info/page-info-dialog.c:1917
+#: ../extensions/page-info/page-info-dialog.c:1918
 msgid "Action"
 msgstr "การกระทำ"
 
-#: ../extensions/page-info/page-info-dialog.c:1998
+#: ../extensions/page-info/page-info-dialog.c:1999
 msgid "_Copy"
 msgstr "_คัดลอก"
 
-#: ../extensions/page-info/page-info-dialog.c:2044
+#: ../extensions/page-info/page-info-dialog.c:2045
 msgid "Content"
 msgstr "เนื้อหา"
 
-#: ../extensions/page-info/page-info-dialog.c:2145
+#: ../extensions/page-info/page-info-dialog.c:2146
 msgid "Page Metadata"
 msgstr "Metadata ของหน้าเว็บ"
 
@@ -907,39 +916,39 @@ msgstr "การ_อนุญาตสำหรับไซต์"
 msgid "Manage web site permissions"
 msgstr "จัดการการอนุญาตสำหรับไซต์"
 
-#: ../extensions/rss/ephy-rss-extension.c:90
+#: ../extensions/rss/ephy-rss-extension.c:91
 msgid "News Feeds Subscription"
 msgstr "การบอกรับข่าวป้อน"
 
-#: ../extensions/rss/ephy-rss-extension.c:92
+#: ../extensions/rss/ephy-rss-extension.c:93
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr "บอกรับข่าวป้อนจากเว็บไซต์นี้ โดยใช้โปรแกรมอ่านข่าวที่คุณชอบ"
 
-#: ../extensions/rss/ephy-rss-extension.c:97
+#: ../extensions/rss/ephy-rss-extension.c:98
 msgid "_Subscribe to this feed"
 msgstr "_บอกรับข่าวป้อนนี้"
 
-#: ../extensions/rss/ephy-rss-extension.c:99
+#: ../extensions/rss/ephy-rss-extension.c:100
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "บอกรับข่าวป้อนนี้ในโปรแกรมอ่านข่าวของคุณ"
 
-#: ../extensions/rss/ephy-rss-extension.c:381
+#: ../extensions/rss/ephy-rss-extension.c:373
 msgid "Subscribe to site's news feed"
 msgstr "บอกรับข่าวป้อนของเว็บไซต์"
 
-#: ../extensions/rss/rss-ui.c:167
+#: ../extensions/rss/rss-ui.c:166
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr "<b><i>ไม่สามารถติดต่อไปยังโปรแกรมอ่านข่าวป้อน โปรแกรมทำงานอยู่หรือเปล่า?</i></b>"
 
-#: ../extensions/rss/rss-ui.c:169
+#: ../extensions/rss/rss-ui.c:168
 msgid "Retry"
 msgstr "ลองใหม่"
 
-#: ../extensions/rss/rss-ui.c:297
+#: ../extensions/rss/rss-ui.c:296
 msgid "_Copy Feed Address"
 msgstr "_คัดลอกที่อยู่ข่าวป้อน"
 
-#: ../extensions/rss/rss-ui.c:591
+#: ../extensions/rss/rss-ui.c:576
 msgid "Subscribe"
 msgstr "บอกรับ"
 
@@ -956,32 +965,32 @@ msgstr "การบอกรับข่าวป้อน"
 msgid "_Subscribe"
 msgstr "_บอกรับ"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:145
+#: ../extensions/select-stylesheet/ephy-css-menu.c:146
 msgid "Render the page without using a style"
 msgstr "แสดงหน้าเว็บโดยไม่ใช้สไตล์ใดๆ"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:148
+#: ../extensions/select-stylesheet/ephy-css-menu.c:149
 msgid "Render the page using the default style"
 msgstr "แสดงหน้าเว็บโดยใช้สไตล์ปริยาย"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:151
+#: ../extensions/select-stylesheet/ephy-css-menu.c:152
 #, c-format
 msgid "Render the page using the “%s” style"
 msgstr "แสดงหน้าเว็บโดยใช้สไตล์ “%s”"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:309
+#: ../extensions/select-stylesheet/ephy-css-menu.c:323
 msgid "St_yle"
 msgstr "สไ_ตล์"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:310
+#: ../extensions/select-stylesheet/ephy-css-menu.c:324
 msgid "Select a different style for this page"
 msgstr "เลือกสไตล์อื่นเพื่อแสดงหน้าเว็บนี้"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:224
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
 msgid "Default"
 msgstr "ปริยาย"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:235
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
 msgid "None"
 msgstr "ไม่ใช้"
 
@@ -997,41 +1006,53 @@ msgstr "แถบ_ข้าง"
 msgid "Show or hide the sidebar"
 msgstr "แสดงหรือซ่อนแถบข้าง"
 
+#: ../extensions/sidebar/ephy-sidebar-extension.c:323
+msgid "Do you really want to remove this sidebar?"
+msgstr "ยืนยันที่จะลบแถบข้างนี้หรือไม่?"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:327
+msgid "There is no way to recover this sidebar after removal."
+msgstr "หลังจากลบแล้ว จะเรียกแถบข้างนี้คืนมาไม่ได้อีก"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:329
+msgid "Remove Sidebar"
+msgstr "ลบแถบข้าง"
+
 #. Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:408
+#: ../extensions/sidebar/ephy-sidebar-extension.c:476
 #, c-format
 msgid "The sidebar already contains “%s”"
 msgstr "แถบข้างมี “%s” อยู่ก่อนแล้ว"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:412
+#: ../extensions/sidebar/ephy-sidebar-extension.c:480
 msgid ""
 "To use this sidebar, select it from the list of available sidebar pages."
 msgstr "หากจะใช้แถบข้างนี้ คุณสามารถเลือกได้จากรายการแถบข้างที่มีอยู่"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:415
-#: ../extensions/sidebar/ephy-sidebar-extension.c:441
+#: ../extensions/sidebar/ephy-sidebar-extension.c:483
+#: ../extensions/sidebar/ephy-sidebar-extension.c:509
 msgid "Add Sidebar"
 msgstr "เพิ่มแถบข้าง"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:435
+#: ../extensions/sidebar/ephy-sidebar-extension.c:503
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr "เพิ่ม “%s” ลงในแถบข้างหรือไม่?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:439
+#: ../extensions/sidebar/ephy-sidebar-extension.c:507
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr "แหล่งของหน้าเว็บของแถบข้างใหม่ที่จะเพิ่มคือ “%s”"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:445
+#: ../extensions/sidebar/ephy-sidebar-extension.c:513
 msgid "_Add Sidebar"
 msgstr "เ_พิ่มแถบข้าง"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:551
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:542
 msgid "_Look Up"
 msgstr "_ค้นหา"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:558
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:549
 msgid "_GNOME Dictionary"
 msgstr "_พจนานุกรม GNOME"
 
@@ -1046,6 +1067,14 @@ msgstr "เปิดผลการค้นหาในแท็บใหม่
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
 msgstr "เรียกคำสั่งตามต้องการจากเมนูคลิกขวา"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
+msgid "Ad Blocker"
+msgstr "ปิดโฆษณา"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
+msgid "Block the pest!"
+msgstr "กั้นโฆษณาที่ไม่อยากอ่าน"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
 msgid "Auto Scroll"
@@ -1076,8 +1105,8 @@ msgid "View the page certificate and manage the certificates"
 msgstr "ดูใบรับรองของหน้าเว็บและจัดการใบรับรองต่างๆ"
 
 #: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
-msgid "Synchronize bookmarks with del.icio.us"
-msgstr "ปรับข้อมูลกับ del.icio.us"
+msgid "Synchronize bookmarks with social bookmark sites"
+msgstr "ปรับข้อมูลที่คั่นหน้ากับแหล่งที่คั่นหน้าในชุมชน"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -1156,6 +1185,14 @@ msgstr "ลากเลื่อนหน้าด้วยการคลิก
 msgid "Push Scroll"
 msgstr "จับเลื่อนหน้า"
 
+#: ../extensions/python-console/python-console.ephy-extension.in.h:1
+msgid "Opens an interactive Python console"
+msgstr "เปิดคอนโซลโต้ตอบของไพธอน"
+
+#: ../extensions/python-console/python-console.ephy-extension.in.h:2
+msgid "Python Console"
+msgstr "คอนโซลของไพธอน"
+
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
@@ -1216,6 +1253,16 @@ msgstr "บ่งชี้การเปลี่ยนแปลงเนื้
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "สถานะแท็บ"
+
+#~ msgid ""
+#~ "Error:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "ข้อผิดพลาด:\n"
+#~ "%s"
+
+#~ msgid "_Extensions..."
+#~ msgstr "ส่วน_ขยาย..."
 
 #~ msgid "<b>Synchronizing with del.icio.us</b>"
 #~ msgstr "<b>กำลังปรับข้อมูลกับ del.icio.us</b>"
