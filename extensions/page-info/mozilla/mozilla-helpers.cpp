@@ -169,7 +169,7 @@ PageInfoHelper::Init (EphyEmbed *aEmbed)
   NS_ENSURE_ARG (aEmbed);
 
   nsCOMPtr<nsIWebBrowser> browser;
-  gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (aEmbed),
+  gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (gtk_bin_get_child (GTK_BIN (aEmbed))),
                                    getter_AddRefs (browser));
   NS_ENSURE_TRUE (browser, NS_ERROR_FAILURE);
 
