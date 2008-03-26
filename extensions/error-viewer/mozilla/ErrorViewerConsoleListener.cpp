@@ -167,7 +167,12 @@ NS_IMETHODIMP ErrorViewerConsoleListener::Observe(nsIConsoleMessage *aMessage)
 
 		g_warning ("Could not get nsIScriptError");
 
-		rv = aMessage->GetMessage (&message);
+#ifdef HAVE_GECKO_1_9
+		rv = aMessage->GetMessageMoz (&message);
+#else
+                rv = aMessage->GetMessage (&message);
+#endif
+
 		NS_ENSURE_TRUE (NS_SUCCEEDED (rv) && message, NS_ERROR_FAILURE);
 
 		nsCString cMessage;

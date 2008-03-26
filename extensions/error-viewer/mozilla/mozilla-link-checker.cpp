@@ -21,8 +21,8 @@
 #include "mozilla-config.h"
 #include "config.h"
 
-#include <gtkembedmoz/gtkmozembed.h>
-#include <gtkembedmoz/gtkmozembed_internal.h>
+#include <gtkmozembed.h>
+#include <gtkmozembed_internal.h>
 #include <nsAutoPtr.h>
 #include <nsCOMPtr.h>
 #include <nsComponentManagerUtils.h>
