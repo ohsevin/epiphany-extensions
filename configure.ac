@@ -323,13 +323,43 @@ AC_SUBST([MOZILLA_INCLUDE_ROOT])
 
 case "$MOZILLA" in
 xulrunner) min_version=1.8 ;;
+libxul*) min_version=1.9 ;;
 *firefox) min_version=1.5 ;;
 *) AC_MSG_ERROR([Unsupported gecko "$gecko_cv_gecko"]) ;;
 esac
 
-PKG_CHECK_MODULES([MOZILLA_COMPONENT],[${gecko_cv_gecko}-xpcom >= $min_version $gecko_cv_extra_pkg_dependencies])
-AC_SUBST([MOZILLA_COMPONENT_CFLAGS])
-AC_SUBST([MOZILLA_COMPONENT_LIBS])
+if test $gecko_cv_gecko != "libxul-embedding" -a $gecko_cv_gecko != "libxul"; then
+	PKG_CHECK_MODULES([MOZILLA_COMPONENT],[ ${gecko_cv_gecko}-xpcom >= $min_version ${gecko_cv_gecko}-js $gecko_cv_extra_pkg_dependencies])
+else
+	MOZILLA_COMPONENT_CFLAGS="$MOZILLA_COMPONENT_CFLAGS -UDEBUG"
+	MOZILLA_COMPONENT_LIBS="$MOZILLA_COMPONENT_LIBS `pkg-config --libs ${gecko_cv_gecko}`"
+fi
+
+AC_MSG_CHECKING(nspr in gecko)
+if test "$MOZILLA_COMPONENT_NSPR" != yes; then
+	AC_MSG_RESULT(no)
+	AC_MSG_CHECKING(nspr in system)
+	gecko_nspr=
+	if $PKG_CONFIG --exists mozilla-nspr; then
+		gecko_nspr=mozilla-nspr
+	elif $PKG_CONFIG --exists ${gecko_cv_gecko}-nspr; then
+		gecko_nspr=${gecko_cv_gecko}-nspr
+	fi
+	if $PKG_CONFIG --exists nspr; then
+		gecko_nspr=nspr
+	fi
+	if test -z "$gecko_nspr"; then
+		AC_MSG_ERROR([no nspr available])
+	fi
+
+	MOZILLA_COMPONENT_CFLAGS="$MOZILLA_COMPONENT_CFLAGS `$PKG_CONFIG --cflags ${gecko_nspr}`"
+	MOZILLA_COMPONENT_LIBS="$MOZILLA_COMPONENT_LIBS `$PKG_CONFIG --libs ${gecko_nspr}`"
+	_MOZILLA_COMPONENT_CFLAGS="$MOZILLA_COMPONENT_CFLAGS"
+	AC_MSG_RESULT(yes)
+else
+	AC_MSG_RESULT(yes)
+fi
+
 
 fi # test "$EPIPHANY_ENGINE" != "webkit"
 
