@@ -23,8 +23,12 @@
 
 #include <nscore.h>
 
+#ifdef HAVE_GECKO_1_9
+#include <nsStringGlue.h>
+#else
 #define MOZILLA_INTERNAL_API 1
 #include <nsString.h>
+#endif /* HAVE_GECKO_1_9 */
 
 #include <nsCOMPtr.h>
 #include <nsIDOMDocument.h>

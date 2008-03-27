@@ -26,9 +26,14 @@
 #include "LiveHTTPHeadersListener.h"
 #include "mozilla-helper.h"
 
+#ifdef HAVE_GECKO_1_9
+#include <nsStringGlue.h>
+#else
 #undef MOZILLA_INTERNAL_API
 #include <nsEmbedString.h>
 #define MOZILLA_INTERNAL_API 1
+#endif /* HAVE_GECKO_1_9 */
+
 #include <nsIHttpChannel.h>
 #include <nsIHttpHeaderVisitor.h>
 #include <nsIHttpProtocolHandler.h>
@@ -43,7 +48,7 @@ public:
 	HeaderVisitor();
 	~HeaderVisitor();
 
-	nsEmbedCString mHeader;	
+	nsCString mHeader;
 };
 
 NS_IMPL_ISUPPORTS1(HeaderVisitor, nsIHttpHeaderVisitor)
@@ -87,7 +92,7 @@ NS_IMETHODIMP LiveHTTPHeadersListener::Observe(nsISupports *aSubject, const char
 	nsCOMPtr<nsIHttpChannel> protocol = do_QueryInterface (aSubject);
 	NS_ENSURE_TRUE (protocol, NS_ERROR_FAILURE);
 
-	nsEmbedCString name;
+	nsCString name;
 	protocol->GetName (name);
 
 	if (strcmp (aTopic, NS_HTTP_ON_MODIFY_REQUEST_TOPIC) == 0)
