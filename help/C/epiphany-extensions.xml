@@ -195,8 +195,15 @@
 						</listitem>
 					</orderedlist>
 				</para>
-				<figure><title>An example of action</title>
-				<graphic fileref="figures/epi-ext-action-create.png"/>
+				<figure>
+				  <title>An example of action</title>
+                    <screenshot>
+                      <mediaobject>
+                        <imageobject>
+                          <imagedata fileref="figures/epi-ext-action-create.png" format="PNG"/>
+                        </imageobject>
+                      </mediaobject>
+                    </screenshot>
 				</figure>
 			</sect3>
 			
@@ -257,8 +264,15 @@
 
 			<para>To use a custom action, choose the action to execute from the context 
 			menu of the element you wish to perform the action on.</para>
-			<figure><title>The &app; image context menu with a custom action</title>
-			<graphic fileref="figures/epi-ext-actions-use.png"/>
+			<figure>
+			  <title>The &app; image context menu with a custom action</title>
+                <screenshot>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata fileref="figures/epi-ext-actions-use.png" format="PNG"/>
+                    </imageobject>
+                  </mediaobject>
+                </screenshot>
 			</figure>
 		</sect2>
 
@@ -281,14 +295,19 @@
 			The extension will ignore link to ads when you visit websites, and	they won't 
 			be displayed in web pages.</para>
 			<para>&app; will display an icon in left side of the status bar 
-			(see <xref linkend="epi-ext-figure-adblocker"	/>) to inform you that it has 
+			(see <xref linkend="epi-ext-figure-adblocker"/>) to inform you that it has 
 			blocked ads. If you move the mouse pointer over the icon, it will
-			give you of the number of ads blocked in the page.
+			give you the number of ads blocked in the page.</para>
 			<figure id="epi-ext-figure-adblocker">
-				<title>The Ad Blocker icon</title>
-				<graphic fileref="figures/epi-ext-adblocker.png"/>
+			  <title>The Ad Blocker icon</title>
+                <screenshot>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata fileref="figures/epi-ext-adblocker.png" format="PNG"/>
+                    </imageobject>
+                  </mediaobject>
+                </screenshot>
 			</figure>
-			</para>
 		</sect2>
 
 		<sect2 id="epi-ext-adblocker-usage-extend">
@@ -416,7 +435,7 @@
 			<sect3 id="epi-ext-certificates-usage-manage">
 				<title>Manage Certificates</title>
 			
-				<para>Certificates extensions lets you manage the certificates
+				<para>The Certificates extension lets you manage the certificates
 				stored by &app; Browser.</para>
 				<para>To display the <guilabel>Certificate Manager</guilabel>, choose
 				<menuchoice><guimenu>Tools</guimenu><guimenuitem>Manage
@@ -455,7 +474,7 @@
 			<sect3 id="epi-ext-certificates-usage-manage-devices">
 				<title>Manage Security Devices</title>
 			
-				<para>Security Devices are used encrypt and decrypt connections
+				<para>Security Devices are used to encrypt and decrypt connections
 				and can store certificates and passwords.</para>
 			</sect3>
 		</sect2>
@@ -479,7 +498,7 @@
 			functions:
 				<variablelist>
 					<varlistentry>
-						<term><guilabel>Links Checker</guilabel></term>
+						<term><guilabel>Link Checker</guilabel></term>
 						<listitem><para>Detects dead links on a site</para></listitem>
 					</varlistentry>
 					<varlistentry>
@@ -493,7 +512,7 @@
 					</varlistentry>
 				</variablelist>
 			</para>
-			<para>To launch the Links Checker, choose
+			<para>To launch the Link Checker, choose
 			<menuchoice><guimenu>Tools</guimenu><guimenuitem>Check
 			Links</guimenuitem></menuchoice>. The error viewer window will open, and
 			the links verification will start automatically.</para>
@@ -533,7 +552,7 @@
 		<sect2 id="epi-ext-gestures-intro">
 			<title>Introduction</title>
 	
-			<para>The Gestures allows you to quickly perform actions in &app; by drawing
+			<para>The Gestures extension allows you to quickly perform actions in &app; by drawing
 			a shape with the mouse.</para>
 		</sect2>
 
@@ -746,7 +765,7 @@
 				the system.</para>
 				
 				<para>If you open this file, you see a set of markup gesture, and
-				inside them, there is one of several markup sequence and one markup
+				inside them, there is one or several markup sequence and one markup
 				action.
 				<example>
 					<title>A Gesture Example</title>
@@ -795,7 +814,7 @@
 					placed to the top-left hand corner and the "9" at the bottom-right
 					hand corner).</para>
 					<para>If we want to draw a <wordasword>P</wordasword>, the key sequence
-					is 74123654, insert this value between the markups "sequence".</para>
+					is 74123654. Insert this value between the markups "sequence".</para>
 				<programlisting>
 <![CDATA[<?xml version="1.0"?>
 <epiphany_gestures version="0.4">
@@ -843,7 +862,7 @@
 			url="http://userscripts.org/">http://userscripts.org/</ulink>.</para>
 			<para>To learn more about Greasemonkey, read the <ulink
 			url="http://en.wikipedia.org/wiki/Greasemonkey">definition</ulink> on the 
-			Wikipedia on-line enciclopedia.</para>
+			Wikipedia on-line encyclopedia.</para>
 		</sect2>
 
 		<sect2 id="epi-ext-greasemonkey-usage">
@@ -928,7 +947,7 @@
 					<listitem>
 						<para>
 							Choose the feeds you wan to subscribe to. You can also copy the feed
-							Loaction using the feed's context menu.
+							Location using the feed's context menu.
 						</para>
 					</listitem>
 					<listitem>
@@ -967,7 +986,7 @@
 					</varlistentry>
 					<varlistentry>
 						<term><guilabel>Media</guilabel></term>
-						<listitem><para>displays media files (pictures, sounds,...) 
+						<listitem><para>Displays media files (pictures, sounds,...) 
 						used on the page.</para></listitem>
 					</varlistentry>
 					<varlistentry>
@@ -1063,8 +1082,14 @@
 			<title>Using Sidebar</title>
 
 			<figure>
-				<title>&app; with a Sidebar displayed</title>
-				<graphic fileref="figures/epi-ext-sidebar.png"/>
+			  <title>&app; with a Sidebar displayed</title>
+                <screenshot>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata fileref="figures/epi-ext-sidebar.png" format="PNG"/>
+                    </imageobject>
+                  </mediaobject>
+                </screenshot>
 			</figure>
 
 			<sect3 id="epi-ext-sidebar-usage-display">
@@ -1082,7 +1107,7 @@
 				
 				<para>To add a Sidebar, activate the Sidebar extension, then
 				click on the link that the website provides to install the sidebar.
-				A window requests to add the document to the Sidebar, 
+				A dialog requests to add the document to the Sidebar, 
 				click <guibutton>Add a Sidebar</guibutton>, the sidebar document
 				is added to the Sidebar.</para> 
 				<para>You can find a list of websites that provide sidebar on <ulink
@@ -1123,8 +1148,8 @@
 			type="help" url="ghelp:epiphany#smart-bookmarks-create-a-smartbookmark">
 			section</ulink>	in the &app; manual.</para>
 			<para>To look up text, select the text in a web page and 
-			choose <guimenuitem>look-up</guimenuitem> and the smart
-			bookmark from the context menu. A web browser will be opened with the result
+			choose <guimenuitem>Look Up</guimenuitem> and the smart
+			bookmark from the context menu. A new browser window will be opened with the result
 			of the look-up.</para>
 		</sect2>
 	</sect1>
@@ -1147,8 +1172,14 @@
 			a new tab, it	will be created after the current tab.</para>
 
 			<figure>
-				<title>A new tab created after the first tab</title>
-				<graphic fileref="figures/epi-ext-tabgroups.png"/>
+			  <title>A new tab created after the first tab</title>
+                <screenshot>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata fileref="figures/epi-ext-tabgroups.png" format="PNG"/>
+                    </imageobject>
+                  </mediaobject>
+                </screenshot>
 			</figure>
 		</sect2>
 	</sect1>
