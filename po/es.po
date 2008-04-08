@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2008-01-27 16:09+0000\n"
-"PO-Revision-Date: 2008-04-08 11:18+0200\n"
+"POT-Creation-Date: 2008-04-08 10:20+0100\n"
+"PO-Revision-Date: 2008-04-08 16:08+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -128,7 +128,7 @@ msgstr "Propiedades de «%s»"
 msgid "Action Properties"
 msgstr "Propiedades de la acción"
 
-#: ../extensions/adblock/adblock-ui.c:279
+#: ../extensions/adblock/adblock-ui.c:275
 msgid ""
 "This list is Copyright © its original author(G). It is relicensed under the "
 "GPL with permission.\n"
@@ -146,7 +146,7 @@ msgstr ""
 "aprobados por el autor original;\n"
 "dirija cualquier problema a Bugzilla y no al autor original (G).\n"
 
-#: ../extensions/adblock/adblock-ui.c:497
+#: ../extensions/adblock/adblock-ui.c:493
 msgid "Pattern"
 msgstr "Patrón"
 
@@ -495,10 +495,12 @@ msgid "HTML error in %s:"
 msgstr "Error HTML en %s:"
 
 #: ../extensions/error-viewer/sgml-validator.c:368
+#, c-format
 msgid "Invalid character encoding"
 msgstr "Codificación de caracteres inválida"
 
 #: ../extensions/error-viewer/sgml-validator.c:373
+#, c-format
 msgid "Unknown error while converting to UTF-8"
 msgstr "Error desconocido al convertir a UTF-8"
 
@@ -516,7 +518,7 @@ msgid "Enabled"
 msgstr "Activada"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
-#: ../extensions/rss/rss-ui.c:599
+#: ../extensions/rss/rss-ui.c:584
 msgid "Description"
 msgstr "Descripción"
 
@@ -541,16 +543,16 @@ msgstr "Cargar y descargar extensiones"
 msgid "Help about extensions"
 msgstr "Ayuda acerca de las extensiones"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:88
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:85
 msgid "Install User _Script"
 msgstr "Instalar _script de usuario"
 
 #. shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:90
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
 msgid "Install Greasemonkey script"
 msgstr "Instalar script Greasemonkey"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:315
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:318
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "Se ha instalado el script de usuario en «%s»"
@@ -600,163 +602,163 @@ msgstr "Información de la _página"
 msgid "Display page information in a dialog"
 msgstr "Muestra la información de la página en un diálogo"
 
-#: ../extensions/page-info/page-info-dialog.c:730
+#: ../extensions/page-info/page-info-dialog.c:722
 msgid "Save As..."
 msgstr "Guardar como..."
 
-#: ../extensions/page-info/page-info-dialog.c:747
+#: ../extensions/page-info/page-info-dialog.c:739
 msgid "Select a directory"
 msgstr "Seleccione un directorio"
 
-#: ../extensions/page-info/page-info-dialog.c:796
+#: ../extensions/page-info/page-info-dialog.c:788
 msgid "Unknown type"
 msgstr "Tipo desconocido"
 
-#: ../extensions/page-info/page-info-dialog.c:801
+#: ../extensions/page-info/page-info-dialog.c:793
 msgid "Full standards compliance"
 msgstr "Cumple con todos los estándares"
 
-#: ../extensions/page-info/page-info-dialog.c:804
+#: ../extensions/page-info/page-info-dialog.c:796
 msgid "Almost standards compliance"
 msgstr "Cumple con la mayoría de los estándares"
 
-#: ../extensions/page-info/page-info-dialog.c:807
+#: ../extensions/page-info/page-info-dialog.c:799
 msgid "Compatibility"
 msgstr "Compatibilidad"
 
-#: ../extensions/page-info/page-info-dialog.c:811
+#: ../extensions/page-info/page-info-dialog.c:803
 msgid "Undetermined"
 msgstr "Indeterminada"
 
-#: ../extensions/page-info/page-info-dialog.c:820
+#: ../extensions/page-info/page-info-dialog.c:812
 msgid "Not cached"
 msgstr "No cacheado"
 
-#: ../extensions/page-info/page-info-dialog.c:823
+#: ../extensions/page-info/page-info-dialog.c:815
 msgid "Disk cache"
 msgstr "Caché de disco"
 
-#: ../extensions/page-info/page-info-dialog.c:826
+#: ../extensions/page-info/page-info-dialog.c:818
 msgid "Memory cache"
 msgstr "Caché de memoria"
 
-#: ../extensions/page-info/page-info-dialog.c:829
+#: ../extensions/page-info/page-info-dialog.c:821
 msgid "Unknown cache"
 msgstr "Caché desconocido"
 
-#: ../extensions/page-info/page-info-dialog.c:845
-#: ../extensions/page-info/page-info-dialog.c:961
+#: ../extensions/page-info/page-info-dialog.c:837
+#: ../extensions/page-info/page-info-dialog.c:953
 msgid "Unknown"
 msgstr "Desconocido "
 
-#: ../extensions/page-info/page-info-dialog.c:850
+#: ../extensions/page-info/page-info-dialog.c:842
 msgid "No referrer"
 msgstr "Sin referrer"
 
-#: ../extensions/page-info/page-info-dialog.c:864
-#: ../extensions/page-info/page-info-dialog.c:880
+#: ../extensions/page-info/page-info-dialog.c:856
+#: ../extensions/page-info/page-info-dialog.c:872
 msgid "Not specified"
 msgstr "Sin especificar"
 
-#: ../extensions/page-info/page-info-dialog.c:943
+#: ../extensions/page-info/page-info-dialog.c:935
 msgid "Image"
 msgstr "Imagen"
 
-#: ../extensions/page-info/page-info-dialog.c:946
+#: ../extensions/page-info/page-info-dialog.c:938
 msgid "Background image"
 msgstr "Imagen de fondo"
 
-#: ../extensions/page-info/page-info-dialog.c:949
+#: ../extensions/page-info/page-info-dialog.c:941
 msgid "Embed"
 msgstr "Embeber"
 
-#: ../extensions/page-info/page-info-dialog.c:952
+#: ../extensions/page-info/page-info-dialog.c:944
 msgid "Object"
 msgstr "Objeto"
 
-#: ../extensions/page-info/page-info-dialog.c:955
+#: ../extensions/page-info/page-info-dialog.c:947
 msgid "Applet"
 msgstr "Miniaplicación"
 
-#: ../extensions/page-info/page-info-dialog.c:958
+#: ../extensions/page-info/page-info-dialog.c:950
 msgid "Icon"
 msgstr "Icono"
 
-#: ../extensions/page-info/page-info-dialog.c:1130
+#: ../extensions/page-info/page-info-dialog.c:1131
 msgid "_Open"
 msgstr "_Abrir"
 
-#: ../extensions/page-info/page-info-dialog.c:1136
-#: ../extensions/page-info/page-info-dialog.c:1581
+#: ../extensions/page-info/page-info-dialog.c:1137
+#: ../extensions/page-info/page-info-dialog.c:1582
 msgid "_Copy Link Address"
 msgstr "_Copiar dirección del enlace"
 
-#: ../extensions/page-info/page-info-dialog.c:1142
+#: ../extensions/page-info/page-info-dialog.c:1143
 msgid "_Use as Background"
 msgstr "_Usar como fondo"
 
-#: ../extensions/page-info/page-info-dialog.c:1148
-#: ../extensions/page-info/page-info-dialog.c:1587
+#: ../extensions/page-info/page-info-dialog.c:1149
+#: ../extensions/page-info/page-info-dialog.c:1588
 msgid "_Save As..."
 msgstr "Guardar _como..."
 
-#: ../extensions/page-info/page-info-dialog.c:1380
-#: ../extensions/page-info/page-info-dialog.c:1701
+#: ../extensions/page-info/page-info-dialog.c:1381
+#: ../extensions/page-info/page-info-dialog.c:1702
 msgid "Blocked"
 msgstr "Bloqueado"
 
-#: ../extensions/page-info/page-info-dialog.c:1396
-#: ../extensions/page-info/page-info-dialog.c:1717
+#: ../extensions/page-info/page-info-dialog.c:1397
+#: ../extensions/page-info/page-info-dialog.c:1718
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1409
+#: ../extensions/page-info/page-info-dialog.c:1410
 msgid "Type"
 msgstr "Tipo"
 
-#: ../extensions/page-info/page-info-dialog.c:1421
+#: ../extensions/page-info/page-info-dialog.c:1422
 msgid "Alt Text"
 msgstr "Texto Alt"
 
-#: ../extensions/page-info/page-info-dialog.c:1433
-#: ../extensions/page-info/page-info-dialog.c:1730
+#: ../extensions/page-info/page-info-dialog.c:1434
+#: ../extensions/page-info/page-info-dialog.c:1731
 msgid "Title"
 msgstr "Título"
 
-#: ../extensions/page-info/page-info-dialog.c:1445
+#: ../extensions/page-info/page-info-dialog.c:1446
 msgid "Width"
 msgstr "Anchura"
 
-#: ../extensions/page-info/page-info-dialog.c:1457
+#: ../extensions/page-info/page-info-dialog.c:1458
 msgid "Height"
 msgstr "Altura"
 
-#: ../extensions/page-info/page-info-dialog.c:1742
+#: ../extensions/page-info/page-info-dialog.c:1743
 msgid "Relation"
 msgstr "Relación"
 
-#: ../extensions/page-info/page-info-dialog.c:1891
-#: ../extensions/page-info/page-info-dialog.c:2032
+#: ../extensions/page-info/page-info-dialog.c:1892
+#: ../extensions/page-info/page-info-dialog.c:2033
 msgid "Name"
 msgstr "Nombre"
 
-#: ../extensions/page-info/page-info-dialog.c:1903
+#: ../extensions/page-info/page-info-dialog.c:1904
 msgid "Method"
 msgstr "Método"
 
-#: ../extensions/page-info/page-info-dialog.c:1917
+#: ../extensions/page-info/page-info-dialog.c:1918
 msgid "Action"
 msgstr "Acción"
 
-#: ../extensions/page-info/page-info-dialog.c:1998
+#: ../extensions/page-info/page-info-dialog.c:1999
 msgid "_Copy"
 msgstr "_Copiar"
 
-#: ../extensions/page-info/page-info-dialog.c:2044
+#: ../extensions/page-info/page-info-dialog.c:2045
 msgid "Content"
 msgstr "Contenido"
 
-#: ../extensions/page-info/page-info-dialog.c:2145
+#: ../extensions/page-info/page-info-dialog.c:2146
 msgid "Page Metadata"
 msgstr "Metadatos de la página"
 
@@ -953,21 +955,21 @@ msgstr "Suscribirse a este proveedor de noticias en su lector de noticias favori
 msgid "Subscribe to site's news feed"
 msgstr "Suscribirse al proveedor de noticias del sitio"
 
-#: ../extensions/rss/rss-ui.c:167
+#: ../extensions/rss/rss-ui.c:166
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr ""
 "<b><i>No es posible contactar con el lector de proveedores, ¿está "
 "funcionando?</i></b>"
 
-#: ../extensions/rss/rss-ui.c:169
+#: ../extensions/rss/rss-ui.c:168
 msgid "Retry"
 msgstr "Reintentar"
 
-#: ../extensions/rss/rss-ui.c:297
+#: ../extensions/rss/rss-ui.c:296
 msgid "_Copy Feed Address"
 msgstr "_Copiar dirección del proveedor"
 
-#: ../extensions/rss/rss-ui.c:591
+#: ../extensions/rss/rss-ui.c:576
 msgid "Subscribe"
 msgstr "Suscribirse"
 
@@ -997,19 +999,19 @@ msgstr "Renderizar la página usando el estilo predeterminado"
 msgid "Render the page using the “%s” style"
 msgstr "Renderizar la página usando el estilo «%s»"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:310
+#: ../extensions/select-stylesheet/ephy-css-menu.c:323
 msgid "St_yle"
 msgstr "E_stilo"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:311
+#: ../extensions/select-stylesheet/ephy-css-menu.c:324
 msgid "Select a different style for this page"
 msgstr "Seleccionar un estilo diferente para esta página"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:224
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
 msgid "Default"
 msgstr "Predeterminado"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:235
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
 msgid "None"
 msgstr "Ninguno"
 
@@ -1096,7 +1098,7 @@ msgstr "Bloqueador de publicidad"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
 msgid "Block the pest!"
-msgstr "Bloquear"
+msgstr "Bloquear la apestosa publicidad"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
 msgid "Auto Scroll"
