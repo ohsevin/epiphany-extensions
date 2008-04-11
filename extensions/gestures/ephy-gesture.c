@@ -37,8 +37,7 @@
 #include <gtk/gtkactiongroup.h>
 #include <gtk/gtkuimanager.h>
 
-#include <epiphany/ephy-embed-container.h>
-#include <epiphany/ephy-window.h>
+#include <epiphany/epiphany.h>
 
 #include <string.h>
 

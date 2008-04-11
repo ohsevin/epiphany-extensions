@@ -21,7 +21,7 @@
 #ifndef LIVEHTTPHEADERS_H
 #define LIVEHTTPHEADERS_H
 
-#include <epiphany/ephy-dialog.h>
+#include <epiphany/epiphany.h>
 
 #include <glib.h>
 #include <glib-object.h>

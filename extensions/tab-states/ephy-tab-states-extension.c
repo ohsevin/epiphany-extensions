@@ -23,8 +23,8 @@
 
 #include "ephy-tab-states-extension.h"
 
-#include <epiphany/ephy-embed-container.h>
-#include <epiphany/ephy-extension.h>
+#include <epiphany/epiphany.h>
+
 #include "eel-gconf-extensions.h"
 #include "ephy-debug.h"
 

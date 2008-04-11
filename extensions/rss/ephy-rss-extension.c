@@ -26,13 +26,7 @@
 
 #include "ephy-debug.h"
 
-#include <epiphany/ephy-extension.h>
-#include <epiphany/ephy-dialog.h>
-#include <epiphany/ephy-window.h>
-#include <epiphany/ephy-statusbar.h>
-#include <epiphany/ephy-notebook.h>
-#include <epiphany/ephy-shell.h>
-#include <epiphany/ephy-embed-container.h>
+#include <epiphany/epiphany.h>
 
 #include <gtk/gtkaction.h>
 #include <gtk/gtkactiongroup.h>

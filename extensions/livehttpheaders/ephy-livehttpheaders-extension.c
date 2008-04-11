@@ -26,9 +26,7 @@
 #include "mozilla-helper.h"
 #include "ephy-debug.h"
 
-#include <epiphany/ephy-extension.h>
-#include <epiphany/ephy-embed-single.h>
-#include <epiphany/ephy-shell.h>
+#include <epiphany/epiphany.h>
 
 #include <glib/gi18n-lib.h>
 #include <gtk/gtkaction.h>

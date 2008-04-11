@@ -23,7 +23,7 @@
 #include <glib-object.h>
 #include <gmodule.h>
 
-#include <epiphany/ephy-embed.h>
+#include <epiphany/epiphany.h>
 
 #include "ad-uri-tester.h"
 

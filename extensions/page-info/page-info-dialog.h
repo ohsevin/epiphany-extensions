@@ -24,9 +24,7 @@
 #ifndef PAGE_INFO_DIALOG_H
 #define PAGE_INFO_DIALOG_H
 
-#include <epiphany/ephy-dialog.h>
-#include <epiphany/ephy-embed.h>
-#include <epiphany/ephy-window.h>
+#include <epiphany/epiphany.h>
 
 #include <glib.h>
 

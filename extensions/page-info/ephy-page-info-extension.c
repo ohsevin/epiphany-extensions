@@ -24,11 +24,7 @@
 #include "ephy-debug.h"
 #include "page-info-dialog.h"
 
-#include <epiphany/ephy-extension.h>
-#include <epiphany/ephy-window.h>
-#include <epiphany/ephy-embed.h>
-#include <epiphany/ephy-embed-container.h>
-#include <epiphany/ephy-notebook.h>
+#include <epiphany/epiphany.h>
 
 #include <gtk/gtkaction.h>
 #include <gtk/gtkactiongroup.h>

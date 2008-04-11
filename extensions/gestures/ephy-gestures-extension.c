@@ -27,8 +27,7 @@
 #include "ephy-file-helpers.h"
 #include "ephy-debug.h"
 
-#include <epiphany/ephy-embed.h>
-#include <epiphany/ephy-extension.h>
+#include <epiphany/epiphany.h>
 
 #include <gmodule.h>
 #include <libxml/tree.h>

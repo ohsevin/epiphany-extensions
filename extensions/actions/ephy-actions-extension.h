@@ -20,8 +20,7 @@
 #define _EPHY_ACTIONS_EXTENSION_H
 
 #include <glib-object.h>
-#include <epiphany/ephy-node-db.h>
-#include <epiphany/ephy-node.h>
+#include <epiphany/epiphany.h>
 #include "ephy-actions-extension-properties-dialog.h"
 
 G_BEGIN_DECLS

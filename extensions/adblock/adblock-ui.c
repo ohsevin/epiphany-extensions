@@ -26,8 +26,7 @@
 #include "adblock-pattern.h"
 #include "ephy-file-helpers.h"
 
-#include <epiphany/ephy-adblock-manager.h>
-#include <epiphany/ephy-embed-shell.h>
+#include <epiphany/epiphany.h>
 
 #include <glib/gi18n-lib.h>
 #include <gtk/gtklabel.h>

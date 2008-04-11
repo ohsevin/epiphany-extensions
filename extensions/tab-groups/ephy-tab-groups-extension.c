@@ -26,7 +26,7 @@
 #include "ephy-tab-grouper.h"
 #include "ephy-debug.h"
 
-#include <epiphany/ephy-extension.h>
+#include <epiphany/epiphany.h>
 
 static void ephy_tab_groups_extension_class_init (EphyTabGroupsExtensionClass *class);
 static void ephy_tab_groups_extension_iface_init (EphyExtensionIface *iface);

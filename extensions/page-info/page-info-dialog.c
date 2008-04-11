@@ -31,13 +31,7 @@
 #include "page-info-dialog.h"
 #include "ephy-debug.h"
 
-#include <epiphany/ephy-embed-persist.h>
-#include <epiphany/ephy-embed-factory.h>
-#include <epiphany/ephy-state.h>
-#include <epiphany/ephy-adblock-manager.h>
-#include <ephy-dnd.h>
-#include <epiphany/ephy-embed-shell.h>
-#include <epiphany/ephy-adblock-manager.h>
+#include <epiphany/epiphany.h>
 
 /* non-installed ephy headers */
 #include "ephy-gui.h"

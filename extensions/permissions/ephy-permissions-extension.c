@@ -26,8 +26,7 @@
 
 #include "ephy-debug.h"
 
-#include <epiphany/ephy-window.h>
-#include <epiphany/ephy-extension.h>
+#include <epiphany/epiphany.h>
 
 #include <glib/gi18n-lib.h>
 #include <gtk/gtkwidget.h>

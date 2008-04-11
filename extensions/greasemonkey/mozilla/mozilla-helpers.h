@@ -24,7 +24,7 @@
 
 #include <glib.h>
 
-#include <epiphany/ephy-embed.h>
+#include <epiphany/epiphany.h>
 
 G_BEGIN_DECLS
 

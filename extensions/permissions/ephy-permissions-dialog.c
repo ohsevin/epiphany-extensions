@@ -24,9 +24,7 @@
 
 #include "ephy-permissions-dialog.h"
 
-#include <epiphany/ephy-shell.h>
-#include <epiphany/ephy-permission-manager.h>
-#include <epiphany/ephy-state.h>
+#include <epiphany/epiphany.h>
 
 #include "ephy-debug.h"
 

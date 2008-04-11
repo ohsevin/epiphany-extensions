@@ -22,7 +22,7 @@
 #define EPHY_CSS_MENU_H
 
 #include <glib-object.h>
-#include <epiphany/ephy-window.h>
+#include <epiphany/epiphany.h>
 
 G_BEGIN_DECLS
 

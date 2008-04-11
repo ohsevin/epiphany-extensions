@@ -24,7 +24,7 @@
 
 #include "ad-uri-tester.h"
 
-#include <epiphany/ephy-dialog.h>
+#include <epiphany/epiphany.h>
 
 #include <glib.h>
 #include <glib-object.h>

@@ -24,10 +24,7 @@
 #include "ephy-rss-extension.h"
 #include "rss-feedlist.h"
 
-#include <epiphany/ephy-dialog.h>
-#include <epiphany/ephy-dbus.h>
-#include <epiphany/ephy-shell.h>
-#include <epiphany/ephy-embed.h>
+#include <epiphany/epiphany.h>
 
 #include <glib.h>
 #include <glib-object.h>

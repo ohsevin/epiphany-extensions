@@ -25,8 +25,7 @@
 #include "ephy-tab-grouper.h"
 #include "ephy-debug.h"
 
-#include <epiphany/ephy-window.h>
-#include <epiphany/ephy-notebook.h>
+#include <epiphany/epiphany.h>
 
 #define EPHY_TAB_GROUPER_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_TAB_GROUPER, EphyTabGrouperPrivate))
 

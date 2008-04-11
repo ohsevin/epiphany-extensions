@@ -23,8 +23,7 @@
 #include "ephy-auto-reload-extension.h"
 #include "ephy-debug.h"
 
-#include <epiphany/ephy-embed-container.h>
-#include <epiphany/ephy-extension.h>
+#include <epiphany/epiphany.h>
 
 #include <gtk/gtktoggleaction.h>
 #include <gtk/gtkuimanager.h>

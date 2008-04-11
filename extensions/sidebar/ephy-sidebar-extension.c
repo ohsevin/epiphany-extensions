@@ -26,14 +26,7 @@
 #include "ephy-sidebar-embed.h"
 #include "ephy-sidebar.h"
 
-#include <epiphany/ephy-extension.h>
-#include <epiphany/ephy-embed-shell.h>
-#include <epiphany/ephy-embed-single.h>
-#include <epiphany/ephy-shell.h>
-#include <epiphany/ephy-session.h>
-#include <epiphany/ephy-node.h>
-#include <epiphany/ephy-node-db.h>
-#include <epiphany/ephy-state.h>
+#include <epiphany/epiphany.h>
 
 #include "ephy-file-helpers.h"
 #include "ephy-gui.h"

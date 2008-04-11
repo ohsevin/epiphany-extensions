@@ -28,8 +28,7 @@
 #include "ephy-css-menu.h"
 #include "ephy-debug.h"
 
-#include <epiphany/ephy-extension.h>
-#include <epiphany/ephy-window.h>
+#include <epiphany/epiphany.h>
 
 #define WINDOW_DATA_KEY	"EphyCSSMenuExtensionWindowData"
 #define CSS_MENU_KEY	"EphyCSSMenu"

@@ -23,9 +23,7 @@
 
 #include "sidebar-commands.h"
 
-#include <epiphany/ephy-embed.h>
-#include <epiphany/ephy-embed-factory.h>
-#include <epiphany/ephy-embed-persist.h>
+#include <epiphany/epiphany.h>
 
 #include "ephy-prefs.h"
 

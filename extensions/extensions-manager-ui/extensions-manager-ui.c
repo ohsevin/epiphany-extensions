@@ -22,8 +22,7 @@
 
 #include "extensions-manager-ui.h"
 
-#include <epiphany/ephy-extensions-manager.h>
-#include <epiphany/ephy-shell.h>
+#include <epiphany/epiphany.h>
 
 #include "ephy-gui.h"
 #include "ephy-debug.h"

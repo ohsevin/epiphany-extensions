@@ -26,7 +26,7 @@
 #include <gtk/gtkwidget.h>
 #include <gmodule.h>
 
-#include <epiphany/ephy-embed-event.h>
+#include <epiphany/epiphany.h>
 
 G_BEGIN_DECLS
 

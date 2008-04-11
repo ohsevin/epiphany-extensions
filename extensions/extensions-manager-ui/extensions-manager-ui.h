@@ -23,7 +23,7 @@
 #include <glib-object.h>
 #include <gmodule.h>
 
-#include <epiphany/ephy-dialog.h>
+#include <epiphany/epiphany.h>
 
 G_BEGIN_DECLS
 

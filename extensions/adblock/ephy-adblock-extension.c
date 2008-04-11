@@ -21,13 +21,7 @@
 
 #include "config.h"
 
-#include <epiphany/ephy-statusbar.h>
-#include <epiphany/ephy-window.h>
-#include <epiphany/ephy-adblock.h>
-#include <epiphany/ephy-adblock-manager.h>
-#include <epiphany/ephy-embed-container.h>
-#include <epiphany/ephy-embed-shell.h>
-#include <epiphany/ephy-extension.h>
+#include <epiphany/epiphany.h>
 
 #include "ephy-adblock-extension.h"
 #include "ephy-debug.h"

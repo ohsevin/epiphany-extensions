@@ -19,9 +19,7 @@
 #ifndef _EPHY_ACTIONS_EXTENSION_PROPERTIES_DIALOG_H
 #define _EPHY_ACTIONS_EXTENSION_PROPERTIES_DIALOG_H
 
-#include <epiphany/ephy-dialog.h>
-#include <epiphany/ephy-extension.h>
-#include <epiphany/ephy-node.h>
+#include <epiphany/epiphany.h>
 
 G_BEGIN_DECLS
 

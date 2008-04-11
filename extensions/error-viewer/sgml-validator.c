@@ -24,8 +24,7 @@
 
 #include "opensp/validate.h"
 
-#include <epiphany/ephy-embed-persist.h>
-#include <epiphany/ephy-embed-factory.h>
+#include <epiphany/epiphany.h>
 
 #include "ephy-file-helpers.h"
 #include "ephy-debug.h"

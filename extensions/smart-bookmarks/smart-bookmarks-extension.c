@@ -23,14 +23,7 @@
 #include "smart-bookmarks-extension.h"
 #include "mozilla-selection.h"
 
-#include <epiphany/ephy-extension.h>
-#include <epiphany/ephy-embed.h>
-#include <epiphany/ephy-embed-container.h>
-#include <epiphany/ephy-command-manager.h>
-#include <epiphany/ephy-shell.h>
-#include <epiphany/ephy-session.h>
-#include <epiphany/ephy-node.h>
-#include <epiphany/ephy-bookmarks.h>
+#include <epiphany/epiphany.h>
 
 #include "eel-gconf-extensions.h"
 #include "ephy-debug.h"

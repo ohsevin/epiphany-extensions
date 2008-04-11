@@ -24,7 +24,7 @@
 #include "ephy-sample-extension.h"
 #include "ephy-debug.h"
 
-#include <epiphany/ephy-extension.h>
+#include <epiphany/epiphany.h>
 
 #include <gmodule.h>
 
