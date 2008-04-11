@@ -1,4 +1,4 @@
-# Copyright (c) 2003, 2004, 2005 Christian Persch
+# Copyright (c) 2003, 2004, 2005, 2008 Christian Persch
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -224,14 +224,13 @@ for ext in $extensions; do
 done
 IFS="$ephyext_save_ifs"
 
-if test "$EPIPHANY_ENGINE" != "mozilla"; then
- extensions=$EXTENSIONS; EXTENSIONS=
- for ext in $extensions; do
+# Remove the non-ported mozilla extensions from our list
+extensions=$EXTENSIONS; EXTENSIONS=
+for ext in $extensions; do
   if echo "$MOZILLA_ALL_EXTENSIONS" | egrep -v "(^| )$ext(\$| )" > /dev/null; then
     EXTENSIONS="$EXTENSIONS $ext"
   fi
- done
-fi
+done
 
 AC_SUBST([DIST_EXTENSIONS])
 AC_SUBST([BUILD_EXTENSIONS],[$(echo $EXTENSIONS | tr ' ' '\n' | sort | uniq | tr '\n' ' ')])
@@ -307,69 +306,13 @@ if test "x$need_python" = "xyes"; then
 	PKG_CHECK_EXISTS([pygtk >= $PYGTK_REQUIRED])
 fi
 
-# *******
-# Mozilla
-# *******
-
-if test "$EPIPHANY_ENGINE" = "mozilla"; then
-
-GECKO_INIT([MOZILLA])
-
-AC_SUBST([MOZILLA])
-AC_SUBST([MOZILLA_FLAVOUR])
-AC_SUBST([MOZILLA_HOME])
-AC_SUBST([MOZILLA_PREFIX])
-AC_SUBST([MOZILLA_INCLUDE_ROOT])
-
-case "$MOZILLA" in
-xulrunner) min_version=1.8 ;;
-libxul*) min_version=1.9 ;;
-*firefox) min_version=1.5 ;;
-*) AC_MSG_ERROR([Unsupported gecko "$gecko_cv_gecko"]) ;;
-esac
-
-if test $gecko_cv_gecko != "libxul-embedding" -a $gecko_cv_gecko != "libxul"; then
-	PKG_CHECK_MODULES([MOZILLA_COMPONENT],[ ${gecko_cv_gecko}-xpcom >= $min_version ${gecko_cv_gecko}-js $gecko_cv_extra_pkg_dependencies])
-else
-	MOZILLA_COMPONENT_CFLAGS="$MOZILLA_COMPONENT_CFLAGS"
-	MOZILLA_COMPONENT_LIBS="$MOZILLA_COMPONENT_LIBS `pkg-config --libs ${gecko_cv_gecko}`"
-fi
-
-AC_MSG_CHECKING(nspr in gecko)
-if test "$MOZILLA_COMPONENT_NSPR" != yes; then
-	AC_MSG_RESULT(no)
-	AC_MSG_CHECKING(nspr in system)
-	gecko_nspr=
-	if $PKG_CONFIG --exists mozilla-nspr; then
-		gecko_nspr=mozilla-nspr
-	elif $PKG_CONFIG --exists ${gecko_cv_gecko}-nspr; then
-		gecko_nspr=${gecko_cv_gecko}-nspr
-	fi
-	if $PKG_CONFIG --exists nspr; then
-		gecko_nspr=nspr
-	fi
-	if test -z "$gecko_nspr"; then
-		AC_MSG_ERROR([no nspr available])
-	fi
-
-	MOZILLA_COMPONENT_CFLAGS="$MOZILLA_COMPONENT_CFLAGS `$PKG_CONFIG --cflags ${gecko_nspr}`"
-	MOZILLA_COMPONENT_LIBS="$MOZILLA_COMPONENT_LIBS `$PKG_CONFIG --libs ${gecko_nspr}`"
-	_MOZILLA_COMPONENT_CFLAGS="$MOZILLA_COMPONENT_CFLAGS"
-	AC_MSG_RESULT(yes)
-else
-	AC_MSG_RESULT(yes)
-fi
-
-
-fi # test "$EPIPHANY_ENGINE" != "webkit"
-
 # *****************
 # Add warning flags
 # *****************
 
 AM_CPPFLAGS="$AM_CPPFLAGS $DEPRECATION_FLAGS"
 AM_CFLAGS="$AM_CFLAGS $WARN_CFLAGS"
-AM_CXXFLAGS="$AM_CXXFLAGS $WARN_CXXFLAGS $MOZILLA_WARN_CXXFLAGS"
+AM_CXXFLAGS="$AM_CXXFLAGS $WARN_CXXFLAGS"
 AC_SUBST([AM_CPPFLAGS])
 AC_SUBST([AM_CFLAGS])
 AC_SUBST([AM_CXXFLAGS])
@@ -462,8 +405,6 @@ Epiphany Extensions was configured with the following options:
 
 	Epiphany API version	   : $EPIPHANY_API_VERSION
 	Epiphany has Python	   : $enable_python
-
-	Gecko backend              : $gecko_cv_gecko version $gecko_cv_gecko_version
 
 	OpenSP			   : $enable_opensp
 
