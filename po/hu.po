@@ -938,28 +938,28 @@ msgstr "Weboldalak jogosultságainak kezelése"
 
 #: ../extensions/rss/ephy-rss-extension.c:91
 msgid "News Feeds Subscription"
-msgstr "Hírfolyamokra feliratkozás"
+msgstr "Feliratkozás hírforrásokra"
 
 #: ../extensions/rss/ephy-rss-extension.c:93
 msgid "Subscribe to this website's news feeds in your favorite news reader"
-msgstr "Feliratkozás ezen weboldal hírfolyamaira a kedvenc hírolvasójával."
+msgstr "Feliratkozás ezen weboldal hírforrásaira a kedvenc hírolvasójával."
 
 #: ../extensions/rss/ephy-rss-extension.c:98
 msgid "_Subscribe to this feed"
-msgstr "_Feliratkozás ezen folyamra"
+msgstr "_Feliratkozás a forrásra"
 
 #: ../extensions/rss/ephy-rss-extension.c:100
 msgid "Subscribe to this feed in your favorite news reader"
-msgstr "Feliratkozás ezen folyamra a kedvenc hírolvasójával"
+msgstr "Feliratkozás a forrásra a kedvenc hírolvasójával"
 
 #: ../extensions/rss/ephy-rss-extension.c:373
 msgid "Subscribe to site's news feed"
-msgstr "Feliratkozás oldal hírfolyamaira"
+msgstr "Feliratkozás oldal hírforrásaira"
 
 #: ../extensions/rss/rss-ui.c:166
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr ""
-"<b><i>Nem lehet kapcsolatba lépni a hírfolyam-olvasóval, biztosan "
+"<b><i>Nem lehet kapcsolatba lépni a hírforrásolvasóval, biztosan "
 "fut?</i></b>"
 
 #: ../extensions/rss/rss-ui.c:168
@@ -976,12 +976,12 @@ msgstr "Feliratkozás"
 
 #: ../extensions/rss/rss-ui.glade.h:1
 msgid "<b>Select Interesting Feeds</b>"
-msgstr "<b>Érdekes hírfolyamok kiválasztása</b>"
+msgstr "<b>Érdekes hírforrások kiválasztása</b>"
 
 #: ../extensions/rss/rss-ui.glade.h:2
 #: ../extensions/rss/rss.ephy-extension.in.in.h:1
 msgid "News Feed Subscription"
-msgstr "Feliratkozás hírfolyamra"
+msgstr "Feliratkozás hírforrásra"
 
 #: ../extensions/rss/rss-ui.glade.h:3
 msgid "_Subscribe"
@@ -1219,7 +1219,7 @@ msgstr "Python konzol"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
-msgstr "Feliratkozás az oldal által kínált hírfolyamokra a kedvenc hírolvasójával"
+msgstr "Feliratkozás az oldal által kínált hírforrásokra a kedvenc hírolvasójával"
 
 #: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
 msgid "A sample extension with mozilla backend"
