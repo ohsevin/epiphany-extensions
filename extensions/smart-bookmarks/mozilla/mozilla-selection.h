@@ -29,6 +29,8 @@ G_BEGIN_DECLS
 
 char *mozilla_get_selected_text (EphyEmbed *embed);
 
+gboolean mozilla_glue_startup (void);
+
 G_END_DECLS
 
 #endif
