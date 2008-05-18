@@ -35,6 +35,8 @@ GSList		*mozilla_get_links		(EphyEmbed *embed);
 
 gboolean	mozilla_check_url		(EphyEmbed *embed, char *url);
 
+gboolean       mozilla_glue_startup             (void);
+
 G_END_DECLS
 
 #endif

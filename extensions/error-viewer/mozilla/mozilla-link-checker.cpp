@@ -45,7 +45,7 @@ mozilla_check_links (LinkChecker *checker,
 	nsresult rv;
 
 	nsCOMPtr<nsIWebBrowser> browser;
-	gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (embed),
+	gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (gtk_bin_get_child (GTK_BIN (embed))),
 					 getter_AddRefs (browser));
 	NS_ENSURE_TRUE (browser, );
 

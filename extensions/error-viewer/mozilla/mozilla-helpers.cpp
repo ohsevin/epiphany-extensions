@@ -20,6 +20,11 @@
 #include "mozilla-config.h"
 #include "config.h"
 
+#ifdef XPCOM_GLUE
+#include <nsXPCOMGlue.h>
+#include <gtkmozembed_glue.cpp>
+#endif
+
 #include <nsStringAPI.h>
 
 #include <gtkmozembed.h>
@@ -39,7 +44,7 @@ extern "C" char *
 mozilla_get_doctype (EphyEmbed *embed)
 {
 	nsCOMPtr<nsIWebBrowser> browser;
-	gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (embed),
+	gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (gtk_bin_get_child (GTK_BIN (embed))),
 					 getter_AddRefs (browser));
 	NS_ENSURE_TRUE (browser, NULL);
 
@@ -70,7 +75,7 @@ extern "C" char *
 mozilla_get_content_type (EphyEmbed *embed)
 {
 	nsCOMPtr<nsIWebBrowser> browser;
-	gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (embed),
+	gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (gtk_bin_get_child (GTK_BIN (embed))),
 					 getter_AddRefs (browser));
 	NS_ENSURE_TRUE (browser, NULL);
 
@@ -93,4 +98,27 @@ mozilla_get_content_type (EphyEmbed *embed)
 	NS_UTF16ToCString (contentType, NS_CSTRING_ENCODING_UTF8, cType);
 
 	return g_strdup (cType.get());
+}
+
+gboolean
+mozilla_glue_startup (void)
+{
+#ifdef XPCOM_GLUE
+	static const GREVersionRange greVersion = {
+	  "1.9a", PR_TRUE,
+	  "2", PR_TRUE
+	};
+	char xpcomLocation[4096];
+
+	if (NS_FAILED (GRE_GetGREPathWithProperties(&greVersion, 1, nsnull, 0, xpcomLocation, sizeof (xpcomLocation))) ||
+	    NS_FAILED (XPCOMGlueStartup (xpcomLocation)) ||
+	    NS_FAILED (GTKEmbedGlueStartup ()) ||
+	    NS_FAILED (GTKEmbedGlueStartupInternal()))
+                return FALSE;
+
+        return TRUE;
+#else
+#error hi there!
+        return TRUE;
+#endif /* XPCOM_GLUE */
 }
