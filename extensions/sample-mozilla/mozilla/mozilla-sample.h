@@ -28,6 +28,8 @@ G_BEGIN_DECLS
 
 void	mozilla_do_something (gpointer dom_event);
 
+gboolean       mozilla_glue_startup             (void);
+
 G_END_DECLS
 
 #endif

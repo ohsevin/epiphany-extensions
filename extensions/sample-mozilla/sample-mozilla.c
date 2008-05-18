@@ -22,6 +22,7 @@
 #include "config.h"
 
 #include "ephy-sample2-extension.h"
+#include "mozilla-sample.h"
 #include "ephy-debug.h"
 
 #include <gmodule.h>
@@ -33,6 +34,9 @@ G_MODULE_EXPORT GType
 register_module (GTypeModule *module)
 {
 	LOG ("Registering EphySample2Extension");
+
+        if (!mozilla_glue_startup ())
+              return 0;
 
 #ifdef ENABLE_NLS
 	/* Initialise the i18n stuff */
