@@ -23,3 +23,10 @@ libgreasemonkeymozilla_la_CXXFLAGS = \
 	$(MOZILLA_COMPONENT_CFLAGS)	\
 	$(EPIPHANY_DEPENDENCY_CFLAGS) 	\
 	$(AM_CXXFLAGS)
+
+if HAVE_GECKO_1_9
+if HAVE_GECKO_XPCOM_GLUE
+libgreasemonkeymozilla_la_CPPFLAGS += \
+ 	-DXPCOM_GLUE_USE_NSPR
+endif
+endif

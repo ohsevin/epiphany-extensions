@@ -31,6 +31,8 @@ G_BEGIN_DECLS
 gboolean	mozilla_evaluate_js		(gpointer event,
 						 const char *script);
 
+gboolean       mozilla_glue_startup             (void);
+
 G_END_DECLS
 
 #endif

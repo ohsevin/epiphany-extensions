@@ -24,6 +24,11 @@
 
 #include <glib.h>
 
+#ifdef XPCOM_GLUE
+#include <nsXPCOMGlue.h>
+#include <gtkmozembed_glue.cpp>
+#endif
+
 #include <nsStringAPI.h>
 
 #include <nsCOMPtr.h>
@@ -100,4 +105,27 @@ mozilla_evaluate_js (gpointer event,
 	NS_ENSURE_SUCCESS (rv, FALSE);
 
 	return TRUE;
+}
+
+gboolean
+mozilla_glue_startup (void)
+{
+#ifdef XPCOM_GLUE
+	static const GREVersionRange greVersion = {
+	  "1.9a", PR_TRUE,
+	  "2", PR_TRUE
+	};
+	char xpcomLocation[4096];
+
+	if (NS_FAILED (GRE_GetGREPathWithProperties(&greVersion, 1, nsnull, 0, xpcomLocation, sizeof (xpcomLocation))) ||
+	    NS_FAILED (XPCOMGlueStartup (xpcomLocation)) ||
+	    NS_FAILED (GTKEmbedGlueStartup ()) ||
+	    NS_FAILED (GTKEmbedGlueStartupInternal()))
+                return FALSE;
+
+        return TRUE;
+#else
+#error hi there!
+        return TRUE;
+#endif /* XPCOM_GLUE */
 }
