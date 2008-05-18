@@ -1,7 +1,7 @@
 /*
  *  Copyright © 2004 Adam Hooper
  *  Copyright © 2004, 2005 Jean-François Rameau
- *  Copyright © 2004, 2005 Christian Persch
+ *  Copyright © 2004, 2005, 2008 Christian Persch
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -126,6 +126,8 @@ typedef struct
 EmbedPageInfo *mozilla_get_page_info        (EphyEmbed *embed);
 
 void           mozilla_free_embed_page_info (EmbedPageInfo *info);
+
+gboolean       mozilla_glue_startup         (void);
 
 G_END_DECLS
 

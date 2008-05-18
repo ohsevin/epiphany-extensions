@@ -1,7 +1,7 @@
 /*
  *  Copyright © 2004 Adam Hooper
  *  Copyright © 2004, 2005 Jean-François Rameau
- *  Copyright © 2004, 2005 Christian Persch
+ *  Copyright © 2004, 2005, 2008 Christian Persch
  *
  *  Ripped from GaleonWrapper.cpp, which has no copyright info besides Marco...
  *
@@ -26,6 +26,11 @@
 #include "config.h"
 
 #include <string.h>
+
+#ifdef XPCOM_GLUE
+#include <nsXPCOMGlue.h>
+#include <gtkmozembed_glue.cpp>
+#endif
 
 #include <nsStringAPI.h>
 
@@ -169,7 +174,7 @@ PageInfoHelper::Init (EphyEmbed *aEmbed)
   NS_ENSURE_ARG (aEmbed);
 
   nsCOMPtr<nsIWebBrowser> browser;
-  gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (aEmbed),
+  gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (gtk_bin_get_child (GTK_BIN (aEmbed))),
                                    getter_AddRefs (browser));
   NS_ENSURE_TRUE (browser, NS_ERROR_FAILURE);
 
@@ -1200,4 +1205,27 @@ mozilla_get_page_info (EphyEmbed *embed)
   delete helper;
 
   return info;
+}
+
+gboolean
+mozilla_glue_startup (void)
+{
+#ifdef XPCOM_GLUE
+	static const GREVersionRange greVersion = {
+	  "1.9a", PR_TRUE,
+	  "2", PR_TRUE
+	};
+	char xpcomLocation[4096];
+
+	if (NS_FAILED (GRE_GetGREPathWithProperties(&greVersion, 1, nsnull, 0, xpcomLocation, sizeof (xpcomLocation))) ||
+	    NS_FAILED (XPCOMGlueStartup (xpcomLocation)) ||
+	    NS_FAILED (GTKEmbedGlueStartup ()) ||
+	    NS_FAILED (GTKEmbedGlueStartupInternal()))
+                return FALSE;
+
+        return TRUE;
+#else
+#error hi there!
+        return TRUE;
+#endif /* XPCOM_GLUE */
 }

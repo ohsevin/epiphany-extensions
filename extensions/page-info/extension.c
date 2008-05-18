@@ -22,6 +22,7 @@
 
 #include "ephy-page-info-extension.h"
 #include "page-info-dialog.h"
+#include "mozilla-helpers.h"
 #include "ephy-debug.h"
 
 #include <gmodule.h>
@@ -33,6 +34,9 @@ G_MODULE_EXPORT GType
 register_module (GTypeModule *module)
 {
 	LOG ("Registering EphyPageInfoExtension");
+
+        if (!mozilla_glue_startup ())
+              return 0;
 
 #ifdef ENABLE_NLS
 	/* Initialize the i18n stuff */
