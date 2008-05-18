@@ -39,6 +39,8 @@ void 		livehttpheaders_unregister_listener (void);
 GSList *	get_frames (void);
 void 		clear_frames (void);
 
+gboolean       mozilla_glue_startup             (void);
+
 G_END_DECLS
 
 #endif
