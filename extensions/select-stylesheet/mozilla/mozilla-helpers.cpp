@@ -27,6 +27,11 @@
 
 #include <glib/gi18n-lib.h>
 
+#ifdef XPCOM_GLUE
+#include <nsXPCOMGlue.h>
+#include <gtkmozembed_glue.cpp>
+#endif
+
 #include <nsStringAPI.h>
 
 #include <gtkmozembed.h>
@@ -103,7 +108,7 @@ GetStylesheets (EphyEmbed *aEmbed,
 	NS_ENSURE_TRUE (aEmbed, NS_ERROR_FAILURE);
 
 	nsCOMPtr<nsIWebBrowser> browser;
-	gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (gtk_bin_get_child (GTK_BIN (embed))),
+	gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (gtk_bin_get_child (GTK_BIN (aEmbed))),
 					 getter_AddRefs (browser));
 	NS_ENSURE_TRUE (browser, NS_ERROR_FAILURE);
 
@@ -289,4 +294,26 @@ mozilla_set_stylesheet (EphyEmbed *aEmbed,
 
 		item->SetDisabled (strcmp (cTitle.get(), aSelected->mName) != 0);
 	}
+}
+
+gboolean
+mozilla_glue_startup (void)
+{
+#ifdef XPCOM_GLUE
+	static const GREVersionRange greVersion = {
+	  "1.9a", PR_TRUE,
+	  "2", PR_TRUE
+	};
+	char xpcomLocation[4096];
+
+	if (NS_FAILED (GRE_GetGREPathWithProperties(&greVersion, 1, nsnull, 0, xpcomLocation, sizeof (xpcomLocation))) ||
+	    NS_FAILED (XPCOMGlueStartup (xpcomLocation)) ||
+	    NS_FAILED (GTKEmbedGlueStartup ()) ||
+	    NS_FAILED (GTKEmbedGlueStartupInternal()))
+                return FALSE;
+
+        return TRUE;
+#else
+        return TRUE;
+#endif /* XPCOM_GLUE */
 }

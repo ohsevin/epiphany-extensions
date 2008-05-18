@@ -48,6 +48,8 @@ GList	       *mozilla_get_stylesheets		(EphyEmbed *embed,
 void		mozilla_set_stylesheet		(EphyEmbed *embed,
 						 MozillaStyleSheet *style);
 
+gboolean       mozilla_glue_startup             (void);
+
 G_END_DECLS
 
 #endif /* MOZILLA_HELPERS_H */
