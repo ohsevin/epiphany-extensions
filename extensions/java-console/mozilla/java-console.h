@@ -29,6 +29,8 @@ gboolean	java_console_is_available (void);
 
 void	 	java_console_show	  (void);
 
+gboolean       mozilla_glue_startup       (void);
+
 G_END_DECLS
 
 #endif

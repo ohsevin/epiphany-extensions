@@ -21,6 +21,7 @@
 #include "config.h"
 
 #include "ephy-java-console-extension.h"
+#include "java-console.h"
 #include "ephy-debug.h"
 
 #include <gmodule.h>
@@ -32,6 +33,9 @@ G_MODULE_EXPORT GType
 register_module (GTypeModule *module)
 {
 	LOG ("Registering EphyJavaConsoleExtension");
+
+        if (!mozilla_glue_startup ())
+              return 0;
 
 #ifdef ENABLE_NLS
        /* Initialise the i18n stuff */

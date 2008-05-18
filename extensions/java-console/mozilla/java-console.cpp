@@ -21,6 +21,12 @@
 #include "mozilla-config.h"
 #include "config.h"
 
+
+#ifdef XPCOM_GLUE
+#include <nsXPCOMGlue.h>
+#include <gtkmozembed_glue.cpp>
+#endif
+
 #include <nsCOMPtr.h>
 #include <nsIJVMManager.h>
 #include <nsServiceManagerUtils.h>
@@ -47,4 +53,26 @@ java_console_show (void)
 	NS_ENSURE_TRUE (jvmmgr, );
 
 	jvmmgr->ShowJavaConsole ();
+}
+
+gboolean
+mozilla_glue_startup (void)
+{
+#ifdef XPCOM_GLUE
+	static const GREVersionRange greVersion = {
+	  "1.9a", PR_TRUE,
+	  "2", PR_TRUE
+	};
+	char xpcomLocation[4096];
+
+	if (NS_FAILED (GRE_GetGREPathWithProperties(&greVersion, 1, nsnull, 0, xpcomLocation, sizeof (xpcomLocation))) ||
+	    NS_FAILED (XPCOMGlueStartup (xpcomLocation)) ||
+	    NS_FAILED (GTKEmbedGlueStartup ()) ||
+	    NS_FAILED (GTKEmbedGlueStartupInternal()))
+                return FALSE;
+
+        return TRUE;
+#else
+        return TRUE;
+#endif /* XPCOM_GLUE */
 }

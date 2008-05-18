@@ -76,7 +76,7 @@ mozilla_get_selected_text (EphyEmbed *embed)
 {
 	nsCOMPtr<nsIWebBrowser> browser;
 	gtk_moz_embed_get_nsIWebBrowser (GTK_MOZ_EMBED (gtk_bin_get_child (GTK_BIN (embed))),
-			getter_AddRefs (browser));
+					 getter_AddRefs (browser));
 	nsCOMPtr<nsIWebBrowserFocus> focus (do_QueryInterface(browser));
 	NS_ENSURE_TRUE (focus, NULL);
 

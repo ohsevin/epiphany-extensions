@@ -125,7 +125,6 @@ mozilla_glue_startup (void)
 
         return TRUE;
 #else
-#error hi there!
         return TRUE;
 #endif /* XPCOM_GLUE */
 }
