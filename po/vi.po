@@ -1,21 +1,21 @@
 # Vietnamese translation for Epiphany Extensions.
-# Copyright © 2006 Gnome i18n Project for Vietnamese.
-# Clytie Siddall <clytie@riverland.net.au>, 2005-2006.
-# 
+# Copyright © 2008 Free Software Foundation, Inc.
+# Clytie Siddall <clytie@riverland.net.au>, 2005-2008.
+#
 msgid ""
-""
-msgstr "Project-Id-Version: epiphany-extensions Gnome HEAD\n"
+msgstr ""
+"Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2006-08-21 10:30+0200\n"
-"PO-Revision-Date: 2006-08-21 21:41+0930\n"
+"POT-Creation-Date: 2008-01-14 03:19+0000\n"
+"PO-Revision-Date: 2008-06-06 16:09+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
-"Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
+"Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: LocFactoryEditor 1.6fc1\n"
+"X-Generator: LocFactoryEditor 1.7b3\n"
 
 #: ../extensions/actions/action-properties.glade.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
@@ -29,13 +29,16 @@ msgstr "<span weight=\"bold\">Chung</span>"
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "images."
-msgstr "Nếu tùy chọn này được bật, hành động sẽ xuất hiện trong trình đơn ảnh bật lên."
+msgstr ""
+"Nếu bật tùy chọn này, hành động sẽ xuất hiện trong trình đơn ảnh tự mở."
 
 #: ../extensions/actions/action-properties.glade.h:4
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "links and pages."
-msgstr "Nếu tùy chọn này được bật, hành động sẽ xuất hiện trong trình đơn liên kết và trang bật lên."
+msgstr ""
+"Nếu bật tùy chọn này, hành động sẽ xuất hiện trong trình đơn liên kết và "
+"trang tự mở."
 
 #: ../extensions/actions/action-properties.glade.h:5
 msgid "The action description."
@@ -45,14 +48,17 @@ msgstr "Mô tả hành động."
 msgid ""
 "The action name. If a character is preceded by an underscore, that character "
 "will be used as the access key for the menu item."
-msgstr "Tên của hành động. Nếu ký tự nào có dấu gạch dưới đi trước, ký tự đó sẽ là phím "
+msgstr ""
+"Tên hành động. Nếu ký tự nào có dấu gạch dưới đi trước, ký tự đó sẽ là phím "
 "nóng cho mục trình đơn."
 
 #: ../extensions/actions/action-properties.glade.h:7
 msgid ""
 "The command to execute when the action is activated. The URL of the link, "
 "image or page will be appended to the command."
-msgstr "Lệnh cần thực hiện khi hành động mới kích hoạt. Địa chỉ URL của liên kết, ảnh hay trang sẽ được phụ thêm vào lệnh này."
+msgstr ""
+"Lệnh cần chạy khi hành động mới hoạt hoá. Địa chỉ Mạng của liên kết, ảnh hay "
+"trang sẽ được phụ thêm vào lệnh này."
 
 #: ../extensions/actions/action-properties.glade.h:8
 msgid "_Command:"
@@ -64,9 +70,10 @@ msgstr "_Mô tả:"
 
 #: ../extensions/actions/action-properties.glade.h:10
 msgid "_Images"
-msgstr "Ả_nh"
+msgstr "Ản_h"
 
 #: ../extensions/actions/action-properties.glade.h:11
+#: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Name:"
 msgstr "Tê_n:"
 
@@ -77,148 +84,341 @@ msgstr "T_rang"
 #: ../extensions/actions/actions-editor.glade.h:1
 #: ../extensions/actions/actions.ephy-extension.in.in.h:1
 msgid "Actions"
-msgstr "Hành động"
-
-#: ../extensions/actions/ephy-actions-extension.c:112
-msgid "_Actions"
-msgstr "_Hành động"
+msgstr "Hành vi"
 
 #: ../extensions/actions/ephy-actions-extension.c:113
+msgid "Actio_ns"
+msgstr "Hà_nh vi"
+
+#: ../extensions/actions/ephy-actions-extension.c:114
 msgid "Customize actions"
-msgstr "Tùy chỉnh hành động"
+msgstr "Tùy chỉnh hành vi"
 
-#: ../extensions/actions/ephy-actions-extension.c:436
+#: ../extensions/actions/ephy-actions-extension.c:437
 msgid "Could not run command"
-msgstr "Không thể chạy lệnh"
+msgstr "Không thể chạy câu lệnh"
 
-#: ../extensions/actions/ephy-actions-extension.c:439
+#: ../extensions/actions/ephy-actions-extension.c:440
 msgid "Could not Run Command"
-msgstr "Không thể chạy lệnh"
+msgstr "Không thể chạy câu lệnh"
 
 #: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
 msgid "No action selected."
-msgstr "Chưa chọn hành động."
+msgstr "Chưa chọn hành vi."
 
 #: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
-msgstr[0] "%i hành động đã chọn."
+msgstr[0] "%i hành vi được chọn."
 
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
-msgstr "Thêm hành động"
+msgstr "Thêm hành vi"
 
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
 #, c-format
 msgid "“%s” Properties"
-msgstr "Tài sản « %s »"
+msgstr "Thuộc tính « %s »"
 
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
 msgid "Action Properties"
-msgstr "Tài sản hành động"
+msgstr "Thuộc tính Hành vi"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+#: ../extensions/adblock/adblock-ui.c:279
+msgid ""
+"This list is Copyright © its original author(G). It is relicensed under the "
+"GPL with permission.\n"
+"The original list, Filterset.G, can be found at http://www.pierceive.com/"
+"filtersetg/.\n"
+"This version has been modified from its original. The changes have not been "
+"approved by the original author;\n"
+"direct any problems to Bugzilla and not to the original author (G).\n"
+msgstr "Danh sách này có bản quyền © tác giả gốc (G). Tác giả cho phép cấp lại nó dưới Giấy Phép Công Cộng GNU (GPL).\n"
+"Danh sách gốc, Filterset.G, nằm ở địa chỉ « http://www.pierceive.com/"
+"filtersetg/ ».\n"
+"Phiên bản này đã bị sửa đổi sơ với danh sách gốc. Tác giả gốc (G) tán thành các thay đổi này.\n"
+
+#: ../extensions/adblock/adblock-ui.c:497
+msgid "Pattern"
+msgstr "Mẫu"
+
+#: ../extensions/adblock/adblock.glade.h:1
+msgid "<b>Courtesy of Graham Pierce</b>"
+msgstr "<b>Nhờ Graham Pierce</b>"
+
+#: ../extensions/adblock/adblock.glade.h:2
+msgid "<b>New rule</b>"
+msgstr "<b>Quy tắc mới</b>"
+
+#: ../extensions/adblock/adblock.glade.h:3
+msgid "<b>Update rules from original site</b>"
+msgstr "<b>Cập nhật quy tắc từ địa chỉ gốc</b>"
+
+#: ../extensions/adblock/adblock.glade.h:4
+#: ../extensions/adblock/ephy-adblock-extension.c:243
+msgid "Adblock Editor"
+msgstr "Bộ sửa sự chặn quảng cáo"
+
+#: ../extensions/adblock/adblock.glade.h:5
+msgid "Add a new rule"
+msgstr "Thêm quy tắc mới"
+
+#: ../extensions/adblock/adblock.glade.h:6
+msgid "Blacklist"
+msgstr "Chặn"
+
+#: ../extensions/adblock/adblock.glade.h:7
+msgid "Filterset.G"
+msgstr "Filterset.G"
+
+#: ../extensions/adblock/adblock.glade.h:8
+msgid "Whitelist"
+msgstr "Chấp nhận"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:244
+msgid "Edit Adblock"
+msgstr "Sửa sự chặn quảng cáo"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:311
+#, c-format
+msgid "%d hidden advertisement"
+msgid_plural "%d hidden advertisements"
+msgstr[0] "%d quảng báo ẩn"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:84
 msgid "_Auto Reload"
-msgstr "Tải _lại tự động"
+msgstr "Tự động tải lại"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:86
 msgid "Reload the page periodically"
-msgstr "Tải lại trang theo định kỳ"
+msgstr "Tải lại trang một cách định kỳ"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:177
+#: ../extensions/cc-license-viewer/cc-license-viewer.py:370
+msgid "View Creative Commons license"
+msgstr "Xem giấy phép Dân Chúng Sáng Tạo (CC)"
+
+#: ../extensions/certificates/ephy-certificates-extension.c:176
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "Chứng nhận"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:208
+#: ../extensions/certificates/ephy-certificates-extension.c:207
 msgid "Security Devices"
-msgstr "Thiết bị bảo mật"
+msgstr "Thiết bị Bảo mật"
 
-#.stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:220
+#: ../extensions/certificates/ephy-certificates-extension.c:219
+#. stock icon
 msgid "Manage _Certificates"
-msgstr "Quản lý _chứng nhận"
+msgstr "_Quản lý chứng nhận"
 
-#.shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:222
+#: ../extensions/certificates/ephy-certificates-extension.c:221
+#. shortcut key
 msgid "Manage your certificates"
 msgstr "Quản lý các chứng nhận của bạn"
 
-#.stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:226
+#: ../extensions/certificates/ephy-certificates-extension.c:225
+#. stock icon
 msgid "Manage Security _Devices"
 msgstr "Quản lý thiết bị _bảo mật"
 
-#.shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:228
+#: ../extensions/certificates/ephy-certificates-extension.c:227
+#. shortcut key
 msgid "Manage your security devices"
-msgstr "Quản lý các thiết bị bảo mật của bạn"
+msgstr "Quản lý các thiết bị bảo mật của bạn."
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
+#: ../extensions/epilicious/epilicious-config.glade.h:1
+msgid "Action for tagged bookmarks:"
+msgstr "Hành vi với liên kết lưu có thẻ:"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:2
+msgid "Epilicious Configuration"
+msgstr "Cấu hình Epilicious"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:3
+msgid "_Backend:"
+msgstr "_Hậu phương:"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:4
+msgid "_Exclude"
+msgstr "_Loại trừ"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:5
+msgid "_Include"
+msgstr "_Bao gồm"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:7
+msgid "_Password:"
+msgstr "_Mật khẩu :"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:8
+msgid "_Tag:"
+msgstr "_Thẻ:"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:1
+msgid "Adding new bookmarks and synching topics"
+msgstr "Đang thêm các liên kết lưu mới và đồng bộ hoá các chủ đề"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:2
+msgid "Removing deleted bookmarks"
+msgstr "Đang gỡ bỏ các liên kết lưu bị xoá"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:4
+#: ../extensions/epilicious/progress.py:41
+#, no-c-format
+#, python-format
+msgid "Retrieving bookmarks from %s"
+msgstr "Đang lấy các liên kết lưu từ %s"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:5
+msgid "Retrieving bookmarks from epiphany"
+msgstr "Đang lấy các liên kết lưu từ Epiphany"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:6
+msgid "Retrieving previous synch point"
+msgstr "Đang lấy điểm đồng bộ hoá trước"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:7
+msgid "Saving new synch point"
+msgstr "Đang lưu điểm đồng bộ hoá mới"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:9
+#: ../extensions/epilicious/progress.py:39
+#, no-c-format
+#, python-format
+msgid "Synchronizing with %s"
+msgstr "Đang đồng bộ hoá với %s"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:10
+msgid "Synchronizing..."
+msgstr "Đang đồng bộ hoá..."
+
+#: ../extensions/epilicious/epilicious.py.in:202
+#: ../extensions/epilicious/epilicious.py.in:220
+msgid "Epilicious Synchronize"
+msgstr "Đồng bộ Epilicious"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:1
+msgid "Bookmarks with this topic will be synchronized."
+msgstr "Các liên kết lưu về chủ đề này sẽ được đồng bộ hoá."
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:2
+msgid ""
+"Controls the function of the topic. If this is unset then all bookmarks with "
+"the topic will be synched. If this is set then all bookmarks without the "
+"topic will be synched."
+msgstr "Điều khiển chức năng của chủ đề. Không bật thì đồng bộ hoá tất cả các liên kết thường dùng có chủ đề này. Bật thì đồng bộ hoá tất cả các liên kết thường dùng không có chủ đề này."
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:3
+msgid "Exclude topic"
+msgstr "Loại trừ chủ đề"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:4
+msgid "Shared topic"
+msgstr "Chủ đề chia sẻ"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:5
+msgid ""
+"The backend that epilicious will use for synchronizing bookmarks. Allowed "
+"value: 'ma.gnolia'"
+msgstr "Hậu phương mà epilicious dùng để đồng bộ hoá các liên kết thường dùng. Giá trị được phép: « ma.gnolia »."
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:6
+msgid "The password that epilicious will use for synchronizing bookmarks."
+msgstr "Mật khẩu mà epilicious dùng để đồng bộ hoá các liên kết thường dùng."
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:7
+msgid "The username that epilicious will use for synchronizing bookmarks."
+msgstr "Tên người dùng mà epilicious dùng để đồng bộ hoá các liên kết thường dùng."
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:8
+msgid "epilicious backend"
+msgstr "hậu phương epilicious"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:9
+msgid "password"
+msgstr "mật khẩu"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:10
+msgid "username"
+msgstr "tên người dùng"
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:98
 msgid "Check _HTML"
 msgstr "Kiểm tra mã _HTML"
 
-#.shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:100
+#. shortcut key
 msgid "Display HTML errors in the Error Viewer dialog"
-msgstr "Hiển thị các lỗi HTML trong Bộ Xem Lỗi"
+msgstr "Hiển thị các lỗi HTML trong hộp thoại Xem Lỗi"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:104
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
 msgid "Check _Links"
 msgstr "Kiểm tra _Liên kết"
 
-#.shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:106
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:107
+#. shortcut key
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
-msgstr "Hiển thị các siêu liên kết không hợp lệ trong hộp thoại Bộ Xem Lỗi"
+msgstr "Hiển thị các siêu liên kết sai trong hộp thoại Xem Lỗi"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:110
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:111
 msgid "_Error Viewer"
-msgstr "Bộ X_em Lỗi"
+msgstr "Xem _Lỗi"
 
-#.shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:112
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:113
+#. shortcut key
 msgid "Display web page errors"
-msgstr "Hiện các lỗi trong trang Mạng"
+msgstr "Hiện các lỗi về trang Web"
 
 #: ../extensions/error-viewer/error-viewer.glade.h:1
 msgid "Cl_ear"
-msgstr "X_oá"
+msgstr "_Dọn"
 
 #: ../extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
-msgstr "Bộ Xem Lỗi"
+msgstr "Xem lỗi"
 
-#.Don't bother looking for source lines -- they're not there
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:96
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:103
 #, c-format
 msgid ""
-"Error:\n"
+"%s error in %s on line %d and column %d:\n"
 "%s"
-msgstr "Lỗi:\n"
+msgstr ""
+"Lỗi %s trong %s ở dòng %d và cột %d:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:126
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:109
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:140
 #, c-format
 msgid ""
-"Javascript error in %s on line %d:\n"
+"%s error in %s:\n"
 "%s"
-msgstr "Lỗi Javascript trong %s trên dòng %d:\n"
+msgstr "lỗi %s trong %s:\n"
+"%s"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:123
+#, c-format
+msgid ""
+"%s error in %s on line %d:\n"
+"%s"
+msgstr ""
+"Lỗi %s trong %s ở dòng %d:\n"
 "%s"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
-msgstr[0] "Tìm thấy %d liên kết không hợp lệ"
+msgstr[0] "Tìm thấy %d liên kết sai"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
 msgid ""
 "Link error in %s:\n"
 "%s is unavailable."
-msgstr "Gặp lỗi liên kết trong %s:\n"
+msgstr ""
+"Gặp lỗi liên kết trong %s:\n"
 "%s hiện thời không sẵn sàng."
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
@@ -227,12 +427,13 @@ msgid "Checking %d Link on “%s”"
 msgid_plural "Checking %d Links on “%s”"
 msgstr[0] "Đang kiểm tra %d liên kết trên « %s »"
 
-#: ../extensions/error-viewer/opensp/validate.cpp:167
+#: ../extensions/error-viewer/opensp/validate.cpp:168
 #, c-format
 msgid ""
 "HTML error in “%s” on line %s:\n"
 "%s"
-msgstr "Gặp lỗi HTML trong « %s » trên dòng %s:\n"
+msgstr ""
+"Gặp lỗi HTML trong « %s » ở dòng %s:\n"
 "%s"
 
 #: ../extensions/error-viewer/sgml-validator.c:165
@@ -244,14 +445,15 @@ msgstr[0] "Tìm thấy %d lỗi"
 #: ../extensions/error-viewer/sgml-validator.c:169
 #, c-format
 msgid "HTML Validation of “%s” complete"
-msgstr "Mã HTML của « %s » đã được thẩm tra"
+msgstr "Đã thẩm tra hoàn thành mã HTML của « %s »"
 
 #: ../extensions/error-viewer/sgml-validator.c:227
 #, c-format
 msgid ""
 "HTML error in %s:\n"
 "%s"
-msgstr "Gặp lỗi HTML trong %s:\n"
+msgstr ""
+"Gặp lỗi HTML trong %s:\n"
 "%s"
 
 #: ../extensions/error-viewer/sgml-validator.c:229
@@ -259,14 +461,16 @@ msgstr "Gặp lỗi HTML trong %s:\n"
 msgid ""
 "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
 "+xml” instead."
-msgstr "Kiểu tài liệu (doctype) là « XHTML » còn kiểu nội dung (content-type) là « text/html ». Dùng « application/xhtml+xml » thay thế."
+msgstr ""
+"Kiểu tài liệu (DOCTYPE) là « XHTML » mà kiểu nội dung (content-type) là « text/html ». Hãy dùng “application/xhtml+xml” thay vào đó."
 
 #: ../extensions/error-viewer/sgml-validator.c:243
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
 "%s"
-msgstr "Cảnh báo HTML trong %s:\n"
+msgstr ""
+"Cảnh báo HTML trong %s:\n"
 "%s"
 
 #: ../extensions/error-viewer/sgml-validator.c:360
@@ -276,23 +480,24 @@ msgstr "Gặp lỗi HTML trong %s:"
 
 #: ../extensions/error-viewer/sgml-validator.c:368
 msgid "Invalid character encoding"
-msgstr "Bộ ký tự không hợp lệ"
+msgstr "Bảng mã ký tự không hợp lệ"
 
 #: ../extensions/error-viewer/sgml-validator.c:373
 msgid "Unknown error while converting to UTF-8"
-msgstr "Gặp lỗi lạ khi chuyển đổi sang UTF-8"
+msgstr "Gặp lỗi không rõ trong khi chuyển đổi sang UTF-8"
 
 #: ../extensions/error-viewer/sgml-validator.c:435
 #, c-format
 msgid ""
 "HTML error in %s:\n"
 "No valid doctype specified."
-msgstr "Gặp lỗi HTML trong %s:\n"
+msgstr ""
+"Gặp lỗi HTML trong %s:\n"
 "Chưa ghi rõ kiểu tài liệu (doctype) hợp lệ."
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
 msgid "Enabled"
-msgstr "Hoạt động"
+msgstr "Đã bật"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
 #: ../extensions/rss/rss-ui.c:599
@@ -301,213 +506,247 @@ msgstr "Mô tả"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
 msgid "<b>Loaded Extensions</b>"
-msgstr "<b>Phần mở rộng đã tải</b>"
+msgstr "<b>Phần mở rộng được nạp</b>"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
 msgid "Extensions"
 msgstr "Phần mở rộng"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
-msgid "_Extensions..."
-msgstr "Phần _mở rộng..."
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "_Extensions"
+msgstr "Phần _mở rộng"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
 msgid "Load and unload extensions"
-msgstr "Tải và bỏ tài phần mở rộng"
-
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
-msgid "_Extensions"
-msgstr "_Phần mở rộng"
+msgstr "Nạp và bỏ nạp phần mở rộng"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
 msgid "Help about extensions"
 msgstr "Trợ giúp về phần mở rộng"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:88
 msgid "Install User _Script"
-msgstr "Cài đặt tập _lệnh người dùng"
+msgstr "Cài đặt _văn lệnh người dùng"
 
-#.shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:90
+#. shortcut key
 msgid "Install Greasemonkey script"
-msgstr "Cài đặt tập lệnh Greasemonkey"
+msgstr "Cài đặt văn lệnh Greasemonkey"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:354
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:315
 #, c-format
 msgid "The user script at “%s” has been installed"
-msgstr "Tập lệnh người dùng tại « %s » đã được cài đặt"
+msgstr "Văn lệnh người dùng tại « %s » đã được cài đặt"
 
 #: ../extensions/java-console/ephy-java-console-extension.c:48
 msgid "_Java Console"
 msgstr "Bàn giao tiếp _Java"
 
-#.shortcut key
 #: ../extensions/java-console/ephy-java-console-extension.c:50
+#. shortcut key
 msgid "Show Java Console"
-msgstr "HIển thị bàn giao tiếp Java"
+msgstr "Hiện bàn giao tiếp Java"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:102
+msgid "_HTTP Headers"
+msgstr "Dòng đầu _HTTP"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:1
+msgid "<b>Request</b>"
+msgstr "<b>Yêu cầu</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:2
+msgid "<b>Response</b>"
+msgstr "<b>Đáp ứng</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:3
+msgid "<b>URLs</b>"
+msgstr "<b>URL</b> "
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
+msgid "Clear cache"
+msgstr "Xoá bộ nhớ tạm"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
+msgid "Live Headers"
+msgstr "Dòng đầu động"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
+msgid "Remove headers"
+msgstr "Bỏ dòng đầu"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:68
 msgid "Pa_ge Information"
-msgstr "Thông tin tran_g"
+msgstr "Thôn_g tin về trang"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:69
+#: ../extensions/page-info/ephy-page-info-extension.c:70
 msgid "Display page information in a dialog"
-msgstr "Hiển thị thông tin trang trong hộp thoại"
+msgstr "Hiển thị trong hộp thoại thông tin về trang"
 
-#: ../extensions/page-info/page-info-dialog.c:726
+#: ../extensions/page-info/page-info-dialog.c:730
 msgid "Save As..."
 msgstr "Lưu dạng..."
 
-#: ../extensions/page-info/page-info-dialog.c:743
+#: ../extensions/page-info/page-info-dialog.c:747
 msgid "Select a directory"
 msgstr "Chọn thư mục"
 
-#: ../extensions/page-info/page-info-dialog.c:792
+#: ../extensions/page-info/page-info-dialog.c:796
 msgid "Unknown type"
-msgstr "Kiểu lạ"
+msgstr "Kiểu không rõ"
 
-#: ../extensions/page-info/page-info-dialog.c:797
+#: ../extensions/page-info/page-info-dialog.c:801
 msgid "Full standards compliance"
 msgstr "Tuân theo tiêu chuẩn hoàn toàn"
 
-#: ../extensions/page-info/page-info-dialog.c:800
+#: ../extensions/page-info/page-info-dialog.c:804
 msgid "Almost standards compliance"
 msgstr "Gần tuân theo tiêu chuẩn"
 
-#: ../extensions/page-info/page-info-dialog.c:803
+#: ../extensions/page-info/page-info-dialog.c:807
 msgid "Compatibility"
 msgstr "Tương thích"
 
-#: ../extensions/page-info/page-info-dialog.c:807
+#: ../extensions/page-info/page-info-dialog.c:811
 msgid "Undetermined"
 msgstr "Chưa quyết định"
 
-#: ../extensions/page-info/page-info-dialog.c:816
+#: ../extensions/page-info/page-info-dialog.c:820
 msgid "Not cached"
-msgstr "Khác lưu tạm"
+msgstr "Không lưu tạm"
 
-#: ../extensions/page-info/page-info-dialog.c:819
+#: ../extensions/page-info/page-info-dialog.c:823
 msgid "Disk cache"
 msgstr "Bộ nhớ tạm đĩa"
 
-#: ../extensions/page-info/page-info-dialog.c:822
+#: ../extensions/page-info/page-info-dialog.c:826
 msgid "Memory cache"
 msgstr "Bộ nhớ tạm"
 
-#: ../extensions/page-info/page-info-dialog.c:825
+#: ../extensions/page-info/page-info-dialog.c:829
 msgid "Unknown cache"
-msgstr "Bộ nhớ tạm lạ"
+msgstr "Bộ nhớ tạm không rõ"
 
-#: ../extensions/page-info/page-info-dialog.c:841
-#: ../extensions/page-info/page-info-dialog.c:952
+#: ../extensions/page-info/page-info-dialog.c:845
+#: ../extensions/page-info/page-info-dialog.c:961
 msgid "Unknown"
 msgstr "Không rõ"
 
-#: ../extensions/page-info/page-info-dialog.c:846
+#: ../extensions/page-info/page-info-dialog.c:850
 msgid "No referrer"
-msgstr "Không có điều tham chiếu"
+msgstr "Không có đồ quy"
 
-#: ../extensions/page-info/page-info-dialog.c:860
-#: ../extensions/page-info/page-info-dialog.c:876
+#: ../extensions/page-info/page-info-dialog.c:864
+#: ../extensions/page-info/page-info-dialog.c:880
 msgid "Not specified"
-msgstr "Chưa ghi rõ"
+msgstr "Chưa xác định"
 
-#: ../extensions/page-info/page-info-dialog.c:937
+#: ../extensions/page-info/page-info-dialog.c:943
 msgid "Image"
 msgstr "Ảnh"
 
-#: ../extensions/page-info/page-info-dialog.c:940
+#: ../extensions/page-info/page-info-dialog.c:946
+msgid "Background image"
+msgstr "Ảnh nền"
+
+#: ../extensions/page-info/page-info-dialog.c:949
 msgid "Embed"
 msgstr "Nhúng"
 
-#: ../extensions/page-info/page-info-dialog.c:943
+#: ../extensions/page-info/page-info-dialog.c:952
 msgid "Object"
 msgstr "Đối tượng"
 
-#: ../extensions/page-info/page-info-dialog.c:946
+#: ../extensions/page-info/page-info-dialog.c:955
 msgid "Applet"
 msgstr "Tiểu dụng"
 
-#: ../extensions/page-info/page-info-dialog.c:949
+#: ../extensions/page-info/page-info-dialog.c:958
 msgid "Icon"
 msgstr "Biểu tượng"
 
-#: ../extensions/page-info/page-info-dialog.c:1054
+#: ../extensions/page-info/page-info-dialog.c:1130
 msgid "_Open"
 msgstr "_Mở"
 
-#: ../extensions/page-info/page-info-dialog.c:1060
-#: ../extensions/page-info/page-info-dialog.c:1420
+#: ../extensions/page-info/page-info-dialog.c:1136
+#: ../extensions/page-info/page-info-dialog.c:1581
 msgid "_Copy Link Address"
 msgstr "_Chép địa chỉ liên kết"
 
-#: ../extensions/page-info/page-info-dialog.c:1066
+#: ../extensions/page-info/page-info-dialog.c:1142
 msgid "_Use as Background"
 msgstr "_Dùng làm nền"
 
-#: ../extensions/page-info/page-info-dialog.c:1072
-#: ../extensions/page-info/page-info-dialog.c:1426
+#: ../extensions/page-info/page-info-dialog.c:1148
+#: ../extensions/page-info/page-info-dialog.c:1587
 msgid "_Save As..."
-msgstr "Lư_u dang..."
+msgstr "_Lưu dạng..."
 
-#: ../extensions/page-info/page-info-dialog.c:1256
-#: ../extensions/page-info/page-info-dialog.c:1499
+#: ../extensions/page-info/page-info-dialog.c:1380
+#: ../extensions/page-info/page-info-dialog.c:1701
+msgid "Blocked"
+msgstr "Bị chặn"
+
+#: ../extensions/page-info/page-info-dialog.c:1396
+#: ../extensions/page-info/page-info-dialog.c:1717
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1269
+#: ../extensions/page-info/page-info-dialog.c:1409
 msgid "Type"
 msgstr "Kiểu"
 
-#: ../extensions/page-info/page-info-dialog.c:1281
+#: ../extensions/page-info/page-info-dialog.c:1421
 msgid "Alt Text"
-msgstr "Đoạn thay thế"
+msgstr "Chuỗi thay thế"
 
-#: ../extensions/page-info/page-info-dialog.c:1293
-#: ../extensions/page-info/page-info-dialog.c:1512
+#: ../extensions/page-info/page-info-dialog.c:1433
+#: ../extensions/page-info/page-info-dialog.c:1730
 msgid "Title"
-msgstr "Tựa"
+msgstr "Tựa đề"
 
-#: ../extensions/page-info/page-info-dialog.c:1305
+#: ../extensions/page-info/page-info-dialog.c:1445
 msgid "Width"
 msgstr "Rộng"
 
-#: ../extensions/page-info/page-info-dialog.c:1317
+#: ../extensions/page-info/page-info-dialog.c:1457
 msgid "Height"
 msgstr "Cao"
 
-#: ../extensions/page-info/page-info-dialog.c:1524
+#: ../extensions/page-info/page-info-dialog.c:1742
 msgid "Relation"
 msgstr "Quan hệ"
 
-#: ../extensions/page-info/page-info-dialog.c:1654
-#: ../extensions/page-info/page-info-dialog.c:1793
+#: ../extensions/page-info/page-info-dialog.c:1891
+#: ../extensions/page-info/page-info-dialog.c:2032
 msgid "Name"
 msgstr "Tên"
 
-#: ../extensions/page-info/page-info-dialog.c:1666
+#: ../extensions/page-info/page-info-dialog.c:1903
 msgid "Method"
 msgstr "Phương pháp"
 
-#: ../extensions/page-info/page-info-dialog.c:1680
+#: ../extensions/page-info/page-info-dialog.c:1917
 msgid "Action"
-msgstr "Hành động"
+msgstr "Hành vi"
 
-#: ../extensions/page-info/page-info-dialog.c:1759
+#: ../extensions/page-info/page-info-dialog.c:1998
 msgid "_Copy"
 msgstr "_Chép"
 
-#: ../extensions/page-info/page-info-dialog.c:1805
+#: ../extensions/page-info/page-info-dialog.c:2044
 msgid "Content"
 msgstr "Nội dung"
 
-#: ../extensions/page-info/page-info-dialog.c:1904
+#: ../extensions/page-info/page-info-dialog.c:2145
 msgid "Page Metadata"
-msgstr "Siêu dữ liệu của trang"
+msgstr "Siêu dữ liệu về trang"
 
 #: ../extensions/page-info/page-info.glade.h:1
 msgid "<b>Dublin Core Metadata</b>"
-msgstr "<b>Siêu dữ liệu kiểu Lõi Dublin</b>"
+msgstr "<b>Siêu dữ liệu Lõi Dublin</b>"
 
 #: ../extensions/page-info/page-info.glade.h:2
 msgid "<b>Forms In Page</b>"
@@ -523,7 +762,7 @@ msgstr "<b>Ảnh/nhạc trong trang</b>"
 
 #: ../extensions/page-info/page-info.glade.h:5
 msgid "<b>Medium View</b>"
-msgstr "<b>Bộ xem vừa</b>"
+msgstr "<b>Bộ xem nhạc/ảnh</b>"
 
 #: ../extensions/page-info/page-info.glade.h:6
 msgid "<b>Other Metadata</b>"
@@ -531,7 +770,7 @@ msgstr "<b>Siêu dữ liệu khác</b>"
 
 #: ../extensions/page-info/page-info.glade.h:7
 msgid "<b>Rendering</b>"
-msgstr "<b>Vẽ</b>"
+msgstr "<b>Vẽ phông</b>"
 
 #: ../extensions/page-info/page-info.glade.h:8
 msgid "<b>Source File</b>"
@@ -539,7 +778,7 @@ msgstr "<b>Tập tin nguồn</b>"
 
 #: ../extensions/page-info/page-info.glade.h:9
 msgid "<b>Web Page</b>"
-msgstr "<b>Trang Mạng</b>"
+msgstr "<b>Trang Web</b>"
 
 #: ../extensions/page-info/page-info.glade.h:10
 msgid "DYNAMIC"
@@ -559,11 +798,11 @@ msgstr "Bảng mã:"
 
 #: ../extensions/page-info/page-info.glade.h:14
 msgid "Expires:"
-msgstr "Hạn dùng:"
+msgstr "Hết hạn:"
 
 #: ../extensions/page-info/page-info.glade.h:15
 msgid "Format:"
-msgstr "Khuôn dạng:"
+msgstr "Định dạng:"
 
 #: ../extensions/page-info/page-info.glade.h:16
 msgid "Forms"
@@ -579,15 +818,15 @@ msgstr "Liên kết"
 
 #: ../extensions/page-info/page-info.glade.h:19
 msgid "Location:"
-msgstr "Địa chỉ:"
+msgstr "Vị trí:"
 
 #: ../extensions/page-info/page-info.glade.h:20
 msgid "MIME type:"
-msgstr "Kiểu MIME:"
+msgstr "Dạng MIME:"
 
 #: ../extensions/page-info/page-info.glade.h:21
 msgid "Media"
-msgstr "Ảnh/nhạc"
+msgstr "Nhạc/Ảnh"
 
 #: ../extensions/page-info/page-info.glade.h:22
 msgid "Metadata"
@@ -603,15 +842,15 @@ msgstr "Sửa đổi:"
 
 #: ../extensions/page-info/page-info.glade.h:25
 msgid "Page Properties"
-msgstr "Tài sản trang"
+msgstr "Thuộc tính Trang"
 
 #: ../extensions/page-info/page-info.glade.h:26
 msgid "Referrer:"
-msgstr "Điều tham chiếu :"
+msgstr "Đồ quy:"
 
 #: ../extensions/page-info/page-info.glade.h:27
 msgid "Size:"
-msgstr "Cỡ :"
+msgstr "Kích cỡ :"
 
 #: ../extensions/page-info/page-info.glade.h:28
 msgid "Source:"
@@ -619,7 +858,7 @@ msgstr "Nguồn:"
 
 #: ../extensions/page-info/page-info.glade.h:29
 msgid "Title:"
-msgstr "Tựa:"
+msgstr "Tên:"
 
 #: ../extensions/page-info/page-info.glade.h:30
 msgid "Type:"
@@ -627,7 +866,7 @@ msgstr "Kiểu :"
 
 #: ../extensions/page-info/page-info.glade.h:31
 msgid "_Save Media As..."
-msgstr "Lư_u ảnh/nhạc dạng..."
+msgstr "_Lưu ảnh/nhạc dạng..."
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:180
 msgid "allowed"
@@ -637,8 +876,8 @@ msgstr "được phép"
 msgid "denied"
 msgstr "bị từ chối"
 
-#.Sometimes we get this... how did this get in the list!?
 #: ../extensions/permissions/ephy-permissions-dialog.c:189
+#. Sometimes we get this... how did this get in the list!?
 msgid "default"
 msgstr "mặc định"
 
@@ -652,7 +891,7 @@ msgstr "Tình trạng"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:620
 msgid "Site Permissions"
-msgstr "Quyền hạn nơi"
+msgstr "Quyền hạn địa chỉ"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:647
 msgid "Cookies"
@@ -664,41 +903,43 @@ msgstr "Ảnh"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:649
 msgid "Popup Windows"
-msgstr "Cửa sổ bất lên"
+msgstr "Cửa sổ tự mở"
 
-#.stock icon
 #: ../extensions/permissions/ephy-permissions-extension.c:156
+#. stock icon
 msgid "Site _Permissions"
-msgstr "_Quyền hạn nơi"
+msgstr "_Quyền hạn địa chỉ"
 
-#.shortcut key
 #: ../extensions/permissions/ephy-permissions-extension.c:158
+#. shortcut key
 msgid "Manage web site permissions"
-msgstr "Quản lý quyền hạn nơi Mạng"
+msgstr "Quản lý quyền truy cập đến địa chỉ Web"
+
+#: ../extensions/rss/ephy-rss-extension.c:91
+msgid "News Feeds Subscription"
+msgstr "Đăng ký với nguồn tin tức"
+
+#: ../extensions/rss/ephy-rss-extension.c:93
+msgid "Subscribe to this website's news feeds in your favorite news reader"
+msgstr ""
+"Đang ký với các nguồn cung cấp tin tức của địa chỉ Web này trong trình đọc tin tức ưa thích"
 
 #: ../extensions/rss/ephy-rss-extension.c:98
-msgid "News Feeds Subscription"
-msgstr "Đăng ký luồng tin tức"
+msgid "_Subscribe to this feed"
+msgstr "Đăng _ký với nguồn tin này"
 
 #: ../extensions/rss/ephy-rss-extension.c:100
-msgid "Subscribe to this website's news feeds in your favorite news reader"
-msgstr "Đang ký với các luồng cung cấp tin tức của nơi Mạng này trong bộ đọc tin tức ưa thích"
-
-#: ../extensions/rss/ephy-rss-extension.c:105
-msgid "_Subscribe to this feed"
-msgstr "Đăng _ký với luồng tin tức này"
-
-#: ../extensions/rss/ephy-rss-extension.c:107
 msgid "Subscribe to this feed in your favorite news reader"
-msgstr "Đăng ký với luồng tin tức này trong bộ đọc tin tức ưa thích"
+msgstr "Đăng ký với nguồn tin tức này trong trình đọc tin tức ưa thích"
 
-#: ../extensions/rss/ephy-rss-extension.c:396
+#: ../extensions/rss/ephy-rss-extension.c:373
 msgid "Subscribe to site's news feed"
-msgstr "Đang ký với luồng cung cấp tin tức của nơi Mạng"
+msgstr "Đang ký với nguồn tin của địa chỉ Web"
 
 #: ../extensions/rss/rss-ui.c:167
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
-msgstr "<b><i>Không thể liên lạc với bộ xem luồng tin tức, nó có chạy chưa ?</i></b>"
+msgstr ""
+"<b><i>Không thể liên lạc với trình đọc nguồn tin, nó đang chạy chưa?</i></b>"
 
 #: ../extensions/rss/rss-ui.c:169
 msgid "Retry"
@@ -706,7 +947,7 @@ msgstr "Thử lại"
 
 #: ../extensions/rss/rss-ui.c:297
 msgid "_Copy Feed Address"
-msgstr "_Chép địa chỉ luồng tin tức"
+msgstr "_Chép địa chỉ nguồn tin"
 
 #: ../extensions/rss/rss-ui.c:591
 msgid "Subscribe"
@@ -714,34 +955,35 @@ msgstr "Đăng ký"
 
 #: ../extensions/rss/rss-ui.glade.h:1
 msgid "<b>Select Interesting Feeds</b>"
-msgstr "<b>Chọn luồng thú vi</b>"
+msgstr "<b>Chọn nguồn thú vi</b>"
 
 #: ../extensions/rss/rss-ui.glade.h:2
-msgid "News Feed Subcription"
-msgstr "Đang ký với luồng tin tức"
+#: ../extensions/rss/rss.ephy-extension.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "Đăng ký Nguồn Tin"
 
 #: ../extensions/rss/rss-ui.glade.h:3
 msgid "_Subscribe"
 msgstr "Đăng _ký"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:145
+#: ../extensions/select-stylesheet/ephy-css-menu.c:146
 msgid "Render the page without using a style"
-msgstr "Vẽ trang này mà không dùng kiểu dáng"
+msgstr "Vẽ trang này mà không theo kiểu dáng"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:148
+#: ../extensions/select-stylesheet/ephy-css-menu.c:149
 msgid "Render the page using the default style"
-msgstr "Vẽ trang này bằng kiểu dáng mặc định"
+msgstr "Vẽ trang này theo kiểu dáng mặc định"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:151
+#: ../extensions/select-stylesheet/ephy-css-menu.c:152
 #, c-format
 msgid "Render the page using the “%s” style"
-msgstr "Vẽ trang này bằng kiểu dáng « %s »"
+msgstr "Vẽ trang này theo kiểu dáng « %s »"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:309
+#: ../extensions/select-stylesheet/ephy-css-menu.c:310
 msgid "St_yle"
 msgstr "_Kiểu dáng"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:310
+#: ../extensions/select-stylesheet/ephy-css-menu.c:311
 msgid "Select a different style for this page"
 msgstr "Chọn một kiểu dáng khác cho trang này"
 
@@ -753,11 +995,9 @@ msgstr "Mặc định"
 msgid "None"
 msgstr "Không có"
 
-# Type: note
-# Description
 #: ../extensions/sidebar/ephy-sidebar.c:176
 msgid "No Sidebars installed"
-msgstr "Chưa cài đặt ô lề nào"
+msgstr "Chưa cài đặt ô lề"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:105
 msgid "_Sidebar"
@@ -767,79 +1007,120 @@ msgstr "Ô _lề"
 msgid "Show or hide the sidebar"
 msgstr "Hiện/ẩn ô lề"
 
-#.Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:408
+#: ../extensions/sidebar/ephy-sidebar-extension.c:323
+msgid "Do you really want to remove this sidebar?"
+msgstr "Bạn thực sự muốn gỡ bỏ ô lề này không?"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:327
+msgid "There is no way to recover this sidebar after removal."
+msgstr "Một khi gỡ bỏ ô lề này thì không thể phục hồi lại."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:329
+msgid "Remove Sidebar"
+msgstr "Bỏ ô lề"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:476
 #, c-format
+#. Translators: %s is the sidebar title
 msgid "The sidebar already contains “%s”"
 msgstr "Ô lề đã chứa « %s »"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:412
+#: ../extensions/sidebar/ephy-sidebar-extension.c:480
 msgid ""
 "To use this sidebar, select it from the list of available sidebar pages."
-msgstr "Để sử dụng ô lề này, hãy chọn nó trong danh sách các trang ô lề."
+msgstr "Để sử dụng ô lề này, hãy lựa chọn nó trong danh sách các trang ô lề sẵn sàng."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:415
-#: ../extensions/sidebar/ephy-sidebar-extension.c:441
+#: ../extensions/sidebar/ephy-sidebar-extension.c:483
+#: ../extensions/sidebar/ephy-sidebar-extension.c:509
 msgid "Add Sidebar"
 msgstr "Thêm ô lề"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:435
+#: ../extensions/sidebar/ephy-sidebar-extension.c:503
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr "Thêm « %s » vào ô lề không?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:439
+#: ../extensions/sidebar/ephy-sidebar-extension.c:507
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr "Nguồn của trang ô lề mới là « %s »."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:445
+#: ../extensions/sidebar/ephy-sidebar-extension.c:513
 msgid "_Add Sidebar"
-msgstr "Thê_m ô lề"
+msgstr "Th_êm ô lề"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:551
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:542
 msgid "_Look Up"
-msgstr "T_ra tìm"
+msgstr "_Tra tìm"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:558
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:549
 msgid "_GNOME Dictionary"
 msgstr "Từ điển _GNOME"
 
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
+msgid "Open search result in new tab"
+msgstr "Mở kết quả dưới thẻ mới"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
+msgid "Open search result in new tab if true, in new window if false"
+msgstr "Nếu đúng thì mở kết quả tìm kiếm dưới thẻ mới, sai thì trong cửa sổ mới"
+
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
-msgstr "Thực hiện lệnh tùy ý từ trình đơn ngữ cảnh"
+msgstr "Thực hiện câu lệnh tùy ý từ trình đơn ngữ cảnh"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
+msgid "Ad Blocker"
+msgstr "Bộ chặn quảng cáo"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
+msgid "Block the pest!"
+msgstr "Chặn người làm hại nhé !"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
 msgid "Auto Scroll"
-msgstr "Cuộn tự động"
+msgstr "Tự động cuộn"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
 msgid "Scroll on middle mouse click"
-msgstr "Cuộn khi nhấn giữa chuột"
+msgstr "Cuộn khi nhấn nút giữa trên chuột"
 
 #: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
 msgid "Auto Reload Tab"
-msgstr "Tự động tải lại thanh"
+msgstr "Tự động tải lại thẻ"
 
 #: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
 msgid "Reload a tab periodically"
-msgstr "Tải lại thanh theo định kỳ"
+msgstr "Tải lại một thẻ một cách định kỳ"
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
+msgid "Creative Commons license viewer"
+msgstr "Xem giấy phép Dân Chúng Sáng Tạo"
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
+msgid "Shows the Creative Commons license of the current website if available"
+msgstr ""
+"Hiển thị các điều kiện của giấy phép Dân Chúng Sáng Tạo (Creative Commons, CC) nếu sẵn sàng"
 
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Xem chứng nhận của trang và quản lý các chứng nhận"
 
+#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
+msgid "Synchronize bookmarks with social bookmark sites"
+msgstr "Đồng bộ hoá các liên kết lưu với địa chỉ liên kết lưu xã hội"
+
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
-msgstr "Bộ xem lỗi"
+msgstr "Xem lỗi"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
-msgid "View error in web pages, validate web pages and check links"
-msgstr "Xem lỗi trong trang Mạng, hợp lệ hoá trang Mạng và kiểm tra liên kết"
+msgid "Validate web pages and check links"
+msgstr "Thẩm tra trang Web và kiểm tra liên kết"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
 msgid "Activate and deactivate extensions"
-msgstr "Bật và tắt phần mở rộng"
+msgstr "Bật/tắt phần mở rộng"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
 msgid "Extensions Manager"
@@ -847,12 +1128,13 @@ msgstr "Bộ Quản Lý Phần Mở Rộng"
 
 #: ../extensions/favicon/favicon.ephy-extension.in.h:1
 msgid "Favicon fallback"
-msgstr "Phục hồi hình ưa thích"
+msgstr "Phục hồi hình thích"
 
 #: ../extensions/favicon/favicon.ephy-extension.in.h:2
 msgid ""
 "Loads /favicon.ico as favicon if the site doesn't use the standard method"
-msgstr "Tải tập tin </favicon.ico> là biểu tượng ưa thích nếu nơi Mạng đó không dùng phương pháp chuẩn"
+msgstr ""
+"Tải tập tin « /favicon.ico » là biểu tượng ưa thích (favicon) nếu địa chỉ Web không sử dụng phương pháp tiêu chuẩn"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -862,14 +1144,13 @@ msgstr "Điệu bộ"
 msgid "Perform actions with mouse gestures"
 msgstr "Thực hiện hành động bằng điệu bộ con chuột"
 
-# Name: don't translate / Tên: đừng dịch
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
 msgid "Greasemonkey"
 msgstr "Greasemonkey"
 
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
 msgid "Run user scripts to modify web pages' behavior"
-msgstr "Chạy tập lệnh người dùng để sửa đổi ứng xử của trang Mạng"
+msgstr "Chạy văn lệnh người dùng để sửa đổi hành vi của trang Web"
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
 msgid "Java Console"
@@ -877,11 +1158,15 @@ msgstr "Bàn giao tiếp Java"
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
 msgid "Provide access to the Java-Plugin Console"
-msgstr "Cung cấp truy cập Bàn giao tiếp bổ sung Java"
+msgstr "Cung cấp truy cập đến Bàn giao tiếp phần bổ sung Java"
+
+#: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
+msgid "Live HTTP headers"
+msgstr "Dòng đầu HTTP động"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
-msgstr "Hiển thị thông tin về, và liên kết và ảnh/nhạc từ trang hiện có"
+msgstr "Hiển thị thông tin về và liên kết và ảnh/nhạc từ trang hiện tại."
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
 msgid "Page Info"
@@ -889,20 +1174,33 @@ msgstr "Thông tin trang"
 
 #: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
 msgid "Edit site permissions"
-msgstr "Sửa quyền hạn nơi"
+msgstr "Sửa quyền hạn địa chỉ"
 
 #: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
 msgid "Permissions"
 msgstr "Quyền hạn"
 
-#: ../extensions/rss/rss.ephy-extension.in.in.h:1
-msgid "News Feed Subscription"
-msgstr "Đăng ký luồng tin tức"
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
+msgid "Drag the page on middle mouse click"
+msgstr "Kéo trang khi nhấn chuột giữa"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+msgid "Push Scroll"
+msgstr "Cuộn đẩy"
+
+#: ../extensions/python-console/python-console.ephy-extension.in.h:1
+msgid "Opens an interactive Python console"
+msgstr "Mở một bàn giao tiếp Python tương tác"
+
+#: ../extensions/python-console/python-console.ephy-extension.in.h:2
+msgid "Python Console"
+msgstr "Bàn giao tiếp Python"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
-msgstr "Đang ký với một luồng tin tức cung cấp bởi trang Mạng, trong bộ đọc tin tức ưa thích"
+msgstr ""
+"Đang ký với một nguồn tin tức đưa ra bởi trang Web, trong trình đọc tin tức ưa thích"
 
 #: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
 msgid "A sample extension with mozilla backend"
@@ -922,11 +1220,11 @@ msgstr "Mẫu"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
 msgid "Select Stylesheet"
-msgstr "Chọn tờ kiểu dáng"
+msgstr "Chọn bảng kiểu dáng"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
-msgstr "Chọn giữa nhiều tờ kiểu dáng đưa ra bởi trang Mạng"
+msgstr "Chọn trong một số bảng kiểu dáng đưa ra bởi trang Web"
 
 #: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
 msgid "Adds a sidebar to windows"
@@ -938,24 +1236,24 @@ msgstr "Ô lề"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
 msgid "Look up the selected text with a smart bookmark"
-msgstr "Tra tìm chuỗi đã chọn bằng đánh dấu thông minh"
+msgstr "Tra tìm chuỗi được chọn bằng liên kết lưu khéo"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
 msgid "Smart Bookmarks"
-msgstr "Đánh dấu thông minh"
+msgstr "Liên kết lưu khéo"
 
 #: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
 msgid "Groups newly opened tabs"
-msgstr "Nhóm lại các thanh mới mở"
+msgstr "Nhóm lại các thẻ mới mở"
 
 #: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
 msgid "Tab Groups"
-msgstr "Nhóm thanh"
+msgstr "Nhóm thẻ"
 
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
-msgstr "Ngụ ý nội dung mới trong thanh nền"
+msgstr "Ngụ ý nội dung mới trên thẻ nền"
 
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
-msgstr "Tình trạng thanh"
+msgstr "Tình trạng thẻ"
