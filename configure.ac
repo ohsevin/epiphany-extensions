@@ -124,6 +124,10 @@ PKG_CHECK_MODULES([EPIPHANY_DEPENDENCY], [\
 AC_SUBST([EPIPHANY_DEPENDENCY_CFLAGS])
 AC_SUBST([EPIPHANY_DEPENDENCY_LIBS])
 
+PKG_CHECK_MODULES([WEBKIT], [webkit-1.0])
+AC_SUBST([WEBKIT_CFLAGS])
+AC_SUBST([WEBKIT_LIBS])
+
 # TODO remove the EXTENSIONS_DIR var
 EXTENSIONS_DIR=$EPIPHANY_EXTENSIONS_DIR
 AC_SUBST([EXTENSIONS_DIR])
@@ -163,13 +167,13 @@ AC_MSG_CHECKING([which extensions to build])
 
 ALL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures greasemonkey java-console livehttpheaders page-info permissions push-scroller rss sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 USEFUL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
-DEFAULT_EXTENSIONS="actions adblock auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
+DEFAULT_EXTENSIONS="actions adblock auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks tab-groups tab-states greasemonkey"
 
 PYTHON_ALL_EXTENSIONS="python-console sample-python favicon cc-license-viewer epilicious"
 PYTHON_USEFUL_EXTENSIONS="python-console favicon cc-license-viewer"
 PYTHON_DEFAULT_EXTENSIONS="python-console favicon cc-license-viewer"
 
-MOZILLA_ALL_EXTENSIONS="error-viewer greasemonkey java-console livehttpheaders page-info sample-mozilla select-stylesheet smart-bookmarks"
+MOZILLA_ALL_EXTENSIONS="error-viewer java-console livehttpheaders page-info sample-mozilla select-stylesheet smart-bookmarks"
 
 DIST_EXTENSIONS="$ALL_EXTENSIONS $PYTHON_ALL_EXTENSIONS"
 
@@ -362,7 +366,6 @@ extensions/error-viewer/opensp/Makefile
 extensions/extensions-manager-ui/Makefile
 extensions/favicon/Makefile
 extensions/greasemonkey/Makefile
-extensions/greasemonkey/mozilla/Makefile
 extensions/livehttpheaders/Makefile
 extensions/livehttpheaders/mozilla/Makefile
 extensions/page-info/Makefile

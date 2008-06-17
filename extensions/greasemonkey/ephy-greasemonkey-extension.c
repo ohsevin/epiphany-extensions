@@ -1,5 +1,6 @@
 /*
  *  Copyright © 2005 Adam Hooper
+ *  Copyright © 2008 Nuanti Ltd.
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -22,11 +23,11 @@
 
 #include "ephy-greasemonkey-extension.h"
 #include "greasemonkey-script.h"
-#include "mozilla-helpers.h"
 #include "ephy-debug.h"
 #include "ephy-file-helpers.h"
 
 #include <epiphany/epiphany.h>
+#include <webkit/webkit.h>
 
 #include <gtk/gtkmessagedialog.h>
 #include <gtk/gtkuimanager.h>
@@ -60,12 +61,13 @@ typedef struct
 	GList *pending_downloads;
 	guint ui_id;
 	char *last_clicked_url;
+	char *last_hovered_url;
 } WindowData;
 
 typedef struct
 {
+	WebKitWebView *web_view;
 	const char *location;
-	gpointer event;
 } ApplyScriptCBData;
 
 static void ephy_greasemonkey_extension_install_cb (GtkAction *action,
@@ -362,6 +364,69 @@ ephy_greasemonkey_extension_install_cb (GtkAction *action,
 	ephy_embed_persist_save (persist);
 }
 
+static void
+hovering_over_link_cb (WebKitWebView *web_view,
+		 const gchar *title,
+		 const gchar *uri,
+		 EphyGreasemonkeyExtension *extension)
+{
+	WindowData *window_data;
+	EphyWindow *window;
+
+	window = EPHY_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (web_view)));
+	g_return_if_fail (window != NULL);
+
+	window_data = (WindowData *) g_object_get_data (G_OBJECT (window),
+							WINDOW_DATA_KEY);
+	g_return_if_fail (window_data != NULL);
+
+	g_free (window_data->last_hovered_url);
+	window_data->last_hovered_url = g_strdup (uri);
+}
+
+static void
+populate_popup_cb (WebKitWebView *web_view,
+		 GtkMenu *menu,
+		 EphyGreasemonkeyExtension *extension)
+{
+	/*
+	 * Set whether or not the action is visible before we display the
+	 * context popup menu
+	 */
+	WindowData *window_data;
+	EphyWindow *window;
+	GtkAction *action;
+	const char *url;
+	gboolean show_install;
+	GtkWidget *item;
+
+	window = EPHY_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (web_view)));
+	g_return_if_fail (window != NULL);
+
+	window_data = (WindowData *) g_object_get_data (G_OBJECT (window),
+							WINDOW_DATA_KEY);
+	g_return_if_fail (window_data != NULL);
+
+	url = window_data->last_hovered_url;
+	show_install = url && g_str_has_suffix (url, ".user.js");
+
+	action = gtk_action_group_get_action (window_data->action_group,
+					      ACTION_NAME);
+	g_return_if_fail (action != NULL);
+
+	if (show_install == TRUE)
+	{
+		g_free (window_data->last_clicked_url);
+		window_data->last_clicked_url = g_strdup (url);
+	}
+
+	gtk_action_set_visible (action, show_install);
+
+	item = gtk_action_create_menu_item (action);
+	gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+}
+
+#if 0
 static gboolean
 context_menu_cb (EphyEmbed *embed,
 		 EphyEmbedEvent *event,
@@ -411,6 +476,7 @@ context_menu_cb (EphyEmbed *embed,
 
 	return FALSE;
 }
+#endif
 
 static void
 maybe_apply_script (const char *basename,
@@ -419,36 +485,37 @@ maybe_apply_script (const char *basename,
 {
 	char *script_str;
 
-	if (greasemonkey_script_applies_to_url (script, data->location))
-	{
-		g_object_get (script, "script", &script_str, NULL);
-		mozilla_evaluate_js (data->event, script_str);
-		g_free (script_str);
-	}
+	if (!greasemonkey_script_applies_to_url (script, data->location))
+	    return;
+
+	g_object_get (script, "script", &script_str, NULL);
+	webkit_web_view_execute_script (data->web_view, script_str);
+	g_free (script_str);
 }
 
 static void
-content_loaded_cb (EphyEmbed *embed,
-		   gpointer event,
+window_object_cleared_cb (WebKitWebView *web_view,
+		   WebKitWebFrame *web_frame,
+		   gpointer context,
+		   gpointer window_object,
 		   EphyGreasemonkeyExtension *extension)
 {
 	ApplyScriptCBData *data;
-	char *location;
+	const char *location;
 
-	location = ephy_embed_get_location (embed, FALSE);
+	location = webkit_web_frame_get_uri (web_frame);
 	if (location == NULL)
 	{
 		return;
 	}
 
 	data = g_new (ApplyScriptCBData, 1);
+	data->web_view = web_view;
 	data->location = location;
-	data->event = event;
 
 	g_hash_table_foreach (extension->priv->scripts,
 			      (GHFunc) maybe_apply_script, data);
 
-	g_free (location);
 	g_free (data);
 }
 
@@ -548,14 +615,26 @@ impl_attach_tab (EphyExtension *ext,
 		 EphyWindow *window,
 		 EphyEmbed *embed)
 {
+	WebKitWebView *web_view;
 	LOG ("impl_attach_tab");
 
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
+	web_view = WEBKIT_WEB_VIEW (gtk_bin_get_child (GTK_BIN (gtk_bin_get_child (GTK_BIN (embed)))));
+
+#if 0
 	g_signal_connect (embed, "ge_context_menu",
 			  G_CALLBACK (context_menu_cb), ext);
-	g_signal_connect (embed, "dom_content_loaded",
-			  G_CALLBACK (content_loaded_cb), ext);
+#endif
+
+	g_signal_connect (web_view, "hovering_over_link",
+			  G_CALLBACK (hovering_over_link_cb), ext);
+
+	g_signal_connect (web_view, "populate_popup",
+			  G_CALLBACK (populate_popup_cb), ext);
+
+	g_signal_connect (web_view, "window_object_cleared",
+			  G_CALLBACK (window_object_cleared_cb), ext);
 }
 
 static void
@@ -563,14 +642,26 @@ impl_detach_tab (EphyExtension *ext,
 		 EphyWindow *window,
 		 EphyEmbed *embed)
 {
+	WebKitWebView *web_view;
 	LOG ("impl_detach_tab");
 
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
+	web_view = WEBKIT_WEB_VIEW (gtk_bin_get_child (GTK_BIN (gtk_bin_get_child (GTK_BIN (embed)))));
+
+#if 0
 	g_signal_handlers_disconnect_by_func
 		(embed, G_CALLBACK (context_menu_cb), ext);
+#endif
+
 	g_signal_handlers_disconnect_by_func
-		(embed, G_CALLBACK (content_loaded_cb), ext);
+		(web_view, G_CALLBACK (hovering_over_link_cb), ext);
+
+	g_signal_handlers_disconnect_by_func
+		(web_view, G_CALLBACK (populate_popup_cb), ext);
+
+	g_signal_handlers_disconnect_by_func
+		(web_view, G_CALLBACK (window_object_cleared_cb), ext);
 }
 
 static void

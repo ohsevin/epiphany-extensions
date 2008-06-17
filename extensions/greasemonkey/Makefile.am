@@ -1,5 +1,3 @@
-SUBDIRS = mozilla
-
 extensiondir = $(EXTENSIONS_DIR)
 extension_LTLIBRARIES = libgreasemonkeyextension.la
 
@@ -11,20 +9,19 @@ libgreasemonkeyextension_la_SOURCES = \
 	extension.c
 
 libgreasemonkeyextension_la_CPPFLAGS = \
-        -I$(top_srcdir)/include					\
-	-I$(top_srcdir)/extensions/greasemonkey/mozilla	\
+	-I$(top_srcdir)/include					\
 	-DSHARE_DIR=\"$(pkgdatadir)\"				\
 	-DEPHY_EXTENSIONS_LOCALEDIR=\"$(datadir)/locale\"  	\
 	$(AM_CPPFLAGS)
 
 libgreasemonkeyextension_la_CFLAGS = \
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
+	$(WEBKIT_CFLAGS)			\
 	$(PCRE_CFLAGS)			\
 	$(AM_CFLAGS)
 
 libgreasemonkeyextension_la_LIBADD = \
-	mozilla/libgreasemonkeymozilla.la	\
-	$(MOZILLA_COMPONENT_LIBS)		\
+	$(WEBKIT_LIBS)		\
 	$(PCRE_LIBS)
 
 libgreasemonkeyextension_la_LDFLAGS = \
