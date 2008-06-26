@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: epiphany-extension\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2008-03-07 08:18+0700\n"
-"PO-Revision-Date: 2008-03-07 08:31+0700\n"
+"POT-Creation-Date: 2008-06-26 19:14+0700\n"
+"PO-Revision-Date: 2008-06-26 19:16+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -235,7 +235,7 @@ msgstr "การตั้งค่า Epilicious"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:3
 msgid "_Backend:"
-msgstr "แ_ป็กเอนด์:"
+msgstr "แ_บ็กเอนด์:"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:4
 msgid "_Exclude"
@@ -292,7 +292,7 @@ msgstr "กำลังปรับข้อมูล..."
 #: ../extensions/epilicious/epilicious.py.in:202
 #: ../extensions/epilicious/epilicious.py.in:220
 msgid "Epilicious Synchronize"
-msgstr "การปรับข้อมูล Epilicious"
+msgstr "ปรับข้อมูล Epilicious"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:1
 msgid "Bookmarks with this topic will be synchronized."
@@ -319,8 +319,7 @@ msgstr "หัวข้อร่วม"
 msgid ""
 "The backend that epilicious will use for synchronizing bookmarks. Allowed "
 "value: 'ma.gnolia'"
-msgstr ""
-"แบ็กเอนด์ที่ epilicious จะใช้ในการปรับข้อมูลที่คั่นหน้า ค่าที่ใช้ได้คือ 'ma.gnolia'"
+msgstr "แบ็กเอนด์ที่ epilicious จะใช้ในการปรับข้อมูลที่คั่นหน้า ค่าที่ใช้ได้คือ 'ma.gnolia'"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
 msgid "The password that epilicious will use for synchronizing bookmarks."
@@ -987,11 +986,11 @@ msgstr "สไ_ตล์"
 msgid "Select a different style for this page"
 msgstr "เลือกสไตล์อื่นเพื่อแสดงหน้าเว็บนี้"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:229
 msgid "Default"
 msgstr "ปริยาย"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:240
 msgid "None"
 msgstr "ไม่ใช้"
 
