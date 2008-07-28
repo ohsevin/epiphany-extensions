@@ -24,7 +24,7 @@ m4_define([e_e_branch],["trunk"])
 
 AC_INIT([GNOME Web Browser Extensions],[e_e_version],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 
-EPIPHANY_API_VERSION=e_e_version_major.e_e_version_minor
+EPIPHANY_API_VERSION=2.23
 
 EPIPHANY_EXTENSIONS_MAJOR=e_e_version_major.e_e_version_minor
 AC_SUBST(EPIPHANY_EXTENSIONS_MAJOR)
