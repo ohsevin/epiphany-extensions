@@ -100,12 +100,16 @@ ErrorViewerConsoleListener::GetMessageFromError (nsIScriptError *aError,
 		if (lineNumber && columnNumber)
 		{
 			*aMessage = g_strdup_printf (
+/* Translators: The first %s is the error category (e. g., "javascript").
+ The second %s is the URL. The third %s is the actual error message. */
 					_("%s error in %s on line %d and column %d:\n%s"),
 					category, cSourceName.get(), lineNumber, columnNumber, cMessage.get());
 		}
 		else
 		{
 			*aMessage = g_strdup_printf (
+/* Translators: The first %s is the error category (e. g., "javascript").
+ The second %s is the URL. The third %s is the actual error message. */
 					_("%s error in %s:\n%s"),
 					category, cSourceName.get(), cMessage.get());
 		}
@@ -120,12 +124,16 @@ ErrorViewerConsoleListener::GetMessageFromError (nsIScriptError *aError,
 		if (lineNumber)
 		{
 			*aMessage = g_strdup_printf (
+/* Translators: The first %s is the error category (e. g., "javascript").
+ The second %s is the URL. The third %s is the actual error message. */
 					_("%s error in %s on line %d:\n%s"),
 					category, cSourceName.get(), lineNumber, cMessage.get());
 		}
 		else
 		{
 			*aMessage = g_strdup_printf (
+/* Translators: The first %s is the error category (e. g., "javascript").
+ The second %s is the URL. The third %s is the actual error message. */
 					_("%s error in %s:\n%s"),
 					category, cSourceName.get(), cMessage.get());
 		}
@@ -137,6 +145,8 @@ ErrorViewerConsoleListener::GetMessageFromError (nsIScriptError *aError,
 			 !strcmp (category, "XForms"))
 	{
 			*aMessage = g_strdup_printf (
+/* Translators: The first %s is the error category (e. g., "javascript").
+ The second %s is the URL. The third %s is the actual error message. */
 					_("%s error in %s:\n%s"),
 				category, cSourceName.get(), cMessage.get());
 	}
