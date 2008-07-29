@@ -29,7 +29,8 @@ liberrorviewermozilla_la_CPPFLAGS = \
 	$(addprefix -I$(MOZILLA_INCLUDE_ROOT)/,$(mozilla_include_subdirs))	\
 	-DALLOW_PRIVATE_API		\
 	-DSHARE_DIR=\"$(pkgdatadir)\"   \
-	$(AM_CPPFLAGS)
+	$(AM_CPPFLAGS) \
+	-UGTK_DISABLE_DEPRECATED
 
 liberrorviewermozilla_la_CXXFLAGS = \
 	$(MOZILLA_COMPONENT_CFLAGS)	\

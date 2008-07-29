@@ -15,7 +15,8 @@ libjavaconsolemozilla_la_CPPFLAGS = \
 	-I$(top_srcdir)/include	\
 	$(addprefix -I$(MOZILLA_INCLUDE_ROOT)/,$(mozilla_include_subdirs))	\
 	-DSHARE_DIR=\"$(pkgdatadir)\"   \
-	$(AM_CPPFLAGS)
+	$(AM_CPPFLAGS) \
+	-UGTK_DISABLE_DEPRECATED
 
 libjavaconsolemozilla_la_CXXFLAGS = \
 	$(MOZILLA_COMPONENT_CFLAGS)	\
