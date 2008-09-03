@@ -13,18 +13,12 @@ EXTRA_DIST =			\
 	README 			\
 	TODO 			\
 	ephy-extension.symbols	\
-	intltool-extract.in 	\
-	intltool-merge.in 	\
-	intltool-update.in	\
 	gnome-doc-utils.make	\
 	tools/copy-template	\
 	doc/writing-epiphany-extensions.xml	\
 	$(NULL)
 
 DISTCLEANFILES = 		\
-	intltool-extract 	\
-	intltool-merge 		\
-	intltool-update		\
 	gnome-doc-utils.make	\
 	$(NULL)
 
