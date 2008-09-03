@@ -1,4 +1,19 @@
 ==========================
+Epiphany Extension 2.23.91
+==========================
+
+This release is based on gnome-2-22 branch. No major changes present.
+
+Changes:
+    * Build updates to xr 1.9
+
+Bug fixes:
+    * Bug 521880 – smart bookmarks extension doesn't work
+    * Bug 545089 – FTBFS, needs -UGTK_DISABLE_DEPRECATED
+    * Bug 544928 – RFE: Update build scripts for Ephy 2.23.x
+
+
+==========================
 Epiphany Extensions 2.17.4
 ==========================
 
