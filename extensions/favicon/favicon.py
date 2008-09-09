@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 #  Copyright © 2005 Christian Persch
+#  Copyright © 2008 Stefan Stuhr
+#  Copyright © 2008 Diego Escalante Urrelo
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -19,29 +21,30 @@
 #
 #  $Id$
 
-import epiphany;
-import gnomevfs;
+import epiphany
+import urlparse
+
+backend = epiphany.ephy_shell_get_default().get_embed_single().get_backend_name()
 
 def net_stop_cb(embed, status):
-	if embed.get_property('icon-address') == None or len(embed.get_property('icon-address')) < 1 and not embed.get_property('load-status'):
-		try:
-			uri = gnomevfs.URI(embed.get_property('address'))
-			single = epiphany.ephy_shell_get_default().get_embed_single()
-			backend = single.get_backend_name();
-			if uri.scheme == "http" or (uri.scheme == "https" and backend != "gecko-1.7") :
-				url = uri.scheme + "://" + uri.host_name
-				if uri.host_port != 0:
-					url += ':%d' % uri.host_port
-				url += "/favicon.ico"
-				embed.set_property('icon_address', url)
-		except Exception:
-			pass
+    icon_address = embed.get_property('icon_address')
+
+    if icon_address is None or not icon_address and \
+       embed.get_property('load-status'):
+        try:
+            uriparts = urlparse.urlsplit(embed.get_property('address'))
+
+            if uriparts[0] == 'http' or uriparts[0] == 'https':
+                url = urlparse.urlunsplit(uriparts[:2] + ('/favicon.ico', '', ''))
+                embed.set_property('icon_address', url)
+        except Exception:
+            pass
 
 def attach_tab(window, embed):
-	handler_id = embed.connect("notify::load-status", net_stop_cb)
-	embed._favicon_details = [ handler_id ]
+    handler_id = embed.connect('notify::load-status', net_stop_cb)
+    embed._favicon_details = [handler_id]
 
 def detach_tab(window, embed):
-	[ handler_id ] = embed._favicon_details
-	del embed._favicon_details
-	embed.disconnect(handler_id)
+    [handler_id] = embed._favicon_details
+    del embed._favicon_details
+    embed.disconnect(handler_id)
