@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions.HEAD.hu\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
 "POT-Creation-Date: 2008-03-11 20:26+0000\n"
-"PO-Revision-Date: 2008-03-19 13:07+0100\n"
+"PO-Revision-Date: 2008-09-19 14:54+0200\n"
 "Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
 "Language-Team: Hungarian <gnome@fsf.hu>\n"
 "MIME-Version: 1.0\n"
@@ -300,7 +300,7 @@ msgstr "Szinkronizálás a következővel: %s"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:10
 msgid "Synchronizing..."
-msgstr "Szinkronizálás..."
+msgstr "Szinkronizálás…"
 
 #: ../extensions/epilicious/epilicious.py.in:202
 #: ../extensions/epilicious/epilicious.py.in:220
@@ -607,7 +607,7 @@ msgstr "Oldalinformáció megjelenítése egy párbeszédablakban"
 
 #: ../extensions/page-info/page-info-dialog.c:722
 msgid "Save As..."
-msgstr "Mentés másként..."
+msgstr "Mentés másként…"
 
 #: ../extensions/page-info/page-info-dialog.c:739
 msgid "Select a directory"
@@ -703,7 +703,7 @@ msgstr "Kép _használata háttérként"
 #: ../extensions/page-info/page-info-dialog.c:1149
 #: ../extensions/page-info/page-info-dialog.c:1588
 msgid "_Save As..."
-msgstr "M_entés másként..."
+msgstr "M_entés másként…"
 
 #: ../extensions/page-info/page-info-dialog.c:1381
 #: ../extensions/page-info/page-info-dialog.c:1702
@@ -887,7 +887,7 @@ msgstr "Típus:"
 
 #: ../extensions/page-info/page-info.glade.h:31
 msgid "_Save Media As..."
-msgstr "_Média mentése másként..."
+msgstr "_Média mentése másként…"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:180
 msgid "allowed"
