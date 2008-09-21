@@ -16,6 +16,6 @@ which gnome-autogen.sh || {
     echo "You need to install gnome-common from the GNOME CVS"
     exit 1
 }
-REQUIRED_INTLTOOL_VERSION=0.40.0
+REQUIRED_INTLTOOL_VERSION=0.40.4
 REQUIRED_AUTOMAKE_VERSION=1.9 
 . gnome-autogen.sh
