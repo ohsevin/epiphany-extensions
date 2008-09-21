@@ -10,6 +10,7 @@ EXTRA_DIST =			\
 	ChangeLog		\
 	ChangeLog-20070912	\
 	po/ChangeLog.pre-2-24	\
+	help/ChangeLog.pre-2-24 \
 	HACKING			\
 	README 			\
 	TODO 			\
