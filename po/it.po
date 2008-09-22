@@ -1,15 +1,15 @@
 # Italian translation of epiphany-extensions
-# Copyright (C) 2004 THE epiphany-extensions'S COPYRIGHT HOLDER
+# Copyright (C) 2004-2008 THE epiphany-extensions'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the epiphany-extensions package.
-# Francesco Marletta <francesco.marletta@tiscali.it>, 2004-2007.
+# Francesco Marletta <francesco.marletta@tiscali.it>, 2004-2008.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: epiphany-extensions 2.18\n"
+"Project-Id-Version: epiphany-extensions 2.24\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2008-03-02 15:55+0100\n"
-"PO-Revision-Date: 2008-03-02 16:08+0100\n"
+"POT-Creation-Date: 2008-09-22 13:40+0200\n"
+"PO-Revision-Date: 2008-09-04 20:13+0200\n"
 "Last-Translator: Francesco Marletta <francesco.marletta@tiscali.it>\n"
 "Language-Team: italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
@@ -146,7 +146,7 @@ msgstr ""
 "L'elenco originale, Filterset.G, può essere trovato su http://www.pierceive."
 "com/filtersetg/.\n"
 "Questa versione è stata modificata rispetto all'originale. I cambiamenti non "
-"sono stati approvati dall'autore originale, per cui dirigete ogni problema "
+"sono stati approvati dall'autore originale, per cui riportate ogni problema "
 "su Bugzilla e non all'autore originale (G).\n"
 
 # GNOME-2-22
@@ -540,7 +540,7 @@ msgstr ""
 "Errore HTML in %s:\n"
 "Nessun doctype valido specificato."
 
-# [NdT] dal file C in cui si trova  chiaro che si riferisce ad una estensione
+# [NdT] dal file C in cui si trova  chiaro che si riferisce a una estensione
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
 msgid "Enabled"
 msgstr "Abilitata"
@@ -1009,7 +1009,7 @@ msgstr "Sottoscrivi"
 
 #: ../extensions/rss/rss-ui.glade.h:1
 msgid "<b>Select Interesting Feeds</b>"
-msgstr "<b>Selezionare le fonti interessanti</b>"
+msgstr "<b>Selezionare le fonti di interesse</b>"
 
 #: ../extensions/rss/rss-ui.glade.h:2
 #: ../extensions/rss/rss.ephy-extension.in.in.h:1
@@ -1041,11 +1041,11 @@ msgstr "St_ile"
 msgid "Select a different style for this page"
 msgstr "Seleziona uno stile differente per questa pagina"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:229
 msgid "Default"
 msgstr "Predefinito"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:240
 msgid "None"
 msgstr "Nessuno"
 
@@ -1136,7 +1136,7 @@ msgstr "Blocca pubblicità"
 # GNOME-2-22
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
 msgid "Block the pest!"
-msgstr "Blocca la peste!"
+msgstr "Blocca la peste."
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
 msgid "Auto Scroll"
@@ -1195,15 +1195,15 @@ msgstr "Favicon di ripiego"
 #: ../extensions/favicon/favicon.ephy-extension.in.h:2
 msgid ""
 "Loads /favicon.ico as favicon if the site doesn't use the standard method"
-msgstr "Carica /favicon.ico come favicon se il sito non usa un metodo standard"
+msgstr "Carica /favicon.ico come favicon se il sito non usa il metodo standard"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
-msgstr "Gestualità"
+msgstr "Gesti del mouse"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:2
 msgid "Perform actions with mouse gestures"
-msgstr "Esegue azioni legati alla gestualità del mouse"
+msgstr "Esegue azioni legati ai gesti del mouse"
 
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
 msgid "Greasemonkey"
@@ -1223,7 +1223,7 @@ msgstr "Fornisce accesso alla console del plugin Java"
 
 #: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
 msgid "Live HTTP headers"
-msgstr "Intestatzioni HTTP Live"
+msgstr "Intestazioni HTTP Live"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
@@ -1266,7 +1266,7 @@ msgstr "Console Python"
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr ""
-"Effettua la sottoscrizione ad una fonte di notizie offerta dalla pagina web "
+"Effettua la sottoscrizione a una fonte di notizie offerta dalla pagina web "
 "nel lettore di notizie preferito"
 
 #: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
@@ -1326,14 +1326,3 @@ msgstr "Indica la presenza di nuovo contenuto nelle schede in secondo piano"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Stati scheda"
-
-#  Don't bother looking for source lines -- they're not there
-#~ msgid ""
-#~ "Error:\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Errore:\n"
-#~ "%s"
-
-#~ msgid "_Extensions..."
-#~ msgstr "_Estensioni..."
