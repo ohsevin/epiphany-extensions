@@ -39,7 +39,10 @@ AC_CONFIG_MACRO_DIR([m4])
 
 AM_INIT_AUTOMAKE([1.9 foreign dist-bzip2 no-dist-gzip tar-ustar])
 
-AM_MAINTAINER_MODE
+if test -z "$enable_maintainer_mode"; then
+  enable_maintainer_mode=yes
+fi
+AM_MAINTAINER_MODE([enable])
 
 AM_DISABLE_STATIC
 AC_ENABLE_SHARED(yes)
