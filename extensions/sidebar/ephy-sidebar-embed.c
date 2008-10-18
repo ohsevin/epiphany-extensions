@@ -33,11 +33,7 @@
 #include "ephy-prefs.h"
 #include "ephy-debug.h"
 
-#include <gtk/gtkactiongroup.h>
-#include <gtk/gtkuimanager.h>
-#include <gtk/gtkmenu.h>
-#include <gtk/gtkmain.h>
-#include <gtk/gtkstock.h>
+#include <gtk/gtk.h>
 
 /* NOTE: we include gi18n.h instead of gi18n-lib.h since all string here
  * are the same as in epiphany. If that ever changes, fix this include!

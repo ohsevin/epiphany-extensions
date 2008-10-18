@@ -22,7 +22,7 @@
 #define EPHY_SIDEBAR_EMBED_H
 
 #include <glib-object.h>
-#include <gtk/gtkbin.h>
+#include <gtk/gtk.h>
 
 #include <epiphany/ephy-embed.h>
 #include <epiphany/ephy-window.h>

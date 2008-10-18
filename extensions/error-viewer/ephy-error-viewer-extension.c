@@ -35,11 +35,7 @@
 #include <epiphany/ephy-embed-container.h>
 #include <epiphany/ephy-embed-shell.h>
 
-#include <gtk/gtkaction.h>
-#include <gtk/gtkactiongroup.h>
-#include <gtk/gtkuimanager.h>
-#include <gtk/gtkstock.h>
-#include <gtk/gtknotebook.h>
+#include <gtk/gtk.h>
 
 #include <glib/gi18n-lib.h>
 

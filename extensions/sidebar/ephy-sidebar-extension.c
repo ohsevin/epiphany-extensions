@@ -39,17 +39,7 @@
 #include "ephy-gui.h"
 #include "ephy-debug.h"
 
-#include <gtk/gtkactiongroup.h>
-#include <gtk/gtkuimanager.h>
-#include <gtk/gtkaction.h>
-#include <gtk/gtktoggleaction.h>
-#include <gtk/gtkhpaned.h>
-#include <gtk/gtkdialog.h>
-#include <gtk/gtkmessagedialog.h>
-#include <gtk/gtkstock.h>
-#include <gtk/gtkhbox.h>
-#include <gtk/gtkimage.h>
-#include <gtk/gtklabel.h>
+#include <gtk/gtk.h>
 
 #include <glib/gi18n-lib.h>
 

@@ -28,9 +28,7 @@
 #include "ephy-push-scroller.h"
 #include "ephy-debug.h"
 
-#include <gtk/gtkimage.h>
-#include <gtk/gtkwindow.h>
-#include <gtk/gtkmain.h>
+#include <gtk/gtk.h>
 
 #include <math.h>
 #include <sys/time.h>

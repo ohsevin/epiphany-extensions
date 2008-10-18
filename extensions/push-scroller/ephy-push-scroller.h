@@ -24,7 +24,7 @@
 #define EPHY_PUSH_SCROLLER_H
 
 #include <glib-object.h>
-#include <gtk/gtkwidget.h>
+#include <gtk/gtk.h>
 #include <epiphany/ephy-embed.h>
 #include <epiphany/ephy-window.h>
 

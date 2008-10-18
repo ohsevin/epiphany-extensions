@@ -21,10 +21,7 @@
 #ifndef EPHY_GUI_H
 #define EPHY_GUI_H
 
-#include <gtk/gtkmenu.h>
-#include <gtk/gtktreeview.h>
-#include <gtk/gtktreeviewcolumn.h>
-#include <gtk/gtkwindow.h>
+#include <gtk/gtk.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 #include <gdk/gdkkeysyms.h>
 

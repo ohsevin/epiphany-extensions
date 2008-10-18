@@ -29,13 +29,7 @@
 #include "stroke.h"
 
 #include <gdk/gdk.h>
-#include <gtk/gtkbin.h>
-#include <gtk/gtkmain.h>
-#include <gtk/gtkdnd.h>
-
-#include <gtk/gtkaction.h>
-#include <gtk/gtkactiongroup.h>
-#include <gtk/gtkuimanager.h>
+#include <gtk/gtk.h>
 
 #include <epiphany/ephy-embed-container.h>
 #include <epiphany/ephy-window.h>

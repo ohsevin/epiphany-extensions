@@ -22,16 +22,7 @@
 
 #include "ephy-sidebar.h"
 
-#include <gtk/gtklabel.h>
-#include <gtk/gtkframe.h>
-#include <gtk/gtkarrow.h>
-#include <gtk/gtkhbox.h>
-#include <gtk/gtkbutton.h>
-#include <gtk/gtkimage.h>
-#include <gtk/gtkmenuitem.h>
-#include <gtk/gtkpaned.h>
-#include <gtk/gtkstock.h>
-#include <gtk/gtkmarshal.h>
+#include <gtk/gtk.h>
 
 #include <string.h>
 #include <glib/gi18n-lib.h>
