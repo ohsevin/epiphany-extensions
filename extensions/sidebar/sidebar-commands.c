@@ -27,7 +27,7 @@
 
 #include "ephy-prefs.h"
 
-#include <gtk/gtkwindow.h>
+#include <gtk/gtk.h>
 
 /* NOTE: we include gi18n.h instead of gi18n-lib.h since all string here
  * are the same as in epiphany. If that ever changes, fix this include!

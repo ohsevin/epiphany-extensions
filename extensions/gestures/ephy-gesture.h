@@ -23,7 +23,7 @@
 #define EPHY_GESTURE_H
 
 #include <glib-object.h>
-#include <gtk/gtkwidget.h>
+#include <gtk/gtk.h>
 #include <gmodule.h>
 
 #include <epiphany/epiphany.h>

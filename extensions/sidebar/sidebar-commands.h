@@ -21,7 +21,7 @@
 #ifndef SIDEBAR_COMMANDS_H
 #define SIDEBAR_COMMANDS_H
 
-#include <gtk/gtkaction.h>
+#include <gtk/gtk.h>
 
 #include "ephy-sidebar-embed.h"
 

@@ -28,7 +28,7 @@
 
 #include <nscore.h>
 
-#include <gtk/gtkwidget.h>
+#include <gtk/gtk.h>
 
 class nsACString;
 class nsAString;

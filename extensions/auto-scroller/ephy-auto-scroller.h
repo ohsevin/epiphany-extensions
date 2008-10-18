@@ -24,7 +24,7 @@
 #define EPHY_AUTO_SCROLLER_H
 
 #include <glib-object.h>
-#include <gtk/gtkwidget.h>
+#include <gtk/gtk.h>
 
 #include <epiphany/epiphany.h>
 

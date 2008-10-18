@@ -29,11 +29,7 @@
 #include "ephy-debug.h"
 
 #include <gmodule.h>
-#include <gtk/gtkaction.h>
-#include <gtk/gtkactiongroup.h>
-#include <gtk/gtkuimanager.h>
-#include <gtk/gtklabel.h>
-#include <gtk/gtkmenuitem.h>
+#include <gtk/gtk.h>
 
 #include <glib/gi18n-lib.h>
 

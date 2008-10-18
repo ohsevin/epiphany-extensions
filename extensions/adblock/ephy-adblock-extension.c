@@ -31,14 +31,7 @@
 #include "ad-uri-tester.h"
 #include "adblock-ui.h"
 
-#include <gtk/gtkaction.h>
-#include <gtk/gtkactiongroup.h>
-#include <gtk/gtkeventbox.h>
-#include <gtk/gtkiconfactory.h>
-#include <gtk/gtkimage.h>
-#include <gtk/gtknotebook.h>
-#include <gtk/gtkuimanager.h>
-#include <gtk/gtkstock.h>
+#include <gtk/gtk.h>
 
 #include <gmodule.h>
 

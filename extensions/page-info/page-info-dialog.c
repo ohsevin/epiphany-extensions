@@ -39,24 +39,12 @@
 #include "ephy-file-helpers.h"
 #include "ephy-file-chooser.h"
 
-#include <gtk/gtkentry.h>
-#include <gtk/gtklabel.h>
-#include <gtk/gtkliststore.h>
-#include <gtk/gtktreeview.h>
-#include <gtk/gtktreeselection.h>
-#include <gtk/gtkcellrenderertext.h>
-#include <gtk/gtkcellrenderertoggle.h>
-#include <gtk/gtkaction.h>
-#include <gtk/gtkactiongroup.h>
-#include <gtk/gtkuimanager.h>
-#include <gtk/gtkstock.h>
-#include <gtk/gtkclipboard.h>
-#include <gtk/gtkmain.h>
+#include <gtk/gtk.h>
 
 #include "mozilla/mozilla-helpers.h"
 
 #include <glib/gi18n-lib.h>
-#include <glib/gconvert.h>
+#include <glib.h>
 #include <gio/gio.h>
 
 #include <time.h>

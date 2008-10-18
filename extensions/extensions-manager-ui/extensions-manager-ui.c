@@ -27,19 +27,11 @@
 #include "ephy-gui.h"
 #include "ephy-debug.h"
 
-#include <gtk/gtkaboutdialog.h>
-#include <gtk/gtkcellrenderertext.h>
-#include <gtk/gtkcellrenderertoggle.h>
-#include <gtk/gtktreeselection.h>
-#include <gtk/gtktreemodel.h>
-#include <gtk/gtkliststore.h>
-#include <gtk/gtkstock.h>
-#include <gtk/gtkwindow.h>
+#include <gtk/gtk.h>
 
 #include <string.h>
 
 #include <glib/gi18n-lib.h>
-#include <gtk/gtkversion.h>
 
 #define IGNORE_SELF /* Don't display *this* extension in the list */
 #define GROUP	"Epiphany Extension"

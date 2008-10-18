@@ -24,7 +24,7 @@
 #define EPHY_TAB_GROUPER_H
 
 #include <glib-object.h>
-#include <gtk/gtkwidget.h>
+#include <gtk/gtk.h>
 #include <gmodule.h>
 
 G_BEGIN_DECLS

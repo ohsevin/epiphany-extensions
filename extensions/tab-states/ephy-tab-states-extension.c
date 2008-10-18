@@ -29,9 +29,7 @@
 #include "ephy-debug.h"
 
 #include <gmodule.h>
-#include <gtk/gtkwidget.h>
-#include <gtk/gtklabel.h>
-#include <gtk/gtknotebook.h>
+#include <gtk/gtk.h>
 #include <glib/gi18n-lib.h>
 
 #define EPHY_TAB_STATES_EXTENSION_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_TAB_STATES_EXTENSION, EphyTabStatesExtensionPrivate))

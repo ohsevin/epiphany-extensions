@@ -31,11 +31,7 @@
 
 #include "mozilla/mozilla-helpers.h"
 
-#include <gtk/gtkuimanager.h>
-#include <gtk/gtkactiongroup.h>
-#include <gtk/gtkradioaction.h>
-#include <gtk/gtklabel.h>
-#include <gtk/gtkmenuitem.h>
+#include <gtk/gtk.h>
 
 #include <glib/gi18n-lib.h>
 

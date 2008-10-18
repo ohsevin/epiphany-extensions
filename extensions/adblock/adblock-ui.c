@@ -29,18 +29,7 @@
 #include <epiphany/epiphany.h>
 
 #include <glib/gi18n-lib.h>
-#include <gtk/gtklabel.h>
-#include <gtk/gtkbutton.h>
-#include <gtk/gtkdialog.h>
-#include <gtk/gtkaboutdialog.h>
-#include <gtk/gtkcellrenderertext.h>
-#include <gtk/gtktreeselection.h>
-#include <gtk/gtktreemodel.h>
-#include <gtk/gtkliststore.h>
-#include <gtk/gtkentry.h>
-#include <gtk/gtkframe.h>
-#include <gtk/gtktextview.h>
-#include <gtk/gtknotebook.h>
+#include <gtk/gtk.h>
 
 #include <string.h>
 

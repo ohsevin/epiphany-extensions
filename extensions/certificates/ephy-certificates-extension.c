@@ -27,15 +27,7 @@
 
 #include <epiphany/epiphany.h>
 
-#include <gtk/gtkaction.h>
-#include <gtk/gtkactiongroup.h>
-#include <gtk/gtkuimanager.h>
-#include <gtk/gtkwidget.h>
-#include <gtk/gtkbutton.h>
-#include <gtk/gtkframe.h>
-#include <gtk/gtkrc.h>
-#include <gtk/gtkeventbox.h>
-#include <gtk/gtkwindow.h>
+#include <gtk/gtk.h>
 #include <gmodule.h>
 #include <glib/gi18n-lib.h>
 
