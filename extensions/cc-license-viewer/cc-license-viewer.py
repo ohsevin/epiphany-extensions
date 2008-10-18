@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-#  Epiphany extension: Creative Commons license viewer 
+#  Epiphany extension: Creative Commons license viewer
 #  Version 0.2 (27/07/2006)
-#  Copyright (C) 2006 Jaime Frutos Morales <acidborg@gmail.com>
+#  Copyright © 2006  Jaime Frutos Morales  <acidborg@gmail.com>
+#  Copyright © 2008  Diego Escalante Urrelo  <diegoe@gnome.org>
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -20,12 +21,12 @@
 #  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 #
 
-import epiphany
-import pygtk
-pygtk.require('2.0')
-import gtk
 from gettext import gettext as _
 import os.path
+import time
+
+import gtk
+import epiphany
 
 # Create CC icon from code generated using "gdk-pixbuf-csource --raw cc.png"
 _icon = (""
@@ -35,7 +36,7 @@ _icon = (""
     "\0\0\31\30"
     # pixdata_type (0x1010002)
     "\1\1\0\2"
-    # rowstride (160) 
+    # rowstride (160)
     "\0\0\0\240"
     # width (40)
     "\0\0\0("
@@ -333,13 +334,14 @@ _icon = (""
     "\0\21\0\0\0\21\0\0\0\21\0\0\0\21\0\0\0\21\0\0\0\21\0\0\0\21\0\0\0\21"
     "\0\0\0\21\0\0\0\21\0\0\0\21\0\0\0\21\0\0\0")
 
-icon_size = gtk.icon_size_lookup (gtk.ICON_SIZE_MENU)
+icon_size = gtk.icon_size_lookup(gtk.ICON_SIZE_MENU)
 pixbuf = gtk.gdk.pixbuf_new_from_inline(len(_icon), _icon, False)
-pixbuf = pixbuf.scale_simple(icon_size[0], icon_size[1], gtk.gdk.INTERP_BILINEAR)    
+pixbuf = pixbuf.scale_simple(icon_size[0],
+    icon_size[1], gtk.gdk.INTERP_BILINEAR)
 
 def _switch_page_cb (notebook, page, page_num, window):
     ui_show (window, window.get_active_child())
-    
+
 def _load_status_cb(embed, data, window):
     if not embed.get_property('load-status'):
         # page is loaded
@@ -347,7 +349,7 @@ def _load_status_cb(embed, data, window):
     else:
         embed._has_cc = False
     ui_show (window, embed)
-        
+
 def _cc_button_pressed(button,event,window):
     show_license(window)
 
@@ -356,13 +358,13 @@ def ui_init (window):
     cc_image.set_from_pixbuf(pixbuf)
     cc_image.show()
 
-    eventbox = gtk.EventBox()    
+    eventbox = gtk.EventBox()
     eventbox.set_visible_window(True)
     eventbox.connect ("button-press-event",_cc_button_pressed, window);
     # Pack the widgets
     eventbox.add(cc_image)
 
-    eventbox.show()    
+    eventbox.show()
 
     statusbar = window.get_statusbar()
     statusbar.add_widget(eventbox)
@@ -374,13 +376,13 @@ def ui_show(window, embed):
 
     statusbar = window.get_statusbar()
     eventbox = statusbar._cc_eventbox
-    
+
     try:
         if embed._has_cc:
             eventbox.show()
         else:
             eventbox.hide()
-    except: 
+    except:
         eventbox.hide()
 
 def ui_destroy(window):
@@ -391,39 +393,45 @@ def ui_destroy(window):
 
 def show_license(window):
     statusbar = window.get_statusbar()
-    license_url = statusbar._cc_url
     notebook = window.get_notebook()
-    position = notebook.get_n_pages() -1 
+
+    license_url = statusbar._cc_url
+
+    position = notebook.get_n_pages() - 1
     previous_tab = notebook.get_nth_page(position)
-    shell = epiphany.ephy_shell_get_default()    
-    shell.new_tab(window,previous_tab, license_url, epiphany.NEW_TAB_IN_EXISTING_WINDOW | 
-        epiphany.NEW_TAB_JUMP |    epiphany.NEW_TAB_OPEN_PAGE)
+
+    shell = epiphany.ephy_shell_get_default()
+    shell.new_tab(window,previous_tab, license_url,
+        epiphany.NEW_TAB_IN_EXISTING_WINDOW |
+        epiphany.NEW_TAB_JUMP |
+        epiphany.NEW_TAB_OPEN_PAGE)
 
 def detect_license(window, embed):
-    import time
-    
     # Get the HTML code
     persist = epiphany.ephy_embed_factory_new_object(epiphany.EmbedPersist)
-    persist.set_flags(epiphany.EMBED_PERSIST_NO_VIEW |epiphany.EMBED_PERSIST_COPY_PAGE)
+    persist.set_flags(
+        epiphany.EMBED_PERSIST_NO_VIEW | epiphany.EMBED_PERSIST_COPY_PAGE)
     persist.set_embed(embed)
+
     page_string = persist.to_string()
     license_url = get_license_url(page_string)
+
     if license_url is not None:
         statusbar = window.get_statusbar()
         statusbar._cc_url = license_url
         embed._has_cc = True
-    else :
+    else:
         embed._has_cc = False
 
 def get_license_url(page_string):
-
-    result=page_string.find('<License rdf:about="http://creativecommons.org/licenses/')
-    if result != -1 :
+    result = page_string.find(
+        '<License rdf:about="http://creativecommons.org/licenses/')
+    if result is not -1:
         # Get the license's url from RDF code
-        begin=result + 20
-        index=begin
+        begin = result + 20
+        index = begin
         while index < (len(page_string) - 1):
-            if (page_string[index] == '"'):
+            if page_string[index] is '"':
                 return page_string[begin:index]
             else:
                 index = index + 1
@@ -433,7 +441,8 @@ def get_license_url(page_string):
 def attach_window(window):
     notebook = window.get_notebook()
     ui_init(window)
-    signal_tab_switch = notebook.connect_after("switch_page", _switch_page_cb, window);
+    signal_tab_switch = notebook.connect_after("switch_page",
+        _switch_page_cb, window);
     notebook._cc_signal_tab_switch = signal_tab_switch
 
 def detach_window(window):
@@ -443,7 +452,8 @@ def detach_window(window):
     ui_destroy(window)
 
 def attach_tab(window, embed):
-    signal_load_status = embed.connect_after ("notify::load-status",_load_status_cb, window)
+    signal_load_status = embed.connect_after("notify::load-status",
+        _load_status_cb, window)
     embed._cc_signal_load_status = signal_load_status
 
 def detach_tab(window, embed):
