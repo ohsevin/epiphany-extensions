@@ -441,6 +441,8 @@ def attach_window(window):
     ui_init(window)
     signal_tab_switch = notebook.connect_after("switch_page",
         _switch_page_cb, window);
+    # When extension loads, we fire a load-status to set the icon
+    _load_status_cb(window.get_active_child(), None, window)
     notebook._cc_signal_tab_switch = signal_tab_switch
 
 def detach_window(window):
