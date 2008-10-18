@@ -269,7 +269,7 @@ update_actions (EphyWindow *window)
 	EphyEmbed *embed;
 	GtkAction *action1;
 	GtkAction *action2; /* You can tell I didn't want to think... */
-	EphyEmbedDocumentType content_type;
+	EphyEmbedDocumentType content_type = -1;
 	GValue sensitive = { 0, };
 
 	g_return_if_fail (EPHY_IS_WINDOW (window));
@@ -297,10 +297,8 @@ update_actions (EphyWindow *window)
 
 	content_type = ephy_embed_get_document_type (embed);
 
-	if (content_type &&
-            ((content_type == EPHY_EMBED_DOCUMENT_HTML)
+	if ((content_type == EPHY_EMBED_DOCUMENT_HTML)
              || (content_type == EPHY_EMBED_DOCUMENT_XML))
-        )
 	{
 		g_value_set_boolean (&sensitive, TRUE);
 	}
