@@ -343,6 +343,9 @@ def _switch_page_cb (notebook, page, page_num, window):
     ui_show (window, window.get_active_child())
 
 def _load_status_cb(embed, data, window):
+    # Corner case when we are just starting epiphany
+    if embed is None:
+        return
     if not embed.get_property('load-status'):
         # page is loaded
         detect_license(window, embed)
