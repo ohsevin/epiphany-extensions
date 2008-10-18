@@ -364,8 +364,6 @@ def ui_init (window):
     # Pack the widgets
     eventbox.add(cc_image)
 
-    eventbox.show()
-
     statusbar = window.get_statusbar()
     statusbar.add_widget(eventbox)
     statusbar._cc_eventbox = eventbox
