@@ -29,13 +29,11 @@
 #include <epiphany/epiphany.h>
 #include <webkit/webkit.h>
 
-#include <gtk/gtkmessagedialog.h>
-#include <gtk/gtkuimanager.h>
+#include <gtk/gtk.h>
 
 #include <glib/gi18n-lib.h>
-#include <glib/gstdio.h>
+#include <glib.h>
 #include <gio/gio.h>
-#include <gmodule.h>
 
 #include <sys/stat.h>
 #include <sys/types.h>
