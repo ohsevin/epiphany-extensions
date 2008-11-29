@@ -29,20 +29,7 @@
 #include "ephy-string.h"
 
 #include <glib/gi18n-lib.h>
-#include <gtk/gtkstock.h>
-#include <gtk/gtklabel.h>
-#include <gtk/gtkbutton.h>
-#include <gtk/gtkdialog.h>
-#include <gtk/gtkcellrenderertext.h>
-#include <gtk/gtkcellrenderertoggle.h>
-#include <gtk/gtktreeselection.h>
-#include <gtk/gtktreemodel.h>
-#include <gtk/gtkliststore.h>
-#include <gtk/gtkimage.h>
-#include <gtk/gtkimagemenuitem.h>
-#include <gtk/gtkmenu.h>
-#include <gtk/gtkclipboard.h>
-#include <gtk/gtkmain.h>
+#include <gtk/gtk.h>
 
 #include <string.h>
 
