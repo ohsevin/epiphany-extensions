@@ -29,22 +29,9 @@
 #include "ephy-debug.h"
 
 #include <glib/gi18n-lib.h>
+#include <gdk/gdk.h>
 #include <gdk/gdkkeysyms.h>
-#include <gtk/gtklabel.h>
-#include <gtk/gtkbox.h>
-#include <gtk/gtkhbox.h>
-#include <gtk/gtkvbox.h>
-#include <gtk/gtkbbox.h>
-#include <gtk/gtkvbbox.h>
-#include <gtk/gtkstock.h>
-#include <gtk/gtktreeselection.h>
-#include <gtk/gtktreeview.h>
-#include <gtk/gtkliststore.h>
-#include <gtk/gtkcellrenderertext.h>
-#include <gtk/gtknotebook.h>
-#include <gtk/gtksizegroup.h>
-#include <gtk/gtkscrolledwindow.h>
-#include <gtk/gtkbutton.h>
+#include <gtk/gtk.h>
 
 #include <string.h>
 

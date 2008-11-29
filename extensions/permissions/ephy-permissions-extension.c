@@ -29,10 +29,7 @@
 #include <epiphany/epiphany.h>
 
 #include <glib/gi18n-lib.h>
-#include <gtk/gtkwidget.h>
-#include <gtk/gtkaction.h>
-#include <gtk/gtkactiongroup.h>
-#include <gtk/gtkuimanager.h>
+#include <gtk/gtk.h>
 
 #define EPHY_PERMISSIONS_EXTENSION_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_PERMISSIONS_EXTENSION, EphyPermissionsExtensionPrivate))
 

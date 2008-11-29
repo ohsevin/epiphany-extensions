@@ -24,7 +24,7 @@
 #define EPHY_PERMISSIONS_DIALOG_H
 
 #include <gmodule.h>
-#include <gtk/gtkdialog.h>
+#include <gtk/gtk.h>
 
 G_BEGIN_DECLS
 
