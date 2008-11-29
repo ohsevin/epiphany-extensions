@@ -25,9 +25,7 @@
 
 #include <epiphany/epiphany.h>
 
-#include <gtk/gtktoggleaction.h>
-#include <gtk/gtkuimanager.h>
-#include <gtk/gtkstock.h>
+#include <gtk/gtk.h>
 
 #include <glib/gi18n-lib.h>
 
