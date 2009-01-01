@@ -14,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
 "POT-Creation-Date: 2008-12-20 23:04+0100\n"
-"PO-Revision-Date: 2008-12-20 23:47+0100\n"
+"PO-Revision-Date: 2009-01-01 21:01+0100\n"
 "Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -1265,12 +1265,12 @@ msgstr "Muster"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
 msgid "Select Stylesheet"
-msgstr "Stylesheet auswählen"
+msgstr "Stilvorlage auswählen"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
 msgstr ""
-"Zwischen verschiedenen Stylesheets wählen, die von der Web-Seite angeboten "
+"Zwischen verschiedenen Stilvorlagen wählen, die von der Web-Seite angeboten "
 "werden"
 
 #: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
