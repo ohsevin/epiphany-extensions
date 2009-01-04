@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2008-01-14 03:19+0000\n"
+"POT-Creation-Date: 2008-11-08 03:23+0000\n"
 "PO-Revision-Date: 2006-01-22 18:15+0800\n"
 "Last-Translator: Funda Wang <fundawang@linux.net.cn>\n"
 "Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
@@ -80,19 +80,19 @@ msgstr "页面(_P)"
 msgid "Actions"
 msgstr "动作"
 
-#: ../extensions/actions/ephy-actions-extension.c:113
+#: ../extensions/actions/ephy-actions-extension.c:112
 msgid "Actio_ns"
 msgstr "动作(_N)"
 
-#: ../extensions/actions/ephy-actions-extension.c:114
+#: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Customize actions"
 msgstr "自定义动作"
 
-#: ../extensions/actions/ephy-actions-extension.c:437
+#: ../extensions/actions/ephy-actions-extension.c:436
 msgid "Could not run command"
 msgstr "无法运行命令"
 
-#: ../extensions/actions/ephy-actions-extension.c:440
+#: ../extensions/actions/ephy-actions-extension.c:439
 msgid "Could not Run Command"
 msgstr "无法运行命令"
 
@@ -119,7 +119,7 @@ msgstr "“%s”属性"
 msgid "Action Properties"
 msgstr "动作属性"
 
-#: ../extensions/adblock/adblock-ui.c:279
+#: ../extensions/adblock/adblock-ui.c:263
 msgid ""
 "This list is Copyright © its original author(G). It is relicensed under the "
 "GPL with permission.\n"
@@ -131,9 +131,10 @@ msgid ""
 msgstr ""
 "此列表由其原始作者(G)版权所有，而被以带限制的 GPL 重新发布。\n"
 "原始列表 Filterset.G 可以在 http://www.pierceive.com/filtersetg/ 找到。\n"
-"此版本与其原始内容相比有所修改。因为这些更改未受原始作者承认，所以有关问题请提交到 Bugzilla 而不是原始作者。\n"
+"此版本与其原始内容相比有所修改。因为这些更改未受原始作者承认，所以有关问题请"
+"提交到 Bugzilla 而不是原始作者。\n"
 
-#: ../extensions/adblock/adblock-ui.c:497
+#: ../extensions/adblock/adblock-ui.c:481
 msgid "Pattern"
 msgstr "模式"
 
@@ -150,7 +151,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>从原始网站的更新规则</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:243
+#: ../extensions/adblock/ephy-adblock-extension.c:230
 msgid "Adblock Editor"
 msgstr "广告屏蔽编辑器"
 
@@ -170,54 +171,54 @@ msgstr "Filterset.G"
 msgid "Whitelist"
 msgstr "白名单"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:244
+#: ../extensions/adblock/ephy-adblock-extension.c:231
 msgid "Edit Adblock"
 msgstr "编辑广告屏蔽"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:311
+#: ../extensions/adblock/ephy-adblock-extension.c:298
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
 msgstr[0] "%d 个隐藏的广告"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:84
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
 msgid "_Auto Reload"
 msgstr "自动重新装入(_A)"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:86
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
 msgid "Reload the page periodically"
 msgstr "定时重新装入页面"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:370
+#: ../extensions/cc-license-viewer/cc-license-viewer.py:373
 msgid "View Creative Commons license"
 msgstr "查看 Creative Commons 许可"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:176
+#: ../extensions/certificates/ephy-certificates-extension.c:163
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "证书"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:207
+#: ../extensions/certificates/ephy-certificates-extension.c:194
 msgid "Security Devices"
 msgstr "安全设备"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:219
+#: ../extensions/certificates/ephy-certificates-extension.c:206
 msgid "Manage _Certificates"
 msgstr "管理证书(_C)"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:221
+#: ../extensions/certificates/ephy-certificates-extension.c:208
 msgid "Manage your certificates"
 msgstr "管理您的证书"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:225
+#: ../extensions/certificates/ephy-certificates-extension.c:212
 msgid "Manage Security _Devices"
 msgstr "管理安全设备(_D)"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:227
+#: ../extensions/certificates/ephy-certificates-extension.c:214
 msgid "Manage your security devices"
 msgstr "管理您的安全设备"
 
@@ -300,7 +301,8 @@ msgid ""
 "the topic will be synched. If this is set then all bookmarks without the "
 "topic will be synched."
 msgstr ""
-"控制主题的功能。如果未设定，则带有此主题的所有书签都将同步。如果设定了此选项，则不带有此主题的所有书签才会同步。"
+"控制主题的功能。如果未设定，则带有此主题的所有书签都将同步。如果设定了此选"
+"项，则不带有此主题的所有书签才会同步。"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:3
 msgid "Exclude topic"
@@ -314,8 +316,7 @@ msgstr "共享主题"
 msgid ""
 "The backend that epilicious will use for synchronizing bookmarks. Allowed "
 "value: 'ma.gnolia'"
-msgstr ""
-"epilicious 用来同步书签的后端。允许的值为“ma.gnolia”"
+msgstr "epilicious 用来同步书签的后端。允许的值为“ma.gnolia”"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
 msgid "The password that epilicious will use for synchronizing bookmarks."
@@ -337,30 +338,30 @@ msgstr "密码"
 msgid "username"
 msgstr "用户名"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:98
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Check _HTML"
 msgstr "检查 _HTML"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:100
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:92
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "在错误查看器对话框中显示 HTML 错误"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _Links"
 msgstr "检查链接(_L)"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:107
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr "在错误查看器对话框中显示无效的超链接"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:111
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:103
 msgid "_Error Viewer"
 msgstr "错误查看器(_E)"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:113
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
 msgid "Display web page errors"
 msgstr "显示网页错误"
 
@@ -372,7 +373,9 @@ msgstr "清除(_E)"
 msgid "Error Viewer"
 msgstr "错误查看器"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:103
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:105
 #, c-format
 msgid ""
 "%s error in %s on line %d and column %d:\n"
@@ -381,9 +384,11 @@ msgstr ""
 "在 %2$s 的第 %3$d 行第 %4$d 列有 %1$s 错误：\n"
 "%5$s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:109
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:140
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:113
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:137
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:150
 #, c-format
 msgid ""
 "%s error in %s:\n"
@@ -392,13 +397,15 @@ msgstr ""
 "%2$s 的 %1$s 错误：\n"
 "%3$s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:123
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
 #, c-format
 msgid ""
 "%s error in %s on line %d:\n"
 "%s"
 msgstr ""
-"在 %2$s 的第 %3$d 行中有 $1$s 错误：\n"
+"在 %2$s 的第 %3$d 行中有 %1$s 错误：\n"
 "%4$s"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
@@ -429,18 +436,18 @@ msgstr ""
 "在“%s”的第 %s 行中有 HTML 错误：\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:165
+#: ../extensions/error-viewer/sgml-validator.c:164
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
 msgstr[0] "发现 %d 个错误"
 
-#: ../extensions/error-viewer/sgml-validator.c:169
+#: ../extensions/error-viewer/sgml-validator.c:168
 #, c-format
 msgid "HTML Validation of “%s” complete"
 msgstr "“%s”的 HTML 校验完成"
 
-#: ../extensions/error-viewer/sgml-validator.c:227
+#: ../extensions/error-viewer/sgml-validator.c:226
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -449,8 +456,8 @@ msgstr ""
 "%s 的 HTML 错误：\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:229
-#: ../extensions/error-viewer/sgml-validator.c:245
+#: ../extensions/error-viewer/sgml-validator.c:228
+#: ../extensions/error-viewer/sgml-validator.c:244
 msgid ""
 "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
 "+xml” instead."
@@ -458,7 +465,7 @@ msgstr ""
 "文档类型是“XHTML”，但是内容类型却为“text/html”。请换用“application/xhtml"
 "+xml”。"
 
-#: ../extensions/error-viewer/sgml-validator.c:243
+#: ../extensions/error-viewer/sgml-validator.c:242
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
@@ -467,20 +474,22 @@ msgstr ""
 "%s 的 HTML 警告：\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:360
+#: ../extensions/error-viewer/sgml-validator.c:359
 #, c-format
 msgid "HTML error in %s:"
 msgstr "%s 的 HTML 错误："
 
-#: ../extensions/error-viewer/sgml-validator.c:368
+#: ../extensions/error-viewer/sgml-validator.c:367
+#, c-format
 msgid "Invalid character encoding"
 msgstr "无效的字符编码"
 
-#: ../extensions/error-viewer/sgml-validator.c:373
+#: ../extensions/error-viewer/sgml-validator.c:372
+#, c-format
 msgid "Unknown error while converting to UTF-8"
 msgstr "转换为 UTF-8 时发生了未知错误"
 
-#: ../extensions/error-viewer/sgml-validator.c:435
+#: ../extensions/error-viewer/sgml-validator.c:434
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -489,12 +498,12 @@ msgstr ""
 "%s 中有 HTML 错误：\n"
 "没有指定有效的文档类型。"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:346
 msgid "Enabled"
 msgstr "启用"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
-#: ../extensions/rss/rss-ui.c:599
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:354
+#: ../extensions/rss/rss-ui.c:584
 msgid "Description"
 msgstr "描述"
 
@@ -506,29 +515,29 @@ msgstr "<b>装入的扩展</b>"
 msgid "Extensions"
 msgstr "扩展"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:73
 msgid "_Extensions"
 msgstr "扩展(_E)"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
 msgid "Load and unload extensions"
 msgstr "装入和卸载扩展"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
 msgid "Help about extensions"
 msgstr "关于扩展的帮助"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:88
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:80
 msgid "Install User _Script"
 msgstr "安装用户脚本(_S)"
 
 #. shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:90
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:82
 msgid "Install Greasemonkey script"
 msgstr "安装 Greasemonkey 脚本"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:315
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:313
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "“%s”的用户脚本已经安装"
@@ -542,7 +551,7 @@ msgstr "_Java 控制台"
 msgid "Show Java Console"
 msgstr "显示 Java 控制台"
 
-#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:102
+#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:100
 msgid "_HTTP Headers"
 msgstr "_HTTP 头"
 
@@ -570,171 +579,171 @@ msgstr ""
 msgid "Remove headers"
 msgstr "删除头"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:68
+#: ../extensions/page-info/ephy-page-info-extension.c:61
 msgid "Pa_ge Information"
 msgstr "页面信息(_G)"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:70
+#: ../extensions/page-info/ephy-page-info-extension.c:63
 msgid "Display page information in a dialog"
 msgstr "在对话框中显示页面信息"
 
-#: ../extensions/page-info/page-info-dialog.c:730
+#: ../extensions/page-info/page-info-dialog.c:704
 msgid "Save As..."
 msgstr "另存为..."
 
-#: ../extensions/page-info/page-info-dialog.c:747
+#: ../extensions/page-info/page-info-dialog.c:721
 msgid "Select a directory"
 msgstr "选择目录"
 
-#: ../extensions/page-info/page-info-dialog.c:796
+#: ../extensions/page-info/page-info-dialog.c:770
 msgid "Unknown type"
 msgstr "未知类型"
 
-#: ../extensions/page-info/page-info-dialog.c:801
+#: ../extensions/page-info/page-info-dialog.c:775
 msgid "Full standards compliance"
 msgstr "完全遵从标准"
 
-#: ../extensions/page-info/page-info-dialog.c:804
+#: ../extensions/page-info/page-info-dialog.c:778
 msgid "Almost standards compliance"
 msgstr "基本遵从标准"
 
-#: ../extensions/page-info/page-info-dialog.c:807
+#: ../extensions/page-info/page-info-dialog.c:781
 msgid "Compatibility"
 msgstr "兼容性"
 
-#: ../extensions/page-info/page-info-dialog.c:811
+#: ../extensions/page-info/page-info-dialog.c:785
 msgid "Undetermined"
 msgstr "未确定"
 
-#: ../extensions/page-info/page-info-dialog.c:820
+#: ../extensions/page-info/page-info-dialog.c:794
 msgid "Not cached"
 msgstr "未缓存"
 
-#: ../extensions/page-info/page-info-dialog.c:823
+#: ../extensions/page-info/page-info-dialog.c:797
 msgid "Disk cache"
 msgstr "磁盘缓存"
 
-#: ../extensions/page-info/page-info-dialog.c:826
+#: ../extensions/page-info/page-info-dialog.c:800
 msgid "Memory cache"
 msgstr "内存缓存"
 
-#: ../extensions/page-info/page-info-dialog.c:829
+#: ../extensions/page-info/page-info-dialog.c:803
 msgid "Unknown cache"
 msgstr "位置缓存"
 
-#: ../extensions/page-info/page-info-dialog.c:845
-#: ../extensions/page-info/page-info-dialog.c:961
+#: ../extensions/page-info/page-info-dialog.c:819
+#: ../extensions/page-info/page-info-dialog.c:935
 msgid "Unknown"
 msgstr "未知"
 
-#: ../extensions/page-info/page-info-dialog.c:850
+#: ../extensions/page-info/page-info-dialog.c:824
 msgid "No referrer"
 msgstr "无引用者"
 
-#: ../extensions/page-info/page-info-dialog.c:864
-#: ../extensions/page-info/page-info-dialog.c:880
+#: ../extensions/page-info/page-info-dialog.c:838
+#: ../extensions/page-info/page-info-dialog.c:854
 msgid "Not specified"
 msgstr "未指定"
 
-#: ../extensions/page-info/page-info-dialog.c:943
+#: ../extensions/page-info/page-info-dialog.c:917
 msgid "Image"
 msgstr "图像"
 
-#: ../extensions/page-info/page-info-dialog.c:946
+#: ../extensions/page-info/page-info-dialog.c:920
 msgid "Background image"
 msgstr "背景图像"
 
-#: ../extensions/page-info/page-info-dialog.c:949
+#: ../extensions/page-info/page-info-dialog.c:923
 msgid "Embed"
 msgstr "嵌入"
 
-#: ../extensions/page-info/page-info-dialog.c:952
+#: ../extensions/page-info/page-info-dialog.c:926
 msgid "Object"
 msgstr "对象"
 
-#: ../extensions/page-info/page-info-dialog.c:955
+#: ../extensions/page-info/page-info-dialog.c:929
 msgid "Applet"
 msgstr "小程序"
 
-#: ../extensions/page-info/page-info-dialog.c:958
+#: ../extensions/page-info/page-info-dialog.c:932
 msgid "Icon"
 msgstr "图标"
 
-#: ../extensions/page-info/page-info-dialog.c:1130
+#: ../extensions/page-info/page-info-dialog.c:1113
 msgid "_Open"
 msgstr "打开(_O)"
 
-#: ../extensions/page-info/page-info-dialog.c:1136
-#: ../extensions/page-info/page-info-dialog.c:1581
+#: ../extensions/page-info/page-info-dialog.c:1119
+#: ../extensions/page-info/page-info-dialog.c:1564
 msgid "_Copy Link Address"
 msgstr "复制链接地址(_C)"
 
-#: ../extensions/page-info/page-info-dialog.c:1142
+#: ../extensions/page-info/page-info-dialog.c:1125
 msgid "_Use as Background"
 msgstr "用作背景(_U)"
 
-#: ../extensions/page-info/page-info-dialog.c:1148
-#: ../extensions/page-info/page-info-dialog.c:1587
+#: ../extensions/page-info/page-info-dialog.c:1131
+#: ../extensions/page-info/page-info-dialog.c:1570
 msgid "_Save As..."
 msgstr "另存为(_S)..."
 
-#: ../extensions/page-info/page-info-dialog.c:1380
-#: ../extensions/page-info/page-info-dialog.c:1701
+#: ../extensions/page-info/page-info-dialog.c:1363
+#: ../extensions/page-info/page-info-dialog.c:1684
 msgid "Blocked"
 msgstr "已屏蔽"
 
-#: ../extensions/page-info/page-info-dialog.c:1396
-#: ../extensions/page-info/page-info-dialog.c:1717
+#: ../extensions/page-info/page-info-dialog.c:1379
+#: ../extensions/page-info/page-info-dialog.c:1700
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1409
+#: ../extensions/page-info/page-info-dialog.c:1392
 msgid "Type"
 msgstr "类型"
 
-#: ../extensions/page-info/page-info-dialog.c:1421
+#: ../extensions/page-info/page-info-dialog.c:1404
 msgid "Alt Text"
 msgstr "替代文本"
 
-#: ../extensions/page-info/page-info-dialog.c:1433
-#: ../extensions/page-info/page-info-dialog.c:1730
+#: ../extensions/page-info/page-info-dialog.c:1416
+#: ../extensions/page-info/page-info-dialog.c:1713
 msgid "Title"
 msgstr "标题"
 
-#: ../extensions/page-info/page-info-dialog.c:1445
+#: ../extensions/page-info/page-info-dialog.c:1428
 msgid "Width"
 msgstr "宽度"
 
-#: ../extensions/page-info/page-info-dialog.c:1457
+#: ../extensions/page-info/page-info-dialog.c:1440
 msgid "Height"
 msgstr "高度"
 
-#: ../extensions/page-info/page-info-dialog.c:1742
+#: ../extensions/page-info/page-info-dialog.c:1725
 msgid "Relation"
 msgstr "关系"
 
-#: ../extensions/page-info/page-info-dialog.c:1891
-#: ../extensions/page-info/page-info-dialog.c:2032
+#: ../extensions/page-info/page-info-dialog.c:1874
+#: ../extensions/page-info/page-info-dialog.c:2015
 msgid "Name"
 msgstr "名称"
 
-#: ../extensions/page-info/page-info-dialog.c:1903
+#: ../extensions/page-info/page-info-dialog.c:1886
 msgid "Method"
 msgstr "方式"
 
-#: ../extensions/page-info/page-info-dialog.c:1917
+#: ../extensions/page-info/page-info-dialog.c:1900
 msgid "Action"
 msgstr "动作"
 
-#: ../extensions/page-info/page-info-dialog.c:1998
+#: ../extensions/page-info/page-info-dialog.c:1981
 msgid "_Copy"
 msgstr "复制(_C)"
 
-#: ../extensions/page-info/page-info-dialog.c:2044
+#: ../extensions/page-info/page-info-dialog.c:2027
 msgid "Content"
 msgstr "内容"
 
-#: ../extensions/page-info/page-info-dialog.c:2145
+#: ../extensions/page-info/page-info-dialog.c:2128
 msgid "Page Metadata"
 msgstr "页面元数据"
 
@@ -862,86 +871,86 @@ msgstr "类型："
 msgid "_Save Media As..."
 msgstr "媒体另存为(_S)..."
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:180
+#: ../extensions/permissions/ephy-permissions-dialog.c:178
 msgid "allowed"
 msgstr "允许"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:184
+#: ../extensions/permissions/ephy-permissions-dialog.c:182
 msgid "denied"
 msgstr "禁止"
 
 #. Sometimes we get this... how did this get in the list!?
-#: ../extensions/permissions/ephy-permissions-dialog.c:189
+#: ../extensions/permissions/ephy-permissions-dialog.c:187
 msgid "default"
 msgstr "默认"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:515
+#: ../extensions/permissions/ephy-permissions-dialog.c:513
 msgid "Domain"
 msgstr "域"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:527
+#: ../extensions/permissions/ephy-permissions-dialog.c:525
 msgid "State"
 msgstr "状态"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:620
+#: ../extensions/permissions/ephy-permissions-dialog.c:618
 msgid "Site Permissions"
 msgstr "站点权限"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:647
+#: ../extensions/permissions/ephy-permissions-dialog.c:645
 msgid "Cookies"
 msgstr "Cookies"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:648
+#: ../extensions/permissions/ephy-permissions-dialog.c:646
 msgid "Images"
 msgstr "图像"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:649
+#: ../extensions/permissions/ephy-permissions-dialog.c:647
 msgid "Popup Windows"
 msgstr "弹出窗口"
 
 #. stock icon
-#: ../extensions/permissions/ephy-permissions-extension.c:156
+#: ../extensions/permissions/ephy-permissions-extension.c:155
 msgid "Site _Permissions"
 msgstr "站点权限(_P)"
 
 #. shortcut key
-#: ../extensions/permissions/ephy-permissions-extension.c:158
+#: ../extensions/permissions/ephy-permissions-extension.c:157
 msgid "Manage web site permissions"
 msgstr "管理网站属性"
 
-#: ../extensions/rss/ephy-rss-extension.c:91
+#: ../extensions/rss/ephy-rss-extension.c:85
 msgid "News Feeds Subscription"
 msgstr "新闻推送订阅"
 
-#: ../extensions/rss/ephy-rss-extension.c:93
+#: ../extensions/rss/ephy-rss-extension.c:87
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr "用您喜爱的新闻阅读器订阅此网站的新闻推送"
 
-#: ../extensions/rss/ephy-rss-extension.c:98
+#: ../extensions/rss/ephy-rss-extension.c:92
 msgid "_Subscribe to this feed"
 msgstr "订阅此种子(_S)"
 
-#: ../extensions/rss/ephy-rss-extension.c:100
+#: ../extensions/rss/ephy-rss-extension.c:94
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "用您喜爱的新闻阅读器订阅此种子"
 
-#: ../extensions/rss/ephy-rss-extension.c:373
+#: ../extensions/rss/ephy-rss-extension.c:367
 msgid "Subscribe to site's news feed"
 msgstr "订阅网站的新闻推送"
 
-#: ../extensions/rss/rss-ui.c:167
+#: ../extensions/rss/rss-ui.c:166
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr "<b><i>无法联系种子阅读器，程序是否在运行？</i></b>"
 
-#: ../extensions/rss/rss-ui.c:169
+#: ../extensions/rss/rss-ui.c:168
 msgid "Retry"
 msgstr "重试"
 
-#: ../extensions/rss/rss-ui.c:297
+#: ../extensions/rss/rss-ui.c:296
 msgid "_Copy Feed Address"
 msgstr "复制种子地址(_C)"
 
-#: ../extensions/rss/rss-ui.c:591
+#: ../extensions/rss/rss-ui.c:576
 msgid "Subscribe"
 msgstr "订阅"
 
@@ -958,94 +967,94 @@ msgstr "新闻推送订阅"
 msgid "_Subscribe"
 msgstr "订阅(_S)"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:146
+#: ../extensions/select-stylesheet/ephy-css-menu.c:140
 msgid "Render the page without using a style"
 msgstr "不使用样式渲染页面"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:149
+#: ../extensions/select-stylesheet/ephy-css-menu.c:143
 msgid "Render the page using the default style"
 msgstr "使用默认样式渲染页面"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:152
+#: ../extensions/select-stylesheet/ephy-css-menu.c:146
 #, c-format
 msgid "Render the page using the “%s” style"
 msgstr "使用“%s”样式渲染页面"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:310
+#: ../extensions/select-stylesheet/ephy-css-menu.c:317
 msgid "St_yle"
 msgstr "样式(_Y)"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:311
+#: ../extensions/select-stylesheet/ephy-css-menu.c:318
 msgid "Select a different style for this page"
 msgstr "为此页选择不同的样式表"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:224
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
 msgid "Default"
 msgstr "默认"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:235
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
 msgid "None"
 msgstr "无"
 
-#: ../extensions/sidebar/ephy-sidebar.c:176
+#: ../extensions/sidebar/ephy-sidebar.c:167
 msgid "No Sidebars installed"
 msgstr "未安装侧边栏"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:105
+#: ../extensions/sidebar/ephy-sidebar-extension.c:88
 msgid "_Sidebar"
 msgstr "侧边栏(_S)"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:106
+#: ../extensions/sidebar/ephy-sidebar-extension.c:89
 msgid "Show or hide the sidebar"
 msgstr "显示或隐藏侧边栏"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:323
+#: ../extensions/sidebar/ephy-sidebar-extension.c:306
 msgid "Do you really want to remove this sidebar?"
 msgstr "您真的想要删除此侧边栏吗？"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:327
+#: ../extensions/sidebar/ephy-sidebar-extension.c:310
 msgid "There is no way to recover this sidebar after removal."
 msgstr "删除后将无法恢复此侧边栏。"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:329
+#: ../extensions/sidebar/ephy-sidebar-extension.c:312
 msgid "Remove Sidebar"
 msgstr "删除侧边栏"
 
 #. Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:476
+#: ../extensions/sidebar/ephy-sidebar-extension.c:459
 #, c-format
 msgid "The sidebar already contains “%s”"
 msgstr "侧边栏已包含“%s”"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:480
+#: ../extensions/sidebar/ephy-sidebar-extension.c:463
 msgid ""
 "To use this sidebar, select it from the list of available sidebar pages."
 msgstr "要使用此侧边栏，请从可用的侧边栏列表页面中选择它。"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:483
-#: ../extensions/sidebar/ephy-sidebar-extension.c:509
+#: ../extensions/sidebar/ephy-sidebar-extension.c:466
+#: ../extensions/sidebar/ephy-sidebar-extension.c:492
 msgid "Add Sidebar"
 msgstr "添加侧边栏"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:503
+#: ../extensions/sidebar/ephy-sidebar-extension.c:486
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr "将“%s”添加到侧边栏吗？"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:507
+#: ../extensions/sidebar/ephy-sidebar-extension.c:490
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr "新侧边栏的源文件为“%s”。"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:513
+#: ../extensions/sidebar/ephy-sidebar-extension.c:496
 msgid "_Add Sidebar"
 msgstr "添加侧边栏(_A)"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:542
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
 msgid "_Look Up"
 msgstr "查阅(_L)"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:549
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:538
 msgid "_GNOME Dictionary"
 msgstr "_GNOME 字典"
 
