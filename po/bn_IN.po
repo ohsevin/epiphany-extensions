@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bn_IN\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions&component=general\n"
-"POT-Creation-Date: 2009-01-12 19:26+0000\n"
-"PO-Revision-Date: 2009-01-16 18:42+0530\n"
+"POT-Creation-Date: 2009-01-16 13:16+0000\n"
+"PO-Revision-Date: 2009-01-19 18:09+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
 "Language-Team: Bengali INDIA <fedora-trans-bn_IN@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -29,13 +29,13 @@ msgstr "<span weight=\"bold\">সাধারণ</span>"
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "images."
-msgstr ""
+msgstr "এই বিকল্পটি সক্রিয় করা হলে ছবির সাথে প্রদর্শিত পপ-আপ মেনুর মধ্যে এই কর্ম অন্তর্ভুক্ত করা হবে।"
 
 #: ../extensions/actions/action-properties.glade.h:4
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "links and pages."
-msgstr ""
+msgstr "এই বিকল্পটি সক্রিয় করা হলে লিংক ও পেজের সাথে প্রদর্শিত পপ-আপ মেনুর মধ্যে এই কর্ম অন্তর্ভুক্ত করা হবে।"
 
 #: ../extensions/actions/action-properties.glade.h:5
 msgid "The action description."
@@ -45,13 +45,13 @@ msgstr "কর্মের বিবরণ।"
 msgid ""
 "The action name. If a character is preceded by an underscore, that character "
 "will be used as the access key for the menu item."
-msgstr ""
+msgstr "কর্মের নাম। কোনো অক্ষরের পূর্বে আন্ডার-স্কোর চিহ্ন প্রদর্শন করা হলে, সংশ্লিষ্ট অক্ষরটি ঐ মেনুর বস্তুর অ্যাকসেস-কি রূপে ব্যবহার করা হবে।"
 
 #: ../extensions/actions/action-properties.glade.h:7
 msgid ""
 "The command to execute when the action is activated. The URL of the link, "
 "image or page will be appended to the command."
-msgstr ""
+msgstr "কর্ম সক্রিয় করা হলে, সঞ্চালনযোগ্য কমান্ড। লিংক, ছবি অথবা পৃষ্ঠার URL, কমান্ডের সাথে সংযোজন করা হবে।"
 
 #: ../extensions/actions/action-properties.glade.h:8
 msgid "_Command:"
@@ -136,7 +136,7 @@ msgstr ""
 
 #: ../extensions/adblock/adblock.glade.h:1
 msgid "<b>Courtesy of Graham Pierce</b>"
-msgstr ""
+msgstr "<b>গ্র্যাহাম পিয়ার্সের সৌজন্যে</b>"
 
 #: ../extensions/adblock/adblock.glade.h:2
 msgid "<b>New rule</b>"
@@ -144,12 +144,12 @@ msgstr "<b>নতুন নিয়ম</b>"
 
 #: ../extensions/adblock/adblock.glade.h:3
 msgid "<b>Update rules from original site</b>"
-msgstr ""
+msgstr "<b>মূল সাইট থেকে নিয়ম আপডেট করা হবে</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
 #: ../extensions/adblock/ephy-adblock-extension.c:230
 msgid "Adblock Editor"
-msgstr ""
+msgstr "Adblock সম্পাদন ব্যবস্থা"
 
 #: ../extensions/adblock/adblock.glade.h:5
 msgid "Add a new rule"
@@ -169,18 +169,18 @@ msgstr ""
 
 #: ../extensions/adblock/ephy-adblock-extension.c:231
 msgid "Edit Adblock"
-msgstr ""
+msgstr "Adblock সম্পাদন করুন"
 
 #: ../extensions/adblock/ephy-adblock-extension.c:298
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d-টি আড়াল করা বিজ্ঞাপন"
+msgstr[1] "%d-টি আড়াল করা বিজ্ঞাপন"
 
 #: ../extensions/auto-reload/ephy-auto-reload-extension.c:81
 msgid "_Auto Reload"
-msgstr ""
+msgstr "স্বয়ংক্রিয়ভাবে পুনরায় লোড করুন (_A)"
 
 #: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
 msgid "Reload the page periodically"
@@ -188,7 +188,7 @@ msgstr "নিয়মিতরূপে পেজ পুনরায় লোড �
 
 #: ../extensions/cc-license-viewer/cc-license-viewer.py:373
 msgid "View Creative Commons license"
-msgstr ""
+msgstr "Creative Commons লাইসেন্স পরিদর্শন করুন"
 
 #: ../extensions/certificates/ephy-certificates-extension.c:163
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
@@ -221,7 +221,7 @@ msgstr "নিরাপত্তামূলক ডিভাইস পরিচ�
 
 #: ../extensions/epilicious/epilicious-config.glade.h:1
 msgid "Action for tagged bookmarks:"
-msgstr ""
+msgstr "ট্যাগ করা বুকমার্কের জন্য নির্ধারিত কর্ম:"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:2
 msgid "Epilicious Configuration"
@@ -229,7 +229,7 @@ msgstr "Epilicious কনফিগারেশন"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:3
 msgid "_Backend:"
-msgstr ""
+msgstr "ব্যাক-এন্ড: (_B)"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:4
 msgid "_Exclude"
@@ -249,7 +249,7 @@ msgstr "ট্যাগ: (_T)"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:1
 msgid "Adding new bookmarks and synching topics"
-msgstr ""
+msgstr "নতুন বুকমার্ক যোগ করে, বিষয় সুসংগত করা হবে"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:2
 msgid "Removing deleted bookmarks"
@@ -267,7 +267,7 @@ msgstr "epiphany থেকে বুকমার্ক পুনরুদ্ধ�
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:6
 msgid "Retrieving previous synch point"
-msgstr ""
+msgstr "সুসংগত করার জন্য পূর্বে ব্যবহৃত স্থান উদ্ধার করা হচ্ছে"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:7
 msgid "Saving new synch point"
@@ -311,19 +311,19 @@ msgstr ""
 msgid ""
 "The backend that epilicious will use for synchronizing bookmarks. Allowed "
 "value: 'ma.gnolia'"
-msgstr ""
+msgstr "বুকমার্ক সুসংগত করার জন্য epilicious দ্বারা ব্যবহারযোগ্য ব্যাক-এন্ড। ব্যবহারযোগ্য মান: 'ma.gnolia'"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
 msgid "The password that epilicious will use for synchronizing bookmarks."
-msgstr ""
+msgstr "বুকমার্ক সুসংগত করার জন্য epilicious দ্বারা ব্যবহারযোগ্য পাসওয়ার্ড।"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:7
 msgid "The username that epilicious will use for synchronizing bookmarks."
-msgstr ""
+msgstr "বুকমার্ক সুসংগত করার জন্য epilicious দ্বারা ব্যবহারযোগ্য ব্যবহারকারীর নাম।"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:8
 msgid "epilicious backend"
-msgstr ""
+msgstr "epilicious ব্যাক-এন্ড"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:9
 msgid "password"
@@ -340,7 +340,7 @@ msgstr "HTML পরীক্ষা করুন (_H)"
 #. shortcut key
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:92
 msgid "Display HTML errors in the Error Viewer dialog"
-msgstr ""
+msgstr "ত্রুটি প্রদর্শন ব্যবস্থার মধ্যে HTML সংক্রান্ত ত্রুটি প্রদর্শন করা হবে"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _Links"
@@ -349,7 +349,7 @@ msgstr "লিংক পরীক্ষা করুন (_L)"
 #. shortcut key
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
-msgstr ""
+msgstr "ত্রুটি প্রদর্শন ব্যবস্থার মধ্যে অবৈধ হাইপার-লিংক প্রদর্শন করা হবে"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:103
 msgid "_Error Viewer"
@@ -362,7 +362,7 @@ msgstr "ওয়েব পেজ সংক্রান্ত ত্রুটি �
 
 #: ../extensions/error-viewer/error-viewer.glade.h:1
 msgid "Cl_ear"
-msgstr ""
+msgstr "পরিশ্রুত করুন (_e)"
 
 #: ../extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
@@ -376,6 +376,8 @@ msgid ""
 "%s error in %s on line %d and column %d:\n"
 "%s"
 msgstr ""
+"%s ত্রুটি, %s-র মধ্যে %d পংক্তি ও %d কলামে:\n"
+"%s"
 
 #. Translators: The first %s is the error category (e. g., "javascript").
 #. The second %s is the URL. The third %s is the actual error message.
@@ -387,6 +389,8 @@ msgid ""
 "%s error in %s:\n"
 "%s"
 msgstr ""
+"%s ত্রুটি, %s-র মধ্যে:\n"
+"%s"
 
 #. Translators: The first %s is the error category (e. g., "javascript").
 #. The second %s is the URL. The third %s is the actual error message.
@@ -396,6 +400,8 @@ msgid ""
 "%s error in %s on line %d:\n"
 "%s"
 msgstr ""
+"%s ত্রুটি %s-র মধ্যে, %d পংক্তিতে:\n"
+"%s"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
 #, c-format
@@ -410,13 +416,15 @@ msgid ""
 "Link error in %s:\n"
 "%s is unavailable."
 msgstr ""
+"%s-র মধ্যে লিংক সংক্রান্ত ত্রুটি:\n"
+"%s উপলব্ধ নেই।"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
 #, c-format
 msgid "Checking %d Link on “%s”"
 msgid_plural "Checking %d Links on “%s”"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d-টি লিঙ্ক, “%s”-র মধ্যে পরীক্ষা করা হচ্ছে"
+msgstr[1] "%d-টি লিঙ্ক, “%s”-র মধ্যে পরীক্ষা করা হচ্ছে"
 
 #: ../extensions/error-viewer/opensp/validate.cpp:168
 #, c-format
@@ -424,6 +432,8 @@ msgid ""
 "HTML error in “%s” on line %s:\n"
 "%s"
 msgstr ""
+"“%s”-র মধ্যে %s পংক্তিতে HTML সংক্রান্ত ত্রুটি:\n"
+"%s"
 
 #: ../extensions/error-viewer/sgml-validator.c:164
 #, c-format
@@ -435,7 +445,7 @@ msgstr[1] "%d-টি ত্রুটি পাওয়া গিয়েছে"
 #: ../extensions/error-viewer/sgml-validator.c:168
 #, c-format
 msgid "HTML Validation of “%s” complete"
-msgstr ""
+msgstr "“%s”-র HTML বৈধতা যাচাই সমাপ্ত হয়েছে"
 
 #: ../extensions/error-viewer/sgml-validator.c:226
 #, c-format
@@ -452,6 +462,8 @@ msgid ""
 "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
 "+xml” instead."
 msgstr ""
+"Doctype “XHTML” হলেও, অন্তর্ভুক্ত বিষয়বস্তু “text/html” বিন্যাসে রয়েছে।  পরিবর্তে“application/xhtml"
+"+xml” প্রয়োগ করুন।"
 
 #: ../extensions/error-viewer/sgml-validator.c:242
 #, c-format
@@ -518,111 +530,111 @@ msgstr "এক্সটেনশন সংক্রান্ত সাহায�
 
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:78
 msgid "Install User _Script"
-msgstr ""
+msgstr "ব্যবহারকারীর স্ক্রিপ্ট ইনস্টল করুন (_S)"
 
 #. shortcut key
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:80
 msgid "Install Greasemonkey script"
-msgstr ""
+msgstr "Greasemonkey স্ক্রিপ্ট ইনস্টল করুন"
 
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:311
 #, c-format
 msgid "The user script at “%s” has been installed"
-msgstr ""
+msgstr "“%s”-এ উপস্থিত ব্যবহারকারীর স্ক্রিপ্ট ইনস্টল করা হয়েছে"
 
 #: ../extensions/java-console/ephy-java-console-extension.c:48
 msgid "_Java Console"
-msgstr ""
+msgstr "Java Console (_J)"
 
 #. shortcut key
 #: ../extensions/java-console/ephy-java-console-extension.c:50
 msgid "Show Java Console"
-msgstr ""
+msgstr "Java Console প্রদর্শন করা হবে"
 
 #: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:100
 msgid "_HTTP Headers"
-msgstr ""
+msgstr "HTTP হেডার (_H)"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:1
 msgid "<b>Request</b>"
-msgstr ""
+msgstr "<b>অনুরোধ</b>"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:2
 msgid "<b>Response</b>"
-msgstr ""
+msgstr "<b>প্রতিক্রিয়া</b>"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:3
 msgid "<b>URLs</b>"
-msgstr ""
+msgstr "<b>URL</b>"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
 msgid "Clear cache"
-msgstr ""
+msgstr "ক্যাশের তথ্য মুছে ফেলুন"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
 msgid "Live Headers"
-msgstr ""
+msgstr "লাইভ হেডার"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
 msgid "Remove headers"
-msgstr ""
+msgstr "হেডার মুছে ফেলুন"
 
 #: ../extensions/page-info/ephy-page-info-extension.c:61
 msgid "Pa_ge Information"
-msgstr ""
+msgstr "পেজ সংক্রান্ত তথ্য (_g)"
 
 #: ../extensions/page-info/ephy-page-info-extension.c:63
 msgid "Display page information in a dialog"
-msgstr ""
+msgstr "পেজ সংক্রান্ত তথ্য একটি ডায়লগ বক্সের মধ্যে প্রদর্শন করা হবে"
 
 #: ../extensions/page-info/page-info-dialog.c:704
 msgid "Save As..."
-msgstr ""
+msgstr "নতুন রূপে সংরক্ষণ..."
 
 #: ../extensions/page-info/page-info-dialog.c:721
 msgid "Select a directory"
-msgstr ""
+msgstr "একটি ডিরেক্টরি নির্বাচন করুন"
 
 #: ../extensions/page-info/page-info-dialog.c:770
 msgid "Unknown type"
-msgstr ""
+msgstr "অজানা ধরন"
 
 #: ../extensions/page-info/page-info-dialog.c:775
 msgid "Full standards compliance"
-msgstr ""
+msgstr "প্রমিত মানের সাথে সম্পূর্ণ সুসংগত"
 
 #: ../extensions/page-info/page-info-dialog.c:778
 msgid "Almost standards compliance"
-msgstr ""
+msgstr "অধিকাংশ প্রমিত মানের সাথে সুসংগত"
 
 #: ../extensions/page-info/page-info-dialog.c:781
 msgid "Compatibility"
-msgstr ""
+msgstr "সুসংগতি"
 
 #: ../extensions/page-info/page-info-dialog.c:785
 msgid "Undetermined"
-msgstr ""
+msgstr "নির্ধারিত নয়"
 
 #: ../extensions/page-info/page-info-dialog.c:794
 msgid "Not cached"
-msgstr ""
+msgstr "ক্যাশে করা হয়নি"
 
 #: ../extensions/page-info/page-info-dialog.c:797
 msgid "Disk cache"
-msgstr ""
+msgstr "ডিস্ক ক্যাশে"
 
 #: ../extensions/page-info/page-info-dialog.c:800
 msgid "Memory cache"
-msgstr ""
+msgstr "মেমরি ক্যাশে"
 
 #: ../extensions/page-info/page-info-dialog.c:803
 msgid "Unknown cache"
-msgstr ""
+msgstr "অজানা ক্যাশে"
 
 #: ../extensions/page-info/page-info-dialog.c:819
 #: ../extensions/page-info/page-info-dialog.c:935
 msgid "Unknown"
-msgstr ""
+msgstr "অজানা"
 
 #: ../extensions/page-info/page-info-dialog.c:824
 msgid "No referrer"
@@ -631,49 +643,49 @@ msgstr ""
 #: ../extensions/page-info/page-info-dialog.c:838
 #: ../extensions/page-info/page-info-dialog.c:854
 msgid "Not specified"
-msgstr ""
+msgstr "নির্ধারিত নয়"
 
 #: ../extensions/page-info/page-info-dialog.c:917
 msgid "Image"
-msgstr ""
+msgstr "ছবি"
 
 #: ../extensions/page-info/page-info-dialog.c:920
 msgid "Background image"
-msgstr ""
+msgstr "পটভূমির ছবি"
 
 #: ../extensions/page-info/page-info-dialog.c:923
 msgid "Embed"
-msgstr ""
+msgstr "এমবেড করা হবে"
 
 #: ../extensions/page-info/page-info-dialog.c:926
 msgid "Object"
-msgstr ""
+msgstr "অবজেক্ট"
 
 #: ../extensions/page-info/page-info-dialog.c:929
 msgid "Applet"
-msgstr ""
+msgstr "অ্যাপ্লেট"
 
 #: ../extensions/page-info/page-info-dialog.c:932
 msgid "Icon"
-msgstr ""
+msgstr "আইকন"
 
 #: ../extensions/page-info/page-info-dialog.c:1113
 msgid "_Open"
-msgstr ""
+msgstr "খুলুন (_O)"
 
 #: ../extensions/page-info/page-info-dialog.c:1119
 #: ../extensions/page-info/page-info-dialog.c:1564
 msgid "_Copy Link Address"
-msgstr ""
+msgstr "লিংক দ্বারা চিহ্নিত ঠিকানা কপি করুন (_C)"
 
 #: ../extensions/page-info/page-info-dialog.c:1125
 msgid "_Use as Background"
-msgstr ""
+msgstr "পটভূমি রূপে ব্যবহার করুন (_U)"
 
 #: ../extensions/page-info/page-info-dialog.c:1131
 #: ../extensions/page-info/page-info-dialog.c:1570
 msgid "_Save As..."
-msgstr ""
+msgstr "নতুন রূপে সংরক্ষণ...(_S)"
 
 #: ../extensions/page-info/page-info-dialog.c:1363
 #: ../extensions/page-info/page-info-dialog.c:1684
@@ -683,11 +695,11 @@ msgstr ""
 #: ../extensions/page-info/page-info-dialog.c:1379
 #: ../extensions/page-info/page-info-dialog.c:1700
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: ../extensions/page-info/page-info-dialog.c:1392
 msgid "Type"
-msgstr ""
+msgstr "ধরন"
 
 #: ../extensions/page-info/page-info-dialog.c:1404
 msgid "Alt Text"
@@ -696,15 +708,15 @@ msgstr ""
 #: ../extensions/page-info/page-info-dialog.c:1416
 #: ../extensions/page-info/page-info-dialog.c:1713
 msgid "Title"
-msgstr ""
+msgstr "শিরোনাম"
 
 #: ../extensions/page-info/page-info-dialog.c:1428
 msgid "Width"
-msgstr ""
+msgstr "প্রস্থ"
 
 #: ../extensions/page-info/page-info-dialog.c:1440
 msgid "Height"
-msgstr ""
+msgstr "উচ্চতা"
 
 #: ../extensions/page-info/page-info-dialog.c:1725
 msgid "Relation"
@@ -713,23 +725,23 @@ msgstr ""
 #: ../extensions/page-info/page-info-dialog.c:1874
 #: ../extensions/page-info/page-info-dialog.c:2015
 msgid "Name"
-msgstr ""
+msgstr "নাম"
 
 #: ../extensions/page-info/page-info-dialog.c:1886
 msgid "Method"
-msgstr ""
+msgstr "পদ্ধতি"
 
 #: ../extensions/page-info/page-info-dialog.c:1900
 msgid "Action"
-msgstr ""
+msgstr "কর্ম"
 
 #: ../extensions/page-info/page-info-dialog.c:1981
 msgid "_Copy"
-msgstr ""
+msgstr "কপি (_C)"
 
 #: ../extensions/page-info/page-info-dialog.c:2027
 msgid "Content"
-msgstr ""
+msgstr "বিষয়"
 
 #: ../extensions/page-info/page-info-dialog.c:2128
 msgid "Page Metadata"
@@ -737,19 +749,19 @@ msgstr ""
 
 #: ../extensions/page-info/page-info.glade.h:1
 msgid "<b>Dublin Core Metadata</b>"
-msgstr ""
+msgstr "<b>Dublin কোর মিটাডাটা</b>"
 
 #: ../extensions/page-info/page-info.glade.h:2
 msgid "<b>Forms In Page</b>"
-msgstr ""
+msgstr "<b>পেজের মধ্যে উপস্থিত পেজ</b>"
 
 #: ../extensions/page-info/page-info.glade.h:3
 msgid "<b>Links In Page</b>"
-msgstr ""
+msgstr "<b>পেজের মধ্যে উপস্থিত লিংক</b>"
 
 #: ../extensions/page-info/page-info.glade.h:4
 msgid "<b>Media In Page</b>"
-msgstr ""
+msgstr "<b>পেজের মধ্যে উপস্থিত মিডিয়া</b>"
 
 #: ../extensions/page-info/page-info.glade.h:5
 msgid "<b>Medium View</b>"
@@ -757,83 +769,83 @@ msgstr ""
 
 #: ../extensions/page-info/page-info.glade.h:6
 msgid "<b>Other Metadata</b>"
-msgstr ""
+msgstr "<b>অন্যান্য মিটাডাটা</b>"
 
 #: ../extensions/page-info/page-info.glade.h:7
 msgid "<b>Rendering</b>"
-msgstr ""
+msgstr "<b>রেন্ডারিং</b>"
 
 #: ../extensions/page-info/page-info.glade.h:8
 msgid "<b>Source File</b>"
-msgstr ""
+msgstr "<b>সোর্স ফাইল</b>"
 
 #: ../extensions/page-info/page-info.glade.h:9
 msgid "<b>Web Page</b>"
-msgstr ""
+msgstr "<b>ওয়েব পেজ</b>"
 
 #: ../extensions/page-info/page-info.glade.h:10
 msgid "DYNAMIC"
-msgstr ""
+msgstr "DYNAMIC"
 
 #: ../extensions/page-info/page-info.glade.h:11
 msgid "Date:"
-msgstr ""
+msgstr "তারিখ:"
 
 #: ../extensions/page-info/page-info.glade.h:12
 msgid "Description:"
-msgstr ""
+msgstr "বিবরণ:"
 
 #: ../extensions/page-info/page-info.glade.h:13
 msgid "Encoding:"
-msgstr ""
+msgstr "এনকোডিং:"
 
 #: ../extensions/page-info/page-info.glade.h:14
 msgid "Expires:"
-msgstr ""
+msgstr "মেয়াদ পূর্তী:"
 
 #: ../extensions/page-info/page-info.glade.h:15
 msgid "Format:"
-msgstr ""
+msgstr "বিন্যাস:"
 
 #: ../extensions/page-info/page-info.glade.h:16
 msgid "Forms"
-msgstr ""
+msgstr "ফর্ম"
 
 #: ../extensions/page-info/page-info.glade.h:17
 msgid "General"
-msgstr ""
+msgstr "সাধারণ"
 
 #: ../extensions/page-info/page-info.glade.h:18
 msgid "Links"
-msgstr ""
+msgstr "লিংক"
 
 #: ../extensions/page-info/page-info.glade.h:19
 msgid "Location:"
-msgstr ""
+msgstr "অবস্থান:"
 
 #: ../extensions/page-info/page-info.glade.h:20
 msgid "MIME type:"
-msgstr ""
+msgstr "MIME-র ধরন:"
 
 #: ../extensions/page-info/page-info.glade.h:21
 msgid "Media"
-msgstr ""
+msgstr "মিডিয়া"
 
 #: ../extensions/page-info/page-info.glade.h:22
 msgid "Metadata"
-msgstr ""
+msgstr "মিটাডাটা"
 
 #: ../extensions/page-info/page-info.glade.h:23
 msgid "Mode:"
-msgstr ""
+msgstr "মোড:"
 
 #: ../extensions/page-info/page-info.glade.h:24
 msgid "Modified:"
-msgstr ""
+msgstr "পরিবর্তনে তারিখ:"
 
 #: ../extensions/page-info/page-info.glade.h:25
 msgid "Page Properties"
-msgstr ""
+msgstr "পেজের বৈশিষ্ট্য"
 
 #: ../extensions/page-info/page-info.glade.h:26
 msgid "Referrer:"
@@ -841,70 +853,70 @@ msgstr ""
 
 #: ../extensions/page-info/page-info.glade.h:27
 msgid "Size:"
-msgstr ""
+msgstr "মাপ:"
 
 #: ../extensions/page-info/page-info.glade.h:28
 msgid "Source:"
-msgstr ""
+msgstr "উৎস:"
 
 #: ../extensions/page-info/page-info.glade.h:29
 msgid "Title:"
-msgstr ""
+msgstr "শিরোনাম:"
 
 #: ../extensions/page-info/page-info.glade.h:30
 msgid "Type:"
-msgstr ""
+msgstr "ধরন:"
 
 #: ../extensions/page-info/page-info.glade.h:31
 msgid "_Save Media As..."
-msgstr ""
+msgstr "নতুন রূপে মিডিয়া সংরক্ষণ করুন...(_S)"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:165
 msgid "allowed"
-msgstr ""
+msgstr "অনুমোদিত"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:169
 msgid "denied"
-msgstr ""
+msgstr "প্রত্যাখ্যাত"
 
 #. Sometimes we get this... how did this get in the list!?
 #: ../extensions/permissions/ephy-permissions-dialog.c:174
 msgid "default"
-msgstr ""
+msgstr "ডিফল্ট মান"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:500
 msgid "Domain"
-msgstr ""
+msgstr "ডোমেইন"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:512
 msgid "State"
-msgstr ""
+msgstr "অবস্থা"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:605
 msgid "Site Permissions"
-msgstr ""
+msgstr "সাইট সংক্রান্ত অনুমতি"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:632
 msgid "Cookies"
-msgstr ""
+msgstr "কুকি"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:633
 msgid "Images"
-msgstr ""
+msgstr "ছবি"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:634
 msgid "Popup Windows"
-msgstr ""
+msgstr "পপ-আপ উইন্ডো"
 
 #. stock icon
 #: ../extensions/permissions/ephy-permissions-extension.c:152
 msgid "Site _Permissions"
-msgstr ""
+msgstr "সাইটের অনুমতি (_P)"
 
 #. shortcut key
 #: ../extensions/permissions/ephy-permissions-extension.c:154
 msgid "Manage web site permissions"
-msgstr ""
+msgstr "ওয়েব সাইট সংক্রান্ত অনুমতি পরিচালনা করুন"
 
 #: ../extensions/rss/ephy-rss-extension.c:79
 msgid "News Feeds Subscription"
@@ -932,15 +944,15 @@ msgstr ""
 
 #: ../extensions/rss/rss-ui.c:155
 msgid "Retry"
-msgstr ""
+msgstr "পুনঃপ্রচেষ্টা"
 
 #: ../extensions/rss/rss-ui.c:283
 msgid "_Copy Feed Address"
-msgstr ""
+msgstr "ফিডের ঠিকানা কপি করুন (_C)"
 
 #: ../extensions/rss/rss-ui.c:563
 msgid "Subscribe"
-msgstr ""
+msgstr "সাবস্ক্রাইব করুন"
 
 #: ../extensions/rss/rss-ui.glade.h:1
 msgid "<b>Select Interesting Feeds</b>"
@@ -953,24 +965,24 @@ msgstr ""
 
 #: ../extensions/rss/rss-ui.glade.h:3
 msgid "_Subscribe"
-msgstr ""
+msgstr "সাবস্ক্রাইব করুন (_S)"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:140
 msgid "Render the page without using a style"
-msgstr ""
+msgstr "বিন্যাস বিনা পেজ রেন্ডার করা হবে"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:143
 msgid "Render the page using the default style"
-msgstr ""
+msgstr "ডিফল্ট বিন্যাস সহযোগে পেজ রেন্ডার করা হবে"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:146
 #, c-format
 msgid "Render the page using the “%s” style"
-msgstr ""
+msgstr "“%s” ডিফল্ট বিন্যাস সহযোগে পেজ রেন্ডার করা হবে"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:317
 msgid "St_yle"
-msgstr ""
+msgstr "বিন্যাস (_y)"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:318
 msgid "Select a different style for this page"
@@ -978,27 +990,27 @@ msgstr ""
 
 #: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
 msgid "Default"
-msgstr ""
+msgstr "ডিফল্ট মান"
 
 #: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
 msgid "None"
-msgstr ""
+msgstr "শূণ্য"
 
 #: ../extensions/sidebar/ephy-sidebar.c:167
 msgid "No Sidebars installed"
-msgstr ""
+msgstr "কোনো সাইড-বার ইনস্টল করা হয়নি"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:88
 msgid "_Sidebar"
-msgstr ""
+msgstr "সাইড-বার (_S)"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:89
 msgid "Show or hide the sidebar"
-msgstr ""
+msgstr "সাইড-বার আড়াল অথবা প্রদর্শন করা হবে"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:306
 msgid "Do you really want to remove this sidebar?"
-msgstr ""
+msgstr "আপনি কি নিশ্চিতরূপে এই সাইড-বার মুছে ফেলতে ইচ্ছুক?"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:310
 msgid "There is no way to recover this sidebar after removal."
@@ -1006,13 +1018,13 @@ msgstr ""
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:312
 msgid "Remove Sidebar"
-msgstr ""
+msgstr "সাইড-বার মুছে ফেলুন"
 
 #. Translators: %s is the sidebar title
 #: ../extensions/sidebar/ephy-sidebar-extension.c:459
 #, c-format
 msgid "The sidebar already contains “%s”"
-msgstr ""
+msgstr "সাইড-বারের মধ্যে “%s” বর্তমানে উপস্থিত রয়েছে"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:463
 msgid "To use this sidebar, select it from the list of available sidebar pages."
@@ -1021,12 +1033,12 @@ msgstr ""
 #: ../extensions/sidebar/ephy-sidebar-extension.c:466
 #: ../extensions/sidebar/ephy-sidebar-extension.c:492
 msgid "Add Sidebar"
-msgstr ""
+msgstr "সাইড-বার যোগ করুন"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:486
 #, c-format
 msgid "Add “%s” to the Sidebar?"
-msgstr ""
+msgstr "সাইড-বারের মধ্যে “%s” যোগ করা হবে কি?"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:490
 #, c-format
@@ -1035,19 +1047,19 @@ msgstr ""
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:496
 msgid "_Add Sidebar"
-msgstr ""
+msgstr "সাইড-বার যোগ করুন (_A)"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
 msgid "_Look Up"
-msgstr ""
+msgstr "অনুসন্ধান (_L)"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:538
 msgid "_GNOME Dictionary"
-msgstr ""
+msgstr "GNOME অভিধান (_G)"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
 msgid "Open search result in new tab"
-msgstr ""
+msgstr "নতুন ট্যাবের মধ্যে ফলাফল প্রদর্শন করা হবে"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
 msgid "Open search result in new tab if true, in new window if false"
@@ -1067,7 +1079,7 @@ msgstr ""
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
 msgid "Auto Scroll"
-msgstr ""
+msgstr "স্বয়ংক্রিয় স্ক্রোল ব্যবস্থা"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
 msgid "Scroll on middle mouse click"
@@ -1083,7 +1095,7 @@ msgstr ""
 
 #: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
 msgid "Creative Commons license viewer"
-msgstr ""
+msgstr "Creative Commons লাইসেন্স প্রদর্শন ব্যবস্থা"
 
 #: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
 msgid "Shows the Creative Commons license of the current website if available"
@@ -1099,19 +1111,19 @@ msgstr ""
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
-msgstr ""
+msgstr "ত্রুটি প্রদর্শন ব্যবস্থা"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
 msgid "Validate web pages and check links"
-msgstr ""
+msgstr "ওয়েব পেজ যাচাই করুন ও লিংক পরীক্ষা করুন"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
 msgid "Activate and deactivate extensions"
-msgstr ""
+msgstr "এক্সটেনশন সক্রিয় ও নিষ্ক্রিয় করুন"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
 msgid "Extensions Manager"
-msgstr ""
+msgstr "এক্সটেনশন পরিচালনব্যবস্থা"
 
 #: ../extensions/favicon/favicon.ephy-extension.in.h:1
 msgid "Favicon fallback"
@@ -1131,7 +1143,7 @@ msgstr ""
 
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
 msgid "Greasemonkey"
-msgstr ""
+msgstr "Greasemonkey"
 
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
 msgid "Run user scripts to modify web pages' behavior"
@@ -1139,7 +1151,7 @@ msgstr ""
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
 msgid "Java Console"
-msgstr ""
+msgstr "Java Console"
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
 msgid "Provide access to the Java-Plugin Console"
@@ -1147,7 +1159,7 @@ msgstr ""
 
 #: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
 msgid "Live HTTP headers"
-msgstr ""
+msgstr "লাইভ HTTP হেডার"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
@@ -1155,15 +1167,15 @@ msgstr ""
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
 msgid "Page Info"
-msgstr ""
+msgstr "পেজ সংক্রান্ত তথ্য"
 
 #: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
 msgid "Edit site permissions"
-msgstr ""
+msgstr "সাইট সংক্রান্ত অনুমতি সম্পাদনা"
 
 #: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
 msgid "Permissions"
-msgstr ""
+msgstr "অনুমতি"
 
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
 msgid "Drag the page on middle mouse click"
@@ -1179,7 +1191,7 @@ msgstr ""
 
 #: ../extensions/python-console/python-console.ephy-extension.in.h:2
 msgid "Python Console"
-msgstr ""
+msgstr "Python Console"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
@@ -1191,19 +1203,19 @@ msgstr ""
 
 #: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:2
 msgid "Sample (Mozilla)"
-msgstr ""
+msgstr "নমূনা (Mozilla)"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
 msgid "A sample extension"
-msgstr ""
+msgstr "এক্সটেনশনের নমূনা"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:2
 msgid "Sample"
-msgstr ""
+msgstr "নমূনা"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
 msgid "Select Stylesheet"
-msgstr ""
+msgstr "স্টাইল-শিট নির্বাচন করুন"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
@@ -1211,11 +1223,11 @@ msgstr ""
 
 #: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
 msgid "Adds a sidebar to windows"
-msgstr ""
+msgstr "উইন্ডোর মধ্যে সাইড-বার যোগ করুন"
 
 #: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
 msgid "Sidebar"
-msgstr ""
+msgstr "সাইড-বার"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
 msgid "Look up the selected text with a smart bookmark"
@@ -1223,15 +1235,15 @@ msgstr ""
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
 msgid "Smart Bookmarks"
-msgstr ""
+msgstr "স্মার্ট বুকমার্ক"
 
 #: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
 msgid "Groups newly opened tabs"
-msgstr ""
+msgstr "নতুন প্রদর্শিত ট্যাব শ্রেণীবদ্ধ করা হয়"
 
 #: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
 msgid "Tab Groups"
-msgstr ""
+msgstr "ট্যাবের শ্রেণী"
 
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
@@ -1239,5 +1251,5 @@ msgstr ""
 
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
-msgstr ""
+msgstr "ট্যাবের অবস্থা"
 
