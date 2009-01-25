@@ -227,15 +227,6 @@ for ext in $extensions; do
 done
 IFS="$ephyext_save_ifs"
 
-if test "$EPIPHANY_ENGINE" != "mozilla"; then
- extensions=$EXTENSIONS; EXTENSIONS=
- for ext in $extensions; do
-  if echo "$MOZILLA_ALL_EXTENSIONS" | egrep -v "(^| )$ext(\$| )" > /dev/null; then
-    EXTENSIONS="$EXTENSIONS $ext"
-  fi
- done
-fi
-
 AC_SUBST([DIST_EXTENSIONS])
 AC_SUBST([BUILD_EXTENSIONS],[$(echo $EXTENSIONS | tr ' ' '\n' | sort | uniq | tr '\n' ' ')])
 
@@ -314,8 +305,6 @@ fi
 # Mozilla
 # *******
 
-if test "$EPIPHANY_ENGINE" = "mozilla"; then
-
 GECKO_INIT([MOZILLA])
 
 AC_SUBST([MOZILLA])
@@ -363,8 +352,6 @@ else
 	AC_MSG_RESULT(yes)
 fi
 
-
-fi # test "$EPIPHANY_ENGINE" != "webkit"
 
 GECKO_DEFINES
 
