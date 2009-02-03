@@ -15,7 +15,7 @@
 # 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 
 m4_define([e_e_version_major],[2])
-m4_define([e_e_version_minor],[25])
+m4_define([e_e_version_minor],[27])
 m4_define([e_e_version_micro],[0])
 m4_define([e_e_version],[e_e_version_major.e_e_version_minor.e_e_version_micro])
 
@@ -24,7 +24,7 @@ m4_define([e_e_branch],["trunk"])
 
 AC_INIT([GNOME Web Browser Extensions],[e_e_version],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 
-EPIPHANY_API_VERSION=2.25
+EPIPHANY_API_VERSION=2.27
 
 EPIPHANY_EXTENSIONS_MAJOR=e_e_version_major.e_e_version_minor
 AC_SUBST(EPIPHANY_EXTENSIONS_MAJOR)
