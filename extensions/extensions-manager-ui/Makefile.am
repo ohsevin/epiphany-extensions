@@ -24,7 +24,12 @@ libextensionsmanageruiextension_la_LDFLAGS = \
 	$(AM_LDFLAGS)
 
 gladedir = $(pkgdatadir)/glade
-glade_DATA = extensions-manager-ui.glade
+glade_in_files = extensions-manager-ui.glade
+
+%.ui: %.glade
+	$(GTK_BUILDER_CONVERT) $< $@
+
+glade_DATA = $(glade_in_files:.glade=.ui)
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = extensions-manager-ui.ephy-extension.in.in
@@ -37,7 +42,7 @@ extensionini_DATA = $(extensionini_in_files:.ephy-extension.in.in=.ephy-extensio
 
 @EPIPHANY_EXTENSION_RULE@
 
-CLEANFILES = $(extensionini_DATA)
+CLEANFILES = $(extensionini_DATA) $(glade_data)
 DISTCLEANFILES = $(extensionini_DATA)
 
-EXTRA_DIST = $(glade_DATA) $(extensionini_in_files)
+EXTRA_DIST = $(glade_in_files) $(extensionini_in_files)

@@ -422,7 +422,7 @@ extensions_manager_ui_init (ExtensionsManagerUI *dialog)
 
 	ephy_dialog_construct (EPHY_DIALOG (dialog),
 			       properties,
-			       SHARE_DIR "/glade/extensions-manager-ui.glade",
+			       SHARE_DIR "/glade/extensions-manager-ui.ui",
 			       "extensions_manager_ui",
 			       GETTEXT_PACKAGE);
 
