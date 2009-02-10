@@ -42,7 +42,7 @@ extensionini_DATA = $(extensionini_in_files:.ephy-extension.in.in=.ephy-extensio
 
 @EPIPHANY_EXTENSION_RULE@
 
-CLEANFILES = $(extensionini_DATA) $(glade_data)
+CLEANFILES = $(extensionini_DATA) $(glade_DATA)
 DISTCLEANFILES = $(extensionini_DATA)
 
 EXTRA_DIST = $(glade_in_files) $(extensionini_in_files)
