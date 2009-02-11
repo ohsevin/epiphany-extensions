@@ -6,10 +6,12 @@ nodist_epilicious_PYTHON = \
 epiliciouslib_PYTHON = \
 	BaseStore.py \
 	DeliciousStore.py \
+	DiigoStore.py \
 	EpiphanyStore.py \
 	__init__.py \
 	backend.py \
 	config.py \
+	diigo.py \
 	magnolia.py \
 	progress.py
 

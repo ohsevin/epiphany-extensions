@@ -88,7 +88,7 @@ def remove_urls(old, remote, local, rem_store, loc_store):
     @param old: The base snapshot
     @param remote: The remote snapshot
     @param local: The local snapshot
-    @param rem_store: The remote storage (L{DeliciousStore})
+    @param rem_store: The remote storage (L{BaseStore})
     @param loc_store: The local storage (L{EpiphanyStore})
     '''
     o = Set(old.keys())
@@ -178,7 +178,7 @@ def sync_tags_on_urls(curls, old, remote, \
     @param old: The base snapshot
     @param remote: The remote snapshot
     @param local: The local snapshot
-    @param rem_store: The remote storage (L{DeliciousStore})
+    @param rem_store: The remote storage (L{BaseStore})
     @param loc_store: The local storage (L{EpiphanyStore})
     '''
     get_logger().info('Number of urls to sync %i.' % len(curls))

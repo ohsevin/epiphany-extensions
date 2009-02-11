@@ -36,7 +36,7 @@
       <locale name="C">
         <short>epilicious backend</short>
         <long>The backend that epilicious will use for synchronizing
-          bookmarks. Allowed value: 'ma.gnolia'</long>
+          bookmarks. Allowed values: 'diigo', 'ma.gnolia'</long>
       </locale>
     </schema>
 

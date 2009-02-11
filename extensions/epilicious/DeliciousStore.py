@@ -20,24 +20,25 @@ from urllib2 import URLError
 from sets import Set
 import libepilicious
 from libepilicious.BaseStore import BaseStore
-from libepilicious.backend import create_backend
+from libepilicious.magnolia import Magnolia
 
 
 class DeliciousStore(BaseStore):
     '''The class representing the storage of bookmarks on a backend with a
     del.icio.us-like API.'''
 
-    def __init__(self, user, pwd, space_repl, backend):
+    def __init__(self, user, pwd, space_repl):
         '''Constructor.
 
         @param user: Delicious username
         @param pwd: Delicious password
         @param space_repl: Character that replaces space
         '''
+        BaseStore.__init__(self)
         self.__un = user
         self.__pwd = pwd
         self.__sr = space_repl
-        self.__d = create_backend(backend)(user, pwd)
+        self.__d = Magnolia(user, pwd)
         self.__snap_utd = 0
 
     def get_snapshot(self):
@@ -63,6 +64,7 @@ class DeliciousStore(BaseStore):
         self.__snap_utd = 1
         return res
 
+    @BaseStore.store_call
     def url_delete(self, url):
         '''Deletes a URL from the storage.
 
@@ -77,6 +79,7 @@ class DeliciousStore(BaseStore):
         except:
             libepilicious.get_logger().exception('Failed to delete URL %s' % url)
 
+    @BaseStore.store_call
     def url_sync(self, url, desc, to_del, to_add):
         '''Synchronises a URL's tags. The URL is added if it doesn't exist.
 

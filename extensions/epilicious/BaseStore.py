@@ -16,8 +16,27 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-class BaseStore:
+class BaseStore(object):
     '''The base of all stores. Never to be instantiated.'''
+
+    def __init__(self):
+        self.store = 1
+        self.fstore = []
+
+    def perform_calls(self):
+        for f, s, args, kwargs in self.fstore:
+            yield f(s, *args, **kwargs)
+        self.fstore = []
+
+    @classmethod
+    def store_call(cls, func):
+        def inner(self, *args, **kwargs):
+            if self.store:
+                self.fstore.append((func, self, args, kwargs))
+            else:
+                func(self, *args, **kwargs)
+
+        return inner
 
     def get_snapshot(self):
         '''Calculates a snapshot of the store's bookmarks.

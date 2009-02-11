@@ -25,6 +25,7 @@ from libepilicious.BaseStore import BaseStore
 class EpiphanyStore(BaseStore):
 
     def __init__(self, keyword = None, exclude = False):
+        BaseStore.__init__(self)
         # TODO: add a check for the priority of the keyword and set it to 0, at
         # the moment it's not possible since there's no method for it
         # (ephy_node_set_property() isn't in the Python API)
@@ -81,6 +82,7 @@ class EpiphanyStore(BaseStore):
 
         return res
 
+    @BaseStore.store_call
     def url_delete(self, url):
         '''Delete a bookmark.
 
@@ -94,6 +96,7 @@ class EpiphanyStore(BaseStore):
             for kw in self.__bms.get_keywords().get_children():
                 self.__bms.unset_keyword(kw, bm)
 
+    @BaseStore.store_call
     def url_sync(self, url, desc, to_del, to_add):
         '''Synchronise a bookmark.
 

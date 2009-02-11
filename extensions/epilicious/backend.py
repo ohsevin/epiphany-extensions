@@ -16,11 +16,13 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-from libepilicious import magnolia
+from libepilicious.DeliciousStore import DeliciousStore
+from libepilicious.DiigoStore import DiigoStore
 
-backends = { \
-        'ma.gnolia' : magnolia.Magnolia, \
+stores = { \
+        'ma.gnolia' : DeliciousStore, \
+        'diigo'     : DiigoStore, \
         }
 
-def create_backend(b):
-    return backends[b]
+def create_store(b):
+    return stores[b]

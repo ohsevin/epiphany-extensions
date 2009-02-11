@@ -55,7 +55,7 @@ class EpiliciousPlugin(object):
 
     def __init__(self):
         self.username = ''
-        self.password = ''
+        self.__password = ''
         self.backend = ''
         self.keyword = ''
         self.exclude = False
@@ -86,7 +86,7 @@ class EpiliciousPlugin(object):
 
     def _new_pwd(self, client, *args, **kwargs):
         '''Callback to handle the password is modified in GConf.'''
-        self.password = client.get_string(libepilicious.GCONF_PWD)
+        self.__password = client.get_string(libepilicious.GCONF_PWD)
 
     def _new_backend(self, client, *args, **kargs):
         '''Callback to handle when the backend is modified in GConf.'''
@@ -101,6 +101,11 @@ class EpiliciousPlugin(object):
     def _new_exclude(self, client, *args, **kwargs):
         '''Callback to handle the exclude is modified in GConf.'''
         self.exclude = client.get_bool(libepilicious.GCONF_EXCL)
+
+    # {{{2 Retrieve password out of keyring (in the future)
+    def _get_password(self):
+        # silly implementation for now
+        return self.__password
 
     # {{{2 Synchronisation
     def _CB_Sync(self, action, window):
@@ -134,15 +139,14 @@ class EpiliciousPlugin(object):
         from libepilicious.progress import ProgressBar
         pbar = ProgressBar()
         try:
-            from libepilicious.DeliciousStore import DeliciousStore
+            from libepilicious.backend import create_store
             from libepilicious.EpiphanyStore import EpiphanyStore
 
             pbar.show()
             stepper = pbar.step()
 
-            remote_store = DeliciousStore(user=self.username, \
-                    pwd=self.password, space_repl=self.space_repl, \
-                    backend=self.backend)
+            remote_store = create_store(self.backend)(user=self.username, \
+                    pwd=self._get_password(), space_repl=self.space_repl)
             local_store = EpiphanyStore(keyword=self.keyword, \
                     exclude=self.exclude)
             stepper.next()
@@ -167,7 +171,20 @@ class EpiliciousPlugin(object):
                     local = local,
                     rem_store = remote_store,
                     loc_store = local_store)
-            yield True
+            actions = remote_store.perform_calls()
+            try:
+                while 1:
+                    actions.next()
+                    yield True
+            except StopIteration, e:
+                pass
+            actions = local_store.perform_calls()
+            try:
+                while 1:
+                    actions.next()
+                    yield True
+            except StopIteration, e:
+                pass
             stepper.next()
 
             changed_urls = libepilicious.find_changed_urls(old = old,
@@ -180,7 +197,20 @@ class EpiliciousPlugin(object):
                     local = local,
                     rem_store = remote_store,
                     loc_store = local_store)
-            yield True
+            actions = remote_store.perform_calls()
+            try:
+                while 1:
+                    actions.next()
+                    yield True
+            except StopIteration, e:
+                pass
+            actions = local_store.perform_calls()
+            try:
+                while 1:
+                    actions.next()
+                    yield True
+            except StopIteration, e:
+                pass
             stepper.next()
 
             # Save the current state for future sync

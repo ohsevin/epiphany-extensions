@@ -147,7 +147,7 @@ class Magnolia(object): # {{{1
         replace: whether an already existing bookmark should be replaced ("yes"
                  or "no", default "yes")
         shared: whether the URL should be shared or not ("yes" or "no", default
-                 "no")
+                 "yes")
 
         Returns 1 on success, 0 on failure.
         '''

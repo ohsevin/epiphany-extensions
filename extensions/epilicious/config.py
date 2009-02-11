@@ -53,7 +53,7 @@ class ConfigWindow:
         self.rbexclude.set_active(self.client.get_bool(libepilicious.GCONF_EXCL))
 
         # setting up of the combo box is a bit ugly, it's all about DRY
-        for k in libepilicious.backend.backends.keys():
+        for k in libepilicious.backend.stores.keys():
             self.cbbackend.append_text(k)
         self.cbbackend.remove_text(0)
         be = self.client.get_string(libepilicious.GCONF_BACK)
