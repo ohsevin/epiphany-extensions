@@ -1,14 +1,14 @@
 # Swedish messages for epiphany-extensions.
-# Copyright (C) 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
-# Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2008.
+# Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
 # Christian Rose <menthos@menthos.com>, 2004.
+# Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2008, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2008-01-15 04:15+0100\n"
-"PO-Revision-Date: 2008-01-15 04:17+0100\n"
+"POT-Creation-Date: 2009-02-12 10:31+0100\n"
+"PO-Revision-Date: 2009-02-12 10:31+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -70,19 +70,19 @@ msgstr "_Sidor"
 msgid "Actions"
 msgstr "Åtgärder"
 
-#: ../extensions/actions/ephy-actions-extension.c:113
+#: ../extensions/actions/ephy-actions-extension.c:112
 msgid "Actio_ns"
 msgstr "Åtgä_rder"
 
-#: ../extensions/actions/ephy-actions-extension.c:114
+#: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Customize actions"
 msgstr "Anpassa åtgärder"
 
-#: ../extensions/actions/ephy-actions-extension.c:437
+#: ../extensions/actions/ephy-actions-extension.c:436
 msgid "Could not run command"
 msgstr "Kunde inte köra kommando"
 
-#: ../extensions/actions/ephy-actions-extension.c:440
+#: ../extensions/actions/ephy-actions-extension.c:439
 msgid "Could not Run Command"
 msgstr "Kunde inte köra kommando"
 
@@ -110,7 +110,7 @@ msgstr "Egenskaper för \"%s\""
 msgid "Action Properties"
 msgstr "Egenskaper för åtgärd"
 
-#: ../extensions/adblock/adblock-ui.c:279
+#: ../extensions/adblock/adblock-ui.c:263
 msgid ""
 "This list is Copyright © its original author(G). It is relicensed under the GPL with permission.\n"
 "The original list, Filterset.G, can be found at http://www.pierceive.com/filtersetg/.\n"
@@ -122,7 +122,7 @@ msgstr ""
 "Den här versionen har ändrats från dess original. Ändringarna har inte blivit godkända av den ursprunglige upphovsmannen;\n"
 "rikta eventuella problem till Bugzilla och inte till den ursprunglige upphovsmannen (G).\n"
 
-#: ../extensions/adblock/adblock-ui.c:497
+#: ../extensions/adblock/adblock-ui.c:481
 msgid "Pattern"
 msgstr "Mönster"
 
@@ -139,7 +139,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>Uppdatera regler från ursprungliga webbplatsen</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:243
+#: ../extensions/adblock/ephy-adblock-extension.c:230
 msgid "Adblock Editor"
 msgstr "Redigerare för reklamblockerare"
 
@@ -159,55 +159,55 @@ msgstr "Filterset.G"
 msgid "Whitelist"
 msgstr "Vitlista"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:244
+#: ../extensions/adblock/ephy-adblock-extension.c:231
 msgid "Edit Adblock"
 msgstr "Redigera reklamblockerare"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:311
+#: ../extensions/adblock/ephy-adblock-extension.c:298
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
 msgstr[0] "%d dolt reklammeddelande"
 msgstr[1] "%d dolda reklammeddelanden"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:84
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:81
 msgid "_Auto Reload"
 msgstr "Uppdatera _automatiskt"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:86
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
 msgid "Reload the page periodically"
 msgstr "Uppdatera sidan periodvis"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:370
+#: ../extensions/cc-license-viewer/cc-license-viewer.py:373
 msgid "View Creative Commons license"
 msgstr "Visa Creative Commons-licensen"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:176
+#: ../extensions/certificates/ephy-certificates-extension.c:163
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "Certifikat"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:207
+#: ../extensions/certificates/ephy-certificates-extension.c:194
 msgid "Security Devices"
 msgstr "Säkerhetsenheter"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:219
+#: ../extensions/certificates/ephy-certificates-extension.c:206
 msgid "Manage _Certificates"
 msgstr "Hantera _certifikat"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:221
+#: ../extensions/certificates/ephy-certificates-extension.c:208
 msgid "Manage your certificates"
 msgstr "Hantera dina certifikat"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:225
+#: ../extensions/certificates/ephy-certificates-extension.c:212
 msgid "Manage Security _Devices"
 msgstr "Hantera säkerhets_enheter"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:227
+#: ../extensions/certificates/ephy-certificates-extension.c:214
 msgid "Manage your security devices"
 msgstr "Hantera dina säkerhetsenheter"
 
@@ -275,8 +275,8 @@ msgstr "Synkroniserar med %s"
 msgid "Synchronizing..."
 msgstr "Synkroniserar..."
 
-#: ../extensions/epilicious/epilicious.py.in:202
-#: ../extensions/epilicious/epilicious.py.in:220
+#: ../extensions/epilicious/epilicious.py.in:232
+#: ../extensions/epilicious/epilicious.py.in:250
 msgid "Epilicious Synchronize"
 msgstr "Synkronisering för Epilicious"
 
@@ -297,8 +297,8 @@ msgid "Shared topic"
 msgstr "Delat ämne"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:5
-msgid "The backend that epilicious will use for synchronizing bookmarks. Allowed value: 'ma.gnolia'"
-msgstr "Bakänden som epilicious ska använda för att synkronisera bokmärken. Tillåtna värden: \"ma.gnolia\""
+msgid "The backend that epilicious will use for synchronizing bookmarks. Allowed values: 'diigo', 'ma.gnolia'"
+msgstr "Bakänden som epilicious ska använda för att synkronisera bokmärken. Tillåtna värden: \"diigo\", \"ma.gnolia\""
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
 msgid "The password that epilicious will use for synchronizing bookmarks."
@@ -320,30 +320,30 @@ msgstr "lösenord"
 msgid "username"
 msgstr "användarnamn"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:98
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Check _HTML"
 msgstr "Kontrollera _HTML"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:100
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:92
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "Visa HTML-fel i felvisardialogen"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _Links"
 msgstr "Kontrollera _länkar"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:107
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr "Visa ogiltiga länkar i felvisardialogen"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:111
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:103
 msgid "_Error Viewer"
 msgstr "_Felvisare"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:113
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
 msgid "Display web page errors"
 msgstr "Visa fel i webbsidor"
 
@@ -355,7 +355,9 @@ msgstr "T_öm"
 msgid "Error Viewer"
 msgstr "Felvisare"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:103
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:105
 #, c-format
 msgid ""
 "%s error in %s on line %d and column %d:\n"
@@ -364,9 +366,11 @@ msgstr ""
 "%s-fel i %s på rad %d och kolumn %d:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:109
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:140
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:113
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:137
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:150
 #, c-format
 msgid ""
 "%s error in %s:\n"
@@ -375,7 +379,9 @@ msgstr ""
 "%s-fel i %s:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:123
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
 #, c-format
 msgid ""
 "%s error in %s on line %d:\n"
@@ -416,19 +422,19 @@ msgstr ""
 "HTML-fel i \"%s\" på rad %s:\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:165
+#: ../extensions/error-viewer/sgml-validator.c:164
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
 msgstr[0] "Hittade %d fel"
 msgstr[1] "Hittade %d fel"
 
-#: ../extensions/error-viewer/sgml-validator.c:169
+#: ../extensions/error-viewer/sgml-validator.c:168
 #, c-format
 msgid "HTML Validation of “%s” complete"
 msgstr "HTML-validering av \"%s\" är klar"
 
-#: ../extensions/error-viewer/sgml-validator.c:227
+#: ../extensions/error-viewer/sgml-validator.c:226
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -437,12 +443,12 @@ msgstr ""
 "HTML-fel i %s:\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:229
-#: ../extensions/error-viewer/sgml-validator.c:245
+#: ../extensions/error-viewer/sgml-validator.c:228
+#: ../extensions/error-viewer/sgml-validator.c:244
 msgid "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml+xml” instead."
 msgstr "Dokumenttypen är \"XHTML\" men innehållstypen är \"text/html\". Använd \"application/xhtml+xml\" istället."
 
-#: ../extensions/error-viewer/sgml-validator.c:243
+#: ../extensions/error-viewer/sgml-validator.c:242
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
@@ -451,22 +457,22 @@ msgstr ""
 "HTML-varning i %s:\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:360
+#: ../extensions/error-viewer/sgml-validator.c:359
 #, c-format
 msgid "HTML error in %s:"
 msgstr "HTML-fel i %s:"
 
-#: ../extensions/error-viewer/sgml-validator.c:368
+#: ../extensions/error-viewer/sgml-validator.c:367
 #, c-format
 msgid "Invalid character encoding"
 msgstr "Ogiltig teckenkodning"
 
-#: ../extensions/error-viewer/sgml-validator.c:373
+#: ../extensions/error-viewer/sgml-validator.c:372
 #, c-format
 msgid "Unknown error while converting to UTF-8"
 msgstr "Okänt fel vid konvertering till UTF-8"
 
-#: ../extensions/error-viewer/sgml-validator.c:435
+#: ../extensions/error-viewer/sgml-validator.c:434
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -475,12 +481,12 @@ msgstr ""
 "HTML-fel i %s:\n"
 "Ingen giltig dokumenttyp angiven."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:346
 msgid "Enabled"
 msgstr "Aktiverad"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
-#: ../extensions/rss/rss-ui.c:599
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:354
+#: ../extensions/rss/rss-ui.c:571
 msgid "Description"
 msgstr "Beskrivning"
 
@@ -492,29 +498,29 @@ msgstr "<b>Inlästa utökningar</b>"
 msgid "Extensions"
 msgstr "Utökningar"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:73
 msgid "_Extensions"
 msgstr "_Utökningar"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
 msgid "Load and unload extensions"
 msgstr "Läs in och glöm utökningar"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
 msgid "Help about extensions"
 msgstr "Hjälp för utökningar"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:88
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:78
 msgid "Install User _Script"
 msgstr "Installera användar_skript"
 
 #. shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:90
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:80
 msgid "Install Greasemonkey script"
 msgstr "Installera Greasemonkey-skript"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:315
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:311
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "Användarskriptet på \"%s\" har installerats"
@@ -528,7 +534,7 @@ msgstr "_Java-konsoll"
 msgid "Show Java Console"
 msgstr "Visa Java-konsoll"
 
-#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:102
+#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:100
 msgid "_HTTP Headers"
 msgstr "_HTTP-rubriker"
 
@@ -556,171 +562,171 @@ msgstr "Levande rubriker"
 msgid "Remove headers"
 msgstr "Ta bort rubriker"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:68
+#: ../extensions/page-info/ephy-page-info-extension.c:61
 msgid "Pa_ge Information"
 msgstr "S_idinformation"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:70
+#: ../extensions/page-info/ephy-page-info-extension.c:63
 msgid "Display page information in a dialog"
 msgstr "Visa sidinformation i en dialogruta"
 
-#: ../extensions/page-info/page-info-dialog.c:730
+#: ../extensions/page-info/page-info-dialog.c:704
 msgid "Save As..."
 msgstr "Spara som..."
 
-#: ../extensions/page-info/page-info-dialog.c:747
+#: ../extensions/page-info/page-info-dialog.c:721
 msgid "Select a directory"
 msgstr "Välj en katalog"
 
-#: ../extensions/page-info/page-info-dialog.c:796
+#: ../extensions/page-info/page-info-dialog.c:770
 msgid "Unknown type"
 msgstr "Okänd typ"
 
-#: ../extensions/page-info/page-info-dialog.c:801
+#: ../extensions/page-info/page-info-dialog.c:775
 msgid "Full standards compliance"
 msgstr "Fullständig standardkompatibilitet"
 
-#: ../extensions/page-info/page-info-dialog.c:804
+#: ../extensions/page-info/page-info-dialog.c:778
 msgid "Almost standards compliance"
 msgstr "Nästan standardkompatibilitet"
 
-#: ../extensions/page-info/page-info-dialog.c:807
+#: ../extensions/page-info/page-info-dialog.c:781
 msgid "Compatibility"
 msgstr "Kompatibilitet"
 
-#: ../extensions/page-info/page-info-dialog.c:811
+#: ../extensions/page-info/page-info-dialog.c:785
 msgid "Undetermined"
 msgstr "Oavgjord"
 
-#: ../extensions/page-info/page-info-dialog.c:820
+#: ../extensions/page-info/page-info-dialog.c:794
 msgid "Not cached"
 msgstr "Inte cachad"
 
-#: ../extensions/page-info/page-info-dialog.c:823
+#: ../extensions/page-info/page-info-dialog.c:797
 msgid "Disk cache"
 msgstr "Diskcache"
 
-#: ../extensions/page-info/page-info-dialog.c:826
+#: ../extensions/page-info/page-info-dialog.c:800
 msgid "Memory cache"
 msgstr "Minnescache"
 
-#: ../extensions/page-info/page-info-dialog.c:829
+#: ../extensions/page-info/page-info-dialog.c:803
 msgid "Unknown cache"
 msgstr "Okänd cache"
 
-#: ../extensions/page-info/page-info-dialog.c:845
-#: ../extensions/page-info/page-info-dialog.c:961
+#: ../extensions/page-info/page-info-dialog.c:819
+#: ../extensions/page-info/page-info-dialog.c:935
 msgid "Unknown"
 msgstr "Okänd"
 
-#: ../extensions/page-info/page-info-dialog.c:850
+#: ../extensions/page-info/page-info-dialog.c:824
 msgid "No referrer"
 msgstr "Ingen refererare"
 
-#: ../extensions/page-info/page-info-dialog.c:864
-#: ../extensions/page-info/page-info-dialog.c:880
+#: ../extensions/page-info/page-info-dialog.c:838
+#: ../extensions/page-info/page-info-dialog.c:854
 msgid "Not specified"
 msgstr "Inte angiven"
 
-#: ../extensions/page-info/page-info-dialog.c:943
+#: ../extensions/page-info/page-info-dialog.c:917
 msgid "Image"
 msgstr "Bild"
 
-#: ../extensions/page-info/page-info-dialog.c:946
+#: ../extensions/page-info/page-info-dialog.c:920
 msgid "Background image"
 msgstr "Bakgrundsbild"
 
-#: ../extensions/page-info/page-info-dialog.c:949
+#: ../extensions/page-info/page-info-dialog.c:923
 msgid "Embed"
 msgstr "Inbäddad"
 
-#: ../extensions/page-info/page-info-dialog.c:952
+#: ../extensions/page-info/page-info-dialog.c:926
 msgid "Object"
 msgstr "Objekt"
 
-#: ../extensions/page-info/page-info-dialog.c:955
+#: ../extensions/page-info/page-info-dialog.c:929
 msgid "Applet"
 msgstr "Panelprogram"
 
-#: ../extensions/page-info/page-info-dialog.c:958
+#: ../extensions/page-info/page-info-dialog.c:932
 msgid "Icon"
 msgstr "Ikon"
 
-#: ../extensions/page-info/page-info-dialog.c:1130
+#: ../extensions/page-info/page-info-dialog.c:1113
 msgid "_Open"
 msgstr "_Öppna"
 
-#: ../extensions/page-info/page-info-dialog.c:1136
-#: ../extensions/page-info/page-info-dialog.c:1581
+#: ../extensions/page-info/page-info-dialog.c:1119
+#: ../extensions/page-info/page-info-dialog.c:1564
 msgid "_Copy Link Address"
 msgstr "_Kopiera länkadress"
 
-#: ../extensions/page-info/page-info-dialog.c:1142
+#: ../extensions/page-info/page-info-dialog.c:1125
 msgid "_Use as Background"
 msgstr "_Använd som bakgrund"
 
-#: ../extensions/page-info/page-info-dialog.c:1148
-#: ../extensions/page-info/page-info-dialog.c:1587
+#: ../extensions/page-info/page-info-dialog.c:1131
+#: ../extensions/page-info/page-info-dialog.c:1570
 msgid "_Save As..."
 msgstr "_Spara som..."
 
-#: ../extensions/page-info/page-info-dialog.c:1380
-#: ../extensions/page-info/page-info-dialog.c:1701
+#: ../extensions/page-info/page-info-dialog.c:1363
+#: ../extensions/page-info/page-info-dialog.c:1684
 msgid "Blocked"
 msgstr "Blockerad"
 
-#: ../extensions/page-info/page-info-dialog.c:1396
-#: ../extensions/page-info/page-info-dialog.c:1717
+#: ../extensions/page-info/page-info-dialog.c:1379
+#: ../extensions/page-info/page-info-dialog.c:1700
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1409
+#: ../extensions/page-info/page-info-dialog.c:1392
 msgid "Type"
 msgstr "Typ"
 
-#: ../extensions/page-info/page-info-dialog.c:1421
+#: ../extensions/page-info/page-info-dialog.c:1404
 msgid "Alt Text"
 msgstr "Alt-text"
 
-#: ../extensions/page-info/page-info-dialog.c:1433
-#: ../extensions/page-info/page-info-dialog.c:1730
+#: ../extensions/page-info/page-info-dialog.c:1416
+#: ../extensions/page-info/page-info-dialog.c:1713
 msgid "Title"
 msgstr "Titel"
 
-#: ../extensions/page-info/page-info-dialog.c:1445
+#: ../extensions/page-info/page-info-dialog.c:1428
 msgid "Width"
 msgstr "Bredd"
 
-#: ../extensions/page-info/page-info-dialog.c:1457
+#: ../extensions/page-info/page-info-dialog.c:1440
 msgid "Height"
 msgstr "Höjd"
 
-#: ../extensions/page-info/page-info-dialog.c:1742
+#: ../extensions/page-info/page-info-dialog.c:1725
 msgid "Relation"
 msgstr "Relation"
 
-#: ../extensions/page-info/page-info-dialog.c:1891
-#: ../extensions/page-info/page-info-dialog.c:2032
+#: ../extensions/page-info/page-info-dialog.c:1874
+#: ../extensions/page-info/page-info-dialog.c:2015
 msgid "Name"
 msgstr "Namn"
 
-#: ../extensions/page-info/page-info-dialog.c:1903
+#: ../extensions/page-info/page-info-dialog.c:1886
 msgid "Method"
 msgstr "Metod"
 
-#: ../extensions/page-info/page-info-dialog.c:1917
+#: ../extensions/page-info/page-info-dialog.c:1900
 msgid "Action"
 msgstr "Åtgärd"
 
-#: ../extensions/page-info/page-info-dialog.c:1998
+#: ../extensions/page-info/page-info-dialog.c:1981
 msgid "_Copy"
 msgstr "_Kopiera"
 
-#: ../extensions/page-info/page-info-dialog.c:2044
+#: ../extensions/page-info/page-info-dialog.c:2027
 msgid "Content"
 msgstr "Innehåll"
 
-#: ../extensions/page-info/page-info-dialog.c:2145
+#: ../extensions/page-info/page-info-dialog.c:2128
 msgid "Page Metadata"
 msgstr "Sidmetadata"
 
@@ -848,86 +854,86 @@ msgstr "Typ:"
 msgid "_Save Media As..."
 msgstr "_Spara media som..."
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:180
+#: ../extensions/permissions/ephy-permissions-dialog.c:165
 msgid "allowed"
 msgstr "tillåten"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:184
+#: ../extensions/permissions/ephy-permissions-dialog.c:169
 msgid "denied"
 msgstr "nekad"
 
 #. Sometimes we get this... how did this get in the list!?
-#: ../extensions/permissions/ephy-permissions-dialog.c:189
+#: ../extensions/permissions/ephy-permissions-dialog.c:174
 msgid "default"
 msgstr "standard"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:515
+#: ../extensions/permissions/ephy-permissions-dialog.c:500
 msgid "Domain"
 msgstr "Domän"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:527
+#: ../extensions/permissions/ephy-permissions-dialog.c:512
 msgid "State"
 msgstr "Tillstånd"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:620
+#: ../extensions/permissions/ephy-permissions-dialog.c:605
 msgid "Site Permissions"
 msgstr "Platsrättigheter"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:647
+#: ../extensions/permissions/ephy-permissions-dialog.c:632
 msgid "Cookies"
 msgstr "Kakor"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:648
+#: ../extensions/permissions/ephy-permissions-dialog.c:633
 msgid "Images"
 msgstr "Bilder"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:649
+#: ../extensions/permissions/ephy-permissions-dialog.c:634
 msgid "Popup Windows"
 msgstr "Popupfönster"
 
 #. stock icon
-#: ../extensions/permissions/ephy-permissions-extension.c:156
+#: ../extensions/permissions/ephy-permissions-extension.c:152
 msgid "Site _Permissions"
 msgstr "Plats_rättigheter"
 
 #. shortcut key
-#: ../extensions/permissions/ephy-permissions-extension.c:158
+#: ../extensions/permissions/ephy-permissions-extension.c:154
 msgid "Manage web site permissions"
 msgstr "Hantera webbplatsrättigheter"
 
-#: ../extensions/rss/ephy-rss-extension.c:91
+#: ../extensions/rss/ephy-rss-extension.c:79
 msgid "News Feeds Subscription"
 msgstr "Prenumeration på nyhetskällor"
 
-#: ../extensions/rss/ephy-rss-extension.c:93
+#: ../extensions/rss/ephy-rss-extension.c:81
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr "Prenumerera på nyhetskällan för denna webbplats i din favoritnyhetsläsare"
 
-#: ../extensions/rss/ephy-rss-extension.c:98
+#: ../extensions/rss/ephy-rss-extension.c:86
 msgid "_Subscribe to this feed"
 msgstr "_Prenumerera på denna källa"
 
-#: ../extensions/rss/ephy-rss-extension.c:100
+#: ../extensions/rss/ephy-rss-extension.c:88
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Prenumerera på denna källa i din favoritnyhetsläsare"
 
-#: ../extensions/rss/ephy-rss-extension.c:373
+#: ../extensions/rss/ephy-rss-extension.c:361
 msgid "Subscribe to site's news feed"
 msgstr "Prenumerera på nyhetskällan för denna webbplats"
 
-#: ../extensions/rss/rss-ui.c:167
+#: ../extensions/rss/rss-ui.c:153
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr "Kunde inte kontakta källäsaren, är den igång?"
 
-#: ../extensions/rss/rss-ui.c:169
+#: ../extensions/rss/rss-ui.c:155
 msgid "Retry"
 msgstr "Försök igen"
 
-#: ../extensions/rss/rss-ui.c:297
+#: ../extensions/rss/rss-ui.c:283
 msgid "_Copy Feed Address"
 msgstr "_Kopiera källadress"
 
-#: ../extensions/rss/rss-ui.c:591
+#: ../extensions/rss/rss-ui.c:563
 msgid "Subscribe"
 msgstr "Prenumerera"
 
@@ -944,93 +950,93 @@ msgstr "Prenumeration på nyhetskanal"
 msgid "_Subscribe"
 msgstr "_Prenumerera"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:146
+#: ../extensions/select-stylesheet/ephy-css-menu.c:140
 msgid "Render the page without using a style"
 msgstr "Rendera sidan utan att använda en stil"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:149
+#: ../extensions/select-stylesheet/ephy-css-menu.c:143
 msgid "Render the page using the default style"
 msgstr "Rendera sidan med standardstilen"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:152
+#: ../extensions/select-stylesheet/ephy-css-menu.c:146
 #, c-format
 msgid "Render the page using the “%s” style"
 msgstr "Rita upp sidan med \"%s\"-stilen"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:310
+#: ../extensions/select-stylesheet/ephy-css-menu.c:317
 msgid "St_yle"
 msgstr "St_il"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:311
+#: ../extensions/select-stylesheet/ephy-css-menu.c:318
 msgid "Select a different style for this page"
 msgstr "Välj en annan stil för denna sida"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:224
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
 msgid "Default"
 msgstr "Standard"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:235
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
 msgid "None"
 msgstr "Ingen"
 
-#: ../extensions/sidebar/ephy-sidebar.c:176
+#: ../extensions/sidebar/ephy-sidebar.c:167
 msgid "No Sidebars installed"
 msgstr "Inga sidopaneler är installerade"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:105
+#: ../extensions/sidebar/ephy-sidebar-extension.c:88
 msgid "_Sidebar"
 msgstr "_Sidopanel"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:106
+#: ../extensions/sidebar/ephy-sidebar-extension.c:89
 msgid "Show or hide the sidebar"
 msgstr "Visa eller dölj sidopanelen"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:323
+#: ../extensions/sidebar/ephy-sidebar-extension.c:306
 msgid "Do you really want to remove this sidebar?"
 msgstr "Vill du verkligen ta bort den här sidopanelen?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:327
+#: ../extensions/sidebar/ephy-sidebar-extension.c:310
 msgid "There is no way to recover this sidebar after removal."
 msgstr "Det finns inget sätt att återställa sidopanelen efter borttagning."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:329
+#: ../extensions/sidebar/ephy-sidebar-extension.c:312
 msgid "Remove Sidebar"
 msgstr "Ta bort sidopanel"
 
 #. Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:476
+#: ../extensions/sidebar/ephy-sidebar-extension.c:459
 #, c-format
 msgid "The sidebar already contains “%s”"
 msgstr "Denna sidopanel innehåller redan \"%s\""
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:480
+#: ../extensions/sidebar/ephy-sidebar-extension.c:463
 msgid "To use this sidebar, select it from the list of available sidebar pages."
 msgstr "För att använda denna sidopanel, välj den från listan av tillgängliga sidopanelssidor."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:483
-#: ../extensions/sidebar/ephy-sidebar-extension.c:509
+#: ../extensions/sidebar/ephy-sidebar-extension.c:466
+#: ../extensions/sidebar/ephy-sidebar-extension.c:492
 msgid "Add Sidebar"
 msgstr "Lägg till sidopanel"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:503
+#: ../extensions/sidebar/ephy-sidebar-extension.c:486
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr "Lägg till \"%s\" på sidopanelen?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:507
+#: ../extensions/sidebar/ephy-sidebar-extension.c:490
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr "Källan till den nya sidopanelssidan är \"%s\"."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:513
+#: ../extensions/sidebar/ephy-sidebar-extension.c:496
 msgid "_Add Sidebar"
 msgstr "_Lägg till sidopanel"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:542
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
 msgid "_Look Up"
 msgstr "Slå _upp"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:549
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:538
 msgid "_GNOME Dictionary"
 msgstr "_GNOME-ordbok"
 
