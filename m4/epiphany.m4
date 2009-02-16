@@ -85,4 +85,8 @@ EPIPHANY_EXTENSION_RULE='%.ephy-extension: %.ephy-extension.in $(INTLTOOL_MERGE)
 
 AC_SUBST(EPIPHANY_EXTENSION_RULE)
 
+dnl Icon dir
+EPIPHANY_ICONDIR="$($PKG_CONFIG --variable=icondir epiphany-$EPIPHANY_API_VERSION)"
+AC_SUBST(EPIPHANY_ICONDIR)
+
 ])
