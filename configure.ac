@@ -16,7 +16,7 @@
 
 m4_define([e_e_version_major],[2])
 m4_define([e_e_version_minor],[25])
-m4_define([e_e_version_micro],[5])
+m4_define([e_e_version_micro],[91])
 m4_define([e_e_version],[e_e_version_major.e_e_version_minor.e_e_version_micro])
 
 # This can be either "trunk" or "branches/gnome-x-y"
@@ -24,7 +24,7 @@ m4_define([e_e_branch],["branches/gnome-2-24"])
 
 AC_INIT([GNOME Web Browser Extensions],[e_e_version],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 
-EPIPHANY_API_VERSION=e_e_version_major.e_e_version_minor
+EPIPHANY_API_VERSION=2.26
 
 EPIPHANY_EXTENSIONS_MAJOR=e_e_version_major.e_e_version_minor
 AC_SUBST(EPIPHANY_EXTENSIONS_MAJOR)
