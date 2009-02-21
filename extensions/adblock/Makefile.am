@@ -34,7 +34,10 @@ libadblockextension_la_LDFLAGS = \
 	-export-symbols $(top_srcdir)/ephy-extension.symbols \
 	$(AM_LDFLAGS)
 
-glade_DATA = adblock.glade
+glade_in_files = adblock.glade
+%.ui: %.glade
+	$(GTK_BUILDER_CONVERT) $< $@
+glade_DATA = $(glade_in_files:.glade=.ui)
 gladedir = $(pkgdatadir)/glade
 
 patterns_DATA = adblock-patterns
@@ -54,7 +57,7 @@ extensionini_DATA = $(extensionini_in_files:.ephy-extension.in.in=.ephy-extensio
 
 @EPIPHANY_EXTENSION_RULE@
 
-CLEANFILES = $(extensionini_DATA)
+CLEANFILES = $(extensionini_DATA) $(glade_DATA)
 DISTCLEANFILES = $(extensionini_DATA)
 
 EXTRA_DIST = $(patterns_DATA) $(extensionini_in_files) $(glade_DATA)
