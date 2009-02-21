@@ -16,7 +16,6 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  *
- *  $Id$
  */
 
 #include "config.h"
@@ -241,6 +240,7 @@ ephy_adblock_statusbar_icon_clicked_cb (GtkWidget *widget,
 	{
 		EphyAdblockExtension *ext;
 		AdBlocker *blocker;
+		WebKitWebView *view;
 		EphyEmbed *embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 
 		ext = EPHY_ADBLOCK_EXTENSION (g_object_get_data (G_OBJECT (window),
@@ -251,7 +251,8 @@ ephy_adblock_statusbar_icon_clicked_cb (GtkWidget *widget,
 
 		ad_blocker_set_noblock (blocker);
 
-		ephy_embed_reload (embed, FALSE);
+		view = EPHY_GET_WEBKIT_WEB_VIEW_FROM_EMBED (embed);
+		webkit_web_view_reload (view);
 
 		return TRUE;
 	}

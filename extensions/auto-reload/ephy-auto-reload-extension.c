@@ -116,6 +116,7 @@ static gboolean
 ephy_auto_reload_timeout (EphyEmbed *embed)
 {
 	guint new_timeout;
+	WebKitWebView *view;
 	/* See below for these
 	TimeoutData *timeout;
 	guint old_timeout;
@@ -126,7 +127,8 @@ ephy_auto_reload_timeout (EphyEmbed *embed)
 	LOG ("AutoReload tab: %s", ephy_embed_get_title (embed));
 
 	/* Reload the page */
-	ephy_embed_reload (embed, TRUE);
+	view = EPHY_GET_WEBKIT_WEB_VIEW_FROM_EMBED (embed);
+	webkit_web_view_reload_bypass_cache (view);
 
 	/* Retreive the old timeout value (if we want to do something relative to it
 	timeout = (TimeoutData *) g_object_get_data (G_OBJECT (tab), TIMEOUT_DATA_KEY);
