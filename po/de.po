@@ -6,15 +6,15 @@
 # Hendrik Brandt <heb@gnome-de.org>, 2004, 2005.
 # Frank Arnold <frank@scirocco-5v-turbo.de>, 2005, 2006.
 # Hendrik Richter <hendrikr@gnome.org>, 2006.
-# Mario Blättermann <mariobl@gnome.org>, 2008.
+# Mario Blättermann <mariobl@gnome.org>, 2008, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany Extension HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2008-12-20 23:04+0100\n"
-"PO-Revision-Date: 2009-01-01 21:01+0100\n"
+"POT-Creation-Date: 2009-02-21 13:24+0100\n"
+"PO-Revision-Date: 2009-02-21 13:25+0100\n"
 "Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -43,8 +43,8 @@ msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "links and pages."
 msgstr ""
-"Wenn diese Option aktiviert ist, wird die Aktion in das Kontextmenü von Links "
-"und Seiten aufgenommen."
+"Wenn diese Option aktiviert ist, wird die Aktion in das Kontextmenü von "
+"Links und Seiten aufgenommen."
 
 #: ../extensions/actions/action-properties.glade.h:5
 msgid "The action description."
@@ -170,7 +170,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>Aktualisierungsregeln der Originalseite</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:230
+#: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
 msgstr "Adblock-Editor"
 
@@ -190,11 +190,11 @@ msgstr "Filterset.G"
 msgid "Whitelist"
 msgstr "Whitelist"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:231
+#: ../extensions/adblock/ephy-adblock-extension.c:230
 msgid "Edit Adblock"
 msgstr "Adblock bearbeiten"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:298
+#: ../extensions/adblock/ephy-adblock-extension.c:299
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -306,8 +306,8 @@ msgstr "Abgleich mit %s"
 msgid "Synchronizing..."
 msgstr "Abgleichen …"
 
-#: ../extensions/epilicious/epilicious.py.in:202
-#: ../extensions/epilicious/epilicious.py.in:220
+#: ../extensions/epilicious/epilicious.py.in:232
+#: ../extensions/epilicious/epilicious.py.in:250
 msgid "Epilicious Synchronize"
 msgstr "Epilicious-Abgleich"
 
@@ -321,9 +321,9 @@ msgid ""
 "the topic will be synched. If this is set then all bookmarks without the "
 "topic will be synched."
 msgstr ""
-"Steuert die Funktion des Themas. Falls nicht gesetzt, werden alle Lesezeichen "
-"dieses Themas abgegelichen. Falls gesetzt, werden alle Lesezeichen "
-"abgeglichen, die nicht zu diesem Thema gehören."
+"Steuert die Funktion des Themas. Falls nicht gesetzt, werden alle "
+"Lesezeichen dieses Themas abgegelichen. Falls gesetzt, werden alle "
+"Lesezeichen abgeglichen, die nicht zu diesem Thema gehören."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:3
 msgid "Exclude topic"
@@ -336,10 +336,10 @@ msgstr "Thema freigeben"
 #: ../extensions/epilicious/epilicious.schemas.in.h:5
 msgid ""
 "The backend that epilicious will use for synchronizing bookmarks. Allowed "
-"value: 'ma.gnolia'"
+"values: 'diigo', 'ma.gnolia'"
 msgstr ""
 "Das Backend, das Epilicious für den Abgleich von Lesezeichen verwendet. "
-"Möglicher Wert: 'ma.gnolia'"
+"Mögliche Werte: 'diigo','ma.gnolia'"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
 msgid "The password that epilicious will use for synchronizing bookmarks."
@@ -1062,7 +1062,8 @@ msgid "The sidebar already contains “%s”"
 msgstr "Die Seitenleiste enthält bereits »%s«"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:463
-msgid "To use this sidebar, select it from the list of available sidebar pages."
+msgid ""
+"To use this sidebar, select it from the list of available sidebar pages."
 msgstr ""
 "Um diese Seitenleiste zu verwenden, wählen Sie sie in der Liste der "
 "verfügbaren Seitenleisteninhalte aus."
@@ -1244,8 +1245,8 @@ msgstr "Python-Konsole"
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr ""
-"Abonnieren eines von der Webseite angebotenen News-Feeds in Ihrem bevorzugten "
-"News-Reader"
+"Abonnieren eines von der Webseite angebotenen News-Feeds in Ihrem "
+"bevorzugten News-Reader"
 
 #: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
 msgid "A sample extension with mozilla backend"
