@@ -23,11 +23,7 @@ libadblockextension_la_CPPFLAGS = \
 
 libadblockextension_la_CFLAGS = \
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
-	$(PCRE_CFLAGS)			\
 	$(AM_CFLAGS)
-
-libadblockextension_la_LIBADD = \
-	$(PCRE_LIBS)
 
 libadblockextension_la_LDFLAGS = \
 	-module -avoid-version \

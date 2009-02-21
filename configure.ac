@@ -259,7 +259,7 @@ fi
 # PCRE
 # ****
 
-if echo "$EXTENSIONS" | egrep '(^| )(adblock|greasemonkey)($| )' > /dev/null; then
+if echo "$EXTENSIONS" | egrep '(^| )(greasemonkey)($| )' > /dev/null; then
 	AC_PATH_PROG([PCRE_CONFIG], [pcre-config], [no])
 
 	if test "x$PCRE_CONFIG" = "xno"; then

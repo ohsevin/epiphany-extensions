@@ -1,6 +1,7 @@
 /*
  *  Copyright © 2004 Adam Hooper
  *  Copyright © 2005, 2006 Jean-François Rameau
+ *  Copyright © 2009 Xan Lopez <xan@gnome.org>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -16,14 +17,12 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  *
- *  $Id$
  */
 
 #include "config.h"
 
 #include "adblock-pattern.h"
 
-#include <pcre.h>
 #include <string.h>
 #include <gio/gio.h>
 
@@ -50,9 +49,8 @@ adblock_pattern_load_from_file (GHashTable *patterns,
 	char **lines;
 	char **t;
 	char *line;
-	pcre *preg;
-	const char *err;
-	int erroffset;
+	GRegex *regex;
+	GError *error = NULL;
 
 	if (!g_file_get_contents (filename, &contents, NULL, NULL))
 	{
@@ -73,17 +71,18 @@ adblock_pattern_load_from_file (GHashTable *patterns,
 
 		if (*line == '\0') continue; /* empty line */
 
-		preg = pcre_compile (line, PCRE_UTF8, &err, &erroffset, NULL);
+		regex = g_regex_new (line, G_REGEX_OPTIMIZE, 0, &error);
 
-		if (preg == NULL)
+		if (regex == NULL)
 		{
 			g_warning ("Could not compile expression \"%s\"\n"
-				   "Error at column %d: %s",
-				   line, erroffset, err);
+				   "Error: %s",
+				   line, error->message);
+			g_error_free (error);
 			continue;
 		}
 
-		g_hash_table_insert (patterns, g_strdup (line), preg);
+		g_hash_table_insert (patterns, g_strdup (line), regex);
 	}
 
 	g_strfreev (lines);
@@ -160,24 +159,26 @@ adblock_pattern_rewrite_patterns (const char *contents)
 {
 	char **lines, **t;
 	char *line;
-	pcre *preg1, *preg2;
-	const char *err;
-	int erroffset, ret;
+	GRegex *regex1, *regex2;
+	GError *error = NULL;
+	gboolean match;
 	GSList *patterns = NULL;
 
-	/* We don't care about some specifi rules */
-	preg1 = pcre_compile ("^\\[Adblock\\]", PCRE_UTF8, &err, &erroffset, NULL);
-	if (preg1 == NULL)
+	/* We don't care about some specific rules */
+	regex1 = g_regex_new ("^\\[Adblock\\]", 0, 0, &error);
+	if (regex1 == NULL)
 	{
-		g_warning ("Could not compile expression ^\\[Adblock]\n" "Error at column %d: %s",
-			   erroffset, err);
+		g_warning ("Could not compile expression ^\\[Adblock]\n" "Error: %s",
+			   error->message);
+		g_error_free (error);
 		return;
 	}
-	preg2 = pcre_compile ("^\\!Filterset", PCRE_UTF8, &err, &erroffset, NULL);
-	if (preg1 == NULL)
+	regex2 = g_regex_new ("^\\!Filterset", 0, 0, &error);
+	if (regex2 == NULL)
 	{
-		g_warning ("Could not compile expression ^\\!Filterset\n" "Error at column %d: %s",
-			   erroffset, err);
+		g_warning ("Could not compile expression ^\\!Filterset\n" "Error: %s",
+			   error->message);
+		g_error_free (error);
 		return;
 	}
 
@@ -194,15 +195,13 @@ adblock_pattern_rewrite_patterns (const char *contents)
 
 		if (*line == '\0') continue; /* empty line */
 
-		ret = pcre_exec (preg1, NULL, line, strlen (line),
-				0, PCRE_NO_UTF8_CHECK, NULL, 0);
+		match = g_regex_match (regex1, line, 0, NULL);
 
-		if (ret >= 0) continue;
+		if (match) continue;
 
-		ret = pcre_exec (preg2, NULL, line, strlen (line),
-				0, PCRE_NO_UTF8_CHECK, NULL, 0);
+		match = g_regex_match (regex2, line, 0, NULL);
 
-		if (ret >= 0) continue;
+		if (match) continue;
 
 		if (*line == '/')
 		{
@@ -217,6 +216,8 @@ adblock_pattern_rewrite_patterns (const char *contents)
 	}
 
 	g_strfreev (lines);
+	g_regex_unref (regex1);
+	g_regex_unref (regex2);
 
 	adblock_pattern_save (patterns, PATTERN_DEFAULT_BLACKLIST);
 

@@ -15,15 +15,12 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  *
- *  $Id$
  */
 
 #include "config.h"
 
 #include "ad-uri-tester.h"
 #include "adblock-pattern.h"
-
-#include <pcre.h>
 
 #include "ephy-file-helpers.h"
 #include "ephy-debug.h"
@@ -97,15 +94,14 @@ load_patterns (AdUriTester *tester)
 
 static gboolean
 match_uri (const char *pattern,
-	   const pcre *preg,
+	   const GRegex *regex,
 	   const UriWithLen *uri_with_len)
 {
-	int ret;
+	gboolean match;
 
-	ret = pcre_exec (preg, NULL, uri_with_len->uri, uri_with_len->len,
-			 0, PCRE_NO_UTF8_CHECK, NULL, 0);
+	match = g_regex_match (regex, uri_with_len->uri, 0, NULL);
 
-	if (ret >= 0)
+	if (match)
 	{
 		LOG ("Blocking '%s' with pattern '%s'",
 		     uri_with_len->uri, pattern);

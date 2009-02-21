@@ -336,8 +336,8 @@ adblock_ui_populate_store (InfoPage *page, AdblockPatternType type)
 
 	patterns = g_hash_table_new_full (g_str_hash,
 					  g_str_equal,
-					  g_free,
-					  g_free);
+					  (GDestroyNotify)g_free,
+					  (GDestroyNotify)g_regex_unref);
 
 	adblock_pattern_load (patterns, type);
 
