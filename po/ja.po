@@ -1,17 +1,17 @@
 # Japanese Epiphany Plugins translation
-# Copyright (C) 2003-2008 Christian Persch 
+# Copyright (C) 2003-2009 Christian Persch 
 # This file is distributed under the same license as the Epiphany Plugins package.
 # Christian Persch <chpe+ephyplugins@stud.uni-saarland.de>, 2003.
 # Yukhiro Nakai <nakai@gnome.gr.jp>, 2004.
-# Takeshi AIHANA <takeshi.aihana@gmail.com>, 2004-2008.
+# Takeshi AIHANA <takeshi.aihana@gmail.com>, 2004-2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions trunk\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2008-03-05 00:21+0900\n"
-"PO-Revision-Date: 2008-03-05 00:21+0900\n"
+"POT-Creation-Date: 2009-02-22 01:05+0900\n"
+"PO-Revision-Date: 2009-02-22 01:05+0900\n"
 "Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -89,19 +89,19 @@ msgstr "ページ(_P)"
 msgid "Actions"
 msgstr "アクション"
 
-#: ../extensions/actions/ephy-actions-extension.c:113
+#: ../extensions/actions/ephy-actions-extension.c:112
 msgid "Actio_ns"
 msgstr "アクション(_N)"
 
-#: ../extensions/actions/ephy-actions-extension.c:114
+#: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Customize actions"
 msgstr "アクションをカスタマイズします"
 
-#: ../extensions/actions/ephy-actions-extension.c:437
+#: ../extensions/actions/ephy-actions-extension.c:436
 msgid "Could not run command"
 msgstr "コマンドを実行できませんでした"
 
-#: ../extensions/actions/ephy-actions-extension.c:440
+#: ../extensions/actions/ephy-actions-extension.c:439
 msgid "Could not Run Command"
 msgstr "コマンドを実行できませんでした"
 
@@ -129,7 +129,7 @@ msgstr "\"%s\" のプロパティ"
 msgid "Action Properties"
 msgstr "アクションのプロパティ"
 
-#: ../extensions/adblock/adblock-ui.c:275
+#: ../extensions/adblock/adblock-ui.c:263
 msgid ""
 "This list is Copyright © its original author(G). It is relicensed under the "
 "GPL with permission.\n"
@@ -148,7 +148,7 @@ msgstr ""
 "direct any problems to Bugzilla and not to the original author (G).\n"
 "(訳注: この条文は翻訳せずに原文のままにする)\n"
 
-#: ../extensions/adblock/adblock-ui.c:493
+#: ../extensions/adblock/adblock-ui.c:481
 msgid "Pattern"
 msgstr "パターン"
 
@@ -165,7 +165,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>ルールの更新</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:243
+#: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
 msgstr "Adblock エディタ"
 
@@ -185,55 +185,55 @@ msgstr "Filterset.G"
 msgid "Whitelist"
 msgstr "ホワイトリスト"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:244
+#: ../extensions/adblock/ephy-adblock-extension.c:230
 msgid "Edit Adblock"
 msgstr "Adblock の編集"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:311
+#: ../extensions/adblock/ephy-adblock-extension.c:299
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
 msgstr[0] "表示されない広告は %d個"
 msgstr[1] "表示されない広告は %d個"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:84
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:81
 msgid "_Auto Reload"
 msgstr "自動読み込み(_A)"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:86
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
 msgid "Reload the page periodically"
 msgstr "定期的にページを読み込みます"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:370
+#: ../extensions/cc-license-viewer/cc-license-viewer.py:373
 msgid "View Creative Commons license"
 msgstr "クリエイティブ・コモンズ・ライセンスを表示します"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:176
+#: ../extensions/certificates/ephy-certificates-extension.c:163
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "証明書の管理"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:207
+#: ../extensions/certificates/ephy-certificates-extension.c:194
 msgid "Security Devices"
 msgstr "セキュリティ・デバイス"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:219
+#: ../extensions/certificates/ephy-certificates-extension.c:206
 msgid "Manage _Certificates"
 msgstr "証明書の管理(_C)"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:221
+#: ../extensions/certificates/ephy-certificates-extension.c:208
 msgid "Manage your certificates"
 msgstr "お使いの証明書を管理します"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:225
+#: ../extensions/certificates/ephy-certificates-extension.c:212
 msgid "Manage Security _Devices"
 msgstr "セキュリティ・デバイスの管理(_D)"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:227
+#: ../extensions/certificates/ephy-certificates-extension.c:214
 msgid "Manage your security devices"
 msgstr "お使いのセキュリティ・デバイスを管理します"
 
@@ -301,8 +301,8 @@ msgstr "%s と同期中..."
 msgid "Synchronizing..."
 msgstr "同期中..."
 
-#: ../extensions/epilicious/epilicious.py.in:202
-#: ../extensions/epilicious/epilicious.py.in:220
+#: ../extensions/epilicious/epilicious.py.in:232
+#: ../extensions/epilicious/epilicious.py.in:250
 msgid "Epilicious Synchronize"
 msgstr "Epilicious の同期"
 
@@ -331,10 +331,10 @@ msgstr "共有するトピック"
 #: ../extensions/epilicious/epilicious.schemas.in.h:5
 msgid ""
 "The backend that epilicious will use for synchronizing bookmarks. Allowed "
-"value: 'ma.gnolia'"
+"values: 'diigo', 'ma.gnolia'"
 msgstr ""
 "Epilicious がブックマークを同期する際に使用するバックエンドです。指定可能な"
-"値: 'ma.gnolia'"
+"値: 'diigo' と 'ma.gnolia'"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
 msgid "The password that epilicious will use for synchronizing bookmarks."
@@ -356,30 +356,30 @@ msgstr "パスワード"
 msgid "username"
 msgstr "ユーザ名"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:98
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Check _HTML"
 msgstr "HTML のチェック(_H)"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:100
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:92
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "HTML のエラーをエラー表示ダイアログの中に表示します"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _Links"
 msgstr "リンクのチェック(_L)"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:107
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr "おかしなハイパーリンクをエラー表示ダイアログの中に表示します"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:111
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:103
 msgid "_Error Viewer"
 msgstr "エラー・ビューア(_E)"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:113
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
 msgid "Display web page errors"
 msgstr "ウェブ・ページのエラーを表示します"
 
@@ -391,7 +391,9 @@ msgstr "クリア(_E)"
 msgid "Error Viewer"
 msgstr "エラー・ビューア"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:103
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:105
 #, c-format
 msgid ""
 "%s error in %s on line %d and column %d:\n"
@@ -400,9 +402,11 @@ msgstr ""
 "%s のエラーが %s の %d 行目の %d 列目にあります:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:109
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:140
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:113
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:137
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:150
 #, c-format
 msgid ""
 "%s error in %s:\n"
@@ -411,7 +415,9 @@ msgstr ""
 "%s のエラーが %s にあります:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:123
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
 #, c-format
 msgid ""
 "%s error in %s on line %d:\n"
@@ -452,19 +458,19 @@ msgstr ""
 "\"%s\" の %s 行目に HTML エラー:\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:165
+#: ../extensions/error-viewer/sgml-validator.c:164
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
 msgstr[0] " %d個のエラーが見つかりました"
 msgstr[1] " %d個のエラーが見つかりました"
 
-#: ../extensions/error-viewer/sgml-validator.c:169
+#: ../extensions/error-viewer/sgml-validator.c:168
 #, c-format
 msgid "HTML Validation of “%s” complete"
 msgstr "\"%s\" の HTML 検証が完了しました"
 
-#: ../extensions/error-viewer/sgml-validator.c:227
+#: ../extensions/error-viewer/sgml-validator.c:226
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -473,8 +479,8 @@ msgstr ""
 "%s の中に HTML エラー:\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:229
-#: ../extensions/error-viewer/sgml-validator.c:245
+#: ../extensions/error-viewer/sgml-validator.c:228
+#: ../extensions/error-viewer/sgml-validator.c:244
 msgid ""
 "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
 "+xml” instead."
@@ -482,7 +488,7 @@ msgstr ""
 "DOCTYPE は \"XHTML\" ですが、CONTENTESTYPE は \"text/html\" になっています。"
 "代わりに \"application/xhtml+xml\" を使って下さい。"
 
-#: ../extensions/error-viewer/sgml-validator.c:243
+#: ../extensions/error-viewer/sgml-validator.c:242
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
@@ -491,22 +497,22 @@ msgstr ""
 "%s の中に HTML ワーニング:\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:360
+#: ../extensions/error-viewer/sgml-validator.c:359
 #, c-format
 msgid "HTML error in %s:"
 msgstr "%s の中に HTML エラー:"
 
-#: ../extensions/error-viewer/sgml-validator.c:368
+#: ../extensions/error-viewer/sgml-validator.c:367
 #, c-format
 msgid "Invalid character encoding"
 msgstr "文字エンコーディングが間違っています"
 
-#: ../extensions/error-viewer/sgml-validator.c:373
+#: ../extensions/error-viewer/sgml-validator.c:372
 #, c-format
 msgid "Unknown error while converting to UTF-8"
 msgstr "UTF-8 へ変換する際に不明なエラーが発生しました"
 
-#: ../extensions/error-viewer/sgml-validator.c:435
+#: ../extensions/error-viewer/sgml-validator.c:434
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -515,12 +521,12 @@ msgstr ""
 "%s の中に HTML エラー:\n"
 "正しい DOCTYPE が指定されていません。"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:346
 msgid "Enabled"
 msgstr "有効"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
-#: ../extensions/rss/rss-ui.c:584
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:354
+#: ../extensions/rss/rss-ui.c:571
 msgid "Description"
 msgstr "説明"
 
@@ -532,29 +538,29 @@ msgstr "<b>利用可能な拡張機能の一覧</b>"
 msgid "Extensions"
 msgstr "Epiphany 拡張機能"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:73
 msgid "_Extensions"
 msgstr "拡張機能(_E)"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
 msgid "Load and unload extensions"
 msgstr "拡張機能の有効/無効を設定します"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
 msgid "Help about extensions"
 msgstr "拡張機能のヘルプです"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:85
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:78
 msgid "Install User _Script"
 msgstr "ユーザ・スクリプトのインストール(_S)"
 
 #. shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:80
 msgid "Install Greasemonkey script"
 msgstr "Greasemonkey スクリプトのインストール"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:318
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:311
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "ユーザ・スクリプトが \"%s\" にインストールされています"
@@ -568,7 +574,7 @@ msgstr "Java コンソール(_J)"
 msgid "Show Java Console"
 msgstr "Java コンソールを表示します"
 
-#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:102
+#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:100
 msgid "_HTTP Headers"
 msgstr "HTTP ヘッダ(_H)"
 
@@ -596,171 +602,171 @@ msgstr "ライブ・ヘッダ"
 msgid "Remove headers"
 msgstr "ヘッダの削除"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:68
+#: ../extensions/page-info/ephy-page-info-extension.c:61
 msgid "Pa_ge Information"
 msgstr "ページ情報(_G)"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:70
+#: ../extensions/page-info/ephy-page-info-extension.c:63
 msgid "Display page information in a dialog"
 msgstr "ページ情報をダイアログに表示します"
 
-#: ../extensions/page-info/page-info-dialog.c:722
+#: ../extensions/page-info/page-info-dialog.c:704
 msgid "Save As..."
 msgstr "別名で保存..."
 
-#: ../extensions/page-info/page-info-dialog.c:739
+#: ../extensions/page-info/page-info-dialog.c:721
 msgid "Select a directory"
 msgstr "フォルダの選択"
 
-#: ../extensions/page-info/page-info-dialog.c:788
+#: ../extensions/page-info/page-info-dialog.c:770
 msgid "Unknown type"
 msgstr "種類を特定できません"
 
-#: ../extensions/page-info/page-info-dialog.c:793
+#: ../extensions/page-info/page-info-dialog.c:775
 msgid "Full standards compliance"
 msgstr "完全に標準互換"
 
-#: ../extensions/page-info/page-info-dialog.c:796
+#: ../extensions/page-info/page-info-dialog.c:778
 msgid "Almost standards compliance"
 msgstr "ほぼ標準互換"
 
-#: ../extensions/page-info/page-info-dialog.c:799
+#: ../extensions/page-info/page-info-dialog.c:781
 msgid "Compatibility"
 msgstr "互換性"
 
-#: ../extensions/page-info/page-info-dialog.c:803
+#: ../extensions/page-info/page-info-dialog.c:785
 msgid "Undetermined"
 msgstr "未確認"
 
-#: ../extensions/page-info/page-info-dialog.c:812
+#: ../extensions/page-info/page-info-dialog.c:794
 msgid "Not cached"
 msgstr "キャッシュされていない"
 
-#: ../extensions/page-info/page-info-dialog.c:815
+#: ../extensions/page-info/page-info-dialog.c:797
 msgid "Disk cache"
 msgstr "ディスクへキャッシュ済"
 
-#: ../extensions/page-info/page-info-dialog.c:818
+#: ../extensions/page-info/page-info-dialog.c:800
 msgid "Memory cache"
 msgstr "メモリへキャッシュ済"
 
-#: ../extensions/page-info/page-info-dialog.c:821
+#: ../extensions/page-info/page-info-dialog.c:803
 msgid "Unknown cache"
 msgstr "キャッシュを特定できません"
 
-#: ../extensions/page-info/page-info-dialog.c:837
-#: ../extensions/page-info/page-info-dialog.c:953
+#: ../extensions/page-info/page-info-dialog.c:819
+#: ../extensions/page-info/page-info-dialog.c:935
 msgid "Unknown"
 msgstr "不明"
 
-#: ../extensions/page-info/page-info-dialog.c:842
+#: ../extensions/page-info/page-info-dialog.c:824
 msgid "No referrer"
 msgstr "照会者なし"
 
-#: ../extensions/page-info/page-info-dialog.c:856
-#: ../extensions/page-info/page-info-dialog.c:872
+#: ../extensions/page-info/page-info-dialog.c:838
+#: ../extensions/page-info/page-info-dialog.c:854
 msgid "Not specified"
 msgstr "指定なし"
 
-#: ../extensions/page-info/page-info-dialog.c:935
+#: ../extensions/page-info/page-info-dialog.c:917
 msgid "Image"
 msgstr "画像"
 
-#: ../extensions/page-info/page-info-dialog.c:938
+#: ../extensions/page-info/page-info-dialog.c:920
 msgid "Background image"
 msgstr "背景の画像"
 
-#: ../extensions/page-info/page-info-dialog.c:941
+#: ../extensions/page-info/page-info-dialog.c:923
 msgid "Embed"
 msgstr "埋め込み"
 
-#: ../extensions/page-info/page-info-dialog.c:944
+#: ../extensions/page-info/page-info-dialog.c:926
 msgid "Object"
 msgstr "オブジェクト"
 
-#: ../extensions/page-info/page-info-dialog.c:947
+#: ../extensions/page-info/page-info-dialog.c:929
 msgid "Applet"
 msgstr "アプレット"
 
-#: ../extensions/page-info/page-info-dialog.c:950
+#: ../extensions/page-info/page-info-dialog.c:932
 msgid "Icon"
 msgstr "アイコン"
 
-#: ../extensions/page-info/page-info-dialog.c:1131
+#: ../extensions/page-info/page-info-dialog.c:1113
 msgid "_Open"
 msgstr "開く(_O)"
 
-#: ../extensions/page-info/page-info-dialog.c:1137
-#: ../extensions/page-info/page-info-dialog.c:1582
+#: ../extensions/page-info/page-info-dialog.c:1119
+#: ../extensions/page-info/page-info-dialog.c:1564
 msgid "_Copy Link Address"
 msgstr "リンク先のコピー(_C)"
 
-#: ../extensions/page-info/page-info-dialog.c:1143
+#: ../extensions/page-info/page-info-dialog.c:1125
 msgid "_Use as Background"
 msgstr "背景として使用(_U)"
 
-#: ../extensions/page-info/page-info-dialog.c:1149
-#: ../extensions/page-info/page-info-dialog.c:1588
+#: ../extensions/page-info/page-info-dialog.c:1131
+#: ../extensions/page-info/page-info-dialog.c:1570
 msgid "_Save As..."
 msgstr "別名で保存(_S)..."
 
-#: ../extensions/page-info/page-info-dialog.c:1381
-#: ../extensions/page-info/page-info-dialog.c:1702
+#: ../extensions/page-info/page-info-dialog.c:1363
+#: ../extensions/page-info/page-info-dialog.c:1684
 msgid "Blocked"
 msgstr "ブロック済"
 
-#: ../extensions/page-info/page-info-dialog.c:1397
-#: ../extensions/page-info/page-info-dialog.c:1718
+#: ../extensions/page-info/page-info-dialog.c:1379
+#: ../extensions/page-info/page-info-dialog.c:1700
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1410
+#: ../extensions/page-info/page-info-dialog.c:1392
 msgid "Type"
 msgstr "種類"
 
-#: ../extensions/page-info/page-info-dialog.c:1422
+#: ../extensions/page-info/page-info-dialog.c:1404
 msgid "Alt Text"
 msgstr "代替文字列"
 
-#: ../extensions/page-info/page-info-dialog.c:1434
-#: ../extensions/page-info/page-info-dialog.c:1731
+#: ../extensions/page-info/page-info-dialog.c:1416
+#: ../extensions/page-info/page-info-dialog.c:1713
 msgid "Title"
 msgstr "タイトル"
 
-#: ../extensions/page-info/page-info-dialog.c:1446
+#: ../extensions/page-info/page-info-dialog.c:1428
 msgid "Width"
 msgstr "幅"
 
-#: ../extensions/page-info/page-info-dialog.c:1458
+#: ../extensions/page-info/page-info-dialog.c:1440
 msgid "Height"
 msgstr "高さ"
 
-#: ../extensions/page-info/page-info-dialog.c:1743
+#: ../extensions/page-info/page-info-dialog.c:1725
 msgid "Relation"
 msgstr "関係"
 
-#: ../extensions/page-info/page-info-dialog.c:1892
-#: ../extensions/page-info/page-info-dialog.c:2033
+#: ../extensions/page-info/page-info-dialog.c:1874
+#: ../extensions/page-info/page-info-dialog.c:2015
 msgid "Name"
 msgstr "名前"
 
-#: ../extensions/page-info/page-info-dialog.c:1904
+#: ../extensions/page-info/page-info-dialog.c:1886
 msgid "Method"
 msgstr "メソッド"
 
-#: ../extensions/page-info/page-info-dialog.c:1918
+#: ../extensions/page-info/page-info-dialog.c:1900
 msgid "Action"
 msgstr "アクション"
 
-#: ../extensions/page-info/page-info-dialog.c:1999
+#: ../extensions/page-info/page-info-dialog.c:1981
 msgid "_Copy"
 msgstr "コピー(_C)"
 
-#: ../extensions/page-info/page-info-dialog.c:2045
+#: ../extensions/page-info/page-info-dialog.c:2027
 msgid "Content"
 msgstr "コンテンツ"
 
-#: ../extensions/page-info/page-info-dialog.c:2146
+#: ../extensions/page-info/page-info-dialog.c:2128
 msgid "Page Metadata"
 msgstr "ページのメタデータ"
 
@@ -888,87 +894,87 @@ msgstr "種類:"
 msgid "_Save Media As..."
 msgstr "メディアを別名で保存(_S)..."
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:180
+#: ../extensions/permissions/ephy-permissions-dialog.c:165
 msgid "allowed"
 msgstr "許可する"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:184
+#: ../extensions/permissions/ephy-permissions-dialog.c:169
 msgid "denied"
 msgstr "拒否する"
 
 #. Sometimes we get this... how did this get in the list!?
-#: ../extensions/permissions/ephy-permissions-dialog.c:189
+#: ../extensions/permissions/ephy-permissions-dialog.c:174
 msgid "default"
 msgstr "デフォルト"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:515
+#: ../extensions/permissions/ephy-permissions-dialog.c:500
 msgid "Domain"
 msgstr "ドメイン"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:527
+#: ../extensions/permissions/ephy-permissions-dialog.c:512
 msgid "State"
 msgstr "状態"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:620
+#: ../extensions/permissions/ephy-permissions-dialog.c:605
 msgid "Site Permissions"
 msgstr "サイトの権限"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:647
+#: ../extensions/permissions/ephy-permissions-dialog.c:632
 msgid "Cookies"
 msgstr "クッキー"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:648
+#: ../extensions/permissions/ephy-permissions-dialog.c:633
 msgid "Images"
 msgstr "画像"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:649
+#: ../extensions/permissions/ephy-permissions-dialog.c:634
 msgid "Popup Windows"
 msgstr "ウィンドウのポップアップ"
 
 #. stock icon
-#: ../extensions/permissions/ephy-permissions-extension.c:156
+#: ../extensions/permissions/ephy-permissions-extension.c:152
 msgid "Site _Permissions"
 msgstr "サイトの権限(_P)"
 
 #. shortcut key
-#: ../extensions/permissions/ephy-permissions-extension.c:158
+#: ../extensions/permissions/ephy-permissions-extension.c:154
 msgid "Manage web site permissions"
 msgstr "ウェブ・サイトの権限を管理します"
 
-#: ../extensions/rss/ephy-rss-extension.c:91
+#: ../extensions/rss/ephy-rss-extension.c:79
 msgid "News Feeds Subscription"
 msgstr "ニュース配信元の購読"
 
-#: ../extensions/rss/ephy-rss-extension.c:93
+#: ../extensions/rss/ephy-rss-extension.c:81
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr ""
 "このウェブサイトのニュース配信元をお気に入りのニュース・リーダで購読します"
 
-#: ../extensions/rss/ephy-rss-extension.c:98
+#: ../extensions/rss/ephy-rss-extension.c:86
 msgid "_Subscribe to this feed"
 msgstr "この配信元を購読する(_S)"
 
-#: ../extensions/rss/ephy-rss-extension.c:100
+#: ../extensions/rss/ephy-rss-extension.c:88
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "この配信元をお気に入りのニュース・リーダで購読します"
 
-#: ../extensions/rss/ephy-rss-extension.c:373
+#: ../extensions/rss/ephy-rss-extension.c:361
 msgid "Subscribe to site's news feed"
 msgstr "このサイトのニュース配信元を購読します"
 
-#: ../extensions/rss/rss-ui.c:166
+#: ../extensions/rss/rss-ui.c:153
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr "<b><i>配信元リーダへ接続できません。既に実行中ですか？</i></b>"
 
-#: ../extensions/rss/rss-ui.c:168
+#: ../extensions/rss/rss-ui.c:155
 msgid "Retry"
 msgstr "再試行"
 
-#: ../extensions/rss/rss-ui.c:296
+#: ../extensions/rss/rss-ui.c:283
 msgid "_Copy Feed Address"
 msgstr "配信元アドレスのコピー(_C)"
 
-#: ../extensions/rss/rss-ui.c:576
+#: ../extensions/rss/rss-ui.c:563
 msgid "Subscribe"
 msgstr "購読する"
 
@@ -985,24 +991,24 @@ msgstr "ニュース配信元の購読"
 msgid "_Subscribe"
 msgstr "購読する(_S)"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:146
+#: ../extensions/select-stylesheet/ephy-css-menu.c:140
 msgid "Render the page without using a style"
 msgstr "スタイルを使用せずにページを描画します"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:149
+#: ../extensions/select-stylesheet/ephy-css-menu.c:143
 msgid "Render the page using the default style"
 msgstr "デフォルトのスタイルでページを描画します"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:152
+#: ../extensions/select-stylesheet/ephy-css-menu.c:146
 #, c-format
 msgid "Render the page using the “%s” style"
 msgstr "スタイル \"%s\" でページを描画します"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:323
+#: ../extensions/select-stylesheet/ephy-css-menu.c:317
 msgid "St_yle"
 msgstr "スタイル(_Y)"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:324
+#: ../extensions/select-stylesheet/ephy-css-menu.c:318
 msgid "Select a different style for this page"
 msgstr "このページをレンダリングする別のスタイルを選択して下さい"
 
@@ -1014,67 +1020,67 @@ msgstr "デフォルト"
 msgid "None"
 msgstr "なし"
 
-#: ../extensions/sidebar/ephy-sidebar.c:176
+#: ../extensions/sidebar/ephy-sidebar.c:167
 msgid "No Sidebars installed"
 msgstr "サイドバーは未インストール"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:105
+#: ../extensions/sidebar/ephy-sidebar-extension.c:88
 msgid "_Sidebar"
 msgstr "サイドバー(_S)"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:106
+#: ../extensions/sidebar/ephy-sidebar-extension.c:89
 msgid "Show or hide the sidebar"
 msgstr "サイドバーの表示/非表示を切り替えます"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:323
+#: ../extensions/sidebar/ephy-sidebar-extension.c:306
 msgid "Do you really want to remove this sidebar?"
 msgstr "本当にこのサイドバーを削除してもよろしいですか？"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:327
+#: ../extensions/sidebar/ephy-sidebar-extension.c:310
 msgid "There is no way to recover this sidebar after removal."
 msgstr "削除したらサイドバーを元に戻す方法はありません。"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:329
+#: ../extensions/sidebar/ephy-sidebar-extension.c:312
 msgid "Remove Sidebar"
 msgstr "サイドバーの削除"
 
 #. Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:476
+#: ../extensions/sidebar/ephy-sidebar-extension.c:459
 #, c-format
 msgid "The sidebar already contains “%s”"
 msgstr "サイドバーには既に \"%s\" が含まれています"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:480
+#: ../extensions/sidebar/ephy-sidebar-extension.c:463
 msgid ""
 "To use this sidebar, select it from the list of available sidebar pages."
 msgstr ""
 "このサイドバーを利用するには、利用可能なサイドバー・ペインの一覧から選択して"
 "下さい。"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:483
-#: ../extensions/sidebar/ephy-sidebar-extension.c:509
+#: ../extensions/sidebar/ephy-sidebar-extension.c:466
+#: ../extensions/sidebar/ephy-sidebar-extension.c:492
 msgid "Add Sidebar"
 msgstr "サイドバーを追加します"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:503
+#: ../extensions/sidebar/ephy-sidebar-extension.c:486
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr "\"%s\" をサイドバーへ追加しますか？"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:507
+#: ../extensions/sidebar/ephy-sidebar-extension.c:490
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr "新しいサイドバー・ページのソースは \"%s\" です"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:513
+#: ../extensions/sidebar/ephy-sidebar-extension.c:496
 msgid "_Add Sidebar"
 msgstr "サイドバーの追加(_A)"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:542
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
 msgid "_Look Up"
 msgstr "検索(_L)"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:549
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:538
 msgid "_GNOME Dictionary"
 msgstr "GNOME 辞書(_G)"
 
