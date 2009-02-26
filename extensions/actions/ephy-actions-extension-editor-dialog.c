@@ -728,10 +728,9 @@ ephy_actions_extension_editor_dialog_response_cb
 {
 	if (response == GTK_RESPONSE_HELP)
 	{
-		ephy_gui_help_with_doc_id (GTK_WINDOW (dialog),
-					   "epiphany-extensions",
-					   "epiphany-extensions",
-					   "epi-ext-action-manage");
+		ephy_gui_help (GTK_WINDOW (dialog),
+			       "epiphany-extensions",
+			       "epi-ext-action-manage");
 		return;
 	}
 

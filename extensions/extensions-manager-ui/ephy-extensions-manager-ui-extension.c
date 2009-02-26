@@ -176,10 +176,9 @@ static void
 help_cb (GtkAction *action,
 	 EphyWindow *window)
 {
-	ephy_gui_help_with_doc_id (GTK_WINDOW (window),
-				   "epiphany-extensions",
-				   "epiphany-extensions",
-				   "");
+	ephy_gui_help (GTK_WINDOW (window),
+		       "epiphany-extensions",
+		       "");
 }
 
 static void

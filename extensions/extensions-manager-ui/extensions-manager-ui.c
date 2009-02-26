@@ -117,10 +117,9 @@ extensions_manager_ui_response_cb (GtkWidget *widget,
 {
 	if (response == GTK_RESPONSE_HELP)
 	{
-		ephy_gui_help_with_doc_id (GTK_WINDOW (widget),
-					   "epiphany-extensions",
-					   "epiphany-extensions",
-					   "epi-ext-manager");
+		ephy_gui_help (GTK_WINDOW (widget),
+			       "epiphany-extensions",
+			       "epi-ext-manager");
 		return;
 	}
 
