@@ -168,7 +168,7 @@ AM_CONDITIONAL([HAVE_OPENSP],[test "x$enable_opensp" = "xyes"])
 
 AC_MSG_CHECKING([which extensions to build])
 
-ALL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures greasemonkey java-console livehttpheaders page-info permissions push-scroller rss sample sample-mozilla select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
+ALL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures greasemonkey java-console livehttpheaders page-info permissions push-scroller rss sample select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 USEFUL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 DEFAULT_EXTENSIONS="actions adblock auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks tab-groups tab-states greasemonkey"
 
@@ -176,7 +176,7 @@ PYTHON_ALL_EXTENSIONS="python-console sample-python favicon cc-license-viewer ep
 PYTHON_USEFUL_EXTENSIONS="python-console favicon cc-license-viewer"
 PYTHON_DEFAULT_EXTENSIONS="python-console favicon cc-license-viewer"
 
-MOZILLA_ALL_EXTENSIONS="error-viewer java-console livehttpheaders page-info sample-mozilla select-stylesheet smart-bookmarks"
+MOZILLA_ALL_EXTENSIONS="error-viewer java-console livehttpheaders page-info select-stylesheet smart-bookmarks"
 
 DIST_EXTENSIONS="$ALL_EXTENSIONS $PYTHON_ALL_EXTENSIONS"
 
@@ -199,7 +199,7 @@ AC_ARG_WITH([extensions],
 			  certificates, error-viewer, extensions-manager-ui, favicon,
 			  gestures, greasemonkey, java-console, livehttpheaders, page-info,
 			  permissions, push-scroller, python-console, rss, sample,
-			  sample-mozilla, sample-python, select-stylesheet, sidebar,
+			  sample-python, select-stylesheet, sidebar,
 			  smart-bookmarks, tab-groups, tab-states,
 			  as well as the aliases default, all, and really-all],
 			  [extensions=$with_extensions],
@@ -387,8 +387,6 @@ extensions/push-scroller/Makefile
 extensions/python-console/Makefile
 extensions/rss/Makefile
 extensions/sample/Makefile
-extensions/sample-mozilla/Makefile
-extensions/sample-mozilla/mozilla/Makefile
 extensions/sample-python/Makefile
 extensions/select-stylesheet/Makefile
 extensions/select-stylesheet/mozilla/Makefile
