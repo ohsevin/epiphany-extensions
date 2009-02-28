@@ -24,8 +24,6 @@
 import epiphany
 import urlparse
 
-backend = epiphany.ephy_shell_get_default().get_embed_single().get_backend_name()
-
 def net_stop_cb(embed, status):
     icon_address = embed.get_property('icon_address')
 
