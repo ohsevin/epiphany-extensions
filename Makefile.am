@@ -36,10 +36,6 @@ DISTCHECK_CONFIGURE_FLAGS = \
 ChangeLog:
 	if test -f $(top_srcdir)/.git/HEAD; then \
 		git log --stat > $@; \
-	elif test -f $(top_srcdir)/.svn/entries; then \
-		svn log -v --xml -r HEAD:1572 $(SVN_ROOT)/$(SVN_MODULE)/$(SVN_BRANCH) | \
-			xsltproc --stringparam strip-prefix "$(SVN_MODULE)/$(SVN_BRANCH)" \
-				 --stringparam include-rev "yes" $(top_srcdir)/svn2cl.xsl - > $@; \
 	fi
 
 .PHONY: ChangeLog
