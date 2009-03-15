@@ -30,8 +30,10 @@ DISTCHECK_CONFIGURE_FLAGS = \
 	--disable-scrollkeeper		\
 	--disable-schemas-install
 
-ChangeLog: $(top_srcdir)/.git/HEAD
-	git log --stat > $@
+ChangeLog: 
+	@if test -f $(top_srcdir)/.git/HEAD; then
+		git log --stat > $@; \
+	fi
 
 dist: ChangeLog
 
