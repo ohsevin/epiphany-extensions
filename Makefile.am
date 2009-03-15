@@ -31,7 +31,7 @@ DISTCHECK_CONFIGURE_FLAGS = \
 	--disable-schemas-install
 
 ChangeLog: 
-	@if test -f $(top_srcdir)/.git/HEAD; then
+	@if test -f $(top_srcdir)/.git/HEAD; then \
 		git log --stat > $@; \
 	fi
 
