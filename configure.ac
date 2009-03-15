@@ -19,9 +19,6 @@ m4_define([e_e_version_minor],[26])
 m4_define([e_e_version_micro],[0])
 m4_define([e_e_version],[e_e_version_major.e_e_version_minor.e_e_version_micro])
 
-# This can be either "trunk" or "branches/gnome-x-y"
-m4_define([e_e_branch],["branches/gnome-2-24"])
-
 AC_INIT([GNOME Web Browser Extensions],[e_e_version],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 
 EPIPHANY_API_VERSION=2.26
@@ -379,14 +376,6 @@ if test "x${datadir}" = 'x${prefix}/share'; then
 else
   AC_DEFINE_UNQUOTED([EXTENSIONS_DATA_DIR], ["${datadir}/${PACKAGE}-${EPIPHANY_EXTENSIONS_MAJOR}"], [Directory of data files])
 fi
-
-# ****************************
-# SVN for ChangeLog generation
-# ****************************
-
-AC_SUBST([SVN_ROOT],[http://svn.gnome.org/svn])
-AC_SUBST([SVN_MODULE],[epiphany-extensions])
-AC_SUBST([SVN_BRANCH],[e_e_branch])
 
 # *******************************
 # *******************************

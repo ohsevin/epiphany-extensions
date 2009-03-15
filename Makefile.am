@@ -30,12 +30,9 @@ DISTCHECK_CONFIGURE_FLAGS = \
 	--disable-scrollkeeper		\
 	--disable-schemas-install
 
-# Build ChangeLog from SVN history (r1572 was the first ChangeLog-less checkin).
-# Only build this when in an svn checkout.
+ChangeLog: $(top_srcdir)/.git/HEAD
+	git log --stat > $@
 
-ChangeLog:
-	if test -f $(top_srcdir)/.git/HEAD; then \
-		git log --stat > $@; \
-	fi
+dist: ChangeLog
 
 .PHONY: ChangeLog
