@@ -2,19 +2,19 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2008.
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2008, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2008-03-07 10:37+0100\n"
-"PO-Revision-Date: 2008-03-07 12:29+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions&component=general\n"
+"POT-Creation-Date: 2009-02-11 23:10+0000\n"
+"PO-Revision-Date: 2009-03-16 19:43+0100\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
 
 #: ../extensions/actions/action-properties.glade.h:1
@@ -36,8 +36,8 @@ msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "links and pages."
 msgstr ""
-"Aukera hau gaitzen bada, ekintza esteken eta orrialdeen "
-"laster-menuan txertatuko da."
+"Aukera hau gaitzen bada, ekintza esteken eta orrialdeen laster-menuan "
+"txertatuko da."
 
 #: ../extensions/actions/action-properties.glade.h:5
 msgid "The action description."
@@ -48,17 +48,16 @@ msgid ""
 "The action name. If a character is preceded by an underscore, that character "
 "will be used as the access key for the menu item."
 msgstr ""
-"Ekintzaren izena. Azpimarra bat karaktere baten aurretik egonez "
-"gero, karaktere hori laster-tekla gisa erabiliko da menuaren "
-"elementuarentzako."
+"Ekintzaren izena. Azpimarra bat karaktere baten aurretik egonez gero, "
+"karaktere hori laster-tekla gisa erabiliko da menuaren elementuarentzako."
 
 #: ../extensions/actions/action-properties.glade.h:7
 msgid ""
 "The command to execute when the action is activated. The URL of the link, "
 "image or page will be appended to the command."
 msgstr ""
-"Exekutatuko den komandoa ekintza aktibatzean. Estekaren, irudiaren "
-"edo orrialdearen URLa erantsiko zaio komandoari."
+"Exekutatuko den komandoa ekintza aktibatzean. Estekaren, irudiaren edo "
+"orrialdearen URLa erantsiko zaio komandoari."
 
 #: ../extensions/actions/action-properties.glade.h:8
 msgid "_Command:"
@@ -86,19 +85,19 @@ msgstr "_Orrialdeak"
 msgid "Actions"
 msgstr "Ekintzak"
 
-#: ../extensions/actions/ephy-actions-extension.c:113
+#: ../extensions/actions/ephy-actions-extension.c:112
 msgid "Actio_ns"
 msgstr "E_kintzak"
 
-#: ../extensions/actions/ephy-actions-extension.c:114
+#: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Customize actions"
 msgstr "Pertsonalizatu ekintzak"
 
-#: ../extensions/actions/ephy-actions-extension.c:437
+#: ../extensions/actions/ephy-actions-extension.c:436
 msgid "Could not run command"
 msgstr "Ezin izan da komandoa exekutatu"
 
-#: ../extensions/actions/ephy-actions-extension.c:440
+#: ../extensions/actions/ephy-actions-extension.c:439
 msgid "Could not Run Command"
 msgstr "Ezin izan da komandoa exekutatu"
 
@@ -126,7 +125,7 @@ msgstr "'%s'-(r)en propietateak"
 msgid "Action Properties"
 msgstr "Ekintzaren propietateak"
 
-#: ../extensions/adblock/adblock-ui.c:275
+#: ../extensions/adblock/adblock-ui.c:263
 msgid ""
 "This list is Copyright © its original author(G). It is relicensed under the "
 "GPL with permission.\n"
@@ -136,17 +135,15 @@ msgid ""
 "approved by the original author;\n"
 "direct any problems to Bugzilla and not to the original author (G).\n"
 msgstr ""
-"Zerrenda honen Copyright-a © bere egileak (G) du. Bere "
-"baimenarekin GPL lizentziapean kaleratu da."
-"Jatorrizko zerrenda, Filterset.G, honako gunean "
+"Zerrenda honen Copyright-a © bere egileak (G) du. Bere baimenarekin GPL "
+"lizentziapean kaleratu da.Jatorrizko zerrenda, Filterset.G, honako gunean "
 "aurki daiteke:\n"
 "http://www.pierceive.com/filtersetg/.\n"
 "Bertsio hau eraldatua izan da bere jatorritik. Jatorrizko egileak ez ditu "
 "aldaketak onartu.\n"
-"Edozein arazori buruz joan Bugzillara, eta ez jatorrizko "
-"egilearengana (G).\n"
+"Edozein arazori buruz joan Bugzillara, eta ez jatorrizko egilearengana (G).\n"
 
-#: ../extensions/adblock/adblock-ui.c:493
+#: ../extensions/adblock/adblock-ui.c:481
 msgid "Pattern"
 msgstr "Eredua"
 
@@ -163,7 +160,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>Eguneratu arauak jatorrizko gunetik</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:243
+#: ../extensions/adblock/ephy-adblock-extension.c:230
 msgid "Adblock Editor"
 msgstr "Iragarki-blokeoen editorea"
 
@@ -183,55 +180,55 @@ msgstr "Filterset.G"
 msgid "Whitelist"
 msgstr "Zerrenda zuria"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:244
+#: ../extensions/adblock/ephy-adblock-extension.c:231
 msgid "Edit Adblock"
 msgstr "Editatu iragazki-blokeoa"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:311
+#: ../extensions/adblock/ephy-adblock-extension.c:298
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
 msgstr[0] "Ezkutatutako iragarki %d"
 msgstr[1] "Ezkutatutako %d iragarki"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:84
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:81
 msgid "_Auto Reload"
 msgstr "Birkargatze _automatikoa"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:86
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
 msgid "Reload the page periodically"
 msgstr "Birkargatu orrialdea aldizka"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:370
+#: ../extensions/cc-license-viewer/cc-license-viewer.py:373
 msgid "View Creative Commons license"
 msgstr "Ikusi Creative Commons lizentzia"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:176
+#: ../extensions/certificates/ephy-certificates-extension.c:163
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "Ziurtagiriak"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:207
+#: ../extensions/certificates/ephy-certificates-extension.c:194
 msgid "Security Devices"
 msgstr "Segurtasun-gailuak"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:219
+#: ../extensions/certificates/ephy-certificates-extension.c:206
 msgid "Manage _Certificates"
 msgstr "Kudeatu _ziurtagiriak"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:221
+#: ../extensions/certificates/ephy-certificates-extension.c:208
 msgid "Manage your certificates"
 msgstr "Kudeatu zure ziurtagiriak"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:225
+#: ../extensions/certificates/ephy-certificates-extension.c:212
 msgid "Manage Security _Devices"
 msgstr "Kudeatu segurtasun-_gailuak"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:227
+#: ../extensions/certificates/ephy-certificates-extension.c:214
 msgid "Manage your security devices"
 msgstr "Kudeatu segurtasun-gailuak"
 
@@ -299,8 +296,8 @@ msgstr "%s-(e)kin sinkronizatzen"
 msgid "Synchronizing..."
 msgstr "Sinkronizatu..."
 
-#: ../extensions/epilicious/epilicious.py.in:202
-#: ../extensions/epilicious/epilicious.py.in:220
+#: ../extensions/epilicious/epilicious.py.in:232
+#: ../extensions/epilicious/epilicious.py.in:250
 msgid "Epilicious Synchronize"
 msgstr "Epilicious-en sinkronizazioa"
 
@@ -314,8 +311,9 @@ msgid ""
 "the topic will be synched. If this is set then all bookmarks without the "
 "topic will be synched."
 msgstr ""
-"Gaiaren funtzioa kontrolatzen du. Desaktibatzen bada, laster-marka guztiak (beraien gaiekin) sinkronizatu egingo dira. Aktibatzen bada, "
-"laster-marka guztiak gairik gabe sinkronizatuko dira."
+"Gaiaren funtzioa kontrolatzen du. Desaktibatzen bada, laster-marka guztiak "
+"(beraien gaiekin) sinkronizatu egingo dira. Aktibatzen bada, laster-marka "
+"guztiak gairik gabe sinkronizatuko dira."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:3
 msgid "Exclude topic"
@@ -326,12 +324,15 @@ msgid "Shared topic"
 msgstr "Partekatutako gaia"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:5
+#| msgid ""
+#| "The backend that epilicious will use for synchronizing bookmarks. Allowed "
+#| "value: 'ma.gnolia'"
 msgid ""
 "The backend that epilicious will use for synchronizing bookmarks. Allowed "
-"value: 'ma.gnolia'"
+"values: 'diigo', 'ma.gnolia'"
 msgstr ""
-"Epilicious-ek laster-markak sinkronizatzeko erabiliko duen motorra. "
-"Balio erabilgarria: 'ma.gnolia'"
+"Epilicious-ek laster-markak sinkronizatzeko erabiliko duen motorra. Balio "
+"erabilgarriak: 'diigo', 'ma.gnolia'"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
 msgid "The password that epilicious will use for synchronizing bookmarks."
@@ -353,32 +354,30 @@ msgstr "pasahitza"
 msgid "username"
 msgstr "erabiltzaile-izena"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:98
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Check _HTML"
 msgstr "Egiaztatu _HTMLa"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:100
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:92
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "Bistaratu HTML erroreak 'Errore ikustailea' elkarrizketa-koadroan"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _Links"
 msgstr "Egiaztatu _estekak"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:107
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
-msgstr ""
-"Bistaratu esteka baliogabeak 'Erroreen ikustailea' "
-"elkarrizketa-koadroan"
+msgstr "Bistaratu esteka baliogabeak 'Erroreen ikustailea' elkarrizketa-koadroan"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:111
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:103
 msgid "_Error Viewer"
 msgstr "_Erroreen ikustailea"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:113
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
 msgid "Display web page errors"
 msgstr "Bistaratu web orrialdeen erroreak"
 
@@ -390,7 +389,9 @@ msgstr "_Garbitu"
 msgid "Error Viewer"
 msgstr "Erroreen ikustailea"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:103
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:105
 #, c-format
 msgid ""
 "%s error in %s on line %d and column %d:\n"
@@ -399,9 +400,11 @@ msgstr ""
 "%s errorea %s-(e)n, %d. lerroan eta %d. zutabean:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:109
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:140
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:113
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:137
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:150
 #, c-format
 msgid ""
 "%s error in %s:\n"
@@ -410,7 +413,9 @@ msgstr ""
 "%s errorea %s-(e)n:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:123
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
 #, c-format
 msgid ""
 "%s error in %s on line %d:\n"
@@ -451,19 +456,19 @@ msgstr ""
 "HTML errorea '%s'-(e)n, '%s' lerroan:\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:165
+#: ../extensions/error-viewer/sgml-validator.c:164
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
 msgstr[0] "Errore %d aurkituta"
 msgstr[1] "%d errore aurkituta"
 
-#: ../extensions/error-viewer/sgml-validator.c:169
+#: ../extensions/error-viewer/sgml-validator.c:168
 #, c-format
 msgid "HTML Validation of “%s” complete"
 msgstr "'%s'-(r)en HTML balidazioa amaituta"
 
-#: ../extensions/error-viewer/sgml-validator.c:227
+#: ../extensions/error-viewer/sgml-validator.c:226
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -472,16 +477,16 @@ msgstr ""
 "HTML errorea %s-(e)n:\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:229
-#: ../extensions/error-viewer/sgml-validator.c:245
+#: ../extensions/error-viewer/sgml-validator.c:228
+#: ../extensions/error-viewer/sgml-validator.c:244
 msgid ""
 "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
 "+xml” instead."
 msgstr ""
-"Doctype 'XHTML' da, baina eduki mota 'text/html da. "
-"Erabili 'application/xhtml+xml' horren ordez."
+"Doctype 'XHTML' da, baina eduki mota 'text/html da. Erabili 'application/"
+"xhtml+xml' horren ordez."
 
-#: ../extensions/error-viewer/sgml-validator.c:243
+#: ../extensions/error-viewer/sgml-validator.c:242
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
@@ -490,22 +495,22 @@ msgstr ""
 "HTML abisua %s-(e)n:\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:360
+#: ../extensions/error-viewer/sgml-validator.c:359
 #, c-format
 msgid "HTML error in %s:"
 msgstr "HTML errorea %s-(e)n:"
 
-#: ../extensions/error-viewer/sgml-validator.c:368
+#: ../extensions/error-viewer/sgml-validator.c:367
 #, c-format
 msgid "Invalid character encoding"
 msgstr "Karaktere-kodeketa baliogabea"
 
-#: ../extensions/error-viewer/sgml-validator.c:373
+#: ../extensions/error-viewer/sgml-validator.c:372
 #, c-format
 msgid "Unknown error while converting to UTF-8"
 msgstr "Errore ezezaguna UTF-8ra bihurtzean"
 
-#: ../extensions/error-viewer/sgml-validator.c:435
+#: ../extensions/error-viewer/sgml-validator.c:434
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -514,12 +519,12 @@ msgstr ""
 "HTML errorea %s-(e)n:\n"
 "Ez da doctype-rik zehaztu."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:346
 msgid "Enabled"
 msgstr "Gaituta"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
-#: ../extensions/rss/rss-ui.c:584
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:354
+#: ../extensions/rss/rss-ui.c:571
 msgid "Description"
 msgstr "Azalpena"
 
@@ -531,29 +536,29 @@ msgstr "<b>Kargatutako hedapenak</b>"
 msgid "Extensions"
 msgstr "Hedapenak"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:73
 msgid "_Extensions"
 msgstr "_Hedapenak"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
 msgid "Load and unload extensions"
 msgstr "Kargatu eta deskargatu hedapenak"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
 msgid "Help about extensions"
 msgstr "Hedapenei buruzko laguntza"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:85
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:78
 msgid "Install User _Script"
 msgstr "Instalatu erabiltzailearen _script-a"
 
 #. shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:80
 msgid "Install Greasemonkey script"
 msgstr "Instalatu Greasemonkey script-a"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:318
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:311
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "Erabiltzailearen script-a '%s'-(e)n instalatu da"
@@ -567,7 +572,7 @@ msgstr "_Java-ren kontsola"
 msgid "Show Java Console"
 msgstr "Erakutsi Java-ren kontsola"
 
-#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:102
+#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:100
 msgid "_HTTP Headers"
 msgstr "_HTTPren goiburukoak"
 
@@ -595,171 +600,171 @@ msgstr "Zuzeneko goiburukoak"
 msgid "Remove headers"
 msgstr "Kendu goiburukoak"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:68
+#: ../extensions/page-info/ephy-page-info-extension.c:61
 msgid "Pa_ge Information"
 msgstr "_Orrialdearen informazioa"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:70
+#: ../extensions/page-info/ephy-page-info-extension.c:63
 msgid "Display page information in a dialog"
 msgstr "Bistaratu orrialdearen informazioa elkarrizketa-koadroan"
 
-#: ../extensions/page-info/page-info-dialog.c:722
+#: ../extensions/page-info/page-info-dialog.c:704
 msgid "Save As..."
 msgstr "Gorde honela..."
 
-#: ../extensions/page-info/page-info-dialog.c:739
+#: ../extensions/page-info/page-info-dialog.c:721
 msgid "Select a directory"
 msgstr "Hautatu direktorioa"
 
-#: ../extensions/page-info/page-info-dialog.c:788
+#: ../extensions/page-info/page-info-dialog.c:770
 msgid "Unknown type"
 msgstr "Mota ezezaguna"
 
-#: ../extensions/page-info/page-info-dialog.c:793
+#: ../extensions/page-info/page-info-dialog.c:775
 msgid "Full standards compliance"
 msgstr "Estandar guztiak betetzen ditu"
 
-#: ../extensions/page-info/page-info-dialog.c:796
+#: ../extensions/page-info/page-info-dialog.c:778
 msgid "Almost standards compliance"
 msgstr "Estandar ia guztiak betetzen ditu"
 
-#: ../extensions/page-info/page-info-dialog.c:799
+#: ../extensions/page-info/page-info-dialog.c:781
 msgid "Compatibility"
 msgstr "Bateragarritasuna"
 
-#: ../extensions/page-info/page-info-dialog.c:803
+#: ../extensions/page-info/page-info-dialog.c:785
 msgid "Undetermined"
 msgstr "Zehaztu gabea"
 
-#: ../extensions/page-info/page-info-dialog.c:812
+#: ../extensions/page-info/page-info-dialog.c:794
 msgid "Not cached"
 msgstr "Ez dago cache-an"
 
-#: ../extensions/page-info/page-info-dialog.c:815
+#: ../extensions/page-info/page-info-dialog.c:797
 msgid "Disk cache"
 msgstr "Diskoko cache-a"
 
-#: ../extensions/page-info/page-info-dialog.c:818
+#: ../extensions/page-info/page-info-dialog.c:800
 msgid "Memory cache"
 msgstr "Memoriako cache-a"
 
-#: ../extensions/page-info/page-info-dialog.c:821
+#: ../extensions/page-info/page-info-dialog.c:803
 msgid "Unknown cache"
 msgstr "Cache ezezaguna"
 
-#: ../extensions/page-info/page-info-dialog.c:837
-#: ../extensions/page-info/page-info-dialog.c:953
+#: ../extensions/page-info/page-info-dialog.c:819
+#: ../extensions/page-info/page-info-dialog.c:935
 msgid "Unknown"
 msgstr "Ezezaguna"
 
-#: ../extensions/page-info/page-info-dialog.c:842
+#: ../extensions/page-info/page-info-dialog.c:824
 msgid "No referrer"
 msgstr "Erreferentziatu gabe"
 
-#: ../extensions/page-info/page-info-dialog.c:856
-#: ../extensions/page-info/page-info-dialog.c:872
+#: ../extensions/page-info/page-info-dialog.c:838
+#: ../extensions/page-info/page-info-dialog.c:854
 msgid "Not specified"
 msgstr "Zehaztu gabe"
 
-#: ../extensions/page-info/page-info-dialog.c:935
+#: ../extensions/page-info/page-info-dialog.c:917
 msgid "Image"
 msgstr "Irudia"
 
-#: ../extensions/page-info/page-info-dialog.c:938
+#: ../extensions/page-info/page-info-dialog.c:920
 msgid "Background image"
 msgstr "Atzeko planoko irudia"
 
-#: ../extensions/page-info/page-info-dialog.c:941
+#: ../extensions/page-info/page-info-dialog.c:923
 msgid "Embed"
 msgstr "Kapsulatu"
 
-#: ../extensions/page-info/page-info-dialog.c:944
+#: ../extensions/page-info/page-info-dialog.c:926
 msgid "Object"
 msgstr "Objektua"
 
-#: ../extensions/page-info/page-info-dialog.c:947
+#: ../extensions/page-info/page-info-dialog.c:929
 msgid "Applet"
 msgstr "Applet-a"
 
-#: ../extensions/page-info/page-info-dialog.c:950
+#: ../extensions/page-info/page-info-dialog.c:932
 msgid "Icon"
 msgstr "Ikonoa"
 
-#: ../extensions/page-info/page-info-dialog.c:1131
+#: ../extensions/page-info/page-info-dialog.c:1113
 msgid "_Open"
 msgstr "_Ireki"
 
-#: ../extensions/page-info/page-info-dialog.c:1137
-#: ../extensions/page-info/page-info-dialog.c:1582
+#: ../extensions/page-info/page-info-dialog.c:1119
+#: ../extensions/page-info/page-info-dialog.c:1564
 msgid "_Copy Link Address"
 msgstr "_Kopiatu estekaren helbidea"
 
-#: ../extensions/page-info/page-info-dialog.c:1143
+#: ../extensions/page-info/page-info-dialog.c:1125
 msgid "_Use as Background"
 msgstr "Erabili _atzeko plano gisa"
 
-#: ../extensions/page-info/page-info-dialog.c:1149
-#: ../extensions/page-info/page-info-dialog.c:1588
+#: ../extensions/page-info/page-info-dialog.c:1131
+#: ../extensions/page-info/page-info-dialog.c:1570
 msgid "_Save As..."
 msgstr "Gorde _honela..."
 
-#: ../extensions/page-info/page-info-dialog.c:1381
-#: ../extensions/page-info/page-info-dialog.c:1702
+#: ../extensions/page-info/page-info-dialog.c:1363
+#: ../extensions/page-info/page-info-dialog.c:1684
 msgid "Blocked"
 msgstr "Blokeatuta"
 
-#: ../extensions/page-info/page-info-dialog.c:1397
-#: ../extensions/page-info/page-info-dialog.c:1718
+#: ../extensions/page-info/page-info-dialog.c:1379
+#: ../extensions/page-info/page-info-dialog.c:1700
 msgid "URL"
 msgstr "URLa"
 
-#: ../extensions/page-info/page-info-dialog.c:1410
+#: ../extensions/page-info/page-info-dialog.c:1392
 msgid "Type"
 msgstr "Mota"
 
-#: ../extensions/page-info/page-info-dialog.c:1422
+#: ../extensions/page-info/page-info-dialog.c:1404
 msgid "Alt Text"
 msgstr "Alt testua"
 
-#: ../extensions/page-info/page-info-dialog.c:1434
-#: ../extensions/page-info/page-info-dialog.c:1731
+#: ../extensions/page-info/page-info-dialog.c:1416
+#: ../extensions/page-info/page-info-dialog.c:1713
 msgid "Title"
 msgstr "Titulua"
 
-#: ../extensions/page-info/page-info-dialog.c:1446
+#: ../extensions/page-info/page-info-dialog.c:1428
 msgid "Width"
 msgstr "Zabalera"
 
-#: ../extensions/page-info/page-info-dialog.c:1458
+#: ../extensions/page-info/page-info-dialog.c:1440
 msgid "Height"
 msgstr "Altuera"
 
-#: ../extensions/page-info/page-info-dialog.c:1743
+#: ../extensions/page-info/page-info-dialog.c:1725
 msgid "Relation"
 msgstr "Erlazioa"
 
-#: ../extensions/page-info/page-info-dialog.c:1892
-#: ../extensions/page-info/page-info-dialog.c:2033
+#: ../extensions/page-info/page-info-dialog.c:1874
+#: ../extensions/page-info/page-info-dialog.c:2015
 msgid "Name"
 msgstr "Izena"
 
-#: ../extensions/page-info/page-info-dialog.c:1904
+#: ../extensions/page-info/page-info-dialog.c:1886
 msgid "Method"
 msgstr "Metodoa"
 
-#: ../extensions/page-info/page-info-dialog.c:1918
+#: ../extensions/page-info/page-info-dialog.c:1900
 msgid "Action"
 msgstr "Ekintza"
 
-#: ../extensions/page-info/page-info-dialog.c:1999
+#: ../extensions/page-info/page-info-dialog.c:1981
 msgid "_Copy"
 msgstr "_Kopiatu"
 
-#: ../extensions/page-info/page-info-dialog.c:2045
+#: ../extensions/page-info/page-info-dialog.c:2027
 msgid "Content"
 msgstr "Edukia"
 
-#: ../extensions/page-info/page-info-dialog.c:2146
+#: ../extensions/page-info/page-info-dialog.c:2128
 msgid "Page Metadata"
 msgstr "Orrialdearen metadatuak"
 
@@ -887,88 +892,88 @@ msgstr "Mota:"
 msgid "_Save Media As..."
 msgstr "Gorde _multimedia honela..."
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:180
+#: ../extensions/permissions/ephy-permissions-dialog.c:165
 msgid "allowed"
 msgstr "baimenduta"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:184
+#: ../extensions/permissions/ephy-permissions-dialog.c:169
 msgid "denied"
 msgstr "ukatuta"
 
 #. Sometimes we get this... how did this get in the list!?
-#: ../extensions/permissions/ephy-permissions-dialog.c:189
+#: ../extensions/permissions/ephy-permissions-dialog.c:174
 msgid "default"
 msgstr "lehenetsia"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:515
+#: ../extensions/permissions/ephy-permissions-dialog.c:500
 msgid "Domain"
 msgstr "Domeinua"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:527
+#: ../extensions/permissions/ephy-permissions-dialog.c:512
 msgid "State"
 msgstr "Egoera"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:620
+#: ../extensions/permissions/ephy-permissions-dialog.c:605
 msgid "Site Permissions"
 msgstr "Gunearen baimenak"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:647
+#: ../extensions/permissions/ephy-permissions-dialog.c:632
 msgid "Cookies"
 msgstr "Cookie-ak"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:648
+#: ../extensions/permissions/ephy-permissions-dialog.c:633
 msgid "Images"
 msgstr "Irudiak"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:649
+#: ../extensions/permissions/ephy-permissions-dialog.c:634
 msgid "Popup Windows"
 msgstr "Laster-leihoak"
 
 #. stock icon
-#: ../extensions/permissions/ephy-permissions-extension.c:156
+#: ../extensions/permissions/ephy-permissions-extension.c:152
 msgid "Site _Permissions"
 msgstr "Gunearen _baimenak"
 
 #. shortcut key
-#: ../extensions/permissions/ephy-permissions-extension.c:158
+#: ../extensions/permissions/ephy-permissions-extension.c:154
 msgid "Manage web site permissions"
 msgstr "Kudeatu web gunearen baimenak"
 
-#: ../extensions/rss/ephy-rss-extension.c:91
+#: ../extensions/rss/ephy-rss-extension.c:79
 msgid "News Feeds Subscription"
 msgstr "Berri-iturrietara harpidetzea"
 
-#: ../extensions/rss/ephy-rss-extension.c:93
+#: ../extensions/rss/ephy-rss-extension.c:81
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr "Harpidetu web gune honetako berri-iturrira zure berri-irakurle gogokoenean"
 
-#: ../extensions/rss/ephy-rss-extension.c:98
+#: ../extensions/rss/ephy-rss-extension.c:86
 msgid "_Subscribe to this feed"
 msgstr "_Harpidetu iturri honetara"
 
-#: ../extensions/rss/ephy-rss-extension.c:100
+#: ../extensions/rss/ephy-rss-extension.c:88
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Harpidetu berri-iturri honetara zure berri-irakurle gogokoenean"
 
-#: ../extensions/rss/ephy-rss-extension.c:373
+#: ../extensions/rss/ephy-rss-extension.c:361
 msgid "Subscribe to site's news feed"
 msgstr "Harpidetu web gunearen berri-iturrira"
 
-#: ../extensions/rss/rss-ui.c:166
+#: ../extensions/rss/rss-ui.c:153
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr ""
-"<b><i>Ezin izan da berri-irakurlearekin kontaktatu, exekutatzen ari "
-"da?</i></b>"
+"<b><i>Ezin izan da berri-irakurlearekin kontaktatu, exekutatzen ari da?</i></"
+"b>"
 
-#: ../extensions/rss/rss-ui.c:168
+#: ../extensions/rss/rss-ui.c:155
 msgid "Retry"
 msgstr "Saiatu berriro"
 
-#: ../extensions/rss/rss-ui.c:296
+#: ../extensions/rss/rss-ui.c:283
 msgid "_Copy Feed Address"
 msgstr "_Kopiatu iturrien helbideak"
 
-#: ../extensions/rss/rss-ui.c:576
+#: ../extensions/rss/rss-ui.c:563
 msgid "Subscribe"
 msgstr "Harpidetu"
 
@@ -985,24 +990,24 @@ msgstr "Berri-iturrira harpidetzea"
 msgid "_Subscribe"
 msgstr "_Harpidetu"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:146
+#: ../extensions/select-stylesheet/ephy-css-menu.c:140
 msgid "Render the page without using a style"
 msgstr "Errendatu orrialdea estilorik erabili gabe"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:149
+#: ../extensions/select-stylesheet/ephy-css-menu.c:143
 msgid "Render the page using the default style"
 msgstr "Errendatu orrialdea estilo lehenetsia erabiliz"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:152
+#: ../extensions/select-stylesheet/ephy-css-menu.c:146
 #, c-format
 msgid "Render the page using the “%s” style"
 msgstr "Errendatu orrialdea '%s' estiloa erabiliz"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:323
+#: ../extensions/select-stylesheet/ephy-css-menu.c:317
 msgid "St_yle"
 msgstr "E_stiloa"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:324
+#: ../extensions/select-stylesheet/ephy-css-menu.c:318
 msgid "Select a different style for this page"
 msgstr "Hautatu beste estiloa orrialde honentzako"
 
@@ -1014,66 +1019,66 @@ msgstr "Lehenetsia"
 msgid "None"
 msgstr "Bat ere ez"
 
-#: ../extensions/sidebar/ephy-sidebar.c:176
+#: ../extensions/sidebar/ephy-sidebar.c:167
 msgid "No Sidebars installed"
 msgstr "Ez dago albo-panelik instalatuta"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:105
+#: ../extensions/sidebar/ephy-sidebar-extension.c:88
 msgid "_Sidebar"
 msgstr "_Albo-panela"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:106
+#: ../extensions/sidebar/ephy-sidebar-extension.c:89
 msgid "Show or hide the sidebar"
 msgstr "Erakutsi edo ezkutatu albo-panela"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:323
+#: ../extensions/sidebar/ephy-sidebar-extension.c:306
 msgid "Do you really want to remove this sidebar?"
 msgstr "Ziur zaude albo-panel hau kentzea nahi duzula?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:327
+#: ../extensions/sidebar/ephy-sidebar-extension.c:310
 msgid "There is no way to recover this sidebar after removal."
 msgstr "Ezin izango da albo-panel hau berreskuratu kendu ondoren."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:329
+#: ../extensions/sidebar/ephy-sidebar-extension.c:312
 msgid "Remove Sidebar"
 msgstr "Kendu albo-panela"
 
 #. Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:476
+#: ../extensions/sidebar/ephy-sidebar-extension.c:459
 #, c-format
 msgid "The sidebar already contains “%s”"
 msgstr "Albo-panelak jadanik badu '%s'"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:480
+#: ../extensions/sidebar/ephy-sidebar-extension.c:463
 msgid "To use this sidebar, select it from the list of available sidebar pages."
 msgstr ""
 "Albo-panel hau erabiltzeko, hautatu erabilgarri dauden albo-panelen "
 "orrialdeen zerrendatik."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:483
-#: ../extensions/sidebar/ephy-sidebar-extension.c:509
+#: ../extensions/sidebar/ephy-sidebar-extension.c:466
+#: ../extensions/sidebar/ephy-sidebar-extension.c:492
 msgid "Add Sidebar"
 msgstr "Gehitu albo-panela"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:503
+#: ../extensions/sidebar/ephy-sidebar-extension.c:486
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr "Gehitu '%s' albo-panelari?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:507
+#: ../extensions/sidebar/ephy-sidebar-extension.c:490
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr "Albo-panel berriaren iturburua '%s' da."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:513
+#: ../extensions/sidebar/ephy-sidebar-extension.c:496
 msgid "_Add Sidebar"
 msgstr "_Gehitu albo-panela"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:542
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
 msgid "_Look Up"
 msgstr "_Bilatu"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:549
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:538
 msgid "_GNOME Dictionary"
 msgstr "_GNOMEren hiztegia"
 
@@ -1083,7 +1088,9 @@ msgstr "Ireki bilaketako emaitzak fitxa berrian"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
 msgid "Open search result in new tab if true, in new window if false"
-msgstr "Ireki bilaketako emaitzak fitxa berrian 'true' (EGIA) bada; 'false' (faltsua) bada leiho berri batean."
+msgstr ""
+"Ireki bilaketako emaitzak fitxa berrian 'true' (EGIA) bada; "
+"'false' (faltsua) bada leiho berri batean."
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
@@ -1119,7 +1126,9 @@ msgstr "Creative Commons lizentziaren ikustailea"
 
 #: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
 msgid "Shows the Creative Commons license of the current website if available"
-msgstr "Uneko web gunearen Creative Commons lizentzia erakusten du (eskuragarri egonez gero)"
+msgstr ""
+"Uneko web gunearen Creative Commons lizentzia erakusten du (eskuragarri "
+"egonez gero)"
 
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
@@ -1151,9 +1160,7 @@ msgstr "Favicon lehenetsia"
 
 #: ../extensions/favicon/favicon.ephy-extension.in.h:2
 msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
-msgstr ""
-"'/favicon.ico' kargatzen du guneak metodo estandarra ez badu "
-"erabiltzen"
+msgstr "'/favicon.ico' kargatzen du guneak metodo estandarra ez badu erabiltzen"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -1185,7 +1192,9 @@ msgstr "Zuzeneko HTTP goiburukoak"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
-msgstr "Bistaratu uneko orrialdearen 'honi buruz', estekak eta multimediaren informazioa"
+msgstr ""
+"Bistaratu uneko orrialdearen 'honi buruz', estekak eta multimediaren "
+"informazioa"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
 msgid "Page Info"
@@ -1218,8 +1227,8 @@ msgstr "Python-en kontsola"
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr ""
-"Harpidetu web orrialdeek eskaintzen dituzten berri-iturrietara zure "
-"berri-irakurle gogokoenean"
+"Harpidetu web orrialdeek eskaintzen dituzten berri-iturrietara zure berri-"
+"irakurle gogokoenean"
 
 #: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
 msgid "A sample extension with mozilla backend"
