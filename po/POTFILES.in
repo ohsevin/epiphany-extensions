@@ -64,7 +64,6 @@ extensions/smart-bookmarks/smart-bookmarks.schemas.in
 [type: gettext/ini]extensions/push-scroller/push-scroller.ephy-extension.in.in
 [type: gettext/ini]extensions/python-console/python-console.ephy-extension.in
 [type: gettext/ini]extensions/rss/rss.ephy-extension.in.in
-[type: gettext/ini]extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in
 [type: gettext/ini]extensions/sample/sample.ephy-extension.in.in
 [type: gettext/ini]extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in
 [type: gettext/ini]extensions/sidebar/sidebar.ephy-extension.in.in

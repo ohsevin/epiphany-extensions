@@ -1,24 +1,24 @@
-# translation of cs.po to Czech
 # Czech translation of epiphany-extensions.
-# Copyright (C) 2004, 2005, 2006 epiphany-extensions' COPYRIGHT HOLDER
-# Copyright (C) 2004, 2005, 2006 Miloslav Trmac <mitr@volny.cz>
+# Copyright (C) 2004, 2005, 2006, 2009 the author(s) of epiphany-extensions.
+# Copyright (C) 2004, 2005, 2006 Miloslav Trmac <mitr@volny.cz>.
 # This file is distributed under the same license as the epiphany-extensions package.
-#
 # Miloslav Trmac <mitr@volny.cz>, 2004 - 2006.
 # Jakub Friedl <jfriedl@suse.cz>, 2006, 2007.
+# Lucas Lommer <llommer@svn.gnome.org>, 2009.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: cs\n"
+"Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2007-05-23 11:25+0200\n"
-"PO-Revision-Date: 2007-05-23 11:25+0200\n"
-"Last-Translator: Jakub Friedl <jfriedl@suse.cz>\n"
+"POT-Creation-Date: 2009-03-17 02:13+0100\n"
+"PO-Revision-Date: 2009-03-12 02:20+0100\n"
+"Last-Translator: Lucas Lommer <llommer@svn.gnome.org>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: KBabel 1.11.4\n"
 
 #: ../extensions/actions/action-properties.glade.h:1
@@ -77,7 +77,7 @@ msgid "_Images"
 msgstr "_Obrázky"
 
 #: ../extensions/actions/action-properties.glade.h:11
-#: ../extensions/epilicious/epilicious-config.glade.h:5
+#: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Name:"
 msgstr "_Název:"
 
@@ -131,7 +131,7 @@ msgstr "Vlastnosti „%s”"
 msgid "Action Properties"
 msgstr "Vlastnosti akce"
 
-#: ../extensions/adblock/adblock-ui.c:279
+#: ../extensions/adblock/adblock-ui.c:263
 msgid ""
 "This list is Copyright © its original author(G). It is relicensed under the "
 "GPL with permission.\n"
@@ -141,14 +141,21 @@ msgid ""
 "approved by the original author;\n"
 "direct any problems to Bugzilla and not to the original author (G).\n"
 msgstr ""
+"Tento seznam nese Copyright © původního autora (G). Byl se svolením "
+"přelicencován pod GPL.\n"
+"Původní seznam, Filterset.G, je k nalezení na http://www.pierceive.com/"
+"filtersetg/.\n"
+"Tato verze byla oproti originálu upravena a změny nebyly schváleny původním "
+"autorem;\n"
+"směřujte svá chybová hlášení do Bugzilly, nikoliv původnímu autorovi (G).\n"
 
-#: ../extensions/adblock/adblock-ui.c:496
+#: ../extensions/adblock/adblock-ui.c:481
 msgid "Pattern"
-msgstr ""
+msgstr "Výplň"
 
 #: ../extensions/adblock/adblock.glade.h:1
 msgid "<b>Courtesy of Graham Pierce</b>"
-msgstr ""
+msgstr "<b>Se svolením Grahama Pierce</b>"
 
 #: ../extensions/adblock/adblock.glade.h:2
 msgid "<b>New rule</b>"
@@ -156,12 +163,12 @@ msgstr "<b>Nové pravidlo</b>"
 
 #: ../extensions/adblock/adblock.glade.h:3
 msgid "<b>Update rules from original site</b>"
-msgstr ""
+msgstr "<b>aktualizace pravidel z původní stránky</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:244
-msgid "Adblock editor"
-msgstr "Editor blokování reklam"
+#: ../extensions/adblock/ephy-adblock-extension.c:229
+msgid "Adblock Editor"
+msgstr "Úpravy pro Adblock"
 
 #: ../extensions/adblock/adblock.glade.h:5
 msgid "Add a new rule"
@@ -179,11 +186,11 @@ msgstr "Filterset.G"
 msgid "Whitelist"
 msgstr "Bílá listina"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:245
+#: ../extensions/adblock/ephy-adblock-extension.c:230
 msgid "Edit Adblock"
 msgstr "Upravit blokování reklam"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:312
+#: ../extensions/adblock/ephy-adblock-extension.c:299
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -191,173 +198,190 @@ msgstr[0] "%d skrytá reklama"
 msgstr[1] "%d skryté reklamy"
 msgstr[2] "%d skrytých reklam"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:81
 msgid "_Auto Reload"
 msgstr "_Automaticky obnovovat"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
 msgid "Reload the page periodically"
 msgstr "Pravidelně obnovovat stránku"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:371
+#: ../extensions/cc-license-viewer/cc-license-viewer.py:373
 msgid "View Creative Commons license"
 msgstr "Zobrazit licenci Creative Commons"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:177
+#: ../extensions/certificates/ephy-certificates-extension.c:163
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "Certifikáty"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:208
+#: ../extensions/certificates/ephy-certificates-extension.c:194
 msgid "Security Devices"
 msgstr "Bezpečnostní zařízení"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:220
+#: ../extensions/certificates/ephy-certificates-extension.c:206
 msgid "Manage _Certificates"
 msgstr "Spravovat _certifikáty"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:222
+#: ../extensions/certificates/ephy-certificates-extension.c:208
 msgid "Manage your certificates"
 msgstr "Spravovat vaše certifikáty"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:226
+#: ../extensions/certificates/ephy-certificates-extension.c:212
 msgid "Manage Security _Devices"
 msgstr "Spravovat _bezpečnostní zařízení"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:228
+#: ../extensions/certificates/ephy-certificates-extension.c:214
 msgid "Manage your security devices"
 msgstr "Spravovat vaše bezpečnostní zařízení"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:1
 msgid "Action for tagged bookmarks:"
-msgstr ""
+msgstr "Akce s vybranými záložkami:"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:2
-#: ../extensions/epilicious/epilicious.py.in:212
 msgid "Epilicious Configuration"
-msgstr ""
+msgstr "Konfigurace Epilicious"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:3
-msgid "_Exclude"
-msgstr ""
+msgid "_Backend:"
+msgstr "_Backend:"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:4
+msgid "_Exclude"
+msgstr "V_yjma"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:5
 msgid "_Include"
 msgstr "_Zahrnout"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:6
+#: ../extensions/epilicious/epilicious-config.glade.h:7
 msgid "_Password:"
 msgstr "_Heslo:"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:7
+#: ../extensions/epilicious/epilicious-config.glade.h:8
 msgid "_Tag:"
 msgstr "_Tag:"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:1
-msgid "<b>Synchronizing with del.icio.us</b>"
-msgstr "<b>Synchronizace s del.icio.us</b>"
+msgid "Adding new bookmarks and synching topics"
+msgstr "Přidává se nová záložka a provádí se synchronizace témat"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:2
-msgid "Adding new bookmarks and synching topics"
-msgstr ""
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:3
 msgid "Removing deleted bookmarks"
 msgstr "Odstraňují se smazané záložky"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:4
-msgid "Retrieving bookmarks from del.icio.us"
-msgstr ""
+#: ../extensions/epilicious/progress.py:41
+#, no-c-format, python-format
+msgid "Retrieving bookmarks from %s"
+msgstr "Získávají se záložky z %s"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:5
 msgid "Retrieving bookmarks from epiphany"
-msgstr ""
+msgstr "Získávají se záložky z Epiphany"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:6
 msgid "Retrieving previous synch point"
-msgstr ""
+msgstr "Získávají se předchozí bod synchronizace"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:7
 msgid "Saving new synch point"
-msgstr ""
+msgstr "Ukládá se nový bod synchronizace"
 
-#: ../extensions/epilicious/epilicious-progress.glade.h:8
+#: ../extensions/epilicious/epilicious-progress.glade.h:9
+#: ../extensions/epilicious/progress.py:39
+#, no-c-format, python-format
+msgid "Synchronizing with %s"
+msgstr "Synchronizuje se s %s"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:10
 msgid "Synchronizing..."
 msgstr "Probíhá synchronizace..."
 
-#. # Epiphany integration ##
-#: ../extensions/epilicious/epilicious.py.in:207
-#: ../extensions/epilicious/epilicious.py.in:210
+#: ../extensions/epilicious/epilicious.py.in:232
+#: ../extensions/epilicious/epilicious.py.in:250
 msgid "Epilicious Synchronize"
-msgstr ""
+msgstr "Synchronizace Epilicious"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:1
-msgid "Bookmarks with this topic will be synchronized to del.icio.us."
-msgstr ""
+msgid "Bookmarks with this topic will be synchronized."
+msgstr "Záložky s tímto tématem budou synchronizovány."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:2
 msgid ""
 "Controls the function of the topic. If this is unset then all bookmarks with "
-"the topic will be synched with del.icio.us. If this is set then all "
-"bookmarks without the topic will be synched with del.icio.us."
+"the topic will be synched. If this is set then all bookmarks without the "
+"topic will be synched."
 msgstr ""
+"Kontroluje funkci témat. Pokud není nastaveno, budou synchronizovány všechny "
+"záložky tohoto tématu. Pokud nastaveno je, budou synchronizovány všechny "
+"záložky bez tohoto tématu."
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:3
 msgid "Exclude topic"
-msgstr ""
+msgstr "Vyjmout téma"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:4
 msgid "Shared topic"
-msgstr ""
+msgstr "Sdílené téma"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:5
 msgid ""
-"The del.icio.us password that epilicious will use for synchronizing "
-"bookmarks."
+"The backend that epilicious will use for synchronizing bookmarks. Allowed "
+"values: 'diigo', 'ma.gnolia'"
 msgstr ""
+"Backend, který epilicious použije pro synchronizaci záložek. Možné hodnoty "
+"jsou 'diigo', 'ma.gnolia'"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
-msgid ""
-"The del.icio.us username that epilicious will use for synchronizing "
-"bookmarks."
-msgstr ""
+msgid "The password that epilicious will use for synchronizing bookmarks."
+msgstr "Heslo, které epilicious použije při synchronizaci záložek"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:7
-msgid "del.icio.us password"
-msgstr "Heslo pro del.icio.us"
+msgid "The username that epilicious will use for synchronizing bookmarks."
+msgstr "Uživatelské jméno, které epilicious použije při synchronizaci záložek"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:8
-msgid "del.icio.us username"
-msgstr "Uživatelské jméno pro del.icio.us"
+msgid "epilicious backend"
+msgstr "backend pro epilicious"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
+#: ../extensions/epilicious/epilicious.schemas.in.h:9
+msgid "password"
+msgstr "heslo"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:10
+msgid "username"
+msgstr "uživatelské jméno"
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Check _HTML"
 msgstr "Zkontrolovat _HTML"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:92
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "Zobrazit chyby HTML v dialogu Prohlížeče chyb"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:104
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _Links"
 msgstr "Zkontrolovat _odkazy"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:106
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr "Zobrazit neplatné odkazy v dialogu Prohlížeče chyb"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:110
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:103
 msgid "_Error Viewer"
 msgstr "_Prohlížeč chyb"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:112
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
 msgid "Display web page errors"
 msgstr "Zobrazovat chyby WWW stránek"
 
@@ -369,23 +393,39 @@ msgstr "_Vymazat"
 msgid "Error Viewer"
 msgstr "Prohlížeč chyb"
 
-#. Don't bother looking for source lines -- they're not there
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:96
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:105
 #, c-format
 msgid ""
-"Error:\n"
+"%s error in %s on line %d and column %d:\n"
 "%s"
 msgstr ""
-"Chyba:\n"
+"%s chyba v %s na řádce %d na pozici %d:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:126
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:113
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:137
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:150
 #, c-format
 msgid ""
-"Javascript error in %s on line %d:\n"
+"%s error in %s:\n"
 "%s"
 msgstr ""
-"Chyba Javascriptu v %s na řádku %d:\n"
+"%s chyba v %s:\n"
+"%s"
+
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
+#, c-format
+msgid ""
+"%s error in %s on line %d:\n"
+"%s"
+msgstr ""
+"%s chyba v %s na řádce %d:\n"
 "%s"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
@@ -409,11 +449,11 @@ msgstr ""
 #, c-format
 msgid "Checking %d Link on “%s”"
 msgid_plural "Checking %d Links on “%s”"
-msgstr[0] "Kontroluji %d odkaz v „%s”"
-msgstr[1] "Kontroluji %d odkazy v „%s”"
-msgstr[2] "Kontroluji %d odkazů v „%s”"
+msgstr[0] "Kontorluje se %d odkaz v „%s”"
+msgstr[1] "Kontorluje se %d odkazy v „%s”"
+msgstr[2] "Kontorluje se %d odkazů v „%s”"
 
-#: ../extensions/error-viewer/opensp/validate.cpp:167
+#: ../extensions/error-viewer/opensp/validate.cpp:168
 #, c-format
 msgid ""
 "HTML error in “%s” on line %s:\n"
@@ -422,7 +462,7 @@ msgstr ""
 "Chyba HTML v „%s” na řádku %s:\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:165
+#: ../extensions/error-viewer/sgml-validator.c:164
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
@@ -430,12 +470,12 @@ msgstr[0] "Nalezena %d chyba"
 msgstr[1] "Nalezeny %d chyby"
 msgstr[2] "Nalezeno %d chyb"
 
-#: ../extensions/error-viewer/sgml-validator.c:169
+#: ../extensions/error-viewer/sgml-validator.c:168
 #, c-format
 msgid "HTML Validation of “%s” complete"
 msgstr "Ověření platnosti HTML v „%s” dokončeno"
 
-#: ../extensions/error-viewer/sgml-validator.c:227
+#: ../extensions/error-viewer/sgml-validator.c:226
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -444,8 +484,8 @@ msgstr ""
 "Chyba HTML v %s:\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:229
-#: ../extensions/error-viewer/sgml-validator.c:245
+#: ../extensions/error-viewer/sgml-validator.c:228
+#: ../extensions/error-viewer/sgml-validator.c:244
 msgid ""
 "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
 "+xml” instead."
@@ -453,7 +493,7 @@ msgstr ""
 "Doctype je „XHTML”, ale typ obsahu je „text/html”. Použijte místo něj "
 "„application/xhtml+xml”."
 
-#: ../extensions/error-viewer/sgml-validator.c:243
+#: ../extensions/error-viewer/sgml-validator.c:242
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
@@ -462,20 +502,22 @@ msgstr ""
 "Varovnání HTML v %s:\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:360
+#: ../extensions/error-viewer/sgml-validator.c:359
 #, c-format
 msgid "HTML error in %s:"
 msgstr "Chyba HTML v %s:"
 
-#: ../extensions/error-viewer/sgml-validator.c:368
+#: ../extensions/error-viewer/sgml-validator.c:367
+#, c-format
 msgid "Invalid character encoding"
 msgstr "Neplatné kódování znaků"
 
-#: ../extensions/error-viewer/sgml-validator.c:373
+#: ../extensions/error-viewer/sgml-validator.c:372
+#, c-format
 msgid "Unknown error while converting to UTF-8"
 msgstr "Neznámá chyba při převodu do UTF-8"
 
-#: ../extensions/error-viewer/sgml-validator.c:435
+#: ../extensions/error-viewer/sgml-validator.c:434
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -484,12 +526,12 @@ msgstr ""
 "Chyba HTML v %s:\n"
 "Nebyl určen platný doctype."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:345
 msgid "Enabled"
 msgstr "Povoleno"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
-#: ../extensions/rss/rss-ui.c:599
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:353
+#: ../extensions/rss/rss-ui.c:571
 msgid "Description"
 msgstr "Popis"
 
@@ -501,32 +543,29 @@ msgstr "<b>Načtená rozšíření</b>"
 msgid "Extensions"
 msgstr "Rozšíření"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
-msgid "_Extensions..."
-msgstr "_Rozšíření..."
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:73
+msgid "_Extensions"
+msgstr "_Rozšíření"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
 msgid "Load and unload extensions"
 msgstr "Načíst a uvolnit rozšíření"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
-msgid "_Extensions"
-msgstr "_Rozšíření"
-
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
 msgid "Help about extensions"
 msgstr "Nápověda k rozšířením"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:78
 msgid "Install User _Script"
 msgstr "Nainstalovat uživatelský _skript"
 
 #. shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:80
 msgid "Install Greasemonkey script"
 msgstr "Nainstalovat skript Greasemonkey"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:354
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:311
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "Uživatelský skript v „%s” byl nainstalován"
@@ -540,7 +579,7 @@ msgstr "Konzola _Javy"
 msgid "Show Java Console"
 msgstr "Zobrazit konzolu Javy"
 
-#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:102
+#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:100
 msgid "_HTTP Headers"
 msgstr "_HTTP hlavičky"
 
@@ -557,183 +596,182 @@ msgid "<b>URLs</b>"
 msgstr "<b>URL</b>"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
-#, fuzzy
 msgid "Clear cache"
-msgstr "Cache v paměti"
+msgstr "Vymazat cache"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
 msgid "Live Headers"
-msgstr ""
+msgstr "Live Headers"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
 msgid "Remove headers"
 msgstr "Odstranit hlavičky"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/page-info/ephy-page-info-extension.c:61
 msgid "Pa_ge Information"
 msgstr "Informace o _stránce"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:69
+#: ../extensions/page-info/ephy-page-info-extension.c:63
 msgid "Display page information in a dialog"
 msgstr "Zobrazit informace o stránce v dialogu"
 
-#: ../extensions/page-info/page-info-dialog.c:730
+#: ../extensions/page-info/page-info-dialog.c:704
 msgid "Save As..."
 msgstr "Uložit jako..."
 
-#: ../extensions/page-info/page-info-dialog.c:747
+#: ../extensions/page-info/page-info-dialog.c:721
 msgid "Select a directory"
 msgstr "Zvolte adresář"
 
-#: ../extensions/page-info/page-info-dialog.c:796
+#: ../extensions/page-info/page-info-dialog.c:770
 msgid "Unknown type"
 msgstr "Neznámý typ"
 
-#: ../extensions/page-info/page-info-dialog.c:801
+#: ../extensions/page-info/page-info-dialog.c:775
 msgid "Full standards compliance"
 msgstr "Úplné splňování standardu"
 
-#: ../extensions/page-info/page-info-dialog.c:804
+#: ../extensions/page-info/page-info-dialog.c:778
 msgid "Almost standards compliance"
 msgstr "Téměř splňování standardu"
 
-#: ../extensions/page-info/page-info-dialog.c:807
+#: ../extensions/page-info/page-info-dialog.c:781
 msgid "Compatibility"
 msgstr "Kompatibilita"
 
-#: ../extensions/page-info/page-info-dialog.c:811
+#: ../extensions/page-info/page-info-dialog.c:785
 msgid "Undetermined"
 msgstr "Neurčeno"
 
-#: ../extensions/page-info/page-info-dialog.c:820
+#: ../extensions/page-info/page-info-dialog.c:794
 msgid "Not cached"
 msgstr "Nekešováno"
 
-#: ../extensions/page-info/page-info-dialog.c:823
+#: ../extensions/page-info/page-info-dialog.c:797
 msgid "Disk cache"
 msgstr "Cache na disku"
 
-#: ../extensions/page-info/page-info-dialog.c:826
+#: ../extensions/page-info/page-info-dialog.c:800
 msgid "Memory cache"
 msgstr "Cache v paměti"
 
-#: ../extensions/page-info/page-info-dialog.c:829
+#: ../extensions/page-info/page-info-dialog.c:803
 msgid "Unknown cache"
 msgstr "Neznámá cache"
 
-#: ../extensions/page-info/page-info-dialog.c:845
-#: ../extensions/page-info/page-info-dialog.c:961
+#: ../extensions/page-info/page-info-dialog.c:819
+#: ../extensions/page-info/page-info-dialog.c:935
 msgid "Unknown"
 msgstr "Neznámé"
 
-#: ../extensions/page-info/page-info-dialog.c:850
+#: ../extensions/page-info/page-info-dialog.c:824
 msgid "No referrer"
 msgstr "Žádný referrer"
 
-#: ../extensions/page-info/page-info-dialog.c:864
-#: ../extensions/page-info/page-info-dialog.c:880
+#: ../extensions/page-info/page-info-dialog.c:838
+#: ../extensions/page-info/page-info-dialog.c:854
 msgid "Not specified"
 msgstr "Neurčeno"
 
-#: ../extensions/page-info/page-info-dialog.c:943
+#: ../extensions/page-info/page-info-dialog.c:917
 msgid "Image"
 msgstr "Obrázek"
 
-#: ../extensions/page-info/page-info-dialog.c:946
+#: ../extensions/page-info/page-info-dialog.c:920
 msgid "Background image"
 msgstr "Obrázek na pozadí"
 
-#: ../extensions/page-info/page-info-dialog.c:949
+#: ../extensions/page-info/page-info-dialog.c:923
 msgid "Embed"
 msgstr "Vloženo"
 
-#: ../extensions/page-info/page-info-dialog.c:952
+#: ../extensions/page-info/page-info-dialog.c:926
 msgid "Object"
 msgstr "Objekt"
 
-#: ../extensions/page-info/page-info-dialog.c:955
+#: ../extensions/page-info/page-info-dialog.c:929
 msgid "Applet"
 msgstr "Aplet"
 
-#: ../extensions/page-info/page-info-dialog.c:958
+#: ../extensions/page-info/page-info-dialog.c:932
 msgid "Icon"
 msgstr "Ikona"
 
-#: ../extensions/page-info/page-info-dialog.c:1130
+#: ../extensions/page-info/page-info-dialog.c:1113
 msgid "_Open"
 msgstr "_Otevřít"
 
-#: ../extensions/page-info/page-info-dialog.c:1136
-#: ../extensions/page-info/page-info-dialog.c:1581
+#: ../extensions/page-info/page-info-dialog.c:1119
+#: ../extensions/page-info/page-info-dialog.c:1564
 msgid "_Copy Link Address"
 msgstr "_Kopírovat adresu odkazu"
 
-#: ../extensions/page-info/page-info-dialog.c:1142
+#: ../extensions/page-info/page-info-dialog.c:1125
 msgid "_Use as Background"
 msgstr "_Použít jako pozadí"
 
-#: ../extensions/page-info/page-info-dialog.c:1148
-#: ../extensions/page-info/page-info-dialog.c:1587
+#: ../extensions/page-info/page-info-dialog.c:1131
+#: ../extensions/page-info/page-info-dialog.c:1570
 msgid "_Save As..."
 msgstr "_Uložit jako..."
 
-#: ../extensions/page-info/page-info-dialog.c:1380
-#: ../extensions/page-info/page-info-dialog.c:1701
+#: ../extensions/page-info/page-info-dialog.c:1363
+#: ../extensions/page-info/page-info-dialog.c:1684
 msgid "Blocked"
 msgstr "Blokováno"
 
-#: ../extensions/page-info/page-info-dialog.c:1396
-#: ../extensions/page-info/page-info-dialog.c:1717
+#: ../extensions/page-info/page-info-dialog.c:1379
+#: ../extensions/page-info/page-info-dialog.c:1700
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1409
+#: ../extensions/page-info/page-info-dialog.c:1392
 msgid "Type"
 msgstr "Typ"
 
-#: ../extensions/page-info/page-info-dialog.c:1421
+#: ../extensions/page-info/page-info-dialog.c:1404
 msgid "Alt Text"
 msgstr "Alternativní text"
 
-#: ../extensions/page-info/page-info-dialog.c:1433
-#: ../extensions/page-info/page-info-dialog.c:1730
+#: ../extensions/page-info/page-info-dialog.c:1416
+#: ../extensions/page-info/page-info-dialog.c:1713
 msgid "Title"
 msgstr "Nadpis"
 
-#: ../extensions/page-info/page-info-dialog.c:1445
+#: ../extensions/page-info/page-info-dialog.c:1428
 msgid "Width"
 msgstr "Šířka"
 
-#: ../extensions/page-info/page-info-dialog.c:1457
+#: ../extensions/page-info/page-info-dialog.c:1440
 msgid "Height"
 msgstr "Výška"
 
-#: ../extensions/page-info/page-info-dialog.c:1742
+#: ../extensions/page-info/page-info-dialog.c:1725
 msgid "Relation"
 msgstr "Vztah"
 
-#: ../extensions/page-info/page-info-dialog.c:1891
-#: ../extensions/page-info/page-info-dialog.c:2032
+#: ../extensions/page-info/page-info-dialog.c:1874
+#: ../extensions/page-info/page-info-dialog.c:2015
 msgid "Name"
 msgstr "Název"
 
-#: ../extensions/page-info/page-info-dialog.c:1903
+#: ../extensions/page-info/page-info-dialog.c:1886
 msgid "Method"
 msgstr "Metoda"
 
-#: ../extensions/page-info/page-info-dialog.c:1917
+#: ../extensions/page-info/page-info-dialog.c:1900
 msgid "Action"
 msgstr "Akce"
 
-#: ../extensions/page-info/page-info-dialog.c:1998
+#: ../extensions/page-info/page-info-dialog.c:1981
 msgid "_Copy"
 msgstr "_Kopírovat"
 
-#: ../extensions/page-info/page-info-dialog.c:2044
+#: ../extensions/page-info/page-info-dialog.c:2027
 msgid "Content"
 msgstr "Obsah"
 
-#: ../extensions/page-info/page-info-dialog.c:2145
+#: ../extensions/page-info/page-info-dialog.c:2128
 msgid "Page Metadata"
 msgstr "Metadata stránky"
 
@@ -861,88 +899,88 @@ msgstr "Typ:"
 msgid "_Save Media As..."
 msgstr "_Uložit médium jako..."
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:180
+#: ../extensions/permissions/ephy-permissions-dialog.c:165
 msgid "allowed"
 msgstr "povoleno"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:184
+#: ../extensions/permissions/ephy-permissions-dialog.c:169
 msgid "denied"
 msgstr "zakázáno"
 
 #. Sometimes we get this... how did this get in the list!?
-#: ../extensions/permissions/ephy-permissions-dialog.c:189
+#: ../extensions/permissions/ephy-permissions-dialog.c:174
 msgid "default"
 msgstr "implicitní"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:515
+#: ../extensions/permissions/ephy-permissions-dialog.c:500
 msgid "Domain"
 msgstr "Doména"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:527
+#: ../extensions/permissions/ephy-permissions-dialog.c:512
 msgid "State"
 msgstr "Stav"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:620
+#: ../extensions/permissions/ephy-permissions-dialog.c:605
 msgid "Site Permissions"
 msgstr "Oprávnění serveru"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:647
+#: ../extensions/permissions/ephy-permissions-dialog.c:632
 msgid "Cookies"
 msgstr "Cookies"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:648
+#: ../extensions/permissions/ephy-permissions-dialog.c:633
 msgid "Images"
 msgstr "Obrázky"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:649
+#: ../extensions/permissions/ephy-permissions-dialog.c:634
 msgid "Popup Windows"
 msgstr "Vyskakovací okna"
 
 #. stock icon
-#: ../extensions/permissions/ephy-permissions-extension.c:156
+#: ../extensions/permissions/ephy-permissions-extension.c:152
 msgid "Site _Permissions"
 msgstr "_Oprávnění serveru"
 
 #. shortcut key
-#: ../extensions/permissions/ephy-permissions-extension.c:158
+#: ../extensions/permissions/ephy-permissions-extension.c:154
 msgid "Manage web site permissions"
 msgstr "Spravovat oprávnění WWW serverů"
 
-#: ../extensions/rss/ephy-rss-extension.c:90
+#: ../extensions/rss/ephy-rss-extension.c:79
 msgid "News Feeds Subscription"
 msgstr "Přihlášení k toku novinek"
 
-#: ../extensions/rss/ephy-rss-extension.c:92
+#: ../extensions/rss/ephy-rss-extension.c:81
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr ""
 "Přihlásit se k toku novinek tohoto WWW serveru ve vaší oblíbené čtečce "
 "novinek"
 
-#: ../extensions/rss/ephy-rss-extension.c:97
+#: ../extensions/rss/ephy-rss-extension.c:86
 msgid "_Subscribe to this feed"
 msgstr "_Přihlásit se k tomuto toku"
 
-#: ../extensions/rss/ephy-rss-extension.c:99
+#: ../extensions/rss/ephy-rss-extension.c:88
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Přihlásit se k tomuto toku ve vaší oblíbené čtečce novinek"
 
-#: ../extensions/rss/ephy-rss-extension.c:382
+#: ../extensions/rss/ephy-rss-extension.c:361
 msgid "Subscribe to site's news feed"
 msgstr "Přihlásit se k toku novinek serveru"
 
-#: ../extensions/rss/rss-ui.c:167
+#: ../extensions/rss/rss-ui.c:153
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr "<b><i>Nemohu kontaktovat čtečku toků, běží?</i></b>"
 
-#: ../extensions/rss/rss-ui.c:169
+#: ../extensions/rss/rss-ui.c:155
 msgid "Retry"
 msgstr "Zkusit znovu"
 
-#: ../extensions/rss/rss-ui.c:297
+#: ../extensions/rss/rss-ui.c:283
 msgid "_Copy Feed Address"
 msgstr "_Kopírovat adresu toku"
 
-#: ../extensions/rss/rss-ui.c:591
+#: ../extensions/rss/rss-ui.c:563
 msgid "Subscribe"
 msgstr "Přihlásit se"
 
@@ -959,84 +997,96 @@ msgstr "Přihlášení k toku novinek"
 msgid "_Subscribe"
 msgstr "_Přihlásit se"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:145
+#: ../extensions/select-stylesheet/ephy-css-menu.c:140
 msgid "Render the page without using a style"
 msgstr "Vykreslit stránku bez použití stylu"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:148
+#: ../extensions/select-stylesheet/ephy-css-menu.c:143
 msgid "Render the page using the default style"
 msgstr "Vykreslit stránku s implicitním stylem"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:151
+#: ../extensions/select-stylesheet/ephy-css-menu.c:146
 #, c-format
 msgid "Render the page using the “%s” style"
 msgstr "Vykreslit stránku se stylem „%s”"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:309
+#: ../extensions/select-stylesheet/ephy-css-menu.c:317
 msgid "St_yle"
 msgstr "_Styl"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:310
+#: ../extensions/select-stylesheet/ephy-css-menu.c:318
 msgid "Select a different style for this page"
 msgstr "Zvolte jiný styl pro tuto stránku"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:224
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
 msgid "Default"
 msgstr "Implicitní"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:235
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
 msgid "None"
 msgstr "Žádný"
 
-#: ../extensions/sidebar/ephy-sidebar.c:176
+#: ../extensions/sidebar/ephy-sidebar.c:167
 msgid "No Sidebars installed"
 msgstr "Nenainstalován žádný boční panel"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:105
+#: ../extensions/sidebar/ephy-sidebar-extension.c:88
 msgid "_Sidebar"
 msgstr "_Boční panel"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:106
+#: ../extensions/sidebar/ephy-sidebar-extension.c:89
 msgid "Show or hide the sidebar"
 msgstr "Zobrazit nebo skrýt boční panel"
 
+#: ../extensions/sidebar/ephy-sidebar-extension.c:306
+msgid "Do you really want to remove this sidebar?"
+msgstr "Opravdu chcete odstranit tento boční panel?"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:310
+msgid "There is no way to recover this sidebar after removal."
+msgstr "Neexistuje způsob, jak obnovit panel po jeho odstranění."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:312
+msgid "Remove Sidebar"
+msgstr "Odstranit boční panel"
+
 #. Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:408
+#: ../extensions/sidebar/ephy-sidebar-extension.c:459
 #, c-format
 msgid "The sidebar already contains “%s”"
 msgstr "Boční panel již obsahuje „%s”."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:412
+#: ../extensions/sidebar/ephy-sidebar-extension.c:463
 msgid ""
 "To use this sidebar, select it from the list of available sidebar pages."
 msgstr ""
 "Chcete-li použít tento boční panel, vyberte jej ze seznamu dostupných "
 "stránek bočního panelu."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:415
-#: ../extensions/sidebar/ephy-sidebar-extension.c:441
+#: ../extensions/sidebar/ephy-sidebar-extension.c:466
+#: ../extensions/sidebar/ephy-sidebar-extension.c:492
 msgid "Add Sidebar"
 msgstr "Přidat boční panel"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:435
+#: ../extensions/sidebar/ephy-sidebar-extension.c:486
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr "Přidat „%s” na boční panel?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:439
+#: ../extensions/sidebar/ephy-sidebar-extension.c:490
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr "Zdroj nové stránky bočního panelu je „%s”."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:445
+#: ../extensions/sidebar/ephy-sidebar-extension.c:496
 msgid "_Add Sidebar"
 msgstr "_Přidat boční panel"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:551
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
 msgid "_Look Up"
 msgstr "_Vyhledat"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:558
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:538
 msgid "_GNOME Dictionary"
 msgstr "_Slovník GNOME"
 
@@ -1054,13 +1104,21 @@ msgstr ""
 msgid "Execute arbitrary commands from the context menu"
 msgstr "Spouštět libovolné přikazy z kontextového menu"
 
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
+msgid "Ad Blocker"
+msgstr "Ad Blocker"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
+msgid "Block the pest!"
+msgstr "Blokujte otravy!"
+
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
 msgid "Auto Scroll"
 msgstr "Automatický posun"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
 msgid "Scroll on middle mouse click"
-msgstr "Posun při kliknutí prostředním tlačítkem"
+msgstr "Posun při stisku prostředního tlačítka"
 
 #: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
 msgid "Auto Reload Tab"
@@ -1083,8 +1141,8 @@ msgid "View the page certificate and manage the certificates"
 msgstr "Zobrazit certifikát stránky a spravovat certifikáty"
 
 #: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
-msgid "Synchronize bookmarks with del.icio.us"
-msgstr "Synchronizovat záložky s del.icio.us"
+msgid "Synchronize bookmarks with social bookmark sites"
+msgstr "Synchronizace záložek se stránkami sociálních sítí"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -1138,7 +1196,7 @@ msgstr "Umožnit přístup ke konzole zásuvného modulu Javy"
 
 #: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
 msgid "Live HTTP headers"
-msgstr ""
+msgstr "Live HTTP headers"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
@@ -1157,14 +1215,21 @@ msgid "Permissions"
 msgstr "Oprávnění"
 
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
-#, fuzzy
 msgid "Drag the page on middle mouse click"
-msgstr "Posun při kliknutí prostředním tlačítkem"
+msgstr "Přetažení stránky při stisknutém prostředním tlačítku"
 
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
 #, fuzzy
 msgid "Push Scroll"
-msgstr "Automatický posun"
+msgstr "Posun"
+
+#: ../extensions/python-console/python-console.ephy-extension.in.h:1
+msgid "Opens an interactive Python console"
+msgstr "Otevře internaktivní konzolu jazyka Python"
+
+#: ../extensions/python-console/python-console.ephy-extension.in.h:2
+msgid "Python Console"
+msgstr "Konzola Pythonu"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
@@ -1172,14 +1237,6 @@ msgid ""
 msgstr ""
 "Přihlásit se k toku novinek nabízenému WWW stránkou ve vaší oblíbené čtečce "
 "novinek"
-
-#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
-msgid "A sample extension with mozilla backend"
-msgstr "Ukázkové rozšíření s backendem mozilly"
-
-#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:2
-msgid "Sample (Mozilla)"
-msgstr "Ukázka (Mozilla)"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
 msgid "A sample extension"
@@ -1228,3 +1285,28 @@ msgstr "Indikuje nový obsah v kartách na pozadí"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Stavy karet"
+
+#~ msgid "A sample extension with mozilla backend"
+#~ msgstr "Ukázkové rozšíření s backendem mozilly"
+
+#~ msgid "Sample (Mozilla)"
+#~ msgstr "Ukázka (Mozilla)"
+
+#~ msgid "<b>Synchronizing with del.icio.us</b>"
+#~ msgstr "<b>Synchronizace s del.icio.us</b>"
+
+#~ msgid "del.icio.us password"
+#~ msgstr "Heslo pro del.icio.us"
+
+#~ msgid "del.icio.us username"
+#~ msgstr "Uživatelské jméno pro del.icio.us"
+
+#~ msgid ""
+#~ "Error:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Chyba:\n"
+#~ "%s"
+
+#~ msgid "_Extensions..."
+#~ msgstr "_Rozšíření..."
