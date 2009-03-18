@@ -1,3 +1,5 @@
+extensions/adblock/adblock.ui
+extensions/extensions-manager-ui/extensions-manager-ui.ui
 include/egg-editable-toolbar.h
 include/egg-toolbars-model.h
 include/ephy-debug.h
