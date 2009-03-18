@@ -56,4 +56,4 @@ extensionini_DATA = $(extensionini_in_files:.ephy-extension.in.in=.ephy-extensio
 CLEANFILES = $(extensionini_DATA) $(glade_DATA)
 DISTCLEANFILES = $(extensionini_DATA)
 
-EXTRA_DIST = $(patterns_DATA) $(extensionini_in_files) $(glade_DATA)
+EXTRA_DIST = $(patterns_DATA) $(extensionini_in_files) $(glade_in_files)
