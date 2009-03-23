@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2008-02-15 00:15+0100\n"
-"PO-Revision-Date: 2008-02-13 17:12+0100\n"
+"POT-Creation-Date: 2009-03-23 22:47+0100\n"
+"PO-Revision-Date: 2009-02-22 15:04+0100\n"
 "Last-Translator: David Planella Molas <david.planella@gmail.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "MIME-Version: 1.0\n"
@@ -92,19 +92,19 @@ msgstr "_Pàgines"
 msgid "Actions"
 msgstr "Accions"
 
-#: ../extensions/actions/ephy-actions-extension.c:113
+#: ../extensions/actions/ephy-actions-extension.c:112
 msgid "Actio_ns"
 msgstr "Accio_ns"
 
-#: ../extensions/actions/ephy-actions-extension.c:114
+#: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Customize actions"
 msgstr "Personalitza les accions"
 
-#: ../extensions/actions/ephy-actions-extension.c:437
+#: ../extensions/actions/ephy-actions-extension.c:436
 msgid "Could not run command"
 msgstr "No s'ha pogut executar l'ordre"
 
-#: ../extensions/actions/ephy-actions-extension.c:440
+#: ../extensions/actions/ephy-actions-extension.c:439
 msgid "Could not Run Command"
 msgstr "No s'ha pogut executar l'ordre"
 
@@ -132,7 +132,7 @@ msgstr "Propietats de «%s»"
 msgid "Action Properties"
 msgstr "Propietats de l'acció"
 
-#: ../extensions/adblock/adblock-ui.c:279
+#: ../extensions/adblock/adblock-ui.c:263
 msgid ""
 "This list is Copyright © its original author(G). It is relicensed under the "
 "GPL with permission.\n"
@@ -151,7 +151,7 @@ msgstr ""
 "en cas que hi tingueu problemes, hauríeu d'usar el sistema de seguiment "
 "d'errors del Bugzilla en lloc de dirigir-vos al seu autor original (G).\n"
 
-#: ../extensions/adblock/adblock-ui.c:497
+#: ../extensions/adblock/adblock-ui.c:481
 msgid "Pattern"
 msgstr "Patró"
 
@@ -168,7 +168,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>Actualitza les regles des del lloc web original</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:243
+#: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
 msgstr "Editor del blocador de publicitat"
 
@@ -188,55 +188,55 @@ msgstr "Filtres del Filterset.G"
 msgid "Whitelist"
 msgstr "Llista blanca"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:244
+#: ../extensions/adblock/ephy-adblock-extension.c:230
 msgid "Edit Adblock"
 msgstr "Edita el blocador de publicitat"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:311
+#: ../extensions/adblock/ephy-adblock-extension.c:299
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
 msgstr[0] "%d anunci ocult"
 msgstr[1] "%d anuncis ocults"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:84
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:81
 msgid "_Auto Reload"
 msgstr "_Actualització automàtica"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:86
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
 msgid "Reload the page periodically"
 msgstr "Actualitza la pàgina periòdicament"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:370
+#: ../extensions/cc-license-viewer/cc-license-viewer.py:373
 msgid "View Creative Commons license"
 msgstr "Mostra la llicència Creative Commons"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:176
+#: ../extensions/certificates/ephy-certificates-extension.c:163
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "Certificats"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:207
+#: ../extensions/certificates/ephy-certificates-extension.c:194
 msgid "Security Devices"
 msgstr "Dispositius de seguretat"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:219
+#: ../extensions/certificates/ephy-certificates-extension.c:206
 msgid "Manage _Certificates"
 msgstr "Gestiona els _certificats"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:221
+#: ../extensions/certificates/ephy-certificates-extension.c:208
 msgid "Manage your certificates"
 msgstr "Gestioneu els vostres certificats"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:225
+#: ../extensions/certificates/ephy-certificates-extension.c:212
 msgid "Manage Security _Devices"
 msgstr "Administra els _dispositius de seguretat"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:227
+#: ../extensions/certificates/ephy-certificates-extension.c:214
 msgid "Manage your security devices"
 msgstr "Administreu els vostres dispositius de seguretat"
 
@@ -304,8 +304,8 @@ msgstr "S'està sincronitzant amb %s"
 msgid "Synchronizing..."
 msgstr "S'està sincronitzant..."
 
-#: ../extensions/epilicious/epilicious.py.in:202
-#: ../extensions/epilicious/epilicious.py.in:220
+#: ../extensions/epilicious/epilicious.py.in:232
+#: ../extensions/epilicious/epilicious.py.in:250
 msgid "Epilicious Synchronize"
 msgstr "Sincronitza amb l'Epilicious"
 
@@ -335,10 +335,10 @@ msgstr "Tema compartit"
 #: ../extensions/epilicious/epilicious.schemas.in.h:5
 msgid ""
 "The backend that epilicious will use for synchronizing bookmarks. Allowed "
-"value: 'ma.gnolia'"
+"values: 'diigo', 'ma.gnolia'"
 msgstr ""
 "El rerefons que l'Epilicious utilitzarà per a sincronitzar les adreces "
-"d'interès. Es permeten els següents valors: «ma.gnolia»"
+"d'interès. Es permeten els següents valors: «diigo», «ma.gnolia»"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
 msgid "The password that epilicious will use for synchronizing bookmarks."
@@ -364,31 +364,31 @@ msgstr "contrasenya"
 msgid "username"
 msgstr "nom d'usuari"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:98
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Check _HTML"
 msgstr "Comprova l'_HTML"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:100
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:92
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "Visualitza els errors HTML en el diàleg de visualització d'errors"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _Links"
 msgstr "Comprova els en_llaços"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:107
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr ""
 "Visualitza els enllaços invàlids en el diàleg de visualització d'errors"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:111
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:103
 msgid "_Error Viewer"
 msgstr "Visualitzador d'_errors"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:113
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
 msgid "Display web page errors"
 msgstr "Visualitza els errors de les pàgines web"
 
@@ -400,7 +400,9 @@ msgstr "N_eteja"
 msgid "Error Viewer"
 msgstr "Visualitzador d'errors"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:103
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:105
 #, c-format
 msgid ""
 "%s error in %s on line %d and column %d:\n"
@@ -409,9 +411,11 @@ msgstr ""
 "S'ha produït l'error %s a %s, a la línia %d i columna %d:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:109
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:140
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:113
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:137
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:150
 #, c-format
 msgid ""
 "%s error in %s:\n"
@@ -420,7 +424,9 @@ msgstr ""
 "S'ha produït l'error %s a %s:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:123
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
 #, c-format
 msgid ""
 "%s error in %s on line %d:\n"
@@ -461,19 +467,19 @@ msgstr ""
 "S'ha produït un error d'HTML a «%s» a la línia %s:\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:165
+#: ../extensions/error-viewer/sgml-validator.c:164
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
 msgstr[0] "S'ha trobat %d error"
 msgstr[1] "S'han trobat %d errors"
 
-#: ../extensions/error-viewer/sgml-validator.c:169
+#: ../extensions/error-viewer/sgml-validator.c:168
 #, c-format
 msgid "HTML Validation of “%s” complete"
 msgstr "S'ha completat la validació HTML de «%s»"
 
-#: ../extensions/error-viewer/sgml-validator.c:227
+#: ../extensions/error-viewer/sgml-validator.c:226
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -482,16 +488,16 @@ msgstr ""
 "S'ha produït un error d'HTML a %s:\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:229
-#: ../extensions/error-viewer/sgml-validator.c:245
+#: ../extensions/error-viewer/sgml-validator.c:228
+#: ../extensions/error-viewer/sgml-validator.c:244
 msgid ""
 "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
 "+xml” instead."
 msgstr ""
-"El tipus de document és «XHTML» però el tipus de contingut és «text/html». "
-"Heu de fer servir «application/xhtml+xml»."
+"El tipus de document és «XHTML» però el tipus de contingut és «text/html». Heu "
+"de fer servir «application/xhtml+xml»."
 
-#: ../extensions/error-viewer/sgml-validator.c:243
+#: ../extensions/error-viewer/sgml-validator.c:242
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
@@ -500,22 +506,22 @@ msgstr ""
 "S'ha produït un avís HTML a %s:\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:360
+#: ../extensions/error-viewer/sgml-validator.c:359
 #, c-format
 msgid "HTML error in %s:"
 msgstr "S'ha produït un error d'HTML a %s:"
 
-#: ../extensions/error-viewer/sgml-validator.c:368
+#: ../extensions/error-viewer/sgml-validator.c:367
 #, c-format
 msgid "Invalid character encoding"
 msgstr "La codificació de caràcters és invàlida"
 
-#: ../extensions/error-viewer/sgml-validator.c:373
+#: ../extensions/error-viewer/sgml-validator.c:372
 #, c-format
 msgid "Unknown error while converting to UTF-8"
 msgstr "S'ha produït un error desconegut en convertir a UTF-8"
 
-#: ../extensions/error-viewer/sgml-validator.c:435
+#: ../extensions/error-viewer/sgml-validator.c:434
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -524,12 +530,12 @@ msgstr ""
 "S'ha produït un error HTML a %s:\n"
 "No s'ha especificat un tipus de document vàlid."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:345
 msgid "Enabled"
 msgstr "Habilitat"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
-#: ../extensions/rss/rss-ui.c:599
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:353
+#: ../extensions/rss/rss-ui.c:571
 msgid "Description"
 msgstr "Descripció"
 
@@ -541,29 +547,29 @@ msgstr "<b>Extensions carregades</b>"
 msgid "Extensions"
 msgstr "Extensions"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:73
 msgid "_Extensions"
 msgstr "_Extensions"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
 msgid "Load and unload extensions"
 msgstr "Carrega i descarrega extensions"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
 msgid "Help about extensions"
 msgstr "Ajuda de les extensions"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:88
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:78
 msgid "Install User _Script"
 msgstr "Instal·leu el fitxer de _seqüència d'usuari"
 
 #. shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:90
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:80
 msgid "Install Greasemonkey script"
 msgstr "Instal·leu la seqüència Greasemonkey"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:315
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:311
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "S'ha instal·lat el fitxer de seqüència de l'usuari a «%s»"
@@ -577,7 +583,7 @@ msgstr "Consola del _Java"
 msgid "Show Java Console"
 msgstr "Mostra la consola del Java"
 
-#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:102
+#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:100
 msgid "_HTTP Headers"
 msgstr "Capçaleres _HTTP"
 
@@ -605,171 +611,171 @@ msgstr "Capçaleres en viu"
 msgid "Remove headers"
 msgstr "Suprimeix les capçaleres"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:68
+#: ../extensions/page-info/ephy-page-info-extension.c:61
 msgid "Pa_ge Information"
 msgstr "Informació de la pà_gina"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:70
+#: ../extensions/page-info/ephy-page-info-extension.c:63
 msgid "Display page information in a dialog"
 msgstr "Mostra informació sobre la pàgina en un diàleg"
 
-#: ../extensions/page-info/page-info-dialog.c:730
+#: ../extensions/page-info/page-info-dialog.c:704
 msgid "Save As..."
 msgstr "Anomena i desa..."
 
-#: ../extensions/page-info/page-info-dialog.c:747
+#: ../extensions/page-info/page-info-dialog.c:721
 msgid "Select a directory"
 msgstr "Seleccioneu un directori"
 
-#: ../extensions/page-info/page-info-dialog.c:796
+#: ../extensions/page-info/page-info-dialog.c:770
 msgid "Unknown type"
 msgstr "Tipus desconegut"
 
-#: ../extensions/page-info/page-info-dialog.c:801
+#: ../extensions/page-info/page-info-dialog.c:775
 msgid "Full standards compliance"
 msgstr "Compleix els estàndards completament"
 
-#: ../extensions/page-info/page-info-dialog.c:804
+#: ../extensions/page-info/page-info-dialog.c:778
 msgid "Almost standards compliance"
 msgstr "Gairebé compleix els estàndards"
 
-#: ../extensions/page-info/page-info-dialog.c:807
+#: ../extensions/page-info/page-info-dialog.c:781
 msgid "Compatibility"
 msgstr "Compatibilitat"
 
-#: ../extensions/page-info/page-info-dialog.c:811
+#: ../extensions/page-info/page-info-dialog.c:785
 msgid "Undetermined"
 msgstr "Indeterminada"
 
-#: ../extensions/page-info/page-info-dialog.c:820
+#: ../extensions/page-info/page-info-dialog.c:794
 msgid "Not cached"
 msgstr "No es a la memòria cau"
 
-#: ../extensions/page-info/page-info-dialog.c:823
+#: ../extensions/page-info/page-info-dialog.c:797
 msgid "Disk cache"
 msgstr "Memòria cau del disc"
 
-#: ../extensions/page-info/page-info-dialog.c:826
+#: ../extensions/page-info/page-info-dialog.c:800
 msgid "Memory cache"
 msgstr "Memòria cau"
 
-#: ../extensions/page-info/page-info-dialog.c:829
+#: ../extensions/page-info/page-info-dialog.c:803
 msgid "Unknown cache"
 msgstr "Memòria cau desconeguda"
 
-#: ../extensions/page-info/page-info-dialog.c:845
-#: ../extensions/page-info/page-info-dialog.c:961
+#: ../extensions/page-info/page-info-dialog.c:819
+#: ../extensions/page-info/page-info-dialog.c:935
 msgid "Unknown"
 msgstr "Desconegut"
 
-#: ../extensions/page-info/page-info-dialog.c:850
+#: ../extensions/page-info/page-info-dialog.c:824
 msgid "No referrer"
 msgstr "Cap referent"
 
-#: ../extensions/page-info/page-info-dialog.c:864
-#: ../extensions/page-info/page-info-dialog.c:880
+#: ../extensions/page-info/page-info-dialog.c:838
+#: ../extensions/page-info/page-info-dialog.c:854
 msgid "Not specified"
 msgstr "No especificat"
 
-#: ../extensions/page-info/page-info-dialog.c:943
+#: ../extensions/page-info/page-info-dialog.c:917
 msgid "Image"
 msgstr "Imatge"
 
-#: ../extensions/page-info/page-info-dialog.c:946
+#: ../extensions/page-info/page-info-dialog.c:920
 msgid "Background image"
 msgstr "Imatge de fons"
 
-#: ../extensions/page-info/page-info-dialog.c:949
+#: ../extensions/page-info/page-info-dialog.c:923
 msgid "Embed"
 msgstr "Incrusta"
 
-#: ../extensions/page-info/page-info-dialog.c:952
+#: ../extensions/page-info/page-info-dialog.c:926
 msgid "Object"
 msgstr "Objecte"
 
-#: ../extensions/page-info/page-info-dialog.c:955
+#: ../extensions/page-info/page-info-dialog.c:929
 msgid "Applet"
 msgstr "Miniaplicació"
 
-#: ../extensions/page-info/page-info-dialog.c:958
+#: ../extensions/page-info/page-info-dialog.c:932
 msgid "Icon"
 msgstr "Icona"
 
-#: ../extensions/page-info/page-info-dialog.c:1130
+#: ../extensions/page-info/page-info-dialog.c:1113
 msgid "_Open"
 msgstr "_Obre"
 
-#: ../extensions/page-info/page-info-dialog.c:1136
-#: ../extensions/page-info/page-info-dialog.c:1581
+#: ../extensions/page-info/page-info-dialog.c:1119
+#: ../extensions/page-info/page-info-dialog.c:1564
 msgid "_Copy Link Address"
 msgstr "_Copia l'adreça de l'enllaç"
 
-#: ../extensions/page-info/page-info-dialog.c:1142
+#: ../extensions/page-info/page-info-dialog.c:1125
 msgid "_Use as Background"
 msgstr "_Usa la imatge com a fons"
 
-#: ../extensions/page-info/page-info-dialog.c:1148
-#: ../extensions/page-info/page-info-dialog.c:1587
+#: ../extensions/page-info/page-info-dialog.c:1131
+#: ../extensions/page-info/page-info-dialog.c:1570
 msgid "_Save As..."
 msgstr "_Anomena i desa..."
 
-#: ../extensions/page-info/page-info-dialog.c:1380
-#: ../extensions/page-info/page-info-dialog.c:1701
+#: ../extensions/page-info/page-info-dialog.c:1363
+#: ../extensions/page-info/page-info-dialog.c:1684
 msgid "Blocked"
 msgstr "Blocat"
 
-#: ../extensions/page-info/page-info-dialog.c:1396
-#: ../extensions/page-info/page-info-dialog.c:1717
+#: ../extensions/page-info/page-info-dialog.c:1379
+#: ../extensions/page-info/page-info-dialog.c:1700
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1409
+#: ../extensions/page-info/page-info-dialog.c:1392
 msgid "Type"
 msgstr "Tipus"
 
-#: ../extensions/page-info/page-info-dialog.c:1421
+#: ../extensions/page-info/page-info-dialog.c:1404
 msgid "Alt Text"
 msgstr "Text alternatiu"
 
-#: ../extensions/page-info/page-info-dialog.c:1433
-#: ../extensions/page-info/page-info-dialog.c:1730
+#: ../extensions/page-info/page-info-dialog.c:1416
+#: ../extensions/page-info/page-info-dialog.c:1713
 msgid "Title"
 msgstr "Títol"
 
-#: ../extensions/page-info/page-info-dialog.c:1445
+#: ../extensions/page-info/page-info-dialog.c:1428
 msgid "Width"
 msgstr "Amplada"
 
-#: ../extensions/page-info/page-info-dialog.c:1457
+#: ../extensions/page-info/page-info-dialog.c:1440
 msgid "Height"
 msgstr "Alçada"
 
-#: ../extensions/page-info/page-info-dialog.c:1742
+#: ../extensions/page-info/page-info-dialog.c:1725
 msgid "Relation"
 msgstr "Relació"
 
-#: ../extensions/page-info/page-info-dialog.c:1891
-#: ../extensions/page-info/page-info-dialog.c:2032
+#: ../extensions/page-info/page-info-dialog.c:1874
+#: ../extensions/page-info/page-info-dialog.c:2015
 msgid "Name"
 msgstr "Nom"
 
-#: ../extensions/page-info/page-info-dialog.c:1903
+#: ../extensions/page-info/page-info-dialog.c:1886
 msgid "Method"
 msgstr "Mètode"
 
-#: ../extensions/page-info/page-info-dialog.c:1917
+#: ../extensions/page-info/page-info-dialog.c:1900
 msgid "Action"
 msgstr "Acció"
 
-#: ../extensions/page-info/page-info-dialog.c:1998
+#: ../extensions/page-info/page-info-dialog.c:1981
 msgid "_Copy"
 msgstr "_Copia"
 
-#: ../extensions/page-info/page-info-dialog.c:2044
+#: ../extensions/page-info/page-info-dialog.c:2027
 msgid "Content"
 msgstr "Contingut"
 
-#: ../extensions/page-info/page-info-dialog.c:2145
+#: ../extensions/page-info/page-info-dialog.c:2128
 msgid "Page Metadata"
 msgstr "Metadades de la pàgina"
 
@@ -897,90 +903,90 @@ msgstr "Tipus:"
 msgid "_Save Media As..."
 msgstr "_Anomena i desa el suport..."
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:180
+#: ../extensions/permissions/ephy-permissions-dialog.c:165
 msgid "allowed"
 msgstr "permès"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:184
+#: ../extensions/permissions/ephy-permissions-dialog.c:169
 msgid "denied"
 msgstr "denegat"
 
 #. Sometimes we get this... how did this get in the list!?
-#: ../extensions/permissions/ephy-permissions-dialog.c:189
+#: ../extensions/permissions/ephy-permissions-dialog.c:174
 msgid "default"
 msgstr "Predeterminat"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:515
+#: ../extensions/permissions/ephy-permissions-dialog.c:500
 msgid "Domain"
 msgstr "Domini"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:527
+#: ../extensions/permissions/ephy-permissions-dialog.c:512
 msgid "State"
 msgstr "Estat"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:620
+#: ../extensions/permissions/ephy-permissions-dialog.c:605
 msgid "Site Permissions"
 msgstr "Permisos del lloc web"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:647
+#: ../extensions/permissions/ephy-permissions-dialog.c:632
 msgid "Cookies"
 msgstr "Galetes"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:648
+#: ../extensions/permissions/ephy-permissions-dialog.c:633
 msgid "Images"
 msgstr "Imatges"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:649
+#: ../extensions/permissions/ephy-permissions-dialog.c:634
 msgid "Popup Windows"
 msgstr "Finestres emergents"
 
 #. stock icon
-#: ../extensions/permissions/ephy-permissions-extension.c:156
+#: ../extensions/permissions/ephy-permissions-extension.c:152
 msgid "Site _Permissions"
 msgstr "_Permisos del lloc web"
 
 #. shortcut key
-#: ../extensions/permissions/ephy-permissions-extension.c:158
+#: ../extensions/permissions/ephy-permissions-extension.c:154
 msgid "Manage web site permissions"
 msgstr "Administra els permisos del lloc web"
 
-#: ../extensions/rss/ephy-rss-extension.c:91
+#: ../extensions/rss/ephy-rss-extension.c:79
 msgid "News Feeds Subscription"
 msgstr "Subscripció a canals de notícies"
 
-#: ../extensions/rss/ephy-rss-extension.c:93
+#: ../extensions/rss/ephy-rss-extension.c:81
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr ""
 "Subscriviu-vos al canal de notícies d'aquest web utilitzant el vostre lector "
 "de notícies preferit"
 
-#: ../extensions/rss/ephy-rss-extension.c:98
+#: ../extensions/rss/ephy-rss-extension.c:86
 msgid "_Subscribe to this feed"
 msgstr "_Subscriviu-vos al canal"
 
-#: ../extensions/rss/ephy-rss-extension.c:100
+#: ../extensions/rss/ephy-rss-extension.c:88
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Subscriviu-vos al canal amb el vostre lector de notícies preferit"
 
-#: ../extensions/rss/ephy-rss-extension.c:373
+#: ../extensions/rss/ephy-rss-extension.c:361
 msgid "Subscribe to site's news feed"
 msgstr "Subscriviu-vos al canal de notícies del lloc web"
 
-#: ../extensions/rss/rss-ui.c:167
+#: ../extensions/rss/rss-ui.c:153
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr ""
 "<b><i>No s'ha pogut contactar amb el lector de canals de notícies; s'està "
 "executant?</i></b>"
 
-#: ../extensions/rss/rss-ui.c:169
+#: ../extensions/rss/rss-ui.c:155
 msgid "Retry"
 msgstr "Reintenta"
 
-#: ../extensions/rss/rss-ui.c:297
+#: ../extensions/rss/rss-ui.c:283
 msgid "_Copy Feed Address"
 msgstr "_Copia l'adreça del canal"
 
-#: ../extensions/rss/rss-ui.c:591
+#: ../extensions/rss/rss-ui.c:563
 msgid "Subscribe"
 msgstr "Subscriu"
 
@@ -997,96 +1003,96 @@ msgstr "Subscripció a canals de notícies"
 msgid "_Subscribe"
 msgstr "_Subscriu-m'hi"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:146
+#: ../extensions/select-stylesheet/ephy-css-menu.c:140
 msgid "Render the page without using a style"
 msgstr "Representa la pàgina sense utilitzar cap estil"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:149
+#: ../extensions/select-stylesheet/ephy-css-menu.c:143
 msgid "Render the page using the default style"
 msgstr "Representa la pàgina utilitzant l'estil per defecte"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:152
+#: ../extensions/select-stylesheet/ephy-css-menu.c:146
 #, c-format
 msgid "Render the page using the “%s” style"
 msgstr "Representa la pàgina utilitzant l'estil «%s»"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:323
+#: ../extensions/select-stylesheet/ephy-css-menu.c:317
 msgid "St_yle"
 msgstr "E_stil"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:324
+#: ../extensions/select-stylesheet/ephy-css-menu.c:318
 msgid "Select a different style for this page"
 msgstr "Selecciona un estil diferent per a aquesta pàgina"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:224
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
 msgid "Default"
 msgstr "Predeterminat"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:235
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
 msgid "None"
 msgstr "Cap"
 
-#: ../extensions/sidebar/ephy-sidebar.c:176
+#: ../extensions/sidebar/ephy-sidebar.c:167
 msgid "No Sidebars installed"
 msgstr "No hi ha cap barra lateral instal·lada"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:105
+#: ../extensions/sidebar/ephy-sidebar-extension.c:88
 msgid "_Sidebar"
 msgstr "Barra _lateral"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:106
+#: ../extensions/sidebar/ephy-sidebar-extension.c:89
 msgid "Show or hide the sidebar"
 msgstr "Mostra o amaga la barra lateral"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:323
+#: ../extensions/sidebar/ephy-sidebar-extension.c:306
 msgid "Do you really want to remove this sidebar?"
 msgstr "Esteu segur de voler suprimir aquesta barra lateral?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:327
+#: ../extensions/sidebar/ephy-sidebar-extension.c:310
 msgid "There is no way to recover this sidebar after removal."
 msgstr "Un cop s'hagi suprimit aquesta barra lateral no es podrà recuperar."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:329
+#: ../extensions/sidebar/ephy-sidebar-extension.c:312
 msgid "Remove Sidebar"
 msgstr "Suprimeix la barra lateral"
 
 #. Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:476
+#: ../extensions/sidebar/ephy-sidebar-extension.c:459
 #, c-format
 msgid "The sidebar already contains “%s”"
 msgstr "«%s» ja és a la barra lateral"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:480
+#: ../extensions/sidebar/ephy-sidebar-extension.c:463
 msgid ""
 "To use this sidebar, select it from the list of available sidebar pages."
 msgstr ""
 "Per a utilitzar aquesta barra lateral, seleccioneu-la a la llista de barres "
 "laterals disponibles."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:483
-#: ../extensions/sidebar/ephy-sidebar-extension.c:509
+#: ../extensions/sidebar/ephy-sidebar-extension.c:466
+#: ../extensions/sidebar/ephy-sidebar-extension.c:492
 msgid "Add Sidebar"
 msgstr "Afegeix la barra lateral"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:503
+#: ../extensions/sidebar/ephy-sidebar-extension.c:486
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr "Voleu afegir «%s» a la barra lateral?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:507
+#: ../extensions/sidebar/ephy-sidebar-extension.c:490
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr "L'origen de la pàgina nova de la barra lateral és «%s»."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:513
+#: ../extensions/sidebar/ephy-sidebar-extension.c:496
 msgid "_Add Sidebar"
 msgstr "_Afegeix la barra lateral"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:542
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
 msgid "_Look Up"
 msgstr "_Cerca"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:549
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:538
 msgid "_GNOME Dictionary"
 msgstr "Diccionari del _GNOME"
 
@@ -1244,14 +1250,6 @@ msgstr ""
 "Subscriviu-vos al canal de notícies ofert per la pàgina web utilitzant el "
 "vostre lector de notícies preferit"
 
-#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
-msgid "A sample extension with mozilla backend"
-msgstr "Una extensió d'exemple amb el rerefons del Mozilla"
-
-#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:2
-msgid "Sample (Mozilla)"
-msgstr "Exemple (Mozilla)"
-
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
 msgid "A sample extension"
 msgstr "Una extensió d'exemple"
@@ -1300,6 +1298,12 @@ msgstr "Indica contingut nou a les pestanyes en segon pla"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Estat de les pestanyes"
+
+#~ msgid "A sample extension with mozilla backend"
+#~ msgstr "Una extensió d'exemple amb el rerefons del Mozilla"
+
+#~ msgid "Sample (Mozilla)"
+#~ msgstr "Exemple (Mozilla)"
 
 #~ msgid "_Extensions..."
 #~ msgstr "_Extensions..."
