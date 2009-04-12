@@ -434,7 +434,8 @@ ephy_actions_extension_run_action (GtkAction *ui_action,
 			(GTK_WINDOW (window), GTK_DIALOG_DESTROY_WITH_PARENT,
 			 GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
 			 _("Could not run command"));
-		gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG(dialog), err->message);
+		gtk_message_dialog_format_secondary_text
+			(GTK_MESSAGE_DIALOG(dialog), err->message, NULL);
 		gtk_window_set_icon_name (GTK_WINDOW (dialog), "web-browser");
 		gtk_window_set_title (GTK_WINDOW(window), _("Could not Run Command"));
 		g_error_free (err);
