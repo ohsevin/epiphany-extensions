@@ -185,6 +185,26 @@ ephy_auto_scroller_grab_notify_cb (GtkWidget *widget,
 	}
 }
 
+static void
+ephy_auto_scroller_scroll_pixels (EphyEmbed *embed, int scroll_x, int scroll_y)
+{
+        GtkWidget *child;
+        GtkAdjustment *adj;
+        gdouble value;
+
+        child = gtk_bin_get_child (GTK_BIN (embed));
+        g_return_if_fail (child);
+        g_return_if_fail (GTK_IS_SCROLLED_WINDOW (child));
+
+        adj = gtk_scrolled_window_get_hadjustment (GTK_SCROLLED_WINDOW (child));
+        value = gtk_adjustment_get_value (adj);
+        gtk_adjustment_set_value (adj, value + scroll_x);
+
+        adj = gtk_scrolled_window_get_vadjustment (GTK_SCROLLED_WINDOW (child));
+        value = gtk_adjustment_get_value (adj);
+        gtk_adjustment_set_value (adj, value + scroll_y);
+}
+
 static int
 ephy_auto_scroller_timeout_cb (EphyAutoScroller *scroller)
 {
@@ -232,7 +252,7 @@ ephy_auto_scroller_timeout_cb (EphyAutoScroller *scroller)
 	/* do scrolling, moving at a constart speed regardless of the
 	 * scrolling delay */
 
-	ephy_embed_scroll_pixels (priv->embed, scroll_step_x_int, scroll_step_y_int);
+	ephy_auto_scroller_scroll_pixels (priv->embed, scroll_step_x_int, scroll_step_y_int);
 
 	/* find out how long the scroll took */
 	gettimeofday (&finish_time, NULL);
