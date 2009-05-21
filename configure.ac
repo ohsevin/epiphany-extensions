@@ -170,7 +170,7 @@ AC_MSG_CHECKING([which extensions to build])
 
 ALL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures greasemonkey java-console livehttpheaders page-info permissions push-scroller rss sample select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 USEFUL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
-DEFAULT_EXTENSIONS="actions adblock auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
+DEFAULT_EXTENSIONS="actions adblock auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks tab-groups tab-states greasemonkey"
 
 PYTHON_ALL_EXTENSIONS="python-console sample-python favicon cc-license-viewer epilicious"
 PYTHON_USEFUL_EXTENSIONS="python-console favicon cc-license-viewer"
@@ -253,49 +253,6 @@ if echo "$EXTENSIONS" | egrep '(^| )(rss)($| )' > /dev/null; then
 	DBUS_GLIB_REQUIRED=0.34
 
 	PKG_CHECK_MODULES([DBUS], [dbus-1 >= $DBUS_REQUIRED dbus-glib-1 >= $DBUS_GLIB_REQUIRED])
-fi
-
-# ****
-# PCRE
-# ****
-
-if echo "$EXTENSIONS" | egrep '(^| )(greasemonkey)($| )' > /dev/null; then
-	AC_PATH_PROG([PCRE_CONFIG], [pcre-config], [no])
-
-	if test "x$PCRE_CONFIG" = "xno"; then
-		AC_ERROR([pcre development files not found])
-	fi
-
-	PCRE_CFLAGS="$($PCRE_CONFIG --cflags)"
-	AC_SUBST([PCRE_CFLAGS])
-	PCRE_LIBS="$($PCRE_CONFIG --libs)"
-	AC_SUBST([PCRE_LIBS])
-
-	pcre_saved_CFLAGS=$CFLAGS
-	pcre_saved_LIBS=$LIBS
-	CFLAGS="$CFLAGS $PCRE_CFLAGS"
-	LIBS="$LIBS $PCRE_LIBS"
-
-	AC_CACHE_CHECK([whether libpcre was compiled with UTF-8 support],
-		[ac_cv_have_preg_utf8_support],
-		[AC_RUN_IFELSE(
-		 	[AC_LANG_SOURCE(
-				 [[#include <pcre.h>
-
-				   int main() {
-				     int t;
-				     return (pcre_config (PCRE_CONFIG_UTF8, &t) || !t);
-				   }]])],
-			[ac_cv_have_preg_utf8_support="yes"],
-			[ac_cv_have_preg_utf8_support="no"],
-			[ac_cv_have_preg_utf8_support="maybe"])])
-
-	CFLAGS=$pcre_saved_CFLAGS
-	LIBS=$pcre_saved_LIBS
-
-	if test "$ac_cv_have_preg_utf8_support" != "yes"; then
-		AC_ERROR([pcre does not support utf-8])
-	fi
 fi
 
 # ******

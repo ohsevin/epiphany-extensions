@@ -15,7 +15,6 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  *
- *  $Id$
  */
 
 #include "config.h"
@@ -25,8 +24,6 @@
 
 #include <glib/gi18n-lib.h>
 #include <gmodule.h>
-
-#include <pcre.h>
 
 #include <string.h>
 
@@ -66,7 +63,7 @@ enum
 typedef struct
 {
 	char *str;
-	pcre *re;
+	GRegex *re;
 } UrlMatcher;
 
 static GObjectClass *parent_class = NULL;
@@ -77,17 +74,11 @@ static gint
 matcher_url_cmp (const UrlMatcher *matcher,
 		 const char *url)
 {
-	int res;
+	gboolean match;
 
-	res = pcre_exec (matcher->re, NULL, url, strlen (url), 0,
-			 PCRE_NO_UTF8_CHECK, NULL, 0);
+	match = g_regex_match (matcher->re, url, 0, NULL);
 
-	if (res >= 0)
-	{
-		return 0;
-	}
-
-	return 1;
+	return match ? 0 : 1;
 }
 
 gboolean
@@ -282,13 +273,12 @@ find_tld_pos (const char *s)
 	return 0;
 }
 
-static pcre *
+static GRegex *
 build_preg (const char *s)
 {
 	GString *preg_str;
-	pcre *preg;
-	const char *err;
-	int erroffset;
+	GRegex *preg;
+	GError *error = NULL;
 	int tld_pos;
 
 	preg_str = g_string_new (NULL);
@@ -338,13 +328,14 @@ build_preg (const char *s)
 
 	LOG ("Matching against %s", preg_str->str);
 
-	preg = pcre_compile (preg_str->str, PCRE_UTF8, &err, &erroffset, NULL);
+	preg = g_regex_new (preg_str->str, G_REGEX_OPTIMIZE, 0, &error); 
 
 	if (preg == NULL)
 	{
 		g_warning ("Could not compile expression \"%s\"\n"
-			   "Error at column %d: %s",
-			   preg_str->str, erroffset, err);
+			   "Error: %s",
+			   preg_str->str, error->message);
+		g_error_free (error);
 	}
 
 	g_string_free (preg_str, TRUE);
@@ -356,7 +347,7 @@ static GList *
 matchers_for_patterns (const GList *patterns)
 {
 	GList *ret;
-	pcre *re;
+	GRegex *re;
 	UrlMatcher *matcher;
 
 	ret = NULL;
@@ -429,7 +420,7 @@ static void
 url_matcher_free (UrlMatcher *matcher)
 {
 	g_free (matcher->str);
-	g_free (matcher->re);
+	g_regex_unref (matcher->re);
 	g_free (matcher);
 }
 
