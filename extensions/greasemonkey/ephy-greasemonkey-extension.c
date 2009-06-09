@@ -339,8 +339,7 @@ ephy_greasemonkey_extension_install_cb (GtkAction *action,
 
 	LOG ("Installing script at '%s'", url);
 
-	persist = EPHY_EMBED_PERSIST
-		(ephy_embed_factory_new_object (EPHY_TYPE_EMBED_PERSIST));
+	persist = g_object_new (EPHY_TYPE_EMBED_PERSIST, NULL);
 
 	ephy_embed_persist_set_source (persist, url);
 	ephy_embed_persist_set_embed (persist, embed);

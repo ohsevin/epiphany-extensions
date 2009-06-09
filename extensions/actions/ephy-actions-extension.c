@@ -497,7 +497,7 @@ ephy_actions_extension_document_popup_cb (GtkAction *action,
 	}
 
 	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
-	url = ephy_embed_get_location (embed, TRUE);
+	url = ephy_web_view_get_location (EPHY_GET_EPHY_WEB_VIEW_FROM_EMBED (embed), TRUE);
 	ephy_actions_extension_run_action (action, window, url);
 	g_free (url);
 }

@@ -173,7 +173,7 @@ sync_active_tab (EphyWindow *window,
 
 	active_tab = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 
-	if (ephy_embed_get_load_status (active_tab) == FALSE)
+	if (ephy_web_view_get_load_status (EPHY_GET_EPHY_WEB_VIEW_FROM_EMBED (active_tab)) == FALSE)
 	{
 		/* mark the tab as read */
 		label = get_real_tab_label (window, active_tab);
@@ -201,7 +201,7 @@ sync_load_status (EphyEmbed *tab,
 	window = EPHY_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (tab)));
 	g_return_if_fail (window != NULL);
 
-	loading = ephy_embed_get_load_status (tab);
+	loading = ephy_web_view_get_load_status (EPHY_GET_EPHY_WEB_VIEW_FROM_EMBED (tab));
 
 	if (loading)
 	{

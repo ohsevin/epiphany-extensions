@@ -68,6 +68,26 @@ ephy_push_scroller_set_window (EphyPushScroller *scroller,
 	priv->window = window;
 }
 
+static void
+ephy_push_scroller_scroll_pixels (EphyEmbed *embed, int scroll_x, int scroll_y)
+{
+        GtkWidget *child;
+        GtkAdjustment *adj;
+        gdouble value;
+
+        child = gtk_bin_get_child (GTK_BIN (embed));
+        g_return_if_fail (child);
+        g_return_if_fail (GTK_IS_SCROLLED_WINDOW (child));
+
+        adj = gtk_scrolled_window_get_hadjustment (GTK_SCROLLED_WINDOW (child));
+        value = gtk_adjustment_get_value (adj);
+        gtk_adjustment_set_value (adj, value + scroll_x);
+
+        adj = gtk_scrolled_window_get_vadjustment (GTK_SCROLLED_WINDOW (child));
+        value = gtk_adjustment_get_value (adj);
+        gtk_adjustment_set_value (adj, value + scroll_y);
+}
+
 static gboolean
 ephy_push_scroller_motion_cb (GtkWidget *widget,
 			      GdkEventMotion *event,
@@ -88,7 +108,7 @@ ephy_push_scroller_motion_cb (GtkWidget *widget,
 	y_dist_abs = abs (y_dist);
 
 	/* scroll */
-	ephy_embed_scroll_pixels (priv->embed, x_dist, y_dist);
+	ephy_push_scroller_scroll_pixels (priv->embed, x_dist, y_dist);
 
 	priv->start_x = event->x_root;
 	priv->start_y = event->y_root;
