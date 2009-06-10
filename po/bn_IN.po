@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bn_IN\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions&component=general\n"
-"POT-Creation-Date: 2009-01-16 13:16+0000\n"
-"PO-Revision-Date: 2009-01-19 18:09+0530\n"
+"POT-Creation-Date: 2009-04-18 17:50+0000\n"
+"PO-Revision-Date: 2009-06-10 11:52+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
-"Language-Team: Bengali INDIA <fedora-trans-bn_IN@redhat.com>\n"
+"Language-Team: Bengali INDIA <discuss@lists.ankur.org.in>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../extensions/actions/action-properties.glade.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">প্রযোজ্য স্থান</span>"
 
 #: ../extensions/actions/action-properties.glade.h:2
 msgid "<span weight=\"bold\">General</span>"
@@ -29,13 +29,17 @@ msgstr "<span weight=\"bold\">সাধারণ</span>"
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "images."
-msgstr "এই বিকল্পটি সক্রিয় করা হলে ছবির সাথে প্রদর্শিত পপ-আপ মেনুর মধ্যে এই কর্ম অন্তর্ভুক্ত করা হবে।"
+msgstr ""
+"এই বিকল্পটি সক্রিয় করা হলে ছবির সাথে প্রদর্শিত পপ-আপ মেনুর মধ্যে এই কর্ম অন্তর্ভুক্ত "
+"করা হবে।"
 
 #: ../extensions/actions/action-properties.glade.h:4
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "links and pages."
-msgstr "এই বিকল্পটি সক্রিয় করা হলে লিংক ও পেজের সাথে প্রদর্শিত পপ-আপ মেনুর মধ্যে এই কর্ম অন্তর্ভুক্ত করা হবে।"
+msgstr ""
+"এই বিকল্পটি সক্রিয় করা হলে লিংক ও পেজের সাথে প্রদর্শিত পপ-আপ মেনুর মধ্যে এই কর্ম "
+"অন্তর্ভুক্ত করা হবে।"
 
 #: ../extensions/actions/action-properties.glade.h:5
 msgid "The action description."
@@ -45,13 +49,17 @@ msgstr "কর্মের বিবরণ।"
 msgid ""
 "The action name. If a character is preceded by an underscore, that character "
 "will be used as the access key for the menu item."
-msgstr "কর্মের নাম। কোনো অক্ষরের পূর্বে আন্ডার-স্কোর চিহ্ন প্রদর্শন করা হলে, সংশ্লিষ্ট অক্ষরটি ঐ মেনুর বস্তুর অ্যাকসেস-কি রূপে ব্যবহার করা হবে।"
+msgstr ""
+"কর্মের নাম। কোনো অক্ষরের পূর্বে আন্ডার-স্কোর চিহ্ন প্রদর্শন করা হলে, সংশ্লিষ্ট অক্ষরটি ঐ "
+"মেনুর বস্তুর অ্যাকসেস-কি রূপে ব্যবহার করা হবে।"
 
 #: ../extensions/actions/action-properties.glade.h:7
 msgid ""
 "The command to execute when the action is activated. The URL of the link, "
 "image or page will be appended to the command."
-msgstr "কর্ম সক্রিয় করা হলে, সঞ্চালনযোগ্য কমান্ড। লিংক, ছবি অথবা পৃষ্ঠার URL, কমান্ডের সাথে সংযোজন করা হবে।"
+msgstr ""
+"কর্ম সক্রিয় করা হলে, সঞ্চালনযোগ্য কমান্ড। লিংক, ছবি অথবা পৃষ্ঠার URL, কমান্ডের সাথে "
+"সংযোজন করা হবে।"
 
 #: ../extensions/actions/action-properties.glade.h:8
 msgid "_Command:"
@@ -91,7 +99,7 @@ msgstr "স্বনির্ধারিত কর্ম"
 msgid "Could not run command"
 msgstr "কমান্ড সঞ্চালন করতে ব্যর্থ"
 
-#: ../extensions/actions/ephy-actions-extension.c:439
+#: ../extensions/actions/ephy-actions-extension.c:440
 msgid "Could not Run Command"
 msgstr "কমান্ড সঞ্চালন করতে ব্যর্থ"
 
@@ -129,10 +137,14 @@ msgid ""
 "approved by the original author;\n"
 "direct any problems to Bugzilla and not to the original author (G).\n"
 msgstr ""
+"এই তালিকাটি, মূল নির্মাতার(G) স্বত্বাধীন © ও তাঁর অনুমতি সহ GPL-র অধীন এটি পুনরায় লাইসেন্স করা হয়েছে।\n"
+"মূল তালিকা Filterset.G-টি http://www.pierceive.com/filtersetg/-এ পাওয়া যাবে।\n"
+"এই সংস্করণে ও মূল সংস্করণের মধ্যে কিছু পার্থক্য রয়েছে এবং পরিবর্তনগুলি মূল নির্মাতা দ্বারা অনুমোদিত হয়নি।\n"
+"কোনো সমস্যা দেখা দিলে মূল নির্মাতাকে (G) সূচিত না করে Bugzilla-তে সেগুলি দায়ের করুন।\n"
 
 #: ../extensions/adblock/adblock-ui.c:481
 msgid "Pattern"
-msgstr ""
+msgstr "বিন্যাস"
 
 #: ../extensions/adblock/adblock.glade.h:1
 msgid "<b>Courtesy of Graham Pierce</b>"
@@ -147,7 +159,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>মূল সাইট থেকে নিয়ম আপডেট করা হবে</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:230
+#: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
 msgstr "Adblock সম্পাদন ব্যবস্থা"
 
@@ -157,21 +169,21 @@ msgstr "নতুন নিয়ম যোগ করুন"
 
 #: ../extensions/adblock/adblock.glade.h:6
 msgid "Blacklist"
-msgstr ""
+msgstr "দাগী-তালিকা"
 
 #: ../extensions/adblock/adblock.glade.h:7
 msgid "Filterset.G"
-msgstr ""
+msgstr "Filterset.G"
 
 #: ../extensions/adblock/adblock.glade.h:8
 msgid "Whitelist"
-msgstr ""
+msgstr "শ্বেত-তালিকা"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:231
+#: ../extensions/adblock/ephy-adblock-extension.c:230
 msgid "Edit Adblock"
 msgstr "Adblock সম্পাদন করুন"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:298
+#: ../extensions/adblock/ephy-adblock-extension.c:299
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -233,11 +245,11 @@ msgstr "ব্যাক-এন্ড: (_B)"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:4
 msgid "_Exclude"
-msgstr ""
+msgstr "অন্তর্ভুক্ত করা হবে না (_E)"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:5
 msgid "_Include"
-msgstr ""
+msgstr "অন্তর্ভুক্ত করা হবে (_I)"
 
 #: ../extensions/epilicious/epilicious-config.glade.h:7
 msgid "_Password:"
@@ -271,7 +283,7 @@ msgstr "সুসংগত করার জন্য পূর্বে ব্�
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:7
 msgid "Saving new synch point"
-msgstr ""
+msgstr "নতুন synch পয়েন্ট সংরক্ষণ করা হচ্ছে"
 
 #: ../extensions/epilicious/epilicious-progress.glade.h:9
 #: ../extensions/epilicious/progress.py:39
@@ -283,8 +295,8 @@ msgstr "%s-র সাথে সুসংগত করা হচ্ছে"
 msgid "Synchronizing..."
 msgstr "সুসংগত করা হচ্ছে..."
 
-#: ../extensions/epilicious/epilicious.py.in:202
-#: ../extensions/epilicious/epilicious.py.in:220
+#: ../extensions/epilicious/epilicious.py.in:232
+#: ../extensions/epilicious/epilicious.py.in:250
 msgid "Epilicious Synchronize"
 msgstr "Epilicious সুসংগত করুন"
 
@@ -297,21 +309,26 @@ msgid ""
 "Controls the function of the topic. If this is unset then all bookmarks with "
 "the topic will be synched. If this is set then all bookmarks without the "
 "topic will be synched."
-msgstr ""
+msgstr "বিষয় সংক্রান্ত কর্ম নিয়ন্ত্রণ করতে ব্যবহৃত হয়। এই মান নির্ধারণ না করা হলে, চিহ্নিত বিষয়ের জন্য ধার্য সকল বুকমার্কগুলি synch করা হবে ও মান নির্ধারণ করা হলে, সংশ্লিষ্ট বিষয়বিহীন বুকমার্ক synch করা হবে।"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:3
 msgid "Exclude topic"
-msgstr ""
+msgstr "বিষয় অন্তর্ভুক্ত করা হবে না"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:4
 msgid "Shared topic"
-msgstr ""
+msgstr "শেয়ার করা বিষয়"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:5
+#| msgid ""
+#| "The backend that epilicious will use for synchronizing bookmarks. Allowed "
+#| "value: 'ma.gnolia'"
 msgid ""
 "The backend that epilicious will use for synchronizing bookmarks. Allowed "
-"value: 'ma.gnolia'"
-msgstr "বুকমার্ক সুসংগত করার জন্য epilicious দ্বারা ব্যবহারযোগ্য ব্যাক-এন্ড। ব্যবহারযোগ্য মান: 'ma.gnolia'"
+"values: 'diigo', 'ma.gnolia'"
+msgstr ""
+"বুকমার্ক সুসংগত করার জন্য epilicious দ্বারা ব্যবহারযোগ্য ব্যাক-এন্ড। ব্যবহারযোগ্য মান: "
+" 'diigo', 'ma.gnolia'"
 
 #: ../extensions/epilicious/epilicious.schemas.in.h:6
 msgid "The password that epilicious will use for synchronizing bookmarks."
@@ -462,8 +479,8 @@ msgid ""
 "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
 "+xml” instead."
 msgstr ""
-"Doctype “XHTML” হলেও, অন্তর্ভুক্ত বিষয়বস্তু “text/html” বিন্যাসে রয়েছে।  পরিবর্তে“application/xhtml"
-"+xml” প্রয়োগ করুন।"
+"Doctype “XHTML” হলেও, অন্তর্ভুক্ত বিষয়বস্তু “text/html” বিন্যাসে রয়েছে।  "
+"পরিবর্তে“application/xhtml+xml” প্রয়োগ করুন।"
 
 #: ../extensions/error-viewer/sgml-validator.c:242
 #, c-format
@@ -498,11 +515,11 @@ msgstr ""
 "%s-র মধ্যে HTML ত্রুটি:\n"
 "বৈধ doctype উল্লেখ করা হয়নি।"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:346
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:345
 msgid "Enabled"
 msgstr "সক্রিয়"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:354
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:353
 #: ../extensions/rss/rss-ui.c:571
 msgid "Description"
 msgstr "বিবরণ"
@@ -638,7 +655,7 @@ msgstr "অজানা"
 
 #: ../extensions/page-info/page-info-dialog.c:824
 msgid "No referrer"
-msgstr ""
+msgstr "কোনো উল্লেখকারী নেই"
 
 #: ../extensions/page-info/page-info-dialog.c:838
 #: ../extensions/page-info/page-info-dialog.c:854
@@ -690,7 +707,7 @@ msgstr "নতুন রূপে সংরক্ষণ...(_S)"
 #: ../extensions/page-info/page-info-dialog.c:1363
 #: ../extensions/page-info/page-info-dialog.c:1684
 msgid "Blocked"
-msgstr ""
+msgstr "প্রতিরোধ করা হয়েছে"
 
 #: ../extensions/page-info/page-info-dialog.c:1379
 #: ../extensions/page-info/page-info-dialog.c:1700
@@ -703,7 +720,7 @@ msgstr "ধরন"
 
 #: ../extensions/page-info/page-info-dialog.c:1404
 msgid "Alt Text"
-msgstr ""
+msgstr "বিকল্প লেখা"
 
 #: ../extensions/page-info/page-info-dialog.c:1416
 #: ../extensions/page-info/page-info-dialog.c:1713
@@ -720,7 +737,7 @@ msgstr "উচ্চতা"
 
 #: ../extensions/page-info/page-info-dialog.c:1725
 msgid "Relation"
-msgstr ""
+msgstr "সম্বন্ধ"
 
 #: ../extensions/page-info/page-info-dialog.c:1874
 #: ../extensions/page-info/page-info-dialog.c:2015
@@ -745,7 +762,7 @@ msgstr "বিষয়"
 
 #: ../extensions/page-info/page-info-dialog.c:2128
 msgid "Page Metadata"
-msgstr ""
+msgstr "পৃষ্ঠার মিটা-ডাটা"
 
 #: ../extensions/page-info/page-info.glade.h:1
 msgid "<b>Dublin Core Metadata</b>"
@@ -765,7 +782,7 @@ msgstr "<b>পেজের মধ্যে উপস্থিত মিডিয়
 
 #: ../extensions/page-info/page-info.glade.h:5
 msgid "<b>Medium View</b>"
-msgstr ""
+msgstr "<b>মধ্যম প্রদর্শনক্ষেত্র</b>"
 
 #: ../extensions/page-info/page-info.glade.h:6
 msgid "<b>Other Metadata</b>"
@@ -849,7 +866,7 @@ msgstr "পেজের বৈশিষ্ট্য"
 
 #: ../extensions/page-info/page-info.glade.h:26
 msgid "Referrer:"
-msgstr ""
+msgstr "উল্লেখকারী:"
 
 #: ../extensions/page-info/page-info.glade.h:27
 msgid "Size:"
@@ -920,27 +937,27 @@ msgstr "ওয়েব সাইট সংক্রান্ত অনুমতি
 
 #: ../extensions/rss/ephy-rss-extension.c:79
 msgid "News Feeds Subscription"
-msgstr ""
+msgstr "নিউজ ফিড সাবস্ক্রিপশন"
 
 #: ../extensions/rss/ephy-rss-extension.c:81
 msgid "Subscribe to this website's news feeds in your favorite news reader"
-msgstr ""
+msgstr "আপনার পছন্দসই নিউজ পাঠ ব্যবস্থার মাধ্যমে এই ওয়েব-সাইটের নিউজ ফিডে সাবস্ক্রাইব করুন"
 
 #: ../extensions/rss/ephy-rss-extension.c:86
 msgid "_Subscribe to this feed"
-msgstr ""
+msgstr "চিহ্নিত ফিডে সাবস্ক্রাইব করুন (_S)"
 
 #: ../extensions/rss/ephy-rss-extension.c:88
 msgid "Subscribe to this feed in your favorite news reader"
-msgstr ""
+msgstr "আপনার পছন্দসই নিউজ পাঠ ব্যবস্থার মাধ্যমে এই ফিডে সাবস্ক্রাইব করুন"
 
 #: ../extensions/rss/ephy-rss-extension.c:361
 msgid "Subscribe to site's news feed"
-msgstr ""
+msgstr "সাইটের নিউজ ফিডে সাবস্ক্রাইব করুন"
 
 #: ../extensions/rss/rss-ui.c:153
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
-msgstr ""
+msgstr "<b><i>ফিড পাঠ ব্যবস্থার সাথে সংযোগ স্থাপন করতে ব্যর্থ, এটি কি বর্তমানে চলছে ?</i></b>"
 
 #: ../extensions/rss/rss-ui.c:155
 msgid "Retry"
@@ -956,12 +973,12 @@ msgstr "সাবস্ক্রাইব করুন"
 
 #: ../extensions/rss/rss-ui.glade.h:1
 msgid "<b>Select Interesting Feeds</b>"
-msgstr ""
+msgstr "<b>আকর্ষক ফিডগুলি নির্বাচন করুন</b>"
 
 #: ../extensions/rss/rss-ui.glade.h:2
 #: ../extensions/rss/rss.ephy-extension.in.in.h:1
 msgid "News Feed Subscription"
-msgstr ""
+msgstr "নিউজ ফিড সাবস্ক্রিপশন"
 
 #: ../extensions/rss/rss-ui.glade.h:3
 msgid "_Subscribe"
@@ -986,7 +1003,7 @@ msgstr "বিন্যাস (_y)"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:318
 msgid "Select a different style for this page"
-msgstr ""
+msgstr "এই পৃষ্ঠার জন্য একটি ভিন্ন বিন্যাস নির্বাচন করুন"
 
 #: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
 msgid "Default"
@@ -1014,7 +1031,7 @@ msgstr "আপনি কি নিশ্চিতরূপে এই সাই�
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:310
 msgid "There is no way to recover this sidebar after removal."
-msgstr ""
+msgstr "অপসারণের পরে এই সাইড-বার পুনরুদ্ধারের কোনো উপায় নেই।"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:312
 msgid "Remove Sidebar"
@@ -1028,7 +1045,7 @@ msgstr "সাইড-বারের মধ্যে “%s” বর্তমা
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:463
 msgid "To use this sidebar, select it from the list of available sidebar pages."
-msgstr ""
+msgstr "এই সাইড-বারটি প্রয়োগ করার জন্য, সাইড-বারের উপলব্ধ পৃষ্ঠার তালিকা থেকে প্রথমে এটিকে নির্বাচন করুন।"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:466
 #: ../extensions/sidebar/ephy-sidebar-extension.c:492
@@ -1043,7 +1060,7 @@ msgstr "সাইড-বারের মধ্যে “%s” যোগ কর�
 #: ../extensions/sidebar/ephy-sidebar-extension.c:490
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
-msgstr ""
+msgstr "নতুন সাইড-বার পৃষ্ঠার উৎস হল “%s”।"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:496
 msgid "_Add Sidebar"
@@ -1063,19 +1080,19 @@ msgstr "নতুন ট্যাবের মধ্যে ফলাফল প�
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
 msgid "Open search result in new tab if true, in new window if false"
-msgstr ""
+msgstr "মান true (সত্য) হলে, অনুসন্ধানের ফলাফল একটি নতুন ট্যাবের মধ্যে প্রদর্শন করা হবে। মান false (সত্য নয়) হলে নতুন উইন্ডোর মধ্যে তা প্রদর্শিত হবে।"
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
-msgstr ""
+msgstr "কনটেক্সট মেনু থেকে যথেচ্ছ ভাবে নির্বাচিত কমান্ড সঞ্চালন করা হবে"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
 msgid "Ad Blocker"
-msgstr ""
+msgstr "বিজ্ঞাপন প্রতিরোধ"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
 msgid "Block the pest!"
-msgstr ""
+msgstr "আপদ বিদায় করুন!"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
 msgid "Auto Scroll"
@@ -1083,15 +1100,15 @@ msgstr "স্বয়ংক্রিয় স্ক্রোল ব্যবস্�
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
 msgid "Scroll on middle mouse click"
-msgstr ""
+msgstr "মাউসের মধ্যেবর্তী বাটনের ক্লিকে স্ক্রোল করা হবে"
 
 #: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
 msgid "Auto Reload Tab"
-msgstr ""
+msgstr "ট্যাব স্বয়ংক্রিয়ভাবে লোড করা হবে"
 
 #: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
 msgid "Reload a tab periodically"
-msgstr ""
+msgstr "নিয়মিতভাবে ট্যাবটি পুনরায় লোড করা হবে"
 
 #: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
 msgid "Creative Commons license viewer"
@@ -1099,15 +1116,15 @@ msgstr "Creative Commons লাইসেন্স প্রদর্শন ব�
 
 #: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
 msgid "Shows the Creative Commons license of the current website if available"
-msgstr ""
+msgstr "বর্তমান ওয়েব-সাইটের জন্য Creative Commons লাইসেন্স উপলব্ধ থাকলে তা প্রদর্শিত হবে"
 
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
-msgstr ""
+msgstr "পৃষ্ঠার সার্টিফিকেট প্রদর্শন করুন ও সার্টিফিকেট পরিচালনা করুন"
 
 #: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
 msgid "Synchronize bookmarks with social bookmark sites"
-msgstr ""
+msgstr "সার্বজনীন বুকমার্কের সাইটের সাথে বুকমার্ক সুসংগত করুন"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -1127,19 +1144,19 @@ msgstr "এক্সটেনশন পরিচালনব্যবস্থ�
 
 #: ../extensions/favicon/favicon.ephy-extension.in.h:1
 msgid "Favicon fallback"
-msgstr ""
+msgstr "Favicon-র ফল-ব্যাক"
 
 #: ../extensions/favicon/favicon.ephy-extension.in.h:2
 msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
-msgstr ""
+msgstr "সাইট দ্বারা স্বাভাবিক পদ্ধতি ব্যবহার করা করা হলে, /favicon.ico ফাইলটিকে favicon রূপে লোড করা হবে"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
-msgstr ""
+msgstr "অঙ্গভঙ্গি"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:2
 msgid "Perform actions with mouse gestures"
-msgstr ""
+msgstr "মাউসের ভঙ্গিমা দ্বারা কর্ম সঞ্চালন করুন"
 
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
 msgid "Greasemonkey"
@@ -1147,7 +1164,7 @@ msgstr "Greasemonkey"
 
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
 msgid "Run user scripts to modify web pages' behavior"
-msgstr ""
+msgstr "ওয়েব পেজের আচরণ পরিবর্তনের জন্য ব্যবহারকারীর স্ক্রিপ্ট সঞ্চালনা করুন"
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
 msgid "Java Console"
@@ -1155,7 +1172,7 @@ msgstr "Java Console"
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
 msgid "Provide access to the Java-Plugin Console"
-msgstr ""
+msgstr "Java-Plugin কনসোলের ব্যবহারাধিকা প্রদান করুন"
 
 #: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
 msgid "Live HTTP headers"
@@ -1163,7 +1180,7 @@ msgstr "লাইভ HTTP হেডার"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
-msgstr ""
+msgstr "বর্তমান পৃষ্ঠার পরিচিতি ও এই পৃষ্ঠা থেকে উৎপন্ন লিংক ও মিডিয়া সংক্রান্ত তথ্য প্রদর্শন করা হবে"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
 msgid "Page Info"
@@ -1179,15 +1196,15 @@ msgstr "অনুমতি"
 
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
 msgid "Drag the page on middle mouse click"
-msgstr ""
+msgstr "মাউসের মধ্যবর্তী বাটনের ক্লিক দ্বারা পৃষ্ঠা টেনে আনা হবে"
 
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
 msgid "Push Scroll"
-msgstr ""
+msgstr "Push Scroll"
 
 #: ../extensions/python-console/python-console.ephy-extension.in.h:1
 msgid "Opens an interactive Python console"
-msgstr ""
+msgstr "একটি ইন্টারেক্টিভ Python কনসোল প্রদর্শন করা হবে"
 
 #: ../extensions/python-console/python-console.ephy-extension.in.h:2
 msgid "Python Console"
@@ -1195,15 +1212,7 @@ msgstr "Python Console"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
-msgstr ""
-
-#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
-msgid "A sample extension with mozilla backend"
-msgstr ""
-
-#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:2
-msgid "Sample (Mozilla)"
-msgstr "নমূনা (Mozilla)"
+msgstr "আপনার পছন্দসই নিউজ পাঠের সরঞ্জাম সহযোগে, ওয়েব-পেজ দ্বারা উপলব্ধ নিউজ ফিডে সাবস্ক্রাইব করুন"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
 msgid "A sample extension"
@@ -1219,7 +1228,7 @@ msgstr "স্টাইল-শিট নির্বাচন করুন"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
-msgstr ""
+msgstr "ওয়েব-পেজ দ্বারা উপলব্ধ বিভিন্ন স্টাইল-শিট থেকে বেছে নিন"
 
 #: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
 msgid "Adds a sidebar to windows"
@@ -1231,7 +1240,7 @@ msgstr "সাইড-বার"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
 msgid "Look up the selected text with a smart bookmark"
-msgstr ""
+msgstr "স্মার্ট বুকমার্ক সহযোগে নির্বাচিত লেখা অনুসন্ধান করুন"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
 msgid "Smart Bookmarks"
@@ -1247,7 +1256,7 @@ msgstr "ট্যাবের শ্রেণী"
 
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
-msgstr ""
+msgstr "পটভূমির ট্যাবের মধ্যে নতুন তথ্যের উপস্থিতির ইঙ্গিত দেওয়া হয়"
 
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
