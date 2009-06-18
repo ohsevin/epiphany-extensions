@@ -1,0 +1,1259 @@
+# translation of epiphany-extensions.po.master.ta.po to Tamil
+# Tamil translation of epiphany-extensions.
+# Copyright (C) 2009 epiphany-extensions's COPYRIGHT HOLDER
+# This file is distributed under the same license as the epiphany-extensions package.
+#
+# I. Felix <ifelix@redhat.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: epiphany-extensions.po.master.ta\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions&component=general\n"
+"POT-Creation-Date: 2009-06-10 06:26+0000\n"
+"PO-Revision-Date: 2009-06-18 17:12+0530\n"
+"Last-Translator: I. Felix <ifelix@redhat.com>\n"
+"Language-Team: Tamil <fedora-trans-ta@redhat.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\\n\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../extensions/actions/action-properties.glade.h:1
+msgid "<span weight=\"bold\">Applies to</span>"
+msgstr "<span weight=\"bold\">இதற்கு செயல்படுத்து</span>"
+
+#: ../extensions/actions/action-properties.glade.h:2
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">பொது</span>"
+
+#: ../extensions/actions/action-properties.glade.h:3
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"images."
+msgstr "இந்த விருப்பம் செயல்படுத்தப்பட்டால், இந்த செயல் பாப்பப் மெனுவின் படத்தில் சேர்க்கப்படும்."
+
+#: ../extensions/actions/action-properties.glade.h:4
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"links and pages."
+msgstr "இந்த விருப்பம் செயல்படுத்தப்பட்டால், செயல் பாப்பப் மெனுவின் இணைப்புகள் மற்றும் பக்கங்களில் சேர்க்கப்படும்."
+
+#: ../extensions/actions/action-properties.glade.h:5
+msgid "The action description."
+msgstr "இந்த செயலின் விளக்கம்."
+
+#: ../extensions/actions/action-properties.glade.h:6
+msgid ""
+"The action name. If a character is preceded by an underscore, that character "
+"will be used as the access key for the menu item."
+msgstr "இந்த செயல் பெயர். ஒரு எழுத்து அடிக்கோடிப்பட்டால் அந்த எழுத்து மெனுவின் அணுகல் விசையாக பயன்படுத்தப்படும்."
+
+#: ../extensions/actions/action-properties.glade.h:7
+msgid ""
+"The command to execute when the action is activated. The URL of the link, "
+"image or page will be appended to the command."
+msgstr "ஒரு செயலை செயல்படுத்தும் போது கட்டளையை இயக்கவும். இணைய முகவரி இணைப்பு, படம் அல்லது பக்கம் கட்டளையில் சேர்க்கப்படும்."
+
+#: ../extensions/actions/action-properties.glade.h:8
+msgid "_Command:"
+msgstr "கட்டளை (_C):"
+
+#: ../extensions/actions/action-properties.glade.h:9
+msgid "_Description:"
+msgstr "விளக்கம் (_D):"
+
+#: ../extensions/actions/action-properties.glade.h:10
+msgid "_Images"
+msgstr "படங்கள் (_I)"
+
+#: ../extensions/actions/action-properties.glade.h:11
+#: ../extensions/epilicious/epilicious-config.glade.h:6
+msgid "_Name:"
+msgstr "பெயர் (_N):"
+
+#: ../extensions/actions/action-properties.glade.h:12
+msgid "_Pages"
+msgstr "பக்கங்கள் (_P)"
+
+#: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions.ephy-extension.in.in.h:1
+msgid "Actions"
+msgstr "செயல்பாடுகள்"
+
+#: ../extensions/actions/ephy-actions-extension.c:112
+msgid "Actio_ns"
+msgstr "செயல்பாடுகள் (_n)"
+
+#: ../extensions/actions/ephy-actions-extension.c:113
+msgid "Customize actions"
+msgstr "தனிப்பயனிடப்பட்ட செயல்பாடுகள்"
+
+#: ../extensions/actions/ephy-actions-extension.c:436
+msgid "Could not run command"
+msgstr "கட்டளையை இயக்க முடியாது"
+
+#: ../extensions/actions/ephy-actions-extension.c:440
+msgid "Could not Run Command"
+msgstr "கட்டளையை இயக்க முடியாது"
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
+msgid "No action selected."
+msgstr "செயல் எதுவும் தேர்ந்தெடுக்கப்படவில்லை."
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
+#, c-format
+msgid "%i action selected."
+msgid_plural "%i actions selected."
+msgstr[0] "%i செயல்பாடுகள் தேர்ந்தெடுக்கப்பட்டுவிட்டது."
+msgstr[1] "%i action selected."
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
+msgid "Add Action"
+msgstr "செயலைச் சேர்"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
+#, c-format
+msgid "“%s” Properties"
+msgstr "“%s” பண்புகள்"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
+msgid "Action Properties"
+msgstr "செயலின் பண்புகள்"
+
+#: ../extensions/adblock/adblock-ui.c:263
+msgid ""
+"This list is Copyright © its original author(G). It is relicensed under the "
+"GPL with permission.\n"
+"The original list, Filterset.G, can be found at http://www.pierceive.com/"
+"filtersetg/.\n"
+"This version has been modified from its original. The changes have not been "
+"approved by the original author;\n"
+"direct any problems to Bugzilla and not to the original author (G).\n"
+msgstr ""
+"This list is Copyright © its original author(G). It is relicensed under the "
+"GPL with permission.\n"
+"The original list, Filterset.G, can be found at http://www.pierceive.com/"
+"filtersetg/.\n"
+"This version has been modified from its original. The changes have not been "
+"approved by the original author;\n"
+"direct any problems to Bugzilla and not to the original author (G).\n"
+
+#: ../extensions/adblock/adblock-ui.c:481
+msgid "Pattern"
+msgstr "பாணி"
+
+#: ../extensions/adblock/adblock.glade.h:1
+msgid "<b>Courtesy of Graham Pierce</b>"
+msgstr "<b>Graham Pierce க்கு நன்றி</b>"
+
+#: ../extensions/adblock/adblock.glade.h:2
+msgid "<b>New rule</b>"
+msgstr "<b>புதிய விதி</b>"
+
+#: ../extensions/adblock/adblock.glade.h:3
+msgid "<b>Update rules from original site</b>"
+msgstr "<b>உண்மையான தளத்திலிருந்து விதிகளை புதுப்பிக்கவும்</b>"
+
+#: ../extensions/adblock/adblock.glade.h:4
+#: ../extensions/adblock/ephy-adblock-extension.c:229
+msgid "Adblock Editor"
+msgstr "Adblock தொகுப்பி"
+
+#: ../extensions/adblock/adblock.glade.h:5
+msgid "Add a new rule"
+msgstr "ஒரு புதிய விதியைச் சேர்"
+
+#: ../extensions/adblock/adblock.glade.h:6
+msgid "Blacklist"
+msgstr "நீக்குதல்பட்டியல்"
+
+#: ../extensions/adblock/adblock.glade.h:7
+msgid "Filterset.G"
+msgstr "Filterset.G"
+
+#: ../extensions/adblock/adblock.glade.h:8
+msgid "Whitelist"
+msgstr "வெள்ளைப்பட்டியல்"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:230
+msgid "Edit Adblock"
+msgstr "அட்பிளாக்கை திருத்தவும்"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:299
+#, c-format
+msgid "%d hidden advertisement"
+msgid_plural "%d hidden advertisements"
+msgstr[0] "%d மறைவான விளம்பரம்"
+msgstr[1] "%d மறைவான விளம்பரங்கள்"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:81
+msgid "_Auto Reload"
+msgstr "தானக மறுஏற்று (_A)"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+msgid "Reload the page periodically"
+msgstr "கால அளவில் பக்கத்தை மீளேற்று"
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.py:373
+msgid "View Creative Commons license"
+msgstr "Creative Commons உரிமத்தை பார்வையிடு"
+
+#: ../extensions/certificates/ephy-certificates-extension.c:163
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
+msgid "Certificates"
+msgstr "சான்றிதழ்கள்"
+
+#: ../extensions/certificates/ephy-certificates-extension.c:194
+msgid "Security Devices"
+msgstr "பாதுகாப்பு சாதனங்கள்"
+
+#. stock icon
+#: ../extensions/certificates/ephy-certificates-extension.c:206
+msgid "Manage _Certificates"
+msgstr "மேலாண்மை சான்றிதழ்கள் (_C)"
+
+#. shortcut key
+#: ../extensions/certificates/ephy-certificates-extension.c:208
+msgid "Manage your certificates"
+msgstr "உங்களுடைய சான்றிதழ்களை மேலாண்மை செய்யவும்"
+
+#. stock icon
+#: ../extensions/certificates/ephy-certificates-extension.c:212
+msgid "Manage Security _Devices"
+msgstr "பாதுகாப்பு சாதனங்களை மேலாண்மை செய்யவும் (_D)"
+
+#. shortcut key
+#: ../extensions/certificates/ephy-certificates-extension.c:214
+msgid "Manage your security devices"
+msgstr "உங்ளுடைய பாதுகாப்பு சாதனங்களை மேலாண்மை செய்யவும் "
+
+#: ../extensions/epilicious/epilicious-config.glade.h:1
+msgid "Action for tagged bookmarks:"
+msgstr "ஒட்டப்பட்ட புத்தகக் குறியீடுகளுக்கான செயல்:"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:2
+msgid "Epilicious Configuration"
+msgstr "Epilicious கட்டமைப்பு"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:3
+msgid "_Backend:"
+msgstr "பின்முனை (_B):"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:4
+msgid "_Exclude"
+msgstr "நீக்கு (_E)"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:5
+msgid "_Include"
+msgstr "சேர் (_I)"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:7
+msgid "_Password:"
+msgstr "கடவுச்சொல் (_P):"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:8
+msgid "_Tag:"
+msgstr "ஒட்டு (_T):"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:1
+msgid "Adding new bookmarks and synching topics"
+msgstr "புதிய புத்தக் குறியீடுகளையும் மற்றும் ஒத்திசைக்கப்பட்ட தலைப்புகளையும் சேர்க்கிறது"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:2
+msgid "Removing deleted bookmarks"
+msgstr "அழிக்கப்பட்ட புத்தக்குறியீடுகளை நீக்குகிறது"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:4
+#: ../extensions/epilicious/progress.py:41
+#, no-c-format, python-format
+msgid "Retrieving bookmarks from %s"
+msgstr "%sஇலிருந்து புத்தகக்குறியை எடுக்கிறது"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:5
+msgid "Retrieving bookmarks from epiphany"
+msgstr "epiphanyஇலிருந்து புத்தகக்குறிகளை எடுக்கிறது"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:6
+msgid "Retrieving previous synch point"
+msgstr "முந்தைய synch புள்ளியை எடுக்கிறது"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:7
+msgid "Saving new synch point"
+msgstr "புதிய ஒத்திசைவு புள்ளியை சேமிக்கிறது"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:9
+#: ../extensions/epilicious/progress.py:39
+#, no-c-format, python-format
+msgid "Synchronizing with %s"
+msgstr "%sஉடன் ஒத்திசைக்கிறது"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:10
+msgid "Synchronizing..."
+msgstr "ஒந்நிசைக்கிறது..."
+
+#: ../extensions/epilicious/epilicious.py.in:232
+#: ../extensions/epilicious/epilicious.py.in:250
+msgid "Epilicious Synchronize"
+msgstr "Epilicious ஒத்திசைக்கப்பட்டது"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:1
+msgid "Bookmarks with this topic will be synchronized."
+msgstr "புத்தகக் குறியீடுகளுடன் இந்த தலைப்பு ஒத்திசைக்கப்பட்டது."
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:2
+msgid ""
+"Controls the function of the topic. If this is unset then all bookmarks with "
+"the topic will be synched. If this is set then all bookmarks without the "
+"topic will be synched."
+msgstr "இந்த தலைப்பின் செயல்பாட்டை கட்டுப்படுத்துகிறது. இது அமைக்கப்படவில்லையெனில் அனைத்து புத்தகக்குறிகளுடன் தலைப்பு ஒத்திசைக்கப்படும். இது அமைக்கப்பட்டால் அனைத்து புத்தகக்குறிகள் தலைப்பில்லாமல் ஒத்திசைக்கப்படும்."
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:3
+msgid "Exclude topic"
+msgstr "தலைப்பை நீக்கவும்"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:4
+msgid "Shared topic"
+msgstr "பகிரப்பட்ட தலைப்பு"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:5
+msgid ""
+"The backend that epilicious will use for synchronizing bookmarks. Allowed "
+"values: 'diigo', 'ma.gnolia'"
+msgstr ""
+"பின்தளம் epilicious புத்தகக்குறிகளை ஒத்திசைக்க பயன்படுத்தப்படும். அனுமதிக்கப்பட்ட மதிப்புகள்"
+": 'diigo', 'ma.gnolia'"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:6
+msgid "The password that epilicious will use for synchronizing bookmarks."
+msgstr "epilicious இன் கடவுச்சொல் ஒத்திசைக்கப்பட்டட புத்தகக்குறியுடன் பயன்படுத்தப்படும்."
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:7
+msgid "The username that epilicious will use for synchronizing bookmarks."
+msgstr "epilicious இன் பயனர் பெயர் புத்தகக்குறிகளுடன் ஒத்திசைக்கப்படும்."
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:8
+msgid "epilicious backend"
+msgstr "epilicious பின்முனை"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:9
+msgid "password"
+msgstr "கடவுச்சொல்"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:10
+msgid "username"
+msgstr "பயனர்பெயர்"
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
+msgid "Check _HTML"
+msgstr "_HTMLஐ சரிபார்"
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:92
+msgid "Display HTML errors in the Error Viewer dialog"
+msgstr "HTML பிழைகளை பிழைக் காட்டி உரையாடலில் காட்டு"
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
+msgid "Check _Links"
+msgstr "இணைப்புகளை சரிபார் (_L)"
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
+msgid "Display invalid hyperlinks in the Error Viewer dialog"
+msgstr "பிழை காட்டி உரையாடலில் தவறான மீஇணைப்பை காட்டு"
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:103
+msgid "_Error Viewer"
+msgstr "பிழை காட்சியாளர் (_E)"
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
+msgid "Display web page errors"
+msgstr "இணையத்தள பக்கப் பிழைகளைக் காட்டு"
+
+#: ../extensions/error-viewer/error-viewer.glade.h:1
+msgid "Cl_ear"
+msgstr "துடை (_e)"
+
+#: ../extensions/error-viewer/error-viewer.glade.h:2
+msgid "Error Viewer"
+msgstr "பிழை காட்சியாளர்"
+
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:105
+#, c-format
+msgid ""
+"%s error in %s on line %d and column %d:\n"
+"%s"
+msgstr ""
+"%s ல் பிழை %s ஆன்லைனில் %d மற்றும் நிரலில் %d:\n"
+"%s"
+
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:113
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:137
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:150
+#, c-format
+msgid ""
+"%s error in %s:\n"
+"%s"
+msgstr ""
+"%s இல் பிழை %s:\n"
+"%s"
+
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
+#, c-format
+msgid ""
+"%s error in %s on line %d:\n"
+"%s"
+msgstr ""
+"%s இல் பிழை %s ஆன்லைனிலும் %d:\n"
+"%s"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "%d தவறான இணைப்பு காணப்பட்டது"
+msgstr[1] "தவறான இணைப்புகள் %d ல் காணப்படுகின்றன"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
+#, c-format
+msgid ""
+"Link error in %s:\n"
+"%s is unavailable."
+msgstr ""
+"%sனுள் இணைப்பு பிழை:\n"
+"%s கிடைக்கப் பெறவில்லை."
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
+#, c-format
+msgid "Checking %d Link on “%s”"
+msgid_plural "Checking %d Links on “%s”"
+msgstr[0] "%d இணைப்பை “%s”இல் சரிபார்"
+msgstr[1] "%d இணைப்புகளை “%s”இல் சரிபார்"
+
+#: ../extensions/error-viewer/opensp/validate.cpp:168
+#, c-format
+msgid ""
+"HTML error in “%s” on line %s:\n"
+"%s"
+msgstr ""
+"HTML பிழை “%s”இல் ஆன்லைன் %s:\n"
+"%s"
+
+#: ../extensions/error-viewer/sgml-validator.c:164
+#, c-format
+msgid "Found %d error"
+msgid_plural "Found %d errors"
+msgstr[0] "%d பிழை காணப்பட்டது"
+msgstr[1] "%d பிழைகள் கண்டுபிடிக்கப்பட்டன"
+
+#: ../extensions/error-viewer/sgml-validator.c:168
+#, c-format
+msgid "HTML Validation of “%s” complete"
+msgstr "“%s” முடித்தலின் HTML சரிபார்த்தல்"
+
+#: ../extensions/error-viewer/sgml-validator.c:226
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"%s"
+msgstr ""
+"%s னுள் HTML பிழை:\n"
+"%s"
+
+#: ../extensions/error-viewer/sgml-validator.c:228
+#: ../extensions/error-viewer/sgml-validator.c:244
+msgid ""
+"Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
+"+xml” instead."
+msgstr "Doctype “XHTML” ஆனால் உள்ளடக்க வகை “text/html”.   “application/xhtml+xml” அதற்கு பதில் பயன்படுத்து."
+
+#: ../extensions/error-viewer/sgml-validator.c:242
+#, c-format
+msgid ""
+"HTML warning in %s:\n"
+"%s"
+msgstr ""
+"HTML %sல் எச்சரிக்கிறது:\n"
+"%s"
+
+#: ../extensions/error-viewer/sgml-validator.c:359
+#, c-format
+msgid "HTML error in %s:"
+msgstr "%s HTML பிழை :"
+
+#: ../extensions/error-viewer/sgml-validator.c:367
+#, c-format
+msgid "Invalid character encoding"
+msgstr "தவறான எண் குறிமுறையிடுகிறது"
+
+#: ../extensions/error-viewer/sgml-validator.c:372
+#, c-format
+msgid "Unknown error while converting to UTF-8"
+msgstr "UTF-8ஐ மாற்றும் போது தெரியாத பிழை ஏற்படுகிறது"
+
+#: ../extensions/error-viewer/sgml-validator.c:434
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"No valid doctype specified."
+msgstr ""
+"HTML பிழை %sஇலில்:\n"
+"சரியான doctype குறிப்பிடப்படவில்லை."
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:345
+msgid "Enabled"
+msgstr "செயல்படுத்தக்கூடியது"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:353
+#: ../extensions/rss/rss-ui.c:571
+msgid "Description"
+msgstr "விளக்கம்"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+msgid "<b>Loaded Extensions</b>"
+msgstr "<b>ஏற்ப்பட்ட விரிவாக்கங்கள்</b>"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+msgid "Extensions"
+msgstr "விரிவாக்கங்கள்"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:73
+msgid "_Extensions"
+msgstr "விரிவாக்கங்கள் (_E)"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
+msgid "Load and unload extensions"
+msgstr "விரிவாக்கங்களை ஏற்று மற்றும் ஏற்றம் நீக்கு"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "Help about extensions"
+msgstr "விரிகாத்தைப் பற்றிய உதவி"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:78
+msgid "Install User _Script"
+msgstr "பயனர் ஸ்கிரிப்பட்டை நிறுவு (_S)"
+
+#. shortcut key
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:80
+msgid "Install Greasemonkey script"
+msgstr "Greasemonkey ஸ்கிரிப்டை நிறுவு"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:311
+#, c-format
+msgid "The user script at “%s” has been installed"
+msgstr "“%s”ல் பயனர் ஸ்கிரிப்ட் நிறுவப்பட்டது"
+
+#: ../extensions/java-console/ephy-java-console-extension.c:48
+msgid "_Java Console"
+msgstr "ஜாவா பணியகம் (_J)"
+
+#. shortcut key
+#: ../extensions/java-console/ephy-java-console-extension.c:50
+msgid "Show Java Console"
+msgstr "ஜாவா பணியகத்தைக் காட்டு "
+
+#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:100
+msgid "_HTTP Headers"
+msgstr "_HTTP தலைப்புகள் "
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:1
+msgid "<b>Request</b>"
+msgstr "<b>விண்ணப்பம்</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:2
+msgid "<b>Response</b>"
+msgstr "<b>பதில்</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:3
+msgid "<b>URLs</b>"
+msgstr "<b>URLs</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
+msgid "Clear cache"
+msgstr "கேஷை துடை"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
+msgid "Live Headers"
+msgstr "லைவ் ஹெட்டர்ஸ்"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
+msgid "Remove headers"
+msgstr "தலைப்புகளை நீக்கு"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:61
+msgid "Pa_ge Information"
+msgstr "பக்க தகவல் (_g)"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:63
+msgid "Display page information in a dialog"
+msgstr "பக்க தகவலை உரையாடலில் காட்டு"
+
+#: ../extensions/page-info/page-info-dialog.c:704
+msgid "Save As..."
+msgstr "இதாக சேமி..."
+
+#: ../extensions/page-info/page-info-dialog.c:721
+msgid "Select a directory"
+msgstr "ஒரு அடைவை தேர்ந்தெடு"
+
+#: ../extensions/page-info/page-info-dialog.c:770
+msgid "Unknown type"
+msgstr "தெரியாத வகை"
+
+#: ../extensions/page-info/page-info-dialog.c:775
+msgid "Full standards compliance"
+msgstr "முழு தரப்படுத்தப்பட்ட நன்னெறி"
+
+#: ../extensions/page-info/page-info-dialog.c:778
+msgid "Almost standards compliance"
+msgstr "பெரும்பாலும் தரப்படுத்தப்பட்ட நெறி"
+
+#: ../extensions/page-info/page-info-dialog.c:781
+msgid "Compatibility"
+msgstr "ஏற்றது"
+
+#: ../extensions/page-info/page-info-dialog.c:785
+msgid "Undetermined"
+msgstr "வரையறுக்கப்பட்டாத"
+
+#: ../extensions/page-info/page-info-dialog.c:794
+msgid "Not cached"
+msgstr "கேஷாக இல்லை"
+
+#: ../extensions/page-info/page-info-dialog.c:797
+msgid "Disk cache"
+msgstr "வட்டு கேஷ்"
+
+#: ../extensions/page-info/page-info-dialog.c:800
+msgid "Memory cache"
+msgstr "நினைவக கேஷ்"
+
+#: ../extensions/page-info/page-info-dialog.c:803
+msgid "Unknown cache"
+msgstr "தெரியாத கேஷ்"
+
+#: ../extensions/page-info/page-info-dialog.c:819
+#: ../extensions/page-info/page-info-dialog.c:935
+msgid "Unknown"
+msgstr "தெரியாத"
+
+#: ../extensions/page-info/page-info-dialog.c:824
+msgid "No referrer"
+msgstr "பரிந்துரையாளர் இல்லை"
+
+#: ../extensions/page-info/page-info-dialog.c:838
+#: ../extensions/page-info/page-info-dialog.c:854
+msgid "Not specified"
+msgstr "குறிப்படப்படவில்லை"
+
+#: ../extensions/page-info/page-info-dialog.c:917
+msgid "Image"
+msgstr "படம்"
+
+#: ../extensions/page-info/page-info-dialog.c:920
+msgid "Background image"
+msgstr "பிண்ணனி படம்"
+
+#: ../extensions/page-info/page-info-dialog.c:923
+msgid "Embed"
+msgstr "உட்பொதியப்பட்ட"
+
+#: ../extensions/page-info/page-info-dialog.c:926
+msgid "Object"
+msgstr "பொருள்"
+
+#: ../extensions/page-info/page-info-dialog.c:929
+msgid "Applet"
+msgstr "அப்லெட்"
+
+#: ../extensions/page-info/page-info-dialog.c:932
+msgid "Icon"
+msgstr "சின்னம்"
+
+#: ../extensions/page-info/page-info-dialog.c:1113
+msgid "_Open"
+msgstr "திறக்கவும் (_O)"
+
+#: ../extensions/page-info/page-info-dialog.c:1119
+#: ../extensions/page-info/page-info-dialog.c:1564
+msgid "_Copy Link Address"
+msgstr "இணைப்பு முகவரியை நகலெடு (_C)"
+
+#: ../extensions/page-info/page-info-dialog.c:1125
+msgid "_Use as Background"
+msgstr "பிண்ணனியாக பயன்படுத்து (_U)"
+
+#: ../extensions/page-info/page-info-dialog.c:1131
+#: ../extensions/page-info/page-info-dialog.c:1570
+msgid "_Save As..."
+msgstr "இதுவாக சேமி (_S)..."
+
+#: ../extensions/page-info/page-info-dialog.c:1363
+#: ../extensions/page-info/page-info-dialog.c:1684
+msgid "Blocked"
+msgstr "தடுக்கப்பட்டது"
+
+#: ../extensions/page-info/page-info-dialog.c:1379
+#: ../extensions/page-info/page-info-dialog.c:1700
+msgid "URL"
+msgstr "URL"
+
+#: ../extensions/page-info/page-info-dialog.c:1392
+msgid "Type"
+msgstr "வகை"
+
+#: ../extensions/page-info/page-info-dialog.c:1404
+msgid "Alt Text"
+msgstr "Alt உரை"
+
+#: ../extensions/page-info/page-info-dialog.c:1416
+#: ../extensions/page-info/page-info-dialog.c:1713
+msgid "Title"
+msgstr "தலைப்பு"
+
+#: ../extensions/page-info/page-info-dialog.c:1428
+msgid "Width"
+msgstr "அகலம்"
+
+#: ../extensions/page-info/page-info-dialog.c:1440
+msgid "Height"
+msgstr "உயரம்"
+
+#: ../extensions/page-info/page-info-dialog.c:1725
+msgid "Relation"
+msgstr "உறவு"
+
+#: ../extensions/page-info/page-info-dialog.c:1874
+#: ../extensions/page-info/page-info-dialog.c:2015
+msgid "Name"
+msgstr "பெயர்"
+
+#: ../extensions/page-info/page-info-dialog.c:1886
+msgid "Method"
+msgstr "முறை"
+
+#: ../extensions/page-info/page-info-dialog.c:1900
+msgid "Action"
+msgstr "செயல்"
+
+#: ../extensions/page-info/page-info-dialog.c:1981
+msgid "_Copy"
+msgstr "நகலெடு (_C)"
+
+#: ../extensions/page-info/page-info-dialog.c:2027
+msgid "Content"
+msgstr "உள்ளடக்கம்"
+
+#: ../extensions/page-info/page-info-dialog.c:2128
+msgid "Page Metadata"
+msgstr "பக்க மெட்டாடேட்டா"
+
+#: ../extensions/page-info/page-info.glade.h:1
+msgid "<b>Dublin Core Metadata</b>"
+msgstr "<b>Dublin Core Metadata</b>"
+
+#: ../extensions/page-info/page-info.glade.h:2
+msgid "<b>Forms In Page</b>"
+msgstr "<b>பக்கத்தில் படிவங்கள்</b>"
+
+#: ../extensions/page-info/page-info.glade.h:3
+msgid "<b>Links In Page</b>"
+msgstr "<b>ப்பக்கத்தில் இணைப்புகள்</b>"
+
+#: ../extensions/page-info/page-info.glade.h:4
+msgid "<b>Media In Page</b>"
+msgstr "<b>பக்கத்தில் ஊடகம்</b>"
+
+#: ../extensions/page-info/page-info.glade.h:5
+msgid "<b>Medium View</b>"
+msgstr "<b>நடுத்தர பார்வை</b>"
+
+#: ../extensions/page-info/page-info.glade.h:6
+msgid "<b>Other Metadata</b>"
+msgstr "<b>மற்ற மெட்டாடேட்டா</b>"
+
+#: ../extensions/page-info/page-info.glade.h:7
+msgid "<b>Rendering</b>"
+msgstr "<b>கொடுக்கிறது</b>"
+
+#: ../extensions/page-info/page-info.glade.h:8
+msgid "<b>Source File</b>"
+msgstr "<b>மூலக் கோப்பு</b>"
+
+#: ../extensions/page-info/page-info.glade.h:9
+msgid "<b>Web Page</b>"
+msgstr "<b>வெப் பக்கம்</b>"
+
+#: ../extensions/page-info/page-info.glade.h:10
+msgid "DYNAMIC"
+msgstr "DYNAMIC"
+
+#: ../extensions/page-info/page-info.glade.h:11
+msgid "Date:"
+msgstr "தேதி:"
+
+#: ../extensions/page-info/page-info.glade.h:12
+msgid "Description:"
+msgstr "விளக்கம்:"
+
+#: ../extensions/page-info/page-info.glade.h:13
+msgid "Encoding:"
+msgstr "குறிமுறை"
+
+#: ../extensions/page-info/page-info.glade.h:14
+msgid "Expires:"
+msgstr "முடிவுற்றது:"
+
+#: ../extensions/page-info/page-info.glade.h:15
+msgid "Format:"
+msgstr "வடிவம்:"
+
+#: ../extensions/page-info/page-info.glade.h:16
+msgid "Forms"
+msgstr "படிவங்கள்"
+
+#: ../extensions/page-info/page-info.glade.h:17
+msgid "General"
+msgstr "பொதுவான"
+
+#: ../extensions/page-info/page-info.glade.h:18
+msgid "Links"
+msgstr "இணைப்புகள்"
+
+#: ../extensions/page-info/page-info.glade.h:19
+msgid "Location:"
+msgstr "இடம்:"
+
+#: ../extensions/page-info/page-info.glade.h:20
+msgid "MIME type:"
+msgstr "MIME வகை:"
+
+#: ../extensions/page-info/page-info.glade.h:21
+msgid "Media"
+msgstr "ஊடகம்"
+
+#: ../extensions/page-info/page-info.glade.h:22
+msgid "Metadata"
+msgstr "மெட்டாடேட்டா"
+
+#: ../extensions/page-info/page-info.glade.h:23
+msgid "Mode:"
+msgstr "முறைமை:"
+
+#: ../extensions/page-info/page-info.glade.h:24
+msgid "Modified:"
+msgstr "மாற்றியமைக்கப்பட்டது:"
+
+#: ../extensions/page-info/page-info.glade.h:25
+msgid "Page Properties"
+msgstr "பக்க பண்புகள்"
+
+#: ../extensions/page-info/page-info.glade.h:26
+msgid "Referrer:"
+msgstr "பரிந்துரையாளர்:"
+
+#: ../extensions/page-info/page-info.glade.h:27
+msgid "Size:"
+msgstr "அளவு:"
+
+#: ../extensions/page-info/page-info.glade.h:28
+msgid "Source:"
+msgstr "மூலம்:"
+
+#: ../extensions/page-info/page-info.glade.h:29
+msgid "Title:"
+msgstr "தலைப்பு:"
+
+#: ../extensions/page-info/page-info.glade.h:30
+msgid "Type:"
+msgstr "வகை:"
+
+#: ../extensions/page-info/page-info.glade.h:31
+msgid "_Save Media As..."
+msgstr "ஊடகமாக சேமி (_S)..."
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:165
+msgid "allowed"
+msgstr "அனுமதிக்கப்பட்டது"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:169
+msgid "denied"
+msgstr "புறக்கணிக்கப்பட்டது"
+
+#. Sometimes we get this... how did this get in the list!?
+#: ../extensions/permissions/ephy-permissions-dialog.c:174
+msgid "default"
+msgstr "முன்னிருப்பு"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:500
+msgid "Domain"
+msgstr "செயற்களம்"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:512
+msgid "State"
+msgstr "நிலை"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:605
+msgid "Site Permissions"
+msgstr "தள அனுமதிகள்"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:632
+msgid "Cookies"
+msgstr "குக்கீஸ்"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:633
+msgid "Images"
+msgstr "படங்கள்"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:634
+msgid "Popup Windows"
+msgstr "Popup சாளரங்கள்"
+
+#. stock icon
+#: ../extensions/permissions/ephy-permissions-extension.c:152
+msgid "Site _Permissions"
+msgstr "தள அனுமதிகள் (_P)"
+
+#. shortcut key
+#: ../extensions/permissions/ephy-permissions-extension.c:154
+msgid "Manage web site permissions"
+msgstr "இணையத்தள அனுமதிகளை மேலாண்மை செய்யவும்"
+
+#: ../extensions/rss/ephy-rss-extension.c:79
+msgid "News Feeds Subscription"
+msgstr "செய்திகள் ஃபீடு சந்தாப்படுத்துதல்"
+
+#: ../extensions/rss/ephy-rss-extension.c:81
+msgid "Subscribe to this website's news feeds in your favorite news reader"
+msgstr "இந்த இணைய தள செய்தி ஊட்டத்திற்கு உங்கள் பிடித்தமான செய்தி வாசிப்பாளரை சந்தாப்படுத்து"
+
+#: ../extensions/rss/ephy-rss-extension.c:86
+msgid "_Subscribe to this feed"
+msgstr "இந்த ஃபீடை சந்தாப்படுத்தவும் (_S)"
+
+#: ../extensions/rss/ephy-rss-extension.c:88
+msgid "Subscribe to this feed in your favorite news reader"
+msgstr "இந்த ஊட்டத்தை உங்களுக்கு பிடித்த செய்தி வாசிப்பாளருக்கு சந்தாப்படுத்து"
+
+#: ../extensions/rss/ephy-rss-extension.c:361
+msgid "Subscribe to site's news feed"
+msgstr "தளங்களின் செய்தி ஃபீடை சந்தாபடுத்து"
+
+#: ../extensions/rss/rss-ui.c:153
+msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
+msgstr "<b><i>ஃபீடு வாசிப்பாளரை தொடர்பு கொள்ள முடியவில்லை, அது இயக்கத்தில் உள்ளதா ?</i></b>"
+
+#: ../extensions/rss/rss-ui.c:155
+msgid "Retry"
+msgstr "மறுமுயற்சி"
+
+#: ../extensions/rss/rss-ui.c:283
+msgid "_Copy Feed Address"
+msgstr "ஃபீடு முகவரியை நகலெடு (_C)"
+
+#: ../extensions/rss/rss-ui.c:563
+msgid "Subscribe"
+msgstr "சந்தாப்படுத்தல்"
+
+#: ../extensions/rss/rss-ui.glade.h:1
+msgid "<b>Select Interesting Feeds</b>"
+msgstr "<b>ஆர்வமான ஃபீடுகளை தேர்ந்தெடுக்கவும்</b>"
+
+#: ../extensions/rss/rss-ui.glade.h:2
+#: ../extensions/rss/rss.ephy-extension.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "செய்திகள் ஃபீடு சந்தாப்படுத்தல்"
+
+#: ../extensions/rss/rss-ui.glade.h:3
+msgid "_Subscribe"
+msgstr "சந்தாப்படுத்து (_S)"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:140
+msgid "Render the page without using a style"
+msgstr "ஒரு பாணியையும் பயன்படுத்தாமல் ஒரு பக்கத்தை கொடுக்கவும்"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:143
+msgid "Render the page using the default style"
+msgstr "முன்னிருப்பு பாணியை பயன்படுத்தி பக்கத்தை கொடுக்கவும்"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:146
+#, c-format
+msgid "Render the page using the “%s” style"
+msgstr "“%s” பாணியை பயன்படுத்தி ஒரு பக்கத்தை கொடுக்கவும்"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:317
+msgid "St_yle"
+msgstr "பாணி (_y)"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:318
+msgid "Select a different style for this page"
+msgstr "இந்த பக்கத்திற்கு ஒரு வேறுபட்ட பாணியை தேர்ந்தெடுக்கவும்"
+
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
+msgid "Default"
+msgstr "முன்னிருப்பு"
+
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
+msgid "None"
+msgstr "ஒன்றுமில்லாத"
+
+#: ../extensions/sidebar/ephy-sidebar.c:167
+msgid "No Sidebars installed"
+msgstr "பக்கப்பட்டடைகள் நிறுவப்படவில்லை"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:88
+msgid "_Sidebar"
+msgstr "பக்கபட்டை (_S)"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:89
+msgid "Show or hide the sidebar"
+msgstr "பக்க பட்டியைக் காட்டு அல்லது மறை"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:306
+msgid "Do you really want to remove this sidebar?"
+msgstr "இந்தப் பக்கப்பட்டையை நீங்கள் விரும்புகிறீர்களா?"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:310
+msgid "There is no way to recover this sidebar after removal."
+msgstr "நீக்கிய பின் இந்த பக்கப்பட்டையை திரும்ப பெற எந்த ஒரு வழியும் இல்லை."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:312
+msgid "Remove Sidebar"
+msgstr "பக்கபட்டயை நீக்கு"
+
+#. Translators: %s is the sidebar title
+#: ../extensions/sidebar/ephy-sidebar-extension.c:459
+#, c-format
+msgid "The sidebar already contains “%s”"
+msgstr "பக்கப்பட்டை ஏற்கனவே “%s”ஐ பெற்றுள்ளது"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:463
+msgid "To use this sidebar, select it from the list of available sidebar pages."
+msgstr "இந்த பக்க பட்டையை பயன்படுத்த, அதனை பட்டியலிலிருந்து பக்கப்பட்டை பக்கங்களுக்கு தேர்ந்தெடுக்கவும்."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:466
+#: ../extensions/sidebar/ephy-sidebar-extension.c:492
+msgid "Add Sidebar"
+msgstr "பக்கபட்டையை சேர்"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:486
+#, c-format
+msgid "Add “%s” to the Sidebar?"
+msgstr "“%s”ஐ பக்கப்பட்டைக்குள் சேர்க்க வேண்டுமா?"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:490
+#, c-format
+msgid "The source to the new sidebar page is “%s”."
+msgstr "மூல புதிய பக்க பட்டையின் பக்கம் “%s”."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:496
+msgid "_Add Sidebar"
+msgstr "பக்கப்பட்டையைச் சேர்க்கவும் (_A)"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
+msgid "_Look Up"
+msgstr "தேடு (_L)"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:538
+msgid "_GNOME Dictionary"
+msgstr "_GNOME அகராதி"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
+msgid "Open search result in new tab"
+msgstr "புதிய தத்தலில் புதிய தேடல் முடிவை திற"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
+msgid "Open search result in new tab if true, in new window if false"
+msgstr "புதிய தத்தலில் திறந்த தேடுதல் முடிவு உண்மையெனில், புதிய சாளரம் தவறாகும்"
+
+#: ../extensions/actions/actions.ephy-extension.in.in.h:2
+msgid "Execute arbitrary commands from the context menu"
+msgstr "தவறான கட்டளைகளை சூழல் மெனுவிலிருந்து இயக்கு"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
+msgid "Ad Blocker"
+msgstr "தடுப்பவரைச் சேர்க்கவும்"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
+msgid "Block the pest!"
+msgstr "பூச்சியை தடுக்கவும்!"
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
+msgid "Auto Scroll"
+msgstr "தானாக சுற்றுகிறது"
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
+msgid "Scroll on middle mouse click"
+msgstr "மைய சுட்டி சொடுக்கில் உருள செய்யவும்"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
+msgid "Auto Reload Tab"
+msgstr "தானா மறுஏற்றும் தத்தல்"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
+msgid "Reload a tab periodically"
+msgstr "அவ்வப்பொழுது தத்தலை மறுஏற்றவும்"
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
+msgid "Creative Commons license viewer"
+msgstr "Creative Commons உரிம காட்டி"
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
+msgid "Shows the Creative Commons license of the current website if available"
+msgstr "Creative Commons உரிமத்தை நடப்பு இணைய தளத்தில் இருந்தால் காட்டவும்"
+
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
+msgid "View the page certificate and manage the certificates"
+msgstr "பக்க சான்றிதழை காட்டி மேலாண்மை செய்யவும்"
+
+#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
+msgid "Synchronize bookmarks with social bookmark sites"
+msgstr "சமுதாய புத்தகக்குறி தளங்களுடன் புத்தகக்குறிகள் ஒத்திசைக்கப்படுகிறது"
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
+msgid "Error viewer"
+msgstr "பிழை பார்வையாளர்"
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
+msgid "Validate web pages and check links"
+msgstr "சரியான இணைய பக்கங்கள் மற்றும் சோதனை இணைப்புகள்"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
+msgid "Activate and deactivate extensions"
+msgstr "விரிவாக்கங்களை செயல்படுத்து மற்றும் செயல் இழக்கச் செய்"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
+msgid "Extensions Manager"
+msgstr "விரிவாக்க மேலாளர்"
+
+#: ../extensions/favicon/favicon.ephy-extension.in.h:1
+msgid "Favicon fallback"
+msgstr "Favicon பின்சாய்வு"
+
+#: ../extensions/favicon/favicon.ephy-extension.in.h:2
+msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
+msgstr "/favicon.ico ஐ favicon ஐ ஏற்றுகிறது தளம் தரப்படுத்தப்பட்ட முறையை பயன்படுத்தவில்லையெனில்"
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
+msgid "Gestures"
+msgstr "சைகைகள்"
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:2
+msgid "Perform actions with mouse gestures"
+msgstr "சுட்டி பாவனைகளுடன் செயல்களை செய்யவும்"
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
+msgid "Greasemonkey"
+msgstr "Greasemonkey"
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
+msgid "Run user scripts to modify web pages' behavior"
+msgstr "இணைய பக்கங்களின் தன்மையை மாற்ற பயனர் ஸ்கிரிப்ட்களை இயக்கு"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
+msgid "Java Console"
+msgstr "ஜாவா பணியகம்"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
+msgid "Provide access to the Java-Plugin Console"
+msgstr "Java-Plugin பணியகத்தை அணுக கொடுக்கிறது"
+
+#: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
+msgid "Live HTTP headers"
+msgstr "Live HTTP தலைப்புகள்"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
+msgid "Display information about and links and media from the current page"
+msgstr "நடப்பு பக்கத்திலிருந்து இணைப்புகள் மற்றும் ஊடகத்தை பற்றிய விவரங்களை காட்டு"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
+msgid "Page Info"
+msgstr "பக்க தகவல்"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
+msgid "Edit site permissions"
+msgstr "தள அனுமதிகளை திருத்தவும்"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
+msgid "Permissions"
+msgstr "அனுமதிகள்"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
+msgid "Drag the page on middle mouse click"
+msgstr "சுட்டி மைய சொடுக்கில் பக்கத்தை இழுக்கவும்"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+msgid "Push Scroll"
+msgstr "சுருளைத் தள்ளு"
+
+#: ../extensions/python-console/python-console.ephy-extension.in.h:1
+msgid "Opens an interactive Python console"
+msgstr "ஊடாடல் Python பணியகத்தை திறக்கிறது"
+
+#: ../extensions/python-console/python-console.ephy-extension.in.h:2
+msgid "Python Console"
+msgstr "பைதான் பணியகம்"
+
+#: ../extensions/rss/rss.ephy-extension.in.in.h:2
+msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr "ஒரு செய்தி ஊட்டத்தை கொடுக்க உங்களுக்கு பிடித்தமான செய்தி வாசிப்பாளருக்கு சந்தாப்படுத்து"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:1
+msgid "A sample extension"
+msgstr "ஒரு மாதிரி விரிவாக்கம்"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:2
+msgid "Sample"
+msgstr "மாதிரி"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
+msgid "Select Stylesheet"
+msgstr "ஸ்டைல் ஷூட்டை தேர்ந்தெடு"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
+msgid "Select between different stylesheets offered by the web page"
+msgstr "இணைய பக்கத்தால் கொடுக்கப்படும் வேறுபட்டதை தேர்ந்தெடு"
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
+msgid "Adds a sidebar to windows"
+msgstr "சாரளத்திற்கு ஒரு பக்கப்பட்டையைச் சேர்க்கவும்"
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
+msgid "Sidebar"
+msgstr "பக்கபட்டை"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
+msgid "Look up the selected text with a smart bookmark"
+msgstr "ஒரு சிறந்த புத்தகக்குறியுடன் தேர்ந்தெடுக்கப்பட்ட உரையை தேடுகிறது"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
+msgid "Smart Bookmarks"
+msgstr "சுறுசுறுப்பான புத்தக்குறியீடுகள்"
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
+msgid "Groups newly opened tabs"
+msgstr "குழுக்களால் புதியதாக திறக்கப்பட்ட தத்தல்கள்"
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
+msgid "Tab Groups"
+msgstr "தத்தல் குழுக்கள்"
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
+msgid "Indicates new content in background tabs"
+msgstr "பின்னணி தத்தல்களில் புதிய உள்ளடக்கத்தை குறிக்கிறது"
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
+msgid "Tab States"
+msgstr "தத்தலின் நிலைள்"
+
