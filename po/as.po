@@ -1,0 +1,1333 @@
+# translation of epiphany-extensions.po.master.as.po to Assamese
+# Assamese translation of epiphany-extensions.
+# Copyright (C) 2009 epiphany-extensions's COPYRIGHT HOLDER
+# This file is distributed under the same license as the epiphany-extensions package.
+#
+# Amitakhya Phukan <aphukan@fedoraproject.org>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: epiphany-extensions.po.master.as\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions&component=general\n"
+"POT-Creation-Date: 2009-06-10 06:26+0000\n"
+"PO-Revision-Date: 2009-06-19 00:19+0530\n"
+"Last-Translator: Amitakhya Phukan <aphukan@fedoraproject.org>\n"
+"Language-Team: Assamese <fedora-trans-as@redhat.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 0.2\n"
+
+#: ../extensions/actions/action-properties.glade.h:1
+msgid "<span weight=\"bold\">Applies to</span>"
+msgstr "<span weight=\"bold\">ইয়াত প্ৰযোজ্য</span>"
+
+#: ../extensions/actions/action-properties.glade.h:2
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">সাধাৰণ</span>"
+
+#: ../extensions/actions/action-properties.glade.h:3
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"images."
+msgstr ""
+"এই বিকল্পটো সক্ৰিয় কৰিলে ছবিৰ সৈতে প্ৰদৰ্শিত প'প-আপ তালিকাত এই কাম অন্তৰ্ভুক্ত "
+"কৰা হ'ব ।"
+
+#: ../extensions/actions/action-properties.glade.h:4
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"links and pages."
+msgstr ""
+"এই বিকল্পটো সক্ৰিয় কৰিলে লিংক আৰু পৃষ্ঠাৰ সৈতে প্ৰদৰ্শিত প'প-আপ তালিকাত এই কাম "
+"অন্তৰ্ভুক্ত কৰা হ'ব ।"
+
+#: ../extensions/actions/action-properties.glade.h:5
+msgid "The action description."
+msgstr "কামৰ বিৱৰণ ।"
+
+#: ../extensions/actions/action-properties.glade.h:6
+msgid ""
+"The action name. If a character is preceded by an underscore, that character "
+"will be used as the access key for the menu item."
+msgstr "কামৰ নাম । কোনো অক্ষৰৰ আগত আন্ডাৰ-স্কোৰ চিহ্ন প্ৰদৰ্শন কৰিলে, সংশ্লিষ্ট অক্ষৰটো এই তালিকাৰ বস্তুৰ এক্সেচ-কি ৰূপে ব্যৱহাৰ কৰা হ'ব ।"
+
+#: ../extensions/actions/action-properties.glade.h:7
+msgid ""
+"The command to execute when the action is activated. The URL of the link, "
+"image or page will be appended to the command."
+msgstr ""
+"কাম সক্ৰিয় কৰিলে, সঞ্চালনযোগ্য আদেশ । লিংক, ছবি অথবা পৃষ্ঠাৰ URL, আদেশৰ সৈতে "
+"সংযোজন কৰা হ'ব ।"
+
+#: ../extensions/actions/action-properties.glade.h:8
+msgid "_Command:"
+msgstr "আদেশ: (_C)"
+
+#: ../extensions/actions/action-properties.glade.h:9
+msgid "_Description:"
+msgstr "বিৱৰণ: (_D)"
+
+#: ../extensions/actions/action-properties.glade.h:10
+msgid "_Images"
+msgstr "ছবি (_I)"
+
+#: ../extensions/actions/action-properties.glade.h:11
+#: ../extensions/epilicious/epilicious-config.glade.h:6
+msgid "_Name:"
+msgstr "নাম: (_N)"
+
+#: ../extensions/actions/action-properties.glade.h:12
+msgid "_Pages"
+msgstr "পৃষ্ঠা (_P)"
+
+#: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions.ephy-extension.in.in.h:1
+msgid "Actions"
+msgstr "কাম"
+
+#: ../extensions/actions/ephy-actions-extension.c:112
+msgid "Actio_ns"
+msgstr "কাম (_n)"
+
+#: ../extensions/actions/ephy-actions-extension.c:113
+msgid "Customize actions"
+msgstr "স্বনিৰ্ধাৰিত কাম"
+
+#: ../extensions/actions/ephy-actions-extension.c:436
+msgid "Could not run command"
+msgstr "আদেশ সঞ্চালন কৰিবলৈ ব্যৰ্থ"
+
+#: ../extensions/actions/ephy-actions-extension.c:440
+msgid "Could not Run Command"
+msgstr "আদেশ সঞ্চালন কৰিবলৈ ব্যৰ্থ"
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
+msgid "No action selected."
+msgstr "কোনো কাম বাচি লোৱা হোৱা নাই ।"
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
+#, c-format
+msgid "%i action selected."
+msgid_plural "%i actions selected."
+msgstr[0] "%i কাম নিৰ্বাচিত হৈছে ।"
+msgstr[1] "%i কাম নিৰ্বাচিত হৈছেে ।"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
+msgid "Add Action"
+msgstr "কাম যোগ কৰক"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
+#, c-format
+msgid "“%s” Properties"
+msgstr "“%s” গুণ"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
+msgid "Action Properties"
+msgstr "কাম সংক্ৰান্ত গুণ"
+
+#: ../extensions/adblock/adblock-ui.c:263
+msgid ""
+"This list is Copyright © its original author(G). It is relicensed under the "
+"GPL with permission.\n"
+"The original list, Filterset.G, can be found at http://www.pierceive.com/"
+"filtersetg/.\n"
+"This version has been modified from its original. The changes have not been "
+"approved by the original author;\n"
+"direct any problems to Bugzilla and not to the original author (G).\n"
+msgstr ""
+"This list is Copyright © its original author(G). It is relicensed under the "
+"GPL with permission.\n"
+"The original list, Filterset.G, can be found at http://www.pierceive.com/"
+"filtersetg/.\n"
+"This version has been modified from its original. The changes have not been "
+"approved by the original author;\n"
+"direct any problems to Bugzilla and not to the original author (G).\n"
+
+#: ../extensions/adblock/adblock-ui.c:481
+msgid "Pattern"
+msgstr "বিন্যাস"
+
+#: ../extensions/adblock/adblock.glade.h:1
+msgid "<b>Courtesy of Graham Pierce</b>"
+msgstr "<b>গ্ৰাহাম পিয়ৰ্ছৰ সৌবাবেত</b>"
+
+#: ../extensions/adblock/adblock.glade.h:2
+msgid "<b>New rule</b>"
+msgstr "<b>নতুন নিয়ম</b>"
+
+#: ../extensions/adblock/adblock.glade.h:3
+msgid "<b>Update rules from original site</b>"
+msgstr "<b>মূল ছাইটৰ পৰা নিয়ম উন্নত কৰা হ'ব</b>"
+
+#: ../extensions/adblock/adblock.glade.h:4
+#: ../extensions/adblock/ephy-adblock-extension.c:229
+msgid "Adblock Editor"
+msgstr "Adblock সম্পাদন ব্যৱস্থা"
+
+#: ../extensions/adblock/adblock.glade.h:5
+msgid "Add a new rule"
+msgstr "নতুন নিয়ম যোগ কৰক"
+
+#: ../extensions/adblock/adblock.glade.h:6
+msgid "Blacklist"
+msgstr "ব্লেকলিস্ট"
+
+#: ../extensions/adblock/adblock.glade.h:7
+msgid "Filterset.G"
+msgstr "Filterset.G"
+
+#: ../extensions/adblock/adblock.glade.h:8
+msgid "Whitelist"
+msgstr "ৱাইটলিস্ট"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:230
+msgid "Edit Adblock"
+msgstr "Adblock সম্পাদন কৰক"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:299
+#, c-format
+msgid "%d hidden advertisement"
+msgid_plural "%d hidden advertisements"
+msgstr[0] "%d লুকুৱা বিজ্ঞাপন"
+msgstr[1] "%d লুকুৱা বিজ্ঞাপন"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:81
+msgid "_Auto Reload"
+msgstr "স্বয়ংক্ৰিয়ভাবে পুনঃ তুলি লওক (_A)"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+msgid "Reload the page periodically"
+msgstr "নিয়মিতৰূপে পৃষ্ঠা পুনঃ তুলি লোৱা হ'ব"
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.py:373
+msgid "View Creative Commons license"
+msgstr "Creative Commons প্ৰমাণপত্ৰ পৰিদৰ্শন কৰক"
+
+#: ../extensions/certificates/ephy-certificates-extension.c:163
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
+msgid "Certificates"
+msgstr "প্ৰমাণপত্ৰ"
+
+#: ../extensions/certificates/ephy-certificates-extension.c:194
+msgid "Security Devices"
+msgstr "নিৰাপত্তামূলক যন্ত্ৰ"
+
+#. stock icon
+#: ../extensions/certificates/ephy-certificates-extension.c:206
+msgid "Manage _Certificates"
+msgstr "প্ৰমাণপত্ৰ পৰিচালনা (_C)"
+
+#. shortcut key
+#: ../extensions/certificates/ephy-certificates-extension.c:208
+msgid "Manage your certificates"
+msgstr "প্ৰমাণপত্ৰ পৰিচালনা কৰক"
+
+#. stock icon
+#: ../extensions/certificates/ephy-certificates-extension.c:212
+msgid "Manage Security _Devices"
+msgstr "নিৰাপত্তামূলক যন্ত্ৰ পৰিচালনা (_D)"
+
+#. shortcut key
+#: ../extensions/certificates/ephy-certificates-extension.c:214
+msgid "Manage your security devices"
+msgstr "নিৰাপত্তামূলক যন্ত্ৰ পৰিচালনা কৰক"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:1
+msgid "Action for tagged bookmarks:"
+msgstr "টেগ কৰা পত্ৰচিহ্নৰ বাবে নিৰ্ধাৰিত কাম:"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:2
+msgid "Epilicious Configuration"
+msgstr "Epilicious বিন্যাস"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:3
+msgid "_Backend:"
+msgstr "বেক লৈন্ড: (_B)"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:4
+msgid "_Exclude"
+msgstr "অন্তৰ্ভুক্ত কৰা ন'হ'ব (_E)"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:5
+msgid "_Include"
+msgstr "অন্তৰ্ভুক্ত কৰা হ'ব (_I)"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:7
+msgid "_Password:"
+msgstr "গুপ্তশব্দ: (_P)"
+
+#: ../extensions/epilicious/epilicious-config.glade.h:8
+msgid "_Tag:"
+msgstr "টেগ: (_T)"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:1
+msgid "Adding new bookmarks and synching topics"
+msgstr "নতুন পত্ৰচিহ্ন যোগ কৰি, বিষয় সুসংগত কৰা হ'ব"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:2
+msgid "Removing deleted bookmarks"
+msgstr "বৰ্জিত পত্ৰচিহ্ন আঁতৰুৱা হ'ব"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:4
+#: ../extensions/epilicious/progress.py:41
+#, no-c-format, python-format
+msgid "Retrieving bookmarks from %s"
+msgstr "%sৰ পৰা পত্ৰচিহ্ন পুনৰুদ্ধাৰ কৰক"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:5
+msgid "Retrieving bookmarks from epiphany"
+msgstr "epiphanyৰ পৰা পত্ৰচিহ্ন পুনৰুদ্ধাৰ কৰক"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:6
+msgid "Retrieving previous synch point"
+msgstr "আগৰ synch স্থান উদ্ধাৰ কৰা হৈছে"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:7
+msgid "Saving new synch point"
+msgstr "নতুন synch পইন্ট সংৰক্ষণ কৰা হৈছে"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:9
+#: ../extensions/epilicious/progress.py:39
+#, no-c-format, python-format
+msgid "Synchronizing with %s"
+msgstr "%s-ৰ সৈতে সুসংগত কৰা হৈছে"
+
+#: ../extensions/epilicious/epilicious-progress.glade.h:10
+msgid "Synchronizing..."
+msgstr "সুসংগত কৰা হৈছে..."
+
+#: ../extensions/epilicious/epilicious.py.in:232
+#: ../extensions/epilicious/epilicious.py.in:250
+msgid "Epilicious Synchronize"
+msgstr "Epilicious সুসংগত কৰক"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:1
+msgid "Bookmarks with this topic will be synchronized."
+msgstr "এই বিষয়ৰ বাবে চিহ্নিত পত্ৰচিহ্নসমূহ সুসংগত কৰা হ'ব ।"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:2
+msgid ""
+"Controls the function of the topic. If this is unset then all bookmarks with "
+"the topic will be synched. If this is set then all bookmarks without the "
+"topic will be synched."
+msgstr ""
+"বিষয় সংক্ৰান্ত কাম নিয়ন্ত্ৰণ কৰিবলৈ ব্যৱহৃত হয় । এই মান নিৰ্ধাৰণ নকৰিলে, চিহ্নিত "
+"বিষয়ৰ বাবে ধাৰ্য সকল পত্ৰচিহ্নসমূহ synch কৰা হ'ব আৰু মান নিৰ্ধাৰণ কৰিলে, সংশ্লিষ্ট "
+"বিষয়বিহীন পত্ৰচিহ্ন synch কৰা হ'ব ।"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:3
+msgid "Exclude topic"
+msgstr "বিষয় অন্তৰ্ভুক্ত কৰা ন'হ'ব"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:4
+msgid "Shared topic"
+msgstr "অংশীদাৰ কৰা বিষয়"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:5
+msgid ""
+"The backend that epilicious will use for synchronizing bookmarks. Allowed "
+"values: 'diigo', 'ma.gnolia'"
+msgstr ""
+"পত্ৰচিহ্ন সুসংগত কৰাৰ বাবে epilicious দ্বাৰা ব্যৱহাৰযোগ্য বেক লৈন্ড । ব্যৱহাৰযোগ্য মান:  "
+"'diigo', 'ma.gnolia'"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:6
+msgid "The password that epilicious will use for synchronizing bookmarks."
+msgstr "পত্ৰচিহ্ন সুসংগত কৰাৰ বাবে epilicious দ্বাৰা ব্যৱহাৰযোগ্য গুপ্তশব্দ ।"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:7
+msgid "The username that epilicious will use for synchronizing bookmarks."
+msgstr "পত্ৰচিহ্ন সুসংগত কৰাৰ বাবে epilicious দ্বাৰা ব্যৱহাৰযোগ্য ব্যৱহাৰকৰ্তাৰ নাম ।"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:8
+msgid "epilicious backend"
+msgstr "epilicious বেক লৈন্ড"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:9
+msgid "password"
+msgstr "গুপ্তশব্দ"
+
+#: ../extensions/epilicious/epilicious.schemas.in.h:10
+msgid "username"
+msgstr "ব্যৱহাৰকৰ্তাৰ নাম"
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
+msgid "Check _HTML"
+msgstr "HTML পৰীক্ষা কৰক (_H)"
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:92
+msgid "Display HTML errors in the Error Viewer dialog"
+msgstr "ভুল প্ৰদৰ্শন ব্যৱস্থাত HTML সংক্ৰান্ত ভুল প্ৰদৰ্শন কৰা হ'ব"
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
+msgid "Check _Links"
+msgstr "লিংক পৰীক্ষা কৰক (_L)"
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
+msgid "Display invalid hyperlinks in the Error Viewer dialog"
+msgstr "ভুল প্ৰদৰ্শন ব্যৱস্থাত অবৈধ হাইপাৰ-লিংক প্ৰদৰ্শন কৰা হ'ব"
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:103
+msgid "_Error Viewer"
+msgstr "ভুল প্ৰদৰ্শনব্যৱস্থা (_E)"
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
+msgid "Display web page errors"
+msgstr "ৱেব পৃষ্ঠা সংক্ৰান্ত ভুল প্ৰদৰ্শন কৰা হ'ব"
+
+#: ../extensions/error-viewer/error-viewer.glade.h:1
+msgid "Cl_ear"
+msgstr "পৰিশ্ৰুত কৰক (_e)"
+
+#: ../extensions/error-viewer/error-viewer.glade.h:2
+msgid "Error Viewer"
+msgstr "ভুল প্ৰদৰ্শন ব্যৱস্থা"
+
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:105
+#, c-format
+msgid ""
+"%s error in %s on line %d and column %d:\n"
+"%s"
+msgstr ""
+"%s ত্ৰুটি, %s ত %d পংক্তি আৰু %d কলামত:\n"
+"%s"
+
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:113
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:137
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:150
+#, c-format
+msgid ""
+"%s error in %s:\n"
+"%s"
+msgstr ""
+"%s ত্ৰুটি, %s ত:\n"
+"%s"
+
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
+#, c-format
+msgid ""
+"%s error in %s on line %d:\n"
+"%s"
+msgstr ""
+"%s ভুল %s ত, %d পংক্তিত:\n"
+"%s"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "%d অবৈধ লিংক পোৱা গৈছে"
+msgstr[1] "%d অবৈধ লিংক পোৱা গৈছে"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
+#, c-format
+msgid ""
+"Link error in %s:\n"
+"%s is unavailable."
+msgstr ""
+"%s ত লিংক সংক্ৰান্ত ত্ৰুটি:\n"
+"%s উপলব্ধ নাই "
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
+#, c-format
+msgid "Checking %d Link on “%s”"
+msgid_plural "Checking %d Links on “%s”"
+msgstr[0] "%d লিঙ্ক, “%s” ত পৰীক্ষা কৰা হৈছে"
+msgstr[1] "%d লিঙ্ক, “%s” ত পৰীক্ষা কৰা হৈছে"
+
+#: ../extensions/error-viewer/opensp/validate.cpp:168
+#, c-format
+msgid ""
+"HTML error in “%s” on line %s:\n"
+"%s"
+msgstr ""
+"“%s” ত %s পংক্তিত HTML সংক্ৰান্ত ত্ৰুটি:\n"
+"%s"
+
+#: ../extensions/error-viewer/sgml-validator.c:164
+#, c-format
+msgid "Found %d error"
+msgid_plural "Found %d errors"
+msgstr[0] "%d ভুল পোৱা গৈছে"
+msgstr[1] "%d ভুল পোৱা গৈছে"
+
+#: ../extensions/error-viewer/sgml-validator.c:168
+#, c-format
+msgid "HTML Validation of “%s” complete"
+msgstr "“%s”-ৰ HTML বৈধতা পৰীক্ষা সমাপ্ত হৈছে"
+
+#: ../extensions/error-viewer/sgml-validator.c:226
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"%s"
+msgstr ""
+"%s ত HTML ত্ৰুটি:\n"
+"%s"
+
+#: ../extensions/error-viewer/sgml-validator.c:228
+#: ../extensions/error-viewer/sgml-validator.c:244
+msgid ""
+"Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
+"+xml” instead."
+msgstr ""
+"Doctype “XHTML” হ'লেও, অন্তৰ্ভুক্ত বিষয়বস্তু “text/html” বিন্যাসত আছে ।  "
+"পৰিবৰ্তে“application/xhtml+xml” প্ৰয়োগ কৰক ।"
+
+#: ../extensions/error-viewer/sgml-validator.c:242
+#, c-format
+msgid ""
+"HTML warning in %s:\n"
+"%s"
+msgstr ""
+"%s ত HTML সংক্ৰান্ত সতৰ্কবাৰ্তা:\n"
+"%s"
+
+#: ../extensions/error-viewer/sgml-validator.c:359
+#, c-format
+msgid "HTML error in %s:"
+msgstr "%s ত HTML ত্ৰুটি:"
+
+#: ../extensions/error-viewer/sgml-validator.c:367
+#, c-format
+msgid "Invalid character encoding"
+msgstr "কেৰেক্টাৰ এনকোডিং বৈধ নহয়"
+
+#: ../extensions/error-viewer/sgml-validator.c:372
+#, c-format
+msgid "Unknown error while converting to UTF-8"
+msgstr "UTF-8 লৈ ৰূপান্তৰ কৰাৰ সময় অজ্ঞাত ত্ৰুটি"
+
+#: ../extensions/error-viewer/sgml-validator.c:434
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"No valid doctype specified."
+msgstr ""
+"%s ত HTML ত্ৰুটি:\n"
+"বৈধ doctype উল্লেখ কৰা নহয় ।"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:345
+msgid "Enabled"
+msgstr "সক্ৰিয়"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:353
+#: ../extensions/rss/rss-ui.c:571
+msgid "Description"
+msgstr "বিৱৰণ"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+msgid "<b>Loaded Extensions</b>"
+msgstr "<b>সম্প্ৰসাৰণ তুলি লোৱা হৈছে</b>"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+msgid "Extensions"
+msgstr "সম্প্ৰসাৰণ"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:73
+msgid "_Extensions"
+msgstr "সম্প্ৰসাৰণ (_E)"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
+msgid "Load and unload extensions"
+msgstr "সম্প্ৰসাৰণ তুলি লওক অথবা আন-ল'ড কৰক"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "Help about extensions"
+msgstr "সম্প্ৰসাৰণ সংক্ৰান্ত সহায়"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:78
+msgid "Install User _Script"
+msgstr "ব্যৱহাৰকৰ্তাৰ স্ক্ৰিপ্ট সংস্থাপন কৰক (_S)"
+
+#. shortcut key
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:80
+msgid "Install Greasemonkey script"
+msgstr "Greasemonkey স্ক্ৰিপ্ট সংস্থাপন কৰক"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:311
+#, c-format
+msgid "The user script at “%s” has been installed"
+msgstr "“%s” লৈ উপস্থিত ব্যৱহাৰকৰ্তাৰ স্ক্ৰিপ্ট সংস্থাপন কৰা হৈছে"
+
+#: ../extensions/java-console/ephy-java-console-extension.c:48
+msgid "_Java Console"
+msgstr "Java Console (_J)"
+
+#. shortcut key
+#: ../extensions/java-console/ephy-java-console-extension.c:50
+msgid "Show Java Console"
+msgstr "Java Console প্ৰদৰ্শন কৰা হ'ব"
+
+#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:100
+msgid "_HTTP Headers"
+msgstr "HTTP হেডাৰ (_H)"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:1
+msgid "<b>Request</b>"
+msgstr "<b>অনুৰোধ</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:2
+msgid "<b>Response</b>"
+msgstr "<b>প্ৰতিক্ৰিয়া</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:3
+msgid "<b>URLs</b>"
+msgstr "<b>URL</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
+msgid "Clear cache"
+msgstr "কেশ্বেৰ তথ্য আঁতৰাওক"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
+msgid "Live Headers"
+msgstr "লাইভ হেডাৰ"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
+msgid "Remove headers"
+msgstr "হেডাৰ আঁতৰাওক"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:61
+msgid "Pa_ge Information"
+msgstr "পৃষ্ঠা সংক্ৰান্ত তথ্য (_g)"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:63
+msgid "Display page information in a dialog"
+msgstr "পৃষ্ঠা সংক্ৰান্ত তথ্য এটা সম্বাদ বক্সত প্ৰদৰ্শন কৰা হ'ব"
+
+#: ../extensions/page-info/page-info-dialog.c:704
+msgid "Save As..."
+msgstr "নতুন ৰূপে সংৰক্ষণ..."
+
+#: ../extensions/page-info/page-info-dialog.c:721
+msgid "Select a directory"
+msgstr "এটা পঞ্জিকা নিৰ্বাচন কৰক"
+
+#: ../extensions/page-info/page-info-dialog.c:770
+msgid "Unknown type"
+msgstr "অজ্ঞাত ধৰন"
+
+#: ../extensions/page-info/page-info-dialog.c:775
+msgid "Full standards compliance"
+msgstr "প্ৰমিত মানৰ সৈতে সম্পূৰ্ণ সুসংগত"
+
+#: ../extensions/page-info/page-info-dialog.c:778
+msgid "Almost standards compliance"
+msgstr "অধিকাংশ প্ৰমিত মানৰ সৈতে সুসংগত"
+
+#: ../extensions/page-info/page-info-dialog.c:781
+msgid "Compatibility"
+msgstr "সুসংগতি"
+
+#: ../extensions/page-info/page-info-dialog.c:785
+msgid "Undetermined"
+msgstr "নিৰ্ধাৰিত নহয়"
+
+#: ../extensions/page-info/page-info-dialog.c:794
+msgid "Not cached"
+msgstr "কেশ্বে কৰা নহয়"
+
+#: ../extensions/page-info/page-info-dialog.c:797
+msgid "Disk cache"
+msgstr "ডিস্ক কেশ্বে"
+
+#: ../extensions/page-info/page-info-dialog.c:800
+msgid "Memory cache"
+msgstr "মেমৰি কেশ্বে"
+
+#: ../extensions/page-info/page-info-dialog.c:803
+msgid "Unknown cache"
+msgstr "অজ্ঞাত কেশ্বে"
+
+#: ../extensions/page-info/page-info-dialog.c:819
+#: ../extensions/page-info/page-info-dialog.c:935
+msgid "Unknown"
+msgstr "অজ্ঞাত"
+
+#: ../extensions/page-info/page-info-dialog.c:824
+msgid "No referrer"
+msgstr "কোনো উল্লেখকাৰী নাই"
+
+#: ../extensions/page-info/page-info-dialog.c:838
+#: ../extensions/page-info/page-info-dialog.c:854
+msgid "Not specified"
+msgstr "নিৰ্ধাৰিত নহয়"
+
+#: ../extensions/page-info/page-info-dialog.c:917
+msgid "Image"
+msgstr "ছবি"
+
+#: ../extensions/page-info/page-info-dialog.c:920
+msgid "Background image"
+msgstr "পটভূমিৰ ছবি"
+
+#: ../extensions/page-info/page-info-dialog.c:923
+msgid "Embed"
+msgstr "এম্বেড কৰা হ'ব"
+
+#: ../extensions/page-info/page-info-dialog.c:926
+msgid "Object"
+msgstr "অবজেক্ট"
+
+#: ../extensions/page-info/page-info-dialog.c:929
+msgid "Applet"
+msgstr "এপ্লেট"
+
+#: ../extensions/page-info/page-info-dialog.c:932
+msgid "Icon"
+msgstr "আইকন"
+
+#: ../extensions/page-info/page-info-dialog.c:1113
+msgid "_Open"
+msgstr "খোলক (_O)"
+
+#: ../extensions/page-info/page-info-dialog.c:1119
+#: ../extensions/page-info/page-info-dialog.c:1564
+msgid "_Copy Link Address"
+msgstr "লিংক দ্বাৰা চিহ্নিত ঠিকনা নকল কৰক (_C)"
+
+#: ../extensions/page-info/page-info-dialog.c:1125
+msgid "_Use as Background"
+msgstr "পটভূমি ৰূপে ব্যৱহাৰ কৰক (_U)"
+
+#: ../extensions/page-info/page-info-dialog.c:1131
+#: ../extensions/page-info/page-info-dialog.c:1570
+msgid "_Save As..."
+msgstr "নতুন ৰূপে সংৰক্ষণ...(_S)"
+
+#: ../extensions/page-info/page-info-dialog.c:1363
+#: ../extensions/page-info/page-info-dialog.c:1684
+msgid "Blocked"
+msgstr "প্ৰতিৰোধ কৰা হৈছে"
+
+#: ../extensions/page-info/page-info-dialog.c:1379
+#: ../extensions/page-info/page-info-dialog.c:1700
+msgid "URL"
+msgstr "URL"
+
+#: ../extensions/page-info/page-info-dialog.c:1392
+msgid "Type"
+msgstr "ধৰন"
+
+#: ../extensions/page-info/page-info-dialog.c:1404
+msgid "Alt Text"
+msgstr "বিকল্প লেখা"
+
+#: ../extensions/page-info/page-info-dialog.c:1416
+#: ../extensions/page-info/page-info-dialog.c:1713
+msgid "Title"
+msgstr "শিৰোনাম"
+
+#: ../extensions/page-info/page-info-dialog.c:1428
+msgid "Width"
+msgstr "প্ৰস্থ"
+
+#: ../extensions/page-info/page-info-dialog.c:1440
+msgid "Height"
+msgstr "উচ্চতা"
+
+#: ../extensions/page-info/page-info-dialog.c:1725
+msgid "Relation"
+msgstr "সম্বন্ধ"
+
+#: ../extensions/page-info/page-info-dialog.c:1874
+#: ../extensions/page-info/page-info-dialog.c:2015
+msgid "Name"
+msgstr "নাম"
+
+#: ../extensions/page-info/page-info-dialog.c:1886
+msgid "Method"
+msgstr "পদ্ধতি"
+
+#: ../extensions/page-info/page-info-dialog.c:1900
+msgid "Action"
+msgstr "কাম"
+
+#: ../extensions/page-info/page-info-dialog.c:1981
+msgid "_Copy"
+msgstr "নকল (_C)"
+
+#: ../extensions/page-info/page-info-dialog.c:2027
+msgid "Content"
+msgstr "বিষয়"
+
+#: ../extensions/page-info/page-info-dialog.c:2128
+msgid "Page Metadata"
+msgstr "পৃষ্ঠাৰ মিটা-ডাটা"
+
+#: ../extensions/page-info/page-info.glade.h:1
+msgid "<b>Dublin Core Metadata</b>"
+msgstr "<b>Dublin কোৰ মিটাডাটা</b>"
+
+#: ../extensions/page-info/page-info.glade.h:2
+msgid "<b>Forms In Page</b>"
+msgstr "<b>পৃষ্ঠাত উপস্থিত ফৰ্ম</b>"
+
+#: ../extensions/page-info/page-info.glade.h:3
+msgid "<b>Links In Page</b>"
+msgstr "<b>পৃষ্ঠাত উপস্থিত লিংক</b>"
+
+#: ../extensions/page-info/page-info.glade.h:4
+msgid "<b>Media In Page</b>"
+msgstr "<b>পৃষ্ঠাত উপস্থিত মিডিয়া</b>"
+
+#: ../extensions/page-info/page-info.glade.h:5
+msgid "<b>Medium View</b>"
+msgstr "<b>মধ্যম প্ৰদৰ্শনক্ষেত্ৰ</b>"
+
+#: ../extensions/page-info/page-info.glade.h:6
+msgid "<b>Other Metadata</b>"
+msgstr "<b>অন্যান্য মিটাডাটা</b>"
+
+#: ../extensions/page-info/page-info.glade.h:7
+msgid "<b>Rendering</b>"
+msgstr "<b>ৰেন্ডাৰিং</b>"
+
+#: ../extensions/page-info/page-info.glade.h:8
+msgid "<b>Source File</b>"
+msgstr "<b>উৎস নথিপত্ৰ</b>"
+
+#: ../extensions/page-info/page-info.glade.h:9
+msgid "<b>Web Page</b>"
+msgstr "<b>ৱেব পৃষ্ঠা</b>"
+
+#: ../extensions/page-info/page-info.glade.h:10
+msgid "DYNAMIC"
+msgstr "DYNAMIC"
+
+#: ../extensions/page-info/page-info.glade.h:11
+msgid "Date:"
+msgstr "তাৰিখ:"
+
+#: ../extensions/page-info/page-info.glade.h:12
+msgid "Description:"
+msgstr "বিৱৰণ:"
+
+#: ../extensions/page-info/page-info.glade.h:13
+msgid "Encoding:"
+msgstr "এনকোডিং:"
+
+#: ../extensions/page-info/page-info.glade.h:14
+msgid "Expires:"
+msgstr "মেয়াদ পূৰ্তী:"
+
+#: ../extensions/page-info/page-info.glade.h:15
+msgid "Format:"
+msgstr "বিন্যাস:"
+
+#: ../extensions/page-info/page-info.glade.h:16
+msgid "Forms"
+msgstr "ফৰ্ম"
+
+#: ../extensions/page-info/page-info.glade.h:17
+msgid "General"
+msgstr "সাধাৰণ"
+
+#: ../extensions/page-info/page-info.glade.h:18
+msgid "Links"
+msgstr "লিংক"
+
+#: ../extensions/page-info/page-info.glade.h:19
+msgid "Location:"
+msgstr "অৱস্থান:"
+
+#: ../extensions/page-info/page-info.glade.h:20
+msgid "MIME type:"
+msgstr "MIME-ৰ ধৰন:"
+
+#: ../extensions/page-info/page-info.glade.h:21
+msgid "Media"
+msgstr "মিডিয়া"
+
+#: ../extensions/page-info/page-info.glade.h:22
+msgid "Metadata"
+msgstr "মিটাডাটা"
+
+#: ../extensions/page-info/page-info.glade.h:23
+msgid "Mode:"
+msgstr "মোড:"
+
+#: ../extensions/page-info/page-info.glade.h:24
+msgid "Modified:"
+msgstr "পৰিবৰ্তনৰ তাৰিখ:"
+
+#: ../extensions/page-info/page-info.glade.h:25
+msgid "Page Properties"
+msgstr "পৃষ্ঠাৰ গুণ"
+
+#: ../extensions/page-info/page-info.glade.h:26
+msgid "Referrer:"
+msgstr "উল্লেখকাৰী:"
+
+#: ../extensions/page-info/page-info.glade.h:27
+msgid "Size:"
+msgstr "মাপ:"
+
+#: ../extensions/page-info/page-info.glade.h:28
+msgid "Source:"
+msgstr "উৎস:"
+
+#: ../extensions/page-info/page-info.glade.h:29
+msgid "Title:"
+msgstr "শিৰোনাম:"
+
+#: ../extensions/page-info/page-info.glade.h:30
+msgid "Type:"
+msgstr "ধৰন:"
+
+#: ../extensions/page-info/page-info.glade.h:31
+msgid "_Save Media As..."
+msgstr "নতুন ৰূপে মিডিয়া সংৰক্ষণ কৰক...(_S)"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:165
+msgid "allowed"
+msgstr "অনুমোদিত"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:169
+msgid "denied"
+msgstr "প্ৰত্যাখ্যাত"
+
+#. Sometimes we get this... how did this get in the list!?
+#: ../extensions/permissions/ephy-permissions-dialog.c:174
+msgid "default"
+msgstr "অবিকল্পিত মান"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:500
+msgid "Domain"
+msgstr "ডোমেইন"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:512
+msgid "State"
+msgstr "অৱস্থা"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:605
+msgid "Site Permissions"
+msgstr "ছাইট সংক্ৰান্ত অনুমতি"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:632
+msgid "Cookies"
+msgstr "কুকি"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:633
+msgid "Images"
+msgstr "ছবি"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:634
+msgid "Popup Windows"
+msgstr "প'প-আপ সংযোগক্ষেত্ৰ"
+
+#. stock icon
+#: ../extensions/permissions/ephy-permissions-extension.c:152
+msgid "Site _Permissions"
+msgstr "ছাইটৰ অনুমতি (_P)"
+
+#. shortcut key
+#: ../extensions/permissions/ephy-permissions-extension.c:154
+msgid "Manage web site permissions"
+msgstr "ৱেব ছাইট সংক্ৰান্ত অনুমতি পৰিচালনা কৰক"
+
+#: ../extensions/rss/ephy-rss-extension.c:79
+msgid "News Feeds Subscription"
+msgstr "নিউজ ফিড বৰঙনি"
+
+#: ../extensions/rss/ephy-rss-extension.c:81
+msgid "Subscribe to this website's news feeds in your favorite news reader"
+msgstr "আপোনাৰ পছন্দৰ নিউজ পাঠ ব্যৱস্থাৰ মাধ্যমে এই ৱেব-ছাইটৰ নিউজ ফিডত বৰঙনি দিয়ক"
+
+#: ../extensions/rss/ephy-rss-extension.c:86
+msgid "_Subscribe to this feed"
+msgstr "চিহ্নিত ফিডত বৰঙনি দিয়ক (_S)"
+
+#: ../extensions/rss/ephy-rss-extension.c:88
+msgid "Subscribe to this feed in your favorite news reader"
+msgstr "আপোনাৰ পছন্দৰ নিউজ পাঠ ব্যৱস্থাৰ মাধ্যমে এই ফিডত বৰঙনি দিয়ক"
+
+#: ../extensions/rss/ephy-rss-extension.c:361
+msgid "Subscribe to site's news feed"
+msgstr "ছাইটৰ নিউজ ফিডত বৰঙনি দিয়ক"
+
+#: ../extensions/rss/rss-ui.c:153
+msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
+msgstr "<b><i>ফিড পাঠ ব্যৱস্থাৰ সৈতে সংযোগ স্থাপন কৰিবলৈ ব্যৰ্থ, এইটো বৰ্তমানে চলিছে ?</i></b>"
+
+#: ../extensions/rss/rss-ui.c:155
+msgid "Retry"
+msgstr "পুনঃপ্ৰচেষ্টা"
+
+#: ../extensions/rss/rss-ui.c:283
+msgid "_Copy Feed Address"
+msgstr "ফিডৰ ঠিকনা নকল কৰক (_C)"
+
+#: ../extensions/rss/rss-ui.c:563
+msgid "Subscribe"
+msgstr "বৰঙনি দিয়ক"
+
+#: ../extensions/rss/rss-ui.glade.h:1
+msgid "<b>Select Interesting Feeds</b>"
+msgstr "<b>আকৰ্ষক ফিডসমূহ নিৰ্বাচন কৰক</b>"
+
+#: ../extensions/rss/rss-ui.glade.h:2
+#: ../extensions/rss/rss.ephy-extension.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "নিউজ ফিড বৰঙনি"
+
+#: ../extensions/rss/rss-ui.glade.h:3
+msgid "_Subscribe"
+msgstr "বৰঙনি দিয়ক (_S)"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:140
+msgid "Render the page without using a style"
+msgstr "বিন্যাস নোহোৱা পৃষ্ঠা ৰেন্ডাৰ কৰা হ'ব"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:143
+msgid "Render the page using the default style"
+msgstr "অবিকল্পিত বিন্যাস সহযোগে পৃষ্ঠা ৰেন্ডাৰ কৰা হ'ব"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:146
+#, c-format
+msgid "Render the page using the “%s” style"
+msgstr "“%s” অবিকল্পিত বিন্যাস সহযোগে পৃষ্ঠা ৰেন্ডাৰ কৰা হ'ব"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:317
+msgid "St_yle"
+msgstr "বিন্যাস (_y)"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:318
+msgid "Select a different style for this page"
+msgstr "এই পৃষ্ঠাৰ বাবে এটা ভিন্ন বিন্যাস নিৰ্বাচন কৰক"
+
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
+msgid "Default"
+msgstr "অবিকল্পিত মান"
+
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
+msgid "None"
+msgstr "শূণ্য"
+
+#: ../extensions/sidebar/ephy-sidebar.c:167
+msgid "No Sidebars installed"
+msgstr "কোনো চাইড-বাৰ সংস্থাপন কৰা নহয়"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:88
+msgid "_Sidebar"
+msgstr "চাইড-বাৰ (_S)"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:89
+msgid "Show or hide the sidebar"
+msgstr "চাইড-বাৰ লুকাওক অথবা প্ৰদৰ্শন কৰা হ'ব"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:306
+msgid "Do you really want to remove this sidebar?"
+msgstr "আপুনি নিশ্চিতৰূপে এই চাইড-বাৰ আঁতৰাবলৈ ইচ্ছুক?"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:310
+#, fuzzy
+msgid "There is no way to recover this sidebar after removal."
+msgstr "অপসাৰণেৰ পৰে এই চাইড-বাৰ পুনৰুদ্ধাৰৰ কোনো উপায় নাই ।"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:312
+#, fuzzy
+msgid "Remove Sidebar"
+msgstr "চাইড-বাৰ আঁতৰাওক"
+
+#. Translators: %s is the sidebar title
+#: ../extensions/sidebar/ephy-sidebar-extension.c:459
+#, c-format
+#, fuzzy
+msgid "The sidebar already contains “%s”"
+msgstr "চাইড-বাৰেত “%s” বৰ্তমানে উপস্থিত আছে"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:463
+#, fuzzy
+msgid "To use this sidebar, select it from the list of available sidebar pages."
+msgstr ""
+"এই চাইড-বাৰটো প্ৰয়োগ কৰাৰ বাবে, চাইড-বাৰৰ উপলব্ধ পৃষ্ঠাৰ তালিকাৰ পৰা প্ৰথমে এটিকে "
+"নিৰ্বাচন কৰক ।"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:466
+#: ../extensions/sidebar/ephy-sidebar-extension.c:492
+#, fuzzy
+msgid "Add Sidebar"
+msgstr "চাইড-বাৰ যোগ কৰক"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:486
+#, c-format
+#, fuzzy
+msgid "Add “%s” to the Sidebar?"
+msgstr "চাইড-বাৰেত “%s” যোগ কৰা হ'ব কি?"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:490
+#, c-format
+#, fuzzy
+msgid "The source to the new sidebar page is “%s”."
+msgstr "নতুন চাইড-বাৰ পৃষ্ঠাৰ উৎস হল “%s” ।"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:496
+#, fuzzy
+msgid "_Add Sidebar"
+msgstr "চাইড-বাৰ যোগ কৰক (_A)"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
+#, fuzzy
+msgid "_Look Up"
+msgstr "অনুসন্ধান (_L)"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:538
+#, fuzzy
+msgid "_GNOME Dictionary"
+msgstr "GNOME অভিধান (_G)"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
+#, fuzzy
+msgid "Open search result in new tab"
+msgstr "নতুন টেবেত ফলাফল প্ৰদৰ্শন কৰা হ'ব"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
+#, fuzzy
+msgid "Open search result in new tab if true, in new window if false"
+msgstr ""
+"মান true (সত্য) হ'লে, অনুসন্ধানৰ ফলাফল এটা নতুন টেবেত প্ৰদৰ্শন কৰা হ'ব । মান "
+"false (সত্য নহয়) হ'লে নতুন সংযোগক্ষেত্ৰত তা প্ৰদৰ্শিত হ'ব ।"
+
+#: ../extensions/actions/actions.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Execute arbitrary commands from the context menu"
+msgstr "কনটেক্সট তালিকাৰ পৰা যথেচ্ছ ভাবে নিৰ্বাচিত আদেশ সঞ্চালন কৰা হ'ব"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Ad Blocker"
+msgstr "বিজ্ঞাপন প্ৰতিৰোধ"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Block the pest!"
+msgstr "আপদ বিদায় কৰক!"
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Auto Scroll"
+msgstr "স্বয়ংক্ৰিয় স্ক্ৰোল ব্যৱস্থা"
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Scroll on middle mouse click"
+msgstr "মাউসেতবৰ্তী বাটনৰ ক্লিকে স্ক্ৰোল কৰা হ'ব"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Auto Reload Tab"
+msgstr "টেব স্বয়ংক্ৰিয়ভাবে তুলি লোৱা হ'ব"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Reload a tab periodically"
+msgstr "নিয়মিতভাবে টেবটো পুনঃ তুলি লোৱা হ'ব"
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
+#, fuzzy
+msgid "Creative Commons license viewer"
+msgstr "Creative Commons প্ৰমাণপত্ৰ প্ৰদৰ্শন ব্যৱস্থা"
+
+#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
+#, fuzzy
+msgid "Shows the Creative Commons license of the current website if available"
+msgstr "বৰ্তমান ৱেব-ছাইটৰ বাবে Creative Commons প্ৰমাণপত্ৰ উপলব্ধ থাকলে তা প্ৰদৰ্শিত হ'ব"
+
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "View the page certificate and manage the certificates"
+msgstr "পৃষ্ঠাৰ প্ৰমাণপত্ৰ প্ৰদৰ্শন কৰক আৰু প্ৰমাণপত্ৰ পৰিচালনা কৰক"
+
+#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
+#, fuzzy
+msgid "Synchronize bookmarks with social bookmark sites"
+msgstr "সাৰ্বজনীন পত্ৰচিহ্নৰ ছাইটৰ সৈতে পত্ৰচিহ্ন সুসংগত কৰক"
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Error viewer"
+msgstr "ভুল প্ৰদৰ্শন ব্যৱস্থা"
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Validate web pages and check links"
+msgstr "ৱেব পৃষ্ঠা পৰীক্ষা কৰক আৰু লিংক পৰীক্ষা কৰক"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Activate and deactivate extensions"
+msgstr "সম্প্ৰসাৰণ সক্ৰিয় আৰু নিষ্ক্ৰিয় কৰক"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Extensions Manager"
+msgstr "সম্প্ৰসাৰণ পৰিচালনব্যৱস্থা"
+
+#: ../extensions/favicon/favicon.ephy-extension.in.h:1
+#, fuzzy
+msgid "Favicon fallback"
+msgstr "Favicon-ৰ ফল-বেক"
+
+#: ../extensions/favicon/favicon.ephy-extension.in.h:2
+#, fuzzy
+msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
+msgstr ""
+"ছাইট দ্বাৰা স্বাভাবিক পদ্ধতি ব্যৱহাৰ কৰা কৰিলে, /favicon.ico নথিপত্ৰটিকে favicon "
+"ৰূপে তুলি লোৱা হ'ব"
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Gestures"
+msgstr "অঙ্গভঙ্গি"
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Perform actions with mouse gestures"
+msgstr "মাউসেৰ ভঙ্গিমা দ্বাৰা কাম সঞ্চালন কৰক"
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Greasemonkey"
+msgstr "Greasemonkey"
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Run user scripts to modify web pages' behavior"
+msgstr "ৱেব পৃষ্ঠাৰ আচৰণ পৰিবৰ্তনৰ বাবে ব্যৱহাৰকৰ্তাৰ স্ক্ৰিপ্ট সঞ্চালনা কৰক"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Java Console"
+msgstr "Java Console"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Provide access to the Java-Plugin Console"
+msgstr "Java-Plugin কনসোলেৰ ব্যৱহাৰাধিকা প্ৰদান কৰক"
+
+#: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Live HTTP headers"
+msgstr "লাইভ HTTP হেডাৰ"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Display information about and links and media from the current page"
+msgstr ""
+"বৰ্তমান পৃষ্ঠাৰ পৰিচিতি আৰু এই পৃষ্ঠাৰ পৰা উৎপন্ন লিংক আৰু মিডিয়া সংক্ৰান্ত তথ্য প্ৰদৰ্শন "
+"কৰা হ'ব"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Page Info"
+msgstr "পৃষ্ঠা সংক্ৰান্ত তথ্য"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Edit site permissions"
+msgstr "ছাইট সংক্ৰান্ত অনুমতি সম্পাদনা"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Permissions"
+msgstr "অনুমতি"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Drag the page on middle mouse click"
+msgstr "মাউসেৰ মধ্যবৰ্তী বাটনৰ ক্লিক দ্বাৰা পৃষ্ঠা টেনে আনা হ'ব"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Push Scroll"
+msgstr "Push Scroll"
+
+#: ../extensions/python-console/python-console.ephy-extension.in.h:1
+#, fuzzy
+msgid "Opens an interactive Python console"
+msgstr "এটা ইন্টাৰেক্টিভ Python কনসোল প্ৰদৰ্শন কৰা হ'ব"
+
+#: ../extensions/python-console/python-console.ephy-extension.in.h:2
+#, fuzzy
+msgid "Python Console"
+msgstr "Python Console"
+
+#: ../extensions/rss/rss.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr ""
+"আপোনাৰ পছন্দৰ নিউজ পাঠেৰ সৰঞ্জাম সহযোগে, ৱেব-পৃষ্ঠা দ্বাৰা উপলব্ধ নিউজ ফিডত "
+"বৰঙনি দিয়ক"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "A sample extension"
+msgstr "সম্প্ৰসাৰণেৰ নমূনা"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Sample"
+msgstr "নমূনা"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Select Stylesheet"
+msgstr "স্টাইল-শিট নিৰ্বাচন কৰক"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Select between different stylesheets offered by the web page"
+msgstr "ৱেব-পৃষ্ঠা দ্বাৰা উপলব্ধ বিভিন্ন স্টাইল-শিটৰ পৰা বেছে নিন"
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Adds a sidebar to windows"
+msgstr "সংযোগক্ষেত্ৰত চাইড-বাৰ যোগ কৰক"
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Sidebar"
+msgstr "চাইড-বাৰ"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Look up the selected text with a smart bookmark"
+msgstr "স্মাৰ্ট পত্ৰচিহ্ন সহযোগে নিৰ্বাচিত লেখা অনুসন্ধান কৰক"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Smart Bookmarks"
+msgstr "স্মাৰ্ট পত্ৰচিহ্ন"
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Groups newly opened tabs"
+msgstr "নতুন প্ৰদৰ্শিত টেব শ্ৰেণীবদ্ধ কৰা হয়"
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Tab Groups"
+msgstr "টেবেৰ শ্ৰেণী"
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
+#, fuzzy
+msgid "Indicates new content in background tabs"
+msgstr "পটভূমিৰ টেবেত নতুন তথ্যেৰ উপস্থিতিৰ ইঙ্গিত দেওয়া হয়"
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
+#, fuzzy
+msgid "Tab States"
+msgstr "টেবেৰ অৱস্থা"
+
