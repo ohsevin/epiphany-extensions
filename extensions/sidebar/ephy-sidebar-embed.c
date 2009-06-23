@@ -295,8 +295,8 @@ save_property_url (EphyEmbed *embed,
 	value = ephy_embed_event_get_property (event, property);
 	location = g_value_get_string (value);
 
-	persist = EPHY_EMBED_PERSIST
-		(ephy_embed_factory_new_object (EPHY_TYPE_EMBED_PERSIST));
+        persist = EPHY_EMBED_PERSIST
+          (g_object_new (EPHY_TYPE_EMBED_PERSIST, NULL));
 
 	ephy_embed_persist_set_embed (persist, embed);
 	ephy_embed_persist_set_flags (persist, 0);
@@ -397,19 +397,20 @@ ephy_sidebar_embed_create_embed (EphySidebarEmbed *sbembed)
 {
 	EphyEmbed *embed;
 
-	embed = EPHY_EMBED(ephy_embed_factory_new_object (EPHY_TYPE_EMBED));
+	embed = g_object_new (EPHY_TYPE_EMBED, NULL);
 	
 	gtk_container_add (GTK_CONTAINER (sbembed), GTK_WIDGET (embed));
 	gtk_widget_show (GTK_WIDGET (embed));
 
 	if (sbembed->priv->url == NULL)
 	{
-		ephy_embed_load_url (embed, "about:blank");
+                ephy_web_view_load_url (EPHY_GET_EPHY_WEB_VIEW_FROM_EMBED (embed), "about:blank");
 	}
 	else
 	{
-		ephy_embed_load_url (embed, sbembed->priv->url);
+                ephy_web_view_load_url (EPHY_GET_EPHY_WEB_VIEW_FROM_EMBED (embed), sbembed->priv->url);
 
+                /* FIXME: this signals are not emitted right now 
 		g_signal_connect (G_OBJECT (embed),
 				  "ge_dom_mouse_click",
 				  G_CALLBACK(embed_mouse_click_cb),
@@ -418,6 +419,7 @@ ephy_sidebar_embed_create_embed (EphySidebarEmbed *sbembed)
 				  "ge_context_menu",
 				  G_CALLBACK(embed_contextmenu_cb),
 				  sbembed);
+                */
 	}
 }
 

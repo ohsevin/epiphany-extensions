@@ -48,8 +48,8 @@ sidebar_cmd_file_save_as (GtkAction *action,
 
 	window = ephy_sidebar_embed_get_window (sidebar);
 
-	persist = EPHY_EMBED_PERSIST
-		(ephy_embed_factory_new_object (EPHY_TYPE_EMBED_PERSIST));
+        persist = EPHY_EMBED_PERSIST
+          (g_object_new (EPHY_TYPE_EMBED_PERSIST, NULL));
 
 	ephy_embed_persist_set_embed (persist, embed);
 	ephy_embed_persist_set_fc_title (persist, _("Save As"));
@@ -89,8 +89,8 @@ save_property_url (GtkAction *action,
 	value = ephy_embed_event_get_property (event, property);
 	location = g_value_get_string (value);
 
-	persist = EPHY_EMBED_PERSIST
-		(ephy_embed_factory_new_object (EPHY_TYPE_EMBED_PERSIST));
+        persist = EPHY_EMBED_PERSIST
+          (g_object_new (EPHY_TYPE_EMBED_PERSIST, NULL));
 
 	ephy_embed_persist_set_embed (persist, embed);
 	ephy_embed_persist_set_fc_title (persist, title);
@@ -124,9 +124,9 @@ sidebar_cmd_open_frame (GtkAction *action,
 	embed = ephy_sidebar_embed_get_embed (sidebar);
 	g_return_if_fail (embed != NULL);
 
-	location = ephy_embed_get_location (embed, FALSE);
+	location = ephy_web_view_get_location (EPHY_GET_EPHY_WEB_VIEW_FROM_EMBED (embed), FALSE);
 
-	ephy_embed_load_url (embed, location);
+	ephy_web_view_load_url (EPHY_GET_EPHY_WEB_VIEW_FROM_EMBED (embed), location);
 
 	g_free (location);
 }
