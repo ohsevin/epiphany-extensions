@@ -172,21 +172,9 @@ ALL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-vie
 USEFUL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
 DEFAULT_EXTENSIONS="actions adblock auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks tab-groups tab-states greasemonkey"
 
-PYTHON_ALL_EXTENSIONS="python-console sample-python favicon cc-license-viewer epilicious"
-PYTHON_USEFUL_EXTENSIONS="python-console favicon cc-license-viewer"
-PYTHON_DEFAULT_EXTENSIONS="python-console favicon cc-license-viewer"
-
 MOZILLA_ALL_EXTENSIONS="error-viewer java-console livehttpheaders page-info select-stylesheet smart-bookmarks"
 
-DIST_EXTENSIONS="$ALL_EXTENSIONS $PYTHON_ALL_EXTENSIONS"
-
-if test $EPIPHANY_HAS_PYTHON; then
-	ALL_EXTENSIONS="$ALL_EXTENSIONS $PYTHON_ALL_EXTENSIONS"
-	USEFUL_EXTENSIONS="$USEFUL_EXTENSIONS $PYTHON_USEFUL_EXTENSIONS"
-	DEFAULT_EXTENSIONS="$DEFAULT_EXTENSIONS $PYTHON_DEFAULT_EXTENSIONS"
-else
-	AC_MSG_WARN([Epiphany compiled without python support, extensions $PYTHON_ALL_EXTENSIONS will not be available])
-fi
+DIST_EXTENSIONS="$ALL_EXTENSIONS"
 
 # due to an autoconf bug, commas in the first arg to
 # AS_HELP_STRING() cause problems.
@@ -195,11 +183,11 @@ fi
 AC_ARG_WITH([extensions],
 [  --with-extensions=extension1,extension2,...
 			  build the specified extensions. Available:
-			  actions, adblock, auto-reload, auto-scroller, cc-license-viewer,
-			  certificates, error-viewer, extensions-manager-ui, favicon,
+			  actions, adblock, auto-reload, auto-scroller,
+			  certificates, error-viewer, extensions-manager-ui,
 			  gestures, greasemonkey, java-console, livehttpheaders, page-info,
-			  permissions, push-scroller, python-console, rss, sample,
-			  sample-python, select-stylesheet, sidebar,
+			  permissions, push-scroller, rss, sample,
+			  select-stylesheet, sidebar,
 			  smart-bookmarks, tab-groups, tab-states,
 			  as well as the aliases default, all, and really-all],
 			  [extensions=$with_extensions],
@@ -209,7 +197,6 @@ if test "x$with_extensions" = xyes; then
   extensions="default"
 fi
 
-need_python=no
 EXTENSIONS=
 IFS="${IFS=	}"; ephyext_save_ifs="$IFS"; IFS=","
 for ext in $extensions; do
@@ -225,9 +212,6 @@ for ext in $extensions; do
    AC_MSG_ERROR([the specified extension $ext does not exist])
  fi
 
- if echo "$PYTHON_ALL_EXTENSIONS" | egrep "(^| )$ext(\$| )" > /dev/null; then
-   need_python=yes
- fi
 done
 IFS="$ephyext_save_ifs"
 
@@ -253,21 +237,6 @@ if echo "$EXTENSIONS" | egrep '(^| )(rss)($| )' > /dev/null; then
 	DBUS_GLIB_REQUIRED=0.34
 
 	PKG_CHECK_MODULES([DBUS], [dbus-1 >= $DBUS_REQUIRED dbus-glib-1 >= $DBUS_GLIB_REQUIRED])
-fi
-
-# ******
-# Python
-# ******
-
-if test "x$need_python" = "xyes"; then
-	AM_PATH_PYTHON([2.3])
-
-	if test "x$PYTHON" = "x:"; then
-		AC_MSG_ERROR([Python not found])
-	fi
-
-	PYGTK_REQUIRED=2.11.0
-	PKG_CHECK_EXISTS([pygtk >= $PYGTK_REQUIRED])
 fi
 
 # *****************
@@ -326,14 +295,11 @@ extensions/adblock/Makefile
 extensions/auto-reload/Makefile
 extensions/auto-scroller/Makefile
 extensions/certificates/Makefile
-extensions/cc-license-viewer/Makefile
-extensions/epilicious/Makefile
 extensions/gestures/Makefile
 extensions/error-viewer/Makefile
 extensions/error-viewer/mozilla/Makefile
 extensions/error-viewer/opensp/Makefile
 extensions/extensions-manager-ui/Makefile
-extensions/favicon/Makefile
 extensions/greasemonkey/Makefile
 extensions/livehttpheaders/Makefile
 extensions/livehttpheaders/mozilla/Makefile
@@ -341,10 +307,8 @@ extensions/page-info/Makefile
 extensions/page-info/mozilla/Makefile
 extensions/permissions/Makefile
 extensions/push-scroller/Makefile
-extensions/python-console/Makefile
 extensions/rss/Makefile
 extensions/sample/Makefile
-extensions/sample-python/Makefile
 extensions/select-stylesheet/Makefile
 extensions/select-stylesheet/mozilla/Makefile
 extensions/sidebar/Makefile
@@ -363,8 +327,6 @@ AC_OUTPUT
 # *************************************
 # *************************************
 
-if test "$EPIPHANY_HAS_PYTHON" = "1"; then enable_python="yes"; else enable_python="no"; fi
-
 echo "
 Epiphany Extensions was configured with the following options:
 
@@ -374,7 +336,6 @@ Epiphany Extensions was configured with the following options:
 	Extra debugging support    : $enable_debug
 
 	Epiphany API version	   : $EPIPHANY_API_VERSION
-	Epiphany has Python	   : $enable_python
 
 	OpenSP			   : $enable_opensp
 
