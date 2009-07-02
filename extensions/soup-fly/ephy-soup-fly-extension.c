@@ -137,7 +137,7 @@ ephy_soup_fly_extension_finalize (GObject *object)
 
   LOG ("EphySoupFlyExtension finalizing");
 
-  gtk_widget_destroy (extension->priv->fly);
+  gtk_widget_destroy (GTK_WIDGET (extension->priv->fly));
 
   G_OBJECT_CLASS (parent_class)->finalize (object);
 }
