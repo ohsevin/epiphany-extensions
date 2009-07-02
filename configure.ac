@@ -168,9 +168,9 @@ AM_CONDITIONAL([HAVE_OPENSP],[test "x$enable_opensp" = "xyes"])
 
 AC_MSG_CHECKING([which extensions to build])
 
-ALL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures greasemonkey java-console livehttpheaders page-info permissions push-scroller rss sample select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
-USEFUL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks tab-groups tab-states"
-DEFAULT_EXTENSIONS="actions adblock auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks tab-groups tab-states greasemonkey"
+ALL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures greasemonkey java-console livehttpheaders page-info permissions push-scroller rss sample select-stylesheet sidebar smart-bookmarks soup-fly tab-groups tab-states"
+USEFUL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks soup-fly tab-groups tab-states"
+DEFAULT_EXTENSIONS="actions adblock auto-scroller certificates error-viewer extensions-manager-ui gestures java-console page-info push-scroller select-stylesheet sidebar smart-bookmarks soup-fly tab-groups tab-states greasemonkey"
 
 MOZILLA_ALL_EXTENSIONS="error-viewer java-console livehttpheaders page-info select-stylesheet smart-bookmarks"
 
@@ -188,7 +188,7 @@ AC_ARG_WITH([extensions],
 			  gestures, greasemonkey, java-console, livehttpheaders, page-info,
 			  permissions, push-scroller, rss, sample,
 			  select-stylesheet, sidebar,
-			  smart-bookmarks, tab-groups, tab-states,
+			  smart-bookmarks, soup-fly, tab-groups, tab-states,
 			  as well as the aliases default, all, and really-all],
 			  [extensions=$with_extensions],
 			  [extensions="default"])
@@ -314,6 +314,7 @@ extensions/select-stylesheet/mozilla/Makefile
 extensions/sidebar/Makefile
 extensions/smart-bookmarks/Makefile
 extensions/smart-bookmarks/mozilla/Makefile
+extensions/soup-fly/Makefile
 extensions/tab-states/Makefile
 extensions/tab-groups/Makefile
 extensions/java-console/Makefile
