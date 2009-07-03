@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions.po.master.kn\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions&component=general\n"
 "POT-Creation-Date: 2009-06-23 07:34+0000\n"
-"PO-Revision-Date: 2009-06-29 15:58+0530\n"
+"PO-Revision-Date: 2009-07-03 15:31+0530\n"
 "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
 "Language-Team: Kannada <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -30,29 +30,29 @@ msgstr "<span weight=\"bold\">ಸಾಮಾನ್ಯ</span>"
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "images."
-msgstr ""
+msgstr "ಈ ಆಯ್ಕೆಯನ್ನು ಶಕ್ತಗೊಳಿಸಿದಲ್ಲಿ, ಚಿತ್ರಗಳ ಪುಟಿಕೆ ಮೆನುವಿನಲ್ಲಿ ಈ ಕ್ರಿಯೆಯನ್ನು ಸೇರಿಸಲಾಗುತ್ತದೆ."
 
 #: ../extensions/actions/action-properties.glade.h:4
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "links and pages."
-msgstr ""
+msgstr "ಈ ಆಯ್ಕೆಯನ್ನು ಶಕ್ತಗೊಳಿಸಿದಲ್ಲಿ, ಕೊಂಡಿಗಳ ಹಾಗು ಪುಟಗಳ ಪುಟಿಕೆ ಮೆನುವಿನಲ್ಲಿ ಈ ಕ್ರಿಯೆಯನ್ನು ಸೇರಿಸಲಾಗುತ್ತದೆ."
 
 #: ../extensions/actions/action-properties.glade.h:5
 msgid "The action description."
-msgstr ""
+msgstr "ಕ್ರಿಯೆಯ ವಿವರಣೆ."
 
 #: ../extensions/actions/action-properties.glade.h:6
 msgid ""
 "The action name. If a character is preceded by an underscore, that character "
 "will be used as the access key for the menu item."
-msgstr ""
+msgstr "ಕ್ರಿಯೆಯ ಹೆಸರು. ಅಡಿಗೆರೆಯ ಮೊದಲು ಒಂದು ಅಕ್ಷರವಿದ್ದಲ್ಲಿ ಆ ಕೀಲಿಯನ್ನು ಮೆನು ಅಂಶದ ನಿಲುಕಣಾ ಕೀಲಿಯಾಗಿ ಬಳಸಲಾಗುತ್ತದೆ."
 
 #: ../extensions/actions/action-properties.glade.h:7
 msgid ""
 "The command to execute when the action is activated. The URL of the link, "
 "image or page will be appended to the command."
-msgstr ""
+msgstr "ಕ್ರಿಯೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿದಾಗ ಕಾರ್ಯಗತಗೊಳಿಸಬೇಕಿರುವ ಆಜ್ಞೆ. ಕೊಂಡಿಯ, ಚಿತ್ರದ ಅಥವ ಪುಟದ URL ಅನ್ನು ಆಜ್ಞೆಯೊಂದಿಗೆ ಸೇರಿಸಲಾಗುತ್ತದೆ."
 
 #: ../extensions/actions/action-properties.glade.h:8
 msgid "_Command:"
@@ -85,7 +85,7 @@ msgstr "ಕಾರ್ಯಗಳು(_n)"
 
 #: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Customize actions"
-msgstr ""
+msgstr "ಇಚ್ಚೆಗೆ ತಕ್ಕಂತೆ ಬದಲಾಯಿಸಲಾದ ಕ್ರಿಯೆಗಳು"
 
 #: ../extensions/actions/ephy-actions-extension.c:436
 msgid "Could not run command"
@@ -93,22 +93,22 @@ msgstr "ಆಜ್ಞೆಯನ್ನು ಚಲಾಯಿಸಲು ಸಾಧ್ಯ�
 
 #: ../extensions/actions/ephy-actions-extension.c:440
 msgid "Could not Run Command"
-msgstr ""
+msgstr "ಆಜ್ಞೆಯನ್ನು ಚಲಾಯಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
 
 #: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
 msgid "No action selected."
-msgstr ""
+msgstr "ಯಾವುದೆ ಕ್ರಿಯೆಯನ್ನು ಆಯ್ಕೆ ಮಾಡಲಾಗಿಲ್ಲ."
 
 #: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%i ಕ್ರಿಯೆಯನ್ನು ಆಯ್ಕೆ ಮಾಡಲಾಗಿದೆ."
+msgstr[1] "%i ಕ್ರಿಯೆಗಳನ್ನು ಆಯ್ಕೆ ಮಾಡಲಾಗಿದೆ."
 
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
-msgstr ""
+msgstr "ಕ್ರಿಯೆಯನ್ನು ಸೇರಿಸಿ"
 
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
 #, c-format
@@ -117,7 +117,7 @@ msgstr "“%s” ಗುಣಲಕ್ಷಣಗಳು"
 
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
 msgid "Action Properties"
-msgstr ""
+msgstr "ಕ್ರಿಯೆಯ ಗುಣಗಳು"
 
 #: ../extensions/adblock/adblock-ui.c:263
 msgid ""
@@ -129,6 +129,12 @@ msgid ""
 "approved by the original author;\n"
 "direct any problems to Bugzilla and not to the original author (G).\n"
 msgstr ""
+"ಈ ಪಟ್ಟಿಯನ್ನು ಅದರ ಮೂಲ ಕತೃಗಳಿಂದ(G) Copyright © ಮಾಡಲಾಗಿದೆ. ಇದರ ಲೈಸನ್ಸನ್ನು ಅನುಮತಿಪೂರ್ವಕವಾಗಿ  "
+"GPL ಗೆ ಬದಲಾಯಿಸಲಾಗಿದೆ.\n"
+"ಮೂಲ ಪಟ್ಟಿಯಾದ Filterset.G, ಅನ್ನು http://www.pierceive.com/"
+"filtersetg/ ಯಲ್ಲಿ ನೋಡಬಹುದಾಗಿದೆ.\n"
+"ಈ ಆವೃತ್ತಿಯನ್ನು ಮೂಲ ಆವೃತ್ತಿಗಿಂತ ಬದಲಾಯಿಸಲಾಗಿದೆ. ಬದಲಾವಣೆಗಳು ಮೂಲ ಕತೃವಿನಿಂದ ಅಂಗೀಕರಿಸಲ್ಪಟ್ಟಿಲ್ಲ;\n"
+"ಏನೇ ತೊಂದರೆಗಳಿದ್ದರೂ ಬಗ್‌ಝಿಲ್ಲಾದಲ್ಲಿ ವರದಿ ಮಾಡಬೇಕೆ ಹೊರತು ಮೂಲ ಕತೃಗಳನ್ನು (G) ತಿಳಿಸಬಾರದು.\n"
 
 #: ../extensions/adblock/adblock-ui.c:481
 msgid "Pattern"
@@ -136,28 +142,28 @@ msgstr "ವಿನ್ಯಾಸ"
 
 #: ../extensions/adblock/adblock.glade.h:1
 msgid "<b>Courtesy of Graham Pierce</b>"
-msgstr ""
+msgstr "<b>Graham Pierce ರವರ ಕೃಪೆ</b>"
 
 #: ../extensions/adblock/adblock.glade.h:2
 msgid "<b>New rule</b>"
-msgstr ""
+msgstr "<b>ಹೊಸ ನಿಯಮ</b>"
 
 #: ../extensions/adblock/adblock.glade.h:3
 msgid "<b>Update rules from original site</b>"
-msgstr ""
+msgstr "<b>ಮೂಲ ತಾಣದಿಂದ ನಿಯಮಗಳನ್ನು ಅಪ್‌ಡೇಟ್ ಮಾಡಿ</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
 #: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
-msgstr ""
+msgstr "Adblock ಸಂಪಾದಕ"
 
 #: ../extensions/adblock/adblock.glade.h:5
 msgid "Add a new rule"
-msgstr ""
+msgstr "ಒಂದು ಹೊಸ ನಿಯಮವನ್ನು ಸೇರಿಸಿ"
 
 #: ../extensions/adblock/adblock.glade.h:6
 msgid "Blacklist"
-msgstr ""
+msgstr "ಕಪ್ಪುಪಟ್ಟಿ(ಬ್ಲ್ಯಾಕ್‌ಲಿಸ್ಟ್)"
 
 #: ../extensions/adblock/adblock.glade.h:7
 msgid "Filterset.G"
@@ -165,26 +171,26 @@ msgstr "Filterset.G"
 
 #: ../extensions/adblock/adblock.glade.h:8
 msgid "Whitelist"
-msgstr ""
+msgstr "ಶ್ವೇತಪಟ್ಟಿ(ವೈಟ್‌ಲಿಸ್ಟ್)"
 
 #: ../extensions/adblock/ephy-adblock-extension.c:230
 msgid "Edit Adblock"
-msgstr ""
+msgstr "Adblock ಅನ್ನು ಸಂಪಾದಿಸಿ"
 
 #: ../extensions/adblock/ephy-adblock-extension.c:299
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ಅಡಗಿಸಲಾದ %d ಅಡ್‌ವರ್ಟೈಸ್‌ಮೆಂಟ್"
+msgstr[1] "ಅಡಗಿಸಲಾದ %d ಅಡ್‌ವರ್ಟೈಸ್‌ಮೆಂಟ್‌ಗಳು"
 
 #: ../extensions/auto-reload/ephy-auto-reload-extension.c:81
 msgid "_Auto Reload"
-msgstr ""
+msgstr "ಸ್ವಯಂ ಮರುಲೋಡ್ ಮಾಡುವಿಕೆ(_A)"
 
 #: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
 msgid "Reload the page periodically"
-msgstr ""
+msgstr "ಪುಟವನ್ನು ಕಾಲಕಾಲಕ್ಕೆ ಮರಳಿ ಲೋಡ್ ಮಾಡು"
 
 #: ../extensions/certificates/ephy-certificates-extension.c:163
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
@@ -193,27 +199,27 @@ msgstr "ಪ್ರಮಾಣಪತ್ರಗಳು"
 
 #: ../extensions/certificates/ephy-certificates-extension.c:194
 msgid "Security Devices"
-msgstr ""
+msgstr "ಸುರಕ್ಷತಾ ಸಾಧನಗಳು"
 
 #. stock icon
 #: ../extensions/certificates/ephy-certificates-extension.c:206
 msgid "Manage _Certificates"
-msgstr ""
+msgstr "ಪ್ರಮಾಣಪತ್ರವನ್ನು ನಿರ್ವಹಿಸು(_C)"
 
 #. shortcut key
 #: ../extensions/certificates/ephy-certificates-extension.c:208
 msgid "Manage your certificates"
-msgstr ""
+msgstr "ನಿಮ್ಮ ಪ್ರಮಾಣಪತ್ರಗಳನ್ನು ನಿರ್ವಹಿಸಿ"
 
 #. stock icon
 #: ../extensions/certificates/ephy-certificates-extension.c:212
 msgid "Manage Security _Devices"
-msgstr ""
+msgstr "ಸುರಕ್ಷತಾ ಸಾಧನಗಳನ್ನು ನಿರ್ವಹಿಸು(_D)"
 
 #. shortcut key
 #: ../extensions/certificates/ephy-certificates-extension.c:214
 msgid "Manage your security devices"
-msgstr ""
+msgstr "ನಿಮ್ಮ ಸುರಕ್ಷತಾ ಸಾಧನಗಳನ್ನು ನಿರ್ವಹಿಸಿ"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Check _HTML"
@@ -222,25 +228,25 @@ msgstr "_HTML ಅನ್ನು ಪರಿಶೀಲಿಸು"
 #. shortcut key
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:92
 msgid "Display HTML errors in the Error Viewer dialog"
-msgstr ""
+msgstr "ದೋಷ ವೀಕ್ಷಿಸುವ ಸಂವಾದದಲ್ಲಿ HTML ದೋಷಗಳನ್ನು ತೋರಿಸುತ್ತದೆ"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _Links"
-msgstr ""
+msgstr "ಚೆಕ್‌ ಕೊಂಡಿಗಳು(_L)"
 
 #. shortcut key
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
-msgstr ""
+msgstr "ದೋಷ ವೀಕ್ಷಕ ಸಂವಾದದಲ್ಲಿ ಅಮಾನ್ಯವಾದ ಹೈಪರ್ಲಿಂಕುಗಳನ್ನು ತೋರಿಸು"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:103
 msgid "_Error Viewer"
-msgstr ""
+msgstr "ದೋಷ ವೀಕ್ಷಕ(_E)"
 
 #. shortcut key
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
 msgid "Display web page errors"
-msgstr ""
+msgstr "ಜಾಲ ಪುಟಗಳ ದೋಷಗಳನ್ನು ತೋರಿಸು"
 
 #: ../extensions/error-viewer/error-viewer.glade.h:1
 msgid "Cl_ear"
@@ -248,7 +254,7 @@ msgstr "ತೆರವುಗೊಳಿಸು(_e)"
 
 #: ../extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
-msgstr ""
+msgstr "ದೋಷ ವೀಕ್ಷಕ"
 
 #. Translators: The first %s is the error category (e. g., "javascript").
 #. The second %s is the URL. The third %s is the actual error message.
@@ -258,6 +264,8 @@ msgid ""
 "%s error in %s on line %d and column %d:\n"
 "%s"
 msgstr ""
+"%s ದೋಷ, %s, %d ಸಾಲಿನಲ್ಲಿ ಹಾಗು %d ಕಾಲಂನಲ್ಲಿ:\n"
+"%s"
 
 #. Translators: The first %s is the error category (e. g., "javascript").
 #. The second %s is the URL. The third %s is the actual error message.
@@ -269,6 +277,8 @@ msgid ""
 "%s error in %s:\n"
 "%s"
 msgstr ""
+"%s ದೋಷ, %s ನಲ್ಲಿ:\n"
+"%s"
 
 #. Translators: The first %s is the error category (e. g., "javascript").
 #. The second %s is the URL. The third %s is the actual error message.
@@ -278,13 +288,15 @@ msgid ""
 "%s error in %s on line %d:\n"
 "%s"
 msgstr ""
+"%s ದೋಷ, %s, %d ಸಾಲಿನಲ್ಲಿ:\n"
+"%s"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d ಅಮಾನ್ಯವಾದ ಕೊಂಡಿ ಕಂಡು ಬಂದಿದೆ"
+msgstr[1] "%d ಅಮಾನ್ಯವಾದ ಕೊಂಡಿಗಳು ಕಂಡು ಬಂದಿದೆ"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
@@ -292,13 +304,15 @@ msgid ""
 "Link error in %s:\n"
 "%s is unavailable."
 msgstr ""
+"%s ನಲ್ಲಿನ ಕೊಂಡಿ ದೋಷ:\n"
+"%s ಯು ಲಭ್ಯವಿಲ್ಲ."
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
 #, c-format
 msgid "Checking %d Link on “%s”"
 msgid_plural "Checking %d Links on “%s”"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d ಕೊಂಡಿಯನ್ನು (“%s” ನಲ್ಲಿ) ಪರೀಕ್ಷಿಸಲಾಗುತ್ತಿದೆ"
+msgstr[1] "%d ಕೊಂಡಿಗಳನ್ನು (“%s” ನಲ್ಲಿ) ಪರೀಕ್ಷಿಸಲಾಗುತ್ತಿದೆ"
 
 #: ../extensions/error-viewer/opensp/validate.cpp:168
 #, c-format
@@ -306,18 +320,20 @@ msgid ""
 "HTML error in “%s” on line %s:\n"
 "%s"
 msgstr ""
+"“%s” ನಲ್ಲಿ, %s ಸಾಲಿನಲ್ಲಿ HTML ದೋಷ ಕಂಡುಬಂದಿದೆ:\n"
+"%s"
 
 #: ../extensions/error-viewer/sgml-validator.c:164
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d ದೋಷವು ಕಂಡುಬಂದಿದೆ"
+msgstr[1] "%d ದೋಷಗಳು ಕಂಡುಬಂದಿದೆ"
 
 #: ../extensions/error-viewer/sgml-validator.c:168
 #, c-format
 msgid "HTML Validation of “%s” complete"
-msgstr ""
+msgstr "“%s” ನ HTML ಮಾನ್ಯಗೊಳಿಕೆಯು ಪೂರ್ಣಗೊಂಡಿದೆ"
 
 #: ../extensions/error-viewer/sgml-validator.c:226
 #, c-format
@@ -334,6 +350,8 @@ msgid ""
 "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
 "+xml” instead."
 msgstr ""
+"ದಸ್ತಾವೇಜಿನ ಬಗೆ “XHTML” ಆಗಿದೆ ಆದರೆ ಅದರಲ್ಲಿರವ ವಿಷಯವು “text/html” ಆಗಿದೆ.  ಬದಲಿಗೆ “application/xhtml"
+"+xml” ಅನ್ನು ಬಳಸಿ."
 
 #: ../extensions/error-viewer/sgml-validator.c:242
 #, c-format
@@ -341,6 +359,8 @@ msgid ""
 "HTML warning in %s:\n"
 "%s"
 msgstr ""
+"%s ನಲ್ಲಿ HTML ಎಚ್ಚರಿಕೆ:\n"
+"%s"
 
 #: ../extensions/error-viewer/sgml-validator.c:359
 #, c-format
@@ -350,12 +370,12 @@ msgstr "%s ನಲ್ಲಿನ HTML:"
 #: ../extensions/error-viewer/sgml-validator.c:367
 #, c-format
 msgid "Invalid character encoding"
-msgstr ""
+msgstr "ಅಮಾನ್ಯವಾದ ಕ್ಯಾರೆಕ್ಟರ್ ಎನ್ಕೋಡಿಂಗ್"
 
 #: ../extensions/error-viewer/sgml-validator.c:372
 #, c-format
 msgid "Unknown error while converting to UTF-8"
-msgstr ""
+msgstr "UTF-8 ಕ್ಕೆ ಬದಲಾಯಿಸುವಲ್ಲಿ ಗೊತ್ತಿರದ ದೋಷ ಉಂಟಾಗಿದೆ"
 
 #: ../extensions/error-viewer/sgml-validator.c:434
 #, c-format
@@ -363,6 +383,8 @@ msgid ""
 "HTML error in %s:\n"
 "No valid doctype specified."
 msgstr ""
+"%s ನಲ್ಲಿ HTML ದೋಷ:\n"
+"ಯಾವುದೆ ಮಾನ್ಯವಾದ ದಸ್ತಾವೇಜು ಬಗೆಯನ್ನು ಸೂಚಿಸಲಾಗಿಲ್ಲ."
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.c:345
 msgid "Enabled"
@@ -384,15 +406,15 @@ msgstr "ವಿಸ್ತರಣೆಗಳು"
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:73
 msgid "_Extensions"
-msgstr ""
+msgstr "ವಿಸ್ತರಣೆಗಳು(_E)"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
 msgid "Load and unload extensions"
-msgstr ""
+msgstr "ವಿಸ್ತರಣೆಗಳನ್ನು ಲೋಡ್ ಮಾಡು ಹಾಗು ಅನ್‌ಲೋಡ್ ಮಾಡು"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
 msgid "Help about extensions"
-msgstr ""
+msgstr "ವಿಸ್ತರಣೆಗಳ ಬಗೆಗಿನ ನೆರವು"
 
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:78
 msgid "Install User _Script"
@@ -406,7 +428,7 @@ msgstr "Greasemonkey ಸ್ಕ್ರಿಪ್ಟನ್ನು ಅನುಸ್ಥ�
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:311
 #, c-format
 msgid "The user script at “%s” has been installed"
-msgstr ""
+msgstr "ಬಳಕೆದಾರ ಸ್ಕ್ರಿಪ್ಟ್ “%s” ಅನ್ನು ಅನುಸ್ಥಾಪಿಸಲಾಗಿದೆ"
 
 #: ../extensions/java-console/ephy-java-console-extension.c:48
 msgid "_Java Console"
@@ -439,7 +461,7 @@ msgstr "ಕ್ಯಾಶೆಯನ್ನು ಅಳಿಸಿಹಾಕು"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
 msgid "Live Headers"
-msgstr ""
+msgstr "ಲೈವ್‌ ಹೆಡರುಗಳು"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
 msgid "Remove headers"
@@ -467,11 +489,11 @@ msgstr "ಗೊತ್ತಿರದ ಬಗೆ"
 
 #: ../extensions/page-info/page-info-dialog.c:775
 msgid "Full standards compliance"
-msgstr ""
+msgstr "ಸಂಪೂರ್ಣ ಶಿಷ್ಟ ಮಾನಕಕ್ಕೆ ಹೊಂದಿಕೊಳ್ಳುವ"
 
 #: ../extensions/page-info/page-info-dialog.c:778
 msgid "Almost standards compliance"
-msgstr ""
+msgstr "ಬಹುತೇಕ ಶಿಷ್ಟ ಮಾನಕಕ್ಕೆ ಹೊಂದಿಕೊಳ್ಳುವ"
 
 #: ../extensions/page-info/page-info-dialog.c:781
 msgid "Compatibility"
@@ -483,7 +505,7 @@ msgstr "ನಿರ್ಧರಿಸದೆ ಇರುವ"
 
 #: ../extensions/page-info/page-info-dialog.c:794
 msgid "Not cached"
-msgstr ""
+msgstr "ಹಿಡಿದಿಡಲಾಗಿಲ್ಲ"
 
 #: ../extensions/page-info/page-info-dialog.c:797
 msgid "Disk cache"
@@ -504,7 +526,7 @@ msgstr "ಗೊತ್ತಿರದ"
 
 #: ../extensions/page-info/page-info-dialog.c:824
 msgid "No referrer"
-msgstr ""
+msgstr "ಯಾರೂ ಶಿಫಾರಸು ಮಾಡಿಲ್ಲ"
 
 #: ../extensions/page-info/page-info-dialog.c:838
 #: ../extensions/page-info/page-info-dialog.c:854
@@ -521,7 +543,7 @@ msgstr "ಹಿನ್ನಲೆಯ ಚಿತ್ರ"
 
 #: ../extensions/page-info/page-info-dialog.c:923
 msgid "Embed"
-msgstr ""
+msgstr "ಅಡಕಗೊಳಿಸಲಾದ"
 
 #: ../extensions/page-info/page-info-dialog.c:926
 msgid "Object"
@@ -619,19 +641,19 @@ msgstr "<b>ಡಬ್ಲಿನ್ ಕೋರ್ ಮೆಟಾಡೇಟ</b>"
 
 #: ../extensions/page-info/page-info.glade.h:2
 msgid "<b>Forms In Page</b>"
-msgstr ""
+msgstr "<b>ಪುಟದಲ್ಲಿನ ಫಾರ್ಮುಗಳು</b>"
 
 #: ../extensions/page-info/page-info.glade.h:3
 msgid "<b>Links In Page</b>"
-msgstr ""
+msgstr "<b>ಪುಟದಲ್ಲಿನ ಕೊಂಡಿಗಳು</b>"
 
 #: ../extensions/page-info/page-info.glade.h:4
 msgid "<b>Media In Page</b>"
-msgstr ""
+msgstr "<b>ಪುಟದಲ್ಲಿನ ಮಾಧ್ಯಮ</b>"
 
 #: ../extensions/page-info/page-info.glade.h:5
 msgid "<b>Medium View</b>"
-msgstr ""
+msgstr "<b>ಮಾಧ್ಯಮದ ನೋಟ</b>"
 
 #: ../extensions/page-info/page-info.glade.h:6
 msgid "<b>Other Metadata</b>"
@@ -675,7 +697,7 @@ msgstr "ವಿನ್ಯಾಸ:"
 
 #: ../extensions/page-info/page-info.glade.h:16
 msgid "Forms"
-msgstr ""
+msgstr "ಫಾರ್ಮುಗಳು"
 
 #: ../extensions/page-info/page-info.glade.h:17
 msgid "General"
@@ -715,7 +737,7 @@ msgstr "ಪುಟದ ಗುಣಲಕ್ಷಣಗಳು"
 
 #: ../extensions/page-info/page-info.glade.h:26
 msgid "Referrer:"
-msgstr ""
+msgstr "ಶಿಫಾರಿಸು ಮಾಡಿದವರು:"
 
 #: ../extensions/page-info/page-info.glade.h:27
 msgid "Size:"
@@ -735,20 +757,20 @@ msgstr "ಪ್ರಕಾರ:"
 
 #: ../extensions/page-info/page-info.glade.h:31
 msgid "_Save Media As..."
-msgstr ""
+msgstr "ಮಾಧ್ಯಮವನ್ನು ಹೀಗೆ ಉಳಿಸು(_S)..."
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:165
 msgid "allowed"
-msgstr ""
+msgstr "ಅನುಮತಿಸಲಾದ"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:169
 msgid "denied"
-msgstr ""
+msgstr "ನಿರಾಕರಿಸಲಾದ"
 
 #. Sometimes we get this... how did this get in the list!?
 #: ../extensions/permissions/ephy-permissions-dialog.c:174
 msgid "default"
-msgstr ""
+msgstr "ಪೂರ್ವನಿಯೋಜಿತ"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:500
 msgid "Domain"
@@ -760,7 +782,7 @@ msgstr "ಸ್ಥಿತಿ"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:605
 msgid "Site Permissions"
-msgstr ""
+msgstr "ತಾಣದ ಅನುಮತಿಗಳು"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:632
 msgid "Cookies"
@@ -777,36 +799,36 @@ msgstr "ಪುಟಿಕೆ ವಿಂಡೋಗಳು"
 #. stock icon
 #: ../extensions/permissions/ephy-permissions-extension.c:152
 msgid "Site _Permissions"
-msgstr ""
+msgstr "ತಾಣದ ಅನುಮತಿಗಳು(_P)"
 
 #. shortcut key
 #: ../extensions/permissions/ephy-permissions-extension.c:154
 msgid "Manage web site permissions"
-msgstr ""
+msgstr "ಜಾಲ ತಾಣದ ಅನುಮತಿಗಳನ್ನು ನಿರ್ವಹಿಸು"
 
 #: ../extensions/rss/ephy-rss-extension.c:79
 msgid "News Feeds Subscription"
-msgstr ""
+msgstr "ಸುದ್ದಿ ಫೀಡ್‌ಗಳ ಚಂದಾದಾರಿಕೆ"
 
 #: ../extensions/rss/ephy-rss-extension.c:81
 msgid "Subscribe to this website's news feeds in your favorite news reader"
-msgstr ""
+msgstr "ನಿಮ್ಮ ಅಚ್ಚುಮೆಚ್ಚಿನ ಸುದ್ದಿ ಓದುಗದಲ್ಲಿ(ನ್ಯೂಸ್ ರೀಡರ್) ಈ ಜಾಲತಾಣದ ಸುದ್ದಿ ಫೀಡ್‌ಗಳಿಗೆ ಚಂದಾದಾರನಾಗಿಸು"
 
 #: ../extensions/rss/ephy-rss-extension.c:86
 msgid "_Subscribe to this feed"
-msgstr ""
+msgstr "ಈ ಫೀಡ್‌ಗೆ ಚಂದಾದಾರನಾಗಿಸು(_S)"
 
 #: ../extensions/rss/ephy-rss-extension.c:88
 msgid "Subscribe to this feed in your favorite news reader"
-msgstr ""
+msgstr "ನಿಮ್ಮ ಅಚ್ಚುಮೆಚ್ಚಿನ ಸುದ್ದಿ ಓದುಗದಲ್ಲಿ(ನ್ಯೂಸ್ ರೀಡರ್) ಈ ಫೀಡ್‌ಗೆ ಚಂದಾದಾರನಾಗಿಸು"
 
 #: ../extensions/rss/ephy-rss-extension.c:361
 msgid "Subscribe to site's news feed"
-msgstr ""
+msgstr "ತಾಣದ ಸುದ್ದಿ ಫೀಡ್‌ಗೆ ಚಂದಾದಾರನಾಗಿಸು"
 
 #: ../extensions/rss/rss-ui.c:153
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
-msgstr ""
+msgstr "<b><i>ಫೀಡ್‌ ಓದುಗನೊಂದಿಗೆ ಸಂಪರ್ಕಸಾಧಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ, ಇದು ಚಾಲನೆಯಲ್ಲಿದೆಯೆ ?</i></b>"
 
 #: ../extensions/rss/rss-ui.c:155
 msgid "Retry"
@@ -814,20 +836,20 @@ msgstr "ಮರಳಿ ಪ್ರಯತ್ನಿಸು"
 
 #: ../extensions/rss/rss-ui.c:283
 msgid "_Copy Feed Address"
-msgstr ""
+msgstr "ಫೀಡ್ ವಿಳಾಸವನ್ನು ಕಾಪಿ ಮಾಡು(_C)"
 
 #: ../extensions/rss/rss-ui.c:563
 msgid "Subscribe"
-msgstr ""
+msgstr "ಚಂದಾದಾರನಾಗಿಸು"
 
 #: ../extensions/rss/rss-ui.glade.h:1
 msgid "<b>Select Interesting Feeds</b>"
-msgstr ""
+msgstr "<b>ಕುತೂಹಲಕರವಾದ ಫೀಡ್‌ಗಳನ್ನು ಆಯ್ಕೆ ಮಾಡು</b>"
 
 #: ../extensions/rss/rss-ui.glade.h:2
 #: ../extensions/rss/rss.ephy-extension.in.in.h:1
 msgid "News Feed Subscription"
-msgstr ""
+msgstr "ಸುದ್ದಿ ಫೀಡ್‌ನ ಚಂದಾದಾರಿಕೆ"
 
 #: ../extensions/rss/rss-ui.glade.h:3
 msgid "_Subscribe"
@@ -835,16 +857,16 @@ msgstr "ಚಂದಾದಾರನಾಗಿಸು(_S)"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:140
 msgid "Render the page without using a style"
-msgstr ""
+msgstr "ಒಂದು ಶೈಲಿಯನ್ನು ಬಳಸಿಕೊಂಡು ಪುಟವನ್ನು ರೆಂಡರ್ ಮಾಡು"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:143
 msgid "Render the page using the default style"
-msgstr ""
+msgstr "ಪೂರ್ವನಿಯೋಜಿತ ಶೈಲಿಯನ್ನು ಬಳಸಿಕೊಂಡು ಪುಟವನ್ನು ರೆಂಡರ್ ಮಾಡು"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:146
 #, c-format
 msgid "Render the page using the “%s” style"
-msgstr ""
+msgstr "“%s” ಶೈಲಿಯನ್ನು ಬಳಸಿಕೊಂಡು ಪುಟವನ್ನು ರೆಂಡರ್ ಮಾಡು"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:317
 msgid "St_yle"
@@ -852,7 +874,7 @@ msgstr "ಶೈಲಿ(_y)"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:318
 msgid "Select a different style for this page"
-msgstr ""
+msgstr "ಈ ಪುಟಕ್ಕಾಗಿ ಬೇರೊಂದು ಶೈಲಿಯನ್ನು ಆಯ್ಕೆ ಮಾಡಿ"
 
 #: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
 msgid "Default"
@@ -864,7 +886,7 @@ msgstr "ಯಾವುದೂ ಇಲ್ಲ"
 
 #: ../extensions/sidebar/ephy-sidebar.c:167
 msgid "No Sidebars installed"
-msgstr ""
+msgstr "ಯಾವುದೆ ಬದಿಪಟ್ಟಿಕೆಯನ್ನು ಅನುಸ್ಥಾಪಿಸಲಾಗಿಲ್ಲ"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:88
 msgid "_Sidebar"
@@ -876,48 +898,48 @@ msgstr "ಬದಿ ಪಟ್ಟಿಯನ್ನು ತೋರಿಸು ಅಥವ �
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:306
 msgid "Do you really want to remove this sidebar?"
-msgstr ""
+msgstr "ನೀವು ನಿಜವಾಗಲೂ ಈ ಬದಿಪಟ್ಟಿಕೆಯನ್ನು ತೆಗೆದು ಹಾಕಲು ಬಯಸುತ್ತೀರೆ?"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:310
 msgid "There is no way to recover this sidebar after removal."
-msgstr ""
+msgstr "ಈ ಬದಿಪಟ್ಟಿಕೆಯನ್ನು ತೆಗೆದುಹಾಕಿದಲ್ಲಿ ಅದನ್ನು ಮರಳಿ ಪಡೆಯಲು ಸಾಧ್ಯವಿಲ್ಲ."
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:312
 msgid "Remove Sidebar"
-msgstr ""
+msgstr "ಬದಿಪಟ್ಟಿಯನ್ನು ತೆಗೆದು ಹಾಕು"
 
 #. Translators: %s is the sidebar title
 #: ../extensions/sidebar/ephy-sidebar-extension.c:459
 #, c-format
 msgid "The sidebar already contains “%s”"
-msgstr ""
+msgstr "ಬದಿಪಟ್ಟಿಯು ಈಗಾಗಲೆ “%s” ಅನ್ನು ಹೊಂದಿದೆ"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:463
 msgid "To use this sidebar, select it from the list of available sidebar pages."
-msgstr ""
+msgstr "ಈ ಬದಿಪಟ್ಟಿಯನ್ನು ಬಳಸಲು, ಅದನ್ನು ಲಭ್ಯವಿರುವ ಬದಿಪಟ್ಟಿ ಪುಟಗಳಿಂದ ಆಯ್ಕೆ ಮಾಡಿ."
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:466
 #: ../extensions/sidebar/ephy-sidebar-extension.c:492
 msgid "Add Sidebar"
-msgstr ""
+msgstr "ಬದಿಪಟ್ಟಿಗೆ ಸೇರಿಸು"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:486
 #, c-format
 msgid "Add “%s” to the Sidebar?"
-msgstr ""
+msgstr "“%s” ಅನ್ನು ಬದಿಪಟ್ಟಿಗೆ ಸೇರಿಸಬೇಕೆ?"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:490
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
-msgstr ""
+msgstr "ಹೊಸ ಬದಿಪಟ್ಟಿಕೆಯ ಮೂಲವು “%s” ಆಗಿದೆ."
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:496
 msgid "_Add Sidebar"
-msgstr ""
+msgstr "ಬದಿ ಪಟ್ಟಿಕೆಯನ್ನು ಸೇರಿಸು(_A)"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
 msgid "_Look Up"
-msgstr ""
+msgstr "ಹುಡುಕು(_L)"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:538
 msgid "_GNOME Dictionary"
@@ -925,43 +947,43 @@ msgstr "_GNOME ಶಬ್ಧಕೋಶ"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
 msgid "Open search result in new tab"
-msgstr ""
+msgstr "ಹುಡುಕು ಫಲಿತಾಂಶವನ್ನು ಹೊಸ ಹಾಳೆಯಲ್ಲಿ ತೆರೆ"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
 msgid "Open search result in new tab if true, in new window if false"
-msgstr ""
+msgstr "true ಆದಲ್ಲಿ ಹೊಸ ಹಾಳೆಯಲ್ಲಿಯೂ, false ಆದಲ್ಲಿ ಹೊಸ ವಿಂಡೋದಲ್ಲಿ ಹುಡುಕು ಫಲಿತಾಂಶವನ್ನು ತೆರೆ"
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
-msgstr ""
+msgstr "ಸನ್ನಿವೇಶ ಮೆನುವಿನಿಂದ ಮನಸ್ಸಿಗೆ ಬಂದ ಆಜ್ಞೆಗಳನ್ನು ಕಾರ್ಯಗತಗೊಳಿಸು"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
 msgid "Ad Blocker"
-msgstr ""
+msgstr "ಆಡ್‌ ನಿರ್ಬಂಧಕ"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
 msgid "Block the pest!"
-msgstr ""
+msgstr "ಪಿಡುಗನ್ನು ನಿರ್ಬಂಧಿಸು!"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
 msgid "Auto Scroll"
-msgstr ""
+msgstr "ಸ್ವಯಂ ಚಲನೆ(ಸ್ಕ್ರಾಲ್)"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
 msgid "Scroll on middle mouse click"
-msgstr ""
+msgstr "ಮೌಸ್‌ನ ಮಧ್ಯದ ಗುಂಡಿಯನ್ನು ಬಳಸಿ ಚಲಿಸಿ(ಸ್ಕ್ರಾಲ್‌)"
 
 #: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
 msgid "Auto Reload Tab"
-msgstr ""
+msgstr "ಹಾಳೆಯ ಸ್ವಯಂ ಮರುಲೋಡ್ ಮಾಡುವಿಕೆ"
 
 #: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
 msgid "Reload a tab periodically"
-msgstr ""
+msgstr "ಹಾಳೆಯನ್ನು ಕಾಲಕಾಲಕ್ಕೆ ಮರಳಿ ಲೋಡ್ ಮಾಡು"
 
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
-msgstr ""
+msgstr "ಪುಟದ ಪ್ರಮಾಣಪತ್ರವನ್ನು ನೋಡಿ ಹಾಗು ಪ್ರಮಾಣಪತ್ರಗಳನ್ನು ನಿರ್ವಹಿಸಿ"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -969,11 +991,11 @@ msgstr "ದೋಷ ವೀಕ್ಷಕ"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
 msgid "Validate web pages and check links"
-msgstr ""
+msgstr "ಜಾಲಪುಟಗಳನ್ನು ಹಾಗು ಚೆಕ್‌ ಕೊಂಡಿಗಳನ್ನು ಮಾನ್ಯಗೊಳಿಸು"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
 msgid "Activate and deactivate extensions"
-msgstr ""
+msgstr "ವಿಸ್ತರಣೆಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸು ಹಾಗು ಸಿಷ್ಕ್ರಿಯಗೊಳಿಸು"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
 msgid "Extensions Manager"
@@ -981,11 +1003,11 @@ msgstr "ವಿಸ್ತರಣಾ ನಿರ್ವಾಹಕ"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
-msgstr ""
+msgstr "ಇಂಗಿತ ಸೂಚನೆಗಳು"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:2
 msgid "Perform actions with mouse gestures"
-msgstr ""
+msgstr "ಮೌಸ್‌ನ ಇಂಗಿತ ಸೂಚನೆಗಳೊಂದಿಗೆ ಕ್ರಿಯೆಗಳನ್ನು ನಿರ್ವಹಿಸು"
 
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
 msgid "Greasemonkey"
@@ -993,23 +1015,23 @@ msgstr "Greasemonkey"
 
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
 msgid "Run user scripts to modify web pages' behavior"
-msgstr ""
+msgstr "ಜಾಲಪುಟಗಳ ವರ್ತನೆಯನ್ನು ಬದಲಾಯಿಸಲು ಬಳಕೆದಾರರ ಸ್ಕ್ರಿಪ್ಟುಗಳನ್ನು ಚಲಾಯಿಸು"
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
 msgid "Java Console"
-msgstr ""
+msgstr "Java ಕನ್ಸೋಲ್"
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
 msgid "Provide access to the Java-Plugin Console"
-msgstr ""
+msgstr "Java-Plugin ಕನ್ಸೋಲ್‌ಗೆ ನಿಲುಕಣೆಯನ್ನು ಒದಗಿಸುತ್ತದೆ"
 
 #: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
 msgid "Live HTTP headers"
-msgstr ""
+msgstr "ಲೈವ್‌ HTTP ಹೆಡರುಗಳು"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
-msgstr ""
+msgstr "ಪ್ರಸಕ್ತ ಪುಟದ ಕೊಂಡಿಗಳ ಹಾಗು ಮಾಧ್ಯಮದ ಬಗೆಗಿನ ಮಾಹಿತಿಯನ್ನು ತೋರಿಸು"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
 msgid "Page Info"
@@ -1017,7 +1039,7 @@ msgstr "ಪುಟದ ಮಾಹಿತಿ"
 
 #: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
 msgid "Edit site permissions"
-msgstr ""
+msgstr "ತಾಣದ ಅನುಮತಿಗಳನ್ನು ಸಂಪಾದಿಸಿ"
 
 #: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
 msgid "Permissions"
@@ -1025,19 +1047,19 @@ msgstr "ಅನುಮತಿಗಳು"
 
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
 msgid "Drag the page on middle mouse click"
-msgstr ""
+msgstr "ಮೌಸ್‌ನ ಮಧ್ಯದ ಗುಂಡಿಯನ್ನು ಒತ್ತಿದಾಗ ಪುಟವನ್ನು ಎಳೆಯಿರಿ"
 
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
 msgid "Push Scroll"
-msgstr ""
+msgstr "ತಳ್ಳು ಚಲನೆ"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
-msgstr ""
+msgstr "ನಿಮ್ಮ ಅಚ್ಚುಮೆಚ್ಚಿನ ಸುದ್ದಿ ಓದುಗದಲ್ಲಿನ (ನ್ಯೂಸ್ ರೀಡರ್) ಜಾಲಪುಟದಿಂದ ನೀಡಲಾಗುವ ಸುದ್ದಿ ಫೀಡ್‌ಗೆ ಚಂದಾದಾರರಾಗಿ"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
 msgid "A sample extension"
-msgstr ""
+msgstr "ನಮೂನೆ ವಿಸ್ತರಣೆ"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:2
 msgid "Sample"
@@ -1045,41 +1067,41 @@ msgstr "ನಮೂನೆ"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
 msgid "Select Stylesheet"
-msgstr ""
+msgstr "ಸ್ಟೈಲ್‌ಶೀಟ್‌ಗಳ ಆಯ್ಕೆ"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
-msgstr ""
+msgstr "ಜಾಲಪುಟದಿಂದ ಒದಗಿಸಲಾಗುವ ವಿವಿಧ ಸ್ಟೈಲ್‌ಶೀಟ್‌ಗಳಿಂದ ಆಯ್ಕೆ ಮಾಡಿ"
 
 #: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
 msgid "Adds a sidebar to windows"
-msgstr ""
+msgstr "ವಿಂಡೊಗಳಿಗೆ ಹೊಸ ಬದಿಪಟ್ಟಿಕೆಯನ್ನು ಸೇರಿಸುತ್ತದೆ"
 
 #: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
 msgid "Sidebar"
-msgstr ""
+msgstr "ಬದಿಪಟ್ಟಿಕೆ"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
 msgid "Look up the selected text with a smart bookmark"
-msgstr ""
+msgstr "ಒಂದು ಚತುರ ಬುಕ್‌ಮಾರ್ಕಿನಿಂದ ಆಯ್ಕೆ ಮಾಡಲಾದ ಪಠ್ಯಕ್ಕಾಗಿ ಹುಡುಕು"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
 msgid "Smart Bookmarks"
-msgstr ""
+msgstr "ಚತುರ ಬುಕ್‌ಮಾರ್ಕುಗಳು"
 
 #: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
 msgid "Groups newly opened tabs"
-msgstr ""
+msgstr "ಹೊಸದಾಗಿ ತೆರೆಯಲಾದ ಹಾಳೆಗಳನ್ನು ಗುಂಪುಗೂಡಿಸುತ್ತದೆ"
 
 #: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
 msgid "Tab Groups"
-msgstr ""
+msgstr "ಹಾಳೆ ಗುಂಪುಗಳು"
 
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
-msgstr ""
+msgstr "ಹಿನ್ನಲೆ ಹಾಳೆಗಳಲ್ಲಿ ಹೊಸ ವಿಷಯಗಳನ್ನು ಸೂಚಿಸುತ್ತದೆ"
 
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
-msgstr ""
+msgstr "ಹಾಳೆಯ ಸ್ಥಿತಿಗಳು"
 
