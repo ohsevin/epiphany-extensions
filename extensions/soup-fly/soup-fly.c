@@ -24,6 +24,7 @@
 #include "ephy-soup-fly-extension.h"
 #include "soup-fly.h"
 
+#include <glib/gi18n-lib.h>
 #include <gtk/gtk.h>
 
 #define SOUP_FLY_GET_PRIVATE(object) (G_TYPE_INSTANCE_GET_PRIVATE ((object), TYPE_SOUP_FLY, SoupFlyPrivate))
@@ -176,7 +177,7 @@ construct_ui (SoupFly *logger)
                                                NULL);
 
   column = gtk_tree_view_column_new ();
-  gtk_tree_view_column_set_title (column, "State");
+  gtk_tree_view_column_set_title (column, _("State"));
   renderer = gtk_cell_renderer_text_new ();
   gtk_tree_view_column_pack_start (column, renderer, FALSE);
   gtk_tree_view_column_set_attributes (column, renderer,
@@ -201,11 +202,11 @@ construct_ui (SoupFly *logger)
   gtk_container_add (GTK_CONTAINER (scrolled), treeview);
 
   hbox = gtk_hbox_new (FALSE, 10);
-  button = gtk_button_new_with_label ("Clear finished");
+  button = gtk_button_new_with_label (_("Clear finished"));
   g_signal_connect (button, "clicked", G_CALLBACK (clear_button_clicked_cb), logger);
   gtk_container_add (GTK_CONTAINER (hbox), button);
 
-  check_button = gtk_check_button_new_with_label ("Automatically remove finished messages");
+  check_button = gtk_check_button_new_with_label (_("Automatically remove finished messages"));
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (check_button), priv->clean_finished);
   g_signal_connect (check_button, "toggled", G_CALLBACK (check_button_toggled_cb), logger);
   gtk_container_add (GTK_CONTAINER (hbox), check_button);

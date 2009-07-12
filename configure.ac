@@ -16,7 +16,7 @@
 
 m4_define([e_e_version_major],[2])
 m4_define([e_e_version_minor],[27])
-m4_define([e_e_version_micro],[0])
+m4_define([e_e_version_micro],[4])
 m4_define([e_e_version],[e_e_version_major.e_e_version_minor.e_e_version_micro])
 
 # This can be either "trunk" or "branches/gnome-x-y"
@@ -102,7 +102,7 @@ GNOME_DOC_INIT
 # pkg config checks
 # ********************************
 
-EPIPHANY_REQUIRED=2.25.0
+EPIPHANY_REQUIRED=2.27.4
 LIBXML_REQUIRED=2.6.0
 LIBGLIB_REQUIRED=2.15.5
 LIBGTK_REQUIRED=2.11.6

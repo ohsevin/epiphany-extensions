@@ -39,6 +39,8 @@ extensions/sidebar/ephy-sidebar.c
 extensions/sidebar/ephy-sidebar-extension.c
 extensions/smart-bookmarks/smart-bookmarks-extension.c
 extensions/smart-bookmarks/smart-bookmarks.schemas.in
+extensions/soup-fly/ephy-soup-fly-extension.c
+extensions/soup-fly/soup-fly.c
 [type: gettext/ini]extensions/actions/actions.ephy-extension.in.in
 [type: gettext/ini]extensions/adblock/adblock.ephy-extension.in.in
 [type: gettext/ini]extensions/auto-scroller/auto-scroller.ephy-extension.in.in
