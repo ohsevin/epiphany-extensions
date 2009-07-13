@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions.po.master.as\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions&component=general\n"
 "POT-Creation-Date: 2009-06-10 06:26+0000\n"
-"PO-Revision-Date: 2009-06-19 00:19+0530\n"
+"PO-Revision-Date: 2009-07-09 14:36+0530\n"
 "Last-Translator: Amitakhya Phukan <aphukan@fedoraproject.org>\n"
 "Language-Team: Assamese <fedora-trans-as@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -395,7 +395,7 @@ msgid ""
 "%s error in %s on line %d and column %d:\n"
 "%s"
 msgstr ""
-"%s ত্ৰুটি, %s ত %d পংক্তি আৰু %d কলামত:\n"
+"%s ত্ৰুটি, %s ত %d পংক্তি আৰু %d স্তম্ভত:\n"
 "%s"
 
 #. Translators: The first %s is the error category (e. g., "javascript").
@@ -1032,24 +1032,20 @@ msgid "Do you really want to remove this sidebar?"
 msgstr "আপুনি নিশ্চিতৰূপে এই চাইড-বাৰ আঁতৰাবলৈ ইচ্ছুক?"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:310
-#, fuzzy
 msgid "There is no way to recover this sidebar after removal."
 msgstr "অপসাৰণেৰ পৰে এই চাইড-বাৰ পুনৰুদ্ধাৰৰ কোনো উপায় নাই ।"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:312
-#, fuzzy
 msgid "Remove Sidebar"
 msgstr "চাইড-বাৰ আঁতৰাওক"
 
 #. Translators: %s is the sidebar title
 #: ../extensions/sidebar/ephy-sidebar-extension.c:459
 #, c-format
-#, fuzzy
 msgid "The sidebar already contains “%s”"
 msgstr "চাইড-বাৰেত “%s” বৰ্তমানে উপস্থিত আছে"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:463
-#, fuzzy
 msgid "To use this sidebar, select it from the list of available sidebar pages."
 msgstr ""
 "এই চাইড-বাৰটো প্ৰয়োগ কৰাৰ বাবে, চাইড-বাৰৰ উপলব্ধ পৃষ্ঠাৰ তালিকাৰ পৰা প্ৰথমে এটিকে "
@@ -1057,277 +1053,224 @@ msgstr ""
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:466
 #: ../extensions/sidebar/ephy-sidebar-extension.c:492
-#, fuzzy
 msgid "Add Sidebar"
 msgstr "চাইড-বাৰ যোগ কৰক"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:486
 #, c-format
-#, fuzzy
 msgid "Add “%s” to the Sidebar?"
 msgstr "চাইড-বাৰেত “%s” যোগ কৰা হ'ব কি?"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:490
 #, c-format
-#, fuzzy
 msgid "The source to the new sidebar page is “%s”."
 msgstr "নতুন চাইড-বাৰ পৃষ্ঠাৰ উৎস হল “%s” ।"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:496
-#, fuzzy
 msgid "_Add Sidebar"
 msgstr "চাইড-বাৰ যোগ কৰক (_A)"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
-#, fuzzy
 msgid "_Look Up"
 msgstr "অনুসন্ধান (_L)"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:538
-#, fuzzy
 msgid "_GNOME Dictionary"
 msgstr "GNOME অভিধান (_G)"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
-#, fuzzy
 msgid "Open search result in new tab"
 msgstr "নতুন টেবেত ফলাফল প্ৰদৰ্শন কৰা হ'ব"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
-#, fuzzy
 msgid "Open search result in new tab if true, in new window if false"
 msgstr ""
 "মান true (সত্য) হ'লে, অনুসন্ধানৰ ফলাফল এটা নতুন টেবেত প্ৰদৰ্শন কৰা হ'ব । মান "
 "false (সত্য নহয়) হ'লে নতুন সংযোগক্ষেত্ৰত তা প্ৰদৰ্শিত হ'ব ।"
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Execute arbitrary commands from the context menu"
 msgstr "কনটেক্সট তালিকাৰ পৰা যথেচ্ছ ভাবে নিৰ্বাচিত আদেশ সঞ্চালন কৰা হ'ব"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
-#, fuzzy
 msgid "Ad Blocker"
 msgstr "বিজ্ঞাপন প্ৰতিৰোধ"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Block the pest!"
 msgstr "আপদ বিদায় কৰক!"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
-#, fuzzy
 msgid "Auto Scroll"
 msgstr "স্বয়ংক্ৰিয় স্ক্ৰোল ব্যৱস্থা"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Scroll on middle mouse click"
 msgstr "মাউসেতবৰ্তী বাটনৰ ক্লিকে স্ক্ৰোল কৰা হ'ব"
 
 #: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
-#, fuzzy
 msgid "Auto Reload Tab"
 msgstr "টেব স্বয়ংক্ৰিয়ভাবে তুলি লোৱা হ'ব"
 
 #: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Reload a tab periodically"
 msgstr "নিয়মিতভাবে টেবটো পুনঃ তুলি লোৱা হ'ব"
 
 #: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
-#, fuzzy
 msgid "Creative Commons license viewer"
 msgstr "Creative Commons প্ৰমাণপত্ৰ প্ৰদৰ্শন ব্যৱস্থা"
 
 #: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
-#, fuzzy
 msgid "Shows the Creative Commons license of the current website if available"
 msgstr "বৰ্তমান ৱেব-ছাইটৰ বাবে Creative Commons প্ৰমাণপত্ৰ উপলব্ধ থাকলে তা প্ৰদৰ্শিত হ'ব"
 
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "View the page certificate and manage the certificates"
 msgstr "পৃষ্ঠাৰ প্ৰমাণপত্ৰ প্ৰদৰ্শন কৰক আৰু প্ৰমাণপত্ৰ পৰিচালনা কৰক"
 
 #: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
-#, fuzzy
 msgid "Synchronize bookmarks with social bookmark sites"
 msgstr "সাৰ্বজনীন পত্ৰচিহ্নৰ ছাইটৰ সৈতে পত্ৰচিহ্ন সুসংগত কৰক"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
-#, fuzzy
 msgid "Error viewer"
 msgstr "ভুল প্ৰদৰ্শন ব্যৱস্থা"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Validate web pages and check links"
 msgstr "ৱেব পৃষ্ঠা পৰীক্ষা কৰক আৰু লিংক পৰীক্ষা কৰক"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
-#, fuzzy
 msgid "Activate and deactivate extensions"
 msgstr "সম্প্ৰসাৰণ সক্ৰিয় আৰু নিষ্ক্ৰিয় কৰক"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Extensions Manager"
 msgstr "সম্প্ৰসাৰণ পৰিচালনব্যৱস্থা"
 
 #: ../extensions/favicon/favicon.ephy-extension.in.h:1
-#, fuzzy
 msgid "Favicon fallback"
 msgstr "Favicon-ৰ ফল-বেক"
 
 #: ../extensions/favicon/favicon.ephy-extension.in.h:2
-#, fuzzy
 msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
 msgstr ""
 "ছাইট দ্বাৰা স্বাভাবিক পদ্ধতি ব্যৱহাৰ কৰা কৰিলে, /favicon.ico নথিপত্ৰটিকে favicon "
 "ৰূপে তুলি লোৱা হ'ব"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
-#, fuzzy
 msgid "Gestures"
 msgstr "অঙ্গভঙ্গি"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Perform actions with mouse gestures"
 msgstr "মাউসেৰ ভঙ্গিমা দ্বাৰা কাম সঞ্চালন কৰক"
 
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
-#, fuzzy
 msgid "Greasemonkey"
 msgstr "Greasemonkey"
 
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Run user scripts to modify web pages' behavior"
 msgstr "ৱেব পৃষ্ঠাৰ আচৰণ পৰিবৰ্তনৰ বাবে ব্যৱহাৰকৰ্তাৰ স্ক্ৰিপ্ট সঞ্চালনা কৰক"
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
-#, fuzzy
 msgid "Java Console"
 msgstr "Java Console"
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Provide access to the Java-Plugin Console"
 msgstr "Java-Plugin কনসোলেৰ ব্যৱহাৰাধিকা প্ৰদান কৰক"
 
 #: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
-#, fuzzy
 msgid "Live HTTP headers"
 msgstr "লাইভ HTTP হেডাৰ"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
-#, fuzzy
 msgid "Display information about and links and media from the current page"
 msgstr ""
 "বৰ্তমান পৃষ্ঠাৰ পৰিচিতি আৰু এই পৃষ্ঠাৰ পৰা উৎপন্ন লিংক আৰু মিডিয়া সংক্ৰান্ত তথ্য প্ৰদৰ্শন "
 "কৰা হ'ব"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Page Info"
 msgstr "পৃষ্ঠা সংক্ৰান্ত তথ্য"
 
 #: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
-#, fuzzy
 msgid "Edit site permissions"
 msgstr "ছাইট সংক্ৰান্ত অনুমতি সম্পাদনা"
 
 #: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Permissions"
 msgstr "অনুমতি"
 
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
-#, fuzzy
 msgid "Drag the page on middle mouse click"
 msgstr "মাউসেৰ মধ্যবৰ্তী বাটনৰ ক্লিক দ্বাৰা পৃষ্ঠা টেনে আনা হ'ব"
 
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Push Scroll"
 msgstr "Push Scroll"
 
 #: ../extensions/python-console/python-console.ephy-extension.in.h:1
-#, fuzzy
 msgid "Opens an interactive Python console"
 msgstr "এটা ইন্টাৰেক্টিভ Python কনসোল প্ৰদৰ্শন কৰা হ'ব"
 
 #: ../extensions/python-console/python-console.ephy-extension.in.h:2
-#, fuzzy
 msgid "Python Console"
 msgstr "Python Console"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr ""
 "আপোনাৰ পছন্দৰ নিউজ পাঠেৰ সৰঞ্জাম সহযোগে, ৱেব-পৃষ্ঠা দ্বাৰা উপলব্ধ নিউজ ফিডত "
 "বৰঙনি দিয়ক"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
-#, fuzzy
 msgid "A sample extension"
 msgstr "সম্প্ৰসাৰণেৰ নমূনা"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Sample"
 msgstr "নমূনা"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
-#, fuzzy
 msgid "Select Stylesheet"
 msgstr "স্টাইল-শিট নিৰ্বাচন কৰক"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Select between different stylesheets offered by the web page"
 msgstr "ৱেব-পৃষ্ঠা দ্বাৰা উপলব্ধ বিভিন্ন স্টাইল-শিটৰ পৰা বেছে নিন"
 
 #: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
-#, fuzzy
 msgid "Adds a sidebar to windows"
 msgstr "সংযোগক্ষেত্ৰত চাইড-বাৰ যোগ কৰক"
 
 #: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Sidebar"
 msgstr "চাইড-বাৰ"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
-#, fuzzy
 msgid "Look up the selected text with a smart bookmark"
 msgstr "স্মাৰ্ট পত্ৰচিহ্ন সহযোগে নিৰ্বাচিত লেখা অনুসন্ধান কৰক"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Smart Bookmarks"
 msgstr "স্মাৰ্ট পত্ৰচিহ্ন"
 
 #: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
-#, fuzzy
 msgid "Groups newly opened tabs"
 msgstr "নতুন প্ৰদৰ্শিত টেব শ্ৰেণীবদ্ধ কৰা হয়"
 
 #: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Tab Groups"
 msgstr "টেবেৰ শ্ৰেণী"
 
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
-#, fuzzy
 msgid "Indicates new content in background tabs"
 msgstr "পটভূমিৰ টেবেত নতুন তথ্যেৰ উপস্থিতিৰ ইঙ্গিত দেওয়া হয়"
 
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Tab States"
 msgstr "টেবেৰ অৱস্থা"
 
