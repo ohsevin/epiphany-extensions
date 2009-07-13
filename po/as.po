@@ -7,16 +7,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions.po.master.as\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions&component=general\n"
-"POT-Creation-Date: 2009-06-10 06:26+0000\n"
-"PO-Revision-Date: 2009-07-09 14:36+0530\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
+"cgi?product=epiphany-extensions&component=general\n"
+"POT-Creation-Date: 2009-07-13 05:37+0000\n"
+"PO-Revision-Date: 2009-07-13 11:19+0530\n"
 "Last-Translator: Amitakhya Phukan <aphukan@fedoraproject.org>\n"
 "Language-Team: Assamese <fedora-trans-as@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 0.2\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: ../extensions/actions/action-properties.glade.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
@@ -31,8 +32,8 @@ msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "images."
 msgstr ""
-"এই বিকল্পটো সক্ৰিয় কৰিলে ছবিৰ সৈতে প্ৰদৰ্শিত প'প-আপ তালিকাত এই কাম অন্তৰ্ভুক্ত "
-"কৰা হ'ব ।"
+"এই বিকল্পটো সক্ৰিয় কৰিলে ছবিৰ সৈতে প্ৰদৰ্শিত প'প-আপ তালিকাত এই কাম অন্তৰ্ভুক্ত কৰা "
+"হ'ব ।"
 
 #: ../extensions/actions/action-properties.glade.h:4
 msgid ""
@@ -50,7 +51,9 @@ msgstr "কামৰ বিৱৰণ ।"
 msgid ""
 "The action name. If a character is preceded by an underscore, that character "
 "will be used as the access key for the menu item."
-msgstr "কামৰ নাম । কোনো অক্ষৰৰ আগত আন্ডাৰ-স্কোৰ চিহ্ন প্ৰদৰ্শন কৰিলে, সংশ্লিষ্ট অক্ষৰটো এই তালিকাৰ বস্তুৰ এক্সেচ-কি ৰূপে ব্যৱহাৰ কৰা হ'ব ।"
+msgstr ""
+"কামৰ নাম । কোনো অক্ষৰৰ আগত আন্ডাৰ-স্কোৰ চিহ্ন প্ৰদৰ্শন কৰিলে, সংশ্লিষ্ট অক্ষৰটো এই "
+"তালিকাৰ বস্তুৰ এক্সেচ-কি ৰূপে ব্যৱহাৰ কৰা হ'ব ।"
 
 #: ../extensions/actions/action-properties.glade.h:7
 msgid ""
@@ -73,7 +76,6 @@ msgid "_Images"
 msgstr "ছবি (_I)"
 
 #: ../extensions/actions/action-properties.glade.h:11
-#: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Name:"
 msgstr "নাম: (_N)"
 
@@ -200,10 +202,6 @@ msgstr "স্বয়ংক্ৰিয়ভাবে পুনঃ তুলি ল
 msgid "Reload the page periodically"
 msgstr "নিয়মিতৰূপে পৃষ্ঠা পুনঃ তুলি লোৱা হ'ব"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:373
-msgid "View Creative Commons license"
-msgstr "Creative Commons প্ৰমাণপত্ৰ পৰিদৰ্শন কৰক"
-
 #: ../extensions/certificates/ephy-certificates-extension.c:163
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
@@ -232,125 +230,6 @@ msgstr "নিৰাপত্তামূলক যন্ত্ৰ পৰিচ�
 #: ../extensions/certificates/ephy-certificates-extension.c:214
 msgid "Manage your security devices"
 msgstr "নিৰাপত্তামূলক যন্ত্ৰ পৰিচালনা কৰক"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:1
-msgid "Action for tagged bookmarks:"
-msgstr "টেগ কৰা পত্ৰচিহ্নৰ বাবে নিৰ্ধাৰিত কাম:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:2
-msgid "Epilicious Configuration"
-msgstr "Epilicious বিন্যাস"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:3
-msgid "_Backend:"
-msgstr "বেক লৈন্ড: (_B)"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:4
-msgid "_Exclude"
-msgstr "অন্তৰ্ভুক্ত কৰা ন'হ'ব (_E)"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:5
-msgid "_Include"
-msgstr "অন্তৰ্ভুক্ত কৰা হ'ব (_I)"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:7
-msgid "_Password:"
-msgstr "গুপ্তশব্দ: (_P)"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:8
-msgid "_Tag:"
-msgstr "টেগ: (_T)"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:1
-msgid "Adding new bookmarks and synching topics"
-msgstr "নতুন পত্ৰচিহ্ন যোগ কৰি, বিষয় সুসংগত কৰা হ'ব"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:2
-msgid "Removing deleted bookmarks"
-msgstr "বৰ্জিত পত্ৰচিহ্ন আঁতৰুৱা হ'ব"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:4
-#: ../extensions/epilicious/progress.py:41
-#, no-c-format, python-format
-msgid "Retrieving bookmarks from %s"
-msgstr "%sৰ পৰা পত্ৰচিহ্ন পুনৰুদ্ধাৰ কৰক"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:5
-msgid "Retrieving bookmarks from epiphany"
-msgstr "epiphanyৰ পৰা পত্ৰচিহ্ন পুনৰুদ্ধাৰ কৰক"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:6
-msgid "Retrieving previous synch point"
-msgstr "আগৰ synch স্থান উদ্ধাৰ কৰা হৈছে"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:7
-msgid "Saving new synch point"
-msgstr "নতুন synch পইন্ট সংৰক্ষণ কৰা হৈছে"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:9
-#: ../extensions/epilicious/progress.py:39
-#, no-c-format, python-format
-msgid "Synchronizing with %s"
-msgstr "%s-ৰ সৈতে সুসংগত কৰা হৈছে"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:10
-msgid "Synchronizing..."
-msgstr "সুসংগত কৰা হৈছে..."
-
-#: ../extensions/epilicious/epilicious.py.in:232
-#: ../extensions/epilicious/epilicious.py.in:250
-msgid "Epilicious Synchronize"
-msgstr "Epilicious সুসংগত কৰক"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:1
-msgid "Bookmarks with this topic will be synchronized."
-msgstr "এই বিষয়ৰ বাবে চিহ্নিত পত্ৰচিহ্নসমূহ সুসংগত কৰা হ'ব ।"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:2
-msgid ""
-"Controls the function of the topic. If this is unset then all bookmarks with "
-"the topic will be synched. If this is set then all bookmarks without the "
-"topic will be synched."
-msgstr ""
-"বিষয় সংক্ৰান্ত কাম নিয়ন্ত্ৰণ কৰিবলৈ ব্যৱহৃত হয় । এই মান নিৰ্ধাৰণ নকৰিলে, চিহ্নিত "
-"বিষয়ৰ বাবে ধাৰ্য সকল পত্ৰচিহ্নসমূহ synch কৰা হ'ব আৰু মান নিৰ্ধাৰণ কৰিলে, সংশ্লিষ্ট "
-"বিষয়বিহীন পত্ৰচিহ্ন synch কৰা হ'ব ।"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:3
-msgid "Exclude topic"
-msgstr "বিষয় অন্তৰ্ভুক্ত কৰা ন'হ'ব"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:4
-msgid "Shared topic"
-msgstr "অংশীদাৰ কৰা বিষয়"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:5
-msgid ""
-"The backend that epilicious will use for synchronizing bookmarks. Allowed "
-"values: 'diigo', 'ma.gnolia'"
-msgstr ""
-"পত্ৰচিহ্ন সুসংগত কৰাৰ বাবে epilicious দ্বাৰা ব্যৱহাৰযোগ্য বেক লৈন্ড । ব্যৱহাৰযোগ্য মান:  "
-"'diigo', 'ma.gnolia'"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:6
-msgid "The password that epilicious will use for synchronizing bookmarks."
-msgstr "পত্ৰচিহ্ন সুসংগত কৰাৰ বাবে epilicious দ্বাৰা ব্যৱহাৰযোগ্য গুপ্তশব্দ ।"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:7
-msgid "The username that epilicious will use for synchronizing bookmarks."
-msgstr "পত্ৰচিহ্ন সুসংগত কৰাৰ বাবে epilicious দ্বাৰা ব্যৱহাৰযোগ্য ব্যৱহাৰকৰ্তাৰ নাম ।"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:8
-msgid "epilicious backend"
-msgstr "epilicious বেক লৈন্ড"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:9
-msgid "password"
-msgstr "গুপ্তশব্দ"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:10
-msgid "username"
-msgstr "ব্যৱহাৰকৰ্তাৰ নাম"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Check _HTML"
@@ -908,6 +787,7 @@ msgid "Domain"
 msgstr "ডোমেইন"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:512
+#: ../extensions/soup-fly/soup-fly.c:180
 msgid "State"
 msgstr "অৱস্থা"
 
@@ -959,7 +839,9 @@ msgstr "ছাইটৰ নিউজ ফিডত বৰঙনি দিয়ক"
 
 #: ../extensions/rss/rss-ui.c:153
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
-msgstr "<b><i>ফিড পাঠ ব্যৱস্থাৰ সৈতে সংযোগ স্থাপন কৰিবলৈ ব্যৰ্থ, এইটো বৰ্তমানে চলিছে ?</i></b>"
+msgstr ""
+"<b><i>ফিড পাঠ ব্যৱস্থাৰ সৈতে সংযোগ স্থাপন কৰিবলৈ ব্যৰ্থ, এইটো বৰ্তমানে চলিছে ?</"
+"i></b>"
 
 #: ../extensions/rss/rss-ui.c:155
 msgid "Retry"
@@ -1085,8 +967,26 @@ msgstr "নতুন টেবেত ফলাফল প্ৰদৰ্শন �
 #: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
 msgid "Open search result in new tab if true, in new window if false"
 msgstr ""
-"মান true (সত্য) হ'লে, অনুসন্ধানৰ ফলাফল এটা নতুন টেবেত প্ৰদৰ্শন কৰা হ'ব । মান "
-"false (সত্য নহয়) হ'লে নতুন সংযোগক্ষেত্ৰত তা প্ৰদৰ্শিত হ'ব ।"
+"মান true হ'লে, অনুসন্ধানৰ ফলাফল এটা নতুন টেবেত প্ৰদৰ্শন কৰা হ'ব । মান false "
+"হ'লে নতুন সংযোগক্ষেত্ৰত তা প্ৰদৰ্শিত হ'ব ।"
+
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
+msgid "_Soup Fly"
+msgstr "_Soup Fly"
+
+#. shortcut key
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:68
+msgid "Show information about the SoupSession used by the browser"
+msgstr "চৰকে ব্যৱহাৰ কৰা SoupSession ৰ তথ্য দেখুৱাওক"
+
+#: ../extensions/soup-fly/soup-fly.c:205
+#| msgid "Clear cache"
+msgid "Clear finished"
+msgstr "সম্পূৰ্ণ হোৱাক আঁতৰাওক"
+
+#: ../extensions/soup-fly/soup-fly.c:209
+msgid "Automatically remove finished messages"
+msgstr "সম্পূৰ্ণ হোৱা বাৰ্তা নিজেই নিজেই আঁতৰাওক"
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
@@ -1116,21 +1016,9 @@ msgstr "টেব স্বয়ংক্ৰিয়ভাবে তুলি লো
 msgid "Reload a tab periodically"
 msgstr "নিয়মিতভাবে টেবটো পুনঃ তুলি লোৱা হ'ব"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
-msgid "Creative Commons license viewer"
-msgstr "Creative Commons প্ৰমাণপত্ৰ প্ৰদৰ্শন ব্যৱস্থা"
-
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
-msgid "Shows the Creative Commons license of the current website if available"
-msgstr "বৰ্তমান ৱেব-ছাইটৰ বাবে Creative Commons প্ৰমাণপত্ৰ উপলব্ধ থাকলে তা প্ৰদৰ্শিত হ'ব"
-
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "পৃষ্ঠাৰ প্ৰমাণপত্ৰ প্ৰদৰ্শন কৰক আৰু প্ৰমাণপত্ৰ পৰিচালনা কৰক"
-
-#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
-msgid "Synchronize bookmarks with social bookmark sites"
-msgstr "সাৰ্বজনীন পত্ৰচিহ্নৰ ছাইটৰ সৈতে পত্ৰচিহ্ন সুসংগত কৰক"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -1147,16 +1035,6 @@ msgstr "সম্প্ৰসাৰণ সক্ৰিয় আৰু নিষ্
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
 msgid "Extensions Manager"
 msgstr "সম্প্ৰসাৰণ পৰিচালনব্যৱস্থা"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:1
-msgid "Favicon fallback"
-msgstr "Favicon-ৰ ফল-বেক"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:2
-msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
-msgstr ""
-"ছাইট দ্বাৰা স্বাভাবিক পদ্ধতি ব্যৱহাৰ কৰা কৰিলে, /favicon.ico নথিপত্ৰটিকে favicon "
-"ৰূপে তুলি লোৱা হ'ব"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -1212,19 +1090,11 @@ msgstr "মাউসেৰ মধ্যবৰ্তী বাটনৰ ক্ল
 msgid "Push Scroll"
 msgstr "Push Scroll"
 
-#: ../extensions/python-console/python-console.ephy-extension.in.h:1
-msgid "Opens an interactive Python console"
-msgstr "এটা ইন্টাৰেক্টিভ Python কনসোল প্ৰদৰ্শন কৰা হ'ব"
-
-#: ../extensions/python-console/python-console.ephy-extension.in.h:2
-msgid "Python Console"
-msgstr "Python Console"
-
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr ""
-"আপোনাৰ পছন্দৰ নিউজ পাঠেৰ সৰঞ্জাম সহযোগে, ৱেব-পৃষ্ঠা দ্বাৰা উপলব্ধ নিউজ ফিডত "
-"বৰঙনি দিয়ক"
+"আপোনাৰ পছন্দৰ নিউজ পাঠেৰ সৰঞ্জাম সহযোগে, ৱেব-পৃষ্ঠা দ্বাৰা উপলব্ধ নিউজ ফিডত বৰঙনি "
+"দিয়ক"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
 msgid "A sample extension"
@@ -1274,3 +1144,120 @@ msgstr "পটভূমিৰ টেবেত নতুন তথ্যেৰ �
 msgid "Tab States"
 msgstr "টেবেৰ অৱস্থা"
 
+#~ msgid "View Creative Commons license"
+#~ msgstr "Creative Commons প্ৰমাণপত্ৰ পৰিদৰ্শন কৰক"
+
+#~ msgid "Action for tagged bookmarks:"
+#~ msgstr "টেগ কৰা পত্ৰচিহ্নৰ বাবে নিৰ্ধাৰিত কাম:"
+
+#~ msgid "Epilicious Configuration"
+#~ msgstr "Epilicious বিন্যাস"
+
+#~ msgid "_Backend:"
+#~ msgstr "বেক লৈন্ড: (_B)"
+
+#~ msgid "_Exclude"
+#~ msgstr "অন্তৰ্ভুক্ত কৰা ন'হ'ব (_E)"
+
+#~ msgid "_Include"
+#~ msgstr "অন্তৰ্ভুক্ত কৰা হ'ব (_I)"
+
+#~ msgid "_Password:"
+#~ msgstr "গুপ্তশব্দ: (_P)"
+
+#~ msgid "_Tag:"
+#~ msgstr "টেগ: (_T)"
+
+#~ msgid "Adding new bookmarks and synching topics"
+#~ msgstr "নতুন পত্ৰচিহ্ন যোগ কৰি, বিষয় সুসংগত কৰা হ'ব"
+
+#~ msgid "Removing deleted bookmarks"
+#~ msgstr "বৰ্জিত পত্ৰচিহ্ন আঁতৰুৱা হ'ব"
+
+#~ msgid "Retrieving bookmarks from %s"
+#~ msgstr "%sৰ পৰা পত্ৰচিহ্ন পুনৰুদ্ধাৰ কৰক"
+
+#~ msgid "Retrieving bookmarks from epiphany"
+#~ msgstr "epiphanyৰ পৰা পত্ৰচিহ্ন পুনৰুদ্ধাৰ কৰক"
+
+#~ msgid "Retrieving previous synch point"
+#~ msgstr "আগৰ synch স্থান উদ্ধাৰ কৰা হৈছে"
+
+#~ msgid "Saving new synch point"
+#~ msgstr "নতুন synch পইন্ট সংৰক্ষণ কৰা হৈছে"
+
+#~ msgid "Synchronizing with %s"
+#~ msgstr "%s-ৰ সৈতে সুসংগত কৰা হৈছে"
+
+#~ msgid "Synchronizing..."
+#~ msgstr "সুসংগত কৰা হৈছে..."
+
+#~ msgid "Epilicious Synchronize"
+#~ msgstr "Epilicious সুসংগত কৰক"
+
+#~ msgid "Bookmarks with this topic will be synchronized."
+#~ msgstr "এই বিষয়ৰ বাবে চিহ্নিত পত্ৰচিহ্নসমূহ সুসংগত কৰা হ'ব ।"
+
+#~ msgid ""
+#~ "Controls the function of the topic. If this is unset then all bookmarks "
+#~ "with the topic will be synched. If this is set then all bookmarks without "
+#~ "the topic will be synched."
+#~ msgstr ""
+#~ "বিষয় সংক্ৰান্ত কাম নিয়ন্ত্ৰণ কৰিবলৈ ব্যৱহৃত হয় । এই মান নিৰ্ধাৰণ নকৰিলে, চিহ্নিত "
+#~ "বিষয়ৰ বাবে ধাৰ্য সকল পত্ৰচিহ্নসমূহ synch কৰা হ'ব আৰু মান নিৰ্ধাৰণ কৰিলে, "
+#~ "সংশ্লিষ্ট বিষয়বিহীন পত্ৰচিহ্ন synch কৰা হ'ব ।"
+
+#~ msgid "Exclude topic"
+#~ msgstr "বিষয় অন্তৰ্ভুক্ত কৰা ন'হ'ব"
+
+#~ msgid "Shared topic"
+#~ msgstr "অংশীদাৰ কৰা বিষয়"
+
+#~ msgid ""
+#~ "The backend that epilicious will use for synchronizing bookmarks. Allowed "
+#~ "values: 'diigo', 'ma.gnolia'"
+#~ msgstr ""
+#~ "পত্ৰচিহ্ন সুসংগত কৰাৰ বাবে epilicious দ্বাৰা ব্যৱহাৰযোগ্য বেক লৈন্ড । ব্যৱহাৰযোগ্য "
+#~ "মান:  'diigo', 'ma.gnolia'"
+
+#~ msgid "The password that epilicious will use for synchronizing bookmarks."
+#~ msgstr "পত্ৰচিহ্ন সুসংগত কৰাৰ বাবে epilicious দ্বাৰা ব্যৱহাৰযোগ্য গুপ্তশব্দ ।"
+
+#~ msgid "The username that epilicious will use for synchronizing bookmarks."
+#~ msgstr ""
+#~ "পত্ৰচিহ্ন সুসংগত কৰাৰ বাবে epilicious দ্বাৰা ব্যৱহাৰযোগ্য ব্যৱহাৰকৰ্তাৰ নাম ।"
+
+#~ msgid "epilicious backend"
+#~ msgstr "epilicious বেক লৈন্ড"
+
+#~ msgid "password"
+#~ msgstr "গুপ্তশব্দ"
+
+#~ msgid "username"
+#~ msgstr "ব্যৱহাৰকৰ্তাৰ নাম"
+
+#~ msgid "Creative Commons license viewer"
+#~ msgstr "Creative Commons প্ৰমাণপত্ৰ প্ৰদৰ্শন ব্যৱস্থা"
+
+#~ msgid ""
+#~ "Shows the Creative Commons license of the current website if available"
+#~ msgstr ""
+#~ "বৰ্তমান ৱেব-ছাইটৰ বাবে Creative Commons প্ৰমাণপত্ৰ উপলব্ধ থাকলে তা প্ৰদৰ্শিত হ'ব"
+
+#~ msgid "Synchronize bookmarks with social bookmark sites"
+#~ msgstr "সাৰ্বজনীন পত্ৰচিহ্নৰ ছাইটৰ সৈতে পত্ৰচিহ্ন সুসংগত কৰক"
+
+#~ msgid "Favicon fallback"
+#~ msgstr "Favicon-ৰ ফল-বেক"
+
+#~ msgid ""
+#~ "Loads /favicon.ico as favicon if the site doesn't use the standard method"
+#~ msgstr ""
+#~ "ছাইট দ্বাৰা স্বাভাবিক পদ্ধতি ব্যৱহাৰ কৰা কৰিলে, /favicon.ico নথিপত্ৰটিকে "
+#~ "favicon ৰূপে তুলি লোৱা হ'ব"
+
+#~ msgid "Opens an interactive Python console"
+#~ msgstr "এটা ইন্টাৰেক্টিভ Python কনসোল প্ৰদৰ্শন কৰা হ'ব"
+
+#~ msgid "Python Console"
+#~ msgstr "Python Console"
