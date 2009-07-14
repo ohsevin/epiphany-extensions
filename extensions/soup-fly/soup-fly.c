@@ -41,8 +41,27 @@ struct _SoupFlyPrivate {
 enum {
     COL_NUMBER,
     COL_STATE,
+    COL_PROGRESS,
     COL_URL,
     N_COLUMNS
+};
+
+enum {
+  STATE_QUEUED,
+  STATE_SENDING,
+  STATE_WAITING,
+  STATE_RECEIVING,
+  STATE_FINISHED
+};
+
+const struct {
+  const char *name, *color;
+} states[] = {
+  { "Queued", "pink" },
+  { "Sending", "green" },
+  { "Waiting", "cyan" },
+  { "Receiving", "blue" },
+  { "Finished", "gray" }
 };
 
 static void soup_fly_class_init (SoupFlyClass *klass);
@@ -105,18 +124,16 @@ clear_button_clicked_cb (GtkButton *button, SoupFly *logger)
   valid = gtk_tree_model_get_iter_first (priv->model, &iter);
 
   while (valid) {
-    char *state;
+    int state;
 
     gtk_tree_model_get (priv->model, &iter,
                         COL_STATE, &state,
                         -1);
 
-    if (g_str_equal (state, "Finished"))
+    if (state == STATE_FINISHED)
       valid = gtk_list_store_remove (GTK_LIST_STORE (priv->model), &iter);
     else
       valid = gtk_tree_model_iter_next (priv->model, &iter);
-
-    g_free (state);
   }
 }
 
@@ -133,15 +150,13 @@ state_data_func (GtkTreeViewColumn *column, GtkCellRenderer *cell,
                  GtkTreeModel *model, GtkTreeIter *iter,
                  gpointer data)
 {
-  char *state;
+  int state;
 
   gtk_tree_model_get (model, iter, COL_STATE, &state, -1);
-  if (g_str_equal (state, "Queued"))
-    g_object_set (G_OBJECT (cell), "background", "orange", NULL);
-  else if (g_str_equal (state, "Finished"))
-    g_object_set (G_OBJECT (cell), "background", "green", NULL);
-
-  g_free (state);
+  g_object_set (G_OBJECT (cell),
+                "text", states[state].name,
+                "background", states[state].color,
+                NULL);
 }
 
 static void
@@ -165,7 +180,8 @@ construct_ui (SoupFly *logger)
 
   store = gtk_list_store_new (N_COLUMNS,
                               G_TYPE_UINT,
-                              G_TYPE_STRING,
+                              G_TYPE_INT,
+                              G_TYPE_INT,
                               G_TYPE_STRING);
   gtk_tree_view_set_model (GTK_TREE_VIEW (treeview), GTK_TREE_MODEL (store));
 
@@ -180,19 +196,18 @@ construct_ui (SoupFly *logger)
   gtk_tree_view_column_set_title (column, _("State"));
   renderer = gtk_cell_renderer_text_new ();
   gtk_tree_view_column_pack_start (column, renderer, FALSE);
-  gtk_tree_view_column_set_attributes (column, renderer,
-                                       "text", COL_STATE,
-                                       NULL);
   gtk_tree_view_column_set_cell_data_func (column, renderer,
                                            state_data_func,
                                            NULL, NULL);
   gtk_tree_view_append_column (GTK_TREE_VIEW (treeview), column); 
 
-  renderer = gtk_cell_renderer_text_new ();
+  renderer = gtk_cell_renderer_progress_new ();
+  g_object_set (G_OBJECT (renderer), "text-xalign", 0.0, NULL);
   gtk_tree_view_insert_column_with_attributes (GTK_TREE_VIEW (treeview),
                                                COL_URL, "URL",
                                                renderer,
                                                "text", COL_URL,
+                                               "value", COL_PROGRESS,
                                                NULL);
 
   scrolled = gtk_scrolled_window_new (NULL, NULL);
@@ -240,10 +255,11 @@ typedef struct
 {
   GtkTreeIter iter;
   SoupFly *logger;
-} MessageFinishedCBData;
+  goffset content_length, received;
+} FlyMessageData;
 
 static void
-message_finished_cb (SoupMessage *message, MessageFinishedCBData *data)
+message_finished_cb (SoupMessage *message, FlyMessageData *data)
 {
   SoupFlyPrivate *priv = data->logger->priv;
 
@@ -251,9 +267,59 @@ message_finished_cb (SoupMessage *message, MessageFinishedCBData *data)
     gtk_list_store_remove (GTK_LIST_STORE (priv->model), &data->iter);
   else
     gtk_list_store_set (GTK_LIST_STORE (priv->model), &data->iter,
-                        COL_STATE, "Finished",
+                        COL_PROGRESS, 0,
+                        COL_STATE, STATE_FINISHED,
                         -1);
-  g_slice_free (MessageFinishedCBData, data);
+  g_slice_free (FlyMessageData, data);
+}
+
+static void
+message_got_chunk_cb (SoupMessage *message, SoupBuffer *chunk, FlyMessageData *data)
+{
+  SoupFlyPrivate *priv = data->logger->priv;
+
+  data->received += chunk->length;
+  if (data->content_length && data->received) {
+    gtk_list_store_set (GTK_LIST_STORE (priv->model), &data->iter,
+                        COL_PROGRESS, (int)(data->received * 100 / data->content_length),
+                        -1);
+  }
+}
+
+static void
+message_got_headers_cb (SoupMessage *message, FlyMessageData *data)
+{
+  SoupFlyPrivate *priv = data->logger->priv;
+
+  data->content_length = soup_message_headers_get_content_length (message->response_headers);
+  gtk_list_store_set (GTK_LIST_STORE (priv->model), &data->iter,
+                      COL_STATE, STATE_RECEIVING,
+                      COL_PROGRESS, 0,
+                      -1);
+}
+
+static void
+message_wrote_body_cb (SoupMessage *message, FlyMessageData *data)
+{
+  SoupFlyPrivate *priv = data->logger->priv;
+
+  gtk_list_store_set (GTK_LIST_STORE (priv->model), &data->iter,
+                      COL_STATE, STATE_WAITING,
+                      -1);
+}
+
+static void
+request_started_cb (SoupSession *session, SoupMessage *message,
+                    SoupSocket *socket, SoupFly *logger)
+{
+  SoupFlyPrivate *priv = logger->priv;
+  FlyMessageData *data = g_object_get_data (G_OBJECT (message), "FlyMessageData");
+
+  if (!data)
+    return;
+  gtk_list_store_set (GTK_LIST_STORE (priv->model), &data->iter,
+                      COL_STATE, STATE_SENDING,
+                      -1);
 }
 
 static void
@@ -262,7 +328,7 @@ request_queued_cb (SoupSession *session, SoupMessage *message, SoupFly *logger)
   GtkTreeIter iter;
   SoupURI *uri;
   char *uri_string;
-  MessageFinishedCBData *data;
+  FlyMessageData *data;
   SoupFlyPrivate *priv = logger->priv;
 
   uri = soup_message_get_uri (message);
@@ -272,13 +338,17 @@ request_queued_cb (SoupSession *session, SoupMessage *message, SoupFly *logger)
   gtk_list_store_set (GTK_LIST_STORE (priv->model), &iter,
                       COL_NUMBER, priv->nth++,
                       COL_URL, uri_string,
-                      COL_STATE, "Queued",
+                      COL_STATE, STATE_QUEUED,
                       -1);
   g_free (uri_string);
   
-  data = g_slice_new (MessageFinishedCBData);
+  data = g_slice_new (FlyMessageData);
   data->iter = iter;
   data->logger = logger;
+  g_object_set_data (G_OBJECT (message), "FlyMessageData", data);
+  g_signal_connect (message, "wrote-body", G_CALLBACK (message_wrote_body_cb), data);
+  g_signal_connect (message, "got-headers", G_CALLBACK (message_got_headers_cb), data);
+  g_signal_connect (message, "got-chunk", G_CALLBACK (message_got_chunk_cb), data);
   g_signal_connect (message, "finished", G_CALLBACK (message_finished_cb), data);
 }
 
@@ -302,6 +372,7 @@ soup_fly_start (SoupFly *logger)
   session = webkit_get_default_session ();
   g_return_if_fail (session);
   g_signal_connect (session, "request-queued", G_CALLBACK (request_queued_cb), logger);
+  g_signal_connect (session, "request-started", G_CALLBACK (request_started_cb), logger);
 }
 
 /**
