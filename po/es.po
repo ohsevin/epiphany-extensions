@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions&component=general\n"
 "POT-Creation-Date: 2009-07-13 05:50+0000\n"
-"PO-Revision-Date: 2009-07-14 18:13+0200\n"
+"PO-Revision-Date: 2009-07-18 15:45+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -975,13 +975,11 @@ msgstr ""
 "nueva venana si es FALSE"
 
 #: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
-#, fuzzy
 msgid "_Soup Fly"
 msgstr "_Soup Fly"
 
 #. shortcut key
 #: ../extensions/soup-fly/ephy-soup-fly-extension.c:68
-#, fuzzy
 msgid "Show information about the SoupSession used by the browser"
 msgstr ""
 "Mostrar información acerca de la sesión Soup utilizada por el navegador"
