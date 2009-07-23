@@ -188,19 +188,16 @@ ephy_auto_scroller_grab_notify_cb (GtkWidget *widget,
 static void
 ephy_auto_scroller_scroll_pixels (EphyEmbed *embed, int scroll_x, int scroll_y)
 {
-        GtkWidget *child;
         GtkAdjustment *adj;
         gdouble value;
 
-        child = gtk_bin_get_child (GTK_BIN (embed));
-        g_return_if_fail (child);
-        g_return_if_fail (GTK_IS_SCROLLED_WINDOW (child));
+        g_return_if_fail (GTK_IS_SCROLLED_WINDOW (embed));
 
-        adj = gtk_scrolled_window_get_hadjustment (GTK_SCROLLED_WINDOW (child));
+        adj = gtk_scrolled_window_get_hadjustment (GTK_SCROLLED_WINDOW (embed));
         value = gtk_adjustment_get_value (adj);
         gtk_adjustment_set_value (adj, value + scroll_x);
 
-        adj = gtk_scrolled_window_get_vadjustment (GTK_SCROLLED_WINDOW (child));
+        adj = gtk_scrolled_window_get_vadjustment (GTK_SCROLLED_WINDOW (embed));
         value = gtk_adjustment_get_value (adj);
         gtk_adjustment_set_value (adj, value + scroll_y);
 }

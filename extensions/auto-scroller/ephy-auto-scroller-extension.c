@@ -87,11 +87,11 @@ dom_mouse_down_cb (EphyEmbed *embed,
 
 static gboolean
 button_press_cb (GtkWidget *widget,
-		   GdkEventButton *event,
-		   EphyWindow *window)
+                 GdkEventButton *event,
+                 EphyWindow *window)
 {
 	EphyAutoScroller *scroller;
-	EphyEmbed *embed = (EphyEmbed*) gtk_widget_get_parent (gtk_widget_get_parent (widget));
+	EphyEmbed *embed = (EphyEmbed*) gtk_widget_get_parent (widget);
 
 	// FIXME: This will swallow middle clicks on inputs and links.
 	if (event->button != 2)
@@ -119,7 +119,7 @@ impl_attach_tab (EphyExtension *ext,
 		 EphyWindow *window,
 		 EphyEmbed *embed)
 {
-	GtkWidget* web_view;
+	WebKitWebView* web_view;
 	LOG ("impl_attach_tab");
 
 	g_return_if_fail (embed != NULL);
@@ -129,9 +129,9 @@ impl_attach_tab (EphyExtension *ext,
                                  G_CALLBACK (dom_mouse_down_cb), window, 0);
 #endif
 
-	web_view = gtk_bin_get_child (GTK_BIN (gtk_bin_get_child (GTK_BIN (embed))));
+	web_view = EPHY_GET_WEBKIT_WEB_VIEW_FROM_EMBED (embed);
 	g_signal_connect_object (web_view, "button_press_event",
-                                 G_CALLBACK (button_press_cb), window, 0);
+				 G_CALLBACK (button_press_cb), window, 0);
 }
 
 static void
@@ -139,7 +139,7 @@ impl_detach_tab (EphyExtension *ext,
 		 EphyWindow *window,
 		 EphyEmbed *embed)
 {
-	GtkWidget *web_view;
+	WebKitWebView *web_view;
 	LOG ("impl_detach_tab");
 
 	g_return_if_fail (embed != NULL);
@@ -149,7 +149,7 @@ impl_detach_tab (EphyExtension *ext,
 		(embed, G_CALLBACK (dom_mouse_down_cb), window);
 #endif
 
-	web_view = gtk_bin_get_child (GTK_BIN (gtk_bin_get_child (GTK_BIN (embed))));
+	web_view = EPHY_GET_WEBKIT_WEB_VIEW_FROM_EMBED (embed);
 	g_signal_handlers_disconnect_by_func
 		(web_view, G_CALLBACK (button_press_cb), window);
 }
