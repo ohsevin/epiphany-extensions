@@ -17,7 +17,6 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  *
- *  $Id$
  */
 
 /* this file is based on work of Daniel Erat for galeon 1 */
@@ -188,18 +187,18 @@ ephy_auto_scroller_grab_notify_cb (GtkWidget *widget,
 static void
 ephy_auto_scroller_scroll_pixels (EphyEmbed *embed, int scroll_x, int scroll_y)
 {
-        GtkAdjustment *adj;
-        gdouble value;
+	GtkAdjustment *adj;
+	gdouble value;
 
-        g_return_if_fail (GTK_IS_SCROLLED_WINDOW (embed));
+	g_return_if_fail (GTK_IS_SCROLLED_WINDOW (embed));
 
-        adj = gtk_scrolled_window_get_hadjustment (GTK_SCROLLED_WINDOW (embed));
-        value = gtk_adjustment_get_value (adj);
-        gtk_adjustment_set_value (adj, value + scroll_x);
+	adj = gtk_scrolled_window_get_hadjustment (GTK_SCROLLED_WINDOW (embed));
+	value = gtk_adjustment_get_value (adj);
+	gtk_adjustment_set_value (adj, value + scroll_x);
 
-        adj = gtk_scrolled_window_get_vadjustment (GTK_SCROLLED_WINDOW (embed));
-        value = gtk_adjustment_get_value (adj);
-        gtk_adjustment_set_value (adj, value + scroll_y);
+	adj = gtk_scrolled_window_get_vadjustment (GTK_SCROLLED_WINDOW (embed));
+	value = gtk_adjustment_get_value (adj);
+	gtk_adjustment_set_value (adj, value + scroll_y);
 }
 
 static int
@@ -324,7 +323,7 @@ ephy_auto_scroller_start (EphyAutoScroller *scroller,
 	priv->roundoff_error_y = 0;
 
 	g_signal_connect (priv->window, "motion-notify-event",
-			    G_CALLBACK (ephy_auto_scroller_motion_cb), scroller);
+			  G_CALLBACK (ephy_auto_scroller_motion_cb), scroller);
 	g_signal_connect (priv->window, "button-press-event",
 			  G_CALLBACK (ephy_auto_scroller_mouse_press_cb), scroller);
 	g_signal_connect (priv->window, "key-press-event",
