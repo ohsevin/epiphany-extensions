@@ -18,7 +18,6 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  *
- *  $Id$
  */
 
 /* this file is based on work of Daniel Erat for galeon 1 */
@@ -71,21 +70,18 @@ ephy_push_scroller_set_window (EphyPushScroller *scroller,
 static void
 ephy_push_scroller_scroll_pixels (EphyEmbed *embed, int scroll_x, int scroll_y)
 {
-        GtkWidget *child;
-        GtkAdjustment *adj;
-        gdouble value;
+	GtkAdjustment *adj;
+	gdouble value;
 
-        child = gtk_bin_get_child (GTK_BIN (embed));
-        g_return_if_fail (child);
-        g_return_if_fail (GTK_IS_SCROLLED_WINDOW (child));
+	g_return_if_fail (GTK_IS_SCROLLED_WINDOW (embed));
 
-        adj = gtk_scrolled_window_get_hadjustment (GTK_SCROLLED_WINDOW (child));
-        value = gtk_adjustment_get_value (adj);
-        gtk_adjustment_set_value (adj, value + scroll_x);
+	adj = gtk_scrolled_window_get_hadjustment (GTK_SCROLLED_WINDOW (embed));
+	value = gtk_adjustment_get_value (adj);
+	gtk_adjustment_set_value (adj, value + scroll_x);
 
-        adj = gtk_scrolled_window_get_vadjustment (GTK_SCROLLED_WINDOW (child));
-        value = gtk_adjustment_get_value (adj);
-        gtk_adjustment_set_value (adj, value + scroll_y);
+	adj = gtk_scrolled_window_get_vadjustment (GTK_SCROLLED_WINDOW (embed));
+	value = gtk_adjustment_get_value (adj);
+	gtk_adjustment_set_value (adj, value + scroll_y);
 }
 
 static gboolean
@@ -218,7 +214,7 @@ ephy_push_scroller_start (EphyPushScroller *scroller,
 	priv->start_y = y;
 
 	g_signal_connect (priv->window, "motion-notify-event",
-			    G_CALLBACK (ephy_push_scroller_motion_cb), scroller);
+			  G_CALLBACK (ephy_push_scroller_motion_cb), scroller);
 	g_signal_connect (priv->window, "button-press-event",
 			  G_CALLBACK (ephy_push_scroller_mouse_press_cb), scroller);
 	g_signal_connect (priv->window, "button-release-event",

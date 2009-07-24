@@ -17,7 +17,6 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  *
- *  $Id$
  */
 
 #include "config.h"
@@ -57,19 +56,21 @@ ensure_push_scroller (EphyWindow *window)
 }
 
 static gboolean
-dom_mouse_down_cb (EphyEmbed *embed,
+dom_mouse_down_cb (EphyWebView *view,
 		   EphyEmbedEvent *event,
 		   EphyWindow *window)
 {
 	EphyPushScroller *scroller;
+	EphyEmbed *embed;
 	EphyEmbedEventContext context;
 	guint button, x, y;
 
+	embed = gtk_widget_get_parent (GTK_WIDGET (view));
 	button = ephy_embed_event_get_button (event);
 	context = ephy_embed_event_get_context (event);
 
 	if (button != 2 || (context & EPHY_EMBED_CONTEXT_INPUT) ||
-            (context & EPHY_EMBED_CONTEXT_LINK))
+	    (context & EPHY_EMBED_CONTEXT_LINK))
 	{
 		return FALSE;
 	}
@@ -99,8 +100,9 @@ impl_attach_tab (EphyExtension *ext,
 
 	g_return_if_fail (embed != NULL);
 
-	g_signal_connect_object (embed, "ge-dom-mouse-down",
-                                 G_CALLBACK (dom_mouse_down_cb), window, 0);
+	g_signal_connect_object (EPHY_GET_EPHY_WEB_VIEW_FROM_EMBED (embed),
+				 "ge-dom-mouse-down",
+				 G_CALLBACK (dom_mouse_down_cb), window, 0);
 }
 
 static void
@@ -113,7 +115,8 @@ impl_detach_tab (EphyExtension *ext,
 	g_return_if_fail (embed != NULL);
 
 	g_signal_handlers_disconnect_by_func
-		(embed, G_CALLBACK (dom_mouse_down_cb), window);
+	  (EPHY_GET_EPHY_WEB_VIEW_FROM_EMBED (embed)
+	   , G_CALLBACK (dom_mouse_down_cb), window);
 }
 
 static void
