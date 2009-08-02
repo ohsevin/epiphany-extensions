@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: 2.6\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions&component=general\n"
-"POT-Creation-Date: 2009-02-11 23:10+0000\n"
-"PO-Revision-Date: 2009-02-25 22:08-0100\n"
+"POT-Creation-Date: 2009-07-12 21:38+0000\n"
+"PO-Revision-Date: 2009-07-21 23:57+0000\n"
 "Last-Translator: António Lima <amrlima@gmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -75,7 +75,6 @@ msgid "_Images"
 msgstr "_Imagens"
 
 #: ../extensions/actions/action-properties.glade.h:11
-#: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Name:"
 msgstr "_Nome:"
 
@@ -100,7 +99,7 @@ msgstr "Personalizar acções"
 msgid "Could not run command"
 msgstr "Não foi possível executar o comando"
 
-#: ../extensions/actions/ephy-actions-extension.c:439
+#: ../extensions/actions/ephy-actions-extension.c:440
 msgid "Could not Run Command"
 msgstr "Não foi possível Executar o comando"
 
@@ -163,7 +162,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>Actualizar regras a partir da página original</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:230
+#: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
 msgstr "Editor do Adblock"
 
@@ -183,11 +182,11 @@ msgstr "Filterset.G"
 msgid "Whitelist"
 msgstr "Lista de Excepções"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:231
+#: ../extensions/adblock/ephy-adblock-extension.c:230
 msgid "Edit Adblock"
 msgstr "Editar o Adblock"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:298
+#: ../extensions/adblock/ephy-adblock-extension.c:299
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -201,10 +200,6 @@ msgstr "Reler _Automaticamente"
 #: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
 msgid "Reload the page periodically"
 msgstr "Reler a página periodicamente"
-
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:373
-msgid "View Creative Commons license"
-msgstr "Visualizar a licença Creative Commons"
 
 #: ../extensions/certificates/ephy-certificates-extension.c:163
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
@@ -234,131 +229,6 @@ msgstr "Gerir _Dispositivos de Segurança"
 #: ../extensions/certificates/ephy-certificates-extension.c:214
 msgid "Manage your security devices"
 msgstr "Efectue a gestão dos seus dispositivos de segurança"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:1
-msgid "Action for tagged bookmarks:"
-msgstr "Acção para páginas marcadas:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:2
-msgid "Epilicious Configuration"
-msgstr "Configuração do Epilicious"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:3
-msgid "_Backend:"
-msgstr "_Suporte:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:4
-msgid "_Exclude"
-msgstr "_Excluir"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:5
-msgid "_Include"
-msgstr "_Incluir"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:7
-msgid "_Password:"
-msgstr "_Senha:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:8
-msgid "_Tag:"
-msgstr "_Etiqueta:"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:1
-msgid "Adding new bookmarks and synching topics"
-msgstr "Adicionar novos marcadores e sincronizar tópicos"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:2
-msgid "Removing deleted bookmarks"
-msgstr "Remover marcadores eliminados"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:4
-#: ../extensions/epilicious/progress.py:41
-#, no-c-format, python-format
-msgid "Retrieving bookmarks from %s"
-msgstr "Recuperar marcadores a partir de %s"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:5
-msgid "Retrieving bookmarks from epiphany"
-msgstr "Recuperar marcadores a partir do epiphany"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:6
-msgid "Retrieving previous synch point"
-msgstr "Recuperar o ponto de sincronização anterior"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:7
-msgid "Saving new synch point"
-msgstr "Gravar novo ponto de sincronização"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:9
-#: ../extensions/epilicious/progress.py:39
-#, no-c-format, python-format
-msgid "Synchronizing with %s"
-msgstr "Sincronizar com %s"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:10
-msgid "Synchronizing..."
-msgstr "A Sincronizar..."
-
-#: ../extensions/epilicious/epilicious.py.in:232
-#: ../extensions/epilicious/epilicious.py.in:250
-msgid "Epilicious Synchronize"
-msgstr "Sincronização do Epilicious"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:1
-msgid "Bookmarks with this topic will be synchronized."
-msgstr "Marcadores com este tópico serão sincronizados."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:2
-msgid ""
-"Controls the function of the topic. If this is unset then all bookmarks with "
-"the topic will be synched. If this is set then all bookmarks without the "
-"topic will be synched."
-msgstr ""
-"Controla a função do tópico. Se desmarcado, então todos os marcadores com o "
-"tópico serão sincronizados. Se marcado, então todos os marcadores sem o "
-"tópico serão sincronizados."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:3
-msgid "Exclude topic"
-msgstr "Excluir tópico"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:4
-msgid "Shared topic"
-msgstr "Tópico partilhado"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:5
-#| msgid ""
-#| "The backend that epilicious will use for synchronizing bookmarks. Allowed "
-#| "value: 'ma.gnolia'"
-msgid ""
-"The backend that epilicious will use for synchronizing bookmarks. Allowed "
-"values: 'diigo', 'ma.gnolia'"
-msgstr ""
-"O suporte que o epilicious irá utilizar para a sincronização de marcadores. "
-"Valor permitido: 'diigo' , 'ma.gnolia'"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:6
-msgid "The password that epilicious will use for synchronizing bookmarks."
-msgstr ""
-"A senha que o epilicious irá utilizar para a sincronização de marcadores."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:7
-msgid "The username that epilicious will use for synchronizing bookmarks."
-msgstr ""
-"O nome de utilizador que o epilicious irá utilizar para a sincronização de "
-"marcadores."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:8
-msgid "epilicious backend"
-msgstr "suporte do epilicious"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:9
-msgid "password"
-msgstr "senha"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:10
-msgid "username"
-msgstr "nome de utilizador"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Check _HTML"
@@ -525,11 +395,11 @@ msgstr ""
 "Erro de HTML em %s:\n"
 "Nenhum tipo de documento válido especificado."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:346
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:345
 msgid "Enabled"
 msgstr "Activado"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:354
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:353
 #: ../extensions/rss/rss-ui.c:571
 msgid "Description"
 msgstr "Descrição"
@@ -916,6 +786,7 @@ msgid "Domain"
 msgstr "Domínio"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:512
+#: ../extensions/soup-fly/soup-fly.c:180
 msgid "State"
 msgstr "Estado"
 
@@ -1099,6 +970,24 @@ msgstr ""
 "Abrir o resultado da pesquisa num novo separador se verdadeiro, e numa nova "
 "janela se falso"
 
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
+msgid "_Soup Fly"
+msgstr "_Soup Fly"
+
+#. shortcut key
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:68
+msgid "Show information about the SoupSession used by the browser"
+msgstr "Apresentar informação sobre a Sessão Soup utilizada pelo navegador"
+
+#: ../extensions/soup-fly/soup-fly.c:205
+#| msgid "Clear cache"
+msgid "Clear finished"
+msgstr "Limpar termindadas"
+
+#: ../extensions/soup-fly/soup-fly.c:209
+msgid "Automatically remove finished messages"
+msgstr "Remover automaticamente mensagens terminadas"
+
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
 msgstr "Executar comandos arbitrários a partir do menu de contexto"
@@ -1127,21 +1016,9 @@ msgstr "Reler Separador Automaticamente"
 msgid "Reload a tab periodically"
 msgstr "Reler um separador periodicamente"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
-msgid "Creative Commons license viewer"
-msgstr "Visualizador de licenças Creative Commons"
-
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
-msgid "Shows the Creative Commons license of the current website if available"
-msgstr "Apresenta a licença Creative Commons da página actual, se disponível"
-
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Visualizar o certificado da página e gerir os certificados"
-
-#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
-msgid "Synchronize bookmarks with social bookmark sites"
-msgstr "Sincronizar marcadores com sites de marcadores sociais"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -1158,17 +1035,6 @@ msgstr "Activar e desactivar extensões"
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
 msgid "Extensions Manager"
 msgstr "Gestor de Extenções"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:1
-msgid "Favicon fallback"
-msgstr "Ícone favorito de recurso"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:2
-msgid ""
-"Loads /favicon.ico as favicon if the site doesn't use the standard method"
-msgstr ""
-"Carrega /favicon.ico como ícone favorito se a página não utilizar o método "
-"padrão"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -1224,28 +1090,12 @@ msgstr "Arrastar a página com o botão do meio do rato"
 msgid "Push Scroll"
 msgstr "Empurrar para Deslocar"
 
-#: ../extensions/python-console/python-console.ephy-extension.in.h:1
-msgid "Opens an interactive Python console"
-msgstr "Abre uma consola Python interactiva"
-
-#: ../extensions/python-console/python-console.ephy-extension.in.h:2
-msgid "Python Console"
-msgstr "Consola Python"
-
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr ""
 "Subscrever a fonte de notícias oferecida pela página no seu leitor de "
 "notícias favorito"
-
-#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
-msgid "A sample extension with mozilla backend"
-msgstr "Um exemplo de extensão com suporte mozilla"
-
-#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:2
-msgid "Sample (Mozilla)"
-msgstr "Exemplo (Mozilla)"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
 msgid "A sample extension"
@@ -1294,6 +1144,135 @@ msgstr "Indica conteúdo novo nos separadores em fundo"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Estado dos Separadores"
+
+#~ msgid "View Creative Commons license"
+#~ msgstr "Visualizar a licença Creative Commons"
+
+#~ msgid "Action for tagged bookmarks:"
+#~ msgstr "Acção para páginas marcadas:"
+
+#~ msgid "Epilicious Configuration"
+#~ msgstr "Configuração do Epilicious"
+
+#~ msgid "_Backend:"
+#~ msgstr "_Suporte:"
+
+#~ msgid "_Exclude"
+#~ msgstr "_Excluir"
+
+#~ msgid "_Include"
+#~ msgstr "_Incluir"
+
+#~ msgid "_Password:"
+#~ msgstr "_Senha:"
+
+#~ msgid "_Tag:"
+#~ msgstr "_Etiqueta:"
+
+#~ msgid "Adding new bookmarks and synching topics"
+#~ msgstr "Adicionar novos marcadores e sincronizar tópicos"
+
+#~ msgid "Removing deleted bookmarks"
+#~ msgstr "Remover marcadores eliminados"
+
+#~ msgid "Retrieving bookmarks from %s"
+#~ msgstr "Recuperar marcadores a partir de %s"
+
+#~ msgid "Retrieving bookmarks from epiphany"
+#~ msgstr "Recuperar marcadores a partir do epiphany"
+
+#~ msgid "Retrieving previous synch point"
+#~ msgstr "Recuperar o ponto de sincronização anterior"
+
+#~ msgid "Saving new synch point"
+#~ msgstr "Gravar novo ponto de sincronização"
+
+#~ msgid "Synchronizing with %s"
+#~ msgstr "Sincronizar com %s"
+
+#~ msgid "Synchronizing..."
+#~ msgstr "A Sincronizar..."
+
+#~ msgid "Epilicious Synchronize"
+#~ msgstr "Sincronização do Epilicious"
+
+#~ msgid "Bookmarks with this topic will be synchronized."
+#~ msgstr "Marcadores com este tópico serão sincronizados."
+
+#~ msgid ""
+#~ "Controls the function of the topic. If this is unset then all bookmarks "
+#~ "with the topic will be synched. If this is set then all bookmarks without "
+#~ "the topic will be synched."
+#~ msgstr ""
+#~ "Controla a função do tópico. Se desmarcado, então todos os marcadores com "
+#~ "o tópico serão sincronizados. Se marcado, então todos os marcadores sem o "
+#~ "tópico serão sincronizados."
+
+#~ msgid "Exclude topic"
+#~ msgstr "Excluir tópico"
+
+#~ msgid "Shared topic"
+#~ msgstr "Tópico partilhado"
+
+#~| msgid ""
+#~| "The backend that epilicious will use for synchronizing bookmarks. "
+#~| "Allowed value: 'ma.gnolia'"
+#~ msgid ""
+#~ "The backend that epilicious will use for synchronizing bookmarks. Allowed "
+#~ "values: 'diigo', 'ma.gnolia'"
+#~ msgstr ""
+#~ "O suporte que o epilicious irá utilizar para a sincronização de "
+#~ "marcadores. Valor permitido: 'diigo' , 'ma.gnolia'"
+
+#~ msgid "The password that epilicious will use for synchronizing bookmarks."
+#~ msgstr ""
+#~ "A senha que o epilicious irá utilizar para a sincronização de marcadores."
+
+#~ msgid "The username that epilicious will use for synchronizing bookmarks."
+#~ msgstr ""
+#~ "O nome de utilizador que o epilicious irá utilizar para a sincronização "
+#~ "de marcadores."
+
+#~ msgid "epilicious backend"
+#~ msgstr "suporte do epilicious"
+
+#~ msgid "password"
+#~ msgstr "senha"
+
+#~ msgid "username"
+#~ msgstr "nome de utilizador"
+
+#~ msgid "Creative Commons license viewer"
+#~ msgstr "Visualizador de licenças Creative Commons"
+
+#~ msgid ""
+#~ "Shows the Creative Commons license of the current website if available"
+#~ msgstr ""
+#~ "Apresenta a licença Creative Commons da página actual, se disponível"
+
+#~ msgid "Synchronize bookmarks with social bookmark sites"
+#~ msgstr "Sincronizar marcadores com sites de marcadores sociais"
+
+#~ msgid "Favicon fallback"
+#~ msgstr "Ícone favorito de recurso"
+
+#~ msgid ""
+#~ "Loads /favicon.ico as favicon if the site doesn't use the standard method"
+#~ msgstr ""
+#~ "Carrega /favicon.ico como ícone favorito se a página não utilizar o "
+#~ "método padrão"
+
+#~ msgid "Opens an interactive Python console"
+#~ msgstr "Abre uma consola Python interactiva"
+
+#~ msgid "Python Console"
+#~ msgstr "Consola Python"
+
+#~ msgid "A sample extension with mozilla backend"
+#~ msgstr "Um exemplo de extensão com suporte mozilla"
+
+#~ msgid "Sample (Mozilla)"
+#~ msgstr "Exemplo (Mozilla)"
 
 #~ msgid "Certificate Manager"
 #~ msgstr "Gestor de Certificados"
