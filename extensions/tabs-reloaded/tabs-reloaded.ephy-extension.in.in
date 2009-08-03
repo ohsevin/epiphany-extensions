@@ -1,0 +1,11 @@
+[Epiphany Extension]
+_Name=Tabs Reloaded
+_Description=A new way to handle tabs in Epiphany
+Authors=Benjamin Otte <otte@gnome.org>
+Version=1
+URL=http://live.gnome.org/Epiphany/FeatureDesign/TabbedBrowsingConcept
+
+
+[Loader]
+Type=shlib
+Library=%EXTENSION_DIR%/%LIBRARY%
