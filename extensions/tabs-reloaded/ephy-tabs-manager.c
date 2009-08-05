@@ -52,13 +52,13 @@ ephy_tabs_manager_detach (EphyTabsManager *manager)
 }
 
 static void
-ephy_tabs_manager_finalize (GObject *object)
+ephy_tabs_manager_dispose (GObject *object)
 {
   EphyTabsManager *manager = EPHY_TABS_MANAGER (object);
 
   ephy_tabs_manager_detach (manager);
 
-  G_OBJECT_CLASS (ephy_tabs_manager_parent_class)->finalize (object);
+  G_OBJECT_CLASS (ephy_tabs_manager_parent_class)->dispose (object);
 }
 
 static void
@@ -66,7 +66,7 @@ ephy_tabs_manager_class_init (EphyTabsManagerClass *class)
 {
   GObjectClass *object_class = G_OBJECT_CLASS (class);
 
-  object_class->finalize = ephy_tabs_manager_finalize;
+  object_class->dispose = ephy_tabs_manager_dispose;
 }
 
 static void
