@@ -92,6 +92,7 @@ pixbuf_renderer_cell_data_func (GtkCellLayout *  column,
 
   g_object_set (renderer,
                 "pixbuf", ephy_web_view_get_icon (view),
+                "visible", ephy_web_view_get_icon (view) != NULL,
                 NULL);
 }
 
@@ -156,6 +157,40 @@ sanitize_tree_view (GtkTreeView *view)
 }
 
 static void
+tree_selection_changed (GtkTreeSelection *selection,
+                        gpointer          notebook)
+{
+  GtkTreeModel *model;
+  GtkTreeIter iter;
+  EphyEmbed *embed;
+  int page_id;
+
+  if (!gtk_tree_selection_get_selected (selection, &model, &iter))
+    return;
+
+  embed = ephy_tabs_manager_get_tab (EPHY_TABS_MANAGER (model), &iter);
+  page_id = gtk_notebook_page_num (notebook, GTK_WIDGET (embed));
+  if (page_id != gtk_notebook_get_current_page (notebook))
+    gtk_notebook_set_current_page (notebook, page_id);
+}
+
+static void
+notebook_selection_changed (GtkNotebook *     notebook,
+                            GtkNotebookPage * page,
+                            guint             page_num,
+                            GtkTreeSelection *selection)
+{
+  GtkTreePath *path;
+
+  /* FIXME: only works as long as we're not doing tab groups,
+   * then we need to use _find_tab()
+   */
+  path = gtk_tree_path_new_from_indices (page_num, -1);
+  gtk_tree_selection_select_path (selection, path);
+  gtk_tree_path_free (path);
+}
+
+static void
 impl_attach_window (EphyExtension *extension,
 		    EphyWindow *   window)
 {
@@ -164,6 +199,7 @@ impl_attach_window (EphyExtension *extension,
         GtkWidget *tabs, *notebook, *parent;
         GValue position = { 0, };
         EphyTabsManager *manager;
+        GtkTreeSelection *selection;
 
 	builder = gtk_builder_new ();
 	gtk_builder_add_from_file (builder, SHARE_DIR "/glade/tabs-reloaded.ui", &error);
@@ -182,6 +218,19 @@ impl_attach_window (EphyExtension *extension,
         ephy_tabs_manager_attach (manager, GTK_NOTEBOOK (notebook));
         gtk_tree_view_set_model (GTK_TREE_VIEW (tabs), GTK_TREE_MODEL (manager));
         g_object_unref (manager);
+
+        selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tabs));
+        g_signal_connect (selection, "changed",
+                          G_CALLBACK (tree_selection_changed),
+                          notebook);
+        g_signal_connect_after (notebook, "switch-page",
+                                G_CALLBACK (notebook_selection_changed),
+                                selection);
+        notebook_selection_changed (GTK_NOTEBOOK (notebook),
+                                    NULL, 
+                                    gtk_notebook_get_current_page (GTK_NOTEBOOK (notebook)), 
+                                    selection);
+        gtk_tree_selection_set_mode (selection, GTK_SELECTION_BROWSE);
 
 	tabs = (GtkWidget *) gtk_builder_get_object (builder, "TabBox");
         g_return_if_fail (GTK_IS_PANED (tabs));
