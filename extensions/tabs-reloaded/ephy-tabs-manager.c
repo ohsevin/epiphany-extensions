@@ -28,6 +28,8 @@ G_DEFINE_DYNAMIC_TYPE (EphyTabsManager, ephy_tabs_manager, GTK_TYPE_TREE_STORE)
 static void
 ephy_tabs_manager_detach (EphyTabsManager *manager)
 {
+  GtkTreeIter iter;
+
   if (manager->notebook == NULL)
     return;
 
@@ -39,7 +41,11 @@ ephy_tabs_manager_detach (EphyTabsManager *manager)
                                         NULL,
                                         manager);
 
-  gtk_tree_store_clear (GTK_TREE_STORE (manager));
+  while (gtk_tree_model_get_iter_first (GTK_TREE_MODEL (manager), &iter))
+    {
+      EphyEmbed *embed = ephy_tabs_manager_get_tab (manager, &iter);
+      ephy_tabs_manager_remove_tab (manager, embed);
+    }
 
   g_object_unref (manager->notebook);
   manager->notebook = NULL;
@@ -161,6 +167,10 @@ ephy_tabs_manager_remove_tab (EphyTabsManager *manager,
     {
       g_assert_not_reached ();
     }
+
+  g_signal_handlers_disconnect_by_func (ephy_embed_get_web_view (embed),
+                                        ephy_tabs_manager_view_changed,
+                                        manager);
 
   gtk_tree_store_remove (GTK_TREE_STORE (manager), &iter);
 }
