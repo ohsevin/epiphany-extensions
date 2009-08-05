@@ -391,8 +391,8 @@ msgid ""
 "%s error in %s on line %d and column %d:\n"
 "%s"
 msgstr ""
-"रेखा %d र स्तम्भ %d मा %s भित्र त्रुटि %s:\n"
-"%s"
+"रेखा %3$d र स्तम्भ %4$d मा %1$s भित्र त्रुटि %2$s:\n"
+"%5$s"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:109
 #: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
@@ -411,8 +411,8 @@ msgid ""
 "%s error in %s on line %d:\n"
 "%s"
 msgstr ""
-"रेखा %d मा %s भित्र त्रुटि %s:\n"
-"%s"
+"रेखा %3$d मा %1$s भित्र त्रुटि %2$s:\n"
+"%4$s"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
 #, c-format
