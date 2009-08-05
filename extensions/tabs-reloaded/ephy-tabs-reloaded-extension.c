@@ -191,6 +191,13 @@ notebook_selection_changed (GtkNotebook *     notebook,
 }
 
 static void
+force_no_tabs (GtkNotebook *notebook, GParamSpec *pspec, gpointer unused)
+{
+  if (gtk_notebook_get_show_tabs (notebook))
+    gtk_notebook_set_show_tabs (notebook, FALSE);
+}
+
+static void
 impl_attach_window (EphyExtension *extension,
 		    EphyWindow *   window)
 {
@@ -211,6 +218,8 @@ impl_attach_window (EphyExtension *extension,
 	}
 
         notebook = ephy_window_get_notebook (window);
+        g_signal_connect (notebook, "notify::show-tabs", G_CALLBACK (force_no_tabs), NULL);
+        gtk_notebook_set_show_tabs (notebook, FALSE);
 
 	tabs = (GtkWidget *) gtk_builder_get_object (builder, "TabView");
         sanitize_tree_view (GTK_TREE_VIEW (tabs));
@@ -282,6 +291,15 @@ impl_detach_window (EphyExtension *ext,
                                               NULL,
                                               notebook_selection_changed,
                                               NULL);
+        g_signal_handlers_disconnect_matched (notebook,
+                                              G_SIGNAL_MATCH_FUNC,
+                                              0,
+                                              0,
+                                              NULL,
+                                              force_no_tabs,
+                                              NULL);
+        ephy_notebook_set_show_tabs (EPHY_NOTEBOOK (notebook), TRUE);
+
 
 	/* Remove the Sidebar, replacing our hpaned with the
 	 * notebook itself */
