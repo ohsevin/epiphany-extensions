@@ -275,6 +275,14 @@ impl_detach_window (EphyExtension *ext,
 	notebook = gtk_paned_get_child2 (GTK_PANED (tabs));
 	parent = gtk_widget_get_parent (tabs);
 
+        g_signal_handlers_disconnect_matched (notebook,
+                                              G_SIGNAL_MATCH_FUNC,
+                                              0,
+                                              0,
+                                              NULL,
+                                              notebook_selection_changed,
+                                              NULL);
+
 	/* Remove the Sidebar, replacing our hpaned with the
 	 * notebook itself */
 	g_value_init (&position, G_TYPE_INT);
