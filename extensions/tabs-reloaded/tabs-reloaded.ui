@@ -35,11 +35,12 @@
                     <property name="single_paragraph_mode">True</property>
                   </object>
                 </child>
-              </object>
-            </child>
-            <child>
-              <object class="GtkTreeViewColumn" id="treeviewcolumn2">
-                <property name="title">column</property>
+                <child>
+                  <object class="GtkCellRendererProgress" id="progress">
+                    <property name="width">1</property>
+                    <property name="text_xalign">0</property>
+                  </object>
+                </child>
                 <child>
                   <object class="GtkCellRendererPixbuf" id="close">
                     <property name="stock_id">gtk-close</property>

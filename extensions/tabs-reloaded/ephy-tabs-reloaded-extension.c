@@ -105,23 +105,53 @@ text_renderer_cell_data_func (GtkCellLayout *  column,
 {
   EphyEmbed *embed;
   EphyWebView *view;
+  WebKitWebView *webkit;
   
   embed = ephy_tabs_manager_get_tab (EPHY_TABS_MANAGER (model),
                                      iter);
   view = ephy_embed_get_web_view (embed);
+  webkit = WEBKIT_WEB_VIEW (view);
 
   g_object_set (renderer,
                 "text", ephy_web_view_get_title (view),
+                "visible", webkit_web_view_get_load_status (webkit) == WEBKIT_LOAD_FINISHED,
+                NULL);
+}
+
+static void
+progress_renderer_cell_data_func (GtkCellLayout *  column,
+                                  GtkCellRenderer *renderer,
+                                  GtkTreeModel *   model,
+                                  GtkTreeIter *    iter,
+                                  gpointer         unused)
+{
+  EphyEmbed *embed;
+  EphyWebView *view;
+  WebKitWebView *webkit;
+  
+  embed = ephy_tabs_manager_get_tab (EPHY_TABS_MANAGER (model),
+                                     iter);
+  view = ephy_embed_get_web_view (embed);
+  webkit = WEBKIT_WEB_VIEW (view);
+
+  g_object_set (renderer,
+                "text", ephy_web_view_get_title (view),
+                "value", (int) (webkit_web_view_get_progress (webkit) * 100. + 0.5),
+                "visible", webkit_web_view_get_load_status (webkit) != WEBKIT_LOAD_FINISHED,
                 NULL);
 }
 
 static void
 sanitize_tree_view (GtkTreeView *view)
 {
-  static const GtkCellLayoutDataFunc funcs[] = {
-    pixbuf_renderer_cell_data_func,
-    text_renderer_cell_data_func,
-    NULL /* close button */
+  static const struct {
+    GtkCellLayoutDataFunc func;
+    gboolean expand;
+  } cell_info[] = {
+    { pixbuf_renderer_cell_data_func, FALSE },
+    { text_renderer_cell_data_func, TRUE },
+    { progress_renderer_cell_data_func, TRUE },
+    { NULL /* close button */, FALSE }
   };
   GtkCellLayout *column;
   GtkCellRenderer *renderer;
@@ -135,17 +165,22 @@ sanitize_tree_view (GtkTreeView *view)
       if (column == NULL)
         break;
       renderers = gtk_cell_layout_get_cells (column);
+      g_list_foreach (renderers, (GFunc) g_object_ref, NULL);
+      gtk_cell_layout_clear (column);
       for (walk = renderers; walk; walk = g_list_next (walk))
         {
           renderer = walk->data;
-          if (funcs[renderer_id])
+          gtk_cell_layout_pack_start (column, renderer, cell_info[renderer_id].expand);
+          if (cell_info[renderer_id].func)
             gtk_cell_layout_set_cell_data_func (column,
                                                 renderer,
-                                                funcs[renderer_id],
+                                                cell_info[renderer_id].func,
                                                 NULL,
                                                 NULL);
           renderer_id++;
         }
+      g_list_foreach (renderers, (GFunc) g_object_unref, NULL);
+      g_list_free (renderers);
     }
 
   /* 
@@ -153,7 +188,7 @@ sanitize_tree_view (GtkTreeView *view)
    * cell renderers and we need to add or remove data functions from 
    * the funcs array above to match that change.
    */
-  g_assert (renderer_id == G_N_ELEMENTS (funcs));
+  g_assert (renderer_id == G_N_ELEMENTS (cell_info));
 }
 
 static void
@@ -219,7 +254,7 @@ impl_attach_window (EphyExtension *extension,
 
         notebook = ephy_window_get_notebook (window);
         g_signal_connect (notebook, "notify::show-tabs", G_CALLBACK (force_no_tabs), NULL);
-        gtk_notebook_set_show_tabs (notebook, FALSE);
+        gtk_notebook_set_show_tabs (GTK_NOTEBOOK (notebook), FALSE);
 
 	tabs = (GtkWidget *) gtk_builder_get_object (builder, "TabView");
         sanitize_tree_view (GTK_TREE_VIEW (tabs));
