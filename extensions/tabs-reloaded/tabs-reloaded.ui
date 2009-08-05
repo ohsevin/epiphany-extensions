@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<interface>
+  <requires lib="gtk+" version="2.16"/>
+  <!-- interface-naming-policy project-wide -->
+  <object class="GtkHPaned" id="TabBox">
+    <property name="visible">True</property>
+    <property name="can_focus">True</property>
+    <property name="position">150</property>
+    <property name="position_set">True</property>
+    <child>
+      <object class="GtkScrolledWindow" id="scrolledwindow1">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="hscrollbar_policy">never</property>
+        <property name="vscrollbar_policy">automatic</property>
+        <child>
+          <object class="GtkTreeView" id="TabView">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="headers_visible">False</property>
+            <property name="headers_clickable">False</property>
+            <property name="search_column">0</property>
+            <child>
+              <object class="GtkTreeViewColumn" id="treeviewcolumn1">
+                <property name="title">column</property>
+                <property name="expand">True</property>
+                <child>
+                  <object class="GtkCellRendererPixbuf" id="icon"/>
+                </child>
+                <child>
+                  <object class="GtkCellRendererText" id="title">
+                    <property name="width">1</property>
+                    <property name="ellipsize">end</property>
+                    <property name="single_paragraph_mode">True</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkTreeViewColumn" id="treeviewcolumn2">
+                <property name="title">column</property>
+                <child>
+                  <object class="GtkCellRendererPixbuf" id="close">
+                    <property name="stock_id">gtk-close</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="resize">False</property>
+        <property name="shrink">True</property>
+      </packing>
+    </child>
+    <child>
+      <placeholder/>
+    </child>
+  </object>
+</interface>

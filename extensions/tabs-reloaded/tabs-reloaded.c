@@ -18,6 +18,7 @@
 
 #include "config.h"
 
+#include "ephy-tabs-manager.h"
 #include "ephy-tabs-reloaded-extension.h"
 
 #include <gmodule.h>
@@ -31,6 +32,8 @@ register_module (GTypeModule *module)
 	GType extension_type;
 	
 	extension_type = ephy_tabs_reloaded_extension_register_type (module);
+
+        ephy_tabs_manager_register (module);
 
 #ifdef ENABLE_NLS
 	/* Initialise i18n */
