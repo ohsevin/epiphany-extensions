@@ -365,7 +365,7 @@ ephy_tabs_reloaded_extension_init (EphyTabsReloadedExtension *extension)
 {
 	LOG ("EphyTabsReloadedExtension initialising");
 
-        tabs_reloaded_quark = g_quark_from_static_string ("ephy-tabs-reloaded");
+        tabs_reloaded_quark = g_quark_from_string ("ephy-tabs-reloaded");
 }
 
 static void
