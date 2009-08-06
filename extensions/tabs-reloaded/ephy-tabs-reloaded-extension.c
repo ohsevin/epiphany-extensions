@@ -22,6 +22,8 @@
 #include "ephy-tabs-manager.h"
 #include "ephy-debug.h"
 
+#include <string.h>
+
 #include <epiphany/epiphany.h>
 
 static void ephy_tabs_reloaded_extension_class_init (EphyTabsReloadedExtensionClass *class);
@@ -191,6 +193,46 @@ sanitize_tree_view (GtkTreeView *view)
   g_assert (renderer_id == G_N_ELEMENTS (cell_info));
 }
 
+static gboolean
+tree_view_search_equal (GtkTreeModel *model,
+                        int           column,
+                        const char *  key,
+                        GtkTreeIter * iter,
+                        gpointer      unused)
+{
+  char *needle, *haystack, *tmp;
+  gboolean not_found;
+
+  /* 
+   * FIXME: This search function should find the same way as the 
+   * location bar.
+   */
+  
+  tmp = g_utf8_normalize (key, -1, G_NORMALIZE_ALL);
+  needle = g_utf8_casefold (tmp, -1);
+  g_free (tmp);
+
+  tmp = g_utf8_normalize (
+      ephy_web_view_get_title (
+          ephy_embed_get_web_view (
+              ephy_tabs_manager_get_tab (EPHY_TABS_MANAGER (model), iter))),
+      -1, G_NORMALIZE_ALL);
+  haystack = g_utf8_casefold (tmp, -1);
+  g_free (tmp);
+
+  not_found = strstr (haystack, needle) == NULL;
+
+  g_print ("%s %s in %s\n", not_found ? "didn't find" : "found", key,
+      ephy_web_view_get_title (
+          ephy_embed_get_web_view (
+              ephy_tabs_manager_get_tab (EPHY_TABS_MANAGER (model), iter))));
+
+  g_free (needle);
+  g_free (haystack);
+
+  return not_found;
+}
+
 static void
 tree_selection_changed (GtkTreeSelection *selection,
                         gpointer          notebook)
@@ -257,6 +299,9 @@ impl_attach_window (EphyExtension *extension,
         gtk_notebook_set_show_tabs (GTK_NOTEBOOK (notebook), FALSE);
 
 	tabs = (GtkWidget *) gtk_builder_get_object (builder, "TabView");
+        gtk_tree_view_set_search_equal_func (GTK_TREE_VIEW (tabs),
+                                             tree_view_search_equal,
+                                             NULL, NULL);
         sanitize_tree_view (GTK_TREE_VIEW (tabs));
         manager = ephy_tabs_manager_new ();
         ephy_tabs_manager_attach (manager, GTK_NOTEBOOK (notebook));
