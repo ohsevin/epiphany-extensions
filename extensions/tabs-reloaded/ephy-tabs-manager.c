@@ -19,9 +19,9 @@
 #include "config.h"
 
 #include "ephy-tabs-manager.h"
-#include "ephy-debug.h"
 
-#include <epiphany/epiphany.h>
+#include "ephy-cell-renderer-tab.h"
+#include "ephy-debug.h"
 
 G_DEFINE_DYNAMIC_TYPE (EphyTabsManager, ephy_tabs_manager, GTK_TYPE_TREE_STORE)
 
@@ -97,12 +97,16 @@ ephy_tabs_manager_new (void)
 }
 
 static void
-ephy_tabs_manager_view_changed (GObject *view, GParamSpec *psepc, EphyTabsManager *manager)
+ephy_tabs_manager_view_changed (GObject *view, GParamSpec *pspec, EphyTabsManager *manager)
 {
   GtkTreeModel *model = GTK_TREE_MODEL (manager);
   GtkTreeIter iter;
   EphyEmbed *embed;
   GtkTreePath *path;
+
+  /* remove the interning code once bug 591106 is fixed */
+  if (!ephy_cell_renderer_needs_invalidation (g_intern_string (pspec->name)))
+    return;
 
   embed = EPHY_EMBED (gtk_widget_get_parent (GTK_WIDGET (view)));
   if (!ephy_tabs_manager_find_tab (manager, &iter, embed))

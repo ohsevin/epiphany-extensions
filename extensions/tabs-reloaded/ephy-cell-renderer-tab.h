@@ -47,11 +47,12 @@ struct _EphyCellRendererTabClass
   GtkCellRendererClass parent_class;
 };
 
-GType            ephy_cell_renderer_tab_get_type (void) G_GNUC_CONST;
-void             ephy_cell_renderer_tab_register (GTypeModule *module);
+GType            ephy_cell_renderer_tab_get_type        (void) G_GNUC_CONST;
+void             ephy_cell_renderer_tab_register        (GTypeModule *    module);
 
-GtkCellRenderer *ephy_cell_renderer_tab_new      (void);
+GtkCellRenderer *ephy_cell_renderer_tab_new             (void);
 
+gboolean         ephy_cell_renderer_needs_invalidation  (const char *     property_name);
 
 G_END_DECLS
 

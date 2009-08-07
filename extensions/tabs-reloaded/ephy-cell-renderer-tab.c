@@ -414,3 +414,51 @@ ephy_cell_renderer_tab_new (void)
   return g_object_new (EPHY_TYPE_CELL_RENDERER_TAB, NULL);
 }
 
+/**
+ * ephy_cell_renderer_needs_invalidation:
+ * @property_name: interned name of the property
+ *
+ * Checks if a #EphyCellRendererTab would need a repaint if the 
+ * property with the given @property_name would have been changed 
+ * on the #EphyWebView asociated to the #EphyEmbed of its tab. In 
+ * that case, you should likely call gtk_tree_model_row_changed()
+ * on the row that represents the node that changed to cause this 
+ * repaint.
+ *
+ * Returns: %TRUE if a tab would need a repaint, %FALSE if not.
+ **/
+gboolean 
+ephy_cell_renderer_needs_invalidation (const char *property_name)
+{
+  static struct {
+    const char *property_name;
+    const char *interned_name;
+  } properties[] = {
+    /* EphyWebView */
+    { "embed-title", NULL },
+    { "icon", NULL },
+    /* WebKitWebView */
+    { "progress", NULL },
+    { "load-status", NULL },
+  };
+  guint i;
+
+  g_return_val_if_fail (property_name != NULL, TRUE);
+
+  if (properties[0].interned_name == NULL)
+    {
+      for (i = 0; i < G_N_ELEMENTS (properties); i++)
+        {
+          properties[i].interned_name = g_intern_string (properties[i].property_name);
+        }
+    }
+
+  for (i = 0; i < G_N_ELEMENTS (properties); i++)
+    {
+      if (properties[i].interned_name == property_name)
+        return TRUE;
+    }
+
+  return FALSE;
+}
+
