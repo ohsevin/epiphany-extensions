@@ -79,44 +79,48 @@ ephy_tabs_reloaded_extension_register_type (GTypeModule *module)
 }
 
 static void
-sanitize_tree_view (GtkTreeView *view)
+icon_clicked_cb (GtkCellRenderer *renderer, 
+                 const char *     path,
+                 guint            icon_id,
+                 EphyWindow *     window)
 {
-  static const struct {
-    gboolean expand;
-  } cell_info[] = {
-    { TRUE }
-  };
+  EphyEmbed *embed;
+
+  g_object_get (renderer, "tab", &embed, NULL);
+  
+  switch (icon_id)
+    {
+    case 0:
+      /* close */
+      /* yes, this is a hack - I blame Ephy's API */
+      g_signal_emit_by_name (ephy_window_get_notebook (window),
+                             "tab-close-request",
+                             embed);
+      break;
+    default:
+      /* someone added a button but no handler?! */
+      g_assert_not_reached ();
+    }
+  
+  g_object_unref (embed);
+}
+
+static void
+sanitize_tree_view (GtkTreeView *view, EphyWindow *window)
+{
   GtkCellLayout *column;
   GtkCellRenderer *renderer;
-  GList *renderers, *walk;
-  guint column_id, renderer_id;
+  GList *renderers;
 
-  renderer_id = 0;
-  for (column_id = 0;; column_id++)
-    {
-      column = GTK_CELL_LAYOUT (gtk_tree_view_get_column (view, column_id));
-      if (column == NULL)
-        break;
-      renderers = gtk_cell_layout_get_cells (column);
-      g_list_foreach (renderers, (GFunc) g_object_ref, NULL);
-      gtk_cell_layout_clear (column);
-      for (walk = renderers; walk; walk = g_list_next (walk))
-        {
-          renderer = walk->data;
-          gtk_cell_layout_pack_start (column, renderer, cell_info[renderer_id].expand);
-          renderer_id++;
-          gtk_cell_layout_set_attributes (column, renderer, "tab", 0, NULL);
-        }
-      g_list_foreach (renderers, (GFunc) g_object_unref, NULL);
-      g_list_free (renderers);
-    }
-
-  /* 
-   * If this fails, someone modified the ui file to contain different
-   * cell renderers and we need to add or remove data functions from 
-   * the funcs array above to match that change.
-   */
-  g_assert (renderer_id == G_N_ELEMENTS (cell_info));
+  column = GTK_CELL_LAYOUT (gtk_tree_view_get_column (view, 0));
+  renderers = gtk_cell_layout_get_cells (column);
+  renderer = g_object_ref (renderers->data);
+  gtk_cell_layout_clear (column);
+  gtk_cell_layout_pack_start (column, renderer, TRUE);
+  gtk_cell_layout_set_attributes (column, renderer, "tab", 0, NULL);
+  g_signal_connect (renderer, "icon-clicked", G_CALLBACK (icon_clicked_cb), window);
+  g_object_unref (renderer);
+  g_list_free (renderers);
 }
 
 static gboolean
@@ -228,7 +232,7 @@ impl_attach_window (EphyExtension *extension,
         gtk_tree_view_set_search_equal_func (GTK_TREE_VIEW (tabs),
                                              tree_view_search_equal,
                                              NULL, NULL);
-        sanitize_tree_view (GTK_TREE_VIEW (tabs));
+        sanitize_tree_view (GTK_TREE_VIEW (tabs), window);
         manager = ephy_tabs_manager_new ();
         ephy_tabs_manager_attach (manager, GTK_NOTEBOOK (notebook));
         gtk_tree_view_set_model (GTK_TREE_VIEW (tabs), GTK_TREE_MODEL (manager));

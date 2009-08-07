@@ -27,6 +27,13 @@ enum {
   PROP_COLUMNS
 };
 
+enum {
+  ICON_CLICKED,
+  LAST_SIGNAL
+};
+
+static guint signals[LAST_SIGNAL] = { 0 };
+
 
 #define EPHY_CELL_RENDERER_TAB_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), EPHY_TYPE_CELL_RENDERER_TAB, EphyCellRendererTabPrivate))
 
@@ -59,6 +66,43 @@ ephy_cell_renderer_get_row_height (GtkWidget *widget)
   pango_font_metrics_unref (metrics);
 
   return height;
+}
+
+static gboolean
+ephy_cell_renderer_tab_activate (GtkCellRenderer      *cell,
+				 GdkEvent             *event,
+				 GtkWidget            *widget,
+				 const gchar          *path,
+				 GdkRectangle         *background_area,
+				 GdkRectangle         *cell_area,
+				 GtkCellRendererState  flags)
+{
+  //EphyCellRendererTab *renderer = EPHY_CELL_RENDERER_TAB (cell);
+  //EphyCellRendererTabPrivate *priv = renderer->priv;
+  int x, y;
+  int icon_width, icon_height;
+
+  /* We only handle mouse events for the small buttons */
+  if (event->type != GDK_BUTTON_PRESS)
+    return FALSE;
+
+  x = event->button.x - cell_area->x - cell->xpad;
+  y = event->button.y - cell_area->y - cell->ypad;
+  gtk_icon_size_lookup_for_settings (gtk_widget_get_settings (widget),
+                                     GTK_ICON_SIZE_MENU,
+                                     &icon_width,
+                                     &icon_height);
+  /* clicked below icon */
+  if (y >= icon_height)
+    return FALSE;
+  /* convert to number of icon that was clicked. */
+  x = (cell_area->width - 2 * cell->xpad - x) / icon_width;
+  if (x >= 1)
+    return FALSE;
+
+  g_signal_emit (cell, signals[ICON_CLICKED], 0, path, x);
+
+  return TRUE;
 }
 
 static void
@@ -263,6 +307,42 @@ ephy_cell_renderer_tab_class_finalize (EphyCellRendererTabClass *class)
 }
 
 static void
+ephy_marshal_VOID__STRING_UINT (GClosure     *closure,
+                               GValue       *return_value G_GNUC_UNUSED,
+                               guint         n_param_values,
+                               const GValue *param_values,
+                               gpointer      invocation_hint G_GNUC_UNUSED,
+                               gpointer      marshal_data)
+{
+  typedef void (*GMarshalFunc_VOID__STRING_UINT) (gpointer     data1,
+                                                  const char * arg_2,
+                                                  guint        arg_1,
+                                                  gpointer     data2);
+  register GMarshalFunc_VOID__STRING_UINT callback;
+  register GCClosure *cc = (GCClosure*) closure;
+  register gpointer data1, data2;
+
+  g_return_if_fail (n_param_values == 3);
+
+  if (G_CCLOSURE_SWAP_DATA (closure))
+    {
+      data1 = closure->data;
+      data2 = g_value_peek_pointer (param_values + 0);
+    }
+  else
+    {
+      data1 = g_value_peek_pointer (param_values + 0);
+      data2 = closure->data;
+    }
+  callback = (GMarshalFunc_VOID__STRING_UINT) (marshal_data ? marshal_data : cc->callback);
+
+  callback (data1,
+            g_value_get_string (param_values + 1),
+            g_value_get_uint (param_values + 2),
+            data2);
+}
+
+static void
 ephy_cell_renderer_tab_class_init (EphyCellRendererTabClass *class)
 {
   GObjectClass *object_class = G_OBJECT_CLASS (class);
@@ -275,6 +355,7 @@ ephy_cell_renderer_tab_class_init (EphyCellRendererTabClass *class)
 
   cell_class->get_size = ephy_cell_renderer_tab_get_size;
   cell_class->render = ephy_cell_renderer_tab_render;
+  cell_class->activate = ephy_cell_renderer_tab_activate;
 
   g_object_class_install_property (object_class,
 				   PROP_TAB,
@@ -294,6 +375,24 @@ ephy_cell_renderer_tab_class_init (EphyCellRendererTabClass *class)
                                                         1,
 							G_PARAM_READWRITE));
 
+  /**
+   * EphyCellRendererTab::icon-clicked:
+   * @cell_renderer: the object which received the signal
+   * @path: string representation of #GtkTreePath describing the 
+   *        event location
+   * @icon: id of the icon that was clicked
+   *
+   * The signal is emitted when one of the icons at the top left of the renderer
+   * is clicked.
+   **/
+  signals[ICON_CLICKED] = g_signal_new ("icon-clicked",
+                                        G_OBJECT_CLASS_TYPE (object_class),
+                                        G_SIGNAL_RUN_LAST,
+                                        0, NULL, NULL,
+                                        ephy_marshal_VOID__STRING_UINT,
+                                        G_TYPE_NONE, 2,
+                                        G_TYPE_STRING, G_TYPE_UINT);
+
   g_type_class_add_private (object_class, sizeof (EphyCellRendererTabPrivate));
 }
 
@@ -305,6 +404,8 @@ ephy_cell_renderer_tab_init (EphyCellRendererTab *renderer)
   priv = renderer->priv = EPHY_CELL_RENDERER_TAB_GET_PRIVATE (renderer);
 
   priv->n_columns = 1;
+
+  GTK_CELL_RENDERER (renderer)->mode = GTK_CELL_RENDERER_MODE_ACTIVATABLE;
 }
 
 GtkCellRenderer *
