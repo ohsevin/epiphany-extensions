@@ -19,6 +19,7 @@
             <property name="can_focus">True</property>
             <property name="headers_visible">False</property>
             <property name="headers_clickable">False</property>
+            <property name="rules-hint">True</property>
             <property name="search_column">0</property>
             <property name="show_expanders">False</property>
             <child>
@@ -26,25 +27,12 @@
                 <property name="title">column</property>
                 <property name="expand">True</property>
                 <child>
-                  <object class="GtkCellRendererPixbuf" id="icon"/>
-                </child>
-                <child>
-                  <object class="GtkCellRendererText" id="title">
-                    <property name="width">1</property>
-                    <property name="ellipsize">end</property>
-                    <property name="single_paragraph_mode">True</property>
+                  <object class="EphyCellRendererTab" id="icon">
+                    <property name="columns">4</property>
                   </object>
-                </child>
-                <child>
-                  <object class="GtkCellRendererProgress" id="progress">
-                    <property name="width">1</property>
-                    <property name="text_xalign">0</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkCellRendererPixbuf" id="close">
-                    <property name="stock_id">gtk-close</property>
-                  </object>
+                  <attributes>
+                    <attribute name="tab">0</attribute>
+                  </attributes>
                 </child>
               </object>
             </child>

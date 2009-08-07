@@ -2,6 +2,8 @@ extensiondir = $(EXTENSIONS_DIR)
 extension_LTLIBRARIES = libtabsreloadedextension.la
 
 libtabsreloadedextension_la_SOURCES = \
+	ephy-cell-renderer-tab.c \
+	ephy-cell-renderer-tab.h \
 	ephy-tabs-manager.c \
 	ephy-tabs-manager.h \
 	ephy-tabs-reloaded-extension.c \
