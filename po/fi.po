@@ -7,15 +7,15 @@
 #
 # Pauli Virtanen <pauli.virtanen@hut.fi>, 2005.
 # Ilkka Tuohela <hile@iki.fi>, 2005.
+# Tommi Vainikainen <thv@iki.fi>, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=epiphany-extensions\n"
-"POT-Creation-Date: 2008-02-19 08:30+0300\n"
-"PO-Revision-Date: 2006-10-30 07:04+0300\n"
-"Last-Translator: Pauli Virtanen <pauli.virtanen@hut.fi>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
+"POT-Creation-Date: 2009-08-14 10:53+0300\n"
+"PO-Revision-Date: 2009-08-14 10:55+0300\n"
+"Last-Translator: Tommi Vainikainen <thv@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -76,7 +76,6 @@ msgid "_Images"
 msgstr "Ku_vat"
 
 #: ../extensions/actions/action-properties.glade.h:11
-#: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Name:"
 msgstr "_Nimi:"
 
@@ -89,15 +88,15 @@ msgstr "_Sivut"
 msgid "Actions"
 msgstr "Toiminnot"
 
-#: ../extensions/actions/ephy-actions-extension.c:113
+#: ../extensions/actions/ephy-actions-extension.c:112
 msgid "Actio_ns"
 msgstr "Toimi_nnot"
 
-#: ../extensions/actions/ephy-actions-extension.c:114
+#: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Customize actions"
 msgstr "Muokkaa toimintoja"
 
-#: ../extensions/actions/ephy-actions-extension.c:437
+#: ../extensions/actions/ephy-actions-extension.c:436
 msgid "Could not run command"
 msgstr "Komennon käynnistys epäonnistui"
 
@@ -129,7 +128,7 @@ msgstr "\"%s\" ominaisuudet"
 msgid "Action Properties"
 msgstr "Toiminnon ominaisuudet"
 
-#: ../extensions/adblock/adblock-ui.c:275
+#: ../extensions/adblock/adblock-ui.c:263
 msgid ""
 "This list is Copyright © its original author(G). It is relicensed under the "
 "GPL with permission.\n"
@@ -147,7 +146,7 @@ msgstr ""
 "tekijän hyväksymiä, joten ohjaa ongelmat bugzillaan alkuperäisen tekijän (G) "
 "sijasta.\n"
 
-#: ../extensions/adblock/adblock-ui.c:493
+#: ../extensions/adblock/adblock-ui.c:481
 msgid "Pattern"
 msgstr "Malli"
 
@@ -164,7 +163,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>Muokkaa sääntöjä alkuperäiseltä sivulta</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:243
+#: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
 msgstr "Mainosten poistajan muokkain"
 
@@ -184,201 +183,78 @@ msgstr "Fiterset.G"
 msgid "Whitelist"
 msgstr "Päästölista"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:244
+#: ../extensions/adblock/ephy-adblock-extension.c:230
 msgid "Edit Adblock"
 msgstr "Muokkaa mainosten poistajaa"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:311
+#: ../extensions/adblock/ephy-adblock-extension.c:299
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
 msgstr[0] "%d piilotettu mainos"
 msgstr[1] "%d piilotettua mainosta"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:84
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:81
 msgid "_Auto Reload"
 msgstr "_Automaattinen uudelleenlataus"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:86
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
 msgid "Reload the page periodically"
 msgstr "Lataa sivu uudestaan tietyin aikavälein"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:370
-msgid "View Creative Commons license"
-msgstr "Näytä Creative Commons-lisenssi"
-
-#: ../extensions/certificates/ephy-certificates-extension.c:176
+#: ../extensions/certificates/ephy-certificates-extension.c:163
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
 msgstr "Varmenteet"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:207
+#: ../extensions/certificates/ephy-certificates-extension.c:194
 msgid "Security Devices"
 msgstr "Turvallisuuslaitteet"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:219
+#: ../extensions/certificates/ephy-certificates-extension.c:206
 msgid "Manage _Certificates"
 msgstr "_Varmenteiden hallinta"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:221
+#: ../extensions/certificates/ephy-certificates-extension.c:208
 msgid "Manage your certificates"
 msgstr "Varmenteiden hallinta"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:225
+#: ../extensions/certificates/ephy-certificates-extension.c:212
 msgid "Manage Security _Devices"
 msgstr "Hallitse _turvallisuuslaitteita"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:227
+#: ../extensions/certificates/ephy-certificates-extension.c:214
 msgid "Manage your security devices"
 msgstr "Hallitse turvallisuuslaitteitasi"
 
-#: ../extensions/epilicious/epilicious-config.glade.h:1
-msgid "Action for tagged bookmarks:"
-msgstr "Toiminto merkityille kirjanmerkeille:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:2
-msgid "Epilicious Configuration"
-msgstr "Epiliciouksen asetukset"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:3
-msgid "_Backend:"
-msgstr "_Taustajärjestelmä:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:4
-msgid "_Exclude"
-msgstr "_Jätä huomioimatta"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:5
-msgid "_Include"
-msgstr "_Ota mukaan"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:7
-msgid "_Password:"
-msgstr "_Salasana:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:8
-msgid "_Tag:"
-msgstr "_Merkintä:"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:1
-msgid "Adding new bookmarks and synching topics"
-msgstr "Uusien kirjanmerkkien lisäys ja aiheiden synkronointi"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:2
-msgid "Removing deleted bookmarks"
-msgstr "Poistettujen kirjanmerkkien siivous"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:4
-#: ../extensions/epilicious/progress.py:41
-#, no-c-format, python-format
-msgid "Retrieving bookmarks from %s"
-msgstr "Noudetaan kirjamerkkejä lähteestä %s"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:5
-msgid "Retrieving bookmarks from epiphany"
-msgstr "Noudetaan kirjanmerkkejä epiphanystä"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:6
-msgid "Retrieving previous synch point"
-msgstr "Noudetaan edellinen synkronointikohta"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:7
-msgid "Saving new synch point"
-msgstr "Tallennetaan uusi synkronointikohta"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:9
-#: ../extensions/epilicious/progress.py:39
-#, no-c-format, python-format
-msgid "Synchronizing with %s"
-msgstr "Synkronoidaan lähteen %s kanssa"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:10
-msgid "Synchronizing..."
-msgstr "Synkronoidaan..."
-
-#: ../extensions/epilicious/epilicious.py.in:202
-#: ../extensions/epilicious/epilicious.py.in:220
-msgid "Epilicious Synchronize"
-msgstr "Epilicious-synkronointi"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:1
-msgid "Bookmarks with this topic will be synchronized."
-msgstr "Tähän aiheeseen liittyvät kirjanmerkit synkronoidaan."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:2
-msgid ""
-"Controls the function of the topic. If this is unset then all bookmarks with "
-"the topic will be synched. If this is set then all bookmarks without the "
-"topic will be synched."
-msgstr ""
-"Ohjaa aiheen toimintaa. Jos tämä ei ole asetettu, kaikki aiheen kirjanmerkit "
-"synkronoidaan. Jos tämä on asetettu, kaikki kirjanmerkit ilman tätä aihetta "
-"synkronoidaan."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:3
-msgid "Exclude topic"
-msgstr "Jätä aihe huomioimatta"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:4
-msgid "Shared topic"
-msgstr "Jaettu aihe"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:5
-msgid ""
-"The backend that epilicious will use for synchronizing bookmarks. Allowed "
-"value: 'ma.gnolia'"
-msgstr ""
-"Taustajärjestelmä, jota epilicious käyttää kirjanmerkkien synkronointiin. "
-"Kelvolliset arvot ovat 'ma.gnolia'"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:6
-msgid "The password that epilicious will use for synchronizing bookmarks."
-msgstr "Salasana, jota epilicious käyttää kirjanmerkkin synkronointiin."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:7
-msgid "The username that epilicious will use for synchronizing bookmarks."
-msgstr "Käyttäjätunnus, jota epilicious käyttää kirjanmerkkien synkronointiin."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:8
-msgid "epilicious backend"
-msgstr "epilicious-taustajärjestelmä"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:9
-msgid "password"
-msgstr "salasana"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:10
-msgid "username"
-msgstr "käyttäjätunnus"
-
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:98
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Check _HTML"
 msgstr "Tarkasta _HTML"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:100
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:92
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "Näytä HTML-virheet virheiden katseluikkunassa"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _Links"
 msgstr "Tarkasta _linkit"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:107
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr "Näytä virheelliset hyperlinkit virheiden katseluikkunassa"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:111
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:103
 msgid "_Error Viewer"
 msgstr "_Virheiden katselu"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:113
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
 msgid "Display web page errors"
 msgstr "Näytä WWW-sivun virheet"
 
@@ -390,7 +266,9 @@ msgstr "T_yhjennä"
 msgid "Error Viewer"
 msgstr "Virheiden katselu"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:103
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:105
 #, c-format
 msgid ""
 "%s error in %s on line %d and column %d:\n"
@@ -399,9 +277,11 @@ msgstr ""
 "%s-virhe tiedostossa %s rivillä %d sarakkeessa %d:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:109
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:140
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:113
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:137
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:150
 #, c-format
 msgid ""
 "%s error in %s:\n"
@@ -410,7 +290,9 @@ msgstr ""
 "%s-virhe tiedostossa %s:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:123
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
 #, c-format
 msgid ""
 "%s error in %s on line %d:\n"
@@ -451,19 +333,19 @@ msgstr ""
 "HTML-virhe kohteessa \"%s\" rivillä %s:\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:165
+#: ../extensions/error-viewer/sgml-validator.c:164
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
 msgstr[0] "%d virhe löytyi"
 msgstr[1] "%d virhettä löytyi"
 
-#: ../extensions/error-viewer/sgml-validator.c:169
+#: ../extensions/error-viewer/sgml-validator.c:168
 #, c-format
 msgid "HTML Validation of “%s” complete"
 msgstr "Sivun \"%s\" HTML-tarkastus valmis"
 
-#: ../extensions/error-viewer/sgml-validator.c:227
+#: ../extensions/error-viewer/sgml-validator.c:226
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -472,8 +354,8 @@ msgstr ""
 "HTML-virhe kohteessa %s:\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:229
-#: ../extensions/error-viewer/sgml-validator.c:245
+#: ../extensions/error-viewer/sgml-validator.c:228
+#: ../extensions/error-viewer/sgml-validator.c:244
 msgid ""
 "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
 "+xml” instead."
@@ -481,7 +363,7 @@ msgstr ""
 "Dokumenttityyppi on \"XHTML\", mutta sisältötyyppi on \"text/html\". Käytä "
 "tyyppiä \"application/xhtml+xml\" sen sijasta."
 
-#: ../extensions/error-viewer/sgml-validator.c:243
+#: ../extensions/error-viewer/sgml-validator.c:242
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
@@ -490,22 +372,22 @@ msgstr ""
 "HTML-varoitus kohteessa %s:\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:360
+#: ../extensions/error-viewer/sgml-validator.c:359
 #, c-format
 msgid "HTML error in %s:"
 msgstr "HTML-virhe kohteessa %s:"
 
-#: ../extensions/error-viewer/sgml-validator.c:368
+#: ../extensions/error-viewer/sgml-validator.c:367
 #, c-format
 msgid "Invalid character encoding"
 msgstr "Virheellinen merkistö"
 
-#: ../extensions/error-viewer/sgml-validator.c:373
+#: ../extensions/error-viewer/sgml-validator.c:372
 #, c-format
 msgid "Unknown error while converting to UTF-8"
 msgstr "Tuntematon virhe merkistöön UTF-8 muuntamisessa"
 
-#: ../extensions/error-viewer/sgml-validator.c:435
+#: ../extensions/error-viewer/sgml-validator.c:434
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -514,12 +396,12 @@ msgstr ""
 "HTML-virhe kohteessa %s:\n"
 "Dokumenttityyppiä ei määritelty."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:355
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:345
 msgid "Enabled"
 msgstr "Käytössä"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:363
-#: ../extensions/rss/rss-ui.c:584
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:353
+#: ../extensions/rss/rss-ui.c:571
 msgid "Description"
 msgstr "Kuvaus"
 
@@ -531,29 +413,29 @@ msgstr "<b>Käytössä olevat laajennukset</b>"
 msgid "Extensions"
 msgstr "Laajennukset"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:73
 msgid "_Extensions"
 msgstr "_Laajennukset"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:71
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
 msgid "Load and unload extensions"
 msgstr "Ota laajennuksia käyttöön ja poista niitä käytöstä"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:77
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
 msgid "Help about extensions"
 msgstr "Apua laajennuksista"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:85
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:78
 msgid "Install User _Script"
 msgstr "Asenna käyttäjän _skripti"
 
 #. shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:80
 msgid "Install Greasemonkey script"
 msgstr "Asenna Greasemonkey-skripti"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:318
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:311
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "Käyttäjän skripti \"%s\" on asennettu"
@@ -567,7 +449,7 @@ msgstr "_Java-konsoli"
 msgid "Show Java Console"
 msgstr "Näytä Java-konsoli"
 
-#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:102
+#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:100
 msgid "_HTTP Headers"
 msgstr "_HTTP-otsakkeet"
 
@@ -595,171 +477,171 @@ msgstr "Live-otsakkeet"
 msgid "Remove headers"
 msgstr "Poista otsakkeet"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:68
+#: ../extensions/page-info/ephy-page-info-extension.c:61
 msgid "Pa_ge Information"
 msgstr "Si_vun tiedot"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:70
+#: ../extensions/page-info/ephy-page-info-extension.c:63
 msgid "Display page information in a dialog"
 msgstr "Näytä sivun tiedot ikkunassa"
 
-#: ../extensions/page-info/page-info-dialog.c:722
+#: ../extensions/page-info/page-info-dialog.c:704
 msgid "Save As..."
 msgstr "Tallenna nimellä..."
 
-#: ../extensions/page-info/page-info-dialog.c:739
+#: ../extensions/page-info/page-info-dialog.c:721
 msgid "Select a directory"
 msgstr "Valitse kansio"
 
-#: ../extensions/page-info/page-info-dialog.c:788
+#: ../extensions/page-info/page-info-dialog.c:770
 msgid "Unknown type"
 msgstr "Tuntematon tyyppi"
 
-#: ../extensions/page-info/page-info-dialog.c:793
+#: ../extensions/page-info/page-info-dialog.c:775
 msgid "Full standards compliance"
 msgstr "Täysin standardienmukainen"
 
-#: ../extensions/page-info/page-info-dialog.c:796
+#: ../extensions/page-info/page-info-dialog.c:778
 msgid "Almost standards compliance"
 msgstr "Melkein standardienmukainen"
 
-#: ../extensions/page-info/page-info-dialog.c:799
+#: ../extensions/page-info/page-info-dialog.c:781
 msgid "Compatibility"
 msgstr "Yhteensopivuus"
 
-#: ../extensions/page-info/page-info-dialog.c:803
+#: ../extensions/page-info/page-info-dialog.c:785
 msgid "Undetermined"
 msgstr "Määrittelemätön"
 
-#: ../extensions/page-info/page-info-dialog.c:812
+#: ../extensions/page-info/page-info-dialog.c:794
 msgid "Not cached"
 msgstr "Ei välimuistissa"
 
-#: ../extensions/page-info/page-info-dialog.c:815
+#: ../extensions/page-info/page-info-dialog.c:797
 msgid "Disk cache"
 msgstr "Levyvälimuisti"
 
-#: ../extensions/page-info/page-info-dialog.c:818
+#: ../extensions/page-info/page-info-dialog.c:800
 msgid "Memory cache"
 msgstr "Välimuisti"
 
-#: ../extensions/page-info/page-info-dialog.c:821
+#: ../extensions/page-info/page-info-dialog.c:803
 msgid "Unknown cache"
 msgstr "Tuntematon välimuisti"
 
-#: ../extensions/page-info/page-info-dialog.c:837
-#: ../extensions/page-info/page-info-dialog.c:953
+#: ../extensions/page-info/page-info-dialog.c:819
+#: ../extensions/page-info/page-info-dialog.c:935
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: ../extensions/page-info/page-info-dialog.c:842
+#: ../extensions/page-info/page-info-dialog.c:824
 msgid "No referrer"
 msgstr "Ei viittaajaa"
 
-#: ../extensions/page-info/page-info-dialog.c:856
-#: ../extensions/page-info/page-info-dialog.c:872
+#: ../extensions/page-info/page-info-dialog.c:838
+#: ../extensions/page-info/page-info-dialog.c:854
 msgid "Not specified"
 msgstr "Ei määritelty"
 
-#: ../extensions/page-info/page-info-dialog.c:935
+#: ../extensions/page-info/page-info-dialog.c:917
 msgid "Image"
 msgstr "Kuva"
 
-#: ../extensions/page-info/page-info-dialog.c:938
+#: ../extensions/page-info/page-info-dialog.c:920
 msgid "Background image"
 msgstr "Taustakuva"
 
-#: ../extensions/page-info/page-info-dialog.c:941
+#: ../extensions/page-info/page-info-dialog.c:923
 msgid "Embed"
 msgstr "Upote"
 
-#: ../extensions/page-info/page-info-dialog.c:944
+#: ../extensions/page-info/page-info-dialog.c:926
 msgid "Object"
 msgstr "Objekti"
 
-#: ../extensions/page-info/page-info-dialog.c:947
+#: ../extensions/page-info/page-info-dialog.c:929
 msgid "Applet"
 msgstr "Sovelma"
 
-#: ../extensions/page-info/page-info-dialog.c:950
+#: ../extensions/page-info/page-info-dialog.c:932
 msgid "Icon"
 msgstr "Kuvake"
 
-#: ../extensions/page-info/page-info-dialog.c:1131
+#: ../extensions/page-info/page-info-dialog.c:1113
 msgid "_Open"
 msgstr "_Avaa"
 
-#: ../extensions/page-info/page-info-dialog.c:1137
-#: ../extensions/page-info/page-info-dialog.c:1582
+#: ../extensions/page-info/page-info-dialog.c:1119
+#: ../extensions/page-info/page-info-dialog.c:1564
 msgid "_Copy Link Address"
 msgstr "_Kopioi linkin osoite"
 
-#: ../extensions/page-info/page-info-dialog.c:1143
+#: ../extensions/page-info/page-info-dialog.c:1125
 msgid "_Use as Background"
 msgstr "Käytä _taustakuvana"
 
-#: ../extensions/page-info/page-info-dialog.c:1149
-#: ../extensions/page-info/page-info-dialog.c:1588
+#: ../extensions/page-info/page-info-dialog.c:1131
+#: ../extensions/page-info/page-info-dialog.c:1570
 msgid "_Save As..."
 msgstr "_Tallenna nimellä..."
 
-#: ../extensions/page-info/page-info-dialog.c:1381
-#: ../extensions/page-info/page-info-dialog.c:1702
+#: ../extensions/page-info/page-info-dialog.c:1363
+#: ../extensions/page-info/page-info-dialog.c:1684
 msgid "Blocked"
 msgstr "Estetty"
 
-#: ../extensions/page-info/page-info-dialog.c:1397
-#: ../extensions/page-info/page-info-dialog.c:1718
+#: ../extensions/page-info/page-info-dialog.c:1379
+#: ../extensions/page-info/page-info-dialog.c:1700
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1410
+#: ../extensions/page-info/page-info-dialog.c:1392
 msgid "Type"
 msgstr "Tyyppi"
 
-#: ../extensions/page-info/page-info-dialog.c:1422
+#: ../extensions/page-info/page-info-dialog.c:1404
 msgid "Alt Text"
 msgstr "Vaihtoehtoinen teksti"
 
-#: ../extensions/page-info/page-info-dialog.c:1434
-#: ../extensions/page-info/page-info-dialog.c:1731
+#: ../extensions/page-info/page-info-dialog.c:1416
+#: ../extensions/page-info/page-info-dialog.c:1713
 msgid "Title"
 msgstr "Otsikko"
 
-#: ../extensions/page-info/page-info-dialog.c:1446
+#: ../extensions/page-info/page-info-dialog.c:1428
 msgid "Width"
 msgstr "Leveys"
 
-#: ../extensions/page-info/page-info-dialog.c:1458
+#: ../extensions/page-info/page-info-dialog.c:1440
 msgid "Height"
 msgstr "Korkeus"
 
-#: ../extensions/page-info/page-info-dialog.c:1743
+#: ../extensions/page-info/page-info-dialog.c:1725
 msgid "Relation"
 msgstr "Suhde"
 
-#: ../extensions/page-info/page-info-dialog.c:1892
-#: ../extensions/page-info/page-info-dialog.c:2033
+#: ../extensions/page-info/page-info-dialog.c:1874
+#: ../extensions/page-info/page-info-dialog.c:2015
 msgid "Name"
 msgstr "Nimi"
 
-#: ../extensions/page-info/page-info-dialog.c:1904
+#: ../extensions/page-info/page-info-dialog.c:1886
 msgid "Method"
 msgstr "Metodi"
 
-#: ../extensions/page-info/page-info-dialog.c:1918
+#: ../extensions/page-info/page-info-dialog.c:1900
 msgid "Action"
 msgstr "Toiminto"
 
-#: ../extensions/page-info/page-info-dialog.c:1999
+#: ../extensions/page-info/page-info-dialog.c:1981
 msgid "_Copy"
 msgstr "_Kopioi"
 
-#: ../extensions/page-info/page-info-dialog.c:2045
+#: ../extensions/page-info/page-info-dialog.c:2027
 msgid "Content"
 msgstr "Sisältö"
 
-#: ../extensions/page-info/page-info-dialog.c:2146
+#: ../extensions/page-info/page-info-dialog.c:2128
 msgid "Page Metadata"
 msgstr "Sivun metatiedot"
 
@@ -887,88 +769,89 @@ msgstr "Tyyppi:"
 msgid "_Save Media As..."
 msgstr "_Tallenna nimellä..."
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:180
+#: ../extensions/permissions/ephy-permissions-dialog.c:165
 msgid "allowed"
 msgstr "sallittu"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:184
+#: ../extensions/permissions/ephy-permissions-dialog.c:169
 msgid "denied"
 msgstr "kielletty"
 
 #. Sometimes we get this... how did this get in the list!?
-#: ../extensions/permissions/ephy-permissions-dialog.c:189
+#: ../extensions/permissions/ephy-permissions-dialog.c:174
 msgid "default"
 msgstr "oletus"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:515
+#: ../extensions/permissions/ephy-permissions-dialog.c:500
 msgid "Domain"
 msgstr "Aluenimi"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:527
+#: ../extensions/permissions/ephy-permissions-dialog.c:512
+#: ../extensions/soup-fly/soup-fly.c:196
 msgid "State"
 msgstr "Tila"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:620
+#: ../extensions/permissions/ephy-permissions-dialog.c:605
 msgid "Site Permissions"
 msgstr "Sivuston oikeudet"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:647
+#: ../extensions/permissions/ephy-permissions-dialog.c:632
 msgid "Cookies"
 msgstr "Evästeet"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:648
+#: ../extensions/permissions/ephy-permissions-dialog.c:633
 msgid "Images"
 msgstr "Kuvat"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:649
+#: ../extensions/permissions/ephy-permissions-dialog.c:634
 msgid "Popup Windows"
 msgstr "Ponnahdusikkunat"
 
 #. stock icon
-#: ../extensions/permissions/ephy-permissions-extension.c:156
+#: ../extensions/permissions/ephy-permissions-extension.c:152
 msgid "Site _Permissions"
 msgstr "Sivuston _oikeudet"
 
 #. shortcut key
-#: ../extensions/permissions/ephy-permissions-extension.c:158
+#: ../extensions/permissions/ephy-permissions-extension.c:154
 msgid "Manage web site permissions"
 msgstr "Hallitse oikeuksia sivustokohtaisesti"
 
-#: ../extensions/rss/ephy-rss-extension.c:91
+#: ../extensions/rss/ephy-rss-extension.c:79
 msgid "News Feeds Subscription"
 msgstr "Uutissyötteiden tilaus"
 
-#: ../extensions/rss/ephy-rss-extension.c:93
+#: ../extensions/rss/ephy-rss-extension.c:81
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr "Tilaa tämän sivuston uutissyöte haluamaasi syötteiden lukuohjelmaan"
 
-#: ../extensions/rss/ephy-rss-extension.c:98
+#: ../extensions/rss/ephy-rss-extension.c:86
 msgid "_Subscribe to this feed"
 msgstr "_Tilaa sivuston uutissyöte"
 
-#: ../extensions/rss/ephy-rss-extension.c:100
+#: ../extensions/rss/ephy-rss-extension.c:88
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Tilaa tämän sivuston uutissyöte haluamaasi syötteiden lukuohjelmaan"
 
-#: ../extensions/rss/ephy-rss-extension.c:373
+#: ../extensions/rss/ephy-rss-extension.c:361
 msgid "Subscribe to site's news feed"
 msgstr "Tilaa sivuston uutissyöte"
 
-#: ../extensions/rss/rss-ui.c:166
+#: ../extensions/rss/rss-ui.c:153
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr ""
 "<b><i>Uutissyötteiden lukuohjelmaan ei saatu yhteyttä. Onko ohjelma "
 "käynnissä?</i></b>"
 
-#: ../extensions/rss/rss-ui.c:168
+#: ../extensions/rss/rss-ui.c:155
 msgid "Retry"
 msgstr "Yritä uudelleen"
 
-#: ../extensions/rss/rss-ui.c:296
+#: ../extensions/rss/rss-ui.c:283
 msgid "_Copy Feed Address"
 msgstr "_Kopioi syötteen osoite"
 
-#: ../extensions/rss/rss-ui.c:576
+#: ../extensions/rss/rss-ui.c:563
 msgid "Subscribe"
 msgstr "Tilaa"
 
@@ -985,96 +868,96 @@ msgstr "Uutissyötteen tilaus"
 msgid "_Subscribe"
 msgstr "_Tilaa"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:146
+#: ../extensions/select-stylesheet/ephy-css-menu.c:140
 msgid "Render the page without using a style"
 msgstr "Piirrä sivu ilman erityistä tyyliä"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:149
+#: ../extensions/select-stylesheet/ephy-css-menu.c:143
 msgid "Render the page using the default style"
 msgstr "Piirrä sivu oletustyylisenä"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:152
+#: ../extensions/select-stylesheet/ephy-css-menu.c:146
 #, c-format
 msgid "Render the page using the “%s” style"
 msgstr "Esitä sivu käyttäen tyyliä \"%s\""
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:323
+#: ../extensions/select-stylesheet/ephy-css-menu.c:317
 msgid "St_yle"
 msgstr "T_yyli"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:324
+#: ../extensions/select-stylesheet/ephy-css-menu.c:318
 msgid "Select a different style for this page"
 msgstr "Valitse eri tyyli tätä sivua varten"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:224
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
 msgid "Default"
 msgstr "Oletus"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:235
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
 msgid "None"
 msgstr "Ei mikään"
 
-#: ../extensions/sidebar/ephy-sidebar.c:176
+#: ../extensions/sidebar/ephy-sidebar.c:167
 msgid "No Sidebars installed"
 msgstr "Ei asennettuja sivupaneeleita"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:105
+#: ../extensions/sidebar/ephy-sidebar-extension.c:88
 msgid "_Sidebar"
 msgstr "_Sivupaneeli"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:106
+#: ../extensions/sidebar/ephy-sidebar-extension.c:89
 msgid "Show or hide the sidebar"
 msgstr "Näytä tai piilota sivupaneeli"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:323
+#: ../extensions/sidebar/ephy-sidebar-extension.c:306
 msgid "Do you really want to remove this sidebar?"
 msgstr "Haluatko varmasti poistaa sivupalkin?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:327
+#: ../extensions/sidebar/ephy-sidebar-extension.c:310
 msgid "There is no way to recover this sidebar after removal."
 msgstr "Sivupalkkia ei voi palauttaa poiston jälkeen."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:329
+#: ../extensions/sidebar/ephy-sidebar-extension.c:312
 msgid "Remove Sidebar"
 msgstr "Poista sivupalkki"
 
 #. Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:476
+#: ../extensions/sidebar/ephy-sidebar-extension.c:459
 #, c-format
 msgid "The sidebar already contains “%s”"
 msgstr "Sivupalkki sisältää jo kohteen \"%s\""
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:480
+#: ../extensions/sidebar/ephy-sidebar-extension.c:463
 msgid ""
 "To use this sidebar, select it from the list of available sidebar pages."
 msgstr ""
 "Valitse tämä palkki saatavilla olevien sivupalkkien listasta, jos haluat "
 "käyttää sitä."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:483
-#: ../extensions/sidebar/ephy-sidebar-extension.c:509
+#: ../extensions/sidebar/ephy-sidebar-extension.c:466
+#: ../extensions/sidebar/ephy-sidebar-extension.c:492
 msgid "Add Sidebar"
 msgstr "Lisää sivupaneeli"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:503
+#: ../extensions/sidebar/ephy-sidebar-extension.c:486
 #, c-format
 msgid "Add “%s” to the Sidebar?"
 msgstr "Lisätäänkö \"%s\" sivupaneeliin?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:507
+#: ../extensions/sidebar/ephy-sidebar-extension.c:490
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
 msgstr "Uuden sivupaneelin sivun lähde on \"%s\"."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:513
+#: ../extensions/sidebar/ephy-sidebar-extension.c:496
 msgid "_Add Sidebar"
 msgstr "_Lisää sivupaneeli"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:542
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
 msgid "_Look Up"
 msgstr "_Etsi"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:549
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:538
 msgid "_GNOME Dictionary"
 msgstr "_Gnomen sanakirja"
 
@@ -1087,6 +970,23 @@ msgid "Open search result in new tab if true, in new window if false"
 msgstr ""
 "Jos tosi, avaa hakutulokset uuteen välilehteen, muutoin uuteen ikkunaan"
 
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
+msgid "_Soup Fly"
+msgstr "_Soup-lento"
+
+#. shortcut key
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:68
+msgid "Show information about the SoupSession used by the browser"
+msgstr "Näyttää tietoja selaimen käyttämästä Soup-istunnosta"
+
+#: ../extensions/soup-fly/soup-fly.c:220
+msgid "Clear finished"
+msgstr "Tyhjennys päättyi"
+
+#: ../extensions/soup-fly/soup-fly.c:224
+msgid "Automatically remove finished messages"
+msgstr "Poista päättyneet viestit automaattisesti"
+
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
 msgstr "Käynnistä vapaavalintaisia komentoja ponnahdusvalikoista."
@@ -1097,7 +997,7 @@ msgstr "Mainosten poistaja"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
 msgid "Block the pest!"
-msgstr "Poista turhat roskat!" 
+msgstr "Poista turhat roskat!"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
 msgid "Auto Scroll"
@@ -1115,22 +1015,9 @@ msgstr "Välilehden uudelleenlataus"
 msgid "Reload a tab periodically"
 msgstr "Lataa välilehden uudestaan tietyin aikavälein"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
-msgid "Creative Commons license viewer"
-msgstr "Creative Commons-lisenssin katselin"
-
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
-msgid "Shows the Creative Commons license of the current website if available"
-msgstr ""
-"Näytä tämänhetkisen www-sivun Creative Commons-lisenssi, jos mahdollista"
-
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Näytä sivun varmenne ja hallitse varmenteita"
-
-#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
-msgid "Synchronize bookmarks with social bookmark sites"
-msgstr "Synkronoi kirjanmerkit sosiaaliverkostojen kirjanmerkkipalveluihin"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -1147,17 +1034,6 @@ msgstr "Ota laajennuksia käyttöön tai poista niitä käytöstä"
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
 msgid "Extensions Manager"
 msgstr "Laajennusten hallinta"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:1
-msgid "Favicon fallback"
-msgstr "Favicon-kuvan lataus"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:2
-msgid ""
-"Loads /favicon.ico as favicon if the site doesn't use the standard method"
-msgstr ""
-"Lataa sivustolta /favicon.icon tiedoston, jos sivusto ei käytä "
-"standardimenetelmiä"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -1212,26 +1088,10 @@ msgstr "Raahaa sivua hiiren keskinapilla"
 msgid "Push Scroll"
 msgstr "Työntövieritys"
 
-#: ../extensions/python-console/python-console.ephy-extension.in.h:1
-msgid "Opens an interactive Python console"
-msgstr "Avaa interaktiivisen python-konsolin"
-
-#: ../extensions/python-console/python-console.ephy-extension.in.h:2
-msgid "Python Console"
-msgstr "Python-konsoli"
-
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr "Tilaa sivuston tarjoama uutissyöte haluamaasi syötteiden lukuohjelmaan"
-
-#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
-msgid "A sample extension with mozilla backend"
-msgstr "Esimerkkilaajennus, mozilla-alustalla"
-
-#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:2
-msgid "Sample (Mozilla)"
-msgstr "Esimerkki (Mozilla)"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
 msgid "A sample extension"
@@ -1280,6 +1140,130 @@ msgstr "Ilmaise taustalla olevien välilehtien uusi sisältö"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Välilehtien tilat"
+
+#~ msgid "View Creative Commons license"
+#~ msgstr "Näytä Creative Commons-lisenssi"
+
+#~ msgid "Action for tagged bookmarks:"
+#~ msgstr "Toiminto merkityille kirjanmerkeille:"
+
+#~ msgid "Epilicious Configuration"
+#~ msgstr "Epiliciouksen asetukset"
+
+#~ msgid "_Backend:"
+#~ msgstr "_Taustajärjestelmä:"
+
+#~ msgid "_Exclude"
+#~ msgstr "_Jätä huomioimatta"
+
+#~ msgid "_Include"
+#~ msgstr "_Ota mukaan"
+
+#~ msgid "_Password:"
+#~ msgstr "_Salasana:"
+
+#~ msgid "_Tag:"
+#~ msgstr "_Merkintä:"
+
+#~ msgid "Adding new bookmarks and synching topics"
+#~ msgstr "Uusien kirjanmerkkien lisäys ja aiheiden synkronointi"
+
+#~ msgid "Removing deleted bookmarks"
+#~ msgstr "Poistettujen kirjanmerkkien siivous"
+
+#~ msgid "Retrieving bookmarks from %s"
+#~ msgstr "Noudetaan kirjamerkkejä lähteestä %s"
+
+#~ msgid "Retrieving bookmarks from epiphany"
+#~ msgstr "Noudetaan kirjanmerkkejä epiphanystä"
+
+#~ msgid "Retrieving previous synch point"
+#~ msgstr "Noudetaan edellinen synkronointikohta"
+
+#~ msgid "Saving new synch point"
+#~ msgstr "Tallennetaan uusi synkronointikohta"
+
+#~ msgid "Synchronizing with %s"
+#~ msgstr "Synkronoidaan lähteen %s kanssa"
+
+#~ msgid "Synchronizing..."
+#~ msgstr "Synkronoidaan..."
+
+#~ msgid "Epilicious Synchronize"
+#~ msgstr "Epilicious-synkronointi"
+
+#~ msgid "Bookmarks with this topic will be synchronized."
+#~ msgstr "Tähän aiheeseen liittyvät kirjanmerkit synkronoidaan."
+
+#~ msgid ""
+#~ "Controls the function of the topic. If this is unset then all bookmarks "
+#~ "with the topic will be synched. If this is set then all bookmarks without "
+#~ "the topic will be synched."
+#~ msgstr ""
+#~ "Ohjaa aiheen toimintaa. Jos tämä ei ole asetettu, kaikki aiheen "
+#~ "kirjanmerkit synkronoidaan. Jos tämä on asetettu, kaikki kirjanmerkit "
+#~ "ilman tätä aihetta synkronoidaan."
+
+#~ msgid "Exclude topic"
+#~ msgstr "Jätä aihe huomioimatta"
+
+#~ msgid "Shared topic"
+#~ msgstr "Jaettu aihe"
+
+#~ msgid ""
+#~ "The backend that epilicious will use for synchronizing bookmarks. Allowed "
+#~ "value: 'ma.gnolia'"
+#~ msgstr ""
+#~ "Taustajärjestelmä, jota epilicious käyttää kirjanmerkkien synkronointiin. "
+#~ "Kelvolliset arvot ovat 'ma.gnolia'"
+
+#~ msgid "The password that epilicious will use for synchronizing bookmarks."
+#~ msgstr "Salasana, jota epilicious käyttää kirjanmerkkin synkronointiin."
+
+#~ msgid "The username that epilicious will use for synchronizing bookmarks."
+#~ msgstr ""
+#~ "Käyttäjätunnus, jota epilicious käyttää kirjanmerkkien synkronointiin."
+
+#~ msgid "epilicious backend"
+#~ msgstr "epilicious-taustajärjestelmä"
+
+#~ msgid "password"
+#~ msgstr "salasana"
+
+#~ msgid "username"
+#~ msgstr "käyttäjätunnus"
+
+#~ msgid "Creative Commons license viewer"
+#~ msgstr "Creative Commons-lisenssin katselin"
+
+#~ msgid ""
+#~ "Shows the Creative Commons license of the current website if available"
+#~ msgstr ""
+#~ "Näytä tämänhetkisen www-sivun Creative Commons-lisenssi, jos mahdollista"
+
+#~ msgid "Synchronize bookmarks with social bookmark sites"
+#~ msgstr "Synkronoi kirjanmerkit sosiaaliverkostojen kirjanmerkkipalveluihin"
+
+#~ msgid "Favicon fallback"
+#~ msgstr "Favicon-kuvan lataus"
+
+#~ msgid ""
+#~ "Loads /favicon.ico as favicon if the site doesn't use the standard method"
+#~ msgstr ""
+#~ "Lataa sivustolta /favicon.icon tiedoston, jos sivusto ei käytä "
+#~ "standardimenetelmiä"
+
+#~ msgid "Opens an interactive Python console"
+#~ msgstr "Avaa interaktiivisen python-konsolin"
+
+#~ msgid "Python Console"
+#~ msgstr "Python-konsoli"
+
+#~ msgid "A sample extension with mozilla backend"
+#~ msgstr "Esimerkkilaajennus, mozilla-alustalla"
+
+#~ msgid "Sample (Mozilla)"
+#~ msgstr "Esimerkki (Mozilla)"
 
 #~ msgid ""
 #~ "Error:\n"
