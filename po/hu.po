@@ -5,14 +5,15 @@
 #
 # Laszlo Dvornik <dvornik@gnome.hu>, 2004.
 # Gabor Kelemen <kelemeng@gnome.hu>, 2004, 2005, 2007, 2008, 2009.
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions.HEAD.hu\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions&component=general\n"
-"POT-Creation-Date: 2009-02-11 23:10+0000\n"
-"PO-Revision-Date: 2009-03-13 01:04+0100\n"
-"Last-Translator: Gabor Kelemen <kelemeng@gnome.hu>\n"
-"Language-Team: Hungarian <gnome@fsf.hu>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
+"POT-Creation-Date: 2009-08-15 02:01+0200\n"
+"PO-Revision-Date: 2009-08-15 02:04+0200\n"
+"Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
+"Language-Team: Hungarian <gnome at fsf dot hu>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -77,7 +78,6 @@ msgid "_Images"
 msgstr "_Képek"
 
 #: ../extensions/actions/action-properties.glade.h:11
-#: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Name:"
 msgstr "_Név:"
 
@@ -102,7 +102,7 @@ msgstr "Műveletek testreszabása"
 msgid "Could not run command"
 msgstr "Nem sikerült futtatni a parancsot"
 
-#: ../extensions/actions/ephy-actions-extension.c:439
+#: ../extensions/actions/ephy-actions-extension.c:440
 msgid "Could not Run Command"
 msgstr "Nem sikerült futtatni a parancsot"
 
@@ -166,7 +166,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>Szabályok frissítése az eredeti oldalról</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:230
+#: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
 msgstr "Hirdetésgátló-szerkesztő"
 
@@ -186,11 +186,11 @@ msgstr "Filterset.G"
 msgid "Whitelist"
 msgstr "Fehérlista"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:231
+#: ../extensions/adblock/ephy-adblock-extension.c:230
 msgid "Edit Adblock"
 msgstr "Adblock szerkesztése"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:298
+#: ../extensions/adblock/ephy-adblock-extension.c:299
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -204,10 +204,6 @@ msgstr "_Automatikus újratöltés"
 #: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
 msgid "Reload the page periodically"
 msgstr "Az oldal rendszeres újratöltése"
-
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:373
-msgid "View Creative Commons license"
-msgstr "A Creative Commons licenc megjelenítése"
 
 #: ../extensions/certificates/ephy-certificates-extension.c:163
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
@@ -237,127 +233,6 @@ msgstr "_Biztonsági eszközök kezelése"
 #: ../extensions/certificates/ephy-certificates-extension.c:214
 msgid "Manage your security devices"
 msgstr "Az Ön biztonsági eszközeinek kezelése"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:1
-msgid "Action for tagged bookmarks:"
-msgstr "Művelet címkézett könyvjelzőkhöz:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:2
-msgid "Epilicious Configuration"
-msgstr "Epilicious beállítása"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:3
-msgid "_Backend:"
-msgstr "_Háttér:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:4
-msgid "_Exclude"
-msgstr "_Kihagyás"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:5
-msgid "_Include"
-msgstr "_Felvétel"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:7
-msgid "_Password:"
-msgstr "_Jelszó:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:8
-msgid "_Tag:"
-msgstr "_Címke:"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:1
-msgid "Adding new bookmarks and synching topics"
-msgstr "Új könyvjelzők felvétele és témakörök szinkronizálása"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:2
-msgid "Removing deleted bookmarks"
-msgstr "Törölt könyvjelzők eltávolítása"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:4
-#: ../extensions/epilicious/progress.py:41
-#, no-c-format, python-format
-msgid "Retrieving bookmarks from %s"
-msgstr "Könyvjelzők letöltése a következőből: %s"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:5
-msgid "Retrieving bookmarks from epiphany"
-msgstr "Könyvjelzők letöltése az epiphanyból"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:6
-msgid "Retrieving previous synch point"
-msgstr "Előző szinkronizálási pont lekérése"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:7
-msgid "Saving new synch point"
-msgstr "Új szinkronizálási pont mentése"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:9
-#: ../extensions/epilicious/progress.py:39
-#, no-c-format, python-format
-msgid "Synchronizing with %s"
-msgstr "Szinkronizálás a következővel: %s"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:10
-msgid "Synchronizing..."
-msgstr "Szinkronizálás…"
-
-#: ../extensions/epilicious/epilicious.py.in:232
-#: ../extensions/epilicious/epilicious.py.in:250
-msgid "Epilicious Synchronize"
-msgstr "Epilicious szinkronizálás"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:1
-msgid "Bookmarks with this topic will be synchronized."
-msgstr "Az ilyen témájú könyvjelzők szinkronizálásra kerülnek."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:2
-msgid ""
-"Controls the function of the topic. If this is unset then all bookmarks with "
-"the topic will be synched. If this is set then all bookmarks without the "
-"topic will be synched."
-msgstr ""
-"A téma működését felügyeli. Ha nincs beállítva, akkor minden adott témájú "
-"könyvjelző szinkronizálásra kerül. Ha be van állítva, akkor az adott témával "
-"nem rendelkező összes könyvjelző szinkronizálásra kerül."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:3
-msgid "Exclude topic"
-msgstr "Témakör kihagyása"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:4
-msgid "Shared topic"
-msgstr "Megosztott témakör"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:5
-msgid ""
-"The backend that epilicious will use for synchronizing bookmarks. Allowed "
-"values: 'diigo', 'ma.gnolia'"
-msgstr ""
-"Az epilicious által a könyvjelzők szinkronizálására használandó "
-"háttérprogram. A lehetséges értékek: „diigo”, „ma.gnolia”."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:6
-msgid "The password that epilicious will use for synchronizing bookmarks."
-msgstr "Az epilicious által a könyvjelzők szinkronizálására használandó jelszó."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:7
-msgid "The username that epilicious will use for synchronizing bookmarks."
-msgstr ""
-"Az epilicious által a könyvjelzők szinkronizálására használandó "
-"felhasználónév."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:8
-msgid "epilicious backend"
-msgstr "epilicious háttér"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:9
-msgid "password"
-msgstr "jelszó"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:10
-msgid "username"
-msgstr "felhasználónév"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Check _HTML"
@@ -524,11 +399,11 @@ msgstr ""
 "HTML hiba a(z) %s fájlban:\n"
 "Nincs érvényes doctype megadva."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:346
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:345
 msgid "Enabled"
 msgstr "Engedélyezve"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:354
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:353
 #: ../extensions/rss/rss-ui.c:571
 msgid "Description"
 msgstr "Leírás"
@@ -915,6 +790,7 @@ msgid "Domain"
 msgstr "Tartomány"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:512
+#: ../extensions/soup-fly/soup-fly.c:196
 msgid "State"
 msgstr "Állapot"
 
@@ -1093,6 +969,23 @@ msgstr ""
 "Ha ez be van állítva, akkor a találatot új lapon, ha nincs, akkor új "
 "ablakban nyitja meg."
 
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
+msgid "_Soup Fly"
+msgstr "_Soup Fly"
+
+#. shortcut key
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:68
+msgid "Show information about the SoupSession used by the browser"
+msgstr "Információk megjelenítése a böngésző által használt SoupSession.ről"
+
+#: ../extensions/soup-fly/soup-fly.c:220
+msgid "Clear finished"
+msgstr "Törlés kész"
+
+#: ../extensions/soup-fly/soup-fly.c:224
+msgid "Automatically remove finished messages"
+msgstr "Befejezett üzenetek automatikus eltávolítása"
+
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
 msgstr "Tetszőleges parancsok végrehajtása a felbukkanó menüből"
@@ -1121,21 +1014,9 @@ msgstr "Lap automatikus újratöltése"
 msgid "Reload a tab periodically"
 msgstr "Lap rendszeres újratöltése"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
-msgid "Creative Commons license viewer"
-msgstr "Creative Commons licencmegjelenítő"
-
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
-msgid "Shows the Creative Commons license of the current website if available"
-msgstr "Megjeleníti az aktuális weboldal Creative Commons licencét, ha van"
-
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Az oldal tanúsítványainak megtekintése és azok kezelése"
-
-#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
-msgid "Synchronize bookmarks with social bookmark sites"
-msgstr "Könyvjelzők szinkronizálása a társadalmi könyvjelzőoldalakkal"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -1152,16 +1033,6 @@ msgstr "Kiterjesztések be- és kikapcsolása"
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
 msgid "Extensions Manager"
 msgstr "Kiterjesztéskezelő"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:1
-msgid "Favicon fallback"
-msgstr "Tartalék favicon"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:2
-msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
-msgstr ""
-"A /favicon.ico-t tölti be favicon-ként ha az oldal nem használja a szabvány "
-"eljárást"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -1215,25 +1086,9 @@ msgstr "Oldal húzása középső egérkattintásra"
 msgid "Push Scroll"
 msgstr "Kattintásra görgetés"
 
-#: ../extensions/python-console/python-console.ephy-extension.in.h:1
-msgid "Opens an interactive Python console"
-msgstr "Interaktív Python konzol megnyitása"
-
-#: ../extensions/python-console/python-console.ephy-extension.in.h:2
-msgid "Python Console"
-msgstr "Python konzol"
-
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr "Feliratkozás az oldal által kínált hírforrásokra a kedvenc hírolvasójával"
-
-#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
-msgid "A sample extension with mozilla backend"
-msgstr "Mintakiterjesztés mozilla háttérrel"
-
-#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:2
-msgid "Sample (Mozilla)"
-msgstr "Minta (Mozilla)"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
 msgid "A sample extension"
