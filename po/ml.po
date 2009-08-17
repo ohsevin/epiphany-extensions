@@ -1,0 +1,1111 @@
+# translation of epiphany-extensions.po.master.ml.po to
+# Malayalam translation of epiphany-extensions.
+# Copyright (C) 2009 epiphany-extensions's COPYRIGHT HOLDER
+# This file is distributed under the same license as the epiphany-extensions package.
+# ANI PETER <apeter@redhat.com>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: epiphany-extensions.po.master.ml\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions&component=general\n"
+"POT-Creation-Date: 2009-08-05 16:10+0000\n"
+"PO-Revision-Date: 2009-08-13 14:56+0530\n"
+"Last-Translator: \n"
+"Language-Team:  <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../extensions/actions/action-properties.glade.h:1
+msgid "<span weight=\"bold\">Applies to</span>"
+msgstr "<span weight=\"bold\">ഇതു് ബാധകമാകുന്നവ</span>"
+
+#: ../extensions/actions/action-properties.glade.h:2
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">സാധാരണ</span>"
+
+#: ../extensions/actions/action-properties.glade.h:3
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"images."
+msgstr ""
+"ഈ ഉപാധി സജ്ജമെങ്കില്‍, ചിത്രങ്ങളുടെ പോപ്പപ് മെനുവില്‍ പ്രവര്‍ത്തി "
+"ഉള്‍പ്പെടുത്തുന്നു."
+
+#: ../extensions/actions/action-properties.glade.h:4
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"links and pages."
+msgstr ""
+"ഈ ഉപാധി സജ്ജമെങ്കില്‍, ലിങ്കുകളുടേയും താളുകളുടേയും പോപ്പപ് മെനുവില്‍ പ്രവര്‍ത്തി "
+"ഉള്‍പ്പെടുത്തുന്നു"
+
+#: ../extensions/actions/action-properties.glade.h:5
+msgid "The action description."
+msgstr "പ്രവര്‍ത്തനത്തിനുള്ള വിവരണം."
+
+#: ../extensions/actions/action-properties.glade.h:6
+msgid ""
+"The action name. If a character is preceded by an underscore, that character "
+"will be used as the access key for the menu item."
+msgstr ""
+"പ്രവര്‍ത്തനത്തിനുള്ള വിവരണം. അക്ഷരത്തിനു് മുമ്പ്, ഒരു അണ്ടര്‍സ്കോര്‍ ചിഹ്നമുണ്ടെങ്കില്‍, "
+"മെനു വസ്തുവിനുള്ള ആക്സസ് കീ ആയി ആ അക്ഷരം ഉപയോഗിക്കപ്പെടുന്നു. "
+
+#: ../extensions/actions/action-properties.glade.h:7
+msgid ""
+"The command to execute when the action is activated. The URL of the link, "
+"image or page will be appended to the command."
+msgstr ""
+"പ്രവര്‍ത്തനം സജീവമാക്കുമ്പോള്‍ നടപ്പിലാക്കേണ്ട കമാന്‍ഡ്. ലിങ്കിനുള്ള യുആര്‍എല്‍, "
+"ചിത്രം അല്ലെങ്കില്‍ താള്‍ കമാന്‍ഡിലേക്ക് ചേര്‍ക്കുന്നു."
+
+#: ../extensions/actions/action-properties.glade.h:8
+msgid "_Command:"
+msgstr "_Command:"
+
+#: ../extensions/actions/action-properties.glade.h:9
+msgid "_Description:"
+msgstr "_വിവരണം:"
+
+#: ../extensions/actions/action-properties.glade.h:10
+msgid "_Images"
+msgstr "_ചിത്രങ്ങള്‍"
+
+#: ../extensions/actions/action-properties.glade.h:11
+msgid "_Name:"
+msgstr "_പേരു്:"
+
+#: ../extensions/actions/action-properties.glade.h:12
+msgid "_Pages"
+msgstr "_താളുകള്‍"
+
+#: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions.ephy-extension.in.in.h:1
+msgid "Actions"
+msgstr "പ്രവര്‍ത്തികള്‍"
+
+#: ../extensions/actions/ephy-actions-extension.c:112
+msgid "Actio_ns"
+msgstr "_പ്രവര്‍ത്തികള്‍"
+
+#: ../extensions/actions/ephy-actions-extension.c:113
+msgid "Customize actions"
+msgstr "പ്രവര്‍ത്തികള്‍ ഇഷ്ടാനുസൃതമാക്കുക"
+
+#: ../extensions/actions/ephy-actions-extension.c:436
+msgid "Could not run command"
+msgstr "കമാന്‍ഡ് പ്രവര്‍ത്തിക്കുവാനായില്ല"
+
+#: ../extensions/actions/ephy-actions-extension.c:440
+msgid "Could not Run Command"
+msgstr "കമാന്‍ഡ് പ്രവര്‍ത്തിക്കുവാനായില്ല"
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
+msgid "No action selected."
+msgstr "പ്രവര്‍ത്തി തെരഞ്ഞെടുത്തിട്ടില്ല."
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
+#, c-format
+msgid "%i action selected."
+msgid_plural "%i actions selected."
+msgstr[0] "%i പ്രവര്‍ത്തി തെരഞ്ഞെടുത്തിരിക്കുന്നു."
+msgstr[1] "%i പ്രവര്‍ത്തികള്‍ തെരഞ്ഞെടുത്തിരിക്കുന്നു."
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
+msgid "Add Action"
+msgstr "പ്രവര്‍ത്തി ചേര്‍ക്കുക"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
+#, c-format
+msgid "“%s” Properties"
+msgstr "“%s” വിശേഷതകള്‍"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
+msgid "Action Properties"
+msgstr "പ്രവര്‍ത്തിയുടെ വിശേഷതകള്‍"
+
+#: ../extensions/adblock/adblock-ui.c:263
+msgid ""
+"This list is Copyright © its original author(G). It is relicensed under the "
+"GPL with permission.\n"
+"The original list, Filterset.G, can be found at http://www.pierceive.com/"
+"filtersetg/.\n"
+"This version has been modified from its original. The changes have not been "
+"approved by the original author;\n"
+"direct any problems to Bugzilla and not to the original author (G).\n"
+msgstr ""
+
+#: ../extensions/adblock/adblock-ui.c:481
+msgid "Pattern"
+msgstr "മാതൃക"
+
+#: ../extensions/adblock/adblock.glade.h:1
+msgid "<b>Courtesy of Graham Pierce</b>"
+msgstr ""
+
+#: ../extensions/adblock/adblock.glade.h:2
+msgid "<b>New rule</b>"
+msgstr "<b>പുതിയ നിയമം</b>"
+
+#: ../extensions/adblock/adblock.glade.h:3
+msgid "<b>Update rules from original site</b>"
+msgstr "<b>യഥാര്‍ത്ഥ സൈറ്റില്‍ നിന്നും നിയമങ്ങള്‍ പരിഷ്കരിക്കുക</b>"
+
+#: ../extensions/adblock/adblock.glade.h:4
+#: ../extensions/adblock/ephy-adblock-extension.c:229
+msgid "Adblock Editor"
+msgstr "അഡ്ബ്ലോക്ക് എഡിറ്റര്‍"
+
+#: ../extensions/adblock/adblock.glade.h:5
+msgid "Add a new rule"
+msgstr "ഒരു പുതിയ നിയമം ചേര്‍ക്കുക"
+
+#: ../extensions/adblock/adblock.glade.h:6
+msgid "Blacklist"
+msgstr "ബ്ലാക്ക്ലിസ്റ്റ്"
+
+#: ../extensions/adblock/adblock.glade.h:7
+msgid "Filterset.G"
+msgstr "Filterset.G"
+
+#: ../extensions/adblock/adblock.glade.h:8
+msgid "Whitelist"
+msgstr "വൈറ്റ്ലിസ്റ്റ്"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:230
+msgid "Edit Adblock"
+msgstr "ആഡ്ബ്ലോക്ക് ചിട്ടപ്പെടുത്തുക"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:299
+#, c-format
+msgid "%d hidden advertisement"
+msgid_plural "%d hidden advertisements"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:81
+msgid "_Auto Reload"
+msgstr "_സ്വയം റീലോഡ് ചെയ്യുക"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+msgid "Reload the page periodically"
+msgstr "പേജ് സമയാസമയങ്ങളില്‍ വീണ്ടും ലഭ്യമാക്കുക"
+
+#: ../extensions/certificates/ephy-certificates-extension.c:163
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
+msgid "Certificates"
+msgstr "സര്‍ട്ടിഫിക്കേറ്റുകള്‍"
+
+#: ../extensions/certificates/ephy-certificates-extension.c:194
+msgid "Security Devices"
+msgstr "സുരക്ഷാ ഡിവൈസുകള്‍"
+
+#. stock icon
+#: ../extensions/certificates/ephy-certificates-extension.c:206
+msgid "Manage _Certificates"
+msgstr "_സര്‍ട്ടിഫിക്കേറ്റുകള്‍ കൈകാര്യം ചെയ്യുക"
+
+#. shortcut key
+#: ../extensions/certificates/ephy-certificates-extension.c:208
+msgid "Manage your certificates"
+msgstr "നിങ്ങളുടെ സര്‍ട്ടിഫിക്കേറ്റുകള്‍ കൈകാര്യം ചെയ്യുക"
+
+#. stock icon
+#: ../extensions/certificates/ephy-certificates-extension.c:212
+msgid "Manage Security _Devices"
+msgstr "സുരക്ഷാ _ഡിവൈസുകള്‍ കൈകാര്യം ചെയ്യുക"
+
+#. shortcut key
+#: ../extensions/certificates/ephy-certificates-extension.c:214
+msgid "Manage your security devices"
+msgstr "നിങ്ങളുടെ സുരക്ഷാ ഡിവൈസുകള്‍ കൈകാര്യം ചെയ്യുക"
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
+msgid "Check _HTML"
+msgstr "_HTML പരിശോധിക്കുക"
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:92
+msgid "Display HTML errors in the Error Viewer dialog"
+msgstr ""
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
+msgid "Check _Links"
+msgstr "_ലിങ്കുകള്‍ പരിശോധിക്കുക"
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
+msgid "Display invalid hyperlinks in the Error Viewer dialog"
+msgstr ""
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:103
+msgid "_Error Viewer"
+msgstr ""
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
+msgid "Display web page errors"
+msgstr "വെബ് താളിലുള്ള പിശകുകള്‍ പരിശോധിക്കുക"
+
+#: ../extensions/error-viewer/error-viewer.glade.h:1
+msgid "Cl_ear"
+msgstr "_വെടിപ്പാക്കുക"
+
+#: ../extensions/error-viewer/error-viewer.glade.h:2
+msgid "Error Viewer"
+msgstr ""
+
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:105
+#, c-format
+msgid ""
+"%s error in %s on line %d and column %d:\n"
+"%s"
+msgstr ""
+
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:113
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:137
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:150
+#, c-format
+msgid ""
+"%s error in %s:\n"
+"%s"
+msgstr ""
+
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
+#, c-format
+msgid ""
+"%s error in %s on line %d:\n"
+"%s"
+msgstr ""
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
+#, c-format
+msgid ""
+"Link error in %s:\n"
+"%s is unavailable."
+msgstr ""
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
+#, c-format
+msgid "Checking %d Link on “%s”"
+msgid_plural "Checking %d Links on “%s”"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../extensions/error-viewer/opensp/validate.cpp:168
+#, c-format
+msgid ""
+"HTML error in “%s” on line %s:\n"
+"%s"
+msgstr ""
+
+#: ../extensions/error-viewer/sgml-validator.c:164
+#, c-format
+msgid "Found %d error"
+msgid_plural "Found %d errors"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../extensions/error-viewer/sgml-validator.c:168
+#, c-format
+msgid "HTML Validation of “%s” complete"
+msgstr ""
+
+#: ../extensions/error-viewer/sgml-validator.c:226
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"%s"
+msgstr ""
+
+#: ../extensions/error-viewer/sgml-validator.c:228
+#: ../extensions/error-viewer/sgml-validator.c:244
+msgid ""
+"Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
+"+xml” instead."
+msgstr ""
+
+#: ../extensions/error-viewer/sgml-validator.c:242
+#, c-format
+msgid ""
+"HTML warning in %s:\n"
+"%s"
+msgstr ""
+
+#: ../extensions/error-viewer/sgml-validator.c:359
+#, c-format
+msgid "HTML error in %s:"
+msgstr "%s-ല്‍ HTML പിശക്:"
+
+#: ../extensions/error-viewer/sgml-validator.c:367
+#, c-format
+msgid "Invalid character encoding"
+msgstr "തെറ്റായ ക്യാരക്ടര്‍ എന്‍കോഡിങ്"
+
+#: ../extensions/error-viewer/sgml-validator.c:372
+#, c-format
+msgid "Unknown error while converting to UTF-8"
+msgstr "UTF-8-ലേക്ക് വേര്‍തിരിക്കുമ്പോള്‍ അപരിചിതമായ പിശക്"
+
+#: ../extensions/error-viewer/sgml-validator.c:434
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"No valid doctype specified."
+msgstr ""
+"%s-ല്‍ HTML പിശക്:\n"
+"ശരിയായ doctype നല്‍കിയിട്ടില്ല."
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:345
+msgid "Enabled"
+msgstr "പ്രവര്‍ത്തന സജ്ജം"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:353
+#: ../extensions/rss/rss-ui.c:571
+msgid "Description"
+msgstr "വിവരണം"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+msgid "<b>Loaded Extensions</b>"
+msgstr "<b>ലഭ്യമാക്കുന്ന എക്സ്റ്റെന്‍ഷനുകള്‍</b>"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+msgid "Extensions"
+msgstr "എക്സ്റ്റെന്‍ഷനുകള്‍"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:73
+msgid "_Extensions"
+msgstr "_എക്സ്റ്റെന്‍ഷനുകള്‍"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
+msgid "Load and unload extensions"
+msgstr "എക്സ്റ്റെന്‍ഷനുകള്‍ ലോഡ്/അണ്‍ലോഡ് ചെയ്യുക"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "Help about extensions"
+msgstr "എക്സ്റ്റെന്‍ഷനുകള്‍ക്കുള്ള സഹായം"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:78
+msgid "Install User _Script"
+msgstr "യൂസര്‍ _സ്ക്രിപ്റ്റ് ഇന്‍സ്റ്റോള്‍ ചെയ്യുക"
+
+#. shortcut key
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:80
+msgid "Install Greasemonkey script"
+msgstr "ഗ്രീസ് മങ്കി സ്ക്രിപ്റ്റ് ഇന്‍സ്റ്റോള്‍ ചെയ്യുക"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:311
+#, c-format
+msgid "The user script at “%s” has been installed"
+msgstr "“%s”-ലുള്ള യൂസര്‍ സ്ക്രിപ്റ്റ് ഇന്‍സ്റ്റോള്‍ ചെയ്തിരിക്കുന്നു."
+
+#: ../extensions/java-console/ephy-java-console-extension.c:48
+msgid "_Java Console"
+msgstr "_ജാവാ കണ്‍സോള്‍"
+
+#. shortcut key
+#: ../extensions/java-console/ephy-java-console-extension.c:50
+msgid "Show Java Console"
+msgstr "ജാവാ കണ്‍സോള്‍ കാണിക്കുക"
+
+#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:100
+msgid "_HTTP Headers"
+msgstr "_HTTP ഹെഡറുകള്‍"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:1
+msgid "<b>Request</b>"
+msgstr "<b>ആവശ്യം</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:2
+msgid "<b>Response</b>"
+msgstr "<b>മറുപടി</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:3
+msgid "<b>URLs</b>"
+msgstr "<b>URL-കള്‍</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
+msgid "Clear cache"
+msgstr "കാഷ് വെടിപ്പാക്കുക"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
+msgid "Live Headers"
+msgstr "ലൈവ് ഹെഡറുകള്‍"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
+msgid "Remove headers"
+msgstr "ഹെഡറുകള്‍ നീക്കം ചെയ്യുക"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:61
+msgid "Pa_ge Information"
+msgstr "_താളിന്റെ വിവരങ്ങള്‍"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:63
+msgid "Display page information in a dialog"
+msgstr "താളിന്റെ വിവരങ്ങള്‍ ഒരു ഡയലോഗില്‍ കാണിക്കുക"
+
+#: ../extensions/page-info/page-info-dialog.c:704
+msgid "Save As..."
+msgstr "പേര് മാറ്റി സൂക്ഷിക്കുക..."
+
+#: ../extensions/page-info/page-info-dialog.c:721
+msgid "Select a directory"
+msgstr "ഒരു ഡയറക്ടറി തെരഞ്ഞെടുക്കുക"
+
+#: ../extensions/page-info/page-info-dialog.c:770
+msgid "Unknown type"
+msgstr "അപരിചിതമായ തരം"
+
+#: ../extensions/page-info/page-info-dialog.c:775
+msgid "Full standards compliance"
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:778
+msgid "Almost standards compliance"
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:781
+msgid "Compatibility"
+msgstr "കോംപാറ്റിബിളിറ്റി"
+
+#: ../extensions/page-info/page-info-dialog.c:785
+msgid "Undetermined"
+msgstr ""
+
+#: ../extensions/page-info/page-info-dialog.c:794
+msgid "Not cached"
+msgstr "കാഷ് ചെയ്തിട്ടില്ലാത്ത"
+
+#: ../extensions/page-info/page-info-dialog.c:797
+msgid "Disk cache"
+msgstr "ഡിസ്ക് കാഷ്"
+
+#: ../extensions/page-info/page-info-dialog.c:800
+msgid "Memory cache"
+msgstr "മെമ്മറി കാഷ്"
+
+#: ../extensions/page-info/page-info-dialog.c:803
+msgid "Unknown cache"
+msgstr "അപരിചിതമായ കാഷ്"
+
+#: ../extensions/page-info/page-info-dialog.c:819
+#: ../extensions/page-info/page-info-dialog.c:935
+msgid "Unknown"
+msgstr "അപരിചിതം"
+
+#: ../extensions/page-info/page-info-dialog.c:824
+msgid "No referrer"
+msgstr "റിഫറര്‍ ലഭ്യമല്ല"
+
+#: ../extensions/page-info/page-info-dialog.c:838
+#: ../extensions/page-info/page-info-dialog.c:854
+msgid "Not specified"
+msgstr "വ്യക്തമാക്കിയിട്ടില്ല"
+
+#: ../extensions/page-info/page-info-dialog.c:917
+msgid "Image"
+msgstr "ചിത്രം"
+
+#: ../extensions/page-info/page-info-dialog.c:920
+msgid "Background image"
+msgstr "പശ്ചാത്തലത്തിലുള്ള ചിത്രം"
+
+#: ../extensions/page-info/page-info-dialog.c:923
+msgid "Embed"
+msgstr "എംബെഡ്"
+
+#: ../extensions/page-info/page-info-dialog.c:926
+msgid "Object"
+msgstr "ഒബ്ജക്ട്"
+
+#: ../extensions/page-info/page-info-dialog.c:929
+msgid "Applet"
+msgstr "ആപ്ലെറ്റ്"
+
+#: ../extensions/page-info/page-info-dialog.c:932
+msgid "Icon"
+msgstr "പ്രതിരൂപം"
+
+#: ../extensions/page-info/page-info-dialog.c:1113
+msgid "_Open"
+msgstr "_തുറക്കുക"
+
+#: ../extensions/page-info/page-info-dialog.c:1119
+#: ../extensions/page-info/page-info-dialog.c:1564
+msgid "_Copy Link Address"
+msgstr "ലിങ്കിന്റെ വിലാസം _പകര്‍ത്തുക"
+
+#: ../extensions/page-info/page-info-dialog.c:1125
+msgid "_Use as Background"
+msgstr "പശ്ചാത്തലമായി _ഉപയോഗിക്കുക"
+
+#: ../extensions/page-info/page-info-dialog.c:1131
+#: ../extensions/page-info/page-info-dialog.c:1570
+msgid "_Save As..."
+msgstr "പേര് മാറ്റി _സൂക്ഷിക്കുക..."
+
+#: ../extensions/page-info/page-info-dialog.c:1363
+#: ../extensions/page-info/page-info-dialog.c:1684
+msgid "Blocked"
+msgstr "തടസ്സപ്പെടുത്തിയിരിക്കുന്നു"
+
+#: ../extensions/page-info/page-info-dialog.c:1379
+#: ../extensions/page-info/page-info-dialog.c:1700
+msgid "URL"
+msgstr "URL"
+
+#: ../extensions/page-info/page-info-dialog.c:1392
+msgid "Type"
+msgstr "തരം"
+
+#: ../extensions/page-info/page-info-dialog.c:1404
+msgid "Alt Text"
+msgstr "ഓള്‍ട്ട് ടെക്സ്റ്റ്"
+
+#: ../extensions/page-info/page-info-dialog.c:1416
+#: ../extensions/page-info/page-info-dialog.c:1713
+msgid "Title"
+msgstr "തലക്കെട്ട്"
+
+#: ../extensions/page-info/page-info-dialog.c:1428
+msgid "Width"
+msgstr "വീതി"
+
+#: ../extensions/page-info/page-info-dialog.c:1440
+msgid "Height"
+msgstr "ഉയരം"
+
+#: ../extensions/page-info/page-info-dialog.c:1725
+msgid "Relation"
+msgstr "ബന്ധം"
+
+#: ../extensions/page-info/page-info-dialog.c:1874
+#: ../extensions/page-info/page-info-dialog.c:2015
+msgid "Name"
+msgstr "നാമം"
+
+#: ../extensions/page-info/page-info-dialog.c:1886
+msgid "Method"
+msgstr "മാര്‍ഗ്ഗം"
+
+#: ../extensions/page-info/page-info-dialog.c:1900
+msgid "Action"
+msgstr "പ്രവര്‍ത്തി"
+
+#: ../extensions/page-info/page-info-dialog.c:1981
+msgid "_Copy"
+msgstr "_പകര്‍ത്തുക"
+
+#: ../extensions/page-info/page-info-dialog.c:2027
+msgid "Content"
+msgstr "ഉള്ളടക്കം"
+
+#: ../extensions/page-info/page-info-dialog.c:2128
+msgid "Page Metadata"
+msgstr "താളിന്റെ മെറ്റാഡേറ്റാ"
+
+#: ../extensions/page-info/page-info.glade.h:1
+msgid "<b>Dublin Core Metadata</b>"
+msgstr "<b>ഡ്യൂബ്ലിന്‍ കോര്‍ മെറ്റാഡേറ്റ</b>"
+
+#: ../extensions/page-info/page-info.glade.h:2
+msgid "<b>Forms In Page</b>"
+msgstr "<b>താളിലുള്ള ഫോമുകള്‍</b>"
+
+#: ../extensions/page-info/page-info.glade.h:3
+msgid "<b>Links In Page</b>"
+msgstr "<b>താളിലുള്ള ലിങ്കുകള്‍</b>"
+
+#: ../extensions/page-info/page-info.glade.h:4
+msgid "<b>Media In Page</b>"
+msgstr "<b>താളിലുള്ള മീഡിയാ</b>"
+
+#: ../extensions/page-info/page-info.glade.h:5
+msgid "<b>Medium View</b>"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:6
+msgid "<b>Other Metadata</b>"
+msgstr "<b>മറ്റ് മെറ്റാഡേറ്റ</b>"
+
+#: ../extensions/page-info/page-info.glade.h:7
+msgid "<b>Rendering</b>"
+msgstr "<b>റെന്‍ഡറിങ്</b>"
+
+#: ../extensions/page-info/page-info.glade.h:8
+msgid "<b>Source File</b>"
+msgstr "<b>സോഴ്സ് ഫയല്‍</b>"
+
+#: ../extensions/page-info/page-info.glade.h:9
+msgid "<b>Web Page</b>"
+msgstr "<b>വെബ് താള്‍</b>"
+
+#: ../extensions/page-info/page-info.glade.h:10
+msgid "DYNAMIC"
+msgstr "DYNAMIC"
+
+#: ../extensions/page-info/page-info.glade.h:11
+msgid "Date:"
+msgstr "തീയതി:"
+
+#: ../extensions/page-info/page-info.glade.h:12
+msgid "Description:"
+msgstr "വിവരണം:"
+
+#: ../extensions/page-info/page-info.glade.h:13
+msgid "Encoding:"
+msgstr "എന്‍കോഡിങ്:"
+
+#: ../extensions/page-info/page-info.glade.h:14
+msgid "Expires:"
+msgstr "കാലാവധിയുടെ അവസാനം:"
+
+#: ../extensions/page-info/page-info.glade.h:15
+msgid "Format:"
+msgstr "മാതൃക:"
+
+#: ../extensions/page-info/page-info.glade.h:16
+msgid "Forms"
+msgstr "ഫോമുകള്‍"
+
+#: ../extensions/page-info/page-info.glade.h:17
+msgid "General"
+msgstr "സാധാരണ"
+
+#: ../extensions/page-info/page-info.glade.h:18
+msgid "Links"
+msgstr "ലിങ്കുകള്‍"
+
+#: ../extensions/page-info/page-info.glade.h:19
+msgid "Location:"
+msgstr "സ്ഥാനം:"
+
+#: ../extensions/page-info/page-info.glade.h:20
+msgid "MIME type:"
+msgstr "MIME തരം:"
+
+#: ../extensions/page-info/page-info.glade.h:21
+msgid "Media"
+msgstr "മീഡിയാ"
+
+#: ../extensions/page-info/page-info.glade.h:22
+msgid "Metadata"
+msgstr "മെറ്റാഡേറ്റാ"
+
+#: ../extensions/page-info/page-info.glade.h:23
+msgid "Mode:"
+msgstr "മോഡ്:"
+
+#: ../extensions/page-info/page-info.glade.h:24
+msgid "Modified:"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:25
+msgid "Page Properties"
+msgstr "താളിന്റെ ഗുണഗണങ്ങള്‍"
+
+#: ../extensions/page-info/page-info.glade.h:26
+msgid "Referrer:"
+msgstr ""
+
+#: ../extensions/page-info/page-info.glade.h:27
+msgid "Size:"
+msgstr "വ്യാപ്തി:"
+
+#: ../extensions/page-info/page-info.glade.h:28
+msgid "Source:"
+msgstr "സോഴ്സ്:"
+
+#: ../extensions/page-info/page-info.glade.h:29
+msgid "Title:"
+msgstr "തലക്കെട്ട്:"
+
+#: ../extensions/page-info/page-info.glade.h:30
+msgid "Type:"
+msgstr "ഏത് തരം:"
+
+#: ../extensions/page-info/page-info.glade.h:31
+msgid "_Save Media As..."
+msgstr "മീഡിയ പേരു് മാറ്റി _സൂക്ഷിക്കുക..."
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:165
+msgid "allowed"
+msgstr "allowed"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:169
+msgid "denied"
+msgstr "denied"
+
+#. Sometimes we get this... how did this get in the list!?
+#: ../extensions/permissions/ephy-permissions-dialog.c:174
+msgid "default"
+msgstr "default"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:500
+msgid "Domain"
+msgstr "ഡൊമെയിന്‍"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:512
+#: ../extensions/soup-fly/soup-fly.c:196
+msgid "State"
+msgstr "അവസ്ഥ"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:605
+msgid "Site Permissions"
+msgstr "സൈറ്റിനുള്ള ആനുകൂല്യങ്ങള്‍"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:632
+msgid "Cookies"
+msgstr "കുക്കികള്‍"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:633
+msgid "Images"
+msgstr "ചിത്രങ്ങള്‍"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:634
+msgid "Popup Windows"
+msgstr "പോപ്പപ് ജാലകങ്ങള്‍"
+
+#. stock icon
+#: ../extensions/permissions/ephy-permissions-extension.c:152
+msgid "Site _Permissions"
+msgstr "സൈറ്റിനുള്ള _ആനുകൂല്യങ്ങള്‍"
+
+#. shortcut key
+#: ../extensions/permissions/ephy-permissions-extension.c:154
+msgid "Manage web site permissions"
+msgstr "വെബ് സൈറ്റ് ആനുകൂല്യങ്ങള്‍ കൈകാര്യം ചെയ്യുക"
+
+#: ../extensions/rss/ephy-rss-extension.c:79
+msgid "News Feeds Subscription"
+msgstr "ന്യൂസ് ഫീഡ്സ് സംബ്സ്ക്രിപ്ഷന്‍"
+
+#: ../extensions/rss/ephy-rss-extension.c:81
+msgid "Subscribe to this website's news feeds in your favorite news reader"
+msgstr ""
+
+#: ../extensions/rss/ephy-rss-extension.c:86
+msgid "_Subscribe to this feed"
+msgstr "ഈ ഫീഡില്‍ _അംഗമാകുക"
+
+#: ../extensions/rss/ephy-rss-extension.c:88
+msgid "Subscribe to this feed in your favorite news reader"
+msgstr ""
+
+#: ../extensions/rss/ephy-rss-extension.c:361
+msgid "Subscribe to site's news feed"
+msgstr "സൈറ്റിന്റെ വാര്‍ത്തകളുടെ ഫീഡില്‍ അംഗമാകുക"
+
+#: ../extensions/rss/rss-ui.c:153
+msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
+msgstr ""
+
+#: ../extensions/rss/rss-ui.c:155
+msgid "Retry"
+msgstr "വീണ്ടും ശ്രമിക്കുക"
+
+#: ../extensions/rss/rss-ui.c:283
+msgid "_Copy Feed Address"
+msgstr "ഫീഡ് വിലാസം _പകര്‍ത്തുക"
+
+#: ../extensions/rss/rss-ui.c:563
+msgid "Subscribe"
+msgstr "അംഗമാകുക"
+
+#: ../extensions/rss/rss-ui.glade.h:1
+msgid "<b>Select Interesting Feeds</b>"
+msgstr ""
+
+#: ../extensions/rss/rss-ui.glade.h:2
+#: ../extensions/rss/rss.ephy-extension.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "ന്യൂസ് ഫീഡ് സബ്സ്ക്രിപ്ഷന്‍"
+
+#: ../extensions/rss/rss-ui.glade.h:3
+msgid "_Subscribe"
+msgstr "_അംഗത്വം നേടുക"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:140
+msgid "Render the page without using a style"
+msgstr ""
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:143
+msgid "Render the page using the default style"
+msgstr ""
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:146
+#, c-format
+msgid "Render the page using the “%s” style"
+msgstr ""
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:317
+msgid "St_yle"
+msgstr "_രീതി"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:318
+msgid "Select a different style for this page"
+msgstr ""
+
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
+msgid "Default"
+msgstr "സ്വതവേയുള്ള"
+
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
+msgid "None"
+msgstr "ഒന്നുമില്ല"
+
+#: ../extensions/sidebar/ephy-sidebar.c:167
+msgid "No Sidebars installed"
+msgstr "സൈഡ്ബാറുകള്‍ ഇന്‍സ്റ്റോള്‍ ചെയ്തിട്ടില്ല"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:88
+msgid "_Sidebar"
+msgstr "_സൈഡ്ബാര്‍"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:89
+msgid "Show or hide the sidebar"
+msgstr "സൈഡ്ബാര്‍ കാണിക്കുക അല്ലെങ്കില്‍ അദൃശ്യമാക്കുക"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:306
+msgid "Do you really want to remove this sidebar?"
+msgstr ""
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:310
+msgid "There is no way to recover this sidebar after removal."
+msgstr ""
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:312
+msgid "Remove Sidebar"
+msgstr "സൈഡ്ബാര്‍ നീക്കം ചെയ്യുക"
+
+#. Translators: %s is the sidebar title
+#: ../extensions/sidebar/ephy-sidebar-extension.c:459
+#, c-format
+msgid "The sidebar already contains “%s”"
+msgstr ""
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:463
+msgid "To use this sidebar, select it from the list of available sidebar pages."
+msgstr ""
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:466
+#: ../extensions/sidebar/ephy-sidebar-extension.c:492
+msgid "Add Sidebar"
+msgstr "സൈഡ്ബാര്‍ ചേര്‍ക്കുക"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:486
+#, c-format
+msgid "Add “%s” to the Sidebar?"
+msgstr "സൈഡ്ബാറിലേക്ക് “%s” ചേര്‍ക്കണമോ?"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:490
+#, c-format
+msgid "The source to the new sidebar page is “%s”."
+msgstr ""
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:496
+msgid "_Add Sidebar"
+msgstr "സൈഡ്ബാര്‍ _ചേര്‍ക്കുക"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
+msgid "_Look Up"
+msgstr "_തെരയുക"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:538
+msgid "_GNOME Dictionary"
+msgstr "_ഗ്നോം നിഘണ്ടു"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
+msgid "Open search result in new tab"
+msgstr ""
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
+msgid "Open search result in new tab if true, in new window if false"
+msgstr ""
+
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
+msgid "_Soup Fly"
+msgstr ""
+
+#. shortcut key
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:68
+msgid "Show information about the SoupSession used by the browser"
+msgstr ""
+
+#: ../extensions/soup-fly/soup-fly.c:220
+msgid "Clear finished"
+msgstr ""
+
+#: ../extensions/soup-fly/soup-fly.c:224
+msgid "Automatically remove finished messages"
+msgstr ""
+
+#: ../extensions/actions/actions.ephy-extension.in.in.h:2
+msgid "Execute arbitrary commands from the context menu"
+msgstr ""
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
+msgid "Ad Blocker"
+msgstr ""
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
+msgid "Block the pest!"
+msgstr ""
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
+msgid "Auto Scroll"
+msgstr "ഓട്ടോ സ്ക്രോള്‍"
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
+msgid "Scroll on middle mouse click"
+msgstr ""
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
+msgid "Auto Reload Tab"
+msgstr ""
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
+msgid "Reload a tab periodically"
+msgstr ""
+
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
+msgid "View the page certificate and manage the certificates"
+msgstr ""
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
+msgid "Error viewer"
+msgstr ""
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
+msgid "Validate web pages and check links"
+msgstr ""
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
+msgid "Activate and deactivate extensions"
+msgstr ""
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
+msgid "Extensions Manager"
+msgstr "എക്സ്റ്റെന്‍ഷന്‍സ് മാനേജര്‍"
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
+msgid "Gestures"
+msgstr ""
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:2
+msgid "Perform actions with mouse gestures"
+msgstr ""
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
+msgid "Greasemonkey"
+msgstr "ഗ്രീസ് മങ്കി"
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
+msgid "Run user scripts to modify web pages' behavior"
+msgstr ""
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
+msgid "Java Console"
+msgstr "ജാവാ കണ്‍സോള്‍"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
+msgid "Provide access to the Java-Plugin Console"
+msgstr ""
+
+#: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
+msgid "Live HTTP headers"
+msgstr "ലൈവ് HTTP ഹെഡറുകള്‍"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
+msgid "Display information about and links and media from the current page"
+msgstr ""
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
+msgid "Page Info"
+msgstr "താള്‍ വിവരം"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
+msgid "Edit site permissions"
+msgstr ""
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
+msgid "Permissions"
+msgstr "ആനുകൂല്യങ്ങള്‍"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
+msgid "Drag the page on middle mouse click"
+msgstr ""
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+msgid "Push Scroll"
+msgstr ""
+
+#: ../extensions/rss/rss.ephy-extension.in.in.h:2
+msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr ""
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:1
+msgid "A sample extension"
+msgstr ""
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:2
+msgid "Sample"
+msgstr "മാതൃക"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
+msgid "Select Stylesheet"
+msgstr ""
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
+msgid "Select between different stylesheets offered by the web page"
+msgstr ""
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
+msgid "Adds a sidebar to windows"
+msgstr ""
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
+msgid "Sidebar"
+msgstr "സൈഡ്ബാര്‍"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
+msgid "Look up the selected text with a smart bookmark"
+msgstr ""
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
+msgid "Smart Bookmarks"
+msgstr "സ്മാര്‍ട്ട് അടയാളക്കുറിപ്പുകള്‍"
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
+msgid "Groups newly opened tabs"
+msgstr ""
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
+msgid "Tab Groups"
+msgstr "റ്റാബ് കൂട്ടങ്ങള്‍"
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
+msgid "Indicates new content in background tabs"
+msgstr ""
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
+msgid "Tab States"
+msgstr "റ്റാബിന്റെ അവസ്ഥകള്‍"
+
