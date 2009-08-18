@@ -342,7 +342,7 @@ request_queued_cb (SoupSession *session, SoupMessage *message, SoupFly *logger)
                       -1);
   g_free (uri_string);
   
-  data = g_slice_new (FlyMessageData);
+  data = g_slice_new0 (FlyMessageData);
   data->iter = iter;
   data->logger = logger;
   g_object_set_data (G_OBJECT (message), "FlyMessageData", data);
