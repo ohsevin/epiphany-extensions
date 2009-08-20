@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2009-02-12 10:31+0100\n"
-"PO-Revision-Date: 2009-02-12 10:31+0100\n"
+"POT-Creation-Date: 2009-08-20 22:25+0200\n"
+"PO-Revision-Date: 2009-08-20 22:25+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,6 @@ msgid "_Images"
 msgstr "_Bilder"
 
 #: ../extensions/actions/action-properties.glade.h:11
-#: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Name:"
 msgstr "_Namn:"
 
@@ -82,7 +81,7 @@ msgstr "Anpassa åtgärder"
 msgid "Could not run command"
 msgstr "Kunde inte köra kommando"
 
-#: ../extensions/actions/ephy-actions-extension.c:439
+#: ../extensions/actions/ephy-actions-extension.c:440
 msgid "Could not Run Command"
 msgstr "Kunde inte köra kommando"
 
@@ -139,7 +138,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>Uppdatera regler från ursprungliga webbplatsen</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:230
+#: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
 msgstr "Redigerare för reklamblockerare"
 
@@ -159,11 +158,11 @@ msgstr "Filterset.G"
 msgid "Whitelist"
 msgstr "Vitlista"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:231
+#: ../extensions/adblock/ephy-adblock-extension.c:230
 msgid "Edit Adblock"
 msgstr "Redigera reklamblockerare"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:298
+#: ../extensions/adblock/ephy-adblock-extension.c:299
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -177,10 +176,6 @@ msgstr "Uppdatera _automatiskt"
 #: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
 msgid "Reload the page periodically"
 msgstr "Uppdatera sidan periodvis"
-
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:373
-msgid "View Creative Commons license"
-msgstr "Visa Creative Commons-licensen"
 
 #: ../extensions/certificates/ephy-certificates-extension.c:163
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
@@ -210,115 +205,6 @@ msgstr "Hantera säkerhets_enheter"
 #: ../extensions/certificates/ephy-certificates-extension.c:214
 msgid "Manage your security devices"
 msgstr "Hantera dina säkerhetsenheter"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:1
-msgid "Action for tagged bookmarks:"
-msgstr "Åtgärd för taggade bokmärken:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:2
-msgid "Epilicious Configuration"
-msgstr "Konfiguration för Epilicious"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:3
-msgid "_Backend:"
-msgstr "_Bakände:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:4
-msgid "_Exclude"
-msgstr "_Undanta"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:5
-msgid "_Include"
-msgstr "_Inkludera"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:7
-msgid "_Password:"
-msgstr "_Lösenord:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:8
-msgid "_Tag:"
-msgstr "_Tagg:"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:1
-msgid "Adding new bookmarks and synching topics"
-msgstr "Lägger till nya bokmärken och synkroniserar ämnen"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:2
-msgid "Removing deleted bookmarks"
-msgstr "Tar bort raderade bokmärken"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:4
-#: ../extensions/epilicious/progress.py:41
-#, no-c-format, python-format
-msgid "Retrieving bookmarks from %s"
-msgstr "Hämtar bokmärken från %s"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:5
-msgid "Retrieving bookmarks from epiphany"
-msgstr "Hämtar bokmärken från epiphany"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:6
-msgid "Retrieving previous synch point"
-msgstr "Hämtar föregående synkroniseringspunkt"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:7
-msgid "Saving new synch point"
-msgstr "Sparar ny synkroniseringspunkt"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:9
-#: ../extensions/epilicious/progress.py:39
-#, no-c-format, python-format
-msgid "Synchronizing with %s"
-msgstr "Synkroniserar med %s"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:10
-msgid "Synchronizing..."
-msgstr "Synkroniserar..."
-
-#: ../extensions/epilicious/epilicious.py.in:232
-#: ../extensions/epilicious/epilicious.py.in:250
-msgid "Epilicious Synchronize"
-msgstr "Synkronisering för Epilicious"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:1
-msgid "Bookmarks with this topic will be synchronized."
-msgstr "Bokmärken med det här ämnet kommer att synkroniseras."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:2
-msgid "Controls the function of the topic. If this is unset then all bookmarks with the topic will be synched. If this is set then all bookmarks without the topic will be synched."
-msgstr "Kontrollerar funktionen för ämnet. Om den här inte är inställd kommer alla bokmärken med ämnet att synkroniseras. Om den här är inställd kommer alla bokmärken utan ämnet att synkroniseras."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:3
-msgid "Exclude topic"
-msgstr "Undanta ämne"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:4
-msgid "Shared topic"
-msgstr "Delat ämne"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:5
-msgid "The backend that epilicious will use for synchronizing bookmarks. Allowed values: 'diigo', 'ma.gnolia'"
-msgstr "Bakänden som epilicious ska använda för att synkronisera bokmärken. Tillåtna värden: \"diigo\", \"ma.gnolia\""
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:6
-msgid "The password that epilicious will use for synchronizing bookmarks."
-msgstr "Lösenordet som epilicious ska använda för att synkronisera bokmärken."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:7
-msgid "The username that epilicious will use for synchronizing bookmarks."
-msgstr "Användarnamnet  som epilicious ska använda för att synkronisera bokmärken."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:8
-msgid "epilicious backend"
-msgstr "bakände för epilicious"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:9
-msgid "password"
-msgstr "lösenord"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:10
-msgid "username"
-msgstr "användarnamn"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Check _HTML"
@@ -481,11 +367,11 @@ msgstr ""
 "HTML-fel i %s:\n"
 "Ingen giltig dokumenttyp angiven."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:346
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:345
 msgid "Enabled"
 msgstr "Aktiverad"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:354
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:353
 #: ../extensions/rss/rss-ui.c:571
 msgid "Description"
 msgstr "Beskrivning"
@@ -872,6 +758,7 @@ msgid "Domain"
 msgstr "Domän"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:512
+#: ../extensions/soup-fly/soup-fly.c:196
 msgid "State"
 msgstr "Tillstånd"
 
@@ -1048,6 +935,23 @@ msgstr "Öppna sökresultatet i ny flik"
 msgid "Open search result in new tab if true, in new window if false"
 msgstr "Öppna sökresultatet i en ny flik om sant, i ett nytt fönster om falsk"
 
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
+msgid "_Soup Fly"
+msgstr "_Soup Fly"
+
+#. shortcut key
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:68
+msgid "Show information about the SoupSession used by the browser"
+msgstr "Visa information om den SoupSession som används av webbläsaren"
+
+#: ../extensions/soup-fly/soup-fly.c:220
+msgid "Clear finished"
+msgstr "Töm färdiga"
+
+#: ../extensions/soup-fly/soup-fly.c:224
+msgid "Automatically remove finished messages"
+msgstr "Ta automatiskt bort färdiga meddelanden"
+
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
 msgstr "Kör godtyckliga kommandon från sammanhangsmenyn"
@@ -1077,21 +981,9 @@ msgstr "Uppdatera flik automatiskt"
 msgid "Reload a tab periodically"
 msgstr "Uppdatera en flik periodvis"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
-msgid "Creative Commons license viewer"
-msgstr "Visare för Creative Commons-licensen"
-
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
-msgid "Shows the Creative Commons license of the current website if available"
-msgstr "Visar Creative Commons-licensen för aktuell webbplats, om tillgänglig"
-
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Visa sidans certifikat och hantera certifikaten"
-
-#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
-msgid "Synchronize bookmarks with social bookmark sites"
-msgstr "Synkronisera bokmärken med sociala bokmärkesplatser på nätet"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -1108,14 +1000,6 @@ msgstr "Aktivera och inaktivera utökningar"
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
 msgid "Extensions Manager"
 msgstr "Utökningshanterare"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:1
-msgid "Favicon fallback"
-msgstr "Favoritikonreserv"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:2
-msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
-msgstr "Läser in /favicon.ico som favoritikon om sidan inte använder standardmetoden"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -1170,25 +1054,9 @@ msgstr "Dra sidan vid mittenmusklick"
 msgid "Push Scroll"
 msgstr "Tryckrullning"
 
-#: ../extensions/python-console/python-console.ephy-extension.in.h:1
-msgid "Opens an interactive Python console"
-msgstr "Öppnar en interaktiv Python-konsoll"
-
-#: ../extensions/python-console/python-console.ephy-extension.in.h:2
-msgid "Python Console"
-msgstr "Python-konsoll"
-
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr "Prenumerera på en nyhetskälla som erbjuds av webbsidan i din favoritnyhetsläsare"
-
-#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
-msgid "A sample extension with mozilla backend"
-msgstr "En exempelutökning med mozilla-bakänden"
-
-#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:2
-msgid "Sample (Mozilla)"
-msgstr "Exempel (Mozilla)"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
 msgid "A sample extension"
@@ -1238,6 +1106,95 @@ msgstr "Indikerar nytt innehåll i bakgrundsflikar"
 msgid "Tab States"
 msgstr "Fliktillstånd"
 
+#~ msgid "View Creative Commons license"
+#~ msgstr "Visa Creative Commons-licensen"
+#~ msgid "Action for tagged bookmarks:"
+#~ msgstr "Åtgärd för taggade bokmärken:"
+#~ msgid "Epilicious Configuration"
+#~ msgstr "Konfiguration för Epilicious"
+#~ msgid "_Backend:"
+#~ msgstr "_Bakände:"
+#~ msgid "_Exclude"
+#~ msgstr "_Undanta"
+#~ msgid "_Include"
+#~ msgstr "_Inkludera"
+#~ msgid "_Password:"
+#~ msgstr "_Lösenord:"
+#~ msgid "_Tag:"
+#~ msgstr "_Tagg:"
+#~ msgid "Adding new bookmarks and synching topics"
+#~ msgstr "Lägger till nya bokmärken och synkroniserar ämnen"
+#~ msgid "Removing deleted bookmarks"
+#~ msgstr "Tar bort raderade bokmärken"
+#~ msgid "Retrieving bookmarks from %s"
+#~ msgstr "Hämtar bokmärken från %s"
+#~ msgid "Retrieving bookmarks from epiphany"
+#~ msgstr "Hämtar bokmärken från epiphany"
+#~ msgid "Retrieving previous synch point"
+#~ msgstr "Hämtar föregående synkroniseringspunkt"
+#~ msgid "Saving new synch point"
+#~ msgstr "Sparar ny synkroniseringspunkt"
+#~ msgid "Synchronizing with %s"
+#~ msgstr "Synkroniserar med %s"
+#~ msgid "Synchronizing..."
+#~ msgstr "Synkroniserar..."
+#~ msgid "Epilicious Synchronize"
+#~ msgstr "Synkronisering för Epilicious"
+#~ msgid "Bookmarks with this topic will be synchronized."
+#~ msgstr "Bokmärken med det här ämnet kommer att synkroniseras."
+#~ msgid ""
+#~ "Controls the function of the topic. If this is unset then all bookmarks "
+#~ "with the topic will be synched. If this is set then all bookmarks without "
+#~ "the topic will be synched."
+#~ msgstr ""
+#~ "Kontrollerar funktionen för ämnet. Om den här inte är inställd kommer "
+#~ "alla bokmärken med ämnet att synkroniseras. Om den här är inställd kommer "
+#~ "alla bokmärken utan ämnet att synkroniseras."
+#~ msgid "Exclude topic"
+#~ msgstr "Undanta ämne"
+#~ msgid "Shared topic"
+#~ msgstr "Delat ämne"
+#~ msgid ""
+#~ "The backend that epilicious will use for synchronizing bookmarks. Allowed "
+#~ "values: 'diigo', 'ma.gnolia'"
+#~ msgstr ""
+#~ "Bakänden som epilicious ska använda för att synkronisera bokmärken. "
+#~ "Tillåtna värden: \"diigo\", \"ma.gnolia\""
+#~ msgid "The password that epilicious will use for synchronizing bookmarks."
+#~ msgstr ""
+#~ "Lösenordet som epilicious ska använda för att synkronisera bokmärken."
+#~ msgid "The username that epilicious will use for synchronizing bookmarks."
+#~ msgstr ""
+#~ "Användarnamnet  som epilicious ska använda för att synkronisera bokmärken."
+#~ msgid "epilicious backend"
+#~ msgstr "bakände för epilicious"
+#~ msgid "password"
+#~ msgstr "lösenord"
+#~ msgid "username"
+#~ msgstr "användarnamn"
+#~ msgid "Creative Commons license viewer"
+#~ msgstr "Visare för Creative Commons-licensen"
+#~ msgid ""
+#~ "Shows the Creative Commons license of the current website if available"
+#~ msgstr ""
+#~ "Visar Creative Commons-licensen för aktuell webbplats, om tillgänglig"
+#~ msgid "Synchronize bookmarks with social bookmark sites"
+#~ msgstr "Synkronisera bokmärken med sociala bokmärkesplatser på nätet"
+#~ msgid "Favicon fallback"
+#~ msgstr "Favoritikonreserv"
+#~ msgid ""
+#~ "Loads /favicon.ico as favicon if the site doesn't use the standard method"
+#~ msgstr ""
+#~ "Läser in /favicon.ico som favoritikon om sidan inte använder "
+#~ "standardmetoden"
+#~ msgid "Opens an interactive Python console"
+#~ msgstr "Öppnar en interaktiv Python-konsoll"
+#~ msgid "Python Console"
+#~ msgstr "Python-konsoll"
+#~ msgid "A sample extension with mozilla backend"
+#~ msgstr "En exempelutökning med mozilla-bakänden"
+#~ msgid "Sample (Mozilla)"
+#~ msgstr "Exempel (Mozilla)"
 #~ msgid "_Extensions..."
 #~ msgstr "_Utökningar..."
 #~ msgid ""
@@ -1336,8 +1293,6 @@ msgstr "Fliktillstånd"
 #~ msgstr "Mediavy"
 #~ msgid "Other Metadata"
 #~ msgstr "Andra metadata"
-#~ msgid "Source File"
-#~ msgstr "Källfil"
 #~ msgid "Web page"
 #~ msgstr "Webbsida"
 #~ msgid "_Format:"
