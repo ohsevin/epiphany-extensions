@@ -208,11 +208,14 @@ ephy_cell_renderer_tab_render (GtkCellRenderer      *cell,
   layout = gtk_widget_create_pango_layout (widget,
                                            ephy_web_view_get_title (view));
   pango_layout_set_width (layout, width * PANGO_SCALE);
-  if (pango_layout_get_line_count (layout) >= n_columns)
-    {
-      if (ephy_web_view_get_icon (view))
-        pango_layout_set_indent (layout, icon_width * PANGO_SCALE);
-    }
+  if (ephy_web_view_get_icon (view))
+    pango_layout_set_indent (layout, icon_width * PANGO_SCALE);
+  /* 
+   * If wrapping words is not enough, wrap chars instead.
+   * This way, as much title text as possible is visible.
+   */
+  if (pango_layout_get_line_count (layout) > n_columns)
+    pango_layout_set_wrap (layout, PANGO_WRAP_CHAR);
   pango_layout_set_height (layout, -(int)n_columns);
   pango_layout_set_ellipsize (layout, PANGO_ELLIPSIZE_END);
   gtk_paint_layout (widget->style,
