@@ -83,7 +83,7 @@ ephy_cell_renderer_tab_activate (GtkCellRenderer      *cell,
   int icon_width, icon_height;
 
   /* We only handle mouse events for the small buttons */
-  if (event->type != GDK_BUTTON_PRESS)
+  if (event == NULL || event->type != GDK_BUTTON_PRESS)
     return FALSE;
 
   x = event->button.x - cell_area->x - cell->xpad;
