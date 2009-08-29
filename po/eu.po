@@ -6,15 +6,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions&component=general\n"
-"POT-Creation-Date: 2009-02-11 23:10+0000\n"
-"PO-Revision-Date: 2009-03-16 19:43+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
+"POT-Creation-Date: 2009-08-29 18:45+0200\n"
+"PO-Revision-Date: 2009-08-29 18:47+0200\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
 
 #: ../extensions/actions/action-properties.glade.h:1
@@ -72,7 +72,6 @@ msgid "_Images"
 msgstr "_Irudiak"
 
 #: ../extensions/actions/action-properties.glade.h:11
-#: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Name:"
 msgstr "I_zena:"
 
@@ -97,7 +96,7 @@ msgstr "Pertsonalizatu ekintzak"
 msgid "Could not run command"
 msgstr "Ezin izan da komandoa exekutatu"
 
-#: ../extensions/actions/ephy-actions-extension.c:439
+#: ../extensions/actions/ephy-actions-extension.c:440
 msgid "Could not Run Command"
 msgstr "Ezin izan da komandoa exekutatu"
 
@@ -160,7 +159,7 @@ msgid "<b>Update rules from original site</b>"
 msgstr "<b>Eguneratu arauak jatorrizko gunetik</b>"
 
 #: ../extensions/adblock/adblock.glade.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:230
+#: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
 msgstr "Iragarki-blokeoen editorea"
 
@@ -180,11 +179,11 @@ msgstr "Filterset.G"
 msgid "Whitelist"
 msgstr "Zerrenda zuria"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:231
+#: ../extensions/adblock/ephy-adblock-extension.c:230
 msgid "Edit Adblock"
 msgstr "Editatu iragazki-blokeoa"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:298
+#: ../extensions/adblock/ephy-adblock-extension.c:299
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -198,10 +197,6 @@ msgstr "Birkargatze _automatikoa"
 #: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
 msgid "Reload the page periodically"
 msgstr "Birkargatu orrialdea aldizka"
-
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:373
-msgid "View Creative Commons license"
-msgstr "Ikusi Creative Commons lizentzia"
 
 #: ../extensions/certificates/ephy-certificates-extension.c:163
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
@@ -231,128 +226,6 @@ msgstr "Kudeatu segurtasun-_gailuak"
 #: ../extensions/certificates/ephy-certificates-extension.c:214
 msgid "Manage your security devices"
 msgstr "Kudeatu segurtasun-gailuak"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:1
-msgid "Action for tagged bookmarks:"
-msgstr "Etiketatutako laster-marken ekintza:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:2
-msgid "Epilicious Configuration"
-msgstr "Epilicious-en konfigurazioa"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:3
-msgid "_Backend:"
-msgstr "_Motorra:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:4
-msgid "_Exclude"
-msgstr "_Baztertu"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:5
-msgid "_Include"
-msgstr "_Sartu"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:7
-msgid "_Password:"
-msgstr "_Pasahitza:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:8
-msgid "_Tag:"
-msgstr "_Etiketa:"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:1
-msgid "Adding new bookmarks and synching topics"
-msgstr "Laster-marka berriak gehitzen eta gaiak sinkronizatzen"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:2
-msgid "Removing deleted bookmarks"
-msgstr "Ezabatutako laster-markak kentzen"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:4
-#: ../extensions/epilicious/progress.py:41
-#, no-c-format, python-format
-msgid "Retrieving bookmarks from %s"
-msgstr "'%s'-(e)tik laster-markak eskuratzen"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:5
-msgid "Retrieving bookmarks from epiphany"
-msgstr "Epiphany-tik laster-markak eskuratzen"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:6
-msgid "Retrieving previous synch point"
-msgstr "Aurreko sinkronizazio-puntua eskuratzen"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:7
-msgid "Saving new synch point"
-msgstr "Sinkronizazio-puntu berria gordetzen"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:9
-#: ../extensions/epilicious/progress.py:39
-#, no-c-format, python-format
-msgid "Synchronizing with %s"
-msgstr "%s-(e)kin sinkronizatzen"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:10
-msgid "Synchronizing..."
-msgstr "Sinkronizatu..."
-
-#: ../extensions/epilicious/epilicious.py.in:232
-#: ../extensions/epilicious/epilicious.py.in:250
-msgid "Epilicious Synchronize"
-msgstr "Epilicious-en sinkronizazioa"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:1
-msgid "Bookmarks with this topic will be synchronized."
-msgstr "Laster-markak (bere gaiekin) sinkronizatuko dira."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:2
-msgid ""
-"Controls the function of the topic. If this is unset then all bookmarks with "
-"the topic will be synched. If this is set then all bookmarks without the "
-"topic will be synched."
-msgstr ""
-"Gaiaren funtzioa kontrolatzen du. Desaktibatzen bada, laster-marka guztiak "
-"(beraien gaiekin) sinkronizatu egingo dira. Aktibatzen bada, laster-marka "
-"guztiak gairik gabe sinkronizatuko dira."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:3
-msgid "Exclude topic"
-msgstr "Baztertu gaia"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:4
-msgid "Shared topic"
-msgstr "Partekatutako gaia"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:5
-#| msgid ""
-#| "The backend that epilicious will use for synchronizing bookmarks. Allowed "
-#| "value: 'ma.gnolia'"
-msgid ""
-"The backend that epilicious will use for synchronizing bookmarks. Allowed "
-"values: 'diigo', 'ma.gnolia'"
-msgstr ""
-"Epilicious-ek laster-markak sinkronizatzeko erabiliko duen motorra. Balio "
-"erabilgarriak: 'diigo', 'ma.gnolia'"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:6
-msgid "The password that epilicious will use for synchronizing bookmarks."
-msgstr "Pasahitza epilicious-ek laster-markak sinkronizatzean erabiltzeko."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:7
-msgid "The username that epilicious will use for synchronizing bookmarks."
-msgstr "Erabitzaile-izena epilicious-ek laster-markak sinkronizatzean erabiltzeko."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:8
-msgid "epilicious backend"
-msgstr "epilicious motorra"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:9
-msgid "password"
-msgstr "pasahitza"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:10
-msgid "username"
-msgstr "erabiltzaile-izena"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Check _HTML"
@@ -519,11 +392,11 @@ msgstr ""
 "HTML errorea %s-(e)n:\n"
 "Ez da doctype-rik zehaztu."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:346
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:345
 msgid "Enabled"
 msgstr "Gaituta"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:354
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:353
 #: ../extensions/rss/rss-ui.c:571
 msgid "Description"
 msgstr "Azalpena"
@@ -910,6 +783,7 @@ msgid "Domain"
 msgstr "Domeinua"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:512
+#: ../extensions/soup-fly/soup-fly.c:196
 msgid "State"
 msgstr "Egoera"
 
@@ -1092,6 +966,23 @@ msgstr ""
 "Ireki bilaketako emaitzak fitxa berrian 'true' (EGIA) bada; "
 "'false' (faltsua) bada leiho berri batean."
 
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
+msgid "_Soup Fly"
+msgstr "_Soup Fly"
+
+#. shortcut key
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:68
+msgid "Show information about the SoupSession used by the browser"
+msgstr "Erakutsi arakaztailean erabilitako SoupSession buruzko informazioa "
+
+#: ../extensions/soup-fly/soup-fly.c:220
+msgid "Clear finished"
+msgstr "Garbitu burututakoa"
+
+#: ../extensions/soup-fly/soup-fly.c:224
+msgid "Automatically remove finished messages"
+msgstr "Kendu automatikoki amaitutako mezuak"
+
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
 msgstr "Exekutatu komando arbitrarioak testuinguruko menutik"
@@ -1120,23 +1011,9 @@ msgstr "Automatikoki birkargatu fitxa"
 msgid "Reload a tab periodically"
 msgstr "Birkargatu fitxa aldika"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
-msgid "Creative Commons license viewer"
-msgstr "Creative Commons lizentziaren ikustailea"
-
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
-msgid "Shows the Creative Commons license of the current website if available"
-msgstr ""
-"Uneko web gunearen Creative Commons lizentzia erakusten du (eskuragarri "
-"egonez gero)"
-
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Ikusi orrialdearen ziurtagiria eta kudeatu ziurtagiriak"
-
-#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
-msgid "Synchronize bookmarks with social bookmark sites"
-msgstr "Sinkronizatu laster-markak gune sozialetako laster-markekin"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -1153,14 +1030,6 @@ msgstr "Aktibatu eta desaktibatu hedapenak"
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
 msgid "Extensions Manager"
 msgstr "Hedapenen kudeatzailea"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:1
-msgid "Favicon fallback"
-msgstr "Favicon lehenetsia"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:2
-msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
-msgstr "'/favicon.ico' kargatzen du guneak metodo estandarra ez badu erabiltzen"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -1216,27 +1085,11 @@ msgstr "Arrastatu orrialdea saguaren erdiko botoiarekin klik eginez"
 msgid "Push Scroll"
 msgstr "Korritu saguarekin"
 
-#: ../extensions/python-console/python-console.ephy-extension.in.h:1
-msgid "Opens an interactive Python console"
-msgstr "Ireki Python-en kontsola elkarreragilea"
-
-#: ../extensions/python-console/python-console.ephy-extension.in.h:2
-msgid "Python Console"
-msgstr "Python-en kontsola"
-
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr ""
 "Harpidetu web orrialdeek eskaintzen dituzten berri-iturrietara zure berri-"
 "irakurle gogokoenean"
-
-#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
-msgid "A sample extension with mozilla backend"
-msgstr "Hedapen baten lagina mozilla motorrarekin"
-
-#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:2
-msgid "Sample (Mozilla)"
-msgstr "Lagina (Mozilla)"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
 msgid "A sample extension"
