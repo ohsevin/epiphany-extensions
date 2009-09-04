@@ -517,6 +517,7 @@ ensure_adblocker (EphyAdblockExtension *ext,
 		  EphyEmbed *embed)
 {
 	AdBlocker *blocker;
+	EphyWebView *web_view = ephy_embed_get_web_view (embed);
 
 	blocker = g_object_get_data (G_OBJECT (embed), AD_BLOCKER_KEY);
 
@@ -530,10 +531,10 @@ ensure_adblocker (EphyAdblockExtension *ext,
 		g_object_set_data_full (G_OBJECT (embed), AD_BLOCKER_KEY,
 					blocker, (GDestroyNotify) g_object_unref);
 
-		g_signal_connect (embed, "new-document-now",
+		g_signal_connect (web_view, "new-document-now",
 				  G_CALLBACK (location_changed_cb), blocker);
 
-		g_signal_connect (embed, "content-blocked",
+		g_signal_connect (web_view, "content-blocked",
 				  G_CALLBACK (content_blocked_cb), blocker);
 	}
 
