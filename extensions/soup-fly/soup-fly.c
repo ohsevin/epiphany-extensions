@@ -280,8 +280,9 @@ message_got_chunk_cb (SoupMessage *message, SoupBuffer *chunk, FlyMessageData *d
 
   data->received += chunk->length;
   if (data->content_length && data->received) {
+    gint percentage = CLAMP ((int)(data->received * 100 / data->content_length), 0, 100);
     gtk_list_store_set (GTK_LIST_STORE (priv->model), &data->iter,
-                        COL_PROGRESS, (int)(data->received * 100 / data->content_length),
+                        COL_PROGRESS, percentage,
                         -1);
   }
 }
