@@ -1,3 +1,23 @@
+===========================
+Epiphany Extensions 2.27.92
+===========================
+
+The highlight for this release is the return of the adblock functionality :-).
+
+Changes:
+	* Enable silent build with automake 1.11.
+	* Re-enable adblock functionality.
+
+Bug fixes:
+	* Fix tab-states for newer Epiphany API.
+
+Translations:
+	* Updated Basque language by Inaki Larranaga Murgoitio.
+
+Many thanks to contributors to this release:
+Diego Escalante Urrelo, Gustavo Noronha Silva, Inaki Larranaga Murgoitio,
+Xan López
+
 ==========================
 Epiphany Extensions 2.17.4
 ==========================
