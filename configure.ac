@@ -15,8 +15,8 @@
 # 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 
 m4_define([e_e_version_major],[2])
-m4_define([e_e_version_minor],[27])
-m4_define([e_e_version_micro],[92])
+m4_define([e_e_version_minor],[28])
+m4_define([e_e_version_micro],[0])
 m4_define([e_e_version],[e_e_version_major.e_e_version_minor.e_e_version_micro])
 
 # This can be either "trunk" or "branches/gnome-x-y"
@@ -125,7 +125,7 @@ PKG_CHECK_MODULES([EPIPHANY_DEPENDENCY], [\
 		  gio-2.0 >= $LIBGLIB_REQUIRED \
 		  gmodule-2.0 \
 		  gtk+-2.0 >= $LIBGTK_REQUIRED \
-                  gconf-2.0 \
+		  gconf-2.0 \
 		  epiphany-$EPIPHANY_API_VERSION >= $EPIPHANY_REQUIRED])
 AC_SUBST([EPIPHANY_DEPENDENCY_CFLAGS])
 AC_SUBST([EPIPHANY_DEPENDENCY_LIBS])
