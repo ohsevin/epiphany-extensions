@@ -140,13 +140,13 @@ ephy_tab_states_extension_finalize (GObject *object)
 
 static GtkWidget *
 get_real_tab_label (EphyWindow *window,
-		    EphyEmbed *tab)
+		    EphyEmbed *embed)
 {
 	GtkWidget *hbox, *label, *notebook;
 
 	notebook = ephy_window_get_notebook (window);
 	hbox = gtk_notebook_get_tab_label (GTK_NOTEBOOK (notebook),
-					   GTK_WIDGET (tab));
+					   GTK_WIDGET (embed));
 	label = g_object_get_data (G_OBJECT (hbox), "label");
 	g_return_val_if_fail (label != NULL, NULL);
 
@@ -168,15 +168,19 @@ sync_active_tab (EphyWindow *window,
 		 GParamSpec *pspec,
 		 EphyTabStatesExtension *extension)
 {
-	EphyEmbed *active_tab;
+	EphyEmbed *embed;
+	WebKitWebView *web_view;
+	EphyWebView *view;
 	GtkWidget *label;
 
-	active_tab = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
+	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
+	web_view = EPHY_GET_WEBKIT_WEB_VIEW_FROM_EMBED (embed);
+	view = EPHY_WEB_VIEW (web_view);
 
-	if (ephy_web_view_is_loading (EPHY_GET_EPHY_WEB_VIEW_FROM_EMBED (active_tab)) == FALSE)
+	if (ephy_web_view_is_loading (view) == FALSE)
 	{
 		/* mark the tab as read */
-		label = get_real_tab_label (window, active_tab);
+		label = get_real_tab_label (window, embed);
 		gtk_widget_modify_font (label, NULL);
 #ifdef ENABLE_COLOURS
 		set_label_colour (label, NULL);
@@ -185,12 +189,13 @@ sync_active_tab (EphyWindow *window,
 }
 
 static void
-sync_load_status (EphyEmbed *tab,
+sync_load_status (EphyWebView *view,
 		  GParamSpec *pspec,
 		  EphyTabStatesExtension *extension)
 {
 	EphyTabStatesExtensionPrivate *priv = extension->priv;
 	EphyWindow *window;
+	EphyEmbed *embed;
 	GtkWidget *label;
 	PangoFontDescription *font_desc = NULL;
 	gboolean loading;
@@ -198,10 +203,11 @@ sync_load_status (EphyEmbed *tab,
 	GdkColor *colour = NULL;
 #endif
 
-	window = EPHY_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (tab)));
+	window = EPHY_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (view)));
 	g_return_if_fail (window != NULL);
 
-	loading = ephy_web_view_is_loading (EPHY_GET_EPHY_WEB_VIEW_FROM_EMBED (tab));
+	embed = EPHY_GET_EMBED_FROM_EPHY_WEB_VIEW (view);
+	loading = ephy_web_view_is_loading (view);
 	if (loading)
 	{
 #ifdef ENABLE_COLOURS
@@ -209,7 +215,7 @@ sync_load_status (EphyEmbed *tab,
 #endif
 		font_desc = priv->bold_font_desc;
 	}
-	else if (tab != ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window)))
+	else if (embed != ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window)))
 	{
 #ifdef ENABLE_COLOURS
 		colour = &priv->tab_unread_colour;
@@ -217,7 +223,7 @@ sync_load_status (EphyEmbed *tab,
 		font_desc = priv->bold_font_desc;
 	}
 
-	label = get_real_tab_label (window, tab);
+	label = get_real_tab_label (window, embed);
 	gtk_widget_modify_font (label, font_desc);
 #ifdef ENABLE_COLOURS
 	set_label_colour (label, colour);
@@ -252,28 +258,38 @@ impl_detach_window (EphyExtension *ext,
 static void
 impl_attach_tab (EphyExtension *ext,
 		 EphyWindow *window,
-		 EphyEmbed *tab)
+		 EphyEmbed *embed)
 {
 	EphyTabStatesExtension *extension = EPHY_TAB_STATES_EXTENSION (ext);
+	WebKitWebView *web_view;
+	EphyWebView *view;
 
-	LOG ("impl_attach_tab window %p tab %p", window, tab);
+	LOG ("impl_attach_tab window %p tab %p", window, embed);
 
-	sync_load_status (tab, NULL, extension);
-	g_signal_connect (tab, "notify::load-status",
+	web_view = EPHY_GET_WEBKIT_WEB_VIEW_FROM_EMBED (embed);
+	view = EPHY_WEB_VIEW (web_view);
+
+	sync_load_status (view, NULL, extension);
+	g_signal_connect (view, "notify::load-status",
 			  G_CALLBACK (sync_load_status), extension);
 }
 
 static void
 impl_detach_tab (EphyExtension *ext,
 		 EphyWindow *window,
-		 EphyEmbed *tab)
+		 EphyEmbed *embed)
 {
 	EphyTabStatesExtension *extension = EPHY_TAB_STATES_EXTENSION (ext);
+	WebKitWebView *web_view;
+	EphyWebView *view;
 
-	LOG ("impl_detach_tab window %p tab %p", window, tab);
+	LOG ("impl_detach_tab window %p tab %p", window, embed);
+
+	web_view = EPHY_GET_WEBKIT_WEB_VIEW_FROM_EMBED (embed);
+	view = EPHY_WEB_VIEW (web_view);
 
 	g_signal_handlers_disconnect_by_func
-		(tab, G_CALLBACK (sync_load_status), extension);
+		(view, G_CALLBACK (sync_load_status), extension);
 }
 
 static void
