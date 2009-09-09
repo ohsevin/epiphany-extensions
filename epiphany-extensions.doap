@@ -18,4 +18,11 @@
       <gnome:userid>xan</gnome:userid>
     </foaf:Person>
   </maintainer>
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Diego Escalante Urrelo</foaf:name>
+      <foaf:mbox rdf:resource="mailto:diegoe@gnome.org" />
+      <gnome:userid>diegoe</gnome:userid>
+    </foaf:Person>
+  </maintainer>
 </Project>
