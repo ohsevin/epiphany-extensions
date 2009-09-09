@@ -474,7 +474,8 @@ rss_ui_populate_store (RssUI *dialog)
 	/* We start populating the list, and try to select as much as possible
 	 * avoiding duplicate feeds
 	 */
-	location = ephy_embed_get_location (priv->embed, TRUE);
+	location = ephy_web_view_get_location
+			(EPHY_GET_EPHY_WEB_VIEW_FROM_EMBED (priv->embed), TRUE);
 	decision.hostname = g_strdup (ephy_string_get_host_name (location));
 
 	/* Fill the store, and select the appropriate feeds */

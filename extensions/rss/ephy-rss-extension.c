@@ -289,16 +289,20 @@ impl_attach_tab (EphyExtension *extension,
 		 EphyWindow *window,
 		 EphyEmbed *embed)
 {
+	EphyWebView *view;
+
 	LOG ("Attach rss listener to tab");
 
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
+	view = EPHY_GET_EPHY_WEB_VIEW_FROM_EMBED (embed);
+
 	/* Notify when a new rss feed is parsed */
-	g_signal_connect_after (embed, "new-document-now",
+	g_signal_connect_after (view, "new-document-now",
 				G_CALLBACK (ephy_rss_ge_content_cb), window);
-	g_signal_connect_after (embed, "ge-feed-link",
+	g_signal_connect_after (view, "ge-feed-link",
 			    G_CALLBACK (ephy_rss_ge_feed_cb), window);
-	g_signal_connect (embed, "ge-context-menu",
+	g_signal_connect (view, "ge-context-menu",
 			    G_CALLBACK (ephy_rss_ge_context_cb), window);
 }
 
