@@ -1,21 +1,23 @@
 # Lithuanian translation of epiphany-extensions.
-# Copyright (C) 2004-2006 Free Software Foundation, Inc.
+# Copyright (C) 2004-2009 Free Software Foundation, Inc.
 # This file is distributed under the same license as the epiphany-extensions package.
-# Žygimantas Beručka <zygis@gnome.org>, 2004-2006.
-# 
-# 
+# Žygimantas Beručka <zygis@gnome.org>, 2004-2006, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions HEAD\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-16 13:05+0200\n"
-"PO-Revision-Date: 2006-03-16 13:07+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product"
+"=epiphany-extensions&component=general\n"
+"POT-Creation-Date: 2009-07-12 21:38+0000\n"
+"PO-Revision-Date: 2009-09-16 20:38+0300\n"
 "Last-Translator: Žygimantas Beručka <zygis@gnome.org>\n"
-"Language-Team: Lithuanian <komp_lt@konferencijos.lt>\n"
+"Language-Team: Lithuanian\n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%"
+"100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Virtaal 0.4.0\n"
 
 #: ../extensions/actions/action-properties.glade.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
@@ -30,16 +32,16 @@ msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "images."
 msgstr ""
-"Jei šis nustatymas yra įjungtas, veiksmas bus įtrauktas į paveikslėlių "
-"iššokantį meniu."
+"Jei ši parinktis įjungta, veiksmas bus įtrauktas į paveikslėlių iškeliamą "
+"meniu."
 
 #: ../extensions/actions/action-properties.glade.h:4
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "links and pages."
 msgstr ""
-"Jei šis nustatymas yra įjungtas, veiksmas bus įtrauktas į nuorodų ir "
-"puslapių iššokantį meniu."
+"Jei ši parinktis yra įjungta, veiksmas bus įtrauktas į nuorodų ir puslapių "
+"iškeliamą meniu."
 
 #: ../extensions/actions/action-properties.glade.h:5
 msgid "The action description."
@@ -50,16 +52,16 @@ msgid ""
 "The action name. If a character is preceded by an underscore, that character "
 "will be used as the access key for the menu item."
 msgstr ""
-"Veiksmo pavadinimas. Jeigu simbolio pradžioje yra pabraukimas, tas "
-"simbolisbus naudojamas kaip meniu elemento pasiekimo klavišas."
+"Veiksmo pavadinimas. Jeigu prieš simbolį yra pabraukimo brūkšnys, tas "
+"simbolis bus naudojamas kaip meniu elemento prieigos raktas."
 
 #: ../extensions/actions/action-properties.glade.h:7
 msgid ""
 "The command to execute when the action is activated. The URL of the link, "
 "image or page will be appended to the command."
 msgstr ""
-"Komanda vykdoma, kai aktyvuojamas veiksmas. Nuorodos URL, paveikslėlis arba "
-"puslapis bus pridėti prie komandos."
+"Komanda, vykdytina suaktyvinus veiksmą. Nuorodos, paveikslėlio arba puslapio "
+"URL bus pridėtas prie komandos."
 
 #: ../extensions/actions/action-properties.glade.h:8
 msgid "_Command:"
@@ -87,26 +89,27 @@ msgid "Actions"
 msgstr "Veiksmai"
 
 #: ../extensions/actions/ephy-actions-extension.c:112
-msgid "_Actions"
+#| msgid "Actions"
+msgid "Actio_ns"
 msgstr "_Veiksmai"
 
 #: ../extensions/actions/ephy-actions-extension.c:113
 msgid "Customize actions"
-msgstr "Keisti veiksmus"
+msgstr "Taisyti veiksmus"
 
 #: ../extensions/actions/ephy-actions-extension.c:436
 msgid "Could not run command"
 msgstr "Nepavyko paleisti komandos"
 
-#: ../extensions/actions/ephy-actions-extension.c:439
+#: ../extensions/actions/ephy-actions-extension.c:440
 msgid "Could not Run Command"
 msgstr "Nepavyko paleisti komandos"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:519
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
 msgid "No action selected."
-msgstr "Veiksmas nepasirinktas."
+msgstr "Nepasirinktas joks veiksmas."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:529
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
@@ -127,77 +130,136 @@ msgstr "„%s“ savybės"
 msgid "Action Properties"
 msgstr "Veiksmo savybės"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+#: ../extensions/adblock/adblock-ui.c:263
+msgid ""
+"This list is Copyright © its original author(G). It is relicensed under the "
+"GPL with permission.\n"
+"The original list, Filterset.G, can be found at "
+"http://www.pierceive.com/filtersetg/.\n"
+"This version has been modified from its original. The changes have not been "
+"approved by the original author;\n"
+"direct any problems to Bugzilla and not to the original author (G).\n"
+msgstr ""
+"Šio sąrašo autoriaus teisės © priklauso jo tikrąjam autoriui (G). Jis "
+"perlicencijuotas GPL licencijos sąlygomis jam leidus.\n"
+"Originalų sąrašą – Filterset.G – galite rasti "
+"http://www.pierceive.com/filtersetg/.\n"
+"Ši versija yra pakeista lyginant su originalu. Šie pakeitimai atlikti be "
+"originalaus autoriaus patvirtinimo;\n"
+"praneškite apie bet kokias problemas Bugziloje, o ne originaliam autoriui "
+"(G).\n"
+
+#: ../extensions/adblock/adblock-ui.c:481
+msgid "Pattern"
+msgstr "Šablonas"
+
+#: ../extensions/adblock/adblock.glade.h:1
+msgid "<b>Courtesy of Graham Pierce</b>"
+msgstr "<b>Graham Pierce dėka</b>"
+
+#: ../extensions/adblock/adblock.glade.h:2
+#| msgid "<b>Source File</b>"
+msgid "<b>New rule</b>"
+msgstr "<b>Nauja taisyklė</b>"
+
+#: ../extensions/adblock/adblock.glade.h:3
+msgid "<b>Update rules from original site</b>"
+msgstr "<b>Atnaujinti taisykles iš originalios svetainės</b>"
+
+#: ../extensions/adblock/adblock.glade.h:4
+#: ../extensions/adblock/ephy-adblock-extension.c:229
+msgid "Adblock Editor"
+msgstr "Adblock redaktorius"
+
+#: ../extensions/adblock/adblock.glade.h:5
+msgid "Add a new rule"
+msgstr "Pridėti naują taisyklę"
+
+#: ../extensions/adblock/adblock.glade.h:6
+msgid "Blacklist"
+msgstr "Juodasis sąrašas"
+
+#: ../extensions/adblock/adblock.glade.h:7
+msgid "Filterset.G"
+msgstr "Filtrų rinkinys.G"
+
+#: ../extensions/adblock/adblock.glade.h:8
+msgid "Whitelist"
+msgstr "Baltasis sąrašas"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:230
+msgid "Edit Adblock"
+msgstr "Taisyti Adblock"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:299
+#, c-format
+msgid "%d hidden advertisement"
+msgid_plural "%d hidden advertisements"
+msgstr[0] "%d paslėpta reklama"
+msgstr[1] "%d paslėptos reklamos"
+msgstr[2] "%d paslėptų reklamų"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:81
 msgid "_Auto Reload"
-msgstr "_Automatiškai perkrauti"
+msgstr "_Automatiškai įkelti iš naujo"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:85
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
 msgid "Reload the page periodically"
-msgstr "Periodiškai perkrauti puslapį"
+msgstr "Periodiškai įkelti puslapį iš naujo"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:177
+#: ../extensions/certificates/ephy-certificates-extension.c:163
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
-msgstr "Sertifikatai"
+msgstr "Liudijmai"
 
-#: ../extensions/certificates/ephy-certificates-extension.c:208
+#: ../extensions/certificates/ephy-certificates-extension.c:194
 msgid "Security Devices"
 msgstr "Saugumo įrenginiai"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:327
+#: ../extensions/certificates/ephy-certificates-extension.c:206
 msgid "Manage _Certificates"
-msgstr "Tvarkyti _sertifikatus"
+msgstr "Tvarkyti _liudijimus"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:329
+#: ../extensions/certificates/ephy-certificates-extension.c:208
 msgid "Manage your certificates"
-msgstr "Tvarkyti Jūsų sertifikatams"
+msgstr "Tvarkykite savo liudijimus"
 
 #. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:333
+#: ../extensions/certificates/ephy-certificates-extension.c:212
 msgid "Manage Security _Devices"
 msgstr "Tvarkyti saugumo į_renginius"
 
 #. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:335
+#: ../extensions/certificates/ephy-certificates-extension.c:214
 msgid "Manage your security devices"
-msgstr "Tvarkyti Jūsų saugumo įrenginius"
+msgstr "Tvarkykite savo saugumo įrenginius"
 
-#. stock icon
-#: ../extensions/certificates/ephy-certificates-extension.c:342
-msgid "Server _Certificate"
-msgstr "Serverio _sertifikatas"
-
-#. shortcut key
-#: ../extensions/certificates/ephy-certificates-extension.c:344
-msgid "Display the web server's certificate"
-msgstr "Rodyti web serverio sertifikatą"
-
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Check _HTML"
 msgstr "Tikrinti _HTML"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:92
 msgid "Display HTML errors in the Error Viewer dialog"
-msgstr "Rodyti HTML klaidas klaidų žiūrėjimo programos lange"
+msgstr "Rodyti HTML klaidas klaidų peržiūros dialoge"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:104
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _Links"
 msgstr "Tikrinti _nuorodas"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:106
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
-msgstr "Rodyti klaidingas nuorodas klaidų žiūrėjimo programos lange"
+msgstr "Rodyti klaidingas nuorodas klaidų peržiūros dialoge"
 
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:110
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:103
 msgid "_Error Viewer"
-msgstr "_Klaidų žiūrėjimo programa"
+msgstr "_Klaidų peržiūros programa"
 
 #. shortcut key
-#: ../extensions/error-viewer/ephy-error-viewer-extension.c:112
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
 msgid "Display web page errors"
 msgstr "Rodyti tinklapio klaidas"
 
@@ -207,34 +269,59 @@ msgstr "Išva_lyti"
 
 #: ../extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
-msgstr "Klaidų žiūrėjimo programa"
+msgstr "Klaidų peržiūros programa"
 
-#. Don't bother looking for source lines -- they're not there
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:108
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:105
 #, c-format
+#| msgid ""
+#| "Javascript error in %s on line %d:\n"
+#| "%s"
 msgid ""
-"Error:\n"
+"%s error in %s on line %d and column %d:\n"
 "%s"
 msgstr ""
-"Klaida:\n"
+"%s klaida, esanti %s, eilutėje %d ir stulpelyje %d:\n"
 "%s"
 
-#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:138
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:113
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:137
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:150
 #, c-format
+#| msgid ""
+#| "HTML error in %s:\n"
+#| "%s"
 msgid ""
-"Javascript error in %s on line %d:\n"
+"%s error in %s:\n"
 "%s"
 msgstr ""
-"Javascript klaida esanti %s elutėje %d:\n"
+"%s klaida, esanti %s:\n"
+"%s"
+
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
+#, c-format
+#| msgid ""
+#| "Javascript error in %s on line %d:\n"
+#| "%s"
+msgid ""
+"%s error in %s on line %d:\n"
+"%s"
+msgstr ""
+"%s klaida, esanti %s, eilutėje %d:\n"
 "%s"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
-msgstr[0] "Rasta %d klaidinga nuoroda"
-msgstr[1] "Rastos %d klaidingos nuorodos"
-msgstr[2] "Rasta %d klaidingų nuorodų"
+msgstr[0] "Rasta %d netinkama nuoroda"
+msgstr[1] "Rastos %d netinkamos nuorodos"
+msgstr[2] "Rasta %d netinkamų nuorodų"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
@@ -242,27 +329,27 @@ msgid ""
 "Link error in %s:\n"
 "%s is unavailable."
 msgstr ""
-"Nuorodos klaida esanti %s:\n"
+"Nuorodos klaida, esanti %s:\n"
 "%s yra neprieinamas."
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
 #, c-format
 msgid "Checking %d Link on “%s”"
 msgid_plural "Checking %d Links on “%s”"
-msgstr[0] "Tikrinama %d nuoroda esanti „%s“"
-msgstr[1] "Tikrinamos %d nuorodos esančios „%s“"
-msgstr[2] "Tikrinama %d nuorodų esančių „%s“"
+msgstr[0] "Tikrinama %d nuoroda, esanti „%s“"
+msgstr[1] "Tikrinamos %d nuorodos, esančios „%s“"
+msgstr[2] "Tikrinama %d nuorodų, esančių „%s“"
 
-#: ../extensions/error-viewer/opensp/validate.cpp:167
+#: ../extensions/error-viewer/opensp/validate.cpp:168
 #, c-format
 msgid ""
 "HTML error in “%s” on line %s:\n"
 "%s"
 msgstr ""
-"HTML klaida esanti „%s“ eilutėje %s:\n"
+"HTML klaida, esanti „%s“ eilutėje %s:\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:165
+#: ../extensions/error-viewer/sgml-validator.c:164
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
@@ -270,22 +357,22 @@ msgstr[0] "Rasta %d klaida"
 msgstr[1] "Rastos %d klaidos"
 msgstr[2] "Rasta %d klaidų"
 
-#: ../extensions/error-viewer/sgml-validator.c:169
+#: ../extensions/error-viewer/sgml-validator.c:168
 #, c-format
 msgid "HTML Validation of “%s” complete"
 msgstr "„%s“ HTML patikrinimas baigtas"
 
-#: ../extensions/error-viewer/sgml-validator.c:227
+#: ../extensions/error-viewer/sgml-validator.c:226
 #, c-format
 msgid ""
 "HTML error in %s:\n"
 "%s"
 msgstr ""
-"HTML klaida esanti %s:\n"
+"HTML klaida, esanti %s:\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:229
-#: ../extensions/error-viewer/sgml-validator.c:245
+#: ../extensions/error-viewer/sgml-validator.c:228
+#: ../extensions/error-viewer/sgml-validator.c:244
 msgid ""
 "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
 "+xml” instead."
@@ -293,7 +380,7 @@ msgstr ""
 "Dokumento tipas yra „XHTML“, bet turinio tipas yra „text/html“. Geriau "
 "naudokite „application/xhtml+xml“."
 
-#: ../extensions/error-viewer/sgml-validator.c:243
+#: ../extensions/error-viewer/sgml-validator.c:242
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
@@ -302,66 +389,75 @@ msgstr ""
 "HTML įspėjimas esantis %s:\n"
 "%s"
 
-#: ../extensions/error-viewer/sgml-validator.c:360
+#: ../extensions/error-viewer/sgml-validator.c:359
 #, c-format
 msgid "HTML error in %s:"
-msgstr "HTML klaida esanti %s:"
+msgstr "HTML klaida, esanti %s:"
 
-#: ../extensions/error-viewer/sgml-validator.c:368
+#: ../extensions/error-viewer/sgml-validator.c:367
+#, c-format
 msgid "Invalid character encoding"
-msgstr "Neteisinga simbolių koduotė"
+msgstr "Netinkama simbolių koduotė"
 
-#: ../extensions/error-viewer/sgml-validator.c:373
+#: ../extensions/error-viewer/sgml-validator.c:372
+#, c-format
 msgid "Unknown error while converting to UTF-8"
-msgstr "Konvertuojant į UTF-8, įvyko nežinoma klaida"
+msgstr "Konvertuojant į UTF-8 įvyko nežinoma klaida"
 
-#: ../extensions/error-viewer/sgml-validator.c:435
+#: ../extensions/error-viewer/sgml-validator.c:434
 #, c-format
 msgid ""
 "HTML error in %s:\n"
 "No valid doctype specified."
 msgstr ""
-"HTML klaida esanti %s:\n"
+"HTML klaida, esanti %s:\n"
 "Nenurodytas tinkamas dokumento tipas."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:352
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:345
 msgid "Enabled"
 msgstr "Įjungtas"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:360
-#: ../extensions/rss/rss-ui.c:599
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:353
+#: ../extensions/rss/rss-ui.c:571
 msgid "Description"
 msgstr "Aprašymas"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
 msgid "<b>Loaded Extensions</b>"
-msgstr "<b>Įkelti išplėtimai</b>"
+msgstr "<b>Įkelti plėtiniai</b>"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
 msgid "Extensions"
-msgstr "Išplėtimai"
-
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:65
-msgid "_Extensions..."
-msgstr "_Išplėtimai..."
+msgstr "Plėtiniai"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
-msgid "Load and unload extensions"
-msgstr "Įkelti ir iškelti išplėtimus"
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:73
+#| msgid "Extensions"
+msgid "_Extensions"
+msgstr "_Plėtiniai"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:87
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
+msgid "Load and unload extensions"
+msgstr "Įkelti ir iškelti plėtinius"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+#| msgid "A sample extension"
+msgid "Help about extensions"
+msgstr "Plėtinių pagalba"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:78
 msgid "Install User _Script"
 msgstr "Įdiegti naudotojo _scenarijų"
 
 #. shortcut key
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:89
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:80
 msgid "Install Greasemonkey script"
-msgstr "Įdiegti Greasemonkey script"
+msgstr "Įdiegti Greasemonkey scenarijų"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:354
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:311
 #, c-format
 msgid "The user script at “%s” has been installed"
-msgstr "Naudotojo scenarijus esantis „%s“ buvo įdiegtas"
+msgstr "Naudotojo scenarijus, esantis „%s“, buvo įdiegtas"
 
 #: ../extensions/java-console/ephy-java-console-extension.c:48
 msgid "_Java Console"
@@ -372,162 +468,202 @@ msgstr "_Java konsolė"
 msgid "Show Java Console"
 msgstr "Rodyti Java konsolę"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:65
+#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:100
+msgid "_HTTP Headers"
+msgstr "_HTTP antraštės"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:1
+#| msgid "<b>Rendering</b>"
+msgid "<b>Request</b>"
+msgstr "<b>Užklausos</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:2
+#| msgid "<b>Rendering</b>"
+msgid "<b>Response</b>"
+msgstr "<b>Atsakymas</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:3
+msgid "<b>URLs</b>"
+msgstr "<b>URL</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
+#| msgid "Memory cache"
+msgid "Clear cache"
+msgstr "Išvalyti podėlį"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
+msgid "Live Headers"
+msgstr "Tiesioginės antraštės"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
+msgid "Remove headers"
+msgstr "Šalinti antraštes"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:61
 msgid "Pa_ge Information"
 msgstr "P_uslapio informacija"
 
-#: ../extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/page-info/ephy-page-info-extension.c:63
 msgid "Display page information in a dialog"
 msgstr "Lange parodyti puslapio informaciją"
 
-#: ../extensions/page-info/page-info-dialog.c:726
+#: ../extensions/page-info/page-info-dialog.c:704
 msgid "Save As..."
-msgstr "Išsaugoti kaip..."
+msgstr "Įrašyti kaip..."
 
-#: ../extensions/page-info/page-info-dialog.c:743
+#: ../extensions/page-info/page-info-dialog.c:721
 msgid "Select a directory"
 msgstr "Pasirinkite žodyną"
 
-#: ../extensions/page-info/page-info-dialog.c:792
+#: ../extensions/page-info/page-info-dialog.c:770
 msgid "Unknown type"
 msgstr "Nežinomas tipas"
 
-#: ../extensions/page-info/page-info-dialog.c:797
+#: ../extensions/page-info/page-info-dialog.c:775
 msgid "Full standards compliance"
 msgstr "Visiškai suderinamas su standartais"
 
-#: ../extensions/page-info/page-info-dialog.c:800
+#: ../extensions/page-info/page-info-dialog.c:778
 msgid "Almost standards compliance"
 msgstr "Beveik suderinamas su standartais"
 
-#: ../extensions/page-info/page-info-dialog.c:803
+#: ../extensions/page-info/page-info-dialog.c:781
 msgid "Compatibility"
 msgstr "Suderinamumas"
 
-#: ../extensions/page-info/page-info-dialog.c:807
+#: ../extensions/page-info/page-info-dialog.c:785
 msgid "Undetermined"
 msgstr "Nenustatytas"
 
-#: ../extensions/page-info/page-info-dialog.c:816
+#: ../extensions/page-info/page-info-dialog.c:794
 msgid "Not cached"
 msgstr "Ne podėlyje"
 
-#: ../extensions/page-info/page-info-dialog.c:819
+#: ../extensions/page-info/page-info-dialog.c:797
 msgid "Disk cache"
 msgstr "Disko podėlyje"
 
-#: ../extensions/page-info/page-info-dialog.c:822
+#: ../extensions/page-info/page-info-dialog.c:800
 msgid "Memory cache"
 msgstr "Atminties podėlyje"
 
-#: ../extensions/page-info/page-info-dialog.c:825
+#: ../extensions/page-info/page-info-dialog.c:803
 msgid "Unknown cache"
 msgstr "Nežinomas podėlis"
 
-#: ../extensions/page-info/page-info-dialog.c:841
-#: ../extensions/page-info/page-info-dialog.c:952
+#: ../extensions/page-info/page-info-dialog.c:819
+#: ../extensions/page-info/page-info-dialog.c:935
 msgid "Unknown"
 msgstr "Nežinomas"
 
-#: ../extensions/page-info/page-info-dialog.c:846
+#: ../extensions/page-info/page-info-dialog.c:824
 msgid "No referrer"
 msgstr "Nėra nukreipėjo"
 
-#: ../extensions/page-info/page-info-dialog.c:860
-#: ../extensions/page-info/page-info-dialog.c:876
+#: ../extensions/page-info/page-info-dialog.c:838
+#: ../extensions/page-info/page-info-dialog.c:854
 msgid "Not specified"
 msgstr "Nenurodyta"
 
-#: ../extensions/page-info/page-info-dialog.c:937
+#: ../extensions/page-info/page-info-dialog.c:917
 msgid "Image"
 msgstr "Paveikslėlis"
 
-#: ../extensions/page-info/page-info-dialog.c:940
+#: ../extensions/page-info/page-info-dialog.c:920
+msgid "Background image"
+msgstr "Fono paveikslėlis"
+
+#: ../extensions/page-info/page-info-dialog.c:923
 msgid "Embed"
 msgstr "Įterptas"
 
-#: ../extensions/page-info/page-info-dialog.c:943
+#: ../extensions/page-info/page-info-dialog.c:926
 msgid "Object"
 msgstr "Objektas"
 
-#: ../extensions/page-info/page-info-dialog.c:946
+#: ../extensions/page-info/page-info-dialog.c:929
 msgid "Applet"
 msgstr "Įtaisas"
 
-#: ../extensions/page-info/page-info-dialog.c:949
+#: ../extensions/page-info/page-info-dialog.c:932
 msgid "Icon"
-msgstr "Ikona"
+msgstr "Piktograma"
 
-#: ../extensions/page-info/page-info-dialog.c:1054
+#: ../extensions/page-info/page-info-dialog.c:1113
 msgid "_Open"
-msgstr "_Atidaryti"
+msgstr "_Atverti"
 
-#: ../extensions/page-info/page-info-dialog.c:1060
-#: ../extensions/page-info/page-info-dialog.c:1420
+#: ../extensions/page-info/page-info-dialog.c:1119
+#: ../extensions/page-info/page-info-dialog.c:1564
 msgid "_Copy Link Address"
 msgstr "_Kopijuoti nuorodos adresą"
 
-#: ../extensions/page-info/page-info-dialog.c:1066
+#: ../extensions/page-info/page-info-dialog.c:1125
 msgid "_Use as Background"
 msgstr "_Naudoti kaip foną"
 
-#: ../extensions/page-info/page-info-dialog.c:1072
-#: ../extensions/page-info/page-info-dialog.c:1426
+#: ../extensions/page-info/page-info-dialog.c:1131
+#: ../extensions/page-info/page-info-dialog.c:1570
 msgid "_Save As..."
-msgstr "Iš_saugoti kaip..."
+msgstr "Į_rašyti kaip..."
 
-#: ../extensions/page-info/page-info-dialog.c:1256
-#: ../extensions/page-info/page-info-dialog.c:1499
+#: ../extensions/page-info/page-info-dialog.c:1363
+#: ../extensions/page-info/page-info-dialog.c:1684
+msgid "Blocked"
+msgstr "Užblokuotas"
+
+#: ../extensions/page-info/page-info-dialog.c:1379
+#: ../extensions/page-info/page-info-dialog.c:1700
 msgid "URL"
 msgstr "Adresas"
 
-#: ../extensions/page-info/page-info-dialog.c:1269
+#: ../extensions/page-info/page-info-dialog.c:1392
 msgid "Type"
 msgstr "Tipas"
 
-#: ../extensions/page-info/page-info-dialog.c:1281
+#: ../extensions/page-info/page-info-dialog.c:1404
 msgid "Alt Text"
 msgstr "Alternatyvus tekstas"
 
-#: ../extensions/page-info/page-info-dialog.c:1293
-#: ../extensions/page-info/page-info-dialog.c:1512
+#: ../extensions/page-info/page-info-dialog.c:1416
+#: ../extensions/page-info/page-info-dialog.c:1713
 msgid "Title"
 msgstr "Pavadinimas"
 
-#: ../extensions/page-info/page-info-dialog.c:1305
+#: ../extensions/page-info/page-info-dialog.c:1428
 msgid "Width"
 msgstr "Plotis"
 
-#: ../extensions/page-info/page-info-dialog.c:1317
+#: ../extensions/page-info/page-info-dialog.c:1440
 msgid "Height"
 msgstr "Aukštis"
 
-#: ../extensions/page-info/page-info-dialog.c:1524
+#: ../extensions/page-info/page-info-dialog.c:1725
 msgid "Relation"
 msgstr "Ryšys"
 
-#: ../extensions/page-info/page-info-dialog.c:1654
-#: ../extensions/page-info/page-info-dialog.c:1793
+#: ../extensions/page-info/page-info-dialog.c:1874
+#: ../extensions/page-info/page-info-dialog.c:2015
 msgid "Name"
 msgstr "Vardas"
 
-#: ../extensions/page-info/page-info-dialog.c:1666
+#: ../extensions/page-info/page-info-dialog.c:1886
 msgid "Method"
 msgstr "Metodas"
 
-#: ../extensions/page-info/page-info-dialog.c:1680
+#: ../extensions/page-info/page-info-dialog.c:1900
 msgid "Action"
 msgstr "Veiksmas"
 
-#: ../extensions/page-info/page-info-dialog.c:1759
+#: ../extensions/page-info/page-info-dialog.c:1981
 msgid "_Copy"
 msgstr "_Kopijuoti"
 
-#: ../extensions/page-info/page-info-dialog.c:1805
+#: ../extensions/page-info/page-info-dialog.c:2027
 msgid "Content"
 msgstr "Turinys"
 
-#: ../extensions/page-info/page-info-dialog.c:1904
+#: ../extensions/page-info/page-info-dialog.c:2128
 msgid "Page Metadata"
 msgstr "Puslapio meta duomenys"
 
@@ -653,92 +789,94 @@ msgstr "Tipas:"
 
 #: ../extensions/page-info/page-info.glade.h:31
 msgid "_Save Media As..."
-msgstr "Iš_saugoti multimediją kaip..."
+msgstr "Į_rašyti multimediją kaip..."
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:180
+#: ../extensions/permissions/ephy-permissions-dialog.c:165
 msgid "allowed"
 msgstr "leidžiama"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:184
+#: ../extensions/permissions/ephy-permissions-dialog.c:169
 msgid "denied"
 msgstr "uždrausta"
 
 #. Sometimes we get this... how did this get in the list!?
-#: ../extensions/permissions/ephy-permissions-dialog.c:189
+#: ../extensions/permissions/ephy-permissions-dialog.c:174
 msgid "default"
 msgstr "numatytasis"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:515
+#: ../extensions/permissions/ephy-permissions-dialog.c:500
 msgid "Domain"
-msgstr "Domenas"
+msgstr "Sritis"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:527
+#: ../extensions/permissions/ephy-permissions-dialog.c:512
+#: ../extensions/soup-fly/soup-fly.c:180
 msgid "State"
 msgstr "Būsena"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:620
+#: ../extensions/permissions/ephy-permissions-dialog.c:605
 msgid "Site Permissions"
 msgstr "Svetainės teisės"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:647
+#: ../extensions/permissions/ephy-permissions-dialog.c:632
 msgid "Cookies"
 msgstr "Slapukai"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:648
+#: ../extensions/permissions/ephy-permissions-dialog.c:633
 msgid "Images"
 msgstr "Paveikslėliai"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:649
+#: ../extensions/permissions/ephy-permissions-dialog.c:634
 msgid "Popup Windows"
 msgstr "Iššokantys langai"
 
 #. stock icon
-#: ../extensions/permissions/ephy-permissions-extension.c:156
+#: ../extensions/permissions/ephy-permissions-extension.c:152
 msgid "Site _Permissions"
 msgstr "Svetainės _teisės"
 
 #. shortcut key
-#: ../extensions/permissions/ephy-permissions-extension.c:158
+#: ../extensions/permissions/ephy-permissions-extension.c:154
 msgid "Manage web site permissions"
 msgstr "Tvarkyti svetainės teises"
 
-#: ../extensions/rss/ephy-rss-extension.c:98
+#: ../extensions/rss/ephy-rss-extension.c:79
 msgid "News Feeds Subscription"
 msgstr "Naujienų kanalo prenumerata"
 
-#: ../extensions/rss/ephy-rss-extension.c:100
+#: ../extensions/rss/ephy-rss-extension.c:81
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr ""
-"Užsisakyti šios svetainės naujienų kanalą Jūsų mėgstamiausia naujienų "
-"programa"
+"Užsisakykite šios svetainės naujienų kanalą savo mėgstamiausioje naujienų "
+"programoje"
 
-#: ../extensions/rss/ephy-rss-extension.c:105
+#: ../extensions/rss/ephy-rss-extension.c:86
 msgid "_Subscribe to this feed"
 msgstr "_Užsisakyti šį kanalą"
 
-#: ../extensions/rss/ephy-rss-extension.c:107
+#: ../extensions/rss/ephy-rss-extension.c:88
 msgid "Subscribe to this feed in your favorite news reader"
-msgstr "Užsisakyti šį kanalą Jūsų mėgstamiausia naujienų skaitymo programa"
+msgstr ""
+"Užsisakykite šį kanalą savo mėgstamiausioje naujienų skaitymo programoje"
 
-#: ../extensions/rss/ephy-rss-extension.c:396
+#: ../extensions/rss/ephy-rss-extension.c:361
 msgid "Subscribe to site's news feed"
 msgstr "Užsisakyti šios svetainės naujienų kanalą"
 
-#: ../extensions/rss/rss-ui.c:167
+#: ../extensions/rss/rss-ui.c:153
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr ""
 "<b><i>Nepavyko prisijungti prie naujienų skaitymo programos, ji paleista?</"
 "i></b>"
 
-#: ../extensions/rss/rss-ui.c:169
+#: ../extensions/rss/rss-ui.c:155
 msgid "Retry"
 msgstr "Bandyti dar kartą"
 
-#: ../extensions/rss/rss-ui.c:297
+#: ../extensions/rss/rss-ui.c:283
 msgid "_Copy Feed Address"
 msgstr "_Kopijuoti kanalo adresą"
 
-#: ../extensions/rss/rss-ui.c:591
+#: ../extensions/rss/rss-ui.c:563
 msgid "Subscribe"
 msgstr "Užsisakyti"
 
@@ -747,99 +885,148 @@ msgid "<b>Select Interesting Feeds</b>"
 msgstr "<b>Pasirinkite dominančius kanalus</b>"
 
 #: ../extensions/rss/rss-ui.glade.h:2
-msgid "News Feed Subcription"
-msgstr "Naujienų kanalo prenumerata"
+#: ../extensions/rss/rss.ephy-extension.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "Naujienų kanalų prenumerata"
 
 #: ../extensions/rss/rss-ui.glade.h:3
 msgid "_Subscribe"
 msgstr "_Užsisakyti"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:145
+#: ../extensions/select-stylesheet/ephy-css-menu.c:140
 msgid "Render the page without using a style"
 msgstr "Vaizduoti puslapį nenaudojant stiliaus"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:148
+#: ../extensions/select-stylesheet/ephy-css-menu.c:143
 msgid "Render the page using the default style"
-msgstr "Vaizduoti puslapį naudojant įprastąjį stilių"
+msgstr "Vaizduoti puslapį naudojant numatytąjįstilių"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:151
+#: ../extensions/select-stylesheet/ephy-css-menu.c:146
 #, c-format
 msgid "Render the page using the “%s” style"
 msgstr "Vaizduoti puslapį naudojant „%s“ stilių"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:309
+#: ../extensions/select-stylesheet/ephy-css-menu.c:317
 msgid "St_yle"
 msgstr "St_ilius"
 
-#: ../extensions/select-stylesheet/ephy-css-menu.c:310
+#: ../extensions/select-stylesheet/ephy-css-menu.c:318
 msgid "Select a different style for this page"
 msgstr "Šiam puslapiui parinkti kitą stilių"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:227
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
 msgid "Default"
-msgstr "Įprastas"
+msgstr "Numatytasis"
 
-#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:238
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
 msgid "None"
 msgstr "Nėra"
 
-#: ../extensions/sidebar/ephy-sidebar.c:176
+#: ../extensions/sidebar/ephy-sidebar.c:167
 msgid "No Sidebars installed"
-msgstr "Nėra įdiegtų šoninių skydelių"
+msgstr "Šoninių juostų neįdiegta"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:104
+#: ../extensions/sidebar/ephy-sidebar-extension.c:88
 msgid "_Sidebar"
-msgstr "Šoninis _skydelis"
+msgstr "Š_oninė juosta"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:105
+#: ../extensions/sidebar/ephy-sidebar-extension.c:89
 msgid "Show or hide the sidebar"
-msgstr "Rodyti arba slėpti šoninį skydelį"
+msgstr "Rodyti arba slėpti šoninę juostą"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:411
+#: ../extensions/sidebar/ephy-sidebar-extension.c:306
+msgid "Do you really want to remove this sidebar?"
+msgstr "Ar tikrai norite pašalinti šią šoninę juostą?"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:310
+msgid "There is no way to recover this sidebar after removal."
+msgstr "Pašalinus šią šoninę juostą jos atstatyti nebegalima."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:312
+#| msgid "Sidebar"
+msgid "Remove Sidebar"
+msgstr "Šalinti šoninę juostą"
+
+#. Translators: %s is the sidebar title
+#: ../extensions/sidebar/ephy-sidebar-extension.c:459
+#, c-format
+#| msgid "The source to the new sidebar page is “%s”."
+msgid "The sidebar already contains “%s”"
+msgstr "Šoninėje juostoje jau yra „%s“"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:463
+msgid ""
+"To use this sidebar, select it from the list of available sidebar pages."
+msgstr ""
+"Norėdami naudoti šią šoninę juostą, pasirinkite ją prieinamų šoninių juostų "
+"puslapių sąraše."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:466
+#: ../extensions/sidebar/ephy-sidebar-extension.c:492
+msgid "Add Sidebar"
+msgstr "Pridėti šoninę juostą"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:486
 #, c-format
 msgid "Add “%s” to the Sidebar?"
-msgstr "Įdėti „%s“ į šoninį skydelį?"
+msgstr "Įdėti „%s“ į šoninę juostą?"
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:415
+#: ../extensions/sidebar/ephy-sidebar-extension.c:490
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
-msgstr "Šaltinis į naują šoninį skydelio puslapį yra „%s“."
+msgstr "Šaltinis į naują šoninės juostos puslapį yra „%s“."
 
-#: ../extensions/sidebar/ephy-sidebar-extension.c:417
-msgid "Add Sidebar"
-msgstr "Pridėti šoninį skydelį"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:421
+#: ../extensions/sidebar/ephy-sidebar-extension.c:496
 msgid "_Add Sidebar"
-msgstr "_Pridėti šoninį skydelį"
+msgstr "_Pridėti šoninę juostą"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:565
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
 msgid "_Look Up"
 msgstr "_Ieškoti"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:572
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:538
 msgid "_GNOME Dictionary"
 msgstr "_GNOME žodynas"
 
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:190
-#, c-format
-msgid "Window “%s” (%d tab)"
-msgid_plural "Window “%s” (%d tabs)"
-msgstr[0] "Langas „%s“ (%d kortelė)"
-msgstr[1] "Langas „%s“ (%d kortelės)"
-msgstr[2] "Langas „%s“ (%d kortelių)"
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
+msgid "Open search result in new tab"
+msgstr "Atverti paieškos rezultatus naujoje kortelėje"
 
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:301
-msgid "Move Tab To Window"
-msgstr "Perkelti kortelę į langą"
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
+#| msgid "Open bookmarks in a new tab of the active window"
+msgid "Open search result in new tab if true, in new window if false"
+msgstr ""
+"Atverti paieškos rezultatus naujoje kortelėje, jei reikšmė teigiama, jei "
+"neigiama – naujame lange"
 
-#: ../extensions/tabsmenu/ephy-tab-move-menu.c:302
-msgid "Move the current tab to a different window"
-msgstr "Perkelti šią kortelę į kitą langą"
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
+msgid "_Soup Fly"
+msgstr "_Soup Fly"
+
+#. shortcut key
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:68
+msgid "Show information about the SoupSession used by the browser"
+msgstr "Rodyti informaciją apie SoupSession, naudojamą naršyklės"
+
+#: ../extensions/soup-fly/soup-fly.c:205
+msgid "Clear finished"
+msgstr "Išvalyti baigtus"
+
+#: ../extensions/soup-fly/soup-fly.c:209
+msgid "Automatically remove finished messages"
+msgstr "Automatiškai šalinti baigtus pranešimus"
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
-msgstr "Vykdyti išorines komandas iš kontekstinio meniu"
+msgstr "Vykdykite išorines komandas, pasirinkę jas kontekstiniame meniu"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
+msgid "Ad Blocker"
+msgstr "Reklamų blokavimas"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
+msgid "Block the pest!"
+msgstr "Užblokuokite parazitus!"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
 msgid "Auto Scroll"
@@ -847,54 +1034,36 @@ msgstr "Automatinė slinktis"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
 msgid "Scroll on middle mouse click"
-msgstr "Slinkti paspaudus vidurinįjį pelės mygtuką"
+msgstr "Slinkti spustelėjus vidurinįjį pelės mygtuką"
 
 #: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
 msgid "Auto Reload Tab"
-msgstr "Automatiškai perkrauti kortelę"
+msgstr "Automatiškai įkelti kortelę iš naujo"
 
 #: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
 msgid "Reload a tab periodically"
-msgstr "Periodiškai perkrauti kortelę"
+msgstr "Periodiškai įkelti kortelę iš naujo"
 
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
-msgstr "Žiūrėti puslapio sertifikatą ir tvarkyti sertifikatus"
-
-#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:1
-msgid "Dashboard"
-msgstr "Dashboard"
-
-#: ../extensions/dashboard/dashboard.ephy-extension.in.in.h:2
-msgid "Send browsing information to Dashboard"
-msgstr "Siųsti naršymo informaciją į Dashboard"
+msgstr "Žiūrėti puslapio liudijimą ir tvarkyti liudijimus"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
 msgstr "Klaidų žiūrėjimo programa"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
-msgid "View error in web pages, validate web pages and check links"
-msgstr "Žiūrėti klaidas tinklalapiuose, tikrinti tinklalapius bei nuorodas"
+#| msgid "View error in web pages, validate web pages and check links"
+msgid "Validate web pages and check links"
+msgstr "Tikrinti tinklalapius ir nuorodas"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
 msgid "Activate and deactivate extensions"
-msgstr "Įjungti ir išjungti išplėtimus"
+msgstr "Įjungti ir išjungti plėtinius"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
 msgid "Extensions Manager"
-msgstr "Išplėtimų tvarkyklė"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:1
-msgid "Favicon fallback"
-msgstr "Numatytoji ikona"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:2
-msgid ""
-"Loads /favicon.ico as favicon if the site doesn't use the standard method"
-msgstr ""
-"Įkelia /favicon.ico kaip „favicon“, jei svetainėje nenaudojamas standartinis "
-"metodas"
+msgstr "Plėtinių tvarkyklė"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -918,11 +1087,15 @@ msgstr "Java konsolė"
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
 msgid "Provide access to the Java-Plugin Console"
-msgstr "Suteikia priėjimą prie Java-Plugin konsolės"
+msgstr "Suteikia prieigą prie Java-Plugin konsolės"
+
+#: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
+msgid "Live HTTP headers"
+msgstr "Tiesioginės HTTP antraštės"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
-msgstr "Rodyti informaciją apie esamo puslapio nuorodas bei multimediją"
+msgstr "Rodyti informaciją apie esamo puslapio nuorodas ir multimediją"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
 msgid "Page Info"
@@ -930,34 +1103,32 @@ msgstr "Puslapio informacija"
 
 #: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
 msgid "Edit site permissions"
-msgstr "Redaguoti svetainės teises"
+msgstr "Taisyti svetainės teises"
 
 #: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
 msgid "Permissions"
 msgstr "Teisės"
 
-#: ../extensions/rss/rss.ephy-extension.in.in.h:1
-msgid "News Feed Subscription"
-msgstr "Naujienų kanalų prenumerata"
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
+#| msgid "Scroll on middle mouse click"
+msgid "Drag the page on middle mouse click"
+msgstr "Vilkti puslapį spustelėjus vidurinįjį pelės mygtuką"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+#| msgid "Auto Scroll"
+msgid "Push Scroll"
+msgstr "Slinktis spustelėjus"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr ""
-"Užsisakyti svetainės siūlomą naujienų kanalą Jūsų mėgstamiausiae naujienų "
-"programa"
-
-#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
-msgid "A sample extension with mozilla backend"
-msgstr "Pavyzdinis išplėtimas su mozilla posisteme"
-
-#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:2
-msgid "Sample (Mozilla)"
-msgstr "Pavyzdys (Mozilla)"
+"Užsiprenumeruokite svetainės siūlomą naujienų kanalą savo mėgstamiausioje "
+"naujienų programoje"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
 msgid "A sample extension"
-msgstr "Pavyzdinis išplėtimas"
+msgstr "Plėtinio pavyzdys"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:2
 msgid "Sample"
@@ -965,43 +1136,35 @@ msgstr "Pavyzdys"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
 msgid "Select Stylesheet"
-msgstr "Pasirinkite stilių"
+msgstr "Pasirinkite stiliaus aprašą"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
-msgstr "Šiam puslapiui parinkti kitą svetainės siūlomą stilių"
+msgstr "Rinkitės tinklalapio siūlomus skirtingus stiliaus aprašus"
 
 #: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
 msgid "Adds a sidebar to windows"
-msgstr "Įdėti į langus šoninį skydelį"
+msgstr "Įtaiso languose šoninę juostą"
 
 #: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
 msgid "Sidebar"
-msgstr "Šoninis skydelis"
+msgstr "Šoninė juosta"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
 msgid "Look up the selected text with a smart bookmark"
-msgstr "Ieškoti pažymėto teksto naudojant gudrią žymelę"
+msgstr "Ieškoti pažymėto teksto naudojant išmaniąsias žymeles"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
 msgid "Smart Bookmarks"
-msgstr "Gudrios žymelės"
+msgstr "Išmaniosios žymelės"
 
 #: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
 msgid "Groups newly opened tabs"
-msgstr "Grupuoti naujai atvertas korteles"
+msgstr "Grupuoja naujai atvertas korteles"
 
 #: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
 msgid "Tab Groups"
 msgstr "Kortelių grupės"
-
-#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:1
-msgid "Move tabs between windows"
-msgstr "Perkelti korteles tarp langų"
-
-#: ../extensions/tabsmenu/tabsmenu.ephy-extension.in.in.h:2
-msgid "Tabsmenu"
-msgstr "Kortelių meniu"
 
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
@@ -1010,44 +1173,3 @@ msgstr "Rodo naują naują turinį fono kortelėse"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Kortelių būsenos"
-
-#~ msgid "_Edit Bookmarks"
-#~ msgstr "_Keisti žymeles"
-
-#~ msgid "Open the bookmarks window"
-#~ msgstr "Atidaryti žymelių langą"
-
-#~ msgid "Open in _Current Tab"
-#~ msgstr "Atidaryti _esamoje kortelėje"
-
-#~ msgid "Open bookmarks in the current tab of the active window"
-#~ msgstr "Atidaryti žymeles esamoje aktyvaus lango kortelėje"
-
-#~ msgid "Open in New _Tab"
-#~ msgstr "Atidaryti naujoje _kortelėje"
-
-#~ msgid "Open bookmarks in a new tab of the active window"
-#~ msgstr "Atidaryti žymeles naujoje aktyvaus lango kortelėje"
-
-#~ msgid "Open in New _Window"
-#~ msgstr "Atidaryti naujame _lange"
-
-#~ msgid "Open bookmarks in new a window"
-#~ msgstr "Atidaryti žymeles naujame lange"
-
-#~ msgid "Bookmarks"
-#~ msgstr "Žymelės"
-
-#~ msgid "Add a bookmarks menu to the panel's notification area"
-#~ msgstr "Įdėti žymelių meniu į skydelio pranešimų vietą"
-
-#~ msgid "Bookmarks Tray"
-#~ msgstr "Žymelių skydelis"
-
-#~ msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
-#~ msgstr ""
-#~ "Automatiškai valdoma tinklo prisijungimo/atsijungimo būsena "
-#~ "(EKSPERIMENTINIS!)"
-
-#~ msgid "Network Connection Monitor"
-#~ msgstr "Tinklo prisijungimo monitorius"
