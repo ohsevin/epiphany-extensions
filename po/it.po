@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions 2.18\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions&component=general\n"
-"POT-Creation-Date: 2009-02-26 06:38+0000\n"
-"PO-Revision-Date: 2009-03-09 21:59+0100\n"
+"POT-Creation-Date: 2009-09-18 14:40+0000\n"
+"PO-Revision-Date: 2009-09-19 01:10+0200\n"
 "Last-Translator: Francesco Marletta <francesco.marletta@tiscali.it>\n"
 "Language-Team: italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
@@ -76,7 +76,6 @@ msgid "_Images"
 msgstr "_Immagini"
 
 #: ../extensions/actions/action-properties.glade.h:11
-#: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Name:"
 msgstr "_Nome:"
 
@@ -102,7 +101,7 @@ msgid "Could not run command"
 msgstr "Impossibile eseguire il comando"
 
 # [Ndt] qui non ho messo l'articolo apposta
-#: ../extensions/actions/ephy-actions-extension.c:439
+#: ../extensions/actions/ephy-actions-extension.c:440
 msgid "Could not Run Command"
 msgstr "Impossibile eseguire comando"
 
@@ -206,10 +205,6 @@ msgstr "_Auto-ricarica"
 msgid "Reload the page periodically"
 msgstr "Ricarica la pagina periodicamente"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:373
-msgid "View Creative Commons license"
-msgstr "Visualizza la licenza Creative Commons"
-
 #  stock icon
 #: ../extensions/certificates/ephy-certificates-extension.c:163
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
@@ -243,129 +238,6 @@ msgstr "Gestisci _dispositivi sicurezza"
 #: ../extensions/certificates/ephy-certificates-extension.c:214
 msgid "Manage your security devices"
 msgstr "Gestisce i dispositivi di sicurezza"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:1
-msgid "Action for tagged bookmarks:"
-msgstr "Azione per i segnalibri etichettati:"
-
-# [NdT] plugin per gestire i segnalibri su del.icio.us
-#: ../extensions/epilicious/epilicious-config.glade.h:2
-msgid "Epilicious Configuration"
-msgstr "Configurazione Epilicious"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:3
-msgid "_Backend:"
-msgstr "_Backend:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:4
-msgid "_Exclude"
-msgstr "_Escludi"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:5
-msgid "_Include"
-msgstr "_Includi"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:7
-msgid "_Password:"
-msgstr "_Password:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:8
-msgid "_Tag:"
-msgstr "_Etichetta:"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:1
-msgid "Adding new bookmarks and synching topics"
-msgstr "Aggiunta di un nuovo segnalibro e sincronizzazione degli argomenti"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:2
-msgid "Removing deleted bookmarks"
-msgstr "Rimozione segnalibri eliminati"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:4
-#: ../extensions/epilicious/progress.py:41
-#, no-c-format, python-format
-msgid "Retrieving bookmarks from %s"
-msgstr "Recupero segnalibri da %s"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:5
-msgid "Retrieving bookmarks from epiphany"
-msgstr "Recupero segnalibri da epiphany"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:6
-msgid "Retrieving previous synch point"
-msgstr "Recupero del precedente punto di sincronizzazione"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:7
-msgid "Saving new synch point"
-msgstr "Salvataggio del nuovo punto di sincronizzazione"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:9
-#: ../extensions/epilicious/progress.py:39
-#, no-c-format, python-format
-msgid "Synchronizing with %s"
-msgstr "Sincronizzazione con %s"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:10
-msgid "Synchronizing..."
-msgstr "Sincronizzazione in corso..."
-
-#: ../extensions/epilicious/epilicious.py.in:232
-#: ../extensions/epilicious/epilicious.py.in:250
-msgid "Epilicious Synchronize"
-msgstr "Sincronizza Epilicious"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:1
-msgid "Bookmarks with this topic will be synchronized."
-msgstr "I segnalibri con questo argomento verranno sincronizzati."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:2
-msgid ""
-"Controls the function of the topic. If this is unset then all bookmarks with "
-"the topic will be synched. If this is set then all bookmarks without the "
-"topic will be synched."
-msgstr ""
-"Controlla la funzione dell'argomento. Se non è impostato allora tutti i "
-"segnalibri con l'argomento verranno sincronizzati. Se è impostato allora "
-"tutti i segnalibri senza l'argomento verranno sincronizzati."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:3
-msgid "Exclude topic"
-msgstr "Escludere argomento"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:4
-msgid "Shared topic"
-msgstr "Argomento condiviso"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:5
-#| msgid ""
-#| "The backend that epilicious will use for synchronizing bookmarks. Allowed "
-#| "value: 'ma.gnolia'"
-msgid ""
-"The backend that epilicious will use for synchronizing bookmarks. Allowed "
-"values: 'diigo', 'ma.gnolia'"
-msgstr "Il backend che epilicious userà per la sincronizzazione dei segnalibri. Valori permessi: \"diigo\", \"ma.gnolia\""
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:6
-msgid "The password that epilicious will use for synchronizing bookmarks."
-msgstr ""
-"La password che epilicious userà per la sincronizzazione dei segnalibri."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:7
-msgid "The username that epilicious will use for synchronizing bookmarks."
-msgstr ""
-"Il nome utente che epilicious userà per la sincronizzazione dei segnalibri."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:8
-msgid "epilicious backend"
-msgstr "backend epilicious"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:9
-msgid "password"
-msgstr "password"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:10
-msgid "username"
-msgstr "nome utente"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Check _HTML"
@@ -546,7 +418,7 @@ msgid "Enabled"
 msgstr "Abilitata"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.c:353
-#: ../extensions/rss/rss-ui.c:571
+#: ../extensions/rss/rss-ui.c:572
 msgid "Description"
 msgstr "Descrizione"
 
@@ -938,6 +810,7 @@ msgid "Domain"
 msgstr "Dominio"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:512
+#: ../extensions/soup-fly/soup-fly.c:196
 msgid "State"
 msgstr "Stato"
 
@@ -986,7 +859,7 @@ msgid "Subscribe to this feed in your favorite news reader"
 msgstr ""
 "Effettua la sottoscrizione a questa fonte nel lettore di notizie preferito"
 
-#: ../extensions/rss/ephy-rss-extension.c:361
+#: ../extensions/rss/ephy-rss-extension.c:365
 msgid "Subscribe to site's news feed"
 msgstr "Effettua la sottoscrizione alla fonte di notizie del sito"
 
@@ -1003,7 +876,7 @@ msgstr "Riprova"
 msgid "_Copy Feed Address"
 msgstr "_Copia indirizzo fonte"
 
-#: ../extensions/rss/rss-ui.c:563
+#: ../extensions/rss/rss-ui.c:564
 msgid "Subscribe"
 msgstr "Sottoscrivi"
 
@@ -1124,6 +997,23 @@ msgstr ""
 "Apre il risultato della ricerca in una nuova scheda se vero, in una nuova "
 "finestra se falso."
 
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
+msgid "_Soup Fly"
+msgstr "_Soup Fly"
+
+#. shortcut key
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:68
+msgid "Show information about the SoupSession used by the browser"
+msgstr "Mostra le informazioni sulla SoupSession usata dal browser"
+
+#: ../extensions/soup-fly/soup-fly.c:220
+msgid "Clear finished"
+msgstr "Pulisci completati"
+
+#: ../extensions/soup-fly/soup-fly.c:224
+msgid "Automatically remove finished messages"
+msgstr "Rimuove automaticamente i messaggi terminati"
+
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
 msgstr "Esegue comandi arbitrari dal menù contestuale"
@@ -1152,22 +1042,9 @@ msgstr "Auto-ricarica scheda"
 msgid "Reload a tab periodically"
 msgstr "Ricarica periodicamente una scheda"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
-msgid "Creative Commons license viewer"
-msgstr "Visualizzatore licenza Creative Commons"
-
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
-msgid "Shows the Creative Commons license of the current website if available"
-msgstr ""
-"Mostra la licenza Creative Commons del sito web corrente, se disponibile."
-
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Mostra il certificato della pagina e gestisce i certificati"
-
-#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
-msgid "Synchronize bookmarks with social bookmark sites"
-msgstr "Sincronizza i segnalibri con i siti di social bookmark"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -1184,15 +1061,6 @@ msgstr "Attiva e disattiva le estensioni"
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
 msgid "Extensions Manager"
 msgstr "Gestione estensioni"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:1
-msgid "Favicon fallback"
-msgstr "Favicon di ripiego"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:2
-msgid ""
-"Loads /favicon.ico as favicon if the site doesn't use the standard method"
-msgstr "Carica /favicon.ico come favicon se il sito non usa un metodo standard"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -1249,28 +1117,12 @@ msgstr "Trascina la pagina al clic col tasto centrale del mouse"
 msgid "Push Scroll"
 msgstr "Scorrimento con spinta"
 
-#: ../extensions/python-console/python-console.ephy-extension.in.h:1
-msgid "Opens an interactive Python console"
-msgstr "Apre una console Python interattiva"
-
-#: ../extensions/python-console/python-console.ephy-extension.in.h:2
-msgid "Python Console"
-msgstr "Console Python"
-
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr ""
 "Effettua la sottoscrizione ad una fonte di notizie offerta dalla pagina web "
 "nel lettore di notizie preferito"
-
-#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
-msgid "A sample extension with mozilla backend"
-msgstr "Un'estensione di esempio con il backend di Mozilla"
-
-#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:2
-msgid "Sample (Mozilla)"
-msgstr "Esempio (Mozilla)"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
 msgid "A sample extension"
