@@ -1,3 +1,14 @@
+==========================
+Epiphany Extensions 2.28.0
+==========================
+
+Changes:
+
+  - Fix adblock .glade file to avoid crashes when converting to
+    .ui. (#586552)
+  - Update RSS extension to new APIs. (#594482)
+  - Do not block URIs that match the /ad?/ regexp.
+
 ===========================
 Epiphany Extensions 2.27.92
 ===========================
