@@ -8,7 +8,7 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.	 See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
@@ -64,9 +64,9 @@ typedef struct
 typedef struct
 {
 	EphyNode				*node;
-	gboolean 				apply_to_image;
+	gboolean				apply_to_image;
 	gboolean				apply_to_page;
-	EphyEmbedEventContext 			context;
+	guint					context;
 } ActionData;
 
 enum
@@ -369,7 +369,7 @@ ephy_actions_extension_add_action (EphyWindow *window,
 	action_data->node = action;
 	action_data->apply_to_page = apply_to_page;
 	action_data->apply_to_image = apply_to_image;
-	action_data->context = EPHY_EMBED_CONTEXT_NONE;
+	action_data->context = WEBKIT_HIT_TEST_RESULT_CONTEXT_DOCUMENT;
 
 	if (callback)
 	{
@@ -453,7 +453,7 @@ ephy_actions_extension_run_action_on_embed_property (GtkAction *action,
 						     const char *property_name)
 {
 	EphyEmbedEvent *event;
-	const GValue *value;
+	GValue value = { 0, };
 
 	g_return_if_fail (GTK_IS_ACTION (action));
 	g_return_if_fail (EPHY_IS_WINDOW (window));
@@ -462,16 +462,17 @@ ephy_actions_extension_run_action_on_embed_property (GtkAction *action,
 	event = ephy_window_get_context_event (window);
 	g_return_if_fail (event != NULL);
 
-	value = ephy_embed_event_get_property (event, property_name);
+	ephy_embed_event_get_property (event, property_name, &value);
 	ephy_actions_extension_run_action (action, window,
-					   g_value_get_string (value));
+					   g_value_get_string (&value));
+	g_value_unset (&value);
 }
 
 static void
 ephy_actions_extension_document_popup_cb (GtkAction *action,
 					  EphyWindow *window)
 {
-	EphyEmbedEventContext context;
+	guint context;
 	EphyEmbed *embed;
 	char *url;
 	ActionData *action_data;
@@ -481,18 +482,18 @@ ephy_actions_extension_document_popup_cb (GtkAction *action,
 
 	context = action_data->context;
 
-	if (context & EPHY_EMBED_CONTEXT_IMAGE)
+	if (context & WEBKIT_HIT_TEST_RESULT_CONTEXT_IMAGE)
 	{
 		ephy_actions_extension_run_action_on_embed_property (action,
 				window,
-				"image");
+				"image-uri");
 		return;
 	}
-	if (context & EPHY_EMBED_CONTEXT_LINK)
+	if (context & WEBKIT_HIT_TEST_RESULT_CONTEXT_LINK)
 	{
 		ephy_actions_extension_run_action_on_embed_property (action,
 				window,
-				"link");
+				"link-uri");
 		return;
 	}
 
@@ -750,17 +751,23 @@ ephy_actions_extension_get_actions (EphyActionsExtension *extension)
 
 static gboolean
 ephy_actions_extension_context_menu_cb (EphyEmbed *embed,
-					EphyEmbedEvent *event,
+					GdkEventButton *event,
 					EphyWindow *window)
 {
-	EphyEmbedEventContext context;
+	guint context;
 	GList *actions, *l;
 	WindowData *data;
+	WebKitHitTestResult *hit_test;
+
+	if (event->button != 3)
+		return FALSE;
 
 	data = g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 	g_return_val_if_fail (data != NULL, FALSE);
 
-	context = ephy_embed_event_get_context (event);
+	hit_test = webkit_web_view_get_hit_test_result (EPHY_GET_WEBKIT_WEB_VIEW_FROM_EMBED (embed), event);
+	g_object_get (hit_test, "context", &context, NULL);
+	g_object_unref (hit_test);
 
 	actions = gtk_action_group_list_actions (data->user_action_group);
 	for (l = actions; l != NULL; l = l->next)
@@ -773,12 +780,12 @@ ephy_actions_extension_context_menu_cb (EphyEmbed *embed,
 
 		action_data->context = context;
 
-		if (context & EPHY_EMBED_CONTEXT_IMAGE)
+		if (context & WEBKIT_HIT_TEST_RESULT_CONTEXT_IMAGE)
 		{
 			gtk_action_set_visible (action, action_data->apply_to_image);
 			continue;
 		}
-		if (context & EPHY_EMBED_CONTEXT_DOCUMENT)
+		if (context & WEBKIT_HIT_TEST_RESULT_CONTEXT_DOCUMENT)
 		{
 			gtk_action_set_visible (action, action_data->apply_to_page);
 			continue;
@@ -798,7 +805,7 @@ ephy_actions_extension_attach_tab (EphyExtension *extension,
 {
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
-	g_signal_connect (embed, "ge_context_menu",
+	g_signal_connect (embed, "button-press-event",
 			  G_CALLBACK (ephy_actions_extension_context_menu_cb), window);
 }
 

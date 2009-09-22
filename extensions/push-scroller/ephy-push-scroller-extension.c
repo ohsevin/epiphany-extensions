@@ -57,20 +57,23 @@ ensure_push_scroller (EphyWindow *window)
 
 static gboolean
 dom_mouse_down_cb (EphyWebView *view,
-		   EphyEmbedEvent *event,
+		   GdkEventButton *event,
 		   EphyWindow *window)
 {
 	EphyPushScroller *scroller;
 	EphyEmbed *embed;
-	EphyEmbedEventContext context;
+	guint context;
 	guint button, x, y;
+	WebKitHitTestResult *hit_test;
 
-	embed = gtk_widget_get_parent (GTK_WIDGET (view));
-	button = ephy_embed_event_get_button (event);
-	context = ephy_embed_event_get_context (event);
+	embed = EPHY_EMBED (gtk_widget_get_parent (GTK_WIDGET (view)));
+	button = event->button;
+	hit_test = webkit_web_view_get_hit_test_result (WEBKIT_WEB_VIEW (view), event);
+	g_object_get (hit_test, "context", &context, NULL);
+	g_object_unref (hit_test);
 
-	if (button != 2 || (context & EPHY_EMBED_CONTEXT_INPUT) ||
-	    (context & EPHY_EMBED_CONTEXT_LINK))
+	if (button != 2 || (context & WEBKIT_HIT_TEST_RESULT_CONTEXT_EDITABLE) ||
+	    (context & WEBKIT_HIT_TEST_RESULT_CONTEXT_LINK))
 	{
 		return FALSE;
 	}
@@ -78,7 +81,8 @@ dom_mouse_down_cb (EphyWebView *view,
 	scroller = ensure_push_scroller (window);
 	g_return_val_if_fail (scroller != NULL, FALSE);
 
-	ephy_embed_event_get_coords (event, &x, &y);
+	x = (guint)event->x;
+	y = (guint)event->y;
 	ephy_push_scroller_start (scroller, embed, x, y);
 
 	return TRUE;
@@ -101,7 +105,7 @@ impl_attach_tab (EphyExtension *ext,
 	g_return_if_fail (embed != NULL);
 
 	g_signal_connect_object (EPHY_GET_EPHY_WEB_VIEW_FROM_EMBED (embed),
-				 "ge-dom-mouse-down",
+				 "button-press-event",
 				 G_CALLBACK (dom_mouse_down_cb), window, 0);
 }
 
