@@ -617,7 +617,7 @@ impl_attach_tab (EphyExtension *ext,
 
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
-	web_view = WEBKIT_WEB_VIEW (gtk_bin_get_child (GTK_BIN (gtk_bin_get_child (GTK_BIN (embed)))));
+	web_view = EPHY_GET_WEBKIT_WEB_VIEW_FROM_EMBED (embed);
 
 #if 0
 	g_signal_connect (embed, "ge_context_menu",
@@ -644,7 +644,7 @@ impl_detach_tab (EphyExtension *ext,
 
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
-	web_view = WEBKIT_WEB_VIEW (gtk_bin_get_child (GTK_BIN (gtk_bin_get_child (GTK_BIN (embed)))));
+	web_view = EPHY_GET_WEBKIT_WEB_VIEW_FROM_EMBED (embed);
 
 #if 0
 	g_signal_handlers_disconnect_by_func
