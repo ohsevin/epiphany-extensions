@@ -7,15 +7,16 @@
 # Frank Arnold <frank@scirocco-5v-turbo.de>, 2005, 2006.
 # Hendrik Richter <hendrikr@gnome.org>, 2006.
 # Mario Blättermann <mariobl@gnome.org>, 2008, 2009.
+# Christian Kirbach <Christian.Kirbach@googlemail.com>, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany Extension HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=epiphany-extensions\n"
-"POT-Creation-Date: 2009-02-21 13:24+0100\n"
-"PO-Revision-Date: 2009-02-21 13:25+0100\n"
-"Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
+"product=epiphany-extensions&component=general\n"
+"POT-Creation-Date: 2009-09-30 12:49+0000\n"
+"PO-Revision-Date: 2009-10-01 10:56+0200\n"
+"Last-Translator: Christian Kirbach <Christian.Kirbach@googlemail.com>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -79,7 +80,6 @@ msgid "_Images"
 msgstr "B_ilder"
 
 #: ../extensions/actions/action-properties.glade.h:11
-#: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Name:"
 msgstr "_Name:"
 
@@ -104,7 +104,7 @@ msgstr "Aktionen einrichten"
 msgid "Could not run command"
 msgstr "Der Befehl konnte nicht ausgeführt werden"
 
-#: ../extensions/actions/ephy-actions-extension.c:439
+#: ../extensions/actions/ephy-actions-extension.c:440
 msgid "Could not Run Command"
 msgstr "Befehl konnte nicht ausgeführt werden"
 
@@ -209,10 +209,6 @@ msgstr "_Automatische Aktualisierung"
 msgid "Reload the page periodically"
 msgstr "Die Seite regelmäßig aktualisieren"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:373
-msgid "View Creative Commons license"
-msgstr "Creative-Commons-Lizenz anzeigen"
-
 #: ../extensions/certificates/ephy-certificates-extension.c:163
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
@@ -241,127 +237,6 @@ msgstr "Sicherheits_geräte verwalten"
 #: ../extensions/certificates/ephy-certificates-extension.c:214
 msgid "Manage your security devices"
 msgstr "Ihre Sicherheitsgeräte verwalten"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:1
-msgid "Action for tagged bookmarks:"
-msgstr "Aktion für getaggte Lesezeichen:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:2
-msgid "Epilicious Configuration"
-msgstr "Epilicious-Konfiguration"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:3
-msgid "_Backend:"
-msgstr "_Backend:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:4
-msgid "_Exclude"
-msgstr "_Ausschließen"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:5
-msgid "_Include"
-msgstr "_Einschließen"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:7
-msgid "_Password:"
-msgstr "_Passwort:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:8
-msgid "_Tag:"
-msgstr "_Tag:"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:1
-msgid "Adding new bookmarks and synching topics"
-msgstr "Neue Lesezeichen hinzufügen und Themen abgleichen"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:2
-msgid "Removing deleted bookmarks"
-msgstr "Gelöschte Lesezeichen entfernen"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:4
-#: ../extensions/epilicious/progress.py:41
-#, no-c-format, python-format
-msgid "Retrieving bookmarks from %s"
-msgstr "Lesezeichen von %s holen"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:5
-msgid "Retrieving bookmarks from epiphany"
-msgstr "Lesezeichen aus Epiphany holen"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:6
-msgid "Retrieving previous synch point"
-msgstr "Vorherigen Abgleichpunkt holen"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:7
-msgid "Saving new synch point"
-msgstr "Neuen Abgleichpunkt speichern"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:9
-#: ../extensions/epilicious/progress.py:39
-#, no-c-format, python-format
-msgid "Synchronizing with %s"
-msgstr "Abgleich mit %s"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:10
-msgid "Synchronizing..."
-msgstr "Abgleichen …"
-
-#: ../extensions/epilicious/epilicious.py.in:232
-#: ../extensions/epilicious/epilicious.py.in:250
-msgid "Epilicious Synchronize"
-msgstr "Epilicious-Abgleich"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:1
-msgid "Bookmarks with this topic will be synchronized."
-msgstr "Lesezeichen mit diesem Thema werden abgeglichen."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:2
-msgid ""
-"Controls the function of the topic. If this is unset then all bookmarks with "
-"the topic will be synched. If this is set then all bookmarks without the "
-"topic will be synched."
-msgstr ""
-"Steuert die Funktion des Themas. Falls nicht gesetzt, werden alle "
-"Lesezeichen dieses Themas abgegelichen. Falls gesetzt, werden alle "
-"Lesezeichen abgeglichen, die nicht zu diesem Thema gehören."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:3
-msgid "Exclude topic"
-msgstr "Thema ausschließen"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:4
-msgid "Shared topic"
-msgstr "Thema freigeben"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:5
-msgid ""
-"The backend that epilicious will use for synchronizing bookmarks. Allowed "
-"values: 'diigo', 'ma.gnolia'"
-msgstr ""
-"Das Backend, das Epilicious für den Abgleich von Lesezeichen verwendet. "
-"Mögliche Werte: 'diigo','ma.gnolia'"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:6
-msgid "The password that epilicious will use for synchronizing bookmarks."
-msgstr ""
-"Das Passwort, das Epilicious für den Abgleich von Lesezeichen verwendet."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:7
-msgid "The username that epilicious will use for synchronizing bookmarks."
-msgstr ""
-"Der Benutzername, den Epilicious für den Abgleich von Lesezeichen verwendet."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:8
-msgid "epilicious backend"
-msgstr "Epilicious-Backend"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:9
-msgid "password"
-msgstr "Passwort"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:10
-msgid "username"
-msgstr "Benutzername"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Check _HTML"
@@ -475,7 +350,7 @@ msgstr[1] "%d Fehler gefunden"
 #: ../extensions/error-viewer/sgml-validator.c:168
 #, c-format
 msgid "HTML Validation of “%s” complete"
-msgstr "HTML-Validierung von »%s« durchgeführt"
+msgstr "HTML-Gültigkeitsprüfung  von »%s« durchgeführt"
 
 #: ../extensions/error-viewer/sgml-validator.c:226
 #, c-format
@@ -492,7 +367,7 @@ msgid ""
 "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
 "+xml” instead."
 msgstr ""
-"Der Dokumententyp ist »XHTML«, die Content-Type-Angabe jedoch »text/html«. "
+"Der Dokumententyp ist »XHTML«, die Content-Type-Angabe ist jedoch »text/html«. "
 "Verwenden Sie stattdessen »application/xhtml+xml«."
 
 #: ../extensions/error-viewer/sgml-validator.c:242
@@ -528,12 +403,12 @@ msgstr ""
 "HTML-Fehler in %s:\n"
 "Kein gültiger doctype-Dokumententyp angegeben."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:346
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:345
 msgid "Enabled"
 msgstr "Aktiviert"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:354
-#: ../extensions/rss/rss-ui.c:571
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:353
+#: ../extensions/rss/rss-ui.c:572
 msgid "Description"
 msgstr "Beschreibung"
 
@@ -919,6 +794,7 @@ msgid "Domain"
 msgstr "Domain"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:512
+#: ../extensions/soup-fly/soup-fly.c:196
 msgid "State"
 msgstr "Zustand"
 
@@ -950,24 +826,25 @@ msgstr "Seitenrechte verwalten"
 
 #: ../extensions/rss/ephy-rss-extension.c:79
 msgid "News Feeds Subscription"
-msgstr "News-Feed-Abonnierung"
+msgstr "Abonnierung einer Nachrichtenquelle"
 
 #: ../extensions/rss/ephy-rss-extension.c:81
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr ""
-"Abonnieren des News-Feeds dieser Webseite in Ihrem bevorzugten News-Reader"
+"Abonnieren der Nachrichtenquelle dieser Webseite in Ihrem bevorzugten News-"
+"Reader"
 
 #: ../extensions/rss/ephy-rss-extension.c:86
 msgid "_Subscribe to this feed"
-msgstr "Diesen Feed ab_onnieren"
+msgstr "Diese Nachrichtenquelle ab_onnieren"
 
 #: ../extensions/rss/ephy-rss-extension.c:88
 msgid "Subscribe to this feed in your favorite news reader"
-msgstr "Diesen Feed in Ihrem bevorzugten News-Reader abonnieren"
+msgstr "Diese Nachrichtenquelle in Ihrem bevorzugten News-Reader abonnieren"
 
-#: ../extensions/rss/ephy-rss-extension.c:361
+#: ../extensions/rss/ephy-rss-extension.c:365
 msgid "Subscribe to site's news feed"
-msgstr "News-Feed der Webseite abonnieren"
+msgstr "Nachrichtenquelle der Webseite abonnieren"
 
 #: ../extensions/rss/rss-ui.c:153
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
@@ -981,20 +858,20 @@ msgstr "Wiederholen"
 
 #: ../extensions/rss/rss-ui.c:283
 msgid "_Copy Feed Address"
-msgstr "_Feed-Adresse kopieren"
+msgstr "_Adresse der Nachrichtenquelle kopieren"
 
-#: ../extensions/rss/rss-ui.c:563
+#: ../extensions/rss/rss-ui.c:564
 msgid "Subscribe"
 msgstr "Abonnieren"
 
 #: ../extensions/rss/rss-ui.glade.h:1
 msgid "<b>Select Interesting Feeds</b>"
-msgstr "<b>Interessierende Feeds auswählen</b>"
+msgstr "<b>Interessierende Nachrichtenquellen auswählen</b>"
 
 #: ../extensions/rss/rss-ui.glade.h:2
 #: ../extensions/rss/rss.ephy-extension.in.in.h:1
 msgid "News Feed Subscription"
-msgstr "News-Feed-Abonnierung"
+msgstr "Nachrichtenquellen-Abonnierung"
 
 #: ../extensions/rss/rss-ui.glade.h:3
 msgid "_Subscribe"
@@ -1105,13 +982,30 @@ msgstr ""
 "Falls wahr, wird das Suchergebnis in einem neuen Reiter geöffnet, "
 "anderenfalls in einem neuen Fenster"
 
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
+msgid "_Soup Fly"
+msgstr "_Soup Fly"
+
+#. shortcut key
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:68
+msgid "Show information about the SoupSession used by the browser"
+msgstr "Informationen zur verwendeten SoupSession zeigen"
+
+#: ../extensions/soup-fly/soup-fly.c:220
+msgid "Clear finished"
+msgstr "Nachrichtenspeicher leeren"
+
+#: ../extensions/soup-fly/soup-fly.c:224
+msgid "Automatically remove finished messages"
+msgstr "Automatisch Nachrichtenspeicher leeren"
+
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
 msgstr "Beliebige Befehle aus dem Kontextmenü heraus ausführen"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
 msgid "Ad Blocker"
-msgstr "Ad Blocker"
+msgstr "Werbe-Blocker"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
 msgid "Block the pest!"
@@ -1119,7 +1013,7 @@ msgstr "Blockiere die Pest!"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
 msgid "Auto Scroll"
-msgstr "Automatisches Scrollen"
+msgstr "Automatischer Bildlauf"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
 msgid "Scroll on middle mouse click"
@@ -1133,22 +1027,9 @@ msgstr "Automatische Reiteraktualisierung"
 msgid "Reload a tab periodically"
 msgstr "Einen Reiter regelmäßig aktualisieren"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
-msgid "Creative Commons license viewer"
-msgstr "Creative-Commons-Lizenzbetrachter"
-
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
-msgid "Shows the Creative Commons license of the current website if available"
-msgstr ""
-"Zeigt die Creative-Commons-Lizenz der aktuellen Webseite, falls verfügbar."
-
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Das Seitenzertifikat anzeigen und die Zertifikate verwalten"
-
-#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
-msgid "Synchronize bookmarks with social bookmark sites"
-msgstr "Lesezeichen mit »Social bookmark«-Seiten abgleichen"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -1165,17 +1046,6 @@ msgstr "Erweiterungen aktivieren und deaktivieren"
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
 msgid "Extensions Manager"
 msgstr "Erweiterungsverwaltung"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:1
-msgid "Favicon fallback"
-msgstr "Vorgabe-Favicon"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:2
-msgid ""
-"Loads /favicon.ico as favicon if the site doesn't use the standard method"
-msgstr ""
-"Lädt /favicon.ico als Favicon, falls die Seite nicht die Standardmethode "
-"anwendet"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -1233,28 +1103,12 @@ msgstr "Seiteninhalt durch Drücken der mittleren Maustaste verschieben"
 msgid "Push Scroll"
 msgstr "Automatisches Scrollen"
 
-#: ../extensions/python-console/python-console.ephy-extension.in.h:1
-msgid "Opens an interactive Python console"
-msgstr "Öffnet eine interaktive Python-Konsole"
-
-#: ../extensions/python-console/python-console.ephy-extension.in.h:2
-msgid "Python Console"
-msgstr "Python-Konsole"
-
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr ""
-"Abonnieren eines von der Webseite angebotenen News-Feeds in Ihrem "
+"Abonnieren einer von der Webseite angebotenen Nachrichtenquelle in Ihrem "
 "bevorzugten News-Reader"
-
-#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:1
-msgid "A sample extension with mozilla backend"
-msgstr "Eine Mustererweiterung mit Mozilla-Backend"
-
-#: ../extensions/sample-mozilla/sample-mozilla.ephy-extension.in.in.h:2
-msgid "Sample (Mozilla)"
-msgstr "Muster (Mozilla)"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
 msgid "A sample extension"
@@ -1305,6 +1159,132 @@ msgstr "Auf neuen Inhalt in Hintergrundreitern hinweisen"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Reiterzustände"
+
+#~ msgid "View Creative Commons license"
+#~ msgstr "Creative-Commons-Lizenz anzeigen"
+
+#~ msgid "Action for tagged bookmarks:"
+#~ msgstr "Aktion für getaggte Lesezeichen:"
+
+#~ msgid "Epilicious Configuration"
+#~ msgstr "Epilicious-Konfiguration"
+
+#~ msgid "_Backend:"
+#~ msgstr "_Backend:"
+
+#~ msgid "_Exclude"
+#~ msgstr "_Ausschließen"
+
+#~ msgid "_Include"
+#~ msgstr "_Einschließen"
+
+#~ msgid "_Password:"
+#~ msgstr "_Passwort:"
+
+#~ msgid "_Tag:"
+#~ msgstr "_Tag:"
+
+#~ msgid "Adding new bookmarks and synching topics"
+#~ msgstr "Neue Lesezeichen hinzufügen und Themen abgleichen"
+
+#~ msgid "Removing deleted bookmarks"
+#~ msgstr "Gelöschte Lesezeichen entfernen"
+
+#~ msgid "Retrieving bookmarks from %s"
+#~ msgstr "Lesezeichen von %s holen"
+
+#~ msgid "Retrieving bookmarks from epiphany"
+#~ msgstr "Lesezeichen aus Epiphany holen"
+
+#~ msgid "Retrieving previous synch point"
+#~ msgstr "Vorherigen Abgleichpunkt holen"
+
+#~ msgid "Saving new synch point"
+#~ msgstr "Neuen Abgleichpunkt speichern"
+
+#~ msgid "Synchronizing with %s"
+#~ msgstr "Abgleich mit %s"
+
+#~ msgid "Synchronizing..."
+#~ msgstr "Abgleichen …"
+
+#~ msgid "Epilicious Synchronize"
+#~ msgstr "Epilicious-Abgleich"
+
+#~ msgid "Bookmarks with this topic will be synchronized."
+#~ msgstr "Lesezeichen mit diesem Thema werden abgeglichen."
+
+#~ msgid ""
+#~ "Controls the function of the topic. If this is unset then all bookmarks "
+#~ "with the topic will be synched. If this is set then all bookmarks without "
+#~ "the topic will be synched."
+#~ msgstr ""
+#~ "Steuert die Funktion des Themas. Falls nicht gesetzt, werden alle "
+#~ "Lesezeichen dieses Themas abgegelichen. Falls gesetzt, werden alle "
+#~ "Lesezeichen abgeglichen, die nicht zu diesem Thema gehören."
+
+#~ msgid "Exclude topic"
+#~ msgstr "Thema ausschließen"
+
+#~ msgid "Shared topic"
+#~ msgstr "Thema freigeben"
+
+#~ msgid ""
+#~ "The backend that epilicious will use for synchronizing bookmarks. Allowed "
+#~ "values: 'diigo', 'ma.gnolia'"
+#~ msgstr ""
+#~ "Das Backend, das Epilicious für den Abgleich von Lesezeichen verwendet. "
+#~ "Mögliche Werte: 'diigo','ma.gnolia'"
+
+#~ msgid "The password that epilicious will use for synchronizing bookmarks."
+#~ msgstr ""
+#~ "Das Passwort, das Epilicious für den Abgleich von Lesezeichen verwendet."
+
+#~ msgid "The username that epilicious will use for synchronizing bookmarks."
+#~ msgstr ""
+#~ "Der Benutzername, den Epilicious für den Abgleich von Lesezeichen "
+#~ "verwendet."
+
+#~ msgid "epilicious backend"
+#~ msgstr "Epilicious-Backend"
+
+#~ msgid "password"
+#~ msgstr "Passwort"
+
+#~ msgid "username"
+#~ msgstr "Benutzername"
+
+#~ msgid "Creative Commons license viewer"
+#~ msgstr "Creative-Commons-Lizenzbetrachter"
+
+#~ msgid ""
+#~ "Shows the Creative Commons license of the current website if available"
+#~ msgstr ""
+#~ "Zeigt die Creative-Commons-Lizenz der aktuellen Webseite, falls verfügbar."
+
+#~ msgid "Synchronize bookmarks with social bookmark sites"
+#~ msgstr "Lesezeichen mit »Social bookmark«-Seiten abgleichen"
+
+#~ msgid "Favicon fallback"
+#~ msgstr "Vorgabe-Favicon"
+
+#~ msgid ""
+#~ "Loads /favicon.ico as favicon if the site doesn't use the standard method"
+#~ msgstr ""
+#~ "Lädt /favicon.ico als Favicon, falls die Seite nicht die Standardmethode "
+#~ "anwendet"
+
+#~ msgid "Opens an interactive Python console"
+#~ msgstr "Öffnet eine interaktive Python-Konsole"
+
+#~ msgid "Python Console"
+#~ msgstr "Python-Konsole"
+
+#~ msgid "A sample extension with mozilla backend"
+#~ msgstr "Eine Mustererweiterung mit Mozilla-Backend"
+
+#~ msgid "Sample (Mozilla)"
+#~ msgstr "Muster (Mozilla)"
 
 #~ msgid "_Actions"
 #~ msgstr "_Aktionen"
