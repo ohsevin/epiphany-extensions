@@ -1,0 +1,1154 @@
+# Romanian translation for epiphany-extensions
+# Copyright (c) (c) 2006 Canonical Ltd, and Rosetta Contributors 2006
+# This file is distributed under the same license as the epiphany-extensions package.
+# Adi Roiban https://launchpad.net/~adiroiban, 2008, 2009
+# Lucian Adrian Grijincu <lucian.grijincu@gmail.com>, 2009
+# Mișu Moldovan <dumol@gnome.ro>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: epiphany-extensions\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=epiphany-extensions&component=general\n"
+"POT-Creation-Date: 2009-10-01 17:36+0000\n"
+"PO-Revision-Date: 2009-10-11 16:16+0300\n"
+"Last-Translator: Mișu Moldovan <dumol@gnome.ro>\n"
+"Language-Team: Gnome Romanian Team <gnomero-list@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2);;\n"
+
+#: ../extensions/actions/action-properties.glade.h:1
+msgid "<span weight=\"bold\">Applies to</span>"
+msgstr "<span weight=\"bold\">Se aplică la</span>"
+
+#: ../extensions/actions/action-properties.glade.h:2
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">Generale</span>"
+
+#: ../extensions/actions/action-properties.glade.h:3
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"images."
+msgstr ""
+"Dacă această opțiune este activă, acțiunea va fi inclusă în meniul pentru "
+"imagini."
+
+#: ../extensions/actions/action-properties.glade.h:4
+msgid ""
+"If this option is enabled, the action will be included in the popup menu of "
+"links and pages."
+msgstr ""
+"Dacă această opțiune este activă, acțiunea va fi inclusă în meniul de "
+"legături și pagini."
+
+#: ../extensions/actions/action-properties.glade.h:5
+msgid "The action description."
+msgstr "Descrierea acțiunii."
+
+#: ../extensions/actions/action-properties.glade.h:6
+msgid ""
+"The action name. If a character is preceded by an underscore, that character "
+"will be used as the access key for the menu item."
+msgstr ""
+"Numele acțiunii. Dacă un caracter din nume este precedat de o „linie jos”, "
+"acel caracter va fi folosit drept scurtătură pentru intrarea din meniu."
+
+#: ../extensions/actions/action-properties.glade.h:7
+msgid ""
+"The command to execute when the action is activated. The URL of the link, "
+"image or page will be appended to the command."
+msgstr ""
+"Comanda ce va fi executată la activarea acțiunii. URL-ul legăturii, imaginea "
+"sau pagina vor fi concatenate comenzii."
+
+#: ../extensions/actions/action-properties.glade.h:8
+msgid "_Command:"
+msgstr "_Comandă:"
+
+#: ../extensions/actions/action-properties.glade.h:9
+msgid "_Description:"
+msgstr "_Descriere:"
+
+#: ../extensions/actions/action-properties.glade.h:10
+msgid "_Images"
+msgstr "_Imagini"
+
+#: ../extensions/actions/action-properties.glade.h:11
+msgid "_Name:"
+msgstr "_Nume:"
+
+#: ../extensions/actions/action-properties.glade.h:12
+msgid "_Pages"
+msgstr "_Pagini"
+
+#: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions.ephy-extension.in.in.h:1
+msgid "Actions"
+msgstr "Acțiuni"
+
+#: ../extensions/actions/ephy-actions-extension.c:112
+msgid "Actio_ns"
+msgstr "Acțiu_ni"
+
+#: ../extensions/actions/ephy-actions-extension.c:113
+msgid "Customize actions"
+msgstr "Acțiuni personalizate"
+
+#: ../extensions/actions/ephy-actions-extension.c:436
+msgid "Could not run command"
+msgstr "Nu s-a putut executa comanda"
+
+#: ../extensions/actions/ephy-actions-extension.c:440
+msgid "Could not Run Command"
+msgstr "Nu s-a putut executa comanda"
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
+msgid "No action selected."
+msgstr "Nici o acțiune selectată."
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
+#, c-format
+msgid "%i action selected."
+msgid_plural "%i actions selected."
+msgstr[0] "%i acțiune selectată."
+msgstr[1] "%i acțiuni selectate."
+msgstr[2] "%i de acțiuni selectate."
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
+msgid "Add Action"
+msgstr "Adaugă acțiune"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
+#, c-format
+msgid "“%s” Properties"
+msgstr "Proprietăți „%s”"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
+msgid "Action Properties"
+msgstr "Proprietăți acțiune"
+
+#: ../extensions/adblock/adblock-ui.c:263
+msgid ""
+"This list is Copyright © its original author(G). It is relicensed under the "
+"GPL with permission.\n"
+"The original list, Filterset.G, can be found at http://www.pierceive.com/"
+"filtersetg/.\n"
+"This version has been modified from its original. The changes have not been "
+"approved by the original author;\n"
+"direct any problems to Bugzilla and not to the original author (G).\n"
+msgstr ""
+"Drepturile de autor ale acestei liste aparțin autorului original (G). Ea "
+"este relicențiată sub licența GPL cu permisiunea sa.\n"
+"Lista originală, Filterset.G, poate fi găsită la http://www.pierceive.com/"
+"filtersetg/ .\n"
+"Această versiune a fost modificată față de cea originală. Schimbările nu au "
+"fost aprobate de autorul inițial.\n"
+"Direcționați orice reclamații către Bugzilla și nu către primul autor (G).\n"
+
+#: ../extensions/adblock/adblock-ui.c:481
+msgid "Pattern"
+msgstr "Model"
+
+#: ../extensions/adblock/adblock.glade.h:1
+msgid "<b>Courtesy of Graham Pierce</b>"
+msgstr "<b>Prin bunăvoința lui Graham Pierce</b>"
+
+#: ../extensions/adblock/adblock.glade.h:2
+msgid "<b>New rule</b>"
+msgstr "<b>Regulă nouă</b>"
+
+#: ../extensions/adblock/adblock.glade.h:3
+msgid "<b>Update rules from original site</b>"
+msgstr "<b>Actualizarea regulilor de pe serverul original</b>"
+
+#: ../extensions/adblock/adblock.glade.h:4
+#: ../extensions/adblock/ephy-adblock-extension.c:229
+msgid "Adblock Editor"
+msgstr "Editor anti-reclame"
+
+#: ../extensions/adblock/adblock.glade.h:5
+msgid "Add a new rule"
+msgstr "Adăugați o regulă nouă"
+
+#: ../extensions/adblock/adblock.glade.h:6
+msgid "Blacklist"
+msgstr "Listă de blocare"
+
+#: ../extensions/adblock/adblock.glade.h:7
+msgid "Filterset.G"
+msgstr "Filterset.G"
+
+#: ../extensions/adblock/adblock.glade.h:8
+msgid "Whitelist"
+msgstr "Listă de excepții"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:230
+msgid "Edit Adblock"
+msgstr "Modificare filtru anti-reclame"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:299
+#, c-format
+msgid "%d hidden advertisement"
+msgid_plural "%d hidden advertisements"
+msgstr[0] "%d reclamă ascunsă"
+msgstr[1] "%d reclame ascunse"
+msgstr[2] "%d de reclame ascunse"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:81
+msgid "_Auto Reload"
+msgstr "Reîncărcare _automată"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+msgid "Reload the page periodically"
+msgstr "Reîncarcă pagina periodic"
+
+#: ../extensions/certificates/ephy-certificates-extension.c:163
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
+msgid "Certificates"
+msgstr "Certificate"
+
+#: ../extensions/certificates/ephy-certificates-extension.c:194
+msgid "Security Devices"
+msgstr "Dispozitive de securitate"
+
+#. stock icon
+#: ../extensions/certificates/ephy-certificates-extension.c:206
+msgid "Manage _Certificates"
+msgstr "Administrare _certificate"
+
+#. shortcut key
+#: ../extensions/certificates/ephy-certificates-extension.c:208
+msgid "Manage your certificates"
+msgstr "Administrare certificate"
+
+#. stock icon
+#: ../extensions/certificates/ephy-certificates-extension.c:212
+msgid "Manage Security _Devices"
+msgstr "Administrare _dispozitive de securitate"
+
+#. shortcut key
+#: ../extensions/certificates/ephy-certificates-extension.c:214
+msgid "Manage your security devices"
+msgstr "Administrare dispozitive de securitate"
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
+msgid "Check _HTML"
+msgstr "Verificare _HTML"
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:92
+msgid "Display HTML errors in the Error Viewer dialog"
+msgstr "Afișează erorile HTML în fereastra de vizualizare a erorilor"
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
+msgid "Check _Links"
+msgstr "Verificare _linkuri"
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
+msgid "Display invalid hyperlinks in the Error Viewer dialog"
+msgstr "Afișează linkurile nevalide în fereastra de vizualizare a erorilor"
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:103
+msgid "_Error Viewer"
+msgstr "Afișare _erori"
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
+msgid "Display web page errors"
+msgstr "Afișează erorile din pagina web"
+
+#: ../extensions/error-viewer/error-viewer.glade.h:1
+msgid "Cl_ear"
+msgstr "Șt_erge"
+
+#: ../extensions/error-viewer/error-viewer.glade.h:2
+msgid "Error Viewer"
+msgstr "Afișare erori"
+
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:105
+#, c-format
+msgid ""
+"%s error in %s on line %d and column %d:\n"
+"%s"
+msgstr ""
+"%s eroare în %s la linia %d și coloana %d:\n"
+"%s"
+
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:113
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:137
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:150
+#, c-format
+msgid ""
+"%s error in %s:\n"
+"%s"
+msgstr ""
+"%s eroare în %s:\n"
+"%s"
+
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
+#, c-format
+msgid ""
+"%s error in %s on line %d:\n"
+"%s"
+msgstr ""
+"%s eroare în %s la linia %d:\n"
+"%s"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "S-a descoperit %d link nevalid"
+msgstr[1] "S-au descoperit %d linkuri nevalide"
+msgstr[2] "S-au descoperit %d de linkuri nevalide"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
+#, c-format
+msgid ""
+"Link error in %s:\n"
+"%s is unavailable."
+msgstr ""
+"Eroare de link în %s:\n"
+"%s nu este disponibil."
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
+#, c-format
+msgid "Checking %d Link on “%s”"
+msgid_plural "Checking %d Links on “%s”"
+msgstr[0] "Se verifică %d link în „%s”"
+msgstr[1] "Se verifică %d linkuri în „%s”"
+msgstr[2] "Se verifică %d de linkuri în „%s”"
+
+#: ../extensions/error-viewer/opensp/validate.cpp:168
+#, c-format
+msgid ""
+"HTML error in “%s” on line %s:\n"
+"%s"
+msgstr ""
+"Eroare HTML în „%s” la linia %s:\n"
+"%s"
+
+#: ../extensions/error-viewer/sgml-validator.c:164
+#, c-format
+msgid "Found %d error"
+msgid_plural "Found %d errors"
+msgstr[0] "S-a descoperit %d eroare"
+msgstr[1] "S-au descoperit %d erori"
+msgstr[2] "S-au descoperit %d de erori"
+
+#: ../extensions/error-viewer/sgml-validator.c:168
+#, c-format
+msgid "HTML Validation of “%s” complete"
+msgstr "Validarea HTML pentru „%s” este completă"
+
+#: ../extensions/error-viewer/sgml-validator.c:226
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"%s"
+msgstr ""
+"Erori HTML în %s:\n"
+"%s"
+
+#: ../extensions/error-viewer/sgml-validator.c:228
+#: ../extensions/error-viewer/sgml-validator.c:244
+msgid ""
+"Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
+"+xml” instead."
+msgstr ""
+"Tipul de document este „XHTML”, dar tipul conținutului este „text/html”. "
+"E de preferat să utilizați „application/xhtml+xml”."
+
+#: ../extensions/error-viewer/sgml-validator.c:242
+#, c-format
+msgid ""
+"HTML warning in %s:\n"
+"%s"
+msgstr ""
+"Avertizare HTML în %s:\n"
+"%s"
+
+#: ../extensions/error-viewer/sgml-validator.c:359
+#, c-format
+msgid "HTML error in %s:"
+msgstr "Eroare HTML în %s:"
+
+#: ../extensions/error-viewer/sgml-validator.c:367
+#, c-format
+msgid "Invalid character encoding"
+msgstr "Codarea nevalidă de caractere"
+
+#: ../extensions/error-viewer/sgml-validator.c:372
+#, c-format
+msgid "Unknown error while converting to UTF-8"
+msgstr "Eroare necunoscută la convertirea UTF-8"
+
+#: ../extensions/error-viewer/sgml-validator.c:434
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"No valid doctype specified."
+msgstr ""
+"Eroare HTML în %s:\n"
+"Nu s-a specificat un tip valid de document."
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:345
+msgid "Enabled"
+msgstr "Activare"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:353
+#: ../extensions/rss/rss-ui.c:572
+msgid "Description"
+msgstr "Descriere"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+msgid "<b>Loaded Extensions</b>"
+msgstr "<b>Extensii activate</b>"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+msgid "Extensions"
+msgstr "Extensii"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:73
+msgid "_Extensions"
+msgstr "_Extensii"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
+msgid "Load and unload extensions"
+msgstr "Activare și dezactivare extensii"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+msgid "Help about extensions"
+msgstr "Ajutor pentru extensii"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:78
+msgid "Install User _Script"
+msgstr "Instalare _script utilizator"
+
+#. shortcut key
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:80
+msgid "Install Greasemonkey script"
+msgstr "Instalare script Greasemonkey"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:311
+#, c-format
+msgid "The user script at “%s” has been installed"
+msgstr "Scriptul utilizator de la „%s” a fost instalat"
+
+#: ../extensions/java-console/ephy-java-console-extension.c:48
+msgid "_Java Console"
+msgstr "Consolă _Java"
+
+#. shortcut key
+#: ../extensions/java-console/ephy-java-console-extension.c:50
+msgid "Show Java Console"
+msgstr "Arată consola _Java"
+
+#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:100
+msgid "_HTTP Headers"
+msgstr "Antete _HTTP"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:1
+msgid "<b>Request</b>"
+msgstr "<b>Cerere</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:2
+msgid "<b>Response</b>"
+msgstr "<b>Răspuns</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:3
+msgid "<b>URLs</b>"
+msgstr "<b>URL-uri</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
+msgid "Clear cache"
+msgstr "Șterge memoria cache"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
+msgid "Live Headers"
+msgstr "Antete în timp real"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
+msgid "Remove headers"
+msgstr "Șterge antetele"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:61
+msgid "Pa_ge Information"
+msgstr "Informații pa_gină"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:63
+msgid "Display page information in a dialog"
+msgstr "Afișează într-o fereastră informațiile paginii"
+
+#: ../extensions/page-info/page-info-dialog.c:704
+msgid "Save As..."
+msgstr "Salvează ca..."
+
+#: ../extensions/page-info/page-info-dialog.c:721
+msgid "Select a directory"
+msgstr "Selectați un director"
+
+#: ../extensions/page-info/page-info-dialog.c:770
+msgid "Unknown type"
+msgstr "Tip necunoscut"
+
+#: ../extensions/page-info/page-info-dialog.c:775
+msgid "Full standards compliance"
+msgstr "Conform cu toate standardele"
+
+#: ../extensions/page-info/page-info-dialog.c:778
+msgid "Almost standards compliance"
+msgstr "Aproape conform cu standardele"
+
+#: ../extensions/page-info/page-info-dialog.c:781
+msgid "Compatibility"
+msgstr "Compatibilitate"
+
+#: ../extensions/page-info/page-info-dialog.c:785
+msgid "Undetermined"
+msgstr "Nedeterminat"
+
+#: ../extensions/page-info/page-info-dialog.c:794
+msgid "Not cached"
+msgstr "Nu s-a memorat în cache"
+
+#: ../extensions/page-info/page-info-dialog.c:797
+msgid "Disk cache"
+msgstr "Cache pe disc"
+
+#: ../extensions/page-info/page-info-dialog.c:800
+msgid "Memory cache"
+msgstr "Cache în memorie"
+
+#: ../extensions/page-info/page-info-dialog.c:803
+msgid "Unknown cache"
+msgstr "Cache necunoscut"
+
+#: ../extensions/page-info/page-info-dialog.c:819
+#: ../extensions/page-info/page-info-dialog.c:935
+msgid "Unknown"
+msgstr "Necunoscut"
+
+#: ../extensions/page-info/page-info-dialog.c:824
+msgid "No referrer"
+msgstr "Nici un referent"
+
+#: ../extensions/page-info/page-info-dialog.c:838
+#: ../extensions/page-info/page-info-dialog.c:854
+msgid "Not specified"
+msgstr "Nespecificat"
+
+#: ../extensions/page-info/page-info-dialog.c:917
+msgid "Image"
+msgstr "Imagine"
+
+#: ../extensions/page-info/page-info-dialog.c:920
+msgid "Background image"
+msgstr "Imagine de fond"
+
+#: ../extensions/page-info/page-info-dialog.c:923
+msgid "Embed"
+msgstr "Înglobat"
+
+#: ../extensions/page-info/page-info-dialog.c:926
+msgid "Object"
+msgstr "Obiect"
+
+#: ../extensions/page-info/page-info-dialog.c:929
+msgid "Applet"
+msgstr "Miniaplicație"
+
+#: ../extensions/page-info/page-info-dialog.c:932
+msgid "Icon"
+msgstr "Iconiță"
+
+#: ../extensions/page-info/page-info-dialog.c:1113
+msgid "_Open"
+msgstr "_Deschide"
+
+#: ../extensions/page-info/page-info-dialog.c:1119
+#: ../extensions/page-info/page-info-dialog.c:1564
+msgid "_Copy Link Address"
+msgstr "_Copiază adresa linkului"
+
+#: ../extensions/page-info/page-info-dialog.c:1125
+msgid "_Use as Background"
+msgstr "Folosește ca f_undal"
+
+#: ../extensions/page-info/page-info-dialog.c:1131
+#: ../extensions/page-info/page-info-dialog.c:1570
+msgid "_Save As..."
+msgstr "_Salvează ca..."
+
+#: ../extensions/page-info/page-info-dialog.c:1363
+#: ../extensions/page-info/page-info-dialog.c:1684
+msgid "Blocked"
+msgstr "Blocat"
+
+#: ../extensions/page-info/page-info-dialog.c:1379
+#: ../extensions/page-info/page-info-dialog.c:1700
+msgid "URL"
+msgstr "URL"
+
+#: ../extensions/page-info/page-info-dialog.c:1392
+msgid "Type"
+msgstr "Tip"
+
+#: ../extensions/page-info/page-info-dialog.c:1404
+msgid "Alt Text"
+msgstr "Text alternativ"
+
+#: ../extensions/page-info/page-info-dialog.c:1416
+#: ../extensions/page-info/page-info-dialog.c:1713
+msgid "Title"
+msgstr "Titlu"
+
+#: ../extensions/page-info/page-info-dialog.c:1428
+msgid "Width"
+msgstr "Lățime"
+
+#: ../extensions/page-info/page-info-dialog.c:1440
+msgid "Height"
+msgstr "Înălțime"
+
+#: ../extensions/page-info/page-info-dialog.c:1725
+msgid "Relation"
+msgstr "Relație"
+
+#: ../extensions/page-info/page-info-dialog.c:1874
+#: ../extensions/page-info/page-info-dialog.c:2015
+msgid "Name"
+msgstr "Nume"
+
+#: ../extensions/page-info/page-info-dialog.c:1886
+msgid "Method"
+msgstr "Metodă"
+
+#: ../extensions/page-info/page-info-dialog.c:1900
+msgid "Action"
+msgstr "Acțiune"
+
+#: ../extensions/page-info/page-info-dialog.c:1981
+msgid "_Copy"
+msgstr "_Copiază"
+
+#: ../extensions/page-info/page-info-dialog.c:2027
+msgid "Content"
+msgstr "Conținut"
+
+#: ../extensions/page-info/page-info-dialog.c:2128
+msgid "Page Metadata"
+msgstr "Metadate pagină"
+
+#: ../extensions/page-info/page-info.glade.h:1
+msgid "<b>Dublin Core Metadata</b>"
+msgstr "<b>Metadate Dublin Core</b>"
+
+#: ../extensions/page-info/page-info.glade.h:2
+msgid "<b>Forms In Page</b>"
+msgstr "<b>Formulare în pagină</b>"
+
+#: ../extensions/page-info/page-info.glade.h:3
+msgid "<b>Links In Page</b>"
+msgstr "<b>Linkuri în pagină</b>"
+
+#: ../extensions/page-info/page-info.glade.h:4
+msgid "<b>Media In Page</b>"
+msgstr "<b>Fișiere media în pagină</b>"
+
+#: ../extensions/page-info/page-info.glade.h:5
+msgid "<b>Medium View</b>"
+msgstr "<b>Vizualizare medie</b>"
+
+#: ../extensions/page-info/page-info.glade.h:6
+msgid "<b>Other Metadata</b>"
+msgstr "<b>Alte metadate</b>"
+
+#: ../extensions/page-info/page-info.glade.h:7
+msgid "<b>Rendering</b>"
+msgstr "<b>Randare</b>"
+
+#: ../extensions/page-info/page-info.glade.h:8
+msgid "<b>Source File</b>"
+msgstr "<b>Fișier sursă</b>"
+
+#: ../extensions/page-info/page-info.glade.h:9
+msgid "<b>Web Page</b>"
+msgstr "<b>Pagină web</b>"
+
+#: ../extensions/page-info/page-info.glade.h:10
+msgid "DYNAMIC"
+msgstr "DINAMIC"
+
+#: ../extensions/page-info/page-info.glade.h:11
+msgid "Date:"
+msgstr "Dată:"
+
+#: ../extensions/page-info/page-info.glade.h:12
+msgid "Description:"
+msgstr "Descriere:"
+
+#: ../extensions/page-info/page-info.glade.h:13
+msgid "Encoding:"
+msgstr "Codare:"
+
+#: ../extensions/page-info/page-info.glade.h:14
+msgid "Expires:"
+msgstr "Expirare:"
+
+#: ../extensions/page-info/page-info.glade.h:15
+msgid "Format:"
+msgstr "Format:"
+
+#: ../extensions/page-info/page-info.glade.h:16
+msgid "Forms"
+msgstr "Formulare"
+
+#: ../extensions/page-info/page-info.glade.h:17
+msgid "General"
+msgstr "General"
+
+#: ../extensions/page-info/page-info.glade.h:18
+msgid "Links"
+msgstr "Linkuri"
+
+#: ../extensions/page-info/page-info.glade.h:19
+msgid "Location:"
+msgstr "Locație:"
+
+#: ../extensions/page-info/page-info.glade.h:20
+msgid "MIME type:"
+msgstr "Tip MIME:"
+
+#: ../extensions/page-info/page-info.glade.h:21
+msgid "Media"
+msgstr "Media"
+
+#: ../extensions/page-info/page-info.glade.h:22
+msgid "Metadata"
+msgstr "Metadate"
+
+#: ../extensions/page-info/page-info.glade.h:23
+msgid "Mode:"
+msgstr "Mod:"
+
+#: ../extensions/page-info/page-info.glade.h:24
+msgid "Modified:"
+msgstr "Modificat:"
+
+#: ../extensions/page-info/page-info.glade.h:25
+msgid "Page Properties"
+msgstr "Proprietăți pagină:"
+
+#: ../extensions/page-info/page-info.glade.h:26
+msgid "Referrer:"
+msgstr "Referent:"
+
+#: ../extensions/page-info/page-info.glade.h:27
+msgid "Size:"
+msgstr "Mărime:"
+
+#: ../extensions/page-info/page-info.glade.h:28
+msgid "Source:"
+msgstr "Sursă:"
+
+#: ../extensions/page-info/page-info.glade.h:29
+msgid "Title:"
+msgstr "Titlu:"
+
+#: ../extensions/page-info/page-info.glade.h:30
+msgid "Type:"
+msgstr "Tip:"
+
+#: ../extensions/page-info/page-info.glade.h:31
+msgid "_Save Media As..."
+msgstr "_Salvează media ca..."
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:165
+msgid "allowed"
+msgstr "permis"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:169
+msgid "denied"
+msgstr "refuzat"
+
+#. Sometimes we get this... how did this get in the list!?
+#: ../extensions/permissions/ephy-permissions-dialog.c:174
+msgid "default"
+msgstr "implicit"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:500
+msgid "Domain"
+msgstr "Domeniu"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:512
+#: ../extensions/soup-fly/soup-fly.c:196
+msgid "State"
+msgstr "Stare"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:605
+msgid "Site Permissions"
+msgstr "Permisiuni pagină web"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:632
+msgid "Cookies"
+msgstr "Cookie-uri"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:633
+msgid "Images"
+msgstr "Imagini"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:634
+msgid "Popup Windows"
+msgstr "Ferestre „popup”"
+
+#. stock icon
+#: ../extensions/permissions/ephy-permissions-extension.c:152
+msgid "Site _Permissions"
+msgstr "_Permisiuni pagină web"
+
+#. shortcut key
+#: ../extensions/permissions/ephy-permissions-extension.c:154
+msgid "Manage web site permissions"
+msgstr "Administrare permisiuni pagini web"
+
+#: ../extensions/rss/ephy-rss-extension.c:79
+msgid "News Feeds Subscription"
+msgstr "Abonare fluxuri știri"
+
+#: ../extensions/rss/ephy-rss-extension.c:81
+msgid "Subscribe to this website's news feeds in your favorite news reader"
+msgstr ""
+"Abonare la fluxurile de știri ale acestei pagini folosind aplicația asociată "
+"preferată"
+
+#: ../extensions/rss/ephy-rss-extension.c:86
+msgid "_Subscribe to this feed"
+msgstr "Abonare la ace_st flux"
+
+#: ../extensions/rss/ephy-rss-extension.c:88
+msgid "Subscribe to this feed in your favorite news reader"
+msgstr "Abonare la acest flux folosind aplicația asociată preferată"
+
+#: ../extensions/rss/ephy-rss-extension.c:365
+msgid "Subscribe to site's news feed"
+msgstr "Abonare la fluxurile de știri ale acestei pagini"
+
+#: ../extensions/rss/rss-ui.c:153
+msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
+msgstr ""
+"<b><i>Nu s-a putut contacta aplicația asociată, sigur e pornită?"
+"</i></b>"
+
+#: ../extensions/rss/rss-ui.c:155
+msgid "Retry"
+msgstr "Reîncearcă"
+
+#: ../extensions/rss/rss-ui.c:283
+msgid "_Copy Feed Address"
+msgstr "_Copiază adresa fluxului"
+
+#: ../extensions/rss/rss-ui.c:564
+msgid "Subscribe"
+msgstr "Abonare"
+
+#: ../extensions/rss/rss-ui.glade.h:1
+msgid "<b>Select Interesting Feeds</b>"
+msgstr "<b>Alegeți fluxurile interesante</b>"
+
+#: ../extensions/rss/rss-ui.glade.h:2
+#: ../extensions/rss/rss.ephy-extension.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "Abonare la fluxul de știri"
+
+#: ../extensions/rss/rss-ui.glade.h:3
+msgid "_Subscribe"
+msgstr "_Abonare"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:140
+msgid "Render the page without using a style"
+msgstr "Afișează pagina fără a folosi vreun stil"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:143
+msgid "Render the page using the default style"
+msgstr "Afișează pagina folosind stilul implicit"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:146
+#, c-format
+msgid "Render the page using the “%s” style"
+msgstr "Afișează pagina folosind stilul „%s”"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:317
+msgid "St_yle"
+msgstr "St_il"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:318
+msgid "Select a different style for this page"
+msgstr "Alegeți un stil diferit pentru această pagină"
+
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
+msgid "Default"
+msgstr "Implicit"
+
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
+msgid "None"
+msgstr "Nimic"
+
+#: ../extensions/sidebar/ephy-sidebar.c:167
+msgid "No Sidebars installed"
+msgstr "Nu există bare laterale instalate"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:88
+msgid "_Sidebar"
+msgstr "Bară _laterală"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:89
+msgid "Show or hide the sidebar"
+msgstr "Afișează sau ascunde bara laterală"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:306
+msgid "Do you really want to remove this sidebar?"
+msgstr "Doriți să înlăturați bara laterală?"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:310
+msgid "There is no way to recover this sidebar after removal."
+msgstr "Nu există nici o modalitate de a recupera bara laterală după ștergere."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:312
+msgid "Remove Sidebar"
+msgstr "Șterge bară laterală"
+
+#. Translators: %s is the sidebar title
+#: ../extensions/sidebar/ephy-sidebar-extension.c:459
+#, c-format
+msgid "The sidebar already contains “%s”"
+msgstr "Această bară laterală conține deja „%s”"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:463
+msgid ""
+"To use this sidebar, select it from the list of available sidebar pages."
+msgstr ""
+"Pentru a folosi această bară laterală, alegeți-o din lista de bare laterale "
+"disponibile."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:466
+#: ../extensions/sidebar/ephy-sidebar-extension.c:492
+msgid "Add Sidebar"
+msgstr "Adăugare bară laterală"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:486
+#, c-format
+msgid "Add “%s” to the Sidebar?"
+msgstr "Adăugați „%s” la bara laterală?"
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:490
+#, c-format
+msgid "The source to the new sidebar page is “%s”."
+msgstr "Sursa către noua pagină laterală este „%s”."
+
+#: ../extensions/sidebar/ephy-sidebar-extension.c:496
+msgid "_Add Sidebar"
+msgstr "_Adăugare bară laterală"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
+msgid "_Look Up"
+msgstr "_Căutare cuvinte-cheie"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:538
+msgid "_GNOME Dictionary"
+msgstr "Dicționar _GNOME"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
+msgid "Open search result in new tab"
+msgstr "Deschide rezultatul căutării într-un tab nou"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
+msgid "Open search result in new tab if true, in new window if false"
+msgstr "Deschide rezultatul căutării într-un tab nou pentru „true”, sau "
+"într-o fereastră nouă pentru „false”"
+
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
+msgid "_Soup Fly"
+msgstr "_Soup Fly"
+
+#. shortcut key
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:68
+msgid "Show information about the SoupSession used by the browser"
+msgstr "Afișează informații despre sesiunea Soup folosită de navigator"
+
+#: ../extensions/soup-fly/soup-fly.c:220
+msgid "Clear finished"
+msgstr "Curăță după completare"
+
+#: ../extensions/soup-fly/soup-fly.c:224
+msgid "Automatically remove finished messages"
+msgstr "Șterge automat mesajele completate"
+
+#: ../extensions/actions/actions.ephy-extension.in.in.h:2
+msgid "Execute arbitrary commands from the context menu"
+msgstr "Execută comenzi arbitrare din meniul contextual"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
+msgid "Ad Blocker"
+msgstr "Filtru anti-reclame"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
+msgid "Block the pest!"
+msgstr "Blochează mizeriile..."
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
+msgid "Auto Scroll"
+msgstr "Derulare automată"
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
+msgid "Scroll on middle mouse click"
+msgstr "Derulare la clic pe butonul din mijloc"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
+msgid "Auto Reload Tab"
+msgstr "Reîncărcare automată tab"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
+msgid "Reload a tab periodically"
+msgstr "Reîncarcă periodic un tab"
+
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
+msgid "View the page certificate and manage the certificates"
+msgstr "Vizualizați certificatul paginii și administrați certificatele"
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
+msgid "Error viewer"
+msgstr "Afișare erori"
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
+msgid "Validate web pages and check links"
+msgstr "Validare pagini web și verificare linkuri"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
+msgid "Activate and deactivate extensions"
+msgstr "Activare și dezactivare extensii"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
+msgid "Extensions Manager"
+msgstr "Administrator extensii"
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
+msgid "Gestures"
+msgstr "Gesturi"
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:2
+msgid "Perform actions with mouse gestures"
+msgstr "Executați acțiuni prin gesturi de maus"
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
+msgid "Greasemonkey"
+msgstr "Greasemonkey"
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
+msgid "Run user scripts to modify web pages' behavior"
+msgstr "Rulează scripturi ale utilizatorului pentru a schimba comportamentul "
+"paginilor web"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
+msgid "Java Console"
+msgstr "Consolă Java"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
+msgid "Provide access to the Java-Plugin Console"
+msgstr "Oferă acces la consola modulului Java"
+
+#: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
+msgid "Live HTTP headers"
+msgstr "Antete HTTP în timp real"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
+msgid "Display information about and links and media from the current page"
+msgstr ""
+"Afișează informații despre linkurile și fișierele media din pagina curentă"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
+msgid "Page Info"
+msgstr "Informații pagină"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
+msgid "Edit site permissions"
+msgstr "Modificare permisiuni site"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
+msgid "Permissions"
+msgstr "Permisiuni"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
+msgid "Drag the page on middle mouse click"
+msgstr "Derulați pagina cu butonul din mijloc al mausului"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+msgid "Push Scroll"
+msgstr "Derulare manuală"
+
+#: ../extensions/rss/rss.ephy-extension.in.in.h:2
+msgid ""
+"Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr ""
+"Abonare la un flux de știri oferit de pagina web folosind aplicația asociată "
+"preferată"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:1
+msgid "A sample extension"
+msgstr "O mostră de extensie"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:2
+msgid "Sample"
+msgstr "Mostră"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
+msgid "Select Stylesheet"
+msgstr "Alegere foaie stil"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
+msgid "Select between different stylesheets offered by the web page"
+msgstr "Alegeți între diferitele foi de stil oferite de pagina web"
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
+msgid "Adds a sidebar to windows"
+msgstr "Adaugă o bară laterală ferestrei"
+
+#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
+msgid "Sidebar"
+msgstr "Bară laterală"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
+msgid "Look up the selected text with a smart bookmark"
+msgstr "Caută textul selectat cu un favorit inteligent"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
+msgid "Smart Bookmarks"
+msgstr "Favorite inteligente"
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
+msgid "Groups newly opened tabs"
+msgstr "Grupează taburile nou deschise"
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
+msgid "Tab Groups"
+msgstr "Grupuri de taburi"
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
+msgid "Indicates new content in background tabs"
+msgstr "Indică conținutul nou în alte taburi"
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
+msgid "Tab States"
+msgstr "Stări tab"
+
