@@ -1,4 +1,13 @@
 ==========================
+Epiphany Extensions 2.28.1
+==========================
+
+Changes:
+
+  - Use correct accessor to get the view from embed in greasemonkey
+    extension.
+
+==========================
 Epiphany Extensions 2.28.0
 ==========================
 
