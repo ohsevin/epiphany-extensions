@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions.master.gu\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions&component=general\n"
-"POT-Creation-Date: 2009-04-18 17:50+0000\n"
-"PO-Revision-Date: 2009-06-08 14:48+0530\n"
+"POT-Creation-Date: 2009-07-12 21:38+0000\n"
+"PO-Revision-Date: 2009-10-20 14:18+0530\n"
 "Last-Translator: Sweta Kothari <swkothar@redhat.com>\n"
 "Language-Team: Gujarati\n"
 "MIME-Version: 1.0\n"
@@ -45,15 +45,17 @@ msgstr "ક્રિયાનું વર્ણન."
 msgid ""
 "The action name. If a character is preceded by an underscore, that character "
 "will be used as the access key for the menu item."
-msgstr "ક્રિયા નામ. જો અક્ષર અધોરેખા દ્દારા આગળ છે, કે જે અક્ષર એ મેનુ વસ્તુ માટે પ્રવેશ કી તરીકે વપરાયેલ હશે."
+msgstr ""
+"ક્રિયા નામ. જો અક્ષર અધોરેખા દ્દારા આગળ છે, કે જે અક્ષર એ મેનુ વસ્તુ માટે પ્રવેશ કી તરીકે "
+"વપરાયેલ હશે."
 
 #: ../extensions/actions/action-properties.glade.h:7
 msgid ""
 "The command to execute when the action is activated. The URL of the link, "
 "image or page will be appended to the command."
 msgstr ""
-"ચાલુ કરવા માટે આદેશ જ્યારે ક્રિયા સક્રિય થયેલ હોય. કડીની URL, ઇમેજ અથવા પાનું એ આદેશ સાથે જોડાયેલ "
-"હશે."
+"ચાલુ કરવા માટે આદેશ જ્યારે ક્રિયા સક્રિય થયેલ હોય. કડીની URL, ઇમેજ અથવા પાનું એ આદેશ સાથે "
+"જોડાયેલ હશે."
 
 #: ../extensions/actions/action-properties.glade.h:8
 msgid "_Command:"
@@ -68,7 +70,6 @@ msgid "_Images"
 msgstr "ઇમેજો (_I)"
 
 #: ../extensions/actions/action-properties.glade.h:11
-#: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Name:"
 msgstr "નામ (_N):"
 
@@ -195,10 +196,6 @@ msgstr "પુન:લોડ સ્વયં કરો (_A)"
 msgid "Reload the page periodically"
 msgstr "નિયતકાલિક રીતે પાનાં ને ફરીથી લોડ કરો"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:373
-msgid "View Creative Commons license"
-msgstr "Creative Commons license ને દર્શાવો"
-
 #: ../extensions/certificates/ephy-certificates-extension.c:163
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
@@ -227,122 +224,6 @@ msgstr "સુરક્ષા ઉપકરણો ને સંચાલિત �
 #: ../extensions/certificates/ephy-certificates-extension.c:214
 msgid "Manage your security devices"
 msgstr "તમારા સુરક્ષા ઉપકરણો ને સંચાલિત કરો"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:1
-msgid "Action for tagged bookmarks:"
-msgstr "ટેગ થયેલ બુકમાર્કો માટે ક્રિયા:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:2
-msgid "Epilicious Configuration"
-msgstr "Epilicious રૂપરેખાંકન"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:3
-msgid "_Backend:"
-msgstr "બેકએન્ડ (_B):"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:4
-msgid "_Exclude"
-msgstr "બાકાત રાખો (_E)"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:5
-msgid "_Include"
-msgstr "સમાવો (_I)"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:7
-msgid "_Password:"
-msgstr "પાસવર્ડ (_P):"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:8
-msgid "_Tag:"
-msgstr "ટેગ (_T):"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:1
-msgid "Adding new bookmarks and synching topics"
-msgstr "નવા બુકમાર્કોને ઉમેરો અને વિષયોનું સુમેળ કરી રહ્યા છે"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:2
-msgid "Removing deleted bookmarks"
-msgstr "કાઢી નાંખેલ બુકમાર્કો ને દૂર કરી રહ્યા છે"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:4
-#: ../extensions/epilicious/progress.py:41
-#, no-c-format, python-format
-msgid "Retrieving bookmarks from %s"
-msgstr "%s માંથી બુકમાર્કો ને પુન:પ્રાપ્ત કરી રહ્યા છે"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:5
-msgid "Retrieving bookmarks from epiphany"
-msgstr "એપિફની માંથી બુકમાર્કો ને પુન:પ્રાપ્ત કરી રહ્યા છે"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:6
-msgid "Retrieving previous synch point"
-msgstr "પહેલાંના સુમેળ બિંદુઓને લાવી રહ્યા છે"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:7
-msgid "Saving new synch point"
-msgstr "નવા સુમેળ બિંદુનો સંગ્રહ કરી રહ્યા છે"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:9
-#: ../extensions/epilicious/progress.py:39
-#, no-c-format, python-format
-msgid "Synchronizing with %s"
-msgstr "%s સાથે સમકાલિક કરી રહ્યા છે"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:10
-msgid "Synchronizing..."
-msgstr "સમકાલિક કરી રહ્યા છે..."
-
-#: ../extensions/epilicious/epilicious.py.in:232
-#: ../extensions/epilicious/epilicious.py.in:250
-msgid "Epilicious Synchronize"
-msgstr "Epilicious સુમેળ"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:1
-msgid "Bookmarks with this topic will be synchronized."
-msgstr "આ વિષય સાથે બુકમાર્ક સુમેળ થયેલ હશે."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:2
-msgid ""
-"Controls the function of the topic. If this is unset then all bookmarks with "
-"the topic will be synched. If this is set then all bookmarks without the "
-"topic will be synched."
-msgstr ""
-"વિષયનું વિધેય નિયંત્રણ કરે છે. જો આ સુયોજિત ન હોય તો પછી વિષય સાથે બધા બુકમાર્કો સુમેળ થયેલ હશે. જો "
-"આ સુયોજિત હોય તો પછી વિષય વગર બધા બુકમાર્કો સુમેળ થયેલ હશે."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:3
-msgid "Exclude topic"
-msgstr "વિષય ને બાકાત રાખો"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:4
-msgid "Shared topic"
-msgstr "વહેંચાયેલ વિષય"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:5
-msgid ""
-"The backend that epilicious will use for synchronizing bookmarks. Allowed "
-"values: 'diigo', 'ma.gnolia'"
-msgstr "બેકએન્ડ કે જે epilicious એ બુકમાર્કોને સુમેળ કરવા માટે વપરાશે. પરવાનગી આપેલ કિંમત: 'diigo', 'ma.gnolia'"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:6
-msgid "The password that epilicious will use for synchronizing bookmarks."
-msgstr "પાસવર્ડ કે જે epilicious એ બુકમાર્કોને સુમેળ કરવા માટે વપરાશે."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:7
-msgid "The username that epilicious will use for synchronizing bookmarks."
-msgstr "વપરાશકર્તા કે જે epilicious એ બુકમાર્કોને સુમેળ કરવા માટે વપરાશે."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:8
-msgid "epilicious backend"
-msgstr "epilicious બેકએન્ડ"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:9
-msgid "password"
-msgstr "પાસવર્ડ"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:10
-msgid "username"
-msgstr "વપરાશકર્તા નામ"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Check _HTML"
@@ -473,8 +354,8 @@ msgid ""
 "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
 "+xml” instead."
 msgstr ""
-"Doctype એ “XHTML” છે પરંતુ સમાવિષ્ટ પ્રકાર એ “text/html” છે. તેને બદલે "
-"“application/xhtml+xml” ને વાપરો."
+"Doctype એ “XHTML” છે પરંતુ સમાવિષ્ટ પ્રકાર એ “text/html” છે. તેને બદલે “application/"
+"xhtml+xml” ને વાપરો."
 
 #: ../extensions/error-viewer/sgml-validator.c:242
 #, c-format
@@ -900,6 +781,7 @@ msgid "Domain"
 msgstr "ડોમેઇન"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:512
+#: ../extensions/soup-fly/soup-fly.c:180
 msgid "State"
 msgstr "સ્થિતિ"
 
@@ -1076,6 +958,24 @@ msgstr "નવા ટેબ માં શોધેલ પરિણામ ને 
 msgid "Open search result in new tab if true, in new window if false"
 msgstr "જો true હોય તો નવી ટેબમાં શોધ પરિમાણને ખોલો, જો false હોય તો નવી વિન્ડોમાં"
 
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
+msgid "_Soup Fly"
+msgstr "Soup Fly (_S)"
+
+#. shortcut key
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:68
+msgid "Show information about the SoupSession used by the browser"
+msgstr "બ્રાઉઝર દ્દારા વપરાયેલ SoupSession વિશે જાણકારીને બતાવો"
+
+#: ../extensions/soup-fly/soup-fly.c:205
+#| msgid "Clear cache"
+msgid "Clear finished"
+msgstr "સાફ કરવાનું સમાપ્ત"
+
+#: ../extensions/soup-fly/soup-fly.c:209
+msgid "Automatically remove finished messages"
+msgstr "આપમેળે સમાપ્ત થયેલ સંદેશાઓને દૂર કરો"
+
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
 msgstr "સંદર્ભ મેનુ માંથી મરજીમાં આવે તેવા આદેશોને ચલાવો"
@@ -1104,21 +1004,9 @@ msgstr "પુન:લોડ ટેબને સ્વયં કરો"
 msgid "Reload a tab periodically"
 msgstr "નિયતકાલિક રીતે ટેબને પુન:લોડ કરો"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
-msgid "Creative Commons license viewer"
-msgstr "Creative Commons license દર્શક"
-
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
-msgid "Shows the Creative Commons license of the current website if available"
-msgstr "જો ઉપલ્બધ હોય તો હાલની વેબસાઇટની Creative Commons license ને બતાવે છે"
-
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "પાનાં પ્રમાણપત્રને દર્શાવો અને પ્રમાણપત્રોને સંચાલિત કરો"
-
-#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
-msgid "Synchronize bookmarks with social bookmark sites"
-msgstr "સામાજિક બુકમાર્ક સાઇટો સાથે બુકમાર્કોનો સુમેળ કરો"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -1135,14 +1023,6 @@ msgstr "એક્સટેન્શનોને સક્રિય અને ન
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
 msgid "Extensions Manager"
 msgstr "એક્સટેન્શનો વ્યવસ્થાપક "
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:1
-msgid "Favicon fallback"
-msgstr "Favicon ફોલબેક"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:2
-msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
-msgstr "favicon તરીકે /favicon.ico ને લોડ કરે છે જો સાઇટ એ મૂળભૂત પદ્દતિને વાપરતુ ન હોય તો"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -1195,14 +1075,6 @@ msgstr "મધ્ય માઉસ ક્લિક પર પાનાંને �
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
 msgid "Push Scroll"
 msgstr "સ્ક્રોલ ને દબાવો"
-
-#: ../extensions/python-console/python-console.ephy-extension.in.h:1
-msgid "Opens an interactive Python console"
-msgstr "અરસપરસ Python કન્સોલ ખોલે છે"
-
-#: ../extensions/python-console/python-console.ephy-extension.in.h:2
-msgid "Python Console"
-msgstr "Python કન્સોલ"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
