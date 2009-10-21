@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bn_IN\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions&component=general\n"
-"POT-Creation-Date: 2009-04-18 17:50+0000\n"
-"PO-Revision-Date: 2009-06-10 11:52+0530\n"
+"POT-Creation-Date: 2009-07-12 21:38+0000\n"
+"PO-Revision-Date: 2009-10-21 12:04+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
-"Language-Team: Bengali INDIA <discuss@lists.ankur.org.in>\n"
+"Language-Team: Bengali INDIA <anubad@lists.ankur.org.in>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -74,7 +74,6 @@ msgid "_Images"
 msgstr "ছবি (_I)"
 
 #: ../extensions/actions/action-properties.glade.h:11
-#: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Name:"
 msgstr "নাম: (_N)"
 
@@ -137,10 +136,13 @@ msgid ""
 "approved by the original author;\n"
 "direct any problems to Bugzilla and not to the original author (G).\n"
 msgstr ""
-"এই তালিকাটি, মূল নির্মাতার(G) স্বত্বাধীন © ও তাঁর অনুমতি সহ GPL-র অধীন এটি পুনরায় লাইসেন্স করা হয়েছে।\n"
+"এই তালিকাটি, মূল নির্মাতার(G) স্বত্বাধীন © ও তাঁর অনুমতি সহ GPL-র অধীন এটি পুনরায় "
+"লাইসেন্স করা হয়েছে।\n"
 "মূল তালিকা Filterset.G-টি http://www.pierceive.com/filtersetg/-এ পাওয়া যাবে।\n"
-"এই সংস্করণে ও মূল সংস্করণের মধ্যে কিছু পার্থক্য রয়েছে এবং পরিবর্তনগুলি মূল নির্মাতা দ্বারা অনুমোদিত হয়নি।\n"
-"কোনো সমস্যা দেখা দিলে মূল নির্মাতাকে (G) সূচিত না করে Bugzilla-তে সেগুলি দায়ের করুন।\n"
+"এই সংস্করণে ও মূল সংস্করণের মধ্যে কিছু পার্থক্য রয়েছে এবং পরিবর্তনগুলি মূল নির্মাতা "
+"দ্বারা অনুমোদিত হয়নি।\n"
+"কোনো সমস্যা দেখা দিলে মূল নির্মাতাকে (G) সূচিত না করে Bugzilla-তে সেগুলি দায়ের "
+"করুন।\n"
 
 #: ../extensions/adblock/adblock-ui.c:481
 msgid "Pattern"
@@ -198,10 +200,6 @@ msgstr "স্বয়ংক্রিয়ভাবে পুনরায় লোড 
 msgid "Reload the page periodically"
 msgstr "নিয়মিতরূপে পেজ পুনরায় লোড করা হবে"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:373
-msgid "View Creative Commons license"
-msgstr "Creative Commons লাইসেন্স পরিদর্শন করুন"
-
 #: ../extensions/certificates/ephy-certificates-extension.c:163
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
@@ -230,125 +228,6 @@ msgstr "নিরাপত্তামূলক ডিভাইস পরিচ�
 #: ../extensions/certificates/ephy-certificates-extension.c:214
 msgid "Manage your security devices"
 msgstr "নিরাপত্তামূলক ডিভাইস পরিচালনা করুন"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:1
-msgid "Action for tagged bookmarks:"
-msgstr "ট্যাগ করা বুকমার্কের জন্য নির্ধারিত কর্ম:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:2
-msgid "Epilicious Configuration"
-msgstr "Epilicious কনফিগারেশন"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:3
-msgid "_Backend:"
-msgstr "ব্যাক-এন্ড: (_B)"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:4
-msgid "_Exclude"
-msgstr "অন্তর্ভুক্ত করা হবে না (_E)"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:5
-msgid "_Include"
-msgstr "অন্তর্ভুক্ত করা হবে (_I)"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:7
-msgid "_Password:"
-msgstr "পাসওয়ার্ড: (_P)"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:8
-msgid "_Tag:"
-msgstr "ট্যাগ: (_T)"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:1
-msgid "Adding new bookmarks and synching topics"
-msgstr "নতুন বুকমার্ক যোগ করে, বিষয় সুসংগত করা হবে"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:2
-msgid "Removing deleted bookmarks"
-msgstr "বর্জিত বুকমার্ক মুছে ফেলা হবে"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:4
-#: ../extensions/epilicious/progress.py:41
-#, no-c-format, python-format
-msgid "Retrieving bookmarks from %s"
-msgstr "%s থেকে বুকমার্ক পুনরুদ্ধার করুন"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:5
-msgid "Retrieving bookmarks from epiphany"
-msgstr "epiphany থেকে বুকমার্ক পুনরুদ্ধার করুন"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:6
-msgid "Retrieving previous synch point"
-msgstr "সুসংগত করার জন্য পূর্বে ব্যবহৃত স্থান উদ্ধার করা হচ্ছে"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:7
-msgid "Saving new synch point"
-msgstr "নতুন synch পয়েন্ট সংরক্ষণ করা হচ্ছে"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:9
-#: ../extensions/epilicious/progress.py:39
-#, no-c-format, python-format
-msgid "Synchronizing with %s"
-msgstr "%s-র সাথে সুসংগত করা হচ্ছে"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:10
-msgid "Synchronizing..."
-msgstr "সুসংগত করা হচ্ছে..."
-
-#: ../extensions/epilicious/epilicious.py.in:232
-#: ../extensions/epilicious/epilicious.py.in:250
-msgid "Epilicious Synchronize"
-msgstr "Epilicious সুসংগত করুন"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:1
-msgid "Bookmarks with this topic will be synchronized."
-msgstr "এই বিষয়ের জন্য চিহ্নিত বুকমার্কগুলি সুসংগত করা হবে।"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:2
-msgid ""
-"Controls the function of the topic. If this is unset then all bookmarks with "
-"the topic will be synched. If this is set then all bookmarks without the "
-"topic will be synched."
-msgstr "বিষয় সংক্রান্ত কর্ম নিয়ন্ত্রণ করতে ব্যবহৃত হয়। এই মান নির্ধারণ না করা হলে, চিহ্নিত বিষয়ের জন্য ধার্য সকল বুকমার্কগুলি synch করা হবে ও মান নির্ধারণ করা হলে, সংশ্লিষ্ট বিষয়বিহীন বুকমার্ক synch করা হবে।"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:3
-msgid "Exclude topic"
-msgstr "বিষয় অন্তর্ভুক্ত করা হবে না"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:4
-msgid "Shared topic"
-msgstr "শেয়ার করা বিষয়"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:5
-#| msgid ""
-#| "The backend that epilicious will use for synchronizing bookmarks. Allowed "
-#| "value: 'ma.gnolia'"
-msgid ""
-"The backend that epilicious will use for synchronizing bookmarks. Allowed "
-"values: 'diigo', 'ma.gnolia'"
-msgstr ""
-"বুকমার্ক সুসংগত করার জন্য epilicious দ্বারা ব্যবহারযোগ্য ব্যাক-এন্ড। ব্যবহারযোগ্য মান: "
-" 'diigo', 'ma.gnolia'"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:6
-msgid "The password that epilicious will use for synchronizing bookmarks."
-msgstr "বুকমার্ক সুসংগত করার জন্য epilicious দ্বারা ব্যবহারযোগ্য পাসওয়ার্ড।"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:7
-msgid "The username that epilicious will use for synchronizing bookmarks."
-msgstr "বুকমার্ক সুসংগত করার জন্য epilicious দ্বারা ব্যবহারযোগ্য ব্যবহারকারীর নাম।"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:8
-msgid "epilicious backend"
-msgstr "epilicious ব্যাক-এন্ড"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:9
-msgid "password"
-msgstr "পাসওয়ার্ড"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:10
-msgid "username"
-msgstr "ব্যবহারকারীর নাম"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Check _HTML"
@@ -906,6 +785,7 @@ msgid "Domain"
 msgstr "ডোমেইন"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:512
+#: ../extensions/soup-fly/soup-fly.c:180
 msgid "State"
 msgstr "অবস্থা"
 
@@ -957,7 +837,9 @@ msgstr "সাইটের নিউজ ফিডে সাবস্ক্রা
 
 #: ../extensions/rss/rss-ui.c:153
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
-msgstr "<b><i>ফিড পাঠ ব্যবস্থার সাথে সংযোগ স্থাপন করতে ব্যর্থ, এটি কি বর্তমানে চলছে ?</i></b>"
+msgstr ""
+"<b><i>ফিড পাঠ ব্যবস্থার সাথে সংযোগ স্থাপন করতে ব্যর্থ, এটি কি বর্তমানে চলছে ?</i></"
+"b>"
 
 #: ../extensions/rss/rss-ui.c:155
 msgid "Retry"
@@ -1045,7 +927,9 @@ msgstr "সাইড-বারের মধ্যে “%s” বর্তমা
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:463
 msgid "To use this sidebar, select it from the list of available sidebar pages."
-msgstr "এই সাইড-বারটি প্রয়োগ করার জন্য, সাইড-বারের উপলব্ধ পৃষ্ঠার তালিকা থেকে প্রথমে এটিকে নির্বাচন করুন।"
+msgstr ""
+"এই সাইড-বারটি প্রয়োগ করার জন্য, সাইড-বারের উপলব্ধ পৃষ্ঠার তালিকা থেকে প্রথমে এটিকে "
+"নির্বাচন করুন।"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:466
 #: ../extensions/sidebar/ephy-sidebar-extension.c:492
@@ -1080,7 +964,27 @@ msgstr "নতুন ট্যাবের মধ্যে ফলাফল প�
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
 msgid "Open search result in new tab if true, in new window if false"
-msgstr "মান true (সত্য) হলে, অনুসন্ধানের ফলাফল একটি নতুন ট্যাবের মধ্যে প্রদর্শন করা হবে। মান false (সত্য নয়) হলে নতুন উইন্ডোর মধ্যে তা প্রদর্শিত হবে।"
+msgstr ""
+"মান true (সত্য) হলে, অনুসন্ধানের ফলাফল একটি নতুন ট্যাবের মধ্যে প্রদর্শন করা হবে। মান "
+"false (সত্য নয়) হলে নতুন উইন্ডোর মধ্যে তা প্রদর্শিত হবে।"
+
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
+msgid "_Soup Fly"
+msgstr "Soup Fly (_S)"
+
+#. shortcut key
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:68
+msgid "Show information about the SoupSession used by the browser"
+msgstr "ব্রাউজার দ্বারা ব্যবহৃত SoupSession সম্পর্কে তথ্য প্রদর্শন করা হবে"
+
+#: ../extensions/soup-fly/soup-fly.c:205
+#| msgid "Clear cache"
+msgid "Clear finished"
+msgstr "সমাপ্তির তথ্য মুছে ফেলুন"
+
+#: ../extensions/soup-fly/soup-fly.c:209
+msgid "Automatically remove finished messages"
+msgstr "সমাপ্তিসূচক বার্তাগুলি স্বয়ংক্রিয়ভাবে মুছে ফেলা হবে"
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
@@ -1110,21 +1014,9 @@ msgstr "ট্যাব স্বয়ংক্রিয়ভাবে লোড ক
 msgid "Reload a tab periodically"
 msgstr "নিয়মিতভাবে ট্যাবটি পুনরায় লোড করা হবে"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
-msgid "Creative Commons license viewer"
-msgstr "Creative Commons লাইসেন্স প্রদর্শন ব্যবস্থা"
-
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
-msgid "Shows the Creative Commons license of the current website if available"
-msgstr "বর্তমান ওয়েব-সাইটের জন্য Creative Commons লাইসেন্স উপলব্ধ থাকলে তা প্রদর্শিত হবে"
-
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "পৃষ্ঠার সার্টিফিকেট প্রদর্শন করুন ও সার্টিফিকেট পরিচালনা করুন"
-
-#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
-msgid "Synchronize bookmarks with social bookmark sites"
-msgstr "সার্বজনীন বুকমার্কের সাইটের সাথে বুকমার্ক সুসংগত করুন"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -1141,14 +1033,6 @@ msgstr "এক্সটেনশন সক্রিয় ও নিষ্ক্র
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
 msgid "Extensions Manager"
 msgstr "এক্সটেনশন পরিচালনব্যবস্থা"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:1
-msgid "Favicon fallback"
-msgstr "Favicon-র ফল-ব্যাক"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:2
-msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
-msgstr "সাইট দ্বারা স্বাভাবিক পদ্ধতি ব্যবহার করা করা হলে, /favicon.ico ফাইলটিকে favicon রূপে লোড করা হবে"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -1180,7 +1064,9 @@ msgstr "লাইভ HTTP হেডার"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
-msgstr "বর্তমান পৃষ্ঠার পরিচিতি ও এই পৃষ্ঠা থেকে উৎপন্ন লিংক ও মিডিয়া সংক্রান্ত তথ্য প্রদর্শন করা হবে"
+msgstr ""
+"বর্তমান পৃষ্ঠার পরিচিতি ও এই পৃষ্ঠা থেকে উৎপন্ন লিংক ও মিডিয়া সংক্রান্ত তথ্য প্রদর্শন "
+"করা হবে"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
 msgid "Page Info"
@@ -1202,17 +1088,11 @@ msgstr "মাউসের মধ্যবর্তী বাটনের ক্
 msgid "Push Scroll"
 msgstr "Push Scroll"
 
-#: ../extensions/python-console/python-console.ephy-extension.in.h:1
-msgid "Opens an interactive Python console"
-msgstr "একটি ইন্টারেক্টিভ Python কনসোল প্রদর্শন করা হবে"
-
-#: ../extensions/python-console/python-console.ephy-extension.in.h:2
-msgid "Python Console"
-msgstr "Python Console"
-
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
-msgstr "আপনার পছন্দসই নিউজ পাঠের সরঞ্জাম সহযোগে, ওয়েব-পেজ দ্বারা উপলব্ধ নিউজ ফিডে সাবস্ক্রাইব করুন"
+msgstr ""
+"আপনার পছন্দসই নিউজ পাঠের সরঞ্জাম সহযোগে, ওয়েব-পেজ দ্বারা উপলব্ধ নিউজ ফিডে "
+"সাবস্ক্রাইব করুন"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
 msgid "A sample extension"
