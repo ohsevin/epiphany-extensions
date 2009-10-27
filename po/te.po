@@ -1,4 +1,4 @@
-# translation of epiphany-extensions.po.master.te.po to Telugu
+# translation of epiphany-extensions.master.te.po to Telugu
 # Telugu translation of epiphany-extensions.
 # Copyright (C) 2009 epiphany-extensions's COPYRIGHT HOLDER
 # This file is distributed under the same license as the epiphany-extensions package.
@@ -6,16 +6,17 @@
 # Krishna Babu K <kkrothap@redhat.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: epiphany-extensions.po.master.te\n"
+"Project-Id-Version: epiphany-extensions.master.te\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions&component=general\n"
-"POT-Creation-Date: 2009-06-23 07:34+0000\n"
-"PO-Revision-Date: 2009-06-29 15:41+0530\n"
+"POT-Creation-Date: 2009-07-12 21:38+0000\n"
+"PO-Revision-Date: 2009-10-26 14:32+0530\n"
 "Last-Translator: Krishna Babu K <kkrothap@redhat.com>\n"
 "Language-Team: Telugu <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+"\n"
 "X-Generator: KBabel 1.11.4\n"
 
 #: ../extensions/actions/action-properties.glade.h:1
@@ -55,8 +56,8 @@ msgid ""
 "The command to execute when the action is activated. The URL of the link, "
 "image or page will be appended to the command."
 msgstr ""
-"చర్య క్రియాశీలపరచబడినప్పుడు నిర్వర్తించవలసిన ఆదేశము. లింకు యొక్క URL, ప్రతిబింబము లేదా "
-"పేజీ ఆదేశమునకు చేర్చబడుతుంది."
+"చర్య క్రియాశీలపరచబడినప్పుడు నిర్వర్తించవలసిన ఆదేశము. లింకు యొక్క URL, ప్రతిబింబము లేదా పేజీ "
+"ఆదేశమునకు చేర్చబడుతుంది."
 
 #: ../extensions/actions/action-properties.glade.h:8
 msgid "_Command:"
@@ -782,6 +783,7 @@ msgid "Domain"
 msgstr "డొమైన్"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:512
+#: ../extensions/soup-fly/soup-fly.c:180
 msgid "State"
 msgstr "స్థితి"
 
@@ -957,6 +959,24 @@ msgstr "కొత్త టాబునందు శోధన ఫలితాన
 #: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
 msgid "Open search result in new tab if true, in new window if false"
 msgstr "సత్యమైతే శోధన ఫలితాన్ని కొత్త టాబ్‌నందు తెరువుము, అసత్యమైతే కొత్త విండోనందు తెరువుము"
+
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
+msgid "_Soup Fly"
+msgstr "సౌప్ ఫ్లై (_S)"
+
+#. shortcut key
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:68
+msgid "Show information about the SoupSession used by the browser"
+msgstr "బ్రౌజర్ చేత వుపయోగించబడిన సౌప్‌సెషన్ గురించి సమాచారమును చూపుము"
+
+#: ../extensions/soup-fly/soup-fly.c:205
+#| msgid "Clear cache"
+msgid "Clear finished"
+msgstr "శుభ్రముచేయుట పూర్తైనది"
+
+#: ../extensions/soup-fly/soup-fly.c:209
+msgid "Automatically remove finished messages"
+msgstr "పూర్తైన సందేశములను స్వయంచాలకంగా తీసివేయుము"
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
