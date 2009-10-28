@@ -1,4 +1,4 @@
-# translation of or.po to Oriya
+# translation of epiphany-extensions.master.or.po to Oriya
 # Oriya translation of epiphany-extensions.
 # Copyright (C) 2009 epiphany-extensions's COPYRIGHT HOLDER
 # This file is distributed under the same license as the epiphany-extensions package.
@@ -6,17 +6,17 @@
 # Manoj Kumar Giri <mgiri@redhat.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: or\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=epiphany-extensions&component=general\n"
-"POT-Creation-Date: 2009-08-17 09:56+0000\n"
-"PO-Revision-Date: 2009-08-14 17:29+0530\n"
+"Project-Id-Version: epiphany-extensions.master.or\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions&component=general\n"
+"POT-Creation-Date: 2009-08-24 11:28+0000\n"
+"PO-Revision-Date: 2009-10-28 16:50+0530\n"
 "Last-Translator: Manoj Kumar Giri <mgiri@redhat.com>\n"
 "Language-Team: Oriya <oriya-it@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n!=1);\n"
+"Plural-Forms:  nplurals=2; plural=(n!=1);\n\n"
+"\n"
 "\n"
 "X-Generator: KBabel 1.11.4\n"
 
@@ -33,12 +33,16 @@ msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "images."
 msgstr ""
+"ଯଦି ଏହି ବିକଳ୍ପକୁ ସକ୍ରିୟ କରାଯାଏ, ତେବେ ସେହି କାର୍ଯ୍ୟକୁ ତାଲିକାର ପପଅପ ତାଲିକାରେ "
+"ଅନ୍ତର୍ଭୁକ୍ତ କରାଯିବ।"
 
 #: ../extensions/actions/action-properties.glade.h:4
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "links and pages."
 msgstr ""
+"ଯଦି ଏହି ବିକଳ୍ପକୁ ସକ୍ରିୟ କରାଯାଏ, ତେବେ ସେହି କାର୍ଯ୍ୟକୁ ସଂଯୋଗ ଏବଂ ପୃଷ୍ଠାଗୁଡ଼ିକର "
+"ପପଅପ ତାଲିକାରେ ଅନ୍ତର୍ଭୁକ୍ତ କରାଯିବ।"
 
 #: ../extensions/actions/action-properties.glade.h:5
 msgid "The action description."
@@ -49,12 +53,16 @@ msgid ""
 "The action name. If a character is preceded by an underscore, that character "
 "will be used as the access key for the menu item."
 msgstr ""
+"କାର୍ଯ୍ୟ ନାମ। ଯଦି ଗୋଟିଏ ଅକ୍ଷର ପଛରେ ଅବରେଖା ଥାଏ, ତେବେ ସେହି ଅକ୍ଷରକୁ ତାଲିକା "
+"ବସ୍ତୁ ପାଇଁ ଅଭିଗମ୍ୟ କି ଭାବରେ ବ୍ୟବହାର କରାଯିବ।"
 
 #: ../extensions/actions/action-properties.glade.h:7
 msgid ""
 "The command to execute when the action is activated. The URL of the link, "
 "image or page will be appended to the command."
 msgstr ""
+"ନିଷ୍ପାଦନ କରିବା ପାଇଁ ଥିବା ନିର୍ଦ୍ଦେଶ ଯେତେବେଳେ ସେହି କାର୍ଯ୍ୟକୁ ସକ୍ରିୟ କରାଯାଏ। ସଂଯୋଗର URL, "
+"ପ୍ରତିଛବି ଅଥବା ପୃଷ୍ଠାକୁ ନିର୍ଦ୍ଦେଶ ସହିତ ଯୋଡାଯିବ।"
 
 #: ../extensions/actions/action-properties.glade.h:8
 msgid "_Command:"
@@ -145,7 +153,7 @@ msgstr "ନମୁନା"
 
 #: ../extensions/adblock/adblock.glade.h:1
 msgid "<b>Courtesy of Graham Pierce</b>"
-msgstr ""
+msgstr "<b>Graham Pierce ର ନମ୍ରତା</b>"
 
 #: ../extensions/adblock/adblock.glade.h:2
 msgid "<b>New rule</b>"
@@ -174,7 +182,7 @@ msgstr "Filterset.G"
 
 #: ../extensions/adblock/adblock.glade.h:8
 msgid "Whitelist"
-msgstr ""
+msgstr "ଧଳା ତାଲିକା"
 
 #: ../extensions/adblock/ephy-adblock-extension.c:230
 msgid "Edit Adblock"
@@ -231,7 +239,7 @@ msgstr "HTML କୁ ଯାଞ୍ଚ କରନ୍ତୁ (_H)"
 #. shortcut key
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:92
 msgid "Display HTML errors in the Error Viewer dialog"
-msgstr ""
+msgstr "HTML ତ୍ରୁଟିଗୁଡ଼ିକୁ ତ୍ରୁଟି ପ୍ରଦର୍ଶକ ସଂଳାପରେ ଦର୍ଶାନ୍ତୁ"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _Links"
@@ -240,7 +248,7 @@ msgstr "ସଂଯୋଗିକୀଗୁଡ଼ିକୁ ଯାଞ୍ଚ କରନ�
 #. shortcut key
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
-msgstr ""
+msgstr "ଅବୈଧ ହାଇପରଲିଙ୍କଗୁଡ଼ିକୁ ତ୍ରୁଟି ପ୍ରଦର୍ଶକ ସଂଳାପରେ ଦର୍ଶାନ୍ତୁ"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:103
 msgid "_Error Viewer"
@@ -267,6 +275,8 @@ msgid ""
 "%s error in %s on line %d and column %d:\n"
 "%s"
 msgstr ""
+"%s ତ୍ରୁଟି %s ରେ %d ଅନଲାଇନ ଏବଂ ସ୍ତମ୍ଭ %d:\n"
+"%s"
 
 #. Translators: The first %s is the error category (e. g., "javascript").
 #. The second %s is the URL. The third %s is the actual error message.
@@ -289,13 +299,15 @@ msgid ""
 "%s error in %s on line %d:\n"
 "%s"
 msgstr ""
+"%s ତ୍ରୁଟି %s ରେ ଅନଲାଇନ %d:\n"
+"%s"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d ଅବୈଧ ସଂଯୋଗ ମିଳିଲା"
+msgstr[1] "%d ଅବୈଧ ସଂଯୋଗଗୁଡ଼ିକ ମିଳିଲା"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
@@ -303,13 +315,15 @@ msgid ""
 "Link error in %s:\n"
 "%s is unavailable."
 msgstr ""
+"ସଂଯୋଗ ତ୍ରୁଟି %s ରେ:\n"
+"%s ଉପଲବ୍ଧ ନାହିଁ।"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
 #, c-format
 msgid "Checking %d Link on “%s”"
 msgid_plural "Checking %d Links on “%s”"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d ସଂଯୋଗକୁ “%s” ରେ ଯାଞ୍ଚକରୁଅଛି"
+msgstr[1] "%d ସଂଯୋଗଗୁଡ଼ିକୁ “%s” ରେ ଯାଞ୍ଚକରୁଅଛି"
 
 #: ../extensions/error-viewer/opensp/validate.cpp:168
 #, c-format
@@ -317,18 +331,20 @@ msgid ""
 "HTML error in “%s” on line %s:\n"
 "%s"
 msgstr ""
+"HTML ତ୍ରୁଟି “%s” ଅନଲାଇନ %s:\n"
+"%s"
 
 #: ../extensions/error-viewer/sgml-validator.c:164
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d ଟି ତ୍ରୁଟି ମିଳିଲା"
+msgstr[1] "%d ଟି ତ୍ରୁଟି ମିଳିଲା"
 
 #: ../extensions/error-viewer/sgml-validator.c:168
 #, c-format
 msgid "HTML Validation of “%s” complete"
-msgstr ""
+msgstr "“%s” ର HTML ବୈଧିକରଣ ସମ୍ପୂର୍ଣ୍ଣ ହୋଇଛି"
 
 #: ../extensions/error-viewer/sgml-validator.c:226
 #, c-format
@@ -336,6 +352,8 @@ msgid ""
 "HTML error in %s:\n"
 "%s"
 msgstr ""
+"%s ରେ HTML ତ୍ରୁଟି:\n"
+"%s"
 
 #: ../extensions/error-viewer/sgml-validator.c:228
 #: ../extensions/error-viewer/sgml-validator.c:244
@@ -343,6 +361,8 @@ msgid ""
 "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
 "+xml” instead."
 msgstr ""
+"ଦଲିଲ ପ୍ରକାରଟି ହେଉଛି “XHTML” କିନ୍ତୁ ବିଷୟବସ୍ତୁଟି ହେଉଛି “text/html”।  ଏହା ପରିବର୍ତ୍ତେ “application/xhtml"
+"+xml” କୁ ବ୍ୟବହାର କରନ୍ତୁ।"
 
 #: ../extensions/error-viewer/sgml-validator.c:242
 #, c-format
@@ -350,21 +370,23 @@ msgid ""
 "HTML warning in %s:\n"
 "%s"
 msgstr ""
+"%s ରେ HTML ଚେତାବନୀ:\n"
+"%s"
 
 #: ../extensions/error-viewer/sgml-validator.c:359
 #, c-format
 msgid "HTML error in %s:"
-msgstr ""
+msgstr "%s ରେ HTML ତ୍ରୁଟି:"
 
 #: ../extensions/error-viewer/sgml-validator.c:367
 #, c-format
 msgid "Invalid character encoding"
-msgstr ""
+msgstr "ଅବୈଧ ଅକ୍ଷର ସାଙ୍କେତିକରଣ"
 
 #: ../extensions/error-viewer/sgml-validator.c:372
 #, c-format
 msgid "Unknown error while converting to UTF-8"
-msgstr ""
+msgstr "UTF-8 ରେ ପରିବର୍ତ୍ତନ କରିବା ସମୟରେ ଅଜଣା ତ୍ରୁଟି"
 
 #: ../extensions/error-viewer/sgml-validator.c:434
 #, c-format
@@ -372,6 +394,8 @@ msgid ""
 "HTML error in %s:\n"
 "No valid doctype specified."
 msgstr ""
+"%s ରେ HTML ତ୍ରୁଟି:\n"
+"କୌଣସି ବୈଧ ଦଲିଲ ପ୍ରକାର ଉଲ୍ଲେଖ କରାହୋଇନାହିଁ।"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.c:345
 msgid "Enabled"
@@ -410,12 +434,12 @@ msgstr "ଚାଳକ ସ୍କ୍ରିପ୍ଟ ସ୍ଥାପନ କରନ୍
 #. shortcut key
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:80
 msgid "Install Greasemonkey script"
-msgstr ""
+msgstr "Greasemonkey ସ୍କ୍ରିପ୍ଟକୁ ସ୍ଥାପନ କରନ୍ତୁ"
 
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:311
 #, c-format
 msgid "The user script at “%s” has been installed"
-msgstr ""
+msgstr "“%s” ରେ ଥିବା ଚାଳକ ସ୍କ୍ରିପ୍ଟକୁ ସ୍ଥାପନ କରାସରିଛି"
 
 #: ../extensions/java-console/ephy-java-console-extension.c:48
 msgid "_Java Console"
@@ -444,7 +468,7 @@ msgstr "<b>URLଗୁଡ଼ିକ</b>"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
 msgid "Clear cache"
-msgstr ""
+msgstr "ପରିଷ୍କାର କ୍ୟାଶେ"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
 msgid "Live Headers"
@@ -480,7 +504,7 @@ msgstr "ସମ୍ପୂର୍ଣ୍ଣ ମାନକ ସମ୍ମତି"
 
 #: ../extensions/page-info/page-info-dialog.c:778
 msgid "Almost standards compliance"
-msgstr ""
+msgstr "ପ୍ରାୟତଃ ମାନକ ସ୍ୱୀକୃତି"
 
 #: ../extensions/page-info/page-info-dialog.c:781
 msgid "Compatibility"
@@ -492,7 +516,7 @@ msgstr "ଅନିର୍ଦ୍ଧାରିତ"
 
 #: ../extensions/page-info/page-info-dialog.c:794
 msgid "Not cached"
-msgstr ""
+msgstr "କୌଣସି କ୍ୟାଶେ ନାହିଁ"
 
 #: ../extensions/page-info/page-info-dialog.c:797
 msgid "Disk cache"
@@ -513,7 +537,7 @@ msgstr "ଅଜଣା"
 
 #: ../extensions/page-info/page-info-dialog.c:824
 msgid "No referrer"
-msgstr ""
+msgstr "କୌଣସି ସନ୍ଦର୍ଭ ନାହିଁ"
 
 #: ../extensions/page-info/page-info-dialog.c:838
 #: ../extensions/page-info/page-info-dialog.c:854
@@ -530,7 +554,7 @@ msgstr "ପୃଷ୍ଠଭୂମି ଚିତ୍ର"
 
 #: ../extensions/page-info/page-info-dialog.c:923
 msgid "Embed"
-msgstr ""
+msgstr "ସନ୍ନିହିତ"
 
 #: ../extensions/page-info/page-info-dialog.c:926
 msgid "Object"
@@ -624,11 +648,11 @@ msgstr "ପୃଷ୍ଠା ଅଧିତଥ୍ୟ"
 
 #: ../extensions/page-info/page-info.glade.h:1
 msgid "<b>Dublin Core Metadata</b>"
-msgstr ""
+msgstr "<b>Dublin ମଧ୍ଯବର୍ତ୍ତୀ ଅଧିତଥ୍ୟ</b>"
 
 #: ../extensions/page-info/page-info.glade.h:2
 msgid "<b>Forms In Page</b>"
-msgstr ""
+msgstr "<b>ପୃଷ୍ଠାରେ ଥିବା ଫର୍ମଗୁଡ଼ିକ</b>"
 
 #: ../extensions/page-info/page-info.glade.h:3
 msgid "<b>Links In Page</b>"
@@ -636,11 +660,11 @@ msgstr "<b>ପୃଷ୍ଠରେ ଥିବା ସଂଯୋଗିକୀ</b>"
 
 #: ../extensions/page-info/page-info.glade.h:4
 msgid "<b>Media In Page</b>"
-msgstr ""
+msgstr "<b>ପୃଷ୍ଠାରେ ଥିବା ମେଡିଆ</b>"
 
 #: ../extensions/page-info/page-info.glade.h:5
 msgid "<b>Medium View</b>"
-msgstr ""
+msgstr "<b>ମଧ୍ଯମ ଦୃଶ୍ୟ</b>"
 
 #: ../extensions/page-info/page-info.glade.h:6
 msgid "<b>Other Metadata</b>"
@@ -744,7 +768,7 @@ msgstr "ପ୍ରକାର:"
 
 #: ../extensions/page-info/page-info.glade.h:31
 msgid "_Save Media As..."
-msgstr ""
+msgstr "ମେଡିଆକୁ ଏହିପରି ସଂରକ୍ଷଣ କରନ୍ତୁ (_S)..."
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:165
 msgid "allowed"
@@ -796,27 +820,27 @@ msgstr "ୱେବ ସାଇଟ ଅନୁମତିଗୁଡ଼ିକୁ ପରି
 
 #: ../extensions/rss/ephy-rss-extension.c:79
 msgid "News Feeds Subscription"
-msgstr ""
+msgstr "ଖବର ପୁରଣ କ୍ରୟ"
 
 #: ../extensions/rss/ephy-rss-extension.c:81
 msgid "Subscribe to this website's news feeds in your favorite news reader"
-msgstr ""
+msgstr "ଆପଣଙ୍କର ମନପସନ୍ଦ ଖବର ପାଠକରେ ଏହି ୱେବସାଇଟର ଖବର ଫିଡକୁ କିଣନ୍ତୁ"
 
 #: ../extensions/rss/ephy-rss-extension.c:86
 msgid "_Subscribe to this feed"
-msgstr ""
+msgstr "ଏହି ଫିଡକୁ କିଣନ୍ତୁ (_S)"
 
 #: ../extensions/rss/ephy-rss-extension.c:88
 msgid "Subscribe to this feed in your favorite news reader"
-msgstr ""
+msgstr "ଆପଣଙ୍କର ମନପସନ୍ଦ ଖବର ପାଠକରେ ଏହି ଫିଡକୁ କିଣନ୍ତୁ"
 
 #: ../extensions/rss/ephy-rss-extension.c:361
 msgid "Subscribe to site's news feed"
-msgstr ""
+msgstr "ସାଇଟର ଖବର ଫିଡକୁ କିଣନ୍ତୁ"
 
 #: ../extensions/rss/rss-ui.c:153
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
-msgstr ""
+msgstr "<b><i>ଫିଡ ପାଠକଙ୍କୁ ଯୋଗାଯୋଗ କରିବାରେ ଅସମର୍ଥ, ଏହା ଚାଲୁଅଛି କି ?</i></b>"
 
 #: ../extensions/rss/rss-ui.c:155
 msgid "Retry"
@@ -837,7 +861,7 @@ msgstr "<b>ଚିତାକର୍ଷକ ଫିଡଗୁଡ଼ିକୁ ବାଛ�
 #: ../extensions/rss/rss-ui.glade.h:2
 #: ../extensions/rss/rss.ephy-extension.in.in.h:1
 msgid "News Feed Subscription"
-msgstr ""
+msgstr "ଖବର ଫିଡ କ୍ରୟ"
 
 #: ../extensions/rss/rss-ui.glade.h:3
 msgid "_Subscribe"
@@ -845,16 +869,16 @@ msgstr "ବ୍ଯବହାର କରନ୍ତୁ (_S)"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:140
 msgid "Render the page without using a style"
-msgstr ""
+msgstr "କୌଣସି ଶୈଳୀ ବ୍ୟବହାର ନକରି ପୃଷ୍ଠାକୁ ଚିତ୍ରଣ କରନ୍ତୁ"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:143
 msgid "Render the page using the default style"
-msgstr ""
+msgstr "ପୂର୍ବନିର୍ଦ୍ଧାରିତ ଶୈଳୀକୁ ବ୍ୟବହାର କରି ଚିତ୍ରଣ କରନ୍ତୁ"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:146
 #, c-format
 msgid "Render the page using the “%s” style"
-msgstr ""
+msgstr "“%s” ଶୈଳୀକୁ ବ୍ୟବହାର କରି ପୃଷ୍ଠାକୁ ଚିତ୍ରଣ କରନ୍ତୁ"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:317
 msgid "St_yle"
@@ -862,7 +886,7 @@ msgstr "ଠା_ଣୀ"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:318
 msgid "Select a different style for this page"
-msgstr ""
+msgstr "ଏହି ପୃଷ୍ଠା ପାଇଁ ଗୋଟିଏ ନୂତନ ଶୈଳୀ ବାଛନ୍ତୁ"
 
 #: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
 msgid "Default"
@@ -890,7 +914,7 @@ msgstr "ଆପଣ ପ୍ରକୃତରେ ଏହି ପାର୍ଶ୍ୱପଟ
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:310
 msgid "There is no way to recover this sidebar after removal."
-msgstr ""
+msgstr "ଏହି ପାର୍ଶ୍ୱପଟିକୁ ପୁନର୍ଦ୍ଧାରଣ କରିବା ପାଇଁ କଢ଼ା ସରିବା ପରେ କୌଣସି ପନ୍ଥା ନାହିଁ।"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:312
 msgid "Remove Sidebar"
@@ -903,9 +927,8 @@ msgid "The sidebar already contains “%s”"
 msgstr "ପାର୍ଶ୍ୱପଟି ପୂର୍ବରୁ “%s” କୁ ଧାରଣ କରିଅଛି"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:463
-msgid ""
-"To use this sidebar, select it from the list of available sidebar pages."
-msgstr ""
+msgid "To use this sidebar, select it from the list of available sidebar pages."
+msgstr "ଏହି ପାର୍ଶ୍ୱପଟିକୁ ବ୍ୟବହାର କରିବା ପାଇଁ, ଏହାକୁ ଉପଲବ୍ଧ ପାର୍ଶ୍ୱପଟି ପୃଷ୍ଠାଗୁଡ଼ିକ ମଧ୍ଯରୁ ବାଛନ୍ତୁ।"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:466
 #: ../extensions/sidebar/ephy-sidebar-extension.c:492
@@ -920,7 +943,7 @@ msgstr "ପାର୍ଶ୍ୱପଟିରେ “%s” କୁ ଯୋଗ କରି
 #: ../extensions/sidebar/ephy-sidebar-extension.c:490
 #, c-format
 msgid "The source to the new sidebar page is “%s”."
-msgstr ""
+msgstr "ନୂତନ ପାର୍ଶ୍ୱପଟି ପୃଷ୍ଠା ପାଇଁ ଉତ୍ସଟି ହେଉଛି “%s”।"
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:496
 msgid "_Add Sidebar"
@@ -928,7 +951,7 @@ msgstr "ପାର୍ଶ୍ୱପଟି ଯୋଗକରନ୍ତୁ (_A)"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
 msgid "_Look Up"
-msgstr ""
+msgstr "ଦେଖିବା (_L)"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:538
 msgid "_GNOME Dictionary"
@@ -936,92 +959,92 @@ msgstr "GNOME ଅଭିଧାନ (_G)"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
 msgid "Open search result in new tab"
-msgstr ""
+msgstr "ନୂତନ ଟ୍ୟାବରେ ସନ୍ଧାନ ଫଳାଫଳକୁ ଖୋଲନ୍ତୁ"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
 msgid "Open search result in new tab if true, in new window if false"
-msgstr ""
+msgstr "ନୂତନ ଟ୍ୟାବରେ ସନ୍ଧାନ ଫଳାଫଳକୁ ଖୋଲିବା true ଅଟେ, ନୂତନ ୱିଣ୍ଡୋରେ false"
 
 #: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
 msgid "_Soup Fly"
-msgstr ""
+msgstr "ସୁପ ଉଡ଼ାଣ (_S)"
 
 #. shortcut key
 #: ../extensions/soup-fly/ephy-soup-fly-extension.c:68
 msgid "Show information about the SoupSession used by the browser"
-msgstr ""
+msgstr "ବ୍ରାଉଜର ଦ୍ୱାରା ବ୍ୟବହୃତ ସୁପଅଧିବେଶନ ବିଷୟରେ ସୂଚନା ଦର୍ଶାନ୍ତୁ"
 
 #: ../extensions/soup-fly/soup-fly.c:220
 msgid "Clear finished"
-msgstr ""
+msgstr "ସଫାକରିବା ସମାପ୍ତ ହୋଇଛି"
 
 #: ../extensions/soup-fly/soup-fly.c:224
 msgid "Automatically remove finished messages"
-msgstr ""
+msgstr "ସମାପ୍ତ ହୋଇଥିବା ସନ୍ଦେଶଗୁଡ଼ିକୁ ସ୍ୱୟଂଚାଳିତ ଭାବରେ କାଢ଼ିଥାଏ"
 
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
-msgstr ""
+msgstr "ପ୍ରସଙ୍ଗ ତାଲିକାରୁ ଅଜଣା ନିର୍ଦ୍ଦେଶଗୁଡ଼ିକୁ ନିଷ୍ପାଦନ କରନ୍ତୁ"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
 msgid "Ad Blocker"
-msgstr ""
+msgstr "Ad ବନ୍ଧକ"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
 msgid "Block the pest!"
-msgstr ""
+msgstr "ଧାତକ ରୋଗକୁ ଅଟକାନ୍ତୁ!"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
 msgid "Auto Scroll"
-msgstr ""
+msgstr "ସ୍ୱୟଂ ଟଣା"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
 msgid "Scroll on middle mouse click"
-msgstr ""
+msgstr "ମଝି ମାଉସ କ୍ଲିକ ଉପରେ ଟାଣନ୍ତୁ"
 
 #: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
 msgid "Auto Reload Tab"
-msgstr ""
+msgstr "ଟ୍ୟାବକୁ ସ୍ୱୟଂ ପୁନର୍ଧାରଣ କରନ୍ତୁ"
 
 #: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
 msgid "Reload a tab periodically"
-msgstr ""
+msgstr "ଗୋଟିଏ ଟ୍ୟାବକୁ ପୁନପୌନିକ ଭାବରେ ପୁନର୍ଧାରଣ କରନ୍ତୁ"
 
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
-msgstr ""
+msgstr "ପୃଷ୍ଠା ପ୍ରମାଣପତ୍ରକୁ ଦେଖନ୍ତୁ ଏବଂ ପ୍ରମାଣପତ୍ରକୁ ପରିଚାଳନା କରନ୍ତୁ"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
-msgstr ""
+msgstr "ତ୍ରୁଟି ପ୍ରଦର୍ଶିକା"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
 msgid "Validate web pages and check links"
-msgstr ""
+msgstr "ୱେବ ପୃଷ୍ଠାଗୁଡ଼ିକୁ ବୈଧିକରଣ କରନ୍ତୁ ଏବଂ ସଂଯୋଗଗୁଡ଼ିକୁ ଯାଞ୍ଚକରନ୍ତୁ"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
 msgid "Activate and deactivate extensions"
-msgstr ""
+msgstr "ଅନୁଲଗ୍ନଗୁଡ଼ିକୁ ସକ୍ରିୟ ଏବଂ ନିଷ୍କ୍ରିୟ କରନ୍ତୁ"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
 msgid "Extensions Manager"
-msgstr ""
+msgstr "ଅନୁଲଗ୍ନ ପରିଚାଳକ"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
-msgstr ""
+msgstr "ଭାବ"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:2
 msgid "Perform actions with mouse gestures"
-msgstr ""
+msgstr "ମାଉସ ଭାବ ଅନୁସାରେ କାର୍ଯ୍ୟ କରନ୍ତୁ"
 
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
 msgid "Greasemonkey"
-msgstr ""
+msgstr "Greasemonkey"
 
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
 msgid "Run user scripts to modify web pages' behavior"
-msgstr ""
+msgstr "ୱେବ ପୃଷ୍ଠାର ଆଚରଣକୁ ପରିବର୍ତ୍ତନ କରିବା ପାଇଁ ଚାଳକ ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକୁ ଚଲାନ୍ତୁ"
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
 msgid "Java Console"
@@ -1029,7 +1052,7 @@ msgstr "Java କୋନସୋଲ"
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
 msgid "Provide access to the Java-Plugin Console"
-msgstr ""
+msgstr "Java-Plugin କୋନସଲ ପାଇଁ ଅଭିଗମ୍ୟତା ପ୍ରଦାନ କରନ୍ତୁ"
 
 #: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
 msgid "Live HTTP headers"
@@ -1037,7 +1060,7 @@ msgstr "ଜୀବନ୍ତ HTTP ଶୀର୍ଷକଗୁଡ଼ିକ"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
-msgstr ""
+msgstr "ପ୍ରଚଳିତ ପୃଷ୍ଠାରୁ ସଂଯୋଗ ଏବଂ ମେଡିଆ ବିଷୟରେ ସୂଚନା ପ୍ରଦର୍ଶନ କରନ୍ତୁ"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
 msgid "Page Info"
@@ -1053,16 +1076,15 @@ msgstr "ଅନୁମତି"
 
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
 msgid "Drag the page on middle mouse click"
-msgstr ""
+msgstr "ମାଉସର ମଝି କ୍ଲିକ ଦ୍ୱାରା ପୃଷ୍ଠାକୁ ଟାଣନ୍ତୁ"
 
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
 msgid "Push Scroll"
-msgstr ""
+msgstr "ସ୍କ୍ରଲ ଟାଣନ୍ତୁ"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
-msgid ""
-"Subscribe to a news feed offered by the webpage in your favorite news reader"
-msgstr ""
+msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr "ଆପଣଙ୍କ ମନପସନ୍ଦ ଖବର ପାଠକରେ ୱେବ ପୃଷ୍ଠା ଦ୍ୱାରା ଖବର ଫିଡକୁ କ୍ରୟ କରନ୍ତୁ"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
 msgid "A sample extension"
@@ -1074,11 +1096,11 @@ msgstr "ନମୁନା"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
 msgid "Select Stylesheet"
-msgstr ""
+msgstr "ଶୈଳୀ ସିଟ ବାଛନ୍ତୁ"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
-msgstr ""
+msgstr "ୱେବ ପୃଷ୍ଠା ଦ୍ୱାରା ପ୍ରଦତ୍ତ ଭିନ୍ନ ପ୍ରକାର ଶୈଳୀ ସିଟକୁ ବାଛନ୍ତୁ"
 
 #: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
 msgid "Adds a sidebar to windows"
@@ -1090,7 +1112,7 @@ msgstr "ପାର୍ଶ୍ୱପଟି"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
 msgid "Look up the selected text with a smart bookmark"
-msgstr ""
+msgstr "ବଚ୍ଛିତ ପାଠ୍ୟକୁ ଚତୁର ଚିହ୍ନିତ ସ୍ଥାନ ସହିତ ଦେଖନ୍ତୁ"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
 msgid "Smart Bookmarks"
@@ -1098,7 +1120,7 @@ msgstr "ଚତୁର ଚିହ୍ନିତ ସ୍ଥାନ"
 
 #: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
 msgid "Groups newly opened tabs"
-msgstr ""
+msgstr "ନୂତନ ଭାବରେ ଖୋଲାହୋଇଥିବା ଟ୍ୟାବଗୁଡ଼ିକୁ ଶ୍ରେଣୀଭୁକ୍ତ କରନ୍ତୁ"
 
 #: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
 msgid "Tab Groups"
@@ -1106,8 +1128,9 @@ msgstr "ଟ୍ୟାବ ସମୂହ"
 
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
-msgstr ""
+msgstr "ପୃଷ୍ଠଭୂମି ଟ୍ୟାବଗୁଡ଼ିକରେ ନୂତନ ବିଷୟବସ୍ତୁକୁ ସୂଚିତ କରନ୍ତୁ"
 
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "ଟ୍ୟାବ ସ୍ଥିତି"
+
