@@ -1,4 +1,4 @@
-# translation of epiphany-extensions.po.master.ta.po to Tamil
+# translation of epiphany-extensions.master.ta.po to Tamil
 # Tamil translation of epiphany-extensions.
 # Copyright (C) 2009 epiphany-extensions's COPYRIGHT HOLDER
 # This file is distributed under the same license as the epiphany-extensions package.
@@ -6,16 +6,17 @@
 # I. Felix <ifelix@redhat.com>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: epiphany-extensions.po.master.ta\n"
+"Project-Id-Version: epiphany-extensions.master.ta\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions&component=general\n"
-"POT-Creation-Date: 2009-06-10 06:26+0000\n"
-"PO-Revision-Date: 2009-06-18 17:12+0530\n"
+"POT-Creation-Date: 2009-07-12 21:38+0000\n"
+"PO-Revision-Date: 2009-10-28 15:26+0530\n"
 "Last-Translator: I. Felix <ifelix@redhat.com>\n"
 "Language-Team: Tamil <fedora-trans-ta@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\\n\n"
+"\n"
 "\n"
 "\n"
 "\n"
@@ -40,7 +41,9 @@ msgstr "இந்த விருப்பம் செயல்படுத்�
 msgid ""
 "If this option is enabled, the action will be included in the popup menu of "
 "links and pages."
-msgstr "இந்த விருப்பம் செயல்படுத்தப்பட்டால், செயல் பாப்பப் மெனுவின் இணைப்புகள் மற்றும் பக்கங்களில் சேர்க்கப்படும்."
+msgstr ""
+"இந்த விருப்பம் செயல்படுத்தப்பட்டால், செயல் பாப்பப் மெனுவின் இணைப்புகள் மற்றும் பக்கங்களில் "
+"சேர்க்கப்படும்."
 
 #: ../extensions/actions/action-properties.glade.h:5
 msgid "The action description."
@@ -50,13 +53,17 @@ msgstr "இந்த செயலின் விளக்கம்."
 msgid ""
 "The action name. If a character is preceded by an underscore, that character "
 "will be used as the access key for the menu item."
-msgstr "இந்த செயல் பெயர். ஒரு எழுத்து அடிக்கோடிப்பட்டால் அந்த எழுத்து மெனுவின் அணுகல் விசையாக பயன்படுத்தப்படும்."
+msgstr ""
+"இந்த செயல் பெயர். ஒரு எழுத்து அடிக்கோடிப்பட்டால் அந்த எழுத்து மெனுவின் அணுகல் விசையாக "
+"பயன்படுத்தப்படும்."
 
 #: ../extensions/actions/action-properties.glade.h:7
 msgid ""
 "The command to execute when the action is activated. The URL of the link, "
 "image or page will be appended to the command."
-msgstr "ஒரு செயலை செயல்படுத்தும் போது கட்டளையை இயக்கவும். இணைய முகவரி இணைப்பு, படம் அல்லது பக்கம் கட்டளையில் சேர்க்கப்படும்."
+msgstr ""
+"ஒரு செயலை செயல்படுத்தும் போது கட்டளையை இயக்கவும். இணைய முகவரி இணைப்பு, படம் அல்லது "
+"பக்கம் கட்டளையில் சேர்க்கப்படும்."
 
 #: ../extensions/actions/action-properties.glade.h:8
 msgid "_Command:"
@@ -71,7 +78,6 @@ msgid "_Images"
 msgstr "படங்கள் (_I)"
 
 #: ../extensions/actions/action-properties.glade.h:11
-#: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Name:"
 msgstr "பெயர் (_N):"
 
@@ -198,10 +204,6 @@ msgstr "தானக மறுஏற்று (_A)"
 msgid "Reload the page periodically"
 msgstr "கால அளவில் பக்கத்தை மீளேற்று"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:373
-msgid "View Creative Commons license"
-msgstr "Creative Commons உரிமத்தை பார்வையிடு"
-
 #: ../extensions/certificates/ephy-certificates-extension.c:163
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
@@ -230,122 +232,6 @@ msgstr "பாதுகாப்பு சாதனங்களை மேலா�
 #: ../extensions/certificates/ephy-certificates-extension.c:214
 msgid "Manage your security devices"
 msgstr "உங்ளுடைய பாதுகாப்பு சாதனங்களை மேலாண்மை செய்யவும் "
-
-#: ../extensions/epilicious/epilicious-config.glade.h:1
-msgid "Action for tagged bookmarks:"
-msgstr "ஒட்டப்பட்ட புத்தகக் குறியீடுகளுக்கான செயல்:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:2
-msgid "Epilicious Configuration"
-msgstr "Epilicious கட்டமைப்பு"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:3
-msgid "_Backend:"
-msgstr "பின்முனை (_B):"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:4
-msgid "_Exclude"
-msgstr "நீக்கு (_E)"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:5
-msgid "_Include"
-msgstr "சேர் (_I)"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:7
-msgid "_Password:"
-msgstr "கடவுச்சொல் (_P):"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:8
-msgid "_Tag:"
-msgstr "ஒட்டு (_T):"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:1
-msgid "Adding new bookmarks and synching topics"
-msgstr "புதிய புத்தக் குறியீடுகளையும் மற்றும் ஒத்திசைக்கப்பட்ட தலைப்புகளையும் சேர்க்கிறது"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:2
-msgid "Removing deleted bookmarks"
-msgstr "அழிக்கப்பட்ட புத்தக்குறியீடுகளை நீக்குகிறது"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:4
-#: ../extensions/epilicious/progress.py:41
-#, no-c-format, python-format
-msgid "Retrieving bookmarks from %s"
-msgstr "%sஇலிருந்து புத்தகக்குறியை எடுக்கிறது"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:5
-msgid "Retrieving bookmarks from epiphany"
-msgstr "epiphanyஇலிருந்து புத்தகக்குறிகளை எடுக்கிறது"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:6
-msgid "Retrieving previous synch point"
-msgstr "முந்தைய synch புள்ளியை எடுக்கிறது"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:7
-msgid "Saving new synch point"
-msgstr "புதிய ஒத்திசைவு புள்ளியை சேமிக்கிறது"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:9
-#: ../extensions/epilicious/progress.py:39
-#, no-c-format, python-format
-msgid "Synchronizing with %s"
-msgstr "%sஉடன் ஒத்திசைக்கிறது"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:10
-msgid "Synchronizing..."
-msgstr "ஒந்நிசைக்கிறது..."
-
-#: ../extensions/epilicious/epilicious.py.in:232
-#: ../extensions/epilicious/epilicious.py.in:250
-msgid "Epilicious Synchronize"
-msgstr "Epilicious ஒத்திசைக்கப்பட்டது"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:1
-msgid "Bookmarks with this topic will be synchronized."
-msgstr "புத்தகக் குறியீடுகளுடன் இந்த தலைப்பு ஒத்திசைக்கப்பட்டது."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:2
-msgid ""
-"Controls the function of the topic. If this is unset then all bookmarks with "
-"the topic will be synched. If this is set then all bookmarks without the "
-"topic will be synched."
-msgstr "இந்த தலைப்பின் செயல்பாட்டை கட்டுப்படுத்துகிறது. இது அமைக்கப்படவில்லையெனில் அனைத்து புத்தகக்குறிகளுடன் தலைப்பு ஒத்திசைக்கப்படும். இது அமைக்கப்பட்டால் அனைத்து புத்தகக்குறிகள் தலைப்பில்லாமல் ஒத்திசைக்கப்படும்."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:3
-msgid "Exclude topic"
-msgstr "தலைப்பை நீக்கவும்"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:4
-msgid "Shared topic"
-msgstr "பகிரப்பட்ட தலைப்பு"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:5
-msgid ""
-"The backend that epilicious will use for synchronizing bookmarks. Allowed "
-"values: 'diigo', 'ma.gnolia'"
-msgstr ""
-"பின்தளம் epilicious புத்தகக்குறிகளை ஒத்திசைக்க பயன்படுத்தப்படும். அனுமதிக்கப்பட்ட மதிப்புகள்"
-": 'diigo', 'ma.gnolia'"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:6
-msgid "The password that epilicious will use for synchronizing bookmarks."
-msgstr "epilicious இன் கடவுச்சொல் ஒத்திசைக்கப்பட்டட புத்தகக்குறியுடன் பயன்படுத்தப்படும்."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:7
-msgid "The username that epilicious will use for synchronizing bookmarks."
-msgstr "epilicious இன் பயனர் பெயர் புத்தகக்குறிகளுடன் ஒத்திசைக்கப்படும்."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:8
-msgid "epilicious backend"
-msgstr "epilicious பின்முனை"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:9
-msgid "password"
-msgstr "கடவுச்சொல்"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:10
-msgid "username"
-msgstr "பயனர்பெயர்"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Check _HTML"
@@ -475,7 +361,9 @@ msgstr ""
 msgid ""
 "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
 "+xml” instead."
-msgstr "Doctype “XHTML” ஆனால் உள்ளடக்க வகை “text/html”.   “application/xhtml+xml” அதற்கு பதில் பயன்படுத்து."
+msgstr ""
+"Doctype “XHTML” ஆனால் உள்ளடக்க வகை “text/html”.   “application/xhtml+xml” அதற்கு "
+"பதில் பயன்படுத்து."
 
 #: ../extensions/error-viewer/sgml-validator.c:242
 #, c-format
@@ -901,6 +789,7 @@ msgid "Domain"
 msgstr "செயற்களம்"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:512
+#: ../extensions/soup-fly/soup-fly.c:180
 msgid "State"
 msgstr "நிலை"
 
@@ -1040,7 +929,9 @@ msgstr "பக்கப்பட்டை ஏற்கனவே “%s”ஐ ப�
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:463
 msgid "To use this sidebar, select it from the list of available sidebar pages."
-msgstr "இந்த பக்க பட்டையை பயன்படுத்த, அதனை பட்டியலிலிருந்து பக்கப்பட்டை பக்கங்களுக்கு தேர்ந்தெடுக்கவும்."
+msgstr ""
+"இந்த பக்க பட்டையை பயன்படுத்த, அதனை பட்டியலிலிருந்து பக்கப்பட்டை பக்கங்களுக்கு "
+"தேர்ந்தெடுக்கவும்."
 
 #: ../extensions/sidebar/ephy-sidebar-extension.c:466
 #: ../extensions/sidebar/ephy-sidebar-extension.c:492
@@ -1077,6 +968,24 @@ msgstr "புதிய தத்தலில் புதிய தேடல்
 msgid "Open search result in new tab if true, in new window if false"
 msgstr "புதிய தத்தலில் திறந்த தேடுதல் முடிவு உண்மையெனில், புதிய சாளரம் தவறாகும்"
 
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
+msgid "_Soup Fly"
+msgstr "_Soup Fly"
+
+#. shortcut key
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:68
+msgid "Show information about the SoupSession used by the browser"
+msgstr "உலாவியால் பயன்படுத்தப்பட்ட SoupSessionஐ பற்றிய தகவலைக் காட்டு"
+
+#: ../extensions/soup-fly/soup-fly.c:205
+#| msgid "Clear cache"
+msgid "Clear finished"
+msgstr "முடிந்ததை துடை"
+
+#: ../extensions/soup-fly/soup-fly.c:209
+msgid "Automatically remove finished messages"
+msgstr "முடிவடைந்த செய்திகள் தானாகவே நீக்குகிறது"
+
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
 msgstr "தவறான கட்டளைகளை சூழல் மெனுவிலிருந்து இயக்கு"
@@ -1105,21 +1014,9 @@ msgstr "தானா மறுஏற்றும் தத்தல்"
 msgid "Reload a tab periodically"
 msgstr "அவ்வப்பொழுது தத்தலை மறுஏற்றவும்"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
-msgid "Creative Commons license viewer"
-msgstr "Creative Commons உரிம காட்டி"
-
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
-msgid "Shows the Creative Commons license of the current website if available"
-msgstr "Creative Commons உரிமத்தை நடப்பு இணைய தளத்தில் இருந்தால் காட்டவும்"
-
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "பக்க சான்றிதழை காட்டி மேலாண்மை செய்யவும்"
-
-#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
-msgid "Synchronize bookmarks with social bookmark sites"
-msgstr "சமுதாய புத்தகக்குறி தளங்களுடன் புத்தகக்குறிகள் ஒத்திசைக்கப்படுகிறது"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -1136,14 +1033,6 @@ msgstr "விரிவாக்கங்களை செயல்படுத�
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
 msgid "Extensions Manager"
 msgstr "விரிவாக்க மேலாளர்"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:1
-msgid "Favicon fallback"
-msgstr "Favicon பின்சாய்வு"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:2
-msgid "Loads /favicon.ico as favicon if the site doesn't use the standard method"
-msgstr "/favicon.ico ஐ favicon ஐ ஏற்றுகிறது தளம் தரப்படுத்தப்பட்ட முறையை பயன்படுத்தவில்லையெனில்"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -1196,14 +1085,6 @@ msgstr "சுட்டி மைய சொடுக்கில் பக்க
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
 msgid "Push Scroll"
 msgstr "சுருளைத் தள்ளு"
-
-#: ../extensions/python-console/python-console.ephy-extension.in.h:1
-msgid "Opens an interactive Python console"
-msgstr "ஊடாடல் Python பணியகத்தை திறக்கிறது"
-
-#: ../extensions/python-console/python-console.ephy-extension.in.h:2
-msgid "Python Console"
-msgstr "பைதான் பணியகம்"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
