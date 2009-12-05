@@ -561,7 +561,7 @@ impl_detach_tab (EphyExtension *ext,
 		 EphyEmbed *embed)
 {
 	AdBlocker *blocker;
-	EphyWebView *web_view = ephy_embed_get_web_view (embed);
+	EphyWebView *view = ephy_embed_get_web_view (embed);
 
 	blocker = g_object_steal_data (G_OBJECT (embed), AD_BLOCKER_KEY);
 	g_return_if_fail (blocker != NULL);
