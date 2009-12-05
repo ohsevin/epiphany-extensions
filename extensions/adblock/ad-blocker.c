@@ -1,3 +1,4 @@
+/* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 /*
  *  Copyright © 2004 Adam Hooper
  *
@@ -15,7 +16,6 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  *
- *  $Id$
  */
 
 #include "config.h"
@@ -91,14 +91,18 @@ ad_blocker_new (void)
 void
 ad_blocker_blocked_uri (AdBlocker *blocker)
 {
-		blocker->priv->num_blocked++;
+	g_return_if_fail (IS_AD_BLOCKER (blocker));
 
-		g_object_notify (G_OBJECT (blocker), "num-blocked");
+	blocker->priv->num_blocked++;
+
+	g_object_notify (G_OBJECT (blocker), "num-blocked");
 }
 
 void
 ad_blocker_reset (AdBlocker *blocker)
 {
+	g_return_if_fail (IS_AD_BLOCKER (blocker));
+
 	blocker->priv->num_blocked = 0;
 
 	switch (blocker->priv->noblock_state) {
