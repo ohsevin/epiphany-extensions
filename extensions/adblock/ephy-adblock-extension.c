@@ -477,7 +477,7 @@ impl_detach_window (EphyExtension *ext,
 }
 
 static void
-content_blocked_cb (EphyEmbed *embed,
+content_blocked_cb (EphyWebView *view,
 		    const char *address,
 		    AdBlocker *blocker)
 {
@@ -487,7 +487,7 @@ content_blocked_cb (EphyEmbed *embed,
 }
 
 static void
-location_changed_cb (EphyEmbed *embed,
+location_changed_cb (EphyWebView *view,
 		     const char *address,
 		     AdBlocker *blocker)
 {
@@ -561,14 +561,15 @@ impl_detach_tab (EphyExtension *ext,
 		 EphyEmbed *embed)
 {
 	AdBlocker *blocker;
+	EphyWebView *web_view = ephy_embed_get_web_view (embed);
 
 	blocker = g_object_steal_data (G_OBJECT (embed), AD_BLOCKER_KEY);
 	g_return_if_fail (blocker != NULL);
 
 	g_signal_handlers_disconnect_by_func
-		(embed, G_CALLBACK (content_blocked_cb), blocker);
+		(view, G_CALLBACK (content_blocked_cb), blocker);
 	g_signal_handlers_disconnect_by_func
-		(embed, G_CALLBACK (location_changed_cb), blocker);
+		(view, G_CALLBACK (location_changed_cb), blocker);
 	g_signal_handlers_disconnect_by_func
 		(blocker, G_CALLBACK (num_blocked_cb), embed);
 
