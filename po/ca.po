@@ -5,16 +5,15 @@
 # Jordi Mallach <jordi@sindominio.net>, 2004.
 # Esteve Blanch Sanmartí <anakinjinn@gmail.com>, 2006.
 # Francesc Vilches <francesc.vilches@gmail.com>, 2007.
-# David Planella Molas <david.planella@gmail.com>, 2007, 2008.
-#
+# David Planella Molas <david.planella@gmail.com>, 2007, 2008, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2009-03-23 22:47+0100\n"
-"PO-Revision-Date: 2009-02-22 15:04+0100\n"
-"Last-Translator: David Planella Molas <david.planella@gmail.com>\n"
+"POT-Creation-Date: 2009-12-07 20:26+0100\n"
+"PO-Revision-Date: 2009-11-25 19:06+0100\n"
+"Last-Translator: David Planella <david.planella@softcatala.org>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -79,7 +78,6 @@ msgid "_Images"
 msgstr "_Imatges"
 
 #: ../extensions/actions/action-properties.glade.h:11
-#: ../extensions/epilicious/epilicious-config.glade.h:6
 msgid "_Name:"
 msgstr "_Nom:"
 
@@ -104,7 +102,7 @@ msgstr "Personalitza les accions"
 msgid "Could not run command"
 msgstr "No s'ha pogut executar l'ordre"
 
-#: ../extensions/actions/ephy-actions-extension.c:439
+#: ../extensions/actions/ephy-actions-extension.c:440
 msgid "Could not Run Command"
 msgstr "No s'ha pogut executar l'ordre"
 
@@ -207,10 +205,6 @@ msgstr "_Actualització automàtica"
 msgid "Reload the page periodically"
 msgstr "Actualitza la pàgina periòdicament"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.py:373
-msgid "View Creative Commons license"
-msgstr "Mostra la llicència Creative Commons"
-
 #: ../extensions/certificates/ephy-certificates-extension.c:163
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
 msgid "Certificates"
@@ -239,130 +233,6 @@ msgstr "Administra els _dispositius de seguretat"
 #: ../extensions/certificates/ephy-certificates-extension.c:214
 msgid "Manage your security devices"
 msgstr "Administreu els vostres dispositius de seguretat"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:1
-msgid "Action for tagged bookmarks:"
-msgstr "Acció a dur a terme per a les adreces d'interès etiquetades:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:2
-msgid "Epilicious Configuration"
-msgstr "Configuració de l'Epilicious"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:3
-msgid "_Backend:"
-msgstr "_Rerefons:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:4
-msgid "_Exclude"
-msgstr "_Exclou"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:5
-msgid "_Include"
-msgstr "_Inclou"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:7
-msgid "_Password:"
-msgstr "_Contrasenya:"
-
-#: ../extensions/epilicious/epilicious-config.glade.h:8
-msgid "_Tag:"
-msgstr "Et_iqueta:"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:1
-msgid "Adding new bookmarks and synching topics"
-msgstr "Addició de les adreces d'interès noves i sincronització dels temes"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:2
-msgid "Removing deleted bookmarks"
-msgstr "Eliminació de les adreces d'interès suprimides"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:4
-#: ../extensions/epilicious/progress.py:41
-#, no-c-format, python-format
-msgid "Retrieving bookmarks from %s"
-msgstr "S'estan recuperant les adreces d'interès de %s"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:5
-msgid "Retrieving bookmarks from epiphany"
-msgstr "Recuperació de les adreces d'interès de l'Epiphany"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:6
-msgid "Retrieving previous synch point"
-msgstr "Recuperació del punt de sincronització anterior"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:7
-msgid "Saving new synch point"
-msgstr "Desat del punt de sincronització nou"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:9
-#: ../extensions/epilicious/progress.py:39
-#, no-c-format, python-format
-msgid "Synchronizing with %s"
-msgstr "S'està sincronitzant amb %s"
-
-#: ../extensions/epilicious/epilicious-progress.glade.h:10
-msgid "Synchronizing..."
-msgstr "S'està sincronitzant..."
-
-#: ../extensions/epilicious/epilicious.py.in:232
-#: ../extensions/epilicious/epilicious.py.in:250
-msgid "Epilicious Synchronize"
-msgstr "Sincronitza amb l'Epilicious"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:1
-msgid "Bookmarks with this topic will be synchronized."
-msgstr "Se sincronitzaran les adreces d'interès amb aquest tema."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:2
-msgid ""
-"Controls the function of the topic. If this is unset then all bookmarks with "
-"the topic will be synched. If this is set then all bookmarks without the "
-"topic will be synched."
-msgstr ""
-"Controla la funció del tema. Si aquest paràmetre no està activat, totes les "
-"adreces d'interès que continguin el tema se sincronitzaran. Si aquest "
-"paràmetre està activat, totes les adreces d'interès que no continguin el "
-"tema se sincronitzaran."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:3
-msgid "Exclude topic"
-msgstr "Exclou el tema"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:4
-msgid "Shared topic"
-msgstr "Tema compartit"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:5
-msgid ""
-"The backend that epilicious will use for synchronizing bookmarks. Allowed "
-"values: 'diigo', 'ma.gnolia'"
-msgstr ""
-"El rerefons que l'Epilicious utilitzarà per a sincronitzar les adreces "
-"d'interès. Es permeten els següents valors: «diigo», «ma.gnolia»"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:6
-msgid "The password that epilicious will use for synchronizing bookmarks."
-msgstr ""
-"La contrasenya que l'Epilicious utilitzarà per a sincronitzar les adreces "
-"d'interès."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:7
-msgid "The username that epilicious will use for synchronizing bookmarks."
-msgstr ""
-"El nom d'usuari que l'Epilicious utilitzarà per a sincronitzar les adreces "
-"d'interès."
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:8
-msgid "epilicious backend"
-msgstr "rerefons de l'Epilicious"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:9
-msgid "password"
-msgstr "contrasenya"
-
-#: ../extensions/epilicious/epilicious.schemas.in.h:10
-msgid "username"
-msgstr "nom d'usuari"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Check _HTML"
@@ -535,7 +405,7 @@ msgid "Enabled"
 msgstr "Habilitat"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.c:353
-#: ../extensions/rss/rss-ui.c:571
+#: ../extensions/rss/rss-ui.c:572
 msgid "Description"
 msgstr "Descripció"
 
@@ -921,6 +791,7 @@ msgid "Domain"
 msgstr "Domini"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:512
+#: ../extensions/soup-fly/soup-fly.c:196
 msgid "State"
 msgstr "Estat"
 
@@ -968,7 +839,7 @@ msgstr "_Subscriviu-vos al canal"
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Subscriviu-vos al canal amb el vostre lector de notícies preferit"
 
-#: ../extensions/rss/ephy-rss-extension.c:361
+#: ../extensions/rss/ephy-rss-extension.c:365
 msgid "Subscribe to site's news feed"
 msgstr "Subscriviu-vos al canal de notícies del lloc web"
 
@@ -986,7 +857,7 @@ msgstr "Reintenta"
 msgid "_Copy Feed Address"
 msgstr "_Copia l'adreça del canal"
 
-#: ../extensions/rss/rss-ui.c:563
+#: ../extensions/rss/rss-ui.c:564
 msgid "Subscribe"
 msgstr "Subscriu"
 
@@ -1106,6 +977,23 @@ msgstr ""
 "Obre el resultat de la cerca en una nova pestanya si s'estableix com a cert, "
 "o bé en una nova finestra si s'estableix com a fals."
 
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
+msgid "_Soup Fly"
+msgstr "_Soup Fly"
+
+#. shortcut key
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:68
+msgid "Show information about the SoupSession used by the browser"
+msgstr "Mostra informació sobre la SoupSession que utilitza el navegador"
+
+#: ../extensions/soup-fly/soup-fly.c:220
+msgid "Clear finished"
+msgstr "Neteja els que s'han finalitzat"
+
+#: ../extensions/soup-fly/soup-fly.c:224
+msgid "Automatically remove finished messages"
+msgstr "Suprimeix automàticament els missatges que s'hagin finalitzat"
+
 #: ../extensions/actions/actions.ephy-extension.in.in.h:2
 msgid "Execute arbitrary commands from the context menu"
 msgstr "Executa ordres personalitzades des del menú contextual"
@@ -1134,24 +1022,9 @@ msgstr "Actualització automàtica de pestanyes"
 msgid "Reload a tab periodically"
 msgstr "Actualitza periòdicament una pestanya"
 
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:1
-msgid "Creative Commons license viewer"
-msgstr "Visualitzador de llicències Creative Commons"
-
-#: ../extensions/cc-license-viewer/cc-license-viewer.ephy-extension.in.h:2
-msgid "Shows the Creative Commons license of the current website if available"
-msgstr ""
-"Mostra la llicència Creative Commons del lloc web actual si és que està "
-"disponible."
-
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
 msgstr "Visualitza el certificat de la pàgina i administra els certificats"
-
-#: ../extensions/epilicious/epilicious.ephy-extension.in.h:1
-msgid "Synchronize bookmarks with social bookmark sites"
-msgstr ""
-"Sincronització de les adreces d'interès amb llocs d'adreces d'interès socials"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
@@ -1168,17 +1041,6 @@ msgstr "Carrega i descarrega extensions"
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
 msgid "Extensions Manager"
 msgstr "Administrador d'extensions"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:1
-msgid "Favicon fallback"
-msgstr "Càrrega alternativa de la Favicon"
-
-#: ../extensions/favicon/favicon.ephy-extension.in.h:2
-msgid ""
-"Loads /favicon.ico as favicon if the site doesn't use the standard method"
-msgstr ""
-"Carrega la /favicon.ico com a Favicon si el lloc web no utilitza el mètode "
-"estàndard"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -1235,14 +1097,6 @@ msgstr "Arrossega la pàgina en prémer el botó central del ratolí"
 msgid "Push Scroll"
 msgstr "Desplaçament per arrossegament"
 
-#: ../extensions/python-console/python-console.ephy-extension.in.h:1
-msgid "Opens an interactive Python console"
-msgstr "Obre una consols interactiva del Python"
-
-#: ../extensions/python-console/python-console.ephy-extension.in.h:2
-msgid "Python Console"
-msgstr "Consola del Python"
-
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
@@ -1298,6 +1152,131 @@ msgstr "Indica contingut nou a les pestanyes en segon pla"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Estat de les pestanyes"
+
+#~ msgid "View Creative Commons license"
+#~ msgstr "Mostra la llicència Creative Commons"
+
+#~ msgid "Action for tagged bookmarks:"
+#~ msgstr "Acció a dur a terme per a les adreces d'interès etiquetades:"
+
+#~ msgid "Epilicious Configuration"
+#~ msgstr "Configuració de l'Epilicious"
+
+#~ msgid "_Backend:"
+#~ msgstr "_Rerefons:"
+
+#~ msgid "_Exclude"
+#~ msgstr "_Exclou"
+
+#~ msgid "_Include"
+#~ msgstr "_Inclou"
+
+#~ msgid "_Password:"
+#~ msgstr "_Contrasenya:"
+
+#~ msgid "_Tag:"
+#~ msgstr "Et_iqueta:"
+
+#~ msgid "Adding new bookmarks and synching topics"
+#~ msgstr "Addició de les adreces d'interès noves i sincronització dels temes"
+
+#~ msgid "Removing deleted bookmarks"
+#~ msgstr "Eliminació de les adreces d'interès suprimides"
+
+#~ msgid "Retrieving bookmarks from %s"
+#~ msgstr "S'estan recuperant les adreces d'interès de %s"
+
+#~ msgid "Retrieving bookmarks from epiphany"
+#~ msgstr "Recuperació de les adreces d'interès de l'Epiphany"
+
+#~ msgid "Retrieving previous synch point"
+#~ msgstr "Recuperació del punt de sincronització anterior"
+
+#~ msgid "Saving new synch point"
+#~ msgstr "Desat del punt de sincronització nou"
+
+#~ msgid "Synchronizing with %s"
+#~ msgstr "S'està sincronitzant amb %s"
+
+#~ msgid "Synchronizing..."
+#~ msgstr "S'està sincronitzant..."
+
+#~ msgid "Epilicious Synchronize"
+#~ msgstr "Sincronitza amb l'Epilicious"
+
+#~ msgid "Bookmarks with this topic will be synchronized."
+#~ msgstr "Se sincronitzaran les adreces d'interès amb aquest tema."
+
+#~ msgid ""
+#~ "Controls the function of the topic. If this is unset then all bookmarks "
+#~ "with the topic will be synched. If this is set then all bookmarks without "
+#~ "the topic will be synched."
+#~ msgstr ""
+#~ "Controla la funció del tema. Si aquest paràmetre no està activat, totes "
+#~ "les adreces d'interès que continguin el tema se sincronitzaran. Si aquest "
+#~ "paràmetre està activat, totes les adreces d'interès que no continguin el "
+#~ "tema se sincronitzaran."
+
+#~ msgid "Exclude topic"
+#~ msgstr "Exclou el tema"
+
+#~ msgid "Shared topic"
+#~ msgstr "Tema compartit"
+
+#~ msgid ""
+#~ "The backend that epilicious will use for synchronizing bookmarks. Allowed "
+#~ "values: 'diigo', 'ma.gnolia'"
+#~ msgstr ""
+#~ "El rerefons que l'Epilicious utilitzarà per a sincronitzar les adreces "
+#~ "d'interès. Es permeten els següents valors: «diigo», «ma.gnolia»"
+
+#~ msgid "The password that epilicious will use for synchronizing bookmarks."
+#~ msgstr ""
+#~ "La contrasenya que l'Epilicious utilitzarà per a sincronitzar les adreces "
+#~ "d'interès."
+
+#~ msgid "The username that epilicious will use for synchronizing bookmarks."
+#~ msgstr ""
+#~ "El nom d'usuari que l'Epilicious utilitzarà per a sincronitzar les "
+#~ "adreces d'interès."
+
+#~ msgid "epilicious backend"
+#~ msgstr "rerefons de l'Epilicious"
+
+#~ msgid "password"
+#~ msgstr "contrasenya"
+
+#~ msgid "username"
+#~ msgstr "nom d'usuari"
+
+#~ msgid "Creative Commons license viewer"
+#~ msgstr "Visualitzador de llicències Creative Commons"
+
+#~ msgid ""
+#~ "Shows the Creative Commons license of the current website if available"
+#~ msgstr ""
+#~ "Mostra la llicència Creative Commons del lloc web actual si és que està "
+#~ "disponible."
+
+#~ msgid "Synchronize bookmarks with social bookmark sites"
+#~ msgstr ""
+#~ "Sincronització de les adreces d'interès amb llocs d'adreces d'interès "
+#~ "socials"
+
+#~ msgid "Favicon fallback"
+#~ msgstr "Càrrega alternativa de la Favicon"
+
+#~ msgid ""
+#~ "Loads /favicon.ico as favicon if the site doesn't use the standard method"
+#~ msgstr ""
+#~ "Carrega la /favicon.ico com a Favicon si el lloc web no utilitza el "
+#~ "mètode estàndard"
+
+#~ msgid "Opens an interactive Python console"
+#~ msgstr "Obre una consols interactiva del Python"
+
+#~ msgid "Python Console"
+#~ msgstr "Consola del Python"
 
 #~ msgid "A sample extension with mozilla backend"
 #~ msgstr "Una extensió d'exemple amb el rerefons del Mozilla"
