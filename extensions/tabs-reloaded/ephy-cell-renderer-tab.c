@@ -146,7 +146,7 @@ ephy_cell_renderer_tab_render (GtkCellRenderer      *cell,
   EphyCellRendererTabPrivate *priv = renderer->priv;
   EphyWebView *view;
   WebKitWebView *webview;
-  GdkPixbuf *pixbuf;
+  GdkPixbuf *icon, *pixbuf;
   cairo_t *cr;
   guint x, y, width, height, row_height, n_columns;
   int icon_width, icon_height;
@@ -204,12 +204,21 @@ ephy_cell_renderer_tab_render (GtkCellRenderer      *cell,
         n_columns--;
     }
 
-  /* render the title */
+  /* render title and icon */
   layout = gtk_widget_create_pango_layout (widget,
                                            ephy_web_view_get_title (view));
   pango_layout_set_width (layout, width * PANGO_SCALE);
-  if (ephy_web_view_get_icon (view))
+  icon = ephy_web_view_get_icon (view);
+  if (icon) {
+    cairo_save (cr);
+    cairo_scale (cr, (double) icon_width / gdk_pixbuf_get_width (icon),
+                     (double) icon_height / gdk_pixbuf_get_height (icon));
+    gdk_cairo_set_source_pixbuf (cr, icon, 0, 0);
+    cairo_paint (cr);
+    cairo_restore (cr);
+
     pango_layout_set_indent (layout, icon_width * PANGO_SCALE);
+  }
   /* 
    * If wrapping words is not enough, wrap chars instead.
    * This way, as much title text as possible is visible.
