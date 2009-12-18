@@ -169,13 +169,11 @@ sync_active_tab (EphyWindow *window,
 		 EphyTabStatesExtension *extension)
 {
 	EphyEmbed *embed;
-	WebKitWebView *web_view;
 	EphyWebView *view;
 	GtkWidget *label;
 
 	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
-	web_view = EPHY_GET_WEBKIT_WEB_VIEW_FROM_EMBED (embed);
-	view = EPHY_WEB_VIEW (web_view);
+	view = ephy_embed_get_web_view (embed);
 
 	if (ephy_web_view_is_loading (view) == FALSE)
 	{
