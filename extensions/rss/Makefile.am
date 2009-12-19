@@ -25,8 +25,8 @@ librssextension_la_LDFLAGS = \
 	-export-symbols $(top_srcdir)/ephy-extension.symbols \
 	$(AM_LDFLAGS)
 
-gladedir = $(pkgdatadir)/glade
-glade_DATA = rss-ui.glade
+uidir = $(pkgdatadir)/ui
+ui_DATA = rss-ui.ui
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = rss.ephy-extension.in.in
@@ -44,4 +44,4 @@ DISTCLEANFILES = $(extensionini_DATA)
 
 EXTRA_DIST = \
 	$(extensionini_in_files)	\
-	$(glade_DATA)
+	$(ui_DATA)

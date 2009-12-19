@@ -173,7 +173,7 @@ AC_MSG_CHECKING([which extensions to build])
 
 ALL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures greasemonkey java-console livehttpheaders page-info permissions push-scroller rss sample select-stylesheet sidebar smart-bookmarks soup-fly tab-groups tab-states"
 USEFUL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-viewer extensions-manager-ui java-console page-info push-scroller select-stylesheet smart-bookmarks soup-fly tab-groups tab-states"
-DEFAULT_EXTENSIONS="actions adblock auto-scroller certificates error-viewer extensions-manager-ui java-console page-info push-scroller select-stylesheet smart-bookmarks soup-fly tab-groups tab-states greasemonkey"
+DEFAULT_EXTENSIONS="actions adblock auto-scroller certificates error-viewer extensions-manager-ui java-console page-info push-scroller select-stylesheet smart-bookmarks soup-fly tab-groups tab-states greasemonkey rss"
 
 MOZILLA_ALL_EXTENSIONS="error-viewer java-console livehttpheaders page-info select-stylesheet smart-bookmarks"
 

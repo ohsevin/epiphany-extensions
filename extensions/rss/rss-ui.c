@@ -475,7 +475,7 @@ rss_ui_populate_store (RssUI *dialog)
 	 * avoiding duplicate feeds
 	 */
 	location = ephy_web_view_get_location
-			(EPHY_GET_EPHY_WEB_VIEW_FROM_EMBED (priv->embed), TRUE);
+			(ephy_embed_get_web_view (priv->embed), TRUE);
 	decision.hostname = g_strdup (ephy_string_get_host_name (location));
 
 	/* Fill the store, and select the appropriate feeds */
@@ -532,7 +532,7 @@ rss_ui_constructor (GType type,
 
 	ephy_dialog_construct (EPHY_DIALOG (edialog),
 			       properties,
-			       SHARE_DIR "/glade/rss-ui.glade",
+			       SHARE_DIR "/ui/rss-ui.ui",
 			       "rss_ui",
 			       GETTEXT_PACKAGE);
 

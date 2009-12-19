@@ -92,7 +92,7 @@ static const GtkActionEntry action_entries [] =
 
 /* We got an rss feed from a tab */
 static void
-ephy_rss_ge_feed_cb (EphyEmbed *embed,
+ephy_rss_ge_feed_cb (EphyWebView *view,
 		     const char *type,
 		     const char *title,
 		     const char *address,
@@ -100,9 +100,9 @@ ephy_rss_ge_feed_cb (EphyEmbed *embed,
 {
 	FeedList *list;
 
-	list = (FeedList *) g_object_steal_data (G_OBJECT (embed), FEEDLIST_DATA_KEY);
+	list = (FeedList *) g_object_steal_data (G_OBJECT (view), FEEDLIST_DATA_KEY);
 	list = rss_feedlist_add (list, type, title, address);
-	g_object_set_data_full (G_OBJECT (embed), FEEDLIST_DATA_KEY, list,
+	g_object_set_data_full (G_OBJECT (view), FEEDLIST_DATA_KEY, list,
 				(GDestroyNotify) rss_feedlist_free);
 
 	LOG ("Got a new feed for the site: type=%s, title=%s, address=%s\nWe now have %d feeds", type, title, address, rss_feedlist_length (list));
@@ -114,7 +114,7 @@ static void
 ephy_rss_feed_subscribe_cb (GtkAction *action,
 			    EphyWindow *window)
 {
-	const GValue *value;
+	GValue value = { 0, };
 	GError *error = NULL;
 	EphyEmbedEvent *event;
 	gboolean success;
@@ -127,10 +127,10 @@ ephy_rss_feed_subscribe_cb (GtkAction *action,
 	event = ephy_window_get_context_event (window);
 	if (event == NULL) return;
 
-	value = ephy_embed_event_get_property (event, "link");
+	ephy_embed_event_get_property (event, "link", &value);
 
 	if (!dbus_g_proxy_call (extension->priv->proxy, RSS_DBUS_SUBSCRIBE, &error,
-		G_TYPE_STRING, g_value_get_string (value),
+		G_TYPE_STRING, g_value_get_string (&value),
 		G_TYPE_INVALID,
 		G_TYPE_BOOLEAN, &success,
 		G_TYPE_INVALID))
@@ -140,27 +140,28 @@ ephy_rss_feed_subscribe_cb (GtkAction *action,
 	}
 
 	g_object_set(action, "sensitive", FALSE, "visible", FALSE, NULL);
+	g_value_unset (&value);
 }
 
 static gboolean
-ephy_rss_ge_context_cb	(EphyEmbed *embed,
-			EphyEmbedEvent *event,
-			EphyWindow *window)
+ephy_rss_ge_context_cb	(EphyWebView *view,
+			 EphyEmbedEvent *event,
+			 EphyWindow *window)
 {
 	WindowData *data;
-	const GValue *value;
+	GValue *value = NULL;
 	const char *address;
 	FeedList *list;
 	gboolean active = FALSE;
 
-	list = (FeedList *) g_object_get_data (G_OBJECT (embed), FEEDLIST_DATA_KEY);
-	if ((ephy_embed_event_get_context (event) & EPHY_EMBED_CONTEXT_LINK) && (list != NULL))
+	list = (FeedList *) g_object_get_data (G_OBJECT (view), FEEDLIST_DATA_KEY);
+	if ((ephy_embed_event_get_context (event) & WEBKIT_HIT_TEST_RESULT_CONTEXT_LINK) && (list != NULL))
 	{
 		LOG ("Context menu on a link");
 		data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 		g_return_val_if_fail (data != NULL, FALSE);
 
-		value = ephy_embed_event_get_property (event, "link");
+		ephy_embed_event_get_property (event, "link", value);
 		address = g_value_get_string (value);
 
 		active = rss_feedlist_contains (list, address);
@@ -177,6 +178,7 @@ ephy_rss_dialog_display (EphyWindow *window)
 {
 	EphyRssExtensionPrivate *priv;
 	EphyEmbed *embed;
+	EphyWebView *view;
 	FeedList *list;
 	WindowData *data;
 
@@ -187,8 +189,10 @@ ephy_rss_dialog_display (EphyWindow *window)
 
 	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 	g_return_if_fail (embed != NULL);
+	view = ephy_embed_get_web_view (embed);
+	g_return_if_fail (view != NULL);
 
-	list = (FeedList *) g_object_get_data (G_OBJECT (embed), FEEDLIST_DATA_KEY);
+	list = (FeedList *) g_object_get_data (G_OBJECT (view), FEEDLIST_DATA_KEY);
 	if (list == NULL)
 		return;
 
@@ -253,11 +257,15 @@ ephy_rss_update_action (EphyWindow *window)
 	FeedList *list;
 	gboolean show = TRUE;
 	EphyEmbed *embed;
+	EphyWebView *view;
 
 	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
+	g_return_if_fail (embed != NULL);
+	view = ephy_embed_get_web_view (embed);
+	g_return_if_fail (view != NULL);
 
 	/* The page is loaded, do we have a feed ? */
-	list = (FeedList *) g_object_get_data (G_OBJECT (embed), FEEDLIST_DATA_KEY);
+	list = (FeedList *) g_object_get_data (G_OBJECT (view), FEEDLIST_DATA_KEY);
 
 	show = rss_feedlist_length (list) > 0;
 
@@ -295,15 +303,17 @@ impl_attach_tab (EphyExtension *extension,
 
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
-	view = EPHY_GET_EPHY_WEB_VIEW_FROM_EMBED (embed);
+	view = ephy_embed_get_web_view (embed);
 
 	/* Notify when a new rss feed is parsed */
 	g_signal_connect_after (view, "new-document-now",
 				G_CALLBACK (ephy_rss_ge_content_cb), window);
 	g_signal_connect_after (view, "ge-feed-link",
 			    G_CALLBACK (ephy_rss_ge_feed_cb), window);
+	/*
 	g_signal_connect (view, "ge-context-menu",
 			    G_CALLBACK (ephy_rss_ge_context_cb), window);
+	*/
 }
 
 /* Stop listening for the detached tab rss feeds */
@@ -323,8 +333,10 @@ impl_detach_tab (EphyExtension *extension,
 	g_signal_handlers_disconnect_by_func
 		(embed, G_CALLBACK (ephy_rss_ge_content_cb), window);
 
+	/*
 	g_signal_handlers_disconnect_by_func
 		(embed, G_CALLBACK (ephy_rss_ge_context_cb), window);
+	*/
 
 	/* destroy data */
 	g_object_set_data (G_OBJECT (embed), FEEDLIST_DATA_KEY, NULL);
