@@ -104,7 +104,7 @@ impl_attach_tab (EphyExtension *ext,
 
 	g_return_if_fail (embed != NULL);
 
-	g_signal_connect_object (EPHY_GET_EPHY_WEB_VIEW_FROM_EMBED (embed),
+	g_signal_connect_object (ephy_embed_get_web_view (embed),
 				 "button-press-event",
 				 G_CALLBACK (dom_mouse_down_cb), window, 0);
 }
@@ -119,7 +119,7 @@ impl_detach_tab (EphyExtension *ext,
 	g_return_if_fail (embed != NULL);
 
 	g_signal_handlers_disconnect_by_func
-	  (EPHY_GET_EPHY_WEB_VIEW_FROM_EMBED (embed)
+	  (ephy_embed_get_web_view (embed)
 	   , G_CALLBACK (dom_mouse_down_cb), window);
 }
 
