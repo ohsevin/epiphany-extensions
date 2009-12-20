@@ -503,7 +503,7 @@ rss_ui_init (RssUI *dialog)
 		LOG ("No connection to dbus:%s", error->message);
 		g_error_free (error);
 		return;
-    }
+	}
 
 	dialog->priv->proxy = dbus_g_proxy_new_for_name (connection,
                                      RSS_DBUS_SERVICE,

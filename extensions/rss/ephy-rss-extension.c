@@ -149,25 +149,30 @@ ephy_rss_ge_context_cb	(EphyWebView *view,
 			 EphyWindow *window)
 {
 	WindowData *data;
-	GValue *value = NULL;
+	GValue value = { 0, };
 	const char *address;
 	FeedList *list;
 	gboolean active = FALSE;
 
-	list = (FeedList *) g_object_get_data (G_OBJECT (view), FEEDLIST_DATA_KEY);
+	list = g_object_get_data (G_OBJECT (view), FEEDLIST_DATA_KEY);
+
 	if ((ephy_embed_event_get_context (event) & WEBKIT_HIT_TEST_RESULT_CONTEXT_LINK) && (list != NULL))
 	{
 		LOG ("Context menu on a link");
-		data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
+		data = g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 		g_return_val_if_fail (data != NULL, FALSE);
 
-		ephy_embed_event_get_property (event, "link", value);
-		address = g_value_get_string (value);
+		ephy_embed_event_get_property (event, "link", &value);
+		address = g_value_get_string (&value);
 
 		active = rss_feedlist_contains (list, address);
 
 		LOG ("Showing menu item: %d", active);
-		g_object_set(data->subscribe_action, "sensitive", active, "visible", active, NULL);
+		g_object_set (data->subscribe_action,
+			      "sensitive", active,
+			      "visible", active,
+			      NULL);
+		g_value_unset (&value);
 	}
 
 	return FALSE;
@@ -192,22 +197,13 @@ ephy_rss_dialog_display (EphyWindow *window)
 	view = ephy_embed_get_web_view (embed);
 	g_return_if_fail (view != NULL);
 
-	list = (FeedList *) g_object_get_data (G_OBJECT (view), FEEDLIST_DATA_KEY);
-	if (list == NULL)
-		return;
+	list = g_object_get_data (G_OBJECT (view), FEEDLIST_DATA_KEY);
+	g_return_if_fail (list != NULL);
 
 	if (priv->dialog == NULL)
 	{
-		RssUI **dialog;
-
 		LOG ("Trying to build dialog");
-
 		priv->dialog = rss_ui_new (list, embed);
-
-		dialog = &priv->dialog;
-
-		g_object_add_weak_pointer (G_OBJECT (priv->dialog),
-					   (gpointer *) dialog);
 	}
 
 	ephy_dialog_set_parent (EPHY_DIALOG (priv->dialog),
@@ -243,7 +239,7 @@ ephy_rss_update_statusbar (EphyWindow *window,
 	WindowData *data;
 
 	/* Show / Hide statusbar icon */
-	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
+	data = g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 	g_return_if_fail (data != NULL);
 
 	g_object_set (data->evbox, "visible", show, NULL);
@@ -265,19 +261,21 @@ ephy_rss_update_action (EphyWindow *window)
 	g_return_if_fail (view != NULL);
 
 	/* The page is loaded, do we have a feed ? */
-	list = (FeedList *) g_object_get_data (G_OBJECT (view), FEEDLIST_DATA_KEY);
-
+	list = g_object_get_data (G_OBJECT (view), FEEDLIST_DATA_KEY);
 	show = rss_feedlist_length (list) > 0;
 
 	/* Disable the menu item when loading the page */
-	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
+	data = g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 	g_return_if_fail (data != NULL);
 
 	g_object_set (data->info_action, "sensitive", show, NULL);
 
 	ephy_rss_update_statusbar (window, show);
 
-	g_object_set(data->subscribe_action, "sensitive", show, "visible", show, NULL);
+	g_object_set (data->subscribe_action,
+		      "sensitive", show,
+		      "visible", show,
+		      NULL);
 }
 
 /* Called when the user changes tab */
@@ -519,13 +517,7 @@ ephy_rss_extension_finalize (GObject *object)
 
 	/* Dispose the dialog */
 	if (extension->priv->dialog != NULL)
-	{
-		RssUI **dialog = &extension->priv->dialog;
-
-		g_object_unref (*dialog);
-		g_object_remove_weak_pointer (G_OBJECT (*dialog),
-					      (gpointer *) dialog);
-	}
+		g_object_unref (extension->priv->dialog);
 
 	parent_class->finalize (object);
 }
