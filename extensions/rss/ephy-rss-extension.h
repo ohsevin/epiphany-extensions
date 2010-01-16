@@ -24,6 +24,8 @@
 #include <glib.h>
 #include <glib-object.h>
 
+typedef struct _RssUI		RssUI;
+
 /* How to contact feed readers via dbus */
 #define RSS_DBUS_SERVICE        "org.gnome.feed.Reader"
 #define RSS_DBUS_OBJECT_PATH    "/org/gnome/feed/Reader"
@@ -59,6 +61,10 @@ struct _EphyRssExtension
 GType	ephy_rss_extension_get_type		(void);
 
 GType	ephy_rss_extension_register_type	(GTypeModule *module);
+
+RssUI *ephy_rss_extension_get_dialog (EphyRssExtension *extension);
+
+void ephy_rss_extension_set_dialog (EphyRssExtension *extension, RssUI *dialog);
 
 G_END_DECLS
 

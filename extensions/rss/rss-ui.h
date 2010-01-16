@@ -38,7 +38,6 @@ G_BEGIN_DECLS
 #define IS_RSS_UI_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE((k), TYPE_RSS_UI))
 #define RSS_UI_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS((o),	TYPE_RSS_UI, RssUIClass))
 
-typedef struct _RssUI		RssUI;
 typedef struct _RssUIClass	RssUIClass;
 typedef struct _RssUIPrivate	RssUIPrivate;
 
@@ -60,7 +59,8 @@ GType	 rss_ui_get_type	(void);
 GType	 rss_ui_register_type	(GTypeModule *module);
 
 RssUI   *rss_ui_new		(FeedList *list,
-				 EphyEmbed *embed);
+				 EphyEmbed *embed,
+				 EphyRssExtension *extension);
 
 G_END_DECLS
 

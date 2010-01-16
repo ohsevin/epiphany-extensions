@@ -54,6 +54,8 @@ struct _RssUIPrivate
 	DBusGProxy *proxy;
 	/* A boolean flag indicating a dbus error */
 	gboolean dbus_error;
+	/* Extension reference to unset the dialog when it's unrefed */
+	EphyRssExtension *extension;
 };
 
 enum
@@ -61,6 +63,7 @@ enum
 	PROP_WINDOW,
 	PROP_LIST,
 	PROP_EMBED,
+	PROP_EXTENSION
 };
 
 enum
@@ -167,8 +170,9 @@ rss_ui_subscribe_selected (GtkTreeModel *model,
 static void
 rss_ui_response_cb (GtkWidget *widget,
 		    int response,
-		    RssUI *dialog)
+		    EphyRssExtension *extension)
 {
+	RssUI *dialog = ephy_rss_extension_get_dialog (extension);
 	RssUIPrivate *priv = dialog->priv;
 
 	if (response == GTK_RESPONSE_OK)
@@ -185,6 +189,7 @@ rss_ui_response_cb (GtkWidget *widget,
 	}
 
 	g_object_unref (dialog);
+	ephy_rss_extension_set_dialog (extension, NULL);
 }
 
 static FeedType
@@ -313,8 +318,6 @@ rss_ui_treeview_button_pressed_cb (GtkTreeView *treeview,
 				   GdkEventButton *event,
 				   RssUI *dialog)
 {
-	RssUIPrivate *priv = dialog->priv;
-	GtkTreeSelection *selection;
 	GtkTreePath *path = NULL;
 	GtkMenu *menu;
 
@@ -503,6 +506,7 @@ rss_ui_constructor (GType type,
 	EphyDialog *edialog;
 	GtkCellRenderer *renderer;
 	GtkTreeSelection *selection;
+	EphyRssExtension *extension;
 
 	object = parent_class->constructor (type, n_construct_properties,
 					    construct_params);
@@ -525,8 +529,11 @@ rss_ui_constructor (GType type,
 				  properties[PROP_CLOSE].id, &priv->close,
 				  NULL);
 
+	g_object_get (object,
+		      "extension", &extension,
+		      NULL);
 	g_signal_connect (priv->dialog, "response",
-			  G_CALLBACK (rss_ui_response_cb), dialog);
+			  G_CALLBACK (rss_ui_response_cb), extension);
 
 	priv->store = gtk_list_store_new (N_COLUMNS,
 					  RSS_TYPE_NEWSFEED,
@@ -604,8 +611,14 @@ rss_ui_get_property (GObject *object,
 				GValue *value,
 				GParamSpec *pspec)
 {
-	/* no readable properties */
-	g_return_if_reached ();
+	RssUI *dialog = RSS_UI (object);
+
+	switch (prop_id)
+	{
+		case PROP_EXTENSION:
+			g_value_set_object (value, dialog->priv->extension);
+			break;
+	}
 }
 
 static void
@@ -623,6 +636,9 @@ rss_ui_set_property (GObject *object,
 			break;
 		case PROP_EMBED:
 			dialog->priv->embed = g_value_get_object (value);
+			break;
+		case PROP_EXTENSION:
+			dialog->priv->extension = g_value_get_object (value);
 			break;
 	}
 }
@@ -656,6 +672,17 @@ rss_ui_class_init (RssUIClass *klass)
 				      "Embed",
 				      "Embed",
 				      GTK_TYPE_WIDGET,
+				      G_PARAM_WRITABLE |
+				      G_PARAM_CONSTRUCT_ONLY));
+
+	g_object_class_install_property
+		(object_class,
+		 PROP_EXTENSION,
+		 g_param_spec_object ("extension",
+				      "Extension",
+				      "Extension",
+				      EPHY_TYPE_RSS_EXTENSION,
+				      G_PARAM_READABLE |
 				      G_PARAM_WRITABLE |
 				      G_PARAM_CONSTRUCT_ONLY));
 
@@ -694,10 +721,12 @@ rss_ui_register_type (GTypeModule *module)
 
 RssUI *
 rss_ui_new (FeedList *list,
-	    EphyEmbed *embed)
+	    EphyEmbed *embed,
+	    EphyRssExtension *extension)
 {
 	return g_object_new (TYPE_RSS_UI,
 			     "list",  list,
 			     "embed", embed,
+			     "extension", extension,
 			     NULL);
 }

@@ -222,7 +222,7 @@ ephy_rss_dialog_display (EphyWindow *window)
 	if (priv->dialog == NULL)
 	{
 		LOG ("Trying to build dialog");
-		priv->dialog = rss_ui_new (list, embed);
+		priv->dialog = rss_ui_new (list, embed, data->extension);
 	}
 
 	ephy_dialog_set_parent (EPHY_DIALOG (priv->dialog),
@@ -602,4 +602,16 @@ ephy_rss_extension_register_type (GTypeModule *module)
 				     &extension_info);
 
 	return type;
+}
+
+RssUI *
+ephy_rss_extension_get_dialog (EphyRssExtension *extension)
+{
+	return extension->priv->dialog;
+}
+
+void
+ephy_rss_extension_set_dialog (EphyRssExtension *extension, RssUI *dialog)
+{
+	extension->priv->dialog = dialog;
 }
