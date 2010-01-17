@@ -1,11 +1,11 @@
 # German translations of the epiphany-extensions documentation
-# Mario Blättermann <mariobl@gnome.org>, 2008.
+# Mario Blättermann <mariobl@gnome.org>, 2008, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2009-01-01 17:32+0100\n"
-"PO-Revision-Date: 2009-01-01 20:57+0100\n"
+"PO-Revision-Date: 2010-01-17 19:33+0100\n"
 "Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -28,14 +28,14 @@ msgstr "translated"
 msgid ""
 "@@image: 'figures/epi-ext-actions-use.png'; "
 "md5=7ada8c3473a1c528cbffa960b0006a6d"
-msgstr ""
+msgstr "a"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ../C/epiphany-extensions.xml:306(None)
 msgid ""
 "@@image: 'figures/epi-ext-adblocker.png'; md5=9a9b8476501d94a5f585275af9be8186"
-msgstr ""
+msgstr "a"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -162,14 +162,14 @@ msgstr "translated"
 #: ../C/epiphany-extensions.xml:1089(None)
 msgid ""
 "@@image: 'figures/epi-ext-sidebar.png'; md5=892abfaecbd5854de4e72f727212c5e2"
-msgstr ""
+msgstr "a"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: ../C/epiphany-extensions.xml:1179(None)
 msgid ""
 "@@image: 'figures/epi-ext-tabgroups.png'; md5=9ccf9b6918ed6cc01570ce38ca8bd053"
-msgstr ""
+msgstr "a"
 
 #: ../C/epiphany-extensions.xml:31(para)
 msgid "Various extensions for Epiphany Web browser."
@@ -1900,4 +1900,4 @@ msgstr ""
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
 #: ../C/legal.xml:0(None)
 msgid "translator-credits"
-msgstr "Mario Blättermann <mariobl@gnome.org>, 2008"
+msgstr "Mario Blättermann <mariobl@gnome.org>, 2008, 2010"
