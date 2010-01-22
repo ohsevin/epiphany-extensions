@@ -269,17 +269,20 @@ ensure_gesture (EphyGesturesExtension *extension,
 }
 
 static gboolean
-dom_mouse_down_cb (EphyEmbed *embed,
-		   EphyEmbedEvent *event,
+dom_mouse_down_cb (EphyWebView *view,
+		   GdkEventButton *event,
 		   EphyGesturesExtension *extension)
 {
-        EphyEmbedEventContext context;
-	guint button;
-	gint handled = FALSE;
-	EphyWindow *window;
+	EphyEmbed *embed;
 	GtkWidget *toplevel;
+	EphyWindow *window;
 	gboolean ppv_mode;
+	guint button;
+	WebKitHitTestResult *hit_test;
+	guint context;
+	gint handled = FALSE;
 
+	embed = EPHY_EMBED (EPHY_GET_EMBED_FROM_EPHY_WEB_VIEW (GTK_WIDGET (view)));
 	g_return_val_if_fail (EPHY_IS_EMBED (embed), handled);
 
 	toplevel = gtk_widget_get_toplevel (GTK_WIDGET (embed));
@@ -292,12 +295,15 @@ dom_mouse_down_cb (EphyEmbed *embed,
 	g_object_get (window, "is-print-preview", &ppv_mode, NULL);
 	if (ppv_mode) return handled;
 
-	button = ephy_embed_event_get_button (event);
-        context = ephy_embed_event_get_context (event);
+	button = event->button;
+	hit_test = webkit_web_view_get_hit_test_result (WEBKIT_WEB_VIEW (view), event);
+
+	g_object_get (hit_test, "context", &context, NULL);
+	g_object_unref (hit_test);
 
 	if (button == 2 &&
-	    !((context & EPHY_EMBED_CONTEXT_INPUT) ||
-	      (context & EPHY_EMBED_CONTEXT_LINK)))
+	    !((context & WEBKIT_HIT_TEST_RESULT_CONTEXT_EDITABLE) ||
+	      (context & WEBKIT_HIT_TEST_RESULT_CONTEXT_LINK)))
 	{
 		EphyGesture *gesture;
 
@@ -328,7 +334,8 @@ impl_attach_tab (EphyExtension *extension,
 {
 	LOG ("Attach tab");
 
-	g_signal_connect (embed, "ge_dom_mouse_down",
+	g_signal_connect (ephy_embed_get_web_view (embed),
+			  "button-press-event",
 			  G_CALLBACK (dom_mouse_down_cb), extension);
 }
 

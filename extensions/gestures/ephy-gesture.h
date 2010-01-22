@@ -69,10 +69,10 @@ gboolean	ephy_gesture_start		(EphyGesture *gesture);
 void		ephy_gesture_stop		(EphyGesture *gesture,
 						 guint32 time);
 
-EphyEmbedEvent *ephy_gesture_get_event		(EphyGesture *gesture);
+GdkEventButton *ephy_gesture_get_event		(EphyGesture *gesture);
 
 void		ephy_gesture_set_event		(EphyGesture *gesture,
-						 EphyEmbedEvent *event);
+						 GdkEventButton *event);
 void		ephy_gesture_activate		(EphyGesture *gesture,
 						 const char *path);
 

@@ -40,7 +40,7 @@
 struct _EphyGesturePrivate
 {
 	GtkWidget *window;
-	EphyEmbedEvent *event;
+	GdkEventButton *event;
 	GdkCursor *cursor;
 	GtkAction *current_action;
 	guint timeout_id;
@@ -353,9 +353,6 @@ ephy_gesture_get_property (GObject *object,
 
 	switch (prop_id)
 	{
-		case PROP_EVENT:
-			g_value_set_object (value, priv->event);
-			break;
 		case PROP_WINDOW:
 			g_value_set_object (value, priv->window);
 			break;
@@ -385,15 +382,6 @@ ephy_gesture_class_init (EphyGestureClass *klass)
 			      G_TYPE_STRING);
 
 	g_object_class_install_property (object_class,
-					 PROP_EVENT,
-					 g_param_spec_object ("event",
-							      "Event",
-							      "Event",
-							      G_TYPE_OBJECT,
-							      G_PARAM_READWRITE |
-							      G_PARAM_CONSTRUCT_ONLY));
-
-	g_object_class_install_property (object_class,
 					 PROP_WINDOW,
 					 g_param_spec_object ("window",
 							      "Window",
@@ -411,7 +399,7 @@ ephy_gesture_get_window (EphyGesture *gesture)
 	return gesture->priv->window;
 }
 
-EphyEmbedEvent *
+GdkEventButton *
 ephy_gesture_get_event (EphyGesture *gesture)
 {
 	EphyGesturePrivate *priv;
@@ -425,20 +413,14 @@ ephy_gesture_get_event (EphyGesture *gesture)
 
 void
 ephy_gesture_set_event (EphyGesture *gesture,
-			EphyEmbedEvent *event)
+			GdkEventButton *event)
 {
 	EphyGesturePrivate *priv;
 
 	g_return_if_fail (EPHY_IS_GESTURE (gesture));
 
 	priv = gesture->priv;
-
-	if (priv->event != NULL)
-	{
-		g_object_unref (priv->event);
-	}
-
-	priv->event = event != NULL ? g_object_ref (event) : NULL;
+	priv->event = event;
 }
 
 static gboolean
@@ -463,7 +445,7 @@ ephy_gesture_activate (EphyGesture *gesture,
 	{
 		/* Fall back to normal click */
 		EphyEmbed *embed;
-		EphyEmbedEvent *event;
+		GdkEventButton *event;
 		gint handled = FALSE;
 
 		embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
@@ -472,7 +454,7 @@ ephy_gesture_activate (EphyGesture *gesture,
 		event = ephy_gesture_get_event (gesture);
 		g_return_if_fail (EPHY_IS_EMBED_EVENT (event));
 
-		g_signal_emit_by_name (embed, "ge_dom_mouse_click", event,
+		g_signal_emit_by_name (embed, "button-press-event", event,
 				       &handled);
 	}
 	else
