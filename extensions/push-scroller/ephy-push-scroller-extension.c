@@ -63,16 +63,16 @@ dom_mouse_down_cb (EphyWebView *view,
 	EphyPushScroller *scroller;
 	EphyEmbed *embed;
 	guint context;
-	guint button;
 	WebKitHitTestResult *hit_test;
 
 	embed = EPHY_EMBED (EPHY_GET_EMBED_FROM_EPHY_WEB_VIEW (GTK_WIDGET (view)));
-	button = event->button;
 	hit_test = webkit_web_view_get_hit_test_result (WEBKIT_WEB_VIEW (view), event);
 	g_object_get (hit_test, "context", &context, NULL);
 	g_object_unref (hit_test);
 
-	if (button != 2 || (context & WEBKIT_HIT_TEST_RESULT_CONTEXT_EDITABLE) ||
+	if (event->button != 2 ||
+	    event->type != GDK_BUTTON_PRESS ||
+	    (context & WEBKIT_HIT_TEST_RESULT_CONTEXT_EDITABLE) ||
 	    (context & WEBKIT_HIT_TEST_RESULT_CONTEXT_LINK))
 	{
 		return FALSE;
