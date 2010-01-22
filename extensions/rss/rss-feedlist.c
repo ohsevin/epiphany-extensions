@@ -157,7 +157,7 @@ rss_feedlist_compare_feeds (gconstpointer a, gconstpointer b)
 
 gboolean
 rss_feedlist_contains (FeedList *feedlist,
-		 const char *address)
+		       const char *address)
 {
 	return g_slist_find_custom ((GSList *) feedlist, address, (GCompareFunc) rss_feedlist_compare_feeds) != NULL;
 }

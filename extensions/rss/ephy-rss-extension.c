@@ -1,5 +1,6 @@
 /*
  *  Copyright © 2005 Raphaël Slinckx <raphael@slinckx.net>
+ *  Copyright © 2010 Igalia S.L.
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -114,66 +115,84 @@ static void
 ephy_rss_feed_subscribe_cb (GtkAction *action,
 			    EphyWindow *window)
 {
-	GValue value = { 0, };
 	GError *error = NULL;
-	EphyEmbedEvent *event;
-	gboolean success;
-	EphyRssExtension *extension = EPHY_RSS_EXTENSION (g_object_get_data (
-												G_OBJECT (window),
-												EPHY_RSS_EXTENSION_DATA_KEY));
+	gboolean success = FALSE;
+	EphyRssExtension *extension;
+	EphyEmbed *embed;
+	WebKitWebView *view;
+	GdkEventButton *event;
+	WebKitHitTestResult *hit_test;
+	char *uri;
 
 	LOG ("Subscribing to the feed");
 
-	event = ephy_window_get_context_event (window);
-	if (event == NULL) return;
+	extension = EPHY_RSS_EXTENSION (g_object_get_data (G_OBJECT (window), EPHY_RSS_EXTENSION_DATA_KEY));
 
-	ephy_embed_event_get_property (event, "link", &value);
+	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
+	view = EPHY_GET_WEBKIT_WEB_VIEW_FROM_EMBED (embed);
 
-	if (!dbus_g_proxy_call (extension->priv->proxy, RSS_DBUS_SUBSCRIBE, &error,
-		G_TYPE_STRING, g_value_get_string (&value),
-		G_TYPE_INVALID,
-		G_TYPE_BOOLEAN, &success,
-		G_TYPE_INVALID))
+	event = (GdkEventButton *) (g_object_get_data (G_OBJECT (window),
+				                     "rss-event"));
+
+	hit_test = webkit_web_view_get_hit_test_result (view, event);
+	gdk_event_free ((GdkEvent *) event);
+
+	g_object_get (hit_test, "link-uri", &uri, NULL);
+	g_object_unref (hit_test);
+
+	dbus_g_proxy_call (extension->priv->proxy,
+			   RSS_DBUS_SUBSCRIBE, &error,
+			   G_TYPE_STRING, uri,
+			   G_TYPE_INVALID,
+			   G_TYPE_BOOLEAN, &success,
+			   G_TYPE_INVALID);
+
+	if (!success)
 	{
 		LOG ("Error while retreiving method answer: %s", error->message);
 		g_error_free (error);
 	}
 
-	g_object_set(action, "sensitive", FALSE, "visible", FALSE, NULL);
-	g_value_unset (&value);
+	g_object_set (action, "sensitive", FALSE, "visible", FALSE, NULL);
 }
 
 static gboolean
-ephy_rss_ge_context_cb	(EphyWebView *view,
-			 EphyEmbedEvent *event,
-			 EphyWindow *window)
+ephy_rss_button_press_cb (EphyWebView *view,
+			  GdkEventButton *event,
+			  EphyWindow *window)
 {
 	WindowData *data;
-	GValue value = { 0, };
-	const char *address;
 	FeedList *list;
+	WebKitHitTestResult *hit_test;
+	guint context;
+	char *uri;
 	gboolean active = FALSE;
 
+	if (event->button != 3 || event->type != GDK_BUTTON_PRESS)
+		return FALSE;
+
 	list = g_object_get_data (G_OBJECT (view), FEEDLIST_DATA_KEY);
+	data = g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
+	g_return_val_if_fail (data != NULL, FALSE);
 
-	if ((ephy_embed_event_get_context (event) & WEBKIT_HIT_TEST_RESULT_CONTEXT_LINK) && (list != NULL))
+	hit_test = webkit_web_view_get_hit_test_result (WEBKIT_WEB_VIEW (view), event);
+	g_object_get (hit_test, "context", &context, NULL);
+
+	if ((context & WEBKIT_HIT_TEST_RESULT_CONTEXT_LINK) && (list != NULL))
 	{
-		LOG ("Context menu on a link");
-		data = g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
-		g_return_val_if_fail (data != NULL, FALSE);
+		g_object_get (hit_test, "link-uri", &uri, NULL);
+		active = rss_feedlist_contains (list, uri);
+		g_free (uri);
 
-		ephy_embed_event_get_property (event, "link", &value);
-		address = g_value_get_string (&value);
+		g_object_set_data (G_OBJECT (window), "rss-event",
+				   gdk_event_copy ((GdkEvent *) event));
 
-		active = rss_feedlist_contains (list, address);
-
-		LOG ("Showing menu item: %d", active);
 		g_object_set (data->subscribe_action,
 			      "sensitive", active,
 			      "visible", active,
 			      NULL);
-		g_value_unset (&value);
 	}
+	g_object_unref (hit_test);
 
 	return FALSE;
 }
@@ -307,11 +326,9 @@ impl_attach_tab (EphyExtension *extension,
 	g_signal_connect_after (view, "new-document-now",
 				G_CALLBACK (ephy_rss_ge_content_cb), window);
 	g_signal_connect_after (view, "ge-feed-link",
-			    G_CALLBACK (ephy_rss_ge_feed_cb), window);
-	/*
-	g_signal_connect (view, "ge-context-menu",
-			    G_CALLBACK (ephy_rss_ge_context_cb), window);
-	*/
+				G_CALLBACK (ephy_rss_ge_feed_cb), window);
+	g_signal_connect (view, "button-press-event",
+			  G_CALLBACK (ephy_rss_button_press_cb), window);
 }
 
 /* Stop listening for the detached tab rss feeds */
@@ -320,21 +337,23 @@ impl_detach_tab (EphyExtension *extension,
 		 EphyWindow *window,
 		 EphyEmbed *embed)
 {
+	EphyWebView *view;
+
 	LOG ("Detach tab rss listener");
 
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
+	view = ephy_embed_get_web_view (embed);
+
 	/* We don't want any new rss notif for this tab */
 	g_signal_handlers_disconnect_by_func
-		(embed, G_CALLBACK (ephy_rss_ge_feed_cb), window);
+		(view, G_CALLBACK (ephy_rss_ge_feed_cb), window);
 
 	g_signal_handlers_disconnect_by_func
-		(embed, G_CALLBACK (ephy_rss_ge_content_cb), window);
+		(view, G_CALLBACK (ephy_rss_ge_content_cb), window);
 
-	/*
 	g_signal_handlers_disconnect_by_func
-		(embed, G_CALLBACK (ephy_rss_ge_context_cb), window);
-	*/
+		(view, G_CALLBACK (ephy_rss_button_press_cb), window);
 
 	/* destroy data */
 	g_object_set_data (G_OBJECT (embed), FEEDLIST_DATA_KEY, NULL);
