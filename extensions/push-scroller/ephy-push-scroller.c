@@ -72,16 +72,32 @@ ephy_push_scroller_scroll_pixels (EphyEmbed *embed, int scroll_x, int scroll_y)
 {
 	GtkAdjustment *adj;
 	gdouble value;
+	gdouble new_value;
+	gdouble page_size;
+	gdouble upper;
+	gdouble lower;
+	GtkWidget *sw;
 
-	g_return_if_fail (GTK_IS_SCROLLED_WINDOW (embed));
+	sw = gtk_widget_get_parent (GTK_WIDGET (ephy_embed_get_web_view (embed)));
+	g_return_if_fail (GTK_IS_SCROLLED_WINDOW (sw));
 
-	adj = gtk_scrolled_window_get_hadjustment (GTK_SCROLLED_WINDOW (embed));
+	adj = gtk_scrolled_window_get_hadjustment (GTK_SCROLLED_WINDOW (sw));
+	upper = gtk_adjustment_get_upper (adj);
+	lower = gtk_adjustment_get_lower (adj);
 	value = gtk_adjustment_get_value (adj);
-	gtk_adjustment_set_value (adj, value + scroll_x);
+	page_size = gtk_adjustment_get_page_size (adj);
 
-	adj = gtk_scrolled_window_get_vadjustment (GTK_SCROLLED_WINDOW (embed));
+	new_value = CLAMP (value - scroll_x, lower, upper - page_size);
+	gtk_adjustment_set_value (adj, new_value);
+
+	adj = gtk_scrolled_window_get_vadjustment (GTK_SCROLLED_WINDOW (sw));
+	upper = gtk_adjustment_get_upper (adj);
+	lower = gtk_adjustment_get_lower (adj);
 	value = gtk_adjustment_get_value (adj);
-	gtk_adjustment_set_value (adj, value + scroll_y);
+	page_size = gtk_adjustment_get_page_size (adj);
+
+	new_value = CLAMP (value - scroll_y, lower, upper - page_size);
+	gtk_adjustment_set_value (adj, new_value);
 }
 
 static gboolean
@@ -90,7 +106,7 @@ ephy_push_scroller_motion_cb (GtkWidget *widget,
 			      EphyPushScroller *scroller)
 {
 	EphyPushScrollerPrivate *priv = scroller->priv;
-	int x_dist, x_dist_abs, y_dist, y_dist_abs;
+	int x_dist, y_dist;
 
 	if (!priv->active)
 	{
@@ -98,10 +114,8 @@ ephy_push_scroller_motion_cb (GtkWidget *widget,
 	}
 
 	/* get distance between last known cursor position and cursor */
-	x_dist = priv->start_x - event->x_root;
-	x_dist_abs = abs (x_dist);
-	y_dist = priv->start_y - event->y_root;
-	y_dist_abs = abs (y_dist);
+	x_dist = event->x_root - priv->start_x;
+	y_dist = event->y_root - priv->start_y ;
 
 	/* scroll */
 	ephy_push_scroller_scroll_pixels (priv->embed, x_dist, y_dist);
@@ -183,8 +197,8 @@ ephy_push_scroller_grab_notify_cb (GtkWidget *widget,
 void
 ephy_push_scroller_start (EphyPushScroller *scroller,
 			  EphyEmbed *embed,
-			  int x,
-			  int y)
+			  gdouble x,
+			  gdouble y)
 {
 	EphyPushScrollerPrivate *priv = scroller->priv;
 	GtkWidget *widget, *child;
