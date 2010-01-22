@@ -65,7 +65,7 @@ dom_mouse_down_cb (EphyWebView *view,
 	guint context;
 	WebKitHitTestResult *hit_test;
 
-	embed = EPHY_EMBED (EPHY_GET_EMBED_FROM_EPHY_WEB_VIEW (GTK_WIDGET (view)));
+	embed = EPHY_GET_EMBED_FROM_EPHY_WEB_VIEW (view);
 	hit_test = webkit_web_view_get_hit_test_result (WEBKIT_WEB_VIEW (view), event);
 	g_object_get (hit_test, "context", &context, NULL);
 	g_object_unref (hit_test);
