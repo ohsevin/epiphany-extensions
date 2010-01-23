@@ -13,17 +13,16 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  *
- *  $Id$
  */
 
 #ifndef EPHY_GUI_H
 #define EPHY_GUI_H
 
-#include <gtk/gtk.h>
-#include <gdk-pixbuf/gdk-pixbuf.h>
 #include <gdk/gdkkeysyms.h>
+#include <gdk-pixbuf/gdk-pixbuf.h>
+#include <gtk/gtk.h>
 
 G_BEGIN_DECLS
 
@@ -61,19 +60,19 @@ gboolean	ephy_gui_is_middle_click		 (void);
 gboolean	ephy_gui_check_location_writable         (GtkWidget *parent,
 							  const char *filename);
 
-void		ephy_gui_help				 (GtkWindow *parent,
-							  const char *file_name,
-							  const char *link_id);
-
-void		ephy_gui_help_with_doc_id		 (GtkWindow *parent,
-							  const char *doc_id,
-							  const char *file_name,
-							  const char *link_id);
+void		ephy_gui_help				 (GtkWidget *parent,
+							  const char *section);
 
 void		ephy_gui_window_update_user_time	 (GtkWidget *window,
 							  guint32 user_time);
 
 GtkWidget      *ephy_gui_message_dialog_get_content_box	 (GtkWidget *dialog);
+
+void		ephy_gui_message_dialog_set_wrap_mode	 (GtkMessageDialog *dialog,
+							  PangoWrapMode wrap_mode);
+
+void		ephy_gui_connect_checkbutton_to_gconf	 (GtkWidget *widget,
+							  const char *pref);
 
 G_END_DECLS
 

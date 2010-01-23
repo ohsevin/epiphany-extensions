@@ -13,9 +13,8 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  *
- *  $Id$
  */
 
 #ifndef EPHY_PREFS_H
@@ -28,15 +27,19 @@ G_BEGIN_DECLS
 
 /* General */
 #define CONF_GENERAL_HOMEPAGE			"/apps/epiphany/general/homepage"
+#define CONF_URL_SEARCH     			"/apps/epiphany/general/url_search"
 #define CONF_ALWAYS_SHOW_TABS_BAR		"/apps/epiphany/general/always_show_tabs_bar"
 #define CONF_WINDOWS_SHOW_TOOLBARS		"/apps/epiphany/general/show_toolbars"
 #define CONF_WINDOWS_SHOW_BOOKMARKS_BAR		"/apps/epiphany/general/show_bookmarks_bar"
 #define CONF_WINDOWS_SHOW_STATUSBAR		"/apps/epiphany/general/show_statusbar"
 #define CONF_INTERFACE_MIDDLE_CLICK_OPEN_URL	"/apps/epiphany/general/middle_click_open_url"
 #define CONF_INTERFACE_TOOLBAR_STYLE		"/apps/epiphany/general/toolbar_style"
+#define CONF_INTERFACE_OPEN_NEW_WINDOWS_IN_TAB	"/apps/epiphany/general/open_new_windows_in_tab"
 #define CONF_AUTO_DOWNLOADS			"/apps/epiphany/general/automatic_downloads"
 #define CONF_DESKTOP_IS_HOME_DIR		"/apps/nautilus/preferences/desktop_is_home_dir"
 #define CONF_NETWORK_MANAGED			"/apps/epiphany/general/managed_network"
+#define CONF_DOWNLOADS_HIDDEN			"/apps/epiphany/dialogs/downloads_hidden"
+#define CONF_WARN_ON_CLOSE_UNSUBMITTED_DATA     "/apps/epiphany/dialogs/warn_on_close_unsubmitted_data"
 
 /* Directories */
 #define CONF_STATE_SAVE_DIR		"/apps/epiphany/directories/save"
@@ -64,6 +67,9 @@ G_BEGIN_DECLS
 #define CONF_DESKTOP_TOOLBAR_STYLE	"/desktop/gnome/interface/toolbar_style"
 #define CONF_DESKTOP_BG_PICTURE		"/desktop/gnome/background/picture_filename"
 #define CONF_DESKTOP_BG_TYPE		"/desktop/gnome/background/picture_options"
+
+/* Privacy */
+#define CONF_PRIVACY_REMEMBER_PASSWORDS "/apps/epiphany/general/remember_passwords"
 
 G_END_DECLS
 
