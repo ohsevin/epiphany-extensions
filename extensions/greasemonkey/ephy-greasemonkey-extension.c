@@ -381,53 +381,10 @@ hovering_over_link_cb (WebKitWebView *web_view,
 	window_data->last_hovered_url = g_strdup (uri);
 }
 
-static void
-populate_popup_cb (WebKitWebView *web_view,
-		 GtkMenu *menu,
-		 EphyGreasemonkeyExtension *extension)
-{
-	/*
-	 * Set whether or not the action is visible before we display the
-	 * context popup menu
-	 */
-	WindowData *window_data;
-	EphyWindow *window;
-	GtkAction *action;
-	const char *url;
-	gboolean show_install;
-	GtkWidget *item;
-
-	window = EPHY_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (web_view)));
-	g_return_if_fail (window != NULL);
-
-	window_data = (WindowData *) g_object_get_data (G_OBJECT (window),
-							WINDOW_DATA_KEY);
-	g_return_if_fail (window_data != NULL);
-
-	url = window_data->last_hovered_url;
-	show_install = url && g_str_has_suffix (url, ".user.js");
-
-	action = gtk_action_group_get_action (window_data->action_group,
-					      ACTION_NAME);
-	g_return_if_fail (action != NULL);
-
-	if (show_install == TRUE)
-	{
-		g_free (window_data->last_clicked_url);
-		window_data->last_clicked_url = g_strdup (url);
-	}
-
-	gtk_action_set_visible (action, show_install);
-
-	item = gtk_action_create_menu_item (action);
-	gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
-}
-
-#if 0
 static gboolean
-context_menu_cb (EphyEmbed *embed,
-		 EphyEmbedEvent *event,
-		 EphyGreasemonkeyExtension *extension)
+button_press_event_cb (WebKitWebView *view,
+		       GdkEventButton *event,
+		       EphyGreasemonkeyExtension *extension)
 {
 	/*
 	 * Set whether or not the action is visible before we display the
@@ -435,25 +392,26 @@ context_menu_cb (EphyEmbed *embed,
 	 */
 	WindowData *window_data;
 	EphyWindow *window;
-	EphyEmbedEventContext context;
 	GtkAction *action;
-	const GValue *value;
-	const char *url;
+	WebKitHitTestResult *hit_test;
+	char *uri;
+	guint context;
 	gboolean show_install;
 
-	context = ephy_embed_event_get_context (event);
-	if ((context & EPHY_EMBED_CONTEXT_LINK) == 0)
-	{
+	if (event->button != 3 || event->type != GDK_BUTTON_PRESS)
 		return FALSE;
-	}
 
-	window = EPHY_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (embed)));
+	hit_test = webkit_web_view_get_hit_test_result (view, event);
+	g_object_get (hit_test, "context", &context, NULL);
+
+	if (!(context & WEBKIT_HIT_TEST_RESULT_CONTEXT_LINK))
+		return FALSE;
+
+	g_object_get (hit_test, "link-uri", &uri, NULL);
+	show_install = g_str_has_suffix (uri, ".user.js");
+
+	window = EPHY_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (view)));
 	g_return_val_if_fail (window != NULL, FALSE);
-
-	value = ephy_embed_event_get_property (event, "link");
-	url = g_value_get_string (value);
-
-	show_install = g_str_has_suffix (url, ".user.js");
 
 	window_data = (WindowData *) g_object_get_data (G_OBJECT (window),
 							WINDOW_DATA_KEY);
@@ -466,14 +424,16 @@ context_menu_cb (EphyEmbed *embed,
 	if (show_install == TRUE)
 	{
 		g_free (window_data->last_clicked_url);
-		window_data->last_clicked_url = g_strdup (url);
+		window_data->last_clicked_url = g_strdup (uri);
 	}
 
 	gtk_action_set_visible (action, show_install);
 
+	g_free (uri);
+	g_object_unref (hit_test);
+
 	return FALSE;
 }
-#endif
 
 static void
 maybe_apply_script (const char *basename,
@@ -619,18 +579,13 @@ impl_attach_tab (EphyExtension *ext,
 
 	web_view = EPHY_GET_WEBKIT_WEB_VIEW_FROM_EMBED (embed);
 
-#if 0
-	g_signal_connect (embed, "ge_context_menu",
-			  G_CALLBACK (context_menu_cb), ext);
-#endif
+	g_signal_connect (web_view, "button-press-event",
+			  G_CALLBACK (button_press_event_cb), ext);
 
-	g_signal_connect (web_view, "hovering_over_link",
+	g_signal_connect (web_view, "hovering-over-link",
 			  G_CALLBACK (hovering_over_link_cb), ext);
 
-	g_signal_connect (web_view, "populate_popup",
-			  G_CALLBACK (populate_popup_cb), ext);
-
-	g_signal_connect (web_view, "window_object_cleared",
+	g_signal_connect (web_view, "window-object-cleared",
 			  G_CALLBACK (window_object_cleared_cb), ext);
 }
 
@@ -646,16 +601,11 @@ impl_detach_tab (EphyExtension *ext,
 
 	web_view = EPHY_GET_WEBKIT_WEB_VIEW_FROM_EMBED (embed);
 
-#if 0
 	g_signal_handlers_disconnect_by_func
-		(embed, G_CALLBACK (context_menu_cb), ext);
-#endif
+		(web_view, G_CALLBACK (button_press_event_cb), ext);
 
 	g_signal_handlers_disconnect_by_func
 		(web_view, G_CALLBACK (hovering_over_link_cb), ext);
-
-	g_signal_handlers_disconnect_by_func
-		(web_view, G_CALLBACK (populate_popup_cb), ext);
 
 	g_signal_handlers_disconnect_by_func
 		(web_view, G_CALLBACK (window_object_cleared_cb), ext);
