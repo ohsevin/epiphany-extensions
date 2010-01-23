@@ -1,5 +1,6 @@
 /*
  *  Copyright © 2004 Adam Hooper
+ *  Copyright © 2010 Igalia S.L.
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -115,15 +116,33 @@ extensions_manager_ui_response_cb (GtkWidget *widget,
 				   int response,
 				   GObject *dialog)
 {
-	if (response == GTK_RESPONSE_HELP)
+	GdkScreen *screen;
+	GError *error = NULL;
+
+	if (response != GTK_RESPONSE_HELP)
 	{
-		ephy_gui_help (GTK_WINDOW (widget),
-			       "epiphany-extensions",
-			       "epi-ext-manager");
+		g_object_unref (dialog);
 		return;
 	}
 
-	g_object_unref (dialog);
+	screen = gtk_widget_get_screen (widget);
+	gtk_show_uri (screen, "ghelp:epiphany-extensions?epi-ext-manager",
+		      gtk_get_current_event_time (), &error);
+
+	if (error)
+	{
+		GtkWidget *errord;
+		errord = gtk_message_dialog_new (GTK_WINDOW (widget),
+						 GTK_DIALOG_DESTROY_WITH_PARENT,
+						 GTK_MESSAGE_ERROR,
+						 GTK_BUTTONS_OK,
+						 _("Could not display help: %s"),
+						 error->message);
+		g_error_free (error);
+		g_signal_connect (errord, "response",
+				  G_CALLBACK (gtk_widget_destroy), NULL);
+		gtk_widget_show (errord);
+	}
 }
 
 static void

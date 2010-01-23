@@ -1,6 +1,7 @@
 /*
  *  Copyright © 2003 Marco Pesenti Gritti
  *  Copyright © 2003 Christian Persch
+ *  Copyright © 2010 Igalia S.L.
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -176,9 +177,27 @@ static void
 help_cb (GtkAction *action,
 	 EphyWindow *window)
 {
-	ephy_gui_help (GTK_WINDOW (window),
-		       "epiphany-extensions",
-		       "");
+	GdkScreen *screen;
+	GError *error = NULL;
+
+	screen = gtk_widget_get_screen (GTK_WIDGET (window));
+	gtk_show_uri (screen, "ghelp:epiphany-extensions",
+		      gtk_get_current_event_time (), &error);
+
+	if (error)
+	{
+		GtkWidget *errord;
+		errord = gtk_message_dialog_new (GTK_WINDOW (window),
+						 GTK_DIALOG_DESTROY_WITH_PARENT,
+						 GTK_MESSAGE_ERROR,
+						 GTK_BUTTONS_OK,
+						 _("Could not display help: %s"),
+						 error->message);
+		g_error_free (error);
+		g_signal_connect (errord, "response",
+				  G_CALLBACK (gtk_widget_destroy), NULL);
+		gtk_widget_show (errord);
+	}
 }
 
 static void
