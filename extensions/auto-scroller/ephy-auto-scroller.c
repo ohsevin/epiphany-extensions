@@ -72,11 +72,12 @@ ephy_auto_scroller_set_window (EphyAutoScroller *scroller,
 			       EphyWindow *window)
 {
 	EphyAutoScrollerPrivate *priv = scroller->priv;
+	GtkWindowGroup *group;
 
 	priv->window = window;
+	group = gtk_window_get_group (GTK_WINDOW (priv->window));
 
-	gtk_window_group_add_window (GTK_WINDOW (priv->window)->group,
-				     GTK_WINDOW (priv->popup));
+	gtk_window_group_add_window (group, GTK_WINDOW (priv->popup));
 }
 
 static gboolean
