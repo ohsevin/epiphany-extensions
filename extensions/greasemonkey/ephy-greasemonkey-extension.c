@@ -451,20 +451,24 @@ maybe_apply_script (const char *basename,
 }
 
 static void
-window_object_cleared_cb (WebKitWebView *web_view,
-		   WebKitWebFrame *web_frame,
-		   gpointer context,
-		   gpointer window_object,
-		   EphyGreasemonkeyExtension *extension)
+load_status_notify_cb (GObject *object,
+		       GParamSpec *spec,
+		       EphyGreasemonkeyExtension *extension)
 {
 	ApplyScriptCBData *data;
+	WebKitWebView *web_view;
+	WebKitLoadStatus status;
 	const char *location;
 
-	location = webkit_web_frame_get_uri (web_frame);
-	if (location == NULL)
-	{
+	web_view = WEBKIT_WEB_VIEW (object);
+
+	status = webkit_web_view_get_load_status (web_view);
+	if (status != WEBKIT_LOAD_FINISHED)
 		return;
-	}
+
+	location = webkit_web_view_get_uri (web_view);
+	if (location == NULL)
+		return;
 
 	data = g_new (ApplyScriptCBData, 1);
 	data->web_view = web_view;
@@ -585,8 +589,8 @@ impl_attach_tab (EphyExtension *ext,
 	g_signal_connect (web_view, "hovering-over-link",
 			  G_CALLBACK (hovering_over_link_cb), ext);
 
-	g_signal_connect (web_view, "window-object-cleared",
-			  G_CALLBACK (window_object_cleared_cb), ext);
+	g_signal_connect (web_view, "notify::load-status",
+			  G_CALLBACK (load_status_notify_cb), ext);
 }
 
 static void
@@ -608,7 +612,7 @@ impl_detach_tab (EphyExtension *ext,
 		(web_view, G_CALLBACK (hovering_over_link_cb), ext);
 
 	g_signal_handlers_disconnect_by_func
-		(web_view, G_CALLBACK (window_object_cleared_cb), ext);
+		(web_view, G_CALLBACK (load_status_notify_cb), ext);
 }
 
 static void
