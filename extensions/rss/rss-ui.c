@@ -314,9 +314,7 @@ rss_ui_treeview_button_pressed_cb (GtkTreeView *treeview,
 				   RssUI *dialog)
 {
 	RssUIPrivate *priv = dialog->priv;
-	GtkTreeModel *model = GTK_TREE_MODEL (priv->store);
 	GtkTreeSelection *selection;
-	GtkTreeIter iter;
 	GtkTreePath *path = NULL;
 	GtkMenu *menu;
 
@@ -324,9 +322,7 @@ rss_ui_treeview_button_pressed_cb (GtkTreeView *treeview,
 
 	/* right-click? */
 	if (event->button != 3)
-	{
 		return FALSE;
-	}
 
 	/* Get tree path for row that was clicked */
 	if (!gtk_tree_view_get_path_at_pos (treeview,
@@ -336,27 +332,12 @@ rss_ui_treeview_button_pressed_cb (GtkTreeView *treeview,
 		return FALSE;
 	}
 
-	if (!gtk_tree_model_get_iter (model, &iter, path))
-	{
-		gtk_tree_path_free(path);
-		return FALSE;
-	}
-
-	/* Select the row the user clicked on */
-	selection = gtk_tree_view_get_selection (treeview);
-	if (gtk_tree_selection_count_selected_rows (selection) == 1)
-	{
-		gtk_tree_selection_unselect_all (selection);
-		gtk_tree_selection_select_path (selection, path);
-		gtk_tree_path_free (path);
-	}
-
 	/* now popup the menu */
 	menu = rss_ui_build_context_menu (dialog);
 	gtk_menu_popup (menu, NULL, NULL, NULL, NULL,
 			event->button, event->time);
 
-	return TRUE;
+	return FALSE;
 }
 
 /* Set dnd cursor to the default dnd Gtk one and not the GtktreeView one */
