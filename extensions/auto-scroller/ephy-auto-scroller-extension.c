@@ -62,7 +62,7 @@ dom_mouse_down_cb (EphyWebView *view,
 {
 	EphyAutoScroller *scroller;
 	guint context;
-	guint button, x, y;
+	guint button;
         WebKitHitTestResult *hit_test;
 
 	button = event->button;
@@ -70,7 +70,9 @@ dom_mouse_down_cb (EphyWebView *view,
 	g_object_get (hit_test, "context", &context, NULL);
 	g_object_unref (hit_test);
 
-	if (button != 2 || (context & WEBKIT_HIT_TEST_RESULT_CONTEXT_EDITABLE) ||
+	if (button != 2 ||
+	    event->type != GDK_BUTTON_PRESS ||
+	    (context & WEBKIT_HIT_TEST_RESULT_CONTEXT_EDITABLE) ||
 	    (context & WEBKIT_HIT_TEST_RESULT_CONTEXT_LINK))
 	{
 		return FALSE;
@@ -79,9 +81,9 @@ dom_mouse_down_cb (EphyWebView *view,
 	scroller = ensure_auto_scroller (window);
 	g_return_val_if_fail (scroller != NULL, FALSE);
 
-	x = (guint)event->x_root;
-	y = (guint)event->y_root;
-	ephy_auto_scroller_start (scroller, EPHY_GET_EMBED_FROM_EPHY_WEB_VIEW (view), x, y);
+	ephy_auto_scroller_start (scroller,
+				  EPHY_GET_EMBED_FROM_EPHY_WEB_VIEW (view),
+				  event->x_root, event->y_root);
 
 	return TRUE;
 }

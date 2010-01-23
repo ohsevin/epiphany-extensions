@@ -62,8 +62,8 @@ EphyAutoScroller       *ephy_auto_scroller_new		 (EphyWindow *window);
 
 void			ephy_auto_scroller_start	 (EphyAutoScroller *scroller,
 							  EphyEmbed *embed,
-							  int x,
-							  int y);
+							  gdouble x,
+							  gdouble y);
 
 void			ephy_auto_scroller_stop		 (EphyAutoScroller *scroller,
 							  guint32 timestamp);
