@@ -726,12 +726,29 @@ ephy_actions_extension_editor_dialog_response_cb
 	 int response,
 	 EphyActionsExtensionEditorDialog *pdialog)
 {
-	if (response == GTK_RESPONSE_HELP)
-	{
-		ephy_gui_help (GTK_WINDOW (dialog),
-			       "epiphany-extensions",
-			       "epi-ext-action-manage");
+	GdkScreen *screen;
+	GError *error = NULL;
+
+	if (response != GTK_RESPONSE_HELP)
 		return;
+
+	screen = gtk_widget_get_screen (GTK_WIDGET (dialog));
+	gtk_show_uri (screen, "ghelp:epiphany-extensions?epi-ext-action-manage",
+		      gtk_get_current_event_time (), &error);
+
+	if (error)
+	{
+		GtkWidget *errord;
+		errord = gtk_message_dialog_new (GTK_WINDOW (dialog),
+						 GTK_DIALOG_DESTROY_WITH_PARENT,
+						 GTK_MESSAGE_ERROR,
+						 GTK_BUTTONS_OK,
+						 _("Could not display help: %s"),
+						 error->message);
+		g_error_free (error);
+		g_signal_connect (errord, "response",
+				  G_CALLBACK (gtk_widget_destroy), NULL);
+		gtk_widget_show (errord);
 	}
 
 	g_object_unref (pdialog);
