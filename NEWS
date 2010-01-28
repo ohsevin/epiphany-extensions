@@ -1,4 +1,40 @@
 ==========================
+Epiphany Extensions 2.29.6
+==========================
+
+This release updates most extensions to work with Epiphany master, highlights
+are the return of gestures, rss and the new youtube-to-html5 extension.
+
+New extension:
+    - html5tube: view YouTube videos without Flash, using the internal media
+      player.
+
+Re-enabled extensions:
+    - Re-enable gestures extension.
+    - Re-enable rss extension.
+
+Changes and fixes:
+    - push-scroller: don't jump on drag-start.
+    - push-scroller: avoid eating middle-clicks for paste-open urls.
+    - rss: fix a crasher when showing the subscription dialog a second time.
+    - rss: don't show subscribe button for every link.
+    - greasemonkey: don't show install user script button for every link.
+
+Added/updated translations:
+    - bn_IN, courtesy of Runa Bhattacharjee
+    - ca, courtesy of David Planella
+    - de, courtesy of Christian Kirbach
+    - de, courtesy of Mario Blättermann
+    - gu, courtesy of Sweta Kothari
+    - kn, courtesy of Shankar Prasad
+    - or, courtesy of Manoj Kumar Giri
+    - pt_BR, courtesy of Djavan Fagundes
+    - ro, courtesy of Mișu Moldovan
+    - sl, courtesy of Andrej Žnidaršič
+    - ta, courtesy of I. Felix
+    - te, courtesy of Krishna Babu K
+
+==========================
 Epiphany Extensions 2.28.0
 ==========================
 

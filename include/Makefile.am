@@ -1,17 +1,11 @@
 SUBDIRS =
 
 EXTRA_DIST =				\
-	EphyUtils.h			\
-	ephy-bookmarks-menu.h		\
-	ephy-debug.h			\
-	ephy-embed-dialog.h		\
-	ephy-file-helpers.h		\
 	eel-gconf-extensions.h		\
-	egg-editable-toolbar.h		\
-	egg-toolbars-model.h		\
-	ephy-favicon-cache.h		\
+	ephy-debug.h			\
+	ephy-dnd.h              \
+	ephy-file-chooser.h		\
+	ephy-file-helpers.h		\
 	ephy-gui.h			\
 	ephy-prefs.h			\
-	ephy-file-chooser.h		\
-	ephy-string.h			\
-	ephy-dnd.h
+	ephy-string.h

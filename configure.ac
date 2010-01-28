@@ -16,7 +16,7 @@
 
 m4_define([e_e_version_major],[2])
 m4_define([e_e_version_minor],[29])
-m4_define([e_e_version_micro],[5])
+m4_define([e_e_version_micro],[6])
 m4_define([e_e_version],[e_e_version_major.e_e_version_minor.e_e_version_micro])
 
 # This can be either "trunk" or "branches/gnome-x-y"
@@ -172,8 +172,8 @@ AM_CONDITIONAL([HAVE_OPENSP],[test "x$enable_opensp" = "xyes"])
 AC_MSG_CHECKING([which extensions to build])
 
 ALL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures greasemonkey html5tube java-console livehttpheaders page-info permissions push-scroller rss sample select-stylesheet sidebar smart-bookmarks soup-fly tab-groups tab-states"
-USEFUL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-viewer extensions-manager-ui html5tube java-console page-info push-scroller select-stylesheet smart-bookmarks soup-fly tab-groups tab-states"
-DEFAULT_EXTENSIONS="actions adblock auto-scroller certificates error-viewer extensions-manager-ui html5tube java-console page-info push-scroller select-stylesheet smart-bookmarks soup-fly tab-groups tab-states greasemonkey rss"
+USEFUL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates extensions-manager-ui html5tube java-console page-info push-scroller select-stylesheet smart-bookmarks soup-fly tab-groups tab-states"
+DEFAULT_EXTENSIONS="actions adblock auto-reload auto-scroller certificates extensions-manager-ui greasemonkey gestures html5tube push-scroller soup-fly tab-groups tab-states rss"
 
 MOZILLA_ALL_EXTENSIONS="error-viewer java-console livehttpheaders page-info select-stylesheet smart-bookmarks"
 
@@ -266,14 +266,6 @@ if test "x${datadir}" = 'x${prefix}/share'; then
 else
   AC_DEFINE_UNQUOTED([EXTENSIONS_DATA_DIR], ["${datadir}/${PACKAGE}-${EPIPHANY_EXTENSIONS_MAJOR}"], [Directory of data files])
 fi
-
-# ****************************
-# SVN for ChangeLog generation
-# ****************************
-
-AC_SUBST([SVN_ROOT],[http://svn.gnome.org/svn])
-AC_SUBST([SVN_MODULE],[epiphany-extensions])
-AC_SUBST([SVN_BRANCH],[e_e_branch])
 
 # **************************
 # gtk-builder-convert binary

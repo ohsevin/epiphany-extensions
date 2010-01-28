@@ -32,7 +32,7 @@ extensions/permissions/ephy-permissions-dialog.c
 extensions/permissions/ephy-permissions-extension.c
 extensions/rss/ephy-rss-extension.c
 extensions/rss/rss-ui.c
-extensions/rss/rss-ui.glade
+extensions/rss/rss-ui.ui
 extensions/select-stylesheet/ephy-css-menu.c
 extensions/select-stylesheet/mozilla/mozilla-helpers.cpp
 extensions/sidebar/ephy-sidebar.c
