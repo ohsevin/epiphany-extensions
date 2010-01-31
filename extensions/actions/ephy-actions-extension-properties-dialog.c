@@ -268,7 +268,7 @@ ephy_actions_extension_properties_dialog_constructor
 	dialog = EPHY_ACTIONS_EXTENSION_PROPERTIES_DIALOG (object);
 
 	ephy_dialog_construct (EPHY_DIALOG(dialog), properties,
-			       SHARE_DIR "/glade/action-properties.glade",
+			       SHARE_DIR "/ui/action-properties.ui",
 			       properties[PROP_ACTION_PROPERTIES].id,
 			       GETTEXT_PACKAGE);
 

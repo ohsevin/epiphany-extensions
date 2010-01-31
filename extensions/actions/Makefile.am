@@ -27,10 +27,10 @@ libactionsextension_la_LDFLAGS = \
 	-export-symbols $(top_srcdir)/ephy-extension.symbols \
 	$(AM_LDFLAGS)
 
-glade_DATA = \
-	action-properties.glade	\
-	actions-editor.glade
-gladedir = $(pkgdatadir)/glade
+ui_DATA = \
+	action-properties.ui	\
+	actions-editor.ui
+uidir = $(pkgdatadir)/ui
 
 extensioninidir = $(extensiondir)
 extensionini_in_files = actions.ephy-extension.in.in
@@ -46,4 +46,4 @@ extensionini_DATA = $(extensionini_in_files:.ephy-extension.in.in=.ephy-extensio
 CLEANFILES = $(extensionini_DATA)
 DISTCLEANFILES = $(extensionini_DATA)
 
-EXTRA_DIST = $(glade_DATA) $(extensionini_in_files)
+EXTRA_DIST = $(ui_DATA) $(extensionini_in_files)

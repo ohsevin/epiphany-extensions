@@ -390,7 +390,7 @@ ephy_actions_extension_editor_dialog_constructor
 		 G_CALLBACK(ephy_actions_extension_editor_dialog_edit_selected));
 
 	ephy_dialog_construct (EPHY_DIALOG (dialog), properties,
-			       SHARE_DIR "/glade/actions-editor.glade",
+			       SHARE_DIR "/ui/actions-editor.ui",
 			       properties[PROP_ACTIONS_EDITOR].id,
 			       GETTEXT_PACKAGE);
 
