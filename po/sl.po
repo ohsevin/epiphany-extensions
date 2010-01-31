@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions&component=general\n"
-"POT-Creation-Date: 2009-10-30 07:30+0000\n"
-"PO-Revision-Date: 2010-01-18 12:42+0100\n"
+"POT-Creation-Date: 2010-01-31 01:17+0000\n"
+"PO-Revision-Date: 2010-01-31 11:03+0100\n"
 "Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -101,6 +101,13 @@ msgstr[0] "%i izbranih dejanj."
 msgstr[1] "%i izbrano dejanje."
 msgstr[2] "%i izbrani dejanji."
 msgstr[3] "%i izbrana dejanja."
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:746
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:139
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:194
+#, c-format
+msgid "Could not display help: %s"
+msgstr "Pomoči ni mogoče prikazati: %s"
 
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
@@ -381,12 +388,12 @@ msgstr ""
 "Napaka HTML v %s:\n"
 "Veljaven doctype ni določen."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:345
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
 msgid "Enabled"
 msgstr "Omogočeno"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:353
-#: ../extensions/rss/rss-ui.c:572
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:372
+#: ../extensions/rss/rss-ui.c:560
 msgid "Description"
 msgstr "Opis"
 
@@ -398,16 +405,16 @@ msgstr "<b>Naložene razširitve</b>"
 msgid "Extensions"
 msgstr "Razširitve"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:73
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:68
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:74
 msgid "_Extensions"
 msgstr "_Razširitve"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:70
 msgid "Load and unload extensions"
 msgstr "Nalaganje in razlaganje razširitev"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:76
 msgid "Help about extensions"
 msgstr "Pomoč o razširitvah"
 
@@ -802,54 +809,41 @@ msgstr "_Dovoljenja spletišč"
 msgid "Manage web site permissions"
 msgstr "Upravljanje dovoljenj spletišč"
 
-#: ../extensions/rss/ephy-rss-extension.c:79
+#: ../extensions/rss/ephy-rss-extension.c:80
 msgid "News Feeds Subscription"
 msgstr "Naročanje na vire novic"
 
-#: ../extensions/rss/ephy-rss-extension.c:81
+#: ../extensions/rss/ephy-rss-extension.c:82
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr "Naročanje na vire novic tega spletišča v vašem najljubšem bralniku novic"
 
-#: ../extensions/rss/ephy-rss-extension.c:86
+#: ../extensions/rss/ephy-rss-extension.c:87
 msgid "_Subscribe to this feed"
 msgstr "_Naročanje na ta vir"
 
-#: ../extensions/rss/ephy-rss-extension.c:88
+#: ../extensions/rss/ephy-rss-extension.c:89
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Naročanje na ta vir v vašem najljubšem bralniku novic"
 
-#: ../extensions/rss/ephy-rss-extension.c:365
+#: ../extensions/rss/ephy-rss-extension.c:394
 msgid "Subscribe to site's news feed"
 msgstr "Naročanje na vir novic strani"
 
-#: ../extensions/rss/rss-ui.c:153
+#: ../extensions/rss/rss-ui.c:156
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr "<b><i>Ni mogoče vzpostaviti stika z bralnikom virov, ali teče?</i></b>"
 
-#: ../extensions/rss/rss-ui.c:155
+#: ../extensions/rss/rss-ui.c:158
 msgid "Retry"
 msgstr "Poskusi ponovno"
 
-#: ../extensions/rss/rss-ui.c:283
+#: ../extensions/rss/rss-ui.c:288
 msgid "_Copy Feed Address"
 msgstr "Kopiraj _naslov vira"
 
-#: ../extensions/rss/rss-ui.c:564
+#: ../extensions/rss/rss-ui.c:552
 msgid "Subscribe"
 msgstr "Naročilo"
-
-#: ../extensions/rss/rss-ui.glade.h:1
-msgid "<b>Select Interesting Feeds</b>"
-msgstr "<b>Izbor zanimivih virov</b>"
-
-#: ../extensions/rss/rss-ui.glade.h:2
-#: ../extensions/rss/rss.ephy-extension.in.in.h:1
-msgid "News Feed Subscription"
-msgstr "Naročanje na vir novic"
-
-#: ../extensions/rss/rss-ui.glade.h:3
-msgid "_Subscribe"
-msgstr "_Naročanje"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:140
 msgid "Render the page without using a style"
@@ -1066,6 +1060,10 @@ msgstr "Vleka strani ob srednjem miškinem kliku"
 msgid "Push Scroll"
 msgstr "Pritisk za drsenje"
 
+#: ../extensions/rss/rss.ephy-extension.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "Naročanje na vir novic"
+
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr "Naročilo na vir novic, ki ga ponuja spletna stran, v vašem najljubšem bralniku novic"
@@ -1117,4 +1115,9 @@ msgstr "Določi novo vsebino v zavihkih ozadja"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Stanja zavihkov"
+
+#~ msgid "<b>Select Interesting Feeds</b>"
+#~ msgstr "<b>Izbor zanimivih virov</b>"
+#~ msgid "_Subscribe"
+#~ msgstr "_Naročanje"
 
