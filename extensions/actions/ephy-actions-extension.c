@@ -750,7 +750,7 @@ ephy_actions_extension_get_actions (EphyActionsExtension *extension)
 }
 
 static gboolean
-ephy_actions_extension_context_menu_cb (EphyEmbed *embed,
+ephy_actions_extension_context_menu_cb (EphyWebView *view,
 					GdkEventButton *event,
 					EphyWindow *window)
 {
@@ -765,7 +765,7 @@ ephy_actions_extension_context_menu_cb (EphyEmbed *embed,
 	data = g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 	g_return_val_if_fail (data != NULL, FALSE);
 
-	hit_test = webkit_web_view_get_hit_test_result (EPHY_GET_WEBKIT_WEB_VIEW_FROM_EMBED (embed), event);
+	hit_test = webkit_web_view_get_hit_test_result (WEBKIT_WEB_VIEW (view), event);
 	g_object_get (hit_test, "context", &context, NULL);
 	g_object_unref (hit_test);
 
@@ -805,8 +805,10 @@ ephy_actions_extension_attach_tab (EphyExtension *extension,
 {
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
-	g_signal_connect (embed, "button-press-event",
-			  G_CALLBACK (ephy_actions_extension_context_menu_cb), window);
+	g_signal_connect (ephy_embed_get_web_view (embed),
+			  "button-press-event",
+			  G_CALLBACK (ephy_actions_extension_context_menu_cb),
+			  window);
 }
 
 static void
@@ -817,6 +819,7 @@ ephy_actions_extension_detach_tab (EphyExtension *extension,
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	g_signal_handlers_disconnect_by_func
-		(embed, G_CALLBACK (ephy_actions_extension_context_menu_cb), window);
+		(ephy_embed_get_web_view (embed),
+		 G_CALLBACK (ephy_actions_extension_context_menu_cb), window);
 }
 
