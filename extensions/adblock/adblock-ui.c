@@ -387,7 +387,7 @@ adblock_ui_constructor (GType type,
 
 	ephy_dialog_construct (EPHY_DIALOG (edialog),
 			properties,
-			SHARE_DIR "/glade/adblock.ui",
+			SHARE_DIR "/ui/adblock.ui",
 			"adblock-ui",
 			GETTEXT_PACKAGE);
 
