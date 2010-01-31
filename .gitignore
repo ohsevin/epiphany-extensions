@@ -15,8 +15,6 @@ config.sub
 configure
 depcomp
 extensions/*/*.ephy-extension
-extensions/adblock/adblock.ui
-extensions/extensions-manager-ui/extensions-manager-ui.ui
 gnome-doc-utils.make
 help/*.omf
 help/*/*.mo

@@ -80,7 +80,7 @@ MOZILLA_WARN_CXXFLAGS="-Wno-ctor-dtor-privacy -Wno-non-virtual-dtor"
 if test "x$enable_maintainer_mode" = "xyes"; then
 	AC_DEFINE([MAINTAINER_MODE],[1],[Define to enable 'maintainer-only' behaviour])
 	enable_debug=yes
-        DEPRECATION_FLAGS="-DG_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGDK_PIXBUF_DISABLE_DEPRECATED -DGCONF_DISABLE_DEPRECATED -DLIBGLADE_DISABLE_DEPRECATED -DPANGO_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED -DGNOME_DISABLE_DEPRECATED -DG_DISABLE_SINGLE_INCLUDES -DGTK_DISABLE_SINGLE_INCLUDES"
+        DEPRECATION_FLAGS="-DG_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGDK_PIXBUF_DISABLE_DEPRECATED -DGCONF_DISABLE_DEPRECATED -DPANGO_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED -DGNOME_DISABLE_DEPRECATED -DG_DISABLE_SINGLE_INCLUDES -DGTK_DISABLE_SINGLE_INCLUDES"
 	MOZILLA_WARN_CXXFLAGS="-Wall -Wconversion -Wpointer-arith -Wcast-align -Woverloaded-virtual -Wsynth $MOZILLA_WARN_CXXFLAGS"
 fi
 
@@ -120,7 +120,6 @@ EPIPHANY_EXTENSION_INIT([$EPIPHANY_API_VERSION], [$EPIPHANY_REQUIRED])
 
 PKG_CHECK_MODULES([EPIPHANY_DEPENDENCY], [\
 		  libxml-2.0 >= $LIBXML_REQUIRED \
-		  libglade-2.0 \
 		  glib-2.0 >= $LIBGLIB_REQUIRED \
 		  gio-2.0 >= $LIBGLIB_REQUIRED \
 		  gmodule-2.0 \
@@ -265,15 +264,6 @@ if test "x${datadir}" = 'x${prefix}/share'; then
   fi
 else
   AC_DEFINE_UNQUOTED([EXTENSIONS_DATA_DIR], ["${datadir}/${PACKAGE}-${EPIPHANY_EXTENSIONS_MAJOR}"], [Directory of data files])
-fi
-
-# **************************
-# gtk-builder-convert binary
-# **************************
-
-AC_PATH_PROG([GTK_BUILDER_CONVERT],[gtk-builder-convert],[false])
-if test "$GTK_BUILDER_CONVERT" = "false"; then
-  AC_MSG_ERROR([gtk-builder-convert not found])
 fi
 
 # *******************************
