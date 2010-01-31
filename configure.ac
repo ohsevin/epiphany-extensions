@@ -16,7 +16,7 @@
 
 m4_define([e_e_version_major],[2])
 m4_define([e_e_version_minor],[29])
-m4_define([e_e_version_micro],[6])
+m4_define([e_e_version_micro],[90])
 m4_define([e_e_version],[e_e_version_major.e_e_version_minor.e_e_version_micro])
 
 # This can be either "trunk" or "branches/gnome-x-y"
