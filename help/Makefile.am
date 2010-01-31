@@ -5,7 +5,7 @@ DOC_ENTITIES = legal.xml
 DOC_INCLUDES =
 DOC_FIGURES = \
 	figures/epi-ext-action-create.png 		\
-	figures/epi-ext-action-use.png			\
+	figures/epi-ext-actions-use.png			\
 	figures/epi-ext-adblocker.png			\
 	figures/epi-ext-gestures-back.png		\
 	figures/epi-ext-gestures-close.png		\
