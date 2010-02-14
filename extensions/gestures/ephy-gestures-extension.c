@@ -288,12 +288,8 @@ dom_mouse_down_cb (EphyWebView *view,
 	toplevel = gtk_widget_get_toplevel (GTK_WIDGET (embed));
 	g_return_val_if_fail (toplevel != NULL, handled);
 
-	/* disable gestures while print preview mode */
 	window = EPHY_WINDOW (toplevel);
 	g_return_val_if_fail (EPHY_IS_WINDOW (window), handled);
-
-	g_object_get (window, "is-print-preview", &ppv_mode, NULL);
-	if (ppv_mode) return handled;
 
 	button = event->button;
 	hit_test = webkit_web_view_get_hit_test_result (WEBKIT_WEB_VIEW (view), event);
