@@ -170,9 +170,9 @@ AM_CONDITIONAL([HAVE_OPENSP],[test "x$enable_opensp" = "xyes"])
 
 AC_MSG_CHECKING([which extensions to build])
 
-ALL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures greasemonkey html5tube java-console livehttpheaders page-info permissions push-scroller rss sample select-stylesheet smart-bookmarks soup-fly tab-groups tab-states"
-USEFUL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates extensions-manager-ui html5tube java-console page-info push-scroller select-stylesheet smart-bookmarks soup-fly tab-groups tab-states"
-DEFAULT_EXTENSIONS="actions adblock auto-reload auto-scroller certificates extensions-manager-ui greasemonkey gestures html5tube push-scroller soup-fly tab-groups tab-states rss"
+ALL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures greasemonkey html5tube java-console livehttpheaders page-info permissions push-scroller rss sample select-stylesheet smart-bookmarks soup-fly tab-groups tab-key-tab-navigate tab-states"
+USEFUL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates extensions-manager-ui html5tube java-console page-info push-scroller select-stylesheet smart-bookmarks soup-fly tab-groups tab-key-tab-navigate tab-states"
+DEFAULT_EXTENSIONS="actions adblock auto-reload auto-scroller certificates extensions-manager-ui greasemonkey gestures html5tube push-scroller soup-fly tab-groups tab-key-tab-navigate tab-states rss"
 
 MOZILLA_ALL_EXTENSIONS="error-viewer java-console livehttpheaders page-info select-stylesheet smart-bookmarks"
 
@@ -300,6 +300,7 @@ extensions/select-stylesheet/mozilla/Makefile
 extensions/smart-bookmarks/Makefile
 extensions/smart-bookmarks/mozilla/Makefile
 extensions/soup-fly/Makefile
+extensions/tab-key-tab-navigate/Makefile
 extensions/tab-states/Makefile
 extensions/tab-groups/Makefile
 extensions/java-console/Makefile
