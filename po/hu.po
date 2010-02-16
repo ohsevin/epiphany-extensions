@@ -1,17 +1,15 @@
-# translation of epiphany-extensions.HEAD.hu.po to Hungarian
 # Hungarian translation of epiphany-extensions.
-# Copyright (C) 2004, 2005, 2007, 2008, 2009 Free Software Foundation, Inc.
+# Copyright (C) 2004, 2005, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
 # This file is distributed under the same license as the epiphany-extensions package.
 #
-# Laszlo Dvornik <dvornik@gnome.hu>, 2004.
-# Gabor Kelemen <kelemeng@gnome.hu>, 2004, 2005, 2007, 2008, 2009.
-# Gabor Kelemen <kelemeng at gnome dot hu>, 2009.
+# Laszlo Dvornik <dvornik at gnome dot hu>, 2004.
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2004, 2005, 2007, 2008, 2009, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: epiphany-extensions.HEAD.hu\n"
+"Project-Id-Version: epiphany-extensions master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2009-08-15 02:01+0200\n"
-"PO-Revision-Date: 2009-08-15 02:04+0200\n"
+"POT-Creation-Date: 2010-02-16 09:36+0100\n"
+"PO-Revision-Date: 2010-02-16 09:38+0100\n"
 "Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
 "Language-Team: Hungarian <gnome at fsf dot hu>\n"
 "MIME-Version: 1.0\n"
@@ -21,71 +19,35 @@ msgstr ""
 "X-Launchpad-Export-Date: 2008-03-19 11:00+0000\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ../extensions/actions/action-properties.glade.h:1
+#: ../extensions/actions/action-properties.ui.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
 msgstr "<span weight=\"bold\">Alkalmazás:</span>"
 
-#: ../extensions/actions/action-properties.glade.h:2
+#: ../extensions/actions/action-properties.ui.h:2
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">Általános</span>"
 
-#: ../extensions/actions/action-properties.glade.h:3
-msgid ""
-"If this option is enabled, the action will be included in the popup menu of "
-"images."
-msgstr ""
-"Ha ez a lehetőség engedélyezve van, a művelet bekerül a képek felbukkanó "
-"menüjébe."
-
-#: ../extensions/actions/action-properties.glade.h:4
-msgid ""
-"If this option is enabled, the action will be included in the popup menu of "
-"links and pages."
-msgstr ""
-"Ha ez a lehetőség engedélyezve van, a művelet bekerül a hivatkozások és "
-"oldalak felbukkanó menüjébe."
-
-#: ../extensions/actions/action-properties.glade.h:5
-msgid "The action description."
-msgstr "A művelet leírása."
-
-#: ../extensions/actions/action-properties.glade.h:6
-msgid ""
-"The action name. If a character is preceded by an underscore, that character "
-"will be used as the access key for the menu item."
-msgstr ""
-"A művelet neve. Ha egy karaktert egy aláhúzásjel előz meg, akkor az a "
-"karakter lesz a menüelem gyorsbillentyűje."
-
-#: ../extensions/actions/action-properties.glade.h:7
-msgid ""
-"The command to execute when the action is activated. The URL of the link, "
-"image or page will be appended to the command."
-msgstr ""
-"A művelet aktiválásakor végrehajtandó parancs. A hivatkozás, kép vagy oldal "
-"URL-je hozzá lesz fűzve a parancshoz."
-
-#: ../extensions/actions/action-properties.glade.h:8
+#: ../extensions/actions/action-properties.ui.h:3
 msgid "_Command:"
 msgstr "_Parancs:"
 
-#: ../extensions/actions/action-properties.glade.h:9
+#: ../extensions/actions/action-properties.ui.h:4
 msgid "_Description:"
 msgstr "_Leírás:"
 
-#: ../extensions/actions/action-properties.glade.h:10
+#: ../extensions/actions/action-properties.ui.h:5
 msgid "_Images"
 msgstr "_Képek"
 
-#: ../extensions/actions/action-properties.glade.h:11
+#: ../extensions/actions/action-properties.ui.h:6
 msgid "_Name:"
 msgstr "_Név:"
 
-#: ../extensions/actions/action-properties.glade.h:12
+#: ../extensions/actions/action-properties.ui.h:7
 msgid "_Pages"
 msgstr "_Oldalak"
 
-#: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions-editor.ui.h:1
 #: ../extensions/actions/actions.ephy-extension.in.in.h:1
 msgid "Actions"
 msgstr "Műveletek"
@@ -116,6 +78,13 @@ msgid "%i action selected."
 msgid_plural "%i actions selected."
 msgstr[0] "%i művelet kiválasztva."
 msgstr[1] "%i művelet kiválasztva."
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:745
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:139
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:194
+#, c-format
+msgid "Could not display help: %s"
+msgstr "Nem lehet megjeleníteni a súgót: %s"
 
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
@@ -153,36 +122,32 @@ msgstr ""
 msgid "Pattern"
 msgstr "Minta"
 
-#: ../extensions/adblock/adblock.glade.h:1
+#: ../extensions/adblock/adblock.ui.h:1
 msgid "<b>Courtesy of Graham Pierce</b>"
 msgstr "<b>Graham Pierce jóvoltából</b>"
 
-#: ../extensions/adblock/adblock.glade.h:2
+#: ../extensions/adblock/adblock.ui.h:2
 msgid "<b>New rule</b>"
 msgstr "<b>Új szabály</b>"
 
-#: ../extensions/adblock/adblock.glade.h:3
+#: ../extensions/adblock/adblock.ui.h:3
 msgid "<b>Update rules from original site</b>"
 msgstr "<b>Szabályok frissítése az eredeti oldalról</b>"
 
-#: ../extensions/adblock/adblock.glade.h:4
+#: ../extensions/adblock/adblock.ui.h:4
 #: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
 msgstr "Hirdetésgátló-szerkesztő"
 
-#: ../extensions/adblock/adblock.glade.h:5
-msgid "Add a new rule"
-msgstr "Új szabály felvétele"
-
-#: ../extensions/adblock/adblock.glade.h:6
+#: ../extensions/adblock/adblock.ui.h:5
 msgid "Blacklist"
 msgstr "Feketelista"
 
-#: ../extensions/adblock/adblock.glade.h:7
+#: ../extensions/adblock/adblock.ui.h:6
 msgid "Filterset.G"
 msgstr "Filterset.G"
 
-#: ../extensions/adblock/adblock.glade.h:8
+#: ../extensions/adblock/adblock.ui.h:7
 msgid "Whitelist"
 msgstr "Fehérlista"
 
@@ -399,33 +364,33 @@ msgstr ""
 "HTML hiba a(z) %s fájlban:\n"
 "Nincs érvényes doctype megadva."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:345
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
 msgid "Enabled"
 msgstr "Engedélyezve"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:353
-#: ../extensions/rss/rss-ui.c:571
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:372
+#: ../extensions/rss/rss-ui.c:560
 msgid "Description"
 msgstr "Leírás"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:1
 msgid "<b>Loaded Extensions</b>"
 msgstr "<b>Betöltött kiterjesztések</b>"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:2
 msgid "Extensions"
 msgstr "Kiterjesztések"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:73
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:68
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:74
 msgid "_Extensions"
 msgstr "Kit_erjesztések"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:70
 msgid "Load and unload extensions"
 msgstr "Kiterjesztések betöltése és eltávolítása"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:76
 msgid "Help about extensions"
 msgstr "A kiterjesztések súgója"
 
@@ -820,52 +785,52 @@ msgstr "Oldal _jogosultságai"
 msgid "Manage web site permissions"
 msgstr "Weboldalak jogosultságainak kezelése"
 
-#: ../extensions/rss/ephy-rss-extension.c:79
+#: ../extensions/rss/ephy-rss-extension.c:80
 msgid "News Feeds Subscription"
 msgstr "Feliratkozás hírforrásokra"
 
-#: ../extensions/rss/ephy-rss-extension.c:81
+#: ../extensions/rss/ephy-rss-extension.c:82
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr "Feliratkozás ezen weboldal hírforrásaira a kedvenc hírolvasójával."
 
-#: ../extensions/rss/ephy-rss-extension.c:86
+#: ../extensions/rss/ephy-rss-extension.c:87
 msgid "_Subscribe to this feed"
 msgstr "_Feliratkozás a forrásra"
 
-#: ../extensions/rss/ephy-rss-extension.c:88
+#: ../extensions/rss/ephy-rss-extension.c:89
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Feliratkozás a forrásra a kedvenc hírolvasójával"
 
-#: ../extensions/rss/ephy-rss-extension.c:361
+#: ../extensions/rss/ephy-rss-extension.c:394
 msgid "Subscribe to site's news feed"
 msgstr "Feliratkozás oldal hírforrásaira"
 
-#: ../extensions/rss/rss-ui.c:153
+#: ../extensions/rss/rss-ui.c:156
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr "<b><i>Nem lehet kapcsolatba lépni a hírforrásolvasóval, biztosan fut?</i></b>"
 
-#: ../extensions/rss/rss-ui.c:155
+#: ../extensions/rss/rss-ui.c:158
 msgid "Retry"
 msgstr "Újra"
 
-#: ../extensions/rss/rss-ui.c:283
+#: ../extensions/rss/rss-ui.c:288
 msgid "_Copy Feed Address"
 msgstr "Hírfoly_am címének másolása"
 
-#: ../extensions/rss/rss-ui.c:563
+#: ../extensions/rss/rss-ui.c:552
 msgid "Subscribe"
 msgstr "Feliratkozás"
 
-#: ../extensions/rss/rss-ui.glade.h:1
+#: ../extensions/rss/rss-ui.ui.h:1
 msgid "<b>Select Interesting Feeds</b>"
 msgstr "<b>Érdekes hírforrások kiválasztása</b>"
 
-#: ../extensions/rss/rss-ui.glade.h:2
+#: ../extensions/rss/rss-ui.ui.h:2
 #: ../extensions/rss/rss.ephy-extension.in.in.h:1
 msgid "News Feed Subscription"
 msgstr "Feliratkozás hírforrásra"
 
-#: ../extensions/rss/rss-ui.glade.h:3
+#: ../extensions/rss/rss-ui.ui.h:3
 msgid "_Subscribe"
 msgstr "_Feliratkozás"
 
@@ -897,59 +862,6 @@ msgstr "Alapértelmezett"
 #: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
 msgid "None"
 msgstr "Nincs"
-
-#: ../extensions/sidebar/ephy-sidebar.c:167
-msgid "No Sidebars installed"
-msgstr "Nincsenek oldalsávok telepítve"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:88
-msgid "_Sidebar"
-msgstr "_Oldalsáv"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:89
-msgid "Show or hide the sidebar"
-msgstr "Az oldalsáv mutatása vagy elrejtése"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:306
-msgid "Do you really want to remove this sidebar?"
-msgstr "Valóban el kívánja távolítani ezt az oldalsávot?"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:310
-msgid "There is no way to recover this sidebar after removal."
-msgstr "Az oldalsáv az eltávolítás után nem állítható vissza."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:312
-msgid "Remove Sidebar"
-msgstr "Oldalsáv eltávolítása"
-
-#. Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:459
-#, c-format
-msgid "The sidebar already contains “%s”"
-msgstr "Az oldalsáv már tartalmazza a következőt: „%s”"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:463
-msgid "To use this sidebar, select it from the list of available sidebar pages."
-msgstr "Az oldalsáv használatához válassza ki azt az elérhető oldalsáv-oldalak közül."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:466
-#: ../extensions/sidebar/ephy-sidebar-extension.c:492
-msgid "Add Sidebar"
-msgstr "Oldalsáv hozzáadása"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:486
-#, c-format
-msgid "Add “%s” to the Sidebar?"
-msgstr "Hozzáadja ezt: „%s” az oldalsávhoz?"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:490
-#, c-format
-msgid "The source to the new sidebar page is “%s”."
-msgstr "A forrás az új oldalsáv-oldalhoz: „%s”"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:496
-msgid "_Add Sidebar"
-msgstr "Oldalsáv _hozzáadása"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
 msgid "_Look Up"
@@ -1105,14 +1017,6 @@ msgstr "Stíluslap kiválasztása"
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
 msgstr "A weboldal által ajánlott különböző stíluslapok közti választás"
-
-#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
-msgid "Adds a sidebar to windows"
-msgstr "Oldalsávot ad az ablakokhoz"
-
-#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
-msgid "Sidebar"
-msgstr "Oldalsáv"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
 msgid "Look up the selected text with a smart bookmark"
