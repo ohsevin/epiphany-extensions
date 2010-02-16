@@ -1,13 +1,13 @@
 [encoding: UTF-8]
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
-extensions/actions/action-properties.ui
-extensions/actions/actions-editor.ui
+[type: gettext/glade]extensions/actions/action-properties.ui
+[type: gettext/glade]extensions/actions/actions-editor.ui
 extensions/actions/ephy-actions-extension.c
 extensions/actions/ephy-actions-extension-editor-dialog.c
 extensions/actions/ephy-actions-extension-properties-dialog.c
 extensions/adblock/adblock-ui.c
-extensions/adblock/adblock.ui
+[type: gettext/glade]extensions/adblock/adblock.ui
 extensions/adblock/ephy-adblock-extension.c
 extensions/auto-reload/ephy-auto-reload-extension.c
 extensions/certificates/ephy-certificates-extension.c
@@ -19,7 +19,7 @@ extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp
 extensions/error-viewer/opensp/validate.cpp
 extensions/error-viewer/sgml-validator.c
 extensions/extensions-manager-ui/extensions-manager-ui.c
-extensions/extensions-manager-ui/extensions-manager-ui.ui
+[type: gettext/glade]extensions/extensions-manager-ui/extensions-manager-ui.ui
 extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c
 extensions/greasemonkey/ephy-greasemonkey-extension.c
 extensions/java-console/ephy-java-console-extension.c
@@ -32,7 +32,7 @@ extensions/permissions/ephy-permissions-dialog.c
 extensions/permissions/ephy-permissions-extension.c
 extensions/rss/ephy-rss-extension.c
 extensions/rss/rss-ui.c
-extensions/rss/rss-ui.ui
+[type: gettext/glade]extensions/rss/rss-ui.ui
 extensions/select-stylesheet/ephy-css-menu.c
 extensions/select-stylesheet/mozilla/mozilla-helpers.cpp
 extensions/smart-bookmarks/smart-bookmarks-extension.c
