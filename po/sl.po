@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions&component=general\n"
-"POT-Creation-Date: 2010-01-31 01:17+0000\n"
-"PO-Revision-Date: 2010-01-31 11:03+0100\n"
+"POT-Creation-Date: 2010-02-20 01:48+0000\n"
+"PO-Revision-Date: 2010-02-20 20:17+0100\n"
 "Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -20,55 +20,35 @@ msgstr ""
 "X-Poedit-Language: Slovenian\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../extensions/actions/action-properties.glade.h:1
+#: ../extensions/actions/action-properties.ui.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
 msgstr "<span weight=\"bold\">Uporabno na</span>"
 
-#: ../extensions/actions/action-properties.glade.h:2
+#: ../extensions/actions/action-properties.ui.h:2
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">Splošno</span>"
 
-#: ../extensions/actions/action-properties.glade.h:3
-msgid "If this option is enabled, the action will be included in the popup menu of images."
-msgstr "Izbrana možnost določi, da bo dejanje vključeno v pojavni meni slik."
-
-#: ../extensions/actions/action-properties.glade.h:4
-msgid "If this option is enabled, the action will be included in the popup menu of links and pages."
-msgstr "Izbrana možnost določi, da je dejanje vključeno v pojavni meni povezav in strani."
-
-#: ../extensions/actions/action-properties.glade.h:5
-msgid "The action description."
-msgstr "Opis dejanja."
-
-#: ../extensions/actions/action-properties.glade.h:6
-msgid "The action name. If a character is preceded by an underscore, that character will be used as the access key for the menu item."
-msgstr "Ime dejanja. V primeru, da je pred njim podčrtaj, bo znak uporabljen kot dostopna tipka za predmet menija."
-
-#: ../extensions/actions/action-properties.glade.h:7
-msgid "The command to execute when the action is activated. The URL of the link, image or page will be appended to the command."
-msgstr "Ukaz za izvedbo, ko je dejanje zagnano. URL povezave, slika ali stran bodo pripete ukazu."
-
-#: ../extensions/actions/action-properties.glade.h:8
+#: ../extensions/actions/action-properties.ui.h:3
 msgid "_Command:"
 msgstr "_Ukaz:"
 
-#: ../extensions/actions/action-properties.glade.h:9
+#: ../extensions/actions/action-properties.ui.h:4
 msgid "_Description:"
 msgstr "_Opis:"
 
-#: ../extensions/actions/action-properties.glade.h:10
+#: ../extensions/actions/action-properties.ui.h:5
 msgid "_Images"
 msgstr "_Slike"
 
-#: ../extensions/actions/action-properties.glade.h:11
+#: ../extensions/actions/action-properties.ui.h:6
 msgid "_Name:"
 msgstr "_Ime:"
 
-#: ../extensions/actions/action-properties.glade.h:12
+#: ../extensions/actions/action-properties.ui.h:7
 msgid "_Pages"
 msgstr "_Strani"
 
-#: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions-editor.ui.h:1
 #: ../extensions/actions/actions.ephy-extension.in.in.h:1
 msgid "Actions"
 msgstr "Dejanja"
@@ -102,7 +82,7 @@ msgstr[1] "%i izbrano dejanje."
 msgstr[2] "%i izbrani dejanji."
 msgstr[3] "%i izbrana dejanja."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:746
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:745
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.c:139
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:194
 #, c-format
@@ -138,36 +118,32 @@ msgstr ""
 msgid "Pattern"
 msgstr "Vzorec"
 
-#: ../extensions/adblock/adblock.glade.h:1
+#: ../extensions/adblock/adblock.ui.h:1
 msgid "<b>Courtesy of Graham Pierce</b>"
 msgstr "<b>Vljudno prispeval Graham Pierce</b>"
 
-#: ../extensions/adblock/adblock.glade.h:2
+#: ../extensions/adblock/adblock.ui.h:2
 msgid "<b>New rule</b>"
 msgstr "<b>Novo pravilo<b>"
 
-#: ../extensions/adblock/adblock.glade.h:3
+#: ../extensions/adblock/adblock.ui.h:3
 msgid "<b>Update rules from original site</b>"
 msgstr "<b>Posodobitev pravil iz izvorne strani</b>"
 
-#: ../extensions/adblock/adblock.glade.h:4
+#: ../extensions/adblock/adblock.ui.h:4
 #: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
 msgstr "Urejevalnik Adblock"
 
-#: ../extensions/adblock/adblock.glade.h:5
-msgid "Add a new rule"
-msgstr "Dodajanje novega pravila"
-
-#: ../extensions/adblock/adblock.glade.h:6
+#: ../extensions/adblock/adblock.ui.h:5
 msgid "Blacklist"
 msgstr "Črn seznam"
 
-#: ../extensions/adblock/adblock.glade.h:7
+#: ../extensions/adblock/adblock.ui.h:6
 msgid "Filterset.G"
 msgstr "Filterset.G"
 
-#: ../extensions/adblock/adblock.glade.h:8
+#: ../extensions/adblock/adblock.ui.h:7
 msgid "Whitelist"
 msgstr "Bel seznam"
 
@@ -397,11 +373,11 @@ msgstr "Omogočeno"
 msgid "Description"
 msgstr "Opis"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:1
 msgid "<b>Loaded Extensions</b>"
 msgstr "<b>Naložene razširitve</b>"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:2
 msgid "Extensions"
 msgstr "Razširitve"
 
@@ -845,6 +821,19 @@ msgstr "Kopiraj _naslov vira"
 msgid "Subscribe"
 msgstr "Naročilo"
 
+#: ../extensions/rss/rss-ui.ui.h:1
+msgid "<b>Select Interesting Feeds</b>"
+msgstr "<b>Izbor zanimivih virov</b>"
+
+#: ../extensions/rss/rss-ui.ui.h:2
+#: ../extensions/rss/rss.ephy-extension.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "Naročanje na vir novic"
+
+#: ../extensions/rss/rss-ui.ui.h:3
+msgid "_Subscribe"
+msgstr "_Naročanje"
+
 #: ../extensions/select-stylesheet/ephy-css-menu.c:140
 msgid "Render the page without using a style"
 msgstr "Izris strani brez uporabe sloga"
@@ -873,59 +862,6 @@ msgstr "Privzeto"
 #: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
 msgid "None"
 msgstr "Brez"
-
-#: ../extensions/sidebar/ephy-sidebar.c:167
-msgid "No Sidebars installed"
-msgstr "Ni nameščenih bočnih oken"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:88
-msgid "_Sidebar"
-msgstr "_Bočno okno"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:89
-msgid "Show or hide the sidebar"
-msgstr "Prikaz ali skritje bočnega okna"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:306
-msgid "Do you really want to remove this sidebar?"
-msgstr "Ali ste prepričani, da želite odstraniti to bočno okno?"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:310
-msgid "There is no way to recover this sidebar after removal."
-msgstr "Po odstranitvi ni načina za povrnitev bočnega okna."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:312
-msgid "Remove Sidebar"
-msgstr "Odstranjevanje bočnega okna"
-
-#. Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:459
-#, c-format
-msgid "The sidebar already contains “%s”"
-msgstr "Bočno okno že vsebuje “%s”"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:463
-msgid "To use this sidebar, select it from the list of available sidebar pages."
-msgstr "Za uporabo tega bočnega okna ga izberite s seznama dostopnih strani bočnih oken."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:466
-#: ../extensions/sidebar/ephy-sidebar-extension.c:492
-msgid "Add Sidebar"
-msgstr "Dodajanje bočnega okna"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:486
-#, c-format
-msgid "Add “%s” to the Sidebar?"
-msgstr "Dodajanje “%s” v bočno okno?"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:490
-#, c-format
-msgid "The source to the new sidebar page is “%s”."
-msgstr "Vir nove strani bočnega okna je “%s”."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:496
-msgid "_Add Sidebar"
-msgstr "_Do"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
 msgid "_Look Up"
@@ -1060,10 +996,6 @@ msgstr "Vleka strani ob srednjem miškinem kliku"
 msgid "Push Scroll"
 msgstr "Pritisk za drsenje"
 
-#: ../extensions/rss/rss.ephy-extension.in.in.h:1
-msgid "News Feed Subscription"
-msgstr "Naročanje na vir novic"
-
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr "Naročilo na vir novic, ki ga ponuja spletna stran, v vašem najljubšem bralniku novic"
@@ -1083,14 +1015,6 @@ msgstr "Izbor slogovne predloge"
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
 msgstr "Izbor med različnimi slogovnimi predlogami, ki jih ponuja spletna stran"
-
-#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
-msgid "Adds a sidebar to windows"
-msgstr "Oknom doda bočno okno"
-
-#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
-msgid "Sidebar"
-msgstr "Bočno okno"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
 msgid "Look up the selected text with a smart bookmark"
@@ -1116,8 +1040,70 @@ msgstr "Določi novo vsebino v zavihkih ozadja"
 msgid "Tab States"
 msgstr "Stanja zavihkov"
 
-#~ msgid "<b>Select Interesting Feeds</b>"
-#~ msgstr "<b>Izbor zanimivih virov</b>"
-#~ msgid "_Subscribe"
-#~ msgstr "_Naročanje"
+#: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:1
+msgid "Tab Key Tab Navigate"
+msgstr "Tabulator za krmarjenje"
+
+#: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:2
+msgid "Use the Tab key to navigate between tabs"
+msgstr "Uporabite tabulator za preklop med zavihki"
+
+#~ msgid ""
+#~ "If this option is enabled, the action will be included in the popup menu "
+#~ "of images."
+#~ msgstr ""
+#~ "Izbrana možnost določi, da bo dejanje vključeno v pojavni meni slik."
+#~ msgid ""
+#~ "If this option is enabled, the action will be included in the popup menu "
+#~ "of links and pages."
+#~ msgstr ""
+#~ "Izbrana možnost določi, da je dejanje vključeno v pojavni meni povezav in "
+#~ "strani."
+#~ msgid "The action description."
+#~ msgstr "Opis dejanja."
+#~ msgid ""
+#~ "The action name. If a character is preceded by an underscore, that "
+#~ "character will be used as the access key for the menu item."
+#~ msgstr ""
+#~ "Ime dejanja. V primeru, da je pred njim podčrtaj, bo znak uporabljen kot "
+#~ "dostopna tipka za predmet menija."
+#~ msgid ""
+#~ "The command to execute when the action is activated. The URL of the link, "
+#~ "image or page will be appended to the command."
+#~ msgstr ""
+#~ "Ukaz za izvedbo, ko je dejanje zagnano. URL povezave, slika ali stran "
+#~ "bodo pripete ukazu."
+#~ msgid "Add a new rule"
+#~ msgstr "Dodajanje novega pravila"
+#~ msgid "No Sidebars installed"
+#~ msgstr "Ni nameščenih bočnih oken"
+#~ msgid "_Sidebar"
+#~ msgstr "_Bočno okno"
+#~ msgid "Show or hide the sidebar"
+#~ msgstr "Prikaz ali skritje bočnega okna"
+#~ msgid "Do you really want to remove this sidebar?"
+#~ msgstr "Ali ste prepričani, da želite odstraniti to bočno okno?"
+#~ msgid "There is no way to recover this sidebar after removal."
+#~ msgstr "Po odstranitvi ni načina za povrnitev bočnega okna."
+#~ msgid "Remove Sidebar"
+#~ msgstr "Odstranjevanje bočnega okna"
+#~ msgid "The sidebar already contains “%s”"
+#~ msgstr "Bočno okno že vsebuje “%s”"
+#~ msgid ""
+#~ "To use this sidebar, select it from the list of available sidebar pages."
+#~ msgstr ""
+#~ "Za uporabo tega bočnega okna ga izberite s seznama dostopnih strani "
+#~ "bočnih oken."
+#~ msgid "Add Sidebar"
+#~ msgstr "Dodajanje bočnega okna"
+#~ msgid "Add “%s” to the Sidebar?"
+#~ msgstr "Dodajanje “%s” v bočno okno?"
+#~ msgid "The source to the new sidebar page is “%s”."
+#~ msgstr "Vir nove strani bočnega okna je “%s”."
+#~ msgid "_Add Sidebar"
+#~ msgstr "_Do"
+#~ msgid "Adds a sidebar to windows"
+#~ msgstr "Oknom doda bočno okno"
+#~ msgid "Sidebar"
+#~ msgstr "Bočno okno"
 
