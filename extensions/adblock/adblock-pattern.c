@@ -71,7 +71,7 @@ adblock_pattern_load_from_file (GHashTable *patterns,
 
 		if (*line == '\0') continue; /* empty line */
 
-		regex = g_regex_new (line, G_REGEX_OPTIMIZE, 0, &error);
+		regex = g_regex_new (line, G_REGEX_CASELESS | G_REGEX_OPTIMIZE, 0, &error);
 
 		if (regex == NULL)
 		{
