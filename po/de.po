@@ -12,9 +12,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Epiphany Extension HEAD\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions&component=general\n"
-"POT-Creation-Date: 2010-01-29 02:33+0000\n"
-"PO-Revision-Date: 2010-02-04 12:25+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=epiphany-extensions&component=general\n"
+"POT-Creation-Date: 2010-02-20 01:48+0000\n"
+"PO-Revision-Date: 2010-02-21 13:29+0100\n"
 "Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,55 +23,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../extensions/actions/action-properties.glade.h:1
+#: ../extensions/actions/action-properties.ui.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
 msgstr "<span weight=\"bold\">Gilt für</span>"
 
-#: ../extensions/actions/action-properties.glade.h:2
+#: ../extensions/actions/action-properties.ui.h:2
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">Allgemein</span>"
 
-#: ../extensions/actions/action-properties.glade.h:3
-msgid "If this option is enabled, the action will be included in the popup menu of images."
-msgstr "Wenn diese Option aktiviert ist, wird die Aktion in das Kontextmenü von Bildern aufgenommen."
-
-#: ../extensions/actions/action-properties.glade.h:4
-msgid "If this option is enabled, the action will be included in the popup menu of links and pages."
-msgstr "Wenn diese Option aktiviert ist, wird die Aktion in das Kontextmenü von Links und Seiten aufgenommen."
-
-#: ../extensions/actions/action-properties.glade.h:5
-msgid "The action description."
-msgstr "Die Aktionsbeschreibung"
-
-#: ../extensions/actions/action-properties.glade.h:6
-msgid "The action name. If a character is preceded by an underscore, that character will be used as the access key for the menu item."
-msgstr "Der Aktionsname. Wenn einem Zeichen ein Unterstrich vorangestellt ist, wird dieses Zeichen als Zugriffstaste für den Menüeintrag verwendet."
-
-#: ../extensions/actions/action-properties.glade.h:7
-msgid "The command to execute when the action is activated. The URL of the link, image or page will be appended to the command."
-msgstr "Der auszuführende Befehl, wenn die Aktion gewählt wird. Die Adresse des Links, des Bilds oder der Seite wird an den Befehl angehängt."
-
-#: ../extensions/actions/action-properties.glade.h:8
+#: ../extensions/actions/action-properties.ui.h:3
 msgid "_Command:"
 msgstr "_Befehl:"
 
-#: ../extensions/actions/action-properties.glade.h:9
+#: ../extensions/actions/action-properties.ui.h:4
 msgid "_Description:"
 msgstr "Besch_reibung:"
 
-#: ../extensions/actions/action-properties.glade.h:10
+#: ../extensions/actions/action-properties.ui.h:5
 msgid "_Images"
 msgstr "B_ilder"
 
-#: ../extensions/actions/action-properties.glade.h:11
+#: ../extensions/actions/action-properties.ui.h:6
 msgid "_Name:"
 msgstr "_Name:"
 
-#: ../extensions/actions/action-properties.glade.h:12
+#: ../extensions/actions/action-properties.ui.h:7
 msgid "_Pages"
 msgstr "_Seiten"
 
-#: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions-editor.ui.h:1
 #: ../extensions/actions/actions.ephy-extension.in.in.h:1
 msgid "Actions"
 msgstr "Aktionen"
@@ -102,7 +83,7 @@ msgid_plural "%i actions selected."
 msgstr[0] "%i Aktion ausgewählt."
 msgstr[1] "%i Aktionen ausgewählt."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:746
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:745
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.c:139
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:194
 #, c-format
@@ -124,51 +105,55 @@ msgstr "Aktionseigenschaften"
 
 #: ../extensions/adblock/adblock-ui.c:263
 msgid ""
-"This list is Copyright © its original author(G). It is relicensed under the GPL with permission.\n"
-"The original list, Filterset.G, can be found at http://www.pierceive.com/filtersetg/.\n"
-"This version has been modified from its original. The changes have not been approved by the original author;\n"
+"This list is Copyright © its original author(G). It is relicensed under the "
+"GPL with permission.\n"
+"The original list, Filterset.G, can be found at http://www.pierceive.com/"
+"filtersetg/.\n"
+"This version has been modified from its original. The changes have not been "
+"approved by the original author;\n"
 "direct any problems to Bugzilla and not to the original author (G).\n"
 msgstr ""
-"Diese Liste unterliegt dem Urheberrecht (Copyright ©) des Ursprungsautors(G).\n"
-"Sie wurde mit Zustimmung unter der GPL relizensiert. Die Originalliste, Filterset.G,\n"
-"kann über http://www.pierceive.com/filtersetg/ bezogen werden. Diese Version wurde\n"
-"gegenüber dem Original verändert. Die Änderungen wurden vom Originalautor nicht anerkannt;\n"
-"melden Sie daher eventuelle Probleme an Bugzilla und nicht an den Originalautor(G).\n"
+"Diese Liste unterliegt dem Urheberrecht (Copyright ©) des Ursprungsautors"
+"(G).\n"
+"Sie wurde mit Zustimmung unter der GPL relizensiert. Die Originalliste, "
+"Filterset.G,\n"
+"kann über http://www.pierceive.com/filtersetg/ bezogen werden. Diese Version "
+"wurde\n"
+"gegenüber dem Original verändert. Die Änderungen wurden vom Originalautor "
+"nicht anerkannt;\n"
+"melden Sie daher eventuelle Probleme an Bugzilla und nicht an den "
+"Originalautor(G).\n"
 
 #: ../extensions/adblock/adblock-ui.c:481
 msgid "Pattern"
 msgstr "Muster"
 
-#: ../extensions/adblock/adblock.glade.h:1
+#: ../extensions/adblock/adblock.ui.h:1
 msgid "<b>Courtesy of Graham Pierce</b>"
 msgstr "<b>Mit Genehmigung von Graham Pierce</b>"
 
-#: ../extensions/adblock/adblock.glade.h:2
+#: ../extensions/adblock/adblock.ui.h:2
 msgid "<b>New rule</b>"
 msgstr "<b>Neue Regel</b>"
 
-#: ../extensions/adblock/adblock.glade.h:3
+#: ../extensions/adblock/adblock.ui.h:3
 msgid "<b>Update rules from original site</b>"
 msgstr "<b>Aktualisierungsregeln der Originalseite</b>"
 
-#: ../extensions/adblock/adblock.glade.h:4
+#: ../extensions/adblock/adblock.ui.h:4
 #: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
 msgstr "Adblock-Editor"
 
-#: ../extensions/adblock/adblock.glade.h:5
-msgid "Add a new rule"
-msgstr "Neue Regel hinzufügen"
-
-#: ../extensions/adblock/adblock.glade.h:6
+#: ../extensions/adblock/adblock.ui.h:5
 msgid "Blacklist"
 msgstr "Blacklist"
 
-#: ../extensions/adblock/adblock.glade.h:7
+#: ../extensions/adblock/adblock.ui.h:6
 msgid "Filterset.G"
 msgstr "Filterset.G"
 
-#: ../extensions/adblock/adblock.glade.h:8
+#: ../extensions/adblock/adblock.ui.h:7
 msgid "Whitelist"
 msgstr "Whitelist"
 
@@ -345,8 +330,12 @@ msgstr ""
 
 #: ../extensions/error-viewer/sgml-validator.c:228
 #: ../extensions/error-viewer/sgml-validator.c:244
-msgid "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml+xml” instead."
-msgstr "Der Dokumententyp ist »XHTML«, die Content-Type-Angabe ist jedoch »text/html«. Verwenden Sie stattdessen »application/xhtml+xml«."
+msgid ""
+"Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
+"+xml” instead."
+msgstr ""
+"Der Dokumententyp ist »XHTML«, die Content-Type-Angabe ist jedoch »text/html«. "
+"Verwenden Sie stattdessen »application/xhtml+xml«."
 
 #: ../extensions/error-viewer/sgml-validator.c:242
 #, c-format
@@ -390,11 +379,11 @@ msgstr "Aktiviert"
 msgid "Description"
 msgstr "Beschreibung"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:1
 msgid "<b>Loaded Extensions</b>"
 msgstr "<b>Geladene Erweiterungen</b>"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:2
 msgid "Extensions"
 msgstr "Erweiterungen"
 
@@ -808,7 +797,9 @@ msgstr "Abonnierung einer Nachrichtenquelle"
 
 #: ../extensions/rss/ephy-rss-extension.c:82
 msgid "Subscribe to this website's news feeds in your favorite news reader"
-msgstr "Abonnieren der Nachrichtenquelle dieser Webseite in Ihrem bevorzugten News-Reader"
+msgstr ""
+"Abonnieren der Nachrichtenquelle dieser Webseite in Ihrem bevorzugten News-"
+"Reader"
 
 #: ../extensions/rss/ephy-rss-extension.c:87
 msgid "_Subscribe to this feed"
@@ -824,7 +815,9 @@ msgstr "Nachrichtenquelle der Webseite abonnieren"
 
 #: ../extensions/rss/rss-ui.c:156
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
-msgstr "<b><i>Kontaktaufnahme zum Feed-Reader fehlgeschlagen. Ist der Reader gestartet?</i></b>"
+msgstr ""
+"<b><i>Kontaktaufnahme zum Feed-Reader fehlgeschlagen. Ist der Reader "
+"gestartet?</i></b>"
 
 #: ../extensions/rss/rss-ui.c:158
 msgid "Retry"
@@ -837,6 +830,19 @@ msgstr "_Adresse der Nachrichtenquelle kopieren"
 #: ../extensions/rss/rss-ui.c:552
 msgid "Subscribe"
 msgstr "Abonnieren"
+
+#: ../extensions/rss/rss-ui.ui.h:1
+msgid "<b>Select Interesting Feeds</b>"
+msgstr "<b>Interessierende Nachrichtenquellen auswählen</b>"
+
+#: ../extensions/rss/rss-ui.ui.h:2
+#: ../extensions/rss/rss.ephy-extension.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "Nachrichtenquellen-Abonnierung"
+
+#: ../extensions/rss/rss-ui.ui.h:3
+msgid "_Subscribe"
+msgstr "Ab_onnieren"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:140
 msgid "Render the page without using a style"
@@ -867,59 +873,6 @@ msgstr "Vorgabe"
 msgid "None"
 msgstr "Keiner"
 
-#: ../extensions/sidebar/ephy-sidebar.c:167
-msgid "No Sidebars installed"
-msgstr "Es sind keine Seitenleisten installiert"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:88
-msgid "_Sidebar"
-msgstr "_Seitenleiste"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:89
-msgid "Show or hide the sidebar"
-msgstr "Die Seitenleiste anzeigen oder ausblenden"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:306
-msgid "Do you really want to remove this sidebar?"
-msgstr "Wollen Sie diese Seitenleiste wirklich entfernen?"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:310
-msgid "There is no way to recover this sidebar after removal."
-msgstr "Es besteht keine Möglichkeit, diese Seitenleiste nach dem Entfernen wiederherzustellen."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:312
-msgid "Remove Sidebar"
-msgstr "Seitenleiste entfernen"
-
-#. Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:459
-#, c-format
-msgid "The sidebar already contains “%s”"
-msgstr "Die Seitenleiste enthält bereits »%s«"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:463
-msgid "To use this sidebar, select it from the list of available sidebar pages."
-msgstr "Um diese Seitenleiste zu verwenden, wählen Sie sie in der Liste der verfügbaren Seitenleisteninhalte aus."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:466
-#: ../extensions/sidebar/ephy-sidebar-extension.c:492
-msgid "Add Sidebar"
-msgstr "Seitenleiste hinzufügen"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:486
-#, c-format
-msgid "Add “%s” to the Sidebar?"
-msgstr "Möchten Sie »%s« zur Seitenleiste hinzufügen?"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:490
-#, c-format
-msgid "The source to the new sidebar page is “%s”."
-msgstr "Die Quelle der neuen Seitenleistenseite ist »%s«."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:496
-msgid "_Add Sidebar"
-msgstr "Seitenleiste _hinzufügen"
-
 #: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
 msgid "_Look Up"
 msgstr "_Nachschlagen"
@@ -934,7 +887,9 @@ msgstr "Suchergebnis in neuem Reiter öffnen"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
 msgid "Open search result in new tab if true, in new window if false"
-msgstr "Falls wahr, wird das Suchergebnis in einem neuen Reiter geöffnet, anderenfalls in einem neuen Fenster"
+msgstr ""
+"Falls wahr, wird das Suchergebnis in einem neuen Reiter geöffnet, "
+"anderenfalls in einem neuen Fenster"
 
 #: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
 msgid "_Soup Fly"
@@ -1015,7 +970,9 @@ msgstr "Greasemonkey"
 
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
 msgid "Run user scripts to modify web pages' behavior"
-msgstr "Mit Benutzerskripten kann das Verhalten von Internet-Seiten  beeinflusst werden"
+msgstr ""
+"Mit Benutzerskripten kann das Verhalten von Internet-Seiten  beeinflusst "
+"werden"
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
 msgid "Java Console"
@@ -1031,7 +988,9 @@ msgstr "Live HTTP-Header"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
-msgstr "Informationen über die momentane Seite sowie deren Verknüpfungen und Medieninhalte anzeigen"
+msgstr ""
+"Informationen über die momentane Seite sowie deren Verknüpfungen und "
+"Medieninhalte anzeigen"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
 msgid "Page Info"
@@ -1053,13 +1012,12 @@ msgstr "Seiteninhalt durch Drücken der mittleren Maustaste verschieben"
 msgid "Push Scroll"
 msgstr "Automatisches Scrollen"
 
-#: ../extensions/rss/rss.ephy-extension.in.in.h:1
-msgid "News Feed Subscription"
-msgstr "Nachrichtenquellen-Abonnierung"
-
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
-msgid "Subscribe to a news feed offered by the webpage in your favorite news reader"
-msgstr "Abonnieren einer von der Webseite angebotenen Nachrichtenquelle in Ihrem bevorzugten News-Reader"
+msgid ""
+"Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr ""
+"Abonnieren einer von der Webseite angebotenen Nachrichtenquelle in Ihrem "
+"bevorzugten News-Reader"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
 msgid "A sample extension"
@@ -1075,15 +1033,9 @@ msgstr "Stilvorlage auswählen"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
-msgstr "Zwischen verschiedenen Stilvorlagen wählen, die von der Web-Seite angeboten werden"
-
-#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
-msgid "Adds a sidebar to windows"
-msgstr "Eine Seitenleiste zu den Fenstern hinzufügen"
-
-#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
-msgid "Sidebar"
-msgstr "Seitenleiste"
+msgstr ""
+"Zwischen verschiedenen Stilvorlagen wählen, die von der Web-Seite angeboten "
+"werden"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
 msgid "Look up the selected text with a smart bookmark"
@@ -1109,46 +1061,149 @@ msgstr "Auf neuen Inhalt in Hintergrundreitern hinweisen"
 msgid "Tab States"
 msgstr "Reiterzustände"
 
-#~ msgid "<b>Select Interesting Feeds</b>"
-#~ msgstr "<b>Interessierende Nachrichtenquellen auswählen</b>"
-#~ msgid "_Subscribe"
-#~ msgstr "Ab_onnieren"
+#: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:1
+msgid "Tab Key Tab Navigate"
+msgstr "Tabulator-Navigation"
+
+#: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:2
+msgid "Use the Tab key to navigate between tabs"
+msgstr "Die Tabulatortaste zur Navigation zwischen den Reitern verwenden"
+
+#~ msgid ""
+#~ "If this option is enabled, the action will be included in the popup menu "
+#~ "of images."
+#~ msgstr ""
+#~ "Wenn diese Option aktiviert ist, wird die Aktion in das Kontextmenü von "
+#~ "Bildern aufgenommen."
+
+#~ msgid ""
+#~ "If this option is enabled, the action will be included in the popup menu "
+#~ "of links and pages."
+#~ msgstr ""
+#~ "Wenn diese Option aktiviert ist, wird die Aktion in das Kontextmenü von "
+#~ "Links und Seiten aufgenommen."
+
+#~ msgid "The action description."
+#~ msgstr "Die Aktionsbeschreibung"
+
+#~ msgid ""
+#~ "The action name. If a character is preceded by an underscore, that "
+#~ "character will be used as the access key for the menu item."
+#~ msgstr ""
+#~ "Der Aktionsname. Wenn einem Zeichen ein Unterstrich vorangestellt ist, "
+#~ "wird dieses Zeichen als Zugriffstaste für den Menüeintrag verwendet."
+
+#~ msgid ""
+#~ "The command to execute when the action is activated. The URL of the link, "
+#~ "image or page will be appended to the command."
+#~ msgstr ""
+#~ "Der auszuführende Befehl, wenn die Aktion gewählt wird. Die Adresse des "
+#~ "Links, des Bilds oder der Seite wird an den Befehl angehängt."
+
+#~ msgid "Add a new rule"
+#~ msgstr "Neue Regel hinzufügen"
+
+#~ msgid "No Sidebars installed"
+#~ msgstr "Es sind keine Seitenleisten installiert"
+
+#~ msgid "_Sidebar"
+#~ msgstr "_Seitenleiste"
+
+#~ msgid "Show or hide the sidebar"
+#~ msgstr "Die Seitenleiste anzeigen oder ausblenden"
+
+#~ msgid "Do you really want to remove this sidebar?"
+#~ msgstr "Wollen Sie diese Seitenleiste wirklich entfernen?"
+
+#~ msgid "There is no way to recover this sidebar after removal."
+#~ msgstr ""
+#~ "Es besteht keine Möglichkeit, diese Seitenleiste nach dem Entfernen "
+#~ "wiederherzustellen."
+
+#~ msgid "Remove Sidebar"
+#~ msgstr "Seitenleiste entfernen"
+
+#~ msgid "The sidebar already contains “%s”"
+#~ msgstr "Die Seitenleiste enthält bereits »%s«"
+
+#~ msgid ""
+#~ "To use this sidebar, select it from the list of available sidebar pages."
+#~ msgstr ""
+#~ "Um diese Seitenleiste zu verwenden, wählen Sie sie in der Liste der "
+#~ "verfügbaren Seitenleisteninhalte aus."
+
+#~ msgid "Add Sidebar"
+#~ msgstr "Seitenleiste hinzufügen"
+
+#~ msgid "Add “%s” to the Sidebar?"
+#~ msgstr "Möchten Sie »%s« zur Seitenleiste hinzufügen?"
+
+#~ msgid "The source to the new sidebar page is “%s”."
+#~ msgstr "Die Quelle der neuen Seitenleistenseite ist »%s«."
+
+#~ msgid "_Add Sidebar"
+#~ msgstr "Seitenleiste _hinzufügen"
+
+#~ msgid "Adds a sidebar to windows"
+#~ msgstr "Eine Seitenleiste zu den Fenstern hinzufügen"
+
+#~ msgid "Sidebar"
+#~ msgstr "Seitenleiste"
+
 #~ msgid "View Creative Commons license"
 #~ msgstr "Creative-Commons-Lizenz anzeigen"
+
 #~ msgid "Action for tagged bookmarks:"
 #~ msgstr "Aktion für getaggte Lesezeichen:"
+
 #~ msgid "Epilicious Configuration"
 #~ msgstr "Epilicious-Konfiguration"
+
 #~ msgid "_Backend:"
 #~ msgstr "_Backend:"
+
 #~ msgid "_Exclude"
 #~ msgstr "_Ausschließen"
+
 #~ msgid "_Include"
 #~ msgstr "_Einschließen"
+
 #~ msgid "_Password:"
 #~ msgstr "_Passwort:"
+
 #~ msgid "_Tag:"
 #~ msgstr "_Tag:"
+
 #~ msgid "Adding new bookmarks and synching topics"
 #~ msgstr "Neue Lesezeichen hinzufügen und Themen abgleichen"
+
 #~ msgid "Removing deleted bookmarks"
 #~ msgstr "Gelöschte Lesezeichen entfernen"
+
 #~ msgid "Retrieving bookmarks from %s"
 #~ msgstr "Lesezeichen von %s holen"
+
 #~ msgid "Retrieving bookmarks from epiphany"
 #~ msgstr "Lesezeichen aus Epiphany holen"
+
 #~ msgid "Retrieving previous synch point"
 #~ msgstr "Vorherigen Abgleichpunkt holen"
+
 #~ msgid "Saving new synch point"
 #~ msgstr "Neuen Abgleichpunkt speichern"
+
 #~ msgid "Synchronizing with %s"
 #~ msgstr "Abgleich mit %s"
+
 #~ msgid "Synchronizing..."
 #~ msgstr "Abgleichen …"
+
 #~ msgid "Epilicious Synchronize"
 #~ msgstr "Epilicious-Abgleich"
+
 #~ msgid "Bookmarks with this topic will be synchronized."
 #~ msgstr "Lesezeichen mit diesem Thema werden abgeglichen."
+
 #~ msgid ""
 #~ "Controls the function of the topic. If this is unset then all bookmarks "
 #~ "with the topic will be synched. If this is set then all bookmarks without "
@@ -1157,109 +1212,151 @@ msgstr "Reiterzustände"
 #~ "Steuert die Funktion des Themas. Falls nicht gesetzt, werden alle "
 #~ "Lesezeichen dieses Themas abgegelichen. Falls gesetzt, werden alle "
 #~ "Lesezeichen abgeglichen, die nicht zu diesem Thema gehören."
+
 #~ msgid "Exclude topic"
 #~ msgstr "Thema ausschließen"
+
 #~ msgid "Shared topic"
 #~ msgstr "Thema freigeben"
+
 #~ msgid ""
 #~ "The backend that epilicious will use for synchronizing bookmarks. Allowed "
 #~ "values: 'diigo', 'ma.gnolia'"
 #~ msgstr ""
 #~ "Das Backend, das Epilicious für den Abgleich von Lesezeichen verwendet. "
 #~ "Mögliche Werte: 'diigo','ma.gnolia'"
+
 #~ msgid "The password that epilicious will use for synchronizing bookmarks."
 #~ msgstr ""
 #~ "Das Passwort, das Epilicious für den Abgleich von Lesezeichen verwendet."
+
 #~ msgid "The username that epilicious will use for synchronizing bookmarks."
 #~ msgstr ""
 #~ "Der Benutzername, den Epilicious für den Abgleich von Lesezeichen "
 #~ "verwendet."
+
 #~ msgid "epilicious backend"
 #~ msgstr "Epilicious-Backend"
+
 #~ msgid "password"
 #~ msgstr "Passwort"
+
 #~ msgid "username"
 #~ msgstr "Benutzername"
+
 #~ msgid "Creative Commons license viewer"
 #~ msgstr "Creative-Commons-Lizenzbetrachter"
+
 #~ msgid ""
 #~ "Shows the Creative Commons license of the current website if available"
 #~ msgstr ""
 #~ "Zeigt die Creative-Commons-Lizenz der aktuellen Webseite, falls verfügbar."
+
 #~ msgid "Synchronize bookmarks with social bookmark sites"
 #~ msgstr "Lesezeichen mit »Social bookmark«-Seiten abgleichen"
+
 #~ msgid "Favicon fallback"
 #~ msgstr "Vorgabe-Favicon"
+
 #~ msgid ""
 #~ "Loads /favicon.ico as favicon if the site doesn't use the standard method"
 #~ msgstr ""
 #~ "Lädt /favicon.ico als Favicon, falls die Seite nicht die Standardmethode "
 #~ "anwendet"
+
 #~ msgid "Opens an interactive Python console"
 #~ msgstr "Öffnet eine interaktive Python-Konsole"
+
 #~ msgid "Python Console"
 #~ msgstr "Python-Konsole"
+
 #~ msgid "A sample extension with mozilla backend"
 #~ msgstr "Eine Mustererweiterung mit Mozilla-Backend"
+
 #~ msgid "Sample (Mozilla)"
 #~ msgstr "Muster (Mozilla)"
+
 #~ msgid "_Actions"
 #~ msgstr "_Aktionen"
+
 #~ msgid "Server _Certificate"
 #~ msgstr "Server-Z_ertifikat"
+
 #~ msgid "Display the web server's certificate"
 #~ msgstr "Das Zertifikat des Web-Servers anzeigen"
+
 #~ msgid ""
 #~ "Error:\n"
 #~ "%s"
 #~ msgstr ""
 #~ "Fehler:\n"
 #~ "%s"
+
 #~ msgid "_Extensions..."
 #~ msgstr "_Erweiterungen …"
+
 #~ msgid "News Feed Subcription"
 #~ msgstr "News-Feed-Abonnierung"
+
 #~ msgid "Dashboard"
 #~ msgstr "Dashboard"
+
 #~ msgid "Send browsing information to Dashboard"
 #~ msgstr "Browsing-Informationen zu Dashboard senden"
+
 #~ msgid "Window “%s” (%d tab)"
 #~ msgid_plural "Window “%s” (%d tabs)"
 #~ msgstr[0] "Fenster »%s« (%d Reiter)"
 #~ msgstr[1] "Fenster »%s« (%d Reiter)"
+
 #~ msgid "Move Tab To Window"
 #~ msgstr "Reiter in anderes _Fenster verschieben"
+
 #~ msgid "Move the current tab to a different window"
 #~ msgstr "Den momentan angezeigten Reiter in ein anderes Fenster verschieben"
+
 #~ msgid "Move tabs between windows"
 #~ msgstr "Reiter in andere Fenster verschieben"
+
 #~ msgid "Tabsmenu"
 #~ msgstr "Reitermenü"
+
 #~ msgid "Add a bookmarks menu to the panel's notification area"
 #~ msgstr "Ein Lesezeichenmenü zum Benachrichtigungsfeld des Panels hinzufügen"
+
 #~ msgid "Bookmarks Tray"
 #~ msgstr "Lesezeichenschublade"
+
 #~ msgid "_Edit Bookmarks"
 #~ msgstr "Lesezeichen _bearbeiten"
+
 #~ msgid "Open the bookmarks window"
 #~ msgstr "Das Lesezeichenverwaltung öffnen"
+
 #~ msgid "Open in _Current Tab"
 #~ msgstr "Im _aktuellen Reiter öffnen"
+
 #~ msgid "Open bookmarks in the current tab of the active window"
 #~ msgstr "Die Lesezeichen im aktuellen Reiter des Fensters öffnen"
+
 #~ msgid "Open in New _Tab"
 #~ msgstr "In _neuem Reiter öffnen"
+
 #~ msgid "Open in New _Window"
 #~ msgstr "In neuem _Fenster öffnen"
+
 #~ msgid "Open bookmarks in new a window"
 #~ msgstr "Die Lesezeichen in einem neuen Fenster öffnen"
+
 #~ msgid "Bookmarks"
 #~ msgstr "Lesezeichen"
+
 #~ msgid "Automatically handle network online/offline status (EXPERIMENTAL!)"
 #~ msgstr ""
 #~ "Den Netzwerkstatus (Online/Offline) automatisch behandeln (EXPERIMENTELL!)"
+
 #~ msgid "Network Connection Monitor"
 #~ msgstr "Netzwerkverbindungsüberwachung"
+
 #~ msgid "_Page Info"
 #~ msgstr "_Seiteninformationen"
-
