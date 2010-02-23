@@ -1,3 +1,26 @@
+===========================
+Epiphany Extensions 2.29.91
+===========================
+
+This release introduces a new extension that enables control+tab as a shortcut
+to switch tabs, removed the sidebar extension and updated the actions extension
+and converts all our legacy glade files to GtkBuilder ones, this means we no
+longer need gtk-builder-convert script.
+
+New extension:
+    - tab-key-tab-navigate: use Control+Tab to switch tabs by Lubomír Sedlář.
+
+Usual extensions:
+    - Actions extension works again with current master.
+    - Sidebar extension was removed.
+
+Added/updated translations:
+    - de, courtesy of Mario Blättermann
+    - es, courtesy of Daniel Mustieles
+    - hu, courtesy of Gabor Kelemen
+    - pt, courtesy of António Lima
+    - sl, courtesy of Andrej Žnidaršič
+
 ==========================
 Epiphany Extensions 2.29.6
 ==========================
