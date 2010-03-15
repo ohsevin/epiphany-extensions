@@ -7,14 +7,15 @@
 #
 # Pauli Virtanen <pauli.virtanen@hut.fi>, 2005.
 # Ilkka Tuohela <hile@iki.fi>, 2005.
-# Tommi Vainikainen <thv@iki.fi>, 2009.
+# Tommi Vainikainen <thv@iki.fi>, 2009-2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2009-08-14 10:53+0300\n"
-"PO-Revision-Date: 2009-08-14 10:55+0300\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=epiphany-extensions\n"
+"POT-Creation-Date: 2010-03-15 11:09+0200\n"
+"PO-Revision-Date: 2010-03-15 11:08+0200\n"
 "Last-Translator: Tommi Vainikainen <thv@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -22,68 +23,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
 
-#: ../extensions/actions/action-properties.glade.h:1
+#: ../extensions/actions/action-properties.ui.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
 msgstr "<span weight=\"bold\">Kohteet</span>"
 
-#: ../extensions/actions/action-properties.glade.h:2
+#: ../extensions/actions/action-properties.ui.h:2
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">Yleistä</span>"
 
-#: ../extensions/actions/action-properties.glade.h:3
-msgid ""
-"If this option is enabled, the action will be included in the popup menu of "
-"images."
-msgstr "Jos tämä on valittuna, toiminto näkyy kuvien ponnahdusvalikossa."
-
-#: ../extensions/actions/action-properties.glade.h:4
-msgid ""
-"If this option is enabled, the action will be included in the popup menu of "
-"links and pages."
-msgstr ""
-"Jos tämä on valittuna, toiminto näkyy linkkien ja sivujen ponnahdusvalikossa."
-
-#: ../extensions/actions/action-properties.glade.h:5
-msgid "The action description."
-msgstr "Toiminnon kuvaus."
-
-#: ../extensions/actions/action-properties.glade.h:6
-msgid ""
-"The action name. If a character is preceded by an underscore, that character "
-"will be used as the access key for the menu item."
-msgstr ""
-"Toiminnon nimi. Jos jotakin merkkiä edeltää alaviiva, siitä tulee valikon "
-"kohdan pikakirjain."
-
-#: ../extensions/actions/action-properties.glade.h:7
-msgid ""
-"The command to execute when the action is activated. The URL of the link, "
-"image or page will be appended to the command."
-msgstr ""
-"Komento, jonka toiminto käynnistää. Epiphany lisää linkin, kuvan tai sivun "
-"URL:n kirjoitetun komennon perään."
-
-#: ../extensions/actions/action-properties.glade.h:8
+#: ../extensions/actions/action-properties.ui.h:3
 msgid "_Command:"
 msgstr "_Komento:"
 
-#: ../extensions/actions/action-properties.glade.h:9
+#: ../extensions/actions/action-properties.ui.h:4
 msgid "_Description:"
 msgstr "K_uvaus:"
 
-#: ../extensions/actions/action-properties.glade.h:10
+#: ../extensions/actions/action-properties.ui.h:5
 msgid "_Images"
 msgstr "Ku_vat"
 
-#: ../extensions/actions/action-properties.glade.h:11
+#: ../extensions/actions/action-properties.ui.h:6
 msgid "_Name:"
 msgstr "_Nimi:"
 
-#: ../extensions/actions/action-properties.glade.h:12
+#: ../extensions/actions/action-properties.ui.h:7
 msgid "_Pages"
 msgstr "_Sivut"
 
-#: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions-editor.ui.h:1
 #: ../extensions/actions/actions.ephy-extension.in.in.h:1
 msgid "Actions"
 msgstr "Toiminnot"
@@ -114,6 +82,13 @@ msgid "%i action selected."
 msgid_plural "%i actions selected."
 msgstr[0] "%i toiminto valittu."
 msgstr[1] "%i toimintoa valittu."
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:745
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:139
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:194
+#, c-format
+msgid "Could not display help: %s"
+msgstr "Ei voitu näyttää ohjetta: %s"
 
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
@@ -150,36 +125,32 @@ msgstr ""
 msgid "Pattern"
 msgstr "Malli"
 
-#: ../extensions/adblock/adblock.glade.h:1
+#: ../extensions/adblock/adblock.ui.h:1
 msgid "<b>Courtesy of Graham Pierce</b>"
 msgstr "<b>Toteuttanut Graham Pierce</b>"
 
-#: ../extensions/adblock/adblock.glade.h:2
+#: ../extensions/adblock/adblock.ui.h:2
 msgid "<b>New rule</b>"
 msgstr "<b>Uusi sääntö</b>"
 
-#: ../extensions/adblock/adblock.glade.h:3
+#: ../extensions/adblock/adblock.ui.h:3
 msgid "<b>Update rules from original site</b>"
 msgstr "<b>Muokkaa sääntöjä alkuperäiseltä sivulta</b>"
 
-#: ../extensions/adblock/adblock.glade.h:4
+#: ../extensions/adblock/adblock.ui.h:4
 #: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
 msgstr "Mainosten poistajan muokkain"
 
-#: ../extensions/adblock/adblock.glade.h:5
-msgid "Add a new rule"
-msgstr "Lisää uusi sääntö"
-
-#: ../extensions/adblock/adblock.glade.h:6
+#: ../extensions/adblock/adblock.ui.h:5
 msgid "Blacklist"
 msgstr "Sulkulista"
 
-#: ../extensions/adblock/adblock.glade.h:7
+#: ../extensions/adblock/adblock.ui.h:6
 msgid "Filterset.G"
 msgstr "Fiterset.G"
 
-#: ../extensions/adblock/adblock.glade.h:8
+#: ../extensions/adblock/adblock.ui.h:7
 msgid "Whitelist"
 msgstr "Päästölista"
 
@@ -396,33 +367,33 @@ msgstr ""
 "HTML-virhe kohteessa %s:\n"
 "Dokumenttityyppiä ei määritelty."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:345
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
 msgid "Enabled"
 msgstr "Käytössä"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:353
-#: ../extensions/rss/rss-ui.c:571
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:372
+#: ../extensions/rss/rss-ui.c:560
 msgid "Description"
 msgstr "Kuvaus"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:1
 msgid "<b>Loaded Extensions</b>"
 msgstr "<b>Käytössä olevat laajennukset</b>"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:2
 msgid "Extensions"
 msgstr "Laajennukset"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:73
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:68
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:74
 msgid "_Extensions"
 msgstr "_Laajennukset"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:70
 msgid "Load and unload extensions"
 msgstr "Ota laajennuksia käyttöön ja poista niitä käytöstä"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:76
 msgid "Help about extensions"
 msgstr "Apua laajennuksista"
 
@@ -817,54 +788,54 @@ msgstr "Sivuston _oikeudet"
 msgid "Manage web site permissions"
 msgstr "Hallitse oikeuksia sivustokohtaisesti"
 
-#: ../extensions/rss/ephy-rss-extension.c:79
+#: ../extensions/rss/ephy-rss-extension.c:80
 msgid "News Feeds Subscription"
 msgstr "Uutissyötteiden tilaus"
 
-#: ../extensions/rss/ephy-rss-extension.c:81
+#: ../extensions/rss/ephy-rss-extension.c:82
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr "Tilaa tämän sivuston uutissyöte haluamaasi syötteiden lukuohjelmaan"
 
-#: ../extensions/rss/ephy-rss-extension.c:86
+#: ../extensions/rss/ephy-rss-extension.c:87
 msgid "_Subscribe to this feed"
 msgstr "_Tilaa sivuston uutissyöte"
 
-#: ../extensions/rss/ephy-rss-extension.c:88
+#: ../extensions/rss/ephy-rss-extension.c:89
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Tilaa tämän sivuston uutissyöte haluamaasi syötteiden lukuohjelmaan"
 
-#: ../extensions/rss/ephy-rss-extension.c:361
+#: ../extensions/rss/ephy-rss-extension.c:394
 msgid "Subscribe to site's news feed"
 msgstr "Tilaa sivuston uutissyöte"
 
-#: ../extensions/rss/rss-ui.c:153
+#: ../extensions/rss/rss-ui.c:156
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr ""
 "<b><i>Uutissyötteiden lukuohjelmaan ei saatu yhteyttä. Onko ohjelma "
 "käynnissä?</i></b>"
 
-#: ../extensions/rss/rss-ui.c:155
+#: ../extensions/rss/rss-ui.c:158
 msgid "Retry"
 msgstr "Yritä uudelleen"
 
-#: ../extensions/rss/rss-ui.c:283
+#: ../extensions/rss/rss-ui.c:288
 msgid "_Copy Feed Address"
 msgstr "_Kopioi syötteen osoite"
 
-#: ../extensions/rss/rss-ui.c:563
+#: ../extensions/rss/rss-ui.c:552
 msgid "Subscribe"
 msgstr "Tilaa"
 
-#: ../extensions/rss/rss-ui.glade.h:1
+#: ../extensions/rss/rss-ui.ui.h:1
 msgid "<b>Select Interesting Feeds</b>"
 msgstr "<b>Valitse kiinnostavat virrat</b>"
 
-#: ../extensions/rss/rss-ui.glade.h:2
+#: ../extensions/rss/rss-ui.ui.h:2
 #: ../extensions/rss/rss.ephy-extension.in.in.h:1
 msgid "News Feed Subscription"
 msgstr "Uutissyötteen tilaus"
 
-#: ../extensions/rss/rss-ui.glade.h:3
+#: ../extensions/rss/rss-ui.ui.h:3
 msgid "_Subscribe"
 msgstr "_Tilaa"
 
@@ -896,62 +867,6 @@ msgstr "Oletus"
 #: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
 msgid "None"
 msgstr "Ei mikään"
-
-#: ../extensions/sidebar/ephy-sidebar.c:167
-msgid "No Sidebars installed"
-msgstr "Ei asennettuja sivupaneeleita"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:88
-msgid "_Sidebar"
-msgstr "_Sivupaneeli"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:89
-msgid "Show or hide the sidebar"
-msgstr "Näytä tai piilota sivupaneeli"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:306
-msgid "Do you really want to remove this sidebar?"
-msgstr "Haluatko varmasti poistaa sivupalkin?"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:310
-msgid "There is no way to recover this sidebar after removal."
-msgstr "Sivupalkkia ei voi palauttaa poiston jälkeen."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:312
-msgid "Remove Sidebar"
-msgstr "Poista sivupalkki"
-
-#. Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:459
-#, c-format
-msgid "The sidebar already contains “%s”"
-msgstr "Sivupalkki sisältää jo kohteen \"%s\""
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:463
-msgid ""
-"To use this sidebar, select it from the list of available sidebar pages."
-msgstr ""
-"Valitse tämä palkki saatavilla olevien sivupalkkien listasta, jos haluat "
-"käyttää sitä."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:466
-#: ../extensions/sidebar/ephy-sidebar-extension.c:492
-msgid "Add Sidebar"
-msgstr "Lisää sivupaneeli"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:486
-#, c-format
-msgid "Add “%s” to the Sidebar?"
-msgstr "Lisätäänkö \"%s\" sivupaneeliin?"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:490
-#, c-format
-msgid "The source to the new sidebar page is “%s”."
-msgstr "Uuden sivupaneelin sivun lähde on \"%s\"."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:496
-msgid "_Add Sidebar"
-msgstr "_Lisää sivupaneeli"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
 msgid "_Look Up"
@@ -1109,14 +1024,6 @@ msgstr "Valitse tyylisivu"
 msgid "Select between different stylesheets offered by the web page"
 msgstr "Valitse jokin sivuston tarjoamista tyylisivuista"
 
-#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
-msgid "Adds a sidebar to windows"
-msgstr "Lisää sivupaneelin ikkunoihin"
-
-#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
-msgid "Sidebar"
-msgstr "Sivupaneeli"
-
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
 msgid "Look up the selected text with a smart bookmark"
 msgstr "Etsi valittu teksti älykirjanmerkillä"
@@ -1140,6 +1047,91 @@ msgstr "Ilmaise taustalla olevien välilehtien uusi sisältö"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Välilehtien tilat"
+
+#: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:1
+msgid "Tab Key Tab Navigate"
+msgstr "Sarkain-näppäimen välilehtinavigointi"
+
+#: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:2
+msgid "Use the Tab key to navigate between tabs"
+msgstr "Käytä Sarkain-näppäintä siirtymään välilehtien välillä"
+
+#~ msgid ""
+#~ "If this option is enabled, the action will be included in the popup menu "
+#~ "of images."
+#~ msgstr "Jos tämä on valittuna, toiminto näkyy kuvien ponnahdusvalikossa."
+
+#~ msgid ""
+#~ "If this option is enabled, the action will be included in the popup menu "
+#~ "of links and pages."
+#~ msgstr ""
+#~ "Jos tämä on valittuna, toiminto näkyy linkkien ja sivujen "
+#~ "ponnahdusvalikossa."
+
+#~ msgid "The action description."
+#~ msgstr "Toiminnon kuvaus."
+
+#~ msgid ""
+#~ "The action name. If a character is preceded by an underscore, that "
+#~ "character will be used as the access key for the menu item."
+#~ msgstr ""
+#~ "Toiminnon nimi. Jos jotakin merkkiä edeltää alaviiva, siitä tulee valikon "
+#~ "kohdan pikakirjain."
+
+#~ msgid ""
+#~ "The command to execute when the action is activated. The URL of the link, "
+#~ "image or page will be appended to the command."
+#~ msgstr ""
+#~ "Komento, jonka toiminto käynnistää. Epiphany lisää linkin, kuvan tai "
+#~ "sivun URL:n kirjoitetun komennon perään."
+
+#~ msgid "Add a new rule"
+#~ msgstr "Lisää uusi sääntö"
+
+#~ msgid "No Sidebars installed"
+#~ msgstr "Ei asennettuja sivupaneeleita"
+
+#~ msgid "_Sidebar"
+#~ msgstr "_Sivupaneeli"
+
+#~ msgid "Show or hide the sidebar"
+#~ msgstr "Näytä tai piilota sivupaneeli"
+
+#~ msgid "Do you really want to remove this sidebar?"
+#~ msgstr "Haluatko varmasti poistaa sivupalkin?"
+
+#~ msgid "There is no way to recover this sidebar after removal."
+#~ msgstr "Sivupalkkia ei voi palauttaa poiston jälkeen."
+
+#~ msgid "Remove Sidebar"
+#~ msgstr "Poista sivupalkki"
+
+#~ msgid "The sidebar already contains “%s”"
+#~ msgstr "Sivupalkki sisältää jo kohteen \"%s\""
+
+#~ msgid ""
+#~ "To use this sidebar, select it from the list of available sidebar pages."
+#~ msgstr ""
+#~ "Valitse tämä palkki saatavilla olevien sivupalkkien listasta, jos haluat "
+#~ "käyttää sitä."
+
+#~ msgid "Add Sidebar"
+#~ msgstr "Lisää sivupaneeli"
+
+#~ msgid "Add “%s” to the Sidebar?"
+#~ msgstr "Lisätäänkö \"%s\" sivupaneeliin?"
+
+#~ msgid "The source to the new sidebar page is “%s”."
+#~ msgstr "Uuden sivupaneelin sivun lähde on \"%s\"."
+
+#~ msgid "_Add Sidebar"
+#~ msgstr "_Lisää sivupaneeli"
+
+#~ msgid "Adds a sidebar to windows"
+#~ msgstr "Lisää sivupaneelin ikkunoihin"
+
+#~ msgid "Sidebar"
+#~ msgstr "Sivupaneeli"
 
 #~ msgid "View Creative Commons license"
 #~ msgstr "Näytä Creative Commons-lisenssi"
