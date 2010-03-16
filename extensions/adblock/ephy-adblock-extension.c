@@ -391,7 +391,7 @@ switch_page_cb (GtkNotebook *notebook,
 		EphyWindow *window)
 {
 	/* FIXME: this shouldn't happen anymore with gtk 2.10 ! Test & remove */
-	if (GTK_WIDGET_REALIZED (window) == FALSE) return; /* on startup */
+	if (gtk_widget_get_realized (window) == FALSE) return; /* on startup */
 
 	update_statusbar (window);
 }

@@ -358,7 +358,7 @@ ephy_css_menu_set_window (EphyCSSMenu *menu, EphyWindow *window)
 	g_signal_connect (window, "notify::active-child",
 			  G_CALLBACK (sync_active_tab_cb), menu);
 
-	if (GTK_WIDGET_REALIZED (window))
+	if (gtk_widget_get_realized (window))
 	{
 		embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 		ephy_css_menu_set_embed (menu, embed);

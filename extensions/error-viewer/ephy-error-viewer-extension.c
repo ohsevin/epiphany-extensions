@@ -320,7 +320,7 @@ switch_page_cb (GtkNotebook *notebook,
 		EphyWindow *window)
 {
 	g_return_if_fail (EPHY_IS_WINDOW (window));
-	if (GTK_WIDGET_REALIZED (window) == FALSE) return; /* on startup */
+	if (gtk_widget_get_realized (window) == FALSE) return; /* on startup */
 
 	update_actions (window);
 }

@@ -223,7 +223,7 @@ switch_page_cb (GtkNotebook *notebook,
 {
 	EphyEmbed *embed;
 
-	if (GTK_WIDGET_REALIZED (window) == FALSE) return; /* on startup */
+	if (gtk_widget_get_realized (window) == FALSE) return; /* on startup */
 
 	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 	update_action (window, embed);

@@ -303,7 +303,7 @@ ephy_rss_sync_active_tab (EphyWindow *window,
 			  GParamSpec *pspec,
 			  gpointer data)
 {
-	if (GTK_WIDGET_REALIZED (window) == FALSE) return; /* on startup */
+	if (gtk_widget_get_realized (window) == FALSE) return; /* on startup */
 
 	ephy_rss_update_action (window);
 }
