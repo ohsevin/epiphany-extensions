@@ -5,14 +5,14 @@
 # Jordi Mallach <jordi@sindominio.net>, 2004.
 # Esteve Blanch Sanmartí <anakinjinn@gmail.com>, 2006.
 # Francesc Vilches <francesc.vilches@gmail.com>, 2007.
-# David Planella Molas <david.planella@gmail.com>, 2007, 2008, 2009.
+# David Planella Molas <david.planella@gmail.com>, 2007, 2008, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2009-12-07 20:26+0100\n"
-"PO-Revision-Date: 2009-11-25 19:06+0100\n"
+"POT-Creation-Date: 2010-03-17 08:40+0100\n"
+"PO-Revision-Date: 2010-03-14 12:24+0100\n"
 "Last-Translator: David Planella <david.planella@softcatala.org>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,71 +21,35 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n!=1;\n"
 "X-Poedit-Language: Catalan\n"
 
-#: ../extensions/actions/action-properties.glade.h:1
+#: ../extensions/actions/action-properties.ui.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
 msgstr "<span weight=\"bold\">Aplicable a</span>"
 
-#: ../extensions/actions/action-properties.glade.h:2
+#: ../extensions/actions/action-properties.ui.h:2
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">General</span>"
 
-#: ../extensions/actions/action-properties.glade.h:3
-msgid ""
-"If this option is enabled, the action will be included in the popup menu of "
-"images."
-msgstr ""
-"Si aquesta opció està activada, s'inclourà l'acció al menú emergent de les "
-"imatges."
-
-#: ../extensions/actions/action-properties.glade.h:4
-msgid ""
-"If this option is enabled, the action will be included in the popup menu of "
-"links and pages."
-msgstr ""
-"Si aquesta opció està activada, s'inclourà l'acció al menú emergent "
-"d'enllaços i pàgines."
-
-#: ../extensions/actions/action-properties.glade.h:5
-msgid "The action description."
-msgstr "Descripció de l'acció."
-
-#: ../extensions/actions/action-properties.glade.h:6
-msgid ""
-"The action name. If a character is preceded by an underscore, that character "
-"will be used as the access key for the menu item."
-msgstr ""
-"El nom de l'acció. Si el caràcter està precedit per un caràcter de "
-"subratllat, s'utilitzarà com a tecla d'accés per a l'element del menú."
-
-#: ../extensions/actions/action-properties.glade.h:7
-msgid ""
-"The command to execute when the action is activated. The URL of the link, "
-"image or page will be appended to the command."
-msgstr ""
-"L'ordre a executar en activar-se l'acció. L'URL de l'enllaç, imatge o pàgina "
-"s'afegirà a l'ordre."
-
-#: ../extensions/actions/action-properties.glade.h:8
+#: ../extensions/actions/action-properties.ui.h:3
 msgid "_Command:"
 msgstr "_Ordre:"
 
-#: ../extensions/actions/action-properties.glade.h:9
+#: ../extensions/actions/action-properties.ui.h:4
 msgid "_Description:"
 msgstr "_Descripció:"
 
-#: ../extensions/actions/action-properties.glade.h:10
+#: ../extensions/actions/action-properties.ui.h:5
 msgid "_Images"
 msgstr "_Imatges"
 
-#: ../extensions/actions/action-properties.glade.h:11
+#: ../extensions/actions/action-properties.ui.h:6
 msgid "_Name:"
 msgstr "_Nom:"
 
-#: ../extensions/actions/action-properties.glade.h:12
+#: ../extensions/actions/action-properties.ui.h:7
 msgid "_Pages"
 msgstr "_Pàgines"
 
-#: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions-editor.ui.h:1
 #: ../extensions/actions/actions.ephy-extension.in.in.h:1
 msgid "Actions"
 msgstr "Accions"
@@ -116,6 +80,13 @@ msgid "%i action selected."
 msgid_plural "%i actions selected."
 msgstr[0] "%i acció seleccionada."
 msgstr[1] "%i accions seleccionades."
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:745
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:139
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:194
+#, c-format
+msgid "Could not display help: %s"
+msgstr "No s'ha pogut mostrar l'ajuda: %s"
 
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
@@ -153,36 +124,32 @@ msgstr ""
 msgid "Pattern"
 msgstr "Patró"
 
-#: ../extensions/adblock/adblock.glade.h:1
+#: ../extensions/adblock/adblock.ui.h:1
 msgid "<b>Courtesy of Graham Pierce</b>"
 msgstr "<b>Per cortesia d'en Graham Pierce</b>"
 
-#: ../extensions/adblock/adblock.glade.h:2
+#: ../extensions/adblock/adblock.ui.h:2
 msgid "<b>New rule</b>"
 msgstr "<b>Regla nova</b>"
 
-#: ../extensions/adblock/adblock.glade.h:3
+#: ../extensions/adblock/adblock.ui.h:3
 msgid "<b>Update rules from original site</b>"
 msgstr "<b>Actualitza les regles des del lloc web original</b>"
 
-#: ../extensions/adblock/adblock.glade.h:4
+#: ../extensions/adblock/adblock.ui.h:4
 #: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
 msgstr "Editor del blocador de publicitat"
 
-#: ../extensions/adblock/adblock.glade.h:5
-msgid "Add a new rule"
-msgstr "Afegeix una regla nova"
-
-#: ../extensions/adblock/adblock.glade.h:6
+#: ../extensions/adblock/adblock.ui.h:5
 msgid "Blacklist"
 msgstr "Llista negra"
 
-#: ../extensions/adblock/adblock.glade.h:7
+#: ../extensions/adblock/adblock.ui.h:6
 msgid "Filterset.G"
 msgstr "Filtres del Filterset.G"
 
-#: ../extensions/adblock/adblock.glade.h:8
+#: ../extensions/adblock/adblock.ui.h:7
 msgid "Whitelist"
 msgstr "Llista blanca"
 
@@ -400,33 +367,33 @@ msgstr ""
 "S'ha produït un error HTML a %s:\n"
 "No s'ha especificat un tipus de document vàlid."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:345
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
 msgid "Enabled"
 msgstr "Habilitat"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:353
-#: ../extensions/rss/rss-ui.c:572
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:372
+#: ../extensions/rss/rss-ui.c:560
 msgid "Description"
 msgstr "Descripció"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:1
 msgid "<b>Loaded Extensions</b>"
 msgstr "<b>Extensions carregades</b>"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:2
 msgid "Extensions"
 msgstr "Extensions"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:73
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:68
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:74
 msgid "_Extensions"
 msgstr "_Extensions"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:70
 msgid "Load and unload extensions"
 msgstr "Carrega i descarrega extensions"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:76
 msgid "Help about extensions"
 msgstr "Ajuda de les extensions"
 
@@ -821,56 +788,56 @@ msgstr "_Permisos del lloc web"
 msgid "Manage web site permissions"
 msgstr "Administra els permisos del lloc web"
 
-#: ../extensions/rss/ephy-rss-extension.c:79
+#: ../extensions/rss/ephy-rss-extension.c:80
 msgid "News Feeds Subscription"
 msgstr "Subscripció a canals de notícies"
 
-#: ../extensions/rss/ephy-rss-extension.c:81
+#: ../extensions/rss/ephy-rss-extension.c:82
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr ""
 "Subscriviu-vos al canal de notícies d'aquest web utilitzant el vostre lector "
 "de notícies preferit"
 
-#: ../extensions/rss/ephy-rss-extension.c:86
+#: ../extensions/rss/ephy-rss-extension.c:87
 msgid "_Subscribe to this feed"
 msgstr "_Subscriviu-vos al canal"
 
-#: ../extensions/rss/ephy-rss-extension.c:88
+#: ../extensions/rss/ephy-rss-extension.c:89
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Subscriviu-vos al canal amb el vostre lector de notícies preferit"
 
-#: ../extensions/rss/ephy-rss-extension.c:365
+#: ../extensions/rss/ephy-rss-extension.c:394
 msgid "Subscribe to site's news feed"
 msgstr "Subscriviu-vos al canal de notícies del lloc web"
 
-#: ../extensions/rss/rss-ui.c:153
+#: ../extensions/rss/rss-ui.c:156
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr ""
 "<b><i>No s'ha pogut contactar amb el lector de canals de notícies; s'està "
 "executant?</i></b>"
 
-#: ../extensions/rss/rss-ui.c:155
+#: ../extensions/rss/rss-ui.c:158
 msgid "Retry"
 msgstr "Reintenta"
 
-#: ../extensions/rss/rss-ui.c:283
+#: ../extensions/rss/rss-ui.c:288
 msgid "_Copy Feed Address"
 msgstr "_Copia l'adreça del canal"
 
-#: ../extensions/rss/rss-ui.c:564
+#: ../extensions/rss/rss-ui.c:552
 msgid "Subscribe"
 msgstr "Subscriu"
 
-#: ../extensions/rss/rss-ui.glade.h:1
+#: ../extensions/rss/rss-ui.ui.h:1
 msgid "<b>Select Interesting Feeds</b>"
 msgstr "<b>Selecciona canals interessants</b>"
 
-#: ../extensions/rss/rss-ui.glade.h:2
+#: ../extensions/rss/rss-ui.ui.h:2
 #: ../extensions/rss/rss.ephy-extension.in.in.h:1
 msgid "News Feed Subscription"
 msgstr "Subscripció a canals de notícies"
 
-#: ../extensions/rss/rss-ui.glade.h:3
+#: ../extensions/rss/rss-ui.ui.h:3
 msgid "_Subscribe"
 msgstr "_Subscriu-m'hi"
 
@@ -902,62 +869,6 @@ msgstr "Predeterminat"
 #: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
 msgid "None"
 msgstr "Cap"
-
-#: ../extensions/sidebar/ephy-sidebar.c:167
-msgid "No Sidebars installed"
-msgstr "No hi ha cap barra lateral instal·lada"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:88
-msgid "_Sidebar"
-msgstr "Barra _lateral"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:89
-msgid "Show or hide the sidebar"
-msgstr "Mostra o amaga la barra lateral"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:306
-msgid "Do you really want to remove this sidebar?"
-msgstr "Esteu segur de voler suprimir aquesta barra lateral?"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:310
-msgid "There is no way to recover this sidebar after removal."
-msgstr "Un cop s'hagi suprimit aquesta barra lateral no es podrà recuperar."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:312
-msgid "Remove Sidebar"
-msgstr "Suprimeix la barra lateral"
-
-#. Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:459
-#, c-format
-msgid "The sidebar already contains “%s”"
-msgstr "«%s» ja és a la barra lateral"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:463
-msgid ""
-"To use this sidebar, select it from the list of available sidebar pages."
-msgstr ""
-"Per a utilitzar aquesta barra lateral, seleccioneu-la a la llista de barres "
-"laterals disponibles."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:466
-#: ../extensions/sidebar/ephy-sidebar-extension.c:492
-msgid "Add Sidebar"
-msgstr "Afegeix la barra lateral"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:486
-#, c-format
-msgid "Add “%s” to the Sidebar?"
-msgstr "Voleu afegir «%s» a la barra lateral?"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:490
-#, c-format
-msgid "The source to the new sidebar page is “%s”."
-msgstr "L'origen de la pàgina nova de la barra lateral és «%s»."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:496
-msgid "_Add Sidebar"
-msgstr "_Afegeix la barra lateral"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
 msgid "_Look Up"
@@ -1121,14 +1032,6 @@ msgid "Select between different stylesheets offered by the web page"
 msgstr ""
 "Seleccioneu entre les diferents fulles d'estil ofertes per la pàgina web"
 
-#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
-msgid "Adds a sidebar to windows"
-msgstr "Afegeix una barra lateral a les finestres"
-
-#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
-msgid "Sidebar"
-msgstr "Barra lateral"
-
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
 msgid "Look up the selected text with a smart bookmark"
 msgstr "Cerca el text seleccionat amb una adreça d'interès intel·ligent"
@@ -1152,6 +1055,93 @@ msgstr "Indica contingut nou a les pestanyes en segon pla"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Estat de les pestanyes"
+
+#: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:1
+msgid "Tab Key Tab Navigate"
+msgstr "Navegació per pestanyes amb la tecla de tabulació"
+
+#: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:2
+msgid "Use the Tab key to navigate between tabs"
+msgstr "Utilitza la tecla de tabulació per navegar per les pestanyes"
+
+#~ msgid ""
+#~ "If this option is enabled, the action will be included in the popup menu "
+#~ "of images."
+#~ msgstr ""
+#~ "Si aquesta opció està activada, s'inclourà l'acció al menú emergent de "
+#~ "les imatges."
+
+#~ msgid ""
+#~ "If this option is enabled, the action will be included in the popup menu "
+#~ "of links and pages."
+#~ msgstr ""
+#~ "Si aquesta opció està activada, s'inclourà l'acció al menú emergent "
+#~ "d'enllaços i pàgines."
+
+#~ msgid "The action description."
+#~ msgstr "Descripció de l'acció."
+
+#~ msgid ""
+#~ "The action name. If a character is preceded by an underscore, that "
+#~ "character will be used as the access key for the menu item."
+#~ msgstr ""
+#~ "El nom de l'acció. Si el caràcter està precedit per un caràcter de "
+#~ "subratllat, s'utilitzarà com a tecla d'accés per a l'element del menú."
+
+#~ msgid ""
+#~ "The command to execute when the action is activated. The URL of the link, "
+#~ "image or page will be appended to the command."
+#~ msgstr ""
+#~ "L'ordre a executar en activar-se l'acció. L'URL de l'enllaç, imatge o "
+#~ "pàgina s'afegirà a l'ordre."
+
+#~ msgid "Add a new rule"
+#~ msgstr "Afegeix una regla nova"
+
+#~ msgid "No Sidebars installed"
+#~ msgstr "No hi ha cap barra lateral instal·lada"
+
+#~ msgid "_Sidebar"
+#~ msgstr "Barra _lateral"
+
+#~ msgid "Show or hide the sidebar"
+#~ msgstr "Mostra o amaga la barra lateral"
+
+#~ msgid "Do you really want to remove this sidebar?"
+#~ msgstr "Esteu segur de voler suprimir aquesta barra lateral?"
+
+#~ msgid "There is no way to recover this sidebar after removal."
+#~ msgstr "Un cop s'hagi suprimit aquesta barra lateral no es podrà recuperar."
+
+#~ msgid "Remove Sidebar"
+#~ msgstr "Suprimeix la barra lateral"
+
+#~ msgid "The sidebar already contains “%s”"
+#~ msgstr "«%s» ja és a la barra lateral"
+
+#~ msgid ""
+#~ "To use this sidebar, select it from the list of available sidebar pages."
+#~ msgstr ""
+#~ "Per a utilitzar aquesta barra lateral, seleccioneu-la a la llista de "
+#~ "barres laterals disponibles."
+
+#~ msgid "Add Sidebar"
+#~ msgstr "Afegeix la barra lateral"
+
+#~ msgid "Add “%s” to the Sidebar?"
+#~ msgstr "Voleu afegir «%s» a la barra lateral?"
+
+#~ msgid "The source to the new sidebar page is “%s”."
+#~ msgstr "L'origen de la pàgina nova de la barra lateral és «%s»."
+
+#~ msgid "_Add Sidebar"
+#~ msgstr "_Afegeix la barra lateral"
+
+#~ msgid "Adds a sidebar to windows"
+#~ msgstr "Afegeix una barra lateral a les finestres"
+
+#~ msgid "Sidebar"
+#~ msgstr "Barra lateral"
 
 #~ msgid "View Creative Commons license"
 #~ msgstr "Mostra la llicència Creative Commons"
