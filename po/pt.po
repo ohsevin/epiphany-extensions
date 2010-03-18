@@ -2,21 +2,22 @@
 # Copyright © 2004, 2008, 2009 epiphany-extensions
 # This file is distributed under the same license as the epiphany-extensions package.
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2004.
-#
 # António Lima <amrlima@gmail.com>, 2008, 200, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.6\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2010-02-22 00:52+0000\n"
-"PO-Revision-Date: 2010-02-18 22:31-0100\n"
+"POT-Creation-Date: 2010-03-18 01:22+0000\n"
+"PO-Revision-Date: 2010-03-13 23:21+0000\n"
 "Last-Translator: António Lima <amrlima@gmail.com>\n"
-"Language-Team: Português <gnome_pt@yahoogroups.com>\n"
+"Language-Team: gnome_pt@yahoogroups.com\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8 bit\n"
+"Language: pt\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.5.2\n"
 
 #: ../extensions/actions/action-properties.ui.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
@@ -1049,11 +1050,11 @@ msgstr "Estado dos Separadores"
 
 #: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:1
 msgid "Tab Key Tab Navigate"
-msgstr ""
+msgstr "Tecla Tabulador Navegar Separadores"
 
 #: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:2
 msgid "Use the Tab key to navigate between tabs"
-msgstr ""
+msgstr "Utilize a tecla Tabulador para navegar entre separadores"
 
 #~ msgid ""
 #~ "If this option is enabled, the action will be included in the popup menu "
@@ -1202,105 +1203,3 @@ msgstr ""
 
 #~ msgid "Shared topic"
 #~ msgstr "Tópico partilhado"
-
-#~| msgid ""
-#~| "The backend that epilicious will use for synchronizing bookmarks. "
-#~| "Allowed value: 'ma.gnolia'"
-#~ msgid ""
-#~ "The backend that epilicious will use for synchronizing bookmarks. Allowed "
-#~ "values: 'diigo', 'ma.gnolia'"
-#~ msgstr ""
-#~ "O suporte que o epilicious irá utilizar para a sincronização de "
-#~ "marcadores. Valor permitido: 'diigo' , 'ma.gnolia'"
-
-#~ msgid "The password that epilicious will use for synchronizing bookmarks."
-#~ msgstr ""
-#~ "A senha que o epilicious irá utilizar para a sincronização de marcadores."
-
-#~ msgid "The username that epilicious will use for synchronizing bookmarks."
-#~ msgstr ""
-#~ "O nome de utilizador que o epilicious irá utilizar para a sincronização "
-#~ "de marcadores."
-
-#~ msgid "epilicious backend"
-#~ msgstr "suporte do epilicious"
-
-#~ msgid "password"
-#~ msgstr "senha"
-
-#~ msgid "username"
-#~ msgstr "nome de utilizador"
-
-#~ msgid "Creative Commons license viewer"
-#~ msgstr "Visualizador de licenças Creative Commons"
-
-#~ msgid ""
-#~ "Shows the Creative Commons license of the current website if available"
-#~ msgstr ""
-#~ "Apresenta a licença Creative Commons da página actual, se disponível"
-
-#~ msgid "Synchronize bookmarks with social bookmark sites"
-#~ msgstr "Sincronizar marcadores com sites de marcadores sociais"
-
-#~ msgid "Favicon fallback"
-#~ msgstr "Ícone favorito de recurso"
-
-#~ msgid ""
-#~ "Loads /favicon.ico as favicon if the site doesn't use the standard method"
-#~ msgstr ""
-#~ "Carrega /favicon.ico como ícone favorito se a página não utilizar o "
-#~ "método padrão"
-
-#~ msgid "Opens an interactive Python console"
-#~ msgstr "Abre uma consola Python interactiva"
-
-#~ msgid "Python Console"
-#~ msgstr "Consola Python"
-
-#~ msgid "A sample extension with mozilla backend"
-#~ msgstr "Um exemplo de extensão com suporte mozilla"
-
-#~ msgid "Sample (Mozilla)"
-#~ msgstr "Exemplo (Mozilla)"
-
-#~ msgid "Certificate Manager"
-#~ msgstr "Gestor de Certificados"
-
-#~ msgid "Server _Certificate"
-#~ msgstr "Servidor de _Certificados"
-
-#~ msgid "Display the web server's certificate"
-#~ msgstr "Apresentar o certificado do servidor web"
-
-#~ msgid ""
-#~ "Error:\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Erro:\n"
-#~ "%s"
-
-#~ msgid ""
-#~ "Javascript error in %s on line %d:\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Erro de Javascript em %s na linha %d:\n"
-#~ "%s"
-
-#~ msgid "Show or hide unrequested popup windows from this site"
-#~ msgstr "Apresentar ou esconder janelas de popup indesejadas nesta página"
-
-#~ msgid "%d popup window blocked"
-#~ msgid_plural "%d popup windows blocked"
-#~ msgstr[0] "%d janela de popup bloqueada"
-#~ msgstr[1] "%d janelas de popup bloqueadas"
-
-#~ msgid "Window '%s' (%d tab)"
-#~ msgid_plural "Window '%s' (%d tabs)"
-#~ msgstr[0] "Janela '%s' (%d separador)"
-#~ msgstr[1] "Janela '%s' (%d separadores)"
-
-#~ msgid "Move Tab To Window"
-#~ msgstr "Mover Separador Para a Janela"
-
-#~ msgid "Move the current tab to a different window"
-#~ msgstr "Move o separador actual para uma janela diferente"
