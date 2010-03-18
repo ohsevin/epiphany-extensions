@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2008, 2009.
+# Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2008, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: eu\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2009-08-29 18:45+0200\n"
-"PO-Revision-Date: 2009-08-29 18:47+0200\n"
+"POT-Creation-Date: 2010-03-18 11:20+0100\n"
+"PO-Revision-Date: 2010-03-18 11:21+0100\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>\n"
 "Language-Team: Basque <itzulpena@euskalgnu.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,69 +17,35 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ../extensions/actions/action-properties.glade.h:1
+#: ../extensions/actions/action-properties.ui.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
 msgstr "<span weight=\"bold\">Aplikatu honi</span>"
 
-#: ../extensions/actions/action-properties.glade.h:2
+#: ../extensions/actions/action-properties.ui.h:2
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">Orokorra</span>"
 
-#: ../extensions/actions/action-properties.glade.h:3
-msgid ""
-"If this option is enabled, the action will be included in the popup menu of "
-"images."
-msgstr "Aukera hau gaitzen bada, ekintza irudien laster-menuan txertatuko da."
-
-#: ../extensions/actions/action-properties.glade.h:4
-msgid ""
-"If this option is enabled, the action will be included in the popup menu of "
-"links and pages."
-msgstr ""
-"Aukera hau gaitzen bada, ekintza esteken eta orrialdeen laster-menuan "
-"txertatuko da."
-
-#: ../extensions/actions/action-properties.glade.h:5
-msgid "The action description."
-msgstr "Ekintzaren azalpena."
-
-#: ../extensions/actions/action-properties.glade.h:6
-msgid ""
-"The action name. If a character is preceded by an underscore, that character "
-"will be used as the access key for the menu item."
-msgstr ""
-"Ekintzaren izena. Azpimarra bat karaktere baten aurretik egonez gero, "
-"karaktere hori laster-tekla gisa erabiliko da menuaren elementuarentzako."
-
-#: ../extensions/actions/action-properties.glade.h:7
-msgid ""
-"The command to execute when the action is activated. The URL of the link, "
-"image or page will be appended to the command."
-msgstr ""
-"Exekutatuko den komandoa ekintza aktibatzean. Estekaren, irudiaren edo "
-"orrialdearen URLa erantsiko zaio komandoari."
-
-#: ../extensions/actions/action-properties.glade.h:8
+#: ../extensions/actions/action-properties.ui.h:3
 msgid "_Command:"
 msgstr "_Komandoa:"
 
-#: ../extensions/actions/action-properties.glade.h:9
+#: ../extensions/actions/action-properties.ui.h:4
 msgid "_Description:"
 msgstr "_Azalpena:"
 
-#: ../extensions/actions/action-properties.glade.h:10
+#: ../extensions/actions/action-properties.ui.h:5
 msgid "_Images"
 msgstr "_Irudiak"
 
-#: ../extensions/actions/action-properties.glade.h:11
+#: ../extensions/actions/action-properties.ui.h:6
 msgid "_Name:"
 msgstr "I_zena:"
 
-#: ../extensions/actions/action-properties.glade.h:12
+#: ../extensions/actions/action-properties.ui.h:7
 msgid "_Pages"
 msgstr "_Orrialdeak"
 
-#: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions-editor.ui.h:1
 #: ../extensions/actions/actions.ephy-extension.in.in.h:1
 msgid "Actions"
 msgstr "Ekintzak"
@@ -110,6 +76,13 @@ msgid "%i action selected."
 msgid_plural "%i actions selected."
 msgstr[0] "Ekintza %i hautatuta."
 msgstr[1] "%i ekintza hautatuta."
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:745
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:139
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:194
+#, c-format
+msgid "Could not display help: %s"
+msgstr "Ezin izan da laguntza bistaratu: %s"
 
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
@@ -146,36 +119,32 @@ msgstr ""
 msgid "Pattern"
 msgstr "Eredua"
 
-#: ../extensions/adblock/adblock.glade.h:1
+#: ../extensions/adblock/adblock.ui.h:1
 msgid "<b>Courtesy of Graham Pierce</b>"
 msgstr "<b>Graham Pierce-ri esker</b>"
 
-#: ../extensions/adblock/adblock.glade.h:2
+#: ../extensions/adblock/adblock.ui.h:2
 msgid "<b>New rule</b>"
 msgstr "<b>Arau berria</b>"
 
-#: ../extensions/adblock/adblock.glade.h:3
+#: ../extensions/adblock/adblock.ui.h:3
 msgid "<b>Update rules from original site</b>"
 msgstr "<b>Eguneratu arauak jatorrizko gunetik</b>"
 
-#: ../extensions/adblock/adblock.glade.h:4
+#: ../extensions/adblock/adblock.ui.h:4
 #: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
 msgstr "Iragarki-blokeoen editorea"
 
-#: ../extensions/adblock/adblock.glade.h:5
-msgid "Add a new rule"
-msgstr "Gehitu arau berria"
-
-#: ../extensions/adblock/adblock.glade.h:6
+#: ../extensions/adblock/adblock.ui.h:5
 msgid "Blacklist"
 msgstr "Zerrenda beltza"
 
-#: ../extensions/adblock/adblock.glade.h:7
+#: ../extensions/adblock/adblock.ui.h:6
 msgid "Filterset.G"
 msgstr "Filterset.G"
 
-#: ../extensions/adblock/adblock.glade.h:8
+#: ../extensions/adblock/adblock.ui.h:7
 msgid "Whitelist"
 msgstr "Zerrenda zuria"
 
@@ -392,33 +361,33 @@ msgstr ""
 "HTML errorea %s-(e)n:\n"
 "Ez da doctype-rik zehaztu."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:345
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
 msgid "Enabled"
 msgstr "Gaituta"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:353
-#: ../extensions/rss/rss-ui.c:571
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:372
+#: ../extensions/rss/rss-ui.c:560
 msgid "Description"
 msgstr "Azalpena"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:1
 msgid "<b>Loaded Extensions</b>"
 msgstr "<b>Kargatutako hedapenak</b>"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:2
 msgid "Extensions"
 msgstr "Hedapenak"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:73
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:68
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:74
 msgid "_Extensions"
 msgstr "_Hedapenak"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:70
 msgid "Load and unload extensions"
 msgstr "Kargatu eta deskargatu hedapenak"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:76
 msgid "Help about extensions"
 msgstr "Hedapenei buruzko laguntza"
 
@@ -813,54 +782,54 @@ msgstr "Gunearen _baimenak"
 msgid "Manage web site permissions"
 msgstr "Kudeatu web gunearen baimenak"
 
-#: ../extensions/rss/ephy-rss-extension.c:79
+#: ../extensions/rss/ephy-rss-extension.c:80
 msgid "News Feeds Subscription"
 msgstr "Berri-iturrietara harpidetzea"
 
-#: ../extensions/rss/ephy-rss-extension.c:81
+#: ../extensions/rss/ephy-rss-extension.c:82
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr "Harpidetu web gune honetako berri-iturrira zure berri-irakurle gogokoenean"
 
-#: ../extensions/rss/ephy-rss-extension.c:86
+#: ../extensions/rss/ephy-rss-extension.c:87
 msgid "_Subscribe to this feed"
 msgstr "_Harpidetu iturri honetara"
 
-#: ../extensions/rss/ephy-rss-extension.c:88
+#: ../extensions/rss/ephy-rss-extension.c:89
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Harpidetu berri-iturri honetara zure berri-irakurle gogokoenean"
 
-#: ../extensions/rss/ephy-rss-extension.c:361
+#: ../extensions/rss/ephy-rss-extension.c:394
 msgid "Subscribe to site's news feed"
 msgstr "Harpidetu web gunearen berri-iturrira"
 
-#: ../extensions/rss/rss-ui.c:153
+#: ../extensions/rss/rss-ui.c:156
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr ""
 "<b><i>Ezin izan da berri-irakurlearekin kontaktatu, exekutatzen ari da?</i></"
 "b>"
 
-#: ../extensions/rss/rss-ui.c:155
+#: ../extensions/rss/rss-ui.c:158
 msgid "Retry"
 msgstr "Saiatu berriro"
 
-#: ../extensions/rss/rss-ui.c:283
+#: ../extensions/rss/rss-ui.c:288
 msgid "_Copy Feed Address"
 msgstr "_Kopiatu iturrien helbideak"
 
-#: ../extensions/rss/rss-ui.c:563
+#: ../extensions/rss/rss-ui.c:552
 msgid "Subscribe"
 msgstr "Harpidetu"
 
-#: ../extensions/rss/rss-ui.glade.h:1
+#: ../extensions/rss/rss-ui.ui.h:1
 msgid "<b>Select Interesting Feeds</b>"
 msgstr "<b>Hautatu iturri interesgarriak</b>"
 
-#: ../extensions/rss/rss-ui.glade.h:2
+#: ../extensions/rss/rss-ui.ui.h:2
 #: ../extensions/rss/rss.ephy-extension.in.in.h:1
 msgid "News Feed Subscription"
 msgstr "Berri-iturrira harpidetzea"
 
-#: ../extensions/rss/rss-ui.glade.h:3
+#: ../extensions/rss/rss-ui.ui.h:3
 msgid "_Subscribe"
 msgstr "_Harpidetu"
 
@@ -892,61 +861,6 @@ msgstr "Lehenetsia"
 #: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
 msgid "None"
 msgstr "Bat ere ez"
-
-#: ../extensions/sidebar/ephy-sidebar.c:167
-msgid "No Sidebars installed"
-msgstr "Ez dago albo-panelik instalatuta"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:88
-msgid "_Sidebar"
-msgstr "_Albo-panela"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:89
-msgid "Show or hide the sidebar"
-msgstr "Erakutsi edo ezkutatu albo-panela"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:306
-msgid "Do you really want to remove this sidebar?"
-msgstr "Ziur zaude albo-panel hau kentzea nahi duzula?"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:310
-msgid "There is no way to recover this sidebar after removal."
-msgstr "Ezin izango da albo-panel hau berreskuratu kendu ondoren."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:312
-msgid "Remove Sidebar"
-msgstr "Kendu albo-panela"
-
-#. Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:459
-#, c-format
-msgid "The sidebar already contains “%s”"
-msgstr "Albo-panelak jadanik badu '%s'"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:463
-msgid "To use this sidebar, select it from the list of available sidebar pages."
-msgstr ""
-"Albo-panel hau erabiltzeko, hautatu erabilgarri dauden albo-panelen "
-"orrialdeen zerrendatik."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:466
-#: ../extensions/sidebar/ephy-sidebar-extension.c:492
-msgid "Add Sidebar"
-msgstr "Gehitu albo-panela"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:486
-#, c-format
-msgid "Add “%s” to the Sidebar?"
-msgstr "Gehitu '%s' albo-panelari?"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:490
-#, c-format
-msgid "The source to the new sidebar page is “%s”."
-msgstr "Albo-panel berriaren iturburua '%s' da."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:496
-msgid "_Add Sidebar"
-msgstr "_Gehitu albo-panela"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
 msgid "_Look Up"
@@ -1107,14 +1021,6 @@ msgstr "Hautatu estilo-orria"
 msgid "Select between different stylesheets offered by the web page"
 msgstr "Hautatu web orrialdeak eskaintzen dituen estilo-orri desberdinen artean"
 
-#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
-msgid "Adds a sidebar to windows"
-msgstr "Gehitu albo-panela leihoari"
-
-#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
-msgid "Sidebar"
-msgstr "Albo-panela"
-
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
 msgid "Look up the selected text with a smart bookmark"
 msgstr "Bilatu hautatutako testua laster-marka azkar batekin"
@@ -1138,4 +1044,12 @@ msgstr "Atzeko planoko fitxetako eduki berria adierazten du"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Fitxen egoera"
+
+#: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:1
+msgid "Tab Key Tab Navigate"
+msgstr "Tabuladorea fitxentzako"
+
+#: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:2
+msgid "Use the Tab key to navigate between tabs"
+msgstr "Erabili Tabuladorea tekla fitxen artean nabigatzeko"
 
