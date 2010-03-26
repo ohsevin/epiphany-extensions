@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions&component=general\n"
-"POT-Creation-Date: 2010-02-21 12:31+0000\n"
-"PO-Revision-Date: 2010-02-24 21:23+0100\n"
+"POT-Creation-Date: 2010-02-24 20:24+0000\n"
+"PO-Revision-Date: 2010-03-26 20:17+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -1057,7 +1057,7 @@ msgstr "Estado de solapas"
 
 #: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:1
 msgid "Tab Key Tab Navigate"
-msgstr "Tecla Tab para Navegar con solapas"
+msgstr "Tecla Tab para navegar con solapas"
 
 #: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:2
 msgid "Use the Tab key to navigate between tabs"
