@@ -1,15 +1,15 @@
 # Italian translation of epiphany-extensions
-# Copyright (C) 2004-2009 THE epiphany-extensions'S COPYRIGHT HOLDER
+# Copyright (C) 2004-2010 THE epiphany-extensions'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the epiphany-extensions package.
-# Francesco Marletta <francesco.marletta@tiscali.it>, 2004-2009.
+# Francesco Marletta <francesco.marletta@tiscali.it>, 2004-2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions 2.18\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions&component=general\n"
-"POT-Creation-Date: 2009-09-18 14:40+0000\n"
-"PO-Revision-Date: 2009-09-19 01:10+0200\n"
+"POT-Creation-Date: 2010-03-24 13:24+0000\n"
+"PO-Revision-Date: 2010-03-26 14:05+0100\n"
 "Last-Translator: Francesco Marletta <francesco.marletta@tiscali.it>\n"
 "Language-Team: italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
@@ -17,73 +17,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../extensions/actions/action-properties.glade.h:1
+#: ../extensions/actions/action-properties.ui.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
 msgstr "<span weight=\"bold\">Applica a</span>"
 
-#: ../extensions/actions/action-properties.glade.h:2
+#: ../extensions/actions/action-properties.ui.h:2
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">Generale</span>"
 
-#: ../extensions/actions/action-properties.glade.h:3
-msgid ""
-"If this option is enabled, the action will be included in the popup menu of "
-"images."
-msgstr ""
-"Se questa opzione è abilitata, l'azione verrà inclusa nel menù a comparsa "
-"per le immagini."
-
-#: ../extensions/actions/action-properties.glade.h:4
-msgid ""
-"If this option is enabled, the action will be included in the popup menu of "
-"links and pages."
-msgstr ""
-"Se questa opzione è abilitata, l'azione verrà inclusa nel menù a comparsa "
-"per i collegamenti e le pagine."
-
-#: ../extensions/actions/action-properties.glade.h:5
-msgid "The action description."
-msgstr "La descrizione dell'azione."
-
-# [NdT] underscore come lo traduco? che ve ne pare della mia soluzione?
-#: ../extensions/actions/action-properties.glade.h:6
-msgid ""
-"The action name. If a character is preceded by an underscore, that character "
-"will be used as the access key for the menu item."
-msgstr ""
-"Il nome dell'azione. Se un carattere è preceduto da un segno di "
-"sottolineatura, quel carattere verrà usato come tasto di accesso per la voce "
-"di menù."
-
-#: ../extensions/actions/action-properties.glade.h:7
-msgid ""
-"The command to execute when the action is activated. The URL of the link, "
-"image or page will be appended to the command."
-msgstr ""
-"Il comando da eseguire quando l'azione è attivata. L'URL del collegamento, "
-"dell'immagine o della pagina verrà accodata al comando."
-
-#: ../extensions/actions/action-properties.glade.h:8
+#: ../extensions/actions/action-properties.ui.h:3
 msgid "_Command:"
 msgstr "_Comando:"
 
-#: ../extensions/actions/action-properties.glade.h:9
+#: ../extensions/actions/action-properties.ui.h:4
 msgid "_Description:"
 msgstr "_Descrizione:"
 
-#: ../extensions/actions/action-properties.glade.h:10
+#: ../extensions/actions/action-properties.ui.h:5
 msgid "_Images"
 msgstr "_Immagini"
 
-#: ../extensions/actions/action-properties.glade.h:11
+#: ../extensions/actions/action-properties.ui.h:6
 msgid "_Name:"
 msgstr "_Nome:"
 
-#: ../extensions/actions/action-properties.glade.h:12
+#: ../extensions/actions/action-properties.ui.h:7
 msgid "_Pages"
 msgstr "_Pagine"
 
-#: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions-editor.ui.h:1
 #: ../extensions/actions/actions.ephy-extension.in.in.h:1
 msgid "Actions"
 msgstr "Azioni"
@@ -115,6 +77,13 @@ msgid "%i action selected."
 msgid_plural "%i actions selected."
 msgstr[0] "%i azione selezionata."
 msgstr[1] "%i azioni selezionate."
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:745
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:139
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:194
+#, c-format
+msgid "Could not display help: %s"
+msgstr "Impossibile mostrare l'aiuto: %s"
 
 # [NdT] immagino sia un pulsante
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
@@ -152,37 +121,33 @@ msgstr ""
 msgid "Pattern"
 msgstr "Modello"
 
-#: ../extensions/adblock/adblock.glade.h:1
+#: ../extensions/adblock/adblock.ui.h:1
 msgid "<b>Courtesy of Graham Pierce</b>"
 msgstr "<b>Cortesia di Graham Pierce</b>"
 
-#: ../extensions/adblock/adblock.glade.h:2
+#: ../extensions/adblock/adblock.ui.h:2
 msgid "<b>New rule</b>"
 msgstr "<b>Nuova regola</b>"
 
-#: ../extensions/adblock/adblock.glade.h:3
+#: ../extensions/adblock/adblock.ui.h:3
 msgid "<b>Update rules from original site</b>"
 msgstr "<b>Aggiorna le regole dal sito originale</b>"
 
-#: ../extensions/adblock/adblock.glade.h:4
+#: ../extensions/adblock/adblock.ui.h:4
 #: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
 msgstr "Editor adblock"
 
-#: ../extensions/adblock/adblock.glade.h:5
-msgid "Add a new rule"
-msgstr "Aggiunge una nuova regola"
-
-#: ../extensions/adblock/adblock.glade.h:6
+#: ../extensions/adblock/adblock.ui.h:5
 msgid "Blacklist"
 msgstr "Lista nera"
 
 # [NdT] è un nome
-#: ../extensions/adblock/adblock.glade.h:7
+#: ../extensions/adblock/adblock.ui.h:6
 msgid "Filterset.G"
 msgstr "Filterset.G"
 
-#: ../extensions/adblock/adblock.glade.h:8
+#: ../extensions/adblock/adblock.ui.h:7
 msgid "Whitelist"
 msgstr "Lista bianca"
 
@@ -413,33 +378,33 @@ msgstr ""
 "Nessun doctype valido specificato."
 
 # [NdT] dal file C in cui si trova  chiaro che si riferisce ad una estensione
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:345
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
 msgid "Enabled"
 msgstr "Abilitata"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:353
-#: ../extensions/rss/rss-ui.c:572
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:372
+#: ../extensions/rss/rss-ui.c:560
 msgid "Description"
 msgstr "Descrizione"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:1
 msgid "<b>Loaded Extensions</b>"
 msgstr "<b>Estensioni caricate</b>"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:2
 msgid "Extensions"
 msgstr "Estensioni"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:73
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:68
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:74
 msgid "_Extensions"
 msgstr "_Estensioni"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:70
 msgid "Load and unload extensions"
 msgstr "Carica e scarica le estensioni"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:76
 msgid "Help about extensions"
 msgstr "Aiuto sulle estensioni"
 
@@ -840,58 +805,57 @@ msgstr "_Permessi sito"
 msgid "Manage web site permissions"
 msgstr "Gestisce i permessi per il sito web"
 
-#: ../extensions/rss/ephy-rss-extension.c:79
+#: ../extensions/rss/ephy-rss-extension.c:80
 msgid "News Feeds Subscription"
-msgstr "Sottoscrizione fonti notizie"
+msgstr "Abbonamento fonti notizie"
 
-#: ../extensions/rss/ephy-rss-extension.c:81
+#: ../extensions/rss/ephy-rss-extension.c:82
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr ""
-"Effettua la sottoscrizione alle fonti di notizie di questo sito web nel "
-"lettore di notizie preferito"
+"Effettua l'abbonamento alle fonti di notizie di questo sito web nel lettore "
+"di notizie preferito"
 
-#: ../extensions/rss/ephy-rss-extension.c:86
+#: ../extensions/rss/ephy-rss-extension.c:87
 msgid "_Subscribe to this feed"
-msgstr "_Sottoscrivi questa fonte"
+msgstr "_Abbonati a questa fonte"
 
-#: ../extensions/rss/ephy-rss-extension.c:88
+#: ../extensions/rss/ephy-rss-extension.c:89
 msgid "Subscribe to this feed in your favorite news reader"
-msgstr ""
-"Effettua la sottoscrizione a questa fonte nel lettore di notizie preferito"
+msgstr "Effettua l'abbonamento a questa fonte nel lettore di notizie preferito"
 
-#: ../extensions/rss/ephy-rss-extension.c:365
+#: ../extensions/rss/ephy-rss-extension.c:394
 msgid "Subscribe to site's news feed"
-msgstr "Effettua la sottoscrizione alla fonte di notizie del sito"
+msgstr "Effettua l'abbonamento alla fonte di notizie del sito"
 
-#: ../extensions/rss/rss-ui.c:153
+#: ../extensions/rss/rss-ui.c:156
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr ""
 "<b><i>Impossibile contattare il lettore di notizie, è in esecuzione ?</i></b>"
 
-#: ../extensions/rss/rss-ui.c:155
+#: ../extensions/rss/rss-ui.c:158
 msgid "Retry"
 msgstr "Riprova"
 
-#: ../extensions/rss/rss-ui.c:283
+#: ../extensions/rss/rss-ui.c:288
 msgid "_Copy Feed Address"
 msgstr "_Copia indirizzo fonte"
 
-#: ../extensions/rss/rss-ui.c:564
+#: ../extensions/rss/rss-ui.c:552
 msgid "Subscribe"
-msgstr "Sottoscrivi"
+msgstr "Abbonati"
 
-#: ../extensions/rss/rss-ui.glade.h:1
+#: ../extensions/rss/rss-ui.ui.h:1
 msgid "<b>Select Interesting Feeds</b>"
 msgstr "<b>Selezionare le fonti interessanti</b>"
 
-#: ../extensions/rss/rss-ui.glade.h:2
+#: ../extensions/rss/rss-ui.ui.h:2
 #: ../extensions/rss/rss.ephy-extension.in.in.h:1
 msgid "News Feed Subscription"
-msgstr "Sottoscrizione fonte notizie"
+msgstr "Abbonamento fonte notizie"
 
-#: ../extensions/rss/rss-ui.glade.h:3
+#: ../extensions/rss/rss-ui.ui.h:3
 msgid "_Subscribe"
-msgstr "_Sottoscrivi"
+msgstr "_Abbonati"
 
 #: ../extensions/select-stylesheet/ephy-css-menu.c:140
 msgid "Render the page without using a style"
@@ -921,63 +885,6 @@ msgstr "Predefinito"
 #: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
 msgid "None"
 msgstr "Nessuno"
-
-#: ../extensions/sidebar/ephy-sidebar.c:167
-msgid "No Sidebars installed"
-msgstr "Nessun riquadro laterale installato"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:88
-msgid "_Sidebar"
-msgstr "Riquadro _laterale"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:89
-msgid "Show or hide the sidebar"
-msgstr "Mostra o nasconde il riquadro laterale"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:306
-msgid "Do you really want to remove this sidebar?"
-msgstr "Rimuovere veramente questo riquadro laterale?"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:310
-msgid "There is no way to recover this sidebar after removal."
-msgstr ""
-"Non c'è alcun modo per recuperare questo riquadro laterale dopo la rimozione."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:312
-msgid "Remove Sidebar"
-msgstr "Rimuovi riquadro laterale"
-
-#. Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:459
-#, c-format
-msgid "The sidebar already contains “%s”"
-msgstr "Il riquadro laterale contiene già “%s”"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:463
-msgid ""
-"To use this sidebar, select it from the list of available sidebar pages."
-msgstr ""
-"Per usare questo riquadro laterale, selezionarlo dall'elenco delle pagine di "
-"riquadro laterale disponibili."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:466
-#: ../extensions/sidebar/ephy-sidebar-extension.c:492
-msgid "Add Sidebar"
-msgstr "Aggiunge un riquadro laterale"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:486
-#, c-format
-msgid "Add “%s” to the Sidebar?"
-msgstr "Aggiungere “%s” al riquadro laterale?"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:490
-#, c-format
-msgid "The source to the new sidebar page is “%s”."
-msgstr "Il contenuto del nuovo riquadro laterale è “%s”."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:496
-msgid "_Add Sidebar"
-msgstr "A_ggiungi riquadro laterale"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
 msgid "_Look Up"
@@ -1121,8 +1028,8 @@ msgstr "Scorrimento con spinta"
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr ""
-"Effettua la sottoscrizione ad una fonte di notizie offerta dalla pagina web "
-"nel lettore di notizie preferito"
+"Effettua l'abbonamento ad una fonte di notizie offerta dalla pagina web nel "
+"lettore di notizie preferito"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
 msgid "A sample extension"
@@ -1139,14 +1046,6 @@ msgstr "Selezionare foglio di stile"
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
 msgstr "Seleziona tra differenti stili offerti dalla pagina web"
-
-#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
-msgid "Adds a sidebar to windows"
-msgstr "Aggiunge un riquadro laterale alle finestre"
-
-#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
-msgid "Sidebar"
-msgstr "Riquadro laterale"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
 msgid "Look up the selected text with a smart bookmark"
@@ -1173,3 +1072,11 @@ msgstr "Indica la presenza di nuovo contenuto nelle schede in secondo piano"
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Stati scheda"
+
+#: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:1
+msgid "Tab Key Tab Navigate"
+msgstr "Naviga schede con tasto tab"
+
+#: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:2
+msgid "Use the Tab key to navigate between tabs"
+msgstr "Usa il tasto tab per navigare tra le schede"
