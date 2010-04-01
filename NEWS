@@ -1,3 +1,23 @@
+==========================
+Epiphany Extensions 2.30.0
+==========================
+
+This release fixes an adblock problem that yield false positives. It also
+enables e-e to be buildable with latest GTK+ releases.
+
+Added/updated translations
+    - ca, courtesy of David Planella
+    - cs, courtesy of Lucas Lommer
+    - es, courtesy of Jorge González
+    - eu, courtesy of Iñaki Larrañaga Murgoitio
+    - fi, courtesy of Tommi Vainikainen
+    - fr, courtesy of Claude Paroz
+    - gl, courtesy of Fran Diéguez
+    - hu, courtesy of Gabor Kelemen
+    - it, courtesy of Francesco Marletta
+    - lt, courtesy of Žygimantas Beručka
+    - pt, courtesy of António Lima
+
 ===========================
 Epiphany Extensions 2.29.91
 ===========================
