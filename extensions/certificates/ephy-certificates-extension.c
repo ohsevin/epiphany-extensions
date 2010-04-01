@@ -157,7 +157,7 @@ manage_certificates_cb (GtkAction *action,
 	g_return_if_fail (manager != NULL);
 
 	window = gtk_widget_get_toplevel (manager);
-	g_return_if_fail (GTK_WIDGET_TOPLEVEL (window));
+	g_return_if_fail (gtk_widget_is_toplevel (window));
 
 	gtk_window_set_role (GTK_WINDOW (window), "epiphany-certificate-manager");
 	gtk_window_set_title (GTK_WINDOW (window), _("Certificates"));
@@ -188,7 +188,7 @@ manage_devices_cb (GtkAction *action,
 	g_return_if_fail (manager != NULL);
 
 	window = gtk_widget_get_toplevel (manager);
-	g_return_if_fail (GTK_WIDGET_TOPLEVEL (window));
+	g_return_if_fail (gtk_widget_is_toplevel (window));
 
 	gtk_window_set_role (GTK_WINDOW (window), "epiphany-security-device-manager");
 	gtk_window_set_title (GTK_WINDOW (window), _("Security Devices"));
