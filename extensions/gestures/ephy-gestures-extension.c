@@ -276,7 +276,6 @@ dom_mouse_down_cb (EphyWebView *view,
 	EphyEmbed *embed;
 	GtkWidget *toplevel;
 	EphyWindow *window;
-	gboolean ppv_mode;
 	guint button;
 	WebKitHitTestResult *hit_test;
 	guint context;

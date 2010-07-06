@@ -250,7 +250,7 @@ ephy_push_scroller_start (EphyPushScroller *scroller,
 	/* grab the pointer */
 	widget = GTK_WIDGET (priv->window);
 	gtk_grab_add (widget);
-	if (gdk_pointer_grab (widget->window, FALSE,
+	if (gdk_pointer_grab (gtk_widget_get_window (widget), FALSE,
 			      GDK_POINTER_MOTION_MASK |
 			      GDK_BUTTON_PRESS_MASK |
 			      GDK_BUTTON_RELEASE_MASK,
@@ -260,7 +260,7 @@ ephy_push_scroller_start (EphyPushScroller *scroller,
 		return;
 	}
 
-	if (gdk_keyboard_grab (widget->window, FALSE, timestamp) != GDK_GRAB_SUCCESS)
+	if (gdk_keyboard_grab (gtk_widget_get_window (widget), FALSE, timestamp) != GDK_GRAB_SUCCESS)
 	{
 		ephy_push_scroller_stop (scroller, timestamp);
 		return;

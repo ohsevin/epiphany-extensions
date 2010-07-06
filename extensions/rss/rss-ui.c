@@ -368,7 +368,7 @@ rss_ui_drag_data_get_cb (GtkWidget *widget,
 	if (feed == NULL || feed->address == NULL) return;
 
 	gtk_selection_data_set (selection_data,
-			        selection_data->target,
+			        gtk_selection_data_get_target (selection_data),
 			        8,
 			        (const guchar*) feed->address,
 			        strlen (feed->address));
