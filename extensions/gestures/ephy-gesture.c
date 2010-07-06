@@ -262,12 +262,12 @@ ephy_gesture_start (EphyGesture *gesture)
 	g_object_ref (priv->window);
 	gtk_grab_add (priv->window);
 
-	if (gdk_pointer_grab (priv->window->window, FALSE,
+	if (gdk_pointer_grab (gtk_widget_get_window (priv->window), FALSE,
 			     GDK_POINTER_MOTION_MASK |
 			     GDK_BUTTON_RELEASE_MASK |
 			     GDK_BUTTON_PRESS_MASK,
 			     NULL, priv->cursor, time) != GDK_GRAB_SUCCESS ||
-	    gdk_keyboard_grab (priv->window->window, FALSE, time) != GDK_GRAB_SUCCESS)
+	    gdk_keyboard_grab (gtk_widget_get_window (priv->window), FALSE, time) != GDK_GRAB_SUCCESS)
 	{
 		ephy_gesture_stop (gesture, time);
 
