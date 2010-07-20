@@ -220,7 +220,7 @@ fill_tab (DialogTab *tab)
 
 static void
 sync_notebook_tab (GtkNotebook *notebook,
-		   GtkNotebookPage *page,
+		   GtkWidget *page,
 		   int page_num,
 		   EphyPermissionsDialog *dialog)
 {

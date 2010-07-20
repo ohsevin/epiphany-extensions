@@ -348,7 +348,7 @@ adblock_ui_populate_store (InfoPage *page, AdblockPatternType type)
 
 static void
 adblock_ui_switch_page (GtkNotebook *notebook,
-			GtkNotebookPage *page,
+			GtkWidget *page,
 			guint page_num,
 			AdblockUI *dialog)
 {

@@ -388,7 +388,7 @@ ephy_adblock_extension_edit_cb (GtkAction *action, EphyWindow *window)
 
 static void
 switch_page_cb (GtkNotebook *notebook,
-		GtkNotebookPage *page,
+		GtkWidget *page,
 		guint page_num,
 		EphyWindow *window)
 {
