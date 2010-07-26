@@ -1,4 +1,4 @@
-# Slovenian translation of epiphany-extensions
+# Slovenian translations for epiphany-extensions.
 # Copyright (C) 2009 epiphany-extensions's COPYRIGHT HOLDER
 # This file is distributed under the same license as the epiphany-extensions package.
 #
@@ -71,7 +71,7 @@ msgstr "Ukaza ni mogoče zagnati"
 
 #: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
 msgid "No action selected."
-msgstr "Dejanje ni izbrano."
+msgstr "Ni izbranega dejanja."
 
 #: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
 #, c-format
@@ -87,7 +87,7 @@ msgstr[3] "%i izbrana dejanja."
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:194
 #, c-format
 msgid "Could not display help: %s"
-msgstr "Pomoči ni mogoče prikazati: %s"
+msgstr "Ni mogoče prikazati pomoči: %s"
 
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
@@ -109,9 +109,9 @@ msgid ""
 "This version has been modified from its original. The changes have not been approved by the original author;\n"
 "direct any problems to Bugzilla and not to the original author (G).\n"
 msgstr ""
-"Ta seznam je avtorsko zaščitil © njegov izvorni avtor(G). Seznam je z dovoljenjem ponovno licenciran pod GPL.\n"
+"Ta seznam je avtorsko zaščitil © njegov izvorni avtor(G). Seznam je z dovoljenjem ponovno objavljen pod GPL.\n"
 "Izvorni seznam, Filterset.G, je mogoče najti na http://www.pierceive.com/filtersetg/.\n"
-"Ta različica je bila spremenjena od izvorne. Avtor teh sprememb ni odobril.\n"
+"Ta različica je bila spremenjena in avtor teh sprememb ni odobril.\n"
 "Morebitne težave pošljite na Bugzillo in ne izvornemu avtorju (G).\n"
 
 #: ../extensions/adblock/adblock-ui.c:481
@@ -120,7 +120,7 @@ msgstr "Vzorec"
 
 #: ../extensions/adblock/adblock.ui.h:1
 msgid "<b>Courtesy of Graham Pierce</b>"
-msgstr "<b>Vljudno prispeval Graham Pierce</b>"
+msgstr "<b>Prispeval Graham Pierce</b>"
 
 #: ../extensions/adblock/adblock.ui.h:2
 msgid "<b>New rule</b>"
@@ -137,7 +137,7 @@ msgstr "Urejevalnik Adblock"
 
 #: ../extensions/adblock/adblock.ui.h:5
 msgid "Blacklist"
-msgstr "Črn seznam"
+msgstr "Črni seznam"
 
 #: ../extensions/adblock/adblock.ui.h:6
 msgid "Filterset.G"
@@ -145,7 +145,7 @@ msgstr "Filterset.G"
 
 #: ../extensions/adblock/adblock.ui.h:7
 msgid "Whitelist"
-msgstr "Bel seznam"
+msgstr "Beli seznam"
 
 #: ../extensions/adblock/ephy-adblock-extension.c:230
 msgid "Edit Adblock"
@@ -348,7 +348,7 @@ msgstr "Napaka HTML v %s:"
 #: ../extensions/error-viewer/sgml-validator.c:367
 #, c-format
 msgid "Invalid character encoding"
-msgstr "Neveljavno znakovno kodiranje"
+msgstr "Neveljaven znakovni nabor"
 
 #: ../extensions/error-viewer/sgml-validator.c:372
 #, c-format
@@ -406,16 +406,16 @@ msgstr "Namesti skript Greasemonkey"
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:311
 #, c-format
 msgid "The user script at “%s” has been installed"
-msgstr "Uporabniški skript na “%s” je bil nameščen"
+msgstr "Uporabniški skript na “%s” je nameščen"
 
 #: ../extensions/java-console/ephy-java-console-extension.c:48
 msgid "_Java Console"
-msgstr "_Java konzola"
+msgstr "Konzola _Java"
 
 #. shortcut key
 #: ../extensions/java-console/ephy-java-console-extension.c:50
 msgid "Show Java Console"
-msgstr "Pokaži Java konzolo"
+msgstr "Pokaži konzolo Java"
 
 #: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:100
 msgid "_HTTP Headers"
@@ -431,7 +431,7 @@ msgstr "<b>Odziv</b>"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:3
 msgid "<b>URLs</b>"
-msgstr "<b>URL-ji</b>"
+msgstr "<b>Naslovi URL</b>"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
 msgid "Clear cache"
@@ -451,11 +451,11 @@ msgstr "Podrobnosti st_ani"
 
 #: ../extensions/page-info/ephy-page-info-extension.c:63
 msgid "Display page information in a dialog"
-msgstr "Prikaz podrobnosti strani v pogovorne oknu"
+msgstr "Prikaz podrobnosti strani v pogovornem oknu"
 
 #: ../extensions/page-info/page-info-dialog.c:704
 msgid "Save As..."
-msgstr "Shrani Kot..."
+msgstr "Shrani Kot ..."
 
 #: ../extensions/page-info/page-info-dialog.c:721
 msgid "Select a directory"
@@ -504,7 +504,7 @@ msgstr "Neznano"
 
 #: ../extensions/page-info/page-info-dialog.c:824
 msgid "No referrer"
-msgstr "Ni napotila"
+msgstr "Ni napotilnika"
 
 #: ../extensions/page-info/page-info-dialog.c:838
 #: ../extensions/page-info/page-info-dialog.c:854
@@ -715,7 +715,7 @@ msgstr "Lastnosti strani"
 
 #: ../extensions/page-info/page-info.glade.h:26
 msgid "Referrer:"
-msgstr "Napotilo:"
+msgstr "Napotilnik:"
 
 #: ../extensions/page-info/page-info.glade.h:27
 msgid "Size:"
@@ -807,7 +807,7 @@ msgstr "Naročanje na vir novic strani"
 
 #: ../extensions/rss/rss-ui.c:156
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
-msgstr "<b><i>Ni mogoče vzpostaviti stika z bralnikom virov, ali teče?</i></b>"
+msgstr "<b><i>Ni mogoče vzpostaviti stika z bralnikom virov. ALi je ta zagnan?</i></b>"
 
 #: ../extensions/rss/rss-ui.c:158
 msgid "Retry"
@@ -819,7 +819,7 @@ msgstr "Kopiraj _naslov vira"
 
 #: ../extensions/rss/rss-ui.c:552
 msgid "Subscribe"
-msgstr "Naročilo"
+msgstr "Naročanje"
 
 #: ../extensions/rss/rss-ui.ui.h:1
 msgid "<b>Select Interesting Feeds</b>"
@@ -902,11 +902,11 @@ msgstr "Izvedba poljubnih ukazov iz vsebinskega menija"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
 msgid "Ad Blocker"
-msgstr "Bloker oglasov"
+msgstr "Ad Blocker"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
 msgid "Block the pest!"
-msgstr "Blokiranje oglasov!"
+msgstr "Blokiranje prikazovanja oglasov!"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
 msgid "Auto Scroll"
@@ -914,7 +914,7 @@ msgstr "Samodejno drsenje"
 
 #: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
 msgid "Scroll on middle mouse click"
-msgstr "Drsenje ob srednjem miškinem kliku"
+msgstr "Drsenje s srednjim miškinim klikom"
 
 #: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
 msgid "Auto Reload Tab"
@@ -938,7 +938,7 @@ msgstr "Potrditev veljavnosti spletnih strani in preverjanje povezav"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
 msgid "Activate and deactivate extensions"
-msgstr "Vklop in izklop razširitev"
+msgstr "Preklop delovanja razširitev"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
 msgid "Extensions Manager"
@@ -946,11 +946,11 @@ msgstr "Upravljalnik razširitev"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
-msgstr "Gibi"
+msgstr "Poteze"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:2
 msgid "Perform actions with mouse gestures"
-msgstr "Izvedba dejanj z miškinimi gibi"
+msgstr "Izvedba dejanj s potezami miške"
 
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
 msgid "Greasemonkey"
@@ -962,7 +962,7 @@ msgstr "Zagon uporabniških skriptov za spremembo obnašanja spletnih strani"
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
 msgid "Java Console"
-msgstr "Java konzola"
+msgstr "Konzola Java"
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
 msgid "Provide access to the Java-Plugin Console"
@@ -990,7 +990,7 @@ msgstr "Dovoljenja"
 
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
 msgid "Drag the page on middle mouse click"
-msgstr "Vleka strani ob srednjem miškinem kliku"
+msgstr "Povleci in spusti strani s srednjim miškinim klikom"
 
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
 msgid "Push Scroll"
@@ -1002,7 +1002,7 @@ msgstr "Naročilo na vir novic, ki ga ponuja spletna stran, v vašem najljubšem
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
 msgid "A sample extension"
-msgstr "Vzročna razširitev"
+msgstr "Vzorčna razširitev"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:2
 msgid "Sample"
@@ -1026,7 +1026,7 @@ msgstr "Pametni zaznamki"
 
 #: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
 msgid "Groups newly opened tabs"
-msgstr "Združi novo odprte zavihke"
+msgstr "Združi na novo odprte zavihke"
 
 #: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
 msgid "Tab Groups"
@@ -1034,7 +1034,7 @@ msgstr "Skupine zavihkov"
 
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
-msgstr "Določi novo vsebino v zavihkih ozadja"
+msgstr "Določa novo vsebino v zavihkih ozadja"
 
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
@@ -1046,64 +1046,4 @@ msgstr "Tabulator za krmarjenje"
 
 #: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:2
 msgid "Use the Tab key to navigate between tabs"
-msgstr "Uporabite tabulator za preklop med zavihki"
-
-#~ msgid ""
-#~ "If this option is enabled, the action will be included in the popup menu "
-#~ "of images."
-#~ msgstr ""
-#~ "Izbrana možnost določi, da bo dejanje vključeno v pojavni meni slik."
-#~ msgid ""
-#~ "If this option is enabled, the action will be included in the popup menu "
-#~ "of links and pages."
-#~ msgstr ""
-#~ "Izbrana možnost določi, da je dejanje vključeno v pojavni meni povezav in "
-#~ "strani."
-#~ msgid "The action description."
-#~ msgstr "Opis dejanja."
-#~ msgid ""
-#~ "The action name. If a character is preceded by an underscore, that "
-#~ "character will be used as the access key for the menu item."
-#~ msgstr ""
-#~ "Ime dejanja. V primeru, da je pred njim podčrtaj, bo znak uporabljen kot "
-#~ "dostopna tipka za predmet menija."
-#~ msgid ""
-#~ "The command to execute when the action is activated. The URL of the link, "
-#~ "image or page will be appended to the command."
-#~ msgstr ""
-#~ "Ukaz za izvedbo, ko je dejanje zagnano. URL povezave, slika ali stran "
-#~ "bodo pripete ukazu."
-#~ msgid "Add a new rule"
-#~ msgstr "Dodajanje novega pravila"
-#~ msgid "No Sidebars installed"
-#~ msgstr "Ni nameščenih bočnih oken"
-#~ msgid "_Sidebar"
-#~ msgstr "_Bočno okno"
-#~ msgid "Show or hide the sidebar"
-#~ msgstr "Prikaz ali skritje bočnega okna"
-#~ msgid "Do you really want to remove this sidebar?"
-#~ msgstr "Ali ste prepričani, da želite odstraniti to bočno okno?"
-#~ msgid "There is no way to recover this sidebar after removal."
-#~ msgstr "Po odstranitvi ni načina za povrnitev bočnega okna."
-#~ msgid "Remove Sidebar"
-#~ msgstr "Odstranjevanje bočnega okna"
-#~ msgid "The sidebar already contains “%s”"
-#~ msgstr "Bočno okno že vsebuje “%s”"
-#~ msgid ""
-#~ "To use this sidebar, select it from the list of available sidebar pages."
-#~ msgstr ""
-#~ "Za uporabo tega bočnega okna ga izberite s seznama dostopnih strani "
-#~ "bočnih oken."
-#~ msgid "Add Sidebar"
-#~ msgstr "Dodajanje bočnega okna"
-#~ msgid "Add “%s” to the Sidebar?"
-#~ msgstr "Dodajanje “%s” v bočno okno?"
-#~ msgid "The source to the new sidebar page is “%s”."
-#~ msgstr "Vir nove strani bočnega okna je “%s”."
-#~ msgid "_Add Sidebar"
-#~ msgstr "_Do"
-#~ msgid "Adds a sidebar to windows"
-#~ msgstr "Oknom doda bočno okno"
-#~ msgid "Sidebar"
-#~ msgstr "Bočno okno"
-
+msgstr "Uporaba tabulatorja za preklop med zavihki"
