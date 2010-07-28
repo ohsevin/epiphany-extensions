@@ -612,7 +612,7 @@ ephy_permissions_dialog_constructor (GType type,
         gtk_dialog_set_has_separator (GTK_DIALOG (dialog), FALSE);
         gtk_container_set_border_width (GTK_CONTAINER (dialog), 5);
 
-        gtk_box_set_spacing (GTK_BOX (GTK_DIALOG (dialog)->vbox), 2);
+        gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), 2);
 
         gtk_dialog_add_button (GTK_DIALOG (dialog),
                                GTK_STOCK_HELP, GTK_RESPONSE_HELP);
@@ -623,7 +623,7 @@ ephy_permissions_dialog_constructor (GType type,
 	notebook = gtk_notebook_new ();
 	priv->notebook = GTK_NOTEBOOK (notebook);
 	gtk_container_set_border_width (GTK_CONTAINER (priv->notebook), 5);
-	gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->vbox), notebook,
+	gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), notebook,
 			    TRUE, TRUE, 0);
 	gtk_widget_show (notebook);
 
