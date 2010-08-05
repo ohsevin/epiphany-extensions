@@ -131,7 +131,7 @@ replace_flash_object (WebKitWebView *web_view)
   char *flashvars_string;
   GHashTable *flashvars_parameters;
   char *video_id;
-  char *video_hash;
+  char *formats_map;
   char *video_uri;
 
   main_frame = webkit_web_view_get_main_frame (web_view);
@@ -231,13 +231,26 @@ replace_flash_object (WebKitWebView *web_view)
     return;
   }
 
-  video_hash = g_hash_table_lookup (flashvars_parameters, "t");
-  if (!video_hash) {
+  /* fmt_url_map looks like this: ##|URI,##|URI,##|URI */
+  formats_map = g_hash_table_lookup (flashvars_parameters, "fmt_url_map");
+  if (!formats_map) {
     g_hash_table_destroy (flashvars_parameters);
     return;
   }
 
-  video_uri = g_strdup_printf ("http://www.youtube.com/get_video?fmt=18&video_id=%s&t=%s", video_id, video_hash);
+  /* Get the first one, for now */
+  {
+      char **tmp = g_strsplit (formats_map, ",", 2);
+      char *piece = g_strdup (tmp[0]);
+
+      g_strfreev (tmp);
+
+      tmp = g_strsplit (piece, "|", 2);
+      g_free (piece);
+
+      video_uri = g_strdup(tmp[1]);
+      g_strfreev (tmp);
+  }
 
   g_hash_table_destroy (flashvars_parameters);
 
