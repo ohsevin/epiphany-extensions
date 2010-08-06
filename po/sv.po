@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions\n"
-"POT-Creation-Date: 2009-08-20 22:25+0200\n"
-"PO-Revision-Date: 2009-08-20 22:25+0100\n"
+"POT-Creation-Date: 2010-08-06 15:43+0200\n"
+"PO-Revision-Date: 2010-08-06 15:43+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -16,55 +16,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../extensions/actions/action-properties.glade.h:1
+#: ../extensions/actions/action-properties.ui.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
 msgstr "<span weight=\"bold\">Gäller för</span>"
 
-#: ../extensions/actions/action-properties.glade.h:2
+#: ../extensions/actions/action-properties.ui.h:2
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">Allmänt</span>"
 
-#: ../extensions/actions/action-properties.glade.h:3
-msgid "If this option is enabled, the action will be included in the popup menu of images."
-msgstr "Om detta alternativ är aktiverat kommer åtgärden att inkluderas i popupmenyn för bilder."
-
-#: ../extensions/actions/action-properties.glade.h:4
-msgid "If this option is enabled, the action will be included in the popup menu of links and pages."
-msgstr "Om detta alternativ är aktiverat kommer åtgärden att inkluderas i popupmenyn för länkar och sidor."
-
-#: ../extensions/actions/action-properties.glade.h:5
-msgid "The action description."
-msgstr "Åtgärdsbeskrivningen."
-
-#: ../extensions/actions/action-properties.glade.h:6
-msgid "The action name. If a character is preceded by an underscore, that character will be used as the access key for the menu item."
-msgstr "Namnet på åtgärden. Om ett tecken föregås av ett understreck kommer det tecknet att användas som åtkomsttangent för menyobjektet."
-
-#: ../extensions/actions/action-properties.glade.h:7
-msgid "The command to execute when the action is activated. The URL of the link, image or page will be appended to the command."
-msgstr "Kommandot att köra då åtgärden aktiveras. URL:en för länken, bilden eller sidan kommer att läggas till efter kommandot."
-
-#: ../extensions/actions/action-properties.glade.h:8
+#: ../extensions/actions/action-properties.ui.h:3
 msgid "_Command:"
 msgstr "_Kommando:"
 
-#: ../extensions/actions/action-properties.glade.h:9
+#: ../extensions/actions/action-properties.ui.h:4
 msgid "_Description:"
 msgstr "_Beskrivning:"
 
-#: ../extensions/actions/action-properties.glade.h:10
+#: ../extensions/actions/action-properties.ui.h:5
 msgid "_Images"
 msgstr "_Bilder"
 
-#: ../extensions/actions/action-properties.glade.h:11
+#: ../extensions/actions/action-properties.ui.h:6
 msgid "_Name:"
 msgstr "_Namn:"
 
-#: ../extensions/actions/action-properties.glade.h:12
+#: ../extensions/actions/action-properties.ui.h:7
 msgid "_Pages"
 msgstr "_Sidor"
 
-#: ../extensions/actions/actions-editor.glade.h:1
+#: ../extensions/actions/actions-editor.ui.h:1
 #: ../extensions/actions/actions.ephy-extension.in.in.h:1
 msgid "Actions"
 msgstr "Åtgärder"
@@ -96,6 +76,13 @@ msgid_plural "%i actions selected."
 msgstr[0] "%i åtgärd markerad."
 msgstr[1] "%i åtgärder markerade."
 
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:745
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:139
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:194
+#, c-format
+msgid "Could not display help: %s"
+msgstr "Kunde inte via hjälpen: %s"
+
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
 msgstr "Lägg till åtgärd"
@@ -125,36 +112,32 @@ msgstr ""
 msgid "Pattern"
 msgstr "Mönster"
 
-#: ../extensions/adblock/adblock.glade.h:1
+#: ../extensions/adblock/adblock.ui.h:1
 msgid "<b>Courtesy of Graham Pierce</b>"
 msgstr "<b>Med tillstånd av Graham Pierce</b>"
 
-#: ../extensions/adblock/adblock.glade.h:2
+#: ../extensions/adblock/adblock.ui.h:2
 msgid "<b>New rule</b>"
 msgstr "<b>Ny regel</b>"
 
-#: ../extensions/adblock/adblock.glade.h:3
+#: ../extensions/adblock/adblock.ui.h:3
 msgid "<b>Update rules from original site</b>"
 msgstr "<b>Uppdatera regler från ursprungliga webbplatsen</b>"
 
-#: ../extensions/adblock/adblock.glade.h:4
+#: ../extensions/adblock/adblock.ui.h:4
 #: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
 msgstr "Redigerare för reklamblockerare"
 
-#: ../extensions/adblock/adblock.glade.h:5
-msgid "Add a new rule"
-msgstr "Lägg till en ny regel"
-
-#: ../extensions/adblock/adblock.glade.h:6
+#: ../extensions/adblock/adblock.ui.h:5
 msgid "Blacklist"
 msgstr "Svartlista"
 
-#: ../extensions/adblock/adblock.glade.h:7
+#: ../extensions/adblock/adblock.ui.h:6
 msgid "Filterset.G"
 msgstr "Filterset.G"
 
-#: ../extensions/adblock/adblock.glade.h:8
+#: ../extensions/adblock/adblock.ui.h:7
 msgid "Whitelist"
 msgstr "Vitlista"
 
@@ -162,7 +145,7 @@ msgstr "Vitlista"
 msgid "Edit Adblock"
 msgstr "Redigera reklamblockerare"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:299
+#: ../extensions/adblock/ephy-adblock-extension.c:300
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -367,33 +350,33 @@ msgstr ""
 "HTML-fel i %s:\n"
 "Ingen giltig dokumenttyp angiven."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:345
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
 msgid "Enabled"
 msgstr "Aktiverad"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:353
-#: ../extensions/rss/rss-ui.c:571
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:372
+#: ../extensions/rss/rss-ui.c:560
 msgid "Description"
 msgstr "Beskrivning"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:1
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:1
 msgid "<b>Loaded Extensions</b>"
 msgstr "<b>Inlästa utökningar</b>"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.glade.h:2
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:2
 msgid "Extensions"
 msgstr "Utökningar"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:67
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:73
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:68
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:74
 msgid "_Extensions"
 msgstr "_Utökningar"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:69
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:70
 msgid "Load and unload extensions"
 msgstr "Läs in och glöm utökningar"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:75
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:76
 msgid "Help about extensions"
 msgstr "Hjälp för utökningar"
 
@@ -788,52 +771,52 @@ msgstr "Plats_rättigheter"
 msgid "Manage web site permissions"
 msgstr "Hantera webbplatsrättigheter"
 
-#: ../extensions/rss/ephy-rss-extension.c:79
+#: ../extensions/rss/ephy-rss-extension.c:82
 msgid "News Feeds Subscription"
 msgstr "Prenumeration på nyhetskällor"
 
-#: ../extensions/rss/ephy-rss-extension.c:81
+#: ../extensions/rss/ephy-rss-extension.c:84
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr "Prenumerera på nyhetskällan för denna webbplats i din favoritnyhetsläsare"
 
-#: ../extensions/rss/ephy-rss-extension.c:86
+#: ../extensions/rss/ephy-rss-extension.c:89
 msgid "_Subscribe to this feed"
 msgstr "_Prenumerera på denna källa"
 
-#: ../extensions/rss/ephy-rss-extension.c:88
+#: ../extensions/rss/ephy-rss-extension.c:91
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Prenumerera på denna källa i din favoritnyhetsläsare"
 
-#: ../extensions/rss/ephy-rss-extension.c:361
+#: ../extensions/rss/ephy-rss-extension.c:402
 msgid "Subscribe to site's news feed"
 msgstr "Prenumerera på nyhetskällan för denna webbplats"
 
-#: ../extensions/rss/rss-ui.c:153
+#: ../extensions/rss/rss-ui.c:156
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr "Kunde inte kontakta källäsaren, är den igång?"
 
-#: ../extensions/rss/rss-ui.c:155
+#: ../extensions/rss/rss-ui.c:158
 msgid "Retry"
 msgstr "Försök igen"
 
-#: ../extensions/rss/rss-ui.c:283
+#: ../extensions/rss/rss-ui.c:288
 msgid "_Copy Feed Address"
 msgstr "_Kopiera källadress"
 
-#: ../extensions/rss/rss-ui.c:563
+#: ../extensions/rss/rss-ui.c:552
 msgid "Subscribe"
 msgstr "Prenumerera"
 
-#: ../extensions/rss/rss-ui.glade.h:1
+#: ../extensions/rss/rss-ui.ui.h:1
 msgid "<b>Select Interesting Feeds</b>"
 msgstr "<b>Välj intressanta källor</b>"
 
-#: ../extensions/rss/rss-ui.glade.h:2
+#: ../extensions/rss/rss-ui.ui.h:2
 #: ../extensions/rss/rss.ephy-extension.in.in.h:1
 msgid "News Feed Subscription"
 msgstr "Prenumeration på nyhetskanal"
 
-#: ../extensions/rss/rss-ui.glade.h:3
+#: ../extensions/rss/rss-ui.ui.h:3
 msgid "_Subscribe"
 msgstr "_Prenumerera"
 
@@ -865,59 +848,6 @@ msgstr "Standard"
 #: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
 msgid "None"
 msgstr "Ingen"
-
-#: ../extensions/sidebar/ephy-sidebar.c:167
-msgid "No Sidebars installed"
-msgstr "Inga sidopaneler är installerade"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:88
-msgid "_Sidebar"
-msgstr "_Sidopanel"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:89
-msgid "Show or hide the sidebar"
-msgstr "Visa eller dölj sidopanelen"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:306
-msgid "Do you really want to remove this sidebar?"
-msgstr "Vill du verkligen ta bort den här sidopanelen?"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:310
-msgid "There is no way to recover this sidebar after removal."
-msgstr "Det finns inget sätt att återställa sidopanelen efter borttagning."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:312
-msgid "Remove Sidebar"
-msgstr "Ta bort sidopanel"
-
-#. Translators: %s is the sidebar title
-#: ../extensions/sidebar/ephy-sidebar-extension.c:459
-#, c-format
-msgid "The sidebar already contains “%s”"
-msgstr "Denna sidopanel innehåller redan \"%s\""
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:463
-msgid "To use this sidebar, select it from the list of available sidebar pages."
-msgstr "För att använda denna sidopanel, välj den från listan av tillgängliga sidopanelssidor."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:466
-#: ../extensions/sidebar/ephy-sidebar-extension.c:492
-msgid "Add Sidebar"
-msgstr "Lägg till sidopanel"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:486
-#, c-format
-msgid "Add “%s” to the Sidebar?"
-msgstr "Lägg till \"%s\" på sidopanelen?"
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:490
-#, c-format
-msgid "The source to the new sidebar page is “%s”."
-msgstr "Källan till den nya sidopanelssidan är \"%s\"."
-
-#: ../extensions/sidebar/ephy-sidebar-extension.c:496
-msgid "_Add Sidebar"
-msgstr "_Lägg till sidopanel"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
 msgid "_Look Up"
@@ -1074,14 +1004,6 @@ msgstr "Välj stilmall"
 msgid "Select between different stylesheets offered by the web page"
 msgstr "Välj mellan olika stilmallar som erbjuds av webbsidan"
 
-#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:1
-msgid "Adds a sidebar to windows"
-msgstr "Lägger till en sidopanel på fönster"
-
-#: ../extensions/sidebar/sidebar.ephy-extension.in.in.h:2
-msgid "Sidebar"
-msgstr "Sidopanel"
-
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
 msgid "Look up the selected text with a smart bookmark"
 msgstr "Slå upp den markerade texten med ett smart bokmärke"
@@ -1106,6 +1028,73 @@ msgstr "Indikerar nytt innehåll i bakgrundsflikar"
 msgid "Tab States"
 msgstr "Fliktillstånd"
 
+#: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:1
+msgid "Tab Key Tab Navigate"
+msgstr "Fliknavigera med tabulator"
+
+#: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:2
+msgid "Use the Tab key to navigate between tabs"
+msgstr "Använd tabulatortangenten för att navigera mellan flikar"
+
+#~ msgid ""
+#~ "If this option is enabled, the action will be included in the popup menu "
+#~ "of images."
+#~ msgstr ""
+#~ "Om detta alternativ är aktiverat kommer åtgärden att inkluderas i "
+#~ "popupmenyn för bilder."
+#~ msgid ""
+#~ "If this option is enabled, the action will be included in the popup menu "
+#~ "of links and pages."
+#~ msgstr ""
+#~ "Om detta alternativ är aktiverat kommer åtgärden att inkluderas i "
+#~ "popupmenyn för länkar och sidor."
+#~ msgid "The action description."
+#~ msgstr "Åtgärdsbeskrivningen."
+#~ msgid ""
+#~ "The action name. If a character is preceded by an underscore, that "
+#~ "character will be used as the access key for the menu item."
+#~ msgstr ""
+#~ "Namnet på åtgärden. Om ett tecken föregås av ett understreck kommer det "
+#~ "tecknet att användas som åtkomsttangent för menyobjektet."
+#~ msgid ""
+#~ "The command to execute when the action is activated. The URL of the link, "
+#~ "image or page will be appended to the command."
+#~ msgstr ""
+#~ "Kommandot att köra då åtgärden aktiveras. URL:en för länken, bilden eller "
+#~ "sidan kommer att läggas till efter kommandot."
+#~ msgid "Add a new rule"
+#~ msgstr "Lägg till en ny regel"
+#~ msgid "No Sidebars installed"
+#~ msgstr "Inga sidopaneler är installerade"
+#~ msgid "_Sidebar"
+#~ msgstr "_Sidopanel"
+#~ msgid "Show or hide the sidebar"
+#~ msgstr "Visa eller dölj sidopanelen"
+#~ msgid "Do you really want to remove this sidebar?"
+#~ msgstr "Vill du verkligen ta bort den här sidopanelen?"
+#~ msgid "There is no way to recover this sidebar after removal."
+#~ msgstr "Det finns inget sätt att återställa sidopanelen efter borttagning."
+#~ msgid "Remove Sidebar"
+#~ msgstr "Ta bort sidopanel"
+#~ msgid "The sidebar already contains “%s”"
+#~ msgstr "Denna sidopanel innehåller redan \"%s\""
+#~ msgid ""
+#~ "To use this sidebar, select it from the list of available sidebar pages."
+#~ msgstr ""
+#~ "För att använda denna sidopanel, välj den från listan av tillgängliga "
+#~ "sidopanelssidor."
+#~ msgid "Add Sidebar"
+#~ msgstr "Lägg till sidopanel"
+#~ msgid "Add “%s” to the Sidebar?"
+#~ msgstr "Lägg till \"%s\" på sidopanelen?"
+#~ msgid "The source to the new sidebar page is “%s”."
+#~ msgstr "Källan till den nya sidopanelssidan är \"%s\"."
+#~ msgid "_Add Sidebar"
+#~ msgstr "_Lägg till sidopanel"
+#~ msgid "Adds a sidebar to windows"
+#~ msgstr "Lägger till en sidopanel på fönster"
+#~ msgid "Sidebar"
+#~ msgstr "Sidopanel"
 #~ msgid "View Creative Commons license"
 #~ msgstr "Visa Creative Commons-licensen"
 #~ msgid "Action for tagged bookmarks:"
