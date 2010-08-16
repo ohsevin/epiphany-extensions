@@ -34,6 +34,7 @@ extensionini_in_files = livehttpheaders.ephy-extension.in.in
 extensionini_DATA = $(extensionini_in_files:.ephy-extension.in.in=.ephy-extension)
 
 %.ephy-extension.in: %.ephy-extension.in.in $(extension_LTLIBRARIES)
+	$(AM_V_GEN) \
 	sed -e "s|%LIBRARY%|`. ./$(extension_LTLIBRARIES) && echo $$dlname`|" \
 	    -e "s|%EXTENSION_DIR%|$(extensiondir)|" \
 	$< > $@

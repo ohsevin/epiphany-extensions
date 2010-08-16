@@ -39,6 +39,7 @@ schema_DATA = $(schema_in_files:.schemas.in=.schemas)
 @INTLTOOL_SCHEMAS_RULE@
 
 %.ephy-extension.in: %.ephy-extension.in.in $(extension_LTLIBRARIES)
+	$(AM_V_GEN) \
 	sed -e "s|%LIBRARY%|`. ./$(extension_LTLIBRARIES) && echo $$dlname`|" \
 	    -e "s|%EXTENSION_DIR%|$(extensiondir)|" \
 	$< > $@
