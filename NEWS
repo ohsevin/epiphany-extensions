@@ -1,4 +1,12 @@
 ==========================
+Epiphany Extensions 2.32.0
+==========================
+
+Remove deprecated GTK+ symbols, update html5tube extension to handle the latest
+youtube layout changes. No further development will occur in this branch, only
+build fixes to go with the GNOME 2.32 release.
+
+==========================
 Epiphany Extensions 2.30.1
 ==========================
 
