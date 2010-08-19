@@ -2,6 +2,12 @@
 Epiphany Extensions 2.30.1
 ==========================
 
+Update html5tube to work with new youtube layout.
+
+==========================
+Epiphany Extensions 2.30.1
+==========================
+
 Fix a few compiler warnings. We are mostly pushing this release out to
 force a rebuild in distros and fix incompatibility problems if
 extensions were built against Epiphany 2.30.0; they need to be rebuild
