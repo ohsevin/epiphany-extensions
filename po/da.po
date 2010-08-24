@@ -1,103 +1,287 @@
 # Danish translation of epiphany-extensions.
-# Copyright (C) 2004 Free Software Foundation, Inc.
+# Copyright (C) 2010 Free Software Foundation, Inc.
+# This file is distributed under the same license as the epiphany-extensions package.
 # Ole Laursen <olau@hardworking.dk>, 2004.
+# Joe Hansen <joedalton2@yahoo.dk>, 2010.
+#
+# tab -> faneblad
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-07 21:02+0200\n"
-"PO-Revision-Date: 2004-10-07 21:26+0200\n"
-"Last-Translator: Ole Laursen <olau@hardworking.dk>\n"
-"Language-Team: Danish <dansk@klid.dk>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=epiphany-extensions\n"
+"POT-Creation-Date: 2010-08-24 23:10+0200\n"
+"PO-Revision-Date: 2010-08-24 19:48+0100\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: ../extensions/actions/action-properties.ui.h:1
+msgid "<span weight=\"bold\">Applies to</span>"
+msgstr "<span weight=\"bold\">Gælder for</span>"
+
+#: ../extensions/actions/action-properties.ui.h:2
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">Generelt</span>"
+
+#: ../extensions/actions/action-properties.ui.h:3
+msgid "_Command:"
+msgstr "_Kommando:"
+
+#: ../extensions/actions/action-properties.ui.h:4
+msgid "_Description:"
+msgstr "_Beskrivelse:"
+
+#: ../extensions/actions/action-properties.ui.h:5
+msgid "_Images"
+msgstr "_Billeder"
+
+#: ../extensions/actions/action-properties.ui.h:6
+msgid "_Name:"
+msgstr "_Navn:"
+
+#: ../extensions/actions/action-properties.ui.h:7
+msgid "_Pages"
+msgstr "_Sider"
+
+#: ../extensions/actions/actions-editor.ui.h:1
+#: ../extensions/actions/actions.ephy-extension.in.in.h:1
+msgid "Actions"
+msgstr "Handlinger"
+
+#: ../extensions/actions/ephy-actions-extension.c:112
+msgid "Actio_ns"
+msgstr "_Handlinger"
+
+# kunne være tilpasningshandlinger
+#: ../extensions/actions/ephy-actions-extension.c:113
+msgid "Customize actions"
+msgstr "Tilpas handlinger"
+
+#: ../extensions/actions/ephy-actions-extension.c:436
+msgid "Could not run command"
+msgstr "Kunne ikke køre kommando"
+
+#: ../extensions/actions/ephy-actions-extension.c:440
+msgid "Could not Run Command"
+msgstr "Kunne ikke køre kommando"
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
+msgid "No action selected."
+msgstr "Ingen handling valgt."
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
+#, c-format
+msgid "%i action selected."
+msgid_plural "%i actions selected."
+msgstr[0] "%i handling valgt."
+msgstr[1] "%i handlinger valgt."
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:745
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:139
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:194
+#, c-format
+msgid "Could not display help: %s"
+msgstr "Kunne ikke vise hjælp: %s"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
+msgid "Add Action"
+msgstr "Tilføj handling"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
+#, c-format
+msgid "“%s” Properties"
+msgstr "Egenskaber for “%s”"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
+msgid "Action Properties"
+msgstr "Handlingsegenskaber"
+
+#: ../extensions/adblock/adblock-ui.c:263
+msgid ""
+"This list is Copyright © its original author(G). It is relicensed under the "
+"GPL with permission.\n"
+"The original list, Filterset.G, can be found at http://www.pierceive.com/"
+"filtersetg/.\n"
+"This version has been modified from its original. The changes have not been "
+"approved by the original author;\n"
+"direct any problems to Bugzilla and not to the original author (G).\n"
+msgstr ""
+"Ophavsretten på denne liste befinder sig hos de oprindelige forfattere. Den "
+"er med tilladelse licenseret under GPL.\n"
+"Den oprindelige liste, Filterset.G, kan ses på http://www.pierceive.com/"
+"filtersetg/.\n"
+"Denne version er blevet ændret i forhold til sin oprindelse. Ændringerne er "
+"ikke blevet godkendt af de oprindelige forfattere;\n"
+"send eventuelle problemer til Bugzilla og ikke til de oprindelige "
+"forfattere.\n"
+
+#: ../extensions/adblock/adblock-ui.c:481
+msgid "Pattern"
+msgstr "Mønster"
+
+# På grund af Graham Pierces generøsitet
+#: ../extensions/adblock/adblock.ui.h:1
+msgid "<b>Courtesy of Graham Pierce</b>"
+msgstr "<b>Tak til Graham Pierce</b>"
+
+#: ../extensions/adblock/adblock.ui.h:2
+msgid "<b>New rule</b>"
+msgstr "<b>Ny regel</b>"
+
+#: ../extensions/adblock/adblock.ui.h:3
+msgid "<b>Update rules from original site</b>"
+msgstr "<b>Opdater regler fra oprindelig hjemmeside</b>"
+
+#: ../extensions/adblock/adblock.ui.h:4
+#: ../extensions/adblock/ephy-adblock-extension.c:229
+msgid "Adblock Editor"
+msgstr "Adblockredigering"
+
+#: ../extensions/adblock/adblock.ui.h:5
+msgid "Blacklist"
+msgstr "Sortliste"
+
+#: ../extensions/adblock/adblock.ui.h:6
+msgid "Filterset.G"
+msgstr "Filterset.G"
+
+#: ../extensions/adblock/adblock.ui.h:7
+msgid "Whitelist"
+msgstr "Hvidliste"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:230
+msgid "Edit Adblock"
+msgstr "Rediger Adblock"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:300
+#, c-format
+msgid "%d hidden advertisement"
+msgid_plural "%d hidden advertisements"
+msgstr[0] "%d skjult reklame"
+msgstr[1] "%d skjulte reklamer"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:81
+msgid "_Auto Reload"
+msgstr "_Autogenindlæsning"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+msgid "Reload the page periodically"
+msgstr "Genindlæs siden periodisk"
+
+# manage overflødigt
+#: ../extensions/certificates/ephy-certificates-extension.c:163
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
+msgid "Certificates"
+msgstr "Certifikater"
+
+#: ../extensions/certificates/ephy-certificates-extension.c:194
+msgid "Security Devices"
+msgstr "Sikkerhedsenheder"
+
 # manage overflødigt
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:269
+#: ../extensions/certificates/ephy-certificates-extension.c:206
 msgid "Manage _Certificates"
-msgstr "_Certifikater"
+msgstr "Håndter _certifikater"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:271
+#: ../extensions/certificates/ephy-certificates-extension.c:208
 msgid "Manage your certificates"
-msgstr "Håndtér dine certifikater"
+msgstr "Håndter dine certifikater"
 
 #. stock icon
-#: extensions/certificates/ephy-certificates-extension.c:279
-msgid "Server _Certificate"
-msgstr "Server_certifikat"
+#: ../extensions/certificates/ephy-certificates-extension.c:212
+msgid "Manage Security _Devices"
+msgstr "Håndter _sikkerhedsenheder"
 
 #. shortcut key
-#: extensions/certificates/ephy-certificates-extension.c:281
-msgid "Display the web server's certificate"
-msgstr "Vis webserverens certifikat"
+#: ../extensions/certificates/ephy-certificates-extension.c:214
+msgid "Manage your security devices"
+msgstr "Håndter dine sikkerhedsenheder"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:98
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
 msgid "Check _HTML"
-msgstr "Kontrollér _HTML"
+msgstr "Kontroller _HTML"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:100
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:92
 msgid "Display HTML errors in the Error Viewer dialog"
 msgstr "Vis HTML-fejl i fejlviservinduet"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:105
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
 msgid "Check _Links"
-msgstr "Kontrollér _henvisninger"
+msgstr "Kontroller _henvisninger"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:107
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
 msgstr "Vis ugyldige henvisninger i fejlviservinduet"
 
-#: extensions/error-viewer/ephy-error-viewer-extension.c:111
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:103
 msgid "_Error Viewer"
 msgstr "_Fejlviser"
 
 #. shortcut key
-#: extensions/error-viewer/ephy-error-viewer-extension.c:113
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
 msgid "Display web page errors"
 msgstr "Vis hjemmesidefejl"
 
-#: extensions/error-viewer/error-viewer.glade.h:1
-msgid "C_lear"
+#: ../extensions/error-viewer/error-viewer.glade.h:1
+msgid "Cl_ear"
 msgstr "_Ryd"
 
-#: extensions/error-viewer/error-viewer.glade.h:2
+#: ../extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
 msgstr "Fejlviser"
 
-#. Don't bother looking for source lines -- they're not there
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:85
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:105
 #, c-format
 msgid ""
-"Error:\n"
+"%s error in %s on line %d and column %d:\n"
 "%s"
 msgstr ""
-"Fejl:\n"
+"%s-fejl i %s på linje %d og kolonne %d:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:110
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:113
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:137
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:150
 #, c-format
 msgid ""
-"Javascript error in %s on line %d:\n"
+"%s error in %s:\n"
 "%s"
 msgstr ""
-"Javascript-fejl i %s på linje %d:\n"
+"%s-fejl i %s:\n"
 "%s"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:60
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
+#, c-format
+msgid ""
+"%s error in %s on line %d:\n"
+"%s"
+msgstr ""
+"%s-fejl i %s på linje %d:\n"
+"%s"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
 msgstr[0] "Fandt %d ugyldig henvisning"
-msgstr[1] "Fandt %d ugyldige henvisninger<"
+msgstr[1] "Fandt %d ugyldige henvisninger"
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:117
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
 msgid ""
 "Link error in %s:\n"
@@ -106,35 +290,35 @@ msgstr ""
 "Henvisningsfejl i %s:\n"
 "%s er ikke tilgængelig."
 
-#: extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:198
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
 #, c-format
-msgid "Checking %d Link on %s"
-msgid_plural "Checking %d Links on %s"
-msgstr[0] "Kontrollerer %d henvisning på %s"
-msgstr[1] "Kontrollerer %d henvisninger på %s"
+msgid "Checking %d Link on “%s”"
+msgid_plural "Checking %d Links on “%s”"
+msgstr[0] "Kontrollerer %d henvisning på ”%s”"
+msgstr[1] "Kontrollerer %d henvisninger på ”%s”"
 
-#: extensions/error-viewer/opensp/validate.cpp:169
+#: ../extensions/error-viewer/opensp/validate.cpp:168
 #, c-format
 msgid ""
-"HTML error in %s on line %s:\n"
+"HTML error in “%s” on line %s:\n"
 "%s"
 msgstr ""
-"HTML-fejl i %s på linje %s:\n"
+"HTML-fejl i “%s” på linje %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:167
+#: ../extensions/error-viewer/sgml-validator.c:164
 #, c-format
 msgid "Found %d error"
 msgid_plural "Found %d errors"
 msgstr[0] "Fandt %d fejl"
 msgstr[1] "Fandt %d fejl"
 
-#: extensions/error-viewer/sgml-validator.c:171
+#: ../extensions/error-viewer/sgml-validator.c:168
 #, c-format
-msgid "HTML Validation of %s complete"
-msgstr "HTML-validering af %s afsluttet"
+msgid "HTML Validation of “%s” complete"
+msgstr "HTML-validering af “%s” afsluttet"
 
-#: extensions/error-viewer/sgml-validator.c:229
+#: ../extensions/error-viewer/sgml-validator.c:226
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -143,14 +327,16 @@ msgstr ""
 "HTML-fejl i %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:231
-#: extensions/error-viewer/sgml-validator.c:247
+#: ../extensions/error-viewer/sgml-validator.c:228
+#: ../extensions/error-viewer/sgml-validator.c:244
 msgid ""
-"Doctype is \"XHTML\" but content type is \"text/html\".  Use \"application/"
-"xhtml+xml\" instead."
-msgstr "Dokumenttype er \"XHTML\", men indholdstype er \"text/html\". Brug \"application/xhtml+xml\" i stedet."
+"Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
+"+xml” instead."
+msgstr ""
+"Dokumenttype er “XHTML”, men indholdstype er “text/html”. Brug “application/"
+"xhtml+xml” i stedet."
 
-#: extensions/error-viewer/sgml-validator.c:245
+#: ../extensions/error-viewer/sgml-validator.c:242
 #, c-format
 msgid ""
 "HTML warning in %s:\n"
@@ -159,20 +345,22 @@ msgstr ""
 "HTML-advarsel i %s:\n"
 "%s"
 
-#: extensions/error-viewer/sgml-validator.c:362
+#: ../extensions/error-viewer/sgml-validator.c:359
 #, c-format
 msgid "HTML error in %s:"
 msgstr "HTML-advarsel i %s:"
 
-#: extensions/error-viewer/sgml-validator.c:370
+#: ../extensions/error-viewer/sgml-validator.c:367
+#, c-format
 msgid "Invalid character encoding"
 msgstr "Ugyldig tegnkodning"
 
-#: extensions/error-viewer/sgml-validator.c:375
+#: ../extensions/error-viewer/sgml-validator.c:372
+#, c-format
 msgid "Unknown error while converting to UTF-8"
 msgstr "Ukendt fejl ved konvertering til UTF-8"
 
-#: extensions/error-viewer/sgml-validator.c:437
+#: ../extensions/error-viewer/sgml-validator.c:434
 #, c-format
 msgid ""
 "HTML error in %s:\n"
@@ -181,331 +369,699 @@ msgstr ""
 "HTML-fejl i %s:\n"
 "Ingen gyldig dokumenttype angivet."
 
-#: extensions/page-info/ephy-page-info-extension.c:65
-msgid "_Page Info"
-msgstr "_Sideinfo"
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
+msgid "Enabled"
+msgstr "Aktiveret"
 
-#: extensions/page-info/ephy-page-info-extension.c:67
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:372
+#: ../extensions/rss/rss-ui.c:560
+msgid "Description"
+msgstr "Beskrivelse"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:1
+msgid "<b>Loaded Extensions</b>"
+msgstr "<b>Indlæste udvidelser</b>"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:2
+msgid "Extensions"
+msgstr "Udvidelser"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:68
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:74
+msgid "_Extensions"
+msgstr "_Udvidelser"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:70
+msgid "Load and unload extensions"
+msgstr "Aktiver og deaktiver udvidelser"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:76
+msgid "Help about extensions"
+msgstr "Hjælp til udvidelser"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:78
+msgid "Install User _Script"
+msgstr "Installer _brugerskript"
+
+# Greasemonkey-skript
+# (greasemonkey gør at man kan få scripts til at køre på alle sider der
+# bliver vist - det er altså scripts *til* Greasemonkey)
+#. shortcut key
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:80
+msgid "Install Greasemonkey script"
+msgstr "Installer skript til Greasemonkey"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:311
+#, c-format
+msgid "The user script at “%s” has been installed"
+msgstr "Brugerskriptet på “%s” er blevet installeret"
+
+#: ../extensions/java-console/ephy-java-console-extension.c:48
+msgid "_Java Console"
+msgstr "_Javakonsol"
+
+#. shortcut key
+#: ../extensions/java-console/ephy-java-console-extension.c:50
+msgid "Show Java Console"
+msgstr "Vis Javakonsol"
+
+#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:100
+msgid "_HTTP Headers"
+msgstr "_HTTP-teksthoveder"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:1
+msgid "<b>Request</b>"
+msgstr "<b>Forespørgsel</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:2
+msgid "<b>Response</b>"
+msgstr "<b>Svar</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:3
+msgid "<b>URLs</b>"
+msgstr "<b>URL'er</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
+msgid "Clear cache"
+msgstr "Ryd mellemlager"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
+msgid "Live Headers"
+msgstr "Live teksthoveder"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
+msgid "Remove headers"
+msgstr "Fjern teksthoveder"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:61
+msgid "Pa_ge Information"
+msgstr "_Sideinformation"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:63
 msgid "Display page information in a dialog"
 msgstr "Vis oplysninger om siden i et vindue"
 
-#: extensions/page-info/page-info-dialog.c:637
+#: ../extensions/page-info/page-info-dialog.c:704
+msgid "Save As..."
+msgstr "Gem som..."
+
+#: ../extensions/page-info/page-info-dialog.c:721
+msgid "Select a directory"
+msgstr "Vælg en mappe"
+
+#: ../extensions/page-info/page-info-dialog.c:770
 msgid "Unknown type"
 msgstr "Ukendt type"
 
-#: extensions/page-info/page-info-dialog.c:642
+#: ../extensions/page-info/page-info-dialog.c:775
 msgid "Full standards compliance"
 msgstr "Følger standarderne"
 
-#: extensions/page-info/page-info-dialog.c:645
+#: ../extensions/page-info/page-info-dialog.c:778
 msgid "Almost standards compliance"
 msgstr "Følger næsten standarderne"
 
-#: extensions/page-info/page-info-dialog.c:648
+#: ../extensions/page-info/page-info-dialog.c:781
 msgid "Compatibility"
 msgstr "Kompatibilitet"
 
-#: extensions/page-info/page-info-dialog.c:651
+#: ../extensions/page-info/page-info-dialog.c:785
 msgid "Undetermined"
 msgstr "Ubestemt"
 
-#: extensions/page-info/page-info-dialog.c:660
+#: ../extensions/page-info/page-info-dialog.c:794
 msgid "Not cached"
 msgstr "Ikke mellemlagret"
 
-#: extensions/page-info/page-info-dialog.c:663
+#: ../extensions/page-info/page-info-dialog.c:797
 msgid "Disk cache"
 msgstr "Diskmellemlager"
 
-#: extensions/page-info/page-info-dialog.c:666
+#: ../extensions/page-info/page-info-dialog.c:800
 msgid "Memory cache"
 msgstr "Hukommelsesmellemlager"
 
-#: extensions/page-info/page-info-dialog.c:669
+#: ../extensions/page-info/page-info-dialog.c:803
 msgid "Unknown cache"
 msgstr "Ukendt mellemlager"
 
-#: extensions/page-info/page-info-dialog.c:685
+#: ../extensions/page-info/page-info-dialog.c:819
+#: ../extensions/page-info/page-info-dialog.c:935
 msgid "Unknown"
 msgstr "Ukendt"
 
-#: extensions/page-info/page-info-dialog.c:690
+#: ../extensions/page-info/page-info-dialog.c:824
 msgid "No referrer"
-msgstr "Ingen \"referrer\""
+msgstr "Ingen henviser"
 
-#: extensions/page-info/page-info-dialog.c:704
-#: extensions/page-info/page-info-dialog.c:720
+#: ../extensions/page-info/page-info-dialog.c:838
+#: ../extensions/page-info/page-info-dialog.c:854
 msgid "Not specified"
 msgstr "Ikke angivet"
 
-#: extensions/page-info/page-info-dialog.c:814
-msgid "Save Image As..."
-msgstr "Gem billede som..."
+#: ../extensions/page-info/page-info-dialog.c:917
+msgid "Image"
+msgstr "Billede"
 
-#: extensions/page-info/page-info-dialog.c:896
-msgid "_Open Image"
-msgstr "Åbn _billede"
+#: ../extensions/page-info/page-info-dialog.c:920
+msgid "Background image"
+msgstr "Baggrundsbillede"
 
-#: extensions/page-info/page-info-dialog.c:902
-msgid "_Copy Image Address"
-msgstr "_Kopiér billedadresse"
+#: ../extensions/page-info/page-info-dialog.c:923
+msgid "Embed"
+msgstr "Indlejr"
 
-#: extensions/page-info/page-info-dialog.c:908
-msgid "_Use Image as Background"
-msgstr "_Benyt billede som baggrund"
+#: ../extensions/page-info/page-info-dialog.c:926
+msgid "Object"
+msgstr "Objekt"
 
-#: extensions/page-info/page-info-dialog.c:914
-#: extensions/page-info/page-info.glade.h:26
-msgid "_Save Image As..."
-msgstr "_Gem billede som..."
+#: ../extensions/page-info/page-info-dialog.c:929
+msgid "Applet"
+msgstr "Panelprogram"
 
-#: extensions/page-info/page-info-dialog.c:1003
-#: extensions/page-info/page-info-dialog.c:1180
+#: ../extensions/page-info/page-info-dialog.c:932
+msgid "Icon"
+msgstr "Ikon"
+
+#: ../extensions/page-info/page-info-dialog.c:1113
+msgid "_Open"
+msgstr "_Åbn"
+
+#: ../extensions/page-info/page-info-dialog.c:1119
+#: ../extensions/page-info/page-info-dialog.c:1564
+msgid "_Copy Link Address"
+msgstr "_Kopier henvisningsadresse"
+
+#: ../extensions/page-info/page-info-dialog.c:1125
+msgid "_Use as Background"
+msgstr "_Brug som baggrund"
+
+#: ../extensions/page-info/page-info-dialog.c:1131
+#: ../extensions/page-info/page-info-dialog.c:1570
+msgid "_Save As..."
+msgstr "_Gem som..."
+
+#: ../extensions/page-info/page-info-dialog.c:1363
+#: ../extensions/page-info/page-info-dialog.c:1684
+msgid "Blocked"
+msgstr "Blokeret"
+
+#: ../extensions/page-info/page-info-dialog.c:1379
+#: ../extensions/page-info/page-info-dialog.c:1700
 msgid "URL"
 msgstr "URL"
 
-#: extensions/page-info/page-info-dialog.c:1015
+#: ../extensions/page-info/page-info-dialog.c:1392
+msgid "Type"
+msgstr "Type"
+
+#: ../extensions/page-info/page-info-dialog.c:1404
 msgid "Alt Text"
 msgstr "Alt-tekst"
 
-#: extensions/page-info/page-info-dialog.c:1027
-#: extensions/page-info/page-info-dialog.c:1192
+#: ../extensions/page-info/page-info-dialog.c:1416
+#: ../extensions/page-info/page-info-dialog.c:1713
 msgid "Title"
 msgstr "Titel"
 
-#: extensions/page-info/page-info-dialog.c:1039
+#: ../extensions/page-info/page-info-dialog.c:1428
 msgid "Width"
 msgstr "Bredde"
 
-#: extensions/page-info/page-info-dialog.c:1051
+#: ../extensions/page-info/page-info-dialog.c:1440
 msgid "Height"
 msgstr "Højde"
 
-#: extensions/page-info/page-info-dialog.c:1204
+#: ../extensions/page-info/page-info-dialog.c:1725
 msgid "Relation"
 msgstr "Relation"
 
-#: extensions/page-info/page-info-dialog.c:1315
+#: ../extensions/page-info/page-info-dialog.c:1874
+#: ../extensions/page-info/page-info-dialog.c:2015
 msgid "Name"
 msgstr "Navn"
 
-#: extensions/page-info/page-info-dialog.c:1327
+#: ../extensions/page-info/page-info-dialog.c:1886
 msgid "Method"
 msgstr "Metode"
 
-#: extensions/page-info/page-info-dialog.c:1339
+#: ../extensions/page-info/page-info-dialog.c:1900
 msgid "Action"
 msgstr "Handling"
 
-#: extensions/page-info/page-info.glade.h:1
-msgid "*"
-msgstr "*"
+#: ../extensions/page-info/page-info-dialog.c:1981
+msgid "_Copy"
+msgstr "_Kopier"
 
-#: extensions/page-info/page-info.glade.h:2
+#: ../extensions/page-info/page-info-dialog.c:2027
+msgid "Content"
+msgstr "Indhold"
+
+#: ../extensions/page-info/page-info-dialog.c:2128
+msgid "Page Metadata"
+msgstr "Metadata for side"
+
+# http://en.wikipedia.org/wiki/Dublin_Core
+#: ../extensions/page-info/page-info.glade.h:1
+msgid "<b>Dublin Core Metadata</b>"
+msgstr "<b>Dublin Core-metadata</b>"
+
+#: ../extensions/page-info/page-info.glade.h:2
 msgid "<b>Forms In Page</b>"
 msgstr "<b>Formularer på side</b>"
 
-#: extensions/page-info/page-info.glade.h:3
-msgid "<b>Image View</b>"
-msgstr "<b>Billedvisning</b>"
-
-#: extensions/page-info/page-info.glade.h:4
-msgid "<b>Images In Page</b>"
-msgstr "<b>Billeder på side</b>"
-
-#: extensions/page-info/page-info.glade.h:5
+#: ../extensions/page-info/page-info.glade.h:3
 msgid "<b>Links In Page</b>"
 msgstr "<b>Henvisninger på side</b>"
 
-#: extensions/page-info/page-info.glade.h:6
+#: ../extensions/page-info/page-info.glade.h:4
+msgid "<b>Media In Page</b>"
+msgstr "<b>Medier på side</b>"
+
+#: ../extensions/page-info/page-info.glade.h:5
+msgid "<b>Medium View</b>"
+msgstr "<b>Medievisning</b>"
+
+#: ../extensions/page-info/page-info.glade.h:6
+msgid "<b>Other Metadata</b>"
+msgstr "<b>Andre metadata</b>"
+
+#: ../extensions/page-info/page-info.glade.h:7
 msgid "<b>Rendering</b>"
 msgstr "<b>Fremvisning</b>"
 
-#: extensions/page-info/page-info.glade.h:7
+#: ../extensions/page-info/page-info.glade.h:8
 msgid "<b>Source File</b>"
 msgstr "<b>Kildefil</b>"
 
-#: extensions/page-info/page-info.glade.h:8
+#: ../extensions/page-info/page-info.glade.h:9
 msgid "<b>Web Page</b>"
 msgstr "<b>Hjemmeside</b>"
 
-#: extensions/page-info/page-info.glade.h:9
+#: ../extensions/page-info/page-info.glade.h:10
 msgid "DYNAMIC"
 msgstr "DYNAMISK"
 
-#: extensions/page-info/page-info.glade.h:10
+#: ../extensions/page-info/page-info.glade.h:11
+msgid "Date:"
+msgstr "Dato:"
+
+#: ../extensions/page-info/page-info.glade.h:12
+msgid "Description:"
+msgstr "Beskrivelse:"
+
+#: ../extensions/page-info/page-info.glade.h:13
 msgid "Encoding:"
 msgstr "Kodning:"
 
-#: extensions/page-info/page-info.glade.h:11
+#: ../extensions/page-info/page-info.glade.h:14
 msgid "Expires:"
-msgstr "Udløber"
+msgstr "Udløber:"
 
-#: extensions/page-info/page-info.glade.h:12
+#: ../extensions/page-info/page-info.glade.h:15
+msgid "Format:"
+msgstr "Format:"
+
+#: ../extensions/page-info/page-info.glade.h:16
 msgid "Forms"
 msgstr "Formularer"
 
-#: extensions/page-info/page-info.glade.h:13
+#: ../extensions/page-info/page-info.glade.h:17
 msgid "General"
 msgstr "Generelt"
 
-#: extensions/page-info/page-info.glade.h:14
-msgid "Images"
-msgstr "Billeder"
-
-#: extensions/page-info/page-info.glade.h:15
+#: ../extensions/page-info/page-info.glade.h:18
 msgid "Links"
 msgstr "Henvisninger"
 
-#: extensions/page-info/page-info.glade.h:16
+#: ../extensions/page-info/page-info.glade.h:19
 msgid "Location:"
 msgstr "Placering:"
 
-#: extensions/page-info/page-info.glade.h:17
+#: ../extensions/page-info/page-info.glade.h:20
 msgid "MIME type:"
 msgstr "MIME-type:"
 
-#: extensions/page-info/page-info.glade.h:18
+#: ../extensions/page-info/page-info.glade.h:21
+msgid "Media"
+msgstr "Medie"
+
+#: ../extensions/page-info/page-info.glade.h:22
+msgid "Metadata"
+msgstr "Metadata"
+
+#: ../extensions/page-info/page-info.glade.h:23
 msgid "Mode:"
 msgstr "Tilstand:"
 
-#: extensions/page-info/page-info.glade.h:19
+#: ../extensions/page-info/page-info.glade.h:24
 msgid "Modified:"
 msgstr "Ændret:"
 
-#: extensions/page-info/page-info.glade.h:20
+#: ../extensions/page-info/page-info.glade.h:25
 msgid "Page Properties"
 msgstr "Sideegenskaber"
 
-#: extensions/page-info/page-info.glade.h:21
+#: ../extensions/page-info/page-info.glade.h:26
 msgid "Referrer:"
-msgstr "Referrer:"
+msgstr "Henviser:"
 
-#: extensions/page-info/page-info.glade.h:22
+#: ../extensions/page-info/page-info.glade.h:27
 msgid "Size:"
 msgstr "Størrelse:"
 
-#: extensions/page-info/page-info.glade.h:23
+#: ../extensions/page-info/page-info.glade.h:28
 msgid "Source:"
 msgstr "Kilde:"
 
-#: extensions/page-info/page-info.glade.h:24
+#: ../extensions/page-info/page-info.glade.h:29
 msgid "Title:"
 msgstr "Titel:"
 
-#: extensions/page-info/page-info.glade.h:25
+#: ../extensions/page-info/page-info.glade.h:30
 msgid "Type:"
 msgstr "Type:"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:147
+#: ../extensions/page-info/page-info.glade.h:31
+msgid "_Save Media As..."
+msgstr "_Gem medie som..."
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:165
+msgid "allowed"
+msgstr "tilladt"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:169
+msgid "denied"
+msgstr "nægtet"
+
+#. Sometimes we get this... how did this get in the list!?
+#: ../extensions/permissions/ephy-permissions-dialog.c:174
+msgid "default"
+msgstr "standard"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:500
+msgid "Domain"
+msgstr "Domæne"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:512
+#: ../extensions/soup-fly/soup-fly.c:196
+msgid "State"
+msgstr "Tilstand"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:605
+msgid "Site Permissions"
+msgstr "Sidetilladelser"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:632
+msgid "Cookies"
+msgstr "Cookier"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:633
+msgid "Images"
+msgstr "Billeder"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:634
+msgid "Popup Windows"
+msgstr "Pop op-vinduer"
+
+#. stock icon
+#: ../extensions/permissions/ephy-permissions-extension.c:152
+msgid "Site _Permissions"
+msgstr "_Sidetilladelser"
+
+#. shortcut key
+#: ../extensions/permissions/ephy-permissions-extension.c:154
+msgid "Manage web site permissions"
+msgstr "Håndter hjemmesidetilladelser"
+
+#: ../extensions/rss/ephy-rss-extension.c:82
+msgid "News Feeds Subscription"
+msgstr "Abonnement på nyhedskilder"
+
+#: ../extensions/rss/ephy-rss-extension.c:84
+msgid "Subscribe to this website's news feeds in your favorite news reader"
+msgstr "Abonner på denne hjemmesides nyhedskilder i din favoritnyhedslæser"
+
+#: ../extensions/rss/ephy-rss-extension.c:89
+msgid "_Subscribe to this feed"
+msgstr "_Abonner på denne nyhedskilde"
+
+#: ../extensions/rss/ephy-rss-extension.c:91
+msgid "Subscribe to this feed in your favorite news reader"
+msgstr "Abonner på denne nyhedskilde i din favoritnyhedslæser"
+
+#: ../extensions/rss/ephy-rss-extension.c:402
+msgid "Subscribe to site's news feed"
+msgstr "Abonner på sidens nyhedskilde"
+
+#: ../extensions/rss/rss-ui.c:156
+msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
+msgstr "<b><i>Kan ikke kontakte nyhedslæseren, kører den?</i></b>"
+
+#: ../extensions/rss/rss-ui.c:158
+msgid "Retry"
+msgstr "Forsøg igen"
+
+#: ../extensions/rss/rss-ui.c:288
+msgid "_Copy Feed Address"
+msgstr "_Kopier adresse på nyhedskilde"
+
+#: ../extensions/rss/rss-ui.c:552
+msgid "Subscribe"
+msgstr "Abonner"
+
+#: ../extensions/rss/rss-ui.ui.h:1
+msgid "<b>Select Interesting Feeds</b>"
+msgstr "<b>Vælg interessante nyhedskilder</b>"
+
+#: ../extensions/rss/rss-ui.ui.h:2
+#: ../extensions/rss/rss.ephy-extension.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "Nyhedskildeabonnement"
+
+#: ../extensions/rss/rss-ui.ui.h:3
+msgid "_Subscribe"
+msgstr "_Abonner"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:140
 msgid "Render the page without using a style"
 msgstr "Vis denne side uden en stil"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:150
+#: ../extensions/select-stylesheet/ephy-css-menu.c:143
 msgid "Render the page using the default style"
 msgstr "Vis denne side med standard-stilen"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:153
+#: ../extensions/select-stylesheet/ephy-css-menu.c:146
 #, c-format
-msgid "Render the page using the \"%s\" style"
-msgstr "Vis denne side med stilen \"%s\""
+msgid "Render the page using the “%s” style"
+msgstr "Vis denne side med stilen “%s”"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:293
+#: ../extensions/select-stylesheet/ephy-css-menu.c:317
 msgid "St_yle"
 msgstr "St_il"
 
-#: extensions/select-stylesheet/ephy-css-menu.c:294
+#: ../extensions/select-stylesheet/ephy-css-menu.c:318
 msgid "Select a different style for this page"
 msgstr "Vælg en anden stil for denne side"
 
-#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
 msgid "Default"
 msgstr "Standard"
 
-#: extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
 msgid "None"
 msgstr "Ingen"
 
-#: extensions/sidebar/ephy-sidebar-extension.c:107
-msgid "_Sidebar"
-msgstr "_Sidepanel"
-
-#: extensions/sidebar/ephy-sidebar-extension.c:108
-msgid "Show or hide the sidebar"
-msgstr "Vis eller skjul sidepanelet"
-
-#: extensions/sidebar/ephy-sidebar-extension.c:368
-msgid "_Add Sidebar"
-msgstr "_Tilføj sidepanel"
-
-#: extensions/sidebar/ephy-sidebar-extension.c:395
-#, c-format
-msgid "Add \"%s\" to the Sidebar?"
-msgstr "Tilføj \"%s\" til sidepanelet?"
-
-#: extensions/sidebar/ephy-sidebar-extension.c:398
-msgid "The source to the new sidebar page is:"
-msgstr "Kilden til den nye sidepanelsside er:"
-
-#: extensions/sidebar/ephy-sidebar.c:178
-msgid "No Sidebars installed"
-msgstr "Intet sidepanel installeret"
-
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:547
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
 msgid "_Look Up"
 msgstr "_Slå op"
 
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:554
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:538
 msgid "_GNOME Dictionary"
-msgstr "_Gnome-ordbog"
+msgstr "_GNOME-ordbog"
 
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:561
-msgid "Loo_k-Up Preferences"
-msgstr "Opslagsindstillinger"
-
-#. shortcut key
-#: extensions/smart-bookmarks/smart-bookmarks-extension.c:563
-msgid "Look up your selection"
-msgstr "Slå det markerede op"
-
-#: extensions/smart-bookmarks/smart-bookmarks.glade.h:1
-msgid "Add Gnome Dictionary to the menu"
-msgstr "Tilføj Gnomes ordbog til menuen"
-
-#: extensions/smart-bookmarks/smart-bookmarks.glade.h:2
-msgid "Look Up Preferences"
-msgstr "Indstillinger for opslag"
-
-#: extensions/smart-bookmarks/smart-bookmarks.glade.h:3
-msgid "Open search results in a new tab"
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
+msgid "Open search result in new tab"
 msgstr "Åbn søgeresultater i et nyt faneblad"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:183
-#, c-format
-msgid "Window '%s' (%d tab)"
-msgid_plural "Window '%s' (%d tabs)"
-msgstr[0] "Vindue \"%s\" (%d faneblad)"
-msgstr[1] "Vindue \"%s\" (%d faneblade)"
+#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
+msgid "Open search result in new tab if true, in new window if false"
+msgstr ""
+"Åbn søgeresultater i et nyt faneblad hvis sand (true), i nyt vindue hvis "
+"falsk (false)"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:282
-msgid "Move Tab To Window"
-msgstr "Flyt faneblad til vindue"
+# går ud fra at det er et navn!
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
+msgid "_Soup Fly"
+msgstr "_Soup Fly"
 
-#: extensions/tabsmenu/ephy-tab-move-menu.c:283
-msgid "Move the current tab to a different window"
-msgstr "Flyt det aktuelle faneblad til et andet vindue"
+#. shortcut key
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:68
+msgid "Show information about the SoupSession used by the browser"
+msgstr "Vis information om SoupSession der bruges af browseren"
 
-#, fuzzy
-#~ msgid "%d popup window blocked"
-#~ msgid_plural "%d popup windows blocked"
-#~ msgstr[0] "%d pop op-vindue blokeret"
-#~ msgstr[1] "%d pop op-vinduer blokeret"
+#: ../extensions/soup-fly/soup-fly.c:220
+msgid "Clear finished"
+msgstr "Ryd færdiggjorte"
 
-#~ msgid "_Validate"
-#~ msgstr "_Validér"
+#: ../extensions/soup-fly/soup-fly.c:224
+msgid "Automatically remove finished messages"
+msgstr "Fjern automatisk færdiggjorte beskeder"
 
-#~ msgid "Blo_ck Popups from this Site"
-#~ msgstr "Blokér _pop op-vinduer fra dette sted"
+#: ../extensions/actions/actions.ephy-extension.in.in.h:2
+msgid "Execute arbitrary commands from the context menu"
+msgstr "Kør arbitrære kommandoer fra kontekstmenuen"
 
-#~ msgid "Block or unblock popup windows"
-#~ msgstr "Blokér eller afblokér pop op-vinduer"
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
+msgid "Ad Blocker"
+msgstr "Reklameblokering"
+
+# Bloker pesten!"
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
+msgid "Block the pest!"
+msgstr "Bloker plagen!"
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
+msgid "Auto Scroll"
+msgstr "Automatisk rulning"
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
+msgid "Scroll on middle mouse click"
+msgstr "Rulning med midterste musetast"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
+msgid "Auto Reload Tab"
+msgstr "Genindlæs automatisk faneblad"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
+msgid "Reload a tab periodically"
+msgstr "Genindlæs et faneblad periodisk"
+
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
+msgid "View the page certificate and manage the certificates"
+msgstr "Vis sidecertifikat og håndter certifikaterne"
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
+msgid "Error viewer"
+msgstr "Fejlviser"
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
+msgid "Validate web pages and check links"
+msgstr "Valider hjemmesider og tjek henvisninger"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
+msgid "Activate and deactivate extensions"
+msgstr "Aktiver og deaktiver udvidelser"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
+msgid "Extensions Manager"
+msgstr "Udvidelseshåndtering"
+
+# bevægelser valgt frem gestusser, da det er musebevægelser.
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
+msgid "Gestures"
+msgstr "Bevægelser"
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:2
+msgid "Perform actions with mouse gestures"
+msgstr "Udfør handlinger med musebevægelser"
+
+# navn? ja
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
+msgid "Greasemonkey"
+msgstr "Greasemonkey"
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
+msgid "Run user scripts to modify web pages' behavior"
+msgstr "Kør brugerskript for at ændre internetsiders opførsel"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
+msgid "Java Console"
+msgstr "Javakonsol"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
+msgid "Provide access to the Java-Plugin Console"
+msgstr "Tilbyd adgang til konsollen for Javaudvidelsesmodulet"
+
+#: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
+msgid "Live HTTP headers"
+msgstr "Live HTTP-teksthoveder"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
+msgid "Display information about and links and media from the current page"
+msgstr "Vis information om og henvisninger og medie fra den nuværende side"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
+msgid "Page Info"
+msgstr "Sideinfo"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
+msgid "Edit site permissions"
+msgstr "Rediger sidetilladelser"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
+msgid "Permissions"
+msgstr "Tilladelser"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
+msgid "Drag the page on middle mouse click"
+msgstr "Træk siden med den midterste musetast"
+
+# "Skub rul"
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+msgid "Push Scroll"
+msgstr "Skubberulning"
+
+#: ../extensions/rss/rss.ephy-extension.in.in.h:2
+msgid ""
+"Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr ""
+"Abonner på en nyhedskilde tilbudt af internetsiden i din favoritnyhedslæser"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:1
+msgid "A sample extension"
+msgstr "En prøveudvidelse"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:2
+msgid "Sample"
+msgstr "Prøve"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
+msgid "Select Stylesheet"
+msgstr "Vælg stilark"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
+msgid "Select between different stylesheets offered by the web page"
+msgstr "Vælg mellem forskellige stilark tilbudt af internetsiden"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
+msgid "Look up the selected text with a smart bookmark"
+msgstr "Slå den valgte tekst op med et smartbogmærke"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
+msgid "Smart Bookmarks"
+msgstr "Smartbogmærke"
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
+msgid "Groups newly opened tabs"
+msgstr "Grupperer senest åbnede faneblade"
+
+#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
+msgid "Tab Groups"
+msgstr "Fanebladsgrupper"
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
+msgid "Indicates new content in background tabs"
+msgstr "Indikerer nyt indhold i baggrundsfaneblade"
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
+msgid "Tab States"
+msgstr "Fanebladstilstande"
+
+#: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:1
+msgid "Tab Key Tab Navigate"
+msgstr ""
+
+#: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:2
+msgid "Use the Tab key to navigate between tabs"
+msgstr ""
