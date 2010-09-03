@@ -54,30 +54,6 @@ struct _EphyActionsExtensionEditorDialogPrivate
 };
 
 enum {
-	PROP_ACTIONS_EDITOR,
-
-	PROP_VIEW,
-	PROP_SELECTION_COUNT_LABEL,
-	PROP_ADD_BUTTON,
-	PROP_REMOVE_BUTTON,
-	PROP_PROPERTIES_BUTTON,
-	PROP_CLOSE_BUTTON
-};
-
-static const
-EphyDialogProperty properties[] = {
-	{ "actions_editor",		NULL, PT_NORMAL, 0 },
-
-	{ "view",			NULL, PT_NORMAL, 0 },
-	{ "selection_count_label",	NULL, PT_NORMAL, 0 },
-	{ "add_button",			NULL, PT_NORMAL, 0 },
-	{ "remove_button",		NULL, PT_NORMAL, 0 },
-	{ "properties_button",		NULL, PT_NORMAL, 0 },
-
-	{ NULL }
-};
-
-enum {
 	COLUMN_NODE,
 	COLUMN_LABEL,
 	N_COLUMNS
@@ -389,19 +365,19 @@ ephy_actions_extension_editor_dialog_constructor
 		(dialog, GTK_STOCK_PROPERTIES,
 		 G_CALLBACK(ephy_actions_extension_editor_dialog_edit_selected));
 
-	ephy_dialog_construct (EPHY_DIALOG (dialog), properties,
+	ephy_dialog_construct (EPHY_DIALOG (dialog),
 			       SHARE_DIR "/ui/actions-editor.ui",
-			       properties[PROP_ACTIONS_EDITOR].id,
+			       "actions_editor",
 			       GETTEXT_PACKAGE);
 
 	ephy_dialog_get_controls (
 		EPHY_DIALOG (dialog),
-		properties[PROP_ACTIONS_EDITOR].id, &(dialog->priv->dialog),
-		properties[PROP_VIEW].id, &(dialog->priv->view),
-		properties[PROP_SELECTION_COUNT_LABEL].id, &(dialog->priv->selection_count_label),
-		properties[PROP_REMOVE_BUTTON].id, &(dialog->priv->remove_button),
-		properties[PROP_ADD_BUTTON].id, &(dialog->priv->add_button),
-		properties[PROP_PROPERTIES_BUTTON].id, &(dialog->priv->properties_button),
+		"actions_editor", &(dialog->priv->dialog),
+		"view", &(dialog->priv->view),
+		"selection_count_label", &(dialog->priv->selection_count_label),
+		"remove_button", &(dialog->priv->remove_button),
+		"add_button", &(dialog->priv->add_button),
+		"properties_button", &(dialog->priv->properties_button),
 		NULL);
 	g_signal_connect (dialog->priv->properties_button, "clicked",
 	                  G_CALLBACK (ephy_actions_extension_editor_dialog_properties_clicked_cb),

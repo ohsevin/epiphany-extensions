@@ -140,40 +140,6 @@ enum
 
 enum
 {
-	PROP_DIALOG,
-	PROP_NOTEBOOK,
-	PROP_WHITELIST,
-	PROP_BLACKLIST,
-	PROP_DEFAULTLIST,
-	PROP_PATTERN,
-	PROP_ADD,
-	PROP_WHITE_SUPPR,
-	PROP_BLACK_SUPPR,
-	PROP_LOAD,
-	PROP_LICENSE,
-	PROP_ACTIONS
-};
-
-static const
-EphyDialogProperty properties [] =
-{
-	{ "adblock-ui",		NULL, PT_NORMAL, 0 },
-	{ "notebook",		NULL, PT_NORMAL, 0 },
-	{ "white_treeview",	NULL, PT_NORMAL, 0 },
-	{ "black_treeview",	NULL, PT_NORMAL, 0 },
-	{ "default_treeview",	NULL, PT_NORMAL, 0 },
-	{ "pattern",		NULL, PT_NORMAL, 0 },
-	{ "add",		NULL, PT_NORMAL, 0 },
-	{ "white_suppr",	NULL, PT_NORMAL, 0 },
-	{ "black_suppr",	NULL, PT_NORMAL, 0 },
-	{ "load",		NULL, PT_NORMAL, 0 },
-	{ "license",		NULL, PT_NORMAL, 0 },
-	{ "action_rules_frame",	NULL, PT_NORMAL, 0 },
-	{ NULL }
-};
-
-enum
-{
 	COL_PATTERN,
 	N_COLUMNS
 };
@@ -386,21 +352,20 @@ adblock_ui_constructor (GType type,
 	priv = dialog->priv;
 
 	ephy_dialog_construct (EPHY_DIALOG (edialog),
-			properties,
 			SHARE_DIR "/ui/adblock.ui",
 			"adblock-ui",
 			GETTEXT_PACKAGE);
 
 	ephy_dialog_get_controls (edialog,
-			properties[PROP_DIALOG].id, &priv->dialog,
-			properties[PROP_NOTEBOOK].id, &priv->notebook,
-			properties[PROP_ADD].id, &priv->add,
-			properties[PROP_WHITE_SUPPR].id, &priv->white_suppr,
-			properties[PROP_BLACK_SUPPR].id, &priv->black_suppr,
-			properties[PROP_LOAD].id, &priv->load,
-			properties[PROP_PATTERN].id, &priv->pattern,
-			properties[PROP_LICENSE].id, &priv->license,
-			properties[PROP_ACTIONS].id, &priv->actions,
+			"adblock-ui", &priv->dialog,
+			"notebook", &priv->notebook,
+			"add", &priv->add,
+			"white_suppr", &priv->white_suppr,
+			"black_suppr", &priv->black_suppr,
+			"load", &priv->load,
+			"pattern", &priv->pattern,
+			"license", &priv->license,
+			"action_rules_frame", &priv->actions,
 			NULL);
 
 	g_signal_connect (priv->dialog, "response",
@@ -514,19 +479,19 @@ adblock_ui_page_construct (InfoPage *page)
 	{
 		case PATTERN_WHITELIST:
 			ephy_dialog_get_controls (edialog,
-						  properties[PROP_WHITELIST].id,
+						  "white_treeview",
 						  &page->treeview,
 						  NULL);
 			break;
 		case PATTERN_BLACKLIST:
 			ephy_dialog_get_controls (edialog,
-						  properties[PROP_BLACKLIST].id,
+						  "black_treeview",
 						  &page->treeview,
 						  NULL);
 			break;
 		case PATTERN_DEFAULT_BLACKLIST:
 			ephy_dialog_get_controls (edialog,
-						  properties[PROP_DEFAULTLIST].id,
+						  "default_treeview",
 						  &page->treeview,
 						  NULL);
 			break;

@@ -52,21 +52,6 @@ struct ExtensionsManagerUIPrivate
 
 enum
 {
-	PROP_WINDOW,
-	PROP_TREEVIEW,
-};
-
-static const
-EphyDialogProperty properties [] =
-{
-	{ "extensions_manager_ui",	NULL, PT_NORMAL, 0 },
-	{ "extensions_treeview",	NULL, PT_NORMAL, 0 },
-
-	{ NULL }
-};
-
-enum
-{
 	COL_INFO,	/* EphyExtensionInfo* */
 	COL_NAME,	/* Search column */
 	COL_TOGGLE,	/* enabled? */
@@ -342,9 +327,9 @@ build_ui (ExtensionsManagerUI *dialog)
 	ExtensionsManagerUIPrivate *priv = dialog->priv;
 
 	priv->window = ephy_dialog_get_control (EPHY_DIALOG (dialog),
-						properties[PROP_WINDOW].id);
+						"extensions_manager_ui");
 	priv->treeview = ephy_dialog_get_control (EPHY_DIALOG (dialog),
-						  properties[PROP_TREEVIEW].id);
+						  "extensions_treeview");
 
 	g_signal_connect (priv->window, "response",
 			  G_CALLBACK (extensions_manager_ui_response_cb), dialog);
@@ -439,7 +424,6 @@ extensions_manager_ui_init (ExtensionsManagerUI *dialog)
 		(ephy_shell_get_extensions_manager (ephy_shell));
 
 	ephy_dialog_construct (EPHY_DIALOG (dialog),
-			       properties,
 			       SHARE_DIR "/ui/extensions-manager-ui.ui",
 			       "extensions_manager_ui",
 			       GETTEXT_PACKAGE);

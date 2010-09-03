@@ -106,95 +106,6 @@ enum
 	PROP_WINDOW
 };
 
-enum
-{
-	PROP_DIALOG,
-	PROP_NOTEBOOK,
-
-	PROP_GENERAL_PAGE_TITLE,
-	PROP_GENERAL_URL,
-	PROP_GENERAL_TYPE,
-	PROP_GENERAL_MIME_TYPE,
-	PROP_GENERAL_RENDER_MODE,
-	PROP_GENERAL_SOURCE,
-	PROP_GENERAL_ENCODING,
-	PROP_GENERAL_SIZE,
-	PROP_GENERAL_REFERRING_URL,
-	PROP_GENERAL_MODIFIED,
-	PROP_GENERAL_EXPIRES,
-
-	PROP_LINKS_LINK_TREEVIEW,
-
-	PROP_MEDIA_MEDIUM_TREEVIEW,
-	PROP_MEDIA_MEDIUM_BOX,
-	PROP_MEDIA_MEDIUM_VPANED,
-	PROP_MEDIA_SAVE_BUTTON,
-
-	PROP_FORMS_FORM_TREEVIEW,
-
-	PROP_META_DC_BOX,
-	PROP_META_DC_TITLE,
-	PROP_META_DC_DESC,
-	PROP_META_DC_DATE,
-	PROP_META_DC_FORMAT,
-	PROP_META_OTHER_LABEL,
-	PROP_META_TREEVIEW,
-
-/*
-	PROP_SECURITY_CERT_TITLE,
-	PROP_SECURITY_CERT_INFO,
-	PROP_SECURITY_CIPHER_TITLE,
-	PROP_SECURITY_CIPHER_INFO,
-	PROP_SECURITY_VIEW_CERT_VBOX
-*/
-};
-
-static const
-EphyDialogProperty properties [] =
-{
-	{ "page_info_dialog",		NULL, PT_NORMAL, 0 },
-	{ "page_info_notebook",		NULL, PT_NORMAL, 0 },
-
-	{ "page_info_page_title",	NULL, PT_NORMAL, 0 },
-	{ "page_info_url",		NULL, PT_NORMAL, 0 },
-	{ "page_info_type",		NULL, PT_NORMAL, 0 },
-	{ "page_info_mime",		NULL, PT_NORMAL, 0 },
-	{ "page_info_render_mode",	NULL, PT_NORMAL, 0 },
-	{ "page_info_source",		NULL, PT_NORMAL, 0 },
-	{ "page_info_encoding",		NULL, PT_NORMAL, 0 },
-	{ "page_info_size",		NULL, PT_NORMAL, 0 },
-	{ "page_info_referring_url",	NULL, PT_NORMAL, 0 },
-	{ "page_info_modified",		NULL, PT_NORMAL, 0 },
-	{ "page_info_expires",		NULL, PT_NORMAL, 0 },
-
-	{ "page_info_link_list",	NULL, PT_NORMAL, 0 },
-
-	{ "page_info_media_list",	NULL, PT_NORMAL, 0 },
-	{ "page_info_media_box",	NULL, PT_NORMAL, 0 },
-	{ "page_info_media_vpaned",	NULL, PT_NORMAL, 0 },
-	{ "page_info_media_save",	NULL, PT_NORMAL, 0 },
-
-	{ "page_info_form_list",	NULL, PT_NORMAL, 0 },
-
-	{ "page_meta_dc_box",		NULL, PT_NORMAL, 0 },
-	{ "page_meta_dc_title",		NULL, PT_NORMAL, 0 },
-	{ "page_meta_dc_desc",		NULL, PT_NORMAL, 0 },
-	{ "page_meta_dc_date",		NULL, PT_NORMAL, 0 },
-	{ "page_meta_dc_format",	NULL, PT_NORMAL, 0 },
-	{ "page_meta_other_label",	NULL, PT_NORMAL, 0 },
-	{ "page_meta_list",		NULL, PT_NORMAL, 0 },
-
-	/*
-	{ PROP_SECURITY_CERT_TITLE,     "page_info_security_title", NULL, PT_NORMAL, NULL },
-	{ PROP_SECURITY_CERT_INFO,      "page_info_security_info",  NULL, PT_NORMAL, NULL },
-	{ PROP_SECURITY_CIPHER_TITLE,   "page_info_cipher_title",   NULL, PT_NORMAL, NULL },
-	{ PROP_SECURITY_CIPHER_INFO,    "page_info_cipher_info",    NULL, PT_NORMAL, NULL },
-	{ PROP_SECURITY_VIEW_CERT_VBOX, "page_info_view_cert_vbox", NULL, PT_NORMAL, NULL },
-	*/
-
-	{ NULL }
-};
-
 static const GtkTargetEntry drag_targets[] =
 {
 	{ EPHY_DND_URL_TYPE,	  0, 0 }
@@ -268,7 +179,7 @@ setup_page_security (PageInfoDialog *dialog, EmbedPageProperties *props)
 	/* Web Site Identity Verification */
 /*
 	widget = galeon_dialog_get_control (GALEON_DIALOG (dialog),
-					    PROP_SECURITY_VIEW_CERT_VBOX);
+					    "page_info_view_cert_vbox");
 	if (!props->secret_key_length)
 	{
 		const_title = _("Web Site Identity Not Verified");
@@ -291,8 +202,8 @@ setup_page_security (PageInfoDialog *dialog, EmbedPageProperties *props)
 	}
 
 	text = g_strdup_printf ("<b>%s</b>", const_title);
-	page_info_set_text (dialog, PROP_SECURITY_CERT_TITLE, text);
-	page_info_set_text (dialog, PROP_SECURITY_CERT_INFO, msg1);
+	page_info_set_text (dialog, "page_info_security_title", text);
+	page_info_set_text (dialog, "page_info_security_info", msg1);
 	g_free (text);
 	g_free (msg1);
 
@@ -346,11 +257,11 @@ setup_page_security (PageInfoDialog *dialog, EmbedPageProperties *props)
 
 
 	text = g_strdup_printf ("<b>%s</b>", title);
-	page_info_set_text (dialog, PROP_SECURITY_CIPHER_TITLE, text);
+	page_info_set_text (dialog, "page_info_cipher_title", text);
 	g_free (text);
 
 	text = g_strdup_printf ("%s\n\n%s", msg1, msg2);
-	page_info_set_text (dialog, PROP_SECURITY_CIPHER_INFO, text);
+	page_info_set_text (dialog, "page_info_cipher_info", text);
 
 	g_free (text);
 	g_free (title);
@@ -757,16 +668,16 @@ general_info_page_fill (InfoPage *page)
 	g_return_if_fail (props != NULL);
 
 	title = ephy_embed_get_title (embed);
-	page_info_set_text (dialog, properties[PROP_GENERAL_PAGE_TITLE].id, title);
+	page_info_set_text (dialog, "page_info_page_title", title);
 
 	val = ephy_embed_get_location (embed, TRUE);
-	page_info_set_text (dialog, properties[PROP_GENERAL_URL].id, val);
+	page_info_set_text (dialog, "page_info_url", val);
 	g_free (val);
 
-	page_info_set_text (dialog, properties[PROP_GENERAL_MIME_TYPE].id, props->content_type);
+	page_info_set_text (dialog, "page_info_mime", props->content_type);
 
 	text = g_content_type_get_description (props->content_type);
-	page_info_set_text (dialog, properties[PROP_GENERAL_TYPE].id,
+	page_info_set_text (dialog, "page_info_type",
 			    text ? text : _("Unknown type"));
 
 	switch (props->rendering_mode)
@@ -786,7 +697,7 @@ general_info_page_fill (InfoPage *page)
 			break;
 	}
 
-	page_info_set_text (dialog, properties[PROP_GENERAL_RENDER_MODE].id, text);
+	page_info_set_text (dialog, "page_info_render_mode", text);
 
 	switch (props->page_source)
 	{
@@ -804,22 +715,22 @@ general_info_page_fill (InfoPage *page)
 			break;
 	}
 
-	page_info_set_text (dialog, properties[PROP_GENERAL_SOURCE].id, text);
+	page_info_set_text (dialog, "page_info_source", text);
 
-	page_info_set_text (dialog, properties[PROP_GENERAL_ENCODING].id, props->encoding);
+	page_info_set_text (dialog, "page_info_encoding", props->encoding);
 
 	if (props->size != -1)
 	{
 		val = g_format_size_for_display ((goffset) props->size);
-		page_info_set_text (dialog, properties[PROP_GENERAL_SIZE].id, val);
+		page_info_set_text (dialog, "page_info_size", val);
 		g_free (val);
 	}
 	else
 	{
-		page_info_set_text (dialog, properties[PROP_GENERAL_SIZE].id, _("Unknown"));
+		page_info_set_text (dialog, "page_info_size", _("Unknown"));
 	}
 
-	page_info_set_text (dialog, properties[PROP_GENERAL_REFERRING_URL].id,
+	page_info_set_text (dialog, "page_info_referring_url",
 			    props->referring_url ? props->referring_url :
 			    _("No referrer"));
 
@@ -829,12 +740,12 @@ general_info_page_fill (InfoPage *page)
 		strftime (date, sizeof (date), date_hack, localtime_r (&t, &tm));
 		val = g_locale_to_utf8 (date, -1, NULL, NULL, NULL);
 
-		page_info_set_text (dialog, properties[PROP_GENERAL_MODIFIED].id, val);
+		page_info_set_text (dialog, "page_info_modified", val);
 		g_free (val);
 	}
 	else
 	{
-		page_info_set_text (dialog, properties[PROP_GENERAL_MODIFIED].id,
+		page_info_set_text (dialog, "page_info_modified",
 				    _("Not specified"));
 
 	}
@@ -845,12 +756,12 @@ general_info_page_fill (InfoPage *page)
 		strftime (date, sizeof (date), date_hack, localtime_r (&t, &tm));
 		val = g_locale_to_utf8 (date, -1, NULL, NULL, NULL);
 
-		page_info_set_text (dialog, properties[PROP_GENERAL_EXPIRES].id, val);
+		page_info_set_text (dialog, "page_info_expires", val);
 		g_free (val);
 	}
 	else
 	{
-		page_info_set_text (dialog, properties[PROP_GENERAL_EXPIRES].id,
+		page_info_set_text (dialog, "page_info_expires",
 				    _("Not specified"));
 
 	}
@@ -1314,8 +1225,8 @@ media_info_page_construct (InfoPage *ipage)
 
 	ephy_dialog_get_controls
 		(EPHY_DIALOG (dialog),
-		 properties[PROP_MEDIA_MEDIUM_TREEVIEW].id, &treeview,
-		 properties[PROP_MEDIA_MEDIUM_BOX].id, &box,
+		 "page_info_media_list", &treeview,
+		 "page_info_media_box", &box,
 		 NULL);
 
 	g_signal_connect (box, "realize",
@@ -1448,12 +1359,12 @@ media_info_page_construct (InfoPage *ipage)
 	gtk_tree_view_column_set_sort_column_id (column, COL_MEDIUM_HEIGHT);
 
 	button = ephy_dialog_get_control (EPHY_DIALOG (dialog),
-					  properties[PROP_MEDIA_SAVE_BUTTON].id);
+					  "page_info_media_save");
 	g_signal_connect (button, "clicked",
 			  G_CALLBACK (treeview_page_info_save_selected_cb), page);
 
 	vpaned = ephy_dialog_get_control (EPHY_DIALOG (dialog),
-					  properties[PROP_MEDIA_MEDIUM_VPANED].id);
+					  "page_info_media_vpaned");
 
 	ephy_state_add_paned (vpaned, "PageInfoDialog::MediaPage::VPaned",
 			      MEDIUM_PANED_POSITION_DEFAULT);
@@ -1647,7 +1558,7 @@ links_info_page_construct (InfoPage *ipage)
 	EphyAdBlockManager *adblock_manager;
 
 	treeview = GTK_TREE_VIEW (ephy_dialog_get_control
-		(EPHY_DIALOG (dialog), properties[PROP_LINKS_LINK_TREEVIEW].id));
+		(EPHY_DIALOG (dialog), "page_info_link_list"));
 
 	adblock_manager = EPHY_ADBLOCK_MANAGER (
 				ephy_embed_shell_get_adblock_manager (embed_shell));
@@ -1855,7 +1766,7 @@ forms_info_page_construct (InfoPage *ipage)
 	GtkTreeSelection *selection;
 
 	treeview = GTK_TREE_VIEW (ephy_dialog_get_control
-		(EPHY_DIALOG (dialog), properties[PROP_FORMS_FORM_TREEVIEW].id));
+		(EPHY_DIALOG (dialog), "page_info_form_list"));
 
 	liststore = gtk_list_store_new (3,
 					G_TYPE_STRING,
@@ -1997,7 +1908,7 @@ metadata_info_page_construct (InfoPage *ipage)
 	GtkTreeSelection *selection;
 
 	treeview = GTK_TREE_VIEW (ephy_dialog_get_control
-		(EPHY_DIALOG (dialog), properties[PROP_META_TREEVIEW].id));
+		(EPHY_DIALOG (dialog), "page_meta_list"));
 
 	liststore = gtk_list_store_new (2,
 					G_TYPE_STRING,
@@ -2036,10 +1947,10 @@ metadata_info_page_construct (InfoPage *ipage)
 
 
 	/* empty all the DCM fields */
-	page_info_set_text (dialog, properties[PROP_META_DC_TITLE].id, "");
-	page_info_set_text (dialog, properties[PROP_META_DC_DESC].id, "");
-	page_info_set_text (dialog, properties[PROP_META_DC_DATE].id, "");
-	page_info_set_text (dialog, properties[PROP_META_DC_FORMAT].id, "");
+	page_info_set_text (dialog, "page_meta_dc_title", "");
+	page_info_set_text (dialog, "page_meta_dc_desc", "");
+	page_info_set_text (dialog, "page_meta_dc_date", "");
+	page_info_set_text (dialog, "page_meta_dc_format", "");
 
 	tpage->store = liststore;
 	tpage->selection = selection;
@@ -2058,19 +1969,19 @@ metadata_add_dc_tag (MetadataInfoPage *page,
 
 	if (strcmp (tag->name, "DC.title") == 0)
 	{
-		page_info_set_text (dialog, properties[PROP_META_DC_TITLE].id, tag->content);
+		page_info_set_text (dialog, "page_meta_dc_title", tag->content);
 	}
 	else if (strcmp (tag->name, "DC.description") == 0)
 	{
-		page_info_set_text (dialog, properties[PROP_META_DC_DESC].id, tag->content);
+		page_info_set_text (dialog, "page_meta_dc_desc", tag->content);
 	}
 	else if (strcmp (tag->name, "DC.date") == 0)
 	{
-		page_info_set_text (dialog, properties[PROP_META_DC_DATE].id, tag->content);
+		page_info_set_text (dialog, "page_meta_dc_date", tag->content);
 	}
 	else if (strcmp (tag->name, "DC.format") == 0)
 	{
-		page_info_set_text (dialog, properties[PROP_META_DC_FORMAT].id, tag->content);
+		page_info_set_text (dialog, "page_meta_dc_format", tag->content);
 	}
 	else
 	{
@@ -2120,11 +2031,11 @@ metadata_info_page_fill (InfoPage *ipage)
 	if (!have_dc)
 	{
 		widget = ephy_dialog_get_control (EPHY_DIALOG (dialog),
-						  properties[PROP_META_DC_BOX].id);
+						  "page_meta_dc_box");
 		gtk_widget_hide (widget);
 
 		widget = ephy_dialog_get_control (EPHY_DIALOG (dialog),
-						  properties[PROP_META_OTHER_LABEL].id);
+						  "page_meta_other_label");
 		text = g_strconcat ("<b>", _("Page Metadata"), "</b>", NULL);
 		gtk_label_set_markup (GTK_LABEL (widget), text);
 		g_free (text);
@@ -2204,18 +2115,17 @@ page_info_dialog_constructor (GType type,
 	priv = dialog->priv;
 
 	ephy_dialog_construct (edialog,
-			       properties,
 			       SHARE_DIR "/glade/page-info.glade",
 			       "page_info_dialog",
 			       GETTEXT_PACKAGE);
 
 	/*
-	notebook = ephy_dialog_get_control (edialog, properties[PROP_NOTEBOOK].id);
+	notebook = ephy_dialog_get_control (edialog, "page_info_notebook");
 	g_signal_connect_after (notebook, "switch_page",
 				G_CALLBACK (sync_notebook_page), dialog);
 	*/
 
-	priv->dialog = ephy_dialog_get_control (edialog, properties[PROP_DIALOG].id);
+	priv->dialog = ephy_dialog_get_control (edialog, "page_info_dialog");
 	g_signal_connect (priv->dialog, "response",
 			  G_CALLBACK (page_info_dialog_response_cb), dialog);
 

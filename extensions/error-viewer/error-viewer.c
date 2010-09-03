@@ -42,21 +42,6 @@ struct ErrorViewerPrivate
 
 enum
 {
-	PROP_WINDOW,
-	PROP_TREEVIEW,
-};
-
-static const
-EphyDialogProperty properties [] =
-{
-	{ "error_viewer",	NULL, PT_NORMAL, 0 },
-	{ "error_list",		NULL, PT_NORMAL, 0 },
-
-	{ NULL }
-};
-
-enum
-{
 	COL_ICON,
 	COL_TEXT,
 	N_COLUMNS
@@ -216,9 +201,9 @@ build_ui (ErrorViewer *dialog)
 	ErrorViewerPrivate *priv = dialog->priv;
 
 	priv->window = ephy_dialog_get_control (EPHY_DIALOG (dialog),
-						properties[PROP_WINDOW].id);
+						"error_viewer");
 	priv->treeview = ephy_dialog_get_control (EPHY_DIALOG (dialog),
-						  properties[PROP_TREEVIEW].id);
+						  "error_list");
 
 	gtk_window_set_icon_name (GTK_WINDOW (priv->window),
 				  GTK_STOCK_DIALOG_ERROR);
@@ -271,7 +256,6 @@ error_viewer_init (ErrorViewer *dialog)
 	dialog->priv->num_active = 0;
 
 	ephy_dialog_construct (EPHY_DIALOG (dialog),
-			       properties,
 			       SHARE_DIR "/glade/error-viewer.glade",
 			       "error_viewer",
 			       GETTEXT_PACKAGE);

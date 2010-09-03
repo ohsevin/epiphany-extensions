@@ -60,32 +60,6 @@ struct _LiveHTTPHeadersUIPrivate
 
 enum
 {
-	PROP_DIALOG,
-	PROP_URLS,
-	PROP_REQUEST,
-	PROP_RESPONSE,
-	PROP_CLEAR_CACHE,
-	PROP_CLEAR_HEADERS,
-	PROP_UPDATE,
-	PROP_CLOSE,
-};
-
-static const
-EphyDialogProperty properties [] =
-{
-	{ "livehttpheaders_ui",	NULL, PT_NORMAL, 0 },
-	{ "urls",		NULL, PT_NORMAL, 0 },
-	{ "request",		NULL, PT_NORMAL, 0 },
-	{ "response",		NULL, PT_NORMAL, 0 },
-	{ "clear_cache",	NULL, PT_NORMAL, 0 },
-	{ "clear_headers",	NULL, PT_NORMAL, 0 },
-	{ "update",		NULL, PT_NORMAL, 0 },
-	{ "close",		NULL, PT_NORMAL, 0 },
-	{ NULL }
-};
-
-enum
-{
 	COL_URLS,
 	N_COLUMNS
 };
@@ -281,20 +255,19 @@ livehttpheaders_ui_constructor (GType type,
 	priv = dialog->priv;
 	
 	ephy_dialog_construct (EPHY_DIALOG (edialog),
-			       properties,
 			       SHARE_DIR "/glade/livehttpheaders-ui.glade",
 			       "livehttpheaders_ui",
 			       GETTEXT_PACKAGE);
 
 	ephy_dialog_get_controls (edialog,
-				  properties[PROP_DIALOG].id, &priv->dialog,
-				  properties[PROP_URLS].id, &priv->treeview,			
-				  properties[PROP_REQUEST].id, &priv->a_request,
-				  properties[PROP_RESPONSE].id, &priv->a_response,
-				  properties[PROP_CLEAR_HEADERS].id, &priv->clear_headers,
-				  properties[PROP_CLEAR_CACHE].id, &priv->clear_cache,
-				  properties[PROP_UPDATE].id, &priv->update,
-				  properties[PROP_CLOSE].id, &priv->close,
+				  "livehttpheaders_ui", &priv->dialog,
+				  "urls", &priv->treeview,			
+				  "request", &priv->a_request,
+				  "response", &priv->a_response,
+				  "clear_headers", &priv->clear_headers,
+				  "clear_cache", &priv->clear_cache,
+				  "update", &priv->update,
+				  "close", &priv->close,
 				  NULL);
 
 	g_signal_connect (priv->dialog, "response",

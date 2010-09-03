@@ -68,26 +68,6 @@ enum
 
 enum
 {
-	PROP_DIALOG,
-	PROP_TITLE,
-	PROP_FEEDS,
-	PROP_SUBSCRIBE,
-	PROP_CLOSE,
-};
-
-static const
-EphyDialogProperty properties [] =
-{
-	{ "rss_ui",	NULL, PT_NORMAL, 0 },
-	{ "title",	NULL, PT_NORMAL, 0 },
-	{ "feeds",	NULL, PT_NORMAL, 0 },
-	{ "subscribe",	NULL, PT_NORMAL, 0 },
-	{ "close",	NULL, PT_NORMAL, 0 },
-	{ NULL }
-};
-
-enum
-{
 	COL_FEED,	/* NewsFeed* */
 	COL_SEARCH,	/* Search column */
 	COL_TOGGLE,	/* enabled? */
@@ -516,17 +496,16 @@ rss_ui_constructor (GType type,
 	priv = dialog->priv;
 
 	ephy_dialog_construct (EPHY_DIALOG (edialog),
-			       properties,
 			       SHARE_DIR "/ui/rss-ui.ui",
 			       "rss_ui",
 			       GETTEXT_PACKAGE);
 
 	ephy_dialog_get_controls (edialog,
-				  properties[PROP_DIALOG].id, &priv->dialog,
-				  properties[PROP_TITLE].id, &priv->title,
-				  properties[PROP_FEEDS].id, &priv->treeview,
-				  properties[PROP_SUBSCRIBE].id, &priv->subscribe,
-				  properties[PROP_CLOSE].id, &priv->close,
+				  "rss_ui", &priv->dialog,
+				  "title", &priv->title,
+				  "feeds", &priv->treeview,
+				  "subscribe", &priv->subscribe,
+				  "close", &priv->close,
 				  NULL);
 
 	g_object_get (object,

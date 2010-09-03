@@ -51,36 +51,6 @@ struct _EphyActionsExtensionPropertiesDialogPrivate
 GType ephy_actions_extension_properties_dialog_type = 0;
 static GObjectClass *parent_class = NULL;
 
-enum {
-	PROP_ACTION_PROPERTIES,
-
-	PROP_NAME_LABEL,
-	PROP_DESCRIPTION_LABEL,
-	PROP_COMMAND_LABEL,
-
-	PROP_NAME_ENTRY,
-	PROP_DESCRIPTION_ENTRY,
-	PROP_COMMAND_ENTRY,
-	PROP_APPLIES_TO_PAGES_CHECK,
-	PROP_APPLIES_TO_IMAGES_CHECK
-};
-
-static const EphyDialogProperty properties[] = {
-	{ "action_properties",		NULL, PT_NORMAL, 0 },
-
-	{ "name_label",			NULL, PT_NORMAL, 0 },
-	{ "description_label",		NULL, PT_NORMAL, 0 },
-	{ "command_label",		NULL, PT_NORMAL, 0 },
-
-	{ "name_entry",			NULL, PT_NORMAL, 0 },
-	{ "description_entry",		NULL, PT_NORMAL, 0 },
-	{ "command_entry",		NULL, PT_NORMAL, 0 },
-	{ "applies_to_pages_check",	NULL, PT_NORMAL, 0 },
-	{ "applies_to_images_check",	NULL, PT_NORMAL, 0 },
-
-	{ NULL }
-};
-
 static void ephy_actions_extension_properties_dialog_class_init
 	(EphyActionsExtensionPropertiesDialogClass *class);
 static void ephy_actions_extension_properties_dialog_init
@@ -267,9 +237,9 @@ ephy_actions_extension_properties_dialog_constructor
 					    construct_params);
 	dialog = EPHY_ACTIONS_EXTENSION_PROPERTIES_DIALOG (object);
 
-	ephy_dialog_construct (EPHY_DIALOG(dialog), properties,
+	ephy_dialog_construct (EPHY_DIALOG(dialog),
 			       SHARE_DIR "/ui/action-properties.ui",
-			       properties[PROP_ACTION_PROPERTIES].id,
+			       "action_properties",
 			       GETTEXT_PACKAGE);
 
 	if (dialog->priv->action == NULL)
@@ -280,28 +250,22 @@ ephy_actions_extension_properties_dialog_constructor
 	}
 
 	ephy_dialog_get_controls (EPHY_DIALOG (dialog),
-				  properties[PROP_ACTION_PROPERTIES].id, &(dialog->priv->dialog),
-				  properties[PROP_NAME_ENTRY].id, &(dialog->priv->name_entry),
+				  "action_properties", &(dialog->priv->dialog),
+				  "name_entry", &(dialog->priv->name_entry),
 				  NULL);
 
 	ephy_actions_extension_properties_dialog_link
 		(dialog,
-
-		 properties[PROP_NAME_ENTRY].id, "text",
+		 "name_entry", "text",
 		 EPHY_ACTIONS_EXTENSION_ACTION_PROP_NAME,
-
-		 properties[PROP_DESCRIPTION_ENTRY].id, "text",
+		 "description_entry", "text",
 		 EPHY_ACTIONS_EXTENSION_ACTION_PROP_DESCRIPTION,
-
-		 properties[PROP_COMMAND_ENTRY].id, "text",
+		 "command_entry", "text",
 		 EPHY_ACTIONS_EXTENSION_ACTION_PROP_COMMAND,
-
-		 properties[PROP_APPLIES_TO_PAGES_CHECK].id, "active",
+		 "applies_to_pages_check", "active",
 		 EPHY_ACTIONS_EXTENSION_ACTION_PROP_APPLIES_TO_PAGES,
-
-		 properties[PROP_APPLIES_TO_IMAGES_CHECK].id, "active",
+		 "applies_to_images_check", "active",
 		 EPHY_ACTIONS_EXTENSION_ACTION_PROP_APPLIES_TO_IMAGES,
-
 		 NULL);
 
 	if (dialog->priv->add)
