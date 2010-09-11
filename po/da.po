@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions\n"
-"POT-Creation-Date: 2010-08-24 23:11+0200\n"
-"PO-Revision-Date: 2010-08-24 19:48+0100\n"
+"POT-Creation-Date: 2010-09-11 15:41+0200\n"
+"PO-Revision-Date: 2010-09-05 19:48+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -1060,8 +1060,8 @@ msgstr "Fanebladstilstande"
 
 #: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:1
 msgid "Tab Key Tab Navigate"
-msgstr ""
+msgstr "Fanebladsnavigering med indrykstasten"
 
 #: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:2
 msgid "Use the Tab key to navigate between tabs"
-msgstr ""
+msgstr "Brug indrykstasten (Tab) til at navigere mellem faneblade"
