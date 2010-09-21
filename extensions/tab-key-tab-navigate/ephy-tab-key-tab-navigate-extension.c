@@ -49,9 +49,9 @@ static void set_tab_offset (EphyWindow *window, gint offset)
 static gboolean key_press_cb (EphyWindow *window, GdkEventKey *event, gpointer data)
 {
 	if (event->state & GDK_CONTROL_MASK) {
-		if (event->keyval == GDK_Tab) {
+		if (event->keyval == GDK_KEY_Tab) {
 			set_tab_offset (window, 1);
-		} else if (event->keyval == GDK_ISO_Left_Tab) {
+		} else if (event->keyval == GDK_KEY_ISO_Left_Tab) {
 			set_tab_offset (window, -1);
 		} else {
 			return FALSE;
