@@ -7,7 +7,6 @@
     <property name="title" translatable="yes">Actions</property>
     <property name="role">epiphany-actions-ext-actions-editor</property>
     <property name="type_hint">dialog</property>
-    <property name="has_separator">False</property>
     <child internal-child="vbox">
       <object class="GtkVBox" id="dialog-vbox1">
         <property name="visible">True</property>

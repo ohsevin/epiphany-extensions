@@ -609,7 +609,6 @@ ephy_permissions_dialog_constructor (GType type,
 	/* Don't stay on top of all windows! */
 	gtk_window_set_type_hint (GTK_WINDOW (dialog), GDK_WINDOW_TYPE_HINT_NORMAL);
 
-        gtk_dialog_set_has_separator (GTK_DIALOG (dialog), FALSE);
         gtk_container_set_border_width (GTK_CONTAINER (dialog), 5);
 
         gtk_box_set_spacing (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))), 2);
