@@ -1,0 +1,1599 @@
+# Slovenian translation for epiphany-extensions help.
+# Copyright (C) 2010 epiphany-extensions's COPYRIGHT HOLDER
+# This file is distributed under the same license as the epiphany-extensions package.
+#
+# Ime Priimek <email@naslov>, leto.
+# Matej Urbančič <mateju@svn.gnome.org>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: epiphany-extensions help master\n"
+"POT-Creation-Date: 2010-10-09 10:17+0000\n"
+"PO-Revision-Date: 2010-10-19 20:06+0200\n"
+"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
+"Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+"X-Poedit-Language: Slovenian\n"
+"X-Poedit-Country: SLOVENIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/epiphany-extensions.xml:206(None)
+msgid ""
+"@@image: 'figures/epi-ext-action-create.png'; "
+"md5=574626dd47b5eba1048121d2d88fe07d"
+msgstr ""
+"@@image: 'figures/epi-ext-action-create.png'; "
+"md5=574626dd47b5eba1048121d2d88fe07d"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/epiphany-extensions.xml:275(None)
+msgid ""
+"@@image: 'figures/epi-ext-actions-use.png'; "
+"md5=7ada8c3473a1c528cbffa960b0006a6d"
+msgstr ""
+"@@image: 'figures/epi-ext-actions-use.png'; "
+"md5=7ada8c3473a1c528cbffa960b0006a6d"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/epiphany-extensions.xml:309(None)
+msgid ""
+"@@image: 'figures/epi-ext-adblocker.png'; "
+"md5=9a9b8476501d94a5f585275af9be8186"
+msgstr ""
+"@@image: 'figures/epi-ext-adblocker.png'; "
+"md5=9a9b8476501d94a5f585275af9be8186"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/epiphany-extensions.xml:590(None)
+msgid ""
+"@@image: 'figures/epi-ext-gestures-back.png'; "
+"md5=c5b56cf973ea0ef5b87283b0e0c7ed4b"
+msgstr ""
+"@@image: 'figures/epi-ext-gestures-back.png'; "
+"md5=c5b56cf973ea0ef5b87283b0e0c7ed4b"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/epiphany-extensions.xml:601(None)
+msgid ""
+"@@image: 'figures/epi-ext-gestures-forward.png'; "
+"md5=e65d802ab75bf5db41b6a1723fe95264"
+msgstr ""
+"@@image: 'figures/epi-ext-gestures-forward.png'; "
+"md5=e65d802ab75bf5db41b6a1723fe95264"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/epiphany-extensions.xml:612(None)
+msgid ""
+"@@image: 'figures/epi-ext-gestures-up.png'; "
+"md5=b86e7cf6c439595aa8acda7e9a98192c"
+msgstr ""
+"@@image: 'figures/epi-ext-gestures-up.png'; "
+"md5=b86e7cf6c439595aa8acda7e9a98192c"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/epiphany-extensions.xml:623(None)
+msgid ""
+"@@image: 'figures/epi-ext-gestures-homepage.png'; "
+"md5=ecf77b1a6f6f6e41e6350a66fbaf161e"
+msgstr ""
+"@@image: 'figures/epi-ext-gestures-homepage.png'; "
+"md5=ecf77b1a6f6f6e41e6350a66fbaf161e"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/epiphany-extensions.xml:634(None)
+msgid ""
+"@@image: 'figures/epi-ext-gestures-reload.png'; "
+"md5=1fc686e1f01caa7b3eb89d991caebffb"
+msgstr ""
+"@@image: 'figures/epi-ext-gestures-reload.png'; "
+"md5=1fc686e1f01caa7b3eb89d991caebffb"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/epiphany-extensions.xml:645(None)
+msgid ""
+"@@image: 'figures/epi-ext-gestures-stop.png'; "
+"md5=48449b610aaf3e6bd6e72dd5b5880e0a"
+msgstr ""
+"@@image: 'figures/epi-ext-gestures-stop.png'; "
+"md5=48449b610aaf3e6bd6e72dd5b5880e0a"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/epiphany-extensions.xml:656(None)
+msgid ""
+"@@image: 'figures/epi-ext-gestures-new-window.png'; "
+"md5=fe1d22c8d896e54d5cbc9bf653c46bc9"
+msgstr ""
+"@@image: 'figures/epi-ext-gestures-new-window.png'; "
+"md5=fe1d22c8d896e54d5cbc9bf653c46bc9"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/epiphany-extensions.xml:667(None)
+msgid ""
+"@@image: 'figures/epi-ext-gestures-new-tab.png'; "
+"md5=f93528c60f02e08d39dddecaf7cc4cbb"
+msgstr ""
+"@@image: 'figures/epi-ext-gestures-new-tab.png'; "
+"md5=f93528c60f02e08d39dddecaf7cc4cbb"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/epiphany-extensions.xml:678(None)
+msgid ""
+"@@image: 'figures/epi-ext-gestures-close.png'; "
+"md5=83f58e3ebad89f060ea49558c9668a81"
+msgstr ""
+"@@image: 'figures/epi-ext-gestures-close.png'; "
+"md5=83f58e3ebad89f060ea49558c9668a81"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/epiphany-extensions.xml:689(None)
+msgid ""
+"@@image: 'figures/epi-ext-gestures-close-2.png'; "
+"md5=28c55ad71d3ab73852d8a5ab367fdee2"
+msgstr ""
+"@@image: 'figures/epi-ext-gestures-close-2.png'; "
+"md5=28c55ad71d3ab73852d8a5ab367fdee2"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/epiphany-extensions.xml:700(None)
+msgid ""
+"@@image: 'figures/epi-ext-gestures-fullscreen.png'; "
+"md5=b4eb72045ddb2488b215d3f3530ac56c"
+msgstr ""
+"@@image: 'figures/epi-ext-gestures-fullscreen.png'; "
+"md5=b4eb72045ddb2488b215d3f3530ac56c"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/epiphany-extensions.xml:711(None)
+msgid ""
+"@@image: 'figures/epi-ext-gestures-next-tab.png'; "
+"md5=dc94db0828a4f676d32286a066c7e3a4"
+msgstr ""
+"@@image: 'figures/epi-ext-gestures-next-tab.png'; "
+"md5=dc94db0828a4f676d32286a066c7e3a4"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/epiphany-extensions.xml:722(None)
+msgid ""
+"@@image: 'figures/epi-ext-gestures-prev-tab.png'; "
+"md5=9afb96085b69343b1f1bdba91088343d"
+msgstr ""
+"@@image: 'figures/epi-ext-gestures-prev-tab.png'; "
+"md5=9afb96085b69343b1f1bdba91088343d"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/epiphany-extensions.xml:734(None)
+msgid ""
+"@@image: 'figures/epi-ext-gestures-view-source.png'; "
+"md5=c509bcf2cd4dea67e7bb3d9dcc4db6aa"
+msgstr ""
+"@@image: 'figures/epi-ext-gestures-view-source.png'; "
+"md5=c509bcf2cd4dea67e7bb3d9dcc4db6aa"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/epiphany-extensions.xml:745(None)
+msgid ""
+"@@image: 'figures/epi-ext-gestures-view-source-2.png'; "
+"md5=b312d3d53273067c780358698c786ab9"
+msgstr ""
+"@@image: 'figures/epi-ext-gestures-view-source-2.png'; "
+"md5=b312d3d53273067c780358698c786ab9"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/epiphany-extensions.xml:1092(None)
+msgid ""
+"@@image: 'figures/epi-ext-sidebar.png'; md5=892abfaecbd5854de4e72f727212c5e2"
+msgstr ""
+"@@image: 'figures/epi-ext-sidebar.png'; md5=892abfaecbd5854de4e72f727212c5e2"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/epiphany-extensions.xml:1182(None)
+msgid ""
+"@@image: 'figures/epi-ext-tabgroups.png'; "
+"md5=9ccf9b6918ed6cc01570ce38ca8bd053"
+msgstr ""
+"@@image: 'figures/epi-ext-tabgroups.png'; "
+"md5=9ccf9b6918ed6cc01570ce38ca8bd053"
+
+#: C/epiphany-extensions.xml:31(para)
+msgid "Various extensions for Epiphany Web browser."
+msgstr ""
+
+#: C/epiphany-extensions.xml:33(title)
+msgid "Epiphany Extensions Manual"
+msgstr ""
+
+#: C/epiphany-extensions.xml:36(year) C/epiphany-extensions.xml:40(year)
+msgid "2006"
+msgstr "2006"
+
+#: C/epiphany-extensions.xml:37(holder)
+msgid "Baptiste Mille-Mathias"
+msgstr "Baptiste Mille-Mathias"
+
+#: C/epiphany-extensions.xml:41(holder)
+msgid "Victor Osadci"
+msgstr "Victor Osadci"
+
+#: C/epiphany-extensions.xml:55(publishername)
+#: C/epiphany-extensions.xml:67(orgname) C/epiphany-extensions.xml:75(orgname)
+msgid "GNOME Documentation Project"
+msgstr ""
+
+#: C/epiphany-extensions.xml:2(para)
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
+"later version published by the Free Software Foundation with no Invariant "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
+"of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl\">link</ulink> or "
+"in the file COPYING-DOCS distributed with this manual."
+msgstr ""
+
+#: C/epiphany-extensions.xml:12(para)
+msgid ""
+"This manual is part of a collection of GNOME manuals distributed under the "
+"GFDL. If you want to distribute this manual separately from the collection, "
+"you can do so by adding a copy of the license to the manual, as described in "
+"section 6 of the license."
+msgstr ""
+
+#: C/epiphany-extensions.xml:19(para)
+msgid ""
+"Many of the names used by companies to distinguish their products and "
+"services are claimed as trademarks. Where those names appear in any GNOME "
+"documentation, and the members of the GNOME Documentation Project are made "
+"aware of those trademarks, then the names are in capital letters or initial "
+"capital letters."
+msgstr ""
+
+#: C/epiphany-extensions.xml:35(para)
+msgid ""
+"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
+"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
+"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
+"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
+"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
+"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
+"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
+"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
+"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
+"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
+"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
+msgstr ""
+
+#: C/epiphany-extensions.xml:55(para)
+msgid ""
+"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
+"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
+"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
+"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
+"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
+"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
+"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
+"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
+"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
+"POSSIBILITY OF SUCH DAMAGES."
+msgstr ""
+
+#: C/epiphany-extensions.xml:28(para)
+msgid ""
+"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
+"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
+"<placeholder-1/>"
+msgstr ""
+
+#: C/epiphany-extensions.xml:64(firstname)
+msgid "Baptiste"
+msgstr "Baptiste"
+
+#: C/epiphany-extensions.xml:65(surname)
+msgid "Mille-Mathias"
+msgstr "Mille-Mathias"
+
+#: C/epiphany-extensions.xml:68(email)
+msgid "baptiste.millemathias@gmail.com"
+msgstr "baptiste.millemathias@gmail.com"
+
+#: C/epiphany-extensions.xml:72(firstname)
+msgid "Victor"
+msgstr "Victor"
+
+#: C/epiphany-extensions.xml:73(surname)
+msgid "Osadci"
+msgstr "Osadci"
+
+#: C/epiphany-extensions.xml:76(email)
+msgid "Victor.Osadci.GNOME@xhtml.md"
+msgstr "victor.osadci.gnome@xhtml.md"
+
+#: C/epiphany-extensions.xml:86(revnumber)
+msgid "1.0"
+msgstr "1.0"
+
+#: C/epiphany-extensions.xml:87(date)
+msgid "2006-03"
+msgstr ""
+
+#: C/epiphany-extensions.xml:91(releaseinfo)
+msgid "This manual describes version 2.14 of Epiphany."
+msgstr ""
+
+#: C/epiphany-extensions.xml:97(primary)
+msgid "Epiphany-Extensions"
+msgstr ""
+
+#: C/epiphany-extensions.xml:100(primary)
+msgid "epiphany-extensions"
+msgstr ""
+
+#: C/epiphany-extensions.xml:103(primary)
+msgid "extension"
+msgstr ""
+
+#: C/epiphany-extensions.xml:106(primary)
+msgid "Browser"
+msgstr "Brskalnik"
+
+#: C/epiphany-extensions.xml:112(title) C/epiphany-extensions.xml:123(title)
+#: C/epiphany-extensions.xml:141(title) C/epiphany-extensions.xml:288(title)
+#: C/epiphany-extensions.xml:360(title) C/epiphany-extensions.xml:389(title)
+#: C/epiphany-extensions.xml:419(title) C/epiphany-extensions.xml:490(title)
+#: C/epiphany-extensions.xml:537(title) C/epiphany-extensions.xml:556(title)
+#: C/epiphany-extensions.xml:855(title) C/epiphany-extensions.xml:902(title)
+#: C/epiphany-extensions.xml:921(title) C/epiphany-extensions.xml:971(title)
+#: C/epiphany-extensions.xml:1018(title) C/epiphany-extensions.xml:1036(title)
+#: C/epiphany-extensions.xml:1055(title) C/epiphany-extensions.xml:1077(title)
+#: C/epiphany-extensions.xml:1141(title) C/epiphany-extensions.xml:1164(title)
+#: C/epiphany-extensions.xml:1194(title)
+msgid "Introduction"
+msgstr "Uvod"
+
+#: C/epiphany-extensions.xml:114(para)
+msgid ""
+"<application>Epiphany Extensions</application> are a set of tools that "
+"extend the capabilities of <application>Epiphany</application>, the GNOME "
+"Web Browser."
+msgstr ""
+
+#: C/epiphany-extensions.xml:115(para)
+msgid "They provide to Epiphany new functionality and complete some existing."
+msgstr ""
+
+#: C/epiphany-extensions.xml:120(title)
+msgid "Extensions Manager"
+msgstr ""
+
+#: C/epiphany-extensions.xml:124(para)
+msgid ""
+"The Extension Manager is the tool that lets you activate Epiphany Extensions."
+msgstr ""
+
+#: C/epiphany-extensions.xml:129(title)
+msgid "Using Extensions Manager"
+msgstr ""
+
+#: C/epiphany-extensions.xml:130(para)
+msgid ""
+"To open the Extension Manager, choose <menuchoice><guimenu>Tools</"
+"guimenu><guimenuitem>Extension...</guimenuitem></menuchoice>."
+msgstr ""
+
+#: C/epiphany-extensions.xml:132(para)
+msgid ""
+"To enable an extension, activate the check-box in front of the extension. To "
+"disable an extension, deactivate the check-box."
+msgstr ""
+
+#: C/epiphany-extensions.xml:138(title)
+msgid "Actions"
+msgstr ""
+
+#: C/epiphany-extensions.xml:143(para)
+msgid ""
+"The Actions extension allows you to create specific actions in the context "
+"menu, for images, pages or both."
+msgstr ""
+
+#: C/epiphany-extensions.xml:148(title)
+msgid "Manage Actions"
+msgstr ""
+
+#: C/epiphany-extensions.xml:151(title)
+msgid "Create Actions"
+msgstr ""
+
+#: C/epiphany-extensions.xml:156(para) C/epiphany-extensions.xml:219(para)
+#: C/epiphany-extensions.xml:245(para)
+msgid ""
+"Choose <menuchoice><guimenu>Edit</guimenu><guimenuitem>Actions</"
+"guimenuitem></menuchoice> to open the Actions manager"
+msgstr ""
+
+#: C/epiphany-extensions.xml:161(para)
+msgid "Press <guibutton>Add</guibutton> to add a new action"
+msgstr ""
+
+#: C/epiphany-extensions.xml:169(para)
+msgid ""
+"Enter the <guilabel>Name</guilabel> of the action. The name will be "
+"displayed in the context menu"
+msgstr ""
+
+#: C/epiphany-extensions.xml:173(para)
+msgid ""
+"Enter the <guilabel>Description</guilabel> of the action. The Description "
+"will be displayed in the statusbar of <application>Epiphany</application> "
+"and in the Action Manager"
+msgstr ""
+
+#: C/epiphany-extensions.xml:179(para)
+msgid ""
+"Enter the <guilabel>Command</guilabel> to execute. this command will be "
+"executed and will receive as argument the element on which you'll launch the "
+"action. This action can be any program or script available in your path"
+msgstr ""
+
+#: C/epiphany-extensions.xml:186(para)
+msgid ""
+"Select <guilabel>Pages</guilabel> or <guilabel>Images</guilabel> to choose "
+"on which elements the action will appear"
+msgstr ""
+
+#: C/epiphany-extensions.xml:191(para)
+msgid "Press <guibutton>Add</guibutton>"
+msgstr ""
+
+#: C/epiphany-extensions.xml:166(para)
+msgid "In the \"Add Action\" window, <placeholder-1/>"
+msgstr ""
+
+#: C/epiphany-extensions.xml:197(para) C/epiphany-extensions.xml:258(para)
+msgid "Press <guibutton>Close</guibutton> to close the Actions Manager"
+msgstr ""
+
+#: C/epiphany-extensions.xml:153(para)
+msgid "To create an action, perform the following steps: <placeholder-1/>"
+msgstr ""
+
+#: C/epiphany-extensions.xml:202(title)
+msgid "An example of action"
+msgstr ""
+
+#: C/epiphany-extensions.xml:214(title)
+msgid "Edit Actions"
+msgstr ""
+
+#: C/epiphany-extensions.xml:223(para)
+msgid "Select the action to edit"
+msgstr ""
+
+#: C/epiphany-extensions.xml:228(para)
+msgid "Press <guibutton>Edit</guibutton>"
+msgstr ""
+
+#: C/epiphany-extensions.xml:232(para)
+msgid ""
+"Edit the action as described in <xref linkend=\"epi-ext-action-manage-create"
+"\"/>"
+msgstr ""
+
+#: C/epiphany-extensions.xml:216(para)
+msgid "To edit an action, follow these steps: <placeholder-1/>"
+msgstr ""
+
+#: C/epiphany-extensions.xml:240(title)
+msgid "Delete Actions"
+msgstr ""
+
+#: C/epiphany-extensions.xml:249(para)
+msgid "Select the action to delete"
+msgstr ""
+
+#: C/epiphany-extensions.xml:254(para)
+msgid "Press <guibutton>Remove</guibutton>"
+msgstr ""
+
+#: C/epiphany-extensions.xml:242(para)
+msgid "To delete an action, do the following: <placeholder-1/>"
+msgstr ""
+
+#: C/epiphany-extensions.xml:266(title)
+msgid "Using Actions"
+msgstr ""
+
+#: C/epiphany-extensions.xml:268(para)
+msgid ""
+"To use a custom action, choose the action to execute from the context menu "
+"of the element you wish to perform the action on."
+msgstr ""
+
+#: C/epiphany-extensions.xml:271(title)
+msgid ""
+"The <application>Epiphany</application> image context menu with a custom "
+"action"
+msgstr ""
+
+#: C/epiphany-extensions.xml:285(title)
+msgid "Ad Blocker"
+msgstr ""
+
+#: C/epiphany-extensions.xml:290(para)
+msgid ""
+"The Ad Blocker extension lets you block ad banners on websites. It avoids "
+"downloading them, saving time and bandwidth."
+msgstr ""
+
+#: C/epiphany-extensions.xml:295(title)
+msgid "Using Ad Blocker"
+msgstr ""
+
+#: C/epiphany-extensions.xml:297(para)
+msgid ""
+"To use the Ad Blocker, you have to enable the extension. The extension will "
+"ignore link to ads when you visit websites, and they won't be displayed in "
+"web pages."
+msgstr ""
+
+#: C/epiphany-extensions.xml:300(para)
+msgid ""
+"<application>Epiphany</application> will display an icon in left side of the "
+"status bar (see <xref linkend=\"epi-ext-figure-adblocker\"/>) to inform you "
+"that it has blocked ads. If you move the mouse pointer over the icon, it "
+"will give you the number of ads blocked in the page."
+msgstr ""
+
+#: C/epiphany-extensions.xml:305(title)
+msgid "The Ad Blocker icon"
+msgstr ""
+
+#: C/epiphany-extensions.xml:317(title)
+msgid "Extend Ad Blocker"
+msgstr ""
+
+#: C/epiphany-extensions.xml:319(para)
+msgid ""
+"Ad Blocker should block most of the advertisement on the web, but if you "
+"find that some banners are not blocked or Ad Blocker is too restrictive, you "
+"can tune Ad Blocker extension to match your needs."
+msgstr ""
+
+#: C/epiphany-extensions.xml:324(para)
+msgid ""
+"Ad Blocker uses Perl regular expressions to match known URLs of ads servers "
+"and common words used in URLs of ads. Ad Blocker stores the system-wide "
+"rules in the file <filename>adblock-patterns</filename> located in <filename "
+"class=\"directory\">$PREFIX/share/epiphany-extensions/</filename>; one "
+"regular expression per line."
+msgstr ""
+
+#: C/epiphany-extensions.xml:333(title)
+msgid "Add a deny rule"
+msgstr ""
+
+#: C/epiphany-extensions.xml:335(para)
+msgid ""
+"If you want to block an ad not blocked by the Ad Blocker default rules, you "
+"may create a blacklist file, and add rules inside."
+msgstr ""
+
+#: C/epiphany-extensions.xml:338(para)
+msgid ""
+"<application>Epiphany</application> looks for the blacklist rules in the "
+"file <filename>$HOME/.gnome2/epiphany/extensions/data/adblock/blacklist</"
+"filename>."
+msgstr ""
+
+#: C/epiphany-extensions.xml:344(title)
+msgid "Add a permit rule"
+msgstr ""
+
+#: C/epiphany-extensions.xml:346(para)
+msgid ""
+"If you want allow to permit an ad to be displayed or correct a rule of Ad "
+"Blocker which is too restrictive, you can create a whitelist file, and add "
+"rules inside."
+msgstr ""
+
+#: C/epiphany-extensions.xml:349(para)
+msgid ""
+"<application>Epiphany</application> looks for white-list rules in the file "
+"<filename>$HOME/.gnome2/epiphany/extensions/data/adblock/whitelist</"
+"filename>."
+msgstr ""
+
+#: C/epiphany-extensions.xml:357(title)
+msgid "Auto Reload Tab"
+msgstr ""
+
+#: C/epiphany-extensions.xml:362(para)
+msgid ""
+"The Auto Reload Tab extension allows you to regularly reload a page in a tab."
+msgstr ""
+
+#: C/epiphany-extensions.xml:367(title)
+msgid "Using Auto Reload Tab"
+msgstr ""
+
+#: C/epiphany-extensions.xml:369(para)
+msgid ""
+"Enter the URL of a page you want to open and you know its content change "
+"often, then choose <menuchoice><guimenu>View</guimenu><guimenuitem>Auto "
+"Reload</guimenuitem></menuchoice> to enable auto reload, "
+"<application>Epiphany</application> will refresh each 3 minutes."
+msgstr ""
+
+#: C/epiphany-extensions.xml:376(title)
+msgid "Auto reload local files"
+msgstr ""
+
+#: C/epiphany-extensions.xml:377(para)
+msgid ""
+"When a local file is opened, <application>Epiphany</application> will "
+"monitor it and reload the file when it changes."
+msgstr ""
+
+#: C/epiphany-extensions.xml:386(title)
+msgid "AutoScroll"
+msgstr ""
+
+#: C/epiphany-extensions.xml:391(para)
+msgid ""
+"The Auto Scroll extension allows you to automatically scroll a page in any "
+"direction. For instance, if you set a slow scroll, you can read a whole web "
+"page without touching your mouse."
+msgstr ""
+
+#: C/epiphany-extensions.xml:397(title)
+msgid "Using Auto Scroll"
+msgstr ""
+
+#: C/epiphany-extensions.xml:402(para)
+msgid ""
+"Press and release the middle-mouse button; a target appears, and the cursor "
+"of mouse pointer is changed to a hand cursor."
+msgstr ""
+
+#: C/epiphany-extensions.xml:407(para)
+msgid ""
+"Move the cursor in the direction to scroll. The page will start to scroll in "
+"that direction."
+msgstr ""
+
+#: C/epiphany-extensions.xml:399(para)
+msgid "To start to auto scroll on a page, <placeholder-1/>"
+msgstr ""
+
+#: C/epiphany-extensions.xml:416(title)
+msgid "Certificates"
+msgstr ""
+
+#: C/epiphany-extensions.xml:421(para)
+msgid ""
+"The Certificates extension gives access to the certificates stored by "
+"<application>Epiphany</application>, in order to view or manage them."
+msgstr ""
+
+#: C/epiphany-extensions.xml:426(title)
+msgid "Using Certificates"
+msgstr ""
+
+#: C/epiphany-extensions.xml:429(title)
+msgid "View website certificate"
+msgstr ""
+
+#: C/epiphany-extensions.xml:431(para)
+msgid ""
+"When you browse a secured website, the unlocked padlock which appear on the "
+"left of the status bar becomes a locked padlock. When the Certificates "
+"extension is activated, you can click on the padlock, it will display the "
+"certificate information."
+msgstr ""
+
+#: C/epiphany-extensions.xml:439(title)
+msgid "Manage Certificates"
+msgstr ""
+
+#: C/epiphany-extensions.xml:441(para)
+msgid ""
+"The Certificates extension lets you manage the certificates stored by "
+"<application>Epiphany</application> Browser."
+msgstr ""
+
+#: C/epiphany-extensions.xml:449(guilabel)
+msgid "Your Certificates"
+msgstr ""
+
+#: C/epiphany-extensions.xml:450(para)
+msgid ""
+"To import, view, backup and delete your own certificates. Personal "
+"Certificates can be used to identify when you browse a sensible site."
+msgstr ""
+
+#: C/epiphany-extensions.xml:457(guilabel)
+msgid "Other People's"
+msgstr ""
+
+#: C/epiphany-extensions.xml:458(para)
+msgid "To import, view, edit and delete certificates from people you know."
+msgstr ""
+
+#: C/epiphany-extensions.xml:462(guilabel)
+msgid "Web Sites"
+msgstr ""
+
+#: C/epiphany-extensions.xml:463(para)
+msgid "To import, view, edit and delete certificates from website you visited."
+msgstr ""
+
+#: C/epiphany-extensions.xml:467(guilabel)
+msgid "Authorities"
+msgstr ""
+
+#: C/epiphany-extensions.xml:468(para)
+msgid ""
+"To import, view, edit and delete certificates from authorities. Authorities "
+"are organizations which create and validate the authenticity of published "
+"certificates over the Internet."
+msgstr ""
+
+#: C/epiphany-extensions.xml:443(para)
+msgid ""
+"To display the <guilabel>Certificate Manager</guilabel>, choose "
+"<menuchoice><guimenu>Tools</guimenu><guimenuitem>Manage Certificates</"
+"guimenuitem></menuchoice>, it gives access to 4 tabs: <placeholder-1/"
+"><placeholder-2/>"
+msgstr ""
+
+#: C/epiphany-extensions.xml:478(title)
+msgid "Manage Security Devices"
+msgstr ""
+
+#: C/epiphany-extensions.xml:480(para)
+msgid ""
+"Security Devices are used to encrypt and decrypt connections and can store "
+"certificates and passwords."
+msgstr ""
+
+#: C/epiphany-extensions.xml:487(title)
+#: C/epiphany-extensions.xml:512(guilabel)
+msgid "Error Viewer"
+msgstr ""
+
+#: C/epiphany-extensions.xml:492(para)
+msgid ""
+"The Error Viewer extension allows you to view errors in web pages, validate "
+"web pages and check links."
+msgstr ""
+
+#: C/epiphany-extensions.xml:497(title)
+msgid "Using Error Viewer"
+msgstr ""
+
+#: C/epiphany-extensions.xml:504(guilabel)
+msgid "Link Checker"
+msgstr ""
+
+#: C/epiphany-extensions.xml:505(para)
+msgid "Detects dead links on a site"
+msgstr ""
+
+#: C/epiphany-extensions.xml:508(guilabel)
+msgid "HTML Code Checker"
+msgstr ""
+
+#: C/epiphany-extensions.xml:509(para)
+msgid "Checks the validity of the source code."
+msgstr ""
+
+#: C/epiphany-extensions.xml:513(para)
+msgid "Displays various errors of a webpage (like javascript, ...)"
+msgstr ""
+
+#: C/epiphany-extensions.xml:499(para)
+msgid ""
+"The Error Viewer is a small but useful extension for webmasters to check "
+"that websites (specially yours) conform to Web standards. This extension "
+"comes with 3 functions: <placeholder-1/>"
+msgstr ""
+
+#: C/epiphany-extensions.xml:518(para)
+msgid ""
+"To launch the Link Checker, choose <menuchoice><guimenu>Tools</"
+"guimenu><guimenuitem>Check Links</guimenuitem></menuchoice>. The error "
+"viewer window will open, and the links verification will start automatically."
+msgstr ""
+
+#: C/epiphany-extensions.xml:522(para)
+msgid ""
+"To launch the HTML Code Checker, choose <menuchoice><guimenu>Tools</"
+"guimenu><guimenuitem>Check HTML</guimenuitem></menuchoice>. The error viewer "
+"window will open, and the HTML code verification will start automatically."
+msgstr ""
+
+#: C/epiphany-extensions.xml:526(para)
+msgid ""
+"To launch the Error Viewer, choose <menuchoice><guimenu>Tools</"
+"guimenu><guimenuitem>Error Viewer</guimenuitem></menuchoice>. The error "
+"viewer window will open, it will display all the validation errors "
+"discovered in the web page."
+msgstr ""
+
+#: C/epiphany-extensions.xml:534(title)
+msgid "Favicon Fallback"
+msgstr ""
+
+#: C/epiphany-extensions.xml:539(para)
+msgid ""
+"The Favicon Fallback extension allows to retrieve the icon favicon.ico when "
+"the favicon is not well declared in web page."
+msgstr ""
+
+#: C/epiphany-extensions.xml:544(title)
+msgid "Using Favicon"
+msgstr ""
+
+#: C/epiphany-extensions.xml:546(para)
+msgid ""
+"Once activated, this extension will retrieve the picture file /favicon.ico "
+"on each site you will visit if this file exists. Then <application>Epiphany</"
+"application> will display this icon on the left of the location bar."
+msgstr ""
+
+#: C/epiphany-extensions.xml:553(title)
+msgid "Gestures"
+msgstr ""
+
+#: C/epiphany-extensions.xml:558(para)
+msgid ""
+"The Gestures extension allows you to quickly perform actions in "
+"<application>Epiphany</application> by drawing a shape with the mouse."
+msgstr ""
+
+#: C/epiphany-extensions.xml:563(title)
+msgid "Using Gestures"
+msgstr ""
+
+#: C/epiphany-extensions.xml:565(para)
+msgid ""
+"To perform a gesture, press the middle button in the view pane of a "
+"<application>Epiphany</application> window, move the mouse in one of the "
+"following patterns, and then release the button. The cursor will change "
+"while the gesture is being performed."
+msgstr ""
+
+#: C/epiphany-extensions.xml:571(title)
+msgid ""
+"List of available default patterns in <application>Epiphany Extensions</"
+"application>"
+msgstr ""
+
+#: C/epiphany-extensions.xml:578(entry)
+msgid "Action"
+msgstr ""
+
+#: C/epiphany-extensions.xml:579(entry)
+msgid "Gesture"
+msgstr ""
+
+#: C/epiphany-extensions.xml:580(entry)
+msgid "Example"
+msgstr ""
+
+#: C/epiphany-extensions.xml:585(entry)
+msgid "Go back in history"
+msgstr ""
+
+#: C/epiphany-extensions.xml:586(entry)
+msgid "Left"
+msgstr ""
+
+#: C/epiphany-extensions.xml:596(entry)
+msgid "Go forward in history"
+msgstr ""
+
+#: C/epiphany-extensions.xml:597(entry)
+msgid "Right"
+msgstr ""
+
+#: C/epiphany-extensions.xml:607(entry)
+msgid "Go up in a directory"
+msgstr ""
+
+#: C/epiphany-extensions.xml:608(entry)
+msgid "Up - Left - Up"
+msgstr ""
+
+#: C/epiphany-extensions.xml:618(entry)
+msgid "Go to your home page"
+msgstr ""
+
+#: C/epiphany-extensions.xml:619(entry)
+msgid "Up - Left - Down"
+msgstr ""
+
+#: C/epiphany-extensions.xml:629(entry)
+msgid "Reload the page"
+msgstr ""
+
+#: C/epiphany-extensions.xml:630(entry)
+msgid "Up - Down"
+msgstr ""
+
+#: C/epiphany-extensions.xml:640(entry)
+msgid "Stop loading the page"
+msgstr ""
+
+#: C/epiphany-extensions.xml:641(entry)
+msgid "Left - Up"
+msgstr ""
+
+#: C/epiphany-extensions.xml:651(entry)
+msgid "Open a new window"
+msgstr ""
+
+#: C/epiphany-extensions.xml:652(entry)
+msgid "Up"
+msgstr ""
+
+#: C/epiphany-extensions.xml:662(entry)
+msgid "Open a new tab"
+msgstr ""
+
+#: C/epiphany-extensions.xml:663(entry)
+msgid "Down"
+msgstr ""
+
+#: C/epiphany-extensions.xml:673(entry)
+msgid "Close a tab/window"
+msgstr ""
+
+#: C/epiphany-extensions.xml:674(entry)
+msgid "Right - Left - Right"
+msgstr ""
+
+#: C/epiphany-extensions.xml:684(entry)
+msgid "Close a tab /window (second gesture)"
+msgstr ""
+
+#: C/epiphany-extensions.xml:685(entry)
+msgid "Down - Right"
+msgstr ""
+
+#: C/epiphany-extensions.xml:695(entry)
+msgid "Toggle full-screen mode"
+msgstr ""
+
+#: C/epiphany-extensions.xml:696(entry)
+msgid "Down - Left"
+msgstr ""
+
+#: C/epiphany-extensions.xml:706(entry)
+msgid "Go to the next tab"
+msgstr ""
+
+#: C/epiphany-extensions.xml:707(entry)
+msgid "Up - Right"
+msgstr ""
+
+#: C/epiphany-extensions.xml:717(entry)
+msgid "Go to the previous tab"
+msgstr ""
+
+#: C/epiphany-extensions.xml:718(entry)
+msgid "Up - Left"
+msgstr ""
+
+#: C/epiphany-extensions.xml:728(entry)
+msgid "View the page source"
+msgstr ""
+
+#: C/epiphany-extensions.xml:730(wordasword)
+msgid "S"
+msgstr ""
+
+#: C/epiphany-extensions.xml:729(entry)
+msgid "Left - Down - Right - Down - Left (Do a <placeholder-1/>)"
+msgstr ""
+
+#: C/epiphany-extensions.xml:740(entry)
+msgid "View the page source (Second gesture)"
+msgstr ""
+
+#: C/epiphany-extensions.xml:741(entry)
+msgid "Up - Right - Down"
+msgstr ""
+
+#: C/epiphany-extensions.xml:756(title)
+msgid "Create gestures"
+msgstr ""
+
+#: C/epiphany-extensions.xml:758(para)
+msgid ""
+"The Gestures extension lets you create your own gesture patterns, and so let "
+"you extend the set provided by default."
+msgstr ""
+
+#: C/epiphany-extensions.xml:762(title)
+msgid "Understand how gesture works"
+msgstr ""
+
+#: C/epiphany-extensions.xml:764(para)
+msgid ""
+"<application>Epiphany</application> stores the definition of the gestures "
+"for all users in the file <filename>ephy-gestures.xml</filename> located in "
+"the directory <filename class=\"directory\">$PREFIX/share/epiphany-"
+"extensions/</filename>; this file uses the xml format, and defines the "
+"gestures for all the users of the system."
+msgstr ""
+
+#: C/epiphany-extensions.xml:774(title)
+msgid "A Gesture Example"
+msgstr ""
+
+#: C/epiphany-extensions.xml:770(para)
+msgid ""
+"If you open this file, you see a set of markup gesture, and inside them, "
+"there is one or several markup sequence and one markup action. "
+"<placeholder-1/>"
+msgstr ""
+
+#: C/epiphany-extensions.xml:787(title)
+msgid "Create new gesture"
+msgstr ""
+
+#: C/epiphany-extensions.xml:789(para)
+msgid ""
+"In this section, we will explain how to create a new gesture. We will decide "
+"to print the web page when we will draw a <wordasword>P</wordasword> with "
+"the mouse."
+msgstr ""
+
+#: C/epiphany-extensions.xml:793(para)
+msgid ""
+"To create your own gestures, first create a file named <filename>ephy-"
+"gestures.xml</filename> in the directory <filename class=\"directory\">~/."
+"gnome2/epiphany/</filename> which will store your personal gesture "
+"definitions."
+msgstr ""
+
+#: C/epiphany-extensions.xml:798(para)
+msgid ""
+"Open the newly created file with a text editor and add the following "
+"content: <placeholder-1/>"
+msgstr ""
+
+#: C/epiphany-extensions.xml:811(title)
+msgid "Define the gesture movement"
+msgstr ""
+
+#: C/epiphany-extensions.xml:813(para)
+msgid ""
+"To define a new gesture, you need at least one or several sequences and an "
+"action to execute."
+msgstr ""
+
+#: C/epiphany-extensions.xml:815(para)
+msgid ""
+"A sequence is a set of numerical values between 1 and 9 which define the "
+"gesture to draw following a phone keypad layout (with \"1\" placed to the "
+"top-left hand corner and the \"9\" at the bottom-right hand corner)."
+msgstr ""
+
+#: C/epiphany-extensions.xml:819(para)
+msgid ""
+"If we want to draw a <wordasword>P</wordasword>, the key sequence is "
+"74123654. Insert this value between the markups \"sequence\"."
+msgstr ""
+
+#: C/epiphany-extensions.xml:832(title)
+msgid "Define the action"
+msgstr ""
+
+#: C/epiphany-extensions.xml:834(para)
+msgid ""
+"An action describes the path to a menu or toolbar item in the "
+"<application>Epiphany</application> window. All these paths are defined is "
+"the file <filename>ephy-gestures.xml</filename> located in <filename class="
+"\"directory\">$PREFIX/epiphany/epiphany-ui.xml</filename>"
+msgstr ""
+
+#: C/epiphany-extensions.xml:852(title)
+msgid "Greasemonkey"
+msgstr ""
+
+#: C/epiphany-extensions.xml:857(para)
+msgid ""
+"Greasemonkey is a powerful extension that allows users to use scripts that "
+"make on-the-fly changes to web pages. The greasemonkey scripts can make page "
+"modifications or automatically fill forms for instance."
+msgstr ""
+
+#: C/epiphany-extensions.xml:861(para)
+msgid ""
+"Greasemonkey scripts are javascripts and have the file extension \".user.js"
+"\". Greasemonkey extension doesn't come with any scripts, you have to find "
+"by yourself scripts over the web. A good Greasemonkey scripts repository is "
+"the site <ulink url=\"http://userscripts.org/\">http://userscripts.org/</"
+"ulink>."
+msgstr ""
+
+#: C/epiphany-extensions.xml:866(para)
+msgid ""
+"To learn more about Greasemonkey, read the <ulink url=\"http://en.wikipedia."
+"org/wiki/Greasemonkey\">definition</ulink> on the Wikipedia on-line "
+"encyclopedia."
+msgstr ""
+
+#: C/epiphany-extensions.xml:872(title)
+msgid "Using Greasemonkey"
+msgstr ""
+
+#: C/epiphany-extensions.xml:875(title)
+msgid "Install a Greasemonkey script"
+msgstr ""
+
+#: C/epiphany-extensions.xml:877(para)
+msgid ""
+"To install a Greasemonkey script, first locate a link to a greasemonkey "
+"script on a web page, right-click on the link, and choose "
+"<guimenuitem>Install User Script</guimenuitem>. <application>Epiphany</"
+"application> will download the script; a message box will confirm the script "
+"is installed and ready to use."
+msgstr ""
+
+#: C/epiphany-extensions.xml:882(para)
+msgid ""
+"You can manually install Greasemonkey scripts by copying them in <filename "
+"class=\"directory\">$HOME/.gnome2/epiphany/extensions/data/greasemonkey/</"
+"filename>"
+msgstr ""
+
+#: C/epiphany-extensions.xml:888(title)
+msgid "Remove a Greasemonkey script"
+msgstr ""
+
+#: C/epiphany-extensions.xml:890(para)
+msgid ""
+"<application>Epiphany</application> doesn't provide a Graphical User "
+"interface to delete scripts; to remove a script go to <filename class="
+"\"directory\">$HOME/.gnome2/epiphany/extensions/data/greasemonkey/</"
+"filename> , and move the script file in the trash."
+msgstr ""
+
+#: C/epiphany-extensions.xml:899(title)
+msgid "Java Console"
+msgstr ""
+
+#: C/epiphany-extensions.xml:904(para)
+msgid "Java Console extension provides access to the Java-Plugin Console."
+msgstr ""
+
+#: C/epiphany-extensions.xml:909(title)
+msgid "Using Java Console"
+msgstr ""
+
+#: C/epiphany-extensions.xml:911(para)
+msgid ""
+"To display the Java Console, choose <menuchoice><guimenu>Tools</"
+"guimenu><guimenuitem>Java Console</guimenuitem></menuchoice>."
+msgstr ""
+
+#: C/epiphany-extensions.xml:918(title)
+msgid "News Feed Subscription"
+msgstr ""
+
+#: C/epiphany-extensions.xml:927(para)
+msgid "Liferea"
+msgstr ""
+
+#: C/epiphany-extensions.xml:928(para)
+msgid "Straw"
+msgstr ""
+
+#: C/epiphany-extensions.xml:929(para)
+msgid "Blam"
+msgstr ""
+
+#: C/epiphany-extensions.xml:923(para)
+msgid ""
+"The News Feed Subscription extension allows you to subscribe to a news feed "
+"offered by the web page in your favorite news reader. The supported feed "
+"readers are <placeholder-1/>"
+msgstr ""
+
+#: C/epiphany-extensions.xml:935(title)
+msgid "Using News Feed Subscription"
+msgstr ""
+
+#: C/epiphany-extensions.xml:937(para)
+msgid ""
+"When <application>Epiphany</application> detects a that a website provides "
+"RSS and Atom feeds, it will display an icon on left side of the "
+"<application>Epiphany</application> status bar."
+msgstr ""
+
+#: C/epiphany-extensions.xml:942(para)
+msgid ""
+"Choose <menuchoice><guimenu>Tools</guimenu><guimenuitem>News Feed "
+"Subscription</guimenuitem></menuchoice>, a new window with the list of "
+"available feeds appears. You can also click on the Feed icon in the status "
+"bar to make the <interface>News Feed Subscription</interface> window appear."
+msgstr ""
+
+#: C/epiphany-extensions.xml:951(para)
+msgid ""
+"Choose the feeds you wan to subscribe to. You can also copy the feed "
+"Location using the feed's context menu."
+msgstr ""
+
+#: C/epiphany-extensions.xml:957(para)
+msgid "Press <guibutton>Subscribe</guibutton> to subscribe the feeds."
+msgstr ""
+
+#: C/epiphany-extensions.xml:939(para)
+msgid "To register this feed: <placeholder-1/>"
+msgstr ""
+
+#: C/epiphany-extensions.xml:968(title)
+msgid "Page Info"
+msgstr ""
+
+#: C/epiphany-extensions.xml:973(para)
+msgid ""
+"The Page Info extension provides detailed information about the web pages "
+"you visit."
+msgstr ""
+
+#: C/epiphany-extensions.xml:978(title)
+msgid "Using Page Info"
+msgstr ""
+
+#: C/epiphany-extensions.xml:986(guilabel)
+msgid "General"
+msgstr ""
+
+#: C/epiphany-extensions.xml:987(para)
+msgid "Provides various information on the page and the website"
+msgstr ""
+
+#: C/epiphany-extensions.xml:991(guilabel)
+msgid "Media"
+msgstr ""
+
+#: C/epiphany-extensions.xml:992(para)
+msgid "Displays media files (pictures, sounds,...) used on the page."
+msgstr ""
+
+#: C/epiphany-extensions.xml:996(guilabel)
+msgid "Links"
+msgstr ""
+
+#: C/epiphany-extensions.xml:997(para)
+msgid "Provides all the links of the web page."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1000(guilabel)
+msgid "Forms"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1001(para)
+msgid "All the forms available in the page are displayed."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1005(guilabel)
+msgid "Metadata"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1006(para)
+msgid "Displays all the information entered by the webmaster about the site."
+msgstr ""
+
+#: C/epiphany-extensions.xml:980(para)
+msgid ""
+"To access the page information choose <menuchoice><guimenu>View</"
+"guimenu><guimenuitem>Page Information</guimenuitem></menuchoice>; a new "
+"window appears, letting you access 5 tabs: <placeholder-1/>"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1015(title)
+msgid "Push Scroll"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1020(para)
+msgid ""
+"The Push Scroll extension provides scroll function while the middle mouse "
+"button is pressed."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1025(title)
+msgid "Using Push Scroll"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1027(para)
+msgid ""
+"To use Push Scroll, simply press the middle mouse button, and move your "
+"mouse in any direction, the page will scroll."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1033(title)
+msgid "Python Console"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1038(para)
+msgid ""
+"Opens an interactive Python console, and allows to modify "
+"<application>Epiphany</application> through Python."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1043(title)
+msgid "Using Python Console"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1045(para)
+msgid ""
+"To display the Python Console, choose <menuchoice><guimenu>Tools</"
+"guimenu><guimenuitem>Python Console</guimenuitem></menuchoice>."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1052(title)
+msgid "Select Stylesheet"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1057(para)
+msgid ""
+"The Select Stylesheet extension lets you switch between the stylesheets of a "
+"web page. You can also disable the stylesheets when you browsing a page."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1063(title)
+msgid "Using Select Stylesheet"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1065(para)
+msgid ""
+"To change the style sheet of the website you visit, choose "
+"<menuchoice><guimenu>View</guimenu><guimenuitem>Style</guimenuitem></"
+"menuchoice> , then choose a style sheet from those available."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1068(para)
+msgid ""
+"If you choose the style sheet <guilabel>none</guilabel> the website will not "
+"use any style sheet."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1074(title)
+msgid "Sidebar"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1079(para)
+msgid ""
+"The Sidebar extension adds a small window on the left side of the "
+"<application>Epiphany</application> window. Sidebar allows to display "
+"website content and can provide quick access to their information."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1085(title)
+msgid "Using Sidebar"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1088(title)
+msgid "<application>Epiphany</application> with a Sidebar displayed"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1099(title)
+msgid "Display Sidebar"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1101(para)
+msgid ""
+"By default, the Sidebar is not displayed; to display the Sidebar, choose "
+"menu <menuchoice><guimenu>View</guimenu><guimenuitem>Sidebar</guimenuitem></"
+"menuchoice>."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1104(para)
+msgid ""
+"You can also toggle the visibility of Sidebar by pressing <keycap>F9</"
+"keycap>."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1109(title)
+msgid "Add a Sidebar"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1111(para)
+msgid ""
+"To add a Sidebar, activate the Sidebar extension, then click on the link "
+"that the website provides to install the sidebar. A dialog requests to add "
+"the document to the Sidebar, click <guibutton>Add a Sidebar</guibutton>, the "
+"sidebar document is added to the Sidebar."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1116(para)
+msgid ""
+"You can find a list of websites that provide sidebar on <ulink url=\"http://"
+"dmoz.org/Netscape/Sidebar/\">DMOZ</ulink>."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1121(title)
+msgid "Switch between Sidebars"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1123(para)
+msgid ""
+"When you have subscribed to several sidebars, to switch between them, select "
+"the Sidebar from the drop-box at the top of the Sidebar."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1129(title)
+msgid "Delete a Sidebar"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1131(para)
+msgid ""
+"To delete a Sidebar which you have added, display the sidebar to delete and "
+"press the trash icon."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1138(title)
+msgid "Smart Bookmarks"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1143(para)
+msgid ""
+"The Smart Bookmarks extension is an extension that enable to look up "
+"selected text with a smart bookmark."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1148(title)
+msgid "Using Smart Bookmarks"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1150(para)
+msgid ""
+"To create a smart bookmark, see the appropriate <ulink type=\"help\" url="
+"\"ghelp:epiphany#smart-bookmarks-create-a-smartbookmark\"> section</ulink> "
+"in the <application>Epiphany</application> manual."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1153(para)
+msgid ""
+"To look up text, select the text in a web page and choose <guimenuitem>Look "
+"Up</guimenuitem> and the smart bookmark from the context menu. A new browser "
+"window will be opened with the result of the look-up."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1161(title)
+msgid "Tab Groups"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1166(para)
+msgid "The Tab Groups extension makes new tabs appear after the current tab."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1171(title)
+msgid "Using Tab Groups"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1173(para)
+msgid ""
+"Once this extension is enabled, it changes the normal behaviour (where new "
+"tabs are created after the last tab) to a new one. When you open a new tab, "
+"it will be created after the current tab."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1178(title)
+msgid "A new tab created after the first tab"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1191(title)
+msgid "Tab States"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1196(para)
+msgid ""
+"The Tab States extension changes the status of the tab label to signal the "
+"content has changed."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1201(title)
+msgid "Using Tab States"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1203(para)
+msgid ""
+"Once this extension is enabled, when the content of a page in a tab changes, "
+"the tab label will become bold, to notify you that the page has changed."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1239(title)
+msgid "About <application>Epiphany Extensions</application>"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1244(para)
+msgid "Samuel Abels (<email>spam2@debain.org</email>)"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1246(para)
+msgid "Crispin Flowerday (<email>gnome@flowerday.cx</email>)"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1248(para)
+msgid "Adam Hooper (<email>adamh@cvs.gnome.org</email>)"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1250(para)
+msgid "Mathias Hasselmann (<email>mathias@taschenorakel.de</email>)"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1252(para)
+msgid "James Henstridge (<email>james@daa.com.au</email>)"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1254(para)
+msgid "Jean-Yves Lefort (<email>jylefort@brutele.be</email>)"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1256(para)
+msgid "Christian Persch (<email>chpe@gnome.org</email>)"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1258(para)
+msgid "Raphaël Slinckx (<email>raphael@slinckx.net</email>)"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1260(para)
+msgid "Justin Wake (<email>jwake@iinet.net.au</email>)"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1241(para)
+msgid ""
+"<application>Epiphany Extensions</application> were written by "
+"<placeholder-1/>"
+msgstr ""
+
+#: C/epiphany-extensions.xml:1264(para)
+msgid ""
+"This manual was written by Baptiste Mille-Mathias <email>baptiste."
+"millemathias@gmail.com</email>."
+msgstr ""
+
+#: C/epiphany-extensions.xml:1269(para)
+msgid ""
+"This program is distributed under the terms of the GNU General Public "
+"license as published by the Free Software Foundation; either version 2 of "
+"the License, or (at your option) any later version. A copy of this license "
+"can be found at this <ulink url=\"ghelp:gpl\" type=\"help\">link</ulink>, or "
+"in the file COPYING included with the source code of this program."
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: C/epiphany-extensions.xml:0(None)
+msgid "translator-credits"
+msgstr ""
