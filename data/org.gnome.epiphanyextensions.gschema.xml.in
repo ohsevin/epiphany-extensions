@@ -2,11 +2,23 @@
 <schemalist>
 	<schema path="/apps/epiphany-extensions/" id="org.gnome.EpiphanyExtensions">
 		<child schema="org.gnome.EpiphanyExtensions.smart-bookmarks" name="smart-bookmarks"/>
+		<child schema="org.gnome.EpiphanyExtensions.tab-states" name="tab-states"/>
 	</schema>
+
 	<schema path="/apps/epiphany-extensions/smart-bookmarks/" id="org.gnome.EpiphanyExtensions.smart-bookmarks">
 		<key type="b" name="open-in-tab">
 			<default>true</default>
 			<summary>Open search results in a new tab</summary>
+		</key>
+	</schema>
+	<schema path="/apps/epiphany-extensions/tab-states/" id="org.gnome.EpiphanyExtensions.tab-states">
+		<key type="s" name="loading-color">
+			<default>""</default>
+			<summary>Color for loading tabs, understandable to gdk_color_parse</summary>
+		</key>
+		<key type="s" name="unread-color">
+			<default>""</default>
+			<summary>Color for unread tabs, understandable to gdk_color_parse</summary>
 		</key>
 	</schema>
 </schemalist>

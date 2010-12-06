@@ -25,7 +25,6 @@
 
 #include <epiphany/epiphany.h>
 
-#include "eel-gconf-extensions.h"
 #include "ephy-debug.h"
 
 #include <gmodule.h>
@@ -45,9 +44,6 @@ struct _EphyTabStatesExtensionPrivate
 #endif
 	PangoFontDescription *bold_font_desc;
 };
-
-#define CONF_TABS_LOADING_COLOUR	"/apps/galeon/UI/Tabs/tabbed_loading_color"
-#define CONF_TABS_UNREAD_COLOUR		"/apps/galeon/UI/Tabs/tabbed_new_color"
 
 static void ephy_tab_states_extension_class_init	(EphyTabStatesExtensionClass *klass);
 static void ephy_tab_states_extension_iface_init	(EphyExtensionIface *iface);
@@ -105,6 +101,7 @@ ephy_tab_states_extension_init (EphyTabStatesExtension *extension)
 	EphyTabStatesExtensionPrivate *priv;
 #ifdef ENABLE_COLOURS
 	char *colour;
+	GSettings *settings;
 #endif
 
 	priv = extension->priv = EPHY_TAB_STATES_EXTENSION_GET_PRIVATE (extension);
@@ -112,14 +109,18 @@ ephy_tab_states_extension_init (EphyTabStatesExtension *extension)
 	LOG ("EphyTabStatesExtension initialising");
 
 #ifdef ENABLE_COLOURS
+	settings = g_settings_new ("org.gnome.EpiphanyExtensions.tab-states");
+
 	/* FIXME handle NULL and "" */
-	colour = eel_gconf_get_string (CONF_TABS_LOADING_COLOUR);
+	colour = g_settings_get_string ("loading-color");
 	gdk_color_parse (colour, &priv->tab_loading_colour);
 	g_free (colour);
 
-	colour = eel_gconf_get_string (CONF_TABS_UNREAD_COLOUR);
+	colour = g_settings_get_string ("unread-color");
 	gdk_color_parse (colour, &priv->tab_unread_colour);
 	g_free (colour);
+
+	g_object_unref (settings);
 #endif
 
 	priv->bold_font_desc = pango_font_description_new ();
