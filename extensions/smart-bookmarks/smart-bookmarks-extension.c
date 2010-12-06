@@ -21,11 +21,9 @@
 #include "config.h"
 
 #include "smart-bookmarks-extension.h"
-#include "mozilla-selection.h"
 
 #include <epiphany/epiphany.h>
 
-#include "eel-gconf-extensions.h"
 #include "ephy-debug.h"
 
 #include <gmodule.h>
@@ -34,8 +32,6 @@
 #include <glib/gi18n-lib.h>
 
 #include <string.h>
-
-#define CONF_OPEN_IN_TAB  "/apps/epiphany/extensions/smart-bookmarks/dictionarysearch/open_in_tab"
 
 #define SMART_BOOKMARKS_EXTENSION_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), TYPE_SMART_BOOKMARKS_EXTENSION, SmartBookmarksExtensionPrivate))
 
@@ -57,6 +53,7 @@ struct SmartBookmarksExtensionPrivate
 typedef struct
 {
 	GtkUIManager *manager;
+	GSettings *settings;
 	GtkActionGroup *action_group;
 	guint ui_id;
 } WindowData;
@@ -111,6 +108,22 @@ smart_bookmarks_extension_register_type (GTypeModule *module)
 	return type;
 }
 
+static char *
+get_selected_text (WebKitWebView *web_view)
+{
+	WebKitDOMDocument *ddoc;
+	WebKitDOMDOMWindow *dwindow;
+	WebKitDOMDOMSelection *dselection;
+	WebKitDOMRange *drange;
+
+	ddoc = webkit_web_view_get_dom_document (web_view);
+	dwindow = webkit_dom_document_get_default_view (ddoc);
+	dselection = webkit_dom_dom_window_get_selection (dwindow);
+	drange = webkit_dom_dom_selection_get_range_at (dselection, 0, NULL);
+
+	return webkit_dom_range_get_text (drange);
+}
+
 /**
   * Gnome Dictionray launcher.
   * For now, just spawn an instance of Gnome Dictionary with
@@ -130,8 +143,7 @@ search_gnome_dict_cb (GtkAction *action,
 	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
-	/* ask Mozilla the selection */
-	argv[2] = mozilla_get_selected_text (embed);
+	argv[2] = get_selected_text (EPHY_GET_WEBKIT_WEB_VIEW_FROM_EMBED (embed));
 	if (argv[2] == NULL) return;
 
 	g_spawn_async (NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, &error);
@@ -156,12 +168,12 @@ search_smart_bookmark_cb (GtkAction *action,
 	EphyEmbed *embed;
 	guint id;
 	EphyNewTabFlags flags = EPHY_NEW_TAB_OPEN_PAGE;
+	WindowData *data;
 
 	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
-	/* ask Mozilla the selection */
-	text = mozilla_get_selected_text (embed);
+	text = get_selected_text (EPHY_GET_WEBKIT_WEB_VIEW_FROM_EMBED (embed));
 	if (text == NULL) return;
 
 	id = GPOINTER_TO_UINT (g_object_get_data (G_OBJECT (action), NODE_ID_KEY));
@@ -177,9 +189,10 @@ search_smart_bookmark_cb (GtkAction *action,
 	/* Use smart bookmark solver to build definitive url */
 	url = ephy_bookmarks_resolve_address (bookmarks, bmk_url, text);
 
+	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 	if (url != NULL)
 	{
-		if (eel_gconf_get_boolean (CONF_OPEN_IN_TAB))
+		if (g_settings_get_boolean (data->settings, "open-in-tab"))
 		{
 			flags |= EPHY_NEW_TAB_IN_EXISTING_WINDOW |
 				 EPHY_NEW_TAB_JUMP;
@@ -188,7 +201,6 @@ search_smart_bookmark_cb (GtkAction *action,
 		{
 			flags |= EPHY_NEW_TAB_IN_NEW_WINDOW;
 		}
-
 		ephy_shell_new_tab (ephy_shell, window, NULL, url, flags);
 	}
 	else
@@ -201,26 +213,24 @@ search_smart_bookmark_cb (GtkAction *action,
 }
 
 static gboolean
-context_menu_cb (EphyEmbed *embed,
-		 EphyEmbedEvent *event,
+context_menu_cb (EphyWebView *view,
+		 GdkEventButton *event,
 		 EphyWindow *window)
 {
-	gboolean can_copy;
+	gboolean has_selection;
 	GtkAction  *action;
 	WindowData *data;
 
 	data = (WindowData *) g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 	g_return_val_if_fail (data != NULL, FALSE);
 
-	/* Is there some selection? */
-	can_copy = ephy_command_manager_can_do_command
-		(EPHY_COMMAND_MANAGER (embed), "cmd_copy");
-
 	action = gtk_action_group_get_action (data->action_group, LOOKUP_ACTION);
 	g_return_val_if_fail (action != NULL, FALSE);
 
-	gtk_action_set_sensitive (action, can_copy);
-	gtk_action_set_visible (action, can_copy);
+	has_selection = webkit_web_view_has_selection (WEBKIT_WEB_VIEW (view));
+
+	gtk_action_set_sensitive (action, has_selection);
+	gtk_action_set_visible (action, has_selection);
 
 	return FALSE;
 }
@@ -488,7 +498,8 @@ impl_attach_tab (EphyExtension *extension,
 {
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
-	g_signal_connect (embed, "ge_context_menu",
+	g_signal_connect (EPHY_GET_WEBKIT_WEB_VIEW_FROM_EMBED (embed),
+			  "button-press-event",
 			  G_CALLBACK (context_menu_cb), window);
 }
 
@@ -500,7 +511,8 @@ impl_detach_tab (EphyExtension *extension,
 	g_return_if_fail (EPHY_IS_EMBED (embed));
 
 	g_signal_handlers_disconnect_by_func
-		(embed, G_CALLBACK (context_menu_cb), window);
+		(EPHY_GET_WEBKIT_WEB_VIEW_FROM_EMBED (embed),
+		 G_CALLBACK (context_menu_cb), window);
 }
 
 static void
@@ -516,7 +528,7 @@ connect_proxy_cb (GtkActionGroup *action_group,
 	{
 		GtkLabel *label;
 
-		label = (GtkLabel *) ((GtkBin *) proxy)->child;
+		label = GTK_LABEL (gtk_bin_get_child (GTK_BIN (proxy)));
 
 		gtk_label_set_use_underline (label, FALSE);
 		gtk_label_set_ellipsize (label, PANGO_ELLIPSIZE_END);
@@ -588,6 +600,8 @@ impl_attach_window (EphyExtension *ext,
 
 	/* now add the UI to the window */
 	rebuild_ui (data);
+
+	data->settings = g_settings_new ("org.gnome.EpiphanyExtensions.smart-bookmarks");
 }
 
 static void
@@ -604,6 +618,8 @@ impl_detach_window (EphyExtension *ext,
 	gtk_ui_manager_remove_ui (data->manager, data->ui_id);
 	gtk_ui_manager_ensure_update (data->manager);
 	gtk_ui_manager_remove_action_group (data->manager, data->action_group);
+
+	g_object_unref (data->settings);
 
 	g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, NULL);
 }

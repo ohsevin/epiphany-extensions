@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+	<schema path="/apps/epiphany-extensions/" id="org.gnome.EpiphanyExtensions">
+		<child schema="org.gnome.EpiphanyExtensions.smart-bookmarks" name="smart-bookmarks"/>
+	</schema>
+	<schema path="/apps/epiphany-extensions/smart-bookmarks/" id="org.gnome.EpiphanyExtensions.smart-bookmarks">
+		<key type="b" name="open-in-tab">
+			<default>true</default>
+			<summary>Open search results in a new tab</summary>
+		</key>
+	</schema>
+</schemalist>

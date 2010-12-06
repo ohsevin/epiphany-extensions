@@ -1,5 +1,3 @@
-SUBDIRS = mozilla
-
 extensiondir = $(EXTENSIONS_DIR)
 extension_LTLIBRARIES = libsmartbookmarksextension.la
 
@@ -10,7 +8,6 @@ libsmartbookmarksextension_la_SOURCES =	\
 
 libsmartbookmarksextension_la_CPPFLAGS = \
         -I$(top_srcdir)/include					\
-	-I$(top_srcdir)/extensions/smart-bookmarks/mozilla	\
 	-DSHARE_DIR=\"$(pkgdatadir)\"				\
         -DEPHY_EXTENSIONS_LOCALEDIR=\"$(datadir)/locale\"	\
 	$(AM_CPPFLAGS)
@@ -18,10 +15,6 @@ libsmartbookmarksextension_la_CPPFLAGS = \
 libsmartbookmarksextension_la_CFLAGS = \
 	$(EPIPHANY_DEPENDENCY_CFLAGS)	\
 	$(AM_CFLAGS)
-
-libsmartbookmarksextension_la_LIBADD =	\
-	$(top_builddir)/extensions/smart-bookmarks/mozilla/libsbmozilla.la	\
-	$(MOZILLA_COMPONENT_LIBS)
 
 libsmartbookmarksextension_la_LDFLAGS = \
 	-module -avoid-version \
@@ -32,12 +25,6 @@ extensioninidir = $(extensiondir)
 extensionini_in_files = smart-bookmarks.ephy-extension.in.in
 extensionini_DATA = $(extensionini_in_files:.ephy-extension.in.in=.ephy-extension)
 
-schemadir = $(GCONF_SCHEMA_FILE_DIR)
-schema_in_files = smart-bookmarks.schemas.in
-schema_DATA = $(schema_in_files:.schemas.in=.schemas)
-
-@INTLTOOL_SCHEMAS_RULE@
-
 %.ephy-extension.in: %.ephy-extension.in.in $(extension_LTLIBRARIES)
 	$(AM_V_GEN) \
 	sed -e "s|%LIBRARY%|`. ./$(extension_LTLIBRARIES) && echo $$dlname`|" \
@@ -46,17 +33,7 @@ schema_DATA = $(schema_in_files:.schemas.in=.schemas)
 
 @EPIPHANY_EXTENSION_RULE@
 
-if GCONF_SCHEMAS_INSTALL
-install-data-local: $(schema_DATA)
-	if test -z "$(DESTDIR)" ; then \
-	for p in $^ ; do \
-		GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) \
-		$(GCONFTOOL) --makefile-install-rule $$p >&1 > /dev/null; \
-	done \
-	fi
-endif
-
 CLEANFILES = $(extensionini_DATA)
-DISTCLEANFILES = $(extensionini_DATA) $(schema_in_files:.schemas.in=.schemas)
+DISTCLEANFILES = $(extensionini_DATA)
 
-EXTRA_DIST = $(glade_DATA) $(extensionini_in_files) $(schema_in_files)
+EXTRA_DIST = $(extensionini_in_files)
