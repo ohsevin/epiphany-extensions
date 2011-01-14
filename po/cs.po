@@ -2,24 +2,26 @@
 # Copyright (C) 2004, 2005, 2006, 2009 the author(s) of epiphany-extensions.
 # Copyright (C) 2004, 2005, 2006 Miloslav Trmac <mitr@volny.cz>.
 # This file is distributed under the same license as the epiphany-extensions package.
+#
 # Miloslav Trmac <mitr@volny.cz>, 2004 - 2006.
 # Jakub Friedl <jfriedl@suse.cz>, 2006, 2007.
 # Lucas Lommer <llommer@svn.gnome.org>, 2009, 2010.
+# Marek Černocký <marek@manet.cz>, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=epiphany-extensions\n"
-"POT-Creation-Date: 2010-03-15 01:55+0100\n"
-"PO-Revision-Date: 2010-03-07 12:58+0100\n"
-"Last-Translator: Lucas Lommer <llommer@svn.gnome.org>\n"
+"product=epiphany-extensions&component=general\n"
+"POT-Creation-Date: 2010-11-12 18:05+0000\n"
+"PO-Revision-Date: 2011-01-14 08:35+0100\n"
+"Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: cs\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: KBabel 1.11.4\n"
 
 #: ../extensions/actions/action-properties.ui.h:1
 msgid "<span weight=\"bold\">Applies to</span>"
@@ -64,17 +66,17 @@ msgstr "Upravit akce"
 
 #: ../extensions/actions/ephy-actions-extension.c:436
 msgid "Could not run command"
-msgstr "Nemohu spustit příkaz"
+msgstr "Nelze spustit příkaz"
 
 #: ../extensions/actions/ephy-actions-extension.c:440
 msgid "Could not Run Command"
-msgstr "Nemohu spustit příkaz"
+msgstr "Nelze spustit příkaz"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:496
 msgid "No action selected."
 msgstr "Nevybrána žádná akce."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:506
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
@@ -82,27 +84,27 @@ msgstr[0] "vybrána %i akce."
 msgstr[1] "vybrány %i akce."
 msgstr[2] "vybráno %i akcí."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:745
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:139
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:721
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:124
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:194
 #, c-format
 msgid "Could not display help: %s"
 msgstr "Nelze zobrazit nápovědu: %s"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:274
 msgid "Add Action"
 msgstr "Přidat akci"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:384
 #, c-format
 msgid "“%s” Properties"
 msgstr "Vlastnosti „%s”"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:389
 msgid "Action Properties"
 msgstr "Vlastnosti akce"
 
-#: ../extensions/adblock/adblock-ui.c:263
+#: ../extensions/adblock/adblock-ui.c:229
 msgid ""
 "This list is Copyright © its original author(G). It is relicensed under the "
 "GPL with permission.\n"
@@ -120,7 +122,7 @@ msgstr ""
 "autorem;\n"
 "směřujte svá chybová hlášení do Bugzilly, nikoliv původnímu autorovi (G).\n"
 
-#: ../extensions/adblock/adblock-ui.c:481
+#: ../extensions/adblock/adblock-ui.c:446
 msgid "Pattern"
 msgstr "Výplň"
 
@@ -134,7 +136,7 @@ msgstr "<b>Nové pravidlo</b>"
 
 #: ../extensions/adblock/adblock.ui.h:3
 msgid "<b>Update rules from original site</b>"
-msgstr "<b>aktualizace pravidel z původní stránky</b>"
+msgstr "<b>Aktualizace pravidel z původní stránky</b>"
 
 #: ../extensions/adblock/adblock.ui.h:4
 #: ../extensions/adblock/ephy-adblock-extension.c:229
@@ -157,7 +159,7 @@ msgstr "Bílá listina"
 msgid "Edit Adblock"
 msgstr "Upravit blokování reklam"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:299
+#: ../extensions/adblock/ephy-adblock-extension.c:300
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -370,12 +372,12 @@ msgstr ""
 "Chyba HTML v %s:\n"
 "Nebyl určen platný doctype."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:349
 msgid "Enabled"
 msgstr "Povoleno"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:372
-#: ../extensions/rss/rss-ui.c:560
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:357
+#: ../extensions/rss/rss-ui.c:539
 msgid "Description"
 msgstr "Popis"
 
@@ -441,11 +443,11 @@ msgstr "<b>URL</b>"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
 msgid "Clear cache"
-msgstr "Vymazat cache"
+msgstr "Vymazat mezipaměť"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
 msgid "Live Headers"
-msgstr "Live Headers"
+msgstr "Živé hlavičky"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
 msgid "Remove headers"
@@ -459,163 +461,163 @@ msgstr "Informace o _stránce"
 msgid "Display page information in a dialog"
 msgstr "Zobrazit informace o stránce v dialogu"
 
-#: ../extensions/page-info/page-info-dialog.c:704
+#: ../extensions/page-info/page-info-dialog.c:615
 msgid "Save As..."
 msgstr "Uložit jako…"
 
-#: ../extensions/page-info/page-info-dialog.c:721
+#: ../extensions/page-info/page-info-dialog.c:632
 msgid "Select a directory"
 msgstr "Zvolte adresář"
 
-#: ../extensions/page-info/page-info-dialog.c:770
+#: ../extensions/page-info/page-info-dialog.c:681
 msgid "Unknown type"
 msgstr "Neznámý typ"
 
-#: ../extensions/page-info/page-info-dialog.c:775
+#: ../extensions/page-info/page-info-dialog.c:686
 msgid "Full standards compliance"
 msgstr "Úplné splňování standardu"
 
-#: ../extensions/page-info/page-info-dialog.c:778
+#: ../extensions/page-info/page-info-dialog.c:689
 msgid "Almost standards compliance"
 msgstr "Téměř splňování standardu"
 
-#: ../extensions/page-info/page-info-dialog.c:781
+#: ../extensions/page-info/page-info-dialog.c:692
 msgid "Compatibility"
 msgstr "Kompatibilita"
 
-#: ../extensions/page-info/page-info-dialog.c:785
+#: ../extensions/page-info/page-info-dialog.c:696
 msgid "Undetermined"
 msgstr "Neurčeno"
 
-#: ../extensions/page-info/page-info-dialog.c:794
+#: ../extensions/page-info/page-info-dialog.c:705
 msgid "Not cached"
-msgstr "Nekešováno"
+msgstr "Nepoužívá mezipaměť"
 
-#: ../extensions/page-info/page-info-dialog.c:797
+#: ../extensions/page-info/page-info-dialog.c:708
 msgid "Disk cache"
-msgstr "Cache na disku"
+msgstr "Mezipaměť na disku"
 
-#: ../extensions/page-info/page-info-dialog.c:800
+#: ../extensions/page-info/page-info-dialog.c:711
 msgid "Memory cache"
-msgstr "Cache v paměti"
+msgstr "Mezipaměť v paměti"
 
-#: ../extensions/page-info/page-info-dialog.c:803
+#: ../extensions/page-info/page-info-dialog.c:714
 msgid "Unknown cache"
-msgstr "Neznámá cache"
+msgstr "Neznámá mezipaměť"
 
-#: ../extensions/page-info/page-info-dialog.c:819
-#: ../extensions/page-info/page-info-dialog.c:935
+#: ../extensions/page-info/page-info-dialog.c:730
+#: ../extensions/page-info/page-info-dialog.c:846
 msgid "Unknown"
 msgstr "Neznámé"
 
-#: ../extensions/page-info/page-info-dialog.c:824
+#: ../extensions/page-info/page-info-dialog.c:735
 msgid "No referrer"
 msgstr "Žádný referrer"
 
-#: ../extensions/page-info/page-info-dialog.c:838
-#: ../extensions/page-info/page-info-dialog.c:854
+#: ../extensions/page-info/page-info-dialog.c:749
+#: ../extensions/page-info/page-info-dialog.c:765
 msgid "Not specified"
 msgstr "Neurčeno"
 
-#: ../extensions/page-info/page-info-dialog.c:917
+#: ../extensions/page-info/page-info-dialog.c:828
 msgid "Image"
 msgstr "Obrázek"
 
-#: ../extensions/page-info/page-info-dialog.c:920
+#: ../extensions/page-info/page-info-dialog.c:831
 msgid "Background image"
 msgstr "Obrázek na pozadí"
 
-#: ../extensions/page-info/page-info-dialog.c:923
+#: ../extensions/page-info/page-info-dialog.c:834
 msgid "Embed"
 msgstr "Vloženo"
 
-#: ../extensions/page-info/page-info-dialog.c:926
+#: ../extensions/page-info/page-info-dialog.c:837
 msgid "Object"
 msgstr "Objekt"
 
-#: ../extensions/page-info/page-info-dialog.c:929
+#: ../extensions/page-info/page-info-dialog.c:840
 msgid "Applet"
 msgstr "Aplet"
 
-#: ../extensions/page-info/page-info-dialog.c:932
+#: ../extensions/page-info/page-info-dialog.c:843
 msgid "Icon"
 msgstr "Ikona"
 
-#: ../extensions/page-info/page-info-dialog.c:1113
+#: ../extensions/page-info/page-info-dialog.c:1024
 msgid "_Open"
 msgstr "_Otevřít"
 
-#: ../extensions/page-info/page-info-dialog.c:1119
-#: ../extensions/page-info/page-info-dialog.c:1564
+#: ../extensions/page-info/page-info-dialog.c:1030
+#: ../extensions/page-info/page-info-dialog.c:1475
 msgid "_Copy Link Address"
 msgstr "_Kopírovat adresu odkazu"
 
-#: ../extensions/page-info/page-info-dialog.c:1125
+#: ../extensions/page-info/page-info-dialog.c:1036
 msgid "_Use as Background"
 msgstr "_Použít jako pozadí"
 
-#: ../extensions/page-info/page-info-dialog.c:1131
-#: ../extensions/page-info/page-info-dialog.c:1570
+#: ../extensions/page-info/page-info-dialog.c:1042
+#: ../extensions/page-info/page-info-dialog.c:1481
 msgid "_Save As..."
 msgstr "_Uložit jako…"
 
-#: ../extensions/page-info/page-info-dialog.c:1363
-#: ../extensions/page-info/page-info-dialog.c:1684
+#: ../extensions/page-info/page-info-dialog.c:1274
+#: ../extensions/page-info/page-info-dialog.c:1595
 msgid "Blocked"
 msgstr "Blokováno"
 
-#: ../extensions/page-info/page-info-dialog.c:1379
-#: ../extensions/page-info/page-info-dialog.c:1700
+#: ../extensions/page-info/page-info-dialog.c:1290
+#: ../extensions/page-info/page-info-dialog.c:1611
 msgid "URL"
-msgstr "URL"
+msgstr "Adresa URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1392
+#: ../extensions/page-info/page-info-dialog.c:1303
 msgid "Type"
 msgstr "Typ"
 
-#: ../extensions/page-info/page-info-dialog.c:1404
+#: ../extensions/page-info/page-info-dialog.c:1315
 msgid "Alt Text"
 msgstr "Alternativní text"
 
-#: ../extensions/page-info/page-info-dialog.c:1416
-#: ../extensions/page-info/page-info-dialog.c:1713
+#: ../extensions/page-info/page-info-dialog.c:1327
+#: ../extensions/page-info/page-info-dialog.c:1624
 msgid "Title"
 msgstr "Nadpis"
 
-#: ../extensions/page-info/page-info-dialog.c:1428
+#: ../extensions/page-info/page-info-dialog.c:1339
 msgid "Width"
 msgstr "Šířka"
 
-#: ../extensions/page-info/page-info-dialog.c:1440
+#: ../extensions/page-info/page-info-dialog.c:1351
 msgid "Height"
 msgstr "Výška"
 
-#: ../extensions/page-info/page-info-dialog.c:1725
+#: ../extensions/page-info/page-info-dialog.c:1636
 msgid "Relation"
 msgstr "Vztah"
 
-#: ../extensions/page-info/page-info-dialog.c:1874
-#: ../extensions/page-info/page-info-dialog.c:2015
+#: ../extensions/page-info/page-info-dialog.c:1785
+#: ../extensions/page-info/page-info-dialog.c:1926
 msgid "Name"
 msgstr "Název"
 
-#: ../extensions/page-info/page-info-dialog.c:1886
+#: ../extensions/page-info/page-info-dialog.c:1797
 msgid "Method"
 msgstr "Metoda"
 
-#: ../extensions/page-info/page-info-dialog.c:1900
+#: ../extensions/page-info/page-info-dialog.c:1811
 msgid "Action"
 msgstr "Akce"
 
-#: ../extensions/page-info/page-info-dialog.c:1981
+#: ../extensions/page-info/page-info-dialog.c:1892
 msgid "_Copy"
 msgstr "_Kopírovat"
 
-#: ../extensions/page-info/page-info-dialog.c:2027
+#: ../extensions/page-info/page-info-dialog.c:1938
 msgid "Content"
 msgstr "Obsah"
 
-#: ../extensions/page-info/page-info-dialog.c:2128
+#: ../extensions/page-info/page-info-dialog.c:2039
 msgid "Page Metadata"
 msgstr "Metadata stránky"
 
@@ -653,7 +655,7 @@ msgstr "<b>Zdrojový soubor</b>"
 
 #: ../extensions/page-info/page-info.glade.h:9
 msgid "<b>Web Page</b>"
-msgstr "<b>WWW stránka</b>"
+msgstr "<b>Stránka WWW</b>"
 
 #: ../extensions/page-info/page-info.glade.h:10
 msgid "DYNAMIC"
@@ -769,15 +771,15 @@ msgstr "Stav"
 msgid "Site Permissions"
 msgstr "Oprávnění serveru"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:632
+#: ../extensions/permissions/ephy-permissions-dialog.c:631
 msgid "Cookies"
 msgstr "Cookies"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:633
+#: ../extensions/permissions/ephy-permissions-dialog.c:632
 msgid "Images"
 msgstr "Obrázky"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:634
+#: ../extensions/permissions/ephy-permissions-dialog.c:633
 msgid "Popup Windows"
 msgstr "Vyskakovací okna"
 
@@ -791,52 +793,52 @@ msgstr "_Oprávnění serveru"
 msgid "Manage web site permissions"
 msgstr "Spravovat oprávnění WWW serverů"
 
-#: ../extensions/rss/ephy-rss-extension.c:80
+#: ../extensions/rss/ephy-rss-extension.c:82
 msgid "News Feeds Subscription"
 msgstr "Přihlášení k toku novinek"
 
-#: ../extensions/rss/ephy-rss-extension.c:82
+#: ../extensions/rss/ephy-rss-extension.c:84
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr ""
-"Přihlásit se k toku novinek tohoto WWW serveru ve vaší oblíbené čtečce "
+"Přihlásit se ke kanálu novinek tohoto serveru WWW ve vaší oblíbené čtečce "
 "novinek"
 
-#: ../extensions/rss/ephy-rss-extension.c:87
-msgid "_Subscribe to this feed"
-msgstr "_Přihlásit se k tomuto toku"
-
 #: ../extensions/rss/ephy-rss-extension.c:89
+msgid "_Subscribe to this feed"
+msgstr "_Přihlásit se k tomuto kanálu"
+
+#: ../extensions/rss/ephy-rss-extension.c:91
 msgid "Subscribe to this feed in your favorite news reader"
-msgstr "Přihlásit se k tomuto toku ve vaší oblíbené čtečce novinek"
+msgstr "Přihlásit se k tomuto kanálu ve vaší oblíbené čtečce novinek"
 
-#: ../extensions/rss/ephy-rss-extension.c:394
+#: ../extensions/rss/ephy-rss-extension.c:402
 msgid "Subscribe to site's news feed"
-msgstr "Přihlásit se k toku novinek serveru"
+msgstr "Přihlásit se ke kanálu novinek serveru"
 
-#: ../extensions/rss/rss-ui.c:156
+#: ../extensions/rss/rss-ui.c:136
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
-msgstr "<b><i>Nemohu kontaktovat čtečku toků, běží?</i></b>"
+msgstr "<b><i>Nelze kontaktovat čtečku kanálů, běží?</i></b>"
 
-#: ../extensions/rss/rss-ui.c:158
+#: ../extensions/rss/rss-ui.c:138
 msgid "Retry"
 msgstr "Zkusit znovu"
 
-#: ../extensions/rss/rss-ui.c:288
+#: ../extensions/rss/rss-ui.c:268
 msgid "_Copy Feed Address"
-msgstr "_Kopírovat adresu toku"
+msgstr "_Kopírovat adresu kanálu"
 
-#: ../extensions/rss/rss-ui.c:552
+#: ../extensions/rss/rss-ui.c:531
 msgid "Subscribe"
 msgstr "Přihlásit se"
 
 #: ../extensions/rss/rss-ui.ui.h:1
 msgid "<b>Select Interesting Feeds</b>"
-msgstr "<b>Vybrat zajímavé toky</b>"
+msgstr "<b>Vybrat zajímavé kanály</b>"
 
 #: ../extensions/rss/rss-ui.ui.h:2
 #: ../extensions/rss/rss.ephy-extension.in.in.h:1
 msgid "News Feed Subscription"
-msgstr "Přihlášení k toku novinek"
+msgstr "Přihlášení ke kanálu novinek"
 
 #: ../extensions/rss/rss-ui.ui.h:3
 msgid "_Subscribe"
@@ -980,7 +982,7 @@ msgstr "Umožnit přístup ke konzole zásuvného modulu Javy"
 
 #: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
 msgid "Live HTTP headers"
-msgstr "Live HTTP headers"
+msgstr "Živé hlavičky HTTP"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
 msgid "Display information about and links and media from the current page"
@@ -1003,7 +1005,6 @@ msgid "Drag the page on middle mouse click"
 msgstr "Přetažení stránky při stisknutém prostředním tlačítku"
 
 #: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
-#, fuzzy
 msgid "Push Scroll"
 msgstr "Posun stiskem"
 
@@ -1011,8 +1012,8 @@ msgstr "Posun stiskem"
 msgid ""
 "Subscribe to a news feed offered by the webpage in your favorite news reader"
 msgstr ""
-"Přihlásit se k toku novinek nabízenému WWW stránkou ve vaší oblíbené čtečce "
-"novinek"
+"Přihlásit se ke kanálu novinek nabízenému stránkou WWW ve vaší oblíbené "
+"čtečce novinek"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
 msgid "A sample extension"
@@ -1028,7 +1029,7 @@ msgstr "Vybrat styl"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
 msgid "Select between different stylesheets offered by the web page"
-msgstr "Vybírejte různé styly nabízené WWW stránkou"
+msgstr "Vybírejte různé styly nabízené stránkou WWW"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
 msgid "Look up the selected text with a smart bookmark"
