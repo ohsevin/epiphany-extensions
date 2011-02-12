@@ -34,7 +34,6 @@ rss			Subscribe to newsfeeds contained in web pages
 select-stylesheet	Switch between alternate stylesheets
 sidebar			Adds a sidebar to Epiphany
 smart-bookmarks		Right-click on selected text to search the Web for it
-tab-groups		Open new tabs to the right of the current one
 tab-states		Indicates unread tabs in the tab label
 tabsmenu		Tabs menu entries to move tabs across windows
 

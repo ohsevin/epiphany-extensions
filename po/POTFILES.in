@@ -57,6 +57,5 @@ extensions/soup-fly/soup-fly.c
 [type: gettext/ini]extensions/sample/sample.ephy-extension.in.in
 [type: gettext/ini]extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in
 [type: gettext/ini]extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in
-[type: gettext/ini]extensions/tab-groups/tab-groups.ephy-extension.in.in
 [type: gettext/ini]extensions/tab-states/tab-states.ephy-extension.in.in
 [type: gettext/ini]extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in
