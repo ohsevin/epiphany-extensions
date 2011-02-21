@@ -3,16 +3,17 @@
 # Copyright (C) 2003 The Free Software Foundation.
 #
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2004, 2005, 2006.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2010.
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2009, 2010.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2010, 2011.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions&component=general\n"
-"POT-Creation-Date: 2010-02-24 20:24+0000\n"
-"PO-Revision-Date: 2010-03-26 20:17+0100\n"
-"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
+"POT-Creation-Date: 2010-10-08 15:54+0000\n"
+"PO-Revision-Date: 2011-02-21 09:48+0100\n"
+"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -69,38 +70,38 @@ msgstr "No se pudo ejecutar el comando"
 msgid "Could not Run Command"
 msgstr "No se pudo ejecutar el comando"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:496
 msgid "No action selected."
 msgstr "No se ha seleccionado ninguna acción."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:506
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
 msgstr[0] "Se ha seleccionado %i acción."
 msgstr[1] "Se han seleccionado %i acciones."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:745
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:139
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:721
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:124
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:194
 #, c-format
 msgid "Could not display help: %s"
 msgstr "No se pudo mostrar la ayuda: %s"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:274
 msgid "Add Action"
 msgstr "Añadir acción"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:384
 #, c-format
 msgid "“%s” Properties"
 msgstr "Propiedades de «%s»"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:389
 msgid "Action Properties"
 msgstr "Propiedades de la acción"
 
-#: ../extensions/adblock/adblock-ui.c:263
+#: ../extensions/adblock/adblock-ui.c:229
 msgid ""
 "This list is Copyright © its original author(G). It is relicensed under the "
 "GPL with permission.\n"
@@ -118,7 +119,7 @@ msgstr ""
 "aprobados por el autor original;\n"
 "dirija cualquier problema a Bugzilla y no al autor original (G).\n"
 
-#: ../extensions/adblock/adblock-ui.c:481
+#: ../extensions/adblock/adblock-ui.c:446
 msgid "Pattern"
 msgstr "Patrón"
 
@@ -155,7 +156,7 @@ msgstr "Lista blanca"
 msgid "Edit Adblock"
 msgstr "Editar Bloqueo de anuncios"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:299
+#: ../extensions/adblock/ephy-adblock-extension.c:300
 #, c-format
 msgid "%d hidden advertisement"
 msgid_plural "%d hidden advertisements"
@@ -364,12 +365,12 @@ msgstr ""
 "Error HTML en %s:\n"
 "No se especificó un tipo de documento válido."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:349
 msgid "Enabled"
 msgstr "Activada"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:372
-#: ../extensions/rss/rss-ui.c:560
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:357
+#: ../extensions/rss/rss-ui.c:539
 msgid "Description"
 msgstr "Descripción"
 
@@ -453,163 +454,163 @@ msgstr "Información de la _página"
 msgid "Display page information in a dialog"
 msgstr "Muestra la información de la página en un diálogo"
 
-#: ../extensions/page-info/page-info-dialog.c:704
+#: ../extensions/page-info/page-info-dialog.c:615
 msgid "Save As..."
 msgstr "Guardar como..."
 
-#: ../extensions/page-info/page-info-dialog.c:721
+#: ../extensions/page-info/page-info-dialog.c:632
 msgid "Select a directory"
 msgstr "Seleccione un directorio"
 
-#: ../extensions/page-info/page-info-dialog.c:770
+#: ../extensions/page-info/page-info-dialog.c:681
 msgid "Unknown type"
 msgstr "Tipo desconocido"
 
-#: ../extensions/page-info/page-info-dialog.c:775
+#: ../extensions/page-info/page-info-dialog.c:686
 msgid "Full standards compliance"
 msgstr "Cumple con todos los estándares"
 
-#: ../extensions/page-info/page-info-dialog.c:778
+#: ../extensions/page-info/page-info-dialog.c:689
 msgid "Almost standards compliance"
 msgstr "Cumple con la mayoría de los estándares"
 
-#: ../extensions/page-info/page-info-dialog.c:781
+#: ../extensions/page-info/page-info-dialog.c:692
 msgid "Compatibility"
 msgstr "Compatibilidad"
 
-#: ../extensions/page-info/page-info-dialog.c:785
+#: ../extensions/page-info/page-info-dialog.c:696
 msgid "Undetermined"
 msgstr "Indeterminada"
 
-#: ../extensions/page-info/page-info-dialog.c:794
+#: ../extensions/page-info/page-info-dialog.c:705
 msgid "Not cached"
 msgstr "No cacheado"
 
-#: ../extensions/page-info/page-info-dialog.c:797
+#: ../extensions/page-info/page-info-dialog.c:708
 msgid "Disk cache"
 msgstr "Caché de disco"
 
-#: ../extensions/page-info/page-info-dialog.c:800
+#: ../extensions/page-info/page-info-dialog.c:711
 msgid "Memory cache"
 msgstr "Caché de memoria"
 
-#: ../extensions/page-info/page-info-dialog.c:803
+#: ../extensions/page-info/page-info-dialog.c:714
 msgid "Unknown cache"
 msgstr "Caché desconocido"
 
-#: ../extensions/page-info/page-info-dialog.c:819
-#: ../extensions/page-info/page-info-dialog.c:935
+#: ../extensions/page-info/page-info-dialog.c:730
+#: ../extensions/page-info/page-info-dialog.c:846
 msgid "Unknown"
 msgstr "Desconocido "
 
-#: ../extensions/page-info/page-info-dialog.c:824
+#: ../extensions/page-info/page-info-dialog.c:735
 msgid "No referrer"
 msgstr "Sin referrer"
 
-#: ../extensions/page-info/page-info-dialog.c:838
-#: ../extensions/page-info/page-info-dialog.c:854
+#: ../extensions/page-info/page-info-dialog.c:749
+#: ../extensions/page-info/page-info-dialog.c:765
 msgid "Not specified"
 msgstr "Sin especificar"
 
-#: ../extensions/page-info/page-info-dialog.c:917
+#: ../extensions/page-info/page-info-dialog.c:828
 msgid "Image"
 msgstr "Imagen"
 
-#: ../extensions/page-info/page-info-dialog.c:920
+#: ../extensions/page-info/page-info-dialog.c:831
 msgid "Background image"
 msgstr "Imagen de fondo"
 
-#: ../extensions/page-info/page-info-dialog.c:923
+#: ../extensions/page-info/page-info-dialog.c:834
 msgid "Embed"
 msgstr "Embeber"
 
-#: ../extensions/page-info/page-info-dialog.c:926
+#: ../extensions/page-info/page-info-dialog.c:837
 msgid "Object"
 msgstr "Objeto"
 
-#: ../extensions/page-info/page-info-dialog.c:929
+#: ../extensions/page-info/page-info-dialog.c:840
 msgid "Applet"
 msgstr "Miniaplicación"
 
-#: ../extensions/page-info/page-info-dialog.c:932
+#: ../extensions/page-info/page-info-dialog.c:843
 msgid "Icon"
 msgstr "Icono"
 
-#: ../extensions/page-info/page-info-dialog.c:1113
+#: ../extensions/page-info/page-info-dialog.c:1024
 msgid "_Open"
 msgstr "_Abrir"
 
-#: ../extensions/page-info/page-info-dialog.c:1119
-#: ../extensions/page-info/page-info-dialog.c:1564
+#: ../extensions/page-info/page-info-dialog.c:1030
+#: ../extensions/page-info/page-info-dialog.c:1475
 msgid "_Copy Link Address"
 msgstr "_Copiar dirección del enlace"
 
-#: ../extensions/page-info/page-info-dialog.c:1125
+#: ../extensions/page-info/page-info-dialog.c:1036
 msgid "_Use as Background"
 msgstr "_Usar como fondo"
 
-#: ../extensions/page-info/page-info-dialog.c:1131
-#: ../extensions/page-info/page-info-dialog.c:1570
+#: ../extensions/page-info/page-info-dialog.c:1042
+#: ../extensions/page-info/page-info-dialog.c:1481
 msgid "_Save As..."
 msgstr "Guardar _como..."
 
-#: ../extensions/page-info/page-info-dialog.c:1363
-#: ../extensions/page-info/page-info-dialog.c:1684
+#: ../extensions/page-info/page-info-dialog.c:1274
+#: ../extensions/page-info/page-info-dialog.c:1595
 msgid "Blocked"
 msgstr "Bloqueado"
 
-#: ../extensions/page-info/page-info-dialog.c:1379
-#: ../extensions/page-info/page-info-dialog.c:1700
+#: ../extensions/page-info/page-info-dialog.c:1290
+#: ../extensions/page-info/page-info-dialog.c:1611
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1392
+#: ../extensions/page-info/page-info-dialog.c:1303
 msgid "Type"
 msgstr "Tipo"
 
-#: ../extensions/page-info/page-info-dialog.c:1404
+#: ../extensions/page-info/page-info-dialog.c:1315
 msgid "Alt Text"
 msgstr "Texto Alt"
 
-#: ../extensions/page-info/page-info-dialog.c:1416
-#: ../extensions/page-info/page-info-dialog.c:1713
+#: ../extensions/page-info/page-info-dialog.c:1327
+#: ../extensions/page-info/page-info-dialog.c:1624
 msgid "Title"
 msgstr "Título"
 
-#: ../extensions/page-info/page-info-dialog.c:1428
+#: ../extensions/page-info/page-info-dialog.c:1339
 msgid "Width"
 msgstr "Anchura"
 
-#: ../extensions/page-info/page-info-dialog.c:1440
+#: ../extensions/page-info/page-info-dialog.c:1351
 msgid "Height"
 msgstr "Altura"
 
-#: ../extensions/page-info/page-info-dialog.c:1725
+#: ../extensions/page-info/page-info-dialog.c:1636
 msgid "Relation"
 msgstr "Relación"
 
-#: ../extensions/page-info/page-info-dialog.c:1874
-#: ../extensions/page-info/page-info-dialog.c:2015
+#: ../extensions/page-info/page-info-dialog.c:1785
+#: ../extensions/page-info/page-info-dialog.c:1926
 msgid "Name"
 msgstr "Nombre"
 
-#: ../extensions/page-info/page-info-dialog.c:1886
+#: ../extensions/page-info/page-info-dialog.c:1797
 msgid "Method"
 msgstr "Método"
 
-#: ../extensions/page-info/page-info-dialog.c:1900
+#: ../extensions/page-info/page-info-dialog.c:1811
 msgid "Action"
 msgstr "Acción"
 
-#: ../extensions/page-info/page-info-dialog.c:1981
+#: ../extensions/page-info/page-info-dialog.c:1892
 msgid "_Copy"
 msgstr "_Copiar"
 
-#: ../extensions/page-info/page-info-dialog.c:2027
+#: ../extensions/page-info/page-info-dialog.c:1938
 msgid "Content"
 msgstr "Contenido"
 
-#: ../extensions/page-info/page-info-dialog.c:2128
+#: ../extensions/page-info/page-info-dialog.c:2039
 msgid "Page Metadata"
 msgstr "Metadatos de la página"
 
@@ -785,44 +786,44 @@ msgstr "_Permisos del sitio"
 msgid "Manage web site permissions"
 msgstr "Gestionar permisos del sitio web"
 
-#: ../extensions/rss/ephy-rss-extension.c:80
+#: ../extensions/rss/ephy-rss-extension.c:82
 msgid "News Feeds Subscription"
 msgstr "Subscripción a proveedores de noticias"
 
-#: ../extensions/rss/ephy-rss-extension.c:82
+#: ../extensions/rss/ephy-rss-extension.c:84
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr ""
 "Suscribirse al proveedor de noticias de este web en su lector de noticias "
 "favorito"
 
-#: ../extensions/rss/ephy-rss-extension.c:87
+#: ../extensions/rss/ephy-rss-extension.c:89
 msgid "_Subscribe to this feed"
 msgstr "_Suscribirse a este proveedor"
 
-#: ../extensions/rss/ephy-rss-extension.c:89
+#: ../extensions/rss/ephy-rss-extension.c:91
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr ""
 "Suscribirse a este proveedor de noticias en su lector de noticias favorito"
 
-#: ../extensions/rss/ephy-rss-extension.c:394
+#: ../extensions/rss/ephy-rss-extension.c:402
 msgid "Subscribe to site's news feed"
 msgstr "Suscribirse al proveedor de noticias del sitio"
 
-#: ../extensions/rss/rss-ui.c:156
+#: ../extensions/rss/rss-ui.c:136
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr ""
 "<b><i>No es posible contactar con el lector de proveedores, ¿está "
 "funcionando?</i></b>"
 
-#: ../extensions/rss/rss-ui.c:158
+#: ../extensions/rss/rss-ui.c:138
 msgid "Retry"
 msgstr "Reintentar"
 
-#: ../extensions/rss/rss-ui.c:288
+#: ../extensions/rss/rss-ui.c:268
 msgid "_Copy Feed Address"
 msgstr "_Copiar dirección del proveedor"
 
-#: ../extensions/rss/rss-ui.c:552
+#: ../extensions/rss/rss-ui.c:531
 msgid "Subscribe"
 msgstr "Suscribirse"
 
@@ -878,13 +879,13 @@ msgstr "Diccionario de _GNOME"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
 msgid "Open search result in new tab"
-msgstr "Abrir el resultado de la búsqueda en una nueva solapa"
+msgstr "Abrir el resultado de la búsqueda en una nueva pestaña"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
 msgid "Open search result in new tab if true, in new window if false"
 msgstr ""
-"Abrir el resultado de la búsqueda en una nueva solapa si es TRUE, en una "
-"nueva venana si es FALSE"
+"Abrir el resultado de la búsqueda en una nueva pestaña si es TRUE, en una "
+"nueva ventana si es FALSE"
 
 #: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
 msgid "_Soup Fly"
@@ -926,11 +927,11 @@ msgstr "Desplazar al pulsar el botón central del ratón"
 
 #: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
 msgid "Auto Reload Tab"
-msgstr "Autorecargar solapa"
+msgstr "Autorecargar pestaña"
 
 #: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
 msgid "Reload a tab periodically"
-msgstr "Recarga la solapa periódicamente"
+msgstr "Recarga la pestaña periódicamente"
 
 #: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
 msgid "View the page certificate and manage the certificates"
@@ -1041,27 +1042,27 @@ msgstr "Marcadores inteligentes"
 
 #: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
 msgid "Groups newly opened tabs"
-msgstr "Agrupa las solapas nuevas abiertas"
+msgstr "Agrupa las pestañas nuevas abiertas"
 
 #: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
 msgid "Tab Groups"
-msgstr "Grupos de solapas"
+msgstr "Grupos de pestañas"
 
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
-msgstr "Indica el contenido nuevo en solapas en segundo plano"
+msgstr "Indica el contenido nuevo en pestañas en segundo plano"
 
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
-msgstr "Estado de solapas"
+msgstr "Estado de pestañas"
 
 #: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:1
 msgid "Tab Key Tab Navigate"
-msgstr "Tecla Tab para navegar con solapas"
+msgstr "Tecla Tab para navegar con pestañas"
 
 #: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:2
 msgid "Use the Tab key to navigate between tabs"
-msgstr "Usar la tecla Tab para navegar entre solapas"
+msgstr "Usar la tecla Tab para navegar entre pestañas"
 
 #~ msgid ""
 #~ "If this option is enabled, the action will be included in the popup menu "
