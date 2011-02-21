@@ -1,14 +1,14 @@
 # translation of epiphany-extensions.help.HEAD.po to Español
-# Daniel Mustieles <daniel.mustieles@ie.edu>, 2008.
 # Manual de las extensiones del navegador web de GNOME Epiphany
 # Jorge González <jorgegonz@svn.gnome.org>, 2008, 2010.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2008, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions.help.HEAD\n"
-"POT-Creation-Date: 2009-12-14 16:18+0000\n"
-"PO-Revision-Date: 2010-06-16 07:43+0200\n"
-"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
+"POT-Creation-Date: 2010-10-08 15:54+0000\n"
+"PO-Revision-Date: 2011-02-21 15:04+0100\n"
+"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -733,18 +733,18 @@ msgstr ""
 
 #: C/epiphany-extensions.xml:357(title)
 msgid "Auto Reload Tab"
-msgstr "Autorecargar solapa"
+msgstr "Autorecargar pestaña"
 
 #: C/epiphany-extensions.xml:362(para)
 msgid ""
 "The Auto Reload Tab extension allows you to regularly reload a page in a tab."
 msgstr ""
-"La extensión Autorecargar solapa le permite recargar regularmente una página "
-"en una solapa."
+"La extensión Autorecargar pestaña le permite recargar regularmente una "
+"página en una pestaña."
 
 #: C/epiphany-extensions.xml:367(title)
 msgid "Using Auto Reload Tab"
-msgstr "Uso de la solapa de Autorecarga"
+msgstr "Uso de la pestaña de Autorecarga"
 
 #: C/epiphany-extensions.xml:369(para)
 msgid ""
@@ -905,7 +905,7 @@ msgid ""
 msgstr ""
 "Para mostrar el <guilabel>Gestor de Certificados </guilabel>, seleccione "
 "<menuchoice><guimenu>Herramientas</guimenu><guimenuitem>Gestionar "
-"certificados</guimenuitem></menuchoice>, esto le da acceso a 4 solapas: "
+"certificados</guimenuitem></menuchoice>, esto le da acceso a 4 pestañas: "
 "<placeholder-1/><placeholder-2/>"
 
 #: C/epiphany-extensions.xml:478(title)
@@ -1134,7 +1134,7 @@ msgstr "Arriba"
 
 #: C/epiphany-extensions.xml:662(entry)
 msgid "Open a new tab"
-msgstr "Abrir una solapa nueva"
+msgstr "Abrir una pestaña nueva"
 
 #: C/epiphany-extensions.xml:663(entry)
 msgid "Down"
@@ -1142,7 +1142,7 @@ msgstr "Abajo"
 
 #: C/epiphany-extensions.xml:673(entry)
 msgid "Close a tab/window"
-msgstr "Cerrar una solapa/ventana"
+msgstr "Cerrar una pestaña/ventana"
 
 #: C/epiphany-extensions.xml:674(entry)
 msgid "Right - Left - Right"
@@ -1150,7 +1150,7 @@ msgstr "Derecha - Izquierda - Derecha"
 
 #: C/epiphany-extensions.xml:684(entry)
 msgid "Close a tab /window (second gesture)"
-msgstr "Cerrar una solapa/ventana (segundo gesto)"
+msgstr "Cerrar una pestaña/ventana (segundo gesto)"
 
 #: C/epiphany-extensions.xml:685(entry)
 msgid "Down - Right"
@@ -1166,7 +1166,7 @@ msgstr "Abajo - Izquierda"
 
 #: C/epiphany-extensions.xml:706(entry)
 msgid "Go to the next tab"
-msgstr "Ir a la siguiente solapa"
+msgstr "Ir a la siguiente pestaña"
 
 #: C/epiphany-extensions.xml:707(entry)
 msgid "Up - Right"
@@ -1174,7 +1174,7 @@ msgstr "Arriba - Derecha"
 
 #: C/epiphany-extensions.xml:717(entry)
 msgid "Go to the previous tab"
-msgstr "Ir a la solapa anterior"
+msgstr "Ir a la pestaña anterior"
 
 #: C/epiphany-extensions.xml:718(entry)
 msgid "Up - Left"
@@ -1573,7 +1573,7 @@ msgstr ""
 "Para acceder a la información de la página, seleccione "
 "<menuchoice><guimenu>Ver</guimenu><guimenuitem>Información de la página</"
 "guimenuitem></menuchoice>; aparecerá una nueva ventana permitiéndole acceder "
-"a 5 solapas: <placeholder-1/>"
+"a 5 pestañas: <placeholder-1/>"
 
 #: C/epiphany-extensions.xml:1015(title)
 msgid "Push Scroll"
@@ -1792,17 +1792,17 @@ msgstr ""
 
 #: C/epiphany-extensions.xml:1161(title)
 msgid "Tab Groups"
-msgstr "Grupos de solapas"
+msgstr "Grupos de pestañas"
 
 #: C/epiphany-extensions.xml:1166(para)
 msgid "The Tab Groups extension makes new tabs appear after the current tab."
 msgstr ""
-"La extensión Grupos de solapas hace que las nuevas solapas aparezcan después "
-"de la solapa actual."
+"La extensión Grupos de pestañas hace que las nuevas pestañas aparezcan "
+"después de la pestaña actual."
 
 #: C/epiphany-extensions.xml:1171(title)
 msgid "Using Tab Groups"
-msgstr "Uso de grupos de solapas"
+msgstr "Uso de grupos de pestañas"
 
 #: C/epiphany-extensions.xml:1173(para)
 msgid ""
@@ -1811,28 +1811,28 @@ msgid ""
 "it will be created after the current tab."
 msgstr ""
 "Una vez activada, esta extensión cambia el comportamiento normal (donde las "
-"nuevas solapas se crean después de la última solapa) a uno nuevo. Cuando "
-"abre una solapa nueva, ésta se creará antes de la solapa actual."
+"nuevas pestañas se crean después de la última pestaña) a uno nuevo. Cuando "
+"abre una pestaña nueva, ésta se creará antes de la pestaña actual."
 
 #: C/epiphany-extensions.xml:1178(title)
 msgid "A new tab created after the first tab"
-msgstr "Una solapa nueva creada después de la primera solapa"
+msgstr "Una pestaña nueva creada después de la primera pestaña"
 
 #: C/epiphany-extensions.xml:1191(title)
 msgid "Tab States"
-msgstr "Estado de solapas"
+msgstr "Estado de pestañas"
 
 #: C/epiphany-extensions.xml:1196(para)
 msgid ""
 "The Tab States extension changes the status of the tab label to signal the "
 "content has changed."
 msgstr ""
-"La extensión Estado de solapas cambia el estado de la solapa para indicar "
+"La extensión Estado de pestañas cambia el estado de la pestaña para indicar "
 "que el contenido ha cambiado."
 
 #: C/epiphany-extensions.xml:1201(title)
 msgid "Using Tab States"
-msgstr "Uso del Estado de solapas"
+msgstr "Uso del Estado de pestañas"
 
 #: C/epiphany-extensions.xml:1203(para)
 msgid ""
@@ -1840,7 +1840,7 @@ msgid ""
 "the tab label will become bold, to notify you that the page has changed."
 msgstr ""
 "Una vez que se activa esta extensión, cuando cambia el contenido de una "
-"solapa, la etiqueta de la solapa aparecerá en negrita para notificarle que "
+"pestaña, la etiqueta de la pestaña aparecerá en negrita para notificarle que "
 "la página ha cambiado."
 
 #: C/epiphany-extensions.xml:1239(title)
