@@ -1,3 +1,23 @@
+===========================
+Epiphany Extensions 2.91.90
+===========================
+
+Update to use GTK+ 3.0. Remove gconf dependency. Remove tab-groups extension
+(Epiphany does it by default now).
+Temporarily disabled auto-scroller, it doesn't build with GTK+ 3.0.
+
+Added/updated translations
+  - added/updated translations
+    - ca@valencia, courtesy of David Planella
+    - cs, courtesy of Marek Černocký
+    - da, courtesy of Joe Hansen
+    - es, courtesy of Daniel Mustieles
+    - pt_BR, courtesy of Gabriel Feitosa Vilar
+    - sl, courtesy of Andrej Žnidaršič
+    - sl, courtesy of Matej Urbančič
+    - sv, courtesy of Daniel Nylander
+    - zh_CN, courtesy of YunQiang Su
+
 ==========================
 Epiphany Extensions 2.30.0
 ==========================

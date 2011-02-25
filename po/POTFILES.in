@@ -36,7 +36,6 @@ extensions/rss/rss-ui.c
 extensions/select-stylesheet/ephy-css-menu.c
 extensions/select-stylesheet/mozilla/mozilla-helpers.cpp
 extensions/smart-bookmarks/smart-bookmarks-extension.c
-extensions/smart-bookmarks/smart-bookmarks.schemas.in
 extensions/soup-fly/ephy-soup-fly-extension.c
 extensions/soup-fly/soup-fly.c
 [type: gettext/ini]extensions/actions/actions.ephy-extension.in.in

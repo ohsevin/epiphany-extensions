@@ -15,8 +15,8 @@
 # 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 
 m4_define([e_e_version_major],[2])
-m4_define([e_e_version_minor],[31])
-m4_define([e_e_version_micro],[1])
+m4_define([e_e_version_minor],[91])
+m4_define([e_e_version_micro],[90])
 m4_define([e_e_version],[e_e_version_major.e_e_version_minor.e_e_version_micro])
 
 # This can be either "trunk" or "branches/gnome-x-y"
