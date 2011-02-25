@@ -297,7 +297,6 @@ extensions/sample/Makefile
 extensions/select-stylesheet/Makefile
 extensions/select-stylesheet/mozilla/Makefile
 extensions/smart-bookmarks/Makefile
-extensions/smart-bookmarks/mozilla/Makefile
 extensions/soup-fly/Makefile
 extensions/tab-key-tab-navigate/Makefile
 extensions/tab-states/Makefile
