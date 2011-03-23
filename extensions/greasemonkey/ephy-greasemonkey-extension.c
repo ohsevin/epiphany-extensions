@@ -248,6 +248,7 @@ script_name_build (const char *url)
 	char *basename;
 	char *path;
 	char *script_dir;
+	char *uri;
 
 	basename = g_filename_from_utf8 (url, -1, NULL, NULL, NULL);
 	g_return_val_if_fail (basename != NULL, NULL);
@@ -257,39 +258,41 @@ script_name_build (const char *url)
 	script_dir = get_script_dir ();
 
 	path = g_build_filename (script_dir, basename, NULL);
+	uri = g_filename_to_uri (path, NULL, NULL);
 
 	g_free (script_dir);
 	g_free (basename);
+	g_free (path);
 
-	return path;
+	return uri;
 }
 
 static void
-save_source_cancelled_cb (EphyEmbedPersist *persist,
-			  EphyWindow *window)
+save_source_error_cb (EphyDownload *download,
+		      EphyWindow *window)
 {
 	WindowData *data;
 	const char *dest;
 	GFile *file;
 
 	LOG ("Download from %s cancelled",
-	     ephy_embed_persist_get_source (persist));
+	     ephy_download_get_source_uri (download));
 
 	data = g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 	g_return_if_fail (data != NULL);
 	data->pending_downloads = g_list_remove (data->pending_downloads,
-						 persist);
+						 download);
 
-	dest = ephy_embed_persist_get_dest (persist);
-	file = g_file_new_for_path (dest);
+	dest = ephy_download_get_destination_uri (download);
+	file = g_file_new_for_uri (dest);
 	g_file_delete (file, NULL, NULL);
 
 	g_object_unref (file);
-	g_object_unref (G_OBJECT (persist));
+	g_object_unref (download);
 }
 
 static void
-save_source_completed_cb (EphyEmbedPersist *persist,
+save_source_completed_cb (EphyDownload *download,
 			  EphyWindow *window)
 {
 	WindowData *data;
@@ -299,11 +302,11 @@ save_source_completed_cb (EphyEmbedPersist *persist,
 	data = g_object_get_data (G_OBJECT (window), WINDOW_DATA_KEY);
 	g_return_if_fail (data != NULL);
 	data->pending_downloads = g_list_remove (data->pending_downloads,
-						 persist);
+						 download);
 
-	src = ephy_embed_persist_get_source (persist);
+	src = ephy_download_get_source_uri (download);
 
-	g_object_unref (G_OBJECT (persist));
+	g_object_unref (download);
 
 	dialog = gtk_message_dialog_new (GTK_WINDOW (window), 0,
 					 GTK_MESSAGE_INFO,
@@ -322,7 +325,7 @@ ephy_greasemonkey_extension_install_cb (GtkAction *action,
 					EphyWindow *window)
 {
 	EphyEmbed *embed;
-	EphyEmbedPersist *persist;
+	EphyDownload *download;
 	WindowData *data;
 	const char *url;
 	char *filename;
@@ -339,26 +342,21 @@ ephy_greasemonkey_extension_install_cb (GtkAction *action,
 
 	LOG ("Installing script at '%s'", url);
 
-	persist = g_object_new (EPHY_TYPE_EMBED_PERSIST, NULL);
-
-	ephy_embed_persist_set_source (persist, url);
-	ephy_embed_persist_set_embed (persist, embed);
-	ephy_embed_persist_set_flags (persist,
-				      EPHY_EMBED_PERSIST_DO_CONVERSION);
+	download = ephy_download_new_for_uri (url);
 
 	filename = script_name_build (url);
-	ephy_embed_persist_set_dest (persist, filename);
+	ephy_download_set_destination_uri (download, filename);
 	g_free (filename);
 
-	g_signal_connect (persist, "completed",
+	g_signal_connect (download, "completed",
 			  G_CALLBACK (save_source_completed_cb), window);
-	g_signal_connect (persist, "cancelled",
-			  G_CALLBACK (save_source_cancelled_cb), window);
+	g_signal_connect (download, "error",
+			  G_CALLBACK (save_source_error_cb), window);
 
 	data->pending_downloads = g_list_prepend (data->pending_downloads,
-						  persist);
+						  download);
 
-	ephy_embed_persist_save (persist);
+	ephy_download_start (download);
 }
 
 static void
@@ -481,17 +479,18 @@ load_status_notify_cb (GObject *object,
 }
 
 static void
-kill_download (EphyEmbedPersist *persist,
+kill_download (EphyDownload *download,
 	       EphyWindow *window)
 {
-	LOG ("kill_download %p", persist);
+	LOG ("kill_download %p", download);
 
 	g_signal_handlers_disconnect_by_func
-		(persist, save_source_cancelled_cb, window);
+		(download, save_source_error_cb, window);
 	g_signal_handlers_disconnect_by_func
-		(persist, save_source_completed_cb, window);
+		(download, save_source_completed_cb, window);
 
-	ephy_embed_persist_cancel (persist);
+	ephy_download_cancel (download);
+	g_object_unref (download);
 }
 
 static void
