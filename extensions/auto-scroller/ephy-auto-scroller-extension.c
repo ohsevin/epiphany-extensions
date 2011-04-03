@@ -27,7 +27,7 @@
 
 #include <epiphany/epiphany.h>
 
-#include <gmodule.h>
+#include <libpeas/peas.h>
 
 #define WINDOW_DATA_KEY	"EphyAutoScrollerExtension::WindowData"
 
@@ -173,4 +173,15 @@ ephy_auto_scroller_extension_register_type (GTypeModule *module)
 				     &extension_info);
 
 	return type;
+}
+
+G_MODULE_EXPORT void
+peas_register_types (PeasObjectModule *module)
+{
+	ephy_auto_scroller_register_type (G_TYPE_MODULE (module));
+	ephy_auto_scroller_extension_register_type (G_TYPE_MODULE (module));
+
+	peas_object_module_register_extension_type (module,
+						    EPHY_TYPE_EXTENSION,
+						    EPHY_TYPE_AUTO_SCROLLER_EXTENSION);
 }

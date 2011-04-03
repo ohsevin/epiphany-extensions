@@ -1,0 +1,7 @@
+[Plugin]
+Module=%LIBRARY%
+_Name=Certificates
+_Description=View the page certificate and manage the certificates
+Authors=Christian Persch <chpe@gnome.org>
+IAge=1
+Website=http://www.gnome.org/projects/epiphany/extensions.html

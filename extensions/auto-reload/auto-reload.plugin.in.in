@@ -1,0 +1,7 @@
+[Plugin]
+Module=%LIBRARY%
+_Name=Auto Reload Tab
+_Description=Reload a tab periodically
+Authors=Raphaël Slinckx <raphael@slinckx.net>;
+IAge=1
+Website=http://www.gnome.org/projects/epiphany/extensions.html

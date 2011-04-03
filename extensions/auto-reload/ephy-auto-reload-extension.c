@@ -29,8 +29,6 @@
 
 #include <glib/gi18n-lib.h>
 
-#include <gmodule.h>
-
 #define EPHY_AUTO_RELOAD_EXTENSION_GET_PRIVATE(object)	(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_AUTO_RELOAD_EXTENSION, EphyAutoReloadExtensionPrivate))
 
 /* This is the time to wait before the first reload, the maximal reload rate and the time increment after each unchanged reload */
@@ -96,13 +94,16 @@ ephy_auto_reload_remove_timeout (TimeoutData *data)
 static void
 ephy_auto_reload_create (EphyEmbed *embed, guint new_timeout)
 {
+	EphyWebView *view;
+
 	/* We have a new timeout,discard the old one */
 	g_object_set_data (G_OBJECT (embed), TIMEOUT_DATA_KEY, NULL);
 
 	/* Check the new_timeout sanity */
 	new_timeout = (new_timeout < RELOAD_RATE) ? RELOAD_RATE : new_timeout;
 
-	LOG ("AutoReload reloading embed: %s in %d msecs", ephy_embed_get_title (embed), new_timeout);
+	view = EPHY_GET_WEBKIT_WEB_VIEW_FROM_EMBED (embed);
+	LOG ("AutoReload reloading embed: %s in %d msecs", ephy_web_view_get_title (view), new_timeout);
 
 	/* Create the new one */
 	TimeoutData *timeout = g_new (TimeoutData, 1);
@@ -124,10 +125,10 @@ ephy_auto_reload_timeout (EphyEmbed *embed)
 
 	g_return_val_if_fail (embed != NULL, FALSE);
 
-	LOG ("AutoReload tab: %s", ephy_embed_get_title (embed));
-
 	/* Reload the page */
 	view = EPHY_GET_WEBKIT_WEB_VIEW_FROM_EMBED (embed);
+	LOG ("AutoReload tab: %s", ephy_web_view_get_title (view));
+
 	webkit_web_view_reload_bypass_cache (view);
 
 	/* Retreive the old timeout value (if we want to do something relative to it
@@ -315,4 +316,14 @@ ephy_auto_reload_extension_register_type (GTypeModule *module)
 				     &extension_info);
 
 	return type;
+}
+
+G_MODULE_EXPORT void
+peas_register_types (PeasObjectModule *module)
+{
+	ephy_auto_reload_extension_register_type (G_TYPE_MODULE (module));
+
+	peas_object_module_register_extension_type (module,
+						    EPHY_TYPE_EXTENSION,
+						    EPHY_TYPE_AUTO_RELOAD_EXTENSION);
 }

@@ -23,7 +23,7 @@
 #define EPHY_TAB_STATES_EXTENSION_H
 
 #include <glib.h>
-#include <glib-object.h>
+#include <libpeas/peas.h>
 
 G_BEGIN_DECLS
 
@@ -40,19 +40,20 @@ typedef struct _EphyTabStatesExtensionPrivate	EphyTabStatesExtensionPrivate;
 
 struct _EphyTabStatesExtensionClass
 {
-	GObjectClass parent_class;
+	PeasExtensionBaseClass parent_class;
 };
 
 struct _EphyTabStatesExtension
 {
-	GObject parent_instance;
+	PeasExtensionBase parent_instance;
 
 	EphyTabStatesExtensionPrivate *priv;
 };
 
 GType	ephy_tab_states_extension_get_type	(void);
-
 GType	ephy_tab_states_extension_register_type	(GTypeModule *module);
+
+G_MODULE_EXPORT void	peas_register_types	(PeasObjectModule *module);
 
 G_END_DECLS
 

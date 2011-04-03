@@ -6,7 +6,6 @@ libgesturesextension_la_SOURCES = 	\
 	ephy-gesture.h			\
 	ephy-gestures-extension.c	\
 	ephy-gestures-extension.h	\
-	gestures.c			\
 	stroke.c			\
 	stroke.h
 
@@ -22,19 +21,19 @@ libgesturesextension_la_CFLAGS = \
 
 libgesturesextension_la_LDFLAGS = \
 	-module -avoid-version \
-	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	-no-undefined \
 	$(AM_LDFLAGS)
  
 gesturesdir = $(pkgdatadir)
 gestures_DATA =	ephy-gestures.xml
 
 extensioninidir = $(extensiondir)
-extensionini_in_files = gestures.ephy-extension.in.in
-extensionini_DATA = $(extensionini_in_files:.ephy-extension.in.in=.ephy-extension)
+extensionini_in_files = gestures.plugin.in.in
+extensionini_DATA = $(extensionini_in_files:.plugin.in.in=.plugin)
 
-%.ephy-extension.in: %.ephy-extension.in.in $(extension_LTLIBRARIES)
+%.plugin.in: %.plugin.in.in $(extension_LTLIBRARIES)
 	$(AM_V_GEN) \
-	sed -e "s|%LIBRARY%|`. ./$(extension_LTLIBRARIES) && echo $$dlname`|" \
+	sed -e "s|%LIBRARY%|`echo $(extension_LTLIBRARIES) | cut -d. -f1`|" \
 	    -e "s|%EXTENSION_DIR%|$(extensiondir)|" \
 	$< > $@
 

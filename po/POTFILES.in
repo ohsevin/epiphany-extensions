@@ -18,9 +18,6 @@ extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp
 extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp
 extensions/error-viewer/opensp/validate.cpp
 extensions/error-viewer/sgml-validator.c
-extensions/extensions-manager-ui/extensions-manager-ui.c
-[type: gettext/glade]extensions/extensions-manager-ui/extensions-manager-ui.ui
-extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c
 extensions/greasemonkey/ephy-greasemonkey-extension.c
 extensions/java-console/ephy-java-console-extension.c
 extensions/livehttpheaders/ephy-livehttpheaders-extension.c
@@ -38,23 +35,22 @@ extensions/select-stylesheet/mozilla/mozilla-helpers.cpp
 extensions/smart-bookmarks/smart-bookmarks-extension.c
 extensions/soup-fly/ephy-soup-fly-extension.c
 extensions/soup-fly/soup-fly.c
-[type: gettext/ini]extensions/actions/actions.ephy-extension.in.in
-[type: gettext/ini]extensions/adblock/adblock.ephy-extension.in.in
-[type: gettext/ini]extensions/auto-scroller/auto-scroller.ephy-extension.in.in
-[type: gettext/ini]extensions/auto-reload/auto-reload.ephy-extension.in.in
-[type: gettext/ini]extensions/certificates/certificates.ephy-extension.in.in
+[type: gettext/ini]extensions/actions/actions.plugin.in.in
+[type: gettext/ini]extensions/adblock/adblock.plugin.in.in
+[type: gettext/ini]extensions/auto-reload/auto-reload.plugin.in.in
+[type: gettext/ini]extensions/auto-scroller/auto-scroller.plugin.in.in
+[type: gettext/ini]extensions/certificates/certificates.plugin.in.in
 [type: gettext/ini]extensions/error-viewer/error-viewer.ephy-extension.in.in
-[type: gettext/ini]extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in
-[type: gettext/ini]extensions/gestures/gestures.ephy-extension.in.in
-[type: gettext/ini]extensions/greasemonkey/greasemonkey.ephy-extension.in.in
+[type: gettext/ini]extensions/gestures/gestures.plugin.in.in
+[type: gettext/ini]extensions/greasemonkey/greasemonkey.plugin.in.in
 [type: gettext/ini]extensions/java-console/java-console.ephy-extension.in.in
 [type: gettext/ini]extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in
 [type: gettext/ini]extensions/page-info/page-info.ephy-extension.in.in
 [type: gettext/ini]extensions/permissions/permissions.ephy-extension.in.in
-[type: gettext/ini]extensions/push-scroller/push-scroller.ephy-extension.in.in
+[type: gettext/ini]extensions/push-scroller/push-scroller.plugin.in.in
 [type: gettext/ini]extensions/rss/rss.ephy-extension.in.in
 [type: gettext/ini]extensions/sample/sample.ephy-extension.in.in
 [type: gettext/ini]extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in
 [type: gettext/ini]extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in
-[type: gettext/ini]extensions/tab-states/tab-states.ephy-extension.in.in
-[type: gettext/ini]extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in
+[type: gettext/ini]extensions/tab-states/tab-states.plugin.in.in
+[type: gettext/ini]extensions/tab-key-tab-navigate/tab-key-tab-navigate.plugin.in.in

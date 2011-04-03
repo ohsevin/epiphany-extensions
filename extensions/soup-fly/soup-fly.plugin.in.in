@@ -1,0 +1,7 @@
+[Plugin]
+Module=%LIBRARY%
+IAge=1
+_Name=Soup Fly
+_Description=A tool to debug the SoupSession WebKit uses.
+Authors=Xan López <xan@gnome.org>
+Website=http://www.gnome.org/projects/epiphany/extensions.html

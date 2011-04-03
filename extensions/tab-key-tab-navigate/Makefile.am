@@ -3,8 +3,7 @@ extension_LTLIBRARIES = libtabkeytabnavigateextension.la
 
 libtabkeytabnavigateextension_la_SOURCES = \
 	ephy-tab-key-tab-navigate-extension.c	\
-	ephy-tab-key-tab-navigate-extension.h	\
-	extension.c
+	ephy-tab-key-tab-navigate-extension.h
 
 libtabkeytabnavigateextension_la_CPPFLAGS = \
         -I$(top_srcdir)/include				\
@@ -18,16 +17,16 @@ libtabkeytabnavigateextension_la_CFLAGS = \
 
 libtabkeytabnavigateextension_la_LDFLAGS = \
 	-module -avoid-version \
-	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	-no-undefined \
 	$(AM_LDFLAGS)
 
 extensioninidir = $(extensiondir)
-extensionini_in_files = tab-key-tab-navigate.ephy-extension.in.in
-extensionini_DATA = $(extensionini_in_files:.ephy-extension.in.in=.ephy-extension)
+extensionini_in_files = tab-key-tab-navigate.plugin.in.in
+extensionini_DATA = $(extensionini_in_files:.plugin.in.in=.plugin)
 
-%.ephy-extension.in: %.ephy-extension.in.in $(extension_LTLIBRARIES)
+%.plugin.in: %.plugin.in.in $(extension_LTLIBRARIES)
 	$(AM_V_GEN) \
-	sed -e "s|%LIBRARY%|`. ./$(extension_LTLIBRARIES) && echo $$dlname`|" \
+	sed -e "s|%LIBRARY%|`echo $(extension_LTLIBRARIES) | cut -d. -f1`|" \
 	    -e "s|%EXTENSION_DIR%|$(extensiondir)|" \
 	$< > $@
 

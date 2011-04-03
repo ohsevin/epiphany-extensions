@@ -1,0 +1,7 @@
+[Plugin]
+Module=%LIBRARY%
+IAge=1
+_Name=Push Scroll
+_Description=Drag the page on middle mouse click
+Authors=Samuel Abels <spam2 debain org>
+Website=http://www.gnome.org/projects/epiphany/extensions.html

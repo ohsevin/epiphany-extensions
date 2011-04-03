@@ -452,7 +452,7 @@ ephy_gesture_activate (EphyGesture *gesture,
 		g_return_if_fail (EPHY_IS_EMBED (embed));
 
 		event = ephy_gesture_get_event (gesture);
-		g_return_if_fail (EPHY_IS_EMBED_EVENT (event));
+		g_return_if_fail (event != NULL);
 
 		g_signal_emit_by_name (embed, "button-press-event", event,
 				       &handled);

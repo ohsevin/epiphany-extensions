@@ -5,8 +5,7 @@ extension_LTLIBRARIES = libcertificatesextension.la
 
 libcertificatesextension_la_SOURCES = \
 	ephy-certificates-extension.c	\
-	ephy-certificates-extension.h	\
-	extension.c
+	ephy-certificates-extension.h
 
 libcertificatesextension_la_CPPFLAGS = \
         -I$(top_srcdir)/include				\
@@ -20,16 +19,16 @@ libcertificatesextension_la_CFLAGS = \
 
 libcertificatesextension_la_LDFLAGS = \
 	-module -avoid-version \
-	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	-no-undefined \
 	$(AM_LDFLAGS)
 
 extensioninidir = $(extensiondir)
-extensionini_in_files = certificates.ephy-extension.in.in
-extensionini_DATA = $(extensionini_in_files:.ephy-extension.in.in=.ephy-extension)
+extensionini_in_files = certificates.plugin.in.in
+extensionini_DATA = $(extensionini_in_files:.plugin.in.in=.plugin)
 
-%.ephy-extension.in: %.ephy-extension.in.in $(extension_LTLIBRARIES)
+%.plugin.in: %.plugin.in.in $(extension_LTLIBRARIES)
 	$(AM_V_GEN) \
-	sed -e "s|%LIBRARY%|`. ./$(extension_LTLIBRARIES) && echo $$dlname`|" \
+	sed -e "s|%LIBRARY%|`echo $(extension_LTLIBRARIES) | cut -d. -f1`|" \
 	    -e "s|%EXTENSION_DIR%|$(extensiondir)|" \
 	$< > $@
 

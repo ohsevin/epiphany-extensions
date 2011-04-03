@@ -24,6 +24,7 @@
 
 #include <glib.h>
 #include <glib-object.h>
+#include <libpeas/peas.h>
 
 G_BEGIN_DECLS
 
@@ -39,17 +40,18 @@ typedef struct _EphyTabKeyTabNavigateExtensionClass	EphyTabKeyTabNavigateExtensi
 
 struct _EphyTabKeyTabNavigateExtensionClass
 {
-	GObjectClass parent_class;
+	PeasExtensionBaseClass parent_class;
 };
 
 struct _EphyTabKeyTabNavigateExtension
 {
-	GObject parent_instance;
+	PeasExtensionBase parent_instance;
 };
 
 GType	ephy_tab_key_tab_navigate_extension_get_type		(void);
-
 GType	ephy_tab_key_tab_navigate_extension_register_type	(GTypeModule *module);
+
+G_MODULE_EXPORT void   peas_register_types			(PeasObjectModule *module);
 
 G_END_DECLS
 

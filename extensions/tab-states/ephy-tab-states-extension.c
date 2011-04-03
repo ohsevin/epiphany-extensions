@@ -21,15 +21,14 @@
 
 #include "config.h"
 
+#include "ephy-debug.h"
 #include "ephy-tab-states-extension.h"
 
-#include <epiphany/epiphany.h>
-
-#include "ephy-debug.h"
-
-#include <gmodule.h>
 #include <gtk/gtk.h>
 #include <glib/gi18n-lib.h>
+#include <libpeas/peas.h>
+
+#include <epiphany/epiphany.h>
 
 #define EPHY_TAB_STATES_EXTENSION_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_TAB_STATES_EXTENSION, EphyTabStatesExtensionPrivate))
 
@@ -180,7 +179,7 @@ sync_active_tab (EphyWindow *window,
 	{
 		/* mark the tab as read */
 		label = get_real_tab_label (window, embed);
-		gtk_widget_modify_font (label, NULL);
+		gtk_widget_override_font (label, NULL);
 #ifdef ENABLE_COLOURS
 		set_label_colour (label, NULL);
 #endif
@@ -223,7 +222,7 @@ sync_load_status (EphyWebView *view,
 	}
 
 	label = get_real_tab_label (window, embed);
-	gtk_widget_modify_font (label, font_desc);
+	gtk_widget_override_font (label, font_desc);
 #ifdef ENABLE_COLOURS
 	set_label_colour (label, colour);
 #endif
@@ -310,4 +309,14 @@ ephy_tab_states_extension_class_init (EphyTabStatesExtensionClass *klass)
 	object_class->finalize = ephy_tab_states_extension_finalize;
 
 	g_type_class_add_private (object_class, sizeof (EphyTabStatesExtensionPrivate));
+}
+
+G_MODULE_EXPORT void
+peas_register_types (PeasObjectModule *module)
+{
+	ephy_tab_states_extension_register_type (G_TYPE_MODULE (module));
+
+	peas_object_module_register_extension_type (module,
+						    EPHY_TYPE_EXTENSION,
+						    EPHY_TYPE_TAB_STATES_EXTENSION);
 }

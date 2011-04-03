@@ -23,8 +23,7 @@
 #define EPHY_GESTURES_EXTENSION_H
 
 #include <glib.h>
-#include <glib-object.h>
-#include <gmodule.h>
+#include <libpeas/peas.h>
 
 G_BEGIN_DECLS
 
@@ -41,12 +40,12 @@ typedef struct EphyGesturesExtensionPrivate	EphyGesturesExtensionPrivate;
 
 struct EphyGesturesExtensionClass
 {
-	GObjectClass parent_class;
+	PeasExtensionBaseClass parent_class;
 };
 
 struct EphyGesturesExtension
 {
-	GObject parent_instance;
+	PeasExtensionBase parent_instance;
 
 	EphyGesturesExtensionPrivate *priv;
 };
@@ -54,6 +53,8 @@ struct EphyGesturesExtension
 GType	ephy_gestures_extension_get_type	(void);
 
 GType	ephy_gestures_extension_register_type	(GTypeModule *module);
+
+G_MODULE_EXPORT void	peas_register_types	(PeasObjectModule *module);
 
 G_END_DECLS
 

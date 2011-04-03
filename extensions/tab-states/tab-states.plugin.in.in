@@ -1,0 +1,7 @@
+[Plugin]
+Module=%LIBRARY%
+IAge=1
+_Name=Tab States
+_Description=Indicates new content in background tabs
+Authors=Christian Persch <chpe@gnome.org>
+Website=http://www.gnome.org/projects/epiphany/extensions.html

@@ -169,9 +169,9 @@ AM_CONDITIONAL([HAVE_OPENSP],[test "x$enable_opensp" = "xyes"])
 
 AC_MSG_CHECKING([which extensions to build])
 
-ALL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures greasemonkey html5tube java-console livehttpheaders page-info permissions push-scroller rss sample select-stylesheet smart-bookmarks soup-fly tab-key-tab-navigate tab-states"
-USEFUL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates extensions-manager-ui html5tube java-console page-info push-scroller select-stylesheet smart-bookmarks soup-fly tab-key-tab-navigate tab-states"
-DEFAULT_EXTENSIONS="actions adblock auto-reload certificates extensions-manager-ui greasemonkey gestures html5tube push-scroller soup-fly tab-key-tab-navigate tab-states rss"
+ALL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-viewer gestures greasemonkey html5tube java-console livehttpheaders page-info permissions push-scroller rss sample select-stylesheet smart-bookmarks soup-fly tab-key-tab-navigate tab-states"
+USEFUL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates html5tube java-console page-info push-scroller select-stylesheet smart-bookmarks soup-fly tab-key-tab-navigate tab-states"
+DEFAULT_EXTENSIONS="actions adblock auto-reload certificates greasemonkey gestures html5tube push-scroller soup-fly tab-key-tab-navigate tab-states"
 
 MOZILLA_ALL_EXTENSIONS="error-viewer java-console livehttpheaders page-info select-stylesheet smart-bookmarks"
 
@@ -185,7 +185,7 @@ AC_ARG_WITH([extensions],
 [  --with-extensions=extension1,extension2,...
 			  build the specified extensions. Available:
 			  actions, adblock, auto-reload, auto-scroller,
-			  certificates, error-viewer, extensions-manager-ui,
+			  certificates, error-viewer,
 			  gestures, greasemonkey, java-console, livehttpheaders, page-info,
 			  permissions, push-scroller, rss, sample,
 			  select-stylesheet,
@@ -283,7 +283,6 @@ extensions/gestures/Makefile
 extensions/error-viewer/Makefile
 extensions/error-viewer/mozilla/Makefile
 extensions/error-viewer/opensp/Makefile
-extensions/extensions-manager-ui/Makefile
 extensions/greasemonkey/Makefile
 extensions/html5tube/Makefile
 extensions/livehttpheaders/Makefile

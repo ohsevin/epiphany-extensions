@@ -1,0 +1,7 @@
+[Plugin]
+Module=%LIBRARY%
+_Name=Actions
+_Description=Execute arbitrary commands from the context menu
+Authors=Jean-Yves Lefort <jylefort@brutele.be>
+IAge=1
+Website=http://www.gnome.org/projects/epiphany/extensions.html

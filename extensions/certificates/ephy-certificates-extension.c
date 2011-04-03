@@ -28,7 +28,7 @@
 #include <epiphany/epiphany.h>
 
 #include <gtk/gtk.h>
-#include <gmodule.h>
+#include <libpeas/peas.h>
 #include <glib/gi18n-lib.h>
 
 #define EPHY_CERTIFICATES_EXTENSION_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_CERTIFICATES_EXTENSION, EphyCertificatesExtensionPrivate))
@@ -301,4 +301,14 @@ ephy_certificates_extension_class_init (EphyCertificatesExtensionClass *klass)
 	object_class->finalize = ephy_certificates_extension_finalize;
 
 	g_type_class_add_private (object_class, sizeof (EphyCertificatesExtensionPrivate));
+}
+
+G_MODULE_EXPORT void
+peas_register_types (PeasObjectModule *module)
+{
+	ephy_certificates_extension_register_type (G_TYPE_MODULE (module));
+
+	peas_object_module_register_extension_type (module,
+						    EPHY_TYPE_EXTENSION,
+						    EPHY_TYPE_CERTIFICATES_EXTENSION);
 }

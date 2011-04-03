@@ -81,7 +81,7 @@ AC_MSG_RESULT([$result])
 
 dnl Add a rule that auto-translates the .ephy-extension files
 dnl (like the INTLTOOL_XML_RULE does for xml files)
-EPIPHANY_EXTENSION_RULE='%.ephy-extension: %.ephy-extension.in $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*po) ; LC_ALL=C $(INTLTOOL_MERGE) -d -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@'
+EPIPHANY_EXTENSION_RULE='%.plugin: %.plugin.in $(INTLTOOL_MERGE) $(wildcard $(top_srcdir)/po/*po) ; LC_ALL=C $(INTLTOOL_MERGE) -d -u -c $(top_builddir)/po/.intltool-merge-cache $(top_srcdir)/po $< [$]@'
 
 AC_SUBST(EPIPHANY_EXTENSION_RULE)
 

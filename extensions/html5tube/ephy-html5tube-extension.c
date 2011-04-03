@@ -24,7 +24,7 @@
 #include <epiphany/epiphany.h>
 #include <JavaScriptCore/JavaScript.h>
 
-#include <gmodule.h>
+#include <libpeas/peas.h>
 
 static GObjectClass *parent_class = NULL;
 
@@ -456,4 +456,14 @@ ephy_html5tube_extension_register_type (GTypeModule *module)
                                &extension_info);
 
   return type;
+}
+
+G_MODULE_EXPORT void
+peas_register_types (PeasObjectModule *module)
+{
+	ephy_html5tube_extension_register_type (G_TYPE_MODULE (module));
+
+	peas_object_module_register_extension_type (module,
+						    EPHY_TYPE_EXTENSION,
+						    EPHY_TYPE_HTML5TUBE_EXTENSION);
 }

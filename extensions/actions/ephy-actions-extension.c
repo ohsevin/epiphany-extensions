@@ -22,6 +22,7 @@
 #include <glib/gi18n-lib.h>
 #include <gtk/gtk.h>
 #include <epiphany/epiphany.h>
+#include <libpeas/peas.h>
 #include "ephy-file-helpers.h"
 #include "ephy-actions-extension.h"
 #include "ephy-actions-extension-editor-dialog.h"
@@ -823,3 +824,14 @@ ephy_actions_extension_detach_tab (EphyExtension *extension,
 		 G_CALLBACK (ephy_actions_extension_context_menu_cb), window);
 }
 
+G_MODULE_EXPORT void
+peas_register_types (PeasObjectModule *module)
+{
+	ephy_actions_extension_editor_dialog_register_type (G_TYPE_MODULE (module));
+	ephy_actions_extension_properties_dialog_register_type (G_TYPE_MODULE (module));
+	ephy_actions_extension_register_type (G_TYPE_MODULE (module));
+
+	peas_object_module_register_extension_type (module,
+						    EPHY_TYPE_EXTENSION,
+						    EPHY_TYPE_ACTIONS_EXTENSION);
+}

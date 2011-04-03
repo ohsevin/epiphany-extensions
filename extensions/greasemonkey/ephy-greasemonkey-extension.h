@@ -24,6 +24,7 @@
 
 #include <glib.h>
 #include <glib-object.h>
+#include <libpeas/peas.h>
 
 G_BEGIN_DECLS
 
@@ -40,20 +41,21 @@ typedef struct _EphyGreasemonkeyExtensionPrivate	EphyGreasemonkeyExtensionPrivat
 
 struct _EphyGreasemonkeyExtensionClass
 {
-	GObjectClass parent_class;
+	PeasExtensionBaseClass parent_class;
 };
 
 struct _EphyGreasemonkeyExtension
 {
-	GObject parent_instance;
+	PeasExtensionBase parent_instance;
 
 	/*< private >*/
 	EphyGreasemonkeyExtensionPrivate *priv;
 };
 
 GType	ephy_greasemonkey_extension_get_type		(void);
-
 GType	ephy_greasemonkey_extension_register_type	(GTypeModule *module);
+
+G_MODULE_EXPORT void	peas_register_types		(PeasObjectModule *module);
 
 G_END_DECLS
 

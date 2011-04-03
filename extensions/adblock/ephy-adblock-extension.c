@@ -613,3 +613,16 @@ ephy_adblock_extension_class_init (EphyAdblockExtensionClass *klass)
 
 	g_type_class_add_private (object_class, sizeof (EphyAdblockExtensionPrivate));
 }
+
+G_MODULE_EXPORT void
+peas_register_types (PeasObjectModule *module)
+{
+	ad_blocker_register_type (G_TYPE_MODULE (module));
+	ad_uri_tester_register_type (G_TYPE_MODULE (module));
+	adblock_ui_register_type (G_TYPE_MODULE (module));
+	ephy_adblock_extension_register_type (G_TYPE_MODULE (module));
+
+	peas_object_module_register_extension_type (module,
+						    EPHY_TYPE_EXTENSION,
+						    EPHY_TYPE_ADBLOCK_EXTENSION);
+}

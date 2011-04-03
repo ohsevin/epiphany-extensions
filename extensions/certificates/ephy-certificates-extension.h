@@ -23,7 +23,7 @@
 #define EPHY_CERTIFICATES_EXTENSION_H
 
 #include <glib.h>
-#include <glib-object.h>
+#include <libpeas/peas.h>
 
 G_BEGIN_DECLS
 
@@ -53,6 +53,8 @@ struct EphyCertificatesExtension
 GType	ephy_certificates_extension_get_type		(void);
 
 GType	ephy_certificates_extension_register_type	(GTypeModule *module);
+
+G_MODULE_EXPORT void	peas_register_types	(PeasObjectModule *module);
 
 G_END_DECLS
 

@@ -1,0 +1,7 @@
+[Plugin]
+Module=%LIBRARY%
+IAge=1
+_Name=Greasemonkey
+_Description=Run user scripts to modify web pages' behavior
+Authors=Adam Hooper <adamh@densi.com>
+Website=http://www.gnome.org/projects/epiphany/extensions.html

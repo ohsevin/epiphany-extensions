@@ -27,11 +27,13 @@
 #include <epiphany/epiphany.h>
 #include <gdk/gdkkeysyms.h>
 
-#include <gmodule.h>
+#include <libpeas/peas.h>
 
 static GObjectClass *parent_class = NULL;
 
 static GType type = 0;
+
+GType	ephy_tab_key_tab_navigate_extension_register_type	(GTypeModule *module);
 
 static void set_tab_offset (EphyWindow *window, gint offset)
 {
@@ -148,4 +150,13 @@ ephy_tab_key_tab_navigate_extension_register_type (GTypeModule *module)
 			&extension_info);
 
 	return type;
+}
+
+G_MODULE_EXPORT void
+peas_register_types (PeasObjectModule *module)
+{
+	ephy_tab_key_tab_navigate_extension_register_type (G_TYPE_MODULE (module));
+	peas_object_module_register_extension_type (module,
+						    EPHY_TYPE_EXTENSION,
+						    EPHY_TYPE_TAB_KEY_TAB_NAVIGATE_EXTENSION);
 }

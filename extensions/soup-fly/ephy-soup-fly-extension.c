@@ -29,6 +29,7 @@
 #include <gtk/gtk.h>
 #include <glib/gi18n-lib.h>
 #include <string.h>
+#include <libpeas/peas.h>
 
 #define WINDOW_DATA_KEY "EphySoupFlyExtWindowData"
 
@@ -241,4 +242,15 @@ ephy_soup_fly_extension_iface_init (EphyExtensionIface *iface)
 {
   iface->attach_window = impl_attach_window;
   iface->detach_window = impl_detach_window;
+}
+
+G_MODULE_EXPORT void
+peas_register_types (PeasObjectModule *module)
+{
+	soup_fly_register_type (G_TYPE_MODULE (module));
+	ephy_soup_fly_extension_register_type (G_TYPE_MODULE (module));
+
+	peas_object_module_register_extension_type (module,
+						    EPHY_TYPE_EXTENSION,
+						    EPHY_TYPE_SOUP_FLY_EXTENSION);
 }

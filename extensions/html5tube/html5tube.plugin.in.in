@@ -1,0 +1,7 @@
+[Plugin]
+Module=%LIBRARY%
+IAge=1
+_Name=HTML5Tube
+_Description=View Youtube videos using WebKit's HTML5 media player
+Authors=Gustavo Noronha Silva <gns@gnome.org>
+Website=http://www.gnome.org/projects/epiphany/extensions.html

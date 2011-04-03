@@ -21,7 +21,8 @@
 #ifndef EPHY_SOUP_FLY_EXTENSION_H
 #define EPHY_SOUP_FLY_EXTENSION_H
 
-#include <glib-object.h>
+#include <glib.h>
+#include <libpeas/peas.h>
 
 G_BEGIN_DECLS
 
@@ -37,11 +38,11 @@ typedef struct _EphySoupFlyExtensionClass   EphySoupFlyExtensionClass;
 typedef struct _EphySoupFlyExtensionPrivate EphySoupFlyExtensionPrivate;
 
 struct _EphySoupFlyExtensionClass {
-  GObjectClass parent_class;
+  PeasExtensionBaseClass parent_class;
 };
 
 struct _EphySoupFlyExtension {
-  GObject parent_instance;
+  PeasExtensionBase parent_instance;
 
   /*< private >*/
   EphySoupFlyExtensionPrivate *priv;
@@ -49,6 +50,8 @@ struct _EphySoupFlyExtension {
 
 GType ephy_soup_fly_extension_get_type      (void);
 GType ephy_soup_fly_extension_register_type (GTypeModule *module);
+
+G_MODULE_EXPORT void	peas_register_types	(PeasObjectModule *module);
 
 G_END_DECLS
 

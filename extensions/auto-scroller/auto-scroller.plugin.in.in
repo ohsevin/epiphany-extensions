@@ -1,0 +1,7 @@
+[Plugin]
+Module=%LIBRARY%
+_Name=Auto Scroll
+_Description=Scroll on middle mouse click
+Authors=Crispin Flowerday <gnome@flowerday.cx>
+IAge=1
+Website=http://www.gnome.org/projects/epiphany/extensions.html

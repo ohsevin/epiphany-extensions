@@ -29,10 +29,11 @@
 
 #include <epiphany/epiphany.h>
 
-#include <gmodule.h>
 #include <libxml/tree.h>
 
 #include <string.h>
+
+#include <libpeas/peas.h>
 
 #define WINDOW_DATA_KEY	"EphyGesturesExtension::WindowData"
 
@@ -363,4 +364,15 @@ ephy_gestures_extension_class_init (EphyGesturesExtensionClass *class)
 	object_class->finalize = ephy_gestures_extension_finalize;
 
 	g_type_class_add_private (object_class, sizeof (EphyGesturesExtensionPrivate));
+}
+
+G_MODULE_EXPORT void
+peas_register_types (PeasObjectModule *module)
+{
+	ephy_gesture_register_type (G_TYPE_MODULE (module));
+	ephy_gestures_extension_register_type (G_TYPE_MODULE (module));
+
+	peas_object_module_register_extension_type (module,
+						    EPHY_TYPE_EXTENSION,
+						    EPHY_TYPE_GESTURES_EXTENSION);
 }

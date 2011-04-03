@@ -20,7 +20,7 @@
 #define _EPHY_ACTIONS_EXTENSION_H
 
 #include <glib-object.h>
-#include <epiphany/epiphany.h>
+#include <libpeas/peas.h>
 #include "ephy-actions-extension-properties-dialog.h"
 
 G_BEGIN_DECLS
@@ -78,6 +78,10 @@ EphyNodeDb *	ephy_actions_extension_get_db
 			(EphyActionsExtension			*extension);
 EphyNode *	ephy_actions_extension_get_actions
 			(EphyActionsExtension			*extension);
+
+G_MODULE_EXPORT void
+		peas_register_types
+			(PeasObjectModule			*module);
 
 G_END_DECLS
 

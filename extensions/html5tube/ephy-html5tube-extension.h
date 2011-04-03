@@ -21,6 +21,7 @@
 
 #include <glib.h>
 #include <glib-object.h>
+#include <libpeas/peas.h>
 
 G_BEGIN_DECLS
 
@@ -37,20 +38,21 @@ typedef struct _EphyHTML5TubeExtensionPrivate	EphyHTML5TubeExtensionPrivate;
 
 struct _EphyHTML5TubeExtensionClass
 {
-    GObjectClass parent_class;
+    PeasExtensionBaseClass parent_class;
 };
 
 struct _EphyHTML5TubeExtension
 {
-    GObject parent_instance;
+    PeasExtensionBase parent_instance;
 
     /*< private >*/
     EphyHTML5TubeExtensionPrivate *priv;
 };
 
 GType	ephy_html5tube_extension_get_type		(void);
+GType	ephy_html5tube_extension_register_type		(GTypeModule *module);
 
-GType	ephy_html5tube_extension_register_type	(GTypeModule *module);
+G_MODULE_EXPORT void	peas_register_types	(PeasObjectModule *module);
 
 G_END_DECLS
 

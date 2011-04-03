@@ -40,6 +40,8 @@
 #include <dirent.h>
 #include <errno.h>
 
+#include <libpeas/peas.h>
+
 #define EPHY_GREASEMONKEY_EXTENSION_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), EPHY_TYPE_GREASEMONKEY_EXTENSION, EphyGreasemonkeyExtensionPrivate))
 
 #define WINDOW_DATA_KEY "EphyGreasemonkeyExtensionWindowData"
@@ -675,4 +677,15 @@ ephy_greasemonkey_extension_register_type (GTypeModule *module)
 				     &extension_info);
 
 	return type;
+}
+
+G_MODULE_EXPORT void
+peas_register_types (PeasObjectModule *module)
+{
+	greasemonkey_script_register_type (G_TYPE_MODULE (module));
+	ephy_greasemonkey_extension_register_type (G_TYPE_MODULE (module));
+
+	peas_object_module_register_extension_type (module,
+						    EPHY_TYPE_EXTENSION,
+						    EPHY_TYPE_GREASEMONKEY_EXTENSION);
 }

@@ -1,0 +1,7 @@
+[Plugin]
+Module=%LIBRARY%
+_Name=Ad Blocker
+_Description=Block the pest!
+Authors=Adam Hooper <adamh@cvs.gnome.org>
+IAge=1
+Website=http://www.gnome.org/projects/epiphany/extensions.html

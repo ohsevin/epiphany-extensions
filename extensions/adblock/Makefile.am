@@ -11,8 +11,7 @@ libadblockextension_la_SOURCES = \
 	ad-uri-tester.h			\
 	ad-uri-tester.c			\
 	adblock-ui.h			\
-	adblock-ui.c			\
-	extension.c
+	adblock-ui.c
 
 libadblockextension_la_CPPFLAGS = \
         -I$(top_srcdir)/include				\
@@ -27,7 +26,7 @@ libadblockextension_la_CFLAGS = \
 
 libadblockextension_la_LDFLAGS = \
 	-module -avoid-version \
-	-export-symbols $(top_srcdir)/ephy-extension.symbols \
+	-no-undefined \
 	$(AM_LDFLAGS)
 
 uidir = $(pkgdatadir)/ui
@@ -40,12 +39,12 @@ update-adblock-patterns: download-latest.pl
 	perl $< > $(patterns_DATA)
 
 extensioninidir = $(extensiondir)
-extensionini_in_files = adblock.ephy-extension.in.in
-extensionini_DATA = $(extensionini_in_files:.ephy-extension.in.in=.ephy-extension)
+extensionini_in_files = adblock.plugin.in.in
+extensionini_DATA = $(extensionini_in_files:.plugin.in.in=.plugin)
 
-%.ephy-extension.in: %.ephy-extension.in.in $(extension_LTLIBRARIES)
+%.plugin.in: %.plugin.in.in $(extension_LTLIBRARIES)
 	$(AM_V_GEN) \
-	sed -e "s|%LIBRARY%|`. ./$(extension_LTLIBRARIES) && echo $$dlname`|" \
+	sed -e "s|%LIBRARY%|`echo $(extension_LTLIBRARIES) | cut -d. -f1`|" \
 	    -e "s|%EXTENSION_DIR%|$(extensiondir)|" \
 	$< > $@
 
