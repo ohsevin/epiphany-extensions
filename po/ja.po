@@ -112,7 +112,6 @@ msgstr "アクションが選択されていません"
 msgid "%i action selected."
 msgid_plural "%i actions selected."
 msgstr[0] "%i 個のアクションを選択しました"
-msgstr[1] "%i 個のアクションを選択しました"
 
 #: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
 msgid "Add Action"
@@ -233,7 +232,6 @@ msgstr ""
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
 msgstr[0] "%d 個の不正なリンクが見つかりました"
-msgstr[1] "%d 個の不正なリンクが見つかりました"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
@@ -249,7 +247,6 @@ msgstr ""
 msgid "Checking %d Link on “%s”"
 msgid_plural "Checking %d Links on “%s”"
 msgstr[0] "\"%2$s\" にある %1$d 個のリンクをチェックしています"
-msgstr[1] "\"%2$s\" にある %1$d 個のリンクをチェックしています"
 
 #: ../extensions/error-viewer/opensp/validate.cpp:167
 #, c-format
@@ -265,7 +262,6 @@ msgstr ""
 msgid "Found %d error"
 msgid_plural "Found %d errors"
 msgstr[0] "%d 個のエラーが見つかりました"
-msgstr[1] "%d 個のエラーが見つかりました"
 
 #: ../extensions/error-viewer/sgml-validator.c:169
 #, c-format
@@ -828,7 +824,6 @@ msgstr "GNOME 辞書(_G)"
 msgid "Window “%s” (%d tab)"
 msgid_plural "Window “%s” (%d tabs)"
 msgstr[0] "ウィンドウ \"%s\" (%d 個のタブ)"
-msgstr[1] "ウィンドウ \"%s\" (%d 個のタブ)"
 
 #: ../extensions/tabsmenu/ephy-tab-move-menu.c:301
 msgid "Move Tab To Window"
