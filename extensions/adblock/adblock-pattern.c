@@ -79,6 +79,7 @@ adblock_pattern_load_from_file (GHashTable *patterns,
 				   "Error: %s",
 				   line, error->message);
 			g_error_free (error);
+			error = NULL;
 			continue;
 		}
 
