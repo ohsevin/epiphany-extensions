@@ -216,7 +216,7 @@ construct_ui (SoupFly *logger)
                                   GTK_POLICY_AUTOMATIC);
   gtk_container_add (GTK_CONTAINER (scrolled), treeview);
 
-  hbox = gtk_hbox_new (FALSE, 10);
+  hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 10);
   button = gtk_button_new_with_label (_("Clear finished"));
   g_signal_connect (button, "clicked", G_CALLBACK (clear_button_clicked_cb), logger);
   gtk_container_add (GTK_CONTAINER (hbox), button);
@@ -226,7 +226,7 @@ construct_ui (SoupFly *logger)
   g_signal_connect (check_button, "toggled", G_CALLBACK (check_button_toggled_cb), logger);
   gtk_container_add (GTK_CONTAINER (hbox), check_button);
 
-  vbox = gtk_vbox_new (FALSE, 10);
+  vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 10);
   gtk_box_pack_start (GTK_BOX (vbox), scrolled, TRUE, TRUE, 0);
   gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, TRUE, 0);
 
