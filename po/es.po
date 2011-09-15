@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=epiphany-extensions&component=general\n"
-"POT-Creation-Date: 2010-10-08 15:54+0000\n"
-"PO-Revision-Date: 2011-02-21 09:48+0100\n"
+"product=epiphany-extensions&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-05-30 23:06+0000\n"
+"PO-Revision-Date: 2011-09-15 12:02+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -404,7 +404,7 @@ msgstr "Instalar _script de usuario"
 msgid "Install Greasemonkey script"
 msgstr "Instalar script Greasemonkey"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:311
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:314
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "Se ha instalado el script de usuario en «%s»"
@@ -460,7 +460,7 @@ msgstr "Guardar como..."
 
 #: ../extensions/page-info/page-info-dialog.c:632
 msgid "Select a directory"
-msgstr "Seleccione un directorio"
+msgstr "Seleccionar una carpeta"
 
 #: ../extensions/page-info/page-info-dialog.c:681
 msgid "Unknown type"
@@ -764,15 +764,15 @@ msgstr "Estado"
 msgid "Site Permissions"
 msgstr "Permisos del sitio"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:632
+#: ../extensions/permissions/ephy-permissions-dialog.c:631
 msgid "Cookies"
 msgstr "Cookies"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:633
+#: ../extensions/permissions/ephy-permissions-dialog.c:632
 msgid "Images"
 msgstr "Imágenes"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:634
+#: ../extensions/permissions/ephy-permissions-dialog.c:633
 msgid "Popup Windows"
 msgstr "Ventanas emergentes"
 
@@ -869,23 +869,13 @@ msgstr "Predeterminado"
 msgid "None"
 msgstr "Ninguno"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:543
 msgid "_Look Up"
 msgstr "_Buscar"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:538
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:550
 msgid "_GNOME Dictionary"
 msgstr "Diccionario de _GNOME"
-
-#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
-msgid "Open search result in new tab"
-msgstr "Abrir el resultado de la búsqueda en una nueva pestaña"
-
-#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
-msgid "Open search result in new tab if true, in new window if false"
-msgstr ""
-"Abrir el resultado de la búsqueda en una nueva pestaña si es TRUE, en una "
-"nueva ventana si es FALSE"
 
 #: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
 msgid "_Soup Fly"
@@ -1040,14 +1030,6 @@ msgstr "Busca el texto seleccionado con un marcador inteligente"
 msgid "Smart Bookmarks"
 msgstr "Marcadores inteligentes"
 
-#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
-msgid "Groups newly opened tabs"
-msgstr "Agrupa las pestañas nuevas abiertas"
-
-#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
-msgid "Tab Groups"
-msgstr "Grupos de pestañas"
-
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
 msgstr "Indica el contenido nuevo en pestañas en segundo plano"
@@ -1063,6 +1045,20 @@ msgstr "Tecla Tab para navegar con pestañas"
 #: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:2
 msgid "Use the Tab key to navigate between tabs"
 msgstr "Usar la tecla Tab para navegar entre pestañas"
+
+#~ msgid "Open search result in new tab"
+#~ msgstr "Abrir el resultado de la búsqueda en una nueva pestaña"
+
+#~ msgid "Open search result in new tab if true, in new window if false"
+#~ msgstr ""
+#~ "Abrir el resultado de la búsqueda en una nueva pestaña si es TRUE, en una "
+#~ "nueva ventana si es FALSE"
+
+#~ msgid "Groups newly opened tabs"
+#~ msgstr "Agrupa las pestañas nuevas abiertas"
+
+#~ msgid "Tab Groups"
+#~ msgstr "Grupos de pestañas"
 
 #~ msgid ""
 #~ "If this option is enabled, the action will be included in the popup menu "
