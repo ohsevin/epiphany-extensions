@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions.help.HEAD\n"
-"POT-Creation-Date: 2010-10-08 15:54+0000\n"
-"PO-Revision-Date: 2011-02-21 15:04+0100\n"
+"POT-Creation-Date: 2011-05-30 23:06+0000\n"
+"PO-Revision-Date: 2011-09-15 12:29+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -1094,7 +1094,7 @@ msgstr "Derecha"
 
 #: C/epiphany-extensions.xml:607(entry)
 msgid "Go up in a directory"
-msgstr "Subir un directorio"
+msgstr "Subir una carpeta"
 
 #: C/epiphany-extensions.xml:608(entry)
 msgid "Up - Left - Up"
@@ -1227,9 +1227,9 @@ msgid ""
 msgstr ""
 "<application>Epiphany</application> almacena la definición de los gestos "
 "para todos los usuarios en el archivo <filename>ephy-gestures.xml</filename> "
-"ubicado en el directorio <filename class=\"directory\">$PREFIX/share/"
-"epiphany-extensions/</filename>; este archivo utiliza el formato xml y "
-"define los gestos para todos los usuarios del sistema."
+"ubicado en la carpeta <filename class=\"directory\">$PREFIX/share/epiphany-"
+"extensions/</filename>; este archivo utiliza el formato xml y define los "
+"gestos para todos los usuarios del sistema."
 
 #: C/epiphany-extensions.xml:774(title)
 msgid "A Gesture Example"
@@ -1266,7 +1266,7 @@ msgid ""
 "definitions."
 msgstr ""
 "Para crear sus propios gestos, cree primero un fichero llamado "
-"<filename>ephy-gestures.xml</filename> en el directorio <filename class="
+"<filename>ephy-gestures.xml</filename> en la carpeta <filename class="
 "\"directory\">~/.gnome2/epiphany/</filename> que almacenará sus definiciones "
 "de gestos personales."
 
