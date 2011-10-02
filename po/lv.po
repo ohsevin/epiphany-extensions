@@ -1,0 +1,1039 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
+"cgi?product=epiphany-extensions&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-09-17 13:27+0000\n"
+"PO-Revision-Date: 2011-10-02 20:58+0300\n"
+"Last-Translator: Rūdofls Mazurs <rudolfs.mazurs@gmail.com>\n"
+"Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+"Language: lv\n"
+"X-Generator: Lokalize 1.2\n"
+
+#: ../extensions/actions/action-properties.ui.h:1
+msgid "<span weight=\"bold\">Applies to</span>"
+msgstr "<span weight=\"bold\">Attiecas uz</span>"
+
+#: ../extensions/actions/action-properties.ui.h:2
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">Vispārīgi</span>"
+
+#: ../extensions/actions/action-properties.ui.h:3
+msgid "_Command:"
+msgstr "_Komanda:"
+
+#: ../extensions/actions/action-properties.ui.h:4
+msgid "_Description:"
+msgstr "_Apraksts:"
+
+#: ../extensions/actions/action-properties.ui.h:5
+msgid "_Images"
+msgstr "Attēl_i"
+
+#: ../extensions/actions/action-properties.ui.h:6
+msgid "_Name:"
+msgstr "_Nosaukums:"
+
+#: ../extensions/actions/action-properties.ui.h:7
+msgid "_Pages"
+msgstr "La_pas"
+
+#: ../extensions/actions/actions-editor.ui.h:1
+#: ../extensions/actions/actions.ephy-extension.in.in.h:1
+msgid "Actions"
+msgstr "Darbības"
+
+#: ../extensions/actions/ephy-actions-extension.c:112
+msgid "Actio_ns"
+msgstr "_Darbības"
+
+#: ../extensions/actions/ephy-actions-extension.c:113
+msgid "Customize actions"
+msgstr "Pielāgot darbības"
+
+#: ../extensions/actions/ephy-actions-extension.c:436
+msgid "Could not run command"
+msgstr "Nevar palaist komandu"
+
+#: ../extensions/actions/ephy-actions-extension.c:440
+msgid "Could not Run Command"
+msgstr "Nevar palaist komandu"
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:496
+msgid "No action selected."
+msgstr "Nav izvēlēta neviena darbība."
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:506
+#, c-format
+msgid "%i action selected."
+msgid_plural "%i actions selected."
+msgstr[0] "Izvēlēta %i darbība."
+msgstr[1] "Izvēlētas %i darbības."
+msgstr[2] "Izvēlētas %i darbības."
+
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:721
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:124
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:194
+#, c-format
+msgid "Could not display help: %s"
+msgstr "Neizdevās parādīt palīdzību: %s"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:274
+msgid "Add Action"
+msgstr "Pievienot darbību"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:384
+#, c-format
+msgid "“%s” Properties"
+msgstr "“%s” īpašības"
+
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:389
+msgid "Action Properties"
+msgstr "Darbības īpašības"
+
+#: ../extensions/adblock/adblock-ui.c:229
+msgid ""
+"This list is Copyright © its original author(G). It is relicensed under the "
+"GPL with permission.\n"
+"The original list, Filterset.G, can be found at http://www.pierceive.com/"
+"filtersetg/.\n"
+"This version has been modified from its original. The changes have not been "
+"approved by the original author;\n"
+"direct any problems to Bugzilla and not to the original author (G).\n"
+msgstr ""
+"Autortiesības ar šo sarakstu pieder tā oriģinālajam autoram (G). Tas ir "
+"pārlicencēts uz GPL ar atļauju.\n"
+"Oriģinālo sarakstu, Filterset.G, var atrast  http://www.pierceive.com/"
+"filtersetg/.\n"
+"Šī versija nesakrīt ar oriģinālu un tā autors varētu nepiekrist tā izmaiņām.\n"
+"Visas problēmas ziņojiet uz Bugzilla, nevis oriģināla autoram (G).\n"
+
+#: ../extensions/adblock/adblock-ui.c:446
+msgid "Pattern"
+msgstr "Raksts"
+
+#: ../extensions/adblock/adblock.ui.h:1
+msgid "<b>Courtesy of Graham Pierce</b>"
+msgstr "<b>Courtesy of Graham Pierce</b>"
+
+#: ../extensions/adblock/adblock.ui.h:2
+msgid "<b>New rule</b>"
+msgstr "<b>Jauna kārtula</b>"
+
+#: ../extensions/adblock/adblock.ui.h:3
+msgid "<b>Update rules from original site</b>"
+msgstr "<b>Atjaunināt kārtulas no sākotnējās vietnes</b>"
+
+#: ../extensions/adblock/adblock.ui.h:4
+#: ../extensions/adblock/ephy-adblock-extension.c:229
+msgid "Adblock Editor"
+msgstr "Adblock redaktors"
+
+#: ../extensions/adblock/adblock.ui.h:5
+msgid "Blacklist"
+msgstr "Melnais saraksts"
+
+#: ../extensions/adblock/adblock.ui.h:6
+msgid "Filterset.G"
+msgstr "Filterset.G"
+
+#: ../extensions/adblock/adblock.ui.h:7
+msgid "Whitelist"
+msgstr "Baltais saraksts"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:230
+msgid "Edit Adblock"
+msgstr "Rediģēt Adblock"
+
+#: ../extensions/adblock/ephy-adblock-extension.c:300
+#, c-format
+msgid "%d hidden advertisement"
+msgid_plural "%d hidden advertisements"
+msgstr[0] "%d slēpta reklāma"
+msgstr[1] "%d slēptas reklāmas"
+msgstr[2] "%d slēptu reklāmu"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:81
+msgid "_Auto Reload"
+msgstr "_Automātiski pārlādēt"
+
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+msgid "Reload the page periodically"
+msgstr "Pārlādēt lapu ik pēc laika"
+
+#: ../extensions/certificates/ephy-certificates-extension.c:163
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:1
+msgid "Certificates"
+msgstr "Sertifikāti"
+
+#: ../extensions/certificates/ephy-certificates-extension.c:194
+msgid "Security Devices"
+msgstr "Drošības ierīces"
+
+#. stock icon
+#: ../extensions/certificates/ephy-certificates-extension.c:206
+msgid "Manage _Certificates"
+msgstr "Pārvaldīt _sertifikātus"
+
+#. shortcut key
+#: ../extensions/certificates/ephy-certificates-extension.c:208
+msgid "Manage your certificates"
+msgstr "Pārvaldiet savus sertifikātus"
+
+#. stock icon
+#: ../extensions/certificates/ephy-certificates-extension.c:212
+msgid "Manage Security _Devices"
+msgstr "Pārvaldīt _drošības ierīces"
+
+#. shortcut key
+#: ../extensions/certificates/ephy-certificates-extension.c:214
+msgid "Manage your security devices"
+msgstr "Pārvaldiet savas drošības ierīces"
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:90
+msgid "Check _HTML"
+msgstr "Pārbaudīt _HTML"
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:92
+msgid "Display HTML errors in the Error Viewer dialog"
+msgstr "Attēlot HTML kļūdas kļūdu skata dialoglodziņā"
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:97
+msgid "Check _Links"
+msgstr "Pārbaudīt _saites"
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
+msgid "Display invalid hyperlinks in the Error Viewer dialog"
+msgstr "Attēlot nederīgās hipersaites kļūdu skata dialoglodziņā"
+
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:103
+msgid "_Error Viewer"
+msgstr "_Kļūdu skatītājs"
+
+#. shortcut key
+#: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
+msgid "Display web page errors"
+msgstr "Attēlot tīmekļa lapas kļūdas"
+
+#: ../extensions/error-viewer/error-viewer.glade.h:1
+msgid "Cl_ear"
+msgstr "_Attīrīt"
+
+#: ../extensions/error-viewer/error-viewer.glade.h:2
+msgid "Error Viewer"
+msgstr "Kļūdu skatītājs"
+
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:105
+#, c-format
+msgid ""
+"%s error in %s on line %d and column %d:\n"
+"%s"
+msgstr ""
+"%s kļūda iekš %s %d rindā un %d kolonnā:\n"
+"%s"
+
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:113
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:137
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:150
+#, c-format
+msgid ""
+"%s error in %s:\n"
+"%s"
+msgstr ""
+"%s kļūda iekš %s:\n"
+"%s"
+
+#. Translators: The first %s is the error category (e. g., "javascript").
+#. The second %s is the URL. The third %s is the actual error message.
+#: ../extensions/error-viewer/mozilla/ErrorViewerConsoleListener.cpp:129
+#, c-format
+msgid ""
+"%s error in %s on line %d:\n"
+"%s"
+msgstr ""
+"%s kļūda iekš %s %d rindā:\n"
+"%s"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:62
+#, c-format
+msgid "Found %d invalid link"
+msgid_plural "Found %d invalid links"
+msgstr[0] "Atrasta %d nederīga saite"
+msgstr[1] "Atrastas %d nederīgas saites"
+msgstr[2] "Atrasts %d nederīgu saišu"
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
+#, c-format
+msgid ""
+"Link error in %s:\n"
+"%s is unavailable."
+msgstr ""
+"Saites kļūda iekš %s:\n"
+"%s nav pieejams."
+
+#: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:200
+#, c-format
+msgid "Checking %d Link on “%s”"
+msgid_plural "Checking %d Links on “%s”"
+msgstr[0] "Pārbauda %d saiti uz “%s”"
+msgstr[1] "Pārbauda %d saites uz “%s”"
+msgstr[2] "Pārbauda %d saišu uz “%s”"
+
+#: ../extensions/error-viewer/opensp/validate.cpp:168
+#, c-format
+msgid ""
+"HTML error in “%s” on line %s:\n"
+"%s"
+msgstr ""
+"HTML kļūda iekš “%s” %s rindā:\n"
+"%s"
+
+#: ../extensions/error-viewer/sgml-validator.c:164
+#, c-format
+msgid "Found %d error"
+msgid_plural "Found %d errors"
+msgstr[0] "Atrasta %d kļūda"
+msgstr[1] "Atrastas %d kļūdas"
+msgstr[2] "Atrastas %d kļūdas"
+
+#: ../extensions/error-viewer/sgml-validator.c:168
+#, c-format
+msgid "HTML Validation of “%s” complete"
+msgstr "“%s” HTML validēšana pabeigta"
+
+#: ../extensions/error-viewer/sgml-validator.c:226
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"%s"
+msgstr ""
+"HTML kļūda iekš %s:\n"
+"%s"
+
+#: ../extensions/error-viewer/sgml-validator.c:228
+#: ../extensions/error-viewer/sgml-validator.c:244
+msgid ""
+"Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
+"+xml” instead."
+msgstr ""
+"Doctype ir “XHTML” satura tips ir “text/html”.  Tā vietā jālieto "
+"“application/xhtml+xml”."
+
+#: ../extensions/error-viewer/sgml-validator.c:242
+#, c-format
+msgid ""
+"HTML warning in %s:\n"
+"%s"
+msgstr ""
+"HTML brīdinājums iekš %s:\n"
+"%s"
+
+#: ../extensions/error-viewer/sgml-validator.c:359
+#, c-format
+msgid "HTML error in %s:"
+msgstr "HTML kļūda iekš %s:"
+
+#: ../extensions/error-viewer/sgml-validator.c:367
+#, c-format
+msgid "Invalid character encoding"
+msgstr "Nederīga rakstzīmju kodējums"
+
+#: ../extensions/error-viewer/sgml-validator.c:372
+#, c-format
+msgid "Unknown error while converting to UTF-8"
+msgstr "Nezināma kļūda, konvertējot uz UTF-8"
+
+#: ../extensions/error-viewer/sgml-validator.c:434
+#, c-format
+msgid ""
+"HTML error in %s:\n"
+"No valid doctype specified."
+msgstr ""
+"HTML kļūda iekš %s:\n"
+"Nav norādīts derīgs doctype."
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:349
+msgid "Enabled"
+msgstr "Aktivēts"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:357
+#: ../extensions/rss/rss-ui.c:539
+msgid "Description"
+msgstr "Apraksts"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:1
+msgid "<b>Loaded Extensions</b>"
+msgstr "<b>Ielādētie paplašinājumi</b>"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:2
+msgid "Extensions"
+msgstr "Paplašinājumi"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:68
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:74
+msgid "_Extensions"
+msgstr "_Paplašinājumi"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:70
+msgid "Load and unload extensions"
+msgstr "Ielādēt un izlādēt paplašinājumus"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:76
+msgid "Help about extensions"
+msgstr "Palīdzība par paplašinājumiem"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:78
+msgid "Install User _Script"
+msgstr "Instalēt lietotāja _skriptu"
+
+#. shortcut key
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:80
+msgid "Install Greasemonkey script"
+msgstr "Instalēt Greasemonkey skriptu"
+
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:314
+#, c-format
+msgid "The user script at “%s” has been installed"
+msgstr "Lietotāja skripts “%s” ir uzinstalēts"
+
+#: ../extensions/java-console/ephy-java-console-extension.c:48
+msgid "_Java Console"
+msgstr "_Java konsole"
+
+#. shortcut key
+#: ../extensions/java-console/ephy-java-console-extension.c:50
+msgid "Show Java Console"
+msgstr "Rādīt Java konsoli"
+
+#: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:100
+msgid "_HTTP Headers"
+msgstr "_HTTP galvenes"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:1
+msgid "<b>Request</b>"
+msgstr "<b>Pieprasījums</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:2
+msgid "<b>Response</b>"
+msgstr "<b>Atbilde</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:3
+msgid "<b>URLs</b>"
+msgstr "<b>URL</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
+msgid "Clear cache"
+msgstr "Attīrīt kešu"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
+msgid "Live Headers"
+msgstr "Dzīvās galvenes"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
+msgid "Remove headers"
+msgstr "Izņemt galvenes"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:61
+msgid "Pa_ge Information"
+msgstr "_Informācija par lapu"
+
+#: ../extensions/page-info/ephy-page-info-extension.c:63
+msgid "Display page information in a dialog"
+msgstr "Informāciju par lapu attēlot dialoglodziņā"
+
+#: ../extensions/page-info/page-info-dialog.c:615
+msgid "Save As..."
+msgstr "Saglabāt kā..."
+
+#: ../extensions/page-info/page-info-dialog.c:632
+msgid "Select a directory"
+msgstr "Izvēlieties direktoriju"
+
+#: ../extensions/page-info/page-info-dialog.c:681
+msgid "Unknown type"
+msgstr "Nezināms tips"
+
+#: ../extensions/page-info/page-info-dialog.c:686
+msgid "Full standards compliance"
+msgstr "Pilnībā atbilst standartiem"
+
+#: ../extensions/page-info/page-info-dialog.c:689
+msgid "Almost standards compliance"
+msgstr "Pārsvarā atbilst standartiem"
+
+#: ../extensions/page-info/page-info-dialog.c:692
+msgid "Compatibility"
+msgstr "Savietojamība"
+
+#: ../extensions/page-info/page-info-dialog.c:696
+msgid "Undetermined"
+msgstr "Nenoteikta"
+
+#: ../extensions/page-info/page-info-dialog.c:705
+msgid "Not cached"
+msgstr "Nav saglabāts kešā"
+
+#: ../extensions/page-info/page-info-dialog.c:708
+msgid "Disk cache"
+msgstr "Diska kešs"
+
+#: ../extensions/page-info/page-info-dialog.c:711
+msgid "Memory cache"
+msgstr "Atmiņas kešs"
+
+#: ../extensions/page-info/page-info-dialog.c:714
+msgid "Unknown cache"
+msgstr "Nezināms kešs"
+
+#: ../extensions/page-info/page-info-dialog.c:730
+#: ../extensions/page-info/page-info-dialog.c:846
+msgid "Unknown"
+msgstr "Nezināms"
+
+#: ../extensions/page-info/page-info-dialog.c:735
+msgid "No referrer"
+msgstr "Nav novirzītāja"
+
+#: ../extensions/page-info/page-info-dialog.c:749
+#: ../extensions/page-info/page-info-dialog.c:765
+msgid "Not specified"
+msgstr "Nav norādīts"
+
+#: ../extensions/page-info/page-info-dialog.c:828
+msgid "Image"
+msgstr "Attēls"
+
+#: ../extensions/page-info/page-info-dialog.c:831
+msgid "Background image"
+msgstr "Fona attēls"
+
+#: ../extensions/page-info/page-info-dialog.c:834
+msgid "Embed"
+msgstr "Iegults"
+
+#: ../extensions/page-info/page-info-dialog.c:837
+msgid "Object"
+msgstr "Objekts"
+
+#: ../extensions/page-info/page-info-dialog.c:840
+msgid "Applet"
+msgstr "Sīklietotne"
+
+#: ../extensions/page-info/page-info-dialog.c:843
+msgid "Icon"
+msgstr "Ikona"
+
+#: ../extensions/page-info/page-info-dialog.c:1024
+msgid "_Open"
+msgstr "_Atvērt"
+
+#: ../extensions/page-info/page-info-dialog.c:1030
+#: ../extensions/page-info/page-info-dialog.c:1475
+msgid "_Copy Link Address"
+msgstr "_Kopēt saites adresi"
+
+#: ../extensions/page-info/page-info-dialog.c:1036
+msgid "_Use as Background"
+msgstr "Izmantot kā fon_u"
+
+#: ../extensions/page-info/page-info-dialog.c:1042
+#: ../extensions/page-info/page-info-dialog.c:1481
+msgid "_Save As..."
+msgstr "_Saglabāt kā..."
+
+#: ../extensions/page-info/page-info-dialog.c:1274
+#: ../extensions/page-info/page-info-dialog.c:1595
+msgid "Blocked"
+msgstr "Bloķēts"
+
+#: ../extensions/page-info/page-info-dialog.c:1290
+#: ../extensions/page-info/page-info-dialog.c:1611
+msgid "URL"
+msgstr "URL"
+
+#: ../extensions/page-info/page-info-dialog.c:1303
+msgid "Type"
+msgstr "Tips"
+
+#: ../extensions/page-info/page-info-dialog.c:1315
+msgid "Alt Text"
+msgstr "Alt teksts"
+
+#: ../extensions/page-info/page-info-dialog.c:1327
+#: ../extensions/page-info/page-info-dialog.c:1624
+msgid "Title"
+msgstr "Nosaukums"
+
+#: ../extensions/page-info/page-info-dialog.c:1339
+msgid "Width"
+msgstr "Platums"
+
+#: ../extensions/page-info/page-info-dialog.c:1351
+msgid "Height"
+msgstr "Augstums"
+
+#: ../extensions/page-info/page-info-dialog.c:1636
+msgid "Relation"
+msgstr "Attiecība"
+
+#: ../extensions/page-info/page-info-dialog.c:1785
+#: ../extensions/page-info/page-info-dialog.c:1926
+msgid "Name"
+msgstr "Nosaukums"
+
+#: ../extensions/page-info/page-info-dialog.c:1797
+msgid "Method"
+msgstr "Metode"
+
+#: ../extensions/page-info/page-info-dialog.c:1811
+msgid "Action"
+msgstr "Darbība"
+
+#: ../extensions/page-info/page-info-dialog.c:1892
+msgid "_Copy"
+msgstr "_Kopēt"
+
+#: ../extensions/page-info/page-info-dialog.c:1938
+msgid "Content"
+msgstr "Saturs"
+
+#: ../extensions/page-info/page-info-dialog.c:2039
+msgid "Page Metadata"
+msgstr "Lapas metadati"
+
+#: ../extensions/page-info/page-info.glade.h:1
+msgid "<b>Dublin Core Metadata</b>"
+msgstr "<b>Dublinas kodola metadati</b>"
+
+#: ../extensions/page-info/page-info.glade.h:2
+msgid "<b>Forms In Page</b>"
+msgstr "<b>Formas lapā</b>"
+
+#: ../extensions/page-info/page-info.glade.h:3
+msgid "<b>Links In Page</b>"
+msgstr "<b>Saites lapā</b>"
+
+#: ../extensions/page-info/page-info.glade.h:4
+msgid "<b>Media In Page</b>"
+msgstr "<b>Multimediji lapā</b>"
+
+#: ../extensions/page-info/page-info.glade.h:5
+msgid "<b>Medium View</b>"
+msgstr "<b>Mediju skats</b>"
+
+#: ../extensions/page-info/page-info.glade.h:6
+msgid "<b>Other Metadata</b>"
+msgstr "<b>Citi metadati</b>"
+
+#: ../extensions/page-info/page-info.glade.h:7
+msgid "<b>Rendering</b>"
+msgstr "<b>Attēlošana</b>"
+
+#: ../extensions/page-info/page-info.glade.h:8
+msgid "<b>Source File</b>"
+msgstr "<b>Pirmkoda fails</b>"
+
+#: ../extensions/page-info/page-info.glade.h:9
+msgid "<b>Web Page</b>"
+msgstr "<b>Tīmekļa lappuse</b>"
+
+#: ../extensions/page-info/page-info.glade.h:10
+msgid "DYNAMIC"
+msgstr "DINAMISKS"
+
+#: ../extensions/page-info/page-info.glade.h:11
+msgid "Date:"
+msgstr "Datums:"
+
+#: ../extensions/page-info/page-info.glade.h:12
+msgid "Description:"
+msgstr "Apraksts:"
+
+#: ../extensions/page-info/page-info.glade.h:13
+msgid "Encoding:"
+msgstr "Kodējums:"
+
+#: ../extensions/page-info/page-info.glade.h:14
+msgid "Expires:"
+msgstr "Derīguma termiņš:"
+
+#: ../extensions/page-info/page-info.glade.h:15
+msgid "Format:"
+msgstr "Formāts:"
+
+#: ../extensions/page-info/page-info.glade.h:16
+msgid "Forms"
+msgstr "Formas"
+
+#: ../extensions/page-info/page-info.glade.h:17
+msgid "General"
+msgstr "Vispārīgi"
+
+#: ../extensions/page-info/page-info.glade.h:18
+msgid "Links"
+msgstr "Saites"
+
+#: ../extensions/page-info/page-info.glade.h:19
+msgid "Location:"
+msgstr "Atrašanās vieta:"
+
+#: ../extensions/page-info/page-info.glade.h:20
+msgid "MIME type:"
+msgstr "MIME tips:"
+
+#: ../extensions/page-info/page-info.glade.h:21
+msgid "Media"
+msgstr "Skaņa un video"
+
+#: ../extensions/page-info/page-info.glade.h:22
+msgid "Metadata"
+msgstr "Metadati"
+
+#: ../extensions/page-info/page-info.glade.h:23
+msgid "Mode:"
+msgstr "Režīms:"
+
+#: ../extensions/page-info/page-info.glade.h:24
+msgid "Modified:"
+msgstr "Mainīts:"
+
+#: ../extensions/page-info/page-info.glade.h:25
+msgid "Page Properties"
+msgstr "Lapas īpašības"
+
+#: ../extensions/page-info/page-info.glade.h:26
+msgid "Referrer:"
+msgstr "Novirzītājs:"
+
+#: ../extensions/page-info/page-info.glade.h:27
+msgid "Size:"
+msgstr "Izmērs:"
+
+#: ../extensions/page-info/page-info.glade.h:28
+msgid "Source:"
+msgstr "Avots:"
+
+#: ../extensions/page-info/page-info.glade.h:29
+msgid "Title:"
+msgstr "Nosaukums:"
+
+#: ../extensions/page-info/page-info.glade.h:30
+msgid "Type:"
+msgstr "Tips:"
+
+#: ../extensions/page-info/page-info.glade.h:31
+msgid "_Save Media As..."
+msgstr "Saglabāt multimediju kā..."
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:165
+msgid "allowed"
+msgstr "atļauts"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:169
+msgid "denied"
+msgstr "aizliegts"
+
+#. Sometimes we get this... how did this get in the list!?
+#: ../extensions/permissions/ephy-permissions-dialog.c:174
+msgid "default"
+msgstr "noklusētais"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:500
+msgid "Domain"
+msgstr "Domēns"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:512
+#: ../extensions/soup-fly/soup-fly.c:196
+msgid "State"
+msgstr "Stāvoklis"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:605
+msgid "Site Permissions"
+msgstr "Vietnes atļaujas"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:631
+msgid "Cookies"
+msgstr "Sīkdatnes"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:632
+msgid "Images"
+msgstr "Attēli"
+
+#: ../extensions/permissions/ephy-permissions-dialog.c:633
+msgid "Popup Windows"
+msgstr "Izlecošie logi"
+
+#. stock icon
+#: ../extensions/permissions/ephy-permissions-extension.c:152
+msgid "Site _Permissions"
+msgstr "Vietnes _atļaujas"
+
+#. shortcut key
+#: ../extensions/permissions/ephy-permissions-extension.c:154
+msgid "Manage web site permissions"
+msgstr "Pārvaldīt tīmekļa vietnes atļaujas"
+
+#: ../extensions/rss/ephy-rss-extension.c:82
+msgid "News Feeds Subscription"
+msgstr "Ziņu barotņu abonements"
+
+#: ../extensions/rss/ephy-rss-extension.c:84
+msgid "Subscribe to this website's news feeds in your favorite news reader"
+msgstr "Abonējiet šīs vietnes ziņu barotni savā iecienītajā ziņu lasītājā"
+
+#: ../extensions/rss/ephy-rss-extension.c:89
+msgid "_Subscribe to this feed"
+msgstr "_Abonēt šo barotni"
+
+#: ../extensions/rss/ephy-rss-extension.c:91
+msgid "Subscribe to this feed in your favorite news reader"
+msgstr "Abonējiet šo ziņu barotni savā iecienītajā ziņu lasītājā"
+
+#: ../extensions/rss/ephy-rss-extension.c:402
+msgid "Subscribe to site's news feed"
+msgstr "Abonēt vietnes ziņu barotni"
+
+#: ../extensions/rss/rss-ui.c:136
+msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
+msgstr "<b><i>Nevar sazināties ar lasītāju, vai tas ir palaists?</i></b>"
+
+#: ../extensions/rss/rss-ui.c:138
+msgid "Retry"
+msgstr "Mēģināt vēlreiz"
+
+#: ../extensions/rss/rss-ui.c:268
+msgid "_Copy Feed Address"
+msgstr "_Kopēt barotnes adresi"
+
+#: ../extensions/rss/rss-ui.c:531
+msgid "Subscribe"
+msgstr "Abonēt"
+
+#: ../extensions/rss/rss-ui.ui.h:1
+msgid "<b>Select Interesting Feeds</b>"
+msgstr "<b>Izvelieties interesantas barotnes</b>"
+
+#: ../extensions/rss/rss-ui.ui.h:2
+#: ../extensions/rss/rss.ephy-extension.in.in.h:1
+msgid "News Feed Subscription"
+msgstr "Ziņu barotnes abonements"
+
+#: ../extensions/rss/rss-ui.ui.h:3
+msgid "_Subscribe"
+msgstr "_Abonēt"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:140
+msgid "Render the page without using a style"
+msgstr "Attēlot lapu, neizmantojot stilus"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:143
+msgid "Render the page using the default style"
+msgstr "Attēlot lapu, izmantojot noklusēto stilu"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:146
+#, c-format
+msgid "Render the page using the “%s” style"
+msgstr "Attēlot lapu, izmantojot stilu  “%s”"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:317
+msgid "St_yle"
+msgstr "Sti_ls"
+
+#: ../extensions/select-stylesheet/ephy-css-menu.c:318
+msgid "Select a different style for this page"
+msgstr "Šai lapai izvēlēties citu stilu"
+
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:225
+msgid "Default"
+msgstr "Noklusētais"
+
+#: ../extensions/select-stylesheet/mozilla/mozilla-helpers.cpp:236
+msgid "None"
+msgstr "Nekas"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:543
+msgid "_Look Up"
+msgstr "Uzmek_lēt"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:550
+msgid "_GNOME Dictionary"
+msgstr "_GNOME vārdnīca"
+
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
+msgid "_Soup Fly"
+msgstr "_Soup Fly"
+
+#. shortcut key
+#: ../extensions/soup-fly/ephy-soup-fly-extension.c:68
+msgid "Show information about the SoupSession used by the browser"
+msgstr "Parādīt informāciju par SoupSession, ko izmanto pārlūks"
+
+#: ../extensions/soup-fly/soup-fly.c:220
+msgid "Clear finished"
+msgstr "Attīrīšana pabeigta"
+
+#: ../extensions/soup-fly/soup-fly.c:224
+msgid "Automatically remove finished messages"
+msgstr "Automātiski izņemt pabeigtos ziņojumus"
+
+#: ../extensions/actions/actions.ephy-extension.in.in.h:2
+msgid "Execute arbitrary commands from the context menu"
+msgstr "No konteksta izvēlnes izpildīt patvaļīgas komandas"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
+msgid "Ad Blocker"
+msgstr "Ad Blocker"
+
+#: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
+msgid "Block the pest!"
+msgstr "Bloķē kaitēkļus!"
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:1
+msgid "Auto Scroll"
+msgstr "Automātiskā ritināšana"
+
+#: ../extensions/auto-scroller/auto-scroller.ephy-extension.in.in.h:2
+msgid "Scroll on middle mouse click"
+msgstr "Ritināt ar vidējo peles klikšķi"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:1
+msgid "Auto Reload Tab"
+msgstr "Automātiski pārlādēt cilni"
+
+#: ../extensions/auto-reload/auto-reload.ephy-extension.in.in.h:2
+msgid "Reload a tab periodically"
+msgstr "Periodiski pārlādēt cilni"
+
+#: ../extensions/certificates/certificates.ephy-extension.in.in.h:2
+msgid "View the page certificate and manage the certificates"
+msgstr "Skatīt lapas sertifikātus un pārvaldīt sertifikātus"
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
+msgid "Error viewer"
+msgstr "Kļūdu skatītājs"
+
+#: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
+msgid "Validate web pages and check links"
+msgstr "Validēt tīmekļa lapas un pārbaudīt saites"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
+msgid "Activate and deactivate extensions"
+msgstr "Aktivizēt un deaktivizēt paplašinājumus"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
+msgid "Extensions Manager"
+msgstr "Paplašinājumu pārvaldnieks"
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
+msgid "Gestures"
+msgstr "Žesti"
+
+#: ../extensions/gestures/gestures.ephy-extension.in.in.h:2
+msgid "Perform actions with mouse gestures"
+msgstr "Veikt darbības ar peles žestiem"
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
+msgid "Greasemonkey"
+msgstr "Greasemonkey"
+
+#: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
+msgid "Run user scripts to modify web pages' behavior"
+msgstr "Izpildiet lietotāja skriptus, lai mainītu tīmekļa lapas uzvedību"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
+msgid "Java Console"
+msgstr "Java konsole"
+
+#: ../extensions/java-console/java-console.ephy-extension.in.in.h:2
+msgid "Provide access to the Java-Plugin Console"
+msgstr "Nodrošina pieeju Java spraudņa konsolei"
+
+#: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
+msgid "Live HTTP headers"
+msgstr "Dzīvās HTTP galvenes"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
+msgid "Display information about and links and media from the current page"
+msgstr "Rādīt informāciju par saitēm un multimediju no pašreizējās lapas"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
+msgid "Page Info"
+msgstr "Informācija par lapu"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
+msgid "Edit site permissions"
+msgstr "Rediģēt vietnes atļaujas"
+
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
+msgid "Permissions"
+msgstr "Atļaujas"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
+msgid "Drag the page on middle mouse click"
+msgstr "Velciet lapu ar peles vidējo klikšķi"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+msgid "Push Scroll"
+msgstr "Piespiešanas ritināšana"
+
+#: ../extensions/rss/rss.ephy-extension.in.in.h:2
+msgid ""
+"Subscribe to a news feed offered by the webpage in your favorite news reader"
+msgstr ""
+"Abonē ziņu barotni, ko piedāvā tīmekļa vietne, savā iecienītajā ziņu lasītājā"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:1
+msgid "A sample extension"
+msgstr "Parauga paplašinājums"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:2
+msgid "Sample"
+msgstr "Paraugs"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
+msgid "Select Stylesheet"
+msgstr "Izvēlieties stilu saraktu"
+
+#: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:2
+msgid "Select between different stylesheets offered by the web page"
+msgstr "Izvēlieties kādu no dažādiem stilu sarakstiem, ko piedāvā tīmekļa lapa"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
+msgid "Look up the selected text with a smart bookmark"
+msgstr "Uzmeklējiet izvēlēto tekstu ar gudro grāmatzīmi"
+
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
+msgid "Smart Bookmarks"
+msgstr "Gudrā grāmatzīme"
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
+msgid "Indicates new content in background tabs"
+msgstr "Norāda jauno saturu fona cilnēs"
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
+msgid "Tab States"
+msgstr "Cilnes stāvoklis"
+
+#: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:1
+msgid "Tab Key Tab Navigate"
+msgstr "Tab taustiņš, lai pārvietotos"
+
+#: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:2
+msgid "Use the Tab key to navigate between tabs"
+msgstr "Lietojiet Tab taustiņu, lai pārvietotos pa cilnēm"
+
