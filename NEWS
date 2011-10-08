@@ -1,3 +1,25 @@
+=========================
+Epiphany Extensions 3.2.0
+=========================
+
+Update soup-fly to not use deprecated GtkHBox and GtkVBox.
+Prevent a crash in the adblock extension.
+
+  - added/updated translations
+    - ar, courtesy of Abdalrahim G. Fakhouri
+    - es, courtesy of Daniel Mustieles
+    - lv, courtesy of Rūdofls Mazurs
+    - ru, courtesy of Yuri Myasoedo
+
+=========================
+Epiphany Extensions 3.0.0
+=========================
+
+Bundle with Epiphany 3.0.
+
+  - added/updated translations
+    - ko, courtesy of Changwoo Ryu
+
 ===========================
 Epiphany Extensions 2.91.92
 ===========================
