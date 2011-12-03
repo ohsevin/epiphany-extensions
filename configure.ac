@@ -169,9 +169,9 @@ AM_CONDITIONAL([HAVE_OPENSP],[test "x$enable_opensp" = "xyes"])
 
 AC_MSG_CHECKING([which extensions to build])
 
-ALL_EXTENSIONS="actions auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures greasemonkey html5tube java-console livehttpheaders page-info permissions push-scroller rss sample select-stylesheet smart-bookmarks soup-fly tab-key-tab-navigate tab-states"
-USEFUL_EXTENSIONS="actions auto-reload auto-scroller certificates extensions-manager-ui html5tube java-console page-info push-scroller select-stylesheet smart-bookmarks soup-fly tab-key-tab-navigate tab-states"
-DEFAULT_EXTENSIONS="actions auto-reload certificates extensions-manager-ui greasemonkey gestures html5tube push-scroller soup-fly tab-key-tab-navigate tab-states rss"
+ALL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-viewer extensions-manager-ui gestures greasemonkey html5tube java-console livehttpheaders page-info permissions push-scroller rss sample select-stylesheet smart-bookmarks soup-fly tab-key-tab-navigate tab-states"
+USEFUL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates extensions-manager-ui html5tube java-console page-info push-scroller select-stylesheet smart-bookmarks soup-fly tab-key-tab-navigate tab-states"
+DEFAULT_EXTENSIONS="actions adblock auto-reload certificates extensions-manager-ui greasemonkey gestures html5tube push-scroller soup-fly tab-key-tab-navigate tab-states rss"
 
 MOZILLA_ALL_EXTENSIONS="error-viewer java-console livehttpheaders page-info select-stylesheet smart-bookmarks"
 
@@ -184,7 +184,7 @@ DIST_EXTENSIONS="$ALL_EXTENSIONS"
 AC_ARG_WITH([extensions],
 [  --with-extensions=extension1,extension2,...
 			  build the specified extensions. Available:
-			  actions, auto-reload, auto-scroller,
+			  actions, adblock, auto-reload, auto-scroller,
 			  certificates, error-viewer, extensions-manager-ui,
 			  gestures, greasemonkey, java-console, livehttpheaders, page-info,
 			  permissions, push-scroller, rss, sample,
@@ -275,6 +275,7 @@ data/Makefile
 data/icons/Makefile
 extensions/Makefile
 extensions/actions/Makefile
+extensions/adblock/Makefile
 extensions/auto-reload/Makefile
 extensions/auto-scroller/Makefile
 extensions/certificates/Makefile

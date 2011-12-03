@@ -1,0 +1,10 @@
+[Epiphany Extension]
+_Name=Ad Blocker v2
+_Description=Block the pest!
+Authors=Mario Sanchez Prada <msanchez@igalia.com>
+Version=2
+URL=http://www.gnome.org/projects/epiphany/extensions.html
+
+[Loader]
+Type=shlib
+Library=%EXTENSION_DIR%/%LIBRARY%
