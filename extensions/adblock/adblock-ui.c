@@ -242,8 +242,7 @@ adblock_ui_build_treeview (AdblockUI *dialog)
                                                "text", COL_FILTER_URI,
                                                NULL);
 
-  gtk_tree_sortable_set_sort_column_id (
-                                        GTK_TREE_SORTABLE (dialog->priv->store),
+  gtk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (dialog->priv->store),
                                         COL_FILTER_URI,
                                         GTK_SORT_ASCENDING);
 
