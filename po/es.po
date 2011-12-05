@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-05-30 23:06+0000\n"
-"PO-Revision-Date: 2011-09-15 12:02+0200\n"
+"POT-Creation-Date: 2011-12-03 20:04+0000\n"
+"PO-Revision-Date: 2011-12-05 16:39+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -101,67 +101,34 @@ msgstr "Propiedades de «%s»"
 msgid "Action Properties"
 msgstr "Propiedades de la acción"
 
-#: ../extensions/adblock/adblock-ui.c:229
-msgid ""
-"This list is Copyright © its original author(G). It is relicensed under the "
-"GPL with permission.\n"
-"The original list, Filterset.G, can be found at http://www.pierceive.com/"
-"filtersetg/.\n"
-"This version has been modified from its original. The changes have not been "
-"approved by the original author;\n"
-"direct any problems to Bugzilla and not to the original author (G).\n"
-msgstr ""
-"Los derechos de esta lista © son propiedad de su autor original (G). Está "
-"relicenciada bajo GPL con permiso.\n"
-"La lista original, Filterset.G, se puede encontrar en http://www.pierceive."
-"com/filtersetg/.\n"
-"Esta versión ha sido modificada de la original. Los cambios no han sido "
-"aprobados por el autor original;\n"
-"dirija cualquier problema a Bugzilla y no al autor original (G).\n"
+#: ../extensions/adblock/adblock-ui.c:150
+msgid "Invalid filter"
+msgstr "Filtro no válido"
 
-#: ../extensions/adblock/adblock-ui.c:446
-msgid "Pattern"
-msgstr "Patrón"
+#: ../extensions/adblock/adblock-ui.c:240
+msgid "Filter URI"
+msgstr "Filtrar URI"
 
 #: ../extensions/adblock/adblock.ui.h:1
-msgid "<b>Courtesy of Graham Pierce</b>"
-msgstr "<b>Courtesía de Graham Pierce</b>"
-
-#: ../extensions/adblock/adblock.ui.h:2
-msgid "<b>New rule</b>"
-msgstr "<b>Nueva regla</b>"
-
-#: ../extensions/adblock/adblock.ui.h:3
-msgid "<b>Update rules from original site</b>"
-msgstr "<b>Actualizar reglas desde el sitio original</b>"
-
-#: ../extensions/adblock/adblock.ui.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
 msgstr "Editor del Bloqueo de anuncios"
 
-#: ../extensions/adblock/adblock.ui.h:5
-msgid "Blacklist"
-msgstr "Lista negra"
+#: ../extensions/adblock/adblock.ui.h:2
+msgid ""
+"Type the address of a preconfigured filter list in the text entry to be "
+"added to the list. Find more lists at easylist.adblockplus.org"
+msgstr ""
+"Escriba la dirección de una lista de filtros preconfigurada en la caja de "
+"texto para añadirla a la lista. Puede encontrar más listas en easylist."
+"adblockplus.org"
 
-#: ../extensions/adblock/adblock.ui.h:6
-msgid "Filterset.G"
-msgstr "Filterset.G"
+#: ../extensions/adblock/ephy-adblock-extension.c:218
+msgid "Ad Blocker"
+msgstr "Bloqueador de publicidad"
 
-#: ../extensions/adblock/adblock.ui.h:7
-msgid "Whitelist"
-msgstr "Lista blanca"
-
-#: ../extensions/adblock/ephy-adblock-extension.c:230
-msgid "Edit Adblock"
-msgstr "Editar Bloqueo de anuncios"
-
-#: ../extensions/adblock/ephy-adblock-extension.c:300
-#, c-format
-msgid "%d hidden advertisement"
-msgid_plural "%d hidden advertisements"
-msgstr[0] "%d anuncio oculto"
-msgstr[1] "%d anuncios ocultos"
+#: ../extensions/adblock/ephy-adblock-extension.c:219
+msgid "Configure Ad Blocker filters"
+msgstr "Configurar los filtros del bloqueador de publicidad"
 
 #: ../extensions/auto-reload/ephy-auto-reload-extension.c:81
 msgid "_Auto Reload"
@@ -900,8 +867,9 @@ msgid "Execute arbitrary commands from the context menu"
 msgstr "Ejecute comandos arbitrarios desde el menú contextual"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
-msgid "Ad Blocker"
-msgstr "Bloqueador de publicidad"
+#| msgid "Ad Blocker"
+msgid "Ad Blocker v2"
+msgstr "Bloqueador de publicidad v2"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
 msgid "Block the pest!"
@@ -1045,6 +1013,52 @@ msgstr "Tecla Tab para navegar con pestañas"
 #: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:2
 msgid "Use the Tab key to navigate between tabs"
 msgstr "Usar la tecla Tab para navegar entre pestañas"
+
+#~ msgid ""
+#~ "This list is Copyright © its original author(G). It is relicensed under "
+#~ "the GPL with permission.\n"
+#~ "The original list, Filterset.G, can be found at http://www.pierceive.com/"
+#~ "filtersetg/.\n"
+#~ "This version has been modified from its original. The changes have not "
+#~ "been approved by the original author;\n"
+#~ "direct any problems to Bugzilla and not to the original author (G).\n"
+#~ msgstr ""
+#~ "Los derechos de esta lista © son propiedad de su autor original (G). Está "
+#~ "relicenciada bajo GPL con permiso.\n"
+#~ "La lista original, Filterset.G, se puede encontrar en http://www."
+#~ "pierceive.com/filtersetg/.\n"
+#~ "Esta versión ha sido modificada de la original. Los cambios no han sido "
+#~ "aprobados por el autor original;\n"
+#~ "dirija cualquier problema a Bugzilla y no al autor original (G).\n"
+
+#~ msgid "Pattern"
+#~ msgstr "Patrón"
+
+#~ msgid "<b>Courtesy of Graham Pierce</b>"
+#~ msgstr "<b>Courtesía de Graham Pierce</b>"
+
+#~ msgid "<b>New rule</b>"
+#~ msgstr "<b>Nueva regla</b>"
+
+#~ msgid "<b>Update rules from original site</b>"
+#~ msgstr "<b>Actualizar reglas desde el sitio original</b>"
+
+#~ msgid "Blacklist"
+#~ msgstr "Lista negra"
+
+#~ msgid "Filterset.G"
+#~ msgstr "Filterset.G"
+
+#~ msgid "Whitelist"
+#~ msgstr "Lista blanca"
+
+#~ msgid "Edit Adblock"
+#~ msgstr "Editar Bloqueo de anuncios"
+
+#~ msgid "%d hidden advertisement"
+#~ msgid_plural "%d hidden advertisements"
+#~ msgstr[0] "%d anuncio oculto"
+#~ msgstr[1] "%d anuncios ocultos"
 
 #~ msgid "Open search result in new tab"
 #~ msgstr "Abrir el resultado de la búsqueda en una nueva pestaña"
