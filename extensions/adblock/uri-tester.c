@@ -48,6 +48,9 @@ struct _UriTesterPrivate
   GHashTable* keys;
   GHashTable* optslist;
   GHashTable* urlcache;
+
+  GString* blockcss;
+  GString* blockcssprivate;
 };
 
 enum
@@ -63,13 +66,13 @@ G_DEFINE_DYNAMIC_TYPE (UriTester, uri_tester, G_TYPE_OBJECT);
 static void uri_tester_class_init (UriTesterClass *klass);
 static void uri_tester_init (UriTester *dialog);
 
-static char *
-uri_tester_fixup_regexp (char* src);
+static GString*
+uri_tester_fixup_regexp (const gchar* prefix, char* src);
 
 static gboolean
 uri_tester_parse_file_at_uri (UriTester* tester, const char* fileuri);
 
-static char *
+static char*
 uri_tester_ensure_data_dir ()
 {
   char* folder = NULL;
@@ -285,20 +288,28 @@ uri_tester_save_filters (UriTester *tester)
   g_free (filepath);
 }
 
-static inline gboolean
-uri_tester_check_filter_options (GRegex*       regex,
-                                 const char*  opts,
-                                 const char*  req_uri,
-                                 const char*  page_uri)
+static inline gint
+uri_tester_check_rule (UriTester   *tester,
+                       GRegex*      regex,
+                       const gchar* patt,
+                       const gchar* req_uri,
+                       const gchar* page_uri)
 {
-  if (g_regex_match_simple (",third-party", opts,
-                            G_REGEX_CASELESS, G_REGEX_MATCH_NOTEMPTY))
+  gchar* opts;
+
+  if (!g_regex_match_full (regex, req_uri, -1, 0, 0, NULL, NULL))
+    return FALSE;
+
+  opts = g_hash_table_lookup (tester->priv->optslist, patt);
+  if (opts && g_regex_match_simple (",third-party", opts,
+                                    G_REGEX_CASELESS, G_REGEX_MATCH_NOTEMPTY))
     {
       if (page_uri && g_regex_match_full (regex, page_uri, -1, 0, 0, NULL, NULL))
-        return TRUE;
+        return FALSE;
     }
-
-  return FALSE;
+  /* TODO: Domain opt check */
+  LOG ("blocked by pattern regexp=%s -- %s", g_regex_get_pattern (regex), req_uri);
+  return TRUE;
 }
 
 static inline gboolean
@@ -308,22 +319,12 @@ uri_tester_is_matched_by_pattern (UriTester *tester,
 {
   GHashTableIter iter;
   gpointer patt, regex;
-  char* opts;
 
   g_hash_table_iter_init (&iter, tester->priv->pattern);
   while (g_hash_table_iter_next (&iter, &patt, &regex))
     {
-      if (g_regex_match_full (regex, req_uri, -1, 0, 0, NULL, NULL))
-        {
-          opts = g_hash_table_lookup (tester->priv->optslist, patt);
-          if (opts && uri_tester_check_filter_options (regex, opts, req_uri, page_uri) == TRUE)
-            return FALSE;
-          else
-            {
-              LOG ("blocked by pattern regexp=%s -- %s", g_regex_get_pattern (regex), req_uri);
-              return TRUE;
-            }
-        }
+      if (uri_tester_check_rule(tester, regex, patt, req_uri, page_uri))
+        return TRUE;
     }
   return FALSE;
 }
@@ -335,48 +336,39 @@ uri_tester_is_matched_by_key (UriTester *tester,
                               const char*  page_uri)
 {
   UriTesterPrivate* priv = NULL;
-  char* uri;
-  int len;
+  gchar* uri;
+  gint len;
   int pos = 0;
   GList* regex_bl = NULL;
+  GString* guri;
+  gboolean ret = FALSE;
+  gchar sig[SIGNATURE_SIZE + 1];
 
   priv = tester->priv;
 
-  uri = uri_tester_fixup_regexp ((char*)req_uri);
-  len = strlen (uri);
+  memset (&sig[0], 0, sizeof (sig));
+  /* Signatures are made on pattern, so we need to convert url to a pattern as well */
+  guri = uri_tester_fixup_regexp ("", (gchar*)req_uri);
+  uri = guri->str;
+  len = guri->len;
+
   for (pos = len - SIGNATURE_SIZE; pos >= 0; pos--)
     {
-      char* sig = g_strndup (uri + pos, SIGNATURE_SIZE);
-      GRegex* regex = g_hash_table_lookup (priv->keys, sig);
-      char* opts = NULL;
+      GRegex* regex;
+      strncpy (sig, uri + pos, SIGNATURE_SIZE);
+      regex = g_hash_table_lookup (priv->keys, sig);
 
-      if (regex && !g_list_find (regex_bl, regex))
-        {
-          if (g_regex_match_full (regex, req_uri, -1, 0, 0, NULL, NULL))
-            {
-              opts = g_hash_table_lookup (tester->priv->optslist, sig);
-              g_free (sig);
-              if (opts && uri_tester_check_filter_options (regex, opts, req_uri, page_uri))
-                {
-                  g_free (uri);
-                  g_list_free (regex_bl);
-                  return FALSE;
-                }
-              else
-                {
-                  LOG ("blocked by regexp=%s -- %s", g_regex_get_pattern (regex), uri);
-                  g_free (uri);
-                  g_list_free (regex_bl);
-                  return TRUE;
-                }
-            }
-          regex_bl = g_list_prepend (regex_bl, regex);
-        }
-      g_free (sig);
+      /* Dont check if regex is already blacklisted */
+      if (!regex || g_list_find (regex_bl, regex))
+        continue;
+      ret = uri_tester_check_rule (tester, regex, sig, req_uri, page_uri);
+      if (ret)
+        break;
+      regex_bl = g_list_prepend (regex_bl, regex);
     }
-  g_free (uri);
+  g_string_free (guri, TRUE);
   g_list_free (regex_bl);
-  return FALSE;
+  return ret;
 }
 
 static gboolean
@@ -386,8 +378,6 @@ uri_tester_is_matched (UriTester *tester,
                        const char*  page_uri)
 {
   UriTesterPrivate* priv = NULL;
-  gboolean foundbykey;
-  gboolean foundbypattern;
   char* value;
 
   priv = tester->priv;
@@ -397,31 +387,35 @@ uri_tester_is_matched (UriTester *tester,
     return (value[0] != '0') ? TRUE : FALSE;
 
   /* Look for a match either by key or by pattern. */
-  foundbykey = uri_tester_is_matched_by_key (tester, opts, req_uri, page_uri);
-  foundbypattern = uri_tester_is_matched_by_pattern (tester, req_uri, page_uri);
-
-  if (foundbykey || foundbypattern)
+  if (uri_tester_is_matched_by_key (tester, opts, req_uri, page_uri))
     {
       g_hash_table_insert (priv->urlcache, g_strdup (req_uri), g_strdup("1"));
       return TRUE;
     }
+
+  /* Matching by pattern is pretty expensive, so do it if needed only. */
+  if (uri_tester_is_matched_by_pattern (tester, req_uri, page_uri))
+    {
+      g_hash_table_insert (priv->urlcache, g_strdup (req_uri), g_strdup("1"));
+      return TRUE;
+    }
+
   g_hash_table_insert (priv->urlcache, g_strdup (req_uri), g_strdup("0"));
   return FALSE;
 }
 
-static char *
-uri_tester_fixup_regexp (char* src)
+static GString*
+uri_tester_fixup_regexp (const gchar* prefix, char* src)
 {
-  char* dst;
   GString* str;
-  int len;
+  int len = 0;
 
   if (!src)
     return NULL;
 
-  str = g_string_new ("");
+  str = g_string_new (prefix);
 
-  /* Lets strip first .* */
+  /* lets strip first .* */
   if (src[0] == '*')
     {
       (void)*src++;
@@ -434,22 +428,17 @@ uri_tester_fixup_regexp (char* src)
         case '*':
           g_string_append (str, ".*");
           break;
-        /* case '.': */
-        /*   g_string_append (str, "\\."); */
-        /*   break; */
+          /*case '.':
+            g_string_append (str, "\\.");
+            break;*/
         case '?':
           g_string_append (str, "\\?");
           break;
         case '|':
-          g_string_append (str, "");
-          break;
-          /* FIXME: We actually need to match :[0-9]+ or '/'. Sign
-           * means "here could be port number or nothing". So bla.com^
-           * will match bla.com/ or bla.com:8080/ but not bla.com.au/.
-           */
+          /* FIXME: We actually need to match :[0-9]+ or '/'. Sign means
+             "here could be port number or nothing". So bla.com^ will match
+             bla.com/ or bla.com:8080/ but not bla.com.au/ */
         case '^':
-          g_string_append (str, "");
-          break;
         case '+':
           break;
         default:
@@ -460,41 +449,47 @@ uri_tester_fixup_regexp (char* src)
     }
   while (*src);
 
-  dst = g_strdup (str->str);
-  g_string_free (str, TRUE);
+  len = str->len;
+  /* We dont need .* in the end of url. Thats stupid */
+  if (str->str && str->str[len-1] == '*' && str->str[len-2] == '.')
+    g_string_erase (str, len-2, 2);
 
-  /* We dont need .* in the end of url. Thats stupid. */
-  len = strlen (dst);
-  if (dst && dst[len-1] == '*' && dst[len-2] == '.')
-    {
-      dst[len-2] = '\0';
-    }
-  return dst;
+  return str;
 }
 
-static void
+static gboolean
 uri_tester_compile_regexp (UriTester* tester,
-                           char*      patt,
+                           GString*   gpatt,
                            char*      opts)
 {
   GRegex* regex;
   GError* error = NULL;
-  int pos = 0;
-  char *sig;
+  gchar *patt;
+  int len;
 
+  if (!gpatt)
+    return FALSE;
+
+  patt = gpatt->str;
+  len = gpatt->len;
+
+  /* TODO: Play with optimization flags */
   regex = g_regex_new (patt, G_REGEX_OPTIMIZE,
                        G_REGEX_MATCH_NOTEMPTY, &error);
   if (error)
     {
       g_warning ("%s: %s", G_STRFUNC, error->message);
       g_error_free (error);
-      return;
+      g_regex_unref (regex);
+      return TRUE;
     }
 
   if (!g_regex_match_simple ("^/.*[\\^\\$\\*].*/$", patt, G_REGEX_UNGREEDY, G_REGEX_MATCH_NOTEMPTY))
     {
-      int len = strlen (patt);
       int signature_count = 0;
+      int pos = 0;
+      gchar *sig;
+
       for (pos = len - SIGNATURE_SIZE; pos >= 0; pos--) {
         sig = g_strndup (patt + pos, SIGNATURE_SIZE);
         if (!g_regex_match_simple ("[\\*]", sig, G_REGEX_UNGREEDY, G_REGEX_MATCH_NOTEMPTY) &&
@@ -517,59 +512,141 @@ uri_tester_compile_regexp (UriTester* tester,
           }
         g_free (sig);
       }
-      if (signature_count > 1 && g_hash_table_lookup (tester->priv->pattern, opts))
-        g_hash_table_steal (tester->priv->pattern, patt);
+      g_regex_unref (regex);
+
+      if (signature_count > 1 && g_hash_table_lookup (tester->priv->pattern, patt))
+        {
+          g_hash_table_steal (tester->priv->pattern, patt);
+          return TRUE;
+        }
+
+      return FALSE;
     }
   else
     {
       LOG ("patt: %s%s", patt, "");
-      /* Pattern is a regexp chars. */
-      g_hash_table_insert (tester->priv->pattern, g_strdup (patt), g_regex_ref (regex));
+      /* Pattern is a regexp chars */
+      g_hash_table_insert (tester->priv->pattern, g_strdup (patt), regex);
       g_hash_table_insert (tester->priv->optslist, g_strdup (patt), g_strdup (opts));
+      return FALSE;
     }
-
-  g_regex_unref (regex);
 }
 
 static char*
 uri_tester_add_url_pattern (UriTester* tester,
-                            char* format,
+                            char* prefix,
                             char* type,
                             char* line)
 {
-  char** data;
-  char* patt;
-  char* fixed_patt;
-  char* format_patt;
-  char* opts;
+    gchar** data;
+    gchar* patt;
+    GString* format_patt;
+    gchar* opts;
+    gboolean should_free;
 
-  data = g_strsplit (line, "$", -1);
-  if (data && data[0] && data[1] && data[2])
+    data = g_strsplit (line, "$", -1);
+    if (!data || !data[0])
     {
-      patt = g_strdup_printf ("%s%s", data[0], data[1]);
-      opts = g_strdup_printf ("type=%s,regexp=%s,%s", type, patt, data[2]);
+        g_strfreev (data);
+        return NULL;
     }
-  else if (data && data[0] && data[1])
+
+    if (data[1] && data[2])
     {
-      patt = g_strdup (data[0]);
-      opts = g_strdup_printf ("type=%s,regexp=%s,%s", type, patt, data[1]);
+        patt = g_strconcat (data[0], data[1], NULL);
+        opts = g_strconcat (type, ",", data[2], NULL);
+    }
+    else if (data[1])
+    {
+        patt = data[0];
+        opts = g_strconcat (type, ",", data[1], NULL);
+    }
+    else
+    {
+        patt = data[0];
+        opts = type;
+    }
+
+    if (g_regex_match_simple ("subdocument", opts,
+                              G_REGEX_CASELESS, G_REGEX_MATCH_NOTEMPTY))
+    {
+        if (data[1] && data[2])
+            g_free (patt);
+        if (data[1])
+            g_free (opts);
+        g_strfreev (data);
+        return NULL;
+    }
+
+    format_patt = uri_tester_fixup_regexp (prefix, patt);
+
+    LOG ("got: %s opts %s", format_patt->str, opts);
+    should_free = uri_tester_compile_regexp (tester, format_patt, opts);
+
+    if (data[1] && data[2])
+        g_free (patt);
+    if (data[1])
+        g_free (opts);
+    g_strfreev (data);
+
+    return g_string_free (format_patt, should_free);
+}
+
+static inline void
+uri_tester_frame_add (UriTester* tester, gchar* line)
+{
+  const gchar* separator = " , ";
+
+  (void)*line++;
+  (void)*line++;
+  if (strchr (line, '\'')
+      || (strchr (line, ':')
+          && !g_regex_match_simple (".*\\[.*:.*\\].*", line,
+                                    G_REGEX_CASELESS, G_REGEX_MATCH_NOTEMPTY)))
+    {
+      return;
+    }
+  g_string_append (tester->priv->blockcss, separator);
+  g_string_append (tester->priv->blockcss, line);
+}
+
+static inline void
+uri_tester_frame_add_private (UriTester* tester,
+                              const gchar* line,
+                              const gchar* sep)
+{
+  gchar** data;
+  data = g_strsplit (line, sep, 2);
+
+  if (!(data[1] && *data[1])
+      ||  strchr (data[1], '\'')
+      || (strchr (data[1], ':')
+          && !g_regex_match_simple (".*\\[.*:.*\\].*", data[1],
+                                    G_REGEX_CASELESS, G_REGEX_MATCH_NOTEMPTY)))
+    {
+      g_strfreev (data);
+      return;
+    }
+
+  if (strchr (data[0], ','))
+    {
+      gchar** domains;
+      gint i;
+
+      domains = g_strsplit (data[0], ",", -1);
+      for (i = 0; domains[i]; i++)
+        {
+          g_string_append_printf (tester->priv->blockcssprivate, ";sites['%s']+=',%s'",
+                                  g_strstrip (domains[i]), data[1]);
+        }
+      g_strfreev (domains);
     }
   else
     {
-      patt = g_strdup (data[0]);
-      opts = g_strdup_printf ("type=%s,regexp=%s", type, patt);
+      g_string_append_printf (tester->priv->blockcssprivate, ";sites['%s']+=',%s'",
+                              data[0], data[1]);
     }
-
-  fixed_patt = uri_tester_fixup_regexp (patt);
-  format_patt =  g_strdup_printf (format, fixed_patt);
-
-  LOG ("got: %s opts %s", format_patt, opts);
-  uri_tester_compile_regexp (tester, format_patt, opts);
-
   g_strfreev (data);
-  g_free (patt);
-  g_free (fixed_patt);
-  return format_patt;
 }
 
 static char*
@@ -578,52 +655,56 @@ uri_tester_parse_line (UriTester* tester, char* line)
   if (!line)
     return NULL;
   g_strchomp (line);
-
-  /* Ignore comments and new lines. */
+  /* Ignore comments and new lines */
   if (line[0] == '!')
     return NULL;
-
-  /* FIXME: No support for whitelisting. */
+  /* FIXME: No support for whitelisting */
   if (line[0] == '@' && line[1] == '@')
     return NULL;
-
-  /* FIXME: No support for [include] and [exclude] tags. */
+  /* FIXME: No support for [include] and [exclude] tags */
   if (line[0] == '[')
     return NULL;
 
-  /* Got CSS block hider. */
+  /* Skip garbage */
+  if (line[0] == ' ' || !line[0])
+    return NULL;
+
+  /* Got CSS block hider */
   if (line[0] == '#' && line[1] == '#' )
     {
+      uri_tester_frame_add (tester, line);
       return NULL;
     }
-  /* Got CSS block hider. Workaround. */
+  /* Got CSS block hider. Workaround */
   if (line[0] == '#')
     return NULL;
 
-  /* Got per domain CSS hider rule. */
+  /* Got per domain CSS hider rule */
   if (strstr (line, "##"))
     {
+      uri_tester_frame_add_private (tester, line, "##");
       return NULL;
     }
 
-  /* Got per domain CSS hider rule. Workaround. */
+  /* Got per domain CSS hider rule. Workaround */
   if (strchr (line, '#'))
     {
+      uri_tester_frame_add_private (tester, line, "#");
       return NULL;
     }
-  /* Got URL blocker rule. */
+  /* Got URL blocker rule */
   if (line[0] == '|' && line[1] == '|' )
     {
       (void)*line++;
       (void)*line++;
-      return uri_tester_add_url_pattern (tester, "%s", "fulluri", line);
+      return uri_tester_add_url_pattern (tester, "", "fulluri", line);
     }
   if (line[0] == '|')
     {
       (void)*line++;
-      return uri_tester_add_url_pattern (tester, "^%s", "fulluri", line);
+      return uri_tester_add_url_pattern (tester, "^", "fulluri", line);
     }
-  return uri_tester_add_url_pattern (tester, "%s", "uri", line);
+  return uri_tester_add_url_pattern (tester, "", "uri", line);
 }
 
 static gboolean
@@ -672,6 +753,9 @@ uri_tester_init (UriTester *tester)
                                           (GDestroyNotify)g_free,
                                           (GDestroyNotify)g_free);
 
+  priv->blockcss = g_string_new ("z-non-exist");
+  priv->blockcssprivate = g_string_new ("");
+
   uri_tester_load_filters (tester);
   uri_tester_load_patterns (tester);
 }
@@ -709,6 +793,9 @@ uri_tester_finalize (GObject *object)
   g_hash_table_destroy (priv->keys);
   g_hash_table_destroy (priv->optslist);
   g_hash_table_destroy (priv->urlcache);
+
+  g_string_free (priv->blockcss, TRUE);
+  g_string_free (priv->blockcssprivate, TRUE);
 
   G_OBJECT_CLASS (uri_tester_parent_class)->finalize (object);
 }
