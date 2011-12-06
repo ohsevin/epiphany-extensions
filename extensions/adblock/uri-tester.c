@@ -44,13 +44,13 @@ struct _UriTesterPrivate
 {
   GSList *filters;
 
-  GHashTable* pattern;
-  GHashTable* keys;
-  GHashTable* optslist;
-  GHashTable* urlcache;
+  GHashTable *pattern;
+  GHashTable *keys;
+  GHashTable *optslist;
+  GHashTable *urlcache;
 
-  GString* blockcss;
-  GString* blockcssprivate;
+  GString *blockcss;
+  GString *blockcssprivate;
 };
 
 enum
@@ -66,16 +66,16 @@ G_DEFINE_DYNAMIC_TYPE (UriTester, uri_tester, G_TYPE_OBJECT);
 static void uri_tester_class_init (UriTesterClass *klass);
 static void uri_tester_init (UriTester *dialog);
 
-static GString*
-uri_tester_fixup_regexp (const gchar* prefix, char* src);
+static GString *
+uri_tester_fixup_regexp (const char *prefix, char *src);
 
 static gboolean
-uri_tester_parse_file_at_uri (UriTester* tester, const char* fileuri);
+uri_tester_parse_file_at_uri (UriTester *tester, const char *fileuri);
 
-static char*
+static char *
 uri_tester_ensure_data_dir ()
 {
-  char* folder = NULL;
+  char *folder = NULL;
 
   /* Ensure adblock's dir is there. */
   folder = g_build_filename (ephy_dot_dir (), "extensions", "data", "adblock", NULL);
@@ -85,12 +85,12 @@ uri_tester_ensure_data_dir ()
 }
 
 static char*
-uri_tester_get_fileuri_for_url (const char* url)
+uri_tester_get_fileuri_for_url (const char *url)
 {
-  char* filename = NULL;
-  char* folder = NULL;
-  char* path = NULL;
-  char* uri = NULL;
+  char *filename = NULL;
+  char *folder = NULL;
+  char *path = NULL;
+  char *uri = NULL;
 
   if (!strncmp (url, "file", 4))
     return g_strndup (url + 7, strlen (url) - 7);
@@ -130,8 +130,8 @@ uri_tester_download_notify_status_cb (WebKitDownload *download,
 static void
 uri_tester_retrieve_filter (UriTester *tester, const char *url, const char *fileuri)
 {
-  WebKitNetworkRequest* request = NULL;
-  WebKitDownload* download = NULL;
+  WebKitNetworkRequest *request = NULL;
+  WebKitDownload *download = NULL;
 
   g_return_if_fail (IS_URI_TESTER (tester));
   g_return_if_fail (url != NULL);
@@ -219,7 +219,7 @@ uri_tester_load_filters (UriTester *tester)
 
   if (g_file_test (filepath, G_FILE_TEST_EXISTS | G_FILE_TEST_IS_REGULAR))
     {
-      GFile* file = NULL;
+      GFile *file = NULL;
       char *contents = NULL;
       gsize length = 0;
       GError *error = NULL;
@@ -265,7 +265,7 @@ uri_tester_load_filters (UriTester *tester)
 static void
 uri_tester_save_filters (UriTester *tester)
 {
-  FILE* file = NULL;
+  FILE *file = NULL;
   char *data_dir = NULL;
   char *filepath = NULL;
 
@@ -288,14 +288,14 @@ uri_tester_save_filters (UriTester *tester)
   g_free (filepath);
 }
 
-static inline gint
-uri_tester_check_rule (UriTester   *tester,
-                       GRegex*      regex,
-                       const gchar* patt,
-                       const gchar* req_uri,
-                       const gchar* page_uri)
+static inline int
+uri_tester_check_rule (UriTester  *tester,
+                       GRegex     *regex,
+                       const char *patt,
+                       const char *req_uri,
+                       const char *page_uri)
 {
-  gchar* opts;
+  char *opts;
 
   if (!g_regex_match_full (regex, req_uri, -1, 0, 0, NULL, NULL))
     return FALSE;
@@ -313,9 +313,9 @@ uri_tester_check_rule (UriTester   *tester,
 }
 
 static inline gboolean
-uri_tester_is_matched_by_pattern (UriTester *tester,
-                                  const char*  req_uri,
-                                  const char*  page_uri)
+uri_tester_is_matched_by_pattern (UriTester  *tester,
+                                  const char *req_uri,
+                                  const char *page_uri)
 {
   GHashTableIter iter;
   gpointer patt, regex;
@@ -330,31 +330,31 @@ uri_tester_is_matched_by_pattern (UriTester *tester,
 }
 
 static inline gboolean
-uri_tester_is_matched_by_key (UriTester *tester,
-                              const char*  opts,
-                              const char*  req_uri,
-                              const char*  page_uri)
+uri_tester_is_matched_by_key (UriTester  *tester,
+                              const char *opts,
+                              const char *req_uri,
+                              const char *page_uri)
 {
-  UriTesterPrivate* priv = NULL;
-  gchar* uri;
-  gint len;
+  UriTesterPrivate *priv = NULL;
+  char *uri;
+  int len;
   int pos = 0;
-  GList* regex_bl = NULL;
-  GString* guri;
+  GList *regex_bl = NULL;
+  GString *guri;
   gboolean ret = FALSE;
-  gchar sig[SIGNATURE_SIZE + 1];
+  char sig[SIGNATURE_SIZE + 1];
 
   priv = tester->priv;
 
   memset (&sig[0], 0, sizeof (sig));
   /* Signatures are made on pattern, so we need to convert url to a pattern as well */
-  guri = uri_tester_fixup_regexp ("", (gchar*)req_uri);
+  guri = uri_tester_fixup_regexp ("", (char*)req_uri);
   uri = guri->str;
   len = guri->len;
 
   for (pos = len - SIGNATURE_SIZE; pos >= 0; pos--)
     {
-      GRegex* regex;
+      GRegex *regex;
       strncpy (sig, uri + pos, SIGNATURE_SIZE);
       regex = g_hash_table_lookup (priv->keys, sig);
 
@@ -372,13 +372,13 @@ uri_tester_is_matched_by_key (UriTester *tester,
 }
 
 static gboolean
-uri_tester_is_matched (UriTester *tester,
-                       const char*  opts,
-                       const char*  req_uri,
-                       const char*  page_uri)
+uri_tester_is_matched (UriTester  *tester,
+                       const char *opts,
+                       const char *req_uri,
+                       const char *page_uri)
 {
-  UriTesterPrivate* priv = NULL;
-  char* value;
+  UriTesterPrivate *priv = NULL;
+  char *value;
 
   priv = tester->priv;
 
@@ -404,10 +404,10 @@ uri_tester_is_matched (UriTester *tester,
   return FALSE;
 }
 
-static GString*
-uri_tester_fixup_regexp (const gchar* prefix, char* src)
+static GString *
+uri_tester_fixup_regexp (const char *prefix, char *src)
 {
-  GString* str;
+  GString *str;
   int len = 0;
 
   if (!src)
@@ -458,13 +458,13 @@ uri_tester_fixup_regexp (const gchar* prefix, char* src)
 }
 
 static gboolean
-uri_tester_compile_regexp (UriTester* tester,
-                           GString*   gpatt,
-                           char*      opts)
+uri_tester_compile_regexp (UriTester *tester,
+                           GString   *gpatt,
+                           char      *opts)
 {
-  GRegex* regex;
-  GError* error = NULL;
-  gchar *patt;
+  GRegex *regex;
+  GError *error = NULL;
+  char *patt;
   int len;
 
   if (!gpatt)
@@ -488,7 +488,7 @@ uri_tester_compile_regexp (UriTester* tester,
     {
       int signature_count = 0;
       int pos = 0;
-      gchar *sig;
+      char *sig;
 
       for (pos = len - SIGNATURE_SIZE; pos >= 0; pos--) {
         sig = g_strndup (patt + pos, SIGNATURE_SIZE);
@@ -533,15 +533,15 @@ uri_tester_compile_regexp (UriTester* tester,
 }
 
 static char*
-uri_tester_add_url_pattern (UriTester* tester,
-                            char* prefix,
-                            char* type,
-                            char* line)
+uri_tester_add_url_pattern (UriTester *tester,
+                            char      *prefix,
+                            char      *type,
+                            char      *line)
 {
-    gchar** data;
-    gchar* patt;
-    GString* format_patt;
-    gchar* opts;
+    char **data;
+    char *patt;
+    GString *format_patt;
+    char *opts;
     gboolean should_free;
 
     data = g_strsplit (line, "$", -1);
@@ -593,9 +593,9 @@ uri_tester_add_url_pattern (UriTester* tester,
 }
 
 static inline void
-uri_tester_frame_add (UriTester* tester, gchar* line)
+uri_tester_frame_add (UriTester *tester, char *line)
 {
-  const gchar* separator = " , ";
+  const char *separator = " , ";
 
   (void)*line++;
   (void)*line++;
@@ -611,11 +611,11 @@ uri_tester_frame_add (UriTester* tester, gchar* line)
 }
 
 static inline void
-uri_tester_frame_add_private (UriTester* tester,
-                              const gchar* line,
-                              const gchar* sep)
+uri_tester_frame_add_private (UriTester  *tester,
+                              const char *line,
+                              const char *sep)
 {
-  gchar** data;
+  char **data;
   data = g_strsplit (line, sep, 2);
 
   if (!(data[1] && *data[1])
@@ -630,8 +630,8 @@ uri_tester_frame_add_private (UriTester* tester,
 
   if (strchr (data[0], ','))
     {
-      gchar** domains;
-      gint i;
+      char **domains;
+      int i;
 
       domains = g_strsplit (data[0], ",", -1);
       for (i = 0; domains[i]; i++)
@@ -650,7 +650,7 @@ uri_tester_frame_add_private (UriTester* tester,
 }
 
 static char*
-uri_tester_parse_line (UriTester* tester, char* line)
+uri_tester_parse_line (UriTester *tester, char *line)
 {
   if (!line)
     return NULL;
@@ -708,9 +708,9 @@ uri_tester_parse_line (UriTester* tester, char* line)
 }
 
 static gboolean
-uri_tester_parse_file_at_uri (UriTester* tester, const char* fileuri)
+uri_tester_parse_file_at_uri (UriTester *tester, const char *fileuri)
 {
-  FILE* file;
+  FILE *file;
   char line[2000];
   char *path = NULL;
   gboolean result = FALSE;
@@ -732,7 +732,7 @@ uri_tester_parse_file_at_uri (UriTester* tester, const char* fileuri)
 static void
 uri_tester_init (UriTester *tester)
 {
-  UriTesterPrivate* priv = NULL;
+  UriTesterPrivate *priv = NULL;
 
   LOG ("UriTester initializing %p", tester);
 
