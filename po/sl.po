@@ -7,11 +7,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions&component=general\n"
-"POT-Creation-Date: 2010-02-20 01:48+0000\n"
-"PO-Revision-Date: 2010-02-20 20:17+0100\n"
-"Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-12-06 01:28+0000\n"
+"PO-Revision-Date: 2011-12-08 21:51+0100\n"
+"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -69,11 +70,11 @@ msgstr "Ukaza ni mogoče zagnati"
 msgid "Could not Run Command"
 msgstr "Ukaza ni mogoče zagnati"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:496
 msgid "No action selected."
 msgstr "Ni izbranega dejanja."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:506
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
@@ -82,83 +83,49 @@ msgstr[1] "%i izbrano dejanje."
 msgstr[2] "%i izbrani dejanji."
 msgstr[3] "%i izbrana dejanja."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:745
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:139
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:721
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:124
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:194
 #, c-format
 msgid "Could not display help: %s"
 msgstr "Ni mogoče prikazati pomoči: %s"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:274
 msgid "Add Action"
 msgstr "Dodajanje dejanja"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:384
 #, c-format
 msgid "“%s” Properties"
 msgstr "Lastnosti “%s”"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:389
 msgid "Action Properties"
 msgstr "Lastnosti dejanja"
 
-#: ../extensions/adblock/adblock-ui.c:263
-msgid ""
-"This list is Copyright © its original author(G). It is relicensed under the GPL with permission.\n"
-"The original list, Filterset.G, can be found at http://www.pierceive.com/filtersetg/.\n"
-"This version has been modified from its original. The changes have not been approved by the original author;\n"
-"direct any problems to Bugzilla and not to the original author (G).\n"
-msgstr ""
-"Ta seznam je avtorsko zaščitil © njegov izvorni avtor(G). Seznam je z dovoljenjem ponovno objavljen pod GPL.\n"
-"Izvorni seznam, Filterset.G, je mogoče najti na http://www.pierceive.com/filtersetg/.\n"
-"Ta različica je bila spremenjena in avtor teh sprememb ni odobril.\n"
-"Morebitne težave pošljite na Bugzillo in ne izvornemu avtorju (G).\n"
+#: ../extensions/adblock/adblock-ui.c:150
+msgid "Invalid filter"
+msgstr "Neveljaven filter"
 
-#: ../extensions/adblock/adblock-ui.c:481
-msgid "Pattern"
-msgstr "Vzorec"
+#: ../extensions/adblock/adblock-ui.c:240
+msgid "Filter URI"
+msgstr "Filtriraj naslov URI"
 
 #: ../extensions/adblock/adblock.ui.h:1
-msgid "<b>Courtesy of Graham Pierce</b>"
-msgstr "<b>Prispeval Graham Pierce</b>"
-
-#: ../extensions/adblock/adblock.ui.h:2
-msgid "<b>New rule</b>"
-msgstr "<b>Novo pravilo<b>"
-
-#: ../extensions/adblock/adblock.ui.h:3
-msgid "<b>Update rules from original site</b>"
-msgstr "<b>Posodobitev pravil iz izvorne strani</b>"
-
-#: ../extensions/adblock/adblock.ui.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
 msgstr "Urejevalnik Adblock"
 
-#: ../extensions/adblock/adblock.ui.h:5
-msgid "Blacklist"
-msgstr "Črni seznam"
+#: ../extensions/adblock/adblock.ui.h:2
+msgid "Type the address of a preconfigured filter list in the text entry to be added to the list. Find more lists at easylist.adblockplus.org"
+msgstr "Vtipkajte naslov filtra v vnosu besedila za dodajanje na seznam. Več seznamov je na voljo na easylist.adblockplus.org."
 
-#: ../extensions/adblock/adblock.ui.h:6
-msgid "Filterset.G"
-msgstr "Filterset.G"
+#: ../extensions/adblock/ephy-adblock-extension.c:218
+msgid "Ad Blocker"
+msgstr "Ad Blocker"
 
-#: ../extensions/adblock/adblock.ui.h:7
-msgid "Whitelist"
-msgstr "Beli seznam"
-
-#: ../extensions/adblock/ephy-adblock-extension.c:230
-msgid "Edit Adblock"
-msgstr "Urejanje Adblock"
-
-#: ../extensions/adblock/ephy-adblock-extension.c:299
-#, c-format
-msgid "%d hidden advertisement"
-msgid_plural "%d hidden advertisements"
-msgstr[0] "%d skritih oglasov"
-msgstr[1] "%d skrit oglas"
-msgstr[2] "%d skrita oglasa"
-msgstr[3] "%d skriti oglasi"
+#: ../extensions/adblock/ephy-adblock-extension.c:219
+msgid "Configure Ad Blocker filters"
+msgstr "Nastavitev razpoložljivih filtrov Ad Blocker"
 
 #: ../extensions/auto-reload/ephy-auto-reload-extension.c:81
 msgid "_Auto Reload"
@@ -364,12 +331,12 @@ msgstr ""
 "Napaka HTML v %s:\n"
 "Veljaven doctype ni določen."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:349
 msgid "Enabled"
 msgstr "Omogočeno"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:372
-#: ../extensions/rss/rss-ui.c:560
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:357
+#: ../extensions/rss/rss-ui.c:539
 msgid "Description"
 msgstr "Opis"
 
@@ -403,7 +370,7 @@ msgstr "Namesti uporabniški _skript"
 msgid "Install Greasemonkey script"
 msgstr "Namesti skript Greasemonkey"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:311
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:314
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "Uporabniški skript na “%s” je nameščen"
@@ -453,163 +420,163 @@ msgstr "Podrobnosti st_ani"
 msgid "Display page information in a dialog"
 msgstr "Prikaz podrobnosti strani v pogovornem oknu"
 
-#: ../extensions/page-info/page-info-dialog.c:704
+#: ../extensions/page-info/page-info-dialog.c:615
 msgid "Save As..."
 msgstr "Shrani Kot ..."
 
-#: ../extensions/page-info/page-info-dialog.c:721
+#: ../extensions/page-info/page-info-dialog.c:632
 msgid "Select a directory"
 msgstr "Izbor mape"
 
-#: ../extensions/page-info/page-info-dialog.c:770
+#: ../extensions/page-info/page-info-dialog.c:681
 msgid "Unknown type"
 msgstr "Neznana vrsta"
 
-#: ../extensions/page-info/page-info-dialog.c:775
+#: ../extensions/page-info/page-info-dialog.c:686
 msgid "Full standards compliance"
 msgstr "Polna skladnost s standardi"
 
-#: ../extensions/page-info/page-info-dialog.c:778
+#: ../extensions/page-info/page-info-dialog.c:689
 msgid "Almost standards compliance"
 msgstr "Skoraj skladno s standardni"
 
-#: ../extensions/page-info/page-info-dialog.c:781
+#: ../extensions/page-info/page-info-dialog.c:692
 msgid "Compatibility"
 msgstr "Združljivost"
 
-#: ../extensions/page-info/page-info-dialog.c:785
+#: ../extensions/page-info/page-info-dialog.c:696
 msgid "Undetermined"
 msgstr "Nedoločeno"
 
-#: ../extensions/page-info/page-info-dialog.c:794
+#: ../extensions/page-info/page-info-dialog.c:705
 msgid "Not cached"
 msgstr "Ni predpomnjeno"
 
-#: ../extensions/page-info/page-info-dialog.c:797
+#: ../extensions/page-info/page-info-dialog.c:708
 msgid "Disk cache"
 msgstr "Diskovni predpomnilnik"
 
-#: ../extensions/page-info/page-info-dialog.c:800
+#: ../extensions/page-info/page-info-dialog.c:711
 msgid "Memory cache"
 msgstr "Pomnilniški predpomnilnik"
 
-#: ../extensions/page-info/page-info-dialog.c:803
+#: ../extensions/page-info/page-info-dialog.c:714
 msgid "Unknown cache"
 msgstr "Neznan predpomnilnik"
 
-#: ../extensions/page-info/page-info-dialog.c:819
-#: ../extensions/page-info/page-info-dialog.c:935
+#: ../extensions/page-info/page-info-dialog.c:730
+#: ../extensions/page-info/page-info-dialog.c:846
 msgid "Unknown"
 msgstr "Neznano"
 
-#: ../extensions/page-info/page-info-dialog.c:824
+#: ../extensions/page-info/page-info-dialog.c:735
 msgid "No referrer"
 msgstr "Ni napotilnika"
 
-#: ../extensions/page-info/page-info-dialog.c:838
-#: ../extensions/page-info/page-info-dialog.c:854
+#: ../extensions/page-info/page-info-dialog.c:749
+#: ../extensions/page-info/page-info-dialog.c:765
 msgid "Not specified"
 msgstr "Ni določeno"
 
-#: ../extensions/page-info/page-info-dialog.c:917
+#: ../extensions/page-info/page-info-dialog.c:828
 msgid "Image"
 msgstr "Slika"
 
-#: ../extensions/page-info/page-info-dialog.c:920
+#: ../extensions/page-info/page-info-dialog.c:831
 msgid "Background image"
 msgstr "Slika ozadja"
 
-#: ../extensions/page-info/page-info-dialog.c:923
+#: ../extensions/page-info/page-info-dialog.c:834
 msgid "Embed"
 msgstr "Vstavi"
 
-#: ../extensions/page-info/page-info-dialog.c:926
+#: ../extensions/page-info/page-info-dialog.c:837
 msgid "Object"
 msgstr "Predmet"
 
-#: ../extensions/page-info/page-info-dialog.c:929
+#: ../extensions/page-info/page-info-dialog.c:840
 msgid "Applet"
 msgstr "Aplet"
 
-#: ../extensions/page-info/page-info-dialog.c:932
+#: ../extensions/page-info/page-info-dialog.c:843
 msgid "Icon"
 msgstr "Ikona"
 
-#: ../extensions/page-info/page-info-dialog.c:1113
+#: ../extensions/page-info/page-info-dialog.c:1024
 msgid "_Open"
 msgstr "_Odpri"
 
-#: ../extensions/page-info/page-info-dialog.c:1119
-#: ../extensions/page-info/page-info-dialog.c:1564
+#: ../extensions/page-info/page-info-dialog.c:1030
+#: ../extensions/page-info/page-info-dialog.c:1475
 msgid "_Copy Link Address"
 msgstr "Kopiraj _naslov povezave"
 
-#: ../extensions/page-info/page-info-dialog.c:1125
+#: ../extensions/page-info/page-info-dialog.c:1036
 msgid "_Use as Background"
 msgstr "_Uporabi kot ozadje"
 
-#: ../extensions/page-info/page-info-dialog.c:1131
-#: ../extensions/page-info/page-info-dialog.c:1570
+#: ../extensions/page-info/page-info-dialog.c:1042
+#: ../extensions/page-info/page-info-dialog.c:1481
 msgid "_Save As..."
 msgstr "Shrani _kot ..."
 
-#: ../extensions/page-info/page-info-dialog.c:1363
-#: ../extensions/page-info/page-info-dialog.c:1684
+#: ../extensions/page-info/page-info-dialog.c:1274
+#: ../extensions/page-info/page-info-dialog.c:1595
 msgid "Blocked"
 msgstr "Zavrnjeno"
 
-#: ../extensions/page-info/page-info-dialog.c:1379
-#: ../extensions/page-info/page-info-dialog.c:1700
+#: ../extensions/page-info/page-info-dialog.c:1290
+#: ../extensions/page-info/page-info-dialog.c:1611
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1392
+#: ../extensions/page-info/page-info-dialog.c:1303
 msgid "Type"
 msgstr "Vrsta"
 
-#: ../extensions/page-info/page-info-dialog.c:1404
+#: ../extensions/page-info/page-info-dialog.c:1315
 msgid "Alt Text"
 msgstr "Dodatno besedilo"
 
-#: ../extensions/page-info/page-info-dialog.c:1416
-#: ../extensions/page-info/page-info-dialog.c:1713
+#: ../extensions/page-info/page-info-dialog.c:1327
+#: ../extensions/page-info/page-info-dialog.c:1624
 msgid "Title"
 msgstr "Naslov"
 
-#: ../extensions/page-info/page-info-dialog.c:1428
+#: ../extensions/page-info/page-info-dialog.c:1339
 msgid "Width"
 msgstr "Širina"
 
-#: ../extensions/page-info/page-info-dialog.c:1440
+#: ../extensions/page-info/page-info-dialog.c:1351
 msgid "Height"
 msgstr "Višina"
 
-#: ../extensions/page-info/page-info-dialog.c:1725
+#: ../extensions/page-info/page-info-dialog.c:1636
 msgid "Relation"
 msgstr "Povezava"
 
-#: ../extensions/page-info/page-info-dialog.c:1874
-#: ../extensions/page-info/page-info-dialog.c:2015
+#: ../extensions/page-info/page-info-dialog.c:1785
+#: ../extensions/page-info/page-info-dialog.c:1926
 msgid "Name"
 msgstr "Ime"
 
-#: ../extensions/page-info/page-info-dialog.c:1886
+#: ../extensions/page-info/page-info-dialog.c:1797
 msgid "Method"
 msgstr "Način"
 
-#: ../extensions/page-info/page-info-dialog.c:1900
+#: ../extensions/page-info/page-info-dialog.c:1811
 msgid "Action"
 msgstr "Dejanje"
 
-#: ../extensions/page-info/page-info-dialog.c:1981
+#: ../extensions/page-info/page-info-dialog.c:1892
 msgid "_Copy"
 msgstr "_Kopiraj"
 
-#: ../extensions/page-info/page-info-dialog.c:2027
+#: ../extensions/page-info/page-info-dialog.c:1938
 msgid "Content"
 msgstr "Vsebina"
 
-#: ../extensions/page-info/page-info-dialog.c:2128
+#: ../extensions/page-info/page-info-dialog.c:2039
 msgid "Page Metadata"
 msgstr "Metapodatki strani"
 
@@ -763,15 +730,15 @@ msgstr "Stanje"
 msgid "Site Permissions"
 msgstr "Dovoljenja strani"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:632
+#: ../extensions/permissions/ephy-permissions-dialog.c:631
 msgid "Cookies"
 msgstr "Piškotki"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:633
+#: ../extensions/permissions/ephy-permissions-dialog.c:632
 msgid "Images"
 msgstr "Slike"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:634
+#: ../extensions/permissions/ephy-permissions-dialog.c:633
 msgid "Popup Windows"
 msgstr "Pojavna okna"
 
@@ -785,39 +752,39 @@ msgstr "_Dovoljenja spletišč"
 msgid "Manage web site permissions"
 msgstr "Upravljanje dovoljenj spletišč"
 
-#: ../extensions/rss/ephy-rss-extension.c:80
+#: ../extensions/rss/ephy-rss-extension.c:82
 msgid "News Feeds Subscription"
 msgstr "Naročanje na vire novic"
 
-#: ../extensions/rss/ephy-rss-extension.c:82
+#: ../extensions/rss/ephy-rss-extension.c:84
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr "Naročanje na vire novic tega spletišča v vašem najljubšem bralniku novic"
 
-#: ../extensions/rss/ephy-rss-extension.c:87
+#: ../extensions/rss/ephy-rss-extension.c:89
 msgid "_Subscribe to this feed"
 msgstr "_Naročanje na ta vir"
 
-#: ../extensions/rss/ephy-rss-extension.c:89
+#: ../extensions/rss/ephy-rss-extension.c:91
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Naročanje na ta vir v vašem najljubšem bralniku novic"
 
-#: ../extensions/rss/ephy-rss-extension.c:394
+#: ../extensions/rss/ephy-rss-extension.c:402
 msgid "Subscribe to site's news feed"
 msgstr "Naročanje na vir novic strani"
 
-#: ../extensions/rss/rss-ui.c:156
+#: ../extensions/rss/rss-ui.c:136
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr "<b><i>Ni mogoče vzpostaviti stika z bralnikom virov. ALi je ta zagnan?</i></b>"
 
-#: ../extensions/rss/rss-ui.c:158
+#: ../extensions/rss/rss-ui.c:138
 msgid "Retry"
 msgstr "Poskusi ponovno"
 
-#: ../extensions/rss/rss-ui.c:288
+#: ../extensions/rss/rss-ui.c:268
 msgid "_Copy Feed Address"
 msgstr "Kopiraj _naslov vira"
 
-#: ../extensions/rss/rss-ui.c:552
+#: ../extensions/rss/rss-ui.c:531
 msgid "Subscribe"
 msgstr "Naročanje"
 
@@ -863,21 +830,13 @@ msgstr "Privzeto"
 msgid "None"
 msgstr "Brez"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:543
 msgid "_Look Up"
 msgstr "_Poišči"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:538
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:550
 msgid "_GNOME Dictionary"
 msgstr "_GNOME slovar"
-
-#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
-msgid "Open search result in new tab"
-msgstr "Odpiranje rezultatov iskanja v novem zavihku"
-
-#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
-msgid "Open search result in new tab if true, in new window if false"
-msgstr "Izbrana možnost določi odpiranje rezultatov iskanja v novem zavihku, neizbrana v novi strani"
 
 #: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
 msgid "_Soup Fly"
@@ -901,8 +860,8 @@ msgid "Execute arbitrary commands from the context menu"
 msgstr "Izvedba poljubnih ukazov iz vsebinskega menija"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
-msgid "Ad Blocker"
-msgstr "Ad Blocker"
+msgid "Ad Blocker v2"
+msgstr "Ad Blocker v2"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
 msgid "Block the pest!"
@@ -1024,14 +983,6 @@ msgstr "Iskanje izbranega besedila s pametnim zaznamkom"
 msgid "Smart Bookmarks"
 msgstr "Pametni zaznamki"
 
-#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
-msgid "Groups newly opened tabs"
-msgstr "Združi na novo odprte zavihke"
-
-#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
-msgid "Tab Groups"
-msgstr "Skupine zavihkov"
-
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
 msgstr "Določa novo vsebino v zavihkih ozadja"
@@ -1047,3 +998,65 @@ msgstr "Tabulator za krmarjenje"
 #: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:2
 msgid "Use the Tab key to navigate between tabs"
 msgstr "Uporaba tabulatorja za preklop med zavihki"
+
+#~ msgid ""
+#~ "This list is Copyright © its original author(G). It is relicensed under "
+#~ "the GPL with permission.\n"
+#~ "The original list, Filterset.G, can be found at http://www.pierceive.com/"
+#~ "filtersetg/.\n"
+#~ "This version has been modified from its original. The changes have not "
+#~ "been approved by the original author;\n"
+#~ "direct any problems to Bugzilla and not to the original author (G).\n"
+#~ msgstr ""
+#~ "Ta seznam je avtorsko zaščitil © njegov izvorni avtor(G). Seznam je z "
+#~ "dovoljenjem ponovno objavljen pod GPL.\n"
+#~ "Izvorni seznam, Filterset.G, je mogoče najti na http://www.pierceive.com/"
+#~ "filtersetg/.\n"
+#~ "Ta različica je bila spremenjena in avtor teh sprememb ni odobril.\n"
+#~ "Morebitne težave pošljite na Bugzillo in ne izvornemu avtorju (G).\n"
+
+#~ msgid "Pattern"
+#~ msgstr "Vzorec"
+
+#~ msgid "<b>Courtesy of Graham Pierce</b>"
+#~ msgstr "<b>Prispeval Graham Pierce</b>"
+
+#~ msgid "<b>New rule</b>"
+#~ msgstr "<b>Novo pravilo<b>"
+
+#~ msgid "<b>Update rules from original site</b>"
+#~ msgstr "<b>Posodobitev pravil iz izvorne strani</b>"
+
+#~ msgid "Blacklist"
+#~ msgstr "Črni seznam"
+
+#~ msgid "Filterset.G"
+#~ msgstr "Filterset.G"
+
+#~ msgid "Whitelist"
+#~ msgstr "Beli seznam"
+
+#~ msgid "Edit Adblock"
+#~ msgstr "Urejanje Adblock"
+
+#~ msgid "%d hidden advertisement"
+
+#~ msgid_plural "%d hidden advertisements"
+#~ msgstr[0] "%d skritih oglasov"
+#~ msgstr[1] "%d skrit oglas"
+#~ msgstr[2] "%d skrita oglasa"
+#~ msgstr[3] "%d skriti oglasi"
+
+#~ msgid "Open search result in new tab"
+#~ msgstr "Odpiranje rezultatov iskanja v novem zavihku"
+
+#~ msgid "Open search result in new tab if true, in new window if false"
+#~ msgstr ""
+#~ "Izbrana možnost določi odpiranje rezultatov iskanja v novem zavihku, "
+#~ "neizbrana v novi strani"
+
+#~ msgid "Groups newly opened tabs"
+#~ msgstr "Združi na novo odprte zavihke"
+
+#~ msgid "Tab Groups"
+#~ msgstr "Skupine zavihkov"
