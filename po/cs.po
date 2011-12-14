@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=epiphany-extensions&component=general\n"
-"POT-Creation-Date: 2010-11-12 18:05+0000\n"
-"PO-Revision-Date: 2011-01-14 08:35+0100\n"
+"product=epiphany-extensions&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-12-03 20:04+0000\n"
+"PO-Revision-Date: 2011-12-14 09:51+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -104,68 +104,33 @@ msgstr "Vlastnosti „%s”"
 msgid "Action Properties"
 msgstr "Vlastnosti akce"
 
-#: ../extensions/adblock/adblock-ui.c:229
-msgid ""
-"This list is Copyright © its original author(G). It is relicensed under the "
-"GPL with permission.\n"
-"The original list, Filterset.G, can be found at http://www.pierceive.com/"
-"filtersetg/.\n"
-"This version has been modified from its original. The changes have not been "
-"approved by the original author;\n"
-"direct any problems to Bugzilla and not to the original author (G).\n"
-msgstr ""
-"Tento seznam nese Copyright © původního autora (G). Byl se svolením "
-"přelicencován pod GPL.\n"
-"Původní seznam, Filterset.G, je k nalezení na http://www.pierceive.com/"
-"filtersetg/.\n"
-"Tato verze byla oproti originálu upravena a změny nebyly schváleny původním "
-"autorem;\n"
-"směřujte svá chybová hlášení do Bugzilly, nikoliv původnímu autorovi (G).\n"
+#: ../extensions/adblock/adblock-ui.c:150
+msgid "Invalid filter"
+msgstr "Neplatný filtr"
 
-#: ../extensions/adblock/adblock-ui.c:446
-msgid "Pattern"
-msgstr "Výplň"
+#: ../extensions/adblock/adblock-ui.c:240
+msgid "Filter URI"
+msgstr "Adresa URI filtru"
 
 #: ../extensions/adblock/adblock.ui.h:1
-msgid "<b>Courtesy of Graham Pierce</b>"
-msgstr "<b>Se svolením Grahama Pierce</b>"
-
-#: ../extensions/adblock/adblock.ui.h:2
-msgid "<b>New rule</b>"
-msgstr "<b>Nové pravidlo</b>"
-
-#: ../extensions/adblock/adblock.ui.h:3
-msgid "<b>Update rules from original site</b>"
-msgstr "<b>Aktualizace pravidel z původní stránky</b>"
-
-#: ../extensions/adblock/adblock.ui.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
 msgstr "Úpravy pro Adblock"
 
-#: ../extensions/adblock/adblock.ui.h:5
-msgid "Blacklist"
-msgstr "Černá listina"
+#: ../extensions/adblock/adblock.ui.h:2
+msgid ""
+"Type the address of a preconfigured filter list in the text entry to be "
+"added to the list. Find more lists at easylist.adblockplus.org"
+msgstr ""
+"Do textového pole napište adresu seznamu přednastavených filtrů a přidají se "
+"do seznamu. Další seznamy najdete na easylist.adblockplus.org"
 
-#: ../extensions/adblock/adblock.ui.h:6
-msgid "Filterset.G"
-msgstr "Filterset.G"
+#: ../extensions/adblock/ephy-adblock-extension.c:218
+msgid "Ad Blocker"
+msgstr "Ad Blocker"
 
-#: ../extensions/adblock/adblock.ui.h:7
-msgid "Whitelist"
-msgstr "Bílá listina"
-
-#: ../extensions/adblock/ephy-adblock-extension.c:230
-msgid "Edit Adblock"
-msgstr "Upravit blokování reklam"
-
-#: ../extensions/adblock/ephy-adblock-extension.c:300
-#, c-format
-msgid "%d hidden advertisement"
-msgid_plural "%d hidden advertisements"
-msgstr[0] "%d skrytá reklama"
-msgstr[1] "%d skryté reklamy"
-msgstr[2] "%d skrytých reklam"
+#: ../extensions/adblock/ephy-adblock-extension.c:219
+msgid "Configure Ad Blocker filters"
+msgstr "Nastavit filtry Ad Blocker"
 
 #: ../extensions/auto-reload/ephy-auto-reload-extension.c:81
 msgid "_Auto Reload"
@@ -411,7 +376,7 @@ msgstr "Nainstalovat uživatelský _skript"
 msgid "Install Greasemonkey script"
 msgstr "Nainstalovat skript Greasemonkey"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:311
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:314
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "Uživatelský skript v „%s” byl nainstalován"
@@ -873,23 +838,13 @@ msgstr "Výchozí"
 msgid "None"
 msgstr "Žádný"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:543
 msgid "_Look Up"
 msgstr "_Vyhledat"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:538
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:550
 msgid "_GNOME Dictionary"
 msgstr "_Slovník GNOME"
-
-#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
-msgid "Open search result in new tab"
-msgstr "Otevřít výsledky hledání v nové kartě"
-
-#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
-msgid "Open search result in new tab if true, in new window if false"
-msgstr ""
-"Je-li pravdivé, otevřít výsledky hledání v nové kartě, je-li nepravdivé, "
-"otevřít výsledky hledání v novém okně"
 
 #: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
 msgid "_Soup Fly"
@@ -913,8 +868,9 @@ msgid "Execute arbitrary commands from the context menu"
 msgstr "Spouštět libovolné přikazy z kontextového menu"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
-msgid "Ad Blocker"
-msgstr "Ad Blocker"
+#| msgid "Ad Blocker"
+msgid "Ad Blocker v2"
+msgstr "Ad Blocker v2"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
 msgid "Block the pest!"
@@ -1038,14 +994,6 @@ msgstr "Vyhledat vybraný text chytrou záložkou"
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
 msgid "Smart Bookmarks"
 msgstr "Chytré záložky"
-
-#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
-msgid "Groups newly opened tabs"
-msgstr "Seskupuje nově otevřené karty"
-
-#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
-msgid "Tab Groups"
-msgstr "Skupiny karet"
 
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
