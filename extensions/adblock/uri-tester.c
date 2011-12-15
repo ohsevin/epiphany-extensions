@@ -119,7 +119,7 @@ uri_tester_download_notify_status_cb (WebKitDownload *download,
     return;
 
   LOG ("Download from %s to %s completed",
-       webkit_download_get_source_uri (download),
+       webkit_download_get_uri (download),
        webkit_download_get_destination_uri (download));
 
   /* Parse the file from disk. */
