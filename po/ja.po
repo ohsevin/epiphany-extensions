@@ -9,44 +9,44 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epiphany-extensions master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=epiphany-extensions\n"
-"POT-Creation-Date: 2011-10-10 13:09+0900\n"
-"PO-Revision-Date: 2011-10-10 13:08+0900\n"
-"Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
+"product=epiphany-extensions&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-12-15 09:20+0000\n"
+"PO-Revision-Date: 2012-01-01 19:55+0900\n"
+"Last-Translator: Jiro Matsuzawa <jmatsuzawa@src.gnome.org>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
-"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../extensions/actions/action-properties.ui.h:1
-msgid "<span weight=\"bold\">General</span>"
-msgstr "<span weight=\"bold\">全般</span>"
-
-#: ../extensions/actions/action-properties.ui.h:2
-msgid "_Name:"
-msgstr "名前(_N):"
-
-#: ../extensions/actions/action-properties.ui.h:3
-msgid "_Description:"
-msgstr "説明(_D):"
-
-#: ../extensions/actions/action-properties.ui.h:4
-msgid "_Command:"
-msgstr "コマンド(_C):"
-
-#: ../extensions/actions/action-properties.ui.h:5
 msgid "<span weight=\"bold\">Applies to</span>"
 msgstr "<span weight=\"bold\">適用先</span>"
 
-#: ../extensions/actions/action-properties.ui.h:6
-msgid "_Pages"
-msgstr "ページ(_P)"
+#: ../extensions/actions/action-properties.ui.h:2
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">全般</span>"
 
-#: ../extensions/actions/action-properties.ui.h:7
+#: ../extensions/actions/action-properties.ui.h:3
+msgid "_Command:"
+msgstr "コマンド(_C):"
+
+#: ../extensions/actions/action-properties.ui.h:4
+msgid "_Description:"
+msgstr "説明(_D):"
+
+#: ../extensions/actions/action-properties.ui.h:5
 msgid "_Images"
 msgstr "画像(_I)"
+
+#: ../extensions/actions/action-properties.ui.h:6
+msgid "_Name:"
+msgstr "名前(_N):"
+
+#: ../extensions/actions/action-properties.ui.h:7
+msgid "_Pages"
+msgstr "ページ(_P)"
 
 #: ../extensions/actions/actions-editor.ui.h:1
 #: ../extensions/actions/actions.ephy-extension.in.in.h:1
@@ -100,68 +100,31 @@ msgstr "\"%s\" のプロパティ"
 msgid "Action Properties"
 msgstr "アクションのプロパティ"
 
-#: ../extensions/adblock/adblock-ui.c:229
-msgid ""
-"This list is Copyright © its original author(G). It is relicensed under the "
-"GPL with permission.\n"
-"The original list, Filterset.G, can be found at http://www.pierceive.com/"
-"filtersetg/.\n"
-"This version has been modified from its original. The changes have not been "
-"approved by the original author;\n"
-"direct any problems to Bugzilla and not to the original author (G).\n"
+#: ../extensions/adblock/adblock-ui.c:150
+msgid "Invalid filter"
 msgstr ""
-"This list is Copyright © its original author(G). It is relicensed under the "
-"GPL with permission.\n"
-"The original list, Filterset.G, can be found at http://www.pierceive.com/"
-"filtersetg/.\n"
-"This version has been modified from its original. The changes have not been "
-"approved by the original author;\n"
-"direct any problems to Bugzilla and not to the original author (G).\n"
-"(訳注: この条文は翻訳せずに原文のままにする)\n"
 
-#: ../extensions/adblock/adblock-ui.c:446
-msgid "Pattern"
-msgstr "パターン"
+#: ../extensions/adblock/adblock-ui.c:240
+msgid "Filter URI"
+msgstr ""
 
 #: ../extensions/adblock/adblock.ui.h:1
-#: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
-msgstr "Adblock エディタ"
+msgstr "Adblock エディター"
 
 #: ../extensions/adblock/adblock.ui.h:2
-msgid "Whitelist"
-msgstr "ホワイトリスト"
+msgid ""
+"Type the address of a preconfigured filter list in the text entry to be "
+"added to the list. Find more lists at easylist.adblockplus.org"
+msgstr ""
 
-#: ../extensions/adblock/adblock.ui.h:3
-msgid "Blacklist"
-msgstr "ブロックリスト"
+#: ../extensions/adblock/ephy-adblock-extension.c:218
+msgid "Ad Blocker"
+msgstr "Ad Blocker"
 
-#: ../extensions/adblock/adblock.ui.h:4
-msgid "<b>Update rules from original site</b>"
-msgstr "<b>ルールの更新</b>"
-
-#: ../extensions/adblock/adblock.ui.h:5
-msgid "<b>Courtesy of Graham Pierce</b>"
-msgstr "<b>Courtesy of Graham Pierce</b>"
-
-#: ../extensions/adblock/adblock.ui.h:6
-msgid "Filterset.G"
-msgstr "Filterset.G"
-
-#: ../extensions/adblock/adblock.ui.h:7
-msgid "<b>New rule</b>"
-msgstr "<b>新しいルール</b>"
-
-#: ../extensions/adblock/ephy-adblock-extension.c:230
-msgid "Edit Adblock"
-msgstr "Adblock の編集"
-
-#: ../extensions/adblock/ephy-adblock-extension.c:300
-#, c-format
-msgid "%d hidden advertisement"
-msgid_plural "%d hidden advertisements"
-msgstr[0] "表示されない広告は %d個"
-msgstr[1] "表示されない広告は %d個"
+#: ../extensions/adblock/ephy-adblock-extension.c:219
+msgid "Configure Ad Blocker filters"
+msgstr ""
 
 #: ../extensions/auto-reload/ephy-auto-reload-extension.c:81
 msgid "_Auto Reload"
@@ -220,7 +183,7 @@ msgstr "おかしなハイパーリンクをエラー表示ダイアログの中
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:103
 msgid "_Error Viewer"
-msgstr "エラー・ビューア(_E)"
+msgstr "エラー・ビューアー(_E)"
 
 #. shortcut key
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:105
@@ -228,12 +191,12 @@ msgid "Display web page errors"
 msgstr "ウェブ・ページのエラーを表示します"
 
 #: ../extensions/error-viewer/error-viewer.glade.h:1
-msgid "Error Viewer"
-msgstr "エラー・ビューア"
-
-#: ../extensions/error-viewer/error-viewer.glade.h:2
 msgid "Cl_ear"
 msgstr "クリア(_E)"
+
+#: ../extensions/error-viewer/error-viewer.glade.h:2
+msgid "Error Viewer"
+msgstr "エラー・ビューアー"
 
 #. Translators: The first %s is the error category (e. g., "javascript").
 #. The second %s is the URL. The third %s is the actual error message.
@@ -375,12 +338,12 @@ msgid "Description"
 msgstr "説明"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:1
-msgid "Extensions"
-msgstr "Epiphany 拡張機能"
-
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:2
 msgid "<b>Loaded Extensions</b>"
 msgstr "<b>利用可能な拡張機能の一覧</b>"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:2
+msgid "Extensions"
+msgstr "Epiphany 拡張機能"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:68
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:74
@@ -397,7 +360,7 @@ msgstr "拡張機能のヘルプです"
 
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:78
 msgid "Install User _Script"
-msgstr "ユーザ・スクリプトのインストール(_S)"
+msgstr "ユーザー・スクリプトのインストール(_S)"
 
 #. shortcut key
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:80
@@ -407,7 +370,7 @@ msgstr "Greasemonkey スクリプトのインストール"
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:314
 #, c-format
 msgid "The user script at “%s” has been installed"
-msgstr "ユーザ・スクリプトが \"%s\" にインストールされています"
+msgstr "ユーザー・スクリプトが \"%s\" にインストールされています"
 
 #: ../extensions/java-console/ephy-java-console-extension.c:48
 msgid "_Java Console"
@@ -420,31 +383,31 @@ msgstr "Java コンソールを表示します"
 
 #: ../extensions/livehttpheaders/ephy-livehttpheaders-extension.c:100
 msgid "_HTTP Headers"
-msgstr "HTTP ヘッダ(_H)"
+msgstr "HTTP ヘッダー(_H)"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:1
-msgid "Live Headers"
-msgstr "ライブ・ヘッダ"
-
-#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:2
-msgid "Clear cache"
-msgstr "キャッシュのクリア"
-
-#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:3
-msgid "Remove headers"
-msgstr "ヘッダの削除"
-
-#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
-msgid "<b>URLs</b>"
-msgstr "<b>URL の一覧</b>"
-
-#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
 msgid "<b>Request</b>"
 msgstr "<b>要求</b>"
 
-#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:2
 msgid "<b>Response</b>"
 msgstr "<b>応答</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:3
+msgid "<b>URLs</b>"
+msgstr "<b>URL の一覧</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
+msgid "Clear cache"
+msgstr "キャッシュのクリア"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
+msgid "Live Headers"
+msgstr "ライブ・ヘッダー"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
+msgid "Remove headers"
+msgstr "ヘッダーの削除"
 
 #: ../extensions/page-info/ephy-page-info-extension.c:61
 msgid "Pa_ge Information"
@@ -460,7 +423,7 @@ msgstr "別名で保存..."
 
 #: ../extensions/page-info/page-info-dialog.c:632
 msgid "Select a directory"
-msgstr "フォルダの選択"
+msgstr "フォルダーの選択"
 
 #: ../extensions/page-info/page-info-dialog.c:681
 msgid "Unknown type"
@@ -615,128 +578,128 @@ msgid "Page Metadata"
 msgstr "ページのメタデータ"
 
 #: ../extensions/page-info/page-info.glade.h:1
-msgid "Page Properties"
-msgstr "ページのプロパティ"
+msgid "<b>Dublin Core Metadata</b>"
+msgstr "<b>Dublin Core Metadata</b>"
 
 #: ../extensions/page-info/page-info.glade.h:2
-msgid "Title:"
-msgstr "タイトル:"
+msgid "<b>Forms In Page</b>"
+msgstr "<b>ページのフォーム</b>"
 
 #: ../extensions/page-info/page-info.glade.h:3
-msgid "Location:"
-msgstr "場所:"
+msgid "<b>Links In Page</b>"
+msgstr "<b>ページにあるリンク</b>"
 
 #: ../extensions/page-info/page-info.glade.h:4
-msgid "Referrer:"
-msgstr "照会者:"
+msgid "<b>Media In Page</b>"
+msgstr "<b>ページにあるメディア</b>"
 
 #: ../extensions/page-info/page-info.glade.h:5
-msgid "DYNAMIC"
-msgstr "DYNAMIC"
+msgid "<b>Medium View</b>"
+msgstr "<b>メディアのプレビュー</b>"
 
 #: ../extensions/page-info/page-info.glade.h:6
-msgid "<b>Web Page</b>"
-msgstr "<b>ウェブ・ページ</b>"
+msgid "<b>Other Metadata</b>"
+msgstr "<b>その他のメタデータ</b>"
 
 #: ../extensions/page-info/page-info.glade.h:7
-msgid "Size:"
-msgstr "サイズ:"
+msgid "<b>Rendering</b>"
+msgstr "<b>レンダリング</b>"
 
 #: ../extensions/page-info/page-info.glade.h:8
-msgid "Type:"
-msgstr "種類:"
-
-#: ../extensions/page-info/page-info.glade.h:9
-msgid "MIME type:"
-msgstr "MIME 型:"
-
-#: ../extensions/page-info/page-info.glade.h:10
-msgid "Modified:"
-msgstr "変更日時:"
-
-#: ../extensions/page-info/page-info.glade.h:11
-msgid "Expires:"
-msgstr "有効期限:"
-
-#: ../extensions/page-info/page-info.glade.h:12
-msgid "Source:"
-msgstr "ソース:"
-
-#: ../extensions/page-info/page-info.glade.h:13
 msgid "<b>Source File</b>"
 msgstr "<b>ソース・ファイル</b>"
 
-#: ../extensions/page-info/page-info.glade.h:14
-msgid "Mode:"
-msgstr "モード:"
+#: ../extensions/page-info/page-info.glade.h:9
+msgid "<b>Web Page</b>"
+msgstr "<b>ウェブ・ページ</b>"
 
-#: ../extensions/page-info/page-info.glade.h:15
+#: ../extensions/page-info/page-info.glade.h:10
+msgid "DYNAMIC"
+msgstr "DYNAMIC"
+
+#: ../extensions/page-info/page-info.glade.h:11
+msgid "Date:"
+msgstr "日付:"
+
+#: ../extensions/page-info/page-info.glade.h:12
+msgid "Description:"
+msgstr "説明:"
+
+#: ../extensions/page-info/page-info.glade.h:13
 msgid "Encoding:"
 msgstr "エンコーディング:"
 
+#: ../extensions/page-info/page-info.glade.h:14
+msgid "Expires:"
+msgstr "有効期限:"
+
+#: ../extensions/page-info/page-info.glade.h:15
+msgid "Format:"
+msgstr "書式:"
+
 #: ../extensions/page-info/page-info.glade.h:16
-msgid "<b>Rendering</b>"
-msgstr "<b>レンダリング</b>"
+msgid "Forms"
+msgstr "フォーム"
 
 #: ../extensions/page-info/page-info.glade.h:17
 msgid "General"
 msgstr "全般"
 
 #: ../extensions/page-info/page-info.glade.h:18
-msgid "<b>Media In Page</b>"
-msgstr "<b>ページにあるメディア</b>"
+msgid "Links"
+msgstr "リンク"
 
 #: ../extensions/page-info/page-info.glade.h:19
-msgid "_Save Media As..."
-msgstr "メディアを別名で保存(_S)..."
+msgid "Location:"
+msgstr "場所:"
 
 #: ../extensions/page-info/page-info.glade.h:20
-msgid "<b>Medium View</b>"
-msgstr "<b>メディアのプレビュー</b>"
+msgid "MIME type:"
+msgstr "MIME 型:"
 
 #: ../extensions/page-info/page-info.glade.h:21
 msgid "Media"
 msgstr "メディア"
 
 #: ../extensions/page-info/page-info.glade.h:22
-msgid "<b>Links In Page</b>"
-msgstr "<b>ページにあるリンク</b>"
-
-#: ../extensions/page-info/page-info.glade.h:23
-msgid "Links"
-msgstr "リンク"
-
-#: ../extensions/page-info/page-info.glade.h:24
-msgid "<b>Forms In Page</b>"
-msgstr "<b>ページのフォーム</b>"
-
-#: ../extensions/page-info/page-info.glade.h:25
-msgid "Forms"
-msgstr "フォーム"
-
-#: ../extensions/page-info/page-info.glade.h:26
-msgid "<b>Dublin Core Metadata</b>"
-msgstr "<b>Dublin Core Metadata</b>"
-
-#: ../extensions/page-info/page-info.glade.h:27
-msgid "Date:"
-msgstr "日付:"
-
-#: ../extensions/page-info/page-info.glade.h:28
-msgid "Format:"
-msgstr "書式:"
-
-#: ../extensions/page-info/page-info.glade.h:29
-msgid "Description:"
-msgstr "説明:"
-
-#: ../extensions/page-info/page-info.glade.h:30
-msgid "<b>Other Metadata</b>"
-msgstr "<b>その他のメタデータ</b>"
-
-#: ../extensions/page-info/page-info.glade.h:31
 msgid "Metadata"
 msgstr "メタデータ"
+
+#: ../extensions/page-info/page-info.glade.h:23
+msgid "Mode:"
+msgstr "モード:"
+
+#: ../extensions/page-info/page-info.glade.h:24
+msgid "Modified:"
+msgstr "変更日時:"
+
+#: ../extensions/page-info/page-info.glade.h:25
+msgid "Page Properties"
+msgstr "ページのプロパティ"
+
+#: ../extensions/page-info/page-info.glade.h:26
+msgid "Referrer:"
+msgstr "照会者:"
+
+#: ../extensions/page-info/page-info.glade.h:27
+msgid "Size:"
+msgstr "サイズ:"
+
+#: ../extensions/page-info/page-info.glade.h:28
+msgid "Source:"
+msgstr "ソース:"
+
+#: ../extensions/page-info/page-info.glade.h:29
+msgid "Title:"
+msgstr "タイトル:"
+
+#: ../extensions/page-info/page-info.glade.h:30
+msgid "Type:"
+msgstr "種類:"
+
+#: ../extensions/page-info/page-info.glade.h:31
+msgid "_Save Media As..."
+msgstr "メディアを別名で保存(_S)..."
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:165
 msgid "allowed"
@@ -824,13 +787,13 @@ msgid "Subscribe"
 msgstr "購読する"
 
 #: ../extensions/rss/rss-ui.ui.h:1
+msgid "<b>Select Interesting Feeds</b>"
+msgstr "<b>お気に入りの配信元の選択</b>"
+
+#: ../extensions/rss/rss-ui.ui.h:2
 #: ../extensions/rss/rss.ephy-extension.in.in.h:1
 msgid "News Feed Subscription"
 msgstr "ニュース配信元の購読"
-
-#: ../extensions/rss/rss-ui.ui.h:2
-msgid "<b>Select Interesting Feeds</b>"
-msgstr "<b>お気に入りの配信元の選択</b>"
 
 #: ../extensions/rss/rss-ui.ui.h:3
 msgid "_Subscribe"
@@ -880,7 +843,7 @@ msgstr "Soup 情報の参照(_S)"
 #. shortcut key
 #: ../extensions/soup-fly/ephy-soup-fly-extension.c:68
 msgid "Show information about the SoupSession used by the browser"
-msgstr "ブラウザが使用している SoupSession の情報を表示します"
+msgstr "ブラウザーが使用している SoupSession の情報を表示します"
 
 #: ../extensions/soup-fly/soup-fly.c:220
 msgid "Clear finished"
@@ -895,7 +858,9 @@ msgid "Execute arbitrary commands from the context menu"
 msgstr "コンテキスト・メニューから任意のコマンドを実行します"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
-msgid "Ad Blocker"
+#, fuzzy
+#| msgid "Ad Blocker"
+msgid "Ad Blocker v2"
 msgstr "Ad Blocker"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
@@ -924,19 +889,19 @@ msgstr "ページの証明書を表示したり管理します"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:1
 msgid "Error viewer"
-msgstr "エラー・ビューア"
+msgstr "エラー・ビューアー"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
 msgid "Validate web pages and check links"
 msgstr "ウエブ・ページやリンクの妥当性を確認します"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
-msgid "Extensions Manager"
-msgstr "拡張機能のマネージャ"
-
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
 msgid "Activate and deactivate extensions"
 msgstr "拡張機能の有効/無効を設定します"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
+msgid "Extensions Manager"
+msgstr "拡張機能のマネージャー"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -944,7 +909,7 @@ msgstr "ジェスチャ"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:2
 msgid "Perform actions with mouse gestures"
-msgstr "マウスを使ったジェスチャでブラウザを操作します"
+msgstr "マウスを使ったジェスチャでブラウザーを操作します"
 
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:1
 msgid "Greasemonkey"
@@ -952,7 +917,7 @@ msgstr "Greasemonkey"
 
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
 msgid "Run user scripts to modify web pages' behavior"
-msgstr "ユーザ・スクリプトを実行してウェブ・ページの動きを変更します"
+msgstr "ユーザー・スクリプトを実行してウェブ・ページの動きを変更します"
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
 msgid "Java Console"
@@ -964,31 +929,31 @@ msgstr "Java プラグイン・コンソールを提供します"
 
 #: ../extensions/livehttpheaders/livehttpheaders.ephy-extension.in.in.h:1
 msgid "Live HTTP headers"
-msgstr "ライブ HTTP ヘッダ"
+msgstr "ライブ HTTP ヘッダー"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
-msgid "Page Info"
-msgstr "ページ情報"
-
-#: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
 msgid "Display information about and links and media from the current page"
 msgstr "ウェブ・ページに関連する情報やリンク、メディアの詳細を表示します"
 
-#: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
-msgid "Permissions"
-msgstr "サイトの権限"
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
+msgid "Page Info"
+msgstr "ページ情報"
 
-#: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
 msgid "Edit site permissions"
 msgstr "サイトの権限を編集します"
 
-#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
-msgid "Push Scroll"
-msgstr "自動スクロール"
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
+msgid "Permissions"
+msgstr "サイトの権限"
 
-#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
 msgid "Drag the page on middle mouse click"
 msgstr "マウスの中ボタンでページをスクロールします"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+msgid "Push Scroll"
+msgstr "自動スクロール"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
@@ -998,12 +963,12 @@ msgstr ""
 "します"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
-msgid "Sample"
-msgstr "サンプル"
-
-#: ../extensions/sample/sample.ephy-extension.in.in.h:2
 msgid "A sample extension"
 msgstr "拡張機能のサンプルです"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:2
+msgid "Sample"
+msgstr "サンプル"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
 msgid "Select Stylesheet"
@@ -1014,20 +979,20 @@ msgid "Select between different stylesheets offered by the web page"
 msgstr "ウェブ・ページが提供している別のスタイルシートに切り替えます"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
-msgid "Smart Bookmarks"
-msgstr "スマート・ブックマーク"
-
-#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
 msgid "Look up the selected text with a smart bookmark"
 msgstr "スマート・ブックマークを使って選択した文字列を検索します"
 
-#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
-msgid "Tab States"
-msgstr "タブの状態"
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
+msgid "Smart Bookmarks"
+msgstr "スマート・ブックマーク"
 
-#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Indicates new content in background tabs"
 msgstr "バックグラウンドのタブの中に新しいコンテンツを提示します"
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
+msgid "Tab States"
+msgstr "タブの状態"
 
 #: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:1
 msgid "Tab Key Tab Navigate"
@@ -1036,3 +1001,50 @@ msgstr "Tab キーによるタブの操作"
 #: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:2
 msgid "Use the Tab key to navigate between tabs"
 msgstr "Tab キーを使って複数のタブを操作します"
+
+#~ msgid ""
+#~ "This list is Copyright © its original author(G). It is relicensed under "
+#~ "the GPL with permission.\n"
+#~ "The original list, Filterset.G, can be found at http://www.pierceive.com/"
+#~ "filtersetg/.\n"
+#~ "This version has been modified from its original. The changes have not "
+#~ "been approved by the original author;\n"
+#~ "direct any problems to Bugzilla and not to the original author (G).\n"
+#~ msgstr ""
+#~ "This list is Copyright © its original author(G). It is relicensed under "
+#~ "the GPL with permission.\n"
+#~ "The original list, Filterset.G, can be found at http://www.pierceive.com/"
+#~ "filtersetg/.\n"
+#~ "This version has been modified from its original. The changes have not "
+#~ "been approved by the original author;\n"
+#~ "direct any problems to Bugzilla and not to the original author (G).\n"
+#~ "(訳注: この条文は翻訳せずに原文のままにする)\n"
+
+#~ msgid "Pattern"
+#~ msgstr "パターン"
+
+#~ msgid "Whitelist"
+#~ msgstr "ホワイトリスト"
+
+#~ msgid "Blacklist"
+#~ msgstr "ブロックリスト"
+
+#~ msgid "<b>Update rules from original site</b>"
+#~ msgstr "<b>ルールの更新</b>"
+
+#~ msgid "<b>Courtesy of Graham Pierce</b>"
+#~ msgstr "<b>Courtesy of Graham Pierce</b>"
+
+#~ msgid "Filterset.G"
+#~ msgstr "Filterset.G"
+
+#~ msgid "<b>New rule</b>"
+#~ msgstr "<b>新しいルール</b>"
+
+#~ msgid "Edit Adblock"
+#~ msgstr "Adblock の編集"
+
+#~ msgid "%d hidden advertisement"
+#~ msgid_plural "%d hidden advertisements"
+#~ msgstr[0] "表示されない広告は %d個"
+#~ msgstr[1] "表示されない広告は %d個"
