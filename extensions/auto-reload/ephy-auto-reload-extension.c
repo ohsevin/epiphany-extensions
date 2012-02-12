@@ -101,7 +101,7 @@ ephy_auto_reload_create (EphyEmbed *embed, guint new_timeout)
 	/* Check the new_timeout sanity */
 	new_timeout = (new_timeout < RELOAD_RATE) ? RELOAD_RATE : new_timeout;
 
-	LOG ("AutoReload reloading embed: %s in %d msecs", ephy_embed_get_title (embed), new_timeout);
+	LOG ("AutoReload reloading embed: %s in %d msecs", ephy_web_view_get_title (ephy_embed_get_web_view (embed)), new_timeout);
 
 	/* Create the new one */
 	TimeoutData *timeout = g_new (TimeoutData, 1);
@@ -123,10 +123,9 @@ ephy_auto_reload_timeout (EphyEmbed *embed)
 
 	g_return_val_if_fail (embed != NULL, FALSE);
 
-	LOG ("AutoReload tab: %s", ephy_embed_get_title (embed));
-
 	/* Reload the page */
 	view = EPHY_GET_WEBKIT_WEB_VIEW_FROM_EMBED (embed);
+	LOG ("AutoReload tab: %s", ephy_web_view_get_title (EPHY_WEB_VIEW (view)));
 	webkit_web_view_reload_bypass_cache (view);
 
 	/* Retreive the old timeout value (if we want to do something relative to it
