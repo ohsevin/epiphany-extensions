@@ -15,8 +15,8 @@
 # 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 
 m4_define([e_e_version_major],[3])
-m4_define([e_e_version_minor],[2])
-m4_define([e_e_version_micro],[0])
+m4_define([e_e_version_minor],[3])
+m4_define([e_e_version_micro],[90])
 m4_define([e_e_version],[e_e_version_major.e_e_version_minor.e_e_version_micro])
 
 # This can be either "trunk" or "branches/gnome-x-y"
@@ -173,7 +173,7 @@ ALL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates error-vie
 USEFUL_EXTENSIONS="actions adblock auto-reload auto-scroller certificates extensions-manager-ui html5tube java-console page-info push-scroller select-stylesheet smart-bookmarks soup-fly tab-key-tab-navigate tab-states"
 DEFAULT_EXTENSIONS="actions adblock auto-reload certificates extensions-manager-ui greasemonkey gestures html5tube push-scroller soup-fly tab-key-tab-navigate tab-states rss"
 
-MOZILLA_ALL_EXTENSIONS="error-viewer java-console livehttpheaders page-info select-stylesheet smart-bookmarks"
+MOZILLA_ALL_EXTENSIONS="certificates error-viewer java-console livehttpheaders page-info select-stylesheet smart-bookmarks"
 
 DIST_EXTENSIONS="$ALL_EXTENSIONS"
 

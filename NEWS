@@ -1,3 +1,30 @@
+==========================
+Epiphany Extensions 3.3.90
+==========================
+
+Bundle with Epiphany 3.3.90.
+
+Due to the Epiphany UI redesign some extensions might not hook properly
+to menus. Please report problems to GNOME bugzilla.
+
+Note for third party extension developers:
+The old GtkUIManager path "/menubar/ToolsMenu" is now
+"/ui/PagePopup/ExtensionsMenu". Attach your menu items there.
+
+Highlights:
+  - Completely new AdBlocker extension by Mario Sanchez Prada
+  - Updated all extensions for API and UI changes in Epiphany
+  - Disable certificates extension, it uses XUL and nobody had noticed
+  - Default to xz compression
+
+  - added/updated translations
+    - cs, courtesy of Marek Černocký
+    - da, courtesy of Joe Hansen
+    - de, courtesy of Christian Kirbach
+    - es, courtesy of Daniel Mustieles
+    - ja, courtesy of Jiro Matsuzawa
+    - sl, courtesy of Matej Urbančič
+
 =========================
 Epiphany Extensions 3.2.0
 =========================
