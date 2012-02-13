@@ -66,6 +66,8 @@ typedef struct
 	EphyNode				*node;
 	gboolean				apply_to_image;
 	gboolean				apply_to_page;
+	char					*link_uri;
+	char					*image_uri;
 	guint					context;
 } ActionData;
 
@@ -370,6 +372,8 @@ ephy_actions_extension_add_action (EphyWindow *window,
 	action_data->apply_to_page = apply_to_page;
 	action_data->apply_to_image = apply_to_image;
 	action_data->context = WEBKIT_HIT_TEST_RESULT_CONTEXT_DOCUMENT;
+	action_data->link_uri = NULL;
+	action_data->image_uri = NULL;
 
 	if (callback)
 	{
@@ -448,27 +452,6 @@ ephy_actions_extension_run_action (GtkAction *ui_action,
 }
 
 static void
-ephy_actions_extension_run_action_on_embed_property (GtkAction *action,
-						     EphyWindow *window,
-						     const char *property_name)
-{
-	EphyEmbedEvent *event;
-	GValue value = { 0, };
-
-	g_return_if_fail (GTK_IS_ACTION (action));
-	g_return_if_fail (EPHY_IS_WINDOW (window));
-	g_return_if_fail (property_name != NULL);
-
-	event = ephy_window_get_context_event (window);
-	g_return_if_fail (event != NULL);
-
-	ephy_embed_event_get_property (event, property_name, &value);
-	ephy_actions_extension_run_action (action, window,
-					   g_value_get_string (&value));
-	g_value_unset (&value);
-}
-
-static void
 ephy_actions_extension_document_popup_cb (GtkAction *action,
 					  EphyWindow *window)
 {
@@ -484,16 +467,14 @@ ephy_actions_extension_document_popup_cb (GtkAction *action,
 
 	if (context & WEBKIT_HIT_TEST_RESULT_CONTEXT_IMAGE)
 	{
-		ephy_actions_extension_run_action_on_embed_property (action,
-				window,
-				"image-uri");
+		ephy_actions_extension_run_action (action, window,
+						   action_data->image_uri);
 		return;
 	}
 	if (context & WEBKIT_HIT_TEST_RESULT_CONTEXT_LINK)
 	{
-		ephy_actions_extension_run_action_on_embed_property (action,
-				window,
-				"link-uri");
+		ephy_actions_extension_run_action (action, window,
+						   action_data->link_uri);
 		return;
 	}
 
@@ -755,6 +736,8 @@ ephy_actions_extension_context_menu_cb (EphyWebView *view,
 					EphyWindow *window)
 {
 	guint context;
+	char *link_uri;
+	char *image_uri;
 	GList *actions, *l;
 	WindowData *data;
 	WebKitHitTestResult *hit_test;
@@ -767,6 +750,8 @@ ephy_actions_extension_context_menu_cb (EphyWebView *view,
 
 	hit_test = webkit_web_view_get_hit_test_result (WEBKIT_WEB_VIEW (view), event);
 	g_object_get (hit_test, "context", &context, NULL);
+	g_object_get (hit_test, "link-uri", &link_uri, NULL);
+	g_object_get (hit_test, "image-uri", &image_uri, NULL);
 	g_object_unref (hit_test);
 
 	actions = gtk_action_group_list_actions (data->user_action_group);
@@ -779,6 +764,15 @@ ephy_actions_extension_context_menu_cb (EphyWebView *view,
 		g_return_val_if_fail (action_data != NULL, FALSE);
 
 		action_data->context = context;
+
+		if (action_data->link_uri)
+			g_free (action_data->link_uri);
+
+		if (action_data->image_uri)
+			g_free (action_data->image_uri);
+
+		action_data->link_uri = g_strdup (link_uri);
+		action_data->image_uri = g_strdup (image_uri);
 
 		if (context & WEBKIT_HIT_TEST_RESULT_CONTEXT_IMAGE)
 		{
@@ -794,6 +788,8 @@ ephy_actions_extension_context_menu_cb (EphyWebView *view,
 		gtk_action_set_visible (action, FALSE);
 	}
 	g_list_free (actions);
+	g_free (link_uri);
+	g_free (image_uri);
 
 	return FALSE;
 }
