@@ -44,7 +44,6 @@ typedef struct
 	GtkToggleAction *action;
 	guint ui_id;
 	GtkAction *popup;
-	GtkAction *menu;
 } WindowData;
 
 typedef struct
@@ -201,20 +200,12 @@ impl_attach_window (EphyExtension *ext,
 	gtk_ui_manager_add_ui (manager, data->ui_id, "/EphyNotebookPopup",
 			       "AutoReload", "AutoReload",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
-	gtk_ui_manager_add_ui (manager, data->ui_id, "/menubar/ViewMenu",
-			       "AutoReload", "AutoReload",
-			       GTK_UI_MANAGER_MENUITEM, FALSE);
 	data->action = GTK_TOGGLE_ACTION (gtk_action_group_get_action (data->action_group, "AutoReload"));
 
 	data->popup = gtk_ui_manager_get_action (manager, "/EphyNotebookPopup");
 	g_return_if_fail (data->popup != NULL);
 	g_signal_connect (data->popup, "activate",
 			  G_CALLBACK (update_auto_reload_menu_cb), window);
-
-	data->menu = gtk_ui_manager_get_action (manager, "/menubar/ViewMenu");
-	g_return_if_fail (data->menu != NULL);
-	g_signal_connect (data->menu, "activate",
-					G_CALLBACK (update_auto_reload_menu_cb), window);
 }
 
 static void
@@ -235,8 +226,6 @@ impl_detach_window (EphyExtension *ext,
 	/* Remove callbacks */
 	g_signal_handlers_disconnect_by_func
 		(data->popup, G_CALLBACK (update_auto_reload_menu_cb), window);
-	g_signal_handlers_disconnect_by_func
-		(data->menu, G_CALLBACK (update_auto_reload_menu_cb), window);
 
 	/* Destroy data */
 	g_object_set_data (G_OBJECT (window), WINDOW_DATA_KEY, NULL);

@@ -274,9 +274,9 @@ update_actions (EphyWindow *window)
 	g_value_set_boolean (&sensitive, FALSE);
 
 	action1 = gtk_ui_manager_get_action (GTK_UI_MANAGER (ephy_window_get_ui_manager (window)),
-					     "/menubar/ToolsMenu/SgmlValidate");
+					     "/ui/PagePopup/ExtensionsMenu/SgmlValidate");
 	action2 = gtk_ui_manager_get_action (GTK_UI_MANAGER (ephy_window_get_ui_manager (window)),
-					     "/menubar/ToolsMenu/CheckLinks");
+					     "/ui/PagePopup/ExtensionsMenu/CheckLinks");
 
 	embed = ephy_embed_container_get_active_child (EPHY_EMBED_CONTAINER (window));
 
@@ -391,18 +391,18 @@ impl_attach_window (EphyExtension *extension,
 	g_object_set_data_full (G_OBJECT (window), WINDOW_DATA_KEY, data,
 				(GDestroyNotify) free_window_data);
 
-	gtk_ui_manager_add_ui (manager, merge_id, "/menubar/ToolsMenu",
+	gtk_ui_manager_add_ui (manager, merge_id, "/ui/PagePopup/ExtensionsMenu",
 			       "ErrorViewerSep", NULL,
 			       GTK_UI_MANAGER_SEPARATOR, FALSE);
-	gtk_ui_manager_add_ui (manager, merge_id, "/menubar/ToolsMenu",
+	gtk_ui_manager_add_ui (manager, merge_id, "/ui/PagePopup/ExtensionsMenu",
 			       "CheckLinks", "CheckLinks",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
 #ifdef HAVE_OPENSP
-	gtk_ui_manager_add_ui (manager, merge_id, "/menubar/ToolsMenu",
+	gtk_ui_manager_add_ui (manager, merge_id, "/ui/PagePopup/ExtensionsMenu",
 			       "SgmlValidate", "SgmlValidate",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
 #endif /* HAVE_OPENSP */
-	gtk_ui_manager_add_ui (manager, merge_id, "/menubar/ToolsMenu",
+	gtk_ui_manager_add_ui (manager, merge_id, "/ui/PagePopup/ExtensionsMenu",
 			       "ErrorViewer", "ErrorViewer",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
 

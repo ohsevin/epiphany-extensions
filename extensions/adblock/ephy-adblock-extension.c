@@ -254,7 +254,7 @@ impl_attach_window (EphyExtension *ext,
 
   gtk_ui_manager_add_ui (manager,
                          data->ui_id,
-                         "/menubar/ToolsMenu",
+                         "/ui/PagePopup/ExtensionsMenu",
                          "EphyAdblockExtensionEdit",
                          "EphyAdblockExtensionEdit",
                          GTK_UI_MANAGER_MENUITEM,

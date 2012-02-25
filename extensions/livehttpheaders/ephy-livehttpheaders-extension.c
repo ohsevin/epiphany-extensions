@@ -134,7 +134,7 @@ impl_attach_window (EphyExtension *ext,
 
 	gtk_ui_manager_add_ui (manager,
 			       ui_id,
-			       "/menubar/ToolsMenu",
+			       "/ui/PagePopup/ExtensionsMenu",
 			       HTTP_HEADERS_ACTION "Menu",
 			       HTTP_HEADERS_ACTION,
 			       GTK_UI_MANAGER_MENUITEM,

@@ -203,10 +203,10 @@ impl_attach_window (EphyExtension *extension,
   g_object_set_data_full (G_OBJECT (window), WINDOW_DATA_KEY, data,
                           (GDestroyNotify) free_window_data);
 
-  gtk_ui_manager_add_ui (manager, merge_id, "/menubar/ToolsMenu",
+  gtk_ui_manager_add_ui (manager, merge_id, "/ui/PagePopup/ExtensionsMenu",
                          "SoupFlySep", NULL,
                          GTK_UI_MANAGER_SEPARATOR, FALSE);
-  gtk_ui_manager_add_ui (manager, merge_id, "/menubar/ToolsMenu",
+  gtk_ui_manager_add_ui (manager, merge_id, "/ui/PagePopup/ExtensionsMenu",
                          "SoupFly", "SoupFly",
                          GTK_UI_MANAGER_MENUITEM, FALSE);
 

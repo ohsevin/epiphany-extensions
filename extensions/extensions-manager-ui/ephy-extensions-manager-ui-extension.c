@@ -58,8 +58,6 @@ typedef struct
 
 static void display_cb (GtkAction *action,
 			EphyWindow *window);
-static void help_cb    (GtkAction *action,
-			EphyWindow *window);
 
 static const GtkActionEntry action_entries [] =
 {
@@ -69,13 +67,6 @@ static const GtkActionEntry action_entries [] =
 	  NULL,
 	  N_("Load and unload extensions"),
 	  G_CALLBACK (display_cb) },
-	{ "ExtensionsManagerHelp",
-	  NULL,
-	  N_("_Extensions"),
-	  NULL,
-	  N_("Help about extensions"),
-	  G_CALLBACK (help_cb)
-	}
 };
 
 static GObjectClass *parent_class = NULL;
@@ -174,33 +165,6 @@ display_cb (GtkAction *action,
 }
 
 static void
-help_cb (GtkAction *action,
-	 EphyWindow *window)
-{
-	GdkScreen *screen;
-	GError *error = NULL;
-
-	screen = gtk_widget_get_screen (GTK_WIDGET (window));
-	gtk_show_uri (screen, "ghelp:epiphany-extensions",
-		      gtk_get_current_event_time (), &error);
-
-	if (error)
-	{
-		GtkWidget *errord;
-		errord = gtk_message_dialog_new (GTK_WINDOW (window),
-						 GTK_DIALOG_DESTROY_WITH_PARENT,
-						 GTK_MESSAGE_ERROR,
-						 GTK_BUTTONS_OK,
-						 _("Could not display help: %s"),
-						 error->message);
-		g_error_free (error);
-		g_signal_connect (errord, "response",
-				  G_CALLBACK (gtk_widget_destroy), NULL);
-		gtk_widget_show (errord);
-	}
-}
-
-static void
 impl_attach_window (EphyExtension *ext,
 		    EphyWindow *window)
 {
@@ -229,18 +193,11 @@ impl_attach_window (EphyExtension *ext,
 	g_object_set_data_full (G_OBJECT (window), WINDOW_DATA_KEY, data,
 				(GDestroyNotify) g_free);
 
-	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
+	gtk_ui_manager_add_ui (manager, ui_id, "/ui/PagePopup/ExtensionsMenu",
 			       "ExtensionsManagerUISep", NULL,
 			       GTK_UI_MANAGER_SEPARATOR, FALSE);
-	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
+	gtk_ui_manager_add_ui (manager, ui_id, "/ui/PagePopup/ExtensionsMenu",
 			       "ExtensionsManagerUI", "ExtensionsManagerUI",
-			       GTK_UI_MANAGER_MENUITEM, FALSE);
-	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
-			       "ExtensionsManagerUISep2", NULL,
-			       GTK_UI_MANAGER_SEPARATOR, FALSE);
-
-	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/HelpMenu/HelpContentsMenu",
-			       "ExtensionsManagerHelp", "ExtensionsManagerHelp",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
 }
 

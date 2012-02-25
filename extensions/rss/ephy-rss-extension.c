@@ -50,7 +50,7 @@ static GType type = 0;
 /* Menu item stuff */
 #define WINDOW_DATA_KEY	"EphyRssExtensionWindowData"
 #define EPHY_RSS_EXTENSION_DATA_KEY "EphyRssExtension"
-#define MENU_PATH	"/menubar/ToolsMenu"
+#define MENU_PATH	"/ui/PagePopup/ExtensionsMenu"
 
 /* Status Bar stuff */
 #define FEED_ICON	"feed-presence"

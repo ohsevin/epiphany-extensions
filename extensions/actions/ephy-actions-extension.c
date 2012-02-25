@@ -623,7 +623,7 @@ ephy_actions_extension_attach_window (EphyExtension *extension,
 
 	gtk_ui_manager_add_ui (manager,
 			       data->ui_id,
-			       "/menubar/EditMenu",
+			       "/ui/PagePopup/ExtensionsMenu",
 			       "EphyActionsExtensionEditActions",
 			       "EphyActionsExtensionEditActions",
 			       GTK_UI_MANAGER_MENUITEM,

@@ -243,18 +243,18 @@ impl_attach_window (EphyExtension *ext,
 
 	win_data->ui_id = ui_id = gtk_ui_manager_new_merge_id (manager);
 
-	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
+	gtk_ui_manager_add_ui (manager, ui_id, "/ui/PagePopup/ExtensionsMenu",
 			       "ToolsSCSep1", NULL,
 			       GTK_UI_MANAGER_SEPARATOR, FALSE);
-	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
+	gtk_ui_manager_add_ui (manager, ui_id, "/ui/PagePopup/ExtensionsMenu",
 			       "ToolsCertificateManagerItem",
 			       "ToolsCertificateManager",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
-	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
+	gtk_ui_manager_add_ui (manager, ui_id, "/ui/PagePopup/ExtensionsMenu",
 			       "ToolsSecurityDevicesManagerItem",
 			       "ToolsSecurityDevicesManager",
 			       GTK_UI_MANAGER_MENUITEM, FALSE);
-	gtk_ui_manager_add_ui (manager, ui_id, "/menubar/ToolsMenu",
+	gtk_ui_manager_add_ui (manager, ui_id, "/ui/PagePopup/ExtensionsMenu",
 			       "ToolsSCSep2", NULL,
 			       GTK_UI_MANAGER_SEPARATOR, FALSE);
 
