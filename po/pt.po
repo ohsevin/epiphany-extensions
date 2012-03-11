@@ -2,170 +2,137 @@
 # Copyright © 2004, 2008, 2009 epiphany-extensions
 # This file is distributed under the same license as the epiphany-extensions package.
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2004.
-# António Lima <amrlima@gmail.com>, 2008, 200, 2010.
+# António Lima <amrlima@gmail.com>, 2008, 200, 2010, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.6\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=epiphany-extensions\n"
-"POT-Creation-Date: 2010-03-18 01:22+0000\n"
-"PO-Revision-Date: 2010-03-13 23:21+0000\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product"
+"=epiphany-extensions&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-02-25 20:12+0000\n"
+"PO-Revision-Date: 2012-03-03 00:17+0000\n"
 "Last-Translator: António Lima <amrlima@gmail.com>\n"
 "Language-Team: gnome_pt@yahoogroups.com\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8 bit\n"
-"Language: pt\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.5.2\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: gnome\n"
 
 #: ../extensions/actions/action-properties.ui.h:1
-msgid "<span weight=\"bold\">Applies to</span>"
-msgstr "<span weight=\"bold\">Aplica-se a</span>>"
-
-#: ../extensions/actions/action-properties.ui.h:2
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">Geral</span>"
 
-#: ../extensions/actions/action-properties.ui.h:3
-msgid "_Command:"
-msgstr "_Comando:"
-
-#: ../extensions/actions/action-properties.ui.h:4
-msgid "_Description:"
-msgstr "_Descrição:"
-
-#: ../extensions/actions/action-properties.ui.h:5
-msgid "_Images"
-msgstr "_Imagens"
-
-#: ../extensions/actions/action-properties.ui.h:6
+#: ../extensions/actions/action-properties.ui.h:2
 msgid "_Name:"
 msgstr "_Nome:"
 
-#: ../extensions/actions/action-properties.ui.h:7
+#: ../extensions/actions/action-properties.ui.h:3
+msgid "_Description:"
+msgstr "_Descrição:"
+
+#: ../extensions/actions/action-properties.ui.h:4
+msgid "_Command:"
+msgstr "_Comando:"
+
+#: ../extensions/actions/action-properties.ui.h:5
+msgid "<span weight=\"bold\">Applies to</span>"
+msgstr "<span weight=\"bold\">Aplica-se a</span>>"
+
+#: ../extensions/actions/action-properties.ui.h:6
 msgid "_Pages"
 msgstr "_Páginas"
+
+#: ../extensions/actions/action-properties.ui.h:7
+msgid "_Images"
+msgstr "_Imagens"
 
 #: ../extensions/actions/actions-editor.ui.h:1
 #: ../extensions/actions/actions.ephy-extension.in.in.h:1
 msgid "Actions"
 msgstr "Acções"
 
-#: ../extensions/actions/ephy-actions-extension.c:112
+#: ../extensions/actions/ephy-actions-extension.c:114
 msgid "Actio_ns"
 msgstr "_Acções"
 
-#: ../extensions/actions/ephy-actions-extension.c:113
+#: ../extensions/actions/ephy-actions-extension.c:115
 msgid "Customize actions"
 msgstr "Personalizar acções"
 
-#: ../extensions/actions/ephy-actions-extension.c:436
+#: ../extensions/actions/ephy-actions-extension.c:440
 msgid "Could not run command"
 msgstr "Não foi possível executar o comando"
 
-#: ../extensions/actions/ephy-actions-extension.c:440
+#: ../extensions/actions/ephy-actions-extension.c:444
 msgid "Could not Run Command"
 msgstr "Não foi possível Executar o comando"
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:520
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:496
 msgid "No action selected."
 msgstr "Nenhuma acção seleccionada."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:530
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:506
 #, c-format
 msgid "%i action selected."
 msgid_plural "%i actions selected."
 msgstr[0] "%i acção seleccionada."
 msgstr[1] "%i acções seleccionadas."
 
-#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:745
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:139
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:194
+#: ../extensions/actions/ephy-actions-extension-editor-dialog.c:721
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:124
 #, c-format
 msgid "Could not display help: %s"
 msgstr "Não foi possível apresentar a ajuda: %s"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:310
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:274
 msgid "Add Action"
 msgstr "Adicionar Acção"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:420
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:384
 #, c-format
 msgid "“%s” Properties"
 msgstr "“%s” Propriedades"
 
-#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:425
+#: ../extensions/actions/ephy-actions-extension-properties-dialog.c:389
 msgid "Action Properties"
 msgstr "Propriedades das Acções"
 
-#: ../extensions/adblock/adblock-ui.c:263
-msgid ""
-"This list is Copyright © its original author(G). It is relicensed under the "
-"GPL with permission.\n"
-"The original list, Filterset.G, can be found at http://www.pierceive.com/"
-"filtersetg/.\n"
-"This version has been modified from its original. The changes have not been "
-"approved by the original author;\n"
-"direct any problems to Bugzilla and not to the original author (G).\n"
-msgstr ""
-"Esta lista está sobre Copyright © do seu autor original(G). Está re -"
-"licenciada sob a GPL com a devida permissão.\n"
-"A lista original, Filterset.G, pode ser encontrada em http://www.pierceive."
-"com/filtersetg/.\n"
-"Esta versão foi modificada a partir da original. As alterações não foram "
-"aprovadas pelo autor original;\n"
-"submeta quaisquer problemas ao Bugzilla e não ao autor original (G).\n"
+#: ../extensions/adblock/adblock-ui.c:150
+msgid "Invalid filter"
+msgstr "Filtro inválido"
 
-#: ../extensions/adblock/adblock-ui.c:481
-msgid "Pattern"
-msgstr "Padrão"
+#: ../extensions/adblock/adblock-ui.c:240
+msgid "Filter URI"
+msgstr "Filtrar URI"
 
 #: ../extensions/adblock/adblock.ui.h:1
-msgid "<b>Courtesy of Graham Pierce</b>"
-msgstr "<b>Cortesia de Graham Pierce</b>"
-
-#: ../extensions/adblock/adblock.ui.h:2
-msgid "<b>New rule</b>"
-msgstr "<b>Nova regra</b>"
-
-#: ../extensions/adblock/adblock.ui.h:3
-msgid "<b>Update rules from original site</b>"
-msgstr "<b>Actualizar regras a partir da página original</b>"
-
-#: ../extensions/adblock/adblock.ui.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
 msgstr "Editor do Adblock"
 
-#: ../extensions/adblock/adblock.ui.h:5
-msgid "Blacklist"
-msgstr "Lista Negra"
+#: ../extensions/adblock/adblock.ui.h:2
+msgid ""
+"Type the address of a preconfigured filter list in the text entry to be "
+"added to the list. Find more lists at easylist.adblockplus.org"
+msgstr ""
+"Digite, no campo de entrada de texto, o endereço de uma lista de filtros "
+"pré-configurados a serem adicionados à lista. Encontre mais listas em "
+"easylist.adblockplus.org"
 
-#: ../extensions/adblock/adblock.ui.h:6
-msgid "Filterset.G"
-msgstr "Filterset.G"
+#: ../extensions/adblock/ephy-adblock-extension.c:218
+msgid "Ad Blocker"
+msgstr "Bloqueador de Publicidade"
 
-#: ../extensions/adblock/adblock.ui.h:7
-msgid "Whitelist"
-msgstr "Lista de Excepções"
+#: ../extensions/adblock/ephy-adblock-extension.c:219
+msgid "Configure Ad Blocker filters"
+msgstr "Configurar filtros do Bloqueador de Publicidade"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:230
-msgid "Edit Adblock"
-msgstr "Editar o Adblock"
-
-#: ../extensions/adblock/ephy-adblock-extension.c:299
-#, c-format
-msgid "%d hidden advertisement"
-msgid_plural "%d hidden advertisements"
-msgstr[0] "%d publicidade escondida"
-msgstr[1] "%d publicidades escondidas"
-
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:81
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:80
 msgid "_Auto Reload"
 msgstr "Reler _Automaticamente"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:82
 msgid "Reload the page periodically"
 msgstr "Reler a página periodicamente"
 
@@ -226,12 +193,12 @@ msgid "Display web page errors"
 msgstr "Apresentar erros das páginas web"
 
 #: ../extensions/error-viewer/error-viewer.glade.h:1
-msgid "Cl_ear"
-msgstr "_Limpar"
-
-#: ../extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
 msgstr "Visualizador de Erros"
+
+#: ../extensions/error-viewer/error-viewer.glade.h:2
+msgid "Cl_ear"
+msgstr "_Limpar"
 
 #. Translators: The first %s is the error category (e. g., "javascript").
 #. The second %s is the URL. The third %s is the actual error message.
@@ -327,7 +294,7 @@ msgid ""
 "Doctype is “XHTML” but content type is “text/html”.  Use “application/xhtml"
 "+xml” instead."
 msgstr ""
-"Tipo de documento é “XHTML” mas o tipo do conteúdo é “text/html”.  Utilize "
+"Tipo de documento é “XHTML” mas o tipo do conteúdo é “text/html”. Utilize "
 "antes “application/xhtml+xml”."
 
 #: ../extensions/error-viewer/sgml-validator.c:242
@@ -363,35 +330,31 @@ msgstr ""
 "Erro de HTML em %s:\n"
 "Nenhum tipo de documento válido especificado."
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:364
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:349
 msgid "Enabled"
 msgstr "Activado"
 
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:372
-#: ../extensions/rss/rss-ui.c:560
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.c:357
+#: ../extensions/rss/rss-ui.c:539
 msgid "Description"
 msgstr "Descrição"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:1
-msgid "<b>Loaded Extensions</b>"
-msgstr "<b>Extensões Carregadas</b>"
-
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:2
 msgid "Extensions"
 msgstr "Extensões"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:68
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:74
-msgid "_Extensions"
-msgstr "_Extensões"
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:2
+msgid "<b>Loaded Extensions</b>"
+msgstr "<b>Extensões Carregadas</b>"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:70
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:66
+#| msgid "Extensions Manager"
+msgid "_Extensions manager"
+msgstr "Gestor de _extenções"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:68
 msgid "Load and unload extensions"
 msgstr "Carregar e descarregar extensões"
-
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:76
-msgid "Help about extensions"
-msgstr "Ajuda sobre as extensões"
 
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:78
 msgid "Install User _Script"
@@ -402,7 +365,7 @@ msgstr "Instalar _Script de Utilizador"
 msgid "Install Greasemonkey script"
 msgstr "Instalar script do Greasemonkey"
 
-#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:311
+#: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:314
 #, c-format
 msgid "The user script at “%s” has been installed"
 msgstr "O script de utilizador em “%s” foi instalado"
@@ -421,28 +384,28 @@ msgid "_HTTP Headers"
 msgstr "Cabeçalhos _HTTP"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:1
-msgid "<b>Request</b>"
-msgstr "<b>Pedido</b>"
-
-#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:2
-msgid "<b>Response</b>"
-msgstr "<b>Resposta</b>"
-
-#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:3
-msgid "<b>URLs</b>"
-msgstr "<b>URLs</b>"
-
-#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
-msgid "Clear cache"
-msgstr "Limpar cache"
-
-#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
 msgid "Live Headers"
 msgstr "Cabeçalhos Interactivos"
 
-#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:2
+msgid "Clear cache"
+msgstr "Limpar cache"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:3
 msgid "Remove headers"
 msgstr "Remover cabeçalhos"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
+msgid "<b>URLs</b>"
+msgstr "<b>URLs</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
+msgid "<b>Request</b>"
+msgstr "<b>Pedido</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
+msgid "<b>Response</b>"
+msgstr "<b>Resposta</b>"
 
 #: ../extensions/page-info/ephy-page-info-extension.c:61
 msgid "Pa_ge Information"
@@ -452,289 +415,289 @@ msgstr "Informação da Pá_gina"
 msgid "Display page information in a dialog"
 msgstr "Apresentar informação da página num diálogo"
 
-#: ../extensions/page-info/page-info-dialog.c:704
+#: ../extensions/page-info/page-info-dialog.c:615
 msgid "Save As..."
 msgstr "Gravar Como..."
 
-#: ../extensions/page-info/page-info-dialog.c:721
+#: ../extensions/page-info/page-info-dialog.c:632
 msgid "Select a directory"
 msgstr "Seleccionar um directório"
 
-#: ../extensions/page-info/page-info-dialog.c:770
+#: ../extensions/page-info/page-info-dialog.c:681
 msgid "Unknown type"
 msgstr "Tipo desconhecido"
 
-#: ../extensions/page-info/page-info-dialog.c:775
+#: ../extensions/page-info/page-info-dialog.c:686
 msgid "Full standards compliance"
 msgstr "Conformidade total com padrões"
 
-#: ../extensions/page-info/page-info-dialog.c:778
+#: ../extensions/page-info/page-info-dialog.c:689
 msgid "Almost standards compliance"
 msgstr "Quase conforme os padrões"
 
-#: ../extensions/page-info/page-info-dialog.c:781
+#: ../extensions/page-info/page-info-dialog.c:692
 msgid "Compatibility"
 msgstr "Compatibilidade"
 
-#: ../extensions/page-info/page-info-dialog.c:785
+#: ../extensions/page-info/page-info-dialog.c:696
 msgid "Undetermined"
 msgstr "Indeterminado"
 
-#: ../extensions/page-info/page-info-dialog.c:794
+#: ../extensions/page-info/page-info-dialog.c:705
 msgid "Not cached"
 msgstr "Não gravado em chache"
 
-#: ../extensions/page-info/page-info-dialog.c:797
+#: ../extensions/page-info/page-info-dialog.c:708
 msgid "Disk cache"
 msgstr "Cache de disco"
 
-#: ../extensions/page-info/page-info-dialog.c:800
+#: ../extensions/page-info/page-info-dialog.c:711
 msgid "Memory cache"
 msgstr "Cache de memória"
 
-#: ../extensions/page-info/page-info-dialog.c:803
+#: ../extensions/page-info/page-info-dialog.c:714
 msgid "Unknown cache"
 msgstr "Cache desconhecida"
 
-#: ../extensions/page-info/page-info-dialog.c:819
-#: ../extensions/page-info/page-info-dialog.c:935
+#: ../extensions/page-info/page-info-dialog.c:730
+#: ../extensions/page-info/page-info-dialog.c:846
 msgid "Unknown"
 msgstr "Desconhecido"
 
-#: ../extensions/page-info/page-info-dialog.c:824
+#: ../extensions/page-info/page-info-dialog.c:735
 msgid "No referrer"
 msgstr "Nenhum referente"
 
-#: ../extensions/page-info/page-info-dialog.c:838
-#: ../extensions/page-info/page-info-dialog.c:854
+#: ../extensions/page-info/page-info-dialog.c:749
+#: ../extensions/page-info/page-info-dialog.c:765
 msgid "Not specified"
 msgstr "Não específicado"
 
-#: ../extensions/page-info/page-info-dialog.c:917
+#: ../extensions/page-info/page-info-dialog.c:828
 msgid "Image"
 msgstr "Imagem"
 
-#: ../extensions/page-info/page-info-dialog.c:920
+#: ../extensions/page-info/page-info-dialog.c:831
 msgid "Background image"
 msgstr "Imagem de fundo"
 
-#: ../extensions/page-info/page-info-dialog.c:923
+#: ../extensions/page-info/page-info-dialog.c:834
 msgid "Embed"
 msgstr "Embutido"
 
-#: ../extensions/page-info/page-info-dialog.c:926
+#: ../extensions/page-info/page-info-dialog.c:837
 msgid "Object"
 msgstr "Objecto"
 
-#: ../extensions/page-info/page-info-dialog.c:929
+#: ../extensions/page-info/page-info-dialog.c:840
 msgid "Applet"
 msgstr "Applet"
 
-#: ../extensions/page-info/page-info-dialog.c:932
+#: ../extensions/page-info/page-info-dialog.c:843
 msgid "Icon"
 msgstr "Ícone"
 
-#: ../extensions/page-info/page-info-dialog.c:1113
+#: ../extensions/page-info/page-info-dialog.c:1024
 msgid "_Open"
 msgstr "_Abrir"
 
-#: ../extensions/page-info/page-info-dialog.c:1119
-#: ../extensions/page-info/page-info-dialog.c:1564
+#: ../extensions/page-info/page-info-dialog.c:1030
+#: ../extensions/page-info/page-info-dialog.c:1475
 msgid "_Copy Link Address"
 msgstr "_Copiar Endereço do Link"
 
-#: ../extensions/page-info/page-info-dialog.c:1125
+#: ../extensions/page-info/page-info-dialog.c:1036
 msgid "_Use as Background"
 msgstr "_Utilizar como Fundo"
 
-#: ../extensions/page-info/page-info-dialog.c:1131
-#: ../extensions/page-info/page-info-dialog.c:1570
+#: ../extensions/page-info/page-info-dialog.c:1042
+#: ../extensions/page-info/page-info-dialog.c:1481
 msgid "_Save As..."
 msgstr "_Gravar Como..."
 
-#: ../extensions/page-info/page-info-dialog.c:1363
-#: ../extensions/page-info/page-info-dialog.c:1684
+#: ../extensions/page-info/page-info-dialog.c:1274
+#: ../extensions/page-info/page-info-dialog.c:1595
 msgid "Blocked"
 msgstr "Bloqueado"
 
-#: ../extensions/page-info/page-info-dialog.c:1379
-#: ../extensions/page-info/page-info-dialog.c:1700
+#: ../extensions/page-info/page-info-dialog.c:1290
+#: ../extensions/page-info/page-info-dialog.c:1611
 msgid "URL"
 msgstr "URL"
 
-#: ../extensions/page-info/page-info-dialog.c:1392
+#: ../extensions/page-info/page-info-dialog.c:1303
 msgid "Type"
 msgstr "Tipo"
 
-#: ../extensions/page-info/page-info-dialog.c:1404
+#: ../extensions/page-info/page-info-dialog.c:1315
 msgid "Alt Text"
 msgstr "Texto Alternativo"
 
-#: ../extensions/page-info/page-info-dialog.c:1416
-#: ../extensions/page-info/page-info-dialog.c:1713
+#: ../extensions/page-info/page-info-dialog.c:1327
+#: ../extensions/page-info/page-info-dialog.c:1624
 msgid "Title"
 msgstr "Título"
 
-#: ../extensions/page-info/page-info-dialog.c:1428
+#: ../extensions/page-info/page-info-dialog.c:1339
 msgid "Width"
 msgstr "Largura"
 
-#: ../extensions/page-info/page-info-dialog.c:1440
+#: ../extensions/page-info/page-info-dialog.c:1351
 msgid "Height"
 msgstr "Altura"
 
-#: ../extensions/page-info/page-info-dialog.c:1725
+#: ../extensions/page-info/page-info-dialog.c:1636
 msgid "Relation"
 msgstr "Relação"
 
-#: ../extensions/page-info/page-info-dialog.c:1874
-#: ../extensions/page-info/page-info-dialog.c:2015
+#: ../extensions/page-info/page-info-dialog.c:1785
+#: ../extensions/page-info/page-info-dialog.c:1926
 msgid "Name"
 msgstr "Nome"
 
-#: ../extensions/page-info/page-info-dialog.c:1886
+#: ../extensions/page-info/page-info-dialog.c:1797
 msgid "Method"
 msgstr "Método"
 
-#: ../extensions/page-info/page-info-dialog.c:1900
+#: ../extensions/page-info/page-info-dialog.c:1811
 msgid "Action"
 msgstr "Acção"
 
-#: ../extensions/page-info/page-info-dialog.c:1981
+#: ../extensions/page-info/page-info-dialog.c:1892
 msgid "_Copy"
 msgstr "_Copiar"
 
-#: ../extensions/page-info/page-info-dialog.c:2027
+#: ../extensions/page-info/page-info-dialog.c:1938
 msgid "Content"
 msgstr "Conteúdo"
 
-#: ../extensions/page-info/page-info-dialog.c:2128
+#: ../extensions/page-info/page-info-dialog.c:2039
 msgid "Page Metadata"
 msgstr "Metadados da Página"
 
 #: ../extensions/page-info/page-info.glade.h:1
-msgid "<b>Dublin Core Metadata</b>"
-msgstr "<b>Metadados de Núcleo de Dublin</b>"
+msgid "Page Properties"
+msgstr "Propriedades da Página"
 
 #: ../extensions/page-info/page-info.glade.h:2
-msgid "<b>Forms In Page</b>"
-msgstr "<b>Formulários Na Página</b>"
+msgid "Title:"
+msgstr "Título:"
 
 #: ../extensions/page-info/page-info.glade.h:3
-msgid "<b>Links In Page</b>"
-msgstr "<b>Links Na Página</b>"
+msgid "Location:"
+msgstr "Localização:"
 
 #: ../extensions/page-info/page-info.glade.h:4
-msgid "<b>Media In Page</b>"
-msgstr "<b>Media Na Página</b>"
+msgid "Referrer:"
+msgstr "Referente:"
 
 #: ../extensions/page-info/page-info.glade.h:5
-msgid "<b>Medium View</b>"
-msgstr "<b>Vista Mediana</b>"
-
-#: ../extensions/page-info/page-info.glade.h:6
-msgid "<b>Other Metadata</b>"
-msgstr "<b>Outros Metadados</b>"
-
-#: ../extensions/page-info/page-info.glade.h:7
-msgid "<b>Rendering</b>"
-msgstr "<b>Renderização</b>"
-
-#: ../extensions/page-info/page-info.glade.h:8
-msgid "<b>Source File</b>"
-msgstr "<b>Ficheiro de Código</b>"
-
-#: ../extensions/page-info/page-info.glade.h:9
-msgid "<b>Web Page</b>"
-msgstr "<b>Página Web</b>"
-
-#: ../extensions/page-info/page-info.glade.h:10
 msgid "DYNAMIC"
 msgstr "DINÂMICO"
 
+#: ../extensions/page-info/page-info.glade.h:6
+msgid "<b>Web Page</b>"
+msgstr "<b>Página Web</b>"
+
+#: ../extensions/page-info/page-info.glade.h:7
+msgid "Size:"
+msgstr "Tamanho:"
+
+#: ../extensions/page-info/page-info.glade.h:8
+msgid "Type:"
+msgstr "Tipo:"
+
+#: ../extensions/page-info/page-info.glade.h:9
+msgid "MIME type:"
+msgstr "Tipo MIME:"
+
+#: ../extensions/page-info/page-info.glade.h:10
+msgid "Modified:"
+msgstr "Alterado:"
+
 #: ../extensions/page-info/page-info.glade.h:11
-msgid "Date:"
-msgstr "Data:"
-
-#: ../extensions/page-info/page-info.glade.h:12
-msgid "Description:"
-msgstr "Descrição:"
-
-#: ../extensions/page-info/page-info.glade.h:13
-msgid "Encoding:"
-msgstr "Codificação:"
-
-#: ../extensions/page-info/page-info.glade.h:14
 msgid "Expires:"
 msgstr "Expira:"
 
+#: ../extensions/page-info/page-info.glade.h:12
+msgid "Source:"
+msgstr "Fonte:"
+
+#: ../extensions/page-info/page-info.glade.h:13
+msgid "<b>Source File</b>"
+msgstr "<b>Ficheiro de Código</b>"
+
+#: ../extensions/page-info/page-info.glade.h:14
+msgid "Mode:"
+msgstr "Modo:"
+
 #: ../extensions/page-info/page-info.glade.h:15
-msgid "Format:"
-msgstr "Formato:"
+msgid "Encoding:"
+msgstr "Codificação:"
 
 #: ../extensions/page-info/page-info.glade.h:16
-msgid "Forms"
-msgstr "Formulários"
+msgid "<b>Rendering</b>"
+msgstr "<b>Renderização</b>"
 
 #: ../extensions/page-info/page-info.glade.h:17
 msgid "General"
 msgstr "Geral"
 
 #: ../extensions/page-info/page-info.glade.h:18
-msgid "Links"
-msgstr "Links"
+msgid "<b>Media In Page</b>"
+msgstr "<b>Media Na Página</b>"
 
 #: ../extensions/page-info/page-info.glade.h:19
-msgid "Location:"
-msgstr "Localização:"
+msgid "_Save Media As..."
+msgstr "_Gravar Media Como..."
 
 #: ../extensions/page-info/page-info.glade.h:20
-msgid "MIME type:"
-msgstr "Tipo MIME:"
+msgid "<b>Medium View</b>"
+msgstr "<b>Vista Mediana</b>"
 
 #: ../extensions/page-info/page-info.glade.h:21
 msgid "Media"
 msgstr "Media"
 
 #: ../extensions/page-info/page-info.glade.h:22
-msgid "Metadata"
-msgstr "Metadados"
+msgid "<b>Links In Page</b>"
+msgstr "<b>Links Na Página</b>"
 
 #: ../extensions/page-info/page-info.glade.h:23
-msgid "Mode:"
-msgstr "Modo:"
+msgid "Links"
+msgstr "Links"
 
 #: ../extensions/page-info/page-info.glade.h:24
-msgid "Modified:"
-msgstr "Alterado:"
+msgid "<b>Forms In Page</b>"
+msgstr "<b>Formulários Na Página</b>"
 
 #: ../extensions/page-info/page-info.glade.h:25
-msgid "Page Properties"
-msgstr "Propriedades da Página"
+msgid "Forms"
+msgstr "Formulários"
 
 #: ../extensions/page-info/page-info.glade.h:26
-msgid "Referrer:"
-msgstr "Referente:"
+msgid "<b>Dublin Core Metadata</b>"
+msgstr "<b>Metadados de Núcleo de Dublin</b>"
 
 #: ../extensions/page-info/page-info.glade.h:27
-msgid "Size:"
-msgstr "Tamanho:"
+msgid "Date:"
+msgstr "Data:"
 
 #: ../extensions/page-info/page-info.glade.h:28
-msgid "Source:"
-msgstr "Fonte:"
+msgid "Format:"
+msgstr "Formato:"
 
 #: ../extensions/page-info/page-info.glade.h:29
-msgid "Title:"
-msgstr "Título:"
+msgid "Description:"
+msgstr "Descrição:"
 
 #: ../extensions/page-info/page-info.glade.h:30
-msgid "Type:"
-msgstr "Tipo:"
+msgid "<b>Other Metadata</b>"
+msgstr "<b>Outros Metadados</b>"
 
 #: ../extensions/page-info/page-info.glade.h:31
-msgid "_Save Media As..."
-msgstr "_Gravar Media Como..."
+msgid "Metadata"
+msgstr "Metadados"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:165
 msgid "allowed"
@@ -762,15 +725,15 @@ msgstr "Estado"
 msgid "Site Permissions"
 msgstr "Permissões da Página"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:632
+#: ../extensions/permissions/ephy-permissions-dialog.c:631
 msgid "Cookies"
 msgstr "Cookies"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:633
+#: ../extensions/permissions/ephy-permissions-dialog.c:632
 msgid "Images"
 msgstr "Imagens"
 
-#: ../extensions/permissions/ephy-permissions-dialog.c:634
+#: ../extensions/permissions/ephy-permissions-dialog.c:633
 msgid "Popup Windows"
 msgstr "Janelas de Popup"
 
@@ -784,52 +747,52 @@ msgstr "_Permissões da Página"
 msgid "Manage web site permissions"
 msgstr "Gerir as permissões da página web"
 
-#: ../extensions/rss/ephy-rss-extension.c:80
+#: ../extensions/rss/ephy-rss-extension.c:82
 msgid "News Feeds Subscription"
 msgstr "Subscrição de Fontes de Notícias"
 
-#: ../extensions/rss/ephy-rss-extension.c:82
+#: ../extensions/rss/ephy-rss-extension.c:84
 msgid "Subscribe to this website's news feeds in your favorite news reader"
 msgstr "Subscrever a fonte de notícias desta página no seu leitor preferido"
 
-#: ../extensions/rss/ephy-rss-extension.c:87
+#: ../extensions/rss/ephy-rss-extension.c:89
 msgid "_Subscribe to this feed"
 msgstr "_Subscrever esta fonte"
 
-#: ../extensions/rss/ephy-rss-extension.c:89
+#: ../extensions/rss/ephy-rss-extension.c:91
 msgid "Subscribe to this feed in your favorite news reader"
 msgstr "Subscrever esta fonte no seu leitor preferido"
 
-#: ../extensions/rss/ephy-rss-extension.c:394
+#: ../extensions/rss/ephy-rss-extension.c:402
 msgid "Subscribe to site's news feed"
 msgstr "Subscrever a fonte de notícias da página"
 
-#: ../extensions/rss/rss-ui.c:156
+#: ../extensions/rss/rss-ui.c:136
 msgid "<b><i>Unable to contact the feed reader, is it running ?</i></b>"
 msgstr ""
 "<b><i>Não é possível entrar em contacto com o leitor de fontes, este "
 "encontra-se em execução ?</i></b>"
 
-#: ../extensions/rss/rss-ui.c:158
+#: ../extensions/rss/rss-ui.c:138
 msgid "Retry"
 msgstr "Tentar novamente"
 
-#: ../extensions/rss/rss-ui.c:288
+#: ../extensions/rss/rss-ui.c:268
 msgid "_Copy Feed Address"
 msgstr "_Copiar Endereço da Fonte"
 
-#: ../extensions/rss/rss-ui.c:552
+#: ../extensions/rss/rss-ui.c:531
 msgid "Subscribe"
 msgstr "Subscrever"
 
 #: ../extensions/rss/rss-ui.ui.h:1
-msgid "<b>Select Interesting Feeds</b>"
-msgstr "<b>Seleccionar Fontes com Interesse</b>"
-
-#: ../extensions/rss/rss-ui.ui.h:2
 #: ../extensions/rss/rss.ephy-extension.in.in.h:1
 msgid "News Feed Subscription"
 msgstr "Nova Subscrição de Fonte"
+
+#: ../extensions/rss/rss-ui.ui.h:2
+msgid "<b>Select Interesting Feeds</b>"
+msgstr "<b>Seleccionar Fontes com Interesse</b>"
 
 #: ../extensions/rss/rss-ui.ui.h:3
 msgid "_Subscribe"
@@ -864,23 +827,13 @@ msgstr "Por Omissão"
 msgid "None"
 msgstr "Nenhum"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:531
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:543
 msgid "_Look Up"
 msgstr "_Procurar"
 
-#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:538
+#: ../extensions/smart-bookmarks/smart-bookmarks-extension.c:550
 msgid "_GNOME Dictionary"
 msgstr "Dicionário do _GNOME"
-
-#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:1
-msgid "Open search result in new tab"
-msgstr "Abrir o resultado da pesquisa num novo separador"
-
-#: ../extensions/smart-bookmarks/smart-bookmarks.schemas.in.h:2
-msgid "Open search result in new tab if true, in new window if false"
-msgstr ""
-"Abrir o resultado da pesquisa num novo separador se verdadeiro, e numa nova "
-"janela se falso"
 
 #: ../extensions/soup-fly/ephy-soup-fly-extension.c:66
 msgid "_Soup Fly"
@@ -904,8 +857,9 @@ msgid "Execute arbitrary commands from the context menu"
 msgstr "Executar comandos arbitrários a partir do menu de contexto"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
-msgid "Ad Blocker"
-msgstr "Bloqueador de Publicidade"
+#| msgid "Ad Blocker"
+msgid "Ad Blocker v2"
+msgstr "Bloqueador de Publicidade v2"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
 msgid "Block the pest!"
@@ -937,15 +891,15 @@ msgstr "Visualizador de erros"
 
 #: ../extensions/error-viewer/error-viewer.ephy-extension.in.in.h:2
 msgid "Validate web pages and check links"
-msgstr "Validar páginas Web e verificar links"
+msgstr "Validar páginas web e verificar links"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
-msgid "Activate and deactivate extensions"
-msgstr "Activar e desactivar extensões"
-
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
 msgid "Extensions Manager"
 msgstr "Gestor de Extenções"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
+msgid "Activate and deactivate extensions"
+msgstr "Activar e desactivar extensões"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -961,7 +915,8 @@ msgstr "Greasemonkey"
 
 #: ../extensions/greasemonkey/greasemonkey.ephy-extension.in.in.h:2
 msgid "Run user scripts to modify web pages' behavior"
-msgstr "Executa scripts do utilizador para alterar o comportamento das páginas"
+msgstr ""
+"Executa scripts do utilizador para alterar o 'comportamento' das páginas"
 
 #: ../extensions/java-console/java-console.ephy-extension.in.in.h:1
 msgid "Java Console"
@@ -976,30 +931,30 @@ msgid "Live HTTP headers"
 msgstr "Cabeçalhos Interactivos HTTP"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
+msgid "Page Info"
+msgstr "Informação da Página"
+
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
 msgid "Display information about and links and media from the current page"
 msgstr ""
 "Apresenta informação sobre da página actual, assim como links e media da "
 "mesma"
 
-#: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
-msgid "Page Info"
-msgstr "Informação da Página"
-
 #: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
-msgid "Edit site permissions"
-msgstr "Editar permissões do site"
-
-#: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
 msgid "Permissions"
 msgstr "Permissões"
 
-#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
-msgid "Drag the page on middle mouse click"
-msgstr "Arrastar a página com o botão do meio do rato"
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
+msgid "Edit site permissions"
+msgstr "Editar permissões do site"
 
-#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
 msgid "Push Scroll"
 msgstr "Empurrar para Deslocar"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+msgid "Drag the page on middle mouse click"
+msgstr "Arrastar a página com o botão do meio do rato"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
@@ -1009,12 +964,12 @@ msgstr ""
 "notícias favorito"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
-msgid "A sample extension"
-msgstr "Um exemplo de extensão"
-
-#: ../extensions/sample/sample.ephy-extension.in.in.h:2
 msgid "Sample"
 msgstr "Exemplo"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:2
+msgid "A sample extension"
+msgstr "Um exemplo de extensão"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
 msgid "Select Stylesheet"
@@ -1025,28 +980,20 @@ msgid "Select between different stylesheets offered by the web page"
 msgstr "Seleccionar diferentes folhas de estilo oferecidas pela página"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
-msgid "Look up the selected text with a smart bookmark"
-msgstr "Procurar o texto seleccionado com um marcador inteligente"
-
-#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
 msgid "Smart Bookmarks"
 msgstr "Marcadores Inteligentes"
 
-#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:1
-msgid "Groups newly opened tabs"
-msgstr "Agrupa separadores recentemente abertos"
-
-#: ../extensions/tab-groups/tab-groups.ephy-extension.in.in.h:2
-msgid "Tab Groups"
-msgstr "Grupos de Separadores"
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
+msgid "Look up the selected text with a smart bookmark"
+msgstr "Procurar o texto seleccionado com um marcador inteligente"
 
 #: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
-msgid "Indicates new content in background tabs"
-msgstr "Indica conteúdo novo nos separadores em fundo"
-
-#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
 msgid "Tab States"
 msgstr "Estado dos Separadores"
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
+msgid "Indicates new content in background tabs"
+msgstr "Indica conteúdo novo nos separadores em fundo"
 
 #: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:1
 msgid "Tab Key Tab Navigate"
@@ -1055,6 +1002,72 @@ msgstr "Tecla Tabulador Navegar Separadores"
 #: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:2
 msgid "Use the Tab key to navigate between tabs"
 msgstr "Utilize a tecla Tabulador para navegar entre separadores"
+
+#~ msgid ""
+#~ "This list is Copyright © its original author(G). It is relicensed under "
+#~ "the GPL with permission.\n"
+#~ "The original list, Filterset.G, can be found at http://www.pierceive.com/"
+#~ "filtersetg/.\n"
+#~ "This version has been modified from its original. The changes have not "
+#~ "been approved by the original author;\n"
+#~ "direct any problems to Bugzilla and not to the original author (G).\n"
+#~ msgstr ""
+#~ "Esta lista está sobre Copyright © do seu autor original(G). Está re -"
+#~ "licenciada sob a GPL com a devida permissão.\n"
+#~ "A lista original, Filterset.G, pode ser encontrada em http://www."
+#~ "pierceive.com/filtersetg/.\n"
+#~ "Esta versão foi modificada a partir da original. As alterações não foram "
+#~ "aprovadas pelo autor original;\n"
+#~ "submeta quaisquer problemas ao Bugzilla e não ao autor original (G).\n"
+
+#~ msgid "Pattern"
+#~ msgstr "Padrão"
+
+#~ msgid "<b>Courtesy of Graham Pierce</b>"
+#~ msgstr "<b>Cortesia de Graham Pierce</b>"
+
+#~ msgid "<b>New rule</b>"
+#~ msgstr "<b>Nova regra</b>"
+
+#~ msgid "<b>Update rules from original site</b>"
+#~ msgstr "<b>Actualizar regras a partir da página original</b>"
+
+#~ msgid "Blacklist"
+#~ msgstr "Lista Negra"
+
+#~ msgid "Filterset.G"
+#~ msgstr "Filterset.G"
+
+#~ msgid "Whitelist"
+#~ msgstr "Lista de Excepções"
+
+#~ msgid "Edit Adblock"
+#~ msgstr "Editar o Adblock"
+
+#~ msgid "%d hidden advertisement"
+#~ msgid_plural "%d hidden advertisements"
+#~ msgstr[0] "%d publicidade escondida"
+#~ msgstr[1] "%d publicidades escondidas"
+
+#~ msgid "_Extensions"
+#~ msgstr "_Extensões"
+
+#~ msgid "Help about extensions"
+#~ msgstr "Ajuda sobre as extensões"
+
+#~ msgid "Open search result in new tab"
+#~ msgstr "Abrir o resultado da pesquisa num novo separador"
+
+#~ msgid "Open search result in new tab if true, in new window if false"
+#~ msgstr ""
+#~ "Abrir o resultado da pesquisa num novo separador se verdadeiro, e numa "
+#~ "nova janela se falso"
+
+#~ msgid "Groups newly opened tabs"
+#~ msgstr "Agrupa separadores recentemente abertos"
+
+#~ msgid "Tab Groups"
+#~ msgstr "Grupos de Separadores"
 
 #~ msgid ""
 #~ "If this option is enabled, the action will be included in the popup menu "
