@@ -1,15 +1,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011.
+# Rūdofls Mazurs <rudolfs.mazurs@gmail.com>, 2011, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
-"cgi?product=epiphany-extensions&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-09-17 13:27+0000\n"
-"PO-Revision-Date: 2011-10-02 20:58+0300\n"
-"Last-Translator: Rūdofls Mazurs <rudolfs.mazurs@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=epiphany-extensions&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-02-28 20:51+0000\n"
+"PO-Revision-Date: 2012-03-15 20:15+0200\n"
+"Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,51 +20,51 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 
 #: ../extensions/actions/action-properties.ui.h:1
-msgid "<span weight=\"bold\">Applies to</span>"
-msgstr "<span weight=\"bold\">Attiecas uz</span>"
-
-#: ../extensions/actions/action-properties.ui.h:2
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">Vispārīgi</span>"
 
-#: ../extensions/actions/action-properties.ui.h:3
-msgid "_Command:"
-msgstr "_Komanda:"
-
-#: ../extensions/actions/action-properties.ui.h:4
-msgid "_Description:"
-msgstr "_Apraksts:"
-
-#: ../extensions/actions/action-properties.ui.h:5
-msgid "_Images"
-msgstr "Attēl_i"
-
-#: ../extensions/actions/action-properties.ui.h:6
+#: ../extensions/actions/action-properties.ui.h:2
 msgid "_Name:"
 msgstr "_Nosaukums:"
 
-#: ../extensions/actions/action-properties.ui.h:7
+#: ../extensions/actions/action-properties.ui.h:3
+msgid "_Description:"
+msgstr "_Apraksts:"
+
+#: ../extensions/actions/action-properties.ui.h:4
+msgid "_Command:"
+msgstr "_Komanda:"
+
+#: ../extensions/actions/action-properties.ui.h:5
+msgid "<span weight=\"bold\">Applies to</span>"
+msgstr "<span weight=\"bold\">Attiecas uz</span>"
+
+#: ../extensions/actions/action-properties.ui.h:6
 msgid "_Pages"
 msgstr "La_pas"
+
+#: ../extensions/actions/action-properties.ui.h:7
+msgid "_Images"
+msgstr "Attēl_i"
 
 #: ../extensions/actions/actions-editor.ui.h:1
 #: ../extensions/actions/actions.ephy-extension.in.in.h:1
 msgid "Actions"
 msgstr "Darbības"
 
-#: ../extensions/actions/ephy-actions-extension.c:112
+#: ../extensions/actions/ephy-actions-extension.c:114
 msgid "Actio_ns"
 msgstr "_Darbības"
 
-#: ../extensions/actions/ephy-actions-extension.c:113
+#: ../extensions/actions/ephy-actions-extension.c:115
 msgid "Customize actions"
 msgstr "Pielāgot darbības"
 
-#: ../extensions/actions/ephy-actions-extension.c:436
+#: ../extensions/actions/ephy-actions-extension.c:440
 msgid "Could not run command"
 msgstr "Nevar palaist komandu"
 
-#: ../extensions/actions/ephy-actions-extension.c:440
+#: ../extensions/actions/ephy-actions-extension.c:444
 msgid "Could not Run Command"
 msgstr "Nevar palaist komandu"
 
@@ -82,7 +82,6 @@ msgstr[2] "Izvēlētas %i darbības."
 
 #: ../extensions/actions/ephy-actions-extension-editor-dialog.c:721
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.c:124
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:194
 #, c-format
 msgid "Could not display help: %s"
 msgstr "Neizdevās parādīt palīdzību: %s"
@@ -100,73 +99,39 @@ msgstr "“%s” īpašības"
 msgid "Action Properties"
 msgstr "Darbības īpašības"
 
-#: ../extensions/adblock/adblock-ui.c:229
-msgid ""
-"This list is Copyright © its original author(G). It is relicensed under the "
-"GPL with permission.\n"
-"The original list, Filterset.G, can be found at http://www.pierceive.com/"
-"filtersetg/.\n"
-"This version has been modified from its original. The changes have not been "
-"approved by the original author;\n"
-"direct any problems to Bugzilla and not to the original author (G).\n"
-msgstr ""
-"Autortiesības ar šo sarakstu pieder tā oriģinālajam autoram (G). Tas ir "
-"pārlicencēts uz GPL ar atļauju.\n"
-"Oriģinālo sarakstu, Filterset.G, var atrast  http://www.pierceive.com/"
-"filtersetg/.\n"
-"Šī versija nesakrīt ar oriģinālu un tā autors varētu nepiekrist tā izmaiņām.\n"
-"Visas problēmas ziņojiet uz Bugzilla, nevis oriģināla autoram (G).\n"
+#: ../extensions/adblock/adblock-ui.c:150
+msgid "Invalid filter"
+msgstr "Nederīgs filtrs"
 
-#: ../extensions/adblock/adblock-ui.c:446
-msgid "Pattern"
-msgstr "Raksts"
+#: ../extensions/adblock/adblock-ui.c:240
+msgid "Filter URI"
+msgstr "Filtra URI"
 
 #: ../extensions/adblock/adblock.ui.h:1
-msgid "<b>Courtesy of Graham Pierce</b>"
-msgstr "<b>Courtesy of Graham Pierce</b>"
-
-#: ../extensions/adblock/adblock.ui.h:2
-msgid "<b>New rule</b>"
-msgstr "<b>Jauna kārtula</b>"
-
-#: ../extensions/adblock/adblock.ui.h:3
-msgid "<b>Update rules from original site</b>"
-msgstr "<b>Atjaunināt kārtulas no sākotnējās vietnes</b>"
-
-#: ../extensions/adblock/adblock.ui.h:4
-#: ../extensions/adblock/ephy-adblock-extension.c:229
 msgid "Adblock Editor"
 msgstr "Adblock redaktors"
 
-#: ../extensions/adblock/adblock.ui.h:5
-msgid "Blacklist"
-msgstr "Melnais saraksts"
+#: ../extensions/adblock/adblock.ui.h:2
+msgid ""
+"Type the address of a preconfigured filter list in the text entry to be "
+"added to the list. Find more lists at easylist.adblockplus.org"
+msgstr ""
+"Ievadiet adresi jau iepriekš konfigurētam filtru sarakstam teksta laukā, "
+"lai to pievienotu sarakstam. Sarakstus var atrast easylist.adblockplus.org"
 
-#: ../extensions/adblock/adblock.ui.h:6
-msgid "Filterset.G"
-msgstr "Filterset.G"
+#: ../extensions/adblock/ephy-adblock-extension.c:218
+msgid "Ad Blocker"
+msgstr "Reklāmu bloķētājs"
 
-#: ../extensions/adblock/adblock.ui.h:7
-msgid "Whitelist"
-msgstr "Baltais saraksts"
+#: ../extensions/adblock/ephy-adblock-extension.c:219
+msgid "Configure Ad Blocker filters"
+msgstr "Konfigurēt reklāmu bloķētāja filtrus"
 
-#: ../extensions/adblock/ephy-adblock-extension.c:230
-msgid "Edit Adblock"
-msgstr "Rediģēt Adblock"
-
-#: ../extensions/adblock/ephy-adblock-extension.c:300
-#, c-format
-msgid "%d hidden advertisement"
-msgid_plural "%d hidden advertisements"
-msgstr[0] "%d slēpta reklāma"
-msgstr[1] "%d slēptas reklāmas"
-msgstr[2] "%d slēptu reklāmu"
-
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:81
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:80
 msgid "_Auto Reload"
 msgstr "_Automātiski pārlādēt"
 
-#: ../extensions/auto-reload/ephy-auto-reload-extension.c:83
+#: ../extensions/auto-reload/ephy-auto-reload-extension.c:82
 msgid "Reload the page periodically"
 msgstr "Pārlādēt lapu ik pēc laika"
 
@@ -227,12 +192,12 @@ msgid "Display web page errors"
 msgstr "Attēlot tīmekļa lapas kļūdas"
 
 #: ../extensions/error-viewer/error-viewer.glade.h:1
-msgid "Cl_ear"
-msgstr "_Attīrīt"
-
-#: ../extensions/error-viewer/error-viewer.glade.h:2
 msgid "Error Viewer"
 msgstr "Kļūdu skatītājs"
+
+#: ../extensions/error-viewer/error-viewer.glade.h:2
+msgid "Cl_ear"
+msgstr "_Attīrīt"
 
 #. Translators: The first %s is the error category (e. g., "javascript").
 #. The second %s is the URL. The third %s is the actual error message.
@@ -377,25 +342,21 @@ msgid "Description"
 msgstr "Apraksts"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:1
-msgid "<b>Loaded Extensions</b>"
-msgstr "<b>Ielādētie paplašinājumi</b>"
-
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:2
 msgid "Extensions"
 msgstr "Paplašinājumi"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:68
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:74
-msgid "_Extensions"
-msgstr "_Paplašinājumi"
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ui.h:2
+msgid "<b>Loaded Extensions</b>"
+msgstr "<b>Ielādētie paplašinājumi</b>"
 
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:70
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:66
+#| msgid "Extensions Manager"
+msgid "_Extensions manager"
+msgstr "_Paplašinājumu pārvaldnieks"
+
+#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:68
 msgid "Load and unload extensions"
 msgstr "Ielādēt un izlādēt paplašinājumus"
-
-#: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:76
-msgid "Help about extensions"
-msgstr "Palīdzība par paplašinājumiem"
 
 #: ../extensions/greasemonkey/ephy-greasemonkey-extension.c:78
 msgid "Install User _Script"
@@ -425,28 +386,28 @@ msgid "_HTTP Headers"
 msgstr "_HTTP galvenes"
 
 #: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:1
-msgid "<b>Request</b>"
-msgstr "<b>Pieprasījums</b>"
-
-#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:2
-msgid "<b>Response</b>"
-msgstr "<b>Atbilde</b>"
-
-#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:3
-msgid "<b>URLs</b>"
-msgstr "<b>URL</b>"
-
-#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
-msgid "Clear cache"
-msgstr "Attīrīt kešu"
-
-#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
 msgid "Live Headers"
 msgstr "Dzīvās galvenes"
 
-#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:2
+msgid "Clear cache"
+msgstr "Attīrīt kešu"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:3
 msgid "Remove headers"
 msgstr "Izņemt galvenes"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:4
+msgid "<b>URLs</b>"
+msgstr "<b>URL</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:5
+msgid "<b>Request</b>"
+msgstr "<b>Pieprasījums</b>"
+
+#: ../extensions/livehttpheaders/livehttpheaders-ui.glade.h:6
+msgid "<b>Response</b>"
+msgstr "<b>Atbilde</b>"
 
 #: ../extensions/page-info/ephy-page-info-extension.c:61
 msgid "Pa_ge Information"
@@ -617,128 +578,128 @@ msgid "Page Metadata"
 msgstr "Lapas metadati"
 
 #: ../extensions/page-info/page-info.glade.h:1
-msgid "<b>Dublin Core Metadata</b>"
-msgstr "<b>Dublinas kodola metadati</b>"
+msgid "Page Properties"
+msgstr "Lapas īpašības"
 
 #: ../extensions/page-info/page-info.glade.h:2
-msgid "<b>Forms In Page</b>"
-msgstr "<b>Formas lapā</b>"
+msgid "Title:"
+msgstr "Nosaukums:"
 
 #: ../extensions/page-info/page-info.glade.h:3
-msgid "<b>Links In Page</b>"
-msgstr "<b>Saites lapā</b>"
+msgid "Location:"
+msgstr "Atrašanās vieta:"
 
 #: ../extensions/page-info/page-info.glade.h:4
-msgid "<b>Media In Page</b>"
-msgstr "<b>Multimediji lapā</b>"
+msgid "Referrer:"
+msgstr "Novirzītājs:"
 
 #: ../extensions/page-info/page-info.glade.h:5
-msgid "<b>Medium View</b>"
-msgstr "<b>Mediju skats</b>"
-
-#: ../extensions/page-info/page-info.glade.h:6
-msgid "<b>Other Metadata</b>"
-msgstr "<b>Citi metadati</b>"
-
-#: ../extensions/page-info/page-info.glade.h:7
-msgid "<b>Rendering</b>"
-msgstr "<b>Attēlošana</b>"
-
-#: ../extensions/page-info/page-info.glade.h:8
-msgid "<b>Source File</b>"
-msgstr "<b>Pirmkoda fails</b>"
-
-#: ../extensions/page-info/page-info.glade.h:9
-msgid "<b>Web Page</b>"
-msgstr "<b>Tīmekļa lappuse</b>"
-
-#: ../extensions/page-info/page-info.glade.h:10
 msgid "DYNAMIC"
 msgstr "DINAMISKS"
 
+#: ../extensions/page-info/page-info.glade.h:6
+msgid "<b>Web Page</b>"
+msgstr "<b>Tīmekļa lappuse</b>"
+
+#: ../extensions/page-info/page-info.glade.h:7
+msgid "Size:"
+msgstr "Izmērs:"
+
+#: ../extensions/page-info/page-info.glade.h:8
+msgid "Type:"
+msgstr "Tips:"
+
+#: ../extensions/page-info/page-info.glade.h:9
+msgid "MIME type:"
+msgstr "MIME tips:"
+
+#: ../extensions/page-info/page-info.glade.h:10
+msgid "Modified:"
+msgstr "Mainīts:"
+
 #: ../extensions/page-info/page-info.glade.h:11
-msgid "Date:"
-msgstr "Datums:"
-
-#: ../extensions/page-info/page-info.glade.h:12
-msgid "Description:"
-msgstr "Apraksts:"
-
-#: ../extensions/page-info/page-info.glade.h:13
-msgid "Encoding:"
-msgstr "Kodējums:"
-
-#: ../extensions/page-info/page-info.glade.h:14
 msgid "Expires:"
 msgstr "Derīguma termiņš:"
 
+#: ../extensions/page-info/page-info.glade.h:12
+msgid "Source:"
+msgstr "Avots:"
+
+#: ../extensions/page-info/page-info.glade.h:13
+msgid "<b>Source File</b>"
+msgstr "<b>Pirmkoda fails</b>"
+
+#: ../extensions/page-info/page-info.glade.h:14
+msgid "Mode:"
+msgstr "Režīms:"
+
 #: ../extensions/page-info/page-info.glade.h:15
-msgid "Format:"
-msgstr "Formāts:"
+msgid "Encoding:"
+msgstr "Kodējums:"
 
 #: ../extensions/page-info/page-info.glade.h:16
-msgid "Forms"
-msgstr "Formas"
+msgid "<b>Rendering</b>"
+msgstr "<b>Attēlošana</b>"
 
 #: ../extensions/page-info/page-info.glade.h:17
 msgid "General"
 msgstr "Vispārīgi"
 
 #: ../extensions/page-info/page-info.glade.h:18
-msgid "Links"
-msgstr "Saites"
+msgid "<b>Media In Page</b>"
+msgstr "<b>Multimediji lapā</b>"
 
 #: ../extensions/page-info/page-info.glade.h:19
-msgid "Location:"
-msgstr "Atrašanās vieta:"
+msgid "_Save Media As..."
+msgstr "Saglabāt multimediju kā..."
 
 #: ../extensions/page-info/page-info.glade.h:20
-msgid "MIME type:"
-msgstr "MIME tips:"
+msgid "<b>Medium View</b>"
+msgstr "<b>Mediju skats</b>"
 
 #: ../extensions/page-info/page-info.glade.h:21
 msgid "Media"
 msgstr "Skaņa un video"
 
 #: ../extensions/page-info/page-info.glade.h:22
-msgid "Metadata"
-msgstr "Metadati"
+msgid "<b>Links In Page</b>"
+msgstr "<b>Saites lapā</b>"
 
 #: ../extensions/page-info/page-info.glade.h:23
-msgid "Mode:"
-msgstr "Režīms:"
+msgid "Links"
+msgstr "Saites"
 
 #: ../extensions/page-info/page-info.glade.h:24
-msgid "Modified:"
-msgstr "Mainīts:"
+msgid "<b>Forms In Page</b>"
+msgstr "<b>Formas lapā</b>"
 
 #: ../extensions/page-info/page-info.glade.h:25
-msgid "Page Properties"
-msgstr "Lapas īpašības"
+msgid "Forms"
+msgstr "Formas"
 
 #: ../extensions/page-info/page-info.glade.h:26
-msgid "Referrer:"
-msgstr "Novirzītājs:"
+msgid "<b>Dublin Core Metadata</b>"
+msgstr "<b>Dublinas kodola metadati</b>"
 
 #: ../extensions/page-info/page-info.glade.h:27
-msgid "Size:"
-msgstr "Izmērs:"
+msgid "Date:"
+msgstr "Datums:"
 
 #: ../extensions/page-info/page-info.glade.h:28
-msgid "Source:"
-msgstr "Avots:"
+msgid "Format:"
+msgstr "Formāts:"
 
 #: ../extensions/page-info/page-info.glade.h:29
-msgid "Title:"
-msgstr "Nosaukums:"
+msgid "Description:"
+msgstr "Apraksts:"
 
 #: ../extensions/page-info/page-info.glade.h:30
-msgid "Type:"
-msgstr "Tips:"
+msgid "<b>Other Metadata</b>"
+msgstr "<b>Citi metadati</b>"
 
 #: ../extensions/page-info/page-info.glade.h:31
-msgid "_Save Media As..."
-msgstr "Saglabāt multimediju kā..."
+msgid "Metadata"
+msgstr "Metadati"
 
 #: ../extensions/permissions/ephy-permissions-dialog.c:165
 msgid "allowed"
@@ -825,13 +786,13 @@ msgid "Subscribe"
 msgstr "Abonēt"
 
 #: ../extensions/rss/rss-ui.ui.h:1
-msgid "<b>Select Interesting Feeds</b>"
-msgstr "<b>Izvelieties interesantas barotnes</b>"
-
-#: ../extensions/rss/rss-ui.ui.h:2
 #: ../extensions/rss/rss.ephy-extension.in.in.h:1
 msgid "News Feed Subscription"
 msgstr "Ziņu barotnes abonements"
+
+#: ../extensions/rss/rss-ui.ui.h:2
+msgid "<b>Select Interesting Feeds</b>"
+msgstr "<b>Izvelieties interesantas barotnes</b>"
 
 #: ../extensions/rss/rss-ui.ui.h:3
 msgid "_Subscribe"
@@ -896,8 +857,9 @@ msgid "Execute arbitrary commands from the context menu"
 msgstr "No konteksta izvēlnes izpildīt patvaļīgas komandas"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
-msgid "Ad Blocker"
-msgstr "Ad Blocker"
+#| msgid "Ad Blocker"
+msgid "Ad Blocker v2"
+msgstr "Reklāmu bloķētājs v2"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:2
 msgid "Block the pest!"
@@ -932,12 +894,12 @@ msgid "Validate web pages and check links"
 msgstr "Validēt tīmekļa lapas un pārbaudīt saites"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
-msgid "Activate and deactivate extensions"
-msgstr "Aktivizēt un deaktivizēt paplašinājumus"
-
-#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
 msgid "Extensions Manager"
 msgstr "Paplašinājumu pārvaldnieks"
+
+#: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
+msgid "Activate and deactivate extensions"
+msgstr "Aktivizēt un deaktivizēt paplašinājumus"
 
 #: ../extensions/gestures/gestures.ephy-extension.in.in.h:1
 msgid "Gestures"
@@ -968,28 +930,28 @@ msgid "Live HTTP headers"
 msgstr "Dzīvās HTTP galvenes"
 
 #: ../extensions/page-info/page-info.ephy-extension.in.in.h:1
-msgid "Display information about and links and media from the current page"
-msgstr "Rādīt informāciju par saitēm un multimediju no pašreizējās lapas"
-
-#: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
 msgid "Page Info"
 msgstr "Informācija par lapu"
 
-#: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
-msgid "Edit site permissions"
-msgstr "Rediģēt vietnes atļaujas"
+#: ../extensions/page-info/page-info.ephy-extension.in.in.h:2
+msgid "Display information about and links and media from the current page"
+msgstr "Rādīt informāciju par saitēm un multimediju no pašreizējās lapas"
 
-#: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:1
 msgid "Permissions"
 msgstr "Atļaujas"
 
-#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
-msgid "Drag the page on middle mouse click"
-msgstr "Velciet lapu ar peles vidējo klikšķi"
+#: ../extensions/permissions/permissions.ephy-extension.in.in.h:2
+msgid "Edit site permissions"
+msgstr "Rediģēt vietnes atļaujas"
 
-#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:1
 msgid "Push Scroll"
 msgstr "Piespiešanas ritināšana"
+
+#: ../extensions/push-scroller/push-scroller.ephy-extension.in.in.h:2
+msgid "Drag the page on middle mouse click"
+msgstr "Velciet lapu ar peles vidējo klikšķi"
 
 #: ../extensions/rss/rss.ephy-extension.in.in.h:2
 msgid ""
@@ -998,12 +960,12 @@ msgstr ""
 "Abonē ziņu barotni, ko piedāvā tīmekļa vietne, savā iecienītajā ziņu lasītājā"
 
 #: ../extensions/sample/sample.ephy-extension.in.in.h:1
-msgid "A sample extension"
-msgstr "Parauga paplašinājums"
-
-#: ../extensions/sample/sample.ephy-extension.in.in.h:2
 msgid "Sample"
 msgstr "Paraugs"
+
+#: ../extensions/sample/sample.ephy-extension.in.in.h:2
+msgid "A sample extension"
+msgstr "Parauga paplašinājums"
 
 #: ../extensions/select-stylesheet/select-stylesheet.ephy-extension.in.in.h:1
 msgid "Select Stylesheet"
@@ -1014,20 +976,20 @@ msgid "Select between different stylesheets offered by the web page"
 msgstr "Izvēlieties kādu no dažādiem stilu sarakstiem, ko piedāvā tīmekļa lapa"
 
 #: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:1
-msgid "Look up the selected text with a smart bookmark"
-msgstr "Uzmeklējiet izvēlēto tekstu ar gudro grāmatzīmi"
-
-#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
 msgid "Smart Bookmarks"
 msgstr "Gudrā grāmatzīme"
 
-#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
-msgid "Indicates new content in background tabs"
-msgstr "Norāda jauno saturu fona cilnēs"
+#: ../extensions/smart-bookmarks/smart-bookmarks.ephy-extension.in.in.h:2
+msgid "Look up the selected text with a smart bookmark"
+msgstr "Uzmeklējiet izvēlēto tekstu ar gudro grāmatzīmi"
 
-#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:1
 msgid "Tab States"
 msgstr "Cilnes stāvoklis"
+
+#: ../extensions/tab-states/tab-states.ephy-extension.in.in.h:2
+msgid "Indicates new content in background tabs"
+msgstr "Norāda jauno saturu fona cilnēs"
 
 #: ../extensions/tab-key-tab-navigate/tab-key-tab-navigate.ephy-extension.in.in.h:1
 msgid "Tab Key Tab Navigate"
@@ -1037,3 +999,55 @@ msgstr "Tab taustiņš, lai pārvietotos"
 msgid "Use the Tab key to navigate between tabs"
 msgstr "Lietojiet Tab taustiņu, lai pārvietotos pa cilnēm"
 
+#~ msgid ""
+#~ "This list is Copyright © its original author(G). It is relicensed under "
+#~ "the GPL with permission.\n"
+#~ "The original list, Filterset.G, can be found at http://www.pierceive.com/"
+#~ "filtersetg/.\n"
+#~ "This version has been modified from its original. The changes have not "
+#~ "been approved by the original author;\n"
+#~ "direct any problems to Bugzilla and not to the original author (G).\n"
+#~ msgstr ""
+#~ "Autortiesības ar šo sarakstu pieder tā oriģinālajam autoram (G). Tas ir "
+#~ "pārlicencēts uz GPL ar atļauju.\n"
+#~ "Oriģinālo sarakstu, Filterset.G, var atrast  http://www.pierceive.com/"
+#~ "filtersetg/.\n"
+#~ "Šī versija nesakrīt ar oriģinālu un tā autors varētu nepiekrist tā "
+#~ "izmaiņām.\n"
+#~ "Visas problēmas ziņojiet uz Bugzilla, nevis oriģināla autoram (G).\n"
+
+#~ msgid "Pattern"
+#~ msgstr "Raksts"
+
+#~ msgid "<b>Courtesy of Graham Pierce</b>"
+#~ msgstr "<b>Courtesy of Graham Pierce</b>"
+
+#~ msgid "<b>New rule</b>"
+#~ msgstr "<b>Jauna kārtula</b>"
+
+#~ msgid "<b>Update rules from original site</b>"
+#~ msgstr "<b>Atjaunināt kārtulas no sākotnējās vietnes</b>"
+
+#~ msgid "Blacklist"
+#~ msgstr "Melnais saraksts"
+
+#~ msgid "Filterset.G"
+#~ msgstr "Filterset.G"
+
+#~ msgid "Whitelist"
+#~ msgstr "Baltais saraksts"
+
+#~ msgid "Edit Adblock"
+#~ msgstr "Rediģēt Adblock"
+
+#~ msgid "%d hidden advertisement"
+#~ msgid_plural "%d hidden advertisements"
+#~ msgstr[0] "%d slēpta reklāma"
+#~ msgstr[1] "%d slēptas reklāmas"
+#~ msgstr[2] "%d slēptu reklāmu"
+
+#~ msgid "_Extensions"
+#~ msgstr "_Paplašinājumi"
+
+#~ msgid "Help about extensions"
+#~ msgstr "Palīdzība par paplašinājumiem"
