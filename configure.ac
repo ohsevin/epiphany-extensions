@@ -15,8 +15,8 @@
 # 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
 
 m4_define([e_e_version_major],[3])
-m4_define([e_e_version_minor],[3])
-m4_define([e_e_version_micro],[90])
+m4_define([e_e_version_minor],[4])
+m4_define([e_e_version_micro],[0])
 m4_define([e_e_version],[e_e_version_major.e_e_version_minor.e_e_version_micro])
 
 # This can be either "trunk" or "branches/gnome-x-y"
@@ -24,7 +24,7 @@ m4_define([e_e_branch],["trunk"])
 
 AC_INIT([GNOME Web Browser Extensions],[e_e_version],[http://bugzilla.gnome.org/enter_bug.cgi?product=epiphany-extensions],[epiphany-extensions])
 
-EPIPHANY_API_VERSION=3.3
+EPIPHANY_API_VERSION=3.4
 
 EPIPHANY_EXTENSIONS_MAJOR=e_e_version_major.e_e_version_minor
 AC_SUBST(EPIPHANY_EXTENSIONS_MAJOR)
