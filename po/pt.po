@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.6\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product"
-"=epiphany-extensions&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-02-25 20:12+0000\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=epiphany-extensions\n"
+"POT-Creation-Date: 2012-05-07 15:12+0100\n"
 "PO-Revision-Date: 2012-03-03 00:17+0000\n"
 "Last-Translator: António Lima <amrlima@gmail.com>\n"
 "Language-Team: gnome_pt@yahoogroups.com\n"
@@ -116,9 +116,9 @@ msgid ""
 "Type the address of a preconfigured filter list in the text entry to be "
 "added to the list. Find more lists at easylist.adblockplus.org"
 msgstr ""
-"Digite, no campo de entrada de texto, o endereço de uma lista de filtros "
-"pré-configurados a serem adicionados à lista. Encontre mais listas em "
-"easylist.adblockplus.org"
+"Digite, no campo de entrada de texto, o endereço de uma lista de filtros pré-"
+"configurados a serem adicionados à lista. Encontre mais listas em easylist."
+"adblockplus.org"
 
 #: ../extensions/adblock/ephy-adblock-extension.c:218
 msgid "Ad Blocker"
@@ -348,9 +348,8 @@ msgid "<b>Loaded Extensions</b>"
 msgstr "<b>Extensões Carregadas</b>"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:66
-#| msgid "Extensions Manager"
 msgid "_Extensions manager"
-msgstr "Gestor de _extenções"
+msgstr "Gestor de _extensões"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:68
 msgid "Load and unload extensions"
@@ -857,7 +856,6 @@ msgid "Execute arbitrary commands from the context menu"
 msgstr "Executar comandos arbitrários a partir do menu de contexto"
 
 #: ../extensions/adblock/adblock.ephy-extension.in.in.h:1
-#| msgid "Ad Blocker"
 msgid "Ad Blocker v2"
 msgstr "Bloqueador de Publicidade v2"
 
@@ -895,7 +893,7 @@ msgstr "Validar páginas web e verificar links"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:1
 msgid "Extensions Manager"
-msgstr "Gestor de Extenções"
+msgstr "Gestor de Extensões"
 
 #: ../extensions/extensions-manager-ui/extensions-manager-ui.ephy-extension.in.in.h:2
 msgid "Activate and deactivate extensions"
