@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: epiphany-extensions.HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=epiphany-extensions&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-02-25 20:12+0000\n"
+"POT-Creation-Date: 2012-02-28 20:51+0000\n"
 "PO-Revision-Date: 2012-02-27 14:48+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
@@ -182,7 +182,7 @@ msgstr "Comprobar _enlaces"
 #. shortcut key
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:99
 msgid "Display invalid hyperlinks in the Error Viewer dialog"
-msgstr "Mostrar los hiperenlaces inválidos en el diálogo del visor de errores"
+msgstr "Mostrar los hiperenlaces no válidos en el diálogo del visor de errores"
 
 #: ../extensions/error-viewer/ephy-error-viewer-extension.c:103
 msgid "_Error Viewer"
@@ -240,8 +240,8 @@ msgstr ""
 #, c-format
 msgid "Found %d invalid link"
 msgid_plural "Found %d invalid links"
-msgstr[0] "Se encontró %d enlace inválido"
-msgstr[1] "Se encontraron %d enlaces inválidos"
+msgstr[0] "Se encontró %d enlace no válido"
+msgstr[1] "Se encontraron %d enlaces no válidos"
 
 #: ../extensions/error-viewer/mozilla/ErrorViewerURICheckerObserver.cpp:119
 #, c-format
@@ -315,7 +315,7 @@ msgstr "Error HTML en %s:"
 #: ../extensions/error-viewer/sgml-validator.c:367
 #, c-format
 msgid "Invalid character encoding"
-msgstr "Codificación de caracteres inválida"
+msgstr "Codificación de caracteres no válida"
 
 #: ../extensions/error-viewer/sgml-validator.c:372
 #, c-format
@@ -349,7 +349,6 @@ msgid "<b>Loaded Extensions</b>"
 msgstr "<b>Extensiones cargadas</b>"
 
 #: ../extensions/extensions-manager-ui/ephy-extensions-manager-ui-extension.c:66
-#| msgid "Extensions Manager"
 msgid "_Extensions manager"
 msgstr "Gestor de _extensiones"
 
